@@ -36,7 +36,7 @@ Defenders of smartphone technology argue that it extends human capability. We ca
 
 Attention is the fundamental currency of human consciousness, and smartphones are designed to capture and commodify it. The engineers and designers who create these devices employ sophisticated techniques to maximise engagement: infinite scroll, notifications, social validation through likes and comments. These techniques exploit psychological vulnerabilities the same way that junk food exploits our taste buds. We are offered something that feels good in the moment but damages our long-term wellbeing.
 
-The most insidious effect is not addiction in the technical sense but the erosion of our capacity for deep attention. Reading a lengthy book, having a genuine conversation, pursuing a difficult intellectual task—all of these require sustained attention. Smartphones fragment our attention into microseconds of engagement with multiple platforms. Studies show that even the mere presence of a smartphone reduces cognitive performance. We are creating a generation that may have lost the capacity for the kind of sustained thought that created human civilisation.
+The most insidious effect is not addiction in the technical sense but the erosion of our capacity for deep attention. Reading a lengthy book, having a genuine conversation, pursuing a difficult intellectual task-all of these require sustained attention. Smartphones fragment our attention into microseconds of engagement with multiple platforms. Studies show that even the mere presence of a smartphone reduces cognitive performance. We are creating a generation that may have lost the capacity for the kind of sustained thought that created human civilisation.
 
 This is not a problem that can be solved by individual willpower. The devices are designed by brilliant people using billions of dollars in research funding specifically to make them addictive. Complaining that individuals lack discipline is like complaining that people lack willpower in resisting junk food in an environment of aggressive marketing and engineered products. The solution requires regulation and design changes that prioritise human wellbeing over engagement metrics.`
 
@@ -54,13 +54,13 @@ The tragedy is that this linguistic impoverishment impoverishes us all. We lose 
 
 const P1_M6_PASSAGE_A = `The prison system in many developed countries has become a mechanism of social control targeting specific populations rather than a genuine apparatus of justice. The statistics are stark: the United States incarcerates approximately 650 people per 100,000 of population, a rate six to ten times higher than other wealthy democracies. This incarceration does not fall equally across the population. Black men are incarcerated at roughly five times the rate of white men, despite committing crimes at similar rates. Poor people are massively overrepresented, not because they commit more crimes but because they cannot afford adequate legal representation and are more likely to be charged and convicted.
 
-The stated purpose of incarceration is threefold: punishment, rehabilitation, and public safety. Yet modern prisons achieve none of these objectives. They are places where human beings are subjected to extreme deprivation, violence, and psychological torment. Rehabilitation programmes are underfunded and inadequate. Recidivism rates are extremely high, indicating that prisons do not reduce crime. The only objective that prisons consistently achieve is punishment—and they inflict it indiscriminately on the poor and racial minorities.
+The stated purpose of incarceration is threefold: punishment, rehabilitation, and public safety. Yet modern prisons achieve none of these objectives. They are places where human beings are subjected to extreme deprivation, violence, and psychological torment. Rehabilitation programmes are underfunded and inadequate. Recidivism rates are extremely high, indicating that prisons do not reduce crime. The only objective that prisons consistently achieve is punishment-and they inflict it indiscriminately on the poor and racial minorities.
 
-The root problem is that prisons are viewed as a solution to poverty, mental illness, and addiction—conditions that require healthcare, education, and social support. Instead of addressing these causes, we incarcerate the people suffering from them. We turn human suffering into a criminal problem to be locked away rather than a social problem to be addressed. This approach fails on its own terms: incarceration does not reduce crime.
+The root problem is that prisons are viewed as a solution to poverty, mental illness, and addiction-conditions that require healthcare, education, and social support. Instead of addressing these causes, we incarcerate the people suffering from them. We turn human suffering into a criminal problem to be locked away rather than a social problem to be addressed. This approach fails on its own terms: incarceration does not reduce crime.
 
-Substantial evidence suggests that alternatives to incarceration—rehabilitation programmes, education, mental health services, addressing root causes of crime—are more effective and far more humane. Countries with lower incarceration rates and more investment in social support have lower crime rates. Yet prisons persist partly because they serve a function beyond justice: they serve as a mechanism of control, removing from society the people deemed inconvenient or threatening.`
+Substantial evidence suggests that alternatives to incarceration-rehabilitation programmes, education, mental health services, addressing root causes of crime-are more effective and far more humane. Countries with lower incarceration rates and more investment in social support have lower crime rates. Yet prisons persist partly because they serve a function beyond justice: they serve as a mechanism of control, removing from society the people deemed inconvenient or threatening.`
 
-const P1_M6_PASSAGE_B = `Food production is the largest driver of biodiversity loss on Earth. Industrial agriculture requires vast monocultures—expanses of single crops covering thousands of hectares—which eliminate habitat for wild animals and plants. Pesticides poison ecosystems and kill the insects that pollinate crops. Factory farming concentrates thousands of animals in horrible conditions, creating breeding grounds for disease and generating massive environmental pollution through waste. Meanwhile, one-third of all food produced globally is wasted, much of it perfectly edible, discarded by retailers and consumers who prioritise appearance over nutrition.
+const P1_M6_PASSAGE_B = `Food production is the largest driver of biodiversity loss on Earth. Industrial agriculture requires vast monocultures-expanses of single crops covering thousands of hectares-which eliminate habitat for wild animals and plants. Pesticides poison ecosystems and kill the insects that pollinate crops. Factory farming concentrates thousands of animals in horrible conditions, creating breeding grounds for disease and generating massive environmental pollution through waste. Meanwhile, one-third of all food produced globally is wasted, much of it perfectly edible, discarded by retailers and consumers who prioritise appearance over nutrition.
 
 This system is simultaneously destructive to the environment and inadequate for human nutrition. Billions of people suffer from hunger and malnutrition. Meanwhile, wealthy countries produce massive surpluses of cheap calories in the form of highly processed foods that contribute to obesity and diet-related disease. We have created a food system that simultaneously starves people and poisons them.
 
@@ -76,7 +76,7 @@ The transition to a genuinely sustainable food system requires not merely indivi
 
 // ─── Paper 2, Mock 4: Source Materials ───────────────────────────────────────
 
-const P2_M4_SOURCE_A = `According to a recent report from the World Health Organisation, air pollution causes approximately 7 million premature deaths annually—making it one of the leading causes of preventable death globally. Air pollution is not evenly distributed; it predominantly affects low-income communities and developing countries with weak environmental regulations.
+const P2_M4_SOURCE_A = `According to a recent report from the World Health Organisation, air pollution causes approximately 7 million premature deaths annually-making it one of the leading causes of preventable death globally. Air pollution is not evenly distributed; it predominantly affects low-income communities and developing countries with weak environmental regulations.
 
 The major sources of air pollution are well understood: vehicle emissions, industrial facilities, power plants, and residential heating. Developed countries have implemented regulations that have significantly reduced pollution levels in recent decades. However, pollution remains a significant health threat. Moreover, in many developing countries, pollution has actually increased as industrialisation accelerates without corresponding environmental protections.
 
@@ -113,7 +113,7 @@ Advocates for diversification argue that universities should consider socioecono
 
 Critics argue that prioritising anything other than academic merit undermines educational excellence. They worry that admissions decisions based on background characteristics amount to discrimination. They argue that universities should remain meritocratic institutions focused on identifying the most talented students regardless of background.
 
-However, defenders of diverse admissions note that "merit" is not a purely objective measure. Academic performance depends on opportunity, resources, and chance—not merely inherent ability. A student with excellent performance from a poorly resourced school may have greater underlying talent than a student with slightly higher grades from a wealthy school with extensive resources.`
+However, defenders of diverse admissions note that "merit" is not a purely objective measure. Academic performance depends on opportunity, resources, and chance-not merely inherent ability. A student with excellent performance from a poorly resourced school may have greater underlying talent than a student with slightly higher grades from a wealthy school with extensive resources.`
 
 const P2_M6_DIRECTED_TASK = `You are writing for an education policy journal. You have read the debate about university admissions (Source A). Write an opinion article (approximately 450-550 words) arguing for a particular approach to university admissions. You should:
 - Clearly state your position on how universities should make admissions decisions
@@ -224,7 +224,7 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
           {
             id: 'igcse-lang-p1-m4-q5',
             questionNumber: 5,
-            questionText: `Which passage presents a more optimistic view of the future—Passage A or Passage B? Explain your answer with reference to the text.`,
+            questionText: `Which passage presents a more optimistic view of the future-Passage A or Passage B? Explain your answer with reference to the text.`,
             marks: 7,
             suggestedTimeMinutes: 12,
             questionType: 'short-answer',
@@ -294,7 +294,7 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extractSource: 'Passage A: The Smartphone',
             modelAnswers: {
               fullMark:
-                "The writer means that smartphone technology uses deliberate design techniques to hold users' attention so that they can sell advertising. Attention is sold as a commodity to advertisers—the longer users are engaged, the more valuable they are to companies.",
+                "The writer means that smartphone technology uses deliberate design techniques to hold users' attention so that they can sell advertising. Attention is sold as a commodity to advertisers-the longer users are engaged, the more valuable they are to companies.",
               partialMarks: [
                 '2-3 marks for explaining "capture"',
                 '2-3 marks for explaining "commodify" or relating to profit/advertising',
@@ -508,7 +508,7 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
             extractSource: 'Both passages',
             modelAnswers: {
               fullMark:
-                'Passage A suggests solutions require systemic change: stopping subsidies for harmful agriculture and investing in sustainable alternatives—acknowledging that individual consumer choice is insufficient. Similarly, Passage B argues that individual willpower is inadequate against systems designed to be addictive; regulation and design changes are necessary. Both writers reject individual-level solutions and demand policy/systemic change. However, Passage B emphasizes changing how decisions are made (stopping subsidies, investing differently), while Passage A emphasizes changing how products are designed. Both require confronting powerful interests profiting from the current system.',
+                'Passage A suggests solutions require systemic change: stopping subsidies for harmful agriculture and investing in sustainable alternatives-acknowledging that individual consumer choice is insufficient. Similarly, Passage B argues that individual willpower is inadequate against systems designed to be addictive; regulation and design changes are necessary. Both writers reject individual-level solutions and demand policy/systemic change. However, Passage B emphasizes changing how decisions are made (stopping subsidies, investing differently), while Passage A emphasizes changing how products are designed. Both require confronting powerful interests profiting from the current system.',
               partialMarks: [
                 '2 marks for identifying systemic change requirement in A',
                 '2 marks for identifying systemic change requirement in B',
@@ -557,10 +557,10 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
               fullMark:
                 "A well-developed article that: (1) Presents compelling evidence about air pollution's health effects (respiratory disease, heart disease, stroke, cancer, impact on children and elderly); (2) Clearly articulates why this is an equity/justice issue (affects low-income communities disproportionately); (3) Proposes concrete actions (renewable energy transition, improved public transport, industrial emission regulation); (4) Uses persuasive techniques effectively (rhetorical questions, statistics, emotional appeals to vulnerable populations); (5) Maintains appropriate magazine article tone; (6) Meets word count requirements.",
               partialMarks: [
-                '10 marks: Content and understanding—evidence of health effects, understanding of inequality',
-                '10 marks: Structure and organization—clear article structure, logical flow',
-                '10 marks: Style and tone—appropriate to magazine audience, persuasive language',
-                '10 marks: Technical accuracy—grammar, spelling, punctuation',
+                '10 marks: Content and understanding-evidence of health effects, understanding of inequality',
+                '10 marks: Structure and organization-clear article structure, logical flow',
+                '10 marks: Style and tone-appropriate to magazine audience, persuasive language',
+                '10 marks: Technical accuracy-grammar, spelling, punctuation',
               ],
             },
           },
@@ -584,10 +584,10 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
               fullMark:
                 'A compelling story that: (1) Incorporates the required line naturally; (2) Creates interesting characters with recognisable motivations; (3) Uses vivid imagery and descriptive language; (4) Maintains narrative tension and clear plot structure; (5) Uses dialogue effectively if included; (6) Demonstrates range of sentence structures and vocabulary; (7) Meets word count requirements (typically 300-500 words for short story).',
               partialMarks: [
-                '10 marks: Narrative craft—plot, character, tension',
-                '10 marks: Setting and atmosphere—vivid description, sensory detail',
-                '10 marks: Language and style—vocabulary range, sentence variety, tone',
-                '10 marks: Technical accuracy—grammar, spelling, punctuation',
+                '10 marks: Narrative craft-plot, character, tension',
+                '10 marks: Setting and atmosphere-vivid description, sensory detail',
+                '10 marks: Language and style-vocabulary range, sentence variety, tone',
+                '10 marks: Technical accuracy-grammar, spelling, punctuation',
               ],
             },
           },
@@ -602,10 +602,10 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
               fullMark:
                 'An evocative descriptive piece that: (1) Brings the place vividly to life through detailed, sensory description; (2) Conveys the sense of threat or change through language and tone; (3) Creates atmosphere and emotional resonance; (4) Uses varied sentence structures and sophisticated vocabulary; (5) Maintains focus on the place while evoking the human dimension; (6) Meets word count requirements.',
               partialMarks: [
-                '10 marks: Descriptive power—vivid imagery, sensory detail',
-                '10 marks: Sense of place—specific detail that brings location to life',
-                '10 marks: Conveying change/threat—through language choice, tone, atmosphere',
-                '10 marks: Technical accuracy—grammar, spelling, punctuation',
+                '10 marks: Descriptive power-vivid imagery, sensory detail',
+                '10 marks: Sense of place-specific detail that brings location to life',
+                '10 marks: Conveying change/threat-through language choice, tone, atmosphere',
+                '10 marks: Technical accuracy-grammar, spelling, punctuation',
               ],
             },
           },
@@ -693,7 +693,7 @@ export const igcseLangMocksSet2: MockExamPaper[] = [
                 '10 marks: Dialogue authenticity and character voice',
                 '10 marks: Relationship development and revelation',
                 '10 marks: Narrative impact and emotional resonance',
-                '10 marks: Technical accuracy—dialogue punctuation, grammar',
+                '10 marks: Technical accuracy-dialogue punctuation, grammar',
               ],
             },
           },

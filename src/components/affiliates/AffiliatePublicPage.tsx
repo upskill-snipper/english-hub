@@ -277,7 +277,7 @@ function HowItWorksSection() {
           ))}
         </div>
 
-        {/* Annual-only commission rule — most important fact for new affiliates. */}
+        {/* Annual-only commission rule - most important fact for new affiliates. */}
         <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-center">
           <p className="text-sm font-semibold text-foreground">
             {t('aff_comp.public.how.annual_only_lead')}
@@ -298,7 +298,7 @@ function CommissionSection() {
   // Audit remediation (M15, 2026-05-19): the previous hard-coded
   // per-signup commission table (£5/£15/£7/£20) contradicted the
   // single-programme partner copy and the /creators page. Per the
-  // anti-hallucination contract no reconciled rate is invented here —
+  // anti-hallucination contract no reconciled rate is invented here -
   // the live, verified commission for each referral is shown in the
   // partner dashboard. The canonical commission structure is an open
   // business decision (see BUSINESS-DECISIONS-NEEDED.md).
@@ -317,7 +317,7 @@ function CommissionSection() {
         <Card className="border-border/40 p-7">
           <p className="text-foreground leading-relaxed">
             One programme, one set of terms. We don&rsquo;t publish earnings figures we can&rsquo;t
-            yet evidence — your partner dashboard shows your real, verified referrals and the exact
+            yet evidence - your partner dashboard shows your real, verified referrals and the exact
             commission for each one, from day one.
           </p>
         </Card>
@@ -875,7 +875,7 @@ function EnrolForm() {
   )
 }
 
-/* ─── Success card — shown after enrolment ───────────────────── */
+/* ─── Success card - shown after enrolment ───────────────────── */
 
 function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
   const t = useT()
@@ -971,16 +971,16 @@ function CopyRow({
 
 function PostTemplates({ code, referralUrl }: { code: string; referralUrl: string }) {
   const t = useT()
-  // The template bodies stay in English-language source — they are content the
+  // The template bodies stay in English-language source - they are content the
   // affiliate copies to share on social. Surrounding chrome is i18n'd.
   const templates = [
     {
       platform: 'TikTok (15-30s)',
-      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 7 days free.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
+      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial - code ${code} at checkout for 7 days free.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
     },
     {
       platform: 'Instagram (caption)',
-      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
+      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor - instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
     },
     {
       platform: 'X / Twitter',
@@ -988,7 +988,7 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
     },
     {
       platform: 'WhatsApp / text message',
-      body: `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${referralUrl} (#ad)`,
+      body: `Came across this - The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${referralUrl} (#ad)`,
     },
   ]
 

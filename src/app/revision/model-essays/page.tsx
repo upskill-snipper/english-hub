@@ -116,7 +116,7 @@ function camelKey(key: TextKey): string {
 
 export default async function ModelEssaysIndexPage() {
   // Resolve chrome strings once per render. Author/work labels and essay
-  // titles stay English (literary content per scope) — everything else
+  // titles stay English (literary content per scope) - everything else
   // routes through t().
   const [
     tBreadcrumbRevision,

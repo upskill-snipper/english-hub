@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Setting and Atmosphere — Reading Practice Framework — The English Hub',
+    title: 'Setting and Atmosphere - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Setting and Atmosphere — Reading Practice Framework',
+  title: 'Setting and Atmosphere - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -212,7 +212,7 @@ export default async function SettingAtmospherePage() {
                 <strong>Sentence 2:</strong> The dominant mood.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two concrete details that create that mood.
+                <strong>Sentences 3-4:</strong> Two concrete details that create that mood.
               </li>
               <li>
                 <strong>Sentence 5:</strong> How the setting makes the reader feel.

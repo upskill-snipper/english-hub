@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     description: 'Study guide for Young and Dyslexic? You',
   },
   title:
-    "Young and Dyslexic? You've Got It Going On — Benjamin Zephaniah — IGCSE Language A Anthology",
+    "Young and Dyslexic? You've Got It Going On - Benjamin Zephaniah - IGCSE Language A Anthology",
   description:
-    "Study guide for Young and Dyslexic? You've Got It Going On by Benjamin Zephaniah (1958–2023). Themes, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
+    "Study guide for Young and Dyslexic? You've Got It Going On by Benjamin Zephaniah (1958-2023). Themes, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/young-and-dyslexic',
   },
@@ -36,9 +36,9 @@ const themes = [
     label: 'Reframing dyslexia',
     labelAr: 'إعادة تأطير الـ dyslexia',
     detail:
-      'Zephaniah challenged the deficit view of dyslexia. The text repositioned the condition as a different way of thinking rather than a failing — a difference, not a deficiency.',
+      'Zephaniah challenged the deficit view of dyslexia. The text repositioned the condition as a different way of thinking rather than a failing - a difference, not a deficiency.',
     detailAr:
-      'يتحدّى Zephaniah النظرةَ القاصرة إلى الـ dyslexia. ويُعيد النصُّ تقديم هذه الحالة بوصفها طريقةً مختلفة في التفكير، لا قصوراً — اختلافاً لا عجزاً.',
+      'يتحدّى Zephaniah النظرةَ القاصرة إلى الـ dyslexia. ويُعيد النصُّ تقديم هذه الحالة بوصفها طريقةً مختلفة في التفكير، لا قصوراً - اختلافاً لا عجزاً.',
   },
   {
     label: 'School and the education system',
@@ -60,9 +60,9 @@ const themes = [
     label: 'Creativity and alternative ability',
     labelAr: 'الإبداع والقدرات البديلة',
     detail:
-      'The piece argued that dyslexic thinking can underwrite creative achievement — in poetry, performance, problem-solving — and that conventional schooling often misses what such minds can do.',
+      'The piece argued that dyslexic thinking can underwrite creative achievement - in poetry, performance, problem-solving - and that conventional schooling often misses what such minds can do.',
     detailAr:
-      'يُحاجج النصّ بأنّ تفكيرَ صاحب الـ dyslexia يمكن أن يُغذّي إنجازاً إبداعيّاً — في الشعر والأداء وحلّ المشكلات — وأنّ المدرسةَ التقليديّة كثيراً ما تُفوّت ما تستطيع مثلُ هذه العقول صنعَه.',
+      'يُحاجج النصّ بأنّ تفكيرَ صاحب الـ dyslexia يمكن أن يُغذّي إنجازاً إبداعيّاً - في الشعر والأداء وحلّ المشكلات - وأنّ المدرسةَ التقليديّة كثيراً ما تُفوّت ما تستطيع مثلُ هذه العقول صنعَه.',
   },
   {
     label: 'Encouragement of young readers',
@@ -79,9 +79,9 @@ const languageFeatures = [
     technique: 'Conversational tone',
     techniqueAr: 'النبرة الحوارية',
     explanation:
-      'Zephaniah wrote in an informal, addressing-you register that resembled spoken speech rather than journalistic prose. The effect was warmth and immediacy — the article reads as a message from someone who has been where the young reader is now.',
+      'Zephaniah wrote in an informal, addressing-you register that resembled spoken speech rather than journalistic prose. The effect was warmth and immediacy - the article reads as a message from someone who has been where the young reader is now.',
     explanationAr:
-      'كتب Zephaniah بسجلٍّ غير رسميّ يخاطب القارئ مباشرةً، أقربَ إلى الكلام المنطوق منه إلى النثر الصحفيّ. والأثر دفءٌ وفوريّة — يُقرأ المقالُ رسالةً من إنسانٍ كان حيث القارئ الشابّ الآن.',
+      'كتب Zephaniah بسجلٍّ غير رسميّ يخاطب القارئ مباشرةً، أقربَ إلى الكلام المنطوق منه إلى النثر الصحفيّ. والأثر دفءٌ وفوريّة - يُقرأ المقالُ رسالةً من إنسانٍ كان حيث القارئ الشابّ الآن.',
   },
   {
     technique: 'Direct address',
@@ -95,17 +95,17 @@ const languageFeatures = [
     technique: 'Personal anecdote',
     techniqueAr: 'الحكاية الشخصيّة',
     explanation:
-      'Zephaniah grounded his case in autobiographical detail — leaving school early, being labelled, finding alternative routes into work and writing. The authority of the piece came from lived experience rather than abstract advocacy.',
+      'Zephaniah grounded his case in autobiographical detail - leaving school early, being labelled, finding alternative routes into work and writing. The authority of the piece came from lived experience rather than abstract advocacy.',
     explanationAr:
-      'يُؤسّس Zephaniah قضيّتَه على تفاصيلَ من سيرته — ترك المدرسة مبكّراً، إلصاق الوسوم، وإيجاد مساراتٍ بديلةٍ إلى العمل والكتابة. وتنبع سلطةُ النصّ من التجربة المعيشة لا من الدعوة المجرّدة.',
+      'يُؤسّس Zephaniah قضيّتَه على تفاصيلَ من سيرته - ترك المدرسة مبكّراً، إلصاق الوسوم، وإيجاد مساراتٍ بديلةٍ إلى العمل والكتابة. وتنبع سلطةُ النصّ من التجربة المعيشة لا من الدعوة المجرّدة.',
   },
   {
     technique: 'Contrast and reframing',
     techniqueAr: 'التضادّ وإعادة التأطير',
     explanation:
-      'A central rhetorical move was the substitution of one frame for another — reading dyslexia not as a deficit but as a different ability. The piece worked by replacing the language of disability with the language of difference.',
+      'A central rhetorical move was the substitution of one frame for another - reading dyslexia not as a deficit but as a different ability. The piece worked by replacing the language of disability with the language of difference.',
     explanationAr:
-      'من أبرز الحركات البلاغيّة استبدالُ إطارٍ بآخر — قراءةُ الـ dyslexia لا قصوراً بل قدرةً مختلفة. ويعمل النصُّ باستبدال لغة الإعاقة بلغة الاختلاف.',
+      'من أبرز الحركات البلاغيّة استبدالُ إطارٍ بآخر - قراءةُ الـ dyslexia لا قصوراً بل قدرةً مختلفة. ويعمل النصُّ باستبدال لغة الإعاقة بلغة الاختلاف.',
   },
   {
     technique: 'Listing and accumulation',
@@ -143,32 +143,32 @@ const languageFeatures = [
 
 const structuralAnalysis = {
   opening:
-    'The piece opened from a position of school-era failure — Zephaniah established the negative starting point first, so that everything that followed registered as upward movement away from it.',
+    'The piece opened from a position of school-era failure - Zephaniah established the negative starting point first, so that everything that followed registered as upward movement away from it.',
   openingAr:
-    'يفتتح المقالُ من موضع إخفاقِ زمن المدرسة — يُرسّخ Zephaniah نقطةَ الانطلاق السلبيّة أوّلاً، كي يُسجَّل كلُّ ما يلي حركةً صاعدةً مبتعدةً عنها.',
+    'يفتتح المقالُ من موضع إخفاقِ زمن المدرسة - يُرسّخ Zephaniah نقطةَ الانطلاق السلبيّة أوّلاً، كي يُسجَّل كلُّ ما يلي حركةً صاعدةً مبتعدةً عنها.',
   development:
     'The text developed chronologically: school in the past, success in the present, encouragement for the future. Each section reframed the previous one, so that early failure became the precondition for later achievement rather than evidence of inadequacy.',
   developmentAr:
     'يتطوّر النصُّ زمنيّاً: المدرسةُ في الماضي، النجاحُ في الحاضر، التشجيعُ نحو المستقبل. ويُعيد كلُّ قسمٍ تأطيرَ سابقه، فيصير الإخفاقُ المبكّر شرطاً لإنجازٍ لاحق لا دليلاً على قصور.',
   climax:
-    'The structural climax was the moment of reframing — the shift from disability to difference — which transformed the article from personal memoir into general argument.',
+    'The structural climax was the moment of reframing - the shift from disability to difference - which transformed the article from personal memoir into general argument.',
   climaxAr:
-    'الذروةُ البنائيّة هي لحظةُ إعادة التأطير — الانتقالُ من الإعاقة إلى الاختلاف — التي تُحوّل المقالَ من سيرةٍ شخصيّة إلى حُجّةٍ عامّة.',
+    'الذروةُ البنائيّة هي لحظةُ إعادة التأطير - الانتقالُ من الإعاقة إلى الاختلاف - التي تُحوّل المقالَ من سيرةٍ شخصيّة إلى حُجّةٍ عامّة.',
   resolution:
     'The resolution was outward-facing: having told his own story, Zephaniah turned to the young dyslexic reader and applied the lesson directly. The article ended as a message rather than as autobiography.',
   resolutionAr:
     'الخاتمةُ خارجيّةُ الوجهة: بعد أن روى Zephaniah قصّته الخاصّة، التفت إلى القارئ الشابّ ذي الـ dyslexia وطبّق الدرسَ عليه مباشرةً. وينتهي المقال رسالةً لا سيرةً.',
   perspective:
-    'First-person throughout. The authority of the piece rested entirely on lived experience — there were no statistics or expert voices, only Zephaniah’s own testimony.',
+    'First-person throughout. The authority of the piece rested entirely on lived experience - there were no statistics or expert voices, only Zephaniah’s own testimony.',
   perspectiveAr:
-    'ضمير المتكلّم في النصّ كلِّه. تتّكئ سلطةُ المقال بالكامل على التجربة المعيشة — لا إحصاءاتٍ ولا أصواتٍ من خبراء، بل شهادةُ Zephaniah وحدها.',
+    'ضمير المتكلّم في النصّ كلِّه. تتّكئ سلطةُ المقال بالكامل على التجربة المعيشة - لا إحصاءاتٍ ولا أصواتٍ من خبراء، بل شهادةُ Zephaniah وحدها.',
   paragraphing:
     'Short paragraphs and direct sentences reflected Zephaniah’s background as a performance poet. The text was written to be spoken as much as read, with each unit landing as a discrete beat.',
   paragraphingAr:
     'الفقرات القصيرة والجمل المباشرة تعكس خلفيّة Zephaniah شاعرَ أداء. كُتب النصُّ ليُلقى بقدر ما يُقرأ، فتسقط كلُّ وحدةٍ نبضةً منفصلة.',
-  time: 'Broadly chronological — past failure, present success, future hope. The temporal structure mirrored a redemption arc, from the labels of childhood to the agency of adulthood.',
+  time: 'Broadly chronological - past failure, present success, future hope. The temporal structure mirrored a redemption arc, from the labels of childhood to the agency of adulthood.',
   timeAr:
-    'زمنيّاً في الجملة — إخفاق ماضٍ، ونجاح حاضر، وأملٌ مستقبليّ. وتعكس البنيةُ الزمنيّة قوسَ خلاصٍ ينتقل من وسوم الطفولة إلى فاعليّة سنّ الرشد.',
+    'زمنيّاً في الجملة - إخفاق ماضٍ، ونجاح حاضر، وأملٌ مستقبليّ. وتعكس البنيةُ الزمنيّة قوسَ خلاصٍ ينتقل من وسوم الطفولة إلى فاعليّة سنّ الرشد.',
   openingClosing:
     'The opening dwelt on a young person being told they were inadequate; the closing told a young person they had real capability. The structural inversion was the embodiment of the article’s argument.',
   openingClosingAr:
@@ -259,25 +259,25 @@ const examPractice = {
   q1: {
     question: 'List four things you learn about Zephaniah’s experience of school from the text.',
     questionAr: 'اذكر أربعةَ أشياء تعرفها عن تجربة Zephaniah المدرسيّة من النصّ.',
-    type: 'Retrieval — 4 marks',
-    typeAr: 'الاسترجاع — ٤ درجات',
+    type: 'Retrieval - 4 marks',
+    typeAr: 'الاسترجاع - ٤ درجات',
   },
   q2: {
     question: 'How does Zephaniah use language to challenge negative attitudes towards dyslexia?',
     questionAr: 'كيف يستعمل Zephaniah اللغةَ ليتحدّى المواقفَ السلبيّة من الـ dyslexia؟',
-    type: 'Language analysis — 12 marks',
-    typeAr: 'تحليل اللغة — ١٢ درجة',
+    type: 'Language analysis - 12 marks',
+    typeAr: 'تحليل اللغة - ١٢ درجة',
     modelOutline: [
-      'Zephaniah’s reframing of dyslexia — from disability to difference — is the article’s central rhetorical move, replacing one vocabulary with another to transform the meaning of the condition.',
+      'Zephaniah’s reframing of dyslexia - from disability to difference - is the article’s central rhetorical move, replacing one vocabulary with another to transform the meaning of the condition.',
       'Personal anecdote and direct address combine to give the piece its authority: the reader is being spoken to by someone who has lived through what is being described, rather than being lectured at by an outside expert.',
       'The piling-up of later achievements answers the earlier catalogue of school-era failures, so that the structure of the prose itself argues against the labels of childhood.',
-      'Humour and self-deprecation about his own struggles with the mechanics of writing disarm the reader and challenge the assumption that surface accuracy equals intelligence — a serious argument carried by a light tone.',
+      'Humour and self-deprecation about his own struggles with the mechanics of writing disarm the reader and challenge the assumption that surface accuracy equals intelligence - a serious argument carried by a light tone.',
     ],
     modelOutlineAr: [
-      'إعادةُ Zephaniah تأطيرَ الـ dyslexia — من إعاقةٍ إلى اختلافٍ — هي الحركةُ البلاغيّة المركزيّة للمقال، إذ تستبدل مفرداتٍ بأخرى لتُحوّل معنى الحالة.',
+      'إعادةُ Zephaniah تأطيرَ الـ dyslexia - من إعاقةٍ إلى اختلافٍ - هي الحركةُ البلاغيّة المركزيّة للمقال، إذ تستبدل مفرداتٍ بأخرى لتُحوّل معنى الحالة.',
       'تتضافر الحكايةُ الشخصيّة والخطابُ المباشر لإكساب النصّ سلطته: يُكلَّم القارئ على لسان مَن عاش ما يُوصف، لا أن يُحاضَر فيه من خبيرٍ خارجيّ.',
       'تكديسُ الإنجازات اللاحقة يُجيب عن تَعداد إخفاقات زمن المدرسة السابق، فتُحاجج بنيةُ النثر نفسها ضدّ وسوم الطفولة.',
-      'الفكاهةُ والسخريةُ من النفس بشأن متاعبه مع آلية الكتابة تُذيب تحفّظَ القارئ، وتتحدّى الافتراضَ القائل إنّ الدقّةَ السطحيّة تساوي الذكاء — حُجّةٌ جدّيّة تحملها نبرةٌ خفيفة.',
+      'الفكاهةُ والسخريةُ من النفس بشأن متاعبه مع آلية الكتابة تُذيب تحفّظَ القارئ، وتتحدّى الافتراضَ القائل إنّ الدقّةَ السطحيّة تساوي الذكاء - حُجّةٌ جدّيّة تحملها نبرةٌ خفيفة.',
     ],
   },
   q3: {
@@ -285,8 +285,8 @@ const examPractice = {
       'How does Zephaniah structure the text to move from personal experience to a message for young readers?',
     questionAr:
       'كيف يبني Zephaniah النصَّ للانتقال من التجربة الشخصيّة إلى رسالةٍ موجَّهة إلى القرّاء الشباب؟',
-    type: 'Structural analysis — 12 marks',
-    typeAr: 'التحليل البنائيّ — ١٢ درجة',
+    type: 'Structural analysis - 12 marks',
+    typeAr: 'التحليل البنائيّ - ١٢ درجة',
   },
 }
 
@@ -296,9 +296,9 @@ const comparisonLinks = [
     author: 'Chimamanda Ngozi Adichie',
     href: '/igcse/edexcel-lang/anthology/the-danger-of-a-single-story',
     reason:
-      'Both writers challenge the reductive single story others have created about them — Adichie as an African woman, Zephaniah as a dyslexic person. Compare how each uses personal experience to dismantle stereotypes.',
+      'Both writers challenge the reductive single story others have created about them - Adichie as an African woman, Zephaniah as a dyslexic person. Compare how each uses personal experience to dismantle stereotypes.',
     reasonAr:
-      'كلا الكاتبَين يتحدّى القصّةَ الواحدة المُختزِلة التي صنعها عنه الآخرون — Adichie امرأةً إفريقيّة، وZephaniah شخصاً ذا dyslexia. قارن كيف يوظّف كلٌّ منهما التجربةَ الشخصيّة لتفكيك الصور النمطيّة.',
+      'كلا الكاتبَين يتحدّى القصّةَ الواحدة المُختزِلة التي صنعها عنه الآخرون - Adichie امرأةً إفريقيّة، وZephaniah شخصاً ذا dyslexia. قارن كيف يوظّف كلٌّ منهما التجربةَ الشخصيّة لتفكيك الصور النمطيّة.',
     themes: ['Identity', 'Stereotypes', 'Self-definition'],
     themesAr: ['الهويّة', 'الصور النمطيّة', 'تعريف الذات'],
   },
@@ -318,9 +318,9 @@ const comparisonLinks = [
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      'Both texts celebrate the power of human will. Compare Ralston’s physical survival with Zephaniah’s intellectual and emotional survival — both refuse the labels others place on them.',
+      'Both texts celebrate the power of human will. Compare Ralston’s physical survival with Zephaniah’s intellectual and emotional survival - both refuse the labels others place on them.',
     reasonAr:
-      'يحتفي النصّان بقوّة الإرادة الإنسانيّة. قارن نجاةَ Ralston الجسديّة بنجاة Zephaniah الفكريّة والعاطفيّة — كلاهما يرفض الوسومَ التي يفرضها عليه الآخرون.',
+      'يحتفي النصّان بقوّة الإرادة الإنسانيّة. قارن نجاةَ Ralston الجسديّة بنجاة Zephaniah الفكريّة والعاطفيّة - كلاهما يرفض الوسومَ التي يفرضها عليه الآخرون.',
     themes: ['Resilience', 'Self-belief', 'Overcoming adversity'],
     themesAr: ['الصمود', 'الثقة بالنفس', 'تجاوز الشدائد'],
   },
@@ -354,8 +354,8 @@ export default async function YoungAndDyslexicPage() {
             <p className="text-body-sm text-muted-foreground">
               Benjamin Zephaniah (1958&ndash;2023) &middot;{' '}
               {ar
-                ? 'مقال رأي (Guardian، 2017 — مُكيَّف للمختارات)'
-                : 'Opinion article (Guardian, 2017 — adapted for the anthology)'}
+                ? 'مقال رأي (Guardian، 2017 - مُكيَّف للمختارات)'
+                : 'Opinion article (Guardian, 2017 - adapted for the anthology)'}
             </p>
             <div className="mt-1.5 flex flex-wrap gap-1.5">
               <Badge variant="secondary" className="text-[0.65rem]">
@@ -394,8 +394,8 @@ export default async function YoungAndDyslexicPage() {
             <p>
               <strong className="text-foreground">{await t('anth_text.rebuilt_label')}</strong>{' '}
               {ar
-                ? 'أُعيد بناء هذه الصفحة لإزالة الاقتباسات الحرفيّة التي تعذّر التأكّد منها قبالةَ مصدرٍ أوّليّ. والنقاش الآن موضوعيّ. للحصول على الصياغة المدروسة، يلزم الطلابَ دائماً الرجوعُ إلى مختارات Pearson Edexcel IGCSE المرخّصة (ISBN 978-1-446-93108-0) — يُصحّح الممتحنون قبالةَ نصّ المختارات.'
-                : 'This page was rebuilt to remove direct quotations that could not be confidently verified against a primary source. Discussion is now thematic. For the studied wording, students should always consult the licensed Pearson Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0) — examiners mark against the anthology text.'}
+                ? 'أُعيد بناء هذه الصفحة لإزالة الاقتباسات الحرفيّة التي تعذّر التأكّد منها قبالةَ مصدرٍ أوّليّ. والنقاش الآن موضوعيّ. للحصول على الصياغة المدروسة، يلزم الطلابَ دائماً الرجوعُ إلى مختارات Pearson Edexcel IGCSE المرخّصة (ISBN 978-1-446-93108-0) - يُصحّح الممتحنون قبالةَ نصّ المختارات.'
+                : 'This page was rebuilt to remove direct quotations that could not be confidently verified against a primary source. Discussion is now thematic. For the studied wording, students should always consult the licensed Pearson Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0) - examiners mark against the anthology text.'}
             </p>
           </div>
         </div>
@@ -415,7 +415,7 @@ export default async function YoungAndDyslexicPage() {
                   النسخة <strong className="text-foreground">المُكيَّفة</strong> المطبوعة في مختارات
                   Edexcel IGCSE (ISBN 978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة المتاحة
                   مجّاناً (المنشورة من كثيرٍ من مواقع المراجعة) تختلف في الحذف والترتيب وتفاصيل
-                  المفردات. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel — يُصحّح
+                  المفردات. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel - يُصحّح
                   الممتحنون قبالةَ نصّ المختارات.
                 </>
               ) : (
@@ -425,7 +425,7 @@ export default async function YoungAndDyslexicPage() {
                   Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available{' '}
                   <em>Guardian</em> original (linked from many revision sites) differs in cuts,
                   re-orderings, and minor word choice. Always use the anthology version when
-                  answering Edexcel exam questions — examiners will mark against the anthology text.
+                  answering Edexcel exam questions - examiners will mark against the anthology text.
                 </>
               )}
             </p>
@@ -435,13 +435,13 @@ export default async function YoungAndDyslexicPage() {
               </strong>{' '}
               {ar ? (
                 <>
-                  Benjamin Zephaniah (1958&ndash;2023) — الحقوقُ الآن بحوزة ورثته. © الورثة عبر
+                  Benjamin Zephaniah (1958&ndash;2023) - الحقوقُ الآن بحوزة ورثته. © الورثة عبر
                   Pearson Education. الصياغاتُ الموجزة في هذه الصفحة إشاراتٌ قصيرة بمقتضى الاستعمال
                   العادل لأغراض النقد والمراجعة والتعليم.
                 </>
               ) : (
                 <>
-                  Benjamin Zephaniah (1958&ndash;2023) — rights now held by his estate. &copy;
+                  Benjamin Zephaniah (1958&ndash;2023) - rights now held by his estate. &copy;
                   estate via Pearson Education. Brief paraphrases on this page are short
                   fair-dealing references for the purposes of criticism, review and education.
                 </>
@@ -473,7 +473,7 @@ export default async function YoungAndDyslexicPage() {
                 في يناير 2023؛ والحقوق الآن بحوزة ورثته.
               </p>
               <p>
-                يعمل المقال سيرةً وبيانَ مبادئ في آنٍ معاً — تجربةٌ شخصيّة تُستعمل محرّكاً لحُجّةٍ
+                يعمل المقال سيرةً وبيانَ مبادئ في آنٍ معاً - تجربةٌ شخصيّة تُستعمل محرّكاً لحُجّةٍ
                 عامّة حول كيف ينبغي أن تُفهم الـ dyslexia، وكيف يُخاطَب الشبابُ من ذويها.
               </p>
             </>
@@ -492,7 +492,7 @@ export default async function YoungAndDyslexicPage() {
                 Zephaniah died in January 2023; rights now sit with his estate.
               </p>
               <p>
-                The piece functions as both memoir and manifesto — personal experience used as the
+                The piece functions as both memoir and manifesto - personal experience used as the
                 engine of a public argument about how dyslexia should be understood and how dyslexic
                 young people should be addressed.
               </p>
@@ -531,8 +531,8 @@ export default async function YoungAndDyslexicPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           {ar
-            ? 'الخصائصُ اللغويّة الرئيسة عند Zephaniah وأثرها في القارئ. النقاشُ موضوعيّ — وعلى الطلاب أن يستقوا الصياغة المدروسة من المختارات المرخّصة.'
-            : 'Key language features used by Zephaniah and their effects on the reader. Discussion is thematic — students should source the studied wording from the licensed anthology.'}
+            ? 'الخصائصُ اللغويّة الرئيسة عند Zephaniah وأثرها في القارئ. النقاشُ موضوعيّ - وعلى الطلاب أن يستقوا الصياغة المدروسة من المختارات المرخّصة.'
+            : 'Key language features used by Zephaniah and their effects on the reader. Discussion is thematic - students should source the studied wording from the licensed anthology.'}
         </p>
         <div className="space-y-4">
           {languageFeatures.map((f) => (
@@ -752,18 +752,18 @@ export default async function YoungAndDyslexicPage() {
               <strong className="text-foreground">تحذير نسخة المختارات:</strong> هذا النصّ هو النسخة{' '}
               <strong>المُكيَّفة</strong> المطبوعة في مختارات Edexcel IGCSE (ISBN
               978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة المتاحة مجّاناً تختلف في الحذف
-              والترتيب وتفاصيل المفردات. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel —
+              والترتيب وتفاصيل المفردات. استعمل دائماً نسخةَ المختارات حين تجيب على أسئلة Edexcel -
               يُصحّح الممتحنون قبالةَ نصّ المختارات.
             </p>
             <p className="mt-2">
               <strong className="text-foreground">إشعار الحقوق:</strong> Benjamin Zephaniah
-              (1958&ndash;2023) — الحقوقُ الآن بحوزة ورثته. © الورثة عبر Pearson Education.
+              (1958&ndash;2023) - الحقوقُ الآن بحوزة ورثته. © الورثة عبر Pearson Education.
               الصياغاتُ الموجزة في هذه الصفحة إشاراتٌ قصيرة بمقتضى الاستعمال العادل لأغراض النقد
               والمراجعة والتعليم؛ وتتطلّب اختياراتُ المختارات الكاملة طبعةً مدرسيّة مرخّصة من
               Edexcel.
             </p>
             <p className="mt-2">
-              متوافق مع مواصفات Pearson Edexcel 4EA1 · Paper 1 Section A — مختارات النثر غير
+              متوافق مع مواصفات Pearson Edexcel 4EA1 · Paper 1 Section A - مختارات النثر غير
               الروائيّ
             </p>
           </>
@@ -774,17 +774,17 @@ export default async function YoungAndDyslexicPage() {
               the <strong>adapted</strong> version printed in the Edexcel IGCSE Anthology (ISBN
               978-1-446-93108-0). The freely-available <em>Guardian</em> original differs in cuts,
               re-orderings, and minor word choice. Always use the anthology version when answering
-              Edexcel exam questions — examiners will mark against the anthology text.
+              Edexcel exam questions - examiners will mark against the anthology text.
             </p>
             <p className="mt-2">
               <strong className="text-foreground">Rights notice:</strong> Benjamin Zephaniah
-              (1958&ndash;2023) — rights now held by his estate. &copy; estate via Pearson
+              (1958&ndash;2023) - rights now held by his estate. &copy; estate via Pearson
               Education. Brief paraphrases on this page are short fair-dealing references used for
               the purposes of criticism, review and education; full anthology selections require an
               Edexcel-licensed school edition.
             </p>
             <p className="mt-2">
-              Aligned with Pearson Edexcel specification 4EA1 &middot; Paper 1 Section A — Anthology
+              Aligned with Pearson Edexcel specification 4EA1 &middot; Paper 1 Section A - Anthology
               Non-Fiction
             </p>
           </>

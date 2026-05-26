@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 const AUDIENCE = [
   { icon: GraduationCap, label: 'Heads of English and English teaching teams' },
   { icon: Building2, label: 'Senior Leadership Teams (SLT) reviewing English provision' },
-  { icon: School, label: 'British curriculum schools — UK and international' },
+  { icon: School, label: 'British curriculum schools - UK and international' },
   { icon: Target, label: 'GCSE and IGCSE cohorts preparing for terminal exams' },
   { icon: Brain, label: 'KS3 intervention groups closing skills gaps' },
   { icon: Globe2, label: 'EAL learners where the school needs structured English support' },
@@ -56,20 +56,20 @@ const AUDIENCE = [
 const PHASE_1 = {
   number: 1,
   title: 'Setup and baseline',
-  duration: 'Weeks 1–3',
+  duration: 'Weeks 1-3',
   points: [
     'Confirm the year group(s) and cohort the pilot will cover',
     'Onboard nominated teachers and create student accounts in bulk',
     'Select the exam board or pathway content should align to',
     'Run baseline reading, writing and practice tasks across the cohort',
-    'Identify priority skill gaps — language analysis, structure, AO coverage, vocabulary, reading inference',
+    'Identify priority skill gaps - language analysis, structure, AO coverage, vocabulary, reading inference',
   ],
 }
 
 const PHASE_2 = {
   number: 2,
   title: 'Targeted practice',
-  duration: 'Weeks 4–11',
+  duration: 'Weeks 4-11',
   points: [
     'Assign practice tasks aligned to the gaps identified in Phase 1',
     'Use AI-assisted feedback to give students faster formative responses',
@@ -82,7 +82,7 @@ const PHASE_2 = {
 const PHASE_3 = {
   number: 3,
   title: 'Review and impact report',
-  duration: 'Weeks 12–13',
+  duration: 'Weeks 12-13',
   points: [
     'Usage summary across teachers and student cohort',
     'Skill-gap trends from baseline to end of pilot',
@@ -96,7 +96,7 @@ const PHASE_3 = {
 const WHAT_YOU_RECEIVE = [
   'Teacher access for every nominated member of the English department',
   'Student access for every learner in the agreed cohort',
-  'Onboarding support — guided setup walkthrough and an admin checklist',
+  'Onboarding support - guided setup walkthrough and an admin checklist',
   'Reporting dashboard for the cohort and per-class breakdowns',
   'A written pilot review report at the end of the 90 days',
   'A recommended intervention plan for the next academic block',
@@ -127,7 +127,7 @@ const SUCCESS_METRICS = [
   {
     icon: PieChart,
     label: 'Skill gaps identified',
-    desc: 'Specific weaknesses surfaced by the analytics — by class and student.',
+    desc: 'Specific weaknesses surfaced by the analytics - by class and student.',
   },
   {
     icon: Brain,
@@ -214,7 +214,7 @@ export default function SchoolPilotPackPage() {
             A. Who it is for
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-8">
-            Built for English departments — UK and international British curriculum
+            Built for English departments - UK and international British curriculum
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {AUDIENCE.map((row) => (
@@ -306,7 +306,7 @@ export default function SchoolPilotPackPage() {
             What we measure during the pilot
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-8">
-            We measure usage, engagement and identifiable skill gaps — not grade improvement. A
+            We measure usage, engagement and identifiable skill gaps - not grade improvement. A
             12-week pilot is too short to claim a causal grade lift, and we will not present it as
             one.
           </p>
@@ -331,7 +331,7 @@ export default function SchoolPilotPackPage() {
                   We do not promise grade improvement
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Grade outcomes depend on too many factors outside the platform — cohort, teaching
+                  Grade outcomes depend on too many factors outside the platform - cohort, teaching
                   time, teacher experience, prior attainment, exam day performance. We measure
                   engagement, gap-identification and teacher-reported impact, and let the school
                   decide whether that adds up to grade change.
@@ -363,7 +363,7 @@ export default function SchoolPilotPackPage() {
               </p>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
                 Recurring annual licence, sized to cohort and scope. The first 10 founding schools
-                lock in this preferential rate for 2–3 years.
+                lock in this preferential rate for 2-3 years.
               </p>
             </Card>
 
@@ -433,7 +433,7 @@ export default function SchoolPilotPackPage() {
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
             Tell us your year group, cohort size and exam board. We will come back within one
-            working day with a tailored pilot proposal — no obligation.
+            working day with a tailored pilot proposal - no obligation.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button size="lg" className="text-base px-8 h-12" render={<Link href="/contact" />}>

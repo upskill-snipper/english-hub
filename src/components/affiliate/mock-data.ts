@@ -83,7 +83,7 @@ export function getConversions(): AffiliateConversion[] {
 
 export function seedMockData() {
   if (typeof window === 'undefined') return
-  // Seed sample clicks/conversions if empty — purely for demo
+  // Seed sample clicks/conversions if empty - purely for demo
   if (!window.localStorage.getItem(STORAGE_KEYS.clicks)) {
     const sampleClicks: AffiliateClick[] = Array.from({ length: 142 }, (_, i) => ({
       id: `click-${i}`,

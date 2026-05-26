@@ -1,7 +1,7 @@
 // ─── Edexcel GCSE English Language Mark Scheme ──────────────────────────────
-// Paper 1: Fiction and Imaginative Writing — 1h45, 64 marks.
+// Paper 1: Fiction and Imaginative Writing - 1h45, 64 marks.
 //   Q1 AO1 4 + Q2 AO2 8 + Q3 AO2 8 + Q4 AO4 20 + Q5 AO5 16 + AO6 8 = 64
-// Paper 2: Non-fiction and Transactional Writing — 2h05, 96 marks.
+// Paper 2: Non-fiction and Transactional Writing - 2h05, 96 marks.
 //   Q1 AO1 4 + Q2 AO1 8 + Q3 AO2 12 + Q4 AO3 16 + Q5 (AO5 16 + AO6 12)
 //     + Q6 (AO5 16 + AO6 12) = 96
 // Based on the Pearson Edexcel 1EN0 specification. Descriptors are summarised
@@ -40,14 +40,14 @@ function scaleAO(
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PAPER 1 — Fiction and Imaginative Writing
+// PAPER 1 - Fiction and Imaginative Writing
 // ═══════════════════════════════════════════════════════════════════════════
 
 // ─── Reading AOs (Section A) ───────────────────────────────────────────────
 
 const p1Ao1: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 — Identify and interpret',
+  label: 'AO1 - Identify and interpret',
   description:
     'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
   maxMarks: 4,
@@ -92,7 +92,7 @@ const p1Ao1: AssessmentObjective = {
 
 const p1Ao2Language: AssessmentObjective = {
   id: 'AO2',
-  label: 'AO2 — Analyse language',
+  label: 'AO2 - Analyse language',
   description:
     'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.',
   maxMarks: 8,
@@ -151,7 +151,7 @@ const p1Ao2Language: AssessmentObjective = {
 
 const p1Ao2Structure: AssessmentObjective = {
   id: 'AO2',
-  label: 'AO2 — Analyse structure',
+  label: 'AO2 - Analyse structure',
   description:
     'Explain, comment on and analyse how writers use structure to achieve effects and influence readers.',
   maxMarks: 8,
@@ -205,7 +205,7 @@ const p1Ao2Structure: AssessmentObjective = {
 
 const p1Ao4Evaluation: AssessmentObjective = {
   id: 'AO4',
-  label: 'AO4 — Evaluate critically',
+  label: 'AO4 - Evaluate critically',
   description: 'Evaluate texts critically and support this with appropriate textual references.',
   maxMarks: 20,
   weighting: 20 / 64,
@@ -255,7 +255,7 @@ const p1Ao4Evaluation: AssessmentObjective = {
 
 const p1Ao5Writing: AssessmentObjective = {
   id: 'AO5',
-  label: 'AO5 — Content and organisation',
+  label: 'AO5 - Content and organisation',
   description:
     'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
   maxMarks: 16,
@@ -311,7 +311,7 @@ const p1Ao5Writing: AssessmentObjective = {
 
 const p1Ao6Technical: AssessmentObjective = {
   id: 'AO6',
-  label: 'AO6 — Technical accuracy',
+  label: 'AO6 - Technical accuracy',
   description:
     'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   maxMarks: 8,
@@ -426,14 +426,14 @@ export const edexcelLangPaper1: MarkScheme = {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PAPER 2 — Non-fiction and Transactional Writing
+// PAPER 2 - Non-fiction and Transactional Writing
 // ═══════════════════════════════════════════════════════════════════════════
 
 // ─── Reading AOs (Section A) ───────────────────────────────────────────────
 
 const p2Ao1Retrieval: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 — Identify and interpret',
+  label: 'AO1 - Identify and interpret',
   description:
     'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
   maxMarks: 4,
@@ -476,7 +476,7 @@ const p2Ao1Retrieval: AssessmentObjective = {
 
 const p2Ao1Synthesis: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 — Summarise and synthesise',
+  label: 'AO1 - Summarise and synthesise',
   description:
     'Select and synthesise evidence from different texts to summarise similarities or differences.',
   maxMarks: 8,
@@ -522,7 +522,7 @@ const p2Ao1Synthesis: AssessmentObjective = {
 
 const p2Ao2Language: AssessmentObjective = {
   id: 'AO2',
-  label: 'AO2 — Analyse language',
+  label: 'AO2 - Analyse language',
   description:
     'Explain, comment on and analyse how writers use language to achieve effects and influence readers, using relevant subject terminology.',
   maxMarks: 12,
@@ -572,7 +572,7 @@ const p2Ao2Language: AssessmentObjective = {
 
 const p2Ao3Comparison: AssessmentObjective = {
   id: 'AO3',
-  label: "AO3 — Compare writers' ideas and perspectives",
+  label: "AO3 - Compare writers' ideas and perspectives",
   description:
     "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
   maxMarks: 16,
@@ -621,7 +621,7 @@ const p2Ao3Comparison: AssessmentObjective = {
 
 const p2Ao5Writing: AssessmentObjective = {
   id: 'AO5',
-  label: 'AO5 — Content and organisation',
+  label: 'AO5 - Content and organisation',
   description:
     'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
   maxMarks: 24,
@@ -677,7 +677,7 @@ const p2Ao5Writing: AssessmentObjective = {
 
 const p2Ao6Technical: AssessmentObjective = {
   id: 'AO6',
-  label: 'AO6 — Technical accuracy',
+  label: 'AO6 - Technical accuracy',
   description:
     'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   maxMarks: 16,

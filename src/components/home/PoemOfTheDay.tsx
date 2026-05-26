@@ -11,7 +11,7 @@ export default function PoemOfTheDay() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="rounded-2xl bg-cream-100/[0.05] border border-cream-200/10 p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-          {/* Left — poem text (always English — primary source) */}
+          {/* Left - poem text (always English - primary source) */}
           <div className="font-serif text-lg sm:text-xl leading-loose text-cream-200/80 italic">
             <p>
               I wandered lonely as a{' '}
@@ -41,7 +41,7 @@ export default function PoemOfTheDay() {
             <p className="mt-4 text-sm text-cream-200/40 not-italic">{t('home.poem.author')}</p>
           </div>
 
-          {/* Right — details */}
+          {/* Right - details */}
           <div className="flex flex-col justify-center">
             <p className="text-xs font-mono tracking-widest uppercase text-cream-200/40 mb-3">
               {t('home.poem.kicker')}

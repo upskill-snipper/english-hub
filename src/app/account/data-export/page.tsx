@@ -58,7 +58,7 @@ export default function DataExportPage() {
           const data = await res.json()
           if (typeof data?.error === 'string') message = data.error
         } catch {
-          // Body wasn't JSON — keep the default message.
+          // Body wasn't JSON - keep the default message.
         }
 
         if (res.status === 429) {

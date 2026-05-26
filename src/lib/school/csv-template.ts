@@ -6,10 +6,10 @@
  * the top of the file are `#`-prefixed so the parser ignores them. We ship a
  * two-row example so admins see the expected shape without reading the docs.
  *
- * Keep this pure — no Node APIs, no dynamic imports. Edge-runtime safe.
+ * Keep this pure - no Node APIs, no dynamic imports. Edge-runtime safe.
  */
 
-export const STUDENT_CSV_TEMPLATE_FILENAME = 'students-template.csv';
+export const STUDENT_CSV_TEMPLATE_FILENAME = 'students-template.csv'
 
 /**
  * Returns the canonical CSV template string. Lines beginning with `#` are
@@ -18,7 +18,7 @@ export const STUDENT_CSV_TEMPLATE_FILENAME = 'students-template.csv';
  */
 export function getStudentCsvTemplate(): string {
   const lines = [
-    '# English Hub — student bulk-upload template',
+    '# English Hub - student bulk-upload template',
     '# Columns: firstName,lastName,email,yearGroup,classCode,role',
     '# - All five columns before "role" are REQUIRED.',
     '# - "role" is optional and defaults to STUDENT. Any other value is rejected.',
@@ -29,8 +29,8 @@ export function getStudentCsvTemplate(): string {
     'firstName,lastName,email,yearGroup,classCode,role',
     'Alex,Morgan,alex.morgan@example.school.uk,Year 10,10A,STUDENT',
     'Priya,Patel,priya.patel@example.school.uk,Year 11,11C,STUDENT',
-  ];
+  ]
   // Use CRLF so the file opens cleanly in Excel on Windows. The parser
   // handles either style.
-  return lines.join('\r\n') + '\r\n';
+  return lines.join('\r\n') + '\r\n'
 }

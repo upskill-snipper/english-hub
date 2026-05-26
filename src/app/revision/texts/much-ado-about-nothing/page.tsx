@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -11,12 +11,12 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Much Ado About Nothing GCSE revision — Shakespeare',
+      'Much Ado About Nothing revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Much Ado About Nothing GCSE revision - Shakespeare',
   },
-  title: 'Much Ado About Nothing revision guide — themes, characters, key quotes',
+  title: 'Much Ado About Nothing revision guide - themes, characters, key quotes',
   description:
-    "Much Ado About Nothing GCSE revision — Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",
+    "Much Ado About Nothing GCSE revision - Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/much-ado-about-nothing',
   },
@@ -610,7 +610,7 @@ export default async function MuchAdoAboutNothingPage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="Much Ado About Nothing — Complete GCSE Study Guide"
+        name="Much Ado About Nothing - Complete GCSE Study Guide"
         description="In-depth study guide for Much Ado About Nothing covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -618,7 +618,7 @@ export default async function MuchAdoAboutNothingPage() {
         url="https://theenglishhub.app/revision/texts/much-ado-about-nothing"
       />
       <CourseJsonLd
-        name="Much Ado About Nothing — Complete GCSE Study Guide"
+        name="Much Ado About Nothing - Complete GCSE Study Guide"
         description="In-depth study guide for Much Ado About Nothing covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

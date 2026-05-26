@@ -8,7 +8,7 @@ import { RETENTION_PERIODS } from '@/lib/data-retention'
 
 // ─── POST: Parent requests deletion of their child's account data ─────────
 //
-// Children's Code Standard 11 — Parental Controls
+// Children's Code Standard 11 - Parental Controls
 // Parents/guardians can request deletion of their child's data.
 // This triggers a soft-delete with a 30-day grace period before
 // hard-deletion is carried out by the data-retention cron.
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
         firstName: true,
       },
     })
-    // Fallback for pre-backfill or mismatched rows — logged as a warning.
+    // Fallback for pre-backfill or mismatched rows - logged as a warning.
     const parent =
       parentBySupabaseId ??
       (await prisma.user.findUnique({
@@ -158,7 +158,7 @@ export async function POST(request: NextRequest) {
             gracePeriodDays: RETENTION_PERIODS.ACCOUNT_GRACE_PERIOD_DAYS,
             gracePeriodEndsAt: gracePeriodEndsAt.toISOString(),
             deletionMethod: 'parent_portal',
-            complianceStandard: "Children's Code Standard 11 – Parental Controls",
+            complianceStandard: "Children's Code Standard 11 - Parental Controls",
             requestedAt: now.toISOString(),
           },
           ipAddress:

@@ -44,7 +44,7 @@ export function resolveContentDir(relativeDir: string): string {
 /**
  * Return the slugs of every `.mdx` file in `content/<relativeDir>`.
  *
- * Returns an empty array if the directory does not exist — sibling
+ * Returns an empty array if the directory does not exist - sibling
  * surfaces under construction can still build before any content lands.
  * Hidden files (starting with `.`) and non-`.mdx` files are ignored.
  */
@@ -61,7 +61,7 @@ export function listMdxSlugs(relativeDir: string): string[] {
 /**
  * Read and parse one MDX file by `slug`.
  *
- * Returns `null` if the file is missing — callers should treat that as a
+ * Returns `null` if the file is missing - callers should treat that as a
  * 404. Throws if the file exists but cannot be read or parsed.
  */
 export function readMdxFile<TFrontmatter extends Record<string, unknown>>(
@@ -85,7 +85,7 @@ export function readMdxFile<TFrontmatter extends Record<string, unknown>>(
 /**
  * Read and parse every `.mdx` file in `content/<relativeDir>`.
  *
- * Each entry is parsed lazily — if a single file fails to parse the error
+ * Each entry is parsed lazily - if a single file fails to parse the error
  * propagates so the build fails loudly rather than silently dropping a
  * post.
  */

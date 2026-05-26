@@ -80,7 +80,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Provide prompt cards with sentence starters: 'Power can mean...', 'Conflict might involve...'",
         core: 'Students independently generate and categorise their ideas before pair discussion.',
         stretch:
-          'Students consider how power and conflict might be connected — can you have one without the other?',
+          'Students consider how power and conflict might be connected - can you have one without the other?',
       },
       resources: ['Mini-whiteboards', 'Power & Conflict prompt cards (support tier)'],
     },
@@ -89,13 +89,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Meet the Anthology: Poem Sorting Challenge',
         duration: '20 minutes',
         instructions:
-          "Distribute the 'Poem Profile Cards' — each card has the poem title, poet name, a one-sentence summary, date of composition, and one key quotation. In groups of three, students sort the fifteen cards into thematic groups of their own devising. Groups must create labels for their categories and be prepared to justify their choices. Teacher circulates, questioning groupings and encouraging debate. After 12 minutes, groups present their categories to the class. Teacher then reveals the commonly used clusters (Power of Individuals, War & Suffering, Reality of Conflict, Memory & Identity, Power of Place, Identity & Power Structures) and students compare these with their own groupings.",
+          "Distribute the 'Poem Profile Cards' - each card has the poem title, poet name, a one-sentence summary, date of composition, and one key quotation. In groups of three, students sort the fifteen cards into thematic groups of their own devising. Groups must create labels for their categories and be prepared to justify their choices. Teacher circulates, questioning groupings and encouraging debate. After 12 minutes, groups present their categories to the class. Teacher then reveals the commonly used clusters (Power of Individuals, War & Suffering, Reality of Conflict, Memory & Identity, Power of Place, Identity & Power Structures) and students compare these with their own groupings.",
         differentiation: {
           support:
             'Provide pre-labelled category headings and ask students to sort the cards into them.',
           core: 'Students create their own categories and justify each placement with reference to the summary and quotation.',
           stretch:
-            'Students identify poems that could sit in multiple categories and explain the ambiguity — this mirrors the flexibility needed in the exam.',
+            'Students identify poems that could sit in multiple categories and explain the ambiguity - this mirrors the flexibility needed in the exam.',
         },
         resources: [
           'Poem Profile Cards (set of 15 per group)',
@@ -107,7 +107,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Exam Structure & Comparison Skills Introduction',
         duration: '20 minutes',
         instructions:
-          "Display a sample Paper 2 Section B question on the board. Walk students through the mark scheme using the AQA assessment objectives: AO1 (response to poems), AO2 (language, form, structure), AO3 (context). Model the concept of a 'comparison connector' — words and phrases that link analysis of one poem to another (similarly, in contrast, whereas, both poets, however). Students then complete a 'Comparison Connector' worksheet: given two short quotations from different poems on the theme of power, they write three sentences using different comparison connectors. Share exemplar responses under the visualiser.",
+          "Display a sample Paper 2 Section B question on the board. Walk students through the mark scheme using the AQA assessment objectives: AO1 (response to poems), AO2 (language, form, structure), AO3 (context). Model the concept of a 'comparison connector' - words and phrases that link analysis of one poem to another (similarly, in contrast, whereas, both poets, however). Students then complete a 'Comparison Connector' worksheet: given two short quotations from different poems on the theme of power, they write three sentences using different comparison connectors. Share exemplar responses under the visualiser.",
         differentiation: {
           support:
             "Provide a sentence frame: '[Poem A] presents power as ___ through the use of ___. Similarly/In contrast, [Poem B] ___.'",
@@ -151,7 +151,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Explain what is meant by a 'thematic cluster' and give an example using two poems from the anthology.",
         lines: 5,
         modelAnswer:
-          "A thematic cluster is a group of poems linked by a shared theme or idea. For example, 'Ozymandias' and 'My Last Duchess' both explore the power of individuals — Ozymandias was a tyrannical pharaoh whose power has decayed, while the Duke in Browning's poem exerts controlling, possessive power over his wife. Grouping poems thematically helps build comparison skills for the exam.",
+          "A thematic cluster is a group of poems linked by a shared theme or idea. For example, 'Ozymandias' and 'My Last Duchess' both explore the power of individuals - Ozymandias was a tyrannical pharaoh whose power has decayed, while the Duke in Browning's poem exerts controlling, possessive power over his wife. Grouping poems thematically helps build comparison skills for the exam.",
         marks: 4,
       },
       {
@@ -159,7 +159,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'What are the three assessment objectives tested in Paper 2 Section B? Explain each briefly.',
         lines: 6,
         modelAnswer:
-          'AO1: Read, understand and respond to texts — students must use textual references to support interpretations. AO2: Analyse the language, form and structure used by a writer to create meanings and effects — students must use subject terminology. AO3: Show understanding of the relationships between texts and the contexts in which they were written.',
+          'AO1: Read, understand and respond to texts - students must use textual references to support interpretations. AO2: Analyse the language, form and structure used by a writer to create meanings and effects - students must use subject terminology. AO3: Show understanding of the relationships between texts and the contexts in which they were written.',
         marks: 6,
       },
       {
@@ -190,7 +190,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
     teacherNotes: [
       'This lesson is designed as the unit opener. No prior knowledge of the poems is assumed.',
       'Laminate the Poem Profile Cards for reuse across classes.',
-      'The thematic clusters used here are a guide — the exam can pair any two poems, so encourage flexibility.',
+      'The thematic clusters used here are a guide - the exam can pair any two poems, so encourage flexibility.',
       'Collect exit tickets to identify students who may need additional support with the comparison skill focus in Lesson 8.',
       'Consider displaying the class mind-map on the wall as a reference throughout the unit.',
     ],
@@ -254,7 +254,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Deep Dive: Ozymandias by Percy Bysshe Shelley',
         duration: '18 minutes',
         instructions:
-          "Read 'Ozymandias' aloud twice — once for understanding, once for annotation. Students annotate a printed copy focusing on: (1) the narrative frame — who is telling the story and why this matters; (2) the description of the statue — 'shattered visage', 'wrinkled lip', 'sneer of cold command'; (3) the irony of the inscription versus the 'lone and level sands'; (4) the unconventional sonnet form — broken structure mirroring broken power. Teacher models analysis of one quotation on the board using PEEL (Point, Evidence, Explain, Link to context). Students then independently write a PEEL paragraph on a second quotation. Context to embed: Shelley was a Romantic poet who opposed tyranny and believed in the power of nature over human authority.",
+          "Read 'Ozymandias' aloud twice - once for understanding, once for annotation. Students annotate a printed copy focusing on: (1) the narrative frame - who is telling the story and why this matters; (2) the description of the statue - 'shattered visage', 'wrinkled lip', 'sneer of cold command'; (3) the irony of the inscription versus the 'lone and level sands'; (4) the unconventional sonnet form - broken structure mirroring broken power. Teacher models analysis of one quotation on the board using PEEL (Point, Evidence, Explain, Link to context). Students then independently write a PEEL paragraph on a second quotation. Context to embed: Shelley was a Romantic poet who opposed tyranny and believed in the power of nature over human authority.",
         differentiation: {
           support:
             'Provide a pre-annotated version with three key quotations highlighted and a PEEL frame with sentence starters.',
@@ -272,13 +272,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Deep Dive: My Last Duchess by Robert Browning',
         duration: '18 minutes',
         instructions:
-          "Read 'My Last Duchess' aloud (teacher or audio recording), pausing at key moments for think-aloud annotation. Students annotate focusing on: (1) the dramatic monologue form — the Duke controls the narrative just as he controlled the Duchess; (2) key quotations — 'That's my last Duchess painted on the wall', 'I gave commands; then all smiles stopped together'; (3) the use of enjambment and caesura to create the Duke's conversational yet sinister tone; (4) the rhyming couplets contained within iambic pentameter suggesting the Duke's desire for order and control. Students write a PEEL paragraph analysing how Browning presents the Duke's power. Context to embed: Based on the real Duke of Ferrara in Renaissance Italy; Browning critiques patriarchal power and the treatment of women as possessions.",
+          "Read 'My Last Duchess' aloud (teacher or audio recording), pausing at key moments for think-aloud annotation. Students annotate focusing on: (1) the dramatic monologue form - the Duke controls the narrative just as he controlled the Duchess; (2) key quotations - 'That's my last Duchess painted on the wall', 'I gave commands; then all smiles stopped together'; (3) the use of enjambment and caesura to create the Duke's conversational yet sinister tone; (4) the rhyming couplets contained within iambic pentameter suggesting the Duke's desire for order and control. Students write a PEEL paragraph analysing how Browning presents the Duke's power. Context to embed: Based on the real Duke of Ferrara in Renaissance Italy; Browning critiques patriarchal power and the treatment of women as possessions.",
         differentiation: {
           support:
             'Provide a guided annotation sheet with arrows pointing to key lines and prompts for what to notice.',
           core: 'Students annotate and write a PEEL paragraph on a quotation of their choice.',
           stretch:
-            "Students analyse what the Duke reveals unintentionally — how does Browning use the dramatic monologue form to expose the Duke's flaws to the reader while the Duke remains unaware?",
+            "Students analyse what the Duke reveals unintentionally - how does Browning use the dramatic monologue form to expose the Duke's flaws to the reader while the Duke remains unaware?",
         },
         resources: [
           "Printed copy of 'My Last Duchess'",
@@ -309,7 +309,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "What is the effect of the narrative frame in 'Ozymandias'? Why does Shelley have a traveller tell the story rather than the speaker?",
         lines: 5,
         modelAnswer:
-          "The narrative frame distances the reader from Ozymandias, emphasising how far removed his power is from the present day. The fact that the story is second-hand — told by 'a traveller from an antique land' — reinforces the idea that Ozymandias' empire has crumbled into obscurity. Shelley uses this structure to show that even the most powerful rulers are eventually forgotten.",
+          "The narrative frame distances the reader from Ozymandias, emphasising how far removed his power is from the present day. The fact that the story is second-hand - told by 'a traveller from an antique land' - reinforces the idea that Ozymandias' empire has crumbled into obscurity. Shelley uses this structure to show that even the most powerful rulers are eventually forgotten.",
         marks: 4,
       },
       {
@@ -324,7 +324,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Browning use the dramatic monologue form to reveal the Duke's character in 'My Last Duchess'?",
         lines: 6,
         modelAnswer:
-          "The dramatic monologue allows the Duke to speak continuously without interruption, which mirrors his controlling nature — he dominates the conversation just as he dominated the Duchess. However, Browning uses dramatic irony: the Duke inadvertently reveals his jealousy, possessiveness, and implied violence ('I gave commands; then all smiles stopped together') while believing he is presenting himself favourably. The form thus becomes a tool for Browning to critique patriarchal power.",
+          "The dramatic monologue allows the Duke to speak continuously without interruption, which mirrors his controlling nature - he dominates the conversation just as he dominated the Duchess. However, Browning uses dramatic irony: the Duke inadvertently reveals his jealousy, possessiveness, and implied violence ('I gave commands; then all smiles stopped together') while believing he is presenting himself favourably. The form thus becomes a tool for Browning to critique patriarchal power.",
         marks: 5,
       },
       {
@@ -332,7 +332,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Compare how power is presented as destructive in both 'Ozymandias' and 'My Last Duchess'.",
         lines: 8,
         modelAnswer:
-          "In 'Ozymandias', Shelley presents power as self-destructive through the ironic contrast between the inscription — 'Look on my Works, ye Mighty, and despair!' — and the 'lone and level sands' that surround the ruined statue. The political power of the pharaoh has been destroyed by time and nature, reflecting Shelley's Romantic belief that human authority is ultimately insignificant. In contrast, Browning presents power as destructive to others: the Duke's possessive control led to the Duchess' implied death, yet his power remains intact as he moves on to negotiate a new marriage. While Shelley shows power collapsing from within, Browning shows power that persists through the oppression of others, making the Duke arguably more sinister than Ozymandias.",
+          "In 'Ozymandias', Shelley presents power as self-destructive through the ironic contrast between the inscription - 'Look on my Works, ye Mighty, and despair!' - and the 'lone and level sands' that surround the ruined statue. The political power of the pharaoh has been destroyed by time and nature, reflecting Shelley's Romantic belief that human authority is ultimately insignificant. In contrast, Browning presents power as destructive to others: the Duke's possessive control led to the Duchess' implied death, yet his power remains intact as he moves on to negotiate a new marriage. While Shelley shows power collapsing from within, Browning shows power that persists through the oppression of others, making the Duke arguably more sinister than Ozymandias.",
         marks: 8,
       },
       {
@@ -348,14 +348,14 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Shelley's use of the sonnet form contribute to the meaning of 'Ozymandias'?",
         lines: 5,
         modelAnswer:
-          "Shelley deliberately disrupts the traditional sonnet form — the rhyme scheme does not follow a conventional Petrarchan or Shakespearean pattern, and the volta is not in the expected position. This structural breakdown mirrors the collapse of Ozymandias' empire and power. Just as the statue is 'shattered', so too is the poem's form, reinforcing the message that nothing — not even artistic conventions — can contain or preserve human power forever.",
+          "Shelley deliberately disrupts the traditional sonnet form - the rhyme scheme does not follow a conventional Petrarchan or Shakespearean pattern, and the volta is not in the expected position. This structural breakdown mirrors the collapse of Ozymandias' empire and power. Just as the statue is 'shattered', so too is the poem's form, reinforcing the message that nothing - not even artistic conventions - can contain or preserve human power forever.",
         marks: 4,
       },
     ],
     teacherNotes: [
       'Ensure students have access to the full text of both poems. Check copyright/licensing for reprographic use.',
       'The PEEL model should be displayed on the board throughout for reference.',
-      "This lesson pairs well with Lesson 1's thematic sorting — refer back to the 'Power of Individuals' cluster.",
+      "This lesson pairs well with Lesson 1's thematic sorting - refer back to the 'Power of Individuals' cluster.",
       'The comparison flash draft in the plenary provides formative assessment data for planning Lesson 8.',
       'For lower-attaining groups, consider spending two lessons on this content, with one poem per lesson.',
     ],
@@ -412,7 +412,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'Provide a word bank of descriptive vocabulary (e.g. glorious, heroic, bleak, futile, suffering).',
         core: 'Students generate their own descriptive words and make inferences about attitudes to war.',
         stretch:
-          'Students consider who created each image and why — what is the purpose behind each representation?',
+          'Students consider who created each image and why - what is the purpose behind each representation?',
       },
       resources: ['Image slide (cavalry painting + trench photograph)', 'Word bank (support tier)'],
     },
@@ -421,13 +421,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: The Charge of the Light Brigade by Alfred, Lord Tennyson',
         duration: '18 minutes',
         instructions:
-          "Read the poem aloud with energy, emphasising the driving rhythm. Students annotate focusing on: (1) dactylic metre and repetition — 'Half a league, half a league, half a league onward' — mimicking the galloping horses; (2) the refrain 'Into the valley of Death' — capitalised and biblical; (3) 'Theirs not to make reply, / Theirs not to reason why, / Theirs but to do and die' — obedience and duty; (4) the shift in the final stanza to memorialisation — 'Honour the Light Brigade'. Discuss: Is Tennyson glorifying war or criticising the commanders who sent men to die? Students write a PEEL paragraph on one aspect. Context: Tennyson was Poet Laureate; the poem was written in response to a newspaper report of a disastrous cavalry charge in the Crimean War where 600 men were sent into a heavily armed valley due to a miscommunicated order.",
+          "Read the poem aloud with energy, emphasising the driving rhythm. Students annotate focusing on: (1) dactylic metre and repetition - 'Half a league, half a league, half a league onward' - mimicking the galloping horses; (2) the refrain 'Into the valley of Death' - capitalised and biblical; (3) 'Theirs not to make reply, / Theirs not to reason why, / Theirs but to do and die' - obedience and duty; (4) the shift in the final stanza to memorialisation - 'Honour the Light Brigade'. Discuss: Is Tennyson glorifying war or criticising the commanders who sent men to die? Students write a PEEL paragraph on one aspect. Context: Tennyson was Poet Laureate; the poem was written in response to a newspaper report of a disastrous cavalry charge in the Crimean War where 600 men were sent into a heavily armed valley due to a miscommunicated order.",
         differentiation: {
           support:
             'Provide a colour-coded annotation guide matching each focus area to a colour, plus a PEEL frame.',
           core: 'Students annotate independently and write a PEEL paragraph on their chosen focus.',
           stretch:
-            "Students evaluate whether Tennyson's poem functions as celebration or critique — or both simultaneously.",
+            "Students evaluate whether Tennyson's poem functions as celebration or critique - or both simultaneously.",
         },
         resources: [
           "Printed copy of 'The Charge of the Light Brigade'",
@@ -439,7 +439,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Exposure by Wilfred Owen',
         duration: '18 minutes',
         instructions:
-          "Read 'Exposure' aloud slowly, allowing the bleakness to settle. Students annotate focusing on: (1) the personification of weather as the true enemy — 'merciless iced east winds that knive us', 'Dawn massing in the east her melancholy army'; (2) the refrain 'But nothing happens' — the anti-climax and monotony of trench warfare; (3) half-rhyme throughout (e.g. 'wire/war', 'snow/renew') creating a sense of discord and unease; (4) the rhetorical question 'What are we doing here?' expressing existential despair. Students write a PEEL paragraph. Context: Owen served in WWI and suffered shell shock (PTSD). He wrote to expose the true horror of war, challenging the patriotic narratives of poets like Tennyson. He was killed one week before the Armistice in 1918.",
+          "Read 'Exposure' aloud slowly, allowing the bleakness to settle. Students annotate focusing on: (1) the personification of weather as the true enemy - 'merciless iced east winds that knive us', 'Dawn massing in the east her melancholy army'; (2) the refrain 'But nothing happens' - the anti-climax and monotony of trench warfare; (3) half-rhyme throughout (e.g. 'wire/war', 'snow/renew') creating a sense of discord and unease; (4) the rhetorical question 'What are we doing here?' expressing existential despair. Students write a PEEL paragraph. Context: Owen served in WWI and suffered shell shock (PTSD). He wrote to expose the true horror of war, challenging the patriotic narratives of poets like Tennyson. He was killed one week before the Armistice in 1918.",
         differentiation: {
           support:
             'Pre-highlight five key quotations and provide a PEEL frame with the point already written.',
@@ -474,7 +474,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does the rhythm of 'The Charge of the Light Brigade' reflect its subject matter?",
         lines: 5,
         modelAnswer:
-          "Tennyson opens with dactyls (DUM-da-da) — 'Half a league, half a league' — but the body of the poem moves into anapaestic dimeter (da-da-DUM da-da-DUM), with the refrain 'Rode the six hundred' returning to dactyls. Together they create a galloping rhythm that mimics the sound of horses charging, immersing the reader in the energy and momentum of the cavalry attack. The relentless, end-stopped rhythm also suggests the soldiers' unquestioning obedience — they charge forward without hesitation.",
+          "Tennyson opens with dactyls (DUM-da-da) - 'Half a league, half a league' - but the body of the poem moves into anapaestic dimeter (da-da-DUM da-da-DUM), with the refrain 'Rode the six hundred' returning to dactyls. Together they create a galloping rhythm that mimics the sound of horses charging, immersing the reader in the energy and momentum of the cavalry attack. The relentless, end-stopped rhythm also suggests the soldiers' unquestioning obedience - they charge forward without hesitation.",
         marks: 4,
       },
       {
@@ -489,7 +489,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Explain how Owen personifies nature as an enemy in 'Exposure'. Use two quotations.",
         lines: 6,
         modelAnswer:
-          "Owen writes that 'merciless iced east winds that knive us' — the verb 'knive' personifies the wind as a deliberate attacker, and 'merciless' suggests nature has agency and cruelty. Later, 'Dawn massing in the east her melancholy army' personifies dawn as a military force gathering to attack, which is deeply ironic since dawn should represent hope. Owen's purpose is to show that nature, not the enemy soldiers, is the real killer in the trenches.",
+          "Owen writes that 'merciless iced east winds that knive us' - the verb 'knive' personifies the wind as a deliberate attacker, and 'merciless' suggests nature has agency and cruelty. Later, 'Dawn massing in the east her melancholy army' personifies dawn as a military force gathering to attack, which is deeply ironic since dawn should represent hope. Owen's purpose is to show that nature, not the enemy soldiers, is the real killer in the trenches.",
         marks: 5,
       },
       {
@@ -497,14 +497,14 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Compare the attitudes to duty and sacrifice in 'The Charge of the Light Brigade' and 'Exposure'.",
         lines: 8,
         modelAnswer:
-          "Tennyson presents duty as noble and admirable. 'Theirs not to reason why, / Theirs but to do and die' elevates the soldiers' obedience into a form of heroism — they follow orders despite knowing they will likely die. The imperative 'Honour the Light Brigade' in the final stanza commands the reader to respect their sacrifice. In contrast, Owen presents duty as meaningless suffering. The rhetorical question 'What are we doing here?' suggests the soldiers themselves cannot see the point of their sacrifice. While Tennyson, as Poet Laureate, had a public duty to memorialise the soldiers, Owen wrote from personal experience to challenge exactly this kind of glorification.",
+          "Tennyson presents duty as noble and admirable. 'Theirs not to reason why, / Theirs but to do and die' elevates the soldiers' obedience into a form of heroism - they follow orders despite knowing they will likely die. The imperative 'Honour the Light Brigade' in the final stanza commands the reader to respect their sacrifice. In contrast, Owen presents duty as meaningless suffering. The rhetorical question 'What are we doing here?' suggests the soldiers themselves cannot see the point of their sacrifice. While Tennyson, as Poet Laureate, had a public duty to memorialise the soldiers, Owen wrote from personal experience to challenge exactly this kind of glorification.",
         marks: 8,
       },
       {
         question: 'Why is context essential when comparing these two poems?',
         lines: 5,
         modelAnswer:
-          'Tennyson wrote in 1854 as Poet Laureate in response to a newspaper report — he had not witnessed the battle himself. His purpose was public memorialisation. Owen wrote from the trenches of WWI in 1917-18, having witnessed the horror first-hand. Understanding this context explains why their attitudes to war differ so dramatically: Tennyson could romanticise the charge, while Owen, suffering from shell shock, felt a moral duty to expose the reality of warfare.',
+          'Tennyson wrote in 1854 as Poet Laureate in response to a newspaper report - he had not witnessed the battle himself. His purpose was public memorialisation. Owen wrote from the trenches of WWI in 1917-18, having witnessed the horror first-hand. Understanding this context explains why their attitudes to war differ so dramatically: Tennyson could romanticise the charge, while Owen, suffering from shell shock, felt a moral duty to expose the reality of warfare.',
         marks: 4,
       },
       {
@@ -512,15 +512,15 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Owen's use of half-rhyme in 'Exposure' differ from Tennyson's use of full rhyme, and what effect does this create?",
         lines: 5,
         modelAnswer:
-          "Tennyson uses full rhyme and a strong rhythmic pattern to create a sense of energy, unity, and purpose that reflects the soldiers' charge. Owen deliberately uses half-rhyme (e.g. 'wire/war', 'snow/renew') which creates a dissonant, unsettling sound. The near-miss of the rhyme mirrors the soldiers' sense that something is fundamentally wrong — the world is out of joint. Full rhyme would create a sense of resolution and harmony that would contradict Owen's message of futility and suffering.",
+          "Tennyson uses full rhyme and a strong rhythmic pattern to create a sense of energy, unity, and purpose that reflects the soldiers' charge. Owen deliberately uses half-rhyme (e.g. 'wire/war', 'snow/renew') which creates a dissonant, unsettling sound. The near-miss of the rhyme mirrors the soldiers' sense that something is fundamentally wrong - the world is out of joint. Full rhyme would create a sense of resolution and harmony that would contradict Owen's message of futility and suffering.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      'This is a high-contrast pairing that works well for teaching comparison skills — the poems share the subject of war but differ in attitude, form, and context.',
+      'This is a high-contrast pairing that works well for teaching comparison skills - the poems share the subject of war but differ in attitude, form, and context.',
       'Be sensitive to students who may have family members in the armed forces.',
       "The galloping metre in 'The Charge of the Light Brigade' (anapaestic dimeter with a dactylic refrain) is best demonstrated through choral reading.",
-      "Owen's half-rhyme can be tricky for students to identify — consider a brief phonics exercise comparing full and half-rhyme before the main activity.",
+      "Owen's half-rhyme can be tricky for students to identify - consider a brief phonics exercise comparing full and half-rhyme before the main activity.",
       'This lesson pairs with Lesson 4 (Bayonet Charge & Remains) to build a war poetry cluster.',
     ],
     targetedSkills: [
@@ -569,12 +569,12 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       title: 'Before, During, After',
       duration: '7 minutes',
       instructions:
-        "Display three headings: 'Before Battle', 'During Battle', 'After Battle'. Students write one word or phrase for what a soldier might think or feel at each stage. Teacher takes feedback and explains that today's poems focus on two of these stages — 'Bayonet Charge' captures the terrifying moment of battle itself, while 'Remains' explores the haunting aftermath. Introduce the idea that both poems strip away any glory from conflict.",
+        "Display three headings: 'Before Battle', 'During Battle', 'After Battle'. Students write one word or phrase for what a soldier might think or feel at each stage. Teacher takes feedback and explains that today's poems focus on two of these stages - 'Bayonet Charge' captures the terrifying moment of battle itself, while 'Remains' explores the haunting aftermath. Introduce the idea that both poems strip away any glory from conflict.",
       differentiation: {
         support: 'Provide emotion word cards to select from for each stage.',
         core: 'Students generate their own words and justify their choices.',
         stretch:
-          'Students predict which stage would be hardest to write about and why — linking to the challenge poets face in representing war.',
+          'Students predict which stage would be hardest to write about and why - linking to the challenge poets face in representing war.',
       },
       resources: ['Three-column slide', 'Emotion word cards (support tier)'],
     },
@@ -583,12 +583,12 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Bayonet Charge by Ted Hughes',
         duration: '18 minutes',
         instructions:
-          "Read the poem aloud with urgency, reflecting the breathless pace. Students annotate focusing on: (1) in medias res opening — 'Suddenly he awoke and was running' — throws the reader into the chaos without preparation; (2) the disruption of patriotic ideals — 'King, honour, human dignity, etcetera / Dropped like luxuries' (note: Hughes writes 'etcetera' in full — quote it that way, do not abbreviate to 'etc.'); (3) visceral imagery — 'his foot hung like / Statuary in mid-stride', the hare 'rolled like a flame'; (4) the shift from physical action to frozen, philosophical doubt in stanza two, then back to animalistic survival in stanza three. Students write a PEEL paragraph. Context: Hughes (1930–1998), Yorkshire-born and UK Poet Laureate 1984–98, never fought in any war. He drew on his father William's WWI accounts — William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment — to imagine the soldier's terror in this poem. The poem is in free verse (not iambic) and is published by Faber & Faber.",
+          "Read the poem aloud with urgency, reflecting the breathless pace. Students annotate focusing on: (1) in medias res opening - 'Suddenly he awoke and was running' - throws the reader into the chaos without preparation; (2) the disruption of patriotic ideals - 'King, honour, human dignity, etcetera / Dropped like luxuries' (note: Hughes writes 'etcetera' in full - quote it that way, do not abbreviate to 'etc.'); (3) visceral imagery - 'his foot hung like / Statuary in mid-stride', the hare 'rolled like a flame'; (4) the shift from physical action to frozen, philosophical doubt in stanza two, then back to animalistic survival in stanza three. Students write a PEEL paragraph. Context: Hughes (1930-1998), Yorkshire-born and UK Poet Laureate 1984-98, never fought in any war. He drew on his father William's WWI accounts - William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment - to imagine the soldier's terror in this poem. The poem is in free verse (not iambic) and is published by Faber & Faber.",
         differentiation: {
           support: 'Provide a stanza-by-stanza summary alongside the poem and a PEEL frame.',
           core: 'Students annotate and write a PEEL paragraph on their chosen quotation.',
           stretch:
-            'Students analyse the symbolic significance of the hare — what does it represent and why does Hughes include it?',
+            'Students analyse the symbolic significance of the hare - what does it represent and why does Hughes include it?',
         },
         resources: [
           "Printed copy of 'Bayonet Charge'",
@@ -600,13 +600,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Remains by Simon Armitage',
         duration: '18 minutes',
         instructions:
-          "Read 'Remains' aloud using a conversational, soldier-telling-a-story tone. Students annotate focusing on: (1) the colloquial, anecdotal voice — 'On another occasion', 'probably armed, possibly not' — mimicking a soldier recounting events; (2) the graphic imagery of the killing — 'I see broad daylight on the other side' — the bullet passing through the body; (3) the shift from collective action ('we') to isolated guilt ('I') in the second half; (4) the haunting final lines — 'his bloody life in my bloody hands' — the double meaning of 'bloody' (literal blood and the swear word expressing anguish). Students write a PEEL paragraph. Context: Based on a real soldier's testimony from the Iraq War, collected in Armitage's documentary 'The Not Dead'. The poem explores PTSD and moral injury.",
+          "Read 'Remains' aloud using a conversational, soldier-telling-a-story tone. Students annotate focusing on: (1) the colloquial, anecdotal voice - 'On another occasion', 'probably armed, possibly not' - mimicking a soldier recounting events; (2) the graphic imagery of the killing - 'I see broad daylight on the other side' - the bullet passing through the body; (3) the shift from collective action ('we') to isolated guilt ('I') in the second half; (4) the haunting final lines - 'his bloody life in my bloody hands' - the double meaning of 'bloody' (literal blood and the swear word expressing anguish). Students write a PEEL paragraph. Context: Based on a real soldier's testimony from the Iraq War, collected in Armitage's documentary 'The Not Dead'. The poem explores PTSD and moral injury.",
         differentiation: {
           support:
             'Provide a dual-coded annotation (images alongside key quotations) and a PEEL frame.',
           core: 'Students annotate independently and write a PEEL paragraph.',
           stretch:
-            'Students analyse how Armitage blurs the line between physical and psychological conflict — at what point does the poem shift from external action to internal torment?',
+            'Students analyse how Armitage blurs the line between physical and psychological conflict - at what point does the poem shift from external action to internal torment?',
         },
         resources: [
           "Printed copy of 'Remains'",
@@ -634,7 +634,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         question: "What is 'in medias res' and how does Hughes use it in 'Bayonet Charge'?",
         lines: 5,
         modelAnswer:
-          "In medias res means 'into the middle of things' — beginning a narrative in the midst of the action. Hughes opens with 'Suddenly he awoke and was running', plunging the reader directly into the terrifying moment of the charge without warning or preparation. This mirrors the soldier's own experience — there is no time to think or prepare, only to react. It creates immediacy and panic from the very first line.",
+          "In medias res means 'into the middle of things' - beginning a narrative in the midst of the action. Hughes opens with 'Suddenly he awoke and was running', plunging the reader directly into the terrifying moment of the charge without warning or preparation. This mirrors the soldier's own experience - there is no time to think or prepare, only to react. It creates immediacy and panic from the very first line.",
         marks: 4,
       },
       {
@@ -642,7 +642,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Analyse the effect of 'King, honour, human dignity, etcetera / Dropped like luxuries' in 'Bayonet Charge'.",
         lines: 5,
         modelAnswer:
-          "Hughes lists the abstract ideals that might motivate a soldier to fight — 'King, honour, human dignity' — but the dismissive 'etcetera' undermines them, reducing the noble concepts to throwaway filler. (Hughes deliberately writes 'etcetera' out in full — quote it that way to preserve the bathetic effect; never abbreviate to 'etc.') The simile 'Dropped like luxuries' implies that in the reality of combat, these noble concepts are the first things abandoned — unnecessary extras, not essential to survival. Hughes challenges patriotic narratives by showing that war reduces humans to raw, animal instinct.",
+          "Hughes lists the abstract ideals that might motivate a soldier to fight - 'King, honour, human dignity' - but the dismissive 'etcetera' undermines them, reducing the noble concepts to throwaway filler. (Hughes deliberately writes 'etcetera' out in full - quote it that way to preserve the bathetic effect; never abbreviate to 'etc.') The simile 'Dropped like luxuries' implies that in the reality of combat, these noble concepts are the first things abandoned - unnecessary extras, not essential to survival. Hughes challenges patriotic narratives by showing that war reduces humans to raw, animal instinct.",
         marks: 5,
       },
       {
@@ -650,14 +650,14 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Armitage use pronouns to show the soldier's growing isolation in 'Remains'?",
         lines: 5,
         modelAnswer:
-          "The poem begins with collective pronouns — 'we get sent out', 'all three of us' — suggesting shared responsibility for the killing. However, as the poem progresses and guilt sets in, the pronoun shifts to 'I': 'I see broad daylight on the other side', 'his bloody life in my bloody hands'. This shift shows the soldier becoming psychologically isolated — while the physical act was shared, the guilt and trauma are his alone to bear, reflecting the isolating nature of PTSD.",
+          "The poem begins with collective pronouns - 'we get sent out', 'all three of us' - suggesting shared responsibility for the killing. However, as the poem progresses and guilt sets in, the pronoun shifts to 'I': 'I see broad daylight on the other side', 'his bloody life in my bloody hands'. This shift shows the soldier becoming psychologically isolated - while the physical act was shared, the guilt and trauma are his alone to bear, reflecting the isolating nature of PTSD.",
         marks: 5,
       },
       {
         question: 'Compare how Hughes and Armitage present the psychological impact of conflict.',
         lines: 8,
         modelAnswer:
-          "Hughes presents the psychological impact as occurring in the moment of combat. In stanza two, the soldier freezes mid-stride — 'his foot hung like / Statuary in mid-stride' — as his mind catches up with his body and he questions why he is fighting. The simile compares him to a statue, suggesting he is paralysed by doubt. Armitage, in contrast, presents the psychological impact as a long-term haunting. The soldier in 'Remains' replays the killing endlessly — 'his bloody life in my bloody hands' — and the guilt follows him home. While Hughes shows conflict destroying rational thought in the moment, Armitage shows it destroying peace of mind long after the event, reflecting the modern understanding of PTSD.",
+          "Hughes presents the psychological impact as occurring in the moment of combat. In stanza two, the soldier freezes mid-stride - 'his foot hung like / Statuary in mid-stride' - as his mind catches up with his body and he questions why he is fighting. The simile compares him to a statue, suggesting he is paralysed by doubt. Armitage, in contrast, presents the psychological impact as a long-term haunting. The soldier in 'Remains' replays the killing endlessly - 'his bloody life in my bloody hands' - and the guilt follows him home. While Hughes shows conflict destroying rational thought in the moment, Armitage shows it destroying peace of mind long after the event, reflecting the modern understanding of PTSD.",
         marks: 8,
       },
       {
@@ -673,7 +673,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does the context of 'Remains' add to the reader's understanding of the poem?",
         lines: 5,
         modelAnswer:
-          "The poem is based on a real soldier's testimony from the Iraq War, collected by Armitage for the documentary 'The Not Dead'. Knowing this adds weight to the colloquial, conversational tone — it reads like a real person telling a real story, which makes the horror more immediate and harder to dismiss. It also highlights the ongoing issue of PTSD among veterans and suggests Armitage's purpose was to give voice to soldiers whose suffering is often invisible.",
+          "The poem is based on a real soldier's testimony from the Iraq War, collected by Armitage for the documentary 'The Not Dead'. Knowing this adds weight to the colloquial, conversational tone - it reads like a real person telling a real story, which makes the horror more immediate and harder to dismiss. It also highlights the ongoing issue of PTSD among veterans and suggests Armitage's purpose was to give voice to soldiers whose suffering is often invisible.",
         marks: 4,
       },
     ],
@@ -681,7 +681,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       "This lesson builds on the war poetry cluster from Lesson 3. Briefly recap Tennyson and Owen's attitudes before introducing Hughes and Armitage.",
       'The graphic content of both poems requires sensitivity. Check in with students and offer alternative tasks if needed.',
       "'Remains' works particularly well when read aloud in a flat, conversational tone to capture the soldier's voice.",
-      'The Venn diagram plenary is a useful formative tool — photograph and keep for Lesson 8 revision.',
+      'The Venn diagram plenary is a useful formative tool - photograph and keep for Lesson 8 revision.',
       "Consider linking 'Remains' to Macbeth ('Will all great Neptune's ocean wash this blood clean from my hand?') for students studying both texts.",
     ],
     targetedSkills: [
@@ -731,12 +731,12 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       title: 'Memory Box',
       duration: '7 minutes',
       instructions:
-        "Ask students: 'If you had to leave your home forever and could only take one memory with you, what would it be?' Students write their answer on a sticky note and add it to the class 'Memory Box' display on the board. Discuss: Why are memories so powerful? Can a memory keep you connected to a place or identity even when everything else has changed? Teacher introduces the idea that both poems today explore how memory shapes identity — sometimes as a source of strength, sometimes as a source of pain.",
+        "Ask students: 'If you had to leave your home forever and could only take one memory with you, what would it be?' Students write their answer on a sticky note and add it to the class 'Memory Box' display on the board. Discuss: Why are memories so powerful? Can a memory keep you connected to a place or identity even when everything else has changed? Teacher introduces the idea that both poems today explore how memory shapes identity - sometimes as a source of strength, sometimes as a source of pain.",
       differentiation: {
         support: "Provide prompt: 'My strongest memory is ___ because ___.'",
         core: 'Students write freely and share with a partner before adding to the display.',
         stretch:
-          'Students consider whether a memory can be both comforting and painful at the same time — and why.',
+          'Students consider whether a memory can be both comforting and painful at the same time - and why.',
       },
       resources: ['Sticky notes', 'Memory Box display board'],
     },
@@ -745,13 +745,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Kamikaze by Beatrice Garland',
         duration: '18 minutes',
         instructions:
-          "Read 'Kamikaze' aloud, with different students reading the narrator's voice and the italicised sections. Students annotate focusing on: (1) the third-person narrative frame — the daughter tells her father's story, suggesting distance and unresolved emotion; (2) the vivid natural imagery — 'a shaved, tousled, samurai sword' of fish, 'the loose silver of whitebait' — beauty that pulls the pilot back to life; (3) the devastating social consequences — 'my mother never spoke again / in his presence' — the living death of rejection; (4) the ambiguous ending — 'he must have wondered / which had been the better way to die' — was turning back an act of courage or cowardice? Students write a PEEL paragraph. Context: Japanese kamikaze pilots in WWII were expected to sacrifice their lives for the Emperor. Turning back brought profound shame upon the family.",
+          "Read 'Kamikaze' aloud, with different students reading the narrator's voice and the italicised sections. Students annotate focusing on: (1) the third-person narrative frame - the daughter tells her father's story, suggesting distance and unresolved emotion; (2) the vivid natural imagery - 'a shaved, tousled, samurai sword' of fish, 'the loose silver of whitebait' - beauty that pulls the pilot back to life; (3) the devastating social consequences - 'my mother never spoke again / in his presence' - the living death of rejection; (4) the ambiguous ending - 'he must have wondered / which had been the better way to die' - was turning back an act of courage or cowardice? Students write a PEEL paragraph. Context: Japanese kamikaze pilots in WWII were expected to sacrifice their lives for the Emperor. Turning back brought profound shame upon the family.",
         differentiation: {
           support:
             'Provide a guided reading sheet with comprehension questions for each stanza before annotation.',
           core: 'Students annotate and write a PEEL paragraph independently.',
           stretch:
-            'Students evaluate whose perspective is most sympathetic — the father, the mother, or the daughter — and consider why Garland chose the daughter as narrator.',
+            'Students evaluate whose perspective is most sympathetic - the father, the mother, or the daughter - and consider why Garland chose the daughter as narrator.',
         },
         resources: [
           "Printed copy of 'Kamikaze'",
@@ -763,7 +763,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: The Émigrée by Carol Rumens',
         duration: '18 minutes',
         instructions:
-          "Read 'The Émigrée' aloud slowly, allowing the lyrical quality to come through. Students annotate focusing on: (1) the extended light imagery — 'sunlight-clear', 'bright, filled paperweight' — memory preserves the homeland in idealised, radiant terms; (2) the contrast between the personal memory and external reality — 'They accuse me of being dark in their free city' — the émigrée is treated with suspicion; (3) the personification of the city — 'my city takes me dancing' — memory is alive and active, not passive; (4) the defiant final tone — 'I comb out my hair and, in front of the stranger, rehearse departure' — suggesting both vulnerability and resilience. Students write a PEEL paragraph. Context: Rumens has written about displacement and exile. The poem may reference Cold War Eastern Europe but is deliberately unspecific, making it universal.",
+          "Read 'The Émigrée' aloud slowly, allowing the lyrical quality to come through. Students annotate focusing on: (1) the extended light imagery - 'sunlight-clear', 'bright, filled paperweight' - memory preserves the homeland in idealised, radiant terms; (2) the contrast between the personal memory and external reality - 'They accuse me of being dark in their free city' - the émigrée is treated with suspicion; (3) the personification of the city - 'my city takes me dancing' - memory is alive and active, not passive; (4) the defiant final tone - 'I comb out my hair and, in front of the stranger, rehearse departure' - suggesting both vulnerability and resilience. Students write a PEEL paragraph. Context: Rumens has written about displacement and exile. The poem may reference Cold War Eastern Europe but is deliberately unspecific, making it universal.",
         differentiation: {
           support:
             'Provide a quotation bank with the six most important quotations and one-line explanations.',
@@ -798,14 +798,14 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Garland use the daughter's narrative voice to create sympathy for the father in 'Kamikaze'?",
         lines: 5,
         modelAnswer:
-          "The daughter narrates in the third person, creating distance that suggests she is still processing her father's decision. Her description of his journey — the beautiful imagery of 'the loose silver of whitebait' — shows she understands why he turned back, creating sympathy for his choice. Yet she also reveals the consequences: 'my mother never spoke again in his presence'. The dual perspective creates sympathy because the reader sees both the beauty of his choice to live and the cruelty of its social consequences.",
+          "The daughter narrates in the third person, creating distance that suggests she is still processing her father's decision. Her description of his journey - the beautiful imagery of 'the loose silver of whitebait' - shows she understands why he turned back, creating sympathy for his choice. Yet she also reveals the consequences: 'my mother never spoke again in his presence'. The dual perspective creates sympathy because the reader sees both the beauty of his choice to live and the cruelty of its social consequences.",
         marks: 5,
       },
       {
         question: "Analyse the effect of the light imagery in 'The Émigrée'. Use two quotations.",
         lines: 6,
         modelAnswer:
-          "Rumens uses 'sunlight-clear' to describe the émigrée's memory of her homeland, suggesting that memory preserves it in a permanent, idealised glow — untouched by the reality of what has happened since. The 'bright, filled paperweight' extends this, comparing the memory to a beautiful, solid object that cannot be broken or altered. The light imagery contrasts with the 'dark' accusations the émigrée faces in her new city, suggesting that her inner world of memory is luminous and sustaining even when her external reality is hostile.",
+          "Rumens uses 'sunlight-clear' to describe the émigrée's memory of her homeland, suggesting that memory preserves it in a permanent, idealised glow - untouched by the reality of what has happened since. The 'bright, filled paperweight' extends this, comparing the memory to a beautiful, solid object that cannot be broken or altered. The light imagery contrasts with the 'dark' accusations the émigrée faces in her new city, suggesting that her inner world of memory is luminous and sustaining even when her external reality is hostile.",
         marks: 5,
       },
       {
@@ -813,7 +813,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Compare how memory functions as a source of conflict in both 'Kamikaze' and 'The Émigrée'.",
         lines: 8,
         modelAnswer:
-          "In 'Kamikaze', the pilot's memories of natural beauty — 'a flock of dark-winged fishing boats' and children playing — conflict with his sense of duty to die for the Emperor. His memories of life pull him back from death, but this act of survival creates a new conflict: social rejection so complete that 'he must have wondered which had been the better way to die'. In 'The Émigrée', the speaker's childhood memories of her homeland conflict with its present reality — it may now be 'at war' or 'sick with tyrants' — yet she refuses to let external events overwrite her personal memory. While memory in 'Kamikaze' creates devastating consequences, in 'The Émigrée' it becomes an act of resistance and self-preservation.",
+          "In 'Kamikaze', the pilot's memories of natural beauty - 'a flock of dark-winged fishing boats' and children playing - conflict with his sense of duty to die for the Emperor. His memories of life pull him back from death, but this act of survival creates a new conflict: social rejection so complete that 'he must have wondered which had been the better way to die'. In 'The Émigrée', the speaker's childhood memories of her homeland conflict with its present reality - it may now be 'at war' or 'sick with tyrants' - yet she refuses to let external events overwrite her personal memory. While memory in 'Kamikaze' creates devastating consequences, in 'The Émigrée' it becomes an act of resistance and self-preservation.",
         marks: 8,
       },
       {
@@ -821,7 +821,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "What does the ending of 'Kamikaze' suggest about the consequences of the pilot's decision?",
         lines: 5,
         modelAnswer:
-          "The final lines — 'he must have wondered / which had been the better way to die' — are devastatingly ambiguous. The 'better way to die' implies that his life after returning was itself a form of death: shunned by his family and community, he was socially dead even while physically alive. Garland suggests that in a culture where honour demands sacrifice, choosing life can be a punishment worse than the death he avoided.",
+          "The final lines - 'he must have wondered / which had been the better way to die' - are devastatingly ambiguous. The 'better way to die' implies that his life after returning was itself a form of death: shunned by his family and community, he was socially dead even while physically alive. Garland suggests that in a culture where honour demands sacrifice, choosing life can be a punishment worse than the death he avoided.",
         marks: 4,
       },
       {
@@ -829,21 +829,21 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Rumens present the émigrée's homeland as a living presence in the poem?",
         lines: 5,
         modelAnswer:
-          "Rumens personifies the city as a companion: 'my city takes me dancing through the city of walls'. This personification transforms memory from a passive recollection into an active, living relationship. The homeland is not simply remembered — it accompanies the speaker, offering comfort and connection. The phrase 'I comb out my hair' before this meeting suggests preparation, as if she is getting ready for a reunion with a loved one, reinforcing the deep emotional bond between the speaker and her lost home.",
+          "Rumens personifies the city as a companion: 'my city takes me dancing through the city of walls'. This personification transforms memory from a passive recollection into an active, living relationship. The homeland is not simply remembered - it accompanies the speaker, offering comfort and connection. The phrase 'I comb out my hair' before this meeting suggests preparation, as if she is getting ready for a reunion with a loved one, reinforcing the deep emotional bond between the speaker and her lost home.",
         marks: 4,
       },
       {
         question: 'Why might both poets have chosen female perspectives or voices in these poems?',
         lines: 5,
         modelAnswer:
-          "In 'Kamikaze', the daughter's voice allows Garland to show the ripple effects of conflict on families — not just the soldier but those left behind. The female perspective adds emotional depth and a domestic dimension to a military story. In 'The Émigrée', the female speaker navigating a hostile new city while holding onto her identity may reflect the particular vulnerability of displaced women. Both poets use female voices to explore the personal, emotional dimensions of power and conflict that are often overlooked in favour of military narratives.",
+          "In 'Kamikaze', the daughter's voice allows Garland to show the ripple effects of conflict on families - not just the soldier but those left behind. The female perspective adds emotional depth and a domestic dimension to a military story. In 'The Émigrée', the female speaker navigating a hostile new city while holding onto her identity may reflect the particular vulnerability of displaced women. Both poets use female voices to explore the personal, emotional dimensions of power and conflict that are often overlooked in favour of military narratives.",
         marks: 4,
       },
     ],
     teacherNotes: [
-      'This pairing works well because both poems deal with memory, identity, and the personal costs of conflict — but from very different cultural contexts.',
+      'This pairing works well because both poems deal with memory, identity, and the personal costs of conflict - but from very different cultural contexts.',
       "The 'Kamikaze' context requires sensitivity. Emphasise the human story, not the politics of WWII Japan.",
-      "The Émigrée's deliberate ambiguity is a strength for teaching — encourage students to resist the urge to pin down a single 'correct' reading.",
+      "The Émigrée's deliberate ambiguity is a strength for teaching - encourage students to resist the urge to pin down a single 'correct' reading.",
       'The creative homework (diary entry) allows students to demonstrate empathy and understanding in a lower-stakes format before formal essay writing in Lesson 8.',
       'This lesson links forward to Lesson 7 (Checking Out Me History & Tissue) through the theme of identity.',
     ],
@@ -893,7 +893,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       title: 'Place and Power: Where Do You Feel Powerless?',
       duration: '7 minutes',
       instructions:
-        "Students reflect: 'Think of a place where you have felt small, vulnerable, or powerless. What made you feel that way — was it the weather, the people, the buildings, the rules?' Students write a short description (3-4 sentences) capturing the feeling. Share in pairs. Teacher introduces the idea that both poems today explore how places can make people feel powerless — whether it is an island battered by storms or a city controlled by corrupt institutions.",
+        "Students reflect: 'Think of a place where you have felt small, vulnerable, or powerless. What made you feel that way - was it the weather, the people, the buildings, the rules?' Students write a short description (3-4 sentences) capturing the feeling. Share in pairs. Teacher introduces the idea that both poems today explore how places can make people feel powerless - whether it is an island battered by storms or a city controlled by corrupt institutions.",
       differentiation: {
         support: "Provide a sentence starter: 'I felt powerless when I was at ___ because ___.'",
         core: 'Students write independently and share.',
@@ -907,13 +907,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Storm on the Island by Seamus Heaney',
         duration: '18 minutes',
         instructions:
-          "Read the poem aloud, emphasising the conversational opening and the escalating tension. Students annotate focusing on: (1) the confident opening — 'We are prepared: we build our houses squat' — soon undermined by the storm's power; (2) military imagery — 'It pummels your house', 'spits like a tame cat / Turned savage', 'We are bombarded by the empty air' — nature as an attacking force; (3) the hidden word 'Stormont' in the title (Storm on the Island) — a possible political allegory for the Troubles in Northern Ireland; (4) blank verse form — the lack of rhyme creates unease and reflects the relentless, unpredictable nature of the storm. Students write a PEEL paragraph. Context: Heaney grew up in Northern Ireland during the Troubles. The poem can be read as both a literal account of island life and a political allegory about living under threat.",
+          "Read the poem aloud, emphasising the conversational opening and the escalating tension. Students annotate focusing on: (1) the confident opening - 'We are prepared: we build our houses squat' - soon undermined by the storm's power; (2) military imagery - 'It pummels your house', 'spits like a tame cat / Turned savage', 'We are bombarded by the empty air' - nature as an attacking force; (3) the hidden word 'Stormont' in the title (Storm on the Island) - a possible political allegory for the Troubles in Northern Ireland; (4) blank verse form - the lack of rhyme creates unease and reflects the relentless, unpredictable nature of the storm. Students write a PEEL paragraph. Context: Heaney grew up in Northern Ireland during the Troubles. The poem can be read as both a literal account of island life and a political allegory about living under threat.",
         differentiation: {
           support:
             "Provide a dual-reading chart: 'Literal meaning' and 'Possible political meaning' side by side for key quotations.",
           core: 'Students annotate and write a PEEL paragraph on a quotation of their choice.',
           stretch:
-            "Students evaluate the 'Stormont' reading — how convincing is the political allegory and does it change the poem's meaning?",
+            "Students evaluate the 'Stormont' reading - how convincing is the political allegory and does it change the poem's meaning?",
         },
         resources: [
           "Printed copy of 'Storm on the Island'",
@@ -925,13 +925,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: London by William Blake',
         duration: '18 minutes',
         instructions:
-          "Read 'London' aloud with emphasis on the repetitive, incantatory rhythm. Students annotate focusing on: (1) 'charter'd' — repeated to show everything in London is controlled, owned, mapped out — even the river, which should be free; (2) the anaphora of 'In every' — 'In every cry of every Man, / In every Infants cry of fear, / In every voice: in every ban' — building an overwhelming sense of universal suffering; (3) 'mind-forg'd manacles' — a powerful metaphor suggesting people are imprisoned by their own acceptance of oppression; (4) the final stanza — 'the youthful Harlots curse' blighting 'the new-born Infant's tear' — corruption passes from one generation to the next. Students write a PEEL paragraph. Context: Blake was a Romantic poet and social critic writing during the Industrial Revolution. He opposed the Church, monarchy, and institutions that exploited the poor.",
+          "Read 'London' aloud with emphasis on the repetitive, incantatory rhythm. Students annotate focusing on: (1) 'charter'd' - repeated to show everything in London is controlled, owned, mapped out - even the river, which should be free; (2) the anaphora of 'In every' - 'In every cry of every Man, / In every Infants cry of fear, / In every voice: in every ban' - building an overwhelming sense of universal suffering; (3) 'mind-forg'd manacles' - a powerful metaphor suggesting people are imprisoned by their own acceptance of oppression; (4) the final stanza - 'the youthful Harlots curse' blighting 'the new-born Infant's tear' - corruption passes from one generation to the next. Students write a PEEL paragraph. Context: Blake was a Romantic poet and social critic writing during the Industrial Revolution. He opposed the Church, monarchy, and institutions that exploited the poor.",
         differentiation: {
           support:
             'Provide a stanza-by-stanza paraphrase alongside the poem and highlight three key quotations to analyse.',
           core: 'Students annotate and write a PEEL paragraph independently.',
           stretch:
-            "Students compare Blake's 'mind-forg'd manacles' to modern forms of institutional control — is Blake's message still relevant today?",
+            "Students compare Blake's 'mind-forg'd manacles' to modern forms of institutional control - is Blake's message still relevant today?",
         },
         resources: [
           "Printed copy of 'London'",
@@ -960,7 +960,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Analyse the effect of the military imagery in 'Storm on the Island'. Use two examples.",
         lines: 6,
         modelAnswer:
-          "Heaney describes the wind as something that 'pummels your house' — the verb 'pummels' implies repeated, aggressive blows as if the storm is physically attacking the community. Later, 'We are bombarded by the empty air' uses the military term 'bombarded' to present the storm as a siege, yet the paradox of being attacked by 'empty air' emphasises the invisible, intangible nature of the threat. If read as a political allegory, the military imagery could represent the ever-present threat of violence during the Troubles in Northern Ireland.",
+          "Heaney describes the wind as something that 'pummels your house' - the verb 'pummels' implies repeated, aggressive blows as if the storm is physically attacking the community. Later, 'We are bombarded by the empty air' uses the military term 'bombarded' to present the storm as a siege, yet the paradox of being attacked by 'empty air' emphasises the invisible, intangible nature of the threat. If read as a political allegory, the military imagery could represent the ever-present threat of violence during the Troubles in Northern Ireland.",
         marks: 5,
       },
       {
@@ -968,7 +968,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "What does Blake mean by 'mind-forg'd manacles' in 'London' and why is this phrase so powerful?",
         lines: 5,
         modelAnswer:
-          "'Mind-forg'd manacles' is a metaphor meaning chains created by the mind — people are imprisoned not by physical restraints but by their acceptance of oppression. Blake suggests that institutions (Church, monarchy, government) have conditioned people to accept their suffering as normal. The image is powerful because it implies that liberation requires not just political change but a revolution in thinking — people must first recognise their mental chains before they can break free.",
+          "'Mind-forg'd manacles' is a metaphor meaning chains created by the mind - people are imprisoned not by physical restraints but by their acceptance of oppression. Blake suggests that institutions (Church, monarchy, government) have conditioned people to accept their suffering as normal. The image is powerful because it implies that liberation requires not just political change but a revolution in thinking - people must first recognise their mental chains before they can break free.",
         marks: 5,
       },
       {
@@ -976,7 +976,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'Compare how Heaney and Blake present the relationship between people and their environment.',
         lines: 8,
         modelAnswer:
-          "In 'Storm on the Island', people are physically at the mercy of nature — despite being 'prepared' with 'squat' houses and 'rock', the storm overwhelms them until they are 'bombarded by the empty air'. The community is resilient but ultimately vulnerable. In 'London', Blake presents people as trapped within a man-made environment of control: every street is 'charter'd', every voice carries 'marks of weakness, marks of woe'. While Heaney's community faces a natural force they cannot control, Blake's Londoners face institutional oppression that they could resist if they broke their 'mind-forg'd manacles'. Both poets show people diminished by their environment, but Blake implies the possibility of change while Heaney suggests the storm — and perhaps the Troubles — is a force that simply must be endured.",
+          "In 'Storm on the Island', people are physically at the mercy of nature - despite being 'prepared' with 'squat' houses and 'rock', the storm overwhelms them until they are 'bombarded by the empty air'. The community is resilient but ultimately vulnerable. In 'London', Blake presents people as trapped within a man-made environment of control: every street is 'charter'd', every voice carries 'marks of weakness, marks of woe'. While Heaney's community faces a natural force they cannot control, Blake's Londoners face institutional oppression that they could resist if they broke their 'mind-forg'd manacles'. Both poets show people diminished by their environment, but Blake implies the possibility of change while Heaney suggests the storm - and perhaps the Troubles - is a force that simply must be endured.",
         marks: 8,
       },
       {
@@ -984,29 +984,29 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does the hidden word 'Stormont' affect your reading of 'Storm on the Island'?",
         lines: 5,
         modelAnswer:
-          "The letters of the title spell 'Stormont' — the seat of the Northern Irish government during the Troubles. This hidden reference suggests the poem can be read as a political allegory: the 'storm' represents the threat of violence and political instability, the islanders represent the people of Northern Ireland living under constant fear, and the 'empty air' could symbolise the intangible yet terrifying presence of sectarian tension. This dual reading adds depth to the poem and reflects Heaney's characteristic technique of embedding political commentary within descriptions of the natural landscape.",
+          "The letters of the title spell 'Stormont' - the seat of the Northern Irish government during the Troubles. This hidden reference suggests the poem can be read as a political allegory: the 'storm' represents the threat of violence and political instability, the islanders represent the people of Northern Ireland living under constant fear, and the 'empty air' could symbolise the intangible yet terrifying presence of sectarian tension. This dual reading adds depth to the poem and reflects Heaney's characteristic technique of embedding political commentary within descriptions of the natural landscape.",
         marks: 4,
       },
       {
         question: "How does Blake use repetition in 'London' to build his argument?",
         lines: 5,
         modelAnswer:
-          "Blake repeats 'In every' four times in the second stanza — 'In every cry of every Man, / In every Infants cry of fear, / In every voice: in every ban'. This anaphora creates a cumulative effect, hammering home the idea that suffering in London is universal and inescapable. The repetition of 'every' emphasises that no one is exempt — men, infants, and all voices are affected. The relentless rhythm mirrors the relentless oppression Blake is describing.",
+          "Blake repeats 'In every' four times in the second stanza - 'In every cry of every Man, / In every Infants cry of fear, / In every voice: in every ban'. This anaphora creates a cumulative effect, hammering home the idea that suffering in London is universal and inescapable. The repetition of 'every' emphasises that no one is exempt - men, infants, and all voices are affected. The relentless rhythm mirrors the relentless oppression Blake is describing.",
         marks: 4,
       },
       {
         question:
-          "Which poem do you find more powerful in its presentation of place — 'Storm on the Island' or 'London'? Explain your choice with evidence.",
+          "Which poem do you find more powerful in its presentation of place - 'Storm on the Island' or 'London'? Explain your choice with evidence.",
         lines: 6,
         modelAnswer:
-          "Answers will vary. A strong response might argue: 'London' is more powerful because Blake identifies specific, man-made causes of suffering — 'charter'd streets', 'the Church', 'the Palace' — which makes his critique politically actionable. The final image of the 'youthful Harlots curse' blighting a newborn child is devastating because it shows how corruption passes through generations with no escape. Alternatively, 'Storm on the Island' is more powerful because the threat is invisible and unpredictable — 'bombarded by the empty air' — which captures the psychological toll of living in fear more effectively.",
+          "Answers will vary. A strong response might argue: 'London' is more powerful because Blake identifies specific, man-made causes of suffering - 'charter'd streets', 'the Church', 'the Palace' - which makes his critique politically actionable. The final image of the 'youthful Harlots curse' blighting a newborn child is devastating because it shows how corruption passes through generations with no escape. Alternatively, 'Storm on the Island' is more powerful because the threat is invisible and unpredictable - 'bombarded by the empty air' - which captures the psychological toll of living in fear more effectively.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      "The 'Stormont' reading is widely debated — present it as one interpretation rather than a definitive reading.",
+      "The 'Stormont' reading is widely debated - present it as one interpretation rather than a definitive reading.",
       "Blake's 'London' is rich with political content. Be prepared to explain the role of the Church, monarchy, and chartered companies in 18th-century oppression.",
-      "Both poems benefit from being read aloud — Heaney's conversational blank verse and Blake's rhythmic quatrains are best appreciated through performance.",
+      "Both poems benefit from being read aloud - Heaney's conversational blank verse and Blake's rhythmic quatrains are best appreciated through performance.",
       "This lesson's 'Power of Place' cluster connects to The Prelude (Wordsworth) if you wish to extend the pairing.",
       'The Power Grid plenary template can be reused for other comparison pairings throughout the unit.',
     ],
@@ -1063,7 +1063,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'Provide brief descriptions of the figures in both lists so all students can engage.',
         core: 'Students discuss and form their own opinions about why one list dominates.',
         stretch:
-          'Students consider who benefits from certain histories being taught and others being silenced — linking to the concept of institutional power.',
+          'Students consider who benefits from certain histories being taught and others being silenced - linking to the concept of institutional power.',
       },
       resources: ['Two-list display slide', 'Figure description cards (support tier)'],
     },
@@ -1072,13 +1072,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Checking Out Me History by John Agard',
         duration: '18 minutes',
         instructions:
-          "Read the poem aloud using Agard's Caribbean dialect — ideally play a recording of Agard performing it. Students annotate focusing on: (1) the alternating structure — sections in Standard English (the imposed history) versus sections in Caribbean dialect (the reclaimed history) — showing two competing identities; (2) phonetic spelling — 'Dem tell me', 'Bandage up me eye' — asserting Caribbean voice against colonial language; (3) the metaphor of blindness — 'Bandage up me eye with me own history' — colonial education blinds people to their own heritage; (4) the celebratory tone of the Caribbean history sections — Toussaint, Nanny de Maroon, Mary Seacole — presented with reverence and light imagery. Students write a PEEL paragraph. Context: Agard is a British-Guyanese poet who challenges post-colonial power dynamics. The poem critiques the Eurocentric British education system.",
+          "Read the poem aloud using Agard's Caribbean dialect - ideally play a recording of Agard performing it. Students annotate focusing on: (1) the alternating structure - sections in Standard English (the imposed history) versus sections in Caribbean dialect (the reclaimed history) - showing two competing identities; (2) phonetic spelling - 'Dem tell me', 'Bandage up me eye' - asserting Caribbean voice against colonial language; (3) the metaphor of blindness - 'Bandage up me eye with me own history' - colonial education blinds people to their own heritage; (4) the celebratory tone of the Caribbean history sections - Toussaint, Nanny de Maroon, Mary Seacole - presented with reverence and light imagery. Students write a PEEL paragraph. Context: Agard is a British-Guyanese poet who challenges post-colonial power dynamics. The poem critiques the Eurocentric British education system.",
         differentiation: {
           support:
             'Provide a colour-coded text (one colour for imposed history, another for reclaimed history) with guiding questions.',
           core: 'Students annotate and write a PEEL paragraph independently.',
           stretch:
-            "Students evaluate whether the poem's message is still relevant today — has the curriculum changed enough since Agard wrote this?",
+            "Students evaluate whether the poem's message is still relevant today - has the curriculum changed enough since Agard wrote this?",
         },
         resources: [
           "Printed copy of 'Checking Out Me History'",
@@ -1091,13 +1091,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Analysis: Tissue by Imtiaz Dharker',
         duration: '18 minutes',
         instructions:
-          "Read 'Tissue' aloud carefully — this poem requires patience as its meaning builds slowly. Students annotate focusing on: (1) the extended metaphor of paper/tissue — representing human records, borders, money, identity documents — all fragile; (2) the verified opening 'Paper that lets the light / shine through, this / is what could alter things' establishes paper as transparent, illuminating; (3) the Koran reference connects sacred texts to family records; (4) the idea that human-made structures (borders, buildings, economies) are as impermanent as paper — the verified final isolated single-line stanza 'turned into your skin.' (which stands ALONE, separated from the ten preceding quatrains) suggests that human life itself is the thinnest tissue of all. Teacher annotation: the isolated final line is structurally significant — Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh. (5) the enjambment throughout, with sentences flowing across stanzas, reflecting the paper-thin boundaries the poem describes. Students write a PEEL paragraph. Context: Dharker is Pakistani-born British, raised in Glasgow, and divides time between London and Mumbai. Her poetry explores borders, identity, and the structures humans create to organise the world. Rights: 'Tissue' from The terrorist at my table (Bloodaxe Books, 2006) — bloodaxebooks.com.",
+          "Read 'Tissue' aloud carefully - this poem requires patience as its meaning builds slowly. Students annotate focusing on: (1) the extended metaphor of paper/tissue - representing human records, borders, money, identity documents - all fragile; (2) the verified opening 'Paper that lets the light / shine through, this / is what could alter things' establishes paper as transparent, illuminating; (3) the Koran reference connects sacred texts to family records; (4) the idea that human-made structures (borders, buildings, economies) are as impermanent as paper - the verified final isolated single-line stanza 'turned into your skin.' (which stands ALONE, separated from the ten preceding quatrains) suggests that human life itself is the thinnest tissue of all. Teacher annotation: the isolated final line is structurally significant - Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh. (5) the enjambment throughout, with sentences flowing across stanzas, reflecting the paper-thin boundaries the poem describes. Students write a PEEL paragraph. Context: Dharker is Pakistani-born British, raised in Glasgow, and divides time between London and Mumbai. Her poetry explores borders, identity, and the structures humans create to organise the world. Rights: 'Tissue' from The terrorist at my table (Bloodaxe Books, 2006) - bloodaxebooks.com.",
         differentiation: {
           support:
             'Provide a stanza-by-stanza summary and a quotation bank with guided analysis prompts.',
           core: 'Students annotate and write a PEEL paragraph independently.',
           stretch:
-            'Students analyse the final stanza shift — why does Dharker move from paper to skin, and what does this suggest about the relationship between human identity and the structures we create?',
+            'Students analyse the final stanza shift - why does Dharker move from paper to skin, and what does this suggest about the relationship between human identity and the structures we create?',
         },
         resources: [
           "Printed copy of 'Tissue'",
@@ -1126,7 +1126,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does Agard use the structure of 'Checking Out Me History' to convey his message?",
         lines: 5,
         modelAnswer:
-          "Agard alternates between two types of section: Standard English stanzas describing the 'official' British history he was taught (Dick Whittington, 1066, Guy Fawkes) and Caribbean dialect stanzas celebrating the Black Caribbean history that was denied to him (Toussaint, Nanny de Maroon, Mary Seacole). This structural contrast visually and aurally represents the two competing identities — the imposed colonial identity and the authentic Caribbean identity. The poem's form itself becomes an act of reclamation.",
+          "Agard alternates between two types of section: Standard English stanzas describing the 'official' British history he was taught (Dick Whittington, 1066, Guy Fawkes) and Caribbean dialect stanzas celebrating the Black Caribbean history that was denied to him (Toussaint, Nanny de Maroon, Mary Seacole). This structural contrast visually and aurally represents the two competing identities - the imposed colonial identity and the authentic Caribbean identity. The poem's form itself becomes an act of reclamation.",
         marks: 5,
       },
       {
@@ -1134,40 +1134,40 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Analyse the effect of 'Bandage up me eye with me own history' in 'Checking Out Me History'.",
         lines: 5,
         modelAnswer:
-          "The metaphor of bandaging the eye suggests that the colonial education system deliberately blinds people to their own heritage. The use of 'me own history' in Caribbean dialect is significant — the speaker's history belongs to them, yet it has been used as a tool of oppression ('bandage up'). The image implies both violence (bandaging a wound) and deliberate concealment (covering the eyes), suggesting that colonial education is not just incomplete but actively harmful.",
+          "The metaphor of bandaging the eye suggests that the colonial education system deliberately blinds people to their own heritage. The use of 'me own history' in Caribbean dialect is significant - the speaker's history belongs to them, yet it has been used as a tool of oppression ('bandage up'). The image implies both violence (bandaging a wound) and deliberate concealment (covering the eyes), suggesting that colonial education is not just incomplete but actively harmful.",
         marks: 5,
       },
       {
         question: "How does Dharker use the motif of paper to explore power in 'Tissue'?",
         lines: 6,
         modelAnswer:
-          "Dharker presents paper as the material on which all human power structures are recorded: maps that define borders, receipts that track wealth, passports that control movement, and holy books that shape belief. By choosing paper — a fragile, easily torn material — as her central motif, Dharker suggests that all these structures of power are ultimately impermanent and artificial. The repeated emphasis on paper that 'lets the light shine through' implies that the most meaningful things are transparent and fragile, not solid and permanent.",
+          "Dharker presents paper as the material on which all human power structures are recorded: maps that define borders, receipts that track wealth, passports that control movement, and holy books that shape belief. By choosing paper - a fragile, easily torn material - as her central motif, Dharker suggests that all these structures of power are ultimately impermanent and artificial. The repeated emphasis on paper that 'lets the light shine through' implies that the most meaningful things are transparent and fragile, not solid and permanent.",
         marks: 5,
       },
       {
         question: 'Compare how Agard and Dharker challenge power structures in their poems.',
         lines: 8,
         modelAnswer:
-          "Agard challenges the power of the Eurocentric education system by directly confronting what he was taught — 'Dem tell me bout 1066 and all dat' — and asserting the Black Caribbean history that was suppressed. His use of Caribbean dialect is itself a challenge to the dominance of Standard English, reclaiming language as a tool of identity. Dharker takes a different approach, using the extended metaphor of paper to suggest that all human power structures — borders, economies, nations — are as fragile as tissue. While Agard's challenge is loud, angry, and specific (naming individuals and events), Dharker's is quiet, philosophical, and universal. Both poets ultimately argue that the structures humans create to organise and control are less permanent than we believe.",
+          "Agard challenges the power of the Eurocentric education system by directly confronting what he was taught - 'Dem tell me bout 1066 and all dat' - and asserting the Black Caribbean history that was suppressed. His use of Caribbean dialect is itself a challenge to the dominance of Standard English, reclaiming language as a tool of identity. Dharker takes a different approach, using the extended metaphor of paper to suggest that all human power structures - borders, economies, nations - are as fragile as tissue. While Agard's challenge is loud, angry, and specific (naming individuals and events), Dharker's is quiet, philosophical, and universal. Both poets ultimately argue that the structures humans create to organise and control are less permanent than we believe.",
         marks: 8,
       },
       {
         question: "Why is the use of Caribbean dialect important in 'Checking Out Me History'?",
         lines: 4,
         modelAnswer:
-          "The dialect — 'Dem tell me', 'Bandage up me eye' — asserts Agard's Caribbean identity and challenges the dominance of Standard English, which represents colonial power. By writing in his own voice rather than the language of the coloniser, Agard performs the very act of reclamation the poem describes. The dialect is not 'incorrect' English — it is a deliberate, political choice that embodies the poem's message.",
+          "The dialect - 'Dem tell me', 'Bandage up me eye' - asserts Agard's Caribbean identity and challenges the dominance of Standard English, which represents colonial power. By writing in his own voice rather than the language of the coloniser, Agard performs the very act of reclamation the poem describes. The dialect is not 'incorrect' English - it is a deliberate, political choice that embodies the poem's message.",
         marks: 4,
       },
       {
         question: "What does the final stanza of 'Tissue' suggest about human identity?",
         lines: 5,
         modelAnswer:
-          "The final isolated single-line stanza ('turned into your skin.') stands ALONE as a one-line stanza, deliberately separated from the ten preceding quatrains. Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh. Dharker suggests that even the human body is a form of 'tissue' — fragile, temporary, and ultimately impermanent. This final image dissolves the boundary between the structures we create (maps, borders, documents) and the people who create them. It implies that human identity itself is as delicate as paper, and that we should hold our constructed categories (nationality, race, religion) lightly, recognising that they are human-made and not fixed or eternal.",
+          "The final isolated single-line stanza ('turned into your skin.') stands ALONE as a one-line stanza, deliberately separated from the ten preceding quatrains. Dharker breaks the regularity of the quatrains to emphasise the volta from paper to flesh. Dharker suggests that even the human body is a form of 'tissue' - fragile, temporary, and ultimately impermanent. This final image dissolves the boundary between the structures we create (maps, borders, documents) and the people who create them. It implies that human identity itself is as delicate as paper, and that we should hold our constructed categories (nationality, race, religion) lightly, recognising that they are human-made and not fixed or eternal.",
         marks: 4,
       },
     ],
     teacherNotes: [
-      'Playing a recording of Agard performing this poem is extremely effective — his energy and conviction bring the text to life.',
+      'Playing a recording of Agard performing this poem is extremely effective - his energy and conviction bring the text to life.',
       "'Tissue' is widely considered one of the more challenging poems in the anthology. Allow extra time for comprehension before analysis.",
       'The starter activity can provoke strong feelings about representation in education. Facilitate the discussion with sensitivity and openness.',
       'This pairing connects to Lesson 5 (identity) and offers a bridge to Lesson 8 (building comparison essays).',
@@ -1237,13 +1237,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'The Alternating Method: Structure for Success',
         duration: '15 minutes',
         instructions:
-          "Teach the 'alternating method' of comparison essay structure explicitly. Display a visual diagram: Introduction (brief, thesis-driven) → Paragraph 1: Theme/idea + Poem A analysis + comparison connector + Poem B analysis → Paragraph 2: Different aspect + Poem A + comparison + Poem B → Paragraph 3: Form/structure comparison → Paragraph 4 (optional): Context and evaluation → Conclusion. Model writing an introduction and topic sentence for a sample question: 'Compare how poets present the power of nature in Storm on the Island and one other poem.' Use The Prelude as the comparison poem. Students take notes on the structure and write their own topic sentences for each paragraph. Contrast this with the 'block method' (all of Poem A, then all of Poem B) and explain why the alternating method scores higher — it forces sustained comparison throughout.",
+          "Teach the 'alternating method' of comparison essay structure explicitly. Display a visual diagram: Introduction (brief, thesis-driven) → Paragraph 1: Theme/idea + Poem A analysis + comparison connector + Poem B analysis → Paragraph 2: Different aspect + Poem A + comparison + Poem B → Paragraph 3: Form/structure comparison → Paragraph 4 (optional): Context and evaluation → Conclusion. Model writing an introduction and topic sentence for a sample question: 'Compare how poets present the power of nature in Storm on the Island and one other poem.' Use The Prelude as the comparison poem. Students take notes on the structure and write their own topic sentences for each paragraph. Contrast this with the 'block method' (all of Poem A, then all of Poem B) and explain why the alternating method scores higher - it forces sustained comparison throughout.",
         differentiation: {
           support:
             'Provide a paragraph planner template with the structure pre-built and sentence starters for each section.',
           core: 'Students use the visual diagram to plan their own essay structure with topic sentences.',
           stretch:
-            "Students plan a conceptualised introduction that goes beyond naming the poems — e.g. 'Both poets explore the terrifying realisation that human beings are insignificant in the face of natural power.'",
+            "Students plan a conceptualised introduction that goes beyond naming the poems - e.g. 'Both poets explore the terrifying realisation that human beings are insignificant in the face of natural power.'",
         },
         resources: [
           'Alternating method structure diagram (projected and printed)',
@@ -1281,7 +1281,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'Students choose the paragraph they find clearest and explain why it helped them understand.',
         core: 'Students choose the most effective paragraph and justify with reference to the checklist.',
         stretch:
-          'Students identify what could still be improved even in the best paragraph — modelling the idea that writing can always be refined.',
+          'Students identify what could still be improved even in the best paragraph - modelling the idea that writing can always be refined.',
       },
     },
     homework:
@@ -1292,7 +1292,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "List four 'Grade 8/9 ingredients' that distinguish a top-band comparison essay from a mid-band response.",
         lines: 5,
         modelAnswer:
-          "(1) Sustained, integrated comparison throughout — not separate blocks on each poem. (2) Embedded quotations analysed with precise subject terminology (AO2). (3) Contextual knowledge woven into analysis, not bolted on separately (AO3). (4) Exploratory, tentative language showing multiple interpretations — 'perhaps', 'arguably', 'it could be interpreted'. Additional: analytical verbs (suggests, implies, reflects, embodies, subverts), conceptualised introduction, evaluative conclusion.",
+          "(1) Sustained, integrated comparison throughout - not separate blocks on each poem. (2) Embedded quotations analysed with precise subject terminology (AO2). (3) Contextual knowledge woven into analysis, not bolted on separately (AO3). (4) Exploratory, tentative language showing multiple interpretations - 'perhaps', 'arguably', 'it could be interpreted'. Additional: analytical verbs (suggests, implies, reflects, embodies, subverts), conceptualised introduction, evaluative conclusion.",
         marks: 4,
       },
       {
@@ -1300,7 +1300,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Explain the difference between the 'alternating method' and the 'block method' of comparison. Why is the alternating method more effective?",
         lines: 5,
         modelAnswer:
-          'The block method analyses all of Poem A first, then all of Poem B — comparison only happens at the transition between the two blocks, so the response reads as two separate essays. The alternating method weaves analysis of both poems together within each paragraph, using comparison connectors to link them. This is more effective because it demonstrates sustained comparison — a key requirement for the higher mark bands — and forces the student to think about similarities and differences throughout the response rather than just at one point.',
+          'The block method analyses all of Poem A first, then all of Poem B - comparison only happens at the transition between the two blocks, so the response reads as two separate essays. The alternating method weaves analysis of both poems together within each paragraph, using comparison connectors to link them. This is more effective because it demonstrates sustained comparison - a key requirement for the higher mark bands - and forces the student to think about similarities and differences throughout the response rather than just at one point.',
         marks: 4,
       },
       {
@@ -1338,10 +1338,10 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'This lesson is a crucial skill-building session. It should be taught after students have studied at least four poem pairings.',
-      "The model responses (A and B) should be tailored to your students' level — Response A should represent a realistic 'good' attempt, not a poor one.",
+      "The model responses (A and B) should be tailored to your students' level - Response A should represent a realistic 'good' attempt, not a poor one.",
       'The peer assessment activity requires clear modelling. Demonstrate the highlighting process with a sample paragraph first.',
       'Keep the Grade 8/9 checklist displayed for the rest of the unit as a reference tool.',
-      'The homework essay provides a summative assessment opportunity — consider marking it formally and returning with individualised targets.',
+      'The homework essay provides a summative assessment opportunity - consider marking it formally and returning with individualised targets.',
     ],
     targetedSkills: [
       'AO1: Textual references',
@@ -1390,7 +1390,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       title: 'Myth Busting: Unseen Poetry',
       duration: '7 minutes',
       instructions:
-        "Display five statements about unseen poetry and ask students to vote 'myth' or 'fact': (1) 'You have to know the poem already to do well' — MYTH; (2) 'The skills you use for anthology poems work here too' — FACT; (3) 'There is one correct answer' — MYTH; (4) 'You should spend about 45 minutes on this section' — FACT; (5) 'You need to compare two unseen poems' — FACT (for Question 2). Discuss each answer, addressing anxiety and building confidence. Emphasise: everything they need is on the page.",
+        "Display five statements about unseen poetry and ask students to vote 'myth' or 'fact': (1) 'You have to know the poem already to do well' - MYTH; (2) 'The skills you use for anthology poems work here too' - FACT; (3) 'There is one correct answer' - MYTH; (4) 'You should spend about 45 minutes on this section' - FACT; (5) 'You need to compare two unseen poems' - FACT (for Question 2). Discuss each answer, addressing anxiety and building confidence. Emphasise: everything they need is on the page.",
       differentiation: {
         support: 'Students vote with thumbs up/down and teacher explains each answer clearly.',
         core: 'Students vote and justify their answers before the reveal.',
@@ -1404,7 +1404,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'The Four Reads Strategy',
         duration: '20 minutes',
         instructions:
-          "Introduce the 'Four Reads' strategy for approaching any unseen poem. Display the strategy on a poster/slide: Read 1 — Read for Gist: What is the poem about? Who is speaking? What is the tone? Read 2 — Read for Language: Circle powerful words, highlight imagery, note connotations. Read 3 — Read for Form & Structure: How is the poem organised? What is the effect of line breaks, stanza breaks, enjambment, rhythm? Read 4 — Read for Meaning: What is the poet's message or purpose? How does it connect to the question? Distribute an unseen poem on the theme of power or conflict (e.g. 'Flag' by John Agard, 'What Were They Like?' by Denise Levertov, or another suitable poem not in the anthology). Students work through all four reads, annotating as they go. Teacher models Read 1 and Read 2 on the board, then students complete Reads 3 and 4 independently or in pairs.",
+          "Introduce the 'Four Reads' strategy for approaching any unseen poem. Display the strategy on a poster/slide: Read 1 - Read for Gist: What is the poem about? Who is speaking? What is the tone? Read 2 - Read for Language: Circle powerful words, highlight imagery, note connotations. Read 3 - Read for Form & Structure: How is the poem organised? What is the effect of line breaks, stanza breaks, enjambment, rhythm? Read 4 - Read for Meaning: What is the poet's message or purpose? How does it connect to the question? Distribute an unseen poem on the theme of power or conflict (e.g. 'Flag' by John Agard, 'What Were They Like?' by Denise Levertov, or another suitable poem not in the anthology). Students work through all four reads, annotating as they go. Teacher models Read 1 and Read 2 on the board, then students complete Reads 3 and 4 independently or in pairs.",
         differentiation: {
           support:
             'Provide a structured annotation sheet with prompts for each read and space to write notes.',
@@ -1454,7 +1454,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "List the four steps of the 'Four Reads' strategy and explain what you do at each stage.",
         lines: 8,
         modelAnswer:
-          "Read 1 — Read for Gist: Read the whole poem through once to understand the basic subject, who is speaking, and the overall tone (e.g. angry, sad, reflective). Read 2 — Read for Language: Re-read closely, circling powerful words, highlighting imagery (similes, metaphors, personification), and noting connotations of key vocabulary. Read 3 — Read for Form & Structure: Examine the poem's organisation — stanza lengths, line breaks, enjambment, rhythm, rhyme scheme — and consider the effects of these choices. Read 4 — Read for Meaning: Synthesise your observations to identify the poet's message or purpose and connect your analysis to the exam question.",
+          "Read 1 - Read for Gist: Read the whole poem through once to understand the basic subject, who is speaking, and the overall tone (e.g. angry, sad, reflective). Read 2 - Read for Language: Re-read closely, circling powerful words, highlighting imagery (similes, metaphors, personification), and noting connotations of key vocabulary. Read 3 - Read for Form & Structure: Examine the poem's organisation - stanza lengths, line breaks, enjambment, rhythm, rhyme scheme - and consider the effects of these choices. Read 4 - Read for Meaning: Synthesise your observations to identify the poet's message or purpose and connect your analysis to the exam question.",
         marks: 4,
       },
       {
@@ -1477,7 +1477,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         question: 'What should you do if you read an unseen poem and feel confused?',
         lines: 4,
         modelAnswer:
-          'First, stay calm — confusion on a first read is normal and expected. Re-read the poem using the Four Reads strategy. Focus on what you can understand: individual words, images, the tone of voice. Look at the title for clues. Identify one or two quotations you can say something about confidently and build your answer around those. You do not need to understand every line to write a strong response — the examiner is assessing the quality of your analysis, not your ability to decode every meaning.',
+          'First, stay calm - confusion on a first read is normal and expected. Re-read the poem using the Four Reads strategy. Focus on what you can understand: individual words, images, the tone of voice. Look at the title for clues. Identify one or two quotations you can say something about confidently and build your answer around those. You do not need to understand every line to write a strong response - the examiner is assessing the quality of your analysis, not your ability to decode every meaning.',
         marks: 3,
       },
       {
@@ -1485,7 +1485,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Write a PEEL paragraph analysing one technique used in the unseen poem studied in today's lesson.",
         lines: 8,
         modelAnswer:
-          "Model answer will depend on the unseen poem selected. A strong response will: make a clear point about a technique or effect, embed a short quotation, analyse the effect using subject terminology, and link to the poet's purpose or the reader's response. For example, if studying 'Flag' by Agard: 'Agard uses the rhetorical question-and-answer structure to challenge the reader's assumptions about patriotism. Each stanza opens with \"What's that...?\" and the answer — \"It's just a piece of cloth\" — deliberately minimises the flag, stripping away its symbolic power. The repetition of \"just\" implies that nationalism is artificially constructed, and the shift in the final stanza to \"Then blind your conscience to the end\" reveals the sinister consequence of flag-worship: moral blindness.'",
+          "Model answer will depend on the unseen poem selected. A strong response will: make a clear point about a technique or effect, embed a short quotation, analyse the effect using subject terminology, and link to the poet's purpose or the reader's response. For example, if studying 'Flag' by Agard: 'Agard uses the rhetorical question-and-answer structure to challenge the reader's assumptions about patriotism. Each stanza opens with \"What's that...?\" and the answer - \"It's just a piece of cloth\" - deliberately minimises the flag, stripping away its symbolic power. The repetition of \"just\" implies that nationalism is artificially constructed, and the shift in the final stanza to \"Then blind your conscience to the end\" reveals the sinister consequence of flag-worship: moral blindness.'",
         marks: 6,
       },
       {
@@ -1493,16 +1493,16 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'How can the skills you have developed studying the Power & Conflict anthology help you with unseen poetry?',
         lines: 5,
         modelAnswer:
-          "The same analytical skills transfer directly: identifying and analysing language techniques (AO2), understanding how form and structure create meaning (AO2), making inferences about the poet's message and purpose (AO1), and using subject terminology precisely. The main difference is that you cannot prepare specific quotations in advance — but the ability to close-read, annotate, and construct PEEL paragraphs is identical. Studying the anthology has built a 'toolkit' of analytical approaches that can be applied to any poem.",
+          "The same analytical skills transfer directly: identifying and analysing language techniques (AO2), understanding how form and structure create meaning (AO2), making inferences about the poet's message and purpose (AO1), and using subject terminology precisely. The main difference is that you cannot prepare specific quotations in advance - but the ability to close-read, annotate, and construct PEEL paragraphs is identical. Studying the anthology has built a 'toolkit' of analytical approaches that can be applied to any poem.",
         marks: 4,
       },
     ],
     teacherNotes: [
       'Choose an unseen poem that connects to the Power & Conflict themes so students can see the transferability of their skills.',
-      'The Four Reads strategy should be printed as a wallet-sized card for students to keep — they can use it in the exam.',
+      'The Four Reads strategy should be printed as a wallet-sized card for students to keep - they can use it in the exam.',
       'Unseen poetry is often the most anxiety-inducing part of the exam. This lesson prioritises confidence-building alongside skill development.',
       "Consider returning to this lesson's strategies in subsequent revision lessons to reinforce the approach.",
-      'The homework task (finding their own poem) builds independence and engagement — share some examples next lesson.',
+      'The homework task (finding their own poem) builds independence and engagement - share some examples next lesson.',
     ],
     targetedSkills: [
       'AO1: Personal response',
@@ -1550,12 +1550,12 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       title: 'Exam Clock Challenge',
       duration: '5 minutes',
       instructions:
-        'Display the Paper 2 timing breakdown: Section A (Modern Prose/Drama) — 50 minutes; Section B (Poetry Comparison) — 45 minutes; Section C (Unseen Poetry) — 45 minutes. Total: 2 hours 15 minutes. Ask students: How long should you spend planning? How long writing? When should you move on even if you have not finished? Students write their timing plan on a sticky note. Teacher reveals recommended breakdown: Section B — 5 mins planning + 35 mins writing + 5 mins checking; Section C Q1 — 3 mins reading + 22 mins writing; Section C Q2 — 2 mins reading + 13 mins writing. Students compare with their own plans.',
+        'Display the Paper 2 timing breakdown: Section A (Modern Prose/Drama) - 50 minutes; Section B (Poetry Comparison) - 45 minutes; Section C (Unseen Poetry) - 45 minutes. Total: 2 hours 15 minutes. Ask students: How long should you spend planning? How long writing? When should you move on even if you have not finished? Students write their timing plan on a sticky note. Teacher reveals recommended breakdown: Section B - 5 mins planning + 35 mins writing + 5 mins checking; Section C Q1 - 3 mins reading + 22 mins writing; Section C Q2 - 2 mins reading + 13 mins writing. Students compare with their own plans.',
       differentiation: {
         support: 'Provide the timing breakdown pre-printed as a card for students to keep.',
         core: 'Students create their own timing plan and compare with the recommended breakdown.',
         stretch:
-          'Students consider which section they personally find hardest and plan to allocate extra time to it — discussing the trade-offs.',
+          'Students consider which section they personally find hardest and plan to allocate extra time to it - discussing the trade-offs.',
       },
       resources: ['Timing breakdown slide', 'Timing plan cards (support tier)', 'Sticky notes'],
     },
@@ -1564,13 +1564,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Timed Task 1: Poetry Comparison (Section B)',
         duration: '25 minutes',
         instructions:
-          "Distribute a comparison question: 'Compare how poets present the effects of conflict on individuals in Remains and one other poem from the Power & Conflict anthology.' Students have 5 minutes to plan (using the alternating method structure from Lesson 8) and 20 minutes to write their response. Exam conditions: silent working, no access to poem texts (testing recall — or provide the named poem and let students choose their comparison poem from memory). Timer displayed on the board. Teacher circulates silently, noting common issues for the feedback session. When time is called, students put pens down immediately — practising the discipline of exam conditions.",
+          "Distribute a comparison question: 'Compare how poets present the effects of conflict on individuals in Remains and one other poem from the Power & Conflict anthology.' Students have 5 minutes to plan (using the alternating method structure from Lesson 8) and 20 minutes to write their response. Exam conditions: silent working, no access to poem texts (testing recall - or provide the named poem and let students choose their comparison poem from memory). Timer displayed on the board. Teacher circulates silently, noting common issues for the feedback session. When time is called, students put pens down immediately - practising the discipline of exam conditions.",
         differentiation: {
           support:
             "Provide the printed text of 'Remains' and a planning frame with the alternating method structure. Allow students to choose from three suggested comparison poems (Bayonet Charge, Exposure, or The Charge of the Light Brigade) with a key quotation provided for each.",
           core: "Provide the printed text of 'Remains' only. Students choose their own comparison poem and plan independently.",
           stretch:
-            'No printed texts provided — students work entirely from memory, as they will in the exam. This tests recall alongside analytical skill.',
+            'No printed texts provided - students work entirely from memory, as they will in the exam. This tests recall alongside analytical skill.',
         },
         resources: [
           'Comparison question handout',
@@ -1584,7 +1584,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         title: 'Timed Task 2: Unseen Poetry (Section C, Question 1)',
         duration: '18 minutes',
         instructions:
-          "Distribute an unseen poem on the theme of power or conflict (e.g. 'The Man He Killed' by Thomas Hardy, 'Dulce et Decorum Est' by Wilfred Owen, or another suitable poem not in the anthology — ensure it is genuinely unseen). Students have 3 minutes to read and annotate using the Four Reads strategy, then 15 minutes to write a response to: 'In this poem, how does the poet present ideas about conflict?' Timer displayed. Exam conditions as before. When time is called, students stop writing.",
+          "Distribute an unseen poem on the theme of power or conflict (e.g. 'The Man He Killed' by Thomas Hardy, 'Dulce et Decorum Est' by Wilfred Owen, or another suitable poem not in the anthology - ensure it is genuinely unseen). Students have 3 minutes to read and annotate using the Four Reads strategy, then 15 minutes to write a response to: 'In this poem, how does the poet present ideas about conflict?' Timer displayed. Exam conditions as before. When time is called, students stop writing.",
         differentiation: {
           support:
             'Provide the Four Reads strategy card and a PEEL frame. The poem should have a glossary for any archaic vocabulary.',
@@ -1604,7 +1604,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
       title: 'Mark Scheme Self-Assessment & Target Setting',
       duration: '10 minutes',
       instructions:
-        "Distribute a simplified AQA mark scheme for both Section B and Section C. Students re-read their own responses and highlight evidence of: AO1 (response to text — green), AO2 (language/form/structure — yellow), AO3 (context — pink, Section B only). Students then complete a self-assessment slip: 'My strongest AO was ___ because ___. My target AO is ___ because ___. One specific thing I will do differently next time is ___.' Teacher collects slips and uses them to plan targeted intervention before the exam.",
+        "Distribute a simplified AQA mark scheme for both Section B and Section C. Students re-read their own responses and highlight evidence of: AO1 (response to text - green), AO2 (language/form/structure - yellow), AO3 (context - pink, Section B only). Students then complete a self-assessment slip: 'My strongest AO was ___ because ___. My target AO is ___ because ___. One specific thing I will do differently next time is ___.' Teacher collects slips and uses them to plan targeted intervention before the exam.",
       differentiation: {
         support:
           'Teacher models the self-assessment process on a sample response before students attempt their own.',
@@ -1629,7 +1629,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'What should you do in the first 3-5 minutes when you see the comparison question in the exam?',
         lines: 5,
         modelAnswer:
-          "First, read the question carefully and identify the theme or idea you are being asked to compare (e.g. 'the effects of conflict', 'the power of nature'). Second, choose your comparison poem — pick the poem you know best that shares the strongest thematic link. Third, jot down 3-4 key quotations from each poem that relate to the theme. Fourth, plan your paragraph structure using the alternating method: decide which aspects (language, form, structure, context) you will focus on in each paragraph. This planning time is essential — it prevents rambling and ensures sustained comparison.",
+          "First, read the question carefully and identify the theme or idea you are being asked to compare (e.g. 'the effects of conflict', 'the power of nature'). Second, choose your comparison poem - pick the poem you know best that shares the strongest thematic link. Third, jot down 3-4 key quotations from each poem that relate to the theme. Fourth, plan your paragraph structure using the alternating method: decide which aspects (language, form, structure, context) you will focus on in each paragraph. This planning time is essential - it prevents rambling and ensures sustained comparison.",
         marks: 4,
       },
       {
@@ -1637,7 +1637,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'How should you approach Paper 2 Section C Question 2 differently from Question 1?',
         lines: 5,
         modelAnswer:
-          'Question 1 (24 marks) requires detailed analysis of one unseen poem — you should write multiple paragraphs covering language, form, structure, and personal response. Question 2 (8 marks) requires a comparison of the first poem with a second unseen poem — this should be shorter and more focused. You do not need to analyse both poems in equal depth for Question 2; instead, focus on one or two key similarities or differences. Use comparison connectors to link the poems efficiently. Spending too long on Question 2 is a common mistake — it is worth one-third of the marks of Question 1.',
+          'Question 1 (24 marks) requires detailed analysis of one unseen poem - you should write multiple paragraphs covering language, form, structure, and personal response. Question 2 (8 marks) requires a comparison of the first poem with a second unseen poem - this should be shorter and more focused. You do not need to analyse both poems in equal depth for Question 2; instead, focus on one or two key similarities or differences. Use comparison connectors to link the poems efficiently. Spending too long on Question 2 is a common mistake - it is worth one-third of the marks of Question 1.',
         marks: 4,
       },
       {
@@ -1653,7 +1653,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           'Reflect on your timed comparison response from today. Identify one strength and one area for improvement with specific evidence.',
         lines: 6,
         modelAnswer:
-          'Answers will vary. A strong self-assessment might read: \'My strength was AO2 — I analysed the effect of Armitage\'s pronoun shift from "we" to "I" in Remains, using the term "semantic shift" accurately. My area for improvement is AO3 — I mentioned that Armitage wrote about the Iraq War but did not link this contextual knowledge to a specific analytical point. Next time, I will embed context within my analysis, e.g. "The colloquial tone reflects the real soldier\'s testimony Armitage collected, lending the poem an authenticity that reinforces its anti-war message."\'',
+          'Answers will vary. A strong self-assessment might read: \'My strength was AO2 - I analysed the effect of Armitage\'s pronoun shift from "we" to "I" in Remains, using the term "semantic shift" accurately. My area for improvement is AO3 - I mentioned that Armitage wrote about the Iraq War but did not link this contextual knowledge to a specific analytical point. Next time, I will embed context within my analysis, e.g. "The colloquial tone reflects the real soldier\'s testimony Armitage collected, lending the poem an authenticity that reinforces its anti-war message."\'',
         marks: 4,
       },
       {
@@ -1661,13 +1661,13 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "Write a plan for a comparison essay on: 'Compare how poets present powerful emotions in Poppies and one other poem.' Include your chosen poem, three comparison points, and one key quotation per poem per point.",
         lines: 10,
         modelAnswer:
-          "Example plan — Comparison poem: Kamikaze. Point 1 (Language — grief and loss): Poppies — 'the world overflowing / like a treasure chest' (mother's overwhelming emotion); Kamikaze — 'my mother never spoke again / in his presence' (grief expressed through silence). Point 2 (Structure — perspective and voice): Poppies — first-person maternal voice, stream of consciousness; Kamikaze — third-person daughter's narration, distanced but emotional. Point 3 (Context and purpose): Poppies — Weir wrote about mothers of soldiers in modern conflicts; Kamikaze — Garland explores the cultural expectations of honour in WWII Japan. Introduction thesis: Both poets explore how conflict creates powerful emotions that endure long after the event, but while Weir focuses on a mother's private grief, Garland examines the emotional devastation of social rejection.",
+          "Example plan - Comparison poem: Kamikaze. Point 1 (Language - grief and loss): Poppies - 'the world overflowing / like a treasure chest' (mother's overwhelming emotion); Kamikaze - 'my mother never spoke again / in his presence' (grief expressed through silence). Point 2 (Structure - perspective and voice): Poppies - first-person maternal voice, stream of consciousness; Kamikaze - third-person daughter's narration, distanced but emotional. Point 3 (Context and purpose): Poppies - Weir wrote about mothers of soldiers in modern conflicts; Kamikaze - Garland explores the cultural expectations of honour in WWII Japan. Introduction thesis: Both poets explore how conflict creates powerful emotions that endure long after the event, but while Weir focuses on a mother's private grief, Garland examines the emotional devastation of social rejection.",
         marks: 6,
       },
     ],
     teacherNotes: [
       'This lesson works best as a penultimate or final lesson in the unit, after all poems and skills have been taught.',
-      'Strict exam conditions are important — explain to students that practising under pressure now reduces anxiety in the real exam.',
+      'Strict exam conditions are important - explain to students that practising under pressure now reduces anxiety in the real exam.',
       'Choose the unseen poem carefully: it should be accessible enough for all students to engage with but rich enough for higher-attaining students to analyse in depth.',
       'The self-assessment slips are extremely valuable formative data. Use them to plan targeted revision sessions or one-to-one conferences.',
       'Consider running a follow-up lesson where students redraft their comparison essay using feedback, demonstrating the improvement cycle.',

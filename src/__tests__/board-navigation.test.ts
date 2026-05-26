@@ -29,7 +29,7 @@ function readSource(...segments: string[]): string {
 
 /**
  * Match all `href: '<value>'` literals inside a source file.
- * The same forgiving extraction style used by homepage-board-cards.test.ts —
+ * The same forgiving extraction style used by homepage-board-cards.test.ts -
  * survives whitespace, trailing commas, and additional sibling fields.
  */
 function extractHrefs(source: string): readonly string[] {
@@ -198,7 +198,7 @@ describe('middleware ?setBoard handler (contract A,C)', () => {
   it('writes the english-hub-board cookie inside the setBoard branch', () => {
     // Anchored on cookies.set('english-hub-board' so we know the param is
     // what triggers the write. The presence of the literal ID string is
-    // enough — full branching is verified by the e2e flow.
+    // enough - full branching is verified by the e2e flow.
     expect(
       /cookies\.set\(\s*['"]english-hub-board['"]/.test(SOURCE),
       'middleware.ts must call cookies.set("english-hub-board", ...) when setBoard param is present',

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Free GCSE English revision planner. Organise your study schedule, track topics covered, and build a personalised countdown to exam day.',
   alternates: { canonical: 'https://theenglishhub.app/resources/study-tools/revision-planner' },
   openGraph: {
-    title: 'Revision Planner — The English Hub',
+    title: 'Revision Planner - The English Hub',
     description:
       'Free GCSE English revision planner. Organise your study schedule, track topics covered, and build a personalised countdown to exam day.',
   },

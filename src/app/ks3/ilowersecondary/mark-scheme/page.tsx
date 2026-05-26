@@ -12,11 +12,11 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'How your answers are marked — iLowerSecondary English',
+    title: 'How your answers are marked - iLowerSecondary English',
     description:
       'Plain-English guide to Pearson’s marking rules for the iLowerSecondary English achievement test: positive marking, best-fit levels, indicative content, and the full Section B writing and comparison grids.',
   },
-  title: 'How your answers are marked — iLowerSecondary English',
+  title: 'How your answers are marked - iLowerSecondary English',
   description:
     'Plain-English guide to Pearson’s marking rules for the iLowerSecondary English achievement test: positive marking, best-fit levels, indicative content, and the full Section B writing and comparison grids.',
   alternates: {
@@ -60,7 +60,7 @@ export default function MarkSchemePage() {
       <h1>How your answers are marked</h1>
       <p className="lead">
         Every script for the iLowerSecondary English achievement test is marked using the same set
-        of rules. Knowing them helps you see exactly what an examiner is looking for — and what wins
+        of rules. Knowing them helps you see exactly what an examiner is looking for - and what wins
         or loses marks.
       </p>
 
@@ -71,11 +71,11 @@ export default function MarkSchemePage() {
           {[
             {
               title: 'Positive marking',
-              body: 'Examiners reward what you have shown you can do. They look for evidence of achievement and credit it — they do not deduct marks for things you have left out or for not reaching the very top of a level.',
+              body: 'Examiners reward what you have shown you can do. They look for evidence of achievement and credit it - they do not deduct marks for things you have left out or for not reaching the very top of a level.',
             },
             {
               title: 'Best-fit levels',
-              body: 'For levelled questions the examiner reads the whole answer, then chooses the level whose description fits it best overall. A single weaker sentence does not drag a strong answer down a level — the balance of the response decides.',
+              body: 'For levelled questions the examiner reads the whole answer, then chooses the level whose description fits it best overall. A single weaker sentence does not drag a strong answer down a level - the balance of the response decides.',
             },
             {
               title: 'Indicative content is illustrative',
@@ -87,7 +87,7 @@ export default function MarkSchemePage() {
             },
             {
               title: 'No vague references',
-              body: 'A vague reference without expansion is not accepted. “The writer uses language” is not enough — name the choice and explain its effect.',
+              body: 'A vague reference without expansion is not accepted. “The writer uses language” is not enough - name the choice and explain its effect.',
             },
             {
               title: 'One mark per developed point',
@@ -95,7 +95,7 @@ export default function MarkSchemePage() {
             },
             {
               title: 'Closed questions',
-              body: 'On closed questions (circling, ticking, crossing or underlining) any clear positive indication of the correct answer is accepted, even if it is not perfectly neat — as long as the intended choice is unambiguous.',
+              body: 'On closed questions (circling, ticking, crossing or underlining) any clear positive indication of the correct answer is accepted, even if it is not perfectly neat - as long as the intended choice is unambiguous.',
             },
             {
               title: 'Own words or precise quotation',
@@ -118,8 +118,8 @@ export default function MarkSchemePage() {
         <p>
           The single extended writing task is worth {SECTIONS.B.marks} marks. It is marked against
           two separate levelled grids that are added together: one for {WAO1.code} (worth{' '}
-          {WAO1_GRID[WAO1_GRID.length - 1].marks.split('–')[1]} marks) and one for {WAO2.code}{' '}
-          (worth {WAO2_GRID[WAO2_GRID.length - 1].marks.split('–')[1]} marks). Each grid runs from
+          {WAO1_GRID[WAO1_GRID.length - 1].marks.split('-')[1]} marks) and one for {WAO2.code}{' '}
+          (worth {WAO2_GRID[WAO2_GRID.length - 1].marks.split('-')[1]} marks). Each grid runs from
           level S1 (lowest) to S4 (highest); the examiner picks the best-fit level for each, then
           totals the two.
         </p>
@@ -204,11 +204,11 @@ export default function MarkSchemePage() {
         <h2>The Section A comparison grid</h2>
         <p>
           The extended comparison question in{' '}
-          {SECTIONS.A.name.replace('Section A: ', 'Section A — ')} is marked out of{' '}
-          {COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('–')[1]} using its own
-          levelled grid. It assesses three reading objectives at once —{' '}
+          {SECTIONS.A.name.replace('Section A: ', 'Section A - ')} is marked out of{' '}
+          {COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('-')[1]} using its own
+          levelled grid. It assesses three reading objectives at once -{' '}
           {ASSESSMENT_OBJECTIVES.RAO2.code}, {ASSESSMENT_OBJECTIVES.RAO4.code} and{' '}
-          {ASSESSMENT_OBJECTIVES.RAO5.code} — so the strongest answers move from an implicit comment
+          {ASSESSMENT_OBJECTIVES.RAO5.code} - so the strongest answers move from an implicit comment
           to a clear, explicit explanation of the contrast.
         </p>
         <div className="not-prose mt-4 overflow-x-auto">
@@ -247,8 +247,8 @@ export default function MarkSchemePage() {
       <section className="my-10">
         <h2>Worked example: 1 mark vs 2 marks</h2>
         <p>
-          Here is an original two-mark short open-response question — written by The English Hub,
-          not taken from any past paper — that asks students to explain a writer&apos;s choice. The
+          Here is an original two-mark short open-response question - written by The English Hub,
+          not taken from any past paper - that asks students to explain a writer&apos;s choice. The
           neutral topic is a notice about a school&apos;s new bicycle shelter.
         </p>
         <div className="not-prose my-5 rounded-xl border border-border/60 bg-card p-5">

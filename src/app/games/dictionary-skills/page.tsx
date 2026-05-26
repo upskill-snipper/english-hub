@@ -48,7 +48,7 @@ interface PosItem {
 
 type BankItem = AlphaItem | GuideItem | DefineItem | PosItem
 
-// Original content bank — UK English, 50+ items typed by subtype.
+// Original content bank - UK English, 50+ items typed by subtype.
 const ALPHA_BANK: AlphaItem[] = [
   { type: 'alpha', words: ['orchard', 'ocean', 'olive', 'oyster'], answer: 'ocean' },
   { type: 'alpha', words: ['breeze', 'brick', 'branch', 'bridge'], answer: 'branch' },
@@ -293,8 +293,8 @@ function buildQuestion(item: BankItem): Question {
         correct: item.answer,
       }
     case 'guide': {
-      const yes = `Yes — "${item.word}" is on this page`
-      const no = `No — "${item.word}" is not on this page`
+      const yes = `Yes - "${item.word}" is on this page`
+      const no = `No - "${item.word}" is not on this page`
       return {
         subtype: 'guide',
         prompt: `Guide words at the top of a page are "${item.left}" and "${item.right}". Would you find "${item.word}" on this page?`,
@@ -496,7 +496,7 @@ export default function DictionarySkillsPage() {
                 >
                   {feedback === 'correct' ? (
                     <>
-                      <CheckCircle className="size-4" /> Well done — that&apos;s right!
+                      <CheckCircle className="size-4" /> Well done - that&apos;s right!
                     </>
                   ) : (
                     <>

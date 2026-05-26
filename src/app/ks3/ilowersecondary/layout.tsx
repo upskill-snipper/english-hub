@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description:
     `Student learning hub for the ${QUALIFICATION.title} (${QUALIFICATION.subjectCode}). ` +
-    'Specification, exam format, mark scheme, grade targets S1–S4, reading and writing skills, ' +
+    'Specification, exam format, mark scheme, grade targets S1-S4, reading and writing skills, ' +
     'question types, text types, original practice papers, quizzes, a grammar lab and vocabulary builder.',
 }
 

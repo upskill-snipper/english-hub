@@ -139,7 +139,7 @@ const PITFALLS = [
   },
   {
     label: 'Retelling the story',
-    text: 'Summarising what happens is not analysis. The questions ask why the writer made a choice and what effect it has — answer that question, not “what happened next.”',
+    text: 'Summarising what happens is not analysis. The questions ask why the writer made a choice and what effect it has - answer that question, not “what happened next.”',
   },
   {
     label: 'Lifting without explaining',
@@ -270,7 +270,7 @@ export default async function ReadingFictionPage() {
             'Read the whole extract once for the situation: who, where, what is the problem.',
             'Re-read for character: appearance, actions, speech, and what others say about them.',
             'Map the structure: narrator, tense, the order of information, early clues, how it ends.',
-            'Mark the language: a short sentence and why, a long sentence and why, a vivid description, a strong word, any device — and the effect of each.',
+            'Mark the language: a short sentence and why, a long sentence and why, a vivid description, a strong word, any device - and the effect of each.',
             'Only now read the questions, and answer the one in front of you, not the story.',
           ].map((s, i) => (
             <li key={s} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">

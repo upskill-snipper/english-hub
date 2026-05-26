@@ -3,7 +3,7 @@
 // Sent immediately after a user self-enrols at /affiliates. Gives them
 // their code + referral URL + the four starter post templates + the
 // mandatory #ad disclosure reminder. Never blocks the enrolment response
-// — we fire-and-forget and log delivery outcomes.
+// - we fire-and-forget and log delivery outcomes.
 // ──────────────────────────────────────────────────────────────────────────
 
 import { sendViaResend, escapeHtml, type ResendSendResult } from './resend'
@@ -34,7 +34,7 @@ export async function sendAffiliateWelcomeEmail(
 <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a1a;">
   <h1 style="font-size: 22px; margin: 0 0 12px;">Hi ${nameSafe},</h1>
   <p style="line-height: 1.6; font-size: 15px;">
-    You&rsquo;re officially an English Hub partner. Your code is active and ready to share —
+    You&rsquo;re officially an English Hub partner. Your code is active and ready to share -
     every signup attributed to you is tracked automatically.
   </p>
 
@@ -51,7 +51,7 @@ export async function sendAffiliateWelcomeEmail(
   <h2 style="font-size: 17px; margin: 32px 0 8px;">Starter post templates</h2>
   <p style="line-height: 1.6; font-size: 14px; color: #475569;">
     Copy, paste, personalise. Every template already includes the mandatory <strong>#ad</strong>
-    disclosure — the ASA requires it at the start of a caption, visible without a &ldquo;more&rdquo;
+    disclosure - the ASA requires it at the start of a caption, visible without a &ldquo;more&rdquo;
     truncation, and on-screen for 3s on any video.
   </p>
 
@@ -76,7 +76,7 @@ export async function sendAffiliateWelcomeEmail(
 
   <p style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b; line-height: 1.5;">
     Questions? Reply to this email or hit us at <a href="mailto:info@upskillenergy.com" style="color: #0f766e;">info@upskillenergy.com</a>.<br />
-    Thanks for partnering with us — it genuinely helps students.<br />
+    Thanks for partnering with us - it genuinely helps students.<br />
     <strong>The English Hub</strong> &middot; Upskill Energy Limited &middot; Companies House 16511479 &middot; ICO ZC016690
   </p>
 </div>`.trim()
@@ -92,16 +92,16 @@ export async function sendAffiliateWelcomeEmail(
     ``,
     `Starter post templates (remember #ad at the START of every caption):`,
     ``,
-    `— TikTok —`,
+    `- TikTok -`,
     tiktokTemplate(input.code, input.referralUrl),
     ``,
-    `— Instagram —`,
+    `- Instagram -`,
     instagramTemplate(input.code, input.referralUrl),
     ``,
-    `— X / Twitter —`,
+    `- X / Twitter -`,
     xTemplate(input.code, input.referralUrl),
     ``,
-    `— WhatsApp —`,
+    `- WhatsApp -`,
     whatsappTemplate(input.code, input.referralUrl),
     ``,
     `ASA rules: disclose at the start, visible without truncation, 3s on-screen for video.`,
@@ -127,11 +127,11 @@ export async function sendAffiliateWelcomeEmail(
 // ─── Template bodies ────────────────────────────────────────────────────────
 
 function tiktokTemplate(code: string, url: string): string {
-  return `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial — code ${code} at checkout for 7 days free.\n\n👉 ${url}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`
+  return `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial - code ${code} at checkout for 7 days free.\n\n👉 ${url}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`
 }
 
 function instagramTemplate(code: string, url: string): string {
-  return `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor — instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${url}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`
+  return `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor - instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${url}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`
 }
 
 function xTemplate(code: string, url: string): string {
@@ -139,7 +139,7 @@ function xTemplate(code: string, url: string): string {
 }
 
 function whatsappTemplate(code: string, url: string): string {
-  return `Came across this — The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${url} (#ad)`
+  return `Came across this - The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${url} (#ad)`
 }
 
 function renderTemplate(platform: string, body: string): string {

@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Lord of the Flies revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Lord of the Flies GCSE revision — Golding',
+    title: 'Lord of the Flies revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Lord of the Flies GCSE revision - Golding',
   },
-  title: 'Lord of the Flies revision guide — themes, characters, key quotes',
+  title: 'Lord of the Flies revision guide - themes, characters, key quotes',
   description:
-    "Lord of the Flies GCSE revision — Golding's novel by chapter with characters, themes, context, key quotes and essay plans. Aligned to AQA, OCR and Eduqas.",
+    "Lord of the Flies GCSE revision - Golding's novel by chapter with characters, themes, context, key quotes and essay plans. Aligned to AQA, OCR and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
   },
@@ -28,7 +28,7 @@ const data: TextGuideData = {
   category: 'Novel',
   badge: 'AQA / OCR / Eduqas',
   intro:
-    "William Golding's ferocious first novel strands a group of English schoolboys on a tropical island after their plane is shot down during a future war. What begins as an adventure quickly collapses into savagery as Golding tests — and rejects — the Victorian myth that civilisation is the natural state of well-bred boys.",
+    "William Golding's ferocious first novel strands a group of English schoolboys on a tropical island after their plane is shot down during a future war. What begins as an adventure quickly collapses into savagery as Golding tests - and rejects - the Victorian myth that civilisation is the natural state of well-bred boys.",
   quickInfo: {
     genre: 'Allegorical novel / Psychological fable',
     setting: 'An uninhabited Pacific island, near-future wartime',
@@ -37,7 +37,7 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'A plane carrying British schoolboys is shot down over a tropical island. The survivors, none older than about twelve, emerge to find no adults. Fair-haired Ralph finds a conch shell and, with the help of the plump, asthmatic Piggy, uses it to summon the others. The boys elect Ralph chief. Jack Merridew, leader of a group of choirboys, is made head of the hunters in a grudging compromise.',
-    "Ralph builds shelters, insists on a signal fire and holds meetings where whoever holds the conch can speak. Jack becomes obsessed with hunting the island's pigs and gradually pulls his choir — painted, bare-chested and singing — away from Ralph's order. A rumour spreads among the younger children of a 'beast' on the mountain. What they have actually seen is the body of a dead parachutist tangled in his lines.",
+    "Ralph builds shelters, insists on a signal fire and holds meetings where whoever holds the conch can speak. Jack becomes obsessed with hunting the island's pigs and gradually pulls his choir - painted, bare-chested and singing - away from Ralph's order. A rumour spreads among the younger children of a 'beast' on the mountain. What they have actually seen is the body of a dead parachutist tangled in his lines.",
     'At the centre of the novel, the group kills a sow and mounts her head on a stake. The visionary, epileptic Simon alone climbs the mountain, discovers the parachutist, and understands that the beast is nothing more than a man and that the real evil lives inside the boys themselves. As he returns in the dark to tell them, he is mistaken for the beast and beaten to death in a frenzied circle dance.',
     "Jack's tribe grows dominant. They raid Ralph's camp, steal Piggy's glasses (their only source of fire), and later roll a boulder that kills Piggy and shatters the conch. Ralph is hunted across the burning island by boys who now want him dead. He collapses on the beach at the feet of a naval officer, who has come ashore because of the smoke, and weeps for the end of innocence and 'the darkness of man's heart'.",
   ],
@@ -60,7 +60,7 @@ const data: TextGuideData = {
     {
       name: 'Simon',
       role: 'Visionary, prophetic outsider',
-      body: "Simon is the closest thing the novel has to a saint. He grasps the novel's central truth — that the beast is the boys themselves — and is murdered for trying to share it, in a scene Golding stages with religious overtones.",
+      body: "Simon is the closest thing the novel has to a saint. He grasps the novel's central truth - that the beast is the boys themselves - and is murdered for trying to share it, in a scene Golding stages with religious overtones.",
     },
     {
       name: 'Roger',
@@ -80,7 +80,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Innate evil and original sin',
-      body: 'Golding was shaped by the Second World War and rejected the liberal optimism of his age. The Lord of the Flies — the pig\u2019s head on a stake — speaks to Simon with a voice that could belong to anyone on the island.',
+      body: 'Golding was shaped by the Second World War and rejected the liberal optimism of his age. The Lord of the Flies - the pig\u2019s head on a stake - speaks to Simon with a voice that could belong to anyone on the island.',
     },
     {
       title: 'Order, democracy and dictatorship',
@@ -104,42 +104,42 @@ const data: TextGuideData = {
   quotations: [
     {
       quote: '"Maybe there is a beast... maybe it\'s only us."',
-      who: 'Simon — Chapter 5',
+      who: 'Simon - Chapter 5',
       analysis:
         'The novel\u2019s thesis in a sentence. Evil comes from within, not from the jungle.',
     },
     {
       quote: '"We\'ve got to have rules and obey them. After all, we\'re not savages."',
-      who: 'Jack — Chapter 2',
+      who: 'Jack - Chapter 2',
       analysis:
         'The irony of Jack\u2019s early insistence on order. Within a hundred pages he will embody the opposite.',
     },
     {
       quote: '"Kill the pig. Cut her throat. Spill her blood."',
-      who: 'Chant — Chapter 4',
+      who: 'Chant - Chapter 4',
       analysis:
         'The ritual chant Golding uses to track the boys\u2019 descent. It mutates into the chant that kills Simon.',
     },
     {
       quote: '"Ralph wept for the end of innocence, the darkness of man\'s heart."',
-      who: 'Narrator — final chapter',
+      who: 'Narrator - final chapter',
       analysis:
         'Golding\u2019s closing judgement. The loss is not just of boyhood but of a shared moral illusion.',
     },
     {
       quote: '"Sucks to your ass-mar!"',
-      who: 'The boys to Piggy — Chapter 1',
+      who: 'The boys to Piggy - Chapter 1',
       analysis:
         'Cruelty begins as playground teasing. Golding shows how easily it hardens into hunting.',
     },
     {
       quote: '"Fancy thinking the Beast was something you could hunt and kill!"',
-      who: 'The Lord of the Flies — Chapter 8',
+      who: 'The Lord of the Flies - Chapter 8',
       analysis: "The pig's head taunts Simon with the truth the others refuse to see.",
     },
     {
       quote: '"The conch exploded into a thousand white fragments."',
-      who: 'Narrator — Chapter 11',
+      who: 'Narrator - Chapter 11',
       analysis:
         'Democracy on the island dies in a single sentence. Piggy\u2019s death follows immediately.',
     },
@@ -277,7 +277,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
       'What is ironic about Jack saying "We\'ve got to have rules and obey them. After all, we\'re not savages"?',
     type: 'multiple-choice',
     options: [
-      'Nothing — he means it sincerely',
+      'Nothing - he means it sincerely',
       'Jack himself becomes the most savage character on the island, violating every rule he initially supported',
       'He is quoting someone else',
       'He never says this',
@@ -380,7 +380,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Simon alone discovers the truth about the beast, climbs the mountain (like a spiritual journey), and returns to share his revelation. He is killed by a frenzied mob — those he was trying to save. Golding stages the scene with religious imagery, and Simon's body drifts out to sea in a halo of light.",
+      "Simon alone discovers the truth about the beast, climbs the mountain (like a spiritual journey), and returns to share his revelation. He is killed by a frenzied mob - those he was trying to save. Golding stages the scene with religious imagery, and Simon's body drifts out to sea in a halo of light.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -428,7 +428,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Golding served in the Royal Navy and participated in D-Day. He later said the war made it "impossible to believe that humans were innately good." Lord of the Flies grew directly from that disillusionment — it rejects liberal optimism about human nature.',
+      'Golding served in the Royal Navy and participated in D-Day. He later said the war made it "impossible to believe that humans were innately good." Lord of the Flies grew directly from that disillusionment - it rejects liberal optimism about human nature.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -438,7 +438,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They dislike him',
-      'Fear turns decent, ordinary people into accomplices — they represent conformity under pressure',
+      'Fear turns decent, ordinary people into accomplices - they represent conformity under pressure',
       'They are bribed',
       'They agree with Jack',
     ],
@@ -467,9 +467,9 @@ const REVISION_TOPICS = [
     topic: 'Innate Evil',
     summary: 'Golding argues that evil is part of human nature, not an external force.',
     keyPoints: [
-      '"Maybe there is a beast... maybe it\'s only us" — Simon\'s insight',
+      '"Maybe there is a beast... maybe it\'s only us" - Simon\'s insight',
       'The Lord of the Flies tells Simon the beast cannot be hunted or killed',
-      'The "beast" on the mountain is just a dead man — the real beast is within',
+      'The "beast" on the mountain is just a dead man - the real beast is within',
       'Shaped by WWII: Golding lost faith in human goodness',
       "Roger's descent shows what happens when civilised restraints are removed",
     ],
@@ -528,7 +528,7 @@ export default async function LordOfTheFliesPage() {
   return (
     <>
       <CourseJsonLd
-        name="Lord of the Flies — Complete GCSE Study Guide"
+        name="Lord of the Flies - Complete GCSE Study Guide"
         description="In-depth study guide for Lord of the Flies covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

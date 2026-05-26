@@ -6,7 +6,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  * Macbeth is set on AQA, Edexcel, OCR, Eduqas and Edexcel IGCSE, so the
  * only boards where it is NOT studied are the Cambridge IGCSE language
  * specifications (0500 and 0990). We still render the article in full for
- * those readers — the content is genuinely useful for language analysis —
+ * those readers - the content is genuinely useful for language analysis -
  * but we surface a warning that their board doesn't include Macbeth.
  *
  * Usage inside a page.tsx (server component):
@@ -24,7 +24,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  *
  * The banner is a client component that only renders after hydration, so
  * crawlers and first-time visitors with no board selected always see the
- * full article — preserving SEO.
+ * full article - preserving SEO.
  */
 export function AnalysisBoardGate({ children }: { children: React.ReactNode }) {
   return (

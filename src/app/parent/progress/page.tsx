@@ -61,7 +61,7 @@ function formatDate(iso?: string): string {
 
 // ── Reading age estimation (simple mock heuristic) ────────────────────────────
 function estimateReadingAge(averageScore: number | null, poemCount: number): number {
-  // [P2:data] Supabase — use real reading age assessments
+  // [P2:data] Supabase - use real reading age assessments
   const base = 10
   const scoreBoost = averageScore != null ? (averageScore / 100) * 5 : 0
   const poemBoost = Math.min(poemCount * 0.1, 2)
@@ -212,7 +212,7 @@ export default function ParentProgressPage() {
               </span>
             </div>
             <p className="mt-2 text-2xl font-bold text-foreground">
-              {state ? `${readingAge}` : '—'}
+              {state ? `${readingAge}` : '-'}
             </p>
             <p className="text-xs text-muted-foreground">{t('parent.years_estimated')}</p>
           </CardContent>
@@ -332,7 +332,7 @@ export default function ParentProgressPage() {
                     </div>
                   </div>
                   <span className="text-sm font-bold text-foreground">
-                    {game.score != null ? game.score : '—'}
+                    {game.score != null ? game.score : '-'}
                   </span>
                 </li>
               ))}

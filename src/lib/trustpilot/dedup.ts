@@ -5,9 +5,9 @@
  * place.
  *
  * Rules:
- *   • 12 months per (user, trigger) — a user can only be invited against a
+ *   • 12 months per (user, trigger) - a user can only be invited against a
  *     given trigger once a year.
- *   • 90 days global — a user should never receive more than one Trustpilot
+ *   • 90 days global - a user should never receive more than one Trustpilot
  *     invite in any 90-day window, regardless of trigger.
  *
  * A row in `trustpilot_invite` with status in ('sent', 'reserved') counts
@@ -20,9 +20,7 @@ import type { TrustpilotBccTrigger } from './trigger-names'
 export const TWELVE_MONTHS_MS = 365 * 24 * 60 * 60 * 1000
 export const NINETY_DAYS_MS = 90 * 24 * 60 * 60 * 1000
 
-export type DedupReason =
-  | 'duplicate_trigger_12m'
-  | 'global_90d_window'
+export type DedupReason = 'duplicate_trigger_12m' | 'global_90d_window'
 
 export type DedupCheck = { ok: true } | { ok: false; reason: DedupReason }
 
@@ -74,7 +72,7 @@ export async function checkDedup(args: {
 }
 
 /**
- * Atomic "check and reserve" — inserts a `reserved` row if and only if dedup
+ * Atomic "check and reserve" - inserts a `reserved` row if and only if dedup
  * passes. Uses the UNIQUE(user_id, trigger) constraint for atomicity; a
  * concurrent second caller will get 23505 and we treat that as
  * `duplicate_trigger_12m`. Returns the reserved row id on success so the
@@ -101,7 +99,7 @@ export async function reserveInvite(args: {
     .single()
 
   if (error) {
-    // 23505 — unique_violation. A concurrent caller beat us.
+    // 23505 - unique_violation. A concurrent caller beat us.
     if (error.code === '23505') {
       return { ok: false, reason: 'duplicate_trigger_12m' }
     }

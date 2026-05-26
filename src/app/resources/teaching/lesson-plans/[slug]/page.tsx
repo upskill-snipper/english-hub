@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const url = `${LESSON_PLANS_URL}/${plan.slug}`
-  const title = `${plan.title} — Free ${plan.educationalLevel} English lesson plan`
+  const title = `${plan.title} - Free ${plan.educationalLevel} English lesson plan`
   const description = plan.description
 
   return {

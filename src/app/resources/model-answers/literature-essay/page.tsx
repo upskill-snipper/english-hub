@@ -222,7 +222,7 @@ export default function LiteratureEssayPage() {
                           Beyond the extract, ambition is externalised through Lady Macbeth, whose
                           invocation to the spirits to &ldquo;unsex me here&rdquo; reveals ambition
                           as a force so powerful it demands the
-                          <Annotation note="Links ambition to gender and the supernatural — showing the theme's wider significance across the play.">
+                          <Annotation note="Links ambition to gender and the supernatural - showing the theme's wider significance across the play.">
                             erasure of femininity and natural order
                           </Annotation>
                           . The witches complicate ambition further. They do not create
@@ -247,9 +247,9 @@ export default function LiteratureEssayPage() {
                         level={GRADE_LEVELS[0]}
                         points={[
                           'Conceptualised argument established from the opening sentence',
-                          'Context integrated seamlessly — not bolted on as a separate paragraph',
+                          'Context integrated seamlessly - not bolted on as a separate paragraph',
                           "Close single-word analysis ('o'erleaps') combined with whole-text awareness",
-                          'Evaluative and exploratory — offers personal interpretation',
+                          'Evaluative and exploratory - offers personal interpretation',
                           'Tracks the theme across multiple characters and scenes',
                           'Writes about Shakespeare as a deliberate craftsman with purpose',
                         ]}
@@ -360,7 +360,7 @@ export default function LiteratureEssayPage() {
                       <ExaminerComment>
                         <p>
                           A clear response that shows knowledge of the play and makes some relevant
-                          points. However, the analysis is largely descriptive — the student retells
+                          points. However, the analysis is largely descriptive - the student retells
                           rather than analyses. The quotation is identified but not closely
                           analysed. Context is relevant but separated. To improve, the student
                           should analyse specific word choices, avoid plot retelling, and weave
@@ -538,7 +538,7 @@ export default function LiteratureEssayPage() {
                         <p>
                           The transformation itself is crucially staged through confrontation with
                           absence:
-                          <Annotation note="Sophisticated structural analysis — the student analyses not just what happens but how Dickens structures the revelation.">
+                          <Annotation note="Sophisticated structural analysis - the student analyses not just what happens but how Dickens structures the revelation.">
                             Scrooge does not change because he sees something new but because he is
                             forced to see what he has refused to see
                           </Annotation>{' '}
@@ -611,7 +611,7 @@ export default function LiteratureEssayPage() {
                         <p>
                           The play&apos;s structure is its most potent tool for exploring
                           responsibility.
-                          <Annotation note="Analyses dramatic structure rather than just content — a hallmark of top-band drama essays.">
+                          <Annotation note="Analyses dramatic structure rather than just content - a hallmark of top-band drama essays.">
                             By confining the action to a single room and a single evening, Priestley
                             creates a pressure-cooker environment from which the Birlings cannot
                             escape
@@ -660,7 +660,7 @@ export default function LiteratureEssayPage() {
                           "Explores how a single word ('responsibility') carries different meanings for different characters",
                           'Context is precisely integrated (post-war audience, 1912 vs 1945)',
                           'Treats characters as thematic vehicles, not real people',
-                          'Evaluative throughout — every point advances the argument',
+                          'Evaluative throughout - every point advances the argument',
                         ]}
                       />
                     </>
@@ -704,7 +704,7 @@ export default function LiteratureEssayPage() {
                         <p>
                           Heaney opens with a deceptive sense of preparedness: &ldquo;We are
                           prepared: we build our houses squat.&rdquo;
-                          <Annotation note="Analyses the colon as a grammatical choice — attention to punctuation is a grade 9 skill.">
+                          <Annotation note="Analyses the colon as a grammatical choice - attention to punctuation is a grade 9 skill.">
                             The colon after &ldquo;prepared&rdquo; implies a causal logic &mdash; we
                             are prepared because we have built well &mdash; yet the poem
                             systematically dismantles this confidence
@@ -726,7 +726,7 @@ export default function LiteratureEssayPage() {
                             soldiers and the reader in an endless, frozen present
                           </Annotation>
                           . Both poets use form to reinforce their presentations.
-                          <Annotation note="Comparative analysis of form — a skill many students neglect.">
+                          <Annotation note="Comparative analysis of form - a skill many students neglect.">
                             Heaney&apos;s blank verse gives the poem a conversational tone, while
                             Owen&apos;s pararhymes create a persistent sense of incompleteness that
                             mirrors the soldiers&apos; psychological state
@@ -746,7 +746,7 @@ export default function LiteratureEssayPage() {
                         level={GRADE_LEVELS[0]}
                         points={[
                           'Comparative thesis sustained from the opening sentence',
-                          'Both poems woven together throughout — not treated separately',
+                          'Both poems woven together throughout - not treated separately',
                           'Analyses language, form, and structure in both poems',
                           'Contextual readings (the Troubles, WWI) precisely integrated',
                           'Close attention to punctuation and grammatical choices',

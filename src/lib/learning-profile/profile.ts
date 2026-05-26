@@ -6,12 +6,12 @@
  * Turns the learner's raw game history (score + time-on-task per attempt,
  * stored in localStorage by `game-scores.ts`) into a structured profile:
  *
- *   • mastery per skill   — recency-weighted accuracy
- *   • effort per skill    — total time spent
- *   • trend               — improving / steady / declining
- *   • classification      — strength / developing / focus area
- *   • strand roll-ups     — Vocabulary, Grammar, … overall picture
- *   • next-step actions   — the weakest skills + which game to play next
+ *   • mastery per skill   - recency-weighted accuracy
+ *   • effort per skill    - total time spent
+ *   • trend               - improving / steady / declining
+ *   • classification      - strength / developing / focus area
+ *   • strand roll-ups     - Vocabulary, Grammar, … overall picture
+ *   • next-step actions   - the weakest skills + which game to play next
  *                           and the lesson that teaches it
  *
  * This is what directs future learning: it names where a student is
@@ -38,7 +38,7 @@ import {
 export type Classification =
   | 'strength' // consistently high accuracy
   | 'developing' // mid accuracy or improving
-  | 'focus' // weak — this is where to focus next
+  | 'focus' // weak - this is where to focus next
   | 'new' // too few attempts to judge
 
 export type Trend = 'improving' | 'steady' | 'declining'
@@ -48,9 +48,9 @@ export interface SkillProfile {
   label: string
   strand: Strand
   attempts: number
-  /** Recency-weighted accuracy 0–100. */
+  /** Recency-weighted accuracy 0-100. */
   mastery: number
-  /** Plain mean accuracy 0–100 (for display alongside weighted). */
+  /** Plain mean accuracy 0-100 (for display alongside weighted). */
   averageAccuracy: number
   trend: Trend
   classification: Classification
@@ -253,7 +253,7 @@ export function buildLearningProfile(): LearningProfile {
           ? `Your accuracy here is slipping (${s.mastery}%). A focused round will rebuild it.`
           : `This is your weakest skill so far (${s.mastery}%). Targeted practice will move it fastest.`
     } else if (s.classification === 'new') {
-      reason = `You've only tried this ${s.attempts} time${s.attempts === 1 ? '' : 's'} — play again so we can map your level.`
+      reason = `You've only tried this ${s.attempts} time${s.attempts === 1 ? '' : 's'} - play again so we can map your level.`
     } else {
       reason = `Accuracy is dipping (${s.mastery}%). Keep it sharp with another round.`
     }

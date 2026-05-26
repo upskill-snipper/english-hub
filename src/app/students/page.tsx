@@ -349,7 +349,7 @@ export default async function StudentsPage() {
                       <p className="text-sm leading-relaxed text-muted-foreground">{step.body}</p>
                     </Card>
 
-                    {/* Connector — horizontal chevron on lg, vertical bar on mobile */}
+                    {/* Connector - horizontal chevron on lg, vertical bar on mobile */}
                     {!isLast && (
                       <div
                         aria-hidden

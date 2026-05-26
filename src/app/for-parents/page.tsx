@@ -31,26 +31,26 @@ import {
 export const metadata: Metadata = {
   title: 'GCSE and IGCSE English help for parents',
   description:
-    'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
+    'How to help your child with GCSE or IGCSE English revision - from picking the right exam board to AI essay feedback they can trust.',
   alternates: { canonical: 'https://theenglishhub.app/for-parents' },
   openGraph: {
-    title: 'GCSE and IGCSE English help for parents — The English Hub',
+    title: 'GCSE and IGCSE English help for parents - The English Hub',
     description:
-      'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
+      'How to help your child with GCSE or IGCSE English revision - from picking the right exam board to AI essay feedback they can trust.',
     images: [
       {
         url: '/api/og?title=Help+your+child+pass+GCSE+English&subtitle=Without+being+an+English+teacher',
         width: 1200,
         height: 630,
-        alt: 'Help your child pass GCSE English — without being an English teacher',
+        alt: 'Help your child pass GCSE English - without being an English teacher',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GCSE and IGCSE English help for parents — The English Hub',
+    title: 'GCSE and IGCSE English help for parents - The English Hub',
     description:
-      'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
+      'How to help your child with GCSE or IGCSE English revision - from picking the right exam board to AI essay feedback they can trust.',
     images: [
       '/api/og?title=Help+your+child+pass+GCSE+English&subtitle=Without+being+an+English+teacher',
     ],
@@ -108,7 +108,7 @@ const faqs = [
   {
     question: 'What are Working At Grade and the progress estimate?',
     answer:
-      "Working At Grade reflects your child's recent quiz and assessment scores, shown on the UK GCSE 1-9 scale. What is the progress estimate? It is the platform's internal estimate of where your child may be heading, based on their practice on the site. It is a guide to help focus revision — not an official grade, not a prediction of exam results, and not used by any exam board.",
+      "Working At Grade reflects your child's recent quiz and assessment scores, shown on the UK GCSE 1-9 scale. What is the progress estimate? It is the platform's internal estimate of where your child may be heading, based on their practice on the site. It is a guide to help focus revision - not an official grade, not a prediction of exam results, and not used by any exam board.",
   },
   {
     question: 'Can I cancel anytime?',
@@ -362,7 +362,7 @@ export default async function ForParentsPage() {
                 icon: Target,
                 color: 'text-emerald-400 bg-emerald-500/10',
                 title: 'Working At Grade & progress estimate',
-                desc: 'See your child’s Working At Grade (based on recent performance, on the GCSE 1–9 scale) and a progress estimate — the platform’s internal guide to where they may be heading. It helps focus revision and is not an official grade or a prediction of exam results.',
+                desc: 'See your child’s Working At Grade (based on recent performance, on the GCSE 1-9 scale) and a progress estimate - the platform’s internal guide to where they may be heading. It helps focus revision and is not an official grade or a prediction of exam results.',
               },
               {
                 icon: Bell,

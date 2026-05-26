@@ -58,7 +58,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 // Arabic typography pairs. Both ship via next/font with `subsets:
 // ['arabic']` so browsers pick them automatically for Arabic codepoints
-// via the unicode-range fallback chain. No JS branching needed — the
+// via the unicode-range fallback chain. No JS branching needed - the
 // English fonts continue to render Latin text even when the layout is
 // in dir="rtl" mode.
 const notoNaskhArabic = Noto_Naskh_Arabic({
@@ -77,14 +77,14 @@ const plexSansArabic = IBM_Plex_Sans_Arabic({
 export const metadata: Metadata = {
   metadataBase: new URL('https://theenglishhub.app'),
   title: {
-    default: 'The English Hub — GCSE & IGCSE English revision, AI marked',
-    template: '%s — The English Hub',
+    default: 'The English Hub - GCSE & IGCSE English revision, AI marked',
+    template: '%s - The English Hub',
   },
   description:
     'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
   alternates: {
     canonical: 'https://theenglishhub.app',
-    // hreflang alternates — canonical English at root, Arabic mirror at
+    // hreflang alternates - canonical English at root, Arabic mirror at
     // /ar/. Sub-route pages set per-page alternates via generateMetadata
     // where they exist. Google uses these to serve the right locale to
     // each user without splitting ranking signal between the two URLs.
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'The English Hub — GCSE & IGCSE English revision, AI marked',
+    title: 'The English Hub - GCSE & IGCSE English revision, AI marked',
     description:
       'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
     url: 'https://theenglishhub.app',
@@ -107,13 +107,13 @@ export const metadata: Metadata = {
         url: '/api/og',
         width: 1200,
         height: 630,
-        alt: 'The English Hub — GCSE and IGCSE English revision',
+        alt: 'The English Hub - GCSE and IGCSE English revision',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The English Hub — GCSE & IGCSE English revision, AI marked',
+    title: 'The English Hub - GCSE & IGCSE English revision, AI marked',
     description:
       'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
     images: ['/api/og'],
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  // Dual — the browser chrome tracks the active theme.
+  // Dual - the browser chrome tracks the active theme.
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#FBF7F0' },
     { media: '(prefers-color-scheme: dark)', color: '#0F1411' },
@@ -201,14 +201,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </TooltipProvider>
           </SupabaseProvider>
         </ThemeProvider>
-        {/* Vercel Analytics + Speed Insights + Rewardful — all gated behind
+        {/* Vercel Analytics + Speed Insights + Rewardful - all gated behind
             cookie consent so no non-essential trackers fire pre-consent. */}
         <ConsentGatedAnalytics />
-        {/* Google Analytics 4 — auto-loads if user has consented + tracks SPA route changes */}
+        {/* Google Analytics 4 - auto-loads if user has consented + tracks SPA route changes */}
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
-        {/* Trustpilot InviteJS — async, non-blocking. No-op without
+        {/* Trustpilot InviteJS - async, non-blocking. No-op without
             NEXT_PUBLIC_TRUSTPILOT_INVITE_KEY set. */}
         <TrustpilotInviteScript />
       </body>

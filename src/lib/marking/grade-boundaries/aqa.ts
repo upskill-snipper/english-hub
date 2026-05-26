@@ -1,5 +1,5 @@
-// ─── AQA GCSE English — Grade Boundaries ─────────────────────────────────────
-// Source: AQA official "Grade boundaries GCSE — June 2024 exams" (raw mark
+// ─── AQA GCSE English - Grade Boundaries ─────────────────────────────────────
+// Source: AQA official "Grade boundaries GCSE - June 2024 exams" (raw mark
 // subject-level boundaries), specifications 8700 (English Language) and
 // 8702 (English Literature). Maximum subject mark = 160.
 //
@@ -7,7 +7,7 @@
 // predictor uses ONE table per board; AQA Language and Literature boundaries
 // are close enough that we expose the Language (8700) curve as the board
 // default and record the Literature (8702) figures alongside for the human
-// verifier. Numbers are NOT yet human-verified — `verified` is false until a
+// verifier. Numbers are NOT yet human-verified - `verified` is false until a
 // person checks them against the PDF and flips it (see ./types.ts header).
 //
 // Official June 2024 raw boundaries (max 160):
@@ -37,7 +37,7 @@ const AQA_8700_RAW: Record<NumericGrade, number | null> = {
  * Official AQA June 2024 raw boundaries, English Literature 8702 (max 160).
  * Recorded for the human verifier / future per-subject split. Not wired into
  * the single-table predictor yet (English uses the 8700 curve as the board
- * default — see file header).
+ * default - see file header).
  */
 export const AQA_8702_LITERATURE_RAW: Record<NumericGrade, number | null> = {
   '9': 137,

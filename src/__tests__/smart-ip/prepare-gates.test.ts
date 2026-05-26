@@ -1,10 +1,10 @@
-// ─── Smart-IP · prepareTrainingRecord — the 8 ordered gates ──────────────────
+// ─── Smart-IP · prepareTrainingRecord - the 8 ordered gates ──────────────────
 //
 // Offline tests for src/lib/training/prepare.ts. Everything external is mocked:
-//   • @/lib/supabase/server  — a programmable per-table query stub
-//   • @/lib/prisma           — user / privacySettings / auditLog
-//   • @/lib/consent-check    — checkMinorAIConsent
-//   • @/lib/ai-audit-log     — hashAuditInput (deterministic stub)
+//   • @/lib/supabase/server  - a programmable per-table query stub
+//   • @/lib/prisma           - user / privacySettings / auditLog
+//   • @/lib/consent-check    - checkMinorAIConsent
+//   • @/lib/ai-audit-log     - hashAuditInput (deterministic stub)
 //
 // We assert each gate REJECTS in order and writes NOTHING to training_data, and
 // that the happy path inserts, flips status approved→training_ready (guarded by
@@ -163,7 +163,7 @@ beforeEach(resetAll)
 
 // ── Gate 0: input ────────────────────────────────────────────────────────────
 
-describe('prepareTrainingRecord — input gate', () => {
+describe('prepareTrainingRecord - input gate', () => {
   it('rejects an empty submissionId without touching the DB', async () => {
     const res = await run('   ')
     expect(res).toEqual({ ok: false, reason: 'submissionId is required' })
@@ -174,7 +174,7 @@ describe('prepareTrainingRecord — input gate', () => {
 
 // ── Gate 1: submission exists ────────────────────────────────────────────────
 
-describe('Gate 1 — submission must exist', () => {
+describe('Gate 1 - submission must exist', () => {
   it('rejects when the submission row is absent', async () => {
     tables['marking_submissions'] = { select: { data: null, error: null } }
     const res = await run()
@@ -195,7 +195,7 @@ describe('Gate 1 — submission must exist', () => {
 
 // ── Gate 2: status === 'approved' ────────────────────────────────────────────
 
-describe("Gate 2 — status must be 'approved'", () => {
+describe("Gate 2 - status must be 'approved'", () => {
   it('rejects ai_marked and audits a non-PII reason', async () => {
     tables['marking_submissions'] = {
       select: { data: approvedSubmissionRow({ status: 'ai_marked' }), error: null },
@@ -214,7 +214,7 @@ describe("Gate 2 — status must be 'approved'", () => {
 
 // ── Gate 3: training_eligible === true ───────────────────────────────────────
 
-describe('Gate 3 — training_eligible must be true', () => {
+describe('Gate 3 - training_eligible must be true', () => {
   it('rejects when training_eligible is false', async () => {
     tables['marking_submissions'] = {
       select: { data: approvedSubmissionRow({ training_eligible: false }), error: null },
@@ -228,7 +228,7 @@ describe('Gate 3 — training_eligible must be true', () => {
 
 // ── Gate 4: non-empty answer ─────────────────────────────────────────────────
 
-describe('Gate 4 — student answer must be non-empty', () => {
+describe('Gate 4 - student answer must be non-empty', () => {
   it('rejects a blank essay_text', async () => {
     tables['marking_submissions'] = {
       select: { data: approvedSubmissionRow({ essay_text: '   ' }), error: null },
@@ -241,7 +241,7 @@ describe('Gate 4 — student answer must be non-empty', () => {
 
 // ── Gate 5: student linked + ACTIVE ──────────────────────────────────────────
 
-describe('Gate 5 — student must exist & be ACTIVE', () => {
+describe('Gate 5 - student must exist & be ACTIVE', () => {
   it('rejects when submission has no student_id', async () => {
     tables['marking_submissions'] = {
       select: { data: approvedSubmissionRow({ student_id: null }), error: null },
@@ -275,7 +275,7 @@ describe('Gate 5 — student must exist & be ACTIVE', () => {
 
 // ── Gate 6: consent flag by source ───────────────────────────────────────────
 
-describe('Gate 6 — consent flag depends on source', () => {
+describe('Gate 6 - consent flag depends on source', () => {
   it('b2c_self rejects when aiTrainingOptIn !== true', async () => {
     tables['marking_submissions'] = {
       select: {
@@ -324,7 +324,7 @@ describe('Gate 6 — consent flag depends on source', () => {
 
 // ── Gate 7: minor / AI consent ───────────────────────────────────────────────
 
-describe('Gate 7 — checkMinorAIConsent must allow', () => {
+describe('Gate 7 - checkMinorAIConsent must allow', () => {
   it('rejects with the consent-check reason when denied', async () => {
     tables['marking_submissions'] = {
       select: { data: approvedSubmissionRow(), error: null },
@@ -344,7 +344,7 @@ describe('Gate 7 — checkMinorAIConsent must allow', () => {
 
 // ── Gate 8 / happy path ──────────────────────────────────────────────────────
 
-describe('Gate 8 — idempotency + happy path', () => {
+describe('Gate 8 - idempotency + happy path', () => {
   it('idempotent: existing training row ⇒ success, NO insert, status still bumped', async () => {
     tables['marking_submissions'] = {
       select: { data: approvedSubmissionRow(), error: null },
@@ -433,14 +433,14 @@ describe('Gate 8 — idempotency + happy path', () => {
     }
     mockUserFindUnique.mockResolvedValue(activeStudentUser())
     // First training_data select (dedupe) = none. Insert fails. The route then
-    // re-selects training_data — our stub returns the SAME select fixture, so
+    // re-selects training_data - our stub returns the SAME select fixture, so
     // make it the raced row to exercise the success-on-race branch.
     tables['training_data'] = {
       select: { data: { id: 'raced-tr' }, error: null },
       insert: { data: null, error: { code: '23505', message: 'dup' } },
     }
     // NOTE: with this fixture the initial dedupe select already returns
-    // 'raced-tr', so the function short-circuits as skipped_exists — still a
+    // 'raced-tr', so the function short-circuits as skipped_exists - still a
     // correct idempotent success with no duplicate insert.
     const res = await run()
     expect(res).toEqual({ ok: true, trainingId: 'raced-tr' })

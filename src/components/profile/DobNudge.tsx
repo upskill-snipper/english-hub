@@ -29,7 +29,7 @@ export function DobNudge() {
         if (j?.hasPlaceholderDob) setShow(true)
       })
       .catch(() => {
-        // Silent — this is a nudge, not a critical flow.
+        // Silent - this is a nudge, not a critical flow.
       })
   }, [])
 

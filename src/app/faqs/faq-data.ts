@@ -16,7 +16,7 @@ export interface FaqSection {
  *
  * Server-rendered on the page (in <details>/<summary>) and flattened into
  * FAQPage JSON-LD via the layout. Keep question text unique across all
- * sections — we dedupe by question string when building the JSON-LD feed.
+ * sections - we dedupe by question string when building the JSON-LD feed.
  */
 export const FAQ_SECTIONS: FaqSection[] = [
   {
@@ -31,7 +31,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Who is The English Hub for?',
         answer:
-          "The English Hub is built for GCSE and IGCSE English students (typically aged 14–16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
+          "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
       },
       {
         question: 'Which exam boards are supported?',
@@ -41,17 +41,17 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Is The English Hub suitable for IGCSE Cambridge 0500 and 0475?',
         answer:
-          'Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level — with board-specific mark schemes, assessment objectives, and set-text coverage.',
+          'Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level - with board-specific mark schemes, assessment objectives, and set-text coverage.',
       },
       {
         question: 'Does The English Hub cover AQA Power and Conflict?',
         answer:
-          'Yes — full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.',
+          'Yes - full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.',
       },
       {
         question: 'Do I need to download an app?',
         answer:
-          'No. The English Hub is a web application that works in any modern browser on laptops, desktops, tablets, and smartphones. Just visit theenglishhub.app and log in — no downloads or installations required.',
+          'No. The English Hub is a web application that works in any modern browser on laptops, desktops, tablets, and smartphones. Just visit theenglishhub.app and log in - no downloads or installations required.',
       },
       {
         question: 'How is The English Hub different from other revision sites?',
@@ -66,11 +66,11 @@ export const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         question: 'How much does The English Hub cost?',
-        answer: `Early Access / Founding pricing — locked until ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year (or £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} — save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (includes lesson planning, AI marking, worksheet builder, class analytics). Schools: Founding Schools Programme £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year — first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools only. Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY_STANDARD}/month or £${PRICING.STUDENT_ANNUAL_STANDARD}/year. Teachers £${PRICING.TEACHER_MONTHLY_STANDARD}/month or £${PRICING.TEACHER_ANNUAL_STANDARD}/year. Schools £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/year. Every paid plan starts with a ${PRICING.TRIAL_TEXT} (card required). Before the paywall you also get ${PRICING.FREE_USES_PER_FEATURE} free uses of most features — no card required for those. Prices shown in GBP.`,
+        answer: `Early Access / Founding pricing - locked until ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year (or £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} - save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (includes lesson planning, AI marking, worksheet builder, class analytics). Schools: Founding Schools Programme £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools only. Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY_STANDARD}/month or £${PRICING.STUDENT_ANNUAL_STANDARD}/year. Teachers £${PRICING.TEACHER_MONTHLY_STANDARD}/month or £${PRICING.TEACHER_ANNUAL_STANDARD}/year. Schools £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/year. Every paid plan starts with a ${PRICING.TRIAL_TEXT} (card required). Before the paywall you also get ${PRICING.FREE_USES_PER_FEATURE} free uses of most features - no card required for those. Prices shown in GBP.`,
       },
       {
         question: 'Is there a free trial? Do I need a card?',
-        answer: `Yes. Every paid plan starts with a ${PRICING.TRIAL_TEXT}. The trial requires full sign-up with a valid payment method — so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for ${PRICING.FREE_USES_PER_FEATURE} free uses without a card.`,
+        answer: `Yes. Every paid plan starts with a ${PRICING.TRIAL_TEXT}. The trial requires full sign-up with a valid payment method - so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for ${PRICING.FREE_USES_PER_FEATURE} free uses without a card.`,
       },
       {
         question: 'What happens after my 7-day trial ends?',
@@ -90,7 +90,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Can I get a refund?',
         answer:
-          'Refund eligibility, the statutory cooling-off period, and how to request a refund are all set out in our Refund Policy, which is the single source of truth — please read it for the current terms. If you have any questions, contact our support team. You can also cancel at any time from your account settings to prevent future charges.',
+          'Refund eligibility, the statutory cooling-off period, and how to request a refund are all set out in our Refund Policy, which is the single source of truth - please read it for the current terms. If you have any questions, contact our support team. You can also cancel at any time from your account settings to prevent future charges.',
       },
     ],
   },
@@ -106,7 +106,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How do mock exams work?',
         answer:
-          'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer — highlighting strengths and areas for improvement.',
+          'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer - highlighting strengths and areas for improvement.',
       },
       {
         question: 'What are practice questions?',
@@ -132,17 +132,17 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How does the AI mark my essay?',
         answer:
-          'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20–40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
+          'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20-40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
       },
       {
         question: 'What if the AI gets the mark wrong?',
         answer:
-          "Every AI-marked essay has a one-click ‘request human review’ option. A qualified reviewer will re-mark your work and respond as quickly as possible — see our AI Transparency page for the current service commitment. We're transparent that AI marking is indicative, not authoritative.",
+          "Every AI-marked essay has a one-click ‘request human review’ option. A qualified reviewer will re-mark your work and respond as quickly as possible - see our AI Transparency page for the current service commitment. We're transparent that AI marking is indicative, not authoritative.",
       },
       {
         question: 'Do you mark essays in real time in class?',
         answer:
-          'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes — usually while the lesson is still running.',
+          'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes - usually while the lesson is still running.',
       },
     ],
   },
@@ -163,7 +163,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: "The page isn't loading or looks broken. How do I fix it?",
         answer:
-          'Try these steps: (1) clear your browser cache and cookies, (2) refresh the page, (3) try a different browser, (4) check your internet connection. If the problem persists, it may be a temporary issue on our end — try again in a few minutes or contact support.',
+          'Try these steps: (1) clear your browser cache and cookies, (2) refresh the page, (3) try a different browser, (4) check your internet connection. If the problem persists, it may be a temporary issue on our end - try again in a few minutes or contact support.',
       },
       {
         question: 'How do I reset my password?',
@@ -199,7 +199,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: "Can parents track their child's progress?",
         answer:
-          "Yes — parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
+          "Yes - parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
       },
       {
         question: "How do I link my parent account to my child's?",
@@ -214,16 +214,16 @@ export const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         question: 'Can my school buy a licence?',
-        answer: `Yes. Schools get a bulk licence with teacher dashboards, cohort analytics, and the Head's Report. Founding schools pay from £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}/yr — see /for-schools for full details.`,
+        answer: `Yes. Schools get a bulk licence with teacher dashboards, cohort analytics, and the Head's Report. Founding schools pay from £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}/yr - see /for-schools for full details.`,
       },
       {
         question: 'Do you offer a free trial for schools?',
         answer:
-          'Yes — schools get a 7-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.',
+          'Yes - schools get a 7-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.',
       },
       {
         question: 'How does the Founding Schools Programme work?',
-        answer: `Our Founding Schools Programme is a strategic partnership limited to the first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools. Founding rate is £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year — anchored against our projected Standard Pricing of £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')} per year from ${PRICING.PRICE_INCREASE_DATE}. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2–3 years. Schools that joined in wave 1 at £${PRICING.FOUNDER_SCHOOL_LEGACY.toLocaleString('en-GB')} are grandfathered at that rate. Visit our For Schools page or contact info@upskillenergy.com for details.`,
+        answer: `Our Founding Schools Programme is a strategic partnership limited to the first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools. Founding rate is £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - anchored against our projected Standard Pricing of £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')} per year from ${PRICING.PRICE_INCREASE_DATE}. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Schools that joined in wave 1 at £${PRICING.FOUNDER_SCHOOL_LEGACY.toLocaleString('en-GB')} are grandfathered at that rate. Visit our For Schools page or contact info@upskillenergy.com for details.`,
       },
       {
         question: 'What does the teacher dashboard include?',

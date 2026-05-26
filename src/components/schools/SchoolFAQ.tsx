@@ -1,4 +1,4 @@
-// School FAQ section — server component. Reuses the existing FAQItem
+// School FAQ section - server component. Reuses the existing FAQItem
 // client island (open/close toggle) and emits FAQPage JSON-LD for SEO.
 // Default question set is the institutional list from the repositioning
 // spec; pass `items` to override.
@@ -14,7 +14,7 @@ export interface QA {
 export const SCHOOL_FAQS: QA[] = [
   {
     q: 'How long is a school pilot?',
-    a: 'School pilots usually run for one term — around 8 to 12 weeks — so the department can see value across a full teaching cycle before any wider commitment.',
+    a: 'School pilots usually run for one term - around 8 to 12 weeks - so the department can see value across a full teaching cycle before any wider commitment.',
   },
   {
     q: 'What does a pilot include?',
@@ -30,7 +30,7 @@ export const SCHOOL_FAQS: QA[] = [
   },
   {
     q: 'Does AI replace teacher judgement?',
-    a: 'No. AI-assisted feedback is designed to support teacher judgement and reduce repetitive workload — it does not replace professional assessment. Teachers stay in control.',
+    a: 'No. AI-assisted feedback is designed to support teacher judgement and reduce repetitive workload - it does not replace professional assessment. Teachers stay in control.',
   },
   {
     q: 'How does AI marking work?',
@@ -58,7 +58,7 @@ export const SCHOOL_FAQS: QA[] = [
   },
   {
     q: 'Can we pilot before committing to a full year?',
-    a: 'Yes — that is the recommended path. The structured pilot is designed to prove value before any annual deployment decision.',
+    a: 'Yes - that is the recommended path. The structured pilot is designed to prove value before any annual deployment decision.',
   },
 ]
 

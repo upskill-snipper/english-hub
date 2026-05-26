@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     }
   }
   return {
-    title: `${text.title} — ${text.author} | Pearson IGCSE Poetry | The English Hub`,
+    title: `${text.title} - ${text.author} | Pearson IGCSE Poetry | The English Hub`,
     description: `Study notes for ${text.title} by ${text.author}. Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.`,
     alternates: {
       canonical: `https://theenglishhub.app/revision/poetry/pearson-igcse/${text.slug}`,
@@ -111,7 +111,7 @@ async function BrightLightsOfSarajevoStudyGuide() {
 
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             Harrison reports from besieged Sarajevo, where young couples flirt in the dark streets
-            between sniper fire and shell craters — the persistence of ordinary life inside war.
+            between sniper fire and shell craters - the persistence of ordinary life inside war.
             First published in <em>The Guardian</em> in 1995 while Harrison was working as a war
             correspondent.
           </p>
@@ -137,7 +137,7 @@ async function BrightLightsOfSarajevoStudyGuide() {
               <AlertTriangle className="size-5 text-clay-600" />
             </div>
             <CardTitle className="text-heading-md font-heading">
-              Anthology version — read this before discussing structure
+              Anthology version - read this before discussing structure
             </CardTitle>
           </div>
         </CardHeader>
@@ -149,7 +149,7 @@ async function BrightLightsOfSarajevoStudyGuide() {
             Harrison&rsquo;s original 1995 <em>Guardian</em> publication or the Bloodaxe collected
             edition. Students preparing for Edexcel must use the{' '}
             <strong className="text-foreground">anthology layout</strong> when discussing structure
-            — not the original layout (often reproduced online).
+            - not the original layout (often reproduced online).
           </p>
           <p>
             If you compare a copy of the poem you have found online (or in an earlier Bloodaxe
@@ -209,7 +209,7 @@ async function BrightLightsOfSarajevoStudyGuide() {
             The poem is written in <strong className="text-foreground">rhyming couplets</strong>{' '}
             (largely loose iambic pentameter), giving the verse a steady, walking rhythm that
             mirrors the speaker&rsquo;s movement through the streets. The couplets sit awkwardly
-            against the brutal subject matter — a reminder that Harrison wants the music of the poem
+            against the brutal subject matter - a reminder that Harrison wants the music of the poem
             to feel almost out of place in a war zone, the way the young couples themselves are.
           </p>
           <p>
@@ -220,7 +220,7 @@ async function BrightLightsOfSarajevoStudyGuide() {
             (where a section ends, where the focus shifts from queueing for bread to the couples in
             the square, where the speaker pulls back to the stars) should be made against the
             anthology breaks. Do <strong className="text-foreground">not</strong> describe the poem
-            as a single continuous block — the version you are examined on is segmented.
+            as a single continuous block - the version you are examined on is segmented.
           </p>
           <p>
             Key structural effects to notice in the anthology layout: the shift from the daytime

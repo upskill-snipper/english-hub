@@ -1,6 +1,6 @@
 'use client'
 
-// ─── Platform-admin — AI Marking overview ───────────────────────────────────
+// ─── Platform-admin - AI Marking overview ───────────────────────────────────
 // Site-admin only (server route enforces; this page redirects on 401/403,
 // mirroring src/app/admin/affiliates/page.tsx). Composes the high-level
 // counts from /api/admin/model-performance and links to the deeper surfaces.

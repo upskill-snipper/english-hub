@@ -39,7 +39,7 @@ export interface RewardfulReferral {
 }
 
 export async function fetchRewardfulReferral(
-  referralId: string
+  referralId: string,
 ): Promise<RewardfulReferral | null> {
   try {
     const res = await fetch(`${REWARDFUL_API_BASE}/referrals/${referralId}`, {
@@ -75,7 +75,7 @@ export interface RewardfulAffiliate {
 }
 
 export async function createRewardfulAffiliate(
-  params: CreateRewardfulAffiliateParams
+  params: CreateRewardfulAffiliateParams,
 ): Promise<RewardfulAffiliate | null> {
   try {
     const res = await fetch(`${REWARDFUL_API_BASE}/affiliates`, {
@@ -90,7 +90,7 @@ export async function createRewardfulAffiliate(
     })
     if (!res.ok) {
       const body = await res.text()
-      console.error(`Rewardful API error creating affiliate: ${res.status} — ${body}`)
+      console.error(`Rewardful API error creating affiliate: ${res.status} - ${body}`)
       return null
     }
     return (await res.json()) as RewardfulAffiliate
@@ -101,7 +101,7 @@ export async function createRewardfulAffiliate(
 }
 
 export async function fetchRewardfulAffiliate(
-  affiliateId: string
+  affiliateId: string,
 ): Promise<RewardfulAffiliate | null> {
   try {
     const res = await fetch(`${REWARDFUL_API_BASE}/affiliates/${affiliateId}`, {

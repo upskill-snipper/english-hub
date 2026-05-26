@@ -1,10 +1,10 @@
 'use client'
 
-// ─── Platform-admin — Rubric Versions (read-only) ───────────────────────────
+// ─── Platform-admin - Rubric Versions (read-only) ───────────────────────────
 // Site-admin only (server route enforces; redirect on 401/403 mirrors
 // src/app/admin/affiliates/page.tsx). Read-only listing of rubric_versions
 // with their content hash. Rubrics are content-hash pointers to the in-code
-// mark schemes — not editable from this surface by design. Empty-table safe.
+// mark schemes - not editable from this surface by design. Empty-table safe.
 
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
@@ -145,8 +145,8 @@ export default function AdminRubricManagementPage() {
                     <tr key={r.id} className="text-foreground">
                       <td className="py-3 pr-4 font-mono text-xs">{r.mark_scheme_id}</td>
                       <td className="py-3 pr-4">{r.scheme_version}</td>
-                      <td className="py-3 pr-4">{r.exam_board ?? '—'}</td>
-                      <td className="py-3 pr-4">{r.qualification ?? '—'}</td>
+                      <td className="py-3 pr-4">{r.exam_board ?? '-'}</td>
+                      <td className="py-3 pr-4">{r.qualification ?? '-'}</td>
                       <td className="py-3 pr-4 font-mono text-xs">
                         {r.content_hash.slice(0, 16)}…
                       </td>

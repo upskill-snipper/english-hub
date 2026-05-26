@@ -1,9 +1,9 @@
 /**
- * components.ts — Shared Vocabulary HTML Builders
+ * components.ts - Shared Vocabulary HTML Builders
  *
  * Every Anthology document composes from these building blocks.
- * These functions return HTML strings — no React dependency.
- * Do NOT invent new components — compose from this list only.
+ * These functions return HTML strings - no React dependency.
+ * Do NOT invent new components - compose from this list only.
  */
 
 import { escHtml } from './html-shell'
@@ -158,10 +158,7 @@ export function marginComment(comment: MarginComment): string {
 
 // ─── AO Scorecard ──────────────────────────────────────────────────────────
 
-export function aoScorecard(
-  scores: AoScore[],
-  grade: { value: string; label: string },
-): string {
+export function aoScorecard(scores: AoScore[], grade: { value: string; label: string }): string {
   const barsHtml = scores
     .map(
       (ao) => `
@@ -258,7 +255,7 @@ export function answerLines(count: number): string {
 // ─── Teacher Warning ───────────────────────────────────────────────────────
 
 export function teacherWarning(): string {
-  return `<div class="teacher-warning">Teacher Copy — Do Not Distribute to Students</div>`
+  return `<div class="teacher-warning">Teacher Copy - Do Not Distribute to Students</div>`
 }
 
 // ─── Grade Band Boxes ──────────────────────────────────────────────────────
@@ -266,15 +263,15 @@ export function teacherWarning(): string {
 export function gradeBands(top: string, mid: string, lower: string): string {
   return `
     <div class="grade-band top">
-      <span class="band-label">Top Band (Grade 7–9 / Level 6)</span>
+      <span class="band-label">Top Band (Grade 7-9 / Level 6)</span>
       <p>${escHtml(top)}</p>
     </div>
     <div class="grade-band mid">
-      <span class="band-label">Mid Band (Grade 4–6 / Level 4)</span>
+      <span class="band-label">Mid Band (Grade 4-6 / Level 4)</span>
       <p>${escHtml(mid)}</p>
     </div>
     <div class="grade-band lower">
-      <span class="band-label">Lower Band (Grade 1–3 / Level 2)</span>
+      <span class="band-label">Lower Band (Grade 1-3 / Level 2)</span>
       <p>${escHtml(lower)}</p>
     </div>`
 }

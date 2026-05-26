@@ -25,9 +25,9 @@ export interface GameShellProps {
   description?: string
   /** Difficulty label */
   difficulty?: 'Foundation' | 'Crossover' | 'Higher'
-  /** Current score — controlled by the game */
+  /** Current score - controlled by the game */
   score: number
-  /** Maximum possible score — controlled by the game */
+  /** Maximum possible score - controlled by the game */
   maxScore: number
   /** Enable countdown timer (seconds). Omit for untimed games. */
   timeLimitSeconds?: number
@@ -39,7 +39,7 @@ export interface GameShellProps {
   onResume?: () => void
   /** Called when the game ends (timeout or manual finish) */
   onFinish: () => void
-  /** External game state override — lets the game itself trigger finish */
+  /** External game state override - lets the game itself trigger finish */
   gameState: GameState
   /** The game content rendered inside the shell */
   children: React.ReactNode
@@ -256,7 +256,7 @@ export default function GameShell({
         if (timeLimitSeconds) {
           setTimeLeft((t) => {
             if (t <= 1) {
-              // Time's up — trigger finish
+              // Time's up - trigger finish
               onFinish()
               return 0
             }
@@ -283,7 +283,7 @@ export default function GameShell({
       // weight effort and detect rushing vs. careful play.
       saveGameScore(gameId, score, maxScore, elapsed)
       setHighScore(getHighScore(gameId))
-      // Best-effort server sync for signed-in students (guests 401 — we
+      // Best-effort server sync for signed-in students (guests 401 - we
       // swallow it; the localStorage profile still works for everyone).
       try {
         fetch('/api/progress/games', {
@@ -297,7 +297,7 @@ export default function GameShell({
           keepalive: true,
         }).catch(() => {})
       } catch {
-        // ignore — never block the results screen on a network error
+        // ignore - never block the results screen on a network error
       }
     }
     if (gameState !== 'finished') {

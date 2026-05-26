@@ -174,7 +174,7 @@ export default async function PracticePaper1Page() {
             </p>
             <p>
               I watched for an hour without moving. Then the cloud seemed to gather itself into a
-              brighter, sharper flash — a thread of light flung across the void. For a moment I
+              brighter, sharper flash - a thread of light flung across the void. For a moment I
               thought it was some failure of my own eyes, some trick of the lens. I looked away,
               rubbed my hands over my face, and looked back. The flash had gone, but the planet
               seemed to me subtly altered, as if the quiet face of an old friend had shifted into an
@@ -204,7 +204,7 @@ export default async function PracticePaper1Page() {
           <Card>
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between gap-3">
-                <CardTitle className="text-heading-sm font-heading">Question 1 — Text A</CardTitle>
+                <CardTitle className="text-heading-sm font-heading">Question 1 - Text A</CardTitle>
                 <Badge variant="secondary">25 marks</Badge>
               </div>
             </CardHeader>
@@ -238,7 +238,7 @@ export default async function PracticePaper1Page() {
           <Card>
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between gap-3">
-                <CardTitle className="text-heading-sm font-heading">Question 2 — Text B</CardTitle>
+                <CardTitle className="text-heading-sm font-heading">Question 2 - Text B</CardTitle>
                 <Badge variant="secondary">25 marks</Badge>
               </div>
             </CardHeader>
@@ -261,7 +261,7 @@ export default async function PracticePaper1Page() {
             <CardHeader className="pb-3">
               <div className="flex items-start justify-between gap-3">
                 <CardTitle className="text-heading-sm font-heading">
-                  Question 3 — Texts A and B
+                  Question 3 - Texts A and B
                 </CardTitle>
                 <Badge variant="secondary">30 marks</Badge>
               </div>

@@ -1,13 +1,13 @@
 // Every exported component here renders a <script type="application/ld+json">
 // tag via dangerouslySetInnerHTML. Under the nonce-based CSP (P1 #6 follow-up),
 // every inline <script> must carry the per-request nonce or the browser drops
-// it. Callers pass it in via `nonce` — use `headers().get('x-nonce')` from
+// it. Callers pass it in via `nonce` - use `headers().get('x-nonce')` from
 // server components, or leave it undefined for static generation (the script
 // is still serialised; when served live, middleware sets the nonce in the
 // Content-Security-Policy header so Next's own runtime + these JSON-LD tags
 // all carry the same value).
 //
-// This module is intentionally LOCALE-AGNOSTIC at the import level — it
+// This module is intentionally LOCALE-AGNOSTIC at the import level - it
 // does NOT pull in `@/lib/i18n/t`, which would drag `next/headers` into
 // every client component that imports any helper from here. The
 // organisation-level WebsiteJsonLd (which DOES need the i18n dictionary)
@@ -123,7 +123,7 @@ export function FAQPageJsonLd({
 
 // Site-wide constants used by the structured-data builders below. The publisher
 // logo falls back to the dynamic OG endpoint because /public/logo.png is not
-// guaranteed to exist yet — once it lands, callers can override `image` per
+// guaranteed to exist yet - once it lands, callers can override `image` per
 // invocation and the schema continues to validate.
 const SITE_URL = 'https://theenglishhub.app'
 const SITE_NAME = 'The English Hub'
@@ -261,7 +261,7 @@ export function HowToJsonLd({
   description: string
   /** ISO 8601 duration, e.g. "PT30M" for 30 minutes, "PT2H" for 2 hours. Optional. */
   totalTime?: string
-  /** Optional cost — for free guides, omit. */
+  /** Optional cost - for free guides, omit. */
   estimatedCost?: { currency: string; value: string }
   /** Each step has a name, text, and optionally a URL/image. */
   steps: { name: string; text: string; url?: string; image?: string }[]
@@ -386,7 +386,7 @@ export function LearningResourceJsonLd({
 /**
  * Quiz schema for practice question banks, study games, and topic-tagged
  * revision quizzes. Use one per page, on the parent surface that lists or
- * orchestrates the quiz — not on individual question screens.
+ * orchestrates the quiz - not on individual question screens.
  *
  * @example
  * <QuizJsonLd
@@ -452,7 +452,7 @@ export function QuizJsonLd({
 /**
  * Site-wide attribution node. Emitted once (root layout <head>) so
  * every page exposes JSON-LD author + reviewedBy + dateModified for AI
- * answer engines (GEO). Organisation-only — the site bans fabricated
+ * answer engines (GEO). Organisation-only - the site bans fabricated
  * named people, so author/reviewedBy are the Organization and a
  * role-based reviewer label, never a Person with an invented name.
  */

@@ -16,10 +16,10 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'H is for Hawk — Helen Macdonald — IGCSE Language A Anthology — The English Hub',
+    title: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
   },
-  title: 'H is for Hawk — Helen Macdonald — IGCSE Language A Anthology',
+  title: 'H is for Hawk - Helen Macdonald - IGCSE Language A Anthology',
   description:
     'Study guide for "H is for Hawk" by Helen Macdonald. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/h-is-for-hawk' },
@@ -39,7 +39,7 @@ const themes = [
   {
     label: 'Obsession',
     detail:
-      'Training the hawk consumes her — physically, mentally, emotionally. The text registers obsession as both a refuge and a danger.',
+      'Training the hawk consumes her - physically, mentally, emotionally. The text registers obsession as both a refuge and a danger.',
   },
   {
     label: 'Identity and self',
@@ -49,17 +49,17 @@ const themes = [
   {
     label: 'Memory and loss',
     detail:
-      'The hawk is also a way of remembering — a relationship to loss that does not require words.',
+      'The hawk is also a way of remembering - a relationship to loss that does not require words.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Macdonald opens in a moment of intense observation — a precise, sensory image that pulls the reader into her hyper-attentive state of mind.',
+    'Macdonald opens in a moment of intense observation - a precise, sensory image that pulls the reader into her hyper-attentive state of mind.',
   development:
     'The text moves between external action (training, flying the hawk) and internal reflection (grief, memory, self-examination), the two threads tightening as the narrative progresses.',
   climax:
-    'The emotional climax is internal rather than external — a moment of recognition where Macdonald sees herself clearly through the hawk.',
+    'The emotional climax is internal rather than external - a moment of recognition where Macdonald sees herself clearly through the hawk.',
   resolution:
     'The resolution is not closure but a quieter understanding. Grief is not resolved; it has been moved through.',
   perspective:
@@ -68,7 +68,7 @@ const structuralAnalysis = {
 
 const writersPurpose = {
   achieve:
-    'Macdonald wants to render grief in a register that does not depend on conventional emotional vocabulary — instead, through nature, attention and a non-human presence.',
+    'Macdonald wants to render grief in a register that does not depend on conventional emotional vocabulary - instead, through nature, attention and a non-human presence.',
   readerFeel:
     'She wants the reader to feel the strange consolation of being absorbed by something other than oneself, and the way attention to a creature can become attention to one’s own pain.',
   message:
@@ -78,16 +78,16 @@ const writersPurpose = {
 const examPractice = {
   q1: {
     question: 'List four things you learn about Macdonald’s relationship with the hawk.',
-    type: 'Retrieval — 4 marks',
+    type: 'Retrieval - 4 marks',
   },
   q2: {
     question: 'How does Macdonald use language to convey her emotional state?',
-    type: 'Language analysis — 12 marks',
+    type: 'Language analysis - 12 marks',
   },
   q3: {
     question:
       'How does Macdonald structure the text to interweave grief and the training of the hawk?',
-    type: 'Structural analysis — 12 marks',
+    type: 'Structural analysis - 12 marks',
   },
 }
 
@@ -105,15 +105,15 @@ const comparisonLinks = [
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      'Both texts describe extreme psychological states under prolonged stress. Compare Macdonald’s grief with Ralston’s survival — both narrators changed by what they endure.',
+      'Both texts describe extreme psychological states under prolonged stress. Compare Macdonald’s grief with Ralston’s survival - both narrators changed by what they endure.',
     themes: ['Endurance', 'Psychology', 'Transformation'],
   },
   {
     title: 'A Passage to Africa',
-    author: 'George Alagiah (1955–2023)',
+    author: 'George Alagiah (1955-2023)',
     href: '/igcse/edexcel-lang/anthology/a-passage-to-africa',
     reason:
-      'Both writers process emotionally heavy material with literary precision. Compare Macdonald’s grief-memoir with Alagiah’s witness-reportage — two careful prose styles handling pain.',
+      'Both writers process emotionally heavy material with literary precision. Compare Macdonald’s grief-memoir with Alagiah’s witness-reportage - two careful prose styles handling pain.',
     themes: ['Grief', 'Witness', 'Prose style'],
   },
 ]

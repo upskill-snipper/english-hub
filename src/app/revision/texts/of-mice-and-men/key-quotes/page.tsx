@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men — Key Quotes | The English Hub',
+    title: 'Of Mice and Men - Key Quotes | The English Hub',
     description:
       'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
   },
-  title: 'Of Mice and Men — Key Quotes',
+  title: 'Of Mice and Men - Key Quotes',
   description:
     'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
   alternates: {
@@ -39,25 +39,25 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 1,
     text: '"Guys like us, that work on ranches, are the loneliest guys in the world."',
     speaker: 'George',
-    context: 'Chapter 1 — by the pool',
+    context: 'Chapter 1 - by the pool',
     analysis:
-      'The novella\'s thesis statement. George defines migrant workers by their isolation, immediately establishing loneliness as a systemic condition rather than a personal failing. The claim is universal — "guys like us" — making it political.',
+      'The novella\'s thesis statement. George defines migrant workers by their isolation, immediately establishing loneliness as a systemic condition rather than a personal failing. The claim is universal - "guys like us" - making it political.',
     themes: ['Loneliness', 'The American Dream'],
   },
   {
     id: 2,
     text: '"I got you to look after me, and you got me to look after you."',
     speaker: 'Lennie',
-    context: 'Chapter 1 — dream recitation',
+    context: 'Chapter 1 - dream recitation',
     analysis:
       "Lennie articulates the friendship's emotional core with a simplicity George cannot match. Steinbeck gives the deepest insight to the character the world underestimates, challenging the reader's assumptions about intelligence and feeling.",
     themes: ['Friendship', 'The American Dream'],
   },
   {
     id: 3,
-    text: '"A guy needs somebody — to be near him."',
+    text: '"A guy needs somebody - to be near him."',
     speaker: 'Crooks',
-    context: 'Chapter 4 — to Lennie in the harness room',
+    context: 'Chapter 4 - to Lennie in the harness room',
     analysis:
       'The most devastatingly simple statement of loneliness in the novella. Crooks universalises his own racial isolation into a statement about all human beings. Steinbeck lets the marginalised voice speak the deepest truth.',
     themes: ['Loneliness', 'Prejudice'],
@@ -66,7 +66,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 4,
     text: '"I could get along so easy if I didn\'t have you on my tail."',
     speaker: 'George',
-    context: 'Chapter 1 — frustration with Lennie',
+    context: 'Chapter 1 - frustration with Lennie',
     analysis:
       'Reveals the cost of loyalty. George knows freedom but chooses responsibility. Steinbeck makes the sacrifice visible so the final act feels like the culmination of a lifelong burden freely accepted.',
     themes: ['Friendship', 'Loneliness'],
@@ -75,7 +75,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 5,
     text: '"I get lonely. You can talk to people, but I can\'t talk to nobody."',
     speaker: "Curley's Wife",
-    context: 'Chapter 5 — to Lennie in the barn',
+    context: 'Chapter 5 - to Lennie in the barn',
     analysis:
       'Humanises her moments before her death. Steinbeck forces a reappraisal: she is not the temptress the ranch men see but a young woman as isolated as they are, with even fewer escape routes.',
     themes: ['Loneliness', 'Prejudice'],
@@ -84,7 +84,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 6,
     text: '"I ought to of shot that dog myself, George."',
     speaker: 'Candy',
-    context: 'Chapter 3 — after the dog is killed',
+    context: 'Chapter 3 - after the dog is killed',
     analysis:
       "The novella's most important piece of foreshadowing. Candy's regret about delegating a mercy killing teaches George the lesson he will act on in the final chapter. Steinbeck links the two deaths structurally.",
     themes: ['Friendship', 'Nature and animals'],
@@ -93,7 +93,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 7,
     text: '"Tell about the rabbits, George."',
     speaker: 'Lennie',
-    context: 'Recurring — Chapters 1, 3, 6',
+    context: 'Recurring - Chapters 1, 3, 6',
     analysis:
       "The dream's refrain. Each repetition carries more weight: hope in Chapter 1, conviction in Chapter 3, heartbreak in Chapter 6. Steinbeck uses repetition to measure the distance between innocence and tragedy.",
     themes: ['The American Dream', 'Friendship'],
@@ -102,7 +102,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 8,
     text: '"You hadda, George. I swear you hadda."',
     speaker: 'Slim',
-    context: 'Chapter 6 — final lines',
+    context: 'Chapter 6 - final lines',
     analysis:
       "The ranch's moral authority validates the killing. Steinbeck uses Slim's compassion to prevent the ending from collapsing into simple horror, offering the reader a moral position from which to process the tragedy.",
     themes: ['Friendship', 'Power'],
@@ -111,7 +111,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 9,
     text: "\"S'pose you didn't have nobody... A guy goes nuts if he ain't got nobody.\"",
     speaker: 'Crooks',
-    context: 'Chapter 4 — reflecting on isolation',
+    context: 'Chapter 4 - reflecting on isolation',
     analysis:
       'Crooks describes the psychological damage of enforced solitude. Steinbeck uses his intelligence to make visible the waste of human potential that racism causes.',
     themes: ['Loneliness', 'Prejudice'],
@@ -120,9 +120,9 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 10,
     text: '"We\'re gonna get a little place."',
     speaker: 'George',
-    context: 'Chapter 1 — the dream',
+    context: 'Chapter 1 - the dream',
     analysis:
-      'The dream in its purest form. "Little" is key — Steinbeck shows that even the most modest ambitions are unreachable for workers at the bottom of the Depression economy.',
+      'The dream in its purest form. "Little" is key - Steinbeck shows that even the most modest ambitions are unreachable for workers at the bottom of the Depression economy.',
     themes: ['The American Dream'],
   },
   {
@@ -138,7 +138,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 12,
     text: '"Coulda been in the movies, an\' had nice clothes."',
     speaker: "Curley's Wife",
-    context: 'Chapter 5 — to Lennie',
+    context: 'Chapter 5 - to Lennie',
     analysis:
       "Her Hollywood dream parallels the men's land dream. Steinbeck shows the Depression crushed women's aspirations as brutally as men's, but with even fewer alternatives.",
     themes: ['The American Dream', 'Prejudice'],
@@ -147,7 +147,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 13,
     text: '"S\'pose I went in with you guys."',
     speaker: 'Candy',
-    context: 'Chapter 3 — offering savings',
+    context: 'Chapter 3 - offering savings',
     analysis:
       "The moment hope becomes tangible. Steinbeck lets the reader believe alongside the characters, making the dream's destruction more painful because it briefly seemed possible.",
     themes: ['The American Dream', 'Friendship'],
@@ -183,7 +183,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 17,
     text: '"What stake you got in this guy?"',
     speaker: 'The Boss',
-    context: 'Chapter 2 — interviewing George',
+    context: 'Chapter 2 - interviewing George',
     analysis:
       'The Boss cannot comprehend friendship without profit motive. Steinbeck uses the question to expose how capitalism corrodes the very idea of selfless human connection.',
     themes: ['Friendship', 'Power'],
@@ -192,7 +192,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 18,
     text: '"I think I knowed from the very first. I think I knowed we\'d never do her."',
     speaker: 'George',
-    context: "Chapter 5 — after Curley's wife's death",
+    context: "Chapter 5 - after Curley's wife's death",
     analysis:
       'George admits the dream was always fantasy. Steinbeck collapses hope and self-awareness in a single line, revealing that George carried the dream for Lennie, not for himself.',
     themes: ['The American Dream', 'Friendship'],
@@ -201,7 +201,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 19,
     text: '"They left all the weak ones here."',
     speaker: "Curley's Wife",
-    context: "Chapter 4 — in Crooks's room",
+    context: "Chapter 4 - in Crooks's room",
     analysis:
       'She identifies the marginalised group assembled in the harness room but fails to recognise herself as part of it. Steinbeck shows how internalised prejudice blinds people to their own oppression.',
     themes: ['Power', 'Prejudice'],
@@ -210,7 +210,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 20,
     text: '"Come on, ya big son-of-a-bitch."',
     speaker: 'Curley',
-    context: 'Chapter 3 — picking a fight with Lennie',
+    context: 'Chapter 3 - picking a fight with Lennie',
     analysis:
       'Curley targets the largest, most vulnerable man to prove his toughness. Steinbeck exposes how insecure masculinity creates violence by attacking those who cannot retaliate.',
     themes: ['Power', 'Prejudice'],
@@ -239,14 +239,14 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Lennie',
     context: 'Chapter 1',
     analysis:
-      "Lennie's love of soft things is established with the first dead mouse. Steinbeck begins the foreshadowing chain — mice, puppy, woman — that makes the ending feel structurally inevitable.",
+      "Lennie's love of soft things is established with the first dead mouse. Steinbeck begins the foreshadowing chain - mice, puppy, woman - that makes the ending feel structurally inevitable.",
     themes: ['Nature and animals'],
   },
   {
     id: 24,
     text: '"I want you to stay with me, Lennie."',
     speaker: 'George',
-    context: 'Chapter 6 — final scene',
+    context: 'Chapter 6 - final scene',
     analysis:
       "George's last tender words before pulling the trigger. Steinbeck fuses love and violence in a single sentence, making the mercy killing an act of unbearable intimacy.",
     themes: ['Friendship'],
@@ -255,7 +255,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 25,
     text: '"Now what the hell ya suppose is eatin\' them two guys?"',
     speaker: 'Carlson',
-    context: 'Chapter 6 — closing line',
+    context: 'Chapter 6 - closing line',
     analysis:
       "The novella's final line exposes Carlson's emotional illiteracy. Steinbeck ends with incomprehension to show that most people cannot even see the friendship they have just witnessed destroyed.",
     themes: ['Loneliness', 'Friendship'],
@@ -306,7 +306,7 @@ export default async function OfMiceAndMenKeyQuotesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-violet-400" />
-              Modern Text — Novella
+              Modern Text - Novella
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -344,7 +344,7 @@ export default async function OfMiceAndMenKeyQuotesPage() {
                   </span>
                 </div>
                 <p className="text-caption uppercase tracking-wide text-primary">
-                  {q.speaker} — {q.context}
+                  {q.speaker} - {q.context}
                 </p>
                 <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                 <div className="flex flex-wrap gap-1.5 pt-1">

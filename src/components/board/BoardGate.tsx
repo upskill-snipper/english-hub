@@ -10,7 +10,7 @@ import { useT } from '@/lib/i18n/use-t'
 
 /**
  * Paths where the board gate is *not* enforced. Visitors may browse these
- * without picking a board — the modal will not appear on them, and if it is
+ * without picking a board - the modal will not appear on them, and if it is
  * open it can be dismissed with Escape.
  *
  * Entries ending in `/*` match the prefix (e.g. `/auth/*` matches `/auth/login`).
@@ -22,7 +22,7 @@ import { useT } from '@/lib/i18n/use-t'
  * Philosophy: ONLY gate content that materially changes by exam board
  * (revision/*, practice, mock-exams, games, assessment/*, courses, igcse/*).
  * Marketing, policy, compliance, demo, and account pages are crawlable
- * without a board cookie — Googlebot, social unfurlers, diligence reviewers,
+ * without a board cookie - Googlebot, social unfurlers, diligence reviewers,
  * school DPOs, and paid-ad landers must see real content.
  *
  * Commercial note: extending this list to /revision/*, /games, /mock-exams,
@@ -86,13 +86,13 @@ const ALLOWLISTED_PATHS = [
   // School flows (board chosen via school code)
   '/school/*',
 
-  // Demo — must be public
+  // Demo - must be public
   '/demo/*',
 
-  // Content surfaces previously gated — now crawlable for SEO.
+  // Content surfaces previously gated - now crawlable for SEO.
   // Each page has its own board-aware filter; no-board visitors see the
   // generic version. Both the root (`/games`) AND the prefix (`/games/*`)
-  // entries are required — the prefix matcher doesn't match the exact root.
+  // entries are required - the prefix matcher doesn't match the exact root.
   '/analysis',
   '/analysis/*',
   '/revision',
@@ -159,7 +159,7 @@ export function BoardGate({ children }: BoardGateProps) {
     setCookieBoard(readBoardCookie())
   }, [])
 
-  // Dismissal state — reset on every navigation. Dismissal is only honoured on
+  // Dismissal state - reset on every navigation. Dismissal is only honoured on
   // allowlisted paths; on gated paths the modal is re-shown until a board is
   // chosen.
   const [dismissed, setDismissed] = React.useState(false)

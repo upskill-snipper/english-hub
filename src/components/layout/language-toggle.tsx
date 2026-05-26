@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * LanguageToggle — two-mode language switcher.
+ * LanguageToggle - two-mode language switcher.
  *
  *   en  → English mode  (default; content rendered in English only)
  *   ar  → Arabic mode   (AR content only, RTL layout, Khaleeji)
  *
- * Bilingual mode was removed (May 2026) — the stacked EN+AR layout
+ * Bilingual mode was removed (May 2026) - the stacked EN+AR layout
  * didn't render reliably on dense pages and the user community asked
  * for a simpler toggle. Legacy `eh-lang=bi` cookie values are coerced
  * to `'en'` by readCookie() and by the middleware so old sessions

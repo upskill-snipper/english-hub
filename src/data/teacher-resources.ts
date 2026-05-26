@@ -39,26 +39,26 @@ export const TEACHER_RESOURCES: TeacherResource[] = [
   // ╚══════════════════════════════════════════════════════════════════════════╝
   {
     id: 'model-macbeth-extract-grade9',
-    title: 'Macbeth Extract Response — Grade 9 Model',
+    title: 'Macbeth Extract Response - Grade 9 Model',
     category: 'Model Answers',
     subcategory: 'Grade 9',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
     description:
-      'A full Grade 9 response to an extract question on Macbeth (Act 1, Scene 7 — "If it were done when \'tis done").',
+      'A full Grade 9 response to an extract question on Macbeth (Act 1, Scene 7 - "If it were done when \'tis done").',
     content: `QUESTION: Starting with this extract (Act 1 Scene 7), how does Shakespeare present the theme of ambition?
 
 GRADE 9 MODEL ANSWER:
 
 Shakespeare presents ambition as an inherently self-destructive force through Macbeth's tortured soliloquy, in which the protagonist's language itself fractures under the weight of his moral conflict.
 
-The conditional opening — "If it were done when 'tis done, then 'twere well / It were done quickly" — is striking in its syntactic instability. The repetition of "done" three times within a single line creates a stuttering, circular quality, as though Macbeth is trapped in a linguistic loop that mirrors his psychological entrapment. The subjunctive "if" immediately introduces doubt; this is not a man resolved, but one desperately trying to convince himself. Shakespeare's use of euphemism — the act of regicide is never named, only "it" — reveals Macbeth's inability to confront the reality of what ambition demands.
+The conditional opening - "If it were done when 'tis done, then 'twere well / It were done quickly" - is striking in its syntactic instability. The repetition of "done" three times within a single line creates a stuttering, circular quality, as though Macbeth is trapped in a linguistic loop that mirrors his psychological entrapment. The subjunctive "if" immediately introduces doubt; this is not a man resolved, but one desperately trying to convince himself. Shakespeare's use of euphemism - the act of regicide is never named, only "it" - reveals Macbeth's inability to confront the reality of what ambition demands.
 
-The extended metaphor of the "poisoned chalice" is particularly significant when considered in its Jacobean context. James I, himself the target of the Gunpowder Plot, would have recognised the image of treachery returning upon the traitor. Shakespeare suggests that ambition that oversteps moral boundaries contains within it the seeds of its own punishment — the "even-handed justice" that "commends the ingredients of our poisoned chalice / To our own lips." The personification of justice as "even-handed" implies a cosmic moral order that ambition cannot outwit, foreshadowing Macbeth's eventual destruction.
+The extended metaphor of the "poisoned chalice" is particularly significant when considered in its Jacobean context. James I, himself the target of the Gunpowder Plot, would have recognised the image of treachery returning upon the traitor. Shakespeare suggests that ambition that oversteps moral boundaries contains within it the seeds of its own punishment - the "even-handed justice" that "commends the ingredients of our poisoned chalice / To our own lips." The personification of justice as "even-handed" implies a cosmic moral order that ambition cannot outwit, foreshadowing Macbeth's eventual destruction.
 
-Crucially, Shakespeare contrasts this with the image of "vaulting ambition, which o'erleaps itself / And falls on the other." The equestrian metaphor is deliberately bathetic — the grand image of leaping is immediately undercut by the fall. The enjambment across the line break enacts the overreach physically on the page: the reader, like Macbeth, is carried forward only to stumble. This structural choice reinforces the idea that ambition is not merely dangerous but inherently self-defeating.
+Crucially, Shakespeare contrasts this with the image of "vaulting ambition, which o'erleaps itself / And falls on the other." The equestrian metaphor is deliberately bathetic - the grand image of leaping is immediately undercut by the fall. The enjambment across the line break enacts the overreach physically on the page: the reader, like Macbeth, is carried forward only to stumble. This structural choice reinforces the idea that ambition is not merely dangerous but inherently self-defeating.
 
-Across the play, Shakespeare traces a trajectory from this moment of hesitation to Lady Macbeth's sleepwalking guilt and Macbeth's nihilistic "Tomorrow and tomorrow and tomorrow" speech. The initial fracturing of language in this soliloquy — the euphemisms, conditionals, and broken syntax — intensifies into full psychological collapse, suggesting that ambition, once it displaces moral certainty, leaves only a void.`,
+Across the play, Shakespeare traces a trajectory from this moment of hesitation to Lady Macbeth's sleepwalking guilt and Macbeth's nihilistic "Tomorrow and tomorrow and tomorrow" speech. The initial fracturing of language in this soliloquy - the euphemisms, conditionals, and broken syntax - intensifies into full psychological collapse, suggesting that ambition, once it displaces moral certainty, leaves only a void.`,
     printable: true,
     tags: [
       'Macbeth',
@@ -73,7 +73,7 @@ Across the play, Shakespeare traces a trajectory from this moment of hesitation 
   },
   {
     id: 'model-inspector-calls-grade7',
-    title: 'An Inspector Calls Character Response — Grade 7 Model',
+    title: 'An Inspector Calls Character Response - Grade 7 Model',
     category: 'Model Answers',
     subcategory: 'Grade 7',
     examBoard: ['AQA'],
@@ -86,11 +86,11 @@ GRADE 7 MODEL ANSWER:
 
 Priestley presents Mr Birling as a symbol of capitalist selfishness and social irresponsibility, using him to criticise the attitudes of the Edwardian upper-middle class.
 
-From the outset, Birling is characterised by his confident, lecturing tone. His speech in Act 1 — "a man has to mind his own business and look after himself and his own" — establishes his philosophy of individualism. The tricolon structure ("mind," "look after," "his own") reinforces the narrow, self-centred worldview, while the imperative "has to" suggests he sees selfishness not as a choice but as an obligation. Priestley positions this speech early so the audience can measure Birling's certainty against the events that follow.
+From the outset, Birling is characterised by his confident, lecturing tone. His speech in Act 1 - "a man has to mind his own business and look after himself and his own" - establishes his philosophy of individualism. The tricolon structure ("mind," "look after," "his own") reinforces the narrow, self-centred worldview, while the imperative "has to" suggests he sees selfishness not as a choice but as an obligation. Priestley positions this speech early so the audience can measure Birling's certainty against the events that follow.
 
-Birling's dramatic irony is central to Priestley's critique. His confident predictions — "the Titanic … unsinkable, absolutely unsinkable" and "I say there isn't a chance of war" — are historically absurd to the 1945 audience. Priestley uses the adverb "absolutely" to heighten Birling's foolish certainty. If Birling is so wrong about public events, the audience is invited to distrust his moral philosophy too.
+Birling's dramatic irony is central to Priestley's critique. His confident predictions - "the Titanic … unsinkable, absolutely unsinkable" and "I say there isn't a chance of war" - are historically absurd to the 1945 audience. Priestley uses the adverb "absolutely" to heighten Birling's foolish certainty. If Birling is so wrong about public events, the audience is invited to distrust his moral philosophy too.
 
-The stage directions describe Birling as "heavy-looking, rather portentous," immediately associating him with physical and intellectual weight that is ultimately hollow. "Portentous" is particularly significant — it means self-importantly solemn, suggesting Birling takes himself far more seriously than he deserves.
+The stage directions describe Birling as "heavy-looking, rather portentous," immediately associating him with physical and intellectual weight that is ultimately hollow. "Portentous" is particularly significant - it means self-importantly solemn, suggesting Birling takes himself far more seriously than he deserves.
 
 Through Birling, Priestley argues that unchecked capitalism creates individuals incapable of empathy. When confronted with Eva Smith's death, Birling's primary concern is that "there'll be a public scandal." The noun "scandal" reveals that his moral compass is calibrated entirely by social reputation rather than human suffering. Priestley suggests this is the inevitable consequence of a society that values profit over people.`,
     printable: true,
@@ -107,7 +107,7 @@ Through Birling, Priestley argues that unchecked capitalism creates individuals 
   },
   {
     id: 'model-lang-p1-q5-grade5',
-    title: 'Language Paper 1 Q5 Descriptive Writing — Grade 5 Model',
+    title: 'Language Paper 1 Q5 Descriptive Writing - Grade 5 Model',
     category: 'Model Answers',
     subcategory: 'Grade 5',
     examBoard: ['AQA'],
@@ -122,11 +122,11 @@ The building stood at the edge of town like a forgotten promise. Its windows, on
 
 Inside, the air was thick with dust. It caught in your throat like cobwebs. The floorboards groaned under each step, as if complaining about being disturbed after so many years of silence. A single chair sat in the middle of the room, knocked sideways, as though the last person to sit in it had left in a hurry.
 
-Wallpaper peeled from the walls in long, curling strips, revealing the bare plaster underneath. It was a faded floral pattern — roses, maybe — and I thought about the person who had chosen it. Had they stood in a shop, running their fingers over the samples, imagining how it would look? They could never have imagined this.
+Wallpaper peeled from the walls in long, curling strips, revealing the bare plaster underneath. It was a faded floral pattern - roses, maybe - and I thought about the person who had chosen it. Had they stood in a shop, running their fingers over the samples, imagining how it would look? They could never have imagined this.
 
 Light came in through a crack in the roof, falling in a single bright line across the floor. Dust particles floated through it, drifting slowly, like tiny planets orbiting nothing. The silence was so complete that I could hear my own heartbeat.
 
-On the mantelpiece, a photograph lay face down. I picked it up carefully. A family smiled back at me — two parents, three children, a dog at their feet. They looked happy. The glass was cracked across the mother's face, a jagged line that seemed almost cruel.
+On the mantelpiece, a photograph lay face down. I picked it up carefully. A family smiled back at me - two parents, three children, a dog at their feet. They looked happy. The glass was cracked across the mother's face, a jagged line that seemed almost cruel.
 
 I put the photograph back where I found it, face down, the way it wanted to be. Some things are forgotten for a reason. I stepped back outside, into the noise and light of the real world, and the building settled back into its silence behind me.
 
@@ -138,7 +138,7 @@ This response achieves Grade 5 through clear, deliberate structural choices (mov
   },
   {
     id: 'model-poetry-comparison-grade9',
-    title: 'Poetry Comparison — Grade 9 Model (Power & Conflict)',
+    title: 'Poetry Comparison - Grade 9 Model (Power & Conflict)',
     category: 'Model Answers',
     subcategory: 'Grade 9',
     examBoard: ['AQA'],
@@ -151,13 +151,13 @@ GRADE 9 MODEL ANSWER:
 
 Both Shelley in "Ozymandias" and Browning in "My Last Duchess" interrogate the nature of power, yet they do so through fundamentally different temporal lenses: Shelley examines power from the vantage point of its ruins, while Browning captures it at its most suffocatingly present.
 
-Shelley's sonnet is structurally subversive. The choice of the Petrarchan form — traditionally associated with love poetry — to depict a tyrant's collapse is itself an ironic commentary on the relationship between art and power. The poem's framing device creates deliberate distance: the speaker heard from "a traveller from an antique land," who in turn reads the sculptor's interpretation of Ozymandias. This chain of mediation means we never encounter the king directly — his power has been so thoroughly eroded that he exists only as a copy of a copy. The famous inscription, "Look on my Works, ye Mighty, and despair!" operates through devastating dramatic irony: the imperative that once commanded awe now invites only pity. The caesura after "despair!" forces a pause before the final image of "boundless and bare" desert, the plosive alliteration enacting the emptiness it describes.
+Shelley's sonnet is structurally subversive. The choice of the Petrarchan form - traditionally associated with love poetry - to depict a tyrant's collapse is itself an ironic commentary on the relationship between art and power. The poem's framing device creates deliberate distance: the speaker heard from "a traveller from an antique land," who in turn reads the sculptor's interpretation of Ozymandias. This chain of mediation means we never encounter the king directly - his power has been so thoroughly eroded that he exists only as a copy of a copy. The famous inscription, "Look on my Works, ye Mighty, and despair!" operates through devastating dramatic irony: the imperative that once commanded awe now invites only pity. The caesura after "despair!" forces a pause before the final image of "boundless and bare" desert, the plosive alliteration enacting the emptiness it describes.
 
-Browning's Duke, by contrast, is terrifyingly immediate. The dramatic monologue form means we are trapped in his perspective, just as the Duchess was trapped in his household. His power is linguistic — the ceaseless enjambment ("That's my last Duchess painted on the wall, / Looking as if she were alive") denies the reader pause, mirroring the way the Duke denies others agency. The possessive determiner "my" in the opening line reduces the Duchess to property, an object to be displayed alongside "Neptune … / Taming a sea-horse" — the parallel positioning revealing that the Duke sees the subjugation of his wife and the taming of nature as equivalent achievements.
+Browning's Duke, by contrast, is terrifyingly immediate. The dramatic monologue form means we are trapped in his perspective, just as the Duchess was trapped in his household. His power is linguistic - the ceaseless enjambment ("That's my last Duchess painted on the wall, / Looking as if she were alive") denies the reader pause, mirroring the way the Duke denies others agency. The possessive determiner "my" in the opening line reduces the Duchess to property, an object to be displayed alongside "Neptune … / Taming a sea-horse" - the parallel positioning revealing that the Duke sees the subjugation of his wife and the taming of nature as equivalent achievements.
 
-The crucial difference lies in each poem's treatment of art. For Shelley, art outlasts the tyrant but ultimately testifies to power's futility — the sculptor's "mocking hand" preserved Ozymandias's arrogance precisely so that time could humiliate it. For Browning, art becomes the instrument of power: the Duke has literally replaced a living woman with a painting he can control, drawing a curtain that "none puts by … but I." The first person pronoun, isolated at the line's end, is chilling in its finality.
+The crucial difference lies in each poem's treatment of art. For Shelley, art outlasts the tyrant but ultimately testifies to power's futility - the sculptor's "mocking hand" preserved Ozymandias's arrogance precisely so that time could humiliate it. For Browning, art becomes the instrument of power: the Duke has literally replaced a living woman with a painting he can control, drawing a curtain that "none puts by … but I." The first person pronoun, isolated at the line's end, is chilling in its finality.
 
-Ultimately, Shelley offers the Romantic consolation that nature and time will defeat all tyranny — the "lone and level sands" are democratic in their erasure. Browning provides no such comfort: his poem ends mid-negotiation for a new wife, the Duke's power undiminished, his art collection about to grow.`,
+Ultimately, Shelley offers the Romantic consolation that nature and time will defeat all tyranny - the "lone and level sands" are democratic in their erasure. Browning provides no such comfort: his poem ends mid-negotiation for a new wife, the Duke's power undiminished, his art collection about to grow.`,
     printable: true,
     tags: [
       'poetry comparison',
@@ -174,34 +174,34 @@ Ultimately, Shelley offers the Romantic consolation that nature and time will de
   // ╚══════════════════════════════════════════════════════════════════════════╝
   {
     id: 'ms-aqa-lit-p1-simplified',
-    title: 'AQA Literature Paper 1 — Simplified Mark Scheme',
+    title: 'AQA Literature Paper 1 - Simplified Mark Scheme',
     category: 'Mark Schemes',
     subcategory: 'AQA Literature',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Teacher-friendly breakdown of AQA Lit Paper 1 mark bands with student-facing descriptors.',
-    content: `AQA ENGLISH LITERATURE PAPER 1 — SIMPLIFIED MARK SCHEME
+    content: `AQA ENGLISH LITERATURE PAPER 1 - SIMPLIFIED MARK SCHEME
 Shakespeare (Section A) & 19th-Century Novel (Section B)
 
 ASSESSMENT OBJECTIVES:
-• AO1 — Read, understand, respond. Use textual references (including quotations).
-• AO2 — Analyse language, form, structure. Use subject terminology.
-• AO3 — Show understanding of contexts.
-• AO4 — Use accurate spelling, punctuation, grammar (4 marks, Section A only).
+• AO1 - Read, understand, respond. Use textual references (including quotations).
+• AO2 - Analyse language, form, structure. Use subject terminology.
+• AO3 - Show understanding of contexts.
+• AO4 - Use accurate spelling, punctuation, grammar (4 marks, Section A only).
 
 ──────────────────────────────────────────────
-GRADE 9 (30 marks: 26–30)
+GRADE 9 (30 marks: 26-30)
 ──────────────────────────────────────────────
 ✓ Critical, exploratory, conceptualised response
-✓ Judicious, embedded quotations — woven into argument
+✓ Judicious, embedded quotations - woven into argument
 ✓ Analysis of writer's methods is perceptive, detailed
 ✓ Exploration of context is convincing and integrated (not "bolted on")
 ✓ Offers ALTERNATIVE INTERPRETATIONS or challenges conventional readings
 KEY WORDS: perceptive, critical, exploratory, conceptualised
 
 ──────────────────────────────────────────────
-GRADE 7–8 (30 marks: 19–25)
+GRADE 7-8 (30 marks: 19-25)
 ──────────────────────────────────────────────
 ✓ Thoughtful, developed response
 ✓ Well-chosen quotations, effectively integrated
@@ -210,7 +210,7 @@ GRADE 7–8 (30 marks: 19–25)
 KEY WORDS: thoughtful, developed, sustained, assured
 
 ──────────────────────────────────────────────
-GRADE 5–6 (30 marks: 13–18)
+GRADE 5-6 (30 marks: 13-18)
 ──────────────────────────────────────────────
 ✓ Clear, explained response
 ✓ Relevant quotations used to support points
@@ -219,7 +219,7 @@ GRADE 5–6 (30 marks: 13–18)
 KEY WORDS: clear, explained, relevant, appropriate
 
 ──────────────────────────────────────────────
-GRADE 3–4 (30 marks: 7–12)
+GRADE 3-4 (30 marks: 7-12)
 ──────────────────────────────────────────────
 ✓ Some understanding, supported by references
 ✓ Some awareness of writer's methods
@@ -227,7 +227,7 @@ GRADE 3–4 (30 marks: 7–12)
 KEY WORDS: some, awareness, supported
 
 ──────────────────────────────────────────────
-GRADE 1–2 (30 marks: 1–6)
+GRADE 1-2 (30 marks: 1-6)
 ──────────────────────────────────────────────
 ✓ Simple, limited comment
 ✓ Simple reference to text
@@ -248,14 +248,14 @@ TEACHER TIP: Print this for students to self-assess. Ask them to highlight the d
   },
   {
     id: 'ms-aqa-lang-p1-simplified',
-    title: 'AQA Language Paper 1 — Simplified Mark Scheme',
+    title: 'AQA Language Paper 1 - Simplified Mark Scheme',
     category: 'Mark Schemes',
     subcategory: 'AQA Language',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Question-by-question breakdown of AQA Language Paper 1 with clear mark bands and tips.',
-    content: `AQA ENGLISH LANGUAGE PAPER 1 — SIMPLIFIED MARK SCHEME
+    content: `AQA ENGLISH LANGUAGE PAPER 1 - SIMPLIFIED MARK SCHEME
 Explorations in Creative Reading and Writing
 
 ──────────────────────────────────────────────
@@ -269,85 +269,85 @@ COMMON MISTAKES: Going outside the line references; giving inferences not facts
 ──────────────────────────────────────────────
 Q2: LANGUAGE ANALYSIS (8 marks)
 ──────────────────────────────────────────────
-Level 4 (7–8): Perceptive, detailed analysis. Sophisticated use of terminology. Selects judicious examples.
-Level 3 (5–6): Clear, relevant explanation. Appropriate terminology. Well-chosen examples.
-Level 2 (3–4): Some understanding of language. Some terminology. Attempts to comment on effect.
-Level 1 (1–2): Simple awareness. Simple comment.
+Level 4 (7-8): Perceptive, detailed analysis. Sophisticated use of terminology. Selects judicious examples.
+Level 3 (5-6): Clear, relevant explanation. Appropriate terminology. Well-chosen examples.
+Level 2 (3-4): Some understanding of language. Some terminology. Attempts to comment on effect.
+Level 1 (1-2): Simple awareness. Simple comment.
 TEACHER TIP: Students lose marks by IDENTIFYING techniques without ANALYSING effect. Drill: "The word ___ suggests ___ because ___."
 
 ──────────────────────────────────────────────
 Q3: STRUCTURE ANALYSIS (8 marks)
 ──────────────────────────────────────────────
-Level 4 (7–8): Perceptive analysis of structural features. Sophisticated examples.
-Level 3 (5–6): Clear understanding. Relevant examples of structural choices.
-Level 2 (3–4): Some awareness. Comments on obvious features (beginning/middle/end).
-Level 1 (1–2): Simple awareness of structure.
+Level 4 (7-8): Perceptive analysis of structural features. Sophisticated examples.
+Level 3 (5-6): Clear understanding. Relevant examples of structural choices.
+Level 2 (3-4): Some awareness. Comments on obvious features (beginning/middle/end).
+Level 1 (1-2): Simple awareness of structure.
 KEY STRUCTURAL FEATURES: Focus shifts, narrative perspective, chronology, opening/closing, sentence length variation, paragraph length, zoom in/out, withholding information, repetition/motifs
 
 ──────────────────────────────────────────────
 Q4: EVALUATION (20 marks)
 ──────────────────────────────────────────────
-Level 4 (16–20): Perceptive, detailed evaluation. Convincing response to the statement. Judicious references.
-Level 3 (11–15): Clear, relevant evaluation. Clear response to statement. Relevant references.
-Level 2 (6–10): Some evaluation. Some response to statement. Some references.
-Level 1 (1–5): Simple, limited comment.
-TEACHER TIP: Students must ENGAGE with the given statement — agree, disagree, or both. The best answers treat it as a critical lens.
+Level 4 (16-20): Perceptive, detailed evaluation. Convincing response to the statement. Judicious references.
+Level 3 (11-15): Clear, relevant evaluation. Clear response to statement. Relevant references.
+Level 2 (6-10): Some evaluation. Some response to statement. Some references.
+Level 1 (1-5): Simple, limited comment.
+TEACHER TIP: Students must ENGAGE with the given statement - agree, disagree, or both. The best answers treat it as a critical lens.
 
 ──────────────────────────────────────────────
 Q5: CREATIVE WRITING (40 marks = 24 content + 16 SPaG)
 ──────────────────────────────────────────────
 Content (24 marks):
-Level 4 (19–24): Compelling, convincing. Extensive, ambitious vocabulary. Varied, effective structure. Compelling characters/atmosphere.
-Level 3 (13–18): Clear, effective. Increasingly sophisticated vocabulary. Varied structure. Engaging.
-Level 2 (7–12): Some success. Conscious vocabulary choices. Some structural variety.
-Level 1 (1–6): Simple, limited. Simple vocabulary. Random structure.
+Level 4 (19-24): Compelling, convincing. Extensive, ambitious vocabulary. Varied, effective structure. Compelling characters/atmosphere.
+Level 3 (13-18): Clear, effective. Increasingly sophisticated vocabulary. Varied structure. Engaging.
+Level 2 (7-12): Some success. Conscious vocabulary choices. Some structural variety.
+Level 1 (1-6): Simple, limited. Simple vocabulary. Random structure.
 
 SPaG (16 marks):
-Level 4 (13–16): Wide range of punctuation, accurate. Sophisticated sentence forms. Extensive vocabulary. Accurate spelling throughout.
-Level 3 (9–12): Range of punctuation, mostly accurate. Varied sentence forms. Varied vocabulary. Generally accurate spelling.
-Level 2 (5–8): Some punctuation. Some sentence variety. Some vocabulary variety. Reasonable spelling.
-Level 1 (1–4): Limited punctuation. Limited sentence forms. Limited vocabulary.`,
+Level 4 (13-16): Wide range of punctuation, accurate. Sophisticated sentence forms. Extensive vocabulary. Accurate spelling throughout.
+Level 3 (9-12): Range of punctuation, mostly accurate. Varied sentence forms. Varied vocabulary. Generally accurate spelling.
+Level 2 (5-8): Some punctuation. Some sentence variety. Some vocabulary variety. Reasonable spelling.
+Level 1 (1-4): Limited punctuation. Limited sentence forms. Limited vocabulary.`,
     printable: true,
     tags: ['AQA', 'Language', 'Paper 1', 'mark scheme', 'creative reading', 'creative writing'],
   },
   {
     id: 'ms-edexcel-lang-simplified',
-    title: 'Edexcel Language — Simplified Mark Scheme',
+    title: 'Edexcel Language - Simplified Mark Scheme',
     category: 'Mark Schemes',
     subcategory: 'Edexcel Language',
     examBoard: ['Edexcel'],
     yearGroup: ['Year 10', 'Year 11'],
     description: 'Teacher-friendly Edexcel English Language mark scheme covering both papers.',
-    content: `EDEXCEL ENGLISH LANGUAGE — SIMPLIFIED MARK SCHEME
+    content: `EDEXCEL ENGLISH LANGUAGE - SIMPLIFIED MARK SCHEME
 
 PAPER 1: FICTION AND IMAGINATIVE WRITING
 ──────────────────────────────────────────────
-Section A: Reading (Q1–Q4, 40 marks)
+Section A: Reading (Q1-Q4, 40 marks)
 
-Q1 (12 marks) — Close reading of extract:
-Band 5 (10–12): Perceptive, exploratory analysis. Precise, embedded quotations. Sophisticated discussion of effects.
-Band 4 (7–9): Detailed analysis. Well-chosen references. Clear discussion of effects.
-Band 3 (4–6): Some analysis. Supported points. Some comment on effects.
-Band 2 (2–3): Awareness of text. Basic references. Limited comment.
+Q1 (12 marks) - Close reading of extract:
+Band 5 (10-12): Perceptive, exploratory analysis. Precise, embedded quotations. Sophisticated discussion of effects.
+Band 4 (7-9): Detailed analysis. Well-chosen references. Clear discussion of effects.
+Band 3 (4-6): Some analysis. Supported points. Some comment on effects.
+Band 2 (2-3): Awareness of text. Basic references. Limited comment.
 Band 1 (1): Simple, limited.
 
-Q2–Q4 follow similar banding (see full spec for variations per question).
+Q2-Q4 follow similar banding (see full spec for variations per question).
 
 Section B: Imaginative Writing (Q5 or Q6, 40 marks)
 Content & Organisation (24 marks):
-Band 5 (20–24): Compelling, sophisticated. Original, ambitious ideas. Purposeful structure.
-Band 4 (15–19): Convincing, effective. Developed ideas. Secure structure.
-Band 3 (10–14): Clarity, success. Some development. Organised structure.
-Band 2 (5–9): Some clarity. Limited development. Attempted structure.
-Band 1 (1–4): Simple, limited. Minimal development.
+Band 5 (20-24): Compelling, sophisticated. Original, ambitious ideas. Purposeful structure.
+Band 4 (15-19): Convincing, effective. Developed ideas. Secure structure.
+Band 3 (10-14): Clarity, success. Some development. Organised structure.
+Band 2 (5-9): Some clarity. Limited development. Attempted structure.
+Band 1 (1-4): Simple, limited. Minimal development.
 
 Technical Accuracy (16 marks):
-Band 5 (14–16): Accuracy consistent. Wide range of sentence types and punctuation.
-Band 4 (10–13): Mostly accurate. Good range.
-Band 3 (7–9): Reasonable accuracy. Some range.
+Band 5 (14-16): Accuracy consistent. Wide range of sentence types and punctuation.
+Band 4 (10-13): Mostly accurate. Good range.
+Band 3 (7-9): Reasonable accuracy. Some range.
 
 PAPER 2: NON-FICTION AND TRANSACTIONAL WRITING
-Similar banding — key differences:
+Similar banding - key differences:
 • Section A tests comparison of two non-fiction texts
 • Section B tests transactional/persuasive writing (article, letter, speech, essay)
 
@@ -357,31 +357,31 @@ TEACHER TIP: Edexcel rewards "exploratory" reading earlier than AQA. Encourage s
   },
   {
     id: 'ms-ocr-lit-simplified',
-    title: 'OCR Literature — Simplified Mark Scheme',
+    title: 'OCR Literature - Simplified Mark Scheme',
     category: 'Mark Schemes',
     subcategory: 'OCR Literature',
     examBoard: ['OCR'],
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Simplified OCR English Literature J352 mark bands for teacher and student reference.',
-    content: `OCR ENGLISH LITERATURE (J352) — SIMPLIFIED MARK SCHEME
+    content: `OCR ENGLISH LITERATURE (J352) - SIMPLIFIED MARK SCHEME
 
 ASSESSMENT OBJECTIVES:
-• AO1 — Read, understand, respond using textual references
-• AO2 — Analyse language, form, structure using terminology
-• AO3 — Understand contexts
-• AO4 — Relate texts to each other (comparative element)
+• AO1 - Read, understand, respond using textual references
+• AO2 - Analyse language, form, structure using terminology
+• AO3 - Understand contexts
+• AO4 - Relate texts to each other (comparative element)
 
 ──────────────────────────────────────────────
 COMPONENT 1: Exploring Modern & Literary Heritage Texts
 ──────────────────────────────────────────────
 
-Band 6 (26–30): Insightful, illuminating response. Critical analysis of writer's methods. Integrated, convincing context. Precise, discriminating references.
-Band 5 (21–25): Exploratory, well-developed. Thoughtful analysis. Relevant context, effectively linked. Carefully chosen references.
-Band 4 (16–20): Clear, well-structured. Explained analysis of methods. Context linked to the text. Relevant references.
-Band 3 (11–15): Some clarity. Developing awareness of methods. Some context. Supported references.
-Band 2 (6–10): Limited understanding. Simple awareness of methods. Simple context. Basic references.
-Band 1 (1–5): Very limited response.
+Band 6 (26-30): Insightful, illuminating response. Critical analysis of writer's methods. Integrated, convincing context. Precise, discriminating references.
+Band 5 (21-25): Exploratory, well-developed. Thoughtful analysis. Relevant context, effectively linked. Carefully chosen references.
+Band 4 (16-20): Clear, well-structured. Explained analysis of methods. Context linked to the text. Relevant references.
+Band 3 (11-15): Some clarity. Developing awareness of methods. Some context. Supported references.
+Band 2 (6-10): Limited understanding. Simple awareness of methods. Simple context. Basic references.
+Band 1 (1-5): Very limited response.
 
 ──────────────────────────────────────────────
 COMPONENT 2: Exploring Poetry & Shakespeare
@@ -399,9 +399,9 @@ KEY OCR DIFFERENCES FROM AQA:
 1. Six bands rather than five
 2. "Insightful" and "illuminating" are the top-band keywords (vs AQA's "critical, exploratory")
 3. Comparative element explicitly assessed in poetry
-4. No separate AO4 SPaG marks — accuracy is assessed holistically
+4. No separate AO4 SPaG marks - accuracy is assessed holistically
 
-TEACHER TIP: OCR mark schemes reward "illuminating" — teach students to find unexpected connections or shed new light on familiar ideas.`,
+TEACHER TIP: OCR mark schemes reward "illuminating" - teach students to find unexpected connections or shed new light on familiar ideas.`,
     printable: true,
     tags: ['OCR', 'Literature', 'mark scheme', 'J352', 'Shakespeare', 'poetry comparison'],
   },
@@ -423,7 +423,7 @@ TEACHER TIP: OCR mark schemes reward "illuminating" — teach students to find u
 Use this frame to build analytical paragraphs for Literature and Language essays.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-P — POINT (1 sentence)
+P - POINT (1 sentence)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Make a clear, specific point that answers the question.
 
@@ -435,7 +435,7 @@ Sentence starters:
 AVOID: "In this essay I will…" or retelling the story.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-E — EVIDENCE (1–2 sentences)
+E - EVIDENCE (1-2 sentences)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Select a SHORT, specific quotation that supports your point.
 
@@ -449,7 +449,7 @@ TOP TIP: Embed quotations into your sentences rather than dropping them in:
 ✓ Macbeth's hallucinated "dagger" reveals his fracturing mental state.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-E — EXPLAIN / ANALYSE (2–3 sentences)
+E - EXPLAIN / ANALYSE (2-3 sentences)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Analyse HOW the writer's choice creates meaning. Focus on individual words.
 
@@ -462,7 +462,7 @@ Sentence starters:
 WHAT TO ANALYSE: Word choice (connotations), techniques (metaphor, simile, personification, alliteration), sentence structure, form
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-L — LINK (1–2 sentences)
+L - LINK (1-2 sentences)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Link to the question, the wider text, context, or an alternative interpretation.
 
@@ -500,10 +500,10 @@ Both [Poem A] and [Poem B] explore the theme of [theme from question], yet they 
 PARAGRAPH 2: FIRST POINT OF COMPARISON
 ──────────────────────────────────────────────
 In [Poem A], [Poet A] presents [aspect of theme] through…
-[Quotation + analysis — 3–4 sentences using PEEL]
+[Quotation + analysis - 3-4 sentences using PEEL]
 
 Similarly / In contrast / Conversely, [Poet B] also explores [aspect] but through…
-[Quotation + analysis — 3–4 sentences using PEEL]
+[Quotation + analysis - 3-4 sentences using PEEL]
 
 This difference/similarity is significant because…
 
@@ -516,7 +516,7 @@ PARAGRAPH 3: SECOND POINT OF COMPARISON
 PARAGRAPH 4: METHODS COMPARISON (form/structure)
 ──────────────────────────────────────────────
 The poets' structural choices reinforce their different presentations of [theme].
-[Poet A]'s use of [form feature — e.g., sonnet, free verse, enjambment] reflects…
+[Poet A]'s use of [form feature - e.g., sonnet, free verse, enjambment] reflects…
 Meanwhile, [Poet B]'s [form feature] creates an effect of…
 
 ──────────────────────────────────────────────
@@ -566,25 +566,25 @@ STEP 1: CHOOSE YOUR STRUCTURE (tick one)
 □ Contrast (light/dark, calm/chaos, before/after)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 2: PLAN YOUR PARAGRAPHS (5–6 paragraphs ideal)
+STEP 2: PLAN YOUR PARAGRAPHS (5-6 paragraphs ideal)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Para 1 — Opening (hook the reader):
+Para 1 - Opening (hook the reader):
 Focus: _____________ Key technique: _____________
 
-Para 2 — Development:
+Para 2 - Development:
 Focus: _____________ Key technique: _____________
 
-Para 3 — Shift/Turn (change pace, focus, or mood):
+Para 3 - Shift/Turn (change pace, focus, or mood):
 Focus: _____________ Key technique: _____________
 
-Para 4 — Intensify:
+Para 4 - Intensify:
 Focus: _____________ Key technique: _____________
 
-Para 5 — Resolution/Ending:
+Para 5 - Resolution/Ending:
 Focus: _____________ Key technique: _____________
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 3: LANGUAGE TOOLKIT (pick 5–6 to include)
+STEP 3: LANGUAGE TOOLKIT (pick 5-6 to include)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 □ Extended metaphor         □ Pathetic fallacy
 □ Simile                    □ Personification
@@ -605,7 +605,7 @@ STEP 5: OPENING LINE (draft it now)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 _______________________________________________
 
-REMEMBER: Quality over quantity. 350–500 well-crafted words beats 700 rushed words every time.`,
+REMEMBER: Quality over quantity. 350-500 well-crafted words beats 700 rushed words every time.`,
     printable: true,
     tags: [
       'creative writing',
@@ -624,8 +624,8 @@ REMEMBER: Quality over quantity. 350–500 well-crafted words beats 700 rushed w
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Focused writing frame for AQA Language Paper 1 Question 2 (8-mark language analysis).',
-    content: `LANGUAGE ANALYSIS WRITING FRAME — AQA Paper 1 Q2 (8 marks)
-Time: 8–10 minutes | 2 developed paragraphs
+    content: `LANGUAGE ANALYSIS WRITING FRAME - AQA Paper 1 Q2 (8 marks)
+Time: 8-10 minutes | 2 developed paragraphs
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PARAGRAPH 1:
@@ -672,62 +672,62 @@ TOP TIP: You only have 8 marks. Pick 2 quotations and analyse them DEEPLY rather
   // ╚══════════════════════════════════════════════════════════════════════════╝
   {
     id: 'vocab-literary-techniques',
-    title: 'Literary Techniques Vocabulary — Complete Glossary',
+    title: 'Literary Techniques Vocabulary - Complete Glossary',
     category: 'Vocabulary Lists',
     subcategory: 'Literary Techniques',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
     description:
       'Comprehensive glossary of literary and language techniques with definitions and examples.',
-    content: `LITERARY & LANGUAGE TECHNIQUES — SUBJECT TERMINOLOGY GLOSSARY
+    content: `LITERARY & LANGUAGE TECHNIQUES - SUBJECT TERMINOLOGY GLOSSARY
 
 LANGUAGE TECHNIQUES:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Alliteration — Repetition of initial consonant sounds. "Peter Piper picked a peck."
-Assonance — Repetition of vowel sounds within words. "The rain in Spain stays mainly on the plain."
-Sibilance — Repetition of 's' sounds, often creating a sinister or soft effect. "The snake slithered silently."
-Plosive — Hard consonant sounds (b, d, g, k, p, t) that create a harsh, aggressive effect.
-Fricative — Soft consonant sounds (f, v, th, s, z, sh) that create a gentle or menacing whisper.
-Onomatopoeia — Words that imitate sounds. "Crash," "whisper," "buzz."
-Metaphor — Describing something AS something else. "The classroom was a zoo."
-Extended metaphor — A metaphor sustained over several lines or a whole text.
-Simile — Comparison using "like" or "as." "Her eyes shone like diamonds."
-Personification — Giving human qualities to non-human things. "The wind howled."
-Pathetic fallacy — Using weather/nature to reflect mood. "Dark clouds gathered as grief descended."
-Hyperbole — Deliberate exaggeration. "I've told you a million times."
-Oxymoron — Two contradictory words together. "Bitter sweet," "living death."
-Juxtaposition — Placing contrasting ideas side by side for effect.
-Semantic field — A group of words related to the same topic (e.g., words of war: "battle," "siege," "surrender").
-Symbolism — Using an object to represent an abstract idea (e.g., a dove = peace).
-Imagery — Language that creates a vivid picture in the reader's mind.
-Tone — The attitude or feeling conveyed by the writing (e.g., angry, nostalgic, sarcastic).
-Register — The level of formality (formal, informal, colloquial, academic).
-Irony — Saying one thing but meaning another, or events that are the opposite of what's expected.
-Dramatic irony — When the audience knows something a character does not.
+Alliteration - Repetition of initial consonant sounds. "Peter Piper picked a peck."
+Assonance - Repetition of vowel sounds within words. "The rain in Spain stays mainly on the plain."
+Sibilance - Repetition of 's' sounds, often creating a sinister or soft effect. "The snake slithered silently."
+Plosive - Hard consonant sounds (b, d, g, k, p, t) that create a harsh, aggressive effect.
+Fricative - Soft consonant sounds (f, v, th, s, z, sh) that create a gentle or menacing whisper.
+Onomatopoeia - Words that imitate sounds. "Crash," "whisper," "buzz."
+Metaphor - Describing something AS something else. "The classroom was a zoo."
+Extended metaphor - A metaphor sustained over several lines or a whole text.
+Simile - Comparison using "like" or "as." "Her eyes shone like diamonds."
+Personification - Giving human qualities to non-human things. "The wind howled."
+Pathetic fallacy - Using weather/nature to reflect mood. "Dark clouds gathered as grief descended."
+Hyperbole - Deliberate exaggeration. "I've told you a million times."
+Oxymoron - Two contradictory words together. "Bitter sweet," "living death."
+Juxtaposition - Placing contrasting ideas side by side for effect.
+Semantic field - A group of words related to the same topic (e.g., words of war: "battle," "siege," "surrender").
+Symbolism - Using an object to represent an abstract idea (e.g., a dove = peace).
+Imagery - Language that creates a vivid picture in the reader's mind.
+Tone - The attitude or feeling conveyed by the writing (e.g., angry, nostalgic, sarcastic).
+Register - The level of formality (formal, informal, colloquial, academic).
+Irony - Saying one thing but meaning another, or events that are the opposite of what's expected.
+Dramatic irony - When the audience knows something a character does not.
 
 STRUCTURAL TECHNIQUES:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Enjambment — A sentence or phrase running over from one line to the next without punctuation.
-Caesura — A pause in the middle of a line of poetry, often marked by punctuation.
-Volta — A "turn" or shift in argument/mood in a poem (especially sonnets).
-Anaphora — Repetition of a word or phrase at the beginning of successive lines/sentences.
-Cyclical structure — When the ending returns to the beginning.
-In medias res — Starting in the middle of the action.
-Foreshadowing — Hints or clues about what will happen later.
-Flashback — A scene set earlier than the main narrative.
-Stanza — A verse in a poem (equivalent of a paragraph).
-Couplet — Two consecutive rhyming lines.
-Monologue — A long speech by one person.
-Soliloquy — A character speaking their thoughts aloud, alone on stage.
+Enjambment - A sentence or phrase running over from one line to the next without punctuation.
+Caesura - A pause in the middle of a line of poetry, often marked by punctuation.
+Volta - A "turn" or shift in argument/mood in a poem (especially sonnets).
+Anaphora - Repetition of a word or phrase at the beginning of successive lines/sentences.
+Cyclical structure - When the ending returns to the beginning.
+In medias res - Starting in the middle of the action.
+Foreshadowing - Hints or clues about what will happen later.
+Flashback - A scene set earlier than the main narrative.
+Stanza - A verse in a poem (equivalent of a paragraph).
+Couplet - Two consecutive rhyming lines.
+Monologue - A long speech by one person.
+Soliloquy - A character speaking their thoughts aloud, alone on stage.
 
 POETIC FORMS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Sonnet — 14 lines, usually iambic pentameter, with a volta.
-Free verse — Poetry without a regular rhyme scheme or metre.
-Dramatic monologue — A poem spoken by a fictional character to a silent listener.
-Ballad — A narrative poem, often with a regular rhyme and rhythm.
-Elegy — A poem of mourning or lamentation.
-Ode — A poem of praise or celebration.`,
+Sonnet - 14 lines, usually iambic pentameter, with a volta.
+Free verse - Poetry without a regular rhyme scheme or metre.
+Dramatic monologue - A poem spoken by a fictional character to a silent listener.
+Ballad - A narrative poem, often with a regular rhyme and rhythm.
+Elegy - A poem of mourning or lamentation.
+Ode - A poem of praise or celebration.`,
     printable: true,
     tags: [
       'vocabulary',
@@ -739,14 +739,14 @@ Ode — A poem of praise or celebration.`,
   },
   {
     id: 'vocab-evaluation-language',
-    title: 'Evaluation & Analysis Vocabulary — Upgrade Your Word Choices',
+    title: 'Evaluation & Analysis Vocabulary - Upgrade Your Word Choices',
     category: 'Vocabulary Lists',
     subcategory: 'Academic Vocabulary',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
     description:
       'Vocabulary upgrade list replacing basic words with sophisticated analytical language.',
-    content: `ANALYTICAL VOCABULARY — UPGRADE YOUR WORD CHOICES
+    content: `ANALYTICAL VOCABULARY - UPGRADE YOUR WORD CHOICES
 
 Instead of "shows" → use:
   suggests, implies, conveys, reveals, demonstrates, highlights, emphasises, underscores, reinforces, exposes, illustrates, reflects, signals, evokes
@@ -804,13 +804,13 @@ Perhaps more significantly… Most strikingly… Crucially…`,
   },
   {
     id: 'vocab-macbeth-key-terms',
-    title: 'Macbeth — Key Vocabulary & Concepts',
+    title: 'Macbeth - Key Vocabulary & Concepts',
     category: 'Vocabulary Lists',
     subcategory: 'Text-Specific Vocabulary',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
     description: 'Essential vocabulary, concepts, and contextual terms for studying Macbeth.',
-    content: `MACBETH — KEY VOCABULARY & CONCEPTS
+    content: `MACBETH - KEY VOCABULARY & CONCEPTS
 
 THEME VOCABULARY:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -823,37 +823,37 @@ Appearance vs Reality: duplicity, equivocation, façade, deception, "fair is fou
 
 KEY CONTEXTUAL TERMS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Great Chain of Being — The Elizabethan/Jacobean belief that God created a strict hierarchy: God → King → Nobles → Common people → Animals. Disrupting this order (e.g., through regicide) causes chaos in nature.
+Great Chain of Being - The Elizabethan/Jacobean belief that God created a strict hierarchy: God → King → Nobles → Common people → Animals. Disrupting this order (e.g., through regicide) causes chaos in nature.
 
-Divine Right of Kings — The belief that monarchs are appointed by God and therefore answerable only to God. Killing a king is thus not just treason but blasphemy.
+Divine Right of Kings - The belief that monarchs are appointed by God and therefore answerable only to God. Killing a king is thus not just treason but blasphemy.
 
-Regicide — The killing of a king. The ultimate crime in Jacobean England.
+Regicide - The killing of a king. The ultimate crime in Jacobean England.
 
-The Gunpowder Plot (1605) — Catholic conspiracy to blow up Parliament and King James I. Shakespeare's audience would associate treachery against a king with this recent, terrifying event.
+The Gunpowder Plot (1605) - Catholic conspiracy to blow up Parliament and King James I. Shakespeare's audience would associate treachery against a king with this recent, terrifying event.
 
-King James I — Patron of Shakespeare's company. Wrote "Daemonologie" (1597), a treatise on witchcraft. Macbeth flatters James by dramatising his ancestor Banquo as noble and by portraying witchcraft as dangerous.
+King James I - Patron of Shakespeare's company. Wrote "Daemonologie" (1597), a treatise on witchcraft. Macbeth flatters James by dramatising his ancestor Banquo as noble and by portraying witchcraft as dangerous.
 
-Equivocation — Deliberately ambiguous language designed to mislead. The Jesuits were accused of using equivocation during the Gunpowder Plot trials. The witches equivocate throughout the play.
+Equivocation - Deliberately ambiguous language designed to mislead. The Jesuits were accused of using equivocation during the Gunpowder Plot trials. The witches equivocate throughout the play.
 
-Hamartia — A fatal flaw (from Greek tragedy). Macbeth's hamartia is his ambition.
+Hamartia - A fatal flaw (from Greek tragedy). Macbeth's hamartia is his ambition.
 
-Catharsis — The emotional purging the audience experiences through tragedy.
+Catharsis - The emotional purging the audience experiences through tragedy.
 
-Hubris — Excessive pride or self-confidence, typically leading to downfall.
+Hubris - Excessive pride or self-confidence, typically leading to downfall.
 
-Patriarchy — Male-dominated social system. Lady Macbeth's desire to be "unsexed" challenges patriarchal gender roles.`,
+Patriarchy - Male-dominated social system. Lady Macbeth's desire to be "unsexed" challenges patriarchal gender roles.`,
     printable: true,
     tags: ['Macbeth', 'vocabulary', 'context', 'Shakespeare', 'key terms', 'themes'],
   },
   {
     id: 'vocab-inspector-calls-terms',
-    title: 'An Inspector Calls — Key Vocabulary & Concepts',
+    title: 'An Inspector Calls - Key Vocabulary & Concepts',
     category: 'Vocabulary Lists',
     subcategory: 'Text-Specific Vocabulary',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
     description: 'Essential vocabulary and contextual terms for studying An Inspector Calls.',
-    content: `AN INSPECTOR CALLS — KEY VOCABULARY & CONCEPTS
+    content: `AN INSPECTOR CALLS - KEY VOCABULARY & CONCEPTS
 
 THEME VOCABULARY:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -865,24 +865,24 @@ Morality: conscience, hypocrisy, atonement, guilt, moral awakening, complacency
 
 KEY CONTEXTUAL TERMS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Socialism — The political belief that wealth and resources should be shared collectively. Priestley was a committed socialist. The Inspector embodies socialist values.
+Socialism - The political belief that wealth and resources should be shared collectively. Priestley was a committed socialist. The Inspector embodies socialist values.
 
-Capitalism — An economic system based on private ownership and profit. The Birlings represent capitalist values: self-interest, profit over people.
+Capitalism - An economic system based on private ownership and profit. The Birlings represent capitalist values: self-interest, profit over people.
 
-The Welfare State — After WWII (1945, when the play was first performed), the Labour government introduced the NHS, social security, and state education. Priestley's play argues for exactly this kind of collective responsibility.
+The Welfare State - After WWII (1945, when the play was first performed), the Labour government introduced the NHS, social security, and state education. Priestley's play argues for exactly this kind of collective responsibility.
 
-Edwardian England (1912) — The play is SET in 1912 but PERFORMED in 1945. The audience knows that the Birlings' world of confidence and prosperity is about to be shattered by WWI, the sinking of the Titanic, and the General Strike.
+Edwardian England (1912) - The play is SET in 1912 but PERFORMED in 1945. The audience knows that the Birlings' world of confidence and prosperity is about to be shattered by WWI, the sinking of the Titanic, and the General Strike.
 
-Dramatic Irony — Because the play is set in 1912 but performed in 1945, Birling's confident predictions are dramatically ironic. The audience knows he is catastrophically wrong.
+Dramatic Irony - Because the play is set in 1912 but performed in 1945, Birling's confident predictions are dramatically ironic. The audience knows he is catastrophically wrong.
 
-The Well-Made Play — A dramatic structure where all events are causally linked and build to a climax. Priestley uses AND subverts this form.
+The Well-Made Play - A dramatic structure where all events are causally linked and build to a climax. Priestley uses AND subverts this form.
 
-Morality Play — A medieval dramatic form where characters represent moral qualities (Vice, Virtue, Everyman). The Inspector functions like a figure from a morality play — an allegorical force of conscience.
+Morality Play - A medieval dramatic form where characters represent moral qualities (Vice, Virtue, Everyman). The Inspector functions like a figure from a morality play - an allegorical force of conscience.
 
-Fourth Wall — Priestley wanted the final phone call to make the audience feel implicated too, breaking the comfortable distance between stage and stalls.
+Fourth Wall - Priestley wanted the final phone call to make the audience feel implicated too, breaking the comfortable distance between stage and stalls.
 
 PRIESTLEY'S "LLANDINAM LETTER" (key quote):
-"We don't live alone. We are members of one body. We are responsible for each other." — This is essentially the Inspector's final speech, and Priestley's central thesis.`,
+"We don't live alone. We are members of one body. We are responsible for each other." - This is essentially the Inspector's final speech, and Priestley's central thesis.`,
     printable: true,
     tags: [
       'An Inspector Calls',
@@ -900,25 +900,25 @@ PRIESTLEY'S "LLANDINAM LETTER" (key quote):
   // ╚══════════════════════════════════════════════════════════════════════════╝
   {
     id: 'quotes-macbeth-by-theme',
-    title: 'Macbeth Key Quotes — Organised by Theme',
+    title: 'Macbeth Key Quotes - Organised by Theme',
     category: 'Key Quotes Banks',
     subcategory: 'By Theme',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
     description: 'Essential Macbeth quotations organised by theme with brief analytical notes.',
-    content: `MACBETH — KEY QUOTES BY THEME
+    content: `MACBETH - KEY QUOTES BY THEME
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AMBITION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Stars, hide your fires; / Let not light see my black and deep desires" (1.4)
-→ Light/dark imagery. "Black and deep" — ambition is hidden, shameful, associated with evil.
+→ Light/dark imagery. "Black and deep" - ambition is hidden, shameful, associated with evil.
 
 "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other" (1.7)
 → Equestrian metaphor. Ambition overreaches and defeats itself. Prophetic of Macbeth's fall.
 
 "I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er" (3.4)
-→ River of blood metaphor. "Tedious" is chilling — murder has become mundane.
+→ River of blood metaphor. "Tedious" is chilling - murder has become mundane.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 GUILT & CONSCIENCE
@@ -930,10 +930,10 @@ GUILT & CONSCIENCE
 → Lady Macbeth's sleepwalking. Irony: she told Macbeth "a little water clears us of this deed." Now she cannot escape guilt.
 
 "Is this a dagger which I see before me, / The handle toward my hand?" (2.1)
-→ Hallucination — ambiguity between supernatural and psychological. The dagger INVITES him ("toward my hand").
+→ Hallucination - ambiguity between supernatural and psychological. The dagger INVITES him ("toward my hand").
 
 "O, full of scorpions is my mind, dear wife!" (3.2)
-→ Metaphor. Scorpions = venomous, self-destructive thoughts. "Dear wife" — tenderness amidst madness.
+→ Metaphor. Scorpions = venomous, self-destructive thoughts. "Dear wife" - tenderness amidst madness.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 THE SUPERNATURAL
@@ -942,7 +942,7 @@ THE SUPERNATURAL
 → Chiasmus. Moral inversion. Sets up the play's central theme of appearance vs reality.
 
 "By the pricking of my thumbs, / Something wicked this way comes" (4.1)
-→ Even the witches call Macbeth "wicked" — he has surpassed them in evil.
+→ Even the witches call Macbeth "wicked" - he has surpassed them in evil.
 
 "Come, you spirits / That tend on mortal thoughts, unsex me here" (1.5)
 → Lady Macbeth invokes supernatural evil. "Unsex" = remove femininity/compassion.
@@ -954,7 +954,7 @@ POWER & KINGSHIP
 → Biblical imagery (Garden of Eden). Duplicity as a political tool.
 
 "Upon my head they placed a fruitless crown, / And put a barren sceptre in my grip" (3.1)
-→ "Fruitless" / "barren" — power without legacy is meaningless. Explains his obsession with Banquo.
+→ "Fruitless" / "barren" - power without legacy is meaningless. Explains his obsession with Banquo.
 
 "Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day" (5.5)
 → Nihilism. Repetition creates weariness. Life is "a tale told by an idiot, full of sound and fury, / Signifying nothing."`,
@@ -972,14 +972,14 @@ POWER & KINGSHIP
   },
   {
     id: 'quotes-inspector-calls-by-character',
-    title: 'An Inspector Calls Key Quotes — By Character',
+    title: 'An Inspector Calls Key Quotes - By Character',
     category: 'Key Quotes Banks',
     subcategory: 'By Character',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Key quotations from An Inspector Calls organised by character with analytical notes.',
-    content: `AN INSPECTOR CALLS — KEY QUOTES BY CHARACTER
+    content: `AN INSPECTOR CALLS - KEY QUOTES BY CHARACTER
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MR BIRLING
@@ -988,19 +988,19 @@ MR BIRLING
 → Tricolon of selfishness. Dramatic irony: the Inspector will prove the opposite.
 
 "the Titanic … unsinkable, absolutely unsinkable" (Act 1)
-→ Dramatic irony. "Absolutely" — the more certain he is, the more wrong.
+→ Dramatic irony. "Absolutely" - the more certain he is, the more wrong.
 
 "there isn't a chance of war" (Act 1)
 → Catastrophically wrong. Undermines everything else he says.
 
 "I was quite justified" (Act 1)
-→ Refuses to accept responsibility. "Justified" — sees morality in economic terms.
+→ Refuses to accept responsibility. "Justified" - sees morality in economic terms.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MRS BIRLING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Girls of that class" (Act 2)
-→ Dismissive, snobbish. "That class" — Eva is not even worth naming.
+→ Dismissive, snobbish. "That class" - Eva is not even worth naming.
 
 "I blame the young man … he ought to be dealt with very severely" (Act 2)
 → Dramatic irony: she is condemning her own son, Eric.
@@ -1011,11 +1011,11 @@ MRS BIRLING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SHEILA
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"But these girls aren't cheap labour — they're people" (Act 1)
+"But these girls aren't cheap labour - they're people" (Act 1)
 → The moral awakening. She sees what her father cannot: shared humanity.
 
 "I'll never, never do it again to anybody" (Act 1)
-→ Repetition of "never" — genuine remorse, contrasts with parents' denial.
+→ Repetition of "never" - genuine remorse, contrasts with parents' denial.
 
 "You're pretending everything's just as it was before" (Act 3)
 → Sheila sees the truth: it doesn't matter whether the Inspector was "real."
@@ -1024,13 +1024,13 @@ SHEILA
 THE INSPECTOR
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "We don't live alone. We are members of one body. We are responsible for each other." (Act 3)
-→ Priestley's thesis statement. "One body" — society as a single organism.
+→ Priestley's thesis statement. "One body" - society as a single organism.
 
 "And if men will not learn that lesson, then they will be taught it in fire and blood and anguish." (Act 3)
-→ Prophetic: WWI and WWII. "Fire and blood" — biblical apocalypse imagery.
+→ Prophetic: WWI and WWII. "Fire and blood" - biblical apocalypse imagery.
 
-"One Eva Smith has gone — but there are millions and millions and millions of Eva Smiths" (Act 3)
-→ Repetition of "millions" hammers home the scale. Eva is not an individual — she represents a class.
+"One Eva Smith has gone - but there are millions and millions and millions of Eva Smiths" (Act 3)
+→ Repetition of "millions" hammers home the scale. Eva is not an individual - she represents a class.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ERIC
@@ -1038,7 +1038,7 @@ ERIC
 "You're not the kind of father a chap could go to when he's in trouble" (Act 3)
 → Challenges Birling's authority. Reveals the family's dysfunction.
 
-"My God — I'm not likely to forget" (Act 3)
+"My God - I'm not likely to forget" (Act 3)
 → Like Sheila, Eric is changed permanently. Generational hope.`,
     printable: true,
     tags: [
@@ -1053,52 +1053,52 @@ ERIC
   },
   {
     id: 'quotes-christmas-carol-by-stave',
-    title: 'A Christmas Carol Key Quotes — By Stave & Theme',
+    title: 'A Christmas Carol Key Quotes - By Stave & Theme',
     category: 'Key Quotes Banks',
     subcategory: 'By Text',
     examBoard: ['AQA', 'Edexcel', 'OCR'],
     yearGroup: ['Year 10', 'Year 11'],
     description: 'Essential A Christmas Carol quotations organised by stave with thematic tags.',
-    content: `A CHRISTMAS CAROL — KEY QUOTES BY STAVE
+    content: `A CHRISTMAS CAROL - KEY QUOTES BY STAVE
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAVE 1: MARLEY'S GHOST
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Oh! But he was a tight-fisted hand at the grindstone, Scrooge!" [GREED]
-→ "Tight-fisted" — physically clenched, closed off. "Grindstone" — he grinds others down.
+→ "Tight-fisted" - physically clenched, closed off. "Grindstone" - he grinds others down.
 
 "Hard and sharp as flint, from which no steel had ever struck out generous fire" [ISOLATION]
-→ Extended simile. Flint is cold, hard, but COULD produce warmth — Scrooge has potential for change.
+→ Extended simile. Flint is cold, hard, but COULD produce warmth - Scrooge has potential for change.
 
 "Solitary as an oyster" [ISOLATION]
-→ Simile. Oysters are closed, hard-shelled — but contain pearls. Foreshadows hidden goodness.
+→ Simile. Oysters are closed, hard-shelled - but contain pearls. Foreshadows hidden goodness.
 
-"I wear the chain I forged in life" — Marley [CONSEQUENCES]
-→ Metaphor: every selfish act added a link. "Forged" — he MADE this himself through choice.
+"I wear the chain I forged in life" - Marley [CONSEQUENCES]
+→ Metaphor: every selfish act added a link. "Forged" - he MADE this himself through choice.
 
-"Mankind was my business!" — Marley [RESPONSIBILITY]
-→ "Business" — repurposes Scrooge's favourite word. True business is humanity.
+"Mankind was my business!" - Marley [RESPONSIBILITY]
+→ "Business" - repurposes Scrooge's favourite word. True business is humanity.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAVE 2: THE GHOST OF CHRISTMAS PAST
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "A solitary child, neglected by his friends" [ISOLATION / CHILDHOOD]
-→ Dickens shows the ROOT of Scrooge's coldness — he was abandoned. Pathos.
+→ Dickens shows the ROOT of Scrooge's coldness - he was abandoned. Pathos.
 
-"Another idol has displaced me … a golden one" — Belle [GREED]
-→ "Idol" = religious imagery. Money has become Scrooge's god. "Golden" — the golden calf (Biblical allusion).
+"Another idol has displaced me … a golden one" - Belle [GREED]
+→ "Idol" = religious imagery. Money has become Scrooge's god. "Golden" - the golden calf (Biblical allusion).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAVE 3: THE GHOST OF CHRISTMAS PRESENT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"God bless us, every one!" — Tiny Tim [GENEROSITY / GOODNESS]
-→ "Every one" — inclusive, no exceptions. Tim has nothing but gives blessings freely.
+"God bless us, every one!" - Tiny Tim [GENEROSITY / GOODNESS]
+→ "Every one" - inclusive, no exceptions. Tim has nothing but gives blessings freely.
 
-"Are there no prisons? Are there no workhouses?" — Ghost echoing Scrooge [SOCIAL RESPONSIBILITY]
+"Are there no prisons? Are there no workhouses?" - Ghost echoing Scrooge [SOCIAL RESPONSIBILITY]
 → Scrooge's own words thrown back at him. Forces him to confront their cruelty.
 
 "This boy is Ignorance. This girl is Want." [SOCIAL CRITICISM]
-→ Allegory. Dickens directly addresses Victorian society. "Beware them both, but most of all beware this boy" — ignorance is the greatest danger.
+→ Allegory. Dickens directly addresses Victorian society. "Beware them both, but most of all beware this boy" - ignorance is the greatest danger.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAVE 4: THE GHOST OF CHRISTMAS YET TO COME
@@ -1110,7 +1110,7 @@ STAVE 4: THE GHOST OF CHRISTMAS YET TO COME
 STAVE 5: THE END OF IT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy" [REDEMPTION]
-→ Tricolon of similes. "Schoolboy" — he has been reborn, returned to childhood innocence.
+→ Tricolon of similes. "Schoolboy" - he has been reborn, returned to childhood innocence.
 
 "He became as good a friend, as good a master, and as good a man, as the good old city knew" [TRANSFORMATION]
 → Anaphora: "as good." Repetition emphasises completeness of change across all social roles.`,
@@ -1127,61 +1127,61 @@ STAVE 5: THE END OF IT
   },
   {
     id: 'quotes-power-conflict-anthology',
-    title: 'Power & Conflict Poetry — Key Quotes by Poem',
+    title: 'Power & Conflict Poetry - Key Quotes by Poem',
     category: 'Key Quotes Banks',
     subcategory: 'By Text',
     examBoard: ['AQA'],
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Key quotations from every Power & Conflict anthology poem with brief analytical notes.',
-    content: `POWER & CONFLICT ANTHOLOGY — KEY QUOTES
+    content: `POWER & CONFLICT ANTHOLOGY - KEY QUOTES
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-OZYMANDIAS — Percy Bysshe Shelley
+OZYMANDIAS - Percy Bysshe Shelley
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Look on my Works, ye Mighty, and despair!" → Dramatic irony. The "Works" are gone.
 "The lone and level sands stretch far away" → Alliteration. Nature defeats human power.
-"Half sunk, a shattered visage lies" → "Shattered" — both the statue and his legacy.
+"Half sunk, a shattered visage lies" → "Shattered" - both the statue and his legacy.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-LONDON — William Blake
+LONDON - William Blake
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Marks of weakness, marks of woe" → Anaphora. "Marks" = visible suffering on faces.
-"Mind-forg'd manacles" → Metaphor. People are mentally imprisoned — oppression is internalised.
+"Mind-forg'd manacles" → Metaphor. People are mentally imprisoned - oppression is internalised.
 "Every black'ning Church appals" → Church should offer hope but is complicit in suffering.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-MY LAST DUCHESS — Robert Browning
+MY LAST DUCHESS - Robert Browning
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "That's my last Duchess painted on the wall" → Possessive "my." She is property.
 "I gave commands; / Then all smiles stopped together" → Euphemism for murder. Chilling understatement.
 "As if she were alive" → She is not. The Duke prefers art he can control.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STORM ON THE ISLAND — Seamus Heaney
+STORM ON THE ISLAND - Seamus Heaney
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "We are prepared: we build our houses squat" → Monosyllabic. Sturdy like the houses.
 "It is a huge nothing that we fear" → Oxymoron. The real enemy is invisible, psychological.
-"Strafes invisibly" → Military verb. Nature as warfare. (Hidden political allegory — "Stormont"?)
+"Strafes invisibly" → Military verb. Nature as warfare. (Hidden political allegory - "Stormont"?)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REMAINS — Simon Armitage
+REMAINS - Simon Armitage
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"probably armed, possibly not" → "Probably" / "possibly" — uncertainty haunts the soldier.
+"probably armed, possibly not" → "Probably" / "possibly" - uncertainty haunts the soldier.
 "his blood-shadow" → Compound adjective. The dead man is reduced to a stain.
 "his bloody life in my bloody hands" → "Bloody" shifts from literal to expressive. Guilt.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EXPOSURE — Wilfred Owen
+EXPOSURE - Wilfred Owen
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "Our brains ache, in the merciless iced east winds that knive us" → Personification. Nature as enemy.
 "But nothing happens" → Repeated refrain. Anti-climax. War's futility.
 "For love of God seems dying" → Faith destroyed by suffering.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CHARGE OF THE LIGHT BRIGADE — Alfred Lord Tennyson
+CHARGE OF THE LIGHT BRIGADE - Alfred Lord Tennyson
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"Into the valley of Death / Rode the six hundred" → Biblical allusion (Psalm 23). The body is in anapaestic dimeter; the refrain "Rode the six hundred" falls in dactyls — the galloping rhythm mimics horses charging.
+"Into the valley of Death / Rode the six hundred" → Biblical allusion (Psalm 23). The body is in anapaestic dimeter; the refrain "Rode the six hundred" falls in dactyls - the galloping rhythm mimics horses charging.
 "Theirs not to reason why, / Theirs but to do and die" → Obedience to authority, even unto death.
 "Cannon to right of them, / Cannon to left of them" → Repetition. Surrounded, trapped.`,
     printable: true,
@@ -1202,7 +1202,7 @@ CHARGE OF THE LIGHT BRIGADE — Alfred Lord Tennyson
   // ╚══════════════════════════════════════════════════════════════════════════╝
   {
     id: 'rubric-lit-essay-general',
-    title: 'Literature Essay Grading Rubric — General Purpose',
+    title: 'Literature Essay Grading Rubric - General Purpose',
     category: 'Assessment Rubrics',
     subcategory: 'Literature',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
@@ -1264,7 +1264,7 @@ NEXT STEPS:
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Teacher grading template for AQA Language Paper 1 Q5 (descriptive/narrative writing).',
-    content: `CREATIVE WRITING GRADING RUBRIC — AQA Paper 1 Q5 (40 marks)
+    content: `CREATIVE WRITING GRADING RUBRIC - AQA Paper 1 Q5 (40 marks)
 
 Student: _____________ Date: _______ Prompt: _____________ Grade: ___
 
@@ -1294,7 +1294,7 @@ STRUCTURE & ORGANISATION                               /6
 □ 1-2: Random, unstructured paragraphing
 □ 3-4: Some structural variety, basic paragraphing
 □ 5:   Effective paragraphing, clear structural choices
-□ 6:   Compelling structural choices — shifts, contrasts, pacing
+□ 6:   Compelling structural choices - shifts, contrasts, pacing
 
 Content & Organisation subtotal: ___ / 24
 
@@ -1306,7 +1306,7 @@ SENTENCE FORMS                                         /4
 □ 1: Limited variety
 □ 2: Some variety (short + long)
 □ 3: Good variety, used for effect
-□ 4: Sophisticated range — fragments, complex, compound, minor
+□ 4: Sophisticated range - fragments, complex, compound, minor
 
 PUNCTUATION                                            /4
 □ 1: Basic (full stops, capitals)
@@ -1349,7 +1349,7 @@ TARGETS:
     yearGroup: ['Year 10', 'Year 11'],
     description:
       'Grading template for the spoken language endorsement (presentation, Q&A, listening).',
-    content: `SPOKEN LANGUAGE ENDORSEMENT — ASSESSMENT SHEET
+    content: `SPOKEN LANGUAGE ENDORSEMENT - ASSESSMENT SHEET
 
 Student: _____________ Date: _______ Topic: _____________
 
@@ -1416,7 +1416,7 @@ _____________________________________________`,
     yearGroup: ['Year 11'],
     description:
       'Student-facing revision checklist for AQA Literature Paper 1 (Shakespeare + 19th Century Novel).',
-    content: `AQA ENGLISH LITERATURE PAPER 1 — REVISION CHECKLIST
+    content: `AQA ENGLISH LITERATURE PAPER 1 - REVISION CHECKLIST
 Shakespeare and the 19th-Century Novel | 1 hr 45 min
 
 Name: _________________ Target grade: ___
@@ -1443,7 +1443,7 @@ SKILLS:
 EXAM TECHNIQUE:
 □ I know how to spend my time (50 minutes approx)
 □ I plan before I write (5 minutes)
-□ I write 3–4 developed paragraphs
+□ I write 3-4 developed paragraphs
 □ I always link back to the question
 □ I check SPaG in the final 2 minutes
 
@@ -1467,7 +1467,7 @@ SKILLS:
 EXAM TECHNIQUE:
 □ I know how to spend my time (50 minutes approx)
 □ I plan before I write (5 minutes)
-□ I write 3–4 developed paragraphs
+□ I write 3-4 developed paragraphs
 □ I always link back to the question
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1497,7 +1497,7 @@ CONFIDENCE RATING: □ Not confident  □ OK  □ Confident  □ Very confident`
     yearGroup: ['Year 11'],
     description:
       'Student-facing revision checklist for AQA Language Paper 1 (Creative Reading & Writing).',
-    content: `AQA ENGLISH LANGUAGE PAPER 1 — REVISION CHECKLIST
+    content: `AQA ENGLISH LANGUAGE PAPER 1 - REVISION CHECKLIST
 Explorations in Creative Reading and Writing | 1 hr 45 min
 
 Name: _________________ Target grade: ___
@@ -1505,37 +1505,37 @@ Name: _________________ Target grade: ___
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SECTION A: READING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Q1 — LIST FOUR THINGS (4 marks, ~5 mins)
+Q1 - LIST FOUR THINGS (4 marks, ~5 mins)
 □ I read the LINE REFERENCES carefully
 □ I identify EXPLICIT information only (not inferences)
 □ I can write short, clear statements
 
-Q2 — LANGUAGE ANALYSIS (8 marks, ~10 mins)
+Q2 - LANGUAGE ANALYSIS (8 marks, ~10 mins)
 □ I select SHORT, specific quotations
 □ I analyse individual WORDS (connotations, effects)
 □ I use subject terminology (metaphor, sibilance, semantic field, etc.)
 □ I explain the EFFECT on the reader
 □ I write 2 developed paragraphs
 
-Q3 — STRUCTURE ANALYSIS (8 marks, ~10 mins)
+Q3 - STRUCTURE ANALYSIS (8 marks, ~10 mins)
 □ I know structural features: focus shift, narrative perspective, pace, chronology, zoom in/out
 □ I can explain WHY the writer makes structural choices
 □ I write about the beginning, middle, AND end of the extract
 □ I use structural terminology (foreshadowing, cyclical, climax, etc.)
 
-Q4 — EVALUATION (20 marks, ~20 mins)
+Q4 - EVALUATION (20 marks, ~20 mins)
 □ I ENGAGE with the given statement (agree, disagree, or both)
 □ I use quotations to support my opinion
 □ I explain HOW the writer achieves the effect stated
-□ I write 3–4 developed paragraphs
+□ I write 3-4 developed paragraphs
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SECTION B: WRITING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Q5 — CREATIVE WRITING (40 marks, ~45 mins)
+Q5 - CREATIVE WRITING (40 marks, ~45 mins)
 □ I spend 5 minutes PLANNING (structure, techniques, vocabulary)
 □ I use a clear STRUCTURE (zoom in/out, circular, contrast, 5 senses)
-□ I write 5–6 focused paragraphs (quality over quantity)
+□ I write 5-6 focused paragraphs (quality over quantity)
 □ I vary SENTENCE STRUCTURES (short for impact, complex for detail)
 □ I include a range of TECHNIQUES (metaphor, simile, personification, pathetic fallacy)
 □ I use AMBITIOUS VOCABULARY (not just "nice," "big," "sad")
@@ -1572,7 +1572,7 @@ _____________________________________________`,
     examBoard: ['Edexcel'],
     yearGroup: ['Year 11'],
     description: 'Student-facing revision checklist for Edexcel English Language (both papers).',
-    content: `EDEXCEL ENGLISH LANGUAGE — REVISION CHECKLIST
+    content: `EDEXCEL ENGLISH LANGUAGE - REVISION CHECKLIST
 Paper 1: Fiction & Imaginative Writing | Paper 2: Non-Fiction & Transactional Writing
 
 Name: _________________ Target grade: ___
@@ -1645,7 +1645,7 @@ CONFIDENCE: □ Paper 1 Reading  □ Paper 1 Writing  □ Paper 2 Reading  □ P
     yearGroup: ['Year 11'],
     description:
       'Student-facing revision checklist for AQA Literature Paper 2 (Modern Text + Poetry).',
-    content: `AQA ENGLISH LITERATURE PAPER 2 — REVISION CHECKLIST
+    content: `AQA ENGLISH LITERATURE PAPER 2 - REVISION CHECKLIST
 Modern Texts and Poetry | 2 hr 15 min
 
 Name: _________________ Target grade: ___
@@ -1661,7 +1661,7 @@ KNOWLEDGE:
 □ I can explain ALL major themes
 
 SKILLS:
-□ I answer from MEMORY (no extract — this is a closed-book section)
+□ I answer from MEMORY (no extract - this is a closed-book section)
 □ I write about the WHOLE text, not just one section
 □ I can analyse writer's methods (language, form, structure)
 □ I integrate context meaningfully
@@ -1670,7 +1670,7 @@ SKILLS:
 EXAM TECHNIQUE:
 □ I spend ~45 minutes on this section
 □ I plan for 5 minutes before writing
-□ I write 4–5 paragraphs from memory
+□ I write 4-5 paragraphs from memory
 □ I use short, embedded quotations
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1678,7 +1678,7 @@ SECTION B: POETRY ANTHOLOGY (30 marks)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 KNOWLEDGE:
 □ I know all 15 poems in my cluster
-□ I have 2–3 key quotes memorised per poem
+□ I have 2-3 key quotes memorised per poem
 □ I know the themes each poem explores
 □ I understand each poet's context
 □ I can identify form/structure features in each poem
@@ -1693,16 +1693,16 @@ SKILLS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SECTION C: UNSEEN POETRY (32 marks)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Q1 — SINGLE POEM (24 marks, ~25 mins):
+Q1 - SINGLE POEM (24 marks, ~25 mins):
 □ I read the poem at least TWICE before writing
 □ I identify the overall tone/mood/message
 □ I analyse language techniques with word-level focus
 □ I discuss form and structure (line breaks, stanzas, rhyme, rhythm)
 □ I write about the poem's meaning AND methods
 
-Q2 — COMPARISON (8 marks, ~15 mins):
+Q2 - COMPARISON (8 marks, ~15 mins):
 □ I compare ONE specific aspect (e.g., how both poets present [theme])
-□ I keep it focused — 2 developed comparative points
+□ I keep it focused - 2 developed comparative points
 □ I use comparative connectives (similarly, in contrast, whereas)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1730,13 +1730,13 @@ MY TOP 3 PRIORITIES:
   // ╚══════════════════════════════════════════════════════════════════════════╝
   {
     id: 'starter-word-of-the-day',
-    title: 'Word of the Day — Vocabulary Builder Starter',
+    title: 'Word of the Day - Vocabulary Builder Starter',
     category: 'Starter Activities',
     subcategory: 'Vocabulary',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11'],
     description: '5-minute vocabulary starter with a bank of 20 ambitious words for daily use.',
-    content: `WORD OF THE DAY — 5-MINUTE VOCABULARY STARTER
+    content: `WORD OF THE DAY - 5-MINUTE VOCABULARY STARTER
 
 INSTRUCTIONS: Display the word on the board. Students have 3 minutes to:
 1. Guess the meaning from the word's roots
@@ -1746,29 +1746,29 @@ INSTRUCTIONS: Display the word on the board. Students have 3 minutes to:
 Then: reveal the definition, discuss connotations, and challenge students to use it in their writing that lesson.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORD BANK (20 words — one per school day for a month):
+WORD BANK (20 words - one per school day for a month):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-1. UBIQUITOUS (adj) — Present everywhere. "Phones are ubiquitous in modern life."
-2. EPHEMERAL (adj) — Lasting a very short time. "The ephemeral beauty of cherry blossom."
-3. PERNICIOUS (adj) — Harmful in a subtle way. "The pernicious effects of gossip."
-4. RESILIENT (adj) — Able to recover quickly. "A resilient community rebuilt after the flood."
-5. INSIDIOUS (adj) — Proceeding harmfully but subtly. "An insidious form of bullying."
-6. JUXTAPOSITION (n) — Placing contrasting things side by side. "The juxtaposition of wealth and poverty."
-7. PARADOX (n) — A seemingly contradictory statement that reveals a truth. "The paradox of choice."
-8. AMBIVALENT (adj) — Having mixed feelings. "She felt ambivalent about leaving home."
-9. PRAGMATIC (adj) — Dealing with things practically. "A pragmatic approach to revision."
-10. EVOCATIVE (adj) — Bringing strong images or feelings to mind. "An evocative description of autumn."
-11. MELANCHOLY (n/adj) — A deep, reflective sadness. "A melancholy tone pervades the poem."
-12. OMINOUS (adj) — Suggesting something bad will happen. "An ominous silence filled the room."
-13. POIGNANT (adj) — Evoking a keen sense of sadness. "A poignant moment of farewell."
-14. VISCERAL (adj) — Deep, gut-level feeling. "A visceral reaction to the violence."
-15. NUANCED (adj) — Showing subtle differences. "A nuanced understanding of the character."
-16. CATHARTIC (adj) — Providing relief through expression of emotions. "Writing can be cathartic."
-17. DICHOTOMY (n) — A division into two opposing parts. "The dichotomy between appearance and reality."
-18. PERTINENT (adj) — Relevant, applicable. "A pertinent quotation to support the argument."
-19. SALIENT (adj) — Most noticeable or important. "The salient features of the writer's style."
-20. COMPELLING (adj) — Evoking interest powerfully. "A compelling argument for change."
+1. UBIQUITOUS (adj) - Present everywhere. "Phones are ubiquitous in modern life."
+2. EPHEMERAL (adj) - Lasting a very short time. "The ephemeral beauty of cherry blossom."
+3. PERNICIOUS (adj) - Harmful in a subtle way. "The pernicious effects of gossip."
+4. RESILIENT (adj) - Able to recover quickly. "A resilient community rebuilt after the flood."
+5. INSIDIOUS (adj) - Proceeding harmfully but subtly. "An insidious form of bullying."
+6. JUXTAPOSITION (n) - Placing contrasting things side by side. "The juxtaposition of wealth and poverty."
+7. PARADOX (n) - A seemingly contradictory statement that reveals a truth. "The paradox of choice."
+8. AMBIVALENT (adj) - Having mixed feelings. "She felt ambivalent about leaving home."
+9. PRAGMATIC (adj) - Dealing with things practically. "A pragmatic approach to revision."
+10. EVOCATIVE (adj) - Bringing strong images or feelings to mind. "An evocative description of autumn."
+11. MELANCHOLY (n/adj) - A deep, reflective sadness. "A melancholy tone pervades the poem."
+12. OMINOUS (adj) - Suggesting something bad will happen. "An ominous silence filled the room."
+13. POIGNANT (adj) - Evoking a keen sense of sadness. "A poignant moment of farewell."
+14. VISCERAL (adj) - Deep, gut-level feeling. "A visceral reaction to the violence."
+15. NUANCED (adj) - Showing subtle differences. "A nuanced understanding of the character."
+16. CATHARTIC (adj) - Providing relief through expression of emotions. "Writing can be cathartic."
+17. DICHOTOMY (n) - A division into two opposing parts. "The dichotomy between appearance and reality."
+18. PERTINENT (adj) - Relevant, applicable. "A pertinent quotation to support the argument."
+19. SALIENT (adj) - Most noticeable or important. "The salient features of the writer's style."
+20. COMPELLING (adj) - Evoking interest powerfully. "A compelling argument for change."
 
 EXTENSION: Can students find examples of this word in the text they are studying?
 HOMEWORK: Use 3 of the week's words in a paragraph of writing.`,
@@ -1777,13 +1777,13 @@ HOMEWORK: Use 3 of the week's words in a paragraph of writing.`,
   },
   {
     id: 'starter-quotation-recall',
-    title: 'Quotation Recall Challenge — Memory Starter',
+    title: 'Quotation Recall Challenge - Memory Starter',
     category: 'Starter Activities',
     subcategory: 'Quotation Practice',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 10', 'Year 11'],
     description: '5-minute quotation recall starter to build exam-ready memory of key quotes.',
-    content: `QUOTATION RECALL CHALLENGE — 5-MINUTE STARTER
+    content: `QUOTATION RECALL CHALLENGE - 5-MINUTE STARTER
 
 INSTRUCTIONS: Choose ONE activity per lesson. Students work individually for 3 minutes, then compare with a partner for 2 minutes.
 
@@ -1804,7 +1804,7 @@ Display 5 quotations. Students identify the speaker AND the context.
 
 Example (An Inspector Calls):
 "a man has to mind his own business" → Who? When?
-"But these girls aren't cheap labour — they're people" → Who? When?
+"But these girls aren't cheap labour - they're people" → Who? When?
 "fire and blood and anguish" → Who? When?
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1818,7 +1818,7 @@ Award points: 1 for a correct quote, 2 if they can name the act/chapter.
 ACTIVITY 4: MATCH THE QUOTE TO THE THEME
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Display 5 quotations and 5 themes. Students draw lines to match.
-CHALLENGE: some quotes could link to multiple themes — award bonus marks for justified alternative links.
+CHALLENGE: some quotes could link to multiple themes - award bonus marks for justified alternative links.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ACTIVITY 5: ANALYSE IN 30 SECONDS
@@ -1826,7 +1826,7 @@ ACTIVITY 5: ANALYSE IN 30 SECONDS
 Display ONE quotation. Students have 30 seconds to:
 • Identify ONE technique
 • Explain its effect in ONE sentence
-Then share with a partner. Cold-call 2–3 students to share.
+Then share with a partner. Cold-call 2-3 students to share.
 
 TRACKING: Keep a class leaderboard across the term. Students love the competition.`,
     printable: true,
@@ -1834,16 +1834,16 @@ TRACKING: Keep a class leaderboard across the term. Students love the competitio
   },
   {
     id: 'starter-technique-spotter',
-    title: 'Technique Spotter — Analysis Warm-Up',
+    title: 'Technique Spotter - Analysis Warm-Up',
     category: 'Starter Activities',
     subcategory: 'Analysis Skills',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
     description:
       '5-minute starter where students identify and analyse techniques in short extracts.',
-    content: `TECHNIQUE SPOTTER — 5-MINUTE ANALYSIS WARM-UP
+    content: `TECHNIQUE SPOTTER - 5-MINUTE ANALYSIS WARM-UP
 
-INSTRUCTIONS: Display a short extract (3–5 lines). Students:
+INSTRUCTIONS: Display a short extract (3-5 lines). Students:
 1. Identify as many techniques as they can (2 minutes)
 2. Choose ONE and write a mini-analysis sentence (2 minutes)
 3. Share with the class (1 minute)
@@ -1872,7 +1872,7 @@ Tell that its sculptor well those passions read"
 TECHNIQUES TO FIND: alliteration ("cold command"), listing ("frown … lip … sneer"), enjambment, semantic field of decay ("half sunk," "shattered"), personification (the statue's expressions "tell")
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EXTRACT 4 (Speech — Martin Luther King Jr.):
+EXTRACT 4 (Speech - Martin Luther King Jr.):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 "I have a dream that one day this nation will rise up and live out the true meaning of its creed."
 
@@ -1880,7 +1880,7 @@ TECHNIQUES TO FIND: anaphora ("I have a dream"), metaphor ("rise up"), abstract 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MODEL ANALYSIS SENTENCE:
-"The verb 'swallowed' personifies the forest as a predator, creating a sense of threat and suggesting the characters are helpless — consumed by a force they cannot control."
+"The verb 'swallowed' personifies the forest as a predator, creating a sense of threat and suggesting the characters are helpless - consumed by a force they cannot control."
 
 DIFFERENTIATION:
 Foundation: Identify 2 techniques and name them.
@@ -1899,16 +1899,16 @@ Challenge: Analyse the effect AND suggest why the writer made this choice.`,
   },
   {
     id: 'starter-creative-writing-warmup',
-    title: 'Sentence Crafting — Creative Writing Warm-Up',
+    title: 'Sentence Crafting - Creative Writing Warm-Up',
     category: 'Starter Activities',
     subcategory: 'Creative Writing',
     examBoard: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
     yearGroup: ['Year 9', 'Year 10', 'Year 11'],
     description:
       '5-minute sentence-level creative writing exercises to build fluency and ambition.',
-    content: `SENTENCE CRAFTING — 5-MINUTE CREATIVE WRITING WARM-UP
+    content: `SENTENCE CRAFTING - 5-MINUTE CREATIVE WRITING WARM-UP
 
-INSTRUCTIONS: Choose ONE challenge per lesson. Students write for 3 minutes, then 2–3 share their best sentence. Celebrate the best with "Sentence of the Day."
+INSTRUCTIONS: Choose ONE challenge per lesson. Students write for 3 minutes, then 2-3 share their best sentence. Celebrate the best with "Sentence of the Day."
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CHALLENGE 1: THE ONE-SENTENCE STORY

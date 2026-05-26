@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Things Fall Apart Themes — Edexcel IGCSE Literature',
+    title: 'Things Fall Apart Themes - Edexcel IGCSE Literature',
     description:
       'Themes in Achebe\u2019s Things Fall Apart: colonialism, masculinity, tradition vs change, fate and chi, gender, language and narrative form.',
   },
-  title: 'Things Fall Apart Themes — Edexcel IGCSE Literature',
+  title: 'Things Fall Apart Themes - Edexcel IGCSE Literature',
   description:
     'Themes in Achebe\u2019s Things Fall Apart: colonialism, masculinity, tradition vs change, fate and chi, gender, language and narrative form.',
   alternates: {
@@ -27,12 +27,12 @@ const themes = [
       'Achebe shows colonisation as a slow, multi-stage process rather than a single catastrophe. Missionaries arrive with songs, then build churches, then administer courts, then call soldiers. By the time Umuofia perceives the threat clearly, the clan has already "fallen apart" from within. The novel refuses two extremes: it neither romanticises pre-colonial Igbo society nor exonerates the colonisers.',
     moments:
       'Mr Brown\u2019s conversations with Akunna; the destruction of the church; the killing of the court messenger; the final paragraph.',
-    quote: '”He has put a knife on the things that held us together…” — Obierika',
+    quote: '”He has put a knife on the things that held us together…” - Obierika',
   },
   {
     title: 'Masculinity and fear of weakness',
     intro:
-      'Okonkwo\u2019s masculinity is a reaction formation against his father Unoka. He equates strength with violence, feeling with effeminacy, and silence with control. Achebe presents this rigidity as personally destructive — it leads him to kill Ikemefuna, beat his wives, alienate Nwoye and ultimately hang himself. But it is also culturally legible: Umuofia rewards the same qualities it ends up punishing.',
+      'Okonkwo\u2019s masculinity is a reaction formation against his father Unoka. He equates strength with violence, feeling with effeminacy, and silence with control. Achebe presents this rigidity as personally destructive - it leads him to kill Ikemefuna, beat his wives, alienate Nwoye and ultimately hang himself. But it is also culturally legible: Umuofia rewards the same qualities it ends up punishing.',
     moments:
       'Okonkwo\u2019s wrestling match memories; the killing of Ikemefuna; the beating of Ojiugo during Peace Week; his reaction to Nwoye\u2019s conversion.',
     quote: '“His whole life was dominated by fear, the fear of failure and of weakness.”',
@@ -40,7 +40,7 @@ const themes = [
   {
     title: 'Tradition versus change',
     intro:
-      'Achebe complicates any simple tradition-vs-modernity binary. Some Igbo customs — the killing of twins, the ostracism of osu (outcasts), the sacrifice of Ikemefuna — draw the sympathies of the young and the disaffected towards Christianity. Nwoye\u2019s conversion is presented partly as a search for moral relief, not merely cultural betrayal.',
+      'Achebe complicates any simple tradition-vs-modernity binary. Some Igbo customs - the killing of twins, the ostracism of osu (outcasts), the sacrifice of Ikemefuna - draw the sympathies of the young and the disaffected towards Christianity. Nwoye\u2019s conversion is presented partly as a search for moral relief, not merely cultural betrayal.',
     moments:
       'The killing of twins in the Evil Forest; Nwoye\u2019s conversion; the osu joining the church; Okonkwo\u2019s nostalgia on returning from exile.',
     quote: '”It was the poetry of the new religion, something felt in the marrow.”',
@@ -56,10 +56,10 @@ const themes = [
   {
     title: 'Gender and the feminine principle',
     intro:
-      'Umuofia is patriarchal but not one-dimensional. Achebe includes Nneka ("Mother is Supreme"), the women\u2019s market, Chielo the priestess of Agbala, and Ekwefi\u2019s devotion to Ezinma — all of which complicate Okonkwo\u2019s dismissal of "feminine" qualities. His exile in his motherland Mbanta is literally a forced encounter with the feminine principle he has spent his life suppressing.',
+      'Umuofia is patriarchal but not one-dimensional. Achebe includes Nneka ("Mother is Supreme"), the women\u2019s market, Chielo the priestess of Agbala, and Ekwefi\u2019s devotion to Ezinma - all of which complicate Okonkwo\u2019s dismissal of "feminine" qualities. His exile in his motherland Mbanta is literally a forced encounter with the feminine principle he has spent his life suppressing.',
     moments:
       'Chielo\u2019s night journey with Ezinma; Uchendu\u2019s "mother is supreme" speech; Ekwefi\u2019s grief; the women\u2019s egwugwu trial.',
-    quote: '”When there is sorrow and bitterness he finds refuge in his motherland.” — Uchendu',
+    quote: '”When there is sorrow and bitterness he finds refuge in his motherland.” - Uchendu',
   },
   {
     title: 'Language, proverbs and narrative form',
@@ -116,7 +116,7 @@ export default async function ThingsFallApartThemesPage() {
             Things Fall Apart: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Achebe’s novel — colonialism, masculinity, tradition, chi,
+            Analytical routes through Achebe’s novel - colonialism, masculinity, tradition, chi,
             gender, language and form.
           </p>
         </div>
@@ -127,7 +127,7 @@ export default async function ThingsFallApartThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

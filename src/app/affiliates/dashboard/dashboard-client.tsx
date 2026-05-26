@@ -198,7 +198,7 @@ export default function AffiliateDashboardClient({
       {/* Stat tiles */}
       <StatGrid stats={stats} />
 
-      {/* Earnings rules — clarifies which plans pay commission. Sits between
+      {/* Earnings rules - clarifies which plans pay commission. Sits between
           earnings stats and the share/activity panels so affiliates see the
           rule once they've absorbed their potential earnings, but BEFORE
           they're nudged to share. */}
@@ -264,7 +264,7 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
         document.body.removeChild(textarea)
         showSuccess()
       } catch {
-        /* clipboard truly unavailable — no confirmation shown */
+        /* clipboard truly unavailable - no confirmation shown */
       }
     }
   }
@@ -324,11 +324,11 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
 // ─── Earnings rules banner ───────────────────────────────────────────────
 //
 // Single source of truth for the "annual subscriptions only" disclosure on
-// the dashboard. The £5–£10 range tracks the flat-rate ladder in
+// the dashboard. The £5-£10 range tracks the flat-rate ladder in
 // `src/lib/affiliate/tiers.ts` (Tier 1 Starter £5 → Tier 5 Partner £10).
 //
 // Sibling annual-only microcopy lives on the pricing page, the redeem page,
-// and the AffiliateCodeField — keep those in sync if the rule changes.
+// and the AffiliateCodeField - keep those in sync if the rule changes.
 
 function EarningsRulesBanner() {
   return (
@@ -343,7 +343,7 @@ function EarningsRulesBanner() {
           </p>
           <p className="text-sm text-foreground">
             <span aria-hidden="true">&#x1F4B7; </span>
-            You earn <strong className="font-semibold">£5–£10 commission</strong> on every{' '}
+            You earn <strong className="font-semibold">£5-£10 commission</strong> on every{' '}
             <strong className="font-semibold">annual subscription</strong> (Student Annual or
             Teacher Annual) bought via your code or link. Monthly plans don&apos;t earn commission.
           </p>
@@ -438,7 +438,7 @@ function ActivityChart({ data }: { data: DayBucket[] }) {
       <CardContent className="p-6">
         <div className="mb-5 flex items-start justify-between gap-4">
           <div>
-            <h2 className="text-lg font-bold text-foreground">{_tr(`Activity — last 30 days`)}</h2>
+            <h2 className="text-lg font-bold text-foreground">{_tr(`Activity - last 30 days`)}</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               {metric === 'clicks'
                 ? `${totalClicks.toLocaleString('en-GB')} clicks`
@@ -563,7 +563,7 @@ function TierProgressCard({ progress }: { progress: TierProgress }) {
         ) : (
           <div className="mt-5 flex items-center gap-2 rounded-lg bg-yellow-500/10 px-3 py-2 text-sm text-yellow-900">
             <Trophy className="h-4 w-4" />
-            <span className="font-medium">{_tr(`Maxed out — you&apos;re a Gold partner`)}</span>
+            <span className="font-medium">{_tr(`Maxed out - you&apos;re a Gold partner`)}</span>
           </div>
         )}
       </CardContent>
@@ -585,7 +585,7 @@ function SharePanel({ code, referralUrl }: { code: string; referralUrl: string }
           <CopyField label="Code" value={code} monospace />
           <CopyField label="Referral URL" value={referralUrl} />
         </div>
-        {/* annual-only messaging — clarifies which plans earn commission */}
+        {/* annual-only messaging - clarifies which plans earn commission */}
         <div className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs">
           <p className="font-semibold text-foreground">
             Commission is on annual subscriptions only.
@@ -711,7 +711,7 @@ function TrackingExplainer({ code }: { code: string }) {
                     {trackingUrl}
                   </code>{' '}
                   sets a 30-day attribution cookie. If they sign up and buy a Student Annual
-                  subscription within 30 days, you&apos;re credited automatically — even if they
+                  subscription within 30 days, you&apos;re credited automatically - even if they
                   don&apos;t type the code.
                 </li>
                 <li>
@@ -820,7 +820,7 @@ function RecentConversions({ conversions }: { conversions: Conversion[] }) {
           </div>
           <h3 className="font-semibold text-foreground">{_tr(`No conversions yet`)}</h3>
           <p className="mt-1 text-sm text-muted-foreground">
-            Share your link — every paid signup appears here within a few minutes.
+            Share your link - every paid signup appears here within a few minutes.
           </p>
         </CardContent>
       </Card>
@@ -950,7 +950,7 @@ function PayoutsCard({ payouts }: { payouts: Payout[] }) {
               <div>
                 <p className="font-medium text-foreground">{formatGBP(p.amount_pence)}</p>
                 <p className="text-xs text-muted-foreground">
-                  {formatDate(p.period_start)} – {formatDate(p.period_end)}
+                  {formatDate(p.period_start)} - {formatDate(p.period_end)}
                 </p>
               </div>
               <StatusBadge status={p.status} />
@@ -1005,7 +1005,7 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
               <tbody>
                 {links.map((l) => (
                   <tr key={l.id} className="border-b border-border/50 last:border-0">
-                    <td className="py-3 font-medium text-foreground">{l.campaign ?? '—'}</td>
+                    <td className="py-3 font-medium text-foreground">{l.campaign ?? '-'}</td>
                     <td className="py-3 font-mono text-xs text-muted-foreground">
                       {l.target_path}
                     </td>

@@ -25,7 +25,7 @@ const actSummaries = [
       {
         scene: 'Prologue',
         summary:
-          "The Chorus delivers a sonnet revealing the entire plot: 'two star-cross'd lovers' from 'two households, both alike in dignity' will die, and only their deaths will end their families' feud. This prologue removes suspense and creates dramatic irony — the audience knows the lovers are doomed from the start.",
+          "The Chorus delivers a sonnet revealing the entire plot: 'two star-cross'd lovers' from 'two households, both alike in dignity' will die, and only their deaths will end their families' feud. This prologue removes suspense and creates dramatic irony - the audience knows the lovers are doomed from the start.",
       },
       {
         scene: '1.1',
@@ -113,7 +113,7 @@ const actSummaries = [
       {
         scene: '4.2-4.3',
         summary:
-          'Juliet pretends to agree to the marriage. Alone, she takes the potion despite terrifying visions of waking in the tomb surrounded by dead bodies. Her soliloquy reveals her fear but also her determination — love outweighs terror.',
+          'Juliet pretends to agree to the marriage. Alone, she takes the potion despite terrifying visions of waking in the tomb surrounded by dead bodies. Her soliloquy reveals her fear but also her determination - love outweighs terror.',
       },
       {
         scene: '4.4-4.5',
@@ -150,13 +150,13 @@ const characters = [
     name: 'Romeo',
     role: 'Protagonist / Tragic Lover',
     description:
-      'Romeo is a young Montague who moves from shallow infatuation with Rosaline to a deep, passionate love for Juliet. He is impulsive, emotionally extreme, and driven by passion rather than reason. Shakespeare presents him as both a romantic ideal and a cautionary figure — his intensity is beautiful but also reckless, and his impulsive actions directly cause the tragedy.',
+      'Romeo is a young Montague who moves from shallow infatuation with Rosaline to a deep, passionate love for Juliet. He is impulsive, emotionally extreme, and driven by passion rather than reason. Shakespeare presents him as both a romantic ideal and a cautionary figure - his intensity is beautiful but also reckless, and his impulsive actions directly cause the tragedy.',
     keyPoints: [
       'His love for Rosaline is superficial and conventional (Petrarchan love poetry); his love for Juliet transforms him',
       'Impulsive actions drive the tragedy: killing Tybalt, buying poison, dying minutes before Juliet wakes',
-      'He oscillates between extremes — ecstatic joy and suicidal despair — showing emotional immaturity',
+      'He oscillates between extremes - ecstatic joy and suicidal despair - showing emotional immaturity',
       'His language shifts from artificial rhyming couplets (about Rosaline) to genuine blank verse (about Juliet)',
-      "'Then I defy you, stars!' — he challenges fate itself, but his defiance only fulfils the prophecy",
+      "'Then I defy you, stars!' - he challenges fate itself, but his defiance only fulfils the prophecy",
     ],
     keyQuotes: [
       "'Did my heart love till now? Forswear it, sight! / For I ne'er saw true beauty till this night'",
@@ -189,13 +189,13 @@ const characters = [
     name: 'Mercutio',
     role: "Romeo's Friend / Catalyst",
     description:
-      "Mercutio is Romeo's witty, cynical friend who mocks romantic love and social conventions. He is neither Montague nor Capulet but becomes a victim of the feud. His death is the play's turning point — it transforms the comedy of Acts 1-2 into tragedy. His 'Queen Mab' speech reveals both his brilliance and his instability.",
+      "Mercutio is Romeo's witty, cynical friend who mocks romantic love and social conventions. He is neither Montague nor Capulet but becomes a victim of the feud. His death is the play's turning point - it transforms the comedy of Acts 1-2 into tragedy. His 'Queen Mab' speech reveals both his brilliance and his instability.",
     keyPoints: [
-      "His cynicism about love contrasts with Romeo's idealism — he reduces love to physical desire",
+      "His cynicism about love contrasts with Romeo's idealism - he reduces love to physical desire",
       'The Queen Mab speech starts playfully but becomes dark and frantic, suggesting suppressed anxiety',
-      "His death is caused by Romeo's intervention — Romeo's love for Tybalt (as kinsman) leads to Mercutio's death",
-      "'A plague o' both your houses!' — he curses both families, articulating the play's central message",
-      'He exists outside the feud but dies because of it — showing the feud destroys everyone, not just the families',
+      "His death is caused by Romeo's intervention - Romeo's love for Tybalt (as kinsman) leads to Mercutio's death",
+      "'A plague o' both your houses!' - he curses both families, articulating the play's central message",
+      'He exists outside the feud but dies because of it - showing the feud destroys everyone, not just the families',
     ],
     keyQuotes: [
       "'If love be rough with you, be rough with love'",
@@ -210,11 +210,11 @@ const characters = [
     description:
       "Tybalt is Juliet's cousin and the embodiment of the feud's destructive aggression. He lives by a code of honour that demands violence in response to any perceived insult. Shakespeare uses him to show how toxic masculinity and family loyalty can become deadly forces that destroy the innocent.",
     keyPoints: [
-      "Called 'Prince of Cats' — skilled, proud, and aggressive in his swordsmanship",
-      "'I hate the word [peace]' — he defines himself through conflict and hatred",
+      "Called 'Prince of Cats' - skilled, proud, and aggressive in his swordsmanship",
+      "'I hate the word [peace]' - he defines himself through conflict and hatred",
       "His challenge to Romeo at the feast shows he values family honour above Capulet's direct orders",
       "His death triggers the tragedy: Romeo's banishment, Juliet's forced marriage, and the chain of events leading to death",
-      "Represents the older generation's values imposed on the younger — honour and violence over love and peace",
+      "Represents the older generation's values imposed on the younger - honour and violence over love and peace",
     ],
     keyQuotes: [
       "'What, drawn, and talk of peace! I hate the word, / As I hate hell, all Montagues, and thee'",
@@ -227,10 +227,10 @@ const characters = [
     description:
       'Friar Lawrence is a well-meaning but ultimately ineffective figure who represents the failure of the adult world to protect the young. He agrees to marry Romeo and Juliet hoping it will end the feud, but his increasingly desperate schemes lead directly to the tragedy. He functions as a chorus figure, offering moral commentary.',
     keyPoints: [
-      "His opening speech about herbs that can heal or kill foreshadows the play's central paradox — love and death intertwined",
+      "His opening speech about herbs that can heal or kill foreshadows the play's central paradox - love and death intertwined",
       "He agrees to the marriage for political reasons ('to turn your households' rancour to pure love'), not purely for the lovers' sake",
       'His plans become increasingly risky: secret marriage, sleeping potion, faked death',
-      'He abandons Juliet in the tomb when he hears the watch — prioritising self-preservation over his duty of care',
+      'He abandons Juliet in the tomb when he hears the watch - prioritising self-preservation over his duty of care',
       'Represents the failure of authority: the Church, like the Prince and the parents, cannot prevent the tragedy',
     ],
     keyQuotes: [
@@ -243,13 +243,13 @@ const characters = [
     name: 'The Nurse',
     role: "Juliet's Confidante / Comic Figure",
     description:
-      "The Nurse is Juliet's closest companion, having raised her from birth. She is bawdy, garrulous, and loyal — until Act 3, when she advises Juliet to abandon Romeo and marry Paris. This betrayal forces Juliet to act alone and marks Juliet's final separation from childhood. The Nurse represents a pragmatic, survival-focused worldview that cannot comprehend Juliet's absolute love.",
+      "The Nurse is Juliet's closest companion, having raised her from birth. She is bawdy, garrulous, and loyal - until Act 3, when she advises Juliet to abandon Romeo and marry Paris. This betrayal forces Juliet to act alone and marks Juliet's final separation from childhood. The Nurse represents a pragmatic, survival-focused worldview that cannot comprehend Juliet's absolute love.",
     keyPoints: [
       'Her rambling speeches provide comic relief and reveal her lower social status (prose vs verse)',
-      'She has lost her own daughter Susan — Juliet is a surrogate child, making her betrayal more painful',
+      'She has lost her own daughter Susan - Juliet is a surrogate child, making her betrayal more painful',
       "She enables the secret marriage, acting as go-between, showing initial support for Juliet's happiness",
       "Her advice to marry Paris ('I think it best you married with the County') is practical but destroys Juliet's trust",
-      "After the betrayal, Juliet never confides in the Nurse again — 'Thou and my bosom henceforth shall be twain'",
+      "After the betrayal, Juliet never confides in the Nurse again - 'Thou and my bosom henceforth shall be twain'",
     ],
     keyQuotes: [
       "'Thou wast the prettiest babe that e'er I nursed'",
@@ -261,13 +261,13 @@ const characters = [
     name: 'Lord Capulet',
     role: "Juliet's Father / Patriarchal Authority",
     description:
-      "Capulet initially appears reasonable, telling Paris that Juliet is too young for marriage and that her consent matters. However, when Juliet defies him in Act 3, he becomes tyrannical and verbally abusive, threatening to disown her. Shakespeare uses Capulet to expose the violence of patriarchal authority — his 'love' for Juliet is conditional on her obedience.",
+      "Capulet initially appears reasonable, telling Paris that Juliet is too young for marriage and that her consent matters. However, when Juliet defies him in Act 3, he becomes tyrannical and verbally abusive, threatening to disown her. Shakespeare uses Capulet to expose the violence of patriarchal authority - his 'love' for Juliet is conditional on her obedience.",
     keyPoints: [
       'His transformation from protective father (Act 1) to domestic tyrant (Act 3) exposes patriarchal control',
-      "He arranges Juliet's marriage to Paris partly as a business transaction — Paris is a 'worthy gentleman'",
-      "'Hang, beg, starve, die in the streets' — his threats reveal that daughters are property, not people",
-      "His grief at Juliet's 'death' seems genuine but also self-centred — 'Death is my heir'",
-      "He only learns the truth when it is too late — representing the older generation's failure to listen",
+      "He arranges Juliet's marriage to Paris partly as a business transaction - Paris is a 'worthy gentleman'",
+      "'Hang, beg, starve, die in the streets' - his threats reveal that daughters are property, not people",
+      "His grief at Juliet's 'death' seems genuine but also self-centred - 'Death is my heir'",
+      "He only learns the truth when it is too late - representing the older generation's failure to listen",
     ],
     keyQuotes: [
       "'My child is yet a stranger in the world'",
@@ -282,12 +282,12 @@ const themes = [
     title: 'Love',
     colour: 'bg-red-500/10 border-red-500/30',
     analysis:
-      "Shakespeare presents multiple types of love throughout the play. Romeo's initial infatuation with Rosaline is shallow, conventional Petrarchan love, using tired cliches. His love for Juliet is presented as transformative and genuine — a spiritual and physical union expressed through shared sonnets and religious imagery. However, Shakespeare also questions whether their love is truly different from infatuation, given its speed and intensity. The play ultimately presents love as a force powerful enough to overcome hatred, but only through sacrifice and death.",
+      "Shakespeare presents multiple types of love throughout the play. Romeo's initial infatuation with Rosaline is shallow, conventional Petrarchan love, using tired cliches. His love for Juliet is presented as transformative and genuine - a spiritual and physical union expressed through shared sonnets and religious imagery. However, Shakespeare also questions whether their love is truly different from infatuation, given its speed and intensity. The play ultimately presents love as a force powerful enough to overcome hatred, but only through sacrifice and death.",
     keyPoints: [
-      'Petrarchan love (Romeo/Rosaline) vs genuine love (Romeo/Juliet) — Shakespeare distinguishes shallow convention from authentic passion',
+      'Petrarchan love (Romeo/Rosaline) vs genuine love (Romeo/Juliet) - Shakespeare distinguishes shallow convention from authentic passion',
       "Love and death are intertwined throughout: 'My grave is like to be my wedding bed'",
       'Religious imagery (pilgrim, saint, shrine) elevates their love to something sacred',
-      "Their love exists outside society's structures — it can only survive in darkness (balcony scene, wedding night) and ultimately in death",
+      "Their love exists outside society's structures - it can only survive in darkness (balcony scene, wedding night) and ultimately in death",
       'The speed of their love (meeting to death in five days) raises the question: is this genuine love or adolescent intensity?',
     ],
     keyQuotes: [
@@ -300,13 +300,13 @@ const themes = [
     title: 'Fate and Free Will',
     colour: 'bg-purple-500/10 border-purple-500/30',
     analysis:
-      "The prologue announces Romeo and Juliet are 'star-cross'd' — destined to die. Shakespeare creates a tension between this predetermined fate and the characters' free choices. Romeo's impulsive decisions (killing Tybalt, buying poison) could be seen as fate working through his character, or as avoidable mistakes. The play asks whether tragedy is inevitable or whether different choices could have changed the outcome. Every moment of bad timing (the undelivered letter, Romeo arriving minutes too early) reinforces the sense of cosmic injustice.",
+      "The prologue announces Romeo and Juliet are 'star-cross'd' - destined to die. Shakespeare creates a tension between this predetermined fate and the characters' free choices. Romeo's impulsive decisions (killing Tybalt, buying poison) could be seen as fate working through his character, or as avoidable mistakes. The play asks whether tragedy is inevitable or whether different choices could have changed the outcome. Every moment of bad timing (the undelivered letter, Romeo arriving minutes too early) reinforces the sense of cosmic injustice.",
     keyPoints: [
-      "'Star-cross'd lovers' — the prologue frames the play as predetermined, removing suspense and creating dramatic irony",
+      "'Star-cross'd lovers' - the prologue frames the play as predetermined, removing suspense and creating dramatic irony",
       "Romeo's premonition in Act 1 ('Some consequence yet hanging in the stars') suggests fate is already in motion",
-      "'O, I am fortune's fool!' — Romeo blames fate but his own impulsiveness caused Tybalt's death",
-      "'Then I defy you, stars!' — Romeo challenges fate but his defiance only fulfils the prophecy",
-      'The missed letter is a moment of terrible coincidence — is it fate or simply bad luck?',
+      "'O, I am fortune's fool!' - Romeo blames fate but his own impulsiveness caused Tybalt's death",
+      "'Then I defy you, stars!' - Romeo challenges fate but his defiance only fulfils the prophecy",
+      'The missed letter is a moment of terrible coincidence - is it fate or simply bad luck?',
     ],
     keyQuotes: [
       "'A pair of star-cross'd lovers take their life'",
@@ -319,13 +319,13 @@ const themes = [
     title: 'Conflict and Violence',
     colour: 'bg-orange-500/10 border-orange-500/30',
     analysis:
-      "The feud between the Montagues and Capulets is the engine of the tragedy. Shakespeare never explains its origin — it is simply inherited hatred, making it all the more absurd and destructive. Violence is presented as cyclical and self-perpetuating: each act of aggression demands retaliation. The play moves between private love scenes and public violence, showing how the feud invades every aspect of life in Verona. Only the lovers' deaths can break the cycle, suggesting that entrenched hatred can only be overcome through catastrophic sacrifice.",
+      "The feud between the Montagues and Capulets is the engine of the tragedy. Shakespeare never explains its origin - it is simply inherited hatred, making it all the more absurd and destructive. Violence is presented as cyclical and self-perpetuating: each act of aggression demands retaliation. The play moves between private love scenes and public violence, showing how the feud invades every aspect of life in Verona. Only the lovers' deaths can break the cycle, suggesting that entrenched hatred can only be overcome through catastrophic sacrifice.",
     keyPoints: [
-      "The feud's cause is never explained — Shakespeare emphasises its irrationality",
+      "The feud's cause is never explained - Shakespeare emphasises its irrationality",
       'Violence is linked to toxic masculinity: honour codes demand aggression and punish peacemaking',
       "The street brawls use sexual language ('thrust his maids to the wall'), linking violence to male dominance",
       "Act 3 Scene 1 is the structural turning point: Mercutio's death transforms comedy into tragedy",
-      "'All are punished' — the Prince's final judgement holds everyone accountable, not just the lovers",
+      "'All are punished' - the Prince's final judgement holds everyone accountable, not just the lovers",
     ],
     keyQuotes: [
       "'Two households, both alike in dignity, / In fair Verona, where we lay our scene'",
@@ -338,13 +338,13 @@ const themes = [
     title: 'Youth vs Age / Generational Conflict',
     colour: 'bg-green-500/10 border-green-500/30',
     analysis:
-      "The play presents a stark contrast between the passionate, idealistic young characters and the rigid, controlling older generation. The parents perpetuate the feud; the children pay for it with their lives. Capulet's authoritarian control over Juliet reflects the patriarchal power structures of Elizabethan society. The Friar and the Nurse, both adult authority figures, fail the lovers through well-meaning but inadequate intervention. Shakespeare implies that the older generation's values — honour, obedience, social status — are destructive when imposed without compassion.",
+      "The play presents a stark contrast between the passionate, idealistic young characters and the rigid, controlling older generation. The parents perpetuate the feud; the children pay for it with their lives. Capulet's authoritarian control over Juliet reflects the patriarchal power structures of Elizabethan society. The Friar and the Nurse, both adult authority figures, fail the lovers through well-meaning but inadequate intervention. Shakespeare implies that the older generation's values - honour, obedience, social status - are destructive when imposed without compassion.",
     keyPoints: [
-      "The feud belongs to the parents' generation — Romeo and Juliet reject it through their love",
-      "Capulet's attitude shifts from protective to tyrannical when Juliet disobeys — his love is conditional",
-      "The Nurse and Friar both fail as substitute parents — neither can protect the lovers from society's structures",
+      "The feud belongs to the parents' generation - Romeo and Juliet reject it through their love",
+      "Capulet's attitude shifts from protective to tyrannical when Juliet disobeys - his love is conditional",
+      "The Nurse and Friar both fail as substitute parents - neither can protect the lovers from society's structures",
       "Juliet's rapid maturation (from obedient child to independent woman) is forced by adult failures",
-      "Only the children's deaths teach the parents the cost of their hatred — 'All are punished'",
+      "Only the children's deaths teach the parents the cost of their hatred - 'All are punished'",
     ],
     keyQuotes: [
       "'Hang, beg, starve, die in the streets'",
@@ -356,12 +356,12 @@ const themes = [
     title: 'Light and Darkness',
     colour: 'bg-indigo-500/10 border-indigo-200',
     analysis:
-      "Shakespeare uses light and dark imagery paradoxically throughout the play. Conventionally, light represents goodness and dark represents evil, but Shakespeare inverts this. Romeo and Juliet's love flourishes in darkness (the balcony scene, the wedding night) and is threatened by daylight (which brings separation and public violence). Juliet is consistently associated with light — 'the sun,' 'a rich jewel in an Ethiope's ear' — suggesting she illuminates Romeo's world. However, this light imagery is always set against darkness, foreshadowing the idea that their love can only truly exist beyond the world of the living.",
+      "Shakespeare uses light and dark imagery paradoxically throughout the play. Conventionally, light represents goodness and dark represents evil, but Shakespeare inverts this. Romeo and Juliet's love flourishes in darkness (the balcony scene, the wedding night) and is threatened by daylight (which brings separation and public violence). Juliet is consistently associated with light - 'the sun,' 'a rich jewel in an Ethiope's ear' - suggesting she illuminates Romeo's world. However, this light imagery is always set against darkness, foreshadowing the idea that their love can only truly exist beyond the world of the living.",
     keyPoints: [
-      "Juliet is compared to the sun, stars, and light — she represents truth and beauty in Romeo's world",
-      'Their love exists in darkness: the feast, the balcony, the bedroom — daylight means separation',
-      'The aubade (dawn song) in Act 3 Scene 5: they argue over whether it is the lark or nightingale — dawn means Romeo must leave',
-      "'Give me my Romeo; and, when I shall die, / Take him and cut him out in little stars' — Juliet imagines Romeo transforming darkness into light after death",
+      "Juliet is compared to the sun, stars, and light - she represents truth and beauty in Romeo's world",
+      'Their love exists in darkness: the feast, the balcony, the bedroom - daylight means separation',
+      'The aubade (dawn song) in Act 3 Scene 5: they argue over whether it is the lark or nightingale - dawn means Romeo must leave',
+      "'Give me my Romeo; and, when I shall die, / Take him and cut him out in little stars' - Juliet imagines Romeo transforming darkness into light after death",
       "The tomb scene inverts natural light: Romeo calls Juliet's beauty a 'lantern' that makes the vault 'a feasting presence full of light'",
     ],
     keyQuotes: [
@@ -374,11 +374,11 @@ const themes = [
     title: 'Gender and Patriarchy',
     colour: 'bg-teal-500/10 border-teal-200',
     analysis:
-      "The play exposes the rigid gender roles of Elizabethan society and their devastating consequences. Men are expected to be aggressive and honour-bound — those who refuse to fight (like Romeo after his marriage) are mocked. Women are treated as property: Juliet's marriage is arranged without her consent, and her refusal is met with threats of disownment. Shakespeare uses Juliet to challenge these norms: she is the play's most intelligent and decisive character, yet she is trapped by a patriarchal system that denies her autonomy. The tragedy is partly caused by a society that values male honour over female agency.",
+      "The play exposes the rigid gender roles of Elizabethan society and their devastating consequences. Men are expected to be aggressive and honour-bound - those who refuse to fight (like Romeo after his marriage) are mocked. Women are treated as property: Juliet's marriage is arranged without her consent, and her refusal is met with threats of disownment. Shakespeare uses Juliet to challenge these norms: she is the play's most intelligent and decisive character, yet she is trapped by a patriarchal system that denies her autonomy. The tragedy is partly caused by a society that values male honour over female agency.",
     keyPoints: [
       "Juliet is treated as property: Capulet 'gives' her to Paris as if she were an object to be traded",
       'Male honour codes drive the violence: Tybalt, Mercutio, and Romeo all fight to prove their masculinity',
-      "Romeo's refusal to fight Tybalt is seen as emasculating — Mercutio fights in his place to restore honour",
+      "Romeo's refusal to fight Tybalt is seen as emasculating - Mercutio fights in his place to restore honour",
       "Juliet's defiance of her father is revolutionary: she rejects the patriarchal system that controls her life",
       "The Nurse's pragmatic advice to marry Paris reflects how women survive in a world where they have no power",
     ],
@@ -396,20 +396,20 @@ const keyQuotations = [
     quote: 'Two households, both alike in dignity, / In fair Verona, where we lay our scene',
     speaker: 'Chorus (Prologue)',
     analysis:
-      "The opening line establishes the setting and the social equality of the feuding families — 'both alike in dignity' means neither is morally superior. 'Fair Verona' is ironic: the city is torn apart by violence. The sonnet form of the prologue is fitting for a love story, but its content is tragic — foreshadowing death from the very first line.",
+      "The opening line establishes the setting and the social equality of the feuding families - 'both alike in dignity' means neither is morally superior. 'Fair Verona' is ironic: the city is torn apart by violence. The sonnet form of the prologue is fitting for a love story, but its content is tragic - foreshadowing death from the very first line.",
   },
   {
     quote: "A pair of star-cross'd lovers take their life",
     speaker: 'Chorus (Prologue)',
     analysis:
-      "This reveals the ending before the play begins, creating dramatic irony that pervades every scene. 'Star-cross'd' suggests their fate is written in the stars — they are cosmically doomed. 'Take their life' has a double meaning: they live their life together and they end their life. The audience watches knowing every joyful moment is temporary.",
+      "This reveals the ending before the play begins, creating dramatic irony that pervades every scene. 'Star-cross'd' suggests their fate is written in the stars - they are cosmically doomed. 'Take their life' has a double meaning: they live their life together and they end their life. The audience watches knowing every joyful moment is temporary.",
   },
   {
     quote:
       "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiope's ear",
     speaker: 'Romeo (1.5)',
     analysis:
-      "Romeo's first sight of Juliet. The light/dark imagery presents Juliet as a source of illumination against darkness. 'Teach the torches' personifies the torches as her students — she outshines artificial light. The simile 'rich jewel in an Ethiope's ear' emphasises her preciousness and radiance. His language shifts from the artificial Petrarchan style he used about Rosaline to something more vivid and genuine.",
+      "Romeo's first sight of Juliet. The light/dark imagery presents Juliet as a source of illumination against darkness. 'Teach the torches' personifies the torches as her students - she outshines artificial light. The simile 'rich jewel in an Ethiope's ear' emphasises her preciousness and radiance. His language shifts from the artificial Petrarchan style he used about Rosaline to something more vivid and genuine.",
   },
   {
     quote:
@@ -422,87 +422,87 @@ const keyQuotations = [
     quote: 'My only love sprung from my only hate! / Too early seen unknown, and known too late!',
     speaker: 'Juliet (1.5)',
     analysis:
-      "Juliet discovers Romeo is a Montague. The antithesis of 'love' and 'hate' encapsulates the play's central paradox — love born from hatred. 'Too early seen unknown, and known too late' expresses the cruel irony of falling in love before discovering the obstacle. The rhyming couplet gives it a sense of fatalistic finality.",
+      "Juliet discovers Romeo is a Montague. The antithesis of 'love' and 'hate' encapsulates the play's central paradox - love born from hatred. 'Too early seen unknown, and known too late' expresses the cruel irony of falling in love before discovering the obstacle. The rhyming couplet gives it a sense of fatalistic finality.",
   },
   {
     quote:
       'But, soft! What light through yonder window breaks? / It is the east, and Juliet is the sun',
     speaker: 'Romeo (2.2)',
     analysis:
-      "The balcony scene's opening metaphor. Romeo elevates Juliet to a celestial body — she is not merely compared to the sun but identified as it. The sun is the centre of the universe (a bold claim in Elizabethan England), suggesting Juliet is the centre of Romeo's existence. 'Breaks' implies her light pierces the darkness forcefully.",
+      "The balcony scene's opening metaphor. Romeo elevates Juliet to a celestial body - she is not merely compared to the sun but identified as it. The sun is the centre of the universe (a bold claim in Elizabethan England), suggesting Juliet is the centre of Romeo's existence. 'Breaks' implies her light pierces the darkness forcefully.",
   },
   {
     quote: "What's in a name? That which we call a rose / By any other word would smell as sweet",
     speaker: 'Juliet (2.2)',
     analysis:
-      "Juliet argues that names are arbitrary social constructs — Romeo's identity as a Montague is merely a label, not his essence. This is philosophically radical: she challenges the entire basis of the feud. The rose metaphor is simple but powerful — identity lies in nature, not in what society calls us. She is more rational and analytical than Romeo in this scene.",
+      "Juliet argues that names are arbitrary social constructs - Romeo's identity as a Montague is merely a label, not his essence. This is philosophically radical: she challenges the entire basis of the feud. The rose metaphor is simple but powerful - identity lies in nature, not in what society calls us. She is more rational and analytical than Romeo in this scene.",
   },
   {
     quote:
       'My bounty is as boundless as the sea, / My love as deep; the more I give to thee, / The more I have, for both are infinite',
     speaker: 'Juliet (2.2)',
     analysis:
-      "Juliet's declaration of limitless love uses the sea as a metaphor for infinite depth and abundance. The paradox ('the more I give... the more I have') presents love as inexhaustible — it grows through giving. This is one of Shakespeare's most beautiful articulations of love. The boundless imagery contrasts with the confined, walled world of Verona.",
+      "Juliet's declaration of limitless love uses the sea as a metaphor for infinite depth and abundance. The paradox ('the more I give... the more I have') presents love as inexhaustible - it grows through giving. This is one of Shakespeare's most beautiful articulations of love. The boundless imagery contrasts with the confined, walled world of Verona.",
   },
   {
     quote: 'These violent delights have violent ends',
     speaker: 'Friar Lawrence (2.6)',
     analysis:
-      "The Friar's warning before the marriage. 'Violent' means both passionate and destructive — the intensity of their love will lead to destruction. The symmetrical structure (violent... violent) mirrors the idea that beginnings predict endings. This is the play's most direct piece of foreshadowing and encapsulates its central tragedy: extreme love leads to extreme loss.",
+      "The Friar's warning before the marriage. 'Violent' means both passionate and destructive - the intensity of their love will lead to destruction. The symmetrical structure (violent... violent) mirrors the idea that beginnings predict endings. This is the play's most direct piece of foreshadowing and encapsulates its central tragedy: extreme love leads to extreme loss.",
   },
   {
     quote: "A plague o' both your houses!",
     speaker: 'Mercutio (3.1)',
     analysis:
-      "Mercutio's dying curse is repeated three times, giving it the weight of a prophecy. He blames both families equally — neither Montague nor Capulet is innocent. 'Plague' invokes divine punishment for collective sin. Mercutio is the play's most significant casualty: an outsider destroyed by a feud that was not his. His curse articulates the play's moral judgement on the feud.",
+      "Mercutio's dying curse is repeated three times, giving it the weight of a prophecy. He blames both families equally - neither Montague nor Capulet is innocent. 'Plague' invokes divine punishment for collective sin. Mercutio is the play's most significant casualty: an outsider destroyed by a feud that was not his. His curse articulates the play's moral judgement on the feud.",
   },
   {
     quote: "O, I am fortune's fool!",
     speaker: 'Romeo (3.1)',
     analysis:
-      "Romeo's cry after killing Tybalt. 'Fortune's fool' suggests he is a plaything of fate — a helpless victim. But the audience has seen Romeo choose to fight. This tension between fate and choice is central to the play. The alliteration emphasises his despair. He externalises blame onto 'fortune' rather than accepting responsibility for his impulsive actions.",
+      "Romeo's cry after killing Tybalt. 'Fortune's fool' suggests he is a plaything of fate - a helpless victim. But the audience has seen Romeo choose to fight. This tension between fate and choice is central to the play. The alliteration emphasises his despair. He externalises blame onto 'fortune' rather than accepting responsibility for his impulsive actions.",
   },
   {
     quote: "Beautiful tyrant! Fiend angelical! / Dove-feather'd raven! Wolvish-ravening lamb!",
     speaker: 'Juliet (3.2)',
     analysis:
-      "Juliet's string of oxymorons expresses her impossible position — her husband has killed her cousin. The contradictions ('beautiful tyrant,' 'fiend angelical') mirror the play's central paradox of love and hate coexisting. Each oxymoron pairs beauty with violence, reflecting how Romeo is both her beloved and a killer. The rapid accumulation shows her mind racing to process the shock.",
+      "Juliet's string of oxymorons expresses her impossible position - her husband has killed her cousin. The contradictions ('beautiful tyrant,' 'fiend angelical') mirror the play's central paradox of love and hate coexisting. Each oxymoron pairs beauty with violence, reflecting how Romeo is both her beloved and a killer. The rapid accumulation shows her mind racing to process the shock.",
   },
   {
     quote: "Hang, beg, starve, die in the streets, / For, by my soul, I'll ne'er acknowledge thee",
     speaker: 'Lord Capulet (3.5)',
     analysis:
-      "Capulet's explosive rage when Juliet refuses to marry Paris. The list of monosyllabic verbs ('hang, beg, starve, die') is brutally direct. He threatens to abandon his daughter to destitution and death. This reveals that his parental 'love' is conditional on obedience — Juliet is property, not a person. The violence of his language mirrors the physical violence of the feud.",
+      "Capulet's explosive rage when Juliet refuses to marry Paris. The list of monosyllabic verbs ('hang, beg, starve, die') is brutally direct. He threatens to abandon his daughter to destitution and death. This reveals that his parental 'love' is conditional on obedience - Juliet is property, not a person. The violence of his language mirrors the physical violence of the feud.",
   },
   {
     quote: 'Give me, give me! O, tell not me of fear!',
     speaker: 'Juliet (4.1)',
     analysis:
-      "Juliet demands the Friar's potion with urgent imperatives. The repetition of 'give me' shows her desperation and determination. 'Tell not me of fear' is a direct rejection of the timidity expected of young women. At 13, Juliet shows more courage than any adult in the play. She is willing to risk apparent death rather than betray her love — this is a profoundly radical act of female agency.",
+      "Juliet demands the Friar's potion with urgent imperatives. The repetition of 'give me' shows her desperation and determination. 'Tell not me of fear' is a direct rejection of the timidity expected of young women. At 13, Juliet shows more courage than any adult in the play. She is willing to risk apparent death rather than betray her love - this is a profoundly radical act of female agency.",
   },
   {
     quote: 'Then I defy you, stars!',
     speaker: 'Romeo (5.1)',
     analysis:
-      "Romeo's response to Juliet's apparent death is to challenge fate itself. The exclamation mark conveys passionate defiance. However, his 'defiance' of the stars (fate) actually fulfils their decree — by rushing to die beside Juliet, he ensures the tragedy the stars predicted. This is Shakespeare's deepest irony: free will and fate are indistinguishable. Romeo thinks he is choosing; the audience knows he is being led.",
+      "Romeo's response to Juliet's apparent death is to challenge fate itself. The exclamation mark conveys passionate defiance. However, his 'defiance' of the stars (fate) actually fulfils their decree - by rushing to die beside Juliet, he ensures the tragedy the stars predicted. This is Shakespeare's deepest irony: free will and fate are indistinguishable. Romeo thinks he is choosing; the audience knows he is being led.",
   },
   {
     quote: 'O happy dagger! / This is thy sheath; there rust, and let me die',
     speaker: 'Juliet (5.3)',
     analysis:
-      "Juliet's final words. 'Happy' is bitterly ironic — the dagger is 'happy' because it will reunite her with Romeo. 'Sheath' is a sexual metaphor (her body sheathes the dagger as in their marriage), linking love and death one final time. 'Rust' implies permanence — she will never be separated from Romeo again. Her death by stabbing contrasts with Romeo's poison: she chooses a more violent, traditionally masculine method.",
+      "Juliet's final words. 'Happy' is bitterly ironic - the dagger is 'happy' because it will reunite her with Romeo. 'Sheath' is a sexual metaphor (her body sheathes the dagger as in their marriage), linking love and death one final time. 'Rust' implies permanence - she will never be separated from Romeo again. Her death by stabbing contrasts with Romeo's poison: she chooses a more violent, traditionally masculine method.",
   },
   {
     quote: 'All are punished',
     speaker: 'Prince Escalus (5.3)',
     analysis:
-      "The Prince's final judgement. The universality of 'all' refuses to assign blame to any single character — the tragedy is collective. The passive voice ('are punished') suggests a force greater than human justice is at work — God, fate, or the natural consequences of hatred. This line echoes the prologue's message: the feud has consumed innocent and guilty alike. It is Shakespeare's most concise statement of the play's moral.",
+      "The Prince's final judgement. The universality of 'all' refuses to assign blame to any single character - the tragedy is collective. The passive voice ('are punished') suggests a force greater than human justice is at work - God, fate, or the natural consequences of hatred. This line echoes the prologue's message: the feud has consumed innocent and guilty alike. It is Shakespeare's most concise statement of the play's moral.",
   },
   {
     quote: 'For never was a story of more woe / Than this of Juliet and her Romeo',
     speaker: 'Prince Escalus (5.3)',
     analysis:
-      "The play's closing couplet. The rhyme gives it the finality of an epitaph. 'Her Romeo' — the possessive pronoun is significant: in death, Romeo belongs to Juliet, not to the Montague family. The superlative 'never... more woe' elevates their story to universal significance. Shakespeare closes the play as it began — with a formal poetic structure that frames the tragedy as a completed narrative.",
+      "The play's closing couplet. The rhyme gives it the finality of an epitaph. 'Her Romeo' - the possessive pronoun is significant: in death, Romeo belongs to Juliet, not to the Montague family. The superlative 'never... more woe' elevates their story to universal significance. Shakespeare closes the play as it began - with a formal poetic structure that frames the tragedy as a completed narrative.",
   },
 ]
 
@@ -520,12 +520,12 @@ const contextPoints = [
   {
     title: 'The Sonnet Tradition and Petrarchan Love',
     detail:
-      "Romeo's love for Rosaline parodies the Petrarchan sonnet tradition — exaggerated declarations of love for an unattainable woman. Shakespeare satirises this literary convention through Romeo's cliched language. When Romeo meets Juliet, their first conversation forms a shared sonnet (1.5), suggesting their love is a genuine collaboration rather than one-sided worship. Shakespeare is both using and critiquing the literary conventions of his time.",
+      "Romeo's love for Rosaline parodies the Petrarchan sonnet tradition - exaggerated declarations of love for an unattainable woman. Shakespeare satirises this literary convention through Romeo's cliched language. When Romeo meets Juliet, their first conversation forms a shared sonnet (1.5), suggesting their love is a genuine collaboration rather than one-sided worship. Shakespeare is both using and critiquing the literary conventions of his time.",
   },
   {
     title: 'Honour Culture and Masculinity',
     detail:
-      "Elizabethan society placed enormous value on male honour. Insults demanded violent retaliation; refusing to fight was seen as cowardly and emasculating. Tybalt and Mercutio embody this honour code. Romeo's refusal to fight Tybalt (because of his secret marriage) is seen as shameful — Mercutio fights and dies to defend Romeo's honour. Shakespeare shows how this code of masculinity destroys young men.",
+      "Elizabethan society placed enormous value on male honour. Insults demanded violent retaliation; refusing to fight was seen as cowardly and emasculating. Tybalt and Mercutio embody this honour code. Romeo's refusal to fight Tybalt (because of his secret marriage) is seen as shameful - Mercutio fights and dies to defend Romeo's honour. Shakespeare shows how this code of masculinity destroys young men.",
   },
   {
     title: 'The Role of Fate and Fortune',
@@ -566,7 +566,7 @@ const aqaExamFormat = {
       description:
         'Show understanding of the relationships between texts and the contexts in which they were written.',
       marks: '6 marks',
-      tip: 'Integrate context into your analysis — do not bolt it on. Link Elizabethan attitudes to love, gender, honour, and fate to your points about the text.',
+      tip: 'Integrate context into your analysis - do not bolt it on. Link Elizabethan attitudes to love, gender, honour, and fate to your points about the text.',
     },
     {
       code: 'Comparing texts',
@@ -582,12 +582,12 @@ const commandWords = [
   {
     word: 'How does Shakespeare present...',
     meaning:
-      "Focus on Shakespeare's methods — language, structure, form, dramatic techniques. Discuss his deliberate choices as a writer. Always refer to Shakespeare as the craftsman, not just the characters.",
+      "Focus on Shakespeare's methods - language, structure, form, dramatic techniques. Discuss his deliberate choices as a writer. Always refer to Shakespeare as the craftsman, not just the characters.",
   },
   {
     word: 'Starting with this extract...',
     meaning:
-      'You MUST begin with the extract. Spend roughly half your essay on the extract and half on the wider play. Use the extract as a springboard — find connections between the extract and the rest of the play.',
+      'You MUST begin with the extract. Spend roughly half your essay on the extract and half on the wider play. Use the extract as a springboard - find connections between the extract and the rest of the play.',
   },
   {
     word: '...explore...',
@@ -597,7 +597,7 @@ const commandWords = [
   {
     word: '...write about...',
     meaning:
-      'This is broad — cover the topic from multiple angles. Include analysis of language, structure, context, and different interpretations. Aim for breadth and depth.',
+      'This is broad - cover the topic from multiple angles. Include analysis of language, structure, context, and different interpretations. Aim for breadth and depth.',
   },
 ]
 
@@ -605,10 +605,10 @@ const essayQuestions = [
   {
     question: 'Starting with this extract, how does Shakespeare present love in Romeo and Juliet?',
     plan: [
-      "Extract analysis: identify how the specific extract presents love (e.g., the shared sonnet in Act 1 Scene 5 — religious imagery elevates love; the sonnet form suggests perfect harmony; 'pilgrim' and 'saint' metaphors make love sacred)",
-      "Wider play — Love vs infatuation: contrast Romeo's Petrarchan love for Rosaline (artificial, self-pitying) with his love for Juliet (genuine, transformative). Shakespeare uses language shifts to show the difference.",
-      "Wider play — Love and death: 'These violent delights have violent ends' — the Friar warns that extreme love leads to destruction. Love and death are intertwined throughout: 'My grave is like to be my wedding bed.' The tomb becomes their final marriage bed.",
-      "Wider play — Love vs society: their love exists only in secret (darkness, the balcony, the Friar's cell) because society cannot accommodate it. The public world (daylight, the streets) is a place of violence and family control.",
+      "Extract analysis: identify how the specific extract presents love (e.g., the shared sonnet in Act 1 Scene 5 - religious imagery elevates love; the sonnet form suggests perfect harmony; 'pilgrim' and 'saint' metaphors make love sacred)",
+      "Wider play - Love vs infatuation: contrast Romeo's Petrarchan love for Rosaline (artificial, self-pitying) with his love for Juliet (genuine, transformative). Shakespeare uses language shifts to show the difference.",
+      "Wider play - Love and death: 'These violent delights have violent ends' - the Friar warns that extreme love leads to destruction. Love and death are intertwined throughout: 'My grave is like to be my wedding bed.' The tomb becomes their final marriage bed.",
+      "Wider play - Love vs society: their love exists only in secret (darkness, the balcony, the Friar's cell) because society cannot accommodate it. The public world (daylight, the streets) is a place of violence and family control.",
       'Context: Elizabethan arranged marriages, the sonnet tradition, love as a radical force that challenges patriarchal authority. Shakespeare presents love as both transcendent and destructive.',
     ],
   },
@@ -616,31 +616,31 @@ const essayQuestions = [
     question:
       'How does Shakespeare use conflict to explore the theme of family loyalty in Romeo and Juliet?',
     plan: [
-      "Extract analysis: e.g., Act 3 Scene 1 — the fight scene. Tybalt's challenge, Romeo's refusal to fight (torn between love for Juliet and family honour), Mercutio's intervention and death. Language of honour and masculinity.",
-      "Wider play — The feud as inherited hatred: the Prologue establishes the 'ancient grudge.' The servants fight without knowing why (Act 1 Scene 1) — the feud is mindless, cyclical violence passed down through generations.",
-      "Wider play — Juliet's divided loyalties: Act 3 Scene 2 — 'Beautiful tyrant! Fiend angelical!' Oxymorons express her impossible position. She ultimately chooses Romeo over family, showing love transcends blood loyalty.",
-      "Wider play — Capulet's conditional love: Act 3 Scene 5 — 'Hang, beg, starve, die in the streets.' Family loyalty is revealed as patriarchal control: Juliet is expected to obey, not to have her own desires.",
-      "Context: Elizabethan family structures, male honour codes, the expectation of female obedience. 'All are punished' — Shakespeare shows the feud destroys both families and the innocent.",
+      "Extract analysis: e.g., Act 3 Scene 1 - the fight scene. Tybalt's challenge, Romeo's refusal to fight (torn between love for Juliet and family honour), Mercutio's intervention and death. Language of honour and masculinity.",
+      "Wider play - The feud as inherited hatred: the Prologue establishes the 'ancient grudge.' The servants fight without knowing why (Act 1 Scene 1) - the feud is mindless, cyclical violence passed down through generations.",
+      "Wider play - Juliet's divided loyalties: Act 3 Scene 2 - 'Beautiful tyrant! Fiend angelical!' Oxymorons express her impossible position. She ultimately chooses Romeo over family, showing love transcends blood loyalty.",
+      "Wider play - Capulet's conditional love: Act 3 Scene 5 - 'Hang, beg, starve, die in the streets.' Family loyalty is revealed as patriarchal control: Juliet is expected to obey, not to have her own desires.",
+      "Context: Elizabethan family structures, male honour codes, the expectation of female obedience. 'All are punished' - Shakespeare shows the feud destroys both families and the innocent.",
     ],
   },
   {
     question: 'How does Shakespeare present Juliet as a strong female character?',
     plan: [
-      "Extract analysis: e.g., Act 2 Scene 2 — the balcony scene. Juliet is rational and philosophical ('What's in a name?'), questioning social constructs. She is practical about danger while Romeo is reckless. She drives the conversation towards marriage.",
-      "Wider play — Transformation: from obedient daughter ('I'll look to like, if looking liking move') to independent woman who defies her father, deceives her family, and chooses death over compromise.",
-      "Wider play — Courage: Act 4 Scene 1 — 'Give me, give me! O, tell not me of fear!' She takes the potion despite terrifying visions. She shows more courage than any male character in the play.",
-      "Wider play — Agency in death: 'O happy dagger! This is thy sheath' — even her death is a choice. She refuses to let the Friar remove her agency. Her death by stabbing (masculine method) contrasts with Romeo's poison (passive consumption).",
+      "Extract analysis: e.g., Act 2 Scene 2 - the balcony scene. Juliet is rational and philosophical ('What's in a name?'), questioning social constructs. She is practical about danger while Romeo is reckless. She drives the conversation towards marriage.",
+      "Wider play - Transformation: from obedient daughter ('I'll look to like, if looking liking move') to independent woman who defies her father, deceives her family, and chooses death over compromise.",
+      "Wider play - Courage: Act 4 Scene 1 - 'Give me, give me! O, tell not me of fear!' She takes the potion despite terrifying visions. She shows more courage than any male character in the play.",
+      "Wider play - Agency in death: 'O happy dagger! This is thy sheath' - even her death is a choice. She refuses to let the Friar remove her agency. Her death by stabbing (masculine method) contrasts with Romeo's poison (passive consumption).",
       "Context: patriarchal Elizabethan society, women as property, arranged marriages. Juliet's rebellion is extraordinary for a 13-year-old girl in this context. Shakespeare presents her as intellectually and morally superior to the adults around her.",
     ],
   },
   {
     question: 'How does Shakespeare present the theme of fate in Romeo and Juliet?',
     plan: [
-      "Extract analysis: e.g., Act 5 Scene 1 — 'Then I defy you, stars!' Romeo's defiance of fate is ironic: his 'defiance' (rushing to die) actually fulfils the fate the stars predicted. Shakespeare shows that characters cannot escape their destiny.",
-      "Wider play — Prologue: 'star-cross'd lovers' and 'death-mark'd love' — fate is announced before the play begins. Every joyful scene is shadowed by dramatic irony because the audience knows the outcome.",
-      "Wider play — Premonitions: Romeo's 'Some consequence yet hanging in the stars' (1.4); Juliet's 'My grave is like to be my wedding bed' (1.5) — characters sense their fate but cannot avoid it.",
-      "Wider play — The missed letter: Friar John's quarantine prevents the plan from working. Is this fate or coincidence? Shakespeare leaves it ambiguous. The accumulation of 'bad luck' creates a pattern that feels like destiny.",
-      "Context: Elizabethan beliefs in Fortune's wheel, astrology, and divine providence. The play asks whether God, the stars, or human choices determine our lives — and refuses to give a simple answer.",
+      "Extract analysis: e.g., Act 5 Scene 1 - 'Then I defy you, stars!' Romeo's defiance of fate is ironic: his 'defiance' (rushing to die) actually fulfils the fate the stars predicted. Shakespeare shows that characters cannot escape their destiny.",
+      "Wider play - Prologue: 'star-cross'd lovers' and 'death-mark'd love' - fate is announced before the play begins. Every joyful scene is shadowed by dramatic irony because the audience knows the outcome.",
+      "Wider play - Premonitions: Romeo's 'Some consequence yet hanging in the stars' (1.4); Juliet's 'My grave is like to be my wedding bed' (1.5) - characters sense their fate but cannot avoid it.",
+      "Wider play - The missed letter: Friar John's quarantine prevents the plan from working. Is this fate or coincidence? Shakespeare leaves it ambiguous. The accumulation of 'bad luck' creates a pattern that feels like destiny.",
+      "Context: Elizabethan beliefs in Fortune's wheel, astrology, and divine providence. The play asks whether God, the stars, or human choices determine our lives - and refuses to give a simple answer.",
     ],
   },
 ]
@@ -724,7 +724,7 @@ export default function RomeoAndJulietPage() {
         </div>
 
         <h3 className="mt-8 text-lg font-bold text-foreground">
-          Key Skills — What Markers Look For
+          Key Skills - What Markers Look For
         </h3>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {aqaExamFormat.assessmentObjectives.map((ao) => (

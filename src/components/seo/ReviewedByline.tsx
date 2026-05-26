@@ -1,12 +1,12 @@
 // Visible author/reviewer + last-updated line. Rendered ONCE site-wide
 // from the Footer so every non-school route gains the GEO attribution
 // signal (author/reviewer + freshness) without per-page wiring. No
-// 'use client' — pure server component, no hooks, deterministic output
+// 'use client' - pure server component, no hooks, deterministic output
 // (no hydration risk). British English. Role-based attribution only:
 // the site bans fabricated named people, so we credit "The English Hub
 // editorial team" and a "subject specialist", never an invented person.
 //
-// IMPORTANT: do NOT add <ReviewedByline /> to individual pages — it is
+// IMPORTANT: do NOT add <ReviewedByline /> to individual pages - it is
 // a single site-wide footer cascade. A second instance per page would
 // produce a duplicate "Last updated" line.
 import { cn } from '@/lib/utils'
@@ -29,7 +29,7 @@ export function ReviewedByline({
   updated = SITE_LAST_REVIEWED,
   className,
 }: {
-  /** Reviewer role label. Role-based only — no named people. */
+  /** Reviewer role label. Role-based only - no named people. */
   reviewer?: string
   /** Date or ISO string; defaults to the build-time constant. */
   updated?: Date | string
@@ -48,7 +48,7 @@ export function ReviewedByline({
       <span aria-hidden className="mx-1.5">
         ·
       </span>
-      {/* Literal "Last updated" + machine date — satisfies the GEO
+      {/* Literal "Last updated" + machine date - satisfies the GEO
           scorer's visible-date regex AND the byline regex. */}
       <span>
         Last updated <time dateTime={updatedDate.toISOString().slice(0, 10)}>{monthYear}</time>

@@ -37,7 +37,7 @@ function fail(code: string, message: string, status: number): NextResponse {
 }
 
 // ─── Shared auth resolver (duplicated here to keep the route file
-//     self-contained — tiny function, not worth a cross-file import). ──
+//     self-contained - tiny function, not worth a cross-file import). ──
 
 async function resolveCallerPrismaId(
   sessionUserId: string,
@@ -95,7 +95,7 @@ export async function DELETE(
     try {
       id = paramsSchema.parse(rawParams).id
     } catch {
-      // Not a UUID — treat as "unknown device" (collapsed with the
+      // Not a UUID - treat as "unknown device" (collapsed with the
       // ownership-mismatch branch to avoid enumeration).
       return fail('NOT_FOUND', 'Device not found.', 404)
     }

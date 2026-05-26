@@ -5,7 +5,7 @@
  * follow-up.
  *
  * Schedule: 03:30 UTC daily (see vercel.json). Safe to re-run on the same
- * day — dedup via `trustpilot_invite` UNIQUE(user_id, trigger) ensures no
+ * day - dedup via `trustpilot_invite` UNIQUE(user_id, trigger) ensures no
  * duplicates.
  *
  * Auth: `x-cron-secret` header must match CRON_SECRET env var.
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     // ── Find candidates ──────────────────────────────────────────────
     // Users whose student_first_mark invite fired 7 ± 0.5 days ago and who
     // haven't yet had the 7d-followup fire. The UNIQUE constraint on
-    // (user_id, trigger) prevents re-sending — dedup is belt-and-braces
+    // (user_id, trigger) prevents re-sending - dedup is belt-and-braces
     // but also lets us skip candidates with an existing follow-up row
     // without a second query.
     const now = Date.now()
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
         console.warn('[cron/trustpilot-7d] essay-count lookup failed for', supabaseUserId, err)
       }
 
-      // Only fire the followup if the student has come back — i.e. ≥ 2
+      // Only fire the followup if the student has come back - i.e. ≥ 2
       // essays submitted. If they only ever submitted the one that
       // triggered `student_first_mark`, a nudge looks pushy.
       if (essaysSubmitted < 2) {

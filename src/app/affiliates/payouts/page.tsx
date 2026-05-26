@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import AffiliatePayoutsClient from './AffiliatePayoutsClient'
 import { t } from '@/lib/i18n/t'
 
-// 2026-05-13: metadata wired to i18n — document title resolves through
+// 2026-05-13: metadata wired to i18n - document title resolves through
 // `affiliates.payouts.meta.title` so the AR locale serves Khaleeji copy.
 export async function generateMetadata(): Promise<Metadata> {
   return { title: await t('affiliates.payouts.meta.title') }
@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 //
 // Reads from the NEW affiliate_accounts system (commit 20260420_affiliates_v2).
 // The legacy `affiliates` / `affiliate_referrals` / `affiliate_payouts` tables
-// are no longer queried here — the previous implementation redirected to
+// are no longer queried here - the previous implementation redirected to
 // /affiliates/apply on miss, which bounced via /affiliates/page.tsx back to
 // /affiliates/dashboard → infinite redirect loop.
 //
@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 // admin-driven Rewardful payout path lives on at
 // `src/app/api/admin/affiliates/payout.ts`; the two pipelines stay separate.
 //
-// Display threshold: first payout cleared at £20 — informational only,
+// Display threshold: first payout cleared at £20 - informational only,
 // not enforced here.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -46,13 +46,13 @@ export default async function AffiliatePayoutsPage() {
     .eq('user_id', user.id)
     .maybeSingle()
 
-  // No new-system row — bounce to the self-serve enrolment anchor on
+  // No new-system row - bounce to the self-serve enrolment anchor on
   // /affiliates. NEVER /affiliates/apply (legacy redirect loop).
   if (!account) {
     redirect('/affiliates#apply')
   }
 
-  // Paused / terminated / pending / rejected — render but mark as inactive.
+  // Paused / terminated / pending / rejected - render but mark as inactive.
   // We still want the page to load (no redirect) so the user can see why
   // they're not earning, instead of recycling.
   const isActive = account.status === 'active' || account.status === 'approved'

@@ -40,7 +40,7 @@ function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
   // P1-SEC-5 (Cycle 1 Wave B) closed the email-not-confirmed enumeration
   // branch. The previous "Resend verification" CTA would have confirmed
-  // the existence of an unverified account for the submitted email —
+  // the existence of an unverified account for the submitted email -
   // an enumeration + email-bombing primitive. Users needing to re-verify
   // should re-register (which returns a generic response regardless of
   // whether the email exists) or use /auth/forgot-password.
@@ -74,7 +74,7 @@ function LoginForm() {
       // Generic error for every failure mode to prevent account enumeration.
       // Previously we branched on 'email not confirmed' which leaked the fact
       // that an account exists for the submitted email (P1-SEC-5). We still
-      // surface a verification CTA, but only in-form text — we do not
+      // surface a verification CTA, but only in-form text - we do not
       // auto-enable a resend-verification UI from here, since that branch
       // would itself confirm account existence.
       //

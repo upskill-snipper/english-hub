@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   title: 'Non-fiction text types',
   description:
     'Reading-and-writing guides to every non-fiction text type on the ' +
-    'iLowerSecondary English specification — autobiography, blogs, ' +
-    'leaflets, articles, instructions, recount, reports — and the five ' +
+    'iLowerSecondary English specification - autobiography, blogs, ' +
+    'leaflets, articles, instructions, recount, reports - and the five ' +
     'purposes.',
   alternates: { canonical: PAGE_URL },
 }
@@ -160,7 +160,7 @@ export default async function TextTypesIndex() {
       </div>
 
       <p>
-        The third Section A text is always fiction — see the{' '}
+        The third Section A text is always fiction - see the{' '}
         <Link href="/ks3/ilowersecondary/fiction">{trFictionLinkText}</Link>.
       </p>
 

@@ -1,20 +1,20 @@
 // @ts-nocheck
 export interface WritingModel {
-  id: string;
-  title: string;
-  type: 'narrative' | 'descriptive' | 'speech' | 'article' | 'letter' | 'review' | 'essay';
-  board: string;
-  grade: string;
-  prompt: string;
-  modelText: string;
+  id: string
+  title: string
+  type: 'narrative' | 'descriptive' | 'speech' | 'article' | 'letter' | 'review' | 'essay'
+  board: string
+  grade: string
+  prompt: string
+  modelText: string
   annotations: {
-    startIndex: number;
-    endIndex: number;
-    technique: string;
-    effect: string;
-  }[];
-  teacherNotes: string;
-  studentCheckpoints: string[];
+    startIndex: number
+    endIndex: number
+    technique: string
+    effect: string
+  }[]
+  teacherNotes: string
+  studentCheckpoints: string[]
 }
 
 export const writingModels: WritingModel[] = [
@@ -24,14 +24,15 @@ export const writingModels: WritingModel[] = [
     type: 'narrative',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write a narrative set in an urban environment where a chance encounter changes a character\'s perspective.',
-    modelText: `The neon sign flickered erratically above Marco's Deli, casting amber shadows across the wet pavement. It was two in the morning, and I'd taken the shortcut through the alley again—the one my mother warned me about every single time I visited the city. My hands were jammed deep in my jacket pockets, shoulders hunched against the cold March wind that cut through the narrow street like a knife.
+    prompt:
+      "Write a narrative set in an urban environment where a chance encounter changes a character's perspective.",
+    modelText: `The neon sign flickered erratically above Marco's Deli, casting amber shadows across the wet pavement. It was two in the morning, and I'd taken the shortcut through the alley again-the one my mother warned me about every single time I visited the city. My hands were jammed deep in my jacket pockets, shoulders hunched against the cold March wind that cut through the narrow street like a knife.
 
-That's when I saw him. An old man sat on the curb beside a shopping cart overflowing with plastic bags, newspapers, and objects I couldn't quite identify. His coat was patched in at least a dozen places, and his shoes—if you could call them that—were held together with what looked like duct tape and sheer determination. Our eyes met for just a second, and I felt that familiar prickle of discomfort creep up my spine. I quickened my pace.
+That's when I saw him. An old man sat on the curb beside a shopping cart overflowing with plastic bags, newspapers, and objects I couldn't quite identify. His coat was patched in at least a dozen places, and his shoes-if you could call them that-were held together with what looked like duct tape and sheer determination. Our eyes met for just a second, and I felt that familiar prickle of discomfort creep up my spine. I quickened my pace.
 
 "Spare change?" His voice cracked like old leather, and I almost didn't hear it over the hum of the refrigeration unit from the deli.
 
-I should have kept walking. That's what I'd been taught. That's what everyone did. But something in that moment—maybe it was exhaustion from the late night, or maybe it was something else entirely—made me stop. I turned back slowly.
+I should have kept walking. That's what I'd been taught. That's what everyone did. But something in that moment-maybe it was exhaustion from the late night, or maybe it was something else entirely-made me stop. I turned back slowly.
 
 He wasn't looking at me anymore. He was staring at a photograph in his weathered hands, his face illuminated by the deli's glow. Without thinking, I approached him. Up close, I could see the photograph more clearly: a young woman in a wedding dress, beaming, her arm linked through his.
 
@@ -41,7 +42,7 @@ His eyes glistened. "Forty-two years," he whispered. "She passed three months ag
 
 I spent the next hour sitting with him on that cold curb, listening to stories about Margaret, about their life together, about the small apartment three blocks over where they'd raised two children. He told me about his daughter, who had her own problems and hadn't spoken to him in years. He told me about the pride that had kept him from asking for help when his pension ran out.
 
-When I finally left, I didn't give him money. I gave him my phone number. By the next morning, I'd called the shelter downtown. By next week, his daughter was flying in from Sacramento. I never saw him on that corner again, but I see him differently in my mind now—not a problem to avoid, but a person whose story had been invisible to everyone who passed him by.
+When I finally left, I didn't give him money. I gave him my phone number. By the next morning, I'd called the shelter downtown. By next week, his daughter was flying in from Sacramento. I never saw him on that corner again, but I see him differently in my mind now-not a problem to avoid, but a person whose story had been invisible to everyone who passed him by.
 
 The city didn't change that night. The alley remained the same narrow passage it had always been. But I did.`,
     annotations: [
@@ -49,40 +50,43 @@ The city didn't change that night. The alley remained the same narrow passage it
         startIndex: 0,
         endIndex: 143,
         technique: 'Vivid sensory imagery with specific details',
-        effect: 'Immediately immerses the reader in the urban setting and creates atmosphere of isolation and cold',
+        effect:
+          'Immediately immerses the reader in the urban setting and creates atmosphere of isolation and cold',
       },
       {
         startIndex: 312,
         endIndex: 395,
         technique: 'Internal characterization through physical actions',
-        effect: 'Shows the narrator\'s initial prejudice and discomfort without stating it directly',
+        effect: "Shows the narrator's initial prejudice and discomfort without stating it directly",
       },
       {
         startIndex: 683,
         endIndex: 750,
         technique: 'Dialogue that reveals character background',
-        effect: 'The old man\'s cracked voice and specific request humanize him and create sympathy',
+        effect: "The old man's cracked voice and specific request humanize him and create sympathy",
       },
       {
         startIndex: 1150,
         endIndex: 1250,
         technique: 'Turning point through a small moment of connection',
-        effect: 'The photograph serves as a catalyst that shifts the narrator\'s entire perspective',
+        effect: "The photograph serves as a catalyst that shifts the narrator's entire perspective",
       },
       {
         startIndex: 1800,
         endIndex: 1950,
         technique: 'Storytelling within storytelling (embedded narrative)',
-        effect: 'Personal details about Margaret build emotional depth and explain the man\'s situation',
+        effect:
+          "Personal details about Margaret build emotional depth and explain the man's situation",
       },
       {
         startIndex: 2100,
         endIndex: 2250,
         technique: 'Resolution that shows internal change rather than external problem-solving',
-        effect: 'The narrator\'s actions demonstrate genuine transformation, not pity or obligation',
+        effect: "The narrator's actions demonstrate genuine transformation, not pity or obligation",
       },
     ],
-    teacherNotes: 'This model demonstrates masterful use of setting as more than backdrop—the urban environment becomes a character itself. Notice how the writer uses the specific details of the deli sign, the alley, and the street to ground us in place. The turning point is subtle: not a dramatic revelation, but a moment of genuine connection through a photograph. The dialogue is natural and reveals character through what is said and how it\'s said. Most importantly, the narrative shows rather than tells the emotional journey. The final paragraph is particularly effective because it doesn\'t claim the narrator is a better person, but rather shows how perception has shifted. This avoids melodrama while maintaining genuine emotional impact.',
+    teacherNotes:
+      "This model demonstrates masterful use of setting as more than backdrop-the urban environment becomes a character itself. Notice how the writer uses the specific details of the deli sign, the alley, and the street to ground us in place. The turning point is subtle: not a dramatic revelation, but a moment of genuine connection through a photograph. The dialogue is natural and reveals character through what is said and how it's said. Most importantly, the narrative shows rather than tells the emotional journey. The final paragraph is particularly effective because it doesn't claim the narrator is a better person, but rather shows how perception has shifted. This avoids melodrama while maintaining genuine emotional impact.",
     studentCheckpoints: [
       'Does your opening immediately establish setting and mood through sensory details?',
       'Is your turning point a moment of genuine human connection rather than dramatic coincidence?',
@@ -97,7 +101,8 @@ The city didn't change that night. The alley remained the same narrow passage it
     type: 'narrative',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write a narrative set in a rural environment where a character faces a difficult decision.',
+    prompt:
+      'Write a narrative set in a rural environment where a character faces a difficult decision.',
     modelText: `The field stretched toward the horizon in waves of golden wheat, the same field my grandfather had worked for sixty years before passing it to my father, who had worked it for thirty-five years before passing it to me. Now it was mine, and I was thirty-two years old, standing at the edge of August with a decision that felt heavier than the August heat itself.
 
 The letter from the developer was still in my shirt pocket, worn soft from reading it obsessively over the past month. They were offering three million dollars for the two hundred acres. Three million dollars. Do you know what that meant? It meant my daughter could go to any university she wanted. It meant no more pre-dawn risings in the brutal cold of November and December. It meant my wife could see a doctor more than once a year.
@@ -122,7 +127,7 @@ I turned to look at her, and she was staring out at the same field, her jaw set 
 
 I burned the letter that evening. I didn't tell my wife. I simply burned it in the fireplace and watched it curl and blacken and turn to ash. The next morning, I called the bank and took out a loan to repair the roof. I renegotiated the water rights. I researched new crops that the drought-stressed soil might support.
 
-My life didn't get easier. My wife had to continue rationing doctor visits, and my body ached in new ways every season. But there was something else too—a quiet certainty that my daughter and I had made the only choice that meant anything at all. The field would continue. That felt like something worth the sacrifice, and I was surprised to find that I meant it.`,
+My life didn't get easier. My wife had to continue rationing doctor visits, and my body ached in new ways every season. But there was something else too-a quiet certainty that my daughter and I had made the only choice that meant anything at all. The field would continue. That felt like something worth the sacrifice, and I was surprised to find that I meant it.`,
     annotations: [
       {
         startIndex: 0,
@@ -134,7 +139,7 @@ My life didn't get easier. My wife had to continue rationing doctor visits, and 
         startIndex: 270,
         endIndex: 380,
         technique: 'Contrasting material benefit with emotional cost',
-        effect: 'Demonstrates the genuine struggle—this isn\'t simple; three million is real money',
+        effect: "Demonstrates the genuine struggle-this isn't simple; three million is real money",
       },
       {
         startIndex: 550,
@@ -146,24 +151,27 @@ My life didn't get easier. My wife had to continue rationing doctor visits, and 
         startIndex: 900,
         endIndex: 1000,
         technique: 'Dialogue that carries the turning point',
-        effect: 'The daughter\'s announcement shifts the entire perspective without the father forcing it',
+        effect:
+          "The daughter's announcement shifts the entire perspective without the father forcing it",
       },
       {
         startIndex: 1400,
         endIndex: 1550,
         technique: 'Symbolic action (burning the letter)',
-        effect: 'The burning represents a decision without dialogue or explanation, showing not telling',
+        effect:
+          'The burning represents a decision without dialogue or explanation, showing not telling',
       },
       {
         startIndex: 1700,
         endIndex: 1800,
         technique: 'Acknowledging that the choice comes with ongoing costs',
-        effect: 'Realistic conclusion—life doesn\'t become easy, but the choice gains meaning',
+        effect: "Realistic conclusion-life doesn't become easy, but the choice gains meaning",
       },
     ],
-    teacherNotes: 'This narrative excels at presenting a genuine moral dilemma without easy answers. The writer doesn\'t shy away from showing how much money means (doctor visits, equipment repairs) and thus makes the decision to refuse it feel earned rather than preachy. Notice how the turning point comes not from the father\'s reflection, but from his daughter\'s quiet certainty. This is more powerful than if he had convinced himself. The rural setting is woven in naturally through details like the barn roof, irrigation systems, and water rights—details that matter to the plot, not decoration. The final lines are especially effective because they don\'t claim the decision was right, only that it was meaningful.',
+    teacherNotes:
+      "This narrative excels at presenting a genuine moral dilemma without easy answers. The writer doesn't shy away from showing how much money means (doctor visits, equipment repairs) and thus makes the decision to refuse it feel earned rather than preachy. Notice how the turning point comes not from the father's reflection, but from his daughter's quiet certainty. This is more powerful than if he had convinced himself. The rural setting is woven in naturally through details like the barn roof, irrigation systems, and water rights-details that matter to the plot, not decoration. The final lines are especially effective because they don't claim the decision was right, only that it was meaningful.",
     studentCheckpoints: [
-      'Have you made your character\'s choice genuinely difficult by showing real costs?',
+      "Have you made your character's choice genuinely difficult by showing real costs?",
       'Does the turning point come from another character or external event rather than self-reflection?',
       'Are your setting details integral to the plot, not just atmospheric?',
       'Do you acknowledge that major choices come with lasting consequences?',
@@ -172,14 +180,15 @@ My life didn't get easier. My wife had to continue rationing doctor visits, and 
   },
   {
     id: 'gr9-narrative-historical-3',
-    title: 'The Suffragette\'s Diary',
+    title: "The Suffragette's Diary",
     type: 'narrative',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write a narrative set during a historical period of social change from a first-person perspective.',
+    prompt:
+      'Write a narrative set during a historical period of social change from a first-person perspective.',
     modelText: `March 15th, 1913
 
-My knuckles are still raw from where the constable twisted my wrists during arrest. Margaret says the swelling will fade within a week, but the knowledge that they felt entitled to hurt us—that they believed we deserved it—this won't fade so easily.
+My knuckles are still raw from where the constable twisted my wrists during arrest. Margaret says the swelling will fade within a week, but the knowledge that they felt entitled to hurt us-that they believed we deserved it-this won't fade so easily.
 
 We were marching down Regent Street with our banners: "Votes for Women" and "No Justice Without Representation." I was terrified, truth be told. I've been terrified every time we've marched, but the fear has become background noise now, like the constant hum of factory machinery that fills the East End. What terrifies me more than the police is the thought of never marching at all.
 
@@ -187,7 +196,7 @@ This morning, before I left for what I knew might be arrest, I looked at my daug
 
 But I will explain it. When she's old enough to understand, I'll tell her that some things matter more than safety.
 
-We lost count of how many of us there were. Hundreds, perhaps a thousand. Our voices echoed off the stone buildings. Some men threw eggs. One woman next to me took a rotten tomato full in the face, and she wiped it away without missing a word of our chant. That's what struck me most—not the anger of the crowd, but our absolute steadfastness. We knew what we wanted. We knew we were right. And we kept marching.
+We lost count of how many of us there were. Hundreds, perhaps a thousand. Our voices echoed off the stone buildings. Some men threw eggs. One woman next to me took a rotten tomato full in the face, and she wiped it away without missing a word of our chant. That's what struck me most-not the anger of the crowd, but our absolute steadfastness. We knew what we wanted. We knew we were right. And we kept marching.
 
 The cell was bitterly cold. Three of us were crammed into a space meant for one. There was a bucket in the corner and nothing else. Mrs. Chen, who works as a seamstress, recited poetry the entire night to keep our spirits up. Do you know what poetry sustains a woman in prison? Not gentle verse, but fierce words about freedom and courage.
 
@@ -207,25 +216,27 @@ Margaret has already arranged another march for next month. I'll be there. Whate
         startIndex: 180,
         endIndex: 280,
         technique: 'Second-order conflict (internal fear vs. external danger)',
-        effect: 'Shows that the character\'s courage isn\'t the absence of fear, but action despite it',
+        effect:
+          "Shows that the character's courage isn't the absence of fear, but action despite it",
       },
       {
         startIndex: 450,
         endIndex: 550,
         technique: 'Personal stakes through loved ones',
-        effect: 'Daughter\'s sleeping face raises the moral stakes and makes choice more complex',
+        effect: "Daughter's sleeping face raises the moral stakes and makes choice more complex",
       },
       {
         startIndex: 700,
         endIndex: 850,
         technique: 'Specific sensory details of the march',
-        effect: 'The rotten tomato, the stone buildings, the voices—these concrete moments make history alive',
+        effect:
+          'The rotten tomato, the stone buildings, the voices-these concrete moments make history alive',
       },
       {
         startIndex: 1050,
         endIndex: 1150,
         technique: 'Focusing on small human moments in large conflict',
-        effect: 'Mrs. Chen\'s poetry in prison becomes more powerful than grand declarations',
+        effect: "Mrs. Chen's poetry in prison becomes more powerful than grand declarations",
       },
       {
         startIndex: 1300,
@@ -234,29 +245,31 @@ Margaret has already arranged another march for next month. I'll be there. Whate
         effect: 'Job loss is mundane compared to prison, but its impact is immediate and practical',
       },
     ],
-    teacherNotes: 'This narrative uses the diary format to create intimacy while covering significant historical events. Notice how the writer doesn\'t explain the suffrage movement—she assumes reader knowledge and instead focuses on one woman\'s personal experience within it. The most effective moment is probably Mrs. Chen\'s poetry, which shows solidarity and resilience through a small detail rather than grand statement. The ending is particularly strong because it acknowledges the real costs (job loss, fear about feeding her daughter) without letting those costs derail the character\'s commitment. This is far more powerful than a character who is unaffected by consequences. The raw knuckles in the first line and the rotten tomato in the middle show that this narrative is grounded in physical reality, not abstraction.',
+    teacherNotes:
+      "This narrative uses the diary format to create intimacy while covering significant historical events. Notice how the writer doesn't explain the suffrage movement-she assumes reader knowledge and instead focuses on one woman's personal experience within it. The most effective moment is probably Mrs. Chen's poetry, which shows solidarity and resilience through a small detail rather than grand statement. The ending is particularly strong because it acknowledges the real costs (job loss, fear about feeding her daughter) without letting those costs derail the character's commitment. This is far more powerful than a character who is unaffected by consequences. The raw knuckles in the first line and the rotten tomato in the middle show that this narrative is grounded in physical reality, not abstraction.",
     studentCheckpoints: [
       'Does your historical setting feel specific rather than generic?',
       'Do you show personal motivations alongside the larger historical event?',
       'Are there concrete details that ground the reader in the specific time?',
-      'Do you acknowledge the real costs of your character\'s choices?',
+      "Do you acknowledge the real costs of your character's choices?",
       'Is the voice authentic to the character and era without being cliché?',
     ],
   },
   {
     id: 'gr9-narrative-fantasy-4',
-    title: 'The Cartographer\'s Daughter',
+    title: "The Cartographer's Daughter",
     type: 'narrative',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write a fantasy narrative where the protagonist discovers an unexpected truth about a familiar world.',
+    prompt:
+      'Write a fantasy narrative where the protagonist discovers an unexpected truth about a familiar world.',
     modelText: `My father had spent forty years mapping the Shattered Kingdoms, his ink-stained fingers moving across vellum as he documented every mountain pass, every river that changed course with the seasons, every village that appeared and disappeared like smoke. I'd grown up watching him work, watching him pour his life into accuracy and detail. Maps were his religion, and accuracy was his god.
 
 Until I found the one map he'd hidden.
 
 I was seventeen when I discovered it, rolled beneath the floorboards in his study, wrapped in oilcloth so carefully preserved that I knew immediately it was important. My name was written on the outer wrapping in his handwriting: "For Eira. When you understand."
 
-The map showed our world—the Shattered Kingdoms I'd known my entire life—but overlaid with another world entirely, one that occupied the same space. Mountains here matched mountains there, rivers curved identically, but the cities were different, the borders redrawn, the names all wrong. In this other world, the Sunken City of Aldris was not sunken. The Shadowlands were green. The Eastern Kingdoms, which had been at war for three centuries, were unified.
+The map showed our world-the Shattered Kingdoms I'd known my entire life-but overlaid with another world entirely, one that occupied the same space. Mountains here matched mountains there, rivers curved identically, but the cities were different, the borders redrawn, the names all wrong. In this other world, the Sunken City of Aldris was not sunken. The Shadowlands were green. The Eastern Kingdoms, which had been at war for three centuries, were unified.
 
 There was a note beneath the map, my father's careful script documenting what I'd always suspected but never admitted: "The two worlds are bleeding into each other. Have been for a generation. This is not disaster. This is evolution."
 
@@ -272,7 +285,7 @@ My hands were shaking. "The magistrate says the Sunken City has always been sunk
 
 He looked at me, and his eyes held something like grief and something like hope. "It means we're becoming something new. It means the world your children know will be different from the world I grew up in. And I think... I think that's not something to be afraid of."
 
-The next morning, my father took every map he'd ever made and burned them. He didn't explain. He simply walked into the courtyard with his life's work and set it to flame. The Archives would store the official versions, he said. But the real maps—the ones that tell the truth of what's actually happening—those belong to us now. Those we keep. Those we update. Those we pass down.
+The next morning, my father took every map he'd ever made and burned them. He didn't explain. He simply walked into the courtyard with his life's work and set it to flame. The Archives would store the official versions, he said. But the real maps-the ones that tell the truth of what's actually happening-those belong to us now. Those we keep. Those we update. Those we pass down.
 
 I understand now that he gave me the hidden map not because he was afraid I'd steal it, but because I would eventually be the one to update it. The world changes. Maps should change with it. That's not infidelity to accuracy. That's what accuracy means.`,
     annotations: [
@@ -292,13 +305,14 @@ I understand now that he gave me the hidden map not because he was afraid I'd st
         startIndex: 650,
         endIndex: 800,
         technique: 'Dialogue that gradually reveals the truth',
-        effect: 'The father explains what\'s happening through conversation, not exposition dump',
+        effect: "The father explains what's happening through conversation, not exposition dump",
       },
       {
         startIndex: 1000,
         endIndex: 1200,
         technique: 'Examples of the impossible becoming normal',
-        effect: 'Specific details like the woman in the Archives ground the fantasy in everyday moments',
+        effect:
+          'Specific details like the woman in the Archives ground the fantasy in everyday moments',
       },
       {
         startIndex: 1400,
@@ -310,10 +324,12 @@ I understand now that he gave me the hidden map not because he was afraid I'd st
         startIndex: 1700,
         endIndex: 1800,
         technique: 'Resolution that reframes the central question',
-        effect: 'The ending redefines accuracy itself, suggesting truth is more complex than static recording',
+        effect:
+          'The ending redefines accuracy itself, suggesting truth is more complex than static recording',
       },
     ],
-    teacherNotes: 'This fantasy narrative uses the concept of maps as a metaphor for how we understand reality, making it work on both literal and symbolic levels. The world-building is economical—we learn what we need through the discovery rather than through exposition. Notice how the writer doesn\'t explain the fantasy mechanism in scientific detail; instead, she shows examples (the woman claiming to remember a different place, the text in an extinct language) that feel mysterious and real. The relationship between father and daughter is central, with the burning of the maps serving as the moment where she truly understands his perspective. The ending avoids neat resolution; instead, it suggests ongoing change and adaptation, which feels more honest to the premise. This balance between concrete detail and larger philosophical questions gives the narrative depth.',
+    teacherNotes:
+      "This fantasy narrative uses the concept of maps as a metaphor for how we understand reality, making it work on both literal and symbolic levels. The world-building is economical-we learn what we need through the discovery rather than through exposition. Notice how the writer doesn't explain the fantasy mechanism in scientific detail; instead, she shows examples (the woman claiming to remember a different place, the text in an extinct language) that feel mysterious and real. The relationship between father and daughter is central, with the burning of the maps serving as the moment where she truly understands his perspective. The ending avoids neat resolution; instead, it suggests ongoing change and adaptation, which feels more honest to the premise. This balance between concrete detail and larger philosophical questions gives the narrative depth.",
     studentCheckpoints: [
       'Is your fantasy element woven throughout or dumped all at once?',
       'Does the protagonist learn something that changes how they see the world?',
@@ -329,19 +345,19 @@ I understand now that he gave me the hidden map not because he was afraid I'd st
     board: 'Grade 9',
     grade: '9',
     prompt: 'Write a descriptive piece that captures the approach and intensity of a storm.',
-    modelText: `The birds left first. For hours before the storm arrived, there had been this strange absence of birdsong—no sparrows in the eaves, no crows in the field beyond, no gulls even in the distance. The silence was so complete it had a presence of its own, a weight that pressed down on the afternoon like a hand on your chest.
+    modelText: `The birds left first. For hours before the storm arrived, there had been this strange absence of birdsong-no sparrows in the eaves, no crows in the field beyond, no gulls even in the distance. The silence was so complete it had a presence of its own, a weight that pressed down on the afternoon like a hand on your chest.
 
-Then came the light. The sky didn't darken gradually; instead, it shifted to a sickly greenish-gray that made the white buildings look corpse-like. The sun was still there, somewhere behind those churning clouds, but it cast everything in a lurid glow that belonged to another planet. Trees looked different in this light—almost alien, their leaves turned the wrong way, showing the pale undersides. The grass took on a phosphorescent quality, as though it glowed from within.
+Then came the light. The sky didn't darken gradually; instead, it shifted to a sickly greenish-gray that made the white buildings look corpse-like. The sun was still there, somewhere behind those churning clouds, but it cast everything in a lurid glow that belonged to another planet. Trees looked different in this light-almost alien, their leaves turned the wrong way, showing the pale undersides. The grass took on a phosphorescent quality, as though it glowed from within.
 
-The wind arrived in waves, not gradually but in sudden gusts that seemed to arrive from different directions simultaneously. First it was warm, carrying the smell of distant rain and something metallic, something electric. Then it turned cold, and with that cold came the first drops—not rain yet, but the precursor, fat globules that hit with surprising force. They didn't fall; they arrived horizontally, driven by wind that had begun to sound almost animal, almost sentient.
+The wind arrived in waves, not gradually but in sudden gusts that seemed to arrive from different directions simultaneously. First it was warm, carrying the smell of distant rain and something metallic, something electric. Then it turned cold, and with that cold came the first drops-not rain yet, but the precursor, fat globules that hit with surprising force. They didn't fall; they arrived horizontally, driven by wind that had begun to sound almost animal, almost sentient.
 
-The temperature plummeted. What had been a humid seventy degrees became forty in the space of minutes, and I could see my breath, which seemed impossible in July. Lightning fractured across the sky in branching patterns that reminded me of blood vessels, of the delicate networks that hold life together. The thunder came almost simultaneously—not a sound but a physical force that I felt in my sternum, in my teeth, in the roots of my hair. The ground trembled. The house trembled. The very air seemed to vibrate at a frequency that made your skin prickle.
+The temperature plummeted. What had been a humid seventy degrees became forty in the space of minutes, and I could see my breath, which seemed impossible in July. Lightning fractured across the sky in branching patterns that reminded me of blood vessels, of the delicate networks that hold life together. The thunder came almost simultaneously-not a sound but a physical force that I felt in my sternum, in my teeth, in the roots of my hair. The ground trembled. The house trembled. The very air seemed to vibrate at a frequency that made your skin prickle.
 
 And then the rain came. Not gradually, but all at once, as though a dam had broken overhead. The rain was torrential, so thick that I couldn't see the fence line thirty feet away. The drops were large and cold and seemed almost solid, drumming against the windows with machine-gun intensity. Water began to stream down the glass in rivers. The gutters sang with the overflow.
 
-The world had compressed into this moment, into this small house surrounded by water and wind and noise. There was no sense of time passing normally. An hour could have been minutes or days. All I was aware of was the sound—the roar of it, the relentlessness of it, the sense that this storm was a living thing with its own intentions.
+The world had compressed into this moment, into this small house surrounded by water and wind and noise. There was no sense of time passing normally. An hour could have been minutes or days. All I was aware of was the sound-the roar of it, the relentlessness of it, the sense that this storm was a living thing with its own intentions.
 
-Eventually, the intensity began to fade. The rain settled into a hard, steady downpour rather than a deluge. The wind became directional again rather than chaotic. The lightning moved farther away, the thunder slightly delayed. But for those minutes when the storm had been at its height, it had seemed capable of anything—of tearing down the roof, of flooding the whole world, of fundamentally changing everything it touched.
+Eventually, the intensity began to fade. The rain settled into a hard, steady downpour rather than a deluge. The wind became directional again rather than chaotic. The lightning moved farther away, the thunder slightly delayed. But for those minutes when the storm had been at its height, it had seemed capable of anything-of tearing down the roof, of flooding the whole world, of fundamentally changing everything it touched.
 
 And as I watched the water stream down the windows, I realized that's what storms do. They don't just pass through. They alter everything they touch.`,
     annotations: [
@@ -349,19 +365,22 @@ And as I watched the water stream down the windows, I realized that's what storm
         startIndex: 0,
         endIndex: 100,
         technique: 'Opening with absence as presence',
-        effect: 'The silence created by missing birds establishes unease without explicit statement',
+        effect:
+          'The silence created by missing birds establishes unease without explicit statement',
       },
       {
         startIndex: 150,
         endIndex: 300,
         technique: 'Color and light as primary descriptive tool',
-        effect: 'The greenish-gray light and phosphorescent grass create a surreal, ominous atmosphere',
+        effect:
+          'The greenish-gray light and phosphorescent grass create a surreal, ominous atmosphere',
       },
       {
         startIndex: 450,
         endIndex: 600,
         technique: 'Sensory progression through temperature, smell, and touch',
-        effect: 'Moving through multiple senses creates immersion; the metallic smell foreshadows electricity',
+        effect:
+          'Moving through multiple senses creates immersion; the metallic smell foreshadows electricity',
       },
       {
         startIndex: 750,
@@ -373,7 +392,8 @@ And as I watched the water stream down the windows, I realized that's what storm
         startIndex: 1000,
         endIndex: 1150,
         technique: 'Sound as primary narrative element',
-        effect: 'Machine-gun intensity, roar, relentlessness make the storm feel active and aggressive',
+        effect:
+          'Machine-gun intensity, roar, relentlessness make the storm feel active and aggressive',
       },
       {
         startIndex: 1400,
@@ -382,7 +402,8 @@ And as I watched the water stream down the windows, I realized that's what storm
         effect: 'The final observation gives the description meaning beyond mere observation',
       },
     ],
-    teacherNotes: 'Excellent descriptive writing operates on multiple sensory levels while maintaining a consistent perspective and building intensity. This piece does all three. Notice how it doesn\'t just say "it was a big storm"—instead, it shows the progression through concrete sensory details. The choice to open with the absence of birds is sophisticated; it creates unease without explanation. The metaphors (blood vessels for lightning, machine-gun for rain) are apt and enhance understanding rather than distract from it. The shift in perspective at the end, where the narrator realizes what storms "do," gives the description purpose. This is not description for its own sake; it\'s description in service of a larger realization. The final paragraph is particularly effective because it grounds the experience back into human understanding.',
+    teacherNotes:
+      'Excellent descriptive writing operates on multiple sensory levels while maintaining a consistent perspective and building intensity. This piece does all three. Notice how it doesn\'t just say "it was a big storm"-instead, it shows the progression through concrete sensory details. The choice to open with the absence of birds is sophisticated; it creates unease without explanation. The metaphors (blood vessels for lightning, machine-gun for rain) are apt and enhance understanding rather than distract from it. The shift in perspective at the end, where the narrator realizes what storms "do," gives the description purpose. This is not description for its own sake; it\'s description in service of a larger realization. The final paragraph is particularly effective because it grounds the experience back into human understanding.',
     studentCheckpoints: [
       'Have you progressed through multiple senses, not just visual?',
       'Do your metaphors clarify the image or merely decorate it?',
@@ -400,17 +421,17 @@ And as I watched the water stream down the windows, I realized that's what storm
     prompt: 'Write a description of a busy marketplace focusing on sensory richness.',
     modelText: `The smell arrived first, before the marketplace even came into view. It rolled down the narrow street in layers: cardamom and cinnamon from the spice vendors, overlaid with the sharp tang of lime and chili, the sweetness of honey and jaggery, and underneath it all, the dusty, earthy smell of turmeric that stained everything yellow. It was overwhelming and inviting simultaneously, the kind of smell that makes your mouth water and your eyes water at the same time.
 
-The marketplace itself was a controlled chaos. Stalls lined both sides of the street, their colorful awnings creating a tunnel of red and gold and deep blue. Silks were draped like frozen waves, their patterns shifting in the late-afternoon light. Next to them, mountains of fruits and vegetables were arranged with geometric precision—pyramids of oranges, perfect circles of red tomatoes, bundles of long beans tied together with twine so green it looked artificial.
+The marketplace itself was a controlled chaos. Stalls lined both sides of the street, their colorful awnings creating a tunnel of red and gold and deep blue. Silks were draped like frozen waves, their patterns shifting in the late-afternoon light. Next to them, mountains of fruits and vegetables were arranged with geometric precision-pyramids of oranges, perfect circles of red tomatoes, bundles of long beans tied together with twine so green it looked artificial.
 
 The crowd moved with its own rhythm, neither hurried nor leisurely. Shoppers paused at each stall, picking up items, turning them over, examining them with the critical eye of people who knew quality. Vendors called out their wares in practiced voices, their pitches overlapping into a kind of market music: "Fresh coconuts, best price!" "These spices, direct from the hills!" "Honey like gold, honey like pure gold!" The calls created a kind of sonic texture that filled the space.
 
-But the most striking part was the light. Dusk was settling over the marketplace, and the vendors had begun to light small oil lamps at their stalls. These flickering lights caught the dust rising from the ground—dust stirred by thousands of feet and by the vendor sweeping with his palm frond—and transformed it into something luminous. Everything seemed to glow with a soft orange light, as though the marketplace existed slightly outside of time, in some gilded version of reality.
+But the most striking part was the light. Dusk was settling over the marketplace, and the vendors had begun to light small oil lamps at their stalls. These flickering lights caught the dust rising from the ground-dust stirred by thousands of feet and by the vendor sweeping with his palm frond-and transformed it into something luminous. Everything seemed to glow with a soft orange light, as though the marketplace existed slightly outside of time, in some gilded version of reality.
 
-Colors seemed more saturated in this light. The yellows were brighter, the reds deeper, the blues more like jewels. Spices in burlap sacks looked like small mountains of gold and crimson and burnt sienna. A vendor selling flowers had his stall arranged in rings of color, white marigolds on the outside, then yellow, then orange, then pink and red in the center—a target of color that drew your eye and held it.
+Colors seemed more saturated in this light. The yellows were brighter, the reds deeper, the blues more like jewels. Spices in burlap sacks looked like small mountains of gold and crimson and burnt sienna. A vendor selling flowers had his stall arranged in rings of color, white marigolds on the outside, then yellow, then orange, then pink and red in the center-a target of color that drew your eye and held it.
 
 The textures were equally rich: the rough weave of burlap, the smooth roundness of fresh fruit, the fine dust that coated every surface, the soft silk of the fabrics, the granular texture of various spices. To touch anything was to understand its age, its origin, its care. The limes felt warm from the sun. The fabrics felt like they held memories of the hands that had dyed them.
 
-By the time the sun finally touched the horizon, the marketplace had transformed. The individual stalls were no longer separate entities but part of one unified organism, one great marketplace breathing and moving as a single entity. The colors bled into each other as the light shifted. The sounds seemed to come from everywhere and nowhere. And the smell—that rich, layered smell—had deepened into something almost narcotic, almost dizzying in its complexity.
+By the time the sun finally touched the horizon, the marketplace had transformed. The individual stalls were no longer separate entities but part of one unified organism, one great marketplace breathing and moving as a single entity. The colors bled into each other as the light shifted. The sounds seemed to come from everywhere and nowhere. And the smell-that rich, layered smell-had deepened into something almost narcotic, almost dizzying in its complexity.
 
 To stand in the marketplace at that hour was to understand why people came back, day after day, year after year. It was not merely a place to buy things. It was a place to exist in richness, in sensation, in the evidence of human craft and care.`,
     annotations: [
@@ -418,7 +439,8 @@ To stand in the marketplace at that hour was to understand why people came back,
         startIndex: 0,
         endIndex: 180,
         technique: 'Opening with smell as the primary sensory gateway',
-        effect: 'Activates multiple senses at once; overwhelming quality mirrors the reader\'s experience',
+        effect:
+          "Activates multiple senses at once; overwhelming quality mirrors the reader's experience",
       },
       {
         startIndex: 250,
@@ -451,7 +473,8 @@ To stand in the marketplace at that hour was to understand why people came back,
         effect: 'Warm limes and memory-holding fabrics personalize the sensory experience',
       },
     ],
-    teacherNotes: 'This descriptive piece excels at creating richness without overwhelm. The key technique is progression: it doesn\'t dump all sensory information at once, but rather builds through layers—first smell, then sight, then sound, then light, then color, then texture. Notice how the writer also progresses in interpretation; by the final paragraph, the marketplace has become almost mythic, transformed from mere location to spiritual experience. The specific details (turmeric staining yellow, marigolds arranged in a target, limes warm from sun) make the general descriptions concrete and memorable. Most importantly, this piece demonstrates that good description doesn\'t just record; it also interprets and reveals the emotional significance of what\'s being described.',
+    teacherNotes:
+      "This descriptive piece excels at creating richness without overwhelm. The key technique is progression: it doesn't dump all sensory information at once, but rather builds through layers-first smell, then sight, then sound, then light, then color, then texture. Notice how the writer also progresses in interpretation; by the final paragraph, the marketplace has become almost mythic, transformed from mere location to spiritual experience. The specific details (turmeric staining yellow, marigolds arranged in a target, limes warm from sun) make the general descriptions concrete and memorable. Most importantly, this piece demonstrates that good description doesn't just record; it also interprets and reveals the emotional significance of what's being described.",
     studentCheckpoints: [
       'Have you sensory-overloaded or layered your descriptions?',
       'Do your color and texture descriptions feel accurate or cliché?',
@@ -466,20 +489,21 @@ To stand in the marketplace at that hour was to understand why people came back,
     type: 'descriptive',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write a description of an abandoned or neglected place that reveals its past through detail.',
-    modelText: `The theater had been closed for sixteen years, though you could argue it began closing long before that. The marquee still held the title of the last film shown: letters hung at odd angles, some missing entirely. What remained spelled out something like "MMER OF..." — a fragment of an advertisement for a summer movie that hadn't been seen since 2007.
+    prompt:
+      'Write a description of an abandoned or neglected place that reveals its past through detail.',
+    modelText: `The theater had been closed for sixteen years, though you could argue it began closing long before that. The marquee still held the title of the last film shown: letters hung at odd angles, some missing entirely. What remained spelled out something like "MMER OF..." - a fragment of an advertisement for a summer movie that hadn't been seen since 2007.
 
-The front doors were chained, but a side entrance—probably where the actors once came—hung open with the patient insistence of broken things. Inside, sunlight slanted through cracks in the boarded windows, creating sharp geometries of light and shadow on every surface. Dust hung in these light columns like suspended time.
+The front doors were chained, but a side entrance-probably where the actors once came-hung open with the patient insistence of broken things. Inside, sunlight slanted through cracks in the boarded windows, creating sharp geometries of light and shadow on every surface. Dust hung in these light columns like suspended time.
 
-The lobby still held its careful arrangement of a better age. Behind the candy counter—glass now clouded with dust—were the glass bottles of pumps that once dispensed colored syrup for snow cones. The metal scoop for popcorn hung on its hook, a thin layer of rust already claiming its edges. Faded movie posters lined the walls, their colors drained by sunlight and age until the bright reds and blues had become muted pinks and grays. A poster for "Breakfast at Tiffany's" was still visible, from a re-release showing, perhaps, in the 1980s. Next to it, a poster for "Jaws" smiled its mechanical smile.
+The lobby still held its careful arrangement of a better age. Behind the candy counter-glass now clouded with dust-were the glass bottles of pumps that once dispensed colored syrup for snow cones. The metal scoop for popcorn hung on its hook, a thin layer of rust already claiming its edges. Faded movie posters lined the walls, their colors drained by sunlight and age until the bright reds and blues had become muted pinks and grays. A poster for "Breakfast at Tiffany's" was still visible, from a re-release showing, perhaps, in the 1980s. Next to it, a poster for "Jaws" smiled its mechanical smile.
 
-The concession items scattered across the counter told stories. An old register, its keys stiff with disuse, still held coins in its open drawer—pennies and dimes from when someone had given up on this place and simply walked away. A calendar hung on the wall, still turned to June 2007, as though the theater might return to business at any moment. Next to it, a handwritten note in faded blue ink read "Fix the bathroom light—ask Jerry."
+The concession items scattered across the counter told stories. An old register, its keys stiff with disuse, still held coins in its open drawer-pennies and dimes from when someone had given up on this place and simply walked away. A calendar hung on the wall, still turned to June 2007, as though the theater might return to business at any moment. Next to it, a handwritten note in faded blue ink read "Fix the bathroom light-ask Jerry."
 
 But the real cathedral of the place was the auditorium.
 
-The velvet seats—dark red, though the color had faded to a kind of dried-blood brown—stretched toward the screen in perfect rows. Sections of them were torn, their foam insides spilling out like some kind of soft decay. In the darkness, you could still smell the faint ghost of popcorn and something else—the particular smell of old buildings, a mixture of dust and stale air and time itself.
+The velvet seats-dark red, though the color had faded to a kind of dried-blood brown-stretched toward the screen in perfect rows. Sections of them were torn, their foam insides spilling out like some kind of soft decay. In the darkness, you could still smell the faint ghost of popcorn and something else-the particular smell of old buildings, a mixture of dust and stale air and time itself.
 
-The screen was still there, though it had begun to crumble at the edges. Paint peeled from it in long strips, revealing the concrete underneath. Bits of the silver-screen material hung in tatters. A few frames of old film hung from the projection booth—presumably film that broke years ago and was never properly removed. When the light caught them, they projected dancing shadows on the far wall, creating the illusion that some ghost performance was still in progress.
+The screen was still there, though it had begun to crumble at the edges. Paint peeled from it in long strips, revealing the concrete underneath. Bits of the silver-screen material hung in tatters. A few frames of old film hung from the projection booth-presumably film that broke years ago and was never properly removed. When the light caught them, they projected dancing shadows on the far wall, creating the illusion that some ghost performance was still in progress.
 
 The projection booth itself was a time capsule. The projector sat silent in the darkness, its mechanisms frozen, its lens covered in dust. Reels were stacked haphazardly on shelves, the film inside degraded and brittle. Next to the projector, someone had left a thermos. It was still there, probably had been for a decade, its interior long since turned into a archaeological record of what it once contained.
 
@@ -503,7 +527,8 @@ Yet in its stillness, there was something almost beautiful. The light columns fr
         startIndex: 450,
         endIndex: 650,
         technique: 'Objects as historical documents',
-        effect: 'The candy counter, posters, and register tell a story of what was without explicit narrative',
+        effect:
+          'The candy counter, posters, and register tell a story of what was without explicit narrative',
       },
       {
         startIndex: 750,
@@ -521,10 +546,12 @@ Yet in its stillness, there was something almost beautiful. The light columns fr
         startIndex: 1700,
         endIndex: 1850,
         technique: 'Reframing decay as accidental beauty',
-        effect: 'The shift in perspective transforms sadness into appreciation; light becomes gallery lighting',
+        effect:
+          'The shift in perspective transforms sadness into appreciation; light becomes gallery lighting',
       },
     ],
-    teacherNotes: 'This piece demonstrates how description can convey history and emotion without explicit narration. The broken marquee, the June 2007 calendar, the abandoned thermos—each detail carries emotional weight because it implies human presence and loss. The writer resists melodrama; instead of saying "it was sad," she shows objects frozen in time. The spatial progression (lobby to auditorium to projection booth) moves the reader through the space, building understanding as they go. Most impressive is the final paragraph, which reframes the entire description: decay becomes beauty, absence becomes presence. This kind of interpretive turn—where the writer finds meaning in the ruins—transforms mere description into something philosophical. Notice how the writer avoids explicit judgment; instead, she lets readers draw their own conclusions.',
+    teacherNotes:
+      'This piece demonstrates how description can convey history and emotion without explicit narration. The broken marquee, the June 2007 calendar, the abandoned thermos-each detail carries emotional weight because it implies human presence and loss. The writer resists melodrama; instead of saying "it was sad," she shows objects frozen in time. The spatial progression (lobby to auditorium to projection booth) moves the reader through the space, building understanding as they go. Most impressive is the final paragraph, which reframes the entire description: decay becomes beauty, absence becomes presence. This kind of interpretive turn-where the writer finds meaning in the ruins-transforms mere description into something philosophical. Notice how the writer avoids explicit judgment; instead, she lets readers draw their own conclusions.',
     studentCheckpoints: [
       'Do your small details convey larger stories?',
       'Have you avoided explicit emotion in favor of showing through objects?',
@@ -540,7 +567,7 @@ Yet in its stillness, there was something almost beautiful. The light columns fr
     board: 'Grade 9',
     grade: '9',
     prompt: 'Write a description of a sunrise or sunset that captures transformation over time.',
-    modelText: `The mountain held its breath in the moments before dawn. Everything was monochromatic—grays and blacks and the faintest suggestion of deep blue. The world existed in silhouette only; individual trees were merely shapes against the slightly lighter sky. You couldn't see where the land ended and the atmosphere began. Everything was edge, nothing was substance.
+    modelText: `The mountain held its breath in the moments before dawn. Everything was monochromatic-grays and blacks and the faintest suggestion of deep blue. The world existed in silhouette only; individual trees were merely shapes against the slightly lighter sky. You couldn't see where the land ended and the atmosphere began. Everything was edge, nothing was substance.
 
 Then came the first change. Not light exactly, but the suggestion of light, a barely perceptible warming of the eastern sky from absolute black to charcoal. This transition took several minutes and seemed to happen all at once. You could watch it if you were patient, could witness the exact moment when the universe shifted from night to not-quite-day. The birds felt it before I did; they began their morning calls hesitantly, uncertain whether the dawn was truly coming this time.
 
@@ -552,7 +579,7 @@ The light began to change the landscape below. The dark shapes became a mountain
 
 The transformation accelerated. The reds gave way to oranges, and the oranges gave way to yellows. The band of color widened, spreading upward into territory that had been indigo just moments before. The mountain's features became increasingly clear: I could now distinguish individual trees, see the ribbon of a stream catching sunlight, see the precise shape of a hawk riding thermals above the peak.
 
-And then, with a shift that was almost audible, the sun's edge touched the horizon. Just the arc of it, not the full disk, but enough to change everything. The light became white and intense, pushing back the reds and oranges and forcing the sky to yield. The mountain in this new light was suddenly ordinary again—just rock and snow and vegetation, no longer touched by anything transcendent. The magic, paradoxically, was leaving as the full light arrived.
+And then, with a shift that was almost audible, the sun's edge touched the horizon. Just the arc of it, not the full disk, but enough to change everything. The light became white and intense, pushing back the reds and oranges and forcing the sky to yield. The mountain in this new light was suddenly ordinary again-just rock and snow and vegetation, no longer touched by anything transcendent. The magic, paradoxically, was leaving as the full light arrived.
 
 The entire transformation, from the first charcoal suggestion of dawn to the fully risen sun, had taken perhaps twenty minutes. Yet in those twenty minutes, the universe had accomplished an almost unimaginable transformation. The planet had rotated enough to bring a new sun to this valley, and in doing so had revealed the mountain anew, as though for the first time.
 
@@ -562,19 +589,22 @@ I sat with that ordinary mountain in the full morning light, grateful that I'd w
         startIndex: 0,
         endIndex: 120,
         technique: 'Opening with negation and absence',
-        effect: 'Describing darkness and silence creates the baseline from which transformation begins',
+        effect:
+          'Describing darkness and silence creates the baseline from which transformation begins',
       },
       {
         startIndex: 200,
         endIndex: 350,
         technique: 'Progression of color so subtle the reader must actively observe',
-        effect: 'This mirrors the actual experience of watching a sunrise; it rewards patient attention',
+        effect:
+          'This mirrors the actual experience of watching a sunrise; it rewards patient attention',
       },
       {
         startIndex: 500,
         endIndex: 650,
         technique: 'Colors described in precise gradations rather than single names',
-        effect: 'Salmon, rose, magenta—these specific terms prevent the description from becoming generic',
+        effect:
+          'Salmon, rose, magenta-these specific terms prevent the description from becoming generic',
       },
       {
         startIndex: 900,
@@ -586,16 +616,19 @@ I sat with that ordinary mountain in the full morning light, grateful that I'd w
         startIndex: 1300,
         endIndex: 1450,
         technique: 'The paradox that full light diminishes the magic',
-        effect: 'This observation elevates the description toward larger truth about beauty and revelation',
+        effect:
+          'This observation elevates the description toward larger truth about beauty and revelation',
       },
       {
         startIndex: 1700,
         endIndex: 1800,
         technique: 'Final reflection on the difference between being and becoming',
-        effect: 'The distinction gives philosophical weight to what could be merely pretty description',
+        effect:
+          'The distinction gives philosophical weight to what could be merely pretty description',
       },
     ],
-    teacherNotes: 'This descriptive piece excels at capturing process rather than state. Most sunrise descriptions focus on the beautiful colors at their peak; this one privileges the transformation itself. Notice how the writer uses the word "becoming" in the final line, suggesting that the process of transformation matters more than any single moment. The color progression is meticulously observed—from indigo to salmon to magenta to orange to gold—and uses specific names rather than generic terms. The temporal awareness is also sophisticated: the writer notes that twenty minutes of cosmic rotation feels like both an instant and an eternity. The comparison to photographs is particularly effective; by noting that real sunrises are subtler than photographic representations, the writer validates the reader\'s actual experience. This authenticity makes the description feel trustworthy.',
+    teacherNotes:
+      'This descriptive piece excels at capturing process rather than state. Most sunrise descriptions focus on the beautiful colors at their peak; this one privileges the transformation itself. Notice how the writer uses the word "becoming" in the final line, suggesting that the process of transformation matters more than any single moment. The color progression is meticulously observed-from indigo to salmon to magenta to orange to gold-and uses specific names rather than generic terms. The temporal awareness is also sophisticated: the writer notes that twenty minutes of cosmic rotation feels like both an instant and an eternity. The comparison to photographs is particularly effective; by noting that real sunrises are subtler than photographic representations, the writer validates the reader\'s actual experience. This authenticity makes the description feel trustworthy.',
     studentCheckpoints: [
       'Have you captured transformation over time, not just a single moment?',
       'Are your color descriptions specific and precise?',
@@ -617,7 +650,7 @@ I'd had that card for three years, since the day my grandmother took me to get i
 
 The card was blue with a silver stripe, and it had a picture of me looking serious, like I was trying to be important. I used it at least three times a week. I was the person who came back late and had to pay fines. I was the person who read the longest books and always asked for recommendations. The librarians knew me by name.
 
-Tuesday I went to check out my usual stack of books—I was reading everything by this one fantasy author—and I couldn't find my card. I checked my backpack three times. I checked my pockets. My heart started beating really fast, which was stupid, I know. It's just a library card.
+Tuesday I went to check out my usual stack of books-I was reading everything by this one fantasy author-and I couldn't find my card. I checked my backpack three times. I checked my pockets. My heart started beating really fast, which was stupid, I know. It's just a library card.
 
 But it wasn't just a card. It was proof that I was a reader. It was proof that I had a place. On hard days, when school was bad or my parents were fighting, I had the library. I could sit there for hours and no one cared. No one asked me to be anything except quiet.
 
@@ -637,7 +670,8 @@ I keep that card in a special place now. Sometimes I still go to the library and
         startIndex: 0,
         endIndex: 60,
         technique: 'Opening with apparent insignificance that becomes significant',
-        effect: 'Immediately tells us this isn\'t really about a library card; it\'s about what it represents',
+        effect:
+          "Immediately tells us this isn't really about a library card; it's about what it represents",
       },
       {
         startIndex: 130,
@@ -649,7 +683,8 @@ I keep that card in a special place now. Sometimes I still go to the library and
         startIndex: 300,
         endIndex: 450,
         technique: 'Specific examples of how the person helped',
-        effect: 'The paragraph of comments and circled improvements make the gratitude real and specific',
+        effect:
+          'The paragraph of comments and circled improvements make the gratitude real and specific',
       },
       {
         startIndex: 500,
@@ -661,7 +696,8 @@ I keep that card in a special place now. Sometimes I still go to the library and
         startIndex: 750,
         endIndex: 850,
         technique: 'Expressing impact honestly without overdoing it',
-        effect: 'The gratitude is genuine because Marcus is realistic ("I still make mistakes"), not over-the-top',
+        effect:
+          'The gratitude is genuine because Marcus is realistic ("I still make mistakes"), not over-the-top',
       },
       {
         startIndex: 900,
@@ -670,11 +706,12 @@ I keep that card in a special place now. Sometimes I still go to the library and
         effect: 'Matches the tone of the rest of the letter while remaining appropriate',
       },
     ],
-    teacherNotes: 'This Grade 7 narrative is effective because it understands that the most important stories aren\'t about big events, but about what small events mean. The library card itself is ordinary, but the narrator\'s emotional attachment to it makes it matter. Notice how the writer doesn\'t try to make the story more dramatic than it is; instead, she honors the real emotional intensity of losing something important. Mr. Chen is a good example of how a supporting character can show the protagonist\'s importance by taking them seriously. The resolution isn\'t external (finding the card) but internal (understanding what the card means). This is mature storytelling for Grade 7. The language is clear and direct, the paragraphs are well-organized, and the emotional arc is genuine.',
+    teacherNotes:
+      "This Grade 7 narrative is effective because it understands that the most important stories aren't about big events, but about what small events mean. The library card itself is ordinary, but the narrator's emotional attachment to it makes it matter. Notice how the writer doesn't try to make the story more dramatic than it is; instead, she honors the real emotional intensity of losing something important. Mr. Chen is a good example of how a supporting character can show the protagonist's importance by taking them seriously. The resolution isn't external (finding the card) but internal (understanding what the card means). This is mature storytelling for Grade 7. The language is clear and direct, the paragraphs are well-organized, and the emotional arc is genuine.",
     studentCheckpoints: [
       'Have you explained why this moment matters to your character?',
       'Is your supporting character someone who respects your protagonist?',
-      'Do you show your character\'s feelings through physical details (shaking hands, fast heartbeat)?',
+      "Do you show your character's feelings through physical details (shaking hands, fast heartbeat)?",
       'Does your ending show what you learned, not just what happened?',
       'Is your writing honest about real emotions, even if they seem small?',
     ],
@@ -692,7 +729,7 @@ Which I was.
 
 My old school had been small. My new school had about eight hundred students. I walked into the hallway before first period and nearly had a panic attack. It was so loud, so crowded, so completely overwhelming. I couldn't find my first-period classroom. I walked past it twice.
 
-Then I crashed into someone—literally crashed, like bumped shoulders hard—and her binder went flying. Papers everywhere.
+Then I crashed into someone-literally crashed, like bumped shoulders hard-and her binder went flying. Papers everywhere.
 
 "Oh my god, I'm so sorry!" I said. I wanted to die.
 
@@ -710,7 +747,7 @@ Just like that. Just "be my friend."
 
 I said yes.
 
-Jordan took me under her wing—literally, figuratively, in every way. She showed me where the cafeteria was. She sat with me at lunch. When I got lost between second and third period, she walked me there. In English, we sat next to each other and passed notes. In PE, she made sure I wasn't alone in the locker room. It's stupid, but having one person care about whether you exist makes the whole school less terrifying.
+Jordan took me under her wing-literally, figuratively, in every way. She showed me where the cafeteria was. She sat with me at lunch. When I got lost between second and third period, she walked me there. In English, we sat next to each other and passed notes. In PE, she made sure I wasn't alone in the locker room. It's stupid, but having one person care about whether you exist makes the whole school less terrifying.
 
 By the end of the day, I was still scared. I was still the new kid. But I wasn't alone. And somehow, having Jordan standing next to me made me feel less like a disaster and more like someone who was going to be okay.
 
@@ -720,13 +757,15 @@ We're best friends now, almost a year later. But I still remember that first day
         startIndex: 0,
         endIndex: 120,
         technique: 'Establishing the stakes through exaggeration that feels true',
-        effect: 'The overstatement ("worst possible time") is relatable because new kids genuinely feel this way',
+        effect:
+          'The overstatement ("worst possible time") is relatable because new kids genuinely feel this way',
       },
       {
         startIndex: 200,
         endIndex: 300,
         technique: 'Sensory overload describing the new environment',
-        effect: 'The overwhelming details (eight hundred students, loud, crowded) show the character\'s feelings',
+        effect:
+          "The overwhelming details (eight hundred students, loud, crowded) show the character's feelings",
       },
       {
         startIndex: 400,
@@ -738,7 +777,8 @@ We're best friends now, almost a year later. But I still remember that first day
         startIndex: 700,
         endIndex: 800,
         technique: 'Dialogue that reveals character through humor and directness',
-        effect: 'Jordan\'s "be my friend" is bold and shows her confidence and kindness simultaneously',
+        effect:
+          'Jordan\'s "be my friend" is bold and shows her confidence and kindness simultaneously',
       },
       {
         startIndex: 1000,
@@ -750,10 +790,12 @@ We're best friends now, almost a year later. But I still remember that first day
         startIndex: 1350,
         endIndex: 1450,
         technique: 'Reflection that clarifies what actually mattered',
-        effect: 'The ending explains that the change wasn\'t external (becoming popular) but internal (having support)',
+        effect:
+          "The ending explains that the change wasn't external (becoming popular) but internal (having support)",
       },
     ],
-    teacherNotes: 'This narrative works because it captures the real emotional intensity of seventh grade while remaining grounded in realistic details. The collision with Jordan is a perfect example of a chance encounter that feels earned rather than contrived. The story doesn\'t suggest that one friend solves all problems; instead, it shows how one genuine connection can make an overwhelming situation bearable. Jordan is a well-sketched character (dinosaur shirt, purple hair, directness) who feels like a real person rather than a "nice friend" character. The dialogue is natural, and the pacing moves us quickly through a day that felt long to the narrator but reads quickly to us. Most importantly, the narrator\'s emotional honesty is never compromised for the sake of sounding mature. Seventh graders do have panic attacks over lost first-period classrooms, and that\'s okay.',
+    teacherNotes:
+      "This narrative works because it captures the real emotional intensity of seventh grade while remaining grounded in realistic details. The collision with Jordan is a perfect example of a chance encounter that feels earned rather than contrived. The story doesn't suggest that one friend solves all problems; instead, it shows how one genuine connection can make an overwhelming situation bearable. Jordan is a well-sketched character (dinosaur shirt, purple hair, directness) who feels like a real person rather than a \"nice friend\" character. The dialogue is natural, and the pacing moves us quickly through a day that felt long to the narrator but reads quickly to us. Most importantly, the narrator's emotional honesty is never compromised for the sake of sounding mature. Seventh graders do have panic attacks over lost first-period classrooms, and that's okay.",
     studentCheckpoints: [
       'Have you shown the worst part of your experience in concrete details?',
       'Is your turning point a realistic moment, not lucky coincidence?',
@@ -819,7 +861,7 @@ That rainy day changed everything, even though nothing really changed at all.`,
         startIndex: 0,
         endIndex: 80,
         technique: 'Opening with a simple scene that becomes significant',
-        effect: 'Rainy day and basement cleaning seem ordinary until they\'re not',
+        effect: "Rainy day and basement cleaning seem ordinary until they're not",
       },
       {
         startIndex: 150,
@@ -837,22 +879,24 @@ That rainy day changed everything, even though nothing really changed at all.`,
         startIndex: 750,
         endIndex: 900,
         technique: 'Specific sensory details of the room',
-        effect: 'Yellow pages, glass case, faded photographs—these details make the room real',
+        effect: 'Yellow pages, glass case, faded photographs-these details make the room real',
       },
       {
         startIndex: 1300,
         endIndex: 1450,
         technique: 'Connection to absent family member',
-        effect: 'Finding Grandpa\'s things gives the discovery emotional meaning beyond the cool factor',
+        effect:
+          "Finding Grandpa's things gives the discovery emotional meaning beyond the cool factor",
       },
       {
         startIndex: 1750,
         endIndex: 1900,
         technique: 'Conflict between wanting to share and wanting to preserve',
-        effect: 'This honest moment shows the narrator\'s wisdom about what something means',
+        effect: "This honest moment shows the narrator's wisdom about what something means",
       },
     ],
-    teacherNotes: 'This Grade 5 narrative demonstrates solid storytelling fundamentals: clear beginning, middle, and end; sensory details; dialogue; and emotional honesty. The pacing is appropriate for the age group—moving through the discovery quickly without lingering, but spending time on what matters (finding the journal, reading Grandpa\'s letter). The narrator\'s decision to keep the room secret rather than immediately telling Mom shows maturity and understanding that some things are more important than rules. The final line—"That rainy day changed everything, even though nothing really changed at all"—shows sophisticated thinking about how internal change can matter more than external events. The vocabulary is accessible without being simplistic, and the sentence structures vary appropriately. This would be a strong model for fifth graders learning to balance plot, character, and meaning.',
+    teacherNotes:
+      'This Grade 5 narrative demonstrates solid storytelling fundamentals: clear beginning, middle, and end; sensory details; dialogue; and emotional honesty. The pacing is appropriate for the age group-moving through the discovery quickly without lingering, but spending time on what matters (finding the journal, reading Grandpa\'s letter). The narrator\'s decision to keep the room secret rather than immediately telling Mom shows maturity and understanding that some things are more important than rules. The final line-"That rainy day changed everything, even though nothing really changed at all"-shows sophisticated thinking about how internal change can matter more than external events. The vocabulary is accessible without being simplistic, and the sentence structures vary appropriately. This would be a strong model for fifth graders learning to balance plot, character, and meaning.',
     studentCheckpoints: [
       'Does your opening make the reader want to know what comes next?',
       'Have you used dialogue to show how characters feel?',
@@ -863,7 +907,7 @@ That rainy day changed everything, even though nothing really changed at all.`,
   },
   {
     id: 'gr5-narrative-2',
-    title: 'The Friend I Didn\'t Expect',
+    title: "The Friend I Didn't Expect",
     type: 'narrative',
     board: 'Grade 5',
     grade: '5',
@@ -874,7 +918,7 @@ So I went to the park, and I sat on a bench by myself because I didn't know anyo
 
 That's when Mrs. Chen sat down next to me.
 
-She was old—like, really old. She had white hair and she was wearing a sweater even though it was warm. She sat down and didn't say anything for a while. We just sat there together, not talking.
+She was old-like, really old. She had white hair and she was wearing a sweater even though it was warm. She sat down and didn't say anything for a while. We just sat there together, not talking.
 
 "That's a cool jacket," she finally said. I was wearing my favorite jacket that has a video game controller on the back.
 
@@ -888,7 +932,7 @@ I was surprised because most old people don't know about video games. "Yeah," I 
 
 We talked about Minecraft for a while. Well, I talked about it, and she listened. She asked good questions, like real questions, not the kind adults usually ask when they're pretending to care.
 
-After that day, I saw Mrs. Chen at the park a lot. We would sit on the same bench and talk. Sometimes she would bring snacks—crackers or cookies—and we'd share them. Sometimes she would tell me about her life, about being a teacher a long time ago, about her husband who died when she was younger than my parents are now.
+After that day, I saw Mrs. Chen at the park a lot. We would sit on the same bench and talk. Sometimes she would bring snacks-crackers or cookies-and we'd share them. Sometimes she would tell me about her life, about being a teacher a long time ago, about her husband who died when she was younger than my parents are now.
 
 "Don't you have friends your age to play with?" she asked me one day.
 
@@ -904,7 +948,7 @@ She looked at me for a long time. Then she said, "There's nothing wrong with you
 
 Nobody had ever said that before. Everyone at school acts like being different is bad. But Mrs. Chen made it sound like being different was okay. Even good.
 
-After that, I started to feel better. Not about school—school was still hard. But about myself. I realized that I didn't have to be like everyone else to be okay.
+After that, I started to feel better. Not about school-school was still hard. But about myself. I realized that I didn't have to be like everyone else to be okay.
 
 Mrs. Chen moved away two months ago. Her daughter wanted her to move closer to where she lives, so she could help take care of her. I was really sad about it. But before she left, she gave me a piece of paper with her email address on it. Now I send her emails about my life, and she writes back long letters.
 
@@ -914,7 +958,8 @@ She's still my best friend. And I learned that friends don't have to be the same
         startIndex: 0,
         endIndex: 100,
         technique: 'Setting up reluctance and then surprise',
-        effect: 'The reader knows something unexpected will happen because the character is reluctant',
+        effect:
+          'The reader knows something unexpected will happen because the character is reluctant',
       },
       {
         startIndex: 200,
@@ -926,30 +971,34 @@ She's still my best friend. And I learned that friends don't have to be the same
         startIndex: 450,
         endIndex: 550,
         technique: 'Dialogue showing genuine interest rather than adult dismissal',
-        effect: 'Mrs. Chen asks real questions about Minecraft, which shows she\'s taking him seriously',
+        effect:
+          "Mrs. Chen asks real questions about Minecraft, which shows she's taking him seriously",
       },
       {
         startIndex: 800,
         endIndex: 900,
         technique: 'Explicit statement of what matters in friendship',
-        effect: 'The narrator explains what Mrs. Chen does right (listens, doesn\'t tell what to do)',
+        effect:
+          "The narrator explains what Mrs. Chen does right (listens, doesn't tell what to do)",
       },
       {
         startIndex: 1250,
         endIndex: 1350,
         technique: 'A moment of vulnerability and doubt',
-        effect: 'The narrator says the thing that\'s hardest to say, and is validated for it',
+        effect: "The narrator says the thing that's hardest to say, and is validated for it",
       },
       {
         startIndex: 1600,
         endIndex: 1700,
         technique: 'Realistic ending where friends separate but connection continues',
-        effect: 'This teaches that friendship survives distance, and that it\'s defined by the people, not the place',
+        effect:
+          "This teaches that friendship survives distance, and that it's defined by the people, not the place",
       },
     ],
-    teacherNotes: 'This Grade 5 narrative successfully explores friendship across age differences, which is not typical of Grade 5 narratives but is handled with sensitivity and honesty. The dialogue is natural and shows character rather than explaining it. Notably, the narrator doesn\'t instantly become confident; instead, Mrs. Chen\'s intervention helps him see himself differently, and this change is subtle. The ending—where Mrs. Chen moves but they stay in touch—is realistic and teaches that important relationships don\'t have to be in-person. The writing is clear and accessible, the paragraph breaks are logical, and the emotional arc moves from reluctance to surprise to genuine connection to loss to acceptance. This would be a good model for fifth graders learning to write about emotions and relationships.',
+    teacherNotes:
+      "This Grade 5 narrative successfully explores friendship across age differences, which is not typical of Grade 5 narratives but is handled with sensitivity and honesty. The dialogue is natural and shows character rather than explaining it. Notably, the narrator doesn't instantly become confident; instead, Mrs. Chen's intervention helps him see himself differently, and this change is subtle. The ending-where Mrs. Chen moves but they stay in touch-is realistic and teaches that important relationships don't have to be in-person. The writing is clear and accessible, the paragraph breaks are logical, and the emotional arc moves from reluctance to surprise to genuine connection to loss to acceptance. This would be a good model for fifth graders learning to write about emotions and relationships.",
     studentCheckpoints: [
-      'Does your character\'s initial state contrast with what happens to them?',
+      "Does your character's initial state contrast with what happens to them?",
       'Do you show friendship building through small moments?',
       'Have you included dialogue that feels like real talking?',
       'Does your character learn something about themselves?',
@@ -1008,7 +1057,7 @@ I hope you'll consider this proposal. Thank you.`,
       {
         startIndex: 700,
         endIndex: 850,
-        technique: 'Acknowledging opponent\'s concerns while refuting them',
+        technique: "Acknowledging opponent's concerns while refuting them",
         effect: 'Shows respect for different perspectives even while arguing against them',
       },
       {
@@ -1021,10 +1070,12 @@ I hope you'll consider this proposal. Thank you.`,
         startIndex: 1500,
         endIndex: 1650,
         technique: 'Appeal to empathy and fairness',
-        effect: 'The argument shifts from practical to moral: some students have privilege, others don\'t',
+        effect:
+          "The argument shifts from practical to moral: some students have privilege, others don't",
       },
     ],
-    teacherNotes: 'This persuasive speech demonstrates strong structure and clear reasoning. The speaker begins with a direct statement of the problem, acknowledges counterarguments, provides evidence, offers examples, and makes an emotional appeal. The language is accessible without being simplistic, and the tone is respectful rather than aggressive. The speaker avoids the common pitfall of making sweeping claims without support; instead, specific numbers (30 minutes, 40 percent) and examples (robotics, theater) make arguments concrete. The address to administrators and teachers shows awareness of the audience. The conclusion circles back to the opening, creating a sense of completeness. This is a good model for Grade 9 students learning to construct persuasive arguments.',
+    teacherNotes:
+      'This persuasive speech demonstrates strong structure and clear reasoning. The speaker begins with a direct statement of the problem, acknowledges counterarguments, provides evidence, offers examples, and makes an emotional appeal. The language is accessible without being simplistic, and the tone is respectful rather than aggressive. The speaker avoids the common pitfall of making sweeping claims without support; instead, specific numbers (30 minutes, 40 percent) and examples (robotics, theater) make arguments concrete. The address to administrators and teachers shows awareness of the audience. The conclusion circles back to the opening, creating a sense of completeness. This is a good model for Grade 9 students learning to construct persuasive arguments.',
     studentCheckpoints: [
       'Have you clearly stated what you want and why?',
       'Have you anticipated and answered the "but what about..." questions?',
@@ -1039,7 +1090,8 @@ I hope you'll consider this proposal. Thank you.`,
     type: 'speech',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write an informative speech explaining a topic you find interesting in a way that teaches your audience.',
+    prompt:
+      'Write an informative speech explaining a topic you find interesting in a way that teaches your audience.',
     modelText: `Good morning. Have you ever thought about how languages die? Probably not. Most people don't really think about languages unless they're learning one for class. But languages dying is actually a huge problem, and more importantly, it's something we can help prevent.
 
 First, let me explain what it means for a language to die. A language dies when no one speaks it anymore. This doesn't happen all at once. It happens gradually, over generations. A language is endangered when it has very few speakers left, usually older people. When those older people pass away and the younger generation doesn't speak the language, that language effectively dies.
@@ -1056,7 +1108,7 @@ For instance, some languages have specific words for concepts that are really ha
 
 So what can we do? First, we can support language documentation. Linguists are creating audio and video recordings of endangered languages. But this is just preservation; it's not the same as having living speakers. To truly save a language, we need speakers. We need young people to choose to speak their native languages alongside the dominant language.
 
-This is happening in some places. In New Zealand, the Māori language, which was nearly extinct, has been revived through language nests—early childhood centers where everything is taught in Māori. Ireland is also trying to revive Irish through education programs and cultural initiatives. These efforts show that you can fight against language death, even when it seems hopeless.
+This is happening in some places. In New Zealand, the Māori language, which was nearly extinct, has been revived through language nests-early childhood centers where everything is taught in Māori. Ireland is also trying to revive Irish through education programs and cultural initiatives. These efforts show that you can fight against language death, even when it seems hopeless.
 
 But this requires choice. Young people have to want to speak their language, and communities have to support them in that choice. It's not easy when the dominant language seems more practical or prestigious. But when people see their native language as part of their identity, as part of who they are, they fight to keep it alive.
 
@@ -1070,7 +1122,8 @@ Thank you.`,
         startIndex: 0,
         endIndex: 100,
         technique: 'Opening question that engages the audience',
-        effect: 'Makes listeners realize they haven\'t thought about the topic, which motivates them to listen',
+        effect:
+          "Makes listeners realize they haven't thought about the topic, which motivates them to listen",
       },
       {
         startIndex: 150,
@@ -1106,7 +1159,8 @@ Thank you.`,
         startIndex: 1700,
         endIndex: 1850,
         technique: 'Examples of successful language revitalization',
-        effect: 'Shows the audience that the problem isn\'t hopeless, which is more motivating than just despair',
+        effect:
+          "Shows the audience that the problem isn't hopeless, which is more motivating than just despair",
       },
       {
         startIndex: 2000,
@@ -1115,12 +1169,13 @@ Thank you.`,
         effect: 'Makes the issue feel actionable, not just interesting information',
       },
     ],
-    teacherNotes: 'This informative speech teaches while maintaining engagement. The speaker uses various strategies to hold attention: opening questions, shocking statistics, specific examples, and personal relevance. The organization is clear: definition, scope of the problem, causes, significance, and solutions. The examples (Native American languages, Sami, Māori, Irish) are specific enough to feel real but diverse enough to show that this is a global problem. A particularly effective moment is when the speaker explains why languages matter—not just as communication but as repositories of knowledge. This elevates the topic from interesting trivia to genuinely important. The conclusion circles back to the opening idea, creating closure. The suggestions for action at the end prevent the speech from feeling hopeless. This is an excellent model of how to structure informative speaking.',
+    teacherNotes:
+      'This informative speech teaches while maintaining engagement. The speaker uses various strategies to hold attention: opening questions, shocking statistics, specific examples, and personal relevance. The organization is clear: definition, scope of the problem, causes, significance, and solutions. The examples (Native American languages, Sami, Māori, Irish) are specific enough to feel real but diverse enough to show that this is a global problem. A particularly effective moment is when the speaker explains why languages matter-not just as communication but as repositories of knowledge. This elevates the topic from interesting trivia to genuinely important. The conclusion circles back to the opening idea, creating closure. The suggestions for action at the end prevent the speech from feeling hopeless. This is an excellent model of how to structure informative speaking.',
     studentCheckpoints: [
       'Have you clearly defined your topic before diving into details?',
       'Do you have statistics or examples that show your topic matters?',
       'Have you explained cause-and-effect, not just facts?',
-      'Is your information organized in a way that\'s easy to follow?',
+      "Is your information organized in a way that's easy to follow?",
       'Have you given your audience reasons to care about your topic?',
     ],
   },
@@ -1139,13 +1194,13 @@ The numbers are staggering. Research from Gallup shows that students now spend a
 
 But here's the thing: more homework doesn't equal better learning. In fact, when students are exhausted and stressed, they learn less effectively. Our brains work better when we're rested and when we have time to let information sink in. We also learn better when we're engaged in activities we choose, not forced homework we resent.
 
-I'm not saying homework should be eliminated. There's value in practice and review. But the amount we're assigning is excessive, and the nature of much of it is counterproductive. Too often, homework is busywork—worksheet upon worksheet that doesn't actually require real thinking. We fill in blanks or copy answers, and the next day, we repeat the process with a different subject.
+I'm not saying homework should be eliminated. There's value in practice and review. But the amount we're assigning is excessive, and the nature of much of it is counterproductive. Too often, homework is busywork-worksheet upon worksheet that doesn't actually require real thinking. We fill in blanks or copy answers, and the next day, we repeat the process with a different subject.
 
 The stress is real. I have friends who are getting two to three hours of sleep per night because of homework. They're taking energy drinks and pills to stay awake. They're skipping meals to have time for studying. This is not healthy. This is not sustainable. And I would argue that this is not education.
 
 What really bothers me is that homework disproportionately affects some students. Students whose parents can afford tutors have an advantage. Students whose parents are educated and speak English fluently can help them at home. But students whose families don't have these advantages are left to struggle on their own, often in homes where they might not even have a quiet place to study. The homework system widens the opportunity gap rather than closing it.
 
-So what's the solution? I'm not saying teachers are bad or that they don't care. Most teachers are doing their best within a system that they didn't create. But the system needs to change. Schools should adopt the research-backed principle that homework should be limited. The amount should decrease as students get older, not increase. And the homework that is assigned should be meaningful—not busywork, but actual practice of skills and concepts that matter.
+So what's the solution? I'm not saying teachers are bad or that they don't care. Most teachers are doing their best within a system that they didn't create. But the system needs to change. Schools should adopt the research-backed principle that homework should be limited. The amount should decrease as students get older, not increase. And the homework that is assigned should be meaningful-not busywork, but actual practice of skills and concepts that matter.
 
 Some schools are already making this change. Schools that have reduced homework and limited it to 10 minutes per grade level have seen better test results, not worse. Students are happier. They sleep more. They have time for family, for hobbies, for being kids. And academically, they're not falling behind.
 
@@ -1165,13 +1220,13 @@ Change the homework system. Your students will thank you.`,
         startIndex: 150,
         endIndex: 250,
         technique: 'Using research and statistics to support opinion',
-        effect: 'Gallup research gives the opinion credibility; it\'s not just anecdotal',
+        effect: "Gallup research gives the opinion credibility; it's not just anecdotal",
       },
       {
         startIndex: 400,
         endIndex: 550,
         technique: 'Acknowledging the other side before refuting it',
-        effect: 'Shows the writer has considered counterarguments and isn\'t simply dismissing them',
+        effect: "Shows the writer has considered counterarguments and isn't simply dismissing them",
       },
       {
         startIndex: 750,
@@ -1189,7 +1244,7 @@ Change the homework system. Your students will thank you.`,
         startIndex: 1450,
         endIndex: 1600,
         technique: 'Providing examples of schools that have successfully changed',
-        effect: 'Shows the solution isn\'t theoretical; it\'s already working elsewhere',
+        effect: "Shows the solution isn't theoretical; it's already working elsewhere",
       },
       {
         startIndex: 1800,
@@ -1198,7 +1253,8 @@ Change the homework system. Your students will thank you.`,
         effect: 'The closing is written as if speaking directly to decision-makers',
       },
     ],
-    teacherNotes: 'This opinion article demonstrates clear structure and persuasive technique. The writer states the opinion upfront, which is appropriate for opinion writing. Evidence comes from multiple sources: research (Gallup), personal observation (friends staying up late), examples of successful change (schools with reduced homework), and systemic analysis (equity concerns). The voice is appropriately passionate without being hysterical. The writer addresses counterarguments ("I\'m not saying homework should be eliminated") which actually strengthens the argument by showing it\'s reasonable. The specific examples (energy drinks, skipped meals) make abstract stress concrete. The conclusion appeals directly to decision-makers, which is appropriate for opinion writing that advocates for change. This is a strong model for Grade 9 opinion writing.',
+    teacherNotes:
+      'This opinion article demonstrates clear structure and persuasive technique. The writer states the opinion upfront, which is appropriate for opinion writing. Evidence comes from multiple sources: research (Gallup), personal observation (friends staying up late), examples of successful change (schools with reduced homework), and systemic analysis (equity concerns). The voice is appropriately passionate without being hysterical. The writer addresses counterarguments ("I\'m not saying homework should be eliminated") which actually strengthens the argument by showing it\'s reasonable. The specific examples (energy drinks, skipped meals) make abstract stress concrete. The conclusion appeals directly to decision-makers, which is appropriate for opinion writing that advocates for change. This is a strong model for Grade 9 opinion writing.',
     studentCheckpoints: [
       'Have you stated your opinion clearly at the beginning?',
       'Do you have multiple types of evidence (research, examples, personal)?',
@@ -1213,12 +1269,13 @@ Change the homework system. Your students will thank you.`,
     type: 'article',
     board: 'Grade 7',
     grade: '7',
-    prompt: 'Write a review of a book, film, or other media that explains why you would or would not recommend it.',
+    prompt:
+      'Write a review of a book, film, or other media that explains why you would or would not recommend it.',
     modelText: `The Giver by Lois Lowry: A Book That Makes You Think
 
 The Giver is a book about a boy named Jonas who lives in a perfect society. Everyone is happy. There is no pain, no war, no suffering. There is no choice either, but at first, Jonas doesn't realize that's a problem. The book is definitely worth reading, and I would recommend it to anyone, especially if you like science fiction or if you like books that make you ask questions about your own world.
 
-The story is interesting from the very beginning. Jonas is twelve years old when he is assigned his role in society—he will be the Receiver of Memory. This means an old man called the Giver will transmit all the memories of the world to him. Jonas doesn't understand at first why memories are important. The world he lives in seems perfect without them. But as he receives the memories, he begins to understand that his world is not actually perfect. It's fake. The memories show him love, and pain, and choice, and all the things that make life real.
+The story is interesting from the very beginning. Jonas is twelve years old when he is assigned his role in society-he will be the Receiver of Memory. This means an old man called the Giver will transmit all the memories of the world to him. Jonas doesn't understand at first why memories are important. The world he lives in seems perfect without them. But as he receives the memories, he begins to understand that his world is not actually perfect. It's fake. The memories show him love, and pain, and choice, and all the things that make life real.
 
 What I really liked about this book is how it makes you think about your own life. Is our world better because we have choice? Is it good that we can feel pain? Is perfection actually good? These are hard questions, and the book doesn't give you easy answers. The book just shows you what happens to Jonas and lets you think for yourself.
 
@@ -1230,7 +1287,7 @@ The ending is interesting because it's kind of ambiguous. I don't want to spoil 
 
 I would recommend this book. It's good for people who like to think about big ideas. It's good for people who like science fiction. It's good for people who like books with surprising twists. Basically, it's good for anyone who wants to read something that makes them think about the world differently.
 
-The Giver is the first book in a series, so if you like it, there are other books you can read. I haven't read the other books yet, but I'm planning to. I would rate this book 4.5 out of 5 stars. It's not perfect—the beginning is slow and I wanted more explanation of some things. But it's a really good book, and I think you should read it.`,
+The Giver is the first book in a series, so if you like it, there are other books you can read. I haven't read the other books yet, but I'm planning to. I would rate this book 4.5 out of 5 stars. It's not perfect-the beginning is slow and I wanted more explanation of some things. But it's a really good book, and I think you should read it.`,
     annotations: [
       {
         startIndex: 0,
@@ -1266,7 +1323,8 @@ The Giver is the first book in a series, so if you like it, there are other book
         startIndex: 1200,
         endIndex: 1350,
         technique: 'Acknowledging a weakness while defending it',
-        effect: 'Shows balance—the reviewer didn\'t just like everything, but understands why it\'s there',
+        effect:
+          "Shows balance-the reviewer didn't just like everything, but understands why it's there",
       },
       {
         startIndex: 1500,
@@ -1275,7 +1333,8 @@ The Giver is the first book in a series, so if you like it, there are other book
         effect: 'Gives a clear summary of the overall recommendation at the end',
       },
     ],
-    teacherNotes: 'This review demonstrates effective review writing for Grade 7. The reviewer gives away just enough plot to understand the premise without spoiling the story. She explains why she liked it (makes you think, interesting characters, good ending) rather than just saying "it was good." She acknowledges a weakness (slow beginning) without letting it override her recommendation, which shows balanced thinking. She also explains what kind of reader would like this book, which is helpful for others deciding whether to read it. The writing is clear and accessible, organized logically (what it\'s about, what\'s good, what\'s less good, recommendation). The voice is personal and honest. Most importantly, the review shows that she actually read the book and thought about it, rather than just giving a surface reaction. This is a good model for Grade 7 review writing.',
+    teacherNotes:
+      "This review demonstrates effective review writing for Grade 7. The reviewer gives away just enough plot to understand the premise without spoiling the story. She explains why she liked it (makes you think, interesting characters, good ending) rather than just saying \"it was good.\" She acknowledges a weakness (slow beginning) without letting it override her recommendation, which shows balanced thinking. She also explains what kind of reader would like this book, which is helpful for others deciding whether to read it. The writing is clear and accessible, organized logically (what it's about, what's good, what's less good, recommendation). The voice is personal and honest. Most importantly, the review shows that she actually read the book and thought about it, rather than just giving a surface reaction. This is a good model for Grade 7 review writing.",
     studentCheckpoints: [
       'Have you summarized the plot without spoilers?',
       'Do you explain why you liked or disliked it, not just that you did?',
@@ -1336,7 +1395,8 @@ Email: p.chen@email.com`,
         startIndex: 250,
         endIndex: 450,
         technique: 'Specific facts rather than general complaints',
-        effect: 'The reservation time, 45-minute wait, 7:15 arrival time—these specific details are more credible than "we waited a long time"',
+        effect:
+          'The reservation time, 45-minute wait, 7:15 arrival time-these specific details are more credible than "we waited a long time"',
       },
       {
         startIndex: 500,
@@ -1354,10 +1414,11 @@ Email: p.chen@email.com`,
         startIndex: 900,
         endIndex: 1000,
         technique: 'Requesting specific action or resolution',
-        effect: 'Doesn\'t just complain; asks for what should happen to make it right',
+        effect: "Doesn't just complain; asks for what should happen to make it right",
       },
     ],
-    teacherNotes: 'This complaint letter demonstrates effective formal business writing. The structure is clear: date, proper addresses, greeting, statement of purpose, explanation of problems with specific details, statement of impact, request for resolution, professional closing. The tone is firm but respectful, which is more effective than angry ranting when trying to get results. The specific facts (times, what was wrong with the food) make the complaint credible. The letter avoids excessive emotion and name-calling, which would undermine the complaint. The request for response and resolution is explicit, making clear what should happen next. This is a good model for Grade 8 formal letter writing.',
+    teacherNotes:
+      'This complaint letter demonstrates effective formal business writing. The structure is clear: date, proper addresses, greeting, statement of purpose, explanation of problems with specific details, statement of impact, request for resolution, professional closing. The tone is firm but respectful, which is more effective than angry ranting when trying to get results. The specific facts (times, what was wrong with the food) make the complaint credible. The letter avoids excessive emotion and name-calling, which would undermine the complaint. The request for response and resolution is explicit, making clear what should happen next. This is a good model for Grade 8 formal letter writing.',
     studentCheckpoints: [
       'Is your letter properly formatted with date and full addresses?',
       'Have you stated your purpose clearly in the opening?',
@@ -1406,7 +1467,8 @@ Marcus`,
         startIndex: 300,
         endIndex: 450,
         technique: 'Specific examples of how the person helped',
-        effect: 'The paragraph of comments and circled improvements make the gratitude real and specific',
+        effect:
+          'The paragraph of comments and circled improvements make the gratitude real and specific',
       },
       {
         startIndex: 500,
@@ -1418,7 +1480,8 @@ Marcus`,
         startIndex: 750,
         endIndex: 850,
         technique: 'Expressing impact honestly without overdoing it',
-        effect: 'The gratitude is genuine because Marcus is realistic ("I still make mistakes"), not over-the-top',
+        effect:
+          'The gratitude is genuine because Marcus is realistic ("I still make mistakes"), not over-the-top',
       },
       {
         startIndex: 900,
@@ -1427,13 +1490,14 @@ Marcus`,
         effect: 'Matches the tone of the rest of the letter while remaining appropriate',
       },
     ],
-    teacherNotes: 'This thank-you letter demonstrates effective informal business writing. It\'s personal without being overly casual. The writer explains why he\'s grateful (changed his relationship to writing), gives specific examples (the paragraph of comments), and shows the impact (went from hating writing to liking it). The letter acknowledges that perfection isn\'t the goal; the goal is growth and belief. This is more powerful than exaggerated praise. The tone is genuine and thoughtful. For a Grade 6 student, this shows strong self-awareness and the ability to recognize and appreciate someone who has helped them. It\'s a good model for informal letter writing.',
+    teacherNotes:
+      "This thank-you letter demonstrates effective informal business writing. It's personal without being overly casual. The writer explains why he's grateful (changed his relationship to writing), gives specific examples (the paragraph of comments), and shows the impact (went from hating writing to liking it). The letter acknowledges that perfection isn't the goal; the goal is growth and belief. This is more powerful than exaggerated praise. The tone is genuine and thoughtful. For a Grade 6 student, this shows strong self-awareness and the ability to recognize and appreciate someone who has helped them. It's a good model for informal letter writing.",
     studentCheckpoints: [
-      'Have you explained why you\'re grateful, not just said thank you?',
+      "Have you explained why you're grateful, not just said thank you?",
       'Do you give specific examples of what the person did?',
       'Is your tone personal and sincere?',
       'Have you shown how their help changed things?',
-      'Is your letter the right length (long enough to matter, not so long it\'s overwhelming)?',
+      "Is your letter the right length (long enough to matter, not so long it's overwhelming)?",
     ],
   },
   {
@@ -1447,7 +1511,7 @@ Marcus`,
 
 Every night, millions of teenagers fall asleep with their phones in their hands. Blue light glows against their faces as they scroll through social media, check emails, and respond to messages. Sleep, the most fundamental biological need, is being sacrificed on the altar of connectivity. Technology, particularly smartphones and other light-emitting devices, is damaging our ability to sleep, and we need to take action to address this problem.
 
-The science is clear: blue light from screens suppresses melatonin production, the hormone that makes us sleepy. When we use our devices before bed, we're essentially telling our bodies that it's still daytime. Our circadian rhythms—the internal clocks that regulate our sleep-wake cycles—become confused. Studies show that teenagers who use their phones within an hour of bedtime take significantly longer to fall asleep and sleep less overall. This isn't just about feeling tired; sleep deprivation affects everything from academic performance to mental health to physical health.
+The science is clear: blue light from screens suppresses melatonin production, the hormone that makes us sleepy. When we use our devices before bed, we're essentially telling our bodies that it's still daytime. Our circadian rhythms-the internal clocks that regulate our sleep-wake cycles-become confused. Studies show that teenagers who use their phones within an hour of bedtime take significantly longer to fall asleep and sleep less overall. This isn't just about feeling tired; sleep deprivation affects everything from academic performance to mental health to physical health.
 
 One might argue that technology is not the problem; the problem is how we use it. This argument has some merit. It's true that technology itself is neutral; the way we use it matters. But this argument ignores the reality of how these devices are designed. Tech companies employ teams of engineers and psychologists specifically to make their apps addictive. They use variable reward schedules, notifications, and endless scrolling to keep us engaged. We're not just choosing to use our devices; we're fighting against systems designed to hijack our attention. Pretending willpower alone can overcome this is unrealistic.
 
@@ -1473,25 +1537,28 @@ The solution is not to reject technology but to use it intentionally. That means
         startIndex: 200,
         endIndex: 350,
         technique: 'Scientific evidence supporting the argument',
-        effect: 'Melatonin suppression and circadian rhythm disruption give credible basis for the claim',
+        effect:
+          'Melatonin suppression and circadian rhythm disruption give credible basis for the claim',
       },
       {
         startIndex: 450,
         endIndex: 650,
         technique: 'Acknowledging and refuting counterarguments',
-        effect: 'The argument is stronger because it shows the writer has considered other perspectives',
+        effect:
+          'The argument is stronger because it shows the writer has considered other perspectives',
       },
       {
         startIndex: 800,
         endIndex: 1000,
-        technique: 'Explaining why one counterargument doesn\'t invalidate the position',
-        effect: 'Technology is necessary, but that doesn\'t mean it has to be in bedrooms',
+        technique: "Explaining why one counterargument doesn't invalidate the position",
+        effect: "Technology is necessary, but that doesn't mean it has to be in bedrooms",
       },
       {
         startIndex: 1100,
         endIndex: 1250,
         technique: 'Providing evidence that solutions work',
-        effect: 'Schools and families with boundaries see real improvements, not just theoretical benefits',
+        effect:
+          'Schools and families with boundaries see real improvements, not just theoretical benefits',
       },
       {
         startIndex: 1500,
@@ -1503,7 +1570,8 @@ The solution is not to reject technology but to use it intentionally. That means
         startIndex: 1900,
         endIndex: 2100,
         technique: 'Addressing emotional resistance to change',
-        effect: 'Acknowledges that people will resist while explaining why those reasons aren\'t sufficient',
+        effect:
+          "Acknowledges that people will resist while explaining why those reasons aren't sufficient",
       },
       {
         startIndex: 2200,
@@ -1512,7 +1580,8 @@ The solution is not to reject technology but to use it intentionally. That means
         effect: 'Brings the argument full circle and suggests what should happen next',
       },
     ],
-    teacherNotes: 'This argumentative essay demonstrates strong structure and reasoning. The thesis is clear in the introduction. Body paragraphs each take on a different aspect: the science, acknowledgment of counterarguments, evidence that solutions work, and practical recommendations. The writer doesn\'t just claim the other side is wrong; she engages seriously with counterarguments and explains why they don\'t outweigh her position. The tone is persuasive but not preachy. Evidence comes from multiple sources: scientific research, real-world examples, and logical reasoning. The solutions offered are realistic, which makes the essay feel more credible than if the writer demanded impossible changes. The conclusion circles back to the opening image and reinforces the thesis. This is a strong model for Grade 9 argumentative writing.',
+    teacherNotes:
+      "This argumentative essay demonstrates strong structure and reasoning. The thesis is clear in the introduction. Body paragraphs each take on a different aspect: the science, acknowledgment of counterarguments, evidence that solutions work, and practical recommendations. The writer doesn't just claim the other side is wrong; she engages seriously with counterarguments and explains why they don't outweigh her position. The tone is persuasive but not preachy. Evidence comes from multiple sources: scientific research, real-world examples, and logical reasoning. The solutions offered are realistic, which makes the essay feel more credible than if the writer demanded impossible changes. The conclusion circles back to the opening image and reinforces the thesis. This is a strong model for Grade 9 argumentative writing.",
     studentCheckpoints: [
       'Is your thesis statement clear and arguable?',
       'Do you have evidence supporting your position?',
@@ -1527,7 +1596,8 @@ The solution is not to reject technology but to use it intentionally. That means
     type: 'essay',
     board: 'Grade 9',
     grade: '9',
-    prompt: 'Write a discursive essay exploring multiple perspectives on a complex issue without necessarily taking a firm stance.',
+    prompt:
+      'Write a discursive essay exploring multiple perspectives on a complex issue without necessarily taking a firm stance.',
     modelText: `The Value of Failure: Exploring How Setbacks Shape Us
 
 We live in a culture obsessed with success. From childhood, we're told to get good grades, win competitions, achieve goals. Failure is presented as something to avoid at all costs. Yet many of the most successful and fulfilled people in the world have experienced significant failure. This raises a complicated question: Is failure actually valuable, or is this just a comforting narrative we tell ourselves about inevitable setbacks? The answer is complex and depends on perspective.
@@ -1540,7 +1610,7 @@ However, there's a legitimate counterargument: not all failure is valuable, and 
 
 There's also a question of whose failure we're discussing. It's easy for already-successful people to extol the virtues of failure and frame their setbacks as meaningful learning experiences. But for someone without a safety net, failure might not be an opportunity; it might be catastrophic. The girl who can't afford to fail her college entrance exams experiences failure differently than the girl whose parents will pay for her to apply again. The person experiencing failure in a society that values them differently based on race or gender might interpret that failure differently than someone with systemic advantages.
 
-The most honest answer might be that failure can be valuable, but only under certain conditions. Failure needs to be survivable—not so catastrophic that it destroys someone's life or future. Failure needs to be followed by opportunity for learning—not just punishment or dismissal. And failure needs to exist within a context where the person has some support and resources to recover. Under these conditions, failure becomes a powerful teacher. Without them, failure is simply loss.
+The most honest answer might be that failure can be valuable, but only under certain conditions. Failure needs to be survivable-not so catastrophic that it destroys someone's life or future. Failure needs to be followed by opportunity for learning-not just punishment or dismissal. And failure needs to exist within a context where the person has some support and resources to recover. Under these conditions, failure becomes a powerful teacher. Without them, failure is simply loss.
 
 This suggests that the real issue isn't whether failure is good or bad, but rather how we support people who experience it. A society that values failure as a learning opportunity should also ensure that failure isn't permanently destructive. We should celebrate resilience, but we should also build systems that allow people to fail and recover. We should teach the lessons failure offers, but we should also provide the resources and support that turn those lessons into growth rather than despair.
 
@@ -1556,7 +1626,8 @@ The value of failure, then, is not inherent. It emerges from the context in whic
         startIndex: 200,
         endIndex: 350,
         technique: 'Presenting the strongest version of one perspective',
-        effect: 'The argument for failure\'s value is presented fully and fairly before being questioned',
+        effect:
+          "The argument for failure's value is presented fully and fairly before being questioned",
       },
       {
         startIndex: 450,
@@ -1568,7 +1639,7 @@ The value of failure, then, is not inherent. It emerges from the context in whic
         startIndex: 700,
         endIndex: 900,
         technique: 'Introducing counterargument with equal seriousness',
-        effect: 'The other perspective isn\'t dismissed but treated as legitimate and important',
+        effect: "The other perspective isn't dismissed but treated as legitimate and important",
       },
       {
         startIndex: 1000,
@@ -1589,7 +1660,8 @@ The value of failure, then, is not inherent. It emerges from the context in whic
         effect: 'Provides practical, testable conditions rather than abstract philosophizing',
       },
     ],
-    teacherNotes: 'This discursive essay demonstrates sophisticated thinking about a complex issue. Rather than arguing for one position, it explores multiple perspectives and the conditions under which each might be valid. The writer presents the case for failure as valuable thoroughly, then complicates it by introducing legitimate counterarguments. Importantly, she doesn\'t dismiss either perspective but instead asks what conditions must exist for failure to be valuable. This is more mature than choosing sides. The introduction of equity and systemic advantage issues shows that the writer understands that abstract philosophical questions have real-world consequences. The conclusion doesn\'t settle the question; instead, it suggests a framework for thinking about it. This kind of nuanced, conditional thinking is what distinguishes excellent discursive writing. The tone is thoughtful and questioning rather than argumentative.',
+    teacherNotes:
+      "This discursive essay demonstrates sophisticated thinking about a complex issue. Rather than arguing for one position, it explores multiple perspectives and the conditions under which each might be valid. The writer presents the case for failure as valuable thoroughly, then complicates it by introducing legitimate counterarguments. Importantly, she doesn't dismiss either perspective but instead asks what conditions must exist for failure to be valuable. This is more mature than choosing sides. The introduction of equity and systemic advantage issues shows that the writer understands that abstract philosophical questions have real-world consequences. The conclusion doesn't settle the question; instead, it suggests a framework for thinking about it. This kind of nuanced, conditional thinking is what distinguishes excellent discursive writing. The tone is thoughtful and questioning rather than argumentative.",
     studentCheckpoints: [
       'Have you presented multiple perspectives fairly, not strawman versions?',
       'Do you explore the complexity of the issue, not just state multiple views?',
@@ -1598,4 +1670,4 @@ The value of failure, then, is not inherent. It emerges from the context in whic
       'Does your conclusion offer insight, even if not a definitive answer?',
     ],
   },
-];
+]

@@ -39,7 +39,7 @@ const TIME_AND_PLACE_POEMS: Poem[] = [
     themes: ['City', 'Suffering', 'Power'],
   },
   {
-    title: 'I started Early – Took my Dog',
+    title: 'I started Early - Took my Dog',
     poet: 'Emily Dickinson',
     slug: 'i-started-early-took-my-dog',
     hook: 'A walk to the sea becomes a strange, almost romantic encounter with the tide.',

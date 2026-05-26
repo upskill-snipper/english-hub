@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men Key Quotes — Edexcel IGCSE Literature',
+    title: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
   },
-  title: 'Of Mice and Men Key Quotes — Edexcel IGCSE Literature',
+  title: 'Of Mice and Men Key Quotes - Edexcel IGCSE Literature',
   description:
     '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
   alternates: {
@@ -211,7 +211,7 @@ export default async function OmamKeyQuotesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing (CDPA 1988) for study and criticism.
@@ -233,7 +233,7 @@ export default async function OmamKeyQuotesPage() {
                 <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                   &ldquo;{q.text}&rdquo;
                 </blockquote>
-                <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+                <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                   {q.analysis}
                 </p>

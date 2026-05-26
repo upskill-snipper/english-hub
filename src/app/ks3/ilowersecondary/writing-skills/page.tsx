@@ -9,7 +9,7 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/writing-skills'
 export const metadata: Metadata = {
   title: 'Writing skills',
   description:
-    'Everything for Section B of the iLowerSecondary English exam — form, ' +
+    'Everything for Section B of the iLowerSecondary English exam - form, ' +
     'audience and purpose, structure, sentence variety, vocabulary, ' +
     'grammar and punctuation, planning, and every writing form.',
   alternates: { canonical: PAGE_URL },
@@ -39,7 +39,7 @@ const SKILLS: { href: string; title: string; blurb: string }[] = [
   {
     href: '/ks3/ilowersecondary/writing/grammar-punctuation-spelling',
     title: 'Grammar, punctuation & spelling',
-    blurb: `The ${ASSESSMENT_OBJECTIVES.WAO2.code} marks (12) — accuracy and control.`,
+    blurb: `The ${ASSESSMENT_OBJECTIVES.WAO2.code} marks (12) - accuracy and control.`,
   },
   {
     href: '/ks3/ilowersecondary/writing/planning-proofreading',
@@ -104,7 +104,7 @@ export default async function WritingSkillsIndex() {
 
       <h1>Writing skills (Section B)</h1>
       <p className="lead">
-        {SECTIONS.B.name} is worth {SECTIONS.B.marks} marks — {ASSESSMENT_OBJECTIVES.WAO1.weightPct}
+        {SECTIONS.B.name} is worth {SECTIONS.B.marks} marks - {ASSESSMENT_OBJECTIVES.WAO1.weightPct}
         % (WAO1) + {ASSESSMENT_OBJECTIVES.WAO2.weightPct}% (WAO2) of the whole qualification. Build
         the skills, then practise every form.
       </p>

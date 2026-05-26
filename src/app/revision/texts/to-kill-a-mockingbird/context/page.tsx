@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird — Historical Context | The English Hub',
+    title: 'To Kill a Mockingbird - Historical Context | The English Hub',
     description:
       'Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee',
   },
-  title: 'To Kill a Mockingbird — Historical Context',
+  title: 'To Kill a Mockingbird - Historical Context',
   description:
     "Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee's biography and the Scottsboro Boys.",
   alternates: {
@@ -38,9 +38,9 @@ const SECTIONS: ContextSection[] = [
     title: '1930s Alabama and the Jim Crow South',
     icon: 'globe',
     content: [
-      'The novel is set in the fictional town of Maycomb, Alabama, between 1933 and 1935. Alabama was part of the "Deep South" — the group of states where racial segregation was most rigidly enforced and where the legacy of slavery was most deeply embedded in law, custom and daily life.',
+      'The novel is set in the fictional town of Maycomb, Alabama, between 1933 and 1935. Alabama was part of the "Deep South" - the group of states where racial segregation was most rigidly enforced and where the legacy of slavery was most deeply embedded in law, custom and daily life.',
       'The Jim Crow laws, enacted across the South from the 1870s onward, mandated racial segregation in schools, courtrooms, churches, hospitals, transport, restaurants and public spaces. Black and white Americans used separate drinking fountains, entrances and cemeteries. The laws were backed by both state violence and mob violence, including lynching.',
-      "In the courtroom, Jim Crow meant all-white juries, white judges and a legal system that treated Black testimony as inherently less credible than white testimony. The conviction of Tom Robinson in the novel is not a dramatic exaggeration — it is a faithful representation of how the system operated. Atticus's surprise is not that the jury convicts but that they deliberate for several hours before doing so.",
+      "In the courtroom, Jim Crow meant all-white juries, white judges and a legal system that treated Black testimony as inherently less credible than white testimony. The conviction of Tom Robinson in the novel is not a dramatic exaggeration - it is a faithful representation of how the system operated. Atticus's surprise is not that the jury convicts but that they deliberate for several hours before doing so.",
     ],
     keyLink:
       "The Jim Crow system is the structural foundation of the novel's central conflict. Without it, the trial cannot happen as it does, the verdict cannot stand and the themes of racial injustice and moral courage have no anchor. Lee makes Maycomb a microcosm of the segregated South.",
@@ -52,7 +52,7 @@ const SECTIONS: ContextSection[] = [
     icon: 'clock',
     content: [
       'The novel is set during the Great Depression, which began with the Wall Street Crash of 1929 and lasted through the 1930s. Unemployment reached 25% nationally and was even higher in the rural South, where agriculture had already been in decline.',
-      'In Maycomb, the Depression is visible in every detail. The Cunninghams pay their debts in hickory nuts and turnip greens. The Ewells live on relief cheques in a cabin behind the town dump. Atticus accepts goods instead of money from his poorer clients. Lee uses economic hardship to explain — without excusing — the rigidity of the class system: when people have almost nothing, they cling harder to whatever status they have.',
+      'In Maycomb, the Depression is visible in every detail. The Cunninghams pay their debts in hickory nuts and turnip greens. The Ewells live on relief cheques in a cabin behind the town dump. Atticus accepts goods instead of money from his poorer clients. Lee uses economic hardship to explain - without excusing - the rigidity of the class system: when people have almost nothing, they cling harder to whatever status they have.',
       "The Depression also explains the racial dynamics. Poor white families like the Ewells maintain their self-respect by positioning themselves above the Black community. Bob Ewell's accusation against Tom Robinson is partly motivated by economic resentment: a Black man who shows compassion to a white woman threatens the only form of status Ewell has left.",
     ],
     keyLink:
@@ -69,7 +69,7 @@ const SECTIONS: ContextSection[] = [
       "The parallels with Tom Robinson's case are striking: a Black man accused by a white woman, an all-white jury, overwhelming evidence of innocence ignored, and a defence lawyer who is vilified by his own community. Lee almost certainly drew on the Scottsboro case, though she never explicitly confirmed it.",
     ],
     keyLink:
-      "The Scottsboro case provides a real-world parallel for Tom's trial. Understanding it helps demonstrate that Lee's novel is not an exaggeration of Southern justice but a faithful dramatisation of documented reality. The case also shows that public awareness — the kind Lee's novel creates — is a necessary step toward change.",
+      "The Scottsboro case provides a real-world parallel for Tom's trial. Understanding it helps demonstrate that Lee's novel is not an exaggeration of Southern justice but a faithful dramatisation of documented reality. The case also shows that public awareness - the kind Lee's novel creates - is a necessary step toward change.",
     examTip:
       'Reference the Scottsboro Boys by name and date (1931). Examiners value specific historical parallels. Show how Lee uses fiction to expose the same injustice that the Scottsboro case exposed in reality.',
   },
@@ -77,13 +77,13 @@ const SECTIONS: ContextSection[] = [
     title: "Harper Lee's biography",
     icon: 'users',
     content: [
-      "Nelle Harper Lee (1926-2016) was born in Monroeville, Alabama, a small Southern town that is widely recognised as the model for Maycomb. Her father, Amasa Coleman Lee, was a lawyer who once defended two Black men accused of murder — an experience that clearly informs Atticus's characterisation.",
-      "Lee's childhood friend was Truman Capote, a small, imaginative boy who spent summers with relatives in Monroeville. Capote is the obvious model for Dill, and the two remained friends into adulthood — Lee accompanied Capote to Kansas during his research for In Cold Blood.",
+      "Nelle Harper Lee (1926-2016) was born in Monroeville, Alabama, a small Southern town that is widely recognised as the model for Maycomb. Her father, Amasa Coleman Lee, was a lawyer who once defended two Black men accused of murder - an experience that clearly informs Atticus's characterisation.",
+      "Lee's childhood friend was Truman Capote, a small, imaginative boy who spent summers with relatives in Monroeville. Capote is the obvious model for Dill, and the two remained friends into adulthood - Lee accompanied Capote to Kansas during his research for In Cold Blood.",
       "To Kill a Mockingbird was published in 1960, at the height of the Civil Rights Movement. It won the Pulitzer Prize in 1961 and was adapted into an Academy Award-winning film starring Gregory Peck in 1962. Lee published only one other novel, Go Set a Watchman, in 2015, which was written before Mockingbird but set later in Scout's life.",
       "Lee was a private person who gave almost no interviews after the novel's success. She lived quietly in Monroeville until her death in 2016. Her reticence has contributed to the novel's mystique and has also made biographical readings of the text both tempting and speculative.",
     ],
     keyLink:
-      "Lee's personal background gives the novel its authority. The small-town details — heat, porches, church suppers, gossip — are drawn from direct experience. Her father's legal career and her friendship with Capote provide the raw material from which Atticus and Dill are shaped.",
+      "Lee's personal background gives the novel its authority. The small-town details - heat, porches, church suppers, gossip - are drawn from direct experience. Her father's legal career and her friendship with Capote provide the raw material from which Atticus and Dill are shaped.",
     examTip:
       'Use biographical detail sparingly and always connect it to the text. Examiners reward candidates who note that Lee based Maycomb on Monroeville and Dill on Capote, but do not reward pure biography without textual analysis.',
   },
@@ -104,9 +104,9 @@ const SECTIONS: ContextSection[] = [
     title: 'Racial violence and lynching',
     icon: 'globe',
     content: [
-      'Lynching — the extrajudicial killing of Black Americans by white mobs — was widespread in the South from the 1880s through the 1950s. Between 1877 and 1950, more than 4,000 Black people were lynched in the United States, the vast majority in the former Confederate states. Alabama was one of the worst-affected states.',
-      'Lynchings were often public spectacles. White families attended, photographs were taken and distributed, and local law enforcement frequently participated or looked away. The threat of lynching was used to enforce racial subordination: any Black person who challenged white authority — by voting, by succeeding economically, by showing insufficient deference — could be targeted.',
-      "Lee dramatises this directly through the lynch mob scene (Chapter 15), in which a group of Maycomb men gather outside the jail intending to seize Tom Robinson before his trial. The mob is dispersed only by Scout's innocent conversation with Mr Cunningham. Lee uses this scene to show that ordinary, decent people can participate in collective violence — and that breaking the anonymity of the mob by addressing one man as an individual is the only way to stop them.",
+      'Lynching - the extrajudicial killing of Black Americans by white mobs - was widespread in the South from the 1880s through the 1950s. Between 1877 and 1950, more than 4,000 Black people were lynched in the United States, the vast majority in the former Confederate states. Alabama was one of the worst-affected states.',
+      'Lynchings were often public spectacles. White families attended, photographs were taken and distributed, and local law enforcement frequently participated or looked away. The threat of lynching was used to enforce racial subordination: any Black person who challenged white authority - by voting, by succeeding economically, by showing insufficient deference - could be targeted.',
+      "Lee dramatises this directly through the lynch mob scene (Chapter 15), in which a group of Maycomb men gather outside the jail intending to seize Tom Robinson before his trial. The mob is dispersed only by Scout's innocent conversation with Mr Cunningham. Lee uses this scene to show that ordinary, decent people can participate in collective violence - and that breaking the anonymity of the mob by addressing one man as an individual is the only way to stop them.",
     ],
     keyLink:
       "The threat of lynching hangs over the entire novel. Tom Robinson's trial is in some sense a legalised alternative to lynching: the outcome is predetermined, and the process exists to give injustice the appearance of law. Lee shows that the courtroom and the lynch mob serve the same function.",
@@ -165,7 +165,7 @@ export default async function ToKillAMockingbirdContextPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-violet-400" />
-              Modern Text — Novel
+              Modern Text - Novel
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />

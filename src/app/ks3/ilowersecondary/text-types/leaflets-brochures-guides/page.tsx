@@ -9,14 +9,14 @@ import {
 } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Leaflets, brochures & guides — iLowerSecondary English (LEH11) | The English Hub',
+  title: 'Leaflets, brochures & guides - iLowerSecondary English (LEH11) | The English Hub',
   description:
     'How to read and write leaflets, brochures and guides for Pearson Edexcel iLowerSecondary English (LEH11): conventions, structure and language analysis, two original annotated examples, practice questions with model answers, and a writing task.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/leaflets-brochures-guides',
   },
   openGraph: {
-    title: 'Leaflets, brochures & guides — iLowerSecondary English (LEH11)',
+    title: 'Leaflets, brochures & guides - iLowerSecondary English (LEH11)',
     description:
       'Read and write leaflets, brochures and guides for LEH11: conventions, structure and language, annotated original examples and practice questions with model answers.',
   },
@@ -67,7 +67,7 @@ const CONVENTIONS: Convention[] = [
     feature: 'Layout features',
     what: 'Columns, boxes, captions, a logo, contact panel and (in the real form) images.',
     effect:
-      'Organise content visually and signal which information matters most — a key RAO3 point about how presentation supports meaning.',
+      'Organise content visually and signal which information matters most - a key RAO3 point about how presentation supports meaning.',
   },
 ]
 
@@ -86,7 +86,7 @@ const EXAMPLES: Example[] = [
     blocks: [
       {
         text: 'Could one hour a week change a child’s future?',
-        note: 'Rhetorical question as the opening hook — pulls the reader straight into the cause.',
+        note: 'Rhetorical question as the opening hook - pulls the reader straight into the cause.',
       },
       {
         text: 'At Brightwater Community Library, hundreds of children arrive each term unable to read with confidence. Last year, our volunteer Reading Buddies gave 4,000 hours of free one-to-one help. That support changed lives.',
@@ -152,7 +152,7 @@ type PracticeQ = { q: string; a: string }
 const PRACTICE: PracticeQ[] = [
   {
     q: 'Identify one feature of layout used in the Brightwater leaflet and explain its effect on the reader. (2 marks)',
-    a: 'The leaflet uses sub-headings such as “What you would do” (1 mark for identifying the feature). This breaks the text into clear sections so the reader can quickly find the part that matters to them and follow the leaflet in a logical order (1 mark for the explained effect — an RAO3 point about organisation).',
+    a: 'The leaflet uses sub-headings such as “What you would do” (1 mark for identifying the feature). This breaks the text into clear sections so the reader can quickly find the part that matters to them and follow the leaflet in a logical order (1 mark for the explained effect - an RAO3 point about organisation).',
   },
   {
     q: 'Why does the writer of the Brightwater leaflet begin with a rhetorical question? (2 marks)',

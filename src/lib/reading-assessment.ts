@@ -8,7 +8,7 @@
 // expectations.
 // ──────────────────────────────────────────────────────────────────────────────
 
-import type { ComprehensionQuestion, DecodingWord } from "@/data/reading-passages"
+import type { ComprehensionQuestion, DecodingWord } from '@/data/reading-passages'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -163,25 +163,20 @@ function lookupAge(norms: [number, number, number][], value: number): AgeScore {
 /**
  * Score a single answer against its question. Returns the points earned.
  */
-export function scoreAnswer(
-  answer: ComprehensionAnswer,
-  question: ComprehensionQuestion
-): number {
-  if (question.type === "multiple-choice") {
+export function scoreAnswer(answer: ComprehensionAnswer, question: ComprehensionQuestion): number {
+  if (question.type === 'multiple-choice') {
     return answer.answer === question.correctAnswer ? question.points : 0
   }
 
-  // Short answer — check for keyword matches
+  // Short answer - check for keyword matches
   const answerLower = answer.answer.toLowerCase().trim()
   const keywords = [
     ...(question.acceptableKeywords ?? []),
-    ...question.correctAnswer.split(" "),
+    ...question.correctAnswer.split(' '),
   ].map((k) => k.toLowerCase())
 
   const uniqueKeywords = [...new Set(keywords)]
-  const matchCount = uniqueKeywords.filter((kw) =>
-    answerLower.includes(kw)
-  ).length
+  const matchCount = uniqueKeywords.filter((kw) => answerLower.includes(kw)).length
   const matchRatio = matchCount / Math.max(uniqueKeywords.length, 1)
 
   if (matchRatio >= 0.5) return question.points
@@ -191,7 +186,7 @@ export function scoreAnswer(
 
 function scoreComprehension(
   answers: ComprehensionAnswer[],
-  questions: ComprehensionQuestion[]
+  questions: ComprehensionQuestion[],
 ): { score: number; maxScore: number; percentage: number } {
   const questionMap = new Map(questions.map((q) => [q.id, q]))
   let score = 0
@@ -211,9 +206,11 @@ function scoreComprehension(
   }
 }
 
-function scoreDecoding(
-  answers: DecodingAnswer[]
-): { score: number; maxScore: number; percentage: number } {
+function scoreDecoding(answers: DecodingAnswer[]): {
+  score: number
+  maxScore: number
+  percentage: number
+} {
   const maxScore = answers.length
   const score = answers.filter((a) => a.correct).length
 
@@ -224,16 +221,18 @@ function scoreDecoding(
   }
 }
 
-// Cap WPM at a realistic maximum — even exceptional adult readers with full
+// Cap WPM at a realistic maximum - even exceptional adult readers with full
 // comprehension rarely exceed 450 WPM. Speed readers and skimmers may hit
 // 700+ but comprehension drops dramatically above 500. We cap at 450 so the
 // reading-age norms table (which maps WPM to age) stays within the range
 // it was designed for.
 const MAX_FLUENCY_WPM = 450
 
-function scoreFluency(
-  timings: FluencyTiming[]
-): { wordsPerMinute: number; accuracy: number; adjustedWpm: number } {
+function scoreFluency(timings: FluencyTiming[]): {
+  wordsPerMinute: number
+  accuracy: number
+  adjustedWpm: number
+} {
   if (timings.length === 0) {
     return { wordsPerMinute: 0, accuracy: 0, adjustedWpm: 0 }
   }
@@ -246,11 +245,10 @@ function scoreFluency(
   for (const timing of timings) {
     const minutes = timing.readingTimeSeconds / 60
     const rawWpm = minutes > 0 ? timing.wordCount / minutes : 0
-    // Cap individual passage WPM — any reading faster than this is gaming
+    // Cap individual passage WPM - any reading faster than this is gaming
     // the button (clicking "finished" too quickly) rather than genuine fluency.
     const wpm = Math.min(rawWpm, MAX_FLUENCY_WPM)
-    const accuracy =
-      timing.wordCount > 0 ? timing.wordsCorrect / timing.wordCount : 0
+    const accuracy = timing.wordCount > 0 ? timing.wordsCorrect / timing.wordCount : 0
 
     totalWpm += wpm
     totalAccuracy += accuracy
@@ -273,14 +271,14 @@ function scoreFluency(
 function findCeilingLevel(
   answers: ComprehensionAnswer[],
   questions: ComprehensionQuestion[],
-  passageLevels: Map<string, number>
+  passageLevels: Map<string, number>,
 ): number {
   // Group questions by passage level
   const levelScores = new Map<number, { score: number; max: number }>()
 
   for (const q of questions) {
     // Extract passage level from question id (e.g. "p3q1" → passage "p3" → level from map)
-    const passageId = q.id.replace(/q\d+$/, "")
+    const passageId = q.id.replace(/q\d+$/, '')
     const level = passageLevels.get(passageId) ?? 1
 
     if (!levelScores.has(level)) {
@@ -291,18 +289,15 @@ function findCeilingLevel(
 
     const answer = answers.find((a) => a.questionId === q.id)
     if (answer) {
-      if (q.type === "multiple-choice" && answer.answer === q.correctAnswer) {
+      if (q.type === 'multiple-choice' && answer.answer === q.correctAnswer) {
         ls.score += q.points
-      } else if (q.type === "short-answer") {
+      } else if (q.type === 'short-answer') {
         const answerLower = answer.answer.toLowerCase().trim()
-        const keywords = [
-          ...(q.acceptableKeywords ?? []),
-          ...q.correctAnswer.split(" "),
-        ].map((k) => k.toLowerCase())
+        const keywords = [...(q.acceptableKeywords ?? []), ...q.correctAnswer.split(' ')].map((k) =>
+          k.toLowerCase(),
+        )
         const uniqueKeywords = [...new Set(keywords)]
-        const matchCount = uniqueKeywords.filter((kw) =>
-          answerLower.includes(kw)
-        ).length
+        const matchCount = uniqueKeywords.filter((kw) => answerLower.includes(kw)).length
         const matchRatio = matchCount / Math.max(uniqueKeywords.length, 1)
         if (matchRatio >= 0.5) ls.score += q.points
         else if (matchRatio >= 0.25) ls.score += Math.ceil(q.points / 2)
@@ -327,58 +322,84 @@ function analysePerformance(
   comprehension: { percentage: number },
   decoding: { percentage: number },
   fluency: { accuracy: number; adjustedWpm: number },
-  ceilingLevel: number
+  ceilingLevel: number,
 ): { strengths: string[]; areasForDevelopment: string[] } {
   const strengths: string[] = []
   const areas: string[] = []
 
   // Comprehension analysis
   if (comprehension.percentage >= 80) {
-    strengths.push("Strong reading comprehension — excellent understanding of both literal and inferential questions")
+    strengths.push(
+      'Strong reading comprehension - excellent understanding of both literal and inferential questions',
+    )
   } else if (comprehension.percentage >= 60) {
-    strengths.push("Good literal comprehension — able to retrieve key information from texts")
+    strengths.push('Good literal comprehension - able to retrieve key information from texts')
     if (comprehension.percentage < 70) {
-      areas.push("Develop inferential and evaluative reading skills — practise reading between the lines")
+      areas.push(
+        'Develop inferential and evaluative reading skills - practise reading between the lines',
+      )
     }
   } else {
-    areas.push("Reading comprehension needs focused support — practise answering questions about texts at an appropriate level")
+    areas.push(
+      'Reading comprehension needs focused support - practise answering questions about texts at an appropriate level',
+    )
   }
 
   // Decoding analysis
   if (decoding.percentage >= 85) {
-    strengths.push("Excellent decoding skills — confident word recognition across regular and irregular words")
+    strengths.push(
+      'Excellent decoding skills - confident word recognition across regular and irregular words',
+    )
   } else if (decoding.percentage >= 65) {
-    strengths.push("Solid phonics foundation with good word recognition")
-    areas.push("Continue building vocabulary — focus on multi-syllable words and unfamiliar word patterns")
+    strengths.push('Solid phonics foundation with good word recognition')
+    areas.push(
+      'Continue building vocabulary - focus on multi-syllable words and unfamiliar word patterns',
+    )
   } else {
-    areas.push("Decoding and word recognition requires additional support — consider systematic phonics intervention")
+    areas.push(
+      'Decoding and word recognition requires additional support - consider systematic phonics intervention',
+    )
   }
 
   // Fluency analysis
   if (fluency.adjustedWpm >= 150) {
-    strengths.push("Reading fluency is age-appropriate or above — reads at a good pace with accuracy")
+    strengths.push(
+      'Reading fluency is age-appropriate or above - reads at a good pace with accuracy',
+    )
   } else if (fluency.adjustedWpm >= 100) {
-    strengths.push("Developing fluency with reasonable reading speed")
-    areas.push("Increase reading fluency through regular reading practice — aim for 15-20 minutes of daily reading")
+    strengths.push('Developing fluency with reasonable reading speed')
+    areas.push(
+      'Increase reading fluency through regular reading practice - aim for 15-20 minutes of daily reading',
+    )
   } else if (fluency.adjustedWpm > 0) {
-    areas.push("Reading fluency needs development — practise reading aloud regularly with texts at a comfortable level")
+    areas.push(
+      'Reading fluency needs development - practise reading aloud regularly with texts at a comfortable level',
+    )
   }
 
   // Accuracy specific
   if (fluency.accuracy < 90 && fluency.accuracy > 0) {
-    areas.push("Reading accuracy could be improved — slow down and check unfamiliar words carefully")
+    areas.push(
+      'Reading accuracy could be improved - slow down and check unfamiliar words carefully',
+    )
   }
 
   // Ceiling level observations
   if (ceilingLevel >= 8) {
-    strengths.push("Able to access and understand challenging, sophisticated texts")
+    strengths.push('Able to access and understand challenging, sophisticated texts')
   } else if (ceilingLevel >= 5) {
-    strengths.push("Comfortable reading texts at Key Stage 3 level")
+    strengths.push('Comfortable reading texts at Key Stage 3 level')
   }
 
   return {
-    strengths: strengths.length > 0 ? strengths : ["Completing the assessment demonstrates commitment to improving reading skills"],
-    areasForDevelopment: areas.length > 0 ? areas : ["Continue reading widely across fiction and non-fiction to maintain strong skills"],
+    strengths:
+      strengths.length > 0
+        ? strengths
+        : ['Completing the assessment demonstrates commitment to improving reading skills'],
+    areasForDevelopment:
+      areas.length > 0
+        ? areas
+        : ['Continue reading widely across fiction and non-fiction to maintain strong skills'],
   }
 }
 
@@ -398,7 +419,7 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
   const passageLevels = new Map<string, number>()
   // We infer passage levels from question IDs: "p1q1" → passage "p1" level 1, etc.
   for (const q of input.questions) {
-    const passageId = q.id.replace(/q\d+$/, "")
+    const passageId = q.id.replace(/q\d+$/, '')
     const levelMatch = passageId.match(/p(\d+)/)
     if (levelMatch) {
       passageLevels.set(passageId, parseInt(levelMatch[1], 10))
@@ -406,17 +427,17 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
   }
 
   // When ceiling was reached, only score questions from passages that were
-  // actually attempted — don't penalise for unattempted passages
+  // actually attempted - don't penalise for unattempted passages
   const answeredQuestionIds = new Set(input.comprehensionAnswers.map((a) => a.questionId))
   const attemptedPassageIds = new Set<string>()
   for (const a of input.comprehensionAnswers) {
-    const passageId = a.questionId.replace(/q\d+$/, "")
+    const passageId = a.questionId.replace(/q\d+$/, '')
     attemptedPassageIds.add(passageId)
   }
 
   const scorableQuestions = input.ceilingReached
     ? input.questions.filter((q) => {
-        const passageId = q.id.replace(/q\d+$/, "")
+        const passageId = q.id.replace(/q\d+$/, '')
         return attemptedPassageIds.has(passageId)
       })
     : input.questions
@@ -445,14 +466,14 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
   const ceilingLevel = findCeilingLevel(
     input.comprehensionAnswers,
     scorableQuestions,
-    passageLevels
+    passageLevels,
   )
 
   const { strengths, areasForDevelopment } = analysePerformance(
     comprehensionScores,
     decodingScores,
     fluencyScores,
-    ceilingLevel
+    ceilingLevel,
   )
 
   // GCSE grade equivalent for Year 10+ readers
@@ -460,12 +481,18 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
   if (readingAge.years >= 14) {
     // Map reading age 14-18 to GCSE grades 1-9
     const ageInMonths = readingAge.years * 12 + readingAge.months
-    if (ageInMonths >= 210) gcseEquivalent = 9      // 17y6m+
-    else if (ageInMonths >= 198) gcseEquivalent = 8  // 16y6m+
-    else if (ageInMonths >= 186) gcseEquivalent = 7  // 15y6m+
-    else if (ageInMonths >= 180) gcseEquivalent = 6  // 15y0m+
-    else if (ageInMonths >= 174) gcseEquivalent = 5  // 14y6m+
-    else if (ageInMonths >= 168) gcseEquivalent = 4  // 14y0m+
+    if (ageInMonths >= 210)
+      gcseEquivalent = 9 // 17y6m+
+    else if (ageInMonths >= 198)
+      gcseEquivalent = 8 // 16y6m+
+    else if (ageInMonths >= 186)
+      gcseEquivalent = 7 // 15y6m+
+    else if (ageInMonths >= 180)
+      gcseEquivalent = 6 // 15y0m+
+    else if (ageInMonths >= 174)
+      gcseEquivalent = 5 // 14y6m+
+    else if (ageInMonths >= 168)
+      gcseEquivalent = 4 // 14y0m+
     else gcseEquivalent = 3
   }
 
@@ -490,8 +517,8 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
 // ─── Utility: Format age score to string ─────────────────────────────────────
 
 export function formatAgeScore(age: AgeScore): string {
-  const yearStr = age.years === 1 ? "1 year" : `${age.years} years`
-  const monthStr = age.months === 1 ? "1 month" : `${age.months} months`
+  const yearStr = age.years === 1 ? '1 year' : `${age.years} years`
+  const monthStr = age.months === 1 ? '1 month' : `${age.months} months`
   if (age.months === 0) return yearStr
   return `${yearStr} ${monthStr}`
 }
@@ -503,14 +530,14 @@ export function formatAgeScore(age: AgeScore): string {
 export function compareToChronologicalAge(
   readingAge: AgeScore,
   chronologicalAgeYears: number,
-  chronologicalAgeMonths: number = 0
-): "above" | "at" | "below" {
+  chronologicalAgeMonths: number = 0,
+): 'above' | 'at' | 'below' {
   const readingMonths = readingAge.years * 12 + readingAge.months
   const chronMonths = chronologicalAgeYears * 12 + chronologicalAgeMonths
 
   const diff = readingMonths - chronMonths
 
-  if (diff >= 6) return "above"
-  if (diff <= -6) return "below"
-  return "at"
+  if (diff >= 6) return 'above'
+  if (diff <= -6) return 'below'
+  return 'at'
 }

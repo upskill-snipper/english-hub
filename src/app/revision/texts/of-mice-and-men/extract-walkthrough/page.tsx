@@ -22,7 +22,7 @@ const WALKTHROUGH: WalkthroughCard[] = [
     kind: 'Notice',
     title: 'A predatory natural world',
     fragment: 'a silent head and beak lanced down',
-    body: "A heron eats a water snake in the opening pages and again here. Nature's indifference reframes the human tragedy as one small predation among many — Lennie is simply next.",
+    body: "A heron eats a water snake in the opening pages and again here. Nature's indifference reframes the human tragedy as one small predation among many - Lennie is simply next.",
   },
   {
     kind: 'Say',
@@ -33,9 +33,9 @@ const WALKTHROUGH: WalkthroughCard[] = [
   {
     kind: 'Zoom Out',
     title: "Candy's dog as rehearsal",
-    // VERIFIED: original Steinbeck text reads "I oughtta of shot that dog myself, George" — dialect 'oughtta' preserved (Penguin Modern Classics edn).
+    // VERIFIED: original Steinbeck text reads "I oughtta of shot that dog myself, George" - dialect 'oughtta' preserved (Penguin Modern Classics edn).
     fragment: 'I oughtta of shot that dog myself',
-    body: "Carlson's earlier execution of Candy's dog is the template for what George must now do. Candy's regret — that he let a stranger end his companion — becomes George's instruction manual. The novella has been preparing this bullet for fifty pages.",
+    body: "Carlson's earlier execution of Candy's dog is the template for what George must now do. Candy's regret - that he let a stranger end his companion - becomes George's instruction manual. The novella has been preparing this bullet for fifty pages.",
   },
   {
     kind: 'Notice',
@@ -47,17 +47,17 @@ const WALKTHROUGH: WalkthroughCard[] = [
     kind: 'Say',
     title: "George's slow trigger",
     fragment: 'the hand shook violently',
-    body: "Steinbeck stretches the seconds before the shot. George's trembling hand, the retold dream, the hesitation — the prose refuses to let the reader rush past the cost of mercy. The act is unbearable precisely because Steinbeck makes us wait.",
+    body: "Steinbeck stretches the seconds before the shot. George's trembling hand, the retold dream, the hesitation - the prose refuses to let the reader rush past the cost of mercy. The act is unbearable precisely because Steinbeck makes us wait.",
   },
   {
     kind: 'Zoom Out',
     title: 'Mercy or murder?',
-    body: 'The lynch mob led by Curley promises a brutal death. George chooses to be the killer rather than let strangers do worse. Steinbeck refuses to resolve whether this is love, cowardice or both — and that ambiguity is the moral engine of the ending.',
+    body: 'The lynch mob led by Curley promises a brutal death. George chooses to be the killer rather than let strangers do worse. Steinbeck refuses to resolve whether this is love, cowardice or both - and that ambiguity is the moral engine of the ending.',
   },
   {
     kind: 'Zoom Out',
     title: '1930s itinerant labour',
-    body: "Steinbeck's bleakness is structural, not personal. Depression-era ranch hands had no union, no welfare, no rights. The dream of 'a couple of acres' is the only insurance the system offers — and Steinbeck shows even that is a lie. Friendship is the single refuge left.",
+    body: "Steinbeck's bleakness is structural, not personal. Depression-era ranch hands had no union, no welfare, no rights. The dream of 'a couple of acres' is the only insurance the system offers - and Steinbeck shows even that is a lie. Friendship is the single refuge left.",
   },
   {
     kind: 'Notice',
@@ -67,7 +67,7 @@ const WALKTHROUGH: WalkthroughCard[] = [
   },
 ]
 
-const MODEL_PARAGRAPH = `The ending of Of Mice and Men earns its tragic inevitability because Steinbeck has, from the first page, been quietly nailing the coffin shut. The cyclical return to the Salinas pool tells the reader that nothing the men attempted ever altered their trajectory; the heron devouring the water snake confirms that the natural world was always indifferent to their plans. Carlson's execution of Candy's dog functions as a structural rehearsal — Candy's lament that he should have done it himself becomes George's blueprint, and the same Luger reappears as the instrument of mercy. Lennie's final 'tell about the rabbits, George' weaponises tenderness: the refrain that defined their friendship now scores its execution. Crucially, Steinbeck offers no alternative refuge. The ranch is not a community but a marketplace; Crooks is segregated, Curley's wife is property, Candy is one accident from disposable. In a world stripped of solidarity, friendship is the only insurance the powerless can purchase, and the novella's bleakness lies in showing that even that insurance cannot survive economic precarity. George's slow trigger is therefore not weakness but love budgeted against horror: better a friend's bullet than a mob's rope. Slim's quiet absolution — 'You hadda, George' — locates the ethical verdict inside the fellowship of labour, suggesting that in 1930s America, mercy and murder had collapsed into the same gesture.`
+const MODEL_PARAGRAPH = `The ending of Of Mice and Men earns its tragic inevitability because Steinbeck has, from the first page, been quietly nailing the coffin shut. The cyclical return to the Salinas pool tells the reader that nothing the men attempted ever altered their trajectory; the heron devouring the water snake confirms that the natural world was always indifferent to their plans. Carlson's execution of Candy's dog functions as a structural rehearsal - Candy's lament that he should have done it himself becomes George's blueprint, and the same Luger reappears as the instrument of mercy. Lennie's final 'tell about the rabbits, George' weaponises tenderness: the refrain that defined their friendship now scores its execution. Crucially, Steinbeck offers no alternative refuge. The ranch is not a community but a marketplace; Crooks is segregated, Curley's wife is property, Candy is one accident from disposable. In a world stripped of solidarity, friendship is the only insurance the powerless can purchase, and the novella's bleakness lies in showing that even that insurance cannot survive economic precarity. George's slow trigger is therefore not weakness but love budgeted against horror: better a friend's bullet than a mob's rope. Slim's quiet absolution - 'You hadda, George' - locates the ethical verdict inside the fellowship of labour, suggesting that in 1930s America, mercy and murder had collapsed into the same gesture.`
 
 function CardBlock({ card }: { card: WalkthroughCard }) {
   const tone =

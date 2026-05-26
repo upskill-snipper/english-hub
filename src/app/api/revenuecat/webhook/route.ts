@@ -3,8 +3,8 @@
  *
  * Receiver for RevenueCat webhook events. Mirrors the structure of the
  * existing Stripe webhook handler (src/app/api/stripe/webhook/route.ts):
- *   1. Verify signature (constant-time) — 401 on mismatch.
- *   2. Parse + validate body with zod — 422 on malformed payload.
+ *   1. Verify signature (constant-time) - 401 on mismatch.
+ *   2. Parse + validate body with zod - 422 on malformed payload.
  *   3. Journal the event into `RevenueCatEvent` BEFORE reconciliation.
  *      This gives us a durable audit trail independent of downstream
  *      business-logic bugs; we can replay from the journal if needed.
@@ -15,13 +15,13 @@
  *   6. Stamp `processedAt` on the journal row.
  *   7. Return `{ ok: true, data: { eventId } }` / error envelope.
  *
- * The handler is synchronous on purpose — RevenueCat requires a 200
+ * The handler is synchronous on purpose - RevenueCat requires a 200
  * within ~10 s and will retry on any non-2xx. We journal first so the
  * retry is cheap (idempotent no-op) if reconciliation is the thing that
  * failed.
  *
  * ASSUMPTION(W4): authentication is a shared-secret Bearer token in the
- * `Authorization` header — see `lib/revenuecat/verify.ts`.
+ * `Authorization` header - see `lib/revenuecat/verify.ts`.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (!verifyWebhookSignature(rawBody, request.headers)) {
-    // Do not leak _why_ the signature failed — could be missing header,
+    // Do not leak _why_ the signature failed - could be missing header,
     // wrong bearer, anything. 401 + generic copy is correct.
     console.warn('[revenuecat/webhook] Signature verification failed')
     return fail('invalid_signature', 'Invalid webhook signature', 401)
@@ -129,15 +129,13 @@ export async function POST(request: NextRequest) {
   })
 
   // ── 3. Idempotency check ────────────────────────────────────────────
-  // The schema doesn't carry an `eventId` column — we stash the RC id
+  // The schema doesn't carry an `eventId` column - we stash the RC id
   // inside the `payload` JSON and query by JSON path. Postgres handles
   // this fine; the combined (appUserId, eventType) index narrows the
   // scan first.
   let alreadyProcessedJournal: { id: string } | null = null
   try {
-    const existing = await prisma.$queryRaw<
-      Array<{ id: string }>
-    >`SELECT id FROM "RevenueCatEvent"
+    const existing = await prisma.$queryRaw<Array<{ id: string }>>`SELECT id FROM "RevenueCatEvent"
       WHERE app_user_id = ${event.app_user_id}
         AND event_type = ${event.type}
         AND payload->>'id' = ${event.id}
@@ -147,7 +145,7 @@ export async function POST(request: NextRequest) {
       alreadyProcessedJournal = existing[0]
     }
   } catch (err) {
-    // A raw-query failure here is non-fatal — we fall through to a best-
+    // A raw-query failure here is non-fatal - we fall through to a best-
     // effort journal + reconcile. A genuine schema problem will be
     // caught by the insert below.
     console.warn('[revenuecat/webhook] Idempotency lookup failed; continuing', err)
@@ -180,7 +178,7 @@ export async function POST(request: NextRequest) {
     })
     journalId = journal.id
   } catch (err) {
-    // Journalling failed — we cannot safely continue. RevenueCat will
+    // Journalling failed - we cannot safely continue. RevenueCat will
     // retry the delivery; returning 500 signals that to them.
     console.error('[revenuecat/webhook] Failed to journal event', err)
     Sentry.captureException(err, { tags: { route: 'revenuecat.webhook' } })
@@ -192,7 +190,7 @@ export async function POST(request: NextRequest) {
     const outcome = await reconcileEvent(prisma, event)
 
     // Stamp the journal row as processed regardless of whether the
-    // reconciler mutated a Subscription — `skipped` is a legitimate
+    // reconciler mutated a Subscription - `skipped` is a legitimate
     // terminal outcome (e.g. TEST, TRANSFER, user_not_found).
     await prisma.revenueCatEvent.update({
       where: { id: journalId },
@@ -211,7 +209,7 @@ export async function POST(request: NextRequest) {
     return ok({ eventId: event.id, skipped: outcome.skipped ?? false })
   } catch (err) {
     // Record the failure on the journal row so the replay cron can pick
-    // this up without scanning Sentry. Best-effort — if the update
+    // this up without scanning Sentry. Best-effort - if the update
     // itself fails we still fall through to a 500.
     try {
       await prisma.revenueCatEvent.update({

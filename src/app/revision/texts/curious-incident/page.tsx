@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -8,12 +8,12 @@ import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
-    description: 'The Curious Incident IGCSE revision — Mark Haddon',
+    title: 'The Curious Incident revision guide - themes, characters, key quotes - The English Hub',
+    description: 'The Curious Incident IGCSE revision - Mark Haddon',
   },
-  title: 'The Curious Incident revision guide — themes, characters, key quotes',
+  title: 'The Curious Incident revision guide - themes, characters, key quotes',
   description:
-    "The Curious Incident IGCSE revision — Mark Haddon's 2003 novel with plot, characters, themes, context and key quotes. Pearson Edexcel IGCSE 4ET1-aligned.",
+    "The Curious Incident IGCSE revision - Mark Haddon's 2003 novel with plot, characters, themes, context and key quotes. Pearson Edexcel IGCSE 4ET1-aligned.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/curious-incident',
   },
@@ -116,13 +116,13 @@ const data: TextGuideData = {
     {
       quote:
         '"It was 7 minutes after midnight. The dog was lying on the grass in the middle of the lawn in front of Mrs Shears\u2019 house."',
-      who: 'Christopher — Chapter 2 (opening)',
+      who: 'Christopher - Chapter 2 (opening)',
       analysis:
         'The novel\u2019s opening sentence establishes Christopher\u2019s precision with time, his noticing of exact detail and the flat, affectless tone that the book will sustain. It is also a sly opening for a detective novel: a body on a lawn.',
     },
     {
       quote: '"I find people confusing."',
-      who: 'Christopher — early chapters',
+      who: 'Christopher - early chapters',
       analysis:
         'A quietly devastating thesis statement. Christopher states his central difficulty in one sentence and the novel then spends 226 chapters showing what living that difficulty actually means.',
     },
@@ -191,7 +191,7 @@ const data: TextGuideData = {
     {
       quote:
         '"Being frightened is like when you suddenly wake up in the dark and you think that there is someone in the room with you."',
-      who: 'Christopher — during the London journey',
+      who: 'Christopher - during the London journey',
       analysis:
         'One of the rare moments when Christopher attempts a simile for an emotion. Its clumsiness is moving, and it marks how hard he is working to describe his own fear on the train.',
     },
@@ -204,26 +204,26 @@ const data: TextGuideData = {
     {
       quote:
         '"She put her arms round me and said, \u2018Christopher, Christopher, Christopher\u2019."',
-      who: 'Judy — arrival in Willesden',
+      who: 'Judy - arrival in Willesden',
       analysis:
         'The repetition of the name carries the reunion; Christopher, who cannot bear being touched, accepts the embrace. Haddon trusts the scene without sentimentalising it.',
     },
     {
       quote: '"I got an A grade."',
-      who: 'Christopher — A Level Maths result',
+      who: 'Christopher - A Level Maths result',
       analysis:
         'The short, declarative sentence lands with extraordinary force. Christopher has wanted to prove that he is not stupid, and he has done it. The book\u2019s quietest triumph.',
     },
     {
       quote:
         '"And I know I can do this because I went to London on my own, and because I solved the mystery of Who Killed Wellington? and I found my mother and I was brave and I wrote a book and that means I can do anything."',
-      who: 'Christopher — final page',
+      who: 'Christopher - final page',
       analysis:
         'The novel\u2019s last sentence. Haddon ends on a conditional triumph: Christopher states what his achievements mean to him without the narrative confirming or denying the claim. The conditional hope is part of the book\u2019s honesty.',
     },
     {
       quote: '"Dad said, \u2018Christopher, do you understand that I love you?\u2019"',
-      who: 'Ed — late in the novel',
+      who: 'Ed - late in the novel',
       analysis:
         'A sentence that would be unremarkable in another novel is extraordinary here, because it is a direct question from a father who is trying to rebuild trust through language Christopher can parse.',
     },

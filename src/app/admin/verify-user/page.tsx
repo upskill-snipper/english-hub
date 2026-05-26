@@ -53,7 +53,7 @@ export default function AdminVerifyUserPage() {
         }
         setAuthorized(true)
       } catch {
-        // Network error — don't lock the user out, just show the form;
+        // Network error - don't lock the user out, just show the form;
         // the POST will re-check.
         setAuthorized(true)
       } finally {

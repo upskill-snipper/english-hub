@@ -4,7 +4,7 @@
  * New affiliate programme application endpoint (NEW percentage-tier system).
  *
  * Writes to the NEW `affiliate_accounts` table defined in
- * supabase/migrations-pending/002_affiliates.sql — NOT the legacy `affiliates`
+ * supabase/migrations-pending/002_affiliates.sql - NOT the legacy `affiliates`
  * table used by the Rewardful-based system under /api/affiliates/apply.
  *
  * On success, creates an `affiliate_accounts` row with status = 'pending'
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
           headers: {
             'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)),
           },
-        }
+        },
       )
     }
 
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
     const errors: string[] = []
 
     if (!body.full_name || body.full_name.trim().length < 2 || body.full_name.length > 120) {
-      errors.push('Full name must be 2–120 characters')
+      errors.push('Full name must be 2-120 characters')
     }
     if (!body.email || !EMAIL_REGEX.test(body.email)) {
       errors.push('Valid email address is required')
@@ -69,14 +69,14 @@ export async function POST(request: NextRequest) {
       body.audience_description.trim().length < 20 ||
       body.audience_description.length > 1000
     ) {
-      errors.push('Audience description must be 20–1000 characters')
+      errors.push('Audience description must be 20-1000 characters')
     }
     if (
       !body.promo_strategy ||
       body.promo_strategy.trim().length < 20 ||
       body.promo_strategy.length > 1000
     ) {
-      errors.push('Promotion strategy must be 20–1000 characters')
+      errors.push('Promotion strategy must be 20-1000 characters')
     }
     if (!body.accepted_terms) {
       errors.push('You must accept the affiliate terms to apply')
@@ -103,7 +103,7 @@ export async function POST(request: NextRequest) {
     const supabaseAdmin = createServiceRoleClient()
     const normalizedEmail = body.email.toLowerCase().trim()
 
-    // Prevent enumeration — return a generic success-like message regardless
+    // Prevent enumeration - return a generic success-like message regardless
     const { data: existing } = await supabaseAdmin
       .from('affiliate_accounts')
       .select('id')
@@ -116,7 +116,7 @@ export async function POST(request: NextRequest) {
           error:
             'An application with this email is already on file. If you believe this is an error, please contact support.',
         },
-        { status: 409 }
+        { status: 409 },
       )
     }
 
@@ -148,7 +148,7 @@ export async function POST(request: NextRequest) {
       console.error('[affiliate/signup] insert failed:', insertError)
       return NextResponse.json(
         { error: 'Failed to submit application. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { success: true, application_id: inserted?.id ?? null },
-      { status: 201 }
+      { status: 201 },
     )
   } catch (err) {
     console.error('[affiliate/signup] unexpected error:', err)

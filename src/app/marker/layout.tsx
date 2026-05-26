@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-// The paid-marker console is a private, role-gated staff tool — never
+// The paid-marker console is a private, role-gated staff tool - never
 // indexed. Primary defense is robots.txt; this metadata is defense-in-depth
 // so any crawler that ignores robots.txt still sees a clear noindex (mirrors
 // the /account/* layout pattern).

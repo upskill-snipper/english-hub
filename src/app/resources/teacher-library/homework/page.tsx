@@ -6,11 +6,11 @@ import { getBoardConfig } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Homework Tasks — Teacher Library',
+    title: 'Homework Tasks - Teacher Library',
     description:
       'A library of meaningful GCSE English homework tasks that extend learning without creating a marking mountain.',
   },
-  title: 'Homework Tasks — Teacher Library',
+  title: 'Homework Tasks - Teacher Library',
   description:
     'A library of meaningful GCSE English homework tasks that extend learning without creating a marking mountain.',
   alternates: {
@@ -23,7 +23,7 @@ const HOMEWORK = [
     title: 'Quote Learning Log',
     description:
       'Students learn 5 new quotations each week. Self-test and log progress in a tracking sheet.',
-    yearGroup: 'Year 10–11',
+    yearGroup: 'Year 10-11',
   },
   {
     title: 'Weekly Analytical Paragraph',
@@ -64,7 +64,7 @@ const HOMEWORK = [
   {
     title: 'Seneca Revision Session',
     description: 'Complete one assigned Seneca unit on a current topic. Screenshot progress.',
-    yearGroup: 'Year 10–11',
+    yearGroup: 'Year 10-11',
   },
   {
     title: 'Mini Essay: Character Analysis',
@@ -88,7 +88,7 @@ const HOMEWORK = [
     title: 'Knowledge Organiser Self-Quiz',
     description:
       'Cover half the knowledge organiser and recall from memory. Check and log mistakes.',
-    yearGroup: 'KS3–KS4',
+    yearGroup: 'KS3-KS4',
   },
 ]
 
@@ -118,7 +118,7 @@ export default async function HomeworkPage() {
           </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">Homework Tasks</h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            Meaningful homework that extends classroom learning — without creating a marking
+            Meaningful homework that extends classroom learning - without creating a marking
             mountain. Each task is designed to be self-checked or lightly assessed in class.
           </p>
         </div>

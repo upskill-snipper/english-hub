@@ -6,12 +6,12 @@
  * Renders the official `<div class="trustpilot-widget">` wrapper for a given
  * variant and lazily loads the widget bootstrap script the first time any
  * TrustBox mounts. Falls back to a plain anchor if the business unit ID env
- * is missing — so preview environments render something clean rather than an
+ * is missing - so preview environments render something clean rather than an
  * empty slot.
  *
  * The bootstrap script (`widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js`)
  * is distinct from the InviteJS script (`invitejs.trustpilot.com/tp.min.js`)
- * mounted globally in the root layout. They must not be confused — only the
+ * mounted globally in the root layout. They must not be confused - only the
  * widget bootstrap self-scans `.trustpilot-widget` nodes.
  */
 
@@ -107,7 +107,7 @@ export function TrustBox({
       data-style-width={width}
       data-theme={theme}
     >
-      {/* Brand name "Trustpilot" stays Latin even in AR — trademark, per
+      {/* Brand name "Trustpilot" stays Latin even in AR - trademark, per
           dictionary brand-name policy. */}
       <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer">
         {t('trustpilot.brand')}

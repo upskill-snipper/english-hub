@@ -17,7 +17,7 @@ import { resolveAttribution, DEFAULT_ATTRIBUTION } from '@/lib/affiliate/attribu
  * resolve to the historical `STRIPE_PRICE_PRO_*` env vars (treated as the
  * Student tier for backward compatibility). The granular `student_*` /
  * `teacher_*` keys honour the dedicated STUDENT/TEACHER env vars when set
- * — falling back to PRO_* when they aren't — so the billing page can drive
+ * - falling back to PRO_* when they aren't - so the billing page can drive
  * distinct Student vs Teacher subscriptions without breaking existing
  * deployments that only have the legacy env vars wired up.
  */
@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate priceId against known price IDs (filter out undefined/empty values).
-    // Also accept the granular STUDENT_/TEACHER_ env vars when they are set —
+    // Also accept the granular STUDENT_/TEACHER_ env vars when they are set -
     // the resolver above can produce them, so the validator must too.
     const tierEnvPriceIds = [
       process.env.STRIPE_PRICE_STUDENT_MONTHLY,
@@ -146,7 +146,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Soft-verification gate: as of 28 Apr 2026 sign-up no longer requires
-    // a verified email, but Stripe checkout still does — this catches
+    // a verified email, but Stripe checkout still does - this catches
     // typo'd email addresses before any money moves. Policy lives in
     // src/lib/auth/email-verification-policy.ts.
     try {
@@ -183,7 +183,7 @@ export async function POST(request: NextRequest) {
     // We detect the stale ID with a cheap retrieve() call and clear it,
     // letting the create-customer branch below re-link a fresh live
     // customer. Costs one Stripe API call per checkout for users who
-    // already have a customer ID — negligible.
+    // already have a customer ID - negligible.
     if (stripeCustomerId) {
       try {
         await stripe.customers.retrieve(stripeCustomerId)
@@ -193,7 +193,7 @@ export async function POST(request: NextRequest) {
           verifyErr.code === 'resource_missing'
         ) {
           console.warn(
-            `[api/stripe/checkout] Stale customer ${stripeCustomerId} for user ${user.id} — likely created in test mode. Re-linking.`,
+            `[api/stripe/checkout] Stale customer ${stripeCustomerId} for user ${user.id} - likely created in test mode. Re-linking.`,
           )
           stripeCustomerId = null
         } else {
@@ -224,7 +224,7 @@ export async function POST(request: NextRequest) {
     // ── Affiliate cookie attribution ──────────────────────────────────────
     // BUG-1 fix: customers who clicked an affiliate link
     // `theenglishhub.app/?ref=CODE` previously had their attribution
-    // dropped here — the `teh_aff` cookie was set by the middleware but
+    // dropped here - the `teh_aff` cookie was set by the middleware but
     // nothing read it at checkout time. The webhook only books a
     // conversion for sessions carrying `metadata.affiliateId`, which the
     // standard checkout never set. Result: zero affiliate rows for every
@@ -293,7 +293,7 @@ export async function POST(request: NextRequest) {
       // `allow_promotion_codes: true` was previously enabled, exposing the
       // Stripe-hosted promo field at checkout. That confused users who
       // tried to enter our app-level codes (2026ENGLISH, affiliate
-      // codes) — Stripe doesn't know about those and shows "This code is
+      // codes) - Stripe doesn't know about those and shows "This code is
       // invalid", which reads as "the site is broken". App-level codes
       // are now collected on the pricing page itself and routed through
       // /api/promo/redeem (which bakes the discount into a separate
@@ -325,7 +325,7 @@ export async function POST(request: NextRequest) {
 
     if (error instanceof Stripe.errors.StripeError) {
       // Surface the actual Stripe error message to the client. Stripe's
-      // error strings are NOT sensitive — they're things like
+      // error strings are NOT sensitive - they're things like
       //   "No such price: 'price_xxx'" (env var mismatch with account)
       //   "Invalid API Key provided: sk_live_..." (typo in the key)
       //   "You did not provide an API key" (env var unset / not deployed)

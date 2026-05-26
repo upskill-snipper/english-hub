@@ -5,14 +5,14 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
+  title: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
   description:
     'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE markers.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/christmas-carol',
   },
   openGraph: {
-    title: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
+    title: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
     description:
       'In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance.',
     url: 'https://theenglishhub.app/analysis/christmas-carol',
@@ -190,7 +190,7 @@ export default async function ChristmasCarolAnalysisHub() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <LearningResourceJsonLd
-        name="A Christmas Carol Analysis — Quotes, Characters & Themes"
+        name="A Christmas Carol Analysis - Quotes, Characters & Themes"
         description="In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE markers."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -203,7 +203,7 @@ export default async function ChristmasCarolAnalysisHub() {
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
           {
-            name: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
+            name: 'A Christmas Carol Analysis - Quotes, Characters & Themes',
             url: 'https://theenglishhub.app/analysis/christmas-carol',
           },
         ]}

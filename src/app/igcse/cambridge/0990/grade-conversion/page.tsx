@@ -112,7 +112,7 @@ export default async function GradeConversionPage() {
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
             Cambridge IGCSE Language B reports results on the 9-1 numerical scale, while Language A
-            uses A*-G. The two syllabuses share a mark scheme — so you can map every letter to a
+            uses A*-G. The two syllabuses share a mark scheme - so you can map every letter to a
             number. Use this table to translate between the two.
           </p>
         </div>
@@ -164,7 +164,7 @@ export default async function GradeConversionPage() {
             </h2>
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
               The reformed 9-1 scale was designed to stretch the top end. Under A*-G, an A* was
-              awarded to roughly 8% of entries nationally. Grade 9 is set higher — typically around
+              awarded to roughly 8% of entries nationally. Grade 9 is set higher - typically around
               the top 4%. In practice, an A* student under 0500 is more likely to get an 8, with 9
               reserved for genuinely outstanding work.
             </p>

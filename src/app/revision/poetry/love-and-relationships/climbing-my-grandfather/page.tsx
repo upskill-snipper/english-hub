@@ -573,13 +573,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Literal rock climbing',
-      'Getting to know the grandfather deeply — physical closeness represents emotional understanding',
+      'Getting to know the grandfather deeply - physical closeness represents emotional understanding',
       'Running away from home',
       'A competition',
     ],
     correctIndex: 1,
     explanation:
-      'The climb represents the process of truly knowing someone. Each body part the speaker touches reveals something about the grandfather — his work, character, and warmth.',
+      'The climb represents the process of truly knowing someone. Each body part the speaker touches reveals something about the grandfather - his work, character, and warmth.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -605,13 +605,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It suggests the grandfather has a heart condition',
-      'It fuses literal meaning (a steady heartbeat) with metaphorical meaning (his kind nature) — physical and moral worth become inseparable',
+      'It fuses literal meaning (a steady heartbeat) with metaphorical meaning (his kind nature) - physical and moral worth become inseparable',
       'It shows the speaker is a doctor',
       'It marks the end of the climb',
     ],
     correctIndex: 1,
     explanation:
-      'Pausing near the summit and feeling the heartbeat represents the deepest possible knowledge. "Good heart" works literally (a steady, healthy beat) and metaphorically (his kind nature) — the double meaning is the line\'s power.',
+      'Pausing near the summit and feeling the heartbeat represents the deepest possible knowledge. "Good heart" works literally (a steady, healthy beat) and metaphorically (his kind nature) - the double meaning is the line\'s power.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -637,7 +637,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The speaker is reckless',
-      'The speaker approaches the relationship with trust and vulnerability — no safety nets, just genuine connection',
+      'The speaker approaches the relationship with trust and vulnerability - no safety nets, just genuine connection',
       'Mountain climbing is dangerous',
       'The grandfather is very tall',
     ],
@@ -653,13 +653,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Randomly',
-      'The speaker climbs from feet to head, with each body part revealing character — creating a journey of discovery',
+      'The speaker climbs from feet to head, with each body part revealing character - creating a journey of discovery',
       'Only the face is described',
       'The body is ignored',
     ],
     correctIndex: 1,
     explanation:
-      'The poem progresses upward from feet through knees, chest, and face to the summit of the head. Each body part reveals something about the grandfather — his work-roughened hands, kind eyes, warm skin.',
+      'The poem progresses upward from feet through knees, chest, and face to the summit of the head. Each body part reveals something about the grandfather - his work-roughened hands, kind eyes, warm skin.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -669,13 +669,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is cold and distant',
-      'He is vast, solid, enduring, and worth the effort of understanding — like a mountain worth climbing',
+      'He is vast, solid, enduring, and worth the effort of understanding - like a mountain worth climbing',
       'He is dangerous',
       'He is small',
     ],
     correctIndex: 1,
     explanation:
-      'The mountain metaphor presents the grandfather as something vast, ancient, and enduring — worthy of the sustained effort needed to know him fully. He is a landscape to be explored.',
+      'The mountain metaphor presents the grandfather as something vast, ancient, and enduring - worthy of the sustained effort needed to know him fully. He is a landscape to be explored.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -685,13 +685,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is a printing error',
-      'The continuous block mirrors the unbroken, sustained effort of truly knowing someone — no pauses or shortcuts',
+      'The continuous block mirrors the unbroken, sustained effort of truly knowing someone - no pauses or shortcuts',
       'It makes the poem shorter',
       'It has no connection to meaning',
     ],
     correctIndex: 1,
     explanation:
-      'The single block mirrors the continuous, uninterrupted effort of climbing/knowing someone. There are no convenient resting points — the relationship demands sustained engagement.',
+      'The single block mirrors the continuous, uninterrupted effort of climbing/knowing someone. There are no convenient resting points - the relationship demands sustained engagement.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -719,8 +719,8 @@ const REVISION_TOPICS = [
     summary:
       'Climbing My Grandfather explores familial love, the process of truly knowing someone, trust, and the enduring presence of family.',
     keyPoints: [
-      'Getting to know someone — the climb represents deepening understanding',
-      'Trust and vulnerability — "without a rope or net"',
+      'Getting to know someone - the climb represents deepening understanding',
+      'Trust and vulnerability - "without a rope or net"',
       'Physical closeness as emotional intimacy',
       'The grandfather as enduring, solid, and worth knowing',
     ],
@@ -730,21 +730,21 @@ const REVISION_TOPICS = [
     summary:
       'Waterhouse uses an extended mountain-climbing metaphor, tactile body imagery, and warmth to celebrate familial intimacy.',
     keyPoints: [
-      'Extended metaphor — grandfather as mountain to be climbed',
-      '"Without a rope or net" — trust and openness',
-      'Body parts as landscape features — hands like ridges, skin like earth',
-      '"The slow pulse of his good heart" — literal and metaphorical warmth',
+      'Extended metaphor - grandfather as mountain to be climbed',
+      '"Without a rope or net" - trust and openness',
+      'Body parts as landscape features - hands like ridges, skin like earth',
+      '"The slow pulse of his good heart" - literal and metaphorical warmth',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'A single continuous stanza of free verse — the unbroken block mirrors the sustained effort of truly knowing someone.',
+      'A single continuous stanza of free verse - the unbroken block mirrors the sustained effort of truly knowing someone.',
     keyPoints: [
-      'Single stanza — no breaks, no shortcuts in understanding someone',
-      'Free verse — organic, natural rhythm matching the relationship',
-      'Upward progression — feet to head mirrors deepening knowledge',
-      'Present tense — the relationship is ongoing and alive',
+      'Single stanza - no breaks, no shortcuts in understanding someone',
+      'Free verse - organic, natural rhythm matching the relationship',
+      'Upward progression - feet to head mirrors deepening knowledge',
+      'Present tense - the relationship is ongoing and alive',
     ],
   },
 ]
@@ -788,7 +788,7 @@ export default function ClimbingMyGrandfatherPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Climbing My Grandfather by Andrew Waterhouse — Analysis & Annotations"
+        name="Climbing My Grandfather by Andrew Waterhouse - Analysis & Annotations"
         description="Line-by-line analysis of Climbing My Grandfather with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd
@@ -850,7 +850,7 @@ export default function ClimbingMyGrandfatherPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Fair-dealing extract notice — Climbing My Grandfather is in copyright (Waterhouse estate).
+      {/* Fair-dealing extract notice - Climbing My Grandfather is in copyright (Waterhouse estate).
           Only verified short extracts are quoted; mid-climb passages are summarised in brackets. */}
       <aside
         role="note"

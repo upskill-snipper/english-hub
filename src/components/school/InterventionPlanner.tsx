@@ -146,7 +146,10 @@ function getTargetGrade(student: StudentAnalytics): string {
   return '4'
 }
 
-function suggestIntervention(student: StudentAnalytics): { type: InterventionType; reason: string } {
+function suggestIntervention(student: StudentAnalytics): {
+  type: InterventionType
+  reason: string
+} {
   if (student.trajectory === 'declining' && student.avg_quiz_score < 40) {
     return { type: '1-to-1', reason: 'Rapidly declining with low scores - needs intensive support' }
   }
@@ -213,7 +216,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
         return next
       })
     },
-    [classId]
+    [classId],
   )
 
   // Identify students needing intervention
@@ -288,10 +291,10 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
             return { ...p, status: STATUS_ORDER[idx + 1], updatedAt: new Date().toISOString() }
           }
           return p
-        })
+        }),
       )
     },
-    [updatePlans]
+    [updatePlans],
   )
 
   const handleDeletePlan = useCallback(
@@ -299,7 +302,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
       updatePlans((prev) => prev.filter((p) => p.id !== planId))
       setSelectedPlan(null)
     },
-    [updatePlans]
+    [updatePlans],
   )
 
   const handleUpdateGradeAfter = useCallback(
@@ -312,10 +315,10 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
             gradesAfter: { ...p.gradesAfter, [studentId]: grade },
             updatedAt: new Date().toISOString(),
           }
-        })
+        }),
       )
     },
-    [updatePlans]
+    [updatePlans],
   )
 
   const handlePrint = useCallback(() => {
@@ -342,7 +345,12 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
           return (
             <Card key={status}>
               <CardContent className="flex items-center gap-3 p-4">
-                <div className={cn('flex h-10 w-10 shrink-0 items-center justify-center rounded-lg', cfg.bg)}>
+                <div
+                  className={cn(
+                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
+                    cfg.bg,
+                  )}
+                >
                   {status === 'planned' && <Calendar className={cn('h-5 w-5', cfg.text)} />}
                   {status === 'in-progress' && <Clock className={cn('h-5 w-5', cfg.text)} />}
                   {status === 'completed' && <CheckCircle2 className={cn('h-5 w-5', cfg.text)} />}
@@ -371,7 +379,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
               'flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors',
               activeTab === key
                 ? 'bg-background text-foreground shadow-sm'
-                : 'text-muted-foreground hover:text-foreground'
+                : 'text-muted-foreground hover:text-foreground',
             )}
           >
             <Icon className="h-4 w-4" />
@@ -406,77 +414,84 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
               </div>
             ) : (
               <div className="space-y-3">
-                {studentsNeedingIntervention.map(({ student, gap, suggestedIntervention, reason }) => {
-                  const InterventionIcon = INTERVENTION_ICONS[suggestedIntervention]
-                  return (
-                    <div
-                      key={student.student_id}
-                      className="flex flex-col gap-3 rounded-lg border border-border p-4 sm:flex-row sm:items-center sm:justify-between"
-                    >
-                      <div className="flex-1 space-y-1.5">
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium">{student.student_name}</span>
-                          {student.trajectory === 'declining' && (
-                            <Badge variant="destructive" className="gap-1">
-                              <TrendingDown className="h-3 w-3" />
-                              Declining
-                            </Badge>
+                {studentsNeedingIntervention.map(
+                  ({ student, gap, suggestedIntervention, reason }) => {
+                    const InterventionIcon = INTERVENTION_ICONS[suggestedIntervention]
+                    return (
+                      <div
+                        key={student.student_id}
+                        className="flex flex-col gap-3 rounded-lg border border-border p-4 sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <div className="flex-1 space-y-1.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium">{student.student_name}</span>
+                            {student.trajectory === 'declining' && (
+                              <Badge variant="destructive" className="gap-1">
+                                <TrendingDown className="h-3 w-3" />
+                                Declining
+                              </Badge>
+                            )}
+                          </div>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                            <span>
+                              Current:{' '}
+                              <span className="font-medium text-foreground">
+                                {student.predicted_grade ?? 'N/A'}
+                              </span>
+                            </span>
+                            <span>
+                              Target:{' '}
+                              <span className="font-medium text-foreground">
+                                {getTargetGrade(student)}
+                              </span>
+                            </span>
+                            <span>
+                              Gap:{' '}
+                              <span
+                                className={cn(
+                                  'font-medium',
+                                  gap > 2 ? 'text-red-400' : 'text-clay-600',
+                                )}
+                              >
+                                {gap} grade{gap !== 1 ? 's' : ''}
+                              </span>
+                            </span>
+                            <span>
+                              Avg Score:{' '}
+                              <span
+                                className={cn(
+                                  'font-medium',
+                                  student.avg_quiz_score >= 70
+                                    ? 'text-green-400'
+                                    : student.avg_quiz_score >= 50
+                                      ? 'text-clay-600'
+                                      : 'text-red-400',
+                                )}
+                              >
+                                {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
+                              </span>
+                            </span>
+                          </div>
+                          {student.weaknesses.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5">
+                              {student.weaknesses.slice(0, 4).map((w) => (
+                                <Badge key={w} variant="outline" className="text-xs">
+                                  {w}
+                                </Badge>
+                              ))}
+                            </div>
                           )}
                         </div>
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-                          <span>
-                            Current:{' '}
-                            <span className="font-medium text-foreground">
-                              {student.predicted_grade ?? 'N/A'}
-                            </span>
-                          </span>
-                          <span>
-                            Target:{' '}
-                            <span className="font-medium text-foreground">
-                              {getTargetGrade(student)}
-                            </span>
-                          </span>
-                          <span>
-                            Gap:{' '}
-                            <span className={cn('font-medium', gap > 2 ? 'text-red-400' : 'text-clay-600')}>
-                              {gap} grade{gap !== 1 ? 's' : ''}
-                            </span>
-                          </span>
-                          <span>
-                            Avg Score:{' '}
-                            <span
-                              className={cn(
-                                'font-medium',
-                                student.avg_quiz_score >= 70
-                                  ? 'text-green-400'
-                                  : student.avg_quiz_score >= 50
-                                    ? 'text-clay-600'
-                                    : 'text-red-400'
-                              )}
-                            >
-                              {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
-                            </span>
-                          </span>
-                        </div>
-                        {student.weaknesses.length > 0 && (
-                          <div className="flex flex-wrap gap-1.5">
-                            {student.weaknesses.slice(0, 4).map((w) => (
-                              <Badge key={w} variant="outline" className="text-xs">
-                                {w}
-                              </Badge>
-                            ))}
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1.5 rounded-md bg-muted/50 px-3 py-1.5 text-sm">
+                            <InterventionIcon className="h-3.5 w-3.5 text-muted-foreground" />
+                            <span>{INTERVENTION_LABELS[suggestedIntervention]}</span>
                           </div>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1.5 rounded-md bg-muted/50 px-3 py-1.5 text-sm">
-                          <InterventionIcon className="h-3.5 w-3.5 text-muted-foreground" />
-                          <span>{INTERVENTION_LABELS[suggestedIntervention]}</span>
                         </div>
                       </div>
-                    </div>
-                  )
-                })}
+                    )
+                  },
+                )}
               </div>
             )}
           </CardContent>
@@ -525,22 +540,23 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                 .sort(
                   (a, b) =>
                     STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status) ||
-                    new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+                    new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
                 )
                 .map((plan) => {
                   const cfg = STATUS_CONFIG[plan.status]
                   const InterventionIcon = INTERVENTION_ICONS[plan.type]
                   return (
-                    <Card key={plan.id} className="print:break-inside-avoid print:border print:shadow-none">
+                    <Card
+                      key={plan.id}
+                      className="print:break-inside-avoid print:border print:shadow-none"
+                    >
                       <CardContent className="p-4">
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                           <div className="flex-1 space-y-2">
                             <div className="flex items-center gap-2">
                               <InterventionIcon className="h-4 w-4 text-muted-foreground" />
                               <span className="font-semibold">{plan.title}</span>
-                              <Badge
-                                className={cn(cfg.bg, cfg.text, 'border-0')}
-                              >
+                              <Badge className={cn(cfg.bg, cfg.text, 'border-0')}>
                                 {cfg.label}
                               </Badge>
                               <Badge variant="outline">{INTERVENTION_LABELS[plan.type]}</Badge>
@@ -549,8 +565,13 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                               <span>
                                 {formatDate(plan.startDate)} - {formatDate(plan.endDate)}
                               </span>
-                              <span>{plan.weeksDuration} week{plan.weeksDuration !== 1 ? 's' : ''}</span>
-                              <span>{plan.studentIds.length} student{plan.studentIds.length !== 1 ? 's' : ''}</span>
+                              <span>
+                                {plan.weeksDuration} week{plan.weeksDuration !== 1 ? 's' : ''}
+                              </span>
+                              <span>
+                                {plan.studentIds.length} student
+                                {plan.studentIds.length !== 1 ? 's' : ''}
+                              </span>
                             </div>
                             <div className="flex flex-wrap gap-1.5">
                               {plan.studentIds.map((id) => {
@@ -578,7 +599,9 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                                     const before = plan.gradesBefore[id]
                                     const after = plan.gradesAfter[id]
                                     const improved =
-                                      before && after && gradeToNumber(after) > gradeToNumber(before)
+                                      before &&
+                                      after &&
+                                      gradeToNumber(after) > gradeToNumber(before)
                                     return (
                                       <div key={id} className="flex items-center gap-2 text-sm">
                                         <span className="w-32 truncate">
@@ -591,10 +614,10 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                                         <span
                                           className={cn(
                                             'font-medium',
-                                            improved ? 'text-green-400' : 'text-foreground'
+                                            improved ? 'text-green-400' : 'text-foreground',
                                           )}
                                         >
-                                          {after ?? '—'}
+                                          {after ?? '-'}
                                         </span>
                                         {improved && (
                                           <Badge className="border-0 bg-green-500/10 text-green-400 text-xs">
@@ -619,13 +642,12 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                               Details
                             </Button>
                             {plan.status !== 'reviewed' && (
-                              <Button
-                                size="xs"
-                                onClick={() => handleAdvanceStatus(plan.id)}
-                              >
+                              <Button size="xs" onClick={() => handleAdvanceStatus(plan.id)}>
                                 <ChevronRight className="mr-1 h-3 w-3" data-icon="inline-start" />
                                 {STATUS_ORDER[STATUS_ORDER.indexOf(plan.status) + 1]
-                                  ? STATUS_CONFIG[STATUS_ORDER[STATUS_ORDER.indexOf(plan.status) + 1]].label
+                                  ? STATUS_CONFIG[
+                                      STATUS_ORDER[STATUS_ORDER.indexOf(plan.status) + 1]
+                                    ].label
                                   : ''}
                               </Button>
                             )}
@@ -693,10 +715,8 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                           const weekEnd = new Date(w.start)
                           weekEnd.setDate(w.start.getDate() + 6)
                           const active = planStart <= weekEnd && planEnd >= w.start
-                          const isStart =
-                            planStart >= w.start && planStart <= weekEnd
-                          const isEnd =
-                            planEnd >= w.start && planEnd <= weekEnd
+                          const isStart = planStart >= w.start && planStart <= weekEnd
+                          const isEnd = planEnd >= w.start && planEnd <= weekEnd
 
                           return (
                             <div key={w.label} className="flex items-center px-0.5">
@@ -707,7 +727,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                                     cfg.bg,
                                     isStart && 'rounded-l-md',
                                     isEnd && 'rounded-r-md',
-                                    !isStart && !isEnd && 'rounded-none'
+                                    !isStart && !isEnd && 'rounded-none',
                                   )}
                                   title={`${plan.title} (${cfg.label})`}
                                 />
@@ -831,7 +851,9 @@ function CreatePlanDialog({
   const handleSelectSuggestion = (type: InterventionType) => {
     setInterventionType(type)
     setSelectedStudentIds(new Set(suggestions[type]))
-    setTitle(`${INTERVENTION_LABELS[type]} - ${new Date().toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}`)
+    setTitle(
+      `${INTERVENTION_LABELS[type]} - ${new Date().toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}`,
+    )
   }
 
   const toggleStudent = (id: string) => {
@@ -927,7 +949,10 @@ function CreatePlanDialog({
           {/* Intervention type */}
           <div className="space-y-1.5">
             <label className="text-sm font-medium">Intervention Type</label>
-            <Select value={interventionType} onValueChange={(v) => setInterventionType(v as InterventionType)}>
+            <Select
+              value={interventionType}
+              onValueChange={(v) => setInterventionType(v as InterventionType)}
+            >
               <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
@@ -937,7 +962,7 @@ function CreatePlanDialog({
                     <SelectItem key={value} value={value}>
                       {label}
                     </SelectItem>
-                  )
+                  ),
                 )}
               </SelectContent>
             </Select>
@@ -947,11 +972,7 @@ function CreatePlanDialog({
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
               <label className="text-sm font-medium">Start Date</label>
-              <Input
-                type="date"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-              />
+              <Input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
             </div>
             <div className="space-y-1.5">
               <label className="text-sm font-medium">Duration (weeks)</label>
@@ -983,14 +1004,14 @@ function CreatePlanDialog({
                 .sort((a, b) => a.student_name.localeCompare(b.student_name))
                 .map((s) => {
                   const needsIntervention = studentsNeedingIntervention.some(
-                    (n) => n.student.student_id === s.student_id
+                    (n) => n.student.student_id === s.student_id,
                   )
                   return (
                     <label
                       key={s.student_id}
                       className={cn(
                         'flex cursor-pointer items-center gap-3 border-b border-border px-3 py-2 last:border-0 transition-colors hover:bg-muted/30',
-                        selectedStudentIds.has(s.student_id) && 'bg-primary/5'
+                        selectedStudentIds.has(s.student_id) && 'bg-primary/5',
                       )}
                     >
                       <input
@@ -1001,7 +1022,7 @@ function CreatePlanDialog({
                       />
                       <span className="flex-1 text-sm">{s.student_name}</span>
                       <span className="text-xs text-muted-foreground">
-                        {s.predicted_grade ?? '—'}
+                        {s.predicted_grade ?? '-'}
                       </span>
                       {needsIntervention && (
                         <AlertTriangle className="h-3.5 w-3.5 shrink-0 text-clay-600" />
@@ -1035,13 +1056,14 @@ function CreatePlanDialog({
         </div>
 
         <DialogFooter>
-          <DialogClose render={<button className="inline-flex h-9 items-center justify-center rounded-lg border border-border px-3.5 text-sm font-semibold transition-colors hover:bg-accent" />}>
+          <DialogClose
+            render={
+              <button className="inline-flex h-9 items-center justify-center rounded-lg border border-border px-3.5 text-sm font-semibold transition-colors hover:bg-accent" />
+            }
+          >
             Cancel
           </DialogClose>
-          <Button
-            onClick={handleCreate}
-            disabled={selectedStudentIds.size === 0 || !title.trim()}
-          >
+          <Button onClick={handleCreate} disabled={selectedStudentIds.size === 0 || !title.trim()}>
             Create Plan
           </Button>
         </DialogFooter>
@@ -1083,7 +1105,7 @@ function PlanDetailDialog({
             {plan.title}
           </DialogTitle>
           <DialogDescription>
-            {INTERVENTION_LABELS[plan.type]} — {plan.weeksDuration} week
+            {INTERVENTION_LABELS[plan.type]} - {plan.weeksDuration} week
             {plan.weeksDuration !== 1 ? 's' : ''}
           </DialogDescription>
         </DialogHeader>
@@ -1099,9 +1121,7 @@ function PlanDetailDialog({
 
           {/* Students & impact */}
           <div className="space-y-2">
-            <p className="text-sm font-medium">
-              Students ({plan.studentIds.length})
-            </p>
+            <p className="text-sm font-medium">Students ({plan.studentIds.length})</p>
             <div className="rounded-md border border-border">
               <div className="grid grid-cols-[1fr_60px_20px_60px] items-center gap-2 border-b border-border px-3 py-1.5 text-xs font-medium text-muted-foreground">
                 <span>Name</span>
@@ -1113,8 +1133,7 @@ function PlanDetailDialog({
                 const s = studentMap.get(id)
                 const before = plan.gradesBefore[id]
                 const after = plan.gradesAfter[id]
-                const showGradeInput =
-                  plan.status === 'completed' || plan.status === 'reviewed'
+                const showGradeInput = plan.status === 'completed' || plan.status === 'reviewed'
 
                 return (
                   <div
@@ -1130,7 +1149,7 @@ function PlanDetailDialog({
                         onValueChange={(v) => onUpdateGradeAfter(plan.id, id, v)}
                       >
                         <SelectTrigger size="sm" className="h-7 w-full text-xs">
-                          <SelectValue placeholder="—" />
+                          <SelectValue placeholder="-" />
                         </SelectTrigger>
                         <SelectContent>
                           {GRADE_OPTIONS.map((g) => (
@@ -1141,7 +1160,7 @@ function PlanDetailDialog({
                         </SelectContent>
                       </Select>
                     ) : (
-                      <span className="text-center text-sm text-muted-foreground">—</span>
+                      <span className="text-center text-sm text-muted-foreground">-</span>
                     )}
                   </div>
                 )
@@ -1166,20 +1185,20 @@ function PlanDetailDialog({
           <Separator />
 
           <p className="text-xs text-muted-foreground">
-            Created {formatDate(plan.createdAt)} — Last updated {formatDate(plan.updatedAt)}
+            Created {formatDate(plan.createdAt)} - Last updated {formatDate(plan.updatedAt)}
           </p>
         </div>
 
         <DialogFooter>
-          <Button
-            variant="destructive"
-            size="sm"
-            onClick={() => onDelete(plan.id)}
-          >
+          <Button variant="destructive" size="sm" onClick={() => onDelete(plan.id)}>
             Delete
           </Button>
           <div className="flex-1" />
-          <DialogClose render={<button className="inline-flex h-9 items-center justify-center rounded-lg border border-border px-3.5 text-sm font-semibold transition-colors hover:bg-accent" />}>
+          <DialogClose
+            render={
+              <button className="inline-flex h-9 items-center justify-center rounded-lg border border-border px-3.5 text-sm font-semibold transition-colors hover:bg-accent" />
+            }
+          >
             Close
           </DialogClose>
           {canAdvance && (

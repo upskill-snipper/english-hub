@@ -1,11 +1,11 @@
 /**
- * Google Analytics 4 — server-side Measurement Protocol relay.
+ * Google Analytics 4 - server-side Measurement Protocol relay.
  *
  * Why server-side instead of gtag.js?
  *   - uBlock Origin, Brave Shields, AdGuard, Privacy Badger and most
  *     mainstream content blockers block requests to googletagmanager.com
- *     and google-analytics.com out of the box. That's roughly 30–40 %
- *     of UK web traffic — silent data loss.
+ *     and google-analytics.com out of the box. That's roughly 30-40 %
+ *     of UK web traffic - silent data loss.
  *   - PostHog's eu.i.posthog.com is NOT on those blocklists, which is
  *     why PostHog kept receiving data while GA4 stayed empty even with
  *     correct env vars + CSP + consent flow.
@@ -44,14 +44,14 @@ export const isGAEnabled = (): boolean => Boolean(GA_MEASUREMENT_ID)
  * GDPR Art. 5(1)(c) (data minimisation) + ICO Children's Code standard 9
  * (no profiling of under-18s without strict justification) require that
  * we never forward identifying signals to GA4. This is the last line of
- * defence — even if a call-site mistakenly passes `email` or `firstName`
+ * defence - even if a call-site mistakenly passes `email` or `firstName`
  * in an event payload, redactPII drops it before it leaves the browser.
  *
  * Matches are case-insensitive and substring-based, so `userEmail`,
  * `parent_email`, `dateOfBirth`, `DOB`, `password_hash`, `auth_token`,
  * `firstName`, `last_name`, `homeAddress` are all stripped.
  *
- * Returns a NEW object — never mutates the caller's payload.
+ * Returns a NEW object - never mutates the caller's payload.
  */
 const PII_KEY_PATTERN =
   /email|password|token|dob|date_of_birth|firstName|first_name|lastName|last_name|address/i
@@ -71,7 +71,7 @@ export function redactPII<T extends Record<string, unknown> | undefined>(payload
  * /api/ga4/track can verify consent server-side. Idempotent.
  *
  * The public name `initGA4` is kept for backwards compat with the
- * existing call-site in cookie-consent.tsx — the previous gtag.js
+ * existing call-site in cookie-consent.tsx - the previous gtag.js
  * script-injection has been removed; all tracking now goes through
  * the server-side relay.
  */
@@ -87,17 +87,17 @@ export function initGA4(): void {
   }
 
   if (consent === 'all') {
-    // 1-year first-party cookie — matches gtag.js _ga lifetime.
+    // 1-year first-party cookie - matches gtag.js _ga lifetime.
     document.cookie = `eh-cookie-consent=all; Max-Age=${60 * 60 * 24 * 365}; Path=/; SameSite=Lax`
   } else {
-    // Revoked or essential-only — clear so server stops relaying events.
+    // Revoked or essential-only - clear so server stops relaying events.
     document.cookie = 'eh-cookie-consent=; Max-Age=0; Path=/; SameSite=Lax'
   }
 }
 
 /**
  * POST to /api/ga4/track. Server checks consent, fires the GA4 event
- * via Measurement Protocol. Fire-and-forget — analytics must never
+ * via Measurement Protocol. Fire-and-forget - analytics must never
  * break the user experience.
  */
 function postTrack(payload: { event_name: string; params?: Record<string, unknown> }): void {
@@ -114,7 +114,7 @@ function postTrack(payload: { event_name: string; params?: Record<string, unknow
 
   const body = JSON.stringify(safePayload)
 
-  // Prefer sendBeacon for navigation-triggered events — it survives
+  // Prefer sendBeacon for navigation-triggered events - it survives
   // page unload (which `fetch` doesn't reliably). Fall back to fetch
   // with `keepalive` for browsers without Beacon support.
   try {

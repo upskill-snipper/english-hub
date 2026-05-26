@@ -1,7 +1,7 @@
 /**
  * Client-side helper to fire a Trustpilot InviteJS invitation for the
  * currently-signed-in user. Goes through the same server-side dedup as the
- * BCC path via `POST /api/trustpilot/fired-check` — if that endpoint says
+ * BCC path via `POST /api/trustpilot/fired-check` - if that endpoint says
  * "don't fire", we respect it silently.
  *
  * Usage (client component):

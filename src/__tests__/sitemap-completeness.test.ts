@@ -66,7 +66,7 @@ function getAnthologySlugsFromSitemap(): readonly string[] {
   return Array.from(slugs).sort()
 }
 
-describe('Sitemap completeness — Edexcel IGCSE Language A anthology', () => {
+describe('Sitemap completeness - Edexcel IGCSE Language A anthology', () => {
   const fsSlugs = getAnthologySlugsFromFs()
   const sitemapSlugs = getAnthologySlugsFromSitemap()
 
@@ -75,7 +75,7 @@ describe('Sitemap completeness — Edexcel IGCSE Language A anthology', () => {
   })
 
   it('lists ten prescribed texts (4EA1 anthology spec)', () => {
-    // Pearson Edexcel IGCSE English Language A (4EA1) — 10 prescribed
+    // Pearson Edexcel IGCSE English Language A (4EA1) - 10 prescribed
     // non-fiction texts in Section A of the anthology. If this number ever
     // changes, both the directory tree and the sitemap should change together.
     expect(fsSlugs.length).toBe(10)

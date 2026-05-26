@@ -75,17 +75,15 @@ vi.mock('@/lib/prisma', () => ({
       }),
     },
     weeklyReport: {
-      findFirst: vi.fn(
-        async ({ where }: { where: { studentId: string; weekStarting: Date } }) => {
-          return (
-            state.weeklyReports.find(
-              (r) =>
-                r.studentId === where.studentId &&
-                r.weekStarting.getTime() === where.weekStarting.getTime(),
-            ) ?? null
-          )
-        },
-      ),
+      findFirst: vi.fn(async ({ where }: { where: { studentId: string; weekStarting: Date } }) => {
+        return (
+          state.weeklyReports.find(
+            (r) =>
+              r.studentId === where.studentId &&
+              r.weekStarting.getTime() === where.weekStarting.getTime(),
+          ) ?? null
+        )
+      }),
       create: createSpy,
     },
   },
@@ -96,9 +94,9 @@ vi.mock('@/lib/email', () => ({
   sendEmail: (...args: unknown[]) => sendEmailMock(...(args as [])),
 }))
 
-// runCron wraps body() — re-export a simple identity implementation.
+// runCron wraps body() - re-export a simple identity implementation.
 vi.mock('@/lib/cron/observability', () => ({
-  runCron: async <T,>(_name: string, body: () => Promise<T>) => {
+  runCron: async <T>(_name: string, body: () => Promise<T>) => {
     const result = await body()
     return Response.json({ ok: true, data: result })
   },
@@ -214,16 +212,20 @@ describe('cron /api/cron/weekly-parent-reports', () => {
     expect(fetchMock).toHaveBeenCalledTimes(3) // push fan-out per parent
   })
 
-  it('is idempotent on re-run — existing reports are skipped', async () => {
+  it('is idempotent on re-run - existing reports are skipped', async () => {
     seedEligibleChild('c1', 'p1', { essays: 1 })
 
     const first = await POST(buildRequest())
-    const firstBody = (await first.json()) as { data: { generated: number; skipped: Record<string, number> } }
+    const firstBody = (await first.json()) as {
+      data: { generated: number; skipped: Record<string, number> }
+    }
     expect(firstBody.data.generated).toBe(1)
 
     // Second run should see the persisted WeeklyReport row and bail.
     const second = await POST(buildRequest())
-    const secondBody = (await second.json()) as { data: { generated: number; skipped: Record<string, number> } }
+    const secondBody = (await second.json()) as {
+      data: { generated: number; skipped: Record<string, number> }
+    }
     expect(secondBody.data.generated).toBe(0)
     expect(secondBody.data.skipped.alreadySent).toBe(1)
   })

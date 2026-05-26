@@ -1,11 +1,11 @@
 /**
- * Theme Matcher — Extra Pairings
+ * Theme Matcher - Extra Pairings
  *
  * Supplementary theme-to-quote pairings for the Theme Matcher game.
  * Each pairing maps a thematic concept to a verbatim quotation from a
  * GCSE-prescribed text, tagged with the relevant exam board(s).
  *
- * Quotations are short (<= 15 words), exact, and drawn from the canon —
+ * Quotations are short (<= 15 words), exact, and drawn from the canon -
  * no synthetic or paraphrased lines.
  *
  * Boards covered: AQA, Edexcel, OCR, Eduqas (and WJEC where overlapping).
@@ -112,7 +112,7 @@ const powerPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-power-11',
     theme: 'Power',
-    quote: 'She had a heart — how shall I say? — too soon made glad.',
+    quote: 'She had a heart - how shall I say? - too soon made glad.',
     text: 'My Last Duchess',
     board: ['AQA', 'Edexcel', 'Eduqas'],
   },
@@ -133,7 +133,7 @@ const powerPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-power-14',
     theme: 'Power',
-    quote: 'I was an alderman for years — and Lord Mayor two years ago.',
+    quote: 'I was an alderman for years - and Lord Mayor two years ago.',
     text: 'An Inspector Calls',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -154,7 +154,7 @@ const lovePairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-love-01',
     theme: 'Love',
-    quote: 'I think of thee! — my thoughts do twine and bud about thee.',
+    quote: 'I think of thee! - my thoughts do twine and bud about thee.',
     text: 'Sonnet 29',
     board: ['AQA', 'Eduqas'],
   },
@@ -168,7 +168,7 @@ const lovePairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-love-03',
     theme: 'Love',
-    quote: 'Drop heavily down, — burst, shattered, everywhere!',
+    quote: 'Drop heavily down, - burst, shattered, everywhere!',
     text: 'Sonnet 29',
     board: ['AQA', 'Eduqas'],
   },
@@ -253,7 +253,7 @@ const lovePairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-love-15',
     theme: 'Love',
-    quote: 'Is priceless baby — vee share in chapatti, vee share in di chutney.',
+    quote: 'Is priceless baby - vee share in chapatti, vee share in di chutney.',
     text: 'Singh Song!',
     board: ['AQA'],
   },
@@ -266,7 +266,7 @@ const conflictPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-conflict-01',
     theme: 'Conflict',
-    quote: 'Suddenly he awoke and was running — raw in raw-seamed hot khaki.',
+    quote: 'Suddenly he awoke and was running - raw in raw-seamed hot khaki.',
     text: 'Bayonet Charge',
     board: ['AQA'],
   },
@@ -329,7 +329,7 @@ const conflictPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-conflict-10',
     theme: 'Conflict',
-    quote: 'Brave Macbeth — well he deserves that name — unseamed him from the nave to th’ chops.',
+    quote: 'Brave Macbeth - well he deserves that name - unseamed him from the nave to th’ chops.',
     text: 'Macbeth',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },
@@ -489,7 +489,7 @@ const classPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-class-09',
     theme: 'Class & Society',
-    quote: 'A guy needs somebody — to be near him.',
+    quote: 'A guy needs somebody - to be near him.',
     text: 'Of Mice and Men',
     board: ['Edexcel', 'OCR', 'Eduqas'],
   },
@@ -538,7 +538,7 @@ const guiltPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-guilt-05',
     theme: 'Guilt',
-    quote: 'Then — you killed her.',
+    quote: 'Then - you killed her.',
     text: 'An Inspector Calls',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },

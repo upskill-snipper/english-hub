@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare, Lock, ScrollText, Quote, Layers, Tag } from 'lucide-react'
@@ -12,7 +12,7 @@ import StudyTools from '@/components/study/StudyTools'
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CreativeWork',
-  name: 'Out, Out—',
+  name: 'Out, Out-',
   alternativeHeadline: 'A Pearson Edexcel IGCSE 4ET1 set-text study guide',
   author: {
     '@type': 'Person',
@@ -27,7 +27,7 @@ const jsonLd = {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
     educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry — Paper 1 Section B',
+    targetName: 'Anthology Poetry - Paper 1 Section B',
   },
 }
 
@@ -45,29 +45,29 @@ const themes = [
 
 const stanzaSummaries = [
   {
-    n: 'Lines 1–9',
+    n: 'Lines 1-9',
     label: 'The saw and the mountain valley',
-    body: 'Frost opens with the buzz-saw at work in a Vermont yard, scattering sawdust and shavings. The setting is sharply localised: five mountain ranges visible in the late-afternoon sun, the smell of wood, the snarl of the machine. The sensory detail is vivid and pastoral — until the saw\'s sound is given an animal personality (a "snarled" rattle) and the reader is quietly warned that something living is at work in the metal.',
+    body: 'Frost opens with the buzz-saw at work in a Vermont yard, scattering sawdust and shavings. The setting is sharply localised: five mountain ranges visible in the late-afternoon sun, the smell of wood, the snarl of the machine. The sensory detail is vivid and pastoral - until the saw\'s sound is given an animal personality (a "snarled" rattle) and the reader is quietly warned that something living is at work in the metal.',
   },
   {
-    n: 'Lines 10–14',
+    n: 'Lines 10-14',
     label: 'The day stretches on',
-    body: 'The narrator wishes someone had called the boy off work just half an hour earlier — a "boy\'s" half-hour, which would have given him "the half hour / That a boy counts so much when saved from work". The line breaks the calm: the speaker now intervenes to tell us, in retrospect, that the day went on too long. The sister is introduced calling the family to supper.',
+    body: 'The narrator wishes someone had called the boy off work just half an hour earlier - a "boy\'s" half-hour, which would have given him "the half hour / That a boy counts so much when saved from work". The line breaks the calm: the speaker now intervenes to tell us, in retrospect, that the day went on too long. The sister is introduced calling the family to supper.',
   },
   {
-    n: 'Lines 15–22',
+    n: 'Lines 15-22',
     label: 'The accident',
-    body: 'At the moment the sister calls "Supper", the saw — as if alive — leaps out and strikes the boy\'s hand. Frost personifies the saw heavily, refusing to settle the question of whether the boy slipped or whether the machine, in some sense, knew. The boy gives a "rueful laugh" — an extraordinary, painful detail — before he holds up the hand "as if to keep / The life from spilling".',
+    body: 'At the moment the sister calls "Supper", the saw - as if alive - leaps out and strikes the boy\'s hand. Frost personifies the saw heavily, refusing to settle the question of whether the boy slipped or whether the machine, in some sense, knew. The boy gives a "rueful laugh" - an extraordinary, painful detail - before he holds up the hand "as if to keep / The life from spilling".',
   },
   {
-    n: 'Lines 23–28',
+    n: 'Lines 23-28',
     label: 'The doctor and the dark',
-    body: "The boy realises, very fast, what the loss of his hand will mean. He begs the doctor not to amputate, but the limb is already gone. The doctor administers ether and the boy slips into unconsciousness. The narrator's tone is calm and clinical — the medical procedure is described in plain, professional language.",
+    body: "The boy realises, very fast, what the loss of his hand will mean. He begs the doctor not to amputate, but the limb is already gone. The doctor administers ether and the boy slips into unconsciousness. The narrator's tone is calm and clinical - the medical procedure is described in plain, professional language.",
   },
   {
-    n: 'Lines 29–34',
+    n: 'Lines 29-34',
     label: 'The pulse fails',
-    body: 'The boy\'s pulse weakens. Those watching cannot believe it: he is too young, the injury too small to kill. The line "Little — less — nothing!" condenses dying into three words. After his death, the watchers — "since they / Were not the one dead" — turn back to their daily affairs. The poem ends in cold indifference, not lament.',
+    body: 'The boy\'s pulse weakens. Those watching cannot believe it: he is too young, the injury too small to kill. The line "Little - less - nothing!" condenses dying into three words. After his death, the watchers - "since they / Were not the one dead" - turn back to their daily affairs. The poem ends in cold indifference, not lament.',
   },
 ]
 
@@ -76,23 +76,23 @@ const stanzaSummaries = [
 const formAndStructure = [
   {
     label: 'Form',
-    body: "34 lines of unrhymed blank verse — loose iambic pentameter without a regular rhyme scheme. The plain, unrhymed verse fits Frost's rural-American voice: there is nothing decorative about the poem.",
+    body: "34 lines of unrhymed blank verse - loose iambic pentameter without a regular rhyme scheme. The plain, unrhymed verse fits Frost's rural-American voice: there is nothing decorative about the poem.",
   },
   {
     label: 'Title and allusion',
-    body: "The title is a direct quotation from Macbeth's soliloquy in Act 5 Scene 5: \"Out, out, brief candle! / Life's but a walking shadow…\" Frost's reference is heavy — by borrowing Shakespeare's words about a brief, meaningless life, Frost casts the boy's death as another candle blown out without ceremony.",
+    body: "The title is a direct quotation from Macbeth's soliloquy in Act 5 Scene 5: \"Out, out, brief candle! / Life's but a walking shadow…\" Frost's reference is heavy - by borrowing Shakespeare's words about a brief, meaningless life, Frost casts the boy's death as another candle blown out without ceremony.",
   },
   {
     label: 'Caesura and enjambment',
-    body: 'Frost uses heavy mid-line punctuation — full stops and dashes inside lines — to break the rhythm. The accident itself is split across line-breaks, as if the verse cannot stay still. Long enjambments draw the reader past horror into the next clinical phrase.',
+    body: 'Frost uses heavy mid-line punctuation - full stops and dashes inside lines - to break the rhythm. The accident itself is split across line-breaks, as if the verse cannot stay still. Long enjambments draw the reader past horror into the next clinical phrase.',
   },
   {
     label: 'Personification of the saw',
-    body: 'The buzz-saw is personified throughout. It "snarls" and "rattles", and at the moment of the accident it appears to leap "as if to prove saws knew what supper meant". Frost will not let us decide whether the machine is conscious or whether the boy slipped — the ambiguity is part of the poem\'s horror.',
+    body: 'The buzz-saw is personified throughout. It "snarls" and "rattles", and at the moment of the accident it appears to leap "as if to prove saws knew what supper meant". Frost will not let us decide whether the machine is conscious or whether the boy slipped - the ambiguity is part of the poem\'s horror.',
   },
   {
     label: 'Pace',
-    body: 'The poem moves slowly through pastoral description, then the accident is over in a few lines. The pace mirrors the way disaster ambushes ordinary days. The dying itself is compressed into a list of single words ("Little — less — nothing!") — the smallest unit of language for the largest loss.',
+    body: 'The poem moves slowly through pastoral description, then the accident is over in a few lines. The pace mirrors the way disaster ambushes ordinary days. The dying itself is compressed into a list of single words ("Little - less - nothing!") - the smallest unit of language for the largest loss.',
   },
   {
     label: 'Closing turn',
@@ -108,7 +108,7 @@ const comparisons = [
     poet: 'Wilfred Owen',
     href: '/igcse/edexcel/poetry/disabled',
     reason:
-      "Both poems describe a young person whose life is destroyed by a single moment. Frost's farm boy loses his hand to a saw; Owen's soldier loses his legs to a shell. Both poems end in indifference — the world simply moves on. Compare how each poet uses understatement to expose this indifference.",
+      "Both poems describe a young person whose life is destroyed by a single moment. Frost's farm boy loses his hand to a saw; Owen's soldier loses his legs to a shell. Both poems end in indifference - the world simply moves on. Compare how each poet uses understatement to expose this indifference.",
     themes: ['Mortality', 'Youth', 'Indifference'],
   },
   {
@@ -292,7 +292,7 @@ export default function OutOutPage() {
         </div>
       </section>
 
-      <StudyTools textName="Out, Out—" textType="poem" examBoard="Edexcel" variant="compact" />
+      <StudyTools textName="Out, Out-" textType="poem" examBoard="Edexcel" variant="compact" />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">

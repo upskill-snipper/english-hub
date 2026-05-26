@@ -62,7 +62,7 @@ async function generateAIFeedback(
     throw new Error('AI service is temporarily unavailable.')
   }
 
-  // Shared client — privacy posture documented in src/lib/anthropic-client.ts;
+  // Shared client - privacy posture documented in src/lib/anthropic-client.ts;
   // behaviour identical to new Anthropic({ apiKey }).
   const anthropic = getAnthropicClient(apiKey)
 
@@ -104,7 +104,7 @@ async function generateAIFeedback(
 // Logs filtering activity for compliance review.
 
 async function logToAuditTrail(entry: AuditLogEntry): Promise<void> {
-  // EU AI Act Art. 12/19 — delegate to the shared, best-effort AI decision
+  // EU AI Act Art. 12/19 - delegate to the shared, best-effort AI decision
   // logger (persists to the existing `AuditLog` model). This records the
   // content-filter outcome for this feedback decision. `logAiDecision` never
   // throws into the request path, so this stays safe to await here.
@@ -212,7 +212,7 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse()
     }
 
-    // 1b. Subscription check — essay feedback is a Premium feature
+    // 1b. Subscription check - essay feedback is a Premium feature
     const isPremium = await hasActiveSubscription(supabase, user.id)
     if (!isPremium) {
       return forbiddenResponse(
@@ -235,7 +235,7 @@ export async function POST(request: NextRequest) {
       return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
     }
 
-    // 3b. AI opt-out enforcement (Children's Code — GAP-12B)
+    // 3b. AI opt-out enforcement (Children's Code - GAP-12B)
     const aiOptedOut = await isAiOptedOutServer(user.id)
     if (aiOptedOut) {
       return forbiddenResponse(
@@ -260,7 +260,7 @@ export async function POST(request: NextRequest) {
     const { essayText, examBoard, topic, userCountry } = validation.data
     const userId = user.id
 
-    // 3c. Safeguarding / misuse pre-screen — parity with /api/mark. Routes
+    // 3c. Safeguarding / misuse pre-screen - parity with /api/mark. Routes
     // a minor's self-harm disclosure to the static helpline message and
     // blocks prompt-injection / essay-generation misuse before the model.
     const safetyError = contentSafetyCheck({ essay: essayText, questionText: topic ?? '' })
@@ -329,7 +329,7 @@ export async function POST(request: NextRequest) {
       ? `/api/review/request?topic=${encodeURIComponent(topic)}&board=${examBoard}`
       : null
 
-    // EU AI Act Art. 12/19 — record the AI feedback decision itself
+    // EU AI Act Art. 12/19 - record the AI feedback decision itself
     // (model, latency, essay hash, filter outcome).
     void logAiDecision({
       ...aiAuditBase,

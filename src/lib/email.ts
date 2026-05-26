@@ -23,7 +23,7 @@ const FROM = `${FROM_NAME} <${FROM_ADDRESS}>`
 
 /**
  * Send an email. When a plain-text `text` body is supplied alongside the
- * HTML, nodemailer emits a `multipart/alternative` message — improving
+ * HTML, nodemailer emits a `multipart/alternative` message - improving
  * deliverability (spam scoring) and accessibility (screen readers, text-only
  * clients). The 3-arg call form remains supported for existing callers.
  */
@@ -31,14 +31,14 @@ export type SendEmailOptions = {
   /**
    * When set, runs the Trustpilot BCC pipeline before sending:
    *   • shouldBccTrustpilot() decides eligibility (age, opt-outs, dedup).
-   *   • On `ok` — BCC `TRUSTPILOT_INVITE_EMAIL` + write `trustpilot_invite`
+   *   • On `ok` - BCC `TRUSTPILOT_INVITE_EMAIL` + write `trustpilot_invite`
    *     row with status 'sent'.
-   *   • On `skip` — write a row with status 'skipped' and the reason. Email
+   *   • On `skip` - write a row with status 'skipped' and the reason. Email
    *     still sends normally (just without the BCC).
    * Requires `userId` so the eligibility + dedup queries can run.
    */
   trustpilotTrigger?: string
-  /** Supabase auth user id — required when `trustpilotTrigger` is set. */
+  /** Supabase auth user id - required when `trustpilotTrigger` is set. */
   userId?: string
 }
 
@@ -79,7 +79,7 @@ export async function sendEmail(
         }
       }
     } catch (err) {
-      // Trustpilot is non-critical — a failure here must never block the
+      // Trustpilot is non-critical - a failure here must never block the
       // primary email send. Log and carry on.
       console.warn('[email] trustpilot BCC pipeline errored', err)
     }
@@ -95,7 +95,7 @@ export async function sendEmail(
       ...(bcc.length > 0 ? { bcc } : {}),
     })
 
-    // Fire-and-forget — do not block the caller on the audit-row write.
+    // Fire-and-forget - do not block the caller on the audit-row write.
     if (trustpilotDecision) {
       void recordTrustpilotOutcome(trustpilotDecision, info.messageId).catch((err) =>
         console.warn('[email] trustpilot_invite row write failed', err),

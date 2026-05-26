@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Children',
     description: 'Cambridge IGCSE Paper 1 reading practice using children',
   },
-  title: "Children's Classics — Reading Practice Framework",
+  title: "Children's Classics - Reading Practice Framework",
   description:
     "Cambridge IGCSE Paper 1 reading practice using children's classics. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.",
   alternates: {
@@ -119,7 +119,7 @@ export default async function ChildrensClassicPage() {
           <p className="text-body-sm text-foreground">
             These passages sharpen your ability to comment on tone, pace and voice, and to notice
             how simple diction can do sophisticated work. Paper 1 rewards clear, precise observation
-            — exactly what children&rsquo;s classics train.
+            - exactly what children&rsquo;s classics train.
           </p>
         </CardContent>
       </Card>
@@ -210,7 +210,7 @@ export default async function ChildrensClassicPage() {
                 <strong>Sentence 2:</strong> The tone of the opening.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two events or observations from the passage.
+                <strong>Sentences 3-4:</strong> Two events or observations from the passage.
               </li>
               <li>
                 <strong>Sentence 5:</strong> The idea or feeling the writer is quietly working

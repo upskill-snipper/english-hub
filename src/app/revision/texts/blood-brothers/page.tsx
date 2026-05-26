@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Blood Brothers GCSE revision — Willy Russell',
+    title: 'Blood Brothers revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Blood Brothers GCSE revision - Willy Russell',
   },
-  title: 'Blood Brothers revision guide — themes, characters, key quotes',
+  title: 'Blood Brothers revision guide - themes, characters, key quotes',
   description:
-    "Blood Brothers GCSE revision — Willy Russell's musical play act-by-act with characters, themes, key quotes and essay plans. Aligned to Edexcel and Eduqas.",
+    "Blood Brothers GCSE revision - Willy Russell's musical play act-by-act with characters, themes, key quotes and essay plans. Aligned to Edexcel and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/blood-brothers',
   },
@@ -28,7 +28,7 @@ const data: TextGuideData = {
   category: 'Play',
   badge: 'Edexcel / Eduqas',
   intro:
-    "Willy Russell's musical play tells the story of twin brothers separated at birth — one raised in poverty by their biological mother Mrs Johnstone, the other in wealth by Mrs Lyons. Framed by a Narrator who speaks of superstition and fate, Blood Brothers is a ballad about class, love and the predictable ending of a society that refuses to care for everyone equally.",
+    "Willy Russell's musical play tells the story of twin brothers separated at birth - one raised in poverty by their biological mother Mrs Johnstone, the other in wealth by Mrs Lyons. Framed by a Narrator who speaks of superstition and fate, Blood Brothers is a ballad about class, love and the predictable ending of a society that refuses to care for everyone equally.",
   quickInfo: {
     genre: 'Musical play / Social tragedy',
     setting: 'Liverpool, 1960s to early 1980s',
@@ -97,48 +97,48 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Willy Russell grew up in working-class Liverpool and wrote Blood Brothers first as a school play in 1981, then as a musical in 1983. The play draws directly on his own city: its streets, its speech, its humour and the slow economic disaster that engulfed it in the decade after his own childhood.',
-    'Liverpool in the 1970s and 1980s was devastated by industrial decline and mass unemployment. Factories closed, docks shrank, and the Toxteth riots of 1981 marked a flashpoint in national anger. Mickey\u2019s trajectory — young worker to unemployed to depressed and imprisoned — tracks the experience of many real families.',
+    'Liverpool in the 1970s and 1980s was devastated by industrial decline and mass unemployment. Factories closed, docks shrank, and the Toxteth riots of 1981 marked a flashpoint in national anger. Mickey\u2019s trajectory - young worker to unemployed to depressed and imprisoned - tracks the experience of many real families.',
     'Russell names Margaret Thatcher explicitly in the play. Her government\u2019s monetarist policies were widely blamed for accelerating deindustrialisation in cities like Liverpool, and the tone of Blood Brothers is one of controlled political fury dressed up as a pop musical.',
     'The play belongs to a tradition of British social-realist drama that includes Shelagh Delaney\u2019s A Taste of Honey and Alan Bleasdale\u2019s Boys from the Blackstuff. Russell\u2019s innovation is marrying that tradition to the accessibility of popular musical theatre.',
   ],
   quotations: [
     {
       quote: '"Tell me it\'s not true, say it\'s just a story."',
-      who: 'Mrs Johnstone — final song',
+      who: 'Mrs Johnstone - final song',
       analysis:
         "The haunting refrain that closes the play, asking the audience to refuse the tragedy's inevitability.",
     },
     {
       quote: '"So did y’ hear the story of the Johnstone twins?"',
-      who: 'Narrator — opening',
+      who: 'Narrator - opening',
       analysis: 'Frames the whole play as a ballad foretold, priming the audience for tragedy.',
     },
     {
       quote: '"There\'s a man gone mad in the town tonight, he\'s gonna shoot somebody down."',
-      who: 'Narrator — Act 2',
+      who: 'Narrator - Act 2',
       analysis: 'The Narrator\u2019s warnings drive the rising sense of doom.',
     },
     {
       quote: '"I could have been...I could have been him!"',
-      who: 'Mickey — final scene',
+      who: 'Mickey - final scene',
       analysis:
         'Mickey\u2019s cry of class-rage at the climax, spoken just before the accidental shooting. The play\u2019s thesis in ordinary speech.',
     },
     {
       quote: '"I wish I was our Sammy."',
-      who: 'Mickey — Act 1',
+      who: 'Mickey - Act 1',
       analysis:
         'A childhood song about wanting to be older. Russell uses it to track how innocence is stolen.',
     },
     {
       quote: '"You know the devil\'s got your number."',
-      who: 'Narrator — refrain',
+      who: 'Narrator - refrain',
       analysis:
         'The play\u2019s superstitious language, which Russell repurposes to critique a fatalistic society.',
     },
     {
       quote: '"I wanna kiss y\'."',
-      who: 'Mickey to Linda — Act 2',
+      who: 'Mickey to Linda - Act 2',
       analysis:
         'A fragmented moment of tenderness from a Mickey numbed by antidepressants, making the final violence all the more unbearable.',
     },
@@ -329,7 +329,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'As competitive and hostile',
-      'As genuine, innocent, and unselfconscious — proving that class differences are learned, not innate',
+      'As genuine, innocent, and unselfconscious - proving that class differences are learned, not innate',
       'As formal and distant',
       'As one-sided',
     ],
@@ -399,7 +399,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"You know the devil\'s got your number" — the Narrator\'s supernatural language creates a sense of doom, but Russell uses it to expose a society that prefers to blame fate for problems of its own making. The real curse is unemployment and prejudice, not the Devil.',
+      '"You know the devil\'s got your number" - the Narrator\'s supernatural language creates a sense of doom, but Russell uses it to expose a society that prefers to blame fate for problems of its own making. The real curse is unemployment and prejudice, not the Devil.',
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -462,7 +462,7 @@ const REVISION_TOPICS = [
       'The twin conceit creates a controlled experiment about class',
       'Mickey: factory, unemployment, prison, depression',
       'Edward: private school, university, councillor',
-      '"I could have been...I could have been him!" — the play\'s thesis at the climax',
+      '"I could have been...I could have been him!" - the play\'s thesis at the climax',
       'Russell names Thatcher and makes the economic collapse explicit',
     ],
   },
@@ -533,7 +533,7 @@ export default async function BloodBrothersPage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="Blood Brothers — Complete GCSE Study Guide"
+        name="Blood Brothers - Complete GCSE Study Guide"
         description="In-depth study guide for Blood Brothers covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -541,7 +541,7 @@ export default async function BloodBrothersPage() {
         url="https://theenglishhub.app/revision/texts/blood-brothers"
       />
       <CourseJsonLd
-        name="Blood Brothers — Complete GCSE Study Guide"
+        name="Blood Brothers - Complete GCSE Study Guide"
         description="In-depth study guide for Blood Brothers covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

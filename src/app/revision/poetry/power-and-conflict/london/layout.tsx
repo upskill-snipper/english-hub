@@ -6,7 +6,7 @@ const SLUG = 'london'
 const CANONICAL = `https://theenglishhub.app/revision/poetry/power-and-conflict/${SLUG}`
 
 export const metadata: Metadata = {
-  title: `${POEM_TITLE} — AQA Power and Conflict`,
+  title: `${POEM_TITLE} - AQA Power and Conflict`,
   description: `Analysis of ${POEM_TITLE} for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.`,
   alternates: { canonical: CANONICAL },
 }

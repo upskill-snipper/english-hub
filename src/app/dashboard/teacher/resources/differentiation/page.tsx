@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
 
-export const metadata = { title: 'Differentiation Guide — Teacher Resources' }
+export const metadata = { title: 'Differentiation Guide - Teacher Resources' }
 
 /* ─── Example 5: Differentiation Resource for English Teachers ──── */
 
@@ -40,7 +40,7 @@ const STRATEGIES = [
       'Technique checklist to reference while writing',
     ],
     higher: [
-      'No scaffolding — independent response',
+      'No scaffolding - independent response',
       'Comparative framework (link to other texts/scenes)',
       'Challenge: include an alternative interpretation',
       'Word limit constraint (forces precision)',
@@ -76,7 +76,7 @@ const PP_SEND_STRATEGIES = [
       'Pre-teach vocabulary and context in intervention sessions before the main lesson',
       'Provide revision materials and study guides to take home',
       'Pair with high-attaining peers for collaborative tasks (not ability grouping)',
-      'Monitor engagement closely — PP students may disengage silently',
+      'Monitor engagement closely - PP students may disengage silently',
     ],
   },
   {
@@ -86,12 +86,12 @@ const PP_SEND_STRATEGIES = [
       'Use visual supports: images, diagrams, graphic organisers',
       'Allow processing time before expecting verbal responses',
       'Model spoken and written responses explicitly',
-      'Value cultural perspectives — EAL students may offer rich alternative interpretations',
+      'Value cultural perspectives - EAL students may offer rich alternative interpretations',
       'Distinguish between language acquisition difficulties and comprehension difficulties',
     ],
   },
   {
-    need: 'SEND — Dyslexia',
+    need: 'SEND - Dyslexia',
     strategies: [
       'Use cream/pastel paper for printed materials (reduce visual stress)',
       'Provide texts in accessible fonts (e.g., OpenDyslexic, Comic Sans, or minimum 12pt sans-serif)',
@@ -101,7 +101,7 @@ const PP_SEND_STRATEGIES = [
     ],
   },
   {
-    need: 'SEND — ADHD / Attention Difficulties',
+    need: 'SEND - ADHD / Attention Difficulties',
     strategies: [
       'Break tasks into smaller, timed chunks (10-minute bursts with clear goals)',
       'Provide task checklists with tick boxes for each step',
@@ -112,7 +112,7 @@ const PP_SEND_STRATEGIES = [
     ],
   },
   {
-    need: 'SEND — Anxiety / Social Difficulties',
+    need: 'SEND - Anxiety / Social Difficulties',
     strategies: [
       'Avoid cold-calling or put-on-the-spot questioning',
       'Use think-pair-share to allow rehearsal before whole-class sharing',
@@ -124,7 +124,7 @@ const PP_SEND_STRATEGIES = [
 ]
 
 const DIFFERENTIATED_TASK = {
-  text: "Macbeth: Act 1 Scene 7 — 'If it were done when 'tis done'",
+  text: "Macbeth: Act 1 Scene 7 - 'If it were done when 'tis done'",
   question: "How does Shakespeare present Macbeth's inner conflict in this soliloquy?",
   bronze: {
     label: 'Foundation',

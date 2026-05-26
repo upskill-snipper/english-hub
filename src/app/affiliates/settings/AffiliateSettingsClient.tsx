@@ -89,7 +89,7 @@ export default function AffiliateSettingsClient({ affiliate }: AffiliateSettings
   const [sortCode, setSortCode] = useState('')
   const [accountNumber, setAccountNumber] = useState('')
 
-  // Whether the user has typed new bank details this session — we only send
+  // Whether the user has typed new bank details this session - we only send
   // those fields to the API if they are non-empty, so stored values are not
   // overwritten with blanks when the user just edits their display name.
   const hasNewSortCode = sortCode.trim().length > 0

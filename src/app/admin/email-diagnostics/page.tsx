@@ -7,7 +7,7 @@
 // verification emails are failing to deliver and we need to figure out
 // whether the issue is:
 //   (a) Resend API key (no-key / 401)
-//   (b) Sending domain not verified (DNS records missing) — most common
+//   (b) Sending domain not verified (DNS records missing) - most common
 //   (c) Recipient blocking / spam folder
 //   (d) Supabase SMTP misconfiguration (covered by RUNBOOK below)
 // ────────────────────────────────────────────────────────────────────────

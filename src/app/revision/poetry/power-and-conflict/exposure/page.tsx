@@ -28,7 +28,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The German army',
-      'The weather and the agonising wait — nature, not combat',
+      'The weather and the agonising wait - nature, not combat',
       'Their commanding officers',
       'Disease in the trenches',
     ],
@@ -44,7 +44,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It creates excitement and suspense',
-      'It emphasises the futility and monotony of trench warfare — the anticlimax is the point',
+      'It emphasises the futility and monotony of trench warfare - the anticlimax is the point',
       'It shows the soldiers are safe',
       'It indicates the war is nearly over',
     ],
@@ -60,7 +60,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Nature is a comforting presence',
-      'Nature is personified as a cruel, deliberate attacker — a weapon as dangerous as any enemy',
+      'Nature is personified as a cruel, deliberate attacker - a weapon as dangerous as any enemy',
       'The soldiers enjoy the cold weather',
       'The wind is gentle and refreshing',
     ],
@@ -92,7 +92,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Dawn brings rescue and hope',
-      'Dawn brings "poignant misery" — it reveals suffering rather than offering salvation',
+      'Dawn brings "poignant misery" - it reveals suffering rather than offering salvation',
       'Dawn signals the end of the war',
       'Dawn is not mentioned in the poem',
     ],
@@ -146,7 +146,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force just as lethal as the human enemy — the soldiers are attacked from all sides.',
+      'Dawn is personified as a female general gathering an army of clouds. Nature becomes a military force just as lethal as the human enemy - the soldiers are attacked from all sides.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -191,10 +191,10 @@ const REVISION_TOPICS = [
     summary:
       "Exposure presents the futility and horror of trench warfare, with nature as the true enemy and the soldiers' suffering rendered meaningless by inaction.",
     keyPoints: [
-      'Futility — "But nothing happens" — suffering without purpose or progress',
-      'Power of nature — the weather is more deadly than the enemy',
-      'Suffering — physical and psychological torment described in agonising detail',
-      'Loss of faith — the soldiers question God, duty, and the purpose of war',
+      'Futility - "But nothing happens" - suffering without purpose or progress',
+      'Power of nature - the weather is more deadly than the enemy',
+      'Suffering - physical and psychological torment described in agonising detail',
+      'Loss of faith - the soldiers question God, duty, and the purpose of war',
     ],
   },
   {
@@ -202,10 +202,10 @@ const REVISION_TOPICS = [
     summary:
       "Owen uses personification, synaesthesia, half-rhyme, and a sustained semantic field of cold and death to immerse the reader in the soldiers' suffering.",
     keyPoints: [
-      '"Merciless iced east winds that knive us" — nature personified as a deliberate attacker',
-      '"Dawn massing in the east her melancholy army" — dawn as a military general',
+      '"Merciless iced east winds that knive us" - nature personified as a deliberate attacker',
+      '"Dawn massing in the east her melancholy army" - dawn as a military general',
       'Half-rhymes create deliberate dissonance, reflecting the wrongness of war',
-      'Synaesthesia ("Watching, we hear") — senses blurred by exhaustion and exposure',
+      'Synaesthesia ("Watching, we hear") - senses blurred by exhaustion and exposure',
     ],
   },
   {
@@ -213,10 +213,10 @@ const REVISION_TOPICS = [
     summary:
       'Eight-line stanzas with half-rhyme and a devastating refrain. Each stanza builds tension only to deflate with "But nothing happens."',
     keyPoints: [
-      'Refrain "But nothing happens" — structural embodiment of futility',
-      'Half-rhyme — creates dissonance and a sense that nothing resolves properly',
-      "Each stanza builds and deflates — mirroring the soldiers' experience",
-      'Present tense — places the reader in the trenches with the soldiers',
+      'Refrain "But nothing happens" - structural embodiment of futility',
+      'Half-rhyme - creates dissonance and a sense that nothing resolves properly',
+      "Each stanza builds and deflates - mirroring the soldiers' experience",
+      'Present tense - places the reader in the trenches with the soldiers',
     ],
   },
 ]
@@ -669,8 +669,8 @@ const exposureData: PoemData = {
 <p>The poem\'s central argument is that the soldiers\' true enemy is not the opposing army but <strong>the weather itself</strong>. More men died from exposure, trench foot, and hypothermia than from direct combat in many sectors of the Western Front. Owen challenges the patriotic propaganda of the time by showing war as futile, purposeless suffering rather than glorious sacrifice.</p>
 <p>Owen was killed in action on <strong>4 November 1918</strong>, just one week before the Armistice. "Exposure" was published posthumously in 1920.</p>`,
 
-  contextAr: `<p><strong>Wilfred Owen</strong> (1893–1918) يعتبر أعظم شاعر كتب عن الحرب العالمية الأولى. تطوّع سنة 1915، وعاش رعب حرب الخنادق على الجبهة الغربية بنفسه، بما في ذلك معركة Somme.</p>
-<p>قصيدة <strong>"Exposure"</strong> كتبت مسوّداتها في 1917–18، في واحد من أبرد شتاءات الحرب، وقت ما كان Owen في الخنادق قريب من Beaumont Hamel. القصيدة تستند مباشرة على رسائله لأهله، اللي وصف فيها البرد كعذاب أصعب من نيران العدو.</p>
+  contextAr: `<p><strong>Wilfred Owen</strong> (1893-1918) يعتبر أعظم شاعر كتب عن الحرب العالمية الأولى. تطوّع سنة 1915، وعاش رعب حرب الخنادق على الجبهة الغربية بنفسه، بما في ذلك معركة Somme.</p>
+<p>قصيدة <strong>"Exposure"</strong> كتبت مسوّداتها في 1917-18، في واحد من أبرد شتاءات الحرب، وقت ما كان Owen في الخنادق قريب من Beaumont Hamel. القصيدة تستند مباشرة على رسائله لأهله، اللي وصف فيها البرد كعذاب أصعب من نيران العدو.</p>
 <p>الفكرة الأساسية في القصيدة إن العدو الحقيقي للجنود مو الجيش المقابل، بل <strong>الطقس نفسه</strong>. في وايد قطاعات من الجبهة الغربية، عدد اللي ماتوا من البرد و"trench foot" والـhypothermia كان أكبر من اللي ماتوا في القتال المباشر. Owen يتحدّى الدعاية الوطنية في زمنه، ويبيّن إن الحرب معاناة بلا هدف، مو تضحية مجيدة.</p>
 <p>Owen قُتل في المعركة في <strong>4 نوفمبر 1918</strong>، أسبوع واحد بس قبل هدنة (Armistice). قصيدة "Exposure" نُشرت بعد وفاته في 1920.</p>`,
 
@@ -682,9 +682,9 @@ By the final stanzas, the men are dying of exposure. A burial party arrives, but
 
 Owen\'s message is bleak and deliberate: war is not heroic combat but passive, meaningless endurance. The real enemy is not the opposing army but the indifferent, merciless forces of nature.`,
 
-  summaryAr: `قصيدة "Exposure" توصف مجموعة جنود ينتظرون في الخنادق ليلة شتاء قارسة. ولا شي يصير — لا هجوم، ولا مدد. بدل ما يصير شي، الرجال يتحمّلون عاصفة متواصلة من رياح متجمّدة، ثلج، وصقيع.
+  summaryAr: `قصيدة "Exposure" توصف مجموعة جنود ينتظرون في الخنادق ليلة شتاء قارسة. ولا شي يصير - لا هجوم، ولا مدد. بدل ما يصير شي، الرجال يتحمّلون عاصفة متواصلة من رياح متجمّدة، ثلج، وصقيع.
 
-القصيدة تتحرّك عبر ساعات الظلام الطويلة إلى الفجر، بس الفجر ما يجيب أي أمل، يجيب برد زيادة بس. الجنود يهلوسون عن بيوتهم الدافية اللي تركوها، بس هذي الرؤى ما تعطي راحة — أبواب البيوت "closed" في وجوههم.
+القصيدة تتحرّك عبر ساعات الظلام الطويلة إلى الفجر، بس الفجر ما يجيب أي أمل، يجيب برد زيادة بس. الجنود يهلوسون عن بيوتهم الدافية اللي تركوها، بس هذي الرؤى ما تعطي راحة - أبواب البيوت "closed" في وجوههم.
 
 في المقاطع الأخيرة، الرجال يموتون من البرد. تجي فرقة دفن، بس حتى الموت ما يغيّر شي. اللازمة "But nothing happens" تثبّت بقوة فكرة العبثية: الجنود محاصرين في دورة معاناة بلا نهاية، بلا هدف، بلا مجد، بلا حل.
 
@@ -714,7 +714,7 @@ CYCLICAL STRUCTURE:
 - البيت الأخير في كل مقطع أقصر بشكل ملحوظ (نصف بيت)، يخلق سقطة موسيقية تجسّد الطاقة وهي تتسرّب من أجساد الجنود.
 
 القافية (RHYME):
-- Owen يستخدم pararhyme (يسمّى أيضاً half-rhyme أو slant rhyme) عبر القصيدة كلها: "knive us / nervous"، "silence / nonchalance"، "snow / renew"، "wire / war". القوافي اللي تشبه القافية بس ما توصلها تخلق إحساس بالنشاز والتوتّر — ما فيه شي مريح أو محلول في هالقصيدة.
+- Owen يستخدم pararhyme (يسمّى أيضاً half-rhyme أو slant rhyme) عبر القصيدة كلها: "knive us / nervous"، "silence / nonchalance"، "snow / renew"، "wire / war". القوافي اللي تشبه القافية بس ما توصلها تخلق إحساس بالنشاز والتوتّر - ما فيه شي مريح أو محلول في هالقصيدة.
 - الـpararhyme كانت توقيع Owen الأسلوبي. الأصوات الساكنة تتطابق بس الحركات تتغيّر، فينتج صوت مزعج وغير منسجم.
 
 اللازمة (REFRAIN):
@@ -724,7 +724,7 @@ ELLIPSIS:
 - Owen يستخدم نقاط الحذف ("...") في نهاية كثير من الأبيات، يخلّيها تتلاشى في الصمت. هذا يعكس إرهاق الجنود، عجزهم عن إكمال أفكارهم، والانتظار اللي ما يخلص.
 
 البنية الدائرية (CYCLICAL STRUCTURE):
-- المقطعين 7 و8 يكرّرون أبيات تكاد تكون متطابقة، ويخلقون حلقة مغلقة. القصيدة ما لها حل ولا ذروة — هي تجسّد الجمود اللي توصفه.`,
+- المقطعين 7 و8 يكرّرون أبيات تكاد تكون متطابقة، ويخلقون حلقة مغلقة. القصيدة ما لها حل ولا ذروة - هي تجسّد الجمود اللي توصفه.`,
 
   keyQuotes: [
     {
@@ -751,7 +751,7 @@ ELLIPSIS:
         'The poem\'s devastating refrain. Its simplicity is its power -- four monosyllabic words that encapsulate the entire experience of trench warfare: endless, purposeless waiting. The anticlimax is the point. "But" creates expectation that is immediately denied.',
       themes: ['Futility / Loss', 'Reality of Conflict'],
       analysisAr:
-        'اللازمة المدمّرة في القصيدة. بساطتها هي قوّتها — أربع كلمات أحادية المقطع تختصر كل تجربة حرب الخنادق: انتظار بلا نهاية وبلا هدف. خيبة الذروة (anticlimax) هذي هي المقصد. وكلمة "But" تخلق توقّع، وفوراً تكسره.',
+        'اللازمة المدمّرة في القصيدة. بساطتها هي قوّتها - أربع كلمات أحادية المقطع تختصر كل تجربة حرب الخنادق: انتظار بلا نهاية وبلا هدف. خيبة الذروة (anticlimax) هذي هي المقصد. وكلمة "But" تخلق توقّع، وفوراً تكسره.',
       themesAr: ['العبثية / الفقد', 'واقع الصراع'],
     },
     {
@@ -769,7 +769,7 @@ ELLIPSIS:
         'Dawn is personified as a female military commander assembling troops. Owen subverts the conventional association of dawn with hope -- here it brings only another wave of cold and misery. Nature wages its own war against the soldiers.',
       themes: ['Power of Nature', 'Suffering'],
       analysisAr:
-        'الفجر يتشخّص كقائدة عسكرية تحشد جنودها. Owen يقلب الإيحاء التقليدي للفجر اللي يربطه بالأمل — هنا الفجر يجيب موجة برد ومعاناة جديدة بس. الطبيعة تشن حربها الخاصة على الجنود.',
+        'الفجر يتشخّص كقائدة عسكرية تحشد جنودها. Owen يقلب الإيحاء التقليدي للفجر اللي يربطه بالأمل - هنا الفجر يجيب موجة برد ومعاناة جديدة بس. الطبيعة تشن حربها الخاصة على الجنود.',
       themesAr: ['قوة الطبيعة', 'المعاناة'],
     },
     {
@@ -809,7 +809,7 @@ ELLIPSIS:
         'The wind is given human cruelty ("merciless") and weaponised action ("knive"). Throughout the poem, nature is the true antagonist -- more dangerous than the enemy army. This personification reinforces Owen\'s argument that war\'s greatest suffering comes not from combat but from the elements.',
       lineRef: 0,
       effectAr:
-        'الريح تُعطى قسوة بشرية ("merciless") وفعل يشبه فعل السلاح ("knive"). عبر القصيدة كلها، الطبيعة هي الخصم الحقيقي — أخطر من جيش العدو. الـpersonification هذي تدعم حجّة Owen إن أعظم معاناة في الحرب ما تجي من القتال، تجي من الطقس.',
+        'الريح تُعطى قسوة بشرية ("merciless") وفعل يشبه فعل السلاح ("knive"). عبر القصيدة كلها، الطبيعة هي الخصم الحقيقي - أخطر من جيش العدو. الـpersonification هذي تدعم حجّة Owen إن أعظم معاناة في الحرب ما تجي من القتال، تجي من الطقس.',
     },
     {
       device: 'Pararhyme (half-rhyme)',
@@ -874,7 +874,7 @@ export default function ExposurePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Exposure by Wilfred Owen — Analysis & Annotations"
+        name="Exposure by Wilfred Owen - Analysis & Annotations"
         description="Line-by-line analysis of Exposure with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

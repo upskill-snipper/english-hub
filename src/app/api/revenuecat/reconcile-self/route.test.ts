@@ -1,5 +1,5 @@
 /**
- * Tests for POST /api/revenuecat/reconcile-self — the cross-platform
+ * Tests for POST /api/revenuecat/reconcile-self - the cross-platform
  * entitlement reconcile endpoint (W4-AUD-API-001 follow-up).
  *
  * Coverage:
@@ -50,18 +50,24 @@ const prismaMock = {
   },
   subscription: {
     findUnique: vi.fn(async () => existingSubscription),
-    upsert: vi.fn(async (args: { where: { userId: string }; create: Record<string, unknown>; update: Record<string, unknown> }) => {
-      lastUpsert = args
-      const row = {
-        id: 'sub-1',
-        userId: args.where.userId,
-        ...(existingSubscription ?? {}),
-        ...args.create,
-        ...args.update,
-      }
-      existingSubscription = row
-      return row
-    }),
+    upsert: vi.fn(
+      async (args: {
+        where: { userId: string }
+        create: Record<string, unknown>
+        update: Record<string, unknown>
+      }) => {
+        lastUpsert = args
+        const row = {
+          id: 'sub-1',
+          userId: args.where.userId,
+          ...(existingSubscription ?? {}),
+          ...args.create,
+          ...args.update,
+        }
+        existingSubscription = row
+        return row
+      },
+    ),
     update: vi.fn(async (args: { where: { userId: string }; data: Record<string, unknown> }) => {
       lastUpdate = args
       const row = {
@@ -81,7 +87,7 @@ const prismaMock = {
 
 vi.mock('@/lib/prisma', () => ({ prisma: prismaMock }))
 
-// Rate-limit mock — tests flip `rateLimitResult` to drive the 429 branch.
+// Rate-limit mock - tests flip `rateLimitResult` to drive the 429 branch.
 let rateLimitResult = { success: true, remaining: 5, resetAt: Date.now() + 60_000 }
 vi.mock('@/lib/rate-limit', () => ({
   rateLimit: vi.fn(async () => rateLimitResult),
@@ -94,7 +100,7 @@ vi.mock('@sentry/nextjs', () => ({
   captureException: vi.fn(),
 }))
 
-// Global fetch mock — each test pushes a response queue.
+// Global fetch mock - each test pushes a response queue.
 const fetchQueue: Array<{ status: number; body: unknown }> = []
 const originalFetch = globalThis.fetch
 beforeEach(() => {
@@ -218,9 +224,7 @@ describe('POST /api/revenuecat/reconcile-self', () => {
     expect(upsertArgs.create.userId).toBe('prisma-user-1')
     expect(upsertArgs.create.status).toBe('ACTIVE')
     expect(upsertArgs.create.platform).toBe('IOS')
-    expect(upsertArgs.create.revenuecatAppUserId).toBe(
-      '11111111-1111-1111-1111-111111111111',
-    )
+    expect(upsertArgs.create.revenuecatAppUserId).toBe('11111111-1111-1111-1111-111111111111')
     restoreFetch()
   })
 

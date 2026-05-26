@@ -8,10 +8,10 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Rain — Edward Thomas | Cambridge IGCSE 0475',
+    title: 'Rain - Edward Thomas | Cambridge IGCSE 0475',
     description: 'Study guide for ',
   },
-  title: 'Rain — Edward Thomas | Cambridge IGCSE 0475',
+  title: 'Rain - Edward Thomas | Cambridge IGCSE 0475',
   description:
     "Study guide for 'Rain' by Edward Thomas (1916). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
   alternates: {
@@ -24,7 +24,7 @@ export default function RainPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
-        name="Rain — Edward Thomas (Cambridge IGCSE 0475)"
+        name="Rain - Edward Thomas (Cambridge IGCSE 0475)"
         description="Study guide stub for 'Rain' by Edward Thomas (1916). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4."
       />
       <BreadcrumbJsonLd

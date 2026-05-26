@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men Themes — Edexcel IGCSE Literature',
+    title: 'Of Mice and Men Themes - Edexcel IGCSE Literature',
     description:
       'Themes in Steinbeck\u2019s Of Mice and Men: the American Dream, loneliness, friendship, discrimination, fate, power and nature.',
   },
-  title: 'Of Mice and Men Themes — Edexcel IGCSE Literature',
+  title: 'Of Mice and Men Themes - Edexcel IGCSE Literature',
   description:
     'Themes in Steinbeck\u2019s Of Mice and Men: the American Dream, loneliness, friendship, discrimination, fate, power and nature.',
   alternates: {
@@ -24,10 +24,10 @@ const themes = [
   {
     title: 'The American Dream',
     intro:
-      'The dream of owning "a little place" runs through the novella as ritual rather than plan. Steinbeck treats the American Dream as both a necessary fiction — without it, the ranch workers could not endure their conditions — and a cruelty, because the novella\u2019s form is tightly structured to make the dream unattainable. Candy\u2019s money, Crooks\u2019s momentary belief and Curley\u2019s wife\u2019s Hollywood ambition are all versions of the same disappointment.',
+      'The dream of owning "a little place" runs through the novella as ritual rather than plan. Steinbeck treats the American Dream as both a necessary fiction - without it, the ranch workers could not endure their conditions - and a cruelty, because the novella\u2019s form is tightly structured to make the dream unattainable. Candy\u2019s money, Crooks\u2019s momentary belief and Curley\u2019s wife\u2019s Hollywood ambition are all versions of the same disappointment.',
     moments:
       'George\u2019s retellings of the dream; Candy\u2019s offer to buy in; Crooks\u2019s hopeful interjection; Curley\u2019s wife\u2019s Salinas story.',
-    quote: '”Every damn one of \u2019em\u2019s got a little piece of land in his head.” — Crooks',
+    quote: '”Every damn one of \u2019em\u2019s got a little piece of land in his head.” - Crooks',
   },
   {
     title: 'Loneliness',
@@ -35,24 +35,24 @@ const themes = [
       'Loneliness is the condition the ranch workers share but cannot name to each other. Steinbeck puts the diagnosis in the mouths of the characters who are most isolated by other factors: Crooks by race, Candy by age and disability, Curley\u2019s wife by gender. The novella\u2019s setting, Soledad ("solitude"), is itself a thematic pun.',
     moments:
       'Crooks\u2019s speech in his room; Curley\u2019s wife\u2019s monologue in the barn; George\u2019s confession to Slim.',
-    quote: '“A guy needs somebody — to be near him.” — Crooks',
+    quote: '“A guy needs somebody - to be near him.” - Crooks',
   },
   {
     title: 'Friendship and companionship',
     intro:
-      'Against the grain of the itinerant ranch economy, George and Lennie travel together. Their companionship is protective, irritating, ritualised — and it is the novel\u2019s only functioning relationship. Slim\u2019s quiet approval of it functions as the moral authority\u2019s verdict: such friendships are rare and precious.',
+      'Against the grain of the itinerant ranch economy, George and Lennie travel together. Their companionship is protective, irritating, ritualised - and it is the novel\u2019s only functioning relationship. Slim\u2019s quiet approval of it functions as the moral authority\u2019s verdict: such friendships are rare and precious.',
     moments:
       'The opening by the pool; the recited dream; Slim\u2019s "you guys travel around together?"',
-    quote: '“We got somebody to talk to that gives a damn about us.” — George',
+    quote: '“We got somebody to talk to that gives a damn about us.” - George',
   },
   {
     title: 'Discrimination and powerlessness',
     intro:
-      'Steinbeck layers forms of discrimination: racial (Crooks), disability (Candy, Lennie), age (Candy), and gender (Curley\u2019s wife). Each character experiences powerlessness in a different register, and Steinbeck refuses to rank them — instead he shows how all of them are exploited by the ranch economy and by Curley\u2019s unchecked aggression.',
+      'Steinbeck layers forms of discrimination: racial (Crooks), disability (Candy, Lennie), age (Candy), and gender (Curley\u2019s wife). Each character experiences powerlessness in a different register, and Steinbeck refuses to rank them - instead he shows how all of them are exploited by the ranch economy and by Curley\u2019s unchecked aggression.',
     moments:
       'Candy\u2019s dog; Crooks\u2019s segregated room; Curley\u2019s wife\u2019s threat to have Crooks lynched; the fight in the bunkhouse.',
     quote:
-      '”I could get you strung up on a tree so easy it ain\u2019t even funny.” — Curley\u2019s wife',
+      '”I could get you strung up on a tree so easy it ain\u2019t even funny.” - Curley\u2019s wife',
   },
   {
     title: 'Fate and predestination',
@@ -61,7 +61,7 @@ const themes = [
     moments:
       'The opening description of the pool; Candy\u2019s dog being shot; George\u2019s final shot fired in the same place.',
     quote:
-      '“The best laid schemes o\u2019 mice an\u2019 men / Gang aft a-gley.” — Burns (epigraph)',
+      '“The best laid schemes o\u2019 mice an\u2019 men / Gang aft a-gley.” - Burns (epigraph)',
   },
   {
     title: 'Power and masculinity',
@@ -69,12 +69,12 @@ const themes = [
       'Steinbeck examines how masculinity is constructed around physical strength (Lennie, Slim) and social power (Curley, the boss). Curley\u2019s violence is a compensation for stature; Lennie\u2019s strength becomes a liability; Slim\u2019s "majesty" comes from competence rather than domination. The novella is sceptical of every model it depicts.',
     moments:
       'Curley\u2019s attack on Lennie; Slim\u2019s quiet authority; Lennie\u2019s accidental killings.',
-    quote: '“He\u2019s alla time picking scraps with big guys.” — Candy on Curley',
+    quote: '“He\u2019s alla time picking scraps with big guys.” - Candy on Curley',
   },
   {
     title: 'Nature and setting',
     intro:
-      'Steinbeck frames the novella with two scenes at the pool. Nature is peaceful, indifferent and, ultimately, the only place refuge is possible — though even that refuge is temporary. The contrast with the bunkhouse, the barn and the harness shed maps the novella\u2019s human environments onto an increasingly claustrophobic progression.',
+      'Steinbeck frames the novella with two scenes at the pool. Nature is peaceful, indifferent and, ultimately, the only place refuge is possible - though even that refuge is temporary. The contrast with the bunkhouse, the barn and the harness shed maps the novella\u2019s human environments onto an increasingly claustrophobic progression.',
     moments:
       'The opening pool description; Lennie\u2019s return at the end; the heron eating the water snake.',
     quote: '”A silent head and beak lanced down and plucked it out by the head.”',
@@ -126,7 +126,7 @@ export default async function OmamThemesPage() {
             Of Mice and Men: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Steinbeck’s novella — the American Dream, loneliness,
+            Analytical routes through Steinbeck’s novella - the American Dream, loneliness,
             friendship, discrimination, fate, power and setting.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default async function OmamThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

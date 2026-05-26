@@ -49,7 +49,7 @@ async function handle(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
   }
 
-  // Window: [today - 90d - 12h, today - 90d + 12h] in UTC — gives a 24h
+  // Window: [today - 90d - 12h, today - 90d + 12h] in UTC - gives a 24h
   // band so the daily cron catches everyone whose period started 90 days
   // ago regardless of their subscription timezone.
   const now = Date.now()
@@ -87,7 +87,7 @@ async function handle(request: NextRequest) {
       continue
     }
 
-    // Skip if user already has any trustpilot_invite row — avoids double
+    // Skip if user already has any trustpilot_invite row - avoids double
     // invitation regardless of trigger. The shared dedup helper will
     // re-check, but this pre-filter saves us rendering + SMTP for the
     // majority.
@@ -103,13 +103,13 @@ async function handle(request: NextRequest) {
     }
 
     const first = user.firstName?.trim() || 'there'
-    const subject = '3 months in — worth a review?'
+    const subject = '3 months in - worth a review?'
     const html = `<p>Hi ${escape(first)},</p>
-<p>You've been with The English Hub for 90 days. If the platform has helped, a short honest review on Trustpilot would mean a lot — two minutes, no incentive attached.</p>
+<p>You've been with The English Hub for 90 days. If the platform has helped, a short honest review on Trustpilot would mean a lot - two minutes, no incentive attached.</p>
 <p><a href="https://uk.trustpilot.com/review/theenglishhub.app">Leave a review on Trustpilot</a></p>
 <p>If anything's felt off, just reply to this email and a real person will read it.</p>
 <p>Cheers,<br/>The English Hub Team</p>`
-    const text = `Hi ${first},\n\nYou've been with The English Hub for 90 days. If the platform has helped, a short honest review on Trustpilot would mean a lot — two minutes, no incentive attached.\n\nLeave a review: https://uk.trustpilot.com/review/theenglishhub.app\n\nIf anything's felt off, just reply to this email and a real person will read it.\n\nCheers,\nThe English Hub Team`
+    const text = `Hi ${first},\n\nYou've been with The English Hub for 90 days. If the platform has helped, a short honest review on Trustpilot would mean a lot - two minutes, no incentive attached.\n\nLeave a review: https://uk.trustpilot.com/review/theenglishhub.app\n\nIf anything's felt off, just reply to this email and a real person will read it.\n\nCheers,\nThe English Hub Team`
 
     const result = await sendEmail(user.email, subject, html, text, {
       trustpilotTrigger: 'student_90d_retention',

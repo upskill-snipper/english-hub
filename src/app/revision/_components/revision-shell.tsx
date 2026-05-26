@@ -60,7 +60,7 @@ interface NavItem {
   gcseOnly?: boolean
   /** Hide for any GCSE board. */
   igcseOnly?: boolean
-  /** Sidebar grouping — controls which collapsible bucket the item lands in.
+  /** Sidebar grouping - controls which collapsible bucket the item lands in.
    *  Items without an explicit group are treated as `top` (always visible). */
   group?: NavGroup
 }
@@ -70,13 +70,13 @@ interface NavItem {
 const LIT_BOARDS: ExamBoard[] = ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse']
 
 // Dense one-line-per-entry table. The `// prettier-ignore` block keeps prettier
-// from wrapping each entry across 6+ lines — readable for editors as a flat
+// from wrapping each entry across 6+ lines - readable for editors as a flat
 // register of routes, and keeps the file roughly the size of pre-grouping.
-// `labelKey` for the Full Dashboard entry is a sentinel — navLabel() special-
+// `labelKey` for the Full Dashboard entry is a sentinel - navLabel() special-
 // cases it so we can ship without expanding the i18n catalogue.
 // prettier-ignore
 const NAV_ITEMS: NavItem[] = [
-  // Top tier — always visible above the collapsible groups.
+  // Top tier - always visible above the collapsible groups.
   { labelKey: 'revision.shell.nav.your_hub',           href: '/revision',                                            icon: Home,           colour: 'text-primary',     group: 'top' },
   { labelKey: 'revision.shell.nav.full_dashboard',     href: '/demo/student',                                        icon: LayoutDashboard, colour: 'text-primary',    group: 'top' },
   { labelKey: 'revision.shell.nav.analytics',          href: '/revision/analytics',                                  icon: BarChart3,      colour: 'text-primary',     group: 'top' },
@@ -98,14 +98,14 @@ const NAV_ITEMS: NavItem[] = [
   { labelKey: 'revision.shell.nav.writing_skills',     href: '/resources/writing-skills',                            icon: Edit3,          colour: 'text-cyan-400',                                         group: 'skills' },
   { labelKey: 'revision.shell.nav.vocabulary',         href: '/resources/vocabulary',                                icon: Quote,          colour: 'text-rose-400',                                         group: 'skills' },
   { labelKey: 'revision.shell.nav.flashcards',         href: '/revision/flashcards',                                 icon: Layers,         colour: 'text-clay-600',                                         group: 'skills' },
-  // Resources — curated libraries + dashboard tooling.
+  // Resources - curated libraries + dashboard tooling.
   { labelKey: 'revision.shell.nav.resources_hub',      href: '/resources',                                           icon: Library,        colour: 'text-amber-400',                                        group: 'resources' },
   { labelKey: 'revision.shell.nav.revision_notes',     href: '/resources/revision-notes',                            icon: StickyNote,     colour: 'text-blue-400',                                         group: 'resources' },
   { labelKey: 'revision.shell.nav.model_answers',      href: '/resources/model-answers',                             icon: CheckSquare,    colour: 'text-emerald-400',                                       group: 'resources' },
   { labelKey: 'revision.shell.nav.my_papers',          href: '/dashboard/papers',                                    icon: Files,          colour: 'text-primary',                                          group: 'resources' },
   { labelKey: 'revision.shell.nav.study_tools',        href: '/revision#toolkit',                                    icon: Wrench,         colour: 'text-primary',                                          group: 'resources' },
   { labelKey: 'revision.shell.nav.toolkit',            href: '/toolkit',                                             icon: Wrench,         colour: 'text-primary',                                          group: 'resources' },
-  // Your board — board-specific deep-links.
+  // Your board - board-specific deep-links.
   { labelKey: 'revision.shell.nav.ial_guide',          href: '/revision/ial',                                        icon: GraduationCap,  colour: 'text-primary',     boards: ['ial-edexcel'],             group: 'board' },
   { labelKey: 'revision.shell.nav.edexcel_igcse_hub',  href: '/igcse/edexcel',                                       icon: GraduationCap,  colour: 'text-cyan-400',    boards: ['edexcel-igcse'],   igcseOnly: true, group: 'board' },
   { labelKey: 'revision.shell.nav.cambridge_hub',      href: '/igcse/cambridge/0500',                                icon: GraduationCap,  colour: 'text-cyan-400',    boards: ['cambridge-0500'],  igcseOnly: true, group: 'board' },
@@ -115,7 +115,7 @@ const NAV_ITEMS: NavItem[] = [
 function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
   return NAV_ITEMS.filter((item) => {
     if (!board) {
-      // No board chosen yet — hide board-locked items (igcse-only / gcse-only)
+      // No board chosen yet - hide board-locked items (igcse-only / gcse-only)
       return !item.igcseOnly && !item.gcseOnly && !item.boards ? true : !item.boards // generic items pass; board-pinned items hidden until board chosen
     }
     if (item.boards && !item.boards.includes(board)) return false
@@ -126,7 +126,7 @@ function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
 }
 
 // Ordered list of collapsible group sections shown beneath the top-tier nav.
-// English-literal labels — intentionally bypass useT() to avoid expanding the
+// English-literal labels - intentionally bypass useT() to avoid expanding the
 // dictionary surface for a pure UI re-organisation; can be promoted to keys
 // later if i18n needs them.
 const GROUPS: { key: Exclude<NavGroup, 'top'>; label: string }[] = [
@@ -182,7 +182,7 @@ interface ProgressSnapshot {
   hasData: boolean
 }
 
-// Approximate 9-1 boundary % (board-agnostic averages) — used to convert the
+// Approximate 9-1 boundary % (board-agnostic averages) - used to convert the
 // raw performance score (0-100 avg of quiz correct rate + AI essay score)
 // into a "% of the way toward your target grade" fill. If you hit the
 // target's % threshold, the bar is 100% full; below lowest-visible grade
@@ -206,10 +206,10 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
   const [perfScore, setPerfScore] = useState<number | null>(null)
   const [target, setTarget] = useState<TargetGrade>(7)
 
-  // Track section visits — once visited, contributes to overall progress
+  // Track section visits - once visited, contributes to overall progress
   const sectionKeys = items.filter((i) => i.href !== '/revision').map((i) => i.href)
 
-  // Coverage % (revision sections visited) — immediate feedback loop
+  // Coverage % (revision sections visited) - immediate feedback loop
   useEffect(() => {
     try {
       const stored = localStorage.getItem(PROGRESS_KEY)
@@ -237,7 +237,7 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, sectionKeys.join('|')])
 
-  // Real performance score — quiz correct rate + AI essay overall score
+  // Real performance score - quiz correct rate + AI essay overall score
   // (server-aggregated via /api/profile/grade-progress). Fire once per
   // shell mount; anon users 401 silently and fall back to coverage.
   useEffect(() => {
@@ -249,7 +249,7 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
         if (j && typeof j.avgScore === 'number') setPerfScore(j.avgScore)
       })
       .catch(() => {
-        // silent — coverage-only fallback is fine
+        // silent - coverage-only fallback is fine
       })
     return () => {
       cancelled = true
@@ -276,7 +276,7 @@ function navLabel(item: NavItem, t: ReturnType<typeof useT>): string {
   return t(item.labelKey)
 }
 
-// Single nav-link row — shared between the top-tier list and the grouped
+// Single nav-link row - shared between the top-tier list and the grouped
 // `<details>` lists so active styling stays in lockstep.
 function NavLink({
   item,
@@ -301,7 +301,7 @@ function NavLink({
           : 'text-muted-foreground hover:bg-accent/60 hover:text-foreground',
       )}
     >
-      {/* Active left-edge accent bar — subtler than a full background flood
+      {/* Active left-edge accent bar - subtler than a full background flood
           and helps the eye scan-locate the current page in a long list. */}
       {isActive && (
         <span
@@ -309,7 +309,7 @@ function NavLink({
           className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-primary"
         />
       )}
-      {/* Icon tile — lifts every link into a uniform two-part composition
+      {/* Icon tile - lifts every link into a uniform two-part composition
           (tile + label) so the long list reads as a single column instead
           of icon-text-icon-text noise. */}
       <span
@@ -345,7 +345,7 @@ function SidebarNav({
   const { board } = useBoard()
   const t = useT()
 
-  // Target + two grades below — e.g. target=7 → show 5, 6, 7 with fill
+  // Target + two grades below - e.g. target=7 → show 5, 6, 7 with fill
   // reflecting how far through the 5→7 journey the student has travelled.
   // If target ≤ 2 we show 1, 2, target so labels still make sense.
   const gradeRight = target
@@ -368,7 +368,7 @@ function SidebarNav({
     board,
   )
 
-  // Partition nav items by group — items without an explicit group fall back
+  // Partition nav items by group - items without an explicit group fall back
   // to the top tier (defensive default keeps newly-added entries visible).
   const topItems = navItems.filter((i) => !i.group || i.group === 'top')
   const groupedItems: Record<Exclude<NavGroup, 'top'>, NavItem[]> = {
@@ -391,7 +391,7 @@ function SidebarNav({
 
   return (
     <nav className="flex flex-col gap-1">
-      {/* Status card — exam board + target-grade progress merged into a
+      {/* Status card - exam board + target-grade progress merged into a
           single richer panel. Visually anchors the top of the sidebar so
           the long nav list below feels organised rather than open-ended. */}
       <div className="relative mb-4 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] via-card to-violet-500/[0.04] p-3.5">
@@ -440,7 +440,7 @@ function SidebarNav({
         </div>
       </div>
 
-      {/* Top-tier nav — always-visible essentials (Your Hub, Full Dashboard,
+      {/* Top-tier nav - always-visible essentials (Your Hub, Full Dashboard,
           Analytics, Study Plan). Rendered flat above the collapsible groups
           so they read as the primary surface of the sidebar. */}
       {topItems.map((item) => (
@@ -454,7 +454,7 @@ function SidebarNav({
       ))}
 
       {/* Collapsible group sections. Each is a native <details> so SSR/CSR
-          stays clean — no React state, no hydration mismatch risk. The
+          stays clean - no React state, no hydration mismatch risk. The
           group whose href the user is currently inside opens by default;
           everything else stays tucked away. */}
       {GROUPS.map(({ key, label }) => {
@@ -501,7 +501,7 @@ function SidebarNav({
 // ─── Mobile scroll-chip rail ────────────────────────────────────────────────
 //
 // Horizontal, scrollable pill-rail that surfaces the same nav items as the
-// desktop sidebar on small screens. Complements the hamburger Sheet — both
+// desktop sidebar on small screens. Complements the hamburger Sheet - both
 // are visible on mobile and click through to the same routes. Grouping
 // would actively hurt here (a horizontal rail wants flat pills), so we
 // intentionally render the items un-grouped.
@@ -562,7 +562,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
   const boardName = config?.shortName ?? null
   const t = useT()
 
-  // NB — the previous implementation redirected non-GCSE students AWAY from
+  // NB - the previous implementation redirected non-GCSE students AWAY from
   // this shell (KS3 → /courses, IGCSE → board hub, null render for A-Level/
   // IAL). That contradicted the unified "Your Hub" goal and produced the
   // "flash then navigates away" bug reported for IGCSE and A-Level. The
@@ -640,7 +640,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
               </SheetContent>
             </Sheet>
             {/* Persistent sidebar branding. Visually a heading, but
-                semantically NOT the page's primary heading — every
+                semantically NOT the page's primary heading - every
                 /revision/*, /igcse/*, /a-level/* page wraps in this
                 shell AND renders its own page-specific <h1>. Keeping
                 this as <h1> produced multi-H1 on 800+ routes and was
@@ -657,7 +657,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
             </h2>
           </div>
 
-          {/* Mobile scroll-chip rail — horizontal nav that supplements the */}
+          {/* Mobile scroll-chip rail - horizontal nav that supplements the */}
           {/* hamburger menu above. Gives one-tap access to key sections   */}
           {/* without requiring the user to open the full sheet.           */}
           <MobileScrollRail navItems={navItems} />

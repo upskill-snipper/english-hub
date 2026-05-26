@@ -170,7 +170,7 @@ export async function PUT(request: NextRequest) {
       where: { supabaseUserId: authUser.id },
       select: { id: true },
     })
-    // Fallback for pre-backfill or mismatched rows — logged as a warning.
+    // Fallback for pre-backfill or mismatched rows - logged as a warning.
     const user =
       prismaUser ??
       (await prisma.user.findUnique({
@@ -190,7 +190,7 @@ export async function PUT(request: NextRequest) {
 
     const body = await request.json()
 
-    // Build update data — only include fields present in the request body
+    // Build update data - only include fields present in the request body
     // so callers can send partial updates (e.g. toggling only aiOptOut).
     const data: Record<string, unknown> = {}
 

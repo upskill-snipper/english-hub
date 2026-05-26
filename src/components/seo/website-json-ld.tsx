@@ -1,5 +1,5 @@
 /**
- * Server-only WebsiteJsonLd — the organisation-level JSON-LD for the
+ * Server-only WebsiteJsonLd - the organisation-level JSON-LD for the
  * homepage. Lives in its own file because it imports `tMany` from
  * `@/lib/i18n/t`, which transitively imports `next/headers`. If
  * WebsiteJsonLd lived in the main `json-ld.tsx` next to the locale-

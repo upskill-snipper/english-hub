@@ -46,7 +46,7 @@ export interface CleanupSummary {
   supportTicketsArchived: number
   expiredMarketingConsents: number
   childrenPriorityCleanups: number
-  /** Children's Code Standard 8 – dormant child account processing */
+  /** Children's Code Standard 8 - dormant child account processing */
   childDormancy: DormancyResult | null
   errors: { userId?: string; step: string; message: string }[]
 }
@@ -579,7 +579,7 @@ export async function hardDeleteUser(userId: string): Promise<void> {
   // 13. P1 (Cycle 2 security): also delete the Supabase auth.users row.
   // The Prisma transaction above only covers Prisma-owned tables; without
   // this step the auth identity, login history, email, password hash,
-  // and MFA factors remain in `auth.users` indefinitely — contradicting
+  // and MFA factors remain in `auth.users` indefinitely - contradicting
   // the "all personal data will be permanently deleted" promise in the
   // parent-deletion email.
   //
@@ -597,7 +597,7 @@ export async function hardDeleteUser(userId: string): Promise<void> {
     try {
       const admin = createServiceRoleClient()
       if (supabaseUserId) {
-        // Direct UUID-based deletion — no listUsers scan needed.
+        // Direct UUID-based deletion - no listUsers scan needed.
         await admin.auth.admin.deleteUser(supabaseUserId)
       } else {
         // Legacy fallback: Prisma row had no supabaseUserId populated.
@@ -618,7 +618,7 @@ export async function hardDeleteUser(userId: string): Promise<void> {
         `[hardDeleteUser] Prisma deletion succeeded but Supabase auth.users deletion failed for prisma.User.id=${userId}`,
         err,
       )
-      // Best-effort — swallow the error here so the enclosing cron
+      // Best-effort - swallow the error here so the enclosing cron
       // doesn't retry the whole thing (which would fail on the already
       // deleted Prisma row).
     }

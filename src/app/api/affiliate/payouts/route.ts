@@ -65,7 +65,7 @@ export async function GET(request: NextRequest) {
     // to `affiliate_payout_batches` (new percentage-tier system, created
     // by supabase/migrations/20260420_affiliates_v2.sql). The admin
     // Rewardful payout route at src/app/api/admin/affiliates/payout.ts
-    // continues to use the legacy table — the two pipelines stay
+    // continues to use the legacy table - the two pipelines stay
     // separate by design.
     const {
       data: payouts,
@@ -127,7 +127,7 @@ export async function GET(request: NextRequest) {
           tier_label: tierInfo.label,
           commission_pence: tierInfo.commissionPence,
           commission_gbp: tierInfo.commissionGbp,
-          // Flat-rate system — no percentage. Kept for API backward compat.
+          // Flat-rate system - no percentage. Kept for API backward compat.
           commission_rate: 0,
           next_tier: tierInfo.nextTier,
           signups_to_next_tier: tierInfo.signupsToNextTier,

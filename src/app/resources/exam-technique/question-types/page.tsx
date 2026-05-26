@@ -197,7 +197,7 @@ export default async function QuestionTypesPage() {
     <>
       <ArticleJsonLd
         headline="How to Approach Different Question Types"
-        description="Decode every question type in GCSE and IGCSE English exams — 'How does the writer...', 'To what extent...', comparison, extract-based, essay, and creative writing tasks — with structure guidance, common mistakes, and example responses."
+        description="Decode every question type in GCSE and IGCSE English exams - 'How does the writer...', 'To what extent...', comparison, extract-based, essay, and creative writing tasks - with structure guidance, common mistakes, and example responses."
         datePublished="2026-04-01"
         url="https://theenglishhub.app/resources/exam-technique/question-types"
       />

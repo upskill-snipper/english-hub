@@ -32,7 +32,7 @@ interface GeneratedQuestion {
 function generateQuestionsFromSetTexts(
   board: string,
   topic: string,
-  count: number
+  count: number,
 ): GeneratedQuestion[] {
   const relevantTexts = SET_TEXTS.filter((t) => {
     if (board && board !== 'all') {
@@ -43,7 +43,7 @@ function generateQuestionsFromSetTexts(
 
   // Find the specific text if the topic matches a set text
   const targetText = relevantTexts.find(
-    (t) => t.title.toLowerCase() === topic.toLowerCase() || t.slug === topic
+    (t) => t.title.toLowerCase() === topic.toLowerCase() || t.slug === topic,
   )
 
   const questions: GeneratedQuestion[] = []
@@ -52,10 +52,16 @@ function generateQuestionsFromSetTexts(
   // Template question generators
   const mcqTemplates = [
     {
-      q: (title: string, author: string) =>
-        `Who wrote "${title}"?`,
+      q: (title: string, author: string) => `Who wrote "${title}"?`,
       opts: (author: string) => {
-        const distractors = ['Charles Dickens', 'William Shakespeare', 'J.B. Priestley', 'George Orwell', 'Mary Shelley', 'Robert Louis Stevenson']
+        const distractors = [
+          'Charles Dickens',
+          'William Shakespeare',
+          'J.B. Priestley',
+          'George Orwell',
+          'Mary Shelley',
+          'Robert Louis Stevenson',
+        ]
           .filter((d) => d !== author)
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
@@ -92,14 +98,21 @@ function generateQuestionsFromSetTexts(
       },
     },
     {
-      q: (title: string) =>
-        `Which of these themes is commonly associated with "${title}"?`,
+      q: (title: string) => `Which of these themes is commonly associated with "${title}"?`,
       opts: (_a: string, _c: string, themes?: string[]) => {
-        const themePool = themes && themes.length > 0
-          ? themes
-          : ['Power', 'Ambition', 'Love', 'Social Class', 'Morality', 'Good vs Evil']
+        const themePool =
+          themes && themes.length > 0
+            ? themes
+            : ['Power', 'Ambition', 'Love', 'Social Class', 'Morality', 'Good vs Evil']
         const correct = themePool[0]
-        const distractors = ['Environmentalism', 'Technology', 'Space Exploration', 'Friendship', 'Adventure', 'Comedy']
+        const distractors = [
+          'Environmentalism',
+          'Technology',
+          'Space Exploration',
+          'Friendship',
+          'Adventure',
+          'Comedy',
+        ]
           .filter((d) => !themePool.includes(d))
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
@@ -176,20 +189,26 @@ function generateQuestionsFromSetTexts(
 export async function POST(request: NextRequest) {
   // 1. Authenticate
   const supabase = createServerSupabaseClient()
-  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser()
   if (authError || !user) {
     return NextResponse.json(
       { error: 'You must be signed in to generate a custom test.' },
-      { status: 401 }
+      { status: 401 },
     )
   }
 
-  // 2. Subscription check — Premium-only feature
+  // 2. Subscription check - Premium-only feature
   const isPremium = await hasActiveSubscription(supabase, user.id)
   if (!isPremium) {
     return NextResponse.json(
-      { error: 'Custom test generation is a Premium feature. Please upgrade your subscription to continue.' },
-      { status: 403 }
+      {
+        error:
+          'Custom test generation is a Premium feature. Please upgrade your subscription to continue.',
+      },
+      { status: 403 },
     )
   }
 
@@ -201,7 +220,7 @@ export async function POST(request: NextRequest) {
   if (!rl.success) {
     return NextResponse.json(
       { error: 'Rate limit exceeded. You can generate up to 10 tests per hour.' },
-      { status: 429 }
+      { status: 429 },
     )
   }
 
@@ -212,16 +231,12 @@ export async function POST(request: NextRequest) {
     if (!topic || !questionCount) {
       return NextResponse.json(
         { error: 'Missing required fields: topic, questionCount' },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     const count = Math.min(Math.max(questionCount, 5), 30)
-    const questions = generateQuestionsFromSetTexts(
-      board || 'all',
-      topic,
-      count
-    )
+    const questions = generateQuestionsFromSetTexts(board || 'all', topic, count)
 
     return NextResponse.json({
       questions,
@@ -234,7 +249,7 @@ export async function POST(request: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: 'Failed to generate test. Please try again.' },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

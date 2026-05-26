@@ -301,12 +301,12 @@ const poemData: PoemData = {
 <p>The poem's emotional restraint is characteristic of Byron's style -- he channels deep feeling through controlled, tight verse forms rather than emotional outpouring. The <strong>Romantic era</strong> valued intense personal emotion, but Byron often expressed this through irony and understatement.</p>
 <p>The biographical context adds layers: Byron himself was notorious for scandalous affairs, yet here he presents himself as the wounded party. The poem explores how <strong>secrecy intensifies suffering</strong> -- he cannot share his grief with anyone.</p>`,
   contextAr: `<p><strong>القصيدة مكتوبة سنة 1816</strong>، وتعكس علاقة سرّية لـByron، يعتقد على نطاق واسع إنها كانت مع <strong>Lady Frances Webster</strong>. العلاقة كان لازم تبقى مخفيّة بسبب الأعراف الاجتماعية في تلك الفترة، يعني Byron ما قدر يعبّر عن حزنه بشكل علني لمّا انتهت.</p>
-<p>التحفّظ العاطفي في القصيدة من السمات المميّزة لأسلوب Byron — هو يصرّف العاطفة العميقة عبر قوالب شعرية مضبوطة، مو عبر فيض عاطفي صريح. <strong>العصر الرومانسي</strong> كان يقدّر العاطفة الفرديّة الكثيفة، بس Byron كثير ما يعبّر عنها عبر السخريّة والـunderstatement.</p>
-<p>السياق الشخصي يضيف طبقات: Byron نفسه كان معروف بفضائحه العاطفية، ومع ذلك هنا يقدّم نفسه على إنه الطرف المظلوم. القصيدة تستكشف كيف إن <strong>السرّية تكبّر الألم</strong> — ما يقدر يشارك حزنه مع أحد.</p>`,
+<p>التحفّظ العاطفي في القصيدة من السمات المميّزة لأسلوب Byron - هو يصرّف العاطفة العميقة عبر قوالب شعرية مضبوطة، مو عبر فيض عاطفي صريح. <strong>العصر الرومانسي</strong> كان يقدّر العاطفة الفرديّة الكثيفة، بس Byron كثير ما يعبّر عنها عبر السخريّة والـunderstatement.</p>
+<p>السياق الشخصي يضيف طبقات: Byron نفسه كان معروف بفضائحه العاطفية، ومع ذلك هنا يقدّم نفسه على إنه الطرف المظلوم. القصيدة تستكشف كيف إن <strong>السرّية تكبّر الألم</strong> - ما يقدر يشارك حزنه مع أحد.</p>`,
   summary: `The speaker reflects on a painful parting from a former lover. The relationship was secret, and its ending brought silence rather than public mourning. He recalls the coldness of their final kiss and the signs that foreshadowed future sorrow.\n\nIn the present, hearing the lover's name spoken by others causes him physical pain -- like a funeral bell. He must hide his reaction because nobody knows of their connection. The poem ends with a hypothetical future meeting, but nothing has changed: he would greet them the same way they parted -- with silence and tears.\n\nThe circular structure reinforces the idea that the speaker is trapped in grief, unable to move forward or find closure.`,
-  summaryAr: `المتكلّم (Byron) يتأمّل في فراق مؤلم عن حبيبته السابقة. العلاقة كانت سرّيّة، ونهايتها جابت صمت بدل العزاء العلني. يتذكّر برودة آخر قبلة بينهم، والعلامات اللي توقّعت الحزن اللي راح يعيشه.\n\nفي الحاضر، لمّا الناس يذكرون اسمها، يحسّ بألم جسدي — مثل صوت ناقوس جنازة. ولازم يخفي ردة فعله لأن ما حد يدري عن علاقتهم. القصيدة تنتهي بمشهد افتراضي للقاء مستقبلي، بس ما تغيّر شي: راح يستقبلها بنفس الطريقة اللي افترقوا بها — "with silence and tears".\n\nالبنية الدائرية تأكّد إن المتكلّم محاصر في حزنه، ما يقدر يمشي خطوة لقدّام ولا يلقى خاتمة.`,
+  summaryAr: `المتكلّم (Byron) يتأمّل في فراق مؤلم عن حبيبته السابقة. العلاقة كانت سرّيّة، ونهايتها جابت صمت بدل العزاء العلني. يتذكّر برودة آخر قبلة بينهم، والعلامات اللي توقّعت الحزن اللي راح يعيشه.\n\nفي الحاضر، لمّا الناس يذكرون اسمها، يحسّ بألم جسدي - مثل صوت ناقوس جنازة. ولازم يخفي ردة فعله لأن ما حد يدري عن علاقتهم. القصيدة تنتهي بمشهد افتراضي للقاء مستقبلي، بس ما تغيّر شي: راح يستقبلها بنفس الطريقة اللي افترقوا بها - "with silence and tears".\n\nالبنية الدائرية تأكّد إن المتكلّم محاصر في حزنه، ما يقدر يمشي خطوة لقدّام ولا يلقى خاتمة.`,
   formAndStructure: `Form: Four stanzas of eight lines each, with a tight ABAB rhyme scheme throughout.\n\nShort lines: Predominantly monosyllabic and disyllabic words create a clipped, restrained rhythm that mirrors emotional suppression.\n\nCyclical structure: The final line ("With silence and tears") echoes the second line ("In silence and tears"), creating a circular poem that traps the speaker in perpetual grief.\n\nRhyme scheme: The regular ABAB pattern creates a sense of control and formality, contrasting with the raw emotion beneath.\n\nEnjambment is minimal -- most lines are end-stopped, creating a halting, measured pace as if the speaker is carefully controlling each word.\n\nTemporal shifts: The poem moves between past (the parting), present (hearing the name), and future (hypothetical meeting), showing grief transcends time.`,
-  formAndStructureAr: `Form (الشكل): أربع مقاطع، كل مقطع ثمانية أبيات، بنظام قافية ABAB ثابت طوال القصيدة.\n\nأبيات قصيرة: معظم الكلمات أحاديّة المقطع أو ثنائيّة، تخلق إيقاع مقتطف ومتحفّظ يعكس كبت العاطفة.\n\nالبنية الدائرية (Cyclical structure): البيت الأخير "With silence and tears" يردّد البيت الثاني "In silence and tears"، فيخلق قصيدة دائرية تحبس المتكلّم في حزن لا ينتهي.\n\nنظام القافية: نمط ABAB المنتظم يخلق إحساس بالسيطرة والرسميّة، يتناقض مع العاطفة الخام تحت السطح.\n\nEnjambment قليل — معظم الأبيات end-stopped (تنتهي بعلامة ترقيم)، وهذا يخلق إيقاع متقطّع وحذِر، كأن المتكلّم يقيس كل كلمة قبل ما يقولها.\n\nالانتقالات الزمنيّة (Temporal shifts): القصيدة تتحرّك بين الماضي (لحظة الفراق)، والحاضر (سماع الاسم)، والمستقبل (اللقاء الافتراضي)، تبيّن إن الحزن يتجاوز الزمن.`,
+  formAndStructureAr: `Form (الشكل): أربع مقاطع، كل مقطع ثمانية أبيات، بنظام قافية ABAB ثابت طوال القصيدة.\n\nأبيات قصيرة: معظم الكلمات أحاديّة المقطع أو ثنائيّة، تخلق إيقاع مقتطف ومتحفّظ يعكس كبت العاطفة.\n\nالبنية الدائرية (Cyclical structure): البيت الأخير "With silence and tears" يردّد البيت الثاني "In silence and tears"، فيخلق قصيدة دائرية تحبس المتكلّم في حزن لا ينتهي.\n\nنظام القافية: نمط ABAB المنتظم يخلق إحساس بالسيطرة والرسميّة، يتناقض مع العاطفة الخام تحت السطح.\n\nEnjambment قليل - معظم الأبيات end-stopped (تنتهي بعلامة ترقيم)، وهذا يخلق إيقاع متقطّع وحذِر، كأن المتكلّم يقيس كل كلمة قبل ما يقولها.\n\nالانتقالات الزمنيّة (Temporal shifts): القصيدة تتحرّك بين الماضي (لحظة الفراق)، والحاضر (سماع الاسم)، والمستقبل (اللقاء الافتراضي)، تبيّن إن الحزن يتجاوز الزمن.`,
   keyQuotes: [
     {
       quote: 'In silence and tears',
@@ -323,7 +323,7 @@ const poemData: PoemData = {
         'The understatement of "half" is deliberately ambiguous -- is he minimising his own pain, or suggesting the lover was less affected? Either reading reveals emotional complexity and self-protection.',
       themes: ['Heartbreak', 'Understatement'],
       analysisAr:
-        'الـunderstatement في كلمة "half" مقصود غامض — هل المتكلّم يقلّل من ألمه هو، أم يلمّح إن حبيبته ما تأثّرت بنفس القدر؟ القراءتين تكشفان تعقيد عاطفي ودفاع عن النفس.',
+        'الـunderstatement في كلمة "half" مقصود غامض - هل المتكلّم يقلّل من ألمه هو، أم يلمّح إن حبيبته ما تأثّرت بنفس القدر؟ القراءتين تكشفان تعقيد عاطفي ودفاع عن النفس.',
       themesAr: ['كسر القلب', 'الـUnderstatement'],
     },
     {
@@ -350,7 +350,7 @@ const poemData: PoemData = {
         "A knell is a funeral bell -- hearing the lover's name is equated with death. The metaphor transforms everyday conversation into a source of profound grief.",
       themes: ['Death imagery', 'Memory', 'Grief'],
       analysisAr:
-        'الـ"knell" هو ناقوس الجنازة — سماع اسم حبيبته يساوي عند المتكلّم سماع خبر موت. الاستعارة تحوّل المحادثة اليومية لمصدر حزن عميق.',
+        'الـ"knell" هو ناقوس الجنازة - سماع اسم حبيبته يساوي عند المتكلّم سماع خبر موت. الاستعارة تحوّل المحادثة اليومية لمصدر حزن عميق.',
       themesAr: ['صور الموت', 'الذكرى', 'الحزن'],
     },
     {
@@ -398,7 +398,7 @@ const poemData: PoemData = {
         'Nature mirrors human emotion -- the cold dew represents the chill of grief. The natural world becomes a reflection of internal suffering.',
       lineRef: 9,
       effectAr:
-        'الطبيعة تعكس العاطفة البشريّة — الندى البارد يمثّل برودة الحزن. والعالم الطبيعي يتحوّل لمرآة للمعاناة الداخلية.',
+        'الطبيعة تعكس العاطفة البشريّة - الندى البارد يمثّل برودة الحزن. والعالم الطبيعي يتحوّل لمرآة للمعاناة الداخلية.',
     },
     {
       device: 'Metaphor (death)',
@@ -486,7 +486,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The final line echoes the opening, creating a circular poem. Nothing has changed — the speaker is condemned to repeat the same silence and tears, with no escape from grief.',
+      'The final line echoes the opening, creating a circular poem. Nothing has changed - the speaker is condemned to repeat the same silence and tears, with no escape from grief.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -496,7 +496,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A pleasant sound',
-      "Hearing the lover's name is like a funeral bell — it signals the death of their love",
+      "Hearing the lover's name is like a funeral bell - it signals the death of their love",
       'A musical instrument',
       'A whisper',
     ],
@@ -512,13 +512,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       "It shows the speaker wasn't very upset",
-      'The understatement paradoxically intensifies the emotion — Byron minimises his pain to protect himself',
+      'The understatement paradoxically intensifies the emotion - Byron minimises his pain to protect himself',
       'It means exactly what it says literally',
       'It shows the relationship was unimportant',
     ],
     correctIndex: 1,
     explanation:
-      '"Half" is deliberate understatement. Rather than diminishing the pain, it reveals Byron\'s characteristic restraint — the unsaid half is more powerful than what is expressed.',
+      '"Half" is deliberate understatement. Rather than diminishing the pain, it reveals Byron\'s characteristic restraint - the unsaid half is more powerful than what is expressed.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -528,13 +528,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It makes the poem mysterious',
-      'Secrecy intensifies suffering — the speaker cannot publicly acknowledge his grief, making it inescapable and isolating',
+      'Secrecy intensifies suffering - the speaker cannot publicly acknowledge his grief, making it inescapable and isolating',
       'It is a minor detail',
       'The speaker is ashamed of writing poetry',
     ],
     correctIndex: 1,
     explanation:
-      "Because the affair was secret, Byron's grief must also be hidden. He cannot share it with anyone. This double secrecy — of the love and of the loss — creates profound isolation.",
+      "Because the affair was secret, Byron's grief must also be hidden. He cannot share it with anyone. This double secrecy - of the love and of the loss - creates profound isolation.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -544,13 +544,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Warmth and fire',
-      'Coldness — pale, cold, colder, chill',
+      'Coldness - pale, cold, colder, chill',
       'Colour and brightness',
       'Music and sound',
     ],
     correctIndex: 1,
     explanation:
-      'A sustained semantic field of coldness pervades the poem — "pale", "cold", "Colder", "chill". This contrasts with the expected warmth of love and creates an atmosphere of emotional death.',
+      'A sustained semantic field of coldness pervades the poem - "pale", "cold", "Colder", "chill". This contrasts with the expected warmth of love and creates an atmosphere of emotional death.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -560,7 +560,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       '1850 during the Victorian era',
-      "1816 — reflecting Byron's secret affair, likely with Lady Frances Webster",
+      "1816 - reflecting Byron's secret affair, likely with Lady Frances Webster",
       '1914 during WWI',
       '1790 during the French Revolution',
     ],
@@ -592,13 +592,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is inconsistent writing',
-      'It shows grief transcends time — the past event continues to haunt the present, proving the pain is unresolved',
+      'It shows grief transcends time - the past event continues to haunt the present, proving the pain is unresolved',
       'It creates a happy memory',
       'It moves the poem forward chronologically',
     ],
     correctIndex: 1,
     explanation:
-      'Byron shifts between past (the parting), present (hearing the name), and hypothetical future (a potential meeting). This temporal movement shows that grief is not confined to one moment — it bleeds across time.',
+      'Byron shifts between past (the parting), present (hearing the name), and hypothetical future (a potential meeting). This temporal movement shows that grief is not confined to one moment - it bleeds across time.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -627,10 +627,10 @@ const REVISION_TOPICS = [
     summary:
       'When We Two Parted explores secret love, the pain of betrayal, the isolation of hidden grief, and the inescapable nature of memory.',
     keyPoints: [
-      'Secrecy intensifies suffering — grief that cannot be shared is doubly painful',
-      'Betrayal and broken vows — "Thy vows are all broken"',
-      'Cyclical, inescapable grief — the poem ends where it began',
-      'Memory as torment — hearing the name causes physical pain',
+      'Secrecy intensifies suffering - grief that cannot be shared is doubly painful',
+      'Betrayal and broken vows - "Thy vows are all broken"',
+      'Cyclical, inescapable grief - the poem ends where it began',
+      'Memory as torment - hearing the name causes physical pain',
     ],
   },
   {
@@ -638,21 +638,21 @@ const REVISION_TOPICS = [
     summary:
       'Byron uses a semantic field of coldness, death imagery, understatement, and monosyllabic diction to convey restrained but profound grief.',
     keyPoints: [
-      '"Pale... cold... Colder... chill" — sustained coldness imagery',
-      '"A knell to mine ear" — funeral bell metaphor for hearing her name',
-      '"Half broken-hearted" — understatement masking deep pain',
+      '"Pale... cold... Colder... chill" - sustained coldness imagery',
+      '"A knell to mine ear" - funeral bell metaphor for hearing her name',
+      '"Half broken-hearted" - understatement masking deep pain',
       'Monosyllabic words create blunt, clipped emotional restraint',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four regular stanzas with ABAB rhyme and cyclical structure — the controlled form mirrors emotional suppression while the circular ending traps the speaker in grief.',
+      'Four regular stanzas with ABAB rhyme and cyclical structure - the controlled form mirrors emotional suppression while the circular ending traps the speaker in grief.',
     keyPoints: [
-      'Cyclical structure — ends with "silence and tears" echoing the opening',
-      'Short, clipped lines — emotional restraint enacted in form',
-      'Temporal shifts — past, present, and future show grief transcends time',
-      'ABAB rhyme — controlled form contrasts with raw emotion beneath',
+      'Cyclical structure - ends with "silence and tears" echoing the opening',
+      'Short, clipped lines - emotional restraint enacted in form',
+      'Temporal shifts - past, present, and future show grief transcends time',
+      'ABAB rhyme - controlled form contrasts with raw emotion beneath',
     ],
   },
 ]
@@ -688,7 +688,7 @@ export default function WhenWeTwoPartedPage() {
   return (
     <div className="space-y-6">
       <CourseJsonLd
-        name="When We Two Parted by Lord Byron — Analysis & Annotations"
+        name="When We Two Parted by Lord Byron - Analysis & Annotations"
         description="Line-by-line analysis of When We Two Parted with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

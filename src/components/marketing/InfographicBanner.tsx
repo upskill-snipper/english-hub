@@ -4,7 +4,7 @@
 //
 // Drops a full-width hero infographic at the top of a marketing page. Used
 // on /for-teachers, /for-schools, /for-students. The image itself is the
-// one-glance summary of the product for that persona — the page body below
+// one-glance summary of the product for that persona - the page body below
 // provides the deeper copy, pricing, and CTAs.
 //
 // Uses a plain <img alt=""> tag (not next/image) so the same component handles
@@ -17,7 +17,7 @@
 // wrapper section's aria-label. The caller pre-translates `alt` because the
 // page knows which persona's infographic this is (teachers/schools/students)
 // and can provide the right Khaleeji description. The component renders no
-// interactive state — the client boundary cost is just the small useT()
+// interactive state - the client boundary cost is just the small useT()
 // hook closure. Both server pages (for-schools, for-students) and client
 // pages (for-teachers) can render this client child component freely.
 // ──────────────────────────────────────────────────────────────────────────
@@ -25,9 +25,9 @@
 import { useT } from '@/lib/i18n/use-t'
 
 export interface InfographicBannerProps {
-  /** Image source — path under /public, e.g. '/infographics/for-teachers.svg' */
+  /** Image source - path under /public, e.g. '/infographics/for-teachers.svg' */
   src: string
-  /** Alt text — describe the infographic for screen readers. Pre-translated by the caller. */
+  /** Alt text - describe the infographic for screen readers. Pre-translated by the caller. */
   alt: string
   /** Optional extra class names to tune spacing per-page if needed. */
   className?: string

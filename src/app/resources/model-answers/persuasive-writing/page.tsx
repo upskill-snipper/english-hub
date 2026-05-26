@@ -198,7 +198,7 @@ export default function PersuasiveWritingPage() {
                           &mdash; and it is precisely this familiarity that should make us
                           suspicious of it. Because what the hand-wringing commentators never
                           mention is what she is actually <em>doing</em> on that phone:
-                          <Annotation note="Rule of three (tricolon) with increasing significance — moves from personal to political.">
+                          <Annotation note="Rule of three (tricolon) with increasing significance - moves from personal to political.">
                             organising a fundraiser for her school&apos;s food bank, responding to a
                             friend in crisis, reading an article about climate policy
                           </Annotation>
@@ -251,7 +251,7 @@ export default function PersuasiveWritingPage() {
                           'Rhetorical devices deployed with precision (tricolon, analogy, direct address, humour)',
                           'Circular structure creates a satisfying sense of completeness',
                           'Tone is assured and appropriate for a broadsheet audience',
-                          'Every paragraph advances the argument — nothing is filler',
+                          'Every paragraph advances the argument - nothing is filler',
                         ]}
                       />
                     </>
@@ -348,7 +348,7 @@ export default function PersuasiveWritingPage() {
                           </Annotation>
                         </p>
                         <p>
-                          <Annotation note="Acknowledges the counter-argument, which is good. However, the response to it is weak — 'they should just be more careful' is vague.">
+                          <Annotation note="Acknowledges the counter-argument, which is good. However, the response to it is weak - 'they should just be more careful' is vague.">
                             Some people say phones are bad for your mental health. This might be
                             true but I think if people are careful they will be fine. They should
                             just be more careful about what they look at.
@@ -376,7 +376,7 @@ export default function PersuasiveWritingPage() {
                         points={[
                           'Addresses the question with a clear opinion',
                           'Some attempt at structure (introduction, points, conclusion)',
-                          'Points are valid but underdeveloped — no evidence or examples',
+                          'Points are valid but underdeveloped - no evidence or examples',
                           'Register is too informal for a broadsheet audience',
                           'No rhetorical devices (no tricolon, analogy, or direct address)',
                           "Mechanical structure ('firstly, secondly, thirdly') lacks sophistication",
@@ -393,7 +393,7 @@ export default function PersuasiveWritingPage() {
                       </div>
                       <AnswerCard>
                         <p>
-                          <Annotation note="No headline, no subheading — key article conventions are missing entirely.">
+                          <Annotation note="No headline, no subheading - key article conventions are missing entirely.">
                             I dont think young people spend too much time on there phones.
                           </Annotation>{' '}
                           Phones are good because you can talk to people and play games.
@@ -436,7 +436,7 @@ export default function PersuasiveWritingPage() {
                           'No rhetorical devices or persuasive techniques',
                           'Anecdotal evidence too informal for the task',
                           'Spelling and grammar errors throughout',
-                          'No clear structure — paragraphs do not develop individual points',
+                          'No clear structure - paragraphs do not develop individual points',
                         ]}
                       />
                     </>
@@ -476,7 +476,7 @@ export default function PersuasiveWritingPage() {
                         </p>
                         <p>
                           I am not here to give you another one of those speeches.
-                          <Annotation note="Metacommentary — the speaker acknowledges the genre and subverts it.">
+                          <Annotation note="Metacommentary - the speaker acknowledges the genre and subverts it.">
                             I am here to argue that volunteering should not be optional &mdash; not
                             because it looks good on a university application, not because adults
                             say so, but because it is the single most effective way of understanding
@@ -507,7 +507,7 @@ export default function PersuasiveWritingPage() {
                           .
                         </p>
                         <p>
-                          <Annotation note="Call to action — essential in any speech. The shift from 'I' to 'we' to 'you' creates shared purpose.">
+                          <Annotation note="Call to action - essential in any speech. The shift from 'I' to 'we' to 'you' creates shared purpose.">
                             So here is what I am asking. Not that you sign up tomorrow. Just that
                             you consider it.
                           </Annotation>{' '}

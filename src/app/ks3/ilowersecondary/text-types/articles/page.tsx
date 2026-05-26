@@ -72,7 +72,7 @@ const CONVENTIONS: Convention[] = [
     name: 'Balanced report vs opinion column',
     what: 'A news report presents more than one side and keeps the writer’s own view out of it; an opinion column openly argues a single position in the first person.',
     effect:
-      'The reader trusts a report to inform them fairly, but reads a column expecting persuasion and a clear stance — knowing which is which is itself a reading skill.',
+      'The reader trusts a report to inform them fairly, but reads a column expecting persuasion and a clear stance - knowing which is which is itself a reading skill.',
   },
   {
     name: 'Register: formal vs lively',
@@ -100,11 +100,11 @@ const EXAMPLES: WorkedExample[] = [
     id: 'example-news',
     label: 'Worked example 1',
     title: 'A news report',
-    kind: 'Inform — balanced news report (inverted pyramid)',
+    kind: 'Inform - balanced news report (inverted pyramid)',
     annotated: [
       {
         text: 'PARK CLEAN-UP DRAWS RECORD CROWD',
-        note: 'Headline: short, present tense, strong verb “draws”, plain and factual — typical of a news report rather than a feature.',
+        note: 'Headline: short, present tense, strong verb “draws”, plain and factual - typical of a news report rather than a feature.',
       },
       {
         text: 'More than 200 volunteers spent Saturday clearing Meadow Park, organisers said.',
@@ -116,7 +116,7 @@ const EXAMPLES: WorkedExample[] = [
       },
       {
         text: 'More than 200 people gave up their Saturday morning to clear litter and replant flower beds in Meadow Park, the largest turnout the annual event has ever had.',
-        note: 'Lead: answers who, what, where and when in a single opening sentence — the top of the inverted pyramid.',
+        note: 'Lead: answers who, what, where and when in a single opening sentence - the top of the inverted pyramid.',
       },
       {
         text: '“We expected fifty and got four times that,” said the event organiser, Priya Kaur. “People clearly care about this park.”',
@@ -136,11 +136,11 @@ const EXAMPLES: WorkedExample[] = [
     id: 'example-feature',
     label: 'Worked example 2',
     title: 'A feature / opinion piece',
-    kind: 'Argue / express an opinion — opinion column (feature structure)',
+    kind: 'Argue / express an opinion - opinion column (feature structure)',
     annotated: [
       {
         text: 'WHY EVERY SCHOOL SHOULD ADOPT A PARK',
-        note: 'Headline: opens with “Why” and makes a claim — a persuasive, opinion-piece signal rather than a neutral news headline.',
+        note: 'Headline: opens with “Why” and makes a claim - a persuasive, opinion-piece signal rather than a neutral news headline.',
       },
       {
         text: 'Our writer argues that the record park clean-up should be the start, not the end.',
@@ -148,7 +148,7 @@ const EXAMPLES: WorkedExample[] = [
       },
       {
         text: 'I stood in Meadow Park on Saturday and watched two hundred strangers become neighbours over a pile of bin bags.',
-        note: 'Lead: a first-person anecdote and an image, not a fact-stack — the feature opening promises a story and a viewpoint.',
+        note: 'Lead: a first-person anecdote and an image, not a fact-stack - the feature opening promises a story and a viewpoint.',
       },
       {
         text: 'A patch of grass with a future',
@@ -156,11 +156,11 @@ const EXAMPLES: WorkedExample[] = [
       },
       {
         text: 'How much does a park actually cost a school? Almost nothing. And what does it give back? Pride, fresh air and a reason to care about somewhere shared.',
-        note: 'Rhetorical questions and a lively, personal register build the argument and address the reader directly — clear viewpoint, not balanced reporting.',
+        note: 'Rhetorical questions and a lively, personal register build the argument and address the reader directly - clear viewpoint, not balanced reporting.',
       },
       {
         text: 'So here is the challenge: one park, one school, one Saturday a term. The volunteers proved it works. The rest of us only have to copy them.',
-        note: 'Ending: a deliberate call to action that returns to the opening event and lands the final point — typical feature structure.',
+        note: 'Ending: a deliberate call to action that returns to the opening event and lands the final point - typical feature structure.',
       },
     ],
   },
@@ -178,7 +178,7 @@ const PRACTICE: ModelQA[] = [
     q: 'Identify and comment on how the news report (Worked example 1) is structured. (3)',
     marks: 3,
     answer:
-      'The report uses the inverted-pyramid structure. The lead paragraph delivers the most important facts at once — who (over 200 people), what (cleared the park), where (Meadow Park) and when (Saturday morning) — so a reader who stops there still has the whole story. The supporting detail about bags of rubbish and bulbs comes next, and the least essential background, the criticism from last year, is placed last. This ordering means the reader gets the key information first and the article could be cut from the bottom without losing the core story.',
+      'The report uses the inverted-pyramid structure. The lead paragraph delivers the most important facts at once - who (over 200 people), what (cleared the park), where (Meadow Park) and when (Saturday morning) - so a reader who stops there still has the whole story. The supporting detail about bags of rubbish and bulbs comes next, and the least essential background, the criticism from last year, is placed last. This ordering means the reader gets the key information first and the article could be cut from the bottom without losing the core story.',
     markNote:
       'Pearson style: up to 3 marks for identifying organisational choices (fact-first lead, supporting detail, least-important background last) AND commenting on the effect on the reader. Naming “inverted pyramid” without explaining the effect would be capped.',
   },
@@ -186,7 +186,7 @@ const PRACTICE: ModelQA[] = [
     q: 'How does the writer of the feature (Worked example 2) make their viewpoint clear? Refer to language. (4)',
     marks: 4,
     answer:
-      'The writer uses the first person — “I stood in Meadow Park” — which makes the piece a personal argument rather than a neutral report, so the reader knows from the start that a viewpoint is being offered (2). The writer also uses rhetorical questions, “How much does a park actually cost a school? Almost nothing,” answering their own question to steer the reader towards agreement and make the argument feel obvious and reasonable (2).',
+      'The writer uses the first person - “I stood in Meadow Park” - which makes the piece a personal argument rather than a neutral report, so the reader knows from the start that a viewpoint is being offered (2). The writer also uses rhetorical questions, “How much does a park actually cost a school? Almost nothing,” answering their own question to steer the reader towards agreement and make the argument feel obvious and reasonable (2).',
     markNote:
       'Two developed points, each with quoted evidence and an explanation of the effect; two marks per developed point with evidence (RAO4 + RAO5).',
   },
@@ -194,7 +194,7 @@ const PRACTICE: ModelQA[] = [
     q: 'What is the effect of the quotation from Priya Kaur in the news report? (2)',
     marks: 2,
     answer:
-      'The named quotation adds authority and a human voice, making the report more credible because the information comes from the organiser herself (1). It also lets the writer include an opinion — that people care about the park — without the report itself taking sides, which keeps the news report balanced (1).',
+      'The named quotation adds authority and a human voice, making the report more credible because the information comes from the organiser herself (1). It also lets the writer include an opinion - that people care about the park - without the report itself taking sides, which keeps the news report balanced (1).',
     markNote:
       'One mark for naming the effect (authority / human voice / credibility); one mark for explaining it in relation to the text and the report’s purpose.',
   },
@@ -202,7 +202,7 @@ const PRACTICE: ModelQA[] = [
     q: 'Explain one way the register of the feature differs from the register of the news report. (2)',
     marks: 2,
     answer:
-      'The news report uses a formal, impersonal register — “organisers said”, no “I” — which signals that its purpose is to inform fairly (1). The feature uses a lively, personal register with direct address and rhetorical questions, which signals that its purpose is to persuade and that it carries the writer’s viewpoint (1).',
+      'The news report uses a formal, impersonal register - “organisers said”, no “I” - which signals that its purpose is to inform fairly (1). The feature uses a lively, personal register with direct address and rhetorical questions, which signals that its purpose is to persuade and that it carries the writer’s viewpoint (1).',
     markNote:
       'One mark for identifying the contrast in register; one mark for linking each register to the writer’s purpose and effect on the reader.',
   },

@@ -79,7 +79,7 @@ interface WeeklyActivity {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-// courseMap is built dynamically inside the component — see useMemo below
+// courseMap is built dynamically inside the component - see useMemo below
 
 function formatRelativeDate(iso: string) {
   const date = new Date(iso)
@@ -639,7 +639,7 @@ export default function ParentDashboardPage() {
             </div>
           )}
 
-          {/* ── Child Linked — Dashboard ──────────────────────── */}
+          {/* ── Child Linked - Dashboard ──────────────────────── */}
           {!loading && hasLinkedChild && childProgress && (
             <>
               {/* Child info bar */}

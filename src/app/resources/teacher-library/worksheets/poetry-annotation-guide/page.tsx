@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Poetry Annotation Framework — Worksheet',
+    title: 'Poetry Annotation Framework - Worksheet',
     description:
       'A reusable poem annotation worksheet using the SMILE framework (Structure, Meaning, Imagery, Language, Effect).',
   },
-  title: 'Poetry Annotation Framework — Worksheet',
+  title: 'Poetry Annotation Framework - Worksheet',
   description:
     'A reusable poem annotation worksheet using the SMILE framework (Structure, Meaning, Imagery, Language, Effect).',
   alternates: {
@@ -55,7 +55,7 @@ export default function PoetryAnnotationWorksheet() {
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Year Group
               </div>
-              <div className="mt-1 text-sm font-semibold text-foreground">Year 10–11</div>
+              <div className="mt-1 text-sm font-semibold text-foreground">Year 10-11</div>
             </div>
             <div className="rounded-lg border border-border bg-background p-3">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -85,15 +85,15 @@ export default function PoetryAnnotationWorksheet() {
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-foreground">How to Use This Worksheet</h2>
           <p className="mt-3 text-foreground">
-            Read the poem through twice before you start annotating. The first read is for gist —
-            what is the poem about? The second is for sound — read it aloud if you can. Then work
+            Read the poem through twice before you start annotating. The first read is for gist -
+            what is the poem about? The second is for sound - read it aloud if you can. Then work
             through the five SMILE sections in order. Each section has a prompt and a space for your
             notes.
           </p>
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">S — Structure</h2>
+          <h2 className="text-2xl font-bold text-foreground">S - Structure</h2>
           <p className="mt-2 text-foreground">
             Look at the shape of the poem on the page. What do you notice?
           </p>
@@ -111,7 +111,7 @@ export default function PoetryAnnotationWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">M — Meaning</h2>
+          <h2 className="text-2xl font-bold text-foreground">M - Meaning</h2>
           <p className="mt-2 text-foreground">
             What is the poem actually about? Go beyond surface summary to the writer&apos;s main
             message.
@@ -130,7 +130,7 @@ export default function PoetryAnnotationWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">I — Imagery</h2>
+          <h2 className="text-2xl font-bold text-foreground">I - Imagery</h2>
           <p className="mt-2 text-foreground">
             Pick the two or three most striking images. What do they make you picture?
           </p>
@@ -148,7 +148,7 @@ export default function PoetryAnnotationWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">L — Language</h2>
+          <h2 className="text-2xl font-bold text-foreground">L - Language</h2>
           <p className="mt-2 text-foreground">
             Zoom in on word choices. Look at verbs, adjectives, and any unusual or repeated
             language.
@@ -167,7 +167,7 @@ export default function PoetryAnnotationWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">E — Effect</h2>
+          <h2 className="text-2xl font-bold text-foreground">E - Effect</h2>
           <p className="mt-2 text-foreground">
             Pull it all together. What is the overall effect of the poem on the reader?
           </p>
@@ -208,7 +208,7 @@ export default function PoetryAnnotationWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Colour-code:</strong> Assign a colour to each SMILE letter so students can see

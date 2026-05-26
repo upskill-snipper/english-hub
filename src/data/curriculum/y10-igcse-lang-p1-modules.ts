@@ -1,27 +1,27 @@
-import type { CourseModule } from '../courses';
+import type { CourseModule } from '../courses'
 
 export const y10IgcseLangP1Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
-  // MODULE 1 — Understanding Paper 1: Format, Timing & Mark Allocation
+  // MODULE 1 - Understanding Paper 1: Format, Timing & Mark Allocation
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m1',
-    title: 'Understanding Paper 1 — Format, Timing & Mark Allocation',
+    title: 'Understanding Paper 1 - Format, Timing & Mark Allocation',
     duration: '45 min',
     content: `
 <h2>Edexcel IGCSE English Language Paper 1: The Complete Blueprint</h2>
 
 <p>Paper 1 (4EA1/01) is the backbone of your IGCSE English Language qualification. It is worth <strong>90 marks</strong> and accounts for <strong>60% of your total grade</strong>. The exam lasts <strong>2 hours and 15 minutes</strong> (135 minutes), and you must divide that time strategically between reading and writing tasks. Every student who scores highly on this paper understands the structure inside out before they walk into the exam hall. This module gives you that understanding.</p>
 
-<div class="key-term"><strong>Key Term: Transactional Writing</strong> — Writing that has a clear purpose, audience, and form. Unlike creative or imaginative writing, transactional writing aims to inform, persuade, advise, argue, or explain. Common forms include articles, speeches, letters, reports, and reviews. In Paper 1 Section B, you will produce one extended piece of transactional writing.</div>
+<div class="key-term"><strong>Key Term: Transactional Writing</strong> - Writing that has a clear purpose, audience, and form. Unlike creative or imaginative writing, transactional writing aims to inform, persuade, advise, argue, or explain. Common forms include articles, speeches, letters, reports, and reviews. In Paper 1 Section B, you will produce one extended piece of transactional writing.</div>
 
 <h3>Paper 1 Structure Overview</h3>
 
 <p>The paper is divided into two equally weighted sections, each worth 45 marks:</p>
 
 <ul>
-  <li><strong>Section A: Reading (45 marks)</strong> — You will read two unseen non-fiction texts and answer five compulsory questions. These texts may come from any period (19th, 20th, or 21st century) and any non-fiction genre: journalism, travel writing, autobiography, diary entries, speeches, letters, or essays.</li>
-  <li><strong>Section B: Transactional Writing (45 marks)</strong> — You choose <strong>one task from a choice of two</strong>. Each task specifies a form (article, speech, letter, or report), an audience, and a purpose. You must write an extended response of approximately 300 to 450 words, demonstrating your ability to communicate effectively and accurately.</li>
+  <li><strong>Section A: Reading (45 marks)</strong> - You will read two unseen non-fiction texts and answer five compulsory questions. These texts may come from any period (19th, 20th, or 21st century) and any non-fiction genre: journalism, travel writing, autobiography, diary entries, speeches, letters, or essays.</li>
+  <li><strong>Section B: Transactional Writing (45 marks)</strong> - You choose <strong>one task from a choice of two</strong>. Each task specifies a form (article, speech, letter, or report), an audience, and a purpose. You must write an extended response of approximately 300 to 450 words, demonstrating your ability to communicate effectively and accurately.</li>
 </ul>
 
 <h3>Section A: The Five Reading Questions</h3>
@@ -46,8 +46,8 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
 <p>Section B is marked out of 45, split across two Assessment Objectives:</p>
 
 <ul>
-  <li><strong>AO4 — Communication and Organisation (27 marks):</strong> This covers the quality of your ideas, how well you match form, audience, and purpose, and how effectively you structure your response. Examiners are looking for a clear viewpoint, developed arguments, persuasive techniques, and logical paragraphing with discourse markers.</li>
-  <li><strong>AO5 — Spelling, Punctuation, and Grammar (18 marks):</strong> This rewards accuracy. You need a range of sentence structures (simple, compound, complex), correct and ambitious punctuation (semicolons, colons, dashes, parenthetical commas), accurate spelling of common and ambitious vocabulary, and grammatical control including subject-verb agreement and correct tense usage.</li>
+  <li><strong>AO4 - Communication and Organisation (27 marks):</strong> This covers the quality of your ideas, how well you match form, audience, and purpose, and how effectively you structure your response. Examiners are looking for a clear viewpoint, developed arguments, persuasive techniques, and logical paragraphing with discourse markers.</li>
+  <li><strong>AO5 - Spelling, Punctuation, and Grammar (18 marks):</strong> This rewards accuracy. You need a range of sentence structures (simple, compound, complex), correct and ambitious punctuation (semicolons, colons, dashes, parenthetical commas), accurate spelling of common and ambitious vocabulary, and grammatical control including subject-verb agreement and correct tense usage.</li>
 </ul>
 
 <p>The 60/40 split between AO4 and AO5 means that content and communication are more heavily rewarded than accuracy alone. However, a student who writes brilliantly but with persistent spelling and punctuation errors will be capped at a lower grade. Equally, a student who writes accurately but with bland, undeveloped content will not reach the top bands. Both skills must work together.</p>
@@ -59,11 +59,11 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
 <p>Paper 1 tests five of the specification's Assessment Objectives, but you need to know which AOs apply to which section:</p>
 
 <ul>
-  <li><strong>AO1</strong> — Read and understand texts, selecting and interpreting information. Tested in Q1, Q2, and Q3.</li>
-  <li><strong>AO2</strong> — Analyse how writers use language and structure to achieve effects. Tested in Q4.</li>
-  <li><strong>AO3</strong> — Compare writers' ideas and perspectives across texts. Tested in Q5.</li>
-  <li><strong>AO4</strong> — Communicate effectively in writing, adapting form and style. Tested in Section B (27 marks).</li>
-  <li><strong>AO5</strong> — Use accurate spelling, punctuation, and grammar with a range of sentence structures. Tested in Section B (18 marks).</li>
+  <li><strong>AO1</strong> - Read and understand texts, selecting and interpreting information. Tested in Q1, Q2, and Q3.</li>
+  <li><strong>AO2</strong> - Analyse how writers use language and structure to achieve effects. Tested in Q4.</li>
+  <li><strong>AO3</strong> - Compare writers' ideas and perspectives across texts. Tested in Q5.</li>
+  <li><strong>AO4</strong> - Communicate effectively in writing, adapting form and style. Tested in Section B (27 marks).</li>
+  <li><strong>AO5</strong> - Use accurate spelling, punctuation, and grammar with a range of sentence structures. Tested in Section B (18 marks).</li>
 </ul>
 
 <h3>Types of Non-Fiction Text in Section A</h3>
@@ -83,7 +83,7 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
 
 <p>You will typically encounter one modern text (20th or 21st century) and one older text (19th century), though both texts may be modern. The texts are always thematically linked so that Question 5 can ask you to compare how the writers present a shared topic or theme.</p>
 
-<div class="key-term"><strong>Key Term: Unseen Text</strong> — A passage you have not studied before and cannot predict. Unlike Paper 2 Section A (which uses anthology texts you can prepare), Paper 1 Section A always uses unseen material. This means you must develop transferable reading and analysis skills rather than relying on memorised content.</div>
+<div class="key-term"><strong>Key Term: Unseen Text</strong> - A passage you have not studied before and cannot predict. Unlike Paper 2 Section A (which uses anthology texts you can prepare), Paper 1 Section A always uses unseen material. This means you must develop transferable reading and analysis skills rather than relying on memorised content.</div>
 
 <h3>Practical Timing Plan for Paper 1</h3>
 
@@ -113,7 +113,8 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
         question: 'How many marks is Paper 1 (4EA1/01) worth in total?',
         options: ['60 marks', '75 marks', '90 marks', '150 marks'],
         correct: 2,
-        explanation: 'Paper 1 is worth 90 marks in total (45 for Section A Reading and 45 for Section B Transactional Writing). It accounts for 60% of the total IGCSE English Language qualification.',
+        explanation:
+          'Paper 1 is worth 90 marks in total (45 for Section A Reading and 45 for Section B Transactional Writing). It accounts for 60% of the total IGCSE English Language qualification.',
       },
       {
         id: 'y10-p1-m1-q2',
@@ -125,7 +126,8 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
           'Question 2 (4 marks)',
         ],
         correct: 2,
-        explanation: 'Question 5, the comparison question, is worth 22 marks — nearly half of the entire Section A marks. It tests AO3 and requires a sustained comparative response covering both texts. Students should dedicate approximately 30 minutes to this question.',
+        explanation:
+          'Question 5, the comparison question, is worth 22 marks - nearly half of the entire Section A marks. It tests AO3 and requires a sustained comparative response covering both texts. Students should dedicate approximately 30 minutes to this question.',
       },
       {
         id: 'y10-p1-m1-q3',
@@ -137,7 +139,8 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
           'AO3: 27 marks, AO4: 18 marks',
         ],
         correct: 1,
-        explanation: 'Section B marks are split between AO4 (Communication and Organisation, 27 marks) and AO5 (Spelling, Punctuation, and Grammar, 18 marks). This means content and organisation carry more weight, but accuracy is still worth 40% of the writing marks.',
+        explanation:
+          'Section B marks are split between AO4 (Communication and Organisation, 27 marks) and AO5 (Spelling, Punctuation, and Grammar, 18 marks). This means content and organisation carry more weight, but accuracy is still worth 40% of the writing marks.',
       },
       {
         id: 'y10-p1-m1-q4',
@@ -149,40 +152,37 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
           'Two tasks (chosen from three options)',
         ],
         correct: 0,
-        explanation: 'In Section B, you choose one task from a choice of two. Each task specifies a form (article, speech, letter, or report), an audience, and a purpose. You should choose the task where you feel most confident about the form and topic.',
+        explanation:
+          'In Section B, you choose one task from a choice of two. Each task specifies a form (article, speech, letter, or report), an audience, and a purpose. You should choose the task where you feel most confident about the form and topic.',
       },
       {
         id: 'y10-p1-m1-q5',
         question: 'Approximately how long should you spend on Questions 1 to 3 combined?',
-        options: [
-          '30 minutes',
-          '25 minutes',
-          '15 minutes',
-          '10 minutes',
-        ],
+        options: ['30 minutes', '25 minutes', '15 minutes', '10 minutes'],
         correct: 2,
-        explanation: 'Questions 1 to 3 are worth only 11 marks combined (2 + 4 + 5), so they should take approximately 15 minutes in total. Spending more time here risks leaving insufficient time for the higher-tariff Questions 4 and 5 and for Section B writing.',
+        explanation:
+          'Questions 1 to 3 are worth only 11 marks combined (2 + 4 + 5), so they should take approximately 15 minutes in total. Spending more time here risks leaving insufficient time for the higher-tariff Questions 4 and 5 and for Section B writing.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 2 — Reading Section A: Inference and Retrieval (AO1)
+  // MODULE 2 - Reading Section A: Inference and Retrieval (AO1)
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m2',
-    title: 'Reading Section A — Inference and Retrieval (AO1)',
+    title: 'Reading Section A - Inference and Retrieval (AO1)',
     duration: '55 min',
     content: `
 <h2>Mastering Questions 1, 2, and 3: Retrieval, Explanation, and Supported Description</h2>
 
 <p>The first three questions on Paper 1 Section A are all assessed under <strong>AO1</strong>: the ability to read and understand texts, selecting and interpreting information and ideas. Although these questions are lower in marks than Questions 4 and 5, they are not throwaway marks. Every mark counts toward your grade boundary, and top students aim to score full marks on Q1 to Q3 to build a strong foundation before tackling the higher-tariff analytical questions.</p>
 
-<div class="key-term"><strong>Key Term: AO1 — Read and Understand</strong> — This Assessment Objective tests whether you can locate information in a text, understand what the writer is saying, paraphrase ideas into your own words, and make simple inferences (reading between the lines). It does not require you to analyse language techniques — that is AO2.</div>
+<div class="key-term"><strong>Key Term: AO1 - Read and Understand</strong> - This Assessment Objective tests whether you can locate information in a text, understand what the writer is saying, paraphrase ideas into your own words, and make simple inferences (reading between the lines). It does not require you to analyse language techniques - that is AO2.</div>
 
 <h3>Question 1: Select and Identify (2 marks)</h3>
 
-<p>Question 1 is the simplest question on the paper. It will direct you to specific lines and ask you to select two words or phrases. There is no need to explain — you simply need to identify the correct information. However, students still lose marks here by:</p>
+<p>Question 1 is the simplest question on the paper. It will direct you to specific lines and ask you to select two words or phrases. There is no need to explain - you simply need to identify the correct information. However, students still lose marks here by:</p>
 
 <ul>
   <li>Selecting from the wrong lines (always re-read the line references in the question)</li>
@@ -195,14 +195,14 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
 
 <h3>Question 2: Explain in Your Own Words (4 marks)</h3>
 
-<p>Question 2 asks you to explain the writer's thoughts and feelings about a particular topic or experience. The key instruction is <strong>"in your own words"</strong> — this means you must paraphrase, not copy quotations from the text. The examiner wants to see that you have understood the text deeply enough to re-express its ideas.</p>
+<p>Question 2 asks you to explain the writer's thoughts and feelings about a particular topic or experience. The key instruction is <strong>"in your own words"</strong> - this means you must paraphrase, not copy quotations from the text. The examiner wants to see that you have understood the text deeply enough to re-express its ideas.</p>
 
 <p>The typical mark scheme awards 1 mark per valid point, up to 4 marks. To score full marks, you need four distinct points. Here is a strategy:</p>
 
 <ol>
-  <li><strong>Read the relevant section carefully</strong> — identify all the thoughts and feelings the writer expresses.</li>
-  <li><strong>List five or six possible points</strong> (mentally or in brief notes) — having more than four gives you a safety net.</li>
-  <li><strong>Select your four strongest points</strong> — choose the ones you can express most clearly.</li>
+  <li><strong>Read the relevant section carefully</strong> - identify all the thoughts and feelings the writer expresses.</li>
+  <li><strong>List five or six possible points</strong> (mentally or in brief notes) - having more than four gives you a safety net.</li>
+  <li><strong>Select your four strongest points</strong> - choose the ones you can express most clearly.</li>
   <li><strong>Write each point as a clear sentence in your own words.</strong> Do not quote the text directly. Use synonyms and restructured sentences.</li>
 </ol>
 
@@ -216,19 +216,19 @@ export const y10IgcseLangP1Modules: CourseModule[] = [
 The writer felt that the extreme temperature was almost unbearable, making the journey physically oppressive (1). He experienced doubt about whether the expedition was a sensible decision (1). Despite this uncertainty, the prospect of exploring unknown land motivated him to continue (1). He recognised that his resolve might be irrational, suggesting a self-aware stubbornness (1).
 </div>
 
-<p>Notice how each point paraphrases the original — "insufferable" becomes "almost unbearable," "questioning the wisdom" becomes "doubt about whether the expedition was a sensible decision." This demonstrates genuine comprehension rather than surface-level copying.</p>
+<p>Notice how each point paraphrases the original - "insufferable" becomes "almost unbearable," "questioning the wisdom" becomes "doubt about whether the expedition was a sensible decision." This demonstrates genuine comprehension rather than surface-level copying.</p>
 
 <h3>Question 3: Describe Using Brief Quotations (5 marks)</h3>
 
-<p>Question 3 asks you to describe a particular aspect of the text using brief quotations as support. This question sits between pure retrieval (Q1) and analysis (Q4) — you need to identify relevant information and support it with textual evidence, but you do not need to analyse language effects.</p>
+<p>Question 3 asks you to describe a particular aspect of the text using brief quotations as support. This question sits between pure retrieval (Q1) and analysis (Q4) - you need to identify relevant information and support it with textual evidence, but you do not need to analyse language effects.</p>
 
 <p>The mark scheme typically awards 1 mark per point-plus-quotation combination, up to 5 marks. Your strategy should be:</p>
 
 <ol>
-  <li><strong>Identify the focus of the question</strong> — what exactly are you being asked to describe? (e.g. "the dangers of the journey," "the writer's impressions of the city")</li>
-  <li><strong>Scan the text for relevant details</strong> — aim to find at least six relevant points to give yourself a safety margin.</li>
-  <li><strong>Write each point as a statement supported by a brief quotation.</strong> The quotation should be short — ideally a single word or a phrase of three to five words, not a whole sentence.</li>
-  <li><strong>Use quotation marks correctly</strong> — this is a basic but essential requirement.</li>
+  <li><strong>Identify the focus of the question</strong> - what exactly are you being asked to describe? (e.g. "the dangers of the journey," "the writer's impressions of the city")</li>
+  <li><strong>Scan the text for relevant details</strong> - aim to find at least six relevant points to give yourself a safety margin.</li>
+  <li><strong>Write each point as a statement supported by a brief quotation.</strong> The quotation should be short - ideally a single word or a phrase of three to five words, not a whole sentence.</li>
+  <li><strong>Use quotation marks correctly</strong> - this is a basic but essential requirement.</li>
 </ol>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students often quote entire sentences in Question 3 instead of brief, precise phrases. Examiners want to see that you can select the most relevant words, not that you can copy large chunks of text. A quotation of two to five words embedded within your own sentence is ideal.</div>
@@ -254,7 +254,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <p>For AO1 questions, your inferences should be safe and well-supported. Do not over-interpret or speculate wildly. The examiner wants to see that you can read between the lines, but your deductions should be clearly grounded in textual evidence.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For Questions 1 to 3, precision is more important than length. A concise, accurate answer will always score higher than a lengthy, rambling one. Write enough to secure the marks — one clear point per mark available — and then move on. Do not spend 10 minutes crafting a perfect Q3 response when Q5 (at 22 marks) awaits.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> For Questions 1 to 3, precision is more important than length. A concise, accurate answer will always score higher than a lengthy, rambling one. Write enough to secure the marks - one clear point per mark available - and then move on. Do not spend 10 minutes crafting a perfect Q3 response when Q5 (at 22 marks) awaits.</div>
 
 <h3>Common Pitfalls and How to Avoid Them</h3>
 
@@ -272,11 +272,12 @@ The writer felt that the extreme temperature was almost unbearable, making the j
         options: [
           'Analysing how writers use language and structure',
           'Reading and understanding texts, selecting and interpreting information',
-          'Comparing writers\' ideas and perspectives',
+          "Comparing writers' ideas and perspectives",
           'Using accurate spelling, punctuation, and grammar',
         ],
         correct: 1,
-        explanation: 'AO1 tests the ability to read and understand a variety of texts, selecting and interpreting information and ideas. It covers retrieval, paraphrasing, and simple inference. It is the Assessment Objective tested in Questions 1, 2, and 3 of Paper 1 Section A.',
+        explanation:
+          'AO1 tests the ability to read and understand a variety of texts, selecting and interpreting information and ideas. It covers retrieval, paraphrasing, and simple inference. It is the Assessment Objective tested in Questions 1, 2, and 3 of Paper 1 Section A.',
       },
       {
         id: 'y10-p1-m2-q2',
@@ -284,11 +285,12 @@ The writer felt that the extreme temperature was almost unbearable, making the j
         options: [
           'Because quotations are not allowed anywhere in Section A',
           'Because it demonstrates you have understood the text deeply enough to paraphrase',
-          'Because using the text\'s words automatically loses marks',
+          "Because using the text's words automatically loses marks",
           'Because Question 2 tests AO2 language analysis',
         ],
         correct: 1,
-        explanation: 'Question 2 specifically instructs you to explain "in your own words." Paraphrasing demonstrates genuine comprehension — you have understood the ideas well enough to re-express them. Simply copying the text suggests surface-level reading without deeper understanding.',
+        explanation:
+          'Question 2 specifically instructs you to explain "in your own words." Paraphrasing demonstrates genuine comprehension - you have understood the ideas well enough to re-express them. Simply copying the text suggests surface-level reading without deeper understanding.',
       },
       {
         id: 'y10-p1-m2-q3',
@@ -300,7 +302,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Use quotations only from the second text',
         ],
         correct: 2,
-        explanation: 'Question 3 asks you to describe using "brief quotations." Ideally, embed short phrases of two to five words within your own sentences. This demonstrates precise selection skills and shows the examiner you can identify the most relevant evidence.',
+        explanation:
+          'Question 3 asks you to describe using "brief quotations." Ideally, embed short phrases of two to five words within your own sentences. This demonstrates precise selection skills and shows the examiner you can identify the most relevant evidence.',
       },
       {
         id: 'y10-p1-m2-q4',
@@ -309,14 +312,16 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Retrieval uses quotations; inference does not',
           'Retrieval finds explicitly stated information; inference deduces implied meaning',
           'Retrieval is for Q1 only; inference is for Q4 only',
-          'There is no difference — they are the same skill',
+          'There is no difference - they are the same skill',
         ],
         correct: 1,
-        explanation: 'Retrieval involves finding information that is directly stated in the text. Inference involves deducing meaning that is implied but not explicitly stated. Both skills fall under AO1, and Questions 1 to 3 may test either, though retrieval is more common in Q1 and Q3.',
+        explanation:
+          'Retrieval involves finding information that is directly stated in the text. Inference involves deducing meaning that is implied but not explicitly stated. Both skills fall under AO1, and Questions 1 to 3 may test either, though retrieval is more common in Q1 and Q3.',
       },
       {
         id: 'y10-p1-m2-q5',
-        question: 'A student writes a Q3 answer using information from lines 20 to 30, but the question specifies "from lines 5 to 15." What will happen?',
+        question:
+          'A student writes a Q3 answer using information from lines 20 to 30, but the question specifies "from lines 5 to 15." What will happen?',
         options: [
           'The examiner will credit the answer if the information is relevant',
           'The student will receive half marks',
@@ -324,24 +329,25 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'The student will be penalised with negative marks',
         ],
         correct: 2,
-        explanation: 'Examiners can only credit answers that come from the specified line references. If the question says "from lines 5 to 15," information from lines 20 to 30 falls outside the required range and will not receive marks, even if it is relevant to the topic.',
+        explanation:
+          'Examiners can only credit answers that come from the specified line references. If the question says "from lines 5 to 15," information from lines 20 to 30 falls outside the required range and will not receive marks, even if it is relevant to the topic.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 3 — Reading Section A: Language Analysis (AO2)
+  // MODULE 3 - Reading Section A: Language Analysis (AO2)
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m3',
-    title: 'Reading Section A — Language Analysis (AO2)',
+    title: 'Reading Section A - Language Analysis (AO2)',
     duration: '55 min',
     content: `
 <h2>Question 4: Analysing Language for Effect</h2>
 
 <p>Question 4 is worth <strong>12 marks</strong> and tests <strong>AO2</strong>: the ability to understand and analyse how writers use linguistic and structural devices to achieve effects and influence readers. This is where the exam shifts from testing comprehension (what the text says) to testing analysis (how the text says it). It is the first question where you must use subject-specific terminology and demonstrate analytical depth.</p>
 
-<div class="key-term"><strong>Key Term: AO2 — Language and Structure Analysis</strong> — This Assessment Objective rewards students who can identify specific language techniques, quote them precisely, name them using correct terminology, and explain the effect they have on the reader. It is not enough to spot a technique — you must explain why the writer chose it and what impact it creates.</div>
+<div class="key-term"><strong>Key Term: AO2 - Language and Structure Analysis</strong> - This Assessment Objective rewards students who can identify specific language techniques, quote them precisely, name them using correct terminology, and explain the effect they have on the reader. It is not enough to spot a technique - you must explain why the writer chose it and what impact it creates.</div>
 
 <h3>The Question 4 Format</h3>
 
@@ -376,14 +382,14 @@ The writer felt that the extreme temperature was almost unbearable, making the j
   <li><strong>Alliteration:</strong> Repetition of initial consonant sounds. E.g. "bitter, biting cold" emphasises harshness through the hard "b" sounds.</li>
   <li><strong>Sibilance:</strong> Repetition of "s" or "sh" sounds. Often creates a sense of softness, secrecy, or menace.</li>
   <li><strong>Onomatopoeia:</strong> Words that imitate sounds. E.g. "the thunder crackled" makes the reader hear the storm.</li>
-  <li><strong>Short sentences:</strong> Create pace, tension, or emphasis. E.g. "He stopped. Listened. Nothing." — the brevity mirrors the character's alertness.</li>
+  <li><strong>Short sentences:</strong> Create pace, tension, or emphasis. E.g. "He stopped. Listened. Nothing." - the brevity mirrors the character's alertness.</li>
 </ul>
 
 <h4>Persuasive and Rhetorical Techniques</h4>
 <ul>
-  <li><strong>Hyperbole:</strong> Deliberate exaggeration for emphasis. E.g. "I have told you a million times" — conveys frustration through overstatement.</li>
-  <li><strong>Rhetorical question:</strong> A question asked for effect, not requiring an answer. E.g. "How can we stand by and do nothing?" — forces the reader to engage.</li>
-  <li><strong>Emotive language:</strong> Words chosen to provoke an emotional response. E.g. "innocent victims" vs. "people affected" — the former is more emotionally charged.</li>
+  <li><strong>Hyperbole:</strong> Deliberate exaggeration for emphasis. E.g. "I have told you a million times" - conveys frustration through overstatement.</li>
+  <li><strong>Rhetorical question:</strong> A question asked for effect, not requiring an answer. E.g. "How can we stand by and do nothing?" - forces the reader to engage.</li>
+  <li><strong>Emotive language:</strong> Words chosen to provoke an emotional response. E.g. "innocent victims" vs. "people affected" - the former is more emotionally charged.</li>
   <li><strong>Direct address:</strong> Using "you" or "we" to speak directly to the reader, creating inclusivity or confrontation.</li>
   <li><strong>Tricolon (rule of three):</strong> A list of three for rhythmic emphasis. E.g. "We will fight, we will resist, we will prevail."</li>
 </ul>
@@ -430,11 +436,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'AO1 is worth more marks than AO2',
         ],
         correct: 1,
-        explanation: 'AO1 tests comprehension — understanding what the writer is saying. AO2 tests analysis — understanding how the writer uses language and structure to create effects. Q4 is the first question that requires you to move beyond comprehension into analytical writing about technique and effect.',
+        explanation:
+          'AO1 tests comprehension - understanding what the writer is saying. AO2 tests analysis - understanding how the writer uses language and structure to create effects. Q4 is the first question that requires you to move beyond comprehension into analytical writing about technique and effect.',
       },
       {
         id: 'y10-p1-m3-q2',
-        question: 'A student writes: "The writer uses a metaphor." What must they add to reach the top band?',
+        question:
+          'A student writes: "The writer uses a metaphor." What must they add to reach the top band?',
         options: [
           'Another example of a metaphor from the same text',
           'A definition of what a metaphor is',
@@ -442,7 +450,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'A comparison with a metaphor in the other text',
         ],
         correct: 2,
-        explanation: 'Identifying a technique is only the first step. Top-band responses explain the effect — what the metaphor suggests, what connotations it carries, and how it influences the reader\'s understanding or emotional response. Without effect analysis, the response remains in the lower bands.',
+        explanation:
+          "Identifying a technique is only the first step. Top-band responses explain the effect - what the metaphor suggests, what connotations it carries, and how it influences the reader's understanding or emotional response. Without effect analysis, the response remains in the lower bands.",
       },
       {
         id: 'y10-p1-m3-q3',
@@ -454,11 +463,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'The grammatical function of a word in a sentence',
         ],
         correct: 1,
-        explanation: 'Connotation refers to the associations and implied meanings a word carries beyond its literal definition (denotation). Analysing connotations is one of the most effective ways to demonstrate perceptive language analysis in Q4.',
+        explanation:
+          'Connotation refers to the associations and implied meanings a word carries beyond its literal definition (denotation). Analysing connotations is one of the most effective ways to demonstrate perceptive language analysis in Q4.',
       },
       {
         id: 'y10-p1-m3-q4',
-        question: 'Which of the following is an example of a structural feature you could analyse in Q4?',
+        question:
+          'Which of the following is an example of a structural feature you could analyse in Q4?',
         options: [
           'A simile comparing the sea to glass',
           'A shift from wide-angle description to close-up detail within the extract',
@@ -466,11 +477,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Alliteration in the phrase "bitter, biting cold"',
         ],
         correct: 1,
-        explanation: 'A shift in focus from wide-angle to close-up detail is a structural feature — it relates to how the writer organises and sequences information. Similes, emotive vocabulary, and alliteration are all language features. Q4 asks about both language AND structure.',
+        explanation:
+          'A shift in focus from wide-angle to close-up detail is a structural feature - it relates to how the writer organises and sequences information. Similes, emotive vocabulary, and alliteration are all language features. Q4 asks about both language AND structure.',
       },
       {
         id: 'y10-p1-m3-q5',
-        question: 'How many well-developed analytical paragraphs should you aim for in Q4 (12 marks)?',
+        question:
+          'How many well-developed analytical paragraphs should you aim for in Q4 (12 marks)?',
         options: [
           'One very long paragraph',
           'Two paragraphs',
@@ -478,24 +491,25 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Six to eight paragraphs',
         ],
         correct: 2,
-        explanation: 'For a 12-mark question with approximately 15 minutes, three to four well-developed paragraphs is ideal. Each should contain a quotation, technique identification (where applicable), and detailed explanation of effect. Depth is rewarded over breadth — three excellent paragraphs outscore six superficial ones.',
+        explanation:
+          'For a 12-mark question with approximately 15 minutes, three to four well-developed paragraphs is ideal. Each should contain a quotation, technique identification (where applicable), and detailed explanation of effect. Depth is rewarded over breadth - three excellent paragraphs outscore six superficial ones.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 4 — Reading Section A: Writer's Effects (AO2)
+  // MODULE 4 - Reading Section A: Writer's Effects (AO2)
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m4',
-    title: 'Reading Section A — Writer\'s Effects (AO2)',
+    title: "Reading Section A - Writer's Effects (AO2)",
     duration: '55 min',
     content: `
 <h2>Going Beyond Technique-Spotting: Analysing the Writer's Craft</h2>
 
-<p>Module 3 introduced the language and structure techniques you need to identify for Question 4. This module takes you deeper into <strong>AO2</strong> by focusing on how to analyse the <strong>effects</strong> of a writer's choices — the part of Q4 that separates competent answers from excellent ones. The Edexcel mark scheme consistently rewards students who can explain <em>why</em> a writer made a particular choice, <em>what impact</em> it creates on the reader, and <em>how</em> it serves the text's purpose.</p>
+<p>Module 3 introduced the language and structure techniques you need to identify for Question 4. This module takes you deeper into <strong>AO2</strong> by focusing on how to analyse the <strong>effects</strong> of a writer's choices - the part of Q4 that separates competent answers from excellent ones. The Edexcel mark scheme consistently rewards students who can explain <em>why</em> a writer made a particular choice, <em>what impact</em> it creates on the reader, and <em>how</em> it serves the text's purpose.</p>
 
-<div class="key-term"><strong>Key Term: Writer's Effect</strong> — The impact that a specific language or structural choice has on the reader. Effects can be emotional (making the reader feel fear, sympathy, anger), visual (creating a vivid mental image), persuasive (convincing the reader of a viewpoint), or atmospheric (establishing mood and tone). Strong analysis always explains the effect, not just the technique.</div>
+<div class="key-term"><strong>Key Term: Writer's Effect</strong> - The impact that a specific language or structural choice has on the reader. Effects can be emotional (making the reader feel fear, sympathy, anger), visual (creating a vivid mental image), persuasive (convincing the reader of a viewpoint), or atmospheric (establishing mood and tone). Strong analysis always explains the effect, not just the technique.</div>
 
 <h3>The Mark Scheme Bands for Question 4</h3>
 
@@ -518,9 +532,9 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <p><strong>Band 3 response:</strong> "The simile 'like monstrous hands' personifies the waves as aggressive predators, suggesting the sea is actively attacking the ship. The word 'monstrous' implies the waves are unnaturally large and threatening."</p>
 
-<p><strong>Band 4 response:</strong> "The simile 'like monstrous hands, clawing at the hull' transforms the ocean from a natural phenomenon into a sentient adversary. The verb 'clawing' carries connotations of predatory aggression — an animal tearing at prey — while 'monstrous' suggests the waves have exceeded the bounds of natural scale, becoming something horrifying and otherworldly. The personification serves the writer's purpose of conveying not merely the physical danger but the psychological terror of confronting a force that seems deliberately hostile."</p>
+<p><strong>Band 4 response:</strong> "The simile 'like monstrous hands, clawing at the hull' transforms the ocean from a natural phenomenon into a sentient adversary. The verb 'clawing' carries connotations of predatory aggression - an animal tearing at prey - while 'monstrous' suggests the waves have exceeded the bounds of natural scale, becoming something horrifying and otherworldly. The personification serves the writer's purpose of conveying not merely the physical danger but the psychological terror of confronting a force that seems deliberately hostile."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The difference between Band 2 and Band 4 is not the number of techniques identified — it is the depth and precision of effect analysis. A Band 4 response explores connotations of individual words, considers multiple layers of meaning, and links the analysis back to the writer's overall purpose. Always ask yourself: "What does this word suggest? What associations does it carry? How does it make the reader feel, and why?"</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The difference between Band 2 and Band 4 is not the number of techniques identified - it is the depth and precision of effect analysis. A Band 4 response explores connotations of individual words, considers multiple layers of meaning, and links the analysis back to the writer's overall purpose. Always ask yourself: "What does this word suggest? What associations does it carry? How does it make the reader feel, and why?"</div>
 
 <h3>Analysing Tone and Register</h3>
 
@@ -545,7 +559,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
   <li><strong>Semantic fields:</strong> Clusters of words from the same conceptual area (e.g. words related to war, nature, religion) create a unified atmosphere or reveal the writer's attitude.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Semantic Field</strong> — A group of words that share a common theme or subject area. For example, the words "battle," "assault," "defend," "surrender," and "casualties" all belong to the semantic field of war. When a writer uses a cluster of words from a particular semantic field, it shapes the reader's interpretation and creates a dominant impression. Identifying semantic fields is a sophisticated analytical tool.</div>
+<div class="key-term"><strong>Key Term: Semantic Field</strong> - A group of words that share a common theme or subject area. For example, the words "battle," "assault," "defend," "surrender," and "casualties" all belong to the semantic field of war. When a writer uses a cluster of words from a particular semantic field, it shapes the reader's interpretation and creates a dominant impression. Identifying semantic fields is a sophisticated analytical tool.</div>
 
 <h3>Practising Effect Analysis: The "So What?" Test</h3>
 
@@ -559,7 +573,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <h3>Linking Analysis to the Writer's Purpose</h3>
 
-<p>Every non-fiction text has a purpose — to inform, persuade, entertain, advise, describe, or argue. The most perceptive Q4 responses link their analysis back to this purpose. After explaining the effect of a technique, add a sentence that connects it to the bigger picture:</p>
+<p>Every non-fiction text has a purpose - to inform, persuade, entertain, advise, describe, or argue. The most perceptive Q4 responses link their analysis back to this purpose. After explaining the effect of a technique, add a sentence that connects it to the bigger picture:</p>
 
 <ul>
   <li>"This serves the writer's argumentative purpose by..."</li>
@@ -571,7 +585,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <h3>Structuring a Q4 Response</h3>
 
-<p>A strong Q4 answer does not need a lengthy introduction. Begin directly with your first analytical point. Aim for three to four paragraphs, each following the identify-quote-explain pattern. Ensure at least one paragraph addresses structure (sentence length, paragraph organisation, focus shifts). Close with a paragraph that addresses a different aspect of the writing from your first two points — for example, if you started with imagery, end with tone or pace.</p>
+<p>A strong Q4 answer does not need a lengthy introduction. Begin directly with your first analytical point. Aim for three to four paragraphs, each following the identify-quote-explain pattern. Ensure at least one paragraph addresses structure (sentence length, paragraph organisation, focus shifts). Close with a paragraph that addresses a different aspect of the writing from your first two points - for example, if you started with imagery, end with tone or pace.</p>
 `,
     quiz: [
       {
@@ -584,7 +598,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Band 4 writes more paragraphs than Band 2',
         ],
         correct: 2,
-        explanation: 'The key difference is depth of analysis, not quantity. Band 4 responses explore connotations of individual words, consider multiple layers of meaning, and connect analysis to the writer\'s purpose. Band 2 responses tend to identify techniques without explaining their specific effects.',
+        explanation:
+          "The key difference is depth of analysis, not quantity. Band 4 responses explore connotations of individual words, consider multiple layers of meaning, and connect analysis to the writer's purpose. Band 2 responses tend to identify techniques without explaining their specific effects.",
       },
       {
         id: 'y10-p1-m4-q2',
@@ -596,11 +611,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'A structural device used only in fiction',
         ],
         correct: 1,
-        explanation: 'A semantic field is a cluster of words that share a common theme — such as words related to war, nature, religion, or industry. When a writer draws multiple words from the same semantic field, it creates a dominant impression and shapes the reader\'s interpretation.',
+        explanation:
+          "A semantic field is a cluster of words that share a common theme - such as words related to war, nature, religion, or industry. When a writer draws multiple words from the same semantic field, it creates a dominant impression and shapes the reader's interpretation.",
       },
       {
         id: 'y10-p1-m4-q3',
-        question: 'Why should you avoid writing "This makes the reader want to read on" in your analysis?',
+        question:
+          'Why should you avoid writing "This makes the reader want to read on" in your analysis?',
         options: [
           'It is grammatically incorrect',
           'Examiners specifically penalise this phrase',
@@ -608,19 +625,21 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'It suggests the text is boring without the technique',
         ],
         correct: 2,
-        explanation: 'The phrase is too vague and generic — it could apply to any text and any technique. Examiners want to see precise, specific analysis of effect: does the technique create tension, sympathy, horror, admiration, or something else? Always specify the emotional or intellectual impact.',
+        explanation:
+          'The phrase is too vague and generic - it could apply to any text and any technique. Examiners want to see precise, specific analysis of effect: does the technique create tension, sympathy, horror, admiration, or something else? Always specify the emotional or intellectual impact.',
       },
       {
         id: 'y10-p1-m4-q4',
         question: 'Which of the following best describes "tone" in a non-fiction text?',
         options: [
           'The volume at which the text would be read aloud',
-          'The attitude or feeling conveyed through the writer\'s language choices',
+          "The attitude or feeling conveyed through the writer's language choices",
           'The number of rhetorical devices used per paragraph',
           'The formality level of the vocabulary',
         ],
         correct: 1,
-        explanation: 'Tone refers to the attitude or feeling conveyed through the writer\'s choice of language — it might be authoritative, conversational, sardonic, emotive, or reflective. Identifying and analysing shifts in tone is a high-level skill that examiners reward in Q4.',
+        explanation:
+          "Tone refers to the attitude or feeling conveyed through the writer's choice of language - it might be authoritative, conversational, sardonic, emotive, or reflective. Identifying and analysing shifts in tone is a high-level skill that examiners reward in Q4.",
       },
       {
         id: 'y10-p1-m4-q5',
@@ -628,28 +647,29 @@ The writer felt that the extreme temperature was almost unbearable, making the j
         options: [
           'Move immediately to the next quotation',
           'Repeat the same point using different words',
-          'Link the analysis back to the writer\'s overall purpose',
+          "Link the analysis back to the writer's overall purpose",
           'Provide a personal opinion on whether the technique is effective',
         ],
         correct: 2,
-        explanation: 'The most perceptive responses connect their analysis to the writer\'s bigger picture — their argumentative purpose, descriptive aim, or persuasive intent. This shows the examiner you understand not just individual techniques but how they work together to serve the text\'s overall goal.',
+        explanation:
+          "The most perceptive responses connect their analysis to the writer's bigger picture - their argumentative purpose, descriptive aim, or persuasive intent. This shows the examiner you understand not just individual techniques but how they work together to serve the text's overall goal.",
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 5 — Reading Section A: Summary and Synthesis (AO1)
+  // MODULE 5 - Reading Section A: Summary and Synthesis (AO1)
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m5',
-    title: 'Reading Section A — Summary and Synthesis (AO1)',
+    title: 'Reading Section A - Summary and Synthesis (AO1)',
     duration: '60 min',
     content: `
 <h2>Question 5: Comparing Writers' Ideas and Perspectives (AO3)</h2>
 
 <p>Question 5 is the highest-tariff reading question on Paper 1, worth <strong>22 marks</strong> and testing <strong>AO3</strong>: the ability to compare writers' ideas and perspectives across two texts. This single question accounts for nearly a quarter of all Section A marks, making it the most important reading question on the paper. You should dedicate approximately <strong>30 minutes</strong> to this response.</p>
 
-<div class="key-term"><strong>Key Term: AO3 — Compare Writers' Ideas and Perspectives</strong> — This Assessment Objective tests whether you can identify what each writer thinks about a topic (their ideas and perspectives), compare and contrast those views, and support your comparison with evidence from both texts. It requires synthesis — drawing together information from two sources into a unified comparative response.</div>
+<div class="key-term"><strong>Key Term: AO3 - Compare Writers' Ideas and Perspectives</strong> - This Assessment Objective tests whether you can identify what each writer thinks about a topic (their ideas and perspectives), compare and contrast those views, and support your comparison with evidence from both texts. It requires synthesis - drawing together information from two sources into a unified comparative response.</div>
 
 <h3>What Examiners Are Looking For</h3>
 
@@ -659,7 +679,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
   <li><strong>Identifying each writer's perspective:</strong> What does Writer A think about the topic? What does Writer B think? Are they similar, different, or nuanced?</li>
   <li><strong>Making explicit comparisons:</strong> Drawing direct links between the two texts using comparative connectives (similarly, in contrast, whereas, on the other hand, both writers, however).</li>
   <li><strong>Supporting points with evidence:</strong> Using brief, embedded quotations from both texts to substantiate your comparisons.</li>
-  <li><strong>Analysing how perspectives are conveyed:</strong> Top-band responses do not just compare what the writers say — they also compare how they say it. This means incorporating some language analysis (AO2 skills) into your comparative response.</li>
+  <li><strong>Analysing how perspectives are conveyed:</strong> Top-band responses do not just compare what the writers say - they also compare how they say it. This means incorporating some language analysis (AO2 skills) into your comparative response.</li>
   <li><strong>Sustained comparison throughout:</strong> The response should be comparative from start to finish, not two separate mini-essays joined at the end.</li>
 </ul>
 
@@ -722,7 +742,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <p>Although Q5 primarily tests AO3 (comparison of ideas and perspectives), the top band of the mark scheme rewards students who also consider <strong>how</strong> the writers convey their perspectives. This means weaving in some AO2-style analysis:</p>
 
-<div class="model-answer"><strong>Model Answer (excerpt):</strong> Both writers present the natural landscape as awe-inspiring, but they convey this through contrasting methods. Writer A uses a semantic field of religious language — "cathedral," "divine," "reverence" — to elevate nature to a spiritual experience, positioning the reader as a humble worshipper before a sacred force. Writer B, in contrast, employs the language of scientific observation — "specimens," "classify," "remarkable adaptation" — presenting the same landscape as an intellectual puzzle to be solved. While Writer A seeks to overwhelm the reader with wonder, Writer B appeals to curiosity and rational inquiry.</div>
+<div class="model-answer"><strong>Model Answer (excerpt):</strong> Both writers present the natural landscape as awe-inspiring, but they convey this through contrasting methods. Writer A uses a semantic field of religious language - "cathedral," "divine," "reverence" - to elevate nature to a spiritual experience, positioning the reader as a humble worshipper before a sacred force. Writer B, in contrast, employs the language of scientific observation - "specimens," "classify," "remarkable adaptation" - presenting the same landscape as an intellectual puzzle to be solved. While Writer A seeks to overwhelm the reader with wonder, Writer B appeals to curiosity and rational inquiry.</div>
 
 <p>This response compares perspectives (spiritual vs. scientific), supports with evidence from both texts, and analyses how language choices convey those perspectives. This integrated approach is what earns top-band marks.</p>
 
@@ -732,15 +752,15 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <ul>
   <li><strong>Do not panic about unfamiliar vocabulary.</strong> Use context clues to work out meanings. If a word is genuinely obscure, focus on the surrounding language.</li>
-  <li><strong>Recognise that 19th-century writers often use more formal, elaborate prose.</strong> This is a stylistic feature you can analyse — compare the formality of the 19th-century writer with the more conversational style of the modern writer.</li>
-  <li><strong>Consider historical context briefly.</strong> A 19th-century writer's perspective may reflect attitudes of their era (e.g. colonial attitudes in travel writing, different social norms). You can note this, but do not spend too long on historical context — focus on the textual evidence.</li>
+  <li><strong>Recognise that 19th-century writers often use more formal, elaborate prose.</strong> This is a stylistic feature you can analyse - compare the formality of the 19th-century writer with the more conversational style of the modern writer.</li>
+  <li><strong>Consider historical context briefly.</strong> A 19th-century writer's perspective may reflect attitudes of their era (e.g. colonial attitudes in travel writing, different social norms). You can note this, but do not spend too long on historical context - focus on the textual evidence.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students sometimes write separate analyses of each text without ever comparing them. Every paragraph in Q5 should contain a comparison. If you find yourself writing about one text for a full paragraph without mentioning the other, you are describing rather than comparing. Stop, and introduce the second text with a comparative connective.</div>
 
 <h3>How Many Points Should You Make?</h3>
 
-<p>For a 22-mark question with approximately 30 minutes, aim for <strong>four to five substantial comparative paragraphs</strong>. Each paragraph should compare a specific aspect of the two writers' ideas or methods, supported by quotations from both texts. The response should be approximately 400 to 500 words — long enough to develop your comparison in depth, but concise enough to avoid repetition.</p>
+<p>For a 22-mark question with approximately 30 minutes, aim for <strong>four to five substantial comparative paragraphs</strong>. Each paragraph should compare a specific aspect of the two writers' ideas or methods, supported by quotations from both texts. The response should be approximately 400 to 500 words - long enough to develop your comparison in depth, but concise enough to avoid repetition.</p>
 `,
     quiz: [
       {
@@ -748,7 +768,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
         question: 'How many marks is Question 5 worth?',
         options: ['12 marks', '18 marks', '22 marks', '27 marks'],
         correct: 2,
-        explanation: 'Question 5 is worth 22 marks, making it the highest-tariff reading question on Paper 1. It tests AO3 (comparison of writers\' ideas and perspectives) and should receive approximately 30 minutes of your time.',
+        explanation:
+          "Question 5 is worth 22 marks, making it the highest-tariff reading question on Paper 1. It tests AO3 (comparison of writers' ideas and perspectives) and should receive approximately 30 minutes of your time.",
       },
       {
         id: 'y10-p1-m5-q2',
@@ -760,11 +781,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'The mark scheme explicitly requires it',
         ],
         correct: 1,
-        explanation: 'The alternating structure forces you to compare in every paragraph, discussing both texts side by side. Block structures risk reading as two separate essays with comparison only at the transition. Examiners reward sustained, integrated comparison throughout the response.',
+        explanation:
+          'The alternating structure forces you to compare in every paragraph, discussing both texts side by side. Block structures risk reading as two separate essays with comparison only at the transition. Examiners reward sustained, integrated comparison throughout the response.',
       },
       {
         id: 'y10-p1-m5-q3',
-        question: 'What additional skill do top-band Q5 responses demonstrate beyond identifying ideas and perspectives?',
+        question:
+          'What additional skill do top-band Q5 responses demonstrate beyond identifying ideas and perspectives?',
         options: [
           'Including personal opinions about which writer is better',
           'Analysing how the writers use language and methods to convey their perspectives',
@@ -772,7 +795,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Counting the number of rhetorical devices in each text',
         ],
         correct: 1,
-        explanation: 'Top-band Q5 responses compare not only what the writers think but how they convey their perspectives — incorporating some AO2-style language analysis into the comparative framework. This integrated approach demonstrates sophisticated reading skills.',
+        explanation:
+          'Top-band Q5 responses compare not only what the writers think but how they convey their perspectives - incorporating some AO2-style language analysis into the comparative framework. This integrated approach demonstrates sophisticated reading skills.',
       },
       {
         id: 'y10-p1-m5-q4',
@@ -784,7 +808,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           '"Like Writer A, Writer B emphasises..."',
         ],
         correct: 2,
-        explanation: '"Whereas" is a contrastive connective that explicitly signals a difference between the two writers\' approaches. Using a varied range of comparative connectives (for both similarities and differences) demonstrates control and sophistication in your comparative writing.',
+        explanation:
+          '"Whereas" is a contrastive connective that explicitly signals a difference between the two writers\' approaches. Using a varied range of comparative connectives (for both similarities and differences) demonstrates control and sophistication in your comparative writing.',
       },
       {
         id: 'y10-p1-m5-q5',
@@ -796,35 +821,36 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Guess the meaning and move on without evidence',
         ],
         correct: 1,
-        explanation: 'Use the surrounding context to work out the meaning of unfamiliar words. If a word is genuinely obscure, focus on the language around it that you do understand. The 19th-century text\'s more formal style is itself a feature you can analyse and compare with the modern text\'s register.',
+        explanation:
+          "Use the surrounding context to work out the meaning of unfamiliar words. If a word is genuinely obscure, focus on the language around it that you do understand. The 19th-century text's more formal style is itself a feature you can analyse and compare with the modern text's register.",
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 6 — Transactional Writing: Articles
+  // MODULE 6 - Transactional Writing: Articles
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m6',
-    title: 'Transactional Writing — Articles',
+    title: 'Transactional Writing - Articles',
     duration: '55 min',
     content: `
 <h2>Writing Articles for Paper 1 Section B</h2>
 
-<p>The article is one of the most commonly set forms in Paper 1 Section B. It may be a newspaper article, a magazine article, or an online article, and the task will specify the audience (e.g. young people, parents, a school magazine readership) and purpose (e.g. to argue, persuade, advise, or inform). Understanding the conventions of article writing is essential because the mark scheme under AO4 rewards students who demonstrate a <strong>clear sense of form</strong> — that is, writing that genuinely reads like an article rather than a generic essay.</p>
+<p>The article is one of the most commonly set forms in Paper 1 Section B. It may be a newspaper article, a magazine article, or an online article, and the task will specify the audience (e.g. young people, parents, a school magazine readership) and purpose (e.g. to argue, persuade, advise, or inform). Understanding the conventions of article writing is essential because the mark scheme under AO4 rewards students who demonstrate a <strong>clear sense of form</strong> - that is, writing that genuinely reads like an article rather than a generic essay.</p>
 
-<div class="key-term"><strong>Key Term: Form</strong> — The type or genre of text you are asked to produce. In Paper 1 Section B, common forms include article, speech, letter, and report. Each form has specific conventions (such as a headline for an article or "Dear..." for a letter) that you must follow to demonstrate awareness of form and score well under AO4.</div>
+<div class="key-term"><strong>Key Term: Form</strong> - The type or genre of text you are asked to produce. In Paper 1 Section B, common forms include article, speech, letter, and report. Each form has specific conventions (such as a headline for an article or "Dear..." for a letter) that you must follow to demonstrate awareness of form and score well under AO4.</div>
 
 <h3>Conventions of Article Writing</h3>
 
 <p>An effective article should include the following features:</p>
 
 <ul>
-  <li><strong>A headline:</strong> This should be attention-grabbing and relevant to the topic. It can use wordplay, alliteration, a provocative statement, or a question. Keep it concise — one line maximum.</li>
+  <li><strong>A headline:</strong> This should be attention-grabbing and relevant to the topic. It can use wordplay, alliteration, a provocative statement, or a question. Keep it concise - one line maximum.</li>
   <li><strong>A strapline or subheading (optional but impressive):</strong> A brief explanatory line beneath the headline that gives more context. E.g. Headline: "Screen Time Is Stealing Your Childhood." Strapline: "Why today's teenagers need to put down their phones and pick up their lives."</li>
-  <li><strong>An engaging opening paragraph:</strong> The first paragraph must hook the reader immediately. Use a bold statement, a striking statistic, a rhetorical question, a short anecdote, or a vivid description. Do not begin with "In this article I will discuss..." — this is bland and formulaic.</li>
+  <li><strong>An engaging opening paragraph:</strong> The first paragraph must hook the reader immediately. Use a bold statement, a striking statistic, a rhetorical question, a short anecdote, or a vivid description. Do not begin with "In this article I will discuss..." - this is bland and formulaic.</li>
   <li><strong>Developed body paragraphs:</strong> Each paragraph should present a distinct point or argument, supported by evidence, examples, or persuasive techniques. Use discourse markers to guide the reader through your argument.</li>
-  <li><strong>A strong concluding paragraph:</strong> End with impact — a call to action, a thought-provoking question, a powerful final statement, or a return to the image or idea from your opening (circular structure).</li>
+  <li><strong>A strong concluding paragraph:</strong> End with impact - a call to action, a thought-provoking question, a powerful final statement, or a return to the image or idea from your opening (circular structure).</li>
   <li><strong>A consistent and appropriate register:</strong> Match your tone to the specified audience. A school magazine article can be slightly informal and conversational; a broadsheet newspaper article should be more formal and authoritative.</li>
 </ul>
 
@@ -849,7 +875,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 <ol>
   <li><strong>Bold, controversial statement:</strong> "Homework is a relic of the Victorian era that has no place in modern education." This immediately establishes your position and provokes a reaction.</li>
   <li><strong>Rhetorical question:</strong> "When was the last time you looked up from your phone and actually noticed the world around you?" This draws the reader in by making them reflect.</li>
-  <li><strong>Startling statistic or fact:</strong> "According to recent research, the average teenager spends seven hours a day staring at a screen — more time than they spend sleeping." This establishes credibility and urgency.</li>
+  <li><strong>Startling statistic or fact:</strong> "According to recent research, the average teenager spends seven hours a day staring at a screen - more time than they spend sleeping." This establishes credibility and urgency.</li>
   <li><strong>Short anecdote:</strong> "Last Tuesday, I watched a group of friends sit in silence for twenty minutes, each absorbed in their own phone. Not one of them spoke a word." This creates a vivid, relatable image.</li>
   <li><strong>Direct address:</strong> "You. Yes, you, sitting there scrolling through this article. When did you last have a conversation that lasted longer than a text message?" This is confrontational and engaging.</li>
 </ol>
@@ -859,7 +885,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 <p>Since most article tasks require you to argue or persuade, you need a toolkit of persuasive techniques. The most effective ones for articles include:</p>
 
 <ul>
-  <li><strong>Rhetorical questions:</strong> Engage the reader and make them think. Use sparingly — one or two per article, not every paragraph.</li>
+  <li><strong>Rhetorical questions:</strong> Engage the reader and make them think. Use sparingly - one or two per article, not every paragraph.</li>
   <li><strong>Direct address ("you"):</strong> Creates a personal connection with the reader and makes the argument feel relevant to them.</li>
   <li><strong>Tricolon (rule of three):</strong> Lists of three create rhythm and emphasis: "It is unfair, it is outdated, and it is harmful."</li>
   <li><strong>Emotive language:</strong> Words chosen to provoke feelings. "Innocent children are being robbed of their childhoods" is more powerful than "children are affected."</li>
@@ -887,11 +913,11 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 <p>Here is a paragraph-by-paragraph plan for an article arguing that school holidays should be shortened:</p>
 
 <ol>
-  <li><strong>Headline:</strong> "Six Weeks of Wasted Potential" — Opening with a bold statement about the outdated origins of long summer holidays and their harm to disadvantaged students.</li>
-  <li><strong>Paragraph 2:</strong> The evidence — research showing that students from low-income families lose up to two months of learning during the summer break (the "summer slide").</li>
-  <li><strong>Paragraph 3:</strong> Counter-argument — "Some argue holidays are vital for rest and family time." Rebuttal — shorter, more frequent breaks would achieve this without the learning loss.</li>
-  <li><strong>Paragraph 4:</strong> International comparisons — countries with shorter holidays and higher academic performance.</li>
-  <li><strong>Paragraph 5:</strong> Conclusion — call to action urging policymakers to modernise the school calendar, returning to the opening image or idea for circular structure.</li>
+  <li><strong>Headline:</strong> "Six Weeks of Wasted Potential" - Opening with a bold statement about the outdated origins of long summer holidays and their harm to disadvantaged students.</li>
+  <li><strong>Paragraph 2:</strong> The evidence - research showing that students from low-income families lose up to two months of learning during the summer break (the "summer slide").</li>
+  <li><strong>Paragraph 3:</strong> Counter-argument - "Some argue holidays are vital for rest and family time." Rebuttal - shorter, more frequent breaks would achieve this without the learning loss.</li>
+  <li><strong>Paragraph 4:</strong> International comparisons - countries with shorter holidays and higher academic performance.</li>
+  <li><strong>Paragraph 5:</strong> Conclusion - call to action urging policymakers to modernise the school calendar, returning to the opening image or idea for circular structure.</li>
 </ol>
 `,
     quiz: [
@@ -905,7 +931,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'A strong concluding paragraph',
         ],
         correct: 2,
-        explanation: '"Dear Sir or Madam" is a convention of formal letter writing, not article writing. Articles should have a headline, an engaging opening, developed body paragraphs, and a strong conclusion. Confusing form conventions is a common error that costs marks under AO4.',
+        explanation:
+          '"Dear Sir or Madam" is a convention of formal letter writing, not article writing. Articles should have a headline, an engaging opening, developed body paragraphs, and a strong conclusion. Confusing form conventions is a common error that costs marks under AO4.',
       },
       {
         id: 'y10-p1-m6-q2',
@@ -917,11 +944,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'To fill space when you have run out of your own arguments',
         ],
         correct: 1,
-        explanation: 'Including a counter-argument and rebuttal shows the examiner that you have considered multiple perspectives and can dismantle opposing views. This demonstrates intellectual maturity and strengthens your own argument by pre-emptively addressing objections.',
+        explanation:
+          'Including a counter-argument and rebuttal shows the examiner that you have considered multiple perspectives and can dismantle opposing views. This demonstrates intellectual maturity and strengthens your own argument by pre-emptively addressing objections.',
       },
       {
         id: 'y10-p1-m6-q3',
-        question: 'Which opening strategy begins with: "According to recent research, 73% of teenagers check their phone within five minutes of waking up"?',
+        question:
+          'Which opening strategy begins with: "According to recent research, 73% of teenagers check their phone within five minutes of waking up"?',
         options: [
           'Bold, controversial statement',
           'Short anecdote',
@@ -929,11 +958,13 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'Direct address',
         ],
         correct: 2,
-        explanation: 'This opening uses a startling statistic to immediately establish credibility and urgency. Statistics (even invented ones in an exam) add authority to your argument and hook the reader with concrete, surprising information.',
+        explanation:
+          'This opening uses a startling statistic to immediately establish credibility and urgency. Statistics (even invented ones in an exam) add authority to your argument and hook the reader with concrete, surprising information.',
       },
       {
         id: 'y10-p1-m6-q4',
-        question: 'Why should you avoid beginning an article with "In this article I will discuss..."?',
+        question:
+          'Why should you avoid beginning an article with "In this article I will discuss..."?',
         options: [
           'It is grammatically incorrect',
           'It is bland, formulaic, and fails to engage the reader',
@@ -941,7 +972,8 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'The examiner will deduct marks for this specific phrase',
         ],
         correct: 1,
-        explanation: 'This opening is generic and fails to hook the reader. It reads like a school essay rather than a genuine article. Top-band responses open with impact — a bold statement, a question, a statistic, or an anecdote that immediately engages the audience.',
+        explanation:
+          'This opening is generic and fails to hook the reader. It reads like a school essay rather than a genuine article. Top-band responses open with impact - a bold statement, a question, a statistic, or an anecdote that immediately engages the audience.',
       },
       {
         id: 'y10-p1-m6-q5',
@@ -953,33 +985,34 @@ The writer felt that the extreme temperature was almost unbearable, making the j
           'A conclusion that summarises three main points',
         ],
         correct: 1,
-        explanation: 'A tricolon (rule of three) is a list of three items, phrases, or clauses used for rhythmic emphasis and persuasive impact. For example: "It is unfair, it is outdated, and it is harmful." The pattern of three creates a sense of completeness and makes the argument feel decisive.',
+        explanation:
+          'A tricolon (rule of three) is a list of three items, phrases, or clauses used for rhythmic emphasis and persuasive impact. For example: "It is unfair, it is outdated, and it is harmful." The pattern of three creates a sense of completeness and makes the argument feel decisive.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 7 — Transactional Writing: Speeches
+  // MODULE 7 - Transactional Writing: Speeches
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m7',
-    title: 'Transactional Writing — Speeches',
+    title: 'Transactional Writing - Speeches',
     duration: '55 min',
     content: `
 <h2>Writing Speeches for Paper 1 Section B</h2>
 
-<p>The speech is one of the most powerful forms you can be asked to write in Section B. A strong speech is <strong>persuasive, structured, and crafted to be heard aloud</strong>. The key difference between a speech and an article is that a speech is intended for a live audience — it must sound natural when spoken, use rhetorical devices that work aurally, and create a sense of direct connection between speaker and listener. The examiner is looking for writing that genuinely reads like a speech, not an essay with "Ladies and gentlemen" at the top.</p>
+<p>The speech is one of the most powerful forms you can be asked to write in Section B. A strong speech is <strong>persuasive, structured, and crafted to be heard aloud</strong>. The key difference between a speech and an article is that a speech is intended for a live audience - it must sound natural when spoken, use rhetorical devices that work aurally, and create a sense of direct connection between speaker and listener. The examiner is looking for writing that genuinely reads like a speech, not an essay with "Ladies and gentlemen" at the top.</p>
 
-<div class="key-term"><strong>Key Term: Rhetoric</strong> — The art of persuasive speaking and writing. Rhetorical devices are techniques used to make language more persuasive, memorable, and emotionally impactful. Speeches rely heavily on rhetoric because they must persuade a live audience in real time, without the luxury of re-reading that written texts allow.</div>
+<div class="key-term"><strong>Key Term: Rhetoric</strong> - The art of persuasive speaking and writing. Rhetorical devices are techniques used to make language more persuasive, memorable, and emotionally impactful. Speeches rely heavily on rhetoric because they must persuade a live audience in real time, without the luxury of re-reading that written texts allow.</div>
 
 <h3>Conventions of Speech Writing</h3>
 
 <p>A well-crafted speech for Paper 1 should include:</p>
 
 <ul>
-  <li><strong>An appropriate salutation:</strong> Address your audience directly. "Fellow students," "Ladies and gentlemen," "Members of the school council," — match the salutation to the specified audience. Do not use "Dear..." — that is for letters.</li>
+  <li><strong>An appropriate salutation:</strong> Address your audience directly. "Fellow students," "Ladies and gentlemen," "Members of the school council," - match the salutation to the specified audience. Do not use "Dear..." - that is for letters.</li>
   <li><strong>A powerful opening:</strong> Your first sentence must command attention. Use a bold statement, a provocative question, a short anecdote, or a striking image. In a real speech, the opening determines whether the audience listens or switches off.</li>
-  <li><strong>Rhetorical devices throughout:</strong> Speeches should use techniques designed for oral delivery — repetition, tricolons, rhetorical questions, direct address, anaphora, and antithesis. These create rhythm and emphasis when spoken aloud.</li>
+  <li><strong>Rhetorical devices throughout:</strong> Speeches should use techniques designed for oral delivery - repetition, tricolons, rhetorical questions, direct address, anaphora, and antithesis. These create rhythm and emphasis when spoken aloud.</li>
   <li><strong>A conversational but authoritative tone:</strong> The best speeches sound like someone talking passionately and confidently to a room. Use contractions ("we're," "don't," "isn't") where appropriate, vary sentence length, and include moments of informality alongside moments of gravitas.</li>
   <li><strong>A rousing conclusion:</strong> End with a call to action, an emotional appeal, or a memorable final statement. The last line of a speech should linger in the audience's mind.</li>
 </ul>
@@ -994,7 +1027,7 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <h4>Antithesis (Contrasting Ideas in Balanced Structures)</h4>
 <p>Placing opposing ideas side by side in a balanced grammatical structure creates clarity and impact.</p>
-<p><strong>Example:</strong> "It is not about what we cannot do — it is about what we must do." The contrast between "cannot" and "must" sharpens the argument and makes it memorable.</p>
+<p><strong>Example:</strong> "It is not about what we cannot do - it is about what we must do." The contrast between "cannot" and "must" sharpens the argument and makes it memorable.</p>
 
 <h4>Tricolon (Rule of Three)</h4>
 <p>Three-part lists create a satisfying rhythmic pattern that audiences find persuasive and memorable.</p>
@@ -1006,19 +1039,19 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <h4>Emotive Storytelling</h4>
 <p>Brief, vivid anecdotes humanise your argument. A short story about a real or imagined individual is far more persuasive than abstract statistics.</p>
-<p><strong>Example:</strong> "Last week, a Year 7 student told me she dreads break time. Not because of lessons, not because of homework — but because she has nobody to sit with. That is what loneliness looks like in our school. And that is why we need this programme."</p>
+<p><strong>Example:</strong> "Last week, a Year 7 student told me she dreads break time. Not because of lessons, not because of homework - but because she has nobody to sit with. That is what loneliness looks like in our school. And that is why we need this programme."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The most effective speech technique in an exam is anaphora combined with a tricolon. Repeating a phrase three times creates powerful rhythm: "We cannot ignore this. We cannot pretend it doesn't matter. We cannot walk away." This technique is easy to deploy, sounds impressive, and demonstrates clear awareness of the speech form — exactly what the examiner is looking for under AO4.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The most effective speech technique in an exam is anaphora combined with a tricolon. Repeating a phrase three times creates powerful rhythm: "We cannot ignore this. We cannot pretend it doesn't matter. We cannot walk away." This technique is easy to deploy, sounds impressive, and demonstrates clear awareness of the speech form - exactly what the examiner is looking for under AO4.</div>
 
 <h3>Tone and Register in Speeches</h3>
 
 <p>A speech should shift between different registers to maintain the audience's attention and create emotional variety. The best speeches alternate between:</p>
 
 <ul>
-  <li><strong>Passionate intensity:</strong> Moments of heightened emotion where the language is powerful and the pace is fast. "This is not a minor inconvenience — this is an injustice that affects every single one of us!"</li>
+  <li><strong>Passionate intensity:</strong> Moments of heightened emotion where the language is powerful and the pace is fast. "This is not a minor inconvenience - this is an injustice that affects every single one of us!"</li>
   <li><strong>Measured authority:</strong> Calmer moments where you present evidence or reasoning. "The facts speak for themselves. Research consistently shows that..."</li>
   <li><strong>Personal warmth:</strong> Moments of connection where you share a personal reflection or address the audience directly. "I know many of you feel the same way. I have heard your frustrations."</li>
-  <li><strong>Quiet conviction:</strong> A softer, more reflective tone — often effective near the end. "Ultimately, this comes down to a simple question of fairness."</li>
+  <li><strong>Quiet conviction:</strong> A softer, more reflective tone - often effective near the end. "Ultimately, this comes down to a simple question of fairness."</li>
 </ul>
 
 <h3>Common Speech-Writing Mistakes</h3>
@@ -1027,20 +1060,20 @@ The writer felt that the extreme temperature was almost unbearable, making the j
 
 <div class="common-mistake"><strong>Common Mistake 2:</strong> Overusing rhetorical questions. One or two well-placed rhetorical questions are effective; five or six become repetitive and irritating. Use rhetorical questions strategically, not as a crutch.</div>
 
-<div class="common-mistake"><strong>Common Mistake 3:</strong> Forgetting to address the audience. A speech should reference the listeners throughout — "As students, we understand..." or "I am asking each of you to consider..." Without this direct engagement, the piece loses its speech quality.</div>
+<div class="common-mistake"><strong>Common Mistake 3:</strong> Forgetting to address the audience. A speech should reference the listeners throughout - "As students, we understand..." or "I am asking each of you to consider..." Without this direct engagement, the piece loses its speech quality.</div>
 
 <h3>Model Speech Opening</h3>
 
 <p>Here is an example of a strong speech opening for the task: <em>"Write a speech for your school assembly arguing that mobile phones should be banned during the school day."</em></p>
 
 <div class="model-answer"><strong>Model Answer (opening):</strong>
-Fellow students, teachers, and staff — I want you to try something. Put your hand in your pocket. Feel that smooth rectangular shape? That little device that is always within arm's reach, always buzzing, always demanding your attention?
+Fellow students, teachers, and staff - I want you to try something. Put your hand in your pocket. Feel that smooth rectangular shape? That little device that is always within arm's reach, always buzzing, always demanding your attention?
 
 Now imagine a whole school day without it.
 
-Some of you just felt a flicker of panic. That reaction — that tiny jolt of anxiety at the thought of six hours without your phone — is exactly why I am standing here today. Because when a device has that kind of hold over us, we need to ask ourselves: who is in control — us, or the phone?
+Some of you just felt a flicker of panic. That reaction - that tiny jolt of anxiety at the thought of six hours without your phone - is exactly why I am standing here today. Because when a device has that kind of hold over us, we need to ask ourselves: who is in control - us, or the phone?
 
-I believe it is time for our school to take a stand. I believe mobile phones should be banned during the school day — not because I want to punish anyone, but because I want to set us free.
+I believe it is time for our school to take a stand. I believe mobile phones should be banned during the school day - not because I want to punish anyone, but because I want to set us free.
 </div>
 
 <p>This opening uses direct address, an interactive element (asking the audience to do something), short sentences for impact, a rhetorical question, anaphora ("I believe"), and a reframing technique (ban as freedom, not punishment). It reads as a speech, not an essay.</p>
@@ -1056,7 +1089,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'A question asked for effect rather than requiring an answer',
         ],
         correct: 1,
-        explanation: 'Anaphora is the repetition of a word or phrase at the beginning of successive sentences, clauses, or lines. It creates rhythm, builds momentum, and emphasises key ideas. It is one of the most powerful and commonly used rhetorical devices in speech writing.',
+        explanation:
+          'Anaphora is the repetition of a word or phrase at the beginning of successive sentences, clauses, or lines. It creates rhythm, builds momentum, and emphasises key ideas. It is one of the most powerful and commonly used rhetorical devices in speech writing.',
       },
       {
         id: 'y10-p1-m7-q2',
@@ -1068,7 +1102,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Speeches do not require paragraphing',
         ],
         correct: 1,
-        explanation: 'The fundamental difference is medium: a speech is crafted for oral delivery to a live audience, so it must sound natural when spoken, use aural rhetorical devices (repetition, rhythm, direct address), and create a sense of direct connection between speaker and listener.',
+        explanation:
+          'The fundamental difference is medium: a speech is crafted for oral delivery to a live audience, so it must sound natural when spoken, use aural rhetorical devices (repetition, rhythm, direct address), and create a sense of direct connection between speaker and listener.',
       },
       {
         id: 'y10-p1-m7-q3',
@@ -1080,7 +1115,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Because speeches cannot use "I" or "you"',
         ],
         correct: 1,
-        explanation: 'Inclusive pronouns position the speaker as part of the group rather than lecturing from above. They create a sense of shared purpose and make the audience feel that the argument belongs to them, not just the speaker. This is a key technique for persuasive speech writing.',
+        explanation:
+          'Inclusive pronouns position the speaker as part of the group rather than lecturing from above. They create a sense of shared purpose and make the audience feel that the argument belongs to them, not just the speaker. This is a key technique for persuasive speech writing.',
       },
       {
         id: 'y10-p1-m7-q4',
@@ -1092,7 +1128,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Addressing the audience directly with "you"',
         ],
         correct: 1,
-        explanation: 'Antithesis places opposing ideas in balanced, parallel structures to create clarity and impact. For example: "It is not about what we cannot do — it is about what we must do." The contrast sharpens the argument and makes it memorable, which is particularly effective in speeches.',
+        explanation:
+          'Antithesis places opposing ideas in balanced, parallel structures to create clarity and impact. For example: "It is not about what we cannot do - it is about what we must do." The contrast sharpens the argument and makes it memorable, which is particularly effective in speeches.',
       },
       {
         id: 'y10-p1-m7-q5',
@@ -1104,24 +1141,25 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'If it includes statistics or evidence',
         ],
         correct: 2,
-        explanation: 'A genuine speech uses rhetorical devices throughout (anaphora, tricolons, direct address), maintains a conversational quality, references the audience, and varies between passionate and measured tones. If your piece reads the same with or without the greeting, it lacks speech conventions.',
+        explanation:
+          'A genuine speech uses rhetorical devices throughout (anaphora, tricolons, direct address), maintains a conversational quality, references the audience, and varies between passionate and measured tones. If your piece reads the same with or without the greeting, it lacks speech conventions.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 8 — Transactional Writing: Letters (Formal and Informal)
+  // MODULE 8 - Transactional Writing: Letters (Formal and Informal)
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m8',
-    title: 'Transactional Writing — Letters (Formal and Informal)',
+    title: 'Transactional Writing - Letters (Formal and Informal)',
     duration: '50 min',
     content: `
 <h2>Writing Letters for Paper 1 Section B</h2>
 
 <p>Letter writing is a classic transactional form that appears regularly in Paper 1 Section B. The task will specify whether the letter is formal (e.g. to a newspaper editor, a local council, a headteacher) or informal (e.g. to a friend, a family member), and your register must match accordingly. The most common error students make with letters is failing to adopt the correct conventions for the specified level of formality, which costs marks under AO4 for awareness of form and audience.</p>
 
-<div class="key-term"><strong>Key Term: Register</strong> — The level of formality in your writing, determined by your audience and purpose. A formal register uses complete sentences, avoids contractions, employs sophisticated vocabulary, and maintains a respectful, professional tone. An informal register can use contractions, conversational language, humour, and a more personal tone. Matching your register to the task is essential for AO4.</div>
+<div class="key-term"><strong>Key Term: Register</strong> - The level of formality in your writing, determined by your audience and purpose. A formal register uses complete sentences, avoids contractions, employs sophisticated vocabulary, and maintains a respectful, professional tone. An informal register can use contractions, conversational language, humour, and a more personal tone. Matching your register to the task is essential for AO4.</div>
 
 <h3>Formal Letter Conventions</h3>
 
@@ -1146,18 +1184,18 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
   <li><strong>Salutation:</strong> "Dear [First Name]," or even "Hi [Name],"</li>
   <li><strong>Conversational tone:</strong> Use contractions ("I'm," "don't," "we've"), personal anecdotes, humour, and direct questions to the recipient. The letter should read like a genuine personal communication.</li>
   <li><strong>Personal connection:</strong> Reference shared experiences, ask about the recipient's life, and write with warmth and familiarity.</li>
-  <li><strong>Sign-off:</strong> "Best wishes," "With love," "Take care," "Speak soon," — whatever feels natural for the relationship.</li>
+  <li><strong>Sign-off:</strong> "Best wishes," "With love," "Take care," "Speak soon," - whatever feels natural for the relationship.</li>
 </ul>
 
 <h3>The Trap of Informal Letters</h3>
 
-<p>Many students assume that informal means easy. In reality, informal letters are one of the trickiest forms because students often become <em>too</em> informal — writing in text speak, abandoning paragraphing, or losing their argumentative structure. An informal letter still needs:</p>
+<p>Many students assume that informal means easy. In reality, informal letters are one of the trickiest forms because students often become <em>too</em> informal - writing in text speak, abandoning paragraphing, or losing their argumentative structure. An informal letter still needs:</p>
 
 <ul>
   <li>Clear paragraphing with distinct points</li>
   <li>Developed arguments or explanations (not just opinions without support)</li>
   <li>Correct spelling, punctuation, and grammar (AO5 marks are still at stake)</li>
-  <li>A sense of purpose — you are writing to persuade, advise, explain, or argue, not just chat</li>
+  <li>A sense of purpose - you are writing to persuade, advise, explain, or argue, not just chat</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students writing informal letters sometimes abandon all structure, writing a rambling, unparagraphed stream of consciousness. Even an informal letter must have a clear beginning, middle, and end. Each paragraph should present a distinct point. The informality should be in the tone and register, not in the absence of organisation.</div>
@@ -1201,14 +1239,14 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <h3>Persuasive Techniques in Letters</h3>
 
-<p>Letters, like articles and speeches, can use persuasive techniques — but the approach differs depending on formality:</p>
+<p>Letters, like articles and speeches, can use persuasive techniques - but the approach differs depending on formality:</p>
 
 <ul>
   <li><strong>Formal letters:</strong> Rely on logic, evidence, expert opinion, and measured emotional appeals. Avoid hyperbole and excessive rhetoric. The persuasion comes from the strength of your reasoning.</li>
   <li><strong>Informal letters:</strong> Can use humour, personal stories, exaggeration for comic effect, and direct emotional appeals. The persuasion comes from personal connection and relatability.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If you are given a choice between writing an article and writing a letter, choose the form you feel most confident with. Both can earn full marks. However, if you choose a letter, make sure you know the conventions — salutation, sign-off, appropriate register. A letter without "Dear..." and "Yours..." is not really a letter, and the examiner will note the missing form features.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> If you are given a choice between writing an article and writing a letter, choose the form you feel most confident with. Both can earn full marks. However, if you choose a letter, make sure you know the conventions - salutation, sign-off, appropriate register. A letter without "Dear..." and "Yours..." is not really a letter, and the examiner will note the missing form features.</div>
 `,
     quiz: [
       {
@@ -1221,7 +1259,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'For all formal letters regardless of salutation',
         ],
         correct: 2,
-        explanation: 'Use "Yours faithfully" when you do not know the recipient\'s name (Dear Sir or Madam). Use "Yours sincerely" when you have used a name (Dear Mr Smith, Dear Mrs Jones). This convention is a well-known letter-writing rule that demonstrates form awareness.',
+        explanation:
+          'Use "Yours faithfully" when you do not know the recipient\'s name (Dear Sir or Madam). Use "Yours sincerely" when you have used a name (Dear Mr Smith, Dear Mrs Jones). This convention is a well-known letter-writing rule that demonstrates form awareness.',
       },
       {
         id: 'y10-p1-m8-q2',
@@ -1233,7 +1272,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Making the letter too short',
         ],
         correct: 2,
-        explanation: 'Students often assume "informal" means "no rules." In reality, an informal letter still needs clear paragraphing, developed arguments, and correct spelling, punctuation, and grammar. The informality should be in the tone and register, not in the absence of structure or accuracy.',
+        explanation:
+          'Students often assume "informal" means "no rules." In reality, an informal letter still needs clear paragraphing, developed arguments, and correct spelling, punctuation, and grammar. The informality should be in the tone and register, not in the absence of structure or accuracy.',
       },
       {
         id: 'y10-p1-m8-q3',
@@ -1245,19 +1285,21 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           '"Come on, this is ridiculous!"',
         ],
         correct: 1,
-        explanation: 'Formal letters require measured, professional language without contractions, slang, or emotional outbursts. "I urge the council to address this matter as a priority" is appropriately formal, direct, and respectful — exactly the register needed for a letter to an authority figure.',
+        explanation:
+          'Formal letters require measured, professional language without contractions, slang, or emotional outbursts. "I urge the council to address this matter as a priority" is appropriately formal, direct, and respectful - exactly the register needed for a letter to an authority figure.',
       },
       {
         id: 'y10-p1-m8-q4',
         question: 'What should the opening paragraph of a formal letter do?',
         options: [
           'Tell a personal anecdote to build rapport',
-          'State your purpose clearly — who you are and why you are writing',
+          'State your purpose clearly - who you are and why you are writing',
           'Ask the recipient how they are doing',
           'List all the points you intend to make',
         ],
         correct: 1,
-        explanation: 'The opening paragraph of a formal letter should be direct and purposeful: state who you are and why you are writing. This immediately orientates the reader and demonstrates the clear, professional communication that AO4 rewards.',
+        explanation:
+          'The opening paragraph of a formal letter should be direct and purposeful: state who you are and why you are writing. This immediately orientates the reader and demonstrates the clear, professional communication that AO4 rewards.',
       },
       {
         id: 'y10-p1-m8-q5',
@@ -1266,27 +1308,28 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Formal letters use no persuasive techniques at all',
           'Informal letters cannot include evidence or reasoning',
           'Formal letters rely on logic and evidence; informal letters can use humour, personal stories, and direct emotional appeals',
-          'There is no difference — both use the same techniques',
+          'There is no difference - both use the same techniques',
         ],
         correct: 2,
-        explanation: 'Formal letters persuade through reasoned argument, evidence, and measured language. Informal letters can be more personal, using humour, anecdotes, exaggeration, and direct emotional appeals. Both can be persuasive, but the methods differ based on register and audience.',
+        explanation:
+          'Formal letters persuade through reasoned argument, evidence, and measured language. Informal letters can be more personal, using humour, anecdotes, exaggeration, and direct emotional appeals. Both can be persuasive, but the methods differ based on register and audience.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 9 — Transactional Writing: Reports and Reviews
+  // MODULE 9 - Transactional Writing: Reports and Reviews
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m9',
-    title: 'Transactional Writing — Reports and Reviews',
+    title: 'Transactional Writing - Reports and Reviews',
     duration: '50 min',
     content: `
 <h2>Writing Reports and Reviews for Paper 1 Section B</h2>
 
 <p>Reports and reviews are less commonly set than articles, speeches, and letters, but they do appear on Paper 1 and you must be prepared for them. Both forms have distinct conventions that differentiate them from other transactional writing types. Demonstrating awareness of these conventions is essential for scoring well under AO4, which rewards appropriate use of form, audience, and purpose.</p>
 
-<div class="key-term"><strong>Key Term: Report</strong> — A formal, structured document that presents information, findings, or recommendations on a specific topic. Reports are typically written for an authority figure (headteacher, school governors, council) and use a clear, objective tone. They often include subheadings to organise content logically.</div>
+<div class="key-term"><strong>Key Term: Report</strong> - A formal, structured document that presents information, findings, or recommendations on a specific topic. Reports are typically written for an authority figure (headteacher, school governors, council) and use a clear, objective tone. They often include subheadings to organise content logically.</div>
 
 <h3>Report Writing Conventions</h3>
 
@@ -1305,7 +1348,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 <p>A well-structured exam report might follow this plan:</p>
 
 <ol>
-  <li><strong>Title:</strong> "Report on [Topic] — Prepared for [Audience]"</li>
+  <li><strong>Title:</strong> "Report on [Topic] - Prepared for [Audience]"</li>
   <li><strong>Introduction:</strong> State the purpose and scope of the report. "This report examines the impact of... and makes recommendations for..."</li>
   <li><strong>Findings / Current Situation:</strong> Present the evidence or observations. Use subheadings if covering multiple aspects.</li>
   <li><strong>Analysis / Discussion:</strong> Interpret the findings. What do they mean? Why do they matter?</li>
@@ -1326,7 +1369,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
   <li><strong>Quantify where possible:</strong> "A significant majority of students (estimated at 75%) expressed dissatisfaction." Numbers and proportions add authority to a report.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Review</strong> — A critical evaluation of a product, event, performance, or experience. Reviews combine description (what happened) with evaluation (was it good, bad, or mixed?). They are written for a general audience and typically appear in newspapers, magazines, or online platforms. A review should balance objective assessment with personal response.</div>
+<div class="key-term"><strong>Key Term: Review</strong> - A critical evaluation of a product, event, performance, or experience. Reviews combine description (what happened) with evaluation (was it good, bad, or mixed?). They are written for a general audience and typically appear in newspapers, magazines, or online platforms. A review should balance objective assessment with personal response.</div>
 
 <h3>Review Writing Conventions</h3>
 
@@ -1334,7 +1377,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <ul>
   <li><strong>A headline or title:</strong> Similar to an article. Reviews often have engaging titles that hint at the verdict: "A Night to Remember at the Royal Theatre" or "More Hype Than Substance: The New Riverside Cafe."</li>
-  <li><strong>Context and description:</strong> Describe what you are reviewing — what it is, where it is, what happened. Give the reader enough information to understand the subject.</li>
+  <li><strong>Context and description:</strong> Describe what you are reviewing - what it is, where it is, what happened. Give the reader enough information to understand the subject.</li>
   <li><strong>Evaluation with evidence:</strong> Do not simply say "it was good" or "it was bad." Explain why, with specific examples: "The lead actor's portrayal of Macbeth was electrifying, particularly in the banquet scene where his mounting paranoia was conveyed through increasingly erratic gestures."</li>
   <li><strong>Balanced assessment:</strong> Even a positive review should acknowledge weaknesses, and a negative review should note positives. This shows critical maturity.</li>
   <li><strong>Personal voice:</strong> Unlike reports, reviews are expected to contain personal opinion and a distinctive voice. First person is entirely appropriate.</li>
@@ -1360,21 +1403,22 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 <p>A well-structured review for the exam might follow this plan:</p>
 
 <ol>
-  <li><strong>Opening paragraph:</strong> Set the scene — what are you reviewing, where, and when? Hook the reader with an engaging first impression.</li>
-  <li><strong>Paragraph 2:</strong> Describe the highlights — what worked well? Use specific, vivid details and evaluative vocabulary.</li>
+  <li><strong>Opening paragraph:</strong> Set the scene - what are you reviewing, where, and when? Hook the reader with an engaging first impression.</li>
+  <li><strong>Paragraph 2:</strong> Describe the highlights - what worked well? Use specific, vivid details and evaluative vocabulary.</li>
   <li><strong>Paragraph 3:</strong> Discuss any weaknesses or areas for improvement. Be specific and fair.</li>
-  <li><strong>Paragraph 4:</strong> Overall assessment — how does the whole experience come together? Is it worth the price, the time, the visit?</li>
+  <li><strong>Paragraph 4:</strong> Overall assessment - how does the whole experience come together? Is it worth the price, the time, the visit?</li>
   <li><strong>Closing:</strong> Final verdict and recommendation. Would you recommend it? To whom? End with a memorable concluding line.</li>
 </ol>
 
 <h3>When to Choose a Report or Review</h3>
 
-<p>If Section B offers a choice between a report/review and another form (article, speech, letter), consider your strengths. Reports suit students who are strong at formal, structured writing with clear organisation. Reviews suit students who have a strong personal voice and can write vivid descriptive evaluation. Both forms can earn full marks — the key is demonstrating clear form awareness through the conventions outlined above.</p>
+<p>If Section B offers a choice between a report/review and another form (article, speech, letter), consider your strengths. Reports suit students who are strong at formal, structured writing with clear organisation. Reviews suit students who have a strong personal voice and can write vivid descriptive evaluation. Both forms can earn full marks - the key is demonstrating clear form awareness through the conventions outlined above.</p>
 `,
     quiz: [
       {
         id: 'y10-p1-m9-q1',
-        question: 'What is the most important form feature that distinguishes a report from an essay?',
+        question:
+          'What is the most important form feature that distinguishes a report from an essay?',
         options: [
           'Using the first person throughout',
           'Including persuasive techniques like rhetorical questions',
@@ -1382,7 +1426,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Writing a headline at the top',
         ],
         correct: 2,
-        explanation: 'Subheadings are the single most distinctive convention of report writing. They organise content into logical sections (Introduction, Findings, Recommendations, Conclusion) and immediately signal to the examiner that you understand the form. A report without subheadings reads like a generic essay.',
+        explanation:
+          'Subheadings are the single most distinctive convention of report writing. They organise content into logical sections (Introduction, Findings, Recommendations, Conclusion) and immediately signal to the examiner that you understand the form. A report without subheadings reads like a generic essay.',
       },
       {
         id: 'y10-p1-m9-q2',
@@ -1394,7 +1439,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Personal and anecdotal',
         ],
         correct: 2,
-        explanation: 'Reports use a formal, objective tone that presents evidence and findings without excessive emotion. Language should be measured and balanced, using hedging phrases ("It appears that...") and passive constructions ("It was observed that...") to maintain objectivity.',
+        explanation:
+          'Reports use a formal, objective tone that presents evidence and findings without excessive emotion. Language should be measured and balanced, using hedging phrases ("It appears that...") and passive constructions ("It was observed that...") to maintain objectivity.',
       },
       {
         id: 'y10-p1-m9-q3',
@@ -1406,7 +1452,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'There is no meaningful difference between the two forms',
         ],
         correct: 1,
-        explanation: 'Reviews are evaluative and personal — they describe an experience, assess its quality, and give a verdict using the reviewer\'s own voice. Reports are formal and objective — they present evidence, analyse findings, and make practical recommendations. The forms have fundamentally different purposes and conventions.',
+        explanation:
+          "Reviews are evaluative and personal - they describe an experience, assess its quality, and give a verdict using the reviewer's own voice. Reports are formal and objective - they present evidence, analyse findings, and make practical recommendations. The forms have fundamentally different purposes and conventions.",
       },
       {
         id: 'y10-p1-m9-q4',
@@ -1418,7 +1465,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           '"The canteen is a disaster zone and the school should be ashamed"',
         ],
         correct: 1,
-        explanation: 'Report language should be formal, measured, and evidence-based. "Evidence suggests that..." uses hedging language and avoids personal emotion. The other options are too subjective, informal, or emotionally charged for a report\'s objective register.',
+        explanation:
+          'Report language should be formal, measured, and evidence-based. "Evidence suggests that..." uses hedging language and avoids personal emotion. The other options are too subjective, informal, or emotionally charged for a report\'s objective register.',
       },
       {
         id: 'y10-p1-m9-q5',
@@ -1426,17 +1474,18 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
         options: [
           'A bibliography of sources consulted',
           'A list of recommendations for improvement',
-          'A clear verdict and recommendation — whether you would recommend the subject of the review',
+          'A clear verdict and recommendation - whether you would recommend the subject of the review',
           'A formal sign-off like "Yours faithfully"',
         ],
         correct: 2,
-        explanation: 'A review should conclude with a clear verdict: do you recommend this experience, product, or event? To whom? The reader should finish your review knowing exactly where you stand. This decisive conclusion is a key convention of the review form.',
+        explanation:
+          'A review should conclude with a clear verdict: do you recommend this experience, product, or event? To whom? The reader should finish your review knowing exactly where you stand. This decisive conclusion is a key convention of the review form.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 10 — Planning and Structuring Transactional Writing
+  // MODULE 10 - Planning and Structuring Transactional Writing
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m10',
@@ -1445,38 +1494,38 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
     content: `
 <h2>How to Plan and Structure a High-Scoring Section B Response</h2>
 
-<p>Planning is the most underused skill in the exam. Students frequently dive straight into writing without a plan, only to run out of ideas by the third paragraph, repeat themselves, or lose their thread entirely. A <strong>five-minute plan</strong> invested before writing will save you time, improve your structure, and ultimately earn you more marks. The Edexcel mark scheme under AO4 explicitly rewards "effective structural and grammatical features" and "a well-organised sequence of ideas" — and both require planning.</p>
+<p>Planning is the most underused skill in the exam. Students frequently dive straight into writing without a plan, only to run out of ideas by the third paragraph, repeat themselves, or lose their thread entirely. A <strong>five-minute plan</strong> invested before writing will save you time, improve your structure, and ultimately earn you more marks. The Edexcel mark scheme under AO4 explicitly rewards "effective structural and grammatical features" and "a well-organised sequence of ideas" - and both require planning.</p>
 
-<div class="key-term"><strong>Key Term: Discourse Markers</strong> — Words and phrases that guide the reader through your argument by signalling the relationship between ideas. Examples include "Furthermore," "However," "In contrast," "Consequently," "Crucially," and "On the other hand." Effective use of discourse markers is a hallmark of well-structured transactional writing.</div>
+<div class="key-term"><strong>Key Term: Discourse Markers</strong> - Words and phrases that guide the reader through your argument by signalling the relationship between ideas. Examples include "Furthermore," "However," "In contrast," "Consequently," "Crucially," and "On the other hand." Effective use of discourse markers is a hallmark of well-structured transactional writing.</div>
 
 <h3>The Five-Minute Planning Method</h3>
 
 <p>Here is a step-by-step planning method that works for any transactional writing task:</p>
 
 <ol>
-  <li><strong>Minute 1 — Read and decode the task:</strong> Identify the <strong>form</strong> (article, speech, letter, report), the <strong>audience</strong> (who are you writing for?), and the <strong>purpose</strong> (are you arguing, persuading, advising, or informing?). Underline the key words in the task.</li>
-  <li><strong>Minute 2 — Decide your angle:</strong> What is your main argument or viewpoint? You need a clear, consistent position that runs through the entire piece. Do not sit on the fence — take a strong stance.</li>
-  <li><strong>Minute 3 — Brainstorm five to six points:</strong> Jot down five to six arguments, reasons, or ideas that support your position. Do not worry about order yet — just get ideas onto paper.</li>
-  <li><strong>Minute 4 — Select and order:</strong> Choose your four or five strongest points and arrange them in a logical sequence. Consider which point is strongest (save it for the middle or end), which provides a natural opening, and where to place a counter-argument.</li>
-  <li><strong>Minute 5 — Plan your opening and closing:</strong> Decide how you will begin (bold statement, question, anecdote, statistic) and how you will end (call to action, return to opening image, powerful final statement). These bookend your piece and create the strongest impression.</li>
+  <li><strong>Minute 1 - Read and decode the task:</strong> Identify the <strong>form</strong> (article, speech, letter, report), the <strong>audience</strong> (who are you writing for?), and the <strong>purpose</strong> (are you arguing, persuading, advising, or informing?). Underline the key words in the task.</li>
+  <li><strong>Minute 2 - Decide your angle:</strong> What is your main argument or viewpoint? You need a clear, consistent position that runs through the entire piece. Do not sit on the fence - take a strong stance.</li>
+  <li><strong>Minute 3 - Brainstorm five to six points:</strong> Jot down five to six arguments, reasons, or ideas that support your position. Do not worry about order yet - just get ideas onto paper.</li>
+  <li><strong>Minute 4 - Select and order:</strong> Choose your four or five strongest points and arrange them in a logical sequence. Consider which point is strongest (save it for the middle or end), which provides a natural opening, and where to place a counter-argument.</li>
+  <li><strong>Minute 5 - Plan your opening and closing:</strong> Decide how you will begin (bold statement, question, anecdote, statistic) and how you will end (call to action, return to opening image, powerful final statement). These bookend your piece and create the strongest impression.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Your plan does not need to be neat or detailed. It is a working document — a quick list of numbered points with a note about your opening and closing strategy. The examiner will not mark your plan, but the effect of having one will be visible in the quality and structure of your response. Students who plan almost always produce better-structured, higher-scoring answers than those who do not.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Your plan does not need to be neat or detailed. It is a working document - a quick list of numbered points with a note about your opening and closing strategy. The examiner will not mark your plan, but the effect of having one will be visible in the quality and structure of your response. Students who plan almost always produce better-structured, higher-scoring answers than those who do not.</div>
 
 <h3>Paragraph Structure: The PEEL Framework</h3>
 
 <p>Each body paragraph in your transactional writing should follow a clear internal structure. The PEEL framework is effective:</p>
 
 <ul>
-  <li><strong>P — Point:</strong> State your argument or idea clearly in the opening sentence of the paragraph. This is your topic sentence.</li>
-  <li><strong>E — Evidence/Example:</strong> Support your point with evidence, an example, a statistic, an expert opinion, or a brief anecdote. This gives your argument credibility.</li>
-  <li><strong>E — Explanation:</strong> Explain why your evidence matters and how it supports your point. Do not leave evidence to speak for itself — develop and interpret it.</li>
-  <li><strong>L — Link:</strong> Link back to your overall argument or forward to the next paragraph. This maintains coherence and flow.</li>
+  <li><strong>P - Point:</strong> State your argument or idea clearly in the opening sentence of the paragraph. This is your topic sentence.</li>
+  <li><strong>E - Evidence/Example:</strong> Support your point with evidence, an example, a statistic, an expert opinion, or a brief anecdote. This gives your argument credibility.</li>
+  <li><strong>E - Explanation:</strong> Explain why your evidence matters and how it supports your point. Do not leave evidence to speak for itself - develop and interpret it.</li>
+  <li><strong>L - Link:</strong> Link back to your overall argument or forward to the next paragraph. This maintains coherence and flow.</li>
 </ul>
 
 <h3>Creating Cohesion Between Paragraphs</h3>
 
-<p>A well-structured response does not just have good individual paragraphs — it has smooth transitions between them. Here are strategies for creating cohesion:</p>
+<p>A well-structured response does not just have good individual paragraphs - it has smooth transitions between them. Here are strategies for creating cohesion:</p>
 
 <ul>
   <li><strong>Use discourse markers at paragraph openings:</strong> "Furthermore..." "However..." "Equally important is..." "Perhaps most significantly..."</li>
@@ -1487,7 +1536,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <h3>The Art of the Counter-Argument</h3>
 
-<p>Including a counter-argument and rebuttal is one of the most effective ways to push your writing into the top bands. It demonstrates intellectual maturity and shows the examiner you can engage with complexity. Position your counter-argument strategically — typically in the third or fourth paragraph, after you have established your main arguments.</p>
+<p>Including a counter-argument and rebuttal is one of the most effective ways to push your writing into the top bands. It demonstrates intellectual maturity and shows the examiner you can engage with complexity. Position your counter-argument strategically - typically in the third or fourth paragraph, after you have established your main arguments.</p>
 
 <p>A counter-argument paragraph follows this structure:</p>
 
@@ -1520,27 +1569,28 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
   <li><strong>Call to action:</strong> Tell the reader what to do. "Write to your MP. Sign the petition. Make your voice heard."</li>
   <li><strong>Circular structure:</strong> Return to the image, anecdote, or idea from your opening. This creates a satisfying sense of completeness.</li>
   <li><strong>Final powerful statement:</strong> A short, decisive sentence that encapsulates your argument. "The time for debate is over. The time for action is now."</li>
-  <li><strong>Provocative question:</strong> Leave the reader thinking. "The question is not whether we can afford to make this change — it is whether we can afford not to."</li>
+  <li><strong>Provocative question:</strong> Leave the reader thinking. "The question is not whether we can afford to make this change - it is whether we can afford not to."</li>
 </ul>
 
 <h3>How Long Should Your Response Be?</h3>
 
 <p>There is no strict word count for Section B, but aim for <strong>350 to 450 words</strong>. This is long enough to develop your arguments in depth but short enough to maintain quality throughout. A shorter, well-crafted piece will always outscore a longer, repetitive one. Quality over quantity is the guiding principle.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners can tell within the first two paragraphs whether a student has planned. Planned responses have a clear direction, each paragraph builds on the last, and the argument progresses logically toward a conclusion. Unplanned responses tend to repeat the same point, meander between ideas, and peter out rather than ending with impact. Invest five minutes in planning — it is the best use of your time.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners can tell within the first two paragraphs whether a student has planned. Planned responses have a clear direction, each paragraph builds on the last, and the argument progresses logically toward a conclusion. Unplanned responses tend to repeat the same point, meander between ideas, and peter out rather than ending with impact. Invest five minutes in planning - it is the best use of your time.</div>
 `,
     quiz: [
       {
         id: 'y10-p1-m10-q1',
         question: 'How long should you spend planning your Section B response?',
         options: [
-          'No time — planning wastes valuable writing time',
+          'No time - planning wastes valuable writing time',
           'About 5 minutes',
           'About 15 minutes',
           'About 20 minutes',
         ],
         correct: 1,
-        explanation: 'Five minutes of planning is optimal. It is long enough to decode the task, brainstorm ideas, order your points, and plan your opening and closing. This small investment dramatically improves structure and coherence, which are directly rewarded under AO4.',
+        explanation:
+          'Five minutes of planning is optimal. It is long enough to decode the task, brainstorm ideas, order your points, and plan your opening and closing. This small investment dramatically improves structure and coherence, which are directly rewarded under AO4.',
       },
       {
         id: 'y10-p1-m10-q2',
@@ -1552,7 +1602,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Plan, Execute, Evaluate, Learn',
         ],
         correct: 1,
-        explanation: 'PEEL stands for Point (state your argument), Evidence (support with an example or fact), Explanation (develop and interpret), and Link (connect to your overall argument or the next paragraph). This framework ensures each paragraph is purposeful and well-developed.',
+        explanation:
+          'PEEL stands for Point (state your argument), Evidence (support with an example or fact), Explanation (develop and interpret), and Link (connect to your overall argument or the next paragraph). This framework ensures each paragraph is purposeful and well-developed.',
       },
       {
         id: 'y10-p1-m10-q3',
@@ -1564,7 +1615,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'To make your piece longer',
         ],
         correct: 2,
-        explanation: 'Including a counter-argument and rebuttal demonstrates that you have considered multiple perspectives and can argue effectively against them. It shows intellectual maturity and strengthens your own position by proving it withstands scrutiny — a key feature of top-band writing.',
+        explanation:
+          'Including a counter-argument and rebuttal demonstrates that you have considered multiple perspectives and can argue effectively against them. It shows intellectual maturity and strengthens your own position by proving it withstands scrutiny - a key feature of top-band writing.',
       },
       {
         id: 'y10-p1-m10-q4',
@@ -1576,36 +1628,33 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Organising paragraphs in order of importance',
         ],
         correct: 2,
-        explanation: 'A circular structure means ending your piece by returning to the image, anecdote, or idea from your opening. This creates a satisfying sense of completeness and demonstrates sophisticated structural planning — a feature examiners reward under AO4.',
+        explanation:
+          'A circular structure means ending your piece by returning to the image, anecdote, or idea from your opening. This creates a satisfying sense of completeness and demonstrates sophisticated structural planning - a feature examiners reward under AO4.',
       },
       {
         id: 'y10-p1-m10-q5',
         question: 'Approximately how many words should your Section B response be?',
-        options: [
-          '150 to 200 words',
-          '250 to 300 words',
-          '350 to 450 words',
-          '600 to 800 words',
-        ],
+        options: ['150 to 200 words', '250 to 300 words', '350 to 450 words', '600 to 800 words'],
         correct: 2,
-        explanation: 'Aim for 350 to 450 words. This is long enough to develop four to five substantial paragraphs with depth, but short enough to maintain quality and accuracy throughout. A shorter, well-crafted response always outscores a longer, repetitive one.',
+        explanation:
+          'Aim for 350 to 450 words. This is long enough to develop four to five substantial paragraphs with depth, but short enough to maintain quality and accuracy throughout. A shorter, well-crafted response always outscores a longer, repetitive one.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 11 — SPAG and Accuracy: Maximising Marks
+  // MODULE 11 - SPAG and Accuracy: Maximising Marks
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m11',
-    title: 'SPAG and Accuracy — Maximising Marks',
+    title: 'SPAG and Accuracy - Maximising Marks',
     duration: '50 min',
     content: `
 <h2>Spelling, Punctuation, and Grammar: The 18 Marks That Make the Difference</h2>
 
-<p>AO5 is worth <strong>18 marks</strong> in Section B — that is 20% of the entire Paper 1 mark. Many students focus all their preparation on content and argumentation (AO4) and neglect the technical accuracy that AO5 rewards. This is a costly error, because AO5 marks are among the easiest to improve with targeted practice. Unlike AO4 (which requires creative and argumentative flair), AO5 rewards learnable, practisable skills: correct spelling, varied punctuation, controlled grammar, and a range of sentence structures.</p>
+<p>AO5 is worth <strong>18 marks</strong> in Section B - that is 20% of the entire Paper 1 mark. Many students focus all their preparation on content and argumentation (AO4) and neglect the technical accuracy that AO5 rewards. This is a costly error, because AO5 marks are among the easiest to improve with targeted practice. Unlike AO4 (which requires creative and argumentative flair), AO5 rewards learnable, practisable skills: correct spelling, varied punctuation, controlled grammar, and a range of sentence structures.</p>
 
-<div class="key-term"><strong>Key Term: AO5 — Spelling, Punctuation, and Grammar (SPAG)</strong> — This Assessment Objective rewards technical accuracy in writing. It assesses: the range and accuracy of sentence structures, correct and varied punctuation, accurate spelling (including ambitious vocabulary), and grammatical control (including tense consistency, subject-verb agreement, and correct use of homophones).</div>
+<div class="key-term"><strong>Key Term: AO5 - Spelling, Punctuation, and Grammar (SPAG)</strong> - This Assessment Objective rewards technical accuracy in writing. It assesses: the range and accuracy of sentence structures, correct and varied punctuation, accurate spelling (including ambitious vocabulary), and grammatical control (including tense consistency, subject-verb agreement, and correct use of homophones).</div>
 
 <h3>The AO5 Mark Bands</h3>
 
@@ -1640,9 +1689,9 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <h4>Minor Sentences (Fragments for Effect)</h4>
 <p>Deliberately incomplete sentences used for dramatic impact.</p>
-<p><strong>Example:</strong> "Enough." "Not any more." "A generation failed." These must be used sparingly and deliberately — not as evidence of poor grammar.</p>
+<p><strong>Example:</strong> "Enough." "Not any more." "A generation failed." These must be used sparingly and deliberately - not as evidence of poor grammar.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Consciously vary your sentence structures as you write. A paragraph that begins with a complex sentence, moves to a compound sentence, includes a simple sentence for emphasis, and ends with another complex sentence demonstrates the range the mark scheme rewards. Read your work aloud — if every sentence sounds the same length and rhythm, you need more variety.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Consciously vary your sentence structures as you write. A paragraph that begins with a complex sentence, moves to a compound sentence, includes a simple sentence for emphasis, and ends with another complex sentence demonstrates the range the mark scheme rewards. Read your work aloud - if every sentence sounds the same length and rhythm, you need more variety.</div>
 
 <h3>Punctuation: Beyond Full Stops and Commas</h3>
 
@@ -1659,7 +1708,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <h4>Dashes</h4>
 <p>Use dashes for parenthetical information or dramatic emphasis.</p>
-<p><strong>Correct:</strong> "The new policy — which was introduced without consultation — has caused widespread frustration."</p>
+<p><strong>Correct:</strong> "The new policy - which was introduced without consultation - has caused widespread frustration."</p>
 
 <h4>Parenthetical Commas</h4>
 <p>Use commas in pairs to embed additional information within a sentence.</p>
@@ -1668,7 +1717,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 <h4>Apostrophes</h4>
 <p>Use for possession (the student's work, the students' opinions) and contractions (don't, it's). The most common error is confusing "its" (possessive) with "it's" (contraction of "it is").</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Using commas where semicolons or full stops are needed. This error — called a "comma splice" — is one of the most frequent in student writing. Incorrect: "The weather was terrible, we decided to stay inside." Correct: "The weather was terrible; we decided to stay inside" or "The weather was terrible, so we decided to stay inside."</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Using commas where semicolons or full stops are needed. This error - called a "comma splice" - is one of the most frequent in student writing. Incorrect: "The weather was terrible, we decided to stay inside." Correct: "The weather was terrible; we decided to stay inside" or "The weather was terrible, so we decided to stay inside."</div>
 
 <h3>Spelling: Common Errors to Eliminate</h3>
 
@@ -1685,7 +1734,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <ul>
   <li><strong>Tense consistency:</strong> If you begin in the present tense, stay in the present tense unless you have a clear reason to shift (e.g. referencing a past event).</li>
-  <li><strong>Subject-verb agreement:</strong> "The problem of rising costs is..." (not "are") — the subject is "problem" (singular), not "costs."</li>
+  <li><strong>Subject-verb agreement:</strong> "The problem of rising costs is..." (not "are") - the subject is "problem" (singular), not "costs."</li>
   <li><strong>Pronoun clarity:</strong> Make sure pronouns clearly refer to a specific noun. Avoid ambiguous "it" or "they" without a clear antecedent.</li>
   <li><strong>Sentence boundaries:</strong> Each sentence must have a subject and a main verb. Avoid run-on sentences and comma splices.</li>
 </ul>
@@ -1695,12 +1744,12 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 <p>Reserve the last five minutes of the exam for proofreading. Read through your writing three times, each time looking for a different type of error:</p>
 
 <ol>
-  <li><strong>First read — Spelling:</strong> Focus specifically on spelling. Check homophones, double letters, and any words you are unsure about.</li>
-  <li><strong>Second read — Punctuation:</strong> Check that every sentence ends with a full stop, question mark, or exclamation mark. Check comma splices. Verify apostrophes.</li>
-  <li><strong>Third read — Sense:</strong> Read each sentence to make sure it makes grammatical sense. Check for missing words, repeated words, and tense shifts.</li>
+  <li><strong>First read - Spelling:</strong> Focus specifically on spelling. Check homophones, double letters, and any words you are unsure about.</li>
+  <li><strong>Second read - Punctuation:</strong> Check that every sentence ends with a full stop, question mark, or exclamation mark. Check comma splices. Verify apostrophes.</li>
+  <li><strong>Third read - Sense:</strong> Read each sentence to make sure it makes grammatical sense. Check for missing words, repeated words, and tense shifts.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If you find a spelling error during proofreading, cross it out neatly with a single line and write the correct spelling above or beside it. Do not use correction fluid. A neatly corrected error is always better than an uncorrected one — and it shows the examiner you are a self-aware, careful writer.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> If you find a spelling error during proofreading, cross it out neatly with a single line and write the correct spelling above or beside it. Do not use correction fluid. A neatly corrected error is always better than an uncorrected one - and it shows the examiner you are a self-aware, careful writer.</div>
 `,
     quiz: [
       {
@@ -1708,7 +1757,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
         question: 'How many marks is AO5 (SPAG) worth in Section B?',
         options: ['9 marks', '12 marks', '18 marks', '27 marks'],
         correct: 2,
-        explanation: 'AO5 is worth 18 marks in Section B, accounting for 20% of the entire Paper 1 mark. This is a significant proportion and the marks are highly improvable through practice — making SPAG preparation one of the most efficient uses of revision time.',
+        explanation:
+          'AO5 is worth 18 marks in Section B, accounting for 20% of the entire Paper 1 mark. This is a significant proportion and the marks are highly improvable through practice - making SPAG preparation one of the most efficient uses of revision time.',
       },
       {
         id: 'y10-p1-m11-q2',
@@ -1720,7 +1770,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Using a comma instead of an apostrophe',
         ],
         correct: 1,
-        explanation: 'A comma splice occurs when two independent clauses (each capable of standing alone as a sentence) are joined with only a comma. For example: "The weather was terrible, we stayed inside." Correct this with a semicolon, a full stop, or a coordinating conjunction.',
+        explanation:
+          'A comma splice occurs when two independent clauses (each capable of standing alone as a sentence) are joined with only a comma. For example: "The weather was terrible, we stayed inside." Correct this with a semicolon, a full stop, or a coordinating conjunction.',
       },
       {
         id: 'y10-p1-m11-q3',
@@ -1732,37 +1783,36 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'After a greeting in a letter',
         ],
         correct: 1,
-        explanation: 'Semicolons join two closely related independent clauses without a conjunction. Both clauses must be capable of standing alone as sentences. For example: "The proposal has merit; its implementation, however, would require careful planning."',
+        explanation:
+          'Semicolons join two closely related independent clauses without a conjunction. Both clauses must be capable of standing alone as sentences. For example: "The proposal has merit; its implementation, however, would require careful planning."',
       },
       {
         id: 'y10-p1-m11-q4',
         question: 'Which spelling is correct?',
-        options: [
-          'definately',
-          'definatly',
-          'definitely',
-          'definetly',
-        ],
+        options: ['definately', 'definatly', 'definitely', 'definetly'],
         correct: 2,
-        explanation: '"Definitely" is the correct spelling. This is one of the most commonly misspelled words in student writing. Remember: it comes from "definite" — there is no "a" in the word.',
+        explanation:
+          '"Definitely" is the correct spelling. This is one of the most commonly misspelled words in student writing. Remember: it comes from "definite" - there is no "a" in the word.',
       },
       {
         id: 'y10-p1-m11-q5',
-        question: 'What is the recommended proofreading strategy for the final five minutes of the exam?',
+        question:
+          'What is the recommended proofreading strategy for the final five minutes of the exam?',
         options: [
           'Read through once quickly and fix any obvious errors',
           'Read through three times, each time focusing on a different error type: spelling, punctuation, and grammar',
           'Only check the first and last paragraphs',
-          'Do not proofread — use the time to add more content',
+          'Do not proofread - use the time to add more content',
         ],
         correct: 1,
-        explanation: 'Three focused reads are more effective than one general read. The first read targets spelling (especially homophones and common errors), the second targets punctuation (sentence endings, commas, apostrophes), and the third checks grammar and sense. This systematic approach catches more errors.',
+        explanation:
+          'Three focused reads are more effective than one general read. The first read targets spelling (especially homophones and common errors), the second targets punctuation (sentence endings, commas, apostrophes), and the third checks grammar and sense. This systematic approach catches more errors.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 12 — Full Paper Practice and Self-Assessment
+  // MODULE 12 - Full Paper Practice and Self-Assessment
   // ──────────────────────────────────────────────
   {
     id: 'y10-p1-m12',
@@ -1773,7 +1823,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <p>This final module consolidates everything you have learned across Modules 1 to 11 and focuses on the practical skill of sitting a full Paper 1 exam under timed conditions. The difference between knowing the material and performing under exam pressure is significant, and the only way to bridge that gap is through <strong>repeated timed practice</strong> followed by <strong>honest self-assessment</strong>. This module gives you the tools to practise effectively and assess your own work against the mark scheme criteria.</p>
 
-<div class="key-term"><strong>Key Term: Self-Assessment</strong> — The process of evaluating your own work against objective criteria (in this case, the Edexcel mark scheme). Self-assessment develops your ability to identify your own strengths and weaknesses, which is essential for targeted revision. It also deepens your understanding of what examiners are looking for, making you a more strategic writer.</div>
+<div class="key-term"><strong>Key Term: Self-Assessment</strong> - The process of evaluating your own work against objective criteria (in this case, the Edexcel mark scheme). Self-assessment develops your ability to identify your own strengths and weaknesses, which is essential for targeted revision. It also deepens your understanding of what examiners are looking for, making you a more strategic writer.</div>
 
 <h3>The Complete Paper 1 Timing Plan (Revised)</h3>
 
@@ -1782,11 +1832,11 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 <table>
   <tr><th>Time</th><th>Activity</th><th>Module Skills Applied</th></tr>
   <tr><td>0:00-0:05</td><td>Read both texts carefully, annotate key words</td><td>Module 2 (retrieval skills)</td></tr>
-  <tr><td>0:05-0:08</td><td>Q1 — Select two words/phrases (2 marks)</td><td>Module 2 (precision)</td></tr>
-  <tr><td>0:08-0:13</td><td>Q2 — Explain thoughts and feelings in own words (4 marks)</td><td>Module 2 (paraphrasing)</td></tr>
-  <tr><td>0:13-0:20</td><td>Q3 — Describe with brief quotations (5 marks)</td><td>Module 2 (embedded quotations)</td></tr>
-  <tr><td>0:20-0:35</td><td>Q4 — Analyse language and structure (12 marks)</td><td>Modules 3-4 (AO2 analysis)</td></tr>
-  <tr><td>0:35-1:05</td><td>Q5 — Compare writers' ideas and perspectives (22 marks)</td><td>Module 5 (AO3 comparison)</td></tr>
+  <tr><td>0:05-0:08</td><td>Q1 - Select two words/phrases (2 marks)</td><td>Module 2 (precision)</td></tr>
+  <tr><td>0:08-0:13</td><td>Q2 - Explain thoughts and feelings in own words (4 marks)</td><td>Module 2 (paraphrasing)</td></tr>
+  <tr><td>0:13-0:20</td><td>Q3 - Describe with brief quotations (5 marks)</td><td>Module 2 (embedded quotations)</td></tr>
+  <tr><td>0:20-0:35</td><td>Q4 - Analyse language and structure (12 marks)</td><td>Modules 3-4 (AO2 analysis)</td></tr>
+  <tr><td>0:35-1:05</td><td>Q5 - Compare writers' ideas and perspectives (22 marks)</td><td>Module 5 (AO3 comparison)</td></tr>
   <tr><td>1:05-1:10</td><td>Plan Section B response (5 minutes)</td><td>Module 10 (planning)</td></tr>
   <tr><td>1:10-2:05</td><td>Write Section B transactional piece</td><td>Modules 6-9 (form conventions), Module 11 (SPAG)</td></tr>
   <tr><td>2:05-2:15</td><td>Proofread entire paper</td><td>Module 11 (proofreading strategy)</td></tr>
@@ -1804,7 +1854,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
   <li><strong>Mark and assess your work the next day:</strong> Leave a gap between completing the paper and assessing it. You will be a more objective assessor with fresh eyes.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Aim to complete at least three full timed papers before the real exam. The first will feel rushed and stressful — that is normal. By the third, the timing plan will feel instinctive and your confidence will be significantly higher. Many students report that time management improves dramatically between their first and third practice papers.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Aim to complete at least three full timed papers before the real exam. The first will feel rushed and stressful - that is normal. By the third, the timing plan will feel instinctive and your confidence will be significantly higher. Many students report that time management improves dramatically between their first and third practice papers.</div>
 
 <h3>Self-Assessment Checklist: Section A (Reading)</h3>
 
@@ -1840,7 +1890,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
 
 <h3>Self-Assessment Checklist: Section B (Writing)</h3>
 
-<h4>AO4 — Communication and Organisation (27 marks)</h4>
+<h4>AO4 - Communication and Organisation (27 marks)</h4>
 <ul>
   <li>Did I follow the correct form conventions (headline, salutation, subheadings as appropriate)?</li>
   <li>Did I match my register and tone to the specified audience?</li>
@@ -1853,7 +1903,7 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
   <li>Did I plan before writing?</li>
 </ul>
 
-<h4>AO5 — Spelling, Punctuation, and Grammar (18 marks)</h4>
+<h4>AO5 - Spelling, Punctuation, and Grammar (18 marks)</h4>
 <ul>
   <li>Did I use a range of sentence structures (simple, compound, complex)?</li>
   <li>Did I use punctuation beyond full stops and commas (semicolons, colons, dashes)?</li>
@@ -1876,34 +1926,36 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
   <li><strong>Weakness: Lack of depth in analysis:</strong> Practise the "So what?" test from Module 4. After every analytical point, ask yourself: "Have I explained the specific effect? Have I explored connotations?"</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Students who complete practice papers but never self-assess them gain only half the benefit. The practice itself builds stamina and timing skills, but the self-assessment is what identifies weaknesses and drives improvement. Always mark your own work — ideally using the official Edexcel mark scheme or the band descriptors outlined in this course.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Students who complete practice papers but never self-assess them gain only half the benefit. The practice itself builds stamina and timing skills, but the self-assessment is what identifies weaknesses and drives improvement. Always mark your own work - ideally using the official Edexcel mark scheme or the band descriptors outlined in this course.</div>
 
 <h3>Final Exam Day Reminders</h3>
 
 <ol>
   <li><strong>Read both texts before answering any questions.</strong> A thorough first reading saves time and improves your answers.</li>
   <li><strong>Stick to the timing plan.</strong> Wear a watch. Check your progress at each stage.</li>
-  <li><strong>Answer every question.</strong> Do not leave any question blank — even a partial answer can earn marks.</li>
+  <li><strong>Answer every question.</strong> Do not leave any question blank - even a partial answer can earn marks.</li>
   <li><strong>In Section B, choose the task you feel most confident about.</strong> Do not choose the "harder" topic because you think it will impress the examiner. Choose the one where you can write with the most fluency and conviction.</li>
   <li><strong>Plan your Section B response.</strong> Five minutes of planning produces a better-structured piece and saves time in the long run.</li>
   <li><strong>Proofread.</strong> Reserve the last five to ten minutes for checking. Correct any errors neatly.</li>
   <li><strong>Write legibly.</strong> If the examiner cannot read your handwriting, they cannot award marks. If your handwriting is poor, slow down slightly and write more carefully.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The students who perform best on Paper 1 are not necessarily the most talented writers — they are the most prepared and strategic ones. They know the paper structure, they manage their time effectively, they hit the Assessment Objectives in every response, and they have practised enough to feel confident under pressure. Preparation and practice are the keys to exam success. Start timed practice papers early, self-assess honestly, and target your weaknesses. That is how top grades are earned.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The students who perform best on Paper 1 are not necessarily the most talented writers - they are the most prepared and strategic ones. They know the paper structure, they manage their time effectively, they hit the Assessment Objectives in every response, and they have practised enough to feel confident under pressure. Preparation and practice are the keys to exam success. Start timed practice papers early, self-assess honestly, and target your weaknesses. That is how top grades are earned.</div>
 `,
     quiz: [
       {
         id: 'y10-p1-m12-q1',
-        question: 'How many full timed practice papers should you aim to complete before the real exam?',
+        question:
+          'How many full timed practice papers should you aim to complete before the real exam?',
         options: [
           'One is sufficient',
           'At least three',
           'Ten or more',
-          'None — revising the content is enough',
+          'None - revising the content is enough',
         ],
         correct: 1,
-        explanation: 'At least three full timed papers are recommended. The first builds awareness of the time pressure, the second refines your timing strategy, and the third develops confidence and automaticity. Students consistently report significant improvement between their first and third practice papers.',
+        explanation:
+          'At least three full timed papers are recommended. The first builds awareness of the time pressure, the second refines your timing strategy, and the third develops confidence and automaticity. Students consistently report significant improvement between their first and third practice papers.',
       },
       {
         id: 'y10-p1-m12-q2',
@@ -1915,7 +1967,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'It allows you to give yourself a higher grade',
         ],
         correct: 1,
-        explanation: 'Self-assessment identifies your specific strengths and weaknesses, allowing you to focus revision where it will have the most impact. It also deepens your understanding of what examiners are looking for, making you a more strategic writer who can target Assessment Objectives consciously.',
+        explanation:
+          'Self-assessment identifies your specific strengths and weaknesses, allowing you to focus revision where it will have the most impact. It also deepens your understanding of what examiners are looking for, making you a more strategic writer who can target Assessment Objectives consciously.',
       },
       {
         id: 'y10-p1-m12-q3',
@@ -1927,7 +1980,8 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Write your Q5 answer first before the other questions',
         ],
         correct: 2,
-        explanation: 'Targeted practice is the solution. Practise Q5 in isolation with a strict 30-minute timer, using different text pairs. This builds your speed and confidence for the specific skills Q5 demands (comparison, dual-text quotation, comparative connectives) without the pressure of a full paper.',
+        explanation:
+          'Targeted practice is the solution. Practise Q5 in isolation with a strict 30-minute timer, using different text pairs. This builds your speed and confidence for the specific skills Q5 demands (comparison, dual-text quotation, comparative connectives) without the pressure of a full paper.',
       },
       {
         id: 'y10-p1-m12-q4',
@@ -1939,20 +1993,23 @@ I believe it is time for our school to take a stand. I believe mobile phones sho
           'Choose randomly',
         ],
         correct: 2,
-        explanation: 'Choose the task where you can write with the most fluency, conviction, and form awareness. If you are confident writing speeches but unsure about reports, choose the speech task. The examiner is not impressed by difficulty level — they reward quality of execution against the mark scheme.',
+        explanation:
+          'Choose the task where you can write with the most fluency, conviction, and form awareness. If you are confident writing speeches but unsure about reports, choose the speech task. The examiner is not impressed by difficulty level - they reward quality of execution against the mark scheme.',
       },
       {
         id: 'y10-p1-m12-q5',
-        question: 'What is the most common reason students underperform on Paper 1, according to examiner reports?',
+        question:
+          'What is the most common reason students underperform on Paper 1, according to examiner reports?',
         options: [
           'Not knowing enough about the texts',
           'Poor handwriting',
-          'Poor time management — spending too long on low-tariff questions and rushing high-tariff ones',
+          'Poor time management - spending too long on low-tariff questions and rushing high-tariff ones',
           'Not using enough technical terminology',
         ],
         correct: 2,
-        explanation: 'Examiner reports consistently identify poor time management as the most common reason for underperformance. Students spend too long on Q1-Q3 (worth only 11 marks combined) and then rush Q5 (worth 22 marks) and Section B (worth 45 marks). Strict adherence to the timing plan is essential.',
+        explanation:
+          'Examiner reports consistently identify poor time management as the most common reason for underperformance. Students spend too long on Q1-Q3 (worth only 11 marks combined) and then rush Q5 (worth 22 marks) and Section B (worth 45 marks). Strict adherence to the timing plan is essential.',
       },
     ],
   },
-];
+]

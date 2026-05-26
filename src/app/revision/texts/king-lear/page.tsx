@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'King Lear — Study Guide | The English Hub',
+    title: 'King Lear - Study Guide | The English Hub',
     description:
       'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'King Lear — Study Guide',
+  title: 'King Lear - Study Guide',
   description:
     'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -645,7 +645,7 @@ export default async function KingLearPage() {
   return (
     <>
       <CourseJsonLd
-        name="King Lear — Complete A-Level Study Guide"
+        name="King Lear - Complete A-Level Study Guide"
         description="In-depth study guide for King Lear covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
       />
       <BreadcrumbJsonLd

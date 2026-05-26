@@ -271,7 +271,7 @@ const themes = [
     keyQuotes: [
       "'She was young and pretty and warm-hearted - and intensely grateful'",
       "'I was in that state when a chap easily turns nasty'",
-      "'She'd had a lot to say — far too much — so she had to go'",
+      "'She'd had a lot to say - far too much - so she had to go'",
     ],
   },
   {

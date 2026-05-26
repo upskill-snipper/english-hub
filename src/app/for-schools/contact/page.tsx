@@ -156,7 +156,7 @@ const INITIAL_FORM: ContactForm = {
 }
 
 // ---------------------------------------------------------------------------
-// Side panel — Founding Schools info
+// Side panel - Founding Schools info
 // ---------------------------------------------------------------------------
 
 function FoundingSchoolsPanel() {
@@ -176,7 +176,7 @@ function FoundingSchoolsPanel() {
             <li className="flex items-start gap-3">
               <Gift className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">Free access until August 2026</span> —
+                <span className="font-medium text-foreground">Free access until August 2026</span> -
                 no payment required to get started
               </span>
             </li>
@@ -184,13 +184,13 @@ function FoundingSchoolsPanel() {
               <Users className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">Unlimited teachers and students</span>{' '}
-                — whole-department access on a single site license
+                - whole-department access on a single site license
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Shield className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">Locked-in founding pricing</span> —
+                <span className="font-medium text-foreground">Locked-in founding pricing</span> -
                 guaranteed best rate when the programme ends
               </span>
             </li>
@@ -198,13 +198,13 @@ function FoundingSchoolsPanel() {
               <Phone className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">Direct line to the product team</span>{' '}
-                — your feedback shapes the platform
+                - your feedback shapes the platform
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Clock className="h-4 w-4 mt-0.5 shrink-0 text-clay-600" />
               <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">Live within 48 hours</span> — we
+                <span className="font-medium text-foreground">Live within 48 hours</span> - we
                 handle onboarding and teacher training
               </span>
             </li>
@@ -218,7 +218,7 @@ function FoundingSchoolsPanel() {
               </span>
             </p>
             <p className="text-xs text-amber-700/90 font-medium">
-              First 10 schools only — additional schools welcome at Standard rates.
+              First 10 schools only - additional schools welcome at Standard rates.
             </p>
             <p className="text-[11px] text-amber-700">⚡ Prices increasing August 2026.</p>
           </div>

@@ -1,7 +1,7 @@
 /**
  * GET /api/me
  *
- * Unified profile endpoint — see
+ * Unified profile endpoint - see
  * english-hub-mobile/docs/API_SPEC.md §4.1.
  *
  * A single call returns everything the mobile client needs on app boot
@@ -30,7 +30,7 @@ export const runtime = 'nodejs'
 
 function ok<T>(data: T, init?: ResponseInit): NextResponse {
   const res = NextResponse.json({ ok: true, data }, init)
-  // Short cache — profile doesn't change often but entitlements do.
+  // Short cache - profile doesn't change often but entitlements do.
   // Mobile invalidates on foreground if background > 5 minutes.
   res.headers.set('Cache-Control', 'private, max-age=60')
   return res
@@ -46,7 +46,7 @@ function fail(code: string, message: string, status: number): NextResponse {
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
-    // ── Rate limit — 60/min per IP (API_SPEC.md §6). ───────────────
+    // ── Rate limit - 60/min per IP (API_SPEC.md §6). ───────────────
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`me:${ip}`, {
       limit: 60,
@@ -116,7 +116,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     // ── Brand-new user with no Prisma projection yet ───────────────
     //
     // We can still hydrate a minimal /me response from the Supabase
-    // session alone — the mobile client calls /auth/register on first
+    // session alone - the mobile client calls /auth/register on first
     // sign-in and the next /me hit will have the full row.
     if (!profile) {
       return ok({
@@ -138,9 +138,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     }
 
     // ── Entitlements + flags ───────────────────────────────────────
-    const [entitlements] = await Promise.all([
-      fetchUserEntitlement(prisma, profile.id),
-    ])
+    const [entitlements] = await Promise.all([fetchUserEntitlement(prisma, profile.id)])
 
     const flags = resolveFeatureFlags({
       analyticsEnabled: profile.privacySettings?.analyticsEnabled,

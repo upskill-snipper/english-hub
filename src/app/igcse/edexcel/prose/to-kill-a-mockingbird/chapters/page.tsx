@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird Chapter Analysis — Edexcel IGCSE Literature',
+    title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
     description:
       'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
   },
-  title: 'To Kill a Mockingbird Chapter Analysis — Edexcel IGCSE Literature',
+  title: 'To Kill a Mockingbird Chapter Analysis - Edexcel IGCSE Literature',
   description:
     'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
   alternates: {
@@ -937,8 +937,8 @@ export default async function TkamChaptersPage() {
             To Kill a Mockingbird: Chapters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Chapter-by-chapter analysis covering Part One (Chapters 1–11) and Part Two (Chapters
-            12–31). Each chapter includes a summary, key events, character development and three key
+            Chapter-by-chapter analysis covering Part One (Chapters 1-11) and Part Two (Chapters
+            12-31). Each chapter includes a summary, key events, character development and three key
             quotations with language analysis.
           </p>
         </div>
@@ -949,7 +949,7 @@ export default async function TkamChaptersPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing (CDPA 1988) for study and criticism.
@@ -963,7 +963,7 @@ export default async function TkamChaptersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Part One — Chapters 1–11</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Part One - Chapters 1-11</h2>
         </div>
         <div className="space-y-6">
           {chapters
@@ -1038,7 +1038,7 @@ export default async function TkamChaptersPage() {
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Part Two — Chapters 12–31
+            Part Two - Chapters 12-31
           </h2>
         </div>
         <div className="space-y-6">

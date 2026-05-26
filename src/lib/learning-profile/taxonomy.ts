@@ -17,7 +17,7 @@
 
 // ─── Vocabulary ────────────────────────────────────────────────────────
 
-/** Broad competency strand — how the dashboard groups the profile. */
+/** Broad competency strand - how the dashboard groups the profile. */
 export type Strand =
   | 'vocabulary'
   | 'grammar'
@@ -27,7 +27,7 @@ export type Strand =
   | 'writing'
   | 'literature'
 
-/** Fine-grained skill — what a single game actually trains. */
+/** Fine-grained skill - what a single game actually trains. */
 export type Skill =
   // vocabulary
   | 'everyday-vocabulary'
@@ -514,7 +514,7 @@ export function allGameTaxa(): GameTaxon[] {
   return TAXA.slice()
 }
 
-/** Other games that train the same skill — used for "what to play next". */
+/** Other games that train the same skill - used for "what to play next". */
 export function gamesForSkill(skill: Skill, excludeSlug?: string): GameTaxon[] {
   return TAXA.filter((t) => t.skill === skill && t.slug !== excludeSlug)
 }

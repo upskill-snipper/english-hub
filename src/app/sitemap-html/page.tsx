@@ -8,7 +8,7 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Sitemap — The English Hub',
+    title: 'Sitemap - The English Hub',
     description:
       'Every page on The English Hub, organised by section. Use this to find anything: revision hubs, set texts, exam boards, resources.',
   },

@@ -299,7 +299,7 @@ const LESSONS: Record<string, LessonData> = {
       'Create a revision flashcard set for 8 key structural and language terms covered in this lesson. Each card should include: term, definition, example from a poem.',
     ],
     extensionTasks: [
-      'Research the biographical context of Wilfred Owen and Ted Hughes. Note the crucial difference: Owen served in WWI as an officer and wrote from direct experience, whereas Hughes was born in 1930 and never fought — he drew on his father William\'s WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine combat. How might Owen\'s direct experience and Hughes\'s second-hand imagining have influenced the structural choices in "Exposure" and "Bayonet Charge"?',
+      'Research the biographical context of Wilfred Owen and Ted Hughes. Note the crucial difference: Owen served in WWI as an officer and wrote from direct experience, whereas Hughes was born in 1930 and never fought - he drew on his father William\'s WWI accounts (William survived Gallipoli as one of only seventeen survivors of his Lancashire Fusiliers regiment) to imagine combat. How might Owen\'s direct experience and Hughes\'s second-hand imagining have influenced the structural choices in "Exposure" and "Bayonet Charge"?',
       'Write a full comparative essay (3 paragraphs) comparing the presentation of conflict in the two poems, addressing structure, language, and tone.',
     ],
     assessmentCriteria: [

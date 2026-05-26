@@ -4,12 +4,12 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Our traction — in the open | The English Hub',
+    title: 'Our traction - in the open | The English Hub',
     description:
       'Live public metrics for The English Hub: monthly active users, paying students, and total essays marked. Published as a trust artefact for investors, partners, and school buyers.',
   },
   alternates: { canonical: 'https://theenglishhub.app/growth' },
-  title: 'Our traction — in the open',
+  title: 'Our traction - in the open',
   description:
     'Live public metrics for The English Hub: monthly active users, paying students, and total essays marked. Published as a trust artefact for investors, partners, and school buyers.',
 }
@@ -27,7 +27,7 @@ type GrowthStats = {
 async function getGrowthStats(): Promise<GrowthStats> {
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
 
-  // Monthly Active Users — any User with a login in the last 30 days.
+  // Monthly Active Users - any User with a login in the last 30 days.
   const mauPromise = prisma.user.count({
     where: {
       lastLoginAt: { gte: thirtyDaysAgo },
@@ -35,7 +35,7 @@ async function getGrowthStats(): Promise<GrowthStats> {
     },
   })
 
-  // Paying students — ACTIVE subscriptions that are NOT teacher plans and
+  // Paying students - ACTIVE subscriptions that are NOT teacher plans and
   // NOT attached to a reviewer/internal account. Reviewer accounts are
   // excluded via a conservative email-domain filter; adjust if the
   // diligence reviewer list lives elsewhere.
@@ -50,7 +50,7 @@ async function getGrowthStats(): Promise<GrowthStats> {
     },
   })
 
-  // Total essays marked — every persisted AIFeedback row counts as one
+  // Total essays marked - every persisted AIFeedback row counts as one
   // marked submission (AIFeedback has a 1:1 with Essay). We use AIFeedback
   // because an Essay row can exist pre-marking (draft state).
   const essaysMarkedPromise = prisma.aIFeedback.count()

@@ -14,26 +14,26 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['25 minutes', '35 minutes', '45 minutes', '60 minutes'],
     correctIndex: 2,
     explanation:
-      'Q5 is worth 40 marks (50% of the paper) so the recommended split is 45 minutes writing (including 5–10 mins planning), leaving ~60 minutes for the four reading questions.',
+      'Q5 is worth 40 marks (50% of the paper) so the recommended split is 45 minutes writing (including 5-10 mins planning), leaving ~60 minutes for the four reading questions.',
   },
   {
     id: 'technique-extra-002',
     topic: 'exam-technique',
     question:
       'On AQA English Language Paper 1, how long should you ideally spend on the 4-mark Question 1?',
-    options: ['About 4–5 minutes', 'About 15 minutes', 'About 20 minutes', 'About 25 minutes'],
+    options: ['About 4-5 minutes', 'About 15 minutes', 'About 20 minutes', 'About 25 minutes'],
     correctIndex: 0,
     explanation:
-      'A rough rule of thumb is 1 minute per mark plus brief reading. Q1 is only 4 marks (list 4 things), so 4–5 minutes is plenty — do not waste time here.',
+      'A rough rule of thumb is 1 minute per mark plus brief reading. Q1 is only 4 marks (list 4 things), so 4-5 minutes is plenty - do not waste time here.',
   },
   {
     id: 'technique-extra-003',
     topic: 'exam-technique',
     question: 'AQA Language Paper 1 Question 4 is worth 20 marks. How long should you spend on it?',
-    options: ['10 minutes', '15 minutes', '22–25 minutes', '40 minutes'],
+    options: ['10 minutes', '15 minutes', '22-25 minutes', '40 minutes'],
     correctIndex: 2,
     explanation:
-      'At roughly 1 minute per mark, plus a few minutes for re-reading and planning, 22–25 minutes is sensible for Q4 (the evaluation question).',
+      'At roughly 1 minute per mark, plus a few minutes for re-reading and planning, 22-25 minutes is sensible for Q4 (the evaluation question).',
   },
   {
     id: 'technique-extra-004',
@@ -41,7 +41,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question:
       'AQA English Language Paper 2 lasts 1 hour 45 minutes. How long should you spend reading the two non-fiction sources before answering?',
     options: [
-      'No reading time — start immediately',
+      'No reading time - start immediately',
       'About 15 minutes',
       'About 30 minutes',
       'About 45 minutes',
@@ -57,7 +57,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['1 hour 30 minutes', '1 hour 45 minutes', '2 hours', '2 hours 15 minutes'],
     correctIndex: 1,
     explanation:
-      'AQA Literature Paper 1 is 1 hour 45 minutes — typically split ~55 minutes on the Shakespeare question and ~50 minutes on the 19th-century novel question.',
+      'AQA Literature Paper 1 is 1 hour 45 minutes - typically split ~55 minutes on the Shakespeare question and ~50 minutes on the 19th-century novel question.',
   },
   {
     id: 'technique-extra-006',
@@ -76,26 +76,26 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['About 10 minutes', 'About 20 minutes', 'About 30 minutes', 'About 45 minutes'],
     correctIndex: 1,
     explanation:
-      'Section C is 45 minutes total: roughly 25–30 minutes on the first unseen (24 marks) and 15–20 minutes on the comparison (8 marks), since the second question is worth far fewer marks.',
+      'Section C is 45 minutes total: roughly 25-30 minutes on the first unseen (24 marks) and 15-20 minutes on the comparison (8 marks), since the second question is worth far fewer marks.',
   },
   {
     id: 'technique-extra-008',
     topic: 'exam-technique',
     question: 'How long should you spend planning a 30-mark essay response in GCSE Literature?',
-    options: ["Don't plan at all", '2 minutes maximum', '5–10 minutes', 'Half the available time'],
+    options: ["Don't plan at all", '2 minutes maximum', '5-10 minutes', 'Half the available time'],
     correctIndex: 2,
     explanation:
-      '5–10 minutes spent planning a thesis, choosing quotations and sketching paragraph order pays off enormously — examiners consistently note that unplanned essays drift and lose AO1.',
+      '5-10 minutes spent planning a thesis, choosing quotations and sketching paragraph order pays off enormously - examiners consistently note that unplanned essays drift and lose AO1.',
   },
   {
     id: 'technique-extra-009',
     topic: 'exam-technique',
     question:
       'You have 45 minutes for an AQA Lit modern text question worth 30 + 4 SPaG. How long should you leave for checking?',
-    options: ["Don't check — keep writing", '2–3 minutes', '15 minutes', '20 minutes'],
+    options: ["Don't check - keep writing", '2-3 minutes', '15 minutes', '20 minutes'],
     correctIndex: 1,
     explanation:
-      'A 2–3 minute final check is wise because the SPaG mark (4 on AQA Lit) rewards accurate spelling, punctuation and ambitious vocabulary — easy marks if you proofread.',
+      'A 2-3 minute final check is wise because the SPaG mark (4 on AQA Lit) rewards accurate spelling, punctuation and ambitious vocabulary - easy marks if you proofread.',
   },
   {
     id: 'technique-extra-010',
@@ -113,7 +113,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['1 hour', '1 hour 45 minutes', '2 hours', '2 hours 30 minutes'],
     correctIndex: 1,
     explanation:
-      'Eduqas Component 1 (20th-century literature reading and creative prose writing) is 1 hour 45 minutes — 1 hour reading, 45 minutes writing.',
+      'Eduqas Component 1 (20th-century literature reading and creative prose writing) is 1 hour 45 minutes - 1 hour reading, 45 minutes writing.',
   },
   {
     id: 'technique-extra-012',
@@ -152,7 +152,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['20 minutes', '35 minutes', '45 minutes', '70 minutes'],
     correctIndex: 2,
     explanation:
-      'Section B of AQA Lit Paper 2 is allocated 45 minutes — including time to choose your second poem, plan a comparative thesis and write 4–5 comparative paragraphs.',
+      'Section B of AQA Lit Paper 2 is allocated 45 minutes - including time to choose your second poem, plan a comparative thesis and write 4-5 comparative paragraphs.',
   },
   {
     id: 'technique-extra-015',
@@ -177,17 +177,17 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Roughly 5–10 mins planning, 30–35 mins drafting and 2–5 mins proofreading is the standard balance — leaves time to fix SPaG slips, the easiest marks to lose.',
+      'Roughly 5-10 mins planning, 30-35 mins drafting and 2-5 mins proofreading is the standard balance - leaves time to fix SPaG slips, the easiest marks to lose.',
   },
   {
     id: 'technique-extra-017',
     topic: 'exam-technique',
     question:
       'AQA Lit Paper 1 Section A (Shakespeare) is worth 30 + 4 SPaG. What is a sensible time allocation?',
-    options: ['25 minutes', '40 minutes', '50–55 minutes', '75 minutes'],
+    options: ['25 minutes', '40 minutes', '50-55 minutes', '75 minutes'],
     correctIndex: 2,
     explanation:
-      'Of the 1h 45m paper, ~50–55 minutes for Shakespeare and ~50 minutes for the 19th-century novel is the standard split. Both questions are worth roughly the same.',
+      'Of the 1h 45m paper, ~50-55 minutes for Shakespeare and ~50 minutes for the 19th-century novel is the standard split. Both questions are worth roughly the same.',
   },
   {
     id: 'technique-extra-018',
@@ -197,7 +197,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['25 minutes', '45 minutes', '60 minutes', '75 minutes'],
     correctIndex: 1,
     explanation:
-      'Each of the three sections of AQA Lit Paper 2 is roughly 45 minutes long — Section A (modern text) is one of those equal slots.',
+      'Each of the three sections of AQA Lit Paper 2 is roughly 45 minutes long - Section A (modern text) is one of those equal slots.',
   },
   {
     id: 'technique-extra-019',
@@ -215,7 +215,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: [
       'Read the extract once quickly and start writing',
       'Read the question first, then read the extract twice (once for sense, once annotating against the question)',
-      'Skip the extract — answer from memory of the whole text',
+      'Skip the extract - answer from memory of the whole text',
       'Annotate every word for at least 20 minutes',
     ],
     correctIndex: 1,
@@ -250,7 +250,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['4 marks', '8 marks', '10 marks', '20 marks'],
     correctIndex: 0,
     explanation:
-      'Q1 asks you to list four things from a specified part of the source — 1 mark each, 4 in total. It should take only a few minutes.',
+      'Q1 asks you to list four things from a specified part of the source - 1 mark each, 4 in total. It should take only a few minutes.',
   },
   {
     id: 'technique-extra-024',
@@ -286,7 +286,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['15 marks', '20 marks', '30 marks (no SPaG)', '40 marks'],
     correctIndex: 2,
     explanation:
-      "30 marks. SPaG is NOT separately credited on the poetry sections — only on Section A modern text and on Paper 1's two questions.",
+      "30 marks. SPaG is NOT separately credited on the poetry sections - only on Section A modern text and on Paper 1's two questions.",
   },
   {
     id: 'technique-extra-028',
@@ -304,9 +304,9 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'How many SPaG marks are awarded across the AQA Literature GCSE in total?',
     options: ['0 (SPaG is only on Lang)', '4', '8', '16'],
     correctIndex: 2,
-    // VERIFIED: AQA Spec 8702 §4 (Scheme of Assessment), accessed 2026 — AO4 = 2.5% on Paper 1 + 2.5% on Paper 2 = 5% of 160 = 8 marks total. SPaG awarded ONLY on Section A of each paper (Shakespeare on P1; Modern text on P2). NOT on the 19th-c novel section, NOT on poetry sections.
+    // VERIFIED: AQA Spec 8702 §4 (Scheme of Assessment), accessed 2026 - AO4 = 2.5% on Paper 1 + 2.5% on Paper 2 = 5% of 160 = 8 marks total. SPaG awarded ONLY on Section A of each paper (Shakespeare on P1; Modern text on P2). NOT on the 19th-c novel section, NOT on poetry sections.
     explanation:
-      'AQA Lit awards 4 SPaG (AO4) marks on Paper 1 Section A (Shakespeare) and 4 SPaG marks on Paper 2 Section A (Modern Text) — 8 marks in total. SPaG is NOT credited on the 19th-century novel section, the anthology poetry, or the unseen poetry.',
+      'AQA Lit awards 4 SPaG (AO4) marks on Paper 1 Section A (Shakespeare) and 4 SPaG marks on Paper 2 Section A (Modern Text) - 8 marks in total. SPaG is NOT credited on the 19th-century novel section, the anthology poetry, or the unseen poetry.',
   },
   {
     id: 'technique-extra-030',
@@ -355,7 +355,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'AQA Lang Paper 1 Q3 (structure) is worth:',
     options: ['4 marks', '8 marks', '12 marks', '20 marks'],
     correctIndex: 1,
-    explanation: 'Q3 on AQA Lang Paper 1 — the structural analysis question — is worth 8 marks.',
+    explanation: 'Q3 on AQA Lang Paper 1 - the structural analysis question - is worth 8 marks.',
   },
   {
     id: 'technique-extra-035',
@@ -364,7 +364,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['8 marks', '12 marks', '16 marks', '20 marks'],
     correctIndex: 2,
     explanation:
-      "Q4 on AQA Lang Paper 2 is 16 marks — the demanding comparison question evaluating writers' methods and viewpoints across both sources.",
+      "Q4 on AQA Lang Paper 2 is 16 marks - the demanding comparison question evaluating writers' methods and viewpoints across both sources.",
   },
   {
     id: 'technique-extra-036',
@@ -373,7 +373,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['4 marks', '8 marks', '12 marks', '16 marks'],
     correctIndex: 1,
     explanation:
-      'Q2 on AQA Lang Paper 2 is 8 marks — a summary using both sources, testing inference and synthesis (AO1).',
+      'Q2 on AQA Lang Paper 2 is 8 marks - a summary using both sources, testing inference and synthesis (AO1).',
   },
   {
     id: 'technique-extra-037',
@@ -390,7 +390,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
       'Across both AQA English Literature papers, the total number of marks (response + SPaG) is:',
     options: ['96', '128', '160', '192'],
     correctIndex: 2,
-    // VERIFIED: AQA Spec 8702 §4 (Scheme of Assessment), accessed 2026 — Paper 1 = 64 marks (60 response + 4 SPaG); Paper 2 = 96 marks (92 response + 4 SPaG). Total 160.
+    // VERIFIED: AQA Spec 8702 §4 (Scheme of Assessment), accessed 2026 - Paper 1 = 64 marks (60 response + 4 SPaG); Paper 2 = 96 marks (92 response + 4 SPaG). Total 160.
     explanation:
       'Paper 1: 60 response + 4 SPaG = 64 marks (Shakespeare 30+4, 19th-c novel 30). Paper 2: 92 response + 4 SPaG = 96 marks (Modern text 30+4, anthology 30, unseen 24+8). 64 + 96 = 160 marks.',
   },
@@ -400,9 +400,9 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'On AQA Lit Paper 1, the 19th-century novel question is worth:',
     options: ['20 marks', '24 marks', '30 marks (no SPaG)', '34 marks (30 + 4 SPaG)'],
     correctIndex: 2,
-    // VERIFIED: AQA Spec 8702 §4, accessed 2026 — SPaG (AO4) is awarded on Section A only of Paper 1 (Shakespeare). Section B 19th-century novel = 30 marks, no SPaG.
+    // VERIFIED: AQA Spec 8702 §4, accessed 2026 - SPaG (AO4) is awarded on Section A only of Paper 1 (Shakespeare). Section B 19th-century novel = 30 marks, no SPaG.
     explanation:
-      'The 19th-century novel question is worth 30 marks. SPaG (AO4) is only awarded on Paper 1 Section A (Shakespeare) and Paper 2 Section A (Modern text) — not on the 19th-c novel section.',
+      'The 19th-century novel question is worth 30 marks. SPaG (AO4) is only awarded on Paper 1 Section A (Shakespeare) and Paper 2 Section A (Modern text) - not on the 19th-c novel section.',
   },
   {
     id: 'technique-extra-040',
@@ -561,7 +561,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'Which sequence reflects an effective thesis-led essay?',
     options: [
       'Plot summary → quotes → vague conclusion',
-      'Thesis intro → 3–4 argument-driven body paragraphs each with embedded evidence and analysis → conclusion that returns to thesis',
+      'Thesis intro → 3-4 argument-driven body paragraphs each with embedded evidence and analysis → conclusion that returns to thesis',
       'Random paragraphs → no introduction → multiple conclusions',
       'Long introduction → no body → long conclusion',
     ],
@@ -637,7 +637,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      "Option 3 advances a precise, arguable point about authorial method and is grounded in the play's structure — a hallmark of Grade 8/9 writing.",
+      "Option 3 advances a precise, arguable point about authorial method and is grounded in the play's structure - a hallmark of Grade 8/9 writing.",
   },
   {
     id: 'technique-extra-057',
@@ -651,7 +651,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Discourse connectives demonstrate that paragraphs are part of a single argument, not isolated points — boosting AO1 (cohesion).',
+      'Discourse connectives demonstrate that paragraphs are part of a single argument, not isolated points - boosting AO1 (cohesion).',
   },
   {
     id: 'technique-extra-058',
@@ -679,7 +679,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      'AO3 should support analysis, not sit alongside it. Integrated context — used to deepen meaning — meets the highest band descriptors.',
+      'AO3 should support analysis, not sit alongside it. Integrated context - used to deepen meaning - meets the highest band descriptors.',
   },
   {
     id: 'technique-extra-060',
@@ -716,7 +716,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question:
       'How do you signal that you have shortened a quotation by removing words in the middle?',
-    options: ['A semi-colon ;', 'An ellipsis (...)', 'A dash —', 'Curly brackets { }'],
+    options: ['A semi-colon ;', 'An ellipsis (...)', 'A dash -', 'Curly brackets { }'],
     correctIndex: 1,
     explanation:
       'An ellipsis (three dots) indicates omitted text in the middle of a quotation, e.g. "Out, out... candle".',
@@ -733,7 +733,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Square brackets show editorial additions, e.g. "[Macbeth] is too full o\' the milk of human kindness" — clarifying who is being referred to.',
+      'Square brackets show editorial additions, e.g. "[Macbeth] is too full o\' the milk of human kindness" - clarifying who is being referred to.',
   },
   {
     id: 'technique-extra-064',
@@ -747,7 +747,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Option 2 embeds a short phrase grammatically into the sentence and immediately analyses the image — concise and analytical.',
+      'Option 2 embeds a short phrase grammatically into the sentence and immediately analyses the image - concise and analytical.',
   },
   {
     id: 'technique-extra-065',
@@ -784,13 +784,13 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'Which quotation is best for tight analysis?',
     options: [
       'A 30-word quotation copied verbatim with no analysis',
-      'A 1–4 word quotation chosen for a specific feature (e.g. "vaulting") that you can drill into',
+      'A 1-4 word quotation chosen for a specific feature (e.g. "vaulting") that you can drill into',
       'No quotation, just paraphrase',
       'A made-up quotation',
     ],
     correctIndex: 1,
     explanation:
-      'Tight, focused quotations (often a single image or word) allow you to zoom into language and methods (AO2) — the hallmark of top-band analysis.',
+      'Tight, focused quotations (often a single image or word) allow you to zoom into language and methods (AO2) - the hallmark of top-band analysis.',
   },
   {
     id: 'technique-extra-068',
@@ -805,7 +805,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Square brackets signal any editorial change to a quotation, including tense or pronoun adjustments — preserves accuracy and clarity.',
+      'Square brackets signal any editorial change to a quotation, including tense or pronoun adjustments - preserves accuracy and clarity.',
   },
   {
     id: 'technique-extra-069',
@@ -819,7 +819,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Set-up → quotation → analysis. The quote should never sit alone — always frame and analyse it.',
+      'Set-up → quotation → analysis. The quote should never sit alone - always frame and analyse it.',
   },
   {
     id: 'technique-extra-070',
@@ -847,7 +847,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Judicious" appears in mark scheme top-band descriptors and means well-chosen and apt — quality over quantity.',
+      '"Judicious" appears in mark scheme top-band descriptors and means well-chosen and apt - quality over quantity.',
   },
   {
     id: 'technique-extra-072',
@@ -856,7 +856,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: [
       'Copy out long sections to fill space',
       'Use it to retrieve precise short quotations and verify spellings, but spend most of your time analysing',
-      'Avoid the book — examiners prefer answers from memory',
+      'Avoid the book - examiners prefer answers from memory',
       'Quote whole stanzas',
     ],
     correctIndex: 1,
@@ -870,7 +870,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
       'You half-remember a quote as "milk of human kindness" but think it might be "milk of mercy". The safest move is:',
     options: [
       "Write 'milk of mercy' confidently in quote marks",
-      'Refer to the moment generally — "Lady Macbeth fears her husband\'s milky compassion" — and analyse the metaphor',
+      'Refer to the moment generally - "Lady Macbeth fears her husband\'s milky compassion" - and analyse the metaphor',
       "Don't use it at all",
       'Make up a different quote',
     ],
@@ -884,7 +884,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'A "spotlight" quotation is:',
     options: [
       'A quotation written in highlighter pen',
-      'A short, vivid quotation chosen for its richness — one you can analyse from multiple angles',
+      'A short, vivid quotation chosen for its richness - one you can analyse from multiple angles',
       'A very long quotation',
       'A quotation about lighting',
     ],
@@ -904,7 +904,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'AQA and Eduqas top-band descriptors reward "judicious" or "well-chosen" textual references — concise and well-targeted.',
+      'AQA and Eduqas top-band descriptors reward "judicious" or "well-chosen" textual references - concise and well-targeted.',
   },
 
   // ─── AO RECOGNITION (15) ─────────────────────────────────────────────────
@@ -940,7 +940,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'AO1 rewards a personal, well-supported response with apt textual references — your interpretation and the evidence you use to back it up.',
+      'AO1 rewards a personal, well-supported response with apt textual references - your interpretation and the evidence you use to back it up.',
   },
   {
     id: 'technique-extra-079',
@@ -954,7 +954,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "AO4 in Lit covers technical accuracy of writing — assessed only on certain questions (e.g. AQA awards 4 SPaG marks per relevant question, separate from the response's 30 marks).",
+      "AO4 in Lit covers technical accuracy of writing - assessed only on certain questions (e.g. AQA awards 4 SPaG marks per relevant question, separate from the response's 30 marks).",
   },
   {
     id: 'technique-extra-080',
@@ -985,7 +985,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'AO6 covers technical accuracy in writing tasks — analogous to (but separate from) AO4 in Literature.',
+      'AO6 covers technical accuracy in writing tasks - analogous to (but separate from) AO4 in Literature.',
   },
   {
     id: 'technique-extra-083',
@@ -1013,7 +1013,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Lang AO2 is the language/structure analysis objective — the bulk of marks on AQA Lang Paper 1 Q2 and Q3.',
+      'Lang AO2 is the language/structure analysis objective - the bulk of marks on AQA Lang Paper 1 Q2 and Q3.',
   },
   {
     id: 'technique-extra-085',
@@ -1051,7 +1051,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['AO1', 'AO2', 'AO3', 'AO4'],
     correctIndex: 1,
     explanation:
-      "Form and structural choices (and their effects) sit under AO2 in Literature — the writer's methods.",
+      "Form and structural choices (and their effects) sit under AO2 in Literature - the writer's methods.",
   },
   {
     id: 'technique-extra-089',
@@ -1075,7 +1075,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "AQA Lit's 4 SPaG marks per relevant question are AO4 (Lit) marks — a discrete 4-mark band for spelling, punctuation and vocabulary range. They are NOT Lang AO6.",
+      "AQA Lit's 4 SPaG marks per relevant question are AO4 (Lit) marks - a discrete 4-mark band for spelling, punctuation and vocabulary range. They are NOT Lang AO6.",
   },
 
   // ─── BOARD-SPECIFIC RULES (10) ───────────────────────────────────────────
@@ -1084,9 +1084,9 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'Is AQA GCSE English Literature a closed-book or open-book exam?',
     options: [
-      'Open book — copies of all texts are provided',
-      'Closed book — no copies of set texts are allowed',
-      'Mixed — open for poetry, closed for novels',
+      'Open book - copies of all texts are provided',
+      'Closed book - no copies of set texts are allowed',
+      'Mixed - open for poetry, closed for novels',
       'Open for the unseen poetry only',
     ],
     correctIndex: 1,
@@ -1126,8 +1126,8 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'On AQA English Language Paper 2, are the source materials seen before the exam?',
     options: [
-      'Yes — released two weeks before',
-      'No — the two non-fiction sources are unseen, printed in the exam',
+      'Yes - released two weeks before',
+      'No - the two non-fiction sources are unseen, printed in the exam',
       'Only Source A is unseen',
       'You may bring annotated copies',
     ],
@@ -1140,9 +1140,9 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'On AQA English Language Paper 1, is the fiction extract seen before the exam?',
     options: [
-      'Yes — given a week ahead',
-      "No — it's an unseen 20th/21st-century literary fiction extract printed in the insert",
-      'Yes — chosen from a set list',
+      'Yes - given a week ahead',
+      "No - it's an unseen 20th/21st-century literary fiction extract printed in the insert",
+      'Yes - chosen from a set list',
       'It is from your set text',
     ],
     correctIndex: 1,
@@ -1168,15 +1168,15 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'On Eduqas GCSE Literature, the poetry anthology section is:',
     options: [
-      'Closed book — anthology not allowed; the named poem is printed on the paper as stimulus, the comparison poem must be recalled from memory',
-      'Open book — a clean copy of the anthology is provided',
-      'Open book — your annotated anthology is allowed',
+      'Closed book - anthology not allowed; the named poem is printed on the paper as stimulus, the comparison poem must be recalled from memory',
+      'Open book - a clean copy of the anthology is provided',
+      'Open book - your annotated anthology is allowed',
       'Not assessed',
     ],
     correctIndex: 0,
-    // VERIFIED: Eduqas GCSE English Literature spec (from 2015, exams to 2026), accessed 2026 — Eduqas is a closed-book exam. The first ("named") anthology poem appears printed in the question paper as stimulus; the second poem for comparison must be recalled from memory. NO clean anthology is provided.
+    // VERIFIED: Eduqas GCSE English Literature spec (from 2015, exams to 2026), accessed 2026 - Eduqas is a closed-book exam. The first ("named") anthology poem appears printed in the question paper as stimulus; the second poem for comparison must be recalled from memory. NO clean anthology is provided.
     explanation:
-      'Eduqas GCSE Literature is a closed-book exam — students cannot bring texts in. The named anthology poem is reproduced on the paper as stimulus, but the second poem for the comparison question must be quoted from memory. Set prose/drama and Shakespeare are also closed-book.',
+      'Eduqas GCSE Literature is a closed-book exam - students cannot bring texts in. The named anthology poem is reproduced on the paper as stimulus, but the second poem for the comparison question must be quoted from memory. Set prose/drama and Shakespeare are also closed-book.',
   },
   {
     id: 'technique-extra-098',
@@ -1184,14 +1184,14 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'On Edexcel GCSE Literature Paper 2, what poetry comparisons appear?',
     options: [
       'Section B Part 1: compare a printed anthology poem with another poem from the same collection (recalled from memory). Section B Part 2: compare two unseen poems',
-      'Compare two unseen poems only — no anthology in the exam',
+      'Compare two unseen poems only - no anthology in the exam',
       'Compare a poem with a novel',
       'No comparison at all',
     ],
     correctIndex: 0,
-    // VERIFIED: Edexcel/Pearson 1ET0/02 specimen and 2023/2024 question papers, accessed 2026 — Paper 2 (2h 15m) Section A = 19th-century novel; Section B Part 1 = anthology poetry comparison (printed named poem + one chosen poem from the same collection, recalled from memory); Section B Part 2 (Q12) = unseen poetry comparison. Closed-book exam.
+    // VERIFIED: Edexcel/Pearson 1ET0/02 specimen and 2023/2024 question papers, accessed 2026 - Paper 2 (2h 15m) Section A = 19th-century novel; Section B Part 1 = anthology poetry comparison (printed named poem + one chosen poem from the same collection, recalled from memory); Section B Part 2 (Q12) = unseen poetry comparison. Closed-book exam.
     explanation:
-      'Edexcel Lit Paper 2 Section A is the 19th-century novel. Section B is poetry: Part 1 prints one named poem from the studied collection and asks students to compare it with another poem from the same collection (recalled from memory — closed book); Part 2 compares two contemporary unseen poems printed on the paper.',
+      'Edexcel Lit Paper 2 Section A is the 19th-century novel. Section B is poetry: Part 1 prints one named poem from the studied collection and asks students to compare it with another poem from the same collection (recalled from memory - closed book); Part 2 compares two contemporary unseen poems printed on the paper.',
   },
   {
     id: 'technique-extra-099',
@@ -1199,13 +1199,13 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'For AQA Lit unseen poetry (Section C), the second question asks you to:',
     options: [
       "Compare the two unseen poems' content only",
-      "Compare the writers' use of methods (language, structure, form) in the two unseen poems — worth 8 marks",
+      "Compare the writers' use of methods (language, structure, form) in the two unseen poems - worth 8 marks",
       'Memorise both poems',
       'Compare an unseen with an anthology poem',
     ],
     correctIndex: 1,
     explanation:
-      "Q27.2 on AQA Lit Paper 2 asks for a comparison of the writers' methods in the two unseen poems for 8 marks — focused on AO2.",
+      "Q27.2 on AQA Lit Paper 2 asks for a comparison of the writers' methods in the two unseen poems for 8 marks - focused on AO2.",
   },
   {
     id: 'technique-extra-100',
@@ -1213,7 +1213,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'On AQA Lit Paper 1 Shakespeare, the question always:',
     options: [
       'Provides an extract and asks you to write about both the extract and the rest of the play',
-      'Provides no extract — write entirely from memory',
+      'Provides no extract - write entirely from memory',
       'Provides the whole play',
       'Asks you to compare Shakespeare with a modern playwright',
     ],

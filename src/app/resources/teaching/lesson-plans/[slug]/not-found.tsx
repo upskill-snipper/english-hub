@@ -7,7 +7,7 @@ import { buttonVariants } from '@/components/ui/button-variants'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Lesson plan not found — The English Hub',
+  title: 'Lesson plan not found - The English Hub',
   robots: { index: false, follow: false },
 }
 

@@ -4,12 +4,12 @@
 // hand-build a programmable stub (no module mock needed).
 //
 // Contract under test:
-//   • deriveUncertaintyFlags — GRADE_INDICATIVE_ONLY + de-duped extras
-//   • insertSubmission       — studentAnswer → essay_text, status 'submitted'
-//   • applyAiResult          — ai_confidence FORCED null; hot-field denorm;
+//   • deriveUncertaintyFlags - GRADE_INDICATIVE_ONLY + de-duped extras
+//   • insertSubmission       - studentAnswer → essay_text, status 'submitted'
+//   • applyAiResult          - ai_confidence FORCED null; hot-field denorm;
 //                              status passthrough ('ai_marked' /
-//                              'teacher_review_required' — never 'approved')
-//   • loadSubmission         — PGRST116 → null, other errors rethrow
+//                              'teacher_review_required' - never 'approved')
+//   • loadSubmission         - PGRST116 → null, other errors rethrow
 // ────────────────────────────────────────────────────────────────────────────
 
 import { describe, it, expect } from 'vitest'

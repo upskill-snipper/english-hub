@@ -31,7 +31,7 @@ export default async function AcceptableUsePolicyPage() {
     <>
       <h1 className="text-3xl font-bold mb-2">{_tr(`Acceptable Use Policy`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>{_tr(`The English Hub`)}</strong> — operated by Upskill Energy Limited
+        <strong>{_tr(`The English Hub`)}</strong> - operated by Upskill Energy Limited
         <br />
         Last updated: 22 March 2026
       </p>
@@ -42,8 +42,8 @@ export default async function AcceptableUsePolicyPage() {
         <p>
           This Acceptable Use Policy explains what you can and cannot do when using The English Hub.
           It exists to keep the platform safe, fair, and useful for everyone. It applies to all
-          features — including essay submission, AI feedback, learning resources, and any
-          communication features — every time you use the platform.
+          features - including essay submission, AI feedback, learning resources, and any
+          communication features - every time you use the platform.
         </p>
       </section>
 
@@ -66,22 +66,22 @@ export default async function AcceptableUsePolicyPage() {
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>
-            <strong>{_tr(`Learning and revision`)}</strong> — studying for your GCSE or IGCSE
+            <strong>{_tr(`Learning and revision`)}</strong> - studying for your GCSE or IGCSE
             English exams
           </li>
           <li>
             <strong>{_tr(`Submitting your own original essays`)}</strong> for AI feedback
           </li>
           <li>
-            <strong>{_tr(`Using AI feedback to improve your writing`)}</strong> — reading
+            <strong>{_tr(`Using AI feedback to improve your writing`)}</strong> - reading
             suggestions and applying what you learn
           </li>
           <li>
-            <strong>{_tr(`Accessing study resources`)}</strong> — guides, exemplars, and learning
+            <strong>{_tr(`Accessing study resources`)}</strong> - guides, exemplars, and learning
             materials for personal education
           </li>
           <li>
-            <strong>{_tr(`Collaborating appropriately`)}</strong> — working with other students
+            <strong>{_tr(`Collaborating appropriately`)}</strong> - working with other students
             respectfully where social features are available
           </li>
         </ul>

@@ -25,7 +25,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
-/* ── Poem data (Eduqas GCSE 2025 anthology — 12 poems) ────────────── */
+/* ── Poem data (Eduqas GCSE 2025 anthology - 12 poems) ────────────── */
 
 interface EduqasPoem {
   title: string
@@ -92,7 +92,7 @@ const WAR_AND_CONFLICT: EduqasPoem[] = [
     slug: 'drummer-hodge',
     publicDomain: true,
     themes: ['War', 'Death', 'Identity'],
-    flag: 'Setting: Second Boer War 1899 — NOT World War I.',
+    flag: 'Setting: Second Boer War 1899 - NOT World War I.',
   },
   {
     title: 'Disabled',
@@ -124,7 +124,7 @@ const IDENTITY_AND_VOICE: EduqasPoem[] = [
     slug: null,
     publicDomain: false,
     themes: ['Identity', 'Poverty', 'Photography'],
-    flag: 'Source confidence: LOW — verify against Eduqas anthology edition before use.',
+    flag: 'Source confidence: LOW - verify against Eduqas anthology edition before use.',
   },
   {
     title: 'Origin Story',
@@ -132,7 +132,7 @@ const IDENTITY_AND_VOICE: EduqasPoem[] = [
     slug: null,
     publicDomain: false,
     themes: ['Identity', 'Race', 'Memory'],
-    bio: 'Eve L. Ewing (b.1986) — American sociologist and poet; *Origin Story* from *Electric Arches* (Haymarket, 2017). Note: distinct from the common phrase "origin story".',
+    bio: 'Eve L. Ewing (b.1986) - American sociologist and poet; *Origin Story* from *Electric Arches* (Haymarket, 2017). Note: distinct from the common phrase "origin story".',
   },
 ]
 
@@ -336,7 +336,7 @@ export default function EduqasPoetryPage() {
                           ) : !poem.publicDomain ? (
                             <Lock
                               className="size-3.5 shrink-0 text-muted-foreground"
-                              aria-label="In copyright — study notes only"
+                              aria-label="In copyright - study notes only"
                             />
                           ) : null}
                         </div>
@@ -365,12 +365,12 @@ export default function EduqasPoetryPage() {
                         )}
                         {!poem.slug && !poem.publicDomain && (
                           <p className="text-[11px] text-muted-foreground italic">
-                            In copyright — study notes only (short fair-dealing extracts)
+                            In copyright - study notes only (short fair-dealing extracts)
                           </p>
                         )}
                         {!poem.slug && poem.publicDomain && (
                           <p className="text-[11px] text-muted-foreground italic">
-                            Public domain — study page coming soon
+                            Public domain - study page coming soon
                           </p>
                         )}
                       </>
@@ -505,7 +505,7 @@ export default function EduqasPoetryPage() {
           <CardContent className="flex flex-1 flex-col gap-4">
             <p className="text-body-sm text-muted-foreground">
               Sonnet 29 (Barrett Browning) and Cousin Kate (Rossetti) are both Victorian, both from
-              female speakers, and both about absent or lost lovers — a strong cluster pairing for
+              female speakers, and both about absent or lost lovers - a strong cluster pairing for
               the comparison question.
             </p>
           </CardContent>

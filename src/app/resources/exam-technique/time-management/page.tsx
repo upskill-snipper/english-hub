@@ -430,11 +430,11 @@ export default async function TimeManagementPage() {
         steps={[
           {
             name: 'Calculate your rate',
-            text: 'Divide total exam time in minutes by total marks. For most English papers this gives roughly one minute per mark — for example, AQA Language Paper 1 is 105 minutes for 80 marks, about 1.3 minutes per mark.',
+            text: 'Divide total exam time in minutes by total marks. For most English papers this gives roughly one minute per mark - for example, AQA Language Paper 1 is 105 minutes for 80 marks, about 1.3 minutes per mark.',
           },
           {
             name: 'Subtract reading time',
-            text: 'Allow 10-15 minutes at the start to read and annotate the source texts carefully. Deduct this from your total before dividing — reading time is an investment that makes every answer faster and better.',
+            text: 'Allow 10-15 minutes at the start to read and annotate the source texts carefully. Deduct this from your total before dividing - reading time is an investment that makes every answer faster and better.',
           },
           {
             name: 'Add planning time for big questions',
@@ -446,7 +446,7 @@ export default async function TimeManagementPage() {
           },
           {
             name: 'Reserve the last 5 minutes to review',
-            text: 'Use the final five minutes to check spelling, punctuation and grammar, add any missing analysis, and make sure every question has been attempted. Never leave an answer blank — even bullet points score marks.',
+            text: 'Use the final five minutes to check spelling, punctuation and grammar, add any missing analysis, and make sure every question has been attempted. Never leave an answer blank - even bullet points score marks.',
           },
         ]}
       />

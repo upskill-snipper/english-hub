@@ -42,7 +42,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const normalized = promoCode.trim().toUpperCase()
 
-  // ── FOUNDER code — hardcoded special case ────────────────────────────────
+  // ── FOUNDER code - hardcoded special case ────────────────────────────────
   if (normalized === 'FOUNDER') {
     return NextResponse.json({
       valid: true,
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   // P1 (Cycle 2 data model): the committed `promo_codes` schema
   // (supabase/migrations/20260404_school_promo_and_access.sql) has
-  // `discount_type`, `discount_value`, and `free_until_date` columns —
+  // `discount_type`, `discount_value`, and `free_until_date` columns -
   // NOT `discount_percent` or `access_until`. Earlier versions of this
   // route read the non-existent columns and always returned the "Discount
   // applied" fallback plus `undefined` for `accessUntil`. Corrected below.

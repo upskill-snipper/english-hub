@@ -7,8 +7,8 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  * IGCSE GCSE English Literature specifications. It is NOT a set text on the
  * Cambridge IGCSE language specifications (0500 and 0990), so readers on
  * those boards see an amber banner pointing them back to their own revision
- * hub. The article still renders in full underneath — the content remains
- * useful for general literature analysis — but the warning prevents anyone
+ * hub. The article still renders in full underneath - the content remains
+ * useful for general literature analysis - but the warning prevents anyone
  * from revising the wrong text for their actual paper.
  *
  * The banner is a client component that only renders after Zustand

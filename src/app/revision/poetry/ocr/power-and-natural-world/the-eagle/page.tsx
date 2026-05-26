@@ -141,7 +141,7 @@ const theEagle: PoemData = {
   `,
 
   contextAr: `
-    <h3>Alfred Lord Tennyson (1809–1892)</h3>
+    <h3>Alfred Lord Tennyson (1809-1892)</h3>
     <p>Alfred, Lord Tennyson، الشاعر المسيطر على العصر الفيكتوري، خدم Poet Laureate أكثر من 40 سنة. كتب في كل شي، من المواضيع العامة الكبيرة (الحرب، الإمبراطورية، الدين) إلى لحظات صغيرة مرصودة في الطبيعة. كان أستاذ في الصوت والصورة، و"The Eagle" واحدة من أكثف أعماله في الاثنين.</p>
 
     <h3>وقت الكتابة (1851)</h3>
@@ -162,7 +162,7 @@ Overall meaning: In just six lines, Tennyson creates a portrait of pure power. T
 
   summaryAr: `Stanza 1: القصيدة تبدأ والنسر واقف فوق راس الجرف. يقبض على الصخرة بـ"crooked hands" (مخالبه)، عالي لدرجة يصير "close to the sun in lonely lands". السما الزرقا تحيطه تماماً. هو ساكن تماماً ومسيطر تماماً على عالمه.
 
-Stanza 2: المنظور يتحوّل لما يشوفه النسر. تحته بعيد، البحر "wrinkled" و"crawls" — يبان صغير وضعيف من هالعلوّ. النسر يراقب كل شي من "mountain walls" مثل ملك من حصنه. وبعدين فجأة وبانفجار، "like a thunderbolt he falls" — ينقضّ يضرب.
+Stanza 2: المنظور يتحوّل لما يشوفه النسر. تحته بعيد، البحر "wrinkled" و"crawls" - يبان صغير وضعيف من هالعلوّ. النسر يراقب كل شي من "mountain walls" مثل ملك من حصنه. وبعدين فجأة وبانفجار، "like a thunderbolt he falls" - ينقضّ يضرب.
 
 المعنى العام: في ستة أبيات بس، Tennyson يرسم بورتريه للقوة الخالصة. النسر يطلع منعزل، جليل، ومدمّر. التضاد بين سكون المقطع الأول والحركة الانفجارية في البيت الأخير يخلّي الضربة تحسّ مثل فعل عنف إلهي. القصيدة تحتفي بقوة الطبيعة المهيبة، وبالمفترس وهو في قمّته.`,
 
@@ -182,15 +182,15 @@ Personification throughout: The eagle is referred to as "he" from the start. He 
 
   formAndStructureAr: `Form (الشكل): مقطعان من ثلاثة أبيات (tercets)، كلٌّ منهما بنفس نظام القافية الأحادية (AAA / BBB). أبيات كل مقطع الثلاثة كلّها تتقافى مع بعض. وهذا غير عادي بشدّة، ويعطي القصيدة نَفَس إنشادي، شبه ترنيمي.
 
-Metre (الوزن): iambic tetrameter — أربع iambs في كل بيت، ثمان مقاطع. الوزن منتظم وثابت، مثل نبضة قلب مضبوطة. يعكس السكون الصبور للنسر.
+Metre (الوزن): iambic tetrameter - أربع iambs في كل بيت، ثمان مقاطع. الوزن منتظم وثابت، مثل نبضة قلب مضبوطة. يعكس السكون الصبور للنسر.
 
-الإيجاز: ستة أبيات بس، القصيدة مكثّفة بشكل مذهل. Tennyson يحشر مشهد كامل — وصف، تحوّل منظور، وفعل انفجاري — في حيّز ضيّق. كل كلمة تشتغل.
+الإيجاز: ستة أبيات بس، القصيدة مكثّفة بشكل مذهل. Tennyson يحشر مشهد كامل - وصف، تحوّل منظور، وفعل انفجاري - في حيّز ضيّق. كل كلمة تشتغل.
 
 تركيب المقطعين: المقطعان يعكسون بعض. Stanza 1 عن السكون (النسر متمكّن). Stanza 2 يبدأ بالسكون (يراقب) لكنه ينتهي بحركة انفجارية (ينقضّ). البنية تبني التوتّر على طول القصيدة، وتفرّجه في البيت الأخير.
 
 Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة أبيات من السكون، النسر فجأة ينقضّ "like a thunderbolt". الحركة المفاجئة بعد المراقبة الصبور هي أكثر لحظة دراماتيكية في القصيدة.
 
-الصوت: القصيدة مليانة سواكن قاسية وصلبة — "clasps"، "crag"، "crooked"، "rings"، "crawls"، "thunderbolt". هالأصوات تعزّز حدّة النسر وقوته. والـalliteration في أول بيت لافت بشكل خاص.
+الصوت: القصيدة مليانة سواكن قاسية وصلبة - "clasps"، "crag"، "crooked"، "rings"، "crawls"، "thunderbolt". هالأصوات تعزّز حدّة النسر وقوته. والـalliteration في أول بيت لافت بشكل خاص.
 
 التشخيص في كل القصيدة: النسر يُشار إليه بـ"he" من البداية. عنده "hands"، و"stands"، و"watches"، و"falls". الـpersonification تعطي الطير وقار الإنسان وسلطة الملك.`,
 
@@ -201,7 +201,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'The opening line packs personification, alliteration and imagery into nine words. "He" and "hands" make the eagle a person. The harsh "c" alliteration ("clasps", "crag", "crooked") echoes the sharp talons gripping the rock -- you can almost hear the claws scraping. The eagle is both noble (hands) and predatory (crooked claws).',
       themes: ['Power', 'Personification', 'Predator imagery'],
       analysisAr:
-        'البيت الافتتاحي يحشر personification وalliteration وصورة بصرية في تسع كلمات. "He" و"hands" تخلّي النسر شخص. والـalliteration بحرف "c" القاسي ("clasps"، "crag"، "crooked") يصدح بصوت المخالب الحادّة وهي تقبض على الصخرة — تكاد تسمع الأظفار وهي تخدش. النسر نبيل (hands) ومفترس (crooked claws) في نفس الوقت.',
+        'البيت الافتتاحي يحشر personification وalliteration وصورة بصرية في تسع كلمات. "He" و"hands" تخلّي النسر شخص. والـalliteration بحرف "c" القاسي ("clasps"، "crag"، "crooked") يصدح بصوت المخالب الحادّة وهي تقبض على الصخرة - تكاد تسمع الأظفار وهي تخدش. النسر نبيل (hands) ومفترس (crooked claws) في نفس الوقت.',
       themesAr: ['القوة', 'التشخيص', 'صورة المفترس'],
     },
     {
@@ -210,7 +210,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'The eagle\'s height places him almost at the sun -- he is closer to the heavens than to the earth. "Lonely lands" emphasises his isolation, but loneliness here is not pitiful; it is part of his majesty. He is so far above the world that no other creature can reach him.',
       themes: ['Solitude', 'Height', 'Majesty'],
       analysisAr:
-        'علوّ النسر يحطّه شبه عند الشمس — هو أقرب للسماء من الأرض. عبارة "lonely lands" تأكّد عزلته، لكن الوحدة هنا مو شي مثير للشفقة؛ هي جزء من جلاله. هو فوق العالم بشكل ما يقدر أي مخلوق ثاني يوصله.',
+        'علوّ النسر يحطّه شبه عند الشمس - هو أقرب للسماء من الأرض. عبارة "lonely lands" تأكّد عزلته، لكن الوحدة هنا مو شي مثير للشفقة؛ هي جزء من جلاله. هو فوق العالم بشكل ما يقدر أي مخلوق ثاني يوصله.',
       themesAr: ['العزلة', 'العلوّ', 'الجلال'],
     },
     {
@@ -219,7 +219,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         '"Ringed" suggests both surrounding (the sky encircles him) and crowning (a king is ringed with a crown). "Azure" is a luxurious word for blue, elevating the description beyond ordinary speech. "He stands" is short and emphatic -- the eagle is utterly still, master of all he surveys.',
       themes: ['Royalty', 'Stillness', 'Dominance'],
       analysisAr:
-        'كلمة "ringed" تلمّح للإحاطة (السما تحيط فيه) وللتتويج (الملك يُتوَّج بحلقة) في نفس الوقت. و"azure" كلمة فاخرة للأزرق، ترفع الوصف فوق الكلام العادي. وعبارة "he stands" قصيرة ومؤكَّدة — النسر ساكن تماماً، سيّد كل ما يطلّ عليه.',
+        'كلمة "ringed" تلمّح للإحاطة (السما تحيط فيه) وللتتويج (الملك يُتوَّج بحلقة) في نفس الوقت. و"azure" كلمة فاخرة للأزرق، ترفع الوصف فوق الكلام العادي. وعبارة "he stands" قصيرة ومؤكَّدة - النسر ساكن تماماً، سيّد كل ما يطلّ عليه.',
       themesAr: ['الملوكية', 'السكون', 'الهيمنة'],
     },
     {
@@ -228,7 +228,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'A devastating image of perspective. The sea -- normally vast, powerful and frightening -- is made to seem old ("wrinkled") and feeble ("crawls"). From the eagle\'s height, even the mighty ocean is reduced. Power is relative: the eagle is so high that the world\'s greatest force looks pitiful. This is one of the most famous lines in Victorian poetry.',
       themes: ['Perspective', 'Power', 'Personification'],
       analysisAr:
-        'صورة منظورية مدمّرة. البحر — اللي عادة شاسع وقوي ومخيف — يصير يبان عجوز ("wrinkled") وضعيف ("crawls"). من علوّ النسر، حتى المحيط الهائل يصغر. القوة نسبية: النسر عالي لدرجة إن أعظم قوة في الدنيا تبان مثيرة للشفقة. هذا واحد من أشهر الأبيات في الشعر الفيكتوري.',
+        'صورة منظورية مدمّرة. البحر - اللي عادة شاسع وقوي ومخيف - يصير يبان عجوز ("wrinkled") وضعيف ("crawls"). من علوّ النسر، حتى المحيط الهائل يصغر. القوة نسبية: النسر عالي لدرجة إن أعظم قوة في الدنيا تبان مثيرة للشفقة. هذا واحد من أشهر الأبيات في الشعر الفيكتوري.',
       themesAr: ['المنظور', 'القوة', 'التشخيص'],
     },
     {
@@ -237,7 +237,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'The poem\'s explosive ending. "Thunderbolt" links the eagle to Zeus, king of the gods, who hurled thunderbolts. The simile makes the dive both godlike and weapon-like. After five lines of stillness, the sudden action is electric. The full stop closes the poem like a strike: no aftermath, no consequence -- just the moment of devastation.',
       themes: ['Sudden action', 'Divine power', 'Predation'],
       analysisAr:
-        'الخاتمة الانفجارية للقصيدة. كلمة "thunderbolt" تربط النسر بـZeus، ملك الآلهة، اللي كان يرمي الصواعق. الـsimile تخلّي الانقضاض إلهي ويشبه السلاح في نفس الوقت. بعد خمسة أبيات من السكون، الفعل المفاجئ يصير كهربائي. والنقطة في الآخر تقفل القصيدة مثل ضربة: ما فيه ما بعد، ما فيه عاقبة — لحظة الدمار وبس.',
+        'الخاتمة الانفجارية للقصيدة. كلمة "thunderbolt" تربط النسر بـZeus، ملك الآلهة، اللي كان يرمي الصواعق. الـsimile تخلّي الانقضاض إلهي ويشبه السلاح في نفس الوقت. بعد خمسة أبيات من السكون، الفعل المفاجئ يصير كهربائي. والنقطة في الآخر تقفل القصيدة مثل ضربة: ما فيه ما بعد، ما فيه عاقبة - لحظة الدمار وبس.',
       themesAr: ['الفعل المفاجئ', 'القوة الإلهية', 'الافتراس'],
     },
   ],
@@ -250,7 +250,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'The eagle is consistently personified as "he" with "hands". This gives the bird the dignity and authority of a person -- specifically, a king or god -- rather than reducing him to mere animal.',
       lineRef: 0,
       effectAr:
-        'النسر يُشخَّص باستمرار بـ"he" وبـ"hands". وهذا يعطي الطير وقار الإنسان وسلطته — تحديداً، سلطة الملك أو الإله — بدل ما يصغّره ويخلّيه مجرّد حيوان.',
+        'النسر يُشخَّص باستمرار بـ"he" وبـ"hands". وهذا يعطي الطير وقار الإنسان وسلطته - تحديداً، سلطة الملك أو الإله - بدل ما يصغّره ويخلّيه مجرّد حيوان.',
     },
     {
       device: 'Alliteration',
@@ -268,7 +268,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'The eagle is compared to a thunderbolt -- the weapon of Zeus, king of the gods. This simile makes the dive both supernaturally fast and divinely destructive. It is the perfect ending: explosive, mythological, final.',
       lineRef: 5,
       effectAr:
-        'النسر يتشبّه بصاعقة — سلاح Zeus، ملك الآلهة. هالـsimile تخلّي الانقضاض سريع بشكل خارق وفيه دمار إلهي في نفس الوقت. وهي خاتمة مثالية: انفجارية، أسطورية، نهائية.',
+        'النسر يتشبّه بصاعقة - سلاح Zeus، ملك الآلهة. هالـsimile تخلّي الانقضاض سريع بشكل خارق وفيه دمار إلهي في نفس الوقت. وهي خاتمة مثالية: انفجارية، أسطورية، نهائية.',
     },
     {
       device: 'Imagery (visual)',
@@ -286,7 +286,7 @@ Volta: التحوّل يصير في آخر بيت بالضبط. بعد خمسة 
         'The sea is given human qualities -- it is old ("wrinkled") and slow ("crawls"). By personifying the sea this way, Tennyson makes it seem feeble compared to the eagle. The mighty ocean is just a wrinkled, crawling old man from this height.',
       lineRef: 3,
       effectAr:
-        'البحر تُعطى له صفات بشرية — يصير عجوز ("wrinkled") وبطيء ("crawls"). بـpersonification البحر بهالطريقة، Tennyson يخلّيه يبان ضعيف مقارنة بالنسر. المحيط الجبّار، من هالعلوّ، يصير مجرّد عجوز مكرمش يزحف.',
+        'البحر تُعطى له صفات بشرية - يصير عجوز ("wrinkled") وبطيء ("crawls"). بـpersonification البحر بهالطريقة، Tennyson يخلّيه يبان ضعيف مقارنة بالنسر. المحيط الجبّار، من هالعلوّ، يصير مجرّد عجوز مكرمش يزحف.',
     },
     {
       device: 'Contrast',
@@ -327,7 +327,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A caged bird',
-      'An eagle perched on a cliff before diving to catch prey — a brief, vivid snapshot of power',
+      'An eagle perched on a cliff before diving to catch prey - a brief, vivid snapshot of power',
       'A flock of birds',
       'A bird singing',
     ],
@@ -343,7 +343,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The eagle is gentle',
-      'The eagle\'s talons are personified as "hands", giving it human power and authority — "clasps" shows firm grip',
+      'The eagle\'s talons are personified as "hands", giving it human power and authority - "clasps" shows firm grip',
       'The eagle is falling',
       'The rock is smooth',
     ],
@@ -359,13 +359,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Just six lines in two tercets with AAA BBB rhyme — extreme brevity for maximum impact',
+      'Just six lines in two tercets with AAA BBB rhyme - extreme brevity for maximum impact',
       'Free verse',
       'A ballad',
     ],
     correctIndex: 1,
     explanation:
-      "Only six lines in two rhyming tercets. The extreme brevity mirrors the eagle's swift, decisive action — no wasted words, like no wasted movement.",
+      "Only six lines in two rhyming tercets. The extreme brevity mirrors the eagle's swift, decisive action - no wasted words, like no wasted movement.",
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -375,13 +375,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The eagle is dying',
-      "The eagle's dive is compared to lightning — sudden, powerful, unstoppable natural force",
+      "The eagle's dive is compared to lightning - sudden, powerful, unstoppable natural force",
       'Thunder is nearby',
       'The eagle is clumsy',
     ],
     correctIndex: 1,
     explanation:
-      "The thunderbolt simile presents the eagle's dive as an elemental force of nature — as sudden and devastating as lightning. The eagle is not just a bird but a force.",
+      "The thunderbolt simile presents the eagle's dive as an elemental force of nature - as sudden and devastating as lightning. The eagle is not just a bird but a force.",
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -407,13 +407,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The eagle wears a ring',
-      '"Ringed with the azure world" — the eagle is encircled by the blue sky, placing it at the centre of everything',
+      '"Ringed with the azure world" - the eagle is encircled by the blue sky, placing it at the centre of everything',
       'The sky has rings',
       'It describes a circus',
     ],
     correctIndex: 1,
     explanation:
-      'The eagle is "ringed" (encircled) by the blue sky — it sits at the very centre of the natural world, like a king on a throne. Everything revolves around it.',
+      'The eagle is "ringed" (encircled) by the blue sky - it sits at the very centre of the natural world, like a king on a throne. Everything revolves around it.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -423,13 +423,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It makes the eagle seem weak',
-      'Personifying the eagle with "hands", "he", and "stands" elevates it to almost human status — a figure of power and authority',
+      'Personifying the eagle with "hands", "he", and "stands" elevates it to almost human status - a figure of power and authority',
       'It makes the eagle a pet',
       'No personification exists',
     ],
     correctIndex: 1,
     explanation:
-      'By giving the eagle human attributes — hands, standing, masculine pronoun — Tennyson elevates it from mere bird to a symbol of power, authority, and mastery over the natural world.',
+      'By giving the eagle human attributes - hands, standing, masculine pronoun - Tennyson elevates it from mere bird to a symbol of power, authority, and mastery over the natural world.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -439,13 +439,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Tennyson ran out of ideas',
-      "Six lines capture a single, perfect moment — like the eagle's own swift, decisive action, nothing is wasted",
+      "Six lines capture a single, perfect moment - like the eagle's own swift, decisive action, nothing is wasted",
       'It should be longer',
       'Brevity weakens the poem',
     ],
     correctIndex: 1,
     explanation:
-      'The six-line form is perfectly suited to content: a snapshot of power. Like the eagle itself, the poem wastes nothing — every word is precise and essential.',
+      'The six-line form is perfectly suited to content: a snapshot of power. Like the eagle itself, the poem wastes nothing - every word is precise and essential.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -455,13 +455,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The sea is dirty',
-      "The sea — vast and powerful itself — is made to seem small and slow from the eagle's elevated perspective",
+      "The sea - vast and powerful itself - is made to seem small and slow from the eagle's elevated perspective",
       'The sea is frozen',
       'Waves are described',
     ],
     correctIndex: 1,
     explanation:
-      "From the eagle's height, the vast ocean appears wrinkled and crawling — tiny and insignificant. This reversal of scale emphasises the eagle's supreme position above everything.",
+      "From the eagle's height, the vast ocean appears wrinkled and crawling - tiny and insignificant. This reversal of scale emphasises the eagle's supreme position above everything.",
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -471,13 +471,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Weakness',
-      'The sublime power of nature — majesty, authority, and the sudden violence of the natural world',
+      'The sublime power of nature - majesty, authority, and the sudden violence of the natural world',
       'Domestication',
       'Friendship',
     ],
     correctIndex: 1,
     explanation:
-      "The eagle represents nature's sublime power — majestic, authoritative, and capable of sudden, devastating action. It embodies the Romantic fascination with nature's overwhelming force.",
+      "The eagle represents nature's sublime power - majestic, authoritative, and capable of sudden, devastating action. It embodies the Romantic fascination with nature's overwhelming force.",
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -489,10 +489,10 @@ const REVISION_TOPICS = [
     summary:
       'The Eagle celebrates the sublime power of nature through a brief, vivid snapshot of majesty and predatory force.',
     keyPoints: [
-      'Power and authority — the eagle commands its domain',
-      "The sublime — awe at nature's overwhelming force",
-      'Perspective — the eagle diminishes even the sea',
-      'Sudden violence — "like a thunderbolt he falls"',
+      'Power and authority - the eagle commands its domain',
+      "The sublime - awe at nature's overwhelming force",
+      'Perspective - the eagle diminishes even the sea',
+      'Sudden violence - "like a thunderbolt he falls"',
     ],
   },
   {
@@ -500,19 +500,19 @@ const REVISION_TOPICS = [
     summary:
       'Tennyson uses personification, alliteration, simile, and reversal of scale to present the eagle as a figure of supreme power.',
     keyPoints: [
-      '"Clasps the crag with crooked hands" — alliterative power',
-      '"Ringed with the azure world" — the eagle at the centre',
-      '"The wrinkled sea beneath him crawls" — the sea made small',
-      '"Like a thunderbolt he falls" — elemental force',
+      '"Clasps the crag with crooked hands" - alliterative power',
+      '"Ringed with the azure world" - the eagle at the centre',
+      '"The wrinkled sea beneath him crawls" - the sea made small',
+      '"Like a thunderbolt he falls" - elemental force',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      "Six lines in two tercets with AAA BBB rhyme — extreme brevity mirrors the eagle's swift, decisive nature.",
+      "Six lines in two tercets with AAA BBB rhyme - extreme brevity mirrors the eagle's swift, decisive nature.",
     keyPoints: [
-      'Six lines only — nothing wasted',
-      'AAA BBB rhyme — strong, emphatic closures',
+      'Six lines only - nothing wasted',
+      'AAA BBB rhyme - strong, emphatic closures',
       'Stanza 1: stillness and observation',
       'Stanza 2: sudden, explosive action',
     ],
@@ -529,7 +529,7 @@ export default function TheEaglePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="The Eagle by Alfred, Lord Tennyson — Analysis & Annotations"
+        name="The Eagle by Alfred, Lord Tennyson - Analysis & Annotations"
         description="Line-by-line analysis of The Eagle with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

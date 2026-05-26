@@ -6,7 +6,7 @@ import { Mail, Download, ExternalLink, Building2, FileText } from 'lucide-react'
 import { tMany } from '@/lib/i18n/t'
 
 // NOTE: British English throughout. No fabricated stats, press quotes, or awards.
-//       2026-05-04: Founder references removed — the platform is presented
+//       2026-05-04: Founder references removed - the platform is presented
 //       as a product, not a personal brand. Press enquiries route to the
 //       press@ inbox, not a named founder.
 //       2026-05-13: Wired through i18n (`press.*` namespace). All user-facing
@@ -292,7 +292,7 @@ export default async function PressPage() {
         </div>
       </PressSection>
 
-      {/* Founder bio intentionally not surfaced — the platform is
+      {/* Founder bio intentionally not surfaced - the platform is
           presented as a product, not a personal brand. Press enquiries
           route to press@theenglishhub.app via the press desk above. */}
 

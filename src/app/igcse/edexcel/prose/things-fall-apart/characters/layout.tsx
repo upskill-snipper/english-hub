@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Things Fall Apart: Characters — Edexcel IGCSE Literature',
+  title: 'Things Fall Apart: Characters - Edexcel IGCSE Literature',
   description:
     "Character analysis for Achebe's Things Fall Apart for Edexcel IGCSE Literature: Okonkwo, Nwoye, Ezinma, Obierika and the missionaries, with key quotations.",
 }

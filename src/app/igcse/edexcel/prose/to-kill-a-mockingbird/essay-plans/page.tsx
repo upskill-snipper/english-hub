@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird Essay Plans — Edexcel IGCSE Literature',
+    title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
   },
-  title: 'To Kill a Mockingbird Essay Plans — Edexcel IGCSE Literature',
+  title: 'To Kill a Mockingbird Essay Plans - Edexcel IGCSE Literature',
   description:
     'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
   alternates: {
@@ -246,7 +246,7 @@ export default async function TkamEssayPlansPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing (CDPA 1988) for study and criticism.

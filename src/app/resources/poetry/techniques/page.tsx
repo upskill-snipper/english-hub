@@ -429,7 +429,7 @@ const TECHNIQUES: Technique[] = [
       '"HALF a league, HALF a league, HALF a league ONward" -- the opening dactyls give way to the body\'s anapaestic dimeter, with the refrain "Rode the SIX HUN-dred" returning to dactyls; the galloping rhythm mimics horses charging',
     poem: 'The Charge of the Light Brigade by Alfred, Lord Tennyson',
     effect:
-      "The relentless rhythm — predominantly anapaestic dimeter with a dactylic refrain — mimics the thundering hooves of the cavalry charge. The unstoppable momentum reflects the soldiers' inability to turn back, driving both them and the reader inexorably forward.",
+      "The relentless rhythm - predominantly anapaestic dimeter with a dactylic refrain - mimics the thundering hooves of the cavalry charge. The unstoppable momentum reflects the soldiers' inability to turn back, driving both them and the reader inexorably forward.",
     sentenceStarter:
       'The [regular/irregular/galloping] rhythm of "[quote]" creates a sense of... This mirrors...',
   },

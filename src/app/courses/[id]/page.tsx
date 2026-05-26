@@ -7,7 +7,7 @@ import CourseDetailPage from './client-page'
 /**
  * Convert a human-readable course duration ("12 hours", "6 weeks", "8h") to
  * an ISO 8601 duration string for Course schema `timeRequired`. Falls back to
- * undefined when the format is unrecognised — Schema.org prefers the field
+ * undefined when the format is unrecognised - Schema.org prefers the field
  * absent over malformed.
  */
 function courseDurationToIso8601(duration: string | undefined): string | undefined {
@@ -67,7 +67,7 @@ export default async function Page(props: Props) {
   const courseDescription =
     course.description?.trim() ||
     course.subtitle?.trim() ||
-    `${course.title} — a ${course.tier ?? 'GCSE'} course on The English Hub.`
+    `${course.title} - a ${course.tier ?? 'GCSE'} course on The English Hub.`
 
   return (
     <>

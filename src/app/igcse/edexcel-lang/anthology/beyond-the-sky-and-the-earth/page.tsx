@@ -18,10 +18,10 @@ import { getLocale, t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology — The English Hub',
+      'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
   },
-  title: 'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology',
+  title: 'Beyond the Sky and the Earth - Jamie Zeppa - IGCSE Language A Anthology',
   description:
     'Study guide for "Beyond the Sky and the Earth: A Journey into Bhutan" by Jamie Zeppa. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
   alternates: {
@@ -51,9 +51,9 @@ const themes = [
     label: 'Beauty and landscape',
     labelAr: 'الجمال والمنظر',
     detail:
-      'Bhutan’s mountains are not ornament — they shape Zeppa’s mood, her teaching, her sense of time. Landscape is presented as a force, not a backdrop.',
+      'Bhutan’s mountains are not ornament - they shape Zeppa’s mood, her teaching, her sense of time. Landscape is presented as a force, not a backdrop.',
     detailAr:
-      'جبالُ Bhutan ليست زينةً — هي تُشكّل مزاج Zeppa، وتدريسها، وإحساسها بالزمن. ويُقدَّم المنظر بوصفه قوّةً لا خلفيّة.',
+      'جبالُ Bhutan ليست زينةً - هي تُشكّل مزاج Zeppa، وتدريسها، وإحساسها بالزمن. ويُقدَّم المنظر بوصفه قوّةً لا خلفيّة.',
   },
   {
     label: 'Transformation',
@@ -67,17 +67,17 @@ const themes = [
     label: 'Reflection and memoir',
     labelAr: 'التأمّل والسيرة',
     detail:
-      'Zeppa writes from the perspective of someone looking back — the older voice processing the younger self’s experience.',
+      'Zeppa writes from the perspective of someone looking back - the older voice processing the younger self’s experience.',
     detailAr:
-      'تكتب Zeppa من منظور النظر إلى الوراء — صوتُ الذات الأكبر يستوعب تجربةَ الذات الأصغر.',
+      'تكتب Zeppa من منظور النظر إلى الوراء - صوتُ الذات الأكبر يستوعب تجربةَ الذات الأصغر.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Zeppa opens with arrival — the disorientation, the unfamiliar sights, the gap between expectation and reality. The reader arrives with her.',
+    'Zeppa opens with arrival - the disorientation, the unfamiliar sights, the gap between expectation and reality. The reader arrives with her.',
   openingAr:
-    'تستهلّ Zeppa بالوصول — التشوّشُ، المشاهدُ غيرُ المألوفة، الفجوةُ بين التوقّع والواقع. ويصل القارئ معها.',
+    'تستهلّ Zeppa بالوصول - التشوّشُ، المشاهدُ غيرُ المألوفة، الفجوةُ بين التوقّع والواقع. ويصل القارئ معها.',
   development:
     'The text develops through accumulating detail: small encounters, lessons in language, growing relationships with students and colleagues. The shift from outside to inside happens gradually.',
   developmentAr:
@@ -87,9 +87,9 @@ const structuralAnalysis = {
   climaxAr:
     'لا توجد ذروةٌ دراميّةٌ واحدة؛ بل يبلغ النصّ ذروةً عاطفيّةً هادئة حين تُدرك Zeppa أنّها بدأت تشعر بأنّها في الديار.',
   resolution:
-    'The resolution is reflective rather than tidy — Zeppa acknowledges that she has been changed but does not pretend to have understood Bhutan completely.',
+    'The resolution is reflective rather than tidy - Zeppa acknowledges that she has been changed but does not pretend to have understood Bhutan completely.',
   resolutionAr:
-    'الخاتمة تأمّليّةٌ لا مرتّبة — تُقرّ Zeppa بأنّها قد تغيّرت، لكنّها لا تدّعي أنّها فهمت Bhutan بالكامل.',
+    'الخاتمة تأمّليّةٌ لا مرتّبة - تُقرّ Zeppa بأنّها قد تغيّرت، لكنّها لا تدّعي أنّها فهمت Bhutan بالكامل.',
   perspective:
     'First-person memoir, written with retrospective awareness. The older Zeppa understands what the younger Zeppa was experiencing.',
   perspectiveAr:
@@ -102,9 +102,9 @@ const writersPurpose = {
   achieveAr:
     'تريد Zeppa أن تنقل التجربةَ البطيئة الداخليّة للصدمة الثقافيّة والتأقلم، دون أن تستغرب المكان أو تُمَوّه دورها.',
   readerFeel:
-    'She wants the reader to feel the texture of unfamiliarity becoming familiarity — the gradual softening of disorientation into belonging.',
+    'She wants the reader to feel the texture of unfamiliarity becoming familiarity - the gradual softening of disorientation into belonging.',
   readerFeelAr:
-    'تريد للقارئ أن يحسّ نسيجَ الغرابة وهي تصير ألفةً — الذوبانَ التدريجيّ للتشوّش في الانتماء.',
+    'تريد للقارئ أن يحسّ نسيجَ الغرابة وهي تصير ألفةً - الذوبانَ التدريجيّ للتشوّش في الانتماء.',
   message:
     'A place changes the person who lives in it. Genuine encounter requires patience, humility and willingness to be changed.',
   messageAr:
@@ -115,21 +115,21 @@ const examPractice = {
   q1: {
     question: 'List four things you learn about Zeppa’s early experience in Bhutan.',
     questionAr: 'اذكر أربعةَ أشياء تعرفها عن تجربة Zeppa الأولى في Bhutan.',
-    type: 'Retrieval — 4 marks',
-    typeAr: 'الاسترجاع — ٤ درجات',
+    type: 'Retrieval - 4 marks',
+    typeAr: 'الاسترجاع - ٤ درجات',
   },
   q2: {
     question:
       'How does Zeppa use language to convey her feelings of disorientation and adjustment?',
     questionAr: 'كيف تستعمل Zeppa اللغةَ لتنقل مشاعرها من التشوّش إلى التأقلم؟',
-    type: 'Language analysis — 12 marks',
-    typeAr: 'تحليل اللغة — ١٢ درجة',
+    type: 'Language analysis - 12 marks',
+    typeAr: 'تحليل اللغة - ١٢ درجة',
   },
   q3: {
     question: 'How does Zeppa structure the text to chart her changing relationship with Bhutan?',
     questionAr: 'كيف تبني Zeppa النصَّ لرسم علاقتها المتبدّلة مع Bhutan؟',
-    type: 'Structural analysis — 12 marks',
-    typeAr: 'التحليل البنائيّ — ١٢ درجة',
+    type: 'Structural analysis - 12 marks',
+    typeAr: 'التحليل البنائيّ - ١٢ درجة',
   },
 }
 
@@ -222,7 +222,7 @@ export default async function BeyondTheSkyAndTheEarthPage() {
               <p>
                 Jamie Zeppa، كاتبةٌ كنديّة، سافرت إلى Bhutan في أواخر الثمانينيّات لتدريس
                 الإنجليزيّة في مدرسةٍ نائية ضمن برنامج معونةٍ كنديّ. وكتاب{' '}
-                <em>Beyond the Sky and the Earth</em> هو سيرتها مع تلك التجربة — الوصول والتأقلّم
+                <em>Beyond the Sky and the Earth</em> هو سيرتها مع تلك التجربة - الوصول والتأقلّم
                 وصلةٌ عميقة فيما بعد بالبلد وأهله.
               </p>
               <p>
@@ -236,7 +236,7 @@ export default async function BeyondTheSkyAndTheEarthPage() {
               <p>
                 Jamie Zeppa, a Canadian writer, travelled to Bhutan in the late 1980s to teach
                 English at a remote school as part of a Canadian aid programme.{' '}
-                <em>Beyond the Sky and the Earth</em> is her memoir of the experience — arrival,
+                <em>Beyond the Sky and the Earth</em> is her memoir of the experience - arrival,
                 adjustment, and eventual deep connection to the country and its people.
               </p>
               <p>

@@ -6,14 +6,14 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
+  title: 'Jekyll and Hyde Analysis - Quotes, Characters & Themes',
   description:
-    'In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE markers.',
+    'In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide - written by GCSE markers.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/jekyll-hyde',
   },
   openGraph: {
-    title: 'Jekyll and Hyde Analysis Hub — The English Hub',
+    title: 'Jekyll and Hyde Analysis Hub - The English Hub',
     description:
       'Line-by-line Jekyll and Hyde quote analysis, character studies, theme essays and Victorian context for AQA, Edexcel and OCR GCSE English Literature.',
     type: 'article',
@@ -25,7 +25,7 @@ const quoteAnalyses = [
     title: '"Ape-like fury"',
     slug: 'ape-like-fury',
     blurb:
-      'Atavism, Darwinian anxiety and the Carew murder scene — why Stevenson compares Hyde to a primate.',
+      'Atavism, Darwinian anxiety and the Carew murder scene - why Stevenson compares Hyde to a primate.',
   },
   {
     title: '"Something troglodytic"',
@@ -69,7 +69,7 @@ const quoteAnalyses = [
   {
     title: 'Jekyll describes his first transformation as exhilarating freedom',
     slug: 'with-the-sea-of-liberty-before-me',
-    blurb: "Jekyll's euphoric first transformation — freedom, repression and the hedonistic id.",
+    blurb: "Jekyll's euphoric first transformation - freedom, repression and the hedonistic id.",
   },
 ]
 
@@ -78,14 +78,14 @@ const characterTheme = [
     title: 'Dr Jekyll character analysis',
     slug: 'dr-jekyll-character-analysis',
     blurb:
-      'The "large, well-made, smooth-faced man of fifty" — hypocrisy, hubris and tragic downfall.',
+      'The "large, well-made, smooth-faced man of fifty" - hypocrisy, hubris and tragic downfall.',
     group: 'Character',
   },
   {
     title: 'Mr Hyde character analysis',
     slug: 'mr-hyde-character-analysis',
     blurb:
-      'Atavism, the id and the Gothic double — how Stevenson constructs a walking embodiment of evil.',
+      'Atavism, the id and the Gothic double - how Stevenson constructs a walking embodiment of evil.',
     group: 'Character',
   },
   {
@@ -105,14 +105,14 @@ const characterTheme = [
     title: 'Duality theme analysis',
     slug: 'duality-theme-analysis',
     blurb:
-      'Duality across setting, structure, character and language — the spine of the whole novella.',
+      'Duality across setting, structure, character and language - the spine of the whole novella.',
     group: 'Theme',
   },
   {
     title: 'Good and evil theme analysis',
     slug: 'good-and-evil-theme-analysis',
     blurb:
-      'How to read Hyde is genuinely debated — as pure evil, as the unrestrained id, or as pure selfishness; a strong answer weighs more than one.',
+      'How to read Hyde is genuinely debated - as pure evil, as the unrestrained id, or as pure selfishness; a strong answer weighs more than one.',
     group: 'Theme',
   },
   {
@@ -185,8 +185,8 @@ export default async function JekyllHydeHubPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(hubJsonLd) }}
       />
       <LearningResourceJsonLd
-        name="Jekyll and Hyde Analysis — Quotes, Characters & Themes"
-        description="In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE markers."
+        name="Jekyll and Hyde Analysis - Quotes, Characters & Themes"
+        description="In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide - written by GCSE markers."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
         about="Strange Case of Dr Jekyll and Mr Hyde"
@@ -198,7 +198,7 @@ export default async function JekyllHydeHubPage() {
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
           {
-            name: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
+            name: 'Jekyll and Hyde Analysis - Quotes, Characters & Themes',
             url: 'https://theenglishhub.app/analysis/jekyll-hyde',
           },
         ]}

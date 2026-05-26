@@ -190,7 +190,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>
                           , each one clamouring to be heard above the rest. The air itself seemed to
                           vibrate,
-                          <Annotation note="Synaesthesia — blending sound and physical sensation — is a sophisticated technique that creates a multi-sensory experience.">
+                          <Annotation note="Synaesthesia - blending sound and physical sensation - is a sophisticated technique that creates a multi-sensory experience.">
                             thick with noise and the warm, greasy sweetness of frying onions
                           </Annotation>
                           .
@@ -252,7 +252,7 @@ export default function CreativeWritingModelAnswersPage() {
                           'Sophisticated figurative language deployed with precision (synaesthesia, extended metaphor, personification)',
                           'Varied sentence structures for deliberate rhythmic and tonal effect',
                           'Circular structure shows confident structural control',
-                          'Shows not tells — atmosphere is created through detail, never stated',
+                          'Shows not tells - atmosphere is created through detail, never stated',
                           'Ambitious vocabulary that feels natural, never overwrought',
                           'Fluent movement between senses and perspectives (zoom in/out)',
                         ]}
@@ -268,7 +268,7 @@ export default function CreativeWritingModelAnswersPage() {
                       </div>
                       <AnswerCard>
                         <p>
-                          <Annotation note="A more engaging opening than grade 5 — uses a sensory detail to set the scene. However, it lacks the boldness of the grade 9 single-sentence opener.">
+                          <Annotation note="A more engaging opening than grade 5 - uses a sensory detail to set the scene. However, it lacks the boldness of the grade 9 single-sentence opener.">
                             The smell reached me before anything else: warm bread and roasting
                             chestnuts, carried on the wind like an invitation.
                           </Annotation>
@@ -280,7 +280,7 @@ export default function CreativeWritingModelAnswersPage() {
                           </Annotation>{' '}
                           that seemed to pulse with energy. Stalls lined both sides of the narrow
                           lane, their wooden frames sagging under the weight of produce.
-                          <Annotation note="Good specific detail — naming the fruits adds vividness. The verb 'tumbling' adds a sense of abundance.">
+                          <Annotation note="Good specific detail - naming the fruits adds vividness. The verb 'tumbling' adds a sense of abundance.">
                             Oranges, plums, and fat green grapes tumbled over the edges of crates
                           </Annotation>
                           , while hand-written signs advertised prices in thick black marker.
@@ -331,7 +331,7 @@ export default function CreativeWritingModelAnswersPage() {
                         level={GRADE_LEVELS[1]}
                         points={[
                           'Sensory detail used across multiple senses (smell, sight, sound)',
-                          'Some effective figurative language — similes are original',
+                          'Some effective figurative language - similes are original',
                           'Specific, observed details bring the scene to life',
                           'Some sentence variety, though not as deliberately controlled as grade 9',
                           'Mostly shows rather than tells, with occasional lapses',
@@ -375,12 +375,12 @@ export default function CreativeWritingModelAnswersPage() {
                         </p>
                         <p>
                           The ground was wet and slippery from the morning rain.
-                          <Annotation note="A simile — good technique, though 'like a river' is a cliche. Original comparisons earn higher marks.">
+                          <Annotation note="A simile - good technique, though 'like a river' is a cliche. Original comparisons earn higher marks.">
                             Puddles reflected the colourful awnings like a river of colours
                           </Annotation>
                           . Children ran between the stalls, laughing and chasing each other. It was
                           a{' '}
-                          <Annotation note="Telling rather than showing — a common grade 5 habit. Instead of stating the atmosphere, the writer should let the reader feel it through the details.">
+                          <Annotation note="Telling rather than showing - a common grade 5 habit. Instead of stating the atmosphere, the writer should let the reader feel it through the details.">
                             lively and exciting place to be
                           </Annotation>
                           .
@@ -400,7 +400,7 @@ export default function CreativeWritingModelAnswersPage() {
                           'Engages multiple senses but without depth or sustained effect',
                           'Some figurative language but tends towards cliches (like a river)',
                           'Adequate structure but lacks a deliberate opening or closing strategy',
-                          'Limited sentence variety — mostly simple and compound sentences',
+                          'Limited sentence variety - mostly simple and compound sentences',
                           "Tends to tell rather than show ('lively and exciting')",
                           'Some specific detail but relies on general descriptions',
                         ]}
@@ -427,7 +427,7 @@ export default function CreativeWritingModelAnswersPage() {
                             It was really loud because everyone was talking
                           </Annotation>{' '}
                           and some people were shouting. A man was selling fish and it
-                          <Annotation note="This is the only sensory detail beyond sight. It names the smell but does not describe it — 'smelled bad' is vague.">
+                          <Annotation note="This is the only sensory detail beyond sight. It names the smell but does not describe it - 'smelled bad' is vague.">
                             smelled really bad
                           </Annotation>
                           . There was also a lady selling cakes and they looked nice.
@@ -456,11 +456,11 @@ export default function CreativeWritingModelAnswersPage() {
                         level={GRADE_LEVELS[3]}
                         points={[
                           "Relies heavily on telling rather than showing ('really busy', 'smelled bad')",
-                          'No figurative language — descriptions are entirely literal',
+                          'No figurative language - descriptions are entirely literal',
                           'Simple sentence structures with no deliberate variety',
                           'Reads more like a recount than a descriptive piece',
                           "Vocabulary is basic and repetitive ('really', 'nice', 'good')",
-                          'No structural awareness — no deliberate opening, closing, or pacing',
+                          'No structural awareness - no deliberate opening, closing, or pacing',
                         ]}
                       />
                     </>
@@ -504,7 +504,7 @@ export default function CreativeWritingModelAnswersPage() {
                           . But that morning she sat at the table with a white mug I did not
                           recognise, turning it between her palms as though it were something
                           fragile, something she might drop.
-                          <Annotation note="The mug becomes a symbol — an object that carries the weight of what has not yet been said.">
+                          <Annotation note="The mug becomes a symbol - an object that carries the weight of what has not yet been said.">
                             The tea inside it had gone cold. I could tell by the stillness of the
                             surface.
                           </Annotation>
@@ -570,10 +570,10 @@ export default function CreativeWritingModelAnswersPage() {
                         points={[
                           'In medias res opening drops the reader straight into the emotional core',
                           'Sustained motif (the mug) creates a circular, cohesive structure',
-                          'Extraordinary restraint — emotion shown through physical detail, never stated',
+                          'Extraordinary restraint - emotion shown through physical detail, never stated',
                           'Distinctive, assured narrative voice throughout',
                           'Varied sentence structures used for deliberate rhythmic effect',
-                          'Every detail earns its place — nothing is wasted or decorative',
+                          'Every detail earns its place - nothing is wasted or decorative',
                         ]}
                       />
                     </>
@@ -617,7 +617,7 @@ export default function CreativeWritingModelAnswersPage() {
                           The day we left, Jake came to say goodbye. He gave me a photo of us at the
                           beach. Neither of us knew what to say, so we just stood there, hands in
                           our pockets,
-                          <Annotation note="Good moment of restraint — the silence speaks for itself.">
+                          <Annotation note="Good moment of restraint - the silence speaks for itself.">
                             watching the removal van pull away with our furniture inside
                           </Annotation>
                           .
@@ -712,7 +712,7 @@ export default function CreativeWritingModelAnswersPage() {
                           'Clear chronological structure but lacks a deliberate opening strategy',
                           'Some effective moments of specific detail',
                           "Relies on telling emotions ('shocked and upset') rather than showing them",
-                          'Limited sentence variety — mostly simple and compound structures',
+                          'Limited sentence variety - mostly simple and compound structures',
                           'Narrative voice is functional but not distinctive',
                           'Resolution is rushed and underdeveloped',
                         ]}
@@ -746,7 +746,7 @@ export default function CreativeWritingModelAnswersPage() {
                         </p>
                         <p>
                           Then we got in the car and drove to the new house.
-                          <Annotation note="The journey — potentially the most emotional part — is skipped entirely. This is a missed opportunity.">
+                          <Annotation note="The journey - potentially the most emotional part - is skipped entirely. This is a missed opportunity.">
                             It took a long time to get there.
                           </Annotation>{' '}
                           The new house was ok but it wasn&apos;t the same as my old one.
@@ -767,10 +767,10 @@ export default function CreativeWritingModelAnswersPage() {
                         level={GRADE_LEVELS[3]}
                         points={[
                           'Reads as a simple recount rather than a shaped narrative',
-                          "Almost entirely telling — emotions stated directly ('I was sad')",
+                          "Almost entirely telling - emotions stated directly ('I was sad')",
                           'No figurative language or imagery attempted',
                           'Key emotional moments are rushed or skipped entirely',
-                          'No sentence variety — all simple sentences of similar length',
+                          'No sentence variety - all simple sentences of similar length',
                           'No distinctive voice or deliberate vocabulary choices',
                         ]}
                       />
@@ -822,7 +822,7 @@ export default function CreativeWritingModelAnswersPage() {
                     name: 'Restraint',
                     desc: 'Sometimes what you leave out is more powerful than what you include. Let the reader fill in the emotional gaps.',
                     example:
-                      "Jake hands over the photograph 'without speaking' — the silence says everything.",
+                      "Jake hands over the photograph 'without speaking' - the silence says everything.",
                   },
                 ].map((tech) => (
                   <div

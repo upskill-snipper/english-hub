@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * TextStudyHub — The one-stop interactive study experience for any text.
+ * TextStudyHub - The one-stop interactive study experience for any text.
  *
  * This replaces the old passive StudyTools link panel with an embedded,
  * actionable study hub that students can use WITHOUT leaving the page:

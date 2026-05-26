@@ -9,12 +9,12 @@
  * fetch. Both paths go through `resolveFeatureFlags` to guarantee
  * symmetric output.
  *
- * The response body is dynamic — every key added to `FeatureFlagKey`
+ * The response body is dynamic - every key added to `FeatureFlagKey`
  * in `src/config/feature-flags.ts` is automatically surfaced here, so
  * new flags do not need a route change. Kept in sync with
  * `english-hub-mobile/docs/FEATURE_FLAGS.md`.
  *
- * Cache-Control: private, max-age=300 — flags change rarely, and the
+ * Cache-Control: private, max-age=300 - flags change rarely, and the
  * mobile client's stale time (5 minutes, per API_SPEC.md §7) aligns.
  */
 
@@ -66,7 +66,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     // Fetch the user's privacy settings so we can apply per-user
     // overrides on top of the static defaults. We look up via
     // supabaseUserId (with an email fallback) but we tolerate "no
-    // Prisma row yet" — new users get the default flag map.
+    // Prisma row yet" - new users get the default flag map.
     const prismaUser = await prisma.user.findUnique({
       where: { supabaseUserId: sessionUser.id },
       select: {

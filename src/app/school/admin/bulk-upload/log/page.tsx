@@ -1,7 +1,7 @@
 /**
  * Admin-only list of past bulk-upload jobs (Wave 5, web-only).
  *
- * Server component — reads straight from Prisma. Access-control happens in
+ * Server component - reads straight from Prisma. Access-control happens in
  * two layers:
  *   1. The outer `school/layout.tsx` guard redirects non-members away.
  *   2. This component additionally calls `verifySchoolMember([admin])` and

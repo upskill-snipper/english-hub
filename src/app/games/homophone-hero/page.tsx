@@ -26,13 +26,13 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'The students left ___ bags by the classroom door.',
     options: ['their', 'there', "they're"],
     answer: 'their',
-    tip: '"Their" shows belonging — the bags belong to them.',
+    tip: '"Their" shows belonging - the bags belong to them.',
   },
   {
     sentence: 'Put the new books over ___ on the shelf.',
     options: ['their', 'there', "they're"],
     answer: 'there',
-    tip: '"There" points to a place — it contains the word "here".',
+    tip: '"There" points to a place - it contains the word "here".',
   },
   {
     sentence: '___ going to be late for the school trip.',
@@ -124,7 +124,7 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'There are ___ weeks left until the holidays.',
     options: ['to', 'too', 'two'],
     answer: 'two',
-    tip: '"Two" is a number — count the weeks.',
+    tip: '"Two" is a number - count the weeks.',
   },
   // its / it's
   {
@@ -180,7 +180,7 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'What will you ___ to the school disco?',
     options: ['where', 'wear'],
     answer: 'wear',
-    tip: '"Wear" links to clothing — think "wardrobe".',
+    tip: '"Wear" links to clothing - think "wardrobe".',
   },
   // here / hear
   {
@@ -193,7 +193,7 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'Can you ___ the bell from the playground?',
     options: ['here', 'hear'],
     answer: 'hear',
-    tip: '"Hear" is about sound — it contains "ear".',
+    tip: '"Hear" is about sound - it contains "ear".',
   },
   {
     sentence: 'I cannot ___ the teacher from the back row.',
@@ -205,7 +205,7 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'Leave your homework ___ on my desk.',
     options: ['here', 'hear'],
     answer: 'here',
-    tip: '"Here" shows a place — like "there" without the t.',
+    tip: '"Here" shows a place - like "there" without the t.',
   },
   // weather / whether
   {
@@ -262,13 +262,13 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'Loud noise can ___ your concentration.',
     options: ['affect', 'effect'],
     answer: 'affect',
-    tip: '"Affect" is the verb — the Action.',
+    tip: '"Affect" is the verb - the Action.',
   },
   {
     sentence: 'The new rules had a positive ___ on behaviour.',
     options: ['affect', 'effect'],
     answer: 'effect',
-    tip: '"Effect" is the noun — the End result.',
+    tip: '"Effect" is the noun - the End result.',
   },
   {
     sentence: 'How did the news ___ the rest of the class?',
@@ -280,7 +280,7 @@ const HOMOPHONE_BANK: HomophoneItem[] = [
     sentence: 'Revising every night had a great ___ on her grades.',
     options: ['affect', 'effect'],
     answer: 'effect',
-    tip: '"An effect" — you can put "an" before it (a thing).',
+    tip: '"An effect" - you can put "an" before it (a thing).',
   },
   // practice / practise
   {
@@ -591,7 +591,7 @@ export default function HomophoneHeroPage() {
                   >
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Brilliant — that&apos;s the one!
+                        <CheckCircle className="size-4" /> Brilliant - that&apos;s the one!
                       </>
                     ) : (
                       <>

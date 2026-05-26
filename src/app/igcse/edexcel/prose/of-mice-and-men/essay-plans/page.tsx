@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men Essay Plans — Edexcel IGCSE Literature',
+    title: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five IGCSE essay plans for Of Mice and Men with PEEL paragraphs: the American Dream, loneliness, Curley\u2019s wife, George and Lennie\u2019s relationship, and Steinbeck\u2019s use of setting.',
   },
-  title: 'Of Mice and Men Essay Plans — Edexcel IGCSE Literature',
+  title: 'Of Mice and Men Essay Plans - Edexcel IGCSE Literature',
   description:
     'Five IGCSE essay plans for Of Mice and Men with PEEL paragraphs: the American Dream, loneliness, Curley\u2019s wife, George and Lennie\u2019s relationship, and Steinbeck\u2019s use of setting.',
   alternates: {
@@ -243,7 +243,7 @@ export default async function OmamEssayPlansPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing (CDPA 1988) for study and criticism.

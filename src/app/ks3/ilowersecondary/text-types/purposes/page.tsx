@@ -15,11 +15,11 @@ const RAO5 = ASSESSMENT_OBJECTIVES.RAO5
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The five non-fiction purposes — argue, describe, explain, inform, persuade',
+    title: 'The five non-fiction purposes - argue, describe, explain, inform, persuade',
     description:
       'The hub guide to the five iLowerSecondary non-fiction purposes. Definitions, tell-tale language and structure, original examples, a purpose-detective decision tree, and a 12-item self-test with answers.',
   },
-  title: 'The five non-fiction purposes — argue, describe, explain, inform, persuade',
+  title: 'The five non-fiction purposes - argue, describe, explain, inform, persuade',
   description:
     'The hub guide to the five iLowerSecondary non-fiction purposes. Definitions, tell-tale language and structure, original examples, a purpose-detective decision tree, and a 12-item self-test with answers.',
   alternates: { canonical: PAGE_URL },
@@ -56,7 +56,7 @@ const PROFILES: Record<
       'A firm restatement of the position at the end',
     ],
     example:
-      'Some say homework teaches discipline. However, the evidence points the other way: pupils who read for pleasure each evening outperform those drilled with worksheets. Therefore, schools should replace nightly homework with a single reading habit — the gain is real and the cost is nothing.',
+      'Some say homework teaches discipline. However, the evidence points the other way: pupils who read for pleasure each evening outperform those drilled with worksheets. Therefore, schools should replace nightly homework with a single reading habit - the gain is real and the cost is nothing.',
     exampleNote:
       'Notice the concede ("Some say…"), the rebuttal connective ("However…"), and the logical close ("Therefore…"). The case is built, not merely felt.',
   },
@@ -65,7 +65,7 @@ const PROFILES: Record<
     definition:
       'A text written to describe recreates a place, person or moment so precisely that the reader can imagine it. It prizes atmosphere and sensory texture over facts, instructions or arguments.',
     language: [
-      'Sensory imagery — sight, sound, smell, touch, taste',
+      'Sensory imagery - sight, sound, smell, touch, taste',
       'Expanded noun phrases: "a low, copper-coloured winter sun"',
       'Similes and metaphors that make the unfamiliar vivid',
       'Carefully chosen adjectives and adverbs for mood',
@@ -79,10 +79,10 @@ const PROFILES: Record<
     example:
       'The harbour lay under a low, copper-coloured sun. Salt and tar hung in the cold air, and the only sound was the slow knock of a loose rope against a mast. Nothing moved; the boats sat as still as photographs of themselves.',
     exampleNote:
-      'No facts to memorise and nothing to do — only a scene you could draw. Expanded noun phrases and the simile carry the mood.',
+      'No facts to memorise and nothing to do - only a scene you could draw. Expanded noun phrases and the simile carry the mood.',
   },
   explain: {
-    oneLiner: 'Make a process or reason clear — answer "how?" or "why?"',
+    oneLiner: 'Make a process or reason clear - answer "how?" or "why?"',
     definition:
       'A text written to explain helps the reader understand how something works or why something happens. It is close to inform, but it does more than list facts: it links them into a chain of cause and effect.',
     language: [
@@ -136,11 +136,11 @@ const PROFILES: Record<
     structure: [
       'A hook that grabs the reader at once',
       'Emotional build through the middle',
-      'Selective evidence — the best case, not the whole one',
+      'Selective evidence - the best case, not the whole one',
       'A memorable call to action at the close',
     ],
     example:
-      'Imagine never wasting a wet lunchtime again. Nine out of ten members say the new club changed their week — and it could change yours. One hour. One small step. Sign up today, before the last places are gone.',
+      'Imagine never wasting a wet lunchtime again. Nine out of ten members say the new club changed their week - and it could change yours. One hour. One small step. Sign up today, before the last places are gone.',
     exampleNote:
       'Direct address ("you", "imagine"), a flattering statistic, tripling ("One hour. One small step.") and a closing call to action all aim at the reader, not just the facts.',
   },
@@ -169,29 +169,29 @@ const RAO5_LINKS = [
 // ── Purpose-detective decision tree ────────────────────────────────────
 const TREE = [
   {
-    q: 'Q1 — Is the writer trying to change what you do, think or feel?',
+    q: 'Q1 - Is the writer trying to change what you do, think or feel?',
     yes: 'Go to Q2.',
     no: 'Go to Q4 (the text mainly delivers content, not a stance).',
   },
   {
-    q: 'Q2 — Is the case built mainly with reasoning and a defeated counter-argument?',
-    yes: 'PURPOSE: ARGUE — logic-led, concede-then-rebut, discourse markers.',
+    q: 'Q2 - Is the case built mainly with reasoning and a defeated counter-argument?',
+    yes: 'PURPOSE: ARGUE - logic-led, concede-then-rebut, discourse markers.',
     no: 'Go to Q3.',
   },
   {
-    q: 'Q3 — Does it lean on emotion, direct address and a call to action?',
-    yes: 'PURPOSE: PERSUADE — "you", emotive words, tripling, "sign up today".',
+    q: 'Q3 - Does it lean on emotion, direct address and a call to action?',
+    yes: 'PURPOSE: PERSUADE - "you", emotive words, tripling, "sign up today".',
     no: 'Treat as ARGUE if a clear thesis is still being defended.',
   },
   {
-    q: 'Q4 — Could you draw the scene, with mood mattering more than facts?',
-    yes: 'PURPOSE: DESCRIBE — sensory imagery, expanded noun phrases.',
+    q: 'Q4 - Could you draw the scene, with mood mattering more than facts?',
+    yes: 'PURPOSE: DESCRIBE - sensory imagery, expanded noun phrases.',
     no: 'Go to Q5.',
   },
   {
-    q: 'Q5 — Are facts linked by cause and effect so you understand how/why?',
-    yes: 'PURPOSE: EXPLAIN — "because", "as a result", logical sequence.',
-    no: 'PURPOSE: INFORM — neutral, impersonal, checkable facts only.',
+    q: 'Q5 - Are facts linked by cause and effect so you understand how/why?',
+    yes: 'PURPOSE: EXPLAIN - "because", "as a result", logical sequence.',
+    no: 'PURPOSE: INFORM - neutral, impersonal, checkable facts only.',
   },
 ]
 
@@ -207,7 +207,7 @@ const SELF_TEST: { id: number; snippet: string; answer: Purpose; why: string }[]
   {
     id: 2,
     snippet:
-      "Picture the moment the lights go down and the whole hall holds its breath. You could be there on Friday — don't miss it.",
+      "Picture the moment the lights go down and the whole hall holds its breath. You could be there on Friday - don't miss it.",
     answer: 'persuade',
     why: 'Direct address ("you"), an emotive hook and a closing call to action.',
   },
@@ -249,7 +249,7 @@ const SELF_TEST: { id: number; snippet: string; answer: Purpose; why: string }[]
   {
     id: 8,
     snippet:
-      'Join us. Give one hour. Change a life. Every volunteer we lose is a child left waiting — surely you would not turn away?',
+      'Join us. Give one hour. Change a life. Every volunteer we lose is a child left waiting - surely you would not turn away?',
     answer: 'persuade',
     why: 'Tripling, emotive appeal, rhetorical question and a call to act.',
   },
@@ -326,8 +326,8 @@ export default async function PurposesPage() {
 
       <h1>The five non-fiction purposes</h1>
       <p className="lead">
-        Every non-fiction text in the reading paper is written to do one main job. Name that job —
-        the writer&rsquo;s <em>purpose</em> — and the rest of the text starts to make sense. This
+        Every non-fiction text in the reading paper is written to do one main job. Name that job -
+        the writer&rsquo;s <em>purpose</em> - and the rest of the text starts to make sense. This
         hub covers all five purposes assessed at iLowerSecondary, the language and structure that
         give each one away, and how naming the purpose powers your {RAO5.code} answers. There is a
         purpose-detective decision tree and a 12-question self-test at the end.
@@ -337,7 +337,7 @@ export default async function PurposesPage() {
       <section className="my-10">
         <h2>The five purposes at a glance</h2>
         <p className="text-sm text-muted-foreground">
-          You will meet these across the non-fiction text types in Section A — biography, blogs,
+          You will meet these across the non-fiction text types in Section A - biography, blogs,
           journals, leaflets, articles, instructions, recounts and reports. Most real texts mix
           purposes; your job is to name the <em>dominant</em> one.
         </p>
@@ -482,7 +482,7 @@ export default async function PurposesPage() {
 
       {/* ── Self-test ─────────────────────────────────────────────────── */}
       <section className="my-10">
-        <h2>Self-test — name the purpose</h2>
+        <h2>Self-test - name the purpose</h2>
         <p className="text-sm text-muted-foreground">
           Read each original snippet and decide its dominant purpose before checking the answer. All
           twelve snippets are original works written for this page.
@@ -509,7 +509,7 @@ export default async function PurposesPage() {
         </div>
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
           Ten or more correct and you can name a purpose reliably under exam conditions. Anything
-          lower, re-read the &ldquo;tell-tale&rdquo; lists above — the language and structure are
+          lower, re-read the &ldquo;tell-tale&rdquo; lists above - the language and structure are
           the evidence the mark scheme expects you to point to.
         </p>
       </section>

@@ -23,7 +23,7 @@ import { createHash, timingSafeEqual } from 'crypto'
  * Verify the webhook authenticity.
  *
  * Returns `true` if the request is authentic, `false` otherwise. Never
- * throws — callers translate `false` into a 401 response.
+ * throws - callers translate `false` into a 401 response.
  *
  * @param rawBody - The verbatim request body as a UTF-8 string. Retained
  *                  in the signature (rather than used) so that this
@@ -33,7 +33,7 @@ import { createHash, timingSafeEqual } from 'crypto'
  */
 export function verifyWebhookSignature(rawBody: string, headers: Headers): boolean {
   // Silence the lint about `rawBody` being unused. The parameter is part
-  // of the public contract — see the ASSUMPTION note at the top of this
+  // of the public contract - see the ASSUMPTION note at the top of this
   // file. Referencing it here is cheap and future-proof.
   void rawBody
 

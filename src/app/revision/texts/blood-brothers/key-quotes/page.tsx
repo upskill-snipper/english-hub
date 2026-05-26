@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers — Key Quotes | The English Hub',
+    title: 'Blood Brothers - Key Quotes | The English Hub',
     description:
       'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
   },
-  title: 'Blood Brothers — Key Quotes',
+  title: 'Blood Brothers - Key Quotes',
   description:
     'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
   alternates: {
@@ -39,7 +39,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 1,
     text: '"So did y’ hear the story of the Johnstone twins?"',
     speaker: 'Narrator',
-    context: 'Prologue — opening line',
+    context: 'Prologue - opening line',
     analysis:
       'Opens the play as a ballad already told. Russell collapses suspense so the audience watches every scene knowing the outcome, shifting attention from plot to cause. The storytelling frame makes the tragedy feel both inevitable and preventable.',
     themes: ['Fate and free will', 'Dramatic techniques'],
@@ -57,7 +57,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 3,
     text: '"Give one to me."',
     speaker: 'Mrs Lyons',
-    context: 'Act 1 — persuading Mrs Johnstone',
+    context: 'Act 1 - persuading Mrs Johnstone',
     analysis:
       "A blunt imperative that treats a child as a commodity. Mrs Lyons's class position allows her to frame buying a baby as reasonable. Russell exposes how economic power enables the privileged to take what the poor cannot protect.",
     themes: ['Class', 'Motherhood'],
@@ -66,7 +66,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 4,
     text: '"You do know what they say about twins, secretly parted, don\'t you?"',
     speaker: 'Mrs Lyons',
-    context: 'Act 1 — inventing the superstition',
+    context: 'Act 1 - inventing the superstition',
     analysis:
       'Mrs Lyons fabricates the curse to maintain control. Russell turns a deliberate lie into a self-fulfilling prophecy driven not by magic but by the class structures that keep the twins apart. Manipulation masquerades as fate.',
     themes: ['Superstition', 'Class'],
@@ -75,7 +75,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 5,
     text: '"Shoes upon the table."',
     speaker: 'Mrs Johnstone',
-    context: 'Act 1 — superstition motif',
+    context: 'Act 1 - superstition motif',
     analysis:
       "Working-class folk superstition used as a recurring motif. Russell parallels genuine belief with Mrs Lyons's invented curse, questioning who controls narratives of fate. People without power reach for magical explanations of systemic injustice.",
     themes: ['Superstition', 'Class'],
@@ -84,7 +84,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 6,
     text: '"I wish I was our Sammy."',
     speaker: 'Mickey',
-    context: 'Act 1 — childhood song',
+    context: 'Act 1 - childhood song',
     analysis:
       "An innocent wish to be older that foreshadows Mickey's devastating adult wish to have been Edward. Russell plants the theme of wanting a different life early, in a comic song, so that its tragic echo in Act 2 hits harder.",
     themes: ['Nature vs nurture', 'Childhood'],
@@ -93,7 +93,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 7,
     text: '"We\'re blood brothers."',
     speaker: 'Mickey and Edward',
-    context: 'Act 1 — the blood-brother ritual',
+    context: 'Act 1 - the blood-brother ritual',
     analysis:
       'The boys choose kinship before knowing they share it biologically. Russell layers dramatic irony: the ritual is both redundant (they are twins) and essential (it proves that connection is natural, division imposed).',
     themes: ['Friendship', 'Nature vs nurture'],
@@ -102,7 +102,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 8,
     text: '"You see why I don\'t want you mixing with boys like that!"',
     speaker: 'Mrs Lyons',
-    context: 'Act 1 — forbidding friendship',
+    context: 'Act 1 - forbidding friendship',
     analysis:
       "Mrs Lyons polices the class boundary. Her fear is not of Mickey but of what his existence reveals about Edward's origins. Russell shows class division being actively enforced by those who benefit from it.",
     themes: ['Class', 'Friendship'],
@@ -111,7 +111,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 9,
     text: '"Only mine until the time comes round to pay the bill."',
     speaker: 'Mrs Johnstone',
-    context: 'Act 1 — trying to reclaim her child',
+    context: 'Act 1 - trying to reclaim her child',
     analysis:
       "Mrs Johnstone's anguish shows that maternal love is powerless against class privilege. Russell uses the possessive phrase to highlight the irony: the child is biologically hers, but socially he belongs to Mrs Lyons.",
     themes: ['Motherhood', 'Class'],
@@ -120,7 +120,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 10,
     text: '"I thought we always stuck together."',
     speaker: 'Edward',
-    context: 'Act 2 — confrontation with Mickey',
+    context: 'Act 2 - confrontation with Mickey',
     analysis:
       'Edward appeals to their childhood blood-brother bond. Russell exposes how class has already broken what Edward still believes is shared: their friendship cannot bridge the gulf between Mickey’s unemployment and Edward’s privilege.',
     themes: ['Class', 'Nature vs nurture'],
@@ -129,7 +129,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 11,
     text: '"If you\'d been born here, you would have been just like him."',
     speaker: 'Linda',
-    context: 'Act 2 — adolescence',
+    context: 'Act 2 - adolescence',
     analysis:
       "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge: outcomes are determined by postcode, not personality.",
     themes: ['Nature vs nurture', 'Class'],
@@ -138,7 +138,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 12,
     text: '"I suppose you still are a kid, aren\'t y\'?"',
     speaker: 'Mickey',
-    context: 'Act 2 — transition to adulthood',
+    context: 'Act 2 - transition to adulthood',
     analysis:
       'Mickey dismisses Edward as a kid who has been spared adult reality. Russell shows how unemployment and poverty have already aged Mickey past Edward, even though they are the same age. The line marks the boundary between childhood protection and adult vulnerability.',
     themes: ['Class', 'Violence'],
@@ -147,7 +147,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 13,
     text: '"I wanna kiss y\'."',
     speaker: 'Mickey',
-    context: 'Act 2 — Mickey to Linda, after prison',
+    context: 'Act 2 - Mickey to Linda, after prison',
     analysis:
       "A fragmented moment of tenderness from a Mickey numbed by antidepressants. Russell shows love persisting inside structures designed to crush it, while making the cost of poverty and prison painfully visible in Mickey's broken speech.",
     themes: ['Friendship', 'Class'],
@@ -156,7 +156,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 14,
     text: '"If I was him, that\'s what I\'d do."',
     speaker: 'Edward',
-    context: 'Act 2 — song about Mickey',
+    context: 'Act 2 - song about Mickey',
     analysis:
       'Edward fantasises about being Mickey, oblivious to the brutality of working-class life. Russell shows how privilege misreads poverty as freedom, sharpening the dramatic irony of two identical lives lived in different worlds.',
     themes: ['Friendship', 'Class'],
@@ -165,7 +165,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 15,
     text: '"There\'s a man gone mad in the town tonight."',
     speaker: 'Narrator',
-    context: 'Act 2 — approaching climax',
+    context: 'Act 2 - approaching climax',
     analysis:
       "The Narrator's warning builds dread using the ballad form. Russell makes Mickey's breakdown feel both personal and historically inevitable, connecting one man's madness to an entire city's economic collapse.",
     themes: ['Violence', 'Fate and free will'],
@@ -174,7 +174,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 16,
     text: '"I could have been him."',
     speaker: 'Mickey',
-    context: 'Act 2 — confrontation with Edward',
+    context: 'Act 2 - confrontation with Edward',
     analysis:
       "Mickey grasps the nature-versus-nurture argument the audience already knows. Russell delays this realisation to maximum dramatic effect: five words that distil the entire play's thesis into ordinary speech.",
     themes: ['Nature vs nurture', 'Class'],
@@ -183,7 +183,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 17,
     text: '"Well, how come you got everything... an\' I got nothin\'?"',
     speaker: 'Mickey',
-    context: 'Act 2 — final scene',
+    context: 'Act 2 - final scene',
     analysis:
       "Mickey's cry of class rage. The play's thesis distilled into ordinary speech. Russell gives the political argument to the character who has suffered most, making it viscerally personal and impossible to dismiss as abstract theory.",
     themes: ['Class', 'Nature vs nurture'],
@@ -192,16 +192,16 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 18,
     text: '"Tell me it\'s not true, say it\'s just a story."',
     speaker: 'Mrs Johnstone',
-    context: 'Act 2 — closing song',
+    context: 'Act 2 - closing song',
     analysis:
-      "The haunting refrain asks the audience to refuse the tragedy's inevitability. Russell implicates the viewers: if they are moved, they must ask why society allows this. The song operates on two levels — grief and political demand.",
+      "The haunting refrain asks the audience to refuse the tragedy's inevitability. Russell implicates the viewers: if they are moved, they must ask why society allows this. The song operates on two levels - grief and political demand.",
     themes: ['Fate and free will', 'Motherhood'],
   },
   {
     id: 19,
     text: '"And do we blame superstition for what came to pass?"',
     speaker: 'Narrator',
-    context: 'Act 2 — final line of the play',
+    context: 'Act 2 - final line of the play',
     analysis:
       "The Narrator's closing question rejects the supernatural reading he has spent the play building. Russell demands that the audience locate blame in class structures, not fate. The play refuses closure: the audience must supply the answer.",
     themes: ['Superstition', 'Fate and free will'],
@@ -210,7 +210,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 20,
     text: '"I\'ll get y\' after."',
     speaker: 'Sammy',
-    context: 'Act 1 — childhood threats',
+    context: 'Act 1 - childhood threats',
     analysis:
       "Casual childhood threats from Sammy that foreshadow adult violence. Russell uses Sammy's aggression to show that deprivation normalises conflict and that the criminal trajectory Mickey is later dragged into begins in childhood.",
     themes: ['Violence', 'Class'],
@@ -261,7 +261,7 @@ export default async function BloodBrothersKeyQuotesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text — Play
+              Modern Text - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -297,7 +297,7 @@ export default async function BloodBrothersKeyQuotesPage() {
                   </span>
                 </div>
                 <p className="text-caption uppercase tracking-wide text-primary">
-                  {q.speaker} — {q.context}
+                  {q.speaker} - {q.context}
                 </p>
                 <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                 <div className="flex flex-wrap gap-1.5 pt-1">

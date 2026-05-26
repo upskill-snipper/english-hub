@@ -85,7 +85,7 @@ function DistTooltip({ active, payload }: { active?: boolean; payload?: { payloa
 /* ── Component ─────────────────────────────────────────────────────────────── */
 // Re-skinned onto the premium "cinematic glass" Recharts bar chart. The
 // public API (props, types, exports, defaults) is byte-identical to the
-// previous hand-rolled SVG implementation — only the internals changed.
+// previous hand-rolled SVG implementation - only the internals changed.
 
 export const ScoreDistribution = memo(function ScoreDistribution({
   grades,

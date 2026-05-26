@@ -23,7 +23,7 @@ function _useLocaleSync(): void {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Structured testimonial (item #04 — named attribution)
+   Structured testimonial (item #04 - named attribution)
    ───────────────────────────────────────────────────────────── */
 
 interface TestimonialData {
@@ -81,7 +81,7 @@ function Testimonial({ t }: { t: TestimonialData }) {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   DATA — chapter definitions with phases
+   DATA - chapter definitions with phases
    ───────────────────────────────────────────────────────────── */
 
 interface Phase {
@@ -310,7 +310,7 @@ export default function CinematicHero() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CHAPTER 1 — SCHOOLS
+   CHAPTER 1 - SCHOOLS
    ═══════════════════════════════════════════════════════════════ */
 
 function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
@@ -351,7 +351,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
         </div>
 
         <div className="scene-viz" style={{ position: 'relative', alignItems: 'stretch' }}>
-          {/* Phase 0 — Trends */}
+          {/* Phase 0 - Trends */}
           <div className={`subscene ${phaseIdx === 0 ? 'on' : ''}`}>
             <div className="panel-head">
               <span className="crumb">
@@ -443,7 +443,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
           </div>
 
-          {/* Phase 1 — Cohort Heatmap */}
+          {/* Phase 1 - Cohort Heatmap */}
           <div className={`subscene ${phaseIdx === 1 ? 'on' : ''}`}>
             <div className="panel">
               <div className="panel-head">
@@ -520,7 +520,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
           </div>
 
-          {/* Phase 2 — Class Detail */}
+          {/* Phase 2 - Class Detail */}
           <div className={`subscene ${phaseIdx === 2 ? 'on' : ''}`}>
             <div className="panel">
               <div className="panel-head">
@@ -588,7 +588,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
           </div>
 
-          {/* Phase 3 — Student View */}
+          {/* Phase 3 - Student View */}
           <div className={`subscene ${phaseIdx === 3 ? 'on' : ''}`}>
             <div className="panel" style={{ padding: 18 }}>
               <div className="panel-head">
@@ -652,7 +652,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
           </div>
 
-          {/* Phase 4 — Intervention */}
+          {/* Phase 4 - Intervention */}
           <div className={`subscene ${phaseIdx === 4 ? 'on' : ''}`}>
             <div className="panel-head">
               <span className="crumb">
@@ -754,7 +754,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CHAPTER 2 — TEACHERS
+   CHAPTER 2 - TEACHERS
    ═══════════════════════════════════════════════════════════════ */
 
 function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
@@ -886,7 +886,7 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CHAPTER 3 — STUDENTS
+   CHAPTER 3 - STUDENTS
    ═══════════════════════════════════════════════════════════════ */
 
 function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
@@ -932,7 +932,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
         </div>
 
         <div className="scene-viz" style={{ position: 'relative', alignItems: 'stretch' }}>
-          {/* Phase 0 — Structured courses */}
+          {/* Phase 0 - Structured courses */}
           <div className={`subscene ${phaseIdx === 0 ? 'on' : ''}`}>
             <div className="feat-header">
               <h3>{_tr(`Structured courses`)}</h3>
@@ -975,7 +975,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 <span className="ch">
                   &ldquo;Don&apos;t just name the technique &mdash; show its job.&rdquo;
                 </span>
-                {/* Video placeholder removed — The English Hub isn't a video
+                {/* Video placeholder removed - The English Hub isn't a video
                     platform; the feature reel previously shown here (play
                     button + fake progress bar) misrepresented the product.
                     Kept the teaching quote + caption as an annotated-lesson
@@ -989,7 +989,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
           </div>
 
-          {/* Phase 1 — Annotated texts */}
+          {/* Phase 1 - Annotated texts */}
           <div className={`subscene ${phaseIdx === 1 ? 'on' : ''}`}>
             <div className="feat-header">
               <h3>{_tr(`Annotated texts`)}</h3>
@@ -1051,7 +1051,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
           </div>
 
-          {/* Phase 2 — AI Essay Feedback */}
+          {/* Phase 2 - AI Essay Feedback */}
           <div className={`subscene ${phaseIdx === 2 ? 'on' : ''}`}>
             <div className="feat-header">
               <h3>{_tr(`AI essay feedback`)}</h3>
@@ -1120,7 +1120,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
           </div>
 
-          {/* Phase 3 — Live Writing Coach */}
+          {/* Phase 3 - Live Writing Coach */}
           <div className={`subscene ${phaseIdx === 3 ? 'on' : ''}`}>
             <div className="feat-header">
               <h3>{_tr(`Live writing coach`)}</h3>
@@ -1215,7 +1215,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
           </div>
 
-          {/* Phase 4 — Mock Exams */}
+          {/* Phase 4 - Mock Exams */}
           <div className={`subscene ${phaseIdx === 4 ? 'on' : ''}`}>
             <div className="feat-header">
               <h3>{_tr(`Timed mock papers`)}</h3>
@@ -1287,7 +1287,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
             </div>
           </div>
 
-          {/* Phase 5 — Revise & Predict */}
+          {/* Phase 5 - Revise & Predict */}
           <div className={`subscene ${phaseIdx === 5 ? 'on' : ''}`}>
             <div className="feat-header">
               <h3>{_tr(`Revise &amp; predict`)}</h3>
@@ -1398,7 +1398,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CHAPTER 4 — PARENTS
+   CHAPTER 4 - PARENTS
    ═══════════════════════════════════════════════════════════════ */
 
 function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {

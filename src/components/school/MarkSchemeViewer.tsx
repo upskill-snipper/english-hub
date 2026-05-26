@@ -79,14 +79,14 @@ function QuestionDetail({ scheme }: { scheme: MarkScheme }) {
               key={lvl.level}
               className={cn(
                 'rounded-lg border p-4 transition-colors',
-                levelColours[lvl.level] ?? 'bg-muted/50 border-border'
+                levelColours[lvl.level] ?? 'bg-muted/50 border-border',
               )}
             >
               <div className="mb-1.5 flex items-center gap-2">
                 <span
                   className={cn(
                     'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold',
-                    levelBadgeVariants[lvl.level] ?? 'bg-muted text-foreground'
+                    levelBadgeVariants[lvl.level] ?? 'bg-muted text-foreground',
                   )}
                 >
                   {levelLabels[lvl.level] ?? `Level ${lvl.level}`}
@@ -150,7 +150,7 @@ function QuestionDetail({ scheme }: { scheme: MarkScheme }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-sm text-primary">
               <FileText className="h-4 w-4" />
-              Marker Annotations — What Good Marking Looks Like
+              Marker Annotations - What Good Marking Looks Like
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -193,7 +193,7 @@ function NativeSelect({
             'h-9 w-full appearance-none rounded-lg border border-border bg-background px-3 pr-8 text-sm text-foreground shadow-sm transition-colors',
             'focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/30',
             'disabled:cursor-not-allowed disabled:opacity-50',
-            'print:hidden'
+            'print:hidden',
           )}
         >
           <option value="">{placeholder}</option>
@@ -372,8 +372,8 @@ export function MarkSchemeViewer() {
       {activeScheme && (
         <div className="hidden print:block print:mb-4">
           <p className="text-xs text-muted-foreground">
-            {activeScheme.board} &middot; {activeScheme.subject} &middot; {activeScheme.paper} &middot;{' '}
-            {activeScheme.question} &middot; Printed from The English Hub
+            {activeScheme.board} &middot; {activeScheme.subject} &middot; {activeScheme.paper}{' '}
+            &middot; {activeScheme.question} &middot; Printed from The English Hub
           </p>
         </div>
       )}

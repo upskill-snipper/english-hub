@@ -227,7 +227,7 @@ export default function SchoolOnboardingPage() {
   // Wizard persistence
   const [wizardState, setWizardState] = useState<WizardState>(() => loadWizardState())
 
-  // School data — `schoolName` placeholder uses the en string; the
+  // School data - `schoolName` placeholder uses the en string; the
   // render path overrides with the translated default if data is missing.
   const [stats, setStats] = useState<SchoolStats>({
     teacherCount: 0,
@@ -239,17 +239,17 @@ export default function SchoolOnboardingPage() {
   const [teachers, setTeachers] = useState<TeacherMember[]>([])
   const [statsLoading, setStatsLoading] = useState(true)
 
-  // Step 2 — teacher invite
+  // Step 2 - teacher invite
   const [inviteEmail, setInviteEmail] = useState('')
   const [inviteList, setInviteList] = useState<string[]>([])
   const [inviteSending, setInviteSending] = useState(false)
   const [inviteError, setInviteError] = useState<string | null>(null)
   const [inviteSuccess, setInviteSuccess] = useState(false)
 
-  // Step 3 — join code copy
+  // Step 3 - join code copy
   const [codeCopied, setCodeCopied] = useState(false)
 
-  // Step 4 — class creation
+  // Step 4 - class creation
   const [classForm, setClassForm] = useState<ClassForm>({
     name: '',
     year_group: '',
@@ -566,7 +566,7 @@ export default function SchoolOnboardingPage() {
               <p className="text-sm text-zinc-400 mt-1">{t('onboarding.s2.subtitle')}</p>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Option A — bulk import */}
+              {/* Option A - bulk import */}
               <div className="rounded-lg border border-zinc-700 bg-zinc-800/40 p-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-md bg-zinc-700 flex items-center justify-center shrink-0 mt-0.5">
@@ -593,7 +593,7 @@ export default function SchoolOnboardingPage() {
                 </div>
               </div>
 
-              {/* Option B — invite individually */}
+              {/* Option B - invite individually */}
               <div className="rounded-lg border border-zinc-700 bg-zinc-800/40 p-4 space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-md bg-zinc-700 flex items-center justify-center shrink-0 mt-0.5">
@@ -663,7 +663,7 @@ export default function SchoolOnboardingPage() {
                 )}
               </div>
 
-              {/* Option C — skip */}
+              {/* Option C - skip */}
               <p className="text-xs text-zinc-600 text-center">{t('onboarding.s2.option_c')}</p>
 
               {/* Nav */}
@@ -721,7 +721,7 @@ export default function SchoolOnboardingPage() {
               <p className="text-sm text-zinc-400 mt-1">{t('onboarding.s3.subtitle')}</p>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Option A — bulk import */}
+              {/* Option A - bulk import */}
               <div className="rounded-lg border border-zinc-700 bg-zinc-800/40 p-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-md bg-zinc-700 flex items-center justify-center shrink-0 mt-0.5">
@@ -748,7 +748,7 @@ export default function SchoolOnboardingPage() {
                 </div>
               </div>
 
-              {/* Option B — join code */}
+              {/* Option B - join code */}
               <div className="rounded-lg border border-zinc-700 bg-zinc-800/40 p-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-md bg-zinc-700 flex items-center justify-center shrink-0 mt-0.5">

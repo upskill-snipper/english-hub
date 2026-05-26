@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Henry V — Study Guide | The English Hub',
+    title: 'Henry V - Study Guide | The English Hub',
     description:
       'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Henry V — Study Guide',
+  title: 'Henry V - Study Guide',
   description:
     'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -623,7 +623,7 @@ export default async function HenryVPage() {
   return (
     <>
       <CourseJsonLd
-        name="Henry V — Complete GCSE Study Guide"
+        name="Henry V - Complete GCSE Study Guide"
         description="In-depth study guide for Henry V covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

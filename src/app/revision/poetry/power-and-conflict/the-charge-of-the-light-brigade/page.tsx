@@ -290,10 +290,10 @@ const poem: PoemData = {
 <p><strong>Alfred Lord Tennyson</strong> (1809\u20131892) was <strong>Poet Laureate</strong> at the time, a role that carried an expectation to respond to national events. He composed the poem on <strong>2 December 1854</strong>, reportedly in just a few minutes after reading a report in <em>The Times</em> newspaper by W. H. Russell. The phrase <em>\u201Csome one had blunder\u2019d\u201D</em> comes directly from that report.</p>
 <p>Tennyson\u2019s poem was published in <em>The Examiner</em> on 9 December 1854, just weeks after the battle. He later sent 1,000 copies to soldiers in the Crimea at their request, showing that the poem served a <strong>morale-boosting and memorialising function</strong>.</p>`,
 
-  contextAr: `<p><strong>حرب القرم (Crimean War، 1853–1856)</strong> دارت بين روسيا وتحالف يضم بريطانيا وفرنسا والدولة العثمانية وسردينيا. كانت من أولى الحروب اللي يغطّيها مراسلون ومصوّرون من الصحف، وهالشي وصّل واقع الحرب مباشرة للجمهور البريطاني.</p>
-<p><strong>معركة Balaclava (25 أكتوبر 1854)</strong> شافت سوء تواصل كارثي في سلسلة القيادة البريطانية. Lord Raglan كان قاصد إن الـLight Brigade تمنع الروس من سحب المدافع اللي استولوا عليها من تحصين، بس الأمر كان مبهم — حمله Captain Nolan — وفسّره Lord Lucan وLord Cardigan بشكل غلط. الـLight Brigade، حوالي 670 فارس، شنّت هجوم مباشر على وادي محاطه المدافع الروسية من ثلاث جهات.</p>
+  contextAr: `<p><strong>حرب القرم (Crimean War، 1853-1856)</strong> دارت بين روسيا وتحالف يضم بريطانيا وفرنسا والدولة العثمانية وسردينيا. كانت من أولى الحروب اللي يغطّيها مراسلون ومصوّرون من الصحف، وهالشي وصّل واقع الحرب مباشرة للجمهور البريطاني.</p>
+<p><strong>معركة Balaclava (25 أكتوبر 1854)</strong> شافت سوء تواصل كارثي في سلسلة القيادة البريطانية. Lord Raglan كان قاصد إن الـLight Brigade تمنع الروس من سحب المدافع اللي استولوا عليها من تحصين، بس الأمر كان مبهم - حمله Captain Nolan - وفسّره Lord Lucan وLord Cardigan بشكل غلط. الـLight Brigade، حوالي 670 فارس، شنّت هجوم مباشر على وادي محاطه المدافع الروسية من ثلاث جهات.</p>
 <p>من حوالي 670 فارس هجموا، حوالي <strong>110 ماتوا، و161 جُرحوا، وعشرات أُسروا</strong>. الهجوم استمر تقريباً عشرين دقيقة بس، وصار واحد من أشهر الأخطاء العسكرية في تاريخ بريطانيا.</p>
-<p><strong>Alfred Lord Tennyson</strong> (1809–1892) كان وقتها <strong>Poet Laureate</strong> (شاعر البلاط الرسمي)، وهذا منصب يحتّم على صاحبه إنه يستجيب للأحداث الوطنية. كتب القصيدة في <strong>2 ديسمبر 1854</strong>، وحسب الروايات في دقايق معدودة بعد ما قرى تقرير في صحيفة <em>The Times</em> لـW. H. Russell. عبارة <em>"some one had blunder’d"</em> مأخوذة مباشرة من ذاك التقرير.</p>
+<p><strong>Alfred Lord Tennyson</strong> (1809-1892) كان وقتها <strong>Poet Laureate</strong> (شاعر البلاط الرسمي)، وهذا منصب يحتّم على صاحبه إنه يستجيب للأحداث الوطنية. كتب القصيدة في <strong>2 ديسمبر 1854</strong>، وحسب الروايات في دقايق معدودة بعد ما قرى تقرير في صحيفة <em>The Times</em> لـW. H. Russell. عبارة <em>"some one had blunder’d"</em> مأخوذة مباشرة من ذاك التقرير.</p>
 <p>القصيدة انتشرت في مجلة <em>The Examiner</em> في 9 ديسمبر 1854، أسابيع بس بعد المعركة. بعدها، أرسل Tennyson 1,000 نسخة للجنود في القرم بناءً على طلبهم، وهذا يبيّن إن القصيدة لعبت دور <strong>رفع المعنويات وتخليد الذكرى</strong>.</p>`,
 
   /* ── Summary ─────────────────────────────────────────────────── */
@@ -342,23 +342,23 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
 
 اللازمة (REFRAIN): البيت اللي يتكرّر "Rode the six hundred" يثبّت كل مقطع، بس يتغيّر عبر القصيدة: "Rode the six hundred" ← "Not the six hundred" ← "Left of six hundred" ← "Noble six hundred". هذا التطوّر يتبع الحبكة من الهجوم، للخسارة، للتكريم.
 
-التكرار: Tennyson يستخدم تكرار مكثّف على كل المستويات — كلمات ("cannon"، "valley of Death")، عبارات ("Theirs not to")، وأبيات كاملة. هذا يخلق إيقاع تنويمي شبه ديني، وكأن القصيدة نفسها دقّ طبل أو ترتيلة جنائزية.
+التكرار: Tennyson يستخدم تكرار مكثّف على كل المستويات - كلمات ("cannon"، "valley of Death")، عبارات ("Theirs not to")، وأبيات كاملة. هذا يخلق إيقاع تنويمي شبه ديني، وكأن القصيدة نفسها دقّ طبل أو ترتيلة جنائزية.
 
 القافية: القصيدة تستخدم قافية غير منتظمة (غالباً couplets أو triplets) بدل ما تتقيّد بنظام ثابت. هذا يعطيها طابع الـballad اللي يناسب الإلقاء الشفهي والتخليد العام.
 
-القوس السردي: القصيدة تتبع تسلسل زمني واضح: الأمر بالهجوم (1–2)، الهجوم نفسه (3–4)، الانسحاب (5)، والتكريم (6). هذا يعكس مسار المعركة نفسها.
+القوس السردي: القصيدة تتبع تسلسل زمني واضح: الأمر بالهجوم (1-2)، الهجوم نفسه (3-4)، الانسحاب (5)، والتكريم (6). هذا يعكس مسار المعركة نفسها.
 
-VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل من السرد إلى الحضّ — Tennyson يبطّل يحكي القصة ويبدأ يأمر القارئ إنه يتذكّر.`,
+VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل من السرد إلى الحضّ - Tennyson يبطّل يحكي القصة ويبدأ يأمر القارئ إنه يتذكّر.`,
 
   /* ── Key Quotes ──────────────────────────────────────────────── */
   keyQuotes: [
     {
       quote: 'Half a league, half a league, / Half a league onward',
       analysis:
-        'The opening falls in dactylic dimeter (DUM-da-da DUM-da-da) — the predominant metre of the poem, creating the galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
+        'The opening falls in dactylic dimeter (DUM-da-da DUM-da-da) - the predominant metre of the poem, creating the galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
       themes: ['Power of war', 'Duty'],
       analysisAr:
-        'الافتتاحية على وزن dactylic dimeter (DUM-da-da DUM-da-da) — الوزن الغالب في القصيدة، اللي يخلق إيقاع متسارع يدفع القارئ للأمام. كلمة "league" وحدة قياس قديمة للمسافة، تعطي القصيدة طابع ملحمي خارج الزمن. والتكرار الثلاثي يلمّح إن الهجوم ما يقدر يتوقّف، وإنه حتمي.',
+        'الافتتاحية على وزن dactylic dimeter (DUM-da-da DUM-da-da) - الوزن الغالب في القصيدة، اللي يخلق إيقاع متسارع يدفع القارئ للأمام. كلمة "league" وحدة قياس قديمة للمسافة، تعطي القصيدة طابع ملحمي خارج الزمن. والتكرار الثلاثي يلمّح إن الهجوم ما يقدر يتوقّف، وإنه حتمي.',
       themesAr: ['قوة الحرب', 'الواجب'],
     },
     {
@@ -412,7 +412,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
         'The enjambment forces a pause before the devastating "Not the six hundred." The double negative and the repetition of "not" make the loss hit harder. The refrain has changed\u2014this structural shift marks the human cost.',
       themes: ['Loss', 'Reality of conflict', 'Human cost of war'],
       analysisAr:
-        'الـenjambment يفرض توقّف قبل العبارة المدمّرة "Not the six hundred." النفي المزدوج وتكرار "not" يخلّي الخسارة توجع أكثر. اللازمة تغيّرت — وهذا التحوّل البنيوي هو اللي يأشّر للكلفة الإنسانية.',
+        'الـenjambment يفرض توقّف قبل العبارة المدمّرة "Not the six hundred." النفي المزدوج وتكرار "not" يخلّي الخسارة توجع أكثر. اللازمة تغيّرت - وهذا التحوّل البنيوي هو اللي يأشّر للكلفة الإنسانية.',
       themesAr: ['الخسارة', 'واقع الصراع', 'الكلفة الإنسانية للحرب'],
     },
     {
@@ -421,7 +421,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
         'The rhetorical question demands the answer "never." "Wild" is ambiguous\u2014it suggests both bravery and recklessness. Tennyson insists the charge should be remembered for its courage, not its futility.',
       themes: ['Memory and remembrance', 'Honour', 'Glory'],
       analysisAr:
-        'السؤال البلاغي ينتظر الإجابة "أبداً". وكلمة "wild" غامضة — تحتمل الشجاعة، وتحتمل التهوّر. Tennyson يصرّ إن الهجوم لازم ينذكر بسبب الشجاعة، مو بسبب عبثيّته.',
+        'السؤال البلاغي ينتظر الإجابة "أبداً". وكلمة "wild" غامضة - تحتمل الشجاعة، وتحتمل التهوّر. Tennyson يصرّ إن الهجوم لازم ينذكر بسبب الشجاعة، مو بسبب عبثيّته.',
       themesAr: ['الذاكرة والتخليد', 'الشرف', 'المجد'],
     },
     {
@@ -430,7 +430,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
         'The imperative "Honour" directly commands the reader to remember. "Noble" redefines the soldiers\u2019 refrain\u2014they are no longer just "six hundred" but "Noble six hundred." Tennyson transforms the poem into a permanent memorial.',
       themes: ['Memory and remembrance', 'Honour', 'Duty'],
       analysisAr:
-        'الفعل بصيغة الأمر "Honour" يأمر القارئ مباشرة إنه يتذكّر. وكلمة "Noble" تعيد تعريف لازمة الجنود — هم ما عادوا مجرّد "six hundred"، صاروا "Noble six hundred". Tennyson يحوّل القصيدة لنصب تذكاري دائم.',
+        'الفعل بصيغة الأمر "Honour" يأمر القارئ مباشرة إنه يتذكّر. وكلمة "Noble" تعيد تعريف لازمة الجنود - هم ما عادوا مجرّد "six hundred"، صاروا "Noble six hundred". Tennyson يحوّل القصيدة لنصب تذكاري دائم.',
       themesAr: ['الذاكرة والتخليد', 'الشرف', 'الواجب'],
     },
   ],
@@ -585,10 +585,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What metre does Tennyson use, and what effect does it create?',
     type: 'multiple-choice',
     options: [
-      'Iambic pentameter — creating a formal tone',
-      'Predominantly dactylic dimeter — imitating the galloping rhythm of horses',
-      'Trochaic metre — creating a marching rhythm',
-      'Free verse — creating an irregular, chaotic effect',
+      'Iambic pentameter - creating a formal tone',
+      'Predominantly dactylic dimeter - imitating the galloping rhythm of horses',
+      'Trochaic metre - creating a marching rhythm',
+      'Free verse - creating an irregular, chaotic effect',
     ],
     correctIndex: 1,
     explanation:
@@ -624,7 +624,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Stanza 4 is the only moment where the soldiers are shown striking back — "Flash\'d all their sabres bare" — briefly achieving heroic success before the devastating retreat in stanza 5.',
+      'Stanza 4 is the only moment where the soldiers are shown striking back - "Flash\'d all their sabres bare" - briefly achieving heroic success before the devastating retreat in stanza 5.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -685,10 +685,10 @@ const REVISION_TOPICS = [
     summary:
       'The poem celebrates the bravery and obedience of soldiers who charged into certain death, while subtly acknowledging the catastrophic error that sent them there.',
     keyPoints: [
-      'Duty and obedience — "Theirs not to reason why" — soldiers follow orders without question',
-      'Honour and bravery — the soldiers are heroic despite the futility of the charge',
-      'The horror of war — surrounded by cannons, riding into "the jaws of Death"',
-      'The failure of leadership — "Some one had blunder\'d" — those in command made a fatal error',
+      'Duty and obedience - "Theirs not to reason why" - soldiers follow orders without question',
+      'Honour and bravery - the soldiers are heroic despite the futility of the charge',
+      'The horror of war - surrounded by cannons, riding into "the jaws of Death"',
+      'The failure of leadership - "Some one had blunder\'d" - those in command made a fatal error',
     ],
   },
   {
@@ -696,10 +696,10 @@ const REVISION_TOPICS = [
     summary:
       'Tennyson uses personification, repetition, onomatopoeia, and biblical allusion to create a vivid, emotionally charged tribute to the fallen cavalry.',
     keyPoints: [
-      '"Valley of Death" — biblical allusion (Psalm 23) framing the battlefield as a place of inevitable death',
-      '"Jaws of Death" / "mouth of Hell" — personification of death as a predatory beast',
-      '"Volley\'d and thunder\'d" — onomatopoeia recreating the sounds of battle',
-      'Anaphora: "Cannon to right / left / in front" — surrounding the reader as the cannons surround the soldiers',
+      '"Valley of Death" - biblical allusion (Psalm 23) framing the battlefield as a place of inevitable death',
+      '"Jaws of Death" / "mouth of Hell" - personification of death as a predatory beast',
+      '"Volley\'d and thunder\'d" - onomatopoeia recreating the sounds of battle',
+      'Anaphora: "Cannon to right / left / in front" - surrounding the reader as the cannons surround the soldiers',
     ],
   },
   {
@@ -707,11 +707,11 @@ const REVISION_TOPICS = [
     summary:
       'Six stanzas of varying length, predominantly in dactylic dimeter. Largely end-stopped lines create a galloping, drumbeat rhythm that drives the poem forward like the charge itself.',
     keyPoints: [
-      'Dactylic dimeter (DUM-da-da DUM-da-da) — imitates galloping horses',
+      'Dactylic dimeter (DUM-da-da DUM-da-da) - imitates galloping horses',
       'End-stopped lines reinforce the drumbeat regularity of the charge',
-      'Refrain "Rode the six hundred" — changes to "Not the six hundred" to mark losses',
+      'Refrain "Rode the six hundred" - changes to "Not the six hundred" to mark losses',
       'Six stanzas mirror the charge: advance (1-3), brief success (4), retreat (5), memorial (6)',
-      'Final stanza shifts from narrative to imperative — commanding the reader to remember',
+      'Final stanza shifts from narrative to imperative - commanding the reader to remember',
     ],
   },
 ]
@@ -776,7 +776,7 @@ export default function ChargeOfTheLightBrigadePage() {
   return (
     <div className="mx-auto max-w-4xl space-y-10 px-4 py-8 sm:px-6 lg:px-8">
       <CourseJsonLd
-        name="The Charge of the Light Brigade by Alfred, Lord Tennyson — Analysis & Annotations"
+        name="The Charge of the Light Brigade by Alfred, Lord Tennyson - Analysis & Annotations"
         description="Line-by-line analysis of The Charge of the Light Brigade with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

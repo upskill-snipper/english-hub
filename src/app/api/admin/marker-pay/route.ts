@@ -1,10 +1,10 @@
-// ─── Platform-admin — Paid-marker payment & throughput ──────────────────────
+// ─── Platform-admin - Paid-marker payment & throughput ──────────────────────
 // GET /api/admin/marker-pay?from=YYYY-MM-DD&to=YYYY-MM-DD[&format=csv]
 //
 // Site-admin only. Computes, per marker, how many scripts they have actually
 // approved in a date window and the pay due, straight off the FROZEN Smart-IP
 // schema via the service-role Supabase client (markers / marking_submissions /
-// teacher_moderations are RLS deny-by-default — see 20260519_marker_drive.sql
+// teacher_moderations are RLS deny-by-default - see 20260519_marker_drive.sql
 // and 20260518_smart_ip_marking.sql).
 //
 // ── Attribution & counting ──────────────────────────────────────────────────
@@ -21,7 +21,7 @@
 // APPROVING_DECISIONS = ['approved','corrected']. The teacher_moderations
 // decision CHECK is ('approved','rejected','corrected','sent_back'); both
 // 'approved' (clean sign-off) and 'corrected' (accepted into the corpus WITH
-// the teacher's correction — the actual training signal, and real marking
+// the teacher's correction - the actual training signal, and real marking
 // work done) count as an approved/reviewed script. 'rejected'/'sent_back' do
 // NOT (no usable, approved output produced).
 //
@@ -31,11 +31,11 @@
 // NULL pay_rate_pence contribute 0 and are flagged rateMissing:true.
 //
 // Date window: teacher_moderations.created_at in [from 00:00:00, to+1d 00:00)
-// (UTC, end-inclusive of the whole `to` day). Both params optional — absent
+// (UTC, end-inclusive of the whole `to` day). Both params optional - absent
 // `from` = all history; absent `to` = up to now.
 //
 // EMPTY-TABLE SAFE: a missing table / query error degrades to an empty,
-// zeroed payload (never a 500) — these tables are expected to be empty until
+// zeroed payload (never a 500) - these tables are expected to be empty until
 // the marker drive is live. format=csv streams a download of the same data.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -274,7 +274,7 @@ export async function GET(request: NextRequest) {
 
     if (modErr) {
       console.error('[admin/marker-pay] moderations query failed', modErr)
-      // Markers exist but no moderation history — every marker is 0 scripts.
+      // Markers exist but no moderation history - every marker is 0 scripts.
       const p = zeroLines(markers, fromIso, toEchoIso, 'Moderation history unavailable')
       return wantsCsv ? csvResponse(p) : NextResponse.json(p)
     }
@@ -371,7 +371,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-/** Markers exist but no moderation data — every line zeroed. */
+/** Markers exist but no moderation data - every line zeroed. */
 function zeroLines(
   markers: MarkerRow[],
   from: string | null,

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { tMany } from '@/lib/i18n/t'
 
-// metadata left in English (static export — low-risk conversion deferred)
+// metadata left in English (static export - low-risk conversion deferred)
 export const metadata: Metadata = {
   openGraph: {
     title: 'How AI Marking Works',
@@ -65,7 +65,7 @@ export default async function AiExplainerPage() {
       <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
 
       <div className="mt-8 space-y-8">
-        {/* 1 — What is AI marking? */}
+        {/* 1 - What is AI marking? */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2What}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -78,7 +78,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 2 — Which AI do we use? */}
+        {/* 2 - Which AI do we use? */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Which}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -97,7 +97,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 3 — What data is sent? */}
+        {/* 3 - What data is sent? */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Data}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -118,7 +118,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 4 — Is the grade official? */}
+        {/* 4 - Is the grade official? */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Official}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -129,7 +129,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 5 — Can a human review my work? */}
+        {/* 5 - Can a human review my work? */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Human}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -142,7 +142,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 6 — How do I opt out? */}
+        {/* 6 - How do I opt out? */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Optout}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -181,7 +181,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 7 — Your rights */}
+        {/* 7 - Your rights */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Rights}</h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -203,7 +203,7 @@ export default async function AiExplainerPage() {
           </p>
         </section>
 
-        {/* 8 — Questions */}
+        {/* 8 - Questions */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Questions}</h2>
           <p className="text-muted-foreground leading-relaxed">

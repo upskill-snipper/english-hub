@@ -1,5 +1,5 @@
 /**
- * Canonical sub-processor register — THE single source of truth.
+ * Canonical sub-processor register - THE single source of truth.
  *
  * WHY THIS EXISTS
  * The operating-blueprint review found the /data-processing page,
@@ -19,18 +19,18 @@
  * Verified against package.json + a source grep, NOT assumed:
  *   • The ONLY LLM provider actually called is **Anthropic**
  *     (`@anthropic-ai/sdk@^0.90.0`, model `claude-sonnet-4-20250514`,
- *     6 routes — see `src/lib/anthropic-client.ts`). There is **no
+ *     6 routes - see `src/lib/anthropic-client.ts`). There is **no
  *     OpenAI SDK, no api.openai.com call, and no GPT model string**
  *     anywhere in `src/` (the only "OpenAI" hits are incidental code
  *     comments). The `/legal/ai-governance` §9 claim "OpenAI and
  *     Anthropic" (`dictionary-legal-long.ts:538`) is therefore
  *     **factually wrong vs the code** and must be corrected to
- *     Anthropic-only — see doc 10 §4 inconsistency #1 for the exact
+ *     Anthropic-only - see doc 10 §4 inconsistency #1 for the exact
  *     wording legal must paste (this module does NOT edit the
  *     dictionary).
  *   • Other live deps confirmed in package.json: Supabase, Stripe,
  *     Sentry, Vercel Analytics, PostHog (`posthog-js`). `resend` /
- *     `postmark` packages are **absent** from package.json — the
+ *     `postmark` packages are **absent** from package.json - the
  *     transactional-email provider could not be confirmed from deps
  *     alone (RoPA v1 names Postmark, this register historically named
  *     Resend). Flagged below with `dpaStatus: 'unconfirmed'`; see doc
@@ -38,7 +38,7 @@
  *
  * ── ANTHROPIC PRIVACY POSTURE (the high-risk entry) ─────────────────
  * No-training and zero-/limited-retention for Anthropic are governed by
- * the **commercial contract**, NOT by any request flag or header — the
+ * the **commercial contract**, NOT by any request flag or header - the
  * installed SDK exposes no retention/no-training/privacy option
  * (researched 2026-05-17; see `src/lib/anthropic-client.ts`
  * `ANTHROPIC_DATA_POLICY`). Until counsel obtains the counter-signed
@@ -47,12 +47,12 @@
  * `zeroRetention` is `'unconfirmed'`. Public pages must not assert more
  * than that until it is closed (doc 10 §4 / doc 15 C5).
  *
- * IMPORTANT — NOT YET WIRED INTO THE PUBLISHED LEGAL TABLES.
+ * IMPORTANT - NOT YET WIRED INTO THE PUBLISHED LEGAL TABLES.
  * Rewriting the published /data-processing and /legal/privacy
  * sub-processor tables is a change to a contractual data-protection
  * disclosure. It must be reviewed and signed off by the
  * founder/DPO/legal before going live. This module is the typed single
- * source so that refactor is a small, low-risk follow-up — the legal
+ * source so that refactor is a small, low-risk follow-up - the legal
  * pages should map over `LIVE_SUBPROCESSORS` instead of hand-
  * maintaining each list:
  *     - src/app/data-processing/page.tsx  (Section 6 table)
@@ -184,7 +184,7 @@ export const SUBPROCESSORS: readonly SubProcessor[] = [
     // THE high-risk AI sub-processor. Code-verified as the ONLY LLM provider.
     // dpaStatus/zeroRetention are honestly 'unconfirmed' until counsel closes
     // human-action-checklist.md item 4 (doc 17 / doc 15 C5). No-training &
-    // retention are CONTRACTUAL, not a request flag — the SDK has no such
+    // retention are CONTRACTUAL, not a request flag - the SDK has no such
     // option (see src/lib/anthropic-client.ts ANTHROPIC_DATA_POLICY).
     name: 'Anthropic (Claude)',
     purpose:
@@ -217,7 +217,7 @@ export const SUBPROCESSORS: readonly SubProcessor[] = [
     // package.json has neither `resend` nor `postmark`; RoPA v1 names
     // Postmark, this register historically named Resend. Provider + DPA
     // cannot be evidenced from code → 'unconfirmed'. doc 10 §4 #5.
-    name: 'Transactional email provider (Resend / Postmark — UNCONFIRMED)',
+    name: 'Transactional email provider (Resend / Postmark - UNCONFIRMED)',
     purpose: 'Transactional email delivery',
     dataCategories: ['email address', 'email content (transactional)'],
     location: 'US',
@@ -272,7 +272,7 @@ export const SUBPROCESSORS: readonly SubProcessor[] = [
     live: true,
   }),
   sp({
-    // TODO(founder/legal): confirm still live — appears only in Qatar
+    // TODO(founder/legal): confirm still live - appears only in Qatar
     // strings + a flags comment. If retired, set live:false & fix Qatar copy.
     name: 'PostHog',
     purpose: 'Product analytics (event-level)',
@@ -286,7 +286,7 @@ export const SUBPROCESSORS: readonly SubProcessor[] = [
   }),
 ] as const
 
-/** Currently-live processors only — what public pages should render. */
+/** Currently-live processors only - what public pages should render. */
 export const LIVE_SUBPROCESSORS: readonly SubProcessor[] = SUBPROCESSORS.filter((s) => s.live)
 
 /** The single LLM / high-risk-AI sub-processor (code-verified: Anthropic only). */
@@ -295,7 +295,7 @@ export const AI_SUBPROCESSOR: SubProcessor = SUBPROCESSORS.find((s) =>
 ) as SubProcessor
 
 /**
- * Entries whose contractual paperwork is NOT yet evidenced — the precise list
+ * Entries whose contractual paperwork is NOT yet evidenced - the precise list
  * counsel/DPO must close before the published disclosure can claim more.
  * Consumed by the compliance docs so the residual is derived, not retyped.
  */

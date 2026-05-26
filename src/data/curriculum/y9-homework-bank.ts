@@ -1,15 +1,15 @@
 // ─────────────────────────────────────────────────────────────
 // Year 9 Homework Task Bank
 // T1: A Christmas Carol (10 tasks)
-// T2: Writing Craft — Transactional & Non-Fiction (10 tasks)
+// T2: Writing Craft - Transactional & Non-Fiction (10 tasks)
 // T3: Of Mice and Men (10 tasks)
 // ─────────────────────────────────────────────────────────────
 
 export interface HomeworkTask {
-  id: string;
-  title: string;
-  yearGroup: 'Year 9';
-  termUnit: string;
+  id: string
+  title: string
+  yearGroup: 'Year 9'
+  termUnit: string
   type:
     | 'reading-response'
     | 'extended-writing'
@@ -18,22 +18,22 @@ export interface HomeworkTask {
     | 'revision'
     | 'vocabulary'
     | 'grammar-practice'
-    | 'analysis';
-  description: string;
-  instructions: string[];
-  estimatedTime: string;
-  dueLesson: number;
-  markingCriteria: string[];
-  parentGuidance: string;
+    | 'analysis'
+  description: string
+  instructions: string[]
+  estimatedTime: string
+  dueLesson: number
+  markingCriteria: string[]
+  parentGuidance: string
   differentiation: {
-    support: string;
-    core: string;
-    stretch: string;
-  };
+    support: string
+    core: string
+    stretch: string
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════
-// TERM 1 — A CHRISTMAS CAROL (10 tasks)
+// TERM 1 - A CHRISTMAS CAROL (10 tasks)
 // ═══════════════════════════════════════════════════════════════
 
 const t1Tasks: HomeworkTask[] = [
@@ -44,7 +44,7 @@ const t1Tasks: HomeworkTask[] = [
     termUnit: 'T1: A Christmas Carol',
     type: 'research',
     description:
-      'Research the conditions of the Victorian poor, including workhouses, child labour, and life expectancy, to build the contextual knowledge needed to understand Dickens\'s social message.',
+      "Research the conditions of the Victorian poor, including workhouses, child labour, and life expectancy, to build the contextual knowledge needed to understand Dickens's social message.",
     instructions: [
       'Use at least two sources (e.g. a textbook, a reliable website such as the Victorian Web, or a library book).',
       'Make notes on: (a) working conditions, (b) workhouses, (c) child poverty, (d) the gap between rich and poor.',
@@ -57,7 +57,7 @@ const t1Tasks: HomeworkTask[] = [
     markingCriteria: [
       'Two or more sources consulted and acknowledged.',
       'Notes cover all four bullet areas.',
-      'Summary is accurate and in the student\'s own words.',
+      "Summary is accurate and in the student's own words.",
       'At least two specific contextual facts identified for essay use.',
     ],
     parentGuidance:
@@ -79,8 +79,8 @@ const t1Tasks: HomeworkTask[] = [
     description:
       'Re-read Stave 1 of A Christmas Carol and annotate the text to identify how Dickens presents Scrooge as a symbol of selfish capitalism.',
     instructions: [
-      'Re-read Stave 1 carefully, from the opening to the arrival of Marley\'s Ghost.',
-      'Highlight or underline at least six quotations that reveal Scrooge\'s character.',
+      "Re-read Stave 1 carefully, from the opening to the arrival of Marley's Ghost.",
+      "Highlight or underline at least six quotations that reveal Scrooge's character.",
       'For each quotation, add a brief annotation: what it shows about Scrooge and what language technique is used.',
       'Note any references to cold, darkness, or isolation and consider what these suggest.',
       'Write two or three sentences explaining your overall impression of Scrooge at this point in the novella.',
@@ -100,7 +100,7 @@ const t1Tasks: HomeworkTask[] = [
         'A list of six key quotations is provided; students annotate those rather than selecting their own.',
       core: 'Select and annotate six quotations independently.',
       stretch:
-        'Consider how the narrative voice shapes the reader\'s attitude towards Scrooge, and analyse one quotation at sentence-level (word choice, syntax, sound).',
+        "Consider how the narrative voice shapes the reader's attitude towards Scrooge, and analyse one quotation at sentence-level (word choice, syntax, sound).",
     },
   },
   {
@@ -116,7 +116,7 @@ const t1Tasks: HomeworkTask[] = [
       'Begin with a clear topic sentence stating your argument about Scrooge.',
       'Embed a quotation from Stave 1 as your evidence.',
       'Explain the effect of specific language choices (word-level analysis).',
-      'End with a linking sentence that connects to Dickens\'s broader social message.',
+      "End with a linking sentence that connects to Dickens's broader social message.",
       'Aim for 150-200 words.',
     ],
     estimatedTime: '35 minutes',
@@ -125,14 +125,13 @@ const t1Tasks: HomeworkTask[] = [
       'Clear topic sentence with an arguable point.',
       'Embedded quotation used correctly.',
       'Language analysed at word level.',
-      'Link to Dickens\'s purpose or context made.',
+      "Link to Dickens's purpose or context made.",
       'Accurate spelling and punctuation throughout.',
     ],
     parentGuidance:
       'Check that your child has not simply re-told the story. The paragraph should argue a point and refer closely to the text.',
     differentiation: {
-      support:
-        'Use the provided paragraph frame with sentence starters for each stage of P-E-E-L.',
+      support: 'Use the provided paragraph frame with sentence starters for each stage of P-E-E-L.',
       core: 'Write independently using the P-E-E-L structure.',
       stretch:
         'Write two linked paragraphs, each with a different quotation, and compare the effect of two language techniques.',
@@ -162,7 +161,7 @@ const t1Tasks: HomeworkTask[] = [
       'Either the specified phrase (or similar) is used naturally.',
     ],
     parentGuidance:
-      'Remind your child that context should support analysis, not replace it. Ask them to explain the difference between \'telling us facts\' and \'using facts to support an argument\'.',
+      "Remind your child that context should support analysis, not replace it. Ask them to explain the difference between 'telling us facts' and 'using facts to support an argument'.",
     differentiation: {
       support:
         'Rewrite with a sentence-level scaffold showing where context, quotation, and analysis slots in.',
@@ -189,7 +188,7 @@ const t1Tasks: HomeworkTask[] = [
     dueLesson: 6,
     markingCriteria: [
       '15 entries completed with definition and example sentence.',
-      'Definitions are in the student\'s own words.',
+      "Definitions are in the student's own words.",
       'Short paragraph uses all three chosen words accurately.',
       'Log is clearly laid out and easy to read.',
     ],
@@ -200,7 +199,7 @@ const t1Tasks: HomeworkTask[] = [
         'A bank of 20 words is provided; students choose 15 and complete definitions with the aid of the glossary sheet.',
       core: 'Select and define 15 words independently.',
       stretch:
-        'Add etymology (word origins) for five entries and consider how the word\'s history adds meaning when applied to the novella.',
+        "Add etymology (word origins) for five entries and consider how the word's history adds meaning when applied to the novella.",
     },
   },
   {
@@ -229,11 +228,10 @@ const t1Tasks: HomeworkTask[] = [
     parentGuidance:
       'Ask your child to talk through their plan before writing it down. Being able to explain the argument aloud is a great sign that the ideas are clear.',
     differentiation: {
-      support:
-        'Use a structured planning template with labelled boxes for each section.',
+      support: 'Use a structured planning template with labelled boxes for each section.',
       core: 'Complete the plan using any format (spider diagram, bullets, table).',
       stretch:
-        'Add a counter-argument paragraph to the plan, considering whether Scrooge\'s transformation is fully convincing.',
+        "Add a counter-argument paragraph to the plan, considering whether Scrooge's transformation is fully convincing.",
     },
   },
   {
@@ -243,12 +241,12 @@ const t1Tasks: HomeworkTask[] = [
     termUnit: 'T1: A Christmas Carol',
     type: 'analysis',
     description:
-      'Write an analytical paragraph on how Dickens uses the Ghost of Christmas Past to reveal Scrooge\'s emotional capacity.',
+      "Write an analytical paragraph on how Dickens uses the Ghost of Christmas Past to reveal Scrooge's emotional capacity.",
     instructions: [
       'Re-read the scenes involving the Ghost of Christmas Past in Stave 2.',
       'Write a P-E-E-L paragraph focused on one key moment where we see Scrooge show emotion.',
-      'Analyse the specific language Dickens uses to describe Scrooge\'s reaction.',
-      'Link your analysis to the idea that Scrooge\'s coldness is learned, not innate.',
+      "Analyse the specific language Dickens uses to describe Scrooge's reaction.",
+      "Link your analysis to the idea that Scrooge's coldness is learned, not innate.",
       'Aim for 150-180 words.',
     ],
     estimatedTime: '35 minutes',
@@ -266,7 +264,7 @@ const t1Tasks: HomeworkTask[] = [
         'Two quotations are pre-selected; students choose one and follow the paragraph frame.',
       core: 'Select a quotation independently and write the full P-E-E-L paragraph.',
       stretch:
-        'Explore the structural significance of Stave 2 within the novella as a whole, linking to Dickens\'s purpose.',
+        "Explore the structural significance of Stave 2 within the novella as a whole, linking to Dickens's purpose.",
     },
   },
   {
@@ -287,19 +285,19 @@ const t1Tasks: HomeworkTask[] = [
     estimatedTime: '35 minutes',
     dueLesson: 9,
     markingCriteria: [
-      'Clear argument about Dickens\'s social purpose.',
+      "Clear argument about Dickens's social purpose.",
       'Analysis of specific word choices including capitalisation.',
       'Contextual reference used to strengthen the argument.',
       'Writing is well-structured and fluent.',
     ],
     parentGuidance:
-      'Help your child think about why Dickens names these figures rather than describing them — names carry weight in allegory.',
+      'Help your child think about why Dickens names these figures rather than describing them - names carry weight in allegory.',
     differentiation: {
       support:
         'Provide the quotation and a list of key terms; student writes the explanation and link sections.',
       core: 'Write the full paragraph independently.',
       stretch:
-        'Compare this moment with a second allegorical moment elsewhere in the novella (e.g. Marley\'s chains) and consider what both reveal about Dickens\'s method.',
+        "Compare this moment with a second allegorical moment elsewhere in the novella (e.g. Marley's chains) and consider what both reveal about Dickens's method.",
     },
   },
   {
@@ -311,11 +309,11 @@ const t1Tasks: HomeworkTask[] = [
     description:
       'Complete a timed extract-based question to practise writing under pressure and managing time effectively.',
     instructions: [
-      'Read the printed extract from Stave 4 (the churchyard scene) carefully — allow yourself 5 minutes to read and annotate.',
+      'Read the printed extract from Stave 4 (the churchyard scene) carefully - allow yourself 5 minutes to read and annotate.',
       'Answer the question: "How does Dickens create a sense of fear and dread in this extract?" in 20 minutes.',
       'Use at least two quotations from the extract.',
-      'Comment on language, structure, and Dickens\'s purpose.',
-      'Time yourself strictly — start a timer and stop at 20 minutes.',
+      "Comment on language, structure, and Dickens's purpose.",
+      'Time yourself strictly - start a timer and stop at 20 minutes.',
       'After finishing, note one thing you did well and one target for next time.',
     ],
     estimatedTime: '30 minutes',
@@ -327,10 +325,9 @@ const t1Tasks: HomeworkTask[] = [
       'Self-reflection note included.',
     ],
     parentGuidance:
-      'Please make sure your child works to the strict time limit — the purpose of this task is to practise writing quickly, not to produce a perfect response.',
+      'Please make sure your child works to the strict time limit - the purpose of this task is to practise writing quickly, not to produce a perfect response.',
     differentiation: {
-      support:
-        'Allow 30 minutes and provide two pre-selected quotations to analyse.',
+      support: 'Allow 30 minutes and provide two pre-selected quotations to analyse.',
       core: 'Complete in 20 minutes from a cold start.',
       stretch:
         'After the 20-minute response, spend a further 10 minutes extending one paragraph to include a more sophisticated structural or contextual point.',
@@ -338,12 +335,12 @@ const t1Tasks: HomeworkTask[] = [
   },
   {
     id: 'y9-t1-hw-10',
-    title: 'Reflection: Dickens\'s Purpose',
+    title: "Reflection: Dickens's Purpose",
     yearGroup: 'Year 9',
     termUnit: 'T1: A Christmas Carol',
     type: 'reading-response',
     description:
-      'Write a reflective response on what you believe Dickens\'s primary purpose was in writing A Christmas Carol, using evidence from across the novella.',
+      "Write a reflective response on what you believe Dickens's primary purpose was in writing A Christmas Carol, using evidence from across the novella.",
     instructions: [
       'Consider the following possible purposes: (a) social reform, (b) moral instruction, (c) entertainment, (d) personal guilt.',
       'Decide which you find most convincing and write 200-250 words arguing your view.',
@@ -367,13 +364,13 @@ const t1Tasks: HomeworkTask[] = [
         'Provide a structured template: Argument (I believe...) / Evidence 1 / Evidence 2 / Counter-argument / Conclusion.',
       core: 'Write 200-250 words independently.',
       stretch:
-        'Explore how Dickens\'s own biography (his childhood poverty, his father\'s imprisonment in a debtors\' gaol) may have shaped his purpose, drawing on secondary reading.',
+        "Explore how Dickens's own biography (his childhood poverty, his father's imprisonment in a debtors' gaol) may have shaped his purpose, drawing on secondary reading.",
     },
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════
-// TERM 2 — WRITING CRAFT: TRANSACTIONAL & NON-FICTION (10 tasks)
+// TERM 2 - WRITING CRAFT: TRANSACTIONAL & NON-FICTION (10 tasks)
 // ═══════════════════════════════════════════════════════════════
 
 const t2Tasks: HomeworkTask[] = [
@@ -386,7 +383,7 @@ const t2Tasks: HomeworkTask[] = [
     description:
       'Read and closely annotate a newspaper article to identify how writers use structural and language techniques to influence readers.',
     instructions: [
-      'Find a news or opinion article from a broadsheet newspaper (e.g. The Guardian, The Times, The Telegraph) — print or digital.',
+      'Find a news or opinion article from a broadsheet newspaper (e.g. The Guardian, The Times, The Telegraph) - print or digital.',
       'Read the article once for overall understanding, then re-read to annotate.',
       'Label at least five techniques, e.g. rhetorical question, anecdote, statistics, emotive language, direct address.',
       'For each annotation, write a brief note explaining the intended effect on the reader.',
@@ -401,7 +398,7 @@ const t2Tasks: HomeworkTask[] = [
       'Article is from a named, credible source.',
     ],
     parentGuidance:
-      'Help your child choose an article on a topic they find genuinely interesting — engagement with the content improves the quality of annotation.',
+      'Help your child choose an article on a topic they find genuinely interesting - engagement with the content improves the quality of annotation.',
     differentiation: {
       support:
         'Provide a pre-selected article with six techniques highlighted; students write the effect annotations only.',
@@ -454,11 +451,11 @@ const t2Tasks: HomeworkTask[] = [
       'Draft a formal letter of complaint about a real or imagined issue, demonstrating control of formal register and transactional conventions.',
     instructions: [
       'Choose a scenario: a faulty product, a poor service experience, or a local council issue.',
-      'Write the letter in full formal layout: sender\'s address, date, recipient\'s address, salutation, body, sign-off.',
+      "Write the letter in full formal layout: sender's address, date, recipient's address, salutation, body, sign-off.",
       'State your complaint clearly in the opening paragraph.',
       'Develop your case with specific details in the second paragraph.',
       'Propose a resolution in the third paragraph.',
-      'Maintain a formal, measured tone throughout — avoid aggressive or emotional language.',
+      'Maintain a formal, measured tone throughout - avoid aggressive or emotional language.',
       'Aim for 250-350 words.',
     ],
     estimatedTime: '45 minutes',
@@ -477,7 +474,7 @@ const t2Tasks: HomeworkTask[] = [
         'Provide a template with the layout pre-formatted and sentence starters for each paragraph.',
       core: 'Write independently from a chosen scenario.',
       stretch:
-        'Write two versions of the opening paragraph — one too aggressive, one too passive — then write the optimal version and explain why the register matters.',
+        'Write two versions of the opening paragraph - one too aggressive, one too passive - then write the optimal version and explain why the register matters.',
     },
   },
   {
@@ -493,7 +490,7 @@ const t2Tasks: HomeworkTask[] = [
       'Use the following sections: Title, Introduction, Findings, Recommendations, Conclusion.',
       'Use subheadings, bullet points where appropriate, and a formal impersonal tone.',
       'Include at least one invented statistic or survey result to support your findings.',
-      'Avoid first-person ("I think...") — write in the passive or third person where possible.',
+      'Avoid first-person ("I think...") - write in the passive or third person where possible.',
     ],
     estimatedTime: '45 minutes',
     dueLesson: 16,
@@ -539,13 +536,13 @@ const t2Tasks: HomeworkTask[] = [
       'Writing creates a strong sense of atmosphere.',
     ],
     parentGuidance:
-      'Ask your child to close their eyes and describe the place to you first — this spoken rehearsal often produces more vivid vocabulary than going straight to the page.',
+      'Ask your child to close their eyes and describe the place to you first - this spoken rehearsal often produces more vivid vocabulary than going straight to the page.',
     differentiation: {
       support:
         'Provide a sensory planning grid; students fill in what they would see, hear, smell, touch, and taste, then write the paragraph from their notes.',
       core: 'Plan and write independently.',
       stretch:
-        'Write the same place twice — once in daylight, once at night — and comment on how atmosphere shifts with conditions.',
+        'Write the same place twice - once in daylight, once at night - and comment on how atmosphere shifts with conditions.',
     },
   },
   {
@@ -558,7 +555,7 @@ const t2Tasks: HomeworkTask[] = [
       'Revise the key persuasive and rhetorical techniques covered this term by creating a revision resource of your choice.',
     instructions: [
       'Review your class notes on persuasive writing techniques (e.g. AFOREST, rhetorical devices, tone, structure).',
-      'Create a revision aid — this could be flashcards, a mind map, a summary sheet, or a quiz.',
+      'Create a revision aid - this could be flashcards, a mind map, a summary sheet, or a quiz.',
       'Include at least eight techniques with definitions and a short example of each.',
       'Test yourself: cover the definitions and try to recall each technique from the term alone.',
       'Note any techniques you find hard to remember and write each one out three times with an example.',
@@ -714,10 +711,10 @@ const t2Tasks: HomeworkTask[] = [
         'Identify one piece of work from Term 2 that you feel represents your best writing. Write a detailed annotation explaining precisely why you are proud of it.',
     },
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════
-// TERM 3 — OF MICE AND MEN (10 tasks)
+// TERM 3 - OF MICE AND MEN (10 tasks)
 // ═══════════════════════════════════════════════════════════════
 
 const t3Tasks: HomeworkTask[] = [
@@ -733,7 +730,7 @@ const t3Tasks: HomeworkTask[] = [
       'Re-read Chapter 1 from the opening description of the Salinas River to the end of the chapter.',
       'Annotate at least six moments that reveal the dynamic between George and Lennie.',
       'Label the power balance in each moment: who has authority and why?',
-      'Identify two quotations that show Lennie\'s childlike qualities and two that show George\'s frustration.',
+      "Identify two quotations that show Lennie's childlike qualities and two that show George's frustration.",
       'Write 3-4 sentences at the end of your annotations predicting how this relationship might be tested later in the novel.',
     ],
     estimatedTime: '40 minutes',
@@ -745,7 +742,7 @@ const t3Tasks: HomeworkTask[] = [
       'Prediction is reasoned and refers to the text.',
     ],
     parentGuidance:
-      'Ask your child what they think George and Lennie\'s relationship means for the novel. Discussing the idea of friendship and dependence is a great way into the themes.',
+      "Ask your child what they think George and Lennie's relationship means for the novel. Discussing the idea of friendship and dependence is a great way into the themes.",
     differentiation: {
       support:
         'Provide six quotations pre-selected from Chapter 1; students annotate the power balance and character quality for each.',
@@ -778,13 +775,13 @@ const t3Tasks: HomeworkTask[] = [
       'Two sources acknowledged.',
     ],
     parentGuidance:
-      'If possible, look at photos from the 1930s together — the Farm Security Administration archive has many powerful images freely available online.',
+      'If possible, look at photos from the 1930s together - the Farm Security Administration archive has many powerful images freely available online.',
     differentiation: {
       support:
         'Provide a research guide with sub-headings and key vocabulary for each area, plus a list of suggested websites.',
       core: 'Research independently.',
       stretch:
-        'Consider how the context of racial segregation adds an additional layer to Crooks\'s situation, drawing on your research.',
+        "Consider how the context of racial segregation adds an additional layer to Crooks's situation, drawing on your research.",
     },
   },
   {
@@ -809,16 +806,16 @@ const t3Tasks: HomeworkTask[] = [
       'Two analytical paragraphs with explicit comparison.',
       'Comparative connectives used correctly.',
       'One quotation per character.',
-      'Concluding sentence addresses Steinbeck\'s purpose.',
+      "Concluding sentence addresses Steinbeck's purpose.",
     ],
     parentGuidance:
-      'Ask your child which character they would rather be friends with and why — this personal response often generates good ideas for formal writing.',
+      'Ask your child which character they would rather be friends with and why - this personal response often generates good ideas for formal writing.',
     differentiation: {
       support:
         'Provide a paragraph frame with comparative connectives in place; students fill in the analysis around the scaffold.',
       core: 'Write the paragraphs independently from the comparison table.',
       stretch:
-        'Write a third paragraph exploring how the relationship between George and Lennie reflects Steinbeck\'s broader themes of loneliness and dependence.',
+        "Write a third paragraph exploring how the relationship between George and Lennie reflects Steinbeck's broader themes of loneliness and dependence.",
     },
   },
   {
@@ -834,12 +831,12 @@ const t3Tasks: HomeworkTask[] = [
       "Write a P-E-E-L paragraph arguing that Steinbeck presents Curley's Wife as a victim of her circumstances.",
       'Use one embedded quotation from her first appearance and one from the barn scene.',
       "In your explanation, refer to the context of women's limited roles in 1930s America.",
-      "End with a sentence acknowledging that other readers might see her as dangerous, and briefly explain why.",
+      'End with a sentence acknowledging that other readers might see her as dangerous, and briefly explain why.',
     ],
     estimatedTime: '40 minutes',
     dueLesson: 27,
     markingCriteria: [
-      'Clear argument about Steinbeck\'s presentation made.',
+      "Clear argument about Steinbeck's presentation made.",
       'Two embedded quotations from different sections of the novel.',
       'Contextual reference to women in 1930s America.',
       'Counter-reading acknowledged in the final sentence.',
@@ -851,7 +848,7 @@ const t3Tasks: HomeworkTask[] = [
         'Provide two pre-selected quotations and a paragraph frame; students write the explanation and context sections.',
       core: 'Select quotations and write the full paragraph independently.',
       stretch:
-        "Write a second paragraph arguing the alternative reading — that Curley's Wife poses a threat to others — and consider which reading is more convincing.",
+        "Write a second paragraph arguing the alternative reading - that Curley's Wife poses a threat to others - and consider which reading is more convincing.",
     },
   },
   {
@@ -864,7 +861,7 @@ const t3Tasks: HomeworkTask[] = [
       'Plan a full essay responding to the question: "How does Steinbeck explore the theme of dreams and their destruction in Of Mice and Men?"',
     instructions: [
       'Write a one-sentence thesis that directly answers the question.',
-      'Plan four body paragraphs: George and Lennie\'s dream, Candy\'s attachment to the dream, Crooks\'s momentary belief in the dream, the destruction of the dream.',
+      "Plan four body paragraphs: George and Lennie's dream, Candy's attachment to the dream, Crooks's momentary belief in the dream, the destruction of the dream.",
       'For each paragraph, note: a topic sentence, a quotation, a language point, a context point.',
       'Plan a brief introduction (2-3 sentences) and a conclusion that connects to the title of John Steinbeck\'s poem by Robert Burns ("To a Mouse").',
       'Annotate your plan to show which chapter each piece of evidence comes from.',
@@ -885,7 +882,7 @@ const t3Tasks: HomeworkTask[] = [
         'Provide a planning template with sections labelled and a hint for the topic sentence of each paragraph.',
       core: 'Complete the plan independently.',
       stretch:
-        'Add a fifth paragraph plan examining how Steinbeck\'s use of circular structure reinforces the theme of inevitability.',
+        "Add a fifth paragraph plan examining how Steinbeck's use of circular structure reinforces the theme of inevitability.",
     },
   },
   {
@@ -931,9 +928,9 @@ const t3Tasks: HomeworkTask[] = [
       'Write a first draft of an essay responding to the question: "How does Steinbeck present loneliness in Of Mice and Men?"',
     instructions: [
       'Use your essay plan (or create a new one if needed) to write a full draft: introduction, three body paragraphs, conclusion.',
-      'Each body paragraph should focus on a different character affected by loneliness (e.g. Candy, Crooks, Curley\'s Wife).',
+      "Each body paragraph should focus on a different character affected by loneliness (e.g. Candy, Crooks, Curley's Wife).",
       'Include at least one embedded quotation per paragraph with language analysis.',
-      'Write your conclusion in full — don\'t leave it as notes.',
+      "Write your conclusion in full - don't leave it as notes.",
       'After finishing, highlight one paragraph you are most proud of and put a question mark next to one sentence you are unsure about.',
     ],
     estimatedTime: '55 minutes',
@@ -942,11 +939,11 @@ const t3Tasks: HomeworkTask[] = [
       'Full draft submitted: introduction, three body paragraphs, conclusion.',
       'Three different characters explored.',
       'One embedded quotation with analysis per paragraph.',
-      'Conclusion makes a broader point about Steinbeck\'s message.',
+      "Conclusion makes a broader point about Steinbeck's message.",
       'Self-assessment marks (highlight and question mark) present.',
     ],
     parentGuidance:
-      'First drafts should not be perfect. Reassure your child that the goal is to get ideas on paper — improvement comes in the next lesson when we peer-review.',
+      'First drafts should not be perfect. Reassure your child that the goal is to get ideas on paper - improvement comes in the next lesson when we peer-review.',
     differentiation: {
       support:
         'Allow the use of a paragraph frame for one body paragraph; the other two should be attempted independently.',
@@ -968,7 +965,7 @@ const t3Tasks: HomeworkTask[] = [
       'Write a P-E-E-L paragraph that begins with a clear argument about what the passage reveals.',
       'Embed one quotation and analyse specific language choices.',
       'Integrate at least one contextual point about the American Dream and the reality of life for migrant workers in the 1930s.',
-      'End with a sentence linking to Steinbeck\'s overall purpose.',
+      "End with a sentence linking to Steinbeck's overall purpose.",
       'Aim for 180-220 words.',
     ],
     estimatedTime: '40 minutes',
@@ -977,7 +974,7 @@ const t3Tasks: HomeworkTask[] = [
       'Clear argument stated in the topic sentence.',
       'One embedded quotation analysed at word level.',
       'Contextual point integrated naturally (not bolted on).',
-      'Link to Steinbeck\'s purpose in the final sentence.',
+      "Link to Steinbeck's purpose in the final sentence.",
       '180-220 word count met.',
     ],
     parentGuidance:
@@ -987,7 +984,7 @@ const t3Tasks: HomeworkTask[] = [
         'Provide a paragraph frame and a list of contextual points; students embed them into the frame using their own words.',
       core: 'Write the full paragraph independently.',
       stretch:
-        'Write two paragraphs — one using each passage — and compare how Steinbeck presents the dream differently in the two contexts.',
+        'Write two paragraphs - one using each passage - and compare how Steinbeck presents the dream differently in the two contexts.',
     },
   },
   {
@@ -999,11 +996,11 @@ const t3Tasks: HomeworkTask[] = [
     description:
       'Complete a timed extract-based question to practise exam technique and build fluency under pressure.',
     instructions: [
-      'Read the printed extract from Chapter 6 (the final scene by the river) carefully — allow 5 minutes to read and annotate.',
+      'Read the printed extract from Chapter 6 (the final scene by the river) carefully - allow 5 minutes to read and annotate.',
       'Answer the question: "How does Steinbeck create a sense of tragedy in this extract?" in 25 minutes.',
       'Use at least two embedded quotations with language analysis.',
       'Include a point about structure or context.',
-      'Time yourself strictly — start a timer and stop at 25 minutes.',
+      'Time yourself strictly - start a timer and stop at 25 minutes.',
       'After finishing, note: one strength in your response and one thing you would improve.',
     ],
     estimatedTime: '35 minutes',
@@ -1058,16 +1055,12 @@ const t3Tasks: HomeworkTask[] = [
         'Write the conclusion as well as the introduction, ensuring the conclusion returns to the thesis with new insight rather than simply repeating the introduction.',
     },
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════
 // FULL HOMEWORK BANK EXPORT
 // ═══════════════════════════════════════════════════════════════
 
-export const y9HomeworkBank: HomeworkTask[] = [
-  ...t1Tasks,
-  ...t2Tasks,
-  ...t3Tasks,
-];
+export const y9HomeworkBank: HomeworkTask[] = [...t1Tasks, ...t2Tasks, ...t3Tasks]
 
-export default y9HomeworkBank;
+export default y9HomeworkBank

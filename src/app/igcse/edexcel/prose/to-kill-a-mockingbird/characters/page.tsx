@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird Characters — Edexcel IGCSE Literature',
+    title: 'To Kill a Mockingbird Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for To Kill a Mockingbird: Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, Bob and Mayella Ewell, Aunt Alexandra.',
   },
-  title: 'To Kill a Mockingbird Characters — Edexcel IGCSE Literature',
+  title: 'To Kill a Mockingbird Characters - Edexcel IGCSE Literature',
   description:
     'Character analysis for To Kill a Mockingbird: Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, Bob and Mayella Ewell, Aunt Alexandra.',
   alternates: {
@@ -32,7 +32,7 @@ const characters = [
     name: 'Atticus Finch',
     role: 'Father, lawyer, moral centre',
     analysis:
-      'A widowed state legislator and defence attorney, Atticus is principled, patient and almost impossibly self-controlled. Critics since the publication of Go Set a Watchman have contested the "saintly" reading, but in Mockingbird he functions as a moral yardstick — teaching courage without confidence of victory, empathy before judgement, and the separation of public duty from private feeling.',
+      'A widowed state legislator and defence attorney, Atticus is principled, patient and almost impossibly self-controlled. Critics since the publication of Go Set a Watchman have contested the "saintly" reading, but in Mockingbird he functions as a moral yardstick - teaching courage without confidence of victory, empathy before judgement, and the separation of public duty from private feeling.',
     quote:
       '“The one thing that doesn\u2019t abide by majority rule is a person\u2019s conscience.”',
   },
@@ -54,14 +54,14 @@ const characters = [
     name: 'Arthur "Boo" Radley',
     role: 'Reclusive neighbour',
     analysis:
-      'The novel\u2019s second "mockingbird". Boo is first a Gothic childhood legend — a figure of rumour and dares — before emerging as the silent protector who stitches Jem\u2019s trousers, leaves gifts in the oak, and finally kills Bob Ewell to save the children. His one spoken line in the novel ("Will you take me home?") is devastating in its quietness.',
+      'The novel\u2019s second "mockingbird". Boo is first a Gothic childhood legend - a figure of rumour and dares - before emerging as the silent protector who stitches Jem\u2019s trousers, leaves gifts in the oak, and finally kills Bob Ewell to save the children. His one spoken line in the novel ("Will you take me home?") is devastating in its quietness.',
     quote: '“Atticus, he was real nice… Most people are, Scout, when you finally see them.”',
   },
   {
     name: 'Calpurnia',
     role: 'The Finches\u2019 housekeeper and Black maternal figure',
     analysis:
-      'Calpurnia is bilingual in dialects — "white" at the Finches, African-American Vernacular English at First Purchase Church — embodying the double consciousness Black characters must navigate in Maycomb. She disciplines Scout, models rigorous moral expectations, and offers the children their only serious exposure to Black community life.',
+      'Calpurnia is bilingual in dialects - "white" at the Finches, African-American Vernacular English at First Purchase Church - embodying the double consciousness Black characters must navigate in Maycomb. She disciplines Scout, models rigorous moral expectations, and offers the children their only serious exposure to Black community life.',
     quote:
       '“Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.”',
   },
@@ -76,7 +76,7 @@ const characters = [
     name: 'Mayella Ewell',
     role: 'Complicated victim-accuser',
     analysis:
-      'Nineteen, isolated, and abused by her father, Mayella is both victim and perpetrator — a figure through whom Lee examines how gender and class intersect with race. Her seven red geraniums, tended "as carefully as Miss Maudie Atkinson", register a yearning for beauty the novel treats with uncomfortable sympathy before her false testimony condemns Tom.',
+      'Nineteen, isolated, and abused by her father, Mayella is both victim and perpetrator - a figure through whom Lee examines how gender and class intersect with race. Her seven red geraniums, tended "as carefully as Miss Maudie Atkinson", register a yearning for beauty the novel treats with uncomfortable sympathy before her false testimony condemns Tom.',
     quote: 'Atticus: “Who beat you up? Tom Robinson or your father?”',
   },
   {
@@ -148,7 +148,7 @@ export default async function TkamCharactersPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Analytical profiles of the Finches, Ewells, Robinson, Radley and the wider Maycomb cast
-            — with one short, fair-dealing quotation each.
+            - with one short, fair-dealing quotation each.
           </p>
         </div>
       </section>
@@ -158,7 +158,7 @@ export default async function TkamCharactersPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism. Read the

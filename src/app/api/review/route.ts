@@ -13,7 +13,7 @@ function generateReferenceNumber(): string {
 
 const VALID_REASONS = ['inaccurate', 'unclear', 'unfair-score', 'missed-points', 'other'] as const
 
-// ─── POST /api/review — create a new review request ───────────────────────
+// ─── POST /api/review - create a new review request ───────────────────────
 //
 // P1 (Cycle 2 regression sweep → Cycle 5 fix): previously appended to an
 // in-memory array at src/app/api/review/store.ts:21. Vercel lambda
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
 
     // Service role bypass so RLS policies stay restrictive (only allow
     // auth.uid() = user_id for anon/authenticated SELECT). The insert
-    // still respects FK constraints — user_id must exist in auth.users.
+    // still respects FK constraints - user_id must exist in auth.users.
     const admin = createServiceRoleClient()
     const { error: insertErr } = await admin.from('human_review_requests').insert({
       reference_number: referenceNumber,
@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
       // the queue even though B2C marking has no server-side essay row.
       essay_title:
         typeof context === 'string' && context.length > 0
-          ? `AI ${context} review — ${essayId}`
+          ? `AI ${context} review - ${essayId}`
           : `Essay ${essayId}`,
       reason,
       detail: detail.trim(),
@@ -143,7 +143,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// ─── GET /api/review — list current user's review requests ──────────────
+// ─── GET /api/review - list current user's review requests ──────────────
 
 export async function GET() {
   const supabase = createServerSupabaseClient()
@@ -156,7 +156,7 @@ export async function GET() {
   }
 
   // RLS policy scopes this to the authenticated user's own rows, so
-  // the anon/authenticated client is enough — no service-role needed.
+  // the anon/authenticated client is enough - no service-role needed.
   const { data, error } = await supabase
     .from('human_review_requests')
     .select('reference_number, essay_title, reason, status, created_at')

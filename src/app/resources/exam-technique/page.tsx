@@ -239,7 +239,7 @@ export default async function ExamTechniquePage() {
     <>
       <ArticleJsonLd
         headline="Exam Technique Guide"
-        description="Master the exam techniques that turn knowledge into top grades — time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English."
+        description="Master the exam techniques that turn knowledge into top grades - time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English."
         datePublished="2026-04-01"
         url="https://theenglishhub.app/resources/exam-technique"
       />

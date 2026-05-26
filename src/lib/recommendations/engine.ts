@@ -166,7 +166,7 @@ export function generateRecommendations(
       recs.push({
         id: makeId('study-plan', 'next-task'),
         title: `Continue your study plan`,
-        description: `Week ${nextTask.week}: ${nextTask.title} — ${nextTask.description}`,
+        description: `Week ${nextTask.week}: ${nextTask.title} - ${nextTask.description}`,
         href: nextTask.href,
         reason: 'Your personalised study plan has tasks waiting',
         priority: 'high',
@@ -214,9 +214,9 @@ export function generateRecommendations(
         id: makeId('next-step', 'comparison'),
         title: 'Try poetry comparison practice',
         description:
-          'You have studied enough poems to start practising comparisons — a key exam skill worth up to 30 marks.',
+          'You have studied enough poems to start practising comparisons - a key exam skill worth up to 30 marks.',
         href: '/revision/exam-technique/essay-structure',
-        reason: `You have studied ${progress.studiedPoems.length} poems — time to compare them`,
+        reason: `You have studied ${progress.studiedPoems.length} poems - time to compare them`,
         priority: 'medium',
         type: 'next-step',
       })

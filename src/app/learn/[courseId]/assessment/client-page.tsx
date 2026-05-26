@@ -90,7 +90,7 @@ export default function AssessmentPage() {
   const courseId = params.courseId as string
   const { user, profile } = useAuthStore()
   const { board: selectedBoard } = useBoard()
-  // Binary M/F: profile.gender isn't yet typed on Profile — soft-read.
+  // Binary M/F: profile.gender isn't yet typed on Profile - soft-read.
   const gender = (profile as unknown as { gender?: string } | null)?.gender ?? null
 
   const [course, setCourseData] = useState<CourseData | null>(null)

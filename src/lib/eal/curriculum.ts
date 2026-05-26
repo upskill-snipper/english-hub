@@ -1,5 +1,5 @@
 /**
- * EAL curriculum — 10 core topics for Arabic L1 learners.
+ * EAL curriculum - 10 core topics for Arabic L1 learners.
  *
  * Each topic mirrors the depth of a KS3 weekly lesson plan: concept
  * explanation, illustrative examples, common Arabic-L1 transfer
@@ -25,12 +25,12 @@ export const EAL: EALCurriculum = {
       cefr: 'A2',
       title: { en: 'Articles: a, an, the', ar: 'أدوات التعريف والتنكير: a / an / the' },
       description: {
-        en: 'When to use a/an, when to use the, and when to use nothing. This is the single biggest grammar gap for Arabic speakers — Arabic has no indefinite article and uses ال differently from English the.',
-        ar: 'متى تستخدم a / an، ومتى the، ومتى ما تحطّ شي. هذي أكبر فجوة نحوية لمتحدّث العربي — لأن العربي ما عنده أداة تنكير، ويستخدم «ال» بطريقة تختلف عن «the» الإنجليزية.',
+        en: 'When to use a/an, when to use the, and when to use nothing. This is the single biggest grammar gap for Arabic speakers - Arabic has no indefinite article and uses ال differently from English the.',
+        ar: 'متى تستخدم a / an، ومتى the، ومتى ما تحطّ شي. هذي أكبر فجوة نحوية لمتحدّث العربي - لأن العربي ما عنده أداة تنكير، ويستخدم «ال» بطريقة تختلف عن «the» الإنجليزية.',
       },
       concept: {
-        en: 'English uses three article forms: a, an, and the. "A" (or "an" before a vowel sound) is the indefinite article — it introduces something for the first time, or refers to one of many. "The" is the definite article — it points to a specific thing already known. Many singular countable nouns NEED an article — you cannot say "I bought book" in English the way you might say "اشتريت كتاب" in Arabic. The rule: every singular countable noun in English needs either a, an, the, or another determiner (this, my, one). Plural and uncountable nouns can stand alone when general ("Books are important") but take "the" when specific ("The books on the table are mine").',
-        ar: 'الإنجليزي عنده ثلاث صيغ للأدوات: a / an / the. "a" (أو "an" قبل صوت متحرّك) هي أداة التنكير — تستخدمها لمّا تذكر الشي أول مرّة، أو تشير لواحد من ضمن عدد. "the" أداة التعريف — تشير لشي معروف ومحدّد. وايد من الأسماء المعدودة المفردة في الإنجليزي تحتاج أداة — ما تقدر تقول "I bought book" كما تقول بالعربي "اشتريت كتاب". القاعدة: كل اسم معدود مفرد في الإنجليزي لازم يجي معاه a، an، the، أو محدّد ثاني (this, my, one). الأسماء الجمع وغير المعدودة تقف بدون أداة لمّا تكون عامّة ("Books are important")، بس تاخذ "the" لمّا تكون محدّدة ("The books on the table are mine").',
+        en: 'English uses three article forms: a, an, and the. "A" (or "an" before a vowel sound) is the indefinite article - it introduces something for the first time, or refers to one of many. "The" is the definite article - it points to a specific thing already known. Many singular countable nouns NEED an article - you cannot say "I bought book" in English the way you might say "اشتريت كتاب" in Arabic. The rule: every singular countable noun in English needs either a, an, the, or another determiner (this, my, one). Plural and uncountable nouns can stand alone when general ("Books are important") but take "the" when specific ("The books on the table are mine").',
+        ar: 'الإنجليزي عنده ثلاث صيغ للأدوات: a / an / the. "a" (أو "an" قبل صوت متحرّك) هي أداة التنكير - تستخدمها لمّا تذكر الشي أول مرّة، أو تشير لواحد من ضمن عدد. "the" أداة التعريف - تشير لشي معروف ومحدّد. وايد من الأسماء المعدودة المفردة في الإنجليزي تحتاج أداة - ما تقدر تقول "I bought book" كما تقول بالعربي "اشتريت كتاب". القاعدة: كل اسم معدود مفرد في الإنجليزي لازم يجي معاه a، an، the، أو محدّد ثاني (this, my, one). الأسماء الجمع وغير المعدودة تقف بدون أداة لمّا تكون عامّة ("Books are important")، بس تاخذ "the" لمّا تكون محدّدة ("The books on the table are mine").',
       },
       examples: [
         {
@@ -169,8 +169,8 @@ export const EAL: EALCurriculum = {
           ],
           correctIndex: 1,
           explanation: {
-            en: 'Singular countable nouns need an article on first mention — "a book".',
-            ar: 'الاسم المفرد المعدود لازم أداة عند أول ذكر — "a book".',
+            en: 'Singular countable nouns need an article on first mention - "a book".',
+            ar: 'الاسم المفرد المعدود لازم أداة عند أول ذكر - "a book".',
           },
         },
         {
@@ -201,7 +201,7 @@ export const EAL: EALCurriculum = {
         ar: 'ترتيب الكلمات: الفاعل + الفعل + المفعول',
       },
       description: {
-        en: "English is a strict SVO language — subject before verb, verb before object. Arabic moves the verb to the start (VSO) in many sentences, especially classical Arabic. Switching this off is the single fastest way to make your written English sound like a native speaker's.",
+        en: "English is a strict SVO language - subject before verb, verb before object. Arabic moves the verb to the start (VSO) in many sentences, especially classical Arabic. Switching this off is the single fastest way to make your written English sound like a native speaker's.",
         ar: 'الإنجليزي يلتزم بترتيب فاعل-فعل-مفعول (SVO) بصرامة. العربي يحرّك الفعل أول الجملة (VSO) في حالات وايد، خاصة في الفصحى. إعادة الترتيب لـ SVO هي أسرع طريقة تخلّي إنجليزيتك المكتوبة تشبه كتابة المتحدّث الأصلي.',
       },
       concept: {
@@ -357,12 +357,12 @@ export const EAL: EALCurriculum = {
         ar: 'المضارع التام: have/has + التصريف الثالث',
       },
       description: {
-        en: 'The present perfect connects past action to the present moment. Arabic has no direct equivalent — speakers reach for the simple past, which often sounds wrong in English. Mastering this tense moves you from Grade 4 to Grade 6 writing overnight.',
-        ar: 'المضارع التام يربط الفعل في الماضي باللحظة الحالية. ما عنده مقابل مباشر في العربي — متحدّث العربي ينحاز للماضي البسيط اللي يطلع غلط في الإنجليزي. إتقان هذا الزمن يرفع كتابتك من درجة 4 لدرجة 6 بسرعة.',
+        en: 'The present perfect connects past action to the present moment. Arabic has no direct equivalent - speakers reach for the simple past, which often sounds wrong in English. Mastering this tense moves you from Grade 4 to Grade 6 writing overnight.',
+        ar: 'المضارع التام يربط الفعل في الماضي باللحظة الحالية. ما عنده مقابل مباشر في العربي - متحدّث العربي ينحاز للماضي البسيط اللي يطلع غلط في الإنجليزي. إتقان هذا الزمن يرفع كتابتك من درجة 4 لدرجة 6 بسرعة.',
       },
       concept: {
-        en: 'Form: HAVE (or HAS for he/she/it) + PAST PARTICIPLE. "I have read the book." "She has finished her essay." Use it for: (1) Action started in the past, still relevant now — "I have lived here for ten years" (and I still live here). (2) Action completed at unspecified time — "I have seen that film" (some time before now). (3) Recent action with present consequence — "She has broken her arm" (her arm is still broken). Time markers: ever, never, just, already, yet, for, since, recently. Compare with simple past, which is for COMPLETED past actions at a SPECIFIC past time: "I read the book yesterday" (action finished, specific time).',
-        ar: `صيغة HAVE (أو HAS للهاء) + فاعل ماضٍ. "I have read the book." "She has finished her essay." استخدمها لـ: (1) عمل بدأ في الماضي وله صلة بالحاضر الآن — "I have lived here for ten years" (وأنا أعيش هنا حتى الآن). (2) عمل انتهى في وقت غير محدد — "I have seen that film" (في وقت ما قبل الآن). (3) عمل حديث له عواقب حالية — "She has broken her arm" (ذراعها لا يزال معطوباً). مؤشرات الزمن: ever، never، just، already، yet، for، since، recently. قارنها مع الماضي البسيط، الذي يستخدم للأعمال المكتملة في وقت محدد في الماضي: "I read the book yesterday" (العمل انتهى، وقت محدد).`,
+        en: 'Form: HAVE (or HAS for he/she/it) + PAST PARTICIPLE. "I have read the book." "She has finished her essay." Use it for: (1) Action started in the past, still relevant now - "I have lived here for ten years" (and I still live here). (2) Action completed at unspecified time - "I have seen that film" (some time before now). (3) Recent action with present consequence - "She has broken her arm" (her arm is still broken). Time markers: ever, never, just, already, yet, for, since, recently. Compare with simple past, which is for COMPLETED past actions at a SPECIFIC past time: "I read the book yesterday" (action finished, specific time).',
+        ar: `صيغة HAVE (أو HAS للهاء) + فاعل ماضٍ. "I have read the book." "She has finished her essay." استخدمها لـ: (1) عمل بدأ في الماضي وله صلة بالحاضر الآن - "I have lived here for ten years" (وأنا أعيش هنا حتى الآن). (2) عمل انتهى في وقت غير محدد - "I have seen that film" (في وقت ما قبل الآن). (3) عمل حديث له عواقب حالية - "She has broken her arm" (ذراعها لا يزال معطوباً). مؤشرات الزمن: ever، never، just، already، yet، for، since، recently. قارنها مع الماضي البسيط، الذي يستخدم للأعمال المكتملة في وقت محدد في الماضي: "I read the book yesterday" (العمل انتهى، وقت محدد).`,
       },
       examples: [
         {
@@ -382,8 +382,8 @@ export const EAL: EALCurriculum = {
           en: 'Have you ever read Macbeth?',
           ar: 'هل قريت Macbeth أبد؟',
           note: {
-            en: '"Ever" with present perfect — life experience question.',
-            ar: '"Ever" مع المضارع التام — سؤال خبرة حياتية.',
+            en: '"Ever" with present perfect - life experience question.',
+            ar: '"Ever" مع المضارع التام - سؤال خبرة حياتية.',
           },
         },
         {
@@ -517,14 +517,14 @@ export const EAL: EALCurriculum = {
         ar: 'ثلاثة أزمنة ماضية، كل وحد له شغل. الماضي البسيط = فعل خلص. الماضي المستمر = فعل ماشي في الماضي. الماضي التام = فعل خلص قبل فعل ماضي آخر. مقالات GCSE Literature تستخدم الثلاثة باستمرار وقت السرد.',
       },
       concept: {
-        en: 'Simple past — completed action at a specific time. "I read the book yesterday." Forms: regular = verb + ed (worked, played); irregular = special form (went, took, saw). Past continuous — was/were + verb-ing — action in progress at a moment in the past. "I was reading when the phone rang." Often pairs with simple past to show one action interrupting another. Past perfect — had + past participle — action completed before another past action. "By the time she arrived, I had finished the essay." The past perfect is for the EARLIER of two past events. Use it sparingly in essays — only when the sequence really matters.',
-        ar: `الماضي البسيط يستخدم لوصف فعل مكتمل في وقت محدد. "I read the book yesterday." الشكل: الفعل المنتهي بـ ed (worked, played); الفعل غير المنتظم له شكل خاص (went, took, saw). الماضي المستمر — was/were + الفعل بال-ing — وصف فعل مستمر في لحظة معينة من الماضي. "I was reading when the phone rang." غالباً ما يترافق مع الماضي البسيط لإظهار أن فعل واحد قاطع فعل آخر. الماضي المثالي — had + الفعل الماضي (الفعيل) — وصف فعل مكتمل قبل فعل آخر في الماضي. "By the time she arrived, I had finished the essay." الماضي المثالي يستخدم للحدث الأقدم من بين حدثين في الماضي. استخدمه بحذر في الرسائل العلمية فقط عندما يكون التسلسل مهمًا حقاً.`,
+        en: 'Simple past - completed action at a specific time. "I read the book yesterday." Forms: regular = verb + ed (worked, played); irregular = special form (went, took, saw). Past continuous - was/were + verb-ing - action in progress at a moment in the past. "I was reading when the phone rang." Often pairs with simple past to show one action interrupting another. Past perfect - had + past participle - action completed before another past action. "By the time she arrived, I had finished the essay." The past perfect is for the EARLIER of two past events. Use it sparingly in essays - only when the sequence really matters.',
+        ar: `الماضي البسيط يستخدم لوصف فعل مكتمل في وقت محدد. "I read the book yesterday." الشكل: الفعل المنتهي بـ ed (worked, played); الفعل غير المنتظم له شكل خاص (went, took, saw). الماضي المستمر - was/were + الفعل بال-ing - وصف فعل مستمر في لحظة معينة من الماضي. "I was reading when the phone rang." غالباً ما يترافق مع الماضي البسيط لإظهار أن فعل واحد قاطع فعل آخر. الماضي المثالي - had + الفعل الماضي (الفعيل) - وصف فعل مكتمل قبل فعل آخر في الماضي. "By the time she arrived, I had finished the essay." الماضي المثالي يستخدم للحدث الأقدم من بين حدثين في الماضي. استخدمه بحذر في الرسائل العلمية فقط عندما يكون التسلسل مهمًا حقاً.`,
       },
       examples: [
         {
           en: 'Macbeth murdered Duncan in Act 2.',
           ar: 'Macbeth قتل Duncan في الفصل الثاني.',
-          note: { en: 'Simple past — completed event.', ar: 'ماضي بسيط — حدث منتهٍ.' },
+          note: { en: 'Simple past - completed event.', ar: 'ماضي بسيط - حدث منتهٍ.' },
         },
         {
           en: 'Lady Macbeth was washing her hands when she sleepwalked.',
@@ -535,8 +535,8 @@ export const EAL: EALCurriculum = {
           en: 'By the end of Act 1, Macbeth had already met the witches.',
           ar: 'بنهاية الفصل الأول كان Macbeth قابل الساحرات.',
           note: {
-            en: 'Past perfect — earlier of two past events.',
-            ar: 'ماضي تام — الأقدم بين حدثين ماضيين.',
+            en: 'Past perfect - earlier of two past events.',
+            ar: 'ماضي تام - الأقدم بين حدثين ماضيين.',
           },
         },
         {
@@ -639,19 +639,19 @@ export const EAL: EALCurriculum = {
       ],
     },
 
-    // ─── 5. Subject–Verb Agreement ────────────────────────────────────
+    // ─── 5. Subject-Verb Agreement ────────────────────────────────────
     {
       id: 'subject-verb-agreement',
       category: 'grammar',
       cefr: 'A2',
-      title: { en: 'Subject–Verb Agreement', ar: 'مطابقة الفاعل للفعل' },
+      title: { en: 'Subject-Verb Agreement', ar: 'مطابقة الفاعل للفعل' },
       description: {
-        en: 'The verb must match the subject in number. Singular subject → singular verb. Plural subject → plural verb. Arabic verbs change in more complex ways (dual, plural, gender) — English only really cares about third person singular -s.',
-        ar: 'الفعل لازم يطابق الفاعل في العدد. فاعل مفرد → فعل مفرد. فاعل جمع → فعل جمع. أفعال العربي تتغيّر بطرق أعقد (مثنّى، جمع، تذكير، تأنيث) — الإنجليزي يهتم بس بـ -s للمفرد الغائب.',
+        en: 'The verb must match the subject in number. Singular subject → singular verb. Plural subject → plural verb. Arabic verbs change in more complex ways (dual, plural, gender) - English only really cares about third person singular -s.',
+        ar: 'الفعل لازم يطابق الفاعل في العدد. فاعل مفرد → فعل مفرد. فاعل جمع → فعل جمع. أفعال العربي تتغيّر بطرق أعقد (مثنّى، جمع، تذكير، تأنيث) - الإنجليزي يهتم بس بـ -s للمفرد الغائب.',
       },
       concept: {
-        en: 'The rule: in the simple present, add -s/-es to the verb ONLY for he/she/it. "I walk, you walk, we walk, they walk, BUT he walks." For past tense, no agreement needed — verbs are the same for all subjects ("I walked, he walked, they walked"). Be careful with: (1) collective nouns (the team IS — singular in British English; the team ARE — also acceptable). (2) "There is/are" — match the noun after it ("There IS a book / There ARE books"). (3) Each, every, neither, either — always singular. (4) Compound subjects with AND → plural ("Macbeth and Banquo ARE generals").',
-        ar: `في الحاضر البسيط، نضيف -س/-ز لل VERB فقط لـ he/she/it. "I walk, you walk, we walk, they walk، بس he walks." في الماضي، ماكو حاجة تتفق فيها — الأفعال هي نفسها لكل المبتدأين ("I walked, he walked, they walked"). كون حذر مع: (1) أسماء الجمع (الفرقة IS — مفرد بالإنجليزية البريطانية؛ الفرقة ARE — مو شرط). (2) "There is/are" — اربط الكلمة اللي بعدها ("There IS a book / There ARE books"). (3) كل، كل واحد، لا أي، ولا أي — دائمًا مفرد. (4) موضوعات مركبة مع AND → جمع ("Macbeth and Banquo ARE generals").`,
+        en: 'The rule: in the simple present, add -s/-es to the verb ONLY for he/she/it. "I walk, you walk, we walk, they walk, BUT he walks." For past tense, no agreement needed - verbs are the same for all subjects ("I walked, he walked, they walked"). Be careful with: (1) collective nouns (the team IS - singular in British English; the team ARE - also acceptable). (2) "There is/are" - match the noun after it ("There IS a book / There ARE books"). (3) Each, every, neither, either - always singular. (4) Compound subjects with AND → plural ("Macbeth and Banquo ARE generals").',
+        ar: `في الحاضر البسيط، نضيف -س/-ز لل VERB فقط لـ he/she/it. "I walk, you walk, we walk, they walk، بس he walks." في الماضي، ماكو حاجة تتفق فيها - الأفعال هي نفسها لكل المبتدأين ("I walked, he walked, they walked"). كون حذر مع: (1) أسماء الجمع (الفرقة IS - مفرد بالإنجليزية البريطانية؛ الفرقة ARE - مو شرط). (2) "There is/are" - اربط الكلمة اللي بعدها ("There IS a book / There ARE books"). (3) كل، كل واحد، لا أي، ولا أي - دائمًا مفرد. (4) موضوعات مركبة مع AND → جمع ("Macbeth and Banquo ARE generals").`,
       },
       examples: [
         {
@@ -761,7 +761,7 @@ export const EAL: EALCurriculum = {
         {
           en: 'She gave me some good advice.',
           ar: 'أعطتني نصيحة زينة.',
-          note: { en: '"Advice" uncountable — no -s.', ar: '"Advice" غير معدود — بدون -s.' },
+          note: { en: '"Advice" uncountable - no -s.', ar: '"Advice" غير معدود - بدون -s.' },
         },
         {
           en: 'The news is shocking.',
@@ -785,16 +785,16 @@ export const EAL: EALCurriculum = {
           wrong: 'She gave me three advices.',
           right: 'She gave me three pieces of advice.',
           explanation: {
-            en: '"Advice" is uncountable — never takes -s. Count it with "pieces of".',
-            ar: '"Advice" غير معدود — ما تاخذ -s. عدّها بـ "pieces of".',
+            en: '"Advice" is uncountable - never takes -s. Count it with "pieces of".',
+            ar: '"Advice" غير معدود - ما تاخذ -s. عدّها بـ "pieces of".',
           },
         },
         {
           wrong: 'The childrens are playing.',
           right: 'The children are playing.',
           explanation: {
-            en: '"Children" is already plural — no extra -s.',
-            ar: '"Children" جمع أصلاً — بدون -s إضافية.',
+            en: '"Children" is already plural - no extra -s.',
+            ar: '"Children" جمع أصلاً - بدون -s إضافية.',
           },
         },
         {
@@ -826,8 +826,8 @@ export const EAL: EALCurriculum = {
           ],
           correctIndex: 1,
           explanation: {
-            en: '"Advice" is uncountable — no plural form.',
-            ar: '"Advice" غير معدود — ما عنده جمع.',
+            en: '"Advice" is uncountable - no plural form.',
+            ar: '"Advice" غير معدود - ما عنده جمع.',
           },
         },
       ],
@@ -840,8 +840,8 @@ export const EAL: EALCurriculum = {
       cefr: 'B1',
       title: { en: 'Prepositions: in, on, at', ar: 'حروف الجر: in, on, at' },
       description: {
-        en: 'English prepositions rarely match Arabic prepositions one-to-one. The "in/on/at" trio for time and place is the most common gap. Learn the rules + memorise the exceptions — there is no shortcut.',
-        ar: 'حروف الجر الإنجليزية نادراً ما تطابق العربية واحد لواحد. ثلاثي "in/on/at" للزمن والمكان أكثر فجوة شائعة. تعلّم القواعد + احفظ الاستثناءات — ما فيه طريق مختصر.',
+        en: 'English prepositions rarely match Arabic prepositions one-to-one. The "in/on/at" trio for time and place is the most common gap. Learn the rules + memorise the exceptions - there is no shortcut.',
+        ar: 'حروف الجر الإنجليزية نادراً ما تطابق العربية واحد لواحد. ثلاثي "in/on/at" للزمن والمكان أكثر فجوة شائعة. تعلّم القواعد + احفظ الاستثناءات - ما فيه طريق مختصر.',
       },
       concept: {
         en: 'Time: AT for clock times + festivals + night ("at 3 pm", "at Christmas", "at night"). ON for days + dates ("on Monday", "on 5 May"). IN for months + years + centuries + parts of the day ("in May", "in 2024", "in the morning", "in the 21st century"). Place: AT for specific points ("at the bus stop", "at the door"). ON for surfaces + streets ("on the table", "on Oxford Street"). IN for enclosed spaces + larger areas ("in the box", "in London", "in Qatar"). Special phrases: "in the morning / afternoon / evening" BUT "at night". "in bed", "at home", "at school", "at work" (no article).',
@@ -852,8 +852,8 @@ export const EAL: EALCurriculum = {
           en: 'I will meet you at 3 pm on Monday in the cafeteria.',
           ar: 'أقابلك الساعة ٣ يوم الإثنين في الكافتيريا.',
           note: {
-            en: 'All three in one sentence — time AT, day ON, place IN.',
-            ar: 'الثلاثة في جملة واحدة — وقت AT، يوم ON، مكان IN.',
+            en: 'All three in one sentence - time AT, day ON, place IN.',
+            ar: 'الثلاثة في جملة واحدة - وقت AT، يوم ON، مكان IN.',
           },
         },
         {
@@ -929,12 +929,12 @@ export const EAL: EALCurriculum = {
         ar: 'الأفعال المركّبة: get up, look after, give in',
       },
       description: {
-        en: 'A phrasal verb = verb + preposition or adverb. The meaning is usually different from the verb alone. "Give up" doesn\'t mean "give" + "up" — it means stop trying. Arabic rarely uses this pattern, so phrasal verbs need memorisation.',
-        ar: 'الفعل المركّب = فعل + حرف جر أو ظرف. معناه عادةً يختلف عن الفعل لحاله. "Give up" ما تعني "give" + "up" — تعني توقّف عن المحاولة. العربي ما يستخدم هالنمط، فالأفعال المركّبة تحتاج حفظ.',
+        en: 'A phrasal verb = verb + preposition or adverb. The meaning is usually different from the verb alone. "Give up" doesn\'t mean "give" + "up" - it means stop trying. Arabic rarely uses this pattern, so phrasal verbs need memorisation.',
+        ar: 'الفعل المركّب = فعل + حرف جر أو ظرف. معناه عادةً يختلف عن الفعل لحاله. "Give up" ما تعني "give" + "up" - تعني توقّف عن المحاولة. العربي ما يستخدم هالنمط، فالأفعال المركّبة تحتاج حفظ.',
       },
       concept: {
-        en: 'Phrasal verbs come in two main types: (1) Separable — the object can go between or after ("turn off the light" / "turn the light off"). With pronouns, MUST go between ("turn it off" not "turn off it"). (2) Inseparable — the verb + preposition stay together ("look after the children" — not "look the children after"). High-frequency phrasal verbs for GCSE essays: come up with (think of), figure out (understand), look up to (admire), get over (recover from), give in (surrender), find out (discover), put off (postpone), make up (invent), turn down (reject), pick up (collect/learn). Use these in essays to lift your register.',
-        ar: `الفعل المركب بيكون من نوعين رئيسيين: (1) قابل للانفصال — يمكن أن يوضع الفاعل بين الفعل أو بعده ("turn off the light" / "turn the light off"). مع الضمائر، لازم يكون بين الفعل والفعل ("turn it off" ماكوش صح "turn off it"). (2) غير قابل للانفصال — الفعل والظرف بيكونوا ملايين ("look after the children" — ماكوش صح "look the children after"). من أكثـر الأفعال المركبة استعمالًا في مقالات الGCSE: come up with (يفكر في)، figure out (يفهم)، look up to (يعجب منه)، get over (يتغلب على)، give in (يurrender)، find out (يدري)، put off (ينتظر)، make up (يفكر)، turn down (يرفض)، pick up (يجمع/يتعلم). استخدموا هاد الأفعال في مقالاتكم عشان ترفعوا مستوى الكلام.`,
+        en: 'Phrasal verbs come in two main types: (1) Separable - the object can go between or after ("turn off the light" / "turn the light off"). With pronouns, MUST go between ("turn it off" not "turn off it"). (2) Inseparable - the verb + preposition stay together ("look after the children" - not "look the children after"). High-frequency phrasal verbs for GCSE essays: come up with (think of), figure out (understand), look up to (admire), get over (recover from), give in (surrender), find out (discover), put off (postpone), make up (invent), turn down (reject), pick up (collect/learn). Use these in essays to lift your register.',
+        ar: `الفعل المركب بيكون من نوعين رئيسيين: (1) قابل للانفصال - يمكن أن يوضع الفاعل بين الفعل أو بعده ("turn off the light" / "turn the light off"). مع الضمائر، لازم يكون بين الفعل والفعل ("turn it off" ماكوش صح "turn off it"). (2) غير قابل للانفصال - الفعل والظرف بيكونوا ملايين ("look after the children" - ماكوش صح "look the children after"). من أكثـر الأفعال المركبة استعمالًا في مقالات الGCSE: come up with (يفكر في)، figure out (يفهم)، look up to (يعجب منه)، get over (يتغلب على)، give in (يurrender)، find out (يدري)، put off (ينتظر)، make up (يفكر)، turn down (يرفض)، pick up (يجمع/يتعلم). استخدموا هاد الأفعال في مقالاتكم عشان ترفعوا مستوى الكلام.`,
       },
       examples: [
         {
@@ -963,8 +963,8 @@ export const EAL: EALCurriculum = {
           wrong: 'I will look the children after.',
           right: 'I will look after the children.',
           explanation: {
-            en: '"Look after" is inseparable — keep the words together.',
-            ar: '"Look after" غير قابل للفصل — اترك الكلمات مع بعض.',
+            en: '"Look after" is inseparable - keep the words together.',
+            ar: '"Look after" غير قابل للفصل - اترك الكلمات مع بعض.',
           },
         },
         {
@@ -1013,12 +1013,12 @@ export const EAL: EALCurriculum = {
       cefr: 'A2',
       title: { en: 'Capitals and Punctuation', ar: 'الحروف الكبيرة وعلامات الترقيم' },
       description: {
-        en: 'Arabic has no capital letters and uses punctuation differently. English examiners deduct marks for missed capitals and run-on sentences. This is mechanical SPaG (spelling, punctuation, grammar) — easy points if you train it.',
-        ar: 'العربي ما عنده حروف كبيرة ويستخدم علامات الترقيم بطريقة مختلفة. مصححو الإنجليزي يخصمون درجات على الحروف الكبيرة المفقودة والجمل المتداخلة. هذي SPaG ميكانيكية — درجات سهلة لو دربت عليها.',
+        en: 'Arabic has no capital letters and uses punctuation differently. English examiners deduct marks for missed capitals and run-on sentences. This is mechanical SPaG (spelling, punctuation, grammar) - easy points if you train it.',
+        ar: 'العربي ما عنده حروف كبيرة ويستخدم علامات الترقيم بطريقة مختلفة. مصححو الإنجليزي يخصمون درجات على الحروف الكبيرة المفقودة والجمل المتداخلة. هذي SPaG ميكانيكية - درجات سهلة لو دربت عليها.',
       },
       concept: {
-        en: `CAPITALS: start of every sentence. Proper nouns (names of people, places, books, days, months — Macbeth, London, January, Monday, Shakespeare). The pronoun "I" — always capital. Titles in headings (The Tragedy of Macbeth). FULL STOPS end sentences. COMMAS separate items in lists, mark off subordinate clauses, separate the speaker from their words (She said, "I will go."). SEMICOLONS join two complete sentences too closely related to separate: "Macbeth is ambitious; his wife is more so." COLONS introduce lists or explanations. APOSTROPHES show possession ("Macbeth's sword") or contractions ("don't" = "do not"). QUOTATION MARKS surround speech and embedded quotations in essays. AVOID run-on sentences — two complete thoughts joined only by a comma is wrong (with the famous "She came, she saw, she conquered" being a special rhetorical case).`,
-        ar: `CAPITALS: بداية كل جملة بحرف كبير. أسماء الأعلام (أشخاص، أماكن، كتب، أيام، شهور — Macbeth, London, January, Monday, Shakespeare). الضمير "I" — دايماً بحرف كبير. العناوين في الهيدنغز (The Tragedy of Macbeth). FULL STOPS تنهي الجمل. COMMAS تفصل العناصر في القوائم، وتعزل الجمل الفرعية، وتفصل المتكلّم عن كلامه (She said, "I will go."). SEMICOLONS تربط جملتين كاملتين قريبتين بالمعنى للحدّ اللي ما يستاهل تفصلهم: "Macbeth is ambitious; his wife is more so." COLONS تقدّم قوائم أو شروحات. APOSTROPHES تبيّن الملكية ("Macbeth's sword") أو الاختصار ("don't" = "do not"). QUOTATION MARKS تحيط بالكلام المنقول والاقتباسات في المقالات. تجنّب run-on sentences — جمعك جملتين كاملتين بفاصلة بس غلط (الجملة الشهيرة "She came, she saw, she conquered" حالة بلاغية خاصة).`,
+        en: `CAPITALS: start of every sentence. Proper nouns (names of people, places, books, days, months - Macbeth, London, January, Monday, Shakespeare). The pronoun "I" - always capital. Titles in headings (The Tragedy of Macbeth). FULL STOPS end sentences. COMMAS separate items in lists, mark off subordinate clauses, separate the speaker from their words (She said, "I will go."). SEMICOLONS join two complete sentences too closely related to separate: "Macbeth is ambitious; his wife is more so." COLONS introduce lists or explanations. APOSTROPHES show possession ("Macbeth's sword") or contractions ("don't" = "do not"). QUOTATION MARKS surround speech and embedded quotations in essays. AVOID run-on sentences - two complete thoughts joined only by a comma is wrong (with the famous "She came, she saw, she conquered" being a special rhetorical case).`,
+        ar: `CAPITALS: بداية كل جملة بحرف كبير. أسماء الأعلام (أشخاص، أماكن، كتب، أيام، شهور - Macbeth, London, January, Monday, Shakespeare). الضمير "I" - دايماً بحرف كبير. العناوين في الهيدنغز (The Tragedy of Macbeth). FULL STOPS تنهي الجمل. COMMAS تفصل العناصر في القوائم، وتعزل الجمل الفرعية، وتفصل المتكلّم عن كلامه (She said, "I will go."). SEMICOLONS تربط جملتين كاملتين قريبتين بالمعنى للحدّ اللي ما يستاهل تفصلهم: "Macbeth is ambitious; his wife is more so." COLONS تقدّم قوائم أو شروحات. APOSTROPHES تبيّن الملكية ("Macbeth's sword") أو الاختصار ("don't" = "do not"). QUOTATION MARKS تحيط بالكلام المنقول والاقتباسات في المقالات. تجنّب run-on sentences - جمعك جملتين كاملتين بفاصلة بس غلط (الجملة الشهيرة "She came, she saw, she conquered" حالة بلاغية خاصة).`,
       },
       examples: [
         {
@@ -1116,11 +1116,11 @@ export const EAL: EALCurriculum = {
         ar: 'أخطاء النقل الشائعة لمتحدّث العربي',
       },
       description: {
-        en: 'A consolidated checklist of the errors examiners flag most often on essays from Arabic L1 students. Bookmark this — running through it before submitting any essay catches 80% of avoidable mistakes.',
-        ar: 'قائمة موحّدة بأكثر الأخطاء اللي يرصدها المصححون في مقالات طلاب العربي. احفظ هذا في مفضّلتك — مراجعتها قبل تسليم أي مقالة تمسك 80٪ من الأخطاء اللي يمكن تجنّبها.',
+        en: 'A consolidated checklist of the errors examiners flag most often on essays from Arabic L1 students. Bookmark this - running through it before submitting any essay catches 80% of avoidable mistakes.',
+        ar: 'قائمة موحّدة بأكثر الأخطاء اللي يرصدها المصححون في مقالات طلاب العربي. احفظ هذا في مفضّلتك - مراجعتها قبل تسليم أي مقالة تمسك 80٪ من الأخطاء اللي يمكن تجنّبها.',
       },
       concept: {
-        en: 'The top 10 transfer errors, in order of GCSE-essay frequency: (1) Missing indefinite articles ("She is teacher" → "She is a teacher"). (2) Verb in front position ("Said the boy" → "The boy said"). (3) Simple past instead of present perfect ("I live here since 2015" → "I have lived here since 2015"). (4) Confused prepositions ("in Monday" → "on Monday"). (5) -s missing on third-person singular ("She walk" → "She walks"). (6) Plural on uncountable nouns ("informations" → "information"). (7) "and so" or "and also" as connectors instead of "and" + a comma ("Macbeth is ambitious and also he is loyal" → "Macbeth is ambitious, and he is loyal" or just "Macbeth is ambitious and loyal"). (8) Capital letters dropped on proper nouns ("macbeth" → "Macbeth"). (9) Direct translation of Arabic idioms (use English idioms instead). (10) "Because" used as a sentence opener with no main clause ("Because Macbeth is ambitious." — incomplete sentence; fix: "Because Macbeth is ambitious, he kills Duncan.").',
+        en: 'The top 10 transfer errors, in order of GCSE-essay frequency: (1) Missing indefinite articles ("She is teacher" → "She is a teacher"). (2) Verb in front position ("Said the boy" → "The boy said"). (3) Simple past instead of present perfect ("I live here since 2015" → "I have lived here since 2015"). (4) Confused prepositions ("in Monday" → "on Monday"). (5) -s missing on third-person singular ("She walk" → "She walks"). (6) Plural on uncountable nouns ("informations" → "information"). (7) "and so" or "and also" as connectors instead of "and" + a comma ("Macbeth is ambitious and also he is loyal" → "Macbeth is ambitious, and he is loyal" or just "Macbeth is ambitious and loyal"). (8) Capital letters dropped on proper nouns ("macbeth" → "Macbeth"). (9) Direct translation of Arabic idioms (use English idioms instead). (10) "Because" used as a sentence opener with no main clause ("Because Macbeth is ambitious." - incomplete sentence; fix: "Because Macbeth is ambitious, he kills Duncan.").',
         ar: `أهم عشرة أخطاء تحويلية حسب تكرارها في مقالات الGCSE:
 
 (1) نسيان المفعول به غير المحدد ("She is teacher" → "She is a teacher").
@@ -1141,15 +1141,15 @@ export const EAL: EALCurriculum = {
 
 (9) الترجمة المباشرة للتعبيرات العربية (استخدم التعبيرات الإنجليزية بدلاً من ذلك).
 
-(10) استخدام كلمة "because" كمبتدأ بدون جملة رئيسية ("Because Macbeth is ambitious." — جملة غير مكتملة؛ الحل: "Because Macbeth is ambitious, he kills Duncan.").`,
+(10) استخدام كلمة "because" كمبتدأ بدون جملة رئيسية ("Because Macbeth is ambitious." - جملة غير مكتملة؛ الحل: "Because Macbeth is ambitious, he kills Duncan.").`,
       },
       examples: [
         {
           en: 'Macbeth is a tragedy that Shakespeare wrote in 1606.',
           ar: 'Macbeth مسرحية تراجيدية كتبها Shakespeare سنة 1606.',
           note: {
-            en: 'Article + capitals + relative clause — all correct.',
-            ar: 'أداة + حرف كبير + جملة وصلية — كلها صحيحة.',
+            en: 'Article + capitals + relative clause - all correct.',
+            ar: 'أداة + حرف كبير + جملة وصلية - كلها صحيحة.',
           },
         },
         {
@@ -1236,7 +1236,7 @@ export function recommendTopics(skill: EALCategory, band: CEFRBand): string[] {
     .slice(0, 2)
     .map((t) => t.id)
   if (pick.length > 0) return pick
-  // Skill not represented in the curriculum yet — fall back to band peers.
+  // Skill not represented in the curriculum yet - fall back to band peers.
   return topicsByCEFR(band)
     .slice(0, 2)
     .map((t) => t.id)

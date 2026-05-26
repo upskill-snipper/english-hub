@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // ─── 2. Per-user rate limit (Upstash — survives across serverless instances) ─
+  // ─── 2. Per-user rate limit (Upstash - survives across serverless instances) ─
   const rl = await rateLimit(`parent-notify:${user.id}`, {
     limit: 5,
     windowSeconds: 60 * 60,
@@ -102,12 +102,12 @@ export async function POST(request: NextRequest) {
   // ─── 6. Service config ──────────────────────────────────────────────────
   const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
-    console.warn('[parent-notify] RESEND_API_KEY not configured — skipping parental consent email')
+    console.warn('[parent-notify] RESEND_API_KEY not configured - skipping parental consent email')
     return NextResponse.json({ error: 'Email service not configured' }, { status: 503 })
   }
 
   // ─── 7. Generate and store consent token ────────────────────────────────
-  // Supabase's PostgREST client does NOT throw on database errors — it
+  // Supabase's PostgREST client does NOT throw on database errors - it
   // returns `{ data, error }` from the awaited builder. Wrapping the call
   // in try/catch alone lets a real RLS / schema / network failure slip
   // through silently, leaving the parent with a link whose token has no

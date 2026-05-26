@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
 
     // ── Atomically consume the code and create the active link ──────────────
     // Supabase JS doesn't expose a single transaction primitive from the
-    // client library — we consume the code first (so it can't be reused)
+    // client library - we consume the code first (so it can't be reused)
     // then insert the link. If the insert fails, a cron cleanup will
     // collect the orphaned consumed code.
     const nowIso = new Date().toISOString()

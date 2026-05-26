@@ -8,7 +8,7 @@ import * as Sentry from '@sentry/nextjs'
  *      response.errors[] that Vercel sees as 200).
  *   2. Never logs duration, so slow crons are invisible until Vercel's
  *      function timeout hits.
- *   3. Never emits to Sentry — the server config only scrubs events, not
+ *   3. Never emits to Sentry - the server config only scrubs events, not
  *      creates them; nothing calls `captureException` directly.
  *
  * This helper closes those gaps in one place. Wrap a cron's main body:
@@ -30,7 +30,7 @@ export async function runCron<T extends Record<string, unknown>>(
   try {
     const result = await body()
     const durationMs = Date.now() - started
-    // Breadcrumb only on success — individual cron results are high-volume.
+    // Breadcrumb only on success - individual cron results are high-volume.
     Sentry.addBreadcrumb({
       category: 'cron',
       message: `${name} ok`,

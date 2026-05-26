@@ -42,7 +42,7 @@ const VALID_EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE/CAIE']
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
-  // Rate limit — P2 (Cycle 3 regression sweep): previously used the raw
+  // Rate limit - P2 (Cycle 3 regression sweep): previously used the raw
   // IP as the key, which meant any other endpoint calling rateLimit(ip,
   // ...) shared the same sliding-window bucket. Namespace it like every
   // other route.

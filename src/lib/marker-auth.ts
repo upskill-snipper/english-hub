@@ -13,7 +13,7 @@
 // the rule lives in exactly one place.
 //
 // Supabase generated types don't know about the `markers` table yet (Prisma
-// client not regenerated — see the 20260519_marker_drive.sql migration
+// client not regenerated - see the 20260519_marker_drive.sql migration
 // note), so the row is cast through `unknown` to the shape the frozen
 // migration guarantees.
 
@@ -45,13 +45,13 @@ const MARKER_COLUMNS =
  * Resolve the currently-authenticated user to their ACTIVE marker row.
  *
  * @param supabase an auth-context Supabase client (createServerSupabaseClient)
- *                  used only to read the session — the marker row itself is
+ *                  used only to read the session - the marker row itself is
  *                  read with the service-role client.
  * @returns the marker row when the caller is signed in AND has a markers row
  *          with user_id = auth.uid() AND status = 'active'; otherwise null.
  *
  * Returns null (never throws) for: not signed in, no marker row, marker
- * paused/offboarded, table missing (pre-migration), or any lookup error —
+ * paused/offboarded, table missing (pre-migration), or any lookup error -
  * callers degrade to a friendly "not a marker" state rather than a 500.
  */
 export async function getCurrentMarker(supabase: SupabaseClient): Promise<MarkerRow | null> {

@@ -320,7 +320,7 @@ export default async function TeachersPage() {
         </div>
       </section>
 
-      {/* 3. Feature grid — what it does for teachers */}
+      {/* 3. Feature grid - what it does for teachers */}
       <section
         aria-labelledby="what-it-does-heading"
         className="border-y border-border/60 bg-muted/30"
@@ -351,7 +351,7 @@ export default async function TeachersPage() {
             </GlassPanel>
           </div>
 
-          {/* Trust statement — pulled out as deliberate footer card */}
+          {/* Trust statement - pulled out as deliberate footer card */}
           <Card className="mx-auto mt-8 max-w-3xl p-5 sm:p-6">
             <div className="flex items-start gap-4">
               <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">

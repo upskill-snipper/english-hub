@@ -8,10 +8,10 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Wind — Ted Hughes | Cambridge IGCSE 0475',
+    title: 'Wind - Ted Hughes | Cambridge IGCSE 0475',
     description: 'Study guide for ',
   },
-  title: 'Wind — Ted Hughes | Cambridge IGCSE 0475',
+  title: 'Wind - Ted Hughes | Cambridge IGCSE 0475',
   description:
     "Study guide for 'Wind' by Ted Hughes (1957). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster.",
   alternates: {
@@ -24,7 +24,7 @@ export default function WindPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
-        name="Wind — Ted Hughes (Cambridge IGCSE 0475)"
+        name="Wind - Ted Hughes (Cambridge IGCSE 0475)"
         description="Study guide stub for 'Wind' by Ted Hughes (1957). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster."
       />
       <BreadcrumbJsonLd

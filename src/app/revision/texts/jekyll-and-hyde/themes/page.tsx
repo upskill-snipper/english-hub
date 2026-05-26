@@ -271,7 +271,7 @@ export default function JekyllAndHydeThemesPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Themes — Deep Study
+              Themes - Deep Study
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson

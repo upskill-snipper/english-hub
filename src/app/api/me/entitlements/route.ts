@@ -2,7 +2,7 @@
  * GET /api/me/entitlements
  *
  * Source of truth for paid access. Called by the mobile paywall gate
- * and before any billable action — see
+ * and before any billable action - see
  * english-hub-mobile/docs/API_SPEC.md §4.2.
  *
  * Response envelope (see english-hub-mobile/docs/API_SPEC.md §1.3):
@@ -25,7 +25,7 @@ import { prisma } from '@/lib/prisma'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { fetchUserEntitlement, emptyEntitlement } from '@/lib/entitlements'
 
-// Dynamic — this handler reads cookies and writes a `no-store` header.
+// Dynamic - this handler reads cookies and writes a `no-store` header.
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
@@ -33,7 +33,7 @@ export const runtime = 'nodejs'
 
 function ok<T>(data: T, init?: ResponseInit): NextResponse {
   const res = NextResponse.json({ ok: true, data }, init)
-  // Private, never cached — entitlement state can change mid-session
+  // Private, never cached - entitlement state can change mid-session
   // (refund, grace-period transition). Mobile honours TanStack's own
   // stale time for client-side deduping.
   res.headers.set('Cache-Control', 'private, no-store')
@@ -50,7 +50,7 @@ function fail(code: string, message: string, status: number): NextResponse {
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
-    // ── Rate limit — 120/minute per IP, matching API_SPEC.md §6. ───
+    // ── Rate limit - 120/minute per IP, matching API_SPEC.md §6. ───
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`me-entitlements:${ip}`, {
       limit: 120,
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     if (!profile) {
       // A brand-new Supabase user without a Prisma row yet (the mobile
       // app called us before `/auth/register` landed the projection).
-      // Return an empty entitlement rather than 404 — the client
+      // Return an empty entitlement rather than 404 - the client
       // treats "no sub" as free tier.
       return ok(emptyEntitlement())
     }
@@ -106,7 +106,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
   }
 }
 
-// Method guard — every other verb is explicitly rejected with 405.
+// Method guard - every other verb is explicitly rejected with 405.
 
 async function methodNotAllowed(): Promise<NextResponse> {
   return NextResponse.json(

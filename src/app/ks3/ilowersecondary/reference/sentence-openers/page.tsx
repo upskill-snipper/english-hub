@@ -28,7 +28,7 @@ const OPENER_GROUPS: {
     job: 'Sequencing',
     blurb: 'Move the reader through events or steps in order.',
     usage:
-      'Use these to control the order of a recount or narrative. Vary them — a paragraph that opens "Then… Then… Then…" feels flat and earns no credit for organisation.',
+      'Use these to control the order of a recount or narrative. Vary them - a paragraph that opens "Then… Then… Then…" feels flat and earns no credit for organisation.',
     examples: [
       'To begin with, the harbour was still and grey.',
       'Moments later, a gull screamed overhead.',
@@ -189,7 +189,7 @@ export default async function SentenceOpenersPage() {
       <h1>Sentence openers &amp; connectives for {SECTIONS.B.name}</h1>
       <p className="lead">
         A practical bank of varied openers, organised by the job they do. Strong, varied openers and
-        connectives are exactly what the writing objectives reward — they show control of structure
+        connectives are exactly what the writing objectives reward - they show control of structure
         and sentence variety. Every example here is original and is not taken from any past paper.
       </p>
 
@@ -258,7 +258,7 @@ export default async function SentenceOpenersPage() {
         <div className="not-prose mt-4 grid gap-3 lg:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              Before — every sentence opens the same way
+              Before - every sentence opens the same way
             </p>
             <div className="space-y-2">
               {BEFORE_PARAGRAPH.map((s) => (
@@ -270,7 +270,7 @@ export default async function SentenceOpenersPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-3">
-              After — openers varied by job
+              After - openers varied by job
             </p>
             <div className="space-y-2">
               {AFTER_PARAGRAPH.map((s) => (

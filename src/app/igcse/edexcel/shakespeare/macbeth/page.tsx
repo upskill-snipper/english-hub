@@ -17,14 +17,14 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth — Edexcel IGCSE Literature Study Guide',
+    title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
     description:
       'Full Macbeth study guide for Edexcel IGCSE English Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth',
   },
-  title: 'Macbeth — Edexcel IGCSE Literature Study Guide',
+  title: 'Macbeth - Edexcel IGCSE Literature Study Guide',
   description:
     'Full Macbeth study guide for Edexcel IGCSE English Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.',
 }
@@ -41,7 +41,7 @@ const SUB_PAGES = [
     href: '/igcse/edexcel/shakespeare/macbeth/characters',
     title: 'Characters',
     summary:
-      'Analysis of Macbeth, Lady Macbeth, Banquo, Duncan, Macduff, Malcolm and the Witches — including their arcs, relationships and key quotes.',
+      'Analysis of Macbeth, Lady Macbeth, Banquo, Duncan, Macduff, Malcolm and the Witches - including their arcs, relationships and key quotes.',
     icon: Users,
   },
   {
@@ -55,7 +55,7 @@ const SUB_PAGES = [
     href: '/igcse/edexcel/shakespeare/macbeth/quotes',
     title: 'Key quotes',
     summary:
-      '20 memorable quotations with speaker, scene reference and detailed analysis — ready for a closed-book exam.',
+      '20 memorable quotations with speaker, scene reference and detailed analysis - ready for a closed-book exam.',
     icon: Quote,
   },
   {
@@ -74,7 +74,7 @@ const BRIEF_OVERVIEW = [
   },
   {
     label: 'Characters',
-    text: "A tight cast centred on Macbeth's fall — his ambitious wife Lady Macbeth, the noble Banquo, the pious King Duncan, the vengeful Macduff, the rightful heir Malcolm, and the three equivocating Witches.",
+    text: "A tight cast centred on Macbeth's fall - his ambitious wife Lady Macbeth, the noble Banquo, the pious King Duncan, the vengeful Macduff, the rightful heir Malcolm, and the three equivocating Witches.",
   },
   {
     label: 'Themes',
@@ -109,7 +109,7 @@ export default async function MacbethHubPage() {
   return (
     <main className="min-h-screen bg-background">
       <CourseJsonLd
-        name="Macbeth — Edexcel IGCSE Literature Study Guide"
+        name="Macbeth - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Macbeth for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd

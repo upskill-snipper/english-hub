@@ -471,7 +471,7 @@ export default function ToBeConjugationPage() {
         <GameShell
           gameId="to-be-conjugation"
           title="The Verb To Be"
-          description="Read each sentence and choose the correct form of the verb 'to be' — am, is, are, was, were, will be, been or being."
+          description="Read each sentence and choose the correct form of the verb 'to be' - am, is, are, was, were, will be, been or being."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -565,7 +565,7 @@ export default function ToBeConjugationPage() {
                   <div className="flex items-center justify-center gap-2 font-medium">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Well done — that&apos;s correct!
+                        <CheckCircle className="size-4" /> Well done - that&apos;s correct!
                       </>
                     ) : (
                       <>

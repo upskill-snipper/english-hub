@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Grade Boundaries — IGCSE Language A',
+    title: 'Grade Boundaries - IGCSE Language A',
     description:
       'Historical grade boundaries for IGCSE Language A First Language English and how to hit an A* grade. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Grade Boundaries — IGCSE Language A',
+  title: 'Grade Boundaries - IGCSE Language A',
   description:
     'Historical grade boundaries for IGCSE Language A First Language English and how to hit an A* grade. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -45,11 +45,11 @@ const aStarProfile = [
 ]
 
 const tips = [
-  'Treat every practice paper as if it were the real thing — full timing, no notes.',
+  'Treat every practice paper as if it were the real thing - full timing, no notes.',
   'Target your weakest question type once a week, not your strongest.',
   'Build a personal bank of sophisticated vocabulary and test yourself weekly.',
-  'Read 15 minutes of non-fiction daily — broadsheet opinion pieces are perfect for Q2-style analysis.',
-  'Get a second pair of eyes on your descriptive/narrative compositions — self-marking rarely catches style issues.',
+  'Read 15 minutes of non-fiction daily - broadsheet opinion pieces are perfect for Q2-style analysis.',
+  'Get a second pair of eyes on your descriptive/narrative compositions - self-marking rarely catches style issues.',
   "Memorise the examiner's assessment language so your writing sounds like it meets the criteria before the marker has to look.",
 ]
 
@@ -146,7 +146,7 @@ export default async function GradeBoundariesPage() {
           </CardContent>
         </Card>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Rough rule of thumb: A* ≈ 76–80%, A ≈ 68–70%, C ≈ 49–51%. Treat 125/160 as your A*
+          Rough rule of thumb: A* ≈ 76-80%, A ≈ 68-70%, C ≈ 49-51%. Treat 125/160 as your A*
           training target and you will have a buffer.
         </p>
       </section>

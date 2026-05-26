@@ -4,7 +4,7 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'WJEC Eduqas A-Level English — The English Hub',
+    title: 'WJEC Eduqas A-Level English - The English Hub',
     description:
       'WJEC Eduqas A-Level English Literature and Language revision hub. Cross-board set text analysis, essay technique and language study while full Eduqas A-Level content is on our roadmap.',
   },

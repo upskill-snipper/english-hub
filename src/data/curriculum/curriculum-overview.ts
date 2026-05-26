@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════════════════
-// Master Curriculum Overview — Year 7 to Year 13
+// Master Curriculum Overview - Year 7 to Year 13
 // ═══════════════════════════════════════════════════════════════════════════════
 // Maps the entire English programme across seven year groups.
 // KS3 (Y7-Y9):  National Curriculum strand mappings
@@ -8,38 +8,38 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export interface CurriculumYear {
-  year: number;
-  title: string;
-  bigQuestion: string;
-  focus: string;
-  terms: CurriculumTerm[];
+  year: number
+  title: string
+  bigQuestion: string
+  focus: string
+  terms: CurriculumTerm[]
   endOfYearExpectations: {
-    reading: string[];
-    writing: string[];
-    spokenLanguage: string[];
-    grammarControl: string[];
-  };
+    reading: string[]
+    writing: string[]
+    spokenLanguage: string[]
+    grammarControl: string[]
+  }
 }
 
 export interface CurriculumTerm {
-  id: string;
-  termLabel: string;
-  unitTitle: string;
-  coreTexts: string[];
-  writingFocus: string;
-  spagFocus: string;
-  keySkills: string[];
-  keyVocabulary: string[];
-  assessmentType: string;
-  assessmentWeighting: string;
-  linkedCourseIds: string[];
-  linkedLessonPlanIds: string[];
-  linkedWorkbookIds: string[];
-  ncStrands: string[];
+  id: string
+  termLabel: string
+  unitTitle: string
+  coreTexts: string[]
+  writingFocus: string
+  spagFocus: string
+  keySkills: string[]
+  keyVocabulary: string[]
+  assessmentType: string
+  assessmentWeighting: string
+  linkedCourseIds: string[]
+  linkedLessonPlanIds: string[]
+  linkedWorkbookIds: string[]
+  ncStrands: string[]
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 7 — Foundations
+// YEAR 7 - Foundations
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year7: CurriculumYear = {
@@ -54,10 +54,10 @@ const year7: CurriculumYear = {
       termLabel: 'Autumn Term',
       unitTitle: 'Introduction to Narrative: Stories That Shape Us',
       coreTexts: [
-        'Private Peaceful — Michael Morpurgo',
+        'Private Peaceful - Michael Morpurgo',
         'Short story anthology (curated extracts)',
       ],
-      writingFocus: 'Descriptive and narrative writing — setting and character',
+      writingFocus: 'Descriptive and narrative writing - setting and character',
       spagFocus:
         'Sentence types (simple, compound, complex); full stops and capital letters; paragraph structure',
       keySkills: [
@@ -68,9 +68,20 @@ const year7: CurriculumYear = {
         'Plan a piece of narrative writing',
       ],
       keyVocabulary: [
-        'narrative', 'protagonist', 'antagonist', 'setting', 'atmosphere',
-        'simile', 'metaphor', 'personification', 'inference', 'explicit',
-        'implicit', 'connotation', 'paragraph', 'topic sentence',
+        'narrative',
+        'protagonist',
+        'antagonist',
+        'setting',
+        'atmosphere',
+        'simile',
+        'metaphor',
+        'personification',
+        'inference',
+        'explicit',
+        'implicit',
+        'connotation',
+        'paragraph',
+        'topic sentence',
       ],
       assessmentType: 'Reading comprehension (extract-based) + descriptive writing',
       assessmentWeighting: '50% reading / 50% writing',
@@ -93,7 +104,7 @@ const year7: CurriculumYear = {
         'Poetry anthology: selected poems (Tennyson, Agard, Dharker, Duffy)',
         'Performance poetry selections',
       ],
-      writingFocus: 'Analytical writing — responding to poetry using PEE/PETAL',
+      writingFocus: 'Analytical writing - responding to poetry using PEE/PETAL',
       spagFocus:
         'Apostrophes (contraction and possession); commas in lists and after fronted adverbials; subject-verb agreement',
       keySkills: [
@@ -104,9 +115,20 @@ const year7: CurriculumYear = {
         'Use subject terminology accurately',
       ],
       keyVocabulary: [
-        'stanza', 'enjambment', 'caesura', 'rhyme scheme', 'rhythm',
-        'imagery', 'tone', 'mood', 'voice', 'speaker', 'alliteration',
-        'sibilance', 'onomatopoeia', 'juxtaposition',
+        'stanza',
+        'enjambment',
+        'caesura',
+        'rhyme scheme',
+        'rhythm',
+        'imagery',
+        'tone',
+        'mood',
+        'voice',
+        'speaker',
+        'alliteration',
+        'sibilance',
+        'onomatopoeia',
+        'juxtaposition',
       ],
       assessmentType: 'Poetry analysis essay + spoken language presentation',
       assessmentWeighting: '60% written analysis / 40% spoken language',
@@ -116,7 +138,7 @@ const year7: CurriculumYear = {
       ncStrands: [
         'NC-Reading: Reading and appreciating poetry',
         'NC-Reading: Making critical comparisons across texts',
-        'NC-Writing: Writing for a range of purposes — analysis',
+        'NC-Writing: Writing for a range of purposes - analysis',
         'NC-Spoken Language: Presenting and performing',
         'NC-Grammar: Vocabulary development and subject terminology',
       ],
@@ -124,13 +146,11 @@ const year7: CurriculumYear = {
     {
       id: 'y7-t3',
       termLabel: 'Summer Term',
-      unitTitle: 'Shakespeare Introduction: A Midsummer Night\'s Dream',
-      coreTexts: [
-        'A Midsummer Night\'s Dream — William Shakespeare',
-      ],
-      writingFocus: 'Persuasive and discursive writing — letters and articles',
+      unitTitle: "Shakespeare Introduction: A Midsummer Night's Dream",
+      coreTexts: ["A Midsummer Night's Dream - William Shakespeare"],
+      writingFocus: 'Persuasive and discursive writing - letters and articles',
       spagFocus:
-        'Semicolons and colons; speech punctuation; homophones (their/there/they\'re, its/it\'s)',
+        "Semicolons and colons; speech punctuation; homophones (their/there/they're, its/it's)",
       keySkills: [
         'Understand Shakespearean language and context',
         'Analyse character and theme in a play',
@@ -139,9 +159,19 @@ const year7: CurriculumYear = {
         'Perform and interpret dramatic scenes',
       ],
       keyVocabulary: [
-        'comedy', 'tragedy', 'dramatic irony', 'soliloquy', 'aside',
-        'iambic pentameter', 'blank verse', 'prose', 'rhetoric',
-        'audience', 'stage directions', 'Elizabethan', 'patriarchy',
+        'comedy',
+        'tragedy',
+        'dramatic irony',
+        'soliloquy',
+        'aside',
+        'iambic pentameter',
+        'blank verse',
+        'prose',
+        'rhetoric',
+        'audience',
+        'stage directions',
+        'Elizabethan',
+        'patriarchy',
       ],
       assessmentType: 'Character analysis essay + persuasive article',
       assessmentWeighting: '50% reading / 50% writing',
@@ -149,7 +179,7 @@ const year7: CurriculumYear = {
       linkedLessonPlanIds: ['ks3-shakespeare-context', 'ks3-non-fiction-writing'],
       linkedWorkbookIds: ['wb-y7-shakespeare'],
       ncStrands: [
-        'NC-Reading: Studying Shakespeare — understanding plot, character, and themes',
+        'NC-Reading: Studying Shakespeare - understanding plot, character, and themes',
         'NC-Reading: Understanding how texts reflect their historical context',
         'NC-Writing: Writing persuasively with rhetorical devices',
         'NC-Spoken Language: Participating in drama and performance',
@@ -184,10 +214,10 @@ const year7: CurriculumYear = {
       'Use commas after fronted adverbials and in lists',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 8 — Developing Critical Readers
+// YEAR 8 - Developing Critical Readers
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year8: CurriculumYear = {
@@ -202,10 +232,10 @@ const year8: CurriculumYear = {
       termLabel: 'Autumn Term',
       unitTitle: 'The Gothic Tradition',
       coreTexts: [
-        'Frankenstein (abridged / extracts) — Mary Shelley',
+        'Frankenstein (abridged / extracts) - Mary Shelley',
         'Gothic short stories: Poe, Stoker, Jackson',
       ],
-      writingFocus: 'Creative writing — atmosphere, tension, and the senses',
+      writingFocus: 'Creative writing - atmosphere, tension, and the senses',
       spagFocus:
         'Varying sentence openings; deliberate sentence fragments for effect; parenthetical dashes and commas',
       keySkills: [
@@ -216,9 +246,20 @@ const year8: CurriculumYear = {
         'Compare how different writers use the same genre conventions',
       ],
       keyVocabulary: [
-        'Gothic', 'sublime', 'uncanny', 'foreboding', 'pathetic fallacy',
-        'foreshadowing', 'motif', 'symbolism', 'tension', 'suspense',
-        'denouement', 'unreliable narrator', 'epistolary', 'Romantic',
+        'Gothic',
+        'sublime',
+        'uncanny',
+        'foreboding',
+        'pathetic fallacy',
+        'foreshadowing',
+        'motif',
+        'symbolism',
+        'tension',
+        'suspense',
+        'denouement',
+        'unreliable narrator',
+        'epistolary',
+        'Romantic',
       ],
       assessmentType: 'Analytical essay on atmosphere + Gothic creative writing piece',
       assessmentWeighting: '50% reading / 50% writing',
@@ -240,7 +281,7 @@ const year8: CurriculumYear = {
         'War poetry anthology: Owen, Sassoon, Brooke, Agard, Dharker',
         'Linked non-fiction: war letters, speeches, journalism',
       ],
-      writingFocus: 'Comparative analytical writing — comparing two poems',
+      writingFocus: 'Comparative analytical writing - comparing two poems',
       spagFocus:
         'Embedding quotations fluently within sentences; varying paragraph length; connectives for comparison (similarly, conversely, whereas)',
       keySkills: [
@@ -251,9 +292,20 @@ const year8: CurriculumYear = {
         'Use tentative and evaluative language',
       ],
       keyVocabulary: [
-        'propaganda', 'patriotism', 'disillusionment', 'volta', 'refrain',
-        'elegy', 'semantic field', 'anaphora', 'plosive', 'fricative',
-        'contrast', 'antithesis', 'emotive language', 'register',
+        'propaganda',
+        'patriotism',
+        'disillusionment',
+        'volta',
+        'refrain',
+        'elegy',
+        'semantic field',
+        'anaphora',
+        'plosive',
+        'fricative',
+        'contrast',
+        'antithesis',
+        'emotive language',
+        'register',
       ],
       assessmentType: 'Comparative poetry essay + non-fiction synthesis task',
       assessmentWeighting: '60% analytical reading / 40% non-fiction writing',
@@ -273,23 +325,33 @@ const year8: CurriculumYear = {
       termLabel: 'Summer Term',
       unitTitle: 'Novel Study: Animal Farm',
       coreTexts: [
-        'Animal Farm — George Orwell',
+        'Animal Farm - George Orwell',
         'Linked non-fiction: propaganda, revolution, power',
       ],
-      writingFocus: 'Discursive and argumentative writing — speech and editorial',
-      spagFocus:
-        'Relative clauses; active and passive voice; formal vs informal register',
+      writingFocus: 'Discursive and argumentative writing - speech and editorial',
+      spagFocus: 'Relative clauses; active and passive voice; formal vs informal register',
       keySkills: [
         'Analyse allegory and symbolism in a novel',
         'Explore how writers use narrative voice and structure',
         'Write a speech using rhetorical techniques',
-        'Evaluate ideas critically — forming and defending opinions',
+        'Evaluate ideas critically - forming and defending opinions',
         'Link textual analysis to historical and political context',
       ],
       keyVocabulary: [
-        'allegory', 'satire', 'totalitarianism', 'propaganda', 'corruption',
-        'revolution', 'commandment', 'hypocrisy', 'dystopia', 'utopia',
-        'narrative voice', 'third person', 'omniscient', 'didactic',
+        'allegory',
+        'satire',
+        'totalitarianism',
+        'propaganda',
+        'corruption',
+        'revolution',
+        'commandment',
+        'hypocrisy',
+        'dystopia',
+        'utopia',
+        'narrative voice',
+        'third person',
+        'omniscient',
+        'didactic',
       ],
       assessmentType: 'Thematic essay on power + argumentative speech writing',
       assessmentWeighting: '50% reading / 50% writing',
@@ -308,7 +370,7 @@ const year8: CurriculumYear = {
   endOfYearExpectations: {
     reading: [
       'Analyse how writers use language and structure to shape meaning (PETAL)',
-      'Compare two texts — identifying similarities and differences in method and purpose',
+      'Compare two texts - identifying similarities and differences in method and purpose',
       'Understand how historical and social context influences a text',
       'Read and interpret 19th-century prose with confidence',
       'Identify and explain allegory, symbolism, and narrative voice',
@@ -332,15 +394,15 @@ const year8: CurriculumYear = {
       'Spell subject-specific terminology accurately',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 9 — Transition Year (KS3 to KS4 bridge)
+// YEAR 9 - Transition Year (KS3 to KS4 bridge)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year9: CurriculumYear = {
   year: 9,
-  title: 'Mastering Analysis — Bridging to GCSE',
+  title: 'Mastering Analysis - Bridging to GCSE',
   bigQuestion: 'How do we read, write, and speak with authority and precision?',
   focus:
     'Consolidating KS3 skills and introducing GCSE-style assessment; building the stamina, vocabulary, and analytical sophistication needed for exam success.',
@@ -348,10 +410,8 @@ const year9: CurriculumYear = {
     {
       id: 'y9-t1',
       termLabel: 'Autumn Term',
-      unitTitle: 'Shakespeare: Macbeth — Ambition and Morality',
-      coreTexts: [
-        'Macbeth — William Shakespeare',
-      ],
+      unitTitle: 'Shakespeare: Macbeth - Ambition and Morality',
+      coreTexts: ['Macbeth - William Shakespeare'],
       writingFocus: 'GCSE-style extract-based analytical essay',
       spagFocus:
         'Sustaining formal register; academic connectives (moreover, consequently, nevertheless); precise vocabulary choices',
@@ -363,9 +423,20 @@ const year9: CurriculumYear = {
         'Use subject terminology with precision and confidence',
       ],
       keyVocabulary: [
-        'hamartia', 'hubris', 'ambition', 'tyranny', 'regicide',
-        'Jacobean', 'divine right', 'supernatural', 'equivocation',
-        'tragic hero', 'catharsis', 'prophecy', 'guilt', 'masculinity',
+        'hamartia',
+        'hubris',
+        'ambition',
+        'tyranny',
+        'regicide',
+        'Jacobean',
+        'divine right',
+        'supernatural',
+        'equivocation',
+        'tragic hero',
+        'catharsis',
+        'prophecy',
+        'guilt',
+        'masculinity',
       ],
       assessmentType: 'GCSE-style extract-based essay (Macbeth)',
       assessmentWeighting: '100% analytical reading',
@@ -373,7 +444,7 @@ const year9: CurriculumYear = {
       linkedLessonPlanIds: ['ks3-macbeth', 'ks3-shakespeare-context'],
       linkedWorkbookIds: ['wb-y9-macbeth'],
       ncStrands: [
-        'NC-Reading: Studying two Shakespeare plays — understanding plot, character, themes, and context',
+        'NC-Reading: Studying two Shakespeare plays - understanding plot, character, themes, and context',
         'NC-Reading: Analysing the conventions of drama',
         'NC-Writing: Writing essays with sustained critical analysis',
         'NC-Grammar: Formal academic register and precise vocabulary',
@@ -385,10 +456,10 @@ const year9: CurriculumYear = {
       termLabel: 'Spring Term',
       unitTitle: '19th-Century Prose: A Christmas Carol',
       coreTexts: [
-        'A Christmas Carol — Charles Dickens',
+        'A Christmas Carol - Charles Dickens',
         '19th-century non-fiction extracts (journalism, letters, speeches)',
       ],
-      writingFocus: 'Non-fiction transactional writing — article, letter, review',
+      writingFocus: 'Non-fiction transactional writing - article, letter, review',
       spagFocus:
         'Paragraph cohesion (discourse markers, topic sentences, linking phrases); sophisticated punctuation (ellipsis, parenthetical commas)',
       keySkills: [
@@ -399,9 +470,20 @@ const year9: CurriculumYear = {
         'Self-assess using GCSE mark-scheme criteria',
       ],
       keyVocabulary: [
-        'Victorian', 'Malthusian', 'social reform', 'redemption', 'avarice',
-        'philanthropy', 'morality tale', 'novella', 'stave', 'proleptic',
-        'transformation', 'allegory', 'didactic', 'workhouse',
+        'Victorian',
+        'Malthusian',
+        'social reform',
+        'redemption',
+        'avarice',
+        'philanthropy',
+        'morality tale',
+        'novella',
+        'stave',
+        'proleptic',
+        'transformation',
+        'allegory',
+        'didactic',
+        'workhouse',
       ],
       assessmentType: 'Thematic essay (A Christmas Carol) + transactional writing',
       assessmentWeighting: '50% reading / 50% writing',
@@ -419,10 +501,8 @@ const year9: CurriculumYear = {
       id: 'y9-t3',
       termLabel: 'Summer Term',
       unitTitle: 'Modern Drama: An Inspector Calls',
-      coreTexts: [
-        'An Inspector Calls — J.B. Priestley',
-      ],
-      writingFocus: 'Evaluative and critical writing — agreeing or challenging a statement',
+      coreTexts: ['An Inspector Calls - J.B. Priestley'],
+      writingFocus: 'Evaluative and critical writing - agreeing or challenging a statement',
       spagFocus:
         'Proofreading and editing own work; eliminating common errors under pressure; crafting an authoritative academic voice',
       keySkills: [
@@ -433,9 +513,19 @@ const year9: CurriculumYear = {
         'Prepare for the transition to IGCSE study',
       ],
       keyVocabulary: [
-        'capitalism', 'socialism', 'responsibility', 'class', 'hierarchy',
-        'dramatic irony', 'stage directions', 'fourth wall', 'morality play',
-        'Edwardian', 'welfare state', 'collective responsibility', 'inspector',
+        'capitalism',
+        'socialism',
+        'responsibility',
+        'class',
+        'hierarchy',
+        'dramatic irony',
+        'stage directions',
+        'fourth wall',
+        'morality play',
+        'Edwardian',
+        'welfare state',
+        'collective responsibility',
+        'inspector',
       ],
       assessmentType: 'GCSE-style evaluative essay (An Inspector Calls) + end-of-KS3 assessment',
       assessmentWeighting: '70% reading / 30% writing accuracy',
@@ -478,16 +568,16 @@ const year9: CurriculumYear = {
       'Self-edit effectively under timed conditions',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 10 — IGCSE Year 1
+// YEAR 10 - IGCSE Year 1
 // Edexcel IGCSE English Language A & IGCSE Literature
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year10: CurriculumYear = {
   year: 10,
-  title: 'IGCSE English — Year 1',
+  title: 'IGCSE English - Year 1',
   bigQuestion: 'How do we read critically and write with precision for an international exam?',
   focus:
     'Beginning the two-year Edexcel IGCSE English Language A and IGCSE Literature courses. Developing exam-ready reading analysis and controlled transactional and creative writing.',
@@ -500,7 +590,8 @@ const year10: CurriculumYear = {
         'Unseen non-fiction extracts (articles, speeches, letters, travel writing)',
         '19th- and 20th-century non-fiction anthology',
       ],
-      writingFocus: 'Transactional writing — articles, letters, speeches, reviews (4EA1 Paper 1 Section B)',
+      writingFocus:
+        'Transactional writing - articles, letters, speeches, reviews (4EA1 Paper 1 Section B)',
       spagFocus:
         'Discourse markers for non-fiction; rhetorical devices; register and tone control; paragraphing for argument',
       keySkills: [
@@ -511,12 +602,22 @@ const year10: CurriculumYear = {
         'Apply IGCSE mark-scheme criteria to self- and peer-assessment',
       ],
       keyVocabulary: [
-        'transactional', 'discursive', 'rhetorical question', 'anecdote',
-        'direct address', 'counter-argument', 'concession', 'register',
-        'tone', 'bias', 'objectivity', 'subjectivity', 'synthesis',
+        'transactional',
+        'discursive',
+        'rhetorical question',
+        'anecdote',
+        'direct address',
+        'counter-argument',
+        'concession',
+        'register',
+        'tone',
+        'bias',
+        'objectivity',
+        'subjectivity',
+        'synthesis',
       ],
       assessmentType: 'IGCSE Paper 1 style mock (Reading + Transactional Writing)',
-      assessmentWeighting: 'Paper 1: 60% of Language — Reading 30 marks / Writing 30 marks',
+      assessmentWeighting: 'Paper 1: 60% of Language - Reading 30 marks / Writing 30 marks',
       linkedCourseIds: ['edexcel-igcse-lang-a'],
       linkedLessonPlanIds: ['igcse-language-p1', 'igcse-non-fiction-reading'],
       linkedWorkbookIds: ['wb-y10-igcse-lang-p1'],
@@ -533,10 +634,10 @@ const year10: CurriculumYear = {
       termLabel: 'Spring Term',
       unitTitle: 'IGCSE Literature: Drama & Prose Set Texts',
       coreTexts: [
-        'An Inspector Calls — J.B. Priestley (Drama)',
-        'Of Mice and Men — John Steinbeck (Prose)',
+        'An Inspector Calls - J.B. Priestley (Drama)',
+        'Of Mice and Men - John Steinbeck (Prose)',
       ],
-      writingFocus: 'Literary essay writing — character, theme, and writer\'s methods',
+      writingFocus: "Literary essay writing - character, theme, and writer's methods",
       spagFocus:
         'Embedding context within analytical sentences; controlling complex sentence structures; using literary terminology precisely',
       keySkills: [
@@ -547,20 +648,30 @@ const year10: CurriculumYear = {
         'Develop a personal, conceptualised interpretation',
       ],
       keyVocabulary: [
-        'class system', 'collective responsibility', 'American Dream',
-        'loneliness', 'marginalisation', 'microcosm', 'naturalism',
-        'didactic', 'exposition', 'denouement', 'cyclical structure',
-        'dramatic tension', 'stage directions', 'social criticism',
+        'class system',
+        'collective responsibility',
+        'American Dream',
+        'loneliness',
+        'marginalisation',
+        'microcosm',
+        'naturalism',
+        'didactic',
+        'exposition',
+        'denouement',
+        'cyclical structure',
+        'dramatic tension',
+        'stage directions',
+        'social criticism',
       ],
       assessmentType: 'IGCSE Literature Paper 1 style mock (Drama & Prose)',
-      assessmentWeighting: 'Paper 1: 50% of Literature — Drama 25% / Prose 25%',
+      assessmentWeighting: 'Paper 1: 50% of Literature - Drama 25% / Prose 25%',
       linkedCourseIds: ['igcse-lit-drama-prose', 'inspector-calls'],
       linkedLessonPlanIds: ['igcse-inspector-calls', 'igcse-prose-texts'],
       linkedWorkbookIds: ['wb-y10-igcse-lit-p1'],
       ncStrands: [
         'Edexcel IGCSE Literature Paper 1: Drama and Prose',
         'AO1: Close knowledge and understanding of texts with informed personal response',
-        'AO2: Analyse language, form, and structure — writer\'s methods and effects',
+        "AO2: Analyse language, form, and structure - writer's methods and effects",
         'AO3: Understand relationships between texts and contexts',
         'AO4: Communicate clearly with accurate SPaG',
       ],
@@ -573,9 +684,10 @@ const year10: CurriculumYear = {
         'Unseen poetry and prose extracts',
         'Anthology of literary extracts for close reading',
       ],
-      writingFocus: 'Imaginative / creative writing — narrative and descriptive (4EA1 Paper 2 Section B)',
+      writingFocus:
+        'Imaginative / creative writing - narrative and descriptive (4EA1 Paper 2 Section B)',
       spagFocus:
-        'Crafting openings and endings; controlling tense shifts; punctuation for pace and rhythm; show-don\'t-tell',
+        "Crafting openings and endings; controlling tense shifts; punctuation for pace and rhythm; show-don't-tell",
       keySkills: [
         'Respond to unseen poetry with close textual analysis (4EA1 AO1/AO2)',
         'Analyse prose extracts for language and structural effects (4EA1 AO2)',
@@ -584,12 +696,21 @@ const year10: CurriculumYear = {
         'Evaluate and compare unseen literary texts',
       ],
       keyVocabulary: [
-        'free verse', 'sonnet', 'dramatic monologue', 'volta', 'couplet',
-        'enjambment', 'caesura', 'sensory imagery', 'extended metaphor',
-        'narrative perspective', 'first person', 'stream of consciousness',
+        'free verse',
+        'sonnet',
+        'dramatic monologue',
+        'volta',
+        'couplet',
+        'enjambment',
+        'caesura',
+        'sensory imagery',
+        'extended metaphor',
+        'narrative perspective',
+        'first person',
+        'stream of consciousness',
       ],
       assessmentType: 'IGCSE Paper 2 style mock (Literary Reading + Imaginative Writing)',
-      assessmentWeighting: 'Paper 2: 40% of Language — Reading 30 marks / Writing 30 marks',
+      assessmentWeighting: 'Paper 2: 40% of Language - Reading 30 marks / Writing 30 marks',
       linkedCourseIds: ['edexcel-igcse-lang-a'],
       linkedLessonPlanIds: ['igcse-language-p2', 'igcse-creative-writing'],
       linkedWorkbookIds: ['wb-y10-igcse-lang-p2'],
@@ -629,15 +750,15 @@ const year10: CurriculumYear = {
       'Maintain appropriate register throughout extended responses',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 11 — IGCSE Year 2 (Exam Year)
+// YEAR 11 - IGCSE Year 2 (Exam Year)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year11: CurriculumYear = {
   year: 11,
-  title: 'IGCSE English — Exam Year',
+  title: 'IGCSE English - Exam Year',
   bigQuestion: 'How do we perform at our best under exam conditions?',
   focus:
     'Completing the IGCSE courses, mastering exam technique, and building the resilience and precision needed to achieve top grades in the summer examinations.',
@@ -645,12 +766,12 @@ const year11: CurriculumYear = {
     {
       id: 'y11-t1',
       termLabel: 'Autumn Term',
-      unitTitle: 'IGCSE Literature: Poetry — Unseen and Anthology',
+      unitTitle: 'IGCSE Literature: Poetry - Unseen and Anthology',
       coreTexts: [
         'Edexcel IGCSE Poetry Anthology (IGCSE Literature)',
         'Unseen poetry extracts for comparison',
       ],
-      writingFocus: 'Comparative poetry essay — anthology and unseen',
+      writingFocus: 'Comparative poetry essay - anthology and unseen',
       spagFocus:
         'Comparative connectives (conversely, in contrast, similarly); embedding quotations with analysis; controlling essay length',
       keySkills: [
@@ -661,19 +782,27 @@ const year11: CurriculumYear = {
         'Use revision strategies effectively (flashcards, retrieval practice)',
       ],
       keyVocabulary: [
-        'anthology', 'thematic link', 'comparative essay', 'unseen poetry',
-        'structural shift', 'tone shift', 'ambiguity', 'dual interpretation',
-        'contextual resonance', 'authorial intent', 'reader response',
+        'anthology',
+        'thematic link',
+        'comparative essay',
+        'unseen poetry',
+        'structural shift',
+        'tone shift',
+        'ambiguity',
+        'dual interpretation',
+        'contextual resonance',
+        'authorial intent',
+        'reader response',
       ],
       assessmentType: 'IGCSE Literature Paper 2 mock (Poetry)',
-      assessmentWeighting: 'Paper 2: 50% of Literature — Anthology 25% / Unseen 25%',
+      assessmentWeighting: 'Paper 2: 50% of Literature - Anthology 25% / Unseen 25%',
       linkedCourseIds: ['igcse-lit-poetry'],
       linkedLessonPlanIds: ['igcse-poetry-anthology', 'igcse-unseen-poetry'],
       linkedWorkbookIds: ['wb-y11-igcse-lit-p2'],
       ncStrands: [
         'Edexcel IGCSE Literature Paper 2: Poetry',
         'AO1: Close knowledge of anthology poems with personal response',
-        'AO2: Analyse poetic methods — language, form, structure',
+        'AO2: Analyse poetic methods - language, form, structure',
         'AO3: Contextual understanding of poets and movements',
         'AO4: Accurate written communication in essay form',
       ],
@@ -681,10 +810,10 @@ const year11: CurriculumYear = {
     {
       id: 'y11-t2',
       termLabel: 'Spring Term',
-      unitTitle: 'IGCSE Exam Preparation — Language and Literature',
+      unitTitle: 'IGCSE Exam Preparation - Language and Literature',
       coreTexts: [
-        'Past paper packs — IGCSE Language A (4EA1)',
-        'Past paper packs — IGCSE Literature',
+        'Past paper packs - IGCSE Language A (4EA1)',
+        'Past paper packs - IGCSE Literature',
         'Revision anthology and model answer booklets',
       ],
       writingFocus: 'Exam-technique refinement across all question types',
@@ -698,18 +827,27 @@ const year11: CurriculumYear = {
         'Manage exam stress and time effectively',
       ],
       keyVocabulary: [
-        'mark scheme', 'assessment objective', 'band descriptor',
-        'examiner report', 'command word', 'rubric', 'diagnostic',
-        'retrieval practice', 'interleaving', 'spaced repetition',
+        'mark scheme',
+        'assessment objective',
+        'band descriptor',
+        'examiner report',
+        'command word',
+        'rubric',
+        'diagnostic',
+        'retrieval practice',
+        'interleaving',
+        'spaced repetition',
       ],
-      assessmentType: 'Full mock examination — Language Paper 1, Paper 2; Literature Paper 1, Paper 2',
-      assessmentWeighting: 'Language: Paper 1 (60%) + Paper 2 (40%); Literature: Paper 1 (50%) + Paper 2 (50%)',
+      assessmentType:
+        'Full mock examination - Language Paper 1, Paper 2; Literature Paper 1, Paper 2',
+      assessmentWeighting:
+        'Language: Paper 1 (60%) + Paper 2 (40%); Literature: Paper 1 (50%) + Paper 2 (50%)',
       linkedCourseIds: ['edexcel-igcse-lang-a', 'igcse-lit-drama-prose', 'igcse-lit-poetry'],
       linkedLessonPlanIds: ['igcse-exam-prep', 'igcse-revision-strategies'],
       linkedWorkbookIds: ['wb-y11-exam-prep'],
       ncStrands: [
-        'Edexcel 4EA1: Full specification revision — Papers 1 & 2',
-        'Edexcel IGCSE Literature: Full revision — Papers 1 & 2',
+        'Edexcel 4EA1: Full specification revision - Papers 1 & 2',
+        'Edexcel IGCSE Literature: Full revision - Papers 1 & 2',
         'All AOs assessed across timed mock examinations',
       ],
     },
@@ -721,9 +859,9 @@ const year11: CurriculumYear = {
         'Targeted revision materials based on individual gaps',
         'Walking-talking mock scripts',
       ],
-      writingFocus: 'Targeted gap-closing — individual weaknesses addressed through focused practice',
-      spagFocus:
-        'Final accuracy drills; common error correction; last-minute precision checks',
+      writingFocus:
+        'Targeted gap-closing - individual weaknesses addressed through focused practice',
+      spagFocus: 'Final accuracy drills; common error correction; last-minute precision checks',
       keySkills: [
         'Perform confidently across all exam papers',
         'Manage time effectively in a real exam setting',
@@ -732,17 +870,27 @@ const year11: CurriculumYear = {
         'Review and refine responses before submitting',
       ],
       keyVocabulary: [
-        'exam technique', 'time management', 'focused revision',
-        'walking-talking mock', 'gap analysis', 'confidence building',
+        'exam technique',
+        'time management',
+        'focused revision',
+        'walking-talking mock',
+        'gap analysis',
+        'confidence building',
       ],
-      assessmentType: 'IGCSE External Examinations — Language A Papers 1 & 2, Literature Papers 1 & 2',
+      assessmentType:
+        'IGCSE External Examinations - Language A Papers 1 & 2, Literature Papers 1 & 2',
       assessmentWeighting: '100% external examination',
-      linkedCourseIds: ['edexcel-igcse-lang-a', 'edexcel-igcse-lang-b', 'igcse-lit-drama-prose', 'igcse-lit-poetry'],
+      linkedCourseIds: [
+        'edexcel-igcse-lang-a',
+        'edexcel-igcse-lang-b',
+        'igcse-lit-drama-prose',
+        'igcse-lit-poetry',
+      ],
       linkedLessonPlanIds: ['igcse-final-revision'],
       linkedWorkbookIds: ['wb-y11-final-revision'],
       ncStrands: [
-        'Edexcel 4EA1: External examination — June series',
-        'Edexcel IGCSE Literature: External examination — June series',
+        'Edexcel 4EA1: External examination - June series',
+        'Edexcel IGCSE Literature: External examination - June series',
       ],
     },
   ],
@@ -752,7 +900,7 @@ const year11: CurriculumYear = {
       'Achieve a Grade 7+ in IGCSE Literature across drama, prose, and poetry',
       'Respond to unseen texts independently and with analytical confidence',
       'Write comparative literary essays with sustained conceptualised argument',
-      'Evaluate writers\' methods with precision and flair',
+      "Evaluate writers' methods with precision and flair",
     ],
     writing: [
       'Produce high-quality transactional writing under exam conditions',
@@ -772,16 +920,16 @@ const year11: CurriculumYear = {
       'Punctuate speech, quotations, and all sentence types accurately',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 12 — IAL Year 1 (AS Level)
+// YEAR 12 - IAL Year 1 (AS Level)
 // Edexcel IAL English Language (YEN0) & English Literature (YET0)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year12: CurriculumYear = {
   year: 12,
-  title: 'IAL English — Year 1 (AS)',
+  title: 'IAL English - Year 1 (AS)',
   bigQuestion: 'How do we develop a sophisticated, independent critical voice?',
   focus:
     'Beginning the Edexcel International Advanced Level courses. Developing advanced analytical skills, independent research, and the ability to construct nuanced literary and linguistic arguments.',
@@ -791,10 +939,10 @@ const year12: CurriculumYear = {
       termLabel: 'Autumn Term',
       unitTitle: 'IAL Literature Unit 1: Post-2000 Prose & Drama',
       coreTexts: [
-        'The Handmaid\'s Tale — Margaret Atwood (Prose)',
-        'A Streetcar Named Desire — Tennessee Williams (Drama)',
+        "The Handmaid's Tale - Margaret Atwood (Prose)",
+        'A Streetcar Named Desire - Tennessee Williams (Drama)',
       ],
-      writingFocus: 'Advanced literary essay — sustained argument with multiple interpretations',
+      writingFocus: 'Advanced literary essay - sustained argument with multiple interpretations',
       spagFocus:
         'Academic register at A-Level; complex subordination; nuanced hedging language (arguably, perhaps, it could be contended)',
       keySkills: [
@@ -805,10 +953,23 @@ const year12: CurriculumYear = {
         'Write with sophistication, precision, and intellectual independence',
       ],
       keyVocabulary: [
-        'dystopia', 'theocracy', 'feminism', 'patriarchy', 'subjugation',
-        'desire', 'illusion', 'reality', 'masculinity', 'Southern Gothic',
-        'postmodernism', 'metanarrative', 'unreliable narrator', 'polyphony',
-        'critical perspective', 'Marxist reading', 'feminist reading',
+        'dystopia',
+        'theocracy',
+        'feminism',
+        'patriarchy',
+        'subjugation',
+        'desire',
+        'illusion',
+        'reality',
+        'masculinity',
+        'Southern Gothic',
+        'postmodernism',
+        'metanarrative',
+        'unreliable narrator',
+        'polyphony',
+        'critical perspective',
+        'Marxist reading',
+        'feminist reading',
       ],
       assessmentType: 'IAL Literature Unit 1 mock (essay-based)',
       assessmentWeighting: 'Unit 1: 40% of AS / 20% of A Level',
@@ -842,10 +1003,23 @@ const year12: CurriculumYear = {
         'Evaluate how language shapes and reflects identity and power',
       ],
       keyVocabulary: [
-        'sociolect', 'idiolect', 'dialect', 'register', 'code-switching',
-        'pragmatics', 'semantics', 'syntax', 'morphology', 'phonology',
-        'prescriptivism', 'descriptivism', 'language change', 'etymology',
-        'Standard English', 'Received Pronunciation', 'discourse',
+        'sociolect',
+        'idiolect',
+        'dialect',
+        'register',
+        'code-switching',
+        'pragmatics',
+        'semantics',
+        'syntax',
+        'morphology',
+        'phonology',
+        'prescriptivism',
+        'descriptivism',
+        'language change',
+        'etymology',
+        'Standard English',
+        'Received Pronunciation',
+        'discourse',
       ],
       assessmentType: 'IAL Language Unit 1 mock (text analysis + original writing)',
       assessmentWeighting: 'Unit 1: 40% of AS / 20% of A Level',
@@ -865,7 +1039,7 @@ const year12: CurriculumYear = {
       termLabel: 'Summer Term',
       unitTitle: 'AS Examinations & Unit 2 Introduction',
       coreTexts: [
-        'Revision packs — Literature Unit 1 and Language Unit 1',
+        'Revision packs - Literature Unit 1 and Language Unit 1',
         'Introduction to Unit 2 core texts (Shakespeare / Pre-1900 poetry)',
       ],
       writingFocus: 'Exam technique refinement + introduction to extended comparative writing',
@@ -879,17 +1053,22 @@ const year12: CurriculumYear = {
         'Develop independent reading habits and wider literary knowledge',
       ],
       keyVocabulary: [
-        'AS Level', 'unit assessment', 'synoptic', 'comparative framework',
-        'critical lens', 'literary canon', 'independent study',
+        'AS Level',
+        'unit assessment',
+        'synoptic',
+        'comparative framework',
+        'critical lens',
+        'literary canon',
+        'independent study',
       ],
-      assessmentType: 'AS External Examinations — YET0 Unit 1, YEN0 Unit 1',
+      assessmentType: 'AS External Examinations - YET0 Unit 1, YEN0 Unit 1',
       assessmentWeighting: '100% external examination (AS awards)',
       linkedCourseIds: ['ial-lit-unit1', 'ial-lang-unit1'],
       linkedLessonPlanIds: ['ial-as-exam-prep'],
       linkedWorkbookIds: ['wb-y12-as-exam-prep'],
       ncStrands: [
-        'Edexcel YET0 Unit 1: External examination — May/June series',
-        'Edexcel YEN0 Unit 1: External examination — May/June series',
+        'Edexcel YET0 Unit 1: External examination - May/June series',
+        'Edexcel YEN0 Unit 1: External examination - May/June series',
       ],
     },
   ],
@@ -919,15 +1098,15 @@ const year12: CurriculumYear = {
       'Deploy hedging and nuanced evaluative language effectively',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// YEAR 13 — IAL Year 2 (A Level — full qualification)
+// YEAR 13 - IAL Year 2 (A Level - full qualification)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const year13: CurriculumYear = {
   year: 13,
-  title: 'IAL English — Year 2 (A Level)',
+  title: 'IAL English - Year 2 (A Level)',
   bigQuestion: 'How do we become truly independent critical thinkers?',
   focus:
     'Completing the Edexcel IAL courses. Developing synoptic understanding, independent research, and the intellectual maturity needed for top grades and successful progression to university.',
@@ -937,10 +1116,10 @@ const year13: CurriculumYear = {
       termLabel: 'Autumn Term',
       unitTitle: 'IAL Literature Unit 3: Shakespeare & Pre-1900 Poetry',
       coreTexts: [
-        'Othello — William Shakespeare',
+        'Othello - William Shakespeare',
         'Selected Pre-1900 poetry (Romantic and Victorian poets)',
       ],
-      writingFocus: 'Synoptic literary essay — connecting Shakespeare, poetry, and wider reading',
+      writingFocus: 'Synoptic literary essay - connecting Shakespeare, poetry, and wider reading',
       spagFocus:
         'Maintaining a sophisticated critical voice; integrating critical theory; controlling multi-layered arguments',
       keySkills: [
@@ -951,10 +1130,25 @@ const year13: CurriculumYear = {
         'Develop an independent, authoritative critical voice',
       ],
       keyVocabulary: [
-        'tragedy', 'hamartia', 'jealousy', 'otherness', 'Venetian',
-        'Moor', 'colonialism', 'race', 'Romantic', 'sublime', 'lyric',
-        'ode', 'elegy', 'pastoral', 'synoptic', 'canonical',
-        'postcolonial criticism', 'psychoanalytic reading', 'New Historicism',
+        'tragedy',
+        'hamartia',
+        'jealousy',
+        'otherness',
+        'Venetian',
+        'Moor',
+        'colonialism',
+        'race',
+        'Romantic',
+        'sublime',
+        'lyric',
+        'ode',
+        'elegy',
+        'pastoral',
+        'synoptic',
+        'canonical',
+        'postcolonial criticism',
+        'psychoanalytic reading',
+        'New Historicism',
       ],
       assessmentType: 'IAL Literature Unit 3 mock (synoptic essay)',
       assessmentWeighting: 'Unit 3: 30% of A Level',
@@ -964,7 +1158,7 @@ const year13: CurriculumYear = {
       ncStrands: [
         'Edexcel YET0 Unit 3: Shakespeare and Pre-1900 Poetry',
         'AO1: Articulate informed, personal and creative responses',
-        'AO2: Analyse ways in which meanings are shaped — advanced level',
+        'AO2: Analyse ways in which meanings are shaped - advanced level',
         'AO3: Contexts of production and reception across literary periods',
         'AO4: Explore connections across literary texts and movements',
         'AO5: Engage with different interpretations and critical debates',
@@ -989,10 +1183,21 @@ const year13: CurriculumYear = {
         'Present research findings with academic rigour',
       ],
       keyVocabulary: [
-        'methodology', 'hypothesis', 'data collection', 'transcription',
-        'corpus', 'qualitative', 'quantitative', 'variable', 'control',
-        'linguistic framework', 'commentary', 'metalinguistic awareness',
-        'stylistic analysis', 'genre conventions', 'intertextuality',
+        'methodology',
+        'hypothesis',
+        'data collection',
+        'transcription',
+        'corpus',
+        'qualitative',
+        'quantitative',
+        'variable',
+        'control',
+        'linguistic framework',
+        'commentary',
+        'metalinguistic awareness',
+        'stylistic analysis',
+        'genre conventions',
+        'intertextuality',
       ],
       assessmentType: 'IAL Language Units 3 & 4 (coursework/controlled assessment)',
       assessmentWeighting: 'Unit 3: 20% of A Level; Unit 4: 20% of A Level',
@@ -1014,32 +1219,43 @@ const year13: CurriculumYear = {
       termLabel: 'Summer Term',
       unitTitle: 'A Level Final Revision and Examinations',
       coreTexts: [
-        'Revision packs — Literature Units 1, 3 & 4',
-        'Revision packs — Language Units 1, 3 & 4',
+        'Revision packs - Literature Units 1, 3 & 4',
+        'Revision packs - Language Units 1, 3 & 4',
         'Past papers and examiner reports',
       ],
       writingFocus: 'Exam technique mastery and targeted gap-closing',
-      spagFocus:
-        'Final accuracy at A-Level standard; confident control of all written modes',
+      spagFocus: 'Final accuracy at A-Level standard; confident control of all written modes',
       keySkills: [
         'Perform at Grade A/A* across all examined units',
         'Manage extended examination sessions with sustained quality',
-        'Apply synoptic thinking — connecting ideas across units and texts',
+        'Apply synoptic thinking - connecting ideas across units and texts',
         'Reflect critically on own development as a reader and writer',
         'Prepare for the transition to university-level study',
       ],
       keyVocabulary: [
-        'synoptic assessment', 'A Level', 'UCAS', 'personal statement',
-        'independent scholarship', 'critical autonomy', 'intellectual maturity',
+        'synoptic assessment',
+        'A Level',
+        'UCAS',
+        'personal statement',
+        'independent scholarship',
+        'critical autonomy',
+        'intellectual maturity',
       ],
-      assessmentType: 'A Level External Examinations — YET0 Units 1, 3, 4; YEN0 Units 1, 3, 4',
+      assessmentType: 'A Level External Examinations - YET0 Units 1, 3, 4; YEN0 Units 1, 3, 4',
       assessmentWeighting: '100% external examination (full A Level awards)',
-      linkedCourseIds: ['ial-lit-unit1', 'ial-lit-unit3', 'ial-lit-unit4', 'ial-lang-unit1', 'ial-lang-unit3', 'ial-lang-unit4'],
+      linkedCourseIds: [
+        'ial-lit-unit1',
+        'ial-lit-unit3',
+        'ial-lit-unit4',
+        'ial-lang-unit1',
+        'ial-lang-unit3',
+        'ial-lang-unit4',
+      ],
       linkedLessonPlanIds: ['ial-a-level-exam-prep'],
       linkedWorkbookIds: ['wb-y13-a-level-exam-prep'],
       ncStrands: [
-        'Edexcel YET0: Full A Level — Units 1, 3, 4 external examination',
-        'Edexcel YEN0: Full A Level — Units 1, 3, 4 external examination',
+        'Edexcel YET0: Full A Level - Units 1, 3, 4 external examination',
+        'Edexcel YEN0: Full A Level - Units 1, 3, 4 external examination',
         'All AOs assessed synoptically across the full qualification',
       ],
     },
@@ -1070,7 +1286,7 @@ const year13: CurriculumYear = {
       'Demonstrate mature, controlled, and deliberate prose style',
     ],
   },
-};
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Export
@@ -1084,4 +1300,4 @@ export const curriculumOverview: CurriculumYear[] = [
   year11,
   year12,
   year13,
-];
+]

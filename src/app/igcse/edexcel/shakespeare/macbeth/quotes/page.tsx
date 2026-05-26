@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Key Quotes — Edexcel IGCSE Literature',
+    title: 'Macbeth Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/quotes',
   },
-  title: 'Macbeth Key Quotes — Edexcel IGCSE Literature',
+  title: 'Macbeth Key Quotes - Edexcel IGCSE Literature',
   description:
     '20 key Macbeth quotations with speaker, scene reference and detailed analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
 }

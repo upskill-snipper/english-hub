@@ -5,10 +5,10 @@ import { rateLimit } from '@/lib/rate-limit'
 
 // ─── Validation ──────────────────────────────────────────────────────────
 //
-// Reading-age sessions are append-only — every attempt becomes a row so the
+// Reading-age sessions are append-only - every attempt becomes a row so the
 // UI can render a longitudinal trend. Never UPDATE existing rows.
 //
-// readingAgeYears is constrained 5–20 inclusive: lower than 5 indicates a
+// readingAgeYears is constrained 5-20 inclusive: lower than 5 indicates a
 // scoring bug (no GCSE-track passage tests below KS1), higher than 20 makes
 // no sense for any current passage in the bank.
 

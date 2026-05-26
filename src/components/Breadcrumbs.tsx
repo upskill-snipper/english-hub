@@ -13,7 +13,7 @@ export type BreadcrumbEntry = { label: string; href: string }
  * Google can show the hierarchy in SERP snippets.
  *
  * Include at the top of every section-level layout / page. The first
- * element is always the site home, injected automatically — pass only
+ * element is always the site home, injected automatically - pass only
  * the trail from the top-level section downward, e.g.:
  *
  *   <Breadcrumbs items={[

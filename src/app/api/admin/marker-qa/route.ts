@@ -1,4 +1,4 @@
-// ─── Platform-admin — Paid-marker QA scorecard ───────────────────────────────
+// ─── Platform-admin - Paid-marker QA scorecard ───────────────────────────────
 // GET /api/admin/marker-qa
 //
 // Site-admin ONLY (verifyAdmin). The single QA read for the paid-marker drive:
@@ -9,11 +9,11 @@
 //   • board / paper slices       (gold exact-rate + ±1 by board and paper)
 //
 // All maths is delegated to src/lib/marker-qa/metrics.ts (pure, unit-tested),
-// which itself reuses evals/stats.ts for the Art. 15 grade-scale agreement —
+// which itself reuses evals/stats.ts for the Art. 15 grade-scale agreement -
 // statistics are NOT duplicated here.
 //
 // gold_expected (expert ground truth) is read here only to score markers and
-// is NEVER returned in this payload — only derived accuracy is. This route is
+// is NEVER returned in this payload - only derived accuracy is. This route is
 // admin-gated; the marker console is a separate workspace.
 //
 // EMPTY-TABLE SAFE: any missing table / query error degrades to a fully-zeroed
@@ -213,7 +213,7 @@ export async function GET(request: NextRequest) {
       .limit(100000)
 
     if (modErr) {
-      // Submissions exist but no moderation history — report gold counts only.
+      // Submissions exist but no moderation history - report gold counts only.
       console.error('[api/admin/marker-qa] moderations query failed', modErr)
       const payload = emptyPayload('Moderation history unavailable')
       payload.storeAvailable = true
@@ -279,7 +279,7 @@ export async function GET(request: NextRequest) {
       }
 
       // Inter-marker: any reviewed, NON-gold script with a marker decision.
-      // (Gold items are excluded — every marker sees the same planted answer,
+      // (Gold items are excluded - every marker sees the same planted answer,
       // which would inflate "agreement" artificially.) scriptKey identifies
       // the logical script: board|paper|question|studied_text.
       if (!s.is_gold && markerId && mod && decision && decision !== 'sent_back') {

@@ -22,7 +22,7 @@ interface SocialShareProps {
   /** Additional className */
   className?: string
   /**
-   * Children's Code Standard 3 — Age-appropriate application.
+   * Children's Code Standard 3 - Age-appropriate application.
    * When true, the social-share nudge is suppressed entirely.
    * Pass true for users under 16 / child accounts (isMinor).
    * Social sharing encourages data disclosure and is not appropriate
@@ -74,7 +74,7 @@ export function SocialShare({
   const tiktokUrl = buildShareUrl(baseUrl, utmSource, 'tiktok', utmCampaign)
   const copyUrl = buildShareUrl(baseUrl, utmSource, utmMedium, utmCampaign)
 
-  const shareText = description ? `${title} — ${description}` : title
+  const shareText = description ? `${title} - ${description}` : title
 
   const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(twitterUrl)}`
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${whatsappUrl}`)}`

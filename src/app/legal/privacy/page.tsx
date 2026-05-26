@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { tMany } from '@/lib/i18n/t'
 
-// Contact addresses — using cj@upskillenergy.com pending dedicated mailbox
+// Contact addresses - using cj@upskillenergy.com pending dedicated mailbox
 // provisioning. Once dpo@theenglishhub.app and safeguarding@theenglishhub.app
 // are live, replace the cj@upskillenergy.com references below and update the
 // migration note in section 1. (Tracked: contact-mailbox-provisioning.)
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'How The English Hub collects, uses, and protects your personal data under UK GDPR. Includes Data Controller, DPO and Designated Safeguarding Lead contacts, Children’s Code commitments, third-party processors, international transfers, and how to exercise your data rights.',
   alternates: { canonical: 'https://theenglishhub.app/legal/privacy' },
   openGraph: {
-    title: 'Privacy Policy — The English Hub',
+    title: 'Privacy Policy - The English Hub',
     description:
       'How The English Hub collects, uses, and protects your personal data under UK GDPR. Transparent data practices for students, parents, and schools.',
   },
@@ -429,7 +429,7 @@ export default async function PrivacyPolicyPage() {
   // (see BUSINESS-DECISIONS-NEEDED.md) rather than as placeholder tokens.
   // ---------------------------------------------------------------------------
 
-  // H5 — registered office: identify the controller without a published or
+  // H5 - registered office: identify the controller without a published or
   // bracketed street address.
   const officeStrong = 'Data controller: '
   const officeText =
@@ -437,7 +437,7 @@ export default async function PrivacyPolicyPage() {
     'ICO registration: ZC016690. Registered office address available to schools ' +
     'on request during procurement.'
 
-  // M5 — the same individual currently holds the DPO and DSL roles. Keep the
+  // M5 - the same individual currently holds the DPO and DSL roles. Keep the
   // real name already on record; describe the conflict/continuity arrangements
   // rather than implying full role separation.
   const dpoName = s1DpoName
@@ -448,7 +448,7 @@ export default async function PrivacyPolicyPage() {
     'more than one of these roles, the conflict-of-interest and continuity ' +
     'arrangements are documented and available to schools on request.'
 
-  // M6 — soften DPIA assurances: a completed, release-gating DPIA is not yet
+  // M6 - soften DPIA assurances: a completed, release-gating DPIA is not yet
   // evidenced on this page, so we state the commitment without asserting one.
   const childCodeR1c2 =
     'We are committed to assessing the impact on under-18s of product changes ' +
@@ -459,13 +459,13 @@ export default async function PrivacyPolicyPage() {
     'before release, and to reviewing that assessment on every material feature ' +
     'change.'
 
-  // Minimum age — repo ground truth: under-13 blocked; 13–15 require
+  // Minimum age - repo ground truth: under-13 blocked; 13-15 require
   // parent/guardian consent. Single consistent wording.
   const ageLi1Strong = 'Eligibility: '
   const ageLi1Text =
-    'The English Hub is for learners aged 13 and over; users aged 13–15 require ' +
+    'The English Hub is for learners aged 13 and over; users aged 13-15 require ' +
     'parent/guardian consent.'
-  const ageLi2Strong = 'Users aged 13–15 '
+  const ageLi2Strong = 'Users aged 13-15 '
   const ageLi2Text =
     'require parent/guardian consent. We collect a parent or guardian email at ' +
     'sign-up so that consent can be given, and a parent or guardian can review ' +

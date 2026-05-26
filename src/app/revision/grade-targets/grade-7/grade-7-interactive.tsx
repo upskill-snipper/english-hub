@@ -12,16 +12,37 @@ import {
 import { Badge } from '@/components/ui/badge'
 
 const VOCABULARY_BANK = [
-  { word: 'Juxtaposition', usage: 'The writer juxtaposes innocence and corruption to highlight the moral decay of...' },
+  {
+    word: 'Juxtaposition',
+    usage: 'The writer juxtaposes innocence and corruption to highlight the moral decay of...',
+  },
   { word: 'Microcosm', usage: 'The setting functions as a microcosm of society, reflecting...' },
-  { word: 'Subvert', usage: "The writer subverts the reader's expectations by presenting the character as..." },
+  {
+    word: 'Subvert',
+    usage: "The writer subverts the reader's expectations by presenting the character as...",
+  },
   { word: 'Pervasive', usage: 'The pervasive sense of guilt throughout the text suggests...' },
   { word: 'Catalyse', usage: "This event catalyses the character's descent into tyranny, as..." },
-  { word: 'Emblematic', usage: "The symbol is emblematic of the character's fractured conscience, representing..." },
-  { word: 'Foreground', usage: 'The writer foregrounds the suffering of the marginalised to compel readers to...' },
-  { word: 'Underpin', usage: 'Patriarchal values underpin the power dynamics in the text, as evidenced by...' },
-  { word: 'Nuanced', usage: 'The poet offers a nuanced portrayal of love, acknowledging both its...' },
-  { word: 'Precipitate', usage: "The manipulation precipitates the central conflict, raising questions about..." },
+  {
+    word: 'Emblematic',
+    usage: "The symbol is emblematic of the character's fractured conscience, representing...",
+  },
+  {
+    word: 'Foreground',
+    usage: 'The writer foregrounds the suffering of the marginalised to compel readers to...',
+  },
+  {
+    word: 'Underpin',
+    usage: 'Patriarchal values underpin the power dynamics in the text, as evidenced by...',
+  },
+  {
+    word: 'Nuanced',
+    usage: 'The poet offers a nuanced portrayal of love, acknowledging both its...',
+  },
+  {
+    word: 'Precipitate',
+    usage: 'The manipulation precipitates the central conflict, raising questions about...',
+  },
 ]
 
 export function Grade7VocabBank() {
@@ -36,7 +57,8 @@ export function Grade7VocabBank() {
         <h2 className="text-heading-md font-heading text-foreground">Vocabulary Bank</h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
-        These words and phrases will make your analysis sound more precise and academic. Click each word to see how to use it in a sentence.
+        These words and phrases will make your analysis sound more precise and academic. Click each
+        word to see how to use it in a sentence.
       </p>
 
       <div className="grid gap-2 sm:grid-cols-2">
@@ -100,11 +122,10 @@ export function Grade7ComparisonExample({
         </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
-        Both responses analyse the same moment from {exampleTitle} by {exampleAuthor}. Notice how the {higherLabel} version develops ideas further and explores complexity.
+        Both responses analyse the same moment from {exampleTitle} by {exampleAuthor}. Notice how
+        the {higherLabel} version develops ideas further and explores complexity.
       </p>
-      {contextNote && (
-        <p className="text-xs text-muted-foreground italic mb-4">{contextNote}</p>
-      )}
+      {contextNote && <p className="text-xs text-muted-foreground italic mb-4">{contextNote}</p>}
 
       <button
         onClick={() => setShow(!show)}
@@ -117,7 +138,9 @@ export function Grade7ComparisonExample({
       {show && (
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-orange-500/20 bg-orange-500/[0.03] p-5">
-            <Badge className="mb-3 bg-orange-500/20 text-clay-600 border-orange-500/30">{lowerLabel}</Badge>
+            <Badge className="mb-3 bg-orange-500/20 text-clay-600 border-orange-500/30">
+              {lowerLabel}
+            </Badge>
             <p className="text-xs text-muted-foreground leading-relaxed italic">{lowerEssay}</p>
             <div className="mt-3 space-y-1.5">
               {[
@@ -134,11 +157,13 @@ export function Grade7ComparisonExample({
           </div>
 
           <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] p-5">
-            <Badge className="mb-3 bg-emerald-500/20 text-emerald-400 border-emerald-500/30">{higherLabel}</Badge>
+            <Badge className="mb-3 bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+              {higherLabel}
+            </Badge>
             <p className="text-xs text-muted-foreground leading-relaxed italic">{higherEssay}</p>
             <div className="mt-3 space-y-1.5">
               {[
-                'Analysis goes beyond the surface — explores what the choice achieves structurally',
+                'Analysis goes beyond the surface - explores what the choice achieves structurally',
                 'Context is woven into the argument, not tagged on',
                 'Moves from individual moment to universal significance',
                 'Vocabulary is precise and controlled',

@@ -107,7 +107,7 @@ export function clearAffiliateCookieOnResponse(response: NextResponse): void {
 // ---------------------------------------------------------------------------
 // Server component / route handler flavour
 //
-// These helpers use `next/headers`, which must be imported dynamically —
+// These helpers use `next/headers`, which must be imported dynamically -
 // importing at the top of the file would break the edge-runtime middleware
 // that also consumes the NextRequest/NextResponse flavours above.
 // ---------------------------------------------------------------------------
@@ -134,7 +134,7 @@ export async function writeAffiliateCookie(payload: AffiliateCookiePayload): Pro
       ...BASE_COOKIE_OPTIONS,
     })
   } catch {
-    // Called from a context where cookies are read-only (e.g. RSC) — ignore
+    // Called from a context where cookies are read-only (e.g. RSC) - ignore
   }
 }
 

@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429 }
+        { status: 429 },
       )
     }
 
@@ -27,18 +27,12 @@ export async function POST(req: NextRequest) {
 
     // Validate email
     if (!email || !EMAIL_RE.test(email)) {
-      return NextResponse.json(
-        { error: 'Please enter a valid email address.' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
 
     // Validate subject
     if (!subject || !(subject in SUBJECTS)) {
-      return NextResponse.json(
-        { error: 'Invalid subject.' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid subject.' }, { status: 400 })
     }
 
     const subjectConfig = SUBJECTS[subject as SubjectId]
@@ -47,23 +41,21 @@ export async function POST(req: NextRequest) {
     if (subjectConfig.available) {
       return NextResponse.json(
         { error: `${subjectConfig.name} is already available! Head to /courses to get started.` },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
     const supabase = createServiceRoleClient()
 
-    // Upsert into waitlist table — ignore duplicates
-    const { error } = await supabase
-      .from('waitlist')
-      .upsert(
-        {
-          email: email.toLowerCase().trim(),
-          subject,
-          created_at: new Date().toISOString(),
-        },
-        { onConflict: 'email,subject' }
-      )
+    // Upsert into waitlist table - ignore duplicates
+    const { error } = await supabase.from('waitlist').upsert(
+      {
+        email: email.toLowerCase().trim(),
+        subject,
+        created_at: new Date().toISOString(),
+      },
+      { onConflict: 'email,subject' },
+    )
 
     if (error) {
       // If the table doesn't exist yet, fall back gracefully
@@ -77,7 +69,7 @@ export async function POST(req: NextRequest) {
       console.error('[waitlist] Supabase error:', error)
       return NextResponse.json(
         { error: 'Something went wrong. Please try again later.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -88,7 +80,7 @@ export async function POST(req: NextRequest) {
     console.error('[waitlist] Unexpected error:', err)
     return NextResponse.json(
       { error: 'Something went wrong. Please try again later.' },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

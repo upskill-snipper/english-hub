@@ -10,12 +10,12 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'A View from the Bridge revision guide — themes, characters, key quotes — The English Hub',
-    description: 'A View from the Bridge IGCSE revision — Miller',
+      'A View from the Bridge revision guide - themes, characters, key quotes - The English Hub',
+    description: 'A View from the Bridge IGCSE revision - Miller',
   },
-  title: 'A View from the Bridge revision guide — themes, characters, key quotes',
+  title: 'A View from the Bridge revision guide - themes, characters, key quotes',
   description:
-    "A View from the Bridge IGCSE revision — Miller's tragedy with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
+    "A View from the Bridge IGCSE revision - Miller's tragedy with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/a-view-from-the-bridge',
   },
@@ -105,41 +105,41 @@ const data: TextGuideData = {
     {
       quote:
         '"You can quicker get back a million dollars that was stole than a word that you gave away."',
-      who: 'Eddie — Act 1',
+      who: 'Eddie - Act 1',
       analysis: "Eddie's own warning about the value of reputation, which he will later betray.",
     },
     {
       quote: '"Most of the time now we settle for half, and I like it better."',
-      who: 'Alfieri — opening',
+      who: 'Alfieri - opening',
       analysis:
         "The play's thesis on compromise versus tragic absolutism. Eddie is incapable of settling for half.",
     },
     {
       quote: '"She\'s a baby."',
-      who: 'Eddie — Act 1',
+      who: 'Eddie - Act 1',
       analysis:
         "Eddie's repeated refusal to see Catherine as an adult. The refusal is the tragedy.",
     },
     {
       quote: '"I want my name!"',
-      who: 'Eddie — Act 2',
+      who: 'Eddie - Act 2',
       analysis:
         "Eddie's final demand before his death. Reputation is the only currency he truly values.",
     },
     {
       quote: '"He allowed himself to be wholly known."',
-      who: 'Alfieri — closing monologue',
+      who: 'Alfieri - closing monologue',
       analysis:
         'The play\u2019s reluctant final praise. Terrible and admirable in the same breath.',
     },
     {
       quote: '"You don\'t know anything."',
-      who: 'Catherine to Eddie — Act 2',
+      who: 'Catherine to Eddie - Act 2',
       analysis: 'Catherine\u2019s coming of age, telling the truth Beatrice has long hinted at.',
     },
     {
       quote: '"In my country he would be dead now."',
-      who: 'Marco — Act 2',
+      who: 'Marco - Act 2',
       analysis: 'Marco invokes the Sicilian honour code the American legal system cannot replace.',
     },
   ],
@@ -228,7 +228,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Eddie phones the Immigration Bureau and reports Marco and Rodolpho. In the Italian-American dockyard community, informing on a fellow immigrant is the ultimate betrayal — worse than murder.',
+      'Eddie phones the Immigration Bureau and reports Marco and Rodolpho. In the Italian-American dockyard community, informing on a fellow immigrant is the ultimate betrayal - worse than murder.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -244,7 +244,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'In the final confrontation, Eddie pulls a knife on Marco, but Marco turns the blade on him and kills him. Eddie dies demanding his "name" back — the reputation he destroyed by informing.',
+      'In the final confrontation, Eddie pulls a knife on Marco, but Marco turns the blade on him and kills him. Eddie dies demanding his "name" back - the reputation he destroyed by informing.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -309,7 +309,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Miller was writing during the McCarthy era, when artists were pressured to name former friends as Communists. Miller refused and was found in contempt. Eddie's act of informing is the play's sharpest autobiographical reflection — naming names destroys community.",
+      "Miller was writing during the McCarthy era, when artists were pressured to name former friends as Communists. Miller refused and was found in contempt. Eddie's act of informing is the play's sharpest autobiographical reflection - naming names destroys community.",
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -325,7 +325,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Eddie\'s final demand before his death reveals that honour and reputation are everything to him. The devastating irony is that he destroyed his own name by informing — the very act he warned against ("You can quicker get back a million dollars that was stole than a word that you gave away").',
+      'Eddie\'s final demand before his death reveals that honour and reputation are everything to him. The devastating irony is that he destroyed his own name by informing - the very act he warned against ("You can quicker get back a million dollars that was stole than a word that you gave away").',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -341,7 +341,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Miller consciously shapes the play as modern Greek tragedy. Alfieri's choric warnings invoke Rome and fate; the tight plot follows classical inevitability; and Eddie's fatal flaw — his refusal to compromise or know himself — is directly modelled on Sophocles and Euripides.",
+      "Miller consciously shapes the play as modern Greek tragedy. Alfieri's choric warnings invoke Rome and fate; the tight plot follows classical inevitability; and Eddie's fatal flaw - his refusal to compromise or know himself - is directly modelled on Sophocles and Euripides.",
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -351,13 +351,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is threatening randomly',
-      'He invokes the Sicilian honour code that demands blood vengeance for betrayal — a code American law cannot replace',
+      'He invokes the Sicilian honour code that demands blood vengeance for betrayal - a code American law cannot replace',
       'He is nostalgic',
       'He is joking',
     ],
     correctIndex: 1,
     explanation:
-      'Marco invokes the older Sicilian honour code where informing is punishable by death. Miller places Eddie between two justice systems — American law and Sicilian honour — showing that betraying the community code is a crime the law cannot prosecute but the community will.',
+      'Marco invokes the older Sicilian honour code where informing is punishable by death. Miller places Eddie between two justice systems - American law and Sicilian honour - showing that betraying the community code is a crime the law cannot prosecute but the community will.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -405,7 +405,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Alfieri's closing line offers reluctant, troubled admiration. Eddie allowed his hidden desires and flaws to become fully visible — he did not hide behind compromise. This is terrible (it destroyed him) but also, Alfieri suggests, strangely admirable in its absolute refusal of self-deception.",
+      "Alfieri's closing line offers reluctant, troubled admiration. Eddie allowed his hidden desires and flaws to become fully visible - he did not hide behind compromise. This is terrible (it destroyed him) but also, Alfieri suggests, strangely admirable in its absolute refusal of self-deception.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -415,13 +415,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She does not change',
-      "Her growing independence — getting a job, falling in love — is the catalyst for Eddie's collapse",
+      "Her growing independence - getting a job, falling in love - is the catalyst for Eddie's collapse",
       'She becomes more dependent',
       'She sides with Eddie',
     ],
     correctIndex: 1,
     explanation:
-      "Catherine's emerging independence — wanting to work, falling in love with Rodolpho — is the catalyst for Eddie's collapse. Miller lets her mature without either sentimentalising or blaming her. Her growth is natural; Eddie's reaction to it is not.",
+      "Catherine's emerging independence - wanting to work, falling in love with Rodolpho - is the catalyst for Eddie's collapse. Miller lets her mature without either sentimentalising or blaming her. Her growth is natural; Eddie's reaction to it is not.",
     topic: 'Characters',
     difficulty: 'grade-9',
   },
@@ -473,7 +473,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       "Rodolpho's cooking and singing are read as emasculating",
       'Eddie forces a kiss on Rodolpho to "prove" him gay',
-      '"I want my name!" — reputation is everything to Eddie',
+      '"I want my name!" - reputation is everything to Eddie',
       'Miller exposes how fragile masculine identity can become destructive',
       'Eddie dies defending a name he destroyed himself',
     ],
@@ -482,8 +482,8 @@ const REVISION_TOPICS = [
     topic: 'Justice: Law vs Community Code',
     summary: 'The play places Eddie between American law and Sicilian honour.',
     keyPoints: [
-      'Alfieri represents formal law — rational but limited',
-      'Marco represents the Sicilian honour code — "In my country he would be dead now"',
+      'Alfieri represents formal law - rational but limited',
+      'Marco represents the Sicilian honour code - "In my country he would be dead now"',
       'Informing is the worst possible sin in the community',
       'The law cannot address the betrayal Eddie commits',
       'Miller shows two incompatible systems of justice in conflict',
@@ -493,11 +493,11 @@ const REVISION_TOPICS = [
     topic: 'Desire and Self-Deception',
     summary: "Eddie's feelings for Catherine are the unspeakable centre of the play.",
     keyPoints: [
-      'Alfieri sees it, Beatrice sees it — Eddie refuses to see it',
-      '"She\'s a baby" — Eddie denies Catherine\'s adulthood',
+      'Alfieri sees it, Beatrice sees it - Eddie refuses to see it',
+      '"She\'s a baby" - Eddie denies Catherine\'s adulthood',
       'The tragedy is powered by what cannot be said',
       "Eddie's aggression towards Rodolpho masks his own desires",
-      '"He allowed himself to be wholly known" — the truth emerges in destruction',
+      '"He allowed himself to be wholly known" - the truth emerges in destruction',
     ],
   },
   {
@@ -531,7 +531,7 @@ export default async function AViewFromTheBridgePage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="A View from the Bridge — Complete GCSE Study Guide"
+        name="A View from the Bridge - Complete GCSE Study Guide"
         description="In-depth study guide for A View from the Bridge covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
         educationalLevel="IGCSE"
         learningResourceType="Study guide"
@@ -539,7 +539,7 @@ export default async function AViewFromTheBridgePage() {
         url="https://theenglishhub.app/revision/texts/a-view-from-the-bridge"
       />
       <CourseJsonLd
-        name="A View from the Bridge — Complete GCSE Study Guide"
+        name="A View from the Bridge - Complete GCSE Study Guide"
         description="In-depth study guide for A View from the Bridge covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

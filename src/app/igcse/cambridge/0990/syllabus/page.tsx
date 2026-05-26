@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
     description:
-      'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
+      'Full overview of the Cambridge IGCSE Language B First Language English course - what is tested across reading and writing, and the skills each paper assesses.',
   },
   title: 'IGCSE Language B course overview | Cambridge IGCSE',
   description:
-    'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
+    'Full overview of the Cambridge IGCSE Language B First Language English course - what is tested across reading and writing, and the skills each paper assesses.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/syllabus' },
   robots: { index: false, follow: false },
 }
@@ -45,7 +45,7 @@ const skills = [
     area: 'Reading',
     title: 'Analyse language',
     description:
-      "Analyse, evaluate and develop a personal response to writers' use of language, structure and form — with short relevant quotation.",
+      "Analyse, evaluate and develop a personal response to writers' use of language, structure and form - with short relevant quotation.",
   },
   {
     area: 'Reading',
@@ -104,7 +104,7 @@ const paperSummary = [
     time: '2 hours',
     tested: 'Directed writing, narrative and descriptive composition',
     content:
-      'Section A: directed writing in response to a short text. Section B: extended composition — either a narrative or a descriptive task.',
+      'Section A: directed writing in response to a short text. Section B: extended composition - either a narrative or a descriptive task.',
     icon: PenTool,
   },
 ]
@@ -173,7 +173,7 @@ export default async function Cambridge0990SyllabusPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <p className="text-body-xs font-medium text-muted-foreground">Grade scale</p>
-            <p className="mt-1 text-heading-sm font-heading text-foreground">9–1</p>
+            <p className="mt-1 text-heading-sm font-heading text-foreground">9-1</p>
           </div>
         </div>
       </section>

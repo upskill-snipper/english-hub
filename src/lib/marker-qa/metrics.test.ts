@@ -1,4 +1,4 @@
-// ─── Unit tests — paid-marker QA metrics ─────────────────────────────────────
+// ─── Unit tests - paid-marker QA metrics ─────────────────────────────────────
 // Pure, offline, deterministic. Guards the gold-calibration / inter-marker /
 // drift maths the admin QA scorecard depends on. No network, no DB, no clock.
 

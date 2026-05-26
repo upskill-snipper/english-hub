@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'AI-supported GCSE & IGCSE English revision built by English teachers. Plans for students, teachers and schools. 7-day free trial on every paid plan.',
   alternates: { canonical: 'https://theenglishhub.app/pricing' },
   openGraph: {
-    title: 'Pricing — The English Hub',
+    title: 'Pricing - The English Hub',
     description:
       'AI-supported GCSE & IGCSE English revision built by English teachers. Plans for students, teachers and schools. 7-day free trial on every paid plan.',
   },

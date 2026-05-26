@@ -31,7 +31,7 @@ export function ExamReadinessGauge({ percentage, className }: ExamReadinessGauge
 
   return (
     <div className={cn('flex flex-col items-center gap-2', className)}>
-      {/* Cinematic radial gauge — RAG-coloured, animated. Keeps the
+      {/* Cinematic radial gauge - RAG-coloured, animated. Keeps the
           previous 120px footprint so consumers' layout is unchanged. */}
       <div className="relative" style={{ width: 120, height: 120 }}>
         <RadialScore value={clampedPct} size={120} />

@@ -21,10 +21,10 @@ import { getChildProfileDefaults } from './child-defaults'
  * Supabase `profiles` table.
  *
  * Called from the signup API route for any user where `isMinorAge`
- * returns true (ages 13-17 — under-13s use the parent-linked flow).
+ * returns true (ages 13-17 - under-13s use the parent-linked flow).
  * For adult sign-ups this function is a no-op.
  *
- * Failure mode: errors are SWALLOWED (logged + sent to Sentry) — a
+ * Failure mode: errors are SWALLOWED (logged + sent to Sentry) - a
  * profile-defaults write should never block account creation. The
  * worst-case fallback is that the profile row inherits the database's
  * column defaults, which are themselves set to high-privacy values via

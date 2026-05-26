@@ -2,7 +2,7 @@
 // Shared palette + helpers for the school/teacher "cinematic glass" data
 // visualisation layer. Colours are the site's own brand accents (teal /
 // clay / ochre / sage) + the existing --chart-* CSS vars, NOT generic
-// neon — so the premium look stays on-theme in both light and dark.
+// neon - so the premium look stays on-theme in both light and dark.
 // ──────────────────────────────────────────────────────────────────────────────
 
 /** Ordered categorical series palette (brand accents). */
@@ -49,8 +49,8 @@ export const GRID = {
   vertical: false,
 } as const
 
-/** Format a 0–100 value as a percentage string. */
-export const pct = (v: number | null | undefined): string => (v == null ? '—' : `${Math.round(v)}%`)
+/** Format a 0-100 value as a percentage string. */
+export const pct = (v: number | null | undefined): string => (v == null ? '-' : `${Math.round(v)}%`)
 
 /** Compact integer formatting (1,284 → 1.3k on tight axes). */
 export function compact(n: number): string {

@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
       const batch = pendingReferrals.slice(i, i + BATCH_SIZE)
       const results = await Promise.allSettled(
         batch.map(async (referral) => {
-          // Skip non-subscription referrals (one-time purchases) — confirm immediately
+          // Skip non-subscription referrals (one-time purchases) - confirm immediately
           if (!referral.stripe_subscription_id) {
             await supabase
               .from('affiliate_referrals')
@@ -74,14 +74,14 @@ export async function GET(request: NextRequest) {
           const subscription = await stripe.subscriptions.retrieve(referral.stripe_subscription_id)
 
           if (['active', 'trialing'].includes(subscription.status)) {
-            // Subscription still active — confirm the commission
+            // Subscription still active - confirm the commission
             await supabase
               .from('affiliate_referrals')
               .update({ commission_status: 'confirmed' })
               .eq('id', referral.id)
             return 'confirmed' as const
           } else {
-            // Subscription cancelled/expired — void the commission
+            // Subscription cancelled/expired - void the commission
             await supabase
               .from('affiliate_referrals')
               .update({

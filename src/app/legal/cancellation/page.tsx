@@ -27,7 +27,7 @@ export default async function CancellationPolicyPage() {
     <>
       <h1 className="text-3xl font-bold mb-2">{tr(`Cancellation Policy`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>{tr(`The English Hub`)}</strong> — operated by Upskill Energy Limited
+        <strong>{tr(`The English Hub`)}</strong> - operated by Upskill Energy Limited
         <br />
         Last updated: 22 March 2026
       </p>
@@ -43,7 +43,7 @@ export default async function CancellationPolicyPage() {
         <h2 className="text-lg font-semibold mb-2">In Short</h2>
         <ul className="list-disc pl-6 space-y-1">
           <li>
-            You have <strong>14 days</strong> to change your mind — no questions asked
+            You have <strong>14 days</strong> to change your mind - no questions asked
           </li>
           <li>{tr(`Cancelling is easy: online or by email`)}</li>
           <li>{tr(`If you cancel, we will refund you within 14 days`)}</li>
@@ -64,7 +64,7 @@ export default async function CancellationPolicyPage() {
         <p className="mb-3">
           Because The English Hub is a digital service, we will ask for your explicit consent before
           giving you immediate access during the cooling-off period. You must actively tick a
-          checkbox to agree — we will never pre-tick it for you.
+          checkbox to agree - we will never pre-tick it for you.
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>
@@ -160,7 +160,7 @@ export default async function CancellationPolicyPage() {
           need to phone us or write a letter.
         </p>
 
-        <h3 className="text-lg font-semibold mb-2">{tr(`Option A — Cancel Online`)}</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Option A - Cancel Online`)}</h3>
         <ol className="list-decimal pl-6 space-y-1 mb-4">
           <li>{tr(`Log in to your account`)}</li>
           <li>
@@ -176,7 +176,7 @@ export default async function CancellationPolicyPage() {
           <li>{tr(`Receive confirmation email immediately`)}</li>
         </ol>
 
-        <h3 className="text-lg font-semibold mb-2">{tr(`Option B — Cancel by Email`)}</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Option B - Cancel by Email`)}</h3>
         <p className="mb-3">
           Send an email to <a href="mailto:info@Upskillenergy.com">info@Upskillenergy.com</a> with
           your full name, account email, and &quot;I want to cancel my subscription.&quot; We will

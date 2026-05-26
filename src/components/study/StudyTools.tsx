@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * StudyTools — Reusable AI-powered study aid panel
+ * StudyTools - Reusable AI-powered study aid panel
  *
  * Drop into any text, poem, or play page to give students access to:
  * - AI Revision Notes generator (Anthology-templated output)

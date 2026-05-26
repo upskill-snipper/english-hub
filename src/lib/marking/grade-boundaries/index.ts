@@ -6,7 +6,7 @@
 // AND has `verified === true`. Until a human verifies the transcribed numbers
 // against the official board PDF and flips that flag, every board falls back
 // to the AQA proxy with a hard indicative-only signal. This is the deliberate
-// safety gate — see ./types.ts header and getUsableBoundaryTable() below.
+// safety gate - see ./types.ts header and getUsableBoundaryTable() below.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { BoardBoundaryTable, GradeThreshold } from './types'
@@ -41,7 +41,7 @@ export const GRADE_BOUNDARY_REGISTRY: Readonly<Record<string, BoardBoundaryTable
  *  • `ExamBoard` config ids ("aqa", "edexcel", "cambridge-0500", …).
  *
  * Returns the canonical key, or `null` if it cannot be mapped (the predictor
- * then uses the proxy + indicative-only signal — the safe default).
+ * then uses the proxy + indicative-only signal - the safe default).
  */
 export function normaliseBoardId(board?: string | null): string | null {
   if (!board) return null
@@ -53,7 +53,7 @@ export function normaliseBoardId(board?: string | null): string | null {
 
   // Cambridge variants. 0990 is the "9-1" syllabus; 0500 is the A*-G one.
   if (raw.includes('cambridge') || raw.startsWith('cie') || raw.includes('igcse')) {
-    if (raw.includes('0990') || raw.includes('9-1') || raw.includes('9–1')) {
+    if (raw.includes('0990') || raw.includes('9-1') || raw.includes('9-1')) {
       return 'cambridge-0990'
     }
     if (raw.includes('0500')) return 'cambridge-0500'
@@ -74,7 +74,7 @@ export function normaliseBoardId(board?: string | null): string | null {
 
 /**
  * Resolve the registered table for a board (verified or not). Use
- * {@link getUsableBoundaryTable} for the predictor path — this raw accessor
+ * {@link getUsableBoundaryTable} for the predictor path - this raw accessor
  * is for diagnostics / the verification workflow / tests.
  */
 export function getBoundaryTable(board?: string | null): BoardBoundaryTable | null {

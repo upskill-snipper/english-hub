@@ -533,7 +533,7 @@ export default function PhrasalVerbsMatchPage() {
                 >
                   {isCorrectSelection ? (
                     <>
-                      <CheckCircle className="size-4" /> Well done — that&rsquo;s right!
+                      <CheckCircle className="size-4" /> Well done - that&rsquo;s right!
                     </>
                   ) : (
                     <>

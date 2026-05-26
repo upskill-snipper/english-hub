@@ -25,7 +25,7 @@ import { useT } from '@/lib/i18n/use-t'
 // ─── Poem data ────────────────────────────────────────────────────────────────
 //
 // Poem titles + poet names stay in their original English forms in every
-// locale — translating "Ozymandias" or "Wilfred Owen" would mislead a
+// locale - translating "Ozymandias" or "Wilfred Owen" would mislead a
 // student studying for an English Literature exam. The surrounding
 // UI chrome (headings, CTAs, progress copy) is what we localise via
 // useT() and the `poetry_hub.*` namespace.

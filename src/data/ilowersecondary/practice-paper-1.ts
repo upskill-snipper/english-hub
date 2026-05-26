@@ -1,5 +1,5 @@
 /**
- * ORIGINAL PRACTICE PAPER 1 — theme: "Survival"
+ * ORIGINAL PRACTICE PAPER 1 - theme: "Survival"
  *
  * Modelled exactly on the Pearson Edexcel International Award in Lower
  * Secondary English achievement test LEH11/01 (structure only). EVERY
@@ -10,7 +10,7 @@
  * well-known, verifiable biology (Text 1) or a clearly fictional,
  * invented charity scenario (Text 2). Text 3 is original fiction.
  *
- * Qualification facts, AO codes and mark grids are NOT restated here —
+ * Qualification facts, AO codes and mark grids are NOT restated here -
  * the consumer page imports them from '@/lib/ilowersecondary/spec'.
  */
 
@@ -106,13 +106,13 @@ export const PRACTICE_PAPER_1: PracticePaper = {
   instructions: [
     'Use black ink or black ball-point pen.',
     'Answer ALL questions in Section A and the ONE question in Section B.',
-    'Answer the questions in the spaces provided — there may be more space than you need.',
+    'Answer the questions in the spaces provided - there may be more space than you need.',
     'Dictionaries may NOT be used in this examination.',
     'The total mark for this paper is 70. The marks for each question are shown in brackets.',
     'Read each question carefully before you start to answer it. Check your answers if you have time at the end.',
   ],
 
-  // ─── Source Booklet — three original texts ────────────────────────
+  // ─── Source Booklet - three original texts ────────────────────────
   texts: [
     {
       id: 1,
@@ -125,7 +125,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
       paragraphs: [
         'A desert is one of the harshest places an animal can call home. By day the sand can grow hot enough to blister skin, and for weeks at a time no rain falls at all. Yet deserts are far from empty. They are crowded with creatures that have, over many thousands of years, evolved a remarkable set of tricks for staying alive where most animals would quickly die.',
         'The first problem is the heat. Many small desert animals simply refuse to meet it. The kangaroo rat, a tiny rodent of North American deserts, spends the burning daylight hours sealed inside a cool underground burrow and comes out only after dark. Animals that are active at night rather than during the day are called nocturnal, and in the desert this single habit saves countless lives.',
-        'The second problem is water — or the lack of it. The kangaroo rat almost never drinks. Astonishingly, it can manufacture the water its body needs from the dry seeds it eats, and its kidneys are so efficient that its urine is thick and concentrated, wasting hardly a drop. The fennec fox, with its enormous ears, has a different solution: those ears are packed with blood vessels that release heat into the air, working rather like a radiator to cool the animal down.',
+        'The second problem is water - or the lack of it. The kangaroo rat almost never drinks. Astonishingly, it can manufacture the water its body needs from the dry seeds it eats, and its kidneys are so efficient that its urine is thick and concentrated, wasting hardly a drop. The fennec fox, with its enormous ears, has a different solution: those ears are packed with blood vessels that release heat into the air, working rather like a radiator to cool the animal down.',
         'Larger animals cannot hide in a burrow, so they manage heat in other ways. The camel is the most famous desert survivor of all, and almost everything people believe about it is slightly wrong. Its hump does not store water; it stores fat, which the camel breaks down for energy when food is scarce. A camel can also let its body temperature rise during the day instead of sweating, and it can drink a vast quantity of water in minutes when it finally finds a source.',
         'Even plants take part in this struggle. The roots of a desert cactus spread out in a wide, shallow net just beneath the surface, ready to drink in any brief shower before the sun steals it back. Its thick stem swells with stored water, and its leaves have shrunk into spines that lose almost no moisture and keep thirsty animals away.',
         'None of these creatures chose its tools. Each is the result of a long, slow process in which the individuals best suited to the desert survived and passed on their advantages. The desert, in other words, did not defeat life. It shaped it.',
@@ -142,9 +142,9 @@ export const PRACTICE_PAPER_1: PracticePaper = {
       paragraphs: [
         'Right now, somewhere in a shrinking desert, a fennec fox is digging deeper than its parents ever had to. The waterhole its family relied on for generations dried up two summers ago. It does not understand why. It only knows that it is thirsty, and that the land it was born to survive is changing faster than survival can keep up.',
         'At the DryLands Wildlife Trust we refuse to watch and do nothing. For fifteen years our teams have walked these vanishing landscapes, mapping the last safe burrows, repairing the ancient wells that desert herders and wild animals once shared, and teaching local children that the creatures around them are not pests but neighbours worth protecting.',
-        'But we cannot do it alone. Can you imagine a desert with no foxes in it? No tracks in the cool morning sand? A silence where there should be life? That is the future we are racing to prevent — and we are running out of time.',
-        'Just twelve pounds — the price of a cinema ticket and a drink — can fund a week of clean, refilled water for an entire colony. Thirty pounds can train a young ranger who will protect that colony for a lifetime. Your money does not disappear into an office. It goes straight back into the sand, where it is needed.',
-        'These animals survived ten thousand years of heat, drought and predators. The one thing they cannot survive is being forgotten. They cannot ask you for help. So we are asking for them. Please give what you can today — before the last waterhole runs dry.',
+        'But we cannot do it alone. Can you imagine a desert with no foxes in it? No tracks in the cool morning sand? A silence where there should be life? That is the future we are racing to prevent - and we are running out of time.',
+        'Just twelve pounds - the price of a cinema ticket and a drink - can fund a week of clean, refilled water for an entire colony. Thirty pounds can train a young ranger who will protect that colony for a lifetime. Your money does not disappear into an office. It goes straight back into the sand, where it is needed.',
+        'These animals survived ten thousand years of heat, drought and predators. The one thing they cannot survive is being forgotten. They cannot ask you for help. So we are asking for them. Please give what you can today - before the last waterhole runs dry.',
       ],
     },
     {
@@ -156,11 +156,11 @@ export const PRACTICE_PAPER_1: PracticePaper = {
       title: 'The Long Walk Back',
       byline: 'An original short story written for The English Hub',
       paragraphs: [
-        'The jeep had stopped two hours ago and it was not going to start again. Maya had checked everything her uncle had shown her — the wires, the fuel, the small black box under the seat — and the engine had answered with the same dead click every time. Now she stood in the enormous silence of the desert and made herself think.',
+        'The jeep had stopped two hours ago and it was not going to start again. Maya had checked everything her uncle had shown her - the wires, the fuel, the small black box under the seat - and the engine had answered with the same dead click every time. Now she stood in the enormous silence of the desert and made herself think.',
         'Don’t panic. Panic uses water. She could almost hear her uncle saying it. She had one bottle, half full, warm as bathwater. The town was somewhere to the east, behind the low hills that wobbled in the heat. She had watched the sun all morning; she knew which way east was. That, at least, was something.',
         'She did not walk in the open. She had read enough to know better. Instead she followed the thin shadow of a dry riverbed, moving in the early morning and resting under an overhang of rock while the worst of the day burned itself out above her. The stillness was not empty. A lizard watched her from a stone, perfectly calm, as if to say: this is simple, you only have to want it enough.',
         'By the second morning her lips had cracked and her thoughts had begun to drift like loose sand. She caught herself walking west and stopped, shaking. She tipped the last warm mouthful of water onto her tongue and let it sit there a long time before she swallowed. Then she did the only thing left to do, which was to keep going.',
-        'She almost missed the fence. It was just three strands of grey wire, half buried, but a fence meant a person, and a person meant water. Maya put one hand on the warm wire and laughed — a small, broken, astonished sound — and the desert, which had not cared either way, let her pass.',
+        'She almost missed the fence. It was just three strands of grey wire, half buried, but a fence meant a person, and a person meant water. Maya put one hand on the warm wire and laughed - a small, broken, astonished sound - and the desert, which had not cared either way, let her pass.',
       ],
     },
   ],
@@ -213,13 +213,13 @@ export const PRACTICE_PAPER_1: PracticePaper = {
       prompt:
         'In Text 1 the writer says the fennec fox’s ears work “rather like a radiator”. Put a cross in ONE box to show what this comparison suggests.',
       options: [
-        'A — the ears make a loud noise',
-        'B — the ears help the fox to hear danger',
-        'C — the ears release heat to cool the fox',
-        'D — the ears keep the fox warm at night',
+        'A - the ears make a loud noise',
+        'B - the ears help the fox to hear danger',
+        'C - the ears release heat to cool the fox',
+        'D - the ears keep the fox warm at night',
       ],
       markScheme: {
-        answer: 'C — the ears release heat to cool the fox',
+        answer: 'C - the ears release heat to cool the fox',
         notes: '1 mark for C only.',
       },
     },
@@ -232,7 +232,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
         'In Text 1, why does the writer say that “almost everything people believe about” the camel “is slightly wrong”?',
       markScheme: {
         answer:
-          'Because a common belief — that the hump stores water — is untrue; the hump actually stores fat. Accept any answer showing the reader’s assumption is mistaken.',
+          'Because a common belief - that the hump stores water - is untrue; the hump actually stores fat. Accept any answer showing the reader’s assumption is mistaken.',
         notes: '1 mark for a clear inference.',
       },
     },
@@ -344,7 +344,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
       ],
       markScheme: {
         answer:
-          'Row 1 — Text 2; Row 2 — Neither (accept “Neither/Both” reasoning that neither uses them); Row 3 — Text 2; Row 4 — Text 1.',
+          'Row 1 - Text 2; Row 2 - Neither (accept “Neither/Both” reasoning that neither uses them); Row 3 - Text 2; Row 4 - Text 1.',
         notes:
           '2 marks for all four rows correct; 1 mark for two or three rows correct; 0 marks for one or none correct.',
       },
@@ -358,7 +358,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
         'How does the writer of Text 2 use language to persuade the reader to donate? Make TWO developed points, each supported with evidence from the text.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) emotive personification — the fox “digging deeper than its parents ever had to” and being “forgotten” makes the animal feel like a vulnerable individual, stirring guilt and pity; (2) the small, relatable cost comparison — “the price of a cinema ticket and a drink” makes donating feel easy and almost selfish to refuse; (3) the urgent time pressure — “running out of time”, “before the last waterhole runs dry” pushes immediate action; (4) the contrast “not pests but neighbours” reframes the animals to win the reader’s sympathy.',
+          'Indicative content (any two developed points): (1) emotive personification - the fox “digging deeper than its parents ever had to” and being “forgotten” makes the animal feel like a vulnerable individual, stirring guilt and pity; (2) the small, relatable cost comparison - “the price of a cinema ticket and a drink” makes donating feel easy and almost selfish to refuse; (3) the urgent time pressure - “running out of time”, “before the last waterhole runs dry” pushes immediate action; (4) the contrast “not pests but neighbours” reframes the animals to win the reader’s sympathy.',
         notes:
           'Up to 2 marks per developed point: 1 mark for an appropriate point with evidence, 1 mark for explaining the effect on the reader. Maximum 4 marks.',
       },
@@ -373,7 +373,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
       markScheme: {
         levelled: 'comparison',
         answer:
-          'Indicative comparison: Text 1’s writer uses the calm, balanced contrast of “defeat” and “shaped” to imply that hardship is creative, not destructive — the verb “shaped” casts the desert almost as a sculptor, reflecting an explanatory, optimistic purpose that leaves the reader admiring nature. By contrast, Text 2’s writer uses the abstract noun “forgotten” to imply that the real threat is human indifference, not the desert itself; this reflects a persuasive purpose designed to make the reader feel personally responsible and moved to act. Where Text 1 positions the reader as an impressed observer, Text 2 positions them as someone whose inaction has consequences.',
+          'Indicative comparison: Text 1’s writer uses the calm, balanced contrast of “defeat” and “shaped” to imply that hardship is creative, not destructive - the verb “shaped” casts the desert almost as a sculptor, reflecting an explanatory, optimistic purpose that leaves the reader admiring nature. By contrast, Text 2’s writer uses the abstract noun “forgotten” to imply that the real threat is human indifference, not the desert itself; this reflects a persuasive purpose designed to make the reader feel personally responsible and moved to act. Where Text 1 positions the reader as an impressed observer, Text 2 positions them as someone whose inaction has consequences.',
         notes:
           'Mark using the levelled comparison grid (COMPARISON_LEVELS). Top level: a clear explanation of the contrast that infers beyond the literal words, comments on language at word level, and identifies each writer’s purpose and effect on the reader.',
       },
@@ -438,7 +438,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
         'In the final sentence of Text 3 the writer says “the desert, which had not cared either way, let her pass.” What is the effect of describing the desert as not caring?',
       markScheme: {
         answer:
-          'It presents the desert as vast and indifferent — survival was entirely down to Maya’s own effort, not luck or mercy. Effect: makes her achievement feel hard-won and emphasises how alone and small she was, leaving the reader relieved and impressed.',
+          'It presents the desert as vast and indifferent - survival was entirely down to Maya’s own effort, not luck or mercy. Effect: makes her achievement feel hard-won and emphasises how alone and small she was, leaving the reader relieved and impressed.',
         notes:
           '1 mark for explaining the meaning of the indifferent desert; 1 mark for the effect on the reader.',
       },
@@ -452,7 +452,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
         'How does the writer of Text 3 use language and structure to show that Maya is in danger but determined to survive? Make TWO developed points, each supported with evidence.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the short, blunt sentence “Don’t panic. Panic uses water.” mirrors her disciplined thinking and conveys controlled fear; (2) sensory detail of her body failing — “her lips had cracked and her thoughts had begun to drift like loose sand” — shows the physical danger and her slipping focus; (3) the structural turn at “Then she did the only thing left to do, which was to keep going” shows grim determination; (4) the simile “drift like loose sand” links her mind to the hostile setting, deepening the sense of threat.',
+          'Indicative content (any two developed points): (1) the short, blunt sentence “Don’t panic. Panic uses water.” mirrors her disciplined thinking and conveys controlled fear; (2) sensory detail of her body failing - “her lips had cracked and her thoughts had begun to drift like loose sand” - shows the physical danger and her slipping focus; (3) the structural turn at “Then she did the only thing left to do, which was to keep going” shows grim determination; (4) the simile “drift like loose sand” links her mind to the hostile setting, deepening the sense of threat.',
         notes:
           'Up to 2 marks per developed point: 1 mark for a point with appropriate evidence, 1 mark for explaining the effect. Maximum 4 marks.',
       },
@@ -466,7 +466,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
         'In Text 3, the lizard seems to say to Maya: “this is simple, you only have to want it enough.” What does the writer suggest about survival through this idea?',
       markScheme: {
         answer:
-          'That survival depends on willpower and determination — the will to keep going — rather than on luck or strength alone.',
+          'That survival depends on willpower and determination - the will to keep going - rather than on luck or strength alone.',
         notes:
           '1 mark for a clear inference about determination / willpower being the key to survival.',
       },
@@ -480,7 +480,7 @@ export const PRACTICE_PAPER_1: PracticePaper = {
     ao: 'WAO1 + WAO2',
     marks: 30,
     context:
-      'The texts in Section A all explore the theme of survival — surviving a harsh environment, protecting creatures that are struggling to survive, and one person’s struggle to survive alone.',
+      'The texts in Section A all explore the theme of survival - surviving a harsh environment, protecting creatures that are struggling to survive, and one person’s struggle to survive alone.',
     task: 'Write the opening of an adventure story in which a character has to survive after becoming lost or stranded somewhere dangerous.',
     bullets: [
       'Write to entertain a reader of your own age.',

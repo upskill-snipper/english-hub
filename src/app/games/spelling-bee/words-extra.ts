@@ -1,4 +1,4 @@
-// ─── Spelling Bee — Extra Word Bank ────────────────────────────────────────────
+// ─── Spelling Bee - Extra Word Bank ────────────────────────────────────────────
 // 200 additional spelling words ranked by SPELLING difficulty (not meaning).
 // Difficulty mapping (matches the page.tsx SpellingWord union 1 | 2 | 3):
 //   1 = Foundation (easy spelling traps)
@@ -23,7 +23,7 @@ export interface SpellingWordExtra {
 }
 
 export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
-  // ─── Easy (50) — Foundation spelling traps ─────────────────────────────────
+  // ─── Easy (50) - Foundation spelling traps ─────────────────────────────────
   {
     id: 'sb-extra-001',
     word: 'committee',
@@ -62,7 +62,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'adverb',
     definition: 'Without doubt or question',
     difficulty: 1,
-    hint: 'No "a" — it is defin-ite-ly',
+    hint: 'No "a" - it is defin-ite-ly',
   },
   {
     id: 'sb-extra-006',
@@ -150,7 +150,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A commercial activity or trade',
     difficulty: 1,
-    hint: 'Silent i — "busy" + ness',
+    hint: 'Silent i - "busy" + ness',
   },
   {
     id: 'sb-extra-017',
@@ -411,7 +411,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A portion of something',
     difficulty: 1,
-    hint: 'i before e — a "pie"-ce',
+    hint: 'i before e - a "pie"-ce',
   },
   {
     id: 'sb-extra-049',
@@ -419,7 +419,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'Human beings in general',
     difficulty: 1,
-    hint: 'peo-ple — silent o',
+    hint: 'peo-ple - silent o',
   },
   {
     id: 'sb-extra-050',
@@ -430,7 +430,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'Four silent letters after q',
   },
 
-  // ─── Medium (70) — Crossover spelling traps ────────────────────────────────
+  // ─── Medium (70) - Crossover spelling traps ────────────────────────────────
   {
     id: 'sb-extra-051',
     word: 'rhythm',
@@ -445,7 +445,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'An inner sense of right and wrong',
     difficulty: 2,
-    hint: 'science with a "con-" — silent c',
+    hint: 'science with a "con-" - silent c',
   },
   {
     id: 'sb-extra-053',
@@ -461,7 +461,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'verb',
     definition: 'Following or chasing',
     difficulty: 2,
-    hint: 'One r — pur-su-ing',
+    hint: 'One r - pur-su-ing',
   },
   {
     id: 'sb-extra-055',
@@ -469,7 +469,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A special right or advantage',
     difficulty: 2,
-    hint: 'No d — priv-i-lege',
+    hint: 'No d - priv-i-lege',
   },
   {
     // VERIFIED: OED entry "embarrassment", accessed 2026.
@@ -487,7 +487,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A planned timetable',
     difficulty: 2,
-    hint: 'Silent c after s — sch-',
+    hint: 'Silent c after s - sch-',
   },
   {
     id: 'sb-extra-058',
@@ -495,7 +495,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A non-commissioned military officer',
     difficulty: 2,
-    hint: 'ser-GEANT — sounds like "sar"',
+    hint: 'ser-GEANT - sounds like "sar"',
   },
   {
     id: 'sb-extra-059',
@@ -551,7 +551,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A legislative assembly of a country',
     difficulty: 2,
-    hint: 'Silent i — par-LIA-ment',
+    hint: 'Silent i - par-LIA-ment',
   },
   {
     id: 'sb-extra-066',
@@ -719,7 +719,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'An instrument for measuring',
     difficulty: 2,
-    hint: 'Unusual au spelling — gauge, not "guage"',
+    hint: 'Unusual au spelling - gauge, not "guage"',
   },
   {
     id: 'sb-extra-087',
@@ -819,7 +819,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
   },
   {
     // VERIFIED: OED entry "cancel, v.", Cambridge UK Dictionary, accessed 2026.
-    // Hint corrected — the US single-l form is 'canceled' (not 'cancelled').
+    // Hint corrected - the US single-l form is 'canceled' (not 'cancelled').
     id: 'sb-extra-099',
     word: 'cancelled',
     partOfSpeech: 'verb',
@@ -897,7 +897,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'verb',
     definition: 'To attract strongly',
     difficulty: 2,
-    hint: 'Silent c — fas-CIN-ate',
+    hint: 'Silent c - fas-CIN-ate',
   },
   {
     id: 'sb-extra-109',
@@ -905,7 +905,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'Body tissue that produces movement',
     difficulty: 2,
-    hint: 'Silent c — mus-cle',
+    hint: 'Silent c - mus-cle',
   },
   {
     id: 'sb-extra-110',
@@ -977,7 +977,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'The number 40',
     difficulty: 2,
-    hint: 'No u — unlike "four"',
+    hint: 'No u - unlike "four"',
   },
   {
     id: 'sb-extra-119',
@@ -998,7 +998,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'Silent ough; not the same as "through"',
   },
 
-  // ─── Hard (50) — Higher spelling traps ─────────────────────────────────────
+  // ─── Hard (50) - Higher spelling traps ─────────────────────────────────────
   {
     id: 'sb-extra-121',
     word: 'acquiesce',
@@ -1109,7 +1109,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A meeting at an agreed time and place',
     difficulty: 3,
-    hint: 'French — silent z and final s',
+    hint: 'French - silent z and final s',
   },
   {
     id: 'sb-extra-135',
@@ -1117,7 +1117,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A person employed to drive a car',
     difficulty: 3,
-    hint: 'French — ch- as "sh", -eur ending',
+    hint: 'French - ch- as "sh", -eur ending',
   },
   {
     id: 'sb-extra-136',
@@ -1125,7 +1125,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A person who starts a business',
     difficulty: 3,
-    hint: 'French — -preneur ending',
+    hint: 'French - -preneur ending',
   },
   {
     id: 'sb-extra-137',
@@ -1159,7 +1159,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A clear savoury broth',
     difficulty: 3,
-    hint: 'French — ill pronounced "y"',
+    hint: 'French - ill pronounced "y"',
   },
   {
     id: 'sb-extra-141',
@@ -1199,7 +1199,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'A ranked system of organisation',
     difficulty: 3,
-    hint: 'hi-er-ar-chy — i before e',
+    hint: 'hi-er-ar-chy - i before e',
   },
   {
     id: 'sb-extra-146',
@@ -1303,7 +1303,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'adjective',
     definition: 'Emitting light when stimulated',
     difficulty: 3,
-    hint: 'flu-OR-escent — uo together',
+    hint: 'flu-OR-escent - uo together',
   },
   {
     // VERIFIED: OED entry "haemorrhagic", Cambridge UK Dictionary, accessed 2026.
@@ -1405,7 +1405,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'Five syllables; -phernalia',
   },
 
-  // ─── GCSE-essay-relevant (30) — literary terms ─────────────────────────────
+  // ─── GCSE-essay-relevant (30) - literary terms ─────────────────────────────
   {
     id: 'sb-extra-171',
     word: 'foreshadowing',
@@ -1468,7 +1468,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     partOfSpeech: 'noun',
     definition: 'The final resolution of a plot',
     difficulty: 3,
-    hint: 'French — silent t at end',
+    hint: 'French - silent t at end',
   },
   {
     id: 'sb-extra-179',
@@ -1584,7 +1584,7 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
   },
   {
     // VERIFIED: OED entry "bathos, n.", accessed 2026.
-    // Hint corrected — original was self-referential and made no sense.
+    // Hint corrected - original was self-referential and made no sense.
     // The real trap is confusing 'bathos' (anticlimax) with 'pathos' (pity).
     id: 'sb-extra-193',
     word: 'bathos',

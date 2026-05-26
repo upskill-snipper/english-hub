@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Composition Mark Scheme — Cambridge IGCSE Language',
+    title: 'Composition Mark Scheme - Cambridge IGCSE Language',
     description:
       'Cambridge IGCSE Language Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
   },
-  title: 'Composition Mark Scheme — Cambridge IGCSE Language',
+  title: 'Composition Mark Scheme - Cambridge IGCSE Language',
   description:
     'Cambridge IGCSE Language Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
   alternates: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const contentBands = [
   {
     band: '6',
-    marks: '14–16',
+    marks: '14-16',
     label: 'Highly skilful',
     descriptors: [
       'Highly effective and consistently well-sequenced structure.',
@@ -34,7 +34,7 @@ const contentBands = [
   },
   {
     band: '5',
-    marks: '11–13',
+    marks: '11-13',
     label: 'Skilful',
     descriptors: [
       'Effective structure with clear development.',
@@ -45,7 +45,7 @@ const contentBands = [
   },
   {
     band: '4',
-    marks: '8–10',
+    marks: '8-10',
     label: 'Competent',
     descriptors: [
       'Structure is organised with a clear sequence.',
@@ -56,7 +56,7 @@ const contentBands = [
   },
   {
     band: '3',
-    marks: '5–7',
+    marks: '5-7',
     label: 'Straightforward',
     descriptors: [
       'Structure is simple but evident.',
@@ -67,7 +67,7 @@ const contentBands = [
   },
   {
     band: '2',
-    marks: '3–4',
+    marks: '3-4',
     label: 'Limited',
     descriptors: [
       'Structure is weak or inconsistent.',
@@ -77,7 +77,7 @@ const contentBands = [
   },
   {
     band: '1',
-    marks: '1–2',
+    marks: '1-2',
     label: 'Basic',
     descriptors: [
       'Very little structure or development.',
@@ -89,7 +89,7 @@ const contentBands = [
 const styleBands = [
   {
     band: '6',
-    marks: '22–24',
+    marks: '22-24',
     label: 'Highly skilful',
     descriptors: [
       'A wide range of ambitious vocabulary used precisely for effect.',
@@ -100,7 +100,7 @@ const styleBands = [
   },
   {
     band: '5',
-    marks: '18–21',
+    marks: '18-21',
     label: 'Skilful',
     descriptors: [
       'A range of ambitious vocabulary used effectively.',
@@ -111,7 +111,7 @@ const styleBands = [
   },
   {
     band: '4',
-    marks: '14–17',
+    marks: '14-17',
     label: 'Competent',
     descriptors: [
       'Vocabulary is mostly clear and sometimes ambitious.',
@@ -121,7 +121,7 @@ const styleBands = [
   },
   {
     band: '3',
-    marks: '10–13',
+    marks: '10-13',
     label: 'Straightforward',
     descriptors: [
       'Vocabulary is mostly simple but usually correct.',
@@ -131,7 +131,7 @@ const styleBands = [
   },
   {
     band: '2',
-    marks: '6–9',
+    marks: '6-9',
     label: 'Limited',
     descriptors: [
       'Vocabulary is simple and often imprecise.',
@@ -141,7 +141,7 @@ const styleBands = [
   },
   {
     band: '1',
-    marks: '1–5',
+    marks: '1-5',
     label: 'Basic',
     descriptors: [
       'Vocabulary is very limited.',
@@ -207,7 +207,7 @@ export default async function MarkSchemePage() {
               </p>
               <p>Key questions examiners ask:</p>
               <ul className="list-disc space-y-1 pl-5">
-                <li>Does the piece have a clear shape — beginning, middle, end?</li>
+                <li>Does the piece have a clear shape - beginning, middle, end?</li>
                 <li>Are paragraphs sequenced with purpose?</li>
                 <li>Is there originality in the ideas or the angle?</li>
                 <li>Does the ending feel earned, not tacked on?</li>
@@ -246,7 +246,7 @@ export default async function MarkSchemePage() {
       {/* Content bands */}
       <section>
         <h2 className="text-heading-lg font-heading text-foreground">
-          Content and structure — band descriptors
+          Content and structure - band descriptors
         </h2>
         <div className="mt-5 space-y-3">
           {contentBands.map((b) => (
@@ -280,7 +280,7 @@ export default async function MarkSchemePage() {
       {/* Style bands */}
       <section>
         <h2 className="text-heading-lg font-heading text-foreground">
-          Style and accuracy — band descriptors
+          Style and accuracy - band descriptors
         </h2>
         <div className="mt-5 space-y-3">
           {styleBands.map((b) => (
@@ -347,7 +347,7 @@ export default async function MarkSchemePage() {
               From Band 5 to Band 6 (style)
             </p>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Use one rhetorical device per piece — tricolon, anaphora or asyndeton — and hold
+              Use one rhetorical device per piece - tricolon, anaphora or asyndeton - and hold
               register steady from first line to last.
             </p>
           </div>

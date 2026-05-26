@@ -1,5 +1,5 @@
 // =============================================================================
-// Edexcel IGCSE English Language & Literature — Workbook & Homework Data
+// Edexcel IGCSE English Language & Literature - Workbook & Homework Data
 // Years 10-11
 // Papers / Texts:
 //   Lang P1  | Lang P2  | Lit Poetry | Lit OMAM
@@ -7,10 +7,10 @@
 // =============================================================================
 
 export interface WorkbookExercise {
-  id: string;
-  title: string;
-  yearGroup: 'Year 10' | 'Year 11';
-  termUnit: string;
+  id: string
+  title: string
+  yearGroup: 'Year 10' | 'Year 11'
+  termUnit: string
   type:
     | 'comprehension'
     | 'language-analysis'
@@ -19,20 +19,20 @@ export interface WorkbookExercise {
     | 'close-reading'
     | 'timed-response'
     | 'annotation'
-    | 'evaluation';
-  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery';
-  instructions: string[];
-  estimatedTime: string;
-  linkedObjectives: string[];
-  modelAnswer: string;
-  extension: string;
+    | 'evaluation'
+  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery'
+  instructions: string[]
+  estimatedTime: string
+  linkedObjectives: string[]
+  modelAnswer: string
+  extension: string
 }
 
 export interface HomeworkTask {
-  id: string;
-  title: string;
-  yearGroup: 'Year 10' | 'Year 11';
-  termUnit: string;
+  id: string
+  title: string
+  yearGroup: 'Year 10' | 'Year 11'
+  termUnit: string
   type:
     | 'comprehension'
     | 'language-analysis'
@@ -41,17 +41,17 @@ export interface HomeworkTask {
     | 'close-reading'
     | 'timed-response'
     | 'annotation'
-    | 'evaluation';
-  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery';
-  instructions: string[];
-  estimatedTime: string;
-  linkedObjectives: string[];
-  modelAnswer: string;
-  extension: string;
+    | 'evaluation'
+  difficulty: 'foundation' | 'developing' | 'secure' | 'mastery'
+  instructions: string[]
+  estimatedTime: string
+  linkedObjectives: string[]
+  modelAnswer: string
+  extension: string
 }
 
 // =============================================================================
-// LANGUAGE PAPER 1 — Reading Non-Fiction & Media Texts (5 exercises)
+// LANGUAGE PAPER 1 - Reading Non-Fiction & Media Texts (5 exercises)
 // =============================================================================
 
 const langP1Exercises: WorkbookExercise[] = [
@@ -71,9 +71,9 @@ const langP1Exercises: WorkbookExercise[] = [
     estimatedTime: '10 minutes',
     linkedObjectives: ['IGCSE.Lang.AO1', 'IGCSE.Lang.R1'],
     modelAnswer:
-      'A strong response will identify four discrete, accurate points drawn from the correct lines. Each point should be expressed in the student\'s own words and should not repeat another point. For example, given an extract about Arctic exploration: (1) temperatures in the region regularly fell below minus forty degrees Celsius; (2) the explorers relied on sledges pulled by dogs to cross the ice; (3) food rations were calculated precisely to avoid waste; (4) darkness lasted for up to twenty hours per day during winter. Full marks require four distinct, relevant, and accurate points with no significant copying.',
+      "A strong response will identify four discrete, accurate points drawn from the correct lines. Each point should be expressed in the student's own words and should not repeat another point. For example, given an extract about Arctic exploration: (1) temperatures in the region regularly fell below minus forty degrees Celsius; (2) the explorers relied on sledges pulled by dogs to cross the ice; (3) food rations were calculated precisely to avoid waste; (4) darkness lasted for up to twenty hours per day during winter. Full marks require four distinct, relevant, and accurate points with no significant copying.",
     extension:
-      'Now rank your four points from most to least significant for understanding the writer\'s main message. Justify your ranking in a single sentence.',
+      "Now rank your four points from most to least significant for understanding the writer's main message. Justify your ranking in a single sentence.",
   },
   {
     id: 'igcse-langp1-ex02',
@@ -85,7 +85,7 @@ const langP1Exercises: WorkbookExercise[] = [
     instructions: [
       'Read the full extract provided.',
       'Write three inference statements using the sentence starter: "I can infer that ... because the writer says ... which suggests ...".',
-      'Each inference must go beyond what is explicitly stated and show deeper understanding of the writer\'s meaning.',
+      "Each inference must go beyond what is explicitly stated and show deeper understanding of the writer's meaning.",
       'For each inference, explain what the evidence implies rather than just repeating it.',
     ],
     estimatedTime: '15 minutes',
@@ -97,7 +97,7 @@ const langP1Exercises: WorkbookExercise[] = [
   },
   {
     id: 'igcse-langp1-ex03',
-    title: 'Language Analysis: Writer\'s Craft (Q4 Style)',
+    title: "Language Analysis: Writer's Craft (Q4 Style)",
     yearGroup: 'Year 10',
     termUnit: 'Lang P1: Reading Non-Fiction',
     type: 'language-analysis',
@@ -105,13 +105,13 @@ const langP1Exercises: WorkbookExercise[] = [
     instructions: [
       'Re-read the highlighted paragraph in the extract.',
       'Analyse how the writer uses language to create a particular effect. You should comment on: word choices and connotations; figurative language (metaphor, simile, personification); sentence structure and rhythm; any other language technique you notice.',
-      'Write two well-developed analytical paragraphs. Each should use the structure: Technique -> Quotation -> Effect on reader -> Writer\'s purpose.',
+      "Write two well-developed analytical paragraphs. Each should use the structure: Technique -> Quotation -> Effect on reader -> Writer's purpose.",
       'Aim for at least 150 words in total.',
     ],
     estimatedTime: '20 minutes',
     linkedObjectives: ['IGCSE.Lang.AO2', 'IGCSE.Lang.R3'],
     modelAnswer:
-      'A mastery-level response identifies specific, named techniques and analyses their cumulative effect rather than treating each device in isolation. For example: "The writer\'s use of the metaphor \'the city was a furnace\' not only conveys intense heat but frames the urban environment as something industrial and consuming, stripping it of human warmth. The connotations of a furnace -- destruction, relentless energy, the erasure of raw material -- suggest the writer views urban life as dehumanising. This idea is reinforced by the following short, declarative sentence \'Nobody noticed.\', whose abruptness mirrors the indifference of modern society." A strong response avoids feature-spotting and instead explains how language constructs meaning and positions the reader.',
+      "A mastery-level response identifies specific, named techniques and analyses their cumulative effect rather than treating each device in isolation. For example: \"The writer's use of the metaphor 'the city was a furnace' not only conveys intense heat but frames the urban environment as something industrial and consuming, stripping it of human warmth. The connotations of a furnace -- destruction, relentless energy, the erasure of raw material -- suggest the writer views urban life as dehumanising. This idea is reinforced by the following short, declarative sentence 'Nobody noticed.', whose abruptness mirrors the indifference of modern society.\" A strong response avoids feature-spotting and instead explains how language constructs meaning and positions the reader.",
     extension:
       'Identify one additional technique not mentioned in your paragraphs and explain in three sentences how it contributes to the overall effect of the passage.',
   },
@@ -147,21 +147,29 @@ const langP1Exercises: WorkbookExercise[] = [
       'Read the source text carefully before attempting any questions.',
       'Q1 (4 marks, 8 mins): List four things you learn about the subject from the first paragraph.',
       'Q2 (8 marks, 12 mins): How does the writer use language to convey their attitude? Write two analytical paragraphs.',
-      'Q3 (8 marks, 12 mins): How does the structure of the text support the writer\'s purpose?',
+      "Q3 (8 marks, 12 mins): How does the structure of the text support the writer's purpose?",
       'Q4 (20 marks, 28 mins): Evaluate how effectively the writer presents their viewpoint. Refer to the given statement.',
       'Leave 5 minutes at the end to check and annotate your responses.',
     ],
     estimatedTime: '60 minutes',
-    linkedObjectives: ['IGCSE.Lang.AO1', 'IGCSE.Lang.AO2', 'IGCSE.Lang.AO3', 'IGCSE.Lang.R1', 'IGCSE.Lang.R2', 'IGCSE.Lang.R3', 'IGCSE.Lang.R4'],
+    linkedObjectives: [
+      'IGCSE.Lang.AO1',
+      'IGCSE.Lang.AO2',
+      'IGCSE.Lang.AO3',
+      'IGCSE.Lang.R1',
+      'IGCSE.Lang.R2',
+      'IGCSE.Lang.R3',
+      'IGCSE.Lang.R4',
+    ],
     modelAnswer:
       'A full timed practice should be marked using the Edexcel mark scheme bands. Q1: four discrete, accurate, paraphrased points (1 mark each). Q2: two paragraphs identifying technique, embedding quotation, and explaining effect on the reader -- higher bands require analysis of connotation and purpose. Q3: structural comments should address: how the opening establishes tone, how the text develops or shifts focus, how the ending resolves or leaves the reader. Q4: evaluation must be balanced, citing both effective and less effective elements, with a reasoned conclusion. Feedback should focus on the band descriptors for each question rather than a simple total.',
     extension:
       'After your work has been marked, write a target-setting comment: identify one specific thing to improve in Q4 responses and explain how you will practise it.',
   },
-];
+]
 
 // =============================================================================
-// LANGUAGE PAPER 2 — Transactional & Descriptive Writing (5 exercises)
+// LANGUAGE PAPER 2 - Transactional & Descriptive Writing (5 exercises)
 // =============================================================================
 
 const langP2Exercises: WorkbookExercise[] = [
@@ -203,7 +211,7 @@ const langP2Exercises: WorkbookExercise[] = [
     modelAnswer:
       'A strong speech will open with a direct address ("Good morning, students, teachers, and governors") and immediately establish the speaker\'s credibility and purpose. The argument should be sequenced so that it builds toward an emotional peak before the call to action. Anaphora ("We are told... We are expected... We are trusted -- but only up to a point") creates rhetorical power when used correctly. The call to action must be specific and achievable, not vague. Top-band responses feel genuinely spoken rather than written, using contractions, short sentences for emphasis, and asides that acknowledge the audience\'s likely responses.',
     extension:
-      'Write a brief director\'s note explaining where in your speech you would pause, raise your voice, or use gesture, and why these performance choices reinforce your argument.',
+      "Write a brief director's note explaining where in your speech you would pause, raise your voice, or use gesture, and why these performance choices reinforce your argument.",
   },
   {
     id: 'igcse-langp2-ex03',
@@ -214,7 +222,7 @@ const langP2Exercises: WorkbookExercise[] = [
     difficulty: 'developing',
     instructions: [
       'Write a formal letter of complaint to the manager of a local sports centre about the poor state of its facilities.',
-      'Use correct formal letter conventions: your address (top right), date, recipient\'s address (left), formal salutation, sign-off.',
+      "Use correct formal letter conventions: your address (top right), date, recipient's address (left), formal salutation, sign-off.",
       'Include: a clear statement of your complaint in the opening paragraph; specific evidence and examples in the body; a reasonable request for action in the conclusion.',
       'Maintain a formal, measured tone throughout. Avoid aggressive language -- controlled displeasure is more persuasive than anger.',
       'Write approximately 300 words.',
@@ -224,7 +232,7 @@ const langP2Exercises: WorkbookExercise[] = [
     modelAnswer:
       'A well-structured letter will open with a clear statement of purpose ("I am writing to express my concern regarding the current state of..."), provide two or three specific complaints with examples, and close with a specific, polite request for action and a deadline. Register must remain formal throughout: "I would appreciate" rather than "I want"; "the facilities leave much to be desired" rather than "the facilities are terrible." A mastery response shows control of the formal epistolary register without sounding stilted, and the ending avoids the common error of threatening legal action or using inflammatory language.',
     extension:
-      'Now write the manager\'s reply (150 words), responding formally to at least two of the complaints raised. Consider how much the manager should concede and what language they would use.',
+      "Now write the manager's reply (150 words), responding formally to at least two of the complaints raised. Consider how much the manager should concede and what language they would use.",
   },
   {
     id: 'igcse-langp2-ex04',
@@ -242,7 +250,7 @@ const langP2Exercises: WorkbookExercise[] = [
     estimatedTime: '30 minutes',
     linkedObjectives: ['IGCSE.Lang.AO5', 'IGCSE.Lang.W5'],
     modelAnswer:
-      'A strong narrative opening immediately establishes a sense of place and voice. The given first line creates an air of mystery, and a successful response will build on this rather than immediately explaining it. Sensory detail should be specific and purposeful -- not a generic list of sights, sounds, and smells but details that contribute to the atmosphere. The narrator\'s voice should feel consistent: if first person, the diction and syntax should reveal character; if third person limited, the reader should be positioned close to one character\'s perspective. Top-band responses use structural choices consciously: a short sentence after a long description creates impact; repetition can create an incantatory or obsessive tone; sentence fragments can mimic thought or fragmented memory.',
+      "A strong narrative opening immediately establishes a sense of place and voice. The given first line creates an air of mystery, and a successful response will build on this rather than immediately explaining it. Sensory detail should be specific and purposeful -- not a generic list of sights, sounds, and smells but details that contribute to the atmosphere. The narrator's voice should feel consistent: if first person, the diction and syntax should reveal character; if third person limited, the reader should be positioned close to one character's perspective. Top-band responses use structural choices consciously: a short sentence after a long description creates impact; repetition can create an incantatory or obsessive tone; sentence fragments can mimic thought or fragmented memory.",
     extension:
       'Write a brief craft commentary (100 words) explaining three specific language or structural choices you made and the effect you intended each to have.',
   },
@@ -267,10 +275,10 @@ const langP2Exercises: WorkbookExercise[] = [
     extension:
       'Identify one section of your report where the register slips from formal to informal. Rewrite that section correcting the register and explain what you changed.',
   },
-];
+]
 
 // =============================================================================
-// LITERATURE — POETRY (5 exercises)
+// LITERATURE - POETRY (5 exercises)
 // =============================================================================
 
 const litPoetryExercises: WorkbookExercise[] = [
@@ -283,7 +291,7 @@ const litPoetryExercises: WorkbookExercise[] = [
     difficulty: 'developing',
     instructions: [
       'Select one poem from the Edexcel IGCSE anthology that you have studied.',
-      'Write a close-reading analysis of the poem covering: the poem\'s form and structure (stanzas, line length, rhyme scheme if present); the speaker\'s voice and tone; two key language techniques with their effects; the central theme or message.',
+      "Write a close-reading analysis of the poem covering: the poem's form and structure (stanzas, line length, rhyme scheme if present); the speaker's voice and tone; two key language techniques with their effects; the central theme or message.",
       'Use at least three embedded quotations.',
       'Write approximately 250 words.',
     ],
@@ -324,7 +332,7 @@ const litPoetryExercises: WorkbookExercise[] = [
     instructions: [
       'Read the unseen poem provided carefully (read it at least twice before annotating).',
       'On the printed copy, annotate the poem as follows: circle or underline 4-6 key language techniques; note the effect of each technique in the margin; identify the volta or turning point if there is one; note any patterns you observe (repetition, contrast, development of an image).',
-      'After annotating, write a brief paragraph (60-80 words) summarising what you think the poem is about and what the poet\'s attitude to their subject is.',
+      "After annotating, write a brief paragraph (60-80 words) summarising what you think the poem is about and what the poet's attitude to their subject is.",
     ],
     estimatedTime: '20 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.P3'],
@@ -366,16 +374,22 @@ const litPoetryExercises: WorkbookExercise[] = [
       'Use comparative connectives throughout and embed quotations accurately.',
     ],
     estimatedTime: '45 minutes',
-    linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3', 'IGCSE.Lit.P2', 'IGCSE.Lit.P5'],
+    linkedObjectives: [
+      'IGCSE.Lit.AO1',
+      'IGCSE.Lit.AO2',
+      'IGCSE.Lit.AO3',
+      'IGCSE.Lit.P2',
+      'IGCSE.Lit.P5',
+    ],
     modelAnswer:
       'A timed comparison essay is marked across three AOs: AO1 (personal response and interpretation), AO2 (language, form, and structure analysis), AO3 (context). A Band 5 response will sustain a clear, well-evidenced comparative argument throughout; analyse language with precision and insight; integrate context naturally rather than bolting it on at the end; and demonstrate an individual, confident reading of both poems. Common weaknesses in timed conditions include: abandoning the comparison structure under time pressure; reverting to feature-spotting instead of analysis; neglecting the conclusion. Peer mark against the Edexcel band descriptors and identify the single most important improvement for next time.',
     extension:
       'After your essay is marked, rewrite your weakest paragraph incorporating the feedback. Write one sentence explaining what you changed and why it improves the response.',
   },
-];
+]
 
 // =============================================================================
-// LITERATURE — OF MICE AND MEN (5 exercises)
+// LITERATURE - OF MICE AND MEN (5 exercises)
 // =============================================================================
 
 const litOMAMExercises: WorkbookExercise[] = [
@@ -388,13 +402,13 @@ const litOMAMExercises: WorkbookExercise[] = [
     difficulty: 'foundation',
     instructions: [
       'Research the following contextual topics and write 2-3 sentences of notes on each: the Great Depression (1929-1939); the Dust Bowl and its impact on migrant workers; racial segregation in 1930s America; the experiences of disabled or mentally different individuals in this period.',
-      'For each topic, note one way the historical context is reflected in Steinbeck\'s novel with a brief quotation as evidence.',
+      "For each topic, note one way the historical context is reflected in Steinbeck's novel with a brief quotation as evidence.",
       'Use your notes to answer this question in a paragraph: why does Steinbeck set the novel among itinerant ranch workers?',
     ],
     estimatedTime: '30 minutes',
     linkedObjectives: ['IGCSE.Lit.AO3', 'IGCSE.Lit.O1'],
     modelAnswer:
-      'Strong contextual notes will accurately explain the Great Depression as a period of mass unemployment following the 1929 Wall Street Crash, with migrant workers travelling between ranches in search of seasonal work and rarely earning enough to achieve stability. The Dust Bowl destroyed farming in Oklahoma, Texas, and surrounding states, driving families west to California. Racial segregation manifested on the ranch through Crooks\'s enforced separation in the harness room. Steinbeck chose itinerant workers because their transience and powerlessness embody the novel\'s central themes of loneliness and the destruction of dreams. A strong contextual paragraph integrates historical fact with textual reference: "Steinbeck presents the ranch as a microcosm of 1930s America, where the powerful (Curley, Curley\'s wife) exploit the vulnerable (Lennie, Crooks, Candy) with impunity."',
+      "Strong contextual notes will accurately explain the Great Depression as a period of mass unemployment following the 1929 Wall Street Crash, with migrant workers travelling between ranches in search of seasonal work and rarely earning enough to achieve stability. The Dust Bowl destroyed farming in Oklahoma, Texas, and surrounding states, driving families west to California. Racial segregation manifested on the ranch through Crooks's enforced separation in the harness room. Steinbeck chose itinerant workers because their transience and powerlessness embody the novel's central themes of loneliness and the destruction of dreams. A strong contextual paragraph integrates historical fact with textual reference: \"Steinbeck presents the ranch as a microcosm of 1930s America, where the powerful (Curley, Curley's wife) exploit the vulnerable (Lennie, Crooks, Candy) with impunity.\"",
     extension:
       'Find one additional historical fact about 1930s California not covered in the notes and write a paragraph explaining how it adds to your understanding of the novel.',
   },
@@ -407,16 +421,16 @@ const litOMAMExercises: WorkbookExercise[] = [
     difficulty: 'developing',
     instructions: [
       'Write one analytical paragraph on how Steinbeck presents Lennie Small as both powerful and vulnerable.',
-      'Your paragraph must include: a topic sentence that makes a clear argument; at least two embedded quotations with analysis; a comment on Steinbeck\'s purpose in constructing Lennie this way.',
-      'Consider: Steinbeck\'s use of animal imagery; the contrast between Lennie\'s physical size and his childlike mind; how other characters treat Lennie; what Lennie represents thematically.',
+      "Your paragraph must include: a topic sentence that makes a clear argument; at least two embedded quotations with analysis; a comment on Steinbeck's purpose in constructing Lennie this way.",
+      "Consider: Steinbeck's use of animal imagery; the contrast between Lennie's physical size and his childlike mind; how other characters treat Lennie; what Lennie represents thematically.",
       'Aim for 120-150 words.',
     ],
     estimatedTime: '20 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.O2'],
     modelAnswer:
-      'A strong analytical paragraph might read: "Steinbeck presents Lennie as simultaneously threatening and pitiable through persistent animal imagery. Described as moving \'the way a bear drags his paws\', Lennie\'s physical bulk is coded as natural, instinctive force rather than human aggression -- he is not cruel, merely powerful beyond his comprehension. Yet his habit of petting soft things to death, from mice to Curley\'s wife, reveals that his innocence is inseparable from his danger. Steinbeck uses Lennie to explore how a society that makes no provision for those who are different will inevitably destroy them: Lennie is not a villain but a victim of a world that has no place for him." This paragraph integrates quotation, analysis, and purpose within a single fluent argument.',
+      "A strong analytical paragraph might read: \"Steinbeck presents Lennie as simultaneously threatening and pitiable through persistent animal imagery. Described as moving 'the way a bear drags his paws', Lennie's physical bulk is coded as natural, instinctive force rather than human aggression -- he is not cruel, merely powerful beyond his comprehension. Yet his habit of petting soft things to death, from mice to Curley's wife, reveals that his innocence is inseparable from his danger. Steinbeck uses Lennie to explore how a society that makes no provision for those who are different will inevitably destroy them: Lennie is not a villain but a victim of a world that has no place for him.\" This paragraph integrates quotation, analysis, and purpose within a single fluent argument.",
     extension:
-      'Now write a second paragraph on Lennie focusing on the dream of the farm. Explore what the dream represents and why Lennie\'s attachment to it is significant.',
+      "Now write a second paragraph on Lennie focusing on the dream of the farm. Explore what the dream represents and why Lennie's attachment to it is significant.",
   },
   {
     id: 'igcse-omam-ex03',
@@ -427,7 +441,7 @@ const litOMAMExercises: WorkbookExercise[] = [
     difficulty: 'secure',
     instructions: [
       'Plan a full essay in response to the question: "How does Steinbeck present loneliness in Of Mice and Men?"',
-      'Your plan must include: a thesis statement (one sentence summarising your overall argument); a plan for at least four body paragraphs, each covering a different character or aspect of loneliness (e.g. Crooks, Candy, Curley\'s wife, the itinerant workers as a group); for each paragraph, note one key quotation and the main point you will make; a planned conclusion that goes beyond summarising.',
+      "Your plan must include: a thesis statement (one sentence summarising your overall argument); a plan for at least four body paragraphs, each covering a different character or aspect of loneliness (e.g. Crooks, Candy, Curley's wife, the itinerant workers as a group); for each paragraph, note one key quotation and the main point you will make; a planned conclusion that goes beyond summarising.",
       'Write the plan in bullet-point form. You do not need to write the full essay for this task.',
     ],
     estimatedTime: '20 minutes',
@@ -439,22 +453,22 @@ const litOMAMExercises: WorkbookExercise[] = [
   },
   {
     id: 'igcse-omam-ex04',
-    title: 'Extract Analysis: The Death of Candy\'s Dog',
+    title: "Extract Analysis: The Death of Candy's Dog",
     yearGroup: 'Year 11',
     termUnit: 'Lit: Of Mice and Men',
     type: 'close-reading',
     difficulty: 'secure',
     instructions: [
-      'Re-read the extract in which Carlson shoots Candy\'s dog (Chapter 3).',
-      'Analyse how Steinbeck uses the extract to develop themes and foreshadow the novel\'s ending. You should comment on: how Candy reacts and what this reveals; the other characters\' responses and what they suggest about ranch culture; how Steinbeck uses silence and atmosphere; what this scene foreshadows about Lennie\'s fate.',
+      "Re-read the extract in which Carlson shoots Candy's dog (Chapter 3).",
+      "Analyse how Steinbeck uses the extract to develop themes and foreshadow the novel's ending. You should comment on: how Candy reacts and what this reveals; the other characters' responses and what they suggest about ranch culture; how Steinbeck uses silence and atmosphere; what this scene foreshadows about Lennie's fate.",
       'Write two analytical paragraphs, each 100-120 words.',
     ],
     estimatedTime: '25 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.O4'],
     modelAnswer:
-      'A strong response notes that Candy\'s passivity -- "I ought to of shot that dog myself... I shouldn\'t ought to of let no stranger shoot my dog" -- directly foreshadows George\'s decision to shoot Lennie at the novel\'s end. Both the dog and Lennie are old (or in Lennie\'s case, childlike and dependent), both are incapable of survival without their protectors, and both are killed by those who love them because the world offers no alternative. Steinbeck uses the oppressive silence of the bunkhouse after the shot to enact the workers\' emotional suppression: they cannot express grief. A mastery response identifies this as a structural echo and argues that Steinbeck uses it to frame the ending as mercy rather than murder.',
+      "A strong response notes that Candy's passivity -- \"I ought to of shot that dog myself... I shouldn't ought to of let no stranger shoot my dog\" -- directly foreshadows George's decision to shoot Lennie at the novel's end. Both the dog and Lennie are old (or in Lennie's case, childlike and dependent), both are incapable of survival without their protectors, and both are killed by those who love them because the world offers no alternative. Steinbeck uses the oppressive silence of the bunkhouse after the shot to enact the workers' emotional suppression: they cannot express grief. A mastery response identifies this as a structural echo and argues that Steinbeck uses it to frame the ending as mercy rather than murder.",
     extension:
-      'Write a paragraph comparing how Steinbeck uses the deaths of minor characters (Curley\'s wife, Candy\'s dog) to develop the novel\'s central message about power and powerlessness.',
+      "Write a paragraph comparing how Steinbeck uses the deaths of minor characters (Curley's wife, Candy's dog) to develop the novel's central message about power and powerlessness.",
   },
   {
     id: 'igcse-omam-ex05',
@@ -466,26 +480,32 @@ const litOMAMExercises: WorkbookExercise[] = [
     instructions: [
       'You have 45 minutes to answer the following question: "How does Steinbeck present the character of Crooks and what does he represent in the novel?"',
       'Spend 5 minutes planning: identify your thesis; plan 3-4 paragraphs; note one key quotation per paragraph.',
-      'Write your essay (approximately 600 words), covering: Crooks\'s characterisation through language and behaviour; the role of racial segregation in his isolation; his relationship to the dream of the farm; what Steinbeck intends the reader to understand through Crooks.',
+      "Write your essay (approximately 600 words), covering: Crooks's characterisation through language and behaviour; the role of racial segregation in his isolation; his relationship to the dream of the farm; what Steinbeck intends the reader to understand through Crooks.",
       'End with a conclusion that makes an overall argument rather than summarising.',
     ],
     estimatedTime: '45 minutes',
-    linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3', 'IGCSE.Lit.O2', 'IGCSE.Lit.O5'],
+    linkedObjectives: [
+      'IGCSE.Lit.AO1',
+      'IGCSE.Lit.AO2',
+      'IGCSE.Lit.AO3',
+      'IGCSE.Lit.O2',
+      'IGCSE.Lit.O5',
+    ],
     modelAnswer:
-      'A Band 5 essay on Crooks will situate him within the racial context of 1930s America while maintaining close textual analysis. Key points include: the harness room as a symbol of enforced segregation and Crooks\'s bitter pride in having his own space; his intellectual superiority over the other ranch hands and his use of Lennie\'s vulnerability to explore the pain of his own isolation; his momentary engagement with the dream of the farm before cynically withdrawing; and the cruel irony that in 1930s America, even the most oppressed character cannot sustain hope. A strong conclusion might argue that Steinbeck uses Crooks to show how systemic racism compounds every other form of marginalisation in the novel.',
+      "A Band 5 essay on Crooks will situate him within the racial context of 1930s America while maintaining close textual analysis. Key points include: the harness room as a symbol of enforced segregation and Crooks's bitter pride in having his own space; his intellectual superiority over the other ranch hands and his use of Lennie's vulnerability to explore the pain of his own isolation; his momentary engagement with the dream of the farm before cynically withdrawing; and the cruel irony that in 1930s America, even the most oppressed character cannot sustain hope. A strong conclusion might argue that Steinbeck uses Crooks to show how systemic racism compounds every other form of marginalisation in the novel.",
     extension:
       'Find one additional quotation from the novel relating to Crooks that you did not use in your essay. Write a paragraph incorporating it and explaining why it adds to your argument.',
   },
-];
+]
 
 // =============================================================================
-// LITERATURE — AN INSPECTOR CALLS (5 exercises)
+// LITERATURE - AN INSPECTOR CALLS (5 exercises)
 // =============================================================================
 
 const litInspectorExercises: WorkbookExercise[] = [
   {
     id: 'igcse-inspector-ex01',
-    title: 'Social Responsibility: Priestley\'s Message',
+    title: "Social Responsibility: Priestley's Message",
     yearGroup: 'Year 10',
     termUnit: 'Lit: An Inspector Calls',
     type: 'comprehension',
@@ -500,7 +520,7 @@ const litInspectorExercises: WorkbookExercise[] = [
     modelAnswer:
       '"Members of one body" presents society as a single interconnected organism -- harm to one part damages the whole, and ignoring the suffering of others is therefore self-harm. This reflects Priestley\'s socialist belief in collective responsibility over individual self-interest. "Fire and blood and anguish" foreshadows the two World Wars: written in 1945, Priestley\'s audience had lived through both and would recognise this language as prophetic, lending the Inspector\'s warning retrospective authority. Contextually, 1945 was the year of the Labour landslide election: Priestley was targeting the Birlings and audiences who shared their values, warning that without radical social change, suffering on a mass scale was inevitable. The speech is therefore not merely a plot device but a political manifesto addressed directly to the audience over the heads of the characters.',
     extension:
-      'Research Priestley\'s political views and his involvement with the 1945 general election. Write a paragraph explaining how this knowledge changes or deepens your reading of the Inspector\'s role in the play.',
+      "Research Priestley's political views and his involvement with the 1945 general election. Write a paragraph explaining how this knowledge changes or deepens your reading of the Inspector's role in the play.",
   },
   {
     id: 'igcse-inspector-ex02',
@@ -510,10 +530,10 @@ const litInspectorExercises: WorkbookExercise[] = [
     type: 'close-reading',
     difficulty: 'developing',
     instructions: [
-      'Write one analytical paragraph on how Sheila\'s character develops over the course of the play.',
-      'Your paragraph must cover: how Sheila is presented at the start of the play; the key moment that changes her (her role in Eva Smith\'s dismissal from Milwards); her attitude at the end -- does she genuinely change or simply feel guilty?',
+      "Write one analytical paragraph on how Sheila's character develops over the course of the play.",
+      "Your paragraph must cover: how Sheila is presented at the start of the play; the key moment that changes her (her role in Eva Smith's dismissal from Milwards); her attitude at the end -- does she genuinely change or simply feel guilty?",
       'Include at least two quotations from the play.',
-      'End your paragraph with a comment on what Priestley wants the audience to understand through Sheila\'s development.',
+      "End your paragraph with a comment on what Priestley wants the audience to understand through Sheila's development.",
       'Aim for 140-160 words.',
     ],
     estimatedTime: 'minutes',
@@ -521,24 +541,24 @@ const litInspectorExercises: WorkbookExercise[] = [
     modelAnswer:
       'At the play\'s opening, Sheila is presented as a conventionally privileged young woman: engaged, excited, and unthinkingly accepting of her family\'s social position. Her early description as "very pleased with life and rather excited" establishes her as a character whose happiness depends on ignorance of the consequences of her class\'s actions. The moment she confesses to having used her influence to have Eva Smith dismissed -- "I was in a furious temper" -- marks the beginning of her transformation. Unlike her parents, Sheila\'s guilt appears genuine: she refuses to accept Mr Birling\'s attempts to dismiss the Inspector and insists, "I remember what he said, how he looked, and what he made me feel." Priestley uses Sheila to represent the possibility of moral awakening in the younger generation, suggesting that social change requires both the willingness to feel guilt and the courage to act on it.',
     extension:
-      'Compare Sheila\'s development to that of Eric Birling. Who do you think undergoes the more genuine transformation and why? Write 100 words.',
+      "Compare Sheila's development to that of Eric Birling. Who do you think undergoes the more genuine transformation and why? Write 100 words.",
   },
   {
     id: 'igcse-inspector-ex03',
-    title: 'Dramatic Technique Analysis: The Inspector\'s Interrogation Method',
+    title: "Dramatic Technique Analysis: The Inspector's Interrogation Method",
     yearGroup: 'Year 11',
     termUnit: 'Lit: An Inspector Calls',
     type: 'language-analysis',
     difficulty: 'secure',
     instructions: [
       'Re-read the scene in which the Inspector questions Mr Birling in Act One.',
-      'Analyse how Priestley uses dramatic techniques to present the Inspector as a threatening and morally superior figure. You should comment on: how the Inspector controls the pace and direction of the interrogation; his use of pauses and silence; the contrast between his language and Mr Birling\'s; stage directions and their effect on the audience.',
+      "Analyse how Priestley uses dramatic techniques to present the Inspector as a threatening and morally superior figure. You should comment on: how the Inspector controls the pace and direction of the interrogation; his use of pauses and silence; the contrast between his language and Mr Birling's; stage directions and their effect on the audience.",
       'Write two analytical paragraphs (120-150 words each).',
     ],
     estimatedTime: '25 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.I3'],
     modelAnswer:
-      'Priestley uses the Inspector\'s interrogation technique to systematically dismantle Mr Birling\'s authority. Where Birling blusters with lengthy, self-justifying speeches ("A man has to mind his own business and look after himself and his own"), the Inspector consistently counters with short, declarative assertions ("Eva Smith is dead.") that allow no rhetorical escape. The contrast in sentence length enacts a power shift: Birling\'s verbosity is a defence mechanism, and the Inspector\'s brevity exposes it as such. Priestley\'s stage direction that the Inspector "need not be a big man but he creates at once an impression of massiveness, solidity, and purposefulness" signals that his authority is moral rather than physical. The instruction that he speaks carefully and weightily represents a direct contrast to Birling\'s bluster, reinforcing Priestley\'s thesis that moral certainty outweighs social status.',
+      "Priestley uses the Inspector's interrogation technique to systematically dismantle Mr Birling's authority. Where Birling blusters with lengthy, self-justifying speeches (\"A man has to mind his own business and look after himself and his own\"), the Inspector consistently counters with short, declarative assertions (\"Eva Smith is dead.\") that allow no rhetorical escape. The contrast in sentence length enacts a power shift: Birling's verbosity is a defence mechanism, and the Inspector's brevity exposes it as such. Priestley's stage direction that the Inspector \"need not be a big man but he creates at once an impression of massiveness, solidity, and purposefulness\" signals that his authority is moral rather than physical. The instruction that he speaks carefully and weightily represents a direct contrast to Birling's bluster, reinforcing Priestley's thesis that moral certainty outweighs social status.",
     extension:
       'Research the theories that the Inspector represents a supernatural or symbolic figure. Write a paragraph arguing for or against this interpretation using evidence from the play.',
   },
@@ -552,14 +572,14 @@ const litInspectorExercises: WorkbookExercise[] = [
     instructions: [
       'The play ends ambiguously: a second Inspector is on his way. Priestley gives the audience no resolution.',
       'Answer the following question in an extended paragraph of 200 words: "Why does Priestley choose to end the play without resolution, and what effect does this have on the audience?"',
-      'Your response must reference: the historical context (1912 setting, 1945 writing); the play\'s central message about collective responsibility; the contrast between the older and younger Birlings at the end; the audience\'s role in completing the play\'s meaning.',
+      "Your response must reference: the historical context (1912 setting, 1945 writing); the play's central message about collective responsibility; the contrast between the older and younger Birlings at the end; the audience's role in completing the play's meaning.",
     ],
     estimatedTime: '25 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO3', 'IGCSE.Lit.I4'],
     modelAnswer:
       'Priestley ends the play without resolution because he wants the audience -- not the Birlings -- to experience the consequences. By 1945, the audience knew that the years following 1912 brought the First World War, the Depression, and the Second World War: the Inspector\'s prophecy of "fire and blood and anguish" had already come true. The unresolved ending implicates the audience directly: if they leave the theatre and continue to behave like Mr and Mrs Birling, history will repeat itself. The contrast between the younger Birlings (Sheila and Eric, who accept responsibility) and the older ones (who revert to self-interest the moment the Inspector leaves) allows Priestley to end on a note of qualified hope: change is possible, but only if the next generation refuses to become their parents. The arrival of a second Inspector is not a twist but a warning.',
     extension:
-      'Write a creative response: the final telephone call has been answered. Write the first minute of dialogue between Mr Birling and the police, maintaining Priestley\'s dramatic voice.',
+      "Write a creative response: the final telephone call has been answered. Write the first minute of dialogue between Mr Birling and the police, maintaining Priestley's dramatic voice.",
   },
   {
     id: 'igcse-inspector-ex05',
@@ -571,26 +591,32 @@ const litInspectorExercises: WorkbookExercise[] = [
     instructions: [
       'Plan a full essay in response to: "How does Priestley use the character of Arthur Birling to present his ideas about class and responsibility?"',
       'Your plan must include: a thesis statement; four body paragraphs with a main point, key quotation, and brief analysis note for each; a conclusion plan.',
-      'The four paragraphs should cover: (1) Birling\'s pride in his social position; (2) his treatment of workers and economic philosophy; (3) his attitude toward the Inspector\'s questioning; (4) his response at the play\'s end.',
+      "The four paragraphs should cover: (1) Birling's pride in his social position; (2) his treatment of workers and economic philosophy; (3) his attitude toward the Inspector's questioning; (4) his response at the play's end.",
       'After completing the plan, write the introduction in full (80-100 words).',
     ],
     estimatedTime: '30 minutes',
-    linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3', 'IGCSE.Lit.I2', 'IGCSE.Lit.I5'],
+    linkedObjectives: [
+      'IGCSE.Lit.AO1',
+      'IGCSE.Lit.AO2',
+      'IGCSE.Lit.AO3',
+      'IGCSE.Lit.I2',
+      'IGCSE.Lit.I5',
+    ],
     modelAnswer:
-      'A strong essay plan will have a thesis along the lines of: "Through Birling, Priestley presents the capitalist ruling class as morally bankrupt -- privileged enough to cause suffering and powerful enough to escape accountability, at least for now." Each body paragraph should build a distinct dimension of this argument. Paragraph 1 might focus on dramatic irony (Birling\'s confident wrongness about the Titanic and the war positions him as a fool to the audience even before the Inspector arrives). Paragraph 4 should note that Birling\'s ending -- relief rather than remorse -- is Priestley\'s most damning indictment: those with the most power are the least likely to change. The introduction should introduce the historical context, the play\'s purpose, and the thesis without retelling the plot.',
+      "A strong essay plan will have a thesis along the lines of: \"Through Birling, Priestley presents the capitalist ruling class as morally bankrupt -- privileged enough to cause suffering and powerful enough to escape accountability, at least for now.\" Each body paragraph should build a distinct dimension of this argument. Paragraph 1 might focus on dramatic irony (Birling's confident wrongness about the Titanic and the war positions him as a fool to the audience even before the Inspector arrives). Paragraph 4 should note that Birling's ending -- relief rather than remorse -- is Priestley's most damning indictment: those with the most power are the least likely to change. The introduction should introduce the historical context, the play's purpose, and the thesis without retelling the plot.",
     extension:
       'Using your plan, write the most difficult body paragraph in full -- the one you are least confident about. After writing, annotate it to identify where you could add more analysis.',
   },
-];
+]
 
 // =============================================================================
-// LITERATURE — MACBETH (5 exercises)
+// LITERATURE - MACBETH (5 exercises)
 // =============================================================================
 
 const litMacbethExercises: WorkbookExercise[] = [
   {
     id: 'igcse-macbeth-ex01',
-    title: 'Context and Themes Overview: Shakespeare\'s World',
+    title: "Context and Themes Overview: Shakespeare's World",
     yearGroup: 'Year 10',
     termUnit: 'Lit: Macbeth',
     type: 'comprehension',
@@ -603,7 +629,7 @@ const litMacbethExercises: WorkbookExercise[] = [
     estimatedTime: '30 minutes',
     linkedObjectives: ['IGCSE.Lit.AO3', 'IGCSE.Lit.M1'],
     modelAnswer:
-      'The Divine Right of Kings held that monarchs were appointed by God: Duncan\'s murder is therefore not merely regicide but a cosmic crime against divine order, explaining the supernatural disorder that follows ("the heavens, as troubled with man\'s act, threatens his bloody stage"). The Gunpowder Plot gave Jacobean audiences an immediate frame of reference for treasonous conspiracy, making Macbeth a politically urgent play. Witchcraft was widely believed in and feared; James I wrote a treatise on demonology, making the witches\'s influence credible to a contemporary audience. The Great Chain of Being -- a divinely ordained hierarchy from God to angels to humans to animals -- is disrupted by Macbeth\'s ambition, and the play\'s animal imagery charts this disruption. Understanding context allows modern readers to grasp the full weight of Macbeth\'s actions, which to a Jacobean audience represented the unravelling of cosmic order.',
+      "The Divine Right of Kings held that monarchs were appointed by God: Duncan's murder is therefore not merely regicide but a cosmic crime against divine order, explaining the supernatural disorder that follows (\"the heavens, as troubled with man's act, threatens his bloody stage\"). The Gunpowder Plot gave Jacobean audiences an immediate frame of reference for treasonous conspiracy, making Macbeth a politically urgent play. Witchcraft was widely believed in and feared; James I wrote a treatise on demonology, making the witches's influence credible to a contemporary audience. The Great Chain of Being -- a divinely ordained hierarchy from God to angels to humans to animals -- is disrupted by Macbeth's ambition, and the play's animal imagery charts this disruption. Understanding context allows modern readers to grasp the full weight of Macbeth's actions, which to a Jacobean audience represented the unravelling of cosmic order.",
     extension:
       'Choose one contextual topic and research it in more depth. Write a paragraph of 120 words integrating the new information with close textual analysis.',
   },
@@ -616,7 +642,7 @@ const litMacbethExercises: WorkbookExercise[] = [
     difficulty: 'secure',
     instructions: [
       'Re-read Macbeth\'s soliloquy in Act 2 Scene 1 ("Is this a dagger which I see before me?").',
-      'Write a close analysis of the soliloquy covering: what the dagger symbolises at this point in the play; how Shakespeare uses questions and uncertainty to reveal Macbeth\'s mental state; the shift in tone from uncertainty to resolve by the soliloquy\'s end; how this soliloquy develops the audience\'s understanding of Macbeth\'s character.',
+      "Write a close analysis of the soliloquy covering: what the dagger symbolises at this point in the play; how Shakespeare uses questions and uncertainty to reveal Macbeth's mental state; the shift in tone from uncertainty to resolve by the soliloquy's end; how this soliloquy develops the audience's understanding of Macbeth's character.",
       'Write two analytical paragraphs (120-150 words each). Embed at least three quotations.',
     ],
     estimatedTime: '25 minutes',
@@ -628,14 +654,14 @@ const litMacbethExercises: WorkbookExercise[] = [
   },
   {
     id: 'igcse-macbeth-ex03',
-    title: 'Character Essay Paragraph: Lady Macbeth\'s Role',
+    title: "Character Essay Paragraph: Lady Macbeth's Role",
     yearGroup: 'Year 11',
     termUnit: 'Lit: Macbeth',
     type: 'essay-practice',
     difficulty: 'secure',
     instructions: [
       'Write one essay-quality paragraph in response to: "How does Shakespeare present Lady Macbeth as a powerful and dangerous character?"',
-      'Your paragraph must include: a clear topic sentence; at least two embedded quotations with analysis; a comment on dramatic technique (how does Shakespeare position the audience in relation to Lady Macbeth?); a link to the play\'s context.',
+      "Your paragraph must include: a clear topic sentence; at least two embedded quotations with analysis; a comment on dramatic technique (how does Shakespeare position the audience in relation to Lady Macbeth?); a link to the play's context.",
       'Focus on either Act 1 Scene 5 ("unsex me here") or Act 1 Scene 7 ("Was the hope drunk wherein you dressed yourself?").',
       'Aim for 150-180 words.',
     ],
@@ -655,7 +681,7 @@ const litMacbethExercises: WorkbookExercise[] = [
     difficulty: 'mastery',
     instructions: [
       'Choose one scene from Macbeth in which you feel tension is particularly effectively created (e.g. Act 2 Scene 2, Act 3 Scene 4, Act 5 Scene 1).',
-      'Write two analytical paragraphs analysing how Shakespeare uses dramatic techniques to create tension in that scene. You should comment on at least FOUR of the following: pace and rhythm of dialogue; use of silence or asides; imagery and its effect; dramatic irony; sound effects and staging (as indicated by stage directions); the audience\'s superior knowledge.',
+      "Write two analytical paragraphs analysing how Shakespeare uses dramatic techniques to create tension in that scene. You should comment on at least FOUR of the following: pace and rhythm of dialogue; use of silence or asides; imagery and its effect; dramatic irony; sound effects and staging (as indicated by stage directions); the audience's superior knowledge.",
       'Each paragraph should be 120-150 words.',
     ],
     estimatedTime: '25 minutes',
@@ -663,7 +689,7 @@ const litMacbethExercises: WorkbookExercise[] = [
     modelAnswer:
       'In Act 2 Scene 2 (immediately after the murder), Shakespeare creates tension through fragmented dialogue that enacts psychological disintegration. Where earlier scenes establish Macbeth as a man capable of long, structured soliloquies, his post-murder speech breaks into short, paranoid exclamations: "I have done the deed. Didst thou not hear a noise?" The abrupt shifts in topic -- from the murder itself, to the men in the next room, to the inability to say "Amen" -- reflect a mind that can no longer sustain rational thought. The offstage sounds of knocking at the gate add another layer of tension through sound: the audience hears what the characters hear, and the relentless knocking becomes both literally and symbolically inescapable. A mastery response identifies these techniques as working cumulatively rather than individually and analyses their combined effect on the audience\'s emotional experience.',
     extension:
-      'Write a director\'s note for the scene you analysed, explaining three specific staging choices you would make and how they would create or amplify tension for a modern audience.',
+      "Write a director's note for the scene you analysed, explaining three specific staging choices you would make and how they would create or amplify tension for a modern audience.",
   },
   {
     id: 'igcse-macbeth-ex05',
@@ -674,18 +700,24 @@ const litMacbethExercises: WorkbookExercise[] = [
     difficulty: 'mastery',
     instructions: [
       'You have 45 minutes to write a full essay in response to: "How does Shakespeare present Macbeth as a tragic figure?"',
-      'Spend 5 minutes planning: draft a thesis; plan 4 paragraphs covering Macbeth\'s nobility at the start, his fatal flaw (ambition), his psychological deterioration, and his end; note one key quotation per paragraph.',
+      "Spend 5 minutes planning: draft a thesis; plan 4 paragraphs covering Macbeth's nobility at the start, his fatal flaw (ambition), his psychological deterioration, and his end; note one key quotation per paragraph.",
       'In your essay, engage with the classical concept of tragedy (hamartia, hubris, nemesis) and apply it to Macbeth.',
       'Write approximately 600 words. End with a conclusion that makes an evaluative judgement about how successfully Shakespeare fulfils the conventions of tragedy.',
     ],
     estimatedTime: '45 minutes',
-    linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3', 'IGCSE.Lit.M2', 'IGCSE.Lit.M5'],
+    linkedObjectives: [
+      'IGCSE.Lit.AO1',
+      'IGCSE.Lit.AO2',
+      'IGCSE.Lit.AO3',
+      'IGCSE.Lit.M2',
+      'IGCSE.Lit.M5',
+    ],
     modelAnswer:
-      'A Band 5 essay will engage with the tension between Macbeth\'s moral responsibility and the external forces acting upon him (the witches, Lady Macbeth, his own ambition). The classical tragic template -- noble hero with a fatal flaw whose hubris leads to nemesis -- maps onto Macbeth, but a sophisticated response will note complications: the witches introduce the question of free will versus predetermination; Macbeth\'s crimes are too numerous and deliberate to invite straightforward audience sympathy; and yet his self-awareness ("I am in blood stepped in so far") is what makes him tragic rather than merely villainous. The conclusion should evaluate whether Shakespeare presents Macbeth as a figure to pity, condemn, or both, and why this ambiguity is central to the play\'s enduring power. Common weaknesses include retelling the plot, neglecting context, and failing to sustain a clear argument.',
+      "A Band 5 essay will engage with the tension between Macbeth's moral responsibility and the external forces acting upon him (the witches, Lady Macbeth, his own ambition). The classical tragic template -- noble hero with a fatal flaw whose hubris leads to nemesis -- maps onto Macbeth, but a sophisticated response will note complications: the witches introduce the question of free will versus predetermination; Macbeth's crimes are too numerous and deliberate to invite straightforward audience sympathy; and yet his self-awareness (\"I am in blood stepped in so far\") is what makes him tragic rather than merely villainous. The conclusion should evaluate whether Shakespeare presents Macbeth as a figure to pity, condemn, or both, and why this ambiguity is central to the play's enduring power. Common weaknesses include retelling the plot, neglecting context, and failing to sustain a clear argument.",
     extension:
       'After your essay is marked, identify the paragraph in which your analysis is weakest. Rewrite it, incorporating more precise language analysis and a reference to dramatic technique.',
   },
-];
+]
 
 // =============================================================================
 // ALL EXERCISES EXPORT
@@ -698,14 +730,13 @@ export const igcseWorkbookExercises: WorkbookExercise[] = [
   ...litOMAMExercises,
   ...litInspectorExercises,
   ...litMacbethExercises,
-];
+]
 
 // =============================================================================
-// HOMEWORK TASKS (24 total — 4 per paper/text)
+// HOMEWORK TASKS (24 total - 4 per paper/text)
 // =============================================================================
 
 export const igcseHomeworkTasks: HomeworkTask[] = [
-
   // ---------------------------------------------------------------------------
   // Lang P1 Homework (4 tasks)
   // ---------------------------------------------------------------------------
@@ -725,7 +756,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     estimatedTime: '30 minutes',
     linkedObjectives: ['IGCSE.Lang.AO1', 'IGCSE.Lang.AO2', 'IGCSE.Lang.R1', 'IGCSE.Lang.R2'],
     modelAnswer:
-      'Q1: four accurate, paraphrased points from the specified lines (1 mark each). Q2: a paragraph identifying at least two language techniques by name, embedding a quotation for each, and explaining the effect on the reader. A developing response names techniques and quotes; a secure response analyses the effect on the reader; a mastery response considers the cumulative effect and the writer\'s purpose.',
+      "Q1: four accurate, paraphrased points from the specified lines (1 mark each). Q2: a paragraph identifying at least two language techniques by name, embedding a quotation for each, and explaining the effect on the reader. A developing response names techniques and quotes; a secure response analyses the effect on the reader; a mastery response considers the cumulative effect and the writer's purpose.",
     extension:
       'Write a further paragraph for Q2 focusing on a technique you did not analyse in your original response.',
   },
@@ -737,7 +768,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     type: 'language-analysis',
     difficulty: 'developing',
     instructions: [
-      'Re-read the extract used in this week\'s lesson.',
+      "Re-read the extract used in this week's lesson.",
       'Write a response of approximately 200 words answering: "How does the writer use structure to interest and engage the reader?"',
       'You should comment on at least three of the following structural features: the opening and how it hooks the reader; the order in which ideas are introduced; any shift in perspective or tone; repetition of ideas or motifs; how the ending relates to the opening.',
       'Use the connectives "initially," "subsequently," "finally," and "overall" to signal your structural observations.',
@@ -809,7 +840,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     estimatedTime: '35 minutes',
     linkedObjectives: ['IGCSE.Lang.AO4', 'IGCSE.Lang.W1', 'IGCSE.Lang.W2'],
     modelAnswer:
-      'A strong response will open with a hook that immediately establishes the writer\'s perspective and its personal or immediate relevance to the reader. The body should sequence arguments logically, integrating rhetorical devices purposefully rather than mechanically. A common weakness is overuse of rhetorical questions: one per paragraph is usually sufficient. The letter should close with a clear, specific call to action addressed directly to the newspaper\'s readers or editor. Register should be formal but not stiff: the writer is a concerned community member, not a politician.',
+      "A strong response will open with a hook that immediately establishes the writer's perspective and its personal or immediate relevance to the reader. The body should sequence arguments logically, integrating rhetorical devices purposefully rather than mechanically. A common weakness is overuse of rhetorical questions: one per paragraph is usually sufficient. The letter should close with a clear, specific call to action addressed directly to the newspaper's readers or editor. Register should be formal but not stiff: the writer is a concerned community member, not a politician.",
     extension:
       'Identify two rhetorical devices you used in your letter and write a sentence explaining the specific effect each was intended to have on the reader.',
   },
@@ -912,7 +943,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'This task practises the structural discipline of comparison writing under no time pressure. A strong response will avoid the "all of Poem A, then all of Poem B" structure in the body paragraphs, weaving comparison through each paragraph instead. The thesis should make a specific comparative claim: "Both poets present memory as both a comfort and a burden, though while Poem A emphasises its consoling power, Poem B is more interested in its capacity to distort." The conclusion should synthesise rather than summarise, making an evaluative comment about which poem treats the theme more effectively and why.',
     extension:
-      'Write a further comparison paragraph focusing specifically on how the two poets\' use of FORM contributes to the theme of memory.',
+      "Write a further comparison paragraph focusing specifically on how the two poets' use of FORM contributes to the theme of memory.",
   },
   {
     id: 'igcse-hw-poetry-03',
@@ -924,7 +955,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     instructions: [
       'Write a full response to the following question: "How does the poet present the theme of identity in [your chosen poem]?"',
       'You have 30 minutes (simulating exam conditions).',
-      'Your response should: open with a clear thesis statement; analyse language, form, and structure; integrate context where relevant; end with a conclusion that evaluates the poem\'s overall effectiveness.',
+      "Your response should: open with a clear thesis statement; analyse language, form, and structure; integrate context where relevant; end with a conclusion that evaluates the poem's overall effectiveness.",
       'Write approximately 400 words.',
     ],
     estimatedTime: '30 minutes',
@@ -947,7 +978,13 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
       'Your essay must demonstrate: a clear comparative thesis; integrated comparison throughout (not one poem then the other); analysis of language, form, and structure; relevant contextual references; a conclusion with an overall evaluative judgement.',
     ],
     estimatedTime: '40 minutes',
-    linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3', 'IGCSE.Lit.P2', 'IGCSE.Lit.P5'],
+    linkedObjectives: [
+      'IGCSE.Lit.AO1',
+      'IGCSE.Lit.AO2',
+      'IGCSE.Lit.AO3',
+      'IGCSE.Lit.P2',
+      'IGCSE.Lit.P5',
+    ],
     modelAnswer:
       'A timed comparison essay under homework conditions allows students to practise the discipline of sustained comparison without full exam pressure. Band 5 responses will weave comparison through every paragraph, sustain a clear thesis, and demonstrate genuinely personal engagement with both poems. Common issues include: abandoning comparison mid-essay; strong analysis of one poem and weak analysis of the other; neglecting form and structure in favour of language; a conclusion that merely summarises. This task should be marked by the teacher and returned with a band score and two developmental targets.',
     extension:
@@ -992,7 +1029,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'A strong close reading notes the ritual quality of the dream-telling: George and Lennie have clearly rehearsed this many times ("You got it by heart, you can do it yourself"), suggesting the dream functions as a form of comfort rather than a realistic plan. The specific details Steinbeck includes -- rabbits, a garden, independence, "no trouble" -- are modest by any standard, yet seem impossibly out of reach for itinerant workers. The language shifts from the pragmatic and bleak when describing the ranch to lyrical and tender when describing the farm, signalling the dream\'s emotional rather than material significance. A mastery response notes that the dream is also a form of power: George uses it to manage Lennie and give their relationship structure.',
     extension:
-      'Write a paragraph comparing the dream\'s presentation in Chapter 1 to its final appearance at the novel\'s end. How does its meaning change?',
+      "Write a paragraph comparing the dream's presentation in Chapter 1 to its final appearance at the novel's end. How does its meaning change?",
   },
   {
     id: 'igcse-hw-omam-03',
@@ -1003,15 +1040,15 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'secure',
     instructions: [
       'Write one analytical paragraph in response to: "How does Steinbeck present women in Of Mice and Men?"',
-      'Your paragraph must focus on Curley\'s wife as the novel\'s only named female character and consider: how she is introduced and described; how other characters perceive and talk about her; the limited power she has and how she exercises it; Steinbeck\'s attitude toward her.',
+      "Your paragraph must focus on Curley's wife as the novel's only named female character and consider: how she is introduced and described; how other characters perceive and talk about her; the limited power she has and how she exercises it; Steinbeck's attitude toward her.",
       'Aim for 150 words with at least two embedded quotations.',
     ],
     estimatedTime: '25 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3'],
     modelAnswer:
-      'A strong paragraph will note the deliberate paradox in Steinbeck\'s presentation: Curley\'s wife is consistently described in sexualised, reductive terms by the male characters ("jail bait," "tart") yet her own words reveal loneliness, thwarted ambition, and intelligence. Steinbeck denies her a name -- she is defined entirely by her relationship to Curley -- which is itself a structural comment on women\'s powerlessness in a patriarchal society. A mastery response considers whether Steinbeck critiques the male characters\' attitudes toward her or whether the novel\'s own treatment of her is also reductive. The question of authorial sympathy is genuinely contestable and should be engaged with rather than resolved too quickly.',
+      "A strong paragraph will note the deliberate paradox in Steinbeck's presentation: Curley's wife is consistently described in sexualised, reductive terms by the male characters (\"jail bait,\" \"tart\") yet her own words reveal loneliness, thwarted ambition, and intelligence. Steinbeck denies her a name -- she is defined entirely by her relationship to Curley -- which is itself a structural comment on women's powerlessness in a patriarchal society. A mastery response considers whether Steinbeck critiques the male characters' attitudes toward her or whether the novel's own treatment of her is also reductive. The question of authorial sympathy is genuinely contestable and should be engaged with rather than resolved too quickly.",
     extension:
-      'Write a further paragraph arguing that Curley\'s wife is more complex than a simple victim. Use evidence from her scene with Lennie in the barn to support your argument.',
+      "Write a further paragraph arguing that Curley's wife is more complex than a simple victim. Use evidence from her scene with Lennie in the barn to support your argument.",
   },
   {
     id: 'igcse-hw-omam-04',
@@ -1022,13 +1059,13 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'mastery',
     instructions: [
       'Under timed conditions (45 minutes), write a full essay in response to: "How does Steinbeck present the theme of the American Dream in Of Mice and Men?"',
-      'Plan for 5 minutes: draft a thesis; plan 3-4 paragraphs covering George and Lennie\'s dream, Candy\'s investment in the dream, Crooks\'s response to the dream, and the dream\'s destruction.',
+      "Plan for 5 minutes: draft a thesis; plan 3-4 paragraphs covering George and Lennie's dream, Candy's investment in the dream, Crooks's response to the dream, and the dream's destruction.",
       'Write approximately 600 words. Include contextual references to 1930s America.',
     ],
     estimatedTime: '45 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3'],
     modelAnswer:
-      'A Band 5 essay will present the American Dream not as something individuals fail to achieve due to personal weakness but as something the novel\'s social and economic context makes structurally impossible for the powerless. George and Lennie\'s dream is the novel\'s emotional core, but it is also ironic: in the wealthiest country in the world during the Depression, even a modest dream of self-sufficiency is out of reach. Candy\'s investment shows how the dream spreads and grows more fragile; Crooks\'s momentary engagement and cynical withdrawal is the novel\'s most honest commentary on who the American Dream was never designed to include. The conclusion should note that Steinbeck is not dismissing the value of dreams but exposing the cruelty of a system that allows them to survive long enough to be destroyed.',
+      "A Band 5 essay will present the American Dream not as something individuals fail to achieve due to personal weakness but as something the novel's social and economic context makes structurally impossible for the powerless. George and Lennie's dream is the novel's emotional core, but it is also ironic: in the wealthiest country in the world during the Depression, even a modest dream of self-sufficiency is out of reach. Candy's investment shows how the dream spreads and grows more fragile; Crooks's momentary engagement and cynical withdrawal is the novel's most honest commentary on who the American Dream was never designed to include. The conclusion should note that Steinbeck is not dismissing the value of dreams but exposing the cruelty of a system that allows them to survive long enough to be destroyed.",
     extension:
       'After marking, identify the point in your essay where your argument is strongest. Write a sentence explaining why that paragraph is particularly effective.',
   },
@@ -1038,14 +1075,14 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
   // ---------------------------------------------------------------------------
   {
     id: 'igcse-hw-inspector-01',
-    title: 'Character Study: Mr Birling\'s Values',
+    title: "Character Study: Mr Birling's Values",
     yearGroup: 'Year 10',
     termUnit: 'Lit: An Inspector Calls',
     type: 'close-reading',
     difficulty: 'developing',
     instructions: [
       'Re-read Mr Birling\'s speech at the start of Act One (from "But what so many of you don\'t seem to understand now, when things are so much easier, is that a man has to make his own way...").',
-      'Write 200 words analysing how Priestley uses Mr Birling\'s language to reveal his values and the play\'s themes.',
+      "Write 200 words analysing how Priestley uses Mr Birling's language to reveal his values and the play's themes.",
       'Consider: the content of his argument; the language and register he uses; the dramatic irony created by his confident predictions; what Priestley wants the audience to think of Birling.',
     ],
     estimatedTime: '25 minutes',
@@ -1053,19 +1090,19 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'Birling\'s speech is a vehicle for dramatic irony: his confident dismissal of "cranks" who talk about community responsibility, his certainty that there will be no war, and his praise for the Titanic as "unsinkable" all mark him out as a man whose self-confidence vastly exceeds his wisdom. Priestley\'s 1945 audience, with the benefit of hindsight, would find his pronouncements laughable -- and dangerously so, because men like Birling were in charge when those catastrophes occurred. His register -- authoritative, paternal, self-congratulatory -- is the register of a man who has never been seriously challenged, which is precisely what the Inspector will do.',
     extension:
-      'Write a paragraph predicting how Birling\'s character might respond to the Inspector\'s final message. What does his likely response reveal about the limits of his ability to change?',
+      "Write a paragraph predicting how Birling's character might respond to the Inspector's final message. What does his likely response reveal about the limits of his ability to change?",
   },
   {
     id: 'igcse-hw-inspector-02',
-    title: 'Dramatic Technique: The Inspector\'s First Entry',
+    title: "Dramatic Technique: The Inspector's First Entry",
     yearGroup: 'Year 10',
     termUnit: 'Lit: An Inspector Calls',
     type: 'language-analysis',
     difficulty: 'developing',
     instructions: [
-      'Re-read the stage directions and dialogue surrounding the Inspector\'s first entry in Act One.',
+      "Re-read the stage directions and dialogue surrounding the Inspector's first entry in Act One.",
       'Write an analytical paragraph (120-150 words) explaining how Priestley uses dramatic techniques to immediately establish the Inspector as a powerful and threatening presence.',
-      'Comment on at least two of: the stage directions describing his appearance; the contrast between the Inspector\'s arrival and the mood before he enters; his choice of words in his opening lines; his effect on the Birling family.',
+      "Comment on at least two of: the stage directions describing his appearance; the contrast between the Inspector's arrival and the mood before he enters; his choice of words in his opening lines; his effect on the Birling family.",
     ],
     estimatedTime: '20 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.I3'],
@@ -1083,9 +1120,9 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'secure',
     instructions: [
       'Plan and write the introduction and TWO body paragraphs of an essay in response to: "How does Priestley explore the theme of social responsibility in An Inspector Calls?"',
-      'Your introduction should state the play\'s central argument and introduce your thesis.',
-      'Paragraph 1: focus on the Inspector as a vehicle for Priestley\'s message.',
-      'Paragraph 2: focus on the contrast between Sheila\'s and Mr Birling\'s responses to the Inspector.',
+      "Your introduction should state the play's central argument and introduce your thesis.",
+      "Paragraph 1: focus on the Inspector as a vehicle for Priestley's message.",
+      "Paragraph 2: focus on the contrast between Sheila's and Mr Birling's responses to the Inspector.",
       'Each body paragraph should be 130-160 words.',
     ],
     estimatedTime: '40 minutes',
@@ -1093,7 +1130,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'A strong introduction for this essay will note the historical context (written 1945, set 1912), establish Priestley\'s socialist political beliefs, and state a clear thesis: "Priestley uses An Inspector Calls as a vehicle for his socialist argument that the powerful have a moral duty to accept responsibility for the suffering their actions cause, and that failure to do so has catastrophic consequences for society." The Inspector paragraph should analyse how Priestley uses the Inspector\'s questioning technique, language, and final speech to embody collective responsibility. The Sheila/Birling contrast paragraph should analyse the generational argument: Sheila represents the possibility of change; Birling represents entrenched self-interest.',
     extension:
-      'Write the remaining two body paragraphs of the essay: one on Gerald Croft\'s ambiguous position; one on the play\'s cyclical ending.',
+      "Write the remaining two body paragraphs of the essay: one on Gerald Croft's ambiguous position; one on the play's cyclical ending.",
   },
   {
     id: 'igcse-hw-inspector-04',
@@ -1104,13 +1141,13 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'mastery',
     instructions: [
       'Under timed conditions (45 minutes), write a full response to the following: "Read the extract from An Inspector Calls. Starting with this extract, explore how Priestley presents the character of Eric Birling in the play as a whole."',
-      'In your response you should: analyse the extract in detail, commenting on language, form, and structure; go beyond the extract to consider Eric\'s role in the whole play; consider Priestley\'s intentions and the historical context.',
+      "In your response you should: analyse the extract in detail, commenting on language, form, and structure; go beyond the extract to consider Eric's role in the whole play; consider Priestley's intentions and the historical context.",
       'Write approximately 600-700 words.',
     ],
     estimatedTime: '45 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3'],
     modelAnswer:
-      'A Band 5 extract-based response will use the extract as a starting point rather than the entirety of the response. Close analysis of the extract should note how Eric\'s language, behaviour, and interaction with other characters reveal his internal conflict. Beyond the extract, a strong essay will trace Eric\'s arc: from the uncomfortable, drink-dependent young man at the opening to the character who most fully accepts responsibility by the play\'s end. His relationship to Eva Smith involves exploitation of power, but his genuine remorse distinguishes him from his parents. A mastery response will note that Eric\'s social and psychological failings are themselves products of the Birling family\'s environment, complicating simple moral judgement.',
+      "A Band 5 extract-based response will use the extract as a starting point rather than the entirety of the response. Close analysis of the extract should note how Eric's language, behaviour, and interaction with other characters reveal his internal conflict. Beyond the extract, a strong essay will trace Eric's arc: from the uncomfortable, drink-dependent young man at the opening to the character who most fully accepts responsibility by the play's end. His relationship to Eva Smith involves exploitation of power, but his genuine remorse distinguishes him from his parents. A mastery response will note that Eric's social and psychological failings are themselves products of the Birling family's environment, complicating simple moral judgement.",
     extension:
       'After marking, compare your performance on this task to your previous timed practice. Write two sentences: one identifying improvement and one identifying a remaining target.',
   },
@@ -1127,7 +1164,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'foundation',
     instructions: [
       'Re-read Act 1 Scenes 1-3 of Macbeth.',
-      'Answer the following questions: How is Macbeth first introduced before he appears on stage -- what do we learn from the Captain\'s report? (4 marks); What is the dramatic effect of the witches\' prophecies on Macbeth -- how does he react and what does this suggest? (4 marks); Why does Shakespeare introduce Macbeth as a hero before revealing his flaws? What effect does this create? (4 marks).',
+      "Answer the following questions: How is Macbeth first introduced before he appears on stage -- what do we learn from the Captain's report? (4 marks); What is the dramatic effect of the witches' prophecies on Macbeth -- how does he react and what does this suggest? (4 marks); Why does Shakespeare introduce Macbeth as a hero before revealing his flaws? What effect does this create? (4 marks).",
       'Write in full sentences.',
     ],
     estimatedTime: '25 minutes',
@@ -1154,7 +1191,7 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     modelAnswer:
       'The triple repetition of "tomorrow" at the soliloquy\'s opening enacts the very tedium it describes: time has lost meaning and each day is merely a mechanical repetition of the last. The metaphors are strikingly nihilistic: life is "a tale / Told by an idiot, full of sound and fury, / Signifying nothing." The image of the "poor player / That struts and frets his hour upon the stage" connects to the play\'s theatrical context -- Shakespeare drawing attention to performance itself -- but in Macbeth\'s mouth it expresses total disillusionment. For a man who began the play full of ambition and agency, this speech represents psychological collapse: the realisation that power acquired through murder brings no satisfaction. A mastery response connects this soliloquy to earlier ones, noting the trajectory from moral conflict to moral emptiness.',
     extension:
-      'Compare this soliloquy to Macbeth\'s first soliloquy in Act 1 Scene 7 ("If it were done when \'tis done..."). Write a paragraph on how Macbeth\'s voice has changed between these two moments.',
+      "Compare this soliloquy to Macbeth's first soliloquy in Act 1 Scene 7 (\"If it were done when 'tis done...\"). Write a paragraph on how Macbeth's voice has changed between these two moments.",
   },
   {
     id: 'igcse-hw-macbeth-03',
@@ -1165,14 +1202,14 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'secure',
     instructions: [
       'Write two analytical paragraphs in response to: "How does Shakespeare present ambition as a destructive force in Macbeth?"',
-      'Paragraph 1: focus on Macbeth\'s ambition and how it is presented through language and soliloquy.',
-      'Paragraph 2: focus on Lady Macbeth\'s ambition and how it differs from, yet complements, Macbeth\'s.',
+      "Paragraph 1: focus on Macbeth's ambition and how it is presented through language and soliloquy.",
+      "Paragraph 2: focus on Lady Macbeth's ambition and how it differs from, yet complements, Macbeth's.",
       'Each paragraph should be 130-160 words and include at least two embedded quotations.',
     ],
     estimatedTime: '35 minutes',
     linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3'],
     modelAnswer:
-      'Paragraph 1 should identify that Shakespeare presents Macbeth\'s ambition as already present before the witches speak -- they catalyse rather than create it. The "vaulting ambition, which o\'erleaps itself" speech names his own fatal flaw with devastating self-awareness, suggesting the tragedy lies not in ignorance but in the inability to resist desire even when its destructiveness is known. Paragraph 2 should note that Lady Macbeth\'s ambition is channelled through Macbeth rather than exercised directly -- a product of her gender and social position -- and is expressed through the more disturbing language of self-dehumanisation ("unsex me here"). The complementary nature of their ambitions means each enables the other\'s worst impulses. A mastery response notes that both characters\' ambitions ultimately consume them, reinforcing the play\'s moral structure.',
+      "Paragraph 1 should identify that Shakespeare presents Macbeth's ambition as already present before the witches speak -- they catalyse rather than create it. The \"vaulting ambition, which o'erleaps itself\" speech names his own fatal flaw with devastating self-awareness, suggesting the tragedy lies not in ignorance but in the inability to resist desire even when its destructiveness is known. Paragraph 2 should note that Lady Macbeth's ambition is channelled through Macbeth rather than exercised directly -- a product of her gender and social position -- and is expressed through the more disturbing language of self-dehumanisation (\"unsex me here\"). The complementary nature of their ambitions means each enables the other's worst impulses. A mastery response notes that both characters' ambitions ultimately consume them, reinforcing the play's moral structure.",
     extension:
       'Write a third paragraph arguing that ambition is not entirely negative in the play -- consider moments where it is presented as a force for courage or resolution.',
   },
@@ -1185,14 +1222,20 @@ export const igcseHomeworkTasks: HomeworkTask[] = [
     difficulty: 'mastery',
     instructions: [
       'Under timed conditions (45 minutes), write a full essay in response to: "How far is Macbeth\'s tragedy the result of his own choices rather than the influence of external forces?"',
-      'Plan for 5 minutes. In your essay, consider: the role of the witches and whether they cause or predict Macbeth\'s actions; Lady Macbeth\'s manipulation; Macbeth\'s own will and moral awareness; the Jacobean concept of free will versus fate.',
+      "Plan for 5 minutes. In your essay, consider: the role of the witches and whether they cause or predict Macbeth's actions; Lady Macbeth's manipulation; Macbeth's own will and moral awareness; the Jacobean concept of free will versus fate.",
       'Write approximately 600-700 words. Include relevant contextual references.',
     ],
     estimatedTime: '45 minutes',
-    linkedObjectives: ['IGCSE.Lit.AO1', 'IGCSE.Lit.AO2', 'IGCSE.Lit.AO3', 'IGCSE.Lit.M1', 'IGCSE.Lit.M5'],
+    linkedObjectives: [
+      'IGCSE.Lit.AO1',
+      'IGCSE.Lit.AO2',
+      'IGCSE.Lit.AO3',
+      'IGCSE.Lit.M1',
+      'IGCSE.Lit.M5',
+    ],
     modelAnswer:
       'This essay question is designed to generate genuinely contested argument. A strong thesis will stake a position rather than hedging: "While the witches and Lady Macbeth are crucial catalysts, Shakespeare makes clear through Macbeth\'s soliloquies that the choice to act is always his own, making his tragedy ultimately one of moral failure rather than external victimisation." The witches do not instruct Macbeth to kill Duncan -- that leap is his. Lady Macbeth manipulates but cannot compel. His soliloquies demonstrate moral awareness throughout, which is what makes the tragedy profound rather than merely eventful. A mastery response engages with the Jacobean context of free will: a Protestant audience would believe humans were fully responsible for their moral choices regardless of temptation. The conclusion should evaluate the balance of responsibility rather than simply summarising the body paragraphs.',
     extension:
       'After marking, identify the paragraph where you engage most effectively with context. Write a sentence explaining exactly how that contextual reference deepens the argument rather than simply adding information.',
   },
-];
+]

@@ -1164,7 +1164,7 @@ export default function StudentDrilldownPage() {
         <GlassPanel accent="teal" className="mt-6 p-6">
           <div className="mb-4 flex items-center gap-2">
             <TrendingUp className="h-4 w-4 text-teal-400" />
-            <PanelEyebrow>Weekly Quiz Scores — Last 8 Weeks</PanelEyebrow>
+            <PanelEyebrow>Weekly Quiz Scores - Last 8 Weeks</PanelEyebrow>
           </div>
 
           {weeklyChartData.length > 0 ? (

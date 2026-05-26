@@ -9,11 +9,11 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'On Finding a Small Fly Crushed in a Book — Charles Tennyson Turner | Cambridge IGCSE 0475',
+      'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
     description: 'Study guide for ',
   },
   title:
-    'On Finding a Small Fly Crushed in a Book — Charles Tennyson Turner | Cambridge IGCSE 0475',
+    'On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner | Cambridge IGCSE 0475',
   description:
     "Study guide for 'On Finding a Small Fly Crushed in a Book' by Charles Tennyson Turner (1873). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
   alternates: {
@@ -26,7 +26,7 @@ export default function OnFindingASmallFlyCrushedInABookPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
-        name="On Finding a Small Fly Crushed in a Book — Charles Tennyson Turner (Cambridge IGCSE 0475)"
+        name="On Finding a Small Fly Crushed in a Book - Charles Tennyson Turner (Cambridge IGCSE 0475)"
         description="Study guide stub for 'On Finding a Small Fly Crushed in a Book' by Charles Tennyson Turner (1873). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4."
       />
       <BreadcrumbJsonLd

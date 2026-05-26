@@ -1,10 +1,10 @@
 // ─── Cambridge IGCSE (9-1) First Language English (0990) Mark Scheme ────────
-// Paper 1: Reading — 2 hours, 40 marks
-// Paper 2: Directed Writing & Composition — 2 hours, 65 marks
+// Paper 1: Reading - 2 hours, 40 marks
+// Paper 2: Directed Writing & Composition - 2 hours, 65 marks
 //
 // 0990 is the "(9-1)" graded variant of 0500 First Language English. The
 // syllabus content, papers, assessment objectives (R1-R5, W1-W5) and band
-// descriptors are IDENTICAL to 0500 — only the reported grading scale
+// descriptors are IDENTICAL to 0500 - only the reported grading scale
 // (9-1 vs A*-G) differs. We therefore re-export the same band/AO/question
 // structures from 0500 with a board label of "Cambridge (9-1)" and new
 // canonical IDs so the marking engine can resolve either syllabus by id.

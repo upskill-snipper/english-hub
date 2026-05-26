@@ -5,7 +5,7 @@
  * implementation hard-coded fabricated named testimonials ("Dr. Sarah
  * Mitchell", "Al Rayyan International School", etc.) and a "Trusted by
  * Schools" banner. Per the anti-hallucination contract, invented
- * testimonials/social proof must never ship — even from a component
+ * testimonials/social proof must never ship - even from a component
  * that is not currently mounted. Testimonials must be verified,
  * attributable, and used only with explicit consent.
  *
@@ -24,7 +24,7 @@ interface Testimonial {
   stars: number
 }
 
-// Intentionally empty — no fabricated social proof. See header note.
+// Intentionally empty - no fabricated social proof. See header note.
 const testimonials: Testimonial[] = []
 
 function StarRow({ count }: { count: number }) {
@@ -61,7 +61,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 }
 
 export function SchoolTestimonials() {
-  // No verified, consented testimonials yet — render nothing rather than
+  // No verified, consented testimonials yet - render nothing rather than
   // ship fabricated social proof (audit I7 / Claims Policy §1).
   if (testimonials.length === 0) return null
 

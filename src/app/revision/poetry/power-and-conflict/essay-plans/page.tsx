@@ -15,14 +15,14 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Essay Plans – Power & Conflict Poetry | The English Hub',
+    title: 'Essay Plans - Power & Conflict Poetry | The English Hub',
     description:
       'Ten ready-made essay plans for AQA Power & Conflict poetry comparison questions. Grade 5 and Grade 9 approaches with full PEEL paragraphs.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/essay-plans',
   },
-  title: 'Essay Plans – Power & Conflict Poetry',
+  title: 'Essay Plans - Power & Conflict Poetry',
   description:
     'Ten ready-made essay plans for AQA Power & Conflict poetry comparison questions. Grade 5 and Grade 9 approaches with full PEEL paragraphs.',
 }
@@ -263,7 +263,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'War Photographer',
         analysis1:
           'The image developing in the darkroom forces the photographer to re-encounter suffering he witnessed. The verb "twist" suggests pain being replayed, as though the victim is dying again in front of him. Duffy conveys the photographer\'s inability to separate professional detachment from human empathy -- the images will not let him forget.',
-        // VERIFY: previous quote "the world had tilted" is FABRICATED — does not appear in Duffy's War Photographer. Replaced with verified line from the same poem.
+        // VERIFY: previous quote "the world had tilted" is FABRICATED - does not appear in Duffy's War Photographer. Replaced with verified line from the same poem.
         evidence2:
           '"He has a job to do. Solutions slop in trays / beneath his hands, which did not tremble then / though seem to now"',
         evidence2poem: 'Poppies',
@@ -325,12 +325,12 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'Checking Out Me History',
         analysis1:
           'The pronoun "Dem" creates a clear division between the powerful (the colonial curriculum) and the oppressed speaker. The repetition of "tell me" emphasises the one-directional imposition of a selective version of history. The use of Creole dialect is itself an act of resistance -- Agard refuses to write in Standard English, asserting his Caribbean identity through language.',
-        // VERIFY: previous evidence quote "They blocked the sunlight in my city of words" is FABRICATED — does not appear in Rumens's The Émigrée. Replaced with verified line.
+        // VERIFY: previous evidence quote "They blocked the sunlight in my city of words" is FABRICATED - does not appear in Rumens's The Émigrée. Replaced with verified line.
         evidence2:
           '"It may be at war, it may be sick with tyrants, / but I am branded by an impression of sunlight"',
         evidence2poem: 'The Émigrée',
         analysis2:
-          'Rumens balances the speaker\'s acknowledgment of political darkness ("at war", "sick with tyrants") against the unshakeable refrain of "sunlight". The metaphor "branded" presents memory as something painful but indelible — like a cattle brand burnt into her. External force can destroy the city, but it cannot remove the impression of light from her.',
+          'Rumens balances the speaker\'s acknowledgment of political darkness ("at war", "sick with tyrants") against the unshakeable refrain of "sunlight". The metaphor "branded" presents memory as something painful but indelible - like a cattle brand burnt into her. External force can destroy the city, but it cannot remove the impression of light from her.',
         link: 'Both poets use pronouns ("Dem"/"They") to identify oppressive forces that threaten individual identity. Both speakers resist these forces -- Agard through angry reclamation, Rumens\'s speaker through stubborn, luminous memory.',
       },
       {
@@ -339,11 +339,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'Checking Out Me History',
         analysis1:
           'The metaphor of blindfolding is violent and visceral. The education system does not simply fail to teach -- it actively "bandages" and "blinds", suggesting deliberate suppression. The repetition of "me own" asserts ownership and challenges the theft of heritage. Agard presents the recovery of identity as removing a blindfold, an act of seeing clearly for the first time.',
-        // VERIFY: previous evidence quote "my city takes me dancing through the city of walls" is FABRICATED — actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée.
+        // VERIFY: previous evidence quote "my city takes me dancing through the city of walls" is FABRICATED - actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée.
         evidence2: '"My city takes me dancing through the streets"',
         evidence2poem: 'The Émigrée',
         analysis2:
-          'Rumens personifies the lost city as a dance partner. The remembered homeland actively embraces and accompanies the speaker — a private, joyful intimacy that political force cannot reach. The personification of memory "dancing" suggests defiance: the remembered homeland is so powerful it can overcome present-day oppression. Identity rooted in memory proves stronger than political reality.',
+          'Rumens personifies the lost city as a dance partner. The remembered homeland actively embraces and accompanies the speaker - a private, joyful intimacy that political force cannot reach. The personification of memory "dancing" suggests defiance: the remembered homeland is so powerful it can overcome present-day oppression. Identity rooted in memory proves stronger than political reality.',
         link: "Both poets structure their poems around contrasts: colonial curriculum vs. suppressed heritage; remembered city vs. present reality. In both cases, the speaker's true identity exists in the suppressed or remembered version, not the imposed one.",
       },
       {
@@ -392,7 +392,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence2: '"Half a league, half a league, / Half a league onward"',
         evidence2poem: 'The Charge of the Light Brigade',
         analysis2:
-          'Tennyson\'s driving rhythm — predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") — mimics the thundering hooves of cavalry. The repetition and end-stopped lines create momentum and a sense of unstoppable forward movement. Unlike Hughes\'s chaos, this rhythm is ordered and purposeful -- it glorifies the charge as collective heroism. The regularity of the metre reflects the disciplined obedience of the soldiers.',
+          'Tennyson\'s driving rhythm - predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - mimics the thundering hooves of cavalry. The repetition and end-stopped lines create momentum and a sense of unstoppable forward movement. Unlike Hughes\'s chaos, this rhythm is ordered and purposeful -- it glorifies the charge as collective heroism. The regularity of the metre reflects the disciplined obedience of the soldiers.',
         link: "Hughes uses broken rhythm to convey individual terror; Tennyson uses driving rhythm to convey collective heroism. The contrast reveals how poetic technique shapes the reader's emotional response to conflict.",
       },
       {
@@ -411,7 +411,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         point:
           'Both poets present the physical reality of battle, but with different levels of intimacy.',
-        // VERIFY: previous quote "his foot hung like a survey of the field" is FABRICATED — actual Hughes line is "his foot hung like / Statuary in mid-stride".
+        // VERIFY: previous quote "his foot hung like a survey of the field" is FABRICATED - actual Hughes line is "his foot hung like / Statuary in mid-stride".
         evidence1: '"his foot hung like / Statuary in mid-stride"',
         evidence1poem: 'Bayonet Charge',
         analysis1:
@@ -583,7 +583,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'Ozymandias',
         analysis1:
           'Ozymandias\'s inscription is a command to future generations to admire his achievements. The dramatic irony -- "Nothing beside remains" -- devastates this ambition. Shelley presents the desire for permanent legacy as fundamentally deluded. The capitalized "Works" emphasizes the grandiosity of the claim.',
-        // VERIFY: previous quote "drift through fingertips" is FABRICATED — does not appear in Dharker's Tissue. Replaced with verified text fragment.
+        // VERIFY: previous quote "drift through fingertips" is FABRICATED - does not appear in Dharker's Tissue. Replaced with verified text fragment.
         evidence2: '"Fine slips from grocery shops"',
         evidence2poem: 'Tissue',
         analysis2:
@@ -658,7 +658,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         evidence1poem: 'The Charge of the Light Brigade',
         analysis1:
           'Tennyson\'s final imperative commands the reader to honour the soldiers. The adjective "Noble" and the exclamation mark create an unambiguous call to admiration. Yet Tennyson also acknowledges "Some one had blunder\'d" -- the charge was a mistake. This tension between celebrating obedience and acknowledging futility runs through the poem and complicates the surface message of heroism.',
-        // VERIFY: previous quote "which was the better way to die" — actual Garland phrasing is "which had been the better way to die". Corrected.
+        // VERIFY: previous quote "which was the better way to die" - actual Garland phrasing is "which had been the better way to die". Corrected.
         evidence2: '"which had been the better way to die"',
         evidence2poem: 'Kamikaze',
         analysis2:
@@ -917,7 +917,7 @@ export default function EssayPlansPage() {
             size="lg"
             disabled
             aria-disabled="true"
-            title="Comparison guide — coming soon"
+            title="Comparison guide - coming soon"
           >
             Comparison guide (coming soon)
             <ArrowRight className="size-4" />
@@ -927,7 +927,7 @@ export default function EssayPlansPage() {
             size="lg"
             disabled
             aria-disabled="true"
-            title="Themes — coming soon"
+            title="Themes - coming soon"
           >
             Explore themes (coming soon)
             <ArrowRight className="size-4" />

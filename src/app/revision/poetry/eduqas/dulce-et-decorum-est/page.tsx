@@ -110,7 +110,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: 'Gas! GAS! Quick, boys!—An ecstasy of fumbling,',
+      text: 'Gas! GAS! Quick, boys!-An ecstasy of fumbling,',
       annotations: [
         {
           type: 'Capitalisation',
@@ -280,7 +280,7 @@ const dulce: PoemData = {
       ],
     },
     {
-      text: 'Of vile, incurable sores on innocent tongues,—',
+      text: 'Of vile, incurable sores on innocent tongues,-',
       annotations: [
         {
           type: 'Imagery',
@@ -364,7 +364,7 @@ const dulce: PoemData = {
     <p>قصيدة "Dulce et Decorum Est" مكتوبة في أكتوبر 1917 لمّا كان Owen يتعالج من صدمة القذائف (shell shock) في مستشفى Craiglockhart الحربي في إدنبرة. أُرسل إلى هناك بعد سلسلة من التجارب الصادمة في الخنادق.</p>
 
     <h3>العنوان</h3>
-    <p>العنوان من الشاعر الروماني <strong>Horace</strong>: "Dulce et decorum est pro patria mori" — "حلوٌ ولائقٌ أن يموت المرء من أجل وطنه". هاي اللازمة اللاتينية كانت تُستخدم على نطاق واسع في الدعاية الوطنية لتشجيع الشباب على الانخراط في الجيش. Owen يسمّيها "the old Lie".</p>
+    <p>العنوان من الشاعر الروماني <strong>Horace</strong>: "Dulce et decorum est pro patria mori" - "حلوٌ ولائقٌ أن يموت المرء من أجل وطنه". هاي اللازمة اللاتينية كانت تُستخدم على نطاق واسع في الدعاية الوطنية لتشجيع الشباب على الانخراط في الجيش. Owen يسمّيها "the old Lie".</p>
 
     <h3>غاز الكلور</h3>
     <p>الأسلحة الكيميائية (الكلور، الفوسجين، غاز الخردل) استُخدمت لأول مرّة في الحرب العالمية الأولى وسبّبت ميتات مرعبة. غاز الكلور يهاجم الرئتين، ويغرّق الضحية في سوائل جسده. الجنود كان لازم يلبسون أقنعتهم خلال ثواني من أي هجوم.</p>
@@ -388,11 +388,11 @@ Overall meaning: The poem is a savage attack on the patriotic propaganda that se
 
   summaryAr: `المقطع 1 - الإرهاق: الجنود يتراجعون من الخط الأمامي وهم يترنّحون "like old beggars". مرهَقين، عرجاء، عميان، يمشون نص نائمين في الطين. بعضهم فقد جزماته. وما يسمعون قذائف الغاز اللي تنزل خلفهم.
 
-المقطع 2 - هجوم الغاز: فجأة صرخة — "Gas! GAS!" الرجال يتدافعون عشان يلبسون أقنعة الغاز. بس واحد ما يقدر يلبس. ومن وراء زجاج قناعه المضبّب، المتكلّم يشوف الجندي يغرق في الغاز السام كأنه "under a green sea".
+المقطع 2 - هجوم الغاز: فجأة صرخة - "Gas! GAS!" الرجال يتدافعون عشان يلبسون أقنعة الغاز. بس واحد ما يقدر يلبس. ومن وراء زجاج قناعه المضبّب، المتكلّم يشوف الجندي يغرق في الغاز السام كأنه "under a green sea".
 
 المقطع 3 (قصير) - الصدمة: المتكلّم يكشف إن هاي اللحظة ترجع في أحلامه. الرجل المحتضر "plunges at me, guttering, choking, drowning". الصدمة دائمة.
 
-المقطع 4 - المخاطبة المباشرة: Owen يخاطب القارئ (وبالأخص اللي يروّجون للحرب). يدعونا عشان نشهد جثة الجندي الميت وهي ترمى في عربة. يصف الجثة بتفاصيل مرعبة — العيون اللي تتلوّى، الدم اللي يتغرغر، الرئتين الفاسدتين. ويختم إن أي واحد يشوف هاي المنظر ما راح يحكي لشباب الجنود "the old Lie": إنه حلوٌ ولائق أن يموت الواحد من أجل وطنه.
+المقطع 4 - المخاطبة المباشرة: Owen يخاطب القارئ (وبالأخص اللي يروّجون للحرب). يدعونا عشان نشهد جثة الجندي الميت وهي ترمى في عربة. يصف الجثة بتفاصيل مرعبة - العيون اللي تتلوّى، الدم اللي يتغرغر، الرئتين الفاسدتين. ويختم إن أي واحد يشوف هاي المنظر ما راح يحكي لشباب الجنود "the old Lie": إنه حلوٌ ولائق أن يموت الواحد من أجل وطنه.
 
 المعنى العام: القصيدة هجوم وحشي على الدعاية الوطنية اللي أرسلت الشباب ليموتون في الحرب العالمية الأولى. Owen يستخدم صور بصرية فاحشة وقبيحة عشان يفضح الفجوة بين المثال الرومانسي للحرب ورعبها الفعلي. والقصيدة حجة أخلاقية: اللي يروّجون للحرب يكذبون على الأطفال.`,
 
@@ -416,23 +416,23 @@ Direct address: The poem ends by speaking directly to the reader ("My friend"). 
 
 Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unpleasant vowel sounds. The poem is deliberately ugly to mirror the ugliness of war.`,
 
-  formAndStructureAr: `الشكل: أربع مقاطع متفاوتة الطول، بنية فضفاضة. الشكل يعكس فوضى الحرب — ما يقدر يُحتوى بنظام.
+  formAndStructureAr: `الشكل: أربع مقاطع متفاوتة الطول، بنية فضفاضة. الشكل يعكس فوضى الحرب - ما يقدر يُحتوى بنظام.
 
 نظام القافية: قافية متناوبة ABAB طول القصيدة، بس فيها اضطرابات مقصودة وقوافي شبه (pararhyme). القافية تعطي نظام متوتّر تحت المحتوى الفوضوي.
 
 الوزن: غالباً iambic pentameter، بس Owen يكسر الوزن كثير عشان يعكس واقع الخنادق المضطرب. الإيقاع يتعثّر ويتهادى مثل الجنود.
 
 البنية الرباعية: كل مقطع له وظيفة مختلفة:
-- المقطع 1 (8 أبيات): بطيء، مرهَق — يضع مشهد التراجع من الخندق.
-- المقطع 2 (6 أبيات): سريع، مذعور — هجوم الغاز.
-- المقطع 3 (بيتين): قصير، معزول — الصدمة في ذهن المتكلّم.
-- المقطع 4 (12 بيتاً): طويل، حجاجي — مخاطبة مباشرة للقارئ.
+- المقطع 1 (8 أبيات): بطيء، مرهَق - يضع مشهد التراجع من الخندق.
+- المقطع 2 (6 أبيات): سريع، مذعور - هجوم الغاز.
+- المقطع 3 (بيتين): قصير، معزول - الصدمة في ذهن المتكلّم.
+- المقطع 4 (12 بيتاً): طويل، حجاجي - مخاطبة مباشرة للقارئ.
 
-Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المفاجئ من الإرهاق إلى الذعر. الثاني "If in some smothering dreams" — الانتقال من الحدث الماضي إلى الحجة الحاضرة.
+Volta: في تحوّلان. الأول "Gas! GAS!" - الانتقال المفاجئ من الإرهاق إلى الذعر. الثاني "If in some smothering dreams" - الانتقال من الحدث الماضي إلى الحجة الحاضرة.
 
 تحوّلات الزمن: القصيدة تتحرّك من الماضي (التجربة) إلى الحاضر (الصدمة المتكرّرة) إلى الشرطي ("If you could hear..."). Owen يخلّي الماضي ما له هرب.
 
-المخاطبة المباشرة: القصيدة تنتهي بكلام مباشر للقارئ ("My friend"). هذا يكسر الحائط الرابع — ما عدنا شاهدين فقط، صرنا متّهَمين.
+المخاطبة المباشرة: القصيدة تنتهي بكلام مباشر للقارئ ("My friend"). هذا يكسر الحائط الرابع - ما عدنا شاهدين فقط، صرنا متّهَمين.
 
 الصوت: استخدام كثيف للحروف الساكنة القاسية ("trudge"، "sludge"، "guttering") وحركات صوتية مزعجة. القصيدة قبيحة عمداً عشان تعكس قبح الحرب.`,
 
@@ -443,7 +443,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'The opening line immediately demolishes the romantic view of war. The soldiers are not strong young heroes but "old beggars" - prematurely aged, humiliated, crushed under the weight of their packs. The simile reverses every patriotic image.',
       themes: ['Reality of war', 'Suffering', 'Anti-heroic'],
       analysisAr:
-        'البيت الافتتاحي يهدم فوراً النظرة الرومانسية للحرب. الجنود مو أبطال شبّان أقوياء، بل "old beggars" — شاخوا قبل أوانهم، مهانين، محطّمين تحت ثقل أمتعتهم. والتشبيه يقلب كل صورة وطنية متخيّلة.',
+        'البيت الافتتاحي يهدم فوراً النظرة الرومانسية للحرب. الجنود مو أبطال شبّان أقوياء، بل "old beggars" - شاخوا قبل أوانهم، مهانين، محطّمين تحت ثقل أمتعتهم. والتشبيه يقلب كل صورة وطنية متخيّلة.',
       themesAr: ['حقيقة الحرب', 'المعاناة', 'مضادّ للبطولة'],
     },
     {
@@ -452,7 +452,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'Owen uses ugly, undignified comparisons - the soldiers are like "hags" (ugly old women). They "cursed" - using obscenity, not glorious speech. They moved through "sludge" - mud and filth. Every word destroys nobility.',
       themes: ['Reality of war', 'Degradation', 'Anti-heroic'],
       analysisAr:
-        'Owen يستخدم تشبيهات قبيحة ومُذِلّة — الجنود مثل "hags" (عجائز قبيحات). و"cursed" — يستخدمون السباب، مو الكلام البطولي. ويتحرّكون عبر "sludge" — طين ووسخ. كل كلمة تدمّر الشرف.',
+        'Owen يستخدم تشبيهات قبيحة ومُذِلّة - الجنود مثل "hags" (عجائز قبيحات). و"cursed" - يستخدمون السباب، مو الكلام البطولي. ويتحرّكون عبر "sludge" - طين ووسخ. كل كلمة تدمّر الشرف.',
       themesAr: ['حقيقة الحرب', 'الإذلال', 'مضادّ للبطولة'],
     },
     {
@@ -461,7 +461,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'The capitalisation captures the rising panic. The oxymoron "ecstasy of fumbling" pairs an emotion of joy with frantic incompetence. "Ecstasy" comes from a Greek word meaning "standing outside oneself" - the soldiers are dissociated by terror.',
       themes: ['Panic', 'Trauma', 'Sudden violence'],
       analysisAr:
-        'الكتابة بالحروف الكبيرة (capitalisation) تجسّد الذعر اللي يتصاعد. والتضاد (oxymoron) "ecstasy of fumbling" يجمع شعور الفرح مع التخبّط المضطرب. كلمة "ecstasy" أصلها يوناني يعني "الوقوف خارج الذات" — الجنود انفصلوا عن أنفسهم من الرعب.',
+        'الكتابة بالحروف الكبيرة (capitalisation) تجسّد الذعر اللي يتصاعد. والتضاد (oxymoron) "ecstasy of fumbling" يجمع شعور الفرح مع التخبّط المضطرب. كلمة "ecstasy" أصلها يوناني يعني "الوقوف خارج الذات" - الجنود انفصلوا عن أنفسهم من الرعب.',
       themesAr: ['الذعر', 'الصدمة', 'عنف مفاجئ'],
     },
     {
@@ -470,7 +470,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'The chlorine gas is imagined as a green sea. The dying man "drowns" because gas fills the lungs with fluid. The simile makes an alien chemical death feel familiar - and the helplessness of the speaker watching through his own mask is heartbreaking.',
       themes: ['Death', 'Helplessness', 'Chemical warfare'],
       analysisAr:
-        'غاز الكلور متخيَّل كبحر أخضر. والرجل المحتضر "يغرق" لأن الغاز يعمّر الرئتين بسائل. والتشبيه يخلّي ميتة كيميائية غريبة تحسّ مألوفة — وعجز المتكلّم وهو يشوفه من وراء قناعه يكسر القلب.',
+        'غاز الكلور متخيَّل كبحر أخضر. والرجل المحتضر "يغرق" لأن الغاز يعمّر الرئتين بسائل. والتشبيه يخلّي ميتة كيميائية غريبة تحسّ مألوفة - وعجز المتكلّم وهو يشوفه من وراء قناعه يكسر القلب.',
       themesAr: ['الموت', 'العجز', 'الحرب الكيميائية'],
     },
     {
@@ -479,7 +479,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'The tricolon of present-tense verbs makes the moment immediate and inescapable. "Guttering" is what a candle does as it dies - the soldier\'s life flickers out slowly. The use of present tense shows the trauma never ends - the dead man is always dying in the speaker\'s mind.',
       themes: ['Trauma', 'PTSD', 'Lasting impact'],
       analysisAr:
-        'الـtricolon من أفعال بصيغة المضارع يخلّي اللحظة فورية ومستحيلة الهرب. كلمة "guttering" تدلّ على ما تفعله الشمعة وهي تحتضر — حياة الجندي تتلاشى ببطء. واستخدام المضارع يبيّن إن الصدمة ما تنتهي — الرجل الميت دايماً يحتضر في ذهن المتكلّم.',
+        'الـtricolon من أفعال بصيغة المضارع يخلّي اللحظة فورية ومستحيلة الهرب. كلمة "guttering" تدلّ على ما تفعله الشمعة وهي تحتضر - حياة الجندي تتلاشى ببطء. واستخدام المضارع يبيّن إن الصدمة ما تنتهي - الرجل الميت دايماً يحتضر في ذهن المتكلّم.',
       themesAr: ['الصدمة', 'PTSD', 'الأثر الدائم'],
     },
     {
@@ -488,7 +488,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'A shocking simile that reverses expectations. Even a devil - the embodiment of evil - would be sickened by what war does. Owen invokes religious imagery to suggest war is worse than damnation.',
       themes: ['Horror', 'Evil', 'Disgust'],
       analysisAr:
-        'تشبيه صادم يقلب التوقعات. حتى الشيطان — تجسيد الشر — راح يقرف من اللي تفعله الحرب. Owen يستحضر الصور الدينية ليلمّح إن الحرب أسوأ من اللعنة الأبدية.',
+        'تشبيه صادم يقلب التوقعات. حتى الشيطان - تجسيد الشر - راح يقرف من اللي تفعله الحرب. Owen يستحضر الصور الدينية ليلمّح إن الحرب أسوأ من اللعنة الأبدية.',
       themesAr: ['الرعب', 'الشر', 'الاشمئزاز'],
     },
     {
@@ -497,7 +497,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'Owen addresses the reader directly. "My friend" is bitterly sarcastic. "Children" emphasises the youth of soldiers - they are not adults making informed choices but boys deceived by lies. The accusation is moral and personal.',
       themes: ['Argument', 'Moral outrage', 'Youth'],
       analysisAr:
-        'Owen يخاطب القارئ بشكل مباشر. وعبارة "My friend" ساخرة بمرارة. وكلمة "children" تأكّد على صغر سن الجنود — مو راشدين يقرّرون عن دراية، بل أولاد مخدوعين بأكاذيب. والاتهام أخلاقي وشخصي.',
+        'Owen يخاطب القارئ بشكل مباشر. وعبارة "My friend" ساخرة بمرارة. وكلمة "children" تأكّد على صغر سن الجنود - مو راشدين يقرّرون عن دراية، بل أولاد مخدوعين بأكاذيب. والاتهام أخلاقي وشخصي.',
       themesAr: ['الحجة', 'الغضب الأخلاقي', 'الصغر'],
     },
     {
@@ -506,7 +506,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'The poem ends by naming "the old Lie" - the Latin phrase claiming it is sweet and fitting to die for your country. After everything we have just witnessed, the patriotic motto sounds obscene. The capital "L" on "Lie" makes it monumental - a foundational deception that has killed millions.',
       themes: ['Anti-war', 'Patriotism critique', 'Deception'],
       analysisAr:
-        'القصيدة تنتهي بتسمية "the old Lie" — العبارة اللاتينية اللي تدّعي إنه حلو ولائق أن يموت الإنسان من أجل وطنه. بعد كل اللي شاهدناه، اللازمة الوطنية تطنّ فاحشةً. والحرف الكبير "L" في "Lie" يخلّيها هائلة — خداع مؤسّس قتل الملايين.',
+        'القصيدة تنتهي بتسمية "the old Lie" - العبارة اللاتينية اللي تدّعي إنه حلو ولائق أن يموت الإنسان من أجل وطنه. بعد كل اللي شاهدناه، اللازمة الوطنية تطنّ فاحشةً. والحرف الكبير "L" في "Lie" يخلّيها هائلة - خداع مؤسّس قتل الملايين.',
       themesAr: ['مضادّ للحرب', 'نقد الوطنية', 'الخداع'],
     },
   ],
@@ -528,7 +528,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'Owen forces the reader to see, hear, and almost taste the horror. The sensory details are deliberately graphic and unpleasant. The reader cannot look away - just as the speaker cannot escape the memory.',
       lineRef: 16,
       effectAr:
-        'Owen يجبر القارئ يشوف ويسمع ويتذوّق الرعب تقريباً. التفاصيل الحسّية فاحشة ومزعجة عمداً. والقارئ ما يقدر يبعد نظره — تماماً مثل ما المتكلّم ما يقدر يهرب من الذكرى.',
+        'Owen يجبر القارئ يشوف ويسمع ويتذوّق الرعب تقريباً. التفاصيل الحسّية فاحشة ومزعجة عمداً. والقارئ ما يقدر يبعد نظره - تماماً مثل ما المتكلّم ما يقدر يهرب من الذكرى.',
     },
     {
       device: 'Direct address',
@@ -537,7 +537,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'In the final stanza, Owen addresses the reader directly, especially those who romanticise war. The "you" forces complicity. We are no longer passive witnesses - we are part of the lie if we don\'t see the truth.',
       lineRef: 17,
       effectAr:
-        'في المقطع الأخير، Owen يخاطب القارئ بشكل مباشر، وبالأخص اللي يرومنسون الحرب. الضمير "you" يفرض الشراكة. ما عدنا شاهدين سلبيين — صرنا جزء من الكذبة لو ما شفنا الحقيقة.',
+        'في المقطع الأخير، Owen يخاطب القارئ بشكل مباشر، وبالأخص اللي يرومنسون الحرب. الضمير "you" يفرض الشراكة. ما عدنا شاهدين سلبيين - صرنا جزء من الكذبة لو ما شفنا الحقيقة.',
     },
     {
       device: 'Volta',
@@ -546,7 +546,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         'The poem accelerates from slow, exhausted trudging to immediate panic. The shift in pace mirrors the unpredictability of war - peace and horror are seconds apart.',
       lineRef: 9,
       effectAr:
-        'القصيدة تتسارع من مشية بطيئة ومرهَقة إلى ذعر فوري. والانتقال في الإيقاع يعكس عدم القابلية للتنبّؤ في الحرب — السكينة والرعب ما بينهم إلا ثواني.',
+        'القصيدة تتسارع من مشية بطيئة ومرهَقة إلى ذعر فوري. والانتقال في الإيقاع يعكس عدم القابلية للتنبّؤ في الحرب - السكينة والرعب ما بينهم إلا ثواني.',
     },
     {
       device: 'Latin allusion',
@@ -555,7 +555,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         "Owen quotes Horace's patriotic motto only to demolish it. The Latin sounds high-minded and noble - until you place it after the description of a man drowning in poison gas. The juxtaposition is the poem's entire argument.",
       lineRef: 27,
       effectAr:
-        'Owen يقتبس لازمة Horace الوطنية فقط ليهدمها. اللاتينية تطنّ سامية ونبيلة — لين ما تحطّها بعد وصف رجل يغرق في غاز سام. والمقارنة الجنبية هي حجّة القصيدة بكاملها.',
+        'Owen يقتبس لازمة Horace الوطنية فقط ليهدمها. اللاتينية تطنّ سامية ونبيلة - لين ما تحطّها بعد وصف رجل يغرق في غاز سام. والمقارنة الجنبية هي حجّة القصيدة بكاملها.',
     },
     {
       device: 'Tricolon',
@@ -564,7 +564,7 @@ Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المف
         "Three present-tense verbs in a row make the death immediate and inescapable. The accumulation creates a sense of slow suffocation. The fact that they are present tense - happening now, in the speaker's mind - is devastating.",
       lineRef: 16,
       effectAr:
-        'ثلاث أفعال بالمضارع ورا بعض تخلّي الموت فوري ومستحيل الهرب. والتراكم يخلق إحساس بخنق بطيء. وحقيقة إنها بالمضارع — تصير الحين، في ذهن المتكلّم — مدمّرة.',
+        'ثلاث أفعال بالمضارع ورا بعض تخلّي الموت فوري ومستحيل الهرب. والتراكم يخلق إحساس بخنق بطيء. وحقيقة إنها بالمضارع - تصير الحين، في ذهن المتكلّم - مدمّرة.',
     },
     {
       device: 'Diction',
@@ -612,13 +612,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'War is wonderful',
-      '"It is sweet and fitting to die for one\'s country" — a phrase Owen calls "the old Lie"',
+      '"It is sweet and fitting to die for one\'s country" - a phrase Owen calls "the old Lie"',
       'Soldiers are brave',
       'Death is natural',
     ],
     correctIndex: 1,
     explanation:
-      'The title comes from Horace\'s Odes: "Dulce et decorum est pro patria mori" — it is sweet and fitting to die for one\'s country. Owen calls this "the old Lie" and the poem is designed to demolish it.',
+      'The title comes from Horace\'s Odes: "Dulce et decorum est pro patria mori" - it is sweet and fitting to die for one\'s country. Owen calls this "the old Lie" and the poem is designed to demolish it.',
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -644,13 +644,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It shows soldiers are strong',
-      'The simile strips soldiers of all heroism — they are broken, aged, and dehumanised by war',
+      'The simile strips soldiers of all heroism - they are broken, aged, and dehumanised by war',
       'It describes their uniforms',
       'It shows they are resting',
     ],
     correctIndex: 1,
     explanation:
-      'The opening simile immediately demolishes the image of heroic soldiers. They are "bent double" like elderly beggars — exhausted, broken, and completely unheroic. War has aged and dehumanised them.',
+      'The opening simile immediately demolishes the image of heroic soldiers. They are "bent double" like elderly beggars - exhausted, broken, and completely unheroic. War has aged and dehumanised them.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -660,7 +660,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The soldiers are swimming',
-      'The dying soldier is submerged in poison gas as if drowning in a green sea — the speaker watches helplessly',
+      'The dying soldier is submerged in poison gas as if drowning in a green sea - the speaker watches helplessly',
       'It describes rain',
       'The trenches are flooded',
     ],
@@ -676,13 +676,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The soldier is recovering',
-      'The graphic, visceral detail forces the reader to confront the true horror of death in war — destroying any notion of glory',
+      'The graphic, visceral detail forces the reader to confront the true horror of death in war - destroying any notion of glory',
       'It describes a cough',
       'The soldier is drinking',
     ],
     correctIndex: 1,
     explanation:
-      'This is deliberately shocking. Owen uses graphic, disgusting detail to make the reader experience the horror. "Gargling" and "froth-corrupted" are designed to sicken — this is what "dying for one\'s country" actually looks like.',
+      'This is deliberately shocking. Owen uses graphic, disgusting detail to make the reader experience the horror. "Gargling" and "froth-corrupted" are designed to sicken - this is what "dying for one\'s country" actually looks like.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -714,7 +714,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The poem uses rough iambic pentameter and a loosely sonnet-like structure (two 14-line sections). But the form is deliberately disrupted — like the soldiers' bodies and minds, the traditional form is broken by war.",
+      "The poem uses rough iambic pentameter and a loosely sonnet-like structure (two 14-line sections). But the form is deliberately disrupted - like the soldiers' bodies and minds, the traditional form is broken by war.",
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -724,7 +724,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'His mother',
-      'Jessie Pope (and anyone who glorifies war) — the poem is a direct attack on pro-war propaganda',
+      'Jessie Pope (and anyone who glorifies war) - the poem is a direct attack on pro-war propaganda',
       'Another soldier',
       'A doctor',
     ],
@@ -740,13 +740,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'To create a peaceful scene',
-      'The dying soldier haunts Owen\'s dreams — the present tense "In all my dreams" shows the trauma is ongoing, not past',
+      'The dying soldier haunts Owen\'s dreams - the present tense "In all my dreams" shows the trauma is ongoing, not past',
       'To describe actual sleep',
       'To show the soldier recovered',
     ],
     correctIndex: 1,
     explanation:
-      'The short third stanza shifts to present tense — "In all my dreams, before my helpless sight, / He plunges at me." This is PTSD: the dying soldier\'s image permanently haunts Owen\'s sleeping and waking life.',
+      'The short third stanza shifts to present tense - "In all my dreams, before my helpless sight, / He plunges at me." This is PTSD: the dying soldier\'s image permanently haunts Owen\'s sleeping and waking life.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -756,13 +756,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It refers to lying down',
-      'Capitalised "Lie" — the entire poem has been building evidence to prove that dying for one\'s country is NOT sweet or fitting but horrific',
+      'Capitalised "Lie" - the entire poem has been building evidence to prove that dying for one\'s country is NOT sweet or fitting but horrific',
       'It is a small detail',
       'It describes dishonesty in general',
     ],
     correctIndex: 1,
     explanation:
-      'The capitalised "Lie" is the poem\'s verdict. Everything before it — the exhaustion, the gas attack, the graphic death — serves as evidence. The poem is a legal prosecution against pro-war propaganda.',
+      'The capitalised "Lie" is the poem\'s verdict. Everything before it - the exhaustion, the gas attack, the graphic death - serves as evidence. The poem is a legal prosecution against pro-war propaganda.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -774,10 +774,10 @@ const REVISION_TOPICS = [
     summary:
       'Dulce et Decorum Est attacks the glorification of war, exposes the horrific reality of combat, and argues that dying for one\'s country is "the old Lie."',
     keyPoints: [
-      'Anti-war — the poem demolishes the idea that war is glorious',
-      'The horror of gas warfare — graphic, visceral detail',
-      "PTSD — the dying soldier haunts Owen's dreams",
-      '"The old Lie" — pro-war propaganda is exposed as false',
+      'Anti-war - the poem demolishes the idea that war is glorious',
+      'The horror of gas warfare - graphic, visceral detail',
+      "PTSD - the dying soldier haunts Owen's dreams",
+      '"The old Lie" - pro-war propaganda is exposed as false',
     ],
   },
   {
@@ -785,21 +785,21 @@ const REVISION_TOPICS = [
     summary:
       'Owen uses simile, graphic sensory detail, drowning imagery, and a direct address to destroy the myth of heroic war.',
     keyPoints: [
-      '"Bent double, like old beggars" — soldiers stripped of heroism',
-      '"Green sea" / "drowning" — gas attack as suffocation',
-      '"Blood gargling from froth-corrupted lungs" — deliberately sickening',
-      '"My friend" — direct, sarcastic address to pro-war propagandists',
+      '"Bent double, like old beggars" - soldiers stripped of heroism',
+      '"Green sea" / "drowning" - gas attack as suffocation',
+      '"Blood gargling from froth-corrupted lungs" - deliberately sickening',
+      '"My friend" - direct, sarcastic address to pro-war propagandists',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'A disrupted sonnet-like structure with iambic pentameter that breaks down under the weight of horror — form mirrors content.',
+      'A disrupted sonnet-like structure with iambic pentameter that breaks down under the weight of horror - form mirrors content.',
     keyPoints: [
-      'Loosely sonnet-like — traditional form broken by war',
+      'Loosely sonnet-like - traditional form broken by war',
       'Three sections: exhaustion, gas attack, haunting aftermath',
-      'Present tense in stanza 3 — trauma is ongoing',
-      'Final "Lie" capitalised — the poem\'s devastating verdict',
+      'Present tense in stanza 3 - trauma is ongoing',
+      'Final "Lie" capitalised - the poem\'s devastating verdict',
     ],
   },
 ]
@@ -814,7 +814,7 @@ export default function DulceEduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Dulce et Decorum Est by Wilfred Owen — Analysis & Annotations"
+        name="Dulce et Decorum Est by Wilfred Owen - Analysis & Annotations"
         description="Line-by-line analysis of Dulce et Decorum Est with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

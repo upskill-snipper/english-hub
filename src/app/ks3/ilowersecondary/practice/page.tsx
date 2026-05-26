@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
 }
 
-// Paper theme data stays in English — these are proper names / themes set
+// Paper theme data stays in English - these are proper names / themes set
 // by the specification/authoring process, not UI copy. Blurbs are short
 // descriptive synopses; we keep them English per the deep-article rule.
 const PAPERS: { slug: string; n: number; theme: string; blurb: string }[] = [
@@ -121,7 +121,7 @@ export default async function PracticePapersHub() {
 
       <h1>{trH1}</h1>
       <p className="lead">
-        {trLeadPre} {QUALIFICATION.paperCode} format — {QUALIFICATION.totalMarks} marks,{' '}
+        {trLeadPre} {QUALIFICATION.paperCode} format - {QUALIFICATION.totalMarks} marks,{' '}
         {QUALIFICATION.durationLabel}, two sections. Every source text is an original work written
         for The English Hub: nothing is reproduced from a real past paper.
       </p>
@@ -178,7 +178,7 @@ export default async function PracticePapersHub() {
       <h2>{trHowToHeading}</h2>
       <ul>
         <li>
-          Sit one in a single {QUALIFICATION.durationLabel} session with no dictionary — that
+          Sit one in a single {QUALIFICATION.durationLabel} session with no dictionary - that
           mirrors the real exam.
         </li>
         <li>

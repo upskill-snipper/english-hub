@@ -49,7 +49,7 @@ export async function DELETE(request: NextRequest, props: { params: Promise<{ to
 
     const admin = createServiceRoleClient()
 
-    // Find the invite — must belong to this school and be pending
+    // Find the invite - must belong to this school and be pending
     const { data: invite, error: fetchError } = await admin
       .from('school_members')
       .select('id, invite_status, school_id')

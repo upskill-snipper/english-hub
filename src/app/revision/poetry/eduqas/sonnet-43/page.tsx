@@ -197,20 +197,20 @@ const sonnet43: PoemData = {
   `,
 
   contextAr: `
-    <h3>Elizabeth Barrett Browning (1806–1861)</h3>
+    <h3>Elizabeth Barrett Browning (1806-1861)</h3>
     <p>EBB من أشهر شعراء العصر الفيكتوري. عانت من مرض مزمن من سنّ المراهقة، وكانت معظم وقتها حبيسة بيت أبوها في لندن. نشرت أول مجموعة شعرية وعمرها 14 سنة، وانذكر اسمها لمنصب Poet Laureate بعد وفاة Wordsworth.</p>
 
     <h3>الحب والزواج</h3>
     <p>في 1845، EBB بدت تبادل رسائل مع الشاعر الأصغر منها Robert Browning. وقعوا في الحب عبر الرسائل. أبوها منعها من الزواج، فهربوا سوا إلى إيطاليا في 1846. عاشوا 15 سنة زواج سعيد لين توفت EBB في 1861.</p>
 
     <h3>Sonnets from the Portuguese (1850)</h3>
-    <p>"Sonnet 43" (المعروفة أيضاً باسم "How do I love thee?") هي القصيدة قبل الأخيرة في سلسلة EBB <em>Sonnets from the Portuguese</em>. العنوان مزحة خاصة بين الاثنين — Robert كان يناديها "البرتغالية الصغيرة". الـ44 sonnet تتبع تطوّر حبها لـRobert.</p>
+    <p>"Sonnet 43" (المعروفة أيضاً باسم "How do I love thee?") هي القصيدة قبل الأخيرة في سلسلة EBB <em>Sonnets from the Portuguese</em>. العنوان مزحة خاصة بين الاثنين - Robert كان يناديها "البرتغالية الصغيرة". الـ44 sonnet تتبع تطوّر حبها لـRobert.</p>
 
     <h3>تقليد Petrarchan Sonnet</h3>
-    <p>EBB تكتب على تقليد <strong>Petrarch</strong>، الشاعر الإيطالي من القرن 14، اللي قصايده لـ"Laura" حدّدت شعر الحب لقرون. باستخدام هذا الشكل، تضع حبها داخل تقليد أدبي طويل — بس باعتبارها امرأة تكتب لرجل، تقلب أدوار الجنسين التقليدية.</p>
+    <p>EBB تكتب على تقليد <strong>Petrarch</strong>، الشاعر الإيطالي من القرن 14، اللي قصايده لـ"Laura" حدّدت شعر الحب لقرون. باستخدام هذا الشكل، تضع حبها داخل تقليد أدبي طويل - بس باعتبارها امرأة تكتب لرجل، تقلب أدوار الجنسين التقليدية.</p>
 
     <h3>الشك الديني الفيكتوري</h3>
-    <p>EBB عاشت في فترة أزمة في الإيمان الديني الفيكتوري. عبارة "my lost saints" توحي إنها مرّت بشك أو فقدان للإيمان. حبها لـRobert استرجع التجربة الروحية — الحب صار دين.</p>
+    <p>EBB عاشت في فترة أزمة في الإيمان الديني الفيكتوري. عبارة "my lost saints" توحي إنها مرّت بشك أو فقدان للإيمان. حبها لـRobert استرجع التجربة الروحية - الحب صار دين.</p>
 
     <h3>الصوت الأنثوي</h3>
     <p>طوال قرون، الـsonnets كانت تُكتب من قبل الرجال عن النساء. EBB تكتب كامرأة تعلن الحب لرجل. هذا شي غير مألوف وقوي. تطالب لنفسها بنفس الحق في الحب العاطفي الفصيح اللي أخذه الشعراء الرجال طول التاريخ.</p>
@@ -226,13 +226,13 @@ Lines 13-14: The closing couplet promises that, if God allows, she will love him
 
 Overall meaning: "Sonnet 43" is one of the greatest love poems in English. EBB attempts to "count" the dimensions, intensities, and durations of her love. The poem moves from cosmic scale to domestic scale, from physical to spiritual, and finally to eternal. It is a complete declaration of total devotion.`,
 
-  summaryAr: `الأبيات 1–4: المتكلّمة تفتح بسؤال بلاغي — "How do I love thee?" — وتعرض إنها تعدّ الطرق. تدّعي إن حبها يصل لأقصى حدود مكانية تقدر روحها تبلغها: "to the depth and breadth and height"، لـ"the ends of being and ideal grace". هذا حب صوفي كوني.
+  summaryAr: `الأبيات 1-4: المتكلّمة تفتح بسؤال بلاغي - "How do I love thee?" - وتعرض إنها تعدّ الطرق. تدّعي إن حبها يصل لأقصى حدود مكانية تقدر روحها تبلغها: "to the depth and breadth and height"، لـ"the ends of being and ideal grace". هذا حب صوفي كوني.
 
-الأبيات 5–8: الحب يشتغل بعد على المستوى اليومي — "by sun and candle-light"، في "most quiet need". الحب عادي وضروري. تحبّه بحرية (مثل الرجال اللي يكافحون من أجل الحقوق السياسية) وبنقاء (مثل اللي يرفضون الغرور).
+الأبيات 5-8: الحب يشتغل بعد على المستوى اليومي - "by sun and candle-light"، في "most quiet need". الحب عادي وضروري. تحبّه بحرية (مثل الرجال اللي يكافحون من أجل الحقوق السياسية) وبنقاء (مثل اللي يرفضون الغرور).
 
-الأبيات 9–12: الحب يستوعب الشغف اللي كانت تحسّه من قبل تجاه "old griefs" و"childhood's faith". اعتقدت إنها فقدت القدرة على الحب لما فقدت "my lost saints" (إيمانها)، بس حب Robert استرجعها. حبها الحين كل كيانها — "breath, smiles, tears".
+الأبيات 9-12: الحب يستوعب الشغف اللي كانت تحسّه من قبل تجاه "old griefs" و"childhood's faith". اعتقدت إنها فقدت القدرة على الحب لما فقدت "my lost saints" (إيمانها)، بس حب Robert استرجعها. حبها الحين كل كيانها - "breath, smiles, tears".
 
-الأبيات 13–14: المقطع الختامي يوعد إنه، إذا الله أراد، بتحبّه أكثر بعد الموت. الحب يتجاوز الموت.
+الأبيات 13-14: المقطع الختامي يوعد إنه، إذا الله أراد، بتحبّه أكثر بعد الموت. الحب يتجاوز الموت.
 
 المعنى العام: "Sonnet 43" من أعظم قصايد الحب في اللغة الإنجليزية. EBB تحاول "تعدّ" أبعاد وقوّة ومدى حبها. القصيدة تتحرّك من المقياس الكوني للمقياس البيتي، من الجسدي للروحي، وأخيراً للأبدي. هي إعلان كامل بالتفاني الكلّي.`,
 
@@ -252,7 +252,7 @@ Religious diction: "Soul", "ideal grace", "lost saints", "if God choose" - the p
 
 Closure: The final line promises eternity. The poem ends not with limitation but with expansion - love continues beyond death. The closing couplet has the certainty of a vow.`,
 
-  formAndStructureAr: `Form: Petrarchan sonnet (الـsonnet الإيطالي) — 14 بيت، فيها octave (8 أبيات) وsestet (6 أبيات). الشكل التقليدي يعطي القصيدة هيبة، ويحطّها داخل تقليد أوروبي طويل في شعر الحب.
+  formAndStructureAr: `Form: Petrarchan sonnet (الـsonnet الإيطالي) - 14 بيت، فيها octave (8 أبيات) وsestet (6 أبيات). الشكل التقليدي يعطي القصيدة هيبة، ويحطّها داخل تقليد أوروبي طويل في شعر الحب.
 
 Rhyme scheme: ABBAABBA في الـoctave، CDCDCD في الـsestet (تنويعة Petrarchan). القوافي محبوكة بإحكام، مع تكرارات وايدة، تخلق إحساس بالانسجام التام.
 
@@ -260,13 +260,13 @@ Metre: iambic pentameter طول القصيدة. الإيقاع المنتظم ي
 
 Anaphora: "I love thee" تتكرّر وايد طول القصيدة، تخلق إيقاع تعويذي. التكرار يبني شدّة عاطفية، ويعطي القصيدة كأنها litany أو دعاء.
 
-Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee with the passion put to use". الـoctave يعدّ أنواع الحب؛ الـsestet يصير أكثر شخصي واعترافي، يعتمد على آلام المتكلّمة في الماضي.
+Volta: التحوّل التقليدي يجي في البيت 9 - "I love thee with the passion put to use". الـoctave يعدّ أنواع الحب؛ الـsestet يصير أكثر شخصي واعترافي، يعتمد على آلام المتكلّمة في الماضي.
 
-اللغة المكانية: القصيدة تستخدم لغة الأبعاد — depth, breadth, height. الحب يعطى حجم مادي حتى لو هو غير مادي. هذا يخلّي المجرّد يحسّ ملموس.
+اللغة المكانية: القصيدة تستخدم لغة الأبعاد - depth, breadth, height. الحب يعطى حجم مادي حتى لو هو غير مادي. هذا يخلّي المجرّد يحسّ ملموس.
 
-اللغة الدينية: "Soul"، "ideal grace"، "lost saints"، "if God choose" — القصيدة مشبّعة بلغة روحية. الحب يصير تجربة دينية، يستبدل الإيمان أو يكمّله.
+اللغة الدينية: "Soul"، "ideal grace"، "lost saints"، "if God choose" - القصيدة مشبّعة بلغة روحية. الحب يصير تجربة دينية، يستبدل الإيمان أو يكمّله.
 
-الخاتمة: البيت الأخير يوعد بالأبدية. القصيدة ما تنتهي بحدّ بل بتوسّع — الحب يستمر بعد الموت. المقطع الختامي عنده يقين القَسَم.`,
+الخاتمة: البيت الأخير يوعد بالأبدية. القصيدة ما تنتهي بحدّ بل بتوسّع - الحب يستمر بعد الموت. المقطع الختامي عنده يقين القَسَم.`,
 
   keyQuotes: [
     {
@@ -275,7 +275,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         'One of the most famous opening lines in English poetry. The rhetorical question is direct and intimate. "Count the ways" suggests love can be itemised - but the rest of the poem shows it cannot. The speaker tries to measure something immeasurable.',
       themes: ['Love', 'Direct address', 'Famous opening'],
       analysisAr:
-        'من أشهر أبيات الافتتاح في الشعر الإنجليزي. السؤال البلاغي مباشر وحميم. "Count the ways" توحي إن الحب يقدر يُعدّ — بس بقية القصيدة تبيّن إنه ما يقدر. المتكلّمة تحاول تقيس شي ما يتقاس.',
+        'من أشهر أبيات الافتتاح في الشعر الإنجليزي. السؤال البلاغي مباشر وحميم. "Count the ways" توحي إن الحب يقدر يُعدّ - بس بقية القصيدة تبيّن إنه ما يقدر. المتكلّمة تحاول تقيس شي ما يتقاس.',
       themesAr: ['الحب', 'الخطاب المباشر', 'افتتاحية شهيرة'],
     },
     {
@@ -284,7 +284,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         'The speaker uses spatial dimensions - "depth, breadth, height" - to measure love. The tricolon creates a sense of total coverage. But these are also the dimensions her SOUL can reach, suggesting love is spiritual as well as physical. The scale is cosmic.',
       themes: ['Cosmic love', 'Tricolon', 'Spirituality'],
       analysisAr:
-        'المتكلّمة تستخدم أبعاد مكانية — "depth, breadth, height" — عشان تقيس الحب. الـtricolon يخلق إحساس بالتغطية الكاملة. بس هذي بعد أبعاد روحها — هي اللي تقدر توصل لها — وهذا يوحي إن الحب روحي وجسدي مع بعض. المقياس كوني.',
+        'المتكلّمة تستخدم أبعاد مكانية - "depth, breadth, height" - عشان تقيس الحب. الـtricolon يخلق إحساس بالتغطية الكاملة. بس هذي بعد أبعاد روحها - هي اللي تقدر توصل لها - وهذا يوحي إن الحب روحي وجسدي مع بعض. المقياس كوني.',
       themesAr: ['الحب الكوني', 'Tricolon', 'الروحانية'],
     },
     {
@@ -293,7 +293,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         '"Ends of being" - the limits of existence itself. "Ideal grace" - perfect divine grace, the highest spiritual concept. The speaker compares her love to a soul reaching toward God. Love has theological scale.',
       themes: ['Religion', 'Limits', 'Divine love'],
       analysisAr:
-        '"Ends of being" — حدود الوجود نفسه. "Ideal grace" — النعمة الإلهية المثالية، أعلى مفهوم روحي. المتكلّمة تشبّه حبها بروح تمدّ نفسها نحو الله. الحب عنده مقياس لاهوتي.',
+        '"Ends of being" - حدود الوجود نفسه. "Ideal grace" - النعمة الإلهية المثالية، أعلى مفهوم روحي. المتكلّمة تشبّه حبها بروح تمدّ نفسها نحو الله. الحب عنده مقياس لاهوتي.',
       themesAr: ['الدين', 'الحدود', 'الحب الإلهي'],
     },
     {
@@ -302,7 +302,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         'After the cosmic scale, the poem moves to the domestic. Love is also "everyday" and "quiet" - not just grand passion but daily companionship. The shift from universal to intimate is deeply moving. Love must operate at all scales.',
       themes: ['Everyday love', 'Domesticity', 'Quiet devotion'],
       analysisAr:
-        'بعد المقياس الكوني، القصيدة تنتقل للحياة البيتية. الحب بعد "everyday" و"quiet" — مو بس شغف عظيم، بل صحبة يومية. الانتقال من الكوني للحميم مؤثّر وايد. الحب لازم يشتغل على كل المقاييس.',
+        'بعد المقياس الكوني، القصيدة تنتقل للحياة البيتية. الحب بعد "everyday" و"quiet" - مو بس شغف عظيم، بل صحبة يومية. الانتقال من الكوني للحميم مؤثّر وايد. الحب لازم يشتغل على كل المقاييس.',
       themesAr: ['الحب اليومي', 'الحياة البيتية', 'التفاني الهادئ'],
     },
     {
@@ -321,7 +321,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         'The speaker reveals personal history. The intense emotions of past sufferings are now redirected into love. Pain has become passion. This makes the love feel earned, not naive - it carries the weight of past experience.',
       themes: ['Past suffering', 'Transformation', 'Personal history'],
       analysisAr:
-        'المتكلّمة تكشف تاريخها الشخصي. المشاعر الحادّة اللي كانت في الآلام السابقة الحين موجّهة للحب. الألم صار شغف. هذا يخلّي الحب يحسّ مستحقّ، مو ساذج — يحمل ثقل التجربة السابقة.',
+        'المتكلّمة تكشف تاريخها الشخصي. المشاعر الحادّة اللي كانت في الآلام السابقة الحين موجّهة للحب. الألم صار شغف. هذا يخلّي الحب يحسّ مستحقّ، مو ساذج - يحمل ثقل التجربة السابقة.',
       themesAr: ['الألم السابق', 'التحوّل', 'التاريخ الشخصي'],
     },
     {
@@ -330,7 +330,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         "A confession of past spiritual loss. The speaker had lost her saints - her religious faith or sacred figures. She thought she had lost the capacity for that kind of devotion. But Robert's love has restored it. Love replaces religion - or completes it.",
       themes: ['Religious doubt', 'Restoration', 'Love and faith'],
       analysisAr:
-        'اعتراف بفقدان روحي سابق. المتكلّمة فقدت قدّيسيها — إيمانها الديني أو الشخصيات المقدّسة عندها. اعتقدت إنها فقدت القدرة على هالنوع من التفاني. بس حب Robert استرجعه. الحب يستبدل الدين — أو يكمّله.',
+        'اعتراف بفقدان روحي سابق. المتكلّمة فقدت قدّيسيها - إيمانها الديني أو الشخصيات المقدّسة عندها. اعتقدت إنها فقدت القدرة على هالنوع من التفاني. بس حب Robert استرجعه. الحب يستبدل الدين - أو يكمّله.',
       themesAr: ['الشك الديني', 'الاسترجاع', 'الحب والإيمان'],
     },
     {
@@ -339,7 +339,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         'The closing line is an extraordinary promise. Love does not end at death - it intensifies. The speaker rejects mortality as a limit on love. This is the most romantic possible declaration: love is eternal, beyond physical existence.',
       themes: ['Eternal love', 'Death', 'Transcendence'],
       analysisAr:
-        'البيت الختامي وعد استثنائي. الحب ما ينتهي عند الموت — بل يزداد. المتكلّمة ترفض الموت كحدّ للحب. هذا أرومانسي إعلان ممكن: الحب أبدي، يتجاوز الوجود المادي.',
+        'البيت الختامي وعد استثنائي. الحب ما ينتهي عند الموت - بل يزداد. المتكلّمة ترفض الموت كحدّ للحب. هذا أرومانسي إعلان ممكن: الحب أبدي، يتجاوز الوجود المادي.',
       themesAr: ['الحب الأبدي', 'الموت', 'التجاوز'],
     },
   ],
@@ -370,7 +370,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         "The poem is saturated with religious language. Love becomes a spiritual experience, equivalent to faith. The speaker's past religious doubt is transformed into a new kind of devotion - to her beloved.",
       lineRef: 3,
       effectAr:
-        'القصيدة مشبّعة بلغة دينية. الحب يصير تجربة روحية، تعادل الإيمان. الشك الديني السابق عند المتكلّمة يتحوّل لنوع جديد من التفاني — لمحبوبها.',
+        'القصيدة مشبّعة بلغة دينية. الحب يصير تجربة روحية، تعادل الإيمان. الشك الديني السابق عند المتكلّمة يتحوّل لنوع جديد من التفاني - لمحبوبها.',
     },
     {
       device: 'Sonnet form',
@@ -397,7 +397,7 @@ Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee
         'The similes compare love to noble moral pursuits - political struggle and humility. Love is not separate from ethics but a form of ethical commitment. The comparisons elevate love to the status of moral virtue.',
       lineRef: 7,
       effectAr:
-        'الـsimiles تشبّه الحب بمساعي أخلاقية نبيلة — الكفاح السياسي والتواضع. الحب مو منفصل عن الأخلاق، بل نوع من الالتزام الأخلاقي. المقارنات ترفع الحب لمستوى الفضيلة الأخلاقية.',
+        'الـsimiles تشبّه الحب بمساعي أخلاقية نبيلة - الكفاح السياسي والتواضع. الحب مو منفصل عن الأخلاق، بل نوع من الالتزام الأخلاقي. المقارنات ترفع الحب لمستوى الفضيلة الأخلاقية.',
     },
     {
       device: 'Iambic pentameter',
@@ -445,13 +445,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sad farewell',
-      "An attempt to measure the depth and breadth of the speaker's love — listing all the ways she loves",
+      "An attempt to measure the depth and breadth of the speaker's love - listing all the ways she loves",
       'A business letter',
       'A prayer',
     ],
     correctIndex: 1,
     explanation:
-      'EBB tries to answer the question "How do I love thee?" by listing all the ways — to the "depth and breadth and height" her soul can reach, with the passion of daily life, and beyond death.',
+      'EBB tries to answer the question "How do I love thee?" by listing all the ways - to the "depth and breadth and height" her soul can reach, with the passion of daily life, and beyond death.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -462,13 +462,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Love is small',
-      "Love fills every dimension of existence — it is as vast as the speaker's entire spiritual being",
+      "Love fills every dimension of existence - it is as vast as the speaker's entire spiritual being",
       'She is measuring a room',
       'Love is physical only',
     ],
     correctIndex: 1,
     explanation:
-      "The spatial metaphor presents love as filling three-dimensional space — it extends to the absolute limits of the soul's capacity. Love is infinite, spiritual, and all-encompassing.",
+      "The spatial metaphor presents love as filling three-dimensional space - it extends to the absolute limits of the soul's capacity. Love is infinite, spiritual, and all-encompassing.",
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -478,13 +478,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'A Petrarchan sonnet — the form traditionally used for love poetry',
+      'A Petrarchan sonnet - the form traditionally used for love poetry',
       'A ballad',
       'A dramatic monologue',
     ],
     correctIndex: 1,
     explanation:
-      'A Petrarchan (Italian) sonnet — the traditional form for love poetry since Petrarch. EBB uses the established convention to express deeply personal, genuine love.',
+      'A Petrarchan (Italian) sonnet - the traditional form for love poetry since Petrarch. EBB uses the established convention to express deeply personal, genuine love.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -494,7 +494,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Love is easy',
-      'Love is compared to the pursuit of justice — it is a moral, principled commitment, not just emotion',
+      'Love is compared to the pursuit of justice - it is a moral, principled commitment, not just emotion',
       'She loves politics',
       'It describes freedom',
     ],
@@ -526,13 +526,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Love ends at death',
-      'Love transcends death — it will grow even stronger in the afterlife',
+      'Love transcends death - it will grow even stronger in the afterlife',
       'She fears death',
       'Death is unrelated to love',
     ],
     correctIndex: 1,
     explanation:
-      'The final line claims love will intensify after death. EBB argues love is not limited to mortal life — it is eternal, spiritual, and will grow beyond the grave.',
+      'The final line claims love will intensify after death. EBB argues love is not limited to mortal life - it is eternal, spiritual, and will grow beyond the grave.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -542,13 +542,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Monotony',
-      'The repetition creates a liturgical, prayer-like rhythm — love is expressed as devotion',
+      'The repetition creates a liturgical, prayer-like rhythm - love is expressed as devotion',
       'Random repetition',
       'It is a refrain',
     ],
     correctIndex: 1,
     explanation:
-      'The repeated "I love thee" creates a chant-like, devotional quality. Each repetition adds a new dimension to love — it accumulates like prayer, building toward the transcendent final claim.',
+      'The repeated "I love thee" creates a chant-like, devotional quality. Each repetition adds a new dimension to love - it accumulates like prayer, building toward the transcendent final claim.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -564,7 +564,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'EBB begins with love in everyday life — "by sun and candlelight" — and elevates it through moral commitment and childhood faith to love that transcends death itself.',
+      'EBB begins with love in everyday life - "by sun and candlelight" - and elevates it through moral commitment and childhood faith to love that transcends death itself.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -574,13 +574,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She has forgotten her past',
-      'The passion she once directed at grief and suffering is now redirected to love — love transforms pain into devotion',
+      'The passion she once directed at grief and suffering is now redirected to love - love transforms pain into devotion',
       'She is still grieving',
       'Grief and love are unrelated',
     ],
     correctIndex: 1,
     explanation:
-      'EBB repurposes the intensity of past suffering into love. Pain has not been wasted — it has trained her heart for the depth of feeling she now directs at her beloved.',
+      'EBB repurposes the intensity of past suffering into love. Pain has not been wasted - it has trained her heart for the depth of feeling she now directs at her beloved.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -590,7 +590,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is identical to all others',
-      "It presents love as unambiguously positive, spiritual, and eternal — contrasting with poems that show love's pain or complexity",
+      "It presents love as unambiguously positive, spiritual, and eternal - contrasting with poems that show love's pain or complexity",
       'Love is always positive in all poems',
       'It is the only love poem',
     ],
@@ -606,12 +606,12 @@ const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
     summary:
-      'Sonnet 43 celebrates love as infinite, spiritual, and eternal — progressing from everyday devotion to love that transcends death.',
+      'Sonnet 43 celebrates love as infinite, spiritual, and eternal - progressing from everyday devotion to love that transcends death.',
     keyPoints: [
-      'Love is immeasurable — fills "depth and breadth and height"',
-      'Love is moral — compared to striving for right',
-      'Love transforms suffering — past griefs redirected into devotion',
-      'Love is eternal — "I shall but love thee better after death"',
+      'Love is immeasurable - fills "depth and breadth and height"',
+      'Love is moral - compared to striving for right',
+      'Love transforms suffering - past griefs redirected into devotion',
+      'Love is eternal - "I shall but love thee better after death"',
     ],
   },
   {
@@ -619,21 +619,21 @@ const REVISION_TOPICS = [
     summary:
       'EBB uses spatial metaphor, anaphora, religious language, and a progression from mundane to transcendent to express limitless love.',
     keyPoints: [
-      '"Depth and breadth and height" — love fills all dimensions',
-      '"I love thee" anaphora — prayer-like repetition',
-      '"Freely, as men strive for right" — love as moral principle',
-      '"After death" — love transcends mortality',
+      '"Depth and breadth and height" - love fills all dimensions',
+      '"I love thee" anaphora - prayer-like repetition',
+      '"Freely, as men strive for right" - love as moral principle',
+      '"After death" - love transcends mortality',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'A Petrarchan sonnet — the traditional love form used for deeply personal, genuine expression.',
+      'A Petrarchan sonnet - the traditional love form used for deeply personal, genuine expression.',
     keyPoints: [
-      'Petrarchan sonnet — classical form for elevated love',
+      'Petrarchan sonnet - classical form for elevated love',
       'Anaphora builds cumulative intensity',
       'Progression: everyday → moral → spiritual → eternal',
-      'Final line transcends death — the ultimate claim',
+      'Final line transcends death - the ultimate claim',
     ],
   },
 ]
@@ -648,7 +648,7 @@ export default function Sonnet43EduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Sonnet 43 by Elizabeth Barrett Browning — Analysis & Annotations"
+        name="Sonnet 43 by Elizabeth Barrett Browning - Analysis & Annotations"
         description="Line-by-line analysis of Sonnet 43 with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

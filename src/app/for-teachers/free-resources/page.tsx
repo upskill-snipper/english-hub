@@ -190,7 +190,7 @@ const teachingGuide = {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Download handlers — open professional HTML docs in new tab          */
+/*  Download handlers - open professional HTML docs in new tab          */
 /* ------------------------------------------------------------------ */
 
 function downloadLessonPlan() {
@@ -909,7 +909,7 @@ export default function FreeResourcesPage() {
           <h2 className="text-2xl font-bold mb-2">{tr(`Ready to Transform Your Teaching?`)}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             Get full access to every lesson plan, worksheet, teaching guide, AI essay marking, and
-            student progress tracking. Demo 3 free uses without a card — paid plans start with a
+            student progress tracking. Demo 3 free uses without a card - paid plans start with a
             7-day free trial (card required, cancel before day 7).
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

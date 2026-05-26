@@ -3,7 +3,7 @@
 // GET /api/analytics/aggregate
 //
 // Returns platform-wide aggregate stats (not per-user).
-// No auth required — this is public aggregate data.
+// No auth required - this is public aggregate data.
 // Cached for 1 hour via Next.js revalidation.
 //
 // TODO(Phase-7): replace mock Supabase client with real one once
@@ -31,9 +31,6 @@ export async function GET() {
     })
   } catch (error) {
     console.error('[Aggregate Analytics] Failed to generate snapshot:', error)
-    return NextResponse.json(
-      { error: 'Failed to load aggregate analytics' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Failed to load aggregate analytics' }, { status: 500 })
   }
 }

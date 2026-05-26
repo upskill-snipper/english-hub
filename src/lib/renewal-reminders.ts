@@ -116,7 +116,7 @@ async function sendAnnualRenewalReminders(result: ReminderResult): Promise<void>
 // also fires `customer.subscription.trial_will_end` ~3 days before trial end
 // (handled in `src/app/api/stripe/webhook/route.ts`), so users get two
 // reminders. `checkAndSendReminders()` is currently NOT wired to a cron route
-// — TODO: add `src/app/api/cron/renewal-reminders/route.ts` and a daily Vercel
+// - TODO: add `src/app/api/cron/renewal-reminders/route.ts` and a daily Vercel
 // cron entry, or rely on the Stripe webhook path alone and remove this fn.
 
 async function sendTrialEndingReminders(result: ReminderResult): Promise<void> {

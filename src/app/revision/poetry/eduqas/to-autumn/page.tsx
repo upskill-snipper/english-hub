@@ -255,7 +255,7 @@ const toAutumn: PoemData = {
       ],
     },
     {
-      text: 'Think not of them, thou hast thy music too,—',
+      text: 'Think not of them, thou hast thy music too,-',
       annotations: [
         {
           type: 'Reassurance',
@@ -387,23 +387,23 @@ const toAutumn: PoemData = {
   `,
 
   contextAr: `
-    <h3>John Keats (1795–1821)</h3>
+    <h3>John Keats (1795-1821)</h3>
     <p>Keats واحد من كبار شعراء الرومانسية الإنجليزية، يم Wordsworth وShelley وByron. تدرّب جرّاح قبل ما يتحوّل للشعر. توفي بسبب السلّ وعمره 25 سنة، بعد ما كتب بعض من أعظم القصايد في اللغة الإنجليزية في سنوات قليلة بس.</p>
 
     <h3>الكتابة (1819)</h3>
     <p>"To Autumn" انكتبت في 19 سبتمبر 1819، بعد ما Keats مشى مشية مسائية يم Winchester. وصف التجربة في رسالة: "How beautiful the season is now... I never lik'd stubble fields so much as now". هي آخر ode كبير أكمله.</p>
 
     <h3>الـode الرومانسي</h3>
-    <p>الـ<strong>ode</strong> قصيدة غنائية رسمية موجّهة لشخص أو مكان أو فكرة مجرّدة. الـodes الرومانسية (لـKeats وWordsworth وShelley) من أعظم إنجازات الشعر الإنجليزي. Keats كتب سلسلة من الـodes في 1819 — "Ode to a Nightingale"، "Ode on a Grecian Urn"، "Ode on Melancholy"، و"To Autumn".</p>
+    <p>الـ<strong>ode</strong> قصيدة غنائية رسمية موجّهة لشخص أو مكان أو فكرة مجرّدة. الـodes الرومانسية (لـKeats وWordsworth وShelley) من أعظم إنجازات الشعر الإنجليزي. Keats كتب سلسلة من الـodes في 1819 - "Ode to a Nightingale"، "Ode on a Grecian Urn"، "Ode on Melancholy"، و"To Autumn".</p>
 
     <h3>السياق الشخصي</h3>
-    <p>بحلول 1819، Keats كان قد رعى أخوه Tom في مرضه القاتل بالسلّ، وكانت أعراض المرض بدت تظهر عنده هو بعد. كان يعرف إنه على الأغلب ما راح يعيش طويل. "To Autumn" تنقرى كقبول هادي للموت ومرور الوقت — المتكلّم يلقى جمال في موسم النهايات.</p>
+    <p>بحلول 1819، Keats كان قد رعى أخوه Tom في مرضه القاتل بالسلّ، وكانت أعراض المرض بدت تظهر عنده هو بعد. كان يعرف إنه على الأغلب ما راح يعيش طويل. "To Autumn" تنقرى كقبول هادي للموت ومرور الوقت - المتكلّم يلقى جمال في موسم النهايات.</p>
 
     <h3>التقليد الرعوي (Pastoral)</h3>
-    <p>القصيدة تنتمي لتقليد <strong>الرعوي</strong> — شعر يضفي مثالية على الحياة الريفية. Keats يصف عمل الريف الإنجليزي (جني الحبوب، عصر التفّاح، الحصاد) بتفصيل عاطفي. يحتفي بالعمّال العاديين يم جمال الطبيعة.</p>
+    <p>القصيدة تنتمي لتقليد <strong>الرعوي</strong> - شعر يضفي مثالية على الحياة الريفية. Keats يصف عمل الريف الإنجليزي (جني الحبوب، عصر التفّاح، الحصاد) بتفصيل عاطفي. يحتفي بالعمّال العاديين يم جمال الطبيعة.</p>
 
     <h3>Negative Capability</h3>
-    <p>Keats طوّر فكرة <strong>negative capability</strong> — القدرة على قبول عدم اليقين والغموض والشك بدون محاولة حلّها. "To Autumn" تجسّد هذا: المتكلّم يقبل مرور الصيف بدون احتجاج ولا حنين.</p>
+    <p>Keats طوّر فكرة <strong>negative capability</strong> - القدرة على قبول عدم اليقين والغموض والشك بدون محاولة حلّها. "To Autumn" تجسّد هذا: المتكلّم يقبل مرور الصيف بدون احتجاج ولا حنين.</p>
   `,
 
   summary: `Stanza 1 - Abundance: Autumn is personified and addressed directly. It "conspires" with the sun to ripen the harvest. Vines, apples, gourds, hazelnuts, flowers - everything is full to overflowing. Even the bees are deceived into thinking summer will never end.
@@ -414,13 +414,13 @@ Stanza 3 - Music and acceptance: The third stanza opens with a question - "Where
 
 Overall meaning: "To Autumn" celebrates the beauty of the season of ripeness and decay. It moves from total abundance (stanza 1) to slow, dreamy labour (stanza 2) to acceptance of endings (stanza 3). The poem is a meditation on time, mortality, and the value of every stage of life - read by many as Keats\'s response to his own approaching death.`,
 
-  summaryAr: `المقطع 1 — الوفرة: الخريف مشخصن، وموجّه له الكلام مباشرة. الخريف "يتآمر" (conspires) مع الشمس عشان ينضّج المحصول. الكروم، التفاح، اليقطين، البندق، الزهور — كل شي مملوء لدرجة الفيضان. حتى النحل ينخدع ويعتقد إن الصيف ما بينتهي.
+  summaryAr: `المقطع 1 - الوفرة: الخريف مشخصن، وموجّه له الكلام مباشرة. الخريف "يتآمر" (conspires) مع الشمس عشان ينضّج المحصول. الكروم، التفاح، اليقطين، البندق، الزهور - كل شي مملوء لدرجة الفيضان. حتى النحل ينخدع ويعتقد إن الصيف ما بينتهي.
 
-المقطع 2 — Personification: المتكلّم يتخيّل إنه يشوف الخريف مشخصن وهو يشتغل في المنظر الريفي. الخريف يجلس على أرضية المخزن، يغفو على حقل نص محصود "drowsed with the fume of poppies"، يعبر جدول مثل امرأة تجمع بقايا الحبوب، يراقب آخر قطرات تنزّ من معصرة التفاح. الوقت يتباطأ.
+المقطع 2 - Personification: المتكلّم يتخيّل إنه يشوف الخريف مشخصن وهو يشتغل في المنظر الريفي. الخريف يجلس على أرضية المخزن، يغفو على حقل نص محصود "drowsed with the fume of poppies"، يعبر جدول مثل امرأة تجمع بقايا الحبوب، يراقب آخر قطرات تنزّ من معصرة التفاح. الوقت يتباطأ.
 
-المقطع 3 — الموسيقى والقبول: المقطع الثالث يفتح بسؤال — "Where are the songs of Spring?" — بس يستبعده فوراً. الخريف عنده موسيقاه الخاصة: بعوض ينوح، خراف تثغو، صراصير الأسوار تغنّي، أبو الحنّاء يصفّر، طيور السنونو تزقزق. النهار يموت بنعومة. السنونو تتجمّع عشان تهاجر للجنوب. القصيدة تنتهي بالقبول.
+المقطع 3 - الموسيقى والقبول: المقطع الثالث يفتح بسؤال - "Where are the songs of Spring?" - بس يستبعده فوراً. الخريف عنده موسيقاه الخاصة: بعوض ينوح، خراف تثغو، صراصير الأسوار تغنّي، أبو الحنّاء يصفّر، طيور السنونو تزقزق. النهار يموت بنعومة. السنونو تتجمّع عشان تهاجر للجنوب. القصيدة تنتهي بالقبول.
 
-المعنى العام: "To Autumn" تحتفي بجمال موسم النضج والتحلّل. تتحرّك من الوفرة المطلقة (المقطع 1) للعمل البطيء الحالم (المقطع 2) لقبول النهايات (المقطع 3). القصيدة تأمّل في الوقت والموت وقيمة كل مرحلة من الحياة — كثيرين يقرونها كرد Keats على موته القريب.`,
+المعنى العام: "To Autumn" تحتفي بجمال موسم النضج والتحلّل. تتحرّك من الوفرة المطلقة (المقطع 1) للعمل البطيء الحالم (المقطع 2) لقبول النهايات (المقطع 3). القصيدة تأمّل في الوقت والموت وقيمة كل مرحلة من الحياة - كثيرين يقرونها كرد Keats على موته القريب.`,
 
   formAndStructure: `Form: Three stanzas of 11 lines each. The poem is an <strong>ode</strong> - a formal address to a personified subject (Autumn).
 
@@ -438,21 +438,21 @@ Volta: The structural turn comes at the start of stanza 3 - "Where are the songs
 
 Closing image: The poem ends with swallows gathering to leave - the very symbol of seasonal change. But the focus is on their music, not their absence. Keats finds beauty in transience.`,
 
-  formAndStructureAr: `Form: ثلاث مقاطع، كل مقطع 11 بيت. القصيدة <strong>ode</strong> — خطاب رسمي لموضوع مشخصن (الخريف).
+  formAndStructureAr: `Form: ثلاث مقاطع، كل مقطع 11 بيت. القصيدة <strong>ode</strong> - خطاب رسمي لموضوع مشخصن (الخريف).
 
-Rhyme scheme: كل مقطع يتبع نمط معقّد: ABABCDEDCCE في المقاطع 2–3 (يختلف شوي في المقطع 1). القافية المتشابكة تخلق إحساس بالحرفية الدقيقة — هذي قصيدة متعمّدة ورسمية، مو فيضان عفوي.
+Rhyme scheme: كل مقطع يتبع نمط معقّد: ABABCDEDCCE في المقاطع 2-3 (يختلف شوي في المقطع 1). القافية المتشابكة تخلق إحساس بالحرفية الدقيقة - هذي قصيدة متعمّدة ورسمية، مو فيضان عفوي.
 
 Metre: iambic pentameter طول القصيدة. الوزن المنتظم يخلق إيقاع ثابت هادي يحاكي مرور الخريف المتمهّل. بعض الأبيات تتباطأ عن قصد بحروف العلة الطويلة والحروف الساكنة الناعمة.
 
-بنية ثلاث مقاطع: المقاطع ترسم تطوّر — من وفرة الصباح، لراحة العصر، لقبول المساء. هذا يحاكي بنية يوم خريف واحد، وبعد الحركة الأكبر من ذروة الحصاد لنهاية السنة.
+بنية ثلاث مقاطع: المقاطع ترسم تطوّر - من وفرة الصباح، لراحة العصر، لقبول المساء. هذا يحاكي بنية يوم خريف واحد، وبعد الحركة الأكبر من ذروة الحصاد لنهاية السنة.
 
-Personification: الخريف مشخصن طول القصيدة — كـ"bosom-friend" للشمس، كعامل على أرضية مخزن، كامرأة تجمع البقايا، كمراقب عند معصرة التفاح. الخطاب المباشر يعطي القصيدة طابع حميم وحواري.
+Personification: الخريف مشخصن طول القصيدة - كـ"bosom-friend" للشمس، كعامل على أرضية مخزن، كامرأة تجمع البقايا، كمراقب عند معصرة التفاح. الخطاب المباشر يعطي القصيدة طابع حميم وحواري.
 
 اللغة الحسّية: كل مقطع يأكّد على حاسة مختلفة. المقطع 1 بصري ولمسي (فاكهة، نضج، خلايا منفجرة). المقطع 2 خامل وحالم (نوم، نعاس، تدفّق بطيء). المقطع 3 سمعي (موسيقى الخريف).
 
-Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "Where are the songs of Spring?" المتكلّم يبدو حنين لفترة قصيرة، بس بسرعة يقبل إن الخريف عنده موسيقاه الخاصة. هذي لحظة القبول الفلسفي.
+Volta: التحوّل البنيوي يجي في بداية المقطع 3 - "Where are the songs of Spring?" المتكلّم يبدو حنين لفترة قصيرة، بس بسرعة يقبل إن الخريف عنده موسيقاه الخاصة. هذي لحظة القبول الفلسفي.
 
-الصورة الختامية: القصيدة تنتهي بطيور السنونو تتجمّع عشان تغادر — رمز التغيير الموسمي. بس التركيز على موسيقاهم، مو على غيابهم. Keats يلقى جمال في الزوال.`,
+الصورة الختامية: القصيدة تنتهي بطيور السنونو تتجمّع عشان تغادر - رمز التغيير الموسمي. بس التركيز على موسيقاهم، مو على غيابهم. Keats يلقى جمال في الزوال.`,
 
   keyQuotes: [
     {
@@ -461,7 +461,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         'The famous opening line introduces autumn through soft, sensual sounds. "Mellow" suggests ripeness and softness; "fruitfulness" is a key word - autumn is productive, generous. The sibilance and "m" sounds create a hushed, almost reverent atmosphere.',
       themes: ['Abundance', 'Sensory beauty', 'Personification'],
       analysisAr:
-        'البيت الافتتاحي الشهير يقدّم الخريف عبر أصوات ناعمة حسّية. "Mellow" توحي بالنضج والنعومة؛ "fruitfulness" كلمة مفتاح — الخريف منتج، كريم. الـsibilance وأصوات حرف "m" تخلق جو هادي شبه تعبّدي.',
+        'البيت الافتتاحي الشهير يقدّم الخريف عبر أصوات ناعمة حسّية. "Mellow" توحي بالنضج والنعومة؛ "fruitfulness" كلمة مفتاح - الخريف منتج، كريم. الـsibilance وأصوات حرف "m" تخلق جو هادي شبه تعبّدي.',
       themesAr: ['الوفرة', 'الجمال الحسّي', 'Personification'],
     },
     {
@@ -479,7 +479,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         'Total ripeness penetrates everything. "To the core" suggests perfection - this is the peak moment, just before decay. Keats captures the fleeting fullness of autumn before the inevitable decline.',
       themes: ['Ripeness', 'Perfection', 'Transience'],
       analysisAr:
-        'النضج التام يخترق كل شي. "To the core" توحي بالكمال — هذي اللحظة الذروة، قبل التحلّل بشوي. Keats يلتقط الامتلاء العابر للخريف قبل الانحدار الحتمي.',
+        'النضج التام يخترق كل شي. "To the core" توحي بالكمال - هذي اللحظة الذروة، قبل التحلّل بشوي. Keats يلتقط الامتلاء العابر للخريف قبل الانحدار الحتمي.',
       themesAr: ['النضج', 'الكمال', 'الزوال'],
     },
     {
@@ -506,7 +506,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         "A gentle, reassuring statement. Autumn doesn't need spring's music - it has its own. The line implicitly applies to mortality: every stage of life has its own beauty. Read in light of Keats's impending death, this is profoundly moving.",
       themes: ['Acceptance', 'Beauty', 'Equality of seasons'],
       analysisAr:
-        'تأكيد لطيف ومطمئن. الخريف ما يحتاج موسيقى الربيع — عنده موسيقاه. البيت ينطبق ضمناً على الموت: كل مرحلة من الحياة عندها جمالها. لما تنقرى مع موت Keats القريب، تصير مؤثّرة وايد.',
+        'تأكيد لطيف ومطمئن. الخريف ما يحتاج موسيقى الربيع - عنده موسيقاه. البيت ينطبق ضمناً على الموت: كل مرحلة من الحياة عندها جمالها. لما تنقرى مع موت Keats القريب، تصير مؤثّرة وايد.',
       themesAr: ['القبول', 'الجمال', 'تساوي الفصول'],
     },
     {
@@ -515,7 +515,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         'The day "dies" but softly. Death is not violent or tragic but gentle and beautiful. The pairing of "soft" with "dying" captures Keats\'s reconciled view - endings can be peaceful and lovely.',
       themes: ['Death', 'Acceptance', 'Beauty in endings'],
       analysisAr:
-        'النهار "يموت" بس بنعومة. الموت مو عنيف ولا مأساوي بل لطيف وجميل. ربط "soft" مع "dying" يلتقج نظرة Keats المتصالحة — النهايات ممكن تكون هادية وجميلة.',
+        'النهار "يموت" بس بنعومة. الموت مو عنيف ولا مأساوي بل لطيف وجميل. ربط "soft" مع "dying" يلتقج نظرة Keats المتصالحة - النهايات ممكن تكون هادية وجميلة.',
       themesAr: ['الموت', 'القبول', 'الجمال في النهايات'],
     },
     {
@@ -524,7 +524,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         "The famous closing line. The swallows are gathering to migrate south - the end of summer, the year's decline. But the focus is on their twittering (their music), not their departure. The poem ends with sound, not silence. Beauty continues right to the edge of the ending.",
       themes: ['Time', 'Acceptance', 'Music of nature'],
       analysisAr:
-        'البيت الختامي الشهير. السنونو تتجمّع عشان تهاجر للجنوب — نهاية الصيف، انحدار السنة. بس التركيز على زقزقتها (موسيقاها)، مو على رحيلها. القصيدة تنتهي بصوت، مو بصمت. الجمال يستمر لحد حافة النهاية.',
+        'البيت الختامي الشهير. السنونو تتجمّع عشان تهاجر للجنوب - نهاية الصيف، انحدار السنة. بس التركيز على زقزقتها (موسيقاها)، مو على رحيلها. القصيدة تنتهي بصوت، مو بصمت. الجمال يستمر لحد حافة النهاية.',
       themesAr: ['الوقت', 'القبول', 'موسيقى الطبيعة'],
     },
   ],
@@ -556,7 +556,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         'The "s" sounds create a soft, hushed quality throughout. The poem feels whispered rather than spoken. This sibilance evokes the gentle stillness of autumn afternoons - the calm of the season.',
       lineRef: 1,
       effectAr:
-        'أصوات حرف "s" تخلق جودة ناعمة وهادئة طول القصيدة. القصيدة تحسّ كأنها همس، مو كلام. هالـsibilance يستحضر السكون اللطيف لعصاري الخريف — هدوء الموسم.',
+        'أصوات حرف "s" تخلق جودة ناعمة وهادئة طول القصيدة. القصيدة تحسّ كأنها همس، مو كلام. هالـsibilance يستحضر السكون اللطيف لعصاري الخريف - هدوء الموسم.',
     },
     {
       device: 'Apostrophe',
@@ -565,7 +565,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         'The poem is an extended apostrophe - a direct address to autumn personified. This conventions of the ode form give the poem its conversational, intimate quality, as if Keats is talking directly to a friend.',
       lineRef: 11,
       effectAr:
-        'القصيدة apostrophe ممتدّة — خطاب مباشر للخريف المشخصن. هالعرف من أعراف شكل الـode يعطي القصيدة طابعها الحواري الحميم، كأن Keats يكلّم صديق مباشرة.',
+        'القصيدة apostrophe ممتدّة - خطاب مباشر للخريف المشخصن. هالعرف من أعراف شكل الـode يعطي القصيدة طابعها الحواري الحميم، كأن Keats يكلّم صديق مباشرة.',
     },
     {
       device: 'Volta',
@@ -574,7 +574,7 @@ Volta: التحوّل البنيوي يجي في بداية المقطع 3 — "
         'The third stanza opens with a turn - a brief moment of nostalgia for spring. But it is immediately dismissed. The volta marks the philosophical climax: acceptance of the seasonal cycle.',
       lineRef: 22,
       effectAr:
-        'المقطع الثالث يفتح بتحوّل — لحظة حنين قصيرة للربيع. بس يُستبعد فوراً. الـvolta يعلّم الذروة الفلسفية: قبول الدورة الموسمية.',
+        'المقطع الثالث يفتح بتحوّل - لحظة حنين قصيرة للربيع. بس يُستبعد فوراً. الـvolta يعلّم الذروة الفلسفية: قبول الدورة الموسمية.',
     },
     {
       device: 'Cataloguing',
@@ -624,7 +624,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Spring',
-      'The richness and beauty of autumn — presented as a season of fulfilment rather than decay',
+      'The richness and beauty of autumn - presented as a season of fulfilment rather than decay',
       'Winter',
       'Summer',
     ],
@@ -656,7 +656,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'Three stanzas of 11 lines each — an ode form',
+      'Three stanzas of 11 lines each - an ode form',
       'A sonnet',
       'Quatrains',
     ],
@@ -678,7 +678,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.',
+      'Each stanza emphasises a different sensory experience - tactile abundance (1), visual personification (2), and aural music (3) - creating a complete sensory immersion in autumn.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -704,7 +704,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Spring is better',
-      'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music',
+      'The passing of time - but Keats immediately insists autumn has its own, equally beautiful music',
       'Spring will return',
       'The speaker is sad',
     ],
@@ -736,13 +736,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He ignores it',
-      "Autumn's beauty is heightened by its transience — the beauty is more precious because it is fleeting",
+      "Autumn's beauty is heightened by its transience - the beauty is more precious because it is fleeting",
       'He fears death directly',
       'He celebrates immortality',
     ],
     correctIndex: 1,
     explanation:
-      'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.',
+      'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing - the awareness of endings makes the present more vivid.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -752,13 +752,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Spring is coming',
-      'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell',
+      'The swallows preparing to migrate signal the end of autumn and approaching winter - beauty accompanied by gentle farewell',
       'The birds are feeding',
       'It describes morning',
     ],
     correctIndex: 1,
     explanation:
-      "The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn's music includes its own farewell.",
+      "The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant - autumn's music includes its own farewell.",
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -768,7 +768,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It rhymes well',
-      'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience',
+      'It perfectly balances sensory richness with philosophical depth - celebrating beauty while acknowledging its transience',
       'It is very old',
       'It is very long',
     ],
@@ -786,10 +786,10 @@ const REVISION_TOPICS = [
     summary:
       'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.',
     keyPoints: [
-      'Abundance — autumn as fulfilment rather than decay',
-      'Transience — beauty is more precious because it is fleeting',
-      'Acceptance — the poem embraces endings rather than fearing them',
-      'Keats was dying — personal mortality informs the gentle farewell',
+      'Abundance - autumn as fulfilment rather than decay',
+      'Transience - beauty is more precious because it is fleeting',
+      'Acceptance - the poem embraces endings rather than fearing them',
+      'Keats was dying - personal mortality informs the gentle farewell',
     ],
   },
   {
@@ -798,9 +798,9 @@ const REVISION_TOPICS = [
       'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.',
     keyPoints: [
       'Autumn personified as a relaxed figure among the harvest',
-      '"Close bosom-friend of the maturing sun" — intimate alliance',
-      'Multi-sensory — sight, touch, taste, smell, sound',
-      '"Gathering swallows" — gentle farewell image',
+      '"Close bosom-friend of the maturing sun" - intimate alliance',
+      'Multi-sensory - sight, touch, taste, smell, sound',
+      '"Gathering swallows" - gentle farewell image',
     ],
   },
   {
@@ -808,10 +808,10 @@ const REVISION_TOPICS = [
     summary:
       'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.',
     keyPoints: [
-      'Ode form — elevated celebration',
+      'Ode form - elevated celebration',
       'Three stanzas: ripeness (1), personification (2), music (3)',
-      'Progression from morning to evening — time passing',
-      'Regular rhyme scheme — orderly celebration',
+      'Progression from morning to evening - time passing',
+      'Regular rhyme scheme - orderly celebration',
     ],
   },
 ]
@@ -826,7 +826,7 @@ export default function ToAutumnEduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="To Autumn by John Keats — Analysis & Annotations"
+        name="To Autumn by John Keats - Analysis & Annotations"
         description="Line-by-line analysis of To Autumn with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

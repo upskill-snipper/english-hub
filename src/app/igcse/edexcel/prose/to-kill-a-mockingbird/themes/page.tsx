@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird Themes — Edexcel IGCSE Literature',
+    title: 'To Kill a Mockingbird Themes - Edexcel IGCSE Literature',
     description:
       'Themes in To Kill a Mockingbird: racism and justice, moral courage, childhood innocence, empathy, class, gender and the mockingbird motif.',
   },
-  title: 'To Kill a Mockingbird Themes — Edexcel IGCSE Literature',
+  title: 'To Kill a Mockingbird Themes - Edexcel IGCSE Literature',
   description:
     'Themes in To Kill a Mockingbird: racism and justice, moral courage, childhood innocence, empathy, class, gender and the mockingbird motif.',
   alternates: {
@@ -24,16 +24,16 @@ const themes = [
   {
     title: 'Racism and justice',
     intro:
-      'The novel\u2019s central theme is the legal and social machinery of Jim Crow Alabama. Tom Robinson\u2019s trial is structured to look fair — Judge Taylor is competent, Atticus is diligent, the Ewell case falls apart under cross-examination — yet the verdict is pre-written by race. Lee distinguishes between overt racism (the Ewells, the lynch mob) and "polite" racism (the ladies\u2019 missionary society) to show how the whole social tissue of Maycomb sustains injustice.',
+      'The novel\u2019s central theme is the legal and social machinery of Jim Crow Alabama. Tom Robinson\u2019s trial is structured to look fair - Judge Taylor is competent, Atticus is diligent, the Ewell case falls apart under cross-examination - yet the verdict is pre-written by race. Lee distinguishes between overt racism (the Ewells, the lynch mob) and "polite" racism (the ladies\u2019 missionary society) to show how the whole social tissue of Maycomb sustains injustice.',
     textualMoments:
-      'The trial chapters (17–21); the Missionary Society tea (ch. 24); Atticus\u2019s closing speech; the night at the jail (ch. 15).',
+      'The trial chapters (17-21); the Missionary Society tea (ch. 24); Atticus\u2019s closing speech; the night at the jail (ch. 15).',
     quote:
       '”When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.”',
   },
   {
     title: 'Moral courage',
     intro:
-      'Courage in Mockingbird is redefined away from physical bravery. Atticus\u2019s definition — via Mrs Dubose\u2019s morphine withdrawal — is the book\u2019s working theory of ethical action: doing the right thing when you already know you will lose. This makes the trial itself an act of courage rather than a failed rescue mission.',
+      'Courage in Mockingbird is redefined away from physical bravery. Atticus\u2019s definition - via Mrs Dubose\u2019s morphine withdrawal - is the book\u2019s working theory of ethical action: doing the right thing when you already know you will lose. This makes the trial itself an act of courage rather than a failed rescue mission.',
     textualMoments:
       'Mrs Dubose chapters (11); the mad-dog shot (10); Atticus\u2019s defence; Boo\u2019s intervention.',
     quote: '”Real courage is… when you\u2019re licked before you begin but you begin anyway.”',
@@ -41,16 +41,16 @@ const themes = [
   {
     title: 'Childhood innocence and its loss',
     intro:
-      'The dual-voice narration lets Lee track the children\u2019s loss of innocence in slow motion. Scout keeps hers longer than Jem, partly because the trial\u2019s sexual charge passes over her head. Jem is shattered; Dill, more sensitive still, weeps openly. The novel refuses the easy consolation that growing up means understanding — it often means unlearning.',
+      'The dual-voice narration lets Lee track the children\u2019s loss of innocence in slow motion. Scout keeps hers longer than Jem, partly because the trial\u2019s sexual charge passes over her head. Jem is shattered; Dill, more sensitive still, weeps openly. The novel refuses the easy consolation that growing up means understanding - it often means unlearning.',
     textualMoments:
-      'The Radley games (ch. 1–5); Jem\u2019s reaction to the verdict (ch. 22); the final walk home.',
+      'The Radley games (ch. 1-5); Jem\u2019s reaction to the verdict (ch. 22); the final walk home.',
     quote:
       '”Like watching Atticus walk into the street, raise a rifle… knowing the gun was empty.”',
   },
   {
     title: 'Empathy and perspective',
     intro:
-      'Atticus\u2019s instruction to "climb into [another person\u2019s] skin and walk around in it" functions as the novel\u2019s moral engine. Scout applies it variously — to Walter Cunningham, Miss Caroline, eventually Boo Radley — and Lee uses its successful and failed applications to measure each character\u2019s growth.',
+      'Atticus\u2019s instruction to "climb into [another person\u2019s] skin and walk around in it" functions as the novel\u2019s moral engine. Scout applies it variously - to Walter Cunningham, Miss Caroline, eventually Boo Radley - and Lee uses its successful and failed applications to measure each character\u2019s growth.',
     textualMoments:
       'Walter Cunningham at lunch (ch. 3); the final scene on Boo\u2019s porch (ch. 31).',
     quote:
@@ -59,7 +59,7 @@ const themes = [
   {
     title: 'The mockingbird motif',
     intro:
-      'Two characters are identified as mockingbirds: Tom Robinson (innocent, destroyed by the town) and Boo Radley (dragged into daylight by Bob Ewell\u2019s attack). Sheriff Tate\u2019s closing decision to protect Boo from publicity — "it\u2019d be sort of like shootin\u2019 a mockingbird" — turns the motif into a principle of active protection, not just passive pity.',
+      'Two characters are identified as mockingbirds: Tom Robinson (innocent, destroyed by the town) and Boo Radley (dragged into daylight by Bob Ewell\u2019s attack). Sheriff Tate\u2019s closing decision to protect Boo from publicity - "it\u2019d be sort of like shootin\u2019 a mockingbird" - turns the motif into a principle of active protection, not just passive pity.',
     textualMoments:
       'Miss Maudie\u2019s explanation (ch. 10); Tom\u2019s death in ch. 25; Tate\u2019s decision in ch. 30.',
     quote: '“It\u2019s a sin to kill a mockingbird.”',
@@ -67,7 +67,7 @@ const themes = [
   {
     title: 'Class and the Southern hierarchy',
     intro:
-      'Jem\u2019s taxonomy of Maycomb — "our kind of folks don\u2019t like the Cunninghams, the Cunninghams don\u2019t like the Ewells, and the Ewells hate and despise the colored folks" — lays out the brittle class system that racial scapegoating holds together. Lee repeatedly shows how class anxiety feeds racial violence.',
+      'Jem\u2019s taxonomy of Maycomb - "our kind of folks don\u2019t like the Cunninghams, the Cunninghams don\u2019t like the Ewells, and the Ewells hate and despise the colored folks" - lays out the brittle class system that racial scapegoating holds together. Lee repeatedly shows how class anxiety feeds racial violence.',
     textualMoments:
       'Scout\u2019s lunch with Walter (ch. 3); Jem\u2019s taxonomy (ch. 23); Aunt Alexandra\u2019s Finch Family lectures.',
     quote: '“There\u2019s four kinds of folks in the world.”',
@@ -75,7 +75,7 @@ const themes = [
   {
     title: 'Gender and Southern womanhood',
     intro:
-      'Scout\u2019s refusal of dresses, overalls and Alexandra\u2019s "ladylike" curriculum positions gender as another system of control. Mayella\u2019s isolation exposes the darker side of the same pressure: white Southern femininity is both prized and weaponised. Miss Maudie offers an alternative model of adult womanhood — sharp, independent and unmarried.',
+      'Scout\u2019s refusal of dresses, overalls and Alexandra\u2019s "ladylike" curriculum positions gender as another system of control. Mayella\u2019s isolation exposes the darker side of the same pressure: white Southern femininity is both prized and weaponised. Miss Maudie offers an alternative model of adult womanhood - sharp, independent and unmarried.',
     textualMoments:
       'Scout\u2019s clashes with Alexandra; Mayella\u2019s testimony; the Missionary Society tea.',
     quote: '“I was not so sure, but Jem told me I was being a girl.”',
@@ -127,8 +127,8 @@ export default async function TkamThemesPage() {
             To Kill a Mockingbird: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Lee’s novel — understanding the text, analysing language and
-            structure, and relating to context — racism, courage, innocence, empathy, class, gender
+            Analytical routes through Lee’s novel - understanding the text, analysing language and
+            structure, and relating to context - racism, courage, innocence, empathy, class, gender
             and the mockingbird motif.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default async function TkamThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

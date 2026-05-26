@@ -2,7 +2,7 @@
 // Unified submission INSERT path for the teacher-in-the-loop marking spine.
 //
 // Creates a `marking_submissions` row in status 'submitted'. It does NOT run
-// the AI — POST /api/marking/run is a separate, explicit step so submission
+// the AI - POST /api/marking/run is a separate, explicit step so submission
 // and (potentially-expensive, teacher-gated) marking are decoupled.
 //
 // Gate order mirrors POST /api/mark exactly:
@@ -178,7 +178,7 @@ export async function POST(request: NextRequest) {
       return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
     }
 
-    // 4. AI opt-out enforcement (Children's Code — GAP-12B)
+    // 4. AI opt-out enforcement (Children's Code - GAP-12B)
     const aiOptedOut = await isAiOptedOutServer(user.id)
     if (aiOptedOut) {
       return forbiddenResponse(
@@ -213,14 +213,14 @@ export async function POST(request: NextRequest) {
     })
     if (safetyError) return badRequestResponse(safetyError)
 
-    // 8. Resolve mark scheme (fail fast — a row that can never be marked is
+    // 8. Resolve mark scheme (fail fast - a row that can never be marked is
     //    useless; mirrors /api/mark's early scheme check).
     const scheme = getMarkScheme(data.markSchemeId)
     if (!scheme) {
       return badRequestResponse(`Unknown mark scheme "${data.markSchemeId}".`)
     }
 
-    // 9. Insert the submission (service role — Supabase only, never Prisma).
+    // 9. Insert the submission (service role - Supabase only, never Prisma).
     const svc = createServiceRoleClient()
     let inserted: { id: string }
     try {

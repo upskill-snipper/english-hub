@@ -62,7 +62,7 @@ function migrateOldProgress(): Record<string, CardReviewState> {
     const now = new Date()
     for (const [cardId, status] of Object.entries(data.cardStatus)) {
       if (status === 'know') {
-        // Card was known — give it a good starting state
+        // Card was known - give it a good starting state
         migrated[cardId] = {
           cardId,
           easinessFactor: 2.5,
@@ -72,7 +72,7 @@ function migrateOldProgress(): Record<string, CardReviewState> {
           lastReviewDate: now.toISOString(),
         }
       } else if (status === 'review') {
-        // Card needed review — set as due now with low state
+        // Card needed review - set as due now with low state
         migrated[cardId] = {
           cardId,
           easinessFactor: 2.0,
@@ -82,9 +82,11 @@ function migrateOldProgress(): Record<string, CardReviewState> {
           lastReviewDate: now.toISOString(),
         }
       }
-      // 'unseen' cards are simply not added — they remain new
+      // 'unseen' cards are simply not added - they remain new
     }
-  } catch { /* ignore corrupt data */ }
+  } catch {
+    /* ignore corrupt data */
+  }
 
   return migrated
 }
@@ -188,8 +190,8 @@ export const useFlashcardStore = create<FlashcardState>()(
           }
         }
       },
-    }
-  )
+    },
+  ),
 )
 
 // ─── Derived selectors ──────────────────────────────────────────────────────

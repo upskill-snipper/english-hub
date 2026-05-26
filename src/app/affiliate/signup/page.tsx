@@ -29,9 +29,9 @@ const INITIAL_STATE: FormState = {
 
 const AUDIENCE_OPTIONS = [
   { value: '< 1,000', labelKey: 'aff.signup.audience.under_1k' },
-  { value: '1,000 – 5,000', labelKey: 'aff.signup.audience.1k_5k' },
-  { value: '5,000 – 25,000', labelKey: 'aff.signup.audience.5k_25k' },
-  { value: '25,000 – 100,000', labelKey: 'aff.signup.audience.25k_100k' },
+  { value: '1,000 - 5,000', labelKey: 'aff.signup.audience.1k_5k' },
+  { value: '5,000 - 25,000', labelKey: 'aff.signup.audience.5k_25k' },
+  { value: '25,000 - 100,000', labelKey: 'aff.signup.audience.25k_100k' },
   { value: '100,000+', labelKey: 'aff.signup.audience.over_100k' },
 ] as const
 
@@ -58,7 +58,7 @@ export default function AffiliateSignupPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // Phase-7: Supabase — insert affiliate row with pending status
+    // Phase-7: Supabase - insert affiliate row with pending status
     const account = createDefaultAccount({
       name: form.name,
       email: form.email,

@@ -1,9 +1,9 @@
-// ─── Platform-admin — Rubric version listing (read-only) ────────────────────
+// ─── Platform-admin - Rubric version listing (read-only) ────────────────────
 // GET /api/admin/rubrics            list rubric_versions (newest first)
 //
 // Site-admin only. Backed by src/lib/versioning/admin.ts (service-role; these
 // tables are RLS deny-by-default). Rubrics are content-hash pointers to the
-// in-code mark schemes — surfaced read-only with their content hash. Empty-
+// in-code mark schemes - surfaced read-only with their content hash. Empty-
 // table safe.
 // ────────────────────────────────────────────────────────────────────────────
 

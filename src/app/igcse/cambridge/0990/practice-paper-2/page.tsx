@@ -104,7 +104,7 @@ export default async function PracticePaper2Page() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="text-body font-semibold">
-              Stimulus text — Should schools keep phones out of classrooms?
+              Stimulus text - Should schools keep phones out of classrooms?
             </CardTitle>
             <p className="text-body-xs text-muted-foreground">
               Read the short opinion piece below, then answer the task underneath it.
@@ -114,7 +114,7 @@ export default async function PracticePaper2Page() {
             <p>
               Walk into any secondary school corridor at lunchtime and you&apos;ll see the same
               scene: teenagers bent over bright rectangles, fingers flickering, eyes elsewhere. Some
-              schools have begun asking whether this level of attachment is healthy — and whether
+              schools have begun asking whether this level of attachment is healthy - and whether
               the classroom, at least, should be a phone-free zone.
             </p>
             <p>
@@ -131,7 +131,7 @@ export default async function PracticePaper2Page() {
               parents agree, preferring to be contactable during the school day.
             </p>
             <p>
-              The question isn&apos;t really whether phones are useful — they clearly are. It&apos;s
+              The question isn&apos;t really whether phones are useful - they clearly are. It&apos;s
               whether schools should be the place where young people finally look up from the
               screen.
             </p>
@@ -170,7 +170,7 @@ export default async function PracticePaper2Page() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Award className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Model answer — Section A</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Model answer - Section A</h2>
         </div>
         <Card>
           <CardHeader className="pb-3">
@@ -184,7 +184,7 @@ export default async function PracticePaper2Page() {
           <CardContent className="space-y-3 text-body-sm leading-relaxed text-muted-foreground">
             <p>
               Fellow students, I know what you&apos;re thinking. A phone ban? Really? But before you
-              reach for your pockets in protest, hear me out — because I believe that locking our
+              reach for your pockets in protest, hear me out - because I believe that locking our
               phones away for five hours a day is one of the few things this school could do that
               would actually change our lives.
             </p>
@@ -200,12 +200,12 @@ export default async function PracticePaper2Page() {
               I know the counter-arguments. What about safety? What about emergencies? These
               concerns are fair, but they don&apos;t need to defeat the proposal. A locked phone in
               a pouch at the front of the class is still a phone that the teacher can reach in a
-              crisis. The choice isn&apos;t between connection and isolation — it&apos;s between
+              crisis. The choice isn&apos;t between connection and isolation - it&apos;s between
               ambient distraction and focused attention.
             </p>
             <p>
               We talk a lot in this council about &ldquo;wellbeing&rdquo;. Here&apos;s a chance to
-              act on it. Let&apos;s give ourselves five hours a day to think, to talk, to read —
+              act on it. Let&apos;s give ourselves five hours a day to think, to talk, to read -
               without the glow of a screen competing for our eyes. Not forever. Just during lessons.
               Just long enough to remember what full attention feels like.
             </p>
@@ -299,7 +299,7 @@ export default async function PracticePaper2Page() {
         <div className="mb-5 flex items-center gap-3">
           <Award className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Model answer — Section B (descriptive)
+            Model answer - Section B (descriptive)
           </h2>
         </div>
         <Card>
@@ -327,7 +327,7 @@ export default async function PracticePaper2Page() {
             </p>
             <p>
               Further down, a boy sweeps a carpet of leaves and broken crates into a single dark
-              pile. His broom scrapes a steady rhythm against the cobbles — ssh, ssh, ssh — like the
+              pile. His broom scrapes a steady rhythm against the cobbles - ssh, ssh, ssh - like the
               market&apos;s own heartbeat winding down. The fruit trader beside him is already
               halfway into a van, his forearms dusted with sugar from the last of the dates.
             </p>
@@ -335,7 +335,7 @@ export default async function PracticePaper2Page() {
               In one stall, a lone string of paper lanterns still glows. An old man sits beneath
               them on an upturned crate, drinking tea from a tin cup. He watches the emptying square
               with the calm of someone who has seen this scene played out every evening of his
-              working life. When I pass, he nods — not at me, exactly, but at the whole soft closing
+              working life. When I pass, he nods - not at me, exactly, but at the whole soft closing
               of the day.
             </p>
             <p>

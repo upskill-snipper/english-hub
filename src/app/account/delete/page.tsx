@@ -17,7 +17,7 @@ import { useAuthStore, useAuthUserLoading } from '@/store/auth-store'
 import { useT } from '@/lib/i18n/use-t'
 
 /**
- * /account/delete — GDPR Art.17 self-service erasure flow.
+ * /account/delete - GDPR Art.17 self-service erasure flow.
  *
  * Children's Code expects deletion to be obvious and easy: this page is a
  * single, focused view (separate from the Account settings page) so a
@@ -89,7 +89,7 @@ export default function DeleteAccountPage() {
     )
   }
 
-  // Success state — request accepted, grace period has begun.
+  // Success state - request accepted, grace period has begun.
   if (scheduledPurgeAt) {
     const purgeDateLabel = new Date(scheduledPurgeAt).toLocaleDateString('en-GB', {
       weekday: 'long',

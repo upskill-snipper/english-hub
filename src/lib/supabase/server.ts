@@ -4,7 +4,7 @@ import { cookies, type UnsafeUnwrappedCookies } from 'next/headers'
 /**
  * Server-side Supabase client. Uses the modern `getAll` / `setAll` cookie
  * API (the deprecated `get` / `set` / `remove` triplet was the source of
- * intermittent login failures — chunked session cookies were not being
+ * intermittent login failures - chunked session cookies were not being
  * round-tripped reliably between request and response).
  *
  * Stays synchronously-invokable so existing call sites remain unchanged.
@@ -30,7 +30,7 @@ export function createServerSupabaseClient() {
             for (const { name, value, options } of cookiesToSet) {
               cookieStore.set(name, value, {
                 ...options,
-                // Force `secure` in production — the founder's HTTPS-only
+                // Force `secure` in production - the founder's HTTPS-only
                 // deploy needs this, and Supabase's defaults omit it.
                 secure: process.env.NODE_ENV === 'production',
                 sameSite: options?.sameSite ?? 'lax',

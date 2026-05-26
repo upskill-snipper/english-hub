@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Narrative Structure — Cambridge IGCSE Composition',
+    title: 'Narrative Structure - Cambridge IGCSE Composition',
     description:
       'Structure a Cambridge IGCSE narrative composition using the five-part arc, Freytag’s triangle, in medias res openings and cliff-turn endings.',
   },
-  title: 'Narrative Structure — Cambridge IGCSE Composition',
+  title: 'Narrative Structure - Cambridge IGCSE Composition',
   description:
     'Structure a Cambridge IGCSE narrative composition using the five-part arc, Freytag’s triangle, in medias res openings and cliff-turn endings.',
   alternates: {
@@ -25,7 +25,7 @@ const fivePart = [
     name: '1. Opening image',
     length: '~50 words',
     description:
-      'One vivid detail that plants the reader inside the scene. Not backstory, not explanation — a sensory anchor. Often a physical object or a character action mid-flow.',
+      'One vivid detail that plants the reader inside the scene. Not backstory, not explanation - a sensory anchor. Often a physical object or a character action mid-flow.',
     example: 'The envelope had been sitting on the kitchen counter for three days.',
   },
   {
@@ -40,14 +40,14 @@ const fivePart = [
     name: '3. Turning point',
     length: '~100 words',
     description:
-      'Something tips. A decision is made, a door opens, an interruption arrives. This is the hinge — everything before points towards it, everything after flows from it.',
+      'Something tips. A decision is made, a door opens, an interruption arrives. This is the hinge - everything before points towards it, everything after flows from it.',
     example: 'The phone rings. Her brother’s voice: “You got it too, didn’t you?”',
   },
   {
     name: '4. Consequence',
     length: '~150 words',
     description:
-      'Show what the turning point means — in body language, in speech, in thought. This is where the character changes. The setting may stay the same; the person in it is different.',
+      'Show what the turning point means - in body language, in speech, in thought. This is where the character changes. The setting may stay the same; the person in it is different.',
     example:
       'She opens the envelope. The news is better than she feared. Slowly, she sits down, and notices the rain outside has stopped.',
   },
@@ -55,7 +55,7 @@ const fivePart = [
     name: '5. Closing image',
     length: '~50 words',
     description:
-      'Return to an object or image from the opening, but changed. Leave the reader with a quiet, lingering detail — not a moral, not a summary.',
+      'Return to an object or image from the opening, but changed. Leave the reader with a quiet, lingering detail - not a moral, not a summary.',
     example:
       'She folded the letter twice and placed it, gently, back on the counter where it had been waiting.',
   },
@@ -65,7 +65,7 @@ const openings = [
   {
     name: 'In medias res',
     description:
-      'Begin in the middle of the action — mid-sentence, mid-gesture, mid-argument. The reader is dropped in and has to catch up. Best for stories about sudden events.',
+      'Begin in the middle of the action - mid-sentence, mid-gesture, mid-argument. The reader is dropped in and has to catch up. Best for stories about sudden events.',
     example: 'By the time I reached the river, the dog was already in the water.',
   },
   {
@@ -84,7 +84,7 @@ const openings = [
   {
     name: 'Question first',
     description:
-      'Open on the narrator asking themselves a question — often about a decision they’ve just made. Gives immediate interiority.',
+      'Open on the narrator asking themselves a question - often about a decision they’ve just made. Gives immediate interiority.',
     example: 'What had I been thinking, telling him I’d meet him here?',
   },
 ]

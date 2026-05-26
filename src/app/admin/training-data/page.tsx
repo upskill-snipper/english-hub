@@ -1,8 +1,8 @@
-// ─── /admin/training-data — Platform-admin training-data console ─────────────
+// ─── /admin/training-data - Platform-admin training-data console ─────────────
 //
 // Server Component (platform-admin only). Shows the anonymised training corpus:
 //   • counts by exam board and by training status,
-//   • a table of recent anonymised records (NO PII — only hashed ids + the
+//   • a table of recent anonymised records (NO PII - only hashed ids + the
 //     non-identifying question/mark context),
 //   • a "Prepare eligible" action that promotes every approved + training-
 //     eligible + not-yet-exported submission via prepareTrainingRecord (each
@@ -13,7 +13,7 @@
 // the page's data has no JSON API in scope and training_data is service-role-
 // only, so reads happen here behind `verifyAdmin()`. The mutating action is a
 // server action that fans out to the audited prepareTrainingRecord. Exports are
-// plain links — the browser performs the authenticated GET + file download.
+// plain links - the browser performs the authenticated GET + file download.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { redirect } from 'next/navigation'
@@ -60,7 +60,7 @@ async function prepareEligibleAction(): Promise<void> {
 
   const { error: authError } = await verifyAdmin()
   if (authError) {
-    // Not authorised — do nothing (the page itself also gates on render).
+    // Not authorised - do nothing (the page itself also gates on render).
     return
   }
 
@@ -80,7 +80,7 @@ async function prepareEligibleAction(): Promise<void> {
     return
   }
 
-  // Sequential — prepareTrainingRecord is idempotent and writes an audit row
+  // Sequential - prepareTrainingRecord is idempotent and writes an audit row
   // per call; keep load predictable rather than hammering the DB in parallel.
   for (const r of data as { id: string }[]) {
     try {

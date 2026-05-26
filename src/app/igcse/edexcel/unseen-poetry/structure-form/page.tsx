@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
   Layers,
@@ -25,7 +25,7 @@ const FORMS = [
     meaning:
       'Traditionally a love poem, but modern sonnets use the form ironically. The volta (turn) at line 9 (Petrarchan) or line 13 (Shakespearean) is where the argument changes -- always analyse it.',
     example:
-      'Shakespeare\'s Sonnet 18 opens with a question, develops the metaphor, then resolves it in the final couplet.',
+      "Shakespeare's Sonnet 18 opens with a question, develops the metaphor, then resolves it in the final couplet.",
   },
   {
     name: 'Ballad',
@@ -41,7 +41,7 @@ const FORMS = [
     shape: 'A single speaker addressing a silent listener, often in blank verse',
     types: 'Victorian dramatic monologue is the classic form (Browning)',
     meaning:
-      'The speaker reveals more about themselves than they intend. The reader becomes a detective, reading between the lines to understand the speaker\'s bias or moral failing.',
+      "The speaker reveals more about themselves than they intend. The reader becomes a detective, reading between the lines to understand the speaker's bias or moral failing.",
     example:
       'Browning\'s "My Last Duchess" -- the Duke incriminates himself through his own words.',
   },
@@ -60,7 +60,8 @@ const FORMS = [
     types: 'Pindaric (complex stanza structure), Horatian (regular stanzas), irregular',
     meaning:
       'An ode addresses and celebrates its subject with serious, elevated language. Look for apostrophe -- direct address to an object, idea, or absent person.',
-    example: 'Keats\'s "Ode to a Nightingale" addresses the bird directly and meditates on mortality.',
+    example:
+      'Keats\'s "Ode to a Nightingale" addresses the bird directly and meditates on mortality.',
   },
   {
     name: 'Elegy',
@@ -103,7 +104,7 @@ const STRUCTURAL_FEATURES = [
     name: 'Caesura',
     question: 'Are there pauses within lines?',
     analysis:
-      'A caesura breaks the rhythm and creates a moment of emphasis or hesitation. Dickinson\'s dashes are caesurae. Look for where the pause falls: does it split a line in half, isolating an idea?',
+      "A caesura breaks the rhythm and creates a moment of emphasis or hesitation. Dickinson's dashes are caesurae. Look for where the pause falls: does it split a line in half, isolating an idea?",
   },
   {
     name: 'Volta',
@@ -144,9 +145,7 @@ export default function StructureFormPage() {
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                Form and Structure
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">Form and Structure</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 Edexcel IGCSE Literature
               </Badge>
@@ -169,12 +168,11 @@ export default function StructureFormPage() {
           Every choice a poet makes about shape has meaning
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          When you open a poem, the first thing you see is its shape on the page. Stanza
-          length, rhyme, line breaks, metre -- these are not decoration. They shape how we
-          read, how we pause, and what we feel. The strongest candidates always link
-          structural features back to meaning: form is never described in isolation but always
-          tied to effect. This guide covers the forms and structural features you are most
-          likely to meet in an unseen poem.
+          When you open a poem, the first thing you see is its shape on the page. Stanza length,
+          rhyme, line breaks, metre -- these are not decoration. They shape how we read, how we
+          pause, and what we feel. The strongest candidates always link structural features back to
+          meaning: form is never described in isolation but always tied to effect. This guide covers
+          the forms and structural features you are most likely to meet in an unseen poem.
         </p>
       </section>
 
@@ -182,9 +180,7 @@ export default function StructureFormPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Common Poetic Forms
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Common Poetic Forms</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
           If you can identify the form, you already know something about the poem&apos;s intent.
@@ -209,9 +205,7 @@ export default function StructureFormPage() {
                   <p className="text-xs text-muted-foreground">{f.types}</p>
                 </div>
               </div>
-              <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
-                {f.meaning}
-              </p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">{f.meaning}</p>
               <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.06] p-3">
                 <p className="text-xs italic text-muted-foreground leading-relaxed">
                   <span className="font-semibold text-foreground">Example: </span>
@@ -232,8 +226,8 @@ export default function StructureFormPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Even if you cannot name the form, you can always analyse these eight structural
-          features. Each one is a question to ask, and each one connects to meaning.
+          Even if you cannot name the form, you can always analyse these eight structural features.
+          Each one is a question to ask, and each one connects to meaning.
         </p>
 
         <div className="grid gap-4">
@@ -245,9 +239,7 @@ export default function StructureFormPage() {
                   {f.question}
                 </Badge>
               </div>
-              <p className="text-body-sm text-muted-foreground leading-relaxed">
-                {f.analysis}
-              </p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{f.analysis}</p>
             </div>
           ))}
         </div>
@@ -276,8 +268,8 @@ export default function StructureFormPage() {
           Put it all together with comparison
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Form, language, comparison, and thesis -- the unseen poetry question pulls all
-          of these together. Revisit the comparison guide now that you have the full toolkit.
+          Form, language, comparison, and thesis -- the unseen poetry question pulls all of these
+          together. Revisit the comparison guide now that you have the full toolkit.
         </p>
         <Button
           variant="default"

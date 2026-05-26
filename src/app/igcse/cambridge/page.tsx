@@ -28,7 +28,7 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Cambridge IGCSE English — The English Hub',
+    title: 'Cambridge IGCSE English - The English Hub',
     description:
       'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',
   },
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge' },
 }
 
-// Syllabus card data — visible text fields reference dictionary keys so
+// Syllabus card data - visible text fields reference dictionary keys so
 // they translate when the AR toggle is active. Static highlight labels
 // stay English (they reference very specific Cambridge paper sub-titles
-// that don't have AR translations yet — fall back to EN gracefully).
+// that don't have AR translations yet - fall back to EN gracefully).
 const syllabuses = [
   {
     slug: '0500',
@@ -56,11 +56,11 @@ const syllabuses = [
     href: '/igcse/cambridge/0500',
     highlights: [
       {
-        label: 'Reading Paper — comprehension, summary and directed writing',
+        label: 'Reading Paper - comprehension, summary and directed writing',
         href: '/igcse/cambridge/0500/paper-1',
       },
       {
-        label: 'Writing Paper — directed writing and composition',
+        label: 'Writing Paper - directed writing and composition',
         href: '/igcse/cambridge/0500/paper-2',
       },
       {
@@ -86,11 +86,11 @@ const syllabuses = [
     href: '/igcse/cambridge/0990',
     highlights: [
       {
-        label: 'Reading Paper — comprehension, summary and language analysis',
+        label: 'Reading Paper - comprehension, summary and language analysis',
         href: '/igcse/cambridge/0990/paper-1',
       },
       {
-        label: 'Writing Paper — directed writing and composition',
+        label: 'Writing Paper - directed writing and composition',
         href: '/igcse/cambridge/0990/paper-2',
       },
       {
@@ -257,7 +257,7 @@ export default async function CambridgeHubPage() {
                         </span>
                       </div>
 
-                      {/* Clickable highlight links — paper-specific subtitles
+                      {/* Clickable highlight links - paper-specific subtitles
                           stay English-only for now (no AR mapping yet). */}
                       <div className="space-y-1.5">
                         {syllabus.highlights.map((item) => (

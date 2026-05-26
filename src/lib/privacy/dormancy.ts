@@ -1,7 +1,7 @@
 /**
  * ─── Child Account Dormancy Logic ─────────────────────────────────────────
  *
- * Children's Code (Age Appropriate Design Code) – Standard 8: Data Minimisation
+ * Children's Code (Age Appropriate Design Code) - Standard 8: Data Minimisation
  *
  * Child accounts (isMinor === true at registration) that have been inactive
  * for 12 months are flagged for deletion. A 30-day warning email is sent
@@ -74,7 +74,7 @@ async function auditDormancyAction(
       details: {
         ...details,
         automated: true,
-        complianceStandard: "Children's Code Standard 8 – Data Minimisation",
+        complianceStandard: "Children's Code Standard 8 - Data Minimisation",
         timestamp: new Date().toISOString(),
       },
       ipAddress: 'system',
@@ -97,7 +97,7 @@ export async function findDormantChildren(
 ): Promise<{ id: string; email: string; firstName: string; parentEmail: string | null }[]> {
   const cutoff = monthsAgo(CHILD_DORMANCY.INACTIVE_MONTHS)
 
-  // TODO(Phase-7): test with real Supabase data – `lastLoginAt` may need
+  // TODO(Phase-7): test with real Supabase data - `lastLoginAt` may need
   // to be sourced from Supabase auth.users.last_sign_in_at via a join or
   // a synced column. Using `updatedAt` as a fallback proxy here.
   const dormant = await prisma.user.findMany({
@@ -325,7 +325,7 @@ export async function findDormantChildAccounts(prisma: PrismaClient): Promise<st
   const cutoff = monthsAgo(CHILD_DORMANCY.INACTIVE_MONTHS)
 
   // Pull all candidates where lastLoginAt is past the 12-month threshold
-  // (or is null AND createdAt is past the threshold — pre-migration rows
+  // (or is null AND createdAt is past the threshold - pre-migration rows
   // that never logged in are still subject to dormancy).
   const candidates = await prisma.user.findMany({
     where: {
@@ -376,10 +376,10 @@ function ageInYears(dob: Date, at: Date): number {
 
 /**
  * Purges a dormant child account in the order required by the Children's
- * Code (Standard 8 – Data Minimisation) and UK GDPR Article 17:
+ * Code (Standard 8 - Data Minimisation) and UK GDPR Article 17:
  *
  *   1. Anonymise analytics rows (so aggregates remain valid).
- *   2. Delete PII (email, name, DOB) — replace with neutral placeholders.
+ *   2. Delete PII (email, name, DOB) - replace with neutral placeholders.
  *   3. Delete consent records (no longer relevant once PII is gone).
  *   4. Soft-delete the user (`deletedAt = now`, status PENDING_DELETION).
  *   5. Write a dedicated audit row recording the purge.
@@ -393,7 +393,7 @@ export async function purgeDormantAccount(prisma: PrismaClient, userId: string):
   const placeholder = `purged-${userId}@deleted.invalid`
 
   await prisma.$transaction(async (tx) => {
-    // 1. Anonymise analytics — rewrite userId to null on any analytics
+    // 1. Anonymise analytics - rewrite userId to null on any analytics
     // table that exists. Each model is wrapped in its own try because
     // the schema may evolve and not every table is guaranteed to be
     // present in every environment.
@@ -407,7 +407,7 @@ export async function purgeDormantAccount(prisma: PrismaClient, userId: string):
             data: { userId: null },
           })
         } catch {
-          // Table doesn't exist or schema mismatch — safe to skip.
+          // Table doesn't exist or schema mismatch - safe to skip.
         }
       }
     }
@@ -420,7 +420,7 @@ export async function purgeDormantAccount(prisma: PrismaClient, userId: string):
         email: placeholder,
         firstName: '[purged]',
         lastName: '[purged]',
-        // DOB is required (non-null) — set to a sentinel epoch date so the
+        // DOB is required (non-null) - set to a sentinel epoch date so the
         // age-at-signup calc on any future scan returns a deterministic
         // value rather than crashing.
         dateOfBirth: new Date('1900-01-01T00:00:00.000Z'),
@@ -431,7 +431,7 @@ export async function purgeDormantAccount(prisma: PrismaClient, userId: string):
       },
     })
 
-    // 3. Delete consents — once PII is gone there is no lawful basis to
+    // 3. Delete consents - once PII is gone there is no lawful basis to
     // retain the record of consent.
     await tx.consent.deleteMany({ where: { userId } })
 
@@ -454,7 +454,7 @@ export async function purgeDormantAccount(prisma: PrismaClient, userId: string):
         resourceId: userId,
         details: {
           automated: true,
-          complianceStandard: "Children's Code Standard 8 – Data Minimisation",
+          complianceStandard: "Children's Code Standard 8 - Data Minimisation",
           reason: `Purged after ${CHILD_DORMANCY.INACTIVE_MONTHS}+ months inactivity (child account)`,
           purgedAt: purgedAt.toISOString(),
         },

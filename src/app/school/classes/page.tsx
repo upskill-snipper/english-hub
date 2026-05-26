@@ -355,7 +355,7 @@ export default function ClassListPage() {
         const all: SchoolMember[] = data.members ?? []
         setTeachers(all.filter((m) => ['admin', 'head_of_department', 'teacher'].includes(m.role)))
       } catch {
-        // Non-critical — teacher list optional
+        // Non-critical - teacher list optional
       } finally {
         setLoadingTeachers(false)
       }

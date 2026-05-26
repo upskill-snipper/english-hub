@@ -18,7 +18,7 @@ export const PRICE_IDS = {
   GCSE_LIT_PROSE: requireEnv('STRIPE_PRICE_GCSE_LIT_PROSE'),
   GCSE_REVISION: requireEnv('STRIPE_PRICE_GCSE_REVISION'),
   BUNDLE: requireEnv('STRIPE_PRICE_BUNDLE'),
-  // Parent tier — env var not yet wired; safe-fallback to placeholder so
+  // Parent tier - env var not yet wired; safe-fallback to placeholder so
   // `requireEnv` doesn't crash prior to Stripe dashboard setup. See
   // src/app/api/parent/README.md for the launch checklist.
   PARENT_MONTHLY: process.env.STRIPE_PRICE_PARENT || 'price_TBD_parent',
@@ -63,5 +63,5 @@ const _COURSE_PRICE_ENTRIES: Record<string, string> = {
 
 // Filter out entries with empty price IDs (unset env vars)
 export const COURSE_PRICE_MAP: Record<string, string> = Object.fromEntries(
-  Object.entries(_COURSE_PRICE_ENTRIES).filter(([, v]) => v !== '')
+  Object.entries(_COURSE_PRICE_ENTRIES).filter(([, v]) => v !== ''),
 )

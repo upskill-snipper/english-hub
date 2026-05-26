@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { Grade9Strategy } from './types';
+import type { Grade9Strategy } from './types'
 
 export const grade9Strategy: Grade9Strategy = {
   title: 'How to Achieve a Grade 9 in GCSE English',
@@ -10,7 +10,7 @@ export const grade9Strategy: Grade9Strategy = {
       content:
         '<p>The single word that separates a Grade 9 response from a Grade 7 response is <strong>"conceptualised."</strong> ' +
         'Examiners use this term repeatedly in senior examiner reports, and understanding it is the key to unlocking the top band.</p>' +
-        '<p>A <strong>conceptualised response</strong> opens with an interpretive, analytical claim — not plot summary, not technique-spotting. ' +
+        '<p>A <strong>conceptualised response</strong> opens with an interpretive, analytical claim - not plot summary, not technique-spotting. ' +
         'It begins with an <em>argument</em>: a clear, confident statement about what the writer is doing, why they are doing it, and what effect it creates.</p>' +
         '<p>Think of it this way:</p>' +
         '<ul>' +
@@ -19,7 +19,7 @@ export const grade9Strategy: Grade9Strategy = {
         '<li>A <strong>Grade 9</strong> student <em>argues</em> why the writer made that choice and what it reveals about their purpose, ideology, or artistic vision.</li>' +
         '</ul>' +
         '<p>A thesis-driven response means you have a <strong>central argument</strong> that runs through your entire essay like a spine. ' +
-        'Every paragraph should develop, refine, or complicate that argument — not just analyse a new quotation in isolation. ' +
+        'Every paragraph should develop, refine, or complicate that argument - not just analyse a new quotation in isolation. ' +
         'The examiner should be able to read your first and last paragraphs and see a coherent intellectual journey.</p>' +
         '<p>To practise, try this formula as training wheels (then discard it once the habit is formed):</p>' +
         '<p><em>[Author] uses [text/character/moment] to [verb of purpose: expose, interrogate, challenge, subvert] ' +
@@ -29,15 +29,15 @@ export const grade9Strategy: Grade9Strategy = {
           label: 'Grade 5-6: Plot-driven opening',
           text:
             'In the play An Inspector Calls, Priestley presents the Inspector as a mysterious and powerful character. ' +
-            'He arrives at the Birlings\' house and questions each family member about Eva Smith\'s death.',
+            "He arrives at the Birlings' house and questions each family member about Eva Smith's death.",
         },
         {
           label: 'Grade 8-9: Conceptualised, thesis-driven opening',
           text:
-            'Priestley constructs the Inspector not as a realistic police detective but as a theatrical device — ' +
+            'Priestley constructs the Inspector not as a realistic police detective but as a theatrical device - ' +
             'a catalyst who exposes the moral bankruptcy of Edwardian capitalism through a controlled interrogation ' +
             'that functions as both a morality play and a socialist manifesto. Writing in 1945 for an audience exhausted ' +
-            'by two world wars, Priestley uses the Inspector\'s final speech to ask whether the social contract has been ' +
+            "by two world wars, Priestley uses the Inspector's final speech to ask whether the social contract has been " +
             'irrevocably broken.',
         },
       ],
@@ -47,36 +47,36 @@ export const grade9Strategy: Grade9Strategy = {
     {
       heading: 'Mastering AO2: Language Analysis',
       content:
-        '<p>AO2 — <em>"Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology"</em> — ' +
+        '<p>AO2 - <em>"Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology"</em> - ' +
         'is the <strong>single biggest mark-winning skill</strong> across both Language and Literature papers. ' +
         'If you master one thing, master this.</p>' +
         '<h4>The Three Levels of Analysis</h4>' +
-        '<p><strong>Level 1 — Surface (Feature-spotting):</strong> Simply names the technique. "Shakespeare uses a metaphor." ' +
+        '<p><strong>Level 1 - Surface (Feature-spotting):</strong> Simply names the technique. "Shakespeare uses a metaphor." ' +
         'This caps you at Grade 4-5 because it shows identification but not understanding.</p>' +
-        '<p><strong>Level 2 — Effect on the reader:</strong> Explains what the technique does. "The metaphor creates a sense of..., ' +
+        '<p><strong>Level 2 - Effect on the reader:</strong> Explains what the technique does. "The metaphor creates a sense of..., ' +
         'making the reader feel..." This is solid Grade 6-7 territory.</p>' +
-        '<p><strong>Level 3 — Interpretive (Grade 9):</strong> Explains the effect AND connects it to the writer\'s larger purpose — ' +
-        'why this particular technique, in this particular moment, serves the text\'s overarching thematic, political, or artistic meaning. ' +
+        "<p><strong>Level 3 - Interpretive (Grade 9):</strong> Explains the effect AND connects it to the writer's larger purpose - " +
+        "why this particular technique, in this particular moment, serves the text's overarching thematic, political, or artistic meaning. " +
         'This is what examiners call "perceptive" and "conceptualised" analysis.</p>' +
         '<h4>Embedded Quotations</h4>' +
         '<p>Never drop a quotation in as a standalone sentence. <strong>Embed</strong> short quotations (3-7 words) grammatically into your own sentences. ' +
         'This shows control, sophistication, and the ability to select the most analytically productive words.</p>' +
         '<h4>Subject Terminology</h4>' +
-        '<p>Use precise terminology — "extended metaphor" is better than "metaphor," and "semantic field of decay" is better than "negative language." ' +
+        '<p>Use precise terminology - "extended metaphor" is better than "metaphor," and "semantic field of decay" is better than "negative language." ' +
         'But <strong>never name a technique without analysing its effect</strong>. A named technique without analysis is worth almost nothing.</p>',
       examples: [
         {
-          label: 'Level 1 — Surface (Grade 4-5)',
+          label: 'Level 1 - Surface (Grade 4-5)',
           text:
             'Shakespeare uses a rhetorical question and a classical allusion to Neptune, the Roman god of the sea. ' +
             'This is a type of figurative language.',
         },
         {
-          label: 'Level 3 — Interpretive (Grade 8-9)',
+          label: 'Level 3 - Interpretive (Grade 8-9)',
           text:
-            'Shakespeare\'s rhetorical question — "Will all great Neptune\'s ocean wash this blood clean from my hand?" — functions not merely ' +
-            'as an expression of guilt but as a dramatic turning point in the play\'s moral architecture. By reaching for "Neptune\'s ocean" — ' +
-            'a classical, pre-Christian image — Macbeth unconsciously reveals that he has placed himself beyond the reach of Christian redemption. ' +
+            'Shakespeare\'s rhetorical question - "Will all great Neptune\'s ocean wash this blood clean from my hand?" - functions not merely ' +
+            'as an expression of guilt but as a dramatic turning point in the play\'s moral architecture. By reaching for "Neptune\'s ocean" - ' +
+            'a classical, pre-Christian image - Macbeth unconsciously reveals that he has placed himself beyond the reach of Christian redemption. ' +
             'For a Jacobean audience steeped in the doctrine of Divine Right, this confirms that regicide is not simply murder but a cosmic violation.',
         },
       ],
@@ -86,7 +86,7 @@ export const grade9Strategy: Grade9Strategy = {
     {
       heading: 'Building a Conceptualised Response',
       content:
-        '<p>A Grade 9 essay is not a series of disconnected paragraphs — it is a <strong>sustained argument</strong> that threads through every paragraph. ' +
+        '<p>A Grade 9 essay is not a series of disconnected paragraphs - it is a <strong>sustained argument</strong> that threads through every paragraph. ' +
         'Each paragraph should advance, develop, or complicate your central thesis.</p>' +
         '<h4>Threading an Argument</h4>' +
         '<p>Your opening paragraph sets a thesis. Each subsequent paragraph should begin with a <strong>topic sentence</strong> that links back to that thesis ' +
@@ -99,12 +99,12 @@ export const grade9Strategy: Grade9Strategy = {
         '<h4>Advanced PEAL Structure</h4>' +
         '<p>The basic Point-Evidence-Analysis-Link structure works, but Grade 9 requires an upgrade:</p>' +
         '<ul>' +
-        '<li><strong>P</strong> — A conceptualised analytical claim (not a plot-based topic sentence).</li>' +
-        '<li><strong>E</strong> — A short, embedded quotation woven grammatically into your sentence.</li>' +
-        '<li><strong>A</strong> — Analysis at Level 3: effect on the reader AND connection to the writer\'s purpose.</li>' +
-        '<li><strong>L</strong> — Link to theme, context, or your overarching thesis.</li>' +
-        '<li><strong>+</strong> — An alternative reading: "This could also suggest...", "A feminist reading might...", "Alternatively..." ' +
-        'This is what examiners call "exploratory" analysis — the hallmark of Grade 9.</li>' +
+        '<li><strong>P</strong> - A conceptualised analytical claim (not a plot-based topic sentence).</li>' +
+        '<li><strong>E</strong> - A short, embedded quotation woven grammatically into your sentence.</li>' +
+        "<li><strong>A</strong> - Analysis at Level 3: effect on the reader AND connection to the writer's purpose.</li>" +
+        '<li><strong>L</strong> - Link to theme, context, or your overarching thesis.</li>' +
+        '<li><strong>+</strong> - An alternative reading: "This could also suggest...", "A feminist reading might...", "Alternatively..." ' +
+        'This is what examiners call "exploratory" analysis - the hallmark of Grade 9.</li>' +
         '</ul>',
       examples: [
         {
@@ -116,7 +116,7 @@ export const grade9Strategy: Grade9Strategy = {
         {
           label: 'Strong paragraph opening (Grade 8-9)',
           text:
-            'Stevenson deepens the novella\'s interrogation of Victorian respectability by making Hyde\'s evil impossible to articulate — ' +
+            "Stevenson deepens the novella's interrogation of Victorian respectability by making Hyde's evil impossible to articulate - " +
             'Enfield confesses he "cannot specify" what is wrong with Hyde, suggesting that the horror lies not in a visible deformity ' +
             'but in a recognition that the boundary between gentleman and monster is far thinner than Victorian society dares to admit.',
         },
@@ -138,11 +138,11 @@ export const grade9Strategy: Grade9Strategy = {
         '<li><strong>Long, complex sentences</strong> for atmosphere, followed by short ones for punch.</li>' +
         '</ul>' +
         '<h4>Ambitious Vocabulary</h4>' +
-        '<p>Use precise, sophisticated vocabulary — but only words you genuinely understand. "Cacophony" is impressive; a misused "cacophony" is embarrassing. ' +
+        '<p>Use precise, sophisticated vocabulary - but only words you genuinely understand. "Cacophony" is impressive; a misused "cacophony" is embarrassing. ' +
         'Build a personal vocabulary bank of 20-30 analytical words you can deploy with confidence.</p>' +
         '<h4>Crafted Openings and Endings</h4>' +
-        '<p>Your first sentence must arrest the examiner\'s attention. Your last sentence must leave a lasting impression. ' +
-        'In creative writing, use <strong>circularity</strong> — return to your opening image with a shift in meaning. ' +
+        "<p>Your first sentence must arrest the examiner's attention. Your last sentence must leave a lasting impression. " +
+        'In creative writing, use <strong>circularity</strong> - return to your opening image with a shift in meaning. ' +
         'In analytical writing, end with your most ambitious interpretive point, not a weak summary.</p>' +
         '<h4>Rhetorical Devices in Transactional Writing</h4>' +
         '<p>For Language Paper persuasive/argumentative tasks, deploy: direct address, rhetorical questions, tricolons, ' +
@@ -150,13 +150,12 @@ export const grade9Strategy: Grade9Strategy = {
       examples: [
         {
           label: 'Weak creative writing opening',
-          text:
-            'I woke up and it was a normal day. I got out of bed and went downstairs. The sun was shining through the window.',
+          text: 'I woke up and it was a normal day. I got out of bed and went downstairs. The sun was shining through the window.',
         },
         {
           label: 'Grade 9 creative writing opening',
           text:
-            'The glass shattered before I understood what my hand had done. For a moment the kitchen held its breath — ' +
+            'The glass shattered before I understood what my hand had done. For a moment the kitchen held its breath - ' +
             'the tap still running, the radio still murmuring, the morning light catching each falling shard as though ' +
             'time had slowed to let me see exactly what I was breaking.',
         },
@@ -167,11 +166,11 @@ export const grade9Strategy: Grade9Strategy = {
     {
       heading: 'Time Management Under Pressure',
       content:
-        '<p>Running out of time is one of the most common reasons students drop marks — especially in Literature, where there is no choice ' +
+        '<p>Running out of time is one of the most common reasons students drop marks - especially in Literature, where there is no choice ' +
         'about which questions to answer. <strong>Time management is a skill, not a talent</strong>, and it must be practised.</p>' +
         '<h4>Allocating Time Per Question</h4>' +
         '<p>Use this rule: <strong>1 mark = approximately 1 minute</strong> (including reading and planning time). ' +
-        'For a 30-mark question, you have roughly 30 minutes — not 45. For a 40-mark Language Q5, plan for 45 minutes maximum ' +
+        'For a 30-mark question, you have roughly 30 minutes - not 45. For a 40-mark Language Q5, plan for 45 minutes maximum ' +
         '(5-7 minutes planning, 35-38 minutes writing, 2 minutes proofreading).</p>' +
         '<h4>When to Move On</h4>' +
         '<p>If you have written three strong PEAL paragraphs on a 30-mark Literature question and time is running out, <strong>move on</strong>. ' +
@@ -205,10 +204,10 @@ export const grade9Strategy: Grade9Strategy = {
       heading: 'The Power of Context in Literature',
       content:
         '<p>Context is tested through AO3, but <strong>the way you use context is what separates grades</strong>. ' +
-        'Most students "bolt on" context — they write a separate sentence or paragraph of historical information that is not connected to their analysis. ' +
+        'Most students "bolt on" context - they write a separate sentence or paragraph of historical information that is not connected to their analysis. ' +
         'This is descriptive, not analytical, and examiners explicitly criticise it in their reports.</p>' +
         '<h4>How to Weave In Context</h4>' +
-        '<p>Context should emerge <em>from</em> your analysis of specific words, phrases, and moments — not exist separately from it. ' +
+        '<p>Context should emerge <em>from</em> your analysis of specific words, phrases, and moments - not exist separately from it. ' +
         'The golden rule: <strong>every context point must be attached to a quotation and used to deepen your analysis of that quotation.</strong></p>' +
         '<p>Use phrases that integrate context into analysis:</p>' +
         '<ul>' +
@@ -218,7 +217,7 @@ export const grade9Strategy: Grade9Strategy = {
         '<li>"[Author] draws on the [cultural/political] context of [period] to..."</li>' +
         '</ul>' +
         '<h4>Making Context Analytical, Not Descriptive</h4>' +
-        '<p>Descriptive context tells the examiner facts about history. Analytical context explains <strong>how and why those facts shape the writer\'s choices ' +
+        "<p>Descriptive context tells the examiner facts about history. Analytical context explains <strong>how and why those facts shape the writer's choices " +
         'and the reader\'s understanding</strong>. Always ask: "So what? Why does this context matter for the meaning of this specific moment in the text?"</p>',
       examples: [
         {
@@ -231,9 +230,9 @@ export const grade9Strategy: Grade9Strategy = {
           label: 'Woven, analytical context (Grade 8-9)',
           text:
             'Scrooge\'s dismissive "Are there no prisons? Are there no workhouses?" directly echoes the utilitarian logic of the 1834 New Poor Law, ' +
-            'which Dickens despised. By placing the language of government policy in Scrooge\'s mouth, Dickens transforms a personal character flaw into ' +
-            'a systemic indictment — Scrooge is not merely cold-hearted; he is the mouthpiece of an ideology that criminalises poverty. ' +
-            'The reader is invited to see that Scrooge\'s cruelty is not individual but institutional.',
+            "which Dickens despised. By placing the language of government policy in Scrooge's mouth, Dickens transforms a personal character flaw into " +
+            'a systemic indictment - Scrooge is not merely cold-hearted; he is the mouthpiece of an ideology that criminalises poverty. ' +
+            "The reader is invited to see that Scrooge's cruelty is not individual but institutional.",
         },
       ],
     },
@@ -242,7 +241,7 @@ export const grade9Strategy: Grade9Strategy = {
     {
       heading: 'Common Mistakes That Cost Marks',
       content:
-        '<p>Examiners publish reports every year detailing what students do wrong. These are the most common mark-losing mistakes — ' +
+        '<p>Examiners publish reports every year detailing what students do wrong. These are the most common mark-losing mistakes - ' +
         'and every single one is avoidable.</p>' +
         '<h4>1. Feature-Spotting Without Analysis</h4>' +
         '<p>Identifying a metaphor, simile, or alliteration without explaining its <strong>effect on the reader</strong> is worth almost nothing. ' +
@@ -258,7 +257,7 @@ export const grade9Strategy: Grade9Strategy = {
         'than the marks you lose by abandoning another. Stick to your time plan ruthlessly.</p>' +
         '<h4>5. Not Answering the Question</h4>' +
         '<p>Read the question three times. Underline the key words. If it asks about "how the writer presents conflict," every paragraph must address ' +
-        '<em>conflict</em> and <em>the writer\'s methods</em>. Drifting off-topic — even into excellent analysis — loses marks because it does not answer what was asked.</p>' +
+        "<em>conflict</em> and <em>the writer's methods</em>. Drifting off-topic - even into excellent analysis - loses marks because it does not answer what was asked.</p>" +
         '<h4>6. Listing Quotations Without Comment</h4>' +
         '<p>Learning quotations is essential, but listing them without analysis is pointless. If you cannot analyse a quotation, do not include it. ' +
         'Three well-analysed quotations will always outscore ten unanalysed ones.</p>',
@@ -272,13 +271,13 @@ export const grade9Strategy: Grade9Strategy = {
         {
           label: 'Analytical response (Grade 8-9)',
           text:
-            'Shelley\'s alliterative pairing of "boundless and bare" creates a vast, empty sonic landscape — the repeated /b/ ' +
+            'Shelley\'s alliterative pairing of "boundless and bare" creates a vast, empty sonic landscape - the repeated /b/ ' +
             'plosives give each word weight, forcing the reader to dwell on the immensity of the desert that has swallowed ' +
             'Ozymandias\'s empire. The adjectives themselves enact the poem\'s central irony: "boundless" suggests infinite power, ' +
             'but "bare" strips it away in the same breath. Shelley, writing in the aftermath of Napoleon\'s fall, uses the desert ' +
-            'as a metaphor for the inevitable erosion of all political power — no matter how "boundless" a tyrant believes his reach to be.',
+            'as a metaphor for the inevitable erosion of all political power - no matter how "boundless" a tyrant believes his reach to be.',
         },
       ],
     },
   ],
-};
+}

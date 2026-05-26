@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language Devices Bingo — Worksheet',
+    title: 'Language Devices Bingo - Worksheet',
     description:
       'A printable language devices bingo activity. 24 devices with definitions for a 5-minute starter or recap.',
   },
-  title: 'Language Devices Bingo — Worksheet',
+  title: 'Language Devices Bingo - Worksheet',
   description:
     'A printable language devices bingo activity. 24 devices with definitions for a 5-minute starter or recap.',
   alternates: {
@@ -84,13 +84,13 @@ export default function LanguageDevicesBingoWorksheet() {
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Year Group
               </div>
-              <div className="mt-1 text-sm font-semibold text-foreground">KS3–KS4</div>
+              <div className="mt-1 text-sm font-semibold text-foreground">KS3-KS4</div>
             </div>
             <div className="rounded-lg border border-border bg-background p-3">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Duration
               </div>
-              <div className="mt-1 text-sm font-semibold text-foreground">5–10 minutes</div>
+              <div className="mt-1 text-sm font-semibold text-foreground">5-10 minutes</div>
             </div>
             <div className="rounded-lg border border-border bg-background p-3">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -180,7 +180,7 @@ export default function LanguageDevicesBingoWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Pre-cut cards:</strong> Cut the bingo cards in advance. It saves valuable
@@ -191,7 +191,7 @@ export default function LanguageDevicesBingoWorksheet() {
             </li>
             <li>
               <strong>Prize, not trinket:</strong> The fastest way to get engagement is a tiny token
-              prize — a stamp or a house point.
+              prize - a stamp or a house point.
             </li>
             <li>
               <strong>Follow-up task:</strong> Winners write a four-sentence paragraph using three

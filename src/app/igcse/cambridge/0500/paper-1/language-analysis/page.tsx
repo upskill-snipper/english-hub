@@ -16,11 +16,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language Analysis — IGCSE Language A Paper 1 Q2',
+    title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
     description:
       'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Language Analysis — IGCSE Language A Paper 1 Q2',
+  title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
   description:
     'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -36,14 +36,14 @@ const framework = [
   },
   {
     step: 'Evidence',
-    detail: 'Quote a single word or short phrase — no more than a few words.',
+    detail: 'Quote a single word or short phrase - no more than a few words.',
     example: '"lashed", "pounded" and "tore"',
   },
   {
     step: 'Explanation (literal)',
     detail: 'Explain the basic meaning of the word or phrase in this context.',
     example:
-      '"Lashed" suggests being struck repeatedly with a whip — an aggressive physical attack.',
+      '"Lashed" suggests being struck repeatedly with a whip - an aggressive physical attack.',
   },
   {
     step: 'Analysis (connotations)',
@@ -101,7 +101,7 @@ const usefulVocab = [
 ]
 
 const mistakes = [
-  'Feature-spotting — naming a device without analysing its effect.',
+  'Feature-spotting - naming a device without analysing its effect.',
   'Copying long quotations instead of single well-chosen words.',
   'Generic labels like "it makes it more interesting" or "it adds description".',
   'Confusing similes and metaphors, or calling any adjective "imagery".',
@@ -149,7 +149,7 @@ export default async function LanguageAnalysisPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Level 5 (13–15)
+              Level 5 (13-15)
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Judicious and wide-ranging choices; precise explanation of connotations and effects
@@ -158,7 +158,7 @@ export default async function LanguageAnalysisPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <Badge variant="secondary" className="mb-2">
-              Level 2 (4–6)
+              Level 2 (4-6)
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Limited range of choices; mostly paraphrase of meaning with little or no explanation
@@ -240,7 +240,7 @@ export default async function LanguageAnalysisPage() {
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-foreground leading-relaxed">
             The writer personifies the skyscrapers as &quot;sleeping giants&quot;, a simile that
-            invests the buildings with both threat and fragility — giants are dangerous, but their
+            invests the buildings with both threat and fragility - giants are dangerous, but their
             stillness makes the city feel uncertain and expectant. The verb &quot;loomed&quot; adds
             to this unease, suggesting the buildings tower over the viewer menacingly. The metaphor
             of their windows &quot;bleeding orange fire&quot; evokes violence and destruction,

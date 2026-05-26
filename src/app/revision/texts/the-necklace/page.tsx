@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'the-necklace'
 
 export const metadata: Metadata = {
-  title: 'The Necklace — Guy de Maupassant',
+  title: 'The Necklace - Guy de Maupassant',
   description:
     'Study guide stub for The Necklace by Guy de Maupassant. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

@@ -4,9 +4,11 @@ export const metadata: Metadata = {
   title: 'CAIE English Language Grade Boundaries',
   description:
     'Cambridge IGCSE English Language grade boundaries and thresholds. Historical data for Paper 1 and Paper 2 across recent examination series.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/grade-boundaries' },
+  alternates: {
+    canonical: 'https://theenglishhub.app/resources/english-language/caie/grade-boundaries',
+  },
   openGraph: {
-    title: 'CAIE English Language Grade Boundaries — The English Hub',
+    title: 'CAIE English Language Grade Boundaries - The English Hub',
     description:
       'Cambridge IGCSE English Language grade boundaries and thresholds. Historical data for Paper 1 and Paper 2 across recent examination series.',
   },

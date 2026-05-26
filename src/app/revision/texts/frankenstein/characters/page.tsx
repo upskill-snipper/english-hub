@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Frankenstein Characters — Deep Study | The English Hub',
+    title: 'Frankenstein Characters - Deep Study | The English Hub',
     description:
       'In-depth GCSE character analysis for Frankenstein by Mary Shelley: Victor Frankenstein, The Creature, Robert Walton, Elizabeth Lavenza, Henry Clerval, Justine Moritz, and the De Lacey family.',
   },
-  title: 'Frankenstein Characters — Deep Study',
+  title: 'Frankenstein Characters - Deep Study',
   description:
     'In-depth GCSE character analysis for Frankenstein by Mary Shelley: Victor Frankenstein, The Creature, Robert Walton, Elizabeth Lavenza, Henry Clerval, Justine Moritz, and the De Lacey family.',
   alternates: {
@@ -258,7 +258,7 @@ export default async function FrankensteinCharactersPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Characters — Deep Study
+            Characters - Deep Study
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">

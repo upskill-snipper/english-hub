@@ -1,18 +1,18 @@
-// ─── Cambridge IGCSE First Language English — Grade Boundaries ───────────────
+// ─── Cambridge IGCSE First Language English - Grade Boundaries ───────────────
 // Syllabuses: 0500 (First Language English, A*-G) and 0990 (First Language
 // English (9-1)). Literature in English is 0475 / 0992 (not yet marked by
-// this tool — see TODO at the foot of this file).
+// this tool - see TODO at the foot of this file).
 //
-// ⚠ PROVISIONAL — DO NOT TREAT AS USABLE BOUNDARIES.
+// ⚠ PROVISIONAL - DO NOT TREAT AS USABLE BOUNDARIES.
 //
 // Cambridge does NOT publish a single subject-level raw→grade table. The
 // official June 2024 grade-threshold PDFs give:
 //   (a) per-COMPONENT notional thresholds (Components 03/11/12/21/22, max 80
 //       each), and
 //   (b) per-OPTION-COMBINATION overall thresholds (e.g. option "AR" = 03+11,
-//       option "BS" = 12+22, …) on a 160 max — and these differ materially
-//       between options (0990 grade 9 ranges 115–125 depending on the
-//       combination; 0500 grade A ranges 100–106).
+//       option "BS" = 12+22, …) on a 160 max - and these differ materially
+//       between options (0990 grade 9 ranges 115-125 depending on the
+//       combination; 0500 grade A ranges 100-106).
 //
 // The marking tool marks a single paper with an arbitrary max and has no
 // signal for which Cambridge option/component combination a candidate sits,
@@ -57,7 +57,7 @@ const CAMBRIDGE_0500_SOURCE_URL =
 /**
  * All-null thresholds: every grade is "unsourced for the predictor" so the
  * board stays gated. The official raw figures live in the file header /
- * exported audit records below — they are intentionally NOT auto-normalised
+ * exported audit records below - they are intentionally NOT auto-normalised
  * into these because the option-combination choice is a human decision.
  */
 function provisionalNullThresholds(): GradeThreshold[] {
@@ -71,7 +71,7 @@ function provisionalNullThresholds(): GradeThreshold[] {
 
 /**
  * Official Cambridge 0990 (9-1) per-component min raw marks (max 80 each).
- * Audit record for the human verifier — not consumed at runtime.
+ * Audit record for the human verifier - not consumed at runtime.
  * TODO: verify against the official PDF and decide a representative
  * component before wiring into the predictor:
  *   https://www.cambridgeinternational.org/Images/716171-first-language-english-9-1-0990-june-2024-grade-threshold-table.pdf
@@ -136,7 +136,7 @@ export const CAMBRIDGE_0990_COMPONENTS: Readonly<Record<string, Record<NumericGr
 
 /**
  * Official Cambridge 0500 (A*-G) per-component min raw marks (max 80 each).
- * Audit record for the human verifier — not consumed at runtime. A*-G is not
+ * Audit record for the human verifier - not consumed at runtime. A*-G is not
  * directly comparable to the 9-1 scale the predictor emits, which is a second
  * reason 0500 stays gated.
  * TODO: verify against the official PDF and decide the A*-G → 9-1 mapping
@@ -156,7 +156,7 @@ export const CAMBRIDGE_0500_COMPONENTS: Readonly<
 }
 
 /**
- * Cambridge IGCSE 0990 (9-1) — PROVISIONAL. Gated (all thresholds null) until
+ * Cambridge IGCSE 0990 (9-1) - PROVISIONAL. Gated (all thresholds null) until
  * a human picks a representative component/option combination and verifies.
  */
 export const cambridge0990Boundaries: BoardBoundaryTable = {
@@ -167,7 +167,7 @@ export const cambridge0990Boundaries: BoardBoundaryTable = {
   retrievedAt: '2026-05-17',
   verified: false,
   note:
-    'PROVISIONAL — option/component-combination dependent; no single ' +
+    'PROVISIONAL - option/component-combination dependent; no single ' +
     'normalised curve derivable automatically. Official per-component figures ' +
     'recorded in CAMBRIDGE_0990_COMPONENTS. Predictor stays gated (AQA proxy, ' +
     'indicativeOnly) until a human picks a representative combination, ' +
@@ -176,7 +176,7 @@ export const cambridge0990Boundaries: BoardBoundaryTable = {
 }
 
 /**
- * Cambridge IGCSE 0500 (A*-G) — PROVISIONAL. Gated (all thresholds null).
+ * Cambridge IGCSE 0500 (A*-G) - PROVISIONAL. Gated (all thresholds null).
  * Also requires an A*-G → 9-1 mapping decision before it can feed the
  * 9-1 predictor.
  */
@@ -188,7 +188,7 @@ export const cambridge0500Boundaries: BoardBoundaryTable = {
   retrievedAt: '2026-05-17',
   verified: false,
   note:
-    'PROVISIONAL — A*-G scale (not directly comparable to the 9-1 grades the ' +
+    'PROVISIONAL - A*-G scale (not directly comparable to the 9-1 grades the ' +
     'predictor emits) AND option/component-combination dependent. Official ' +
     'per-component figures recorded in CAMBRIDGE_0500_COMPONENTS. Predictor ' +
     'stays gated until a human decides the A*-G→9-1 mapping, populates ' +

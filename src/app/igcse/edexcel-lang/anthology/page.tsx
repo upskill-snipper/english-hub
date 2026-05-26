@@ -25,13 +25,13 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology — The English Hub',
+    title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology - The English Hub',
     description:
-      'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
+      'Pearson Edexcel IGCSE Language A 4EA1 - the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
   },
   title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology',
   description:
-    'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
+    'Pearson Edexcel IGCSE Language A 4EA1 - the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology',
   },
@@ -51,7 +51,7 @@ const texts = [
   {
     slug: 'a-passage-to-africa',
     title: 'A Passage to Africa',
-    author: 'George Alagiah (1955–2023)',
+    author: 'George Alagiah (1955-2023)',
     type: 'Memoir / journalism',
     theme: 'Suffering, empathy, guilt, media ethics',
     icon: Globe2,
@@ -68,7 +68,7 @@ const texts = [
     slug: 'explorers-or-boys-messing-about',
     title: 'Explorers or Boys Messing About',
     author: 'Steven Morris',
-    type: 'Newspaper article (Guardian, 2003 — adapted in anthology)',
+    type: 'Newspaper article (Guardian, 2003 - adapted in anthology)',
     theme: 'Adventure, criticism, risk, responsibility',
     icon: Newspaper,
   },
@@ -83,7 +83,7 @@ const texts = [
   {
     slug: 'young-and-dyslexic',
     title: "Young and Dyslexic? You've Got It Going On",
-    author: 'Benjamin Zephaniah (1958–2023)',
+    author: 'Benjamin Zephaniah (1958-2023)',
     type: 'Opinion article / autobiography (adapted in anthology)',
     theme: 'Education, identity, disability, self-belief',
     icon: Brain,

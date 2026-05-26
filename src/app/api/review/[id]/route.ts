@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
-// ─── GET /api/review/[id] — get a review request by reference number ─────
+// ─── GET /api/review/[id] - get a review request by reference number ─────
 //
 // Cycle 5 (P1 fix): migrated from the in-memory store (see
 // src/app/api/review/store.ts) to Supabase

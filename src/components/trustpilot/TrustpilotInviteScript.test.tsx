@@ -1,5 +1,5 @@
 /**
- * InviteJS script — no-op without env key, loads once when present.
+ * InviteJS script - no-op without env key, loads once when present.
  */
 
 import { describe, it, expect, afterEach, beforeEach } from 'vitest'

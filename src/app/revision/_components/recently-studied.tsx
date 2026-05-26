@@ -115,7 +115,7 @@ export function RecentlyStudied() {
         }
       }
 
-      // 3. Studied poem slugs — build candidate paths board-aware so that a
+      // 3. Studied poem slugs - build candidate paths board-aware so that a
       // student who switches boards is linked to a hub valid for their
       // current board rather than the AQA URL the poem was studied under.
       const studiedPoems = localStorage.getItem(STUDIED_POEMS_KEY)

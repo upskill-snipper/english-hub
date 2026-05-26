@@ -26,7 +26,7 @@ interface CookieConsentBody {
 /**
  * Hash IP addresses before storing. We only need rough uniqueness for
  * audit / de-duplication of consent records, never the raw IP. Uses
- * HMAC-SHA256 truncated to 16 hex chars (64 bits) — cryptographically
+ * HMAC-SHA256 truncated to 16 hex chars (64 bits) - cryptographically
  * secure and resistant to rainbow-table attacks across the IPv4 space
  * (fix for Cycle 6 security follow-up: previous unsalted SHA-256 was
  * trivially reversible given only 2^32 possible IPv4 inputs).
@@ -35,13 +35,13 @@ interface CookieConsentBody {
  * This is intentionally distinct from `AFFILIATE_IP_HASH_SECRET` so a
  * leak of one trust boundary does not compromise the other. In dev,
  * an unset secret falls back to a placeholder so the feature does not
- * hard-fail — but IP hashing is not secure until the env var is set.
+ * hard-fail - but IP hashing is not secure until the env var is set.
  */
 function hashIp(ip: string): string {
   let secret = process.env.CONSENT_IP_HASH_SECRET
   if (!secret) {
     console.error(
-      '[api/consent/cookie] CONSENT_IP_HASH_SECRET not set — using placeholder; IP hashing is insecure until configured',
+      '[api/consent/cookie] CONSENT_IP_HASH_SECRET not set - using placeholder; IP hashing is insecure until configured',
     )
     secret = 'teh-consent-dev-placeholder-configure-in-prod'
   }
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'visitorId is required.' }, { status: 400 })
     }
 
-    // Determine logged-in user (optional — anonymous visitors can also consent)
+    // Determine logged-in user (optional - anonymous visitors can also consent)
     let userId: string | null = null
     try {
       const supabase = createServerSupabaseClient()
@@ -107,7 +107,7 @@ export async function POST(request: NextRequest) {
         userId = dbUser?.id ?? null
       }
     } catch {
-      // Auth is optional here — anonymous visitors can still consent
+      // Auth is optional here - anonymous visitors can still consent
     }
 
     // Derive categories from choice

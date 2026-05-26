@@ -1,5 +1,5 @@
 /**
- * ORIGINAL PRACTICE PAPER 2 — theme: "Journeys"
+ * ORIGINAL PRACTICE PAPER 2 - theme: "Journeys"
  *
  * Modelled exactly on the Pearson Edexcel International Award in Lower
  * Secondary English achievement test LEH11/01 (structure only). EVERY
@@ -11,7 +11,7 @@
  * invented charity / expedition scenario (Text 2). Text 3 is original
  * fiction.
  *
- * Qualification facts, AO codes and mark grids are NOT restated here —
+ * Qualification facts, AO codes and mark grids are NOT restated here -
  * the consumer page imports them from '@/lib/ilowersecondary/spec'.
  */
 
@@ -107,13 +107,13 @@ export const PRACTICE_PAPER_2: PracticePaper = {
   instructions: [
     'Use black ink or black ball-point pen.',
     'Answer ALL questions in Section A and the ONE question in Section B.',
-    'Answer the questions in the spaces provided — there may be more space than you need.',
+    'Answer the questions in the spaces provided - there may be more space than you need.',
     'Dictionaries may NOT be used in this examination.',
     'The total mark for this paper is 70. The marks for each question are shown in brackets.',
     'Read each question carefully before you start to answer it. Check your answers if you have time at the end.',
   ],
 
-  // ─── Source Booklet — three original texts ────────────────────────
+  // ─── Source Booklet - three original texts ────────────────────────
   texts: [
     {
       id: 1,
@@ -142,9 +142,9 @@ export const PRACTICE_PAPER_2: PracticePaper = {
       byline: 'A fund-raising appeal by Priya Anand for the (fictional) Open Road Trust',
       paragraphs: [
         'My name is Priya Anand, and last spring I walked one thousand miles, alone, along an old mountain road. My feet blistered on the first day and never quite stopped hurting. But I was lucky: I had chosen my journey. The children I walked for did not choose theirs.',
-        'I made the walk for the Open Road Trust, the charity I helped to found six years ago. Across the valley I crossed, thousands of children walk for two or three hours every morning simply to reach a classroom — and the same distance home again in the dark. By the time they sit down to learn, they are already exhausted. Many give up. Their journey defeats them before their education has even begun.',
+        'I made the walk for the Open Road Trust, the charity I helped to found six years ago. Across the valley I crossed, thousands of children walk for two or three hours every morning simply to reach a classroom - and the same distance home again in the dark. By the time they sit down to learn, they are already exhausted. Many give up. Their journey defeats them before their education has even begun.',
         'Can you picture that walk? A nine-year-old with no shoes, a heavy bag, a road that floods in the rain? I met children who had never once been late, because being late meant being turned away. Their determination shamed every complaint I had ever made about a delayed train.',
-        'This is where you come in. Just fifteen pounds — less than many of us spend on a single takeaway — pays for a sturdy pair of walking boots that will last a child two years. Forty pounds funds a safe bicycle that turns a three-hour walk into a twenty-minute ride. Every penny travels straight to the road, never to an office desk.',
+        'This is where you come in. Just fifteen pounds - less than many of us spend on a single takeaway - pays for a sturdy pair of walking boots that will last a child two years. Forty pounds funds a safe bicycle that turns a three-hour walk into a twenty-minute ride. Every penny travels straight to the road, never to an office desk.',
         'I have finished my journey. Theirs continues every single morning, whether we help or not. I cannot walk it for them. But together we can make their road shorter, safer and kinder. Please give what you can today, and take one small step alongside them.',
       ],
     },
@@ -157,11 +157,11 @@ export const PRACTICE_PAPER_2: PracticePaper = {
       title: 'The Last Train Out',
       byline: 'An original short story written for The English Hub',
       paragraphs: [
-        'The platform was already moving when Daniel reached it — not the train, but the crowd, a single nervous animal pressing towards the open doors. He gripped his sister’s hand so hard she gasped. Eight years old and barely past his elbow, Lena had been told only that they were going to stay with their aunt. She did not yet understand that they would not be coming back.',
+        'The platform was already moving when Daniel reached it - not the train, but the crowd, a single nervous animal pressing towards the open doors. He gripped his sister’s hand so hard she gasped. Eight years old and barely past his elbow, Lena had been told only that they were going to stay with their aunt. She did not yet understand that they would not be coming back.',
         'There were no seats. Daniel wedged Lena into a corner by the window and stood over her like a fence, his back to the carriage, taking the weight of every shove. The train did not move. Minutes stretched and folded. Somewhere down the line a whistle screamed and was answered by another, closer, until the floor beneath them shuddered and the station began, at last, to slide away.',
-        'For an hour the country unspooled past the glass: flooded fields, a burned barn, a road with no cars on it at all. Lena pressed her nose to the window and narrated what she saw in a small steady voice, as if naming things could keep them ordinary. Daniel let her. He was counting — stops, hours, the folded notes sewn into his collar — and trying not to think about the platform they had left, or the two faces that had not been able to come with them.',
+        'For an hour the country unspooled past the glass: flooded fields, a burned barn, a road with no cars on it at all. Lena pressed her nose to the window and narrated what she saw in a small steady voice, as if naming things could keep them ordinary. Daniel let her. He was counting - stops, hours, the folded notes sewn into his collar - and trying not to think about the platform they had left, or the two faces that had not been able to come with them.',
         'At the third halt the train sat in darkness for a long time. A man moved through the carriage asking quiet questions, and Daniel felt his heart climb into his throat; but the man looked at the sleeping child, at the boy standing guard with his jaw set, and moved on without a word. Daniel did not let his breath out until the wheels turned again.',
-        'When grey light finally edged the sky, Lena woke and asked if they were nearly there. Daniel had no idea. He did not know the name of the next town or how far the rails still ran. But he smoothed her hair, looked out at a horizon that was, for the first time, getting lighter instead of darker, and told her yes — almost. It was the first lie of the journey, and he told it gently, the way you carry something that might break.',
+        'When grey light finally edged the sky, Lena woke and asked if they were nearly there. Daniel had no idea. He did not know the name of the next town or how far the rails still ran. But he smoothed her hair, looked out at a horizon that was, for the first time, getting lighter instead of darker, and told her yes - almost. It was the first lie of the journey, and he told it gently, the way you carry something that might break.',
       ],
     },
   ],
@@ -212,13 +212,13 @@ export const PRACTICE_PAPER_2: PracticePaper = {
       prompt:
         'In Text 1 the writer says the Earth’s magnetic field works “rather like a compass that is always switched on”. Put a cross in ONE box to show what this comparison suggests.',
       options: [
-        'A — the bird can only navigate at night',
-        'B — the bird always has a sense of direction, even without sun or stars',
-        'C — the bird becomes lost in cloudy weather',
-        'D — the bird must learn the stars before it can fly',
+        'A - the bird can only navigate at night',
+        'B - the bird always has a sense of direction, even without sun or stars',
+        'C - the bird becomes lost in cloudy weather',
+        'D - the bird must learn the stars before it can fly',
       ],
       markScheme: {
-        answer: 'B — the bird always has a sense of direction, even without sun or stars',
+        answer: 'B - the bird always has a sense of direction, even without sun or stars',
         notes: '1 mark for B only.',
       },
     },
@@ -230,7 +230,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
       prompt: 'In Text 1, why does the writer say the journey of migrating birds “is not luck”?',
       markScheme: {
         answer:
-          'Because the ability to navigate is the result of evolution over millions of years — only birds that could find their way survived to breed — so success is built in, not accidental.',
+          'Because the ability to navigate is the result of evolution over millions of years - only birds that could find their way survived to breed - so success is built in, not accidental.',
         notes: '1 mark for a clear inference.',
       },
     },
@@ -350,7 +350,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
         },
       ],
       markScheme: {
-        answer: 'Row 1 — Text 2; Row 2 — Neither; Row 3 — Text 2; Row 4 — Text 1.',
+        answer: 'Row 1 - Text 2; Row 2 - Neither; Row 3 - Text 2; Row 4 - Text 1.',
         notes:
           '2 marks for all four rows correct; 1 mark for two or three rows correct; 0 marks for one or none correct.',
       },
@@ -364,7 +364,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
         'How does the writer of Text 2 use language to persuade the reader to donate? Make TWO developed points, each supported with evidence from the text.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the personal recount — “My feet blistered on the first day and never quite stopped hurting” — builds the writer’s credibility and earns the reader’s respect; (2) the relatable cost comparison — “less than many of us spend on a single takeaway” — makes donating feel easy and almost selfish to refuse; (3) emotive contrast — “Their determination shamed every complaint I had ever made” — makes the reader feel grateful and guilty enough to act; (4) the closing call to “take one small step alongside them” turns donating into joining a shared journey, flattering the reader into helping.',
+          'Indicative content (any two developed points): (1) the personal recount - “My feet blistered on the first day and never quite stopped hurting” - builds the writer’s credibility and earns the reader’s respect; (2) the relatable cost comparison - “less than many of us spend on a single takeaway” - makes donating feel easy and almost selfish to refuse; (3) emotive contrast - “Their determination shamed every complaint I had ever made” - makes the reader feel grateful and guilty enough to act; (4) the closing call to “take one small step alongside them” turns donating into joining a shared journey, flattering the reader into helping.',
         notes:
           'Up to 2 marks per developed point: 1 mark for an appropriate point with evidence, 1 mark for explaining the effect on the reader. Maximum 4 marks.',
       },
@@ -379,7 +379,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
       markScheme: {
         levelled: 'comparison',
         answer:
-          'Indicative comparison: Text 1’s writer uses the short, certain statement “The journey is not luck” to dismiss chance and credit the bird’s inherited skill — the flat, factual tone reflects an explanatory purpose that leaves the reader admiring nature’s design. By contrast, Text 2’s writer uses the personal admission “I cannot walk it for them” to confess the limits of her own effort and hand responsibility to the reader; the honest, vulnerable tone reflects a persuasive purpose designed to make the reader feel they must act. Where Text 1 positions the reader as an impressed observer of a journey already mastered, Text 2 positions the reader as a necessary travelling companion in a journey not yet finished.',
+          'Indicative comparison: Text 1’s writer uses the short, certain statement “The journey is not luck” to dismiss chance and credit the bird’s inherited skill - the flat, factual tone reflects an explanatory purpose that leaves the reader admiring nature’s design. By contrast, Text 2’s writer uses the personal admission “I cannot walk it for them” to confess the limits of her own effort and hand responsibility to the reader; the honest, vulnerable tone reflects a persuasive purpose designed to make the reader feel they must act. Where Text 1 positions the reader as an impressed observer of a journey already mastered, Text 2 positions the reader as a necessary travelling companion in a journey not yet finished.',
         notes:
           'Mark using the levelled comparison grid (COMPARISON_LEVELS). Top level: a clear explanation of the contrast that infers beyond the literal words, comments on language at word level, and identifies each writer’s purpose and effect on the reader.',
       },
@@ -459,7 +459,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
         'How does the writer of Text 3 use language and structure to show that Daniel feels responsible for Lena? Make TWO developed points, each supported with evidence.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the protective image “stood over her like a fence, his back to the carriage, taking the weight of every shove” physically shows him shielding her; (2) the detail that he is “counting — stops, hours, the folded notes sewn into his collar” shows him carrying every burden of planning so she does not have to; (3) the structural contrast between Lena narrating the view in “a small steady voice” and Daniel “trying not to think” shows him hiding his fear to keep her calm; (4) the tender closing simile of carrying “something that might break” shows his care turning the lie into an act of love.',
+          'Indicative content (any two developed points): (1) the protective image “stood over her like a fence, his back to the carriage, taking the weight of every shove” physically shows him shielding her; (2) the detail that he is “counting - stops, hours, the folded notes sewn into his collar” shows him carrying every burden of planning so she does not have to; (3) the structural contrast between Lena narrating the view in “a small steady voice” and Daniel “trying not to think” shows him hiding his fear to keep her calm; (4) the tender closing simile of carrying “something that might break” shows his care turning the lie into an act of love.',
         notes:
           'Up to 2 marks per developed point: 1 mark for a point with appropriate evidence, 1 mark for explaining the effect. Maximum 4 marks.',
       },
@@ -473,7 +473,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
         'In Text 3, the writer says the horizon was “for the first time, getting lighter instead of darker”. What does the writer suggest about the journey through this idea?',
       markScheme: {
         answer:
-          'That the worst of the danger may be behind them and there is now hope — the lightening sky symbolises the possibility of safety and a better future.',
+          'That the worst of the danger may be behind them and there is now hope - the lightening sky symbolises the possibility of safety and a better future.',
         notes: '1 mark for a clear inference about hope / the worst being over.',
       },
     },
@@ -486,7 +486,7 @@ export const PRACTICE_PAPER_2: PracticePaper = {
     ao: 'WAO1 + WAO2',
     marks: 30,
     context:
-      'The texts in Section A all explore the theme of journeys — the navigated journey of migrating birds, a journey walked to help children whose own journey to school is hard, and one difficult journey by train away from home.',
+      'The texts in Section A all explore the theme of journeys - the navigated journey of migrating birds, a journey walked to help children whose own journey to school is hard, and one difficult journey by train away from home.',
     task: 'Write the opening of a story in which a character sets out on a journey that does not go as planned.',
     bullets: [
       'Write to entertain a reader of your own age.',

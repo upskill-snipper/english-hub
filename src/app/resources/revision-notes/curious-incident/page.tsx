@@ -472,11 +472,11 @@ export default function CuriousIncidentPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Christopher John Francis Boone"
-                description="The fifteen-year-old narrator and protagonist. Christopher is a maths prodigy with an extraordinary memory and an aptitude for logic, but he struggles with social interaction, lying, idiomatic language, sensory overload, and being touched. He attends a special school in Swindon. Haddon describes him only as a boy with 'behavioural problems' — the words 'autism' and 'Asperger's' do not appear in the novel itself, although the back-cover blurbs of early editions referred to Asperger's. Christopher narrates the entire novel. His voice is literal, precise, and unfiltered, which gives the book its distinctive tone. He loves prime numbers, space, dogs, the colour red, and his pet rat Toby; he hates the colours yellow and brown, being touched, and metaphors. He intends to be a scientist or astronaut."
+                description="The fifteen-year-old narrator and protagonist. Christopher is a maths prodigy with an extraordinary memory and an aptitude for logic, but he struggles with social interaction, lying, idiomatic language, sensory overload, and being touched. He attends a special school in Swindon. Haddon describes him only as a boy with 'behavioural problems' - the words 'autism' and 'Asperger's' do not appear in the novel itself, although the back-cover blurbs of early editions referred to Asperger's. Christopher narrates the entire novel. His voice is literal, precise, and unfiltered, which gives the book its distinctive tone. He loves prime numbers, space, dogs, the colour red, and his pet rat Toby; he hates the colours yellow and brown, being touched, and metaphors. He intends to be a scientist or astronaut."
               />
               <CharacterCard
                 name="Ed Boone (Father)"
-                description="Christopher's father. A heating engineer who has raised Christopher alone for two years following the breakdown of his marriage. Ed is patient, working-class, and devoted to Christopher in his own often gruff way: he shops, cooks, sets routines, and tolerates outbursts. However, he has lied catastrophically — telling Christopher his mother was dead when she had run off with Mr Shears — and in a moment of rage he killed Wellington with a garden fork. Ed is one of Haddon's most morally complex creations: capable of love and violence, honesty and lies, often within the same scene. His struggle to win back Christopher's trust frames the novel's emotional resolution."
+                description="Christopher's father. A heating engineer who has raised Christopher alone for two years following the breakdown of his marriage. Ed is patient, working-class, and devoted to Christopher in his own often gruff way: he shops, cooks, sets routines, and tolerates outbursts. However, he has lied catastrophically - telling Christopher his mother was dead when she had run off with Mr Shears - and in a moment of rage he killed Wellington with a garden fork. Ed is one of Haddon's most morally complex creations: capable of love and violence, honesty and lies, often within the same scene. His struggle to win back Christopher's trust frames the novel's emotional resolution."
               />
               <CharacterCard
                 name="Judy Boone (Mother)"
@@ -484,7 +484,7 @@ export default function CuriousIncidentPage() {
               />
               <CharacterCard
                 name="Siobhan"
-                description="Christopher's teacher and mentor at the special school. She is the addressee of much of Christopher's writing — he composes the book partly because she has encouraged him to. Siobhan is patient, calm, and explains the world to Christopher in clear rules: she draws faces on pieces of paper to teach him about emotions, advises him on what he can and cannot say, and gently guides his growth. She functions as a stable, trusted adult whose voice acts as Christopher's filter on social reality. She is one of the few characters Christopher unambiguously trusts."
+                description="Christopher's teacher and mentor at the special school. She is the addressee of much of Christopher's writing - he composes the book partly because she has encouraged him to. Siobhan is patient, calm, and explains the world to Christopher in clear rules: she draws faces on pieces of paper to teach him about emotions, advises him on what he can and cannot say, and gently guides his growth. She functions as a stable, trusted adult whose voice acts as Christopher's filter on social reality. She is one of the few characters Christopher unambiguously trusts."
               />
               <CharacterCard
                 name="Mrs Eileen Shears"
@@ -492,7 +492,7 @@ export default function CuriousIncidentPage() {
               />
               <CharacterCard
                 name="Mr Roger Shears"
-                description="Mrs Shears's estranged husband and the man with whom Judy had an affair and now lives in London. Christopher dislikes him intensely — he refers to him simply as 'Mr Shears' and decides early in the novel that Mr Shears is his prime suspect for Wellington's killing. When Christopher arrives in London, Mr Shears is hostile, makes it clear he does not want Christopher there, and attempts to push Judy back into prioritising their relationship. He is ultimately rejected by Judy, who chooses her son over him."
+                description="Mrs Shears's estranged husband and the man with whom Judy had an affair and now lives in London. Christopher dislikes him intensely - he refers to him simply as 'Mr Shears' and decides early in the novel that Mr Shears is his prime suspect for Wellington's killing. When Christopher arrives in London, Mr Shears is hostile, makes it clear he does not want Christopher there, and attempts to push Judy back into prioritising their relationship. He is ultimately rejected by Judy, who chooses her son over him."
               />
               <CharacterCard
                 name="Mrs Alexander"
@@ -500,19 +500,19 @@ export default function CuriousIncidentPage() {
               />
               <CharacterCard
                 name="Toby"
-                description="Christopher's pet rat. Toby is a constant companion and represents Christopher's preference for animals over humans — he believes animals are more honest and easier to understand. Toby travels with Christopher to London inside his pocket; the rescue of Toby from the Underground tracks is one of the novel's most dramatic scenes and demonstrates Christopher's capacity for risk and devotion. Toby dies of old age towards the end of the novel — a small loss but one of the few times Christopher writes about grief in his own life."
+                description="Christopher's pet rat. Toby is a constant companion and represents Christopher's preference for animals over humans - he believes animals are more honest and easier to understand. Toby travels with Christopher to London inside his pocket; the rescue of Toby from the Underground tracks is one of the novel's most dramatic scenes and demonstrates Christopher's capacity for risk and devotion. Toby dies of old age towards the end of the novel - a small loss but one of the few times Christopher writes about grief in his own life."
               />
               <CharacterCard
                 name="Wellington"
-                description="The neighbour's black poodle, killed by a garden fork on Mrs Shears's lawn at the start of the novel. Although Wellington is dead from page one, he is the catalyst for the entire plot. As an investigative target he echoes the racehorse 'Silver Blaze' in Conan Doyle's Sherlock Holmes story — the title 'the curious incident of the dog in the night-time' is a direct quotation from that story. Wellington's killing is ultimately revealed to be the work of Ed, and so the dog's death simultaneously represents the rupture between Mrs Shears and Ed and the rupture between Ed and Christopher."
+                description="The neighbour's black poodle, killed by a garden fork on Mrs Shears's lawn at the start of the novel. Although Wellington is dead from page one, he is the catalyst for the entire plot. As an investigative target he echoes the racehorse 'Silver Blaze' in Conan Doyle's Sherlock Holmes story - the title 'the curious incident of the dog in the night-time' is a direct quotation from that story. Wellington's killing is ultimately revealed to be the work of Ed, and so the dog's death simultaneously represents the rupture between Mrs Shears and Ed and the rupture between Ed and Christopher."
               />
               <CharacterCard
                 name="Sandy"
-                description="The golden retriever puppy that Ed gives Christopher towards the end of the novel as a peace-offering and a sign that he can be trusted with a living thing. Sandy is a quiet symbolic counterweight to Wellington — a dog given out of love rather than killed in anger — and represents the slow rebuilding of trust between father and son. Christopher accepts the puppy on his own terms and on his own timetable."
+                description="The golden retriever puppy that Ed gives Christopher towards the end of the novel as a peace-offering and a sign that he can be trusted with a living thing. Sandy is a quiet symbolic counterweight to Wellington - a dog given out of love rather than killed in anger - and represents the slow rebuilding of trust between father and son. Christopher accepts the puppy on his own terms and on his own timetable."
               />
               <CharacterCard
                 name="Sergeant / The Policeman at the Station"
-                description="A composite of the various police officers Christopher encounters. The first arrests him at the scene of Wellington's death; the duty sergeant interviews him at the station and gives him a caution. Later, a London officer at Paddington helps him navigate the city. Haddon uses these officers to demonstrate Christopher's literalism — he answers exactly what is asked, does not embellish, and sometimes seems unhelpful when in fact he is being maximally truthful."
+                description="A composite of the various police officers Christopher encounters. The first arrests him at the scene of Wellington's death; the duty sergeant interviews him at the station and gives him a caution. Later, a London officer at Paddington helps him navigate the city. Haddon uses these officers to demonstrate Christopher's literalism - he answers exactly what is asked, does not embellish, and sometimes seems unhelpful when in fact he is being maximally truthful."
               />
               <CharacterCard
                 name="Reverend Peters"
@@ -528,7 +528,7 @@ export default function CuriousIncidentPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Truth and Lies`)}
-                description="Christopher's most cherished principle is that he cannot tell lies — he says he is unable to do so. The plot turns on the lies of others: Ed's lie that Judy is dead, the hidden letters, Ed's lie about not knowing how Wellington died. When Christopher discovers the truth, his entire framework of safety collapses. The novel suggests that for Christopher, lies are not just morally wrong but cognitively unbearable: they break his model of the world. Yet Haddon also shows that lying parents can still love their children — the moral landscape is not as simple as Christopher's literal mind initially treats it."
+                description="Christopher's most cherished principle is that he cannot tell lies - he says he is unable to do so. The plot turns on the lies of others: Ed's lie that Judy is dead, the hidden letters, Ed's lie about not knowing how Wellington died. When Christopher discovers the truth, his entire framework of safety collapses. The novel suggests that for Christopher, lies are not just morally wrong but cognitively unbearable: they break his model of the world. Yet Haddon also shows that lying parents can still love their children - the moral landscape is not as simple as Christopher's literal mind initially treats it."
               />
               <ThemeCard
                 title={tr(`Order vs Chaos / Logic vs Emotion`)}
@@ -540,15 +540,15 @@ export default function CuriousIncidentPage() {
               />
               <ThemeCard
                 title={tr(`Difference and Neurodiversity`)}
-                description="Christopher is presented as someone who experiences the world differently — overwhelmed by noise, colour, touch and metaphor, but extraordinary in mathematical reasoning, memory, and pattern recognition. Importantly, the novel itself never uses the words 'autism' or 'Asperger's' (though early dust-jacket marketing did). Haddon has subsequently said publicly that he did not research autism specifically and that Christopher should not be read as a documentary representation. The novel's strength lies in giving the reader Christopher's first-person perspective — sympathetic without sentimentality — and allowing the reader to experience the world as he does. Examiners increasingly expect students to handle this representation thoughtfully."
+                description="Christopher is presented as someone who experiences the world differently - overwhelmed by noise, colour, touch and metaphor, but extraordinary in mathematical reasoning, memory, and pattern recognition. Importantly, the novel itself never uses the words 'autism' or 'Asperger's' (though early dust-jacket marketing did). Haddon has subsequently said publicly that he did not research autism specifically and that Christopher should not be read as a documentary representation. The novel's strength lies in giving the reader Christopher's first-person perspective - sympathetic without sentimentality - and allowing the reader to experience the world as he does. Examiners increasingly expect students to handle this representation thoughtfully."
               />
               <ThemeCard
                 title={tr(`Independence and Growing Up`)}
-                description="The novel is, among other things, a coming-of-age story. Christopher begins by needing his father's reassurance to leave the house and ends by having travelled alone to London, sat an A-Level, and acquired a puppy he cares for himself. Each act of independence is hard-won and not romanticised: he is terrified, vomits, hides under seats, and groans in public. Yet the cumulative effect is a young person who has discovered his own competence. The closing affirmation — 'I can do anything' — is earned, not granted. Independence for Christopher is not the loud rebellion of typical teenage fiction but the quiet acquisition of tools for self-reliance."
+                description="The novel is, among other things, a coming-of-age story. Christopher begins by needing his father's reassurance to leave the house and ends by having travelled alone to London, sat an A-Level, and acquired a puppy he cares for himself. Each act of independence is hard-won and not romanticised: he is terrified, vomits, hides under seats, and groans in public. Yet the cumulative effect is a young person who has discovered his own competence. The closing affirmation - 'I can do anything' - is earned, not granted. Independence for Christopher is not the loud rebellion of typical teenage fiction but the quiet acquisition of tools for self-reliance."
               />
               <ThemeCard
                 title="Communication"
-                description="The novel dramatises every kind of communication failure: Ed cannot tell Christopher the truth about Judy; Judy's letters are intercepted; police officers misread Christopher's literal answers; Christopher cannot read facial expressions; idioms confuse him; touch overwhelms him. Yet communication still happens, often through unexpected channels — diagrams, lists, written letters, and the very book Christopher is writing. Haddon suggests that conventional speech is only one of many ways minds reach each other. The novel itself is a model of this: a mind that struggles to talk is rendered fully visible to the reader through prose."
+                description="The novel dramatises every kind of communication failure: Ed cannot tell Christopher the truth about Judy; Judy's letters are intercepted; police officers misread Christopher's literal answers; Christopher cannot read facial expressions; idioms confuse him; touch overwhelms him. Yet communication still happens, often through unexpected channels - diagrams, lists, written letters, and the very book Christopher is writing. Haddon suggests that conventional speech is only one of many ways minds reach each other. The novel itself is a model of this: a mind that struggles to talk is rendered fully visible to the reader through prose."
               />
               <ThemeCard
                 title={tr(`Animals and Honesty`)}
@@ -556,7 +556,7 @@ export default function CuriousIncidentPage() {
               />
               <ThemeCard
                 title={tr(`Bravery and Fear`)}
-                description="Although Christopher rarely uses emotional vocabulary, the novel is fundamentally about courage. He is frightened of crowds, strangers, and noise, and yet he undertakes a journey that would daunt most adults. The novel redefines bravery as 'doing the difficult thing while afraid' rather than 'not being afraid.' Christopher's repeated mantra at the end — that he was 'brave' — is one of the few overt emotional statements he makes about himself, and it is presented as fully justified."
+                description="Although Christopher rarely uses emotional vocabulary, the novel is fundamentally about courage. He is frightened of crowds, strangers, and noise, and yet he undertakes a journey that would daunt most adults. The novel redefines bravery as 'doing the difficult thing while afraid' rather than 'not being afraid.' Christopher's repeated mantra at the end - that he was 'brave' - is one of the few overt emotional statements he makes about himself, and it is presented as fully justified."
               />
             </div>
           </Section>
@@ -613,12 +613,12 @@ export default function CuriousIncidentPage() {
               <QuoteCard
                 quote="I think I would make a very good astronaut."
                 speaker="Christopher"
-                analysis="Christopher imagines space as a place free of crowds, idioms, and unpredictable people — only machines, mathematics, and silence. The astronaut fantasy is both literal ambition and metaphor for an environment in which his strengths are valued. Haddon uses it to suggest that what Christopher needs is not a cure but a context."
+                analysis="Christopher imagines space as a place free of crowds, idioms, and unpredictable people - only machines, mathematics, and silence. The astronaut fantasy is both literal ambition and metaphor for an environment in which his strengths are valued. Haddon uses it to suggest that what Christopher needs is not a cure but a context."
               />
               <QuoteCard
                 quote="Mr Jeavons said that I liked maths because it was safe. He said I liked maths because it meant solving problems, and these problems were difficult and interesting but there was always a straightforward answer at the end. And what he meant was that maths wasn&rsquo;t like life because in life there are no straightforward answers at the end."
                 speaker="Christopher reporting Mr Jeavons"
-                analysis="A teacher's interpretation that Christopher records faithfully without endorsement. The passage encapsulates the novel's thematic dialectic: maths-as-order versus life-as-chaos. By relaying Mr Jeavons's words rather than agreeing with them, Christopher implicitly resists the framing — the rest of the book argues that life, while complicated, is not unintelligible."
+                analysis="A teacher's interpretation that Christopher records faithfully without endorsement. The passage encapsulates the novel's thematic dialectic: maths-as-order versus life-as-chaos. By relaying Mr Jeavons's words rather than agreeing with them, Christopher implicitly resists the framing - the rest of the book argues that life, while complicated, is not unintelligible."
               />
               <QuoteCard
                 quote="I like dogs. You always know what a dog is thinking. It has four moods. Happy, sad, cross and concentrating. Also, dogs are faithful and they do not tell lies because they cannot talk."
@@ -628,7 +628,7 @@ export default function CuriousIncidentPage() {
               <QuoteCard
                 quote="The world is full of obvious things which nobody by any chance ever observes."
                 speaker="Sherlock Holmes (quoted by Christopher)"
-                analysis="Christopher quotes Conan Doyle directly. The line legitimises his style of attention as detective methodology and aligns the reader with his cognitive perspective rather than treating him as anomalous. By embedding Holmes's voice in the novel, Haddon places Christopher in the genealogy of literary detectives — a profession that values exactly the traits Christopher possesses."
+                analysis="Christopher quotes Conan Doyle directly. The line legitimises his style of attention as detective methodology and aligns the reader with his cognitive perspective rather than treating him as anomalous. By embedding Holmes's voice in the novel, Haddon places Christopher in the genealogy of literary detectives - a profession that values exactly the traits Christopher possesses."
               />
               <QuoteCard
                 quote="I screamed."
@@ -638,7 +638,7 @@ export default function CuriousIncidentPage() {
               <QuoteCard
                 quote="And I know I can do this because I went to London on my own, and because I solved the mystery of Who Killed Wellington? and I found my mother and I was brave and I wrote a book and that means I can do anything."
                 speaker="Christopher (closing words of the novel)"
-                analysis="The novel's closing affirmation. The list of achievements is given in plain coordinated clauses ('and... and... and') rather than in a literary cadence — the syntax itself is Christopher's voice. Note the carefully chosen evidence: travel, deduction, family reunion, courage, and authorship. The sentence is hopeful but earned; it is also qualified by the realities of the novel (he is back in Swindon, his parents are still apart). Haddon avoids tying everything into a neat resolution while still permitting Christopher his triumph."
+                analysis="The novel's closing affirmation. The list of achievements is given in plain coordinated clauses ('and... and... and') rather than in a literary cadence - the syntax itself is Christopher's voice. Note the carefully chosen evidence: travel, deduction, family reunion, courage, and authorship. The sentence is hopeful but earned; it is also qualified by the realities of the novel (he is back in Swindon, his parents are still apart). Haddon avoids tying everything into a neat resolution while still permitting Christopher his triumph."
               />
             </div>
           </Section>

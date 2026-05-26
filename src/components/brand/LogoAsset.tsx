@@ -13,7 +13,7 @@ type Variant = 'primary' | 'wordmark' | 'icon'
 
 export async function LogoAsset({ variant, className }: { variant: Variant; className?: string }) {
   // Brand asset *names* ("The English Hub", "EH") stay Latin even in the
-  // AR build — standard Gulf convention for brand marks. Only the
+  // AR build - standard Gulf convention for brand marks. Only the
   // surrounding a11y prose is translated.
   const brandName = await t('brand.name')
   const ariaPrefix = await t('brand.logo.aria_prefix')

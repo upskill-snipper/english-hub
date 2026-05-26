@@ -36,7 +36,7 @@ export default function MockExamsSection({ board }: { board?: ExamBoard | null }
   const config = board ? getBoardConfig(board) : null
   const stats = getStatsForBoard(board ?? null)
 
-  // Brand + board codes stay in Latin per i18n policy — interpolate them
+  // Brand + board codes stay in Latin per i18n policy - interpolate them
   // into the English/Arabic copy verbatim rather than translating them.
   const shortName = config?.shortName ?? ''
   const fullName = config?.fullName ?? 'GCSE'

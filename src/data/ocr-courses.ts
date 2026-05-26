@@ -1,71 +1,71 @@
 // @ts-nocheck
-import type { CourseData, CourseQuiz, CourseModule } from './courses';
+import type { CourseData, CourseQuiz, CourseModule } from './courses'
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// OCR GCSE English Language (J351) — Component 01 Modules
+// OCR GCSE English Language (J351) - Component 01 Modules
 // Communicating Information and Ideas
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const c1Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
-  // MODULE 1 — Component 01 Overview & Assessment Objectives
+  // MODULE 1 - Component 01 Overview & Assessment Objectives
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m1',
     title: 'Component 01 Overview & Assessment Objectives',
     duration: '45 min',
     content: `
-<h2>OCR GCSE English Language — Component 01: Communicating Information and Ideas</h2>
+<h2>OCR GCSE English Language - Component 01: Communicating Information and Ideas</h2>
 
 <p>Component 01 is one of two examined components in the OCR GCSE English Language specification (J351). It focuses on <strong>non-fiction reading</strong> and <strong>transactional writing</strong>. The paper is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>2 hours</strong> to complete two sections.</p>
 
-<div class="key-term"><strong>Key Term: Transactional Writing</strong> — Writing that serves a clear, real-world purpose and addresses a specific audience. Forms include letters, articles, speeches, reports, and reviews. The writing must persuade, inform, advise, argue, or explain — always with a clear sense of audience and purpose.</div>
+<div class="key-term"><strong>Key Term: Transactional Writing</strong> - Writing that serves a clear, real-world purpose and addresses a specific audience. Forms include letters, articles, speeches, reports, and reviews. The writing must persuade, inform, advise, argue, or explain - always with a clear sense of audience and purpose.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A — Reading (40 marks):</strong> You are given two unseen non-fiction texts (one from the 20th century, one from the 21st century or vice versa) and answer a series of questions testing comprehension, language analysis, comparison, and evaluation.</li>
-  <li><strong>Section B — Writing (40 marks):</strong> Two transactional writing tasks. You must complete <strong>both</strong> — a shorter task (16 marks) and a longer task (24 marks).</li>
+  <li><strong>Section A - Reading (40 marks):</strong> You are given two unseen non-fiction texts (one from the 20th century, one from the 21st century or vice versa) and answer a series of questions testing comprehension, language analysis, comparison, and evaluation.</li>
+  <li><strong>Section B - Writing (40 marks):</strong> Two transactional writing tasks. You must complete <strong>both</strong> - a shorter task (16 marks) and a longer task (24 marks).</li>
 </ul>
 
-<h3>Section A — Reading Question Breakdown</h3>
+<h3>Section A - Reading Question Breakdown</h3>
 <p>OCR structures the reading section around both texts. The questions progress from straightforward retrieval to more demanding analysis and comparison:</p>
 <ol>
-  <li><strong>Q1 (a–d) — Retrieval and inference (various marks):</strong> Short questions testing your ability to identify explicit and implicit information from Text 1.</li>
-  <li><strong>Q2 — Language analysis (6–8 marks):</strong> Analyse how the writer uses language to create meaning and effect, typically focused on one of the texts.</li>
-  <li><strong>Q3 — Comparison (8–10 marks):</strong> Compare how the two writers present their ideas, perspectives, or experiences on a shared theme.</li>
-  <li><strong>Q4 — Evaluation (12–14 marks):</strong> Evaluate how successfully a writer achieves their purpose, supporting your judgement with evidence from the text.</li>
+  <li><strong>Q1 (a-d) - Retrieval and inference (various marks):</strong> Short questions testing your ability to identify explicit and implicit information from Text 1.</li>
+  <li><strong>Q2 - Language analysis (6-8 marks):</strong> Analyse how the writer uses language to create meaning and effect, typically focused on one of the texts.</li>
+  <li><strong>Q3 - Comparison (8-10 marks):</strong> Compare how the two writers present their ideas, perspectives, or experiences on a shared theme.</li>
+  <li><strong>Q4 - Evaluation (12-14 marks):</strong> Evaluate how successfully a writer achieves their purpose, supporting your judgement with evidence from the text.</li>
 </ol>
 
-<h3>Section B — Writing Question Breakdown</h3>
+<h3>Section B - Writing Question Breakdown</h3>
 <ol>
-  <li><strong>Q5 — Short writing task (16 marks):</strong> A focused transactional task such as a letter or a brief article (approximately 200–300 words).</li>
-  <li><strong>Q6 — Extended writing task (24 marks):</strong> A longer transactional piece — often a speech, article, or report requiring sustained argument or explanation (approximately 350–500 words).</li>
+  <li><strong>Q5 - Short writing task (16 marks):</strong> A focused transactional task such as a letter or a brief article (approximately 200-300 words).</li>
+  <li><strong>Q6 - Extended writing task (24 marks):</strong> A longer transactional piece - often a speech, article, or report requiring sustained argument or explanation (approximately 350-500 words).</li>
 </ol>
 
 <h3>Assessment Objectives for Component 01</h3>
 <ul>
-  <li><strong>AO1</strong> — Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.</li>
-  <li><strong>AO2</strong> — Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology.</li>
-  <li><strong>AO3</strong> — Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.</li>
-  <li><strong>AO4</strong> — Evaluate texts critically and support this with appropriate textual references.</li>
-  <li><strong>AO5</strong> — Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas using structural and grammatical features to support coherence and cohesion of texts.</li>
-  <li><strong>AO6</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
+  <li><strong>AO1</strong> - Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.</li>
+  <li><strong>AO2</strong> - Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology.</li>
+  <li><strong>AO3</strong> - Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.</li>
+  <li><strong>AO4</strong> - Evaluate texts critically and support this with appropriate textual references.</li>
+  <li><strong>AO5</strong> - Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas using structural and grammatical features to support coherence and cohesion of texts.</li>
+  <li><strong>AO6</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR Component 01 gives you 2 hours — significantly more time than some other boards. Use this to your advantage. Spend roughly 1 hour on Section A and 1 hour on Section B. Within Section B, allocate about 20 minutes for Q5 and 35–40 minutes for Q6, leaving 5 minutes for proofreading.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR Component 01 gives you 2 hours - significantly more time than some other boards. Use this to your advantage. Spend roughly 1 hour on Section A and 1 hour on Section B. Within Section B, allocate about 20 minutes for Q5 and 35-40 minutes for Q6, leaving 5 minutes for proofreading.</div>
 
 <h3>Recommended Timing Plan</h3>
 <ol>
-  <li><strong>0–10 min:</strong> Read both source texts carefully, underlining key ideas, techniques, and contrasts.</li>
-  <li><strong>10–25 min:</strong> Answer Q1 retrieval and inference questions.</li>
-  <li><strong>25–40 min:</strong> Answer Q2 language analysis question.</li>
-  <li><strong>40–55 min:</strong> Answer Q3 comparison question.</li>
-  <li><strong>55–65 min:</strong> Answer Q4 evaluation question.</li>
-  <li><strong>65–70 min:</strong> Plan Q5 response.</li>
-  <li><strong>70–85 min:</strong> Write Q5 response.</li>
-  <li><strong>85–90 min:</strong> Plan Q6 response.</li>
-  <li><strong>90–115 min:</strong> Write Q6 response.</li>
-  <li><strong>115–120 min:</strong> Proofread both writing tasks.</li>
+  <li><strong>0-10 min:</strong> Read both source texts carefully, underlining key ideas, techniques, and contrasts.</li>
+  <li><strong>10-25 min:</strong> Answer Q1 retrieval and inference questions.</li>
+  <li><strong>25-40 min:</strong> Answer Q2 language analysis question.</li>
+  <li><strong>40-55 min:</strong> Answer Q3 comparison question.</li>
+  <li><strong>55-65 min:</strong> Answer Q4 evaluation question.</li>
+  <li><strong>65-70 min:</strong> Plan Q5 response.</li>
+  <li><strong>70-85 min:</strong> Write Q5 response.</li>
+  <li><strong>85-90 min:</strong> Plan Q6 response.</li>
+  <li><strong>90-115 min:</strong> Write Q6 response.</li>
+  <li><strong>115-120 min:</strong> Proofread both writing tasks.</li>
 </ol>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating the two writing tasks equally. Q5 is worth 16 marks and Q6 is worth 24 marks. Students who spend 30 minutes on each task are over-investing in Q5 and under-investing in Q6. Always weight your time towards the higher-tariff question.</div>
@@ -73,24 +73,19 @@ const c1Modules: CourseModule[] = [
 <h3>How OCR Differs from Other Boards</h3>
 <p>Understanding OCR-specific features helps you tailor your revision:</p>
 <ul>
-  <li><strong>Two writing tasks</strong> — unlike AQA or Edexcel which have one extended writing task, OCR requires two transactional pieces of different lengths.</li>
-  <li><strong>Comparison question</strong> — AO3 is directly tested in Component 01 through cross-text comparison, which is not always present in other boards' language papers.</li>
-  <li><strong>Text pairing</strong> — the two non-fiction texts are always linked thematically, making comparison more accessible if you identify the shared theme early.</li>
-  <li><strong>20th and 21st century texts</strong> — unlike Edexcel (which uses 19th-century texts), OCR focuses on more modern non-fiction, though some texts may be from the early 1900s.</li>
+  <li><strong>Two writing tasks</strong> - unlike AQA or Edexcel which have one extended writing task, OCR requires two transactional pieces of different lengths.</li>
+  <li><strong>Comparison question</strong> - AO3 is directly tested in Component 01 through cross-text comparison, which is not always present in other boards' language papers.</li>
+  <li><strong>Text pairing</strong> - the two non-fiction texts are always linked thematically, making comparison more accessible if you identify the shared theme early.</li>
+  <li><strong>20th and 21st century texts</strong> - unlike Edexcel (which uses 19th-century texts), OCR focuses on more modern non-fiction, though some texts may be from the early 1900s.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Synthesis</strong> — The skill of drawing together information from two or more texts to form a combined understanding. In OCR Component 01, synthesis is tested when you are asked to compare or connect ideas across the two source texts.</div>
+<div class="key-term"><strong>Key Term: Synthesis</strong> - The skill of drawing together information from two or more texts to form a combined understanding. In OCR Component 01, synthesis is tested when you are asked to compare or connect ideas across the two source texts.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m1-q1',
         question: 'How long do students have to complete OCR Component 01?',
-        options: [
-          '1 hour 30 minutes',
-          '1 hour 45 minutes',
-          '1 hour 55 minutes',
-          '2 hours',
-        ],
+        options: ['1 hour 30 minutes', '1 hour 45 minutes', '1 hour 55 minutes', '2 hours'],
         correct: 3,
         explanation:
           'OCR Component 01 is 2 hours long (120 minutes). This should be divided carefully between 40 marks of reading (Section A) and 40 marks of writing (Section B).',
@@ -101,21 +96,19 @@ const c1Modules: CourseModule[] = [
         options: ['One', 'Two', 'Three', 'A choice of one from two'],
         correct: 1,
         explanation:
-          'Section B contains two compulsory writing tasks — a shorter task worth 16 marks and a longer task worth 24 marks. Both must be completed.',
+          'Section B contains two compulsory writing tasks - a shorter task worth 16 marks and a longer task worth 24 marks. Both must be completed.',
       },
       {
         id: 'ocr-lc1-m1-q3',
-        question:
-          'Which Assessment Objective tests cross-text comparison in Component 01?',
+        question: 'Which Assessment Objective tests cross-text comparison in Component 01?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
-          'AO3 tests comparison — the ability to compare writers\' ideas and perspectives across two or more texts. This is a distinctive feature of OCR Component 01.',
+          "AO3 tests comparison - the ability to compare writers' ideas and perspectives across two or more texts. This is a distinctive feature of OCR Component 01.",
       },
       {
         id: 'ocr-lc1-m1-q4',
-        question:
-          'What types of non-fiction texts appear in Section A of Component 01?',
+        question: 'What types of non-fiction texts appear in Section A of Component 01?',
         options: [
           '19th-century texts only',
           'One 20th-century and one 21st-century text (or similar pairing)',
@@ -132,71 +125,71 @@ const c1Modules: CourseModule[] = [
         options: ['16 marks', '20 marks', '24 marks', '40 marks'],
         correct: 2,
         explanation:
-          'The longer writing task is worth 24 marks. Combined with Q5 (16 marks), Section B totals 40 marks — half of the entire paper.',
+          'The longer writing task is worth 24 marks. Combined with Q5 (16 marks), Section B totals 40 marks - half of the entire paper.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 2 — Reading Non-Fiction: Retrieval & Inference
+  // MODULE 2 - Reading Non-Fiction: Retrieval & Inference
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m2',
     title: 'Reading Non-Fiction: Retrieval & Inference',
     duration: '50 min',
     content: `
-<h2>Retrieval and Inference — Finding Information in Non-Fiction Texts</h2>
+<h2>Retrieval and Inference - Finding Information in Non-Fiction Texts</h2>
 
 <p>The opening questions of OCR Component 01 test your ability to locate <strong>explicit information</strong> and make <strong>inferences</strong> from a non-fiction text. These questions carry relatively few marks individually, but they set the foundation for the more analytical questions that follow and build your confidence early in the exam.</p>
 
-<div class="key-term"><strong>Key Term: Explicit Information</strong> — Facts, details, or ideas that are directly stated in the text. The answer can be found word-for-word or very closely paraphrased from the source material.</div>
+<div class="key-term"><strong>Key Term: Explicit Information</strong> - Facts, details, or ideas that are directly stated in the text. The answer can be found word-for-word or very closely paraphrased from the source material.</div>
 
-<div class="key-term"><strong>Key Term: Inference</strong> — Drawing conclusions about something that is implied but not directly stated. You combine textual clues with your own reasoning to arrive at an understanding that goes beyond the surface meaning.</div>
+<div class="key-term"><strong>Key Term: Inference</strong> - Drawing conclusions about something that is implied but not directly stated. You combine textual clues with your own reasoning to arrive at an understanding that goes beyond the surface meaning.</div>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">The café had been open for only three months, but already it had become the unofficial meeting point for half the neighbourhood. Every morning, a queue snaked out of the door and along the pavement. The owner, Maria, greeted every customer by name — a feat that seemed increasingly impossible as word spread. The menu was handwritten on a chalkboard that changed daily, and the coffee was roasted in a cramped back room that smelled permanently of burnt sugar and cardamom. Critics from the national press had begun to take notice, though Maria claimed she had no interest in reviews. "I just want people to feel at home," she said, wiping flour from her hands onto an already flour-covered apron.<div class="source">Adapted from a newspaper feature, 2019</div></div>
+<div class="text-extract">The café had been open for only three months, but already it had become the unofficial meeting point for half the neighbourhood. Every morning, a queue snaked out of the door and along the pavement. The owner, Maria, greeted every customer by name - a feat that seemed increasingly impossible as word spread. The menu was handwritten on a chalkboard that changed daily, and the coffee was roasted in a cramped back room that smelled permanently of burnt sugar and cardamom. Critics from the national press had begun to take notice, though Maria claimed she had no interest in reviews. "I just want people to feel at home," she said, wiping flour from her hands onto an already flour-covered apron.<div class="source">Adapted from a newspaper feature, 2019</div></div>
 
-<h3>Retrieval Questions — How to Approach Them</h3>
+<h3>Retrieval Questions - How to Approach Them</h3>
 <p>A typical OCR retrieval question might read: <em>"According to the text, how long has the café been open?"</em></p>
 
 <ol>
-  <li><strong>Identify the focus</strong> — the question asks about how long the café has been open.</li>
-  <li><strong>Scan the text</strong> — find the relevant sentence: "The café had been open for only three months."</li>
-  <li><strong>Give a clear, concise answer</strong> — "Three months." There is no need to elaborate or analyse.</li>
+  <li><strong>Identify the focus</strong> - the question asks about how long the café has been open.</li>
+  <li><strong>Scan the text</strong> - find the relevant sentence: "The café had been open for only three months."</li>
+  <li><strong>Give a clear, concise answer</strong> - "Three months." There is no need to elaborate or analyse.</li>
 </ol>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> For retrieval questions, brevity is your friend. A single sentence or even a phrase is sufficient. You will not gain extra marks for explanation, and spending time elaborating means less time for higher-tariff questions.</div>
 
-<h3>Inference Questions — Reading Between the Lines</h3>
+<h3>Inference Questions - Reading Between the Lines</h3>
 <p>A typical OCR inference question might read: <em>"What impressions do you get of Maria from this extract? Support your answer with evidence from the text."</em></p>
 
-<p>Strong inference answers follow a <strong>Point–Evidence–Inference</strong> structure:</p>
+<p>Strong inference answers follow a <strong>Point-Evidence-Inference</strong> structure:</p>
 
 <div class="model-answer"><strong>Model Answer:</strong>
 <p><strong>Point:</strong> Maria appears to be a warm and personal business owner who values relationships over commercial success.</p>
 <p><strong>Evidence:</strong> She "greeted every customer by name" and said "I just want people to feel at home."</p>
-<p><strong>Inference:</strong> The fact that she remembers customers' names despite growing numbers suggests genuine care rather than a business strategy. Her dismissal of press reviews reinforces this — she measures success through personal connection, not critical acclaim. The image of her wiping flour onto an "already flour-covered apron" implies she is hands-on and unpretentious, someone who works alongside her staff rather than delegating from a distance.</p></div>
+<p><strong>Inference:</strong> The fact that she remembers customers' names despite growing numbers suggests genuine care rather than a business strategy. Her dismissal of press reviews reinforces this - she measures success through personal connection, not critical acclaim. The image of her wiping flour onto an "already flour-covered apron" implies she is hands-on and unpretentious, someone who works alongside her staff rather than delegating from a distance.</p></div>
 
 <h3>Common Inference Pitfalls</h3>
 <ul>
-  <li><strong>Over-inference</strong> — Going far beyond what the text supports. For instance, concluding that Maria "must have had a difficult childhood" has no textual basis.</li>
-  <li><strong>Under-inference</strong> — Simply restating what the text says without drawing any conclusions. "Maria greeted customers by name" is retrieval, not inference.</li>
-  <li><strong>Unsupported claims</strong> — Making a reasonable inference but failing to anchor it to specific evidence from the text.</li>
+  <li><strong>Over-inference</strong> - Going far beyond what the text supports. For instance, concluding that Maria "must have had a difficult childhood" has no textual basis.</li>
+  <li><strong>Under-inference</strong> - Simply restating what the text says without drawing any conclusions. "Maria greeted customers by name" is retrieval, not inference.</li>
+  <li><strong>Unsupported claims</strong> - Making a reasonable inference but failing to anchor it to specific evidence from the text.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Confusing retrieval and inference. If the question asks you to "identify" or "find" information, you are retrieving — give a direct answer from the text. If the question asks what you "learn" or what "impressions" you get, you need to infer — go beyond the literal meaning and explain what the details suggest.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Confusing retrieval and inference. If the question asks you to "identify" or "find" information, you are retrieving - give a direct answer from the text. If the question asks what you "learn" or what "impressions" you get, you need to infer - go beyond the literal meaning and explain what the details suggest.</div>
 
 <h3>Practising with Different Non-Fiction Forms</h3>
 <p>OCR can use a range of non-fiction text types. Each has characteristic features that shape how you read and infer:</p>
 <ul>
-  <li><strong>Newspaper articles</strong> — Look for bias in word choice, headline framing, and the selection of quoted sources.</li>
-  <li><strong>Autobiographies/memoirs</strong> — The writer has a personal stake; consider how they position themselves and what they choose to include or omit.</li>
-  <li><strong>Travel writing</strong> — Often blends description with personal response; infer attitudes towards places and cultures.</li>
-  <li><strong>Speeches</strong> — Consider the intended audience and how the speaker builds rapport, credibility, and emotional connection.</li>
-  <li><strong>Letters</strong> — The relationship between writer and recipient shapes tone; infer formality, power dynamics, and purpose.</li>
+  <li><strong>Newspaper articles</strong> - Look for bias in word choice, headline framing, and the selection of quoted sources.</li>
+  <li><strong>Autobiographies/memoirs</strong> - The writer has a personal stake; consider how they position themselves and what they choose to include or omit.</li>
+  <li><strong>Travel writing</strong> - Often blends description with personal response; infer attitudes towards places and cultures.</li>
+  <li><strong>Speeches</strong> - Consider the intended audience and how the speaker builds rapport, credibility, and emotional connection.</li>
+  <li><strong>Letters</strong> - The relationship between writer and recipient shapes tone; infer formality, power dynamics, and purpose.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always consider the <strong>source information</strong> provided with the extract. OCR includes a brief attribution (author, date, publication). This context helps you understand the writer's purpose and audience — both of which inform your inferences. A letter to a newspaper editor, for example, will have a very different purpose from a personal diary entry.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Always consider the <strong>source information</strong> provided with the extract. OCR includes a brief attribution (author, date, publication). This context helps you understand the writer's purpose and audience - both of which inform your inferences. A letter to a newspaper editor, for example, will have a very different purpose from a personal diary entry.</div>
 
 <h3>Key Vocabulary for Inference Responses</h3>
 <p>Using precise vocabulary strengthens your answers:</p>
@@ -212,8 +205,7 @@ const c1Modules: CourseModule[] = [
     quiz: [
       {
         id: 'ocr-lc1-m2-q1',
-        question:
-          'What is the key difference between retrieval and inference?',
+        question: 'What is the key difference between retrieval and inference?',
         options: [
           'Retrieval requires quotations but inference does not',
           'Retrieval finds directly stated information; inference draws conclusions from implied meaning',
@@ -242,105 +234,103 @@ const c1Modules: CourseModule[] = [
         id: 'ocr-lc1-m2-q3',
         question: 'What structure should a strong inference answer follow?',
         options: [
-          'Quote–Explain–Quote',
-          'Point–Evidence–Inference',
-          'Introduction–Body–Conclusion',
-          'Describe–Analyse–Evaluate',
+          'Quote-Explain-Quote',
+          'Point-Evidence-Inference',
+          'Introduction-Body-Conclusion',
+          'Describe-Analyse-Evaluate',
         ],
         correct: 1,
         explanation:
-          'Point–Evidence–Inference (PEI) is the recommended structure. State your point, support it with a quotation, then explain what the evidence implies beyond its literal meaning.',
+          'Point-Evidence-Inference (PEI) is the recommended structure. State your point, support it with a quotation, then explain what the evidence implies beyond its literal meaning.',
       },
       {
         id: 'ocr-lc1-m2-q4',
-        question:
-          'Why should you always check the source information provided with an extract?',
+        question: 'Why should you always check the source information provided with an extract?',
         options: [
           'It tells you exactly what the examiner wants you to write',
-          'It helps you understand the writer\'s purpose and audience, which informs your inferences',
+          "It helps you understand the writer's purpose and audience, which informs your inferences",
           'It contains the correct answers',
           'It is only relevant for the comparison question',
         ],
         correct: 1,
         explanation:
-          'Source information (author, date, publication) provides context that helps you understand why the text was written and for whom. This context strengthens your inferences about the writer\'s choices and intentions.',
+          "Source information (author, date, publication) provides context that helps you understand why the text was written and for whom. This context strengthens your inferences about the writer's choices and intentions.",
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 3 — Language Analysis in Non-Fiction
+  // MODULE 3 - Language Analysis in Non-Fiction
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m3',
     title: 'Language Analysis in Non-Fiction Texts',
     duration: '55 min',
     content: `
-<h2>Analysing Language in Non-Fiction — How Writers Create Meaning and Effect</h2>
+<h2>Analysing Language in Non-Fiction - How Writers Create Meaning and Effect</h2>
 
-<p>The language analysis question in OCR Component 01 typically asks you to examine how a writer uses language to achieve a specific effect. This question is worth <strong>6–8 marks</strong> and tests <strong>AO2</strong>: the ability to explain, comment on, and analyse how writers use language to achieve effects, using relevant subject terminology to support your views.</p>
+<p>The language analysis question in OCR Component 01 typically asks you to examine how a writer uses language to achieve a specific effect. This question is worth <strong>6-8 marks</strong> and tests <strong>AO2</strong>: the ability to explain, comment on, and analyse how writers use language to achieve effects, using relevant subject terminology to support your views.</p>
 
-<div class="key-term"><strong>Key Term: Language Analysis</strong> — The close examination of a writer's word choices (diction), figurative language, sentence structures, and rhetorical techniques, with a focus on explaining the <em>effect</em> these choices have on the reader.</div>
+<div class="key-term"><strong>Key Term: Language Analysis</strong> - The close examination of a writer's word choices (diction), figurative language, sentence structures, and rhetorical techniques, with a focus on explaining the <em>effect</em> these choices have on the reader.</div>
 
 <h3>The Golden Rule: Effect Over Identification</h3>
-<p>The most common weakness in language analysis is <strong>feature-spotting</strong> — identifying a technique without explaining its effect. Saying "The writer uses a metaphor" earns minimal credit. You must explain <em>what the metaphor does</em> — how it shapes the reader's understanding, emotions, or response.</p>
+<p>The most common weakness in language analysis is <strong>feature-spotting</strong> - identifying a technique without explaining its effect. Saying "The writer uses a metaphor" earns minimal credit. You must explain <em>what the metaphor does</em> - how it shapes the reader's understanding, emotions, or response.</p>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">The river had become a graveyard of shopping trolleys and plastic bags, its surface glazed with an oily film that caught the light in sickly rainbows. Where kingfishers once darted between the willows, only rats now moved — fat, unhurried, confident in their dominion. The council's "river restoration project" sign stood at the bank, its promises peeling away in the rain like the paint that spelled them. A child's bicycle, half-submerged and rusted orange, leaned against the sign as if in weary commentary.<div class="source">Adapted from an environmental magazine article, 2021</div></div>
+<div class="text-extract">The river had become a graveyard of shopping trolleys and plastic bags, its surface glazed with an oily film that caught the light in sickly rainbows. Where kingfishers once darted between the willows, only rats now moved - fat, unhurried, confident in their dominion. The council's "river restoration project" sign stood at the bank, its promises peeling away in the rain like the paint that spelled them. A child's bicycle, half-submerged and rusted orange, leaned against the sign as if in weary commentary.<div class="source">Adapted from an environmental magazine article, 2021</div></div>
 
 <h3>Step-by-Step Analysis Method</h3>
-<p>Use the <strong>What–How–Why</strong> framework for every language point:</p>
+<p>Use the <strong>What-How-Why</strong> framework for every language point:</p>
 <ol>
-  <li><strong>What</strong> — Identify the technique or language choice (with a quotation).</li>
-  <li><strong>How</strong> — Explain how the technique works at a word or phrase level.</li>
-  <li><strong>Why</strong> — Analyse the effect on the reader — what does it make them think, feel, or understand?</li>
+  <li><strong>What</strong> - Identify the technique or language choice (with a quotation).</li>
+  <li><strong>How</strong> - Explain how the technique works at a word or phrase level.</li>
+  <li><strong>Why</strong> - Analyse the effect on the reader - what does it make them think, feel, or understand?</li>
 </ol>
 
 <div class="model-answer"><strong>Model Answer (analysing the extract above):</strong>
-<p>The writer uses the metaphor <em>"graveyard of shopping trolleys and plastic bags"</em> to describe the river. The word <strong>"graveyard"</strong> carries connotations of death and decay, transforming the river from a living ecosystem into a repository of human waste. This creates a tone of mourning — the river is not merely polluted but <em>dead</em>, and the trolleys and bags become grotesque tombstones marking the death of the natural world. The metaphor forces the reader to confront the irreversibility of the damage: a graveyard is a place from which nothing returns.</p>
+<p>The writer uses the metaphor <em>"graveyard of shopping trolleys and plastic bags"</em> to describe the river. The word <strong>"graveyard"</strong> carries connotations of death and decay, transforming the river from a living ecosystem into a repository of human waste. This creates a tone of mourning - the river is not merely polluted but <em>dead</em>, and the trolleys and bags become grotesque tombstones marking the death of the natural world. The metaphor forces the reader to confront the irreversibility of the damage: a graveyard is a place from which nothing returns.</p>
 
-<p>The writer further develops this tone through the image of the council sign with <em>"promises peeling away in the rain like the paint that spelled them."</em> The simile is powerfully ironic — the physical deterioration of the sign mirrors the failure of the promises it carries. The word <strong>"peeling"</strong> suggests something superficial being stripped back to reveal nothing underneath, implying the council's commitment was never more than surface-level. The effect is to undermine institutional authority and invite the reader's cynicism.</p></div>
+<p>The writer further develops this tone through the image of the council sign with <em>"promises peeling away in the rain like the paint that spelled them."</em> The simile is powerfully ironic - the physical deterioration of the sign mirrors the failure of the promises it carries. The word <strong>"peeling"</strong> suggests something superficial being stripped back to reveal nothing underneath, implying the council's commitment was never more than surface-level. The effect is to undermine institutional authority and invite the reader's cynicism.</p></div>
 
 <h3>Key Language Techniques for Non-Fiction</h3>
 <p>Non-fiction writers use many of the same techniques as fiction writers, plus some specific to persuasion and argument:</p>
 <ul>
-  <li><strong>Metaphor and simile</strong> — Create vivid comparisons that shape the reader's understanding.</li>
-  <li><strong>Emotive language</strong> — Words chosen to provoke an emotional response (e.g. "devastating," "heartbreaking").</li>
-  <li><strong>Hyperbole</strong> — Exaggeration for emphasis or dramatic effect.</li>
-  <li><strong>Rhetorical questions</strong> — Engage the reader and imply the answer is obvious.</li>
-  <li><strong>Lists (tricolon)</strong> — Groups of three create rhythm and emphasis.</li>
-  <li><strong>Contrast/juxtaposition</strong> — Placing opposing ideas side by side to highlight differences.</li>
-  <li><strong>Direct address ("you")</strong> — Creates intimacy and involves the reader directly.</li>
-  <li><strong>Statistics and factual evidence</strong> — Build credibility and authority.</li>
-  <li><strong>Anecdote</strong> — Personal stories create relatability and emotional connection.</li>
-  <li><strong>Tone shifts</strong> — Moving between tones (e.g. from humour to seriousness) to control the reader's emotional journey.</li>
+  <li><strong>Metaphor and simile</strong> - Create vivid comparisons that shape the reader's understanding.</li>
+  <li><strong>Emotive language</strong> - Words chosen to provoke an emotional response (e.g. "devastating," "heartbreaking").</li>
+  <li><strong>Hyperbole</strong> - Exaggeration for emphasis or dramatic effect.</li>
+  <li><strong>Rhetorical questions</strong> - Engage the reader and imply the answer is obvious.</li>
+  <li><strong>Lists (tricolon)</strong> - Groups of three create rhythm and emphasis.</li>
+  <li><strong>Contrast/juxtaposition</strong> - Placing opposing ideas side by side to highlight differences.</li>
+  <li><strong>Direct address ("you")</strong> - Creates intimacy and involves the reader directly.</li>
+  <li><strong>Statistics and factual evidence</strong> - Build credibility and authority.</li>
+  <li><strong>Anecdote</strong> - Personal stories create relatability and emotional connection.</li>
+  <li><strong>Tone shifts</strong> - Moving between tones (e.g. from humour to seriousness) to control the reader's emotional journey.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR examiners reward answers that analyse at <strong>word level</strong>. Don't just identify a metaphor — zoom into the individual words within it and explore their connotations. The best answers discuss how specific word choices create layers of meaning. A single well-analysed quotation is worth more than three quotations with surface-level comments.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR examiners reward answers that analyse at <strong>word level</strong>. Don't just identify a metaphor - zoom into the individual words within it and explore their connotations. The best answers discuss how specific word choices create layers of meaning. A single well-analysed quotation is worth more than three quotations with surface-level comments.</div>
 
 <h3>Sentence-Level Analysis</h3>
 <p>Don't overlook how sentence structure creates effects:</p>
 <ul>
-  <li><strong>Short sentences</strong> — Create emphasis, tension, or finality. "The river was dead." stops the reader in their tracks.</li>
-  <li><strong>Long, complex sentences</strong> — Can mirror accumulation, overwhelm, or the building of an argument.</li>
-  <li><strong>Listing within sentences</strong> — Suggests abundance or, in negative contexts, relentless scale.</li>
-  <li><strong>Fronted adverbials</strong> — Shift focus or set a scene: "Beneath the oily surface, nothing moved."</li>
-  <li><strong>Parenthetical asides</strong> — Create intimacy, as if the writer is speaking directly to the reader.</li>
+  <li><strong>Short sentences</strong> - Create emphasis, tension, or finality. "The river was dead." stops the reader in their tracks.</li>
+  <li><strong>Long, complex sentences</strong> - Can mirror accumulation, overwhelm, or the building of an argument.</li>
+  <li><strong>Listing within sentences</strong> - Suggests abundance or, in negative contexts, relentless scale.</li>
+  <li><strong>Fronted adverbials</strong> - Shift focus or set a scene: "Beneath the oily surface, nothing moved."</li>
+  <li><strong>Parenthetical asides</strong> - Create intimacy, as if the writer is speaking directly to the reader.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Using vague phrases like "this makes the reader want to read on" or "this creates a vivid image." These are generic comments that could apply to almost any text. Instead, be <em>specific</em> about what the reader thinks or feels: "The juxtaposition of kingfishers and rats forces the reader to confront how dramatically the ecosystem has declined, provoking both nostalgia and disgust."</div>
 
-<div class="key-term"><strong>Key Term: Connotation</strong> — The associations and emotional overtones that a word carries beyond its literal dictionary meaning (denotation). For example, "home" literally means a place of residence, but its connotations include warmth, safety, belonging, and family. Exploring connotations is central to effective language analysis.</div>
+<div class="key-term"><strong>Key Term: Connotation</strong> - The associations and emotional overtones that a word carries beyond its literal dictionary meaning (denotation). For example, "home" literally means a place of residence, but its connotations include warmth, safety, belonging, and family. Exploring connotations is central to effective language analysis.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m3-q1',
-        question:
-          'What is the main weakness of "feature-spotting" in language analysis?',
+        question: 'What is the main weakness of "feature-spotting" in language analysis?',
         options: [
           'It uses too many quotations',
           'It identifies techniques without explaining their effect on the reader',
-          'It focuses too much on the writer\'s biography',
+          "It focuses too much on the writer's biography",
           'It ignores sentence structure entirely',
         ],
         correct: 1,
@@ -349,8 +339,7 @@ const c1Modules: CourseModule[] = [
       },
       {
         id: 'ocr-lc1-m3-q2',
-        question:
-          'What does the What–How–Why framework help you do in a language analysis answer?',
+        question: 'What does the What-How-Why framework help you do in a language analysis answer?',
         options: [
           'Plan the structure of a creative writing piece',
           'Identify the technique, explain how it works, and analyse its effect on the reader',
@@ -359,7 +348,7 @@ const c1Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'What–How–Why ensures you identify the technique (What), explain how it works at word level (How), and analyse the effect on the reader (Why). This structure produces detailed, analytical responses.',
+          'What-How-Why ensures you identify the technique (What), explain how it works at word level (How), and analyse the effect on the reader (Why). This structure produces detailed, analytical responses.',
       },
       {
         id: 'ocr-lc1-m3-q3',
@@ -376,8 +365,7 @@ const c1Modules: CourseModule[] = [
       },
       {
         id: 'ocr-lc1-m3-q4',
-        question:
-          'Which Assessment Objective does the language analysis question primarily test?',
+        question: 'Which Assessment Objective does the language analysis question primarily test?',
         options: ['AO1', 'AO2', 'AO3', 'AO5'],
         correct: 1,
         explanation:
@@ -387,34 +375,34 @@ const c1Modules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 4 — Comparing Writers' Viewpoints and Perspectives
+  // MODULE 4 - Comparing Writers' Viewpoints and Perspectives
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m4',
-    title: 'Comparing Writers\' Viewpoints and Perspectives',
+    title: "Comparing Writers' Viewpoints and Perspectives",
     duration: '55 min',
     content: `
-<h2>The Comparison Question — Comparing Writers' Viewpoints Across Two Texts</h2>
+<h2>The Comparison Question - Comparing Writers' Viewpoints Across Two Texts</h2>
 
-<p>The comparison question is a distinctive feature of OCR Component 01 and tests <strong>AO3</strong>: the ability to compare writers' ideas and perspectives, and how these are conveyed, across two or more texts. This question is typically worth <strong>8–10 marks</strong> and requires you to move fluently between both source texts.</p>
+<p>The comparison question is a distinctive feature of OCR Component 01 and tests <strong>AO3</strong>: the ability to compare writers' ideas and perspectives, and how these are conveyed, across two or more texts. This question is typically worth <strong>8-10 marks</strong> and requires you to move fluently between both source texts.</p>
 
-<div class="key-term"><strong>Key Term: Perspective</strong> — A writer's attitude, viewpoint, or position on a topic. This is shaped by their personal experience, values, purpose, and the context in which they are writing. Two writers may address the same theme but hold very different perspectives.</div>
+<div class="key-term"><strong>Key Term: Perspective</strong> - A writer's attitude, viewpoint, or position on a topic. This is shaped by their personal experience, values, purpose, and the context in which they are writing. Two writers may address the same theme but hold very different perspectives.</div>
 
 <h3>What the Examiner Is Looking For</h3>
 <p>The comparison question asks you to do three things simultaneously:</p>
 <ol>
-  <li><strong>Identify each writer's viewpoint</strong> — What does each writer think or feel about the topic?</li>
-  <li><strong>Compare those viewpoints</strong> — Are they similar, different, or do they share some common ground while diverging on others?</li>
-  <li><strong>Analyse how the viewpoints are conveyed</strong> — What methods (language, tone, structure, rhetorical devices) does each writer use to communicate their perspective?</li>
+  <li><strong>Identify each writer's viewpoint</strong> - What does each writer think or feel about the topic?</li>
+  <li><strong>Compare those viewpoints</strong> - Are they similar, different, or do they share some common ground while diverging on others?</li>
+  <li><strong>Analyse how the viewpoints are conveyed</strong> - What methods (language, tone, structure, rhetorical devices) does each writer use to communicate their perspective?</li>
 </ol>
 
 <h3>Practice Extracts</h3>
-<div class="text-extract"><strong>Text A:</strong> Technology has made us more connected than any generation in human history. I can video-call my daughter in Sydney while my son in Edinburgh sends photographs of his morning walk. The distances that once separated families for years — sometimes forever — have been collapsed into the tap of a screen. Those who complain about smartphones have forgotten what it meant to wait six weeks for a letter that might never arrive.<div class="source">Adapted from a personal column in a broadsheet newspaper, 2022</div></div>
+<div class="text-extract"><strong>Text A:</strong> Technology has made us more connected than any generation in human history. I can video-call my daughter in Sydney while my son in Edinburgh sends photographs of his morning walk. The distances that once separated families for years - sometimes forever - have been collapsed into the tap of a screen. Those who complain about smartphones have forgotten what it meant to wait six weeks for a letter that might never arrive.<div class="source">Adapted from a personal column in a broadsheet newspaper, 2022</div></div>
 
 <div class="text-extract"><strong>Text B:</strong> We sit in the same room but inhabit different worlds. My teenagers are hunched over screens, thumbs twitching, eyes glazed. I ask a question and receive, at best, a grunt filtered through earphones. The devices that were supposed to bring us closer have built invisible walls within our own home. I sometimes wonder whether my children would notice if I were replaced by a voice-activated speaker.<div class="source">Adapted from a parenting blog, 2023</div></div>
 
 <h3>The Integrated Comparison Method</h3>
-<p>The strongest comparison answers are <strong>integrated</strong> — they discuss both texts within the same paragraph rather than writing about Text A first and then Text B. Use these connective phrases to move between texts:</p>
+<p>The strongest comparison answers are <strong>integrated</strong> - they discuss both texts within the same paragraph rather than writing about Text A first and then Text B. Use these connective phrases to move between texts:</p>
 <ul>
   <li><em>Similarly / In contrast / Conversely / On the other hand</em></li>
   <li><em>While Writer A argues that... Writer B suggests that...</em></li>
@@ -423,16 +411,16 @@ const c1Modules: CourseModule[] = [
 </ul>
 
 <div class="model-answer"><strong>Model Answer (comparing the practice extracts):</strong>
-<p>Both writers address the impact of technology on family relationships, but they arrive at starkly opposing conclusions. <strong>Writer A</strong> celebrates technology as a bridge across physical distance, using the concrete image of video-calling a daughter "in Sydney" while a son "in Edinburgh sends photographs." The specificity of these locations emphasises the vast distances technology can overcome, and the warm, personal tone — referring to "my daughter" and "my son" — frames the argument through genuine family experience, lending it emotional credibility.</p>
+<p>Both writers address the impact of technology on family relationships, but they arrive at starkly opposing conclusions. <strong>Writer A</strong> celebrates technology as a bridge across physical distance, using the concrete image of video-calling a daughter "in Sydney" while a son "in Edinburgh sends photographs." The specificity of these locations emphasises the vast distances technology can overcome, and the warm, personal tone - referring to "my daughter" and "my son" - frames the argument through genuine family experience, lending it emotional credibility.</p>
 
-<p><strong>Writer B</strong>, conversely, presents technology as a barrier within the same physical space. Where Writer A's family is separated by continents but connected by screens, Writer B's family is "in the same room" but emotionally distant. The metaphor of <em>"invisible walls"</em> directly inverts Writer A's image of technology as a connector — for Writer B, the devices that "were supposed to bring us closer" have achieved the opposite. The darkly humorous speculation about being "replaced by a voice-activated speaker" conveys frustration and hurt, but the exaggeration also serves to engage the reader by inviting rueful recognition.</p>
+<p><strong>Writer B</strong>, conversely, presents technology as a barrier within the same physical space. Where Writer A's family is separated by continents but connected by screens, Writer B's family is "in the same room" but emotionally distant. The metaphor of <em>"invisible walls"</em> directly inverts Writer A's image of technology as a connector - for Writer B, the devices that "were supposed to bring us closer" have achieved the opposite. The darkly humorous speculation about being "replaced by a voice-activated speaker" conveys frustration and hurt, but the exaggeration also serves to engage the reader by inviting rueful recognition.</p>
 
-<p>The two texts are further distinguished by their rhetorical strategies. Writer A uses historical contrast — "six weeks for a letter that might never arrive" — to remind the reader how much worse communication once was, positioning critics of technology as ungrateful. Writer B, by contrast, uses present-tense immediacy — "We sit," "I ask" — to place the reader in the moment, making the isolation feel current and real. This difference in tense and temporal focus reflects their opposing arguments: Writer A looks back to justify the present; Writer B inhabits the present to expose its failures.</p></div>
+<p>The two texts are further distinguished by their rhetorical strategies. Writer A uses historical contrast - "six weeks for a letter that might never arrive" - to remind the reader how much worse communication once was, positioning critics of technology as ungrateful. Writer B, by contrast, uses present-tense immediacy - "We sit," "I ask" - to place the reader in the moment, making the isolation feel current and real. This difference in tense and temporal focus reflects their opposing arguments: Writer A looks back to justify the present; Writer B inhabits the present to expose its failures.</p></div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR examiners specifically reward responses that compare <em>methods</em> as well as <em>ideas</em>. It is not enough to say "Writer A likes technology and Writer B doesn't." You must analyse <em>how</em> each writer conveys their viewpoint — through language, imagery, tone, rhetorical devices, and structural choices. The best answers weave together "what they think" and "how they show it."</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR examiners specifically reward responses that compare <em>methods</em> as well as <em>ideas</em>. It is not enough to say "Writer A likes technology and Writer B doesn't." You must analyse <em>how</em> each writer conveys their viewpoint - through language, imagery, tone, rhetorical devices, and structural choices. The best answers weave together "what they think" and "how they show it."</div>
 
 <h3>Structuring Your Comparison</h3>
-<p>A strong comparison answer typically contains 2–3 developed comparative paragraphs. Each paragraph should:</p>
+<p>A strong comparison answer typically contains 2-3 developed comparative paragraphs. Each paragraph should:</p>
 <ol>
   <li>Open with a comparative statement linking both writers.</li>
   <li>Analyse a specific technique or approach from Writer A with a quotation.</li>
@@ -440,24 +428,23 @@ const c1Modules: CourseModule[] = [
   <li>Comment on the differing (or similar) effects these methods create.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text in isolation. If your answer reads like two separate mini-essays joined by "Now I will look at Text B," you are not comparing — you are describing. True comparison means both texts appear <em>within</em> the same paragraph, connected by comparative connectives and analytical links.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text in isolation. If your answer reads like two separate mini-essays joined by "Now I will look at Text B," you are not comparing - you are describing. True comparison means both texts appear <em>within</em> the same paragraph, connected by comparative connectives and analytical links.</div>
 
 <h3>Types of Comparison</h3>
 <p>Not all comparisons involve simple agreement or disagreement. Consider these nuances:</p>
 <ul>
-  <li><strong>Complete contrast</strong> — Writers hold opposing views (as in the practice texts above).</li>
-  <li><strong>Shared view, different methods</strong> — Both writers agree on the topic but use different techniques to make their case.</li>
-  <li><strong>Partial agreement</strong> — Writers agree on some aspects but diverge on others — often the most interesting comparison to explore.</li>
-  <li><strong>Different focus</strong> — Writers address the same broad theme but emphasise different aspects of it.</li>
+  <li><strong>Complete contrast</strong> - Writers hold opposing views (as in the practice texts above).</li>
+  <li><strong>Shared view, different methods</strong> - Both writers agree on the topic but use different techniques to make their case.</li>
+  <li><strong>Partial agreement</strong> - Writers agree on some aspects but diverge on others - often the most interesting comparison to explore.</li>
+  <li><strong>Different focus</strong> - Writers address the same broad theme but emphasise different aspects of it.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Tone</strong> — The writer's attitude or feeling as expressed through their language choices. Tone can be formal, informal, ironic, sincere, angry, celebratory, melancholic, and so on. Identifying and comparing tone is a powerful way to distinguish between two writers' perspectives.</div>
+<div class="key-term"><strong>Key Term: Tone</strong> - The writer's attitude or feeling as expressed through their language choices. Tone can be formal, informal, ironic, sincere, angry, celebratory, melancholic, and so on. Identifying and comparing tone is a powerful way to distinguish between two writers' perspectives.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m4-q1',
-        question:
-          'What does an "integrated" comparison mean?',
+        question: 'What does an "integrated" comparison mean?',
         options: [
           'Writing about Text A in one essay and Text B in another',
           'Discussing both texts within the same paragraphs, connected by comparative language',
@@ -466,7 +453,7 @@ const c1Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'An integrated comparison discusses both texts within the same paragraph, using comparative connectives to link analysis of each writer\'s methods and ideas. This is far more effective than treating the texts separately.',
+          "An integrated comparison discusses both texts within the same paragraph, using comparative connectives to link analysis of each writer's methods and ideas. This is far more effective than treating the texts separately.",
       },
       {
         id: 'ocr-lc1-m4-q2',
@@ -474,12 +461,11 @@ const c1Modules: CourseModule[] = [
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
-          'AO3 tests the ability to compare writers\' ideas and perspectives, as well as how these are conveyed, across two or more texts.',
+          "AO3 tests the ability to compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
       },
       {
         id: 'ocr-lc1-m4-q3',
-        question:
-          'What must you compare in addition to the writers\' ideas?',
+        question: "What must you compare in addition to the writers' ideas?",
         options: [
           'Their biographical backgrounds',
           'The methods they use to convey their perspectives',
@@ -488,12 +474,11 @@ const c1Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'OCR requires you to compare both what the writers think (ideas/perspectives) AND how they convey those views (methods — language, tone, rhetorical devices, structure). Comparing methods as well as ideas is essential for top marks.',
+          'OCR requires you to compare both what the writers think (ideas/perspectives) AND how they convey those views (methods - language, tone, rhetorical devices, structure). Comparing methods as well as ideas is essential for top marks.',
       },
       {
         id: 'ocr-lc1-m4-q4',
-        question:
-          'Which of the following is the strongest opening to a comparison paragraph?',
+        question: 'Which of the following is the strongest opening to a comparison paragraph?',
         options: [
           '"I will now write about Text A."',
           '"While Writer A celebrates technology as a means of connection, Writer B presents it as a source of isolation within the family."',
@@ -502,53 +487,53 @@ const c1Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'A strong opening establishes a comparative point about both writers immediately, making the paragraph\'s direction clear and demonstrating integrated comparison from the first sentence.',
+          "A strong opening establishes a comparative point about both writers immediately, making the paragraph's direction clear and demonstrating integrated comparison from the first sentence.",
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 5 — Evaluating a Writer's Effectiveness
+  // MODULE 5 - Evaluating a Writer's Effectiveness
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m5',
-    title: 'Evaluating a Writer\'s Effectiveness',
+    title: "Evaluating a Writer's Effectiveness",
     duration: '55 min',
     content: `
-<h2>Critical Evaluation — Judging How Successfully a Writer Achieves Their Purpose</h2>
+<h2>Critical Evaluation - Judging How Successfully a Writer Achieves Their Purpose</h2>
 
-<p>The evaluation question in OCR Component 01 is typically the highest-tariff reading question, worth <strong>12–14 marks</strong>. It tests <strong>AO4</strong>: the ability to evaluate texts critically and support your evaluation with appropriate textual references. Unlike analysis (which asks "how does the writer do this?"), evaluation asks "how <em>well</em> does the writer do this?"</p>
+<p>The evaluation question in OCR Component 01 is typically the highest-tariff reading question, worth <strong>12-14 marks</strong>. It tests <strong>AO4</strong>: the ability to evaluate texts critically and support your evaluation with appropriate textual references. Unlike analysis (which asks "how does the writer do this?"), evaluation asks "how <em>well</em> does the writer do this?"</p>
 
-<div class="key-term"><strong>Key Term: Evaluation</strong> — Making a critical judgement about the effectiveness of a writer's choices. You are not simply explaining what the writer does — you are assessing how successfully their techniques achieve the intended purpose or effect.</div>
+<div class="key-term"><strong>Key Term: Evaluation</strong> - Making a critical judgement about the effectiveness of a writer's choices. You are not simply explaining what the writer does - you are assessing how successfully their techniques achieve the intended purpose or effect.</div>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">Imagine a world in which no child goes hungry. It sounds impossible — the kind of vague promise politicians make on campaign trails and quietly forget once the votes are counted. But the charity FeedForward has proved that systemic change is not only possible; it is happening. In the last three years, FeedForward has redistributed 42 million meals from supermarket surplus that would otherwise have rotted in landfill. Forty-two million. That is not a slogan. That is not a manifesto pledge. That is food on plates, in homes, in the stomachs of children who would otherwise have gone to bed hungry. And yet, astonishingly, the government has cut FeedForward's funding by 30%.<div class="source">Adapted from a charity campaign article, 2022</div></div>
+<div class="text-extract">Imagine a world in which no child goes hungry. It sounds impossible - the kind of vague promise politicians make on campaign trails and quietly forget once the votes are counted. But the charity FeedForward has proved that systemic change is not only possible; it is happening. In the last three years, FeedForward has redistributed 42 million meals from supermarket surplus that would otherwise have rotted in landfill. Forty-two million. That is not a slogan. That is not a manifesto pledge. That is food on plates, in homes, in the stomachs of children who would otherwise have gone to bed hungry. And yet, astonishingly, the government has cut FeedForward's funding by 30%.<div class="source">Adapted from a charity campaign article, 2022</div></div>
 
 <p>A typical evaluation question might read: <em>"The writer makes the reader feel strongly that the government's decision to cut funding is wrong. To what extent do you agree with this view?"</em></p>
 
 <h3>The Evaluation Framework</h3>
 <p>Strong evaluation answers follow this pattern:</p>
 <ol>
-  <li><strong>State your overall judgement</strong> — Do you agree, partially agree, or disagree with the statement? Take a clear position.</li>
-  <li><strong>Support with evidence and analysis</strong> — For each point, quote from the text and explain <em>how effectively</em> the technique works.</li>
-  <li><strong>Consider counter-arguments</strong> — Acknowledge where the writer might be less effective, or where a different reader might respond differently.</li>
-  <li><strong>Conclude with a nuanced judgement</strong> — Reaffirm your position with any qualifications.</li>
+  <li><strong>State your overall judgement</strong> - Do you agree, partially agree, or disagree with the statement? Take a clear position.</li>
+  <li><strong>Support with evidence and analysis</strong> - For each point, quote from the text and explain <em>how effectively</em> the technique works.</li>
+  <li><strong>Consider counter-arguments</strong> - Acknowledge where the writer might be less effective, or where a different reader might respond differently.</li>
+  <li><strong>Conclude with a nuanced judgement</strong> - Reaffirm your position with any qualifications.</li>
 </ol>
 
 <div class="model-answer"><strong>Model Answer:</strong>
 <p>I largely agree that the writer makes the reader feel the government's funding cut is wrong, and the article is highly effective in building this response through a combination of emotional appeal and factual authority.</p>
 
-<p>The opening line — <em>"Imagine a world in which no child goes hungry"</em> — immediately engages the reader's empathy through direct address and an idealistic vision. The imperative "Imagine" invites the reader to become emotionally invested before any argument has been made. This is effective because it establishes an emotional baseline against which the government's decision will later seem callous.</p>
+<p>The opening line - <em>"Imagine a world in which no child goes hungry"</em> - immediately engages the reader's empathy through direct address and an idealistic vision. The imperative "Imagine" invites the reader to become emotionally invested before any argument has been made. This is effective because it establishes an emotional baseline against which the government's decision will later seem callous.</p>
 
-<p>The writer is particularly effective in their use of the statistic <em>"42 million meals."</em> The repetition — <em>"Forty-two million"</em> — followed by the tricolon <em>"That is not a slogan. That is not a manifesto pledge. That is food on plates"</em> transforms a number into something tangible and human. The anaphoric repetition of "That is not" dismisses political rhetoric before "That is food on plates" asserts reality, creating a powerful contrast between empty words and concrete action. This forces the reader to recognise FeedForward's impact as undeniable fact.</p>
+<p>The writer is particularly effective in their use of the statistic <em>"42 million meals."</em> The repetition - <em>"Forty-two million"</em> - followed by the tricolon <em>"That is not a slogan. That is not a manifesto pledge. That is food on plates"</em> transforms a number into something tangible and human. The anaphoric repetition of "That is not" dismisses political rhetoric before "That is food on plates" asserts reality, creating a powerful contrast between empty words and concrete action. This forces the reader to recognise FeedForward's impact as undeniable fact.</p>
 
-<p>However, a critical reader might note that the article presents only one perspective. The reasons for the funding cut are not explored, and the emotional framing — particularly "children who would otherwise have gone to bed hungry" — could be seen as manipulative rather than informative. The writer's effectiveness depends partly on the reader's willingness to accept an emotionally charged argument without hearing the government's rationale.</p>
+<p>However, a critical reader might note that the article presents only one perspective. The reasons for the funding cut are not explored, and the emotional framing - particularly "children who would otherwise have gone to bed hungry" - could be seen as manipulative rather than informative. The writer's effectiveness depends partly on the reader's willingness to accept an emotionally charged argument without hearing the government's rationale.</p>
 
 <p>Overall, the writer is highly effective in building outrage, though the one-sided presentation slightly undermines the article's credibility for more sceptical readers.</p></div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The strongest evaluation answers offer a <strong>balanced judgement</strong>. Examiners are not looking for you to simply agree with the statement — they reward nuanced responses that consider both how the writer succeeds and where they might be less effective. "I largely agree, but..." or "While the writer is effective in some respects..." signals critical thinking.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The strongest evaluation answers offer a <strong>balanced judgement</strong>. Examiners are not looking for you to simply agree with the statement - they reward nuanced responses that consider both how the writer succeeds and where they might be less effective. "I largely agree, but..." or "While the writer is effective in some respects..." signals critical thinking.</div>
 
-<h3>Evaluative Language — Upgrading Your Vocabulary</h3>
+<h3>Evaluative Language - Upgrading Your Vocabulary</h3>
 <p>Avoid vague evaluative words like "good" or "nice." Use precise alternatives:</p>
 <ul>
   <li><em>The writer effectively / powerfully / convincingly / subtly...</em></li>
@@ -570,13 +555,12 @@ const c1Modules: CourseModule[] = [
   <tr><td>"The metaphor creates..."</td><td>"The metaphor is effective because..."</td></tr>
 </table>
 
-<div class="key-term"><strong>Key Term: Counter-argument</strong> — A point that opposes or qualifies your main argument. In evaluation, acknowledging a counter-argument demonstrates critical maturity. You might say: "While the statistic is persuasive, a sceptical reader might question its source."</div>
+<div class="key-term"><strong>Key Term: Counter-argument</strong> - A point that opposes or qualifies your main argument. In evaluation, acknowledging a counter-argument demonstrates critical maturity. You might say: "While the statistic is persuasive, a sceptical reader might question its source."</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m5-q1',
-        question:
-          'What is the key difference between analysis and evaluation?',
+        question: 'What is the key difference between analysis and evaluation?',
         options: [
           'Analysis uses quotations but evaluation does not',
           'Analysis explains what the writer does; evaluation judges how effectively they do it',
@@ -585,12 +569,11 @@ const c1Modules: CourseModule[] = [
         ],
         correct: 1,
         explanation:
-          'Analysis (AO2) explains how the writer uses language and structure. Evaluation (AO4) goes further by making a critical judgement about how effectively those choices achieve the writer\'s purpose.',
+          "Analysis (AO2) explains how the writer uses language and structure. Evaluation (AO4) goes further by making a critical judgement about how effectively those choices achieve the writer's purpose.",
       },
       {
         id: 'ocr-lc1-m5-q2',
-        question:
-          'Why do examiners reward balanced evaluation answers?',
+        question: 'Why do examiners reward balanced evaluation answers?',
         options: [
           'Because the examiner always disagrees with the statement',
           'Because balanced answers demonstrate critical thinking and the ability to consider multiple perspectives',
@@ -607,7 +590,7 @@ const c1Modules: CourseModule[] = [
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 3,
         explanation:
-          'AO4 tests critical evaluation — the ability to evaluate texts critically and support your evaluation with appropriate textual references.',
+          'AO4 tests critical evaluation - the ability to evaluate texts critically and support your evaluation with appropriate textual references.',
       },
       {
         id: 'ocr-lc1-m5-q4',
@@ -615,7 +598,7 @@ const c1Modules: CourseModule[] = [
           'What is wrong with writing "The writer uses a metaphor which creates a vivid image" in an evaluation answer?',
         options: [
           'Metaphors should not be discussed in evaluation',
-          'It is analysis, not evaluation — it lacks a judgement about effectiveness',
+          'It is analysis, not evaluation - it lacks a judgement about effectiveness',
           'It is too long for an evaluation point',
           'You should never mention images in an evaluation',
         ],
@@ -627,24 +610,24 @@ const c1Modules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 6 — Viewpoint and Perspective Analysis
+  // MODULE 6 - Viewpoint and Perspective Analysis
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m6',
     title: 'Analysing Viewpoint, Bias, and Perspective',
     duration: '50 min',
     content: `
-<h2>Viewpoint, Bias, and Perspective — Understanding How Writers Position the Reader</h2>
+<h2>Viewpoint, Bias, and Perspective - Understanding How Writers Position the Reader</h2>
 
-<p>Every non-fiction text is shaped by the writer's perspective. Understanding viewpoint is not just about identifying <em>what</em> a writer thinks — it is about recognising <em>how</em> they attempt to position the reader to share that view. This module develops skills that cut across multiple reading questions in OCR Component 01.</p>
+<p>Every non-fiction text is shaped by the writer's perspective. Understanding viewpoint is not just about identifying <em>what</em> a writer thinks - it is about recognising <em>how</em> they attempt to position the reader to share that view. This module develops skills that cut across multiple reading questions in OCR Component 01.</p>
 
-<div class="key-term"><strong>Key Term: Bias</strong> — A one-sided or partial perspective that favours a particular viewpoint while downplaying or ignoring opposing evidence. Bias is not always negative — all non-fiction writing reflects some degree of perspective — but recognising it is essential for critical reading.</div>
+<div class="key-term"><strong>Key Term: Bias</strong> - A one-sided or partial perspective that favours a particular viewpoint while downplaying or ignoring opposing evidence. Bias is not always negative - all non-fiction writing reflects some degree of perspective - but recognising it is essential for critical reading.</div>
 
 <h3>How Writers Position the Reader</h3>
 <p>Writers use a range of strategies to align the reader with their perspective:</p>
 
 <h4>1. Inclusive Language</h4>
-<p>Using pronouns like <strong>"we"</strong> and <strong>"our"</strong> creates a sense of shared identity and assumes the reader already agrees. For example: <em>"We all know that the education system is failing our children"</em> — the writer assumes consensus before proving anything.</p>
+<p>Using pronouns like <strong>"we"</strong> and <strong>"our"</strong> creates a sense of shared identity and assumes the reader already agrees. For example: <em>"We all know that the education system is failing our children"</em> - the writer assumes consensus before proving anything.</p>
 
 <h4>2. Selective Evidence</h4>
 <p>Writers choose evidence that supports their argument and omit what contradicts it. A campaign against a new road might cite traffic studies but ignore economic benefits. Recognising what is <em>absent</em> from a text is as important as analysing what is present.</p>
@@ -652,8 +635,8 @@ const c1Modules: CourseModule[] = [
 <h4>3. Emotive Framing</h4>
 <p>The same event can be framed in starkly different ways through word choice. Compare:</p>
 <ul>
-  <li><em>"The protesters staged a peaceful demonstration"</em> — positive framing; "peaceful" and "demonstration" suggest legitimacy.</li>
-  <li><em>"The mob disrupted the city centre"</em> — negative framing; "mob" and "disrupted" suggest chaos and threat.</li>
+  <li><em>"The protesters staged a peaceful demonstration"</em> - positive framing; "peaceful" and "demonstration" suggest legitimacy.</li>
+  <li><em>"The mob disrupted the city centre"</em> - negative framing; "mob" and "disrupted" suggest chaos and threat.</li>
 </ul>
 
 <h4>4. Expert Authority</h4>
@@ -663,16 +646,16 @@ const c1Modules: CourseModule[] = [
 <p>Personal stories are emotionally compelling but may not be representative. A writer describing one family's experience of poverty creates empathy, but it doesn't prove a systemic problem. Strong critical readers recognise when anecdote is used <em>instead of</em> data.</p>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">Our local library is more than a building — it is a lifeline. For Doris, 82, it is the only place she speaks to another human being all week. For Jayden, 14, it is the only quiet space where he can do his homework away from a chaotic home. For the reading group that meets every Thursday, it is proof that community still means something in a world that increasingly tells us to stay behind our screens. And yet the council, in its infinite wisdom, has decided that this building — our building — is surplus to requirements. One wonders what "requirements" they have in mind. Certainly not the requirements of Doris, or Jayden, or any of the 3,200 people who signed the petition to keep it open.<div class="source">Adapted from a local newspaper opinion column, 2023</div></div>
+<div class="text-extract">Our local library is more than a building - it is a lifeline. For Doris, 82, it is the only place she speaks to another human being all week. For Jayden, 14, it is the only quiet space where he can do his homework away from a chaotic home. For the reading group that meets every Thursday, it is proof that community still means something in a world that increasingly tells us to stay behind our screens. And yet the council, in its infinite wisdom, has decided that this building - our building - is surplus to requirements. One wonders what "requirements" they have in mind. Certainly not the requirements of Doris, or Jayden, or any of the 3,200 people who signed the petition to keep it open.<div class="source">Adapted from a local newspaper opinion column, 2023</div></div>
 
 <h3>Analysing the Extract for Viewpoint and Bias</h3>
 
 <div class="model-answer"><strong>Model Answer:</strong>
 <p>The writer's perspective is unambiguously opposed to the library closure, and every rhetorical choice is designed to position the reader in agreement.</p>
 
-<p>The use of <strong>named individuals</strong> — Doris and Jayden — transforms a political issue into a personal one. By specifying Doris's age (82) and Jayden's (14), the writer selects the most sympathetic demographics: the elderly and the young, both of whom society has a moral obligation to protect. This is <strong>selective evidence</strong> — the writer does not include the perspective of someone who rarely uses the library or who might benefit from the site being repurposed.</p>
+<p>The use of <strong>named individuals</strong> - Doris and Jayden - transforms a political issue into a personal one. By specifying Doris's age (82) and Jayden's (14), the writer selects the most sympathetic demographics: the elderly and the young, both of whom society has a moral obligation to protect. This is <strong>selective evidence</strong> - the writer does not include the perspective of someone who rarely uses the library or who might benefit from the site being repurposed.</p>
 
-<p>The sarcastic phrase <em>"in its infinite wisdom"</em> is a key indicator of bias. The writer does not engage with the council's rationale but dismisses it through irony, positioning the council as arrogant and out of touch. Similarly, the rhetorical question <em>"One wonders what 'requirements' they have in mind"</em> implies the council's definition of "requirements" excludes real people — but the writer does not actually explore what the council's reasoning might be.</p>
+<p>The sarcastic phrase <em>"in its infinite wisdom"</em> is a key indicator of bias. The writer does not engage with the council's rationale but dismisses it through irony, positioning the council as arrogant and out of touch. Similarly, the rhetorical question <em>"One wonders what 'requirements' they have in mind"</em> implies the council's definition of "requirements" excludes real people - but the writer does not actually explore what the council's reasoning might be.</p>
 
 <p>The possessive pronoun <em>"our building"</em> is a powerful positioning device. It reframes the library from council property to community property, making the closure feel like theft rather than administrative decision-making. This inclusive language assumes the reader identifies with the community rather than the council.</p></div>
 
@@ -681,22 +664,21 @@ const c1Modules: CourseModule[] = [
 <h3>Recognising Different Non-Fiction Purposes</h3>
 <p>A writer's purpose shapes their perspective and the techniques they use:</p>
 <ul>
-  <li><strong>To persuade</strong> — Expects you to agree; uses emotive language, rhetorical questions, and one-sided evidence.</li>
-  <li><strong>To inform</strong> — Aims for objectivity; uses facts, statistics, and neutral tone (though no text is truly neutral).</li>
-  <li><strong>To advise</strong> — Positions the writer as knowledgeable; uses imperative verbs, second person, and reassuring tone.</li>
-  <li><strong>To argue</strong> — Acknowledges opposing views but dismantles them; uses logical reasoning and evidence.</li>
-  <li><strong>To entertain</strong> — Prioritises engagement; uses humour, vivid description, and personal voice.</li>
+  <li><strong>To persuade</strong> - Expects you to agree; uses emotive language, rhetorical questions, and one-sided evidence.</li>
+  <li><strong>To inform</strong> - Aims for objectivity; uses facts, statistics, and neutral tone (though no text is truly neutral).</li>
+  <li><strong>To advise</strong> - Positions the writer as knowledgeable; uses imperative verbs, second person, and reassuring tone.</li>
+  <li><strong>To argue</strong> - Acknowledges opposing views but dismantles them; uses logical reasoning and evidence.</li>
+  <li><strong>To entertain</strong> - Prioritises engagement; uses humour, vivid description, and personal voice.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Assuming a text has only one purpose. Most non-fiction texts have a <strong>primary purpose</strong> and one or more <strong>secondary purposes</strong>. The library extract primarily aims to persuade the reader to oppose the closure, but it also informs them about the library's community role and entertains through witty sarcasm. Acknowledging multiple purposes shows sophisticated understanding.</div>
 
-<div class="key-term"><strong>Key Term: Rhetorical Question</strong> — A question asked for effect rather than to elicit an answer. The writer assumes the reader's response will align with the writer's intended point. For example, "How can we call ourselves a caring society if we close our libraries?" implies the answer is "We cannot."</div>
+<div class="key-term"><strong>Key Term: Rhetorical Question</strong> - A question asked for effect rather than to elicit an answer. The writer assumes the reader's response will align with the writer's intended point. For example, "How can we call ourselves a caring society if we close our libraries?" implies the answer is "We cannot."</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m6-q1',
-        question:
-          'What does "inclusive language" do in a non-fiction text?',
+        question: 'What does "inclusive language" do in a non-fiction text?',
         options: [
           'Excludes the reader from the argument',
           'Creates a sense of shared identity and assumes the reader agrees',
@@ -709,11 +691,10 @@ const c1Modules: CourseModule[] = [
       },
       {
         id: 'ocr-lc1-m6-q2',
-        question:
-          'Why is it important to consider what a writer has NOT included in their text?',
+        question: 'Why is it important to consider what a writer has NOT included in their text?',
         options: [
           'Because the examiner will ask about missing paragraphs',
-          'Because omissions often reveal bias — what is absent shows the writer\'s selectivity',
+          "Because omissions often reveal bias - what is absent shows the writer's selectivity",
           'Because incomplete texts are always unreliable',
           'Because you need to write your own counter-arguments',
         ],
@@ -729,7 +710,7 @@ const c1Modules: CourseModule[] = [
           'It makes the text more formal and official',
           'It transforms a political issue into a personal one by selecting sympathetic individuals',
           'It proves that the library is used by many people',
-          'It provides statistical evidence for the writer\'s argument',
+          "It provides statistical evidence for the writer's argument",
         ],
         correct: 1,
         explanation:
@@ -737,8 +718,7 @@ const c1Modules: CourseModule[] = [
       },
       {
         id: 'ocr-lc1-m6-q4',
-        question:
-          'What is wrong with saying a text has only one purpose?',
+        question: 'What is wrong with saying a text has only one purpose?',
         options: [
           'All texts have exactly three purposes',
           'Most non-fiction texts have a primary purpose and one or more secondary purposes',
@@ -753,18 +733,18 @@ const c1Modules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 7 — Transactional Writing: Letters and Articles
+  // MODULE 7 - Transactional Writing: Letters and Articles
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m7',
     title: 'Transactional Writing: Letters and Articles',
     duration: '55 min',
     content: `
-<h2>Writing Letters and Articles — Form, Purpose, and Audience</h2>
+<h2>Writing Letters and Articles - Form, Purpose, and Audience</h2>
 
 <p>Section B of OCR Component 01 requires you to produce two pieces of transactional writing. This module focuses on two of the most commonly tested forms: <strong>formal letters</strong> and <strong>newspaper/magazine articles</strong>. The writing questions collectively test <strong>AO5</strong> (content and organisation) and <strong>AO6</strong> (technical accuracy).</p>
 
-<div class="key-term"><strong>Key Term: Form</strong> — The type or format of writing you are asked to produce. Each form has its own conventions (layout, tone, structure). In OCR Component 01, common forms include letters, articles, speeches, reports, and reviews.</div>
+<div class="key-term"><strong>Key Term: Form</strong> - The type or format of writing you are asked to produce. Each form has its own conventions (layout, tone, structure). In OCR Component 01, common forms include letters, articles, speeches, reports, and reviews.</div>
 
 <h3>Part 1: Writing a Formal Letter</h3>
 
@@ -772,20 +752,20 @@ const c1Modules: CourseModule[] = [
 
 <h4>Formal Letter Conventions</h4>
 <ul>
-  <li><strong>Your address</strong> — Top right of the page (you may use a fictional address or simply write "Your address").</li>
-  <li><strong>Date</strong> — Below your address.</li>
-  <li><strong>Recipient's name/title</strong> — Left-aligned (e.g. "Dear Mr Hartley," or "Dear Sir/Madam,").</li>
-  <li><strong>Opening paragraph</strong> — State your purpose clearly. Why are you writing?</li>
-  <li><strong>Body paragraphs</strong> — Develop your argument or points with evidence and reasoning.</li>
-  <li><strong>Closing paragraph</strong> — Summarise your position and state what action you expect.</li>
-  <li><strong>Sign-off</strong> — "Yours sincerely," (if you used a name) or "Yours faithfully," (if you used "Sir/Madam").</li>
+  <li><strong>Your address</strong> - Top right of the page (you may use a fictional address or simply write "Your address").</li>
+  <li><strong>Date</strong> - Below your address.</li>
+  <li><strong>Recipient's name/title</strong> - Left-aligned (e.g. "Dear Mr Hartley," or "Dear Sir/Madam,").</li>
+  <li><strong>Opening paragraph</strong> - State your purpose clearly. Why are you writing?</li>
+  <li><strong>Body paragraphs</strong> - Develop your argument or points with evidence and reasoning.</li>
+  <li><strong>Closing paragraph</strong> - Summarise your position and state what action you expect.</li>
+  <li><strong>Sign-off</strong> - "Yours sincerely," (if you used a name) or "Yours faithfully," (if you used "Sir/Madam").</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You will <em>not</em> lose marks for omitting address formatting in an exam — the examiner is primarily assessing content, organisation, and accuracy. However, including the correct sign-off (sincerely vs. faithfully) demonstrates awareness of form conventions and contributes to the impression of a well-crafted response.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> You will <em>not</em> lose marks for omitting address formatting in an exam - the examiner is primarily assessing content, organisation, and accuracy. However, including the correct sign-off (sincerely vs. faithfully) demonstrates awareness of form conventions and contributes to the impression of a well-crafted response.</div>
 
-<div class="model-answer"><strong>Model Opening — Formal Letter to a Council:</strong>
+<div class="model-answer"><strong>Model Opening - Formal Letter to a Council:</strong>
 <p><em>Dear Councillor Matthews,</em></p>
-<p><em>I am writing to express my deep concern regarding the proposed closure of Greenfield Community Library, which I understand is scheduled for March 2024. As a resident of the area for over fifteen years and a regular library user, I believe this decision will have a profoundly negative impact on the local community — an impact that I do not believe the council has fully considered.</em></p>
+<p><em>I am writing to express my deep concern regarding the proposed closure of Greenfield Community Library, which I understand is scheduled for March 2024. As a resident of the area for over fifteen years and a regular library user, I believe this decision will have a profoundly negative impact on the local community - an impact that I do not believe the council has fully considered.</em></p>
 <p>This opening is effective because it: (1) addresses the recipient by name, (2) states the purpose immediately, (3) establishes the writer's credibility ("resident for over fifteen years"), and (4) previews the argument without becoming confrontational.</p></div>
 
 <h3>Part 2: Writing a Newspaper or Magazine Article</h3>
@@ -794,35 +774,35 @@ const c1Modules: CourseModule[] = [
 
 <h4>Article Conventions</h4>
 <ul>
-  <li><strong>Headline</strong> — A concise, attention-grabbing title. May use wordplay, alliteration, or a provocative statement.</li>
-  <li><strong>Strapline (optional)</strong> — A brief subtitle that expands on the headline.</li>
-  <li><strong>Opening paragraph</strong> — Hook the reader immediately. Use a striking fact, question, anecdote, or bold statement.</li>
-  <li><strong>Body paragraphs</strong> — Develop your argument or explanation with clear topic sentences, evidence, and varied rhetorical techniques.</li>
-  <li><strong>Closing paragraph</strong> — End memorably — with a call to action, a thought-provoking question, or a return to your opening image.</li>
+  <li><strong>Headline</strong> - A concise, attention-grabbing title. May use wordplay, alliteration, or a provocative statement.</li>
+  <li><strong>Strapline (optional)</strong> - A brief subtitle that expands on the headline.</li>
+  <li><strong>Opening paragraph</strong> - Hook the reader immediately. Use a striking fact, question, anecdote, or bold statement.</li>
+  <li><strong>Body paragraphs</strong> - Develop your argument or explanation with clear topic sentences, evidence, and varied rhetorical techniques.</li>
+  <li><strong>Closing paragraph</strong> - End memorably - with a call to action, a thought-provoking question, or a return to your opening image.</li>
 </ul>
 
 <h4>Engaging Openings for Articles</h4>
 <ul>
-  <li><strong>Shocking statistic:</strong> <em>"Every year, 1.3 billion tonnes of food is wasted globally — enough to feed the world's hungry four times over."</em></li>
+  <li><strong>Shocking statistic:</strong> <em>"Every year, 1.3 billion tonnes of food is wasted globally - enough to feed the world's hungry four times over."</em></li>
   <li><strong>Rhetorical question:</strong> <em>"When did we decide that convenience mattered more than our children's future?"</em></li>
   <li><strong>Anecdote:</strong> <em>"Last Tuesday, I watched a ten-year-old boy carry his own chair into a classroom because the school couldn't afford enough furniture."</em></li>
   <li><strong>Bold statement:</strong> <em>"Social media is not connecting us. It is making us lonelier than ever."</em></li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Beginning an article with "In this article I am going to write about..." This is a meta-statement about the writing rather than the writing itself. It immediately undermines engagement. Instead, plunge the reader straight into your argument or story. Show, don't tell — your article should speak for itself.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Beginning an article with "In this article I am going to write about..." This is a meta-statement about the writing rather than the writing itself. It immediately undermines engagement. Instead, plunge the reader straight into your argument or story. Show, don't tell - your article should speak for itself.</div>
 
 <h3>Tone and Register</h3>
 <p>Matching your tone to the task is essential for AO5:</p>
 <ul>
-  <li><strong>Formal letter to a council</strong> — Measured, respectful, evidence-based. Avoid contractions ("don't" → "do not").</li>
-  <li><strong>Article for a school magazine</strong> — Semi-formal. More personal voice allowed; conversational but still structured.</li>
-  <li><strong>Article for a broadsheet newspaper</strong> — Formal and authoritative. Sophisticated vocabulary. May use irony or wit.</li>
-  <li><strong>Letter to a friend</strong> — Informal. Contractions, colloquialisms, personal anecdotes are appropriate.</li>
+  <li><strong>Formal letter to a council</strong> - Measured, respectful, evidence-based. Avoid contractions ("don't" → "do not").</li>
+  <li><strong>Article for a school magazine</strong> - Semi-formal. More personal voice allowed; conversational but still structured.</li>
+  <li><strong>Article for a broadsheet newspaper</strong> - Formal and authoritative. Sophisticated vocabulary. May use irony or wit.</li>
+  <li><strong>Letter to a friend</strong> - Informal. Contractions, colloquialisms, personal anecdotes are appropriate.</li>
 </ul>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Read the task instruction very carefully. OCR will specify the audience (e.g. "Write a letter to your local MP" or "Write an article for a teen magazine"). The audience determines your register. A letter to an MP should be formal and persuasive; an article for teenagers should be accessible and engaging. Mismatching register is one of the fastest ways to lose marks.</div>
 
-<h3>Paragraph Organisation — The Discourse Marker Toolkit</h3>
+<h3>Paragraph Organisation - The Discourse Marker Toolkit</h3>
 <p>Well-organised writing uses discourse markers to guide the reader through your argument:</p>
 <ul>
   <li><strong>To add:</strong> Furthermore, moreover, in addition, equally important</li>
@@ -832,15 +812,14 @@ const c1Modules: CourseModule[] = [
   <li><strong>To concede:</strong> Admittedly, while it is true that, granted</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Register</strong> — The level of formality in your writing, determined by the audience and purpose. Register encompasses vocabulary, sentence structure, tone, and even punctuation choices. Using the wrong register for your audience is like wearing a ball gown to a football match — technically possible, but entirely wrong for the context.</div>
+<div class="key-term"><strong>Key Term: Register</strong> - The level of formality in your writing, determined by the audience and purpose. Register encompasses vocabulary, sentence structure, tone, and even punctuation choices. Using the wrong register for your audience is like wearing a ball gown to a football match - technically possible, but entirely wrong for the context.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m7-q1',
-        question:
-          'When should you use "Yours faithfully" to close a formal letter?',
+        question: 'When should you use "Yours faithfully" to close a formal letter?',
         options: [
-          'When you know the recipient\'s name',
+          "When you know the recipient's name",
           'When you have addressed the letter to "Dear Sir/Madam"',
           'In all formal letters',
           'Only in letters to businesses',
@@ -855,24 +834,18 @@ const c1Modules: CourseModule[] = [
           'What is wrong with opening an article with "In this article I am going to write about..."?',
         options: [
           'It is grammatically incorrect',
-          'It is a meta-statement that undermines engagement — you should plunge straight into your argument',
+          'It is a meta-statement that undermines engagement - you should plunge straight into your argument',
           'Articles should never have introductions',
           'It uses too many words',
         ],
         correct: 1,
         explanation:
-          '"In this article I am going to write about..." tells the reader about the writing rather than engaging them with the writing itself. Effective articles open with hooks — statistics, questions, anecdotes, or bold statements — that pull the reader in immediately.',
+          '"In this article I am going to write about..." tells the reader about the writing rather than engaging them with the writing itself. Effective articles open with hooks - statistics, questions, anecdotes, or bold statements - that pull the reader in immediately.',
       },
       {
         id: 'ocr-lc1-m7-q3',
-        question:
-          'Which two Assessment Objectives are tested in Section B (writing)?',
-        options: [
-          'AO1 and AO2',
-          'AO3 and AO4',
-          'AO5 and AO6',
-          'AO2 and AO5',
-        ],
+        question: 'Which two Assessment Objectives are tested in Section B (writing)?',
+        options: ['AO1 and AO2', 'AO3 and AO4', 'AO5 and AO6', 'AO2 and AO5'],
         correct: 2,
         explanation:
           'AO5 tests content and organisation (communicating clearly, effectively, and imaginatively), while AO6 tests technical accuracy (vocabulary, sentence structures, spelling, and punctuation).',
@@ -894,36 +867,36 @@ const c1Modules: CourseModule[] = [
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 8 — Transactional Writing: Speeches, Reports, and Reviews
+  // MODULE 8 - Transactional Writing: Speeches, Reports, and Reviews
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m8',
     title: 'Transactional Writing: Speeches, Reports, and Reviews',
     duration: '55 min',
     content: `
-<h2>Writing Speeches, Reports, and Reviews — Mastering Additional Forms</h2>
+<h2>Writing Speeches, Reports, and Reviews - Mastering Additional Forms</h2>
 
 <p>In addition to letters and articles, OCR Component 01 may ask you to write a <strong>speech</strong>, <strong>report</strong>, or <strong>review</strong>. Each form has distinct conventions that you must demonstrate to access top marks for AO5. This module covers the structure, tone, and techniques for all three.</p>
 
 <h3>Part 1: Writing a Speech</h3>
 
-<div class="key-term"><strong>Key Term: Rhetoric</strong> — The art of persuasive speaking or writing. Classical rhetoric identified three modes of persuasion: <em>ethos</em> (credibility), <em>pathos</em> (emotion), and <em>logos</em> (logic). Effective speeches typically combine all three.</div>
+<div class="key-term"><strong>Key Term: Rhetoric</strong> - The art of persuasive speaking or writing. Classical rhetoric identified three modes of persuasion: <em>ethos</em> (credibility), <em>pathos</em> (emotion), and <em>logos</em> (logic). Effective speeches typically combine all three.</div>
 
 <p>Speech writing tasks often take the form: <em>"Write a speech to be delivered to your year group arguing that..."</em> or <em>"Write the text of a speech for a school assembly about..."</em></p>
 
 <h4>Speech Conventions</h4>
 <ul>
-  <li><strong>Direct address</strong> — Acknowledge your audience: "Ladies and gentlemen," "Fellow students," "Members of the council."</li>
-  <li><strong>Rhetorical questions</strong> — Engage the audience and make them think: "How many of us have ever stopped to consider...?"</li>
-  <li><strong>Repetition and anaphora</strong> — Repeat key phrases for emphasis: "We deserve better. We demand better. We will accept nothing less."</li>
-  <li><strong>Tricolon (rule of three)</strong> — Group ideas in threes for rhythm and impact: "It is unfair, unnecessary, and unacceptable."</li>
-  <li><strong>Personal pronouns</strong> — "I believe," "We must," "You have the power to" — create connection and urgency.</li>
-  <li><strong>Varied pace</strong> — Short sentences for emphasis, longer ones for building arguments. Occasional one-word sentences: "Enough."</li>
-  <li><strong>Call to action</strong> — End by telling the audience what to do: "So I ask you — sign the petition, write to your MP, make your voice heard."</li>
+  <li><strong>Direct address</strong> - Acknowledge your audience: "Ladies and gentlemen," "Fellow students," "Members of the council."</li>
+  <li><strong>Rhetorical questions</strong> - Engage the audience and make them think: "How many of us have ever stopped to consider...?"</li>
+  <li><strong>Repetition and anaphora</strong> - Repeat key phrases for emphasis: "We deserve better. We demand better. We will accept nothing less."</li>
+  <li><strong>Tricolon (rule of three)</strong> - Group ideas in threes for rhythm and impact: "It is unfair, unnecessary, and unacceptable."</li>
+  <li><strong>Personal pronouns</strong> - "I believe," "We must," "You have the power to" - create connection and urgency.</li>
+  <li><strong>Varied pace</strong> - Short sentences for emphasis, longer ones for building arguments. Occasional one-word sentences: "Enough."</li>
+  <li><strong>Call to action</strong> - End by telling the audience what to do: "So I ask you - sign the petition, write to your MP, make your voice heard."</li>
 </ul>
 
 <div class="model-answer"><strong>Model Speech Opening:</strong>
-<p><em>Good morning, everyone. I want to start with a question — and I'd like you to answer it honestly, if only to yourselves. When was the last time you did something that genuinely frightened you? Not a horror film or a roller coaster — I mean something real. Something that made your palms sweat and your voice shake. Because today I want to talk about fear. Not the kind we run from, but the kind we should run towards.</em></p>
+<p><em>Good morning, everyone. I want to start with a question - and I'd like you to answer it honestly, if only to yourselves. When was the last time you did something that genuinely frightened you? Not a horror film or a roller coaster - I mean something real. Something that made your palms sweat and your voice shake. Because today I want to talk about fear. Not the kind we run from, but the kind we should run towards.</em></p>
 <p>This opening works because it uses direct address, a rhetorical question, personal pronouns, and a memorable closing idea that reframes the audience's expectations.</p></div>
 
 <h3>Part 2: Writing a Report</h3>
@@ -932,11 +905,11 @@ const c1Modules: CourseModule[] = [
 
 <h4>Report Conventions</h4>
 <ul>
-  <li><strong>Title</strong> — Clear and informative: "Report on the Proposed Changes to School Lunch Provision."</li>
-  <li><strong>Subheadings</strong> — Organise sections clearly (Introduction, Findings, Recommendations).</li>
-  <li><strong>Formal register</strong> — Third person where possible ("It was found that..."), objective tone.</li>
-  <li><strong>Evidence-based</strong> — Use facts, statistics, and reasoned analysis rather than emotional appeals.</li>
-  <li><strong>Recommendations section</strong> — Reports typically end with clear, actionable suggestions.</li>
+  <li><strong>Title</strong> - Clear and informative: "Report on the Proposed Changes to School Lunch Provision."</li>
+  <li><strong>Subheadings</strong> - Organise sections clearly (Introduction, Findings, Recommendations).</li>
+  <li><strong>Formal register</strong> - Third person where possible ("It was found that..."), objective tone.</li>
+  <li><strong>Evidence-based</strong> - Use facts, statistics, and reasoned analysis rather than emotional appeals.</li>
+  <li><strong>Recommendations section</strong> - Reports typically end with clear, actionable suggestions.</li>
 </ul>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Reports are tested less frequently than letters, articles, and speeches, but when they do appear, students often struggle because they write an article or essay instead. The key distinguishing features of a report are <strong>subheadings</strong>, <strong>third-person voice</strong>, and a <strong>recommendations section</strong>. Including these instantly signals awareness of the form.</div>
@@ -947,35 +920,35 @@ const c1Modules: CourseModule[] = [
 
 <h4>Review Conventions</h4>
 <ul>
-  <li><strong>Clear subject introduction</strong> — What are you reviewing? Provide context (title, creator, venue, etc.).</li>
-  <li><strong>Balance of description and opinion</strong> — Describe key features, then evaluate them.</li>
-  <li><strong>Evaluative language</strong> — "Outstanding," "disappointing," "a triumph of," "falls short of."</li>
-  <li><strong>Specific detail</strong> — Avoid vague praise or criticism. Say <em>what</em> was good and <em>why</em>.</li>
-  <li><strong>Rating or recommendation</strong> — End with a clear verdict: would you recommend this? To whom?</li>
-  <li><strong>Engaging voice</strong> — Reviews allow personality. Wit, humour, and vivid description are assets.</li>
+  <li><strong>Clear subject introduction</strong> - What are you reviewing? Provide context (title, creator, venue, etc.).</li>
+  <li><strong>Balance of description and opinion</strong> - Describe key features, then evaluate them.</li>
+  <li><strong>Evaluative language</strong> - "Outstanding," "disappointing," "a triumph of," "falls short of."</li>
+  <li><strong>Specific detail</strong> - Avoid vague praise or criticism. Say <em>what</em> was good and <em>why</em>.</li>
+  <li><strong>Rating or recommendation</strong> - End with a clear verdict: would you recommend this? To whom?</li>
+  <li><strong>Engaging voice</strong> - Reviews allow personality. Wit, humour, and vivid description are assets.</li>
 </ul>
 
 <div class="model-answer"><strong>Model Review Opening:</strong>
-<p><em>If you have ever wondered what it would feel like to eat a cloud, the meringue at Hartley's Bakehouse comes dangerously close. Perched on a cobbled side street that most satnav systems seem determined to ignore, this tiny café has been quietly perfecting the art of pastry for over two decades — and the results are nothing short of extraordinary.</em></p>
+<p><em>If you have ever wondered what it would feel like to eat a cloud, the meringue at Hartley's Bakehouse comes dangerously close. Perched on a cobbled side street that most satnav systems seem determined to ignore, this tiny café has been quietly perfecting the art of pastry for over two decades - and the results are nothing short of extraordinary.</em></p>
 <p>This opening works because it opens with an imaginative simile ("eat a cloud"), provides specific context (name, location, history), and establishes an engaging, witty voice that makes the reader want to continue.</p></div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing a review that reads like a plot summary or a factual description. A review must include your <strong>opinion</strong> — backed up by specific evidence. Saying "The restaurant served pasta" is description. Saying "The pasta was overcooked to the point of disintegration, a cardinal sin for a restaurant charging £18 per plate" is a review.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing a review that reads like a plot summary or a factual description. A review must include your <strong>opinion</strong> - backed up by specific evidence. Saying "The restaurant served pasta" is description. Saying "The pasta was overcooked to the point of disintegration, a cardinal sin for a restaurant charging £18 per plate" is a review.</div>
 
 <h3>Proofreading Checklist for All Writing Tasks</h3>
 <p>In the final 5 minutes of the exam, check for:</p>
 <ul>
-  <li><strong>Spelling</strong> — Common errors: "definitely" (not "definately"), "separate" (not "seperate"), "their/there/they're."</li>
-  <li><strong>Punctuation</strong> — Apostrophes for possession and contraction. Full stops at the end of every sentence. Commas after subordinate clauses.</li>
-  <li><strong>Sentence variety</strong> — Have you used a mix of simple, compound, and complex sentences?</li>
-  <li><strong>Paragraphing</strong> — Every new point or shift in focus should begin a new paragraph.</li>
-  <li><strong>Form conventions</strong> — Have you included the correct features for the form (e.g. sign-off for a letter, headline for an article)?</li>
+  <li><strong>Spelling</strong> - Common errors: "definitely" (not "definately"), "separate" (not "seperate"), "their/there/they're."</li>
+  <li><strong>Punctuation</strong> - Apostrophes for possession and contraction. Full stops at the end of every sentence. Commas after subordinate clauses.</li>
+  <li><strong>Sentence variety</strong> - Have you used a mix of simple, compound, and complex sentences?</li>
+  <li><strong>Paragraphing</strong> - Every new point or shift in focus should begin a new paragraph.</li>
+  <li><strong>Form conventions</strong> - Have you included the correct features for the form (e.g. sign-off for a letter, headline for an article)?</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Ethos, Pathos, Logos</strong> — The three classical modes of persuasion. <em>Ethos</em> appeals to the speaker's credibility ("As someone who has worked in education for 20 years..."). <em>Pathos</em> appeals to emotion ("Think of the children who will suffer..."). <em>Logos</em> appeals to logic and evidence ("Studies show that 73% of..."). The strongest persuasive writing uses all three.</div>
+<div class="key-term"><strong>Key Term: Ethos, Pathos, Logos</strong> - The three classical modes of persuasion. <em>Ethos</em> appeals to the speaker's credibility ("As someone who has worked in education for 20 years..."). <em>Pathos</em> appeals to emotion ("Think of the children who will suffer..."). <em>Logos</em> appeals to logic and evidence ("Studies show that 73% of..."). The strongest persuasive writing uses all three.</div>
 
 
 <h3>Grade 9 Technical Accuracy in Practice</h3>
-<p><strong>What Separates Grade 7 from Grade 9 in AO6:</strong> Grade 7 responses are technically correct with some sentence variety. Grade 9 responses demonstrate that accuracy and sentence variety are <em>deliberate choices</em> that enhance meaning and purpose. A Grade 9 student varies sentence length because that variation serves the writing's purpose — not because they have been told to vary sentences.</p>
+<p><strong>What Separates Grade 7 from Grade 9 in AO6:</strong> Grade 7 responses are technically correct with some sentence variety. Grade 9 responses demonstrate that accuracy and sentence variety are <em>deliberate choices</em> that enhance meaning and purpose. A Grade 9 student varies sentence length because that variation serves the writing's purpose - not because they have been told to vary sentences.</p>
 
 <h4>Worked Example: A Letter to a Local Newspaper</h4>
 <p><strong>Grade 7 Response (competent but safe):</strong></p>
@@ -987,13 +960,13 @@ Dear Editor, I am writing to express my concern about the closure of the local l
 
 <p><strong>Grade 9 Response (same content, elevated through control):</strong></p>
 <div class="model-answer">
-Dear Editor, For fifteen years, the library at the corner of Station Road has been the quiet heart of this community — not merely a building full of books, but a space where isolation turns to connection, where curiosity finds answers, where children discover worlds beyond their own. Its closure would constitute an act of cultural erasure. We would lose not just the facility itself, but the librarians who know their regulars by name; the after-school refuge for young people who might otherwise have nowhere safe to go; the public computers that bridge the digital divide for those who cannot afford their own technology. Of course, the council claims efficiency. But some institutions are too valuable to measure in spreadsheets. The cost of preserving the library is trivial compared to the cost of losing it.
+Dear Editor, For fifteen years, the library at the corner of Station Road has been the quiet heart of this community - not merely a building full of books, but a space where isolation turns to connection, where curiosity finds answers, where children discover worlds beyond their own. Its closure would constitute an act of cultural erasure. We would lose not just the facility itself, but the librarians who know their regulars by name; the after-school refuge for young people who might otherwise have nowhere safe to go; the public computers that bridge the digital divide for those who cannot afford their own technology. Of course, the council claims efficiency. But some institutions are too valuable to measure in spreadsheets. The cost of preserving the library is trivial compared to the cost of losing it.
 </div>
 
 <p><strong>What Elevates This to Grade 9:</strong></p>
 <ul>
 <li><strong>Varied sentence structure:</strong> Opening compound-complex sentence draws the reader in. Fragments ("Its closure would constitute an act of cultural erasure.") create emphasis. Longer sentences with multiple clauses build argument. Short final sentence lands with force.</li>
-<li><strong>Sophisticated punctuation:</strong> Dashes create interruption and emphasis ("— not merely a building..."). Semicolon connects related but distinct ideas.</li>
+<li><strong>Sophisticated punctuation:</strong> Dashes create interruption and emphasis ("- not merely a building..."). Semicolon connects related but distinct ideas.</li>
 <li><strong>Word choice precision:</strong> "Cultural erasure" vs. "losing the library." "Constitute" vs. "be." "Bridge the digital divide" shows specific understanding.</li>
 <li><strong>Conciseness with complexity:</strong> Every sentence earns its place. No filler. Dense with meaning.</li>
 </ul>
@@ -1020,15 +993,14 @@ The school should change its policy about mobile phones. Many students bring pho
 
 <p><strong>Model Response:</strong></p>
 <div class="model-answer">
-While students cite safety concerns — emergencies, parental contact — the evidence suggests that unrestricted phone access creates more problems than it solves. Exam boards have documented instances of cheating facilitated by hidden devices. More insidiously, social media bullying now extends beyond school gates into evenings and weekends, offering bullies 24/7 access to their victims. The question, then, is not whether phones should be permitted, but on what terms. A compromise might satisfy neither camp completely, yet a staggered approach — phones permitted in designated areas, off-limits during lessons — offers a workable middle ground that acknowledges both teenage autonomy and institutional duty of care.
+While students cite safety concerns - emergencies, parental contact - the evidence suggests that unrestricted phone access creates more problems than it solves. Exam boards have documented instances of cheating facilitated by hidden devices. More insidiously, social media bullying now extends beyond school gates into evenings and weekends, offering bullies 24/7 access to their victims. The question, then, is not whether phones should be permitted, but on what terms. A compromise might satisfy neither camp completely, yet a staggered approach - phones permitted in designated areas, off-limits during lessons - offers a workable middle ground that acknowledges both teenage autonomy and institutional duty of care.
 </div>
 
 `,
     quiz: [
       {
         id: 'ocr-lc1-m8-q1',
-        question:
-          'What are the key distinguishing features of a report compared to an article?',
+        question: 'What are the key distinguishing features of a report compared to an article?',
         options: [
           'Reports use emotive language and articles do not',
           'Reports use subheadings, third-person voice, and a recommendations section',
@@ -1054,8 +1026,7 @@ While students cite safety concerns — emergencies, parental contact — the ev
       },
       {
         id: 'ocr-lc1-m8-q3',
-        question:
-          'What is the difference between description and review writing?',
+        question: 'What is the difference between description and review writing?',
         options: [
           'There is no difference',
           'Description states facts; a review includes evaluative opinion supported by specific evidence',
@@ -1064,7 +1035,7 @@ While students cite safety concerns — emergencies, parental contact — the ev
         ],
         correct: 1,
         explanation:
-          'Description tells the reader what something is or was. A review goes further by evaluating — giving an opinion on quality, supported by specific evidence. "The restaurant served pasta" is description; "The pasta was overcooked" is review.',
+          'Description tells the reader what something is or was. A review goes further by evaluating - giving an opinion on quality, supported by specific evidence. "The restaurant served pasta" is description; "The pasta was overcooked" is review.',
       },
       {
         id: 'ocr-lc1-m8-q4',
@@ -1077,38 +1048,37 @@ While students cite safety concerns — emergencies, parental contact — the ev
         ],
         correct: 1,
         explanation:
-          'Ethos appeals to the speaker\'s credibility, pathos appeals to the audience\'s emotions, and logos appeals to logic and evidence. Effective persuasive writing and speeches typically use all three.',
+          "Ethos appeals to the speaker's credibility, pathos appeals to the audience's emotions, and logos appeals to logic and evidence. Effective persuasive writing and speeches typically use all three.",
       },
       {
         id: 'ocr-lc1-m8-q5',
-        question:
-          'Which of the following is the most effective way to end a speech?',
+        question: 'Which of the following is the most effective way to end a speech?',
         options: [
           '"That is the end of my speech, thank you."',
           '"In conclusion, I have discussed several points about this topic."',
-          '"So I ask you — sign the petition, write to your MP, make your voice heard."',
+          '"So I ask you - sign the petition, write to your MP, make your voice heard."',
           '"I hope you found this interesting."',
         ],
         correct: 2,
         explanation:
-          'A strong speech ending uses a call to action — telling the audience specifically what to do. This creates urgency and gives the speech practical impact. Generic closings like "thank you" or "I hope you found this interesting" are weak and forgettable.',
+          'A strong speech ending uses a call to action - telling the audience specifically what to do. This creates urgency and gives the speech practical impact. Generic closings like "thank you" or "I hope you found this interesting" are weak and forgettable.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 9 — Technical Accuracy: Spelling, Punctuation, and Grammar
+  // MODULE 9 - Technical Accuracy: Spelling, Punctuation, and Grammar
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m9',
     title: 'Technical Accuracy: Spelling, Punctuation, and Grammar',
     duration: '50 min',
     content: `
-<h2>AO6 — Technical Accuracy in Transactional Writing</h2>
+<h2>AO6 - Technical Accuracy in Transactional Writing</h2>
 
-<p>In OCR Component 01, <strong>AO6</strong> accounts for a significant proportion of the writing marks. It assesses your ability to use a range of vocabulary and sentence structures for clarity, purpose, and effect, with <strong>accurate spelling and punctuation</strong>. Many students focus entirely on content (AO5) and neglect accuracy — this is a costly mistake.</p>
+<p>In OCR Component 01, <strong>AO6</strong> accounts for a significant proportion of the writing marks. It assesses your ability to use a range of vocabulary and sentence structures for clarity, purpose, and effect, with <strong>accurate spelling and punctuation</strong>. Many students focus entirely on content (AO5) and neglect accuracy - this is a costly mistake.</p>
 
-<div class="key-term"><strong>Key Term: AO6 — Technical Accuracy</strong> — The Assessment Objective that rewards correct spelling, punctuation, and grammar, as well as varied and effective sentence structures. In OCR Component 01, AO6 marks are embedded within both writing tasks.</div>
+<div class="key-term"><strong>Key Term: AO6 - Technical Accuracy</strong> - The Assessment Objective that rewards correct spelling, punctuation, and grammar, as well as varied and effective sentence structures. In OCR Component 01, AO6 marks are embedded within both writing tasks.</div>
 
 <h3>Punctuation That Makes a Difference</h3>
 
@@ -1129,7 +1099,7 @@ While students cite safety concerns — emergencies, parental contact — the ev
 <h4>3. Dashes and Parenthetical Commas</h4>
 <p>Both can embed extra information within a sentence:</p>
 <ul>
-  <li><em>"The council — despite repeated promises — has failed to act."</em> (dashes for emphasis)</li>
+  <li><em>"The council - despite repeated promises - has failed to act."</em> (dashes for emphasis)</li>
   <li><em>"The council, despite repeated promises, has failed to act."</em> (commas for a softer aside)</li>
 </ul>
 
@@ -1159,10 +1129,10 @@ While students cite safety concerns — emergencies, parental contact — the ev
 <h4>Minor Sentences</h4>
 <p>Grammatically incomplete but used deliberately for dramatic effect: <em>"Unacceptable."</em> <em>"Not any more."</em></p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing in a monotonous rhythm — every sentence the same length and structure. This is often caused by starting too many sentences with "I think" or "This is." Vary your openings: start with an adverbial ("Undeniably,..."), a participle clause ("Having considered the evidence,..."), a prepositional phrase ("In a society that values fairness,..."), or a short, punchy statement.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing in a monotonous rhythm - every sentence the same length and structure. This is often caused by starting too many sentences with "I think" or "This is." Vary your openings: start with an adverbial ("Undeniably,..."), a participle clause ("Having considered the evidence,..."), a prepositional phrase ("In a society that values fairness,..."), or a short, punchy statement.</div>
 
 <h3>Commonly Misspelled Words at GCSE</h3>
-<p>Learn these — they appear frequently in transactional writing:</p>
+<p>Learn these - they appear frequently in transactional writing:</p>
 <ul>
   <li><strong>Definitely</strong> (not "definately")</li>
   <li><strong>Separate</strong> (not "seperate")</li>
@@ -1189,17 +1159,17 @@ While students cite safety concerns — emergencies, parental contact — the ev
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Do not use ambitious vocabulary unless you are confident it is correct. Using "juxtaposition" when you mean "comparison" or "dichotomy" when you mean "difference" suggests you are reaching beyond your understanding. One precisely used word is worth more than three misused ones. Accuracy trumps ambition.</div>
 
-<div class="key-term"><strong>Key Term: Subordinate Clause</strong> — A clause that cannot stand alone as a complete sentence and depends on a main clause for its meaning. It often begins with a subordinating conjunction (although, because, while, if, when, unless). Example: "Although the rain was heavy, the match continued." — "Although the rain was heavy" is the subordinate clause.</div>
+<div class="key-term"><strong>Key Term: Subordinate Clause</strong> - A clause that cannot stand alone as a complete sentence and depends on a main clause for its meaning. It often begins with a subordinating conjunction (although, because, while, if, when, unless). Example: "Although the rain was heavy, the match continued." - "Although the rain was heavy" is the subordinate clause.</div>
 
 
 <h3>The 80-Minute Exam Broken Down: A Worked Walkthrough</h3>
 <p><strong>Scenario: You receive two non-fiction texts (one 20th century, one 21st century) and must answer all questions in Section A and complete both writing tasks in Section B.</strong></p>
 
-<p><strong>Minutes 0–10: READ AND ANNOTATE</strong></p>
+<p><strong>Minutes 0-10: READ AND ANNOTATE</strong></p>
 <div class="examiner-tip">Many students read the questions first, then read the text. This is inefficient. Read the texts fully and mark key ideas, techniques, and turning points. Underline surprising claims. Mark dates and sources. This takes 8 minutes but saves time later because you won't need to reread.</div>
 
-<p><strong>Minutes 10–25: ANSWER Q1 (RETRIEVAL)</strong></p>
-<p>This is your confidence-building section. Each question is worth 1–2 marks. You can earn 8–10 marks here with accuracy and care. Slow down. Use quotation marks. Be precise. If a question asks "What time did the event occur?" and the text says "at half past three," write "3:30 p.m." — not "afternoon." Precision earns marks.</p>
+<p><strong>Minutes 10-25: ANSWER Q1 (RETRIEVAL)</strong></p>
+<p>This is your confidence-building section. Each question is worth 1-2 marks. You can earn 8-10 marks here with accuracy and care. Slow down. Use quotation marks. Be precise. If a question asks "What time did the event occur?" and the text says "at half past three," write "3:30 p.m." - not "afternoon." Precision earns marks.</p>
 
 <p><strong>Worked Example:</strong></p>
 <div class="text-extract">
@@ -1209,7 +1179,7 @@ Text extract: "The council states that it must close the library due to insuffic
 
 <p><strong>Good Response:</strong> The council claims there is "insufficient funding in the 2024 budget" and "declining visitor numbers."</p>
 
-<p><strong>Minutes 25–40: ANSWER Q2 (LANGUAGE ANALYSIS)</strong></p>
+<p><strong>Minutes 25-40: ANSWER Q2 (LANGUAGE ANALYSIS)</strong></p>
 <p>This question asks you to analyze a specific technique or phrase. You will use PEE: Point (what technique), Evidence (the quote), Explanation (why the writer used it and what effect it achieves).</p>
 
 <p><strong>Worked Example:</strong></p>
@@ -1219,11 +1189,11 @@ Q2: The writer uses the phrase "the quiet heart of the community." Analyze the e
 
 <p><strong>Grade 9 Response:</strong></p>
 <div class="model-answer">
-The word "heart" suggests the library is central to the community's survival and wellbeing — not peripheral but vital. The modifier "quiet" subverts expectation: we might expect a "beating" or "strong" heart, but "quiet" suggests that the library's most important work happens privately, without fanfare. Libraries don't shout their value; they work steadily. This combination creates pathos — the library's humility and understatement make its potential loss more tragic.
+The word "heart" suggests the library is central to the community's survival and wellbeing - not peripheral but vital. The modifier "quiet" subverts expectation: we might expect a "beating" or "strong" heart, but "quiet" suggests that the library's most important work happens privately, without fanfare. Libraries don't shout their value; they work steadily. This combination creates pathos - the library's humility and understatement make its potential loss more tragic.
 </div>
 
-<p><strong>Minutes 40–55: ANSWER Q3 (COMPARISON)</strong></p>
-<p>This asks how the two texts compare in viewpoint, tone, or approach to the same topic. Use comparative language: "whereas," "similarly," "in contrast," "both texts." Provide evidence from both texts — not one longer quote from Text A and one brief reference to Text B.</p>
+<p><strong>Minutes 40-55: ANSWER Q3 (COMPARISON)</strong></p>
+<p>This asks how the two texts compare in viewpoint, tone, or approach to the same topic. Use comparative language: "whereas," "similarly," "in contrast," "both texts." Provide evidence from both texts - not one longer quote from Text A and one brief reference to Text B.</p>
 
 <p><strong>Worked Example:</strong></p>
 <div class="text-extract">
@@ -1235,7 +1205,7 @@ Q3: How do the two texts differ in their stance on funding public institutions?
 The 20th-century text argues that institutions like libraries are "investments in knowledge" and defends public funding as a moral obligation. By contrast, the 21st-century article adopts a cost-benefit analysis, citing "declining footfall" and "budget pressures" as the primary determinant of value. The first text values culture; the second values efficiency. This shift reflects changing attitudes toward what government should fund.
 </div>
 
-<p><strong>Minutes 55–65: ANSWER Q4 (EVALUATION)</strong></p>
+<p><strong>Minutes 55-65: ANSWER Q4 (EVALUATION)</strong></p>
 <p>This is the highest-tariff question. You must judge how effectively the writer has argued their position, using evidence. Use phrases like "the writer persuades the reader through," "the evidence is convincing because," "however, this argument is weakened by."</p>
 
 <p><strong>Worked Example:</strong></p>
@@ -1248,19 +1218,19 @@ Q4: To what extent does the writer convince you that the library closure is a mi
 The writer persuades through emotional appeal and logical argument. The image of the community losing "the quiet heart" generates sympathy, whilst statistical evidence about visitor demographics provides rational support. However, the argument might be strengthened by acknowledging the council's financial constraints. The writer does not engage with the opposing view, which somewhat weakens the overall persuasiveness. On balance, the personal narratives embedded in the text are most convincing: real voices of community members carry more weight than abstract argument.
 </div>
 
-<p><strong>Minutes 65–70: PLAN Q5 (SHORT WRITING TASK, 16 MARKS)</strong></p>
+<p><strong>Minutes 65-70: PLAN Q5 (SHORT WRITING TASK, 16 MARKS)</strong></p>
 <p>Spend 5 minutes planning. Jot: purpose (persuade/inform/explain?), audience (who am I writing for?), form (letter/article/speech?), three key points you'll make. This prevents rambling and ensures structure.</p>
 
-<p><strong>Minutes 70–85: WRITE Q5</strong></p>
-<p>Write purposefully. Your opening line should establish voice and purpose immediately. Aim for 250–300 words. Quality over quantity. Every sentence should advance your argument or develop your idea. Do not repeat points just to fill space.</p>
+<p><strong>Minutes 70-85: WRITE Q5</strong></p>
+<p>Write purposefully. Your opening line should establish voice and purpose immediately. Aim for 250-300 words. Quality over quantity. Every sentence should advance your argument or develop your idea. Do not repeat points just to fill space.</p>
 
-<p><strong>Minutes 85–90: PLAN Q6 (EXTENDED WRITING TASK, 24 MARKS)</strong></p>
+<p><strong>Minutes 85-90: PLAN Q6 (EXTENDED WRITING TASK, 24 MARKS)</strong></p>
 <p>This is the largest task. Spend 5 minutes planning three or four main ideas. Brief jottings. This is your scaffolding.</p>
 
-<p><strong>Minutes 90–115: WRITE Q6</strong></p>
-<p>Aim for 400–500 words. Pace yourself: roughly 8–10 minutes per main idea, including introduction and conclusion. Vary your sentence structures. Include specific evidence or examples. This is where you demonstrate control and sophistication.</p>
+<p><strong>Minutes 90-115: WRITE Q6</strong></p>
+<p>Aim for 400-500 words. Pace yourself: roughly 8-10 minutes per main idea, including introduction and conclusion. Vary your sentence structures. Include specific evidence or examples. This is where you demonstrate control and sophistication.</p>
 
-<p><strong>Minutes 115–120: PROOFREAD</strong></p>
+<p><strong>Minutes 115-120: PROOFREAD</strong></p>
 <p>Spend your final 5 minutes on spelling, punctuation, and clarity. Read aloud if possible. Look specifically for:</p>
 <ul>
 <li>Spelling of subject-specific terms (if analyzing an article about technology, spell "algorithm" correctly)</li>
@@ -1271,9 +1241,9 @@ The writer persuades through emotional appeal and logical argument. The image of
 
 <h3>Common Exam Day Mistakes</h3>
 <div class="common-mistake"><strong>Mistake 1: Spending too long on reading.</strong> Don't annotate every word. Mark key claims, techniques, and turning points. Move on.</div>
-<div class="common-mistake"><strong>Mistake 2: Overshooting on Q3 and Q4.</strong> Students often write 2000 words of analysis on Q4 and then rush through writing tasks. Watch your time. Q4 should be roughly 300–400 words.</div>
+<div class="common-mistake"><strong>Mistake 2: Overshooting on Q3 and Q4.</strong> Students often write 2000 words of analysis on Q4 and then rush through writing tasks. Watch your time. Q4 should be roughly 300-400 words.</div>
 <div class="common-mistake"><strong>Mistake 3: Writing without planning writing tasks.</strong> A quick plan prevents structure breakdown and rambling. 5 minutes planning saves 15 minutes writing.</div>
-<div class="common-mistake"><strong>Mistake 4: Skipping the final 5 minutes.</strong> Proofreading catches the careless errors that cost you marks — and they are easy to lose if you're exhausted.</div>
+<div class="common-mistake"><strong>Mistake 4: Skipping the final 5 minutes.</strong> Proofreading catches the careless errors that cost you marks - and they are easy to lose if you're exhausted.</div>
 
 `,
     quiz: [
@@ -1292,8 +1262,7 @@ The writer persuades through emotional appeal and logical argument. The image of
       },
       {
         id: 'ocr-lc1-m9-q2',
-        question:
-          'Which of the following is the correct use of "its" and "it\'s"?',
+        question: 'Which of the following is the correct use of "its" and "it\'s"?',
         options: [
           '"Its raining outside" and "The dog wagged it\'s tail"',
           '"It\'s raining outside" and "The dog wagged its tail"',
@@ -1302,12 +1271,11 @@ The writer persuades through emotional appeal and logical argument. The image of
         ],
         correct: 1,
         explanation:
-          '"It\'s" is a contraction of "it is" — so "It\'s raining outside" is correct. "Its" shows possession — so "The dog wagged its tail" is correct. This is one of the most common errors in student writing.',
+          '"It\'s" is a contraction of "it is" - so "It\'s raining outside" is correct. "Its" shows possession - so "The dog wagged its tail" is correct. This is one of the most common errors in student writing.',
       },
       {
         id: 'ocr-lc1-m9-q3',
-        question:
-          'Why should you vary your sentence openings in transactional writing?',
+        question: 'Why should you vary your sentence openings in transactional writing?',
         options: [
           'Because the mark scheme requires exactly five types of opening',
           'To avoid monotonous rhythm and demonstrate range of expression',
@@ -1335,33 +1303,33 @@ The writer persuades through emotional appeal and logical argument. The image of
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 10 — Exam Strategy and Timed Practice
+  // MODULE 10 - Exam Strategy and Timed Practice
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc1-m10',
     title: 'Component 01 Exam Strategy & Timed Practice',
     duration: '50 min',
     content: `
-<h2>Exam Strategy — Putting It All Together for Component 01</h2>
+<h2>Exam Strategy - Putting It All Together for Component 01</h2>
 
-<p>This final module consolidates everything you have learned across the course. It provides a complete exam strategy, a full practice walkthrough, and the mindset shifts that separate confident exam performers from anxious ones. Component 01 is <strong>2 hours</strong> and worth <strong>80 marks</strong> — every minute counts.</p>
+<p>This final module consolidates everything you have learned across the course. It provides a complete exam strategy, a full practice walkthrough, and the mindset shifts that separate confident exam performers from anxious ones. Component 01 is <strong>2 hours</strong> and worth <strong>80 marks</strong> - every minute counts.</p>
 
 <h3>The Complete Timing Plan (Revised)</h3>
 <table>
   <tr><th>Time</th><th>Task</th><th>Marks</th></tr>
-  <tr><td>0–10 min</td><td>Read both source texts carefully, underlining key ideas and techniques</td><td>—</td></tr>
-  <tr><td>10–25 min</td><td>Answer Q1 (retrieval and inference questions)</td><td>Varies</td></tr>
-  <tr><td>25–40 min</td><td>Answer Q2 (language analysis)</td><td>6–8</td></tr>
-  <tr><td>40–55 min</td><td>Answer Q3 (comparison)</td><td>8–10</td></tr>
-  <tr><td>55–65 min</td><td>Answer Q4 (evaluation)</td><td>12–14</td></tr>
-  <tr><td>65–70 min</td><td>Plan Q5 (short writing task)</td><td>—</td></tr>
-  <tr><td>70–85 min</td><td>Write Q5</td><td>16</td></tr>
-  <tr><td>85–90 min</td><td>Plan Q6 (extended writing task)</td><td>—</td></tr>
-  <tr><td>90–115 min</td><td>Write Q6</td><td>24</td></tr>
-  <tr><td>115–120 min</td><td>Proofread all writing</td><td>—</td></tr>
+  <tr><td>0-10 min</td><td>Read both source texts carefully, underlining key ideas and techniques</td><td>-</td></tr>
+  <tr><td>10-25 min</td><td>Answer Q1 (retrieval and inference questions)</td><td>Varies</td></tr>
+  <tr><td>25-40 min</td><td>Answer Q2 (language analysis)</td><td>6-8</td></tr>
+  <tr><td>40-55 min</td><td>Answer Q3 (comparison)</td><td>8-10</td></tr>
+  <tr><td>55-65 min</td><td>Answer Q4 (evaluation)</td><td>12-14</td></tr>
+  <tr><td>65-70 min</td><td>Plan Q5 (short writing task)</td><td>-</td></tr>
+  <tr><td>70-85 min</td><td>Write Q5</td><td>16</td></tr>
+  <tr><td>85-90 min</td><td>Plan Q6 (extended writing task)</td><td>-</td></tr>
+  <tr><td>90-115 min</td><td>Write Q6</td><td>24</td></tr>
+  <tr><td>115-120 min</td><td>Proofread all writing</td><td>-</td></tr>
 </table>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The single biggest reason students underperform on Component 01 is <strong>poor time management</strong>. Students who spend too long perfecting their reading answers leave themselves rushed for writing — which is worth <em>half the paper</em>. Set a watch on your desk and stick to the timing plan. No reading answer is worth sacrificing your writing performance for.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The single biggest reason students underperform on Component 01 is <strong>poor time management</strong>. Students who spend too long perfecting their reading answers leave themselves rushed for writing - which is worth <em>half the paper</em>. Set a watch on your desk and stick to the timing plan. No reading answer is worth sacrificing your writing performance for.</div>
 
 <h3>Full Practice Walkthrough</h3>
 <p>Here is how you should approach the exam from the moment you open the paper:</p>
@@ -1376,40 +1344,40 @@ The writer persuades through emotional appeal and logical argument. The image of
 <h4>Step 2: Answer Reading Questions (55 minutes)</h4>
 <ul>
   <li><strong>Q1:</strong> Quick retrieval. Do not over-think. Find, quote, move on.</li>
-  <li><strong>Q2:</strong> What–How–Why for 2–3 language points. Zoom into word-level analysis. Use the terminology from Module 3.</li>
+  <li><strong>Q2:</strong> What-How-Why for 2-3 language points. Zoom into word-level analysis. Use the terminology from Module 3.</li>
   <li><strong>Q3:</strong> Integrated comparison. Discuss both texts in every paragraph. Compare methods as well as ideas (Module 4).</li>
   <li><strong>Q4:</strong> State your judgement, support with evidence, consider counter-arguments, conclude with a nuanced view (Module 5).</li>
 </ul>
 
 <h4>Step 3: Write Both Tasks (50 minutes)</h4>
 <ul>
-  <li><strong>Q5 (15–18 min):</strong> Plan for 3 minutes. Write 200–300 words. Match form conventions precisely.</li>
-  <li><strong>Q6 (25–30 min):</strong> Plan for 5 minutes. Write 350–500 words. This is your showcase piece — deploy your best vocabulary, punctuation, and structural techniques.</li>
+  <li><strong>Q5 (15-18 min):</strong> Plan for 3 minutes. Write 200-300 words. Match form conventions precisely.</li>
+  <li><strong>Q6 (25-30 min):</strong> Plan for 5 minutes. Write 350-500 words. This is your showcase piece - deploy your best vocabulary, punctuation, and structural techniques.</li>
 </ul>
 
 <h4>Step 4: Proofread (5 minutes)</h4>
 <p>Check writing tasks only (reading answers are unlikely to benefit from changes at this stage):</p>
 <ul>
-  <li>Spelling errors — especially commonly misspelled words (Module 9)</li>
-  <li>Missing punctuation — full stops, commas, apostrophes</li>
+  <li>Spelling errors - especially commonly misspelled words (Module 9)</li>
+  <li>Missing punctuation - full stops, commas, apostrophes</li>
   <li>Sentence fragments or run-on sentences</li>
-  <li>Form conventions — did you include the correct features?</li>
+  <li>Form conventions - did you include the correct features?</li>
 </ul>
 
 <h3>What to Do If You Run Out of Time</h3>
 <p>If you find yourself with only 10 minutes left and have not started Q6:</p>
 <ol>
-  <li><strong>Write a quick plan</strong> — bullet points showing your intended structure. This can earn partial marks.</li>
-  <li><strong>Write a strong opening paragraph</strong> — first impressions matter.</li>
-  <li><strong>Write a strong closing paragraph</strong> — examiners notice how you end.</li>
-  <li><strong>Fill the middle with key points</strong> — even abbreviated, they show your argument.</li>
+  <li><strong>Write a quick plan</strong> - bullet points showing your intended structure. This can earn partial marks.</li>
+  <li><strong>Write a strong opening paragraph</strong> - first impressions matter.</li>
+  <li><strong>Write a strong closing paragraph</strong> - examiners notice how you end.</li>
+  <li><strong>Fill the middle with key points</strong> - even abbreviated, they show your argument.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Abandoning the writing section because you ran out of time on reading. Even a partially completed writing task can earn significant marks. A well-written opening paragraph and plan might earn 10–12 marks, whereas an abandoned Q6 earns zero. Always attempt both writing tasks, even if briefly.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Abandoning the writing section because you ran out of time on reading. Even a partially completed writing task can earn significant marks. A well-written opening paragraph and plan might earn 10-12 marks, whereas an abandoned Q6 earns zero. Always attempt both writing tasks, even if briefly.</div>
 
 <h3>Mindset and Exam Confidence</h3>
 <ul>
-  <li><strong>The texts are there to help you.</strong> You are not expected to bring outside knowledge — everything you need is in the extracts.</li>
+  <li><strong>The texts are there to help you.</strong> You are not expected to bring outside knowledge - everything you need is in the extracts.</li>
   <li><strong>There is no single "right" interpretation.</strong> Examiners reward well-supported arguments, not specific answers.</li>
   <li><strong>Quality over quantity.</strong> Three well-developed points with close analysis will outscore six superficial ones.</li>
   <li><strong>Trust your training.</strong> If you have worked through these modules, you have the skills. The exam is simply the opportunity to demonstrate them.</li>
@@ -1424,18 +1392,13 @@ The writer persuades through emotional appeal and logical argument. The image of
   <li>Prepare your equipment: black pen, spare pen, watch (not a phone).</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Mark Allocation</strong> — The number of marks assigned to each question. In Component 01, marks range from 1 (simple retrieval) to 24 (extended writing). Your time and effort on each question should be proportional to its mark allocation. Spending equal time on every question is a common strategic error.</div>
+<div class="key-term"><strong>Key Term: Mark Allocation</strong> - The number of marks assigned to each question. In Component 01, marks range from 1 (simple retrieval) to 24 (extended writing). Your time and effort on each question should be proportional to its mark allocation. Spending equal time on every question is a common strategic error.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc1-m10-q1',
         question: 'How long is OCR Component 01 in total?',
-        options: [
-          '1 hour 30 minutes',
-          '1 hour 55 minutes',
-          '2 hours',
-          '2 hours 15 minutes',
-        ],
+        options: ['1 hour 30 minutes', '1 hour 55 minutes', '2 hours', '2 hours 15 minutes'],
         correct: 2,
         explanation:
           'OCR Component 01 is 2 hours (120 minutes). This must be divided between reading (approximately 65 minutes) and writing (approximately 50 minutes), with 5 minutes for proofreading.',
@@ -1451,16 +1414,15 @@ The writer persuades through emotional appeal and logical argument. The image of
         ],
         correct: 1,
         explanation:
-          'A plan, strong opening, and strong closing can earn significant marks even if the response is incomplete. Abandoning Q6 entirely means losing up to 24 marks — always attempt both writing tasks.',
+          'A plan, strong opening, and strong closing can earn significant marks even if the response is incomplete. Abandoning Q6 entirely means losing up to 24 marks - always attempt both writing tasks.',
       },
       {
         id: 'ocr-lc1-m10-q3',
-        question:
-          'What is the single biggest reason students underperform on Component 01?',
+        question: 'What is the single biggest reason students underperform on Component 01?',
         options: [
           'Not knowing enough vocabulary',
           'Poor handwriting',
-          'Poor time management — spending too long on reading and rushing writing',
+          'Poor time management - spending too long on reading and rushing writing',
           'Not reading the texts carefully enough',
         ],
         correct: 2,
@@ -1469,16 +1431,15 @@ The writer persuades through emotional appeal and logical argument. The image of
       },
       {
         id: 'ocr-lc1-m10-q4',
-        question:
-          'According to the exam strategy, how long should you spend planning Q6?',
+        question: 'According to the exam strategy, how long should you spend planning Q6?',
         options: ['1 minute', '3 minutes', '5 minutes', '10 minutes'],
         correct: 2,
         explanation:
-          'Allow approximately 5 minutes to plan Q6. A clear plan ensures your extended writing task has a logical structure, coherent argument, and strong opening and closing — all of which are rewarded by AO5.',
+          'Allow approximately 5 minutes to plan Q6. A clear plan ensures your extended writing task has a logical structure, coherent argument, and strong opening and closing - all of which are rewarded by AO5.',
       },
     ],
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Component 01 Assessment Questions (20 questions)
@@ -1496,7 +1457,7 @@ const c1Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'OCR Component 01 is 2 hours long and worth 80 marks — 40 for reading (Section A) and 40 for writing (Section B).',
+      'OCR Component 01 is 2 hours long and worth 80 marks - 40 for reading (Section A) and 40 for writing (Section B).',
   },
   {
     id: 'ocr-lc1-assess-2',
@@ -1504,7 +1465,7 @@ const c1Assessment: CourseQuiz[] = [
     options: ['AO1', 'AO2', 'AO3', 'AO4'],
     correct: 2,
     explanation:
-      'AO3 tests the ability to compare writers\' ideas and perspectives across two or more texts.',
+      "AO3 tests the ability to compare writers' ideas and perspectives across two or more texts.",
   },
   {
     id: 'ocr-lc1-assess-3',
@@ -1536,14 +1497,14 @@ const c1Assessment: CourseQuiz[] = [
     id: 'ocr-lc1-assess-5',
     question: 'What framework should you use for language analysis?',
     options: [
-      'Introduction–Body–Conclusion',
-      'What–How–Why',
-      'Point–Counterpoint–Resolution',
-      'Describe–Compare–Evaluate',
+      'Introduction-Body-Conclusion',
+      'What-How-Why',
+      'Point-Counterpoint-Resolution',
+      'Describe-Compare-Evaluate',
     ],
     correct: 1,
     explanation:
-      'What–How–Why: identify the technique (What), explain how it works at word level (How), and analyse the effect on the reader (Why).',
+      'What-How-Why: identify the technique (What), explain how it works at word level (How), and analyse the effect on the reader (Why).',
   },
   {
     id: 'ocr-lc1-assess-6',
@@ -1564,12 +1525,12 @@ const c1Assessment: CourseQuiz[] = [
     options: [
       'Writing about each text in separate sections',
       'Discussing both texts within the same paragraphs using comparative connectives',
-      'Only comparing the texts\' word counts',
+      "Only comparing the texts' word counts",
       'Quoting from one text at a time',
     ],
     correct: 1,
     explanation:
-      'An integrated comparison discusses both texts within the same paragraph, using comparative language to link analysis of each writer\'s methods and ideas.',
+      "An integrated comparison discusses both texts within the same paragraph, using comparative language to link analysis of each writer's methods and ideas.",
   },
   {
     id: 'ocr-lc1-assess-8',
@@ -1595,7 +1556,7 @@ const c1Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Balanced answers show critical maturity — the ability to consider where a writer succeeds and where they might be less effective, which is rewarded in the highest mark bands.',
+      'Balanced answers show critical maturity - the ability to consider where a writer succeeds and where they might be less effective, which is rewarded in the highest mark bands.',
   },
   {
     id: 'ocr-lc1-assess-10',
@@ -1608,7 +1569,7 @@ const c1Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Bias is a partial perspective that favours one viewpoint. Recognising bias — including what is omitted from a text — is essential for critical reading.',
+      'Bias is a partial perspective that favours one viewpoint. Recognising bias - including what is omitted from a text - is essential for critical reading.',
   },
   {
     id: 'ocr-lc1-assess-11',
@@ -1622,7 +1583,7 @@ const c1Assessment: CourseQuiz[] = [
     id: 'ocr-lc1-assess-12',
     question: 'When should you use "Yours faithfully" in a formal letter?',
     options: [
-      'When you know the recipient\'s name',
+      "When you know the recipient's name",
       'When you have used "Dear Sir/Madam"',
       'In all formal letters',
       'Only in letters to friends',
@@ -1707,7 +1668,7 @@ const c1Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Spending 10 minutes reading both texts carefully — underlining key techniques, powerful word choices, and noting differences — provides a foundation for all reading answers.',
+      'Spending 10 minutes reading both texts carefully - underlining key techniques, powerful word choices, and noting differences - provides a foundation for all reading answers.',
   },
   {
     id: 'ocr-lc1-assess-19',
@@ -1735,45 +1696,45 @@ const c1Assessment: CourseQuiz[] = [
     explanation:
       'Students who spend too long perfecting reading answers leave insufficient time for writing, which is worth 40 marks (half the paper). A timing plan is essential.',
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// OCR GCSE English Language (J351) — Component 02 Modules
+// OCR GCSE English Language (J351) - Component 02 Modules
 // Exploring Effects and Impact
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const c2Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
-  // MODULE 1 — Component 02 Overview & Assessment Objectives
+  // MODULE 1 - Component 02 Overview & Assessment Objectives
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m1',
     title: 'Component 02 Overview & Assessment Objectives',
     duration: '45 min',
     content: `
-<h2>OCR GCSE English Language — Component 02: Exploring Effects and Impact</h2>
+<h2>OCR GCSE English Language - Component 02: Exploring Effects and Impact</h2>
 
 <p>Component 02 is the second examined component of the OCR GCSE English Language specification (J351). It focuses on <strong>fiction reading</strong> and <strong>imaginative/creative writing</strong>. The paper is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>2 hours</strong> to complete two sections.</p>
 
-<div class="key-term"><strong>Key Term: Imaginative/Creative Writing</strong> — Writing that prioritises originality, descriptive power, and narrative craft. This includes descriptive writing (evoking a scene, person, or atmosphere) and narrative writing (telling a story with character, setting, and plot). Unlike transactional writing, the primary purpose is to create an imaginative experience for the reader.</div>
+<div class="key-term"><strong>Key Term: Imaginative/Creative Writing</strong> - Writing that prioritises originality, descriptive power, and narrative craft. This includes descriptive writing (evoking a scene, person, or atmosphere) and narrative writing (telling a story with character, setting, and plot). Unlike transactional writing, the primary purpose is to create an imaginative experience for the reader.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A — Reading (40 marks):</strong> You are given one unseen fiction extract and answer questions testing comprehension, language analysis, structural analysis, and evaluation.</li>
-  <li><strong>Section B — Writing (40 marks):</strong> One extended creative/imaginative writing task — either a narrative or a descriptive piece.</li>
+  <li><strong>Section A - Reading (40 marks):</strong> You are given one unseen fiction extract and answer questions testing comprehension, language analysis, structural analysis, and evaluation.</li>
+  <li><strong>Section B - Writing (40 marks):</strong> One extended creative/imaginative writing task - either a narrative or a descriptive piece.</li>
 </ul>
 
-<h3>Section A — Reading Question Breakdown</h3>
+<h3>Section A - Reading Question Breakdown</h3>
 <p>OCR structures the fiction reading section to progress from basic comprehension to sophisticated critical analysis:</p>
 <ol>
-  <li><strong>Q1 (a–c) — Retrieval and inference (various marks):</strong> Short questions testing your ability to identify explicit details and draw inferences from the fiction extract.</li>
-  <li><strong>Q2 — Language analysis (6–8 marks):</strong> Analyse how the writer uses language to create a specific effect (e.g. to build tension, create atmosphere, convey character).</li>
-  <li><strong>Q3 — Structure analysis (6–8 marks):</strong> Analyse how the writer uses structural features to shape meaning and engage the reader.</li>
-  <li><strong>Q4 — Evaluation (12–14 marks):</strong> Evaluate how effectively the writer achieves a specified purpose, supporting your judgement with textual evidence.</li>
+  <li><strong>Q1 (a-c) - Retrieval and inference (various marks):</strong> Short questions testing your ability to identify explicit details and draw inferences from the fiction extract.</li>
+  <li><strong>Q2 - Language analysis (6-8 marks):</strong> Analyse how the writer uses language to create a specific effect (e.g. to build tension, create atmosphere, convey character).</li>
+  <li><strong>Q3 - Structure analysis (6-8 marks):</strong> Analyse how the writer uses structural features to shape meaning and engage the reader.</li>
+  <li><strong>Q4 - Evaluation (12-14 marks):</strong> Evaluate how effectively the writer achieves a specified purpose, supporting your judgement with textual evidence.</li>
 </ol>
 
-<h3>Section B — Writing</h3>
-<p>You will be given a choice of creative writing tasks — typically one narrative prompt and one descriptive prompt. You choose <strong>one</strong>.</p>
+<h3>Section B - Writing</h3>
+<p>You will be given a choice of creative writing tasks - typically one narrative prompt and one descriptive prompt. You choose <strong>one</strong>.</p>
 <ul>
   <li><strong>Narrative:</strong> Write a story based on a given prompt, image, or opening line.</li>
   <li><strong>Descriptive:</strong> Write a description inspired by a given prompt, image, or scenario.</li>
@@ -1781,52 +1742,52 @@ const c2Modules: CourseModule[] = [
 
 <h3>Assessment Objectives for Component 02</h3>
 <ul>
-  <li><strong>AO1</strong> — Identify and interpret explicit and implicit information and ideas.</li>
-  <li><strong>AO2</strong> — Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology.</li>
-  <li><strong>AO4</strong> — Evaluate texts critically and support this with appropriate textual references.</li>
-  <li><strong>AO5</strong> — Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register. Organise information and ideas using structural and grammatical features.</li>
-  <li><strong>AO6</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
+  <li><strong>AO1</strong> - Identify and interpret explicit and implicit information and ideas.</li>
+  <li><strong>AO2</strong> - Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology.</li>
+  <li><strong>AO4</strong> - Evaluate texts critically and support this with appropriate textual references.</li>
+  <li><strong>AO5</strong> - Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register. Organise information and ideas using structural and grammatical features.</li>
+  <li><strong>AO6</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Component 02 differs from Component 01 in that it tests <strong>structure analysis</strong> as a separate question (Q3). This means you must be able to discuss structural techniques — such as shifts in focus, narrative perspective, pacing, and the use of beginnings, middles, and endings — distinctly from language. Prepare for this by practising structural analysis as a standalone skill.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Component 02 differs from Component 01 in that it tests <strong>structure analysis</strong> as a separate question (Q3). This means you must be able to discuss structural techniques - such as shifts in focus, narrative perspective, pacing, and the use of beginnings, middles, and endings - distinctly from language. Prepare for this by practising structural analysis as a standalone skill.</div>
 
 <h3>Recommended Timing Plan</h3>
 <ol>
-  <li><strong>0–10 min:</strong> Read the fiction extract carefully, annotating language choices and structural features.</li>
-  <li><strong>10–20 min:</strong> Answer Q1 (retrieval and inference).</li>
-  <li><strong>20–35 min:</strong> Answer Q2 (language analysis).</li>
-  <li><strong>35–50 min:</strong> Answer Q3 (structure analysis).</li>
-  <li><strong>50–65 min:</strong> Answer Q4 (evaluation).</li>
-  <li><strong>65–75 min:</strong> Choose your writing task and plan it thoroughly.</li>
-  <li><strong>75–115 min:</strong> Write your creative piece.</li>
-  <li><strong>115–120 min:</strong> Proofread your writing.</li>
+  <li><strong>0-10 min:</strong> Read the fiction extract carefully, annotating language choices and structural features.</li>
+  <li><strong>10-20 min:</strong> Answer Q1 (retrieval and inference).</li>
+  <li><strong>20-35 min:</strong> Answer Q2 (language analysis).</li>
+  <li><strong>35-50 min:</strong> Answer Q3 (structure analysis).</li>
+  <li><strong>50-65 min:</strong> Answer Q4 (evaluation).</li>
+  <li><strong>65-75 min:</strong> Choose your writing task and plan it thoroughly.</li>
+  <li><strong>75-115 min:</strong> Write your creative piece.</li>
+  <li><strong>115-120 min:</strong> Proofread your writing.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too little time planning the creative writing task. Students who dive straight into writing often produce unfocused, rambling narratives or descriptions that lose direction. A 10-minute plan — covering structure, key images, opening, climax, and ending — is an investment that pays dividends in coherence and quality.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too little time planning the creative writing task. Students who dive straight into writing often produce unfocused, rambling narratives or descriptions that lose direction. A 10-minute plan - covering structure, key images, opening, climax, and ending - is an investment that pays dividends in coherence and quality.</div>
 
 <h3>How Component 02 Differs from Component 01</h3>
 <ul>
-  <li><strong>Fiction vs non-fiction</strong> — Component 02 uses fiction extracts; Component 01 uses non-fiction.</li>
-  <li><strong>Structure question</strong> — Component 02 has a dedicated structural analysis question that Component 01 does not.</li>
-  <li><strong>No comparison</strong> — Component 02 has only one source text, so there is no AO3 comparison question.</li>
-  <li><strong>Creative vs transactional writing</strong> — Component 02 asks for imaginative/creative writing; Component 01 asks for transactional writing.</li>
-  <li><strong>One writing task</strong> — Component 02 has a single extended writing task, whereas Component 01 has two.</li>
+  <li><strong>Fiction vs non-fiction</strong> - Component 02 uses fiction extracts; Component 01 uses non-fiction.</li>
+  <li><strong>Structure question</strong> - Component 02 has a dedicated structural analysis question that Component 01 does not.</li>
+  <li><strong>No comparison</strong> - Component 02 has only one source text, so there is no AO3 comparison question.</li>
+  <li><strong>Creative vs transactional writing</strong> - Component 02 asks for imaginative/creative writing; Component 01 asks for transactional writing.</li>
+  <li><strong>One writing task</strong> - Component 02 has a single extended writing task, whereas Component 01 has two.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Structural Analysis</strong> — Examining how a writer organises and sequences their text to create effects. This includes the opening and ending, shifts in focus or perspective, pacing, chronology, paragraph length, and how the reader's attention is directed through the text.</div>
+<div class="key-term"><strong>Key Term: Structural Analysis</strong> - Examining how a writer organises and sequences their text to create effects. This includes the opening and ending, shifts in focus or perspective, pacing, chronology, paragraph length, and how the reader's attention is directed through the text.</div>
 
 
 <h3>Worked Example: Character Inference in Action</h3>
 <p><strong>Practice Extract:</strong></p>
 <div class="text-extract">
-Marcus had not spoken to his father in three years. The postcard arrived on a Tuesday — a beach scene, generic and impersonal — with a single line of handwriting. "I'm sorry." No signature. Marcus read it once, then twice, then placed it on the kitchen counter next to the empty coffee mug he'd left that morning. He left it there for a week. When his mother found it, she wept. Marcus felt nothing at all.
+Marcus had not spoken to his father in three years. The postcard arrived on a Tuesday - a beach scene, generic and impersonal - with a single line of handwriting. "I'm sorry." No signature. Marcus read it once, then twice, then placed it on the kitchen counter next to the empty coffee mug he'd left that morning. He left it there for a week. When his mother found it, she wept. Marcus felt nothing at all.
 </div>
 
 <p><strong>Inference Question (examiner style):</strong> What can we infer about Marcus's feelings toward his father's attempt at reconciliation?</p>
 
 <p><strong>Model Response (Grade 9):</strong></p>
 <div class="model-answer">
-Marcus's decision to leave the postcard untouched on the counter suggests that a single apology — unsigned, impersonal — is insufficient to bridge three years of silence. His emotional numbness (we're told "he felt nothing at all") indicates that hurt has calcified into indifference. The contrast with his mother's tears sharpens this reading: she still grieves the relationship; he has apparently moved beyond grief into emotional distance. The fact that he leaves the postcard where she will find it, rather than disposing of it, suggests ambivalence — he cannot forgive, but he cannot quite reject the gesture either.
+Marcus's decision to leave the postcard untouched on the counter suggests that a single apology - unsigned, impersonal - is insufficient to bridge three years of silence. His emotional numbness (we're told "he felt nothing at all") indicates that hurt has calcified into indifference. The contrast with his mother's tears sharpens this reading: she still grieves the relationship; he has apparently moved beyond grief into emotional distance. The fact that he leaves the postcard where she will find it, rather than disposing of it, suggests ambivalence - he cannot forgive, but he cannot quite reject the gesture either.
 </div>
 
 <p><strong>Why This Scores Well:</strong> The response uses textual evidence (specific words, actions, contrasts). It interprets those details to reveal emotional subtext. It acknowledges complexity and ambiguity rather than settling for one-dimensional conclusions.</p>
@@ -1836,7 +1797,7 @@ Marcus's decision to leave the postcard untouched on the counter suggests that a
 <ol>
 <li><strong>Identify what the character does/says:</strong> Quote the action or dialogue. "Marcus places the postcard on the counter."</li>
 <li><strong>Consider the alternatives the character rejects:</strong> He could have read it repeatedly, framed it, hidden it, destroyed it. He does none of these. Rejection of alternatives tells us something.</li>
-<li><strong>Layer in physical or emotional details:</strong> "He felt nothing at all" contradicts what we might expect — relief, anger, longing. The contradiction reveals depth.</li>
+<li><strong>Layer in physical or emotional details:</strong> "He felt nothing at all" contradicts what we might expect - relief, anger, longing. The contradiction reveals depth.</li>
 <li><strong>Consider context:</strong> Three years of silence precedes this moment. That time matters. A postcard immediately after the argument means something different than one after a decade.</li>
 <li><strong>Draw your inference:</strong> Based on actions, rejections, and contrasts, what emotional truth does the character embody?</li>
 </ol>
@@ -1850,14 +1811,14 @@ Marcus's decision to leave the postcard untouched on the counter suggests that a
 <h3>Practice: Character Inference Task</h3>
 <p><strong>Extract (provided):</strong></p>
 <div class="text-extract">
-When the job offer arrived, Priya read the letter five times. She did not open the email with the contract. She did not call her parents. Instead, she went to the old oak tree at the end of her street — the one where she and her friends had carved their initials ten years ago — and sat on the lowest branch until dark. When she finally came home, her mother asked if she had good news. Priya smiled and said nothing.
+When the job offer arrived, Priya read the letter five times. She did not open the email with the contract. She did not call her parents. Instead, she went to the old oak tree at the end of her street - the one where she and her friends had carved their initials ten years ago - and sat on the lowest branch until dark. When she finally came home, her mother asked if she had good news. Priya smiled and said nothing.
 </div>
 
 <p><strong>Inference Question:</strong> What can we infer about Priya's emotional state regarding the job offer?</p>
 
 <p><strong>Model Response:</strong></p>
 <div class="model-answer">
-Priya's reluctance to engage with the formal elements of the offer — she reads the letter repeatedly but avoids opening the contract, does not share the news with her family — suggests that this opportunity creates anxiety rather than joy. Her retreat to the oak tree, a site of nostalgic memory and lost youth, implies that she is grappling with what acceptance would mean: a departure from her past, a step into adulthood that perhaps frightens her. Her smile to her mother followed by silence indicates a performance of happiness masking ambivalence or fear. The repetition of her reading (five times) suggests she is searching for a reason to refuse it, or wrestling with a decision that feels anything but straightforward.
+Priya's reluctance to engage with the formal elements of the offer - she reads the letter repeatedly but avoids opening the contract, does not share the news with her family - suggests that this opportunity creates anxiety rather than joy. Her retreat to the oak tree, a site of nostalgic memory and lost youth, implies that she is grappling with what acceptance would mean: a departure from her past, a step into adulthood that perhaps frightens her. Her smile to her mother followed by silence indicates a performance of happiness masking ambivalence or fear. The repetition of her reading (five times) suggests she is searching for a reason to refuse it, or wrestling with a decision that feels anything but straightforward.
 </div>
 
 `,
@@ -1865,12 +1826,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
       {
         id: 'ocr-lc2-m1-q1',
         question: 'How long do students have to complete OCR Component 02?',
-        options: [
-          '1 hour 30 minutes',
-          '1 hour 45 minutes',
-          '1 hour 55 minutes',
-          '2 hours',
-        ],
+        options: ['1 hour 30 minutes', '1 hour 45 minutes', '1 hour 55 minutes', '2 hours'],
         correct: 3,
         explanation:
           'OCR Component 02 is 2 hours long (120 minutes). This should be divided between reading (approximately 65 minutes) and writing (approximately 50 minutes), with 5 minutes for proofreading.',
@@ -1890,7 +1846,8 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
       },
       {
         id: 'ocr-lc2-m1-q3',
-        question: 'What distinguishes Component 02 from Component 01 in terms of reading questions?',
+        question:
+          'What distinguishes Component 02 from Component 01 in terms of reading questions?',
         options: [
           'Component 02 has a comparison question',
           'Component 02 has a dedicated structural analysis question',
@@ -1904,7 +1861,12 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
       {
         id: 'ocr-lc2-m1-q4',
         question: 'How many writing tasks must you complete in Section B of Component 02?',
-        options: ['One from a choice', 'Two compulsory tasks', 'Three short tasks', 'One compulsory task'],
+        options: [
+          'One from a choice',
+          'Two compulsory tasks',
+          'Three short tasks',
+          'One compulsory task',
+        ],
         correct: 0,
         explanation:
           'Section B offers a choice between a narrative and a descriptive writing task. You choose and complete one extended creative piece worth 40 marks.',
@@ -1926,21 +1888,21 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 2 — Reading Fiction: Comprehension & Character Inference
+  // MODULE 2 - Reading Fiction: Comprehension & Character Inference
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m2',
     title: 'Reading Fiction: Comprehension & Character Inference',
     duration: '50 min',
     content: `
-<h2>Comprehension and Inference in Fiction — Understanding Character, Setting, and Situation</h2>
+<h2>Comprehension and Inference in Fiction - Understanding Character, Setting, and Situation</h2>
 
-<p>The opening questions of Component 02 Section A test your ability to retrieve information and make inferences from a fiction extract. Fiction inference often centres on <strong>character</strong> — what a character thinks, feels, and is like — as well as <strong>setting</strong> and <strong>atmosphere</strong>.</p>
+<p>The opening questions of Component 02 Section A test your ability to retrieve information and make inferences from a fiction extract. Fiction inference often centres on <strong>character</strong> - what a character thinks, feels, and is like - as well as <strong>setting</strong> and <strong>atmosphere</strong>.</p>
 
-<div class="key-term"><strong>Key Term: Characterisation</strong> — The methods a writer uses to create and reveal a character. This includes what the character says (dialogue), what they do (actions), what they think (internal monologue), how they are described (appearance), and how others respond to them (reactions).</div>
+<div class="key-term"><strong>Key Term: Characterisation</strong> - The methods a writer uses to create and reveal a character. This includes what the character says (dialogue), what they do (actions), what they think (internal monologue), how they are described (appearance), and how others respond to them (reactions).</div>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">Ellis stood at the kitchen window, watching the rain slide down the glass in slow, uncertain trails. Behind her, the radio murmured the football results to an empty room. She had not moved for twenty minutes. The tea beside her had gone cold, a skin forming on its surface like a tiny frozen lake. When her phone buzzed on the counter, she flinched — then let it ring. Three times it buzzed before falling silent. She picked it up, read the name on the screen, and placed it face-down on the counter without answering. Her jaw tightened. She turned back to the window.<div class="source">From an unpublished novel extract</div></div>
+<div class="text-extract">Ellis stood at the kitchen window, watching the rain slide down the glass in slow, uncertain trails. Behind her, the radio murmured the football results to an empty room. She had not moved for twenty minutes. The tea beside her had gone cold, a skin forming on its surface like a tiny frozen lake. When her phone buzzed on the counter, she flinched - then let it ring. Three times it buzzed before falling silent. She picked it up, read the name on the screen, and placed it face-down on the counter without answering. Her jaw tightened. She turned back to the window.<div class="source">From an unpublished novel extract</div></div>
 
 <h3>Retrieval in Fiction</h3>
 <p>A typical retrieval question might read: <em>"How long has Ellis been standing at the window?"</em></p>
@@ -1950,9 +1912,9 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <p>A more demanding question might read: <em>"What impressions do you get of Ellis's state of mind? Use evidence from the text to support your answer."</em></p>
 
 <div class="model-answer"><strong>Model Answer:</strong>
-<p>Ellis appears to be in a state of emotional distress or deep preoccupation. The detail that she "had not moved for twenty minutes" suggests she is paralysed by thought or emotion — her stillness is not restful but heavy, as if she is unable to act. The cold tea with "a skin forming on its surface like a tiny frozen lake" reinforces this impression: the simile emphasises stagnation, suggesting that time has passed without Ellis engaging with the world around her.</p>
+<p>Ellis appears to be in a state of emotional distress or deep preoccupation. The detail that she "had not moved for twenty minutes" suggests she is paralysed by thought or emotion - her stillness is not restful but heavy, as if she is unable to act. The cold tea with "a skin forming on its surface like a tiny frozen lake" reinforces this impression: the simile emphasises stagnation, suggesting that time has passed without Ellis engaging with the world around her.</p>
 
-<p>Her response to the phone call is particularly revealing. The verb "flinched" implies the call startles her, but also that she associates the caller with something painful or unwanted. Her deliberate decision to let it ring, read the name, and place it "face-down on the counter" suggests avoidance — she knows who is calling and consciously refuses to engage. The physical detail of her jaw tightening conveys suppressed emotion: anger, determination, or the effort of holding back tears. The final sentence — "She turned back to the window" — returns her to her original position, creating a sense of circularity that implies she is trapped in her emotional state, unable to move forward.</p></div>
+<p>Her response to the phone call is particularly revealing. The verb "flinched" implies the call startles her, but also that she associates the caller with something painful or unwanted. Her deliberate decision to let it ring, read the name, and place it "face-down on the counter" suggests avoidance - she knows who is calling and consciously refuses to engage. The physical detail of her jaw tightening conveys suppressed emotion: anger, determination, or the effort of holding back tears. The final sentence - "She turned back to the window" - returns her to her original position, creating a sense of circularity that implies she is trapped in her emotional state, unable to move forward.</p></div>
 
 <h3>Practice Passage 1: Grade 5 Student Response (Weak Inference)</h3>
 <div class="text-extract">Marcus stood at the door for a long time. He was holding a letter in his hand. His wife had left a note on the table. Marcus put the letter down and walked to the window. He looked out at the garden. The plants were dead. He sat down on the sofa. The television was on but he wasn't watching it. He stood up again.<div class="source">From a student attempt</div></div>
@@ -1961,15 +1923,15 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <div class="examiner-commentary"><strong style="color: #c41e3a;">Grade 5 Response:</strong> <em>"Marcus is upset because his wife has left him. He is sad because the plants are dead. He is restless because he keeps standing up and sitting down."</em>
 
-<strong style="color: #c41e3a;">Examiner Comment:</strong> This response tells us facts ("Marcus is upset") but doesn't explain how the text conveys this. There's no analysis of technique or deeper inference. The student also misinterprets the relationship between the wife's note and the letter Marcus is holding — are they the same thing, or different? The response lacks precision. The detail about the dead plants is noticed but not analysed for its possible symbolic meaning (the garden's neglect mirroring emotional neglect, or Marcus's inability to nurture anything, including his marriage). The observation about restlessness is valid but unsupported — why does repeated action and inaction suggest restlessness rather than, say, shock or numbness? A Grade 5 response names emotions without proving them.</div></div>
+<strong style="color: #c41e3a;">Examiner Comment:</strong> This response tells us facts ("Marcus is upset") but doesn't explain how the text conveys this. There's no analysis of technique or deeper inference. The student also misinterprets the relationship between the wife's note and the letter Marcus is holding - are they the same thing, or different? The response lacks precision. The detail about the dead plants is noticed but not analysed for its possible symbolic meaning (the garden's neglect mirroring emotional neglect, or Marcus's inability to nurture anything, including his marriage). The observation about restlessness is valid but unsupported - why does repeated action and inaction suggest restlessness rather than, say, shock or numbness? A Grade 5 response names emotions without proving them.</div></div>
 
 <h3>Practice Passage 2: Grade 9 Student Response (Strong Inference)</h3>
 
-<div class="examiner-commentary"><strong style="color: #006400;">Grade 9 Response:</strong> <em>"Marcus's behaviour suggests a man in the grip of shock and denial. The fact that he 'stood at the door for a long time' is a moment of paralysis — he cannot move forward, both literally and metaphorically. The repeated cycle of 'sat down...stood up again' mirrors the physical restlessness of someone whose mind is in turmoil. He cannot settle because his emotional ground has shifted.</em>
+<div class="examiner-commentary"><strong style="color: #006400;">Grade 9 Response:</strong> <em>"Marcus's behaviour suggests a man in the grip of shock and denial. The fact that he 'stood at the door for a long time' is a moment of paralysis - he cannot move forward, both literally and metaphorically. The repeated cycle of 'sat down...stood up again' mirrors the physical restlessness of someone whose mind is in turmoil. He cannot settle because his emotional ground has shifted.</em>
 
-<em>The letter and the wife's note are clearly sources of devastating news. Rather than reading them again (which we might expect of someone processing difficult information), Marcus displaces his focus onto the dead plants. This is a psychological displacement — he cannot yet face the contents of the letters, so he deflects onto something external. The pathetic fallacy of the dead garden suggests the emotional deadness spreading from his personal crisis into his perception of the world around him. The television 'on but not watched' reinforces this: he is going through the motions of normal life while internally collapsed."</em>
+<em>The letter and the wife's note are clearly sources of devastating news. Rather than reading them again (which we might expect of someone processing difficult information), Marcus displaces his focus onto the dead plants. This is a psychological displacement - he cannot yet face the contents of the letters, so he deflects onto something external. The pathetic fallacy of the dead garden suggests the emotional deadness spreading from his personal crisis into his perception of the world around him. The television 'on but not watched' reinforces this: he is going through the motions of normal life while internally collapsed."</em>
 
-<strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated inference. The student moves beyond 'Marcus is upset' to explain the psychological mechanisms of his response — paralysis, displacement, pathetic fallacy. The repetition of standing and sitting is analysed as a reflection of mental turmoil, not merely as restlessness. The student recognises that the letter and the wife's note are connected to his state, and infers the relationship intelligently. The observation about the television is particularly sophisticated: 'going through the motions' demonstrates an understanding of dissociation and emotional shutdown that goes well beyond the text's surface. Grade 9 inferences are grounded in textual detail but also show understanding of human psychology.</strong></div></div>
+<strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated inference. The student moves beyond 'Marcus is upset' to explain the psychological mechanisms of his response - paralysis, displacement, pathetic fallacy. The repetition of standing and sitting is analysed as a reflection of mental turmoil, not merely as restlessness. The student recognises that the letter and the wife's note are connected to his state, and infers the relationship intelligently. The observation about the television is particularly sophisticated: 'going through the motions' demonstrates an understanding of dissociation and emotional shutdown that goes well beyond the text's surface. Grade 9 inferences are grounded in textual detail but also show understanding of human psychology.</strong></div></div>
 
 <h3>Grade Boundary Breakdown: Fiction Inference</h3>
 
@@ -1989,7 +1951,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <ul>
   <li><strong>Confusing inference with guessing:</strong> "Marcus must have won the lottery" is unsupported guessing. Inference must be grounded in textual evidence. Stick to what the text allows.</li>
-  <li><strong>Ignoring what characters DON'T do:</strong> In the practice extract, Ellis doesn't answer the phone, doesn't drink her tea, doesn't move — these absences are highly informative.</li>
+  <li><strong>Ignoring what characters DON'T do:</strong> In the practice extract, Ellis doesn't answer the phone, doesn't drink her tea, doesn't move - these absences are highly informative.</li>
   <li><strong>Treating all inferences as equally valid:</strong> Some inferences are supported by stronger evidence than others. "The text suggests Ellis is avoiding someone" is more strongly supported than "Ellis is guilty of something."</li>
   <li><strong>Not connecting inference to technique:</strong> An inference answer should explain HOW the writer conveys the emotional state, not just WHAT state it is.</li>
   <li><strong>Making inferences that contradict the text:</strong> If the text shows a character smiling and joking, you cannot infer they are sad unless there's evidence of irony or performance.</li>
@@ -2000,7 +1962,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <ol>
   <li><strong>Identify a specific action or detail.</strong> <em>"Ellis placed the phone face-down on the counter."</em></li>
   <li><strong>Explain what this tells us.</strong> <em>"This action suggests she knows who is calling and is deliberately avoiding them."</em></li>
-  <li><strong>Connect to a larger emotional or psychological state.</strong> <em>"This indicates a state of conflict or avoidance — she wants nothing to do with the caller."</em></li>
+  <li><strong>Connect to a larger emotional or psychological state.</strong> <em>"This indicates a state of conflict or avoidance - she wants nothing to do with the caller."</em></li>
   <li><strong>Consider what she's NOT doing.</strong> <em>"She doesn't answer. She doesn't call back later. Her jaw tightens. This suggests not just avoidance but active suppression of emotion."</em></li>
   <li><strong>Build a composite picture.</strong> <em>"Taken together, these details suggest Ellis is in a state of emotional distress, caused by this particular person, and is actively preventing herself from engaging."</em></li>
 </ol>
@@ -2008,11 +1970,11 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <h3>The Five Methods of Characterisation</h3>
 <p>When inferring character, look for these five channels:</p>
 <ol>
-  <li><strong>Actions</strong> — What does the character do? Ellis places the phone face-down — a deliberate, controlled action.</li>
-  <li><strong>Speech/Dialogue</strong> — What does the character say (or not say)? Ellis does not speak at all, which itself reveals isolation.</li>
-  <li><strong>Thoughts</strong> — If the narrative gives access to internal monologue, what is the character thinking?</li>
-  <li><strong>Appearance</strong> — Physical description can reveal emotion, status, or personality.</li>
-  <li><strong>Reactions of others</strong> — How do other characters respond to them? (Not always available in short extracts.)</li>
+  <li><strong>Actions</strong> - What does the character do? Ellis places the phone face-down - a deliberate, controlled action.</li>
+  <li><strong>Speech/Dialogue</strong> - What does the character say (or not say)? Ellis does not speak at all, which itself reveals isolation.</li>
+  <li><strong>Thoughts</strong> - If the narrative gives access to internal monologue, what is the character thinking?</li>
+  <li><strong>Appearance</strong> - Physical description can reveal emotion, status, or personality.</li>
+  <li><strong>Reactions of others</strong> - How do other characters respond to them? (Not always available in short extracts.)</li>
 </ol>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> In fiction extracts, <strong>what a character does NOT do</strong> can be as revealing as what they do. Ellis does not answer the phone, does not drink her tea, does not move. These absences of action are deliberate authorial choices that reveal her emotional state. The best inference answers recognise and explore these gaps.</div>
@@ -2020,12 +1982,12 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <h3>Inferring Setting and Atmosphere</h3>
 <p>Fiction extracts often use setting to mirror or contrast with character emotion:</p>
 <ul>
-  <li><strong>Pathetic fallacy</strong> — The rain in the extract mirrors Ellis's melancholy.</li>
-  <li><strong>Domestic detail</strong> — The cold tea, the murmuring radio, and the empty room create an atmosphere of loneliness and neglect.</li>
-  <li><strong>Sensory detail</strong> — What can the character (and reader) see, hear, feel, smell, or taste? These details build the world of the extract.</li>
+  <li><strong>Pathetic fallacy</strong> - The rain in the extract mirrors Ellis's melancholy.</li>
+  <li><strong>Domestic detail</strong> - The cold tea, the murmuring radio, and the empty room create an atmosphere of loneliness and neglect.</li>
+  <li><strong>Sensory detail</strong> - What can the character (and reader) see, hear, feel, smell, or taste? These details build the world of the extract.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Making inferences that are not supported by the text. It would be wrong to say "Ellis is angry because her partner has cheated on her" — the text does not provide this information. Inferences must be grounded in textual evidence. You can say "Ellis appears to be avoiding someone" because the evidence supports this, but you cannot invent backstory.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Making inferences that are not supported by the text. It would be wrong to say "Ellis is angry because her partner has cheated on her" - the text does not provide this information. Inferences must be grounded in textual evidence. You can say "Ellis appears to be avoiding someone" because the evidence supports this, but you cannot invent backstory.</div>
 
 <h3>Key Inference Phrases for Fiction</h3>
 <ul>
@@ -2036,7 +1998,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
   <li><em>The absence of [speech/movement] suggests...</em></li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Pathetic Fallacy</strong> — A literary device in which the natural world (especially weather) reflects or mirrors the emotions of a character. For example, a storm during a moment of anger, or sunshine during a moment of joy. It is a subset of personification.</div>
+<div class="key-term"><strong>Key Term: Pathetic Fallacy</strong> - A literary device in which the natural world (especially weather) reflects or mirrors the emotions of a character. For example, a storm during a moment of anger, or sunshine during a moment of joy. It is a subset of personification.</div>
 `,
     quiz: [
       {
@@ -2063,20 +2025,20 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
         ],
         correct: 1,
         explanation:
-          'Placing the phone face-down after reading the caller\'s name is a deliberate act of avoidance — she knows who is calling and consciously refuses to engage. This reveals suppressed emotion and conflict.',
+          "Placing the phone face-down after reading the caller's name is a deliberate act of avoidance - she knows who is calling and consciously refuses to engage. This reveals suppressed emotion and conflict.",
       },
       {
         id: 'ocr-lc2-m2-q3',
         question: 'What is "pathetic fallacy"?',
         options: [
           'A logical error in an argument',
-          'A literary device where weather or nature mirrors a character\'s emotions',
+          "A literary device where weather or nature mirrors a character's emotions",
           'A type of unreliable narration',
           'Exaggeration for comic effect',
         ],
         correct: 1,
         explanation:
-          'Pathetic fallacy is when the natural world (especially weather) reflects a character\'s emotions — such as rain mirroring sadness or a storm accompanying anger.',
+          "Pathetic fallacy is when the natural world (especially weather) reflects a character's emotions - such as rain mirroring sadness or a storm accompanying anger.",
       },
       {
         id: 'ocr-lc2-m2-q4',
@@ -2095,56 +2057,56 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 3 — Language Analysis in Fiction
+  // MODULE 3 - Language Analysis in Fiction
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m3',
     title: 'Language Analysis in Fiction',
     duration: '55 min',
     content: `
-<h2>Analysing Language in Fiction — How Writers Create Atmosphere, Character, and Tension</h2>
+<h2>Analysing Language in Fiction - How Writers Create Atmosphere, Character, and Tension</h2>
 
-<p>The language analysis question in Component 02 (Q2) typically asks you to examine how a writer uses language to create a specific effect — often <strong>atmosphere</strong>, <strong>tension</strong>, or <strong>characterisation</strong>. This question is worth <strong>6–8 marks</strong> and tests <strong>AO2</strong>.</p>
+<p>The language analysis question in Component 02 (Q2) typically asks you to examine how a writer uses language to create a specific effect - often <strong>atmosphere</strong>, <strong>tension</strong>, or <strong>characterisation</strong>. This question is worth <strong>6-8 marks</strong> and tests <strong>AO2</strong>.</p>
 
-<div class="key-term"><strong>Key Term: Atmosphere</strong> — The mood or feeling that pervades a scene. Writers create atmosphere through setting, word choice, imagery, and pacing. Common atmospheres include: threatening, tranquil, claustrophobic, melancholic, euphoric, eerie, and oppressive.</div>
+<div class="key-term"><strong>Key Term: Atmosphere</strong> - The mood or feeling that pervades a scene. Writers create atmosphere through setting, word choice, imagery, and pacing. Common atmospheres include: threatening, tranquil, claustrophobic, melancholic, euphoric, eerie, and oppressive.</div>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">The corridor stretched ahead of her, longer than it had any right to be. The fluorescent light above the fire exit had begun to flicker — a small, insistent pulse that turned the walls from grey to briefly, horribly white. Her footsteps sounded too loud. She was sure they had not sounded this loud on the way in. The door at the far end was closed, though she could have sworn she had left it open. She stopped. Listened. Nothing. And yet the absence of sound felt deliberate, as if the silence were holding its breath.<div class="source">From an unpublished short story</div></div>
+<div class="text-extract">The corridor stretched ahead of her, longer than it had any right to be. The fluorescent light above the fire exit had begun to flicker - a small, insistent pulse that turned the walls from grey to briefly, horribly white. Her footsteps sounded too loud. She was sure they had not sounded this loud on the way in. The door at the far end was closed, though she could have sworn she had left it open. She stopped. Listened. Nothing. And yet the absence of sound felt deliberate, as if the silence were holding its breath.<div class="source">From an unpublished short story</div></div>
 
 <h3>Analysing Language for Atmosphere and Tension</h3>
-<p>Use the same <strong>What–How–Why</strong> framework from Component 01, but focus on fiction-specific effects:</p>
+<p>Use the same <strong>What-How-Why</strong> framework from Component 01, but focus on fiction-specific effects:</p>
 
 <div class="model-answer"><strong>Model Answer:</strong>
-<p>The writer creates an intensely unsettling atmosphere through language that personifies the environment and distorts the protagonist's perceptions. The corridor "stretched ahead of her, longer than it had any right to be" — the personification of the corridor having "rights" implies it is behaving unnaturally, as if the building itself is working against her. The phrase "any right to be" also carries a colloquial, almost indignant tone, which grounds the supernatural unease in a recognisable human reaction.</p>
+<p>The writer creates an intensely unsettling atmosphere through language that personifies the environment and distorts the protagonist's perceptions. The corridor "stretched ahead of her, longer than it had any right to be" - the personification of the corridor having "rights" implies it is behaving unnaturally, as if the building itself is working against her. The phrase "any right to be" also carries a colloquial, almost indignant tone, which grounds the supernatural unease in a recognisable human reaction.</p>
 
-<p>The flickering light is described as "a small, insistent pulse," and the word <strong>"pulse"</strong> is particularly effective. Its connotations of a heartbeat transform the mechanical malfunction into something organic and alive, suggesting the building has a sinister vitality. The phrase "turned the walls from grey to briefly, horribly white" uses the adverb <strong>"horribly"</strong> to inject terror into something as mundane as fluorescent lighting — the whiteness is not merely bright but actively distressing, as if the light is exposing something that should remain hidden.</p>
+<p>The flickering light is described as "a small, insistent pulse," and the word <strong>"pulse"</strong> is particularly effective. Its connotations of a heartbeat transform the mechanical malfunction into something organic and alive, suggesting the building has a sinister vitality. The phrase "turned the walls from grey to briefly, horribly white" uses the adverb <strong>"horribly"</strong> to inject terror into something as mundane as fluorescent lighting - the whiteness is not merely bright but actively distressing, as if the light is exposing something that should remain hidden.</p>
 
-<p>The climax of the passage — <em>"the silence were holding its breath"</em> — is a masterful use of personification. Silence is given agency and intention; it is not merely an absence of sound but a <em>presence</em> that is waiting. The phrase "holding its breath" implies anticipation — something is about to happen. This transforms the reader from a passive observer into someone braced for an event, mirroring the protagonist's fear.</p></div>
+<p>The climax of the passage - <em>"the silence were holding its breath"</em> - is a masterful use of personification. Silence is given agency and intention; it is not merely an absence of sound but a <em>presence</em> that is waiting. The phrase "holding its breath" implies anticipation - something is about to happen. This transforms the reader from a passive observer into someone braced for an event, mirroring the protagonist's fear.</p></div>
 
 <h3>Fiction-Specific Language Techniques</h3>
 <ul>
-  <li><strong>Sensory imagery</strong> — Visual, auditory, tactile, olfactory, gustatory details that immerse the reader in the scene.</li>
-  <li><strong>Personification</strong> — Giving human qualities to non-human things. Particularly powerful in gothic or horror writing.</li>
-  <li><strong>Pathetic fallacy</strong> — Weather/environment reflecting character emotion.</li>
-  <li><strong>Symbolism</strong> — Objects or details that represent broader ideas (e.g. a closed door symbolising blocked escape).</li>
-  <li><strong>Foreshadowing</strong> — Hints or clues about what will happen later. Creates dramatic irony and tension.</li>
-  <li><strong>Semantic field</strong> — A group of words related to the same theme (e.g. words related to death, confinement, or nature).</li>
-  <li><strong>Juxtaposition</strong> — Placing contrasting elements side by side (e.g. beauty and decay, safety and danger).</li>
-  <li><strong>Shifts in register</strong> — Moving between formal and informal language to reflect character or narrative tone.</li>
+  <li><strong>Sensory imagery</strong> - Visual, auditory, tactile, olfactory, gustatory details that immerse the reader in the scene.</li>
+  <li><strong>Personification</strong> - Giving human qualities to non-human things. Particularly powerful in gothic or horror writing.</li>
+  <li><strong>Pathetic fallacy</strong> - Weather/environment reflecting character emotion.</li>
+  <li><strong>Symbolism</strong> - Objects or details that represent broader ideas (e.g. a closed door symbolising blocked escape).</li>
+  <li><strong>Foreshadowing</strong> - Hints or clues about what will happen later. Creates dramatic irony and tension.</li>
+  <li><strong>Semantic field</strong> - A group of words related to the same theme (e.g. words related to death, confinement, or nature).</li>
+  <li><strong>Juxtaposition</strong> - Placing contrasting elements side by side (e.g. beauty and decay, safety and danger).</li>
+  <li><strong>Shifts in register</strong> - Moving between formal and informal language to reflect character or narrative tone.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing fiction language, always connect your analysis to the <strong>reader's experience</strong>. Don't just say what the technique does in isolation — explain how it makes the reader <em>feel</em>. Fear, sympathy, unease, anticipation, disgust — these are the emotional responses that fiction is designed to create. Name the emotion and explain how the language triggers it.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing fiction language, always connect your analysis to the <strong>reader's experience</strong>. Don't just say what the technique does in isolation - explain how it makes the reader <em>feel</em>. Fear, sympathy, unease, anticipation, disgust - these are the emotional responses that fiction is designed to create. Name the emotion and explain how the language triggers it.</div>
 
 <h3>Analysing Dialogue</h3>
 <p>Fiction extracts often include dialogue, which requires specific analytical attention:</p>
 <ul>
-  <li><strong>What is said</strong> — The content of the speech reveals character, conflict, and relationship dynamics.</li>
-  <li><strong>How it is said</strong> — Reporting verbs (whispered, snapped, muttered) convey tone and emotion.</li>
-  <li><strong>What is NOT said</strong> — Pauses, unfinished sentences, and evasive answers can be more revealing than what is spoken.</li>
-  <li><strong>Power dynamics</strong> — Who speaks more? Who interrupts? Who asks questions and who gives orders?</li>
+  <li><strong>What is said</strong> - The content of the speech reveals character, conflict, and relationship dynamics.</li>
+  <li><strong>How it is said</strong> - Reporting verbs (whispered, snapped, muttered) convey tone and emotion.</li>
+  <li><strong>What is NOT said</strong> - Pauses, unfinished sentences, and evasive answers can be more revealing than what is spoken.</li>
+  <li><strong>Power dynamics</strong> - Who speaks more? Who interrupts? Who asks questions and who gives orders?</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Confusing language analysis with structure analysis. Language analysis focuses on <em>word-level</em> and <em>phrase-level</em> choices — the writer's diction, imagery, and figurative language. Structure analysis (covered in the next module) focuses on how the text is <em>organised</em> — paragraph order, shifts in focus, pacing, and narrative sequence. OCR tests these as separate questions, so you must keep them distinct.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Confusing language analysis with structure analysis. Language analysis focuses on <em>word-level</em> and <em>phrase-level</em> choices - the writer's diction, imagery, and figurative language. Structure analysis (covered in the next module) focuses on how the text is <em>organised</em> - paragraph order, shifts in focus, pacing, and narrative sequence. OCR tests these as separate questions, so you must keep them distinct.</div>
 
 <h3>Worked Example: Annotated Student Responses</h3>
 
@@ -2163,15 +2125,15 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <div style="border: 2px solid #2ecc71; padding: 15px; margin: 15px 0; background-color: #f0fff5;">
 <p><strong>Extract:</strong> <em>"The corridor stretched ahead of her, longer than it had any right to be."</em></p>
 
-<p><strong>Student Answer:</strong> "The personification of the corridor — 'longer than it had any right to be' — is unsettling because it suggests the building is behaving unnaturally, actively defying expectation. By granting the corridor 'rights' (implying agency and intentionality), the writer transforms a neutral space into something with malevolent consciousness. The phrase 'any right' also carries a colloquial, almost injured tone — as if the narrator is indignant that the corridor dares to defy her expectations. This compounds the unease: not only is the space expanding impossibly, but there's a sense that it is doing so deliberately, against the protagonist's will. The effect is to create profound disorientation — the familiar world (a corridor) has become hostile and sentient."</p>
+<p><strong>Student Answer:</strong> "The personification of the corridor - 'longer than it had any right to be' - is unsettling because it suggests the building is behaving unnaturally, actively defying expectation. By granting the corridor 'rights' (implying agency and intentionality), the writer transforms a neutral space into something with malevolent consciousness. The phrase 'any right' also carries a colloquial, almost injured tone - as if the narrator is indignant that the corridor dares to defy her expectations. This compounds the unease: not only is the space expanding impossibly, but there's a sense that it is doing so deliberately, against the protagonist's will. The effect is to create profound disorientation - the familiar world (a corridor) has become hostile and sentient."</p>
 
-<p><strong style="color: #006400;">Examiner Comment:</strong> This response goes far beyond technique identification. The student explains the precise mechanism by which personification creates unease: by granting agency, it makes something familiar become hostile. The observation about the colloquial tone ('any right') is sophisticated — showing that the student has understood the phrase's connotations beyond its literal meaning. The final statement about disorientation is a strong concluding interpretation that synthesises the analysis. Grade 9 analysis explains WHAT a technique does, HOW it works, and WHY it creates the specific emotional or atmospheric effect.</p>
+<p><strong style="color: #006400;">Examiner Comment:</strong> This response goes far beyond technique identification. The student explains the precise mechanism by which personification creates unease: by granting agency, it makes something familiar become hostile. The observation about the colloquial tone ('any right') is sophisticated - showing that the student has understood the phrase's connotations beyond its literal meaning. The final statement about disorientation is a strong concluding interpretation that synthesises the analysis. Grade 9 analysis explains WHAT a technique does, HOW it works, and WHY it creates the specific emotional or atmospheric effect.</p>
 </div>
 
 <h3>Grade Boundary Breakdown: Language Analysis in Fiction</h3>
 
 <div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 9 (7-8 marks):</strong> Identifies and analyses sophisticated language techniques with precision. Explains the mechanism of each technique — how it works and why it creates the specified effect. Considers multiple layers of meaning (literal, connotative, emotional). Uses precise subject terminology. Makes sophisticated links between technique and reader experience. Shows that techniques work together to create cumulative effects.
+<strong>Grade 9 (7-8 marks):</strong> Identifies and analyses sophisticated language techniques with precision. Explains the mechanism of each technique - how it works and why it creates the specified effect. Considers multiple layers of meaning (literal, connotative, emotional). Uses precise subject terminology. Makes sophisticated links between technique and reader experience. Shows that techniques work together to create cumulative effects.
 </div>
 
 <div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
@@ -2184,7 +2146,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <h3>Practice Passage with Annotation Guide</h3>
 
-<div class="text-extract"><em>The rain fell in fat, indifferent drops that splattered against the window like tiny fists punching for attention. Sarah watched each drop race against its neighbours, some winning, some losing, and she thought: this is how I feel. The glass was cold against her forehead, and in its reflection she could see the room behind her — her mother's room, full of yesterday's light and the furniture's tired geometry. She turned away.</em></div>
+<div class="text-extract"><em>The rain fell in fat, indifferent drops that splattered against the window like tiny fists punching for attention. Sarah watched each drop race against its neighbours, some winning, some losing, and she thought: this is how I feel. The glass was cold against her forehead, and in its reflection she could see the room behind her - her mother's room, full of yesterday's light and the furniture's tired geometry. She turned away.</em></div>
 
 <h4>How to Analyse This Passage:</h4>
 
@@ -2192,11 +2154,11 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <p><strong>2. Explain what it is:</strong> The rain is given human qualities (fists, punching, seeking attention).</p>
 
-<p><strong>3. Explain how it works:</strong> By comparing rain to human aggression, the writer makes a meteorological phenomenon feel intentional and aggressive. The word "indifferent" in the first phrase complicates this — the drops are aggressive but don't care about their aggression. They're punching but emotionally detached.</p>
+<p><strong>3. Explain how it works:</strong> By comparing rain to human aggression, the writer makes a meteorological phenomenon feel intentional and aggressive. The word "indifferent" in the first phrase complicates this - the drops are aggressive but don't care about their aggression. They're punching but emotionally detached.</p>
 
-<p><strong>4. Connect to reader experience and character emotion:</strong> The simile mirrors Sarah's emotional state — she feels emotionally overwhelmed and insignificant, like rain buffeting a window. The personification also reveals her psychological projection: she is reading human emotion (frustration, desperation) into a natural process, suggesting her own emotional intensity is so high that she sees the world through the lens of her inner turmoil.</p>
+<p><strong>4. Connect to reader experience and character emotion:</strong> The simile mirrors Sarah's emotional state - she feels emotionally overwhelmed and insignificant, like rain buffeting a window. The personification also reveals her psychological projection: she is reading human emotion (frustration, desperation) into a natural process, suggesting her own emotional intensity is so high that she sees the world through the lens of her inner turmoil.</p>
 
-<p><strong>5. Consider cumulative effects:</strong> The pathetic fallacy (weather reflecting emotion), the personification, and the explicit statement "this is how I feel" work together to blur the boundary between Sarah's internal state and external reality. A less skilled writer might say "Sarah felt sad" — instead, this writer shows us sadness through the prism of rainfall, creating a far more vivid and psychologically complex representation.</p>
+<p><strong>5. Consider cumulative effects:</strong> The pathetic fallacy (weather reflecting emotion), the personification, and the explicit statement "this is how I feel" work together to blur the boundary between Sarah's internal state and external reality. A less skilled writer might say "Sarah felt sad" - instead, this writer shows us sadness through the prism of rainfall, creating a far more vivid and psychologically complex representation.</p>
 
 <h3>Worked Examples: Multiple Techniques in One Sentence</h3>
 
@@ -2205,7 +2167,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <p><strong>Techniques present:</strong> Simile, metaphor (memory as object), personification (memory can sit)</p>
 
-<p><strong>Analysis:</strong> The simile "like a stone" conveys weight and immobility — the memory is burdensome and cannot be shaken. The implicit metaphor of the memory as a physical object suggests it has material presence in her body. The choice of "chest" (rather than mind, heart, or head) is significant: the chest is the location of the heart, suggesting the memory is emotionally charged rather than merely intellectual. The verb "sat" implies the memory is inert, settled, and permanent — not something fleeting but something lodged deep within her. The cumulative effect is claustrophobic: the character is carrying something heavy inside herself.</p>
+<p><strong>Analysis:</strong> The simile "like a stone" conveys weight and immobility - the memory is burdensome and cannot be shaken. The implicit metaphor of the memory as a physical object suggests it has material presence in her body. The choice of "chest" (rather than mind, heart, or head) is significant: the chest is the location of the heart, suggesting the memory is emotionally charged rather than merely intellectual. The verb "sat" implies the memory is inert, settled, and permanent - not something fleeting but something lodged deep within her. The cumulative effect is claustrophobic: the character is carrying something heavy inside herself.</p>
 </div>
 
 <h3>Common Mistakes in Language Analysis</h3>
@@ -2232,7 +2194,7 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
   <li><em>The specific word choice of [word] rather than [alternative] suggests...</em></li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Semantic Field</strong> — A group of words within a text that are related in meaning and contribute to a dominant theme or atmosphere. For example, words like "pulse," "breath," "alive," and "heartbeat" form a semantic field of life/vitality, which, when applied to an inanimate building, creates an unsettling effect.</div>
+<div class="key-term"><strong>Key Term: Semantic Field</strong> - A group of words within a text that are related in meaning and contribute to a dominant theme or atmosphere. For example, words like "pulse," "breath," "alive," and "heartbeat" form a semantic field of life/vitality, which, when applied to an inanimate building, creates an unsettling effect.</div>
 `,
     quiz: [
       {
@@ -2251,10 +2213,9 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
       },
       {
         id: 'ocr-lc2-m3-q2',
-        question:
-          'What is the difference between language analysis and structure analysis?',
+        question: 'What is the difference between language analysis and structure analysis?',
         options: [
-          'There is no difference — they test the same skill',
+          'There is no difference - they test the same skill',
           'Language analysis focuses on word-level choices; structure analysis focuses on text organisation',
           'Structure analysis is always worth more marks',
           'Language analysis only applies to non-fiction',
@@ -2281,37 +2242,37 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
         question:
           'When analysing fiction language, what should you always connect your analysis to?',
         options: [
-          'The writer\'s biography',
-          'The reader\'s emotional experience',
+          "The writer's biography",
+          "The reader's emotional experience",
           'The historical context of the text',
           'The number of techniques used',
         ],
         correct: 1,
         explanation:
-          'Fiction language analysis should always connect to the reader\'s experience — naming the emotions the language creates (fear, sympathy, unease, anticipation) and explaining how specific techniques trigger those responses.',
+          "Fiction language analysis should always connect to the reader's experience - naming the emotions the language creates (fear, sympathy, unease, anticipation) and explaining how specific techniques trigger those responses.",
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 4 — Structural Analysis in Fiction
+  // MODULE 4 - Structural Analysis in Fiction
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m4',
     title: 'Structural Analysis in Fiction',
     duration: '55 min',
     content: `
-<h2>Analysing Structure — How Writers Organise Fiction to Create Effects</h2>
+<h2>Analysing Structure - How Writers Organise Fiction to Create Effects</h2>
 
-<p>The structure question (Q3) in Component 02 is worth <strong>6–8 marks</strong> and tests <strong>AO2</strong>, but with a specific focus on how the text is <em>organised</em> rather than how individual words create effects. This is one of the most challenging questions for students because structure can feel abstract — but with the right framework, it becomes highly accessible.</p>
+<p>The structure question (Q3) in Component 02 is worth <strong>6-8 marks</strong> and tests <strong>AO2</strong>, but with a specific focus on how the text is <em>organised</em> rather than how individual words create effects. This is one of the most challenging questions for students because structure can feel abstract - but with the right framework, it becomes highly accessible.</p>
 
-<div class="key-term"><strong>Key Term: Structure</strong> — The way a text is organised and sequenced to guide the reader's experience. In fiction, structure encompasses the order of events, shifts in focus, changes in pace, narrative perspective, paragraph length, and the relationship between the opening and ending.</div>
+<div class="key-term"><strong>Key Term: Structure</strong> - The way a text is organised and sequenced to guide the reader's experience. In fiction, structure encompasses the order of events, shifts in focus, changes in pace, narrative perspective, paragraph length, and the relationship between the opening and ending.</div>
 
 <h3>What Structure ISN'T</h3>
 <p>Before we discuss what to analyse, let's be clear about what structure analysis is <strong>not</strong>:</p>
 <ul>
-  <li>It is NOT language analysis — do not discuss metaphors, similes, or word connotations here.</li>
-  <li>It is NOT summarising what happens — do not retell the plot.</li>
+  <li>It is NOT language analysis - do not discuss metaphors, similes, or word connotations here.</li>
+  <li>It is NOT summarising what happens - do not retell the plot.</li>
   <li>It IS about <em>how the text is arranged</em> and what effect that arrangement has on the reader.</li>
 </ul>
 
@@ -2320,28 +2281,28 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <h4>1. Shifts in Focus</h4>
 <p>How does the writer move the reader's attention? Common shifts include:</p>
 <ul>
-  <li><strong>Wide to narrow</strong> — Opening with a panoramic description before zooming into a specific character or detail (cinematic zoom).</li>
-  <li><strong>External to internal</strong> — Moving from describing actions and setting to revealing a character's thoughts.</li>
-  <li><strong>Present to past</strong> — Using flashback to provide context or contrast.</li>
-  <li><strong>Character to character</strong> — Shifting perspective between different characters.</li>
+  <li><strong>Wide to narrow</strong> - Opening with a panoramic description before zooming into a specific character or detail (cinematic zoom).</li>
+  <li><strong>External to internal</strong> - Moving from describing actions and setting to revealing a character's thoughts.</li>
+  <li><strong>Present to past</strong> - Using flashback to provide context or contrast.</li>
+  <li><strong>Character to character</strong> - Shifting perspective between different characters.</li>
 </ul>
 
 <h4>2. Pacing</h4>
 <p>How does the writer control the speed at which events unfold?</p>
 <ul>
-  <li><strong>Short paragraphs and sentences</strong> — Speed up the pace; create urgency or tension.</li>
-  <li><strong>Long descriptive passages</strong> — Slow the pace; build atmosphere or suspense.</li>
-  <li><strong>Action sequences</strong> — Fast-paced; short clauses, active verbs.</li>
-  <li><strong>Reflective passages</strong> — Slow-paced; internal monologue, complex sentences.</li>
+  <li><strong>Short paragraphs and sentences</strong> - Speed up the pace; create urgency or tension.</li>
+  <li><strong>Long descriptive passages</strong> - Slow the pace; build atmosphere or suspense.</li>
+  <li><strong>Action sequences</strong> - Fast-paced; short clauses, active verbs.</li>
+  <li><strong>Reflective passages</strong> - Slow-paced; internal monologue, complex sentences.</li>
 </ul>
 
 <h4>3. Opening and Ending</h4>
 <p>How does the text begin and end? Consider:</p>
 <ul>
-  <li><strong>In medias res</strong> — Starting in the middle of the action to immediately engage the reader.</li>
-  <li><strong>Cyclical structure</strong> — Ending where you began, creating a sense of entrapment or resolution.</li>
-  <li><strong>Cliffhanger</strong> — Ending with unresolved tension to leave the reader unsatisfied or eager for more.</li>
-  <li><strong>Resolution</strong> — Tying up loose ends to provide closure.</li>
+  <li><strong>In medias res</strong> - Starting in the middle of the action to immediately engage the reader.</li>
+  <li><strong>Cyclical structure</strong> - Ending where you began, creating a sense of entrapment or resolution.</li>
+  <li><strong>Cliffhanger</strong> - Ending with unresolved tension to leave the reader unsatisfied or eager for more.</li>
+  <li><strong>Resolution</strong> - Tying up loose ends to provide closure.</li>
 </ul>
 
 <h4>4. Contrast and Juxtaposition (Structural)</h4>
@@ -2355,26 +2316,26 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 <h4>5. Withholding and Revealing Information</h4>
 <p>How does the writer control what the reader knows and when?</p>
 <ul>
-  <li><strong>Foreshadowing</strong> — Planting clues that create anticipation.</li>
-  <li><strong>Delayed reveal</strong> — Withholding key information to build suspense.</li>
-  <li><strong>Dramatic irony</strong> — The reader knows something the character does not.</li>
+  <li><strong>Foreshadowing</strong> - Planting clues that create anticipation.</li>
+  <li><strong>Delayed reveal</strong> - Withholding key information to build suspense.</li>
+  <li><strong>Dramatic irony</strong> - The reader knows something the character does not.</li>
 </ul>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">The morning was bright and impossibly still. Anna walked through the park, watching the ducks glide across the pond in lazy, contented circles. A child threw bread from the bridge, laughing each time a duck lunged for it. Anna smiled. She thought of her own children — how Tom used to insist on feeding every duck individually, as if they were guests at a dinner party.
+<div class="text-extract">The morning was bright and impossibly still. Anna walked through the park, watching the ducks glide across the pond in lazy, contented circles. A child threw bread from the bridge, laughing each time a duck lunged for it. Anna smiled. She thought of her own children - how Tom used to insist on feeding every duck individually, as if they were guests at a dinner party.
 
 Then her phone rang.
 
-She answered it. Listened. The park was still bright, still impossibly still, but something had shifted — some invisible gear deep inside the machinery of the day had clicked into a different position. The ducks still glided. The child still laughed. But Anna no longer heard them. She lowered the phone slowly, the way you lower something precious that has broken beyond repair.<div class="source">From an unpublished short story</div></div>
+She answered it. Listened. The park was still bright, still impossibly still, but something had shifted - some invisible gear deep inside the machinery of the day had clicked into a different position. The ducks still glided. The child still laughed. But Anna no longer heard them. She lowered the phone slowly, the way you lower something precious that has broken beyond repair.<div class="source">From an unpublished short story</div></div>
 
 <div class="model-answer"><strong>Model Answer (structural analysis):</strong>
-<p>The writer structures the extract as a <strong>before-and-after</strong> narrative, pivoting on the single-sentence paragraph: <em>"Then her phone rang."</em> This sentence is structurally isolated — set apart from the descriptive paragraphs that surround it — giving it the weight and finality of a turning point. The brevity of the paragraph mimics the abruptness of the event: the call is sudden, interrupting the leisurely pacing of the opening.</p>
+<p>The writer structures the extract as a <strong>before-and-after</strong> narrative, pivoting on the single-sentence paragraph: <em>"Then her phone rang."</em> This sentence is structurally isolated - set apart from the descriptive paragraphs that surround it - giving it the weight and finality of a turning point. The brevity of the paragraph mimics the abruptness of the event: the call is sudden, interrupting the leisurely pacing of the opening.</p>
 
-<p>The opening paragraph establishes a world of <strong>tranquillity and domestic warmth</strong>: the ducks, the laughing child, and Anna's memory of her own son. The structure deliberately lulls the reader into comfort. This makes the shift that follows far more powerful — by investing in the peaceful scene, the writer ensures the disruption has maximum emotional impact.</p>
+<p>The opening paragraph establishes a world of <strong>tranquillity and domestic warmth</strong>: the ducks, the laughing child, and Anna's memory of her own son. The structure deliberately lulls the reader into comfort. This makes the shift that follows far more powerful - by investing in the peaceful scene, the writer ensures the disruption has maximum emotional impact.</p>
 
-<p>After the phone call, the writer <strong>repeats the imagery from the opening</strong> — "still bright, still impossibly still," "The ducks still glided. The child still laughed" — but reframes it through Anna's changed perception. This structural repetition-with-variation shows that the external world has not changed, but Anna's internal world has been shattered. The effect on the reader is devastating: the contrast between the unchanged setting and the transformed character forces us to feel the isolation of personal grief in a world that continues regardless.</p>
+<p>After the phone call, the writer <strong>repeats the imagery from the opening</strong> - "still bright, still impossibly still," "The ducks still glided. The child still laughed" - but reframes it through Anna's changed perception. This structural repetition-with-variation shows that the external world has not changed, but Anna's internal world has been shattered. The effect on the reader is devastating: the contrast between the unchanged setting and the transformed character forces us to feel the isolation of personal grief in a world that continues regardless.</p>
 
-<p>The final image — lowering the phone "the way you lower something precious that has broken beyond repair" — structurally mirrors the careful, gentle pacing of the opening, but where the opening's slowness suggested contentment, the ending's slowness suggests devastation. The writer uses this <strong>cyclical pacing</strong> to create symmetry between happiness and loss.</p></div>
+<p>The final image - lowering the phone "the way you lower something precious that has broken beyond repair" - structurally mirrors the careful, gentle pacing of the opening, but where the opening's slowness suggested contentment, the ending's slowness suggests devastation. The writer uses this <strong>cyclical pacing</strong> to create symmetry between happiness and loss.</p></div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> A one-sentence paragraph is ALWAYS a structural choice worth commenting on. Writers isolate sentences to give them emphasis, mark a turning point, or create dramatic pause. If you see a single-sentence paragraph in your exam extract, analyse why it has been separated from the rest of the text.</div>
 
@@ -2389,7 +2350,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 
 <p><strong>Student Answer:</strong> "The writer starts with Anna in the park. This part is peaceful. Then her phone rings. This is a turning point. After the phone call, she feels sad. The structure shows how she goes from happy to sad. The isolated sentence 'Then her phone rang' is used for effect. This makes the reader understand that the phone call is important."</p>
 
-<p><strong style="color: #c41e3a;">Examiner Comment:</strong> This response is plot summary, not structural analysis. The student describes what happens (Anna is happy, then a call comes, then she's sad) rather than explaining WHY the writer structures it this way or what effect the arrangement creates. The observation about the isolated sentence is valid but underdeveloped — the student doesn't explain why isolation creates effect or what specific effect it achieves. The response lacks sophisticated understanding of how structure manipulates reader response.</p>
+<p><strong style="color: #c41e3a;">Examiner Comment:</strong> This response is plot summary, not structural analysis. The student describes what happens (Anna is happy, then a call comes, then she's sad) rather than explaining WHY the writer structures it this way or what effect the arrangement creates. The observation about the isolated sentence is valid but underdeveloped - the student doesn't explain why isolation creates effect or what specific effect it achieves. The response lacks sophisticated understanding of how structure manipulates reader response.</p>
 </div>
 
 <h4>Grade 9 Response (Sophisticated Structural Analysis)</h4>
@@ -2397,11 +2358,11 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <div style="border: 2px solid #2ecc71; padding: 15px; margin: 15px 0; background-color: #f0fff5;">
 <p><strong>Question:</strong> How does the writer's use of structure create an emotional impact in the passage?</p>
 
-<p><strong>Student Answer:</strong> "The writer uses a deliberate before-and-after structural framework, with the phone call as the fulcrum. By establishing an extended opening of tranquillity — Anna's leisurely walk, the peaceful park, her memories of her children — the writer invests the reader emotionally in this world of safety and contentment. The structural significance of the single-sentence paragraph, 'Then her phone rang,' lies in its abruptness and isolation. The brevity of the sentence mimics the suddenness of the disruption; the isolation gives it weight and finality. This is not merely a narrative event but a structural marker of transformation.</p>
+<p><strong>Student Answer:</strong> "The writer uses a deliberate before-and-after structural framework, with the phone call as the fulcrum. By establishing an extended opening of tranquillity - Anna's leisurely walk, the peaceful park, her memories of her children - the writer invests the reader emotionally in this world of safety and contentment. The structural significance of the single-sentence paragraph, 'Then her phone rang,' lies in its abruptness and isolation. The brevity of the sentence mimics the suddenness of the disruption; the isolation gives it weight and finality. This is not merely a narrative event but a structural marker of transformation.</p>
 
-<p>After the phone call, the writer employs a structural technique of repetition-with-variation. The imagery of the park — 'still bright, still impossibly still,' 'The ducks still glided. The child still laughed' — is repeated, but filtered through Anna's changed consciousness. Structurally, this repetition creates profound irony: the external world is unchanged, but Anna's inner world has been shattered. The effect on the reader is devastating because the unchanged setting becomes a mirror of Anna's isolation — the world continues indifferently while she has been devastated.</p>
+<p>After the phone call, the writer employs a structural technique of repetition-with-variation. The imagery of the park - 'still bright, still impossibly still,' 'The ducks still glided. The child still laughed' - is repeated, but filtered through Anna's changed consciousness. Structurally, this repetition creates profound irony: the external world is unchanged, but Anna's inner world has been shattered. The effect on the reader is devastating because the unchanged setting becomes a mirror of Anna's isolation - the world continues indifferently while she has been devastated.</p>
 
-<p>The final image — 'the way you lower something precious that has broken beyond repair' — structurally parallels the slow, careful pacing of the opening, creating a cyclical symmetry. However, where the opening's slowness signified peace, the ending's slowness signifies loss. This structural mirroring of pacing deepens the emotional resonance: the reader recognises the echo of earlier contentment and feels its absence all the more acutely."</p>
+<p>The final image - 'the way you lower something precious that has broken beyond repair' - structurally parallels the slow, careful pacing of the opening, creating a cyclical symmetry. However, where the opening's slowness signified peace, the ending's slowness signifies loss. This structural mirroring of pacing deepens the emotional resonance: the reader recognises the echo of earlier contentment and feels its absence all the more acutely."</p>
 
 <p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates masterful structural analysis. The student explains the FUNCTION of structure (creating emotional investment before disruption), not just identifies it. The analysis of the single-sentence paragraph goes deep: explaining both HOW it works (brevity mimics suddenness) and WHY it matters (creates finality and weight). The concept of repetition-with-variation is sophisticated, and the student explains the structural irony it creates. The observation about cyclical pacing and its emotional effect shows understanding of how structure creates meaning. This is top-band structural analysis.</p>
 </div>
@@ -2427,11 +2388,11 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
 <p><strong>Short Sentences (Fast Pacing):</strong> "She ran. The door. Locked. She slammed her shoulder against it. Again. Again. The wood cracked."</p>
 
-<p><strong>How to analyse:</strong> "The writer uses rapid, fragmented sentences to accelerate the pace. The absence of connectives forces the reader's eye to move quickly down the page, creating a sense of urgency and crisis. The effect is to implicate the reader in the character's panic — we experience the action as a breathless sequence rather than a reflective narrative."</p>
+<p><strong>How to analyse:</strong> "The writer uses rapid, fragmented sentences to accelerate the pace. The absence of connectives forces the reader's eye to move quickly down the page, creating a sense of urgency and crisis. The effect is to implicate the reader in the character's panic - we experience the action as a breathless sequence rather than a reflective narrative."</p>
 
 <p><strong>Long Sentences (Slow Pacing):</strong> "The corridor stretched ahead of her, its walls narrowing almost imperceptibly, as though the building itself were drawing a slow, deliberate breath before releasing whatever waited at its end."</p>
 
-<p><strong>How to analyse:</strong> "The complex sentence structure, with multiple subordinate clauses, slows the pace and creates a sense of mounting dread. The reader is forced to move through the sentence carefully, experiencing the same mounting tension as the character. The structural choice of a single, elaborate sentence (rather than multiple short ones) mirrors the character's inability to escape the moment — there is no pause, no respite, until the sentence completes."</p>
+<p><strong>How to analyse:</strong> "The complex sentence structure, with multiple subordinate clauses, slows the pace and creates a sense of mounting dread. The reader is forced to move through the sentence carefully, experiencing the same mounting tension as the character. The structural choice of a single, elaborate sentence (rather than multiple short ones) mirrors the character's inability to escape the moment - there is no pause, no respite, until the sentence completes."</p>
 </div>
 
 <h4>Technique 2: Repetition with Variation</h4>
@@ -2439,15 +2400,15 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
 <p><strong>Example:</strong> A passage describes a room as "immaculate" and "perfect" early on. Later, the same room is described with the same spatial layout but with details of dust, decay, and neglect added.</p>
 
-<p><strong>How to analyse:</strong> "The structural technique of repetition-with-variation reveals the character's changing perception. The room hasn't changed; the character's consciousness has. Structurally, this creates dramatic irony — the reader recognises the echo of the earlier description and feels the full weight of decline. The technique moves beyond narrative to create a commentary on perception and memory."</p>
+<p><strong>How to analyse:</strong> "The structural technique of repetition-with-variation reveals the character's changing perception. The room hasn't changed; the character's consciousness has. Structurally, this creates dramatic irony - the reader recognises the echo of the earlier description and feels the full weight of decline. The technique moves beyond narrative to create a commentary on perception and memory."</p>
 </div>
 
 <h4>Technique 3: Delayed Revelation</h4>
 
 <div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<p><strong>Example:</strong> A passage describes a wedding celebration in detail — the decorations, the guests, the music — before finally revealing that the bride has left the groom at the altar.</p>
+<p><strong>Example:</strong> A passage describes a wedding celebration in detail - the decorations, the guests, the music - before finally revealing that the bride has left the groom at the altar.</p>
 
-<p><strong>How to analyse:</strong> "The writer withholds the crucial fact (the absent bride) until the final revelation. Structurally, this creates suspense and irony. The reader has been led to assume normalcy, so the belated revelation is shocking. The structural choice to describe the wedding in detail before revealing its failure forces the reader to experience the same dissonance as the wedding guests — we expected celebration and received catastrophe."</p>
+<p><strong>How to analyse:</strong> "The writer withholds the crucial fact (the absent bride) until the final revelation. Structurally, this creates suspense and irony. The reader has been led to assume normalcy, so the belated revelation is shocking. The structural choice to describe the wedding in detail before revealing its failure forces the reader to experience the same dissonance as the wedding guests - we expected celebration and received catastrophe."</p>
 </div>
 
 <h4>Technique 4: Cyclical Structure (Circular Narrative)</h4>
@@ -2455,7 +2416,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
 <p><strong>Example:</strong> A passage opens with a character sitting on a bench in a park. It ends with the same character on the same bench, but the character (or reader's understanding of the character) has been fundamentally changed.</p>
 
-<p><strong>How to analyse:</strong> "The cyclical structure creates ironic resonance. The physical return to the opening location suggests return and resolution, yet the character's inner transformation denies simple closure. Structurally, this technique generates poignancy — the world has returned to its starting point, but the character cannot. The cyclical form emphasises the irreversibility of change."</p>
+<p><strong>How to analyse:</strong> "The cyclical structure creates ironic resonance. The physical return to the opening location suggests return and resolution, yet the character's inner transformation denies simple closure. Structurally, this technique generates poignancy - the world has returned to its starting point, but the character cannot. The cyclical form emphasises the irreversibility of change."</p>
 </div>
 
 <h3>Common Structural Analysis Mistakes</h3>
@@ -2473,35 +2434,34 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <p><strong>Essential terms for structure analysis:</strong></p>
 
 <ul>
-  <li><strong>In medias res</strong> — Beginning in the middle of action</li>
-  <li><strong>Cyclical/circular structure</strong> — Returning to the opening scenario</li>
-  <li><strong>Foreshadowing</strong> — Planting clues about future events</li>
-  <li><strong>Delayed revelation</strong> — Withholding information to build suspense</li>
-  <li><strong>Juxtaposition</strong> — Placing contrasting sections side by side</li>
-  <li><strong>Pacing</strong> — The speed at which events unfold (controlled by sentence length, paragraph length, density of information)</li>
-  <li><strong>Shifts in focus/perspective</strong> — Moving between different characters, time periods, or locations</li>
-  <li><strong>Frame narrative</strong> — A story told within another story</li>
-  <li><strong>Climax</strong> — The point of greatest intensity or turning point</li>
-  <li><strong>Denouement</strong> — The resolution after the climax</li>
-  <li><strong>Bathos</strong> — An abrupt shift from serious to trivial (often for comic effect)</li>
+  <li><strong>In medias res</strong> - Beginning in the middle of action</li>
+  <li><strong>Cyclical/circular structure</strong> - Returning to the opening scenario</li>
+  <li><strong>Foreshadowing</strong> - Planting clues about future events</li>
+  <li><strong>Delayed revelation</strong> - Withholding information to build suspense</li>
+  <li><strong>Juxtaposition</strong> - Placing contrasting sections side by side</li>
+  <li><strong>Pacing</strong> - The speed at which events unfold (controlled by sentence length, paragraph length, density of information)</li>
+  <li><strong>Shifts in focus/perspective</strong> - Moving between different characters, time periods, or locations</li>
+  <li><strong>Frame narrative</strong> - A story told within another story</li>
+  <li><strong>Climax</strong> - The point of greatest intensity or turning point</li>
+  <li><strong>Denouement</strong> - The resolution after the climax</li>
+  <li><strong>Bathos</strong> - An abrupt shift from serious to trivial (often for comic effect)</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: In Medias Res</strong> — A Latin term meaning "in the middle of things." A narrative technique where the story begins in the middle of the action, without exposition or background. This immediately engages the reader by plunging them into a moment of conflict or tension.</div>
+<div class="key-term"><strong>Key Term: In Medias Res</strong> - A Latin term meaning "in the middle of things." A narrative technique where the story begins in the middle of the action, without exposition or background. This immediately engages the reader by plunging them into a moment of conflict or tension.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc2-m4-q1',
-        question:
-          'What is structural analysis in fiction?',
+        question: 'What is structural analysis in fiction?',
         options: [
-          'Analysing the writer\'s word choices and figurative language',
+          "Analysing the writer's word choices and figurative language",
           'Examining how the text is organised and sequenced to create effects on the reader',
           'Summarising the plot of the extract',
           'Identifying grammar and punctuation errors',
         ],
         correct: 1,
         explanation:
-          'Structural analysis examines how a text is organised — including shifts in focus, pacing, opening/ending, contrasts, and how information is revealed — and the effects these choices have on the reader.',
+          'Structural analysis examines how a text is organised - including shifts in focus, pacing, opening/ending, contrasts, and how information is revealed - and the effects these choices have on the reader.',
       },
       {
         id: 'ocr-lc2-m4-q2',
@@ -2532,8 +2492,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
       },
       {
         id: 'ocr-lc2-m4-q4',
-        question:
-          'What is the difference between plot summary and structural analysis?',
+        question: 'What is the difference between plot summary and structural analysis?',
         options: [
           'They are the same thing',
           'Plot summary retells events; structural analysis explains why the writer arranged them in that order and the effect this has',
@@ -2548,32 +2507,32 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 5 — Evaluating Fiction Writing
+  // MODULE 5 - Evaluating Fiction Writing
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m5',
     title: 'Evaluating Fiction: Critical Judgement',
     duration: '55 min',
     content: `
-<h2>Evaluating Fiction — How Effectively Does the Writer Achieve Their Purpose?</h2>
+<h2>Evaluating Fiction - How Effectively Does the Writer Achieve Their Purpose?</h2>
 
-<p>The evaluation question (Q4) in Component 02 is the highest-tariff reading question, worth <strong>12–14 marks</strong>. It tests <strong>AO4</strong> and requires you to make a critical judgement about the writer's effectiveness. In fiction, this typically means evaluating how successfully the writer creates atmosphere, builds tension, conveys character, or engages the reader's emotions.</p>
+<p>The evaluation question (Q4) in Component 02 is the highest-tariff reading question, worth <strong>12-14 marks</strong>. It tests <strong>AO4</strong> and requires you to make a critical judgement about the writer's effectiveness. In fiction, this typically means evaluating how successfully the writer creates atmosphere, builds tension, conveys character, or engages the reader's emotions.</p>
 
-<div class="key-term"><strong>Key Term: Critical Judgement</strong> — A reasoned opinion about the quality or effectiveness of a writer's work, supported by evidence. Critical judgement goes beyond "I liked it" to explain <em>why</em> something works (or doesn't) and <em>how</em> the writer achieves (or fails to achieve) their intended effect.</div>
+<div class="key-term"><strong>Key Term: Critical Judgement</strong> - A reasoned opinion about the quality or effectiveness of a writer's work, supported by evidence. Critical judgement goes beyond "I liked it" to explain <em>why</em> something works (or doesn't) and <em>how</em> the writer achieves (or fails to achieve) their intended effect.</div>
 
 <h3>Practice Extract</h3>
-<div class="text-extract">The house had been empty for eleven years. That was the first thing you noticed — not the boarded windows or the ivy strangling the drainpipe, but the absence. The house wore its emptiness like a coat, heavy and visible. The garden, once the pride of Mrs Atherton, was a jungle of nettles and bindweed, the path lost entirely beneath a carpet of moss. A swing set — rusted, tilted, absurd — stood in the corner of the lawn, its chains locked in place by years of disuse. It was the kind of place that made you walk faster, even in daylight. Especially in daylight, when you could see everything clearly and still feel watched.<div class="source">From an unpublished novel extract</div></div>
+<div class="text-extract">The house had been empty for eleven years. That was the first thing you noticed - not the boarded windows or the ivy strangling the drainpipe, but the absence. The house wore its emptiness like a coat, heavy and visible. The garden, once the pride of Mrs Atherton, was a jungle of nettles and bindweed, the path lost entirely beneath a carpet of moss. A swing set - rusted, tilted, absurd - stood in the corner of the lawn, its chains locked in place by years of disuse. It was the kind of place that made you walk faster, even in daylight. Especially in daylight, when you could see everything clearly and still feel watched.<div class="source">From an unpublished novel extract</div></div>
 
 <p>A typical evaluation question might read: <em>"A student said: 'The writer makes the reader feel uneasy about the abandoned house.' To what extent do you agree?"</em></p>
 
 <div class="model-answer"><strong>Model Answer:</strong>
 <p>I strongly agree that the writer creates a pervasive sense of unease, and the passage is highly effective in making the abandoned house feel not merely empty but <em>threatening</em>.</p>
 
-<p>The writer's most effective technique is the personification of the house itself. The statement that the house "wore its emptiness like a coat" is compelling because it transforms absence into a tangible, visible quality — the emptiness is not something the house <em>lacks</em> but something it <em>possesses</em>. The simile "like a coat" suggests the house has dressed itself in abandonment, implying intention and agency. This is unsettling because inanimate buildings should not have agency; by granting it, the writer triggers the gothic fear of the familiar becoming unfamiliar.</p>
+<p>The writer's most effective technique is the personification of the house itself. The statement that the house "wore its emptiness like a coat" is compelling because it transforms absence into a tangible, visible quality - the emptiness is not something the house <em>lacks</em> but something it <em>possesses</em>. The simile "like a coat" suggests the house has dressed itself in abandonment, implying intention and agency. This is unsettling because inanimate buildings should not have agency; by granting it, the writer triggers the gothic fear of the familiar becoming unfamiliar.</p>
 
-<p>The swing set is a particularly effective image. The three adjectives — <em>"rusted, tilted, absurd"</em> — move from physical description ("rusted") through disorientation ("tilted") to an emotional register ("absurd"). The word "absurd" is unexpected and powerful: it suggests that the swing set has become a grotesque parody of childhood play, which forces the reader to confront the contrast between what the house once was (a family home) and what it has become. The chains "locked in place by years of disuse" carry connotations of imprisonment, reinforcing the idea that the house is trapped in its past.</p>
+<p>The swing set is a particularly effective image. The three adjectives - <em>"rusted, tilted, absurd"</em> - move from physical description ("rusted") through disorientation ("tilted") to an emotional register ("absurd"). The word "absurd" is unexpected and powerful: it suggests that the swing set has become a grotesque parody of childhood play, which forces the reader to confront the contrast between what the house once was (a family home) and what it has become. The chains "locked in place by years of disuse" carry connotations of imprisonment, reinforcing the idea that the house is trapped in its past.</p>
 
-<p>The final sentence is devastatingly effective: <em>"Especially in daylight, when you could see everything clearly and still feel watched."</em> This subverts the conventional reassurance of daylight — we expect darkness to be frightening and daylight to be safe. By inverting this expectation, the writer removes the reader's last refuge of comfort. The use of direct address ("you") implicates the reader directly in the experience, making the unease personal rather than observed.</p>
+<p>The final sentence is devastatingly effective: <em>"Especially in daylight, when you could see everything clearly and still feel watched."</em> This subverts the conventional reassurance of daylight - we expect darkness to be frightening and daylight to be safe. By inverting this expectation, the writer removes the reader's last refuge of comfort. The use of direct address ("you") implicates the reader directly in the experience, making the unease personal rather than observed.</p>
 
 <p>A critical reader might argue that the passage relies heavily on gothic conventions (abandoned house, overgrown garden, pathetic fallacy of neglect) and that the effect is therefore somewhat predictable. However, the subversion of the daylight/safety assumption in the final line demonstrates originality that elevates the passage beyond formula.</p></div>
 
@@ -2592,23 +2551,22 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <ul>
   <li><em>The writer creates a compelling / haunting / visceral sense of...</em></li>
   <li><em>This is particularly effective because it subverts the reader's expectation of...</em></li>
-  <li><em>The imagery is powerful in its specificity — rather than relying on vague description, the writer...</em></li>
+  <li><em>The imagery is powerful in its specificity - rather than relying on vague description, the writer...</em></li>
   <li><em>A less accomplished writer might have... but here the choice of... elevates the passage because...</em></li>
   <li><em>The passage is somewhat diminished by its reliance on...</em></li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Evaluating based on personal preference rather than textual evidence. "I found this boring" or "I liked this because I enjoy horror" are not valid evaluative points. Evaluation must be grounded in analysis of technique: "The writer is effective because the personification of the house creates a sense of threat by..."</div>
 
-<div class="key-term"><strong>Key Term: Genre Convention</strong> — A feature, technique, or plot element that is commonly associated with a particular genre. For example, abandoned houses are a convention of gothic horror, and love triangles are a convention of romance. Recognising conventions allows you to discuss whether a writer uses them effectively or relies on them too predictably.</div>
+<div class="key-term"><strong>Key Term: Genre Convention</strong> - A feature, technique, or plot element that is commonly associated with a particular genre. For example, abandoned houses are a convention of gothic horror, and love triangles are a convention of romance. Recognising conventions allows you to discuss whether a writer uses them effectively or relies on them too predictably.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc2-m5-q1',
-        question:
-          'What makes the final sentence of the practice extract particularly effective?',
+        question: 'What makes the final sentence of the practice extract particularly effective?',
         options: [
           'It uses alliteration',
-          'It subverts the expectation that daylight is safe, removing the reader\'s last refuge of comfort',
+          "It subverts the expectation that daylight is safe, removing the reader's last refuge of comfort",
           'It summarises the extract',
           'It introduces a new character',
         ],
@@ -2618,8 +2576,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
       },
       {
         id: 'ocr-lc2-m5-q2',
-        question:
-          'What is a valid counter-argument in fiction evaluation?',
+        question: 'What is a valid counter-argument in fiction evaluation?',
         options: [
           '"I found this text boring"',
           '"The passage relies heavily on gothic conventions, which makes the effect somewhat predictable"',
@@ -2632,8 +2589,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
       },
       {
         id: 'ocr-lc2-m5-q3',
-        question:
-          'How does fiction evaluation differ from non-fiction evaluation?',
+        question: 'How does fiction evaluation differ from non-fiction evaluation?',
         options: [
           'Fiction evaluation never uses quotations',
           'Fiction evaluation focuses on emotional response and genre conventions; non-fiction focuses on persuasive effectiveness and bias',
@@ -2662,18 +2618,18 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 6 — Narrative Writing: Crafting Stories
+  // MODULE 6 - Narrative Writing: Crafting Stories
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m6',
     title: 'Narrative Writing: Crafting Stories',
     duration: '55 min',
     content: `
-<h2>Narrative Writing — Planning and Crafting Effective Stories</h2>
+<h2>Narrative Writing - Planning and Crafting Effective Stories</h2>
 
-<p>In Section B of Component 02, you may choose to write a narrative (story). This is worth <strong>40 marks</strong> — 24 for content and organisation (AO5) and 16 for technical accuracy (AO6). The key to a strong narrative is <strong>control</strong>: a focused story with a clear structure, vivid writing, and a purposeful ending is far more effective than an ambitious epic that runs out of steam.</p>
+<p>In Section B of Component 02, you may choose to write a narrative (story). This is worth <strong>40 marks</strong> - 24 for content and organisation (AO5) and 16 for technical accuracy (AO6). The key to a strong narrative is <strong>control</strong>: a focused story with a clear structure, vivid writing, and a purposeful ending is far more effective than an ambitious epic that runs out of steam.</p>
 
-<div class="key-term"><strong>Key Term: Narrative</strong> — A story that includes characters, setting, and a sequence of events. GCSE narratives should be tightly focused — typically covering a short time frame, a small number of characters, and a single key moment or turning point.</div>
+<div class="key-term"><strong>Key Term: Narrative</strong> - A story that includes characters, setting, and a sequence of events. GCSE narratives should be tightly focused - typically covering a short time frame, a small number of characters, and a single key moment or turning point.</div>
 
 <h3>The Golden Rules of GCSE Narrative Writing</h3>
 <ol>
@@ -2687,11 +2643,11 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <h3>Planning Your Narrative (10 minutes)</h3>
 <p>A strong plan covers five elements:</p>
 <ol>
-  <li><strong>Opening</strong> — How will you hook the reader? (Setting description? In medias res? A striking image?)</li>
-  <li><strong>Character</strong> — Who is your protagonist? What do they want or fear?</li>
-  <li><strong>Rising tension</strong> — What problem, conflict, or shift occurs?</li>
-  <li><strong>Climax/Turning point</strong> — The moment of greatest intensity or change.</li>
-  <li><strong>Ending</strong> — How will you close? (Resolution? Reflection? Ambiguity? Circular return?)</li>
+  <li><strong>Opening</strong> - How will you hook the reader? (Setting description? In medias res? A striking image?)</li>
+  <li><strong>Character</strong> - Who is your protagonist? What do they want or fear?</li>
+  <li><strong>Rising tension</strong> - What problem, conflict, or shift occurs?</li>
+  <li><strong>Climax/Turning point</strong> - The moment of greatest intensity or change.</li>
+  <li><strong>Ending</strong> - How will you close? (Resolution? Reflection? Ambiguity? Circular return?)</li>
 </ol>
 
 <h3>Narrative Structures That Work</h3>
@@ -2705,33 +2661,32 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <p><em>Example: A character sits on a park bench at the start and end. In between, a conversation occurs that changes everything. The bench is the same; they are not.</em></p>
 
 <h4>Structure 3: The Moment</h4>
-<p>Focus entirely on a single, intense moment — stretching seconds into paragraphs through detailed sensory description and internal thought.</p>
+<p>Focus entirely on a single, intense moment - stretching seconds into paragraphs through detailed sensory description and internal thought.</p>
 <p><em>Example: The moment before a race starts. The gun fires. The first three seconds of movement.</em></p>
 
 <div class="model-answer"><strong>Model Narrative Opening:</strong>
-<p><em>The envelope was already on the kitchen table when she came downstairs. It sat between the marmalade and the morning post like something that had always been there — ordinary, unremarkable, a rectangle of white. Except that her mother was standing at the sink with her back turned, washing the same mug for the third time, and her father had not looked up from his newspaper since she entered the room. They knew. Of course they knew. The handwriting on the envelope was not her father's. It was not her mother's. And it was addressed to her.</em></p>
+<p><em>The envelope was already on the kitchen table when she came downstairs. It sat between the marmalade and the morning post like something that had always been there - ordinary, unremarkable, a rectangle of white. Except that her mother was standing at the sink with her back turned, washing the same mug for the third time, and her father had not looked up from his newspaper since she entered the room. They knew. Of course they knew. The handwriting on the envelope was not her father's. It was not her mother's. And it was addressed to her.</em></p>
 <p>This opening works because it: (1) creates tension through domestic detail, (2) uses "show don't tell" to convey the parents' anxiety, (3) withholds information about the envelope's contents, and (4) ends with a short, impactful sentence that directs attention.</p></div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The most common narrative mistake at GCSE is writing too much plot. Students who try to fit a car chase, a murder, and a surprise twist into 500 words invariably produce breathless, superficial writing. The best narratives at GCSE focus on a <em>small</em> moment and explore it in <em>depth</em> — three paragraphs describing how it feels to open a letter will outscore three pages of action-movie plot.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The most common narrative mistake at GCSE is writing too much plot. Students who try to fit a car chase, a murder, and a surprise twist into 500 words invariably produce breathless, superficial writing. The best narratives at GCSE focus on a <em>small</em> moment and explore it in <em>depth</em> - three paragraphs describing how it feels to open a letter will outscore three pages of action-movie plot.</div>
 
-<h3>Show, Don't Tell — Practical Examples</h3>
+<h3>Show, Don't Tell - Practical Examples</h3>
 <table>
   <tr><th>Telling (weak)</th><th>Showing (strong)</th></tr>
   <tr><td>She was scared.</td><td>Her breath came in shallow gasps. She pressed her back against the wall and counted the spaces between the footsteps.</td></tr>
   <tr><td>He was angry.</td><td>He set the glass down carefully, too carefully, as if the slightest tremor might shatter everything.</td></tr>
-  <tr><td>The room was messy.</td><td>Clothes cascaded from every surface — the chair, the bed, the floor — like fabric waterfalls frozen mid-flow.</td></tr>
+  <tr><td>The room was messy.</td><td>Clothes cascaded from every surface - the chair, the bed, the floor - like fabric waterfalls frozen mid-flow.</td></tr>
   <tr><td>She felt lonely.</td><td>She texted "anyone free tonight?" to seven people and watched the ticks turn blue, one by one, without reply.</td></tr>
 </table>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Ending with "and then I woke up — it was all a dream." This is universally considered a weak ending because it invalidates everything that came before. Examiners actively penalise it. If your story needs a dream ending, the story itself needs rethinking.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Ending with "and then I woke up - it was all a dream." This is universally considered a weak ending because it invalidates everything that came before. Examiners actively penalise it. If your story needs a dream ending, the story itself needs rethinking.</div>
 
-<div class="key-term"><strong>Key Term: Show, Don't Tell</strong> — A writing principle that encourages writers to convey emotions, character traits, and atmosphere through actions, sensory details, and dialogue rather than directly stating them. "She was sad" tells the reader; "She traced circles in the condensation on the window, watching the street below without seeing it" shows the reader.</div>
+<div class="key-term"><strong>Key Term: Show, Don't Tell</strong> - A writing principle that encourages writers to convey emotions, character traits, and atmosphere through actions, sensory details, and dialogue rather than directly stating them. "She was sad" tells the reader; "She traced circles in the condensation on the window, watching the street below without seeing it" shows the reader.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc2-m6-q1',
-        question:
-          'What is the most common narrative mistake at GCSE?',
+        question: 'What is the most common narrative mistake at GCSE?',
         options: [
           'Using too few characters',
           'Writing too much plot instead of focusing on a small moment in depth',
@@ -2757,8 +2712,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
       },
       {
         id: 'ocr-lc2-m6-q3',
-        question:
-          'Why is "it was all a dream" considered a weak ending?',
+        question: 'Why is "it was all a dream" considered a weak ending?',
         options: [
           'Because dreams are not allowed in GCSE writing',
           'Because it invalidates everything that came before and is universally considered lazy',
@@ -2767,18 +2721,12 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
         ],
         correct: 1,
         explanation:
-          'An "it was all a dream" ending invalidates the narrative — nothing the reader invested in actually happened. Examiners actively penalise it as a sign of weak planning.',
+          'An "it was all a dream" ending invalidates the narrative - nothing the reader invested in actually happened. Examiners actively penalise it as a sign of weak planning.',
       },
       {
         id: 'ocr-lc2-m6-q4',
-        question:
-          'How long should you spend planning your narrative before writing?',
-        options: [
-          '1 minute',
-          '5 minutes',
-          '10 minutes',
-          '20 minutes',
-        ],
+        question: 'How long should you spend planning your narrative before writing?',
+        options: ['1 minute', '5 minutes', '10 minutes', '20 minutes'],
         correct: 2,
         explanation:
           'Allow approximately 10 minutes for planning. A clear plan covering opening, character, rising tension, climax, and ending prevents unfocused writing and ensures a purposeful structure.',
@@ -2787,72 +2735,72 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 7 — Descriptive Writing: Creating Atmosphere
+  // MODULE 7 - Descriptive Writing: Creating Atmosphere
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m7',
     title: 'Descriptive Writing: Creating Atmosphere',
     duration: '55 min',
     content: `
-<h2>Descriptive Writing — Evoking Scenes, Senses, and Atmosphere</h2>
+<h2>Descriptive Writing - Evoking Scenes, Senses, and Atmosphere</h2>
 
-<p>If you choose the descriptive writing option in Section B of Component 02, your task is to create a vivid, immersive piece that evokes a scene, place, person, or moment. Unlike narrative writing, descriptive writing does <strong>not</strong> need a plot or sequence of events — its purpose is to create an <strong>atmosphere</strong> and engage the reader's senses.</p>
+<p>If you choose the descriptive writing option in Section B of Component 02, your task is to create a vivid, immersive piece that evokes a scene, place, person, or moment. Unlike narrative writing, descriptive writing does <strong>not</strong> need a plot or sequence of events - its purpose is to create an <strong>atmosphere</strong> and engage the reader's senses.</p>
 
-<div class="key-term"><strong>Key Term: Descriptive Writing</strong> — A form of creative writing focused on evoking a scene, person, or atmosphere using sensory detail, figurative language, and careful structural choices. The goal is immersion — making the reader <em>feel</em> present in the described world.</div>
+<div class="key-term"><strong>Key Term: Descriptive Writing</strong> - A form of creative writing focused on evoking a scene, person, or atmosphere using sensory detail, figurative language, and careful structural choices. The goal is immersion - making the reader <em>feel</em> present in the described world.</div>
 
 <h3>The Five Senses Framework</h3>
-<p>Strong descriptive writing engages multiple senses. Most students default to <strong>sight</strong> only — challenge yourself to include at least three:</p>
+<p>Strong descriptive writing engages multiple senses. Most students default to <strong>sight</strong> only - challenge yourself to include at least three:</p>
 <ol>
-  <li><strong>Sight</strong> — Colours, light, shadow, movement, shapes. <em>"The streetlamp cast a copper ring on the wet pavement."</em></li>
-  <li><strong>Sound</strong> — Volume, rhythm, quality. <em>"Rain tapped against the window like impatient fingers."</em></li>
-  <li><strong>Touch/Texture</strong> — Temperature, surface, pressure. <em>"The banister was cold and slightly damp beneath her palm."</em></li>
-  <li><strong>Smell</strong> — Often the most evocative sense. <em>"The corridor smelled of floor polish and something older — damp stone, perhaps, or forgotten wood."</em></li>
-  <li><strong>Taste</strong> — Less common but powerful when relevant. <em>"The air tasted of salt and exhaust fumes."</em></li>
+  <li><strong>Sight</strong> - Colours, light, shadow, movement, shapes. <em>"The streetlamp cast a copper ring on the wet pavement."</em></li>
+  <li><strong>Sound</strong> - Volume, rhythm, quality. <em>"Rain tapped against the window like impatient fingers."</em></li>
+  <li><strong>Touch/Texture</strong> - Temperature, surface, pressure. <em>"The banister was cold and slightly damp beneath her palm."</em></li>
+  <li><strong>Smell</strong> - Often the most evocative sense. <em>"The corridor smelled of floor polish and something older - damp stone, perhaps, or forgotten wood."</em></li>
+  <li><strong>Taste</strong> - Less common but powerful when relevant. <em>"The air tasted of salt and exhaust fumes."</em></li>
 </ol>
 
 <h3>Structuring Descriptive Writing</h3>
 <p>Without a plot to provide structure, descriptive writing needs deliberate organisation:</p>
 
 <h4>Structure 1: Spatial Movement</h4>
-<p>Move through a space systematically — outside to inside, far to near, ground level to sky.</p>
-<p><em>Example: Describe a market — start with the distant view, move through the entrance, focus on individual stalls, end with a close-up of a single object.</em></p>
+<p>Move through a space systematically - outside to inside, far to near, ground level to sky.</p>
+<p><em>Example: Describe a market - start with the distant view, move through the entrance, focus on individual stalls, end with a close-up of a single object.</em></p>
 
 <h4>Structure 2: Temporal Movement</h4>
-<p>Describe the same scene at different times — dawn to dusk, empty to crowded, before and after an event.</p>
+<p>Describe the same scene at different times - dawn to dusk, empty to crowded, before and after an event.</p>
 
 <h4>Structure 3: Zoom Lens</h4>
-<p>Begin with a wide panoramic view and gradually zoom into a single detail — or reverse (start close, pull back).</p>
+<p>Begin with a wide panoramic view and gradually zoom into a single detail - or reverse (start close, pull back).</p>
 
 <h4>Structure 4: Contrast</h4>
-<p>Describe two contrasting aspects of the same place — the beauty and the decay, the noise and the silence, the surface and what lies beneath.</p>
+<p>Describe two contrasting aspects of the same place - the beauty and the decay, the noise and the silence, the surface and what lies beneath.</p>
 
 <h3>Practice: Describing a Coastal Scene</h3>
 <div class="model-answer"><strong>Model Descriptive Paragraph:</strong>
-<p><em>The beach was not the postcard version. The sand was grey and littered with the debris of last night's tide — tangled seaweed, a single trainer bleached by salt, the skeleton of a crab picked clean by gulls. The sea itself moved slowly, as if exhausted, dragging itself up the shore and retreating with a long, rattling sigh that pulled pebbles back in its wake. Above, the sky sat low and heavy, a ceiling of unbroken cloud that pressed down on the water and made the horizon disappear. There was no line between sea and sky — just a gradual fading, grey into grey, until the world simply ran out.</em></p>
+<p><em>The beach was not the postcard version. The sand was grey and littered with the debris of last night's tide - tangled seaweed, a single trainer bleached by salt, the skeleton of a crab picked clean by gulls. The sea itself moved slowly, as if exhausted, dragging itself up the shore and retreating with a long, rattling sigh that pulled pebbles back in its wake. Above, the sky sat low and heavy, a ceiling of unbroken cloud that pressed down on the water and made the horizon disappear. There was no line between sea and sky - just a gradual fading, grey into grey, until the world simply ran out.</em></p>
 <p>This paragraph succeeds because it: (1) subverts expectations ("not the postcard version"), (2) uses specific, vivid detail (the trainer, the crab skeleton), (3) personifies the sea ("as if exhausted," "a long, rattling sigh"), (4) engages sight, sound, and touch, and (5) ends with a striking image of dissolution.</p></div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best descriptive writing avoids cliches. "The sun beat down mercilessly" and "the waves crashed against the shore" are so overused they have lost their power. Challenge yourself to describe familiar scenes in <em>unfamiliar</em> ways. Instead of "the sky was blue," try "the sky had the hard, clean blue of a held breath" — unexpected comparisons wake the reader up.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The best descriptive writing avoids cliches. "The sun beat down mercilessly" and "the waves crashed against the shore" are so overused they have lost their power. Challenge yourself to describe familiar scenes in <em>unfamiliar</em> ways. Instead of "the sky was blue," try "the sky had the hard, clean blue of a held breath" - unexpected comparisons wake the reader up.</div>
 
 <h3>Common Descriptive Writing Pitfalls</h3>
 <ul>
-  <li><strong>Adjective overload</strong> — Using too many adjectives weakens rather than strengthens prose. "The dark, gloomy, sinister, ominous, frightening corridor" is exhausting. Choose one or two precise adjectives.</li>
-  <li><strong>Telling emotions</strong> — "I felt peaceful" is weak. Instead, describe what creates the peace and let the reader feel it.</li>
-  <li><strong>Losing structure</strong> — Without a plan, descriptive writing can become a random list of observations. Plan your movement through the scene.</li>
-  <li><strong>Drifting into narrative</strong> — If you chose the descriptive option, resist the urge to introduce a plot. You can include a <em>moment</em> (a bird taking flight, a door closing) but not a <em>story</em>.</li>
+  <li><strong>Adjective overload</strong> - Using too many adjectives weakens rather than strengthens prose. "The dark, gloomy, sinister, ominous, frightening corridor" is exhausting. Choose one or two precise adjectives.</li>
+  <li><strong>Telling emotions</strong> - "I felt peaceful" is weak. Instead, describe what creates the peace and let the reader feel it.</li>
+  <li><strong>Losing structure</strong> - Without a plan, descriptive writing can become a random list of observations. Plan your movement through the scene.</li>
+  <li><strong>Drifting into narrative</strong> - If you chose the descriptive option, resist the urge to introduce a plot. You can include a <em>moment</em> (a bird taking flight, a door closing) but not a <em>story</em>.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing descriptions that are entirely visual. "I could see..." repeated throughout produces flat, two-dimensional writing. Engaging smell, sound, and touch creates an immersive, three-dimensional world. Think of description as virtual reality for the reader — the more senses you activate, the more real the scene becomes.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing descriptions that are entirely visual. "I could see..." repeated throughout produces flat, two-dimensional writing. Engaging smell, sound, and touch creates an immersive, three-dimensional world. Think of description as virtual reality for the reader - the more senses you activate, the more real the scene becomes.</div>
 
 <h3>Power Techniques for Descriptive Writing</h3>
 <ul>
-  <li><strong>Extended metaphor</strong> — Sustain a single comparison across a paragraph or the whole piece.</li>
-  <li><strong>Personification</strong> — Give life and agency to the inanimate world.</li>
-  <li><strong>Specific detail</strong> — "A mug with a chipped rim and a faded logo" is more powerful than "a mug."</li>
-  <li><strong>Contrast within the scene</strong> — Beauty beside decay, noise beside silence.</li>
-  <li><strong>Sentence variety</strong> — Mirror your content with form: long, flowing sentences for calm; short, clipped ones for tension.</li>
+  <li><strong>Extended metaphor</strong> - Sustain a single comparison across a paragraph or the whole piece.</li>
+  <li><strong>Personification</strong> - Give life and agency to the inanimate world.</li>
+  <li><strong>Specific detail</strong> - "A mug with a chipped rim and a faded logo" is more powerful than "a mug."</li>
+  <li><strong>Contrast within the scene</strong> - Beauty beside decay, noise beside silence.</li>
+  <li><strong>Sentence variety</strong> - Mirror your content with form: long, flowing sentences for calm; short, clipped ones for tension.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Extended Metaphor</strong> — A metaphor that is developed and sustained across multiple sentences, a paragraph, or even an entire text. For example, describing a city as an organism — its streets as arteries, its traffic as blood flow, its buildings as bones — creates a unified and powerful comparison.</div>
+<div class="key-term"><strong>Key Term: Extended Metaphor</strong> - A metaphor that is developed and sustained across multiple sentences, a paragraph, or even an entire text. For example, describing a city as an organism - its streets as arteries, its traffic as blood flow, its buildings as bones - creates a unified and powerful comparison.</div>
 
 <h3>Worked Example: Grade 5 vs Grade 9 Descriptive Writing</h3>
 
@@ -2865,7 +2813,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 
 <p><em>"The house was very old and empty. It had broken windows and the paint was peeling. The garden was full of dead plants and weeds. Everything was dirty and dark. The doors were locked and you couldn't get in. It was a spooky place. I didn't like it. The walls were grey and sad. There was no one there, which made it feel lonely and scary."</em></p>
 
-<p><strong style="color: #c41e3a;">Examiner Comment:</strong> This response relies on telling rather than showing. The student states emotions directly ("spooky," "scary," "lonely") rather than creating them through sensory detail. The description is generic — "old house with broken windows" could describe any derelict building. There's no engagement with the five senses beyond vague visual reference. Sentence structures are simple and repetitive. The simile "sad" applied to walls is ineffective (walls aren't sad; we need description that makes them feel that way). The personal opinions ("I didn't like it") are inappropriate in descriptive writing. Grade 5 descriptive writing tells the reader what to feel rather than creating the conditions for that feeling.</p>
+<p><strong style="color: #c41e3a;">Examiner Comment:</strong> This response relies on telling rather than showing. The student states emotions directly ("spooky," "scary," "lonely") rather than creating them through sensory detail. The description is generic - "old house with broken windows" could describe any derelict building. There's no engagement with the five senses beyond vague visual reference. Sentence structures are simple and repetitive. The simile "sad" applied to walls is ineffective (walls aren't sad; we need description that makes them feel that way). The personal opinions ("I didn't like it") are inappropriate in descriptive writing. Grade 5 descriptive writing tells the reader what to feel rather than creating the conditions for that feeling.</p>
 </div>
 
 <h4>Grade 9 Response (Strong Descriptive Writing)</h4>
@@ -2875,15 +2823,15 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 
 <p><strong>Grade 9 Student Response:</strong></p>
 
-<p><em>"The house exhaled silence. The front door, once navy, was now the colour of stagnant water — not quite blue, not quite grey, but the sickly in-between that suggests decay. The brass letterbox, green with verdigris, hadn't opened in years. The windows were sealed with plywood, but where the wood had warped, splinters of the outside world bled through: a slice of overgrown garden, a thread of dying light.</em></p>
+<p><em>"The house exhaled silence. The front door, once navy, was now the colour of stagnant water - not quite blue, not quite grey, but the sickly in-between that suggests decay. The brass letterbox, green with verdigris, hadn't opened in years. The windows were sealed with plywood, but where the wood had warped, splinters of the outside world bled through: a slice of overgrown garden, a thread of dying light.</em></p>
 
-<p><em>Inside, the air was thick — not with presence but with absence. The smell was a palimpsest: old wood, a phantom sweetness (flowers, perhaps, long since reduced to dust), and the mineral-iron tang of rust. The carpets, where visible beneath the debris, held the faded pattern of decades — a geometric design that now suggested only entropy.</em></p>
+<p><em>Inside, the air was thick - not with presence but with absence. The smell was a palimpsest: old wood, a phantom sweetness (flowers, perhaps, long since reduced to dust), and the mineral-iron tang of rust. The carpets, where visible beneath the debris, held the faded pattern of decades - a geometric design that now suggested only entropy.</em></p>
 
-<p><em>The kitchen table sat at an angle, as if the house itself had tilted in grief, and on it lay the archaeology of abandonment: a cup, the dregs of tea rendered to rust-coloured rings; a newspaper, its headlines abstract now, the words bled into illegibility. The calendar on the wall had stopped in March. Which March? The ambiguity created a vertigo of time — this abandonment might be five years old or fifty.</em></p>
+<p><em>The kitchen table sat at an angle, as if the house itself had tilted in grief, and on it lay the archaeology of abandonment: a cup, the dregs of tea rendered to rust-coloured rings; a newspaper, its headlines abstract now, the words bled into illegibility. The calendar on the wall had stopped in March. Which March? The ambiguity created a vertigo of time - this abandonment might be five years old or fifty.</em></p>
 
-<p><em>Outside, the garden had reclaimed its territory. Where roses once grew, nettles thrusted upward, indifferent to human order. The swing set — that monument to vanished children — rusted in the tall grass, its chains locked, immobile. If you listened carefully, you could almost hear the place exhaling, slowly releasing its decades of memory into the overgrown air."</em></p>
+<p><em>Outside, the garden had reclaimed its territory. Where roses once grew, nettles thrusted upward, indifferent to human order. The swing set - that monument to vanished children - rusted in the tall grass, its chains locked, immobile. If you listened carefully, you could almost hear the place exhaling, slowly releasing its decades of memory into the overgrown air."</em></p>
 
-<p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated descriptive technique. The opening personification ("exhaled silence") establishes an atmosphere immediately and sets the tone. The description of the door colour uses specific detail and simile to create visceral unease — the colour suggests decay without stating it. The engagement with multiple senses is sophisticated: sight ("stagnant water," "splinters of light"), smell (a "palimpsest" of scents), touch (implied through texture), and even temporal senses (the verdigris suggesting age). The student moves through the space systematically, and each detail contributes to the atmosphere of loss and time's passage. The metaphor of archaeology is sustained and meaningful. The ambiguity of "which March" adds intellectual depth — the reader is made to feel the disorientation of time decay. The final return to the opening personification creates circular structure. Grade 9 descriptive writing creates immersion through precise, multi-sensory detail and sustained figurative language.</p>
+<p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated descriptive technique. The opening personification ("exhaled silence") establishes an atmosphere immediately and sets the tone. The description of the door colour uses specific detail and simile to create visceral unease - the colour suggests decay without stating it. The engagement with multiple senses is sophisticated: sight ("stagnant water," "splinters of light"), smell (a "palimpsest" of scents), touch (implied through texture), and even temporal senses (the verdigris suggesting age). The student moves through the space systematically, and each detail contributes to the atmosphere of loss and time's passage. The metaphor of archaeology is sustained and meaningful. The ambiguity of "which March" adds intellectual depth - the reader is made to feel the disorientation of time decay. The final return to the opening personification creates circular structure. Grade 9 descriptive writing creates immersion through precise, multi-sensory detail and sustained figurative language.</p>
 </div>
 
 <h3>Grade Boundary Breakdown: Descriptive Writing</h3>
@@ -2897,7 +2845,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 </div>
 
 <div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
-<strong>Grade 5 (14-16 marks for AO5):</strong> Uses description but may rely heavily on telling rather than showing. Limited sensory engagement (usually sight only). Simple vocabulary and sentence structures. May include personal opinion. Limited originality — descriptions feel generic or clichéd.
+<strong>Grade 5 (14-16 marks for AO5):</strong> Uses description but may rely heavily on telling rather than showing. Limited sensory engagement (usually sight only). Simple vocabulary and sentence structures. May include personal opinion. Limited originality - descriptions feel generic or clichéd.
 </div>
 
 <h3>Practice Passages: Guided Annotation</h3>
@@ -2905,16 +2853,16 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <h4>Practice Passage 1: Sensory-Rich Description</h4>
 
 <div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<p><em>"The market assaulted your senses before your eyes focused. The smell came first — a chaos of competing aromas. Cardamom and turmeric, sharp and ancient. Rotting fruit buried under baskets of bright abundance. A man frying something in oil, the scent of hot salt and garlic wrapping around you like a living thing. Your eyes, adjusting, landed on towers of color — saffron yellows, pomegranate reds, the improbable green of limes.</em></p>
+<p><em>"The market assaulted your senses before your eyes focused. The smell came first - a chaos of competing aromas. Cardamom and turmeric, sharp and ancient. Rotting fruit buried under baskets of bright abundance. A man frying something in oil, the scent of hot salt and garlic wrapping around you like a living thing. Your eyes, adjusting, landed on towers of color - saffron yellows, pomegranate reds, the improbable green of limes.</em></p>
 
-<p><em>The sound was a living organism. Vendors calling their wares in rapid-fire sequences. The crack of a merchant's whip against bundles of dried chilies. Haggling voices overlapping until they formed a single, indecipherable roar. And beneath it, a rhythm — the slap of feet on wet stone, the clink of coins, the creak of wooden stalls adjusting their weight."</em></p>
+<p><em>The sound was a living organism. Vendors calling their wares in rapid-fire sequences. The crack of a merchant's whip against bundles of dried chilies. Haggling voices overlapping until they formed a single, indecipherable roar. And beneath it, a rhythm - the slap of feet on wet stone, the clink of coins, the creak of wooden stalls adjusting their weight."</em></p>
 
 <p><strong>What makes this Grade 9:</strong></p>
 <ul>
-  <li>Smell comes FIRST, before sight — refusing the habitual dominance of vision</li>
+  <li>Smell comes FIRST, before sight - refusing the habitual dominance of vision</li>
   <li>"Cardamom and turmeric, sharp and ancient" combines specific naming with sensory language (sharp) and emotional resonance (ancient)</li>
   <li>The metaphor "like a living thing" for garlic scent is unusual and creates immersion</li>
-  <li>Sensory specificity: "rotting fruit," "frying," "salt" — not just "it smelled bad"</li>
+  <li>Sensory specificity: "rotting fruit," "frying," "salt" - not just "it smelled bad"</li>
   <li>Sound is described as "a living organism," personified and made active</li>
   <li>The layering of sounds creates texture: calls, cracks, haggling, then beneath-sounds (slap, clink, creak)</li>
   <li>Variety in sentence length mirrors the chaos of the market</li>
@@ -2924,11 +2872,11 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <h4>Practice Passage 2: Creating Atmosphere Through Contrast</h4>
 
 <div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
-<p><em>"The library breathed silence. Not the absence of sound but the presence of quiet — thick, accumulated, profound. The books on the shelves were like sleeping giants, their spines holding centuries of whispered secrets. Dust motes moved through the air like the thoughts of the building itself, slow and deliberate.</em></p>
+<p><em>"The library breathed silence. Not the absence of sound but the presence of quiet - thick, accumulated, profound. The books on the shelves were like sleeping giants, their spines holding centuries of whispered secrets. Dust motes moved through the air like the thoughts of the building itself, slow and deliberate.</em></p>
 
 <p><em>Then a child dropped a pencil.</em></p>
 
-<p><em>The sound cracked the silence like a pebble through ice. The child froze. An elderly librarian looked up, not with anger but with something worse — the expression of someone who had been guarding a sacred peace and had just watched it shatter."</em></p>
+<p><em>The sound cracked the silence like a pebble through ice. The child froze. An elderly librarian looked up, not with anger but with something worse - the expression of someone who had been guarding a sacred peace and had just watched it shatter."</em></p>
 
 <p><strong>What makes this Grade 9:</strong></p>
 <ul>
@@ -2959,7 +2907,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <ul>
   <li><strong>Adjective overload:</strong> "The dark, gloomy, sinister, terrifying, damp corridor" overwhelms. Two precise adjectives are stronger than five vague ones.</li>
   <li><strong>Generic descriptions:</strong> Every abandoned house is "dark and creepy" in weak writing. Find the specific details that make THIS place unique.</li>
-  <li><strong>Relying on clichés:</strong> "Blood-red roses," "azure skies," "emerald eyes" — these comparisons have lost power. Find original comparisons.</li>
+  <li><strong>Relying on clichés:</strong> "Blood-red roses," "azure skies," "emerald eyes" - these comparisons have lost power. Find original comparisons.</li>
   <li><strong>Telling rather than showing:</strong> "I felt peaceful" vs "The air was still, the water unrippled, the silence unbroken." Show the conditions that create peace.</li>
   <li><strong>Losing structure:</strong> Descriptive writing can become a random list of observations. Plan your movement through the space.</li>
   <li><strong>Overwriting:</strong> Every paragraph doesn't need three metaphors. Restraint can be more powerful than profusion.</li>
@@ -2969,8 +2917,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
     quiz: [
       {
         id: 'ocr-lc2-m7-q1',
-        question:
-          'What is the main difference between narrative and descriptive writing?',
+        question: 'What is the main difference between narrative and descriptive writing?',
         options: [
           'Narrative uses figurative language; descriptive does not',
           'Narrative tells a story with plot and events; descriptive evokes a scene or atmosphere without plot',
@@ -2983,8 +2930,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
       },
       {
         id: 'ocr-lc2-m7-q2',
-        question:
-          'Why should you avoid relying solely on visual description?',
+        question: 'Why should you avoid relying solely on visual description?',
         options: [
           'Because the mark scheme bans visual imagery',
           'Because engaging multiple senses creates immersive, three-dimensional writing',
@@ -3010,8 +2956,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
       },
       {
         id: 'ocr-lc2-m7-q4',
-        question:
-          'Why is "the sun beat down mercilessly" a weak descriptive phrase?',
+        question: 'Why is "the sun beat down mercilessly" a weak descriptive phrase?',
         options: [
           'Because it uses personification incorrectly',
           'Because it is a cliche that has lost its power through overuse',
@@ -3020,25 +2965,25 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
         ],
         correct: 1,
         explanation:
-          'This phrase is a cliche — so overused that it no longer creates a vivid image. Strong descriptive writing finds original ways to express familiar experiences.',
+          'This phrase is a cliche - so overused that it no longer creates a vivid image. Strong descriptive writing finds original ways to express familiar experiences.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 8 — Creative Writing Techniques: Advanced Craft
+  // MODULE 8 - Creative Writing Techniques: Advanced Craft
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m8',
     title: 'Creative Writing Techniques: Advanced Craft',
     duration: '55 min',
     content: `
-<h2>Advanced Creative Writing Techniques — Elevating Your Craft</h2>
+<h2>Advanced Creative Writing Techniques - Elevating Your Craft</h2>
 
 <p>This module explores advanced techniques that distinguish competent creative writing from exceptional creative writing. These are the skills that push responses into the top mark bands for both AO5 and AO6.</p>
 
 <h3>1. Controlling Narrative Perspective</h3>
-<div class="key-term"><strong>Key Term: Narrative Perspective</strong> — The point of view from which a story or description is told. The choice of perspective shapes what the reader knows, how they relate to characters, and the overall tone of the writing.</div>
+<div class="key-term"><strong>Key Term: Narrative Perspective</strong> - The point of view from which a story or description is told. The choice of perspective shapes what the reader knows, how they relate to characters, and the overall tone of the writing.</div>
 
 <h4>First Person ("I")</h4>
 <p>Creates intimacy and immediacy. The reader experiences events through a single consciousness. Limitations: the narrator can only know their own thoughts.</p>
@@ -3071,13 +3016,13 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <h3>3. Symbolism and Motif</h3>
 <p>Using recurring images or objects to carry deeper meaning elevates your writing beyond surface-level description:</p>
 <ul>
-  <li><strong>A closed door</strong> — Could symbolise blocked opportunity, secrecy, or fear of the unknown.</li>
-  <li><strong>Water</strong> — Can symbolise change, cleansing, danger, or the passage of time.</li>
-  <li><strong>Light and darkness</strong> — The most universal symbolic contrast: knowledge/ignorance, safety/danger, hope/despair.</li>
-  <li><strong>A clock or watch</strong> — Symbolises the passage of time, urgency, or mortality.</li>
+  <li><strong>A closed door</strong> - Could symbolise blocked opportunity, secrecy, or fear of the unknown.</li>
+  <li><strong>Water</strong> - Can symbolise change, cleansing, danger, or the passage of time.</li>
+  <li><strong>Light and darkness</strong> - The most universal symbolic contrast: knowledge/ignorance, safety/danger, hope/despair.</li>
+  <li><strong>A clock or watch</strong> - Symbolises the passage of time, urgency, or mortality.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Motif</strong> — A recurring image, symbol, or idea that runs through a text and contributes to its themes. For example, if a story repeatedly mentions birds — a caged bird, a bird in flight, a dead bird — the motif of birds carries thematic weight about freedom and captivity.</div>
+<div class="key-term"><strong>Key Term: Motif</strong> - A recurring image, symbol, or idea that runs through a text and contributes to its themes. For example, if a story repeatedly mentions birds - a caged bird, a bird in flight, a dead bird - the motif of birds carries thematic weight about freedom and captivity.</div>
 
 <h3>4. Openings That Demand Attention</h3>
 <ul>
@@ -3096,19 +3041,19 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
   <li><strong>Image-based:</strong> End on a vivid image rather than a statement. <em>"The last light caught the edge of the water, held it for a moment, and let it go."</em></li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Trying to include every technique you know. A story with a simile, a metaphor, personification, alliteration, a one-word sentence, a list of three, and a rhetorical question in every paragraph reads like a checklist, not a story. Use techniques <em>purposefully</em> — each one should serve the moment, not the mark scheme.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Trying to include every technique you know. A story with a simile, a metaphor, personification, alliteration, a one-word sentence, a list of three, and a rhetorical question in every paragraph reads like a checklist, not a story. Use techniques <em>purposefully</em> - each one should serve the moment, not the mark scheme.</div>
 
 <h3>6. The Power of Restraint</h3>
 <p>Sometimes what you leave out is more powerful than what you include:</p>
 <ul>
-  <li><strong>Implied emotion</strong> — Rather than naming the feeling, describe the physical response and let the reader infer.</li>
-  <li><strong>White space</strong> — A short paragraph surrounded by longer ones gains emphasis from its isolation.</li>
-  <li><strong>Unsaid dialogue</strong> — Characters who avoid saying what they mean create tension and subtext.</li>
+  <li><strong>Implied emotion</strong> - Rather than naming the feeling, describe the physical response and let the reader infer.</li>
+  <li><strong>White space</strong> - A short paragraph surrounded by longer ones gains emphasis from its isolation.</li>
+  <li><strong>Unsaid dialogue</strong> - Characters who avoid saying what they mean create tension and subtext.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners at the top mark bands look for <strong>controlled, deliberate craft</strong>. Every detail should feel chosen. If your description of a room includes a cracked mirror, the examiner will assume it is symbolic. Make sure every detail earns its place in your writing. The difference between a Grade 7 and a Grade 9 is not more techniques — it is more <em>control</em>.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners at the top mark bands look for <strong>controlled, deliberate craft</strong>. Every detail should feel chosen. If your description of a room includes a cracked mirror, the examiner will assume it is symbolic. Make sure every detail earns its place in your writing. The difference between a Grade 7 and a Grade 9 is not more techniques - it is more <em>control</em>.</div>
 
-<div class="key-term"><strong>Key Term: Subtext</strong> — The underlying meaning beneath the surface of what is said or described. In dialogue, subtext is what characters are really thinking or feeling but not saying aloud. In description, subtext is the deeper significance of the details a writer chooses to include.</div>
+<div class="key-term"><strong>Key Term: Subtext</strong> - The underlying meaning beneath the surface of what is said or described. In dialogue, subtext is what characters are really thinking or feeling but not saying aloud. In description, subtext is the deeper significance of the details a writer chooses to include.</div>
 
 
 <h3>7. Worked Example: Transforming Basic into Grade 9</h3>
@@ -3121,7 +3066,7 @@ She walked into the room. It was dark. There was a window but the curtains were 
 
 <p><strong>Grade 9 Transformation:</strong></p>
 <div class="model-answer">
-She stepped into the darkness and waited for her eyes to adjust. The curtains held firm against the afternoon light, reducing the room to shades of grey and black. Behind her, the door creaked as it swung shut. Her breathing shallowed. She could hear the hum of the boiler in the basement — a sound she had not noticed in daylight, now unnaturally loud. Her hand extended ahead of her, fingers splayed, searching for the light switch. The wallpaper was rough under her palm, ancient and peeling.
+She stepped into the darkness and waited for her eyes to adjust. The curtains held firm against the afternoon light, reducing the room to shades of grey and black. Behind her, the door creaked as it swung shut. Her breathing shallowed. She could hear the hum of the boiler in the basement - a sound she had not noticed in daylight, now unnaturally loud. Her hand extended ahead of her, fingers splayed, searching for the light switch. The wallpaper was rough under her palm, ancient and peeling.
 </div>
 
 <p><strong>Why This is Grade 9:</strong> Sensory layering (visual, tactile, auditory). Pace variation (snappy opening, longer atmosphere-building sentences). Subtext over naming (fear shown through shallow breathing, defensive body position, hyperawareness). Every detail serves a purpose.</p>
@@ -3138,7 +3083,7 @@ She stepped into the darkness and waited for her eyes to adjust. The curtains he
 
 <h3>9. Common Mistakes in Advanced Writing</h3>
 <div class="common-mistake"><strong>Mistake 1: Over-technique.</strong> Using multiple techniques per sentence because they're "techniques" shows inexperience. Grade 9 uses them invisibly.</div>
-<div class="common-mistake"><strong>Mistake 2: Telling instead of showing.</strong> "She was angry" — show the clenched jaw, let readers infer.</div>
+<div class="common-mistake"><strong>Mistake 2: Telling instead of showing.</strong> "She was angry" - show the clenched jaw, let readers infer.</div>
 <div class="common-mistake"><strong>Mistake 3: Unnatural vocabulary.</strong> Don't use words you wouldn't say. Precision doesn't mean formality.</div>
 <div class="common-mistake"><strong>Mistake 4: Assuming busy = better.</strong> White space and pauses are often more powerful than packed paragraphs.</div>
 
@@ -3149,7 +3094,7 @@ The beach was beautiful. The sun shone on the water and made it sparkle. She fel
 
 <p><strong>Model Response:</strong></p>
 <div class="model-answer">
-The beach smell of salt and something chemical — the ghost of last night's storm. She stood in the shallows, her trainers already waterlogged, watching the tide pull back. The wet sand held the imprint of her footprints for barely a second before the water swallowed them. She knelt down. Scooped. Let it run through her fingers. For the first time in three weeks — since the argument, the silence, the locked doors — her shoulders dropped. She was just breathing.
+The beach smell of salt and something chemical - the ghost of last night's storm. She stood in the shallows, her trainers already waterlogged, watching the tide pull back. The wet sand held the imprint of her footprints for barely a second before the water swallowed them. She knelt down. Scooped. Let it run through her fingers. For the first time in three weeks - since the argument, the silence, the locked doors - her shoulders dropped. She was just breathing.
 </div>
 
 `,
@@ -3166,12 +3111,11 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         ],
         correct: 2,
         explanation:
-          'Third person limited follows one character closely with slight distance. It allows both external description and access to the character\'s thoughts, making it versatile for GCSE-length pieces.',
+          "Third person limited follows one character closely with slight distance. It allows both external description and access to the character's thoughts, making it versatile for GCSE-length pieces.",
       },
       {
         id: 'ocr-lc2-m8-q2',
-        question:
-          'How should sentence length relate to the pace of your writing?',
+        question: 'How should sentence length relate to the pace of your writing?',
         options: [
           'All sentences should be the same length',
           'Short sentences create urgency; long sentences create slow, reflective pacing',
@@ -3187,8 +3131,8 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         question: 'What is a "motif" in creative writing?',
         options: [
           'The moral of the story',
-          'A recurring image, symbol, or idea that contributes to the text\'s themes',
-          'The main character\'s motivation',
+          "A recurring image, symbol, or idea that contributes to the text's themes",
+          "The main character's motivation",
           'A type of paragraph structure',
         ],
         correct: 1,
@@ -3197,34 +3141,33 @@ The beach smell of salt and something chemical — the ghost of last night's sto
       },
       {
         id: 'ocr-lc2-m8-q4',
-        question:
-          'What is the difference between a Grade 7 and Grade 9 creative writing response?',
+        question: 'What is the difference between a Grade 7 and Grade 9 creative writing response?',
         options: [
           'Grade 9 responses use more techniques',
           'Grade 9 responses are longer',
-          'Grade 9 responses demonstrate more control — every detail feels chosen and purposeful',
+          'Grade 9 responses demonstrate more control - every detail feels chosen and purposeful',
           'Grade 9 responses always use first person',
         ],
         correct: 2,
         explanation:
-          'The distinction is control, not quantity. Grade 9 responses feel deliberate — every detail, technique, and structural choice serves a purpose. More techniques without control will not reach the top bands.',
+          'The distinction is control, not quantity. Grade 9 responses feel deliberate - every detail, technique, and structural choice serves a purpose. More techniques without control will not reach the top bands.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 9 — Technical Accuracy in Creative Writing
+  // MODULE 9 - Technical Accuracy in Creative Writing
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m9',
     title: 'Technical Accuracy in Creative Writing',
     duration: '50 min',
     content: `
-<h2>AO6 in Creative Writing — Accuracy, Variety, and Craft</h2>
+<h2>AO6 in Creative Writing - Accuracy, Variety, and Craft</h2>
 
-<p>Technical accuracy in creative writing is tested through <strong>AO6</strong>, which accounts for 16 of the 40 writing marks. AO6 rewards accurate spelling and punctuation, but also — crucially — a <strong>range</strong> of vocabulary and sentence structures used for deliberate <strong>effect</strong>. In creative writing, accuracy is not just about avoiding errors; it is about deploying technical skills as creative tools.</p>
+<p>Technical accuracy in creative writing is tested through <strong>AO6</strong>, which accounts for 16 of the 40 writing marks. AO6 rewards accurate spelling and punctuation, but also - crucially - a <strong>range</strong> of vocabulary and sentence structures used for deliberate <strong>effect</strong>. In creative writing, accuracy is not just about avoiding errors; it is about deploying technical skills as creative tools.</p>
 
-<div class="key-term"><strong>Key Term: Sentence Variety for Effect</strong> — Using different sentence types not just for correctness but as deliberate creative choices. A short sentence after a long one creates emphasis. A fragment creates drama. A complex sentence with embedded clauses creates a sense of layering or complexity.</div>
+<div class="key-term"><strong>Key Term: Sentence Variety for Effect</strong> - Using different sentence types not just for correctness but as deliberate creative choices. A short sentence after a long one creates emphasis. A fragment creates drama. A complex sentence with embedded clauses creates a sense of layering or complexity.</div>
 
 <h3>Punctuation as a Creative Tool</h3>
 
@@ -3232,10 +3175,10 @@ The beach smell of salt and something chemical — the ghost of last night's sto
 <p>Creates trailing off, hesitation, or unfinished thought:</p>
 <p><em>"She opened her mouth to say something. Closed it. Tried again. 'I just...' She shook her head."</em></p>
 
-<h4>Dash (—)</h4>
+<h4>Dash (-)</h4>
 <p>Creates interruption, afterthought, or dramatic pause:</p>
-<p><em>"He turned the corner — and stopped dead."</em></p>
-<p><em>"The house was beautiful — or it had been, once."</em></p>
+<p><em>"He turned the corner - and stopped dead."</em></p>
+<p><em>"The house was beautiful - or it had been, once."</em></p>
 
 <h4>Colon (:)</h4>
 <p>Builds anticipation before a reveal:</p>
@@ -3247,30 +3190,30 @@ The beach smell of salt and something chemical — the ghost of last night's sto
 
 <h4>Comma for Listing (Asyndetic Listing)</h4>
 <p>Omitting conjunctions from a list creates pace and accumulation:</p>
-<p><em>"Books, papers, photographs, the remains of a half-eaten meal — the desk told the story of a life interrupted."</em></p>
+<p><em>"Books, papers, photographs, the remains of a half-eaten meal - the desk told the story of a life interrupted."</em></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Creative writing gives you licence to break grammatical rules <strong>deliberately</strong>. A sentence fragment ("Silence."), a one-word paragraph ("Gone."), or an unconventional use of punctuation can be powerful — but only if the examiner can see it is a <em>choice</em>, not an error. Surround your deliberate rule-breaking with technically accurate prose to signal control.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Creative writing gives you licence to break grammatical rules <strong>deliberately</strong>. A sentence fragment ("Silence."), a one-word paragraph ("Gone."), or an unconventional use of punctuation can be powerful - but only if the examiner can see it is a <em>choice</em>, not an error. Surround your deliberate rule-breaking with technically accurate prose to signal control.</div>
 
 <h3>Paragraphing for Effect</h3>
-<p>In creative writing, paragraph breaks are not just organisational — they are rhythmic and emotional:</p>
+<p>In creative writing, paragraph breaks are not just organisational - they are rhythmic and emotional:</p>
 <ul>
-  <li><strong>Long paragraphs</strong> — Immerse the reader in detailed description; create a sense of abundance or overwhelm.</li>
-  <li><strong>Short paragraphs</strong> — Create emphasis, pause, or dramatic shift.</li>
-  <li><strong>One-sentence paragraphs</strong> — Maximum impact. Use sparingly.</li>
-  <li><strong>Paragraph breaks at moments of change</strong> — A new paragraph signals a shift in time, focus, tone, or speaker.</li>
+  <li><strong>Long paragraphs</strong> - Immerse the reader in detailed description; create a sense of abundance or overwhelm.</li>
+  <li><strong>Short paragraphs</strong> - Create emphasis, pause, or dramatic shift.</li>
+  <li><strong>One-sentence paragraphs</strong> - Maximum impact. Use sparingly.</li>
+  <li><strong>Paragraph breaks at moments of change</strong> - A new paragraph signals a shift in time, focus, tone, or speaker.</li>
 </ul>
 
 <h3>Vocabulary: Precision Over Ambition</h3>
 <p>In creative writing, the right word matters more than the impressive word:</p>
 
-<div class="model-answer"><strong>Example — Choosing the Right Verb:</strong>
+<div class="model-answer"><strong>Example - Choosing the Right Verb:</strong>
 <p>Consider: "She <strong>walked</strong> across the room."</p>
 <p>Now consider alternatives and what each conveys:</p>
 <ul>
-  <li><em>She <strong>crept</strong> across the room.</em> — Stealth, fear, secrecy.</li>
-  <li><em>She <strong>strode</strong> across the room.</em> — Confidence, purpose, authority.</li>
-  <li><em>She <strong>drifted</strong> across the room.</em> — Absent-mindedness, dreaminess.</li>
-  <li><em>She <strong>stumbled</strong> across the room.</em> — Disorientation, injury, intoxication.</li>
+  <li><em>She <strong>crept</strong> across the room.</em> - Stealth, fear, secrecy.</li>
+  <li><em>She <strong>strode</strong> across the room.</em> - Confidence, purpose, authority.</li>
+  <li><em>She <strong>drifted</strong> across the room.</em> - Absent-mindedness, dreaminess.</li>
+  <li><em>She <strong>stumbled</strong> across the room.</em> - Disorientation, injury, intoxication.</li>
 </ul>
 <p>Each verb does the work of an entire sentence of description. Choosing precise verbs is one of the most efficient ways to improve your creative writing.</p></div>
 
@@ -3283,7 +3226,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
   <li>Full stop inside the speech marks when the speech ends the sentence: <em>She whispered, "It's over<strong>.</strong>"</em></li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Overusing adverbs in dialogue tags. "She said angrily," "he whispered nervously," "they shouted furiously" — these adverbs are redundant if the dialogue itself conveys the emotion. Let the words do the work: "Get out" spoken in context doesn't need "angrily" attached to it.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Overusing adverbs in dialogue tags. "She said angrily," "he whispered nervously," "they shouted furiously" - these adverbs are redundant if the dialogue itself conveys the emotion. Let the words do the work: "Get out" spoken in context doesn't need "angrily" attached to it.</div>
 
 <h3>Proofreading Strategy for Creative Writing</h3>
 <ol>
@@ -3295,22 +3238,21 @@ The beach smell of salt and something chemical — the ghost of last night's sto
   <li><strong>Check perspective consistency.</strong> Have you accidentally shifted between first and third person?</li>
 </ol>
 
-<div class="key-term"><strong>Key Term: Asyndetic Listing</strong> — A list that omits conjunctions (and, or, but), creating a sense of pace, accumulation, or overwhelm. "She packed clothes, books, photographs, letters" moves faster than "She packed clothes and books and photographs and letters." The absence of conjunctions implies there is too much to itemise — the list could go on.</div>
+<div class="key-term"><strong>Key Term: Asyndetic Listing</strong> - A list that omits conjunctions (and, or, but), creating a sense of pace, accumulation, or overwhelm. "She packed clothes, books, photographs, letters" moves faster than "She packed clothes and books and photographs and letters." The absence of conjunctions implies there is too much to itemise - the list could go on.</div>
 `,
     quiz: [
       {
         id: 'ocr-lc2-m9-q1',
-        question:
-          'When is it acceptable to use a sentence fragment in creative writing?',
+        question: 'When is it acceptable to use a sentence fragment in creative writing?',
         options: [
-          'Never — fragments are always errors',
+          'Never - fragments are always errors',
           'When it is a deliberate choice for emphasis, surrounded by accurate prose that signals control',
           'Only in dialogue',
           'Only at the end of a paragraph',
         ],
         correct: 1,
         explanation:
-          'Sentence fragments can be powerful creative tools ("Silence." "Gone.") when used deliberately. The key is that the examiner must recognise it as a choice, not an error — which requires accurate prose elsewhere to signal control.',
+          'Sentence fragments can be powerful creative tools ("Silence." "Gone.") when used deliberately. The key is that the examiner must recognise it as a choice, not an error - which requires accurate prose elsewhere to signal control.',
       },
       {
         id: 'ocr-lc2-m9-q2',
@@ -3323,7 +3265,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         ],
         correct: 1,
         explanation:
-          'A precise verb conveys character, mood, and physical action in a single word. "She crept" tells us far more than "She walked nervously" — it is more efficient and more vivid.',
+          'A precise verb conveys character, mood, and physical action in a single word. "She crept" tells us far more than "She walked nervously" - it is more efficient and more vivid.',
       },
       {
         id: 'ocr-lc2-m9-q3',
@@ -3340,8 +3282,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
       },
       {
         id: 'ocr-lc2-m9-q4',
-        question:
-          'What should you check for when proofreading creative writing?',
+        question: 'What should you check for when proofreading creative writing?',
         options: [
           'Only spelling errors',
           'Opening/ending strength, apostrophes, sentence boundaries, tense consistency, and perspective consistency',
@@ -3356,58 +3297,58 @@ The beach smell of salt and something chemical — the ghost of last night's sto
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 10 — Component 02 Exam Strategy & Timed Practice
+  // MODULE 10 - Component 02 Exam Strategy & Timed Practice
   // ──────────────────────────────────────────────
   {
     id: 'ocr-lc2-m10',
     title: 'Component 02 Exam Strategy & Timed Practice',
     duration: '50 min',
     content: `
-<h2>Exam Strategy — Putting It All Together for Component 02</h2>
+<h2>Exam Strategy - Putting It All Together for Component 02</h2>
 
-<p>This final module brings together everything from the course into a complete exam strategy for Component 02. You have <strong>2 hours</strong> and <strong>80 marks</strong> at stake — every decision you make about time, approach, and technique matters.</p>
+<p>This final module brings together everything from the course into a complete exam strategy for Component 02. You have <strong>2 hours</strong> and <strong>80 marks</strong> at stake - every decision you make about time, approach, and technique matters.</p>
 
 <h3>The Complete Timing Plan</h3>
 <table>
   <tr><th>Time</th><th>Task</th><th>Marks</th></tr>
-  <tr><td>0–10 min</td><td>Read the fiction extract carefully, annotating language and structural features</td><td>—</td></tr>
-  <tr><td>10–20 min</td><td>Answer Q1 (retrieval and inference)</td><td>Varies</td></tr>
-  <tr><td>20–35 min</td><td>Answer Q2 (language analysis)</td><td>6–8</td></tr>
-  <tr><td>35–50 min</td><td>Answer Q3 (structural analysis)</td><td>6–8</td></tr>
-  <tr><td>50–65 min</td><td>Answer Q4 (evaluation)</td><td>12–14</td></tr>
-  <tr><td>65–75 min</td><td>Choose writing task and plan thoroughly</td><td>—</td></tr>
-  <tr><td>75–115 min</td><td>Write creative piece</td><td>40</td></tr>
-  <tr><td>115–120 min</td><td>Proofread writing</td><td>—</td></tr>
+  <tr><td>0-10 min</td><td>Read the fiction extract carefully, annotating language and structural features</td><td>-</td></tr>
+  <tr><td>10-20 min</td><td>Answer Q1 (retrieval and inference)</td><td>Varies</td></tr>
+  <tr><td>20-35 min</td><td>Answer Q2 (language analysis)</td><td>6-8</td></tr>
+  <tr><td>35-50 min</td><td>Answer Q3 (structural analysis)</td><td>6-8</td></tr>
+  <tr><td>50-65 min</td><td>Answer Q4 (evaluation)</td><td>12-14</td></tr>
+  <tr><td>65-75 min</td><td>Choose writing task and plan thoroughly</td><td>-</td></tr>
+  <tr><td>75-115 min</td><td>Write creative piece</td><td>40</td></tr>
+  <tr><td>115-120 min</td><td>Proofread writing</td><td>-</td></tr>
 </table>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The creative writing task is worth <strong>half the paper</strong> (40 out of 80 marks). Treat it with the seriousness it deserves. Students who view Section B as an afterthought — something to rush through after careful reading answers — are throwing away 50% of their marks. Aim to spend at least 50 minutes on your creative piece, including planning.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The creative writing task is worth <strong>half the paper</strong> (40 out of 80 marks). Treat it with the seriousness it deserves. Students who view Section B as an afterthought - something to rush through after careful reading answers - are throwing away 50% of their marks. Aim to spend at least 50 minutes on your creative piece, including planning.</div>
 
 <h3>Reading Section: Key Reminders</h3>
 
-<h4>Q1 — Retrieval and Inference</h4>
+<h4>Q1 - Retrieval and Inference</h4>
 <ul>
-  <li>Keep retrieval answers brief — a phrase or sentence.</li>
-  <li>For inference, use Point–Evidence–Inference structure.</li>
+  <li>Keep retrieval answers brief - a phrase or sentence.</li>
+  <li>For inference, use Point-Evidence-Inference structure.</li>
   <li>Ground all inferences in textual evidence.</li>
 </ul>
 
-<h4>Q2 — Language Analysis</h4>
+<h4>Q2 - Language Analysis</h4>
 <ul>
-  <li>Use What–How–Why framework.</li>
-  <li>Zoom into word-level analysis — explore connotations.</li>
+  <li>Use What-How-Why framework.</li>
+  <li>Zoom into word-level analysis - explore connotations.</li>
   <li>Connect analysis to the reader's emotional experience.</li>
-  <li>2–3 developed points are better than 5 superficial ones.</li>
+  <li>2-3 developed points are better than 5 superficial ones.</li>
 </ul>
 
-<h4>Q3 — Structural Analysis</h4>
+<h4>Q3 - Structural Analysis</h4>
 <ul>
-  <li>Do NOT discuss language here — focus on organisation.</li>
+  <li>Do NOT discuss language here - focus on organisation.</li>
   <li>Consider: shifts in focus, pacing, opening/ending, withholding information.</li>
   <li>Single-sentence paragraphs are always worth discussing.</li>
   <li>Explain the EFFECT of structural choices on the reader.</li>
 </ul>
 
-<h4>Q4 — Evaluation</h4>
+<h4>Q4 - Evaluation</h4>
 <ul>
   <li>State your judgement clearly: agree, partially agree, or disagree.</li>
   <li>Support every point with evidence and analysis of effectiveness.</li>
@@ -3420,28 +3361,28 @@ The beach smell of salt and something chemical — the ghost of last night's sto
 <h4>Choosing Your Task</h4>
 <p>Read both options carefully. Choose based on:</p>
 <ul>
-  <li><strong>Which prompt sparks more vivid ideas?</strong> — Your best writing comes from genuine imaginative engagement.</li>
-  <li><strong>Which form suits your strengths?</strong> — If you write strong dialogue and character, choose narrative. If you excel at imagery and atmosphere, choose descriptive.</li>
-  <li><strong>Which can you structure effectively?</strong> — Can you see a clear beginning, middle, and end (or opening, development, and closing image)?</li>
+  <li><strong>Which prompt sparks more vivid ideas?</strong> - Your best writing comes from genuine imaginative engagement.</li>
+  <li><strong>Which form suits your strengths?</strong> - If you write strong dialogue and character, choose narrative. If you excel at imagery and atmosphere, choose descriptive.</li>
+  <li><strong>Which can you structure effectively?</strong> - Can you see a clear beginning, middle, and end (or opening, development, and closing image)?</li>
 </ul>
 
 <h4>The 10-Minute Plan</h4>
 <p>Your plan should include:</p>
 <ul>
-  <li><strong>Opening</strong> — Your first sentence or image. Write it in your plan.</li>
-  <li><strong>Structure</strong> — How will you move through the piece? (Spatial? Temporal? Zoom? Contrast?)</li>
-  <li><strong>Key images/moments</strong> — 3–4 vivid details or scenes you want to include.</li>
-  <li><strong>Ending</strong> — Your final image or sentence. Write it in your plan.</li>
-  <li><strong>Perspective and tense</strong> — Decide and commit. First person past? Third person present?</li>
+  <li><strong>Opening</strong> - Your first sentence or image. Write it in your plan.</li>
+  <li><strong>Structure</strong> - How will you move through the piece? (Spatial? Temporal? Zoom? Contrast?)</li>
+  <li><strong>Key images/moments</strong> - 3-4 vivid details or scenes you want to include.</li>
+  <li><strong>Ending</strong> - Your final image or sentence. Write it in your plan.</li>
+  <li><strong>Perspective and tense</strong> - Decide and commit. First person past? Third person present?</li>
 </ul>
 
 <h4>While Writing</h4>
 <ul>
-  <li>Aim for 400–600 words. Quality beats quantity.</li>
+  <li>Aim for 400-600 words. Quality beats quantity.</li>
   <li>Vary your sentence structures deliberately.</li>
   <li>Engage at least three senses.</li>
   <li>Use techniques purposefully, not as a checklist.</li>
-  <li>Write a strong opening and a strong ending — these are what the examiner remembers.</li>
+  <li>Write a strong opening and a strong ending - these are what the examiner remembers.</li>
 </ul>
 
 <h3>Emergency Strategies</h3>
@@ -3450,23 +3391,23 @@ The beach smell of salt and something chemical — the ghost of last night's sto
 <ol>
   <li>Write a plan showing your intended structure.</li>
   <li>Write the opening paragraph with your best prose.</li>
-  <li>Write the ending paragraph — even if the middle is missing, a strong ending shows craft.</li>
+  <li>Write the ending paragraph - even if the middle is missing, a strong ending shows craft.</li>
   <li>Bullet-point any key scenes or images between them.</li>
 </ol>
 
 <h4>If you cannot understand the fiction extract:</h4>
 <ol>
-  <li>Focus on what you CAN understand — atmosphere, tone, character emotions.</li>
+  <li>Focus on what you CAN understand - atmosphere, tone, character emotions.</li>
   <li>Quote specific words and phrases and analyse their connotations.</li>
   <li>You do not need to understand every word to analyse language and structure effectively.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending the last 20 minutes improving reading answers instead of writing. Reading answers have a ceiling — once you have made your points and supported them, additional time yields diminishing returns. Writing marks, by contrast, are only limited by the quality of your prose. The last 20 minutes of your exam should <em>always</em> be spent on writing or proofreading.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending the last 20 minutes improving reading answers instead of writing. Reading answers have a ceiling - once you have made your points and supported them, additional time yields diminishing returns. Writing marks, by contrast, are only limited by the quality of your prose. The last 20 minutes of your exam should <em>always</em> be spent on writing or proofreading.</div>
 
 <h3>Final Confidence Checklist</h3>
 <ul>
   <li>I can retrieve information and make inferences from fiction.</li>
-  <li>I can analyse language using What–How–Why, focusing on word-level effects.</li>
+  <li>I can analyse language using What-How-Why, focusing on word-level effects.</li>
   <li>I can analyse structure distinctly from language, discussing shifts, pacing, and organisation.</li>
   <li>I can evaluate a writer's effectiveness with a balanced, evidence-based judgement.</li>
   <li>I can write a controlled narrative or descriptive piece with purposeful technique.</li>
@@ -3474,7 +3415,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
   <li>I have a timing plan and will stick to it.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Diminishing Returns</strong> — The principle that beyond a certain point, additional effort produces less and less benefit. In exam terms, spending 5 extra minutes on a reading answer might gain 1 mark, while spending those 5 minutes on writing could gain 3–4 marks. Allocate your time where it has the greatest impact.</div>
+<div class="key-term"><strong>Key Term: Diminishing Returns</strong> - The principle that beyond a certain point, additional effort produces less and less benefit. In exam terms, spending 5 extra minutes on a reading answer might gain 1 mark, while spending those 5 minutes on writing could gain 3-4 marks. Allocate your time where it has the greatest impact.</div>
 `,
     quiz: [
       {
@@ -3483,7 +3424,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         options: ['16 marks', '24 marks', '40 marks', '80 marks'],
         correct: 2,
         explanation:
-          'The creative writing task is worth 40 marks — exactly half of the total paper. It deserves at least 50 minutes of your time, including planning.',
+          'The creative writing task is worth 40 marks - exactly half of the total paper. It deserves at least 50 minutes of your time, including planning.',
       },
       {
         id: 'ocr-lc2-m10-q2',
@@ -3496,7 +3437,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         ],
         correct: 1,
         explanation:
-          'A strong plan includes your opening, structural approach, 3–4 key images or moments, your ending, and your chosen perspective and tense. This ensures purposeful, well-structured writing.',
+          'A strong plan includes your opening, structural approach, 3-4 key images or moments, your ending, and your chosen perspective and tense. This ensures purposeful, well-structured writing.',
       },
       {
         id: 'ocr-lc2-m10-q3',
@@ -3509,7 +3450,7 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         ],
         correct: 1,
         explanation:
-          'Q2 focuses on language analysis — word choices, imagery, figurative language. Q3 focuses on structural analysis — how the text is organised, shifts in focus, pacing, and sequencing. OCR tests these as separate skills.',
+          'Q2 focuses on language analysis - word choices, imagery, figurative language. Q3 focuses on structural analysis - how the text is organised, shifts in focus, pacing, and sequencing. OCR tests these as separate skills.',
       },
       {
         id: 'ocr-lc2-m10-q4',
@@ -3522,11 +3463,11 @@ The beach smell of salt and something chemical — the ghost of last night's sto
         ],
         correct: 1,
         explanation:
-          'You do not need to understand every word to analyse language and structure effectively. Focus on what you can identify — atmosphere, tone, character emotions — and analyse specific words and phrases for their connotations and effects.',
+          'You do not need to understand every word to analyse language and structure effectively. Focus on what you can identify - atmosphere, tone, character emotions - and analyse specific words and phrases for their connotations and effects.',
       },
     ],
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Component 02 Assessment Questions (20 questions)
@@ -3544,7 +3485,7 @@ const c2Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'OCR Component 02 is 2 hours long and worth 80 marks — 40 for reading (Section A) and 40 for writing (Section B).',
+      'OCR Component 02 is 2 hours long and worth 80 marks - 40 for reading (Section A) and 40 for writing (Section B).',
   },
   {
     id: 'ocr-lc2-assess-2',
@@ -3585,13 +3526,13 @@ const c2Assessment: CourseQuiz[] = [
     question: 'What is "pathetic fallacy"?',
     options: [
       'A logical error in an argument',
-      'Weather or nature reflecting a character\'s emotions',
+      "Weather or nature reflecting a character's emotions",
       'An unreliable narrator',
       'A type of irony',
     ],
     correct: 1,
     explanation:
-      'Pathetic fallacy is when the natural world (especially weather) mirrors a character\'s emotional state — such as rain accompanying sadness or sunshine reflecting joy.',
+      "Pathetic fallacy is when the natural world (especially weather) mirrors a character's emotional state - such as rain accompanying sadness or sunshine reflecting joy.",
   },
   {
     id: 'ocr-lc2-assess-6',
@@ -3643,7 +3584,7 @@ const c2Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'A strong counter-argument engages critically with the text — such as noting reliance on genre conventions. Personal preference ("I didn\'t enjoy it") is not analytical evaluation.',
+      'A strong counter-argument engages critically with the text - such as noting reliance on genre conventions. Personal preference ("I didn\'t enjoy it") is not analytical evaluation.',
   },
   {
     id: 'ocr-lc2-assess-10',
@@ -3689,7 +3630,7 @@ const c2Assessment: CourseQuiz[] = [
     question: 'What should descriptive writing engage beyond visual imagery?',
     options: [
       'Only hearing',
-      'Multiple senses — sound, touch, smell, and taste as well as sight',
+      'Multiple senses - sound, touch, smell, and taste as well as sight',
       'Only emotions',
       'Only movement',
     ],
@@ -3713,12 +3654,7 @@ const c2Assessment: CourseQuiz[] = [
   {
     id: 'ocr-lc2-assess-15',
     question: 'Which narrative perspective is often considered most versatile for GCSE?',
-    options: [
-      'First person',
-      'Second person',
-      'Third person limited',
-      'Third person omniscient',
-    ],
+    options: ['First person', 'Second person', 'Third person limited', 'Third person omniscient'],
     correct: 2,
     explanation:
       'Third person limited follows one character closely with slight distance, allowing both external description and internal thought. It is versatile and easier to control than omniscient perspective.',
@@ -3754,13 +3690,13 @@ const c2Assessment: CourseQuiz[] = [
     question: 'What distinguishes a Grade 9 creative writing response from a Grade 7?',
     options: [
       'More techniques and longer length',
-      'Greater control — every detail feels chosen and purposeful',
+      'Greater control - every detail feels chosen and purposeful',
       'Use of first person only',
       'More complex vocabulary',
     ],
     correct: 1,
     explanation:
-      'The difference is control, not quantity. Grade 9 responses feel deliberate and purposeful — every technique, detail, and structural choice serves the writing\'s overall effect.',
+      "The difference is control, not quantity. Grade 9 responses feel deliberate and purposeful - every technique, detail, and structural choice serves the writing's overall effect.",
   },
   {
     id: 'ocr-lc2-assess-19',
@@ -3768,22 +3704,22 @@ const c2Assessment: CourseQuiz[] = [
     options: ['16 marks', '24 marks', '40 marks', '80 marks'],
     correct: 2,
     explanation:
-      'The creative writing task is worth 40 marks (24 for AO5 content/organisation + 16 for AO6 technical accuracy) — half the entire paper.',
+      'The creative writing task is worth 40 marks (24 for AO5 content/organisation + 16 for AO6 technical accuracy) - half the entire paper.',
   },
   {
     id: 'ocr-lc2-assess-20',
     question: 'What should you do if you run out of time for the writing section?',
     options: [
       'Leave it blank and focus on reading',
-      'Write a plan, strong opening, and strong ending — even incomplete responses earn marks',
+      'Write a plan, strong opening, and strong ending - even incomplete responses earn marks',
       'Write as fast as possible without planning',
       'Copy text from the source extract',
     ],
     correct: 1,
     explanation:
-      'A plan, opening paragraph, and ending paragraph can earn significant marks even if the middle is incomplete. An abandoned writing section earns zero — always attempt it.',
+      'A plan, opening paragraph, and ending paragraph can earn significant marks even if the middle is incomplete. An abandoned writing section earns zero - always attempt it.',
   },
-];
+]
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // Course Data Objects
@@ -3791,7 +3727,7 @@ const c2Assessment: CourseQuiz[] = [
 
 const ocrLangC1: CourseData = {
   id: 'ocr-lang-c1',
-  title: 'OCR GCSE English Language — Component 01',
+  title: 'OCR GCSE English Language - Component 01',
   subtitle: 'Communicating Information and Ideas (J351/01)',
   tier: 'GCSE',
   board: 'OCR',
@@ -3802,14 +3738,14 @@ const ocrLangC1: CourseData = {
   level: 'GCSE (Years 10-11)',
   color: '#0891b2',
   description:
-    'Master OCR Component 01: analyse non-fiction texts, compare viewpoints, evaluate writer effectiveness, and craft compelling transactional writing across all five forms — letters, articles, speeches, reports, and reviews.',
+    'Master OCR Component 01: analyse non-fiction texts, compare viewpoints, evaluate writer effectiveness, and craft compelling transactional writing across all five forms - letters, articles, speeches, reports, and reviews.',
   moduleList: c1Modules,
   assessmentQuestions: c1Assessment,
-};
+}
 
 const ocrLangC2: CourseData = {
   id: 'ocr-lang-c2',
-  title: 'OCR GCSE English Language — Component 02',
+  title: 'OCR GCSE English Language - Component 02',
   subtitle: 'Exploring Effects and Impact (J351/02)',
   tier: 'GCSE',
   board: 'OCR',
@@ -3823,6 +3759,6 @@ const ocrLangC2: CourseData = {
     'Master OCR Component 02: analyse fiction extracts for language, structure, and evaluation, then craft powerful narrative and descriptive writing with advanced creative techniques.',
   moduleList: c2Modules,
   assessmentQuestions: c2Assessment,
-};
+}
 
-export const ocrCourses: CourseData[] = [ocrLangC1, ocrLangC2];
+export const ocrCourses: CourseData[] = [ocrLangC1, ocrLangC2]

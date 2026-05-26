@@ -36,7 +36,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: '"Vast and trunkless legs" — only the legs remain standing. The body (trunk) is gone, symbolising how Ozymandias\'s power has been stripped away by time. "Vast" emphasises the original scale of his ambition.',
+          note: '"Vast and trunkless legs" - only the legs remain standing. The body (trunk) is gone, symbolising how Ozymandias\'s power has been stripped away by time. "Vast" emphasises the original scale of his ambition.',
           color: '#10b981',
         },
       ],
@@ -56,7 +56,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: '"Half sunk" and "shattered" — the face is broken and partially buried. This physical destruction mirrors the collapse of the ruler\'s authority.',
+          note: '"Half sunk" and "shattered" - the face is broken and partially buried. This physical destruction mirrors the collapse of the ruler\'s authority.',
           color: '#10b981',
         },
       ],
@@ -81,7 +81,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Irony',
-          note: 'The sculptor — an artist, not a ruler — is the one whose work survives. Art outlasts political power.',
+          note: 'The sculptor - an artist, not a ruler - is the one whose work survives. Art outlasts political power.',
           color: '#f59e0b',
         },
       ],
@@ -91,7 +91,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Juxtaposition',
-          note: '"Survive" vs "lifeless" — the passions outlive the man, but only on dead stone. There is a paradox: life is preserved in death.',
+          note: '"Survive" vs "lifeless" - the passions outlive the man, but only on dead stone. There is a paradox: life is preserved in death.',
           color: '#10b981',
         },
       ],
@@ -146,7 +146,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Contrast',
-          note: '"Nothing beside remains" — the poem\'s most powerful moment. The short, blunt sentence directly contradicts the king\'s boastful inscription.',
+          note: '"Nothing beside remains" - the poem\'s most powerful moment. The short, blunt sentence directly contradicts the king\'s boastful inscription.',
           color: '#ef4444',
         },
       ],
@@ -166,7 +166,7 @@ const ozymandias: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'The final image is of endless, flat desert — nature has completely reclaimed the land. The sibilant "s" sounds create a whispering, wind-like effect.',
+          note: 'The final image is of endless, flat desert - nature has completely reclaimed the land. The sibilant "s" sounds create a whispering, wind-like effect.',
           color: '#10b981',
         },
       ],
@@ -191,7 +191,7 @@ const ozymandias: PoemData = {
   `,
 
   contextAr: `
-    <h3>Percy Bysshe Shelley (1792–1822)</h3>
+    <h3>Percy Bysshe Shelley (1792-1822)</h3>
     <p>Shelley واحد من أكبر شعراء الرومانسية الإنجليزية. كان مفكّر سياسي راديكالي، يقف ضد الطغيان والملكية والمؤسسة الدينية. طردوه من جامعة Oxford لأنه نشر كتيّب يدافع عن الإلحاد، وقضى معظم حياته منفي في إيطاليا، لين غرق وعمره 29 سنة.</p>
 
     <h3>الحركة الرومانسية</h3>
@@ -201,90 +201,90 @@ const ozymandias: PoemData = {
     <p>"Ozymandias" انتشرت في 11 يناير 1818 في مجلة <em>The Examiner</em>، وهي مجلة أسبوعية ليبرالية. كتبها Shelley كجزء من <strong>منافسة ودّية في كتابة sonnet</strong> مع صديقه Horace Smith. نسخة Shelley صارت من أشهر الـsonnets في تاريخ الشعر الإنجليزي.</p>
 
     <h3>السياق التاريخي: Ramesses II</h3>
-    <p>Ozymandias هو الاسم اليوناني لـ<strong>Ramesses II</strong> (تقريباً 1303–1213 ق.م)، واحد من أقوى فراعنة مصر القديمة. المتحف البريطاني (British Museum) كان لتوّه استلم قطعة من تمثال ضخم لـRamesses، وهالشي على الأغلب هو اللي ألهم القصيدة.</p>
+    <p>Ozymandias هو الاسم اليوناني لـ<strong>Ramesses II</strong> (تقريباً 1303-1213 ق.م)، واحد من أقوى فراعنة مصر القديمة. المتحف البريطاني (British Museum) كان لتوّه استلم قطعة من تمثال ضخم لـRamesses، وهالشي على الأغلب هو اللي ألهم القصيدة.</p>
 
     <h3>المواضيع السياسية</h3>
     <p>Shelley يستخدم التمثال المهدّم عشان ينتقد <strong>غطرسة السلطة المطلقة</strong>. وهو يكتب في فترة اضطراب سياسي، رسالة القصيدة واضحة: <strong>ما فيه طاغية تدوم سلطته للأبد</strong>. وهذا تحدّي مباشر للممالك والإمبراطوريات في زمن Shelley نفسه.</p>
   `,
 
-  summary: `Lines 1-3: A frame narrative opens the poem. The speaker recalls meeting a traveller from "an antique land" (Egypt) who describes a ruined statue in the desert — two enormous legs of stone, without a body, standing alone.
+  summary: `Lines 1-3: A frame narrative opens the poem. The speaker recalls meeting a traveller from "an antique land" (Egypt) who describes a ruined statue in the desert - two enormous legs of stone, without a body, standing alone.
 
-Lines 3-5: Near the legs, the traveller describes the statue's face ("visage") lying half-buried in the sand, broken. The face still shows a frown and a "sneer of cold command" — the sculptor captured the pharaoh's arrogant expression.
+Lines 3-5: Near the legs, the traveller describes the statue's face ("visage") lying half-buried in the sand, broken. The face still shows a frown and a "sneer of cold command" - the sculptor captured the pharaoh's arrogant expression.
 
 Lines 6-8: These lines praise the sculptor's skill. He "read" the king's passions accurately and carved them so well that they "survive". There is an ambiguity in "the hand that mocked them, and the heart that fed".
 
 Lines 9-11: The inscription delivers Ozymandias's boastful command: "My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!"
 
-Lines 12-14: The sestet delivers the poem's devastating irony. "Nothing beside remains" — all the "Works" have vanished completely. The "lone and level sands" have the final word, showing nature and time triumph over human power.
+Lines 12-14: The sestet delivers the poem's devastating irony. "Nothing beside remains" - all the "Works" have vanished completely. The "lone and level sands" have the final word, showing nature and time triumph over human power.
 
-Overall meaning: The poem is a meditation on the transience of power. The only thing that survives is art (the sculptor's work) and, ironically, the king's own boastful words — which now serve as evidence of his foolishness rather than his greatness.`,
+Overall meaning: The poem is a meditation on the transience of power. The only thing that survives is art (the sculptor's work) and, ironically, the king's own boastful words - which now serve as evidence of his foolishness rather than his greatness.`,
 
-  summaryAr: `الأبيات 1–3: القصيدة تفتح بإطار سردي (frame narrative). المتكلّم يتذكّر إنه قابل مسافر من "أرض قديمة" (مصر)، وهالمسافر يوصف تمثال مهدّم في الصحراء — رجلين ضخمين من حجر، بدون جسم، واقفين لحالهم.
+  summaryAr: `الأبيات 1-3: القصيدة تفتح بإطار سردي (frame narrative). المتكلّم يتذكّر إنه قابل مسافر من "أرض قديمة" (مصر)، وهالمسافر يوصف تمثال مهدّم في الصحراء - رجلين ضخمين من حجر، بدون جسم، واقفين لحالهم.
 
-الأبيات 3–5: يم الرجلين، المسافر يوصف وجه التمثال (visage) وهو مدفون نص دفنه في الرمل ومكسّر. الوجه لين الحين يبيّن عبوس وابتسامة استهزاء باردة (sneer of cold command) — النحّات قدر يلتقط تعابير الفرعون المتعجرفة.
+الأبيات 3-5: يم الرجلين، المسافر يوصف وجه التمثال (visage) وهو مدفون نص دفنه في الرمل ومكسّر. الوجه لين الحين يبيّن عبوس وابتسامة استهزاء باردة (sneer of cold command) - النحّات قدر يلتقط تعابير الفرعون المتعجرفة.
 
-الأبيات 6–8: هذي الأبيات تمدح مهارة النحّات. هو "قرى" مشاعر الملك بدقة، وحفرها زين لدرجة إنها "نجت". وفيه غموض في عبارة "the hand that mocked them, and the heart that fed".
+الأبيات 6-8: هذي الأبيات تمدح مهارة النحّات. هو "قرى" مشاعر الملك بدقة، وحفرها زين لدرجة إنها "نجت". وفيه غموض في عبارة "the hand that mocked them, and the heart that fed".
 
-الأبيات 9–11: النقش ينقل أمر Ozymandias المتعجرف: "My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!"
+الأبيات 9-11: النقش ينقل أمر Ozymandias المتعجرف: "My name is Ozymandias, King of Kings; / Look on my Works, ye Mighty, and despair!"
 
-الأبيات 12–14: الـsestet يوصل المفارقة المدمّرة. "Nothing beside remains" — كل "الأعمال" انّمحت تماماً. الـ"lone and level sands" هي اللي تختم القصيدة، عشان تبيّن إن الطبيعة والوقت ينتصرون على القوة البشرية.
+الأبيات 12-14: الـsestet يوصل المفارقة المدمّرة. "Nothing beside remains" - كل "الأعمال" انّمحت تماماً. الـ"lone and level sands" هي اللي تختم القصيدة، عشان تبيّن إن الطبيعة والوقت ينتصرون على القوة البشرية.
 
-المعنى العام: القصيدة تأمّل في زوال السلطة. الشي الوحيد اللي نجى هو الفن (شغل النحّات)، والمفارقة إن كلمات الملك المتفاخرة نفسها هي اللي بقت — بس صارت دليل على حماقته مو على عظمته.`,
+المعنى العام: القصيدة تأمّل في زوال السلطة. الشي الوحيد اللي نجى هو الفن (شغل النحّات)، والمفارقة إن كلمات الملك المتفاخرة نفسها هي اللي بقت - بس صارت دليل على حماقته مو على عظمته.`,
 
   formAndStructure: `Sonnet form: "Ozymandias" is a 14-line sonnet, but Shelley deliberately breaks from both the Petrarchan and Shakespearean forms. This unconventional structure mirrors the poem's theme of breaking from established power.
 
-Rhyme scheme: Highly irregular — ababacdcedefef. The looseness of the rhyme reflects the decay and fragmentation described in the poem.
+Rhyme scheme: Highly irregular - ababacdcedefef. The looseness of the rhyme reflects the decay and fragmentation described in the poem.
 
 Metre: Broadly iambic pentameter, but Shelley frequently disrupts the metre. "Nothing beside remains" breaks the regular rhythm with a heavy, emphatic stress on "Nothing".
 
-Volta: The traditional sonnet volta appears at line 12 — "Nothing beside remains." This is the devastating turn where the reader's expectation is shattered.
+Volta: The traditional sonnet volta appears at line 12 - "Nothing beside remains." This is the devastating turn where the reader's expectation is shattered.
 
 Enjambment: Shelley uses extensive enjambment, particularly in lines 2-8. This creates a flowing description that mirrors a traveller telling a story.
 
 Caesura: The full stop mid-line in "Nothing beside remains." (line 12) creates a dramatic pause before the poem reveals the empty desert.
 
-Frame narrative: The poem uses three layers of voice — the speaker, the traveller, and Ozymandias. This distancing effect emphasises how the king's power has been diminished.`,
+Frame narrative: The poem uses three layers of voice - the speaker, the traveller, and Ozymandias. This distancing effect emphasises how the king's power has been diminished.`,
 
   formAndStructureAr: `Sonnet form: "Ozymandias" قصيدة sonnet من 14 بيت، بس Shelley يكسر عن قصد القالب الإيطالي (Petrarchan) والإنجليزي (Shakespearean). هذي البنية غير التقليدية تعكس موضوع القصيدة نفسه: كسر السلطة المستقرّة.
 
-Rhyme scheme: نظام القافية غير منتظم تماماً — ababacdcedefef. السيبان في القافية يعكس التحلّل والتفتّت اللي توصفه القصيدة.
+Rhyme scheme: نظام القافية غير منتظم تماماً - ababacdcedefef. السيبان في القافية يعكس التحلّل والتفتّت اللي توصفه القصيدة.
 
 Metre: القصيدة بشكل عام على iambic pentameter، بس Shelley يكسر الوزن في مواضع كثيرة. "Nothing beside remains" يكسر الإيقاع المنتظم بضغط ثقيل على "Nothing".
 
-Volta: الـvolta التقليدي يطلع في البيت 12 — "Nothing beside remains." هذا هو التحوّل المدمّر اللي يحطّم توقّعات القارئ.
+Volta: الـvolta التقليدي يطلع في البيت 12 - "Nothing beside remains." هذا هو التحوّل المدمّر اللي يحطّم توقّعات القارئ.
 
-Enjambment: Shelley يستخدم enjambment بشكل كثيف، خصوصاً في الأبيات 2–8. هالشي يخلق وصف منساب، يشبه راوي يحكي قصة.
+Enjambment: Shelley يستخدم enjambment بشكل كثيف، خصوصاً في الأبيات 2-8. هالشي يخلق وصف منساب، يشبه راوي يحكي قصة.
 
 Caesura: النقطة في نص البيت "Nothing beside remains." في البيت 12 تخلق توقّف درامي قبل ما تنكشف الصحراء الخاوية.
 
-الإطار السردي (Frame narrative): القصيدة تستخدم ثلاث طبقات من الأصوات — المتكلّم، المسافر، وOzymandias. هالتباعد يبرز كيف إن سلطة الملك تقلّصت.`,
+الإطار السردي (Frame narrative): القصيدة تستخدم ثلاث طبقات من الأصوات - المتكلّم، المسافر، وOzymandias. هالتباعد يبرز كيف إن سلطة الملك تقلّصت.`,
 
   keyQuotes: [
     {
       quote: 'Two vast and trunkless legs of stone',
       analysis:
-        'The statue is fragmented — only the legs remain standing. "Vast" emphasises the original ambition, while "trunkless" shows destruction. The image of disembodied legs is both absurd and powerful: the ruler who stood tall has literally been cut down.',
+        'The statue is fragmented - only the legs remain standing. "Vast" emphasises the original ambition, while "trunkless" shows destruction. The image of disembodied legs is both absurd and powerful: the ruler who stood tall has literally been cut down.',
       themes: ['Power of nature', 'Transience of power', 'Pride'],
       analysisAr:
-        'التمثال متفتّت — بس الرجلين باقيات واقفات. كلمة "vast" تأكّد على ضخامة الطموح الأصلي، بينما "trunkless" تبيّن حجم الدمار. صورة رجلين مقطوعين عن الجسم صورة عبثية وقوية في نفس الوقت: الحاكم اللي كان شامخ، حرفياً انقصّ ووقع.',
+        'التمثال متفتّت - بس الرجلين باقيات واقفات. كلمة "vast" تأكّد على ضخامة الطموح الأصلي، بينما "trunkless" تبيّن حجم الدمار. صورة رجلين مقطوعين عن الجسم صورة عبثية وقوية في نفس الوقت: الحاكم اللي كان شامخ، حرفياً انقصّ ووقع.',
       themesAr: ['قوة الطبيعة', 'زوال السلطة', 'الكبرياء'],
     },
     {
       quote: 'Half sunk a shattered visage lies',
       analysis:
-        'The face of the king is broken and half-buried. "Shattered" suggests violent destruction, while "half sunk" shows nature gradually swallowing the remnants. "Lies" carries a double meaning — physical position and falsehood.',
+        'The face of the king is broken and half-buried. "Shattered" suggests violent destruction, while "half sunk" shows nature gradually swallowing the remnants. "Lies" carries a double meaning - physical position and falsehood.',
       themes: ['Power of nature', 'Decay', 'Irony'],
       analysisAr:
-        'وجه الملك مكسّر ومدفون نص دفنه. كلمة "shattered" توحي بدمار عنيف، بينما "half sunk" تبيّن إن الطبيعة بشكل تدريجي تبلع ما بقى. وكلمة "lies" تحمل معنيين — الوجه يرقد فعلياً على الأرض، وفي نفس الوقت "يكذب" لأن تعابير القوة فيه صارت كذبة.',
+        'وجه الملك مكسّر ومدفون نص دفنه. كلمة "shattered" توحي بدمار عنيف، بينما "half sunk" تبيّن إن الطبيعة بشكل تدريجي تبلع ما بقى. وكلمة "lies" تحمل معنيين - الوجه يرقد فعلياً على الأرض، وفي نفس الوقت "يكذب" لأن تعابير القوة فيه صارت كذبة.',
       themesAr: ['قوة الطبيعة', 'التحلّل', 'المفارقة'],
     },
     {
       quote: 'sneer of cold command',
       analysis:
-        'Three words that perfectly characterise a tyrant. "Sneer" shows contempt; "cold" shows lack of empathy; "command" shows absolute authority. Significantly, this cruelty outlives everything else — preserved in stone while the empire is gone.',
+        'Three words that perfectly characterise a tyrant. "Sneer" shows contempt; "cold" shows lack of empathy; "command" shows absolute authority. Significantly, this cruelty outlives everything else - preserved in stone while the empire is gone.',
       themes: ['Power and control', 'Tyranny', 'Human nature'],
       analysisAr:
-        'ثلاث كلمات توصف الطاغية أحسن وصف. "Sneer" تبيّن الاحتقار؛ "cold" تبيّن غياب التعاطف؛ "command" تبيّن السلطة المطلقة. والأهم: هالقسوة هي اللي بقت أطول من كل شي ثاني — محفورة في الحجر، بينما الإمبراطورية انتهت.',
+        'ثلاث كلمات توصف الطاغية أحسن وصف. "Sneer" تبيّن الاحتقار؛ "cold" تبيّن غياب التعاطف؛ "command" تبيّن السلطة المطلقة. والأهم: هالقسوة هي اللي بقت أطول من كل شي ثاني - محفورة في الحجر، بينما الإمبراطورية انتهت.',
       themesAr: ['السلطة والسيطرة', 'الاستبداد', 'الطبيعة البشرية'],
     },
     {
@@ -326,10 +326,10 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
     {
       quote: 'The lone and level sands stretch far away',
       analysis:
-        'The poem\'s final image is of the desert — vast, flat, and empty. The alliterative "l" sounds create a melancholy tone, while sibilant "s" sounds evoke wind over sand. The desert has the last word, suggesting nature\'s indifference to human power.',
+        'The poem\'s final image is of the desert - vast, flat, and empty. The alliterative "l" sounds create a melancholy tone, while sibilant "s" sounds evoke wind over sand. The desert has the last word, suggesting nature\'s indifference to human power.',
       themes: ['Power of nature', 'Insignificance of humanity', 'Time'],
       analysisAr:
-        'الصورة الأخيرة هي الصحراء — شاسعة، مسطّحة، وفاضية. الـalliteration في حرف "l" يخلق نبرة كئيبة، أما الـsibilance في "s" فتستحضر صوت الريح فوق الرمل. الصحراء — مو الملك — هي اللي تختم الكلام، وهذا يوحي بلامبالاة الطبيعة بالسلطة البشرية.',
+        'الصورة الأخيرة هي الصحراء - شاسعة، مسطّحة، وفاضية. الـalliteration في حرف "l" يخلق نبرة كئيبة، أما الـsibilance في "s" فتستحضر صوت الريح فوق الرمل. الصحراء - مو الملك - هي اللي تختم الكلام، وهذا يوحي بلامبالاة الطبيعة بالسلطة البشرية.',
       themesAr: ['قوة الطبيعة', 'تفاهة الإنسان', 'الوقت'],
     },
   ],
@@ -339,10 +339,10 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
       device: 'Dramatic irony',
       example: 'Look on my Works, ye Mighty, and despair!',
       effect:
-        'Ozymandias intended "despair" as a threat to rival kings. The reader, however, sees the empty desert and understands the real cause for despair — that nothing survives. The king\'s own words become the strongest argument against his power.',
+        'Ozymandias intended "despair" as a threat to rival kings. The reader, however, sees the empty desert and understands the real cause for despair - that nothing survives. The king\'s own words become the strongest argument against his power.',
       lineRef: 10,
       effectAr:
-        'Ozymandias قصد بكلمة "despair" تهديد للملوك المنافسين. بس القارئ، اللي يشوف الصحراء الفاضية، يفهم السبب الحقيقي لليأس — إنه ولا شي يدوم. كلمات الملك نفسها تصير أقوى دليل ضد سلطته.',
+        'Ozymandias قصد بكلمة "despair" تهديد للملوك المنافسين. بس القارئ، اللي يشوف الصحراء الفاضية، يفهم السبب الحقيقي لليأس - إنه ولا شي يدوم. كلمات الملك نفسها تصير أقوى دليل ضد سلطته.',
     },
     {
       device: 'Alliteration',
@@ -378,16 +378,16 @@ Caesura: النقطة في نص البيت "Nothing beside remains." في الب
         'Shelley creates a vivid, cinematic image: two enormous stone legs standing alone in an empty desert. The visual is deliberately strange and arresting, forcing the reader to imagine the desolation.',
       lineRef: 1,
       effectAr:
-        'Shelley يخلق صورة بصرية حيّة سينمائية: رجلين ضخمين من حجر يقفون لحالهم في صحراء خاوية. الصورة غريبة وملفتة عن قصد — تجبر القارئ يتخيّل المشهد ويحسّ بالعزلة.',
+        'Shelley يخلق صورة بصرية حيّة سينمائية: رجلين ضخمين من حجر يقفون لحالهم في صحراء خاوية. الصورة غريبة وملفتة عن قصد - تجبر القارئ يتخيّل المشهد ويحسّ بالعزلة.',
     },
     {
       device: 'Sibilance',
       example: 'lone and level sands stretch',
       effect:
-        'The repeated "s" sounds in the final line mimic the sound of wind blowing across sand, creating an aural image of the desert. Nature — quiet, persistent, indifferent — has the last word.',
+        'The repeated "s" sounds in the final line mimic the sound of wind blowing across sand, creating an aural image of the desert. Nature - quiet, persistent, indifferent - has the last word.',
       lineRef: 13,
       effectAr:
-        'تكرار صوت "s" في البيت الأخير يحاكي صوت الريح وهي تمر فوق الرمل، ويخلق صورة سمعية للصحراء. الطبيعة — الهادئة، الصابرة، اللي ما تهتم — هي اللي لها الكلمة الأخيرة.',
+        'تكرار صوت "s" في البيت الأخير يحاكي صوت الريح وهي تمر فوق الرمل، ويخلق صورة سمعية للصحراء. الطبيعة - الهادئة، الصابرة، اللي ما تهتم - هي اللي لها الكلمة الأخيرة.',
     },
   ],
 }
@@ -489,13 +489,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He failed',
-      'His art survives while the empire does not — art outlasts power',
+      'His art survives while the empire does not - art outlasts power',
       'He was punished',
       'He narrates',
     ],
     correctIndex: 1,
     explanation:
-      "The sculptor's work endures while the king's achievements have vanished — art outlasts tyrannical power.",
+      "The sculptor's work endures while the king's achievements have vanished - art outlasts tyrannical power.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -506,7 +506,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Verbal irony', 'Dramatic irony', 'Cosmic irony', 'Socratic irony'],
     correctIndex: 1,
     explanation:
-      'Dramatic irony — the reader knows what Ozymandias did not: his works have completely vanished.',
+      'Dramatic irony - the reader knows what Ozymandias did not: his works have completely vanished.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -543,7 +543,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Celebrates the desert',
-      'Nature has completely erased the empire — giving nature the final word',
+      'Nature has completely erased the empire - giving nature the final word',
       'The traveller continues',
       'Describes where the statue was built',
     ],
@@ -577,7 +577,7 @@ const REVISION_TOPICS = [
     summary:
       "Ozymandias explores the transience of power, hubris, the supremacy of nature and time, and art's endurance.",
     keyPoints: [
-      'Power is temporary — even the mightiest rulers are forgotten',
+      'Power is temporary - even the mightiest rulers are forgotten',
       'Art outlasts political power',
       'Nature reclaims everything',
       'Hubris leads to downfall',
@@ -587,9 +587,9 @@ const REVISION_TOPICS = [
     topic: 'Language & Imagery',
     summary: 'Shelley uses dramatic irony, alliteration, juxtaposition, and vivid desert imagery.',
     keyPoints: [
-      '"Sneer of cold command" — hard consonants characterise the tyrant',
-      '"Nothing beside remains" — blunt monosyllables',
-      '"Boundless and bare" / "lone and level" — alliteration emphasises emptiness',
+      '"Sneer of cold command" - hard consonants characterise the tyrant',
+      '"Nothing beside remains" - blunt monosyllables',
+      '"Boundless and bare" / "lone and level" - alliteration emphasises emptiness',
       'Dramatic irony in "Look on my Works"',
     ],
   },
@@ -597,10 +597,10 @@ const REVISION_TOPICS = [
     topic: 'Structure & Form',
     summary: 'Irregular sonnet with frame narrative and volta at "Nothing beside remains."',
     keyPoints: [
-      'Irregular rhyme scheme — reflects decay',
-      'Volta at line 12 — devastating turn',
-      'Frame narrative — three voices distance the reader',
-      'Enjambment — flowing momentum toward decay',
+      'Irregular rhyme scheme - reflects decay',
+      'Volta at line 12 - devastating turn',
+      'Frame narrative - three voices distance the reader',
+      'Enjambment - flowing momentum toward decay',
     ],
   },
 ]
@@ -615,7 +615,7 @@ export default function OzymandiasEduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Ozymandias by Percy Bysshe Shelley — Analysis & Annotations"
+        name="Ozymandias by Percy Bysshe Shelley - Analysis & Annotations"
         description="Line-by-line analysis of Ozymandias with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

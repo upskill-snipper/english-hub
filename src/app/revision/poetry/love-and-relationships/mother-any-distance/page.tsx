@@ -212,17 +212,17 @@ const motherAnyDistancePoem: PoemData = {
   ],
 
   context:
-    '<p><strong>Simon Armitage (b. 1963)</strong> is a contemporary British poet from Marsden, West Yorkshire. He has been UK Poet Laureate since May 2019, succeeding Carol Ann Duffy (2009-2019). He originally trained as a probation officer, is now a professor at Leeds University, and served as Oxford Professor of Poetry from 2015 to 2019. His poetry is known for its colloquial language, dry humour, and exploration of everyday life. (Note: although his anthology poems include war pieces such as <em>Remains</em> and <em>The Manhunt</em>, Armitage never served in any military or combat role — those poems are based on interviews with veterans.)</p>' +
+    '<p><strong>Simon Armitage (b. 1963)</strong> is a contemporary British poet from Marsden, West Yorkshire. He has been UK Poet Laureate since May 2019, succeeding Carol Ann Duffy (2009-2019). He originally trained as a probation officer, is now a professor at Leeds University, and served as Oxford Professor of Poetry from 2015 to 2019. His poetry is known for its colloquial language, dry humour, and exploration of everyday life. (Note: although his anthology poems include war pieces such as <em>Remains</em> and <em>The Manhunt</em>, Armitage never served in any military or combat role - those poems are based on interviews with veterans.)</p>' +
     '<p><strong>"Mother, any distance"</strong> was published in <em>Book of Matches</em> (1993), a collection where each poem was designed to last the time it takes a match to burn. The poem draws on Armitage\'s own experience of leaving home.</p>' +
     '<p><strong>The extended metaphor</strong> of a measuring tape connects to the <strong>umbilical cord</strong> \u2014 the physical link between mother and child. As the speaker moves through his new house, the tape stretches and eventually must be released, just as a child must eventually separate from their parent.</p>' +
     '<p>The poem explores the <strong>emotional complexity of growing up</strong>: the desire for independence battling against the security of parental love. It captures a universal moment \u2014 leaving home \u2014 with tenderness and honesty.</p>' +
     '<p>Armitage has described the poem as being about <strong>the point at which you have to let go</strong>, acknowledging that both parent and child find this difficult.</p>',
 
   contextAr:
-    '<p><strong>Simon Armitage (مواليد 1963)</strong> شاعر بريطاني معاصر من Marsden في West Yorkshire. هو UK Poet Laureate من مايو 2019، خلف Carol Ann Duffy (2009–2019). أصلاً تدرّب كموظف مراقبة المفرج عنهم، والحين أستاذ في جامعة Leeds، وخدم كأستاذ الشعر في Oxford من 2015 إلى 2019. شعره معروف بلغته العاميّة، وحسّ الفكاهة الجاف، واستكشاف الحياة اليوميّة. (ملاحظة: على الرغم إن قصائده في الـanthology تشمل قطع حرب مثل <em>Remains</em> و<em>The Manhunt</em>، Armitage أبد ما خدم في أي دور عسكري أو قتالي — هذي القصائد مبنيّة على مقابلات مع جنود سابقين.)</p>' +
+    '<p><strong>Simon Armitage (مواليد 1963)</strong> شاعر بريطاني معاصر من Marsden في West Yorkshire. هو UK Poet Laureate من مايو 2019، خلف Carol Ann Duffy (2009-2019). أصلاً تدرّب كموظف مراقبة المفرج عنهم، والحين أستاذ في جامعة Leeds، وخدم كأستاذ الشعر في Oxford من 2015 إلى 2019. شعره معروف بلغته العاميّة، وحسّ الفكاهة الجاف، واستكشاف الحياة اليوميّة. (ملاحظة: على الرغم إن قصائده في الـanthology تشمل قطع حرب مثل <em>Remains</em> و<em>The Manhunt</em>، Armitage أبد ما خدم في أي دور عسكري أو قتالي - هذي القصائد مبنيّة على مقابلات مع جنود سابقين.)</p>' +
     '<p>قصيدة <strong>"Mother, any distance"</strong> انتشرت في ديوان <em>Book of Matches</em> (1993)، مجموعة كل قصيدة فيها مصمّمة عشان تطول قد ما يطول اشتعال عود ثقاب. القصيدة مستوحاة من تجربة Armitage الشخصيّة في مغادرة بيت الأهل.</p>' +
-    '<p><strong>الاستعارة الممتدّة</strong> (extended metaphor) عن شريط القياس تربطه بـ<strong>الحبل السرّي</strong> — الرابط الجسدي بين الأم والابن. مع تنقّل المتكلّم (ذكر) في بيته الجديد، الشريط يتمدّد، ولازم في النهاية ينحرّر، تماماً مثل الابن لازم في النهاية ينفصل عن والديه.</p>' +
-    '<p>القصيدة تستكشف <strong>التعقيد العاطفي للنضوج</strong>: الرغبة في الاستقلال تتصارع مع أمان الحب الأبوي. تلتقط لحظة عامّة كل واحد فينا يمرّ فيها — مغادرة بيت الأهل — بحنان وصدق.</p>' +
+    '<p><strong>الاستعارة الممتدّة</strong> (extended metaphor) عن شريط القياس تربطه بـ<strong>الحبل السرّي</strong> - الرابط الجسدي بين الأم والابن. مع تنقّل المتكلّم (ذكر) في بيته الجديد، الشريط يتمدّد، ولازم في النهاية ينحرّر، تماماً مثل الابن لازم في النهاية ينفصل عن والديه.</p>' +
+    '<p>القصيدة تستكشف <strong>التعقيد العاطفي للنضوج</strong>: الرغبة في الاستقلال تتصارع مع أمان الحب الأبوي. تلتقط لحظة عامّة كل واحد فينا يمرّ فيها - مغادرة بيت الأهل - بحنان وصدق.</p>' +
     '<p>Armitage وصف القصيدة على إنها عن <strong>اللحظة اللي لازم تخلّي يدك تنفلت فيها</strong>، ويعترف إن الأم والابن كلاهما يلقى هالشي صعب.</p>',
 
   summary:
@@ -245,12 +245,12 @@ const motherAnyDistancePoem: PoemData = {
     'Extended metaphor: The measuring tape/umbilical cord metaphor is sustained throughout the entire poem, giving it structural and thematic coherence.',
 
   formAndStructureAr:
-    'Form: sonnet ممتدّ ومرخّى — القصيدة 15 بيت (بيت زيادة عن الـsonnet التقليدي اللي هو 14 بيت)، فيها صدى لتقليد love-sonnet بس تتعدّاه. أطوال الأبيات غير المنتظمة وغياب نظام قافية صارم يعكسان الواقع الفوضوي وغير المثالي لهالعلاقة بين الأم والابن.\n\n' +
+    'Form: sonnet ممتدّ ومرخّى - القصيدة 15 بيت (بيت زيادة عن الـsonnet التقليدي اللي هو 14 بيت)، فيها صدى لتقليد love-sonnet بس تتعدّاه. أطوال الأبيات غير المنتظمة وغياب نظام قافية صارم يعكسان الواقع الفوضوي وغير المثالي لهالعلاقة بين الأم والابن.\n\n' +
     'بنية المقاطع: ثلاث مقاطع بأطوال غير متساوية (تقريباً 4، 8، و3 أبيات)، مع وضع البيت الأخير "to fall or fly" بشكل مستقل عشان التأكيد. عدم التماثل يحاكي طريقة تمدّد شريط القياس والانفصال التدريجي اللي يجسّده.\n\n' +
     'Enjambment: مستخدم بكثافة طول القصيدة، خصوصاً في "then leaving / up the stairs" و"recording / length". الأبيات تنساب لبعضها، تماماً مثل ما ينساب الشريط عبر البيت، فتخلق إحساس بحركة متواصلة بعيداً عن الوالدة (أنثى).\n\n' +
     'Caesura: "Anchor. Kite." يستخدم نقاط دراماتيكيّة في نص البيت عشان يخلق صورتين قويّتين متضادّتين، تختصران التوتر المركزي في القصيدة.\n\n' +
     'Rhyme: half-rhymes متقطّعة ("doors/floors"، "sky/fly") تخلق إحساس باتّصال شبه مكتمل، تعكس الرابط اللي يتمدّد بس ما انقطع.\n\n' +
-    'البيت الأخير المنغلق: "to fall or fly" يختم القصيدة بخيار حادّ، يترك النتيجة معلّقة بدون حلّ — المتكلّم (ذكر) معلّق بين احتمالين.\n\n' +
+    'البيت الأخير المنغلق: "to fall or fly" يختم القصيدة بخيار حادّ، يترك النتيجة معلّقة بدون حلّ - المتكلّم (ذكر) معلّق بين احتمالين.\n\n' +
     'الاستعارة الممتدّة (extended metaphor): استعارة شريط القياس / الحبل السرّي تستمر طول القصيدة، فتعطيها تماسك بنيوي وموضوعي.',
 
   keyQuotes: [
@@ -451,7 +451,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker measures rooms in a new home with his mother holding one end of the tape measure. The extending tape becomes a metaphor for the umbilical cord — the bond that stretches as the child gains independence.',
+      'The speaker measures rooms in a new home with his mother holding one end of the tape measure. The extending tape becomes a metaphor for the umbilical cord - the bond that stretches as the child gains independence.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -461,7 +461,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A DIY tool only',
-      'The umbilical cord — the bond between mother and child that stretches but never quite breaks',
+      'The umbilical cord - the bond between mother and child that stretches but never quite breaks',
       'A ruler',
       'A telephone wire',
     ],
@@ -483,7 +483,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The one-word sentences encapsulate the relationship perfectly. The mother anchors; the son soars. Both are necessary — a kite needs an anchor, and an anchor needs something to hold.',
+      'The one-word sentences encapsulate the relationship perfectly. The mother anchors; the son soars. Both are necessary - a kite needs an anchor, and an anchor needs something to hold.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -493,13 +493,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'Almost a sonnet — 15 lines that fall just outside the 14-line sonnet form',
+      'Almost a sonnet - 15 lines that fall just outside the 14-line sonnet form',
       'A ballad',
       'Rhyming couplets',
     ],
     correctIndex: 1,
     explanation:
-      "The poem has 15 lines — almost but not quite a sonnet. This near-miss mirrors the poem's theme of almost-but-not-quite letting go, of boundaries being tested.",
+      "The poem has 15 lines - almost but not quite a sonnet. This near-miss mirrors the poem's theme of almost-but-not-quite letting go, of boundaries being tested.",
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -525,7 +525,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The speaker is afraid of heights',
-      'Independence is presented as both thrilling and terrifying — freedom carries the risk of failure',
+      'Independence is presented as both thrilling and terrifying - freedom carries the risk of failure',
       'The speaker is a pilot',
       'It describes a bird',
     ],
@@ -541,13 +541,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It describes a house tour',
-      "The upward movement through the house mirrors the son's growing independence — higher means further from the mother",
+      "The upward movement through the house mirrors the son's growing independence - higher means further from the mother",
       'It shows the house is large',
       'It is random description',
     ],
     correctIndex: 1,
     explanation:
-      'The speaker moves upward through the house — from ground floor to loft. Each level takes him further from his mother at the base, physically enacting the growing distance of independence.',
+      'The speaker moves upward through the house - from ground floor to loft. Each level takes him further from his mother at the base, physically enacting the growing distance of independence.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -557,13 +557,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The mother has strong hands',
-      'The mother clings to the very last possible point of connection — she is reluctant to let go completely',
+      'The mother clings to the very last possible point of connection - she is reluctant to let go completely',
       'The tape measure is stuck',
       'The measurement is exact',
     ],
     correctIndex: 1,
     explanation:
-      'The precise measurement "one-hundredth of an inch" shows how little connection remains — and yet the mother still holds on. The image captures the painful reluctance of letting go.',
+      'The precise measurement "one-hundredth of an inch" shows how little connection remains - and yet the mother still holds on. The image captures the painful reluctance of letting go.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -607,9 +607,9 @@ const REVISION_TOPICS = [
     summary:
       'Mother, any distance explores the mother-child bond, the tension between security and independence, and the frightening thrill of growing up.',
     keyPoints: [
-      'The umbilical cord metaphor — the bond stretches but persists',
-      'Independence — thrilling but terrifying ("fall or fly")',
-      'The mother as anchor — stability and reluctance to let go',
+      'The umbilical cord metaphor - the bond stretches but persists',
+      'Independence - thrilling but terrifying ("fall or fly")',
+      'The mother as anchor - stability and reluctance to let go',
       'Growing up means accepting risk',
     ],
   },
@@ -618,21 +618,21 @@ const REVISION_TOPICS = [
     summary:
       'Armitage uses the extended tape measure metaphor, spatial imagery, and the anchor/kite contrast to explore separation.',
     keyPoints: [
-      'Tape measure as umbilical cord — physical bond stretching',
-      '"Anchor. Kite." — one-word sentences encapsulate the dynamic',
-      '"Fall or fly" — independence as both risk and freedom',
-      '"Last one-hundredth of an inch" — the mother\'s reluctance to release',
+      'Tape measure as umbilical cord - physical bond stretching',
+      '"Anchor. Kite." - one-word sentences encapsulate the dynamic',
+      '"Fall or fly" - independence as both risk and freedom',
+      '"Last one-hundredth of an inch" - the mother\'s reluctance to release',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Almost a sonnet (15 lines) — the near-miss form mirrors the theme of almost-but-not-quite separating.',
+      'Almost a sonnet (15 lines) - the near-miss form mirrors the theme of almost-but-not-quite separating.',
     keyPoints: [
-      '15 lines — almost but not quite a sonnet',
+      '15 lines - almost but not quite a sonnet',
       'Upward movement through the house mirrors growing independence',
-      'Half-rhymes — partial connections, like the stretching bond',
-      'Final image of the open window — freedom and danger',
+      'Half-rhymes - partial connections, like the stretching bond',
+      'Final image of the open window - freedom and danger',
     ],
   },
 ]
@@ -676,7 +676,7 @@ export default function MotherAnyDistancePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Mother, Any Distance by Simon Armitage — Analysis & Annotations"
+        name="Mother, Any Distance by Simon Armitage - Analysis & Annotations"
         description="Line-by-line analysis of Mother, Any Distance with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

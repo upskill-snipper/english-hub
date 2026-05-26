@@ -18,11 +18,11 @@ import type {
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const act1LessonPlan: LessonPlanData = {
-  title: 'An Inspector Calls: Act 1 — Context, Dramatic Irony & the Birling Family',
+  title: 'An Inspector Calls: Act 1 - Context, Dramatic Irony & the Birling Family',
   duration: '60 minutes',
   yearGroup: 'Year 10/11',
   examBoard: 'AQA / Edexcel IGCSE',
-  text: 'An Inspector Calls — J.B. Priestley',
+  text: 'An Inspector Calls - J.B. Priestley',
   objectives: [
     "Understand the significance of Priestley's dual time setting (written 1945, set 1912) and the dramatic irony it creates",
     'Analyse how Priestley establishes the Birling family as representatives of Edwardian upper-middle-class values in the opening stage directions',
@@ -34,7 +34,7 @@ export const act1LessonPlan: LessonPlanData = {
     title: '1912 vs 1945: Two Worlds Collide',
     duration: '8 minutes',
     instructions:
-      "1. Display two images side by side on the projector: a wealthy Edwardian dinner party (circa 1912) and bomb-damaged British streets (circa 1945).\n2. Silent observation (2 minutes): students write three observations about each image in their books.\n3. Pair-share (2 minutes): students compare observations and discuss what life was like in each era.\n4. Teacher-led discussion (3 minutes): draw out the contrast — the play was written after two world wars, the welfare state, and massive social change, but is deliberately set before any of it happened.\n5. Pose the key question on the board: 'Why might a playwright choose to set his play 33 years in the past?' Cold-call three students.\n6. Record three responses on the board and establish that this 33-year gap is the engine of the play's dramatic irony.\n7. Write the definition of dramatic irony on the board for students to copy: 'When the audience knows something the characters do not.'",
+      "1. Display two images side by side on the projector: a wealthy Edwardian dinner party (circa 1912) and bomb-damaged British streets (circa 1945).\n2. Silent observation (2 minutes): students write three observations about each image in their books.\n3. Pair-share (2 minutes): students compare observations and discuss what life was like in each era.\n4. Teacher-led discussion (3 minutes): draw out the contrast - the play was written after two world wars, the welfare state, and massive social change, but is deliberately set before any of it happened.\n5. Pose the key question on the board: 'Why might a playwright choose to set his play 33 years in the past?' Cold-call three students.\n6. Record three responses on the board and establish that this 33-year gap is the engine of the play's dramatic irony.\n7. Write the definition of dramatic irony on the board for students to copy: 'When the audience knows something the characters do not.'",
     differentiation: {
       support:
         "Provide sentence stems on a handout: 'In the 1912 image I notice... This suggests that life was... In contrast, the 1945 image shows... This tells me that...' Include a glossary card defining 'dramatic irony', 'Edwardian era', and 'welfare state'. Teacher pairs these students with a confident partner for the discussion phase.",
@@ -61,23 +61,23 @@ export const act1LessonPlan: LessonPlanData = {
       title: "Mr Birling's Speech: Identifying Dramatic Irony",
       duration: '15 minutes',
       instructions:
-        "1. Read aloud Mr Birling's speech about the Titanic, war, and progress. Ask students to follow along on their copies.\n2. After reading, ask: 'What predictions does Birling make?' Elicit three key predictions and write them on the board.\n3. Distribute the three-column table handout. Explain the columns: (a) What Birling says (short quotation — max 10 words), (b) What actually happened, (c) What Priestley wants the 1945 audience to think.\n4. Students work in groups of three for 7 minutes to complete the table. Circulate to check quotation accuracy.\n5. Groups share their most powerful example via cold-call. Teacher adds to a class version on the board.\n6. Pose the key question on the board: 'If Birling is wrong about everything, what does this do to his authority as a character?'\n7. Students write a paragraph answering this question (5 minutes), embedding at least one short quotation (e.g. 'absolutely unsinkable').\n8. Teacher circulates during writing, targeting two students for individual feedback on quotation embedding technique.",
+        "1. Read aloud Mr Birling's speech about the Titanic, war, and progress. Ask students to follow along on their copies.\n2. After reading, ask: 'What predictions does Birling make?' Elicit three key predictions and write them on the board.\n3. Distribute the three-column table handout. Explain the columns: (a) What Birling says (short quotation - max 10 words), (b) What actually happened, (c) What Priestley wants the 1945 audience to think.\n4. Students work in groups of three for 7 minutes to complete the table. Circulate to check quotation accuracy.\n5. Groups share their most powerful example via cold-call. Teacher adds to a class version on the board.\n6. Pose the key question on the board: 'If Birling is wrong about everything, what does this do to his authority as a character?'\n7. Students write a paragraph answering this question (5 minutes), embedding at least one short quotation (e.g. 'absolutely unsinkable').\n8. Teacher circulates during writing, targeting two students for individual feedback on quotation embedding technique.",
       differentiation: {
         support:
           "Provide the three-column table with Birling's quotations already filled in column 1; students complete columns 2 and 3 only. Sentence stem provided for the paragraph: 'Priestley undermines Birling's authority by showing that his prediction about... was completely wrong. The 1945 audience would know that...'",
         core: 'Students complete all three columns independently, selecting their own short quotations, and write a paragraph with at least one embedded quotation.',
         stretch:
-          'Students extend their paragraph to consider why Priestley makes Birling a magistrate and a prospective knight — how does his social status intensify the dramatic irony? What does it suggest about the ruling class?',
+          'Students extend their paragraph to consider why Priestley makes Birling a magistrate and a prospective knight - how does his social status intensify the dramatic irony? What does it suggest about the ruling class?',
       },
     },
     {
       title: "The Inspector's Entrance: A Turning Point",
       duration: '12 minutes',
       instructions:
-        "1. Read aloud the stage directions describing the Inspector's entrance and his first exchange with Birling.\n2. Ask students: 'How does the atmosphere change when the Inspector arrives?' (2 minutes think-pair-share)\n3. Display two short quotations on the board (each under 15 words) showing the Inspector's direct, authoritative tone versus Birling's bluster.\n4. Students write three bullet points in their books: (a) How the Inspector's language differs from Birling's, (b) What the lighting change at this moment symbolises, (c) Why Priestley times the entrance to interrupt the celebration.\n5. Class discussion (3 minutes): teacher draws out that the Inspector functions as Priestley's mouthpiece — he arrives to shatter complacency.\n6. Students add one key sentence to their notes: 'The Inspector's entrance transforms the play from a celebration of wealth into a moral interrogation.'",
+        "1. Read aloud the stage directions describing the Inspector's entrance and his first exchange with Birling.\n2. Ask students: 'How does the atmosphere change when the Inspector arrives?' (2 minutes think-pair-share)\n3. Display two short quotations on the board (each under 15 words) showing the Inspector's direct, authoritative tone versus Birling's bluster.\n4. Students write three bullet points in their books: (a) How the Inspector's language differs from Birling's, (b) What the lighting change at this moment symbolises, (c) Why Priestley times the entrance to interrupt the celebration.\n5. Class discussion (3 minutes): teacher draws out that the Inspector functions as Priestley's mouthpiece - he arrives to shatter complacency.\n6. Students add one key sentence to their notes: 'The Inspector's entrance transforms the play from a celebration of wealth into a moral interrogation.'",
       differentiation: {
         support:
-          "Provide a comparison table with two columns — Birling's language vs Inspector's language — with one example pre-filled in each column. Students add two more examples each.",
+          "Provide a comparison table with two columns - Birling's language vs Inspector's language - with one example pre-filled in each column. Students add two more examples each.",
         core: 'Students independently write their three bullet points and contribute to class discussion.',
         stretch:
           'Students write a short paragraph exploring whether the Inspector is a realistic character or a dramatic device, using evidence from his entrance to support their view.',
@@ -97,22 +97,22 @@ export const act1LessonPlan: LessonPlanData = {
     },
   },
   keyVocabulary: [
-    'dramatic irony — when the audience knows something the characters do not',
-    'stage directions — instructions in a script describing setting, movement, or tone',
-    'symbolism — using an object or detail to represent a larger idea',
-    'bourgeois — relating to the comfortable middle class; often used critically',
-    'capitalism — an economic system based on private ownership and profit',
-    'socialism — a political philosophy advocating collective ownership and equality',
-    'Edwardian era — the period 1901–1910 (broadly to 1914) characterised by rigid class hierarchy',
-    'welfare state — government provision of healthcare, education, and social security for all citizens',
-    'didactic — intended to teach a moral or political lesson',
-    'facade — a false outward appearance that conceals the truth',
-    'hubris — excessive pride or self-confidence, often leading to a downfall',
-    'foreshadowing — hints or clues about events that will occur later in a text',
-    "mouthpiece — a character who voices the author's own views",
-    'collective responsibility — the idea that all members of society share accountability',
-    'morality play — a dramatic genre in which characters represent moral qualities',
-    'interrogation — intense questioning; used here both literally and metaphorically',
+    'dramatic irony - when the audience knows something the characters do not',
+    'stage directions - instructions in a script describing setting, movement, or tone',
+    'symbolism - using an object or detail to represent a larger idea',
+    'bourgeois - relating to the comfortable middle class; often used critically',
+    'capitalism - an economic system based on private ownership and profit',
+    'socialism - a political philosophy advocating collective ownership and equality',
+    'Edwardian era - the period 1901-1910 (broadly to 1914) characterised by rigid class hierarchy',
+    'welfare state - government provision of healthcare, education, and social security for all citizens',
+    'didactic - intended to teach a moral or political lesson',
+    'facade - a false outward appearance that conceals the truth',
+    'hubris - excessive pride or self-confidence, often leading to a downfall',
+    'foreshadowing - hints or clues about events that will occur later in a text',
+    "mouthpiece - a character who voices the author's own views",
+    'collective responsibility - the idea that all members of society share accountability',
+    'morality play - a dramatic genre in which characters represent moral qualities',
+    'interrogation - intense questioning; used here both literally and metaphorically',
   ],
   resourcesNeeded: [
     "Copies of An Inspector Calls (Act 1) or photocopied extracts of the opening stage directions and Birling's speech",
@@ -125,15 +125,15 @@ export const act1LessonPlan: LessonPlanData = {
     'Mini-whiteboards and pens (optional, for quick-check questions)',
   ],
   homework:
-    "Write a 200–250 word response to the following question: 'How does Priestley use the opening of An Inspector Calls to establish that the Birling family has something to hide?'\n\nSuccess criteria:\n- Include at least two short quotations from the stage directions or dialogue (each under 12 words)\n- Use at least one technical term (e.g. symbolism, dramatic irony, foreshadowing)\n- Structure your response using PEEL (Point, Evidence, Explain, Link)\n- Include one sentence of AO3 context linking the play's setting (1912) to when it was written (1945)\n- Write in formal academic register (no contractions, no first person)",
+    "Write a 200-250 word response to the following question: 'How does Priestley use the opening of An Inspector Calls to establish that the Birling family has something to hide?'\n\nSuccess criteria:\n- Include at least two short quotations from the stage directions or dialogue (each under 12 words)\n- Use at least one technical term (e.g. symbolism, dramatic irony, foreshadowing)\n- Structure your response using PEEL (Point, Evidence, Explain, Link)\n- Include one sentence of AO3 context linking the play's setting (1912) to when it was written (1945)\n- Write in formal academic register (no contractions, no first person)",
   teacherNotes: [
     'Timing priority: Ensure students grasp the dual time frame (set 1912, written 1945) before any textual analysis. This is the foundation of every AO3 contextual point they will need at GCSE. If the starter runs over, absorb time from the plenary rather than from this concept.',
-    "High-value exam content: The lighting symbolism ('pink and intimate' to 'brighter and harder') is a reliable AO2 point that consistently scores well in exams. Model the PEEL paragraph carefully and insist students copy it — many will use this exact point in their mock and final exam.",
+    "High-value exam content: The lighting symbolism ('pink and intimate' to 'brighter and harder') is a reliable AO2 point that consistently scores well in exams. Model the PEEL paragraph carefully and insist students copy it - many will use this exact point in their mock and final exam.",
     "Most frequently examined extract: Birling's dramatic irony speech is the single most commonly examined extract for the AO3 mark across AQA papers. Ensure every student can explain at least one example of dramatic irony from it.",
-    'Flexible plenary: If time is short, the exit ticket plenary can be set as homework instead. In that case, use the final 5 minutes for the Birling paragraph to become the plenary task — students read their paragraph aloud to a partner who checks for an embedded quotation.',
-    "Copyright note: All quotations from An Inspector Calls are the copyright of J.B. Priestley's estate. Keep all quoted passages to 15 words or fewer for fair dealing purposes. Do not reproduce extended extracts on student-facing handouts — use page references instead.",
+    'Flexible plenary: If time is short, the exit ticket plenary can be set as homework instead. In that case, use the final 5 minutes for the Birling paragraph to become the plenary task - students read their paragraph aloud to a partner who checks for an embedded quotation.',
+    "Copyright note: All quotations from An Inspector Calls are the copyright of J.B. Priestley's estate. Keep all quoted passages to 15 words or fewer for fair dealing purposes. Do not reproduce extended extracts on student-facing handouts - use page references instead.",
     'Seating for the group activity: Pre-arrange mixed-ability groups of three for the Birling speech table. Assign roles: Reader (reads the speech aloud), Scribe (fills in the table), Challenger (checks column 3 answers are genuinely analytical, not just plot retelling).',
-    "Common misconception: Students often describe Birling as 'stupid'. Redirect this — Priestley deliberately constructs Birling's wrongness for didactic effect. The point is not that Birling is unintelligent, but that his ideology blinds him.",
+    "Common misconception: Students often describe Birling as 'stupid'. Redirect this - Priestley deliberately constructs Birling's wrongness for didactic effect. The point is not that Birling is unintelligent, but that his ideology blinds him.",
   ],
 }
 
@@ -145,7 +145,7 @@ export const characterWorksheetMeta = {
   title: 'Character Analysis: Sheila, Mr Birling & the Inspector',
   instructions:
     'Read each question carefully. For quote analysis questions, read the quotation provided and analyse the language in detail. For extended writing questions, aim to write at least three developed PEEL paragraphs. Show your understanding of how Priestley uses these characters to convey his message about social responsibility.',
-  text: 'An Inspector Calls — J.B. Priestley',
+  text: 'An Inspector Calls - J.B. Priestley',
   yearGroup: 'Year 10/11',
   examBoard: 'AQA / Edexcel IGCSE',
 }
@@ -179,7 +179,7 @@ export const characterWorksheetQuestions: WorksheetQuestion[] = [
     type: 'quote-analysis',
     marks: 6,
     lines: 8,
-    sourceQuote: "But these girls aren't cheap labour — they're people.",
+    sourceQuote: "But these girls aren't cheap labour - they're people.",
   },
   {
     question: "Which of the following best describes the Inspector's dramatic function?",
@@ -224,7 +224,7 @@ export const quotesWorksheetMeta = {
   title: 'Key Quotes: Analysis Tasks',
   instructions:
     "For each quotation, identify the speaker, explain the context, analyse the language techniques used, and explain how the quotation relates to Priestley's wider message. Use the WHAT-HOW-WHY framework: WHAT is being said, HOW does the language work, WHY does it matter for the play's themes.",
-  text: 'An Inspector Calls — J.B. Priestley',
+  text: 'An Inspector Calls - J.B. Priestley',
   yearGroup: 'Year 10/11',
   examBoard: 'AQA / Edexcel IGCSE',
 }
@@ -236,7 +236,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
     type: 'quote-analysis',
     marks: 5,
     lines: 7,
-    sourceQuote: 'The Titanic — she sails next week... unsinkable, absolutely unsinkable.',
+    sourceQuote: 'The Titanic - she sails next week... unsinkable, absolutely unsinkable.',
   },
   {
     question:
@@ -252,7 +252,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
     type: 'quote-analysis',
     marks: 5,
     lines: 7,
-    sourceQuote: "But these girls aren't cheap labour — they're people.",
+    sourceQuote: "But these girls aren't cheap labour - they're people.",
   },
   {
     question:
@@ -268,7 +268,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
     type: 'quote-analysis',
     marks: 5,
     lines: 7,
-    sourceQuote: "My God — I'm not likely to forget.",
+    sourceQuote: "My God - I'm not likely to forget.",
   },
   {
     question:
@@ -276,7 +276,7 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
     type: 'quote-analysis',
     marks: 6,
     lines: 8,
-    sourceQuote: "Girls of that class — they're not the kind of girls to give themselves airs.",
+    sourceQuote: "Girls of that class - they're not the kind of girls to give themselves airs.",
   },
   {
     question:
@@ -296,12 +296,12 @@ export const quotesWorksheetQuestions: WorksheetQuestion[] = [
 ]
 
 // ═══════════════════════════════════════════════════════════════════════════
-//  4. MARK SCHEME — "How does Priestley present responsibility?"
+//  4. MARK SCHEME - "How does Priestley present responsibility?"
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const responsibilityMarkSchemeMeta = {
   title: "Answer Guide: 'How does Priestley present the theme of responsibility?'",
-  text: 'An Inspector Calls — J.B. Priestley',
+  text: 'An Inspector Calls - J.B. Priestley',
   yearGroup: 'Year 10/11',
   examBoard: 'AQA / Edexcel IGCSE',
 }
@@ -320,13 +320,13 @@ export const responsibilityMarkSchemeAnswers: MarkSchemeAnswer[] = [
       'Quality of written communication: formal academic register, accurate SPaG',
     ],
     exampleTop:
-      "Priestley constructs Birling as the embodiment of capitalist individualism, a man whose confident declarations are systematically dismantled by dramatic irony. His assertion that a man must 'look after himself' uses possessive pronouns that linguistically fence off responsibility, reducing the moral universe to the private sphere. The audience, aware that two world wars have devastated this philosophy, recognises Birling as a cautionary figure — a didactic tool through which Priestley exposes the fatal consequences of rejecting collective responsibility. Birling's status as a magistrate and potential knight intensifies the irony: the very institutions that should embody justice are infected by his selfishness.",
+      "Priestley constructs Birling as the embodiment of capitalist individualism, a man whose confident declarations are systematically dismantled by dramatic irony. His assertion that a man must 'look after himself' uses possessive pronouns that linguistically fence off responsibility, reducing the moral universe to the private sphere. The audience, aware that two world wars have devastated this philosophy, recognises Birling as a cautionary figure - a didactic tool through which Priestley exposes the fatal consequences of rejecting collective responsibility. Birling's status as a magistrate and potential knight intensifies the irony: the very institutions that should embody justice are infected by his selfishness.",
     exampleMid:
       "Priestley uses Birling to show that some people only care about themselves. Birling says 'a man has to mind his own business' which shows he is selfish. The audience knows that his predictions about the Titanic and war are wrong, which makes him look foolish. Priestley is trying to show that capitalism is wrong because it stops people caring about others.",
     exampleLower:
       "Birling is selfish and doesn't care about Eva Smith. He fired her from his factory because she asked for more money. This shows he is not a nice person and Priestley doesn't like him.",
     commonMisconceptions: [
-      "Confusing the play's date of composition (1945) with its setting (1912) — students may not grasp why dramatic irony depends on the gap",
+      "Confusing the play's date of composition (1945) with its setting (1912) - students may not grasp why dramatic irony depends on the gap",
       "Describing Birling as 'stupid' rather than analysing how Priestley deliberately constructs his wrongness for didactic effect",
       'Ignoring AO3 entirely and treating the essay as a pure language analysis task',
       "Using 'Priestley is saying' without explaining how the literary techniques achieve the effect",
@@ -345,7 +345,7 @@ export const responsibilityMarkSchemeAnswers: MarkSchemeAnswer[] = [
       "Ability to compare the Inspector's approach to different characters (adapts his tone to Birling vs Sheila)",
     ],
     exampleTop:
-      "The Inspector functions as Priestley's dramatic proxy, a character whose rhetorical arsenal — imperatives, collective pronouns, and prophetic register — transforms a drawing-room mystery into a morality play. His declaration that 'we are responsible for each other' deploys the first-person plural to linguistically dissolve the boundary Birling erects between self and society. The anaphoric 'we' is both inclusive and accusatory, implicating the audience alongside the Birlings. His final warning — 'fire and blood and anguish' — employs a tricolon that escalates from elemental destruction to psychological suffering, alluding to both World Wars that the 1945 audience has survived. By leaving his identity ambiguous, Priestley ensures that the Inspector's moral authority cannot be dismissed as merely institutional: he operates as conscience itself.",
+      "The Inspector functions as Priestley's dramatic proxy, a character whose rhetorical arsenal - imperatives, collective pronouns, and prophetic register - transforms a drawing-room mystery into a morality play. His declaration that 'we are responsible for each other' deploys the first-person plural to linguistically dissolve the boundary Birling erects between self and society. The anaphoric 'we' is both inclusive and accusatory, implicating the audience alongside the Birlings. His final warning - 'fire and blood and anguish' - employs a tricolon that escalates from elemental destruction to psychological suffering, alluding to both World Wars that the 1945 audience has survived. By leaving his identity ambiguous, Priestley ensures that the Inspector's moral authority cannot be dismissed as merely institutional: he operates as conscience itself.",
     exampleMid:
       "The Inspector is used by Priestley to show his ideas about responsibility. He says 'we are responsible for each other' which is the opposite of what Birling believes. The word 'we' includes everyone, including the audience. His speech at the end about 'fire and blood and anguish' sounds like a prophecy about the wars. Priestley uses the Inspector as a mouthpiece for socialism.",
     exampleLower:
@@ -369,41 +369,41 @@ export const responsibilityMarkSchemeAnswers: MarkSchemeAnswer[] = [
       'Structural awareness: tracking character development across the play',
     ],
     exampleTop:
-      "Priestley orchestrates a generational schism that mirrors the political transformation Britain underwent between the play's setting and its composition. Sheila's linguistic journey — from the superficial 'mummy' register of the opening to her fierce assertion that 'these girls aren't cheap labour — they're people' — enacts in miniature the awakening Priestley hoped the post-war electorate would embrace. Her use of 'people' is deliberately simple, stripping away the euphemisms of class ('girls of that class') that her mother deploys to dehumanise the working poor. Priestley positions Sheila not as perfect but as teachable, embodying the democratic socialist conviction that moral education, not birthright, determines a person's worth.",
+      "Priestley orchestrates a generational schism that mirrors the political transformation Britain underwent between the play's setting and its composition. Sheila's linguistic journey - from the superficial 'mummy' register of the opening to her fierce assertion that 'these girls aren't cheap labour - they're people' - enacts in miniature the awakening Priestley hoped the post-war electorate would embrace. Her use of 'people' is deliberately simple, stripping away the euphemisms of class ('girls of that class') that her mother deploys to dehumanise the working poor. Priestley positions Sheila not as perfect but as teachable, embodying the democratic socialist conviction that moral education, not birthright, determines a person's worth.",
     exampleMid:
-      "Sheila changes during the play from a spoilt girl to someone who cares about others. She says 'these girls aren't cheap labour — they're people' which shows she now sees working-class people as equal. This is different from her parents who refuse to change. Priestley uses Sheila to show that young people can learn from their mistakes.",
+      "Sheila changes during the play from a spoilt girl to someone who cares about others. She says 'these girls aren't cheap labour - they're people' which shows she now sees working-class people as equal. This is different from her parents who refuse to change. Priestley uses Sheila to show that young people can learn from their mistakes.",
     exampleLower:
       'Sheila feels sorry for Eva Smith and is upset about what she did. She is different from her parents because she accepts what she did was wrong. Eric also changes because he feels bad.',
     commonMisconceptions: [
       "Treating Sheila's guilt as purely emotional without connecting it to Priestley's political argument about social responsibility",
       "Ignoring Eric's role or dismissing him as simply 'weak' without analysing how his drinking and immaturity serve Priestley's purpose",
-      'Failing to contrast the younger generation with the older generation — the argument requires comparison',
+      'Failing to contrast the younger generation with the older generation - the argument requires comparison',
     ],
   },
 ]
 
 // ═══════════════════════════════════════════════════════════════════════════
-//  5. REVISION GUIDE — ALL KEY THEMES
+//  5. REVISION GUIDE - ALL KEY THEMES
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const inspectorCallsRevisionGuide: RevisionGuideData = {
-  text: 'An Inspector Calls — J.B. Priestley',
+  text: 'An Inspector Calls - J.B. Priestley',
   examBoard: 'AQA / Edexcel IGCSE',
   plotSummary: [
     {
-      section: 'Act 1 — The Engagement Dinner',
+      section: 'Act 1 - The Engagement Dinner',
       summary:
         "The Birling family celebrate Sheila's engagement to Gerald Croft. Mr Birling delivers a speech dismissing collective responsibility and predicting peace and prosperity. Inspector Goole arrives and reveals that a young woman named Eva Smith has died by suicide. He reveals that Birling fired her from his factory for leading a strike for better wages. Sheila then confesses that she had Eva dismissed from Milwards department store out of jealousy.",
     },
     {
-      section: 'Act 2 — Gerald and Mrs Birling',
+      section: 'Act 2 - Gerald and Mrs Birling',
       summary:
-        "Gerald admits to having an affair with Eva (now calling herself Daisy Renton), keeping her as his mistress before ending the relationship. Sheila's reaction deepens her moral awakening. Mrs Birling is then revealed to have rejected Eva's plea for help at a charity committee, refusing to believe her story and insisting the father of Eva's unborn child should be held responsible — unwittingly condemning her own son.",
+        "Gerald admits to having an affair with Eva (now calling herself Daisy Renton), keeping her as his mistress before ending the relationship. Sheila's reaction deepens her moral awakening. Mrs Birling is then revealed to have rejected Eva's plea for help at a charity committee, refusing to believe her story and insisting the father of Eva's unborn child should be held responsible - unwittingly condemning her own son.",
     },
     {
-      section: 'Act 3 — Eric, Departure & the Final Twist',
+      section: 'Act 3 - Eric, Departure & the Final Twist',
       summary:
-        "Eric confesses to being the father of Eva's child, to stealing money from his father's business to support her, and to driving her to the charity committee where his mother rejected her. The Inspector delivers his final speech about collective responsibility and leaves. Gerald and Mr Birling discover that no Inspector Goole exists and question whether a girl actually died. They celebrate their apparent escape — but the phone rings: a girl has just died, and a real inspector is on his way.",
+        "Eric confesses to being the father of Eva's child, to stealing money from his father's business to support her, and to driving her to the charity committee where his mother rejected her. The Inspector delivers his final speech about collective responsibility and leaves. Gerald and Mr Birling discover that no Inspector Goole exists and question whether a girl actually died. They celebrate their apparent escape - but the phone rings: a girl has just died, and a real inspector is on his way.",
     },
   ],
   characters: [
@@ -412,7 +412,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       role: "A prosperous factory owner, magistrate, and potential knight. Represents Edwardian capitalist individualism. Priestley's primary target for satirical critique.",
       keyQuotes: [
         'a man has to mind his own business and look after himself and his own',
-        'The Titanic — she sails next week... absolutely unsinkable.',
+        'The Titanic - she sails next week... absolutely unsinkable.',
         "I say there isn't a chance of war.",
       ],
       analysis:
@@ -422,7 +422,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       name: 'Sheila Birling',
       role: "The Birlings' daughter. Initially superficial but undergoes the most complete moral transformation in the play. Priestley's symbol of hope for the younger generation.",
       keyQuotes: [
-        "But these girls aren't cheap labour — they're people.",
+        "But these girls aren't cheap labour - they're people.",
         'I know. I had her turned out of a job. I started it.',
         "You're pretending everything's just as it was before.",
       ],
@@ -431,20 +431,20 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
     },
     {
       name: 'Inspector Goole',
-      role: "A mysterious inspector who arrives to question the family. Functions as Priestley's mouthpiece for socialist ideals and collective responsibility. Possibly supernatural — his identity is deliberately ambiguous.",
+      role: "A mysterious inspector who arrives to question the family. Functions as Priestley's mouthpiece for socialist ideals and collective responsibility. Possibly supernatural - his identity is deliberately ambiguous.",
       keyQuotes: [
         'We are members of one body. We are responsible for each other.',
         'they will be taught it in fire and blood and anguish',
         'Public men, Mr Birling, have responsibilities as well as privileges.',
       ],
       analysis:
-        "The Inspector operates on multiple levels: as a police officer, a moral judge, a prophetic voice, and potentially a supernatural being. His name — 'Goole' — puns on 'ghoul', reinforcing his otherworldly nature. His use of collective pronouns, imperatives, and prophetic register gives him a rhetorical authority that transcends his institutional role. By leaving his identity unresolved, Priestley prevents the audience from dismissing his message as merely official — it becomes a universal moral imperative.",
+        "The Inspector operates on multiple levels: as a police officer, a moral judge, a prophetic voice, and potentially a supernatural being. His name - 'Goole' - puns on 'ghoul', reinforcing his otherworldly nature. His use of collective pronouns, imperatives, and prophetic register gives him a rhetorical authority that transcends his institutional role. By leaving his identity unresolved, Priestley prevents the audience from dismissing his message as merely official - it becomes a universal moral imperative.",
     },
     {
       name: 'Sybil Birling (Mrs Birling)',
       role: "Arthur's socially superior wife. Chair of the Brumley Women's Charity Organisation. Represents upper-middle-class prejudice and refusal to accept responsibility.",
       keyQuotes: [
-        'Girls of that class —',
+        'Girls of that class -',
         'I accept no blame for it at all.',
         'I was perfectly justified in advising my committee not to allow her claim.',
       ],
@@ -455,12 +455,12 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       name: 'Eric Birling',
       role: "The Birlings' son. Drinks heavily, had a relationship with Eva, and stole money from his father's business. Accepts responsibility but is immature and weak.",
       keyQuotes: [
-        "My God — I'm not likely to forget.",
+        "My God - I'm not likely to forget.",
         "You're not the kind of father a chap could go to",
         'We did her in all right.',
       ],
       analysis:
-        'Eric represents the destructive consequences of the patriarchal class system even on those within it. His alcoholism, his exploitation of Eva, and his theft are all symptoms of a household where appearances matter more than emotional honesty. Like Sheila, he accepts responsibility — but his weakness contrasts with her moral clarity, suggesting that accepting guilt is necessary but not sufficient for genuine change.',
+        'Eric represents the destructive consequences of the patriarchal class system even on those within it. His alcoholism, his exploitation of Eva, and his theft are all symptoms of a household where appearances matter more than emotional honesty. Like Sheila, he accepts responsibility - but his weakness contrasts with her moral clarity, suggesting that accepting guilt is necessary but not sufficient for genuine change.',
     },
   ],
   themes: [
@@ -472,7 +472,7 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
         "Birling's speech rejecting community: 'a man has to mind his own business'",
         "The Inspector's final speech on collective responsibility",
         "Sheila's acceptance of guilt vs her parents' denial",
-        'The final phone call — responsibility cannot be evaded',
+        'The final phone call - responsibility cannot be evaded',
       ],
       quotes: [
         'We are members of one body. We are responsible for each other.',
@@ -487,9 +487,9 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
         'Birling firing Eva for asking for a living wage',
         'Sheila having Eva dismissed from Milwards on a whim',
         "Mrs Birling's refusal to help at the charity because Eva 'gave herself airs'",
-        "Gerald's relationship with Eva — benevolence or exploitation?",
+        "Gerald's relationship with Eva - benevolence or exploitation?",
       ],
-      quotes: ['Girls of that class —', "But these girls aren't cheap labour — they're people."],
+      quotes: ['Girls of that class -', "But these girls aren't cheap labour - they're people."],
     },
     {
       theme: 'Generational Divide',
@@ -508,13 +508,13 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
         'The play exposes the double standards applied to women in 1912. Eva is exploited by every male character and judged harshly by Mrs Birling, whose own rigid gender expectations blind her to sisterly compassion.',
       keyMoments: [
         "Eva dismissed from Birling's factory with no recourse",
-        "Gerald's affair presented as 'rescuing' Eva — but he ultimately abandons her",
+        "Gerald's affair presented as 'rescuing' Eva - but he ultimately abandons her",
         "Mrs Birling's lack of solidarity with a woman of lower class",
         "Sheila's journey from conforming to gender expectations to independent moral thought",
       ],
       quotes: [
-        'She was pretty and warm-hearted — and intensely grateful.',
-        'Girls of that class —',
+        'She was pretty and warm-hearted - and intensely grateful.',
+        'Girls of that class -',
       ],
     },
     {
@@ -554,17 +554,17 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
       speaker: 'Inspector Goole',
       context: "The climax of the Inspector's final speech, Act 3.",
       analysis:
-        "The tricolon ('fire and blood and anguish') escalates from physical destruction to psychological suffering. For the 1945 audience, this is a direct allusion to both World Wars and the Blitz. The conditional 'if' gives the warning its urgency — there is still time to choose differently. The shift from 'learn' to 'taught' implies that those who refuse voluntary moral education will face involuntary historical consequences.",
+        "The tricolon ('fire and blood and anguish') escalates from physical destruction to psychological suffering. For the 1945 audience, this is a direct allusion to both World Wars and the Blitz. The conditional 'if' gives the warning its urgency - there is still time to choose differently. The shift from 'learn' to 'taught' implies that those who refuse voluntary moral education will face involuntary historical consequences.",
     },
     {
-      quote: "But these girls aren't cheap labour — they're people.",
+      quote: "But these girls aren't cheap labour - they're people.",
       speaker: 'Sheila Birling',
       context: "Sheila challenges her father's dismissive attitude towards his factory workers.",
       analysis:
         "The simplicity of 'they're people' is its power. Sheila strips away the economic language ('cheap labour') that Birling uses to dehumanise his workers, insisting on their fundamental humanity. This moment marks Sheila's moral turning point and represents the generational shift Priestley champions.",
     },
     {
-      quote: 'The Titanic — she sails next week... unsinkable, absolutely unsinkable.',
+      quote: 'The Titanic - she sails next week... unsinkable, absolutely unsinkable.',
       speaker: 'Mr Birling',
       context: "Birling's confident prediction during his dinner speech in Act 1.",
       analysis:
@@ -573,12 +573,12 @@ export const inspectorCallsRevisionGuide: RevisionGuideData = {
   ],
   examTips: [
     'Always address all three AOs in your response: AO1 (interpretation and quotation), AO2 (language, form, and structure analysis), and AO3 (contextual understanding). Weave them together rather than treating them as separate sections.',
-    'Use the PEEL structure (Point, Evidence, Explain, Link) but push beyond it — the best responses integrate multiple quotations within a single paragraph and develop alternative interpretations.',
+    'Use the PEEL structure (Point, Evidence, Explain, Link) but push beyond it - the best responses integrate multiple quotations within a single paragraph and develop alternative interpretations.',
     "When discussing context (AO3), do not write a paragraph about history disconnected from the text. Instead, embed contextual understanding into your language analysis: 'The 1945 audience, having survived two world wars, would recognise Birling's prediction as dangerously naive...'",
     "Name specific language techniques and explain their effect. Do not just identify them: 'Priestley uses a metaphor' is not analysis. 'The metaphor of one body suggests organic interconnection, implying that harming Eva damages the entire social organism' is analysis.",
     'Plan your essay before writing. Spend 5 minutes identifying your three best points, your supporting quotations, and your argument thread. A planned essay with three excellent paragraphs will outscore an unplanned essay with six mediocre ones.',
     "Address Priestley's intentions explicitly. Use phrases like 'Priestley constructs...', 'Priestley positions the audience to...', 'Priestley uses X as a vehicle for...' This demonstrates awareness that the text is a crafted artefact, not a transparent window on reality.",
-    'Compare characters within your essay, even if the question only names one. You will score higher if you can show how characters function in relation to each other — Birling vs the Inspector, Sheila vs her mother.',
+    'Compare characters within your essay, even if the question only names one. You will score higher if you can show how characters function in relation to each other - Birling vs the Inspector, Sheila vs her mother.',
     'End with a strong concluding sentence that returns to the question and offers a final evaluative judgement. Avoid simply restating your points.',
   ],
   practiceQuestions: [

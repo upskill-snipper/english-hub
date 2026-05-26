@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Connectives bank',
   description:
     'A connectives and discourse-marker bank for the iLowerSecondary ' +
-    'English exam — organised by job, for linking paragraphs and ' +
+    'English exam - organised by job, for linking paragraphs and ' +
     'developing sentences in Section B, and for comparing texts in ' +
     'Section A.',
   alternates: { canonical: PAGE_URL },
@@ -68,7 +68,7 @@ const GROUPS: { job: string; note: string; words: string[] }[] = [
   },
   {
     job: 'Cause and effect',
-    note: 'Explain why something happens — strong for “explain” writing.',
+    note: 'Explain why something happens - strong for “explain” writing.',
     words: [
       'because',
       'so',
@@ -113,7 +113,7 @@ const GROUPS: { job: string; note: string; words: string[] }[] = [
   },
   {
     job: 'Developing a sentence (subordinating)',
-    note: 'Build complex sentences for WAO2 S3–S4 — use a range, not just “and”.',
+    note: 'Build complex sentences for WAO2 S3-S4 - use a range, not just “and”.',
     words: [
       'although',
       'while',
@@ -166,7 +166,7 @@ export default async function ConnectivesReference() {
       <h1>Connectives bank</h1>
       <p className="lead">
         {WRITING_SKILLS[1].title}: linking paragraphs “using a range of methods” is a named writing
-        skill. This bank groups connectives and discourse markers by the job they do — for
+        skill. This bank groups connectives and discourse markers by the job they do - for
         developing sentences and linking paragraphs in Section B, and for comparing texts in Section
         A.
       </p>
@@ -198,7 +198,7 @@ export default async function ConnectivesReference() {
         </li>
         <li>
           <strong>Match the job.</strong> A causal connective (“therefore”) must follow an actual
-          cause — don’t bolt them on for show.
+          cause - don’t bolt them on for show.
         </li>
         <li>
           <strong>Link paragraphs, not just sentences.</strong> Open a new paragraph with a
@@ -206,7 +206,7 @@ export default async function ConnectivesReference() {
         </li>
         <li>
           <strong>For comparison answers</strong> (Section A), lean on the contrasting and
-          similarity groups — see the{' '}
+          similarity groups - see the{' '}
           <Link href="/ks3/ilowersecondary/reading/comparison">comparison masterclass</Link>.
         </li>
       </ul>

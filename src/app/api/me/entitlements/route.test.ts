@@ -14,7 +14,7 @@ import { NextRequest } from 'next/server'
 // Mocks
 // ---------------------------------------------------------------------------
 
-// Auth fixture — flipped per test to simulate signed-out callers.
+// Auth fixture - flipped per test to simulate signed-out callers.
 interface SupabaseSessionFixture {
   user: { id: string; email: string | null; created_at?: string } | null
   error: { message: string } | null
@@ -65,8 +65,12 @@ const prismaMock = {
 
 vi.mock('@/lib/prisma', () => ({ prisma: prismaMock }))
 
-// Rate limit — always pass in tests unless a specific test flips it.
-const rateLimitMock = vi.fn(async () => ({ success: true, remaining: 100, resetAt: Date.now() + 60_000 }))
+// Rate limit - always pass in tests unless a specific test flips it.
+const rateLimitMock = vi.fn(async () => ({
+  success: true,
+  remaining: 100,
+  resetAt: Date.now() + 60_000,
+}))
 vi.mock('@/lib/rate-limit', () => ({
   rateLimit: rateLimitMock,
   getClientIp: () => '127.0.0.1',
@@ -215,7 +219,7 @@ describe('GET /api/me/entitlements', () => {
   })
 
   it('returns pro:false and status:expired for an ACTIVE row whose period has elapsed', async () => {
-    // Pathological DB state — status ACTIVE but period ended. The
+    // Pathological DB state - status ACTIVE but period ended. The
     // projection must not grant pro.
     subscriptionRows = [
       makeSub({

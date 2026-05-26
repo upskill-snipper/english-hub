@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/resources/english-language/edexcel/techniques',
   },
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Language techniques — The English Hub',
+    title: 'Pearson Edexcel GCSE English Language techniques - The English Hub',
     description:
       'Language and structural techniques for Pearson Edexcel GCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/edexcel/techniques',

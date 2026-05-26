@@ -1,8 +1,8 @@
 'use client'
 
-// ─── DictationButton — drop-in "speak to type" mic ──────────────────────────
+// ─── DictationButton - drop-in "speak to type" mic ──────────────────────────
 // Place next to any text field. On each finalised chunk it calls `onText(chunk)`
-// — the caller appends to its own state (works with any controlled input):
+// - the caller appends to its own state (works with any controlled input):
 //
 //   <DictationButton onText={(t) => setValue((v) => (v ? v + ' ' : '') + t)} />
 //

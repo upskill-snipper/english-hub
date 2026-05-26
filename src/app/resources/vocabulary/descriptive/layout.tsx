@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Expand your descriptive vocabulary for GCSE English creative writing. Sensory language, powerful adjectives, and precise verbs for top marks.',
   alternates: { canonical: 'https://theenglishhub.app/resources/vocabulary/descriptive' },
   openGraph: {
-    title: 'Descriptive Vocabulary — The English Hub',
+    title: 'Descriptive Vocabulary - The English Hub',
     description:
       'Expand your descriptive vocabulary for GCSE English creative writing. Sensory language, powerful adjectives, and precise verbs for top marks.',
   },

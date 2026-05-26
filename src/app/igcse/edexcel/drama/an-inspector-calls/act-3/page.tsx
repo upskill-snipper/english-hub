@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Act 3 Analysis — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Act 3 Analysis - Edexcel IGCSE Literature',
     description:
       'Detailed Act 3 analysis of An Inspector Calls: Eric\u2019s confession, the Inspector\u2019s final speech, the family splits, and the phone-call twist.',
   },
-  title: 'An Inspector Calls Act 3 Analysis — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Act 3 Analysis - Edexcel IGCSE Literature',
   description:
     'Detailed Act 3 analysis of An Inspector Calls: Eric\u2019s confession, the Inspector\u2019s final speech, the family splits, and the phone-call twist.',
   alternates: {

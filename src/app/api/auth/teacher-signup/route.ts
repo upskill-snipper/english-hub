@@ -2,7 +2,7 @@
  * POST /api/auth/teacher-signup
  *
  * Cycle 6 fix (Agent-SIGNUP): teacher-specific counterpart to
- * `/api/auth/register`. Same design and invariants — creates the Prisma
+ * `/api/auth/register`. Same design and invariants - creates the Prisma
  * `User` projection row for a freshly-created Supabase Auth teacher, so
  * dormancy, retention, DSAR, and class-linkage features can find the row.
  *
@@ -10,9 +10,9 @@
  *   - `role` defaults to 'TEACHER' and `role: 'TEACHER'` is the only
  *     value accepted by this endpoint. (The `role` field in the body is
  *     optional but if supplied must equal 'TEACHER'.)
- *   - Optional `school` (max 200 chars) — stored on the User row for
+ *   - Optional `school` (max 200 chars) - stored on the User row for
  *     school-link lookups.
- *   - Optional `selectedExamBoard` — validated against the Prisma
+ *   - Optional `selectedExamBoard` - validated against the Prisma
  *     ExamBoard enum whitelist; rejects unknown values.
  *
  * Like /api/auth/register this route is idempotent on `supabaseUserId`,
@@ -26,7 +26,7 @@
  *   POST to this endpoint after `supabase.auth.signUp()` returns
  *   successfully, passing { firstName, lastName, dateOfBirth, country,
  *   school, selectedExamBoard }. (If you don't yet collect DOB on the
- *   teacher page, add it — the Prisma schema requires it as NOT NULL.)
+ *   teacher page, add it - the Prisma schema requires it as NOT NULL.)
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -41,7 +41,7 @@ export const dynamic = 'force-dynamic'
 
 // ─── Validation ───────────────────────────────────────────────────────────
 
-// Whitelist from Prisma's ExamBoard enum — pulled from the generated
+// Whitelist from Prisma's ExamBoard enum - pulled from the generated
 // client so it stays in sync with the schema automatically.
 const EXAM_BOARD_VALUES = Object.values(ExamBoard) as [ExamBoard, ...ExamBoard[]]
 
@@ -60,7 +60,7 @@ const teacherSignupBodySchema = z.object({
   country: z.string().trim().min(2, 'Country is required').max(56, 'Country name is too long'),
   // Teachers are always role TEACHER from this endpoint. We accept it in
   // the body for symmetry with /api/auth/register but constrain it to
-  // that single literal — a client cannot upgrade themselves to ADMIN.
+  // that single literal - a client cannot upgrade themselves to ADMIN.
   role: z.literal('TEACHER').optional(),
   school: z.string().trim().max(200, 'School name is too long').optional(),
   selectedExamBoard: z.enum(EXAM_BOARD_VALUES).optional(),
@@ -152,7 +152,7 @@ export async function POST(request: NextRequest) {
     if (age < MIN_AGE) {
       // A teacher under 13 shouldn't exist, but we enforce the same floor
       // as register/route.ts for consistency. In practice teachers should
-      // be 18+, but the client-side form is responsible for that UX — we
+      // be 18+, but the client-side form is responsible for that UX - we
       // don't reject 13-17 here because the product allows student
       // teachers / trainee teachers.
       return NextResponse.json(
@@ -173,7 +173,7 @@ export async function POST(request: NextRequest) {
     // ── 7. Create Prisma projection row ──────────────────────────────────
     // Role is forced to TEACHER regardless of what's in the body. isMinor
     // is computed honestly from DOB; it will normally be false for
-    // teachers but we don't special-case — a trainee teacher aged 15
+    // teachers but we don't special-case - a trainee teacher aged 15
     // should still get minor-level privacy defaults.
     const isMinor = age < MINOR_AGE_THRESHOLD
 

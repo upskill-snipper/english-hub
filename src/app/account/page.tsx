@@ -205,7 +205,7 @@ export default function AccountPage() {
           <div className="flex items-center gap-3 mb-4">
             <BookOpen className="w-5 h-5 text-primary" />
             <h2 id="account-board-heading" className="text-xl font-semibold text-foreground">
-              {t('account.studying')} {boardConfig ? boardConfig.shortName : '—'}
+              {t('account.studying')} {boardConfig ? boardConfig.shortName : '-'}
             </h2>
           </div>
 

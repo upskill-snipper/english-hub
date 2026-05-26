@@ -1,6 +1,6 @@
 // @vitest-environment node
 /**
- * Smart IP — LIVE end-to-end smoke (Steps 12 verification).
+ * Smart IP - LIVE end-to-end smoke (Steps 12 verification).
  *
  * Proves the real pipeline on the REAL database with a REAL model call:
  *   submit → AI mark (Anthropic) → teacher approve → prepareTrainingRecord →
@@ -34,7 +34,7 @@ const OWNER_EMAILS = ['cj@upskillenergy.com', 'info@upskillenergy.com']
 
 const SAMPLE_ESSAY = `Shakespeare presents Macbeth's ambition as a corrupting force that destroys him. At the start he is "brave Macbeth", a loyal and heroic soldier, which makes his fall more tragic. After the witches' prophecy his "vaulting ambition" takes over his judgement. The metaphor of vaulting suggests a rider who overreaches and falls, implying ambition is self-defeating. Lady Macbeth fuels this, telling him to "screw your courage to the sticking-place", showing ambition spreading through manipulation. By the end, the "tomorrow and tomorrow" soliloquy reduces life to "a tale told by an idiot", showing how unchecked ambition has hollowed him out and stripped life of meaning. Shakespeare therefore warns a Jacobean audience that ambition divorced from morality leads to damnation and chaos.`
 
-describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
+describe.skipIf(!LIVE)('Smart IP - live end-to-end pipeline', () => {
   it('submit → AI mark → teacher approve → prepareTrainingRecord (then cleans up)', async () => {
     const prisma = new PrismaClient()
     const svc = createServiceRoleClient()
@@ -112,7 +112,7 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
         examBoard: scheme.board,
         qualification: scheme.subject ?? null,
         paper: scheme.paper ?? null,
-        questionText: `${MARKER} ${question.questionType} — ambition in Macbeth`,
+        questionText: `${MARKER} ${question.questionType} - ambition in Macbeth`,
         questionType: question.questionType ?? null,
         studiedText: 'Macbeth',
         targetGrade: '7',
@@ -123,7 +123,7 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
       submissionId = ins.id
       expect(submissionId).toBeTruthy()
 
-      // 5. REAL AI mark — exact run-route sequence.
+      // 5. REAL AI mark - exact run-route sequence.
       const prompt = buildMarkingPrompt({
         scheme,
         questionId: question.id,
@@ -208,7 +208,7 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
       expect(appr.error).toBeNull()
       expect((appr.data as { status: string }).status).toBe('approved')
 
-      // 7. prepareTrainingRecord — the real consent-gated anonymiser.
+      // 7. prepareTrainingRecord - the real consent-gated anonymiser.
       const prep = await prepareTrainingRecord(submissionId)
       // Either it succeeds (full corpus proof) OR the consent guard
       // correctly blocks (privacy safeguard proof on live data). Both
@@ -236,11 +236,11 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
         expect((st.data as { status: string }).status).toBe('training_ready')
         // eslint-disable-next-line no-console
         console.log(
-          `[E2E] FULL pipeline OK — predictedGrade=${result.predictedGrade} ` +
+          `[E2E] FULL pipeline OK - predictedGrade=${result.predictedGrade} ` +
             `score=${result.totalMarks}/${result.maxMarks} → training_data row created (anonymised).`,
         )
       } else {
-        // Gate engaged — assert NO corpus row exists (privacy upheld).
+        // Gate engaged - assert NO corpus row exists (privacy upheld).
         const td = await svc
           .from('training_data')
           .select('id')
@@ -249,7 +249,7 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
         // eslint-disable-next-line no-console
         console.log(
           `[E2E] Pipeline OK through approval; prepareTrainingRecord correctly ` +
-            `gated (reason="${prep.reason}") — privacy safeguard verified on live data. ` +
+            `gated (reason="${prep.reason}") - privacy safeguard verified on live data. ` +
             `predictedGrade=${result.predictedGrade} score=${result.totalMarks}/${result.maxMarks}`,
         )
       }
@@ -282,7 +282,7 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
           }
         }
       } finally {
-        // Residue assertions — counts must return to baseline.
+        // Residue assertions - counts must return to baseline.
         const endSubs = await prisma.$queryRawUnsafe<{ n: number }[]>(
           'select count(*)::int n from marking_submissions',
         )
@@ -291,7 +291,7 @@ describe.skipIf(!LIVE)('Smart IP — live end-to-end pipeline', () => {
         )
         // eslint-disable-next-line no-console
         console.log(
-          `[E2E] residue check — marking_submissions ${baseSubs[0].n}→${endSubs[0].n}, ` +
+          `[E2E] residue check - marking_submissions ${baseSubs[0].n}→${endSubs[0].n}, ` +
             `training_data ${baseTd[0].n}→${endTd[0].n}`,
         )
         expect(endSubs[0].n).toBe(baseSubs[0].n)

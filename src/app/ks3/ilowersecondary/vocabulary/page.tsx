@@ -110,7 +110,7 @@ export default async function VocabularyPage() {
       <h1>Vocabulary builder</h1>
       <p className="lead">
         Themed word banks for the topics that recur across the linked Section A and Section B texts
-        on the iLowerSecondary English achievement test — built to make your reading answers sharper
+        on the iLowerSecondary English achievement test - built to make your reading answers sharper
         and your writing more ambitious.
       </p>
 
@@ -123,13 +123,13 @@ export default async function VocabularyPage() {
           Section B is marked on WAO1 (form, communication and purpose) and WAO2 (grammar,
           punctuation and spelling). The highest WAO1 bands reward stylistic features used
           confidently to support purpose, and the highest WAO2 bands reward ambitious vocabulary
-          used appropriately. A precise word is not a longer word — it is the word that says exactly
+          used appropriately. A precise word is not a longer word - it is the word that says exactly
           what you mean, for this audience and this purpose.
         </p>
         {VOCAB_SKILL && (
           <div className="not-prose mt-4 rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Spec skill {VOCAB_SKILL.code} — {VOCAB_SKILL.title}
+              Spec skill {VOCAB_SKILL.code} - {VOCAB_SKILL.title}
             </p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               {VOCAB_SKILL.bullets.map((b) => (
@@ -143,7 +143,7 @@ export default async function VocabularyPage() {
             </ul>
             {VOCAB_CODE && (
               <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
-                <span className="font-mono text-primary">{VOCAB_CODE.code}</span> —{' '}
+                <span className="font-mono text-primary">{VOCAB_CODE.code}</span> -{' '}
                 {VOCAB_CODE.descriptor}
               </p>
             )}
@@ -195,7 +195,7 @@ export default async function VocabularyPage() {
         <h2>Analytical verbs for reading answers</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Section A short open responses reward explanation, not lifted quotation. These verbs let
-          you state precisely what a writer is doing and the effect it has on the reader — the
+          you state precisely what a writer is doing and the effect it has on the reader - the
           difference between an unexplained lift and a developed point.
         </p>
         <div className="not-prose mt-4 overflow-x-auto rounded-xl border border-border/60">
@@ -259,7 +259,7 @@ export default async function VocabularyPage() {
                           <span className="font-semibold text-foreground whitespace-nowrap">
                             {u.word}
                           </span>
-                          <span className="text-muted-foreground">— {u.nuance}</span>
+                          <span className="text-muted-foreground">- {u.nuance}</span>
                         </li>
                       ))}
                     </ul>
@@ -281,7 +281,7 @@ export default async function VocabularyPage() {
             Warning
           </p>
           <p className="text-sm text-foreground leading-relaxed">
-            Examiners reward ambitious vocabulary used <em>appropriately</em> — not the longest word
+            Examiners reward ambitious vocabulary used <em>appropriately</em> - not the longest word
             you can find. A thesaurus lists words with a similar meaning, but synonyms are rarely
             identical: each carries a slightly different shade of meaning, formality or feeling.
             Dropping an unfamiliar word into a sentence where it does not quite fit lowers your

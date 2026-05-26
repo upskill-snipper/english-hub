@@ -59,7 +59,7 @@ export default async function Paper1Page() {
         <section>
           <h2 className="text-2xl font-bold text-foreground">{_tr(`Exam Structure`)}</h2>
           <p className="mt-2 text-muted-foreground">
-            Paper 1 is divided into two sections. Both are closed-book — no texts are provided.
+            Paper 1 is divided into two sections. Both are closed-book - no texts are provided.
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
@@ -75,7 +75,7 @@ export default async function Paper1Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  No extract is provided — you must select your own evidence from across the play.
+                  No extract is provided - you must select your own evidence from across the play.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -84,7 +84,7 @@ export default async function Paper1Page() {
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Assessed on reading and response, analysis of methods, context, and accuracy (SPaG
-                  — 4 marks).
+                  - 4 marks).
                 </li>
               </ul>
             </div>
@@ -341,7 +341,7 @@ export default async function Paper1Page() {
             <div className="rounded-xl border border-border p-6 shadow-md">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <h3 className="text-xl font-bold text-foreground">
-                  An Inspector Calls — J.B. Priestley (1945)
+                  An Inspector Calls - J.B. Priestley (1945)
                 </h3>
                 <Link
                   href="/resources/english-literature/edexcel/inspector-calls"
@@ -369,7 +369,7 @@ export default async function Paper1Page() {
             {/* Lord of the Flies */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Lord of the Flies — William Golding (1954)
+                Lord of the Flies - William Golding (1954)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 A group of boys are stranded on an uninhabited island after a plane crash. Initially
@@ -390,7 +390,7 @@ export default async function Paper1Page() {
             {/* Animal Farm */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Animal Farm — George Orwell (1945)
+                Animal Farm - George Orwell (1945)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 An allegorical novella where farm animals overthrow their human farmer, only for the
@@ -411,7 +411,7 @@ export default async function Paper1Page() {
             {/* The Woman in Black */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                The Woman in Black — Susan Hill (1983)
+                The Woman in Black - Susan Hill (1983)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Arthur Kipps, a young solicitor, travels to the remote Eel Marsh House to settle a
@@ -433,7 +433,7 @@ export default async function Paper1Page() {
             {/* Never Let Me Go */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Never Let Me Go — Kazuo Ishiguro (2005)
+                Never Let Me Go - Kazuo Ishiguro (2005)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Kathy H. narrates her life at Hailsham, a seemingly idyllic boarding school, and the
@@ -454,7 +454,7 @@ export default async function Paper1Page() {
             {/* Anita and Me */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Anita and Me — Meera Syal (1996)
+                Anita and Me - Meera Syal (1996)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Nine-year-old Meena Kumar grows up as the daughter of Punjabi parents in a 1960s
@@ -482,7 +482,7 @@ export default async function Paper1Page() {
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
               <h3 className="text-lg font-bold text-foreground">
-                Shakespeare (Section A) — Suggested Approach
+                Shakespeare (Section A) - Suggested Approach
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -490,7 +490,7 @@ export default async function Paper1Page() {
                     1
                   </span>
                   <span>
-                    <strong>Read the question carefully.</strong> Identify the key focus — is it a
+                    <strong>Read the question carefully.</strong> Identify the key focus - is it a
                     character, theme, or relationship? Underline the key word(s).
                   </span>
                 </li>
@@ -509,7 +509,7 @@ export default async function Paper1Page() {
                     3
                   </span>
                   <span>
-                    <strong>{_tr(`Embed quotations`)}</strong> — since there is no extract, short,
+                    <strong>{_tr(`Embed quotations`)}</strong> - since there is no extract, short,
                     memorised quotes are essential. Aim for 2-3 quotes per paragraph.
                   </span>
                 </li>
@@ -518,7 +518,7 @@ export default async function Paper1Page() {
                     4
                   </span>
                   <span>
-                    <strong>{_tr(`Analyse language and dramatic techniques`)}</strong> — explore
+                    <strong>{_tr(`Analyse language and dramatic techniques`)}</strong> - explore
                     Shakespeare&apos;s use of imagery, soliloquy, dramatic irony, verse vs prose,
                     and stagecraft (analysis of methods).
                   </span>
@@ -528,7 +528,7 @@ export default async function Paper1Page() {
                     5
                   </span>
                   <span>
-                    <strong>Link to context meaningfully</strong> — connect ideas to
+                    <strong>Link to context meaningfully</strong> - connect ideas to
                     Jacobean/Elizabethan society, audience reactions, and Shakespeare&apos;s
                     intentions (context). Don&apos;t bolt on context as separate sentences.
                   </span>
@@ -538,7 +538,7 @@ export default async function Paper1Page() {
                     6
                   </span>
                   <span>
-                    <strong>{_tr(`Write accurately`)}</strong> — SPaG carries 4 marks on this
+                    <strong>{_tr(`Write accurately`)}</strong> - SPaG carries 4 marks on this
                     section. Use literary terminology correctly and check your spelling.
                   </span>
                 </li>
@@ -547,7 +547,7 @@ export default async function Paper1Page() {
 
             <div className="rounded-xl bg-muted p-6">
               <h3 className="text-lg font-bold text-foreground">
-                Post-1914 Literature (Section B) — Suggested Approach
+                Post-1914 Literature (Section B) - Suggested Approach
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
@@ -555,7 +555,7 @@ export default async function Paper1Page() {
                     1
                   </span>
                   <span>
-                    <strong>{_tr(`Choose your question wisely`)}</strong> — you usually have a
+                    <strong>{_tr(`Choose your question wisely`)}</strong> - you usually have a
                     choice of two per text. Pick the one where you have the strongest evidence.
                   </span>
                 </li>
@@ -573,7 +573,7 @@ export default async function Paper1Page() {
                     3
                   </span>
                   <span>
-                    <strong>{_tr(`Use the writer&apos;s name`)}</strong> — phrases like
+                    <strong>{_tr(`Use the writer&apos;s name`)}</strong> - phrases like
                     &quot;Priestley presents...&quot; or &quot;Golding suggests...&quot; show you
                     understand the text is a construct with a deliberate message (analysis of
                     methods).
@@ -584,7 +584,7 @@ export default async function Paper1Page() {
                     4
                   </span>
                   <span>
-                    <strong>{_tr(`Explore the writer&apos;s purpose`)}</strong> — why did they write
+                    <strong>{_tr(`Explore the writer&apos;s purpose`)}</strong> - why did they write
                     this text? What message are they conveying to the audience? This secures context
                     marks.
                   </span>
@@ -594,7 +594,7 @@ export default async function Paper1Page() {
                     5
                   </span>
                   <span>
-                    <strong>{_tr(`Cover the whole text`)}</strong> — try to reference moments from
+                    <strong>{_tr(`Cover the whole text`)}</strong> - try to reference moments from
                     across the entire text to demonstrate thorough knowledge.
                   </span>
                 </li>
@@ -622,14 +622,14 @@ export default async function Paper1Page() {
                 <p className="mt-2">
                   <strong className="text-foreground">Analysis:</strong> The rhetorical question
                   reveals Macbeth&apos;s inner turmoil, while the hyperbolic reference to
-                  &quot;Neptune&apos;s ocean&quot; — the Roman god of the sea — suggests the crime
+                  &quot;Neptune&apos;s ocean&quot; - the Roman god of the sea - suggests the crime
                   is so vast that no natural force can undo it. The metaphor of blood as a permanent
                   stain foreshadows how guilt will torment Macbeth for the remainder of the play.
                 </p>
                 <p className="mt-2">
                   <strong className="text-foreground">Context:</strong> Shakespeare&apos;s Jacobean
                   audience, who believed in the Divine Right of Kings, would view regicide as the
-                  ultimate sin — a crime against God — making Macbeth&apos;s guilt not merely
+                  ultimate sin - a crime against God - making Macbeth&apos;s guilt not merely
                   psychological but spiritual.
                 </p>
               </div>

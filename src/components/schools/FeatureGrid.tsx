@@ -1,4 +1,4 @@
-// Feature grid — server component. A denser list-style grid used to
+// Feature grid - server component. A denser list-style grid used to
 // present platform capabilities (solution section). Distinct from
 // BenefitGrid: this is for "what the platform does", not "why it helps".
 

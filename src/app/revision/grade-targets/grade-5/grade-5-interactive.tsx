@@ -1,13 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import {
-  CheckCircle2,
-  XCircle,
-  Lightbulb,
-  ChevronDown,
-  ChevronUp,
-} from 'lucide-react'
+import { CheckCircle2, XCircle, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 
 const CHECKLIST_ITEMS = [
@@ -16,7 +10,7 @@ const CHECKLIST_ITEMS = [
   'I explain the effect of language on the reader, not just what it means',
   'I use subject terminology correctly (e.g. "the noun/verb/adjective suggests...")',
   'I write in clear PEE/PEEL paragraphs with a topic sentence',
-  "I can comment on a writer's purpose — why they made that choice",
+  "I can comment on a writer's purpose - why they made that choice",
   'I can identify basic structural features (opening, shift in focus, ending)',
   'My creative writing uses a range of sentence types for effect',
   'I plan before I write, even if it is a short plan',
@@ -46,7 +40,8 @@ export function Grade5Checklist() {
         <h2 className="text-heading-md font-heading text-foreground">Mastery Checklist</h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
-        Tick off each skill as you feel confident with it. Aim to have all of these ticked before your exam.
+        Tick off each skill as you feel confident with it. Aim to have all of these ticked before
+        your exam.
       </p>
 
       <div className="flex items-center gap-3 mb-5">
@@ -119,11 +114,10 @@ export function Grade5ComparisonExample({
         </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-5">
-        Same question, same text ({exampleTitle} by {exampleAuthor}), same quote — but the {higherLabel} response does more with it. Study the difference carefully.
+        Same question, same text ({exampleTitle} by {exampleAuthor}), same quote - but the{' '}
+        {higherLabel} response does more with it. Study the difference carefully.
       </p>
-      {contextNote && (
-        <p className="text-xs text-muted-foreground italic mb-4">{contextNote}</p>
-      )}
+      {contextNote && <p className="text-xs text-muted-foreground italic mb-4">{contextNote}</p>}
 
       <button
         onClick={() => setShow(!show)}
@@ -136,14 +130,16 @@ export function Grade5ComparisonExample({
       {show && (
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-red-500/20 bg-red-500/[0.03] p-5">
-            <Badge variant="destructive" className="mb-3">{lowerLabel}</Badge>
+            <Badge variant="destructive" className="mb-3">
+              {lowerLabel}
+            </Badge>
             <p className="text-xs text-muted-foreground leading-relaxed italic">{lowerEssay}</p>
             <div className="mt-3 space-y-1.5">
               {[
-                'Long, unselected quote — too much copied text',
-                'Vague analysis — no engagement with language',
+                'Long, unselected quote - too much copied text',
+                'Vague analysis - no engagement with language',
                 'No subject terminology or technique identification',
-                'Undeveloped comment on the writer\'s purpose',
+                "Undeveloped comment on the writer's purpose",
               ].map((reason) => (
                 <p key={reason} className="text-[10px] text-red-400 flex items-start gap-1.5">
                   <XCircle className="size-3 shrink-0 mt-0.5" />

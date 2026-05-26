@@ -7,11 +7,11 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Lesson Plans — Teacher Library',
+    title: 'Lesson Plans - Teacher Library',
     description:
       '20 free, ready-to-teach GCSE English lesson plans with learning objectives, activities, differentiation, and plenaries.',
   },
-  title: 'Lesson Plans — Teacher Library',
+  title: 'Lesson Plans - Teacher Library',
   description:
     '20 free, ready-to-teach GCSE English lesson plans with learning objectives, activities, differentiation, and plenaries.',
   alternates: {

@@ -31,11 +31,7 @@ import {
   Clock,
   ChevronRight,
 } from 'lucide-react'
-import type {
-  ClassAnalytics,
-  StudentAnalytics,
-  SchoolOverview,
-} from '@/lib/types'
+import type { ClassAnalytics, StudentAnalytics, SchoolOverview } from '@/lib/types'
 import {
   generateClassReport,
   generateStudentReport,
@@ -91,7 +87,7 @@ const REPORT_TYPES: ReportTypeOption[] = [
   {
     value: 'individual-student',
     label: 'Individual Student',
-    description: 'Detailed analysis of a single student\'s performance',
+    description: "Detailed analysis of a single student's performance",
     icon: User,
     requiresStudent: true,
     requiresClass: false,
@@ -108,7 +104,7 @@ const REPORT_TYPES: ReportTypeOption[] = [
   },
   {
     value: 'parents-evening',
-    label: 'Parents\' Evening',
+    label: "Parents' Evening",
     description: 'Parent-friendly report with grades, strengths, and home support tips',
     icon: GraduationCap,
     requiresStudent: true,
@@ -248,7 +244,9 @@ function highlightClass(highlight?: TableRow['highlight']): string {
   }
 }
 
-function highlightBadgeVariant(highlight?: TableRow['highlight']): 'default' | 'secondary' | 'destructive' | 'outline' {
+function highlightBadgeVariant(
+  highlight?: TableRow['highlight'],
+): 'default' | 'secondary' | 'destructive' | 'outline' {
   switch (highlight) {
     case 'good':
       return 'default'
@@ -286,14 +284,9 @@ function ReportTableView({ rows }: { rows: TableRow[] }) {
           {rows.map((row, i) => (
             <tr
               key={i}
-              className={cn(
-                'transition-colors',
-                i % 2 === 0 ? 'bg-muted/20' : 'bg-transparent',
-              )}
+              className={cn('transition-colors', i % 2 === 0 ? 'bg-muted/20' : 'bg-transparent')}
             >
-              <td className="px-3 py-2 font-medium text-muted-foreground w-[45%]">
-                {row.label}
-              </td>
+              <td className="px-3 py-2 font-medium text-muted-foreground w-[45%]">{row.label}</td>
               <td className={cn('px-3 py-2 font-semibold', highlightClass(row.highlight))}>
                 {row.value}
               </td>
@@ -320,7 +313,10 @@ function ReportSectionView({ section }: { section: ReportSection | ReportTableSe
       ) : (
         <ul className="space-y-1.5">
           {section.content.map((line, i) => (
-            <li key={i} className="report-list-item text-sm text-muted-foreground leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/30">
+            <li
+              key={i}
+              className="report-list-item text-sm text-muted-foreground leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-muted-foreground/30"
+            >
               {line}
             </li>
           ))}
@@ -469,7 +465,15 @@ export function ReportGenerator({
     if (selectedType.requiresDateRange && (!dateFrom || !dateTo)) return false
     if (reportType === 'head-of-department' && !schoolOverview) return false
     return true
-  }, [selectedType, selectedClassId, selectedStudentId, dateFrom, dateTo, reportType, schoolOverview])
+  }, [
+    selectedType,
+    selectedClassId,
+    selectedStudentId,
+    dateFrom,
+    dateTo,
+    reportType,
+    schoolOverview,
+  ])
 
   const handlePrint = useCallback(() => {
     window.print()
@@ -499,7 +503,8 @@ export function ReportGenerator({
               Report Generator
             </CardTitle>
             <CardDescription>
-              Generate and print formatted reports for classes, students, parents, or department heads.
+              Generate and print formatted reports for classes, students, parents, or department
+              heads.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
@@ -591,7 +596,8 @@ export function ReportGenerator({
                   <SelectContent>
                     {filteredStudents.map((s) => (
                       <SelectItem key={s.student_id} value={s.student_id}>
-                        {s.student_name} — {percentageToGCSEGradeLabel(Math.round(s.avg_quiz_score))} avg.
+                        {s.student_name} -{' '}
+                        {percentageToGCSEGradeLabel(Math.round(s.avg_quiz_score))} avg.
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -636,9 +642,15 @@ export function ReportGenerator({
                 <Clock className="h-4 w-4 shrink-0" />
                 <span>
                   {selectedType.requiresClass && !selectedClassId && 'Please select a class. '}
-                  {selectedType.requiresStudent && !selectedStudentId && 'Please select a student. '}
-                  {selectedType.requiresDateRange && (!dateFrom || !dateTo) && 'Please set a date range. '}
-                  {reportType === 'head-of-department' && !schoolOverview && 'School overview data is not available. '}
+                  {selectedType.requiresStudent &&
+                    !selectedStudentId &&
+                    'Please select a student. '}
+                  {selectedType.requiresDateRange &&
+                    (!dateFrom || !dateTo) &&
+                    'Please set a date range. '}
+                  {reportType === 'head-of-department' &&
+                    !schoolOverview &&
+                    'School overview data is not available. '}
                 </span>
               </div>
             )}
@@ -668,9 +680,7 @@ export function ReportGenerator({
               </Button>
             )}
             <div className="flex-1" />
-            <Badge variant="outline">
-              {selectedType.label}
-            </Badge>
+            <Badge variant="outline">{selectedType.label}</Badge>
           </div>
         )}
 
@@ -678,10 +688,7 @@ export function ReportGenerator({
         {report ? (
           <Card className="overflow-hidden">
             <CardContent className="p-0">
-              <div
-                ref={previewRef}
-                className="bg-white dark:bg-card p-6 sm:p-8 max-w-4xl mx-auto"
-              >
+              <div ref={previewRef} className="bg-white dark:bg-card p-6 sm:p-8 max-w-4xl mx-auto">
                 <ReportPreview report={report} />
               </div>
             </CardContent>

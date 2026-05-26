@@ -6,14 +6,14 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Study Guide — Edexcel GCSE English Literature',
+    title: 'Macbeth Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Macbeth revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotes, historical context, and exam technique.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/macbeth',
   },
-  title: 'Macbeth Study Guide — Edexcel GCSE English Literature',
+  title: 'Macbeth Study Guide - Edexcel GCSE English Literature',
   description:
     'Complete Macbeth revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotes, historical context, and exam technique.',
 }
@@ -31,7 +31,7 @@ const PLOT_SUMMARY = [
     act: 'Act 2',
     title: 'The Murder of Duncan',
     summary:
-      "Macbeth murders Duncan in his sleep, but is immediately tormented by guilt — he imagines a bloody dagger and hears a voice crying 'Sleep no more!' Lady Macbeth takes charge, planting the bloody daggers on the sleeping guards. Duncan's murder is discovered the next morning. Malcolm and Donalbain flee, and Macbeth is crowned King.",
+      "Macbeth murders Duncan in his sleep, but is immediately tormented by guilt - he imagines a bloody dagger and hears a voice crying 'Sleep no more!' Lady Macbeth takes charge, planting the bloody daggers on the sleeping guards. Duncan's murder is discovered the next morning. Malcolm and Donalbain flee, and Macbeth is crowned King.",
   },
   {
     act: 'Act 3',
@@ -49,7 +49,7 @@ const PLOT_SUMMARY = [
     act: 'Act 5',
     title: 'Downfall and Death',
     summary:
-      "Lady Macbeth sleepwalks, haunted by guilt, and eventually dies (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood — fulfilling the prophecy. Macduff reveals he was 'from his mother's womb untimely ripped' (born by Caesarean section). Macduff kills Macbeth and Malcolm is crowned King.",
+      "Lady Macbeth sleepwalks, haunted by guilt, and eventually dies (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood - fulfilling the prophecy. Macduff reveals he was 'from his mother's womb untimely ripped' (born by Caesarean section). Macduff kills Macbeth and Malcolm is crowned King.",
   },
 ]
 
@@ -69,7 +69,7 @@ const CHARACTERS = [
   {
     name: 'Lady Macbeth',
     description:
-      "Macbeth's ambitious and manipulative wife who drives the murder of Duncan. She calls on dark spirits to 'unsex' her and suppress her femininity. Initially the stronger partner, she later collapses under guilt — sleepwalking and obsessively washing her hands. Her decline mirrors Macbeth's rise in tyranny.",
+      "Macbeth's ambitious and manipulative wife who drives the murder of Duncan. She calls on dark spirits to 'unsex' her and suppress her femininity. Initially the stronger partner, she later collapses under guilt - sleepwalking and obsessively washing her hands. Her decline mirrors Macbeth's rise in tyranny.",
     key_quotes: [
       '"Come, you spirits that tend on mortal thoughts, unsex me here"',
       '"Look like the innocent flower, but be the serpent under\'t"',
@@ -81,7 +81,7 @@ const CHARACTERS = [
   {
     name: 'Banquo',
     description:
-      "Macbeth's fellow general and friend. He also hears the witches' prophecy (that his descendants will be kings) but, unlike Macbeth, resists temptation. He represents honour and moral integrity — a foil to Macbeth. His ghost haunts Macbeth at the banquet, symbolising inescapable guilt.",
+      "Macbeth's fellow general and friend. He also hears the witches' prophecy (that his descendants will be kings) but, unlike Macbeth, resists temptation. He represents honour and moral integrity - a foil to Macbeth. His ghost haunts Macbeth at the banquet, symbolising inescapable guilt.",
     key_quotes: [
       '"Thou hast it now: King, Cawdor, Glamis, all... and I fear thou played\'st most foully for\'t"',
       '"But \'tis strange; and oftentimes to win us to our harm, the instruments of darkness tell us truths"',
@@ -101,7 +101,7 @@ const CHARACTERS = [
   {
     name: 'The Witches',
     description:
-      'Three supernatural figures whose prophecies set the tragedy in motion. They are ambiguous — do they control fate or merely reveal it? They represent evil, temptation, and the disruption of the natural order. Shakespeare uses them to create an atmosphere of moral corruption.',
+      'Three supernatural figures whose prophecies set the tragedy in motion. They are ambiguous - do they control fate or merely reveal it? They represent evil, temptation, and the disruption of the natural order. Shakespeare uses them to create an atmosphere of moral corruption.',
     key_quotes: [
       '"Fair is foul, and foul is fair"',
       '"All hail, Macbeth, that shalt be king hereafter!"',
@@ -112,7 +112,7 @@ const CHARACTERS = [
   {
     name: 'Duncan',
     description:
-      'The good and virtuous King of Scotland. His trust in Macbeth makes his murder all the more treacherous. He represents the Divine Right of Kings — his murder is not just a political act but a crime against God and nature.',
+      'The good and virtuous King of Scotland. His trust in Macbeth makes his murder all the more treacherous. He represents the Divine Right of Kings - his murder is not just a political act but a crime against God and nature.',
     key_quotes: [
       '"This castle hath a pleasant seat"',
       '"He was a gentleman on whom I built an absolute trust"',
@@ -130,7 +130,7 @@ const THEMES = [
   {
     theme: 'Ambition',
     description:
-      "The central theme. Macbeth's 'vaulting ambition' drives him to regicide and tyranny. Shakespeare shows that ambition without moral restraint leads to destruction. Lady Macbeth's ambition is equally fierce but takes a different toll — she is destroyed by guilt rather than violence.",
+      "The central theme. Macbeth's 'vaulting ambition' drives him to regicide and tyranny. Shakespeare shows that ambition without moral restraint leads to destruction. Lady Macbeth's ambition is equally fierce but takes a different toll - she is destroyed by guilt rather than violence.",
     quotes: [
       '"I have no spur to prick the sides of my intent, but only vaulting ambition, which o\'erleaps itself"',
       '"Stars, hide your fires; let not light see my black and deep desires"',
@@ -139,7 +139,7 @@ const THEMES = [
   {
     theme: 'Guilt and Conscience',
     description:
-      "Both Macbeth and Lady Macbeth suffer overwhelming guilt. Macbeth hallucinates (the dagger, Banquo's ghost) while Lady Macbeth sleepwalks. Shakespeare suggests that guilt is an inescapable consequence of evil — even the most hardened criminal cannot outrun their conscience.",
+      "Both Macbeth and Lady Macbeth suffer overwhelming guilt. Macbeth hallucinates (the dagger, Banquo's ghost) while Lady Macbeth sleepwalks. Shakespeare suggests that guilt is an inescapable consequence of evil - even the most hardened criminal cannot outrun their conscience.",
     quotes: [
       '"Will all great Neptune\'s ocean wash this blood clean from my hand?"',
       '"Out, damned spot! Out, I say!"',
@@ -149,7 +149,7 @@ const THEMES = [
   {
     theme: 'The Supernatural',
     description:
-      "The witches, apparitions, Banquo's ghost, and the floating dagger create a world where the boundary between natural and supernatural is blurred. James I was fascinated by witchcraft — Shakespeare explores whether the supernatural controls human destiny or merely reveals inner desires.",
+      "The witches, apparitions, Banquo's ghost, and the floating dagger create a world where the boundary between natural and supernatural is blurred. James I was fascinated by witchcraft - Shakespeare explores whether the supernatural controls human destiny or merely reveals inner desires.",
     quotes: [
       '"Fair is foul, and foul is fair"',
       '"Is this a dagger which I see before me, the handle toward my hand?"',
@@ -159,7 +159,7 @@ const THEMES = [
   {
     theme: 'Kingship and Tyranny',
     description:
-      "Shakespeare contrasts Duncan (a good, trusting king) and Edward the Confessor (a healing king) with Macbeth (a tyrant). The play explores what makes a good ruler — legitimacy, virtue, and care for subjects. Macbeth's tyranny disrupts the natural order and brings suffering to Scotland.",
+      "Shakespeare contrasts Duncan (a good, trusting king) and Edward the Confessor (a healing king) with Macbeth (a tyrant). The play explores what makes a good ruler - legitimacy, virtue, and care for subjects. Macbeth's tyranny disrupts the natural order and brings suffering to Scotland.",
     quotes: [
       '"He was a gentleman on whom I built an absolute trust"',
       '"This dead butcher and his fiend-like queen"',
@@ -169,7 +169,7 @@ const THEMES = [
   {
     theme: 'Masculinity and Gender',
     description:
-      "Lady Macbeth challenges traditional gender roles, asking to be 'unsexed' and questioning Macbeth's manhood. Macbeth associates violence with masculinity. Shakespeare suggests that rigid ideas of masculinity can be destructive — Lady Macbeth's rejection of femininity leads to her breakdown.",
+      "Lady Macbeth challenges traditional gender roles, asking to be 'unsexed' and questioning Macbeth's manhood. Macbeth associates violence with masculinity. Shakespeare suggests that rigid ideas of masculinity can be destructive - Lady Macbeth's rejection of femininity leads to her breakdown.",
     quotes: [
       '"Come, you spirits that tend on mortal thoughts, unsex me here"',
       '"When you durst do it, then you were a man"',
@@ -189,7 +189,7 @@ const THEMES = [
   {
     theme: 'Fate vs Free Will',
     description:
-      "Do the witches determine Macbeth's fate, or does he choose his path? Banquo hears the same prophecies but does not act on them. Shakespeare leaves this ambiguous — but Macbeth's soliloquies show him actively choosing evil, suggesting free will bears the greater responsibility.",
+      "Do the witches determine Macbeth's fate, or does he choose his path? Banquo hears the same prophecies but does not act on them. Shakespeare leaves this ambiguous - but Macbeth's soliloquies show him actively choosing evil, suggesting free will bears the greater responsibility.",
     quotes: [
       '"If chance will have me king, why, chance may crown me without my stir"',
       '"I am settled, and bend up each corporal agent to this terrible feat"',
@@ -226,7 +226,7 @@ const KEY_QUOTES = [
     quote: '"Is this a dagger which I see before me, the handle toward my hand?"',
     speaker: 'Macbeth (2.1)',
     significance:
-      'A hallucination showing his inner conflict. The dagger points toward Duncan — temptation made visible.',
+      'A hallucination showing his inner conflict. The dagger points toward Duncan - temptation made visible.',
   },
   {
     quote: '"Will all great Neptune\'s ocean wash this blood clean from my hand?"',
@@ -238,7 +238,7 @@ const KEY_QUOTES = [
     quote: '"A little water clears us of this deed"',
     speaker: 'Lady Macbeth (2.2)',
     significance:
-      "Contrasts with Macbeth's guilt — she is dismissive and practical. Ironic foreshadowing of her later breakdown.",
+      "Contrasts with Macbeth's guilt - she is dismissive and practical. Ironic foreshadowing of her later breakdown.",
   },
   {
     quote: '"Macbeth does murder sleep"',
@@ -257,7 +257,7 @@ const KEY_QUOTES = [
       '"I am in blood stepped in so far that, should I wade no more, returning were as tedious as go o\'er"',
     speaker: 'Macbeth (3.4)',
     significance:
-      'Metaphor of a river of blood — he is so deep in murder that turning back is as hard as continuing. Shows his moral descent.',
+      'Metaphor of a river of blood - he is so deep in murder that turning back is as hard as continuing. Shows his moral descent.',
   },
   {
     quote: '"Double, double, toil and trouble"',
@@ -268,7 +268,7 @@ const KEY_QUOTES = [
   {
     quote: '"By the pricking of my thumbs, something wicked this way comes"',
     speaker: 'Second Witch (4.1)',
-    significance: "Even the witches now call Macbeth 'wicked' — he has surpassed their evil.",
+    significance: "Even the witches now call Macbeth 'wicked' - he has surpassed their evil.",
   },
   {
     quote: '"Out, damned spot! Out, I say!"',
@@ -280,14 +280,14 @@ const KEY_QUOTES = [
     quote: '"What, will these hands ne\'er be clean?"',
     speaker: 'Lady Macbeth (5.1)',
     significance:
-      "Echoes Macbeth's earlier guilt about bloody hands. Their roles have reversed — she is now consumed.",
+      "Echoes Macbeth's earlier guilt about bloody hands. Their roles have reversed - she is now consumed.",
   },
   {
     quote:
       '"Life\'s but a walking shadow, a poor player that struts and frets his hour upon the stage"',
     speaker: 'Macbeth (5.5)',
     significance:
-      "Nihilistic soliloquy after Lady Macbeth's death. Life is meaningless — a theatrical metaphor reflecting Shakespeare's own medium.",
+      "Nihilistic soliloquy after Lady Macbeth's death. Life is meaningless - a theatrical metaphor reflecting Shakespeare's own medium.",
   },
   {
     quote: '"Tomorrow, and tomorrow, and tomorrow, creeps in this petty pace from day to day"',
@@ -299,7 +299,7 @@ const KEY_QUOTES = [
     quote: '"I have lived long enough. My way of life is fallen into the sere, the yellow leaf"',
     speaker: 'Macbeth (5.3)',
     significance:
-      'Autumnal imagery. Macbeth recognises that he has lost everything that makes life worth living — honour, love, friends.',
+      'Autumnal imagery. Macbeth recognises that he has lost everything that makes life worth living - honour, love, friends.',
   },
   {
     quote: '"Turn, hell-hound, turn!"',
@@ -311,7 +311,7 @@ const KEY_QUOTES = [
     quote: '"Macduff was from his mother\'s womb untimely ripped"',
     speaker: 'Macduff (5.8)',
     significance:
-      "The witches' equivocation is revealed. The prophecy was a half-truth — Macduff was born by Caesarean.",
+      "The witches' equivocation is revealed. The prophecy was a half-truth - Macduff was born by Caesarean.",
   },
   {
     quote: '"This dead butcher and his fiend-like queen"',
@@ -323,7 +323,7 @@ const KEY_QUOTES = [
     quote: '"When you durst do it, then you were a man"',
     speaker: 'Lady Macbeth (1.7)',
     significance:
-      'She weaponises masculinity to manipulate Macbeth. Links violence to manhood — a toxic ideal.',
+      'She weaponises masculinity to manipulate Macbeth. Links violence to manhood - a toxic ideal.',
   },
   {
     quote: '"Full of scorpions is my mind, dear wife"',
@@ -337,12 +337,12 @@ const CONTEXT_POINTS = [
   {
     topic: 'James I and the Gunpowder Plot (1605)',
     detail:
-      "Macbeth was likely written in 1606, shortly after the Gunpowder Plot — a Catholic conspiracy to blow up Parliament and kill James I. The play's focus on regicide and treason would have resonated powerfully. Shakespeare flatters James by portraying his ancestor Banquo as honourable.",
+      "Macbeth was likely written in 1606, shortly after the Gunpowder Plot - a Catholic conspiracy to blow up Parliament and kill James I. The play's focus on regicide and treason would have resonated powerfully. Shakespeare flatters James by portraying his ancestor Banquo as honourable.",
   },
   {
     topic: 'The Divine Right of Kings',
     detail:
-      "James I believed kings were appointed by God. Killing a king was therefore a sin against God, not just a political crime. This explains why Duncan's murder is presented as unnatural — nature itself reacts with storms and darkness.",
+      "James I believed kings were appointed by God. Killing a king was therefore a sin against God, not just a political crime. This explains why Duncan's murder is presented as unnatural - nature itself reacts with storms and darkness.",
   },
   {
     topic: 'Witchcraft and the Supernatural',
@@ -352,7 +352,7 @@ const CONTEXT_POINTS = [
   {
     topic: 'The Great Chain of Being',
     detail:
-      "Elizabethan and Jacobean society believed in a strict hierarchy — God, then the monarch, then nobles, then commoners. Macbeth's regicide disrupts this chain, causing chaos in the natural world (horses eating each other, darkness during the day).",
+      "Elizabethan and Jacobean society believed in a strict hierarchy - God, then the monarch, then nobles, then commoners. Macbeth's regicide disrupts this chain, causing chaos in the natural world (horses eating each other, darkness during the day).",
   },
   {
     topic: 'Gender Roles',
@@ -362,7 +362,7 @@ const CONTEXT_POINTS = [
   {
     topic: 'Tragedy as a Genre',
     detail:
-      'Macbeth follows the Aristotelian model of tragedy: a noble hero with a fatal flaw (hamartia) experiences a reversal of fortune (peripeteia) and achieves recognition (anagnorisis) before catastrophe. The audience experiences catharsis — emotional release through pity and fear.',
+      'Macbeth follows the Aristotelian model of tragedy: a noble hero with a fatal flaw (hamartia) experiences a reversal of fortune (peripeteia) and achieves recognition (anagnorisis) before catastrophe. The audience experiences catharsis - emotional release through pity and fear.',
   },
 ]
 
@@ -381,7 +381,7 @@ export default function MacbethPage() {
             &larr; Edexcel English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Macbeth — Full Study Guide
+            Macbeth - Full Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Edexcel GCSE English Literature &middot; Paper 1, Section A
@@ -487,14 +487,14 @@ export default function MacbethPage() {
         <section id="quotes" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Key Quotes (20+)</h2>
           <p className="mt-2 text-muted-foreground">
-            Memorise these quotes — the Edexcel exam is closed-book. Short quotes that you can embed
+            Memorise these quotes - the Edexcel exam is closed-book. Short quotes that you can embed
             naturally into sentences are best.
           </p>
           <div className="mt-6 space-y-4">
             {KEY_QUOTES.map((q, i) => (
               <div key={i} className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="text-sm font-semibold italic text-foreground">{q.quote}</p>
-                <p className="mt-1 text-xs font-medium text-primary">— {q.speaker}</p>
+                <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
@@ -529,7 +529,7 @@ export default function MacbethPage() {
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 You will be given one question (no choice) that asks about a character, theme, or
-                idea across the whole play. There is no extract — you must recall your own evidence.
+                idea across the whole play. There is no extract - you must recall your own evidence.
               </p>
               <div className="mt-4 rounded-lg border-2 border-dashed border-primary bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
@@ -554,7 +554,7 @@ export default function MacbethPage() {
                     1
                   </span>
                   <span>
-                    <strong>Brief introduction</strong> — outline Shakespeare&apos;s overall
+                    <strong>Brief introduction</strong> - outline Shakespeare&apos;s overall
                     presentation of the theme/character in 2-3 sentences. Mention the play&apos;s
                     context.
                   </span>
@@ -574,7 +574,7 @@ export default function MacbethPage() {
                     3
                   </span>
                   <span>
-                    <strong>Track development</strong> — show how the theme/character changes across
+                    <strong>Track development</strong> - show how the theme/character changes across
                     the play (beginning &rarr; middle &rarr; end).
                   </span>
                 </li>
@@ -583,7 +583,7 @@ export default function MacbethPage() {
                     4
                   </span>
                   <span>
-                    <strong>Conclude briefly</strong> — summarise Shakespeare&apos;s message and its
+                    <strong>Conclude briefly</strong> - summarise Shakespeare&apos;s message and its
                     relevance to the Jacobean audience.
                   </span>
                 </li>
@@ -595,12 +595,12 @@ export default function MacbethPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use Shakespeare&apos;s name — &quot;Shakespeare presents...&quot; shows awareness
+                  Use Shakespeare&apos;s name - &quot;Shakespeare presents...&quot; shows awareness
                   of authorial intent.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Analyse individual words within quotes — don&apos;t just identify techniques,
+                  Analyse individual words within quotes - don&apos;t just identify techniques,
                   explain their effect.
                 </li>
                 <li className="flex gap-2">
@@ -622,7 +622,7 @@ export default function MacbethPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Remember SPaG is worth 4 marks — write accurately and use paragraphs.
+                  Remember SPaG is worth 4 marks - write accurately and use paragraphs.
                 </li>
               </ul>
             </div>

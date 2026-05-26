@@ -670,7 +670,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Spring',
-      'The richness and beauty of autumn — presented as a season of fulfilment rather than decay',
+      'The richness and beauty of autumn - presented as a season of fulfilment rather than decay',
       'Winter',
       'Summer',
     ],
@@ -702,7 +702,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'Three stanzas of 11 lines each — an ode form',
+      'Three stanzas of 11 lines each - an ode form',
       'A sonnet',
       'Quatrains',
     ],
@@ -724,7 +724,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.',
+      'Each stanza emphasises a different sensory experience - tactile abundance (1), visual personification (2), and aural music (3) - creating a complete sensory immersion in autumn.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -750,7 +750,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Spring is better',
-      'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music',
+      'The passing of time - but Keats immediately insists autumn has its own, equally beautiful music',
       'Spring will return',
       'The speaker is sad',
     ],
@@ -782,13 +782,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He ignores it',
-      "Autumn's beauty is heightened by its transience — the beauty is more precious because it is fleeting",
+      "Autumn's beauty is heightened by its transience - the beauty is more precious because it is fleeting",
       'He fears death directly',
       'He celebrates immortality',
     ],
     correctIndex: 1,
     explanation:
-      'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.',
+      'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing - the awareness of endings makes the present more vivid.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -798,13 +798,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Spring is coming',
-      'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell',
+      'The swallows preparing to migrate signal the end of autumn and approaching winter - beauty accompanied by gentle farewell',
       'The birds are feeding',
       'It describes morning',
     ],
     correctIndex: 1,
     explanation:
-      "The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn's music includes its own farewell.",
+      "The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant - autumn's music includes its own farewell.",
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -814,7 +814,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It rhymes well',
-      'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience',
+      'It perfectly balances sensory richness with philosophical depth - celebrating beauty while acknowledging its transience',
       'It is very old',
       'It is very long',
     ],
@@ -832,10 +832,10 @@ const REVISION_TOPICS = [
     summary:
       'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.',
     keyPoints: [
-      'Abundance — autumn as fulfilment rather than decay',
-      'Transience — beauty is more precious because it is fleeting',
-      'Acceptance — the poem embraces endings rather than fearing them',
-      'Keats was dying — personal mortality informs the gentle farewell',
+      'Abundance - autumn as fulfilment rather than decay',
+      'Transience - beauty is more precious because it is fleeting',
+      'Acceptance - the poem embraces endings rather than fearing them',
+      'Keats was dying - personal mortality informs the gentle farewell',
     ],
   },
   {
@@ -844,9 +844,9 @@ const REVISION_TOPICS = [
       'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.',
     keyPoints: [
       'Autumn personified as a relaxed figure among the harvest',
-      '"Close bosom-friend of the maturing sun" — intimate alliance',
-      'Multi-sensory — sight, touch, taste, smell, sound',
-      '"Gathering swallows" — gentle farewell image',
+      '"Close bosom-friend of the maturing sun" - intimate alliance',
+      'Multi-sensory - sight, touch, taste, smell, sound',
+      '"Gathering swallows" - gentle farewell image',
     ],
   },
   {
@@ -854,10 +854,10 @@ const REVISION_TOPICS = [
     summary:
       'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.',
     keyPoints: [
-      'Ode form — elevated celebration',
+      'Ode form - elevated celebration',
       'Three stanzas: ripeness (1), personification (2), music (3)',
-      'Progression from morning to evening — time passing',
-      'Regular rhyme scheme — orderly celebration',
+      'Progression from morning to evening - time passing',
+      'Regular rhyme scheme - orderly celebration',
     ],
   },
 ]
@@ -872,7 +872,7 @@ export default function ToAutumnPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="To Autumn by John Keats — Analysis & Annotations"
+        name="To Autumn by John Keats - Analysis & Annotations"
         description="Line-by-line analysis of To Autumn with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

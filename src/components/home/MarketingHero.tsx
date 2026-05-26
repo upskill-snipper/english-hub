@@ -95,13 +95,13 @@ export default function MarketingHero() {
     {
       icon: Target,
       color: 'text-emerald-400 bg-emerald-500/10',
-      value: '1–9',
+      value: '1-9',
       labelKey: 'home.stat.grading',
     },
   ]
   return (
     <>
-      {/* ━━━ HERO (static — critical for LCP) ━━━ */}
+      {/* ━━━ HERO (static - critical for LCP) ━━━ */}
       <section className="relative overflow-x-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
@@ -168,7 +168,7 @@ export default function MarketingHero() {
         </div>
       </section>
 
-      {/* ━━━ SOCIAL PROOF BAR (static — above the fold) ━━━ */}
+      {/* ━━━ SOCIAL PROOF BAR (static - above the fold) ━━━ */}
       <section className="border-y border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto px-6 py-10">
           <p className="text-center text-muted-foreground text-sm font-medium mb-7">
@@ -195,7 +195,7 @@ export default function MarketingHero() {
         </div>
       </section>
 
-      {/* ━━━ QUICK TIPS BANNER (static — near fold) ━━━ */}
+      {/* ━━━ QUICK TIPS BANNER (static - near fold) ━━━ */}
       <QuickTipsBanner />
     </>
   )

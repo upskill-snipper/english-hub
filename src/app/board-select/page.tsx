@@ -7,10 +7,10 @@ import { tMany } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'Choose your level or exam board',
   description:
-    'Pick the level you study — KS3, GCSE or IGCSE — then the board so we can show you the right texts, poems, and past paper walkthroughs. EAL support is included alongside every board.',
+    'Pick the level you study - KS3, GCSE or IGCSE - then the board so we can show you the right texts, poems, and past paper walkthroughs. EAL support is included alongside every board.',
   alternates: { canonical: 'https://theenglishhub.app/board-select' },
   openGraph: {
-    title: 'Choose your level or exam board — The English Hub',
+    title: 'Choose your level or exam board - The English Hub',
     description:
       'Pick the level you study, then the board. KS3, GCSE and IGCSE supported, with EAL learner support alongside every board.',
   },
@@ -32,17 +32,17 @@ type Board = {
   level: Level
 }
 
-// 02 May 2026 — hrefs use the canonical `/revision?setBoard=<id>` mechanism.
+// 02 May 2026 - hrefs use the canonical `/revision?setBoard=<id>` mechanism.
 // Middleware reads ?setBoard=, validates, sets cookie, redirects to clean
 // /revision. See business-docs/BOARD_NAVIGATION_MODEL.md.
 
-// 2026-05-20: KS3 was missing from the picker entirely — added so younger
-// learners (Years 7–9) can find their starting point. EAL is added as its
+// 2026-05-20: KS3 was missing from the picker entirely - added so younger
+// learners (Years 7-9) can find their starting point. EAL is added as its
 // own section because it's a cross-cutting learner profile that runs
-// alongside any board — not a board itself.
+// alongside any board - not a board itself.
 const KS3_BOARDS: readonly Board[] = [
   {
-    name: 'KS3 English (Years 7–9)',
+    name: 'KS3 English (Years 7-9)',
     href: '/revision?setBoard=ks3',
     descriptionKey: 'board.desc.ks3',
     level: 'KS3',
@@ -103,7 +103,7 @@ const IGCSE_BOARDS: readonly Board[] = [
 // picker. The href routes to /eal rather than setting a board cookie.
 const EAL_BOARDS: readonly Board[] = [
   {
-    name: 'EAL — English for Additional-Language Learners',
+    name: 'EAL - English for Additional-Language Learners',
     href: '/eal',
     descriptionKey: 'board.desc.eal',
     level: 'EAL',
@@ -190,7 +190,7 @@ export default async function BoardSelectPage() {
           </p>
         </header>
 
-        {/* KS3 section — Years 7–9, the curriculum before GCSE. */}
+        {/* KS3 section - Years 7-9, the curriculum before GCSE. */}
         <BoardSection
           id="ks3"
           level="KS3"
@@ -224,7 +224,7 @@ export default async function BoardSelectPage() {
           />
         </div>
 
-        {/* EAL section — cross-cutting learner profile that pairs with
+        {/* EAL section - cross-cutting learner profile that pairs with
             any board. Sits LAST so it reads as "and also" rather than
             replacing a board choice. */}
         <div className="mt-14 sm:mt-20">
@@ -255,7 +255,7 @@ export default async function BoardSelectPage() {
 type ResolvedBoard = Omit<Board, 'descriptionKey'> & { description: string }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * Section — one per level
+ * Section - one per level
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function BoardSection({
@@ -356,7 +356,7 @@ function BoardCard({
       href={board.href}
       className={`group relative flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 transition-all hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${hoverClass}`}
     >
-      {/* Level pill — top-right */}
+      {/* Level pill - top-right */}
       <span
         aria-hidden="true"
         className={`absolute top-4 right-4 inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider ring-1 ${pillClass}`}

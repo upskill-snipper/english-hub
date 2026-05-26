@@ -23,7 +23,7 @@
 // already passed by then.
 //
 // Supabase generated types don't know about `marking_submissions` /
-// `teacher_moderations` yet (Prisma client not regenerated — see schema
+// `teacher_moderations` yet (Prisma client not regenerated - see schema
 // migration note), so DB rows are cast through `unknown` to the shapes the
 // frozen migration guarantees.
 
@@ -33,7 +33,7 @@ import { verifySchoolMember } from '@/lib/school-auth'
 import { isSiteAdmin } from '@/lib/site-admin'
 // ADDITIVE (paid-marker console): lets the row's assigned ACTIVE marker
 // review commissioned/specimen/platform rows. Does not affect the existing
-// teacher/school/site-admin paths — see the marker branch in step 5.
+// teacher/school/site-admin paths - see the marker branch in step 5.
 import { getCurrentMarker } from '@/lib/marker-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import {
@@ -50,7 +50,7 @@ export const dynamic = 'force-dynamic'
 
 // ─── Validation ────────────────────────────────────────────────────────────
 
-// 9-1 GCSE grades plus "U" (ungraded) — must match the override route and the
+// 9-1 GCSE grades plus "U" (ungraded) - must match the override route and the
 // dropdown on the teacher marking page.
 const ALLOWED_GRADES = new Set(['9', '8', '7', '6', '5', '4', '3', '2', '1', 'U'])
 const MAX_FEEDBACK_LENGTH = 8000
@@ -163,7 +163,7 @@ function validateBody(
     if (!Array.isArray(aoCorrections)) {
       return { ok: false, error: 'aoCorrections must be an array or null' }
     }
-    // Light structural validation — stored verbatim as JSONB.
+    // Light structural validation - stored verbatim as JSONB.
     for (const c of aoCorrections) {
       if (!c || typeof c !== 'object' || typeof (c as AoCorrection).ao !== 'string') {
         return { ok: false, error: 'each aoCorrections entry needs a string "ao"' }
@@ -269,7 +269,7 @@ export async function handleReview(
       return unauthorizedResponse()
     }
 
-    // 2. Rate limit per user — generous for a UI form action (matches override).
+    // 2. Rate limit per user - generous for a UI form action (matches override).
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`marking-review:${user.id}:${ip}`, {
       limit: 30,
@@ -283,7 +283,7 @@ export async function handleReview(
     try {
       rawBody = await request.json()
     } catch {
-      // approve/reject can be called with an empty body — tolerate it.
+      // approve/reject can be called with an empty body - tolerate it.
       rawBody = {}
     }
     const bodyForValidation =
@@ -307,7 +307,7 @@ export async function handleReview(
       trainingEligible,
     } = validation.data
 
-    // 4. Look up the submission (service role — RLS-independent, authz below).
+    // 4. Look up the submission (service role - RLS-independent, authz below).
     const admin = createServiceRoleClient()
     const { data: submissionRaw, error: subErr } = await admin
       .from('marking_submissions')
@@ -325,7 +325,7 @@ export async function handleReview(
 
     // 5. Authorise.
     //
-    // 5a. ADDITIVE — paid-marker branch (does NOT alter the existing
+    // 5a. ADDITIVE - paid-marker branch (does NOT alter the existing
     //     teacher/school/site-admin authorisation below).
     //
     //     The corpus drive ingests commissioned / specimen / platform rows
@@ -339,7 +339,7 @@ export async function handleReview(
     //
     //     For any caller who is NOT an active marker, OR any non-marker-drive
     //     row, `handledByMarker` stays false and control falls through to the
-    //     ORIGINAL, byte-identical authorisation logic — existing teacher /
+    //     ORIGINAL, byte-identical authorisation logic - existing teacher /
     //     school-admin / site-admin behaviour is completely unchanged.
     const MARKER_DRIVE_SOURCES = new Set(['commissioned', 'specimen', 'platform'])
     let handledByMarker = false
@@ -435,9 +435,9 @@ export async function handleReview(
         // Only persist a real UUID member id to the UUID FK columns.
         reviewerMemberId = isUuid(memberId) ? memberId : null
       }
-    } // end if (!handledByMarker) — ADDITIVE wrapper for the marker branch
+    } // end if (!handledByMarker) - ADDITIVE wrapper for the marker branch
 
-    // 6. Persist — sequential best-effort "transaction".
+    // 6. Persist - sequential best-effort "transaction".
     //
     //    6a. INSERT the immutable teacher_moderations history/label row FIRST.
     //        The audit trail must survive even if the spine UPDATE fails.
@@ -491,7 +491,7 @@ export async function handleReview(
       update.approved_at = nowIso
     }
     // ADDITIVE (paid-marker console): a marker approval makes the row
-    // corpus-eligible so the training pipeline can pick it up — guaranteed
+    // corpus-eligible so the training pipeline can pick it up - guaranteed
     // server-side regardless of the request body. `handledByMarker` is only
     // ever true on the marker branch, so teacher / school-admin / site-admin
     // approvals are completely unaffected (their training_eligible stays
@@ -516,7 +516,7 @@ export async function handleReview(
     }
 
     // 7. Hydrate display fields (student_name, class_name) so the row can
-    //    update in place — mirrors the override route response shape.
+    //    update in place - mirrors the override route response shape.
     const u = updatedRaw as unknown as {
       id: string
       student_id: string

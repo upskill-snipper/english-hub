@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 /**
- * LevelChip — a small pill that labels a board card with its qualification level
+ * LevelChip - a small pill that labels a board card with its qualification level
  * (GCSE, IGCSE, KS3, A-Level). Sits in the top-right corner of a card so users
  * can't conflate GCSE with IGCSE specifications.
  *
@@ -11,12 +11,12 @@ import { cn } from '@/lib/utils'
  * the level text visible, but screen-reader users may navigate by interactive
  * element (the parent link/button) rather than reading every child node.
  * Therefore, **the parent card MUST set its own `aria-label` that includes the
- * level**, e.g. "Pearson Edexcel — GCSE — open board". Don't rely on the chip
+ * level**, e.g. "Pearson Edexcel - GCSE - open board". Don't rely on the chip
  * text alone to disambiguate boards.
  *
  * @example
  * ```tsx
- * <Link href="/revision/poetry/edexcel" aria-label="Pearson Edexcel — GCSE — open board">
+ * <Link href="/revision/poetry/edexcel" aria-label="Pearson Edexcel - GCSE - open board">
  *   <span className="flex items-center justify-between">
  *     <h3>Pearson Edexcel</h3>
  *     <LevelChip level="gcse" />
@@ -29,7 +29,7 @@ export type Level = 'gcse' | 'igcse' | 'ks3' | 'a-level'
 interface LevelChipProps {
   level: Level
   className?: string
-  /** Override the default label text. Use sparingly — default labels are
+  /** Override the default label text. Use sparingly - default labels are
    *  consistent across the app and aid recognition. */
   children?: ReactNode
 }

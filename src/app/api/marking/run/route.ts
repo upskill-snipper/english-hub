@@ -8,12 +8,12 @@
 //
 // The AI mark produced here is ALWAYS A DRAFT. This route only ever writes
 // status 'ai_marked' (B2C self-study) or 'teacher_review_required' (B2B
-// class) — it NEVER writes 'approved'. Final marks are a human act, persisted
+// class) - it NEVER writes 'approved'. Final marks are a human act, persisted
 // elsewhere (the override / moderation writers).
 //
 // Body: { submissionId }. Authorisation:
-//   • b2c_self  — caller must be the owning student.
-//   • b2b_class — caller must be an accepted school member of the row's
+//   • b2c_self  - caller must be the owning student.
+//   • b2b_class - caller must be an accepted school member of the row's
 //                 school (verifySchoolMember), same-school checked.
 //
 // DB access is via the Supabase service-role client only.
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse('You must be signed in to run marking.')
     }
 
-    // 2. Rate limit — generous; the heavy work is one model call per row.
+    // 2. Rate limit - generous; the heavy work is one model call per row.
     const rl = await rateLimit(`marking-run:${user.id}`, {
       limit: 30,
       windowSeconds: 86_400,
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
     }
     const submissionId = body.submissionId.trim()
 
-    // 4. Load the row (service role — Supabase only).
+    // 4. Load the row (service role - Supabase only).
     const svc = createServiceRoleClient()
     let row
     try {
@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
         return forbiddenResponse('You can only run marking on your own submission.')
       }
     } else {
-      // b2b_class — caller must be an accepted member of the row's school.
+      // b2b_class - caller must be an accepted member of the row's school.
       const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
       if (!member) {
         return forbiddenResponse('Only school staff can run marking for class submissions.')
@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // 6. Guard the state machine — only mark a row that is awaiting marking.
+    // 6. Guard the state machine - only mark a row that is awaiting marking.
     //    Re-running an already-marked / teacher-touched row would silently
     //    clobber a draft a teacher may be mid-review on.
     if (row.status !== 'submitted' && row.status !== 'pending') {
@@ -160,7 +160,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 9. Call Claude (shared client — privacy posture documented centrally).
+    // 9. Call Claude (shared client - privacy posture documented centrally).
     const anthropic = getAnthropicClient(apiKey)
     const aiRequestStartedAt = new Date()
     // EU AI Act Art. 12/19 traceability for the Smart-IP marking spine.
@@ -294,7 +294,7 @@ export async function POST(request: NextRequest) {
       return serverErrorResponse('Failed to save the marking result. Please try again.')
     }
 
-    // 13. EU AI Act Art. 12/19 — record the successful (draft) AI decision.
+    // 13. EU AI Act Art. 12/19 - record the successful (draft) AI decision.
     void logAiDecision({
       ...auditBase,
       requestStartedAt: aiRequestStartedAt,
@@ -318,7 +318,7 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // The AI mark is a DRAFT — never presented as final. The caller/UI must
+    // The AI mark is a DRAFT - never presented as final. The caller/UI must
     // label it accordingly; B2B work is not student-visible until approved.
     return successResponse({ result })
   } catch (err) {

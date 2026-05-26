@@ -324,7 +324,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
   }
 
   // Defensive fallback for any future board id added without a matching branch.
-  // Boardless null users were handled higher up — they get the explicit
+  // Boardless null users were handled higher up - they get the explicit
   // "Choose your exam board" CTA via BoardlessPoetryShell.
   return (
     <>
@@ -627,7 +627,7 @@ async function AnthologyLinks({ board }: { board: ExamBoard | null }) {
   // Filter to the user's board when known. If we don't know the board, OR
   // we know the board but nothing matches it (e.g. Cambridge language-only),
   // we fall back to showing every anthology so the page still has discovery
-  // value — but every card stays explicitly labelled with its board so a
+  // value - but every card stays explicitly labelled with its board so a
   // student on the wrong board never confuses an AQA cluster for their own.
   const filtered = board ? ANTHOLOGY_LINKS.filter((l) => l.boards.includes(board)) : []
   const isFallback = filtered.length === 0

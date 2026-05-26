@@ -83,7 +83,7 @@ export async function GET(
       return unauthorizedResponse('Sign in required')
     }
 
-    // 2. Rate limit — read endpoint a client may poll.
+    // 2. Rate limit - read endpoint a client may poll.
     const rl = await rateLimit(`marking-get:${user.id}`, {
       limit: 60,
       windowSeconds: 60,
@@ -92,7 +92,7 @@ export async function GET(
 
     // 3. Load the row. Try the RLS-scoped client first so row-level policies
     //    apply; fall back to service-role + explicit authz (the school routes'
-    //    established pattern — the Supabase types don't model these columns).
+    //    established pattern - the Supabase types don't model these columns).
     let row: MarkingSubmissionRow | null = null
     try {
       row = await loadSubmission(supabase, submissionId.trim())
@@ -128,7 +128,7 @@ export async function GET(
       })
     }
 
-    // Not the owner — must be a school member of the row's school.
+    // Not the owner - must be a school member of the row's school.
     const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
     if (!member) {
       // Do not leak existence to unrelated users.
@@ -140,7 +140,7 @@ export async function GET(
       return forbiddenResponse('Submission belongs to another school.')
     }
     if (!isSiteAdmin && !row.school_id) {
-      // A B2C self-study row has no school — not visible to school staff.
+      // A B2C self-study row has no school - not visible to school staff.
       return notFoundResponse('Submission not found.')
     }
 

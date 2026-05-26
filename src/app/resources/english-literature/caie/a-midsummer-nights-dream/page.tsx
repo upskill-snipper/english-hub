@@ -14,7 +14,7 @@ const characters = [
   {
     name: 'Lysander',
     description:
-      "A young Athenian nobleman who loves Hermia. Lysander is presented as the 'deserving' lover — he is wealthy, well-born, and genuinely devoted. His famous line 'The course of true love never did run smooth' establishes one of the play's key themes. When enchanted by Puck's love juice, his sudden passion for Helena satirises the fickleness of romantic desire and raises the question of whether 'natural' love is any more rational than magically induced love.",
+      "A young Athenian nobleman who loves Hermia. Lysander is presented as the 'deserving' lover - he is wealthy, well-born, and genuinely devoted. His famous line 'The course of true love never did run smooth' establishes one of the play's key themes. When enchanted by Puck's love juice, his sudden passion for Helena satirises the fickleness of romantic desire and raises the question of whether 'natural' love is any more rational than magically induced love.",
   },
   {
     name: 'Helena',
@@ -24,17 +24,17 @@ const characters = [
   {
     name: 'Demetrius',
     description:
-      "Initially betrothed to Helena, Demetrius has transferred his affections to Hermia, and Egeus supports his suit. He is the least sympathetic of the four lovers: he threatens Helena with violence in the woods and is aggressive in his rejection of her. Crucially, at the play's end he remains under the influence of the love juice — Shakespeare never restores his 'natural' affections, raising an unsettling question about whether his final love for Helena is genuine.",
+      "Initially betrothed to Helena, Demetrius has transferred his affections to Hermia, and Egeus supports his suit. He is the least sympathetic of the four lovers: he threatens Helena with violence in the woods and is aggressive in his rejection of her. Crucially, at the play's end he remains under the influence of the love juice - Shakespeare never restores his 'natural' affections, raising an unsettling question about whether his final love for Helena is genuine.",
   },
   {
     name: 'Oberon',
     description:
-      "King of the Fairies, quarrelling with Titania over a changeling boy. Oberon is a complex figure: he genuinely wants to help Helena (instructing Puck to anoint Demetrius's eyes), yet he also humiliates his own wife by making her fall in love with an ass-headed weaver. He embodies the play's ambivalence about magical power — it can resolve problems but also violates autonomy and consent. His final blessing of the marriages frames the fairy world as ultimately benevolent.",
+      "King of the Fairies, quarrelling with Titania over a changeling boy. Oberon is a complex figure: he genuinely wants to help Helena (instructing Puck to anoint Demetrius's eyes), yet he also humiliates his own wife by making her fall in love with an ass-headed weaver. He embodies the play's ambivalence about magical power - it can resolve problems but also violates autonomy and consent. His final blessing of the marriages frames the fairy world as ultimately benevolent.",
   },
   {
     name: 'Titania',
     description:
-      "Queen of the Fairies, whose refusal to surrender the changeling boy causes her dispute with Oberon. Titania is arguably the play's most dignified character: she honours her dead votaress by raising the boy, and her speech about the disordered seasons reveals that fairy quarrels have cosmic consequences. Her enchanted love for Bottom is both comic and troubling — it strips her of agency. Her willing reconciliation with Oberon after the spell is lifted leaves open the question of whether the patriarchal order has been challenged or reinforced.",
+      "Queen of the Fairies, whose refusal to surrender the changeling boy causes her dispute with Oberon. Titania is arguably the play's most dignified character: she honours her dead votaress by raising the boy, and her speech about the disordered seasons reveals that fairy quarrels have cosmic consequences. Her enchanted love for Bottom is both comic and troubling - it strips her of agency. Her willing reconciliation with Oberon after the spell is lifted leaves open the question of whether the patriarchal order has been challenged or reinforced.",
   },
   {
     name: 'Puck (Robin Goodfellow)',
@@ -44,12 +44,12 @@ const characters = [
   {
     name: 'Nick Bottom',
     description:
-      "A weaver and enthusiastic amateur actor who plays Pyramus in the mechanicals' play. Bottom is gloriously unselfconscious: he wants to play every part and is unfazed by his transformation into an ass. His night with Titania parodies courtly love — a working-class man is adored by a queen. His 'dream' speech (Act 4, Scene 1) is surprisingly profound, echoing St Paul's words about divine mystery. Bottom bridges the comic and the philosophical, making him one of Shakespeare's greatest comic creations.",
+      "A weaver and enthusiastic amateur actor who plays Pyramus in the mechanicals' play. Bottom is gloriously unselfconscious: he wants to play every part and is unfazed by his transformation into an ass. His night with Titania parodies courtly love - a working-class man is adored by a queen. His 'dream' speech (Act 4, Scene 1) is surprisingly profound, echoing St Paul's words about divine mystery. Bottom bridges the comic and the philosophical, making him one of Shakespeare's greatest comic creations.",
   },
   {
     name: 'Theseus',
     description:
-      "Duke of Athens, preparing to marry Hippolyta. Theseus represents rational, patriarchal authority: he upholds Egeus's right over Hermia and dismisses the lovers' account of the night as imagination ('The lunatic, the lover, and the poet / Are of imagination all compact'). Yet his own marriage to Hippolyta — a conquered Amazon queen — complicates his authority. His Act 5 speech on imagination is one of the play's key thematic statements about the relationship between art, love, and reality.",
+      "Duke of Athens, preparing to marry Hippolyta. Theseus represents rational, patriarchal authority: he upholds Egeus's right over Hermia and dismisses the lovers' account of the night as imagination ('The lunatic, the lover, and the poet / Are of imagination all compact'). Yet his own marriage to Hippolyta - a conquered Amazon queen - complicates his authority. His Act 5 speech on imagination is one of the play's key thematic statements about the relationship between art, love, and reality.",
   },
   {
     name: 'Hippolyta',
@@ -67,17 +67,17 @@ const themes = [
   {
     name: 'Love and Desire',
     detail:
-      "Shakespeare presents love as irrational, unpredictable, and often humiliating. The four lovers' shifting affections in the forest — partly natural, partly magically induced — blur the line between 'true' love and infatuation. Helena pursues Demetrius like a 'spaniel'; Titania adores an ass. The play asks whether love is a genuine emotion or a kind of enchantment, and whether there is any meaningful difference. Lysander's observation that 'The course of true love never did run smooth' frames love as inherently turbulent, while the multiple weddings at the end suggest that social order depends on channelling desire into marriage.",
+      "Shakespeare presents love as irrational, unpredictable, and often humiliating. The four lovers' shifting affections in the forest - partly natural, partly magically induced - blur the line between 'true' love and infatuation. Helena pursues Demetrius like a 'spaniel'; Titania adores an ass. The play asks whether love is a genuine emotion or a kind of enchantment, and whether there is any meaningful difference. Lysander's observation that 'The course of true love never did run smooth' frames love as inherently turbulent, while the multiple weddings at the end suggest that social order depends on channelling desire into marriage.",
   },
   {
     name: 'Dreams and Reality',
     detail:
-      "The title itself signals the play's preoccupation with the boundary between dreaming and waking. The woodland scenes have a dreamlike quality: identities shift, time behaves strangely, and the characters later struggle to recall what happened. Bottom's 'dream' is 'past the wit of man to say what dream it was'. Theseus dismisses the lovers' experience as mere imagination, but Hippolyta's response — that it 'grows to something of great constancy' — suggests that dreams may reveal truths that reason cannot access. The play-within-a-play adds another layer: art, like dreams, creates an alternative reality.",
+      "The title itself signals the play's preoccupation with the boundary between dreaming and waking. The woodland scenes have a dreamlike quality: identities shift, time behaves strangely, and the characters later struggle to recall what happened. Bottom's 'dream' is 'past the wit of man to say what dream it was'. Theseus dismisses the lovers' experience as mere imagination, but Hippolyta's response - that it 'grows to something of great constancy' - suggests that dreams may reveal truths that reason cannot access. The play-within-a-play adds another layer: art, like dreams, creates an alternative reality.",
   },
   {
     name: 'Magic and Transformation',
     detail:
-      "The love juice (from 'love-in-idleness') is the play's central magical device, capable of making anyone fall in love with the first creature they see. Bottom's literal transformation into an ass externalises the metaphorical transformations that love produces. Titania's enchantment transforms her from a powerful queen into a doting fool. Shakespeare uses magic not merely as a plot mechanism but as a metaphor for the transformative — and potentially dehumanising — power of desire. The fairy world operates by different rules, and the woodland becomes a space where Athenian social norms dissolve.",
+      "The love juice (from 'love-in-idleness') is the play's central magical device, capable of making anyone fall in love with the first creature they see. Bottom's literal transformation into an ass externalises the metaphorical transformations that love produces. Titania's enchantment transforms her from a powerful queen into a doting fool. Shakespeare uses magic not merely as a plot mechanism but as a metaphor for the transformative - and potentially dehumanising - power of desire. The fairy world operates by different rules, and the woodland becomes a space where Athenian social norms dissolve.",
   },
   {
     name: 'Order versus Chaos',
@@ -87,7 +87,7 @@ const themes = [
   {
     name: 'Appearance versus Reality',
     detail:
-      "Nothing in the play is quite as it seems. Lovers who swore eternal devotion switch partners overnight. Bottom, the most foolish character, is adored by the Fairy Queen. The mechanicals' play of Pyramus and Thisbe — a tragic love story performed as farce — mirrors the main plot and asks whether the lovers' own story could equally have ended in tragedy. Theseus's speech on imagination links lovers, lunatics, and poets as people who see what is not there. The play's final speech, Puck's epilogue, asks the audience to consider the entire performance as a 'dream', dissolving the distinction between theatrical illusion and reality.",
+      "Nothing in the play is quite as it seems. Lovers who swore eternal devotion switch partners overnight. Bottom, the most foolish character, is adored by the Fairy Queen. The mechanicals' play of Pyramus and Thisbe - a tragic love story performed as farce - mirrors the main plot and asks whether the lovers' own story could equally have ended in tragedy. Theseus's speech on imagination links lovers, lunatics, and poets as people who see what is not there. The play's final speech, Puck's epilogue, asks the audience to consider the entire performance as a 'dream', dissolving the distinction between theatrical illusion and reality.",
   },
 ]
 
@@ -95,7 +95,7 @@ const plotSummary = [
   {
     act: 'Act 1',
     summary:
-      "In Athens, Duke Theseus prepares for his marriage to Hippolyta. Egeus brings his daughter Hermia before Theseus, demanding she marry Demetrius; Hermia loves Lysander. Theseus gives Hermia until his wedding day to obey or face death or lifelong celibacy. Hermia and Lysander plan to elope through the forest. Hermia confides in Helena, who decides to tell Demetrius, hoping to regain his favour. Separately, a group of Athenian workmen ('the mechanicals') plan to rehearse a play — Pyramus and Thisbe — for the Duke's wedding.",
+      "In Athens, Duke Theseus prepares for his marriage to Hippolyta. Egeus brings his daughter Hermia before Theseus, demanding she marry Demetrius; Hermia loves Lysander. Theseus gives Hermia until his wedding day to obey or face death or lifelong celibacy. Hermia and Lysander plan to elope through the forest. Hermia confides in Helena, who decides to tell Demetrius, hoping to regain his favour. Separately, a group of Athenian workmen ('the mechanicals') plan to rehearse a play - Pyramus and Thisbe - for the Duke's wedding.",
     quotes: [
       {
         text: 'The course of true love never did run smooth',
@@ -107,7 +107,7 @@ const plotSummary = [
         text: 'I am your spaniel; and, Demetrius, / The more you beat me, I will fawn on you',
         speaker: 'Helena',
         analysis:
-          "The animal imagery degrades Helena willingly — she compares herself to a dog. The masochistic language ('beat me', 'fawn') presents love as a loss of human dignity, inverting the Petrarchan convention where the lover is ennobled by devotion.",
+          "The animal imagery degrades Helena willingly - she compares herself to a dog. The masochistic language ('beat me', 'fawn') presents love as a loss of human dignity, inverting the Petrarchan convention where the lover is ennobled by devotion.",
       },
     ],
   },
@@ -126,7 +126,7 @@ const plotSummary = [
         text: 'I know a bank where the wild thyme blows, / Where oxlips and the nodding violet grows',
         speaker: 'Oberon',
         analysis:
-          "This lyrical passage creates a sensuous, idyllic natural setting — yet it is also the site of Titania's enchantment and humiliation. The beauty of the language contrasts with Oberon's manipulative intent, embodying the play's tension between appearance and reality.",
+          "This lyrical passage creates a sensuous, idyllic natural setting - yet it is also the site of Titania's enchantment and humiliation. The beauty of the language contrasts with Oberon's manipulative intent, embodying the play's tension between appearance and reality.",
       },
     ],
   },
@@ -151,7 +151,7 @@ const plotSummary = [
         text: "My Oberon! What visions have I seen! / Methought I was enamour'd of an ass",
         speaker: 'Titania',
         analysis:
-          "The dramatic irony is acute: Titania's 'vision' was reality. 'Enamour'd of an ass' works on two levels — literal (Bottom's head) and metaphorical (foolish infatuation). Her horror upon waking parallels the lovers' confusion, reinforcing the dream/reality theme.",
+          "The dramatic irony is acute: Titania's 'vision' was reality. 'Enamour'd of an ass' works on two levels - literal (Bottom's head) and metaphorical (foolish infatuation). Her horror upon waking parallels the lovers' confusion, reinforcing the dream/reality theme.",
       },
     ],
   },
@@ -170,7 +170,7 @@ const plotSummary = [
         text: 'Are you sure / That we are awake? It seems to me / That yet we sleep, we dream',
         speaker: 'Demetrius',
         analysis:
-          "Demetrius articulates the play's central uncertainty: the boundary between dream and waking has become impossible to locate. His hesitation reflects the audience's own experience — after the forest scenes, certainty about what is 'real' has dissolved.",
+          "Demetrius articulates the play's central uncertainty: the boundary between dream and waking has become impossible to locate. His hesitation reflects the audience's own experience - after the forest scenes, certainty about what is 'real' has dissolved.",
       },
     ],
   },
@@ -183,7 +183,7 @@ const plotSummary = [
         text: 'The lunatic, the lover, and the poet / Are of imagination all compact',
         speaker: 'Theseus',
         analysis:
-          "Theseus groups three types of irrational vision together, dismissing all as fantasy. The tricolon structure creates rhetorical authority, but the play itself has shown that imagination — whether in love, dreams, or art — can access truths that reason misses. Shakespeare dramatises the tension between Theseus's rationalism and the play's own magical logic.",
+          "Theseus groups three types of irrational vision together, dismissing all as fantasy. The tricolon structure creates rhetorical authority, but the play itself has shown that imagination - whether in love, dreams, or art - can access truths that reason misses. Shakespeare dramatises the tension between Theseus's rationalism and the play's own magical logic.",
       },
       {
         text: "If we shadows have offended, / Think but this, and all is mended, / That you have but slumber'd here / While these visions did appear",
@@ -199,7 +199,7 @@ const techniques = [
   {
     name: 'Comedy and the Green World',
     detail:
-      "A Midsummer Night's Dream follows the structure of Shakespearean comedy: characters leave the 'normal' world (Athens), enter a 'green world' (the forest) where identities become fluid and social rules dissolve, then return to the normal world transformed. The forest is a liminal space — neither fully real nor fully imaginary — where problems that seem insoluble in Athens (parental authority, unrequited love) can be resolved. The movement from order to chaos and back to a new, more flexible order is the engine of Shakespearean comedy.",
+      "A Midsummer Night's Dream follows the structure of Shakespearean comedy: characters leave the 'normal' world (Athens), enter a 'green world' (the forest) where identities become fluid and social rules dissolve, then return to the normal world transformed. The forest is a liminal space - neither fully real nor fully imaginary - where problems that seem insoluble in Athens (parental authority, unrequited love) can be resolved. The movement from order to chaos and back to a new, more flexible order is the engine of Shakespearean comedy.",
   },
   {
     name: 'Verse versus Prose',
@@ -219,38 +219,38 @@ const techniques = [
   {
     name: 'Fairy Magic and the Love Juice',
     detail:
-      "The juice of 'love-in-idleness' (a pansy struck by Cupid's arrow) is both a plot device and a metaphor. It literalises the idea of 'falling' in love — an involuntary, irrational experience that overpowers reason. Shakespeare makes the audience uncomfortable by showing that enchanted love is indistinguishable from 'real' love: both produce the same language, the same devotion, the same absurdity. Demetrius remains enchanted at the play's end, so his 'happy ending' is built on manipulation, quietly undercutting the comedy's joyful resolution.",
+      "The juice of 'love-in-idleness' (a pansy struck by Cupid's arrow) is both a plot device and a metaphor. It literalises the idea of 'falling' in love - an involuntary, irrational experience that overpowers reason. Shakespeare makes the audience uncomfortable by showing that enchanted love is indistinguishable from 'real' love: both produce the same language, the same devotion, the same absurdity. Demetrius remains enchanted at the play's end, so his 'happy ending' is built on manipulation, quietly undercutting the comedy's joyful resolution.",
   },
   {
     name: 'Multiple Plots and Mirroring',
     detail:
-      "The play weaves together four distinct groups — the Athenian court, the four lovers, the fairies, and the mechanicals — and their stories mirror and comment on each other. The fairy quarrel over the changeling boy parallels the human lovers' quarrels; Titania's enchanted love for Bottom mirrors the lovers' enchanted passions; Pyramus and Thisbe's tragedy mirrors the lovers' near-miss. This structural technique creates thematic density and invites the audience to draw connections between different forms of love, power, and illusion.",
+      "The play weaves together four distinct groups - the Athenian court, the four lovers, the fairies, and the mechanicals - and their stories mirror and comment on each other. The fairy quarrel over the changeling boy parallels the human lovers' quarrels; Titania's enchanted love for Bottom mirrors the lovers' enchanted passions; Pyramus and Thisbe's tragedy mirrors the lovers' near-miss. This structural technique creates thematic density and invites the audience to draw connections between different forms of love, power, and illusion.",
   },
 ]
 
 const examGuidance = {
   passageBased: {
-    label: 'Part (a) — Passage-Based Question',
+    label: 'Part (a) - Passage-Based Question',
     tips: [
       'You will be given a printed extract and asked how Shakespeare creates particular effects in that passage.',
-      'Work through the passage methodically, line by line or section by section — do not jump around randomly.',
+      'Work through the passage methodically, line by line or section by section - do not jump around randomly.',
       'Identify specific language features: imagery, word choice, sound patterns, rhetorical devices, verse form.',
-      "Analyse the effect of each feature — do not simply name techniques ('Shakespeare uses a metaphor'). Explain what it does.",
+      "Analyse the effect of each feature - do not simply name techniques ('Shakespeare uses a metaphor'). Explain what it does.",
       'Connect the passage to the rest of the play: how does it develop themes, advance the plot, or reveal character?',
       'Embed short quotations from the passage into your sentences rather than copying out long blocks of text.',
       "Address all four assessment skills: Textual Knowledge (knowledge and understanding), Analysis of Writer's Methods (analysis of language, form, structure), Interpretation and Ideas (context where relevant), Personal Response (personal response and evaluation).",
     ],
   },
   essayBased: {
-    label: 'Part (b) — Essay Question',
+    label: 'Part (b) - Essay Question',
     tips: [
       "You will answer a broader question on character, theme, or Shakespeare's methods across the whole play.",
-      'Plan before you write: identify 3–4 key points and select quotations to support each one.',
+      'Plan before you write: identify 3-4 key points and select quotations to support each one.',
       'Structure your essay by argument, not by retelling the plot chronologically.',
       "Every paragraph should make a clear point, support it with a quotation, and analyse Shakespeare's methods.",
       "Use discourse markers ('Furthermore', 'Conversely', 'However') to show the marker how your argument develops.",
       'Include contextual references where they genuinely illuminate meaning (Elizabethan attitudes to marriage, folk beliefs about fairies, classical sources).',
-      'Address the question in every paragraph — markers reward sustained focus.',
+      'Address the question in every paragraph - markers reward sustained focus.',
     ],
   },
 }
@@ -259,12 +259,12 @@ const sampleQuestion = {
   question:
     "How does Shakespeare present the theme of transformation in A Midsummer Night's Dream?",
   modelParagraph:
-    "Shakespeare uses Bottom's literal transformation into an ass to explore the metaphorical transformations that love and desire produce (Textual Knowledge). When Titania declares 'Thou art as wise as thou art beautiful' while gazing at Bottom's donkey head, the dramatic irony exposes how love distorts perception — the audience sees the absurdity that Titania, enchanted, cannot (Analysis of Writer's Methods: dramatic irony, juxtaposition of 'wise' and 'beautiful' with the visual reality of the ass head). The word 'ass' itself functions as a pun: Bottom is both literally an ass and figuratively a fool, yet his 'Bottom's Dream' speech in Act 4 reveals unexpected depth, echoing St Paul's description of divine mysteries beyond human comprehension. This allusion elevates a comic scene to something philosophically resonant, suggesting that transformation — even absurd transformation — can grant access to truths that rational thought cannot reach (Personal Response: evaluative personal response). For an Elizabethan audience familiar with Ovid's Metamorphoses — a key source for Shakespeare — Bottom's transformation would recall a rich tradition of mythological shape-shifting in which physical change reveals inner truths about human nature (Interpretation and Ideas: literary and classical context).",
+    "Shakespeare uses Bottom's literal transformation into an ass to explore the metaphorical transformations that love and desire produce (Textual Knowledge). When Titania declares 'Thou art as wise as thou art beautiful' while gazing at Bottom's donkey head, the dramatic irony exposes how love distorts perception - the audience sees the absurdity that Titania, enchanted, cannot (Analysis of Writer's Methods: dramatic irony, juxtaposition of 'wise' and 'beautiful' with the visual reality of the ass head). The word 'ass' itself functions as a pun: Bottom is both literally an ass and figuratively a fool, yet his 'Bottom's Dream' speech in Act 4 reveals unexpected depth, echoing St Paul's description of divine mysteries beyond human comprehension. This allusion elevates a comic scene to something philosophically resonant, suggesting that transformation - even absurd transformation - can grant access to truths that rational thought cannot reach (Personal Response: evaluative personal response). For an Elizabethan audience familiar with Ovid's Metamorphoses - a key source for Shakespeare - Bottom's transformation would recall a rich tradition of mythological shape-shifting in which physical change reveals inner truths about human nature (Interpretation and Ideas: literary and classical context).",
   aos: [
-    'Textual Knowledge — identifies the scene and its thematic significance.',
-    "Analysis of Writer's Methods — discusses dramatic irony, wordplay ('ass'), juxtaposition, and biblical allusion.",
-    "Interpretation and Ideas — references Ovid's Metamorphoses and Elizabethan literary traditions.",
-    'Personal Response — offers an evaluative judgement about the philosophical implications of transformation.',
+    'Textual Knowledge - identifies the scene and its thematic significance.',
+    "Analysis of Writer's Methods - discusses dramatic irony, wordplay ('ass'), juxtaposition, and biblical allusion.",
+    "Interpretation and Ideas - references Ovid's Metamorphoses and Elizabethan literary traditions.",
+    'Personal Response - offers an evaluative judgement about the philosophical implications of transformation.',
   ],
 }
 

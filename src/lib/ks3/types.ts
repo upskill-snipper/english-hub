@@ -5,7 +5,7 @@
  * Holds the typed source-of-truth for skill codes, marking rubrics,
  * yearly expectations, and weekly lesson plans.
  *
- * Bilingual by design — every human-readable string carries an
+ * Bilingual by design - every human-readable string carries an
  * optional Arabic variant alongside the English. The Arabic variant
  * is produced (and round-trip QA'd) by the translation pipeline in
  * the agent server; on the page we render whichever the current
@@ -14,12 +14,12 @@
  * Schema alignment notes:
  *   - `Locale = 'en' | 'ar'` matches the middleware cookie (`eh-lang`)
  *     and the LanguageToggle component. Bilingual mode ('bi') was
- *     removed in May 2026 — see use-locale.ts.
+ *     removed in May 2026 - see use-locale.ts.
  *   - Strand keys match the existing rubric headings: `reading`,
  *     `writing`, `language` (= "Language, grammar and control"),
  *     `speaking`.
  *   - Level keys (`below | working | expected | depth`) match the
- *     wording used in school reports — never "Failing / Weak", always
+ *     wording used in school reports - never "Failing / Weak", always
  *     "Below target / Working towards" for parent-facing trust.
  */
 
@@ -31,7 +31,7 @@ export type Locale = 'en' | 'ar'
 /**
  * Every user-facing string in the curriculum has an English form and
  * an optional Arabic form. When `ar` is absent the renderer falls
- * back to `en`. This is intentional — it lets us ship Y7 T1 fully in
+ * back to `en`. This is intentional - it lets us ship Y7 T1 fully in
  * English first and translate progressively without breaking the
  * site.
  */
@@ -42,7 +42,7 @@ export type LocalizedString = {
 
 /**
  * Resolve a LocalizedString to a plain string given the active locale.
- * Falls back to `.en` whenever `.ar` is missing — keeps the page from
+ * Falls back to `.en` whenever `.ar` is missing - keeps the page from
  * rendering blank strings while the translation pipeline catches up.
  */
 export function loc(s: LocalizedString | undefined, locale: Locale = 'en'): string {

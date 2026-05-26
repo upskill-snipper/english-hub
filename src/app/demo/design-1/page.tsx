@@ -13,7 +13,7 @@ export default function BentoBoxDashboard() {
   const activity = [
     { action: 'Completed', detail: 'Unseen Poetry Practice Q3', time: '2h ago' },
     { action: 'Reviewed', detail: 'Inspector Calls Essay Draft', time: '5h ago' },
-    { action: 'Started', detail: 'Language Paper 2 — Q5 Writing', time: '1d ago' },
+    { action: 'Started', detail: 'Language Paper 2 - Q5 Writing', time: '1d ago' },
     { action: 'Achieved', detail: 'Grade 7 on Mock Exam', time: '2d ago' },
     { action: 'Completed', detail: 'Romeo & Juliet Act 3 Notes', time: '3d ago' },
   ]
@@ -42,7 +42,7 @@ export default function BentoBoxDashboard() {
 
       {/* Bento Grid */}
       <div className="grid grid-cols-4 gap-4 max-w-[1400px] mx-auto auto-rows-[180px]">
-        {/* Hero stat — full width, 1 row */}
+        {/* Hero stat - full width, 1 row */}
         <div className="col-span-4 rounded-3xl bg-gradient-to-br from-primary/[0.08] via-transparent to-primary/5 border border-border p-8 flex items-center justify-between group hover:scale-[1.01] hover:border-border transition-all duration-500 cursor-default overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <div className="relative z-10">
@@ -106,7 +106,7 @@ export default function BentoBoxDashboard() {
           </div>
         </div>
 
-        {/* Streak card — 1 col, 1 row */}
+        {/* Streak card - 1 col, 1 row */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-primary/[0.03] border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">streak</p>
           <div>
@@ -123,7 +123,7 @@ export default function BentoBoxDashboard() {
           </div>
         </div>
 
-        {/* Weekly performance with sparkline — 2 cols, 1 row */}
+        {/* Weekly performance with sparkline - 2 cols, 1 row */}
         <div className="col-span-2 rounded-3xl bg-gradient-to-br from-primary/[0.08] via-transparent to-primary/5 border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <div className="flex items-center justify-between">
             <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
@@ -152,14 +152,14 @@ export default function BentoBoxDashboard() {
           <p className="text-muted-foreground/40 text-xs font-light">avg. grade this week</p>
         </div>
 
-        {/* Questions answered — 1 col, 1 row */}
+        {/* Questions answered - 1 col, 1 row */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-accent/10 via-transparent to-accent/5 border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">questions</p>
           <span className="text-6xl font-light tracking-tight text-foreground">247</span>
           <p className="text-muted-foreground/40 text-xs font-light">answered this term</p>
         </div>
 
-        {/* Courses in progress — 2 cols, 2 rows */}
+        {/* Courses in progress - 2 cols, 2 rows */}
         <div className="col-span-2 row-span-2 rounded-3xl bg-gradient-to-br from-primary/[0.06] via-transparent to-primary/[0.04] border border-border p-6 flex flex-col group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-5">
             courses in progress
@@ -187,7 +187,7 @@ export default function BentoBoxDashboard() {
           </div>
         </div>
 
-        {/* Next session — 1 col, 1 row */}
+        {/* Next session - 1 col, 1 row */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-primary/5 border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
             next session
@@ -199,7 +199,7 @@ export default function BentoBoxDashboard() {
           <p className="text-[11px] text-primary/40 font-light">Language Paper 1</p>
         </div>
 
-        {/* Exam countdown — 1 col, 1 row */}
+        {/* Exam countdown - 1 col, 1 row */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-primary/[0.08] via-transparent to-transparent border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default relative overflow-hidden">
           <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-primary/5 blur-2xl" />
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground relative z-10">
@@ -213,7 +213,7 @@ export default function BentoBoxDashboard() {
           </p>
         </div>
 
-        {/* Recent activity — 1 col, 2 rows */}
+        {/* Recent activity - 1 col, 2 rows */}
         <div className="col-span-1 row-span-2 rounded-3xl bg-gradient-to-b from-foreground/[0.03] via-transparent to-transparent border border-border p-6 flex flex-col group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-5">
             recent activity
@@ -238,7 +238,7 @@ export default function BentoBoxDashboard() {
           </div>
         </div>
 
-        {/* Grade target — 1 col, 1 row */}
+        {/* Grade target - 1 col, 1 row */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-accent/[0.08] via-transparent to-primary/5 border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
             target grade
@@ -252,7 +252,7 @@ export default function BentoBoxDashboard() {
           <p className="text-muted-foreground/40 text-xs font-light">predicted: 7</p>
         </div>
 
-        {/* Topics mastered — 2 cols */}
+        {/* Topics mastered - 2 cols */}
         <div className="col-span-2 rounded-3xl bg-gradient-to-br from-primary/[0.06] via-transparent to-primary/[0.04] border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <div className="flex items-center justify-between">
             <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
@@ -273,7 +273,7 @@ export default function BentoBoxDashboard() {
           </div>
         </div>
 
-        {/* Motivational quote — 1 col */}
+        {/* Motivational quote - 1 col */}
         <div className="col-span-1 rounded-3xl border border-border p-6 flex flex-col justify-center items-center text-center group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default backdrop-blur-xl bg-card relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <p className="text-muted-foreground text-xs font-light italic leading-relaxed relative z-10">
@@ -284,7 +284,7 @@ export default function BentoBoxDashboard() {
           </p>
         </div>
 
-        {/* Study time — 1 col */}
+        {/* Study time - 1 col */}
         <div className="col-span-1 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-transparent border border-border p-6 flex flex-col justify-between group hover:scale-[1.02] hover:border-border transition-all duration-500 cursor-default">
           <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">study time</p>
           <div className="flex items-baseline gap-1">
@@ -306,7 +306,7 @@ export default function BentoBoxDashboard() {
       {/* Bottom branding */}
       <div className="flex justify-center mt-10">
         <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/30">
-          english hub — bento
+          english hub - bento
         </p>
       </div>
     </div>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Love and Relationships poetry anthology guide. Analysis of all 15 poems with themes, techniques, key quotes, and comparison strategies.',
   alternates: { canonical: 'https://theenglishhub.app/resources/poetry/love-and-relationships' },
   openGraph: {
-    title: 'Love and Relationships Poetry Anthology — The English Hub',
+    title: 'Love and Relationships Poetry Anthology - The English Hub',
     description:
       'Love and Relationships poetry anthology guide. Analysis of all 15 poems with themes, techniques, key quotes, and comparison strategies.',
   },

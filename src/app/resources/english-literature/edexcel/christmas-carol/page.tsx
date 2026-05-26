@@ -6,14 +6,14 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Study Guide — Edexcel GCSE English Literature',
+    title: 'A Christmas Carol Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete A Christmas Carol revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, Victorian context, and Edexcel exam technique.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/christmas-carol',
   },
-  title: 'A Christmas Carol Study Guide — Edexcel GCSE English Literature',
+  title: 'A Christmas Carol Study Guide - Edexcel GCSE English Literature',
   description:
     'Complete A Christmas Carol revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, Victorian context, and Edexcel exam technique.',
 }
@@ -25,7 +25,7 @@ const PLOT_SUMMARY = [
     stave: 'Stave 1',
     title: "Marley's Ghost",
     summary:
-      "We are introduced to Ebenezer Scrooge — a cold, miserly old man who despises Christmas. He rejects his nephew Fred's dinner invitation and refuses to donate to charity for the poor, asking 'Are there no prisons? Are there no workhouses?' That night, the ghost of his dead business partner Jacob Marley visits, dragging heavy chains forged by his own selfishness. Marley warns Scrooge that he will be visited by three spirits.",
+      "We are introduced to Ebenezer Scrooge - a cold, miserly old man who despises Christmas. He rejects his nephew Fred's dinner invitation and refuses to donate to charity for the poor, asking 'Are there no prisons? Are there no workhouses?' That night, the ghost of his dead business partner Jacob Marley visits, dragging heavy chains forged by his own selfishness. Marley warns Scrooge that he will be visited by three spirits.",
   },
   {
     stave: 'Stave 2',
@@ -37,7 +37,7 @@ const PLOT_SUMMARY = [
     stave: 'Stave 3',
     title: 'The Ghost of Christmas Present',
     summary:
-      "The second spirit shows Scrooge how others celebrate Christmas despite poverty. He sees the Cratchit family's modest but joyful dinner and learns that Tiny Tim will die without better care. He sees his nephew Fred's warm Christmas gathering. The spirit reveals two starving children hidden beneath his robes — Ignorance and Want — warning Scrooge (and the reader) of their danger to society.",
+      "The second spirit shows Scrooge how others celebrate Christmas despite poverty. He sees the Cratchit family's modest but joyful dinner and learns that Tiny Tim will die without better care. He sees his nephew Fred's warm Christmas gathering. The spirit reveals two starving children hidden beneath his robes - Ignorance and Want - warning Scrooge (and the reader) of their danger to society.",
   },
   {
     stave: 'Stave 4',
@@ -57,7 +57,7 @@ const CHARACTERS = [
   {
     name: 'Ebenezer Scrooge',
     description:
-      "The protagonist. Initially a cold, miserly, isolated man who values money above all else. Through the three spirits' visits, he undergoes a complete moral transformation — from selfishness to generosity, isolation to community. He is Dickens' vehicle for showing that even the hardest heart can change. His redemption arc drives the novella's message: it is never too late to become a better person.",
+      "The protagonist. Initially a cold, miserly, isolated man who values money above all else. Through the three spirits' visits, he undergoes a complete moral transformation - from selfishness to generosity, isolation to community. He is Dickens' vehicle for showing that even the hardest heart can change. His redemption arc drives the novella's message: it is never too late to become a better person.",
     key_quotes: [
       '"Are there no prisons? And the Union workhouses?"',
       '"Every idiot who goes about with \'Merry Christmas\' on his lips, should be boiled with his own pudding"',
@@ -79,13 +79,13 @@ const CHARACTERS = [
   {
     name: 'Tiny Tim',
     description:
-      "Bob's youngest son, disabled and fragile. He is pure-hearted, religious, and uncomplaining despite his suffering. His potential death serves as a moral catalyst for Scrooge's transformation. He symbolises the innocent victims of Victorian poverty — children who suffer because society fails to care for them. His famous line, 'God bless Us, Every One!' encapsulates the novella's message of universal compassion.",
+      "Bob's youngest son, disabled and fragile. He is pure-hearted, religious, and uncomplaining despite his suffering. His potential death serves as a moral catalyst for Scrooge's transformation. He symbolises the innocent victims of Victorian poverty - children who suffer because society fails to care for them. His famous line, 'God bless Us, Every One!' encapsulates the novella's message of universal compassion.",
     key_quotes: ['"God bless Us, Every One!"'],
   },
   {
     name: 'Jacob Marley',
     description:
-      "Scrooge's deceased business partner who appears as a ghost dragging heavy chains. His chains represent the burden of selfishness — he is condemned to wander the earth because he never helped others in life. He serves as a warning to Scrooge: change now or share his fate. His regret ('Mankind was my business!') is one of Dickens' most powerful moral statements.",
+      "Scrooge's deceased business partner who appears as a ghost dragging heavy chains. His chains represent the burden of selfishness - he is condemned to wander the earth because he never helped others in life. He serves as a warning to Scrooge: change now or share his fate. His regret ('Mankind was my business!') is one of Dickens' most powerful moral statements.",
     key_quotes: [
       '"I wear the chain I forged in life... I made it link by link, and yard by yard"',
       '"Mankind was my business. The common welfare was my business"',
@@ -95,7 +95,7 @@ const CHARACTERS = [
   {
     name: "Fred (Scrooge's Nephew)",
     description:
-      "Scrooge's cheerful, warm-hearted nephew. He persistently invites Scrooge to Christmas dinner despite repeated rejection. He believes Christmas is 'a kind, forgiving, charitable, pleasant time' and represents the Christmas spirit of goodwill. He is a foil to Scrooge — proof that happiness comes from love and generosity, not wealth.",
+      "Scrooge's cheerful, warm-hearted nephew. He persistently invites Scrooge to Christmas dinner despite repeated rejection. He believes Christmas is 'a kind, forgiving, charitable, pleasant time' and represents the Christmas spirit of goodwill. He is a foil to Scrooge - proof that happiness comes from love and generosity, not wealth.",
     key_quotes: [
       '"I have always thought of Christmas time... as a good time; a kind, forgiving, charitable, pleasant time"',
       '"His wealth is of no use to him. He don\'t do any good with it"',
@@ -104,7 +104,7 @@ const CHARACTERS = [
   {
     name: 'Fezziwig',
     description:
-      "Scrooge's former employer, shown by the Ghost of Christmas Past. He is generous, jovial, and kind to his employees — the opposite of what Scrooge has become. He represents the ideal employer and shows that money can be used for good. The contrast between Fezziwig and Scrooge-as-employer shames Scrooge into recognising how badly he treats Bob Cratchit.",
+      "Scrooge's former employer, shown by the Ghost of Christmas Past. He is generous, jovial, and kind to his employees - the opposite of what Scrooge has become. He represents the ideal employer and shows that money can be used for good. The contrast between Fezziwig and Scrooge-as-employer shames Scrooge into recognising how badly he treats Bob Cratchit.",
     key_quotes: [
       '"He has the power to render us happy or unhappy... The happiness he gives, is quite as great as if it cost a fortune"',
     ],
@@ -112,7 +112,7 @@ const CHARACTERS = [
   {
     name: 'The Three Spirits',
     description:
-      "The Ghost of Christmas Past (a strange, flickering figure representing memory), the Ghost of Christmas Present (a jolly giant in a green robe representing abundance and compassion), and the Ghost of Christmas Yet to Come (a dark, silent phantom representing death and consequence). Together they serve as Dickens' moral teachers, guiding Scrooge — and the reader — toward redemption.",
+      "The Ghost of Christmas Past (a strange, flickering figure representing memory), the Ghost of Christmas Present (a jolly giant in a green robe representing abundance and compassion), and the Ghost of Christmas Yet to Come (a dark, silent phantom representing death and consequence). Together they serve as Dickens' moral teachers, guiding Scrooge - and the reader - toward redemption.",
     key_quotes: [
       '"These are the shadows of the things that have been" (Past)',
       '"They are Man\'s... This boy is Ignorance. This girl is Want" (Present)',
@@ -124,7 +124,7 @@ const THEMES = [
   {
     theme: 'Redemption and Transformation',
     description:
-      "The novella's central theme. Scrooge transforms from a miserly misanthrope into a generous, loving man. Dickens argues that change is always possible — people are not fixed in their ways. The Christian framework (forgiveness, salvation) underpins this message. Scrooge's redemption suggests that society itself can be reformed if individuals choose to change.",
+      "The novella's central theme. Scrooge transforms from a miserly misanthrope into a generous, loving man. Dickens argues that change is always possible - people are not fixed in their ways. The Christian framework (forgiveness, salvation) underpins this message. Scrooge's redemption suggests that society itself can be reformed if individuals choose to change.",
     quotes: [
       '"I will honour Christmas in my heart, and try to keep it all the year"',
       '"I am not the man I was"',
@@ -145,7 +145,7 @@ const THEMES = [
   {
     theme: 'Christmas Spirit and Generosity',
     description:
-      "Christmas represents more than a holiday — it symbolises compassion, family, forgiveness, and community. Fred defends Christmas as 'a good time; a kind, forgiving, charitable, pleasant time.' The Cratchits celebrate joyfully despite having very little. Dickens uses Christmas as a lens through which to examine moral values and social responsibility.",
+      "Christmas represents more than a holiday - it symbolises compassion, family, forgiveness, and community. Fred defends Christmas as 'a good time; a kind, forgiving, charitable, pleasant time.' The Cratchits celebrate joyfully despite having very little. Dickens uses Christmas as a lens through which to examine moral values and social responsibility.",
     quotes: [
       '"A Merry Christmas, uncle! God save you!"',
       '"I have always thought of Christmas time... as a good time"',
@@ -155,7 +155,7 @@ const THEMES = [
   {
     theme: 'Isolation vs Community',
     description:
-      "Scrooge begins isolated — he lives alone, works alone, and rejects human connection. His isolation is both physical (his cold, dark chambers) and emotional (he refuses love and friendship). Through the spirits' visions, he sees that happiness comes from human connection — the Cratchits' warmth, Fred's parties, Fezziwig's generosity. His transformation is marked by re-entering community.",
+      "Scrooge begins isolated - he lives alone, works alone, and rejects human connection. His isolation is both physical (his cold, dark chambers) and emotional (he refuses love and friendship). Through the spirits' visions, he sees that happiness comes from human connection - the Cratchits' warmth, Fred's parties, Fezziwig's generosity. His transformation is marked by re-entering community.",
     quotes: [
       '"Solitary as an oyster"',
       '"secret, and self-contained, and solitary as an oyster"',
@@ -165,7 +165,7 @@ const THEMES = [
   {
     theme: 'Greed and the Misuse of Wealth',
     description:
-      "Scrooge hoards wealth while others starve. Dickens argues that wealth carries responsibility — the rich have a moral duty to help the poor. Fezziwig uses his wealth to bring happiness; Scrooge uses his to increase his own comfort. Marley's chains represent the spiritual cost of greed. The novella insists that money is only valuable when it serves others.",
+      "Scrooge hoards wealth while others starve. Dickens argues that wealth carries responsibility - the rich have a moral duty to help the poor. Fezziwig uses his wealth to bring happiness; Scrooge uses his to increase his own comfort. Marley's chains represent the spiritual cost of greed. The novella insists that money is only valuable when it serves others.",
     quotes: [
       '"Oh! But he was a tight-fisted hand at the grindstone, Scrooge!"',
       '"I wear the chain I forged in life"',
@@ -195,7 +195,7 @@ const KEY_QUOTES = [
     quote: '"Solitary as an oyster"',
     speaker: 'Narrator (Stave 1)',
     significance:
-      "Simile establishing Scrooge's isolation. An oyster is hard-shelled and closed — but contains a pearl, hinting at hidden goodness.",
+      "Simile establishing Scrooge's isolation. An oyster is hard-shelled and closed - but contains a pearl, hinting at hidden goodness.",
   },
   {
     quote: '"Are there no prisons? And the Union workhouses?"',
@@ -226,7 +226,7 @@ const KEY_QUOTES = [
     quote: '"Mankind was my business. The common welfare was my business"',
     speaker: 'Marley (Stave 1)',
     significance:
-      "Marley's central regret — he should have cared for others, not just made money. Dickens' moral message in a single line.",
+      "Marley's central regret - he should have cared for others, not just made money. Dickens' moral message in a single line.",
   },
   {
     quote: '"A solitary child, neglected by his friends"',
@@ -245,7 +245,7 @@ const KEY_QUOTES = [
     quote: '"Another idol has displaced me... a golden one"',
     speaker: 'Belle (Stave 2)',
     significance:
-      "Belle leaves Scrooge because money ('a golden idol') has replaced love. Biblical allusion to idolatry — Scrooge worships wealth instead of God.",
+      "Belle leaves Scrooge because money ('a golden idol') has replaced love. Biblical allusion to idolatry - Scrooge worships wealth instead of God.",
   },
   {
     quote:
@@ -258,19 +258,19 @@ const KEY_QUOTES = [
     quote: '"God bless Us, Every One!"',
     speaker: 'Tiny Tim (Stave 3)',
     significance:
-      "The novella's most famous line. 'Every One' includes even Scrooge — Tim's generosity of spirit shames the reader into compassion.",
+      "The novella's most famous line. 'Every One' includes even Scrooge - Tim's generosity of spirit shames the reader into compassion.",
   },
   {
     quote: '"If these shadows remain unaltered by the Future, the child will die"',
     speaker: 'Ghost of Christmas Present (Stave 3)',
     significance:
-      "Tiny Tim's death is preventable — but only if society (represented by Scrooge) acts. Dickens makes the reader complicit.",
+      "Tiny Tim's death is preventable - but only if society (represented by Scrooge) acts. Dickens makes the reader complicit.",
   },
   {
     quote: '"This boy is Ignorance. This girl is Want. Beware them both"',
     speaker: 'Ghost of Christmas Present (Stave 3)',
     significance:
-      "Allegorical children representing society's failures. Ignorance is especially dangerous — it leads to injustice. Dickens' warning to Victorian society.",
+      "Allegorical children representing society's failures. Ignorance is especially dangerous - it leads to injustice. Dickens' warning to Victorian society.",
   },
   {
     quote: '"Decrease the surplus population"',
@@ -295,7 +295,7 @@ const KEY_QUOTES = [
       '"He became as good a friend, as good a master, and as good a man, as the good old city knew"',
     speaker: 'Narrator (Stave 5)',
     significance:
-      "Triple structure emphasises the completeness of Scrooge's transformation. 'Friend,' 'master,' 'man' — personal, professional, and moral redemption.",
+      "Triple structure emphasises the completeness of Scrooge's transformation. 'Friend,' 'master,' 'man' - personal, professional, and moral redemption.",
   },
   {
     quote: '"He knew how to keep Christmas well, if any man alive possessed the knowledge"',
@@ -307,13 +307,13 @@ const KEY_QUOTES = [
     quote: '"His wealth is of no use to him. He don\'t do any good with it"',
     speaker: 'Fred (Stave 1)',
     significance:
-      "Fred identifies Scrooge's fundamental problem — wealth hoarded is wealth wasted. Money has value only when it helps others.",
+      "Fred identifies Scrooge's fundamental problem - wealth hoarded is wealth wasted. Money has value only when it helps others.",
   },
   {
     quote: '"hard and sharp as flint, from which no steel had ever struck out generous fire"',
     speaker: 'Narrator (Stave 1)',
     significance:
-      "Extended simile. Flint is cold and unyielding, but it can produce fire (warmth) — foreshadowing Scrooge's capacity for change.",
+      "Extended simile. Flint is cold and unyielding, but it can produce fire (warmth) - foreshadowing Scrooge's capacity for change.",
   },
 ]
 
@@ -321,12 +321,12 @@ const CONTEXT_POINTS = [
   {
     topic: 'Victorian Poverty and Inequality',
     detail:
-      'In 1843, the gap between rich and poor in Britain was enormous. Industrialisation had created vast wealth for factory owners while workers — including children — laboured in horrific conditions for subsistence wages. Dickens, who experienced poverty as a child (working in a blacking factory aged 12), was deeply moved by the plight of the poor.',
+      'In 1843, the gap between rich and poor in Britain was enormous. Industrialisation had created vast wealth for factory owners while workers - including children - laboured in horrific conditions for subsistence wages. Dickens, who experienced poverty as a child (working in a blacking factory aged 12), was deeply moved by the plight of the poor.',
   },
   {
     topic: 'The Poor Law of 1834',
     detail:
-      "The New Poor Law established workhouses for the destitute. Conditions were deliberately harsh to discourage people from seeking help — families were separated, food was minimal, and inmates performed backbreaking work. When Scrooge says 'Are there no prisons? And the Union workhouses?' he is endorsing this cruel system.",
+      "The New Poor Law established workhouses for the destitute. Conditions were deliberately harsh to discourage people from seeking help - families were separated, food was minimal, and inmates performed backbreaking work. When Scrooge says 'Are there no prisons? And the Union workhouses?' he is endorsing this cruel system.",
   },
   {
     topic: "Thomas Malthus and 'Surplus Population'",
@@ -341,12 +341,12 @@ const CONTEXT_POINTS = [
   {
     topic: 'Christianity and Redemption',
     detail:
-      "Victorian society was deeply Christian. Dickens uses Christian values — charity, forgiveness, love — to frame Scrooge's redemption. Marley's chains are a spiritual punishment. The three spirits echo the Holy Trinity. The story is fundamentally about salvation — Scrooge is 'saved' by choosing compassion over greed.",
+      "Victorian society was deeply Christian. Dickens uses Christian values - charity, forgiveness, love - to frame Scrooge's redemption. Marley's chains are a spiritual punishment. The three spirits echo the Holy Trinity. The story is fundamentally about salvation - Scrooge is 'saved' by choosing compassion over greed.",
   },
   {
     topic: "Dickens' Purpose",
     detail:
-      'Dickens wrote A Christmas Carol partly to campaign for social reform and partly because he needed money. He wanted to reach a wide audience (the novella was priced cheaply) and provoke emotional responses that would inspire charitable action. It worked — the book was hugely popular and is credited with helping to revive Christmas traditions in Britain.',
+      'Dickens wrote A Christmas Carol partly to campaign for social reform and partly because he needed money. He wanted to reach a wide audience (the novella was priced cheaply) and provoke emotional responses that would inspire charitable action. It worked - the book was hugely popular and is credited with helping to revive Christmas traditions in Britain.',
   },
 ]
 
@@ -365,7 +365,7 @@ export default function ChristmasCarolPage() {
             &larr; Edexcel English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A Christmas Carol — Full Study Guide
+            A Christmas Carol - Full Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Edexcel GCSE English Literature &middot; Paper 2, Section A
@@ -400,7 +400,7 @@ export default function ChristmasCarolPage() {
           <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
           <p className="mt-2 text-muted-foreground">
             A Christmas Carol is structured as five &quot;staves&quot; (a musical term meaning
-            sections of a song — appropriate for a &quot;carol&quot;). This structure reinforces the
+            sections of a song - appropriate for a &quot;carol&quot;). This structure reinforces the
             idea that the novella is meant to be shared and enjoyed, like a Christmas song.
           </p>
           <div className="mt-6 space-y-6">
@@ -483,7 +483,7 @@ export default function ChristmasCarolPage() {
             {KEY_QUOTES.map((q, i) => (
               <div key={i} className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="text-sm font-semibold italic text-foreground">{q.quote}</p>
-                <p className="mt-1 text-xs font-medium text-primary">— {q.speaker}</p>
+                <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
@@ -515,7 +515,7 @@ export default function ChristmasCarolPage() {
                 What Does an Edexcel Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will typically have a choice of two essay questions. There is no extract — you
+                You will typically have a choice of two essay questions. There is no extract - you
                 must recall your own evidence.
               </p>
               <div className="mt-4 space-y-3">
@@ -552,7 +552,7 @@ export default function ChristmasCarolPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction</strong> — state Dickens&apos; purpose and how the
+                    <strong>Introduction</strong> - state Dickens&apos; purpose and how the
                     theme/character connects to his social message. Reference the Victorian context.
                   </span>
                 </li>
@@ -570,7 +570,7 @@ export default function ChristmasCarolPage() {
                     3
                   </span>
                   <span>
-                    <strong>Analyse Dickens&apos; methods</strong> — language (imagery, simile,
+                    <strong>Analyse Dickens&apos; methods</strong> - language (imagery, simile,
                     listing, hyperbole), structure (the five-stave form, the transformation arc),
                     and narrative voice (the intrusive narrator who addresses the reader directly).
                   </span>
@@ -580,7 +580,7 @@ export default function ChristmasCarolPage() {
                     4
                   </span>
                   <span>
-                    <strong>Integrate context</strong> — link to Victorian poverty, the Poor Law,
+                    <strong>Integrate context</strong> - link to Victorian poverty, the Poor Law,
                     Malthus, child labour, and Dickens&apos; own experiences. Make context serve
                     your argument.
                   </span>
@@ -590,7 +590,7 @@ export default function ChristmasCarolPage() {
                     5
                   </span>
                   <span>
-                    <strong>Conclude</strong> — summarise Dickens&apos; overall message and what he
+                    <strong>Conclude</strong> - summarise Dickens&apos; overall message and what he
                     wanted his Victorian readers to do differently.
                   </span>
                 </li>
@@ -607,22 +607,22 @@ export default function ChristmasCarolPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss the novella&apos;s form — why did Dickens choose the novella format?
+                  Discuss the novella&apos;s form - why did Dickens choose the novella format?
                   (Accessible, affordable, designed to reach a wide audience and inspire change.)
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Analyse the narrative voice — Dickens&apos; narrator is intrusive and opinionated,
+                  Analyse the narrative voice - Dickens&apos; narrator is intrusive and opinionated,
                   guiding the reader&apos;s moral responses.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use the &quot;stave&quot; terminology rather than &quot;chapter&quot; — it shows
+                  Use the &quot;stave&quot; terminology rather than &quot;chapter&quot; - it shows
                   you understand the text&apos;s structure.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  SPaG is worth 4 marks on this section — write clearly and use paragraphs.
+                  SPaG is worth 4 marks on this section - write clearly and use paragraphs.
                 </li>
               </ul>
             </div>

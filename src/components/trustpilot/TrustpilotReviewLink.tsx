@@ -2,7 +2,7 @@
 
 /**
  * Plain text link to the Trustpilot consumer review page. Always renders,
- * even without the business unit ID env — used in the footer so the page
+ * even without the business unit ID env - used in the footer so the page
  * never has a dead slot.
  *
  * Label resolves through the i18n dictionary so AR mode renders the

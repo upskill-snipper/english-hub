@@ -1,7 +1,7 @@
-// ─── Platform-admin — Assign work to a paid marker ──────────────────────────
+// ─── Platform-admin - Assign work to a paid marker ──────────────────────────
 // POST /api/admin/marker-assign
 //
-// Site-admin only (verifyAdmin — RLS deny-by-default; service-role only).
+// Site-admin only (verifyAdmin - RLS deny-by-default; service-role only).
 //
 // Two shapes accepted:
 //   A) { batchId, markerId, count }
@@ -14,7 +14,7 @@
 //
 // Sets `assigned_marker_id` only. NEVER changes status to 'approved'
 // (marker approval is a later, human act) and NEVER changes the row's
-// status here at all — assignment is orthogonal to the review lifecycle.
+// status here at all - assignment is orthogonal to the review lifecycle.
 //
 // EMPTY-TABLE SAFE: missing table / nothing eligible → { assigned: 0 },
 // never a 500.

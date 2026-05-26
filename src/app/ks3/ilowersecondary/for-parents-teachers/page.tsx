@@ -20,20 +20,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'iLowerSecondary English: a guide for parents and teachers',
     description:
-      'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) — what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
+      'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) - what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
   },
   title: 'iLowerSecondary English: for parents & teachers',
   description:
-    'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) — what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
+    'A clear, reassuring guide to the Pearson Edexcel International Award in Lower Secondary English (LEH11) - what it is, how the exam works, what the grades mean, and how to support a child at home or in class.',
   alternates: { canonical: PAGE_URL },
 }
 
 // Plain-English translations of the official assessment objectives.
 // The formal descriptor stays sourced from the spec; this only adds a
-// non-specialist gloss — no qualification facts are restated here.
+// non-specialist gloss - no qualification facts are restated here.
 const AO_PLAIN: Record<AOKey, string> = {
   RAO1: 'Find and pick out clear facts and details that are actually stated in a text.',
-  RAO2: 'Read between the lines — work out what is suggested or implied, not just what is spelled out.',
+  RAO2: 'Read between the lines - work out what is suggested or implied, not just what is spelled out.',
   RAO3: 'Notice how a text is built and put in order, and why the writer arranged it that way.',
   RAO4: 'Look closely at the words and sentences the writer chose and the effect they create.',
   RAO5: 'Work out why the writer wrote the text, their point of view, and how it makes the reader feel.',
@@ -50,7 +50,7 @@ const HUB_LINKS = [
     href: '/ks3/ilowersecondary/specification',
     title: 'Full specification',
     blurb:
-      'The complete qualification reference — sections, content skills and assessment objectives.',
+      'The complete qualification reference - sections, content skills and assessment objectives.',
   },
   {
     href: '/ks3/ilowersecondary/practice/paper-1',
@@ -130,7 +130,7 @@ export default async function ForParentsTeachersPage() {
       <h1>A guide for parents and teachers</h1>
       <p className="lead">
         If your child or class is preparing for the {QUALIFICATION.title} (
-        {QUALIFICATION.subjectCode}), this page explains — in plain English — what the qualification
+        {QUALIFICATION.subjectCode}), this page explains - in plain English - what the qualification
         is, how the single exam works, what the grades mean, and the simple things you can do at
         home or in the classroom to help.
       </p>
@@ -141,7 +141,7 @@ export default async function ForParentsTeachersPage() {
         <p className="text-sm text-muted-foreground leading-relaxed">
           The {QUALIFICATION.title} is a Pearson Edexcel award that checks how well a student has
           mastered the English reading and writing skills expected at this stage of lower secondary
-          school — equivalent to Year 9 / KS3 in England. {QUALIFICATION.contentSource} There is
+          school - equivalent to Year 9 / KS3 in England. {QUALIFICATION.contentSource} There is
           nothing to worry about in terms of entry requirements:{' '}
           {QUALIFICATION.priorLearning.toLowerCase()}
         </p>
@@ -248,8 +248,8 @@ export default async function ForParentsTeachersPage() {
           <Card>
             <Label>1 · Read widely together</Label>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The reading exam draws on many text types. Mix non-fiction —{' '}
-              {NON_FICTION_TEXT_TYPES.join(', ')} — with fiction across genres such as{' '}
+              The reading exam draws on many text types. Mix non-fiction -{' '}
+              {NON_FICTION_TEXT_TYPES.join(', ')} - with fiction across genres such as{' '}
               {FICTION_GENRES.join(', ')}. Variety matters more than volume.
             </p>
           </Card>
@@ -263,7 +263,7 @@ export default async function ForParentsTeachersPage() {
           <Card>
             <Label>3 · Low-stakes writing</Label>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              A diary entry, a letter, a short review — anything written for a real purpose. Keep it
+              A diary entry, a letter, a short review - anything written for a real purpose. Keep it
               relaxed; the aim is fluency and confidence, not perfection.
             </p>
           </Card>

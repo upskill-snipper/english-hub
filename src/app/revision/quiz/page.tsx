@@ -10,7 +10,7 @@ export default async function QuizPage() {
     <>
       <QuizJsonLd
         name="GCSE and IGCSE English quick quiz"
-        description="Topic-tagged quiz questions for GCSE and IGCSE English revision — Macbeth, Power & Conflict, exam technique, vocabulary."
+        description="Topic-tagged quiz questions for GCSE and IGCSE English revision - Macbeth, Power & Conflict, exam technique, vocabulary."
         about="GCSE English"
         educationalLevel="GCSE"
         url="https://theenglishhub.app/revision/quiz"

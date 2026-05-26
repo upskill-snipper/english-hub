@@ -1,11 +1,11 @@
-// ─── Smart IP — Versioning admin data-access ────────────────────────────────
+// ─── Smart IP - Versioning admin data-access ────────────────────────────────
 //
 // Service-role-backed, PURE DATA-ACCESS helpers for the platform-admin
 // versioning surfaces (model_versions / prompt_versions / rubric_versions).
 //
 // SCOPE: read/list + the small set of admin mutations the prompt/rubric
 // management pages need (create a prompt version, flip the active flag).
-// Deliberately NO marking-time logic here — capturing which version produced
+// Deliberately NO marking-time logic here - capturing which version produced
 // a given mark is a separate workstream and is intentionally NOT implemented
 // in this file.
 //
@@ -110,7 +110,7 @@ export async function listModelVersions(): Promise<DataResult<ModelVersionRow[]>
 
 /**
  * Mark one model version active and (atomically in intent) all others of the
- * SAME (provider, model_name) inactive — there should be exactly one live
+ * SAME (provider, model_name) inactive - there should be exactly one live
  * model per provider/model. Two writes; the deactivate is best-effort and
  * never blocks the activation.
  */
@@ -192,7 +192,7 @@ export interface CreatePromptVersionInput {
  * it up and (re)activate it instead of erroring.
  *
  * When `activate` (default true): every OTHER version of the same prompt_key
- * is set inactive, then this row is set active — so there is a single live
+ * is set inactive, then this row is set active - so there is a single live
  * prompt per key.
  */
 export async function createPromptVersion(

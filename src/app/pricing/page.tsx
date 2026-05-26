@@ -263,7 +263,7 @@ export default function PricingPage() {
 
 function PricingContent() {
   const t = useT()
-  // Auto-apply ?code=XXX from the URL — surfaces upstream of /pricing
+  // Auto-apply ?code=XXX from the URL - surfaces upstream of /pricing
   // (homepage tiles, /for-teachers, modals) point users here with the
   // applied code already attached, so there's zero re-typing.
   const searchParams = useSearchParams()
@@ -271,11 +271,11 @@ function PricingContent() {
 
   // 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
   //   Students: Early Access £3.99/mo · £29.99/yr · £20/yr with affiliate code or 2026ENGLISH
-  //             Standard (from Aug 2026) £7.99/mo · £69.99/yr — shown as strikethrough anchor
+  //             Standard (from Aug 2026) £7.99/mo · £69.99/yr - shown as strikethrough anchor
   //   Teachers: Early Access £6.99/mo · £67.99/yr
-  //             Standard (from Aug 2026) £11.99/mo · £99/yr — shown as strikethrough anchor
+  //             Standard (from Aug 2026) £11.99/mo · £99/yr - shown as strikethrough anchor
   //   Schools:  Founding £4,000 (first 10 only) vs Standard £8,000 (projected, Aug 2026)
-  //   Trial:    7-day free trial — card required, auto-converts.
+  //   Trial:    7-day free trial - card required, auto-converts.
   //   Urgency:  Every banner carries "Prices increasing August 2026".
   const studentAnnualSavingsVsMonthly = Math.max(
     0,
@@ -286,11 +286,11 @@ function PricingContent() {
     Math.round((PRICING.TEACHER_MONTHLY * 12 - PRICING.TEACHER_ANNUAL) * 100) / 100,
   )
 
-  // 03 May 2026 — wire the pricing-card CTAs straight into Stripe Checkout.
+  // 03 May 2026 - wire the pricing-card CTAs straight into Stripe Checkout.
   // Pre-fix every Student/Teacher button rendered as <Link href="/auth/register">,
   // so clicking "Start free" took every visitor to /dashboard?welcome=true and
   // never offered a paywall. This is the same flow as /account/billing's
-  // handleCheckout — duplicated inline so /pricing is self-contained.
+  // handleCheckout - duplicated inline so /pricing is self-contained.
   //
   //   - Authenticated → POST /api/stripe/checkout → Stripe Checkout (with 7-day
   //     trial; `subscription` mode; rewardful referral when present).
@@ -305,7 +305,7 @@ function PricingContent() {
   // under the button the user actually clicked, not under a sibling card.
   const [checkoutErrorPlan, setCheckoutErrorPlan] = useState<CheckoutPlan | null>(null)
 
-  // Affiliate / promo code state — surfaced via the AffiliateCodeField
+  // Affiliate / promo code state - surfaced via the AffiliateCodeField
   // component above the pricing cards. When `appliedCode` is set, the
   // pricing button click below routes through /api/promo/redeem (which
   // bakes the £20/year Student Annual discount into a one-off Stripe
@@ -318,7 +318,7 @@ function PricingContent() {
     setCheckoutErrorPlan(null)
 
     // Code-redemption path: Student Annual AND Teacher Annual both
-    // qualify (3 May 2026 update — same flat £9.99 saving on each).
+    // qualify (3 May 2026 update - same flat £9.99 saving on each).
     // If a code is applied but the user clicks a Monthly plan, surface
     // a clear inline error directing them to the eligible cards.
     if (codeField.appliedCode) {
@@ -357,7 +357,7 @@ function PricingContent() {
         }
 
         // /api/promo/redeem returns the payload at top level via
-        // successResponse — no { data: ... } envelope.
+        // successResponse - no { data: ... } envelope.
         const json = (await res.json().catch(() => ({}))) as {
           url?: string
           error?: string
@@ -413,7 +413,7 @@ function PricingContent() {
         // Translate the most common server-side errors into something a
         // human can act on. The raw `data.error` text from the API is
         // engineering-speak ("Missing required fields", "Invalid price ID")
-        // — that confused the founder into thinking the button was simply
+        // - that confused the founder into thinking the button was simply
         // "doing nothing". When the API returns a `stripeMessage`, append
         // it so the misconfiguration is immediately diagnosable.
         let userMessage: string
@@ -443,7 +443,7 @@ function PricingContent() {
     }
   }
 
-  // Helpers — figures out whether the error message belongs to a given
+  // Helpers - figures out whether the error message belongs to a given
   // plan group (student vs teacher) so each card only shows its own error.
   const studentError =
     checkoutError &&
@@ -456,14 +456,14 @@ function PricingContent() {
       ? checkoutError
       : null
 
-  // Resolve FAQ copy once per render — depends on locale via useT().
+  // Resolve FAQ copy once per render - depends on locale via useT().
   const faqItems = buildFaqItems(t)
 
   return (
     <main className="relative overflow-hidden">
       {/* Funnel: pricing_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="pricing_viewed" />
-      {/* FAQPage structured data — emitted as <script type="application/ld+json">.
+      {/* FAQPage structured data - emitted as <script type="application/ld+json">.
           Client component, so no nonce is passed (nonce prop is optional;
           middleware handles per-request CSP nonces on the response). */}
       <FAQPageJsonLd faqs={faqItems.map((i) => ({ question: i.q, answer: i.a }))} />
@@ -480,7 +480,7 @@ function PricingContent() {
             as="h1"
             badge={t('pricing.hero.badge')}
             badgeIcon={Sparkles}
-            title="AI-supported English revision for GCSE and IGCSE — built by English teachers."
+            title="AI-supported English revision for GCSE and IGCSE - built by English teachers."
             subtitle="A structured revision platform with instant, criteria-referenced practice feedback. We are at launch stage and onboarding our first Founding Schools now."
           />
           <div className="mt-6 flex justify-center">
@@ -708,12 +708,12 @@ function PricingContent() {
       {/* ───────── Student + Teacher Cards ───────── */}
       <section className="relative pb-24 sm:pb-32">
         <div className="max-w-5xl mx-auto px-6">
-          {/* Affiliate / promo code entry — above the pricing cards so
+          {/* Affiliate / promo code entry - above the pricing cards so
               users see it before clicking any "Start 7-day free trial"
               button. Replaces the previous Stripe-side promo field
               (which exposed `allow_promotion_codes: true` on the
               Stripe Checkout page itself, but only accepted Stripe
-              Dashboard coupons — confusing users who tried to enter
+              Dashboard coupons - confusing users who tried to enter
               affiliate codes there). */}
           <AffiliateCodeField {...codeField} />
 
@@ -746,7 +746,7 @@ function PricingContent() {
                   </span>
                 </div>
 
-                {/* ONE primary price line — early-access monthly with standard anchor */}
+                {/* ONE primary price line - early-access monthly with standard anchor */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
@@ -782,7 +782,7 @@ function PricingContent() {
                   {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
                 </p>
 
-                {/* ONE upgrade callout — affiliate code */}
+                {/* ONE upgrade callout - affiliate code */}
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-3">
                   <p className="text-xs font-semibold text-emerald-700">
                     {t('pricing.with_any_code_prefix')}{' '}
@@ -885,7 +885,7 @@ function PricingContent() {
                   </span>
                 </div>
 
-                {/* Price — early-access monthly with standard anchor */}
+                {/* Price - early-access monthly with standard anchor */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
                     {PRICING.CURRENCY}
@@ -926,7 +926,7 @@ function PricingContent() {
                   {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
                 </p>
 
-                {/* Affiliate / promo code callout — mirrors the Student
+                {/* Affiliate / promo code callout - mirrors the Student
                     card's pill so Teacher visitors see the same offer
                     surface. Both plans honour 2026ENGLISH and any
                     active affiliate code for a flat £9.99 saving. */}
@@ -1072,7 +1072,7 @@ function PricingContent() {
                 icon: Zap,
                 color: 'text-emerald-600 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
-                desc: 'When you\u2019re ready, start a 7-day free trial. Card required — cancel before day 7 at no cost, or it converts automatically.',
+                desc: 'When you\u2019re ready, start a 7-day free trial. Card required - cancel before day 7 at no cost, or it converts automatically.',
               },
             ].map((item) => (
               <Card key={item.step} className="p-6 text-center border-border/40">

@@ -8,7 +8,7 @@ import { events } from '@/lib/gtag'
 import { useT } from '@/lib/i18n/use-t'
 
 /**
- * DownloadMenu — Dead-simple download button group.
+ * DownloadMenu - Dead-simple download button group.
  *
  * Zero external dependencies (no Base UI, no localStorage, no useResourceStyle).
  * Uses native button + native click-outside detection.
@@ -50,7 +50,7 @@ function formatIcon(format: DownloadOption['format']) {
   }
 }
 
-/* ── Plain button styling (inline — no buttonVariants dependency) ──── */
+/* ── Plain button styling (inline - no buttonVariants dependency) ──── */
 
 function buttonClass(variant: 'default' | 'outline' | 'ghost', size: 'sm' | 'default' | 'lg') {
   const base =
@@ -101,7 +101,7 @@ export function DownloadMenu({
         setStyle(stored)
       }
     } catch {
-      // Ignore — no localStorage available
+      // Ignore - no localStorage available
     }
   }, [])
 
@@ -218,7 +218,7 @@ export function DownloadMenu({
       })
   }
 
-  // Single option — render plain button
+  // Single option - render plain button
   if (options.length === 1) {
     const opt = options[0]
     return (
@@ -236,7 +236,7 @@ export function DownloadMenu({
     )
   }
 
-  // The menu itself — rendered via Portal so it escapes any overflow-hidden
+  // The menu itself - rendered via Portal so it escapes any overflow-hidden
   // parent (e.g. the Card wrapping it on /demo/teacher/resources). Uses
   // fixed positioning anchored to the trigger via getBoundingClientRect.
   const styleLabelKey: Record<ResourceStyle, string> = {
@@ -303,7 +303,7 @@ export function DownloadMenu({
       </div>
     ) : null
 
-  // Multiple options — native dropdown using plain HTML, rendered via Portal
+  // Multiple options - native dropdown using plain HTML, rendered via Portal
   return (
     <>
       <div ref={wrapperRef} className="relative inline-block">
@@ -333,7 +333,7 @@ export function DownloadMenu({
 function DownloadToast({ message, onDismiss }: { message: string; onDismiss: () => void }) {
   const t = useT()
   // Detect error variant via either the EN "failed" or the translated failure
-  // copy from the dictionary — both spellings flow through the same toast
+  // copy from the dictionary - both spellings flow through the same toast
   // surface so the styling stays consistent across locales.
   const failedToken = t('download.toast.failed').toLowerCase()
   const lower = message.toLowerCase()

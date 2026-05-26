@@ -417,7 +417,7 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
         .maybeSingle()
 
       if (seatsError || !updatedSchool) {
-        // Race lost (or write failed) — roll back the whole bulk-add atomically.
+        // Race lost (or write failed) - roll back the whole bulk-add atomically.
         console.error('Seats_used race lost; rolling back bulk-add', {
           seatsError,
           attempted: newSeatsNeeded,
@@ -450,7 +450,7 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
         .update({ subscription_status: 'pro' })
         .in('id', added)
       if (proError) {
-        // Not fatal to the enrolment — log and surface as a soft error.
+        // Not fatal to the enrolment - log and surface as a soft error.
         console.error('Grant pro access error:', proError)
         errors.push(`subscription_status update failed: ${proError.message}`)
       }

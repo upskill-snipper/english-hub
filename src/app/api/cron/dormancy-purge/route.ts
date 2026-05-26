@@ -17,7 +17,7 @@ interface PurgeError {
 /**
  * POST /api/cron/dormancy-purge
  *
- * Children's Code (Standard 8 – Data Minimisation) auto-purge endpoint.
+ * Children's Code (Standard 8 - Data Minimisation) auto-purge endpoint.
  * Identifies child accounts that have been inactive for 12+ months and
  * irrevocably removes their PII, deletes consent records, anonymises
  * analytics, and soft-deletes the user row. Each purge is audited.
@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
             purged,
             errors: errors.length,
             timestamp: new Date().toISOString(),
-            complianceStandard: "Children's Code Standard 8 – Data Minimisation",
+            complianceStandard: "Children's Code Standard 8 - Data Minimisation",
           },
           ipAddress: 'system',
         },

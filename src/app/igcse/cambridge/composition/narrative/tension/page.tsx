@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Tension and Pacing — Cambridge IGCSE Narrative Writing',
+    title: 'Tension and Pacing - Cambridge IGCSE Narrative Writing',
     description:
       'Build tension and control pacing in a Cambridge IGCSE short story. Withhold information, use short sentences, interruptions, and credible cliffhangers.',
   },
-  title: 'Tension and Pacing — Cambridge IGCSE Narrative Writing',
+  title: 'Tension and Pacing - Cambridge IGCSE Narrative Writing',
   description:
     'Build tension and control pacing in a Cambridge IGCSE short story. Withhold information, use short sentences, interruptions, and credible cliffhangers.',
   alternates: {
@@ -33,7 +33,7 @@ const techniques = [
     summary:
       'Long sentences during calm. Short sentences as tension rises. Single-word sentences at the peak.',
     detail:
-      'Pacing is rhythm. Read your piece aloud — if you take the same breath at every full stop, the rhythm is flat. Vary sentence length deliberately to control how fast the reader moves through the scene.',
+      'Pacing is rhythm. Read your piece aloud - if you take the same breath at every full stop, the rhythm is flat. Vary sentence length deliberately to control how fast the reader moves through the scene.',
     example:
       'I took the stairs slowly, one at a time, listening. The house was completely still. Then a floorboard creaked above me. Close. Too close.',
   },
@@ -48,7 +48,7 @@ const techniques = [
     name: '4. Interruptions',
     summary: 'Something or someone cuts a scene off just before a resolution. The question hangs.',
     detail:
-      'A door opens before the character can finish a sentence. A phone rings. A train arrives. An interruption forces the reader to sit with the unresolved question — that discomfort is tension.',
+      'A door opens before the character can finish a sentence. A phone rings. A train arrives. An interruption forces the reader to sit with the unresolved question - that discomfort is tension.',
     example:
       '“I need to tell you something,” she began. Then the lights cut out, and we were both listening to the same silence.',
   },

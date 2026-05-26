@@ -28,13 +28,15 @@ export function formatPrice(pence: number): string {
   return `£${(pence / 100).toFixed(2)}`
 }
 
-/** Get course name by ID — lazy-loads course data to avoid pulling ~900KB into every import */
+/** Get course name by ID - lazy-loads course data to avoid pulling ~900KB into every import */
 export function getCourseName(courseId: string): string {
   // Dynamically import to avoid bundling all course data into every file that imports utils
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { allCourses } = require('@/data/courses')
-    return allCourses.find((c: { id: string; title: string }) => c.id === courseId)?.title || courseId
+    return (
+      allCourses.find((c: { id: string; title: string }) => c.id === courseId)?.title || courseId
+    )
   } catch {
     return courseId
   }
@@ -44,8 +46,8 @@ export function getCourseName(courseId: string): string {
 export function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array]
   for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled
 }
@@ -59,7 +61,7 @@ export function formatTime(seconds: number): string {
 }
 
 /** Validate a redirect URL is safe (no open redirects).
- *  Only allows relative paths starting with `/` — blocks protocol-relative,
+ *  Only allows relative paths starting with `/` - blocks protocol-relative,
  *  absolute, backslash-based, and URLs containing control characters. */
 export function validateRedirect(url: string | null): string {
   if (
@@ -79,5 +81,15 @@ export function validateRedirect(url: string | null): string {
   return url
 }
 
-export const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Year 13', 'Adult', 'Other'] as const
+export const YEAR_GROUPS = [
+  'Year 7',
+  'Year 8',
+  'Year 9',
+  'Year 10',
+  'Year 11',
+  'Year 12',
+  'Year 13',
+  'Adult',
+  'Other',
+] as const
 export const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'Other'] as const

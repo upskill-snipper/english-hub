@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Free Sign Of Four revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   alternates: { canonical: 'https://theenglishhub.app/resources/revision-notes/sign-of-four' },
   openGraph: {
-    title: 'Sign Of Four Revision Notes — The English Hub',
+    title: 'Sign Of Four Revision Notes - The English Hub',
     description:
       'Free Sign Of Four revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   },

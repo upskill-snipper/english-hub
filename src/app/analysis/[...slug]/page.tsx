@@ -95,7 +95,7 @@ export default async function AnalysisPage(props: Props) {
   const { articleJsonLd, breadcrumbJsonLd, faqJsonLd } = buildAnalysisJsonLdPayloads(entry, ctx)
 
   // Chrome translation. Body content (entry.description, ctx.about,
-  // ctx.keyQuotes, ctx.faqs, examTips) stays in source language —
+  // ctx.keyQuotes, ctx.faqs, examTips) stays in source language -
   // literary/exam-board content per task scope.
   const tBreadAnalysis = await t('analysis.breadcrumb.analysis')
   const tByline = await t('analysis.slug.byline_prefix')
@@ -197,7 +197,7 @@ export default async function AnalysisPage(props: Props) {
                   <ul className="mt-3 space-y-1 text-sm">
                     {ac.aoWeighting.map((ao, j) => (
                       <li key={j}>
-                        <strong className="text-foreground">{ao.ao}</strong> ({ao.weight}) —{' '}
+                        <strong className="text-foreground">{ao.ao}</strong> ({ao.weight}) -{' '}
                         {ao.description}
                       </li>
                     ))}

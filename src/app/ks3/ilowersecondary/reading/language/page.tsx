@@ -21,11 +21,11 @@ const STYLE_TOOLKIT = GUIDED_READING_PROMPTS.fiction['Style and language']
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language analysis masterclass (RAO4) — iLowerSecondary English',
+    title: 'Language analysis masterclass (RAO4) - iLowerSecondary English',
     description:
       "The flagship guide to RAO4: exploring writers' grammatical and literary language at word and sentence level, with original practice extracts and model answers.",
   },
-  title: 'Language analysis masterclass (RAO4) — iLowerSecondary English',
+  title: 'Language analysis masterclass (RAO4) - iLowerSecondary English',
   description:
     "The flagship guide to RAO4: exploring writers' grammatical and literary language at word and sentence level, with original practice extracts and model answers.",
   alternates: { canonical: PAGE_URL },
@@ -77,14 +77,14 @@ const WORD_LEVEL: { focus: string; explanation: string; example: string }[] = [
     explanation:
       'The feelings or ideas a word carries beyond its dictionary meaning. "Home" and "house" point to the same building, but "home" suggests warmth and belonging.',
     example:
-      '"She slipped into the cottage" — "slipped" connotes secrecy and care, far more than the neutral "went".',
+      '"She slipped into the cottage" - "slipped" connotes secrecy and care, far more than the neutral "went".',
   },
   {
     focus: 'Verb choice',
     explanation:
       'A precise verb does the work of a whole sentence. Strong verbs control pace, energy and the reader’s impression of a character.',
     example:
-      '"He stormed across the yard" — "stormed" shows anger and speed without the writer ever naming the emotion.',
+      '"He stormed across the yard" - "stormed" shows anger and speed without the writer ever naming the emotion.',
   },
   {
     focus: 'Adjective choice',
@@ -104,7 +104,7 @@ const WORD_LEVEL: { focus: string; explanation: string; example: string }[] = [
     explanation:
       'A group of words that all belong to the same topic. A run of war words, for instance, can make an ordinary event feel like a battle.',
     example:
-      '"He defended his answer, retreated, then surrendered the point" — the military field turns a debate into a fight.',
+      '"He defended his answer, retreated, then surrendered the point" - the military field turns a debate into a fight.',
   },
   {
     focus: 'Emotive / positive / negative diction',
@@ -120,7 +120,7 @@ const SENTENCE_LEVEL: { focus: string; explanation: string; example: string }[] 
   {
     focus: 'Short sentences',
     explanation:
-      'A short, simple sentence stops the reader. It creates tension, shock or a blunt, final tone — especially after a long sentence.',
+      'A short, simple sentence stops the reader. It creates tension, shock or a blunt, final tone - especially after a long sentence.',
     example: '"Nothing moved. Then it did."',
   },
   {
@@ -133,7 +133,7 @@ const SENTENCE_LEVEL: { focus: string; explanation: string; example: string }[] 
   {
     focus: 'Sentence openings',
     explanation:
-      'Starting sentences in different ways — with an adverb, an -ing word, or a subordinate clause — controls rhythm and emphasis. Repeated identical openings can feel relentless or list-like.',
+      'Starting sentences in different ways - with an adverb, an -ing word, or a subordinate clause - controls rhythm and emphasis. Repeated identical openings can feel relentless or list-like.',
     example:
       '"Slowly, the door opened. Watching from the stairs, I did not move. Because I could not."',
   },
@@ -142,7 +142,7 @@ const SENTENCE_LEVEL: { focus: string; explanation: string; example: string }[] 
     explanation:
       'Statements inform; questions invite the reader in; commands (imperatives) instruct or urge; exclamations add force. The mix tells you about purpose and tone.',
     example:
-      '"Look closer. Do you see it now? You should." — command, question, statement, in three short beats.',
+      '"Look closer. Do you see it now? You should." - command, question, statement, in three short beats.',
   },
 ]
 
@@ -151,19 +151,19 @@ const GRAMMAR_TERMS: { term: string; meaning: string; example: string }[] = [
   {
     term: 'Imperative verb',
     meaning: 'A verb that gives an instruction or command.',
-    example: '"Press the green button firmly." — "Press" is imperative.',
+    example: '"Press the green button firmly." - "Press" is imperative.',
   },
   {
     term: 'Modal verb',
     meaning:
       'A verb (can, could, may, might, must, shall, should, will, would) that shows possibility, necessity or certainty.',
-    example: '"You must arrive early." — "must" signals obligation.',
+    example: '"You must arrive early." - "must" signals obligation.',
   },
   {
     term: 'Auxiliary (helping) verb',
     meaning:
       'A verb (be, have, do) that supports a main verb to form tenses, questions or negatives.',
-    example: '"She has finished." — "has" is the auxiliary; "finished" is the main verb.',
+    example: '"She has finished." - "has" is the auxiliary; "finished" is the main verb.',
   },
   {
     term: 'Irregular verb',
@@ -189,17 +189,17 @@ const PRACTICE: {
   {
     id: 'extract-a',
     label: 'Extract A',
-    kind: 'Non-fiction — magazine article',
+    kind: 'Non-fiction - magazine article',
     extract: [
       'Every spring, the salt marsh wakes up. For months it has lain flat and grey, a quiet stretch of mud that visitors hurry past without a second glance. Then, almost overnight, the channels begin to glitter and the birds return in their hundreds.',
-      'Conservation volunteers patrol the boardwalk at dawn, counting nests and clearing litter. Their work is slow, careful and largely invisible. Yet without it, this fragile habitat would vanish within a single generation — and so would the creatures that depend on it.',
+      'Conservation volunteers patrol the boardwalk at dawn, counting nests and clearing litter. Their work is slow, careful and largely invisible. Yet without it, this fragile habitat would vanish within a single generation - and so would the creatures that depend on it.',
     ],
     questions: [
       {
         q: 'Look at the word "glitter" in the first paragraph. Circle the word closest in meaning to "glitter".  A jump   B sparkle   C overflow   D darken',
         type: 'synonym-select',
         marks: '(1 mark)',
-        model: 'B — sparkle',
+        model: 'B - sparkle',
         markNote:
           'Award 1 mark for B only. "Sparkle" preserves the meaning of light catching the water. Do not credit more than one circled answer.',
       },
@@ -208,7 +208,7 @@ const PRACTICE: {
         type: 'language-structure-analysis',
         marks: '(4 marks)',
         model:
-          'The writer first personifies the marsh — "the salt marsh wakes up" — which turns a dull "stretch of mud" into a living thing that is worth our attention, encouraging the reader to look again at something they would normally ignore. The writer also chooses the verb "glitter" and the contrast between "flat and grey" and the channels that "begin to glitter": this sudden shift from negative, lifeless diction to bright, positive diction makes the transformation feel dramatic and surprising, so the reader shares the writer’s sense that the marsh is precious.',
+          'The writer first personifies the marsh - "the salt marsh wakes up" - which turns a dull "stretch of mud" into a living thing that is worth our attention, encouraging the reader to look again at something they would normally ignore. The writer also chooses the verb "glitter" and the contrast between "flat and grey" and the channels that "begin to glitter": this sudden shift from negative, lifeless diction to bright, positive diction makes the transformation feel dramatic and surprising, so the reader shares the writer’s sense that the marsh is precious.',
         markNote:
           'Two developed points, each with evidence and an explanation of the effect on the reader (2 + 2). Reward precise reference to language at word level; an unexplained lift is not credited.',
       },
@@ -217,10 +217,10 @@ const PRACTICE: {
   {
     id: 'extract-b',
     label: 'Extract B',
-    kind: 'Fiction — opening of a short story',
+    kind: 'Fiction - opening of a short story',
     extract: [
       'The lighthouse had not spoken in years. Its lamp was dark, its door was rusted shut, and the path to it had been swallowed by gorse.',
-      'Mara climbed anyway. She climbed because the village had told her not to, and because the wind that morning carried a sound she could not name — thin, insistent, almost like a question. At the top she stopped. She listened. Somewhere below the rotten boards, something tapped back.',
+      'Mara climbed anyway. She climbed because the village had told her not to, and because the wind that morning carried a sound she could not name - thin, insistent, almost like a question. At the top she stopped. She listened. Somewhere below the rotten boards, something tapped back.',
     ],
     questions: [
       {
@@ -236,7 +236,7 @@ const PRACTICE: {
         type: 'language-structure-analysis',
         marks: '(4 marks)',
         model:
-          'The writer uses a long, flowing sentence — "She climbed because the village had told her not to, and because the wind… carried a sound she could not name" — to draw the reader steadily towards the danger, the piled-up clauses delaying the moment and making us wait. The writer then breaks this rhythm with three abrupt short sentences: "She stopped. She listened. Somewhere below the rotten boards, something tapped back." The sudden shift to short, simple sentences halts the pace and isolates the final action, so the unexplained tap lands on the reader as a shock and the tension peaks.',
+          'The writer uses a long, flowing sentence - "She climbed because the village had told her not to, and because the wind… carried a sound she could not name" - to draw the reader steadily towards the danger, the piled-up clauses delaying the moment and making us wait. The writer then breaks this rhythm with three abrupt short sentences: "She stopped. She listened. Somewhere below the rotten boards, something tapped back." The sudden shift to short, simple sentences halts the pace and isolates the final action, so the unexplained tap lands on the reader as a shock and the tension peaks.',
         markNote:
           'Two developed points (contrast of long versus short sentences; effect of the final short sentence), each with evidence and effect on the reader (2 + 2).',
       },
@@ -245,7 +245,7 @@ const PRACTICE: {
   {
     id: 'extract-c',
     label: 'Extract C',
-    kind: 'Non-fiction — advice leaflet',
+    kind: 'Non-fiction - advice leaflet',
     extract: [
       'Plan your route before you set out. Check the forecast, charge your phone, and tell someone exactly where you are going.',
       'The hills can change in minutes. A clear morning can become a wall of grey cloud, and a path that looked friendly can turn treacherous, slick and unforgiving. Respect the weather. It will not respect you.',
@@ -265,7 +265,7 @@ const PRACTICE: {
         type: 'language-structure-analysis',
         marks: '(4 marks)',
         model:
-          'The writer personifies the weather in the short, blunt sentences "Respect the weather. It will not respect you." Giving the weather the human power to refuse respect makes it feel like a deliberate enemy, which warns the reader to take it seriously. The writer also uses a list of negative adjectives — "treacherous, slick and unforgiving" — building a semantic field of danger so that the safe-sounding "friendly" path is overturned, leaving the reader alert to how quickly conditions can turn.',
+          'The writer personifies the weather in the short, blunt sentences "Respect the weather. It will not respect you." Giving the weather the human power to refuse respect makes it feel like a deliberate enemy, which warns the reader to take it seriously. The writer also uses a list of negative adjectives - "treacherous, slick and unforgiving" - building a semantic field of danger so that the safe-sounding "friendly" path is overturned, leaving the reader alert to how quickly conditions can turn.',
         markNote:
           'Two developed points (personification of the weather; negative adjective list / contrast), each with evidence and effect (2 + 2).',
       },

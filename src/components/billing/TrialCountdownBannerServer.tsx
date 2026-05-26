@@ -6,7 +6,7 @@
  * components free of the Prisma+Supabase plumbing and lets us SSR the
  * "X days left" headline with no client-side flash.
  *
- * Use directly in any server component — including pages that are
+ * Use directly in any server component - including pages that are
  * themselves `'use client'`, by mounting the wrapper one level up in a
  * server `layout.tsx` (see `src/app/dashboard/layout.tsx`).
  */

@@ -19,7 +19,7 @@ import { prisma } from '@/lib/prisma'
 // straight SQL, so it can be invoked from the admin UI.
 //
 // Gated by:
-//   1. verifyAdmin() — must be a logged-in admin
+//   1. verifyAdmin() - must be a logged-in admin
 //   2. Optional `x-admin-token` header that must match ADMIN_DIAGNOSTIC_TOKEN
 //      (only enforced if the env var is set, opt-in extra hardening)
 //
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
     if (requiredToken) {
       const provided = request.headers.get('x-admin-token')
       if (provided !== requiredToken) {
-        return NextResponse.json({ error: 'Forbidden — invalid x-admin-token' }, { status: 403 })
+        return NextResponse.json({ error: 'Forbidden - invalid x-admin-token' }, { status: 403 })
       }
     }
 
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
     // use-case the user count is small enough that a few pages will find
     // anyone; we cap at 20 pages (1000 users) for safety. If we outgrow
     // this, switch to a direct SQL lookup via prisma.$queryRaw against
-    // auth.users — which the service-role connection has access to.
+    // auth.users - which the service-role connection has access to.
     let foundAuthUser: {
       id: string
       email?: string | null
@@ -152,7 +152,7 @@ export async function POST(request: NextRequest) {
     // Same pattern as scripts/fix-reviewer-verification.sql: lookup by
     // supabaseUserId, fall back to email, create a STUDENT row if neither
     // exists. This is the projection /api/auth/register would normally
-    // create — without it, dormancy-check, DSAR, and weekly-report code
+    // create - without it, dormancy-check, DSAR, and weekly-report code
     // paths silently no-op for this user.
     let prismaUserId: string | null = null
     try {
@@ -179,7 +179,7 @@ export async function POST(request: NextRequest) {
         })
       } else {
         // Create a minimal STUDENT projection row. firstName/lastName/DOB
-        // are placeholders — the user can fill these in via /onboarding
+        // are placeholders - the user can fill these in via /onboarding
         // or the founder can update them by hand. We do NOT set ADMIN or
         // any elevated role here.
         const created = await prisma.user.create({
@@ -203,7 +203,7 @@ export async function POST(request: NextRequest) {
       }
     } catch (dbError) {
       // Don't fail the whole operation just because the Prisma projection
-      // could not be written — the auth.users row IS verified, the user
+      // could not be written - the auth.users row IS verified, the user
       // can sign in. Log loudly so the founder knows to investigate.
       if (dbError instanceof Prisma.PrismaClientKnownRequestError) {
         console.error('[admin/verify-user] Prisma projection failed', {

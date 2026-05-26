@@ -109,7 +109,7 @@ const otherDrama = [
       'Set during the 1692 Salem witch trials but written as an allegory for McCarthyism. John Proctor must choose between confessing to witchcraft (a lie that saves his life) and maintaining his integrity (which means death). Key themes: hysteria, integrity, power, and reputation.',
     techniques: [
       'Allegory: the witch trials parallel the anti-Communist hearings of the 1950s',
-      "Proctor's climactic line 'Because it is my name!' — his identity and integrity are inseparable",
+      "Proctor's climactic line 'Because it is my name!' - his identity and integrity are inseparable",
       "Miller's detailed stage directions establish social context and character psychology",
       "The court scenes: formal, ritualistic language versus Proctor's plain, honest speech",
     ],

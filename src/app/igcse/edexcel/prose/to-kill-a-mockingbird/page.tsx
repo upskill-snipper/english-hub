@@ -20,11 +20,11 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide',
+    title: 'To Kill a Mockingbird - Edexcel IGCSE Literature Study Guide',
     description:
       'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE Literature.',
   },
-  title: 'To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide',
+  title: 'To Kill a Mockingbird - Edexcel IGCSE Literature Study Guide',
   description:
     'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE Literature.',
   alternates: {
@@ -34,17 +34,17 @@ export const metadata: Metadata = {
 
 const plotBeats = [
   {
-    part: 'Part One — Chapters 1–11',
+    part: 'Part One - Chapters 1-11',
     summary:
       'Scout, Jem and Dill spend long Alabama summers obsessing over reclusive neighbour Boo Radley. Atticus accepts the defence of Tom Robinson, a Black man falsely accused by Mayella Ewell, and the Finch children begin to face the town\u2019s hostility.',
   },
   {
-    part: 'Part Two — Chapters 12–21',
+    part: 'Part Two - Chapters 12-21',
     summary:
       'Calpurnia takes the children to her Black church. Aunt Alexandra moves in to instil Southern "gentility". The novel builds to Tom\u2019s trial, where Atticus dismantles the Ewell case but the all-white jury still convicts.',
   },
   {
-    part: 'Climax and resolution — Chapters 22–31',
+    part: 'Climax and resolution - Chapters 22-31',
     summary:
       'Tom is shot trying to escape prison. Bob Ewell seeks revenge and attacks Scout and Jem on the Halloween walk home; Boo Radley saves them and kills Ewell. Sheriff Tate protects Boo, and Scout finally sees Maycomb from the Radley porch.',
   },
@@ -59,7 +59,7 @@ const themes = [
   {
     title: 'Moral courage',
     blurb:
-      'Atticus defines courage as "licking" a fight "before you begin" — standing by principle even when defeat is certain.',
+      'Atticus defines courage as "licking" a fight "before you begin" - standing by principle even when defeat is certain.',
   },
   {
     title: 'Childhood and innocence',
@@ -112,13 +112,13 @@ const keyQuotations = [
     quote: 'Licked a hundred years before we started… no reason not to try to win.',
     speaker: 'Atticus Finch',
     analysis:
-      'Redefines courage as principled action rather than confidence in victory — crucial to how we read his defence of Tom Robinson.',
+      'Redefines courage as principled action rather than confidence in victory - crucial to how we read his defence of Tom Robinson.',
   },
   {
     quote: 'The one thing that doesn\u2019t abide by majority rule is a person\u2019s conscience.',
     speaker: 'Atticus Finch',
     analysis:
-      'Individual ethics vs. democratic pressure — a direct warning about how majorities legitimise injustice.',
+      'Individual ethics vs. democratic pressure - a direct warning about how majorities legitimise injustice.',
   },
   {
     quote: 'There\u2019s something in our world that makes men lose their heads\u2026',
@@ -142,7 +142,7 @@ const keyQuotations = [
     quote: 'Mockingbirds don\u2019t do one thing but make music for us to enjoy.',
     speaker: 'Miss Maudie',
     analysis:
-      'Elaborates the title symbol in plain moral terms a child can grasp — a technique Lee uses throughout.',
+      'Elaborates the title symbol in plain moral terms a child can grasp - a technique Lee uses throughout.',
   },
   {
     quote:
@@ -168,20 +168,20 @@ const keyQuotations = [
     quote: 'People generally see what they look for, and hear what they listen for.',
     speaker: 'Judge Taylor (via Atticus)',
     analysis:
-      'A gloss on confirmation bias — central to how Maycomb "sees" Tom and refuses to see Mayella\u2019s real attacker.',
+      'A gloss on confirmation bias - central to how Maycomb "sees" Tom and refuses to see Mayella\u2019s real attacker.',
   },
   {
     quote: 'You\u2019ll see white men cheat black men every day of your life.',
     speaker: 'Atticus Finch',
     analysis:
-      'A bleak acknowledgement that unsettles the reassuring tone of much of the novel — useful against romanticised readings of Atticus.',
+      'A bleak acknowledgement that unsettles the reassuring tone of much of the novel - useful against romanticised readings of Atticus.',
   },
   {
     quote:
       'Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.',
     speaker: 'Calpurnia',
     analysis:
-      'Calpurnia rebukes Scout for mocking Walter Cunningham at lunch — class sits alongside race as a target of Lee\u2019s critique.',
+      'Calpurnia rebukes Scout for mocking Walter Cunningham at lunch - class sits alongside race as a target of Lee\u2019s critique.',
   },
   {
     quote: 'I\u2019m beginning to understand why Boo Radley\u2019s stayed shut up in the house…',
@@ -197,7 +197,7 @@ export default async function TkamHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide"
+        name="To Kill a Mockingbird - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for To Kill a Mockingbird for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd
@@ -251,7 +251,7 @@ export default async function TkamHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               To Kill a Mockingbird is in copyright. This guide includes short extracts for
@@ -351,7 +351,7 @@ export default async function TkamHubPage() {
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>

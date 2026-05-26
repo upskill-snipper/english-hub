@@ -342,15 +342,15 @@ export default function PigeonEnglishPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Harrison &lsquo;Harri&rsquo; Opoku"
-                description="The eleven-year-old Ghanaian narrator of the novel. Harri is curious, kind, athletic and imaginative. He is fascinated by everything in his new English world: the trainers, the slang, the girls, the gangs, the pigeons. Kelman makes Harri's voice the engine of the novel — a mix of Pidgin English ('Asweh'), Ghanaian exclamations ('Adjei!'), and absorbed London slang ('hutless', 'bo-styles'). Harri's investigation of the murder is part play, part moral courage — he genuinely believes the world should be fair. His tragic flaw is his innocence: he cannot conceive that real harm could come to him for asking questions. His murder at the end completes a circle of violence and turns the reader into a witness."
+                description="The eleven-year-old Ghanaian narrator of the novel. Harri is curious, kind, athletic and imaginative. He is fascinated by everything in his new English world: the trainers, the slang, the girls, the gangs, the pigeons. Kelman makes Harri's voice the engine of the novel - a mix of Pidgin English ('Asweh'), Ghanaian exclamations ('Adjei!'), and absorbed London slang ('hutless', 'bo-styles'). Harri's investigation of the murder is part play, part moral courage - he genuinely believes the world should be fair. His tragic flaw is his innocence: he cannot conceive that real harm could come to him for asking questions. His murder at the end completes a circle of violence and turns the reader into a witness."
               />
               <CharacterCard
                 name="Lydia"
-                description="Harri's older teenage sister. Lydia is sharp-tongued, protective, and caught between worlds. She mocks Harri but defends him fiercely when she senses real danger. Lydia is navigating her own pressures — older friends, gendered violence, the temptations of conformity — but she remains the moral compass closest to Harri. She repeatedly tells him to stop investigating; her warnings, ignored, take on tragic weight by the novel's end. Lydia represents the second-generation immigrant child whose protective love stands in for absent adults."
+                description="Harri's older teenage sister. Lydia is sharp-tongued, protective, and caught between worlds. She mocks Harri but defends him fiercely when she senses real danger. Lydia is navigating her own pressures - older friends, gendered violence, the temptations of conformity - but she remains the moral compass closest to Harri. She repeatedly tells him to stop investigating; her warnings, ignored, take on tragic weight by the novel's end. Lydia represents the second-generation immigrant child whose protective love stands in for absent adults."
               />
               <CharacterCard
                 name="Mamma"
-                description="Harri and Lydia's mother. She works exhausting shifts as a midwife at a London hospital, sending money home and praying for the family's reunification. Mamma is devoutly Christian, strict, warm, and worn out. Her absence — caused by the work she has to do to keep the family afloat — is one of the structural ironies of the novel: she is sacrificing her presence to provide for her children, and that absence creates the gap into which the gangs step. Her faith is genuine and sustaining; she sees prayer as protection."
+                description="Harri and Lydia's mother. She works exhausting shifts as a midwife at a London hospital, sending money home and praying for the family's reunification. Mamma is devoutly Christian, strict, warm, and worn out. Her absence - caused by the work she has to do to keep the family afloat - is one of the structural ironies of the novel: she is sacrificing her presence to provide for her children, and that absence creates the gap into which the gangs step. Her faith is genuine and sustaining; she sees prayer as protection."
               />
               <CharacterCard
                 name="Papa and Baby Agnes"
@@ -358,27 +358,27 @@ export default function PigeonEnglishPage() {
               />
               <CharacterCard
                 name="Auntie Sonia"
-                description="Harri's aunt, also living in London. Sonia has burnt off her own fingerprints with an iron to evade immigration authorities — a horrifying detail Harri reports with a child's matter-of-factness. She is in an abusive relationship with Julius. Sonia's plotline shows that immigrant women face violence from both the state (deportation) and partners (Julius). She is also tender with Harri, slipping him sweets and treating him with the indulgence of an aunt. Her ruined fingertips are one of the novel's most disturbing symbols."
+                description="Harri's aunt, also living in London. Sonia has burnt off her own fingerprints with an iron to evade immigration authorities - a horrifying detail Harri reports with a child's matter-of-factness. She is in an abusive relationship with Julius. Sonia's plotline shows that immigrant women face violence from both the state (deportation) and partners (Julius). She is also tender with Harri, slipping him sweets and treating him with the indulgence of an aunt. Her ruined fingertips are one of the novel's most disturbing symbols."
               />
               <CharacterCard
                 name="Julius"
-                description="Auntie Sonia's violent partner. Julius beats Sonia and frightens Harri with his unpredictable temper. He is a portrait of adult male brutality inside the family unit, paralleling the gang violence outside it. Kelman uses Julius to show that violence is not just a teenage-boy problem on the estate but a structural pattern that crosses generations and settings. Julius is also a counter-image to Harri's absent Papa — a presence in place of an absence, and a malign one at that."
+                description="Auntie Sonia's violent partner. Julius beats Sonia and frightens Harri with his unpredictable temper. He is a portrait of adult male brutality inside the family unit, paralleling the gang violence outside it. Kelman uses Julius to show that violence is not just a teenage-boy problem on the estate but a structural pattern that crosses generations and settings. Julius is also a counter-image to Harri's absent Papa - a presence in place of an absence, and a malign one at that."
               />
               <CharacterCard
                 name="Dean"
-                description="Harri's English best friend at school. Dean watches CSI and supplies the forensic vocabulary for the boys' detective game (fingerprint dust, evidence bags, surveillance). He is loyal, funny, and equally out of his depth. Dean represents Harri's successful integration into multi-ethnic English schoolboy culture — friendships do exist across race and background, and Dean is proof. But Dean's TV-derived expertise is also the novel's joke and its tragedy: pop-culture detective methods are no defence against real knives."
+                description="Harri's English best friend at school. Dean watches CSI and supplies the forensic vocabulary for the boys' detective game (fingerprint dust, evidence bags, surveillance). He is loyal, funny, and equally out of his depth. Dean represents Harri's successful integration into multi-ethnic English schoolboy culture - friendships do exist across race and background, and Dean is proof. But Dean's TV-derived expertise is also the novel's joke and its tragedy: pop-culture detective methods are no defence against real knives."
               />
               <CharacterCard
                 name="Poppy Morgan"
-                description="A white English girl in Harri's class on whom he develops a tender, awkward crush. Poppy is bright, friendly and just out of reach — Harri imagines kissing her, gifting her things, marrying her. She represents adolescent innocence, Harri's hopeful future, and a kind of integration into English life that operates on a register of love rather than violence. Poppy is one of the few unambiguously hopeful presences in Harri's London."
+                description="A white English girl in Harri's class on whom he develops a tender, awkward crush. Poppy is bright, friendly and just out of reach - Harri imagines kissing her, gifting her things, marrying her. She represents adolescent innocence, Harri's hopeful future, and a kind of integration into English life that operates on a register of love rather than violence. Poppy is one of the few unambiguously hopeful presences in Harri's London."
               />
               <CharacterCard
                 name="The Dell Farm Crew &mdash; X-Fire, Killa, Clipz"
-                description="The local gang on the estate. X-Fire is the leader — older, charismatic, dangerous. Killa and Clipz are his lieutenants. Their street names announce their persona: cinematic, aggressive, performative. The crew patrols territory, deals, intimidates, and recruits younger boys. Kelman gives them moments of casual menace and moments of swagger; he resists making them simple villains while never glamorising them. They embody the social trap the novel anatomises: young black and mixed-race boys for whom the gang is the only available structure of belonging, status, and protection."
+                description="The local gang on the estate. X-Fire is the leader - older, charismatic, dangerous. Killa and Clipz are his lieutenants. Their street names announce their persona: cinematic, aggressive, performative. The crew patrols territory, deals, intimidates, and recruits younger boys. Kelman gives them moments of casual menace and moments of swagger; he resists making them simple villains while never glamorising them. They embody the social trap the novel anatomises: young black and mixed-race boys for whom the gang is the only available structure of belonging, status, and protection."
               />
               <CharacterCard
                 name="The Pigeon (Omniscient Narrator)"
-                description="The novel's second narrator — a London pigeon whose italicised passages punctuate Harri's narrative. The pigeon watches Harri from balconies, rooftops, the sky. Its voice is poetic, sometimes sorrowful, sometimes wry. It functions as guardian, witness, prophet, and spirit-presence. Critics have read the pigeon variously as an angel, as the voice of nature surviving in the city, as the watching dead. By the novel's close, when Harri can no longer narrate, the pigeon's voice takes over completely — making the bird the novel's most haunting structural choice."
+                description="The novel's second narrator - a London pigeon whose italicised passages punctuate Harri's narrative. The pigeon watches Harri from balconies, rooftops, the sky. Its voice is poetic, sometimes sorrowful, sometimes wry. It functions as guardian, witness, prophet, and spirit-presence. Critics have read the pigeon variously as an angel, as the voice of nature surviving in the city, as the watching dead. By the novel's close, when Harri can no longer narrate, the pigeon's voice takes over completely - making the bird the novel's most haunting structural choice."
               />
             </div>
           </Section>
@@ -390,27 +390,27 @@ export default function PigeonEnglishPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Childhood vs Violence`)}
-                description="The central tension of the novel. Harri narrates with a child's freshness — finding joy in a sweet, a race, a girl, a pigeon — while moving through a landscape of stabbings, gangs, and domestic abuse. Kelman writes the collision of these registers without sentimentality. Harri's very innocence is what makes the violence so unbearable, and what makes it possible: he cannot believe people will really hurt him for asking honest questions. The novel argues that childhood and street violence cannot coexist; one will eventually destroy the other, and it is almost always the child who loses."
+                description="The central tension of the novel. Harri narrates with a child's freshness - finding joy in a sweet, a race, a girl, a pigeon - while moving through a landscape of stabbings, gangs, and domestic abuse. Kelman writes the collision of these registers without sentimentality. Harri's very innocence is what makes the violence so unbearable, and what makes it possible: he cannot believe people will really hurt him for asking honest questions. The novel argues that childhood and street violence cannot coexist; one will eventually destroy the other, and it is almost always the child who loses."
               />
               <ThemeCard
                 title={tr(`Migration &amp; Belonging`)}
-                description="Harri is in the middle of becoming English. He absorbs slang, copies fashion, befriends Dean and crushes on Poppy — but he also says 'Asweh' and 'Adjei', misses Ghana, and remains visibly different. The family is split across continents, with Papa and Agnes still in Accra. Auntie Sonia's burnt fingerprints dramatise the immigration system's cruelty. Kelman shows belonging as a long, difficult, often violent process — and asks what it means that English society's first major gift to Harri is murder."
+                description="Harri is in the middle of becoming English. He absorbs slang, copies fashion, befriends Dean and crushes on Poppy - but he also says 'Asweh' and 'Adjei', misses Ghana, and remains visibly different. The family is split across continents, with Papa and Agnes still in Accra. Auntie Sonia's burnt fingerprints dramatise the immigration system's cruelty. Kelman shows belonging as a long, difficult, often violent process - and asks what it means that English society's first major gift to Harri is murder."
               />
               <ThemeCard
                 title={tr(`Faith &amp; Hope`)}
-                description="Mamma's Christianity is sincere, daily, and load-bearing. Prayer structures the Opoku household in London. Harri tries to keep faith — speaking to God, hoping for miracles, believing the world is fair. The pigeon, with its aerial, almost angelic perspective, gives the novel a religious texture even where its world is faithless. Kelman is too honest to let faith save anyone, but he refuses to mock it; faith is presented as a real force of survival, even when it cannot prevent tragedy."
+                description="Mamma's Christianity is sincere, daily, and load-bearing. Prayer structures the Opoku household in London. Harri tries to keep faith - speaking to God, hoping for miracles, believing the world is fair. The pigeon, with its aerial, almost angelic perspective, gives the novel a religious texture even where its world is faithless. Kelman is too honest to let faith save anyone, but he refuses to mock it; faith is presented as a real force of survival, even when it cannot prevent tragedy."
               />
               <ThemeCard
                 title="Family"
-                description="Family in the novel is plural and stretched: Mamma in London, Papa in Ghana, Lydia bossing and shielding, Auntie Sonia loving and battered, the absent baby Agnes. Kelman shows family as the strongest defence Harri has against the estate's violence — and shows how the demands of immigration tear at that defence. Mamma's working hours, Papa's absence, Sonia's exposure to Julius — each rip in the family fabric corresponds to a danger that creeps closer to Harri. The novel asks whether the immigrant family can ever be reassembled, and whether London allows time."
+                description="Family in the novel is plural and stretched: Mamma in London, Papa in Ghana, Lydia bossing and shielding, Auntie Sonia loving and battered, the absent baby Agnes. Kelman shows family as the strongest defence Harri has against the estate's violence - and shows how the demands of immigration tear at that defence. Mamma's working hours, Papa's absence, Sonia's exposure to Julius - each rip in the family fabric corresponds to a danger that creeps closer to Harri. The novel asks whether the immigrant family can ever be reassembled, and whether London allows time."
               />
               <ThemeCard
                 title={tr(`Friendship &amp; Group Dynamics`)}
-                description="Friendship has two faces in the novel. With Dean, friendship is play, loyalty, shared imagination — the detective game, the running, the in-jokes. With the Dell Farm Crew, group dynamics turn predatory: belonging means initiation, hierarchy, violence, and silence. Kelman shows the same human need — to be part of something — producing wildly different outcomes depending on what is available. For boys without strong adult presence, the gang's offer of belonging is dangerously seductive."
+                description="Friendship has two faces in the novel. With Dean, friendship is play, loyalty, shared imagination - the detective game, the running, the in-jokes. With the Dell Farm Crew, group dynamics turn predatory: belonging means initiation, hierarchy, violence, and silence. Kelman shows the same human need - to be part of something - producing wildly different outcomes depending on what is available. For boys without strong adult presence, the gang's offer of belonging is dangerously seductive."
               />
               <ThemeCard
                 title={tr(`Storytelling &amp; Voice`)}
-                description="Harri's voice is the novel's main achievement and its central theme. He mixes Pidgin English ('Asweh' — meaning 'I swear'), Ghanaian exclamations, BBC English from school, and London street slang into a single, shifting register. Through this voice, Kelman explores how language carries identity, how a child arrives at an idiom for a world that is too big and too violent for him. The pigeon's poetic interludes form a counter-voice — and when Harri's voice ends, the pigeon's is what is left. Storytelling, in the novel, is what makes a child a person; the loss of that voice at the end is the loss of Harri himself."
+                description="Harri's voice is the novel's main achievement and its central theme. He mixes Pidgin English ('Asweh' - meaning 'I swear'), Ghanaian exclamations, BBC English from school, and London street slang into a single, shifting register. Through this voice, Kelman explores how language carries identity, how a child arrives at an idiom for a world that is too big and too violent for him. The pigeon's poetic interludes form a counter-voice - and when Harri's voice ends, the pigeon's is what is left. Storytelling, in the novel, is what makes a child a person; the loss of that voice at the end is the loss of Harri himself."
               />
             </div>
           </Section>
@@ -430,22 +430,22 @@ export default function PigeonEnglishPage() {
               <QuoteCard
                 quote="Asweh"
                 speaker="Harri (used throughout)"
-                analysis="Harri's signature verbal tic, derived from Ghanaian Pidgin English meaning roughly 'I swear (to God)'. He sprinkles it through his narration as emphasis. The word marks his Ghanaian roots and his religious culture surviving inside London speech, and is one of the most distinctive features of Kelman's narrative voice. Every time Harri says 'Asweh' he is, however casually, calling on God to witness — which makes the novel's ending especially unbearable."
+                analysis="Harri's signature verbal tic, derived from Ghanaian Pidgin English meaning roughly 'I swear (to God)'. He sprinkles it through his narration as emphasis. The word marks his Ghanaian roots and his religious culture surviving inside London speech, and is one of the most distinctive features of Kelman's narrative voice. Every time Harri says 'Asweh' he is, however casually, calling on God to witness - which makes the novel's ending especially unbearable."
               />
               <QuoteCard
                 quote="Adjei!"
                 speaker="Harri"
-                analysis="A Ghanaian exclamation of pain, surprise or dismay used by Harri throughout the novel. Like 'Asweh', it is a marker of his Pidgin-English voice. Kelman keeps these phrases untranslated — the reader must absorb them by context, replicating Harri's own immersion in unfamiliar English speech. The bilingual texture insists on Harri's specific cultural identity rather than letting him be generic."
+                analysis="A Ghanaian exclamation of pain, surprise or dismay used by Harri throughout the novel. Like 'Asweh', it is a marker of his Pidgin-English voice. Kelman keeps these phrases untranslated - the reader must absorb them by context, replicating Harri's own immersion in unfamiliar English speech. The bilingual texture insists on Harri's specific cultural identity rather than letting him be generic."
               />
               <QuoteCard
                 quote="Hutless!"
                 speaker="Harri"
-                analysis="A piece of London slang meaning 'fearless' or 'reckless' that Harri picks up from older boys and uses with delight. The word demonstrates Harri's hunger to belong: he absorbs the estate's vocabulary even when he doesn't fully grasp its connotations. The very thing that thrills him — being 'hutless' — is what gets boys killed in the world he is investigating. The slang is innocent on his lips but lethal in its proper context."
+                analysis="A piece of London slang meaning 'fearless' or 'reckless' that Harri picks up from older boys and uses with delight. The word demonstrates Harri's hunger to belong: he absorbs the estate's vocabulary even when he doesn't fully grasp its connotations. The very thing that thrills him - being 'hutless' - is what gets boys killed in the world he is investigating. The slang is innocent on his lips but lethal in its proper context."
               />
               <QuoteCard
                 quote="Bo-styles"
                 speaker="Harri"
-                analysis="Another item of estate slang meaning roughly 'best style' or 'cool'. Harri uses it to praise trainers, hair, moves. Like 'hutless', it shows Harri performing membership in London street culture. The slang is glamour — the surface he can copy. The deeper structure of the gang world (loyalty, violence, silence) is what he cannot copy and ultimately cannot survive."
+                analysis="Another item of estate slang meaning roughly 'best style' or 'cool'. Harri uses it to praise trainers, hair, moves. Like 'hutless', it shows Harri performing membership in London street culture. The slang is glamour - the surface he can copy. The deeper structure of the gang world (loyalty, violence, silence) is what he cannot copy and ultimately cannot survive."
               />
               <QuoteCard
                 paraphrase
@@ -463,7 +463,7 @@ export default function PigeonEnglishPage() {
                 paraphrase
                 quote="Auntie Sonia deliberately burns her own fingertips so the immigration authorities cannot take her fingerprints, and Harri reports it without judgement."
                 speaker="Harri (describing Sonia)"
-                analysis="One of the novel's most-discussed images. The detail — reported by Harri without judgement — is appalling: a woman burns her own fingertips smooth so that the immigration authorities cannot identify her. It compresses a whole politics of borders, fear, and self-erasure into a single domestic object. Sonia is willing to mutilate her own body to remain in Britain; Britain's reward is that she is then beaten by Julius."
+                analysis="One of the novel's most-discussed images. The detail - reported by Harri without judgement - is appalling: a woman burns her own fingertips smooth so that the immigration authorities cannot identify her. It compresses a whole politics of borders, fear, and self-erasure into a single domestic object. Sonia is willing to mutilate her own body to remain in Britain; Britain's reward is that she is then beaten by Julius."
               />
               <QuoteCard
                 paraphrase
@@ -475,25 +475,25 @@ export default function PigeonEnglishPage() {
                 paraphrase
                 quote="At intervals the narrative breaks into short italicised passages spoken by a pigeon, giving an aerial, lyrical view of Harri, the estate and the city."
                 speaker="The pigeon (italicised interludes)"
-                analysis="The pigeon's italicised sections offer a poetic, aerial perspective on the estate, on Harri, on the city. They are short, lyrical, often rhythmic — more prose-poem than prose. Analytically, the pigeon's voice serves several functions: (i) it gives the reader information Harri cannot access; (ii) it lifts the novel into a register of myth and prayer; (iii) it provides the closing voice of the book when Harri is silenced."
+                analysis="The pigeon's italicised sections offer a poetic, aerial perspective on the estate, on Harri, on the city. They are short, lyrical, often rhythmic - more prose-poem than prose. Analytically, the pigeon's voice serves several functions: (i) it gives the reader information Harri cannot access; (ii) it lifts the novel into a register of myth and prayer; (iii) it provides the closing voice of the book when Harri is silenced."
               />
               <QuoteCard
                 paraphrase
                 quote="Harri describes members of the Dell Farm Crew with a mix of awe and fear, admiring their power, money and clothes even as he dreads them."
                 speaker="Harri"
-                analysis="Harri's narration reveals that the gang is glamorised in his eyes — they have power, money, the right trainers, the right walk. Kelman lets this glamour be felt, which is what makes his critique of gang culture far more unsettling than a simple denunciation."
+                analysis="Harri's narration reveals that the gang is glamorised in his eyes - they have power, money, the right trainers, the right walk. Kelman lets this glamour be felt, which is what makes his critique of gang culture far more unsettling than a simple denunciation."
               />
               <QuoteCard
                 paraphrase
                 quote="Harri's mother prays for the family's safety and for the relatives still in Ghana, and Harri reports her faith with respect."
                 speaker="Harri (describing Mamma)"
-                analysis="Prayer functions as both genuine comfort and tragic insufficiency — the novel respects the prayer while showing its failure to prevent the final violence. Kelman avoids easy mockery and easy salvation alike."
+                analysis="Prayer functions as both genuine comfort and tragic insufficiency - the novel respects the prayer while showing its failure to prevent the final violence. Kelman avoids easy mockery and easy salvation alike."
               />
               <QuoteCard
                 paraphrase
                 quote="Harri daydreams tenderly about his classmate Poppy Morgan, his first crush, in some of the novel's gentlest passages."
                 speaker="Harri"
-                analysis="Harri's crush on Poppy is the novel's most unguarded moment of hope. The Poppy episodes preserve pure adolescent tenderness inside an otherwise frightening narrative — proof that Harri is still a child capable of pure feeling."
+                analysis="Harri's crush on Poppy is the novel's most unguarded moment of hope. The Poppy episodes preserve pure adolescent tenderness inside an otherwise frightening narrative - proof that Harri is still a child capable of pure feeling."
               />
               <QuoteCard
                 paraphrase
@@ -511,7 +511,7 @@ export default function PigeonEnglishPage() {
                 paraphrase
                 quote="The boys repeatedly reassure themselves that their detective work is only a game and not really dangerous."
                 speaker="Harri and Dean"
-                analysis="The boys repeatedly remind themselves their detective work is only pretend. The reassurance becomes evidence that the game is, in fact, dangerous — a child's protective magic that the novel's ending dismantles."
+                analysis="The boys repeatedly remind themselves their detective work is only pretend. The reassurance becomes evidence that the game is, in fact, dangerous - a child's protective magic that the novel's ending dismantles."
               />
             </div>
           </Section>
@@ -1245,7 +1245,7 @@ export default function PigeonEnglishPage() {
             <span>
               <strong>{tr(`Verify quotations.`)}</strong> Always confirm wording against your
               edition before committing quotes to memory. Where this revision page marks a card{' '}
-              <strong>Paraphrase</strong>, it summarises the novel in our own words — find and check
+              <strong>Paraphrase</strong>, it summarises the novel in our own words - find and check
               a verbatim line in your text before quoting it.
             </span>
           </li>

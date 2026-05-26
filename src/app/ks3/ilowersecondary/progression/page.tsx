@@ -15,8 +15,8 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/progression'
 export const metadata: Metadata = {
   title: 'Progression',
   description:
-    'How KS3 English (Years 7–9) builds towards the iLowerSecondary ' +
-    'English exam, and where the qualification leads next — Pearson ' +
+    'How KS3 English (Years 7-9) builds towards the iLowerSecondary ' +
+    'English exam, and where the qualification leads next - Pearson ' +
     'Edexcel International GCSE English Language.',
   alternates: { canonical: PAGE_URL },
 }
@@ -63,7 +63,7 @@ export default async function ProgressionPage() {
 
       <h2>The KS3 build-up: Years 7 → 8 → 9</h2>
       <p>
-        {QUALIFICATION.contentSource} In other words, the exam does not test a separate syllabus —
+        {QUALIFICATION.contentSource} In other words, the exam does not test a separate syllabus -
         it tests how securely the core KS3 reading and writing skills have matured by the end of
         Year 9.
       </p>
@@ -79,7 +79,7 @@ export default async function ProgressionPage() {
           },
           {
             y: 'Year 9',
-            d: 'Mastery: evaluating writers’ methods and viewpoint, comparing non-fiction, controlled extended writing — the level the exam assesses.',
+            d: 'Mastery: evaluating writers’ methods and viewpoint, comparing non-fiction, controlled extended writing - the level the exam assesses.',
           },
         ].map((b) => (
           <div key={b.y} className="rounded-2xl border border-border/60 bg-card p-5">
@@ -91,7 +91,7 @@ export default async function ProgressionPage() {
         ))}
       </div>
       <p>
-        Explore the full KS3 scheme of work — yearly expectations, termly plans and weekly lessons —
+        Explore the full KS3 scheme of work - yearly expectations, termly plans and weekly lessons -
         on the <Link href="/ks3">KS3 English hub</Link>, and the{' '}
         <Link href="/ks3/skills">skill-code progression</Link> Y7→Y8→Y9.
       </p>
@@ -128,7 +128,7 @@ export default async function ProgressionPage() {
       <div className="not-prose my-6 grid gap-4 sm:grid-cols-2">
         <div className="rounded-xl border border-border/60 bg-card p-5">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-            Reading (skills 1.1–1.5)
+            Reading (skills 1.1-1.5)
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             {READING_SKILLS.map((s) => (
@@ -138,7 +138,7 @@ export default async function ProgressionPage() {
         </div>
         <div className="rounded-xl border border-border/60 bg-card p-5">
           <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-            Writing (skills 2.1–2.3)
+            Writing (skills 2.1-2.3)
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
             {WRITING_SKILLS.map((s) => (
@@ -150,7 +150,7 @@ export default async function ProgressionPage() {
 
       <h2>Where it leads next</h2>
       <p>
-        A pass on this qualification is reported as {QUALIFICATION.grades[0]}–
+        A pass on this qualification is reported as {QUALIFICATION.grades[0]}-
         {QUALIFICATION.grades[QUALIFICATION.grades.length - 1]}. It is built as the ideal
         preparation for:
       </p>
@@ -181,7 +181,7 @@ export default async function ProgressionPage() {
         </li>
         <li>
           Track yourself against{' '}
-          <Link href="/ks3/ilowersecondary/grade-targets">grade targets S1–S4</Link> and follow the{' '}
+          <Link href="/ks3/ilowersecondary/grade-targets">grade targets S1-S4</Link> and follow the{' '}
           <Link href="/ks3/ilowersecondary/study-plan">study plan</Link>.
         </li>
       </ol>

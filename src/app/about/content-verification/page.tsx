@@ -325,7 +325,7 @@ export default function ContentVerificationMethodologyPage() {
               <li>
                 <strong>Mark guidance remains formative, not official.</strong> We can tell a
                 student what a strong response looks like and where their writing falls short of
-                that. We cannot — and do not — award official marks.
+                that. We cannot - and do not - award official marks.
               </li>
             </ul>
           </div>
@@ -396,8 +396,8 @@ export default function ContentVerificationMethodologyPage() {
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
                 <li>Replace teacher professional judgement.</li>
-                <li>Award official exam marks — that remains with the exam board.</li>
-                <li>Guarantee accuracy on every response — errors are possible.</li>
+                <li>Award official exam marks - that remains with the exam board.</li>
+                <li>Guarantee accuracy on every response - errors are possible.</li>
                 <li>Substitute for the official specification or mark scheme.</li>
               </ul>
             </Card>

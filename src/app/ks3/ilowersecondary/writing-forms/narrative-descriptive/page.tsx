@@ -17,16 +17,16 @@ const ENTERTAIN = WRITING_PURPOSES.find((p) => p === 'entertain')!
 const DESCRIBE = WRITING_PURPOSES.find((p) => p === 'describe')!
 
 export const metadata: Metadata = {
-  title: 'Narrative & descriptive writing — KS3 iLowerSecondary English writing-forms guide',
+  title: 'Narrative & descriptive writing - KS3 iLowerSecondary English writing-forms guide',
   description:
-    'Master Section B narrative and descriptive writing: story arc, viewpoint, show-don’t-tell, dialogue punctuation, pace and endings; sensory imagery, zooming, expanded noun phrases, controlled figurative language and atmosphere — with two original annotated models.',
+    'Master Section B narrative and descriptive writing: story arc, viewpoint, show-don’t-tell, dialogue punctuation, pace and endings; sensory imagery, zooming, expanded noun phrases, controlled figurative language and atmosphere - with two original annotated models.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/narrative-descriptive',
   },
   openGraph: {
-    title: 'Narrative & descriptive writing — iLowerSecondary writing-forms guide',
+    title: 'Narrative & descriptive writing - iLowerSecondary writing-forms guide',
     description:
-      'How to control story arc, viewpoint and pace, and how to describe with sensory precision and atmosphere — with two original annotated models mapped to the mark grids.',
+      'How to control story arc, viewpoint and pace, and how to describe with sensory precision and atmosphere - with two original annotated models mapped to the mark grids.',
   },
 }
 
@@ -47,7 +47,7 @@ const NARRATIVE_CRAFT = [
   },
   {
     title: 'Dialogue, punctuated correctly',
-    body: 'Speech does work telling cannot: it reveals character and accelerates pace. But it must be demarcated accurately — new speaker, new line; speech marks enclosing the spoken words; the punctuation inside them.',
+    body: 'Speech does work telling cannot: it reveals character and accelerates pace. But it must be demarcated accurately - new speaker, new line; speech marks enclosing the spoken words; the punctuation inside them.',
   },
   {
     title: 'Pace',
@@ -55,7 +55,7 @@ const NARRATIVE_CRAFT = [
   },
   {
     title: 'A satisfying ending',
-    body: 'Resolve the question the opening raised — do not simply stop, and never end with "then I woke up". A controlled close that echoes an earlier image gives the piece coherence the top band rewards.',
+    body: 'Resolve the question the opening raised - do not simply stop, and never end with "then I woke up". A controlled close that echoes an earlier image gives the piece coherence the top band rewards.',
   },
 ]
 
@@ -76,7 +76,7 @@ const DESCRIPTIVE_CRAFT = [
   },
   {
     title: 'Zoom in and out',
-    body: 'Move like a camera. Open wide on the whole scene, then close in on one telling detail — a cracked tile, a single gull — then pull back. This deliberate movement gives a static description a structure.',
+    body: 'Move like a camera. Open wide on the whole scene, then close in on one telling detail - a cracked tile, a single gull - then pull back. This deliberate movement gives a static description a structure.',
   },
   {
     title: 'Expanded noun phrases',
@@ -88,7 +88,7 @@ const DESCRIPTIVE_CRAFT = [
   },
   {
     title: 'Atmosphere',
-    body: 'Decide the dominant feeling — unease, calm, wonder — before you write, then make every detail serve it. Description without a controlling mood is just a list.',
+    body: 'Decide the dominant feeling - unease, calm, wonder - before you write, then make every detail serve it. Description without a controlling mood is just a list.',
   },
   {
     title: 'Structural movement',
@@ -194,7 +194,7 @@ export default function NarrativeDescriptivePage() {
           className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
           <h2 id="dialogue" className="mb-3 font-heading text-2xl font-semibold text-foreground">
-            Dialogue punctuation — get this exactly right
+            Dialogue punctuation - get this exactly right
           </h2>
           <p className="mb-4 text-base leading-relaxed text-muted-foreground">
             Accurate speech punctuation is one of the clearest signals of written control. The grid
@@ -217,7 +217,7 @@ export default function NarrativeDescriptivePage() {
           </h2>
           <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             The first two sentences decide whether the reader leans in. Choose one technique
-            deliberately — never warm up with the weather or waking up.
+            deliberately - never warm up with the weather or waking up.
           </p>
           <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground">
             <li>
@@ -252,7 +252,7 @@ export default function NarrativeDescriptivePage() {
             id="narrative-model"
             className="mb-2 font-heading text-2xl font-semibold text-foreground"
           >
-            Original model — narrative
+            Original model - narrative
           </h2>
           <p className="mb-6 text-sm text-muted-foreground">
             An invented scene of roughly 230 words. Read it once for effect, then read the
@@ -293,19 +293,19 @@ export default function NarrativeDescriptivePage() {
 
           <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-              Why this earns marks — mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
+              Why this earns marks - mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
             </p>
             <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
               <li>
-                <strong>Form &amp; structure (WAO1):</strong> a clear arc — a return, a
-                confrontation withheld, a reconciliation — with a close that answers the opening
+                <strong>Form &amp; structure (WAO1):</strong> a clear arc - a return, a
+                confrontation withheld, a reconciliation - with a close that answers the opening
                 (&ldquo;She had come anyway&rdquo; resolves into a chosen, shared silence). This is
                 the &ldquo;complete control of paragraphs&rdquo; and &ldquo;coherence
                 throughout&rdquo; the top band describes.
               </li>
               <li>
                 <strong>Show, don&rsquo;t tell (WAO1):</strong> grief is never named; it is shown
-                through &ldquo;the careful gap&rdquo; and the inch it closes — stylistic features
+                through &ldquo;the careful gap&rdquo; and the inch it closes - stylistic features
                 that &ldquo;confidently fully support purpose&rdquo;.
               </li>
               <li>
@@ -314,7 +314,7 @@ export default function NarrativeDescriptivePage() {
               </li>
               <li>
                 <strong>Dialogue &amp; punctuation (WAO2):</strong> each new speaker starts a new
-                line; speech is correctly enclosed and demarcated — &ldquo;sentences demarcated
+                line; speech is correctly enclosed and demarcated - &ldquo;sentences demarcated
                 correctly and with sophisticated use of punctuation&rdquo;.
               </li>
               <li>
@@ -357,7 +357,7 @@ export default function NarrativeDescriptivePage() {
             Warning: describe, don&rsquo;t list
           </h2>
           <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-            The single most common way a description stalls is listing — naming many things quickly
+            The single most common way a description stalls is listing - naming many things quickly
             instead of inhabiting a few. Compare:
           </p>
           <div className="mb-3 rounded-lg bg-card p-4 border border-border/60">
@@ -391,11 +391,11 @@ export default function NarrativeDescriptivePage() {
             id="descriptive-model"
             className="mb-2 font-heading text-2xl font-semibold text-foreground"
           >
-            Original model — descriptive
+            Original model - descriptive
           </h2>
           <p className="mb-6 text-sm text-muted-foreground">
             An invented scene of roughly 235 words: a railway station at first light, with no story
-            — only movement through the space.
+            - only movement through the space.
           </p>
 
           <div className="rounded-lg bg-card p-5 border border-border/60">
@@ -427,18 +427,18 @@ export default function NarrativeDescriptivePage() {
 
           <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-              Why this earns marks — mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
+              Why this earns marks - mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
             </p>
             <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
               <li>
-                <strong>Structural movement (WAO1):</strong> the description travels — wide on the
+                <strong>Structural movement (WAO1):</strong> the description travels - wide on the
                 cold platform, up to the roof, down the rails, in to one pigeon, then out as the
                 train approaches. This deliberate organisation gives a plot-free piece
                 &ldquo;coherence throughout&rdquo;.
               </li>
               <li>
-                <strong>Atmosphere (WAO1):</strong> every detail serves one controlling mood —
-                stillness on the edge of arrival — so stylistic features &ldquo;fully support
+                <strong>Atmosphere (WAO1):</strong> every detail serves one controlling mood -
+                stillness on the edge of arrival - so stylistic features &ldquo;fully support
                 purpose&rdquo;.
               </li>
               <li>
@@ -454,7 +454,7 @@ export default function NarrativeDescriptivePage() {
               </li>
               <li>
                 <strong>Sentence range &amp; punctuation (WAO2):</strong> grammatically assured
-                sentences of varied length, correctly demarcated, with controlled commas — the
+                sentences of varied length, correctly demarcated, with controlled commas - the
                 top-band accuracy descriptor.
               </li>
             </ul>
@@ -467,12 +467,12 @@ export default function NarrativeDescriptivePage() {
           </h2>
           <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Section B is marked on two objectives. The annotations above point back to these
-            levelled descriptors. Notice how each level rewards <em>tighter</em> control — the
+            levelled descriptors. Notice how each level rewards <em>tighter</em> control - the
             journey to the top band is a journey from &ldquo;some&rdquo; to &ldquo;assured&rdquo;.
           </p>
 
           <h3 className="mb-3 font-heading text-lg font-semibold text-foreground">
-            WAO1 — form, communication and purpose
+            WAO1 - form, communication and purpose
           </h3>
           <div className="mb-8 space-y-4">
             {WAO1_GRID.map((row) => (
@@ -491,7 +491,7 @@ export default function NarrativeDescriptivePage() {
           </div>
 
           <h3 className="mb-3 font-heading text-lg font-semibold text-foreground">
-            WAO2 — grammar, punctuation and spelling
+            WAO2 - grammar, punctuation and spelling
           </h3>
           <div className="space-y-4">
             {WAO2_GRID.map((row) => (
@@ -521,7 +521,7 @@ export default function NarrativeDescriptivePage() {
           <div className="space-y-4">
             <div className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
               <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-                Prompt 1 — narrative
+                Prompt 1 - narrative
               </p>
               <p className="text-base italic leading-relaxed text-foreground">
                 &ldquo;Write a story that begins the moment a long-kept secret is about to be spoken
@@ -530,7 +530,7 @@ export default function NarrativeDescriptivePage() {
             </div>
             <div className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
               <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-                Prompt 2 — descriptive
+                Prompt 2 - descriptive
               </p>
               <p className="text-base italic leading-relaxed text-foreground">
                 &ldquo;Describe an empty place in the few minutes before it fills with people. Move

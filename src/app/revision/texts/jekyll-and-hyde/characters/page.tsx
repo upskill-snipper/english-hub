@@ -12,7 +12,7 @@ import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Locale hook ────────────────────────────────────────────── */
-// Mirrors useT() — reads the eh-lang cookie and re-renders when the
+// Mirrors useT() - reads the eh-lang cookie and re-renders when the
 // language toggle dispatches an `eh-lang-change` event.
 function useIsAr(): boolean {
   const [isAr, setIsAr] = useState(false)
@@ -112,7 +112,7 @@ const CHARACTERS: CharacterStudy[] = [
     analysis:
       'Hyde is younger, smaller, and filled with pure malice. Every character who meets him feels an instinctive revulsion they cannot quite explain -- Enfield calls it "something downright detestable," Utterson describes "Satan\'s signature" on his face, and the doctor at the trampling scene turns "sick and white with the desire to kill him." Hyde represents the primal, id-driven self freed from conscience and social restraint. Significantly, he is described as smaller than Jekyll because, as Jekyll explains, his evil side has been "less exercised" -- it has been repressed, not eliminated, and it is stunted from disuse. Stevenson\'s most unsettling achievement with Hyde is making his horror unnameable. Characters struggle to articulate what repels them about him, suggesting that the evil he represents is beyond rational description -- it is felt, not understood.',
     analysisAr:
-      'Hyde أصغر، وأقصر، ومليان حقد صرف. كل شخصية تقابله تحس بنفور غريزي ما تقدر تفسّره — Enfield يسميه "something downright detestable"، Utterson يصف وجهه بأنه "Satan\'s signature"، والطبيب اللي حضر مشهد الدوس يصير "sick and white with the desire to kill him". Hyde يمثّل النفس البدائية المدفوعة بالغرائز، متحرّرة من الضمير والقيود الاجتماعية. الملحوظ إنه موصوف بأنه أصغر من Jekyll لأن، كما يشرح Jekyll، جانبه الشرير كان "less exercised" — مكبوت، مو منعدم، ضعيف من قلّة الاستعمال. أعظم إنجاز مزعج لـ Stevenson مع Hyde إنه يخلّي رعبه بلا اسم. الشخصيات تكافح عشان تعبّر عن اللي ينفّرهم منه، وهذا يلمّح إن الشر اللي يمثّله فوق الوصف العقلاني — يتم الإحساس فيه، مو فهمه.',
+      'Hyde أصغر، وأقصر، ومليان حقد صرف. كل شخصية تقابله تحس بنفور غريزي ما تقدر تفسّره - Enfield يسميه "something downright detestable"، Utterson يصف وجهه بأنه "Satan\'s signature"، والطبيب اللي حضر مشهد الدوس يصير "sick and white with the desire to kill him". Hyde يمثّل النفس البدائية المدفوعة بالغرائز، متحرّرة من الضمير والقيود الاجتماعية. الملحوظ إنه موصوف بأنه أصغر من Jekyll لأن، كما يشرح Jekyll، جانبه الشرير كان "less exercised" - مكبوت، مو منعدم، ضعيف من قلّة الاستعمال. أعظم إنجاز مزعج لـ Stevenson مع Hyde إنه يخلّي رعبه بلا اسم. الشخصيات تكافح عشان تعبّر عن اللي ينفّرهم منه، وهذا يلمّح إن الشر اللي يمثّله فوق الوصف العقلاني - يتم الإحساس فيه، مو فهمه.',
     development:
       'Hyde grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant. His violence escalates from trampling a child to the frenzied murder of Sir Danvers Carew. Early on, he is cautious and cooperative (producing the cheque after the trampling); by Chapter 4, he is consumed by uncontrolled rage. This escalation mirrors the trajectory of addiction: the initial thrill requires increasing extremes to satisfy. By the end, Hyde has essentially consumed Jekyll, appearing spontaneously and requiring ever larger doses of the potion to be suppressed.',
     developmentAr:
@@ -164,7 +164,7 @@ const CHARACTERS: CharacterStudy[] = [
     analysis:
       'Utterson is the lens through which the reader experiences the mystery. He is rational, loyal, and deeply committed to propriety, yet he is also genuinely compassionate. His determination to protect Jekyll\'s reputation -- even when the evidence points towards something terrible -- mirrors the wider Victorian tendency to prioritise outward respectability over uncomfortable truths. Stevenson makes Utterson deliberately ordinary so that the Gothic horror strikes harder against a background of measured, lawyerly calm. Utterson is described as "lean, long, dusty, dreary," yet he inspires affection in those around him. He represents the best of Victorian respectability: reliable, discreet, and loyal. But his very virtues contribute to the tragedy: his reluctance to pry, his determination to think the best of Jekyll, and his instinct to protect reputation all delay the discovery of the truth.',
     analysisAr:
-      'Utterson هو العدسة اللي القارئ يعيش من خلالها اللغز. عقلاني، وفي، وملتزم بالأدب التزام عميق، ومع هذا رحيم بصدق. إصراره يحمي سمعة Jekyll — حتى لمن الدلائل تشير لشي رهيب — يعكس النزعة الفيكتورية العامة بتقديم مظهر الاحترام على الحقائق المزعجة. Stevenson تعمّد يخلّي Utterson عادياً، عشان الرعب القوطي يطيح أقوى لمن يجي على خلفية هدوء محامٍ متّزن. Utterson موصوف بأنه "lean, long, dusty, dreary"، ومع هذا يلهم محبّة في اللي حواليه. هو يمثّل أفضل ما في الاحترام الفيكتوري: موثوق، كتوم، ووفي. لكن فضائله نفسها تسهم في المأساة: تحفّظه عن التطفّل، إصراره يحسب الخير في Jekyll، وغريزته يحمي السمعة، كلها تأخّر كشف الحقيقة.',
+      'Utterson هو العدسة اللي القارئ يعيش من خلالها اللغز. عقلاني، وفي، وملتزم بالأدب التزام عميق، ومع هذا رحيم بصدق. إصراره يحمي سمعة Jekyll - حتى لمن الدلائل تشير لشي رهيب - يعكس النزعة الفيكتورية العامة بتقديم مظهر الاحترام على الحقائق المزعجة. Stevenson تعمّد يخلّي Utterson عادياً، عشان الرعب القوطي يطيح أقوى لمن يجي على خلفية هدوء محامٍ متّزن. Utterson موصوف بأنه "lean, long, dusty, dreary"، ومع هذا يلهم محبّة في اللي حواليه. هو يمثّل أفضل ما في الاحترام الفيكتوري: موثوق، كتوم، ووفي. لكن فضائله نفسها تسهم في المأساة: تحفّظه عن التطفّل، إصراره يحسب الخير في Jekyll، وغريزته يحمي السمعة، كلها تأخّر كشف الحقيقة.',
     development:
       "Utterson's arc is one of growing unease. He progresses from mild curiosity about Hyde to active investigation, from trust in Jekyll to suspicion, and finally from controlled inquiry to the violent act of breaking down Jekyll's door. This trajectory mirrors the reader's journey through the novella. Utterson never fully abandons his rational worldview, which is why the final revelations are so devastating: the truth exceeds anything his methodical mind could have imagined.",
     developmentAr:
@@ -370,7 +370,7 @@ export default function JekyllAndHydeCharactersPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Characters — Deep Study
+              Characters - Deep Study
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson

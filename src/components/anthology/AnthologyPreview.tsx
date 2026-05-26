@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * AnthologyPreview — On-screen document preview component
+ * AnthologyPreview - On-screen document preview component
  *
  * Renders an Anthology document inside a scaled iframe, preserving the
  * A4 print layout at any container width. Provides print and download buttons.

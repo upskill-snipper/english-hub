@@ -11,7 +11,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const course = allCourses.find((c) => c.id === params.courseId)
   if (!course) return {}
 
-  const title = `Final Assessment — ${course.title} | The English Hub`
+  const title = `Final Assessment - ${course.title} | The English Hub`
   const description = `Take the final assessment for ${course.title}. Test your knowledge across all modules and earn your Certificate of Achievement.`
 
   return {

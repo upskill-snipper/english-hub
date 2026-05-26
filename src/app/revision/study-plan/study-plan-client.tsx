@@ -105,7 +105,7 @@ interface StudyPlanAnswers {
 }
 
 // Icons are stored as STRING KEYS because the plan is JSON.stringified to
-// localStorage. React component references don't survive serialisation —
+// localStorage. React component references don't survive serialisation -
 // storing the component directly produced `{}` on reload and crashed the
 // page with "Element type is invalid" on `<task.icon />`.
 const ICON_MAP = {
@@ -284,7 +284,7 @@ function buildPlan(answers: StudyPlanAnswers, board: ExamBoard | null): PlannedW
     setTexts.find((t) => t.slug === 'an-inspector-calls') ??
     setTexts[0]
 
-  // Block library — each block has a focus theme and 3 linked tasks
+  // Block library - each block has a focus theme and 3 linked tasks
   const POETRY: PlannedTask = {
     title: 'Annotate two anthology poems',
     description: 'Read closely, mark techniques, and write a one-paragraph response to each.',
@@ -523,7 +523,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
     return savedPlan.weeks
   }, [savedPlan])
 
-  // Board-aware question set — reshapes the grade question's labels for
+  // Board-aware question set - reshapes the grade question's labels for
   // IAL / UK A-Level (A*-E) and Cambridge 0500 (A*-G). Values (4-5 / 6-7 /
   // 8-9) stay stable so downstream plan-builder logic doesn't branch.
   const boardQuestions = useMemo(() => questionsForBoard(board), [board])
@@ -543,7 +543,7 @@ export function StudyPlanClient({ initialBoard }: { initialBoard: ExamBoard | nu
       return
     }
 
-    // Last question — generate plan
+    // Last question - generate plan
     const fullAnswers = next as StudyPlanAnswers
     const generated = buildPlan(fullAnswers, board)
     const plan: SavedPlan = {

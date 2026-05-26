@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import AffiliateSettingsClient, { type AffiliateAccountSettings } from './AffiliateSettingsClient'
 import { t } from '@/lib/i18n/t'
 
-// 2026-05-13: metadata wired to i18n — document title resolves through
+// 2026-05-13: metadata wired to i18n - document title resolves through
 // `affiliates.settings.meta.title` so the AR locale serves Khaleeji copy.
 export async function generateMetadata(): Promise<Metadata> {
   return { title: await t('affiliates.settings.meta.title') }
@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 // ─── /affiliates/settings ──────────────────────────────────────────────────
 //
 // Reads from the NEW affiliate_accounts system (commit 20260420_affiliates_v2).
-// The legacy affiliates table path has been retired here — every self-serve
+// The legacy affiliates table path has been retired here - every self-serve
 // enrolment via /api/affiliate/signup writes to affiliate_accounts.
 //
 // Fixes the redirect-loop that bounced new-system affiliates to
@@ -39,7 +39,7 @@ export default async function AffiliateSettingsPage() {
     .eq('user_id', user.id)
     .maybeSingle()
 
-  // No row — send the user to the enrolment form (NOT /affiliates/apply,
+  // No row - send the user to the enrolment form (NOT /affiliates/apply,
   // which historically caused the redirect loop documented on the dashboard).
   if (!account) {
     redirect('/affiliates#apply')

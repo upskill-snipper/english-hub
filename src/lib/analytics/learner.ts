@@ -13,7 +13,7 @@
 //   * Topic derivation mirrors the heuristic used by the teacher dashboard
 //     widget: the leading non-digit prefix of `question_id` (e.g. `p12` →
 //     `p` → `poetry`). Falls back to `module_id` when present. Keeps this
-//     file self-contained — no join to a `quiz_questions` table (there
+//     file self-contained - no join to a `quiz_questions` table (there
 //     isn't a DB-side product-bank for these quizzes; see the migration
 //     header at 20260420_quiz_responses.sql).
 //   * Zero third-party deps. All shape/math logic is pure TS, so a unit
@@ -159,7 +159,7 @@ function bandForRate(rate: number): DifficultyBand {
  * Single query, O(N) aggregation where N is the number of responses this
  * user has recorded. At current scale (dozens of responses per active
  * user) this is negligible. If we outgrow in-app aggregation we can push
- * the windowed counts into SQL views — but the shape of the return is
+ * the windowed counts into SQL views - but the shape of the return is
  * stable, so consumers won't need to change.
  */
 export async function getLearnerSnapshot(
@@ -312,7 +312,7 @@ export async function getLearnerSnapshot(
   // correct-rate and count the TOTAL attempts in that band. This matches
   // the intent: "of all the questions I've answered, how many were hard
   // for me". If the user has only answered a question once, the rate is
-  // 0% or 100% — we still include it; the user signal is the count of
+  // 0% or 100% - we still include it; the user signal is the count of
   // attempts, not the confidence of the band.
   const bandCounts: Record<DifficultyBand, number> = {
     easy: 0,

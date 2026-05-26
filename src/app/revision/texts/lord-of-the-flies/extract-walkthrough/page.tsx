@@ -65,7 +65,7 @@ const cards: WalkCard[] = [
     kind: 'say',
     paraphrase:
       'The narrator describes thunder gathering over the mountain while Simon, fevered, climbs alone toward the parachutist.',
-    body: 'This is classic pathetic fallacy: the storm is the moral weather of the boys made visible. Golding does not separate the natural and the human worlds — the island broods because the children are about to.',
+    body: 'This is classic pathetic fallacy: the storm is the moral weather of the boys made visible. Golding does not separate the natural and the human worlds - the island broods because the children are about to.',
   },
   {
     kind: 'zoom-out',
@@ -76,7 +76,7 @@ const cards: WalkCard[] = [
   {
     kind: 'notice',
     fragment: 'the beast was harmless and horrible',
-    body: 'Simon, alone on the mountain, untangles the dead parachutist and grasps the central truth of the novel. Golding gives the revelation in plain monosyllables — no fanfare, no lyricism. The horror is that there is nothing supernatural here.',
+    body: 'Simon, alone on the mountain, untangles the dead parachutist and grasps the central truth of the novel. Golding gives the revelation in plain monosyllables - no fanfare, no lyricism. The horror is that there is nothing supernatural here.',
   },
   {
     kind: 'zoom-out',
@@ -87,7 +87,7 @@ const cards: WalkCard[] = [
   {
     kind: 'notice',
     fragment: 'kill the beast! cut his throat! spill his blood!',
-    body: 'The chant is short, percussive, end-stopped. Each clause is an imperative; each verb is an act of violence. Read aloud, the rhythm is almost iambic — Golding gives the mob a metre.',
+    body: 'The chant is short, percussive, end-stopped. Each clause is an imperative; each verb is an act of violence. Read aloud, the rhythm is almost iambic - Golding gives the mob a metre.',
   },
   {
     kind: 'say',
@@ -114,7 +114,7 @@ const cards: WalkCard[] = [
   },
   {
     kind: 'zoom-out',
-    body: 'Notice what Golding has done with the parliamentary order of the early chapters. The conch is not present. There is no chair, no speaker, no rule about who may talk. The institutions of civilisation are not destroyed in Chapter 9 — they are simply absent, and absence is enough.',
+    body: 'Notice what Golding has done with the parliamentary order of the early chapters. The conch is not present. There is no chair, no speaker, no rule about who may talk. The institutions of civilisation are not destroyed in Chapter 9 - they are simply absent, and absence is enough.',
   },
 
   // ── Simon as Christ-figure ─────────────────────────────────────
@@ -131,13 +131,13 @@ const cards: WalkCard[] = [
   },
   {
     kind: 'zoom-out',
-    body: "Critics sometimes find this passage sentimental. It is — deliberately. Golding is offering the only consolation his thesis will allow: nature can dignify Simon's body, but it cannot save him, and it cannot teach the boys what he died to say. The ocean takes the messenger; the message stays unread.",
+    body: "Critics sometimes find this passage sentimental. It is - deliberately. Golding is offering the only consolation his thesis will allow: nature can dignify Simon's body, but it cannot save him, and it cannot teach the boys what he died to say. The ocean takes the messenger; the message stays unread.",
   },
 ]
 
 /* ─── Model paragraph (~250 words) ────────────────────────────────── */
 
-const modelParagraph = `Simon's death in Chapter 9 is the moment Golding's thesis stops being implicit and becomes the structural truth of the novel. Throughout the early chapters, the conch, the meetings and the painstaking taxonomy of "littluns and biguns" sustain a recognisably English, parliamentary order: civilisation is the children's default, savagery a deviation from it. The killing inverts this. Once the chant begins — its imperatives short, end-stopped, almost metrical — the named boys dissolve into an anonymous "ring", and the narrator's free indirect style lets the boys' misrecognition colour the prose so that Simon, the only character granted moral sight, is briefly called "the beast" by the narrator himself. Golding is making a precise post-war argument. Writing in 1954, with Belsen and Buchenwald in living memory, he refuses the comfortable mid-century idea that fascism was a German aberration; his English schoolboys, cathedral choir and all, descend in days. The pathetic fallacy of the gathering storm reframes nature not as moral teacher but as mirror: the weather breaks because the children are about to. And the elegy that follows — Simon's body silvered by phosphorescence, borne out on the tide — denies us even the consolation of a usable martyrdom: nature can dignify the messenger but cannot deliver the message. Civilisation, the chapter insists, is not a possession but a thin veneer of habit, language and institution; remove the conch, the rules and the adults, and what is underneath is not innocence but the chant. That is Golding's whole novel, in one scene.`
+const modelParagraph = `Simon's death in Chapter 9 is the moment Golding's thesis stops being implicit and becomes the structural truth of the novel. Throughout the early chapters, the conch, the meetings and the painstaking taxonomy of "littluns and biguns" sustain a recognisably English, parliamentary order: civilisation is the children's default, savagery a deviation from it. The killing inverts this. Once the chant begins - its imperatives short, end-stopped, almost metrical - the named boys dissolve into an anonymous "ring", and the narrator's free indirect style lets the boys' misrecognition colour the prose so that Simon, the only character granted moral sight, is briefly called "the beast" by the narrator himself. Golding is making a precise post-war argument. Writing in 1954, with Belsen and Buchenwald in living memory, he refuses the comfortable mid-century idea that fascism was a German aberration; his English schoolboys, cathedral choir and all, descend in days. The pathetic fallacy of the gathering storm reframes nature not as moral teacher but as mirror: the weather breaks because the children are about to. And the elegy that follows - Simon's body silvered by phosphorescence, borne out on the tide - denies us even the consolation of a usable martyrdom: nature can dignify the messenger but cannot deliver the message. Civilisation, the chapter insists, is not a possession but a thin veneer of habit, language and institution; remove the conch, the rules and the adults, and what is underneath is not innocence but the chant. That is Golding's whole novel, in one scene.`
 
 /* ─── Page ────────────────────────────────────────────────────────── */
 
@@ -171,14 +171,14 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
         <header className="mb-8">
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">Lord of the Flies</Badge>
-            <Badge>Chapter 9 — A View to a Death</Badge>
+            <Badge>Chapter 9 - A View to a Death</Badge>
             <Badge variant="outline">Extract walkthrough</Badge>
           </div>
           <h1 className="mb-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Simon&apos;s death — extract walkthrough
+            Simon&apos;s death - extract walkthrough
           </h1>
           <p className="max-w-2xl text-muted-foreground">
-            How Golding stages the storm, the chant and the misrecognition that kills Simon — and
+            How Golding stages the storm, the chant and the misrecognition that kills Simon - and
             how the scene carries the central thesis of the whole novel. Read the cards in order;
             each <em>Notice</em> points at something concrete, each <em>Say</em> tells you what to
             write about it, and each <em>Zoom out</em> places it in the bigger argument.
@@ -216,7 +216,7 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
                   <blockquote className="mb-3 border-l-2 border-foreground/30 pl-3 text-sm italic text-foreground">
                     &ldquo;{card.fragment}&rdquo;
                     <span className="ml-2 not-italic text-xs text-muted-foreground">
-                      — Golding, Ch. 9
+                      - Golding, Ch. 9
                     </span>
                   </blockquote>
                 )}
@@ -249,13 +249,13 @@ export default function LordOfTheFliesExtractWalkthroughPage() {
           <div className="mb-4 flex items-center gap-2">
             <ScrollText className="size-5 text-muted-foreground" />
             <h2 className="text-xl font-semibold">
-              Model paragraph — Simon&apos;s death and the novel&apos;s thesis
+              Model paragraph - Simon&apos;s death and the novel&apos;s thesis
             </h2>
           </div>
           <p className="mb-4 text-sm text-muted-foreground">
             A single, exam-length paragraph (~250 words) showing how to link this scene to
             Golding&apos;s argument that civilisation is a thin veneer over savagery. Use it as a
-            target, not a script — your own paragraph should sound like you, not like this.
+            target, not a script - your own paragraph should sound like you, not like this.
           </p>
           <div className="rounded-lg border bg-background p-5">
             <p className="whitespace-pre-line text-[0.95rem] leading-relaxed">{modelParagraph}</p>

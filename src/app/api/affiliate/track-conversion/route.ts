@@ -14,7 +14,7 @@
  *
  * Request body:
  *   {
- *     external_id: string          // e.g. Stripe session ID — unique key
+ *     external_id: string          // e.g. Stripe session ID - unique key
  *     order_value_pence: number    // sale amount in minor units
  *     currency?: 'gbp'             // default gbp
  *     product_type?: 'subscription' | 'one_time' | 'course'
@@ -50,7 +50,7 @@ const EXTERNAL_ID_REGEX = /^[A-Za-z0-9_.:-]{3,200}$/
 //
 // The Stripe webhook handler at src/app/api/stripe/webhook/route.ts
 // already performs affiliate attribution internally via
-// attributeAffiliateReferral on checkout.session.completed — so this
+// attributeAffiliateReferral on checkout.session.completed - so this
 // endpoint has no known legitimate external caller.
 //
 // We lock it down with an INTERNAL_API_SECRET shared-secret header.
@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
 
     const admin = createServiceRoleClient()
 
-    // Idempotency guard — we must never double-count a conversion.
+    // Idempotency guard - we must never double-count a conversion.
     const { data: existing } = await admin
       .from('affiliate_conversions')
       .select('id')
@@ -157,7 +157,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Commission calculation — flat-rate tiered by lifetime signup count.
+    // Commission calculation - flat-rate tiered by lifetime signup count.
     // 19 April 2026: migrated from percentage-based to flat-rate (see
     // src/lib/affiliate/tiers.ts). order_value_pence is logged but no
     // longer used in the commission calculation; kept for accounting.
@@ -166,7 +166,7 @@ export async function POST(request: NextRequest) {
     // Schema-aligned tier value. The tier_at_conversion column is
     // constrained to 'bronze'/'silver'/'gold' (per
     // supabase/migrations/20260420_affiliates_v2.sql). The internal
-    // tier-1..tier-5 ladder is kept in scope for logs but not inserted —
+    // tier-1..tier-5 ladder is kept in scope for logs but not inserted -
     // we use the affiliate's stored tier value, which already passed
     // the CHECK on insert.
     const tierInfo = getCurrentTierInfo(referralCount + 1)

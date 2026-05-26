@@ -109,11 +109,11 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
   // Toggle topic selection
   const toggleTopic = (topic: Topic) => {
     setSelectedTopics((prev) =>
-      prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic]
+      prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic],
     )
   }
 
-  // Start quiz — filter by selected topics AND user's board
+  // Start quiz - filter by selected topics AND user's board
   const startQuiz = (count: number, mode: string, topics?: Topic[]) => {
     const t = topics && topics.length > 0 ? topics : undefined
     const questions = pickQuestions(count, t, board)
@@ -254,7 +254,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                 selectedTopics.length > 0
                   ? `Quick (${selectedTopics.map((t) => TOPIC_META[t].label).join(', ')})`
                   : 'Quick (Mixed)',
-                selectedTopics
+                selectedTopics,
               )
             }
             className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-border hover:shadow-card-hover"
@@ -286,7 +286,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                 selectedTopics.length > 0
                   ? `Full (${selectedTopics.map((t) => TOPIC_META[t].label).join(', ')})`
                   : 'Full (Mixed)',
-                selectedTopics
+                selectedTopics,
               )
             }
             className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-border hover:shadow-card-hover"
@@ -310,7 +310,7 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
             </div>
           </button>
 
-          {/* Mixed topic — uses all available topics for the user's board */}
+          {/* Mixed topic - uses all available topics for the user's board */}
           <button
             onClick={() => startQuiz(15, 'Mixed Topics', availableTopics)}
             className="group flex flex-col rounded-2xl border border-border/60 bg-card p-5 text-left transition-all duration-200 hover:border-border hover:shadow-card-hover"
@@ -351,10 +351,18 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60 bg-muted/30">
-                    <th className="px-4 py-3 text-left font-semibold text-muted-foreground">Date</th>
-                    <th className="px-4 py-3 text-left font-semibold text-muted-foreground">Mode</th>
-                    <th className="px-4 py-3 text-center font-semibold text-muted-foreground">Score</th>
-                    <th className="px-4 py-3 text-center font-semibold text-muted-foreground">Grade</th>
+                    <th className="px-4 py-3 text-left font-semibold text-muted-foreground">
+                      Date
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold text-muted-foreground">
+                      Mode
+                    </th>
+                    <th className="px-4 py-3 text-center font-semibold text-muted-foreground">
+                      Score
+                    </th>
+                    <th className="px-4 py-3 text-center font-semibold text-muted-foreground">
+                      Grade
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -406,11 +414,10 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
           Regular quizzing boosts long-term retention
         </h3>
         <p className="mx-auto mt-1 max-w-md text-body-sm text-muted-foreground">
-          Research shows that testing yourself is one of the most effective revision strategies.
-          Try a quick quiz every day to keep your knowledge sharp.
+          Research shows that testing yourself is one of the most effective revision strategies. Try
+          a quick quiz every day to keep your knowledge sharp.
         </p>
       </section>
     </div>
   )
 }
-

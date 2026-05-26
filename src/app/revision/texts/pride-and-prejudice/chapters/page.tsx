@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pride and Prejudice — Key Chapters Analysed | The English Hub',
+    title: 'Pride and Prejudice - Key Chapters Analysed | The English Hub',
     description:
       'Volume-by-volume and chapter-by-chapter analysis of Pride and Prejudice by Jane Austen with key quotations and exam-ready commentary.',
   },
-  title: 'Pride and Prejudice — Key Chapters Analysed',
+  title: 'Pride and Prejudice - Key Chapters Analysed',
   description:
     'Volume-by-volume and chapter-by-chapter analysis of Pride and Prejudice by Jane Austen with key quotations and exam-ready commentary.',
   alternates: {
@@ -44,17 +44,17 @@ const CHAPTERS: ChapterAnalysis[] = [
         quote:
           '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
         analysis:
-          'Austen\'s ironic opening inverts the real situation: it is the families with daughters who are in want of wealthy husbands. The word "universally" signals satire — this is a truth acknowledged only in the narrow world of the rural gentry. The sentence establishes Austen\'s narrative voice: witty, detached and quietly subversive.',
+          'Austen\'s ironic opening inverts the real situation: it is the families with daughters who are in want of wealthy husbands. The word "universally" signals satire - this is a truth acknowledged only in the narrow world of the rural gentry. The sentence establishes Austen\'s narrative voice: witty, detached and quietly subversive.',
       },
       {
         quote:
           '"You mistake me, my dear. I have a high respect for your nerves. They are my old friends. I have heard you mention them with consideration these twenty years at least."',
         analysis:
-          "Mr Bennet deflects his wife's anxiety with irony. His wit is entertaining but also reveals a habit of disengagement — he retreats into sarcasm rather than addressing real concerns. This foreshadows his failure to manage Lydia, which nearly destroys the family.",
+          "Mr Bennet deflects his wife's anxiety with irony. His wit is entertaining but also reveals a habit of disengagement - he retreats into sarcasm rather than addressing real concerns. This foreshadows his failure to manage Lydia, which nearly destroys the family.",
       },
     ],
     significance:
-      "The opening chapter introduces Austen's ironic narrative voice, establishes the economic pressures driving the marriage market, and presents the Bennet parents as contrasting approaches to life — one anxious and foolish, the other witty but negligent. It sets the comedic tone while embedding serious social commentary about women's dependence on marriage for financial security.",
+      "The opening chapter introduces Austen's ironic narrative voice, establishes the economic pressures driving the marriage market, and presents the Bennet parents as contrasting approaches to life - one anxious and foolish, the other witty but negligent. It sets the comedic tone while embedding serious social commentary about women's dependence on marriage for financial security.",
   },
   {
     chapter: 'Volume I, Chapter 3',
@@ -66,11 +66,11 @@ const CHAPTERS: ChapterAnalysis[] = [
         quote:
           '"She is tolerable; but not handsome enough to tempt me; and I am in no humour at present to give consequence to young ladies who are slighted by other men."',
         analysis:
-          'Darcy\'s dismissal of Elizabeth is the inciting moment of the novel\'s central relationship. The word "consequence" reveals his class arrogance — he believes his attention would elevate her. Elizabeth overhears this and responds with amused contempt, but it also plants a prejudice against Darcy that will take the entire novel to overcome.',
+          'Darcy\'s dismissal of Elizabeth is the inciting moment of the novel\'s central relationship. The word "consequence" reveals his class arrogance - he believes his attention would elevate her. Elizabeth overhears this and responds with amused contempt, but it also plants a prejudice against Darcy that will take the entire novel to overcome.',
       },
       {
         quote:
-          '"He is just what a young man ought to be — sensible, good humoured, lively; and I never saw such happy manners!"',
+          '"He is just what a young man ought to be - sensible, good humoured, lively; and I never saw such happy manners!"',
         analysis:
           "Jane's praise of Bingley is characteristically generous and unguarded. Her openness contrasts with Darcy's reserve and with Elizabeth's sharper judgement. Austen uses Jane to demonstrate a kind of goodness that, while admirable, also leaves her vulnerable to being hurt.",
       },
@@ -87,7 +87,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       {
         quote: '"My good opinion once lost is lost for ever."',
         analysis:
-          "Darcy presents his stubbornness as moral consistency, but Austen shows it to be a form of pride — the inability to revise one's judgement. This flaw is central to the novel's argument: true virtue requires the willingness to change one's mind when confronted with new evidence.",
+          "Darcy presents his stubbornness as moral consistency, but Austen shows it to be a form of pride - the inability to revise one's judgement. This flaw is central to the novel's argument: true virtue requires the willingness to change one's mind when confronted with new evidence.",
       },
       {
         quote:
@@ -109,11 +109,11 @@ const CHAPTERS: ChapterAnalysis[] = [
         quote:
           '"I can much more easily believe Mr Bingley to be imposed on, than that Mr Wickham should invent such a history of himself as he gave me last night."',
         analysis:
-          'Elizabeth reveals the core of her prejudice: she interprets all evidence through her initial dislike of Darcy. She cannot conceive that Wickham — who is pleasant and flattering — might be dishonest. Austen dramatises how charm and agreeableness are poor indicators of character.',
+          'Elizabeth reveals the core of her prejudice: she interprets all evidence through her initial dislike of Darcy. She cannot conceive that Wickham - who is pleasant and flattering - might be dishonest. Austen dramatises how charm and agreeableness are poor indicators of character.',
       },
     ],
     significance:
-      "Wickham's lies are the most important test of Elizabeth's judgement, and she fails it entirely. Austen shows that Elizabeth's intelligence does not protect her from prejudice — in fact, her cleverness allows her to construct increasingly elaborate rationalisations for her wrong opinion. The reader is also deceived, which makes Elizabeth's later self-correction all the more powerful.",
+      "Wickham's lies are the most important test of Elizabeth's judgement, and she fails it entirely. Austen shows that Elizabeth's intelligence does not protect her from prejudice - in fact, her cleverness allows her to construct increasingly elaborate rationalisations for her wrong opinion. The reader is also deceived, which makes Elizabeth's later self-correction all the more powerful.",
   },
   {
     chapter: 'Volume II, Chapter 11 (Chapter 34)',
@@ -125,18 +125,18 @@ const CHAPTERS: ChapterAnalysis[] = [
         quote:
           '"In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you."',
         analysis:
-          'Darcy\'s declaration is passionate but catastrophically framed. Words like "struggled" and "repressed" reveal that he sees loving Elizabeth as a weakness to overcome, not a joy to celebrate. "You must allow me" is almost a command — he cannot conceive of being refused.',
+          'Darcy\'s declaration is passionate but catastrophically framed. Words like "struggled" and "repressed" reveal that he sees loving Elizabeth as a weakness to overcome, not a joy to celebrate. "You must allow me" is almost a command - he cannot conceive of being refused.',
       },
       {
         quote:
           '"Could you expect me to rejoice in the inferiority of your connections? To congratulate myself on the hope of relations, whose condition in life is so decidedly beneath my own?"',
         analysis:
-          "Darcy's honesty is genuinely shocking. He lays bare the class prejudice that governs Regency society — and that he has internalised completely. Austen forces the reader to see how even sincere love can be distorted by snobbery.",
+          "Darcy's honesty is genuinely shocking. He lays bare the class prejudice that governs Regency society - and that he has internalised completely. Austen forces the reader to see how even sincere love can be distorted by snobbery.",
       },
       {
         quote: '"You are the last man in the world whom I could ever be prevailed on to marry."',
         analysis:
-          'Elizabeth\'s rejection is absolute and devastating. The superlative "last man in the world" matches Darcy\'s extremism. Both characters are at their most proud and most prejudiced in this scene — their worst selves fully exposed.',
+          'Elizabeth\'s rejection is absolute and devastating. The superlative "last man in the world" matches Darcy\'s extremism. Both characters are at their most proud and most prejudiced in this scene - their worst selves fully exposed.',
       },
     ],
     significance:
@@ -146,7 +146,7 @@ const CHAPTERS: ChapterAnalysis[] = [
     chapter: 'Volume II, Chapter 12 (Chapter 35)',
     title: "Darcy's letter",
     summary:
-      "The morning after the proposal, Darcy gives Elizabeth a long letter. He explains that he separated Jane and Bingley because he genuinely believed Jane did not return Bingley's feelings, and he provides the true history of Wickham — including Wickham's attempted elopement with Darcy's fifteen-year-old sister, Georgiana. Elizabeth reads the letter twice and is forced to confront the extent of her own misjudgement.",
+      "The morning after the proposal, Darcy gives Elizabeth a long letter. He explains that he separated Jane and Bingley because he genuinely believed Jane did not return Bingley's feelings, and he provides the true history of Wickham - including Wickham's attempted elopement with Darcy's fifteen-year-old sister, Georgiana. Elizabeth reads the letter twice and is forced to confront the extent of her own misjudgement.",
     keyQuotes: [
       {
         quote: '"I have been a selfish being all my life, in practice, though not in principle."',
@@ -155,14 +155,14 @@ const CHAPTERS: ChapterAnalysis[] = [
       },
       {
         quote:
-          '"How despicably have I acted! I, who have prided myself on my discernment! — I, who have valued myself on my abilities!"',
+          '"How despicably have I acted! I, who have prided myself on my discernment! - I, who have valued myself on my abilities!"',
         analysis:
           'Elizabeth\'s self-reproach is one of Austen\'s greatest moments. The repetition of "I" dramatises her recognition that her pride in her own intelligence was itself a form of vanity. She realises that her prejudice was not evidence-based but emotional, and that she has been as blind as the people she mocked.',
       },
       {
         quote: '"Till this moment, I never knew myself."',
         analysis:
-          "This is the novel's most important single sentence. Elizabeth achieves genuine self-knowledge — the Socratic ideal that Austen places at the heart of moral growth. The sentence is devastating in its simplicity. All her wit, all her confidence, has been built on a foundation of self-deception.",
+          "This is the novel's most important single sentence. Elizabeth achieves genuine self-knowledge - the Socratic ideal that Austen places at the heart of moral growth. The sentence is devastating in its simplicity. All her wit, all her confidence, has been built on a foundation of self-deception.",
       },
     ],
     significance:
@@ -172,34 +172,34 @@ const CHAPTERS: ChapterAnalysis[] = [
     chapter: 'Volume III, Chapter 1 (Chapter 43)',
     title: 'Elizabeth visits Pemberley',
     summary:
-      "Elizabeth tours Darcy's estate with the Gardiners during their Derbyshire trip. She is deeply impressed by the beauty and taste of the house and grounds, and even more by the housekeeper Mrs Reynolds, who speaks of Darcy with genuine warmth and respect. Darcy himself arrives unexpectedly and treats the Gardiners — Elizabeth's trade-connected relatives — with perfect courtesy, a dramatic reversal of his earlier snobbery.",
+      "Elizabeth tours Darcy's estate with the Gardiners during their Derbyshire trip. She is deeply impressed by the beauty and taste of the house and grounds, and even more by the housekeeper Mrs Reynolds, who speaks of Darcy with genuine warmth and respect. Darcy himself arrives unexpectedly and treats the Gardiners - Elizabeth's trade-connected relatives - with perfect courtesy, a dramatic reversal of his earlier snobbery.",
     keyQuotes: [
       {
         quote: '"And of this place, thought she, I might have been mistress!"',
         analysis:
-          "Elizabeth's thought is not simply mercenary — Pemberley represents taste, responsibility and stewardship. Her admiration for the house mirrors her growing admiration for its owner. Austen uses the estate as an outward expression of Darcy's inner character: well-ordered, generous and beautiful.",
+          "Elizabeth's thought is not simply mercenary - Pemberley represents taste, responsibility and stewardship. Her admiration for the house mirrors her growing admiration for its owner. Austen uses the estate as an outward expression of Darcy's inner character: well-ordered, generous and beautiful.",
       },
       {
         quote:
           '"He is the best landlord, and the best master that ever lived... There is not one of his tenants or servants but what will give him a good name."',
         analysis:
-          "Mrs Reynolds's testimony is crucial evidence. A man's treatment of those who depend on him — tenants and servants — reveals his true character more reliably than his behaviour in a ballroom. Austen privileges domestic virtue over social performance.",
+          "Mrs Reynolds's testimony is crucial evidence. A man's treatment of those who depend on him - tenants and servants - reveals his true character more reliably than his behaviour in a ballroom. Austen privileges domestic virtue over social performance.",
       },
     ],
     significance:
-      "Pemberley is the novel's most important symbolic space. Elizabeth sees Darcy's character reflected in his estate: responsible, tasteful, generous to dependents. Her prejudice was formed in the artificial social settings of balls and drawing rooms; it begins to dissolve when she encounters the real substance of Darcy's life. The scene also shows Darcy's transformation — his courtesy to the Gardiners proves he has listened to Elizabeth's reproaches.",
+      "Pemberley is the novel's most important symbolic space. Elizabeth sees Darcy's character reflected in his estate: responsible, tasteful, generous to dependents. Her prejudice was formed in the artificial social settings of balls and drawing rooms; it begins to dissolve when she encounters the real substance of Darcy's life. The scene also shows Darcy's transformation - his courtesy to the Gardiners proves he has listened to Elizabeth's reproaches.",
   },
   {
     chapter: 'Volume III, Chapters 4-6 (Chapters 46-48)',
     title: "Lydia's elopement with Wickham",
     summary:
-      "Elizabeth receives letters from Jane revealing that Lydia has eloped with Wickham without any prospect of marriage — a scandal that would destroy the entire family's reputation and ruin the other sisters' marriage prospects. Elizabeth blames herself for not exposing Wickham's true character. Darcy, who is present when she receives the news, quietly leaves. Mr Bennet travels to London to find Lydia, but it is Darcy who ultimately locates the couple and bribes Wickham into marrying her.",
+      "Elizabeth receives letters from Jane revealing that Lydia has eloped with Wickham without any prospect of marriage - a scandal that would destroy the entire family's reputation and ruin the other sisters' marriage prospects. Elizabeth blames herself for not exposing Wickham's true character. Darcy, who is present when she receives the news, quietly leaves. Mr Bennet travels to London to find Lydia, but it is Darcy who ultimately locates the couple and bribes Wickham into marrying her.",
     keyQuotes: [
       {
         quote:
-          '"I am afraid Mr Darcy — you must be gone. I can conceal it no longer. Lydia is — gone off — to Scotland, perhaps. She is gone off with Wickham!"',
+          '"I am afraid Mr Darcy - you must be gone. I can conceal it no longer. Lydia is - gone off - to Scotland, perhaps. She is gone off with Wickham!"',
         analysis:
-          "Elizabeth's broken, fragmented speech reveals genuine distress — a sharp contrast to her usual eloquence. The dashes mimic her inability to process the catastrophe. That she turns instinctively to Darcy, the man she once despised, shows how completely her feelings have changed.",
+          "Elizabeth's broken, fragmented speech reveals genuine distress - a sharp contrast to her usual eloquence. The dashes mimic her inability to process the catastrophe. That she turns instinctively to Darcy, the man she once despised, shows how completely her feelings have changed.",
       },
       {
         quote:
@@ -209,7 +209,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       },
     ],
     significance:
-      "The Lydia crisis is the novel's climactic test. It forces every character to reveal their true nature: Mr Bennet's negligence, Mrs Bennet's hysteria, Darcy's quiet generosity, Elizabeth's matured judgement. It also demonstrates the real-world consequences of the themes Austen has been exploring — pride, prejudice, reputation, class — by showing how a single reckless act can destroy a family's standing in society.",
+      "The Lydia crisis is the novel's climactic test. It forces every character to reveal their true nature: Mr Bennet's negligence, Mrs Bennet's hysteria, Darcy's quiet generosity, Elizabeth's matured judgement. It also demonstrates the real-world consequences of the themes Austen has been exploring - pride, prejudice, reputation, class - by showing how a single reckless act can destroy a family's standing in society.",
   },
   {
     chapter: 'Volume III, Chapter 16 (Chapter 58)',
@@ -221,17 +221,17 @@ const CHAPTERS: ChapterAnalysis[] = [
         quote:
           '"You taught me a lesson, hard indeed at first, but most advantageous. By you, I was properly humbled."',
         analysis:
-          "Darcy's language has completely changed from the first proposal. Instead of emphasising Elizabeth's inferiority, he acknowledges his own debt to her. \"Properly humbled\" — not crushed or degraded, but rightly brought to self-knowledge. This is Austen's model of moral education: painful but ultimately liberating.",
+          "Darcy's language has completely changed from the first proposal. Instead of emphasising Elizabeth's inferiority, he acknowledges his own debt to her. \"Properly humbled\" - not crushed or degraded, but rightly brought to self-knowledge. This is Austen's model of moral education: painful but ultimately liberating.",
       },
       {
         quote:
           '"I was given good principles, but left to follow them in pride and conceit... I was spoilt by my parents, who... allowed, encouraged, almost taught me to be selfish and overbearing."',
         analysis:
-          'Darcy traces the origin of his pride to his upbringing — good values poorly applied. Austen suggests that character is not fixed at birth but shaped by education and environment, and that recognising this is the first step toward genuine virtue.',
+          'Darcy traces the origin of his pride to his upbringing - good values poorly applied. Austen suggests that character is not fixed at birth but shaped by education and environment, and that recognising this is the first step toward genuine virtue.',
       },
     ],
     significance:
-      'The second proposal mirrors and corrects the first. Where Darcy was arrogant, he is now humble; where Elizabeth was furious, she is now grateful. Both have undergone genuine moral growth. Austen structures the novel as a double education: each protagonist teaches the other to see past their own blind spots. The marriage that results is presented as a true partnership of equals — the ideal that the novel has been working toward from its opening sentence.',
+      'The second proposal mirrors and corrects the first. Where Darcy was arrogant, he is now humble; where Elizabeth was furious, she is now grateful. Both have undergone genuine moral growth. Austen structures the novel as a double education: each protagonist teaches the other to see past their own blind spots. The marriage that results is presented as a true partnership of equals - the ideal that the novel has been working toward from its opening sentence.',
   },
 ]
 

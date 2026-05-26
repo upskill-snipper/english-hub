@@ -483,7 +483,7 @@ function CommunicationTab() {
   async function handleSave() {
     setSaving(true)
     try {
-      // Stub: PUT /api/user/communication — simulated until endpoint exists
+      // Stub: PUT /api/user/communication - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500))
 
       setInitial({ productUpdates, tipsContent, marketing })
@@ -704,7 +704,7 @@ function DataPrivacyTab() {
   async function handleDownloadData() {
     setDownloading(true)
     try {
-      // Stub: POST /api/user/data-export — simulated until endpoint exists
+      // Stub: POST /api/user/data-export - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1000))
       toast(
         'success',
@@ -722,7 +722,7 @@ function DataPrivacyTab() {
 
     setDeleting(true)
     try {
-      // Stub: DELETE /api/user/account — simulated until endpoint exists
+      // Stub: DELETE /api/user/account - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1000))
       toast('info', 'Account deletion has been initiated.')
       setShowDeleteModal(false)

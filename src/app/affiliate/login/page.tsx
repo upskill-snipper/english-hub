@@ -32,7 +32,7 @@ export default function AffiliateLoginPage() {
       return
     }
     setLoading(true)
-    // Phase-7: Supabase — use signInWithPassword
+    // Phase-7: Supabase - use signInWithPassword
     setTimeout(() => {
       const existing = getAccount()
       if (!existing) {

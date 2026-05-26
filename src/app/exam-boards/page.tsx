@@ -9,7 +9,7 @@ import { tMany, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'GCSE and IGCSE English exam boards covered — The English Hub',
+    title: 'GCSE and IGCSE English exam boards covered - The English Hub',
     description:
       'Six exam boards covered: AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE, Pearson Edexcel IGCSE. Pick yours and revise the way examiners actually mark.',
   },
@@ -191,7 +191,7 @@ export default async function ExamBoardsPage() {
   }))
   const ALL_BOARDS = [...GCSE_BOARDS, ...IGCSE_BOARDS]
 
-  // Resolve EN-level GCSE/IGCSE labels for the LevelChip aria — kept inline.
+  // Resolve EN-level GCSE/IGCSE labels for the LevelChip aria - kept inline.
   const tLevelGcse = await t('exam_boards.level.gcse')
   const tLevelIgcse = await t('exam_boards.level.igcse')
 

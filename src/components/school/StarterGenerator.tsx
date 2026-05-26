@@ -70,7 +70,7 @@ function useCountdown(initialSeconds: number) {
       setIsRunning(false)
       setSeconds(newSeconds ?? initialSeconds)
     },
-    [initialSeconds]
+    [initialSeconds],
   )
 
   return { seconds, isRunning, start, pause, reset }
@@ -139,13 +139,8 @@ function FilterPanel({
       {open && (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground">
-              Activity Type
-            </label>
-            <Select
-              value={filters.type}
-              onValueChange={(v) => onChange({ ...filters, type: v })}
-            >
+            <label className="text-xs font-medium text-muted-foreground">Activity Type</label>
+            <Select value={filters.type} onValueChange={(v) => onChange({ ...filters, type: v })}>
               <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
@@ -161,13 +156,8 @@ function FilterPanel({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground">
-              Set Text
-            </label>
-            <Select
-              value={filters.text}
-              onValueChange={(v) => onChange({ ...filters, text: v })}
-            >
+            <label className="text-xs font-medium text-muted-foreground">Set Text</label>
+            <Select value={filters.text} onValueChange={(v) => onChange({ ...filters, text: v })}>
               <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
@@ -183,9 +173,7 @@ function FilterPanel({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground">
-              Exam Board
-            </label>
+            <label className="text-xs font-medium text-muted-foreground">Exam Board</label>
             <Select
               value={filters.examBoard}
               onValueChange={(v) => onChange({ ...filters, examBoard: v })}
@@ -205,9 +193,7 @@ function FilterPanel({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground">
-              Year Group
-            </label>
+            <label className="text-xs font-medium text-muted-foreground">Year Group</label>
             <Select
               value={filters.yearGroup}
               onValueChange={(v) => onChange({ ...filters, yearGroup: v })}
@@ -227,13 +213,8 @@ function FilterPanel({
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-medium text-muted-foreground">
-              Skill
-            </label>
-            <Select
-              value={filters.skill}
-              onValueChange={(v) => onChange({ ...filters, skill: v })}
-            >
+            <label className="text-xs font-medium text-muted-foreground">Skill</label>
+            <Select value={filters.skill} onValueChange={(v) => onChange({ ...filters, skill: v })}>
               <SelectTrigger className="w-full">
                 <SelectValue />
               </SelectTrigger>
@@ -250,11 +231,7 @@ function FilterPanel({
 
           {hasActiveFilters && (
             <div className="flex items-end sm:col-span-2 lg:col-span-3 xl:col-span-5">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => onChange(INITIAL_FILTERS)}
-              >
+              <Button variant="ghost" size="sm" onClick={() => onChange(INITIAL_FILTERS)}>
                 <RotateCcw className="size-3.5" />
                 Clear filters
               </Button>
@@ -276,9 +253,7 @@ function TimerOverlay({
   onClose: () => void
 }) {
   const [selectedMinutes, setSelectedMinutes] = useState(durationMinutes)
-  const { seconds, isRunning, start, pause, reset } = useCountdown(
-    selectedMinutes * 60
-  )
+  const { seconds, isRunning, start, pause, reset } = useCountdown(selectedMinutes * 60)
 
   const progress = 1 - seconds / (selectedMinutes * 60)
   const isFinished = seconds === 0 && !isRunning
@@ -294,9 +269,7 @@ function TimerOverlay({
           <X className="size-5" />
         </button>
 
-        <p className="text-sm font-medium text-muted-foreground">
-          Starter Timer
-        </p>
+        <p className="text-sm font-medium text-muted-foreground">Starter Timer</p>
 
         {/* Circular progress */}
         <div className="relative flex size-48 items-center justify-center">
@@ -326,23 +299,21 @@ function TimerOverlay({
                   ? 'text-destructive'
                   : seconds <= 30
                     ? 'text-orange-500'
-                    : 'text-primary'
+                    : 'text-primary',
               )}
             />
           </svg>
           <span
             className={cn(
               'text-5xl font-bold tabular-nums tracking-tight',
-              isFinished && 'animate-pulse text-destructive'
+              isFinished && 'animate-pulse text-destructive',
             )}
           >
             {formatTime(seconds)}
           </span>
         </div>
 
-        {isFinished && (
-          <p className="text-lg font-semibold text-destructive">Time is up!</p>
-        )}
+        {isFinished && <p className="text-lg font-semibold text-destructive">Time is up!</p>}
 
         {/* Duration selector */}
         <div className="flex items-center gap-2">
@@ -358,7 +329,7 @@ function TimerOverlay({
                 'rounded-full px-3 py-1 text-sm font-medium transition-colors',
                 selectedMinutes === m
                   ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  : 'bg-muted text-muted-foreground hover:bg-muted/80',
               )}
             >
               {m} min
@@ -380,11 +351,7 @@ function TimerOverlay({
               Pause
             </Button>
           )}
-          <Button
-            onClick={() => reset(selectedMinutes * 60)}
-            variant="outline"
-            size="lg"
-          >
+          <Button onClick={() => reset(selectedMinutes * 60)} variant="outline" size="lg">
             <RotateCcw className="size-4" />
             Reset
           </Button>
@@ -429,11 +396,7 @@ function FullscreenView({
             Timer
           </Button>
           <Button variant="outline" size="sm" onClick={onToggleAnswers}>
-            {showAnswers ? (
-              <EyeOff className="size-3.5" />
-            ) : (
-              <Eye className="size-3.5" />
-            )}
+            {showAnswers ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
             {showAnswers ? 'Hide Answers' : 'Show Answers'}
           </Button>
           <Button variant="ghost" size="icon-sm" onClick={onClose}>
@@ -445,9 +408,7 @@ function FullscreenView({
       {/* Content */}
       <div className="flex flex-1 flex-col items-center justify-center overflow-auto p-8">
         <div className="w-full max-w-4xl space-y-8 text-center">
-          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-            {activity.title}
-          </h1>
+          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">{activity.title}</h1>
 
           <div className="mx-auto max-w-3xl rounded-xl bg-muted/40 p-8">
             <p className="whitespace-pre-line text-xl leading-relaxed lg:text-2xl">
@@ -466,9 +427,7 @@ function FullscreenView({
               <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
                 Answers / Guidance
               </p>
-              <p className="whitespace-pre-line text-lg leading-relaxed">
-                {activity.answers}
-              </p>
+              <p className="whitespace-pre-line text-lg leading-relaxed">{activity.answers}</p>
             </div>
           )}
         </div>
@@ -508,12 +467,7 @@ function ActivityCard({
             <CardTitle className="text-lg">{activity.title}</CardTitle>
           </div>
           <div className="flex items-center gap-1">
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              onClick={onTimer}
-              title="Start timer"
-            >
+            <Button variant="ghost" size="icon-sm" onClick={onTimer} title="Start timer">
               <Timer className="size-4" />
             </Button>
             <Button
@@ -529,9 +483,7 @@ function ActivityCard({
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="rounded-lg bg-muted/40 p-4">
-          <p className="whitespace-pre-line text-sm leading-relaxed">
-            {activity.content}
-          </p>
+          <p className="whitespace-pre-line text-sm leading-relaxed">{activity.content}</p>
         </div>
 
         <div>
@@ -550,18 +502,12 @@ function ActivityCard({
               onClick={() => setShowAnswers(!showAnswers)}
               className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary transition-colors hover:text-primary/80"
             >
-              {showAnswers ? (
-                <EyeOff className="size-3" />
-              ) : (
-                <Eye className="size-3" />
-              )}
+              {showAnswers ? <EyeOff className="size-3" /> : <Eye className="size-3" />}
               {showAnswers ? 'Hide Answers' : 'Show Answers'}
             </button>
             {showAnswers && (
               <div className="mt-2 rounded-lg border border-primary/20 bg-primary/5 p-3">
-                <p className="whitespace-pre-line text-sm leading-relaxed">
-                  {activity.answers}
-                </p>
+                <p className="whitespace-pre-line text-sm leading-relaxed">{activity.answers}</p>
               </div>
             )}
           </div>
@@ -637,8 +583,7 @@ function handlePrint(activity: StarterActivity) {
 
 export function StarterGenerator() {
   const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS)
-  const [currentActivity, setCurrentActivity] =
-    useState<StarterActivity | null>(null)
+  const [currentActivity, setCurrentActivity] = useState<StarterActivity | null>(null)
   const [fullscreen, setFullscreen] = useState(false)
   const [showTimer, setShowTimer] = useState(false)
   const [showAnswersFullscreen, setShowAnswersFullscreen] = useState(false)
@@ -648,18 +593,9 @@ export function StarterGenerator() {
     return starterActivities.filter((a) => {
       if (filters.type !== 'all' && a.type !== filters.type) return false
       if (filters.text !== 'all' && a.text !== filters.text) return false
-      if (
-        filters.examBoard !== 'all' &&
-        !a.examBoard.includes(filters.examBoard)
-      )
-        return false
-      if (
-        filters.yearGroup !== 'all' &&
-        !a.yearGroup.includes(filters.yearGroup)
-      )
-        return false
-      if (filters.skill !== 'all' && !a.skills.includes(filters.skill))
-        return false
+      if (filters.examBoard !== 'all' && !a.examBoard.includes(filters.examBoard)) return false
+      if (filters.yearGroup !== 'all' && !a.yearGroup.includes(filters.yearGroup)) return false
+      if (filters.skill !== 'all' && !a.skills.includes(filters.skill)) return false
       return true
     })
   }, [filters])
@@ -667,9 +603,7 @@ export function StarterGenerator() {
   // Random activity
   const randomActivity = useCallback(() => {
     if (filtered.length === 0) return
-    const pool = currentActivity
-      ? filtered.filter((a) => a.id !== currentActivity.id)
-      : filtered
+    const pool = currentActivity ? filtered.filter((a) => a.id !== currentActivity.id) : filtered
     const list = pool.length > 0 ? pool : filtered
     const idx = Math.floor(Math.random() * list.length)
     setCurrentActivity(list[idx])
@@ -681,12 +615,10 @@ export function StarterGenerator() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            Starter Activity Generator
-          </h1>
+          <h1 className="text-2xl font-bold tracking-tight">Starter Activity Generator</h1>
           <p className="text-sm text-muted-foreground">
-            Generate bellwork and starter activities for your English lessons.
-            Filter by text, exam board, or skill — then project full-screen.
+            Generate bellwork and starter activities for your English lessons. Filter by text, exam
+            board, or skill - then project full-screen.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -696,17 +628,11 @@ export function StarterGenerator() {
           </Button>
           {currentActivity && (
             <>
-              <Button
-                variant="outline"
-                onClick={() => setFullscreen(true)}
-              >
+              <Button variant="outline" onClick={() => setFullscreen(true)}>
                 <Maximize2 className="size-4" />
                 Project
               </Button>
-              <Button
-                variant="outline"
-                onClick={() => handlePrint(currentActivity)}
-              >
+              <Button variant="outline" onClick={() => handlePrint(currentActivity)}>
                 <Printer className="size-4" />
                 Print
               </Button>
@@ -716,11 +642,7 @@ export function StarterGenerator() {
       </div>
 
       {/* Filters */}
-      <FilterPanel
-        filters={filters}
-        onChange={setFilters}
-        matchCount={filtered.length}
-      />
+      <FilterPanel filters={filters} onChange={setFilters} matchCount={filtered.length} />
 
       {/* Current Activity */}
       {currentActivity ? (
@@ -741,10 +663,7 @@ export function StarterGenerator() {
               {filtered.length > 0 && (
                 <>
                   {' '}
-                  from{' '}
-                  <span className="font-medium text-foreground">
-                    {filtered.length}
-                  </span>{' '}
+                  from <span className="font-medium text-foreground">{filtered.length}</span>{' '}
                   matching activit{filtered.length === 1 ? 'y' : 'ies'}
                 </>
               )}
@@ -846,9 +765,7 @@ function BrowseAll({
               <p className="mb-1 text-sm font-semibold group-hover:text-primary">
                 {activity.title}
               </p>
-              <p className="line-clamp-2 text-xs text-muted-foreground">
-                {activity.content}
-              </p>
+              <p className="line-clamp-2 text-xs text-muted-foreground">{activity.content}</p>
               <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
                 <Timer className="size-3" />
                 {activity.duration} min

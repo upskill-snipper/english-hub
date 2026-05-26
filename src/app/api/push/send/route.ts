@@ -1,5 +1,5 @@
 /**
- * Internal push-send helper — cron-only, CRON_SECRET-gated.
+ * Internal push-send helper - cron-only, CRON_SECRET-gated.
  *
  * Accepts `{ userId, title?, body, deepLink }` and fans out to every active
  * registered device in `MobileDevice` via the Expo Push API. Each device is
@@ -10,7 +10,7 @@
  * weekly-parent-report cron (and any future server-side cron). We verify
  * the CRON_SECRET header and bail otherwise.
  *
- * Children's Code §5.13 — push copy is factual and non-punitive. The caller
+ * Children's Code §5.13 - push copy is factual and non-punitive. The caller
  * is responsible for preparing copy that fits the tone.
  */
 
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const { userId, title, body, deepLink, data } = parsed
 
   // Pull every active (non-revoked) device row for the user that has a push
-  // token. A user with no devices is not an error — the cron will simply
+  // token. A user with no devices is not an error - the cron will simply
   // record `pushed = 0`.
   const devices = await prisma.mobileDevice.findMany({
     where: {
@@ -80,13 +80,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     title: title ?? 'The English Hub',
     body,
     data: { deepLink, ...(data ?? {}) },
-    // Calm defaults — no critical, no loud sound (Children's Code §5.13).
+    // Calm defaults - no critical, no loud sound (Children's Code §5.13).
     sound: 'default' as const,
     priority: 'default' as const,
     channelId: 'parent-reports',
   }))
 
-  // Expo's endpoint accepts up to 100 messages per call. Chunk defensively —
+  // Expo's endpoint accepts up to 100 messages per call. Chunk defensively -
   // parent audiences are tiny, but belt-and-braces for future growth.
   const CHUNK_SIZE = 100
   let sent = 0

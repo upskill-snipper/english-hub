@@ -5,7 +5,7 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'AQA GCSE English Literature resources — The English Hub',
+    title: 'AQA GCSE English Literature resources - The English Hub',
     description:
       'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
   },
@@ -324,7 +324,7 @@ export default async function AqaEnglishLiteraturePage() {
       {/* ── Assessment objectives ── */}
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">Key Skills — What Markers Look For</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Skills - What Markers Look For</h2>
           <p className="mt-2 text-muted-foreground">
             Understanding how your work is marked is essential for maximising your grade. Every
             question targets specific skills.

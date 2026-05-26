@@ -413,7 +413,7 @@ function InlineFeedbackResults({
   return (
     <div className="space-y-4 animate-fade-in">
       {/* Consistent AI-generated disclosure (policy-matched, links to
-          /legal/ai-governance). Canonical AI-feedback panel — covers
+          /legal/ai-governance). Canonical AI-feedback panel - covers
           every route that renders EssayFeedbackInline. */}
       <AiGeneratedNotice variant="panel" />
       {/* Disclaimer */}

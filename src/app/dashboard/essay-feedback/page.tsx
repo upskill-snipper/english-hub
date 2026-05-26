@@ -113,7 +113,7 @@ export default function EssayFeedbackPage() {
     }
   }, [isLoading, user, router])
 
-  // Form state — use null (not '') for empty selections so Base UI Select shows placeholders
+  // Form state - use null (not '') for empty selections so Base UI Select shows placeholders
   const [board, setBoard] = useState<string | null>(null)
   const [paper, setPaper] = useState<string | null>(null)
   const [questionType, setQuestionType] = useState<string | null>(null)
@@ -140,7 +140,7 @@ export default function EssayFeedbackPage() {
     return getPapersForBoard(board)
   }, [board])
 
-  // Question types that are short-answer on the actual exam — not suitable for essay feedback
+  // Question types that are short-answer on the actual exam - not suitable for essay feedback
   const SHORT_ANSWER_TYPES = ['Information Retrieval', 'Summary & Synthesis', 'Summary']
 
   const availableQuestionTypes = useMemo(() => {
@@ -160,7 +160,7 @@ export default function EssayFeedbackPage() {
     return trimmed.split(/\s+/).length
   }, [essay])
 
-  // Handle board change — reset downstream
+  // Handle board change - reset downstream
   function handleBoardChange(value: string | null) {
     setBoard(value)
     setPaper(null)
@@ -169,7 +169,7 @@ export default function EssayFeedbackPage() {
     setQuestionText('')
   }
 
-  // Handle paper change — reset question type
+  // Handle paper change - reset question type
   function handlePaperChange(value: string | null) {
     setPaper(value)
     setQuestionType(null)
@@ -359,7 +359,7 @@ export default function EssayFeedbackPage() {
                   <SelectContent>
                     {availablePapers.map((p) => (
                       <SelectItem key={p.paper} value={p.paper}>
-                        {p.paper} — {p.label}
+                        {p.paper} - {p.label}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -445,7 +445,7 @@ export default function EssayFeedbackPage() {
               <div className="flex items-center justify-between gap-2">
                 <Label htmlFor="essay">{t('dashboard.essay_feedback.label_essay')}</Label>
                 <div className="flex items-center gap-2">
-                  {/* Speak-to-type — append dictated text to the essay. */}
+                  {/* Speak-to-type - append dictated text to the essay. */}
                   <DictationButton
                     onText={(chunk) => setEssay((v) => (v ? v + ' ' : '') + chunk)}
                     lang="en-GB"
@@ -575,7 +575,7 @@ function FeedbackResults({
                 <Badge variant="secondary" className="text-xs">
                   {questionType}
                 </Badge>
-                {/* Read aloud — grade band + why it was awarded. */}
+                {/* Read aloud - grade band + why it was awarded. */}
                 <ReadAloudButton
                   text={`${feedback.gradeBand}. ${feedback.gradeJustification}`}
                   lang="en-GB"
@@ -684,7 +684,7 @@ function FeedbackResults({
               <MessageSquareText className="h-4 w-4 text-primary" />
               <CardTitle>{t('dashboard.essay_feedback.detailed_feedback_title')}</CardTitle>
             </div>
-            {/* Read aloud — helps EAL learners follow the detailed feedback. */}
+            {/* Read aloud - helps EAL learners follow the detailed feedback. */}
             <ReadAloudButton text={feedback.annotatedFeedback} lang="en-GB" />
           </div>
           <CardDescription>{t('dashboard.essay_feedback.detailed_feedback_desc')}</CardDescription>
@@ -702,7 +702,7 @@ function FeedbackResults({
         </CardContent>
       </Card>
 
-      {/* Human oversight (EU AI Act Art 14) — request a person to
+      {/* Human oversight (EU AI Act Art 14) - request a person to
           review this AI-generated, predicted (not official) feedback. */}
       <div className="border-t pt-6">
         <RequestHumanReviewButton context="essay-feedback" />

@@ -276,7 +276,7 @@ export default function LanguageAnalysisPage() {
                           'Analyses grammatical choices (passive voice, asyndeton) not just imagery',
                           'Tracks shifts in semantic field across the whole extract',
                           "Precise, evaluative vocabulary ('dissonance', 'corporeal', 'supplicant')",
-                          'Embeds quotations fluently — single words and short phrases woven into analysis',
+                          'Embeds quotations fluently - single words and short phrases woven into analysis',
                           'Shows how micro-level language choices create macro-level effects on the reader',
                         ]}
                       />
@@ -381,7 +381,7 @@ export default function LanguageAnalysisPage() {
                         <p className="mt-4">
                           Furthermore, the rain is described as coming &ldquo;in sheets&rdquo;
                           rather than drops, which shows how{' '}
-                          <Annotation note="Uses 'heavy' as analysis — this is quite vague. A stronger response would explore the connotations more precisely.">
+                          <Annotation note="Uses 'heavy' as analysis - this is quite vague. A stronger response would explore the connotations more precisely.">
                             heavy
                           </Annotation>{' '}
                           the rain is. The word &ldquo;hammering&rdquo; is
@@ -435,7 +435,7 @@ export default function LanguageAnalysisPage() {
                           . This shows the storm is bad.
                         </p>
                         <p className="mt-4">
-                          <Annotation note="The student spots the simile but does not name it or explain its effect. 'Scary' is vague — what kind of fear does the writer create?">
+                          <Annotation note="The student spots the simile but does not name it or explain its effect. 'Scary' is vague - what kind of fear does the writer create?">
                             The wind is described as &ldquo;like a living thing&rdquo; which is
                             scary because wind is not alive
                           </Annotation>

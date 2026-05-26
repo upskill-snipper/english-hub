@@ -1,5 +1,5 @@
 /**
- * GradeDistributionChart — visual GCSE 1-9 grade distribution.
+ * GradeDistributionChart - visual GCSE 1-9 grade distribution.
  *
  * Single source of truth for "Working At Grade Distribution" across:
  *   /demo/school, /school/dashboard, /school/analytics,
@@ -31,7 +31,7 @@ export type GradeCounts = Record<number, number> | Record<string, number>
 export interface GradeDistributionChartProps {
   /** Counts keyed by grade number (1-9). Missing keys treated as 0. */
   counts: GradeCounts
-  /** Optional title — set to null to suppress. */
+  /** Optional title - set to null to suppress. */
   title?: string | null
   /** Heading-level for the title (h2/h3/h4). Defaults to h3. */
   titleAs?: 'h2' | 'h3' | 'h4'
@@ -223,7 +223,7 @@ export function GradeDistributionChart({
         </div>
       )}
 
-      {/* ── Stacked overview bar — at-a-glance proportions ──────────────── */}
+      {/* ── Stacked overview bar - at-a-glance proportions ──────────────── */}
       {showStacked && (
         <div>
           <div

@@ -1,6 +1,6 @@
 'use client'
 
-// School conversion form — the primary institutional CTA. Collects the
+// School conversion form - the primary institutional CTA. Collects the
 // full institutional context (role, school, country, student numbers,
 // year groups, main challenge, contact details) and posts to the
 // existing /api/school-inquiry endpoint.
@@ -32,10 +32,10 @@ const ROLE_OPTIONS = [
 // Values must match VALID_STUDENT_RANGES in /api/school-inquiry.
 const STUDENT_RANGE_OPTIONS = [
   { value: '1-30', label: 'Up to 30 (one class / pilot group)' },
-  { value: '31-50', label: '31–50' },
-  { value: '51-100', label: '51–100' },
-  { value: '101-200', label: '101–200' },
-  { value: '201-500', label: '201–500' },
+  { value: '31-50', label: '31-50' },
+  { value: '51-100', label: '51-100' },
+  { value: '101-200', label: '101-200' },
+  { value: '201-500', label: '201-500' },
   { value: '500+', label: '500+' },
 ] as const
 
@@ -98,7 +98,7 @@ export function SchoolCTAForm({ heading }: { heading?: string }) {
         <div className="mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
-        <h3 className="text-xl font-semibold text-foreground">Thank you — we&rsquo;ve got it</h3>
+        <h3 className="text-xl font-semibold text-foreground">Thank you - we&rsquo;ve got it</h3>
         <p className="mx-auto mt-2 max-w-md leading-relaxed text-muted-foreground">
           A member of the team will reply within one UK working day to discuss a pilot for your
           school. You can also email{' '}
@@ -185,7 +185,7 @@ export function SchoolCTAForm({ heading }: { heading?: string }) {
             id="year_groups"
             name="year_groups"
             maxLength={120}
-            placeholder="e.g. Year 10–11, KS3"
+            placeholder="e.g. Year 10-11, KS3"
           />
         </div>
       </div>

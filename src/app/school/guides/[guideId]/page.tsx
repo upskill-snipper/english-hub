@@ -2,14 +2,7 @@
 
 import { useParams, notFound } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  Clock,
-  BookOpen,
-  Lightbulb,
-  MessageSquare,
-  ChevronRight,
-} from 'lucide-react'
+import { ArrowLeft, Clock, BookOpen, Lightbulb, MessageSquare, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -26,13 +19,7 @@ import {
 
 // ── Section renderer ─────────────────────────────────────────────────────────
 
-function GuideSection({
-  section,
-  index,
-}: {
-  section: TeachingGuideSection
-  index: number
-}) {
+function GuideSection({ section, index }: { section: TeachingGuideSection; index: number }) {
   return (
     <section className="space-y-5">
       {/* Section heading */}
@@ -43,7 +30,7 @@ function GuideSection({
         <h2 className="text-xl font-semibold tracking-tight pt-0.5">{section.title}</h2>
       </div>
 
-      {/* Content — render paragraphs from newline-separated text */}
+      {/* Content - render paragraphs from newline-separated text */}
       <div className="prose prose-sm dark:prose-invert max-w-none pl-10">
         {section.content.split('\n\n').map((paragraph, i) => (
           <p key={i} className="leading-relaxed text-foreground/90">
@@ -134,7 +121,7 @@ export default function GuideDetailPage() {
           <span
             className={cn(
               'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold',
-              categoryColors[guide.category]
+              categoryColors[guide.category],
             )}
           >
             {categoryLabels[guide.category]}

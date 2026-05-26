@@ -10,15 +10,15 @@
 // It deliberately REUSES the exact compliance + infrastructure helpers the
 // IELTS writing-feedback / GCSE essay-feedback routes use so this premium AI
 // feature inherits the same posture:
-//   • getAnthropicClient()        — shared, privacy-documented Claude client
-//   • hasActiveSubscription()     — Premium paywall gate (403)
-//   • rateLimit()                 — per-user request cap (429)
-//   • checkMinorAIConsent()       — AI-processing + parental consent (403)
-//   • isAiOptedOutServer()        — Children's Code AI opt-out (403)
-//   • contentSafetyCheck()        — prompt-injection / misuse pre-screen (400)
-//   • filterAIResponse()          — output content/cultural filter
-//   • logAiDecision()             — EU AI Act Art. 12/19 audit record
-//   • withArabicDirective()       — appends the Khaleeji directive in AR mode
+//   • getAnthropicClient()        - shared, privacy-documented Claude client
+//   • hasActiveSubscription()     - Premium paywall gate (403)
+//   • rateLimit()                 - per-user request cap (429)
+//   • checkMinorAIConsent()       - AI-processing + parental consent (403)
+//   • isAiOptedOutServer()        - Children's Code AI opt-out (403)
+//   • contentSafetyCheck()        - prompt-injection / misuse pre-screen (400)
+//   • filterAIResponse()          - output content/cultural filter
+//   • logAiDecision()             - EU AI Act Art. 12/19 audit record
+//   • withArabicDirective()       - appends the Khaleeji directive in AR mode
 //
 // IMPORTANT (audit feature literal): the `AiAuditFeature` union in
 // `@/lib/ai-audit-log` does NOT yet include an `'ielts/statement-feedback'`
@@ -55,7 +55,7 @@ import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-lan
 import { logAiDecision } from '@/lib/ai-audit-log'
 
 // ─── Public response contract (shared with the client page) ──────────────────
-// A 0–5 rating (NOT an IELTS band — a personal statement is not band-scored).
+// A 0-5 rating (NOT an IELTS band - a personal statement is not band-scored).
 // 0 = not yet evidenced, 5 = excellent. The client renders a small pip meter.
 
 export type StatementRating = 0 | 1 | 2 | 3 | 4 | 5
@@ -63,9 +63,9 @@ export type StatementRating = 0 | 1 | 2 | 3 | 4 | 5
 export interface StatementSection {
   /** Rubric dimension, e.g. "Structure & flow". */
   label: string
-  /** 1–3 sentence specific, constructive comment. */
+  /** 1-3 sentence specific, constructive comment. */
   comment: string
-  /** 0–5 quality rating for this dimension. */
+  /** 0-5 quality rating for this dimension. */
   rating: StatementRating
 }
 
@@ -101,7 +101,7 @@ interface RawModelFeedback {
 // ─── Rubric IP (original prose) ───────────────────────────────────────────────
 // The five dimensions a strong UCAS personal statement is assessed on, written
 // from scratch for The English Hub. These are the marking instructions for the
-// model — the core IP of this feature.
+// model - the core IP of this feature.
 
 const RUBRIC_DIMENSIONS = [
   'Structure & flow',
@@ -122,24 +122,24 @@ const RUBRIC: Record<RubricDimension, string> = {
   ].join('\n'),
   'Motivation & fit': [
     'MOTIVATION & FIT (a genuine, specific reason for THIS subject, and readiness for UK degree-level study):',
-    '- 5: A precise, credible account of why the subject — not a neighbouring one — and what about it sustains the applicant; clear alignment with how the subject is taught at degree level.',
+    '- 5: A precise, credible account of why the subject - not a neighbouring one - and what about it sustains the applicant; clear alignment with how the subject is taught at degree level.',
     '- 3: A sincere but broad motivation ("I have always been interested in…") that could apply to many subjects or many applicants; fit with degree-level study is implied rather than shown.',
     '- 1: Motivation is absent, clichéd, or contradicts the chosen course; no sense of why university or why now.',
   ].join('\n'),
   'Evidence & specifics': [
-    'EVIDENCE & SPECIFICS (concrete super-curricular and curricular evidence — named books, projects, work experience, competitions, roles — rather than assertion):',
+    'EVIDENCE & SPECIFICS (concrete super-curricular and curricular evidence - named books, projects, work experience, competitions, roles - rather than assertion):',
     '- 5: Specific, well-chosen evidence the applicant clearly owns; named sources or experiences are used to make a point, not to name-drop; super-curricular reading or activity is woven in.',
     '- 3: Some real evidence but thin or generic (e.g. "I read widely"); examples are stated but not used to demonstrate a quality or insight.',
     '- 1: Claims with no evidence; unsupported adjectives ("I am passionate, hard-working and dedicated") doing the work that examples should.',
   ].join('\n'),
   'Reflection & insight': [
-    'REFLECTION & INSIGHT (what the applicant LEARNED from each experience and how it shapes their thinking — the single biggest discriminator at selective universities):',
+    'REFLECTION & INSIGHT (what the applicant LEARNED from each experience and how it shapes their thinking - the single biggest discriminator at selective universities):',
     '- 5: Every example is followed by genuine reflection: what it changed, what question it raised, how it connects to the subject. Shows a mind at work, not a CV in prose.',
     '- 3: Some reflection, but it tends to summarise the experience rather than interrogate it; the "so what?" is partly missing.',
     '- 1: Pure description or a list of activities with no reflection; the reader cannot tell what the applicant took from anything.',
   ].join('\n'),
   'English quality': [
-    'ENGLISH QUALITY (clarity, accuracy, register and concision — especially important for applicants writing in English as an additional language):',
+    'ENGLISH QUALITY (clarity, accuracy, register and concision - especially important for applicants writing in English as an additional language):',
     '- 5: Fluent, precise and concise; varied sentence structure; an academic but natural register; virtually error-free.',
     '- 3: Generally clear and accurate, with some repetition, wordiness, or recurring grammar/word-choice slips that do not block meaning.',
     '- 1: Frequent errors, awkward phrasing or an inappropriate register that distract the reader or obscure meaning.',
@@ -157,33 +157,33 @@ function buildSystemPrompt(course?: string, university?: string): string {
     university ? `Target university (context only): ${university}.` : null,
     course || university
       ? 'Tailor "Motivation & fit" and "Evidence & specifics" to this intended course where relevant, but do NOT invent facts about the applicant or the university.'
-      : 'No intended course was given — assess fit in general terms and suggest the applicant make their subject focus explicit.',
+      : 'No intended course was given - assess fit in general terms and suggest the applicant make their subject focus explicit.',
   ]
     .filter(Boolean)
     .join(' ')
 
   return [
-    'You are an experienced UK university admissions adviser who has read thousands of UCAS personal statements. You give honest, specific, encouraging feedback that helps an applicant redraft. You are NOT an admissions officer and you do NOT decide outcomes — you coach.',
+    'You are an experienced UK university admissions adviser who has read thousands of UCAS personal statements. You give honest, specific, encouraging feedback that helps an applicant redraft. You are NOT an admissions officer and you do NOT decide outcomes - you coach.',
     '',
     'This is preparation guidance for a student (often writing in English as an additional language, frequently applying to the UK from the Gulf). It is NOT an official UCAS or university service, and nothing you write is a prediction or guarantee of any admissions decision.',
     '',
     target,
     '',
-    'Assess the draft against these FIVE dimensions, scoring each from 0 to 5 (0 = not yet evidenced, 3 = solid, 5 = excellent). Apply the rubric rigorously and fairly — neither flattering nor harsh.',
+    'Assess the draft against these FIVE dimensions, scoring each from 0 to 5 (0 = not yet evidenced, 3 = solid, 5 = excellent). Apply the rubric rigorously and fairly - neither flattering nor harsh.',
     '',
     rubricBlock,
     '',
     'FEEDBACK RULES:',
-    '- Score each dimension 0–5 using the rubric anchors above (whole numbers only).',
+    '- Score each dimension 0-5 using the rubric anchors above (whole numbers only).',
     "- Quote brief phrases from the applicant's own draft as evidence in your comments where helpful.",
-    '- Keep every comment specific, constructive and concise (1–3 sentences). Use UK English spelling.',
+    '- Keep every comment specific, constructive and concise (1-3 sentences). Use UK English spelling.',
     '- "improvements" MUST be exactly 3 concrete, actionable changes the applicant could make in their next draft (e.g. "replace the opening anecdote with a specific moment from your EPQ", "cut the list in paragraph 3 and reflect on ONE item"). Not vague advice; not a rewritten statement.',
-    '- "strengths" should be 2–3 short, specific, genuine positives.',
-    '- "overallComment" is 2–3 sentences: an honest summary plus the single highest-impact thing to fix next. Encouraging in tone.',
+    '- "strengths" should be 2-3 short, specific, genuine positives.',
+    '- "overallComment" is 2-3 sentences: an honest summary plus the single highest-impact thing to fix next. Encouraging in tone.',
     '- Never write the statement for them and never output a full rewritten statement.',
     '- UCAS personal statements have a hard limit of 4,000 characters / 47 lines; if the draft is far over or under, mention it in the relevant comment.',
     '',
-    'OUTPUT FORMAT — CRITICAL:',
+    'OUTPUT FORMAT - CRITICAL:',
     'Respond with a SINGLE valid JSON object and NOTHING else (no markdown fences, no commentary before or after). Use this exact shape:',
     '{',
     '  "sections": [',
@@ -214,7 +214,7 @@ function isStringArray(v: unknown): v is string[] {
   return Array.isArray(v) && v.every((x) => typeof x === 'string')
 }
 
-/** Clamp any number to an integer 0–5 rating. */
+/** Clamp any number to an integer 0-5 rating. */
 function clampRating(n: unknown): StatementRating {
   const num = typeof n === 'number' && Number.isFinite(n) ? Math.round(n) : 0
   const clamped = Math.min(5, Math.max(0, num))
@@ -271,7 +271,7 @@ function parseModelFeedback(text: string): RawModelFeedback | { invalid: true } 
 /**
  * Map the raw model feedback onto a clean, fully-validated `StatementFeedback`:
  * - reorders/normalises sections to the canonical five dimensions,
- * - clamps every rating to an integer 0–5,
+ * - clamps every rating to an integer 0-5,
  * - runs all natural-language prose through the content filter.
  */
 function buildStatementFeedback(
@@ -391,14 +391,14 @@ async function generateStatementFeedback(
     throw new Error('AI service is temporarily unavailable.')
   }
 
-  // Shared client — same privacy posture as every other Anthropic route.
+  // Shared client - same privacy posture as every other Anthropic route.
   const anthropic = getAnthropicClient(apiKey)
 
   const baseSystemPrompt = buildSystemPrompt(course, university)
   const systemPrompt = withArabicDirective(baseSystemPrompt, request)
 
   // Data-minimisation: only the draft + the optional course/university context
-  // are sent — no name, email, or other PII.
+  // are sent - no name, email, or other PII.
   const userContent = [
     'UCAS personal statement draft for feedback.',
     course ? `Intended course: ${course}` : 'Intended course: (not given)',
@@ -452,7 +452,7 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse()
     }
 
-    // 1b. Subscription gate — AI statement feedback is a Premium feature.
+    // 1b. Subscription gate - AI statement feedback is a Premium feature.
     const isPremium = await hasActiveSubscription(supabase, user.id)
     if (!isPremium) {
       return forbiddenResponse(
@@ -475,7 +475,7 @@ export async function POST(request: NextRequest) {
       return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
     }
 
-    // 3b. AI opt-out enforcement (Children's Code — GAP-12B).
+    // 3b. AI opt-out enforcement (Children's Code - GAP-12B).
     const aiOptedOut = await isAiOptedOutServer(user.id)
     if (aiOptedOut) {
       return forbiddenResponse(
@@ -499,16 +499,16 @@ export async function POST(request: NextRequest) {
     const { statement, course, university } = validation.data
     const userId = user.id
 
-    // 3c. Safeguarding / misuse pre-screen — parity with the essay/writing
+    // 3c. Safeguarding / misuse pre-screen - parity with the essay/writing
     // routes. Routes a self-harm disclosure to the static helpline message and
     // blocks prompt-injection / "write it for me" misuse before the model is
     // called. The course/university context plays the role of "questionText".
     const safetyContext =
-      [course, university].filter(Boolean).join(' — ') || 'UCAS personal statement'
+      [course, university].filter(Boolean).join(' - ') || 'UCAS personal statement'
     const safetyError = contentSafetyCheck({ essay: statement, questionText: safetyContext })
     if (safetyError) return badRequestResponse(safetyError)
 
-    // EU AI Act Art. 12/19 — bracket the model call for the audit record.
+    // EU AI Act Art. 12/19 - bracket the model call for the audit record.
     // NOTE: logged under the existing 'essay/feedback' literal because the
     // AiAuditFeature union has no 'ielts/statement-feedback' member yet (a
     // shared-lib change tracked in this section's report).
@@ -602,7 +602,7 @@ export async function POST(request: NextRequest) {
       safetyContext,
     )
 
-    // EU AI Act Art. 12/19 — record the successful AI decision (no raw prose,
+    // EU AI Act Art. 12/19 - record the successful AI decision (no raw prose,
     // just the structured outcome).
     void logAiDecision({
       ...aiAuditBase,

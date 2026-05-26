@@ -6,11 +6,11 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Mark Schemes — Teacher Library',
+    title: 'Mark Schemes - Teacher Library',
     description:
       'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',
   },
-  title: 'Mark Schemes — Teacher Library',
+  title: 'Mark Schemes - Teacher Library',
   description:
     'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',
   alternates: {
@@ -22,7 +22,7 @@ const MARK_SCHEMES = [
   {
     title: 'AQA English Language Paper 1',
     description:
-      'Grade descriptors for Q1–Q5 with AO1, AO2, AO5, AO6 weightings and common examiner comments.',
+      'Grade descriptors for Q1-Q5 with AO1, AO2, AO5, AO6 weightings and common examiner comments.',
     examBoard: 'AQA',
   },
   {
@@ -67,7 +67,7 @@ const MARK_SCHEMES = [
   },
   {
     title: 'OCR English Language Component 01',
-    description: 'Communicating information and ideas. Key AOs and descriptors at levels 1–6.',
+    description: 'Communicating information and ideas. Key AOs and descriptors at levels 1-6.',
     examBoard: 'OCR',
   },
   {

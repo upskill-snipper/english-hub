@@ -621,7 +621,7 @@ export default function SchoolBillingPage() {
           totalTeachers: json?.overview?.total_teachers ?? 0,
         })
       } catch {
-        // Stats are non-critical — fail silently
+        // Stats are non-critical - fail silently
       } finally {
         setStatsLoading(false)
       }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { lookup, type Locale } from '@/lib/i18n/dictionary'
 
 /**
- * LegalArBanner — short Khaleeji (Gulf) Arabic banner shown ONLY when
+ * LegalArBanner - short Khaleeji (Gulf) Arabic banner shown ONLY when
  * the visitor is on the Arabic locale. Rendered at the top of long-form
  * legal / help / safeguarding pages whose body remains in formal MSA
  * (per the bilingual legal-copy policy: Khaleeji is reserved for short
@@ -16,7 +16,7 @@ import { lookup, type Locale } from '@/lib/i18n/dictionary'
  *   legal_banner.<pageKey>.cta
  *   legal_banner.<pageKey>.cta_href   ← English-source value used as URL
  *
- * Returns `null` when locale is not AR — zero markup on the EN render.
+ * Returns `null` when locale is not AR - zero markup on the EN render.
  */
 
 interface LegalArBannerProps {

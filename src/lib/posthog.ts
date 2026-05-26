@@ -4,7 +4,7 @@
  * Initialised lazily on the client only. All capture calls are gated by
  * `canCaptureAnalytics()` so we never send events for:
  *   1. Visitors who haven't accepted analytics cookies (PECR reg. 6).
- *   2. Users flagged as minors (ICO Children's Code standard 15 — no
+ *   2. Users flagged as minors (ICO Children's Code standard 15 - no
  *      behavioural profiling of under-16s by default).
  *
  * Key events tracked (product funnel):
@@ -17,8 +17,8 @@
  *   - subscription_paid_converted (first successful payment)
  *
  * Environment:
- *   NEXT_PUBLIC_POSTHOG_KEY   — project API key (phc_…)
- *   NEXT_PUBLIC_POSTHOG_HOST  — defaults to https://eu.i.posthog.com
+ *   NEXT_PUBLIC_POSTHOG_KEY   - project API key (phc_…)
+ *   NEXT_PUBLIC_POSTHOG_HOST  - defaults to https://eu.i.posthog.com
  */
 
 import posthog from 'posthog-js'
@@ -64,19 +64,18 @@ export function initPostHog(): void {
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY
   if (!key) return // No-op in envs without a key (local dev, preview).
 
-  const host =
-    process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com'
+  const host = process.env.NEXT_PUBLIC_POSTHOG_HOST ?? 'https://eu.i.posthog.com'
 
   posthog.init(key, {
     api_host: host,
-    // EU region data residency — do not fall back to the US cluster.
+    // EU region data residency - do not fall back to the US cluster.
     ui_host: 'https://eu.posthog.com',
     person_profiles: 'identified_only',
     capture_pageview: false, // Handled manually in PostHogProvider on route change.
     capture_pageleave: true,
     autocapture: false, // We only want intentional, named events.
     disable_session_recording: true,
-    // Default to OFF — every capture goes through canCaptureAnalytics().
+    // Default to OFF - every capture goes through canCaptureAnalytics().
     // This also covers any accidental posthog.capture() call that bypasses
     // the helper: if the user hasn't consented or is a minor, nothing ships.
     opt_out_capturing_by_default: true,
@@ -149,7 +148,7 @@ export function setMinorFlag(isMinor: boolean): void {
   refreshOptInState()
 }
 
-// Named funnel events — import these instead of using raw strings so
+// Named funnel events - import these instead of using raw strings so
 // typos become compile errors.
 export const EVENTS = {
   HOME_VIEWED: 'home_viewed',

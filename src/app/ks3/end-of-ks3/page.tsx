@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'End of KS3 expectations',
     description:
-      'British National Curriculum end-of-KS3 standard — what students working at the expected level can do at the end of Year 9.',
+      'British National Curriculum end-of-KS3 standard - what students working at the expected level can do at the end of Year 9.',
   },
   title: 'End of KS3 expectations',
   description:
-    'British National Curriculum end-of-KS3 standard — what students working at the expected level can do at the end of Year 9.',
+    'British National Curriculum end-of-KS3 standard - what students working at the expected level can do at the end of Year 9.',
   alternates: { canonical: 'https://theenglishhub.app/ks3/end-of-ks3' },
 }
 
@@ -85,26 +85,26 @@ export default async function EndOfKS3Page() {
       <h2>{tr[6]}</h2>
       <ul>
         <li>
-          <strong>{tr[14]}</strong> — {tr[8]}
+          <strong>{tr[14]}</strong> - {tr[8]}
         </li>
         <li>
-          <strong>{tr[15]}</strong> — {tr[9]}
+          <strong>{tr[15]}</strong> - {tr[9]}
         </li>
         <li>
-          <strong>{tr[16]}</strong> — {tr[10]}
+          <strong>{tr[16]}</strong> - {tr[10]}
         </li>
       </ul>
 
       <h2>{tr[7]}</h2>
       <ul>
         <li>
-          <strong>{tr[14]}</strong> — {tr[11]}
+          <strong>{tr[14]}</strong> - {tr[11]}
         </li>
         <li>
-          <strong>{tr[15]}</strong> — {tr[12]}
+          <strong>{tr[15]}</strong> - {tr[12]}
         </li>
         <li>
-          <strong>{tr[16]}</strong> — {tr[13]}
+          <strong>{tr[16]}</strong> - {tr[13]}
         </li>
       </ul>
     </>

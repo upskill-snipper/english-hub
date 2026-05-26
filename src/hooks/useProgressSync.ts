@@ -27,7 +27,7 @@ export interface ProgressSyncState {
 
 /**
  * Safely parse a JSON string from localStorage. Returns `null` on any failure
- * (missing key, malformed JSON, quota error, etc.) — never throws.
+ * (missing key, malformed JSON, quota error, etc.) - never throws.
  */
 function readJSON(key: string): unknown {
   try {
@@ -41,7 +41,7 @@ function readJSON(key: string): unknown {
 }
 
 /**
- * `useProgressSync` — bridges anonymous localStorage progress to the
+ * `useProgressSync` - bridges anonymous localStorage progress to the
  * authenticated Supabase store.
  *
  * Behaviour:
@@ -107,7 +107,7 @@ export function useProgressSync(): ProgressSyncState {
       readingAge: readJSON(STORAGE_KEYS.readingAge),
     }
 
-    // Nothing to sync — skip the network round-trip but still mark idle.
+    // Nothing to sync - skip the network round-trip but still mark idle.
     const hasAnyData = Object.values(payload).some((v) => v !== null)
     if (!hasAnyData) {
       setState({ status: 'idle' })

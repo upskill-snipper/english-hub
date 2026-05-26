@@ -5,11 +5,11 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth: Ambition & the Supernatural — Lesson Plan',
+    title: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
     description:
       'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',
   },
-  title: 'Macbeth: Ambition & the Supernatural — Lesson Plan',
+  title: 'Macbeth: Ambition & the Supernatural - Lesson Plan',
   description:
     'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',
   alternates: {
@@ -191,7 +191,7 @@ export default async function MacbethAmbitionLessonPlan() {
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-bold text-foreground">Main Activity (40 minutes)</h3>
                 <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary ring-1 ring-inset ring-primary/20">
-                  I–We–You
+                  I-We-You
                 </span>
               </div>
               <div className="mt-3 space-y-4 text-foreground">
@@ -249,7 +249,7 @@ export default async function MacbethAmbitionLessonPlan() {
               </div>
               <p className="mt-3 text-foreground">
                 Learn three quotations from the Act 1 Scene 7 soliloquy by heart. Write a short
-                paragraph (100–150 words) explaining which quotation most powerfully shows
+                paragraph (100-150 words) explaining which quotation most powerfully shows
                 Macbeth&apos;s ambition and why. Bring for retrieval quiz next lesson.
               </p>
             </div>
@@ -285,7 +285,7 @@ export default async function MacbethAmbitionLessonPlan() {
 
         {/* Classroom tips */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Pace check:</strong> The modelling stage is the easiest to overrun. Keep it

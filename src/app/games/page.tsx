@@ -90,7 +90,7 @@ const WORD_SCRAMBLE_WORDS = [
 // Curriculum-only quote bank. Every entry is tagged with the GCSE/IGCSE
 // boards that actually study the text. Non-curriculum texts (Harry Potter,
 // Stephen King, Jane Austen outside Pride and Prejudice, etc.) are NOT
-// included — students should only see quotes from their own set texts.
+// included - students should only see quotes from their own set texts.
 type QuoteItem = {
   quote: string
   textSlug: string // canonical slug from @/lib/board/set-texts
@@ -103,45 +103,45 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"Is this a dagger which I see before me, the handle toward my hand?"',
     textSlug: 'macbeth',
-    answer: 'Macbeth — William Shakespeare',
+    answer: 'Macbeth - William Shakespeare',
     options: [
-      'Macbeth — William Shakespeare',
-      'Romeo and Juliet — William Shakespeare',
-      'An Inspector Calls — J.B. Priestley',
-      'A Christmas Carol — Charles Dickens',
+      'Macbeth - William Shakespeare',
+      'Romeo and Juliet - William Shakespeare',
+      'An Inspector Calls - J.B. Priestley',
+      'A Christmas Carol - Charles Dickens',
     ],
   },
   {
     quote: '"Out, out, brief candle! Life\'s but a walking shadow."',
     textSlug: 'macbeth',
-    answer: 'Macbeth — William Shakespeare',
+    answer: 'Macbeth - William Shakespeare',
     options: [
-      'Macbeth — William Shakespeare',
-      'Romeo and Juliet — William Shakespeare',
-      'The Merchant of Venice — William Shakespeare',
-      'Much Ado About Nothing — William Shakespeare',
+      'Macbeth - William Shakespeare',
+      'Romeo and Juliet - William Shakespeare',
+      'The Merchant of Venice - William Shakespeare',
+      'Much Ado About Nothing - William Shakespeare',
     ],
   },
   {
     quote: '"Fair is foul, and foul is fair."',
     textSlug: 'macbeth',
-    answer: 'Macbeth — William Shakespeare',
+    answer: 'Macbeth - William Shakespeare',
     options: [
-      'Macbeth — William Shakespeare',
-      'An Inspector Calls — J.B. Priestley',
-      'Romeo and Juliet — William Shakespeare',
-      'Lord of the Flies — William Golding',
+      'Macbeth - William Shakespeare',
+      'An Inspector Calls - J.B. Priestley',
+      'Romeo and Juliet - William Shakespeare',
+      'Lord of the Flies - William Golding',
     ],
   },
   {
     quote: '"Look like the innocent flower, but be the serpent under\'t."',
     textSlug: 'macbeth',
-    answer: 'Macbeth — William Shakespeare',
+    answer: 'Macbeth - William Shakespeare',
     options: [
-      'Macbeth — William Shakespeare',
-      'Jekyll and Hyde — R.L. Stevenson',
-      'Frankenstein — Mary Shelley',
-      'Romeo and Juliet — William Shakespeare',
+      'Macbeth - William Shakespeare',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'Frankenstein - Mary Shelley',
+      'Romeo and Juliet - William Shakespeare',
     ],
   },
 
@@ -149,23 +149,23 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"What light through yonder window breaks?"',
     textSlug: 'romeo-and-juliet',
-    answer: 'Romeo and Juliet — William Shakespeare',
+    answer: 'Romeo and Juliet - William Shakespeare',
     options: [
-      'Romeo and Juliet — William Shakespeare',
-      'Macbeth — William Shakespeare',
-      'The Merchant of Venice — William Shakespeare',
-      'Much Ado About Nothing — William Shakespeare',
+      'Romeo and Juliet - William Shakespeare',
+      'Macbeth - William Shakespeare',
+      'The Merchant of Venice - William Shakespeare',
+      'Much Ado About Nothing - William Shakespeare',
     ],
   },
   {
     quote: '"A plague o\' both your houses."',
     textSlug: 'romeo-and-juliet',
-    answer: 'Romeo and Juliet — William Shakespeare',
+    answer: 'Romeo and Juliet - William Shakespeare',
     options: [
-      'Romeo and Juliet — William Shakespeare',
-      'Macbeth — William Shakespeare',
-      'An Inspector Calls — J.B. Priestley',
-      'The Merchant of Venice — William Shakespeare',
+      'Romeo and Juliet - William Shakespeare',
+      'Macbeth - William Shakespeare',
+      'An Inspector Calls - J.B. Priestley',
+      'The Merchant of Venice - William Shakespeare',
     ],
   },
 
@@ -173,34 +173,34 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"We are members of one body. We are responsible for each other."',
     textSlug: 'an-inspector-calls',
-    answer: 'An Inspector Calls — J.B. Priestley',
+    answer: 'An Inspector Calls - J.B. Priestley',
     options: [
-      'An Inspector Calls — J.B. Priestley',
-      'A Christmas Carol — Charles Dickens',
-      'Blood Brothers — Willy Russell',
-      'Lord of the Flies — William Golding',
+      'An Inspector Calls - J.B. Priestley',
+      'A Christmas Carol - Charles Dickens',
+      'Blood Brothers - Willy Russell',
+      'Lord of the Flies - William Golding',
     ],
   },
   {
     quote: '"Fire and blood and anguish."',
     textSlug: 'an-inspector-calls',
-    answer: 'An Inspector Calls — J.B. Priestley',
+    answer: 'An Inspector Calls - J.B. Priestley',
     options: [
-      'An Inspector Calls — J.B. Priestley',
-      'Macbeth — William Shakespeare',
-      'Jekyll and Hyde — R.L. Stevenson',
-      'A Christmas Carol — Charles Dickens',
+      'An Inspector Calls - J.B. Priestley',
+      'Macbeth - William Shakespeare',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'A Christmas Carol - Charles Dickens',
     ],
   },
   {
     quote: '"A man has to make his own way."',
     textSlug: 'an-inspector-calls',
-    answer: 'An Inspector Calls — J.B. Priestley',
+    answer: 'An Inspector Calls - J.B. Priestley',
     options: [
-      'An Inspector Calls — J.B. Priestley',
-      'Animal Farm — George Orwell',
-      'Lord of the Flies — William Golding',
-      'Of Mice and Men — John Steinbeck',
+      'An Inspector Calls - J.B. Priestley',
+      'Animal Farm - George Orwell',
+      'Lord of the Flies - William Golding',
+      'Of Mice and Men - John Steinbeck',
     ],
   },
 
@@ -208,34 +208,34 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"Are there no prisons? Are there no workhouses?"',
     textSlug: 'a-christmas-carol',
-    answer: 'A Christmas Carol — Charles Dickens',
+    answer: 'A Christmas Carol - Charles Dickens',
     options: [
-      'A Christmas Carol — Charles Dickens',
-      'An Inspector Calls — J.B. Priestley',
-      'Jekyll and Hyde — R.L. Stevenson',
-      'Great Expectations — Charles Dickens',
+      'A Christmas Carol - Charles Dickens',
+      'An Inspector Calls - J.B. Priestley',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'Great Expectations - Charles Dickens',
     ],
   },
   {
     quote: '"God bless us, every one!"',
     textSlug: 'a-christmas-carol',
-    answer: 'A Christmas Carol — Charles Dickens',
+    answer: 'A Christmas Carol - Charles Dickens',
     options: [
-      'A Christmas Carol — Charles Dickens',
-      'Oliver Twist — Charles Dickens',
-      'Silas Marner — George Eliot',
-      'Pride and Prejudice — Jane Austen',
+      'A Christmas Carol - Charles Dickens',
+      'Oliver Twist - Charles Dickens',
+      'Silas Marner - George Eliot',
+      'Pride and Prejudice - Jane Austen',
     ],
   },
   {
     quote: '"I wear the chain I forged in life."',
     textSlug: 'a-christmas-carol',
-    answer: 'A Christmas Carol — Charles Dickens',
+    answer: 'A Christmas Carol - Charles Dickens',
     options: [
-      'A Christmas Carol — Charles Dickens',
-      'Jekyll and Hyde — R.L. Stevenson',
-      'Frankenstein — Mary Shelley',
-      'Macbeth — William Shakespeare',
+      'A Christmas Carol - Charles Dickens',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'Frankenstein - Mary Shelley',
+      'Macbeth - William Shakespeare',
     ],
   },
 
@@ -243,23 +243,23 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"Man is not truly one, but truly two."',
     textSlug: 'jekyll-and-hyde',
-    answer: 'Jekyll and Hyde — R.L. Stevenson',
+    answer: 'Jekyll and Hyde - R.L. Stevenson',
     options: [
-      'Jekyll and Hyde — R.L. Stevenson',
-      'Frankenstein — Mary Shelley',
-      'Macbeth — William Shakespeare',
-      'A Christmas Carol — Charles Dickens',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'Frankenstein - Mary Shelley',
+      'Macbeth - William Shakespeare',
+      'A Christmas Carol - Charles Dickens',
     ],
   },
   {
     quote: '"With ape-like fury, he was trampling his victim under foot."',
     textSlug: 'jekyll-and-hyde',
-    answer: 'Jekyll and Hyde — R.L. Stevenson',
+    answer: 'Jekyll and Hyde - R.L. Stevenson',
     options: [
-      'Jekyll and Hyde — R.L. Stevenson',
-      'Frankenstein — Mary Shelley',
-      'Jane Eyre — Charlotte Brontë',
-      'Great Expectations — Charles Dickens',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'Frankenstein - Mary Shelley',
+      'Jane Eyre - Charlotte Brontë',
+      'Great Expectations - Charles Dickens',
     ],
   },
 
@@ -268,12 +268,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote:
       '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
     textSlug: 'pride-and-prejudice',
-    answer: 'Pride and Prejudice — Jane Austen',
+    answer: 'Pride and Prejudice - Jane Austen',
     options: [
-      'Pride and Prejudice — Jane Austen',
-      'Jane Eyre — Charlotte Brontë',
-      'Silas Marner — George Eliot',
-      'Frankenstein — Mary Shelley',
+      'Pride and Prejudice - Jane Austen',
+      'Jane Eyre - Charlotte Brontë',
+      'Silas Marner - George Eliot',
+      'Frankenstein - Mary Shelley',
     ],
   },
 
@@ -281,36 +281,36 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"I am no bird; and no net ensnares me."',
     textSlug: 'jane-eyre',
-    answer: 'Jane Eyre — Charlotte Brontë',
+    answer: 'Jane Eyre - Charlotte Brontë',
     options: [
-      'Jane Eyre — Charlotte Brontë',
-      'Pride and Prejudice — Jane Austen',
-      'Wuthering Heights — Emily Brontë',
-      'Great Expectations — Charles Dickens',
+      'Jane Eyre - Charlotte Brontë',
+      'Pride and Prejudice - Jane Austen',
+      'Wuthering Heights - Emily Brontë',
+      'Great Expectations - Charles Dickens',
     ],
   },
   {
     quote: '"Reader, I married him."',
     textSlug: 'jane-eyre',
-    answer: 'Jane Eyre — Charlotte Brontë',
+    answer: 'Jane Eyre - Charlotte Brontë',
     options: [
-      'Jane Eyre — Charlotte Brontë',
-      'Pride and Prejudice — Jane Austen',
-      'Silas Marner — George Eliot',
-      'The Sign of Four — Arthur Conan Doyle',
+      'Jane Eyre - Charlotte Brontë',
+      'Pride and Prejudice - Jane Austen',
+      'Silas Marner - George Eliot',
+      'The Sign of Four - Arthur Conan Doyle',
     ],
   },
 
   // ── Frankenstein (AQA, Edexcel, OCR) ──────────────────────────────────────
   {
-    quote: '"I beheld the wretch — the miserable monster whom I had created."',
+    quote: '"I beheld the wretch - the miserable monster whom I had created."',
     textSlug: 'frankenstein',
-    answer: 'Frankenstein — Mary Shelley',
+    answer: 'Frankenstein - Mary Shelley',
     options: [
-      'Frankenstein — Mary Shelley',
-      'Jekyll and Hyde — R.L. Stevenson',
-      'Jane Eyre — Charlotte Brontë',
-      'A Christmas Carol — Charles Dickens',
+      'Frankenstein - Mary Shelley',
+      'Jekyll and Hyde - R.L. Stevenson',
+      'Jane Eyre - Charlotte Brontë',
+      'A Christmas Carol - Charles Dickens',
     ],
   },
 
@@ -318,38 +318,38 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"All animals are equal, but some animals are more equal than others."',
     textSlug: 'animal-farm',
-    answer: 'Animal Farm — George Orwell',
+    answer: 'Animal Farm - George Orwell',
     options: [
-      'Animal Farm — George Orwell',
-      'Lord of the Flies — William Golding',
-      'Of Mice and Men — John Steinbeck',
-      'An Inspector Calls — J.B. Priestley',
+      'Animal Farm - George Orwell',
+      'Lord of the Flies - William Golding',
+      'Of Mice and Men - John Steinbeck',
+      'An Inspector Calls - J.B. Priestley',
     ],
   },
 
   // ── Lord of the Flies (AQA, OCR, Eduqas) ─────────────────────────────────
   {
-    quote: '"The thing is — fear can\'t hurt you any more than a dream."',
+    quote: '"The thing is - fear can\'t hurt you any more than a dream."',
     textSlug: 'lord-of-the-flies',
-    answer: 'Lord of the Flies — William Golding',
+    answer: 'Lord of the Flies - William Golding',
     options: [
-      'Lord of the Flies — William Golding',
-      'Animal Farm — George Orwell',
-      'Of Mice and Men — John Steinbeck',
-      'An Inspector Calls — J.B. Priestley',
+      'Lord of the Flies - William Golding',
+      'Animal Farm - George Orwell',
+      'Of Mice and Men - John Steinbeck',
+      'An Inspector Calls - J.B. Priestley',
     ],
   },
 
   // ── Of Mice and Men (Edexcel IGCSE) ──────────────────────────────────────
   {
-    quote: '"A guy needs somebody — to be near him."',
+    quote: '"A guy needs somebody - to be near him."',
     textSlug: 'of-mice-and-men',
-    answer: 'Of Mice and Men — John Steinbeck',
+    answer: 'Of Mice and Men - John Steinbeck',
     options: [
-      'Of Mice and Men — John Steinbeck',
-      'To Kill a Mockingbird — Harper Lee',
-      'Animal Farm — George Orwell',
-      'Things Fall Apart — Chinua Achebe',
+      'Of Mice and Men - John Steinbeck',
+      'To Kill a Mockingbird - Harper Lee',
+      'Animal Farm - George Orwell',
+      'Things Fall Apart - Chinua Achebe',
     ],
   },
 
@@ -358,12 +358,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote:
       '"You never really understand a person until you consider things from his point of view."',
     textSlug: 'to-kill-a-mockingbird',
-    answer: 'To Kill a Mockingbird — Harper Lee',
+    answer: 'To Kill a Mockingbird - Harper Lee',
     options: [
-      'To Kill a Mockingbird — Harper Lee',
-      'Of Mice and Men — John Steinbeck',
-      'Things Fall Apart — Chinua Achebe',
-      'A View from the Bridge — Arthur Miller',
+      'To Kill a Mockingbird - Harper Lee',
+      'Of Mice and Men - John Steinbeck',
+      'Things Fall Apart - Chinua Achebe',
+      'A View from the Bridge - Arthur Miller',
     ],
   },
 
@@ -372,12 +372,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote:
       '"The white man is very clever... He has put a knife on the things that held us together."',
     textSlug: 'things-fall-apart',
-    answer: 'Things Fall Apart — Chinua Achebe',
+    answer: 'Things Fall Apart - Chinua Achebe',
     options: [
-      'Things Fall Apart — Chinua Achebe',
-      'To Kill a Mockingbird — Harper Lee',
-      'Of Mice and Men — John Steinbeck',
-      'A View from the Bridge — Arthur Miller',
+      'Things Fall Apart - Chinua Achebe',
+      'To Kill a Mockingbird - Harper Lee',
+      'Of Mice and Men - John Steinbeck',
+      'A View from the Bridge - Arthur Miller',
     ],
   },
 
@@ -385,12 +385,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"Look on my Works, ye Mighty, and despair!"',
     textSlug: 'ozymandias',
-    answer: 'Ozymandias — Percy Bysshe Shelley',
+    answer: 'Ozymandias - Percy Bysshe Shelley',
     options: [
-      'Ozymandias — Percy Bysshe Shelley',
-      'London — William Blake',
-      'My Last Duchess — Robert Browning',
-      'The Charge of the Light Brigade — Alfred Tennyson',
+      'Ozymandias - Percy Bysshe Shelley',
+      'London - William Blake',
+      'My Last Duchess - Robert Browning',
+      'The Charge of the Light Brigade - Alfred Tennyson',
     ],
   },
 
@@ -398,12 +398,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
   {
     quote: '"Bent double, like old beggars under sacks."',
     textSlug: 'dulce-et-decorum-est',
-    answer: 'Dulce et Decorum Est — Wilfred Owen',
+    answer: 'Dulce et Decorum Est - Wilfred Owen',
     options: [
-      'Dulce et Decorum Est — Wilfred Owen',
-      'The Charge of the Light Brigade — Alfred Tennyson',
-      'Bayonet Charge — Ted Hughes',
-      'Exposure — Wilfred Owen',
+      'Dulce et Decorum Est - Wilfred Owen',
+      'The Charge of the Light Brigade - Alfred Tennyson',
+      'Bayonet Charge - Ted Hughes',
+      'Exposure - Wilfred Owen',
     ],
   },
 ]
@@ -1049,7 +1049,7 @@ const GAMES: GameDef[] = [
 ]
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// EAL & KS3 GAMES — level-appropriate games for learners new to English
+// EAL & KS3 GAMES - level-appropriate games for learners new to English
 // and for Key Stage 3 literacy. Each is a standalone route.
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -1104,7 +1104,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'plural-builder',
     'Plural Builder',
-    'Make the plural — regular, irregular and the odd ones out.',
+    'Make the plural - regular, irregular and the odd ones out.',
     <Shuffle className="size-6" />,
     'Easy',
     'text-teal-400',
@@ -1113,7 +1113,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'to-be-conjugation',
     'The Verb To Be',
-    'am / is / are / was / were — fill the gap correctly.',
+    'am / is / are / was / were - fill the gap correctly.',
     <Zap className="size-6" />,
     'Easy',
     'text-amber-400',
@@ -1176,7 +1176,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'tense-timeline',
     'Tense Timeline',
-    'Spot the verb tense — past, present, future and perfect.',
+    'Spot the verb tense - past, present, future and perfect.',
     <Timer className="size-6" />,
     'Medium',
     'text-sky-400',
@@ -1185,7 +1185,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'prepositions-of-place',
     'Where Is It?',
-    'in / on / under / behind / between — prepositions of place.',
+    'in / on / under / behind / between - prepositions of place.',
     <Target className="size-6" />,
     'Medium',
     'text-teal-400',
@@ -1230,7 +1230,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'collocations-challenge',
     'Make / Do / Have / Take',
-    'Pick the verb that goes with the noun — natural English.',
+    'Pick the verb that goes with the noun - natural English.',
     <Brain className="size-6" />,
     'Medium',
     'text-pink-400',
@@ -1269,7 +1269,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'homophone-hero',
     'Homophone Hero',
-    "their / there / they're — pick the right one.",
+    "their / there / they're - pick the right one.",
     <Brain className="size-6" />,
     'Medium',
     'text-cyan-400',
@@ -1323,7 +1323,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'figurative-language-finder',
     'Figurative Language Finder',
-    'Simile, metaphor, personification — name the device.',
+    'Simile, metaphor, personification - name the device.',
     <Target className="size-6" />,
     'Medium',
     'text-violet-400',
@@ -1411,7 +1411,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
           return { picked, nextUsed }
         }
       }
-      // Every bucket exhausted — reset history and pick from preferred bucket
+      // Every bucket exhausted - reset history and pick from preferred bucket
       const resetUsed = new Set<string>()
       for (const bucket of buckets) {
         if (bucket.length > 0) {
@@ -1734,12 +1734,12 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
 
   // Filter the quote bank strictly by textSlug against the user's board's set texts.
   // Non-curriculum texts are NOT in the bank at all, so the worst case is still
-  // always curriculum content — never Harry Potter, Dune, etc.
+  // always curriculum content - never Harry Potter, Dune, etc.
   const filteredData = useMemo(() => {
     if (!board) return QUOTE_MATCH_DATA
     const allowedSlugs = new Set(getSetTextsForBoard(board).map((t) => t.slug))
     // Also allow poem slugs used by the board's anthology (ozymandias, dulce-et-decorum-est, etc.)
-    // Those aren't in set-texts but are board-specific — map a short allow-list per board.
+    // Those aren't in set-texts but are board-specific - map a short allow-list per board.
     const boardPoemSlugs: Record<string, string[]> = {
       aqa: ['ozymandias', 'london', 'my-last-duchess', 'charge-of-the-light-brigade', 'exposure'],
       edexcel: ['ozymandias', 'london'],
@@ -1825,7 +1825,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           </h3>
           <p className="text-sm text-muted-foreground max-w-md">
             Your exam board focuses on English Language skills rather than prescribed literature
-            texts. Try the other games in the hub — Word Scramble, Grammar Fix, or literary
+            texts. Try the other games in the hub - Word Scramble, Grammar Fix, or literary
             technique drills.
           </p>
         </div>
@@ -2290,7 +2290,7 @@ export default function GamesPage() {
   }
 
   // Filter games: hide text-specific games when the user's board has no relevant content.
-  // For now, all boards have at least Macbeth/Inspector Calls so all games stay visible —
+  // For now, all boards have at least Macbeth/Inspector Calls so all games stay visible -
   // but this gives us a hook for future per-board filtering.
   const visibleGames = useMemo(() => {
     if (!board) return GAMES
@@ -2379,7 +2379,7 @@ export default function GamesPage() {
         </section>
       )}
 
-      {/* Learning profile — time + accuracy → strengths, weaknesses,
+      {/* Learning profile - time + accuracy → strengths, weaknesses,
           and what to focus on next */}
       {!activeGame && (
         <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-0">
@@ -2433,7 +2433,7 @@ export default function GamesPage() {
             <div className="mt-14 border-t border-border/40 pt-10">
               <h2 className="text-lg font-bold text-foreground">New to English &amp; EAL games</h2>
               <p className="mt-1 mb-5 text-sm text-muted-foreground">
-                Friendly, level-appropriate games for learners building English from the ground up —
+                Friendly, level-appropriate games for learners building English from the ground up -
                 vocabulary, grammar and everyday language.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -2446,7 +2446,7 @@ export default function GamesPage() {
             <div className="mt-14 border-t border-border/40 pt-10">
               <h2 className="text-lg font-bold text-foreground">KS3 literacy games</h2>
               <p className="mt-1 mb-5 text-sm text-muted-foreground">
-                Build the core Key Stage 3 skills — word classes, punctuation, spelling, vocabulary,
+                Build the core Key Stage 3 skills - word classes, punctuation, spelling, vocabulary,
                 sentences and reading.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

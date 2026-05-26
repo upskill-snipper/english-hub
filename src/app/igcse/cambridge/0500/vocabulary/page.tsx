@@ -17,11 +17,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Vocabulary Builder — IGCSE Language A 0500',
+    title: 'Vocabulary Builder - IGCSE Language A 0500',
     description:
       '100 challenging vocabulary words commonly found in Cambridge IGCSE 0500 passages, organised by theme. Each with definition, example sentence, and synonym.',
   },
-  title: 'Vocabulary Builder — IGCSE Language A 0500',
+  title: 'Vocabulary Builder - IGCSE Language A 0500',
   description:
     '100 challenging vocabulary words commonly found in Cambridge IGCSE 0500 passages, organised by theme. Each with definition, example sentence, and synonym.',
   alternates: {

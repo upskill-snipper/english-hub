@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers — Essay Plans | The English Hub',
+    title: 'Blood Brothers - Essay Plans | The English Hub',
     description:
       'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
   },
-  title: 'Blood Brothers — Essay Plans',
+  title: 'Blood Brothers - Essay Plans',
   description:
     'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
   alternates: {
@@ -47,13 +47,13 @@ const ESSAY_PLANS: EssayPlan[] = [
     id: 1,
     question: 'How does Russell present the theme of class in Blood Brothers?',
     thesis:
-      'Russell constructs the play as a controlled experiment — two identical twins raised on opposite sides of the class divide — to argue that social position, not innate character, determines life outcomes.',
+      'Russell constructs the play as a controlled experiment - two identical twins raised on opposite sides of the class divide - to argue that social position, not innate character, determines life outcomes.',
     paragraphs: [
       {
         pointHeading: 'The pact as class transaction',
         topic: 'Russell opens by showing how class power enables Mrs Lyons to acquire a child.',
         quote: '"Give one to me."',
-        quoteContext: 'Mrs Lyons — Act 1',
+        quoteContext: 'Mrs Lyons - Act 1',
         analysis:
           'The blunt imperative reduces a baby to a commodity. Russell shows that wealth confers the power to take what poverty cannot protect. The pact is not a mutual agreement but an exploitation of economic desperation.',
         contextLink:
@@ -64,17 +64,17 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "Russell stages the boys' meeting to expose how identical people are treated differently by class.",
         quote: '"We\'re blood brothers."',
-        quoteContext: 'Mickey and Edward — Act 1',
+        quoteContext: 'Mickey and Edward - Act 1',
         analysis:
           "The ritual of chosen kinship mirrors the biological bond they do not know about. Russell uses dramatic irony to show that class distinctions are imposed from outside, not inherent. The boys' natural equality makes the later divergence feel violent.",
         contextLink:
-          'Russell draws on his own experience of cross-class friendships in Liverpool, where children mixed freely until institutional structures — schools, housing, employment — separated them.',
+          'Russell draws on his own experience of cross-class friendships in Liverpool, where children mixed freely until institutional structures - schools, housing, employment - separated them.',
       },
       {
         pointHeading: 'The fatal realisation',
         topic: "Russell delays the class argument's emotional climax to the final scene.",
         quote: '"Well, how come you got everything... an\' I got nothin\'?"',
-        quoteContext: 'Mickey — Act 2',
+        quoteContext: 'Mickey - Act 2',
         analysis:
           "Mickey articulates the play's thesis in plain speech. The question is not about envy but about systemic injustice: Russell gives the political argument to the character who has suffered most, making it impossible to dismiss as abstract theory.",
         contextLink:
@@ -82,7 +82,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
     ],
     conclusion:
-      'Russell uses the twin structure to strip away every variable except class, proving that inequality is manufactured, not natural. The play ends not with resolution but with a question — forcing the audience to take responsibility for the answer.',
+      'Russell uses the twin structure to strip away every variable except class, proving that inequality is manufactured, not natural. The play ends not with resolution but with a question - forcing the audience to take responsibility for the answer.',
   },
   {
     id: 2,
@@ -95,7 +95,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           'The Narrator opens the play by revealing the ending, collapsing suspense in favour of analysis.',
         quote: '"So did y’ hear the story of the Johnstone twins?"',
-        quoteContext: 'Narrator — prologue',
+        quoteContext: 'Narrator - prologue',
         analysis:
           'By telling the audience the outcome before the play begins, Russell redirects attention from what happens to why it happens. The Narrator transforms the play from a story into an argument, inviting the audience to read every scene as evidence.',
         contextLink:
@@ -106,7 +106,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "The Narrator's recurring refrains create a sense of fate that Russell then critiques.",
         quote: '"You know the devil\'s got your number."',
-        quoteContext: 'Narrator — recurring refrain',
+        quoteContext: 'Narrator - recurring refrain',
         analysis:
           'The "devil" sounds supernatural but functions as a metaphor for class-driven determinism. Russell gives the audience a folk-horror atmosphere while simultaneously undermining it: the real forces at work are economic, not magical.',
         contextLink:
@@ -116,7 +116,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'The final question',
         topic: "The Narrator's closing line forces the audience to choose an explanation.",
         quote: '"And do we blame superstition for what came to pass?"',
-        quoteContext: 'Narrator — closing line',
+        quoteContext: 'Narrator - closing line',
         analysis:
           'Russell uses a direct question to shatter the fourth wall. The Narrator rejects the supernatural reading he has spent the play building, demanding that the audience locate blame in class structures. The play refuses closure: the audience must supply the answer.',
         contextLink:
@@ -137,7 +137,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "The boys' first meeting demonstrates that without class markers, identity is shared.",
         quote: '"We\'re blood brothers."',
-        quoteContext: 'Mickey and Edward — Act 1',
+        quoteContext: 'Mickey and Edward - Act 1',
         analysis:
           'The blood-brother ritual is layered with irony: the boys choose kinship before knowing they share it biologically. Russell uses the scene to argue that empathy and connection are natural; division is learned. The childhood equality makes the adult divergence unbearable.',
         contextLink:
@@ -147,7 +147,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Adolescent divergence',
         topic: 'As teenagers, the boys begin to occupy different social worlds despite their bond.',
         quote: '"I thought we always stuck together."',
-        quoteContext: 'Edward — Act 2 confrontation',
+        quoteContext: 'Edward - Act 2 confrontation',
         analysis:
           'Edward’s plea appeals to their blood-brother bond, but Russell exposes how class has already broken it. By adulthood, Edward’s sentimental faith in friendship cannot reach Mickey’s lived reality of unemployment and prison.',
         contextLink:
@@ -157,7 +157,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Adult destruction',
         topic: 'The friendship collapses under the weight of inequality in adulthood.',
         quote: '"I could have been him."',
-        quoteContext: 'Mickey — Act 2',
+        quoteContext: 'Mickey - Act 2',
         analysis:
           "Mickey's realisation destroys the friendship because it exposes the lie of equality on which it was built. Russell shows that genuine friendship requires genuine equality, and a class-divided society makes both impossible.",
         contextLink:
@@ -171,14 +171,14 @@ const ESSAY_PLANS: EssayPlan[] = [
     id: 4,
     question: 'How does Russell present mothers and motherhood in Blood Brothers?',
     thesis:
-      'Russell uses two mothers — Mrs Johnstone and Mrs Lyons — as a paired study to show that class determines not only life chances but also the forms of love, fear and guilt available to women.',
+      'Russell uses two mothers - Mrs Johnstone and Mrs Lyons - as a paired study to show that class determines not only life chances but also the forms of love, fear and guilt available to women.',
     paragraphs: [
       {
         pointHeading: 'Mrs Johnstone: love constrained by poverty',
         topic:
           "Russell presents Mrs Johnstone's decision to give up her child as an act forced by economic desperation, not moral failure.",
         quote: '"Only mine until the time comes round to pay the bill."',
-        quoteContext: 'Mrs Johnstone — Act 1',
+        quoteContext: 'Mrs Johnstone - Act 1',
         analysis:
           "Mrs Johnstone's anguish when she tries to reclaim the child shows that maternal love is powerless against class privilege. Russell uses her songs to give a working-class mother a voice that the social structures around her deny.",
         contextLink:
@@ -188,9 +188,9 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Mrs Lyons: love deformed by privilege',
         topic: 'Russell shows that wealth provides Mrs Lyons with power but not peace.',
         quote: '"You do know what they say about twins, secretly parted, don\'t you?"',
-        quoteContext: 'Mrs Lyons — Act 1',
+        quoteContext: 'Mrs Lyons - Act 1',
         analysis:
-          "Mrs Lyons invents the superstition to control Mrs Johnstone, but Russell shows her becoming its prisoner. Her paranoia is a form of guilt that wealth cannot resolve — a mirror to Mrs Johnstone's grief.",
+          "Mrs Lyons invents the superstition to control Mrs Johnstone, but Russell shows her becoming its prisoner. Her paranoia is a form of guilt that wealth cannot resolve - a mirror to Mrs Johnstone's grief.",
         contextLink:
           'Russell avoids making Mrs Lyons a simple villain. Her infertility and loneliness are genuine, and her descent into obsession is tragic. Class gives her different resources but not different pain.',
       },
@@ -199,7 +199,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           "Mrs Johnstone's confession of the truth triggers the catastrophe, showing that honesty arrives too late in a class-divided world.",
         quote: '"Tell me it\'s not true, say it\'s just a story."',
-        quoteContext: 'Mrs Johnstone — closing song',
+        quoteContext: 'Mrs Johnstone - closing song',
         analysis:
           "The closing song is Mrs Johnstone's testimony. Russell gives her the last word, framing the entire play as a working-class mother's plea for a world where her children could have survived.",
         contextLink:
@@ -220,7 +220,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           'By revealing the ending at the start, Russell transforms the audience from passive spectators into critical analysts.',
         quote: '"So did y’ hear the story of the Johnstone twins?"',
-        quoteContext: 'Narrator — prologue',
+        quoteContext: 'Narrator - prologue',
         analysis:
           'The prologue collapses suspense: the audience watches every scene knowing the outcome. This shifts their attention from plot to cause, turning the play into an argument about why the tragedy happens rather than a surprise that it does.',
         contextLink:
@@ -231,7 +231,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           'Russell uses the musical form to compress time, intensify emotion and deliver political argument simultaneously.',
         quote: '"Tell me it\'s not true, say it\'s just a story."',
-        quoteContext: 'Mrs Johnstone — closing song',
+        quoteContext: 'Mrs Johnstone - closing song',
         analysis:
           "The closing song operates on two levels: emotionally, it is devastating; politically, it asks the audience to refuse inevitability. Russell exploits the directness of song to bypass intellectual resistance and reach the audience's feelings, then redirects those feelings toward political awareness.",
         contextLink:
@@ -242,7 +242,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic:
           'The Narrator prevents the audience from losing themselves in emotional identification.',
         quote: '"You know the devil\'s got your number."',
-        quoteContext: 'Narrator — recurring refrain',
+        quoteContext: 'Narrator - recurring refrain',
         analysis:
           'The Narrator interrupts the naturalistic action with stylised, almost supernatural warnings. This keeps the audience at a critical distance, reminding them that they are watching a constructed argument, not a slice of life. Russell balances emotional engagement with analytical detachment.',
         contextLink:
@@ -250,7 +250,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
     ],
     conclusion:
-      "Russell's genius is structural: he uses the accessibility of musical theatre to deliver a political argument that might otherwise be resisted. The audience leaves moved and angry — exactly the combination Russell intends.",
+      "Russell's genius is structural: he uses the accessibility of musical theatre to deliver a political argument that might otherwise be resisted. The audience leaves moved and angry - exactly the combination Russell intends.",
   },
 ]
 
@@ -298,7 +298,7 @@ export default async function BloodBrothersEssayPlansPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text — Play
+              Modern Text - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />

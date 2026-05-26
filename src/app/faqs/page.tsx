@@ -4,7 +4,7 @@ import { tMany } from '@/lib/i18n/t'
 import { FAQ_JSON_LD_DATA } from './faq-data'
 
 /**
- * /faqs — Server-rendered FAQs for SEO + rich results.
+ * /faqs - Server-rendered FAQs for SEO + rich results.
  *
  * Every question and answer is present in the initial HTML (no JS required
  * to read answers). Expand / collapse is handled by the native <details>
@@ -12,7 +12,7 @@ import { FAQ_JSON_LD_DATA } from './faq-data'
  *
  * The page also emits inline FAQPage JSON-LD (in addition to the layout's
  * <FAQPageJsonLd /> helper) so the structured data travels with the page
- * document itself — belt and braces for rich-result eligibility. The
+ * document itself - belt and braces for rich-result eligibility. The
  * inline JSON-LD always uses the canonical English copy from faq-data.ts
  * so the structured-data feed stays stable across locales.
  */
@@ -235,7 +235,7 @@ export default async function FaqsPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* Inline FAQPage JSON-LD — keeps structured data attached to the page document. */}
+      {/* Inline FAQPage JSON-LD - keeps structured data attached to the page document. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
@@ -253,7 +253,7 @@ export default async function FaqsPage() {
         </p>
       </header>
 
-      {/* Section navigation (anchor links — no JS needed) */}
+      {/* Section navigation (anchor links - no JS needed) */}
       <nav aria-label={sectionsAria} className="mt-8 flex flex-wrap justify-center gap-2">
         {SECTIONS.map((section) => (
           <a

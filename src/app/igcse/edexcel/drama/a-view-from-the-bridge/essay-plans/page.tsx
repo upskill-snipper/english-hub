@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge Essay Plans — Edexcel IGCSE Literature',
+    title: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
   },
-  title: 'A View from the Bridge Essay Plans — Edexcel IGCSE Literature',
+  title: 'A View from the Bridge Essay Plans - Edexcel IGCSE Literature',
   description:
     'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
   alternates: {

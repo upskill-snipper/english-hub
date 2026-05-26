@@ -113,9 +113,9 @@ function flattenAnnotation(a: any): string {
   if (typeof a === 'string') return a
   if (a && typeof a === 'object') {
     const parts: string[] = []
-    if (typeof a.AO1 === 'string') parts.push(`AO1 — ${a.AO1}`)
-    if (typeof a.AO2 === 'string') parts.push(`AO2 — ${a.AO2}`)
-    if (typeof a.AO3 === 'string') parts.push(`AO3 — ${a.AO3}`)
+    if (typeof a.AO1 === 'string') parts.push(`AO1 - ${a.AO1}`)
+    if (typeof a.AO2 === 'string') parts.push(`AO2 - ${a.AO2}`)
+    if (typeof a.AO3 === 'string') parts.push(`AO3 - ${a.AO3}`)
     if (parts.length > 0) return parts.join('\n\n')
   }
   return ''
@@ -153,18 +153,18 @@ export async function generateMetadata({
   const textLabel = TEXT_LABELS[text]
   if (!essay) {
     return {
-      title: `${textLabel} model essay — The English Hub`,
+      title: `${textLabel} model essay - The English Hub`,
       alternates: { canonical: `https://theenglishhub.app/revision/model-essays/${text}/${slug}` },
     }
   }
   return {
-    title: `${essay.title} — Annotated Grade ${essay.targetGrade} model essay (${textLabel})`,
+    title: `${essay.title} - Annotated Grade ${essay.targetGrade} model essay (${textLabel})`,
     description: `Read a Grade ${essay.targetGrade} model essay on ${textLabel} (${essay.title}) with paragraph-by-paragraph marker commentary covering structure, AO2 method analysis, and AO3 context.`,
     alternates: {
       canonical: `https://theenglishhub.app/revision/model-essays/${text}/${slug}`,
     },
     openGraph: {
-      title: `${essay.title} — Annotated Grade ${essay.targetGrade} model essay`,
+      title: `${essay.title} - Annotated Grade ${essay.targetGrade} model essay`,
       description: `Annotated Grade ${essay.targetGrade} ${textLabel} essay with paragraph-level commentary.`,
     },
   }

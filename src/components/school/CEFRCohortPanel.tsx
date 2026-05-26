@@ -12,7 +12,7 @@
 //
 // English-only by design: the rest of the school dashboard
 // (StatCard, GradeDistributionChart, the analytics page) is EN.
-// Visual language matches the school analytics page — the cinematic
+// Visual language matches the school analytics page - the cinematic
 // "glass + Recharts" dataviz layer (GlassPanel / RankBars / TrendArea).
 // ──────────────────────────────────────────────────────────────────────────────
 
@@ -78,7 +78,7 @@ function PanelShell({ children }: { children: React.ReactNode }) {
             CEFR Placement Overview
           </h2>
           <p className="mt-0.5 text-sm text-muted-foreground">
-            Cohort-level English proficiency from the CEFR placement test (A2–C1).
+            Cohort-level English proficiency from the CEFR placement test (A2-C1).
           </p>
         </div>
       </div>
@@ -133,7 +133,7 @@ export function CEFRCohortPanel() {
     })
   }, [summary])
 
-  // Per-skill averages — already weakest-first; recharts renders the array
+  // Per-skill averages - already weakest-first; recharts renders the array
   // top-to-bottom so the order is preserved visually.
   const skillRows = useMemo(() => {
     if (!summary) return []
@@ -144,7 +144,7 @@ export function CEFRCohortPanel() {
     }))
   }, [summary])
 
-  // Monthly trend — band rank is 0..3; chart over that domain.
+  // Monthly trend - band rank is 0..3; chart over that domain.
   const trendRows = useMemo(() => {
     if (!summary) return []
     return summary.trend.map((p) => ({
@@ -188,7 +188,7 @@ export function CEFRCohortPanel() {
           <Info className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
           <p className="text-sm leading-relaxed text-muted-foreground">
             CEFR placement analytics will activate automatically once the database migration is
-            applied — no further action needed here.
+            applied - no further action needed here.
           </p>
         </div>
       </PanelShell>

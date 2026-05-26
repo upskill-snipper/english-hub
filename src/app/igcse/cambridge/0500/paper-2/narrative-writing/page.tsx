@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Narrative Writing — IGCSE Language A Paper 2 Section B',
+    title: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
     description:
       'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Narrative Writing — IGCSE Language A Paper 2 Section B',
+  title: 'Narrative Writing - IGCSE Language A Paper 2 Section B',
   description:
     'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -25,7 +25,7 @@ const structure = [
     stage: 'Exposition (about 20%)',
     detail:
       'Open in the middle of a moment. Establish character, setting and mood with small, specific detail rather than a life story.',
-    tip: 'Start with a line of dialogue, a vivid action or a small sensory detail — never with "Hi, my name is...".',
+    tip: 'Start with a line of dialogue, a vivid action or a small sensory detail - never with "Hi, my name is...".',
   },
   {
     stage: 'Inciting incident (about 15%)',
@@ -36,7 +36,7 @@ const structure = [
   {
     stage: 'Rising action (about 30%)',
     detail: 'Complications stack up. The character commits further and options narrow.',
-    tip: 'One or two complications is enough — do not crowd the word count with plot.',
+    tip: 'One or two complications is enough - do not crowd the word count with plot.',
   },
   {
     stage: 'Climax (about 15%)',
@@ -52,14 +52,14 @@ const structure = [
 ]
 
 const characterTips = [
-  'Give each character ONE distinguishing habit — fiddles with a ring, hums a tune, flinches at noise.',
+  'Give each character ONE distinguishing habit - fiddles with a ring, hums a tune, flinches at noise.',
   'Show relationships through small actions, not explanations.',
   'Name only the characters who matter. A crowd is better than five bit-parts.',
   'Let characters want something. A story is someone trying to get something and struggling.',
 ]
 
 const dialogueRules = [
-  'New speaker, new line — always.',
+  'New speaker, new line - always.',
   'Use "said" more often than "exclaimed". Said is invisible.',
   'Break dialogue with small actions: "I know." She turned the cup slowly in her hands. "I know you know."',
   'Dialogue should reveal character OR move the story forward. Ideally both.',
@@ -91,7 +91,7 @@ export default async function NarrativeWritingPage() {
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">Narrative writing</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          A narrative composition is a short story — not a summary of a life. In 450 words you need
+          A narrative composition is a short story - not a summary of a life. In 450 words you need
           one clear event, one developed character and one controlled shift in mood. Restraint is
           worth more than spectacle.
         </p>
@@ -106,7 +106,7 @@ export default async function NarrativeWritingPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Content & structure — 16
+              Content & structure - 16
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Originality, pacing, character development, sense of direction, satisfying shape.
@@ -114,7 +114,7 @@ export default async function NarrativeWritingPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Style & accuracy — 24
+              Style & accuracy - 24
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Precise vocabulary, varied sentence structure, tense consistency, dialogue
@@ -210,7 +210,7 @@ export default async function NarrativeWritingPage() {
         <div className="mb-4 flex items-center gap-3">
           <Lightbulb className="size-5 text-primary" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Worked opening — &quot;Write a story that begins with a phone call.&quot;
+            Worked opening - &quot;Write a story that begins with a phone call.&quot;
           </h2>
         </div>
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">

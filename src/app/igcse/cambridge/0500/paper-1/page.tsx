@@ -18,11 +18,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 1 Reading — IGCSE Language A',
+    title: 'Paper 1 Reading - IGCSE Language A',
     description:
       'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Paper 1 Reading — IGCSE Language A',
+  title: 'Paper 1 Reading - IGCSE Language A',
   description:
     'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 const questions = [
   {
-    number: 'Question 1(a)–(e)',
+    number: 'Question 1(a)-(e)',
     title: 'Short comprehension',
     marks: 15,
     ao: 'Reading',
@@ -163,7 +163,7 @@ export default async function Paper1HubPage() {
                     <CardTitle className="text-heading-sm font-heading">
                       {q.number}: {q.title}
                     </CardTitle>
-                    <CardDescription>Skills focus — {q.ao}</CardDescription>
+                    <CardDescription>Skills focus - {q.ao}</CardDescription>
                   </div>
                   <Badge className="bg-primary/10 text-primary border-primary/20">
                     {q.marks} marks
@@ -222,25 +222,25 @@ export default async function Paper1HubPage() {
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">10 min — read</p>
+            <p className="text-body-xs font-semibold text-primary">10 min - read</p>
             <p className="mt-1 text-body-sm text-foreground">
               Read all three passages once, lightly annotate.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">45 min — Q1</p>
+            <p className="text-body-xs font-semibold text-primary">45 min - Q1</p>
             <p className="mt-1 text-body-sm text-foreground">
               Short answers (10 min) + directed response (35 min).
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">25 min — Q2</p>
+            <p className="text-body-xs font-semibold text-primary">25 min - Q2</p>
             <p className="mt-1 text-body-sm text-foreground">
               Language analysis. Eight well-chosen words or phrases.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">40 min — Q3</p>
+            <p className="text-body-xs font-semibold text-primary">40 min - Q3</p>
             <p className="mt-1 text-body-sm text-foreground">
               Summary. Point-spot, plan, write, check.
             </p>

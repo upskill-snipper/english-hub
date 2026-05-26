@@ -1,10 +1,10 @@
 // ─── Edexcel GCSE English Literature Mark Scheme ────────────────────────────
-// Paper 1: Shakespeare and Post-1914 Literature — 1h45, 80 marks.
-//   Section A — Shakespeare        (40 marks: AO1 12 + AO2 12 + AO3  8 + AO4  8)
-//   Section B — Post-1914 essay    (40 marks: AO1 16 + AO2 16 + AO3  8)
-// Paper 2: 19th Century Novel and Poetry Anthology — 2h15, 80 marks.
-//   Section A — 19th century novel (40 marks: AO1 16 + AO2 16 + AO3  8)
-//   Section B — Poetry comparison  (40 marks: AO1 10 + AO2 10 + AO3  4 + AO4 16)
+// Paper 1: Shakespeare and Post-1914 Literature - 1h45, 80 marks.
+//   Section A - Shakespeare        (40 marks: AO1 12 + AO2 12 + AO3  8 + AO4  8)
+//   Section B - Post-1914 essay    (40 marks: AO1 16 + AO2 16 + AO3  8)
+// Paper 2: 19th Century Novel and Poetry Anthology - 2h15, 80 marks.
+//   Section A - 19th century novel (40 marks: AO1 16 + AO2 16 + AO3  8)
+//   Section B - Poetry comparison  (40 marks: AO1 10 + AO2 10 + AO3  4 + AO4 16)
 // Based on the Pearson Edexcel 1ET0 specification. Descriptors are summarised
 // from publicly-available Edexcel generic mark scheme grids.
 //
@@ -16,7 +16,7 @@
 import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
 
 /**
- * Scale a base AO (defined with full Level 1–6 band range, top band = 16) to a
+ * Scale a base AO (defined with full Level 1-6 band range, top band = 16) to a
  * smaller per-question allocation by proportionally rescaling the band ranges.
  * Without scaling, the mark-scheme coverage test sums the unscaled top-band
  * marks across questions and over-counts the paper total.
@@ -40,14 +40,14 @@ function scaleAO(
 }
 
 // ─── Assessment Objectives ─────────────────────────────────────────────────
-// Edexcel Literature uses AO1–AO4. Band descriptors use 6 levels for the main
+// Edexcel Literature uses AO1-AO4. Band descriptors use 6 levels for the main
 // essay-type AOs, mirroring Edexcel's published Level 1 (Simple) through
 // Level 6 (Convincing) grids.
 
-// AO1 — used across multiple questions with different mark allocations
+// AO1 - used across multiple questions with different mark allocations
 const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
   id: 'AO1',
-  label: 'AO1 — Read, understand and respond',
+  label: 'AO1 - Read, understand and respond',
   description:
     'Read, understand and respond to texts. Students should be able to: maintain a critical style and develop an informed personal response; use textual references, including quotations, to support and illustrate interpretations.',
   bands: [
@@ -134,7 +134,7 @@ const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
 
 const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
   id: 'AO2',
-  label: 'AO2 — Analyse language, form and structure',
+  label: 'AO2 - Analyse language, form and structure',
   description:
     'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
   bands: [
@@ -219,7 +219,7 @@ const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
 
 const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
   id: 'AO3',
-  label: 'AO3 — Context',
+  label: 'AO3 - Context',
   description:
     'Show understanding of the relationships between texts and the contexts in which they were written.',
   bands: [
@@ -302,7 +302,7 @@ const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
 
 const ao4Comparison: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
   id: 'AO4',
-  label: 'AO4 — Comparison',
+  label: 'AO4 - Comparison',
   description:
     'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. (In Literature, AO4 is assessed as the ability to compare texts and ideas across poems.)',
   bands: [
@@ -471,7 +471,7 @@ export const edexcelLitPaper1: MarkScheme = {
         },
         {
           id: 'AO4',
-          label: 'AO4 — Spelling, punctuation and grammar',
+          label: 'AO4 - Spelling, punctuation and grammar',
           description:
             'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
           maxMarks: 8,

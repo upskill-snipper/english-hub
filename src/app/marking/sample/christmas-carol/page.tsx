@@ -9,11 +9,11 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol Model Essays — Grade 5, 7 & 9 | The English Hub',
+    title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9 | The English Hub',
     description: 'Three fully-annotated model essays answering ',
   },
   alternates: { canonical: 'https://theenglishhub.app/marking/sample/christmas-carol' },
-  title: 'A Christmas Carol Model Essays — Grade 5, 7 & 9',
+  title: 'A Christmas Carol Model Essays - Grade 5, 7 & 9',
   description:
     "Three fully-annotated model essays answering 'How does Dickens present Scrooge's transformation?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA mark scheme.",
   keywords: [
@@ -62,7 +62,7 @@ interface ModelEssay {
 
 // These model essays use the AQA mark scheme (AO1=12, AO2=12, AO3=6, AO4=4).
 // A Christmas Carol is also a set text on Edexcel and Eduqas, but their AO
-// weightings differ — Eduqas, for example, does not award an AO4 SPaG strand
+// weightings differ - Eduqas, for example, does not award an AO4 SPaG strand
 // on the 19th-century prose question. Keep the spec label honest.
 const SUPPORTED_BOARDS = ['AQA'] as const
 
@@ -72,7 +72,7 @@ const ESSAYS: ModelEssay[] = [
   /* ── Grade 5 ─────────────────────────────────────────────── */
   {
     grade: 5,
-    title: 'A Christmas Carol — Grade 5 response',
+    title: 'A Christmas Carol - Grade 5 response',
     boards: ['AQA'],
     paper: 'English Literature',
     question: "How does Dickens present Scrooge's transformation in A Christmas Carol?",
@@ -94,19 +94,19 @@ const ESSAYS: ModelEssay[] = [
             quote: 'This list of adjectives shows that Scrooge is a very unpleasant person',
             kind: 'improve',
             comment:
-              "Identifies the method (list) but the analysis is surface-level. Try: 'The accumulation of present participles creates a sense of relentless, mechanical greed — Scrooge is reduced to a series of grasping actions rather than a human being.'",
+              "Identifies the method (list) but the analysis is surface-level. Try: 'The accumulation of present participles creates a sense of relentless, mechanical greed - Scrooge is reduced to a series of grasping actions rather than a human being.'",
           },
         ],
       },
       {
-        label: 'Development — the Spirits',
+        label: 'Development - the Spirits',
         text: "The Ghost of Christmas Past shows Scrooge memories of when he was young and happy. He sees his old girlfriend Belle who left him because he loved money more than her. Belle says 'another idol has displaced me... a golden one.' This shows that Scrooge chose money over love. The Ghost of Christmas Present then shows Scrooge the Cratchit family and how happy they are even though they are poor. Tiny Tim is used by Dickens to make the reader feel sorry for poor people and to show Scrooge what he is missing.",
         annotations: [
           {
             quote: "'another idol has displaced me... a golden one'",
             kind: 'technique',
             comment:
-              "Good quotation selection. The word 'idol' is significant — it suggests Scrooge has made money into a false god, which connects to the novella's Christian moral framework. Exploring this would push into Grade 6+ territory.",
+              "Good quotation selection. The word 'idol' is significant - it suggests Scrooge has made money into a false god, which connects to the novella's Christian moral framework. Exploring this would push into Grade 6+ territory.",
           },
           {
             quote: 'Tiny Tim is used by Dickens to make the reader feel sorry for poor people',
@@ -117,7 +117,7 @@ const ESSAYS: ModelEssay[] = [
         ],
       },
       {
-        label: 'Conclusion — transformation',
+        label: 'Conclusion - transformation',
         text: "By the end of the novella, Scrooge has completely changed. He says 'I am as light as a feather, I am as happy as an angel.' The similes show he is now a completely different person. He gives money to charity and buys the Cratchits a turkey. Dickens wrote this novella because he wanted rich Victorians to help the poor. At the time, many people believed in Malthusian ideas that the poor should not be helped, and Dickens disagreed with this view.",
         annotations: [
           {
@@ -130,7 +130,7 @@ const ESSAYS: ModelEssay[] = [
             quote: 'Dickens wrote this novella because he wanted rich Victorians to help the poor',
             kind: 'technique',
             comment:
-              "Relevant AO3 context but it reads as an add-on. Try integrating it into analysis: 'Scrooge's transformation embodies Dickens's polemic against Malthusian indifference — the character arc is itself a political argument.'",
+              "Relevant AO3 context but it reads as an add-on. Try integrating it into analysis: 'Scrooge's transformation embodies Dickens's polemic against Malthusian indifference - the character arc is itself a political argument.'",
           },
         ],
       },
@@ -144,7 +144,7 @@ const ESSAYS: ModelEssay[] = [
     gradeJustification:
       "This response sits securely at Grade 5. It demonstrates clear understanding of the text and selects relevant quotations, but analysis tends to identify techniques ('This list of adjectives shows...') rather than exploring how and why Dickens uses them. Context is present but bolted on as a separate sentence rather than integrated into the argument. The essay would benefit from closer word-level analysis and a more sustained argument about Dickens's purpose.",
     improvements: [
-      "Analyse individual words within quotations rather than treating whole phrases as single units — e.g. why 'clutching' specifically? What does the physicality of the verb suggest about Scrooge's relationship with money?",
+      "Analyse individual words within quotations rather than treating whole phrases as single units - e.g. why 'clutching' specifically? What does the physicality of the verb suggest about Scrooge's relationship with money?",
       'Integrate contextual knowledge into analytical points rather than adding it as a separate sentence at the end of paragraphs.',
       "Move beyond identifying techniques ('Dickens uses a simile') to exploring their effects on the reader and connecting them to Dickens's wider purpose.",
       'Develop a clear thesis in the introduction that can be sustained and refined across the whole response.',
@@ -154,7 +154,7 @@ const ESSAYS: ModelEssay[] = [
   /* ── Grade 7 ─────────────────────────────────────────────── */
   {
     grade: 7,
-    title: 'A Christmas Carol — Grade 7 response',
+    title: 'A Christmas Carol - Grade 7 response',
     boards: ['AQA'],
     paper: 'English Literature',
     question: "How does Dickens present Scrooge's transformation in A Christmas Carol?",
@@ -163,7 +163,7 @@ const ESSAYS: ModelEssay[] = [
       'A thoughtful, well-organised response that analyses methods with some precision and integrates context into the argument. The essay sustains focus on transformation as a deliberate authorial strategy. To reach Grade 8/9, push into more conceptualised analysis and explore structural choices across the novella as a whole.',
     paragraphs: [
       {
-        label: 'Introduction — thesis',
+        label: 'Introduction - thesis',
         text: "Dickens presents Scrooge's transformation as a carefully orchestrated moral journey, using the novella's five-stave structure to mirror the arc of redemption. In Stave One, Scrooge is introduced through a sustained accumulation of negative imagery: 'a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner!' The chain of present participles reduces Scrooge to a series of mechanical, predatory actions, stripping him of humanity before the narrative sets about restoring it. This opening catalogue is not merely descriptive; it establishes the moral baseline from which Dickens will measure Scrooge's eventual rebirth.",
         annotations: [
           {
@@ -177,45 +177,45 @@ const ESSAYS: ModelEssay[] = [
             quote: 'five-stave structure to mirror the arc of redemption',
             kind: 'technique',
             comment:
-              "Strong structural awareness. Could be pushed further by noting that the musical term 'stave' itself frames the novella as a song — linking transformation to harmony and discord.",
+              "Strong structural awareness. Could be pushed further by noting that the musical term 'stave' itself frames the novella as a song - linking transformation to harmony and discord.",
           },
         ],
       },
       {
-        label: 'Development — the Spirits as catalysts',
-        text: "The three Spirits function as agents of Dickens's didactic purpose, each designed to dismantle a specific layer of Scrooge's emotional armour. The Ghost of Christmas Past forces Scrooge to confront the moment his avarice displaced love, dramatised through Belle's accusation that 'another idol has displaced me... a golden one.' The biblical register of 'idol' recasts Scrooge's wealth-worship as a form of blasphemy, aligning his personal failing with a sin recognisable to Dickens's predominantly Christian readership. The Ghost of Christmas Present, meanwhile, uses Tiny Tim as a sentimental counterweight to Malthusian logic — Dickens transforms an abstract policy debate about the 'surplus population' into the image of a vulnerable child, making indifference morally untenable.",
+        label: 'Development - the Spirits as catalysts',
+        text: "The three Spirits function as agents of Dickens's didactic purpose, each designed to dismantle a specific layer of Scrooge's emotional armour. The Ghost of Christmas Past forces Scrooge to confront the moment his avarice displaced love, dramatised through Belle's accusation that 'another idol has displaced me... a golden one.' The biblical register of 'idol' recasts Scrooge's wealth-worship as a form of blasphemy, aligning his personal failing with a sin recognisable to Dickens's predominantly Christian readership. The Ghost of Christmas Present, meanwhile, uses Tiny Tim as a sentimental counterweight to Malthusian logic - Dickens transforms an abstract policy debate about the 'surplus population' into the image of a vulnerable child, making indifference morally untenable.",
         annotations: [
           {
             quote:
               "biblical register of 'idol' recasts Scrooge's wealth-worship as a form of blasphemy",
             kind: 'strength',
             comment:
-              'Excellent integration of AO2 and AO3 — language analysis and context are working together rather than sitting in separate sentences.',
+              'Excellent integration of AO2 and AO3 - language analysis and context are working together rather than sitting in separate sentences.',
           },
           {
             quote: 'sentimental counterweight to Malthusian logic',
             kind: 'technique',
             comment:
-              "Sophisticated conceptual vocabulary. To push higher, consider whether Dickens's sentimentality is itself a deliberate rhetorical strategy — and whether it has limitations.",
+              "Sophisticated conceptual vocabulary. To push higher, consider whether Dickens's sentimentality is itself a deliberate rhetorical strategy - and whether it has limitations.",
           },
         ],
       },
       {
-        label: 'Conclusion — the completed arc',
-        text: "Scrooge's transformation reaches its climax in Stave Five, where his language shifts from the clipped, transactional register of Stave One to exuberant, childlike joy: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.' The tricolon of similes ascends from the physical ('feather') through the spiritual ('angel') to the social ('schoolboy'), charting a restoration that operates on every level of Scrooge's being. Dickens structures the novella so that this moment of personal redemption carries a broader social message: if the most hardened miser in London can change, then so can the reader. The transformation is ultimately Dickens's vehicle for his reformist agenda — Scrooge's rebirth is a call to action directed squarely at the comfortable middle classes of 1843.",
+        label: 'Conclusion - the completed arc',
+        text: "Scrooge's transformation reaches its climax in Stave Five, where his language shifts from the clipped, transactional register of Stave One to exuberant, childlike joy: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy.' The tricolon of similes ascends from the physical ('feather') through the spiritual ('angel') to the social ('schoolboy'), charting a restoration that operates on every level of Scrooge's being. Dickens structures the novella so that this moment of personal redemption carries a broader social message: if the most hardened miser in London can change, then so can the reader. The transformation is ultimately Dickens's vehicle for his reformist agenda - Scrooge's rebirth is a call to action directed squarely at the comfortable middle classes of 1843.",
         annotations: [
           {
             quote:
               'tricolon of similes ascends from the physical through the spiritual to the social',
             kind: 'strength',
             comment:
-              'Perceptive structural reading of the quotation — the student has identified a pattern within the language rather than simply quoting it.',
+              'Perceptive structural reading of the quotation - the student has identified a pattern within the language rather than simply quoting it.',
           },
           {
             quote: 'if the most hardened miser in London can change, then so can the reader',
             kind: 'technique',
             comment:
-              "Well-articulated understanding of Dickens's purpose. To reach Grade 9, explore the tension between this optimism and the novella's darker implications — does Dickens truly believe transformation is available to all?",
+              "Well-articulated understanding of Dickens's purpose. To reach Grade 9, explore the tension between this optimism and the novella's darker implications - does Dickens truly believe transformation is available to all?",
           },
         ],
       },
@@ -227,19 +227,19 @@ const ESSAYS: ModelEssay[] = [
       { code: 'AO4', label: 'SPaG', score: 3, max: 4 },
     ],
     gradeJustification:
-      "This response achieves Grade 7 through sustained analytical focus, precise method analysis ('chain of present participles', 'tricolon of similes'), and well-integrated context. The argument is organised around a clear thesis about transformation as authorial strategy. It falls short of Grade 8/9 because, while methods are analysed effectively, the essay does not consistently reach the level of conceptualised, original interpretation — it tends to explain what Dickens does rather than interrogating why or challenging the text's assumptions.",
+      "This response achieves Grade 7 through sustained analytical focus, precise method analysis ('chain of present participles', 'tricolon of similes'), and well-integrated context. The argument is organised around a clear thesis about transformation as authorial strategy. It falls short of Grade 8/9 because, while methods are analysed effectively, the essay does not consistently reach the level of conceptualised, original interpretation - it tends to explain what Dickens does rather than interrogating why or challenging the text's assumptions.",
     improvements: [
-      "Push towards conceptualised analysis — instead of explaining what Dickens achieves, consider interrogating tensions within the text. For example, does Scrooge's overnight transformation undermine the novella's social realism?",
+      "Push towards conceptualised analysis - instead of explaining what Dickens achieves, consider interrogating tensions within the text. For example, does Scrooge's overnight transformation undermine the novella's social realism?",
       "Explore alternative interpretations: a Marxist reading might argue that Scrooge's charity merely sustains an unjust system rather than challenging it.",
-      'Develop structural analysis across the whole text — how does the five-stave structure create pace, symmetry, or contrast that reinforces meaning?',
-      "Use more varied and precise critical vocabulary: 'didactic', 'polemic', 'allegory', 'parable' — each carries different implications about Dickens's method.",
+      'Develop structural analysis across the whole text - how does the five-stave structure create pace, symmetry, or contrast that reinforces meaning?',
+      "Use more varied and precise critical vocabulary: 'didactic', 'polemic', 'allegory', 'parable' - each carries different implications about Dickens's method.",
     ],
   },
 
   /* ── Grade 9 ─────────────────────────────────────────────── */
   {
     grade: 9,
-    title: 'A Christmas Carol — Grade 9 response',
+    title: 'A Christmas Carol - Grade 9 response',
     boards: ['AQA'],
     paper: 'English Literature',
     question: "How does Dickens present Scrooge's transformation in A Christmas Carol?",
@@ -248,14 +248,14 @@ const ESSAYS: ModelEssay[] = [
       'A perceptive, conceptualised response that interrogates the text rather than merely explaining it. Language analysis operates at word level with sophisticated critical vocabulary. Context is woven into interpretation as a shaping force. The argument is original, sustained, and structurally controlled.',
     paragraphs: [
       {
-        label: 'Introduction — conceptual thesis',
-        text: "Dickens constructs Scrooge's transformation not as a psychological journey but as a polemical demonstration: the novella does not ask whether a miser can change, but insists that he must. The five-stave structure, borrowing its terminology from the carol form, frames the narrative as a kind of secular hymn — a moral song designed to be heard, absorbed, and acted upon by Dickens's middle-class readership. From the opening line's categorical assertion that 'Marley was dead: to begin with,' Dickens establishes a narrator who is less storyteller than advocate, guiding the reader towards a predetermined verdict on wealth, responsibility, and human connection.",
+        label: 'Introduction - conceptual thesis',
+        text: "Dickens constructs Scrooge's transformation not as a psychological journey but as a polemical demonstration: the novella does not ask whether a miser can change, but insists that he must. The five-stave structure, borrowing its terminology from the carol form, frames the narrative as a kind of secular hymn - a moral song designed to be heard, absorbed, and acted upon by Dickens's middle-class readership. From the opening line's categorical assertion that 'Marley was dead: to begin with,' Dickens establishes a narrator who is less storyteller than advocate, guiding the reader towards a predetermined verdict on wealth, responsibility, and human connection.",
         annotations: [
           {
             quote: 'polemical demonstration',
             kind: 'strength',
             comment:
-              "Immediately establishes a conceptualised thesis that frames the entire argument. The student is not summarising — they are interpreting the text's function.",
+              "Immediately establishes a conceptualised thesis that frames the entire argument. The student is not summarising - they are interpreting the text's function.",
           },
           {
             quote: 'less storyteller than advocate',
@@ -266,8 +266,8 @@ const ESSAYS: ModelEssay[] = [
         ],
       },
       {
-        label: 'Development — linguistic architecture of change',
-        text: "The linguistic architecture of Scrooge's characterisation in Stave One is deliberately dehumanising. The famous accumulation — 'a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner' — does not simply describe Scrooge's character; it performs his reduction to pure acquisitive function. Each present participle is a grasping action, and the syntax itself enacts the relentlessness of greed: there is no pause, no subordination, no room for anything but the next verb of possession. The climactic adjective 'covetous' shifts the register from physical to moral, recasting Scrooge's behaviour as a violation of the Tenth Commandment and thereby conscripting the weight of Christian doctrine to Dickens's reformist argument. The transformation, when it comes, must therefore operate on every level that this opening degrades: physical, moral, social, and spiritual.",
+        label: 'Development - linguistic architecture of change',
+        text: "The linguistic architecture of Scrooge's characterisation in Stave One is deliberately dehumanising. The famous accumulation - 'a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner' - does not simply describe Scrooge's character; it performs his reduction to pure acquisitive function. Each present participle is a grasping action, and the syntax itself enacts the relentlessness of greed: there is no pause, no subordination, no room for anything but the next verb of possession. The climactic adjective 'covetous' shifts the register from physical to moral, recasting Scrooge's behaviour as a violation of the Tenth Commandment and thereby conscripting the weight of Christian doctrine to Dickens's reformist argument. The transformation, when it comes, must therefore operate on every level that this opening degrades: physical, moral, social, and spiritual.",
         annotations: [
           {
             quote: 'the syntax itself enacts the relentlessness of greed',
@@ -279,13 +279,13 @@ const ESSAYS: ModelEssay[] = [
             quote: "conscripting the weight of Christian doctrine to Dickens's reformist argument",
             kind: 'technique',
             comment:
-              "Seamless AO3 integration — context is not background information but an active force in the interpretation. The verb 'conscripting' itself implies Dickens is strategically deploying religion as rhetorical weaponry.",
+              "Seamless AO3 integration - context is not background information but an active force in the interpretation. The verb 'conscripting' itself implies Dickens is strategically deploying religion as rhetorical weaponry.",
           },
         ],
       },
       {
-        label: 'Conclusion — the politics of redemption',
-        text: "Scrooge's Stave Five rebirth — 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy' — is structurally designed to invert the opening catalogue point by point. Where the Stave One list accumulated weight and darkness, this tricolon ascends through levity, divinity, and innocence, restoring precisely the qualities that avarice had crushed. Yet there is a tension at the heart of this resolution that Dickens either does not see or chooses to suppress: Scrooge's transformation is individual, not systemic. He buys the Cratchits a turkey; he does not abolish the workhouse. The novella's power — and its limitation — lies in its insistence that social reform can be achieved through personal moral awakening rather than structural change. For a twenty-first-century reader, this raises an uncomfortable question: is Dickens's carol of redemption a genuine call for justice, or a comforting fantasy that allows the privileged to believe that charity is enough? The genius of the novella is that it works regardless of the answer — Scrooge's joy is infectious precisely because Dickens refuses to let political complexity diminish emotional force.",
+        label: 'Conclusion - the politics of redemption',
+        text: "Scrooge's Stave Five rebirth - 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy' - is structurally designed to invert the opening catalogue point by point. Where the Stave One list accumulated weight and darkness, this tricolon ascends through levity, divinity, and innocence, restoring precisely the qualities that avarice had crushed. Yet there is a tension at the heart of this resolution that Dickens either does not see or chooses to suppress: Scrooge's transformation is individual, not systemic. He buys the Cratchits a turkey; he does not abolish the workhouse. The novella's power - and its limitation - lies in its insistence that social reform can be achieved through personal moral awakening rather than structural change. For a twenty-first-century reader, this raises an uncomfortable question: is Dickens's carol of redemption a genuine call for justice, or a comforting fantasy that allows the privileged to believe that charity is enough? The genius of the novella is that it works regardless of the answer - Scrooge's joy is infectious precisely because Dickens refuses to let political complexity diminish emotional force.",
         annotations: [
           {
             quote: "Scrooge's transformation is individual, not systemic",
@@ -297,7 +297,7 @@ const ESSAYS: ModelEssay[] = [
             quote: 'Dickens refuses to let political complexity diminish emotional force',
             kind: 'technique',
             comment:
-              'Epigrammatic conclusion that holds two competing ideas in tension. Demonstrates conceptual control and the ability to sustain ambiguity — a key discriminator at the highest grade.',
+              'Epigrammatic conclusion that holds two competing ideas in tension. Demonstrates conceptual control and the ability to sustain ambiguity - a key discriminator at the highest grade.',
           },
         ],
       },
@@ -309,11 +309,11 @@ const ESSAYS: ModelEssay[] = [
       { code: 'AO4', label: 'SPaG', score: 4, max: 4 },
     ],
     gradeJustification:
-      "This response achieves Grade 9 through sustained conceptualised analysis, original critical thinking, and precise word-level commentary. The student does not merely explain what Dickens does — they interrogate why, and hold competing interpretations in productive tension. Context is not background but an active analytical tool. The essay demonstrates genuine intellectual independence: the observation that Scrooge's transformation is 'individual, not systemic' shows a student thinking beyond the text's own assumptions. Language analysis operates at the level of syntax and grammar, not just vocabulary, and form is treated as meaning rather than decoration.",
+      "This response achieves Grade 9 through sustained conceptualised analysis, original critical thinking, and precise word-level commentary. The student does not merely explain what Dickens does - they interrogate why, and hold competing interpretations in productive tension. Context is not background but an active analytical tool. The essay demonstrates genuine intellectual independence: the observation that Scrooge's transformation is 'individual, not systemic' shows a student thinking beyond the text's own assumptions. Language analysis operates at the level of syntax and grammar, not just vocabulary, and form is treated as meaning rather than decoration.",
     improvements: [
-      "Even at this level, the essay could engage more with the novella's structural pacing — how does the compressed five-stave form create urgency that supports the didactic purpose?",
+      "Even at this level, the essay could engage more with the novella's structural pacing - how does the compressed five-stave form create urgency that supports the didactic purpose?",
       'Consider engaging with critical perspectives explicitly (Marxist, feminist, postcolonial) to add further interpretive layers.',
-      'The middle paragraph is dense — breaking the analysis across more paragraphs with transitional signposting would improve clarity without sacrificing sophistication.',
+      'The middle paragraph is dense - breaking the analysis across more paragraphs with transitional signposting would improve clarity without sacrificing sophistication.',
     ],
   },
 ]

@@ -65,39 +65,39 @@ const PLURAL_BANK: PluralWord[] = [
   { singular: 'potato', plural: 'potatoes', rule: 'Some nouns ending in -o add -es.' },
   { singular: 'hero', plural: 'heroes', rule: 'Some nouns ending in -o add -es.' },
   // Irregular
-  { singular: 'child', plural: 'children', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'foot', plural: 'feet', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'mouse', plural: 'mice', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'person', plural: 'people', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'tooth', plural: 'teeth', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'man', plural: 'men', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'woman', plural: 'women', rule: 'Irregular plural — you must learn this one.' },
-  { singular: 'goose', plural: 'geese', rule: 'Irregular plural — you must learn this one.' },
+  { singular: 'child', plural: 'children', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'foot', plural: 'feet', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'mouse', plural: 'mice', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'person', plural: 'people', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'tooth', plural: 'teeth', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'man', plural: 'men', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'woman', plural: 'women', rule: 'Irregular plural - you must learn this one.' },
+  { singular: 'goose', plural: 'geese', rule: 'Irregular plural - you must learn this one.' },
   // Unchanged
   {
     singular: 'sheep',
     plural: 'sheep',
-    rule: 'No change — the plural is the same as the singular.',
+    rule: 'No change - the plural is the same as the singular.',
   },
-  { singular: 'fish', plural: 'fish', rule: 'No change — the plural is the same as the singular.' },
-  { singular: 'deer', plural: 'deer', rule: 'No change — the plural is the same as the singular.' },
+  { singular: 'fish', plural: 'fish', rule: 'No change - the plural is the same as the singular.' },
+  { singular: 'deer', plural: 'deer', rule: 'No change - the plural is the same as the singular.' },
   {
     singular: 'aircraft',
     plural: 'aircraft',
-    rule: 'No change — the plural is the same as the singular.',
+    rule: 'No change - the plural is the same as the singular.',
   },
   {
     singular: 'series',
     plural: 'series',
-    rule: 'No change — the plural is the same as the singular.',
+    rule: 'No change - the plural is the same as the singular.',
   },
   // Latin / Greek
-  { singular: 'cactus', plural: 'cacti', rule: 'Latin origin — change -us to -i.' },
-  { singular: 'fungus', plural: 'fungi', rule: 'Latin origin — change -us to -i.' },
-  { singular: 'analysis', plural: 'analyses', rule: 'Greek origin — change -is to -es.' },
-  { singular: 'crisis', plural: 'crises', rule: 'Greek origin — change -is to -es.' },
-  { singular: 'criterion', plural: 'criteria', rule: 'Greek origin — change -on to -a.' },
-  { singular: 'phenomenon', plural: 'phenomena', rule: 'Greek origin — change -on to -a.' },
+  { singular: 'cactus', plural: 'cacti', rule: 'Latin origin - change -us to -i.' },
+  { singular: 'fungus', plural: 'fungi', rule: 'Latin origin - change -us to -i.' },
+  { singular: 'analysis', plural: 'analyses', rule: 'Greek origin - change -is to -es.' },
+  { singular: 'crisis', plural: 'crises', rule: 'Greek origin - change -is to -es.' },
+  { singular: 'criterion', plural: 'criteria', rule: 'Greek origin - change -on to -a.' },
+  { singular: 'phenomenon', plural: 'phenomena', rule: 'Greek origin - change -on to -a.' },
 ]
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -231,7 +231,7 @@ export default function PluralBuilderPage() {
                 </p>
                 <p className="text-3xl font-bold text-foreground">{currentWord.singular}</p>
                 <p className="text-sm text-muted-foreground">
-                  Now write the plural — more than one.
+                  Now write the plural - more than one.
                 </p>
               </div>
 
@@ -286,7 +286,7 @@ export default function PluralBuilderPage() {
                         <span className="font-semibold text-foreground">
                           {currentWord.singular} → {currentWord.plural}
                         </span>{' '}
-                        — {currentWord.rule}
+                        - {currentWord.rule}
                       </span>
                     </div>
                   </div>

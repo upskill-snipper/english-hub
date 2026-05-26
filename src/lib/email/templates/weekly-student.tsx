@@ -1,20 +1,20 @@
 /**
- * Weekly student digest — email template.
+ * Weekly student digest - email template.
  *
  * A self-contained TSX component rendered to a static HTML string by the
  * `weekly-student-reports` cron. We do NOT depend on `@react-email/*` because
  * it is not in package.json; instead we use `react-dom/server`'s
  * `renderToStaticMarkup` (Next.js 15 / React 19) which is sufficient for
- * transactional email — every style is inlined and the markup is JS-free.
+ * transactional email - every style is inlined and the markup is JS-free.
  *
  * Brand alignment (see `src/app/globals.css`):
- *   • Background  — warm cream (#F1E8D6, approximating `--background: 37 47% 92%`).
- *   • Body text   — ink-900 (#15211C, approximating `--foreground: 150 15% 9%`).
- *   • Accent      — clay-600 (#C7521F, slightly darker than `--accent` clay-500
+ *   • Background  - warm cream (#F1E8D6, approximating `--background: 37 47% 92%`).
+ *   • Body text   - ink-900 (#15211C, approximating `--foreground: 150 15% 9%`).
+ *   • Accent      - clay-600 (#C7521F, slightly darker than `--accent` clay-500
  *                   for a11y contrast on the cream background).
- *   • Layout      — single column, max 560px, no JS, no remote scripts.
+ *   • Layout      - single column, max 560px, no JS, no remote scripts.
  *
- * Children's Code §5 (data minimisation) — the digest only includes:
+ * Children's Code §5 (data minimisation) - the digest only includes:
  *   streak (when enabled), top quiz scores, one focus suggestion, dashboard
  *   link. No grade prediction, no peer comparisons, no ad surfaces.
  */
@@ -48,24 +48,24 @@ const TOKENS = {
 export interface WeeklyStudentQuizScore {
   /** Display title of the quiz / activity. */
   title: string
-  /** 0–100 score. */
+  /** 0-100 score. */
   score: number
   /** ISO date string of when the quiz was taken (used only for the row label). */
   takenAt: string
 }
 
 export interface WeeklyStudentEmailProps {
-  /** First name for the greeting (already trusted/escaped — React handles it). */
+  /** First name for the greeting (already trusted/escaped - React handles it). */
   firstName: string
   /**
-   * Streak in days. Pass `null` to suppress the streak block — the cron MUST
+   * Streak in days. Pass `null` to suppress the streak block - the cron MUST
    * pass `null` for any user where streaks are disabled (children: always).
    */
   streakDays: number | null
   /** Top 3 quiz scores from the last 7 days. May be empty. */
   topQuizzes: WeeklyStudentQuizScore[]
   /**
-   * One "Focus on X" recommendation. Pass `null` to suppress the block —
+   * One "Focus on X" recommendation. Pass `null` to suppress the block -
    * the cron MUST pass `null` for users with recommendations disabled.
    */
   focusRecommendation: string | null
@@ -109,7 +109,7 @@ export function WeeklyStudentEmail(props: WeeklyStudentEmailProps): React.ReactE
         <title>Your week on The English Hub</title>
       </head>
       <body style={wrapper}>
-        {/* Preheader — hidden but used by inbox previews. */}
+        {/* Preheader - hidden but used by inbox previews. */}
         <div
           style={{
             display: 'none',
@@ -204,7 +204,7 @@ export function WeeklyStudentEmail(props: WeeklyStudentEmailProps): React.ReactE
             </h2>
             {topQuizzes.length === 0 ? (
               <p style={{ margin: 0, color: TOKENS.ink500, fontSize: 14 }}>
-                No quizzes scored this week — give one a try.
+                No quizzes scored this week - give one a try.
               </p>
             ) : (
               <table
@@ -346,7 +346,7 @@ export function WeeklyStudentEmail(props: WeeklyStudentEmailProps): React.ReactE
  * Prepends the HTML5 doctype because `renderToStaticMarkup` does not.
  */
 export async function renderWeeklyStudentEmail(props: WeeklyStudentEmailProps): Promise<string> {
-  // Lazy import — keeps Next.js 15's compiler from flagging
+  // Lazy import - keeps Next.js 15's compiler from flagging
   // `react-dom/server` at module-graph scan time.
   const { renderToStaticMarkup } = await import('react-dom/server')
   const markup = renderToStaticMarkup(<WeeklyStudentEmail {...props} />)
@@ -354,7 +354,7 @@ export async function renderWeeklyStudentEmail(props: WeeklyStudentEmailProps): 
 }
 
 /**
- * Plain-text alternative — improves deliverability and accessibility for
+ * Plain-text alternative - improves deliverability and accessibility for
  * text-only clients. Mirrors the HTML structure but stripped to essentials.
  */
 export function renderWeeklyStudentText(props: WeeklyStudentEmailProps): string {

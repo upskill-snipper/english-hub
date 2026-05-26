@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Essay Plans — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five ready-to-use essay plans for An Inspector Calls covering responsibility, Sheila\u2019s development, the Inspector\u2019s role, class and dramatic techniques.',
   },
-  title: 'An Inspector Calls Essay Plans — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Essay Plans - Edexcel IGCSE Literature',
   description:
     'Five ready-to-use essay plans for An Inspector Calls covering responsibility, Sheila\u2019s development, the Inspector\u2019s role, class and dramatic techniques.',
   alternates: {

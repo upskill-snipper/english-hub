@@ -1,5 +1,5 @@
 /**
- * types.ts — Anthology Document Content Schemas
+ * types.ts - Anthology Document Content Schemas
  *
  * Every Anthology document is modelled as typed data.
  * Template components consume these types; rendering is separate from content.
@@ -8,14 +8,14 @@
 // ─── Shared building blocks ────────────────────────────────────────────────
 
 export interface AnthologyBrand {
-  /** Centre column — e.g. "Spring Anthology · Vol. III" */
+  /** Centre column - e.g. "Spring Anthology · Vol. III" */
   edition: string
-  /** Right column — e.g. "Study Guide № 14" */
+  /** Right column - e.g. "Study Guide № 14" */
   code: string
 }
 
 export interface AnthologyCover {
-  /** Uppercase mono kicker — e.g. "CLOSE READING · MACBETH I.VII" */
+  /** Uppercase mono kicker - e.g. "CLOSE READING · MACBETH I.VII" */
   super: string
   /** Headline lines (joined with <br>). One word in `accentWord` is italic terracotta */
   titleLines: string[]
@@ -23,18 +23,18 @@ export interface AnthologyCover {
   accentWord: string
   /** Italic standfirst below the headline */
   sub: string
-  /** Optional byline — e.g. "Edited by" + "Ms R. Halstead" */
+  /** Optional byline - e.g. "Edited by" + "Ms R. Halstead" */
   byline?: { prefix: string; name: string }
   /** Optional font-size override for h1 (default 64px) */
   titleSize?: number
 }
 
 export interface AnthologyFooter {
-  /** Left column — e.g. "The English Hub · GCSE English" */
+  /** Left column - e.g. "The English Hub · GCSE English" */
   left: string
-  /** Centre column — includes <em> for accent. e.g. "Spring Anthology · Vol. <em>III</em>" */
+  /** Centre column - includes <em> for accent. e.g. "Spring Anthology · Vol. <em>III</em>" */
   centre: string
-  /** Right column — e.g. "Study Guide № 14 · p. 1" */
+  /** Right column - e.g. "Study Guide № 14 · p. 1" */
   right: string
 }
 
@@ -53,7 +53,7 @@ export interface AoScore {
 }
 
 export interface MarginComment {
-  /** Anchor label — e.g. "[1] AO2 ★" */
+  /** Anchor label - e.g. "[1] AO2 ★" */
   anchor: string
   body: string
 }
@@ -61,7 +61,16 @@ export interface MarginComment {
 // ─── Study Guide ───────────────────────────────────────────────────────────
 
 export type StudyGuideChapter =
-  | { kind: 'narrative'; drop?: boolean; title?: string; numPrefix?: string; chapNum?: string; body: string; paragraphs?: string[]; sidebar?: DataCardContent }
+  | {
+      kind: 'narrative'
+      drop?: boolean
+      title?: string
+      numPrefix?: string
+      chapNum?: string
+      body: string
+      paragraphs?: string[]
+      sidebar?: DataCardContent
+    }
   | { kind: 'pullquote'; body: string; cite: string }
   | { kind: 'section'; title: string; numPrefix: string }
   | { kind: 'quote-list'; title?: string; numPrefix?: string; items: string[] }
@@ -120,7 +129,13 @@ export interface IndexItem {
 export type RevisionSection =
   | { kind: 'index'; title: string; numPrefix: string; items: IndexItem[] }
   | { kind: 'task-list'; title: string; numPrefix: string; items: string[] }
-  | { kind: 'task-with-callout'; title: string; numPrefix: string; items: string[]; callout: { kicker: string; body: string } }
+  | {
+      kind: 'task-with-callout'
+      title: string
+      numPrefix: string
+      items: string[]
+      callout: { kicker: string; body: string }
+    }
   | { kind: 'pullquote'; body: string; cite: string }
   | { kind: 'callout'; kicker: string; body: string }
 

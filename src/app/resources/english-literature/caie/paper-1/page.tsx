@@ -55,7 +55,7 @@ const selectedPoems = [
     title: 'Blessing',
     poet: 'Imtiaz Dharker',
     themes:
-      'Poverty, water as life, community, spirituality. Set in a Mumbai (Bombay) slum, India. © Bloodaxe Books — fair-dealing extract.',
+      'Poverty, water as life, community, spirituality. Set in a Mumbai (Bombay) slum, India. © Bloodaxe Books - fair-dealing extract.',
   },
   {
     title: 'Half-Past Two',

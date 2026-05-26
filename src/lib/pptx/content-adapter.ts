@@ -52,17 +52,14 @@ function estimateSlideDuration(totalSlides: number): number {
  * naming patterns. Falls back to bullet-point extraction from keyword slides.
  */
 function extractVocabulary(slides: SlideContent[]): string[] {
-  const vocabSlides = slides.filter(
-    (s) =>
-      /vocabular|key\s+term|glossar/i.test(s.title),
-  )
+  const vocabSlides = slides.filter((s) => /vocabular|key\s+term|glossar/i.test(s.title))
   if (vocabSlides.length === 0) return []
 
   return vocabSlides.flatMap((s) =>
     s.bulletPoints
       .map((bp) => {
         // Many vocab bullets follow "Term -- definition" or "Term: definition"
-        const match = bp.match(/^(.+?)\s*(?:--|:|—)\s*(.+)$/)
+        const match = bp.match(/^(.+?)\s*(?:--|:|-)\s*(.+)$/)
         return match ? match[1].trim() : bp.trim()
       })
       .filter(Boolean),
@@ -77,9 +74,7 @@ function extractHomework(slides: SlideContent[]): string | undefined {
   if (!last) return undefined
 
   // Check if the last slide mentions homework
-  const homeworkBullet = last.bulletPoints.find((bp) =>
-    /homework|home\s+task|reading/i.test(bp),
-  )
+  const homeworkBullet = last.bulletPoints.find((bp) => /homework|home\s+task|reading/i.test(bp))
   if (homeworkBullet) return homeworkBullet
 
   // Check teacher notes for homework instructions
@@ -97,9 +92,7 @@ function extractHomework(slides: SlideContent[]): string | undefined {
  */
 function extractObjectives(slides: SlideContent[]): string[] {
   // Look for a dedicated objectives slide
-  const objSlide = slides.find((s) =>
-    /learning\s+objective|objective/i.test(s.title),
-  )
+  const objSlide = slides.find((s) => /learning\s+objective|objective/i.test(s.title))
   if (objSlide) return objSlide.bulletPoints
 
   // Fall back to first slide bullet points (commonly where objectives live)
@@ -154,9 +147,7 @@ function deriveTextLabel(presentation: LessonPresentation): string {
  * - Vocabulary slides -> keyVocabulary
  * - Teacher notes -> teacherNotes array
  */
-export function presentationToLessonPlan(
-  presentation: LessonPresentation,
-): LessonPlanData {
+export function presentationToLessonPlan(presentation: LessonPresentation): LessonPlanData {
   const { slides, totalSlides } = presentation
   const perSlide = estimateSlideDuration(totalSlides)
   const totalDuration = `${totalSlides * perSlide} minutes`
@@ -186,10 +177,7 @@ export function presentationToLessonPlan(
   const mainActivities = middleSlides.map((slide) => ({
     title: slide.title,
     duration: `${perSlide} minutes`,
-    instructions: [
-      ...slide.bulletPoints,
-      slide.activity ? `\nActivity: ${slide.activity}` : '',
-    ]
+    instructions: [...slide.bulletPoints, slide.activity ? `\nActivity: ${slide.activity}` : '']
       .filter(Boolean)
       .join('\n'),
   }))
@@ -252,9 +240,7 @@ export interface TeacherPresentation {
 /**
  * Convert a `TeacherPresentation` into `LessonPlanData`.
  */
-export function teacherPresentationToLessonPlan(
-  tp: TeacherPresentation,
-): LessonPlanData {
+export function teacherPresentationToLessonPlan(tp: TeacherPresentation): LessonPlanData {
   const perSlide = estimateSlideDuration(tp.slideCount)
 
   const starterSlide = tp.slides[0]
@@ -285,9 +271,7 @@ export function teacherPresentationToLessonPlan(
       duration: `${perSlide} minutes`,
       instructions: [
         ...slide.bulletPoints,
-        slide.activityInstructions
-          ? `\nActivity: ${slide.activityInstructions}`
-          : '',
+        slide.activityInstructions ? `\nActivity: ${slide.activityInstructions}` : '',
       ]
         .filter(Boolean)
         .join('\n'),
@@ -329,9 +313,7 @@ export interface PresentationCatalogueEntry {
 /**
  * Build a catalogue entry from a `LessonPresentation`.
  */
-export function toCatalogueEntry(
-  p: LessonPresentation,
-): PresentationCatalogueEntry {
+export function toCatalogueEntry(p: LessonPresentation): PresentationCatalogueEntry {
   const perSlide = estimateSlideDuration(p.totalSlides)
   return {
     id: p.id,
@@ -349,9 +331,7 @@ export function toCatalogueEntry(
 /**
  * Build a catalogue entry from a `TeacherPresentation`.
  */
-export function teacherToCatalogueEntry(
-  tp: TeacherPresentation,
-): PresentationCatalogueEntry {
+export function teacherToCatalogueEntry(tp: TeacherPresentation): PresentationCatalogueEntry {
   return {
     id: tp.id,
     title: tp.title,

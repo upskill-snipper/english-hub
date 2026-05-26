@@ -13,7 +13,7 @@
 //
 // Persists `teacher_grade`, `teacher_comment`, `teacher_reviewed_by` and
 // `teacher_reviewed_at` columns on the `marking_submissions` Supabase table.
-// (See report — these columns + the table itself need a Prisma migration if
+// (See report - these columns + the table itself need a Prisma migration if
 // they don't already exist.)
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -34,7 +34,7 @@ export const dynamic = 'force-dynamic'
 
 // ─── Validation ────────────────────────────────────────────────────────────
 
-// 9-1 GCSE grades plus "U" (ungraded) — must match the dropdown on the
+// 9-1 GCSE grades plus "U" (ungraded) - must match the dropdown on the
 // teacher marking page.
 const ALLOWED_GRADES = new Set(['9', '8', '7', '6', '5', '4', '3', '2', '1', 'U'])
 const MAX_COMMENT_LENGTH = 4000
@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse()
     }
 
-    // 2. Rate limit per user — generous for a UI form action.
+    // 2. Rate limit per user - generous for a UI form action.
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-marking-override:${user.id}:${ip}`, {
       limit: 30,
@@ -148,7 +148,7 @@ export async function POST(request: NextRequest) {
       return notFoundResponse('Submission not found.')
     }
 
-    // 6. Authorise — submission must belong to the same school, and the
+    // 6. Authorise - submission must belong to the same school, and the
     //    caller must either be admin/head_of_department, or be the teacher of
     //    a class containing the submission's student.
     const submissionSchoolId = (submission as { school_id: string | null }).school_id
@@ -232,7 +232,7 @@ export async function POST(request: NextRequest) {
       const gradeNum = Number.parseInt(teacherGrade, 10)
       const teacherScore = Number.isFinite(gradeNum) ? gradeNum : null
       // teacher_reviewed_by is a UUID FK; site-admin synthetic members have a
-      // non-UUID id ("site-admin-<uuid>") — null it out for the FK column.
+      // non-UUID id ("site-admin-<uuid>") - null it out for the FK column.
       const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
         member.id,
       )

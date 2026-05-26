@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'CAIE IGCSE English Literature guide for Rebecca by Daphne du Maurier. Character analysis, gothic themes, key quotes, and exam techniques.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/rebecca' },
   openGraph: {
-    title: 'Rebecca - CAIE IGCSE — The English Hub',
+    title: 'Rebecca - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for Rebecca by Daphne du Maurier. Character analysis, gothic themes, key quotes, and exam techniques.',
   },

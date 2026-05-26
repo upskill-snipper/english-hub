@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/resources/english-language/caie/techniques',
   },
   openGraph: {
-    title: 'Cambridge IGCSE English Language techniques — The English Hub',
+    title: 'Cambridge IGCSE English Language techniques - The English Hub',
     description:
       'Language and structural techniques for Cambridge IGCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/caie/techniques',

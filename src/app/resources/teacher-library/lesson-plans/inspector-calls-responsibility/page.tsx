@@ -5,11 +5,11 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls: Social Responsibility — Lesson Plan',
+    title: 'An Inspector Calls: Social Responsibility - Lesson Plan',
     description:
       'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',
   },
-  title: 'An Inspector Calls: Social Responsibility — Lesson Plan',
+  title: 'An Inspector Calls: Social Responsibility - Lesson Plan',
   description:
     'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',
   alternates: {
@@ -133,7 +133,7 @@ export default async function InspectorCallsLessonPlan() {
             </li>
             <li className="flex gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              Write a developed analytical paragraph using the What–How–Why structure.
+              Write a developed analytical paragraph using the What-How-Why structure.
             </li>
           </ul>
         </section>
@@ -146,7 +146,7 @@ export default async function InspectorCallsLessonPlan() {
             </li>
             <li>• Sticky notes or mini-whiteboards</li>
             <li>• Projector with a slide of the 1912 context timeline</li>
-            <li>• Printed What–How–Why grid worksheet</li>
+            <li>• Printed What-How-Why grid worksheet</li>
           </ul>
         </section>
 
@@ -179,7 +179,7 @@ export default async function InspectorCallsLessonPlan() {
                   <h4 className="font-semibold">Part 1: Context bridge (5 min)</h4>
                   <p className="mt-1 text-sm leading-relaxed">
                     Show the 1912 vs 1945 timeline. Briefly explain that Priestley is writing in
-                    1945 but setting the play in 1912 — a deliberate choice.
+                    1945 but setting the play in 1912 - a deliberate choice.
                   </p>
                 </div>
                 <div>
@@ -193,7 +193,7 @@ export default async function InspectorCallsLessonPlan() {
                 <div>
                   <h4 className="font-semibold">Part 3: Guided analysis (10 min)</h4>
                   <p className="mt-1 text-sm leading-relaxed">
-                    In pairs, students complete a What–How–Why grid on one quotation from the
+                    In pairs, students complete a What-How-Why grid on one quotation from the
                     speech. Collect answers on the board to build a shared model.
                   </p>
                 </div>
@@ -262,7 +262,7 @@ export default async function InspectorCallsLessonPlan() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Dramatic irony:</strong> Don&apos;t assume students know the term. Define it
@@ -274,7 +274,7 @@ export default async function InspectorCallsLessonPlan() {
             </li>
             <li>
               <strong>Read it well:</strong> Mr Birling&apos;s pomposity is half the effect.
-              Don&apos;t read the speech flatly — ham it up.
+              Don&apos;t read the speech flatly - ham it up.
             </li>
           </ul>
         </section>

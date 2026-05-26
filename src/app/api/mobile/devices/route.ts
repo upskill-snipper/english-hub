@@ -1,14 +1,14 @@
 /**
- * /api/mobile/devices — POST (register) + GET (list)
+ * /api/mobile/devices - POST (register) + GET (list)
  *
  * See english-hub-mobile/docs/API_SPEC.md §4.3.
  *
  * POST registers a mobile install for push + analytics. Upsert on
- * `(userId, deviceId)` — a reinstall with the same deviceId keeps the
+ * `(userId, deviceId)` - a reinstall with the same deviceId keeps the
  * row and bumps lastActiveAt. Soft-deletion (revokedAt set) is handled
  * by the sibling [id] route.
  *
- * GET lists the caller's own non-revoked devices — used by the
+ * GET lists the caller's own non-revoked devices - used by the
  * "Trusted devices" settings screen on mobile.
  */
 
@@ -80,13 +80,13 @@ async function resolveCallerPrismaId(
   return null
 }
 
-// ─── POST — register a device ─────────────────────────────────────────
+// ─── POST - register a device ─────────────────────────────────────────
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const ip = getClientIp(request.headers)
     // 10/hour per IP (API_SPEC.md §6). We also key on userId inside
-    // Redis — IP alone is a coarse backstop.
+    // Redis - IP alone is a coarse backstop.
     const rl = await rateLimit(`mobile-devices-post:${ip}`, {
       limit: 10,
       windowSeconds: 60 * 60,
@@ -118,13 +118,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     const userId = await resolveCallerPrismaId(sessionUser.id, sessionUser.email ?? null)
     if (!userId) {
-      // No Prisma row yet — mobile should register via /auth/register
+      // No Prisma row yet - mobile should register via /auth/register
       // first. We 404 so the client retries after onboarding completes.
       return fail('NOT_FOUND', 'User profile not initialised. Complete onboarding first.', 404)
     }
 
     // Upsert on the (userId, deviceId) unique. Re-registration on the
-    // same device revives the row even if previously revoked — the
+    // same device revives the row even if previously revoked - the
     // reinstall flow is legitimate and Apple/Play issue new push
     // tokens on reinstall regardless.
     const device = await prisma.mobileDevice.upsert({
@@ -179,7 +179,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 }
 
-// ─── GET — list caller's own devices ──────────────────────────────────
+// ─── GET - list caller's own devices ──────────────────────────────────
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
@@ -203,7 +203,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
     const userId = await resolveCallerPrismaId(sessionUser.id, sessionUser.email ?? null)
     if (!userId) {
-      // Empty list rather than 404 — the client can survive a
+      // Empty list rather than 404 - the client can survive a
       // zero-device state.
       return ok({ devices: [] })
     }

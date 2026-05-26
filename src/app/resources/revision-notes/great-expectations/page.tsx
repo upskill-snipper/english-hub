@@ -546,7 +546,7 @@ export default function GreatExpectationsStudyGuide() {
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
               <p className="mt-1 text-xs font-semibold text-primary">
-                {q.speaker ? `${q.speaker} — ` : ''}
+                {q.speaker ? `${q.speaker} - ` : ''}
                 {q.chapter}
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>

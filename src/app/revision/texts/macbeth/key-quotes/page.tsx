@@ -387,7 +387,7 @@ export default function MacbethKeyQuotesPage() {
               <Badge variant="outline">30 quotes</Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth — Key Quotes
+              Macbeth - Key Quotes
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Thirty essential Macbeth quotations organised by act with detailed language analysis,

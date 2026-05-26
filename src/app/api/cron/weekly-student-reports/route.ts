@@ -5,19 +5,19 @@
  * days. Distinct from `weekly-reports` (parents, opted-in) and
  * `weekly-parent-reports` (parents, derived from child essays). Spec:
  *
- *   • Auth — `Authorization: Bearer ${CRON_SECRET}` (timing-safe).
- *   • Audience — `User.role === 'STUDENT'`, active, not soft-deleted, with
+ *   • Auth - `Authorization: Bearer ${CRON_SECRET}` (timing-safe).
+ *   • Audience - `User.role === 'STUDENT'`, active, not soft-deleted, with
  *     `PrivacySettings.marketingEnabled === true`. Children (<13) are
  *     additionally excluded unless they have explicit email consent
  *     (Children's Code §5: marketing OFF by default for under-13s).
- *   • Recency gate — at least one essay in the last 7 days.
- *   • Streaks — only included when streaks are enabled (children: NEVER —
+ *   • Recency gate - at least one essay in the last 7 days.
+ *   • Streaks - only included when streaks are enabled (children: NEVER -
  *     streak mechanics fall under the Children's Code §11 "detrimental use"
  *     guidance and we suppress them entirely for under-18s).
- *   • Recommendations — only when `PrivacySettings.aiOptOut === false`.
- *   • Delivery — Resend, batches of 50, 1s spacing between batches.
+ *   • Recommendations - only when `PrivacySettings.aiOptOut === false`.
+ *   • Delivery - Resend, batches of 50, 1s spacing between batches.
  *
- * Returns `{ sent, skipped, errors }` (HTTP 200 even on partial failures —
+ * Returns `{ sent, skipped, errors }` (HTTP 200 even on partial failures -
  * caller can introspect `errors[]` for follow-up).
  *
  * Suggested Vercel Cron entry (orchestrator owns vercel.json):
@@ -27,7 +27,7 @@
  *       "schedule": "0 17 * * 0"
  *     }
  *
- * (Sunday 17:00 UTC — one hour after weekly-parent-reports so the parent
+ * (Sunday 17:00 UTC - one hour after weekly-parent-reports so the parent
  * digest lands first in shared family inboxes.)
  */
 
@@ -140,7 +140,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         const isChild = ageYears < 13 || student.isMinor
 
         // Children's Code: under-13 marketing is OFF by default. The
-        // marketingEnabled gate above already enforces this — if a child
+        // marketingEnabled gate above already enforces this - if a child
         // has it on, their guardian explicitly opted in. We still suppress
         // streaks and limit suggestion text for any minor.
         const streaksEnabled = !isChild
@@ -186,7 +186,7 @@ export async function POST(request: NextRequest): Promise<Response> {
           streakDays = days.size
         }
 
-        // ── Top 3 "quiz" scores — until a Quiz model lands, AIFeedback
+        // ── Top 3 "quiz" scores - until a Quiz model lands, AIFeedback
         // overall scores are the closest signal of scored activity.
         const topQuizzes: WeeklyStudentQuizScore[] = recentEssays
           .filter((e) => typeof e.aiFeedback?.overallScore === 'number')
@@ -261,7 +261,7 @@ export async function POST(request: NextRequest): Promise<Response> {
           result.sent++
         } else {
           result.skipped++
-          result.errors.push(`send ${msg.userId}: ${r.reason}${r.detail ? ` — ${r.detail}` : ''}`)
+          result.errors.push(`send ${msg.userId}: ${r.reason}${r.detail ? ` - ${r.detail}` : ''}`)
         }
       }
       const isLastBatch = i + BATCH_SIZE >= sendable.length
@@ -337,13 +337,13 @@ function deriveFocusRecommendation(essays: readonly EssayWithFeedback[]): string
 
   switch (lowest.key) {
     case 'grammar':
-      return 'Grammar — try one timed paragraph this week paying close attention to punctuation and tense.'
+      return 'Grammar - try one timed paragraph this week paying close attention to punctuation and tense.'
     case 'structure':
-      return 'Structure — practise opening with a clear thesis and signposting each paragraph.'
+      return 'Structure - practise opening with a clear thesis and signposting each paragraph.'
     case 'argument':
-      return 'Argument — back each point with a quotation and a why-it-matters sentence.'
+      return 'Argument - back each point with a quotation and a why-it-matters sentence.'
     case 'vocabulary':
-      return 'Vocabulary — pick three new words from your reading and use them in your next essay.'
+      return 'Vocabulary - pick three new words from your reading and use them in your next essay.'
   }
 }
 

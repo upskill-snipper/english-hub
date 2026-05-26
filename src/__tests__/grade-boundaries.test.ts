@@ -23,7 +23,7 @@ const REGISTRY_KEYS = Object.keys(GRADE_BOUNDARY_REGISTRY)
 
 // ─── Registry shape ─────────────────────────────────────────────────────────
 
-describe('grade-boundary registry — shape', () => {
+describe('grade-boundary registry - shape', () => {
   it('exposes the five required boards (+ split Cambridge syllabuses)', () => {
     expect(REGISTRY_KEYS.sort()).toEqual(
       ['aqa', 'cambridge-0500', 'cambridge-0990', 'edexcel', 'eduqas', 'ocr'].sort(),
@@ -83,7 +83,7 @@ describe('grade-boundary registry — shape', () => {
 
 // ─── Percentage-normalisation maths ─────────────────────────────────────────
 
-describe('thresholdsFromRaw — percentage normalisation', () => {
+describe('thresholdsFromRaw - percentage normalisation', () => {
   it('normalises raw marks against the published maximum', () => {
     const raw: Record<NumericGrade, number | null> = {
       '9': 80,
@@ -215,7 +215,7 @@ describe('unverified-fallback gate', () => {
 
 // ─── Predictor integration: gate drives the indicative-only signal ──────────
 
-describe('predictGrade — board-aware gate behaviour', () => {
+describe('predictGrade - board-aware gate behaviour', () => {
   it('flags indicativeOnly + aqa-proxy-unverified for an unverified non-AQA board', () => {
     const r = predictGrade([ao('AO1', 50, 100)], 100, 'Edexcel')
     expect(r.indicativeOnly).toBe(true)

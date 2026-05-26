@@ -20,7 +20,7 @@ const macbethData: TextData = {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     {
       id: 'act1-scene1',
-      title: 'Act 1, Scene 1 — The Witches',
+      title: 'Act 1, Scene 1 - The Witches',
       content: `<p class="italic text-muted-foreground mb-4">A desolate place. Thunder and lightning. Enter three Witches.</p>
 
 <p><strong>FIRST WITCH</strong>
@@ -166,7 +166,7 @@ They smack of honour both. Go get him surgeons.</p>`,
     },
     {
       id: 'act1-scene3',
-      title: 'Act 1, Scene 3 — The Prophecy',
+      title: 'Act 1, Scene 3 - The Prophecy',
       content: `<p class="italic text-muted-foreground mb-4">A heath near Forres. Thunder. Enter the three Witches.</p>
 
 <p><strong>FIRST WITCH</strong>
@@ -463,7 +463,7 @@ Without my stir.</p>`,
     },
     {
       id: 'act1-scene5',
-      title: "Act 1, Scene 5 — Lady Macbeth's Letter",
+      title: "Act 1, Scene 5 - Lady Macbeth's Letter",
       content: `<p class="italic text-muted-foreground mb-4">Inverness. Macbeth's castle. Enter Lady Macbeth, reading a letter.</p>
 
 <p><strong>LADY MACBETH</strong>
@@ -623,7 +623,7 @@ Leave all the rest to me.</p>`,
     },
     {
       id: 'act1-scene7',
-      title: 'Act 1, Scene 7 — The Persuasion',
+      title: 'Act 1, Scene 7 - The Persuasion',
       content: `<p class="italic text-muted-foreground mb-4">Macbeth's castle. Hautboys and torches. Enter a Sewer, and divers Servants with dishes and service, and pass over the stage. Then enter Macbeth.</p>
 
 <p><strong>MACBETH</strong>
@@ -796,7 +796,7 @@ False face must hide what the false heart doth know.</p>`,
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     {
       id: 'act2-scene1',
-      title: 'Act 2, Scene 1 — The Dagger',
+      title: 'Act 2, Scene 1 - The Dagger',
       content: `<p class="italic text-muted-foreground mb-4">Inverness. Court of Macbeth's castle. Enter Banquo and Fleance, bearing a torch before him.</p>
 
 <p><strong>BANQUO</strong>
@@ -960,7 +960,7 @@ That summons thee to heaven or to hell.</p>`,
     },
     {
       id: 'act2-scene2',
-      title: 'Act 2, Scene 2 — The Murder',
+      title: 'Act 2, Scene 2 - The Murder',
       content: `<p class="italic text-muted-foreground mb-4">The same. Enter Lady Macbeth.</p>
 
 <p><strong>LADY MACBETH</strong>
@@ -1176,7 +1176,7 @@ Wake Duncan with thy knocking. I would thou couldst!</p>`,
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     {
       id: 'act3-scene4',
-      title: "Act 3, Scene 4 — The Banquet / Banquo's Ghost",
+      title: "Act 3, Scene 4 - The Banquet / Banquo's Ghost",
       content: `<p class="italic text-muted-foreground mb-4">A hall in the palace. A banquet prepared. Enter Macbeth, Lady Macbeth, Ross, Lennox, Lords, and Attendants.</p>
 
 <p><strong>MACBETH</strong>
@@ -1461,7 +1461,7 @@ We are yet but young in deed.</p>`,
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     {
       id: 'act4-scene1',
-      title: 'Act 4, Scene 1 — The Apparitions',
+      title: 'Act 4, Scene 1 - The Apparitions',
       content: `<p class="italic text-muted-foreground mb-4">A cavern. In the middle, a boiling cauldron. Thunder. Enter the three Witches.</p>
 
 <p><strong>FIRST WITCH</strong>
@@ -1781,7 +1781,7 @@ Come, bring me where they are.</p>`,
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     {
       id: 'act5-scene1',
-      title: 'Act 5, Scene 1 — The Sleepwalking',
+      title: 'Act 5, Scene 1 - The Sleepwalking',
       content: `<p class="italic text-muted-foreground mb-4">Dunsinane. Ante-room in the castle. Enter a Doctor of Physic and a Waiting-Gentlewoman.</p>
 
 <p><strong>DOCTOR</strong>
@@ -1969,7 +1969,7 @@ Good night, good doctor.</p>`,
     },
     {
       id: 'act5-scene5',
-      title: 'Act 5, Scene 5 — "Tomorrow, and tomorrow, and tomorrow"',
+      title: 'Act 5, Scene 5 - "Tomorrow, and tomorrow, and tomorrow"',
       content: `<p class="italic text-muted-foreground mb-4">Dunsinane. Within the castle. Enter Macbeth, Seyton, and Soldiers, with drum and colours.</p>
 
 <p><strong>MACBETH</strong>
@@ -2106,7 +2106,7 @@ At least we'll die with harness on our back.</p>`,
     },
     {
       id: 'act5-scene8',
-      title: 'Act 5, Scene 8 — The Final Battle',
+      title: 'Act 5, Scene 8 - The Final Battle',
       content: `<p class="italic text-muted-foreground mb-4">Another part of the field. Enter Macbeth.</p>
 
 <p><strong>MACBETH</strong>
@@ -2486,7 +2486,7 @@ Shakespeare drew primarily from Raphael Holinshed's Chronicles of England, Scotl
 export default function MacbethReadPage() {
   // Apply Khaleeji Arabic to the user-facing metadata (section titles,
   // character + theme names and descriptions, contextNotes). The play
-  // text inside each section's `content` field stays in English — it
+  // text inside each section's `content` field stays in English - it
   // IS the Shakespeare source the student is reading.
   const locale = useLocale()
   const data = translateMacbethData(macbethData, locale)

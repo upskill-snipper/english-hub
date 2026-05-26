@@ -90,7 +90,7 @@ export default function ParentDeleteDataPage() {
 
   useEffect(() => {
     setMounted(true)
-    // [P2:auth] Supabase — replace with supabase.auth.getUser()
+    // [P2:auth] Supabase - replace with supabase.auth.getUser()
     setAccount(safeParse<ParentAccount>(localStorage.getItem(PARENT_ACCOUNT_KEY)))
   }, [])
 

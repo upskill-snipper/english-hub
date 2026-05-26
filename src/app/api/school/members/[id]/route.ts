@@ -12,7 +12,7 @@ interface RouteParams {
   params: Promise<{ id: string }>
 }
 
-// GET /api/school/members/[id] — get single member details
+// GET /api/school/members/[id] - get single member details
 export async function GET(request: NextRequest, props: RouteParams) {
   const params = await props.params
   try {
@@ -73,7 +73,7 @@ export async function GET(request: NextRequest, props: RouteParams) {
   }
 }
 
-// PUT /api/school/members/[id] — update member (name, email, role, department)
+// PUT /api/school/members/[id] - update member (name, email, role, department)
 export async function PUT(request: NextRequest, props: RouteParams) {
   const params = await props.params
   try {
@@ -196,7 +196,7 @@ export async function PUT(request: NextRequest, props: RouteParams) {
   }
 }
 
-// DELETE /api/school/members/[id] — remove member from school
+// DELETE /api/school/members/[id] - remove member from school
 export async function DELETE(request: NextRequest, props: RouteParams) {
   const params = await props.params
   try {

@@ -1,5 +1,5 @@
 /**
- * Year 9 — Mastery.
+ * Year 9 - Mastery.
  *
  * Set text in T1: Robert Louis Stevenson's *The Strange Case of Dr
  * Jekyll and Mr Hyde* (1886). Deliberately a GCSE set text already,
@@ -10,7 +10,7 @@
  * and contextual framing.
  *
  * Sentence-stem progression: Y9 moves to "This suggests… which
- * reflects…" — methods analysed across texts, conceptual
+ * reflects…" - methods analysed across texts, conceptual
  * interpretations, evaluation.
  */
 
@@ -36,10 +36,10 @@ const lesson = (q: Quick): Lesson => ({
 
 const Y9_T1: Year['terms'][number] = {
   number: 1,
-  label: { en: 'Term 1 — Autumn', ar: 'الفصل الدراسي الأول — الخريف' },
+  label: { en: 'Term 1 - Autumn', ar: 'الفصل الدراسي الأول - الخريف' },
   overview: {
-    en: "Year 9 opens with Stevenson's *Jekyll and Hyde* — a GCSE set text in its own right. Students write full literature essays by the end of Term 1: thesis-driven, embedded fluent quotations, methods analysis (language + structure + form), conceptual interpretations, evaluation. The novella's themes (duality, repression, Darwinism, urban Gothic) feed every Y9 reading skill simultaneously.",
-    ar: 'تبدأ السنة التاسعة برواية ستيفنسون *Jekyll and Hyde* — نص مقرّر في GCSE. يكتب الطلاب مقالات أدبية كاملة بنهاية الفصل الأول.',
+    en: "Year 9 opens with Stevenson's *Jekyll and Hyde* - a GCSE set text in its own right. Students write full literature essays by the end of Term 1: thesis-driven, embedded fluent quotations, methods analysis (language + structure + form), conceptual interpretations, evaluation. The novella's themes (duality, repression, Darwinism, urban Gothic) feed every Y9 reading skill simultaneously.",
+    ar: 'تبدأ السنة التاسعة برواية ستيفنسون *Jekyll and Hyde* - نص مقرّر في GCSE. يكتب الطلاب مقالات أدبية كاملة بنهاية الفصل الأول.',
   },
   setText: { en: 'The Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson (1886)' },
   vocabularyThemes: [
@@ -47,12 +47,12 @@ const Y9_T1: Year['terms'][number] = {
     { en: 'allegory, microcosm, paradigm, subversion, anxiety, hubris, dichotomy' },
   ],
   bigSkillJump: {
-    en: 'Students arrive writing analytical paragraphs; they exit writing full thesis-driven literature essays with sustained conceptual readings — the core GCSE Literature skill, embedded a year early.',
+    en: 'Students arrive writing analytical paragraphs; they exit writing full thesis-driven literature essays with sustained conceptual readings - the core GCSE Literature skill, embedded a year early.',
   },
   halfTerms: [
     {
       id: '1.1',
-      label: { en: 'Term 1.1 — First half', ar: 'الفصل 1.1 — النصف الأول' },
+      label: { en: 'Term 1.1 - First half', ar: 'الفصل 1.1 - النصف الأول' },
       assessment: {
         en: 'Analytical essay 35-40 mins: "Starting with this extract, explore how Stevenson presents the duality of human nature in *Jekyll and Hyde*." Full essay structure: thesis-driven intro, 2-3 conceptual body paragraphs, brief conclusion.',
       },
@@ -127,7 +127,7 @@ const Y9_T1: Year['terms'][number] = {
         },
         {
           number: 3,
-          pages: '"Story of the Door" — Enfield\'s account of Hyde trampling the girl (pp. 4-8)',
+          pages: '"Story of the Door" - Enfield\'s account of Hyde trampling the girl (pp. 4-8)',
           keyVocabulary: [
             { en: 'atavistic', ar: 'ارتدادي' },
             { en: 'juggernaut', ar: 'قوة جارفة' },
@@ -190,7 +190,7 @@ const Y9_T1: Year['terms'][number] = {
         },
         {
           number: 4,
-          pages: '"Search for Mr Hyde" — Utterson\'s nightmare (pp. 9-17)',
+          pages: '"Search for Mr Hyde" - Utterson\'s nightmare (pp. 9-17)',
           keyVocabulary: [
             { en: 'premonition', ar: 'هاجس' },
             { en: 'repression', ar: 'الكبت' },
@@ -325,8 +325,8 @@ const Y9_T1: Year['terms'][number] = {
             { en: 'antithesis', ar: 'تضادّ' },
           ],
           contextNote: {
-            en: 'Comparative skills — half-term consolidation.',
-            ar: 'مهارات المقارنة — مراجعة منتصف الفصل.',
+            en: 'Comparative skills - half-term consolidation.',
+            ar: 'مهارات المقارنة - مراجعة منتصف الفصل.',
           },
           lessons: [
             lesson({
@@ -397,8 +397,8 @@ const Y9_T1: Year['terms'][number] = {
               skills: ['9R.3', '9R.7'],
               do: 'Teach *characterisation* as authorial choice; analyse Lanyon as foil.',
               doAr: 'علِّم *characterisation* بوصفه خيارًا للمؤلِّف، وحلِّل Lanyon بوصفه نقيضًا.',
-              task: 'Foil-chart: Lanyon vs Jekyll — beliefs, language, function.',
-              taskAr: 'جدول النقيض: Lanyon مقابل Jekyll — المعتقدات واللغة والوظيفة.',
+              task: 'Foil-chart: Lanyon vs Jekyll - beliefs, language, function.',
+              taskAr: 'جدول النقيض: Lanyon مقابل Jekyll - المعتقدات واللغة والوظيفة.',
               success: "Frames characters as Stevenson's tools, not autonomous figures.",
               successAr: 'يُؤطِّر الشخصيات بوصفها أدوات Stevenson، لا كيانات مستقلّة.',
             }),
@@ -448,8 +448,8 @@ const Y9_T1: Year['terms'][number] = {
     },
     {
       id: '1.2',
-      label: { en: 'Term 1.2 — Second half', ar: 'الفصل 1.2 — النصف الثاني' },
-      assessment: { en: 'Term 1.2 formal essay — full multi-paragraph response.' },
+      label: { en: 'Term 1.2 - Second half', ar: 'الفصل 1.2 - النصف الثاني' },
+      assessment: { en: 'Term 1.2 formal essay - full multi-paragraph response.' },
       weeks: [
         {
           number: 8,
@@ -813,11 +813,11 @@ const Y9_T1: Year['terms'][number] = {
 const Y9_T2: Year['terms'][number] = {
   number: 2,
   label: {
-    en: 'Term 2 — Macbeth: Ambition and Conscience',
-    ar: 'الفصل الدراسي الثاني — ماكبث: الطموح والضمير',
+    en: 'Term 2 - Macbeth: Ambition and Conscience',
+    ar: 'الفصل الدراسي الثاني - ماكبث: الطموح والضمير',
   },
   overview: {
-    en: 'Compulsory KS3 Shakespeare. Whole play study + Jacobean context (Gunpowder Plot, divine right, witchcraft). Critical extracts on Lady Macbeth and the supernatural. By end of term students write thesis-driven literature essays on a whole text with context — the core GCSE Literature skill, embedded a year early.',
+    en: 'Compulsory KS3 Shakespeare. Whole play study + Jacobean context (Gunpowder Plot, divine right, witchcraft). Critical extracts on Lady Macbeth and the supernatural. By end of term students write thesis-driven literature essays on a whole text with context - the core GCSE Literature skill, embedded a year early.',
   },
   setText: { en: '*Macbeth* (whole play) + Jacobean context + critical extracts' },
   vocabularyThemes: [
@@ -825,7 +825,7 @@ const Y9_T2: Year['terms'][number] = {
     { en: 'guilt, conscience, hubris, nemesis, catharsis' },
   ],
   bigSkillJump: {
-    en: 'Students write a thesis-driven literature essay on a whole text with context — core GCSE Lit skill.',
+    en: 'Students write a thesis-driven literature essay on a whole text with context - core GCSE Lit skill.',
   },
   halfTerms: [
     {
@@ -845,7 +845,7 @@ const Y9_T2: Year['terms'][number] = {
           ],
           contextNote: {
             en: 'Jacobean England (1603-25): James I survives the Gunpowder Plot, believes in divine right and witchcraft (Daemonologie 1597). Macbeth (c.1606) flatters the king and warns regicides.',
-            ar: 'إنجلترا اليعقوبية (١٦٠٣–١٦٢٥): نجا James I من مؤامرة البارود، وآمن بالحقّ الإلهي وبالسحر (Daemonologie ١٥٩٧). تتملّق Macbeth (نحو ١٦٠٦) الملكَ، وتُحذِّر من قتلة الملوك.',
+            ar: 'إنجلترا اليعقوبية (١٦٠٣-١٦٢٥): نجا James I من مؤامرة البارود، وآمن بالحقّ الإلهي وبالسحر (Daemonologie ١٥٩٧). تتملّق Macbeth (نحو ١٦٠٦) الملكَ، وتُحذِّر من قتلة الملوك.',
           },
           lessons: [
             lesson({
@@ -1652,8 +1652,8 @@ const Y9_T2: Year['terms'][number] = {
 const Y9_T3: Year['terms'][number] = {
   number: 3,
   label: {
-    en: 'Term 3 — Conflict: Poetry and Modern Drama',
-    ar: 'الفصل الدراسي الثالث — الصراع: الشعر والمسرح الحديث',
+    en: 'Term 3 - Conflict: Poetry and Modern Drama',
+    ar: 'الفصل الدراسي الثالث - الصراع: الشعر والمسرح الحديث',
   },
   overview: {
     en: 'GCSE-bridging term. Conflict poetry anthology (Owen "Dulce et Decorum Est", Sassoon, Brian Patten, Carol Ann Duffy, Imtiaz Dharker, Armitage "Remains") in HT1. Modern play (*Blood Brothers* or *An Inspector Calls* extracts) in HT2. Students exit KS3 GCSE-ready.',
@@ -1666,7 +1666,7 @@ const Y9_T3: Year['terms'][number] = {
     { en: 'class, responsibility, generation, capitalism, socialism' },
   ],
   bigSkillJump: {
-    en: 'Students compare two texts in a structured essay AND deliver an assessed formal presentation — both core GCSE skills.',
+    en: 'Students compare two texts in a structured essay AND deliver an assessed formal presentation - both core GCSE skills.',
   },
   halfTerms: [
     {
@@ -1769,8 +1769,8 @@ const Y9_T3: Year['terms'][number] = {
             lesson({
               focus: 'reading-discussion',
               skills: ['9R.3', '9SL.3'],
-              do: 'Discuss: who is the real target — soldiers, generals, or civilians?',
-              doAr: 'ناقش: من هو الهدف الحقيقي — الجنود، أم القادة، أم المدنيون؟',
+              do: 'Discuss: who is the real target - soldiers, generals, or civilians?',
+              doAr: 'ناقش: من هو الهدف الحقيقي - الجنود، أم القادة، أم المدنيون؟',
               task: 'Structured response.',
               taskAr: 'ردّ منظَّم.',
               success: 'Argues analytically.',
@@ -2327,7 +2327,7 @@ const Y9_T3: Year['terms'][number] = {
               do: 'Model presentation script: hook, thesis, three points, call to action.',
               doAr: 'نموذج نصّ العرض الشفوي: الجاذب، فالأطروحة، ثلاث نقاط، ثم الدعوة إلى الفعل.',
               task: 'Draft full script (4-5 mins).',
-              taskAr: 'اكتب النصّ الكامل (٤–٥ دقائق).',
+              taskAr: 'اكتب النصّ الكامل (٤-٥ دقائق).',
               success: 'Script is structured.',
               successAr: 'النصّ منظَّم البنية.',
             }),
@@ -2494,38 +2494,38 @@ const Y9_T3: Year['terms'][number] = {
 
 export const YEAR_9: Year = {
   number: 9,
-  name: { en: 'Year 9 — Mastery', ar: 'السنة التاسعة — الإتقان' },
+  name: { en: 'Year 9 - Mastery', ar: 'السنة التاسعة - الإتقان' },
   overview: {
-    en: 'Year 9 is the bridge to GCSE. Students move from "This suggests… because…" to "This suggests… which reflects…" — methods analysed across texts, conceptual interpretations, evaluation. The year covers pre-1914 prose (Jekyll and Hyde, T1), Shakespeare (Macbeth, T2), and conflict poetry + modern drama (T3). Students exit writing full thesis-driven literature essays.',
+    en: 'Year 9 is the bridge to GCSE. Students move from "This suggests… because…" to "This suggests… which reflects…" - methods analysed across texts, conceptual interpretations, evaluation. The year covers pre-1914 prose (Jekyll and Hyde, T1), Shakespeare (Macbeth, T2), and conflict poetry + modern drama (T3). Students exit writing full thesis-driven literature essays.',
   },
   yearlyExpectations: {
     reading: [
-      { en: '9R.1 — Interpret explicit and implicit meanings in complex texts.' },
-      { en: '9R.2 — Select, embed and integrate quotations fluently.' },
-      { en: '9R.3 — Analyse developed inferences, exploring multiple interpretations.' },
-      { en: '9R.4 — Analyse how writers use language, structure and form to shape meaning.' },
-      { en: "9R.5 — Evaluate the effects of writer's choices on the reader." },
-      { en: '9R.6 — Analyse and evaluate similarities and differences across texts.' },
-      { en: '9R.7 — Use precise subject terminology confidently and accurately.' },
+      { en: '9R.1 - Interpret explicit and implicit meanings in complex texts.' },
+      { en: '9R.2 - Select, embed and integrate quotations fluently.' },
+      { en: '9R.3 - Analyse developed inferences, exploring multiple interpretations.' },
+      { en: '9R.4 - Analyse how writers use language, structure and form to shape meaning.' },
+      { en: "9R.5 - Evaluate the effects of writer's choices on the reader." },
+      { en: '9R.6 - Analyse and evaluate similarities and differences across texts.' },
+      { en: '9R.7 - Use precise subject terminology confidently and accurately.' },
     ],
     writing: [
-      { en: '9W.1 — Structure writing cohesively and logically across whole texts.' },
-      { en: '9W.2 — Use a wide range of punctuation accurately and deliberately.' },
-      { en: '9W.3 — Develop ideas in depth with clear, critical explanation.' },
-      { en: '9W.4 — Use varied sentence structures deliberately for effect.' },
-      { en: '9W.5 — Manipulate perspective, viewpoint and voice confidently.' },
-      { en: '9W.6 — Craft structure, tone and imagery to shape reader response.' },
-      { en: '9W.7 — Write with sustained control for a range of purposes and audiences.' },
+      { en: '9W.1 - Structure writing cohesively and logically across whole texts.' },
+      { en: '9W.2 - Use a wide range of punctuation accurately and deliberately.' },
+      { en: '9W.3 - Develop ideas in depth with clear, critical explanation.' },
+      { en: '9W.4 - Use varied sentence structures deliberately for effect.' },
+      { en: '9W.5 - Manipulate perspective, viewpoint and voice confidently.' },
+      { en: '9W.6 - Craft structure, tone and imagery to shape reader response.' },
+      { en: '9W.7 - Write with sustained control for a range of purposes and audiences.' },
     ],
     language: [
-      { en: '9W.8 — Control register and adapt style for different audiences and purposes.' },
-      { en: '9W.9 — Edit, refine and improve writing independently and critically.' },
-      { en: '9W.10 — Manipulate vocabulary and syntax deliberately for effect.' },
+      { en: '9W.8 - Control register and adapt style for different audiences and purposes.' },
+      { en: '9W.9 - Edit, refine and improve writing independently and critically.' },
+      { en: '9W.10 - Manipulate vocabulary and syntax deliberately for effect.' },
     ],
     speaking: [
-      { en: '9SL.1 — Contribute thoughtfully to discussions, developing and challenging ideas.' },
-      { en: '9SL.2 — Speak clearly, confidently and fluently in a range of contexts.' },
-      { en: '9SL.3 — Present structured, analytical ideas using appropriate register.' },
+      { en: '9SL.1 - Contribute thoughtfully to discussions, developing and challenging ideas.' },
+      { en: '9SL.2 - Speak clearly, confidently and fluently in a range of contexts.' },
+      { en: '9SL.3 - Present structured, analytical ideas using appropriate register.' },
     ],
   },
   rubric: [],

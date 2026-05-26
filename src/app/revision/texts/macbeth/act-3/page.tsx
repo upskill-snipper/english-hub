@@ -12,11 +12,11 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   openGraph: {
-    title: 'Macbeth Act 3 — Scene-by-Scene Analysis | The English Hub',
+    title: 'Macbeth Act 3 - Scene-by-Scene Analysis | The English Hub',
     description: 'Detailed GCSE analysis of Macbeth Act 3: Banquo',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-3' },
-  title: 'Macbeth Act 3 — Scene-by-Scene Analysis',
+  title: 'Macbeth Act 3 - Scene-by-Scene Analysis',
   description:
     "Detailed GCSE analysis of Macbeth Act 3: Banquo's murder, the banquet ghost, paranoia and tyranny, key quotes and language techniques.",
 }
@@ -65,12 +65,12 @@ export default async function MacbethAct3Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-clay-600" />
-              {_tr(`Act 3 — Paranoia &amp; Tyranny`)}
+              {_tr(`Act 3 - Paranoia &amp; Tyranny`)}
             </Badge>
             <Badge variant="outline">6 scenes</Badge>
           </div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            {_tr(`Macbeth — Act 3: Scene-by-Scene Analysis`)}
+            {_tr(`Macbeth - Act 3: Scene-by-Scene Analysis`)}
           </h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             Act 3 marks Macbeth&apos;s transformation from reluctant murderer to active tyrant. He
@@ -87,7 +87,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 1 — Macbeth Plans Banquo&apos;s Murder`)}
+            {_tr(`Scene 1 - Macbeth Plans Banquo&apos;s Murder`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -223,7 +223,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 2 — &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;`)}
+            {_tr(`Scene 2 - &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -349,7 +349,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 3 — Banquo&apos;s Murder`)}
+            {_tr(`Scene 3 - Banquo&apos;s Murder`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -429,7 +429,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 4 — The Banquet and Banquo&apos;s Ghost`)}
+            {_tr(`Scene 4 - The Banquet and Banquo&apos;s Ghost`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -576,7 +576,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 5 — Hecate&apos;s Intervention`)}
+            {_tr(`Scene 5 - Hecate&apos;s Intervention`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -631,7 +631,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-clay-600" />
-            {_tr(`Scene 6 — Lennox&apos;s Suspicions`)}
+            {_tr(`Scene 6 - Lennox&apos;s Suspicions`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -687,7 +687,7 @@ export default async function MacbethAct3Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MessageSquare className="size-5 text-blue-400" />
-            {_tr(`Practice Exam Questions — Act 3`)}
+            {_tr(`Practice Exam Questions - Act 3`)}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -716,7 +716,7 @@ export default async function MacbethAct3Page() {
         <Button variant="outline" render={<Link href="/revision/texts/macbeth/act-2" />}>
           <ArrowLeft className="size-4 mr-1" /> Act 2
         </Button>
-        <Button variant="outline" disabled aria-disabled="true" title={_tr(`Act 4 — coming soon`)}>
+        <Button variant="outline" disabled aria-disabled="true" title={_tr(`Act 4 - coming soon`)}>
           Act 4 (coming soon) <ArrowRight className="size-4 ml-1" />
         </Button>
       </div>

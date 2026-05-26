@@ -123,13 +123,13 @@ export default function CalendarPage() {
   const [boardFilter, setBoardFilter] = useState<string>('all')
   const [classFilter, setClassFilter] = useState<string>('all')
 
-  // Lesson slots (local state — in production this would come from a database)
+  // Lesson slots (local state - in production this would come from a database)
   const [lessons, setLessons] = useState<LessonSlot[]>([])
   const [assignments, setAssignments] = useState<AssignmentDue[]>([
     {
       id: 'a1',
       date: '2026-05-15',
-      title: 'Mock Paper 1 — Creative Writing',
+      title: 'Mock Paper 1 - Creative Writing',
       className: 'Year 11 Set 1',
     },
     { id: 'a2', date: '2026-05-08', title: 'Poetry Anthology Essay', className: 'Year 11 Set 2' },
@@ -319,7 +319,7 @@ export default function CalendarPage() {
   const title =
     view === 'month'
       ? `${MONTH_NAMES[month]} ${year}`
-      : `Week of ${weekDays[0].toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} – ${weekDays[6].toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`
+      : `Week of ${weekDays[0].toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} - ${weekDays[6].toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`
 
   return (
     <div className="space-y-6 print:space-y-4">
@@ -667,7 +667,7 @@ function MonthView({
                       URGENCY_BG[colour],
                       'text-foreground',
                     )}
-                    title={`${exam.board} — ${exam.paper}`}
+                    title={`${exam.board} - ${exam.paper}`}
                   >
                     <span
                       className={cn(
@@ -809,7 +809,7 @@ function WeekView({
                       />
                       <div className="min-w-0">
                         <p className="text-sm font-semibold">
-                          {exam.board} — {exam.subject}
+                          {exam.board} - {exam.subject}
                         </p>
                         <p className="text-xs text-muted-foreground">{exam.paper}</p>
                         <p className="text-[11px] text-muted-foreground mt-1">
@@ -864,7 +864,7 @@ function WeekView({
                         {a.title}
                       </p>
                       <span className="text-[10px] text-purple-600 dark:text-purple-400">
-                        Due — {a.className}
+                        Due - {a.className}
                       </span>
                     </div>
                   </div>
@@ -903,7 +903,7 @@ function toIso(d: Date): string {
 function formatWeekRange(start: string, end: string): string {
   const s = new Date(start + 'T00:00:00')
   const e = new Date(end + 'T00:00:00')
-  return `${s.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} – ${e.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}`
+  return `${s.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} - ${e.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}`
 }
 
 function generateRevisionTopics(

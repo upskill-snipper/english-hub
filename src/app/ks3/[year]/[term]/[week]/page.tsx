@@ -37,7 +37,7 @@ function parseParams(p: Params): { year: YearNumber; term: 1 | 2 | 3; week: numb
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const parsed = parseParams(await params)
-  if (!parsed) return { title: 'KS3 — Week not found' }
+  if (!parsed) return { title: 'KS3 - Week not found' }
   return {
     title: `Year ${parsed.year} · Term ${parsed.term} · Week ${parsed.week}`,
     description: `Five-lesson weekly plan for Year ${parsed.year}, Term ${parsed.term}, Week ${parsed.week}.`,

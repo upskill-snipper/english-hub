@@ -79,14 +79,14 @@ function formatRelativeDate(iso: string, t: Translator) {
 function getGreetingKey() {
   // Routes through the `your_hub.greeting.*` namespace. The fallback in
   // dictionary.ts ensures these still render in English even if the AR
-  // entry is missing — see lookup() behaviour.
+  // entry is missing - see lookup() behaviour.
   const hour = new Date().getHours()
   if (hour < 12) return 'your_hub.greeting.morning'
   if (hour < 17) return 'your_hub.greeting.afternoon'
   return 'your_hub.greeting.evening'
 }
 
-// courseMap is now built dynamically inside the component — see useMemo below
+// courseMap is now built dynamically inside the component - see useMemo below
 
 // ── Skeleton Components ────────────────────────────────────────────────────
 
@@ -177,7 +177,7 @@ export default function DashboardPage() {
   useEffect(() => {
     if (searchParams.get('checkout') === 'success') {
       trackEvent('purchase', { currency: 'GBP' })
-      // Funnel: subscription_paid_converted — Stripe redirected back after
+      // Funnel: subscription_paid_converted - Stripe redirected back after
       // the first successful payment. Consent-gated in src/lib/posthog.ts.
       phCapture(PH_EVENTS.SUBSCRIPTION_PAID_CONVERTED, { currency: 'GBP' })
     }

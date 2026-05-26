@@ -6,14 +6,14 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Lord of the Flies Study Guide — Edexcel GCSE English Literature',
+    title: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Lord of the Flies revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, symbolism, context, and Edexcel exam technique.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/lord-of-the-flies',
   },
-  title: 'Lord of the Flies Study Guide — Edexcel GCSE English Literature',
+  title: 'Lord of the Flies Study Guide - Edexcel GCSE English Literature',
   description:
     'Complete Lord of the Flies revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, symbolism, context, and Edexcel exam technique.',
 }
@@ -22,25 +22,25 @@ export const metadata: Metadata = {
 
 const PLOT_SUMMARY = [
   {
-    chapter: 'Chapters 1–3',
+    chapter: 'Chapters 1-3',
     title: 'Arrival and Early Order',
     summary:
       "A group of British schoolboys survive a plane crash on a deserted tropical island during an unnamed nuclear war. Ralph is elected chief over Jack, who is given control of his choir as hunters. Piggy's glasses are used to light a signal fire. Ralph insists on building shelters and keeping the fire burning for rescue. Jack becomes increasingly obsessed with hunting pigs. Simon retreats alone into the jungle. Early tensions emerge between Ralph's focus on rescue and civilisation, and Jack's desire to hunt.",
   },
   {
-    chapter: 'Chapters 4–6',
+    chapter: 'Chapters 4-6',
     title: 'The Descent Begins',
     summary:
-      "Jack paints his face — a mask that 'liberates him from shame and self-consciousness.' The hunters kill their first pig while the signal fire goes out, and a ship passes without seeing them. Ralph is furious; Jack is unapologetic. The littluns begin to fear a 'beast' on the island. A dead paratrooper lands on the mountain, and Sam and Eric mistake the body for the beast. Fear begins to dominate the group, and Jack exploits it to challenge Ralph's leadership.",
+      "Jack paints his face - a mask that 'liberates him from shame and self-consciousness.' The hunters kill their first pig while the signal fire goes out, and a ship passes without seeing them. Ralph is furious; Jack is unapologetic. The littluns begin to fear a 'beast' on the island. A dead paratrooper lands on the mountain, and Sam and Eric mistake the body for the beast. Fear begins to dominate the group, and Jack exploits it to challenge Ralph's leadership.",
   },
   {
-    chapter: 'Chapters 7–9',
+    chapter: 'Chapters 7-9',
     title: "Savagery and Simon's Death",
     summary:
-      "Ralph joins a hunt and feels the thrill of violence. Jack calls an assembly to overthrow Ralph and, when he fails, leaves to start his own tribe. Most boys follow Jack, lured by meat and excitement. Jack's tribe kills a sow and mounts its head on a stick as an offering to the beast — this becomes the 'Lord of the Flies.' Simon has a hallucinatory conversation with the pig's head, which tells him the beast is 'part of you.' Simon discovers the dead paratrooper and rushes to tell the others, but the boys, in a frenzied ritual dance, mistake him for the beast and beat him to death.",
+      "Ralph joins a hunt and feels the thrill of violence. Jack calls an assembly to overthrow Ralph and, when he fails, leaves to start his own tribe. Most boys follow Jack, lured by meat and excitement. Jack's tribe kills a sow and mounts its head on a stick as an offering to the beast - this becomes the 'Lord of the Flies.' Simon has a hallucinatory conversation with the pig's head, which tells him the beast is 'part of you.' Simon discovers the dead paratrooper and rushes to tell the others, but the boys, in a frenzied ritual dance, mistake him for the beast and beat him to death.",
   },
   {
-    chapter: 'Chapters 10–12',
+    chapter: 'Chapters 10-12',
     title: 'Total Collapse and Rescue',
     summary:
       "Jack's tribe raids Ralph's camp and steals Piggy's glasses to make fire. Ralph, Piggy, and the twins go to Castle Rock to confront Jack. Roger pushes a boulder that kills Piggy and destroys the conch. Sam and Eric are captured and tortured into joining Jack's tribe. Ralph is hunted across the island; Jack sets the jungle on fire to smoke him out. Ralph stumbles onto the beach and collapses at the feet of a naval officer. The officer is shocked. Ralph weeps 'for the end of innocence, the darkness of man's heart, and the fall through the air of the true, wise friend called Piggy.'",
@@ -64,18 +64,18 @@ const CHARACTERS = [
     description:
       "The antagonist who represents savagery, dictatorship, and the will to power. Initially the head of the choir, Jack becomes increasingly obsessed with hunting and violence. He paints his face, creating a mask that frees him from civilised restraint. He exploits the boys' fear of the beast to seize power, establishing a brutal tribal regime at Castle Rock. Jack represents the human instinct towards cruelty and authoritarian control when the structures of civilisation are removed.",
     key_quotes: [
-      '"We\'ve got to have rules and obey them. After all, we\'re not savages" (ironic — Jack later becomes the most savage)',
+      '"We\'ve got to have rules and obey them. After all, we\'re not savages" (ironic - Jack later becomes the most savage)',
       '"The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness"',
-      '"Bollocks to the rules! We\'re strong — we hunt!"',
+      '"Bollocks to the rules! We\'re strong - we hunt!"',
       '"He began to dance and his laughter became a bloodthirsty snarling"',
     ],
   },
   {
     name: 'Piggy',
     description:
-      "Represents intellect, reason, and scientific thinking. Piggy is overweight, asthmatic, and wears glasses — he is physically weak but intellectually the strongest. He is the most loyal supporter of Ralph and the rules. The other boys mock and marginalise him, reflecting society's tendency to ignore rational voices. His glasses symbolise knowledge and are used to create fire. His death — crushed by a boulder alongside the conch — marks the final destruction of reason and civilisation on the island.",
+      "Represents intellect, reason, and scientific thinking. Piggy is overweight, asthmatic, and wears glasses - he is physically weak but intellectually the strongest. He is the most loyal supporter of Ralph and the rules. The other boys mock and marginalise him, reflecting society's tendency to ignore rational voices. His glasses symbolise knowledge and are used to create fire. His death - crushed by a boulder alongside the conch - marks the final destruction of reason and civilisation on the island.",
     key_quotes: [
-      '"Which is better — to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
+      '"Which is better - to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
       '"What are we? Humans? Or animals? Or savages?"',
       '"I got the conch! Just you listen!"',
       '"Life is scientific, that\'s what it is"',
@@ -84,7 +84,7 @@ const CHARACTERS = [
   {
     name: 'Simon',
     description:
-      "A quiet, spiritual boy who represents innate human goodness and moral insight. Simon is the only character who understands that the beast is not an external creature but a force within human nature — 'maybe it\'s only us.' His encounter with the Lord of the Flies is a symbolic confrontation with evil. He is killed by the other boys in a frenzy, and his death parallels the crucifixion of Christ — he is the innocent truth-teller destroyed by the mob. His body is carried out to sea in a passage of extraordinary beauty.",
+      "A quiet, spiritual boy who represents innate human goodness and moral insight. Simon is the only character who understands that the beast is not an external creature but a force within human nature - 'maybe it\'s only us.' His encounter with the Lord of the Flies is a symbolic confrontation with evil. He is killed by the other boys in a frenzy, and his death parallels the crucifixion of Christ - he is the innocent truth-teller destroyed by the mob. His body is carried out to sea in a passage of extraordinary beauty.",
     key_quotes: [
       '"Maybe there is a beast... maybe it\'s only us"',
       '"What I mean is... maybe it\'s only us"',
@@ -95,7 +95,7 @@ const CHARACTERS = [
   {
     name: 'Roger',
     description:
-      "Represents pure sadism and cruelty. Roger begins by throwing stones near (but not at) a littlun — civilisation's conditioning still holds. As the novel progresses, he is freed from all restraint and becomes Jack's torturer and enforcer. He kills Piggy by pushing a boulder onto him. Roger represents the darkest impulse within human nature — the desire to hurt others — which is normally suppressed by society but unleashed when authority collapses.",
+      "Represents pure sadism and cruelty. Roger begins by throwing stones near (but not at) a littlun - civilisation's conditioning still holds. As the novel progresses, he is freed from all restraint and becomes Jack's torturer and enforcer. He kills Piggy by pushing a boulder onto him. Roger represents the darkest impulse within human nature - the desire to hurt others - which is normally suppressed by society but unleashed when authority collapses.",
     key_quotes: [
       '"Roger gathered a handful of stones and began to throw them. Yet there was a space round Henry... into which he dare not throw"',
       '"Roger, with a sense of delirious abandonment, leaned all his weight on the lever"',
@@ -114,10 +114,10 @@ const THEMES = [
   {
     theme: 'Civilisation vs Savagery',
     description:
-      "The central conflict of the novel. Golding explores what happens when the structures of civilisation — rules, democracy, morality — are removed. Ralph and Piggy represent civilisation; Jack and Roger represent savagery. The boys' descent from orderly democracy to tribal violence suggests that savagery is not learned but innate — civilisation is merely a thin veneer. The conch, the signal fire, and Piggy's glasses all symbolise civilisation, and each is destroyed as savagery takes over.",
+      "The central conflict of the novel. Golding explores what happens when the structures of civilisation - rules, democracy, morality - are removed. Ralph and Piggy represent civilisation; Jack and Roger represent savagery. The boys' descent from orderly democracy to tribal violence suggests that savagery is not learned but innate - civilisation is merely a thin veneer. The conch, the signal fire, and Piggy's glasses all symbolise civilisation, and each is destroyed as savagery takes over.",
     quotes: [
       '"We\'ve got to have rules and obey them. After all, we\'re not savages"',
-      '"Which is better — to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
+      '"Which is better - to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
       '"The world, that understandable and lawful world, was slipping away"',
     ],
   },
@@ -128,13 +128,13 @@ const THEMES = [
     quotes: [
       '"I ought to be chief... because I\'m chapter chorister and head boy"',
       '"I\'m chief. I was chosen"',
-      '"Bollocks to the rules! We\'re strong — we hunt!"',
+      '"Bollocks to the rules! We\'re strong - we hunt!"',
     ],
   },
   {
     theme: 'Loss of Innocence',
     description:
-      "The boys arrive as schoolchildren and leave as murderers. The novel systematically strips away their innocence, revealing the darkness within. Ralph's final weeping — 'for the end of innocence, the darkness of man's heart' — is the novel's emotional climax. The littluns' nightmares about the beast foreshadow the real horror that the older boys will commit. Golding subverts the traditional 'boys' adventure' genre (like Coral Island) to show that children are not inherently innocent.",
+      "The boys arrive as schoolchildren and leave as murderers. The novel systematically strips away their innocence, revealing the darkness within. Ralph's final weeping - 'for the end of innocence, the darkness of man's heart' - is the novel's emotional climax. The littluns' nightmares about the beast foreshadow the real horror that the older boys will commit. Golding subverts the traditional 'boys' adventure' genre (like Coral Island) to show that children are not inherently innocent.",
     quotes: [
       '"Ralph wept for the end of innocence, the darkness of man\'s heart"',
       '"The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness"',
@@ -144,7 +144,7 @@ const THEMES = [
   {
     theme: 'The Nature of Evil (The Beast Within)',
     description:
-      "The boys fear an external beast, but Simon alone realises the truth: 'maybe it\'s only us.' The beast is not a creature — it is the capacity for evil within every human being. The Lord of the Flies (the pig's head) confirms this: 'I\'m part of you.' Golding argues that evil is not an external force but an intrinsic part of human nature. The title itself — 'Lord of the Flies' is a translation of 'Beelzebub,' a biblical name for the devil — reinforces this idea.",
+      "The boys fear an external beast, but Simon alone realises the truth: 'maybe it\'s only us.' The beast is not a creature - it is the capacity for evil within every human being. The Lord of the Flies (the pig's head) confirms this: 'I\'m part of you.' Golding argues that evil is not an external force but an intrinsic part of human nature. The title itself - 'Lord of the Flies' is a translation of 'Beelzebub,' a biblical name for the devil - reinforces this idea.",
     quotes: [
       '"Maybe there is a beast... maybe it\'s only us"',
       '"You knew, didn\'t you? I\'m part of you?"',
@@ -155,9 +155,9 @@ const THEMES = [
   {
     theme: 'Fear and Its Manipulation',
     description:
-      "Fear is the catalyst for the boys' descent into savagery. The littluns fear the beast; Jack exploits this fear to undermine Ralph and seize power. He offers protection (the hunt) and a scapegoat (the beast), exactly as totalitarian leaders do. The signal fire goes out because fear distracts the boys from rescue. Golding shows that fear is the most powerful political tool — it overrides reason, enables violence, and allows tyrants to rise.",
+      "Fear is the catalyst for the boys' descent into savagery. The littluns fear the beast; Jack exploits this fear to undermine Ralph and seize power. He offers protection (the hunt) and a scapegoat (the beast), exactly as totalitarian leaders do. The signal fire goes out because fear distracts the boys from rescue. Golding shows that fear is the most powerful political tool - it overrides reason, enables violence, and allows tyrants to rise.",
     quotes: [
-      '"The thing is — fear can\'t hurt you any more than a dream"',
+      '"The thing is - fear can\'t hurt you any more than a dream"',
       "\"If there's a beast, we'll hunt it down! We'll close in and beat and beat and beat!\"",
       '"He says the beastie came in the dark"',
     ],
@@ -165,7 +165,7 @@ const THEMES = [
   {
     theme: 'Order vs Chaos',
     description:
-      "The conch shell establishes democratic order — whoever holds it may speak. As the conch loses its power, chaos increases. The signal fire represents hope and connection to the adult world; when it goes out, hope dies. Rules, shelters, and assemblies are all attempts to impose order, but they crumble under the weight of fear and desire. The destruction of the conch alongside Piggy's death symbolises the total collapse of ordered society.",
+      "The conch shell establishes democratic order - whoever holds it may speak. As the conch loses its power, chaos increases. The signal fire represents hope and connection to the adult world; when it goes out, hope dies. Rules, shelters, and assemblies are all attempts to impose order, but they crumble under the weight of fear and desire. The destruction of the conch alongside Piggy's death symbolises the total collapse of ordered society.",
     quotes: [
       '"The rules are the only thing we\'ve got!"',
       '"The conch exploded into a thousand white fragments and ceased to exist"',
@@ -183,12 +183,12 @@ const SYMBOLISM = [
   {
     symbol: 'The Signal Fire',
     meaning:
-      "Represents the boys' connection to civilisation and their hope of rescue. When the fire burns, the boys maintain their desire to return to society. When it goes out, they have lost sight of civilisation. Ironically, the fire that finally attracts the naval officer is not a signal fire but the destructive blaze Jack sets to hunt Ralph — rescue comes through savagery, not order.",
+      "Represents the boys' connection to civilisation and their hope of rescue. When the fire burns, the boys maintain their desire to return to society. When it goes out, they have lost sight of civilisation. Ironically, the fire that finally attracts the naval officer is not a signal fire but the destructive blaze Jack sets to hunt Ralph - rescue comes through savagery, not order.",
   },
   {
     symbol: "Piggy's Glasses",
     meaning:
-      "Represent intellect, reason, and scientific knowledge. They are the only means of making fire — knowledge is power. When Jack's tribe steals the glasses, it shows how intellect can be co-opted by tyranny. The progressive damage to the glasses (one lens broken, then stolen) mirrors the progressive decline of rational thinking on the island.",
+      "Represent intellect, reason, and scientific knowledge. They are the only means of making fire - knowledge is power. When Jack's tribe steals the glasses, it shows how intellect can be co-opted by tyranny. The progressive damage to the glasses (one lens broken, then stolen) mirrors the progressive decline of rational thinking on the island.",
   },
   {
     symbol: "The Lord of the Flies (Pig's Head)",
@@ -198,12 +198,12 @@ const SYMBOLISM = [
   {
     symbol: 'The Beast',
     meaning:
-      "The boys believe a physical beast exists on the island. In reality, the beast is the primal savagery within each boy. The dead paratrooper is mistaken for the beast — a literal symbol of the adult world's violence (war) being projected onto the island. Simon alone understands the truth: the beast is 'only us.'",
+      "The boys believe a physical beast exists on the island. In reality, the beast is the primal savagery within each boy. The dead paratrooper is mistaken for the beast - a literal symbol of the adult world's violence (war) being projected onto the island. Simon alone understands the truth: the beast is 'only us.'",
   },
   {
     symbol: 'Face Paint',
     meaning:
-      "Jack's painted face acts as a mask that 'liberates him from shame and self-consciousness.' It allows the boys to shed their civilised identities and commit acts of violence without personal responsibility. The paint represents the anonymity that enables mob behaviour and dehumanisation — a loss of individual moral accountability.",
+      "Jack's painted face acts as a mask that 'liberates him from shame and self-consciousness.' It allows the boys to shed their civilised identities and commit acts of violence without personal responsibility. The paint represents the anonymity that enables mob behaviour and dehumanisation - a loss of individual moral accountability.",
   },
 ]
 
@@ -212,7 +212,7 @@ const KEY_QUOTES = [
     quote: '"We\'ve got to have rules and obey them. After all, we\'re not savages"',
     speaker: 'Ralph (Ch. 2)',
     significance:
-      'Dramatic irony — this is exactly what the boys become. Establishes the central tension between civilisation and savagery.',
+      'Dramatic irony - this is exactly what the boys become. Establishes the central tension between civilisation and savagery.',
   },
   {
     quote: '"The rules are the only thing we\'ve got!"',
@@ -224,13 +224,13 @@ const KEY_QUOTES = [
     quote: '"Maybe there is a beast... maybe it\'s only us"',
     speaker: 'Simon (Ch. 5)',
     significance:
-      "The novel's key insight. Simon alone understands that evil is not external but internal — a truth the other boys cannot accept.",
+      "The novel's key insight. Simon alone understands that evil is not external but internal - a truth the other boys cannot accept.",
   },
   {
     quote: '"What are we? Humans? Or animals? Or savages?"',
     speaker: 'Piggy (Ch. 5)',
     significance:
-      "Piggy articulates the novel's central question. The progressive list — humans, animals, savages — mirrors the boys' decline.",
+      "Piggy articulates the novel's central question. The progressive list - humans, animals, savages - mirrors the boys' decline.",
   },
   {
     quote: '"Kill the beast! Cut his throat! Spill his blood!"',
@@ -247,10 +247,10 @@ const KEY_QUOTES = [
   },
   {
     quote:
-      '"Which is better — to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
+      '"Which is better - to be a pack of painted savages like you are, or to be sensible like Ralph is?"',
     speaker: 'Piggy (Ch. 11)',
     significance:
-      "Piggy's last stand — a direct appeal to reason over savagery. Moments later, he is killed, and the question is answered: savagery wins.",
+      "Piggy's last stand - a direct appeal to reason over savagery. Moments later, he is killed, and the question is answered: savagery wins.",
   },
   {
     quote: '"Ralph wept for the end of innocence, the darkness of man\'s heart"',
@@ -262,7 +262,7 @@ const KEY_QUOTES = [
     quote: '"You knew, didn\'t you? I\'m part of you?"',
     speaker: 'The Lord of the Flies (Ch. 8)',
     significance:
-      "The pig's head tells Simon that the beast is internal. 'Part of you' — evil is not something that can be hunted and killed. It exists in everyone.",
+      "The pig's head tells Simon that the beast is internal. 'Part of you' - evil is not something that can be hunted and killed. It exists in everyone.",
   },
   {
     quote: '"Fancy thinking the Beast was something you could hunt and kill!"',
@@ -281,19 +281,19 @@ const KEY_QUOTES = [
       '"Roger gathered a handful of stones and began to throw them. Yet there was a space round Henry... into which he dare not throw"',
     speaker: 'Narrator (Ch. 4)',
     significance:
-      "The 'space' represents the residual conditioning of civilisation — the invisible barrier of social rules. Later, this barrier disappears entirely when Roger kills Piggy.",
+      "The 'space' represents the residual conditioning of civilisation - the invisible barrier of social rules. Later, this barrier disappears entirely when Roger kills Piggy.",
   },
   {
     quote: '"Roger, with a sense of delirious abandonment, leaned all his weight on the lever"',
     speaker: 'Narrator (Ch. 11)',
     significance:
-      "'Delirious abandonment' — Roger has shed all civilised restraint. He kills Piggy with pleasure, not reluctance. This is Golding's darkest image of human nature.",
+      "'Delirious abandonment' - Roger has shed all civilised restraint. He kills Piggy with pleasure, not reluctance. This is Golding's darkest image of human nature.",
   },
   {
     quote: '"The conch exploded into a thousand white fragments and ceased to exist"',
     speaker: 'Narrator (Ch. 11)',
     significance:
-      "The destruction of the conch is the destruction of democracy and order. 'Ceased to exist' — civilisation is not just damaged but annihilated.",
+      "The destruction of the conch is the destruction of democracy and order. 'Ceased to exist' - civilisation is not just damaged but annihilated.",
   },
   {
     quote: '"He began to dance and his laughter became a bloodthirsty snarling"',
@@ -305,37 +305,37 @@ const KEY_QUOTES = [
     quote: '"I ought to be chief... because I\'m chapter chorister and head boy"',
     speaker: 'Jack (Ch. 1)',
     significance:
-      "Jack's claim to authority is based on the old world's hierarchy. Ironic — the structures he invokes will become meaningless as civilisation collapses.",
+      "Jack's claim to authority is based on the old world's hierarchy. Ironic - the structures he invokes will become meaningless as civilisation collapses.",
   },
   {
     quote: '"Simon\'s dead body moved out toward the open sea"',
     speaker: 'Narrator (Ch. 9)',
     significance:
-      "Simon's body is described with reverent, almost sacred imagery. The sea 'dressed Simon\'s coarse hair with brightness' — Golding presents his death as a martyrdom.",
+      "Simon's body is described with reverent, almost sacred imagery. The sea 'dressed Simon\'s coarse hair with brightness' - Golding presents his death as a martyrdom.",
   },
   {
-    quote: '"Bollocks to the rules! We\'re strong — we hunt!"',
+    quote: '"Bollocks to the rules! We\'re strong - we hunt!"',
     speaker: 'Jack (Ch. 5)',
     significance:
-      "Jack explicitly rejects civilised order in favour of physical power and violence. 'Strong' replaces 'right' — might becomes the only authority.",
+      "Jack explicitly rejects civilised order in favour of physical power and violence. 'Strong' replaces 'right' - might becomes the only authority.",
   },
 ]
 
 const CONTEXT_POINTS = [
   {
-    topic: 'Published in 1954 — Post-WWII',
+    topic: 'Published in 1954 - Post-WWII',
     detail:
-      'Golding published Lord of the Flies in 1954, less than a decade after the end of World War II. The atrocities of the war — the Holocaust, the atomic bombs on Hiroshima and Nagasaki, the widespread destruction — shattered the belief that civilisation guaranteed moral progress. Golding had served in the Royal Navy during the war and witnessed human cruelty first-hand. The novel is his response: a rejection of the idea that humanity is inherently good.',
+      'Golding published Lord of the Flies in 1954, less than a decade after the end of World War II. The atrocities of the war - the Holocaust, the atomic bombs on Hiroshima and Nagasaki, the widespread destruction - shattered the belief that civilisation guaranteed moral progress. Golding had served in the Royal Navy during the war and witnessed human cruelty first-hand. The novel is his response: a rejection of the idea that humanity is inherently good.',
   },
   {
     topic: "Golding's View of Human Nature",
     detail:
-      "Golding stated: 'The theme is an attempt to trace the defects of society back to the defects of human nature.' He believed that evil is innate, not a product of environment or upbringing. This is a deliberately pessimistic counter to the Enlightenment belief in human reason and progress. Every boy on the island — not just Jack and Roger — is capable of violence.",
+      "Golding stated: 'The theme is an attempt to trace the defects of society back to the defects of human nature.' He believed that evil is innate, not a product of environment or upbringing. This is a deliberately pessimistic counter to the Enlightenment belief in human reason and progress. Every boy on the island - not just Jack and Roger - is capable of violence.",
   },
   {
     topic: 'Cold War and Nuclear Anxiety',
     detail:
-      "The novel is set during an unspecified nuclear war. The boys are being evacuated when their plane is shot down. The dead paratrooper — a casualty of the adult world's war — literally falls onto the island. Golding draws a parallel between the boys' savagery and the adults' nuclear conflict: the violence on the island mirrors the violence of the 'civilised' world that created it.",
+      "The novel is set during an unspecified nuclear war. The boys are being evacuated when their plane is shot down. The dead paratrooper - a casualty of the adult world's war - literally falls onto the island. Golding draws a parallel between the boys' savagery and the adults' nuclear conflict: the violence on the island mirrors the violence of the 'civilised' world that created it.",
   },
   {
     topic: 'Subversion of the Adventure Story',
@@ -345,7 +345,7 @@ const CONTEXT_POINTS = [
   {
     topic: 'Original Sin and Christian Allegory',
     detail:
-      "The novel draws on the Christian doctrine of original sin — the idea that all humans are born with a capacity for evil. The island initially resembles the Garden of Eden (a paradise) but becomes a hell. Simon is a Christ-like figure: he understands the truth about evil, tries to share it, and is killed by the group. 'Lord of the Flies' translates to 'Beelzebub,' a name for the devil.",
+      "The novel draws on the Christian doctrine of original sin - the idea that all humans are born with a capacity for evil. The island initially resembles the Garden of Eden (a paradise) but becomes a hell. Simon is a Christ-like figure: he understands the truth about evil, tries to share it, and is killed by the group. 'Lord of the Flies' translates to 'Beelzebub,' a name for the devil.",
   },
   {
     topic: 'Freudian Psychology',
@@ -369,7 +369,7 @@ export default function LordOfTheFliesPage() {
             &larr; Edexcel English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Lord of the Flies — Full Study Guide
+            Lord of the Flies - Full Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Edexcel GCSE English Literature &middot; Paper 1, Section B (Post-1914 British Novel
@@ -508,7 +508,7 @@ export default function LordOfTheFliesPage() {
             {KEY_QUOTES.map((q, i) => (
               <div key={i} className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="text-sm font-semibold italic text-foreground">{q.quote}</p>
-                <p className="mt-1 text-xs font-medium text-primary">— {q.speaker}</p>
+                <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
@@ -577,7 +577,7 @@ export default function LordOfTheFliesPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction</strong> — briefly address Golding&apos;s purpose and how
+                    <strong>Introduction</strong> - briefly address Golding&apos;s purpose and how
                     the theme/character connects to his wider message about human nature. Mention
                     context (post-WWII, original sin, subversion of adventure genre).
                   </span>
@@ -587,7 +587,7 @@ export default function LordOfTheFliesPage() {
                     2
                   </span>
                   <span>
-                    <strong>Analyse the extract</strong> — close-read the given passage. Analyse
+                    <strong>Analyse the extract</strong> - close-read the given passage. Analyse
                     language, structure, and form. Embed short quotations from the extract and
                     explore individual words and their connotations.
                   </span>
@@ -597,7 +597,7 @@ export default function LordOfTheFliesPage() {
                     3
                   </span>
                   <span>
-                    <strong>Write about the wider novel</strong> — use 3-4 paragraphs that track the
+                    <strong>Write about the wider novel</strong> - use 3-4 paragraphs that track the
                     theme/character across the whole text. Show how Golding develops the idea from
                     beginning to end.
                   </span>
@@ -607,7 +607,7 @@ export default function LordOfTheFliesPage() {
                     4
                   </span>
                   <span>
-                    <strong>Embed quotations and analyse language</strong> — short quotes woven into
+                    <strong>Embed quotations and analyse language</strong> - short quotes woven into
                     sentences are most effective. Zoom in on individual words: &quot;Golding&apos;s
                     use of the verb &apos;snarling&apos; reduces Jack to an animal,
                     suggesting...&quot;
@@ -618,7 +618,7 @@ export default function LordOfTheFliesPage() {
                     5
                   </span>
                   <span>
-                    <strong>Link to context throughout</strong> — integrate context naturally into
+                    <strong>Link to context throughout</strong> - integrate context naturally into
                     your analysis. Connect to Golding&apos;s war experience, post-WWII
                     disillusionment, original sin, or the Cold War. Do not bolt context on as a
                     separate paragraph.
@@ -629,7 +629,7 @@ export default function LordOfTheFliesPage() {
                     6
                   </span>
                   <span>
-                    <strong>Discuss Golding&apos;s methods</strong> — symbolism (conch, glasses, the
+                    <strong>Discuss Golding&apos;s methods</strong> - symbolism (conch, glasses, the
                     beast, face paint), allegory, foreshadowing, biblical allusion, the ironic
                     ending, and narrative perspective. This is key for analysis of methods.
                   </span>
@@ -642,38 +642,38 @@ export default function LordOfTheFliesPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Always use &quot;Golding&quot; as the subject — &quot;Golding
+                  Always use &quot;Golding&quot; as the subject - &quot;Golding
                   presents/suggests/uses...&quot; This demonstrates awareness of the writer&apos;s
                   craft (analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss symbolism in depth — the conch, the beast, the fire, the glasses, and the
+                  Discuss symbolism in depth - the conch, the beast, the fire, the glasses, and the
                   Lord of the Flies are central to Golding&apos;s method and can be applied to
                   almost any question.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Track change across the novel — show how characters or themes develop. For
+                  Track change across the novel - show how characters or themes develop. For
                   example: Roger&apos;s progression from throwing stones near Henry to killing Piggy
                   with &quot;delirious abandonment.&quot;
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Use the extract as a springboard — analyse it closely first, then widen your
+                  Use the extract as a springboard - analyse it closely first, then widen your
                   argument to the whole novel. Do not ignore the extract.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Connect to the allegorical reading — the island as a microcosm of society, the
+                  Connect to the allegorical reading - the island as a microcosm of society, the
                   boys as representatives of different aspects of human nature, the ending as a
                   comment on civilisation&apos;s failure.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Remember the marking guide: Reading and response (response to text, use of
-                  quotes), Analysis of methods (analysis of writer&apos;s methods — language, form,
-                  structure), Context (context), Accuracy (SPaG — 4 marks are available for
+                  quotes), Analysis of methods (analysis of writer&apos;s methods - language, form,
+                  structure), Context (context), Accuracy (SPaG - 4 marks are available for
                   spelling, punctuation, and grammar in Section B).
                 </li>
               </ul>

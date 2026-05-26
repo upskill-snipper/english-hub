@@ -6,7 +6,7 @@
 import type { QuizQuestion } from './quiz-data'
 
 export const languageExtraQuestions: QuizQuestion[] = [
-  // ─── AQA Paper 1 (Q1–Q5)  — IDs 001–025 ──────────────────────────────────
+  // ─── AQA Paper 1 (Q1-Q5)  - IDs 001-025 ──────────────────────────────────
   {
     id: 'language-extra-001',
     topic: 'exam-technique',
@@ -20,7 +20,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'AO1 (identify and interpret explicit information) is tested. You only need short, explicit answers from the lines named — inference and analysis are not required.',
+      'AO1 (identify and interpret explicit information) is tested. You only need short, explicit answers from the lines named - inference and analysis are not required.',
     boards: ['aqa'],
   },
   {
@@ -41,7 +41,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['AO1', 'AO2', 'AO3', 'AO4'],
     correctIndex: 1,
     explanation:
-      'AO2 — explain, comment on and analyse how writers use language and structure. Subject terminology is also rewarded.',
+      'AO2 - explain, comment on and analyse how writers use language and structure. Subject terminology is also rewarded.',
     boards: ['aqa'],
   },
   {
@@ -51,7 +51,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Fronted adverbial', 'Subordinate clause', 'Imperative', 'Compound sentence'],
     correctIndex: 0,
     explanation:
-      'A fronted adverbial places the adverb (or adverbial phrase) before the main clause, controlling pace and emphasis — useful AO2 terminology.',
+      'A fronted adverbial places the adverb (or adverbial phrase) before the main clause, controlling pace and emphasis - useful AO2 terminology.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -62,7 +62,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Asyndeton', 'Polysyndeton', 'Anaphora', 'Hypophora'],
     correctIndex: 1,
     explanation:
-      'Polysyndeton repeats conjunctions (and…and…and) to create a breathless, accumulating rhythm — strong AO2 evidence in Q2.',
+      'Polysyndeton repeats conjunctions (and…and…and) to create a breathless, accumulating rhythm - strong AO2 evidence in Q2.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -100,18 +100,18 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['In medias res', 'Cyclical structure', 'Foreshadowing', 'Flashback'],
     correctIndex: 1,
     explanation:
-      'A cyclical (or circular) structure returns to its opening image, often suggesting entrapment or completion — high-value AO2 structural terminology.',
+      'A cyclical (or circular) structure returns to its opening image, often suggesting entrapment or completion - high-value AO2 structural terminology.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-009',
     topic: 'language-techniques',
     question:
-      'A story that opens "in the middle of the action" — e.g. mid-chase — is using which structural device?',
+      'A story that opens "in the middle of the action" - e.g. mid-chase - is using which structural device?',
     options: ['Flashforward', 'In medias res', 'Cyclical structure', 'Epistolary form'],
     correctIndex: 1,
     explanation:
-      'In medias res ("into the middle of things") drops the reader straight into events, creating immediate tension — strong AO2 structural point.',
+      'In medias res ("into the middle of things") drops the reader straight into events, creating immediate tension - strong AO2 structural point.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -185,7 +185,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Anaphora', 'Epistrophe', 'Chiasmus', 'Zeugma'],
     correctIndex: 0,
     explanation:
-      'Anaphora is repetition at the start of successive clauses — a powerful rhetorical device for both Paper 1 Q5 and Paper 2 Q5.',
+      'Anaphora is repetition at the start of successive clauses - a powerful rhetorical device for both Paper 1 Q5 and Paper 2 Q5.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -196,7 +196,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Rhetorical question', 'Hypophora', 'Antithesis', 'Apostrophe'],
     correctIndex: 1,
     explanation:
-      'Hypophora is a rhetorical move where the speaker asks a question then answers it themselves — useful in transactional and creative writing.',
+      'Hypophora is a rhetorical move where the speaker asks a question then answers it themselves - useful in transactional and creative writing.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -206,7 +206,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['8', '12', '16', '24'],
     correctIndex: 2,
     explanation:
-      'AO6 (technical accuracy — sentence variety, punctuation, spelling, vocabulary) is worth 16 marks on Q5.',
+      'AO6 (technical accuracy - sentence variety, punctuation, spelling, vocabulary) is worth 16 marks on Q5.',
     boards: ['aqa'],
   },
   {
@@ -222,7 +222,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Embedded dialogue causes a structural shift in focus from setting/action to interaction — a useful AO2 structural point in Paper 1 Q3.',
+      'Embedded dialogue causes a structural shift in focus from setting/action to interaction - a useful AO2 structural point in Paper 1 Q3.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -238,7 +238,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Personifying the sky as "bruised" and "bleeding" creates a violent semantic field, suggesting menace — strong Paper 1 Q2/Q4 evidence.',
+      'Personifying the sky as "bruised" and "bleeding" creates a violent semantic field, suggesting menace - strong Paper 1 Q2/Q4 evidence.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -269,7 +269,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Three minor sentences create a clipped sensory list (sight/taste/smell), foregrounding atmosphere — high-level AO2 in Paper 1 Q2.',
+      'Three minor sentences create a clipped sensory list (sight/taste/smell), foregrounding atmosphere - high-level AO2 in Paper 1 Q2.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -278,14 +278,14 @@ export const languageExtraQuestions: QuizQuestion[] = [
     question:
       'For AQA Paper 1 Q5, candidates may choose between description and narrative. Which is generally safer for AO5 marks under time pressure?',
     options: [
-      'Narrative — but only if you finish a complete plot',
-      'Description — focused, sensory, with a clear structural arc',
+      'Narrative - but only if you finish a complete plot',
+      'Description - focused, sensory, with a clear structural arc',
       'Free verse poetry',
       'A play script',
     ],
     correctIndex: 1,
     explanation:
-      'Description rewards crafted language and structure without the burden of plot resolution — generally safer in 45 minutes.',
+      'Description rewards crafted language and structure without the burden of plot resolution - generally safer in 45 minutes.',
     boards: ['aqa'],
   },
   {
@@ -334,7 +334,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
 
-  // ─── AQA Paper 2 (Q1–Q5) — IDs 026–050 ──────────────────────────────────
+  // ─── AQA Paper 2 (Q1-Q5) - IDs 026-050 ──────────────────────────────────
   {
     id: 'language-extra-026',
     topic: 'exam-technique',
@@ -363,7 +363,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Q2 tests AO1 (inference and synthesis) — make inferred points about both sources and support with brief evidence.',
+      'Q2 tests AO1 (inference and synthesis) - make inferred points about both sources and support with brief evidence.',
     boards: ['aqa'],
   },
   {
@@ -378,7 +378,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'A clear "Point–Evidence–Inference" cycle for both sources, ending in a comparative inference, hits AO1 reliably.',
+      'A clear "Point-Evidence-Inference" cycle for both sources, ending in a comparative inference, hits AO1 reliably.',
     boards: ['aqa'],
   },
   {
@@ -388,7 +388,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['AO1 only', 'AO2 only', 'AO3 only', 'AO4 only'],
     correctIndex: 1,
     explanation:
-      'Q3 on Paper 2 is pure AO2 — analyse how the writer uses language to achieve effects, with subject terminology.',
+      'Q3 on Paper 2 is pure AO2 - analyse how the writer uses language to achieve effects, with subject terminology.',
     boards: ['aqa'],
   },
   {
@@ -399,7 +399,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['AO1', 'AO2', 'AO3', 'AO4'],
     correctIndex: 2,
     explanation:
-      'Q4 is AO3 — compare writers’ ideas and perspectives AND the methods they use to convey them, across the two sources.',
+      'Q4 is AO3 - compare writers’ ideas and perspectives AND the methods they use to convey them, across the two sources.',
     boards: ['aqa'],
   },
   {
@@ -414,7 +414,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Comparative connectives signal genuine comparison of perspective — essential for AO3.',
+      'Comparative connectives signal genuine comparison of perspective - essential for AO3.',
     boards: ['aqa'],
   },
   {
@@ -450,13 +450,13 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'In a Paper 2 Q5 newspaper article, the audience is general readers. Which register is most appropriate?',
     options: [
       'Highly colloquial slang throughout',
-      'Formal but engaging — sophisticated vocabulary with rhetorical features',
+      'Formal but engaging - sophisticated vocabulary with rhetorical features',
       'Pure academic jargon',
       'Text-message abbreviations',
     ],
     correctIndex: 1,
     explanation:
-      'Articles need a formal-but-engaging register: discourse markers, rhetorical devices, varied sentence forms — all AO5/AO6.',
+      'Articles need a formal-but-engaging register: discourse markers, rhetorical devices, varied sentence forms - all AO5/AO6.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -488,7 +488,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'The triplet of sensory adjectives builds a layered, oppressive image of the city — strong AO2 evidence.',
+      'The triplet of sensory adjectives builds a layered, oppressive image of the city - strong AO2 evidence.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -503,7 +503,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Precise, plausible-sounding statistics appear authoritative — even fabricated ones in exam writing — and support AO5 persuasion.',
+      'Precise, plausible-sounding statistics appear authoritative - even fabricated ones in exam writing - and support AO5 persuasion.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -527,7 +527,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     question:
       'Paper 2 sources often include a 19th-century non-fiction text. What should you do FIRST when reading it?',
     options: [
-      'Skip it — it’s too hard',
+      'Skip it - it’s too hard',
       'Read it carefully, decoding archaic vocabulary using context',
       'Translate it into modern English on the page',
       'Underline every adjective',
@@ -545,7 +545,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Anaphora', 'Asyndeton', 'Hypophora', 'Caesura'],
     correctIndex: 0,
     explanation:
-      'Repeating "We must act" at the start of successive sentences is anaphora — emphatic and rallying, ideal for Paper 2 Q5 speech.',
+      'Repeating "We must act" at the start of successive sentences is anaphora - emphatic and rallying, ideal for Paper 2 Q5 speech.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -570,7 +570,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'A Paper 2 Q5 task asks you to "write a letter to your headteacher arguing…". The audience is…',
     options: [
       'General teenagers',
-      'A single, named adult in authority — register should be formal but personal',
+      'A single, named adult in authority - register should be formal but personal',
       'A national newspaper readership',
       'Yourself',
     ],
@@ -591,7 +591,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Antithesis sets opposites in balanced clauses — striking and memorable for persuasive writing (AO5).',
+      'Antithesis sets opposites in balanced clauses - striking and memorable for persuasive writing (AO5).',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -602,7 +602,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['10 minutes', '20 minutes', '45 minutes', '60 minutes'],
     correctIndex: 2,
     explanation:
-      'Most schemes recommend ~45 minutes on Q5 (15 reading the sources + ~10 mins each on Q1–Q4 then 45 mins on Q5).',
+      'Most schemes recommend ~45 minutes on Q5 (15 reading the sources + ~10 mins each on Q1-Q4 then 45 mins on Q5).',
     boards: ['aqa'],
   },
   {
@@ -612,7 +612,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['"Whereas"', '"And"', '"So"', '"Then"'],
     correctIndex: 0,
     explanation:
-      '"Whereas" sets up direct contrast between writers’ perspectives — essential AO3 vocabulary.',
+      '"Whereas" sets up direct contrast between writers’ perspectives - essential AO3 vocabulary.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -620,8 +620,8 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'On Paper 2 Q3, why is it risky to write only about ONE technique?',
     options: [
-      'It is fine — analyse one technique deeply',
-      'You miss the breadth required for top-band AO2; aim for 3–4 different methods',
+      'It is fine - analyse one technique deeply',
+      'You miss the breadth required for top-band AO2; aim for 3-4 different methods',
       'You will lose AO1 marks',
       'You will lose AO5 marks',
     ],
@@ -642,7 +642,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A semantic field clusters connected vocabulary (e.g. of warfare, of decay) — strong AO2 terminology in Q2 and Q3.',
+      'A semantic field clusters connected vocabulary (e.g. of warfare, of decay) - strong AO2 terminology in Q2 and Q3.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -657,7 +657,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Methods" in Q4 is broad — language, structure, tone, form. AO3 rewards comparing both perspectives AND methods.',
+      '"Methods" in Q4 is broad - language, structure, tone, form. AO3 rewards comparing both perspectives AND methods.',
     boards: ['aqa'],
   },
   {
@@ -673,7 +673,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Three rhetorical questions, each opening with "Should we", combine triadic structure and anaphora — high-impact AO5 technique.',
+      'Three rhetorical questions, each opening with "Should we", combine triadic structure and anaphora - high-impact AO5 technique.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -688,11 +688,11 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Embedded quotations show fluency and allow tighter analysis — supporting both AO2 and AO3.',
+      'Embedded quotations show fluency and allow tighter analysis - supporting both AO2 and AO3.',
     boards: ['aqa'],
   },
 
-  // ─── Edexcel Language — IDs 051–065 (15) ─────────────────────────────────
+  // ─── Edexcel Language - IDs 051-065 (15) ─────────────────────────────────
   {
     id: 'language-extra-051',
     topic: 'exam-technique',
@@ -720,7 +720,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The 15-mark Edexcel evaluation question mirrors AO4 — supported judgement on the writer’s success in achieving a stated effect.',
+      'The 15-mark Edexcel evaluation question mirrors AO4 - supported judgement on the writer’s success in achieving a stated effect.',
     boards: ['edexcel', 'edexcel-igcse-lang'],
   },
   {
@@ -731,7 +731,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['AO1', 'AO2', 'AO3', 'AO5'],
     correctIndex: 2,
     explanation:
-      'Q7(b) is the comparison question — AO3, comparing writers’ ideas and perspectives and how these are conveyed.',
+      'Q7(b) is the comparison question - AO3, comparing writers’ ideas and perspectives and how these are conveyed.',
     boards: ['edexcel'],
   },
   {
@@ -739,14 +739,14 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'Edexcel Paper 1 Section B (imaginative writing) gives you…',
     options: [
-      'No choice — one task only',
+      'No choice - one task only',
       'A choice between two tasks, often supported by an image or prompt',
       'Three transactional tasks',
       'Only a poetry task',
     ],
     correctIndex: 1,
     explanation:
-      'Edexcel Section B offers a choice of imaginative tasks, often with image stimuli — pick the one that allows your strongest AO5.',
+      'Edexcel Section B offers a choice of imaginative tasks, often with image stimuli - pick the one that allows your strongest AO5.',
     boards: ['edexcel'],
   },
   {
@@ -761,7 +761,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Edexcel mark schemes weight Form, Audience and Purpose heavily — match register, conventions and tone to the task.',
+      'Edexcel mark schemes weight Form, Audience and Purpose heavily - match register, conventions and tone to the task.',
     boards: ['edexcel', 'edexcel-igcse-lang', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -777,15 +777,15 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'The plodding verb plus listing of suffering builds AO2 evidence of exhaustion — useful for the language analysis question.',
+      'The plodding verb plus listing of suffering builds AO2 evidence of exhaustion - useful for the language analysis question.',
     boards: ['edexcel', 'edexcel-igcse-lang'],
   },
   {
     id: 'language-extra-057',
     topic: 'exam-technique',
-    question: 'Edexcel’s short response questions (1–2 marks) typically test…',
+    question: 'Edexcel’s short response questions (1-2 marks) typically test…',
     options: [
-      'AO1 — finding explicit information or short inference',
+      'AO1 - finding explicit information or short inference',
       'AO5 only',
       'AO6 only',
       'AO3 only',
@@ -839,7 +839,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'A short personal anecdote builds ethos; a rhetorical question pivots into the central argument — strong AO5 opening.',
+      'A short personal anecdote builds ethos; a rhetorical question pivots into the central argument - strong AO5 opening.',
     boards: ['edexcel', 'edexcel-igcse-lang', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -878,13 +878,13 @@ export const languageExtraQuestions: QuizQuestion[] = [
     question: 'In Edexcel imaginative writing, examiners reward "ambitious vocabulary" used…',
     options: [
       'Repeatedly and randomly',
-      'Precisely and in context — not as a thesaurus dump',
+      'Precisely and in context - not as a thesaurus dump',
       'Only in the final sentence',
       'Only in dialogue',
     ],
     correctIndex: 1,
     explanation:
-      'Ambitious vocabulary must serve meaning. Misused "long" words damage AO5/AO6 — precision beats length.',
+      'Ambitious vocabulary must serve meaning. Misused "long" words damage AO5/AO6 - precision beats length.',
     boards: ['edexcel', 'aqa', 'ocr', 'eduqas'],
   },
   {
@@ -900,7 +900,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'The opening drops us into a returning moment, hinting at a buried backstory and possible cyclical structure — strong AO5.',
+      'The opening drops us into a returning moment, hinting at a buried backstory and possible cyclical structure - strong AO5.',
     boards: ['edexcel', 'aqa', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -908,7 +908,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'Edexcel mark schemes refer to "controlled and assured" responses. This signals…',
     options: [
-      'Top-band work — sustained focus, conscious crafting, accurate technical control',
+      'Top-band work - sustained focus, conscious crafting, accurate technical control',
       'Mid-band work',
       'Lower-band work',
       'Off-task work',
@@ -919,7 +919,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     boards: ['edexcel'],
   },
 
-  // ─── OCR Language — IDs 066–075 (10) ─────────────────────────────────────
+  // ─── OCR Language - IDs 066-075 (10) ─────────────────────────────────────
   {
     id: 'language-extra-066',
     topic: 'exam-technique',
@@ -933,7 +933,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'OCR Paper 1 (J351/01) pairs a 19th-century and a 21st-century non-fiction text — comparison is central.',
+      'OCR Paper 1 (J351/01) pairs a 19th-century and a 21st-century non-fiction text - comparison is central.',
     boards: ['ocr'],
   },
   {
@@ -980,7 +980,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Personifying the mill as a "tireless beast" that "devours" light is an extended metaphor — strong AO2 evidence.',
+      'Personifying the mill as a "tireless beast" that "devours" light is an extended metaphor - strong AO2 evidence.',
     boards: ['ocr', 'aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -1011,7 +1011,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Zooming from wide to narrow (panoramic to intimate) is a classic structural shift — useful for OCR/AQA structure points.',
+      'Zooming from wide to narrow (panoramic to intimate) is a classic structural shift - useful for OCR/AQA structure points.',
     boards: ['ocr', 'aqa', 'edexcel', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1026,7 +1026,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Perceptive" = subtle, original insight into deliberate authorial craft — top-band AO2/AO3.',
+      '"Perceptive" = subtle, original insight into deliberate authorial craft - top-band AO2/AO3.',
     boards: ['ocr'],
   },
   {
@@ -1068,11 +1068,11 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Dialogue triggers a structural shift to interaction; the unanswered line creates tension — strong AO2 structural point.',
+      'Dialogue triggers a structural shift to interaction; the unanswered line creates tension - strong AO2 structural point.',
     boards: ['ocr', 'aqa', 'edexcel', 'eduqas'],
   },
 
-  // ─── Eduqas Language — IDs 076–085 (10) ──────────────────────────────────
+  // ─── Eduqas Language - IDs 076-085 (10) ──────────────────────────────────
   {
     id: 'language-extra-076',
     topic: 'exam-technique',
@@ -1101,7 +1101,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Component 2 transactional/persuasive writing covers a range of non-fiction forms — match form, audience and purpose.',
+      'Component 2 transactional/persuasive writing covers a range of non-fiction forms - match form, audience and purpose.',
     boards: ['eduqas'],
   },
   {
@@ -1117,7 +1117,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'The repetition and the personifying verbs build atmosphere — high-value AO2 evidence for Eduqas reading questions.',
+      'The repetition and the personifying verbs build atmosphere - high-value AO2 evidence for Eduqas reading questions.',
     boards: ['eduqas', 'aqa', 'edexcel', 'ocr'],
   },
   {
@@ -1132,7 +1132,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Component 1 creative writing prioritises descriptive/narrative craft — vivid sensory detail and structural shaping (AO5).',
+      'Component 1 creative writing prioritises descriptive/narrative craft - vivid sensory detail and structural shaping (AO5).',
     boards: ['eduqas'],
   },
   {
@@ -1180,7 +1180,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Audience awareness (parents) shapes register, tone AND form conventions — central to AO5.',
+      'Audience awareness (parents) shapes register, tone AND form conventions - central to AO5.',
     boards: ['eduqas', 'aqa', 'edexcel', 'ocr'],
   },
   {
@@ -1196,7 +1196,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      '"Convincing and compelling" = sustained craft and reader engagement throughout — top-band AO5.',
+      '"Convincing and compelling" = sustained craft and reader engagement throughout - top-band AO5.',
     boards: ['eduqas'],
   },
   {
@@ -1212,7 +1212,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Direct address ("dear reader, YOU") plus a rhetorical question creates intimacy and pressure — strong AO2 in non-fiction analysis.',
+      'Direct address ("dear reader, YOU") plus a rhetorical question creates intimacy and pressure - strong AO2 in non-fiction analysis.',
     boards: ['eduqas', 'aqa', 'edexcel', 'ocr', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1231,7 +1231,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     boards: ['eduqas'],
   },
 
-  // ─── Cambridge IGCSE 0500/0990 — IDs 086–100 (15) ────────────────────────
+  // ─── Cambridge IGCSE 0500/0990 - IDs 086-100 (15) ────────────────────────
   {
     id: 'language-extra-086',
     topic: 'exam-technique',
@@ -1244,7 +1244,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Only reading marks',
     ],
     correctIndex: 0,
-    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 (Reading) — Q2 extended response = 30 marks (15 R + 15 W); accessed 2026
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 (Reading) - Q2 extended response = 30 marks (15 R + 15 W); accessed 2026
     explanation:
       'Paper 1 Question 2 (extended response to reading, based on Text C) is worth 30 marks: 15 Reading marks and 15 Writing marks. Directed writing (40 marks: 15 R + 25 W) is on Paper 2 Section A, not Paper 1.',
     boards: ['cambridge-0500', 'cambridge-0990'],
@@ -1253,7 +1253,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-087',
     topic: 'exam-technique',
     question:
-      'In Cambridge 0500/0990 Paper 2 Section A directed writing (Question 1), candidates must use an appropriate FORM — typically…',
+      'In Cambridge 0500/0990 Paper 2 Section A directed writing (Question 1), candidates must use an appropriate FORM - typically…',
     options: [
       'Letter, speech or report/article (specified by the task)',
       'Always a sonnet',
@@ -1270,7 +1270,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-088',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 1 Question 1(e) (analysis of language used by writers to achieve effects) — which approach is BEST?',
+      'Cambridge 0500/0990 Paper 1 Question 1(e) (analysis of language used by writers to achieve effects) - which approach is BEST?',
     options: [
       'Quote shorter phrases or single words and analyse connotations and effect',
       'Quote whole paragraphs without analysis',
@@ -1280,7 +1280,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(e) language analysis on Text A; accessed 2026
     explanation:
-      'Paper 1 Q1(e) rewards close, focused analysis of writers’ language choices — short embedded quotations and explored effects. (Paper 2 Q1 is directed writing, not language analysis.)',
+      'Paper 1 Q1(e) rewards close, focused analysis of writers’ language choices - short embedded quotations and explored effects. (Paper 2 Q1 is directed writing, not language analysis.)',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1297,7 +1297,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(f) summary = 15 marks (10 R + 5 W); accessed 2026
     explanation:
-      'Paper 1 Q1(f) summary (15 marks: 10 Reading + 5 Writing) demands concise own-words summary of relevant points — direct copying loses Reading and Writing marks. (Paper 2 Q2 is composition.)',
+      'Paper 1 Q1(f) summary (15 marks: 10 Reading + 5 Writing) demands concise own-words summary of relevant points - direct copying loses Reading and Writing marks. (Paper 2 Q2 is composition.)',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1314,7 +1314,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(e) language analysis names two short paragraphs from Text A; accessed 2026
     explanation:
-      'Q1(e) names two short paragraphs from Text A; analyse word/phrase choice and effect within them — concentrated language analysis.',
+      'Q1(e) names two short paragraphs from Text A; analyse word/phrase choice and effect within them - concentrated language analysis.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1325,7 +1325,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Triplet with anaphora ("a riot of…")', 'Sibilance', 'Asyndeton', 'Hypophora'],
     correctIndex: 0,
     explanation:
-      'Three parallel phrases beginning "a riot of…" combine triadic structure with anaphora — high-value language analysis point.',
+      'Three parallel phrases beginning "a riot of…" combine triadic structure with anaphora - high-value language analysis point.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1340,7 +1340,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Composition offers descriptive and narrative options — pick the form that best showcases your craft (the Cambridge equivalent of AO5/AO6).',
+      'Composition offers descriptive and narrative options - pick the form that best showcases your craft (the Cambridge equivalent of AO5/AO6).',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1356,7 +1356,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'A cyclical, resonant ending shows conscious structural shaping — top-band Writing in Cambridge composition.',
+      'A cyclical, resonant ending shows conscious structural shaping - top-band Writing in Cambridge composition.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1372,7 +1372,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Persuasive openings need an audience-aware hook (ethos/logos/pathos) — central to the Reading and Writing marks.',
+      'Persuasive openings need an audience-aware hook (ethos/logos/pathos) - central to the Reading and Writing marks.',
     boards: ['cambridge-0500', 'cambridge-0990', 'aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -1405,14 +1405,14 @@ export const languageExtraQuestions: QuizQuestion[] = [
     correctIndex: 0,
     // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(f) summary = 15 marks (10 R + 5 W); accessed 2026
     explanation:
-      'The Paper 1 Q1(f) summary is 15 marks: 10 Reading + 5 Writing — Reading-dominant, but Writing marks reward concise, well-organised own-words prose.',
+      'The Paper 1 Q1(f) summary is 15 marks: 10 Reading + 5 Writing - Reading-dominant, but Writing marks reward concise, well-organised own-words prose.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-097',
     topic: 'language-techniques',
     question:
-      'A SAMPLE Cambridge directed-writing speech opens: "Friends — and I do call you friends — we stand at a crossroads tonight." Which technique is most prominent?',
+      'A SAMPLE Cambridge directed-writing speech opens: "Friends - and I do call you friends - we stand at a crossroads tonight." Which technique is most prominent?',
     options: [
       'Direct address with parenthetical aside, plus metaphor ("crossroads")',
       'Sibilance',
@@ -1421,7 +1421,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Direct address plus the parenthetical builds intimacy; the "crossroads" metaphor frames a choice — strong directed-writing opening.',
+      'Direct address plus the parenthetical builds intimacy; the "crossroads" metaphor frames a choice - strong directed-writing opening.',
     boards: ['cambridge-0500', 'cambridge-0990', 'aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -1437,7 +1437,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'A controlled, deliberate mix of sentence types is top-band Writing — minor sentences should be used sparingly for effect.',
+      'A controlled, deliberate mix of sentence types is top-band Writing - minor sentences should be used sparingly for effect.',
     boards: ['cambridge-0500', 'cambridge-0990', 'aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -1445,7 +1445,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'language-techniques',
     question: 'Which best defines "purpose and audience" for Cambridge directed writing?',
     options: [
-      'WHY you are writing and WHO will read it — these jointly shape register, form and content',
+      'WHY you are writing and WHO will read it - these jointly shape register, form and content',
       'The genre of an unrelated novel',
       'The publication date',
       'The number of paragraphs',

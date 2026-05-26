@@ -81,7 +81,7 @@ const POEMS: Poem[] = [
     poet: 'John Keats',
     date: '1819 (1820 Indicator version)',
     context:
-      "Written during the Romantic period, when poets valued emotion, nature, and the supernatural. Keats was influenced by medieval ballads and chivalric romance. The title is borrowed from a 15th-century French poem meaning 'The Beautiful Lady Without Mercy'. Keats was also grappling with his own mortality due to tuberculosis. VERSION NOTE: The Edexcel UK GCSE 1ET0 anthology uses the 1820 'Indicator' version of the poem (with 'knight-at-arms'), NOT the later 1848 (Milnes) revision (which uses 'wretched wight'). The quotations below are taken from the 1820 anthology text — always quote from the anthology version when answering Edexcel questions.",
+      "Written during the Romantic period, when poets valued emotion, nature, and the supernatural. Keats was influenced by medieval ballads and chivalric romance. The title is borrowed from a 15th-century French poem meaning 'The Beautiful Lady Without Mercy'. Keats was also grappling with his own mortality due to tuberculosis. VERSION NOTE: The Edexcel UK GCSE 1ET0 anthology uses the 1820 'Indicator' version of the poem (with 'knight-at-arms'), NOT the later 1848 (Milnes) revision (which uses 'wretched wight'). The quotations below are taken from the 1820 anthology text - always quote from the anthology version when answering Edexcel questions.",
     summary:
       'A knight is found alone on a cold hillside, pale and haggard. He recounts meeting a beautiful, supernatural woman who enchanted him with food, song, and declarations of love. She lulled him to sleep, and he dreamed of previous victims warning him of enthrallment. He woke alone on the cold hill, trapped in a cycle of longing.',
     formAndStructure:
@@ -269,7 +269,7 @@ const POEMS: Poem[] = [
     poet: 'C. Day-Lewis',
     date: '1956',
     context:
-      "Published in 1956 in 'The Gate and Other Poems'. Dedicated to the poet's eldest son Sean Day-Lewis (the journalist), who at age 18 had just started boarding school. (Note: this is NOT Daniel Day-Lewis the actor — Daniel was the poet's youngest son and was not yet born when the poem was written.) C. Day-Lewis was UK Poet Laureate from 1968 until his death in 1972. The poem reflects, eighteen years on, on watching his son walk away to play his first football match — exploring the universal parental experience of letting go.",
+      "Published in 1956 in 'The Gate and Other Poems'. Dedicated to the poet's eldest son Sean Day-Lewis (the journalist), who at age 18 had just started boarding school. (Note: this is NOT Daniel Day-Lewis the actor - Daniel was the poet's youngest son and was not yet born when the poem was written.) C. Day-Lewis was UK Poet Laureate from 1968 until his death in 1972. The poem reflects, eighteen years on, on watching his son walk away to play his first football match - exploring the universal parental experience of letting go.",
     summary:
       "The speaker recalls watching his young son walk away to play a football match at school, almost two decades earlier. The child's uncertain, stumbling steps fill the father with anxiety and grief. The poem moves from this specific memory to a broader meditation on how love requires the painful act of letting someone become independent.",
     formAndStructure:
@@ -893,7 +893,7 @@ export default function EdexcelAnthologyPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             In-depth analysis of all 15 poems in the Edexcel UK GCSE Pearson Anthology Relationships
-            cluster (1ET0 only — not the Edexcel IGCSE 4ET1 anthology). Context, summaries, form and
+            cluster (1ET0 only - not the Edexcel IGCSE 4ET1 anthology). Context, summaries, form and
             structure, key quotations with technique analysis, themes, and comparison guidance.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

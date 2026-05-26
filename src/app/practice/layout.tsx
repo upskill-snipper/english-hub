@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Sharpen your English skills with exam-style practice questions for GCSE, IGCSE and KS3. Timed drills, instant feedback and board-specific content.',
   alternates: { canonical: 'https://theenglishhub.app/practice' },
   openGraph: {
-    title: 'Practice Questions — The English Hub',
+    title: 'Practice Questions - The English Hub',
     description:
       'Sharpen your English skills with exam-style practice questions for GCSE, IGCSE and KS3. Timed drills, instant feedback and board-specific content.',
   },

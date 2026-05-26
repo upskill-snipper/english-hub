@@ -1,5 +1,5 @@
 /**
- * Parental Consent email templates — GDPR / UK Children's Code compliance.
+ * Parental Consent email templates - GDPR / UK Children's Code compliance.
  *
  * Used by the /api/school/consent route to notify parents/guardians of
  * consent requests and to confirm approval/denial back to them after a
@@ -7,7 +7,7 @@
  *
  * Style mirrors the school-access cron emails (brand colour #1A5276, the
  * same 600-wide centred table shell, grey footer). Every interpolated value
- * is HTML-escaped via the local escapeHtml helper — do NOT cross-import
+ * is HTML-escaped via the local escapeHtml helper - do NOT cross-import
  * the one from the parent-notify route, keep this module self-contained.
  */
 
@@ -83,7 +83,7 @@ ${bodyHtml}
 }
 
 // ───────────────────────────────────────────────────────────────────────
-// 1. Consent-request email — sent to the parent when the student submits
+// 1. Consent-request email - sent to the parent when the student submits
 //    a consent request. Contains the approval link with the token.
 // ───────────────────────────────────────────────────────────────────────
 
@@ -146,7 +146,7 @@ export function buildParentConsentEmail(params: ParentConsentEmailParams): Built
               </p>
               ${expiresLine}
               <p style="font-size:13px;color:#888888;line-height:1.6;margin-top:24px;">
-                If you did not expect this email, you can safely ignore it — no account will be activated without your consent. For any questions, contact <a href="mailto:info@Upskillenergy.com" style="color:${BRAND_COLOR};">info@Upskillenergy.com</a>.
+                If you did not expect this email, you can safely ignore it - no account will be activated without your consent. For any questions, contact <a href="mailto:info@Upskillenergy.com" style="color:${BRAND_COLOR};">info@Upskillenergy.com</a>.
               </p>`
 
   const text = [
@@ -163,7 +163,7 @@ export function buildParentConsentEmail(params: ParentConsentEmailParams): Built
     '',
     params.expiresAt ? `This link will expire on ${formatDate(params.expiresAt)}.` : '',
     '',
-    'If you did not expect this email, you can safely ignore it — no account will be activated without your consent.',
+    'If you did not expect this email, you can safely ignore it - no account will be activated without your consent.',
     '',
     'Questions? info@Upskillenergy.com',
     '',
@@ -180,7 +180,7 @@ export function buildParentConsentEmail(params: ParentConsentEmailParams): Built
 }
 
 // ───────────────────────────────────────────────────────────────────────
-// 2. Confirmation email after APPROVAL — sent to the parent once they
+// 2. Confirmation email after APPROVAL - sent to the parent once they
 //    click "approve" so they have a record of their decision.
 // ───────────────────────────────────────────────────────────────────────
 
@@ -196,7 +196,7 @@ export function buildParentConsentApprovedEmail(
   const safeSchool = escapeHtml(params.schoolName)
 
   const body = `
-              <h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Consent recorded — thank you</h2>
+              <h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Consent recorded - thank you</h2>
               <p style="font-size:16px;line-height:1.6;">Dear Parent/Guardian,</p>
               <p style="font-size:16px;line-height:1.6;">
                 Thank you for granting consent for <strong>${safeStudent}</strong> to use The English Hub at <strong>${safeSchool}</strong>.
@@ -235,7 +235,7 @@ export function buildParentConsentApprovedEmail(
 }
 
 // ───────────────────────────────────────────────────────────────────────
-// 3. Confirmation email after DENIAL — sent to the parent once they
+// 3. Confirmation email after DENIAL - sent to the parent once they
 //    click "deny" so they have a record of their decision and know what
 //    happens to their child's data.
 // ───────────────────────────────────────────────────────────────────────

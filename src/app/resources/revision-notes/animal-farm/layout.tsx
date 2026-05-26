@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Free Animal Farm revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   alternates: { canonical: 'https://theenglishhub.app/resources/revision-notes/animal-farm' },
   openGraph: {
-    title: 'Animal Farm Revision Notes — The English Hub',
+    title: 'Animal Farm Revision Notes - The English Hub',
     description:
       'Free Animal Farm revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   },

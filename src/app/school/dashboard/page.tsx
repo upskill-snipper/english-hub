@@ -189,7 +189,7 @@ export default function SchoolDashboardPage() {
           setHardestQuestions(json.hardestQuestions ?? [])
         }
       } catch {
-        // Network error — leave list empty; the UI shows the empty-state copy.
+        // Network error - leave list empty; the UI shows the empty-state copy.
       }
 
       setLoading(false)
@@ -525,7 +525,7 @@ export default function SchoolDashboardPage() {
             </CardContent>
           </Card>
 
-          {/* Hardest Questions — powered by getHardestQuestions (real data) */}
+          {/* Hardest Questions - powered by getHardestQuestions (real data) */}
           <Card className="border-border bg-card/60">
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -542,7 +542,7 @@ export default function SchoolDashboardPage() {
               {/*
                 TODO(school-scope): results are currently platform-wide.
                 Filtering to this school's students requires joining through
-                school_members.user_id → quiz_responses.user_id — tracked for a
+                school_members.user_id → quiz_responses.user_id - tracked for a
                 follow-up. For now this surfaces useful signal while data grows.
               */}
               {loading ? (

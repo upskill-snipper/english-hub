@@ -385,13 +385,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The father is overweight',
-      'The father is presented as powerful, heroic, and in command — like a ship in full sail',
+      'The father is presented as powerful, heroic, and in command - like a ship in full sail',
       'The father is a sailor',
       'The father is wearing a coat',
     ],
     correctIndex: 1,
     explanation:
-      'The sail metaphor presents the father as powerful, commanding, and in perfect control of his work. He moves through the landscape like a ship through water — strong and purposeful.',
+      'The sail metaphor presents the father as powerful, commanding, and in perfect control of his work. He moves through the landscape like a ship through water - strong and purposeful.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -401,13 +401,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is humorous',
-      'It is poignant — the once-powerful father now stumbles behind the son, reversing the childhood dynamic',
+      'It is poignant - the once-powerful father now stumbles behind the son, reversing the childhood dynamic',
       'It shows the father has improved',
       'It introduces a new character',
     ],
     correctIndex: 1,
     explanation:
-      'The reversal is emotionally powerful. The father who once strode expertly now "will not go away" — he stumbles and follows, dependent on the son. The child has become the leader.',
+      'The reversal is emotionally powerful. The father who once strode expertly now "will not go away" - he stumbles and follows, dependent on the son. The child has become the leader.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -428,7 +428,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'An English war poet',
-      'A Nobel Prize-winning Northern Irish poet who grew up on a farm — the poem draws on real childhood memories',
+      'A Nobel Prize-winning Northern Irish poet who grew up on a farm - the poem draws on real childhood memories',
       'A Scottish novelist',
       'An American dramatist',
     ],
@@ -444,7 +444,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The child is clumsy',
-      "The child tries to follow but cannot match the father's skill — emphasising admiration and the gap between them",
+      "The child tries to follow but cannot match the father's skill - emphasising admiration and the gap between them",
       'The child is injured',
       'The child is running away',
     ],
@@ -460,13 +460,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is affectionate',
-      'It is ambiguous — it could refer to the child being a nuisance in the past OR the father being a nuisance now, suggesting guilt and discomfort',
+      'It is ambiguous - it could refer to the child being a nuisance in the past OR the father being a nuisance now, suggesting guilt and discomfort',
       'It is clearly about the child only',
       'It is a compliment',
     ],
     correctIndex: 1,
     explanation:
-      '"Nuisance" shifts meaning. In childhood, the boy was a nuisance following his father. Now the roles are reversed — and calling the ageing father a nuisance carries uncomfortable guilt.',
+      '"Nuisance" shifts meaning. In childhood, the boy was a nuisance following his father. Now the roles are reversed - and calling the ageing father a nuisance carries uncomfortable guilt.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -482,7 +482,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The precise farming vocabulary — "sod rolled over", "headrig", "furrow" — shows the speaker truly understood and admired his father\'s work. The technical language is a form of respect.',
+      'The precise farming vocabulary - "sod rolled over", "headrig", "furrow" - shows the speaker truly understood and admired his father\'s work. The technical language is a form of respect.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -492,7 +492,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Nothing particular',
-      'It marks the painful transition from childhood admiration to adult responsibility — the past becomes the present',
+      'It marks the painful transition from childhood admiration to adult responsibility - the past becomes the present',
       'It confuses the timeline',
       'It creates suspense',
     ],
@@ -526,10 +526,10 @@ const REVISION_TOPICS = [
     summary:
       'Follower explores admiration for a parent, the passage of time, role reversal, and the complex emotions of ageing.',
     keyPoints: [
-      'Admiration — the father is presented as heroic and expert',
-      'Role reversal — the powerful father becomes the dependent one',
-      'Time — childhood worship gives way to adult responsibility',
-      'Guilt — the final stanza carries uncomfortable emotion',
+      'Admiration - the father is presented as heroic and expert',
+      'Role reversal - the powerful father becomes the dependent one',
+      'Time - childhood worship gives way to adult responsibility',
+      'Guilt - the final stanza carries uncomfortable emotion',
     ],
   },
   {
@@ -537,10 +537,10 @@ const REVISION_TOPICS = [
     summary:
       'Heaney uses agricultural metaphor, precise technical vocabulary, and physical imagery to convey admiration and its reversal.',
     keyPoints: [
-      '"Shoulders globed like a full sail" — the father as powerful ship',
-      'Technical farming vocabulary — respect through knowledge',
-      '"Stumbled in his hob-nailed wake" — the child cannot match the father',
-      '"Will not go away" — the aged father follows, reversing childhood',
+      '"Shoulders globed like a full sail" - the father as powerful ship',
+      'Technical farming vocabulary - respect through knowledge',
+      '"Stumbled in his hob-nailed wake" - the child cannot match the father',
+      '"Will not go away" - the aged father follows, reversing childhood',
     ],
   },
   {
@@ -548,9 +548,9 @@ const REVISION_TOPICS = [
     summary:
       'Six neat quatrains with half-rhyme, shifting from past to present tense to mark the painful role reversal.',
     keyPoints: [
-      "Regular quatrains — the neat form mirrors the father's precise work",
-      'Tense shift — past (admiration) to present (role reversal)',
-      'Half-rhyme — creates slight dissonance, matching the emotional discomfort',
+      "Regular quatrains - the neat form mirrors the father's precise work",
+      'Tense shift - past (admiration) to present (role reversal)',
+      'Half-rhyme - creates slight dissonance, matching the emotional discomfort',
       'Final stanza delivers the devastating reversal',
     ],
   },
@@ -595,7 +595,7 @@ export default function FollowerPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Follower by Seamus Heaney — Analysis & Annotations"
+        name="Follower by Seamus Heaney - Analysis & Annotations"
         description="Line-by-line analysis of Follower with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

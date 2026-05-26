@@ -135,7 +135,7 @@ export default function JekyllAndHydeContextPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Context — Deep Study
+              Context - Deep Study
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson

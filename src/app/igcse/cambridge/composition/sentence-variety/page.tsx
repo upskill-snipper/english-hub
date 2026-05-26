@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Sentence Variety — Cambridge IGCSE Composition',
+    title: 'Sentence Variety - Cambridge IGCSE Composition',
     description:
       'Simple, compound, complex and compound-complex sentences for Cambridge IGCSE composition, plus rhetorical techniques: tricolon, anaphora, inversion.',
   },
-  title: 'Sentence Variety — Cambridge IGCSE Composition',
+  title: 'Sentence Variety - Cambridge IGCSE Composition',
   description:
     'Simple, compound, complex and compound-complex sentences for Cambridge IGCSE composition, plus rhetorical techniques: tricolon, anaphora, inversion.',
   alternates: {
@@ -24,7 +24,7 @@ const sentences = [
   {
     name: 'Simple',
     definition:
-      'One independent clause. A subject and a verb. Short simple sentences are powerful — use them for emphasis, shock or finality.',
+      'One independent clause. A subject and a verb. Short simple sentences are powerful - use them for emphasis, shock or finality.',
     example: 'The door slammed.',
     use: 'Emphasis, turning points, final lines.',
   },
@@ -71,9 +71,9 @@ const rhetorical = [
   {
     name: 'Asyndeton',
     definition:
-      'A list without conjunctions — commas only, no &ldquo;and&rdquo; before the final item. Speeds the sentence up.',
+      'A list without conjunctions - commas only, no &ldquo;and&rdquo; before the final item. Speeds the sentence up.',
     example: 'The room smelled of rain, old dust, peppermints, fear.',
-    note: 'Opposite of the rule of three — this lands like a blow.',
+    note: 'Opposite of the rule of three - this lands like a blow.',
   },
   {
     name: 'Polysyndeton',
@@ -99,7 +99,7 @@ const rhetorical = [
   {
     name: 'Zeugma',
     definition:
-      'One verb yoking together two different objects — often one literal, one metaphorical. A mature, playful device.',
+      'One verb yoking together two different objects - often one literal, one metaphorical. A mature, playful device.',
     example: 'She lost her phone, her patience, and eventually her bus.',
     note: 'Use only when the effect is confident. When it works, it\u2019s a clear Band 5 move.',
   },
@@ -130,7 +130,7 @@ export default async function SentenceVarietyPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Cambridge\u2019s top bands reward &ldquo;a range of sentence structures used for
-            effect&rdquo;. The word that matters is <em>effect</em> — you are not showing off that
+            effect&rdquo;. The word that matters is <em>effect</em> - you are not showing off that
             you know how to build a complex sentence; you are using different structures to do
             different jobs.
           </p>

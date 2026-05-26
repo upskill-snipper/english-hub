@@ -27,7 +27,7 @@ export function CohortHeatmap({ table, maxMonthsShown = 12, className }: CohortH
   const cols = useMemo(() => Array.from({ length: maxAge + 1 }, (_, i) => `M${i}`), [maxAge])
 
   // retained[] is a % of initial MRR; it routinely exceeds 100 (expansion).
-  // The Heatmap primitive expects a 0–100 intensity, so clamp purely for
+  // The Heatmap primitive expects a 0-100 intensity, so clamp purely for
   // colour intensity while the precise value + bucket label live in the
   // hover label (no data is lost).
   const getValue = (ri: number, ci: number): number => {
@@ -43,7 +43,7 @@ export function CohortHeatmap({ table, maxMonthsShown = 12, className }: CohortH
       return t('analytics.cohort.no_data_yet')
     }
     const bucket = retentionBucket(v)
-    return `${row.label} · ${t('analytics.cohort.month')} ${ci} — ${v.toFixed(1)}% ${t('analytics.cohort.of_initial_mrr_retained')} (${bucket.label})`
+    return `${row.label} · ${t('analytics.cohort.month')} ${ci} - ${v.toFixed(1)}% ${t('analytics.cohort.of_initial_mrr_retained')} (${bucket.label})`
   }
 
   return (
@@ -53,10 +53,10 @@ export function CohortHeatmap({ table, maxMonthsShown = 12, className }: CohortH
       {/* Legend */}
       <div className="mt-4 flex flex-wrap items-center gap-3 text-[11px] text-muted-foreground">
         <LegendSwatch className="bg-emerald-500/80" label="≥ 120%" />
-        <LegendSwatch className="bg-emerald-500/60" label="110 – 120%" />
-        <LegendSwatch className="bg-emerald-500/35" label="100 – 110%" />
-        <LegendSwatch className="bg-amber-500/35" label="95 – 100%" />
-        <LegendSwatch className="bg-orange-500/40" label="85 – 95%" />
+        <LegendSwatch className="bg-emerald-500/60" label="110 - 120%" />
+        <LegendSwatch className="bg-emerald-500/35" label="100 - 110%" />
+        <LegendSwatch className="bg-amber-500/35" label="95 - 100%" />
+        <LegendSwatch className="bg-orange-500/40" label="85 - 95%" />
         <LegendSwatch className="bg-red-500/40" label="< 85%" />
       </div>
     </div>

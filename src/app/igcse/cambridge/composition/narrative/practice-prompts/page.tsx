@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: '30 Narrative Practice Prompts — Cambridge IGCSE',
+    title: '30 Narrative Practice Prompts - Cambridge IGCSE',
     description:
       'Thirty Cambridge IGCSE-style narrative writing prompts, graded by difficulty, with story hooks and planning tips for each.',
   },
-  title: '30 Narrative Practice Prompts — Cambridge IGCSE',
+  title: '30 Narrative Practice Prompts - Cambridge IGCSE',
   description:
     'Thirty Cambridge IGCSE-style narrative writing prompts, graded by difficulty, with story hooks and planning tips for each.',
   alternates: {
@@ -46,7 +46,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'The Storm',
     level: 'Foundation',
-    hint: 'Use weather as the clock — as the storm arrives, the decision must be made.',
+    hint: 'Use weather as the clock - as the storm arrives, the decision must be made.',
   },
   {
     title: 'The Wrong Turn',
@@ -126,7 +126,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'The Empty House',
     level: 'Advanced',
-    hint: 'Return to a house that used to be full. Avoid sentimentality — use specific objects.',
+    hint: 'Return to a house that used to be full. Avoid sentimentality - use specific objects.',
   },
   {
     title: 'The Warning',
@@ -166,7 +166,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'The Apology',
     level: 'Advanced',
-    hint: 'Is it accepted? Can it be? End ambiguously — leave the answer to the reader.',
+    hint: 'Is it accepted? Can it be? End ambiguously - leave the answer to the reader.',
   },
   {
     title: 'The Wait',
@@ -210,7 +210,7 @@ export default async function NarrativePromptsPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Thirty Cambridge-style narrative titles with story hooks. Each points you at a specific
-            technique — withheld information, ticking clock, dialogue opener — so you can rehearse
+            technique - withheld information, ticking clock, dialogue opener - so you can rehearse
             each one in turn.
           </p>
         </div>
@@ -255,7 +255,7 @@ export default async function NarrativePromptsPage() {
           <li>Write to exactly 400 words. Cutting is the hardest and most useful skill.</li>
           <li>After writing, read the opening and closing paragraphs aloud. Do they echo?</li>
           <li>
-            Try the same prompt twice — once as a slow reveal, once in medias res. Compare which
+            Try the same prompt twice - once as a slow reveal, once in medias res. Compare which
             works.
           </li>
         </ul>

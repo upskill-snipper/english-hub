@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Jekyll and Hyde GCSE revision — Stevenson',
+    title: 'Jekyll and Hyde revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Jekyll and Hyde GCSE revision - Stevenson',
   },
-  title: 'Jekyll and Hyde revision guide — themes, characters, key quotes',
+  title: 'Jekyll and Hyde revision guide - themes, characters, key quotes',
   description:
-    "Jekyll and Hyde GCSE revision — Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",
+    "Jekyll and Hyde GCSE revision - Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde',
   },
@@ -533,7 +533,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He looks like an ape',
-      'It connects to Darwinian fears of evolutionary regression — the beast lurking beneath civilisation',
+      'It connects to Darwinian fears of evolutionary regression - the beast lurking beneath civilisation',
       'Stevenson liked animal descriptions',
       'It was a common insult',
     ],
@@ -572,7 +572,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The positive language ("younger, lighter, happier") makes Hyde\'s liberation genuinely attractive, which is precisely why it is so dangerous. It mirrors the seductive appeal of giving in to impulse without moral consequence — an appeal that becomes addictive.',
+      'The positive language ("younger, lighter, happier") makes Hyde\'s liberation genuinely attractive, which is precisely why it is so dangerous. It mirrors the seductive appeal of giving in to impulse without moral consequence - an appeal that becomes addictive.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -605,7 +605,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Jekyll tries to absolve himself by blaming Hyde, but this is self-deception. The novella's moral force depends on the reader understanding that Jekyll and Hyde are the same person — separating guilt from the self is impossible.",
+      "Jekyll tries to absolve himself by blaming Hyde, but this is self-deception. The novella's moral force depends on the reader understanding that Jekyll and Hyde are the same person - separating guilt from the self is impossible.",
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -638,7 +638,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hyde has no social identity — "Think of it — I did not even exist!" He exists outside the legal and social frameworks that govern Victorian life, making him a walking embodiment of the freedom from consequence that Jekyll craves.',
+      'Hyde has no social identity - "Think of it - I did not even exist!" He exists outside the legal and social frameworks that govern Victorian life, making him a walking embodiment of the freedom from consequence that Jekyll craves.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -665,13 +665,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is just a metaphor',
-      'It reflects the Victorian belief in physiognomy — that evil is inscribed on the body',
+      'It reflects the Victorian belief in physiognomy - that evil is inscribed on the body',
       'It means Hyde wears a mask',
       'It is a reference to a painting',
     ],
     correctIndex: 1,
     explanation:
-      'Utterson\'s description reflects physiognomy, the Victorian pseudo-science that believed moral character was readable in facial features. The metaphor of a "signature" implies evil is inscribed on the body — a common Victorian belief that Stevenson both uses and critiques.',
+      'Utterson\'s description reflects physiognomy, the Victorian pseudo-science that believed moral character was readable in facial features. The metaphor of a "signature" implies evil is inscribed on the body - a common Victorian belief that Stevenson both uses and critiques.',
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -703,7 +703,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Every gentleman in the story prioritises discretion over truth. Stevenson argues that a society obsessed with reputation inevitably produces monsters, because the things people refuse to acknowledge do not disappear — they grow stronger in the dark. Jekyll's tragedy is caused as much by Victorian repression as by his experiment.",
+      "Every gentleman in the story prioritises discretion over truth. Stevenson argues that a society obsessed with reputation inevitably produces monsters, because the things people refuse to acknowledge do not disappear - they grow stronger in the dark. Jekyll's tragedy is caused as much by Victorian repression as by his experiment.",
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -762,7 +762,7 @@ const REVISION_TOPICS = [
     summary: 'Hyde embodies pure evil, but Stevenson complicates simple moral readings.',
     keyPoints: [
       'Hyde tramples, murders, and feels no remorse',
-      'But Jekyll is not purely good — he enjoyed the freedom Hyde gave him',
+      'But Jekyll is not purely good - he enjoyed the freedom Hyde gave him',
       'Goodness maintained only by repression may not be genuine',
       'Evil lives within every apparently respectable person',
       "Jekyll's attempts to blame Hyde alone are self-deception",
@@ -789,7 +789,7 @@ export default async function JekyllAndHydePage() {
   return (
     <>
       <CourseJsonLd
-        name="Dr Jekyll and Mr Hyde — Complete GCSE Study Guide"
+        name="Dr Jekyll and Mr Hyde - Complete GCSE Study Guide"
         description="In-depth study guide for Dr Jekyll and Mr Hyde covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

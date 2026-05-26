@@ -9,10 +9,10 @@
  * whether the email exists, is already verified, or has never registered.
  * We always return 200 with a generic body. Any divergence in HTTP status,
  * timing, or response shape would let an attacker probe which addresses
- * have unverified accounts — a known primitive for email-bombing and
+ * have unverified accounts - a known primitive for email-bombing and
  * targeted phishing on platforms used by minors.
  *
- * Rate limits (defence in depth — both must be passed):
+ * Rate limits (defence in depth - both must be passed):
  *   - 3 per IP per hour     (mitigates spray attacks from one source)
  *   - 5 per email per day   (mitigates email-bombing of a known address)
  *
@@ -48,12 +48,12 @@ const GENERIC_OK = {
 // accounts. The HTTP status code stays 200 in every branch to keep the
 // network-level contract uniform (no status-code probing). Product call:
 // founder prefers giving the user clear UI guidance over hiding this
-// signal — the "unverified vs. doesn't exist" distinction (the more
+// signal - the "unverified vs. doesn't exist" distinction (the more
 // sensitive one for spam targeting) remains hidden.
 const ALREADY_VERIFIED_OK = {
   ok: true,
   status: 'already_verified' as const,
-  message: 'This email is already verified — sign in or reset your password.',
+  message: 'This email is already verified - sign in or reset your password.',
 }
 
 export async function POST(request: NextRequest) {
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
   try {
     body = await request.json()
   } catch {
-    // Bad payload — still return generic 200 to deny enumeration via
+    // Bad payload - still return generic 200 to deny enumeration via
     // malformed-input branching.
     return NextResponse.json(GENERIC_OK)
   }
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(GENERIC_OK)
   }
 
-  // Site URL — used by both the already-verified email (links to
+  // Site URL - used by both the already-verified email (links to
   // /auth/forgot-password) and the verification email (callback redirect).
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
 
@@ -127,23 +127,23 @@ export async function POST(request: NextRequest) {
       }
     }
   } catch (err) {
-    // Log + swallow — caller still gets 200. We don't want a transient
+    // Log + swallow - caller still gets 200. We don't want a transient
     // Supabase admin failure to leak existence either.
     console.error('[resend-verification] listUsers failed:', err)
   }
 
   // ─── 4a. Already-verified branch ─────────────────────────────────────
   // Account exists and email is confirmed. The user is on the wrong page
-  // — they don't need a verification link, they need to sign in or reset
+  // - they don't need a verification link, they need to sign in or reset
   // their password. Send them a one-time email pointing them at the
   // password-reset flow, and return a status the UI can act on.
   if (alreadyVerified) {
     const resetLink = `${siteUrl}/auth/forgot-password`
     const safeReset = escapeHtml(resetLink)
     const html = [
-      `<h2>Your account is already verified — The English Hub</h2>`,
+      `<h2>Your account is already verified - The English Hub</h2>`,
       `<p>Hi,</p>`,
-      `<p>You asked us to resend a verification link, but your English Hub account is already verified — you don't need a new one.</p>`,
+      `<p>You asked us to resend a verification link, but your English Hub account is already verified - you don't need a new one.</p>`,
       `<p>If you can't sign in, reset your password using the link below:</p>`,
       `<p><a href="${safeReset}" style="display:inline-block;padding:12px 24px;background:#0f172a;color:#fff;text-decoration:none;border-radius:6px;">Reset password</a></p>`,
       `<p>Or copy and paste this link into your browser:</p>`,
@@ -155,7 +155,7 @@ export async function POST(request: NextRequest) {
 
     const result = await sendViaResend({
       to: email,
-      subject: 'Your account is already verified — The English Hub',
+      subject: 'Your account is already verified - The English Hub',
       html,
       tags: [{ name: 'category', value: 'resend-verification-already-verified' }],
     })
@@ -167,7 +167,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (!needsVerification) {
-    // Email isn't registered. Generic response — no email sent, no
+    // Email isn't registered. Generic response - no email sent, no
     // existence signal leaked.
     return NextResponse.json(GENERIC_OK)
   }
@@ -176,7 +176,7 @@ export async function POST(request: NextRequest) {
   // Supabase's `generateLink({ type: 'signup' })` requires the password,
   // which we don't have (and shouldn't ask for). For an existing
   // unconfirmed user, the correct admin operation is `type: 'magiclink'`,
-  // which mints a one-time link that — when clicked — confirms the email
+  // which mints a one-time link that - when clicked - confirms the email
   // address (equivalent UX to the signup confirmation link). The user
   // lands on /auth/callback exactly as they would after the original
   // signup email.
@@ -199,14 +199,14 @@ export async function POST(request: NextRequest) {
   }
 
   if (!actionLink) {
-    // Couldn't mint a link — generic 200, log server-side.
+    // Couldn't mint a link - generic 200, log server-side.
     return NextResponse.json(GENERIC_OK)
   }
 
   // ─── 6. Send via Resend (best-effort) ────────────────────────────────
   const safeLink = escapeHtml(actionLink)
   const html = [
-    `<h2>Confirm your email — The English Hub</h2>`,
+    `<h2>Confirm your email - The English Hub</h2>`,
     `<p>Hi,</p>`,
     `<p>You asked us to resend the verification link for your English Hub account. Click the button below to confirm your email and finish setting up your account:</p>`,
     `<p><a href="${safeLink}" style="display:inline-block;padding:12px 24px;background:#0f172a;color:#fff;text-decoration:none;border-radius:6px;">Confirm email</a></p>`,
@@ -219,14 +219,14 @@ export async function POST(request: NextRequest) {
 
   const result = await sendViaResend({
     to: email,
-    subject: 'Confirm your email — The English Hub',
+    subject: 'Confirm your email - The English Hub',
     html,
     tags: [{ name: 'category', value: 'resend-verification' }],
   })
 
   if (!result.sent) {
     // Logged inside sendViaResend; surface generic 200 anyway.
-    console.warn('[resend-verification] Resend not delivered — reason:', result.reason)
+    console.warn('[resend-verification] Resend not delivered - reason:', result.reason)
   }
 
   return NextResponse.json(GENERIC_OK)

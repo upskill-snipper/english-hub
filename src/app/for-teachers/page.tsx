@@ -74,7 +74,7 @@ const features = [
     icon: Library,
     color: 'text-amber-600 bg-amber-500/10',
     title: 'Ready Resources Library',
-    desc: 'A growing library of worksheets, revision materials, model answers, and starter activities — all ready to print or share digitally.',
+    desc: 'A growing library of worksheets, revision materials, model answers, and starter activities - all ready to print or share digitally.',
   },
   {
     icon: Award,
@@ -85,7 +85,7 @@ const features = [
 ]
 
 const timeSavers = [
-  'Spend less time on routine planning and marking — the AI shoulders the repetitive work.',
+  'Spend less time on routine planning and marking - the AI shoulders the repetitive work.',
   'Auto-mark homework essays in seconds',
   'Generate worksheets and starter activities instantly',
   'Get at-a-glance class progress without manual tracking',
@@ -192,11 +192,11 @@ export default function ForTeachersPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* ================================================================
-          INFOGRAPHIC BANNER — one-glance product summary for teachers
+          INFOGRAPHIC BANNER - one-glance product summary for teachers
       ================================================================ */}
       <InfographicBanner
         src="/infographics/for-teachers.png"
-        alt="Infographic: powerful AI tools and insights for English teachers — save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, faster lesson planning, and student reports."
+        alt="Infographic: powerful AI tools and insights for English teachers - save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, faster lesson planning, and student reports."
       />
 
       {/* ================================================================
@@ -512,7 +512,7 @@ export default function ForTeachersPage() {
           <div className="text-center mb-16">
             <h2 className="text-foreground">Everything You Need to Teach Smarter</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Premium tools built specifically for English teachers — less admin, more impact.
+              Premium tools built specifically for English teachers - less admin, more impact.
             </p>
           </div>
 
@@ -809,7 +809,7 @@ export default function ForTeachersPage() {
       <Separator className="opacity-40" />
 
       {/* ================================================================
-          FOUNDING TEACHERS — EMPTY STATE
+          FOUNDING TEACHERS - EMPTY STATE
       ================================================================ */}
       <section className="py-24 sm:py-32 bg-card/20">
         <div className="max-w-3xl mx-auto px-6">
@@ -1162,7 +1162,7 @@ export default function ForTeachersPage() {
 
               <p className="text-xs text-muted-foreground text-center">
                 By signing up you agree to our Terms of Service and Privacy Policy. Free tier
-                includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access —
+                includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access -
                 Standard £11.99/£99 from August 2026). 7-day free trial, card required.
               </p>
             </div>
@@ -1251,10 +1251,10 @@ export default function ForTeachersPage() {
             <span className="text-muted-foreground/80">
               (Standard <span className="line-through">£11.99/month</span> from August 2026)
             </span>{' '}
-            — 7-day free trial, card required.
+            - 7-day free trial, card required.
           </p>
           <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-amber-700">
-            ⚡ Prices increasing August 2026 — lock in Early Access today.
+            ⚡ Prices increasing August 2026 - lock in Early Access today.
           </p>
           <p className="mt-3 text-xs text-muted-foreground/80 max-w-2xl mx-auto">{VAT_LABEL}</p>
         </div>

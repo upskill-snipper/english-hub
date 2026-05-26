@@ -1,4 +1,4 @@
-// Extra quote bank — orchestrator will merge with primary quotes via index aggregator
+// Extra quote bank - orchestrator will merge with primary quotes via index aggregator
 
 export interface QuoteEntryExtra {
   quote: string
@@ -40,12 +40,12 @@ export const quoteDetectiveExtra: QuoteEntryExtra[] = [
 
   // ── An Inspector Calls (12) ────────────────────────────────────────────────
   {
-    quote: 'A man has to make his own way — has to look after himself.',
+    quote: 'A man has to make his own way - has to look after himself.',
     text: 'An Inspector Calls',
   },
   { quote: "There isn't a chance of war.", text: 'An Inspector Calls' },
-  { quote: 'The Titanic — unsinkable, absolutely unsinkable.', text: 'An Inspector Calls' },
-  { quote: "But these girls aren't cheap labour — they're people.", text: 'An Inspector Calls' },
+  { quote: 'The Titanic - unsinkable, absolutely unsinkable.', text: 'An Inspector Calls' },
+  { quote: "But these girls aren't cheap labour - they're people.", text: 'An Inspector Calls' },
   { quote: 'Girls of that class.', text: 'An Inspector Calls' },
   { quote: "It's better to ask for the earth than to take it.", text: 'An Inspector Calls' },
   { quote: 'We are responsible for each other.', text: 'An Inspector Calls' },

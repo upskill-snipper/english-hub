@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Sign of the Four — Study Guide | The English Hub',
+    title: 'The Sign of the Four - Study Guide | The English Hub',
     description:
       'In-depth study guide for The Sign of the Four by Arthur Conan Doyle: plot, characters, themes, context and key quotations.',
   },
-  title: 'The Sign of the Four — Study Guide',
+  title: 'The Sign of the Four - Study Guide',
   description:
     'In-depth study guide for The Sign of the Four by Arthur Conan Doyle: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -645,7 +645,7 @@ export default async function TheSignOfTheFourPage() {
   return (
     <>
       <CourseJsonLd
-        name="The Sign of the Four — Complete GCSE Study Guide"
+        name="The Sign of the Four - Complete GCSE Study Guide"
         description="In-depth study guide for The Sign of the Four covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

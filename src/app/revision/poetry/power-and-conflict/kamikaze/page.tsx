@@ -49,7 +49,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Religious imagery',
-          note: '"Powerful incantations" suggests ritualistic, almost religious preparation — the pilot is sealed inside cultural and ceremonial language.',
+          note: '"Powerful incantations" suggests ritualistic, almost religious preparation - the pilot is sealed inside cultural and ceremonial language.',
           color: '#34d399',
         },
       ],
@@ -60,7 +60,7 @@ const kamikazeData: PoemData = {
       annotations: [
         {
           type: 'Euphemism',
-          note: '"One-way journey into history" is a chilling euphemism for the suicide mission — death reframed as historical immortality.',
+          note: '"One-way journey into history" is a chilling euphemism for the suicide mission - death reframed as historical immortality.',
           color: '#f59e0b',
         },
       ],
@@ -282,8 +282,8 @@ const kamikazeData: PoemData = {
 <p>The poem connects to broader themes of <strong>conflict, identity, and the power of nature</strong> to remind us of what matters most.</p>`,
 
   contextAr: `<p><strong>Beatrice Garland</strong> شاعرة بريطانية معاصرة، وباحثة في الـNHS. قصيدة <em>Kamikaze</em> نُشرت في مجموعتها سنة 2013 <em>The Invention of Fireworks</em>.</p>
-<p>القصيدة مستوحاة من طيّاري الـ<strong>kamikaze</strong> اليابانيّين في الحرب العالمية الثانية — شباب طاروا في مهمّات انتحارية، يضربون طائراتهم عمداً في السفن الحربية للحلفاء. وكلمة <em>kamikaze</em> تترجم "الريح الإلهية" (divine wind)، نسبةً إلى عاصفة typhoon اللي أنقذت Japan من غزو المغول سنة 1281.</p>
-<p>في الثقافة اليابانية، مهمّات الـkamikaze كانت مرتبطة بالـ<strong>شرف، الواجب، والتضحية</strong>. الطيّارون كانوا يحتفى فيهم كأبطال؛ وموتهم كان يُشاف كأقصى فعل ولاء للإمبراطور. ورفض المهمّة أو الفشل فيها كان يجيب <strong>عار</strong> عميق (<em>haji</em>) — مو بس على الشخص نفسه، بل على العائلة كلها.</p>
+<p>القصيدة مستوحاة من طيّاري الـ<strong>kamikaze</strong> اليابانيّين في الحرب العالمية الثانية - شباب طاروا في مهمّات انتحارية، يضربون طائراتهم عمداً في السفن الحربية للحلفاء. وكلمة <em>kamikaze</em> تترجم "الريح الإلهية" (divine wind)، نسبةً إلى عاصفة typhoon اللي أنقذت Japan من غزو المغول سنة 1281.</p>
+<p>في الثقافة اليابانية، مهمّات الـkamikaze كانت مرتبطة بالـ<strong>شرف، الواجب، والتضحية</strong>. الطيّارون كانوا يحتفى فيهم كأبطال؛ وموتهم كان يُشاف كأقصى فعل ولاء للإمبراطور. ورفض المهمّة أو الفشل فيها كان يجيب <strong>عار</strong> عميق (<em>haji</em>) - مو بس على الشخص نفسه، بل على العائلة كلها.</p>
 <p>Garland قالت إنها انبهرت بقصص الطيّارين القلائل اللي <strong>رجعوا</strong> من مهمّاتهم. هؤلاء الرجال نبذتهم عوائلهم ومجتمعاتهم، وتعاملوا معاهم كأنهم ميّتين أصلاً. القصيدة تستكشف الخيار المستحيل بين <strong>الواجب تجاه الوطن</strong> و<strong>غريزة البقاء</strong>، وتسأل: هل ممكن إن العيش يكون أسوأ من الموت؟</p>
 <p>القصيدة تتّصل بمواضيع أوسع: <strong>الصراع، الهويّة، وقوة الطبيعة</strong> اللي تذكّرنا بشنو اللي يهمّ فعلاً.</p>`,
 
@@ -299,13 +299,13 @@ The poem ends with a devastating, unanswered question: "which had been the bette
 
   summaryAr: `القصيدة تحكي قصة طيّار kamikaze ياباني في الحرب العالمية الثانية، يطلع في مهمّته الانتحارية مع شروق الشمس، بس يرجع قبل ما يوصل هدفه. البنت تروي القصة بصيغة الغائب، وهي ترتّب الحكاية من اللي سمعته.
 
-الطيّار وهو طاير، يطالع تحت ويشوف جمال الطبيعة — السمك يلمع بلون الفضّة في البحر، وحمام البر فوق ممرّات الجبال. هالمناظر تفجّر فيه ذكريات طفولته: لمّا كان يصطاد السمك مع إخوانه وأبوه في "green-blue translucent sea".
+الطيّار وهو طاير، يطالع تحت ويشوف جمال الطبيعة - السمك يلمع بلون الفضّة في البحر، وحمام البر فوق ممرّات الجبال. هالمناظر تفجّر فيه ذكريات طفولته: لمّا كان يصطاد السمك مع إخوانه وأبوه في "green-blue translucent sea".
 
 جمال الطبيعة وقوة الذاكرة يطغون على إحساسه بالواجب العسكري. فيقلب طيّارته ويرجع البيت.
 
-بس بقاؤه على قيد الحياة ما يجيب أي راحة. عائلته، اللي مكبّلة بثقافة الشرف والعار، يتعاملون معاه كأنه ما عاد موجود. عياله وأحفاده يتعلّمون إنهم ما يذكرونه أبداً. ويصير شبح في بيته — حيّ جسدياً، بس ميّت اجتماعياً.
+بس بقاؤه على قيد الحياة ما يجيب أي راحة. عائلته، اللي مكبّلة بثقافة الشرف والعار، يتعاملون معاه كأنه ما عاد موجود. عياله وأحفاده يتعلّمون إنهم ما يذكرونه أبداً. ويصير شبح في بيته - حيّ جسدياً، بس ميّت اجتماعياً.
 
-القصيدة تنتهي بسؤال مدمّر بلا إجابة: "which had been the better way to die" — موت سريع في مهمّة الـkamikaze، ولا موت بطيء وحيّ تحت محو عائلته؟`,
+القصيدة تنتهي بسؤال مدمّر بلا إجابة: "which had been the better way to die" - موت سريع في مهمّة الـkamikaze، ولا موت بطيء وحيّ تحت محو عائلته؟`,
 
   formAndStructure: `FORM:
 - Free verse with no regular rhyme scheme, reflecting the fragmented, retold nature of the story
@@ -334,26 +334,26 @@ KEY STRUCTURAL FEATURES:
 البنية (STRUCTURE):
 - 7 مقاطع بأطوال مختلفة، تنقّل القارئ من المهمّة، للذكريات، للعواقب.
 - القصيدة تبدأ بصيغة الغائب ("Her father")، ووجهة النظر تتبدّل عبرها.
-- المقاطع 1–6 توصف رحلة الطيّار وصور الطبيعة اللي تغيّر قراره.
+- المقاطع 1-6 توصف رحلة الطيّار وصور الطبيعة اللي تغيّر قراره.
 - القسم الأخير ينتقل لرد فعل العائلة وعواقب رجوعه.
 - القسم المكتوب italicised في النص الأصلي يأشّر على انتقال لصوت داخلي وأكثر حميمية.
 - بنية دائرية (cyclical): القصيدة تنتهي عاطفياً وين بدأت، بنفس السؤال غير المجاب عنه: "the better way to die".
 
 أبرز السمات البنيوية:
 - الـenjambment اللي يقطع المقاطع (مثل "the fish / swivelled") يخلق حركة متواصلة، يحاكي تيّار فكر الطيّار اللي ما ينقطع.
-- الـcaesura مستخدمة بقلّة، بس بفعالية، مثل "And sometimes, she said" — كلمة "she said" المقحومة تذكّرنا إن الحكاية يد ثانية (secondhand).
+- الـcaesura مستخدمة بقلّة، بس بفعالية، مثل "And sometimes, she said" - كلمة "she said" المقحومة تذكّرنا إن الحكاية يد ثانية (secondhand).
 - التحوّل من السرد للتأمّل المباشر في الأبيات الأخيرة يخلق أثر عاطفي قوي.
 - ما فيه علامات اقتباس (speech marks)، فتختلط حدود صوت البنت وتجربة الأب.`,
 
   keyQuotes: [
-    // VERIFY: removed key quote 'a sheath of purpose' — this phrase does NOT appear in Garland's Kamikaze. The actual phrase is 'a shaven head / full of powerful incantations'.
+    // VERIFY: removed key quote 'a sheath of purpose' - this phrase does NOT appear in Garland's Kamikaze. The actual phrase is 'a shaven head / full of powerful incantations'.
     {
       quote: 'a shaven head / full of powerful incantations',
       analysis:
-        'The shaved head and ritual incantations evoke samurai/military religious preparation. The pilot is wrapped in ceremonial language that has prepared him for sacrifice — culture, not personal will, drives the mission.',
+        'The shaved head and ritual incantations evoke samurai/military religious preparation. The pilot is wrapped in ceremonial language that has prepared him for sacrifice - culture, not personal will, drives the mission.',
       themes: ['Duty', 'Conflict', 'Identity'],
       analysisAr:
-        'الرأس الحليق والتلاوات الطقسية تستحضر تحضيراً ديني/عسكري على طريقة الـsamurai. الطيّار ملفوف بلغة طقوسية حضّرته للتضحية — الثقافة، مو الإرادة الشخصية، هي اللي تسيّر المهمّة.',
+        'الرأس الحليق والتلاوات الطقسية تستحضر تحضيراً ديني/عسكري على طريقة الـsamurai. الطيّار ملفوف بلغة طقوسية حضّرته للتضحية - الثقافة، مو الإرادة الشخصية، هي اللي تسيّر المهمّة.',
       themesAr: ['الواجب', 'الصراع', 'الهويّة'],
     },
     {
@@ -362,7 +362,7 @@ KEY STRUCTURAL FEATURES:
         'Nature imagery with sibilance creates a hypnotic, beautiful sound. The fish represent the vitality of the natural world -- their movement is free and instinctive, contrasting with the rigid, prescribed path of the kamikaze mission.',
       themes: ['Nature', 'Freedom', 'Beauty vs Death'],
       analysisAr:
-        'صور طبيعية مع sibilance تخلق صوت ساحر وجميل. السمك يمثّل حيوية الطبيعة — حركته حرّة وغريزية، تتناقض مع المسار الصارم المرسوم لمهمّة الـkamikaze.',
+        'صور طبيعية مع sibilance تخلق صوت ساحر وجميل. السمك يمثّل حيوية الطبيعة - حركته حرّة وغريزية، تتناقض مع المسار الصارم المرسوم لمهمّة الـkamikaze.',
       themesAr: ['الطبيعة', 'الحريّة', 'الجمال مقابل الموت'],
     },
     {
@@ -380,7 +380,7 @@ KEY STRUCTURAL FEATURES:
         'Rich colour imagery evoking the vivid beauty of the Japanese coastline. "Translucent" suggests clarity and openness -- the opposite of the murky moral situation the pilot faces.',
       themes: ['Nature', 'Memory', 'Beauty vs Death'],
       analysisAr:
-        'صور لونية غنية تستحضر جمال الساحل الياباني الزاهي. كلمة "translucent" توحي بالصفاء والانفتاح — عكس الموقف الأخلاقي الضبابي اللي يواجهه الطيّار.',
+        'صور لونية غنية تستحضر جمال الساحل الياباني الزاهي. كلمة "translucent" توحي بالصفاء والانفتاح - عكس الموقف الأخلاقي الضبابي اللي يواجهه الطيّار.',
       themesAr: ['الطبيعة', 'الذاكرة', 'الجمال مقابل الموت'],
     },
     {
@@ -398,7 +398,7 @@ KEY STRUCTURAL FEATURES:
         'The family enacts a social death -- the pilot is physically present but treated as invisible. The simile "as though" emphasises that this is a deliberate, chosen act of erasure.',
       themes: ['Shame', 'Family', 'Identity'],
       analysisAr:
-        'العائلة تنفّذ موت اجتماعي — الطيّار حاضر جسدياً، بس يتعاملون معاه كأنه ما يتشاف. والـsimile في "as though" تأكّد إن هذا فعل محو متعمّد ومختار.',
+        'العائلة تنفّذ موت اجتماعي - الطيّار حاضر جسدياً، بس يتعاملون معاه كأنه ما يتشاف. والـsimile في "as though" تأكّد إن هذا فعل محو متعمّد ومختار.',
       themesAr: ['العار', 'العائلة', 'الهويّة'],
     },
     {
@@ -407,7 +407,7 @@ KEY STRUCTURAL FEATURES:
         'The verb "learned" is devastating -- the silence is not natural but taught. Children are actively trained to erase their own father, showing how cultural expectations override family bonds.',
       themes: ['Shame', 'Family', 'Power'],
       analysisAr:
-        'الفعل "learned" مدمّر — الصمت مو طبيعي، هو شي يتعلّمونه. العيال يتدرّبون فعلياً على محو أبوهم، ويبيّن هالشي كيف توقّعات الثقافة تتغلّب على روابط العائلة.',
+        'الفعل "learned" مدمّر - الصمت مو طبيعي، هو شي يتعلّمونه. العيال يتدرّبون فعلياً على محو أبوهم، ويبيّن هالشي كيف توقّعات الثقافة تتغلّب على روابط العائلة.',
       themesAr: ['العار', 'العائلة', 'القوّة'],
     },
     {
@@ -416,7 +416,7 @@ KEY STRUCTURAL FEATURES:
         'The poem\'s final, unanswered question. The word "better" is bitterly ironic -- neither option offers a good outcome. The pilot must choose between physical death and social death.',
       themes: ['Conflict', 'Identity', 'Shame'],
       analysisAr:
-        'السؤال الأخير في القصيدة، اللي ما له إجابة. كلمة "better" مفعمة بسخرية مرّة — ولا خيار من الاثنين يقدّم نتيجة طيّبة. الطيّار مضطر يختار بين الموت الجسدي والموت الاجتماعي.',
+        'السؤال الأخير في القصيدة، اللي ما له إجابة. كلمة "better" مفعمة بسخرية مرّة - ولا خيار من الاثنين يقدّم نتيجة طيّبة. الطيّار مضطر يختار بين الموت الجسدي والموت الاجتماعي.',
       themesAr: ['الصراع', 'الهويّة', 'العار'],
     },
   ],
@@ -429,7 +429,7 @@ KEY STRUCTURAL FEATURES:
         'The natural world is presented as beautiful, free, and alive -- a direct contrast to the death-mission. Nature becomes the force that pulls the pilot back to life, representing everything he would lose.',
       lineRef: 8,
       effectAr:
-        'العالم الطبيعي يُقدَّم جميل، حر، وفيه حياة — تناقض مباشر لمهمّة الموت. الطبيعة تصير القوّة اللي تسحب الطيّار يرجع للحياة، وتمثّل كل شي راح يخسره.',
+        'العالم الطبيعي يُقدَّم جميل، حر، وفيه حياة - تناقض مباشر لمهمّة الموت. الطبيعة تصير القوّة اللي تسحب الطيّار يرجع للحياة، وتمثّل كل شي راح يخسره.',
     },
     {
       device: 'Colour imagery',
@@ -449,7 +449,7 @@ KEY STRUCTURAL FEATURES:
       effectAr:
         'السمك يتشبّه بالمطر، بس الصفات "dark" و"metallic" يدخلون إيحاءات عسكرية. الـsimile هذي تجلس على الحد الفاصل بين الجمال والعنف، وتعكس التوتّر المركزي في القصيدة.',
     },
-    // VERIFY: removed device example 'a sheath of purpose' — phrase not in primary text.
+    // VERIFY: removed device example 'a sheath of purpose' - phrase not in primary text.
     {
       device: 'Shift in perspective',
       example: 'From "Her father embarked" to "she said" to "he must have wondered"',
@@ -468,7 +468,7 @@ KEY STRUCTURAL FEATURES:
       effectAr:
         'القصيدة مبنية على تناقضات: الحياة مقابل الموت، الواجب مقابل الغريزة، الشرف مقابل العار. هالثنائيات تخلق التوتّر الأخلاقي في قلب القصيدة، وتقاوم أي حل سهل.',
     },
-    // VERIFY: removed device example 'and he flew into the sun / and he flew into the sun' — these duplicated lines are NOT in Garland's Kamikaze. The opening sequence is 'a flask of water, a samurai sword / in the cockpit, a shaven head / full of powerful incantations / and enough fuel for a one-way / journey into history'.
+    // VERIFY: removed device example 'and he flew into the sun / and he flew into the sun' - these duplicated lines are NOT in Garland's Kamikaze. The opening sequence is 'a flask of water, a samurai sword / in the cockpit, a shaven head / full of powerful incantations / and enough fuel for a one-way / journey into history'.
     {
       device: 'Enjambment',
       example: 'the fish / swivelled... the weights and selvedges / of the ocean',
@@ -496,7 +496,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The pilot turns back from his kamikaze mission, choosing life over death. However, his family and community treat him as if he were dead — his survival brings shame rather than relief.',
+      'The pilot turns back from his kamikaze mission, choosing life over death. However, his family and community treat him as if he were dead - his survival brings shame rather than relief.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -522,13 +522,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Engine failure',
-      'The beauty of nature — fish, birds, and the sea — reminds him of life and his childhood',
+      'The beauty of nature - fish, birds, and the sea - reminds him of life and his childhood',
       'A radio message from his family',
       'Fear of the enemy',
     ],
     correctIndex: 1,
     explanation:
-      'The pilot is pulled back by the beauty of the natural world — fish "swivelling their silver bodies", wood pigeons, the "green-blue translucent sea". Nature and childhood memories of fishing with his father represent life over death.',
+      'The pilot is pulled back by the beauty of the natural world - fish "swivelling their silver bodies", wood pigeons, the "green-blue translucent sea". Nature and childhood memories of fishing with his father represent life over death.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -538,13 +538,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They celebrate his survival',
-      'They treat him as if he were dead — refusing to speak to him or acknowledge his existence',
+      'They treat him as if he were dead - refusing to speak to him or acknowledge his existence',
       'They send him back to the military',
       'They move to another country',
     ],
     correctIndex: 1,
     explanation:
-      'The family treats the pilot as though he no longer exists. In Japanese culture, a kamikaze pilot who turned back brought profound shame. His wife and children refuse to speak to him — he becomes socially dead.',
+      'The family treats the pilot as though he no longer exists. In Japanese culture, a kamikaze pilot who turned back brought profound shame. His wife and children refuse to speak to him - he becomes socially dead.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -560,7 +560,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Nature represents life itself — vivid, beautiful, and precious. The fish, birds, and translucent sea offer a sensory counterweight to the abstract concept of duty. Life is tangible; honour is not.',
+      'Nature represents life itself - vivid, beautiful, and precious. The fish, birds, and translucent sea offer a sensory counterweight to the abstract concept of duty. Life is tangible; honour is not.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -570,7 +570,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It distances the reader from the story',
-      'It shifts from retelling to personal reflection, showing the lasting impact on the family — "he must have wondered which had been the better way to die"',
+      'It shifts from retelling to personal reflection, showing the lasting impact on the family - "he must have wondered which had been the better way to die"',
       'It introduces a new character',
       'It resolves the conflict happily',
     ],
@@ -602,13 +602,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He flew east towards the sunrise',
-      'The sun symbolises Japan (the Rising Sun flag) — flying into the sun represents devotion to the nation unto death',
+      'The sun symbolises Japan (the Rising Sun flag) - flying into the sun represents devotion to the nation unto death',
       'He was blinded by sunlight',
       'The sun caused engine problems',
     ],
     correctIndex: 1,
     explanation:
-      'The sun is a central symbol of Japan itself (the Rising Sun). "Flying into the sun" represents the pilot\'s devotion to his nation — literally heading towards death for his country. The repetition emphasises the inevitability of his mission.',
+      'The sun is a central symbol of Japan itself (the Rising Sun). "Flying into the sun" represents the pilot\'s devotion to his nation - literally heading towards death for his country. The repetition emphasises the inevitability of his mission.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -618,13 +618,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It celebrates honour above all else',
-      'It shows that the "honourable" choice (death) and the "dishonourable" choice (life) both lead to a form of death — raising the question of which is truly worse',
+      'It shows that the "honourable" choice (death) and the "dishonourable" choice (life) both lead to a form of death - raising the question of which is truly worse',
       'It ignores honour entirely',
       'It defines honour clearly',
     ],
     correctIndex: 1,
     explanation:
-      'The poem creates a devastating paradox: dying would have brought honour; living brought social death. The daughter\'s final reflection — "which had been the better way to die" — suggests both paths led to a form of death, questioning whether honour is worth the cost.',
+      'The poem creates a devastating paradox: dying would have brought honour; living brought social death. The daughter\'s final reflection - "which had been the better way to die" - suggests both paths led to a form of death, questioning whether honour is worth the cost.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -641,7 +641,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Both Kamikaze and Poppies explore the family's perspective on conflict — a daughter in Kamikaze, a mother in Poppies. Both show the personal, domestic costs of war through female voices and the pain of absence.",
+      "Both Kamikaze and Poppies explore the family's perspective on conflict - a daughter in Kamikaze, a mother in Poppies. Both show the personal, domestic costs of war through female voices and the pain of absence.",
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -653,10 +653,10 @@ const REVISION_TOPICS = [
     summary:
       'Kamikaze explores honour, shame, the personal cost of conflict, the power of nature, and the devastating consequences of choosing life over duty.',
     keyPoints: [
-      'Honour vs survival — the pilot chooses life but suffers social death',
-      'Power of nature — natural beauty overrides military duty',
-      'Family and shame — the family treats him as if he were dead',
-      'The question of identity — is he a coward or a brave man who chose life?',
+      'Honour vs survival - the pilot chooses life but suffers social death',
+      'Power of nature - natural beauty overrides military duty',
+      'Family and shame - the family treats him as if he were dead',
+      'The question of identity - is he a coward or a brave man who chose life?',
     ],
   },
   {
@@ -664,10 +664,10 @@ const REVISION_TOPICS = [
     summary:
       'Garland uses vivid nature imagery, symbolism of the sun and samurai sword, and a narrative voice that shifts from third person to intimate first person.',
     keyPoints: [
-      'Nature imagery: "silver bodies", "green-blue translucent sea" — life\'s beauty',
-      "Sun symbolism — represents Japan and the pilot's devotion to his nation",
-      '"Samurai sword" — the weight of warrior tradition and honour culture',
-      'Colour imagery: "silver", "green-blue" — vivid life contrasting with the death mission',
+      'Nature imagery: "silver bodies", "green-blue translucent sea" - life\'s beauty',
+      "Sun symbolism - represents Japan and the pilot's devotion to his nation",
+      '"Samurai sword" - the weight of warrior tradition and honour culture',
+      'Colour imagery: "silver", "green-blue" - vivid life contrasting with the death mission',
     ],
   },
   {
@@ -675,10 +675,10 @@ const REVISION_TOPICS = [
     summary:
       'Seven stanzas narrated mostly in third person, with a crucial shift to first person in the final stanza as the daughter reflects personally on the consequences.',
     keyPoints: [
-      'Third-person narration — the daughter retells what she was told, creating distance',
-      'Final stanza shifts to first person — intimate, personal reflection',
-      'Enjambment across stanzas — the story flows without neat resolution',
-      "No regular rhyme — reflecting the unresolved nature of the family's pain",
+      'Third-person narration - the daughter retells what she was told, creating distance',
+      'Final stanza shifts to first person - intimate, personal reflection',
+      'Enjambment across stanzas - the story flows without neat resolution',
+      "No regular rhyme - reflecting the unresolved nature of the family's pain",
     ],
   },
 ]
@@ -746,7 +746,7 @@ export default function KamikazePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Kamikaze by Beatrice Garland — Analysis & Annotations"
+        name="Kamikaze by Beatrice Garland - Analysis & Annotations"
         description="Line-by-line analysis of Kamikaze with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

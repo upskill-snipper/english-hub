@@ -49,7 +49,7 @@ function boardTypeToTier(boardType: 'ks3' | 'gcse' | 'igcse' | 'ial' | 'a-level'
   if (boardType === 'ks3') return 'KS3'
   if (boardType === 'gcse') return 'GCSE'
   if (boardType === 'igcse') return 'IGCSE'
-  // IAL and UK A-Level don't have their own course tiers yet — fall through to 'All'
+  // IAL and UK A-Level don't have their own course tiers yet - fall through to 'All'
   return 'All'
 }
 
@@ -210,7 +210,7 @@ export default function CourseCatalogueClient({
   )
 
   // Seeded from the server render so the first paint shows real content
-  // (SEO item #23 — no more "Loading..." flash for crawlers or humans).
+  // (SEO item #23 - no more "Loading..." flash for crawlers or humans).
   const [courses, setCourses] = useState<CourseData[]>(initialCourses)
   const [isLoading, setIsLoading] = useState(initialCourses.length === 0)
 
@@ -227,7 +227,7 @@ export default function CourseCatalogueClient({
 
   useEffect(() => {
     // If the server already seeded us with courses, we still call
-    // loadAllCourses() — it's memoised, so this is effectively a no-op at
+    // loadAllCourses() - it's memoised, so this is effectively a no-op at
     // runtime but ensures parity with any late-registering course modules
     // on the client.
     if (initialCourses.length > 0) {
@@ -265,7 +265,7 @@ export default function CourseCatalogueClient({
       const names = boardSlugToDisplayNames(userBoard)
       if (names.includes(boardFilter)) return new Set(names)
     }
-    // Manual dropdown pick — match exactly
+    // Manual dropdown pick - match exactly
     return new Set([boardFilter])
   }, [boardFilter, userBoard])
 

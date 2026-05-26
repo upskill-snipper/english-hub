@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Streetcar Named Desire — Study Guide | The English Hub',
+    title: 'A Streetcar Named Desire - Study Guide | The English Hub',
     description:
       'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',
   },
-  title: 'A Streetcar Named Desire — Study Guide',
+  title: 'A Streetcar Named Desire - Study Guide',
   description:
     'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -613,7 +613,7 @@ export default async function AStreetcarNamedDesirePage() {
   return (
     <>
       <CourseJsonLd
-        name="A Streetcar Named Desire — Complete A-Level Study Guide"
+        name="A Streetcar Named Desire - Complete A-Level Study Guide"
         description="In-depth study guide for A Streetcar Named Desire covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
       />
       <BreadcrumbJsonLd

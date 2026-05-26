@@ -1,13 +1,13 @@
 'use client'
 
-// ─── Platform-admin — Prompt Management ─────────────────────────────────────
+// ─── Platform-admin - Prompt Management ─────────────────────────────────────
 // Site-admin only (server route enforces; redirect on 401/403 mirrors
 // src/app/admin/affiliates/page.tsx). Lists prompt_versions, creates a new
 // version (active by default), and can re-activate an existing version.
 //
 // "Set active" reuses the idempotent POST /api/admin/prompts: re-posting an
 // existing version's exact text (same content_hash) re-activates that row and
-// deactivates its siblings — no extra endpoint needed. Empty-table safe.
+// deactivates its siblings - no extra endpoint needed. Empty-table safe.
 
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
@@ -316,7 +316,7 @@ export default function AdminPromptManagementPage() {
                       <td className="py-3 pr-4 font-mono text-xs">{p.prompt_key}</td>
                       <td className="py-3 pr-4 text-xs text-muted-foreground">
                         {[p.subject, p.exam_board, p.question_type].filter(Boolean).join(' · ') ||
-                          '—'}
+                          '-'}
                       </td>
                       <td className="py-3 pr-4 font-mono text-xs">
                         {p.content_hash.slice(0, 12)}…

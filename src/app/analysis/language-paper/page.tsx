@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, marking guides explained, timing and marker tips. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/language-paper' },
   openGraph: {
-    title: 'AQA Language Paper 1 & 2 Technique Guides — The English Hub',
+    title: 'AQA Language Paper 1 & 2 Technique Guides - The English Hub',
     description:
       'Grade 9 walkthroughs for every AQA English Language Paper 1 and Paper 2 question, written by GCSE markers.',
   },
@@ -19,34 +19,34 @@ export const metadata: Metadata = {
 const paper1Questions = [
   {
     slug: 'aqa-language-paper-1-question-1-guide',
-    title: 'Paper 1 Question 1 — List 4 things (4 marks)',
+    title: 'Paper 1 Question 1 - List 4 things (4 marks)',
   },
   {
     slug: 'aqa-language-paper-1-question-2-language-analysis',
-    title: 'Paper 1 Question 2 — Language analysis (8 marks)',
+    title: 'Paper 1 Question 2 - Language analysis (8 marks)',
   },
   {
     slug: 'aqa-language-paper-1-question-3-structure',
-    title: 'Paper 1 Question 3 — Structure (8 marks)',
+    title: 'Paper 1 Question 3 - Structure (8 marks)',
   },
   {
     slug: 'aqa-language-paper-1-question-4-evaluation',
-    title: 'Paper 1 Question 4 — Evaluation (20 marks)',
+    title: 'Paper 1 Question 4 - Evaluation (20 marks)',
   },
   {
     slug: 'aqa-language-paper-1-question-5-creative-writing',
-    title: 'Paper 1 Question 5 — Creative writing (40 marks)',
+    title: 'Paper 1 Question 5 - Creative writing (40 marks)',
   },
 ]
 
 const paper1Technique = [
   {
     slug: 'paper-1-descriptive-writing-grade-9-guide',
-    title: 'Paper 1 descriptive writing — Grade 9 guide',
+    title: 'Paper 1 descriptive writing - Grade 9 guide',
   },
   {
     slug: 'paper-1-narrative-writing-grade-9-guide',
-    title: 'Paper 1 narrative writing — Grade 9 guide',
+    title: 'Paper 1 narrative writing - Grade 9 guide',
   },
   { slug: 'paper-1-time-management-60-minutes', title: 'Paper 1 time management in 60 minutes' },
   {
@@ -62,37 +62,37 @@ const paper1Technique = [
 const paper2Questions = [
   {
     slug: 'aqa-language-paper-2-question-1-true-false',
-    title: 'Paper 2 Question 1 — True/false (4 marks)',
+    title: 'Paper 2 Question 1 - True/false (4 marks)',
   },
   {
     slug: 'aqa-language-paper-2-question-2-summary',
-    title: 'Paper 2 Question 2 — Summary (8 marks)',
+    title: 'Paper 2 Question 2 - Summary (8 marks)',
   },
   {
     slug: 'aqa-language-paper-2-question-3-language',
-    title: 'Paper 2 Question 3 — Language (12 marks)',
+    title: 'Paper 2 Question 3 - Language (12 marks)',
   },
   {
     slug: 'aqa-language-paper-2-question-4-comparison',
-    title: 'Paper 2 Question 4 — Comparison (16 marks)',
+    title: 'Paper 2 Question 4 - Comparison (16 marks)',
   },
   {
     slug: 'aqa-language-paper-2-question-5-transactional',
-    title: 'Paper 2 Question 5 — Transactional writing (40 marks)',
+    title: 'Paper 2 Question 5 - Transactional writing (40 marks)',
   },
 ]
 
 const paper2Technique = [
   {
     slug: 'paper-2-article-writing-grade-9-guide',
-    title: 'Paper 2 article writing — Grade 9 guide',
+    title: 'Paper 2 article writing - Grade 9 guide',
   },
-  { slug: 'paper-2-letter-writing-grade-9-guide', title: 'Paper 2 letter writing — Grade 9 guide' },
-  { slug: 'paper-2-speech-writing-grade-9-guide', title: 'Paper 2 speech writing — Grade 9 guide' },
+  { slug: 'paper-2-letter-writing-grade-9-guide', title: 'Paper 2 letter writing - Grade 9 guide' },
+  { slug: 'paper-2-speech-writing-grade-9-guide', title: 'Paper 2 speech writing - Grade 9 guide' },
   { slug: 'paper-2-summary-question-step-by-step', title: 'Paper 2 summary question step-by-step' },
   {
     slug: 'paper-2-comparison-question-phrases-to-use',
-    title: 'Paper 2 comparison question — phrases to use',
+    title: 'Paper 2 comparison question - phrases to use',
   },
 ]
 

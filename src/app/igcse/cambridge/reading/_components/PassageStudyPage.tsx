@@ -10,13 +10,7 @@ import {
   Info,
   Lightbulb,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
@@ -51,7 +45,7 @@ export interface VocabularyItem {
 }
 
 export interface PassageStudyPageProps {
-  /** e.g. "Jane Eyre — Opening Chapter" */
+  /** e.g. "Jane Eyre - Opening Chapter" */
   title: string
   /** e.g. "Charlotte Brontë" */
   author: string
@@ -95,20 +89,13 @@ export function PassageStudyPage({
   summaryTask,
   vocabulary,
 }: PassageStudyPageProps) {
-  const totalComprehensionMarks = comprehension.reduce(
-    (sum, q) => sum + q.marks,
-    0,
-  )
+  const totalComprehensionMarks = comprehension.reduce((sum, q) => sum + q.marks, 0)
 
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ──────────────────────────────────────────────── */}
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading passages
         </Button>
@@ -131,9 +118,7 @@ export function PassageStudyPage({
               {difficulty}
             </Badge>
           </div>
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            {title}
-          </h1>
+          <h1 className="text-display-sm font-heading text-foreground sm:text-display">{title}</h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             {author} &middot; {publication}
           </p>
@@ -150,15 +135,11 @@ export function PassageStudyPage({
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            The Passage
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">The Passage</h2>
         </div>
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-heading-sm font-heading leading-tight">
-              {title}
-            </CardTitle>
+            <CardTitle className="text-heading-sm font-heading leading-tight">{title}</CardTitle>
             <CardDescription className="text-body-xs">
               From {publication}. Public domain text.
             </CardDescription>
@@ -187,9 +168,7 @@ export function PassageStudyPage({
               Comprehension Questions
             </h2>
           </div>
-          <Badge variant="secondary">
-            Reading &middot; {totalComprehensionMarks} marks
-          </Badge>
+          <Badge variant="secondary">Reading &middot; {totalComprehensionMarks} marks</Badge>
         </div>
 
         <div className="space-y-4">
@@ -214,9 +193,7 @@ export function PassageStudyPage({
                     <Quote className="size-3.5" />
                     Model answer
                   </div>
-                  <p className="text-body-sm text-foreground/90 leading-relaxed">
-                    {q.modelAnswer}
-                  </p>
+                  <p className="text-body-sm text-foreground/90 leading-relaxed">{q.modelAnswer}</p>
                 </div>
                 <div className="rounded-xl border border-border/60 bg-primary/5 p-4">
                   <div className="mb-2 flex items-center gap-2 text-body-xs font-semibold uppercase tracking-wider text-primary">
@@ -238,9 +215,7 @@ export function PassageStudyPage({
         <div className="mb-4 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <Feather className="size-5 text-primary" />
-            <h2 className="text-heading-lg font-heading text-foreground">
-              Language Analysis
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">Language Analysis</h2>
           </div>
           <Badge variant="secondary">Language &middot; {languageTask.marks} marks</Badge>
         </div>
@@ -301,9 +276,7 @@ export function PassageStudyPage({
               Summary Task (Paper 1 Q3)
             </h2>
           </div>
-          <Badge variant="secondary">
-            Reading + Summary &middot; {summaryTask.marks} marks
-          </Badge>
+          <Badge variant="secondary">Reading + Summary &middot; {summaryTask.marks} marks</Badge>
         </div>
 
         <Card>
@@ -339,18 +312,13 @@ export function PassageStudyPage({
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Lightbulb className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Key Vocabulary
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Key Vocabulary</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
             <dl className="grid gap-4 sm:grid-cols-2">
               {vocabulary.map((item) => (
-                <div
-                  key={item.term}
-                  className="rounded-xl border border-border/60 bg-muted/30 p-4"
-                >
+                <div key={item.term} className="rounded-xl border border-border/60 bg-muted/30 p-4">
                   <dt className="font-serif text-body-sm font-semibold italic text-foreground">
                     {item.term}
                   </dt>
@@ -366,15 +334,9 @@ export function PassageStudyPage({
 
       {/* ── Footer CTA ─────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 text-center sm:p-8">
-        <p className="text-body-sm text-muted-foreground">
-          Ready for another passage?
-        </p>
+        <p className="text-body-sm text-muted-foreground">Ready for another passage?</p>
         <div className="mt-4">
-          <Button
-            variant="default"
-            size="sm"
-            render={<Link href="/igcse/cambridge/reading" />}
-          >
+          <Button variant="default" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
             <ArrowLeft className="size-3.5" />
             Back to all passages
           </Button>

@@ -10,9 +10,9 @@ const SITE_URL = 'https://theenglishhub.app'
 const INDEX_PATH = '/resources/teaching/printables'
 const INDEX_URL = `${SITE_URL}${INDEX_PATH}`
 
-const PAGE_TITLE = 'GCSE & IGCSE English printables — The English Hub'
+const PAGE_TITLE = 'GCSE & IGCSE English printables - The English Hub'
 const PAGE_DESCRIPTION =
-  'Free GCSE and IGCSE English printables for teachers and students — quote banks, essay plans, comparison grids, mark-scheme decoders, and more. Drop your email to be notified when each one lands.'
+  'Free GCSE and IGCSE English printables for teachers and students - quote banks, essay plans, comparison grids, mark-scheme decoders, and more. Drop your email to be notified when each one lands.'
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -56,7 +56,7 @@ function PrintableCard({
     <Link
       href={href}
       className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
-      aria-label={`${printable.title} — ${comingSoon ? comingLabel : availableLabel}`}
+      aria-label={`${printable.title} - ${comingSoon ? comingLabel : availableLabel}`}
     >
       <Card className="h-full transition-colors duration-200 group-hover:border-primary/40">
         <CardHeader>

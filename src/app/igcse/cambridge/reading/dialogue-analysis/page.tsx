@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Dialogue Analysis — Reading Practice Framework — The English Hub',
+    title: 'Dialogue Analysis - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Dialogue Analysis — Reading Practice Framework',
+  title: 'Dialogue Analysis - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -212,7 +212,7 @@ export default async function DialogueAnalysisPage() {
                 <strong>Sentence 2:</strong> The topic on the surface of the conversation.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> What the dialogue really reveals about the
+                <strong>Sentences 3-4:</strong> What the dialogue really reveals about the
                 relationship.
               </li>
               <li>

@@ -148,7 +148,7 @@ export default function JoinCodesPage() {
         setClasses(data.classes ?? [])
       }
     } catch {
-      // Non-critical — dropdown stays empty
+      // Non-critical - dropdown stays empty
     }
   }, [])
 
@@ -240,7 +240,7 @@ export default function JoinCodesPage() {
         await fetchCodes()
       }
     } catch {
-      // Silent — table will stay as-is
+      // Silent - table will stay as-is
     } finally {
       setActionLoading(null)
     }
@@ -372,7 +372,7 @@ export default function JoinCodesPage() {
       </Card>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
-        {/* Active codes table — takes up 3/5 on large screens */}
+        {/* Active codes table - takes up 3/5 on large screens */}
         <div className="lg:col-span-3 space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-base font-semibold text-white">
@@ -563,7 +563,7 @@ export default function JoinCodesPage() {
           )}
         </div>
 
-        {/* Create form — takes up 2/5 on large screens */}
+        {/* Create form - takes up 2/5 on large screens */}
         <div className="lg:col-span-2">
           <Card className="border-zinc-700 bg-zinc-900">
             <CardHeader>

@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Character Creation — Cambridge IGCSE Narrative Writing',
+    title: 'Character Creation - Cambridge IGCSE Narrative Writing',
     description:
       'Build rounded characters fast in a Cambridge IGCSE short story. Show-don’t-tell, the iceberg principle, contradictions and the two-sentence sketch.',
   },
-  title: 'Character Creation — Cambridge IGCSE Narrative Writing',
+  title: 'Character Creation - Cambridge IGCSE Narrative Writing',
   description:
     'Build rounded characters fast in a Cambridge IGCSE short story. Show-don’t-tell, the iceberg principle, contradictions and the two-sentence sketch.',
   alternates: {
@@ -72,7 +72,7 @@ export default async function CharacterPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             In 450 words you cannot describe a character from the outside in. You have to let them
-            act, speak and choose — and the reader will fill in the rest.
+            act, speak and choose - and the reader will fill in the rest.
           </p>
         </div>
       </section>
@@ -85,7 +85,7 @@ export default async function CharacterPage() {
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
             Hemingway called it the iceberg theory: what the reader sees on the page is only the
-            tip. The mass of the character — background, regrets, desires — lives beneath the
+            tip. The mass of the character - background, regrets, desires - lives beneath the
             surface. The writer has to know it; the reader only has to feel it.
           </p>
           <p>Before you write, answer three questions for your main character:</p>
@@ -114,7 +114,7 @@ export default async function CharacterPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Show, don’t tell</h2>
         </div>
         <p className="mb-4 max-w-3xl text-body-sm text-muted-foreground">
-          The single most repeated piece of advice in narrative writing — and the one examiners most
+          The single most repeated piece of advice in narrative writing - and the one examiners most
           frequently note is missing from the middle band. Replace a label with a specific action,
           object or gesture.
         </p>
@@ -208,7 +208,7 @@ export default async function CharacterPage() {
         <div className="mt-4 rounded-lg border border-border/60 bg-primary/5 p-4">
           <p className="text-body-sm italic text-foreground">
             “Mrs Hadley wore the same grey cardigan every day of the year, a cardigan the colour of
-            a pigeon she had clearly never cared for. When she laughed — which was rarely — she
+            a pigeon she had clearly never cared for. When she laughed - which was rarely - she
             laughed the way other people sneeze, suddenly and with some embarrassment.”
           </p>
         </div>

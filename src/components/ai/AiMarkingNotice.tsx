@@ -1,11 +1,11 @@
 'use client'
 
 /**
- * AiMarkingNotice — accurate AI-generated-result disclosure for the
+ * AiMarkingNotice - accurate AI-generated-result disclosure for the
  * marking results surface (EU AI Act Art 13 / Art 50; GDPR transparency).
  *
  * The generic <AiGeneratedNotice> renders the shared `ai_label.*` copy
- * "Made with AI · Reviewed by humans" — true for human-edited study
+ * "Made with AI · Reviewed by humans" - true for human-edited study
  * content, but FALSE for B2C AI marking (no human reviews the mark
  * before the student, who is often a minor, sees it). Showing that
  * claim on a predicted grade is a live misrepresentation.

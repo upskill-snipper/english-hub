@@ -13,10 +13,10 @@ export const GRADE_SYSTEMS: Record<ExamBoard, GradeSystem> = {
   'cambridge-0475': '9-1',
   'edexcel-igcse': '9-1',
   'edexcel-igcse-lang': '9-1',
-  // IAL (International A-Level) uses A*-E — A*/A/B/C/D/E, no F or G.
+  // IAL (International A-Level) uses A*-E - A*/A/B/C/D/E, no F or G.
   // U below E = ungraded.
   'ial-edexcel': 'A*-E',
-  // UK A-Level — A*-E
+  // UK A-Level - A*-E
   'aqa-a-level': 'A*-E',
   'edexcel-a-level': 'A*-E',
   'ocr-a-level': 'A*-E',
@@ -39,7 +39,7 @@ export function gradeDisplayLabel(
   return gradeNineToLetterEquivalent(grade)
 }
 
-// Approximate grade boundaries (% of total marks) — update with real data
+// Approximate grade boundaries (% of total marks) - update with real data
 export const GRADE_BOUNDARIES: Record<
   ExamBoard,
   Partial<
@@ -129,7 +129,7 @@ export function gradeNineToLetterEquivalent(
 }
 
 /**
- * GCSE 9-1 → IAL / UK A-Level A*-E mapping. A-Level has no F/G — below
+ * GCSE 9-1 → IAL / UK A-Level A*-E mapping. A-Level has no F/G - below
  * the E pass threshold is "U" (ungraded). A*-E is compressed upward vs
  * A*-G because it only reports passing grades.
  *   9 = A*   8 = A    7 = B    6 = C    5 = C (strong-pass C)
@@ -185,7 +185,7 @@ export function gradeLetterToNineOneEquivalent(
 
 /**
  * Board-specific mark boundary summary for Literature paper headline boundaries.
- * Values are percentages of total marks — approximate, for student-facing guidance only.
+ * Values are percentages of total marks - approximate, for student-facing guidance only.
  */
 export function getBoundaryForGrade(
   board: ExamBoard | null,
@@ -198,7 +198,7 @@ export function getBoundaryForGrade(
   if (system === '9-1') {
     return { label: `Grade ${grade}`, percent: GRADE_BOUNDARIES[board][grade] ?? null }
   }
-  // Cambridge 0500 A*-G — map 9-1 target to nearest letter
+  // Cambridge 0500 A*-G - map 9-1 target to nearest letter
   const letter = gradeNineToLetterEquivalent(grade)
   return {
     label: `Grade ${letter}`,

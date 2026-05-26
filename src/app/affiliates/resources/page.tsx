@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import AffiliateResources from '@/components/affiliates/AffiliateResources'
 import { tMany } from '@/lib/i18n/t'
 
-// 2026-05-13: metadata wired to i18n — title + description come from
+// 2026-05-13: metadata wired to i18n - title + description come from
 // `affiliates.resources.meta.*` keys so AR mode serves Khaleeji copy.
 export async function generateMetadata(): Promise<Metadata> {
   const [title, description] = await tMany([
@@ -39,12 +39,12 @@ export default async function AffiliateResourcesPage() {
     .eq('user_id', user.id)
     .maybeSingle()
 
-  // No row at all — punt them to the public enrolment page
+  // No row at all - punt them to the public enrolment page
   if (!account) {
     redirect('/affiliates#apply')
   }
 
-  // Paused / pending / terminated — back to /affiliates so they see the
+  // Paused / pending / terminated - back to /affiliates so they see the
   // appropriate banner. Active + approved affiliates can use the resources.
   const isUsable = account.status === 'active' || account.status === 'approved'
   if (!isUsable) {

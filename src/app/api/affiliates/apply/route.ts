@@ -29,7 +29,10 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -37,17 +40,14 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json()
     } catch {
-      return NextResponse.json(
-        { error: 'Invalid request body' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
     // ── Validation ──────────────────────────────────────────
     const errors: string[] = []
 
     if (!body.full_name || body.full_name.length < 2 || body.full_name.length > 100) {
-      errors.push('Full name must be 2–100 characters')
+      errors.push('Full name must be 2-100 characters')
     }
 
     if (!body.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
@@ -71,15 +71,11 @@ export async function POST(request: NextRequest) {
       body.audience_description.length < 20 ||
       body.audience_description.length > 500
     ) {
-      errors.push('Audience description must be 20–500 characters')
+      errors.push('Audience description must be 20-500 characters')
     }
 
-    if (
-      !body.content_plan ||
-      body.content_plan.length < 20 ||
-      body.content_plan.length > 500
-    ) {
-      errors.push('Content plan must be 20–500 characters')
+    if (!body.content_plan || body.content_plan.length < 20 || body.content_plan.length > 500) {
+      errors.push('Content plan must be 20-500 characters')
     }
 
     if (!body.understands_disclosure) errors.push('Disclosure acknowledgement is required')
@@ -121,8 +117,11 @@ export async function POST(request: NextRequest) {
     if (existing) {
       // Return a generic message to prevent email enumeration
       return NextResponse.json(
-        { error: 'An application with this email has already been submitted. If you believe this is an error, please contact support.' },
-        { status: 400 }
+        {
+          error:
+            'An application with this email has already been submitted. If you believe this is an error, please contact support.',
+        },
+        { status: 400 },
       )
     }
 
@@ -154,7 +153,7 @@ export async function POST(request: NextRequest) {
       console.error('Failed to insert affiliate application:', insertError)
       return NextResponse.json(
         { error: 'Failed to submit application. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -163,9 +162,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Affiliate application error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

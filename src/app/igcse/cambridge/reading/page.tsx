@@ -23,7 +23,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) — The English Hub',
+    title: 'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) - The English Hub',
     description:
       'Ten reading practice frameworks for Cambridge IGCSE First Language English Paper 1. Each guide teaches you how to approach a type of passage and links to free public-domain texts on Project Gutenberg.',
   },
@@ -237,7 +237,7 @@ export default async function ReadingHubPage() {
           <li>Pick a framework that matches the type of passage you want to practise.</li>
           <li>
             Follow one of the three Project Gutenberg links and read a chunk of roughly 600 to 900
-            words — about the length of a real Paper 1 extract.
+            words - about the length of a real Paper 1 extract.
           </li>
           <li>
             Work through the six comprehension questions without looking back at the passage more
@@ -253,7 +253,7 @@ export default async function ReadingHubPage() {
         </ol>
         <p className="mt-4 rounded-lg bg-muted p-4 text-body-sm text-muted-foreground">
           Every text listed on these pages is in the public domain in the United States and hosted
-          by Project Gutenberg. Copyright status may vary in your country — always check before
+          by Project Gutenberg. Copyright status may vary in your country - always check before
           redistributing.
         </p>
       </section>

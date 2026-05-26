@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
   Compass,
@@ -64,10 +64,10 @@ const STEPS: Step[] = [
       'Can you summarise the poem in one sentence?',
       'What is the literal subject? What is the deeper theme?',
       'Is there a narrative -- does something happen or change?',
-      'What is the speaker\'s attitude towards the subject?',
+      "What is the speaker's attitude towards the subject?",
     ],
     example:
-      'Dickinson\'s poem is literally about a bird, but its deeper subject is hope itself -- personified, persistent, and asking nothing in return. The meaning lives in the extended metaphor.',
+      "Dickinson's poem is literally about a bird, but its deeper subject is hope itself -- personified, persistent, and asking nothing in return. The meaning lives in the extended metaphor.",
   },
   {
     number: '03',
@@ -103,7 +103,7 @@ const STEPS: Step[] = [
       'Is there a volta -- a turning point -- and where does it fall?',
     ],
     example:
-      'Dickinson\'s poem uses three quatrains with her trademark dashes -- breaks that force pause and hesitation, mirroring the fragile persistence of hope. The ABCB rhyme gives a ballad-like simplicity.',
+      "Dickinson's poem uses three quatrains with her trademark dashes -- breaks that force pause and hesitation, mirroring the fragile persistence of hope. The ABCB rhyme gives a ballad-like simplicity.",
   },
   {
     number: '05',
@@ -145,9 +145,7 @@ export default function UnseenPoetryApproachPage() {
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                The 5-Step Approach
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">The 5-Step Approach</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 Edexcel IGCSE Literature
               </Badge>
@@ -171,20 +169,17 @@ export default function UnseenPoetryApproachPage() {
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
           The most common mistake in unseen poetry is diving straight into writing. Students who
-          spend just 12-15 minutes reading and annotating almost always outperform those who
-          start writing in minute two. These five steps give you a repeatable process: the same
-          reading strategy works on any poem, from a Wordsworth sonnet to a contemporary free
-          verse piece. Follow the steps in order -- they build on each other.
+          spend just 12-15 minutes reading and annotating almost always outperform those who start
+          writing in minute two. These five steps give you a repeatable process: the same reading
+          strategy works on any poem, from a Wordsworth sonnet to a contemporary free verse piece.
+          Follow the steps in order -- they build on each other.
         </p>
       </section>
 
       {/* ── Steps ───────────────────────────────────────────────── */}
       <section className="space-y-4">
         {STEPS.map((step) => (
-          <div
-            key={step.number}
-            className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6"
-          >
+          <div key={step.number} className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
             <div className="mb-4 flex items-start gap-4">
               <div
                 className={`flex size-12 shrink-0 items-center justify-center rounded-xl ${step.bgColour}`}
@@ -200,9 +195,7 @@ export default function UnseenPoetryApproachPage() {
                     {step.time}
                   </Badge>
                 </div>
-                <h3 className="text-heading-md font-heading text-foreground mt-1">
-                  {step.title}
-                </h3>
+                <h3 className="text-heading-md font-heading text-foreground mt-1">{step.title}</h3>
               </div>
             </div>
 
@@ -248,7 +241,7 @@ export default function UnseenPoetryApproachPage() {
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            'A one-sentence summary of the poem\'s meaning',
+            "A one-sentence summary of the poem's meaning",
             'At least five annotated words or phrases',
             'An identified semantic field or dominant image',
             'A note on form and structure (stanzas, rhyme, volta)',
@@ -273,8 +266,8 @@ export default function UnseenPoetryApproachPage() {
           Now learn to compare two poems
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          The unseen poetry question asks you to compare. Once you can read a single poem
-          well, the next skill is holding two poems in mind at once.
+          The unseen poetry question asks you to compare. Once you can read a single poem well, the
+          next skill is holding two poems in mind at once.
         </p>
         <Button
           variant="default"

@@ -5,7 +5,7 @@
 // Re-skinned onto the cinematic "glass + Recharts" dataviz layer
 // (GlassPanel / RadialScore / RankBars / TrendArea) to match the school
 // analytics surface. Data fetching, response shape, and every terminal
-// state + its copy are preserved exactly — only the visual layer changed.
+// state + its copy are preserved exactly - only the visual layer changed.
 // ──────────────────────────────────────────────────────────────────────────────
 
 import { useEffect, useMemo, useState } from 'react'
@@ -24,7 +24,7 @@ import {
   SERIES,
 } from '@/components/dataviz'
 
-// The parent dashboard is EN — copy is written inline (matching the
+// The parent dashboard is EN - copy is written inline (matching the
 // literal-string convention used elsewhere on the CEFR surfaces) rather
 // than added to the i18n dictionary.
 
@@ -84,7 +84,7 @@ function CardShell({ subtitle, children }: { subtitle: string; children: React.R
   )
 }
 
-/** Centred dashed-border note — preserves the original empty-state look. */
+/** Centred dashed-border note - preserves the original empty-state look. */
 function NoteCard({ children }: { children: React.ReactNode }) {
   return (
     <p className="rounded-xl border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
@@ -162,7 +162,7 @@ export function CEFRProgressCard() {
   const { childName, summary } = state.data
   const firstName = childName.split(' ')[0] || childName
 
-  // Not migrated yet — friendly "will activate" notice.
+  // Not migrated yet - friendly "will activate" notice.
   if (!summary.available) {
     return (
       <CardShell subtitle="Placement test progress">
@@ -237,7 +237,7 @@ export function CEFRProgressCard() {
             ) : (
               <div className="text-center sm:text-right">
                 <PanelEyebrow>Composite</PanelEyebrow>
-                <p className="font-heading text-2xl font-extrabold text-primary">—</p>
+                <p className="font-heading text-2xl font-extrabold text-primary">-</p>
                 {latest.confidence != null && (
                   <p className="text-xs text-muted-foreground">{latest.confidence}% confidence</p>
                 )}
@@ -246,7 +246,7 @@ export function CEFRProgressCard() {
           </div>
         )}
 
-        {/* Per-skill breakdown (weakest first — skillAverages is pre-sorted) */}
+        {/* Per-skill breakdown (weakest first - skillAverages is pre-sorted) */}
         {skillRows.length > 0 && (
           <div>
             <div className="mb-3 flex items-center gap-2">
@@ -263,7 +263,7 @@ export function CEFRProgressCard() {
           </div>
         )}
 
-        {/* Placement history — use the over-time trend when available,
+        {/* Placement history - use the over-time trend when available,
             otherwise fall back to the single latest placement. */}
         {(summary.trend.length > 0 || latest) && (
           <div className="border-t border-border/50 pt-5">
@@ -314,7 +314,7 @@ export function CEFRProgressCard() {
                       <p className="text-xs text-muted-foreground">{formatDate(latest.takenAt)}</p>
                     </div>
                     <span className="shrink-0 text-sm font-bold text-foreground">
-                      {latest.compositePct != null ? `${latest.compositePct}%` : '—'}
+                      {latest.compositePct != null ? `${latest.compositePct}%` : '-'}
                     </span>
                   </li>
                 </ul>

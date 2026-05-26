@@ -493,14 +493,14 @@ export default function PicnicAtHangingRockPage() {
                   'Miranda tells Sara: "You must learn to love someone else apart from me, Sara."',
                 ],
                 quotation:
-                  '"Everything begins and ends at exactly the right time and place." — Miranda',
+                  '"Everything begins and ends at exactly the right time and place." - Miranda',
               },
               {
                 chapter: 'Chapter 2',
                 title: 'Arrival at the Rock',
                 events: [
                   'The party arrives at Hanging Rock by horse-drawn drag, driven by Mr Hussey.',
-                  'The ancient volcanic formation is described in geological detail — over a million years old.',
+                  'The ancient volcanic formation is described in geological detail - over a million years old.',
                   'The girls eat lunch in the shade; the atmosphere is drowsy and dreamlike.',
                   "Miss McCraw discourses on the Rock's geological age and formation.",
                 ],
@@ -512,7 +512,7 @@ export default function PicnicAtHangingRockPage() {
                 title: 'The Ascent',
                 events: [
                   'Miranda, Marion, Irma, and Edith set off to explore the upper slopes after lunch.',
-                  'The girls remove gloves and loosen their corsets in the heat — a symbolic shedding of civilisation.',
+                  'The girls remove gloves and loosen their corsets in the heat - a symbolic shedding of civilisation.',
                   'The four cross a creek and begin to climb. The atmosphere grows increasingly strange.',
                   'All watches stop at exactly twelve noon.',
                 ],
@@ -529,10 +529,10 @@ export default function PicnicAtHangingRockPage() {
                   'By evening, Miranda, Marion, Irma, and Miss McCraw have vanished. A search begins.',
                 ],
                 quotation:
-                  '"Edith screamed. Again and again... \'A dreadful thing — like a cloud.\'"',
+                  '"Edith screamed. Again and again... \'A dreadful thing - like a cloud.\'"',
               },
               {
-                chapter: 'Chapters 5–8',
+                chapter: 'Chapters 5-8',
                 title: 'The Search & Aftermath',
                 events: [
                   'Police and volunteers search the Rock for days without finding any trace.',
@@ -543,19 +543,19 @@ export default function PicnicAtHangingRockPage() {
                 quotation: '"The search goes on... the Rock keeps its secret well."',
               },
               {
-                chapter: 'Chapters 9–12',
+                chapter: 'Chapters 9-12',
                 title: 'Finding Irma',
                 events: [
                   'Michael, assisted by Albert, conducts his own obsessive search of the Rock.',
                   'Michael collapses from exhaustion but is found alongside the unconscious Irma.',
-                  'Irma is alive but has no memory of what happened — her corset is missing but she is unharmed.',
-                  "Albert discovers that Irma's gold watch and corset are missing — mystery deepens.",
+                  'Irma is alive but has no memory of what happened - her corset is missing but she is unharmed.',
+                  "Albert discovers that Irma's gold watch and corset are missing - mystery deepens.",
                 ],
                 quotation:
                   '"She was lying across a slab of rock like a broken doll... she remembered nothing."',
               },
               {
-                chapter: 'Chapters 13–15',
+                chapter: 'Chapters 13-15',
                 title: "The School's Decline",
                 events: [
                   'Irma visits the school to say goodbye; the remaining girls mob her hysterically, demanding answers.',
@@ -567,10 +567,10 @@ export default function PicnicAtHangingRockPage() {
                   '"The girls closed in... \'Tell us, Irma! Tell us what happened on the Rock!\'"',
               },
               {
-                chapter: 'Chapters 16–18',
+                chapter: 'Chapters 16-18',
                 title: "Sara's Death & Mrs Appleyard's End",
                 events: [
-                  'Sara is found dead — officially reported as having fallen from the roof, but foul play is implied.',
+                  'Sara is found dead - officially reported as having fallen from the roof, but foul play is implied.',
                   'It is revealed that Albert and Sara are long-lost siblings, separated by the orphanage system.',
                   'Mrs Appleyard is found dead at the base of Hanging Rock, an apparent suicide.',
                   'The College closes permanently. The mystery of the disappearances is never solved.',
@@ -814,7 +814,7 @@ export default function PicnicAtHangingRockPage() {
                         {tr(`Textual Knowledge`)}
                       </td>
                       <td className="py-2.5">
-                        Show detailed knowledge and understanding of the text — support points with
+                        Show detailed knowledge and understanding of the text - support points with
                         specific references and quotations.
                       </td>
                     </tr>
@@ -832,7 +832,7 @@ export default function PicnicAtHangingRockPage() {
                         Interpretation
                       </td>
                       <td className="py-2.5">
-                        Demonstrate understanding of the relationship between texts and contexts —
+                        Demonstrate understanding of the relationship between texts and contexts -
                         historical, social, cultural, and literary.
                       </td>
                     </tr>
@@ -842,7 +842,7 @@ export default function PicnicAtHangingRockPage() {
                       </td>
                       <td className="py-2.5">
                         Develop a personal response, showing engagement with and interpretation of
-                        the text — explore alternative readings where appropriate.
+                        the text - explore alternative readings where appropriate.
                       </td>
                     </tr>
                   </tbody>
@@ -879,7 +879,7 @@ export default function PicnicAtHangingRockPage() {
                     Lindsay presents Hanging Rock not merely as a backdrop but as an active, almost
                     sentient force that drives the narrative&rsquo;s central crisis.
                     <span className="text-xs text-primary ml-1">
-                      [Textual Knowledge — knowledge of text]
+                      [Textual Knowledge - knowledge of text]
                     </span>{' '}
                     The Rock is described as having existed for &ldquo;a million years,&rdquo; a
                     phrase whose deliberate repetition throughout the novel emphasises the vast
@@ -888,7 +888,7 @@ export default function PicnicAtHangingRockPage() {
                     its own unfathomable secrets&rdquo; &mdash; grants it agency and consciousness,
                     transforming setting into character.
                     <span className="text-xs text-primary ml-1">
-                      [Writer's Methods — language analysis: repetition, personification]
+                      [Writer's Methods - language analysis: repetition, personification]
                     </span>
                   </p>
                   <p>
@@ -899,7 +899,7 @@ export default function PicnicAtHangingRockPage() {
                     refusal to yield its secrets can be read as the land itself resisting colonial
                     possession.
                     <span className="text-xs text-primary ml-1">
-                      [Interpretation — literary and historical context]
+                      [Interpretation - literary and historical context]
                     </span>
                   </p>
                   <p>
@@ -911,7 +911,7 @@ export default function PicnicAtHangingRockPage() {
                     catalyses. The Rock provides the conditions for tragedy, but it is the
                     characters&rsquo; responses that give the novel its emotional power.
                     <span className="text-xs text-primary ml-1">
-                      [Personal Response — personal response, alternative interpretation]
+                      [Personal Response - personal response, alternative interpretation]
                     </span>
                   </p>
                 </div>

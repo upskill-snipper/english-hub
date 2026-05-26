@@ -1,8 +1,8 @@
-// Auto-generated analysis page registry — do not edit by hand.
+// Auto-generated analysis page registry - do not edit by hand.
 // Re-generate with: node scripts/generate-analysis-data.js
 //
 // This file maps slug paths to metadata for the catch-all [...slug] route.
-// Content is rendered on-demand via ISR — no static pre-rendering at build time.
+// Content is rendered on-demand via ISR - no static pre-rendering at build time.
 
 export type AnalysisPageEntry = {
   /** URL slug segments, e.g. ['macbeth', 'fair-is-foul-and-foul-is-fair'] */
@@ -383,182 +383,182 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['christmas-carol', 'are-there-no-prisons'],
-    title: '"Are there no prisons?" — A Christmas Carol Quote Analysis',
+    title: '"Are there no prisons?" - A Christmas Carol Quote Analysis',
     description:
       'GCSE marker analysis of Scrooge\'s chilling question "Are there no prisons?" in A Christmas Carol. Language, context, and Malthusian meaning.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'bah-humbug-meaning'],
-    title: '"Bah! Humbug!" — Meaning and Analysis in A Christmas Carol',
+    title: '"Bah! Humbug!" - Meaning and Analysis in A Christmas Carol',
     description:
       'GCSE analysis of Scrooge\'s famous "Bah! Humbug!" in A Christmas Carol. Meaning, etymology, marker notes on language and character.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'bob-cratchit-character-analysis'],
-    title: 'Bob Cratchit Character Analysis — A Christmas Carol',
+    title: 'Bob Cratchit Character Analysis - A Christmas Carol',
     description:
       "GCSE character analysis of Bob Cratchit in A Christmas Carol. Marker notes on his loyalty, poverty, family and Dickens's political purpose.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'decrease-the-surplus-population'],
-    title: '"Decrease the surplus population" — Quote Analysis',
+    title: '"Decrease the surplus population" - Quote Analysis',
     description:
       'GCSE analysis of Scrooge\'s line "decrease the surplus population" in A Christmas Carol. Marker explanation of language, Malthus and the novella\'s moral lesson.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'dickens-victorian-context'],
-    title: 'Dickens and Victorian Context — A Christmas Carol',
+    title: 'Dickens and Victorian Context - A Christmas Carol',
     description:
       "GCSE marker guide to the Victorian context of A Christmas Carol. The Poor Law, Malthus, Dickens's life and Christmas in 1843.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'family-theme-analysis'],
-    title: 'Family Theme — A Christmas Carol Analysis',
+    title: 'Family Theme - A Christmas Carol Analysis',
     description:
       "GCSE marker analysis of the theme of family in A Christmas Carol. The Cratchits, Fred, Fan and Dickens's vision of love over wealth.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'fred-character-analysis'],
-    title: 'Fred Character Analysis — A Christmas Carol',
+    title: 'Fred Character Analysis - A Christmas Carol',
     description:
       "GCSE marker character analysis of Fred, Scrooge's nephew, in A Christmas Carol. His role as the voice of Christmas and foil to Scrooge.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'god-bless-us-every-one'],
-    title: '"God bless us, every one!" — A Christmas Carol Quote Analysis',
+    title: '"God bless us, every one!" - A Christmas Carol Quote Analysis',
     description:
       'GCSE marker analysis of Tiny Tim\'s final line "God bless us, every one!" in A Christmas Carol. Language, form and theological meaning.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'good-old-fezziwig'],
-    title: '"Good old Fezziwig" — A Christmas Carol Quote Analysis',
+    title: '"Good old Fezziwig" - A Christmas Carol Quote Analysis',
     description:
       "GCSE marker analysis of Fezziwig in A Christmas Carol. Language, structure and Dickens's model of the benevolent employer.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'his-own-heart-laughed'],
-    title: '"His own heart laughed" — A Christmas Carol Quote Analysis',
+    title: '"His own heart laughed" - A Christmas Carol Quote Analysis',
     description:
       'GCSE marker analysis of the line "his own heart laughed" in Stave Five of A Christmas Carol. Language, structure and redemption.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'how-to-write-grade-9-christmas-carol-essay'],
-    title: 'How to Write a Grade 9 A Christmas Carol Essay — GCSE Guide',
+    title: 'How to Write a Grade 9 A Christmas Carol Essay - GCSE Guide',
     description:
       'Step-by-step marker guide to writing a Grade 9 GCSE essay on A Christmas Carol. Structure, language analysis and context tips.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'i-am-as-light-as-a-feather'],
-    title: '"I am as light as a feather" — Quote Analysis',
+    title: '"I am as light as a feather" - Quote Analysis',
     description:
       'GCSE marker analysis of Scrooge\'s ecstatic simile "I am as light as a feather" in A Christmas Carol. Language and redemption.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'i-wear-the-chain-i-forged-in-life'],
-    title: '"I wear the chain I forged in life" — Quote Analysis',
+    title: '"I wear the chain I forged in life" - Quote Analysis',
     description:
       'GCSE marker analysis of Marley\'s quotation "I wear the chain I forged in life" in A Christmas Carol. Metaphor, language and Victorian context.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'ignorance-and-want-analysis'],
-    title: 'Ignorance and Want — A Christmas Carol Analysis',
+    title: 'Ignorance and Want - A Christmas Carol Analysis',
     description:
       'GCSE marker analysis of the allegorical children Ignorance and Want in Stave Three of A Christmas Carol. Symbolism, language and Victorian context.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'jacob-marley-character-analysis'],
-    title: 'Jacob Marley Character Analysis — A Christmas Carol',
+    title: 'Jacob Marley Character Analysis - A Christmas Carol',
     description:
       "GCSE marker analysis of Jacob Marley in A Christmas Carol. His ghost, chain, warning and role as Scrooge's double.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'mankind-was-my-business'],
-    title: '"Mankind was my business" — A Christmas Carol Quote Analysis',
+    title: '"Mankind was my business" - A Christmas Carol Quote Analysis',
     description:
       'GCSE marker analysis of Marley\'s declaration "Mankind was my business" in Stave One of A Christmas Carol. Language, context and meaning.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'marleys-ghost-analysis'],
-    title: "Marley's Ghost Analysis — A Christmas Carol Scene Study",
+    title: "Marley's Ghost Analysis - A Christmas Carol Scene Study",
     description:
       "GCSE marker analysis of Marley's Ghost in Stave One of A Christmas Carol. Gothic conventions, language, and the moral warning to Scrooge.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'poverty-theme-analysis'],
-    title: 'Poverty Theme — A Christmas Carol Analysis',
+    title: 'Poverty Theme - A Christmas Carol Analysis',
     description:
       "GCSE marker analysis of the theme of poverty in A Christmas Carol. Dickens's attack on the Poor Law, Malthus and Victorian inequality.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'redemption-theme-analysis'],
-    title: 'Redemption Theme — A Christmas Carol Analysis',
+    title: 'Redemption Theme - A Christmas Carol Analysis',
     description:
       "GCSE marker analysis of the theme of redemption in A Christmas Carol. Dickens's structure, language and moral argument.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'scrooge-character-analysis'],
-    title: 'Scrooge Character Analysis — A Christmas Carol',
+    title: 'Scrooge Character Analysis - A Christmas Carol',
     description:
       'Full GCSE character analysis of Ebenezer Scrooge in A Christmas Carol. Marker-written guide to his transformation, language and symbolism.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'solitary-as-an-oyster'],
-    title: '"Solitary as an oyster" — A Christmas Carol Quote Analysis',
+    title: '"Solitary as an oyster" - A Christmas Carol Quote Analysis',
     description:
       'GCSE analysis of Dickens\'s simile "solitary as an oyster" in A Christmas Carol. Marker explanation of language, form and Victorian context.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'squeezing-wrenching-grasping-scraping'],
-    title: '"Squeezing, wrenching, grasping, scraping" — Quote Analysis',
+    title: '"Squeezing, wrenching, grasping, scraping" - Quote Analysis',
     description:
       'GCSE analysis of Dickens\'s asyndetic list "squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner" in A Christmas Carol. Marker-written language, form and context notes.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'the-chains-he-drew-were-clasped'],
-    title: '"The chain he drew was clasped about his middle" — Analysis',
+    title: '"The chain he drew was clasped about his middle" - Analysis',
     description:
       "GCSE marker analysis of Dickens's Gothic description of Marley's chain in A Christmas Carol. Language, imagery, context.",
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'tiny-tim-blessing'],
-    title: "Tiny Tim's Blessing — A Christmas Carol Scene Analysis",
+    title: "Tiny Tim's Blessing - A Christmas Carol Scene Analysis",
     description:
       'GCSE analysis of Tiny Tim\'s church reflections and Bob Cratchit\'s "crutch without an owner" in A Christmas Carol. Marker-written.',
     category: 'christmas-carol',
   },
   {
     slug: ['christmas-carol', 'tiny-tim-character-analysis'],
-    title: 'Tiny Tim Character Analysis — A Christmas Carol',
+    title: 'Tiny Tim Character Analysis - A Christmas Carol',
     description:
       "GCSE marker character analysis of Tiny Tim in A Christmas Carol. His symbolism, language, disability and Dickens's political use.",
     category: 'christmas-carol',
   },
   {
     slug: ['inspector-calls', 'a-chain-of-events-meaning'],
-    title: 'We are members of one body — meaning',
+    title: 'We are members of one body - meaning',
     description:
       'GCSE analysis of "a chain of events" in An Inspector Calls. Causality, collective guilt, dramatic structure and Grade 9 marker commentary.',
     category: 'inspector-calls',
@@ -572,7 +572,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'age-theme-analysis'],
-    title: 'Sheila Birling — character analysis',
+    title: 'Sheila Birling - character analysis',
     description:
       "GCSE analysis of the age theme in An Inspector Calls. Young vs old, who changes, why it matters and Priestley's generational argument.",
     category: 'inspector-calls',
@@ -586,7 +586,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'class-theme-analysis'],
-    title: 'Girls of that class — meaning',
+    title: 'Girls of that class - meaning',
     description:
       'GCSE analysis of the class theme in An Inspector Calls. Edwardian hierarchy, capital vs labour, Birling, Croft, Eva Smith and Grade 9 tips.',
     category: 'inspector-calls',
@@ -607,21 +607,21 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'eric-birling-character-analysis'],
-    title: 'Sheila Birling — character analysis',
+    title: 'Sheila Birling - character analysis',
     description:
       'Full GCSE character analysis of Eric Birling in An Inspector Calls. Guilt, alcohol, masculinity, moral growth and Grade 9 essay tips.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'fire-and-blood-and-anguish-meaning'],
-    title: 'We are members of one body — meaning',
+    title: 'We are members of one body - meaning',
     description:
       'What "fire and blood and anguish" means in An Inspector Calls: biblical imagery, WWI context, triadic structure and Grade 9 GCSE analysis.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'gender-theme-analysis'],
-    title: 'Sheila Birling — character analysis',
+    title: 'Sheila Birling - character analysis',
     description:
       'GCSE analysis of the gender theme in An Inspector Calls. Patriarchy, Sheila, Eva, Mrs Birling and Grade 9 marker commentary.',
     category: 'inspector-calls',
@@ -635,14 +635,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'how-to-write-grade-9-inspector-calls-essay'],
-    title: 'Social responsibility — theme',
+    title: 'Social responsibility - theme',
     description:
       'Step-by-step guide to writing a Grade 9 An Inspector Calls essay. Thesis, planning, integrated quotation, context and marker tips from The English Hub.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'i-wasnt-in-any-way-responsible'],
-    title: 'Girls of that class — meaning',
+    title: 'Girls of that class - meaning',
     description:
       "GCSE analysis of Mrs Birling's \"I wasn't in any way responsible\" in An Inspector Calls. Denial, guilt and Priestley's moral critique.",
     category: 'inspector-calls',
@@ -663,7 +663,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'millions-and-millions-of-eva-smiths'],
-    title: 'Fire and blood and anguish — meaning',
+    title: 'Fire and blood and anguish - meaning',
     description:
       'GCSE analysis of "millions and millions of Eva Smiths and John Smiths" in An Inspector Calls. Universality, socialism and marker commentary.',
     category: 'inspector-calls',
@@ -672,12 +672,12 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['inspector-calls', 'port-the-governor-used-to-send'],
     title: 'A man has to make his own way',
     description:
-      "GCSE analysis of Birling's port boast in An Inspector Calls — status, class, and Priestley's satire of the Edwardian middle class.",
+      "GCSE analysis of Birling's port boast in An Inspector Calls - status, class, and Priestley's satire of the Edwardian middle class.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'priestley-socialism-context'],
-    title: 'Social responsibility — theme',
+    title: 'Social responsibility - theme',
     description:
       "Context for An Inspector Calls: J. B. Priestley's socialism, 1912 vs 1945, the welfare state, WWI and WWII, and why Grade 9 essays need this.",
     category: 'inspector-calls',
@@ -698,168 +698,168 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['inspector-calls', 'sheila-birling-character-analysis'],
-    title: 'Eric Birling — character analysis',
+    title: 'Eric Birling - character analysis',
     description:
       'Full GCSE character analysis of Sheila Birling in An Inspector Calls. Moral growth, gender, generational change and Grade 9 essay tips.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'social-responsibility-theme'],
-    title: 'We are members of one body — meaning',
+    title: 'We are members of one body - meaning',
     description:
       "GCSE analysis of the social responsibility theme in An Inspector Calls. Priestley's thesis, the Inspector, the Birlings and Grade 9 essay tips.",
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'the-inspector-stage-directions'],
-    title: 'We are members of one body — meaning',
+    title: 'We are members of one body - meaning',
     description:
-      'Analysis of the Inspector\'s stage directions in An Inspector Calls: "massiveness, solidity and purposefulness" — meaning, effect, and Grade 9 GCSE commentary.',
+      'Analysis of the Inspector\'s stage directions in An Inspector Calls: "massiveness, solidity and purposefulness" - meaning, effect, and Grade 9 GCSE commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'we-are-members-of-one-body-meaning'],
-    title: 'Fire and blood and anguish — meaning',
+    title: 'Fire and blood and anguish - meaning',
     description:
       'Meaning, context and analysis of "We are members of one body" from An Inspector Calls. Religious imagery, collective responsibility and Grade 9 GCSE analysis.',
     category: 'inspector-calls',
   },
   {
     slug: ['inspector-calls', 'we-dont-live-alone'],
-    title: 'We are members of one body — meaning',
+    title: 'We are members of one body - meaning',
     description:
       'GCSE analysis of the Inspector\'s "we don\'t live alone" in An Inspector Calls. Social responsibility, plural pronouns and marker commentary.',
     category: 'inspector-calls',
   },
   {
     slug: ['jekyll-hyde', 'ape-like-fury'],
-    title: '"Ape-like fury" Analysis — Jekyll and Hyde (Carew Murder)',
+    title: '"Ape-like fury" Analysis - Jekyll and Hyde (Carew Murder)',
     description:
       'GCSE analysis of "ape-like fury" from the Carew murder in Jekyll and Hyde. Darwinism, atavism, simile analysis and exam paragraph, written by GCSE markers.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'door-symbolism-analysis'],
-    title: 'Door Symbolism in Jekyll and Hyde — GCSE Analysis',
+    title: 'Door Symbolism in Jekyll and Hyde - GCSE Analysis',
     description:
       'GCSE analysis of door symbolism in Jekyll and Hyde. The "blistered and distained" door, the Gothic threshold, secrecy, and exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'downright-detestable'],
-    title: '"Downright detestable" Analysis — Jekyll and Hyde',
+    title: '"Downright detestable" Analysis - Jekyll and Hyde',
     description:
       'GCSE analysis of Enfield\'s "downright detestable" from Jekyll and Hyde. The failure of rational language and exam paragraph by GCSE markers.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'dr-jekyll-character-analysis'],
-    title: 'Dr Jekyll Character Analysis — Jekyll and Hyde (GCSE)',
+    title: 'Dr Jekyll Character Analysis - Jekyll and Hyde (GCSE)',
     description:
       'Dr Jekyll character analysis for GCSE English Literature. Personality, motivation, key quotes, tragic arc and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'dr-lanyon-character-analysis'],
-    title: 'Dr Lanyon Character Analysis — Jekyll and Hyde (GCSE)',
+    title: 'Dr Lanyon Character Analysis - Jekyll and Hyde (GCSE)',
     description:
       'Dr Lanyon character analysis for GCSE. Rival scientist, rationalism, tragic witness, key quotes and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'dual-nature-of-man-quotes'],
-    title: 'Dual Nature of Man Quotes — Jekyll and Hyde Analysis',
+    title: 'Dual Nature of Man Quotes - Jekyll and Hyde Analysis',
     description:
       'The six most powerful dual nature of man quotes from Jekyll and Hyde, ranked for marker value, with context and exam analysis.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'duality-theme-analysis'],
-    title: 'Duality Theme in Jekyll and Hyde — GCSE Analysis',
+    title: 'Duality Theme in Jekyll and Hyde - GCSE Analysis',
     description:
       'Duality theme analysis for GCSE Jekyll and Hyde. Character, setting, structure, language, key quotes and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'fog-symbolism-analysis'],
-    title: 'Fog Symbolism in Jekyll and Hyde — GCSE Analysis',
+    title: 'Fog Symbolism in Jekyll and Hyde - GCSE Analysis',
     description:
       'How Stevenson uses fog symbolism in Jekyll and Hyde. The "chocolate-coloured pall", moral ambiguity, and exam paragraph by GCSE markers.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'good-and-evil-theme-analysis'],
-    title: 'Good and Evil Theme in Jekyll and Hyde — GCSE Analysis',
+    title: 'Good and Evil Theme in Jekyll and Hyde - GCSE Analysis',
     description:
       'GCSE analysis of the good and evil theme in Jekyll and Hyde. Why Hyde is not "pure evil", key quotes, context and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'how-to-write-grade-9-jekyll-hyde-essay'],
-    title: 'How to Write a Grade 9 Jekyll and Hyde Essay — GCSE Guide',
+    title: 'How to Write a Grade 9 Jekyll and Hyde Essay - GCSE Guide',
     description:
       'Step-by-step guide to writing a Grade 9 Jekyll and Hyde essay. Thesis, topic sentences, AO2 zoom, AO3 weaving, conclusion and model paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'mr-hyde-character-analysis'],
-    title: 'Mr Hyde Character Analysis — Jekyll and Hyde (GCSE)',
+    title: 'Mr Hyde Character Analysis - Jekyll and Hyde (GCSE)',
     description:
       'Mr Hyde character analysis for GCSE English Literature. Atavism, the id, key quotes, physical description and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'mr-utterson-character-analysis'],
-    title: 'Mr Utterson Character Analysis — Jekyll and Hyde (GCSE)',
+    title: 'Mr Utterson Character Analysis - Jekyll and Hyde (GCSE)',
     description:
       'Mr Utterson character analysis for GCSE. The lawyer-narrator, discretion, reliability, key quotes and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'repression-theme-analysis'],
-    title: 'Repression Theme in Jekyll and Hyde — GCSE Analysis',
+    title: 'Repression Theme in Jekyll and Hyde - GCSE Analysis',
     description:
       'GCSE analysis of the repression theme in Jekyll and Hyde. Victorian respectability, proto-Freudian ideas, key quotes and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'satans-signature-on-a-face'],
-    title: '"Satan\'s signature upon a face" Analysis — Jekyll and Hyde',
+    title: '"Satan\'s signature upon a face" Analysis - Jekyll and Hyde',
     description:
       'GCSE analysis of "Satan\'s signature upon a face" from Jekyll and Hyde. Physiognomy, religious imagery, and exam paragraph from GCSE markers.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'science-theme-analysis'],
-    title: 'Science Theme in Jekyll and Hyde — GCSE Analysis',
+    title: 'Science Theme in Jekyll and Hyde - GCSE Analysis',
     description:
       'GCSE analysis of the science theme in Jekyll and Hyde. "Transcendental medicine", Darwin, Lanyon, key quotes and Grade 9 exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'something-troglodytic'],
-    title: '"Something troglodytic" Analysis — Jekyll and Hyde',
+    title: '"Something troglodytic" Analysis - Jekyll and Hyde',
     description:
       'GCSE analysis of "something troglodytic" from Jekyll and Hyde. Degeneration theory, physiognomy, Utterson\'s reaction, and exam paragraph by GCSE markers.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'the-polite-fiction-of-the-law'],
-    title: 'Utterson & the "polite fiction" of the law — Jekyll and Hyde',
+    title: 'Utterson & the "polite fiction" of the law - Jekyll and Hyde',
     description:
       'GCSE analysis of Utterson, hypocrisy and Victorian reputation in Jekyll and Hyde. How "the polite fiction" operates across the novella, with exam paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'victorian-society-context'],
-    title: 'Victorian Society Context — Jekyll and Hyde (GCSE AO3)',
+    title: 'Victorian Society Context - Jekyll and Hyde (GCSE AO3)',
     description:
       'Victorian context for Jekyll and Hyde. Fin-de-siècle London, class, the Labouchere Amendment, Darwinism, and exam-ready AO3 paragraph.',
     category: 'jekyll-hyde',
   },
   {
     slug: ['jekyll-hyde', 'with-the-sea-of-liberty-before-me'],
-    title: '"With the sea of liberty before me" — Jekyll and Hyde Analysis',
+    title: '"With the sea of liberty before me" - Jekyll and Hyde Analysis',
     description:
       'GCSE analysis of "with the sea of liberty before me" from Jekyll\'s first transformation. Freedom, repression and exam paragraph.',
     category: 'jekyll-hyde',
@@ -945,14 +945,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['language-paper', 'common-mistakes-aqa-language-paper-1'],
     title: 'Common Mistakes in AQA Language Paper 1 | The English Hub',
     description:
-      'The most common mistakes students make in AQA English Language Paper 1 — and how to avoid each one. Written by GCSE markers.',
+      'The most common mistakes students make in AQA English Language Paper 1 - and how to avoid each one. Written by GCSE markers.',
     category: 'language-paper',
   },
   {
     slug: ['language-paper', 'common-mistakes-aqa-language-paper-2'],
     title: 'Common Mistakes in AQA Language Paper 2 | The English Hub',
     description:
-      'The most common mistakes students make in AQA English Language Paper 2 — and how to avoid each one. Written by GCSE markers.',
+      'The most common mistakes students make in AQA English Language Paper 2 - and how to avoid each one. Written by GCSE markers.',
     category: 'language-paper',
   },
   {
@@ -1055,14 +1055,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['macbeth', 'ambition-theme-analysis'],
-    title: 'Ambition in Macbeth — Theme Analysis | The English Hub',
+    title: 'Ambition in Macbeth - Theme Analysis | The English Hub',
     description:
       'GCSE theme analysis of ambition in Macbeth. Key quotes, how Shakespeare presents ambition, and how to write about it in a Grade 9 essay.',
     category: 'macbeth',
   },
   {
     slug: ['macbeth', 'appearance-vs-reality-theme'],
-    title: 'Appearance vs Reality in Macbeth — Theme Analysis | The English Hub',
+    title: 'Appearance vs Reality in Macbeth - Theme Analysis | The English Hub',
     description:
       'GCSE theme analysis of appearance vs reality in Macbeth. Key quotes, deception, Jacobean context and Grade 9 essay tips.',
     category: 'macbeth',
@@ -1097,14 +1097,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['macbeth', 'gender-theme-analysis'],
-    title: 'Gender in Macbeth — Theme Analysis | The English Hub',
+    title: 'Gender in Macbeth - Theme Analysis | The English Hub',
     description:
       'GCSE theme analysis of gender in Macbeth. Masculinity, femininity, Lady Macbeth and the witches. Grade 9 essay tips.',
     category: 'macbeth',
   },
   {
     slug: ['macbeth', 'guilt-theme-analysis'],
-    title: 'Guilt in Macbeth — Theme Analysis | The English Hub',
+    title: 'Guilt in Macbeth - Theme Analysis | The English Hub',
     description:
       'GCSE theme analysis of guilt in Macbeth. Blood imagery, sleep, and how Shakespeare punishes the Macbeths psychologically. Grade 9 essay tips.',
     category: 'macbeth',
@@ -1125,7 +1125,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['macbeth', 'kingship-theme-analysis'],
-    title: 'Kingship in Macbeth — Theme Analysis | The English Hub',
+    title: 'Kingship in Macbeth - Theme Analysis | The English Hub',
     description:
       'GCSE theme analysis of kingship in Macbeth. Duncan, Macbeth, Malcolm and the divine right of kings. Grade 9 essay tips.',
     category: 'macbeth',
@@ -1182,7 +1182,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['macbeth', 'supernatural-theme-analysis'],
-    title: 'The Supernatural in Macbeth — Theme Analysis | The English Hub',
+    title: 'The Supernatural in Macbeth - Theme Analysis | The English Hub',
     description:
       'GCSE theme analysis of the supernatural in Macbeth. Witches, apparitions, Jacobean context and how to use it in a Grade 9 essay.',
     category: 'macbeth',
@@ -1273,7 +1273,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['revision', 'gcse-english-pass-rate-statistics'],
-    title: 'GCSE English Pass Rate Statistics (2019–2024) | The English Hub',
+    title: 'GCSE English Pass Rate Statistics (2019-2024) | The English Hub',
     description:
       'GCSE English pass rate statistics from 2019 through 2024. Grade 4, Grade 5, Grade 7 and Grade 9 percentages, plus commentary from GCSE markers.',
     category: 'revision',

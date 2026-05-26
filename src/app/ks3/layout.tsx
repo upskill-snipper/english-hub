@@ -8,7 +8,7 @@ import { useT } from '@/lib/i18n/use-t'
 /**
  * Shared shell for the /ks3 route tree.
  *
- * The EXACT `/ks3` index is the curriculum *hub* — it owns its own
+ * The EXACT `/ks3` index is the curriculum *hub* - it owns its own
  * full-width layout (gradient hero + section card grids, mirroring the
  * `/revision` hub) and must NOT be boxed inside the curriculum sidebar
  * or the `prose` typography wrapper. Every OTHER `/ks3/*` route
@@ -16,15 +16,15 @@ import { useT } from '@/lib/i18n/use-t'
  * iLowerSecondary subtree) keeps the established left-hand year + term
  * nav + prose-eh article shell.
  *
- * We branch on `usePathname()` — the same client-pathname pattern the
+ * We branch on `usePathname()` - the same client-pathname pattern the
  * codebase already uses for `legal/layout.tsx` and
  * `dashboard/teacher/layout.tsx`. A Client Component can't export
  * `metadata`, so the KS3 `title` template + description moved to the
  * index `page.tsx` (a Server Component); KS3 sub-pages keep their own
  * per-page `title` and inherit the site-wide
- * `'%s — The English Hub'` template from the root layout.
+ * `'%s - The English Hub'` template from the root layout.
  *
- * The KS3 routes do not require an exam-board cookie — KS3 sits
+ * The KS3 routes do not require an exam-board cookie - KS3 sits
  * before students pick their GCSE/IGCSE board, so middleware
  * allowlists `/ks3` for guests too.
  */
@@ -96,7 +96,7 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
                   href={`/ks3/year-${year.number}`}
                   className="block py-1 font-medium hover:text-foreground"
                 >
-                  {yearLabelTr[year.number]} — {t('ks3.year_overview')}
+                  {yearLabelTr[year.number]} - {t('ks3.year_overview')}
                 </Link>
                 {year.terms.map((term) => (
                   <Link
@@ -112,7 +112,7 @@ export default function KS3Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </aside>
 
-        {/* Page content — uses the same prose-eh variant we shipped for blogs */}
+        {/* Page content - uses the same prose-eh variant we shipped for blogs */}
         <article className="prose prose-eh prose-lg max-w-none dark:prose-invert">
           {children}
         </article>

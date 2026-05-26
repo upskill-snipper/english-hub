@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { BoardExamGuide } from './types';
+import type { BoardExamGuide } from './types'
 
 export const ocrGuide: BoardExamGuide = {
   boardId: 'OCR',
@@ -7,13 +7,13 @@ export const ocrGuide: BoardExamGuide = {
   boardColor: '#EA580C',
 
   overview: `
-    <p>OCR's GCSE English qualifications (J351 Language, J352 Literature) are built around a distinctive <strong>linked-unseen format</strong> that sets them apart from every other exam board. In both Language and Literature papers, students are consistently required to work across multiple texts simultaneously — comparing a studied or provided passage with an unseen extract that shares thematic or stylistic connections. This cross-text architecture means that comparison is not a bolt-on skill tested in isolation; it is woven into the fabric of almost every question students encounter.</p>
+    <p>OCR's GCSE English qualifications (J351 Language, J352 Literature) are built around a distinctive <strong>linked-unseen format</strong> that sets them apart from every other exam board. In both Language and Literature papers, students are consistently required to work across multiple texts simultaneously - comparing a studied or provided passage with an unseen extract that shares thematic or stylistic connections. This cross-text architecture means that comparison is not a bolt-on skill tested in isolation; it is woven into the fabric of almost every question students encounter.</p>
 
-    <p>The Language qualification splits neatly into two components of equal weight. <strong>Component 01</strong> focuses on non-fiction and transactional reading and writing, demanding that students retrieve, synthesise, analyse and evaluate across two or three unseen texts before completing both a short-form and an extended writing task. <strong>Component 02</strong> pairs a literary prose extract with a linked non-fiction/media text, testing the ability to move fluidly between genres, before culminating in a creative or descriptive writing task. The dual writing tasks in Component 01 make time management a decisive factor — students must discipline themselves to allocate roughly 15 minutes to the short task and 30 minutes to the extended piece.</p>
+    <p>The Language qualification splits neatly into two components of equal weight. <strong>Component 01</strong> focuses on non-fiction and transactional reading and writing, demanding that students retrieve, synthesise, analyse and evaluate across two or three unseen texts before completing both a short-form and an extended writing task. <strong>Component 02</strong> pairs a literary prose extract with a linked non-fiction/media text, testing the ability to move fluidly between genres, before culminating in a creative or descriptive writing task. The dual writing tasks in Component 01 make time management a decisive factor - students must discipline themselves to allocate roughly 15 minutes to the short task and 30 minutes to the extended piece.</p>
 
-    <p>OCR Literature is uniquely demanding because of its <strong>linked-unseen passage model</strong>. In both Component 01 and Component 02, the Part (a) question presents students with an extract from their studied text alongside an unseen passage on the same theme. They must write about <em>both</em> passages in a single, integrated response — a skill that requires confident subject knowledge and the ability to draw perceptive comparisons under timed conditions. Part (b) then pivots to a whole-text or whole-play essay, requiring breadth of knowledge across the entire work.</p>
+    <p>OCR Literature is uniquely demanding because of its <strong>linked-unseen passage model</strong>. In both Component 01 and Component 02, the Part (a) question presents students with an extract from their studied text alongside an unseen passage on the same theme. They must write about <em>both</em> passages in a single, integrated response - a skill that requires confident subject knowledge and the ability to draw perceptive comparisons under timed conditions. Part (b) then pivots to a whole-text or whole-play essay, requiring breadth of knowledge across the entire work.</p>
 
-    <p>Strategic success on OCR papers hinges on three priorities: <strong>sustained comparison</strong> (Level 6 explicitly requires "sustained, interwoven comparison" that runs through every paragraph, not just the introduction and conclusion), <strong>engagement with the unseen</strong> (treating the unseen passage as an equal partner rather than an afterthought), and <strong>disciplined time-splitting</strong> across the two writing tasks in Component 01. Students who master the linked-unseen format often find it liberating — it rewards genuine analytical thinking over rote-learned quotations, because half of the material is always fresh.</p>
+    <p>Strategic success on OCR papers hinges on three priorities: <strong>sustained comparison</strong> (Level 6 explicitly requires "sustained, interwoven comparison" that runs through every paragraph, not just the introduction and conclusion), <strong>engagement with the unseen</strong> (treating the unseen passage as an equal partner rather than an afterthought), and <strong>disciplined time-splitting</strong> across the two writing tasks in Component 01. Students who master the linked-unseen format often find it liberating - it rewards genuine analytical thinking over rote-learned quotations, because half of the material is always fresh.</p>
   `,
 
   specCodes: [
@@ -155,8 +155,7 @@ export const ocrGuide: BoardExamGuide = {
                 'Q5 \u2014 Short-form writing task: Write for a specific audience, purpose and form (e.g. letter, article, speech).',
               marks: 15,
               ao: 'AO5 + AO6',
-              skill:
-                'Write clearly and effectively in a given form; accurate SPaG',
+              skill: 'Write clearly and effectively in a given form; accurate SPaG',
               time: '15\u201318 minutes',
               advice:
                 'Keep this controlled and efficient \u2014 do <strong>not</strong> overspend time here. Plan for 3\u20134 focused paragraphs. Match your tone and register precisely to the audience and form. Accuracy in spelling, punctuation and grammar carries significant weight within the 15 marks.',
@@ -166,8 +165,7 @@ export const ocrGuide: BoardExamGuide = {
                 'Q6 \u2014 Extended writing task: Write at length for a specified audience, purpose and form.',
               marks: 25,
               ao: 'AO5 + AO6',
-              skill:
-                'Communicate imaginatively and persuasively; organise ideas coherently',
+              skill: 'Communicate imaginatively and persuasively; organise ideas coherently',
               time: '28\u201330 minutes',
               advice:
                 'This is your showcase piece. Spend 3\u20134 minutes planning a clear structure with varied paragraph lengths and deliberate structural choices (e.g. circular structure, shift in tone). Use ambitious vocabulary naturally \u2014 avoid thesaurus-stuffing. Vary sentence structures for effect: short sentences for impact, complex sentences for elaboration. Proofread in the final 2 minutes.',
@@ -190,8 +188,7 @@ export const ocrGuide: BoardExamGuide = {
           marks: 40,
           questions: [
             {
-              question:
-                'Q1 \u2014 Comprehension and inference from the literary prose extract.',
+              question: 'Q1 \u2014 Comprehension and inference from the literary prose extract.',
               marks: 8,
               ao: 'AO1',
               skill: 'Identify and interpret explicit and implicit ideas',
@@ -200,12 +197,10 @@ export const ocrGuide: BoardExamGuide = {
                 'Focus on both surface meaning and deeper implications. Use short quotations to support each point. Distinguish between what the writer <em>states</em> and what they <em>imply</em>.',
             },
             {
-              question:
-                'Q2 \u2014 Language and structure analysis of the literary prose extract.',
+              question: 'Q2 \u2014 Language and structure analysis of the literary prose extract.',
               marks: 12,
               ao: 'AO2',
-              skill:
-                'Analyse how language and structure create meanings and effects',
+              skill: 'Analyse how language and structure create meanings and effects',
               time: '15\u201318 minutes',
               advice:
                 'Address both language <em>and</em> structure \u2014 many students neglect structure entirely. Consider narrative perspective, sentence length variation, paragraph structure, and shifts in focus or tone alongside word-level analysis.',
@@ -232,8 +227,7 @@ export const ocrGuide: BoardExamGuide = {
                 'Q4 \u2014 Creative/descriptive writing: Write a piece of creative or descriptive prose, with a choice of task.',
               marks: 40,
               ao: 'AO5 + AO6',
-              skill:
-                'Write imaginatively and descriptively with crafted language and structure',
+              skill: 'Write imaginatively and descriptively with crafted language and structure',
               time: '45 minutes',
               advice:
                 'You typically have a choice between two prompts. Pick the one that sparks a genuine idea \u2014 not the one that seems easiest. Plan a clear structural arc (beginning, development, climax/shift, resolution). Use sensory detail, varied sentence structures, and figurative language purposefully. Aim for quality over quantity: a tightly crafted 2\u20133 page piece will outscore a rambling 5-page narrative. Leave 3\u20134 minutes for proofreading.',
@@ -264,19 +258,16 @@ export const ocrGuide: BoardExamGuide = {
                 'Part (a): Extract from your studied modern text + an <strong>UNSEEN</strong> linked passage on the same theme. Write about <strong>both</strong> passages.',
               marks: 20,
               ao: 'AO1 + AO2 + AO3',
-              skill:
-                'Compare studied extract with unseen passage; analyse language and context',
+              skill: 'Compare studied extract with unseen passage; analyse language and context',
               time: '25\u201328 minutes',
               advice:
                 'This is OCR\u2019s signature question format. You <strong>must</strong> write about both the studied extract and the unseen passage in an integrated way \u2014 weaving comparison throughout, not bolting it on at the end. For the studied text, deploy your knowledge of context and wider themes. For the unseen, apply close reading skills to find connections and contrasts. Level 6 requires "sustained, interwoven comparison" so aim for at least one reference to both texts in every paragraph.',
             },
             {
-              question:
-                'Part (b): Whole-text essay on your studied modern prose or drama text.',
+              question: 'Part (b): Whole-text essay on your studied modern prose or drama text.',
               marks: 20,
               ao: 'AO1 + AO2 + AO3',
-              skill:
-                'Develop a critical personal response drawing on the whole text',
+              skill: 'Develop a critical personal response drawing on the whole text',
               time: '25\u201328 minutes',
               advice:
                 'This is a conventional whole-text essay but OCR expects a <strong>critical style</strong> at the top levels. Avoid narrative retelling. Structure around 3\u20134 key ideas, use precise quotations, and embed contextual understanding naturally (don\u2019t bolt on a \u201ccontext paragraph\u201d). Show awareness of how the writer shapes meaning through their choices of language, form and structure.',
@@ -299,12 +290,10 @@ export const ocrGuide: BoardExamGuide = {
                 'Apply the same interwoven comparison approach as Section A Part (a). The 19th-century context is crucial here \u2014 connect the themes of both passages to the social, historical and literary context of the era (e.g. Victorian values, industrialisation, class, gender). The unseen passage may be from the same or a different period; use this to sharpen your comparison.',
             },
             {
-              question:
-                'Part (b): Whole-text essay on your studied 19th-century novel.',
+              question: 'Part (b): Whole-text essay on your studied 19th-century novel.',
               marks: 20,
               ao: 'AO1 + AO2 + AO3',
-              skill:
-                'Sustained critical response across the entire 19th-century text',
+              skill: 'Sustained critical response across the entire 19th-century text',
               time: '25\u201328 minutes',
               advice:
                 'Range is essential \u2014 draw examples from across the whole novel, not just the most well-known scenes. Embed contextual knowledge naturally: show how the writer reflects or challenges the attitudes of their time. Use precise literary terminology and maintain a confident, critical voice throughout.',
@@ -319,8 +308,7 @@ export const ocrGuide: BoardExamGuide = {
       time: '2 hours',
       marks: 80,
       weighting: '50%',
-      textType:
-        'OCR poetry anthology (studied cluster) + unseen poems, and a Shakespeare play',
+      textType: 'OCR poetry anthology (studied cluster) + unseen poems, and a Shakespeare play',
       sections: [
         {
           title: 'Section A: Poetry Anthology',
@@ -331,8 +319,7 @@ export const ocrGuide: BoardExamGuide = {
                 'Part (a): Compare a named anthology poem with a thematically linked <strong>UNSEEN</strong> poem.',
               marks: 20,
               ao: 'AO1 + AO2 + AO3',
-              skill:
-                'Compare studied poem with unseen poem; analyse poetic methods',
+              skill: 'Compare studied poem with unseen poem; analyse poetic methods',
               time: '25\u201328 minutes',
               advice:
                 'Read the unseen poem carefully at least twice before writing. Identify the shared theme and then explore how each poet treats it differently through their choices of language, imagery, form and structure. Use comparative connectives throughout (\u201cWhereas\u201d, \u201cConversely\u201d, \u201cBoth poets\u201d). Do <strong>not</strong> write about one poem and then the other \u2014 integrate your comparison paragraph by paragraph.',
@@ -342,8 +329,7 @@ export const ocrGuide: BoardExamGuide = {
                 'Part (b): Write about a <strong>related poem</strong> from your studied anthology cluster.',
               marks: 20,
               ao: 'AO1 + AO2',
-              skill:
-                'Analyse a single anthology poem in depth',
+              skill: 'Analyse a single anthology poem in depth',
               time: '25\u201328 minutes',
               advice:
                 'The question will direct you to a specific theme or idea. Choose the poem from your cluster that gives you the richest material for that theme. Analyse language, imagery, form and structure in detail. Show how the poet\u2019s choices create meaning and affect the reader. A strong personal response with alternative interpretations will push you toward Level 5\u20136.',
@@ -532,4 +518,4 @@ export const ocrGuide: BoardExamGuide = {
     '<strong>Poetry anthology includes unseen comparison</strong> \u2014 Part (a) of the poetry section compares a studied anthology poem with a thematically linked unseen poem, testing genuine analytical skill rather than memorisation.',
     '<strong>Shakespeare offers a genuine choice</strong> \u2014 students can opt for either an extract-based question or a whole-play essay, allowing them to play to their strengths.',
   ],
-};
+}

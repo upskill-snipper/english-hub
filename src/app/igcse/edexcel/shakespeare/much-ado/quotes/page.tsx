@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Much Ado About Nothing Key Quotes — Edexcel IGCSE Literature',
+    title: 'Much Ado About Nothing Key Quotes - Edexcel IGCSE Literature',
     description:
       '15 key Much Ado About Nothing quotations with speaker, scene and analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/quotes',
   },
-  title: 'Much Ado About Nothing Key Quotes — Edexcel IGCSE Literature',
+  title: 'Much Ado About Nothing Key Quotes - Edexcel IGCSE Literature',
   description:
     '15 key Much Ado About Nothing quotations with speaker, scene and analysis for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
 }

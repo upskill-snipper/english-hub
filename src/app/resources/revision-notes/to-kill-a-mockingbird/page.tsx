@@ -229,11 +229,11 @@ export default function ToKillAMockingbirdPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Scout (Jean Louise) Finch"
-                description="The first-person narrator and protagonist, almost six at the novel's opening and eight by its close. The dual narrative voice — child Scout living the events, adult Jean Louise reflecting on them — gives the novel its rich texture: childlike incomprehension allows Lee to expose adult prejudice through a clear lens, while the adult voice provides moral retrospection. Scout is fiercely intelligent, tomboyish, quick to violence, and resists Aunt Alexandra's attempts to make her 'a lady.' Her education in empathy — to 'walk around in someone's skin' — is the novel's central Bildungsroman arc."
+                description="The first-person narrator and protagonist, almost six at the novel's opening and eight by its close. The dual narrative voice - child Scout living the events, adult Jean Louise reflecting on them - gives the novel its rich texture: childlike incomprehension allows Lee to expose adult prejudice through a clear lens, while the adult voice provides moral retrospection. Scout is fiercely intelligent, tomboyish, quick to violence, and resists Aunt Alexandra's attempts to make her 'a lady.' Her education in empathy - to 'walk around in someone's skin' - is the novel's central Bildungsroman arc."
               />
               <CharacterCard
                 name="Jem (Jeremy) Finch"
-                description="Scout's older brother, nearly ten when the novel begins and twelve going on thirteen by its end. Jem ages from a boy obsessed with Radley games into an adolescent forced to confront the cruelty of his community. The trial verdict 'breaks' him; he weeps and cannot accept the injustice. While Scout's understanding deepens through Atticus's guidance, Jem must grapple with disillusionment, marking the painful end of childhood innocence. His broken arm at the novel's opening — referenced in the very first line — frames the entire narrative."
+                description="Scout's older brother, nearly ten when the novel begins and twelve going on thirteen by its end. Jem ages from a boy obsessed with Radley games into an adolescent forced to confront the cruelty of his community. The trial verdict 'breaks' him; he weeps and cannot accept the injustice. While Scout's understanding deepens through Atticus's guidance, Jem must grapple with disillusionment, marking the painful end of childhood innocence. His broken arm at the novel's opening - referenced in the very first line - frames the entire narrative."
               />
               <CharacterCard
                 name="Atticus Finch"
@@ -241,35 +241,35 @@ export default function ToKillAMockingbirdPage() {
               />
               <CharacterCard
                 name="Calpurnia"
-                description="The Finch family's Black cook and a maternal figure to Scout and Jem after their mother's death. Calpurnia is strict, literate (she taught Jem to read and Scout her letters), and lives 'in two worlds' — speaking standard English at the Finch home and the dialect of her community at First Purchase Church. Her code-switching reveals to Scout that language and identity adapt to context. Aunt Alexandra wants her dismissed; Atticus refuses, insisting she 'is a faithful member of this family.' Calpurnia bridges the racial divide that the novel anatomises."
+                description="The Finch family's Black cook and a maternal figure to Scout and Jem after their mother's death. Calpurnia is strict, literate (she taught Jem to read and Scout her letters), and lives 'in two worlds' - speaking standard English at the Finch home and the dialect of her community at First Purchase Church. Her code-switching reveals to Scout that language and identity adapt to context. Aunt Alexandra wants her dismissed; Atticus refuses, insisting she 'is a faithful member of this family.' Calpurnia bridges the racial divide that the novel anatomises."
               />
               <CharacterCard
                 name="Aunt Alexandra"
-                description="Atticus's sister, who moves into the Finch home before the trial to provide Scout with a 'feminine influence.' She is conservative, class-conscious, obsessed with the Finch family lineage, and represents the stratified social order Scout resists. She organises missionary teas and looks down on the Cunninghams as 'trash.' Yet Lee complicates her: at the novel's lowest moment, when news of Tom's death arrives, Alexandra shows genuine compassion for Atticus and steels herself for Scout's sake — revealing that even rigid characters have depths."
+                description="Atticus's sister, who moves into the Finch home before the trial to provide Scout with a 'feminine influence.' She is conservative, class-conscious, obsessed with the Finch family lineage, and represents the stratified social order Scout resists. She organises missionary teas and looks down on the Cunninghams as 'trash.' Yet Lee complicates her: at the novel's lowest moment, when news of Tom's death arrives, Alexandra shows genuine compassion for Atticus and steels herself for Scout's sake - revealing that even rigid characters have depths."
               />
               <CharacterCard
                 name="Tom Robinson"
-                description="The Black field-hand falsely accused of raping Mayella Ewell. Tom is a kind, hard-working young man with a wife (Helen) and three children, his left arm crippled by a cotton-gin accident — a physical impossibility that should acquit him. His fatal mistake at trial is admitting he 'felt sorry for' Mayella, an inversion of racial hierarchy unforgivable in 1930s Alabama. Convicted despite the evidence, he is shot seventeen times trying to climb a prison fence. His death is the novel's tragic centre and exposes the lethal reality of Jim Crow justice."
+                description="The Black field-hand falsely accused of raping Mayella Ewell. Tom is a kind, hard-working young man with a wife (Helen) and three children, his left arm crippled by a cotton-gin accident - a physical impossibility that should acquit him. His fatal mistake at trial is admitting he 'felt sorry for' Mayella, an inversion of racial hierarchy unforgivable in 1930s Alabama. Convicted despite the evidence, he is shot seventeen times trying to climb a prison fence. His death is the novel's tragic centre and exposes the lethal reality of Jim Crow justice."
               />
               <CharacterCard
                 name="Bob Ewell"
-                description="The drunken, illiterate, racist patriarch of the Ewells, Maycomb's poorest white family who live behind the dump. He abuses his daughter Mayella (the novel strongly implies sexually) and beats her after catching her trying to kiss Tom Robinson. Out of cowardice and fear, he accuses Tom. Even after winning at trial, Ewell pursues vengeance against Atticus, ultimately attacking Scout and Jem in the dark — and being killed by Boo Radley. Lee uses Ewell to show how white supremacy enables even the lowest white person to destroy a Black family."
+                description="The drunken, illiterate, racist patriarch of the Ewells, Maycomb's poorest white family who live behind the dump. He abuses his daughter Mayella (the novel strongly implies sexually) and beats her after catching her trying to kiss Tom Robinson. Out of cowardice and fear, he accuses Tom. Even after winning at trial, Ewell pursues vengeance against Atticus, ultimately attacking Scout and Jem in the dark - and being killed by Boo Radley. Lee uses Ewell to show how white supremacy enables even the lowest white person to destroy a Black family."
               />
               <CharacterCard
                 name="Mayella Ewell"
-                description="Bob Ewell's nineteen-year-old daughter, the alleged victim. Mayella is presented sympathetically as a desperately lonely young woman: she tends red geraniums in the dirt yard, cleans herself for court, and has no friends or education. Lee's most subversive choice is showing she is also a victim — of poverty, of her father's abuse, and of the social codes that make her false accusation the only way to escape the shame of having kissed a Black man. She is both pitiable and complicit, a complex figure whose lies destroy an innocent man."
+                description="Bob Ewell's nineteen-year-old daughter, the alleged victim. Mayella is presented sympathetically as a desperately lonely young woman: she tends red geraniums in the dirt yard, cleans herself for court, and has no friends or education. Lee's most subversive choice is showing she is also a victim - of poverty, of her father's abuse, and of the social codes that make her false accusation the only way to escape the shame of having kissed a Black man. She is both pitiable and complicit, a complex figure whose lies destroy an innocent man."
               />
               <CharacterCard
                 name="Boo Radley (Arthur Radley)"
-                description="The Finches' reclusive neighbour, the focus of Scout, Jem and Dill's imagination. Locked in his house for years after a youthful misdemeanour, Boo is the ghost-figure of childhood myth — pale, knife-wielding, eating raw squirrels in the local rumour. The novel patiently inverts every assumption: Boo leaves the children gifts, mends Jem's torn trousers, drapes a blanket round Scout during a fire, and finally kills Bob Ewell to save them. He is the second 'mockingbird' of the title: harmless, gentle, destroyed by gossip. Scout's act of seeing Maycomb 'from the Radley porch' completes her moral education."
+                description="The Finches' reclusive neighbour, the focus of Scout, Jem and Dill's imagination. Locked in his house for years after a youthful misdemeanour, Boo is the ghost-figure of childhood myth - pale, knife-wielding, eating raw squirrels in the local rumour. The novel patiently inverts every assumption: Boo leaves the children gifts, mends Jem's torn trousers, drapes a blanket round Scout during a fire, and finally kills Bob Ewell to save them. He is the second 'mockingbird' of the title: harmless, gentle, destroyed by gossip. Scout's act of seeing Maycomb 'from the Radley porch' completes her moral education."
               />
               <CharacterCard
                 name="Dill (Charles Baker) Harris"
-                description="The children's summer friend, modelled on Lee's real childhood neighbour Truman Capote. Dill is small, imaginative, and unsettled: he tells fantastical stories to disguise the loneliness of being unwanted by his stepfather. He fuels the Boo Radley fascination and reacts viscerally to the trial — running out crying when prosecutor Mr Gilmer is contemptuous of Tom. Dill represents pure childhood empathy unhardened by Maycomb's codes."
+                description="The children's summer friend, modelled on Lee's real childhood neighbour Truman Capote. Dill is small, imaginative, and unsettled: he tells fantastical stories to disguise the loneliness of being unwanted by his stepfather. He fuels the Boo Radley fascination and reacts viscerally to the trial - running out crying when prosecutor Mr Gilmer is contemptuous of Tom. Dill represents pure childhood empathy unhardened by Maycomb's codes."
               />
               <CharacterCard
                 name="Miss Maudie Atkinson"
-                description="The Finches' neighbour and one of the novel's moral voices. A keen gardener who loses her house to fire (and reacts cheerfully), Miss Maudie articulates much of the novel's wisdom for Scout: that mockingbirds 'don't do one thing but make music for us to enjoy,' that Atticus is 'the same in his house as he is on the public streets,' and that even after the verdict 'we're making a step — it's just a baby-step, but it's a step.' She is independent, witty, and unfazed by hypocrisy."
+                description="The Finches' neighbour and one of the novel's moral voices. A keen gardener who loses her house to fire (and reacts cheerfully), Miss Maudie articulates much of the novel's wisdom for Scout: that mockingbirds 'don't do one thing but make music for us to enjoy,' that Atticus is 'the same in his house as he is on the public streets,' and that even after the verdict 'we're making a step - it's just a baby-step, but it's a step.' She is independent, witty, and unfazed by hypocrisy."
               />
               <CharacterCard
                 name="Heck Tate"
@@ -285,11 +285,11 @@ export default function ToKillAMockingbirdPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Racial Injustice`)}
-                description="The novel's most prominent theme. Lee depicts a justice system structurally rigged against Black defendants in the Jim Crow South. Tom Robinson's case is hopeless not because of evidence but because of his race: an all-white jury cannot acquit a Black man accused by a white woman, regardless of facts. Atticus tells Jem that 'in our courts, when it's a white man's word against a black man's, the white man always wins.' Tom's death — shot trying to escape — and the community's relative indifference reveal the lethal violence of legalised racism. Lee shows segregation operating at every level: the segregated courthouse balcony, the Black church, even Aunt Alexandra's missionary tea."
+                description="The novel's most prominent theme. Lee depicts a justice system structurally rigged against Black defendants in the Jim Crow South. Tom Robinson's case is hopeless not because of evidence but because of his race: an all-white jury cannot acquit a Black man accused by a white woman, regardless of facts. Atticus tells Jem that 'in our courts, when it's a white man's word against a black man's, the white man always wins.' Tom's death - shot trying to escape - and the community's relative indifference reveal the lethal violence of legalised racism. Lee shows segregation operating at every level: the segregated courthouse balcony, the Black church, even Aunt Alexandra's missionary tea."
               />
               <ThemeCard
                 title={tr(`Childhood Innocence vs Adult Prejudice`)}
-                description="The novel is a Bildungsroman tracking Scout and Jem's loss of innocence. Children begin with absorbed prejudices (the Boo Radley myths) but possess fundamental moral clarity Maycomb's adults have abandoned. Dill weeps at Mr Gilmer's contempt for Tom because he has not yet learned to disregard it. Jem, after the verdict, asks 'How could they do it?' — a question adults have stopped asking. Scout's development is gentler: she retains compassion (recognising Mr Cunningham at the jail) while gradually understanding the codes of her world. Adult prejudice is presented as a learned corruption of natural empathy."
+                description="The novel is a Bildungsroman tracking Scout and Jem's loss of innocence. Children begin with absorbed prejudices (the Boo Radley myths) but possess fundamental moral clarity Maycomb's adults have abandoned. Dill weeps at Mr Gilmer's contempt for Tom because he has not yet learned to disregard it. Jem, after the verdict, asks 'How could they do it?' - a question adults have stopped asking. Scout's development is gentler: she retains compassion (recognising Mr Cunningham at the jail) while gradually understanding the codes of her world. Adult prejudice is presented as a learned corruption of natural empathy."
               />
               <ThemeCard
                 title={tr(`Moral Courage`)}
@@ -297,7 +297,7 @@ export default function ToKillAMockingbirdPage() {
               />
               <ThemeCard
                 title="Empathy ('walk around in his skin')"
-                description="The ethical core of the novel, articulated in Atticus's first lesson to Scout: 'You never really understand a person until you consider things from his point of view — until you climb into his skin and walk around in it.' Empathy is the corrective to prejudice. Scout learns to apply it to Walter Cunningham, to Mrs Dubose, to Mayella, and finally to Boo Radley, whose porch she literally stands on at the novel's climactic moment. Lee suggests empathy is not an emotion but a discipline — a chosen act of imagination."
+                description="The ethical core of the novel, articulated in Atticus's first lesson to Scout: 'You never really understand a person until you consider things from his point of view - until you climb into his skin and walk around in it.' Empathy is the corrective to prejudice. Scout learns to apply it to Walter Cunningham, to Mrs Dubose, to Mayella, and finally to Boo Radley, whose porch she literally stands on at the novel's climactic moment. Lee suggests empathy is not an emotion but a discipline - a chosen act of imagination."
               />
               <ThemeCard
                 title={tr(`Class Hierarchies in Maycomb`)}
@@ -305,7 +305,7 @@ export default function ToKillAMockingbirdPage() {
               />
               <ThemeCard
                 title="Education"
-                description="Lee contrasts formal schooling with genuine learning. Scout's first day with Miss Caroline is a disaster: she is punished for being literate, and Miss Caroline cannot understand the Cunninghams' refusal of charity. The Maycomb school system, with its rigid 'Dewey Decimal' methods, fails to teach what matters. Atticus educates his children at home through reading, conversation, and example. Calpurnia teaches Scout calligraphy; Miss Maudie teaches moral discernment. The novel argues that real education is the cultivation of empathy and moral imagination — not curriculum content. Lee's irony cuts deepest when Scout's teacher Miss Gates condemns Hitler's persecution of Jews while accepting the persecution of Black Americans at home."
+                description="Lee contrasts formal schooling with genuine learning. Scout's first day with Miss Caroline is a disaster: she is punished for being literate, and Miss Caroline cannot understand the Cunninghams' refusal of charity. The Maycomb school system, with its rigid 'Dewey Decimal' methods, fails to teach what matters. Atticus educates his children at home through reading, conversation, and example. Calpurnia teaches Scout calligraphy; Miss Maudie teaches moral discernment. The novel argues that real education is the cultivation of empathy and moral imagination - not curriculum content. Lee's irony cuts deepest when Scout's teacher Miss Gates condemns Hitler's persecution of Jews while accepting the persecution of Black Americans at home."
               />
             </div>
           </Section>
@@ -414,24 +414,24 @@ export default function ToKillAMockingbirdPage() {
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="You never really understand a person until you consider things from his point of view — until you climb into his skin and walk around in it."
+                quote="You never really understand a person until you consider things from his point of view - until you climb into his skin and walk around in it."
                 speaker="Atticus to Scout, Chapter 3"
-                analysis="The novel's thesis statement on empathy. The metaphor of climbing inside another's skin is bodily and visceral, suggesting empathy is a physical act of imagination, not abstract sympathy. The phrase echoes throughout the novel: Scout applies it to Walter Cunningham, Mayella, and finally Boo, whose porch she literally stands on. Atticus offers this as the antidote to prejudice — and the entire moral arc of Scout's development depends on this single sentence."
+                analysis="The novel's thesis statement on empathy. The metaphor of climbing inside another's skin is bodily and visceral, suggesting empathy is a physical act of imagination, not abstract sympathy. The phrase echoes throughout the novel: Scout applies it to Walter Cunningham, Mayella, and finally Boo, whose porch she literally stands on. Atticus offers this as the antidote to prejudice - and the entire moral arc of Scout's development depends on this single sentence."
               />
               <QuoteCard
                 quote="Mockingbirds don't do one thing but make music for us to enjoy. They don't eat up people's gardens, don't nest in corncribs, they don't do one thing but sing their hearts out for us. That's why it's a sin to kill a mockingbird."
                 speaker="Miss Maudie to Scout, Chapter 10"
-                analysis="The novel's title metaphor and moral key. Miss Maudie defines the mockingbird as harmless, generous, and innocent — a creature that exists only to give. The repeated negative ('don't... don't... don't') emphasises its incapacity for harm. The quotation illuminates the title and unlocks the symbolic meanings of Tom Robinson and Boo Radley as the novel's two 'mockingbirds.' To destroy such a being is described as a 'sin' — not a crime but a moral wrong."
+                analysis="The novel's title metaphor and moral key. Miss Maudie defines the mockingbird as harmless, generous, and innocent - a creature that exists only to give. The repeated negative ('don't... don't... don't') emphasises its incapacity for harm. The quotation illuminates the title and unlocks the symbolic meanings of Tom Robinson and Boo Radley as the novel's two 'mockingbirds.' To destroy such a being is described as a 'sin' - not a crime but a moral wrong."
               />
               <QuoteCard
                 quote="Shoot all the bluejays you want, if you can hit 'em, but remember it's a sin to kill a mockingbird."
                 speaker="Atticus to Jem and Scout, Chapter 10"
-                analysis="The novel's only explicit moral injunction from Atticus on this subject. The contrast between bluejays (aggressive, predatory) and mockingbirds (harmless songbirds) draws an ethical distinction familiar from Christian and natural-law traditions. Significantly, this is one of the few times Atticus prohibits something outright — the moral weight is total. The line connects later to both Tom (innocent and destroyed) and Boo (revealing him would be 'sort of like shootin' a mockingbird,' Scout says)."
+                analysis="The novel's only explicit moral injunction from Atticus on this subject. The contrast between bluejays (aggressive, predatory) and mockingbirds (harmless songbirds) draws an ethical distinction familiar from Christian and natural-law traditions. Significantly, this is one of the few times Atticus prohibits something outright - the moral weight is total. The line connects later to both Tom (innocent and destroyed) and Boo (revealing him would be 'sort of like shootin' a mockingbird,' Scout says)."
               />
               <QuoteCard
                 quote="Atticus, he was real nice."
                 speaker="Scout, final chapter"
-                analysis="Scout's closing line about Boo Radley. The simplicity of the diction — childish and direct — captures the moral arrival of the novel: after years of dramatising Boo as a monster, Scout sees him as a person, and the verdict is utterly plain. The deflationary modesty ('real nice') refuses melodrama; the truth Scout has spent the whole novel learning is, in the end, almost banal. Atticus's reply — 'Most people are, Scout, when you finally see them' — completes the lesson."
+                analysis="Scout's closing line about Boo Radley. The simplicity of the diction - childish and direct - captures the moral arrival of the novel: after years of dramatising Boo as a monster, Scout sees him as a person, and the verdict is utterly plain. The deflationary modesty ('real nice') refuses melodrama; the truth Scout has spent the whole novel learning is, in the end, almost banal. Atticus's reply - 'Most people are, Scout, when you finally see them' - completes the lesson."
               />
               <QuoteCard
                 quote="Maycomb was an old town, but it was a tired old town when I first knew it."
@@ -451,15 +451,15 @@ export default function ToKillAMockingbirdPage() {
               <QuoteCard
                 quote="Simply because we were licked a hundred years before we started is no reason for us not to try to win."
                 speaker="Atticus to Scout, Chapter 9"
-                analysis="The historical depth of Atticus's stance. 'A hundred years' before 1935 places the origin of injustice at the antebellum slave system; Atticus acknowledges that the racial structure of the South is centuries old. Yet the syntax — the double negative leading to 'try to win' — refuses fatalism. The line is Atticus's case for moral effort even within a corrupt system. It also operates as Lee's own implicit argument to her 1960 readership."
+                analysis="The historical depth of Atticus's stance. 'A hundred years' before 1935 places the origin of injustice at the antebellum slave system; Atticus acknowledges that the racial structure of the South is centuries old. Yet the syntax - the double negative leading to 'try to win' - refuses fatalism. The line is Atticus's case for moral effort even within a corrupt system. It also operates as Lee's own implicit argument to her 1960 readership."
               />
               <QuoteCard
-                quote="There's something in our world that makes men lose their heads — they couldn't be fair if they tried. In our courts, when it's a white man's word against a black man's, the white man always wins. They're ugly, but those are the facts of life."
+                quote="There's something in our world that makes men lose their heads - they couldn't be fair if they tried. In our courts, when it's a white man's word against a black man's, the white man always wins. They're ugly, but those are the facts of life."
                 speaker="Atticus to Jem after the trial, Chapter 23"
-                analysis="Atticus's most direct statement of structural racism. 'Lose their heads' suggests racial prejudice is a kind of madness; 'couldn't be fair if they tried' acknowledges that even individual goodwill cannot overcome systemic bias. The flat phrase 'facts of life' refuses euphemism. This is Atticus speaking to his son not in idealism but in painful realism — a turning point where Jem must integrate the moral truth of the world he has inherited."
+                analysis="Atticus's most direct statement of structural racism. 'Lose their heads' suggests racial prejudice is a kind of madness; 'couldn't be fair if they tried' acknowledges that even individual goodwill cannot overcome systemic bias. The flat phrase 'facts of life' refuses euphemism. This is Atticus speaking to his son not in idealism but in painful realism - a turning point where Jem must integrate the moral truth of the world he has inherited."
               />
               <QuoteCard
-                quote="As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it — whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash."
+                quote="As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it - whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash."
                 speaker="Atticus to Jem, Chapter 23"
                 analysis="A redefinition of the word 'trash.' Maycomb uses 'trash' to mean the poorest whites (the Ewells); Atticus reverses the term to apply to any white person who exploits a Black person, regardless of class. The line demolishes Aunt Alexandra's class snobbery in a single sentence. 'No matter who he is, how rich he is, or how fine a family he comes from' attacks every status marker the Finches' world relies on."
               />
@@ -471,12 +471,12 @@ export default function ToKillAMockingbirdPage() {
               <QuoteCard
                 quote="The thing about it is, our kind of folks don't like the Cunninghams, the Cunninghams don't like the Ewells, and the Ewells hate and despise the colored folks."
                 speaker="Jem to Scout, Chapter 23"
-                analysis="Jem's class theory of Maycomb, articulated after the trial. The descending scale of contempt — don't like... don't like... hate and despise — reveals how each tier of society defines itself by looking down on the next. The Black community sits beneath all white classes regardless of moral worth. Lee uses Jem's emerging adult perception to anatomise the social structure that produces the verdict."
+                analysis="Jem's class theory of Maycomb, articulated after the trial. The descending scale of contempt - don't like... don't like... hate and despise - reveals how each tier of society defines itself by looking down on the next. The Black community sits beneath all white classes regardless of moral worth. Lee uses Jem's emerging adult perception to anatomise the social structure that produces the verdict."
               />
               <QuoteCard
                 quote="Until I feared I would lose it, I never loved to read. One does not love breathing."
                 speaker="Scout (narrator), Chapter 2"
-                analysis="Scout's reflection after Miss Caroline forbids Atticus to teach her. The simile equating reading with breathing makes literacy elemental — not an achievement but an automatic life-function. The chiastic structure of the second sentence ('does not love breathing' inverting 'never loved to read') gives the line aphoristic weight. Lee implicitly criticises the Maycomb school for trying to deny something so fundamental, and signals literacy as the foundation of Scout's eventual moral autonomy."
+                analysis="Scout's reflection after Miss Caroline forbids Atticus to teach her. The simile equating reading with breathing makes literacy elemental - not an achievement but an automatic life-function. The chiastic structure of the second sentence ('does not love breathing' inverting 'never loved to read') gives the line aphoristic weight. Lee implicitly criticises the Maycomb school for trying to deny something so fundamental, and signals literacy as the foundation of Scout's eventual moral autonomy."
               />
               <QuoteCard
                 quote="Atticus had used every tool available to free men to save Tom Robinson, but in the secret courts of men's hearts Atticus had no case."
@@ -491,17 +491,17 @@ export default function ToKillAMockingbirdPage() {
               <QuoteCard
                 quote="Atticus was right. One time he said you never really know a man until you stand in his shoes and walk around in them. Just standing on the Radley porch was enough."
                 speaker="Scout (narrator), Chapter 31"
-                analysis="The novel's culminating realisation. Scout literalises Atticus's empathy lesson by physically standing on Boo's porch and seeing the street from his perspective. The simplicity of 'just standing... was enough' shows that empathy is sufficient — not a complex theory but a simple act of seeing. Lee returns to Atticus's earlier metaphor (skin/shoes) and resolves the entire Bildungsroman in a single image of perspective achieved."
+                analysis="The novel's culminating realisation. Scout literalises Atticus's empathy lesson by physically standing on Boo's porch and seeing the street from his perspective. The simplicity of 'just standing... was enough' shows that empathy is sufficient - not a complex theory but a simple act of seeing. Lee returns to Atticus's earlier metaphor (skin/shoes) and resolves the entire Bildungsroman in a single image of perspective achieved."
               />
               <QuoteCard
                 quote="Most people are, Scout, when you finally see them."
                 speaker="Atticus, final chapter"
-                analysis="Atticus's response to Scout's verdict on Boo ('he was real nice'). The line generalises Scout's specific insight: most people are good when truly perceived. The qualifier 'finally' admits that the seeing is the hard part. Coming as the novel's penultimate exchange, the line offers a guarded optimism after the verdict's horror — empathy is possible even after Maycomb has shown its worst."
+                analysis="Atticus's response to Scout's verdict on Boo ('he was real nice'). The line generalises Scout's specific insight: most people are good when truly perceived. The qualifier 'finally' admits that the seeing is the hard part. Coming as the novel's penultimate exchange, the line offers a guarded optimism after the verdict's horror - empathy is possible even after Maycomb has shown its worst."
               />
               <QuoteCard
                 quote="Well, it'd be sort of like shootin' a mockingbird, wouldn't it?"
                 speaker="Scout, Chapter 30"
-                analysis="Scout's response to Atticus asking whether she understands why Heck Tate insists Bob Ewell fell on his knife. In a single line she applies the title metaphor to Boo Radley. The hesitant 'sort of' shows childhood diction; the moral reasoning beneath is fully adult. This is the moment Scout demonstrates she has learned the novel's key ethical lesson — and it is enough to make Atticus accept Heck Tate's version."
+                analysis="Scout's response to Atticus asking whether she understands why Heck Tate insists Bob Ewell fell on his knife. In a single line she applies the title metaphor to Boo Radley. The hesitant 'sort of' shows childhood diction; the moral reasoning beneath is fully adult. This is the moment Scout demonstrates she has learned the novel's key ethical lesson - and it is enough to make Atticus accept Heck Tate's version."
               />
             </div>
           </Section>
@@ -638,7 +638,7 @@ export default function ToKillAMockingbirdPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Lee shows that prejudice is multi-layered — racial, class-based, and social —
+                      Lee shows that prejudice is multi-layered - racial, class-based, and social -
                       and is sustained not only by overt cruelty but by the everyday silences and
                       assumptions of ostensibly &ldquo;respectable&rdquo; townspeople.
                     </p>
@@ -1182,7 +1182,7 @@ export default function ToKillAMockingbirdPage() {
                   marks: 40,
                 },
                 {
-                  q: 'Discuss how Lee uses symbolism — particularly the mockingbird — to convey her central themes.',
+                  q: 'Discuss how Lee uses symbolism - particularly the mockingbird - to convey her central themes.',
                   marks: 40,
                 },
                 { q: 'How does Lee present the conflict between law and justice?', marks: 40 },

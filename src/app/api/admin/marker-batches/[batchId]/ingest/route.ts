@@ -1,7 +1,7 @@
-// ─── Platform-admin — Batch ingest ──────────────────────────────────────────
+// ─── Platform-admin - Batch ingest ──────────────────────────────────────────
 // POST /api/admin/marker-batches/[batchId]/ingest
 //
-// Site-admin only (verifyAdmin — RLS deny-by-default; service-role only).
+// Site-admin only (verifyAdmin - RLS deny-by-default; service-role only).
 // Bulk-loads answers into `marking_submissions` rows for a paid-marker batch.
 //
 // Accepts EITHER:
@@ -13,7 +13,7 @@
 //     questionId, studentAnswer, source('commissioned'|'specimen'|'platform'),
 //     isGold?, goldExpected? }
 //
-// Mapping into marking_submissions (snake_case — see the two frozen
+// Mapping into marking_submissions (snake_case - see the two frozen
 // migrations 20260518 / 20260519):
 //   studentAnswer            → essay_text          (the answer IS the essay)
 //   questionText             → question_text
@@ -26,10 +26,10 @@
 //   batch_id                 = path :batchId
 //   status                   = 'submitted'      (awaiting AI draft)
 //   is_gold / gold_expected  passthrough (gold-set rows)
-//   source: 'commissioned' → 'commissioned' (student_id NULL — no data subject)
-//           'specimen'     → 'specimen'     (student_id NULL — no data subject)
+//   source: 'commissioned' → 'commissioned' (student_id NULL - no data subject)
+//           'specimen'     → 'specimen'     (student_id NULL - no data subject)
 //           'platform'     → 'b2b_class'    (real pupil work; student_id REQUIRED
-//                                            — there is no 'platform' value in
+//                                            - there is no 'platform' value in
 //                                            the marking_submissions source
 //                                            CHECK, platform == class spine)
 //
@@ -395,7 +395,7 @@ export async function POST(
         skipped.push({ index, reason: 'markSchemeId is required and was empty.' })
         return
       }
-      // Validate the mark scheme — skip + report unknown (never insert it).
+      // Validate the mark scheme - skip + report unknown (never insert it).
       if (!getMarkScheme(markSchemeId)) {
         skipped.push({ index, reason: `Unknown markSchemeId "${markSchemeId}".` })
         return
@@ -452,7 +452,7 @@ export async function POST(
         essay_text: studentAnswer,
         is_gold: item.isGold === true,
         gold_expected: item.goldExpected === undefined ? null : (item.goldExpected as unknown),
-        // NEVER 'approved' — marker approval is a later, human act.
+        // NEVER 'approved' - marker approval is a later, human act.
         status: 'submitted',
       })
     })

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: 'Overview',
   description:
     `Everything you need for the ${QUALIFICATION.title} (${QUALIFICATION.subjectCode}): ` +
-    'what the exam is, who it is for, how it is marked on the S1–S4 scale, and where to start revising.',
+    'what the exam is, who it is for, how it is marked on the S1-S4 scale, and where to start revising.',
   alternates: { canonical: PAGE_URL },
 }
 
@@ -137,7 +137,7 @@ export default async function ILowerSecondaryOverviewPage() {
     },
     {
       label: trGlanceGrading,
-      value: QUALIFICATION.grades.join(' – '),
+      value: QUALIFICATION.grades.join(' - '),
       detail: QUALIFICATION.gradeNote,
     },
     {

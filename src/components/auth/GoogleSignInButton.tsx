@@ -33,7 +33,7 @@ interface GoogleSignInButtonProps {
  * `validateRedirect` from `@/lib/utils` before passing it in, so this
  * component does not re-validate.
  *
- * Gated by the `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED` env flag — if the
+ * Gated by the `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED` env flag - if the
  * flag is not set to `'true'`, the component renders nothing. Hide
  * the surrounding "or sign in with email" divider on the consumer
  * page using the same flag to keep the layout coherent.
@@ -49,7 +49,7 @@ export default function GoogleSignInButton({
   const [error, setError] = useState<string | null>(null)
   // Fall back to the dictionary label when the caller does not override it.
   // Resolved here (not at the destructure default) so the locale is read at
-  // render time — useT() picks up the active cookie/locale.
+  // render time - useT() picks up the active cookie/locale.
   const resolvedLabel = label ?? t('auth.google.continue')
 
   // Hard guard: if the env flag isn't explicitly 'true', render nothing.
@@ -79,7 +79,7 @@ export default function GoogleSignInButton({
       // Map known Supabase errors to friendly copy. The
       // 'provider is not enabled' case can still happen if the env
       // flag was flipped on before Google was actually enabled in
-      // the Supabase dashboard — surface a clear message rather
+      // the Supabase dashboard - surface a clear message rather
       // than the raw JSON.
       const raw = oauthError.message?.toLowerCase() ?? ''
       const friendly = raw.includes('provider is not enabled')
@@ -91,7 +91,7 @@ export default function GoogleSignInButton({
     }
 
     // On success the browser is redirected by Supabase, so we leave
-    // the loading state set — the page is about to unload.
+    // the loading state set - the page is about to unload.
   }
 
   const baseStyles =
@@ -131,7 +131,7 @@ export default function GoogleSignInButton({
 /**
  * Official multi-coloured Google "G" mark.
  * Source: Google branding guidelines (the same SVG path used across
- * the ecosystem — Stripe, Linear, Vercel, etc.).
+ * the ecosystem - Stripe, Linear, Vercel, etc.).
  */
 function GoogleLogo(props: React.SVGProps<SVGSVGElement>) {
   return (

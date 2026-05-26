@@ -8,7 +8,7 @@ import { t } from '@/lib/i18n/t'
  * Server component. Chrome strings (breadcrumb labels, byline, "Ready
  * to revise", CTAs, related-analyses heading) route through
  * `analysis.subpage.*` for Khaleeji AR. Literary body content stays
- * in source language — children pass through untouched.
+ * in source language - children pass through untouched.
  * ───────────────────────────────────────────────────────────────────── */
 
 type Related = {
@@ -130,7 +130,7 @@ export async function AnalysisPage({
   children,
   related,
 }: AnalysisPageProps) {
-  // Chrome translations — async server component handles them inline.
+  // Chrome translations - async server component handles them inline.
   const homeLabel = await t('analysis.subpage.home_breadcrumb')
   const hubLink = await t('analysis.subpage.jekyll_hub_link')
   const allLink = await t('analysis.subpage.jekyll_all_link')

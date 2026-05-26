@@ -18,11 +18,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'Between a Rock and a Hard Place — Aron Ralston — IGCSE Language A Anthology — The English Hub',
+      'Between a Rock and a Hard Place - Aron Ralston - IGCSE Language A Anthology - The English Hub',
     description:
       'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   },
-  title: 'Between a Rock and a Hard Place — Aron Ralston — IGCSE Language A Anthology',
+  title: 'Between a Rock and a Hard Place - Aron Ralston - IGCSE Language A Anthology',
   description:
     'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/127-hours' },
@@ -55,7 +55,7 @@ const extractFocuses = [
     label: 'Hallucination',
     focus: 'A vision of a future child',
     context:
-      'Severe dehydration produces a vision of a small boy in a sunlit room — a figure Ralston interprets as a future son. The hallucination introduces hope and a stake in the future at the moment of greatest physical decline.',
+      'Severe dehydration produces a vision of a small boy in a sunlit room - a figure Ralston interprets as a future son. The hallucination introduces hope and a stake in the future at the moment of greatest physical decline.',
   },
   {
     id: 5,
@@ -70,7 +70,7 @@ const languageFeatures = [
   {
     technique: 'Present-tense narration',
     explanation:
-      'The whole extract is told in the present tense. The reader experiences each moment as Ralston experiences it, with no reassuring past-tense distance. The effect is visceral and claustrophobic — events happen now, not safely in memory.',
+      'The whole extract is told in the present tense. The reader experiences each moment as Ralston experiences it, with no reassuring past-tense distance. The effect is visceral and claustrophobic - events happen now, not safely in memory.',
   },
   {
     technique: 'Short, clipped sentences',
@@ -80,12 +80,12 @@ const languageFeatures = [
   {
     technique: 'Sensory and bodily language',
     explanation:
-      'Ralston repeatedly names internal physical sensations — adrenaline, thirst, cold, pain. By describing what is happening inside his body rather than only what is visible outside it, he creates an empathetic, uncomfortable closeness with the reader.',
+      'Ralston repeatedly names internal physical sensations - adrenaline, thirst, cold, pain. By describing what is happening inside his body rather than only what is visible outside it, he creates an empathetic, uncomfortable closeness with the reader.',
   },
   {
     technique: 'Self-directed metaphor',
     explanation:
-      'Before the act of self-amputation, Ralston casts himself in heroic and stoic roles. The metaphors are not decoration — they are acts of will, language he uses on himself to manufacture the strength his body can no longer supply.',
+      'Before the act of self-amputation, Ralston casts himself in heroic and stoic roles. The metaphors are not decoration - they are acts of will, language he uses on himself to manufacture the strength his body can no longer supply.',
   },
   {
     technique: 'Acceptance of fault',
@@ -95,7 +95,7 @@ const languageFeatures = [
   {
     technique: 'Contrasting imagery',
     explanation:
-      'The cold, narrow, dark canyon is set against the warm, lit, domestic vision of his hallucinated future son. The contrast organises the extract around two poles — the closing-in physical present and the opening-out imagined future.',
+      'The cold, narrow, dark canyon is set against the warm, lit, domestic vision of his hallucinated future son. The contrast organises the extract around two poles - the closing-in physical present and the opening-out imagined future.',
   },
   {
     technique: 'Unfiltered emotional detail',
@@ -115,13 +115,13 @@ const languageFeatures = [
   {
     technique: 'Self-talk as survival tool',
     explanation:
-      'Ralston quotes the orders he gives himself. Language becomes equipment — a way to override despair and convert thought into the next action. The technique demonstrates the central idea of the extract: that the mind is the last resource when the body is trapped.',
+      'Ralston quotes the orders he gives himself. Language becomes equipment - a way to override despair and convert thought into the next action. The technique demonstrates the central idea of the extract: that the mind is the last resource when the body is trapped.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Ralston opens in medias res, with the boulder already shifting. There is no preamble, no setting-up of context — the reader is dropped into the crisis at exactly the moment Ralston is, mirroring his own shock.',
+    'Ralston opens in medias res, with the boulder already shifting. There is no preamble, no setting-up of context - the reader is dropped into the crisis at exactly the moment Ralston is, mirroring his own shock.',
   development:
     'The extract develops through escalating stages: initial shock, assessment of the trap, attempts at physical escape, recognition that no rescue is coming, hallucination, and finally the decision to act. Each stage closes off a route the reader might have hoped for.',
   climax:
@@ -132,7 +132,7 @@ const structuralAnalysis = {
     "First person, present tense throughout. The narrative is locked inside Ralston's body and mind, with no external viewpoint and no relief from his perspective.",
   paragraphing:
     'Paragraphs and sentences are often very short. The fragmented layout produces pace, urgency and the sense of a mind working in pulses rather than continuous streams.',
-  time: 'Time is a structural device as well as a subject. Ralston tracks hours and days, and time becomes both the enemy (dehydration, hypothermia) and the measure of his endurance. The framing duration — 127 hours — is foregrounded as a structural unit.',
+  time: 'Time is a structural device as well as a subject. Ralston tracks hours and days, and time becomes both the enemy (dehydration, hypothermia) and the measure of his endurance. The framing duration - 127 hours - is foregrounded as a structural unit.',
   openingClosing:
     'The extract moves from helplessness at the start (the boulder falls onto him) to agency at the end (he acts on himself). The structural arc from passive to active mirrors the psychological journey from victim to survivor.',
 }
@@ -143,7 +143,7 @@ const writersPurpose = {
   readerFeel:
     'The reader is meant to feel the claustrophobia of the canyon, the slow narrowing of options, and the primal will that finally drives the decision to act. The present-tense narration is engineered to place the reader inside the situation rather than outside it.',
   message:
-    'The central idea is the power of the human will. When external resources fail and rescue does not come, the mind itself — through self-talk, imagined futures, and decisions made in language — becomes the means of survival.',
+    'The central idea is the power of the human will. When external resources fail and rescue does not come, the mind itself - through self-talk, imagined futures, and decisions made in language - becomes the means of survival.',
 }
 
 const keyVocabulary = [
@@ -196,22 +196,22 @@ const examPractice = {
   q1: {
     question:
       "List four things you learn about Ralston's physical condition during his time trapped in the canyon.",
-    type: 'Retrieval — 4 marks',
+    type: 'Retrieval - 4 marks',
   },
   q2: {
     question: 'How does Ralston use language to convey the intensity of his survival experience?',
-    type: 'Language analysis — 12 marks',
+    type: 'Language analysis - 12 marks',
     modelOutline: [
       'Present-tense narration removes the safety of past-tense distance and locks the reader into the unfolding crisis at the same speed Ralston experiences it.',
       'Short, declarative sentence structures convey panic and finality, their bluntness reflecting situations in which there is no room for evasion or comfort.',
       'Self-directed metaphor and self-talk show Ralston using language as a survival tool, transforming himself from a trapped subject into an active agent through the way he describes himself to himself.',
-      "Sensory description of bodily sensations — adrenaline, thirst, cold, pain — places the reader inside Ralston's body rather than outside the experience, creating a visceral rather than observational effect.",
+      "Sensory description of bodily sensations - adrenaline, thirst, cold, pain - places the reader inside Ralston's body rather than outside the experience, creating a visceral rather than observational effect.",
     ],
   },
   q3: {
     question:
       'How does Ralston structure the text to build tension towards the moment of his escape?',
-    type: 'Structural analysis — 12 marks',
+    type: 'Structural analysis - 12 marks',
   },
 }
 
@@ -221,15 +221,15 @@ const comparisonLinks = [
     author: 'Steven Morris',
     href: '/igcse/edexcel-lang/anthology/explorers-or-boys-messing-about',
     reason:
-      "Both texts concern adventurers in danger. Compare Ralston's first-person survival account with Morris's critical newspaper article — one celebrates resilience from inside, the other condemns recklessness from outside.",
+      "Both texts concern adventurers in danger. Compare Ralston's first-person survival account with Morris's critical newspaper article - one celebrates resilience from inside, the other condemns recklessness from outside.",
     themes: ['Adventure', 'Risk', 'Different perspectives'],
   },
   {
     title: 'A Passage to Africa',
-    author: 'George Alagiah (1955–2023)',
+    author: 'George Alagiah (1955-2023)',
     href: '/igcse/edexcel-lang/anthology/a-passage-to-africa',
     reason:
-      "Both texts deal with extreme physical suffering. Compare Ralston's self-focused survival narrative with Alagiah's empathetic witness account — two different relationships to pain and endurance.",
+      "Both texts deal with extreme physical suffering. Compare Ralston's self-focused survival narrative with Alagiah's empathetic witness account - two different relationships to pain and endurance.",
     themes: ['Suffering', 'Survival', 'Perspective'],
   },
   {
@@ -237,7 +237,7 @@ const comparisonLinks = [
     author: 'Kari Herbert',
     href: '/igcse/edexcel-lang/anthology/the-explorers-daughter',
     reason:
-      "Both texts describe humans confronting the power of nature. Compare Ralston's individual battle with Herbert's communal hunt — solo survival versus collective tradition in hostile environments.",
+      "Both texts describe humans confronting the power of nature. Compare Ralston's individual battle with Herbert's communal hunt - solo survival versus collective tradition in hostile environments.",
     themes: ['Nature', 'Survival', 'Human vs environment'],
   },
 ]
@@ -312,7 +312,7 @@ export default async function OneHundredTwentySevenHoursPage() {
           {extractFocuses.map((extract) => (
             <div key={extract.id} className="rounded-xl border border-border/40 bg-card p-4">
               <span className="font-mono text-body-xs text-amber-600 dark:text-clay-600 uppercase tracking-wider">
-                Moment {extract.id} — {extract.label}
+                Moment {extract.id} - {extract.label}
               </span>
               <p className="mt-2 text-body-sm font-semibold text-foreground">{extract.focus}</p>
               <p className="mt-2 text-body-sm text-muted-foreground">{extract.context}</p>

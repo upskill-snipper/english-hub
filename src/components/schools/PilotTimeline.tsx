@@ -1,7 +1,7 @@
-// Founder School Pilot timeline — server component. A 4-phase vertical
+// Founder School Pilot timeline - server component. A 4-phase vertical
 // timeline for the ~one-term pilot. Phases and deliverables are taken
 // from the institutional pilot spec. All wording is forward-looking
-// ("pilot schools will receive") — no claimed results.
+// ("pilot schools will receive") - no claimed results.
 
 import { cn } from '@/lib/utils'
 
@@ -22,7 +22,7 @@ const DEFAULT_PHASES: PilotPhase[] = [
     ],
   },
   {
-    weeks: 'Weeks 2–4',
+    weeks: 'Weeks 2-4',
     title: 'Student and teacher usage begins',
     points: [
       'Students start structured practice',
@@ -31,7 +31,7 @@ const DEFAULT_PHASES: PilotPhase[] = [
     ],
   },
   {
-    weeks: 'Weeks 5–8',
+    weeks: 'Weeks 5-8',
     title: 'Intervention insights and review',
     points: [
       'Class and year-group analytics reviewed',
@@ -40,7 +40,7 @@ const DEFAULT_PHASES: PilotPhase[] = [
     ],
   },
   {
-    weeks: 'Weeks 9–12',
+    weeks: 'Weeks 9-12',
     title: 'Impact review and rollout recommendation',
     points: [
       'Usage and engagement summary',

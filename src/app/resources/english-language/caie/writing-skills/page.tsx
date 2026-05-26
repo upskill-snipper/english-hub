@@ -9,7 +9,7 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Cambridge IGCSE English Language writing skills — The English Hub',
+    title: 'Cambridge IGCSE English Language writing skills - The English Hub',
     description:
       'Writing skills for Cambridge IGCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
   },

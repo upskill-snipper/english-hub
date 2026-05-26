@@ -58,7 +58,7 @@ function parseCSP(cspValue: string): Record<string, string> {
 
 // ── Tests ────────────────────────────────────────────────────────────────
 
-describe('Security Headers — X-Frame-Options', () => {
+describe('Security Headers - X-Frame-Options', () => {
   it('is set to DENY to prevent clickjacking', () => {
     const header = findHeader('X-Frame-Options')
     expect(header).toBeDefined()
@@ -66,7 +66,7 @@ describe('Security Headers — X-Frame-Options', () => {
   })
 })
 
-describe('Security Headers — X-Content-Type-Options', () => {
+describe('Security Headers - X-Content-Type-Options', () => {
   it('is set to nosniff to prevent MIME type sniffing', () => {
     const header = findHeader('X-Content-Type-Options')
     expect(header).toBeDefined()
@@ -74,7 +74,7 @@ describe('Security Headers — X-Content-Type-Options', () => {
   })
 })
 
-describe('Security Headers — Referrer-Policy', () => {
+describe('Security Headers - Referrer-Policy', () => {
   it('is set to strict-origin-when-cross-origin', () => {
     const header = findHeader('Referrer-Policy')
     expect(header).toBeDefined()
@@ -82,7 +82,7 @@ describe('Security Headers — Referrer-Policy', () => {
   })
 })
 
-describe('Security Headers — Content-Security-Policy', () => {
+describe('Security Headers - Content-Security-Policy', () => {
   const cspHeader = findHeader('Content-Security-Policy')
   const csp = cspHeader ? parseCSP(cspHeader.value) : {}
 
@@ -160,7 +160,7 @@ describe('Security Headers — Content-Security-Policy', () => {
   })
 })
 
-describe('Security Headers — HSTS', () => {
+describe('Security Headers - HSTS', () => {
   const hsts = findHeader('Strict-Transport-Security')
 
   it('HSTS header is present', () => {
@@ -183,7 +183,7 @@ describe('Security Headers — HSTS', () => {
   })
 })
 
-describe('Security Headers — Permissions-Policy', () => {
+describe('Security Headers - Permissions-Policy', () => {
   const pp = findHeader('Permissions-Policy')
 
   it('Permissions-Policy header is present', () => {
@@ -203,7 +203,7 @@ describe('Security Headers — Permissions-Policy', () => {
   })
 })
 
-describe('Security Headers — XSS Protection', () => {
+describe('Security Headers - XSS Protection', () => {
   it('X-XSS-Protection is set to 0 (modern best practice)', () => {
     // The X-XSS-Protection: 0 header disables the legacy XSS filter in
     // older browsers. Modern browsers have deprecated this filter as it
@@ -215,7 +215,7 @@ describe('Security Headers — XSS Protection', () => {
   })
 })
 
-describe('Security Headers — completeness', () => {
+describe('Security Headers - completeness', () => {
   it('has all required security headers (7 total)', () => {
     expect(SECURITY_HEADERS).toHaveLength(7)
   })

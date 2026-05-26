@@ -19,11 +19,11 @@ import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Passage to Africa — George Alagiah — IGCSE Language A Anthology — The English Hub',
+    title: 'A Passage to Africa - George Alagiah - IGCSE Language A Anthology - The English Hub',
     description:
       'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   },
-  title: 'A Passage to Africa — George Alagiah — IGCSE Language A Anthology',
+  title: 'A Passage to Africa - George Alagiah - IGCSE Language A Anthology',
   description:
     'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: {
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 const keyMoments = [
   {
     id: 1,
-    label: 'Opening — the catalogue of suffering',
-    labelAr: 'الافتتاح — تَعدادُ المعاناة',
+    label: 'Opening - the catalogue of suffering',
+    labelAr: 'الافتتاح - تَعدادُ المعاناة',
     context:
       'Alagiah opened with a panoramic view of starvation across Somalia, criss-crossing the country between warring clans. The accumulation of suffering establishes the scale of the 1992 famine and his role as a journalist witnessing it.',
     contextAr:
@@ -66,18 +66,18 @@ const keyMoments = [
     label: 'The meaning of the smile',
     labelAr: 'معنى الابتسامة',
     context:
-      'The teacher note below explains why this is the most-quoted line of the piece. Alagiah re-read the smile not as a greeting but as something more painful — a recognition of being witnessed in degradation.',
+      'The teacher note below explains why this is the most-quoted line of the piece. Alagiah re-read the smile not as a greeting but as something more painful - a recognition of being witnessed in degradation.',
     contextAr:
-      'تشرح ملاحظةُ المعلّم أدناه لماذا هذا أكثرُ سطرٍ يُقتبس من العمل. يُعيد Alagiah قراءةَ الابتسامة، لا تحيّةً، بل شيئاً أوجع — اعترافاً بأنّ المرء يُرى وهو في إذلاله.',
+      'تشرح ملاحظةُ المعلّم أدناه لماذا هذا أكثرُ سطرٍ يُقتبس من العمل. يُعيد Alagiah قراءةَ الابتسامة، لا تحيّةً، بل شيئاً أوجع - اعترافاً بأنّ المرء يُرى وهو في إذلاله.',
   },
   {
     id: 5,
     label: 'Closing reflection',
     labelAr: 'التأمّل الختاميّ',
     context:
-      'Alagiah ended by reframing the smile as an assertion of humanity — a refusal to be reduced to a victim or a statistic. The closing recovers the individual that the opening submerged in the mass.',
+      'Alagiah ended by reframing the smile as an assertion of humanity - a refusal to be reduced to a victim or a statistic. The closing recovers the individual that the opening submerged in the mass.',
     contextAr:
-      'يختم Alagiah بإعادة تأطير الابتسامة بوصفها تأكيداً للإنسانيّة — رفضاً للاختزال إلى ضحيّةٍ أو إحصاء. وتستردّ الخاتمةُ الفردَ الذي أغرقه الافتتاحُ في الجموع.',
+      'يختم Alagiah بإعادة تأطير الابتسامة بوصفها تأكيداً للإنسانيّة - رفضاً للاختزال إلى ضحيّةٍ أو إحصاء. وتستردّ الخاتمةُ الفردَ الذي أغرقه الافتتاحُ في الجموع.',
   },
 ]
 
@@ -118,9 +118,9 @@ const languageFeatures = [
     technique: 'Sensory language',
     techniqueAr: 'اللغة الحسّيّة',
     explanation:
-      'He layered in sensory detail — particularly smell, the most unavoidable sense — to immerse the reader in the reality of the famine. You can look away from a photograph, but not a smell.',
+      'He layered in sensory detail - particularly smell, the most unavoidable sense - to immerse the reader in the reality of the famine. You can look away from a photograph, but not a smell.',
     explanationAr:
-      'يُكدّس التفاصيلَ الحسيّة — لا سيّما الشمّ، أكثر الحواسّ استعصاءً على التجنّب — كي يغمر القارئ في واقع المجاعة. يمكنك أن تُعرض عن صورة، لكنّك لا تستطيع أن تُعرض عن رائحة.',
+      'يُكدّس التفاصيلَ الحسيّة - لا سيّما الشمّ، أكثر الحواسّ استعصاءً على التجنّب - كي يغمر القارئ في واقع المجاعة. يمكنك أن تُعرض عن صورة، لكنّك لا تستطيع أن تُعرض عن رائحة.',
   },
   {
     technique: 'Sentence variety',
@@ -142,9 +142,9 @@ const languageFeatures = [
     technique: 'Repetition',
     techniqueAr: 'التكرار',
     explanation:
-      "The motif of the smile recurs through the extract, reinterpreted each time — as greeting, as embarrassment, as humanity. The repetition tracks Alagiah's changing understanding of a single gesture.",
+      "The motif of the smile recurs through the extract, reinterpreted each time - as greeting, as embarrassment, as humanity. The repetition tracks Alagiah's changing understanding of a single gesture.",
     explanationAr:
-      'يتكرّر موتيفُ الابتسامة عبر المقتطف، ويُعاد تأويلُه في كلّ مرّة — تحيّةً، فإحراجاً، فإنسانيّةً. ويلاحق التكرار تطوُّرَ فهم Alagiah لإيماءةٍ واحدة.',
+      'يتكرّر موتيفُ الابتسامة عبر المقتطف، ويُعاد تأويلُه في كلّ مرّة - تحيّةً، فإحراجاً، فإنسانيّةً. ويلاحق التكرار تطوُّرَ فهم Alagiah لإيماءةٍ واحدة.',
   },
   {
     technique: 'Rhetorical questioning',
@@ -158,29 +158,29 @@ const languageFeatures = [
     technique: 'First-person reflective voice',
     techniqueAr: 'صوت المتكلّم المتأمّل',
     explanation:
-      'The narrator is both observer and participant. The tension between Alagiah-the-journalist and Alagiah-the-human-being drives the piece — the professional who must record suffering and the person who feels it.',
+      'The narrator is both observer and participant. The tension between Alagiah-the-journalist and Alagiah-the-human-being drives the piece - the professional who must record suffering and the person who feels it.',
     explanationAr:
-      'الراوي مُراقبٌ ومُشاركٌ في آنٍ معاً. ويحرّك التوتّرُ بين Alagiah-الصحفيِّ وAlagiah-الإنسانِ العملَ — المحترفُ الذي يلزمه تسجيل المعاناة، والإنسانُ الذي يشعر بها.',
+      'الراوي مُراقبٌ ومُشاركٌ في آنٍ معاً. ويحرّك التوتّرُ بين Alagiah-الصحفيِّ وAlagiah-الإنسانِ العملَ - المحترفُ الذي يلزمه تسجيل المعاناة، والإنسانُ الذي يشعر بها.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Alagiah opened with a panoramic view of suffering across Somalia — a wide shot establishing the overwhelming scale. This mirrors the technique of a news broadcast, starting with the big picture before zooming in.',
+    'Alagiah opened with a panoramic view of suffering across Somalia - a wide shot establishing the overwhelming scale. This mirrors the technique of a news broadcast, starting with the big picture before zooming in.',
   openingAr:
-    'يستهلّ Alagiah بنظرةٍ بانوراميّة على المعاناة في أنحاء الصومال — لقطةٌ واسعة تُرسّخ الحجمَ الطاغي. ويعكس هذا أسلوبَ النشرة الإخباريّة، الذي يبدأ من الصورة الكبرى قبل أن يقرّب التركيز.',
+    'يستهلّ Alagiah بنظرةٍ بانوراميّة على المعاناة في أنحاء الصومال - لقطةٌ واسعة تُرسّخ الحجمَ الطاغي. ويعكس هذا أسلوبَ النشرة الإخباريّة، الذي يبدأ من الصورة الكبرى قبل أن يقرّب التركيز.',
   development:
     "The text gradually narrows its focus from the general (a country, a famine, many faces) to the particular (one village, one man, one smile). This structural movement from wide to close-up is the text's most powerful device.",
   developmentAr:
     'يضيّق النصّ تدريجيّاً مدى تركيزه من العامّ (بلدٌ، مجاعةٌ، وجوهٌ كثيرة) إلى الخاصّ (قريةٌ واحدة، رجلٌ واحد، ابتسامةٌ واحدة). وهذا الانتقال البنائيّ من الواسع إلى القريب هو أقوى أدوات النصّ.',
   climax:
-    'The climax is the moment of realisation about the smile — when Alagiah reinterpreted it not as a greeting but as something more troubling. This is both an emotional and intellectual climax.',
+    'The climax is the moment of realisation about the smile - when Alagiah reinterpreted it not as a greeting but as something more troubling. This is both an emotional and intellectual climax.',
   climaxAr:
-    'الذروةُ هي لحظةُ إدراك معنى الابتسامة — حين أعاد Alagiah تأويلَها لا تحيّةً بل شيئاً أكثر إقلاقاً. وهذه ذروةٌ عاطفيّة وفكريّة في آنٍ معاً.',
+    'الذروةُ هي لحظةُ إدراك معنى الابتسامة - حين أعاد Alagiah تأويلَها لا تحيّةً بل شيئاً أكثر إقلاقاً. وهذه ذروةٌ عاطفيّة وفكريّة في آنٍ معاً.',
   resolution:
-    'Alagiah reframed the smile a final time as an assertion of humanity. The resolution is not neat — the guilt remains — but the writer reaches a deeper understanding of what the encounter meant.',
+    'Alagiah reframed the smile a final time as an assertion of humanity. The resolution is not neat - the guilt remains - but the writer reaches a deeper understanding of what the encounter meant.',
   resolutionAr:
-    'يُعيد Alagiah تأطيرَ الابتسامة في النهاية بوصفها تأكيداً للإنسانيّة. والخاتمةُ ليست مرتّبة — يبقى الشعور بالذنب — لكنّ الكاتب يبلغ فهماً أعمق لما يعنيه ذلك اللقاء.',
+    'يُعيد Alagiah تأطيرَ الابتسامة في النهاية بوصفها تأكيداً للإنسانيّة. والخاتمةُ ليست مرتّبة - يبقى الشعور بالذنب - لكنّ الكاتب يبلغ فهماً أعمق لما يعنيه ذلك اللقاء.',
   perspective:
     'First person throughout. Alagiah wrote as both journalist (observer) and human being (participant). The tension between these two roles drives the text: the professional who must record suffering and the person who feels it.',
   perspectiveAr:
@@ -193,9 +193,9 @@ const structuralAnalysis = {
   timeAr:
     'يتنقّل النصّ بين الزمن الماضي العامّ (تغطية الصومال على مدى أسابيع) ولحظةٍ واحدة محدّدة (الرجل الذي ابتسم في Gufgaduud). وثمّة انتقالٌ من الزمن المهنيّ (المواعيد النهائيّة، تقديم التقارير) إلى الزمن الشخصيّ (اللحظة التي تطاردك).',
   openingClosing:
-    "The opening presents suffering as a mass; the closing recovers the individual. This structural arc — from dehumanisation to re-humanisation — embodies the text's central message about the importance of seeing individuals.",
+    "The opening presents suffering as a mass; the closing recovers the individual. This structural arc - from dehumanisation to re-humanisation - embodies the text's central message about the importance of seeing individuals.",
   openingClosingAr:
-    'يقدّم الافتتاحُ المعاناةَ جموعاً؛ وتستردّ الخاتمةُ الفردَ. وهذا القوسُ البنائيّ — من نزع الإنسانيّة إلى استعادتها — يجسّد رسالةَ النصّ المركزيّة عن أهمّيّة رؤية الأفراد.',
+    'يقدّم الافتتاحُ المعاناةَ جموعاً؛ وتستردّ الخاتمةُ الفردَ. وهذا القوسُ البنائيّ - من نزع الإنسانيّة إلى استعادتها - يجسّد رسالةَ النصّ المركزيّة عن أهمّيّة رؤية الأفراد.',
 }
 
 const writersPurpose = {
@@ -204,13 +204,13 @@ const writersPurpose = {
   achieveAr:
     'أراد Alagiah أن يستكشف التعقيدَ الأخلاقيَّ في كون المرء صحفيّاً داخل منطقة أزمة. وتساءل: هل ينزع الإعلامُ إنسانيّةَ من يدّعي مساعدتهم؟ وهل ساهم حضورُه مراسلاً في إذلال من شَهِدَهم؟',
   readerFeel:
-    'He wanted the reader to feel the uncomfortable tension between compassion and voyeurism — the same tension he felt as a correspondent. He also wanted to restore humanity to the people he reported on.',
+    'He wanted the reader to feel the uncomfortable tension between compassion and voyeurism - the same tension he felt as a correspondent. He also wanted to restore humanity to the people he reported on.',
   readerFeelAr:
-    'أراد للقارئ أن يشعر بالتوتّر المُربك بين الشفقة والفُرجة — التوتّر نفسه الذي شعر به مراسلاً. كما أراد أن يستعيد إنسانيّةَ من غطّى أحوالَهم.',
+    'أراد للقارئ أن يشعر بالتوتّر المُربك بين الشفقة والفُرجة - التوتّر نفسه الذي شعر به مراسلاً. كما أراد أن يستعيد إنسانيّةَ من غطّى أحوالَهم.',
   message:
-    "His central argument is that behind every news statistic is a human being who deserves to be seen as an individual. The man's smile in Gufgaduud is a refusal to be reduced to a victim — it is an assertion of dignity and humanity.",
+    "His central argument is that behind every news statistic is a human being who deserves to be seen as an individual. The man's smile in Gufgaduud is a refusal to be reduced to a victim - it is an assertion of dignity and humanity.",
   messageAr:
-    'حُجّتُه المركزيّة أنّ وراء كلّ إحصاءٍ إخباريّ إنساناً يستحقّ أن يُرى فرداً. وابتسامةُ الرجل في Gufgaduud رفضٌ للاختزال إلى ضحيّة — هي تأكيدٌ للكرامة والإنسانيّة.',
+    'حُجّتُه المركزيّة أنّ وراء كلّ إحصاءٍ إخباريّ إنساناً يستحقّ أن يُرى فرداً. وابتسامةُ الرجل في Gufgaduud رفضٌ للاختزال إلى ضحيّة - هي تأكيدٌ للكرامة والإنسانيّة.',
 }
 
 const keyVocabulary = [
@@ -286,26 +286,26 @@ const examPractice = {
     question:
       'List four things you learn about the conditions in Somalia from the opening paragraphs.',
     questionAr: 'اذكر أربعةَ أشياء تعرفها عن الأوضاع في الصومال من فقرات الافتتاح.',
-    type: 'Retrieval — 4 marks',
-    typeAr: 'الاسترجاع — ٤ درجات',
+    type: 'Retrieval - 4 marks',
+    typeAr: 'الاسترجاع - ٤ درجات',
   },
   q2: {
     question:
       'How does Alagiah use language to convey the impact of suffering on both the victims and himself as a journalist?',
     questionAr:
       'كيف يستعمل Alagiah اللغةَ لنقل أثر المعاناة في الضحايا وفيه شخصيّاً بوصفه صحفيّاً؟',
-    type: 'Language analysis — 12 marks',
-    typeAr: 'تحليل اللغة — ١٢ درجة',
+    type: 'Language analysis - 12 marks',
+    typeAr: 'تحليل اللغة - ١٢ درجة',
     modelOutline: [
       'Identify the metaphor Alagiah uses for newsroom decision-making and explain how its negative modifier reveals his own moral discomfort with the profession.',
       'Track the listing of adjectives in the opening: how the cumulative effect moves the reader through the physical, emotional and political dimensions of suffering in a single sentence.',
-      'Analyse the sensory language — particularly references to smell — and explain why this sense is harder to ignore than visual description.',
+      'Analyse the sensory language - particularly references to smell - and explain why this sense is harder to ignore than visual description.',
       'Examine the central contrast between devastation and the human gesture of the smile. Why does this contrast force both Alagiah and the reader to reconsider how they see victims of crisis?',
     ],
     modelOutlineAr: [
       'حدّد الاستعارة التي يستعملها Alagiah لاتّخاذ القرارات في غرفة الأخبار، واشرح كيف يكشف وصفُها السلبيّ ضيقَه الأخلاقيَّ من مهنته.',
       'تتبّع تَعدادَ الصفات في الافتتاح: كيف ينقل الأثرُ التراكميُّ القارئَ عبر الأبعاد الجسديّة والعاطفيّة والسياسيّة للمعاناة في جملةٍ واحدة.',
-      'حلِّل اللغةَ الحسيّة — لا سيّما إشارات الشمّ — واشرح لماذا تستعصي هذه الحاسّة على التجاهل أكثر من الوصف البصريّ.',
+      'حلِّل اللغةَ الحسيّة - لا سيّما إشارات الشمّ - واشرح لماذا تستعصي هذه الحاسّة على التجاهل أكثر من الوصف البصريّ.',
       'افحص التضادَّ المحوريَّ بين الدمار وإيماءة الابتسامة الإنسانيّة. لماذا يُجبر هذا التضادُّ Alagiah والقارئَ معاً على إعادة النظر في كيفيّة رؤية ضحايا الأزمات؟',
     ],
   },
@@ -314,8 +314,8 @@ const examPractice = {
       'How does Alagiah structure the text to move from a wide view of suffering to a focus on one individual?',
     questionAr:
       'كيف يبني Alagiah النصَّ ليتنقّل من نظرةٍ واسعة على المعاناة إلى تركيزٍ على فردٍ واحد؟',
-    type: 'Structural analysis — 12 marks',
-    typeAr: 'التحليل البنائيّ — ١٢ درجة',
+    type: 'Structural analysis - 12 marks',
+    typeAr: 'التحليل البنائيّ - ١٢ درجة',
   },
 }
 
@@ -336,9 +336,9 @@ const comparisonLinks = [
     author: 'Jamie Zeppa',
     href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',
     reason:
-      "Both writers are outsiders encountering unfamiliar cultures. Compare Alagiah's guilt-laden journalism in a crisis zone with Zeppa's wonder-filled travel memoir — two very different ways of writing about the unfamiliar.",
+      "Both writers are outsiders encountering unfamiliar cultures. Compare Alagiah's guilt-laden journalism in a crisis zone with Zeppa's wonder-filled travel memoir - two very different ways of writing about the unfamiliar.",
     reasonAr:
-      'كلا الكاتبَين غريبٌ يلتقي ثقافاتٍ مجهولة. قارن صحافةَ Alagiah المُثقَلة بالشعور بالذنب في منطقة أزمة، بسيرة Zeppa الرحليّة المُفعمة بالدهشة — طريقتان مختلفتان وايد في الكتابة عن المجهول.',
+      'كلا الكاتبَين غريبٌ يلتقي ثقافاتٍ مجهولة. قارن صحافةَ Alagiah المُثقَلة بالشعور بالذنب في منطقة أزمة، بسيرة Zeppa الرحليّة المُفعمة بالدهشة - طريقتان مختلفتان وايد في الكتابة عن المجهول.',
     themes: ['Outsider perspective', 'Cultural encounter', 'Personal growth'],
     themesAr: ['منظور الغريب', 'اللقاء الثقافيّ', 'النموّ الشخصيّ'],
   },
@@ -347,9 +347,9 @@ const comparisonLinks = [
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      "Both texts deal with extreme physical suffering. Compare Ralston's first-person survival narrative with Alagiah's journalistic witness account — one is the sufferer, the other is the observer.",
+      "Both texts deal with extreme physical suffering. Compare Ralston's first-person survival narrative with Alagiah's journalistic witness account - one is the sufferer, the other is the observer.",
     reasonAr:
-      'يتناول النصّان معاناةً جسديّةً قصوى. قارن سردَ Ralston الناجي بضمير المتكلّم بشهادة Alagiah الصحفيّة — أحدهما المُعاني، والآخر المُراقب.',
+      'يتناول النصّان معاناةً جسديّةً قصوى. قارن سردَ Ralston الناجي بضمير المتكلّم بشهادة Alagiah الصحفيّة - أحدهما المُعاني، والآخر المُراقب.',
     themes: ['Suffering', 'Survival', 'Human resilience'],
     themesAr: ['المعاناة', 'النجاة', 'صمود الإنسان'],
   },
@@ -452,7 +452,7 @@ export default async function APassageToAfricaPage() {
           {keyMoments.map((moment) => (
             <div key={moment.id} className="rounded-xl border border-border/40 bg-card p-4">
               <span className="font-mono text-body-xs text-amber-600 dark:text-clay-600 uppercase tracking-wider">
-                {momentPrefix} {moment.id} — {ar ? moment.labelAr : moment.label}
+                {momentPrefix} {moment.id} - {ar ? moment.labelAr : moment.label}
               </span>
               <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
                 {ar ? moment.contextAr : moment.context}
@@ -464,8 +464,8 @@ export default async function APassageToAfricaPage() {
                   </span>
                   <p className="mt-1">
                     {ar
-                      ? 'يصوغها Alagiah بشهرةٍ بأنّها "smile of embarrassment" — تحقّق من الصياغة الحرفيّة في مختاراتك قبل الاقتباس.'
-                      : 'Alagiah famously frames this as a “smile of embarrassment” — verify exact phrasing against your anthology before quoting.'}
+                      ? 'يصوغها Alagiah بشهرةٍ بأنّها "smile of embarrassment" - تحقّق من الصياغة الحرفيّة في مختاراتك قبل الاقتباس.'
+                      : 'Alagiah famously frames this as a “smile of embarrassment” - verify exact phrasing against your anthology before quoting.'}
                   </p>
                 </div>
               )}
@@ -707,7 +707,7 @@ export default async function APassageToAfricaPage() {
             <strong className="text-foreground">{await t('anth_text.rights_notice_label')}</strong>{' '}
             © ورثة Alagiah عبر Pearson Education. تتطلّب اختياراتُ المختارات الكاملة طبعةً مدرسيّة
             مرخّصة من Edexcel (ISBN 978-1-446-93108-0). <em>A Passage to Africa</em> لـ George
-            Alagiah (1955–2023) ضمن سيرته <em>A Passage to Africa</em> (2001).
+            Alagiah (1955-2023) ضمن سيرته <em>A Passage to Africa</em> (2001).
           </p>
         ) : (
           <p>

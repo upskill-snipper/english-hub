@@ -1,12 +1,12 @@
 // ─── IELTS attempt persistence (server write-through) ──────────────────────
 // The client store (src/lib/ielts/store.ts) keeps localStorage as the primary,
 // instant store and fires a NON-BLOCKING POST here so attempts also land in the
-// DB — enabling cross-device continuity and B2B teacher analytics.
+// DB - enabling cross-device continuity and B2B teacher analytics.
 //
 // Everything here is GRACEFUL and best-effort: if the user can't be resolved
 // (signed out / pre-supabaseUserId transition) or the `ielts_attempts` table
 // isn't migrated yet, we return a non-fatal `{ persisted: false }` (HTTP 200)
-// and the client is unaffected — localStorage already holds the attempt.
+// and the client is unaffected - localStorage already holds the attempt.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
     await prisma.iELTSAttempt.create({ data })
     return NextResponse.json({ persisted: true })
   } catch {
-    // Table not migrated yet, or transient DB error — non-fatal by design.
+    // Table not migrated yet, or transient DB error - non-fatal by design.
     return NextResponse.json({ persisted: false, reason: 'db' })
   }
 }

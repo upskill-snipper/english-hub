@@ -301,23 +301,23 @@ export default function HandmaidsTalePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Offred"
-                description="The narrator and protagonist, a Handmaid assigned to a Commander she addresses as Fred. Her real name is suppressed throughout the main narrative; readers have long inferred that she is the 'June' whispered among names at the Red Centre, but the novel itself never confirms this (the 2017 TV adaptation made the identification explicit). She is in her thirties, formerly married to Luke, mother to a daughter taken from her at the border, and previously worked transferring books to digital format at a library. Her voice is Atwood's central technical achievement: hesitant, self-revising, poetic, deeply ironic. She is neither hero nor martyr but a survivor — complicit at times, paralysed at others, capable of small acts of resistance through wordplay, memory, and her affair with Nick."
+                description="The narrator and protagonist, a Handmaid assigned to a Commander she addresses as Fred. Her real name is suppressed throughout the main narrative; readers have long inferred that she is the 'June' whispered among names at the Red Centre, but the novel itself never confirms this (the 2017 TV adaptation made the identification explicit). She is in her thirties, formerly married to Luke, mother to a daughter taken from her at the border, and previously worked transferring books to digital format at a library. Her voice is Atwood's central technical achievement: hesitant, self-revising, poetic, deeply ironic. She is neither hero nor martyr but a survivor - complicit at times, paralysed at others, capable of small acts of resistance through wordplay, memory, and her affair with Nick."
               />
               <CharacterCard
                 name="The Commander (Fred)"
-                description="An older, fatherly figure who is a senior official in the Gilead regime — the novel implies he was involved in its early ideological design but does not confirm a specific role. (The TV series gave him the surname 'Waterford'; the 1985 novel does not.) He summons Offred to his study at night for forbidden Scrabble games, gives her old magazines and hand lotion, and takes her to the underground brothel Jezebel's. He reveals himself as both lonely and self-pitying: he wants intimacy but not equality. Atwood uses him to show how the architects of authoritarianism rationalise their system through bureaucratic complacency."
+                description="An older, fatherly figure who is a senior official in the Gilead regime - the novel implies he was involved in its early ideological design but does not confirm a specific role. (The TV series gave him the surname 'Waterford'; the 1985 novel does not.) He summons Offred to his study at night for forbidden Scrabble games, gives her old magazines and hand lotion, and takes her to the underground brothel Jezebel's. He reveals himself as both lonely and self-pitying: he wants intimacy but not equality. Atwood uses him to show how the architects of authoritarianism rationalise their system through bureaucratic complacency."
               />
               <CharacterCard
                 name="Serena Joy"
-                description="The Commander's wife, a former public figure (a television singer of gospel music and a public advocate for women's traditional role) now silenced by the regime she helped build. Bitter, lonely, often cruel to Offred, she knits endlessly — a bleakly ironic image of feminine confinement — and tends a meticulous garden of tulips and irises. It is Serena who arranges the affair with Nick in the hope of getting Offred pregnant. She is one of Atwood's most chilling creations: a woman whose pre-Gilead campaigning helped produce the cage she now inhabits. Her name is satirical: there is no joy in her household."
+                description="The Commander's wife, a former public figure (a television singer of gospel music and a public advocate for women's traditional role) now silenced by the regime she helped build. Bitter, lonely, often cruel to Offred, she knits endlessly - a bleakly ironic image of feminine confinement - and tends a meticulous garden of tulips and irises. It is Serena who arranges the affair with Nick in the hope of getting Offred pregnant. She is one of Atwood's most chilling creations: a woman whose pre-Gilead campaigning helped produce the cage she now inhabits. Her name is satirical: there is no joy in her household."
               />
               <CharacterCard
                 name="Nick"
-                description="The household's chauffeur, a Guardian who lives above the garage. Watchful, taciturn, of ambiguous loyalty — possibly an Eye, possibly a Mayday agent, possibly both. He becomes Offred's lover with Serena's consent and develops what appears to be genuine feeling for her. At the novel's end he tells her to trust the men in the van and identifies them as Mayday, but the reader is given no proof. Atwood uses Nick to dramatise the impossibility of trust under totalitarianism: Offred has to choose to believe him, with no guarantee."
+                description="The household's chauffeur, a Guardian who lives above the garage. Watchful, taciturn, of ambiguous loyalty - possibly an Eye, possibly a Mayday agent, possibly both. He becomes Offred's lover with Serena's consent and develops what appears to be genuine feeling for her. At the novel's end he tells her to trust the men in the van and identifies them as Mayday, but the reader is given no proof. Atwood uses Nick to dramatise the impossibility of trust under totalitarianism: Offred has to choose to believe him, with no guarantee."
               />
               <CharacterCard
                 name="Moira"
-                description="Offred's best friend from before Gilead — a lesbian, a feminist, sharp-tongued and rebellious. She is sent to the Red Centre, escapes by stealing an Aunt's uniform, and for a time becomes a folk hero among the Handmaids. Offred encounters her again, much later, at Jezebel's, where she has chosen sex work over being shipped to the toxic Colonies. Her former defiance has been worn down. She represents both the most courageous form of individual resistance and its limits: even she can be broken."
+                description="Offred's best friend from before Gilead - a lesbian, a feminist, sharp-tongued and rebellious. She is sent to the Red Centre, escapes by stealing an Aunt's uniform, and for a time becomes a folk hero among the Handmaids. Offred encounters her again, much later, at Jezebel's, where she has chosen sex work over being shipped to the toxic Colonies. Her former defiance has been worn down. She represents both the most courageous form of individual resistance and its limits: even she can be broken."
               />
               <CharacterCard
                 name="Aunt Lydia"
@@ -341,7 +341,7 @@ export default function HandmaidsTalePage() {
               />
               <CharacterCard
                 name="The Eyes"
-                description="Gilead's secret police. They drive black vans with the regime's winged-eye insignia and disappear citizens. They are everywhere and nowhere — a panoptic apparatus enforced as much by the fear of informants as by visible patrols. The black van that arrives at the end of the novel may belong to them or to Mayday agents posing as them. The name appropriates the Old Testament motif of the all-seeing 'Eyes of the Lord' — surveillance dressed as theology."
+                description="Gilead's secret police. They drive black vans with the regime's winged-eye insignia and disappear citizens. They are everywhere and nowhere - a panoptic apparatus enforced as much by the fear of informants as by visible patrols. The black van that arrives at the end of the novel may belong to them or to Mayday agents posing as them. The name appropriates the Old Testament motif of the all-seeing 'Eyes of the Lord' - surveillance dressed as theology."
               />
             </div>
           </Section>
@@ -353,7 +353,7 @@ export default function HandmaidsTalePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Theocracy and State Control`)}
-                description="Gilead's regime fuses religious fundamentalism with totalitarian state power. Atwood draws on the historical pattern of theocratic governments — 17th-century Puritan New England, Khomeini's Iran — to show how scripture can be weaponised to legitimise oppression. The state controls reproduction, language, movement, dress, and reading. Caste is colour-coded (red Handmaids, blue Wives, green Marthas, black Commanders). The 'Salvagings,' 'Prayvaganzas,' and 'Particicutions' show how spectacle and ritual are used to consolidate power. Atwood's epigraph from Genesis 30 (Rachel and Bilhah) shows how theology is selectively quoted to justify a system that the regime's own architects acknowledge is constructed."
+                description="Gilead's regime fuses religious fundamentalism with totalitarian state power. Atwood draws on the historical pattern of theocratic governments - 17th-century Puritan New England, Khomeini's Iran - to show how scripture can be weaponised to legitimise oppression. The state controls reproduction, language, movement, dress, and reading. Caste is colour-coded (red Handmaids, blue Wives, green Marthas, black Commanders). The 'Salvagings,' 'Prayvaganzas,' and 'Particicutions' show how spectacle and ritual are used to consolidate power. Atwood's epigraph from Genesis 30 (Rachel and Bilhah) shows how theology is selectively quoted to justify a system that the regime's own architects acknowledge is constructed."
               />
               <ThemeCard
                 title={tr(`Gender and Patriarchy`)}
@@ -361,19 +361,19 @@ export default function HandmaidsTalePage() {
               />
               <ThemeCard
                 title={tr(`Language as Power`)}
-                description="Gilead controls language to control thought. Reading and writing are forbidden to women; shop signs are replaced with pictures; the Bible is locked in a wooden box opened only by the Commander. Names are stripped (the Handmaids become 'Of-Fred,' 'Of-Glen'). Doublespeak is everywhere: rape is 'the Ceremony,' executions are 'Salvagings,' brothels are 'Jezebel's.' Offred's narrative is itself a linguistic act of resistance: she hoards words, plays with etymologies ('chair, charity, chastity'), and recites the Latin pun in her wardrobe. The novel argues, with Orwell, that 'if thought corrupts language, language can also corrupt thought' — and the inverse: that to keep language alive is to keep thought alive."
+                description="Gilead controls language to control thought. Reading and writing are forbidden to women; shop signs are replaced with pictures; the Bible is locked in a wooden box opened only by the Commander. Names are stripped (the Handmaids become 'Of-Fred,' 'Of-Glen'). Doublespeak is everywhere: rape is 'the Ceremony,' executions are 'Salvagings,' brothels are 'Jezebel's.' Offred's narrative is itself a linguistic act of resistance: she hoards words, plays with etymologies ('chair, charity, chastity'), and recites the Latin pun in her wardrobe. The novel argues, with Orwell, that 'if thought corrupts language, language can also corrupt thought' - and the inverse: that to keep language alive is to keep thought alive."
               />
               <ThemeCard
                 title={tr(`Memory and Resistance`)}
-                description="Memory is Offred's most powerful weapon. Through her flashbacks she keeps her daughter, Luke, Moira, and her mother alive. She also keeps alive the 'Time Before,' refusing to let Gilead colonise her past as well as her present. The narrative's fragmented, non-chronological structure embodies the work of memory under trauma — looping, returning, rewriting. Resistance in the novel is rarely heroic: it is the recital of forbidden words, the kept name, the refusal to forget. Atwood writes against the totalitarian instinct to erase history. Significantly, the novel itself is presented as a kind of recovered testimony — cassette tapes hidden in a footlocker — making the act of remembering and recording the central political action of the book."
+                description="Memory is Offred's most powerful weapon. Through her flashbacks she keeps her daughter, Luke, Moira, and her mother alive. She also keeps alive the 'Time Before,' refusing to let Gilead colonise her past as well as her present. The narrative's fragmented, non-chronological structure embodies the work of memory under trauma - looping, returning, rewriting. Resistance in the novel is rarely heroic: it is the recital of forbidden words, the kept name, the refusal to forget. Atwood writes against the totalitarian instinct to erase history. Significantly, the novel itself is presented as a kind of recovered testimony - cassette tapes hidden in a footlocker - making the act of remembering and recording the central political action of the book."
               />
               <ThemeCard
                 title={tr(`Complicity and Survival`)}
-                description="Atwood resists the romance of pure resistance. Offred is not Moira, and she knows it. She enters into the affair with Nick partly out of desire, partly out of terror; she takes Serena's deal; she fails to ask the new Ofglen if she is Mayday, and afterwards is relieved not to know. Her refrain — 'I would like to believe this is a story I'm telling' — captures the survivor's need to distance herself from her own choices. Atwood implies that most of us, under Gilead, would not be martyrs but Offreds: 'Better' people accommodate themselves to power. The novel is unflinching about the moral costs of survival, but refuses to condemn the survivor."
+                description="Atwood resists the romance of pure resistance. Offred is not Moira, and she knows it. She enters into the affair with Nick partly out of desire, partly out of terror; she takes Serena's deal; she fails to ask the new Ofglen if she is Mayday, and afterwards is relieved not to know. Her refrain - 'I would like to believe this is a story I'm telling' - captures the survivor's need to distance herself from her own choices. Atwood implies that most of us, under Gilead, would not be martyrs but Offreds: 'Better' people accommodate themselves to power. The novel is unflinching about the moral costs of survival, but refuses to condemn the survivor."
               />
               <ThemeCard
                 title={tr(`Religion as Justification`)}
-                description="Atwood's Gilead is not anti-religious — it is over-religious in a particular, distorted way. The regime cherry-picks Old Testament passages (Rachel and Bilhah, Jacob's wives) while ignoring Christ's ethics of mercy and the New Testament's egalitarian strands. Bible verses are quoted by the Aunts to justify Handmaid status; the Beatitudes are even rewritten ('Blessed are the silent'). Atwood's targets are not Christianity itself but the political instrumentalisation of religion. She drew specifically on the Christian Right of the Reagan era, which she watched argue for the rollback of women's rights in language indistinguishable from Aunt Lydia's. Religion here is shown as a tool — 'a thing without a hand or a face,' as Offred reflects — that can be picked up by anyone who wants power."
+                description="Atwood's Gilead is not anti-religious - it is over-religious in a particular, distorted way. The regime cherry-picks Old Testament passages (Rachel and Bilhah, Jacob's wives) while ignoring Christ's ethics of mercy and the New Testament's egalitarian strands. Bible verses are quoted by the Aunts to justify Handmaid status; the Beatitudes are even rewritten ('Blessed are the silent'). Atwood's targets are not Christianity itself but the political instrumentalisation of religion. She drew specifically on the Christian Right of the Reagan era, which she watched argue for the rollback of women's rights in language indistinguishable from Aunt Lydia's. Religion here is shown as a tool - 'a thing without a hand or a face,' as Offred reflects - that can be picked up by anyone who wants power."
               />
             </div>
           </Section>
@@ -490,17 +490,17 @@ export default function HandmaidsTalePage() {
               <QuoteCard
                 quote="Nolite te bastardes carborundorum."
                 speaker="Inscription in Offred's wardrobe"
-                analysis="Mock-Latin schoolboy slang, translated by the Commander as 'Don't let the bastards grind you down.' The phrase is a literal piece of pre-Gilead culture surviving in a private space. It functions as a coded message of solidarity from the previous Offred (who hanged herself), and as a metaphor for resistance through the preservation of language. The fact that it is fake Latin — the pseudo-classical joke of an educated woman — emphasises how thoroughly Gilead has tried, and failed, to erase a literate female past."
+                analysis="Mock-Latin schoolboy slang, translated by the Commander as 'Don't let the bastards grind you down.' The phrase is a literal piece of pre-Gilead culture surviving in a private space. It functions as a coded message of solidarity from the previous Offred (who hanged herself), and as a metaphor for resistance through the preservation of language. The fact that it is fake Latin - the pseudo-classical joke of an educated woman - emphasises how thoroughly Gilead has tried, and failed, to erase a literate female past."
               />
               <QuoteCard
                 quote="Don't let the bastards grind you down."
                 speaker="Offred (translating the Latin)"
-                analysis="Once the Commander translates the inscription for Offred, the phrase becomes her interior mantra. The blunt English idiom, set against the elaborate Latin, foregrounds the gap between elite knowledge and ordinary endurance. Atwood uses this register-shift to suggest that survival under tyranny is at once intellectual and visceral — both the wit to encode and the stubbornness to refuse to be ground down."
+                analysis="Once the Commander translates the inscription for Offred, the phrase becomes her interior mantra. The blunt English idiom, set against the elaborate Latin, foregrounds the gap between elite knowledge and ordinary endurance. Atwood uses this register-shift to suggest that survival under tyranny is at once intellectual and visceral - both the wit to encode and the stubbornness to refuse to be ground down."
               />
               <QuoteCard
                 quote="Better never means better for everyone, he says. It always means worse, for some."
                 speaker="The Commander to Offred"
-                analysis="The Commander's defence of Gilead. The chiastic structure ('better... worse') is rhetorically polished but morally chilling: the regime is justified through the language of zero-sum trade-offs. Atwood uses the line to suggest that authoritarian thinking is not crude but seductive — couched in the syntax of reasonableness. The italicised 'some' invites the reader to ask: which 'some'? Always, in the novel, women."
+                analysis="The Commander's defence of Gilead. The chiastic structure ('better... worse') is rhetorically polished but morally chilling: the regime is justified through the language of zero-sum trade-offs. Atwood uses the line to suggest that authoritarian thinking is not crude but seductive - couched in the syntax of reasonableness. The italicised 'some' invites the reader to ask: which 'some'? Always, in the novel, women."
               />
               <QuoteCard
                 quote="We were the people who were not in the papers. We lived in the blank white spaces at the edges of print. It gave us more freedom. We lived in the gaps between the stories."
@@ -510,12 +510,12 @@ export default function HandmaidsTalePage() {
               <QuoteCard
                 quote="I would like to believe this is a story I'm telling. I need to believe it. I must believe it."
                 speaker="Offred"
-                analysis="The narrator's central self-revising sentence. The escalating sequence of modal verbs — 'would like... need... must' — performs the rising desperation behind the act of narration. Atwood foregrounds the constructed nature of the narrative even as she insists on its psychological necessity: storytelling as survival. The line connects Offred to centuries of women who told stories to live through what they could not change."
+                analysis="The narrator's central self-revising sentence. The escalating sequence of modal verbs - 'would like... need... must' - performs the rising desperation behind the act of narration. Atwood foregrounds the constructed nature of the narrative even as she insists on its psychological necessity: storytelling as survival. The line connects Offred to centuries of women who told stories to live through what they could not change."
               />
               <QuoteCard
                 quote="Pen Is Envy, Aunt Lydia would say, quoting another Centre motto, warning us away from such objects."
                 speaker="Offred recalling Aunt Lydia"
-                analysis="Atwood's most explicit Freudian joke: the slogan reads as both a parody of feminist analysis and a sound-pun on 'penis envy.' Aunt Lydia uses it to ridicule women's desire to write; Offred, narrating, registers the deeper truth — the pen, not the penis, is the instrument of male power in Gilead. The line crystallises the novel's argument that the patriarchy's deepest theft is the theft of literacy."
+                analysis="Atwood's most explicit Freudian joke: the slogan reads as both a parody of feminist analysis and a sound-pun on 'penis envy.' Aunt Lydia uses it to ridicule women's desire to write; Offred, narrating, registers the deeper truth - the pen, not the penis, is the instrument of male power in Gilead. The line crystallises the novel's argument that the patriarchy's deepest theft is the theft of literacy."
               />
               <QuoteCard
                 quote="There is more than one kind of freedom, said Aunt Lydia. Freedom to and freedom from. In the days of anarchy, it was freedom to. Now you are being given freedom from. Don't underrate it."
@@ -525,12 +525,12 @@ export default function HandmaidsTalePage() {
               <QuoteCard
                 quote="A rat in a maze is free to go anywhere, as long as it stays inside the maze."
                 speaker="Offred"
-                analysis="A devastating metaphor for life under Gilead. The aphorism turns Aunt Lydia's 'freedom from' rhetoric inside out: the appearance of choice within a closed system is not freedom. The image of the rat — vermin, experimental subject, scurrying — also reflects Offred's diminished sense of self. The line is one of Atwood's most epigrammatic critiques of negative liberty."
+                analysis="A devastating metaphor for life under Gilead. The aphorism turns Aunt Lydia's 'freedom from' rhetoric inside out: the appearance of choice within a closed system is not freedom. The image of the rat - vermin, experimental subject, scurrying - also reflects Offred's diminished sense of self. The line is one of Atwood's most epigrammatic critiques of negative liberty."
               />
               <QuoteCard
                 quote="Blessed be the fruit."
                 speaker="Standard Handmaid greeting"
-                analysis="The required greeting between Handmaids, drawn from Luke 1:42 ('Blessed art thou among women, and blessed is the fruit of thy womb'). The response is 'May the Lord open.' The greeting reduces women to their wombs through liturgical formula — every encounter is framed by the regime's reproductive imperative. Atwood's ear for the way real Christian liturgy is plagiarised and twisted by Gilead is one of the novel's sharpest satirical instruments."
+                analysis="The required greeting between Handmaids, drawn from Luke 1:42 ('Blessed art thou among women, and blessed is the fruit of thy womb'). The response is 'May the Lord open.' The greeting reduces women to their wombs through liturgical formula - every encounter is framed by the regime's reproductive imperative. Atwood's ear for the way real Christian liturgy is plagiarised and twisted by Gilead is one of the novel's sharpest satirical instruments."
               />
               <QuoteCard
                 quote="My name isn't Offred, I have another name, which nobody uses now because it's forbidden. I tell myself it doesn't matter, your name is like your telephone number, useful only to others; but what I tell myself is wrong, it does matter."
@@ -544,7 +544,7 @@ export default function HandmaidsTalePage() {
               />
               <QuoteCard
                 quote="Give me children, or else I die. Am I in God's stead, who hath withheld from thee the fruit of the womb? Behold my maid Bilhah. She shall bear upon my knees, that I may also have children by her."
-                speaker="Genesis 30:1–3 (epigraph)"
+                speaker="Genesis 30:1-3 (epigraph)"
                 analysis="Atwood's first epigraph, from the Old Testament. Rachel's plea, and Jacob's surrogate child by her handmaid Bilhah, is the literal scriptural justification for Gilead's Ceremony. The epigraph anchors Atwood's argument that Gilead is not foreign to the Western tradition but a literal reading of one strand of it. The Wife who 'has children' through her Handmaid is enacting a story already in scripture."
               />
               <QuoteCard
@@ -560,22 +560,22 @@ export default function HandmaidsTalePage() {
               <QuoteCard
                 quote="Nothing changes instantaneously: in a gradually heating bathtub you'd be boiled to death before you knew it."
                 speaker="Offred"
-                analysis="The 'boiled frog' metaphor for the slow erosion of liberty. Atwood is speaking directly to her 1980s reader: the takeover of America did not feel like a takeover at the time. The image is comic-domestic (the bathtub) and lethal — exactly Atwood's tonal signature. The line is one of the novel's clearest political messages: pay attention to small changes."
+                analysis="The 'boiled frog' metaphor for the slow erosion of liberty. Atwood is speaking directly to her 1980s reader: the takeover of America did not feel like a takeover at the time. The image is comic-domestic (the bathtub) and lethal - exactly Atwood's tonal signature. The line is one of the novel's clearest political messages: pay attention to small changes."
               />
               <QuoteCard
                 quote="Ordinary, said Aunt Lydia, is what you are used to. This may not seem ordinary to you now, but after a time it will. It will become ordinary."
                 speaker="Aunt Lydia, recalled by Offred"
-                analysis="Aunt Lydia's lesson that the body and mind acclimatise to anything. The triple repetition of 'ordinary' — definition, prediction, certainty — performs the very habituation it describes. Atwood uses this line to articulate one of the novel's central political insights: that authoritarianism survives by becoming familiar. The horror of Gilead is not that it is shocking but that it stops being shocking."
+                analysis="Aunt Lydia's lesson that the body and mind acclimatise to anything. The triple repetition of 'ordinary' - definition, prediction, certainty - performs the very habituation it describes. Atwood uses this line to articulate one of the novel's central political insights: that authoritarianism survives by becoming familiar. The horror of Gilead is not that it is shocking but that it stops being shocking."
               />
               <QuoteCard
                 quote="And so I step up, into the darkness within; or else the light."
                 speaker="Offred (final line of her narrative)"
-                analysis="The novel's final image before the Historical Notes: Offred steps into the black van. The grammatical alternative ('or else the light') deliberately refuses closure. Atwood gives the reader the choice — capture or rescue, death or freedom — and refuses to confirm. The line places the burden of belief on the reader and connects to Offred's earlier self-storytelling: meaning is what survivors and witnesses make of it."
+                analysis="The novel's final image before the Historical Notes: Offred steps into the black van. The grammatical alternative ('or else the light') deliberately refuses closure. Atwood gives the reader the choice - capture or rescue, death or freedom - and refuses to confirm. The line places the burden of belief on the reader and connects to Offred's earlier self-storytelling: meaning is what survivors and witnesses make of it."
               />
               <QuoteCard
                 quote="As all historians know, the past is a great darkness, and filled with echoes."
                 speaker="Professor Pieixoto, Historical Notes"
-                analysis="Pieixoto's pompous opening from the 2195 conference. The line is academic in tone but functions as Atwood's meta-commentary: the past — Offred's present — is to be interpreted, archived, and joked over. The 'echoes' are the reader's: Pieixoto's own world is implicated in the patterns Gilead made literal. The line invites the question, 'Are we Pieixoto?'"
+                analysis="Pieixoto's pompous opening from the 2195 conference. The line is academic in tone but functions as Atwood's meta-commentary: the past - Offred's present - is to be interpreted, archived, and joked over. The 'echoes' are the reader's: Pieixoto's own world is implicated in the patterns Gilead made literal. The line invites the question, 'Are we Pieixoto?'"
               />
               <QuoteCard
                 quote="Are there any questions?"

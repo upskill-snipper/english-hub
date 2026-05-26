@@ -5,7 +5,7 @@
 // with { decision: 'reject' }. All logic (auth, authz, validation, the
 // teacher_moderations insert and the marking_submissions status transition
 // to 'rejected') lives in the shared `handleReview` exported from
-// ../review/route.ts — this file MUST NOT duplicate it. Any extra body
+// ../review/route.ts - this file MUST NOT duplicate it. Any extra body
 // fields (teacherFeedback, moderationNotes, adjustmentReason, etc.) are
 // still honoured for the audit trail.
 

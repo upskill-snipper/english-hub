@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Reading Techniques — IGCSE Language A Paper 1',
+    title: 'Reading Techniques - IGCSE Language A Paper 1',
     description:
       'How to read IGCSE Language A Paper 1 passages efficiently. Skimming, scanning, close reading and annotating strategies for the reading exam. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Reading Techniques — IGCSE Language A Paper 1',
+  title: 'Reading Techniques - IGCSE Language A Paper 1',
   description:
     'How to read IGCSE Language A Paper 1 passages efficiently. Skimming, scanning, close reading and annotating strategies for the reading exam. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -24,11 +24,11 @@ const techniques = [
   {
     name: 'Skimming',
     icon: Eye,
-    when: 'First pass — 2 minutes per passage',
+    when: 'First pass - 2 minutes per passage',
     purpose:
       'Get the overall gist, topic, tone and structure of the passage before any question is attempted.',
     how: [
-      'Read the title and any headings first — they signal the main topic.',
+      'Read the title and any headings first - they signal the main topic.',
       'Read the opening and closing sentences of each paragraph.',
       'Look for signal words: but, however, therefore, in contrast.',
       "Note the writer's general attitude: positive, critical, neutral?",
@@ -44,7 +44,7 @@ const techniques = [
     how: [
       'Know exactly what you are looking for before scanning (e.g. a number, a name).',
       'Move your finger or pen down the page in a zig-zag.',
-      'Let unimportant words blur — your eye is only searching for the target.',
+      'Let unimportant words blur - your eye is only searching for the target.',
       'Stop, read the sentence carefully, then return to the question.',
     ],
     pitfall: 'Do not read the whole passage word-by-word again. Scan, stop, verify, move on.',
@@ -59,7 +59,7 @@ const techniques = [
       'Read at quarter speed. Pause after each sentence.',
       'Ask why the writer chose this word rather than a synonym.',
       'Notice verbs, adjectives, imagery, sentence length and rhythm.',
-      'Look for connotations — what does each word suggest beyond its dictionary meaning?',
+      'Look for connotations - what does each word suggest beyond its dictionary meaning?',
     ],
     pitfall:
       'Do not fall into feature-spotting. Always link each observation to the effect on the reader.',
@@ -67,7 +67,7 @@ const techniques = [
   {
     name: 'Annotating',
     icon: Highlighter,
-    when: 'While reading — integrated with other techniques',
+    when: 'While reading - integrated with other techniques',
     purpose:
       'Leave a visible trail of thoughts on the page so you can find evidence fast when writing answers.',
     how: [
@@ -106,7 +106,7 @@ export default async function ReadingTechniquesPage() {
         <h1 className="text-display-sm font-heading text-foreground">Reading techniques</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
           You have 2 hours and around 2,000 words of unseen text to read. Use the right technique
-          for the right job — never read every passage at the same speed.
+          for the right job - never read every passage at the same speed.
         </p>
       </section>
 
@@ -168,7 +168,7 @@ export default async function ReadingTechniquesPage() {
             </span>
             <span>
               <span className="font-semibold text-foreground">Skim all three passages</span> quickly
-              at the start. Do not try to remember details — just get the tone and topic.
+              at the start. Do not try to remember details - just get the tone and topic.
             </span>
           </li>
           <li className="flex items-start gap-3">

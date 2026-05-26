@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: '30 Descriptive Practice Prompts — Cambridge IGCSE',
+    title: '30 Descriptive Practice Prompts - Cambridge IGCSE',
     description:
       'Thirty Cambridge IGCSE-style descriptive writing prompts graded by difficulty, with planning tips for each.',
   },
-  title: '30 Descriptive Practice Prompts — Cambridge IGCSE',
+  title: '30 Descriptive Practice Prompts - Cambridge IGCSE',
   description:
     'Thirty Cambridge IGCSE-style descriptive writing prompts graded by difficulty, with planning tips for each.',
   alternates: {
@@ -31,7 +31,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'An empty beach',
     level: 'Foundation',
-    hint: 'Use taste and touch — salt, sand, wind — not just sight.',
+    hint: 'Use taste and touch - salt, sand, wind - not just sight.',
   },
   {
     title: 'A childhood home',
@@ -91,7 +91,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'A library on a rainy afternoon',
     level: 'Intermediate',
-    hint: 'Sound contrast — the rain outside, the hush inside.',
+    hint: 'Sound contrast - the rain outside, the hush inside.',
   },
   {
     title: 'A snow-covered street',
@@ -101,7 +101,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'A lighthouse at dusk',
     level: 'Intermediate',
-    hint: 'The light sweeping across the rocks is your natural rhythm — let your sentences imitate it.',
+    hint: 'The light sweeping across the rocks is your natural rhythm - let your sentences imitate it.',
   },
   {
     title: 'A cafe you used to visit',
@@ -126,7 +126,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'A city from a high window',
     level: 'Advanced',
-    hint: 'Wide shot throughout — the challenge is maintaining detail without going closer.',
+    hint: 'Wide shot throughout - the challenge is maintaining detail without going closer.',
   },
   {
     title: 'A submarine interior',
@@ -141,7 +141,7 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'The moment a power cut happens',
     level: 'Advanced',
-    hint: 'A time shift technique. The same room described twice — lit and unlit.',
+    hint: 'A time shift technique. The same room described twice - lit and unlit.',
   },
   {
     title: 'A tropical rainforest',
@@ -161,12 +161,12 @@ const prompts: { title: string; level: Level; hint: string }[] = [
   {
     title: 'The view from a mountain summit',
     level: 'Advanced',
-    hint: 'Weather and silence. Resist the temptation to explain the feeling — describe it.',
+    hint: 'Weather and silence. Resist the temptation to explain the feeling - describe it.',
   },
   {
     title: 'A bus station in a foreign city',
     level: 'Advanced',
-    hint: 'Translate the disorientation into unfamiliar sound combinations — you do not understand the announcements.',
+    hint: 'Translate the disorientation into unfamiliar sound combinations - you do not understand the announcements.',
   },
   {
     title: 'An abandoned factory at dawn',
@@ -249,7 +249,7 @@ export default async function DescriptivePromptsPage() {
         <h2 className="text-heading-md font-heading text-foreground">How to practise</h2>
         <ul className="mt-4 space-y-2 text-body-sm text-muted-foreground list-disc pl-5">
           <li>Set a 45-minute timer. 5 minutes to plan, 35 to write, 5 to check.</li>
-          <li>Aim for 400 words — not fewer, not many more.</li>
+          <li>Aim for 400 words - not fewer, not many more.</li>
           <li>Pick one technique from the hint and commit to it for the whole piece.</li>
           <li>Read your opening and closing lines last. Do they echo?</li>
         </ul>

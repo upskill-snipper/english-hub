@@ -11,11 +11,11 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A Christmas Carol — All Five Staves Analysed | The English Hub',
+    title: 'A Christmas Carol - All Five Staves Analysed | The English Hub',
     description:
       'In-depth analysis of every stave in A Christmas Carol by Charles Dickens: plot, language, key quotations and exam-ready commentary.',
   },
-  title: 'A Christmas Carol — All Five Staves Analysed',
+  title: 'A Christmas Carol - All Five Staves Analysed',
   description:
     'In-depth analysis of every stave in A Christmas Carol by Charles Dickens: plot, language, key quotations and exam-ready commentary.',
   alternates: {

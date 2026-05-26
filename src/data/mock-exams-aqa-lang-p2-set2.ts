@@ -1,6 +1,6 @@
 // @ts-nocheck
 // ─── AQA GCSE English Language Paper 2 Mock Exam Papers - Set 2 ──────────────
-// Writers' Viewpoints and Perspectives — 6 complete papers with source texts
+// Writers' Viewpoints and Perspectives - 6 complete papers with source texts
 
 import type { MockExamPaper } from './mock-exams'
 
@@ -46,7 +46,7 @@ function makeP2(c: P2Config): MockExamPaper {
     board: 'AQA',
     paperNumber: 2,
     title: 'AQA Paper 2 (Set 2)',
-    subtitle: `Writers' Viewpoints and Perspectives — Set ${c.set}`,
+    subtitle: `Writers' Viewpoints and Perspectives - Set ${c.set}`,
     code: '8700/2',
     totalTimeMinutes: 105,
     totalMarks: 80,
@@ -54,7 +54,8 @@ function makeP2(c: P2Config): MockExamPaper {
       {
         id: `aqa-lang-p2-set2-${nn}-reading`,
         title: 'Section A: Reading',
-        description: 'You are going to read two texts. You will then answer the questions about both texts.',
+        description:
+          'You are going to read two texts. You will then answer the questions about both texts.',
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -157,7 +158,7 @@ Education systems across the globe are failing our young people. Traditional cla
 
 The time has come for radical reform. We need education that celebrates curiosity over compliance, that teaches collaboration over competition, and that prioritizes well-being over test scores. Project-based learning, mentorship models, and interdisciplinary studies should replace the rigid subject silos of yesterday. Teachers should be facilitators of discovery, not mere deliverers of content.
 
-Furthermore, the assessment culture has become toxic. Students are subjected to endless testing, creating anxiety and narrowing curriculum to exam-focused content. We must move towards continuous assessment and authentic evaluation. Real-world problems should form the basis of our curriculum. When students tackle genuine challenges—building infrastructure, developing solutions to environmental problems, creating art—they develop resilience and meaningful skills.
+Furthermore, the assessment culture has become toxic. Students are subjected to endless testing, creating anxiety and narrowing curriculum to exam-focused content. We must move towards continuous assessment and authentic evaluation. Real-world problems should form the basis of our curriculum. When students tackle genuine challenges-building infrastructure, developing solutions to environmental problems, creating art-they develop resilience and meaningful skills.
 
 The investment required is significant, but the cost of maintaining this failing system is far greater. We are wasting human potential. Our young people deserve better.`,
   authorA: 'Dr Sarah Mitchell',
@@ -167,7 +168,7 @@ The investment required is significant, but the cost of maintaining this failing
 
 The calls for educational revolution must be viewed with caution. While acknowledging areas for improvement, wholesale abandonment of proven systems would be reckless. Our traditional education model has produced generations of successful individuals, innovators, and leaders. Rigorous discipline, structured curricula, and comprehensive examinations have real value.
 
-Core subjects—mathematics, English, sciences—provide essential knowledge and cognitive skills that form the foundation for all future learning. A student who cannot calculate percentages or construct a coherent argument is not well-served by project-based activities. Academic rigor develops the intellectual discipline necessary for genuine achievement.
+Core subjects-mathematics, English, sciences-provide essential knowledge and cognitive skills that form the foundation for all future learning. A student who cannot calculate percentages or construct a coherent argument is not well-served by project-based activities. Academic rigor develops the intellectual discipline necessary for genuine achievement.
 
 Examination stress, whilst not ideal, can be managed through better pastoral support and mental health resources. The solution is not to dismantle assessment but to improve it holistically. Schools are already implementing mindfulness programs, flexible timetables, and counseling services that support student well-being without compromising academic standards.
 
@@ -178,7 +179,7 @@ The question is not revolution, but evolution. We must preserve what works while
   dateB: '2023',
   q1BothTexts: 'the state of modern education and how it should change',
   q1MarkScheme: [
-    'Clear identification of both writers\' main positions',
+    "Clear identification of both writers' main positions",
     'Accurate details from Source A showing criticism of traditional education',
     'Accurate details from Source B showing defense of traditional education',
     'Specific evidence from both texts',
@@ -199,7 +200,7 @@ Source B's James Richardson presents a contrasting perspective, defending tradit
     'Sophisticated analysis of how language builds meaning',
   ],
   q2Answer45: `Dr Mitchell uses powerful language to express concern. She describes education as "failing" which is a strong accusation. She uses repetition when she says "creatively over compliance, collaboration over competition" which emphasizes her concerns. The phrase "stifles creativity" and "crushes independent thinking" uses violent verbs to show how harmful the current system is. She calls the assessment culture "toxic" which is a medical metaphor suggesting it is poisonous and harmful.`,
-  q2Answer67: `Mitchell employs semantically loaded terminology to intensify her critique. The verbs "stifles," "crushes," and "wastes" employ violent, destructive imagery conveying irreversible damage. Her metaphorical characterization of assessment as "toxic" invokes biological concepts of poison, suggesting the system is fundamentally incompatible with student development. The anaphoric structure "that teaches... that prioritizes..." builds rhetorical force through repetition, accumulating demands for change. Her interrogative opening—"are failing our young people"—positions the accusation as rhetorical fact rather than opinion, lending authoritative weight to her concern.`,
+  q2Answer67: `Mitchell employs semantically loaded terminology to intensify her critique. The verbs "stifles," "crushes," and "wastes" employ violent, destructive imagery conveying irreversible damage. Her metaphorical characterization of assessment as "toxic" invokes biological concepts of poison, suggesting the system is fundamentally incompatible with student development. The anaphoric structure "that teaches... that prioritizes..." builds rhetorical force through repetition, accumulating demands for change. Her interrogative opening-"are failing our young people"-positions the accusation as rhetorical fact rather than opinion, lending authoritative weight to her concern.`,
   q3BothTexts: 'the value and necessity of educational reform',
   q3MarkScheme: [
     'Clear comparison of viewpoints',
@@ -209,8 +210,9 @@ Source B's James Richardson presents a contrasting perspective, defending tradit
     'Sophisticated understanding of contrasting perspectives',
   ],
   q3Answer45: `Both writers have different views on educational reform. Mitchell believes education must change completely because the current system is broken and harmful. Richardson thinks reform is necessary but should be gradual because traditional methods still work. Mitchell uses strong language to make her argument seem urgent, while Richardson uses balanced language to seem reasonable. Mitchell focuses on what is wrong, while Richardson focuses on what works well. Mitchell wants revolution, but Richardson wants evolution.`,
-  q3Answer67: `The writers diverge fundamentally on the scope and urgency of reform. Mitchell employs crisis rhetoric, utilizing hyperbole and linguistic extremity—"stifles," "crushes," "wasting human potential"—to position reform as essential and immediate. Her language constructs education as a failure requiring dismantling. Richardson adopts a more measured tone, employing hedging language ("whilst not ideal," "can be managed") and acknowledging validity in both positions ("areas for improvement"). His approach positions reform as refinement of working systems. Rhetorically, Mitchell appeals to emotional investment in youth futures, while Richardson emphasizes practical realities and institutional continuity. Where Mitchell presents innovation and tradition as binary opposites, Richardson frames them as compatible through evolutionary change.`,
-  q4Text: 'Whose argument do you find more persuasive? Which writer presents more convincing evidence for their position?',
+  q3Answer67: `The writers diverge fundamentally on the scope and urgency of reform. Mitchell employs crisis rhetoric, utilizing hyperbole and linguistic extremity-"stifles," "crushes," "wasting human potential"-to position reform as essential and immediate. Her language constructs education as a failure requiring dismantling. Richardson adopts a more measured tone, employing hedging language ("whilst not ideal," "can be managed") and acknowledging validity in both positions ("areas for improvement"). His approach positions reform as refinement of working systems. Rhetorically, Mitchell appeals to emotional investment in youth futures, while Richardson emphasizes practical realities and institutional continuity. Where Mitchell presents innovation and tradition as binary opposites, Richardson frames them as compatible through evolutionary change.`,
+  q4Text:
+    'Whose argument do you find more persuasive? Which writer presents more convincing evidence for their position?',
   q4MarkScheme: [
     'Clear judgement with supported reasoning',
     'Reference to both texts',
@@ -219,9 +221,11 @@ Source B's James Richardson presents a contrasting perspective, defending tradit
     'Sophisticated judgement with nuanced consideration',
   ],
   q4Answer45: `Richardson's argument is more persuasive because he acknowledges both sides of the debate. He admits education has problems but argues that drastic change isn't necessary. His evidence about mental health resources already existing makes his position seem realistic. Mitchell's argument relies on dramatic language rather than evidence. She makes strong claims about what education should be but doesn't explain how to implement her ideas. Richardson's practical approach is more convincing than Mitchell's idealism.`,
-  q4Answer67: `While Mitchell's argument carries affective force through urgent language and ideological clarity, Richardson's position proves more persuasive through strategic concession and practical reasoning. Richardson's acknowledgment that "areas for improvement" exist demonstrates intellectual honesty, rendering his skepticism of revolutionary reform more credible than Mitchell's categorical denunciation. Evidentially, Richardson grounds his defense in concrete examples—existing mindfulness programs, counseling services—providing verifiable instances of progress. Mitchell's evidence remains largely hypothetical; her proposal for "project-based learning" and "real-world problems" lacks specific implementation detail or demonstrated efficacy. Furthermore, Richardson's recognition of resource constraints and institutional realities demonstrates sophisticated understanding of systemic barriers that Mitchell overlooks. While Mitchell succeeds in making reform seem emotionally necessary, Richardson more effectively demonstrates why evolutionary rather than revolutionary approaches represent viable, sustainable solutions.`,
-  q5Prompt: 'Many people argue that education systems need significant change to prepare students for the modern world.',
-  q5Viewpoint: 'You are going to write to present a viewpoint on whether schools should undergo radical reform or make gradual improvements to the current system.',
+  q4Answer67: `While Mitchell's argument carries affective force through urgent language and ideological clarity, Richardson's position proves more persuasive through strategic concession and practical reasoning. Richardson's acknowledgment that "areas for improvement" exist demonstrates intellectual honesty, rendering his skepticism of revolutionary reform more credible than Mitchell's categorical denunciation. Evidentially, Richardson grounds his defense in concrete examples-existing mindfulness programs, counseling services-providing verifiable instances of progress. Mitchell's evidence remains largely hypothetical; her proposal for "project-based learning" and "real-world problems" lacks specific implementation detail or demonstrated efficacy. Furthermore, Richardson's recognition of resource constraints and institutional realities demonstrates sophisticated understanding of systemic barriers that Mitchell overlooks. While Mitchell succeeds in making reform seem emotionally necessary, Richardson more effectively demonstrates why evolutionary rather than revolutionary approaches represent viable, sustainable solutions.`,
+  q5Prompt:
+    'Many people argue that education systems need significant change to prepare students for the modern world.',
+  q5Viewpoint:
+    'You are going to write to present a viewpoint on whether schools should undergo radical reform or make gradual improvements to the current system.',
   q5MarkScheme: [
     'Engaging opening that establishes perspective',
     'Clear thesis statement',
@@ -241,17 +245,15 @@ Furthermore, the mental health crisis among students shows the current system is
 In conclusion, educational reform is not optional but essential. We must change the system to engage students, reduce mental health problems, and teach relevant skills for the modern world.`,
   q5Answer67: `The perpetuation of nineteenth-century pedagogical models in twenty-first-century education represents a fundamental abdication of institutional responsibility. Schools must undergo systematic reform to align curricula and assessment approaches with contemporary skill requirements and cognitive development research.
 
-Critics contend that traditional education has demonstrable value, producing generations of accomplished individuals. Yet this argument commits a temporal fallacy: the skills requisite for industrial-era success prove demonstrably inadequate for knowledge-economy participation. Contemporary employers consistently identify critical gaps in graduates' collaborative abilities, creative problem-solving capacities, and technological literacy—precisely the competencies traditional curricula systematically deprioritize in favor of subject-specific content recall.
+Critics contend that traditional education has demonstrable value, producing generations of accomplished individuals. Yet this argument commits a temporal fallacy: the skills requisite for industrial-era success prove demonstrably inadequate for knowledge-economy participation. Contemporary employers consistently identify critical gaps in graduates' collaborative abilities, creative problem-solving capacities, and technological literacy-precisely the competencies traditional curricula systematically deprioritize in favor of subject-specific content recall.
 
-Project-based pedagogical frameworks offer compelling alternatives. When students engage substantive real-world challenges—designing sustainable infrastructure, analyzing epidemiological data, constructing policy proposals—they develop integrated competencies: disciplinary knowledge, practical application, communicative clarity, and collaborative negotiation. This authenticity simultaneously addresses the mental health crisis afflicting secondary students. The persistent anxiety and depression correlate directly with decontextualized assessment regimes emphasizing high-stakes examinations over meaningful learning experiences.
+Project-based pedagogical frameworks offer compelling alternatives. When students engage substantive real-world challenges-designing sustainable infrastructure, analyzing epidemiological data, constructing policy proposals-they develop integrated competencies: disciplinary knowledge, practical application, communicative clarity, and collaborative negotiation. This authenticity simultaneously addresses the mental health crisis afflicting secondary students. The persistent anxiety and depression correlate directly with decontextualized assessment regimes emphasizing high-stakes examinations over meaningful learning experiences.
 
 Moreover, technological transformation necessitates curricular evolution. Information accessibility obviates the necessity of content memorization; educational value increasingly resides in synthesis, critical analysis, and creative application. Schools persisting with rote assessment methodologies effectively prepare students for obsolescence.
 
-However, wholesale institutional dismantling proves neither practical nor advisable. Evolutionary reform—implementing project-based components alongside traditional disciplines, diversifying assessment methods, prioritizing student well-being within maintained academic rigor—offers sustainable transformation. Schools require additional resource investment, but this represents prudent human capital development rather than budgetary expenditure.
+However, wholesale institutional dismantling proves neither practical nor advisable. Evolutionary reform-implementing project-based components alongside traditional disciplines, diversifying assessment methods, prioritizing student well-being within maintained academic rigor-offers sustainable transformation. Schools require additional resource investment, but this represents prudent human capital development rather than budgetary expenditure.
 
 In essence, educational reform addresses not revolutionary ideology but pragmatic responsiveness to demonstrable shifts in economic requirements and psychological research on learning effectiveness. Schools failing to adapt risk institutional irrelevance.`,
 })
 
-export const aqaLangP2MocksSet2: MockExamPaper[] = [
-  paper1,
-]
+export const aqaLangP2MocksSet2: MockExamPaper[] = [paper1]

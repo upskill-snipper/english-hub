@@ -620,7 +620,7 @@ export default function ParagraphJumblePage() {
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite — here is the order that works
+                        <XCircle className="size-4" /> Not quite - here is the order that works
                         best.
                       </>
                     )}

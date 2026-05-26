@@ -1,6 +1,6 @@
 'use client'
 
-// ─── ReadAloudButton — drop-in "read this aloud" speaker ────────────────────
+// ─── ReadAloudButton - drop-in "read this aloud" speaker ────────────────────
 // Reads the supplied `text` with the browser's free SpeechSynthesis. Renders
 // nothing where unsupported. Useful for AI feedback, content and accessibility.
 //

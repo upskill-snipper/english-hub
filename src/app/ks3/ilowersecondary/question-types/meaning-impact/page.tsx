@@ -8,11 +8,11 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types/m
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Meaning & impact questions — iLowerSecondary English masterclass',
+    title: 'Meaning & impact questions - iLowerSecondary English masterclass',
     description:
       'Master the "What did the writer mean…?", "Explain the impact…" and "How does the writer show…?" reading questions for Pearson iLowerSecondary English (LEH11). Worked extracts, weak vs model answers, mark splits and a sentence-frame toolkit.',
   },
-  title: 'Meaning & impact questions — iLowerSecondary English masterclass',
+  title: 'Meaning & impact questions - iLowerSecondary English masterclass',
   description:
     'Master the "What did the writer mean…?", "Explain the impact…" and "How does the writer show…?" reading questions for Pearson iLowerSecondary English (LEH11). Worked extracts, weak vs model answers, mark splits and a sentence-frame toolkit.',
   alternates: { canonical: PAGE_URL },
@@ -24,7 +24,7 @@ const HOW_SHOWN = QUESTION_TYPES.find((q) => q.id === 'language-structure-analys
 const RAO4 = ASSESSMENT_OBJECTIVES.RAO4
 const RAO5 = ASSESSMENT_OBJECTIVES.RAO5
 
-// ── Original short extracts (written by The English Hub — no past-paper text) ──
+// ── Original short extracts (written by The English Hub - no past-paper text) ──
 
 type ShortItem = {
   id: string
@@ -46,9 +46,9 @@ const TWO_MARK_ITEMS: ShortItem[] = [
     stem: 'What did the writer mean by “as if the sea might forget him if he stopped”?',
     weak: 'It means the sea might forget him if he stopped climbing the stairs.',
     weakWhy:
-      'This is an unexplained lift: it copies the writer’s phrase and adds nothing. The mark scheme does not credit repeating the words — you must explain the deeper meaning and the effect.',
+      'This is an unexplained lift: it copies the writer’s phrase and adds nothing. The mark scheme does not credit repeating the words - you must explain the deeper meaning and the effect.',
     model:
-      'The writer suggests the keeper feels his whole identity depends on the routine — without it he would be unremembered and purposeless. This makes the reader feel sympathy for a man clinging to a job the world has moved past.',
+      'The writer suggests the keeper feels his whole identity depends on the routine - without it he would be unremembered and purposeless. This makes the reader feel sympathy for a man clinging to a job the world has moved past.',
     markSplit: [
       {
         mark: '1 mark',
@@ -134,7 +134,7 @@ const TWO_MARK_ITEMS: ShortItem[] = [
     id: 'factory',
     source: 'From an original report, “The Closing of Number Four”',
     extract:
-      'When the last machine fell silent, the factory did not feel empty — it felt as though it were holding its breath, waiting for workers who would not come back.',
+      'When the last machine fell silent, the factory did not feel empty - it felt as though it were holding its breath, waiting for workers who would not come back.',
     stem: 'What did the writer mean by saying the factory “felt as though it were holding its breath”?',
     weak: 'It means the factory was holding its breath and waiting for the workers.',
     weakWhy:
@@ -145,7 +145,7 @@ const TWO_MARK_ITEMS: ShortItem[] = [
       {
         mark: '1 mark',
         criterion:
-          'Explains the implied meaning (tense, expectant, grieving silence — not mere emptiness).',
+          'Explains the implied meaning (tense, expectant, grieving silence - not mere emptiness).',
       },
       {
         mark: '1 mark',
@@ -266,7 +266,7 @@ export default async function MeaningImpactPage() {
       <p className="lead">
         This guide trains you on the reading questions that ask{' '}
         <strong>“What did the writer mean by…?”</strong>, <strong>“Explain the impact of…”</strong>{' '}
-        and <strong>“How does the writer show…?”</strong> — short open-response items that reward
+        and <strong>“How does the writer show…?”</strong> - short open-response items that reward
         genuine explanation, not copied words.
       </p>
 
@@ -319,7 +319,7 @@ export default async function MeaningImpactPage() {
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Part 1 — Meaning
+              Part 1 - Meaning
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               What does the writer actually mean here? Put the implied idea in your own words. Do
@@ -328,7 +328,7 @@ export default async function MeaningImpactPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Part 2 — Effect on the reader
+              Part 2 - Effect on the reader
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               What does this make the reader think, feel, picture or understand? This is the half
@@ -339,7 +339,7 @@ export default async function MeaningImpactPage() {
         <p className="text-sm text-muted-foreground leading-relaxed mt-4">
           For a four-mark <strong>“How does the writer show…?”</strong> question, do this twice:
           make <strong>two developed points</strong>, each carrying its own evidence and an
-          explanation of the effect — two marks for each developed point with evidence.
+          explanation of the effect - two marks for each developed point with evidence.
         </p>
       </section>
 
@@ -502,7 +502,7 @@ export default async function MeaningImpactPage() {
         <h2>Common mistakes that lose marks</h2>
         <div className="not-prose grid gap-3 sm:grid-cols-2">
           {[
-            'Lifting the writer’s words and adding no explanation — copied phrases are not credited.',
+            'Lifting the writer’s words and adding no explanation - copied phrases are not credited.',
             'Explaining the meaning but forgetting the effect on the reader (or vice versa).',
             'Giving one developed point on a four-mark “how does the writer show…?” question instead of two.',
             'Choosing evidence that does not actually support the point you have made.',

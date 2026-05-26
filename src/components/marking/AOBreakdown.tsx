@@ -60,7 +60,7 @@ export function AOBreakdown({ scores, className }: AOBreakdownProps) {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                {pct}% — {bandLabel(pct, t)}
+                {pct}% - {bandLabel(pct, t)}
               </p>
             </div>
           )

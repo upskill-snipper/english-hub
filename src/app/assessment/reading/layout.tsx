@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 // The reading-assessment page is a client component and cannot export
 // metadata itself, so without this layout it inherited the root default
-// title/description — colliding with six other metadata-less routes in a
+// title/description - colliding with six other metadata-less routes in a
 // live SEO audit. A unique, descriptive title + meta description here
 // resolves the duplicate for /assessment/reading specifically.
 const TITLE = 'Free Reading Age Test for GCSE English'
@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: DESCRIPTION,
     alternates: { canonical: 'https://theenglishhub.app/assessment/reading' },
     openGraph: {
-      title: `${TITLE} — The English Hub`,
+      title: `${TITLE} - The English Hub`,
       description: DESCRIPTION,
     },
   }

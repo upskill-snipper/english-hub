@@ -8,11 +8,11 @@ export default function EditorialDashboard() {
     currentHour < 12 ? 'Good morning' : currentHour < 18 ? 'Good afternoon' : 'Good evening'
 
   const recentActivity = [
-    { time: '9:41 am', text: 'Completed Paper 2 — Writers\u2019 Viewpoints and Perspectives' },
+    { time: '9:41 am', text: 'Completed Paper 2 - Writers\u2019 Viewpoints and Perspectives' },
     { time: '8:15 am', text: 'Reviewed unseen poetry comparison notes' },
-    { time: 'Yesterday', text: 'Practised transactional writing — letter to editor' },
+    { time: 'Yesterday', text: 'Practised transactional writing - letter to editor' },
     { time: 'Yesterday', text: 'Finished Act 3 annotations for An Inspector Calls' },
-    { time: 'Mon', text: 'Timed essay — How does Priestley present responsibility?' },
+    { time: 'Mon', text: 'Timed essay - How does Priestley present responsibility?' },
     { time: 'Mon', text: 'Language Paper 1, Question 5 creative writing draft' },
   ]
 
@@ -36,7 +36,7 @@ export default function EditorialDashboard() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent/20">
-      {/* Top bar — barely there */}
+      {/* Top bar - barely there */}
       <nav className="max-w-4xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
         <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
           English Hub
@@ -47,7 +47,7 @@ export default function EditorialDashboard() {
       </nav>
 
       <main className="max-w-4xl mx-auto px-6">
-        {/* Hero greeting — extreme typography */}
+        {/* Hero greeting - extreme typography */}
         <section className="pt-12 pb-20">
           <h1 className="font-heading italic text-[6rem] leading-[0.95] tracking-tight text-foreground">
             {greeting},
@@ -63,7 +63,7 @@ export default function EditorialDashboard() {
         {/* Divider */}
         <div className="border-t border-border" />
 
-        {/* Stats — magazine infographic style */}
+        {/* Stats - magazine infographic style */}
         <section className="py-16">
           <div className="grid grid-cols-2 gap-0">
             {/* Left stat */}
@@ -123,7 +123,7 @@ export default function EditorialDashboard() {
         {/* Divider */}
         <div className="border-t border-border" />
 
-        {/* Pull quote — motivational */}
+        {/* Pull quote - motivational */}
         <section className="py-16">
           <blockquote className="border-l-2 border-border pl-8 max-w-2xl">
             <p className="font-heading italic text-3xl leading-snug text-muted-foreground">
@@ -164,7 +164,7 @@ export default function EditorialDashboard() {
         {/* Divider */}
         <div className="border-t border-border" />
 
-        {/* Recent activity — newspaper column */}
+        {/* Recent activity - newspaper column */}
         <section className="py-16">
           <h2 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12">
             Recent activity
@@ -228,7 +228,7 @@ export default function EditorialDashboard() {
         {/* Divider */}
         <div className="border-t border-border" />
 
-        {/* Footer — minimal */}
+        {/* Footer - minimal */}
         <footer className="py-16 pb-24 flex items-center justify-between">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
             English Hub &middot; Editorial

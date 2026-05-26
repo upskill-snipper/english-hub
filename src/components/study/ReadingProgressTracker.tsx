@@ -6,7 +6,7 @@ import { useT } from '@/lib/i18n/use-t'
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 interface ReadingProgressTrackerProps {
-  /** 0–100 percentage of text read */
+  /** 0-100 percentage of text read */
   percentage: number
   /** Number of sections completed */
   sectionsCompleted: number

@@ -1,5 +1,5 @@
-// ─── OCR GCSE English — Grade Boundaries ─────────────────────────────────────
-// Source: OCR official "GCSE (9-1) grade boundaries — June 2024"
+// ─── OCR GCSE English - Grade Boundaries ─────────────────────────────────────
+// Source: OCR official "GCSE (9-1) grade boundaries - June 2024"
 // (qualification "Overall" raw boundaries), specifications J351 (English
 // Language) and J352 (English Literature). Maximum qualification mark = 160
 // (Spoken Language components do not count towards the overall mark).
@@ -7,7 +7,7 @@
 // Transcribed from the official OCR PDF (see sourceUrl). English Language
 // (J351) "Overall" curve is the board default; the Literature (J352)
 // "Overall" figures are recorded alongside for the human verifier. Numbers
-// are NOT yet human-verified — `verified` stays false until a person checks
+// are NOT yet human-verified - `verified` stays false until a person checks
 // them against the PDF and flips it (see ./types.ts header).
 //
 // Official June 2024 raw "Overall" boundaries (max 160):

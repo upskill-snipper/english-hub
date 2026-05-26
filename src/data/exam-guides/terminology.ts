@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { TerminologyEntry } from './types';
+import type { TerminologyEntry } from './types'
 
 export const terminologyList: TerminologyEntry[] = [
   // ═══════════════════════════════════════════════════════════════════════════════
@@ -11,7 +11,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A direct comparison between two things that are not literally alike, stating one thing IS another. Unlike a simile, it does not use "like" or "as."',
     example:
-      '"All the world\'s a stage" — Shakespeare compares the world directly to a stage, implying life is a performance.',
+      '"All the world\'s a stage" - Shakespeare compares the world directly to a stage, implying life is a performance.',
   },
   {
     term: 'Simile',
@@ -19,7 +19,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A comparison between two things using "like" or "as." Similes draw an explicit parallel and invite the reader to consider shared qualities.',
     example:
-      '"Her smile was like the sun" — the comparison suggests warmth, brightness, and the power to transform a mood.',
+      '"Her smile was like the sun" - the comparison suggests warmth, brightness, and the power to transform a mood.',
   },
   {
     term: 'Personification',
@@ -27,7 +27,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Attributing human qualities, emotions, or actions to non-human things such as objects, animals, or abstract concepts.',
     example:
-      '"The wind whispered through the trees" — giving the wind the human ability to whisper creates an eerie, secretive atmosphere.',
+      '"The wind whispered through the trees" - giving the wind the human ability to whisper creates an eerie, secretive atmosphere.',
   },
   {
     term: 'Pathetic Fallacy',
@@ -35,7 +35,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A specific type of personification where weather or the natural environment mirrors or reflects the emotional state of a character or the mood of a scene.',
     example:
-      'In Macbeth, the storm on the night of Duncan\'s murder reflects the moral and cosmic disorder caused by regicide.',
+      "In Macbeth, the storm on the night of Duncan's murder reflects the moral and cosmic disorder caused by regicide.",
   },
   {
     term: 'Oxymoron',
@@ -43,7 +43,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A figure of speech that combines two contradictory terms to create a paradoxical image or idea, often highlighting internal conflict or complexity.',
     example:
-      '"Living death" or "bittersweet" — Romeo uses "loving hate" to express the confusion of his feelings.',
+      '"Living death" or "bittersweet" - Romeo uses "loving hate" to express the confusion of his feelings.',
   },
   {
     term: 'Hyperbole',
@@ -51,7 +51,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Deliberate and obvious exaggeration used for emphasis, humour, or emotional effect. Not intended to be taken literally.',
     example:
-      '"I\'ve told you a million times" — the exaggeration emphasises frustration and impatience.',
+      '"I\'ve told you a million times" - the exaggeration emphasises frustration and impatience.',
   },
   {
     term: 'Symbolism',
@@ -59,7 +59,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The use of an object, character, colour, or event to represent a deeper, abstract meaning beyond its literal sense. Symbols recur and accumulate meaning throughout a text.',
     example:
-      'The conch in Lord of the Flies symbolises democracy, order, and civilised authority — its destruction mirrors the collapse of civilisation on the island.',
+      'The conch in Lord of the Flies symbolises democracy, order, and civilised authority - its destruction mirrors the collapse of civilisation on the island.',
   },
   {
     term: 'Allegory',
@@ -75,7 +75,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Placing two contrasting elements side by side to highlight their differences and create meaning through comparison. Can apply to characters, settings, ideas, or images.',
     example:
-      'In A Christmas Carol, the warmth of the Cratchits\' home is juxtaposed with Scrooge\'s cold, dark chambers to highlight the value of love over wealth.',
+      "In A Christmas Carol, the warmth of the Cratchits' home is juxtaposed with Scrooge's cold, dark chambers to highlight the value of love over wealth.",
   },
   {
     term: 'Imagery',
@@ -83,15 +83,15 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Language that appeals to the five senses (sight, sound, smell, taste, touch) to create vivid mental pictures and immerse the reader in the experience being described.',
     example:
-      '"The golden light spilled across the floor like warm honey" — visual and tactile imagery creates a comforting, nostalgic atmosphere.',
+      '"The golden light spilled across the floor like warm honey" - visual and tactile imagery creates a comforting, nostalgic atmosphere.',
   },
   {
     term: 'Synecdoche',
     category: 'figurative',
     definition:
-      'A figure of speech in which a part of something represents the whole, or the whole represents a part. It focuses the reader\'s attention on a specific detail.',
+      "A figure of speech in which a part of something represents the whole, or the whole represents a part. It focuses the reader's attention on a specific detail.",
     example:
-      '"All hands on deck" — "hands" represents the sailors, reducing them to their labour and function.',
+      '"All hands on deck" - "hands" represents the sailors, reducing them to their labour and function.',
   },
   {
     term: 'Metonymy',
@@ -99,7 +99,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Replacing the name of something with the name of something closely associated with it. Unlike synecdoche, the substitute is related but not a part of the original.',
     example:
-      '"The Crown has issued a statement" — "the Crown" stands for the monarchy or the reigning monarch.',
+      '"The Crown has issued a statement" - "the Crown" stands for the monarchy or the reigning monarch.',
   },
   {
     term: 'Euphemism',
@@ -107,7 +107,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A mild, indirect, or vague expression substituted for one considered too harsh, blunt, or direct. Often used to soften uncomfortable realities.',
     example:
-      '"He passed away" instead of "he died" — the euphemism softens the reality of death and reflects social discomfort.',
+      '"He passed away" instead of "he died" - the euphemism softens the reality of death and reflects social discomfort.',
   },
   {
     term: 'Irony',
@@ -115,7 +115,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A contrast between expectation and reality. Verbal irony says the opposite of what is meant; situational irony occurs when events contradict expectations; dramatic irony occurs when the audience knows something a character does not.',
     example:
-      'In An Inspector Calls, Mr Birling declares "the Titanic is unsinkable" — the audience\'s knowledge of the disaster creates powerful dramatic irony that undermines his authority.',
+      'In An Inspector Calls, Mr Birling declares "the Titanic is unsinkable" - the audience\'s knowledge of the disaster creates powerful dramatic irony that undermines his authority.',
   },
   {
     term: 'Litotes',
@@ -123,7 +123,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A form of understatement that uses a negative to express a positive, often for ironic, modest, or understated effect.',
     example:
-      '"Not bad" meaning "good" or "quite impressive" — the deliberate understatement can convey dry wit or reluctant admiration.',
+      '"Not bad" meaning "good" or "quite impressive" - the deliberate understatement can convey dry wit or reluctant admiration.',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
@@ -135,7 +135,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The repetition of the same consonant sound at the beginning of closely connected words. Creates rhythm, emphasis, and can evoke specific moods.',
     example:
-      '"Peter Piper picked a peck of pickled peppers" — the repeated /p/ creates a percussive, playful rhythm.',
+      '"Peter Piper picked a peck of pickled peppers" - the repeated /p/ creates a percussive, playful rhythm.',
   },
   {
     term: 'Assonance',
@@ -143,7 +143,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The repetition of vowel sounds within nearby words. Creates internal rhyme, musicality, and can slow or quicken the pace of reading.',
     example:
-      '"The rain in Spain falls mainly on the plain" — the repeated long /ei/ sound creates a flowing, melodic quality.',
+      '"The rain in Spain falls mainly on the plain" - the repeated long /ei/ sound creates a flowing, melodic quality.',
   },
   {
     term: 'Consonance',
@@ -151,7 +151,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The repetition of consonant sounds within or at the end of words in close proximity. Distinct from alliteration, which focuses on initial sounds.',
     example:
-      '"pitter patter" — the repeated /t/ and /r/ sounds create a rhythmic pattern that mimics the sound of rain.',
+      '"pitter patter" - the repeated /t/ and /r/ sounds create a rhythmic pattern that mimics the sound of rain.',
   },
   {
     term: 'Onomatopoeia',
@@ -159,7 +159,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Words that phonetically imitate or resemble the sound they describe. Creates a vivid sensory experience by making the reader "hear" the action.',
     example:
-      '"The bees buzzed" or "the fire crackled" — the words themselves replicate the sounds, making the scene auditory as well as visual.',
+      '"The bees buzzed" or "the fire crackled" - the words themselves replicate the sounds, making the scene auditory as well as visual.',
   },
   {
     term: 'Sibilance',
@@ -167,7 +167,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The repetition of soft "s," "sh," "z," or "zh" sounds. Often creates a sinister, whispering, or soothing atmosphere depending on context.',
     example:
-      '"The snake slithered silently through the shadows" — the sibilant sounds mimic the hissing of a snake, creating menace.',
+      '"The snake slithered silently through the shadows" - the sibilant sounds mimic the hissing of a snake, creating menace.',
   },
   {
     term: 'Plosive Sounds',
@@ -175,7 +175,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Harsh, explosive consonant sounds (/b/, /d/, /g/, /p/, /t/, /k/) that are produced by a sudden release of airflow. Create a sense of aggression, force, or abruptness.',
     example:
-      '"The brutal, bitter blows beat down upon him" — the repeated /b/ plosives convey violence and relentless force.',
+      '"The brutal, bitter blows beat down upon him" - the repeated /b/ plosives convey violence and relentless force.',
   },
   {
     term: 'Fricative Sounds',
@@ -183,7 +183,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Consonant sounds produced by forcing air through a narrow channel (/f/, /v/, /th/, /s/, /z/, /sh/). Can create a sense of friction, tension, or whispering depending on context.',
     example:
-      '"The vast, fearful void" — the /f/ and /v/ fricatives create a sense of unease and discomfort.',
+      '"The vast, fearful void" - the /f/ and /v/ fricatives create a sense of unease and discomfort.',
   },
   {
     term: 'Rhythm',
@@ -203,7 +203,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The deliberate repetition of a word or phrase at the beginning of successive clauses, sentences, or lines. Builds momentum, creates emphasis, and can convey passion or urgency.',
     example:
-      '"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness" — Dickens uses anaphora to establish the paradoxes of the era.',
+      '"It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness" - Dickens uses anaphora to establish the paradoxes of the era.',
   },
   {
     term: 'Epistrophe',
@@ -211,7 +211,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The repetition of a word or phrase at the END of successive clauses or sentences. The counterpart to anaphora. Creates a sense of conclusion, certainty, or emotional weight.',
     example:
-      '"...of the people, by the people, for the people" — Lincoln\'s repetition of "the people" hammers home the democratic principle.',
+      '"...of the people, by the people, for the people" - Lincoln\'s repetition of "the people" hammers home the democratic principle.',
   },
   {
     term: 'Tricolon',
@@ -219,7 +219,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A series of three parallel words, phrases, or clauses. The "rule of three" is deeply embedded in rhetoric because the human brain finds patterns of three satisfying and persuasive.',
     example:
-      '"Veni, vidi, vici" (I came, I saw, I conquered) — the three short clauses create a sense of swift, inevitable triumph.',
+      '"Veni, vidi, vici" (I came, I saw, I conquered) - the three short clauses create a sense of swift, inevitable triumph.',
   },
   {
     term: 'Antithesis',
@@ -227,7 +227,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The juxtaposition of contrasting ideas in balanced phrases or clauses. The parallel structure highlights the opposition and makes the contrast sharper and more memorable.',
     example:
-      '"To err is human; to forgive, divine" — the balanced structure invites comparison and elevates forgiveness above human weakness.',
+      '"To err is human; to forgive, divine" - the balanced structure invites comparison and elevates forgiveness above human weakness.',
   },
   {
     term: 'Volta',
@@ -243,7 +243,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'The continuation of a sentence or phrase beyond the end of a line of poetry without a pause. Creates urgency, momentum, or a sense of overflow, as if the emotion cannot be contained within a single line.',
     example:
-      'In "My Last Duchess," Browning\'s enjambment reflects the Duke\'s unstoppable, controlling speech — his thoughts run on, mirroring his desire to dominate the conversation.',
+      'In "My Last Duchess," Browning\'s enjambment reflects the Duke\'s unstoppable, controlling speech - his thoughts run on, mirroring his desire to dominate the conversation.',
   },
   {
     term: 'Caesura',
@@ -251,7 +251,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A pause or break within a line of poetry, usually created by punctuation (a full stop, comma, dash, or semicolon). Can create a moment of reflection, a shift in tone, or a sense of disruption.',
     example:
-      '"I am — yet what I am none cares or knows" (John Clare) — the dash creates a caesura that enacts the speaker\'s fragmented sense of self.',
+      '"I am - yet what I am none cares or knows" (John Clare) - the dash creates a caesura that enacts the speaker\'s fragmented sense of self.',
   },
   {
     term: 'Cyclical Structure',
@@ -259,7 +259,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A narrative or poetic structure that ends where it began, creating a sense of completeness, inevitability, or entrapment. The return to the beginning often carries new meaning.',
     example:
-      'In An Inspector Calls, the phone ringing at the end — announcing that an inspector is on the way — creates a cyclical structure that suggests the Birlings have learned nothing and are doomed to repeat their moral failure.',
+      'In An Inspector Calls, the phone ringing at the end - announcing that an inspector is on the way - creates a cyclical structure that suggests the Birlings have learned nothing and are doomed to repeat their moral failure.',
   },
   {
     term: 'Foreshadowing',
@@ -267,7 +267,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'Hints or clues earlier in the text that suggest events that will occur later. Creates suspense, dramatic irony, and a sense of inevitability.',
     example:
-      'In Of Mice and Men, the shooting of Candy\'s dog foreshadows the ending — both acts are presented as merciful killings, forcing the reader to question where compassion ends and cruelty begins.',
+      "In Of Mice and Men, the shooting of Candy's dog foreshadows the ending - both acts are presented as merciful killings, forcing the reader to question where compassion ends and cruelty begins.",
   },
   {
     term: 'Flashback',
@@ -281,9 +281,9 @@ export const terminologyList: TerminologyEntry[] = [
     term: 'In Medias Res',
     category: 'structural',
     definition:
-      'A narrative technique that begins the story "in the middle of things" — dropping the reader into the action without preamble. Creates immediate engagement, urgency, and intrigue.',
+      'A narrative technique that begins the story "in the middle of things" - dropping the reader into the action without preamble. Creates immediate engagement, urgency, and intrigue.',
     example:
-      'Homer\'s Odyssey begins mid-journey, long after the fall of Troy, plunging the reader into the story and using flashbacks to fill in the earlier events.',
+      "Homer's Odyssey begins mid-journey, long after the fall of Troy, plunging the reader into the story and using flashbacks to fill in the earlier events.",
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
@@ -295,15 +295,15 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A sentence that makes a statement or expresses a fact, opinion, or idea. Ends with a full stop. The most common sentence type, conveying authority and certainty.',
     example:
-      '"The Inspector stood in the doorway." — a declarative sentence establishes fact and creates a sense of calm control.',
+      '"The Inspector stood in the doorway." - a declarative sentence establishes fact and creates a sense of calm control.',
   },
   {
     term: 'Interrogative Sentence',
     category: 'sentence',
     definition:
-      'A sentence that asks a question, ending with a question mark. Can be used to create doubt, engage the reader, challenge assumptions, or — as a rhetorical question — to assert a point without requiring an answer.',
+      'A sentence that asks a question, ending with a question mark. Can be used to create doubt, engage the reader, challenge assumptions, or - as a rhetorical question - to assert a point without requiring an answer.',
     example:
-      '"Is this the face that launched a thousand ships?" — Marlowe\'s rhetorical question conveys awe at Helen\'s legendary beauty.',
+      '"Is this the face that launched a thousand ships?" - Marlowe\'s rhetorical question conveys awe at Helen\'s legendary beauty.',
   },
   {
     term: 'Imperative Sentence',
@@ -311,23 +311,23 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A sentence that gives a command, instruction, or request. Often begins with a verb and the subject ("you") is implied. Conveys authority, urgency, or direct address.',
     example:
-      '"Look at him!" — Lady Macbeth\'s imperative conveys her desperation and her attempt to control Macbeth\'s behaviour.',
+      '"Look at him!" - Lady Macbeth\'s imperative conveys her desperation and her attempt to control Macbeth\'s behaviour.',
   },
   {
     term: 'Exclamatory Sentence',
     category: 'sentence',
     definition:
-      'A sentence that expresses strong emotion — surprise, anger, joy, fear — and ends with an exclamation mark. Should be used sparingly in analytical writing, but is important to identify in texts.',
+      'A sentence that expresses strong emotion - surprise, anger, joy, fear - and ends with an exclamation mark. Should be used sparingly in analytical writing, but is important to identify in texts.',
     example:
-      '"What a piece of work is a man!" — Hamlet\'s exclamation conveys both admiration and, in context, biting irony about human nature.',
+      '"What a piece of work is a man!" - Hamlet\'s exclamation conveys both admiration and, in context, biting irony about human nature.',
   },
   {
     term: 'Minor Sentence',
     category: 'sentence',
     definition:
-      'A grammatically incomplete sentence — a fragment — used deliberately for emphasis, dramatic effect, or to mimic natural speech. Lacks a main verb or a subject-verb structure.',
+      'A grammatically incomplete sentence - a fragment - used deliberately for emphasis, dramatic effect, or to mimic natural speech. Lacks a main verb or a subject-verb structure.',
     example:
-      '"Gone." or "Silence." — minor sentences create abrupt, impactful pauses that force the reader to stop and absorb the moment.',
+      '"Gone." or "Silence." - minor sentences create abrupt, impactful pauses that force the reader to stop and absorb the moment.',
   },
   {
     term: 'Complex Sentence',
@@ -335,7 +335,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A sentence containing one main (independent) clause and one or more subordinate (dependent) clauses. Allows a writer to convey layered ideas, show cause and effect, or embed qualifying detail.',
     example:
-      '"Although he appeared calm, his hands — hidden beneath the table — were trembling." — the subordinate clause and parenthetical aside reveal a contrast between surface composure and inner turmoil.',
+      '"Although he appeared calm, his hands - hidden beneath the table - were trembling." - the subordinate clause and parenthetical aside reveal a contrast between surface composure and inner turmoil.',
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
@@ -355,7 +355,7 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A pair of successive lines that usually rhyme and have the same metre. Often used to conclude a poem or a section with a sense of resolution, wit, or finality.',
     example:
-      'Shakespeare\'s sonnets end with a rhyming couplet that typically delivers a twist, conclusion, or counter-argument to the preceding twelve lines.',
+      "Shakespeare's sonnets end with a rhyming couplet that typically delivers a twist, conclusion, or counter-argument to the preceding twelve lines.",
   },
   {
     term: 'Quatrain',
@@ -369,9 +369,9 @@ export const terminologyList: TerminologyEntry[] = [
     term: 'Free Verse',
     category: 'poetry',
     definition:
-      'Poetry that does not follow a regular metre or rhyme scheme. The poet has complete freedom over line length, rhythm, and structure. This does NOT mean "no structure" — the choices are deliberate and meaningful.',
+      'Poetry that does not follow a regular metre or rhyme scheme. The poet has complete freedom over line length, rhythm, and structure. This does NOT mean "no structure" - the choices are deliberate and meaningful.',
     example:
-      'Simon Armitage\'s "Remains" uses free verse to mirror the chaotic, uncontrollable nature of the soldier\'s traumatic memories — the lack of formal structure enacts the lack of psychological order.',
+      'Simon Armitage\'s "Remains" uses free verse to mirror the chaotic, uncontrollable nature of the soldier\'s traumatic memories - the lack of formal structure enacts the lack of psychological order.',
   },
   {
     term: 'Sonnet',
@@ -379,13 +379,13 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A 14-line poem with a strict structure and rhyme scheme. Petrarchan sonnets divide into an octave (8 lines) and a sestet (6 lines); Shakespearean sonnets have three quatrains and a couplet. Traditionally associated with love, but often subverted.',
     example:
-      '"Ozymandias" by Shelley uses the sonnet form — traditionally associated with love and permanence — to describe the decay and impermanence of power, creating an ironic contrast between form and content.',
+      '"Ozymandias" by Shelley uses the sonnet form - traditionally associated with love and permanence - to describe the decay and impermanence of power, creating an ironic contrast between form and content.',
   },
   {
     term: 'Dramatic Monologue',
     category: 'poetry',
     definition:
-      'A poem written as a speech by a single character to a silent listener. The speaker reveals their personality, motivations, and often their flaws through what they say — and crucially, through what they unintentionally reveal.',
+      'A poem written as a speech by a single character to a silent listener. The speaker reveals their personality, motivations, and often their flaws through what they say - and crucially, through what they unintentionally reveal.',
     example:
       '"My Last Duchess" by Browning is a dramatic monologue in which the Duke reveals his possessiveness, jealousy, and implied violence while believing he is presenting himself favourably.',
   },
@@ -395,6 +395,6 @@ export const terminologyList: TerminologyEntry[] = [
     definition:
       'A narrative poem that tells a story, traditionally using quatrains with an ABAB or ABCB rhyme scheme. Originally an oral form, ballads often deal with love, tragedy, adventure, or moral lessons and use simple, repetitive language.',
     example:
-      'The Romantic poets revived the ballad form — Coleridge\'s "The Rime of the Ancient Mariner" uses ballad conventions to tell a supernatural tale with a moral about respect for nature.',
+      'The Romantic poets revived the ballad form - Coleridge\'s "The Rime of the Ancient Mariner" uses ballad conventions to tell a supernatural tale with a moral about respect for nature.',
   },
-];
+]

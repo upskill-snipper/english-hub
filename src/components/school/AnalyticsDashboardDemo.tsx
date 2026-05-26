@@ -33,7 +33,7 @@ const STATS = [
   },
 ]
 
-// Year-on-year and cohort breakdown — sized realistically against 342 students:
+// Year-on-year and cohort breakdown - sized realistically against 342 students:
 //  - 67% on track  → 229
 //  - 8% at risk    → 27
 //  - 14% EAL       → 48
@@ -72,7 +72,7 @@ const STATS_EXTRA = [
   },
 ]
 
-// Lightweight sparkline series per year group — used in the table to show the
+// Lightweight sparkline series per year group - used in the table to show the
 // last 6 data points (term-on-term avg score).
 const YEAR_GROUPS = [
   {
@@ -235,7 +235,7 @@ function isPositiveTrend(trend: string): boolean {
   return trend.startsWith('+')
 }
 
-// Tiny inline sparkline (no JS) — pure SVG path from a numeric series.
+// Tiny inline sparkline (no JS) - pure SVG path from a numeric series.
 function MiniSpark({ values, positive }: { values: number[]; positive: boolean }) {
   if (values.length < 2) return null
   const min = Math.min(...values)
@@ -272,7 +272,7 @@ function MiniSpark({ values, positive }: { values: number[]; positive: boolean }
   )
 }
 
-// SVG donut ring — animated stroke-dasharray for the filled arc, with the
+// SVG donut ring - animated stroke-dasharray for the filled arc, with the
 // percentage rendered in the centre.
 function DonutRing({ pct, color, label }: { pct: number; color: string; label: string }) {
   const size = 72

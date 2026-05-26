@@ -3,7 +3,7 @@
 // exam board. These replace the single AQA-derived proxy table that was
 // previously applied to *every* board (the cross-board validity defect).
 //
-// DESIGN NOTES — read before editing the data modules:
+// DESIGN NOTES - read before editing the data modules:
 //
 //  • Boundaries are stored as PERCENTAGE thresholds (0-100), not raw marks.
 //    Boards publish raw-mark boundaries against a fixed subject maximum
@@ -17,7 +17,7 @@
 //  • `verified` MUST stay `false` until a human has checked the numbers in
 //    this module against the official board PDF named in `sourceUrl` and
 //    flipped the flag. The predictor treats `verified:false` exactly like a
-//    missing table — it falls back to the AQA proxy and hard-flags the
+//    missing table - it falls back to the AQA proxy and hard-flags the
 //    result as indicative-only. Setting `verified:true` is the ONLY human
 //    step required to make a board's real boundaries take effect.
 //
@@ -37,7 +37,7 @@ export const NUMERIC_GRADES: readonly NumericGrade[] = ['9', '8', '7', '6', '5',
  * `pct` is the lower bound: a percentage >= `pct` earns this grade.
  *
  * `rawMark` / `rawMax` record the official published raw figures the
- * percentage was derived from, purely for audit/verification — they are NOT
+ * percentage was derived from, purely for audit/verification - they are NOT
  * used at runtime. `null` => the figure could not be sourced (board stays
  * gated for that grade; see file header).
  */
@@ -83,7 +83,7 @@ export interface BoardBoundaryTable {
 /**
  * Build a {@link GradeThreshold} list from official raw figures, computing the
  * percentage once. Pass `null` for any grade whose raw mark could not be
- * sourced — it propagates as an unsourced (null) percentage.
+ * sourced - it propagates as an unsourced (null) percentage.
  *
  * @param rawMax  Official published subject/paper maximum (e.g. 160, 200).
  * @param raw     Map of grade → official raw mark (or null if unsourced).

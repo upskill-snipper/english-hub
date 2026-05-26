@@ -18,21 +18,9 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
-import type {
-  School,
-  Class,
-  SchoolMember,
-  SchoolOverview,
-  ClassAnalytics,
-} from '@/lib/types'
+import type { School, Class, SchoolMember, SchoolOverview, ClassAnalytics } from '@/lib/types'
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
@@ -107,9 +95,7 @@ function classifySubject(className: string): 'Literature' | 'Language' | 'Other'
   return 'Other'
 }
 
-function inferActivityLevel(
-  analytics: ClassAnalytics,
-): 'high' | 'medium' | 'low' {
+function inferActivityLevel(analytics: ClassAnalytics): 'high' | 'medium' | 'low' {
   if (analytics.completion_rate >= 70 && analytics.avg_score >= 60) return 'high'
   if (analytics.completion_rate >= 40) return 'medium'
   return 'low'
@@ -117,11 +103,7 @@ function inferActivityLevel(
 
 /* ── Component ──────────────────────────────────────────────────────────────── */
 
-export function DepartmentOverview({
-  school,
-  classes,
-  members,
-}: DepartmentOverviewProps) {
+export function DepartmentOverview({ school, classes, members }: DepartmentOverviewProps) {
   const [overview, setOverview] = useState<SchoolOverview | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -143,10 +125,7 @@ export function DepartmentOverview({
   }, [])
 
   // ── Derived data ──────────────────────────────────────────────────
-  const classAnalytics: ClassAnalytics[] = useMemo(
-    () => overview?.classes ?? [],
-    [overview],
-  )
+  const classAnalytics: ClassAnalytics[] = useMemo(() => overview?.classes ?? [], [overview])
 
   const teachers: SchoolMember[] = useMemo(
     () => members.filter((m) => m.role === 'teacher' || m.role === 'head_of_department'),
@@ -173,24 +152,16 @@ export function DepartmentOverview({
 
     return teachers.map((teacher) => {
       const teacherClasses = teacherClassMap.get(teacher.user_id ?? '') ?? []
-      const totalStudents = teacherClasses.reduce(
-        (sum, c) => sum + c.student_count,
-        0,
-      )
+      const totalStudents = teacherClasses.reduce((sum, c) => sum + c.student_count, 0)
       const avgScore =
         teacherClasses.length > 0
-          ? teacherClasses.reduce((sum, c) => sum + c.avg_score, 0) /
-            teacherClasses.length
+          ? teacherClasses.reduce((sum, c) => sum + c.avg_score, 0) / teacherClasses.length
           : 0
       const avgCompletion =
         teacherClasses.length > 0
-          ? teacherClasses.reduce((sum, c) => sum + c.completion_rate, 0) /
-            teacherClasses.length
+          ? teacherClasses.reduce((sum, c) => sum + c.completion_rate, 0) / teacherClasses.length
           : 0
-      const studentsAtRisk = teacherClasses.reduce(
-        (sum, c) => sum + c.students_at_risk,
-        0,
-      )
+      const studentsAtRisk = teacherClasses.reduce((sum, c) => sum + c.students_at_risk, 0)
       const activityLevels = teacherClasses.map(inferActivityLevel)
       const highCount = activityLevels.filter((l) => l === 'high').length
       const lowCount = activityLevels.filter((l) => l === 'low').length
@@ -238,9 +209,7 @@ export function DepartmentOverview({
     return Array.from(groups.entries()).map(([label, items]) => ({
       label,
       classCount: items.length,
-      avgScore: Math.round(
-        items.reduce((s, c) => s + c.avg_score, 0) / items.length,
-      ),
+      avgScore: Math.round(items.reduce((s, c) => s + c.avg_score, 0) / items.length),
       studentCount: items.reduce((s, c) => s + c.student_count, 0),
     }))
   }, [classAnalytics])
@@ -260,12 +229,8 @@ export function DepartmentOverview({
       .map(([yearGroup, items]) => ({
         yearGroup,
         classCount: items.length,
-        avgScore: Math.round(
-          items.reduce((s, c) => s + c.avg_score, 0) / items.length,
-        ),
-        avgCompletion: Math.round(
-          items.reduce((s, c) => s + c.completion_rate, 0) / items.length,
-        ),
+        avgScore: Math.round(items.reduce((s, c) => s + c.avg_score, 0) / items.length),
+        avgCompletion: Math.round(items.reduce((s, c) => s + c.completion_rate, 0) / items.length),
         studentCount: items.reduce((s, c) => s + c.student_count, 0),
       }))
       .sort((a, b) => a.yearGroup.localeCompare(b.yearGroup))
@@ -286,12 +251,8 @@ export function DepartmentOverview({
       .map(([examBoard, items]) => ({
         examBoard,
         classCount: items.length,
-        avgScore: Math.round(
-          items.reduce((s, c) => s + c.avg_score, 0) / items.length,
-        ),
-        avgCompletion: Math.round(
-          items.reduce((s, c) => s + c.completion_rate, 0) / items.length,
-        ),
+        avgScore: Math.round(items.reduce((s, c) => s + c.avg_score, 0) / items.length),
+        avgCompletion: Math.round(items.reduce((s, c) => s + c.completion_rate, 0) / items.length),
         studentCount: items.reduce((s, c) => s + c.student_count, 0),
       }))
       .sort((a, b) => b.avgScore - a.avgScore)
@@ -305,7 +266,7 @@ export function DepartmentOverview({
         items.push({
           type: 'below_target',
           label: cls.class_name,
-          detail: `${percentageToGCSEGradeLabel(Math.round(cls.avg_score))} — ${Math.round(avgDeptScore - cls.avg_score)}pp below department average`,
+          detail: `${percentageToGCSEGradeLabel(Math.round(cls.avg_score))} - ${Math.round(avgDeptScore - cls.avg_score)}pp below department average`,
           severity: cls.avg_score < avgDeptScore * 0.6 ? 'critical' : 'warning',
         })
       }
@@ -313,7 +274,7 @@ export function DepartmentOverview({
         items.push({
           type: 'low_engagement',
           label: cls.class_name,
-          detail: `Only ${Math.round(cls.completion_rate)}% completion rate — possible engagement issue`,
+          detail: `Only ${Math.round(cls.completion_rate)}% completion rate - possible engagement issue`,
           severity: cls.completion_rate < 15 ? 'critical' : 'warning',
         })
       }
@@ -326,9 +287,7 @@ export function DepartmentOverview({
         })
       }
     }
-    return items.sort((a, b) =>
-      a.severity === 'critical' && b.severity !== 'critical' ? -1 : 1,
-    )
+    return items.sort((a, b) => (a.severity === 'critical' && b.severity !== 'critical' ? -1 : 1))
   }, [classAnalytics, avgDeptScore])
 
   // ── Highlights ────────────────────────────────────────────────────
@@ -340,26 +299,24 @@ export function DepartmentOverview({
       items.push({
         type: 'top_class',
         label: sorted[0].class_name,
-        detail: `Top performing class — ${percentageToGCSEGradeLabel(Math.round(sorted[0].avg_score))}, ${Math.round(sorted[0].completion_rate)}% completion`,
+        detail: `Top performing class - ${percentageToGCSEGradeLabel(Math.round(sorted[0].avg_score))}, ${Math.round(sorted[0].completion_rate)}% completion`,
       })
     }
     if (sorted.length > 1) {
       items.push({
         type: 'top_class',
         label: sorted[1].class_name,
-        detail: `Second highest — ${percentageToGCSEGradeLabel(Math.round(sorted[1].avg_score))}`,
+        detail: `Second highest - ${percentageToGCSEGradeLabel(Math.round(sorted[1].avg_score))}`,
       })
     }
 
     // Classes with high completion as highlights
-    const highCompletion = classAnalytics.filter(
-      (c) => c.completion_rate >= 80,
-    )
+    const highCompletion = classAnalytics.filter((c) => c.completion_rate >= 80)
     for (const cls of highCompletion) {
       items.push({
         type: 'most_improved',
         label: cls.class_name,
-        detail: `${Math.round(cls.completion_rate)}% completion rate — excellent engagement`,
+        detail: `${Math.round(cls.completion_rate)}% completion rate - excellent engagement`,
       })
     }
 
@@ -373,12 +330,12 @@ export function DepartmentOverview({
     for (const t of teacherSummaries) {
       if (t.activityLevel === 'low' && t.classCount > 0) {
         suggestions.push(
-          `${t.name} has low activity across ${t.classCount} class${t.classCount > 1 ? 'es' : ''} — consider offering CPD support or peer observation.`,
+          `${t.name} has low activity across ${t.classCount} class${t.classCount > 1 ? 'es' : ''} - consider offering CPD support or peer observation.`,
         )
       }
       if (t.studentsAtRisk > 5) {
         suggestions.push(
-          `${t.name} has ${t.studentsAtRisk} students at risk — may benefit from additional teaching assistant time.`,
+          `${t.name} has ${t.studentsAtRisk} students at risk - may benefit from additional teaching assistant time.`,
         )
       }
     }
@@ -386,17 +343,15 @@ export function DepartmentOverview({
     const lowClasses = classAnalytics.filter((c) => c.avg_score < 40)
     if (lowClasses.length > 0) {
       suggestions.push(
-        `${lowClasses.length} class${lowClasses.length > 1 ? 'es' : ''} scoring below 40% — consider targeted intervention groups or additional revision sessions.`,
+        `${lowClasses.length} class${lowClasses.length > 1 ? 'es' : ''} scoring below 40% - consider targeted intervention groups or additional revision sessions.`,
       )
     }
 
     if (yearGroupBreakdown.length > 1) {
-      const sorted = [...yearGroupBreakdown].sort(
-        (a, b) => a.avgScore - b.avgScore,
-      )
+      const sorted = [...yearGroupBreakdown].sort((a, b) => a.avgScore - b.avgScore)
       if (sorted[0].avgScore < sorted[sorted.length - 1].avgScore - 15) {
         suggestions.push(
-          `${sorted[0].yearGroup} is underperforming vs ${sorted[sorted.length - 1].yearGroup} by ${sorted[sorted.length - 1].avgScore - sorted[0].avgScore}pp — review resource allocation between year groups.`,
+          `${sorted[0].yearGroup} is underperforming vs ${sorted[sorted.length - 1].yearGroup} by ${sorted[sorted.length - 1].avgScore - sorted[0].avgScore}pp - review resource allocation between year groups.`,
         )
       }
     }
@@ -431,12 +386,7 @@ export function DepartmentOverview({
           icon={BookOpen}
           color="blue"
         />
-        <StatCard
-          title="Total Students"
-          value={totalStudents}
-          icon={Users}
-          color="purple"
-        />
+        <StatCard title="Total Students" value={totalStudents} icon={Users} color="purple" />
         <StatCard
           title="Avg Department Score"
           value={percentageToGCSEGradeLabel(Math.round(avgDeptScore))}
@@ -472,17 +422,13 @@ export function DepartmentOverview({
             </CardHeader>
             <CardContent>
               {teacherSummaries.length === 0 ? (
-                <p className="text-sm text-muted-foreground">
-                  No teacher data available yet.
-                </p>
+                <p className="text-sm text-muted-foreground">No teacher data available yet.</p>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-left">
-                        <th className="pb-3 pr-4 font-medium text-muted-foreground">
-                          Teacher
-                        </th>
+                        <th className="pb-3 pr-4 font-medium text-muted-foreground">Teacher</th>
                         <th className="pb-3 pr-4 font-medium text-muted-foreground text-center">
                           Classes
                         </th>
@@ -512,12 +458,8 @@ export function DepartmentOverview({
                               <p className="text-xs text-muted-foreground">{t.email}</p>
                             </div>
                           </td>
-                          <td className="py-3 pr-4 text-center tabular-nums">
-                            {t.classCount}
-                          </td>
-                          <td className="py-3 pr-4 text-center tabular-nums">
-                            {t.totalStudents}
-                          </td>
+                          <td className="py-3 pr-4 text-center tabular-nums">{t.classCount}</td>
+                          <td className="py-3 pr-4 text-center tabular-nums">{t.totalStudents}</td>
                           <td className="py-3 pr-4 text-center">
                             <span
                               className={cn(
@@ -534,10 +476,7 @@ export function DepartmentOverview({
                           </td>
                           <td className="py-3 pr-4 text-center">
                             <div className="flex items-center gap-2 justify-center">
-                              <Progress
-                                value={t.avgCompletion}
-                                className="h-1.5 w-16"
-                              />
+                              <Progress value={t.avgCompletion} className="h-1.5 w-16" />
                               <span className="text-xs tabular-nums text-muted-foreground">
                                 {t.avgCompletion}%
                               </span>
@@ -545,10 +484,7 @@ export function DepartmentOverview({
                           </td>
                           <td className="py-3 pr-4 text-center">
                             {t.studentsAtRisk > 0 ? (
-                              <Badge
-                                variant="outline"
-                                className="border-red-500/30 text-red-400"
-                              >
+                              <Badge variant="outline" className="border-red-500/30 text-red-400">
                                 {t.studentsAtRisk}
                               </Badge>
                             ) : (
@@ -559,12 +495,9 @@ export function DepartmentOverview({
                             <Badge
                               variant="outline"
                               className={cn(
-                                t.activityLevel === 'high' &&
-                                  'border-green-500/30 text-green-400',
-                                t.activityLevel === 'medium' &&
-                                  'border-amber-500/30 text-clay-600',
-                                t.activityLevel === 'low' &&
-                                  'border-red-500/30 text-red-400',
+                                t.activityLevel === 'high' && 'border-green-500/30 text-green-400',
+                                t.activityLevel === 'medium' && 'border-amber-500/30 text-clay-600',
+                                t.activityLevel === 'low' && 'border-red-500/30 text-red-400',
                               )}
                             >
                               {t.activityLevel}
@@ -590,9 +523,7 @@ export function DepartmentOverview({
                   <TrendingUp className="h-4 w-4 text-green-400" />
                   Above Department Average
                 </CardTitle>
-                <CardDescription>
-                  Classes scoring above {Math.round(avgDeptScore)}%
-                </CardDescription>
+                <CardDescription>Classes scoring above {Math.round(avgDeptScore)}%</CardDescription>
               </CardHeader>
               <CardContent>
                 {classesAboveAvg.length === 0 ? (
@@ -607,15 +538,15 @@ export function DepartmentOverview({
                           className="flex items-center justify-between rounded-lg border border-border p-3"
                         >
                           <div>
-                            <p className="text-sm font-medium text-foreground">
-                              {cls.class_name}
-                            </p>
+                            <p className="text-sm font-medium text-foreground">{cls.class_name}</p>
                             <p className="text-xs text-muted-foreground">
                               {cls.student_count} students
                             </p>
                           </div>
                           <div className="text-right">
-                            <p className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}>
+                            <p
+                              className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}
+                            >
                               {percentageToGCSEGradeLabel(Math.round(cls.avg_score))}
                             </p>
                             <p className="text-xs text-green-400/70 tabular-nums">
@@ -642,9 +573,7 @@ export function DepartmentOverview({
               </CardHeader>
               <CardContent>
                 {classesBelowAvg.length === 0 ? (
-                  <p className="text-sm text-muted-foreground">
-                    All classes are above average.
-                  </p>
+                  <p className="text-sm text-muted-foreground">All classes are above average.</p>
                 ) : (
                   <div className="space-y-3">
                     {classesBelowAvg
@@ -655,16 +584,15 @@ export function DepartmentOverview({
                           className="flex items-center justify-between rounded-lg border border-border p-3"
                         >
                           <div>
-                            <p className="text-sm font-medium text-foreground">
-                              {cls.class_name}
-                            </p>
+                            <p className="text-sm font-medium text-foreground">{cls.class_name}</p>
                             <p className="text-xs text-muted-foreground">
-                              {cls.student_count} students ·{' '}
-                              {cls.students_at_risk} at risk
+                              {cls.student_count} students · {cls.students_at_risk} at risk
                             </p>
                           </div>
                           <div className="text-right">
-                            <p className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}>
+                            <p
+                              className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}
+                            >
                               {percentageToGCSEGradeLabel(Math.round(cls.avg_score))}
                             </p>
                             <p className="text-xs text-red-400/70 tabular-nums">
@@ -687,9 +615,7 @@ export function DepartmentOverview({
             <Card>
               <CardHeader>
                 <CardTitle className="text-base">Subject Areas</CardTitle>
-                <CardDescription>
-                  Literature vs Language performance
-                </CardDescription>
+                <CardDescription>Literature vs Language performance</CardDescription>
               </CardHeader>
               <CardContent>
                 {subjectBreakdown.length === 0 ? (
@@ -699,17 +625,15 @@ export function DepartmentOverview({
                     {subjectBreakdown.map((s) => (
                       <div key={s.label} className="space-y-1.5">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-foreground">
-                            {s.label}
-                          </span>
+                          <span className="text-sm font-medium text-foreground">{s.label}</span>
                           <span className="text-sm font-semibold tabular-nums text-foreground">
                             {s.avgScore}%
                           </span>
                         </div>
                         <Progress value={s.avgScore} className="h-2" />
                         <p className="text-xs text-muted-foreground">
-                          {s.classCount} class{s.classCount !== 1 ? 'es' : ''} ·{' '}
-                          {s.studentCount} students
+                          {s.classCount} class{s.classCount !== 1 ? 'es' : ''} · {s.studentCount}{' '}
+                          students
                         </p>
                       </div>
                     ))}
@@ -741,8 +665,8 @@ export function DepartmentOverview({
                         </div>
                         <Progress value={yg.avgScore} className="h-2" />
                         <p className="text-xs text-muted-foreground">
-                          {yg.classCount} class{yg.classCount !== 1 ? 'es' : ''} ·{' '}
-                          {yg.studentCount} students · {yg.avgCompletion}% completion
+                          {yg.classCount} class{yg.classCount !== 1 ? 'es' : ''} · {yg.studentCount}{' '}
+                          students · {yg.avgCompletion}% completion
                         </p>
                       </div>
                     ))}
@@ -755,9 +679,7 @@ export function DepartmentOverview({
             <Card>
               <CardHeader>
                 <CardTitle className="text-base">Exam Boards</CardTitle>
-                <CardDescription>
-                  AQA, Edexcel, OCR comparison
-                </CardDescription>
+                <CardDescription>AQA, Edexcel, OCR comparison</CardDescription>
               </CardHeader>
               <CardContent>
                 {examBoardBreakdown.length === 0 ? (
@@ -776,8 +698,8 @@ export function DepartmentOverview({
                         </div>
                         <Progress value={eb.avgScore} className="h-2" />
                         <p className="text-xs text-muted-foreground">
-                          {eb.classCount} class{eb.classCount !== 1 ? 'es' : ''} ·{' '}
-                          {eb.studentCount} students · {eb.avgCompletion}% completion
+                          {eb.classCount} class{eb.classCount !== 1 ? 'es' : ''} · {eb.studentCount}{' '}
+                          students · {eb.avgCompletion}% completion
                         </p>
                       </div>
                     ))}
@@ -807,15 +729,11 @@ export function DepartmentOverview({
               <AlertTriangle className="h-4 w-4 text-clay-600" />
               Concerns
             </CardTitle>
-            <CardDescription>
-              Classes below target, low engagement, or high risk
-            </CardDescription>
+            <CardDescription>Classes below target, low engagement, or high risk</CardDescription>
           </CardHeader>
           <CardContent>
             {concerns.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                No concerns identified — well done!
-              </p>
+              <p className="text-sm text-muted-foreground">No concerns identified - well done!</p>
             ) : (
               <div className="space-y-3">
                 {concerns.map((c, i) => (
@@ -841,12 +759,8 @@ export function DepartmentOverview({
                         {c.severity}
                       </Badge>
                       <div>
-                        <p className="text-sm font-medium text-foreground">
-                          {c.label}
-                        </p>
-                        <p className="mt-0.5 text-xs text-muted-foreground">
-                          {c.detail}
-                        </p>
+                        <p className="text-sm font-medium text-foreground">{c.label}</p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">{c.detail}</p>
                       </div>
                     </div>
                   </div>
@@ -863,22 +777,15 @@ export function DepartmentOverview({
               <Trophy className="h-4 w-4 text-clay-600" />
               Highlights
             </CardTitle>
-            <CardDescription>
-              Best performing classes and notable achievements
-            </CardDescription>
+            <CardDescription>Best performing classes and notable achievements</CardDescription>
           </CardHeader>
           <CardContent>
             {highlights.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                No highlights available yet.
-              </p>
+              <p className="text-sm text-muted-foreground">No highlights available yet.</p>
             ) : (
               <div className="space-y-3">
                 {highlights.map((h, i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg border border-green-500/30 bg-green-500/5 p-3"
-                  >
+                  <div key={i} className="rounded-lg border border-green-500/30 bg-green-500/5 p-3">
                     <div className="flex items-start gap-2">
                       {h.type === 'top_class' ? (
                         <Trophy className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
@@ -886,12 +793,8 @@ export function DepartmentOverview({
                         <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
                       )}
                       <div>
-                        <p className="text-sm font-medium text-foreground">
-                          {h.label}
-                        </p>
-                        <p className="mt-0.5 text-xs text-muted-foreground">
-                          {h.detail}
-                        </p>
+                        <p className="text-sm font-medium text-foreground">{h.label}</p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">{h.detail}</p>
                       </div>
                     </div>
                   </div>
@@ -917,10 +820,7 @@ export function DepartmentOverview({
           <CardContent>
             <div className="space-y-3">
               {resourceSuggestions.map((suggestion, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 rounded-lg border border-border p-3"
-                >
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-border p-3">
                   <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <p className="text-sm text-foreground">{suggestion}</p>
                 </div>

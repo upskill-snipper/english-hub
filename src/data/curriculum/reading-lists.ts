@@ -1,25 +1,25 @@
 // ──────────────────────────────────────────────────────────────
-// Curated Reading Lists — Every Year Group & Term
+// Curated Reading Lists - Every Year Group & Term
 // ──────────────────────────────────────────────────────────────
 
 export interface ReadingListEntry {
-  id: string;
-  title: string;
-  author: string;
-  yearGroup: 7 | 8 | 9 | 10 | 11 | 12 | 13;
-  termUnit: 'T1' | 'T2' | 'T3' | 'reading-for-pleasure' | 'challenge-read';
-  genre: string;
-  difficulty: 'accessible' | 'moderate' | 'challenging' | 'advanced';
-  synopsis: string;
-  teachingNotes: string;
-  keyThemes: string[];
-  linkedCurriculumCodes: string[];
-  pageCount: number;
-  ageAppropriate: string;
+  id: string
+  title: string
+  author: string
+  yearGroup: 7 | 8 | 9 | 10 | 11 | 12 | 13
+  termUnit: 'T1' | 'T2' | 'T3' | 'reading-for-pleasure' | 'challenge-read'
+  genre: string
+  difficulty: 'accessible' | 'moderate' | 'challenging' | 'advanced'
+  synopsis: string
+  teachingNotes: string
+  keyThemes: string[]
+  linkedCurriculumCodes: string[]
+  pageCount: number
+  ageAppropriate: string
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// YEAR 7 — 30 curriculum books + 10 pleasure + challenge reads
+// YEAR 7 - 30 curriculum books + 10 pleasure + challenge reads
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const year7T1: ReadingListEntry[] = [
@@ -31,12 +31,15 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Realistic fiction',
     difficulty: 'accessible',
-    synopsis: 'August Pullman, born with a severe facial difference, navigates his first year at a mainstream school. The novel explores how his arrival affects the entire community through multiple perspectives.',
-    teachingNotes: 'Excellent for establishing classroom norms around empathy. Use the shifting narrators to teach perspective and reliability. Pair with identity poetry. Strong discussion text for circle time and PSHE links.',
+    synopsis:
+      'August Pullman, born with a severe facial difference, navigates his first year at a mainstream school. The novel explores how his arrival affects the entire community through multiple perspectives.',
+    teachingNotes:
+      'Excellent for establishing classroom norms around empathy. Use the shifting narrators to teach perspective and reliability. Pair with identity poetry. Strong discussion text for circle time and PSHE links.',
     keyThemes: ['identity', 'empathy', 'belonging', 'bullying', 'courage'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W2', 'KS3-SL1'],
     pageCount: 315,
-    ageAppropriate: 'Suitable for all Year 7 students. Some sensitive content around bullying handled with care.',
+    ageAppropriate:
+      'Suitable for all Year 7 students. Some sensitive content around bullying handled with care.',
   },
   {
     id: 'y7-t1-002',
@@ -46,8 +49,10 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Magical realism',
     difficulty: 'moderate',
-    synopsis: 'Michael discovers a mysterious creature in the crumbling garage of his new house while his baby sister fights for her life. A story that blurs the line between the real and the magical.',
-    teachingNotes: 'Ideal for teaching inference and symbolism. The ambiguity of Skellig allows rich discussion about authorial intent. Use for descriptive writing models and exploring the concept of magical realism at KS3.',
+    synopsis:
+      'Michael discovers a mysterious creature in the crumbling garage of his new house while his baby sister fights for her life. A story that blurs the line between the real and the magical.',
+    teachingNotes:
+      'Ideal for teaching inference and symbolism. The ambiguity of Skellig allows rich discussion about authorial intent. Use for descriptive writing models and exploring the concept of magical realism at KS3.',
     keyThemes: ['transformation', 'hope', 'family', 'mystery', 'nature vs nurture'],
     linkedCurriculumCodes: ['KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-W1'],
     pageCount: 182,
@@ -61,27 +66,33 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Magical realism / Latin American literature',
     difficulty: 'challenging',
-    synopsis: 'Selected chapters introducing students to the Trueba family and the magical elements woven into everyday life in a Latin American setting.',
-    teachingNotes: 'Use adapted extracts only. Focus on how magic is treated as ordinary. Compare with Skellig for a unit on magical realism. Good stretch text for high-attaining readers.',
+    synopsis:
+      'Selected chapters introducing students to the Trueba family and the magical elements woven into everyday life in a Latin American setting.',
+    teachingNotes:
+      'Use adapted extracts only. Focus on how magic is treated as ordinary. Compare with Skellig for a unit on magical realism. Good stretch text for high-attaining readers.',
     keyThemes: ['family', 'magic in everyday life', 'storytelling traditions', 'cultural identity'],
     linkedCurriculumCodes: ['KS3-R2', 'KS3-R5', 'KS3-R7'],
     pageCount: 60,
-    ageAppropriate: 'Adapted extracts suitable for Year 7. Teacher pre-selection of passages recommended.',
+    ageAppropriate:
+      'Adapted extracts suitable for Year 7. Teacher pre-selection of passages recommended.',
   },
   {
     id: 'y7-t1-004',
-    title: 'Oranges in No Man\'s Land',
+    title: "Oranges in No Man's Land",
     author: 'Elizabeth Laird',
     yearGroup: 7,
     termUnit: 'T1',
     genre: 'War fiction / identity narrative',
     difficulty: 'accessible',
-    synopsis: 'Ten-year-old Ayesha must cross the Green Line in Beirut during the Lebanese Civil War to find a doctor for her grandmother. A gripping story of courage and identity amid conflict.',
-    teachingNotes: 'Excellent for exploring identity in the context of conflict. Links well to Qatari and Middle Eastern literature units. Accessible prose with a strong female protagonist. Use for empathy writing and diary entries.',
+    synopsis:
+      'Ten-year-old Ayesha must cross the Green Line in Beirut during the Lebanese Civil War to find a doctor for her grandmother. A gripping story of courage and identity amid conflict.',
+    teachingNotes:
+      'Excellent for exploring identity in the context of conflict. Links well to Qatari and Middle Eastern literature units. Accessible prose with a strong female protagonist. Use for empathy writing and diary entries.',
     keyThemes: ['identity', 'conflict', 'courage', 'family', 'cultural heritage'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W2', 'KS3-W5'],
     pageCount: 160,
-    ageAppropriate: 'Suitable for all Year 7 students. War themes handled at age-appropriate level.',
+    ageAppropriate:
+      'Suitable for all Year 7 students. War themes handled at age-appropriate level.',
   },
   {
     id: 'y7-t1-005',
@@ -91,8 +102,10 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Historical fiction / Qatari-related literature',
     difficulty: 'moderate',
-    synopsis: 'Set in the Arabian Gulf, this novel follows a young pearl diver whose discovery of a magnificent pearl changes his life and community. Explores the pearl-diving heritage central to Gulf culture.',
-    teachingNotes: 'Strong local connection for Qatar-based schools. Use to teach historical context and cultural identity. Pair with non-fiction texts about pearl diving in the Gulf. Excellent for descriptive writing inspired by setting.',
+    synopsis:
+      'Set in the Arabian Gulf, this novel follows a young pearl diver whose discovery of a magnificent pearl changes his life and community. Explores the pearl-diving heritage central to Gulf culture.',
+    teachingNotes:
+      'Strong local connection for Qatar-based schools. Use to teach historical context and cultural identity. Pair with non-fiction texts about pearl diving in the Gulf. Excellent for descriptive writing inspired by setting.',
     keyThemes: ['cultural heritage', 'ambition', 'community', 'tradition vs change', 'identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-R6', 'KS3-W1'],
     pageCount: 198,
@@ -106,8 +119,10 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Historical fiction / identity narrative',
     difficulty: 'moderate',
-    synopsis: 'Three children in three different time periods — 1930s Germany, 1990s Cuba, and 2015 Syria — flee their homelands seeking safety. Their stories interweave and converge in unexpected ways.',
-    teachingNotes: 'Powerful comparative text. Use the three-strand structure to teach narrative perspective and parallel plotting. Strong links to empathy, global citizenship, and identity. Pairs well with non-fiction refugee accounts.',
+    synopsis:
+      'Three children in three different time periods - 1930s Germany, 1990s Cuba, and 2015 Syria - flee their homelands seeking safety. Their stories interweave and converge in unexpected ways.',
+    teachingNotes:
+      'Powerful comparative text. Use the three-strand structure to teach narrative perspective and parallel plotting. Strong links to empathy, global citizenship, and identity. Pairs well with non-fiction refugee accounts.',
     keyThemes: ['displacement', 'identity', 'resilience', 'home', 'empathy'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R4', 'KS3-W2'],
     pageCount: 338,
@@ -121,8 +136,10 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Social realism / identity narrative',
     difficulty: 'accessible',
-    synopsis: 'Budi works in a factory in Jakarta making football boots for a global brand. When he dares to dream of becoming a professional footballer, he must confront the reality of modern exploitation.',
-    teachingNotes: 'Excellent for persuasive writing outcomes — students can write letters to companies about ethical manufacturing. Strong character-driven narrative for teaching empathy. Links to global citizenship themes.',
+    synopsis:
+      'Budi works in a factory in Jakarta making football boots for a global brand. When he dares to dream of becoming a professional footballer, he must confront the reality of modern exploitation.',
+    teachingNotes:
+      'Excellent for persuasive writing outcomes - students can write letters to companies about ethical manufacturing. Strong character-driven narrative for teaching empathy. Links to global citizenship themes.',
     keyThemes: ['exploitation', 'dreams', 'identity', 'globalisation', 'fairness'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W3', 'KS3-W5'],
     pageCount: 240,
@@ -136,8 +153,10 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Realistic fiction / identity narrative',
     difficulty: 'accessible',
-    synopsis: 'When a new boy joins their class, a group of children set out to discover his story. They learn he is a refugee and hatch a plan to help him find his family.',
-    teachingNotes: 'Ideal opening text for Year 7. Accessible language with deeper themes of belonging and empathy. Use for teaching narrative voice (child narrator) and for creative writing outcomes. Strong PSHE connections.',
+    synopsis:
+      'When a new boy joins their class, a group of children set out to discover his story. They learn he is a refugee and hatch a plan to help him find his family.',
+    teachingNotes:
+      'Ideal opening text for Year 7. Accessible language with deeper themes of belonging and empathy. Use for teaching narrative voice (child narrator) and for creative writing outcomes. Strong PSHE connections.',
     keyThemes: ['friendship', 'belonging', 'refugees', 'empathy', 'community action'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-SL1', 'KS3-W2'],
     pageCount: 298,
@@ -151,12 +170,15 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Dystopian fiction / identity narrative',
     difficulty: 'moderate',
-    synopsis: 'In a world where dark-skinned Crosses rule over light-skinned Noughts, Callum and Sephy form a forbidden friendship that challenges the social order.',
-    teachingNotes: 'Powerful for exploring prejudice through an inverted lens. Teach alongside discussions of privilege and systemic injustice. The Romeo-and-Juliet structure works well as a pre-Shakespeare introduction. Strong for debate and discussion work.',
+    synopsis:
+      'In a world where dark-skinned Crosses rule over light-skinned Noughts, Callum and Sephy form a forbidden friendship that challenges the social order.',
+    teachingNotes:
+      'Powerful for exploring prejudice through an inverted lens. Teach alongside discussions of privilege and systemic injustice. The Romeo-and-Juliet structure works well as a pre-Shakespeare introduction. Strong for debate and discussion work.',
     keyThemes: ['racism', 'identity', 'forbidden love', 'systemic injustice', 'courage'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R4', 'KS3-SL2'],
     pageCount: 479,
-    ageAppropriate: 'Suitable for Year 7. Contains themes of racial violence — teacher pre-reading recommended.',
+    ageAppropriate:
+      'Suitable for Year 7. Contains themes of racial violence - teacher pre-reading recommended.',
   },
   {
     id: 'y7-t1-010',
@@ -166,14 +188,16 @@ const year7T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Historical fiction / identity narrative',
     difficulty: 'accessible',
-    synopsis: 'Based on a true story, two narratives unfold — Salva, a boy fleeing war-torn Sudan in 1985, and Nya, a girl walking hours daily to fetch water in 2008. Their stories converge across time.',
-    teachingNotes: 'Dual-timeline structure excellent for teaching narrative technique. Short chapters suit reluctant readers. Strong cross-curricular links to Geography and Global Citizenship. Use for non-fiction comparison writing.',
+    synopsis:
+      'Based on a true story, two narratives unfold - Salva, a boy fleeing war-torn Sudan in 1985, and Nya, a girl walking hours daily to fetch water in 2008. Their stories converge across time.',
+    teachingNotes:
+      'Dual-timeline structure excellent for teaching narrative technique. Short chapters suit reluctant readers. Strong cross-curricular links to Geography and Global Citizenship. Use for non-fiction comparison writing.',
     keyThemes: ['survival', 'resilience', 'water scarcity', 'identity', 'hope'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R4', 'KS3-W2'],
     pageCount: 128,
     ageAppropriate: 'Suitable for all Year 7 students.',
   },
-];
+]
 
 const year7T2: ReadingListEntry[] = [
   {
@@ -184,8 +208,10 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Journey narrative / empathy fiction',
     difficulty: 'accessible',
-    synopsis: 'Shif loves maths and chess and school. Then one day soldiers take his mother and everything changes. He and his friend Bini escape across the desert toward an uncertain future in Europe.',
-    teachingNotes: 'Outstanding for empathy writing. Students respond strongly to the first-person narrative voice. Use for diary entry and letter writing outcomes. Compare with non-fiction refugee testimonies. Short chapters suit reading aloud.',
+    synopsis:
+      'Shif loves maths and chess and school. Then one day soldiers take his mother and everything changes. He and his friend Bini escape across the desert toward an uncertain future in Europe.',
+    teachingNotes:
+      'Outstanding for empathy writing. Students respond strongly to the first-person narrative voice. Use for diary entry and letter writing outcomes. Compare with non-fiction refugee testimonies. Short chapters suit reading aloud.',
     keyThemes: ['displacement', 'friendship', 'survival', 'empathy', 'journey'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W2', 'KS3-W5'],
     pageCount: 256,
@@ -199,8 +225,10 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Empathy fiction / ethical dilemma',
     difficulty: 'accessible',
-    synopsis: 'Thirteen-year-old Cameron needs a heart transplant, but no human heart is available. When a doctor offers him a pig\'s heart, Cameron must decide — and face the media storm that follows.',
-    teachingNotes: 'Excellent for debate and persuasive writing. Set up formal debates on animal testing and medical ethics. Students write newspaper articles, letters to editors, and persuasive speeches. Strong links to science curriculum.',
+    synopsis:
+      "Thirteen-year-old Cameron needs a heart transplant, but no human heart is available. When a doctor offers him a pig's heart, Cameron must decide - and face the media storm that follows.",
+    teachingNotes:
+      'Excellent for debate and persuasive writing. Set up formal debates on animal testing and medical ethics. Students write newspaper articles, letters to editors, and persuasive speeches. Strong links to science curriculum.',
     keyThemes: ['medical ethics', 'courage', 'media influence', 'friendship', 'mortality'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W3', 'KS3-SL2'],
     pageCount: 176,
@@ -208,18 +236,21 @@ const year7T2: ReadingListEntry[] = [
   },
   {
     id: 'y7-t2-003',
-    title: 'I Am Malala (Young Readers\' Edition)',
+    title: "I Am Malala (Young Readers' Edition)",
     author: 'Malala Yousafzai',
     yearGroup: 7,
     termUnit: 'T2',
     genre: 'Autobiography',
     difficulty: 'moderate',
-    synopsis: 'Malala tells her story of growing up in Pakistan, standing up for girls\' education, surviving being shot by the Taliban, and becoming the youngest Nobel Peace Prize laureate.',
-    teachingNotes: 'Core autobiography text for Term 2. Teach autobiography conventions: first person, chronological structure, reflection. Compare opening with other autobiographies. Use for persuasive speech writing — students write their own "education matters" speeches.',
+    synopsis:
+      "Malala tells her story of growing up in Pakistan, standing up for girls' education, surviving being shot by the Taliban, and becoming the youngest Nobel Peace Prize laureate.",
+    teachingNotes:
+      'Core autobiography text for Term 2. Teach autobiography conventions: first person, chronological structure, reflection. Compare opening with other autobiographies. Use for persuasive speech writing - students write their own "education matters" speeches.',
     keyThemes: ['education', 'courage', 'gender equality', 'activism', 'identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-R6', 'KS3-W3', 'KS3-SL1'],
     pageCount: 288,
-    ageAppropriate: 'Suitable for all Year 7 students. Young readers edition appropriate for age group.',
+    ageAppropriate:
+      'Suitable for all Year 7 students. Young readers edition appropriate for age group.',
   },
   {
     id: 'y7-t2-004',
@@ -229,8 +260,10 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Journey narrative / empathy fiction',
     difficulty: 'accessible',
-    synopsis: 'Two Mongolian brothers arrive at a Liverpool school, and Julie becomes their "Good Guide." Through photographs and memories, she pieces together what happened to them.',
-    teachingNotes: 'Short text ideal for detailed study. The Polaroid photographs within the narrative teach visual literacy. Excellent for exploring unreliable narration and what is left unsaid. Use for creative writing with photographs as stimuli.',
+    synopsis:
+      'Two Mongolian brothers arrive at a Liverpool school, and Julie becomes their "Good Guide." Through photographs and memories, she pieces together what happened to them.',
+    teachingNotes:
+      'Short text ideal for detailed study. The Polaroid photographs within the narrative teach visual literacy. Excellent for exploring unreliable narration and what is left unsaid. Use for creative writing with photographs as stimuli.',
     keyThemes: ['migration', 'friendship', 'memory', 'cultural difference', 'loss'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R4', 'KS3-W1'],
     pageCount: 112,
@@ -244,8 +277,10 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Journey narrative / adventure',
     difficulty: 'accessible',
-    synopsis: 'Stanley Yelnats is sent to Camp Green Lake, a juvenile detention centre where boys dig holes all day. As Stanley uncovers the truth about the camp, he also unravels a century-old family curse.',
-    teachingNotes: 'Multi-layered narrative excellent for teaching plot structure and non-linear timelines. Three interwoven stories allow comparison of narrative strands. Use for teaching foreshadowing, motifs (holes, water), and cyclical narrative.',
+    synopsis:
+      'Stanley Yelnats is sent to Camp Green Lake, a juvenile detention centre where boys dig holes all day. As Stanley uncovers the truth about the camp, he also unravels a century-old family curse.',
+    teachingNotes:
+      'Multi-layered narrative excellent for teaching plot structure and non-linear timelines. Three interwoven stories allow comparison of narrative strands. Use for teaching foreshadowing, motifs (holes, water), and cyclical narrative.',
     keyThemes: ['justice', 'fate', 'friendship', 'perseverance', 'truth'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-W1'],
     pageCount: 233,
@@ -259,8 +294,10 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Graphic novel / journey narrative',
     difficulty: 'accessible',
-    synopsis: 'A wordless graphic novel depicting a man who leaves his homeland and arrives in a strange new country. Through stunning sepia illustrations, the reader experiences the disorientation of migration.',
-    teachingNotes: 'Wordless text means all students can access it regardless of reading level. Ideal for teaching visual literacy, inference, and descriptive writing. Students narrate pages, write diary entries, or create their own graphic narratives. Strong EAL support text.',
+    synopsis:
+      'A wordless graphic novel depicting a man who leaves his homeland and arrives in a strange new country. Through stunning sepia illustrations, the reader experiences the disorientation of migration.',
+    teachingNotes:
+      'Wordless text means all students can access it regardless of reading level. Ideal for teaching visual literacy, inference, and descriptive writing. Students narrate pages, write diary entries, or create their own graphic narratives. Strong EAL support text.',
     keyThemes: ['migration', 'belonging', 'hope', 'disorientation', 'new beginnings'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-W1', 'KS3-W2'],
     pageCount: 128,
@@ -274,12 +311,15 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Empathy fiction / social realism',
     difficulty: 'moderate',
-    synopsis: 'AJ loves running and music, but his parents are hoarders and life at home is increasingly chaotic. When social services become involved, AJ must decide what matters most.',
-    teachingNotes: 'Sensitive handling of neglect and hoarding. Useful for teaching unreliable narration (AJ normalises his home life). Good for empathy writing and character analysis. Check with safeguarding lead before using — may resonate with some students.',
+    synopsis:
+      'AJ loves running and music, but his parents are hoarders and life at home is increasingly chaotic. When social services become involved, AJ must decide what matters most.',
+    teachingNotes:
+      'Sensitive handling of neglect and hoarding. Useful for teaching unreliable narration (AJ normalises his home life). Good for empathy writing and character analysis. Check with safeguarding lead before using - may resonate with some students.',
     keyThemes: ['family', 'neglect', 'resilience', 'escape', 'growing up'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W2'],
     pageCount: 258,
-    ageAppropriate: 'Suitable for Year 7 with sensitivity. Teacher pre-reading recommended. Safeguarding awareness needed.',
+    ageAppropriate:
+      'Suitable for Year 7 with sensitivity. Teacher pre-reading recommended. Safeguarding awareness needed.',
   },
   {
     id: 'y7-t2-008',
@@ -289,12 +329,15 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Verse novel / empathy fiction',
     difficulty: 'moderate',
-    synopsis: 'Fifteen-year-old Will takes a gun and steps into a lift. As the lift descends, people from his past appear on each floor, each with something to tell him. Sixty seconds to decide.',
-    teachingNotes: 'Verse novel format highly engaging for reluctant readers. One-minute time frame teaches narrative tension. Each floor/ghost teaches character development and backstory. Use for poetry writing and exploring cyclical violence. Strong PSHE links.',
+    synopsis:
+      'Fifteen-year-old Will takes a gun and steps into a lift. As the lift descends, people from his past appear on each floor, each with something to tell him. Sixty seconds to decide.',
+    teachingNotes:
+      'Verse novel format highly engaging for reluctant readers. One-minute time frame teaches narrative tension. Each floor/ghost teaches character development and backstory. Use for poetry writing and exploring cyclical violence. Strong PSHE links.',
     keyThemes: ['violence', 'grief', 'revenge', 'choices', 'community'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-W1'],
     pageCount: 306,
-    ageAppropriate: 'Suitable for mature Year 7 readers. Themes of gun violence — teacher discretion advised.',
+    ageAppropriate:
+      'Suitable for mature Year 7 readers. Themes of gun violence - teacher discretion advised.',
   },
   {
     id: 'y7-t2-009',
@@ -304,12 +347,14 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Picture book / empathy fiction',
     difficulty: 'accessible',
-    synopsis: 'A man washes ashore on an island. The islanders take him in reluctantly, then fear grows, and they push him away. A stark allegory about fear of the other.',
-    teachingNotes: 'Short picture book with enormous depth. Use dark, expressionist illustrations for visual analysis. Teach allegory and symbolism. Excellent stimulus for persuasive writing (letters from islanders, speeches). Pairs with The Arrival for migration unit.',
+    synopsis:
+      'A man washes ashore on an island. The islanders take him in reluctantly, then fear grows, and they push him away. A stark allegory about fear of the other.',
+    teachingNotes:
+      'Short picture book with enormous depth. Use dark, expressionist illustrations for visual analysis. Teach allegory and symbolism. Excellent stimulus for persuasive writing (letters from islanders, speeches). Pairs with The Arrival for migration unit.',
     keyThemes: ['xenophobia', 'fear', 'community', 'exclusion', 'moral responsibility'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-W3', 'KS3-SL2'],
     pageCount: 36,
-    ageAppropriate: 'Suitable for all Year 7 students. Dark illustrations — preview with class.',
+    ageAppropriate: 'Suitable for all Year 7 students. Dark illustrations - preview with class.',
   },
   {
     id: 'y7-t2-010',
@@ -319,14 +364,16 @@ const year7T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Adventure / journey narrative',
     difficulty: 'moderate',
-    synopsis: 'Sophie, found as a baby floating in a cello case after a shipwreck, travels to Paris to search for her mother. She discovers a secret world of children living on the rooftops.',
-    teachingNotes: 'Beautiful prose for modelling descriptive writing. Paris rooftop setting excellent for setting description work. Themes of found family and determination. Use for adventure writing and character study of unconventional guardians.',
+    synopsis:
+      'Sophie, found as a baby floating in a cello case after a shipwreck, travels to Paris to search for her mother. She discovers a secret world of children living on the rooftops.',
+    teachingNotes:
+      'Beautiful prose for modelling descriptive writing. Paris rooftop setting excellent for setting description work. Themes of found family and determination. Use for adventure writing and character study of unconventional guardians.',
     keyThemes: ['belonging', 'determination', 'found family', 'adventure', 'identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-W1'],
     pageCount: 304,
     ageAppropriate: 'Suitable for all Year 7 students.',
   },
-];
+]
 
 const year7T3: ReadingListEntry[] = [
   {
@@ -337,8 +384,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Myths and legends anthology',
     difficulty: 'accessible',
-    synopsis: 'A collection of myths and legends from Greek, Norse, Egyptian, and other traditions, retold in accessible modern prose while retaining the power of the originals.',
-    teachingNotes: 'Foundation text for the myths and legends unit. Use individual stories for close reading and comparison. Students identify common features of myths (hero, quest, supernatural). Leads into creative writing: students write their own myth.',
+    synopsis:
+      'A collection of myths and legends from Greek, Norse, Egyptian, and other traditions, retold in accessible modern prose while retaining the power of the originals.',
+    teachingNotes:
+      'Foundation text for the myths and legends unit. Use individual stories for close reading and comparison. Students identify common features of myths (hero, quest, supernatural). Leads into creative writing: students write their own myth.',
     keyThemes: ['heroism', 'good vs evil', 'origin stories', 'fate', 'supernatural'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R6', 'KS3-W1'],
     pageCount: 224,
@@ -352,8 +401,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Folktales / Middle Eastern literature',
     difficulty: 'moderate',
-    synopsis: 'A modern retelling of classic tales from One Thousand and One Nights, including stories of Shahrazad, Sinbad, and Ali Baba, with their rich cultural heritage preserved.',
-    teachingNotes: 'Essential for connecting to regional literary heritage. Teach the frame narrative structure (story within a story). Compare with Western fairy tales. Use for creative writing — students write their own "1001 Nights" tale. Strong cultural identity link.',
+    synopsis:
+      'A modern retelling of classic tales from One Thousand and One Nights, including stories of Shahrazad, Sinbad, and Ali Baba, with their rich cultural heritage preserved.',
+    teachingNotes:
+      'Essential for connecting to regional literary heritage. Teach the frame narrative structure (story within a story). Compare with Western fairy tales. Use for creative writing - students write their own "1001 Nights" tale. Strong cultural identity link.',
     keyThemes: ['storytelling power', 'wisdom', 'cunning', 'justice', 'cultural heritage'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R6', 'KS3-R7', 'KS3-W1'],
     pageCount: 296,
@@ -367,8 +418,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Legend / epic',
     difficulty: 'moderate',
-    synopsis: 'The Anglo-Saxon epic retold for younger readers. Beowulf battles Grendel, Grendel\'s mother, and finally a dragon in this tale of heroism, loyalty, and sacrifice.',
-    teachingNotes: 'Excellent introduction to epic literature. Compare Morpurgo\'s retelling with Seamus Heaney extracts for stretch. Teach the hero archetype. Use for descriptive battle writing and exploring the concept of "the monstrous."',
+    synopsis:
+      "The Anglo-Saxon epic retold for younger readers. Beowulf battles Grendel, Grendel's mother, and finally a dragon in this tale of heroism, loyalty, and sacrifice.",
+    teachingNotes:
+      'Excellent introduction to epic literature. Compare Morpurgo\'s retelling with Seamus Heaney extracts for stretch. Teach the hero archetype. Use for descriptive battle writing and exploring the concept of "the monstrous."',
     keyThemes: ['heroism', 'sacrifice', 'good vs evil', 'legacy', 'loyalty'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R6', 'KS3-W1'],
     pageCount: 160,
@@ -382,8 +435,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Legend / epic',
     difficulty: 'moderate',
-    synopsis: 'Odysseus\'s ten-year journey home from Troy, encountering Cyclops, sirens, and Circe. A retelling that captures the drama and adventure of Homer\'s original for young readers.',
-    teachingNotes: 'Core Greek myth text. Map the hero\'s journey structure (Campbell). Compare episodes across adaptations. Use for persuasive writing (should Odysseus have stayed with Calypso?) and descriptive writing (island settings).',
+    synopsis:
+      "Odysseus's ten-year journey home from Troy, encountering Cyclops, sirens, and Circe. A retelling that captures the drama and adventure of Homer's original for young readers.",
+    teachingNotes:
+      "Core Greek myth text. Map the hero's journey structure (Campbell). Compare episodes across adaptations. Use for persuasive writing (should Odysseus have stayed with Calypso?) and descriptive writing (island settings).",
     keyThemes: ['journey', 'homecoming', 'temptation', 'loyalty', 'heroism'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R6', 'KS3-W1', 'KS3-W3'],
     pageCount: 148,
@@ -397,12 +452,15 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Folktale-linked fiction / cultural narrative',
     difficulty: 'challenging',
-    synopsis: 'Selected adapted passages exploring the folk stories and cultural traditions referenced in Hosseini\'s novel, focusing on the storytelling heritage of Afghanistan.',
-    teachingNotes: 'Use ONLY carefully selected, adapted extracts focusing on folk traditions and cultural storytelling. The full novel is not appropriate for Year 7. Extract the embedded folk tales for comparison with Arabian Nights. Stretch text only.',
+    synopsis:
+      "Selected adapted passages exploring the folk stories and cultural traditions referenced in Hosseini's novel, focusing on the storytelling heritage of Afghanistan.",
+    teachingNotes:
+      'Use ONLY carefully selected, adapted extracts focusing on folk traditions and cultural storytelling. The full novel is not appropriate for Year 7. Extract the embedded folk tales for comparison with Arabian Nights. Stretch text only.',
     keyThemes: ['cultural heritage', 'storytelling', 'resilience', 'tradition'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-R7'],
     pageCount: 40,
-    ageAppropriate: 'Adapted extracts only. Full novel NOT suitable for Year 7. Teacher selection essential.',
+    ageAppropriate:
+      'Adapted extracts only. Full novel NOT suitable for Year 7. Teacher selection essential.',
   },
   {
     id: 'y7-t3-006',
@@ -412,8 +470,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Picture book / folktale-inspired',
     difficulty: 'accessible',
-    synopsis: 'Max is sent to his room and sails to a land of Wild Things who make him their king. A picture book exploring the wildness inside every child.',
-    teachingNotes: 'Surprising choice for Year 7 that works brilliantly. Use for analysing how picture books work (image-text relationship). Students write analytical essays on a children\'s book — sophisticated critical thinking from a simple text. Compare with folk archetypes.',
+    synopsis:
+      'Max is sent to his room and sails to a land of Wild Things who make him their king. A picture book exploring the wildness inside every child.',
+    teachingNotes:
+      "Surprising choice for Year 7 that works brilliantly. Use for analysing how picture books work (image-text relationship). Students write analytical essays on a children's book - sophisticated critical thinking from a simple text. Compare with folk archetypes.",
     keyThemes: ['wildness', 'imagination', 'home', 'power', 'growing up'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-W4'],
     pageCount: 48,
@@ -427,8 +487,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Verse novel / poetry',
     difficulty: 'moderate',
-    synopsis: 'Twin brothers Josh and JB are basketball stars, but when JB starts dating and their father\'s health deteriorates, Josh must learn that life isn\'t always fair.',
-    teachingNotes: 'Verse novel bridges prose and poetry units. Use to teach poetic techniques within narrative: enjambment, metaphor, rhythm. Basketball content engages reluctant readers. Students write their own verse narratives about their passions.',
+    synopsis:
+      "Twin brothers Josh and JB are basketball stars, but when JB starts dating and their father's health deteriorates, Josh must learn that life isn't always fair.",
+    teachingNotes:
+      'Verse novel bridges prose and poetry units. Use to teach poetic techniques within narrative: enjambment, metaphor, rhythm. Basketball content engages reluctant readers. Students write their own verse narratives about their passions.',
     keyThemes: ['brotherhood', 'competition', 'family', 'loss', 'growing up'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R5', 'KS3-W1', 'KS3-W6'],
     pageCount: 237,
@@ -442,12 +504,15 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Poetry anthology',
     difficulty: 'moderate',
-    synopsis: 'An anthology of 366 poems spanning centuries and cultures, from Shakespeare to modern slam poets, organised by calendar date with brief contextual introductions.',
-    teachingNotes: 'Dip-in resource for daily poetry reading. Use selected poems for close analysis, comparison tasks, and poetry writing models. Excellent for building a culture of poetry reading. Students create their own "poem a day" anthologies.',
-    keyThemes: ['varied — depends on selection', 'nature', 'love', 'war', 'identity'],
+    synopsis:
+      'An anthology of 366 poems spanning centuries and cultures, from Shakespeare to modern slam poets, organised by calendar date with brief contextual introductions.',
+    teachingNotes:
+      'Dip-in resource for daily poetry reading. Use selected poems for close analysis, comparison tasks, and poetry writing models. Excellent for building a culture of poetry reading. Students create their own "poem a day" anthologies.',
+    keyThemes: ['varied - depends on selection', 'nature', 'love', 'war', 'identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R5', 'KS3-W6'],
     pageCount: 560,
-    ageAppropriate: 'Teacher selection from anthology. Some poems contain mature themes — preview selections.',
+    ageAppropriate:
+      'Teacher selection from anthology. Some poems contain mature themes - preview selections.',
   },
   {
     id: 'y7-t3-009',
@@ -457,8 +522,10 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Poetry collection / nature writing',
     difficulty: 'moderate',
-    synopsis: 'Spell-poems and illustrations that summon back nature words lost from the children\'s dictionary — from acorn to wren. Each poem is an act of reclamation.',
-    teachingNotes: 'Stunning visual text for teaching poetry alongside art. Each "spell" follows a pattern students can replicate. Use for nature poetry writing, vocabulary work, and environmental persuasive writing. Cross-curricular with Art and Science.',
+    synopsis:
+      "Spell-poems and illustrations that summon back nature words lost from the children's dictionary - from acorn to wren. Each poem is an act of reclamation.",
+    teachingNotes:
+      'Stunning visual text for teaching poetry alongside art. Each "spell" follows a pattern students can replicate. Use for nature poetry writing, vocabulary work, and environmental persuasive writing. Cross-curricular with Art and Science.',
     keyThemes: ['nature', 'language', 'loss', 'environment', 'magic of words'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R5', 'KS3-W1', 'KS3-W6'],
     pageCount: 128,
@@ -472,17 +539,19 @@ const year7T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Myths and legends',
     difficulty: 'moderate',
-    synopsis: 'The great Norse myths retold with scholarly accuracy and storytelling flair: the creation of the world, Thor\'s adventures, Loki\'s tricks, and Ragnarok — the end of everything.',
-    teachingNotes: 'Compare Norse myths with Greek and Arabian traditions studied earlier. Teach the concept of a mythological worldview. Students create myth comparison tables. Use Ragnarok for descriptive apocalyptic writing. Links to Viking history.',
+    synopsis:
+      "The great Norse myths retold with scholarly accuracy and storytelling flair: the creation of the world, Thor's adventures, Loki's tricks, and Ragnarok - the end of everything.",
+    teachingNotes:
+      'Compare Norse myths with Greek and Arabian traditions studied earlier. Teach the concept of a mythological worldview. Students create myth comparison tables. Use Ragnarok for descriptive apocalyptic writing. Links to Viking history.',
     keyThemes: ['fate', 'trickery', 'heroism', 'creation and destruction', 'loyalty'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R6', 'KS3-W1'],
     pageCount: 288,
     ageAppropriate: 'Suitable for all Year 7 students.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// YEAR 8 — 30 curriculum books
+// YEAR 8 - 30 curriculum books
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const year8T1: ReadingListEntry[] = [
@@ -494,12 +563,15 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Social justice fiction',
     difficulty: 'moderate',
-    synopsis: 'Sixteen-year-old Starr witnesses the fatal shooting of her childhood friend by a police officer. Torn between her poor neighbourhood and her wealthy school, she must find her voice.',
-    teachingNotes: 'Core social justice text. Use for teaching voice, code-switching, and perspective. Strong links to persuasive writing and speech craft. Students write their own "speaking out" pieces. Handle racial violence sensitively — establish ground rules for discussion.',
+    synopsis:
+      'Sixteen-year-old Starr witnesses the fatal shooting of her childhood friend by a police officer. Torn between her poor neighbourhood and her wealthy school, she must find her voice.',
+    teachingNotes:
+      'Core social justice text. Use for teaching voice, code-switching, and perspective. Strong links to persuasive writing and speech craft. Students write their own "speaking out" pieces. Handle racial violence sensitively - establish ground rules for discussion.',
     keyThemes: ['racial injustice', 'identity', 'voice', 'community', 'courage'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R4', 'KS3-W3', 'KS3-SL2'],
     pageCount: 444,
-    ageAppropriate: 'Suitable for Year 8. Contains strong language and scenes of violence. Teacher pre-reading essential.',
+    ageAppropriate:
+      'Suitable for Year 8. Contains strong language and scenes of violence. Teacher pre-reading essential.',
   },
   {
     id: 'y8-t1-002',
@@ -509,8 +581,10 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Dystopian fiction',
     difficulty: 'moderate',
-    synopsis: 'In a seemingly perfect community where pain, suffering, and choice have been eliminated, twelve-year-old Jonas is selected to inherit the position of Receiver of Memory and discovers the dark truth.',
-    teachingNotes: 'Excellent dystopian text for Year 8. Teach world-building, utopia vs dystopia, and unreliable societal norms. Compare with extracts from Brave New World and 1984 for stretch. Use for discursive writing on freedom vs security.',
+    synopsis:
+      'In a seemingly perfect community where pain, suffering, and choice have been eliminated, twelve-year-old Jonas is selected to inherit the position of Receiver of Memory and discovers the dark truth.',
+    teachingNotes:
+      'Excellent dystopian text for Year 8. Teach world-building, utopia vs dystopia, and unreliable societal norms. Compare with extracts from Brave New World and 1984 for stretch. Use for discursive writing on freedom vs security.',
     keyThemes: ['conformity', 'memory', 'freedom', 'sacrifice', 'individuality'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-W3', 'KS3-W4'],
     pageCount: 208,
@@ -524,8 +598,10 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Dystopian fiction',
     difficulty: 'accessible',
-    synopsis: 'In a post-apocalyptic nation, Katniss Everdeen volunteers to take her sister\'s place in a televised fight to the death between children from each district.',
-    teachingNotes: 'High-engagement dystopian text. Compare Capitol with real media manipulation. Teach narrative tension and cliffhangers. Students design their own dystopian societies and write opening chapters. Compare with The Giver for different dystopian models.',
+    synopsis:
+      "In a post-apocalyptic nation, Katniss Everdeen volunteers to take her sister's place in a televised fight to the death between children from each district.",
+    teachingNotes:
+      'High-engagement dystopian text. Compare Capitol with real media manipulation. Teach narrative tension and cliffhangers. Students design their own dystopian societies and write opening chapters. Compare with The Giver for different dystopian models.',
     keyThemes: ['survival', 'media manipulation', 'sacrifice', 'rebellion', 'class division'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-W1'],
     pageCount: 374,
@@ -539,12 +615,15 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Dystopian fiction',
     difficulty: 'challenging',
-    synopsis: 'In a future America where books are banned and firemen burn them, Guy Montag begins to question everything when he meets a young woman who asks him if he is happy.',
-    teachingNotes: 'Stretch text for higher-attaining readers. Rich in symbolism (fire, the Mechanical Hound, the river). Teach the power of literature as a theme. Students write manifestos defending books. Compare with modern censorship debates.',
+    synopsis:
+      'In a future America where books are banned and firemen burn them, Guy Montag begins to question everything when he meets a young woman who asks him if he is happy.',
+    teachingNotes:
+      'Stretch text for higher-attaining readers. Rich in symbolism (fire, the Mechanical Hound, the river). Teach the power of literature as a theme. Students write manifestos defending books. Compare with modern censorship debates.',
     keyThemes: ['censorship', 'knowledge', 'conformity', 'rebellion', 'technology vs humanity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-W3'],
     pageCount: 194,
-    ageAppropriate: 'Suitable for Year 8. Challenging vocabulary — may need differentiated support.',
+    ageAppropriate:
+      'Suitable for Year 8. Challenging vocabulary - may need differentiated support.',
   },
   {
     id: 'y8-t1-005',
@@ -554,12 +633,14 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Social justice fiction',
     difficulty: 'accessible',
-    synopsis: 'Twelve-year-old Jerome is shot by a police officer who mistakes his toy gun for a real one. As a ghost, Jerome watches his family and community struggle, and meets other ghost boys from history.',
-    teachingNotes: 'Powerful companion to The Hate U Give. The ghost narrative allows discussion of racial violence from a safe distance. Historical ghost boys (Emmett Till) provide context. Use for analytical writing comparing fictional and historical responses to injustice.',
+    synopsis:
+      'Twelve-year-old Jerome is shot by a police officer who mistakes his toy gun for a real one. As a ghost, Jerome watches his family and community struggle, and meets other ghost boys from history.',
+    teachingNotes:
+      'Powerful companion to The Hate U Give. The ghost narrative allows discussion of racial violence from a safe distance. Historical ghost boys (Emmett Till) provide context. Use for analytical writing comparing fictional and historical responses to injustice.',
     keyThemes: ['racial violence', 'justice', 'history repeating', 'empathy', 'perspective'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R4', 'KS3-W2'],
     pageCount: 224,
-    ageAppropriate: 'Suitable for Year 8. Sensitive content — establish discussion protocols.',
+    ageAppropriate: 'Suitable for Year 8. Sensitive content - establish discussion protocols.',
   },
   {
     id: 'y8-t1-006',
@@ -569,12 +650,15 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Non-fiction / social justice',
     difficulty: 'moderate',
-    synopsis: 'The true story of two teenagers from different worlds whose lives collide on a bus in Oakland. One sets fire to the other\'s skirt, and the aftermath explores justice, gender identity, and community.',
-    teachingNotes: 'Non-fiction social justice text bridging T1 themes. Journalistic style teaches non-fiction conventions. Use for discursive writing on justice systems. The structure (alternating chapters) teaches comparative analysis. Strong PSHE links.',
+    synopsis:
+      "The true story of two teenagers from different worlds whose lives collide on a bus in Oakland. One sets fire to the other's skirt, and the aftermath explores justice, gender identity, and community.",
+    teachingNotes:
+      'Non-fiction social justice text bridging T1 themes. Journalistic style teaches non-fiction conventions. Use for discursive writing on justice systems. The structure (alternating chapters) teaches comparative analysis. Strong PSHE links.',
     keyThemes: ['justice', 'gender identity', 'community', 'privilege', 'restorative justice'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-R6', 'KS3-W3', 'KS3-W4'],
     pageCount: 310,
-    ageAppropriate: 'Suitable for Year 8 with sensitivity. Themes of gender identity and violence — prepare discussion frameworks.',
+    ageAppropriate:
+      'Suitable for Year 8 with sensitivity. Themes of gender identity and violence - prepare discussion frameworks.',
   },
   {
     id: 'y8-t1-007',
@@ -584,8 +668,10 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Social justice fiction',
     difficulty: 'accessible',
-    synopsis: 'Three dumpsite boys in a developing country find a wallet among the rubbish that plunges them into a dangerous world of corruption. A thriller about poverty, power, and children who refuse to be silenced.',
-    teachingNotes: 'Fast-paced social justice thriller. Multiple narrators teach perspective shifts. Use for persuasive writing on global inequality and children\'s rights. Students write newspaper reports based on the events. Strong engagement for reluctant readers.',
+    synopsis:
+      'Three dumpsite boys in a developing country find a wallet among the rubbish that plunges them into a dangerous world of corruption. A thriller about poverty, power, and children who refuse to be silenced.',
+    teachingNotes:
+      "Fast-paced social justice thriller. Multiple narrators teach perspective shifts. Use for persuasive writing on global inequality and children's rights. Students write newspaper reports based on the events. Strong engagement for reluctant readers.",
     keyThemes: ['poverty', 'corruption', 'courage', 'friendship', 'inequality'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R4', 'KS3-W2', 'KS3-W4'],
     pageCount: 232,
@@ -599,8 +685,10 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Dystopian fiction / political allegory',
     difficulty: 'challenging',
-    synopsis: 'The animals of Manor Farm overthrow their human master and establish their own society, but the pigs gradually take control and the revolution is betrayed.',
-    teachingNotes: 'Bridge text from dystopia to allegory. Teach allegory as a literary device — students map characters to historical figures. Use for persuasive speech writing (Squealer\'s propaganda techniques). Compare commandments evolution with real political manipulation.',
+    synopsis:
+      'The animals of Manor Farm overthrow their human master and establish their own society, but the pigs gradually take control and the revolution is betrayed.',
+    teachingNotes:
+      "Bridge text from dystopia to allegory. Teach allegory as a literary device - students map characters to historical figures. Use for persuasive speech writing (Squealer's propaganda techniques). Compare commandments evolution with real political manipulation.",
     keyThemes: ['power', 'corruption', 'propaganda', 'revolution', 'equality'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-W3'],
     pageCount: 112,
@@ -614,8 +702,10 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Social justice fiction',
     difficulty: 'accessible',
-    synopsis: 'Graham and Joe live in Glasgow on opposite sides of the religious divide. When they find an injured asylum seeker, they must work together across the city\'s sectarian lines.',
-    teachingNotes: 'Accessible social justice text exploring sectarianism and refugee experiences. Use for teaching multiple perspectives on prejudice. Students write diary entries from different characters. Compare with other texts about divided communities.',
+    synopsis:
+      "Graham and Joe live in Glasgow on opposite sides of the religious divide. When they find an injured asylum seeker, they must work together across the city's sectarian lines.",
+    teachingNotes:
+      'Accessible social justice text exploring sectarianism and refugee experiences. Use for teaching multiple perspectives on prejudice. Students write diary entries from different characters. Compare with other texts about divided communities.',
     keyThemes: ['prejudice', 'sectarianism', 'friendship', 'asylum seekers', 'community'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W2', 'KS3-SL1'],
     pageCount: 272,
@@ -629,14 +719,16 @@ const year8T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Social justice fiction',
     difficulty: 'moderate',
-    synopsis: 'Jay travels to the Philippines to investigate the death of his cousin Jun, who was killed as part of the country\'s war on drugs. A story about truth, complicity, and cultural identity.',
-    teachingNotes: 'Sophisticated social justice text. Use for teaching the concept of complicity and moral grey areas. Compare with simpler social justice texts studied earlier for progression. Students write investigative journalism pieces. Strong analytical writing opportunities.',
+    synopsis:
+      "Jay travels to the Philippines to investigate the death of his cousin Jun, who was killed as part of the country's war on drugs. A story about truth, complicity, and cultural identity.",
+    teachingNotes:
+      'Sophisticated social justice text. Use for teaching the concept of complicity and moral grey areas. Compare with simpler social justice texts studied earlier for progression. Students write investigative journalism pieces. Strong analytical writing opportunities.',
     keyThemes: ['justice', 'cultural identity', 'complicity', 'family', 'truth-seeking'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R4', 'KS3-W4'],
     pageCount: 352,
-    ageAppropriate: 'Suitable for Year 8. Themes of drug violence — handle sensitively.',
+    ageAppropriate: 'Suitable for Year 8. Themes of drug violence - handle sensitively.',
   },
-];
+]
 
 const year8T2: ReadingListEntry[] = [
   {
@@ -647,12 +739,14 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Poetry collection / war poetry',
     difficulty: 'moderate',
-    synopsis: 'A comprehensive anthology of war poetry spanning from ancient conflicts through World War I and II to modern warfare, including voices from all sides of conflict.',
-    teachingNotes: 'Core poetry text for Term 2. Teach chronologically to show how war poetry evolved. Compare Owen and Sassoon with modern conflict poets. Students write their own war poems in response. Use for PEAEL paragraph writing on poetry.',
+    synopsis:
+      'A comprehensive anthology of war poetry spanning from ancient conflicts through World War I and II to modern warfare, including voices from all sides of conflict.',
+    teachingNotes:
+      'Core poetry text for Term 2. Teach chronologically to show how war poetry evolved. Compare Owen and Sassoon with modern conflict poets. Students write their own war poems in response. Use for PEAEL paragraph writing on poetry.',
     keyThemes: ['war', 'sacrifice', 'loss', 'patriotism vs disillusionment', 'humanity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R5', 'KS3-W4', 'KS3-W6'],
     pageCount: 320,
-    ageAppropriate: 'Suitable for Year 8. Some graphic descriptions of war — preview selections.',
+    ageAppropriate: 'Suitable for Year 8. Some graphic descriptions of war - preview selections.',
   },
   {
     id: 'y8-t2-002',
@@ -662,8 +756,10 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'War fiction',
     difficulty: 'moderate',
-    synopsis: 'On the night before his execution, Private Tommo Peaceful recalls his childhood in Devon, his love for Molly, and the horrors of the trenches. A devastating story told in a single night.',
-    teachingNotes: 'Outstanding companion to war poetry. The countdown structure teaches narrative tension. Compare Tommo\'s experience with Owen\'s poetry. Use for diary writing, letter writing, and analytical comparison of prose and poetry representations of war.',
+    synopsis:
+      'On the night before his execution, Private Tommo Peaceful recalls his childhood in Devon, his love for Molly, and the horrors of the trenches. A devastating story told in a single night.',
+    teachingNotes:
+      "Outstanding companion to war poetry. The countdown structure teaches narrative tension. Compare Tommo's experience with Owen's poetry. Use for diary writing, letter writing, and analytical comparison of prose and poetry representations of war.",
     keyThemes: ['war', 'injustice', 'brotherhood', 'love', 'class division'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-W2', 'KS3-W4'],
     pageCount: 202,
@@ -671,14 +767,16 @@ const year8T2: ReadingListEntry[] = [
   },
   {
     id: 'y8-t2-003',
-    title: 'A Midsummer Night\'s Dream (adapted)',
+    title: "A Midsummer Night's Dream (adapted)",
     author: 'William Shakespeare (adapted by Andrew Matthews)',
     yearGroup: 8,
     termUnit: 'T2',
     genre: 'Shakespeare adaptation',
     difficulty: 'moderate',
-    synopsis: 'An accessible prose retelling of Shakespeare\'s comedy of confused lovers, mischievous fairies, and amateur actors in an enchanted forest.',
-    teachingNotes: 'Gateway Shakespeare text. Use adapted version alongside original key scenes. Students perform selected scenes. Teach dramatic irony, comic conventions, and Shakespeare\'s language. Leads to writing about Shakespeare for the first time.',
+    synopsis:
+      "An accessible prose retelling of Shakespeare's comedy of confused lovers, mischievous fairies, and amateur actors in an enchanted forest.",
+    teachingNotes:
+      "Gateway Shakespeare text. Use adapted version alongside original key scenes. Students perform selected scenes. Teach dramatic irony, comic conventions, and Shakespeare's language. Leads to writing about Shakespeare for the first time.",
     keyThemes: ['love', 'magic', 'transformation', 'order vs chaos', 'illusion vs reality'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-SL1'],
     pageCount: 80,
@@ -692,8 +790,10 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Shakespeare',
     difficulty: 'challenging',
-    synopsis: 'Prospero, the exiled Duke of Milan, uses his magic to shipwreck his enemies on his island, seeking justice and reconciliation. Shakespeare\'s exploration of power, forgiveness, and freedom.',
-    teachingNotes: 'More challenging Shakespeare text for higher attainers. Teach colonialism through Prospero-Caliban relationship. Compare with A Midsummer Night\'s Dream for Shakespeare\'s use of magic. Students write Caliban\'s perspective. Links to post-colonial criticism.',
+    synopsis:
+      "Prospero, the exiled Duke of Milan, uses his magic to shipwreck his enemies on his island, seeking justice and reconciliation. Shakespeare's exploration of power, forgiveness, and freedom.",
+    teachingNotes:
+      "More challenging Shakespeare text for higher attainers. Teach colonialism through Prospero-Caliban relationship. Compare with A Midsummer Night's Dream for Shakespeare's use of magic. Students write Caliban's perspective. Links to post-colonial criticism.",
     keyThemes: ['power', 'forgiveness', 'colonialism', 'freedom', 'magic'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-SL1'],
     pageCount: 136,
@@ -707,8 +807,10 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'War fiction',
     difficulty: 'accessible',
-    synopsis: 'Three Polish children search for their parents across war-torn Europe after World War II. The silver sword — a letter opener — becomes their talisman of hope.',
-    teachingNotes: 'Classic war fiction for the prose/poetry comparison unit. Map the children\'s journey across Europe. Compare fictional account with real testimony. Students write travel journal entries. Accessible language makes it good for lower-attaining readers.',
+    synopsis:
+      'Three Polish children search for their parents across war-torn Europe after World War II. The silver sword - a letter opener - becomes their talisman of hope.',
+    teachingNotes:
+      "Classic war fiction for the prose/poetry comparison unit. Map the children's journey across Europe. Compare fictional account with real testimony. Students write travel journal entries. Accessible language makes it good for lower-attaining readers.",
     keyThemes: ['survival', 'family', 'hope', 'war', 'resilience'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R3', 'KS3-R4', 'KS3-W2'],
     pageCount: 192,
@@ -722,12 +824,14 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'War fiction / historical fiction',
     difficulty: 'accessible',
-    synopsis: 'Young Willie Beech is evacuated from London to the countryside during WWII, where the gruff but kind Tom Oakley gives him the first real home he has ever known.',
-    teachingNotes: 'Companion war fiction text. Contrast with Private Peaceful for different war perspectives (home front vs trenches). Teach character development through the Willie-Tom relationship. Use for descriptive writing contrasting London and countryside settings.',
+    synopsis:
+      'Young Willie Beech is evacuated from London to the countryside during WWII, where the gruff but kind Tom Oakley gives him the first real home he has ever known.',
+    teachingNotes:
+      'Companion war fiction text. Contrast with Private Peaceful for different war perspectives (home front vs trenches). Teach character development through the Willie-Tom relationship. Use for descriptive writing contrasting London and countryside settings.',
     keyThemes: ['kindness', 'abuse and recovery', 'war', 'found family', 'transformation'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R4', 'KS3-W1', 'KS3-W2'],
     pageCount: 320,
-    ageAppropriate: 'Suitable for Year 8. Themes of child abuse — teacher awareness needed.',
+    ageAppropriate: 'Suitable for Year 8. Themes of child abuse - teacher awareness needed.',
   },
   {
     id: 'y8-t2-007',
@@ -737,8 +841,10 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Shakespeare adaptation',
     difficulty: 'moderate',
-    synopsis: 'Beatrice and Benedick wage a war of wit while Hero and Claudio fall in love, but a villain\'s plot threatens to destroy everything. Shakespeare\'s sharpest comedy of love and deception.',
-    teachingNotes: 'Second Shakespeare comedy for comparison with A Midsummer Night\'s Dream. Focus on Beatrice as a strong female character. Teach Shakespeare\'s wit and wordplay. Students perform the "merry war" scenes. Compare treatment of love across both plays.',
+    synopsis:
+      "Beatrice and Benedick wage a war of wit while Hero and Claudio fall in love, but a villain's plot threatens to destroy everything. Shakespeare's sharpest comedy of love and deception.",
+    teachingNotes:
+      'Second Shakespeare comedy for comparison with A Midsummer Night\'s Dream. Focus on Beatrice as a strong female character. Teach Shakespeare\'s wit and wordplay. Students perform the "merry war" scenes. Compare treatment of love across both plays.',
     keyThemes: ['love', 'deception', 'honour', 'wit', 'gender roles'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-SL1'],
     pageCount: 96,
@@ -752,12 +858,14 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'War poetry',
     difficulty: 'challenging',
-    synopsis: 'A selection of Owen\'s most powerful war poems including "Dulce et Decorum Est," "Exposure," "Futility," and "Anthem for Doomed Youth."',
-    teachingNotes: 'Core war poet for detailed study. Teach alongside the anthology for context. Focus on sensory imagery, half-rhyme, and irony. Compare Owen with Sassoon. Students write analytical paragraphs using PEAEL structure. Model exam-style responses.',
+    synopsis:
+      'A selection of Owen\'s most powerful war poems including "Dulce et Decorum Est," "Exposure," "Futility," and "Anthem for Doomed Youth."',
+    teachingNotes:
+      'Core war poet for detailed study. Teach alongside the anthology for context. Focus on sensory imagery, half-rhyme, and irony. Compare Owen with Sassoon. Students write analytical paragraphs using PEAEL structure. Model exam-style responses.',
     keyThemes: ['futility of war', 'suffering', 'patriotism as lie', 'youth destroyed', 'pity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R5', 'KS3-W4', 'KS3-W6'],
     pageCount: 64,
-    ageAppropriate: 'Suitable for Year 8. Graphic imagery of war — discuss content warnings.',
+    ageAppropriate: 'Suitable for Year 8. Graphic imagery of war - discuss content warnings.',
   },
   {
     id: 'y8-t2-009',
@@ -767,12 +875,15 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'War fiction / Holocaust literature',
     difficulty: 'accessible',
-    synopsis: 'Felix is a Jewish boy hiding in a Catholic orphanage in Poland during World War II. He leaves to find his parents, and the journey reveals the horrifying truth of the Holocaust.',
-    teachingNotes: 'Accessible Holocaust text. Felix\'s naivety allows younger readers to approach difficult material safely. Use for diary writing and empathy responses. Compare with Anne Frank extracts. Short chapters and simple prose suit reluctant readers.',
+    synopsis:
+      'Felix is a Jewish boy hiding in a Catholic orphanage in Poland during World War II. He leaves to find his parents, and the journey reveals the horrifying truth of the Holocaust.',
+    teachingNotes:
+      "Accessible Holocaust text. Felix's naivety allows younger readers to approach difficult material safely. Use for diary writing and empathy responses. Compare with Anne Frank extracts. Short chapters and simple prose suit reluctant readers.",
     keyThemes: ['Holocaust', 'innocence', 'survival', 'friendship', 'storytelling as survival'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-W2'],
     pageCount: 163,
-    ageAppropriate: 'Suitable for Year 8. Holocaust content — handle with care and historical context.',
+    ageAppropriate:
+      'Suitable for Year 8. Holocaust content - handle with care and historical context.',
   },
   {
     id: 'y8-t2-010',
@@ -782,14 +893,16 @@ const year8T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Shakespeare adaptation / graphic novel',
     difficulty: 'moderate',
-    synopsis: 'A graphic novel adaptation of Macbeth using Shakespeare\'s original language alongside dramatic artwork, making the tragedy accessible while preserving its power.',
-    teachingNotes: 'Bridge to GCSE Shakespeare. Use graphic format to teach staging, visual symbolism, and dramatic irony. Compare key scenes with original text. Students storyboard their own scenes. Prepares students who will study Macbeth at GCSE.',
+    synopsis:
+      "A graphic novel adaptation of Macbeth using Shakespeare's original language alongside dramatic artwork, making the tragedy accessible while preserving its power.",
+    teachingNotes:
+      'Bridge to GCSE Shakespeare. Use graphic format to teach staging, visual symbolism, and dramatic irony. Compare key scenes with original text. Students storyboard their own scenes. Prepares students who will study Macbeth at GCSE.',
     keyThemes: ['ambition', 'guilt', 'fate vs free will', 'power', 'evil'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-SL1'],
     pageCount: 172,
-    ageAppropriate: 'Suitable for Year 8. Violence depicted graphically — preview with students.',
+    ageAppropriate: 'Suitable for Year 8. Violence depicted graphically - preview with students.',
   },
-];
+]
 
 const year8T3: ReadingListEntry[] = [
   {
@@ -800,8 +913,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Non-fiction speeches',
     difficulty: 'moderate',
-    synopsis: 'A collection of landmark speeches from Martin Luther King Jr., Malala Yousafzai, Greta Thunberg, Nelson Mandela, and others who have shaped history with their words.',
-    teachingNotes: 'Core non-fiction text for Term 3 rhetoric unit. Teach rhetorical devices: tricolon, anaphora, antithesis, hypophora. Students identify techniques, then write and deliver their own speeches. Use for speaking and listening assessment.',
+    synopsis:
+      'A collection of landmark speeches from Martin Luther King Jr., Malala Yousafzai, Greta Thunberg, Nelson Mandela, and others who have shaped history with their words.',
+    teachingNotes:
+      'Core non-fiction text for Term 3 rhetoric unit. Teach rhetorical devices: tricolon, anaphora, antithesis, hypophora. Students identify techniques, then write and deliver their own speeches. Use for speaking and listening assessment.',
     keyThemes: ['justice', 'equality', 'activism', 'power of words', 'leadership'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W3', 'KS3-SL1', 'KS3-SL2'],
     pageCount: 256,
@@ -815,8 +930,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Non-fiction speeches / environmental',
     difficulty: 'accessible',
-    synopsis: 'A collection of Greta Thunberg\'s speeches on climate change, from her first school strike speech to her address to the United Nations.',
-    teachingNotes: 'Excellent for teaching audience awareness and rhetorical purpose. Compare Thunberg\'s direct style with MLK\'s oratory for different approaches to persuasion. Students write their own campaign speeches on issues they care about.',
+    synopsis:
+      "A collection of Greta Thunberg's speeches on climate change, from her first school strike speech to her address to the United Nations.",
+    teachingNotes:
+      "Excellent for teaching audience awareness and rhetorical purpose. Compare Thunberg's direct style with MLK's oratory for different approaches to persuasion. Students write their own campaign speeches on issues they care about.",
     keyThemes: ['climate change', 'activism', 'youth voice', 'urgency', 'responsibility'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W3', 'KS3-SL1', 'KS3-SL2'],
     pageCount: 112,
@@ -830,8 +947,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Media literacy / non-fiction',
     difficulty: 'accessible',
-    synopsis: 'A practical guide to understanding media bias, identifying fake news, analysing headlines, and evaluating sources in the digital age.',
-    teachingNotes: 'Essential media literacy resource. Use alongside real newspaper examples. Students analyse headlines, compare coverage of the same event across outlets, and create their own media evaluation toolkit. Links to digital citizenship.',
+    synopsis:
+      'A practical guide to understanding media bias, identifying fake news, analysing headlines, and evaluating sources in the digital age.',
+    teachingNotes:
+      'Essential media literacy resource. Use alongside real newspaper examples. Students analyse headlines, compare coverage of the same event across outlets, and create their own media evaluation toolkit. Links to digital citizenship.',
     keyThemes: ['media bias', 'truth', 'critical thinking', 'digital literacy', 'propaganda'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W3', 'KS3-W4'],
     pageCount: 96,
@@ -845,8 +964,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Journalism / media texts',
     difficulty: 'moderate',
-    synopsis: 'A curated collection of journalism articles exploring social media\'s impact on young people, screen time research, online safety, and digital wellbeing.',
-    teachingNotes: 'Teacher-curated journalism pack. Use for teaching non-fiction analysis: headline techniques, topic sentences, use of statistics, expert quotation. Students write their own feature articles. Compare broadsheet and tabloid styles. Update articles annually.',
+    synopsis:
+      "A curated collection of journalism articles exploring social media's impact on young people, screen time research, online safety, and digital wellbeing.",
+    teachingNotes:
+      'Teacher-curated journalism pack. Use for teaching non-fiction analysis: headline techniques, topic sentences, use of statistics, expert quotation. Students write their own feature articles. Compare broadsheet and tabloid styles. Update articles annually.',
     keyThemes: ['social media', 'mental health', 'digital wellbeing', 'critical reading', 'bias'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W3', 'KS3-W4'],
     pageCount: 60,
@@ -860,12 +981,14 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Non-fiction / diary / autobiography',
     difficulty: 'moderate',
-    synopsis: 'Anne Frank\'s diary written while in hiding from the Nazis in Amsterdam between 1942 and 1944. An extraordinary document of hope, fear, and adolescence during the Holocaust.',
-    teachingNotes: 'Core non-fiction text linking to T2 war literature. Teach diary conventions and voice. Compare Anne\'s voice with fiction (Once). Use for non-fiction analysis: purpose, audience, form. Students write their own diary entries in response. Handle Holocaust context sensitively.',
+    synopsis:
+      "Anne Frank's diary written while in hiding from the Nazis in Amsterdam between 1942 and 1944. An extraordinary document of hope, fear, and adolescence during the Holocaust.",
+    teachingNotes:
+      "Core non-fiction text linking to T2 war literature. Teach diary conventions and voice. Compare Anne's voice with fiction (Once). Use for non-fiction analysis: purpose, audience, form. Students write their own diary entries in response. Handle Holocaust context sensitively.",
     keyThemes: ['Holocaust', 'hope', 'adolescence', 'confinement', 'humanity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-R6', 'KS3-W2', 'KS3-W4'],
     pageCount: 283,
-    ageAppropriate: 'Suitable for Year 8. Holocaust content — provide historical context.',
+    ageAppropriate: 'Suitable for Year 8. Holocaust content - provide historical context.',
   },
   {
     id: 'y8-t3-006',
@@ -875,9 +998,17 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Non-fiction / social commentary',
     difficulty: 'moderate',
-    synopsis: 'An accessible exploration of feminist thought through key speeches, essays, and infographics. Covers suffrage to modern movements with diverse global perspectives.',
-    teachingNotes: 'Use for teaching argument and counter-argument structures. Students identify claims, evidence, and reasoning in each piece. Leads to discursive essay writing. Compare with historical speeches studied earlier. Strong debating material.',
-    keyThemes: ['gender equality', 'activism', 'history of feminism', 'intersectionality', 'rights'],
+    synopsis:
+      'An accessible exploration of feminist thought through key speeches, essays, and infographics. Covers suffrage to modern movements with diverse global perspectives.',
+    teachingNotes:
+      'Use for teaching argument and counter-argument structures. Students identify claims, evidence, and reasoning in each piece. Leads to discursive essay writing. Compare with historical speeches studied earlier. Strong debating material.',
+    keyThemes: [
+      'gender equality',
+      'activism',
+      'history of feminism',
+      'intersectionality',
+      'rights',
+    ],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W3', 'KS3-W4', 'KS3-SL2'],
     pageCount: 144,
     ageAppropriate: 'Suitable for all Year 8 students.',
@@ -890,8 +1021,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Journalism / media texts',
     difficulty: 'moderate',
-    synopsis: 'A curated pack of newspaper articles, editorial columns, magazine features, and online journalism for comparative media analysis.',
-    teachingNotes: 'Refresh annually with current articles. Core resource for media comparison unit. Students compare: layout, language register, headline techniques, use of images, and bias. Use for non-fiction writing assessment: students write for two different audiences.',
+    synopsis:
+      'A curated pack of newspaper articles, editorial columns, magazine features, and online journalism for comparative media analysis.',
+    teachingNotes:
+      'Refresh annually with current articles. Core resource for media comparison unit. Students compare: layout, language register, headline techniques, use of images, and bias. Use for non-fiction writing assessment: students write for two different audiences.',
     keyThemes: ['media conventions', 'audience', 'purpose', 'bias', 'persuasion'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W3', 'KS3-W4'],
     pageCount: 80,
@@ -905,8 +1038,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Non-fiction speeches',
     difficulty: 'challenging',
-    synopsis: 'A collection of great speeches from antiquity to the modern era, including political, military, and social justice oratory, with historical context for each.',
-    teachingNotes: 'Stretch resource for higher attainers. Use selected speeches for close language analysis. Compare ancient oratory (Cicero, Pericles) with modern speeches. Students track how rhetorical techniques persist across millennia. Advanced analytical writing outcomes.',
+    synopsis:
+      'A collection of great speeches from antiquity to the modern era, including political, military, and social justice oratory, with historical context for each.',
+    teachingNotes:
+      'Stretch resource for higher attainers. Use selected speeches for close language analysis. Compare ancient oratory (Cicero, Pericles) with modern speeches. Students track how rhetorical techniques persist across millennia. Advanced analytical writing outcomes.',
     keyThemes: ['rhetoric', 'power', 'persuasion', 'history', 'leadership'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R5', 'KS3-R6', 'KS3-W3', 'KS3-SL2'],
     pageCount: 384,
@@ -920,8 +1055,10 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Non-fiction / autobiography hybrid',
     difficulty: 'accessible',
-    synopsis: 'Based on Libby Scott\'s real diary entries, this novel explores what it is like to be autistic and female in mainstream school. Part fiction, part autobiography, entirely authentic.',
-    teachingNotes: 'Bridges fiction and non-fiction. Use the diary entries (real) vs narrative chapters (fictional) to teach genre boundaries. Strong voice for teaching first-person writing. Excellent SEND awareness text. Students write their own hybrid diary-fiction.',
+    synopsis:
+      "Based on Libby Scott's real diary entries, this novel explores what it is like to be autistic and female in mainstream school. Part fiction, part autobiography, entirely authentic.",
+    teachingNotes:
+      'Bridges fiction and non-fiction. Use the diary entries (real) vs narrative chapters (fictional) to teach genre boundaries. Strong voice for teaching first-person writing. Excellent SEND awareness text. Students write their own hybrid diary-fiction.',
     keyThemes: ['autism', 'identity', 'masking', 'friendship', 'belonging'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-R6', 'KS3-W2'],
     pageCount: 320,
@@ -935,17 +1072,20 @@ const year8T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Graphic novel / journalism-linked',
     difficulty: 'accessible',
-    synopsis: 'A graphic novel following Ebo, a boy from West Africa who makes the dangerous journey across the Sahara and the Mediterranean to reach Europe. Based on real refugee testimonies.',
-    teachingNotes: 'Graphic non-fiction bridging media texts and empathy writing. Compare with newspaper coverage of refugee crises. Use images for visual analysis — how do graphic novels convey information differently from journalism? Students write accompanying news articles.',
+    synopsis:
+      'A graphic novel following Ebo, a boy from West Africa who makes the dangerous journey across the Sahara and the Mediterranean to reach Europe. Based on real refugee testimonies.',
+    teachingNotes:
+      'Graphic non-fiction bridging media texts and empathy writing. Compare with newspaper coverage of refugee crises. Use images for visual analysis - how do graphic novels convey information differently from journalism? Students write accompanying news articles.',
     keyThemes: ['migration', 'survival', 'media representation', 'humanity', 'hope'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R4', 'KS3-R6', 'KS3-W4'],
     pageCount: 144,
-    ageAppropriate: 'Suitable for all Year 8 students. Some distressing content handled through graphic novel format.',
+    ageAppropriate:
+      'Suitable for all Year 8 students. Some distressing content handled through graphic novel format.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// YEAR 9 — 25 curriculum books
+// YEAR 9 - 25 curriculum books
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const year9T1: ReadingListEntry[] = [
@@ -957,8 +1097,10 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian literature / moral tale',
     difficulty: 'challenging',
-    synopsis: 'Ebenezer Scrooge is visited by three ghosts on Christmas Eve who show him his past, present, and future. Dickens\'s most famous moral tale about redemption and social responsibility.',
-    teachingNotes: 'Core Victorian text and GCSE preparation. Teach Victorian context: workhouses, Poor Law, class division. Focus on Dickens\'s methods: characterisation through caricature, symbolism, narrative structure. Model GCSE-style analytical paragraphs from Year 9.',
+    synopsis:
+      "Ebenezer Scrooge is visited by three ghosts on Christmas Eve who show him his past, present, and future. Dickens's most famous moral tale about redemption and social responsibility.",
+    teachingNotes:
+      "Core Victorian text and GCSE preparation. Teach Victorian context: workhouses, Poor Law, class division. Focus on Dickens's methods: characterisation through caricature, symbolism, narrative structure. Model GCSE-style analytical paragraphs from Year 9.",
     keyThemes: ['redemption', 'social responsibility', 'greed', 'poverty', 'Christmas spirit'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 104,
@@ -972,8 +1114,10 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian literature / bildungsroman',
     difficulty: 'challenging',
-    synopsis: 'Pip, an orphan raised by his sister and her blacksmith husband, comes into "great expectations" from a mysterious benefactor. A story of ambition, class, and the dangers of snobbery.',
-    teachingNotes: 'Second Dickens text for deeper study. Compare with A Christmas Carol for Dickens\'s recurring themes. Teach the bildungsroman form. Focus on class, gentleman, and social mobility themes. Use opening chapters for Gothic descriptive writing models.',
+    synopsis:
+      'Pip, an orphan raised by his sister and her blacksmith husband, comes into "great expectations" from a mysterious benefactor. A story of ambition, class, and the dangers of snobbery.',
+    teachingNotes:
+      "Second Dickens text for deeper study. Compare with A Christmas Carol for Dickens's recurring themes. Teach the bildungsroman form. Focus on class, gentleman, and social mobility themes. Use opening chapters for Gothic descriptive writing models.",
     keyThemes: ['class', 'ambition', 'identity', 'guilt', 'loyalty vs snobbery'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 544,
@@ -987,12 +1131,15 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian literature / social commentary',
     difficulty: 'moderate',
-    synopsis: 'The story of an orphan boy born in a workhouse who escapes to London, falls in with a gang of pickpockets led by the sinister Fagin, and ultimately discovers his true identity.',
-    teachingNotes: 'Accessible Dickens for differentiation. Compare workhouse scenes with A Christmas Carol. Teach Victorian attitudes to poverty and criminality. Use Fagin and Nancy for character analysis. Discuss representation and stereotyping in Victorian literature.',
+    synopsis:
+      'The story of an orphan boy born in a workhouse who escapes to London, falls in with a gang of pickpockets led by the sinister Fagin, and ultimately discovers his true identity.',
+    teachingNotes:
+      'Accessible Dickens for differentiation. Compare workhouse scenes with A Christmas Carol. Teach Victorian attitudes to poverty and criminality. Use Fagin and Nancy for character analysis. Discuss representation and stereotyping in Victorian literature.',
     keyThemes: ['poverty', 'crime', 'innocence', 'justice', 'identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R7'],
     pageCount: 224,
-    ageAppropriate: 'Suitable for Year 9 (adapted version). Discuss antisemitic stereotyping in context.',
+    ageAppropriate:
+      'Suitable for Year 9 (adapted version). Discuss antisemitic stereotyping in context.',
   },
   {
     id: 'y9-t1-004',
@@ -1002,12 +1149,15 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian Gothic / moral tale',
     difficulty: 'challenging',
-    synopsis: 'A London lawyer investigates strange events surrounding his friend Dr Jekyll and the sinister Mr Hyde. Stevenson\'s exploration of the duality of human nature.',
-    teachingNotes: 'Core GCSE preparation text — many exam boards set this. Teach Victorian Gothic conventions, duality, and repression. Compare with Dickens for different approaches to morality. Use for analytical writing: how does Stevenson present the theme of duality?',
+    synopsis:
+      "A London lawyer investigates strange events surrounding his friend Dr Jekyll and the sinister Mr Hyde. Stevenson's exploration of the duality of human nature.",
+    teachingNotes:
+      'Core GCSE preparation text - many exam boards set this. Teach Victorian Gothic conventions, duality, and repression. Compare with Dickens for different approaches to morality. Use for analytical writing: how does Stevenson present the theme of duality?',
     keyThemes: ['duality', 'repression', 'morality', 'science and ethics', 'Victorian society'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 96,
-    ageAppropriate: 'Suitable for Year 9. Some violent scenes — age-appropriate for this year group.',
+    ageAppropriate:
+      'Suitable for Year 9. Some violent scenes - age-appropriate for this year group.',
   },
   {
     id: 'y9-t1-005',
@@ -1017,8 +1167,10 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian literature / Gothic',
     difficulty: 'challenging',
-    synopsis: 'An orphaned girl endures a cruel childhood, becomes a governess at the mysterious Thornfield Hall, and falls in love with the brooding Mr Rochester — who harbours a dark secret.',
-    teachingNotes: 'Victorian female voice to balance Dickens. Teach proto-feminist themes and Gothic conventions (Thornfield, the Red Room). Compare Jane\'s independence with Victorian expectations. Use for character analysis and comparison writing. Adapted version for accessibility.',
+    synopsis:
+      'An orphaned girl endures a cruel childhood, becomes a governess at the mysterious Thornfield Hall, and falls in love with the brooding Mr Rochester - who harbours a dark secret.',
+    teachingNotes:
+      "Victorian female voice to balance Dickens. Teach proto-feminist themes and Gothic conventions (Thornfield, the Red Room). Compare Jane's independence with Victorian expectations. Use for character analysis and comparison writing. Adapted version for accessibility.",
     keyThemes: ['independence', 'morality', 'social class', 'love', 'gender roles'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 280,
@@ -1032,8 +1184,10 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Gothic / science fiction',
     difficulty: 'challenging',
-    synopsis: 'Victor Frankenstein creates a living creature from dead body parts, then abandons it. The creature, intelligent and sensitive, seeks revenge on its creator for bringing it into a world that rejects it.',
-    teachingNotes: 'Gothic masterpiece for the Victorian/pre-Victorian unit. Teach science vs nature, the Romantic movement, and the Gothic genre. Compare with Jekyll and Hyde for duality. Use the creature\'s voice for empathy writing. Discuss the ethics of creation.',
+    synopsis:
+      'Victor Frankenstein creates a living creature from dead body parts, then abandons it. The creature, intelligent and sensitive, seeks revenge on its creator for bringing it into a world that rejects it.',
+    teachingNotes:
+      "Gothic masterpiece for the Victorian/pre-Victorian unit. Teach science vs nature, the Romantic movement, and the Gothic genre. Compare with Jekyll and Hyde for duality. Use the creature's voice for empathy writing. Discuss the ethics of creation.",
     keyThemes: ['creation', 'responsibility', 'rejection', 'nature vs nurture', 'ambition'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 200,
@@ -1047,8 +1201,10 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian detective fiction',
     difficulty: 'moderate',
-    synopsis: 'Sherlock Holmes and Dr Watson investigate a case involving a mysterious treasure, a missing father, and a one-legged man with a poisonous companion.',
-    teachingNotes: 'Victorian detective fiction for genre study. Compare with Gothic texts — how does Doyle create atmosphere differently? Teach deduction and logic in writing. Students write their own detective fiction. Links to Victorian London as a setting.',
+    synopsis:
+      'Sherlock Holmes and Dr Watson investigate a case involving a mysterious treasure, a missing father, and a one-legged man with a poisonous companion.',
+    teachingNotes:
+      'Victorian detective fiction for genre study. Compare with Gothic texts - how does Doyle create atmosphere differently? Teach deduction and logic in writing. Students write their own detective fiction. Links to Victorian London as a setting.',
     keyThemes: ['justice', 'reason vs emotion', 'empire', 'greed', 'friendship'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R7'],
     pageCount: 160,
@@ -1056,18 +1212,20 @@ const year9T1: ReadingListEntry[] = [
   },
   {
     id: 'y9-t1-008',
-    title: 'Tess of the d\'Urbervilles (extracts)',
+    title: "Tess of the d'Urbervilles (extracts)",
     author: 'Thomas Hardy',
     yearGroup: 9,
     termUnit: 'T1',
     genre: 'Victorian literature / tragedy',
     difficulty: 'advanced',
-    synopsis: 'Selected passages from Hardy\'s tragic novel about Tess, a young woman whose life is destroyed by the rigid moral codes and class structures of Victorian society.',
-    teachingNotes: 'Stretch text for highest attainers. Use extracts only — the full novel is Year 12+ material. Focus on Hardy\'s use of landscape, fate, and social criticism. Compare treatment of women with Jane Eyre. Advanced analytical writing opportunity.',
+    synopsis:
+      "Selected passages from Hardy's tragic novel about Tess, a young woman whose life is destroyed by the rigid moral codes and class structures of Victorian society.",
+    teachingNotes:
+      "Stretch text for highest attainers. Use extracts only - the full novel is Year 12+ material. Focus on Hardy's use of landscape, fate, and social criticism. Compare treatment of women with Jane Eyre. Advanced analytical writing opportunity.",
     keyThemes: ['fate', 'injustice', 'social class', 'gender', 'nature'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-R7'],
     pageCount: 80,
-    ageAppropriate: 'Extracts only for Year 9. Teacher selection essential — sensitive content.',
+    ageAppropriate: 'Extracts only for Year 9. Teacher selection essential - sensitive content.',
   },
   {
     id: 'y9-t1-009',
@@ -1077,14 +1235,17 @@ const year9T1: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Gothic / ghost story',
     difficulty: 'moderate',
-    synopsis: 'Arthur Kipps is sent to attend the funeral of a client in a remote house on the marshes. There he encounters the Woman in Black and discovers the terrible truth about Eel Marsh House.',
-    teachingNotes: 'Modern Gothic text for comparison with Victorian originals. Teach Gothic conventions: isolated setting, suspense, the supernatural. Compare Hill\'s techniques with Stevenson and Shelley. Students write their own Gothic opening chapters.',
+    synopsis:
+      'Arthur Kipps is sent to attend the funeral of a client in a remote house on the marshes. There he encounters the Woman in Black and discovers the terrible truth about Eel Marsh House.',
+    teachingNotes:
+      "Modern Gothic text for comparison with Victorian originals. Teach Gothic conventions: isolated setting, suspense, the supernatural. Compare Hill's techniques with Stevenson and Shelley. Students write their own Gothic opening chapters.",
     keyThemes: ['fear', 'grief', 'isolation', 'revenge', 'the supernatural'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5'],
     pageCount: 200,
-    ageAppropriate: 'Suitable for Year 9. Genuinely frightening — some students may find it unsettling.',
+    ageAppropriate:
+      'Suitable for Year 9. Genuinely frightening - some students may find it unsettling.',
   },
-];
+]
 
 const year9T2: ReadingListEntry[] = [
   {
@@ -1095,12 +1256,14 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story collection',
     difficulty: 'challenging',
-    synopsis: 'Twelve stories exploring the lives of Nigerians in Nigeria and America, examining themes of dislocation, cultural clash, love, and identity with precision and empathy.',
-    teachingNotes: 'Core short story text for Term 2. Teach short story conventions: in medias res, epiphany, economy of language. Use individual stories for close analysis. Compare narrative perspectives. Students write their own short stories using Adichie\'s techniques.',
+    synopsis:
+      'Twelve stories exploring the lives of Nigerians in Nigeria and America, examining themes of dislocation, cultural clash, love, and identity with precision and empathy.',
+    teachingNotes:
+      "Core short story text for Term 2. Teach short story conventions: in medias res, epiphany, economy of language. Use individual stories for close analysis. Compare narrative perspectives. Students write their own short stories using Adichie's techniques.",
     keyThemes: ['cultural identity', 'displacement', 'gender', 'power', 'love'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 218,
-    ageAppropriate: 'Suitable for Year 9. Some mature themes — teacher selection of stories.',
+    ageAppropriate: 'Suitable for Year 9. Some mature themes - teacher selection of stories.',
   },
   {
     id: 'y9-t2-002',
@@ -1110,8 +1273,10 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story collection / feminist literature',
     difficulty: 'challenging',
-    synopsis: 'Selected short stories including "The Story of an Hour" and "Desiree\'s Baby," exploring women\'s lives, desires, and constraints in 19th-century America.',
-    teachingNotes: 'Use selected short stories, not the novella. "The Story of an Hour" is perfect for teaching twist endings and irony. "Desiree\'s Baby" teaches racial identity and dramatic irony. Compare Chopin\'s female characters with Adichie\'s for historical progression.',
+    synopsis:
+      'Selected short stories including "The Story of an Hour" and "Desiree\'s Baby," exploring women\'s lives, desires, and constraints in 19th-century America.',
+    teachingNotes:
+      'Use selected short stories, not the novella. "The Story of an Hour" is perfect for teaching twist endings and irony. "Desiree\'s Baby" teaches racial identity and dramatic irony. Compare Chopin\'s female characters with Adichie\'s for historical progression.',
     keyThemes: ['freedom', 'gender roles', 'identity', 'marriage', 'racial identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-R7'],
     pageCount: 120,
@@ -1125,8 +1290,10 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story collection / Gulf literature',
     difficulty: 'moderate',
-    synopsis: 'Translated stories from one of Qatar\'s most important writers, exploring themes of tradition, modernity, and identity in the rapidly changing Gulf states.',
-    teachingNotes: 'Essential local literature. Compare Gulf literary traditions with Western short story conventions. Use for teaching cultural context and translation in literature. Students write analytical comparisons between Al-Mahmoud and Western short story writers.',
+    synopsis:
+      "Translated stories from one of Qatar's most important writers, exploring themes of tradition, modernity, and identity in the rapidly changing Gulf states.",
+    teachingNotes:
+      'Essential local literature. Compare Gulf literary traditions with Western short story conventions. Use for teaching cultural context and translation in literature. Students write analytical comparisons between Al-Mahmoud and Western short story writers.',
     keyThemes: ['tradition vs modernity', 'cultural identity', 'change', 'memory', 'place'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-R7'],
     pageCount: 150,
@@ -1140,8 +1307,10 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story collection',
     difficulty: 'challenging',
-    synopsis: 'Nine stories about Indian Americans navigating cultural displacement, miscommunication, and the longing for connection in a world between two cultures.',
-    teachingNotes: 'Sophisticated short stories for higher attainers. Teach Lahiri\'s precise, understated style. Compare with Adichie\'s more direct approach. Focus on what is left unsaid — teaching inference at a high level. Use "A Temporary Matter" for close analysis.',
+    synopsis:
+      'Nine stories about Indian Americans navigating cultural displacement, miscommunication, and the longing for connection in a world between two cultures.',
+    teachingNotes:
+      'Sophisticated short stories for higher attainers. Teach Lahiri\'s precise, understated style. Compare with Adichie\'s more direct approach. Focus on what is left unsaid - teaching inference at a high level. Use "A Temporary Matter" for close analysis.',
     keyThemes: ['displacement', 'communication', 'marriage', 'cultural identity', 'loneliness'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5'],
     pageCount: 198,
@@ -1155,8 +1324,10 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story anthology',
     difficulty: 'moderate',
-    synopsis: 'An anthology spanning Poe, Chekhov, Mansfield, and contemporary writers including Zadie Smith and George Saunders. Stories selected to show the evolution of the short story form.',
-    teachingNotes: 'Reference anthology for comparison work. Use to show how the short story has evolved from Poe to present. Students compare opening techniques, endings, and narrative voice across eras. Supports independent short story writing.',
+    synopsis:
+      'An anthology spanning Poe, Chekhov, Mansfield, and contemporary writers including Zadie Smith and George Saunders. Stories selected to show the evolution of the short story form.',
+    teachingNotes:
+      'Reference anthology for comparison work. Use to show how the short story has evolved from Poe to present. Students compare opening techniques, endings, and narrative voice across eras. Supports independent short story writing.',
     keyThemes: ['varied', 'human nature', 'surprise', 'identity', 'relationships'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5'],
     pageCount: 350,
@@ -1170,12 +1341,14 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story collection / dark comedy',
     difficulty: 'moderate',
-    synopsis: 'Dahl\'s adult short stories including "The Landlady," "Lamb to the Slaughter," and "Man from the South" — darkly comic tales with twist endings and sinister undertones.',
-    teachingNotes: 'Engaging twist-ending stories for teaching narrative structure. "Lamb to the Slaughter" is ideal for close reading — students track clues. Compare Dahl\'s dark humour with other styles. Students write their own twist-ending stories.',
+    synopsis:
+      'Dahl\'s adult short stories including "The Landlady," "Lamb to the Slaughter," and "Man from the South" - darkly comic tales with twist endings and sinister undertones.',
+    teachingNotes:
+      'Engaging twist-ending stories for teaching narrative structure. "Lamb to the Slaughter" is ideal for close reading - students track clues. Compare Dahl\'s dark humour with other styles. Students write their own twist-ending stories.',
     keyThemes: ['deception', 'dark humour', 'revenge', 'appearances', 'human nature'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-W1'],
     pageCount: 240,
-    ageAppropriate: 'Suitable for Year 9. Adult Dahl — darker than children\'s books.',
+    ageAppropriate: "Suitable for Year 9. Adult Dahl - darker than children's books.",
   },
   {
     id: 'y9-t2-007',
@@ -1185,12 +1358,15 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Non-fiction / journalism memoir',
     difficulty: 'challenging',
-    synopsis: 'Selected chapters from a war correspondent\'s account of covering conflicts in the Middle East, offering perspectives on truth, trauma, and representation in conflict reporting.',
-    teachingNotes: 'Stretch text linking short story unit to non-fiction. Use selected chapters to compare fictional and non-fictional narrative techniques. Discuss war correspondence as a form. Students write their own "witness" accounts. Handle conflict content sensitively.',
+    synopsis:
+      "Selected chapters from a war correspondent's account of covering conflicts in the Middle East, offering perspectives on truth, trauma, and representation in conflict reporting.",
+    teachingNotes:
+      'Stretch text linking short story unit to non-fiction. Use selected chapters to compare fictional and non-fictional narrative techniques. Discuss war correspondence as a form. Students write their own "witness" accounts. Handle conflict content sensitively.',
     keyThemes: ['truth', 'conflict', 'representation', 'trauma', 'storytelling'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R6', 'KS3-W4'],
     pageCount: 100,
-    ageAppropriate: 'Selected chapters for Year 9. Mature content — teacher pre-selection essential.',
+    ageAppropriate:
+      'Selected chapters for Year 9. Mature content - teacher pre-selection essential.',
   },
   {
     id: 'y9-t2-008',
@@ -1200,14 +1376,17 @@ const year9T2: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Short story collection',
     difficulty: 'advanced',
-    synopsis: 'Selected stories from the Nobel Prize winner known as the master of the modern short story. Quiet, devastating tales of ordinary lives and the complexities beneath the surface.',
-    teachingNotes: 'Challenge text for the most able readers. Munro\'s subtlety teaches close reading at the highest level. Use one or two stories for detailed analysis. Compare with Lahiri for restrained storytelling. Advanced analytical writing outcomes.',
+    synopsis:
+      'Selected stories from the Nobel Prize winner known as the master of the modern short story. Quiet, devastating tales of ordinary lives and the complexities beneath the surface.',
+    teachingNotes:
+      "Challenge text for the most able readers. Munro's subtlety teaches close reading at the highest level. Use one or two stories for detailed analysis. Compare with Lahiri for restrained storytelling. Advanced analytical writing outcomes.",
     keyThemes: ['ordinary lives', 'memory', 'regret', 'relationships', 'time'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5'],
     pageCount: 303,
-    ageAppropriate: 'Selected stories for Year 9. Adult content in some stories — teacher selection.',
+    ageAppropriate:
+      'Selected stories for Year 9. Adult content in some stories - teacher selection.',
   },
-];
+]
 
 const year9T3: ReadingListEntry[] = [
   {
@@ -1218,12 +1397,15 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / social realism',
     difficulty: 'moderate',
-    synopsis: 'George and Lennie, two displaced migrant workers during the Great Depression, dream of owning their own land. A devastating novella about friendship, dreams, and the harsh reality of 1930s America.',
-    teachingNotes: 'Core GCSE preparation text. Teach American Dream context, Great Depression history, and social realism. Focus on Steinbeck\'s methods: foreshadowing, symbolism (mice, rabbits, Candy\'s dog), cyclical structure. Model GCSE analytical paragraphs.',
+    synopsis:
+      'George and Lennie, two displaced migrant workers during the Great Depression, dream of owning their own land. A devastating novella about friendship, dreams, and the harsh reality of 1930s America.',
+    teachingNotes:
+      "Core GCSE preparation text. Teach American Dream context, Great Depression history, and social realism. Focus on Steinbeck's methods: foreshadowing, symbolism (mice, rabbits, Candy's dog), cyclical structure. Model GCSE analytical paragraphs.",
     keyThemes: ['American Dream', 'friendship', 'loneliness', 'prejudice', 'fate'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 112,
-    ageAppropriate: 'Suitable for Year 9. Contains racial slurs (period-accurate) and violence — contextualise carefully.',
+    ageAppropriate:
+      'Suitable for Year 9. Contains racial slurs (period-accurate) and violence - contextualise carefully.',
   },
   {
     id: 'y9-t3-002',
@@ -1233,8 +1415,10 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / social realism',
     difficulty: 'challenging',
-    synopsis: 'Selected chapters from Steinbeck\'s epic about the Joad family\'s journey from the Oklahoma Dust Bowl to California, seeking work and dignity during the Great Depression.',
-    teachingNotes: 'Companion Steinbeck text using selected chapters. Compare with Of Mice and Men for Steinbeck\'s recurring themes. Use intercalary chapters to teach structure and authorial voice. Focus on landscape writing and social commentary techniques.',
+    synopsis:
+      "Selected chapters from Steinbeck's epic about the Joad family's journey from the Oklahoma Dust Bowl to California, seeking work and dignity during the Great Depression.",
+    teachingNotes:
+      "Companion Steinbeck text using selected chapters. Compare with Of Mice and Men for Steinbeck's recurring themes. Use intercalary chapters to teach structure and authorial voice. Focus on landscape writing and social commentary techniques.",
     keyThemes: ['poverty', 'migration', 'family', 'injustice', 'dignity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 120,
@@ -1248,12 +1432,15 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / social realism',
     difficulty: 'moderate',
-    synopsis: 'Scout Finch grows up in Alabama during the 1930s as her father, Atticus, defends a Black man falsely accused of assault. A novel about racial injustice, moral courage, and loss of innocence.',
-    teachingNotes: 'Classic American social realism text. Compare with Of Mice and Men for different perspectives on 1930s prejudice. Teach child narrator technique and its effects. Use for discursive writing on justice. Strong GCSE literature preparation.',
+    synopsis:
+      'Scout Finch grows up in Alabama during the 1930s as her father, Atticus, defends a Black man falsely accused of assault. A novel about racial injustice, moral courage, and loss of innocence.',
+    teachingNotes:
+      'Classic American social realism text. Compare with Of Mice and Men for different perspectives on 1930s prejudice. Teach child narrator technique and its effects. Use for discursive writing on justice. Strong GCSE literature preparation.',
     keyThemes: ['racial injustice', 'moral courage', 'growing up', 'empathy', 'prejudice'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 336,
-    ageAppropriate: 'Suitable for Year 9. Contains racial slurs and discussion of sexual assault — contextualise.',
+    ageAppropriate:
+      'Suitable for Year 9. Contains racial slurs and discussion of sexual assault - contextualise.',
   },
   {
     id: 'y9-t3-004',
@@ -1263,8 +1450,10 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / coming-of-age',
     difficulty: 'moderate',
-    synopsis: 'Holden Caulfield narrates his experiences in New York City after being expelled from prep school. A classic voice novel about alienation, phoniness, and the pain of growing up.',
-    teachingNotes: 'Teach narrative voice and unreliable narration. Compare Holden\'s voice with Scout\'s (To Kill a Mockingbird) for different American perspectives. Use for creative writing in distinctive voice. Discuss why the novel remains controversial.',
+    synopsis:
+      'Holden Caulfield narrates his experiences in New York City after being expelled from prep school. A classic voice novel about alienation, phoniness, and the pain of growing up.',
+    teachingNotes:
+      "Teach narrative voice and unreliable narration. Compare Holden's voice with Scout's (To Kill a Mockingbird) for different American perspectives. Use for creative writing in distinctive voice. Discuss why the novel remains controversial.",
     keyThemes: ['alienation', 'authenticity', 'growing up', 'loss of innocence', 'mental health'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5'],
     pageCount: 234,
@@ -1278,8 +1467,10 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / vignette collection',
     difficulty: 'moderate',
-    synopsis: 'Esperanza Cordero grows up in a Latino neighbourhood in Chicago. Through a series of vignettes, she describes her world, her dreams, and her determination to escape and return to help others.',
-    teachingNotes: 'Beautiful vignette form bridges prose and poetry. Each chapter is a self-contained piece students can analyse. Compare with Steinbeck for different American experiences. Students write their own vignettes about their homes and communities.',
+    synopsis:
+      'Esperanza Cordero grows up in a Latino neighbourhood in Chicago. Through a series of vignettes, she describes her world, her dreams, and her determination to escape and return to help others.',
+    teachingNotes:
+      'Beautiful vignette form bridges prose and poetry. Each chapter is a self-contained piece students can analyse. Compare with Steinbeck for different American experiences. Students write their own vignettes about their homes and communities.',
     keyThemes: ['identity', 'community', 'gender', 'dreams', 'place and belonging'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-W1'],
     pageCount: 110,
@@ -1293,9 +1484,17 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / social commentary',
     difficulty: 'challenging',
-    synopsis: 'Nick Carraway narrates the story of Jay Gatsby, a self-made millionaire who throws extravagant parties in the hope of winning back the love of his life, Daisy Buchanan.',
-    teachingNotes: 'Stretch text for highest attainers. Teach the American Dream as both ideal and illusion. Compare Gatsby\'s reinvention with Pip in Great Expectations. Use for teaching symbolism (green light, eyes of Dr. T.J. Eckleburg, the valley of ashes). Advanced writing.',
-    keyThemes: ['American Dream', 'wealth and corruption', 'love and obsession', 'class', 'illusion'],
+    synopsis:
+      'Nick Carraway narrates the story of Jay Gatsby, a self-made millionaire who throws extravagant parties in the hope of winning back the love of his life, Daisy Buchanan.',
+    teachingNotes:
+      "Stretch text for highest attainers. Teach the American Dream as both ideal and illusion. Compare Gatsby's reinvention with Pip in Great Expectations. Use for teaching symbolism (green light, eyes of Dr. T.J. Eckleburg, the valley of ashes). Advanced writing.",
+    keyThemes: [
+      'American Dream',
+      'wealth and corruption',
+      'love and obsession',
+      'class',
+      'illusion',
+    ],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R3', 'KS3-R5', 'KS3-R7'],
     pageCount: 180,
     ageAppropriate: 'Suitable for Year 9. Some mature themes.',
@@ -1308,12 +1507,15 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American literature / epistolary novel',
     difficulty: 'challenging',
-    synopsis: 'Selected letters from Celie, a young Black woman in the American South, writing to God and to her sister about her experiences of abuse, love, and eventual self-discovery.',
-    teachingNotes: 'Use selected extracts only. Teach the epistolary form and dialect writing. Compare Celie\'s voice with other first-person narrators studied. Discuss Walker\'s use of non-standard English as a deliberate artistic choice. Advanced analytical writing.',
+    synopsis:
+      'Selected letters from Celie, a young Black woman in the American South, writing to God and to her sister about her experiences of abuse, love, and eventual self-discovery.',
+    teachingNotes:
+      "Use selected extracts only. Teach the epistolary form and dialect writing. Compare Celie's voice with other first-person narrators studied. Discuss Walker's use of non-standard English as a deliberate artistic choice. Advanced analytical writing.",
     keyThemes: ['resilience', 'identity', 'sisterhood', 'oppression', 'self-discovery'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-R7'],
     pageCount: 100,
-    ageAppropriate: 'Selected extracts only for Year 9. Contains abuse and violence — teacher pre-selection essential.',
+    ageAppropriate:
+      'Selected extracts only for Year 9. Contains abuse and violence - teacher pre-selection essential.',
   },
   {
     id: 'y9-t3-008',
@@ -1323,17 +1525,25 @@ const year9T3: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'American drama / social realism',
     difficulty: 'challenging',
-    synopsis: 'Willy Loman, an ageing traveling salesman, faces the collapse of his career and his fractured relationship with his sons. Miller\'s devastating critique of the American Dream.',
-    teachingNotes: 'Drama text for the American literature unit. Compare Willy Loman\'s delusions with Gatsby\'s. Teach dramatic conventions: flashback, stage directions as meaning, tragic hero. Students perform key scenes. Strong comparison with Steinbeck\'s social realism.',
-    keyThemes: ['American Dream failure', 'father-son relationships', 'identity', 'capitalism', 'delusion'],
+    synopsis:
+      "Willy Loman, an ageing traveling salesman, faces the collapse of his career and his fractured relationship with his sons. Miller's devastating critique of the American Dream.",
+    teachingNotes:
+      "Drama text for the American literature unit. Compare Willy Loman's delusions with Gatsby's. Teach dramatic conventions: flashback, stage directions as meaning, tragic hero. Students perform key scenes. Strong comparison with Steinbeck's social realism.",
+    keyThemes: [
+      'American Dream failure',
+      'father-son relationships',
+      'identity',
+      'capitalism',
+      'delusion',
+    ],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5', 'KS3-SL1'],
     pageCount: 139,
-    ageAppropriate: 'Suitable for Year 9. Themes of suicide — handle sensitively.',
+    ageAppropriate: 'Suitable for Year 9. Themes of suicide - handle sensitively.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// YEAR 10-11 — 20 books (set texts + supporting reading)
+// YEAR 10-11 - 20 books (set texts + supporting reading)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const year10_11: ReadingListEntry[] = [
@@ -1345,8 +1555,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Drama / morality play',
     difficulty: 'moderate',
-    synopsis: 'A mysterious Inspector visits the wealthy Birling family and reveals how each of them played a role in the death of a young working-class woman. A play about responsibility, class, and social justice.',
-    teachingNotes: 'Core GCSE set text (AQA, Edexcel). Teach dramatic irony, the well-made play structure, and Priestley\'s socialist message. Focus on how Priestley uses the Inspector as a mouthpiece. Model Grade 9 analytical paragraphs throughout.',
+    synopsis:
+      'A mysterious Inspector visits the wealthy Birling family and reveals how each of them played a role in the death of a young working-class woman. A play about responsibility, class, and social justice.',
+    teachingNotes:
+      "Core GCSE set text (AQA, Edexcel). Teach dramatic irony, the well-made play structure, and Priestley's socialist message. Focus on how Priestley uses the Inspector as a mouthpiece. Model Grade 9 analytical paragraphs throughout.",
     keyThemes: ['social responsibility', 'class', 'gender', 'age and generation', 'guilt'],
     linkedCurriculumCodes: ['GCSE-LIT-P2', 'AQA-LIT-S1', 'EDEX-LIT-C1'],
     pageCount: 72,
@@ -1360,8 +1572,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Tragedy / drama',
     difficulty: 'challenging',
-    synopsis: 'A Scottish general receives a prophecy that he will become king. Driven by ambition and his wife\'s ruthlessness, he murders the king and descends into tyranny and madness.',
-    teachingNotes: 'Core GCSE Shakespeare text (most boards). Build on Year 8 graphic novel introduction. Teach soliloquy, dramatic irony, and tragic structure. Use for extract-based analytical writing. Focus on key scenes: dagger speech, banquet, sleepwalking.',
+    synopsis:
+      "A Scottish general receives a prophecy that he will become king. Driven by ambition and his wife's ruthlessness, he murders the king and descends into tyranny and madness.",
+    teachingNotes:
+      'Core GCSE Shakespeare text (most boards). Build on Year 8 graphic novel introduction. Teach soliloquy, dramatic irony, and tragic structure. Use for extract-based analytical writing. Focus on key scenes: dagger speech, banquet, sleepwalking.',
     keyThemes: ['ambition', 'guilt', 'fate vs free will', 'masculinity', 'evil'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'AQA-LIT-S1', 'EDEX-LIT-C2'],
     pageCount: 144,
@@ -1375,8 +1589,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Victorian literature / novella',
     difficulty: 'moderate',
-    synopsis: 'Revisited at GCSE level with deeper analysis of Dickens\'s methods, Victorian context, and structural choices.',
-    teachingNotes: 'GCSE set text (AQA). Build on Year 9 study with advanced analytical focus. Teach Dickens\'s authorial methods: naming, symbolism, narrative voice. Focus on extract analysis under timed conditions. Compare with modern adaptations.',
+    synopsis:
+      "Revisited at GCSE level with deeper analysis of Dickens's methods, Victorian context, and structural choices.",
+    teachingNotes:
+      "GCSE set text (AQA). Build on Year 9 study with advanced analytical focus. Teach Dickens's authorial methods: naming, symbolism, narrative voice. Focus on extract analysis under timed conditions. Compare with modern adaptations.",
     keyThemes: ['redemption', 'social responsibility', 'poverty', 'Christianity', 'memory'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'AQA-LIT-S2'],
     pageCount: 104,
@@ -1390,8 +1606,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Tragedy / drama',
     difficulty: 'challenging',
-    synopsis: 'Two young lovers from feuding families in Verona risk everything for their love. Shakespeare\'s most famous tragedy about the destructive power of hatred and the intensity of young love.',
-    teachingNotes: 'Alternative GCSE Shakespeare text. Compare with Macbeth for different tragic structures. Teach dramatic conventions, verse vs prose, and sonnet form (Prologue). Focus on key scenes for extract analysis. Students track imagery patterns.',
+    synopsis:
+      "Two young lovers from feuding families in Verona risk everything for their love. Shakespeare's most famous tragedy about the destructive power of hatred and the intensity of young love.",
+    teachingNotes:
+      'Alternative GCSE Shakespeare text. Compare with Macbeth for different tragic structures. Teach dramatic conventions, verse vs prose, and sonnet form (Prologue). Focus on key scenes for extract analysis. Students track imagery patterns.',
     keyThemes: ['love', 'conflict', 'fate', 'family honour', 'youth vs age'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'AQA-LIT-S1', 'OCR-LIT-S1'],
     pageCount: 176,
@@ -1405,8 +1623,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Gothic novella',
     difficulty: 'challenging',
-    synopsis: 'Revisited at GCSE level for detailed analytical study of Stevenson\'s methods, Victorian Gothic conventions, and the novella\'s exploration of duality.',
-    teachingNotes: 'GCSE set text. Build on Year 9 reading with advanced critical focus. Teach Victorian context: repression, science vs religion, urban Gothic. Practice extract-based questions under timed conditions. Focus on Stevenson\'s structural choices.',
+    synopsis:
+      "Revisited at GCSE level for detailed analytical study of Stevenson's methods, Victorian Gothic conventions, and the novella's exploration of duality.",
+    teachingNotes:
+      "GCSE set text. Build on Year 9 reading with advanced critical focus. Teach Victorian context: repression, science vs religion, urban Gothic. Practice extract-based questions under timed conditions. Focus on Stevenson's structural choices.",
     keyThemes: ['duality', 'repression', 'science and religion', 'secrecy', 'Victorian morality'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'AQA-LIT-S2', 'EDEX-LIT-C3'],
     pageCount: 96,
@@ -1420,12 +1640,14 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Allegorical fiction',
     difficulty: 'moderate',
-    synopsis: 'A group of boys stranded on a deserted island attempt to govern themselves but descend into savagery. Golding\'s allegory about civilisation and the darkness within human nature.',
-    teachingNotes: 'GCSE set text (some boards) or supporting text. Teach allegory, symbolism (conch, Piggy\'s glasses, the beast, the Lord of the Flies), and the island as microcosm. Compare with Priestley for different approaches to civilisation and morality.',
+    synopsis:
+      "A group of boys stranded on a deserted island attempt to govern themselves but descend into savagery. Golding's allegory about civilisation and the darkness within human nature.",
+    teachingNotes:
+      "GCSE set text (some boards) or supporting text. Teach allegory, symbolism (conch, Piggy's glasses, the beast, the Lord of the Flies), and the island as microcosm. Compare with Priestley for different approaches to civilisation and morality.",
     keyThemes: ['civilisation vs savagery', 'power', 'fear', 'innocence lost', 'democracy'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'WJEC-LIT-S2'],
     pageCount: 224,
-    ageAppropriate: 'Suitable for Years 10-11. Violence — contextualise as allegory.',
+    ageAppropriate: 'Suitable for Years 10-11. Violence - contextualise as allegory.',
   },
   {
     id: 'y10-007',
@@ -1435,9 +1657,17 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Political allegory / fable',
     difficulty: 'moderate',
-    synopsis: 'Revisited at GCSE level with deeper focus on political allegory, propaganda techniques, and Orwell\'s craft.',
-    teachingNotes: 'GCSE set text or supporting text. Build on Year 8 reading. At GCSE level, focus on how Orwell constructs the allegory rather than just what it represents. Teach propaganda techniques through Squealer. Compare with An Inspector Calls for political messaging.',
-    keyThemes: ['power and corruption', 'propaganda', 'equality', 'revolution betrayed', 'language as control'],
+    synopsis:
+      "Revisited at GCSE level with deeper focus on political allegory, propaganda techniques, and Orwell's craft.",
+    teachingNotes:
+      'GCSE set text or supporting text. Build on Year 8 reading. At GCSE level, focus on how Orwell constructs the allegory rather than just what it represents. Teach propaganda techniques through Squealer. Compare with An Inspector Calls for political messaging.',
+    keyThemes: [
+      'power and corruption',
+      'propaganda',
+      'equality',
+      'revolution betrayed',
+      'language as control',
+    ],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'AQA-LIT-S2', 'IGCSE-LIT-S1'],
     pageCount: 112,
     ageAppropriate: 'Suitable for Years 10-11.',
@@ -1450,8 +1680,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Poetry anthology',
     difficulty: 'challenging',
-    synopsis: 'Fifteen poems exploring power and conflict from Shelley\'s "Ozymandias" to Agard\'s "Checking Out Me History," spanning centuries and cultures.',
-    teachingNotes: 'Core GCSE poetry text (AQA). Teach each poem individually, then build comparison skills. Use poetry comparison grid. Students practice comparison essays under timed conditions. Revision through poetry circles and annotation workshops.',
+    synopsis:
+      'Fifteen poems exploring power and conflict from Shelley\'s "Ozymandias" to Agard\'s "Checking Out Me History," spanning centuries and cultures.',
+    teachingNotes:
+      'Core GCSE poetry text (AQA). Teach each poem individually, then build comparison skills. Use poetry comparison grid. Students practice comparison essays under timed conditions. Revision through poetry circles and annotation workshops.',
     keyThemes: ['power', 'conflict', 'identity', 'nature', 'memory'],
     linkedCurriculumCodes: ['GCSE-LIT-P2', 'AQA-LIT-S3'],
     pageCount: 48,
@@ -1465,8 +1697,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Poetry anthology',
     difficulty: 'challenging',
-    synopsis: 'Fifteen poems exploring love and relationships from Byron\'s "When We Two Parted" to Dharker\'s "Tissue," examining different forms of love across time and culture.',
-    teachingNotes: 'Core GCSE poetry text (AQA). Teach comparison skills through pairing poems by theme, form, and period. Students build personal comparison matrices. Timed essay practice essential in Year 11. Revision clinics using unseen poetry method.',
+    synopsis:
+      'Fifteen poems exploring love and relationships from Byron\'s "When We Two Parted" to Dharker\'s "Tissue," examining different forms of love across time and culture.',
+    teachingNotes:
+      'Core GCSE poetry text (AQA). Teach comparison skills through pairing poems by theme, form, and period. Students build personal comparison matrices. Timed essay practice essential in Year 11. Revision clinics using unseen poetry method.',
     keyThemes: ['romantic love', 'family love', 'loss', 'memory', 'identity'],
     linkedCurriculumCodes: ['GCSE-LIT-P2', 'AQA-LIT-S3'],
     pageCount: 48,
@@ -1480,8 +1714,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Drama / musical play',
     difficulty: 'moderate',
-    synopsis: 'Twin brothers separated at birth grow up in different social classes in Liverpool. One is raised in wealth, the other in poverty. When they meet again, tragedy unfolds.',
-    teachingNotes: 'Alternative GCSE drama text. Teach dramatic irony (audience knows the secret), the Narrator as chorus, and Russell\'s use of song. Compare class themes with An Inspector Calls. Strong for teaching dramatic tension and stagecraft.',
+    synopsis:
+      'Twin brothers separated at birth grow up in different social classes in Liverpool. One is raised in wealth, the other in poverty. When they meet again, tragedy unfolds.',
+    teachingNotes:
+      "Alternative GCSE drama text. Teach dramatic irony (audience knows the secret), the Narrator as chorus, and Russell's use of song. Compare class themes with An Inspector Calls. Strong for teaching dramatic tension and stagecraft.",
     keyThemes: ['class division', 'nature vs nurture', 'fate', 'friendship', 'superstition'],
     linkedCurriculumCodes: ['GCSE-LIT-P2', 'WJEC-LIT-S1'],
     pageCount: 112,
@@ -1495,8 +1731,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Dystopian fiction / literary fiction',
     difficulty: 'challenging',
-    synopsis: 'Kathy H. looks back on her childhood at Hailsham, a seemingly idyllic English boarding school. Gradually, the terrible truth about the students\' purpose is revealed.',
-    teachingNotes: 'Supporting text for GCSE literature study. Compare with other dystopian texts (The Giver, Animal Farm). Teach Ishiguro\'s restrained style and unreliable narration. Use for exploring ethics in fiction. Advanced analytical writing practice.',
+    synopsis:
+      "Kathy H. looks back on her childhood at Hailsham, a seemingly idyllic English boarding school. Gradually, the terrible truth about the students' purpose is revealed.",
+    teachingNotes:
+      "Supporting text for GCSE literature study. Compare with other dystopian texts (The Giver, Animal Farm). Teach Ishiguro's restrained style and unreliable narration. Use for exploring ethics in fiction. Advanced analytical writing practice.",
     keyThemes: ['mortality', 'identity', 'ethics', 'love', 'compliance'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'GCSE-LIT-SUPP'],
     pageCount: 288,
@@ -1510,9 +1748,11 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Poetry collection',
     difficulty: 'challenging',
-    synopsis: 'A teacher-compiled collection of poems for unseen poetry practice, spanning contemporary and classic poets not included in the anthology, organised by theme for comparison practice.',
-    teachingNotes: 'Essential exam preparation resource. Use for weekly unseen poetry practice. Students develop annotation strategies and timed response skills. Include poems from diverse traditions. Rotate collection annually to prevent familiarity.',
-    keyThemes: ['varied — matched to exam themes'],
+    synopsis:
+      'A teacher-compiled collection of poems for unseen poetry practice, spanning contemporary and classic poets not included in the anthology, organised by theme for comparison practice.',
+    teachingNotes:
+      'Essential exam preparation resource. Use for weekly unseen poetry practice. Students develop annotation strategies and timed response skills. Include poems from diverse traditions. Rotate collection annually to prevent familiarity.',
+    keyThemes: ['varied - matched to exam themes'],
     linkedCurriculumCodes: ['GCSE-LIT-P2', 'AQA-LIT-S3', 'EDEX-LIT-C4'],
     pageCount: 80,
     ageAppropriate: 'Teacher-curated for Years 10-11.',
@@ -1525,9 +1765,11 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Fiction extracts / exam preparation',
     difficulty: 'challenging',
-    synopsis: 'A collection of fiction extracts from past and practice papers for AQA English Language Paper 1, covering 19th, 20th, and 21st-century prose.',
-    teachingNotes: 'Exam practice resource. Students work through extracts developing skills for Q1-Q5. Use for timed practice sessions. Teach annotation strategies specific to each question type. Build a bank of language analysis vocabulary.',
-    keyThemes: ['varied — literary fiction analysis'],
+    synopsis:
+      'A collection of fiction extracts from past and practice papers for AQA English Language Paper 1, covering 19th, 20th, and 21st-century prose.',
+    teachingNotes:
+      'Exam practice resource. Students work through extracts developing skills for Q1-Q5. Use for timed practice sessions. Teach annotation strategies specific to each question type. Build a bank of language analysis vocabulary.',
+    keyThemes: ['varied - literary fiction analysis'],
     linkedCurriculumCodes: ['GCSE-LANG-P1', 'AQA-LANG-S1'],
     pageCount: 120,
     ageAppropriate: 'Suitable for Years 10-11.',
@@ -1540,9 +1782,11 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Non-fiction extracts / exam preparation',
     difficulty: 'challenging',
-    synopsis: 'A collection of non-fiction source texts from past and practice papers for AQA English Language Paper 2, covering 19th-century and modern non-fiction.',
-    teachingNotes: 'Exam practice resource. Students develop comparison skills for Q4 and viewpoint writing for Q5. Use for timed practice sessions. Teach the specific demands of each question. Build knowledge of non-fiction conventions and rhetorical devices.',
-    keyThemes: ['varied — non-fiction analysis and writing'],
+    synopsis:
+      'A collection of non-fiction source texts from past and practice papers for AQA English Language Paper 2, covering 19th-century and modern non-fiction.',
+    teachingNotes:
+      'Exam practice resource. Students develop comparison skills for Q4 and viewpoint writing for Q5. Use for timed practice sessions. Teach the specific demands of each question. Build knowledge of non-fiction conventions and rhetorical devices.',
+    keyThemes: ['varied - non-fiction analysis and writing'],
     linkedCurriculumCodes: ['GCSE-LANG-P2', 'AQA-LANG-S2'],
     pageCount: 120,
     ageAppropriate: 'Suitable for Years 10-11.',
@@ -1555,8 +1799,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Contemporary fiction / mystery',
     difficulty: 'moderate',
-    synopsis: 'Christopher, a mathematically gifted teenager with autism, investigates the death of a neighbour\'s dog and uncovers family secrets that change his world.',
-    teachingNotes: 'Supporting GCSE text. Teach first-person neurodivergent narration. Compare Christopher\'s voice with other narrators studied. Use for exploring how writers create distinctive narrative voices. Links to discussions about representation.',
+    synopsis:
+      "Christopher, a mathematically gifted teenager with autism, investigates the death of a neighbour's dog and uncovers family secrets that change his world.",
+    teachingNotes:
+      "Supporting GCSE text. Teach first-person neurodivergent narration. Compare Christopher's voice with other narrators studied. Use for exploring how writers create distinctive narrative voices. Links to discussions about representation.",
     keyThemes: ['neurodivergence', 'truth', 'family', 'independence', 'perspective'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'GCSE-LANG-P1'],
     pageCount: 226,
@@ -1570,8 +1816,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Gothic horror',
     difficulty: 'moderate',
-    synopsis: 'Revisited at GCSE level for detailed study of Gothic conventions, suspense techniques, and narrative structure.',
-    teachingNotes: 'Supporting GCSE text or set text (some boards). Build on Year 9 reading with advanced Gothic analysis. Compare with Jekyll and Hyde for Victorian vs modern Gothic. Teach atmosphere, suspense, and setting as character.',
+    synopsis:
+      'Revisited at GCSE level for detailed study of Gothic conventions, suspense techniques, and narrative structure.',
+    teachingNotes:
+      'Supporting GCSE text or set text (some boards). Build on Year 9 reading with advanced Gothic analysis. Compare with Jekyll and Hyde for Victorian vs modern Gothic. Teach atmosphere, suspense, and setting as character.',
     keyThemes: ['fear', 'grief', 'isolation', 'the past', 'the supernatural'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'IGCSE-LIT-S2'],
     pageCount: 200,
@@ -1585,12 +1833,14 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T3',
     genre: 'Contemporary fiction / social realism',
     difficulty: 'moderate',
-    synopsis: 'Harrison Opoku, recently arrived from Ghana, navigates life on a London housing estate. When a boy is murdered, Harrison decides to investigate, unaware of the danger he is putting himself in.',
-    teachingNotes: 'Companion to GCSE set texts. Teach voice, dialect, and cultural identity. Compare with set texts for different presentations of society. Use for Language Paper 1 practice — Harrison\'s voice provides excellent extract material.',
+    synopsis:
+      'Harrison Opoku, recently arrived from Ghana, navigates life on a London housing estate. When a boy is murdered, Harrison decides to investigate, unaware of the danger he is putting himself in.',
+    teachingNotes:
+      "Companion to GCSE set texts. Teach voice, dialect, and cultural identity. Compare with set texts for different presentations of society. Use for Language Paper 1 practice - Harrison's voice provides excellent extract material.",
     keyThemes: ['knife crime', 'immigration', 'innocence', 'community', 'identity'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'GCSE-LANG-P1'],
     pageCount: 272,
-    ageAppropriate: 'Suitable for Years 10-11. Themes of knife crime — handle sensitively.',
+    ageAppropriate: 'Suitable for Years 10-11. Themes of knife crime - handle sensitively.',
   },
   {
     id: 'y10-018',
@@ -1600,8 +1850,10 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: '19th-century literature / social comedy',
     difficulty: 'challenging',
-    synopsis: 'Selected chapters from Austen\'s comedy of manners, focusing on Elizabeth Bennet\'s relationship with Mr Darcy and Austen\'s satirical treatment of class and marriage.',
-    teachingNotes: 'Supporting text for 19th-century literature study. Compare Austen\'s social criticism with Dickens and Stevenson. Teach irony, free indirect discourse, and social commentary. Selected chapters for class study; full novel for independent reading.',
+    synopsis:
+      "Selected chapters from Austen's comedy of manners, focusing on Elizabeth Bennet's relationship with Mr Darcy and Austen's satirical treatment of class and marriage.",
+    teachingNotes:
+      "Supporting text for 19th-century literature study. Compare Austen's social criticism with Dickens and Stevenson. Teach irony, free indirect discourse, and social commentary. Selected chapters for class study; full novel for independent reading.",
     keyThemes: ['class', 'marriage', 'pride', 'prejudice', 'gender'],
     linkedCurriculumCodes: ['GCSE-LIT-P1', 'GCSE-LIT-SUPP'],
     pageCount: 150,
@@ -1615,12 +1867,15 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Contemporary fiction / international literature',
     difficulty: 'challenging',
-    synopsis: 'Amir recalls his childhood in Kabul, his betrayal of his friend Hassan, and his journey of redemption decades later against the backdrop of Afghanistan\'s turbulent history.',
-    teachingNotes: 'Supporting text bridging to A Level. Strong links to IGCSE literature. Teach guilt, redemption, and cultural context. Compare father-son relationships across texts studied. Use for extended analytical writing. Sensitive content requires careful handling.',
+    synopsis:
+      "Amir recalls his childhood in Kabul, his betrayal of his friend Hassan, and his journey of redemption decades later against the backdrop of Afghanistan's turbulent history.",
+    teachingNotes:
+      'Supporting text bridging to A Level. Strong links to IGCSE literature. Teach guilt, redemption, and cultural context. Compare father-son relationships across texts studied. Use for extended analytical writing. Sensitive content requires careful handling.',
     keyThemes: ['guilt', 'redemption', 'friendship', 'class', 'cultural identity'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'IGCSE-LIT-S1'],
     pageCount: 371,
-    ageAppropriate: 'Suitable for Year 11. Contains sexual violence and war — teacher discretion essential.',
+    ageAppropriate:
+      'Suitable for Year 11. Contains sexual violence and war - teacher discretion essential.',
   },
   {
     id: 'y10-020',
@@ -1630,17 +1885,19 @@ const year10_11: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Dystopian fiction',
     difficulty: 'challenging',
-    synopsis: 'Winston Smith lives under the total surveillance of Big Brother in a totalitarian state. When he begins a forbidden love affair, he discovers the true horror of the Party\'s power.',
-    teachingNotes: 'Bridge text to A Level. Compare with Animal Farm for Orwell\'s evolving political vision. Teach Newspeak as language control — links to Language study. Use for extended essay writing on dystopia. Strong preparation for post-16 literary study.',
+    synopsis:
+      "Winston Smith lives under the total surveillance of Big Brother in a totalitarian state. When he begins a forbidden love affair, he discovers the true horror of the Party's power.",
+    teachingNotes:
+      "Bridge text to A Level. Compare with Animal Farm for Orwell's evolving political vision. Teach Newspeak as language control - links to Language study. Use for extended essay writing on dystopia. Strong preparation for post-16 literary study.",
     keyThemes: ['totalitarianism', 'surveillance', 'language as control', 'truth', 'resistance'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'ALEVEL-LIT-PREP'],
     pageCount: 328,
-    ageAppropriate: 'Suitable for Year 11. Mature themes including torture — contextualise.',
+    ageAppropriate: 'Suitable for Year 11. Mature themes including torture - contextualise.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// YEAR 12-13 — 15 books (Linguistics & Language Study)
+// YEAR 12-13 - 15 books (Linguistics & Language Study)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const year12_13: ReadingListEntry[] = [
@@ -1652,9 +1909,16 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Linguistics / popular science',
     difficulty: 'advanced',
-    synopsis: 'Pinker argues that language is a biological instinct, not a cultural artefact. A foundational text exploring how children acquire language, how language changes, and why grammar rules often miss the point.',
-    teachingNotes: 'Core A Level linguistics text. Use chapters selectively to support language acquisition and change modules. Pinker\'s accessible style makes complex concepts approachable. Compare with Aitchison for different perspectives on language change.',
-    keyThemes: ['language acquisition', 'universal grammar', 'language and mind', 'prescriptivism vs descriptivism'],
+    synopsis:
+      'Pinker argues that language is a biological instinct, not a cultural artefact. A foundational text exploring how children acquire language, how language changes, and why grammar rules often miss the point.',
+    teachingNotes:
+      "Core A Level linguistics text. Use chapters selectively to support language acquisition and change modules. Pinker's accessible style makes complex concepts approachable. Compare with Aitchison for different perspectives on language change.",
+    keyThemes: [
+      'language acquisition',
+      'universal grammar',
+      'language and mind',
+      'prescriptivism vs descriptivism',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S3'],
     pageCount: 494,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1667,8 +1931,10 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Linguistics textbook',
     difficulty: 'advanced',
-    synopsis: 'A comprehensive exploration of how and why languages change over time, covering phonological, grammatical, and semantic change with clear examples from English and other languages.',
-    teachingNotes: 'Core textbook for language change module. Aitchison\'s "crumbling castle," "damp spoon," and "infectious disease" metaphors are essential for essay writing. Students apply her frameworks to real data. Compare with Pinker.',
+    synopsis:
+      'A comprehensive exploration of how and why languages change over time, covering phonological, grammatical, and semantic change with clear examples from English and other languages.',
+    teachingNotes:
+      'Core textbook for language change module. Aitchison\'s "crumbling castle," "damp spoon," and "infectious disease" metaphors are essential for essay writing. Students apply her frameworks to real data. Compare with Pinker.',
     keyThemes: ['language change', 'standardisation', 'prescriptivism', 'etymology'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S3'],
     pageCount: 312,
@@ -1682,9 +1948,16 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Popular linguistics',
     difficulty: 'moderate',
-    synopsis: 'Bryson\'s entertaining exploration of the English language — its origins, evolution, and peculiarities. Accessible and witty, covering everything from spelling to swearing.',
-    teachingNotes: 'Engaging introductory text for A Level English Language. Use to build enthusiasm for linguistic study. Bryson\'s anecdotal style contrasts with academic texts — teach students to evaluate different registers of linguistic writing. Good holiday pre-reading.',
-    keyThemes: ['history of English', 'language variety', 'spelling and pronunciation', 'language and identity'],
+    synopsis:
+      "Bryson's entertaining exploration of the English language - its origins, evolution, and peculiarities. Accessible and witty, covering everything from spelling to swearing.",
+    teachingNotes:
+      "Engaging introductory text for A Level English Language. Use to build enthusiasm for linguistic study. Bryson's anecdotal style contrasts with academic texts - teach students to evaluate different registers of linguistic writing. Good holiday pre-reading.",
+    keyThemes: [
+      'history of English',
+      'language variety',
+      'spelling and pronunciation',
+      'language and identity',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S3'],
     pageCount: 270,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1697,8 +1970,10 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Critical discourse analysis',
     difficulty: 'advanced',
-    synopsis: 'Fairclough\'s foundational text on critical discourse analysis, examining how language reinforces and challenges power structures in politics, media, and everyday life.',
-    teachingNotes: 'Essential for language and power module. Teach Fairclough\'s framework for analysing discourse: description, interpretation, explanation. Students apply CDA to political speeches, adverts, and news articles. Compare with Lakoff and Cameron.',
+    synopsis:
+      "Fairclough's foundational text on critical discourse analysis, examining how language reinforces and challenges power structures in politics, media, and everyday life.",
+    teachingNotes:
+      "Essential for language and power module. Teach Fairclough's framework for analysing discourse: description, interpretation, explanation. Students apply CDA to political speeches, adverts, and news articles. Compare with Lakoff and Cameron.",
     keyThemes: ['power', 'ideology', 'discourse', 'media language', 'political language'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2', 'ALEVEL-LANG-S4'],
     pageCount: 272,
@@ -1712,9 +1987,17 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Sociolinguistics',
     difficulty: 'advanced',
-    synopsis: 'A comprehensive overview of research into language and gender, covering deficit, dominance, difference, and performativity models with empirical evidence.',
-    teachingNotes: 'Core text for language and gender module. Teach chronological development of gender theories: Lakoff (deficit), Zimmerman & West (dominance), Tannen (difference), Butler (performativity). Students conduct their own gender-language investigations.',
-    keyThemes: ['gender', 'language variation', 'social identity', 'power', 'conversation analysis'],
+    synopsis:
+      'A comprehensive overview of research into language and gender, covering deficit, dominance, difference, and performativity models with empirical evidence.',
+    teachingNotes:
+      'Core text for language and gender module. Teach chronological development of gender theories: Lakoff (deficit), Zimmerman & West (dominance), Tannen (difference), Butler (performativity). Students conduct their own gender-language investigations.',
+    keyThemes: [
+      'gender',
+      'language variation',
+      'social identity',
+      'power',
+      'conversation analysis',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2', 'ALEVEL-LANG-S4'],
     pageCount: 320,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1727,8 +2010,10 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Style guide / popular linguistics',
     difficulty: 'moderate',
-    synopsis: 'A witty exploration of punctuation in English, arguing passionately for its importance while entertaining readers with examples of how punctuation changes meaning.',
-    teachingNotes: 'Engaging prescriptivism text. Use to introduce the prescriptivism vs descriptivism debate. Compare Truss\'s position with Pinker\'s. Students evaluate whether "correct" punctuation matters and write their own arguments. Accessible and amusing.',
+    synopsis:
+      'A witty exploration of punctuation in English, arguing passionately for its importance while entertaining readers with examples of how punctuation changes meaning.',
+    teachingNotes:
+      'Engaging prescriptivism text. Use to introduce the prescriptivism vs descriptivism debate. Compare Truss\'s position with Pinker\'s. Students evaluate whether "correct" punctuation matters and write their own arguments. Accessible and amusing.',
     keyThemes: ['punctuation', 'prescriptivism', 'standard English', 'language change'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S3'],
     pageCount: 209,
@@ -1742,8 +2027,10 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Style guide / writing reference',
     difficulty: 'moderate',
-    synopsis: 'The classic American style guide offering concise rules for clear, effective writing. A foundational text for understanding conventions of written English.',
-    teachingNotes: 'Reference text for improving students\' own academic writing. Compare American and British style conventions. Use rules as starting points for discussion: are they universal? Outdated? Students evaluate prescriptive rules against descriptive reality.',
+    synopsis:
+      'The classic American style guide offering concise rules for clear, effective writing. A foundational text for understanding conventions of written English.',
+    teachingNotes:
+      "Reference text for improving students' own academic writing. Compare American and British style conventions. Use rules as starting points for discussion: are they universal? Outdated? Students evaluate prescriptive rules against descriptive reality.",
     keyThemes: ['writing style', 'clarity', 'concision', 'grammar conventions'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-NEA'],
     pageCount: 105,
@@ -1757,9 +2044,16 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Linguistics textbook',
     difficulty: 'advanced',
-    synopsis: 'A comprehensive guide to child language acquisition theories covering Skinner, Chomsky, Bruner, Piaget, and Vygotsky, with phonological, semantic, grammatical, and pragmatic development stages.',
-    teachingNotes: 'Core textbook for CLA module. Students learn to analyse child language data transcripts. Teach each theory and its evidence base. Students conduct their own CLA investigations for coursework. Compare theorists systematically.',
-    keyThemes: ['language acquisition', 'nativism vs behaviourism', 'cognitive development', 'caregiver speech'],
+    synopsis:
+      'A comprehensive guide to child language acquisition theories covering Skinner, Chomsky, Bruner, Piaget, and Vygotsky, with phonological, semantic, grammatical, and pragmatic development stages.',
+    teachingNotes:
+      'Core textbook for CLA module. Students learn to analyse child language data transcripts. Teach each theory and its evidence base. Students conduct their own CLA investigations for coursework. Compare theorists systematically.',
+    keyThemes: [
+      'language acquisition',
+      'nativism vs behaviourism',
+      'cognitive development',
+      'caregiver speech',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S3'],
     pageCount: 200,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1772,9 +2066,17 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T2',
     genre: 'Popular linguistics / digital language',
     difficulty: 'moderate',
-    synopsis: 'A linguist explores how the internet has transformed language, from emoji to memes to the new rules of online communication. Based on extensive research into digital language use.',
-    teachingNotes: 'Essential modern text for language and technology module. Students relate McCulloch\'s findings to their own digital language use. Use for NEA investigations into online language. Compare with older views of language change (Aitchison, Crystal).',
-    keyThemes: ['digital language', 'language change', 'identity online', 'informality', 'new conventions'],
+    synopsis:
+      'A linguist explores how the internet has transformed language, from emoji to memes to the new rules of online communication. Based on extensive research into digital language use.',
+    teachingNotes:
+      "Essential modern text for language and technology module. Students relate McCulloch's findings to their own digital language use. Use for NEA investigations into online language. Compare with older views of language change (Aitchison, Crystal).",
+    keyThemes: [
+      'digital language',
+      'language change',
+      'identity online',
+      'informality',
+      'new conventions',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S3', 'ALEVEL-LANG-S4', 'ALEVEL-LANG-NEA'],
     pageCount: 326,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1787,9 +2089,17 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Linguistics / world Englishes',
     difficulty: 'advanced',
-    synopsis: 'Crystal examines the global spread of English, World Englishes, and the implications of English as a global language for linguistic diversity and cultural identity.',
-    teachingNotes: 'Core text for World Englishes module. Teach Kachru\'s three circles model alongside Crystal. Students investigate varieties of English from around the world. Use for debate: is the spread of English linguistic imperialism? NEA topic inspiration.',
-    keyThemes: ['World Englishes', 'lingua franca', 'linguistic imperialism', 'language diversity', 'globalisation'],
+    synopsis:
+      'Crystal examines the global spread of English, World Englishes, and the implications of English as a global language for linguistic diversity and cultural identity.',
+    teachingNotes:
+      "Core text for World Englishes module. Teach Kachru's three circles model alongside Crystal. Students investigate varieties of English from around the world. Use for debate: is the spread of English linguistic imperialism? NEA topic inspiration.",
+    keyThemes: [
+      'World Englishes',
+      'lingua franca',
+      'linguistic imperialism',
+      'language diversity',
+      'globalisation',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S4', 'ALEVEL-LANG-NEA'],
     pageCount: 288,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1802,9 +2112,17 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Sociolinguistics / critical linguistics',
     difficulty: 'advanced',
-    synopsis: 'Cameron examines the politics of language: why people care so much about "correct" usage, how style guides police language, and the ideological underpinnings of language debates.',
-    teachingNotes: 'Advanced theoretical text. Use to deepen understanding of prescriptivism and its social functions. Compare with Truss (prescriptivist) and Pinker (nativist) for contrasting positions. Students write extended essays evaluating language attitudes.',
-    keyThemes: ['language ideology', 'prescriptivism', 'political correctness', 'language attitudes', 'standard English'],
+    synopsis:
+      'Cameron examines the politics of language: why people care so much about "correct" usage, how style guides police language, and the ideological underpinnings of language debates.',
+    teachingNotes:
+      'Advanced theoretical text. Use to deepen understanding of prescriptivism and its social functions. Compare with Truss (prescriptivist) and Pinker (nativist) for contrasting positions. Students write extended essays evaluating language attitudes.',
+    keyThemes: [
+      'language ideology',
+      'prescriptivism',
+      'political correctness',
+      'language attitudes',
+      'standard English',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2', 'ALEVEL-LANG-S4'],
     pageCount: 264,
     ageAppropriate: 'Suitable for Year 13.',
@@ -1817,8 +2135,10 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Linguistics textbook',
     difficulty: 'advanced',
-    synopsis: 'A practical introduction to pragmatics covering speech acts, Grice\'s maxims, politeness theory, and discourse analysis with extensive examples from real language data.',
-    teachingNotes: 'Core text for pragmatics and discourse analysis modules. Students learn to apply Grice, Brown & Levinson, and Austin/Searle to real data. Essential for NEA investigations involving spoken language. Practice with transcription and analysis.',
+    synopsis:
+      "A practical introduction to pragmatics covering speech acts, Grice's maxims, politeness theory, and discourse analysis with extensive examples from real language data.",
+    teachingNotes:
+      'Core text for pragmatics and discourse analysis modules. Students learn to apply Grice, Brown & Levinson, and Austin/Searle to real data. Essential for NEA investigations involving spoken language. Practice with transcription and analysis.',
     keyThemes: ['pragmatics', 'speech acts', 'politeness', 'implicature', 'discourse structure'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2', 'ALEVEL-LANG-NEA'],
     pageCount: 212,
@@ -1826,15 +2146,23 @@ const year12_13: ReadingListEntry[] = [
   },
   {
     id: 'y12-013',
-    title: 'Don\'t Believe a Word',
+    title: "Don't Believe a Word",
     author: 'David Shariatmadari',
     yearGroup: 13,
     termUnit: 'T2',
     genre: 'Popular linguistics',
     difficulty: 'moderate',
-    synopsis: 'Nine myths about language debunked by a journalist-linguist: from "Some languages are better than others" to "Language is going to the dogs." Accessible and thought-provoking.',
-    teachingNotes: 'Excellent revision and synoptic text. Each chapter addresses a common misconception that maps to A Level topics. Students evaluate the evidence and write their own "myth-busting" articles. Good preparation for Language Investigation NEA.',
-    keyThemes: ['language myths', 'descriptivism', 'language change', 'multilingualism', 'language and thought'],
+    synopsis:
+      'Nine myths about language debunked by a journalist-linguist: from "Some languages are better than others" to "Language is going to the dogs." Accessible and thought-provoking.',
+    teachingNotes:
+      'Excellent revision and synoptic text. Each chapter addresses a common misconception that maps to A Level topics. Students evaluate the evidence and write their own "myth-busting" articles. Good preparation for Language Investigation NEA.',
+    keyThemes: [
+      'language myths',
+      'descriptivism',
+      'language change',
+      'multilingualism',
+      'language and thought',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S3', 'ALEVEL-LANG-S4'],
     pageCount: 304,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -1847,8 +2175,10 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Linguistics textbook / reference',
     difficulty: 'advanced',
-    synopsis: 'A comprehensive introductory textbook covering all major areas of linguistics: phonetics, morphology, syntax, semantics, pragmatics, sociolinguistics, and psycholinguistics.',
-    teachingNotes: 'Reference textbook for the full A Level course. Dip-in resource rather than cover-to-cover reading. Use relevant chapters to support each module. Students use the glossary for terminology building. Compare explanations with Pinker and Crystal.',
+    synopsis:
+      'A comprehensive introductory textbook covering all major areas of linguistics: phonetics, morphology, syntax, semantics, pragmatics, sociolinguistics, and psycholinguistics.',
+    teachingNotes:
+      'Reference textbook for the full A Level course. Dip-in resource rather than cover-to-cover reading. Use relevant chapters to support each module. Students use the glossary for terminology building. Compare explanations with Pinker and Crystal.',
     keyThemes: ['all areas of linguistics'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S2', 'ALEVEL-LANG-S3', 'ALEVEL-LANG-S4'],
     pageCount: 280,
@@ -1862,17 +2192,19 @@ const year12_13: ReadingListEntry[] = [
     termUnit: 'T1',
     genre: 'Vocabulary / etymology reference',
     difficulty: 'moderate',
-    synopsis: 'A systematic vocabulary building programme using etymology, root words, and word families. Practical exercises help students expand their vocabulary through understanding word origins.',
-    teachingNotes: 'Reference resource for building academic vocabulary. Use word root exercises as warm-up activities. Students explore how etymology connects to language change theory. Practical complement to theoretical linguistics texts.',
+    synopsis:
+      'A systematic vocabulary building programme using etymology, root words, and word families. Practical exercises help students expand their vocabulary through understanding word origins.',
+    teachingNotes:
+      'Reference resource for building academic vocabulary. Use word root exercises as warm-up activities. Students explore how etymology connects to language change theory. Practical complement to theoretical linguistics texts.',
     keyThemes: ['etymology', 'vocabulary building', 'word formation', 'Latin and Greek roots'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S3'],
     pageCount: 574,
     ageAppropriate: 'Suitable for Years 12-13.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// READING FOR PLEASURE — 10 per year group
+// READING FOR PLEASURE - 10 per year group
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const readingForPleasure: ReadingListEntry[] = [
@@ -1885,8 +2217,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Fantasy / mythology',
     difficulty: 'accessible',
-    synopsis: 'Percy Jackson discovers he is the son of Poseidon and must find Zeus\'s stolen lightning bolt before a war of the gods destroys civilisation.',
-    teachingNotes: 'Hugely popular series that builds mythology knowledge. Students who read this independently will have stronger context for the myths unit. Encourage whole-series reading.',
+    synopsis:
+      "Percy Jackson discovers he is the son of Poseidon and must find Zeus's stolen lightning bolt before a war of the gods destroys civilisation.",
+    teachingNotes:
+      'Hugely popular series that builds mythology knowledge. Students who read this independently will have stronger context for the myths unit. Encourage whole-series reading.',
     keyThemes: ['mythology', 'identity', 'friendship', 'heroism'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 377,
@@ -1900,8 +2234,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Mystery / detective fiction',
     difficulty: 'accessible',
-    synopsis: 'Ted\'s cousin Salim gets on the London Eye but never comes off. Ted, whose brain works differently from everyone else\'s, uses his unique perspective to solve the mystery.',
-    teachingNotes: 'Engaging mystery with neurodivergent protagonist. Students who enjoy this can explore more detective fiction independently. Good for building inference skills.',
+    synopsis:
+      "Ted's cousin Salim gets on the London Eye but never comes off. Ted, whose brain works differently from everyone else's, uses his unique perspective to solve the mystery.",
+    teachingNotes:
+      'Engaging mystery with neurodivergent protagonist. Students who enjoy this can explore more detective fiction independently. Good for building inference skills.',
     keyThemes: ['neurodivergence', 'family', 'mystery', 'logic'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 322,
@@ -1915,8 +2251,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Fantasy / adventure',
     difficulty: 'moderate',
-    synopsis: 'Bilbo Baggins, a comfort-loving hobbit, is whisked away on an unexpected adventure with a wizard and thirteen dwarves to reclaim a treasure guarded by a dragon.',
-    teachingNotes: 'Classic quest narrative building fantasy genre knowledge. Links to the hero\'s journey model. Ambitious readers can progress to Lord of the Rings.',
+    synopsis:
+      'Bilbo Baggins, a comfort-loving hobbit, is whisked away on an unexpected adventure with a wizard and thirteen dwarves to reclaim a treasure guarded by a dragon.',
+    teachingNotes:
+      "Classic quest narrative building fantasy genre knowledge. Links to the hero's journey model. Ambitious readers can progress to Lord of the Rings.",
     keyThemes: ['adventure', 'courage', 'greed', 'home', 'heroism'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 310,
@@ -1930,8 +2268,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Spy thriller',
     difficulty: 'accessible',
-    synopsis: 'Fourteen-year-old Alex Rider is recruited by MI6 after his uncle\'s death and discovers a sinister plot involving a new supercomputer being given to every school in Britain.',
-    teachingNotes: 'Fast-paced thriller for reluctant readers. The Alex Rider series often hooks students who claim not to like reading. Encourage series completion.',
+    synopsis:
+      "Fourteen-year-old Alex Rider is recruited by MI6 after his uncle's death and discovers a sinister plot involving a new supercomputer being given to every school in Britain.",
+    teachingNotes:
+      'Fast-paced thriller for reluctant readers. The Alex Rider series often hooks students who claim not to like reading. Encourage series completion.',
     keyThemes: ['espionage', 'courage', 'identity', 'technology'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 234,
@@ -1945,8 +2285,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Graphic memoir',
     difficulty: 'accessible',
-    synopsis: 'A graphic memoir about Omar and his brother Hassan, two Somali boys living in a refugee camp in Kenya, waiting for the chance of resettlement.',
-    teachingNotes: 'True story in graphic novel format — accessible for all reading levels. Strong empathy-building text. Links to journey narrative themes in curriculum.',
+    synopsis:
+      'A graphic memoir about Omar and his brother Hassan, two Somali boys living in a refugee camp in Kenya, waiting for the chance of resettlement.',
+    teachingNotes:
+      'True story in graphic novel format - accessible for all reading levels. Strong empathy-building text. Links to journey narrative themes in curriculum.',
     keyThemes: ['refugees', 'brotherhood', 'hope', 'education', 'resilience'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 266,
@@ -1960,8 +2302,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Dark fantasy / horror',
     difficulty: 'moderate',
-    synopsis: 'Coraline discovers a door in her new home that leads to an eerily perfect mirror world — with an Other Mother who wants to keep her forever.',
-    teachingNotes: 'Engaging dark fantasy that teaches atmosphere and suspense. Links to Gothic conventions studied later. Gaiman\'s prose is an excellent model for descriptive writing.',
+    synopsis:
+      'Coraline discovers a door in her new home that leads to an eerily perfect mirror world - with an Other Mother who wants to keep her forever.',
+    teachingNotes:
+      "Engaging dark fantasy that teaches atmosphere and suspense. Links to Gothic conventions studied later. Gaiman's prose is an excellent model for descriptive writing.",
     keyThemes: ['bravery', 'home', 'identity', 'the uncanny'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 163,
@@ -1975,8 +2319,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Comedy / diary fiction',
     difficulty: 'accessible',
-    synopsis: 'Greg Heffley chronicles his misadventures in middle school through diary entries and illustrations.',
-    teachingNotes: 'Extremely popular with reluctant readers. The diary format links to autobiography conventions. Encourage as a gateway to more complex texts.',
+    synopsis:
+      'Greg Heffley chronicles his misadventures in middle school through diary entries and illustrations.',
+    teachingNotes:
+      'Extremely popular with reluctant readers. The diary format links to autobiography conventions. Encourage as a gateway to more complex texts.',
     keyThemes: ['school life', 'friendship', 'humour', 'growing up'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 217,
@@ -1990,8 +2336,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Fantasy / adventure',
     difficulty: 'moderate',
-    synopsis: 'Isabella lives on a forgotten island under a tyrannical governor. When her best friend disappears, she sets out on a dangerous quest guided by an ancient map.',
-    teachingNotes: 'Beautiful prose for students who enjoy atmospheric writing. Links to myths and legends unit through the map/quest structure.',
+    synopsis:
+      'Isabella lives on a forgotten island under a tyrannical governor. When her best friend disappears, she sets out on a dangerous quest guided by an ancient map.',
+    teachingNotes:
+      'Beautiful prose for students who enjoy atmospheric writing. Links to myths and legends unit through the map/quest structure.',
     keyThemes: ['adventure', 'friendship', 'maps and exploration', 'mythology'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 228,
@@ -2005,8 +2353,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Historical fiction',
     difficulty: 'accessible',
-    synopsis: 'Bruno, the son of a Nazi commandant, befriends a Jewish boy on the other side of the fence at Auschwitz. A fable about innocence and the horror of the Holocaust.',
-    teachingNotes: 'Widely read and discussed. Note: some scholars critique the novel\'s representation. Use as a starting point for deeper Holocaust reading. Links to Year 8 war literature.',
+    synopsis:
+      'Bruno, the son of a Nazi commandant, befriends a Jewish boy on the other side of the fence at Auschwitz. A fable about innocence and the horror of the Holocaust.',
+    teachingNotes:
+      "Widely read and discussed. Note: some scholars critique the novel's representation. Use as a starting point for deeper Holocaust reading. Links to Year 8 war literature.",
     keyThemes: ['Holocaust', 'innocence', 'friendship', 'prejudice'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 215,
@@ -2020,8 +2370,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Fantasy / sci-fi',
     difficulty: 'moderate',
-    synopsis: 'Twelve-year-old criminal mastermind Artemis Fowl discovers that fairies exist and kidnaps one to hold for ransom. But the fairies fight back with high-tech weaponry.',
-    teachingNotes: 'Clever, witty series that appeals to students who enjoy anti-heroes. Genre-blending (fantasy meets heist thriller) builds genre awareness.',
+    synopsis:
+      'Twelve-year-old criminal mastermind Artemis Fowl discovers that fairies exist and kidnaps one to hold for ransom. But the fairies fight back with high-tech weaponry.',
+    teachingNotes:
+      'Clever, witty series that appeals to students who enjoy anti-heroes. Genre-blending (fantasy meets heist thriller) builds genre awareness.',
     keyThemes: ['intelligence', 'morality', 'greed', 'redemption'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 280,
@@ -2037,8 +2389,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Dystopian / sci-fi',
     difficulty: 'accessible',
-    synopsis: 'Thomas wakes up in a lift with no memory, surrounded by boys trapped in a maze. As he uncovers the truth, he must lead an escape before it is too late.',
-    teachingNotes: 'Strong dystopian series linking to T1 curriculum texts. High engagement for reluctant readers. Students who enjoy this often progress to more complex dystopia.',
+    synopsis:
+      'Thomas wakes up in a lift with no memory, surrounded by boys trapped in a maze. As he uncovers the truth, he must lead an escape before it is too late.',
+    teachingNotes:
+      'Strong dystopian series linking to T1 curriculum texts. High engagement for reluctant readers. Students who enjoy this often progress to more complex dystopia.',
     keyThemes: ['survival', 'leadership', 'memory', 'freedom'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 374,
@@ -2052,8 +2406,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Dystopian fiction',
     difficulty: 'accessible',
-    synopsis: 'In a future Chicago divided into five factions based on virtues, Tris Prior discovers she is Divergent — fitting into no single faction — and uncovers a dark conspiracy.',
-    teachingNotes: 'Popular dystopian series. Compare faction system with other dystopian societies studied in class (The Giver, The Hunger Games). Builds genre knowledge independently.',
+    synopsis:
+      'In a future Chicago divided into five factions based on virtues, Tris Prior discovers she is Divergent - fitting into no single faction - and uncovers a dark conspiracy.',
+    teachingNotes:
+      'Popular dystopian series. Compare faction system with other dystopian societies studied in class (The Giver, The Hunger Games). Builds genre knowledge independently.',
     keyThemes: ['identity', 'conformity', 'bravery', 'choice'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 487,
@@ -2067,8 +2423,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Murder mystery',
     difficulty: 'accessible',
-    synopsis: 'Daisy Wells and Hazel Wong form a detective society at their 1930s boarding school. When a body is discovered, they investigate — before the police can get it wrong.',
-    teachingNotes: 'Engaging mystery series set in the 1930s. Builds historical awareness and detective fiction conventions. Students who enjoy this often explore Agatha Christie next.',
+    synopsis:
+      'Daisy Wells and Hazel Wong form a detective society at their 1930s boarding school. When a body is discovered, they investigate - before the police can get it wrong.',
+    teachingNotes:
+      'Engaging mystery series set in the 1930s. Builds historical awareness and detective fiction conventions. Students who enjoy this often explore Agatha Christie next.',
     keyThemes: ['friendship', 'mystery', 'justice', 'social class'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 320,
@@ -2082,8 +2440,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Verse novel',
     difficulty: 'moderate',
-    synopsis: 'Xiomara Batista feels unheard in her Dominican-American home. When she discovers slam poetry, she finds a way to express her rage, her beauty, and her truth.',
-    teachingNotes: 'Powerful verse novel linking to poetry curriculum. Students who connect with this often explore spoken word and slam poetry independently.',
+    synopsis:
+      'Xiomara Batista feels unheard in her Dominican-American home. When she discovers slam poetry, she finds a way to express her rage, her beauty, and her truth.',
+    teachingNotes:
+      'Powerful verse novel linking to poetry curriculum. Students who connect with this often explore spoken word and slam poetry independently.',
     keyThemes: ['voice', 'identity', 'culture', 'feminism', 'poetry'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 357,
@@ -2097,8 +2457,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Fantasy / comedy',
     difficulty: 'accessible',
-    synopsis: 'Stephanie inherits her uncle\'s estate and discovers a world of magic. With the help of Skulduggery Pleasant, a wise-cracking skeleton detective, she must save the world.',
-    teachingNotes: 'Witty, fast-paced series. The humour and action appeal to reluctant readers. Long series encourages sustained reading habits.',
+    synopsis:
+      "Stephanie inherits her uncle's estate and discovers a world of magic. With the help of Skulduggery Pleasant, a wise-cracking skeleton detective, she must save the world.",
+    teachingNotes:
+      'Witty, fast-paced series. The humour and action appeal to reluctant readers. Long series encourages sustained reading habits.',
     keyThemes: ['magic', 'friendship', 'good vs evil', 'humour'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 400,
@@ -2112,8 +2474,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Survival thriller',
     difficulty: 'moderate',
-    synopsis: 'Emily and her mother\'s plane crashes in the Alaskan wilderness. With her mother injured, Emily must survive alone — and begins to wonder whether the crash was really an accident.',
-    teachingNotes: 'Gripping survival narrative. Builds genre awareness and descriptive writing appreciation. Students who enjoy this can explore other survival fiction.',
+    synopsis:
+      "Emily and her mother's plane crashes in the Alaskan wilderness. With her mother injured, Emily must survive alone - and begins to wonder whether the crash was really an accident.",
+    teachingNotes:
+      'Gripping survival narrative. Builds genre awareness and descriptive writing appreciation. Students who enjoy this can explore other survival fiction.',
     keyThemes: ['survival', 'family secrets', 'nature', 'resilience'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 352,
@@ -2127,8 +2491,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Contemporary fiction / meta-fiction',
     difficulty: 'moderate',
-    synopsis: 'What if you are not the Chosen One? Mikey and his friends are ordinary students trying to survive high school while the "indie kids" fight yet another apocalypse in the background.',
-    teachingNotes: 'Clever meta-fictional take on YA tropes. Students who enjoy this develop awareness of genre conventions and narrative expectations.',
+    synopsis:
+      'What if you are not the Chosen One? Mikey and his friends are ordinary students trying to survive high school while the "indie kids" fight yet another apocalypse in the background.',
+    teachingNotes:
+      'Clever meta-fictional take on YA tropes. Students who enjoy this develop awareness of genre conventions and narrative expectations.',
     keyThemes: ['ordinariness', 'mental health', 'friendship', 'growing up'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 336,
@@ -2142,8 +2508,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Steampunk / adventure',
     difficulty: 'moderate',
-    synopsis: 'In a post-apocalyptic world, moving cities consume smaller towns for resources. Tom Natsworthy and Hester Shaw uncover a conspiracy that threatens the last remnants of civilisation.',
-    teachingNotes: 'Imaginative world-building that extends dystopian reading. Links to sustainability themes. Students who enjoy this often explore more science fiction.',
+    synopsis:
+      'In a post-apocalyptic world, moving cities consume smaller towns for resources. Tom Natsworthy and Hester Shaw uncover a conspiracy that threatens the last remnants of civilisation.',
+    teachingNotes:
+      'Imaginative world-building that extends dystopian reading. Links to sustainability themes. Students who enjoy this often explore more science fiction.',
     keyThemes: ['survival', 'class', 'technology', 'power'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 293,
@@ -2157,8 +2525,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Dystopian fantasy',
     difficulty: 'moderate',
-    synopsis: 'In Saintstone, every citizen\'s life story is inked on their skin. When Leora\'s father dies, she discovers that some stories are lies — and the truth could destroy everything.',
-    teachingNotes: 'Original dystopian concept. The tattoo/storytelling metaphor links to narrative and identity themes. Builds independent reading range.',
+    synopsis:
+      "In Saintstone, every citizen's life story is inked on their skin. When Leora's father dies, she discovers that some stories are lies - and the truth could destroy everything.",
+    teachingNotes:
+      'Original dystopian concept. The tattoo/storytelling metaphor links to narrative and identity themes. Builds independent reading range.',
     keyThemes: ['identity', 'truth', 'conformity', 'storytelling'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 384,
@@ -2172,8 +2542,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Verse novel',
     difficulty: 'moderate',
-    synopsis: 'When a plane crashes, two girls — one in New York, one in the Dominican Republic — discover they are sisters. A verse novel about grief, secrets, and finding family.',
-    teachingNotes: 'Second Acevedo title for students who loved The Poet X. Dual-perspective verse builds comparison skills. Strong emotional engagement.',
+    synopsis:
+      'When a plane crashes, two girls - one in New York, one in the Dominican Republic - discover they are sisters. A verse novel about grief, secrets, and finding family.',
+    teachingNotes:
+      'Second Acevedo title for students who loved The Poet X. Dual-perspective verse builds comparison skills. Strong emotional engagement.',
     keyThemes: ['grief', 'family', 'identity', 'secrets', 'sisterhood'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 432,
@@ -2189,8 +2561,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Historical fiction',
     difficulty: 'moderate',
-    synopsis: 'Narrated by Death, the story of Liesel Meminger, a foster girl in Nazi Germany who steals books and shares them with neighbours during bombing raids and with the Jewish man hidden in her basement.',
-    teachingNotes: 'Rich, literary text with unusual narrator. Students who read this independently develop sophisticated narrative awareness. Links to war literature and Holocaust themes.',
+    synopsis:
+      'Narrated by Death, the story of Liesel Meminger, a foster girl in Nazi Germany who steals books and shares them with neighbours during bombing raids and with the Jewish man hidden in her basement.',
+    teachingNotes:
+      'Rich, literary text with unusual narrator. Students who read this independently develop sophisticated narrative awareness. Links to war literature and Holocaust themes.',
     keyThemes: ['war', 'books and storytelling', 'death', 'kindness', 'resistance'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 552,
@@ -2198,14 +2572,16 @@ const readingForPleasure: ReadingListEntry[] = [
   },
   {
     id: 'y9-rfp-002',
-    title: 'The Hitchhiker\'s Guide to the Galaxy',
+    title: "The Hitchhiker's Guide to the Galaxy",
     author: 'Douglas Adams',
     yearGroup: 9,
     termUnit: 'reading-for-pleasure',
     genre: 'Comic science fiction',
     difficulty: 'moderate',
-    synopsis: 'Arthur Dent is rescued from Earth moments before it is demolished to make way for a hyperspace bypass. His adventures across the galaxy are absurd, philosophical, and very funny.',
-    teachingNotes: 'Classic comic fiction. Builds appreciation of satire, irony, and absurdist humour. Students who enjoy this often develop interest in satirical writing.',
+    synopsis:
+      'Arthur Dent is rescued from Earth moments before it is demolished to make way for a hyperspace bypass. His adventures across the galaxy are absurd, philosophical, and very funny.',
+    teachingNotes:
+      'Classic comic fiction. Builds appreciation of satire, irony, and absurdist humour. Students who enjoy this often develop interest in satirical writing.',
     keyThemes: ['absurdity', 'technology', 'bureaucracy', 'meaning of life'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 216,
@@ -2219,8 +2595,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Murder mystery / thriller',
     difficulty: 'accessible',
-    synopsis: 'Five students walk into detention but only four walk out. The student who dies was about to publish secrets about all of them. Everyone is a suspect.',
-    teachingNotes: 'High-engagement thriller. Multiple perspectives build comparison and inference skills. Students who enjoy this often explore more complex crime fiction.',
+    synopsis:
+      'Five students walk into detention but only four walk out. The student who dies was about to publish secrets about all of them. Everyone is a suspect.',
+    teachingNotes:
+      'High-engagement thriller. Multiple perspectives build comparison and inference skills. Students who enjoy this often explore more complex crime fiction.',
     keyThemes: ['secrets', 'justice', 'identity', 'social media', 'trust'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 358,
@@ -2234,8 +2612,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Romance / contemporary fiction',
     difficulty: 'accessible',
-    synopsis: 'Natasha is a pragmatic science-lover facing deportation from New York. Daniel is a dreamy poet on his way to a college interview his parents have chosen. They have one day to fall in love.',
-    teachingNotes: 'Dual-perspective romance with themes of immigration, fate, and identity. Engages readers who enjoy character-driven stories. Links to American literature themes.',
+    synopsis:
+      'Natasha is a pragmatic science-lover facing deportation from New York. Daniel is a dreamy poet on his way to a college interview his parents have chosen. They have one day to fall in love.',
+    teachingNotes:
+      'Dual-perspective romance with themes of immigration, fate, and identity. Engages readers who enjoy character-driven stories. Links to American literature themes.',
     keyThemes: ['love', 'fate', 'immigration', 'identity', 'family expectations'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 344,
@@ -2249,8 +2629,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Science fiction / epic',
     difficulty: 'challenging',
-    synopsis: 'Paul Atreides must navigate politics, religion, and ecology on the desert planet Arrakis — the only source of a substance that makes interstellar travel possible.',
-    teachingNotes: 'Ambitious reading challenge. Builds world-building awareness and connects to themes of power, colonialism, and ecology. Students who complete this demonstrate strong independent reading skills.',
+    synopsis:
+      'Paul Atreides must navigate politics, religion, and ecology on the desert planet Arrakis - the only source of a substance that makes interstellar travel possible.',
+    teachingNotes:
+      'Ambitious reading challenge. Builds world-building awareness and connects to themes of power, colonialism, and ecology. Students who complete this demonstrate strong independent reading skills.',
     keyThemes: ['power', 'ecology', 'religion', 'colonialism', 'destiny'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 688,
@@ -2264,12 +2646,14 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Contemporary fiction',
     difficulty: 'moderate',
-    synopsis: 'Julia is not the perfect Mexican daughter her parents want. When her seemingly perfect sister dies, Julia discovers she was hiding secrets — and begins to question everything.',
-    teachingNotes: 'Strong voice novel about cultural expectations and grief. Links to American literature themes of identity and family. Builds empathy and cultural understanding.',
+    synopsis:
+      'Julia is not the perfect Mexican daughter her parents want. When her seemingly perfect sister dies, Julia discovers she was hiding secrets - and begins to question everything.',
+    teachingNotes:
+      'Strong voice novel about cultural expectations and grief. Links to American literature themes of identity and family. Builds empathy and cultural understanding.',
     keyThemes: ['cultural identity', 'grief', 'family expectations', 'growing up', 'mental health'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 352,
-    ageAppropriate: 'Suitable for Year 9. Themes of mental health and suicide — content warning.',
+    ageAppropriate: 'Suitable for Year 9. Themes of mental health and suicide - content warning.',
   },
   {
     id: 'y9-rfp-007',
@@ -2279,8 +2663,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Mystery / contemporary fiction',
     difficulty: 'moderate',
-    synopsis: 'Christopher, a mathematically gifted teenager, investigates the death of a neighbour\'s dog and uncovers family secrets.',
-    teachingNotes: 'Popular independent reading choice. First-person neurodivergent narrator develops perspective-taking skills. May be studied at GCSE — reading now builds familiarity.',
+    synopsis:
+      "Christopher, a mathematically gifted teenager, investigates the death of a neighbour's dog and uncovers family secrets.",
+    teachingNotes:
+      'Popular independent reading choice. First-person neurodivergent narrator develops perspective-taking skills. May be studied at GCSE - reading now builds familiarity.',
     keyThemes: ['neurodivergence', 'truth', 'family', 'independence'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 226,
@@ -2294,8 +2680,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Mystery / crime fiction',
     difficulty: 'moderate',
-    synopsis: 'Ten strangers are lured to an island where they are accused of crimes and begin to die one by one, following the pattern of a nursery rhyme.',
-    teachingNotes: 'Classic mystery novel. Builds detective fiction genre knowledge that links to Victorian detective fiction studied in T1. Christie\'s plotting is masterful for teaching suspense.',
+    synopsis:
+      'Ten strangers are lured to an island where they are accused of crimes and begin to die one by one, following the pattern of a nursery rhyme.',
+    teachingNotes:
+      "Classic mystery novel. Builds detective fiction genre knowledge that links to Victorian detective fiction studied in T1. Christie's plotting is masterful for teaching suspense.",
     keyThemes: ['justice', 'guilt', 'isolation', 'deception'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 272,
@@ -2309,8 +2697,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Dystopian fiction',
     difficulty: 'challenging',
-    synopsis: 'In a future where books are banned and firemen burn them, one fireman begins to question everything.',
-    teachingNotes: 'If not studied in Year 8, excellent pleasure reading for Year 9. Links to dystopian themes and censorship discussions. Builds literary awareness independently.',
+    synopsis:
+      'In a future where books are banned and firemen burn them, one fireman begins to question everything.',
+    teachingNotes:
+      'If not studied in Year 8, excellent pleasure reading for Year 9. Links to dystopian themes and censorship discussions. Builds literary awareness independently.',
     keyThemes: ['censorship', 'knowledge', 'conformity', 'rebellion'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 194,
@@ -2324,8 +2714,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Post-apocalyptic literary fiction',
     difficulty: 'challenging',
-    synopsis: 'A travelling symphony performs Shakespeare in the settlements that remain after a devastating flu pandemic. Interweaving timelines connect characters across the old world and the new.',
-    teachingNotes: 'Literary post-apocalyptic novel. Builds appreciation of non-linear narrative structure. Links Shakespeare to survival — thematically powerful. Stretch reading for ambitious students.',
+    synopsis:
+      'A travelling symphony performs Shakespeare in the settlements that remain after a devastating flu pandemic. Interweaving timelines connect characters across the old world and the new.',
+    teachingNotes:
+      'Literary post-apocalyptic novel. Builds appreciation of non-linear narrative structure. Links Shakespeare to survival - thematically powerful. Stretch reading for ambitious students.',
     keyThemes: ['art and survival', 'memory', 'connection', 'civilisation'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 333,
@@ -2335,18 +2727,20 @@ const readingForPleasure: ReadingListEntry[] = [
   // Year 10-11 Reading for Pleasure
   {
     id: 'y10-rfp-001',
-    title: 'The Handmaid\'s Tale',
+    title: "The Handmaid's Tale",
     author: 'Margaret Atwood',
     yearGroup: 10,
     termUnit: 'reading-for-pleasure',
     genre: 'Dystopian fiction',
     difficulty: 'challenging',
-    synopsis: 'In the Republic of Gilead, a theocratic dictatorship has stripped women of their rights. Offred, a Handmaid, must navigate this terrifying world and find a way to survive.',
-    teachingNotes: 'Strong dystopian text for independent reading. Builds on classroom study of Orwell. Students develop sophisticated understanding of gendered power dynamics. Prepares for A Level literature.',
+    synopsis:
+      'In the Republic of Gilead, a theocratic dictatorship has stripped women of their rights. Offred, a Handmaid, must navigate this terrifying world and find a way to survive.',
+    teachingNotes:
+      'Strong dystopian text for independent reading. Builds on classroom study of Orwell. Students develop sophisticated understanding of gendered power dynamics. Prepares for A Level literature.',
     keyThemes: ['patriarchy', 'freedom', 'control', 'identity', 'resistance'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 311,
-    ageAppropriate: 'Suitable for Years 10-11. Mature themes — student choice.',
+    ageAppropriate: 'Suitable for Years 10-11. Mature themes - student choice.',
   },
   {
     id: 'y10-rfp-002',
@@ -2356,8 +2750,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Literary thriller',
     difficulty: 'challenging',
-    synopsis: 'A group of classics students at an elite New England college becomes entangled in a murder. An inverted mystery that reveals the killing on page one and unravels the consequences.',
-    teachingNotes: 'Ambitious independent reading. Links to classical literature through the characters\' studies. Builds appreciation for literary fiction and complex narrative structure.',
+    synopsis:
+      'A group of classics students at an elite New England college becomes entangled in a murder. An inverted mystery that reveals the killing on page one and unravels the consequences.',
+    teachingNotes:
+      "Ambitious independent reading. Links to classical literature through the characters' studies. Builds appreciation for literary fiction and complex narrative structure.",
     keyThemes: ['guilt', 'beauty', 'morality', 'privilege', 'obsession'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 559,
@@ -2371,8 +2767,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Adventure / philosophical fiction',
     difficulty: 'moderate',
-    synopsis: 'Pi Patel survives a shipwreck and shares a lifeboat with a Bengal tiger across the Pacific Ocean. A story that asks profound questions about truth, faith, and storytelling.',
-    teachingNotes: 'Beautiful, thought-provoking novel. The unreliable narrative ending sparks excellent discussion. Links to themes of storytelling and truth across the curriculum.',
+    synopsis:
+      'Pi Patel survives a shipwreck and shares a lifeboat with a Bengal tiger across the Pacific Ocean. A story that asks profound questions about truth, faith, and storytelling.',
+    teachingNotes:
+      'Beautiful, thought-provoking novel. The unreliable narrative ending sparks excellent discussion. Links to themes of storytelling and truth across the curriculum.',
     keyThemes: ['survival', 'faith', 'storytelling', 'truth', 'nature'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 319,
@@ -2386,8 +2784,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Contemporary literary fiction',
     difficulty: 'moderate',
-    synopsis: 'Connell and Marianne weave in and out of each other\'s lives from their school days in a small Irish town to their years at Trinity College Dublin.',
-    teachingNotes: 'Contemporary literary fiction that engages older students. Rooney\'s minimalist prose style is an interesting model. Links to themes of class, communication, and identity.',
+    synopsis:
+      "Connell and Marianne weave in and out of each other's lives from their school days in a small Irish town to their years at Trinity College Dublin.",
+    teachingNotes:
+      "Contemporary literary fiction that engages older students. Rooney's minimalist prose style is an interesting model. Links to themes of class, communication, and identity.",
     keyThemes: ['class', 'love', 'communication', 'identity', 'belonging'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 266,
@@ -2401,8 +2801,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Dystopian fiction',
     difficulty: 'moderate',
-    synopsis: 'Continue the series beyond book one studied in Year 7. The subsequent books deepen the exploration of systemic racism, revolution, and identity.',
-    teachingNotes: 'Series completion for students who studied book one in Year 7. Builds sustained reading habits and allows tracking of how themes develop across a series.',
+    synopsis:
+      'Continue the series beyond book one studied in Year 7. The subsequent books deepen the exploration of systemic racism, revolution, and identity.',
+    teachingNotes:
+      'Series completion for students who studied book one in Year 7. Builds sustained reading habits and allows tracking of how themes develop across a series.',
     keyThemes: ['racism', 'revolution', 'love', 'sacrifice', 'identity'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 480,
@@ -2416,12 +2818,14 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Epistolary / coming-of-age',
     difficulty: 'moderate',
-    synopsis: 'Charlie writes letters to an anonymous friend as he navigates high school, friendship, first love, and the lingering effects of past trauma.',
-    teachingNotes: 'Popular coming-of-age text. Epistolary format links to form study. Themes of mental health handled sensitively. Students who enjoy this develop emotional literacy.',
+    synopsis:
+      'Charlie writes letters to an anonymous friend as he navigates high school, friendship, first love, and the lingering effects of past trauma.',
+    teachingNotes:
+      'Popular coming-of-age text. Epistolary format links to form study. Themes of mental health handled sensitively. Students who enjoy this develop emotional literacy.',
     keyThemes: ['mental health', 'friendship', 'growing up', 'trauma', 'belonging'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 213,
-    ageAppropriate: 'Suitable for Years 10-11. Contains sensitive content — student choice.',
+    ageAppropriate: 'Suitable for Years 10-11. Contains sensitive content - student choice.',
   },
   {
     id: 'y10-rfp-007',
@@ -2431,8 +2835,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Mythological literary fiction',
     difficulty: 'moderate',
-    synopsis: 'The story of Circe, the witch of Greek mythology, told from her own perspective — her exile, her powers, and her encounters with Odysseus, Daedalus, and the Minotaur.',
-    teachingNotes: 'Beautiful retelling of Greek myths from a female perspective. Links to Year 7 mythology and Year 9 Victorian literature. Builds appreciation for literary prose.',
+    synopsis:
+      'The story of Circe, the witch of Greek mythology, told from her own perspective - her exile, her powers, and her encounters with Odysseus, Daedalus, and the Minotaur.',
+    teachingNotes:
+      'Beautiful retelling of Greek myths from a female perspective. Links to Year 7 mythology and Year 9 Victorian literature. Builds appreciation for literary prose.',
     keyThemes: ['power', 'isolation', 'feminism', 'transformation', 'motherhood'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 400,
@@ -2446,8 +2852,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Literary fiction / international',
     difficulty: 'challenging',
-    synopsis: 'Two women from different generations and backgrounds are brought together by war, loss, and a brutal husband in Afghanistan. A story of resilience and the enduring power of love.',
-    teachingNotes: 'Full novel for independent reading (Year 7 used adapted extracts only). Companion to The Kite Runner. Builds cultural understanding and empathy. Strong preparation for A Level literary study.',
+    synopsis:
+      'Two women from different generations and backgrounds are brought together by war, loss, and a brutal husband in Afghanistan. A story of resilience and the enduring power of love.',
+    teachingNotes:
+      'Full novel for independent reading (Year 7 used adapted extracts only). Companion to The Kite Runner. Builds cultural understanding and empathy. Strong preparation for A Level literary study.',
     keyThemes: ['resilience', 'sisterhood', 'war', 'patriarchy', 'hope'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 372,
@@ -2461,12 +2869,15 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Historical fiction',
     difficulty: 'challenging',
-    synopsis: 'Four lives intertwine in post-war London: Hortense and Gilbert, Jamaican immigrants on the Empire Windrush, and Queenie and Bernard, their English landlords. A novel about race, empire, and belonging.',
-    teachingNotes: 'Important text for understanding British immigration history. Multiple narrators build comparison skills. Links to social justice themes across the curriculum. Strong A Level preparation.',
+    synopsis:
+      'Four lives intertwine in post-war London: Hortense and Gilbert, Jamaican immigrants on the Empire Windrush, and Queenie and Bernard, their English landlords. A novel about race, empire, and belonging.',
+    teachingNotes:
+      'Important text for understanding British immigration history. Multiple narrators build comparison skills. Links to social justice themes across the curriculum. Strong A Level preparation.',
     keyThemes: ['immigration', 'racism', 'empire', 'identity', 'belonging'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 441,
-    ageAppropriate: 'Suitable for Year 11. Contains racial slurs and prejudice in historical context.',
+    ageAppropriate:
+      'Suitable for Year 11. Contains racial slurs and prejudice in historical context.',
   },
   {
     id: 'y10-rfp-010',
@@ -2476,8 +2887,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Memoir',
     difficulty: 'moderate',
-    synopsis: 'Born to survivalists in Idaho, Tara Westover had no formal education until age seventeen. Her memoir chronicles her journey from an isolated mountain community to Cambridge University.',
-    teachingNotes: 'Powerful memoir for building non-fiction reading range. Links to autobiography conventions and themes of education, identity, and transformation. Inspiring for students approaching their own educational transitions.',
+    synopsis:
+      'Born to survivalists in Idaho, Tara Westover had no formal education until age seventeen. Her memoir chronicles her journey from an isolated mountain community to Cambridge University.',
+    teachingNotes:
+      'Powerful memoir for building non-fiction reading range. Links to autobiography conventions and themes of education, identity, and transformation. Inspiring for students approaching their own educational transitions.',
     keyThemes: ['education', 'family', 'identity', 'transformation', 'resilience'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP'],
     pageCount: 334,
@@ -2493,8 +2906,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Popular non-fiction / anthropology',
     difficulty: 'moderate',
-    synopsis: 'Harari traces the history of Homo sapiens from the Stone Age to the present, exploring how biology, culture, and language shaped the species that conquered the world.',
-    teachingNotes: 'Builds contextual knowledge for language study — especially chapters on language, storytelling, and social cooperation. Develops non-fiction analytical reading skills independently.',
+    synopsis:
+      'Harari traces the history of Homo sapiens from the Stone Age to the present, exploring how biology, culture, and language shaped the species that conquered the world.',
+    teachingNotes:
+      'Builds contextual knowledge for language study - especially chapters on language, storytelling, and social cooperation. Develops non-fiction analytical reading skills independently.',
     keyThemes: ['language and cooperation', 'culture', 'history', 'storytelling', 'power'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1'],
     pageCount: 443,
@@ -2508,8 +2923,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Literary fiction / science fiction',
     difficulty: 'challenging',
-    synopsis: 'Klara, an Artificial Friend, observes the world from a store window and develops her own understanding of love, loneliness, and what it means to be human.',
-    teachingNotes: 'Literary fiction for pleasure. Links to language and identity themes. Ishiguro\'s restrained prose is an excellent model for advanced writing. Develops critical appreciation of literary technique.',
+    synopsis:
+      'Klara, an Artificial Friend, observes the world from a store window and develops her own understanding of love, loneliness, and what it means to be human.',
+    teachingNotes:
+      "Literary fiction for pleasure. Links to language and identity themes. Ishiguro's restrained prose is an excellent model for advanced writing. Develops critical appreciation of literary technique.",
     keyThemes: ['artificial intelligence', 'love', 'identity', 'mortality', 'consciousness'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1'],
     pageCount: 307,
@@ -2523,8 +2940,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Psychology / popular science',
     difficulty: 'advanced',
-    synopsis: 'Nobel laureate Kahneman explains the two systems that drive how we think: fast, intuitive thinking and slow, deliberate thinking. Essential reading for understanding bias and decision-making.',
-    teachingNotes: 'Builds understanding of cognitive processes relevant to language processing and acquisition. Develops critical thinking skills. Links to pragmatics and discourse analysis.',
+    synopsis:
+      'Nobel laureate Kahneman explains the two systems that drive how we think: fast, intuitive thinking and slow, deliberate thinking. Essential reading for understanding bias and decision-making.',
+    teachingNotes:
+      'Builds understanding of cognitive processes relevant to language processing and acquisition. Develops critical thinking skills. Links to pragmatics and discourse analysis.',
     keyThemes: ['cognition', 'bias', 'decision-making', 'rationality', 'psychology'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S3'],
     pageCount: 499,
@@ -2538,8 +2957,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Literary fiction / magical realism',
     difficulty: 'advanced',
-    synopsis: 'Sethe, a formerly enslaved woman, is haunted by the ghost of her dead daughter. Morrison\'s masterpiece explores the legacy of slavery, memory, and the struggle for freedom.',
-    teachingNotes: 'Major literary work for ambitious readers. Morrison\'s innovative language use links directly to A Level study. Develops understanding of how language can convey trauma. Advanced literary appreciation.',
+    synopsis:
+      "Sethe, a formerly enslaved woman, is haunted by the ghost of her dead daughter. Morrison's masterpiece explores the legacy of slavery, memory, and the struggle for freedom.",
+    teachingNotes:
+      "Major literary work for ambitious readers. Morrison's innovative language use links directly to A Level study. Develops understanding of how language can convey trauma. Advanced literary appreciation.",
     keyThemes: ['slavery', 'memory', 'motherhood', 'trauma', 'freedom'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1'],
     pageCount: 324,
@@ -2553,8 +2974,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Popular non-fiction / social science',
     difficulty: 'moderate',
-    synopsis: 'Bregman challenges the view that humans are inherently selfish and violent, arguing with evidence from psychology, history, and sociology that most people are fundamentally decent.',
-    teachingNotes: 'Engaging non-fiction that develops argumentation skills. Students can compare Bregman\'s argument structure with other non-fiction studied. Links to language and persuasion.',
+    synopsis:
+      'Bregman challenges the view that humans are inherently selfish and violent, arguing with evidence from psychology, history, and sociology that most people are fundamentally decent.',
+    teachingNotes:
+      "Engaging non-fiction that develops argumentation skills. Students can compare Bregman's argument structure with other non-fiction studied. Links to language and persuasion.",
     keyThemes: ['human nature', 'cooperation', 'media bias', 'optimism', 'social psychology'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2'],
     pageCount: 480,
@@ -2568,8 +2991,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Literary fiction',
     difficulty: 'challenging',
-    synopsis: 'Stevens, an ageing English butler, takes a road trip through the countryside, reflecting on his years of service and the choices he made — or failed to make.',
-    teachingNotes: 'Masterclass in unreliable narration and subtext. Links directly to pragmatics — what Stevens says vs what he means. Students develop sophisticated understanding of implied meaning.',
+    synopsis:
+      'Stevens, an ageing English butler, takes a road trip through the countryside, reflecting on his years of service and the choices he made - or failed to make.',
+    teachingNotes:
+      'Masterclass in unreliable narration and subtext. Links directly to pragmatics - what Stevens says vs what he means. Students develop sophisticated understanding of implied meaning.',
     keyThemes: ['duty', 'regret', 'denial', 'class', 'missed opportunities'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2'],
     pageCount: 258,
@@ -2583,23 +3008,32 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Popular linguistics',
     difficulty: 'moderate',
-    synopsis: 'A tour of the world\'s twenty most-spoken languages, exploring their quirks, histories, and the cultures they express. From Mandarin to Swahili, each chapter reveals what makes a language unique.',
-    teachingNotes: 'Engaging linguistics text for pleasure. Builds World Englishes knowledge and develops appreciation for linguistic diversity. Each chapter is self-contained for dip-in reading.',
-    keyThemes: ['linguistic diversity', 'language and culture', 'World Englishes', 'language families'],
+    synopsis:
+      "A tour of the world's twenty most-spoken languages, exploring their quirks, histories, and the cultures they express. From Mandarin to Swahili, each chapter reveals what makes a language unique.",
+    teachingNotes:
+      'Engaging linguistics text for pleasure. Builds World Englishes knowledge and develops appreciation for linguistic diversity. Each chapter is self-contained for dip-in reading.',
+    keyThemes: [
+      'linguistic diversity',
+      'language and culture',
+      'World Englishes',
+      'language families',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S4'],
     pageCount: 320,
     ageAppropriate: 'Suitable for Years 12-13.',
   },
   {
     id: 'y12-rfp-008',
-    title: 'Orwell\'s Roses',
+    title: "Orwell's Roses",
     author: 'Rebecca Solnit',
     yearGroup: 13,
     termUnit: 'reading-for-pleasure',
     genre: 'Literary non-fiction / biography',
     difficulty: 'challenging',
-    synopsis: 'Starting from George Orwell\'s love of gardening, Solnit weaves an exploration of pleasure, politics, language, and the relationship between beauty and justice.',
-    teachingNotes: 'Innovative non-fiction for students who have studied Orwell. Links political language study to broader cultural analysis. Models creative non-fiction writing for NEA.',
+    synopsis:
+      "Starting from George Orwell's love of gardening, Solnit weaves an exploration of pleasure, politics, language, and the relationship between beauty and justice.",
+    teachingNotes:
+      'Innovative non-fiction for students who have studied Orwell. Links political language study to broader cultural analysis. Models creative non-fiction writing for NEA.',
     keyThemes: ['language and politics', 'beauty', 'justice', 'nature', 'writing'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2', 'ALEVEL-LANG-NEA'],
     pageCount: 316,
@@ -2613,8 +3047,10 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Style guide / writing reference',
     difficulty: 'moderate',
-    synopsis: 'Pinker\'s modern style guide applies cognitive science and linguistics to the art of writing. A thinking person\'s guide to writing clearly and effectively in the 21st century.',
-    teachingNotes: 'Companion to The Language Instinct for practical writing improvement. Students apply Pinker\'s advice to their own academic writing. Excellent for NEA preparation.',
+    synopsis:
+      "Pinker's modern style guide applies cognitive science and linguistics to the art of writing. A thinking person's guide to writing clearly and effectively in the 21st century.",
+    teachingNotes:
+      "Companion to The Language Instinct for practical writing improvement. Students apply Pinker's advice to their own academic writing. Excellent for NEA preparation.",
     keyThemes: ['writing style', 'clarity', 'cognitive science', 'language and thought'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-NEA'],
     pageCount: 359,
@@ -2628,17 +3064,19 @@ const readingForPleasure: ReadingListEntry[] = [
     termUnit: 'reading-for-pleasure',
     genre: 'Popular non-fiction / economics',
     difficulty: 'moderate',
-    synopsis: 'Bregman argues for universal basic income, a fifteen-hour working week, and open borders, using evidence and rhetoric to challenge conventional wisdom.',
-    teachingNotes: 'Excellent for studying argumentation and persuasion strategies. Students analyse Bregman\'s rhetorical methods using frameworks learned in class. Links to language and power.',
+    synopsis:
+      'Bregman argues for universal basic income, a fifteen-hour working week, and open borders, using evidence and rhetoric to challenge conventional wisdom.',
+    teachingNotes:
+      "Excellent for studying argumentation and persuasion strategies. Students analyse Bregman's rhetorical methods using frameworks learned in class. Links to language and power.",
     keyThemes: ['persuasion', 'inequality', 'utopia', 'evidence-based argument'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S2'],
     pageCount: 261,
     ageAppropriate: 'Suitable for Years 12-13.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// CHALLENGE READS — Extension students
+// CHALLENGE READS - Extension students
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const challengeReads: ReadingListEntry[] = [
@@ -2651,8 +3089,10 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Fantasy / literary fiction',
     difficulty: 'challenging',
-    synopsis: 'Malcolm Polstead discovers a baby called Lyra and must protect her from political and religious forces in a world where every person has a daemon — an animal manifestation of their soul.',
-    teachingNotes: 'Challenging but rewarding for strong Year 7 readers. Pullman\'s world-building and philosophical depth stretch the most ambitious students. Links to themes of power, religion, and knowledge.',
+    synopsis:
+      'Malcolm Polstead discovers a baby called Lyra and must protect her from political and religious forces in a world where every person has a daemon - an animal manifestation of their soul.',
+    teachingNotes:
+      "Challenging but rewarding for strong Year 7 readers. Pullman's world-building and philosophical depth stretch the most ambitious students. Links to themes of power, religion, and knowledge.",
     keyThemes: ['knowledge', 'power', 'religion', 'courage', 'duty'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2'],
     pageCount: 546,
@@ -2666,12 +3106,14 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Speculative fiction',
     difficulty: 'moderate',
-    synopsis: 'Nora Seed finds herself in a library between life and death, where each book lets her live a different version of her life. She must decide what truly makes a life worth living.',
-    teachingNotes: 'Thought-provoking philosophical fiction accessible to strong readers. Themes of choice and regret develop reflective thinking. Simple prose but complex ideas make it an ideal stretch text.',
+    synopsis:
+      'Nora Seed finds herself in a library between life and death, where each book lets her live a different version of her life. She must decide what truly makes a life worth living.',
+    teachingNotes:
+      'Thought-provoking philosophical fiction accessible to strong readers. Themes of choice and regret develop reflective thinking. Simple prose but complex ideas make it an ideal stretch text.',
     keyThemes: ['choices', 'regret', 'purpose', 'depression', 'possibility'],
     linkedCurriculumCodes: ['KS3-R1'],
     pageCount: 304,
-    ageAppropriate: 'Suitable for mature Year 7 readers. Themes of depression — teacher awareness.',
+    ageAppropriate: 'Suitable for mature Year 7 readers. Themes of depression - teacher awareness.',
   },
 
   // Year 8 Challenge Reads
@@ -2683,8 +3125,10 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Dystopian fiction',
     difficulty: 'advanced',
-    synopsis: 'In a future world of genetic engineering and conditioning, people are manufactured for happiness. When Bernard Marx and the "Savage" John challenge this world, the consequences are devastating.',
-    teachingNotes: 'Advanced dystopian text for the strongest Year 8 readers. Compare with The Giver and 1984. Teaches sophisticated analysis of how dystopia works. Students who master this are well-prepared for GCSE literary study.',
+    synopsis:
+      'In a future world of genetic engineering and conditioning, people are manufactured for happiness. When Bernard Marx and the "Savage" John challenge this world, the consequences are devastating.',
+    teachingNotes:
+      'Advanced dystopian text for the strongest Year 8 readers. Compare with The Giver and 1984. Teaches sophisticated analysis of how dystopia works. Students who master this are well-prepared for GCSE literary study.',
     keyThemes: ['conformity', 'technology', 'freedom vs happiness', 'individuality', 'control'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5'],
     pageCount: 288,
@@ -2698,12 +3142,15 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Literary fiction',
     difficulty: 'challenging',
-    synopsis: 'Amir grows up in Kabul with Hassan, the son of his father\'s servant. A single act of betrayal shapes both their lives against the backdrop of Afghanistan\'s turbulent history.',
-    teachingNotes: 'Stretch reading for strong Year 8 students. Rich themes of guilt, redemption, and cultural identity. Builds empathy and global awareness. Prepare students for sensitive content.',
+    synopsis:
+      "Amir grows up in Kabul with Hassan, the son of his father's servant. A single act of betrayal shapes both their lives against the backdrop of Afghanistan's turbulent history.",
+    teachingNotes:
+      'Stretch reading for strong Year 8 students. Rich themes of guilt, redemption, and cultural identity. Builds empathy and global awareness. Prepare students for sensitive content.',
     keyThemes: ['guilt', 'redemption', 'friendship', 'betrayal', 'cultural identity'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2'],
     pageCount: 371,
-    ageAppropriate: 'Advanced Year 8 readers. Contains violence and sexual assault — teacher guidance essential.',
+    ageAppropriate:
+      'Advanced Year 8 readers. Contains violence and sexual assault - teacher guidance essential.',
   },
 
   // Year 9 Challenge Reads
@@ -2715,12 +3162,15 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Literary fiction / magical realism',
     difficulty: 'advanced',
-    synopsis: 'Sethe, a formerly enslaved woman, is haunted by the ghost of her dead daughter. Morrison explores the psychological devastation of slavery through innovative narrative technique.',
-    teachingNotes: 'University-level text for the most ambitious Year 9 readers. Morrison\'s language is extraordinary — students who can engage with this develop exceptional analytical skills. Requires significant contextual support.',
+    synopsis:
+      'Sethe, a formerly enslaved woman, is haunted by the ghost of her dead daughter. Morrison explores the psychological devastation of slavery through innovative narrative technique.',
+    teachingNotes:
+      "University-level text for the most ambitious Year 9 readers. Morrison's language is extraordinary - students who can engage with this develop exceptional analytical skills. Requires significant contextual support.",
     keyThemes: ['slavery', 'memory', 'trauma', 'motherhood', 'freedom'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5'],
     pageCount: 324,
-    ageAppropriate: 'Most advanced Year 9 readers only. Disturbing content — teacher recommendation required.',
+    ageAppropriate:
+      'Most advanced Year 9 readers only. Disturbing content - teacher recommendation required.',
   },
   {
     id: 'y9-ch-002',
@@ -2730,12 +3180,15 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Literary fiction',
     difficulty: 'advanced',
-    synopsis: 'On a hot summer day in 1935, thirteen-year-old Briony Tallis witnesses events she misinterprets, leading to an accusation that destroys lives. A novel about storytelling, guilt, and the power of fiction.',
-    teachingNotes: 'Sophisticated literary fiction for the strongest Year 9 readers. The meta-fictional ending teaches narrative reliability at an advanced level. Links to themes of perspective and truth studied across KS3.',
+    synopsis:
+      'On a hot summer day in 1935, thirteen-year-old Briony Tallis witnesses events she misinterprets, leading to an accusation that destroys lives. A novel about storytelling, guilt, and the power of fiction.',
+    teachingNotes:
+      'Sophisticated literary fiction for the strongest Year 9 readers. The meta-fictional ending teaches narrative reliability at an advanced level. Links to themes of perspective and truth studied across KS3.',
     keyThemes: ['guilt', 'storytelling', 'truth', 'class', 'atonement'],
     linkedCurriculumCodes: ['KS3-R1', 'KS3-R2', 'KS3-R5'],
     pageCount: 371,
-    ageAppropriate: 'Advanced Year 9 readers. Contains mature themes including a sexual assault scene.',
+    ageAppropriate:
+      'Advanced Year 9 readers. Contains mature themes including a sexual assault scene.',
   },
 
   // Year 10-11 Challenge Reads
@@ -2747,8 +3200,10 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Literary fiction / social comedy',
     difficulty: 'advanced',
-    synopsis: 'The intertwined lives of two wartime friends — Archie Jones and Samad Iqbal — and their families in multicultural North London. A panoramic novel about race, religion, history, and identity.',
-    teachingNotes: 'Ambitious literary fiction for GCSE students reading beyond the syllabus. Smith\'s handling of multiple voices and cultural perspectives builds sophisticated critical awareness. Strong A Level preparation.',
+    synopsis:
+      'The intertwined lives of two wartime friends - Archie Jones and Samad Iqbal - and their families in multicultural North London. A panoramic novel about race, religion, history, and identity.',
+    teachingNotes:
+      "Ambitious literary fiction for GCSE students reading beyond the syllabus. Smith's handling of multiple voices and cultural perspectives builds sophisticated critical awareness. Strong A Level preparation.",
     keyThemes: ['multiculturalism', 'identity', 'history', 'religion', 'family'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'ALEVEL-LIT-PREP'],
     pageCount: 542,
@@ -2762,8 +3217,10 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Literary fiction',
     difficulty: 'advanced',
-    synopsis: 'In Kerala, India, the childhood of twins Estha and Rahel is shaped by the "Love Laws" — the laws that dictate who should be loved and how. A novel about caste, forbidden love, and the way small things become huge.',
-    teachingNotes: 'Extraordinarily rich prose for the most able readers. Roy\'s language play links to A Level linguistic analysis. Non-linear structure challenges and rewards careful reading. A Level literature preparation.',
+    synopsis:
+      'In Kerala, India, the childhood of twins Estha and Rahel is shaped by the "Love Laws" - the laws that dictate who should be loved and how. A novel about caste, forbidden love, and the way small things become huge.',
+    teachingNotes:
+      "Extraordinarily rich prose for the most able readers. Roy's language play links to A Level linguistic analysis. Non-linear structure challenges and rewards careful reading. A Level literature preparation.",
     keyThemes: ['caste', 'forbidden love', 'childhood', 'politics', 'language'],
     linkedCurriculumCodes: ['GCSE-LIT-SUPP', 'ALEVEL-LIT-PREP'],
     pageCount: 321,
@@ -2779,9 +3236,16 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Academic linguistics',
     difficulty: 'advanced',
-    synopsis: 'Christiansen and Chater argue that language is not an instinct but a cultural invention — a "game" we learn to play. A direct challenge to Chomsky and Pinker\'s nativist position.',
-    teachingNotes: 'Advanced academic text challenging the Language Instinct position. Students who read both Pinker and this develop genuinely sophisticated understanding of the nativism debate. Excellent for NEA topics.',
-    keyThemes: ['language acquisition', 'nativism vs empiricism', 'cultural evolution', 'cognitive science'],
+    synopsis:
+      'Christiansen and Chater argue that language is not an instinct but a cultural invention - a "game" we learn to play. A direct challenge to Chomsky and Pinker\'s nativist position.',
+    teachingNotes:
+      'Advanced academic text challenging the Language Instinct position. Students who read both Pinker and this develop genuinely sophisticated understanding of the nativism debate. Excellent for NEA topics.',
+    keyThemes: [
+      'language acquisition',
+      'nativism vs empiricism',
+      'cultural evolution',
+      'cognitive science',
+    ],
     linkedCurriculumCodes: ['ALEVEL-LANG-S3'],
     pageCount: 304,
     ageAppropriate: 'Suitable for Years 12-13.',
@@ -2794,14 +3258,16 @@ const challengeReads: ReadingListEntry[] = [
     termUnit: 'challenge-read',
     genre: 'Cognitive linguistics',
     difficulty: 'advanced',
-    synopsis: 'Pinker explores what language reveals about human thought: how we name things, use metaphor, swear, and construct meaning. A window into the mind through language.',
-    teachingNotes: 'Advanced Pinker for students who have read The Language Instinct. Deepens understanding of semantics and pragmatics. Chapters on metaphor, naming, and swearing directly link to A Level modules. NEA inspiration.',
+    synopsis:
+      'Pinker explores what language reveals about human thought: how we name things, use metaphor, swear, and construct meaning. A window into the mind through language.',
+    teachingNotes:
+      'Advanced Pinker for students who have read The Language Instinct. Deepens understanding of semantics and pragmatics. Chapters on metaphor, naming, and swearing directly link to A Level modules. NEA inspiration.',
     keyThemes: ['language and thought', 'semantics', 'metaphor', 'naming', 'cognitive science'],
     linkedCurriculumCodes: ['ALEVEL-LANG-S1', 'ALEVEL-LANG-S2', 'ALEVEL-LANG-S3'],
     pageCount: 499,
     ageAppropriate: 'Suitable for Year 13.',
   },
-];
+]
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // COMBINED EXPORT
@@ -2828,4 +3294,4 @@ export const curriculumReadingLists: ReadingListEntry[] = [
   ...readingForPleasure,
   // Challenge Reads (extension)
   ...challengeReads,
-];
+]

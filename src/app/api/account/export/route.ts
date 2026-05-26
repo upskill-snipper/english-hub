@@ -11,7 +11,7 @@ import { compileUserData } from '@/lib/dsar'
  * Portability) self-serve export. Returns a JSON attachment containing
  * everything we hold about the authenticated user, compiled by the shared
  * `compileUserData` helper that the DSAR back-office workflow already uses
- * — keeping a single canonical "what's in an export" definition.
+ * - keeping a single canonical "what's in an export" definition.
  *
  * Rate limit: 1 request per user per hour. Compiling an export is a
  * relatively heavy DB read (joins across essays, AI feedback, audit logs)
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 2. Per-user rate limit: 1 export / hour. Keyed on the Supabase user
-    //    id, not IP — multiple users behind the same school NAT must each
+    //    id, not IP - multiple users behind the same school NAT must each
     //    get their own quota, and a single user opening a second device
     //    shouldn't double their allowance.
     const rl = await rateLimit(`account-export:${authUser.id}`, {
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
     // 4. Compile the export payload using the shared DSAR helper. This
     //    pulls profile, consents, essays + AI feedback (marking history),
     //    privacy settings, subscription, prior data requests, and audit
-    //    log entries — covering everything the task asks for ("profile,
+    //    log entries - covering everything the task asks for ("profile,
     //    board choice, quiz scores, game scores, marking history,
     //    consents"). Quiz/game progress tables don't exist in the current
     //    schema; if/when they're added, extend `compileUserData` so all
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
 
     // 5. Stream as a JSON attachment. Pretty-print with 2-space indent so
     //    a curious teenager can actually open the file in Notepad and
-    //    read it — that's the spirit of the Children's Code.
+    //    read it - that's the spirit of the Children's Code.
     const date = new Date().toISOString().slice(0, 10)
     const filename = `english-hub-data-${prismaUser.id}-${date}.json`
     const body = JSON.stringify(payload, null, 2)

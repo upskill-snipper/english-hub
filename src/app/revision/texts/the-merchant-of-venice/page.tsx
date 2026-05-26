@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -8,11 +8,11 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Merchant of Venice — Study Guide | The English Hub',
+    title: 'The Merchant of Venice - Study Guide | The English Hub',
     description:
       'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'The Merchant of Venice — Study Guide',
+  title: 'The Merchant of Venice - Study Guide',
   description:
     'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

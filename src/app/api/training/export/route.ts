@@ -3,7 +3,7 @@
 // Platform-admin-only. Streams the APPROVED, anonymised training_data corpus as
 // a downloadable file in one of three shapes:
 //
-//   • jsonl — fine-tuning records (one JSON object per line), EXACT shape:
+//   • jsonl - fine-tuning records (one JSON object per line), EXACT shape:
 //       { "input":  { exam_board, qualification, paper, question,
 //                      question_type, rubric, student_answer },
 //         "expected_output": { mark, grade_band, ao_breakdown, feedback,
@@ -12,9 +12,9 @@
 //                       source:"teacher_moderated", model_version,
 //                       prompt_version } }
 //
-//   • csv  — one flat row per record, analysis-friendly columns.
+//   • csv  - one flat row per record, analysis-friendly columns.
 //
-//   • eval — the eval gold-standard dataset shape (evals/types.ts →
+//   • eval - the eval gold-standard dataset shape (evals/types.ts →
 //            GoldStandardCase): one JSON object per line, teacher-moderated
 //            marks mapped onto the examiner (gold) fields.
 //
@@ -22,7 +22,7 @@
 // `source_submission_id` and any name/email/DOB/raw-school-id key are stripped;
 // a row that still trips the assertion is SKIPPED and counted (never emitted).
 // The skipped count is surfaced in an `X-Training-Skipped-Pii` response header.
-// training_data is service-role-only and contains no PII by construction — this
+// training_data is service-role-only and contains no PII by construction - this
 // is defence-in-depth.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -191,7 +191,7 @@ function toExaminerMarks(aoScores: unknown): { id: string; marks: number; maxMar
   return out
 }
 
-/** eval shape — evals/types.ts → GoldStandardCase (teacher-moderated gold). */
+/** eval shape - evals/types.ts → GoldStandardCase (teacher-moderated gold). */
 function toEvalCase(row: TrainingRow) {
   return {
     id: `teh-train-${row.anon_submission_id.slice(0, 16)}`,

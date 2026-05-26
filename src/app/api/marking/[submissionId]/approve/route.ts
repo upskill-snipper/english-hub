@@ -5,7 +5,7 @@
 // with { decision: 'approve' }. All logic (auth, authz, validation, the
 // teacher_moderations insert and the marking_submissions status transition
 // to 'approved' + approved_by/approved_at) lives in the shared `handleReview`
-// exported from ../review/route.ts — this file MUST NOT duplicate it. Any
+// exported from ../review/route.ts - this file MUST NOT duplicate it. Any
 // extra body fields (teacherGrade, teacherFeedback, aoCorrections,
 // adjustmentReason, moderationNotes, trainingEligible) are still honoured.
 

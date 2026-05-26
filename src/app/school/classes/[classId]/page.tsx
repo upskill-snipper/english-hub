@@ -74,7 +74,7 @@ interface SchoolStudent {
 
 const MOCK_CLASS: ClassDetail = {
   id: 'mock-1',
-  name: 'Year 10 English — Set 1',
+  name: 'Year 10 English - Set 1',
   year_group: 'Year 10',
   exam_board: 'AQA',
   teacher_id: null,
@@ -437,7 +437,7 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
   const maxCount = Math.max(...weekCounts, 1)
 
   // Distribution of students across attainment bands. Band labels are
-  // GCSE grade strings from @/lib/grades (NOT i18n keys) — the same raw
+  // GCSE grade strings from @/lib/grades (NOT i18n keys) - the same raw
   // grade labels the rest of this page renders (e.g. "Grade 7").
   const bands = [
     { repPct: 90, test: (v: number) => v >= 80 },
@@ -998,12 +998,12 @@ export default function ClassDetailPage() {
               </Button>
             </div>
 
-            {/* Roster — glass table; every row drills to the student */}
+            {/* Roster - glass table; every row drills to the student */}
             <GlassPanel accent="primary" glow={false} className="p-0">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <caption className="sr-only">
-                    {t('school.classes.detail.tab.students')} — {cls.name}
+                    {t('school.classes.detail.tab.students')} - {cls.name}
                   </caption>
                   <thead>
                     <tr className="border-b border-border/60">
@@ -1073,7 +1073,7 @@ export default function ClassDetailPage() {
                               {s.year_group}
                             </Badge>
                           ) : (
-                            <span className="text-muted-foreground">—</span>
+                            <span className="text-muted-foreground">-</span>
                           )}
                         </td>
                         <td className="px-4 py-3 text-muted-foreground whitespace-nowrap text-xs">
@@ -1098,7 +1098,7 @@ export default function ClassDetailPage() {
                             >
                               {s.avg_quiz_score !== null
                                 ? `G${percentageToGCSEGrade(s.avg_quiz_score)}`
-                                : '—'}
+                                : '-'}
                             </span>
                           </div>
                         </td>

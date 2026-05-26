@@ -27,10 +27,10 @@ const keyQuotations = [
     quote: 'We are members of one body. We are responsible for each other.',
     speaker: 'Inspector Goole (Act 3)',
     analysis:
-      "The Inspector's final speech encapsulates Priestley's socialist message. The metaphor of 'one body' draws on Christian imagery of the body of Christ, suggesting collective humanity. The repetition of 'we' is inclusive and inescapable — Priestley insists that social responsibility is universal. This directly challenges the Birlings' individualist, capitalist worldview.",
+      "The Inspector's final speech encapsulates Priestley's socialist message. The metaphor of 'one body' draws on Christian imagery of the body of Christ, suggesting collective humanity. The repetition of 'we' is inclusive and inescapable - Priestley insists that social responsibility is universal. This directly challenges the Birlings' individualist, capitalist worldview.",
   },
   {
-    quote: "But these girls aren't cheap labour — they're people.",
+    quote: "But these girls aren't cheap labour - they're people.",
     speaker: 'Sheila Birling (Act 1)',
     analysis:
       "Sheila's recognition of the workers' humanity marks the beginning of her moral awakening. The dash creates a dramatic pause that emphasises the contrast between how the workers are treated ('cheap labour') and what they actually are ('people'). This line challenges her father's capitalist view that workers are merely a cost to be minimised.",
@@ -39,7 +39,7 @@ const keyQuotations = [
     quote: "It would be very awkward, wouldn't it?",
     speaker: 'Mrs Birling (Act 2)',
     analysis:
-      "Mrs Birling's rhetorical question reveals her complete inability to accept social responsibility. The word 'awkward' is a striking understatement — she reduces the consequences of exploitation to mere social inconvenience. The tag question 'wouldn't it?' seeks validation from the audience, but Priestley intends the audience to reject her position entirely.",
+      "Mrs Birling's rhetorical question reveals her complete inability to accept social responsibility. The word 'awkward' is a striking understatement - she reduces the consequences of exploitation to mere social inconvenience. The tag question 'wouldn't it?' seeks validation from the audience, but Priestley intends the audience to reject her position entirely.",
   },
   {
     quote:
@@ -49,7 +49,7 @@ const keyQuotations = [
       "Birling dismisses socialist ideas as the work of 'cranks', revealing his contempt for collective responsibility. Priestley uses dramatic irony: the audience knows that Birling's confident predictions about the Titanic and no war are wrong, undermining his authority. His dismissal of social responsibility is positioned to be equally wrong.",
   },
   {
-    quote: "I'm ashamed of you as well — yes both of you.",
+    quote: "I'm ashamed of you as well - yes both of you.",
     speaker: 'Sheila Birling (Act 3)',
     analysis:
       "Sheila turns against her parents, marking a generational divide. Her shame contrasts with her parents' refusal to accept responsibility. The emphatic 'yes both of you' shows her determination and moral clarity. She represents the younger generation that Priestley hopes will build a more just society after the war.",
@@ -58,13 +58,13 @@ const keyQuotations = [
     quote: "You're not the kind of father a chap could go to when he's in trouble",
     speaker: 'Eric Birling (Act 3)',
     analysis:
-      "Eric's accusation exposes the failure of the Birling family unit. Despite their wealth and social standing, the family lacks genuine emotional connection. The colloquial 'chap' reveals Eric's vulnerability. Priestley suggests that capitalist values — prioritising profit and reputation over compassion — corrode even the most intimate human relationships.",
+      "Eric's accusation exposes the failure of the Birling family unit. Despite their wealth and social standing, the family lacks genuine emotional connection. The colloquial 'chap' reveals Eric's vulnerability. Priestley suggests that capitalist values - prioritising profit and reputation over compassion - corrode even the most intimate human relationships.",
   },
   {
     quote: 'unsinkable, absolutely unsinkable',
     speaker: 'Mr Birling (Act 1)',
     analysis:
-      "Birling's confident declaration about the Titanic is a masterful use of dramatic irony. The audience knows the Titanic sank in 1912, so Birling's certainty is immediately undermined. The repetition and intensifier 'absolutely' make him appear foolish. Priestley uses this to discredit everything else Birling says — including his views on social responsibility.",
+      "Birling's confident declaration about the Titanic is a masterful use of dramatic irony. The audience knows the Titanic sank in 1912, so Birling's certainty is immediately undermined. The repetition and intensifier 'absolutely' make him appear foolish. Priestley uses this to discredit everything else Birling says - including his views on social responsibility.",
   },
   {
     quote: 'I was in that state where a chap easily turns nasty',
@@ -76,7 +76,7 @@ const keyQuotations = [
     quote: 'Elaborate fine feelings and scruples that were simply absurd in a girl in her position',
     speaker: 'Mrs Birling (Act 2)',
     analysis:
-      "Mrs Birling's snobbery is laid bare in this statement. She cannot accept that a working-class girl could possess moral principles ('fine feelings and scruples'). The word 'position' reveals her rigid class consciousness — she believes that moral sensibility is the preserve of the upper classes. Priestley exposes the hypocrisy: it is Mrs Birling, not Eva, who lacks moral feeling.",
+      "Mrs Birling's snobbery is laid bare in this statement. She cannot accept that a working-class girl could possess moral principles ('fine feelings and scruples'). The word 'position' reveals her rigid class consciousness - she believes that moral sensibility is the preserve of the upper classes. Priestley exposes the hypocrisy: it is Mrs Birling, not Eva, who lacks moral feeling.",
   },
   {
     quote: "You began to learn something. And now you've stopped.",
@@ -94,7 +94,7 @@ const keyQuotations = [
     quote: 'They will be taught it in fire and blood and anguish.',
     speaker: 'Inspector Goole (Act 3)',
     analysis:
-      "The Inspector's prophetic warning refers to the World Wars. Written in 1945, the play is set in 1912 — Priestley's audience had lived through both wars and would recognise this as a prophecy already fulfilled. The triad 'fire and blood and anguish' evokes the horrors of warfare. The message is clear: if society does not choose compassion, it will be forced to learn through suffering.",
+      "The Inspector's prophetic warning refers to the World Wars. Written in 1945, the play is set in 1912 - Priestley's audience had lived through both wars and would recognise this as a prophecy already fulfilled. The triad 'fire and blood and anguish' evokes the horrors of warfare. The message is clear: if society does not choose compassion, it will be forced to learn through suffering.",
   },
   {
     quote: "Everything's all right now, Sheila. What about this ring?",
@@ -109,16 +109,16 @@ const keyQuotations = [
       "Mrs Birling's use of the word 'business' reduces Eva's death to a commercial transaction, revealing how thoroughly capitalism has colonised her language and thought. Her flat denial 'I don't come into this' is a refusal of responsibility that will be dramatically overturned as the Inspector reveals her role. The audience anticipates her exposure, creating dramatic tension.",
   },
   {
-    quote: "She'd had a lot to say — far too much — so she had to go",
+    quote: "She'd had a lot to say - far too much - so she had to go",
     speaker: 'Mr Birling (Act 1)',
     analysis:
       "Birling's justification for sacking Eva reveals his authoritarian attitude to the working class. The dash and parenthetical 'far too much' show his irritation at a worker daring to speak up. The phrase 'had to go' presents her dismissal as inevitable, removing any sense of personal choice or responsibility. Priestley exposes how the powerful silence dissent.",
   },
   {
-    quote: 'Girls of that class—',
+    quote: 'Girls of that class-',
     speaker: 'Mrs Birling (Act 2)',
     analysis:
-      "Sheila's interruption cuts off Mrs Birling's dismissive phrase, but the incomplete sentence speaks volumes. The phrase 'that class' reveals deep-rooted snobbery and dehumanisation — Eva is reduced to a category rather than recognised as an individual. The dash represents Sheila's growing refusal to accept her mother's class prejudice, symbolising generational change.",
+      "Sheila's interruption cuts off Mrs Birling's dismissive phrase, but the incomplete sentence speaks volumes. The phrase 'that class' reveals deep-rooted snobbery and dehumanisation - Eva is reduced to a category rather than recognised as an individual. The dash represents Sheila's growing refusal to accept her mother's class prejudice, symbolising generational change.",
   },
   {
     quote: 'We are learning something tonight. And it should teach us something too.',

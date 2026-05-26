@@ -1,13 +1,13 @@
 /**
- * Tests for POST /api/push/send — the cron-only Expo Push fanout.
+ * Tests for POST /api/push/send - the cron-only Expo Push fanout.
  *
  * Coverage:
  *   1. 401 when `x-cron-secret` is missing or wrong.
  *   2. 500 when CRON_SECRET env var is not configured.
  *   3. 400 on malformed payload.
  *   4. 200 with `sent = 0` when the user has no registered devices.
- *   5. 200 happy path — Expo is called, `sent` equals the device count.
- *   6. 200 error path — Expo returns non-2xx, response surfaces the error
+ *   5. 200 happy path - Expo is called, `sent` equals the device count.
+ *   6. 200 error path - Expo returns non-2xx, response surfaces the error
  *      and `sent` is zero.
  */
 
@@ -26,7 +26,7 @@ const prismaMock = {
 
 vi.mock('@/lib/prisma', () => ({ prisma: prismaMock }))
 
-// Global fetch mock — tests push a response.
+// Global fetch mock - tests push a response.
 const fetchQueue: Array<{ status: number; body: unknown; ok?: boolean }> = []
 const originalFetch = globalThis.fetch
 beforeEach(() => {
@@ -47,10 +47,7 @@ function restoreFetch(): void {
 
 // ─── Helpers ────────────────────────────────────────────────────────────
 
-function buildRequest(
-  body: unknown,
-  cronSecret: string | null = 'test-cron-secret',
-): NextRequest {
+function buildRequest(body: unknown, cronSecret: string | null = 'test-cron-secret'): NextRequest {
   const headers = new Headers({ 'content-type': 'application/json' })
   if (cronSecret !== null) headers.set('x-cron-secret', cronSecret)
   return new NextRequest('http://localhost/api/push/send', {
@@ -148,7 +145,7 @@ describe('POST /api/push/send', () => {
     expect(body.sent).toBe(2)
     expect(body.tokens).toBe(2)
     // Exactly one Expo call made (single chunk).
-    expect((globalThis.fetch as unknown as ReturnType<typeof vi.fn>)).toHaveBeenCalledTimes(1)
+    expect(globalThis.fetch as unknown as ReturnType<typeof vi.fn>).toHaveBeenCalledTimes(1)
     restoreFetch()
   })
 

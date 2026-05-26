@@ -21,7 +21,7 @@ import { getSetText } from '@/lib/board/set-texts'
  * Static folders (macbeth, christmas-carol, jekyll-and-hyde, etc.) win the
  * Next.js route match before this dynamic [slug] segment runs, so the
  * existing 24 hand-authored notes pages are unaffected. This page only
- * renders for slugs WITHOUT a static folder — turning what was previously
+ * renders for slugs WITHOUT a static folder - turning what was previously
  * a 404 into a graceful "study guide in production" placeholder.
  *
  * Founder feedback (02 May 2026, ship-day TestFlight): "revision notes all
@@ -34,7 +34,7 @@ import { getSetText } from '@/lib/board/set-texts'
  * lands somewhere helpful.
  *
  * Real revision-notes content for the missing slugs is a content-team task
- * — when a page is hand-authored at /resources/revision-notes/<slug>/page.tsx
+ * - when a page is hand-authored at /resources/revision-notes/<slug>/page.tsx
  * the static folder match takes over and this fallback is bypassed.
  */
 
@@ -44,14 +44,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params
   const text = getSetText(slug)
   const title = text
-    ? `${text.title} — Revision notes (in production)`
-    : 'Revision notes — in production'
+    ? `${text.title} - Revision notes (in production)`
+    : 'Revision notes - in production'
   return {
     title: `${title}`,
     description: text
       ? `Concise revision notes for ${text.title} are being written. In the meantime explore our study guide, key quotes, and AI marking.`
       : 'Concise revision notes are being written. Explore our study guides, key quotes, and AI marking while we finish them.',
-    // Don't index in-production placeholders — they aren't real content yet
+    // Don't index in-production placeholders - they aren't real content yet
     // and we don't want them ranking ahead of complete pages.
     robots: { index: false, follow: true },
     alternates: {

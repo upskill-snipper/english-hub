@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback } from 'react'
 import {
   Mail,
   UserPlus,
@@ -11,26 +11,20 @@ import {
   Loader2,
   AlertCircle,
   RefreshCw,
-} from "lucide-react"
-import { toast } from "sonner"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from 'lucide-react'
+import { toast } from 'sonner'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
-type InviteRole = "teacher" | "head_of_department"
-type InviteStatus = "pending" | "accepted" | "expired"
+type InviteRole = 'teacher' | 'head_of_department'
+type InviteStatus = 'pending' | 'accepted' | 'expired'
 
 interface PendingInvite {
   id: string
@@ -53,13 +47,13 @@ interface SendResult {
 // ---------------------------------------------------------------------------
 
 const ROLE_OPTIONS: { value: InviteRole; label: string }[] = [
-  { value: "teacher", label: "Teacher" },
-  { value: "head_of_department", label: "Head of Department" },
+  { value: 'teacher', label: 'Teacher' },
+  { value: 'head_of_department', label: 'Head of Department' },
 ]
 
 const ROLE_LABELS: Record<string, string> = {
-  teacher: "Teacher",
-  head_of_department: "Head of Department",
+  teacher: 'Teacher',
+  head_of_department: 'Head of Department',
 }
 
 // ---------------------------------------------------------------------------
@@ -67,11 +61,11 @@ const ROLE_LABELS: Record<string, string> = {
 // ---------------------------------------------------------------------------
 
 function formatDate(iso: string | null): string {
-  if (!iso) return "—"
-  return new Date(iso).toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
+  if (!iso) return '-'
+  return new Date(iso).toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
   })
 }
 
@@ -81,10 +75,10 @@ function isExpired(expires: string | null): boolean {
 }
 
 function resolveStatus(invite: PendingInvite): InviteStatus {
-  if (invite.invite_status === "accepted") return "accepted"
-  if (invite.invite_status === "expired") return "expired"
-  if (isExpired(invite.expires)) return "expired"
-  return "pending"
+  if (invite.invite_status === 'accepted') return 'accepted'
+  if (invite.invite_status === 'expired') return 'expired'
+  if (isExpired(invite.expires)) return 'expired'
+  return 'pending'
 }
 
 // ---------------------------------------------------------------------------
@@ -92,7 +86,7 @@ function resolveStatus(invite: PendingInvite): InviteStatus {
 // ---------------------------------------------------------------------------
 
 function StatusBadge({ status }: { status: InviteStatus }) {
-  if (status === "accepted") {
+  if (status === 'accepted') {
     return (
       <Badge className="gap-1 bg-green-600/20 text-green-400 border-green-600/30">
         <Check className="h-3 w-3" />
@@ -100,7 +94,7 @@ function StatusBadge({ status }: { status: InviteStatus }) {
       </Badge>
     )
   }
-  if (status === "expired") {
+  if (status === 'expired') {
     return (
       <Badge className="gap-1 bg-zinc-600/20 text-zinc-400 border-zinc-600/30">
         <Clock className="h-3 w-3" />
@@ -125,9 +119,9 @@ interface InviteFormProps {
 }
 
 function InviteForm({ onInvitesSent }: InviteFormProps) {
-  const [emailInput, setEmailInput] = useState("")
-  const [role, setRole] = useState<InviteRole>("teacher")
-  const [message, setMessage] = useState("")
+  const [emailInput, setEmailInput] = useState('')
+  const [role, setRole] = useState<InviteRole>('teacher')
+  const [message, setMessage] = useState('')
   const [sending, setSending] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
@@ -139,15 +133,15 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
       .filter(Boolean)
 
     if (rawEmails.length === 0) {
-      toast.error("Please enter at least one email address.")
+      toast.error('Please enter at least one email address.')
       return
     }
 
     setSending(true)
     try {
-      const res = await fetch("/api/school/invite", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/school/invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           emails: rawEmails,
           role,
@@ -158,7 +152,7 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
       const data: SendResult | { error: string } = await res.json()
 
       if (!res.ok) {
-        toast.error("error" in data ? data.error : "Failed to send invites.")
+        toast.error('error' in data ? data.error : 'Failed to send invites.')
         return
       }
 
@@ -166,11 +160,11 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
 
       const parts: string[] = []
       if (result.sent > 0) {
-        parts.push(`${result.sent} invite${result.sent !== 1 ? "s" : ""} sent`)
+        parts.push(`${result.sent} invite${result.sent !== 1 ? 's' : ''} sent`)
       }
       if (result.alreadyMembers > 0) {
         parts.push(
-          `${result.alreadyMembers} already member${result.alreadyMembers !== 1 ? "s" : ""}`
+          `${result.alreadyMembers} already member${result.alreadyMembers !== 1 ? 's' : ''}`,
         )
       }
       if (result.errors.length > 0) {
@@ -181,14 +175,14 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
       }
 
       if (parts.length > 0) {
-        toast.success(parts.join(", ") + ".")
+        toast.success(parts.join(', ') + '.')
       }
 
-      setEmailInput("")
-      setMessage("")
+      setEmailInput('')
+      setMessage('')
       onInvitesSent()
     } catch {
-      toast.error("Network error. Please check your connection and try again.")
+      toast.error('Network error. Please check your connection and try again.')
     } finally {
       setSending(false)
     }
@@ -202,9 +196,8 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
           Invite Staff
         </CardTitle>
         <CardDescription>
-          Enter one or more email addresses separated by commas or spaces.
-          Existing users will be added directly; new users will receive an
-          invitation email.
+          Enter one or more email addresses separated by commas or spaces. Existing users will be
+          added directly; new users will receive an invitation email.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -254,8 +247,7 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
           {/* Optional personal message */}
           <div className="space-y-1.5">
             <Label htmlFor="invite-message" className="text-sm font-medium text-foreground">
-              Personal message{" "}
-              <span className="font-normal text-muted-foreground">(optional)</span>
+              Personal message <span className="font-normal text-muted-foreground">(optional)</span>
             </Label>
             <textarea
               id="invite-message"
@@ -267,9 +259,7 @@ function InviteForm({ onInvitesSent }: InviteFormProps) {
               disabled={sending}
               className="flex w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground shadow-sm resize-none focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
             />
-            <p className="text-xs text-muted-foreground text-right">
-              {message.length}/500
-            </p>
+            <p className="text-xs text-muted-foreground text-right">{message.length}/500</p>
           </div>
 
           <Button type="submit" disabled={sending} className="w-full sm:w-auto">
@@ -311,17 +301,17 @@ function InviteRow({ invite, onRevoked }: InviteRowProps) {
     setRevoking(true)
     try {
       const res = await fetch(`/api/school/invite/${invite.invite_token}`, {
-        method: "DELETE",
+        method: 'DELETE',
       })
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
-        toast.error(data.error ?? "Failed to revoke invite.")
+        toast.error(data.error ?? 'Failed to revoke invite.')
         return
       }
       toast.success(`Invite for ${invite.email} revoked.`)
       onRevoked()
     } catch {
-      toast.error("Network error. Please try again.")
+      toast.error('Network error. Please try again.')
     } finally {
       setRevoking(false)
     }
@@ -331,9 +321,7 @@ function InviteRow({ invite, onRevoked }: InviteRowProps) {
     <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex flex-col gap-1 min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="truncate text-sm font-medium text-foreground">
-            {invite.email}
-          </span>
+          <span className="truncate text-sm font-medium text-foreground">{invite.email}</span>
           <Badge variant="outline" className="shrink-0 text-xs text-muted-foreground border-border">
             {ROLE_LABELS[invite.role] ?? invite.role}
           </Badge>
@@ -342,14 +330,14 @@ function InviteRow({ invite, onRevoked }: InviteRowProps) {
         <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
           <span>Invited {formatDate(invite.invited_at)}</span>
           {invite.expires && (
-            <span className={status === "expired" ? "text-red-400" : ""}>
+            <span className={status === 'expired' ? 'text-red-400' : ''}>
               Expires {formatDate(invite.expires)}
             </span>
           )}
         </div>
       </div>
 
-      {status === "pending" && invite.invite_token && (
+      {status === 'pending' && invite.invite_token && (
         <Button
           variant="ghost"
           size="sm"
@@ -384,8 +372,8 @@ interface InviteListProps {
 }
 
 function InviteList({ invites, loading, error, onRefresh, onRevoked }: InviteListProps) {
-  const pending = invites.filter((i) => resolveStatus(i) === "pending")
-  const others = invites.filter((i) => resolveStatus(i) !== "pending")
+  const pending = invites.filter((i) => resolveStatus(i) === 'pending')
+  const others = invites.filter((i) => resolveStatus(i) !== 'pending')
 
   return (
     <Card className="border-border bg-card">
@@ -396,9 +384,7 @@ function InviteList({ invites, loading, error, onRefresh, onRevoked }: InviteLis
               <Mail className="h-5 w-5 text-primary" />
               Pending Invitations
             </CardTitle>
-            <CardDescription>
-              Invitations expire 7 days after they are sent.
-            </CardDescription>
+            <CardDescription>Invitations expire 7 days after they are sent.</CardDescription>
           </div>
           <Button
             variant="ghost"
@@ -407,7 +393,7 @@ function InviteList({ invites, loading, error, onRefresh, onRevoked }: InviteLis
             disabled={loading}
             className="text-muted-foreground hover:text-foreground"
           >
-            <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+            <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
           </Button>
         </div>
       </CardHeader>
@@ -443,7 +429,7 @@ function InviteList({ invites, loading, error, onRefresh, onRevoked }: InviteLis
         )}
 
         {others.length > 0 && (
-          <div className={`space-y-3 ${pending.length > 0 ? "mt-6" : ""}`}>
+          <div className={`space-y-3 ${pending.length > 0 ? 'mt-6' : ''}`}>
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Expired ({others.length})
             </p>
@@ -470,16 +456,16 @@ export default function SchoolInvitePage() {
     setLoading(true)
     setFetchError(null)
     try {
-      const res = await fetch("/api/school/invite")
+      const res = await fetch('/api/school/invite')
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
-        setFetchError(data.error ?? "Failed to load invitations.")
+        setFetchError(data.error ?? 'Failed to load invitations.')
         return
       }
       const data = await res.json()
       setInvites(data.invites ?? [])
     } catch {
-      setFetchError("Network error. Could not load invitations.")
+      setFetchError('Network error. Could not load invitations.')
     } finally {
       setLoading(false)
     }
@@ -494,8 +480,8 @@ export default function SchoolInvitePage() {
       <div>
         <h1 className="text-2xl font-bold text-foreground">Invite Staff</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Invite teachers and heads of department to your school. They will
-          receive an email with a secure link to join.
+          Invite teachers and heads of department to your school. They will receive an email with a
+          secure link to join.
         </p>
       </div>
 

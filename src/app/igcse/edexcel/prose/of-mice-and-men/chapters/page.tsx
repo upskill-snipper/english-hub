@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men Chapter Analysis — Edexcel IGCSE Literature',
+    title: 'Of Mice and Men Chapter Analysis - Edexcel IGCSE Literature',
     description:
       'Chapter-by-chapter analysis of Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
   },
-  title: 'Of Mice and Men Chapter Analysis — Edexcel IGCSE Literature',
+  title: 'Of Mice and Men Chapter Analysis - Edexcel IGCSE Literature',
   description:
     'Chapter-by-chapter analysis of Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
   alternates: {
@@ -79,7 +79,7 @@ const chapters = [
   },
   {
     number: 3,
-    title: 'The bunkhouse — evening',
+    title: 'The bunkhouse - evening',
     summary:
       'Slim gives Lennie a puppy. Carlson pressures Candy to let him shoot his old, blind dog; Candy agrees and immediately regrets it. George confides in Slim about Weed. Candy overhears the dream and offers his savings. The dream briefly feels possible. Curley attacks Lennie, who crushes his hand.',
     keyEvents: [
@@ -89,7 +89,7 @@ const chapters = [
       'Lennie crushes Curley\u2019s hand in self-defence',
     ],
     characterDevelopment:
-      'Candy\u2019s dog scene foreshadows Lennie\u2019s death — "I ought to of shot that dog myself" is the novel\u2019s structural key. The dream becomes financially real for one chapter only. Lennie\u2019s uncontrollable strength is dramatised through the Curley fight.',
+      'Candy\u2019s dog scene foreshadows Lennie\u2019s death - "I ought to of shot that dog myself" is the novel\u2019s structural key. The dream becomes financially real for one chapter only. Lennie\u2019s uncontrollable strength is dramatised through the Curley fight.',
     quotes: [
       {
         text: 'I ought to of shot that dog myself, George.',
@@ -98,7 +98,7 @@ const chapters = [
       {
         text: 'Le\u2019s get that place now.',
         technique:
-          'Candy\u2019s urgency marks the dream\u2019s peak — and the start of its collapse',
+          'Candy\u2019s urgency marks the dream\u2019s peak - and the start of its collapse',
       },
       {
         text: 'Lennie covered his face with huge paws and bleated with terror.',
@@ -121,7 +121,7 @@ const chapters = [
       'Crooks is the novella\u2019s most isolated figure: segregated by race, excluded from community. His momentary belief and its immediate destruction is the novel\u2019s most painful narrative beat. Curley\u2019s wife is revealed as both lonely and capable of racial cruelty.',
     quotes: [
       {
-        text: 'A guy needs somebody — to be near him. A guy goes nuts if he ain\u2019t got nobody.',
+        text: 'A guy needs somebody - to be near him. A guy goes nuts if he ain\u2019t got nobody.',
         technique: 'Crooks diagnoses loneliness as pathology, not sentiment',
       },
       {
@@ -165,7 +165,7 @@ const chapters = [
   },
   {
     number: 6,
-    title: 'The pool — the ending',
+    title: 'The pool - the ending',
     summary:
       'Lennie returns to the pool as George instructed. The men form a hunting party. George finds Lennie first, retells the dream one last time while Lennie faces the river, and shoots him in the back of the head with Carlson\u2019s Luger. Slim understands; Carlson does not.',
     keyEvents: [
@@ -178,7 +178,7 @@ const chapters = [
       'George\u2019s mercy killing echoes Carlson\u2019s shooting of Candy\u2019s dog but is qualitatively different: it is an act of love performed in agony. Slim\u2019s quiet understanding validates George\u2019s choice. Carlson\u2019s incomprehension seals the novella\u2019s bleak verdict on a world that cannot recognise friendship.',
     quotes: [
       {
-        text: 'Tell me — like you done before. Tell how it\u2019s gonna be.',
+        text: 'Tell me - like you done before. Tell how it\u2019s gonna be.',
         technique: 'The dream is requested as a bedtime story; repetition intensifies the tragedy',
       },
       {
@@ -249,7 +249,7 @@ export default async function OmamChaptersPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing (CDPA 1988) for study and criticism.

@@ -5,7 +5,7 @@ import AffiliatePublicPage from '@/components/affiliates/AffiliatePublicPage'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
-// 2026-05-01: SEO/integrity pass — title rewritten to query-aligned form,
+// 2026-05-01: SEO/integrity pass - title rewritten to query-aligned form,
 // description shortened to 120-155 char band, canonical URL added.
 // Description stays generic ("recurring commission") rather than claiming
 // a specific percentage: the live affiliate component shows mixed values
@@ -13,7 +13,7 @@ import { tMany } from '@/lib/i18n/t'
 // and a "30% / 15% of first-year" dt block) so no single percentage is
 // safe to repeat in metadata until the affiliate terms are reconciled.
 // H1 + FAQ for this route live in <AffiliatePublicPage>, not this file.
-// 2026-05-13: metadata wired to i18n — title/description/OG alt come from
+// 2026-05-13: metadata wired to i18n - title/description/OG alt come from
 // `affiliates.public.meta.*` keys so AR mode swaps to Khaleeji copy.
 export async function generateMetadata(): Promise<Metadata> {
   const [title, description, ogImageAlt] = await tMany([
@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // ─── /affiliates ────────────────────────────────────────────────────────────
-// Self-serve partnership page. No review queue — enrolment via
+// Self-serve partnership page. No review queue - enrolment via
 // /api/affiliates/enrol is instant.
 //
 // If the user already has a NEW-system row in `affiliate_accounts`, send them
@@ -89,7 +89,7 @@ export default async function AffiliatesPage() {
     )
   }
 
-  // New-system check — if they have an active affiliate_accounts row, go to dashboard.
+  // New-system check - if they have an active affiliate_accounts row, go to dashboard.
   const admin = createServiceRoleClient()
   const { data: newAccount } = await admin
     .from('affiliate_accounts')
@@ -101,7 +101,7 @@ export default async function AffiliatesPage() {
     redirect('/affiliates/dashboard')
   }
 
-  // Legacy-system check — surface a soft banner only; enrolment form still renders.
+  // Legacy-system check - surface a soft banner only; enrolment form still renders.
   const { data: legacy } = await supabase
     .from('affiliates')
     .select('id, status')

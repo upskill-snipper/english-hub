@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Romeo and Juliet GCSE revision — Shakespeare',
+    title: 'Romeo and Juliet revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Romeo and Juliet GCSE revision - Shakespeare',
   },
-  title: 'Romeo and Juliet revision guide — themes, characters, key quotes',
+  title: 'Romeo and Juliet revision guide - themes, characters, key quotes',
   description:
-    "Romeo and Juliet GCSE revision — Shakespeare's tragedy with acts, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR and Eduqas.",
+    "Romeo and Juliet GCSE revision - Shakespeare's tragedy with acts, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/romeo-and-juliet',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const data: TextGuideData = {
   title: 'Romeo and Juliet',
   author: 'William Shakespeare',
-  year: 'c. 1594–96',
+  year: 'c. 1594-96',
   category: 'Play',
   badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel iGCSE',
   intro:
@@ -33,7 +33,7 @@ const data: TextGuideData = {
     genre: 'Tragedy / Romance',
     setting: 'Verona and Mantua, Italy',
     length: 'Five-act play (~3,000 lines)',
-    published: 'c. 1594–96 (first quarto 1597)',
+    published: 'c. 1594-96 (first quarto 1597)',
   },
   plotSummary: [
     'The play opens with a street brawl between servants of the Montague and Capulet households, establishing the ancient feud that poisons Verona. Prince Escalus threatens death to anyone who disturbs the peace again. Meanwhile Romeo, a Montague, is lovesick over a girl called Rosaline. His friends Benvolio and Mercutio persuade him to gate-crash a Capulet feast, where he instantly forgets Rosaline upon seeing Juliet. The two share a sonnet and a kiss before discovering they belong to enemy families. That night Romeo climbs into the Capulet orchard, and in the famous balcony scene the lovers declare their mutual devotion and decide to marry in secret.',
@@ -60,7 +60,7 @@ const data: TextGuideData = {
     {
       name: 'Mercutio',
       role: 'Romeo\u2019s close friend; kinsman of the Prince',
-      body: 'Witty, bawdy and fearless, Mercutio mocks both love and honour with equal energy. His Queen Mab speech reveals a dark imagination beneath the jokes. His death — caused partly by Romeo\u2019s well-meaning intervention — triggers the chain of catastrophe, and his dying curse on both houses becomes the play\u2019s moral verdict.',
+      body: 'Witty, bawdy and fearless, Mercutio mocks both love and honour with equal energy. His Queen Mab speech reveals a dark imagination beneath the jokes. His death - caused partly by Romeo\u2019s well-meaning intervention - triggers the chain of catastrophe, and his dying curse on both houses becomes the play\u2019s moral verdict.',
     },
     {
       name: 'The Nurse',
@@ -114,142 +114,142 @@ const data: TextGuideData = {
     {
       quote:
         '"Two households, both alike in dignity, / In fair Verona, where we lay our scene, / From ancient grudge break to new mutiny, / Where civil blood makes civil hands unclean."',
-      who: 'Chorus — Prologue',
+      who: 'Chorus - Prologue',
       analysis:
         'The sonnet prologue establishes the feud, foreshadows the tragedy and frames the play as a story whose ending is already known.',
     },
     {
       quote:
         '"From forth the fatal loins of these two foes / A pair of star-cross\'d lovers take their life."',
-      who: 'Chorus — Prologue',
+      who: 'Chorus - Prologue',
       analysis:
-        'Introduces the idea of fate ("star-cross\'d") and the double meaning of "take their life" — both born and killed.',
+        'Introduces the idea of fate ("star-cross\'d") and the double meaning of "take their life" - both born and killed.',
     },
     {
       quote:
         '"O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / As a rich jewel in an Ethiope\'s ear."',
-      who: 'Romeo — Act 1, Scene 5',
+      who: 'Romeo - Act 1, Scene 5',
       analysis:
         'Romeo\u2019s first sight of Juliet, using light and dark imagery to elevate her above the ordinary world.',
     },
     {
       quote:
         '"My only love sprung from my only hate! / Too early seen unknown, and known too late!"',
-      who: 'Juliet — Act 1, Scene 5',
+      who: 'Juliet - Act 1, Scene 5',
       analysis:
         'Juliet recognises the paradox at the heart of the play: love and enmity are inseparable from birth.',
     },
     {
       quote:
         '"But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun."',
-      who: 'Romeo — Act 2, Scene 2',
+      who: 'Romeo - Act 2, Scene 2',
       analysis:
         'The famous balcony speech uses cosmic imagery to present Juliet as a life-giving force that eclipses everything else.',
     },
     {
       quote:
         '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
-      who: 'Juliet — Act 2, Scene 2',
+      who: 'Juliet - Act 2, Scene 2',
       analysis:
         'Juliet challenges the idea that identity is determined by family name, striking at the root of the feud.',
     },
     {
       quote:
         '"These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume."',
-      who: 'Friar Lawrence — Act 2, Scene 6',
+      who: 'Friar Lawrence - Act 2, Scene 6',
       analysis:
         'The Friar\u2019s warning foreshadows the lovers\u2019 destruction and links passion directly to self-annihilation.',
     },
     {
       quote: '"A plague o\' both your houses!"',
-      who: 'Mercutio — Act 3, Scene 1',
+      who: 'Mercutio - Act 3, Scene 1',
       analysis:
         'Mercutio\u2019s dying curse condemns both families equally and voices the play\u2019s moral judgement on the feud.',
     },
     {
       quote: '"O, I am fortune\'s fool!"',
-      who: 'Romeo — Act 3, Scene 1',
+      who: 'Romeo - Act 3, Scene 1',
       analysis:
         'Romeo recognises fate\u2019s hand immediately after killing Tybalt, linking his impulsiveness to cosmic injustice.',
     },
     {
       quote: '"It was the nightingale, and not the lark."',
-      who: 'Juliet — Act 3, Scene 5',
+      who: 'Juliet - Act 3, Scene 5',
       analysis:
         'Juliet tries to deny the coming of dawn and Romeo\u2019s banishment, using birdsong to cling to their last moments together.',
     },
     {
       quote:
         '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
-      who: 'Lord Capulet — Act 3, Scene 5',
+      who: 'Lord Capulet - Act 3, Scene 5',
       analysis:
         'Capulet\u2019s fury at Juliet\u2019s refusal exposes the patriarchal violence beneath his earlier reasonableness.',
     },
     {
       quote: '"Is there no pity sitting in the clouds / That sees into the bottom of my grief?"',
-      who: 'Juliet — Act 3, Scene 5',
+      who: 'Juliet - Act 3, Scene 5',
       analysis:
         'Juliet\u2019s appeal to heaven after being abandoned by the Nurse emphasises her total isolation.',
     },
     {
       quote: '"My dismal scene I needs must act alone."',
-      who: 'Juliet — Act 4, Scene 3',
+      who: 'Juliet - Act 4, Scene 3',
       analysis:
         'Juliet steels herself to take the potion, acknowledging that she faces death with no support from anyone.',
     },
     {
       quote: '"Then I defy you, stars!"',
-      who: 'Romeo — Act 5, Scene 1',
+      who: 'Romeo - Act 5, Scene 1',
       analysis:
         'Romeo\u2019s defiant reaction to the news of Juliet\u2019s death, asserting free will against the fate that has governed the play.',
     },
     {
       quote: '"O true apothecary, / Thy drugs are quick. Thus with a kiss I die."',
-      who: 'Romeo — Act 5, Scene 3',
+      who: 'Romeo - Act 5, Scene 3',
       analysis:
         'Romeo\u2019s last words unite love ("a kiss") and death in a single line, encapsulating the play\u2019s central paradox.',
     },
     {
       quote: '"O happy dagger, / This is thy sheath; there rust, and let me die."',
-      who: 'Juliet — Act 5, Scene 3',
+      who: 'Juliet - Act 5, Scene 3',
       analysis:
         'Juliet\u2019s suicide is deliberate and decisive, contrasting with Romeo\u2019s impulsive action and completing their tragic symmetry.',
     },
     {
       quote: '"For never was a story of more woe / Than this of Juliet and her Romeo."',
-      who: 'Prince Escalus — Act 5, Scene 3',
+      who: 'Prince Escalus - Act 5, Scene 3',
       analysis:
         'The Prince\u2019s closing couplet transforms the lovers into a lasting story, suggesting their deaths carry meaning beyond the personal.',
     },
     {
       quote: '"Wisely and slow; they stumble that run fast."',
-      who: 'Friar Lawrence — Act 2, Scene 3',
+      who: 'Friar Lawrence - Act 2, Scene 3',
       analysis:
         'Proverbial advice that the Friar himself fails to follow, adding irony to his role as counsellor.',
     },
     {
       quote: '"O serpent heart hid with a flow\'ring face! / Did ever dragon keep so fair a cave?"',
-      who: 'Juliet — Act 3, Scene 2',
+      who: 'Juliet - Act 3, Scene 2',
       analysis:
         'Juliet\u2019s use of oxymoron when she learns Romeo killed Tybalt captures her agonising conflict between love and family loyalty.',
     },
     {
       quote:
         '"Death lies on her like an untimely frost / Upon the sweetest flower of all the field."',
-      who: 'Lord Capulet — Act 4, Scene 5',
+      who: 'Lord Capulet - Act 4, Scene 5',
       analysis:
         'Capulet\u2019s grief uses natural imagery to present Juliet\u2019s apparent death as an unnatural destruction of youth and beauty.',
     },
     {
       quote: '"O, what learning is! / My lord, I\'ll tell my lady you will come."',
-      who: 'Nurse — Act 2, Scene 4',
+      who: 'Nurse - Act 2, Scene 4',
       analysis:
         'The Nurse\u2019s comic admiration for the Friar\u2019s learning contrasts with her practical, bawdy worldview and adds warmth to the middle acts.',
     },
     {
       quote:
         '"Give me my Romeo, and when I shall die / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night."',
-      who: 'Juliet — Act 3, Scene 2',
+      who: 'Juliet - Act 3, Scene 2',
       analysis:
         'Juliet\u2019s epithalamium imagines love as cosmic and eternal, but the word "die" carries a dark premonition alongside its Elizabethan double meaning.',
     },
@@ -335,7 +335,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She loves flowers',
-      "Names are meaningless — Romeo's family name does not define who he is",
+      "Names are meaningless - Romeo's family name does not define who he is",
       'She wants to change her own name',
       'She is talking about gardening',
     ],
@@ -547,7 +547,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The Prince delivers judgement that the tragedy belongs to everyone. Confronted with the bodies of their children, Montague and Capulet finally agree to end the feud, but the price — two young lives — makes the reconciliation feel devastatingly hollow.',
+      'The Prince delivers judgement that the tragedy belongs to everyone. Confronted with the bodies of their children, Montague and Capulet finally agree to end the feud, but the price - two young lives - makes the reconciliation feel devastatingly hollow.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -573,7 +573,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       '"Star-cross\'d lovers" introduces the idea of cosmic fate',
       'Unlucky timing: the undelivered letter, Romeo arriving minutes too early',
-      '"Then I defy you, stars!" — the tension between fate and free will',
+      '"Then I defy you, stars!" - the tension between fate and free will',
       'The feud, parental tyranny, and impulsiveness are human causes',
       'Shakespeare leaves the audience to weigh fate against free will',
     ],
@@ -605,7 +605,7 @@ const REVISION_TOPICS = [
   {
     topic: 'Honour and Reputation',
     summary:
-      'Honour in Verona is public, male, and violent — and Shakespeare exposes it as a destructive social code.',
+      'Honour in Verona is public, male, and violent - and Shakespeare exposes it as a destructive social code.',
     keyPoints: [
       'Tybalt fights to defend the Capulet name',
       "Romeo kills to avenge Mercutio's honour",
@@ -635,7 +635,7 @@ export default async function RomeoAndJulietPage() {
   return (
     <>
       <CourseJsonLd
-        name="Romeo and Juliet — Complete GCSE Study Guide"
+        name="Romeo and Juliet - Complete GCSE Study Guide"
         description="In-depth study guide for Romeo and Juliet covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

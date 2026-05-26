@@ -15,27 +15,27 @@ const OG_IMAGE =
 export const metadata: Metadata = {
   title: 'Free GCSE & IGCSE English resources',
   description:
-    'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon — get notified.',
+    'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon - get notified.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'Free GCSE & IGCSE English resources — The English Hub',
+    title: 'Free GCSE & IGCSE English resources - The English Hub',
     description:
-      'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon — get notified.',
+      'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon - get notified.',
     url: PAGE_URL,
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'Free GCSE and IGCSE English resources — The English Hub',
+        alt: 'Free GCSE and IGCSE English resources - The English Hub',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free GCSE & IGCSE English resources — The English Hub',
+    title: 'Free GCSE & IGCSE English resources - The English Hub',
     description:
-      'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon — get notified.',
+      'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon - get notified.',
     images: [OG_IMAGE],
   },
 }
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
  * Six representative cards stand in for the planned lead-magnet library.
  * Each card is a "coming soon" stub: factual title, level chip, exam-board
  * scope, and a short factual description of the planned content. The
- * email-capture surface was removed on 4 May 2026 — the founder doesn't
+ * email-capture surface was removed on 4 May 2026 - the founder doesn't
  * want to be manually emailing PDFs to every sign-up. When the automated
  * delivery system is built, the cards can be re-enabled with a download
  * link instead of a "notify me" form.

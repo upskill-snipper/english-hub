@@ -13,13 +13,13 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: grade targets (S1–S4) — The English Hub',
+    title: 'iLowerSecondary English: grade targets (S1-S4) - The English Hub',
     description:
       'What an S1, S2, S3 and S4 answer looks like in iLowerSecondary English, and how to climb each band for writing and reading.',
   },
-  title: 'iLowerSecondary English grade targets (S1–S4)',
+  title: 'iLowerSecondary English grade targets (S1-S4)',
   description:
-    'A plain-English guide to the four-level S1–S4 scale: what each band reads like in writing and reading, and exactly how to move up a band.',
+    'A plain-English guide to the four-level S1-S4 scale: what each band reads like in writing and reading, and exactly how to move up a band.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/grade-targets',
   },
@@ -36,13 +36,13 @@ const wao2 = (lvl: WritingLevel) =>
 
 // "Reading skill at this band" narratives are written here from the
 // published comparison-question levels + good exam behaviour, expressed
-// in plain English. Numbers are never restated — only the band label is
+// in plain English. Numbers are never restated - only the band label is
 // quoted from COMPARISON_LEVELS.
 const readingProfile: Record<WritingLevel, string> = {
-  S1: `Retrieval is usually right but answers can be vague. Inference stays close to the literal — the reader names what is on the page rather than what is implied. On the extended comparison item the response sits around ${COMPARISON_LEVELS[0].level}: a simple comment that hints at a contrast between the two texts without spelling it out, touching only one or two of inference, word-level language, and the writer's purpose.`,
-  S2: `Retrieval is precise and inference is attempted with some success — the reader begins to read beyond the words. The comparison answer reaches the band of ${COMPARISON_LEVELS[1].level}: an explanation that states the contrast explicitly and stays focused on two of the three demands (inference, word-level language, writer's purpose and effect on the reader), though one strand is usually thinner than the others.`,
-  S3: `Inference is secure and evidence is well chosen. The reader explains a writer's purpose and the effect on the reader rather than just identifying a technique. The comparison answer is heading into ${COMPARISON_LEVELS[2].level} territory: a clear explanation of the contrast that holds all three demands together — inference, language at word level, and purpose/effect — with appropriate textual support.`,
-  S4: `Inference is assured and consistently linked to a writer's intention and viewpoint. Comparison is fully developed across both texts and across all three demands at once, with the sharpest, most economical evidence. The reader controls the contrast confidently from the first sentence — a clear explanation throughout, the strongest level the comparison grid describes.`,
+  S1: `Retrieval is usually right but answers can be vague. Inference stays close to the literal - the reader names what is on the page rather than what is implied. On the extended comparison item the response sits around ${COMPARISON_LEVELS[0].level}: a simple comment that hints at a contrast between the two texts without spelling it out, touching only one or two of inference, word-level language, and the writer's purpose.`,
+  S2: `Retrieval is precise and inference is attempted with some success - the reader begins to read beyond the words. The comparison answer reaches the band of ${COMPARISON_LEVELS[1].level}: an explanation that states the contrast explicitly and stays focused on two of the three demands (inference, word-level language, writer's purpose and effect on the reader), though one strand is usually thinner than the others.`,
+  S3: `Inference is secure and evidence is well chosen. The reader explains a writer's purpose and the effect on the reader rather than just identifying a technique. The comparison answer is heading into ${COMPARISON_LEVELS[2].level} territory: a clear explanation of the contrast that holds all three demands together - inference, language at word level, and purpose/effect - with appropriate textual support.`,
+  S4: `Inference is assured and consistently linked to a writer's intention and viewpoint. Comparison is fully developed across both texts and across all three demands at once, with the sharpest, most economical evidence. The reader controls the contrast confidently from the first sentence - a clear explanation throughout, the strongest level the comparison grid describes.`,
 }
 
 const climb: { from: WritingLevel; to: WritingLevel; points: string[] }[] = [
@@ -50,12 +50,12 @@ const climb: { from: WritingLevel; to: WritingLevel; points: string[] }[] = [
     from: 'S1',
     to: 'S2',
     points: [
-      'Form & audience: lock the form in place and keep it — pick the conventions of a letter, diary or article on line one and never drift out of them. Make the awareness of the reader clear, not just present.',
+      'Form & audience: lock the form in place and keep it - pick the conventions of a letter, diary or article on line one and never drift out of them. Make the awareness of the reader clear, not just present.',
       'Paragraph cohesion: move from a few logically ordered sections to controlled paragraphs that genuinely support coherence; replace awkward jumps with deliberate openings.',
       'Sentence variety: keep sentences grammatically sound while introducing an emerging range of complex connectives so ideas join rather than list.',
       'Punctuation range: demarcate most sentences correctly and start using internal punctuation (commas) on purpose, not by accident.',
       'Spelling ambition: keep common words accurate but begin reaching for more ambitious vocabulary and spelling it correctly.',
-      'Inference & comparison: stop hinting at a contrast — state it explicitly and explain it.',
+      'Inference & comparison: stop hinting at a contrast - state it explicitly and explain it.',
     ],
   },
   {
@@ -63,21 +63,21 @@ const climb: { from: WritingLevel; to: WritingLevel; points: string[] }[] = [
     to: 'S3',
     points: [
       'Form & audience: turn a "mostly maintained" form into one established and maintained throughout, with a secure rather than emerging sense of audience.',
-      'Paragraph cohesion: extend clear paragraph control so it supports coherence across the whole answer, not just in places — link paragraphs, do not merely separate them.',
+      'Paragraph cohesion: extend clear paragraph control so it supports coherence across the whole answer, not just in places - link paragraphs, do not merely separate them.',
       'Sentence variety: make sentences grammatically secure (not just "mostly sound") and use complex connectives to develop ideas, not only to connect them.',
       'Punctuation range: move from "mostly correct" to consistently correct demarcation with appropriate internal punctuation used to shape meaning.',
       'Spelling ambition: make spelling accurate with more ambitious choices used appropriately, not just attempted.',
-      'Inference & comparison: hold all three comparison demands together — inference, word-level language, and purpose/effect — in one clear explanation rather than dropping one.',
+      'Inference & comparison: hold all three comparison demands together - inference, word-level language, and purpose/effect - in one clear explanation rather than dropping one.',
     ],
   },
   {
     from: 'S3',
     to: 'S4',
     points: [
-      'Form & audience: go beyond maintaining the form — adapt and control it for purpose, with a sophisticated awareness of the reader shaping every choice.',
+      'Form & audience: go beyond maintaining the form - adapt and control it for purpose, with a sophisticated awareness of the reader shaping every choice.',
       'Paragraph cohesion: move from clear control to complete control, so the whole piece coheres seamlessly with no slack section.',
       'Sentence variety: make grammar assured and used effectively throughout, varying structure and openings for deliberate effect.',
-      'Punctuation range: progress from appropriate punctuation to sophisticated punctuation — colons, dashes and semicolons used confidently and correctly for impact.',
+      'Punctuation range: progress from appropriate punctuation to sophisticated punctuation - colons, dashes and semicolons used confidently and correctly for impact.',
       'Spelling ambition: keep spelling accurate while using ambitious choices confidently, not cautiously.',
       'Inference & comparison: make inference assured and tie it explicitly to the writer’s intention across both texts with the most economical evidence.',
     ],
@@ -116,12 +116,12 @@ export default function GradeTargetsPage() {
         <span>Grade targets</span>
       </p>
 
-      <h1>Grade targets: what S1–S4 looks like and how to climb</h1>
+      <h1>Grade targets: what S1-S4 looks like and how to climb</h1>
       <p className="lead">
         {QUALIFICATION.title} ({QUALIFICATION.subjectCode}) is{' '}
         {QUALIFICATION.gradeNote.charAt(0).toLowerCase() + QUALIFICATION.gradeNote.slice(1)} This
-        page describes what an answer reads like at each band — in both the{' '}
-        {SECTIONS.B.name.toLowerCase()} task and the {SECTIONS.A.name.toLowerCase()} questions — and
+        page describes what an answer reads like at each band - in both the{' '}
+        {SECTIONS.B.name.toLowerCase()} task and the {SECTIONS.A.name.toLowerCase()} questions - and
         the precise changes that move a piece up one level.
       </p>
 
@@ -149,7 +149,7 @@ export default function GradeTargetsPage() {
           ))}
           <div className="self-center rounded-xl border border-dashed border-border/60 bg-muted/40 px-4 py-3 text-center">
             <p className="font-mono text-sm font-semibold text-muted-foreground">U</p>
-            <p className="mt-1 text-[11px] text-muted-foreground">unclassified — below S1</p>
+            <p className="mt-1 text-[11px] text-muted-foreground">unclassified - below S1</p>
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
@@ -161,8 +161,8 @@ export default function GradeTargetsPage() {
       <section className="my-10">
         <h2>What each band reads like</h2>
         <p>
-          Each card pairs a <strong>writing profile</strong> — built from the {SECTIONS.B.name} mark
-          grids for form/communication and for grammar, punctuation and spelling — with a parallel{' '}
+          Each card pairs a <strong>writing profile</strong> - built from the {SECTIONS.B.name} mark
+          grids for form/communication and for grammar, punctuation and spelling - with a parallel{' '}
           <strong>reading profile</strong> describing how a {SECTIONS.A.name} answer behaves at the
           same band.
         </p>
@@ -264,7 +264,7 @@ export default function GradeTargetsPage() {
             <p className="mt-3 text-sm leading-relaxed">
               &ldquo;Before the sun had cleared the rooftops, the square lay hushed; a single
               trader, breath clouding in the cold, unfolded his trestle table with the slow care of
-              someone who has done it a thousand times. Nothing yet smelled of bread or fruit — only
+              someone who has done it a thousand times. Nothing yet smelled of bread or fruit - only
               of wet stone and waiting.&rdquo;
             </p>
             <p className="mt-4 text-xs text-muted-foreground leading-relaxed">
@@ -282,7 +282,7 @@ export default function GradeTargetsPage() {
         <p>
           Read your own draft against the relevant band card, then pick the single nearest
           transition above and act on its six levers one at a time. Most pieces are held back by one
-          or two of them, not all six — fix the binding constraint first.
+          or two of them, not all six - fix the binding constraint first.
         </p>
       </section>
 

@@ -28,9 +28,9 @@ const SAMPLES: SampleEssay[] = [
   {
     id: 'grade-5',
     grade: 5,
-    title: 'Macbeth — Grade 5 response',
+    title: 'Macbeth - Grade 5 response',
     board: 'AQA',
-    paper: 'English Literature — Paper 1',
+    paper: 'English Literature - Paper 1',
     scorePercent: 86,
     commentary:
       'A clear and relevant response with some understanding of ambition. Textual references are mostly appropriate but analysis tends to identify rather than explore methods. Context is attached rather than integrated.',
@@ -62,7 +62,7 @@ const SAMPLES: SampleEssay[] = [
         quote: 'divine right of kings',
         kind: 'technique',
         comment:
-          "Relevant context, but stapled on. Link it to Shakespeare's intention — what does he want the Jacobean audience to feel?",
+          "Relevant context, but stapled on. Link it to Shakespeare's intention - what does he want the Jacobean audience to feel?",
       },
     ],
     aos: [
@@ -75,15 +75,15 @@ const SAMPLES: SampleEssay[] = [
   {
     id: 'grade-7',
     grade: 7,
-    title: 'Macbeth — Grade 7 response',
+    title: 'Macbeth - Grade 7 response',
     board: 'AQA',
-    paper: 'English Literature — Paper 1',
+    paper: 'English Literature - Paper 1',
     scorePercent: 88,
     commentary:
       'A thoughtful, developed response with sustained focus on ambition. Methods are identified and analysed, with context integrated into the argument. To reach Grade 8/9, push towards conceptualised analysis and more precise word-level commentary.',
     paragraphs: [
       "Shakespeare presents ambition as a corrupting force throughout Macbeth, using the titular character's tragic trajectory to warn his Jacobean audience of the dangers of unchecked desire. At the play's opening, Macbeth is described as 'brave Macbeth', establishing a heroic baseline that makes his moral decline all the more tragic.",
-      "The metaphor of 'vaulting ambition' captures Shakespeare's central warning. The equestrian image suggests a rider who, in attempting to mount his horse, overshoots and falls on the other side — a self-defeating overreach. The verb 'vaulting' carries connotations of both athleticism and recklessness, implying that ambition contains the seeds of its own destruction.",
+      "The metaphor of 'vaulting ambition' captures Shakespeare's central warning. The equestrian image suggests a rider who, in attempting to mount his horse, overshoots and falls on the other side - a self-defeating overreach. The verb 'vaulting' carries connotations of both athleticism and recklessness, implying that ambition contains the seeds of its own destruction.",
       "Contextually, Shakespeare was writing for King James I, a monarch who survived the Gunpowder Plot and who believed firmly in the divine right of kings. By showing Macbeth's ambition leading to regicide and damnation, Shakespeare reinforces the Jacobean worldview that usurping a divinely-appointed king invites chaos on both a personal and cosmic level.",
     ],
     annotations: [
@@ -106,7 +106,7 @@ const SAMPLES: SampleEssay[] = [
         paragraphIndex: 2,
         quote: 'chaos on both a personal and cosmic level',
         kind: 'strength',
-        comment: 'Well integrated AO3 — context is doing analytical work, not sitting on top.',
+        comment: 'Well integrated AO3 - context is doing analytical work, not sitting on top.',
       },
     ],
     aos: [
@@ -119,16 +119,16 @@ const SAMPLES: SampleEssay[] = [
   {
     id: 'grade-9',
     grade: 9,
-    title: 'Macbeth — Grade 9 response',
+    title: 'Macbeth - Grade 9 response',
     board: 'AQA',
-    paper: 'English Literature — Paper 1',
+    paper: 'English Literature - Paper 1',
     scorePercent: 94,
     commentary:
       'A perceptive, conceptualised response. Methods are analysed at word level with sophisticated vocabulary. Context is woven into interpretation rather than bolted on. The argument is sustained and original.',
     paragraphs: [
       "Shakespeare weaponises ambition in Macbeth, presenting it not merely as a character flaw but as a destabilising force that threatens the divinely-ordained social order. Macbeth's tragedy is not that he is ambitious, but that his ambition is untethered from the moral and cosmic hierarchy that the Jacobean worldview held sacred.",
-      "The soliloquy in which Macbeth acknowledges his 'vaulting ambition, which o'erleaps itself / And falls on th' other' is remarkable for its self-awareness: even as he articulates the mechanism of his own destruction, he proves unable to resist it. The enjambment enacts the very overreach it describes, the syntactic fall mirroring the moral one. Shakespeare thus collapses the distance between form and content — ambition becomes the sentence as well as the subject.",
-      "This self-consuming quality is reinforced in the play's final act, where Macbeth's 'tomorrow and tomorrow and tomorrow' soliloquy reduces life itself to an empty performance — 'a poor player / That struts and frets his hour upon the stage'. The theatrical metaphor is savagely ironic: Macbeth, who sought to be the author of his own destiny, becomes instead a hollow actor in a meaningless drama. For a Jacobean audience, the implication was clear: ambition that violates divine order does not elevate the self, it evacuates it.",
+      "The soliloquy in which Macbeth acknowledges his 'vaulting ambition, which o'erleaps itself / And falls on th' other' is remarkable for its self-awareness: even as he articulates the mechanism of his own destruction, he proves unable to resist it. The enjambment enacts the very overreach it describes, the syntactic fall mirroring the moral one. Shakespeare thus collapses the distance between form and content - ambition becomes the sentence as well as the subject.",
+      "This self-consuming quality is reinforced in the play's final act, where Macbeth's 'tomorrow and tomorrow and tomorrow' soliloquy reduces life itself to an empty performance - 'a poor player / That struts and frets his hour upon the stage'. The theatrical metaphor is savagely ironic: Macbeth, who sought to be the author of his own destiny, becomes instead a hollow actor in a meaningless drama. For a Jacobean audience, the implication was clear: ambition that violates divine order does not elevate the self, it evacuates it.",
     ],
     annotations: [
       {
@@ -190,7 +190,7 @@ export default function SampleMarkingPage() {
           Sample marked essays
         </h1>
         <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-          Three fully-annotated responses to the same Macbeth question — Grade 5, 7 and 9 — with
+          Three fully-annotated responses to the same Macbeth question - Grade 5, 7 and 9 - with
           marker commentary on why each lands where it does.
         </p>
       </header>

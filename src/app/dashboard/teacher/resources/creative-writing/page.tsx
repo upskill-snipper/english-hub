@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
 
-export const metadata = { title: 'Creative Writing Masterclass — Teacher Resources' }
+export const metadata = { title: 'Creative Writing Masterclass - Teacher Resources' }
 
 /* ─── Example 4: Creative Writing Teaching Resource ──────────────── */
 
@@ -9,17 +9,17 @@ const MODEL_TEXTS = [
   {
     title: 'Descriptive Writing: The Abandoned Fairground',
     level: 'Level 5-6 Model',
-    text: `The Ferris wheel stood frozen against the bruised sky, its rusted carriages swaying like hollow teeth in a dead man's smile. Below, the cracked tarmac sprouted tufts of ragwort — nature reclaiming what had once pulsed with neon light and the sugar-sweet screams of children.
+    text: `The Ferris wheel stood frozen against the bruised sky, its rusted carriages swaying like hollow teeth in a dead man's smile. Below, the cracked tarmac sprouted tufts of ragwort - nature reclaiming what had once pulsed with neon light and the sugar-sweet screams of children.
 
 I picked my way through the debris. A ticket booth, its glass shattered into a mosaic of neglect. A carousel horse, paint peeling in leprous strips, one glass eye still gleaming with an unsettling intelligence. The air tasted of iron and forgetting.
 
-Somewhere ahead, a chain-link fence sang in the wind — a thin, metallic hymn that raised the hairs on my forearms. It was the sound of a place that remembered what it used to be.`,
+Somewhere ahead, a chain-link fence sang in the wind - a thin, metallic hymn that raised the hairs on my forearms. It was the sound of a place that remembered what it used to be.`,
     annotations: [
       {
         technique: 'Extended metaphor',
         example: '"hollow teeth in a dead man\'s smile"',
         effect:
-          'Personifies the Ferris wheel as something dead/decaying — creates Gothic atmosphere',
+          'Personifies the Ferris wheel as something dead/decaying - creates Gothic atmosphere',
       },
       {
         technique: 'Semantic field of decay',
@@ -29,7 +29,7 @@ Somewhere ahead, a chain-link fence sang in the wind — a thin, metallic hymn t
       {
         technique: 'Synaesthesia',
         example: '"The air tasted of iron and forgetting"',
-        effect: 'Blends taste and abstract concept — makes the atmosphere tangible and memorable',
+        effect: 'Blends taste and abstract concept - makes the atmosphere tangible and memorable',
       },
       {
         technique: 'Personification',
@@ -57,7 +57,7 @@ const WRITING_TASKS = [
     title: 'Task 1: Sensory Expansion',
     time: '15 minutes',
     instruction:
-      'Take the opening sentence of the model text. Rewrite the scene using ONLY sound and touch — no visual descriptions allowed. How does removing sight change the atmosphere?',
+      'Take the opening sentence of the model text. Rewrite the scene using ONLY sound and touch - no visual descriptions allowed. How does removing sight change the atmosphere?',
     success: [
       'At least 5 different sound/touch details',
       'Varied sentence structures',

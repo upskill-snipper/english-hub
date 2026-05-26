@@ -10,7 +10,7 @@ import { NextRequest } from 'next/server'
 // exercising it through INITIAL_PURCHASE / RENEWAL paths end-to-end
 // against a fully mocked Prisma surface.
 
-// Journal-table state — the mock maintains an in-memory row list so
+// Journal-table state - the mock maintains an in-memory row list so
 // idempotency tests can exercise the duplicate-detection path.
 interface JournalRow {
   id: string
@@ -23,11 +23,11 @@ interface JournalRow {
 }
 
 let journalRows: JournalRow[] = []
-// User lookup state — the resolveUserId helper inside reconcile calls
+// User lookup state - the resolveUserId helper inside reconcile calls
 // prisma.user.findUnique twice; we flip behaviour based on the appUserId
 // the test supplies.
 let userFixture: { id: string } | null = { id: 'prisma-user-1' }
-// Subscription state — the reconcile branches call findUnique / upsert /
+// Subscription state - the reconcile branches call findUnique / upsert /
 // update. We back them with a tiny in-memory store keyed by userId.
 let subscriptionFixture: Record<string, unknown> | null = null
 // Captures of the last upsert / update args so tests can assert them.
@@ -50,24 +50,33 @@ const prismaMock = {
       .map((r) => ({ id: r.id }))
   }),
   revenueCatEvent: {
-    create: vi.fn(async ({ data, select: _select }: { data: Omit<JournalRow, 'id' | 'processedAt' | 'processingError'>; select?: unknown }) => {
-      const row: JournalRow = {
-        id: `journal-${journalRows.length + 1}`,
-        eventType: data.eventType,
-        appUserId: data.appUserId,
-        productId: data.productId ?? null,
-        payload: data.payload as JournalRow['payload'],
-        processedAt: null,
-        processingError: null,
-      }
-      journalRows.push(row)
-      return { id: row.id }
-    }),
+    create: vi.fn(
+      async ({
+        data,
+        select: _select,
+      }: {
+        data: Omit<JournalRow, 'id' | 'processedAt' | 'processingError'>
+        select?: unknown
+      }) => {
+        const row: JournalRow = {
+          id: `journal-${journalRows.length + 1}`,
+          eventType: data.eventType,
+          appUserId: data.appUserId,
+          productId: data.productId ?? null,
+          payload: data.payload as JournalRow['payload'],
+          processedAt: null,
+          processingError: null,
+        }
+        journalRows.push(row)
+        return { id: row.id }
+      },
+    ),
     update: vi.fn(async ({ where, data }: { where: { id: string }; data: Partial<JournalRow> }) => {
       const row = journalRows.find((r) => r.id === where.id)
       if (row) {
         if (data.processedAt !== undefined) row.processedAt = data.processedAt as Date | null
-        if (data.processingError !== undefined) row.processingError = data.processingError as string | null
+        if (data.processingError !== undefined)
+          row.processingError = data.processingError as string | null
       }
       return row as unknown
     }),
@@ -77,18 +86,24 @@ const prismaMock = {
   },
   subscription: {
     findUnique: vi.fn(async () => subscriptionFixture),
-    upsert: vi.fn(async (args: { create: Record<string, unknown>; update: Record<string, unknown>; where: { userId: string } }) => {
-      lastSubscriptionUpsert = args
-      const row = {
-        id: 'sub-1',
-        userId: args.where.userId,
-        ...(subscriptionFixture ?? {}),
-        ...args.create,
-        ...args.update,
-      }
-      subscriptionFixture = row
-      return row
-    }),
+    upsert: vi.fn(
+      async (args: {
+        create: Record<string, unknown>
+        update: Record<string, unknown>
+        where: { userId: string }
+      }) => {
+        lastSubscriptionUpsert = args
+        const row = {
+          id: 'sub-1',
+          userId: args.where.userId,
+          ...(subscriptionFixture ?? {}),
+          ...args.create,
+          ...args.update,
+        }
+        subscriptionFixture = row
+        return row
+      },
+    ),
     create: vi.fn(async (args: { data: Record<string, unknown> }) => {
       const row = { id: 'sub-1', ...args.data }
       subscriptionFixture = row
@@ -96,7 +111,10 @@ const prismaMock = {
     }),
     update: vi.fn(async (args: { where: { userId: string }; data: Record<string, unknown> }) => {
       lastSubscriptionUpdate = args
-      const row = { ...(subscriptionFixture ?? { id: 'sub-1', userId: args.where.userId }), ...args.data }
+      const row = {
+        ...(subscriptionFixture ?? { id: 'sub-1', userId: args.where.userId }),
+        ...args.data,
+      }
       subscriptionFixture = row
       return row
     }),
@@ -179,7 +197,9 @@ describe('RevenueCat Webhook POST handler', () => {
   // ── Signature verification ──────────────────────────────────────────
 
   it('returns 401 when signature is invalid', async () => {
-    const res = await POST(buildRequest(JSON.stringify(makePayload('INITIAL_PURCHASE')), 'Bearer wrong_secret'))
+    const res = await POST(
+      buildRequest(JSON.stringify(makePayload('INITIAL_PURCHASE')), 'Bearer wrong_secret'),
+    )
     expect(res.status).toBe(401)
     const body = (await res.json()) as { ok: boolean; error: { code: string } }
     expect(body.ok).toBe(false)
@@ -197,7 +217,9 @@ describe('RevenueCat Webhook POST handler', () => {
     vi.resetModules()
     const mod = await import('@/app/api/revenuecat/webhook/route')
     const handler = mod.POST as unknown as (req: NextRequest) => Promise<Response>
-    const res = await handler(buildRequest(JSON.stringify(makePayload('INITIAL_PURCHASE')), VALID_AUTH))
+    const res = await handler(
+      buildRequest(JSON.stringify(makePayload('INITIAL_PURCHASE')), VALID_AUTH),
+    )
     expect(res.status).toBe(500)
     const body = (await res.json()) as { ok: boolean; error: { code: string } }
     expect(body.error.code).toBe('not_configured')
@@ -207,7 +229,7 @@ describe('RevenueCat Webhook POST handler', () => {
 
   it('returns 422 when payload is missing app_user_id', async () => {
     const payload = makePayload('INITIAL_PURCHASE', {}, {})
-    // @ts-expect-error — deliberately malformed
+    // @ts-expect-error - deliberately malformed
     delete payload.event.app_user_id
     const res = await POST(buildRequest(JSON.stringify(payload), VALID_AUTH))
     expect(res.status).toBe(422)
@@ -228,9 +250,7 @@ describe('RevenueCat Webhook POST handler', () => {
     // The discriminated union rejects any `type` outside the declared
     // enum; this protects us from silently processing an RC event type
     // we have not modelled.
-    const res = await POST(
-      buildRequest(JSON.stringify(makePayload('NOT_A_REAL_TYPE')), VALID_AUTH),
-    )
+    const res = await POST(buildRequest(JSON.stringify(makePayload('NOT_A_REAL_TYPE')), VALID_AUTH))
     expect(res.status).toBe(422)
   })
 

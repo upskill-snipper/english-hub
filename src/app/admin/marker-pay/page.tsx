@@ -1,6 +1,6 @@
 'use client'
 
-// ─── /admin/marker-pay — Paid-marker payment & throughput ───────────────────
+// ─── /admin/marker-pay - Paid-marker payment & throughput ───────────────────
 //
 // Client page (mirrors /admin/affiliates: client + fetch, redirect on
 // 401/403). The data API GET /api/admin/marker-pay enforces verifyAdmin();
@@ -133,7 +133,7 @@ export default function AdminMarkerPayPage() {
     if (user) {
       fetchPay()
     }
-    // Only on mount / auth change — explicit Apply re-fetches thereafter.
+    // Only on mount / auth change - explicit Apply re-fetches thereafter.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
@@ -330,7 +330,7 @@ export default function AdminMarkerPayPage() {
                             className="text-clay-600"
                             title={tf(
                               'admin.marker_pay.rate_missing',
-                              'No pay rate set for this marker — amount is £0 until configured.',
+                              'No pay rate set for this marker - amount is £0 until configured.',
                             )}
                           >
                             {tf('admin.marker_pay.rate_missing', 'not set')}

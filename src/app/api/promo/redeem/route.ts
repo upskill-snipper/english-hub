@@ -16,7 +16,7 @@
  *   `{ code: string, productId: string }`
  *
  * On success:
- *   `{ url: string }` — the Stripe Checkout Session URL to redirect to.
+ *   `{ url: string }` - the Stripe Checkout Session URL to redirect to.
  *
  * Reconciliation continues via the existing Stripe webhook: on
  * `checkout.session.completed` the `Subscription` row is populated, and
@@ -63,7 +63,7 @@ function resolveStripePriceId(productId: string): string | null {
       // Teacher Annual price IDs live under STRIPE_PRICE_TEACHER_ANNUAL
       // (resolved server-side in /api/stripe/checkout). For the redeem
       // flow we use Stripe's price_data with a custom unit_amount, so
-      // we don't strictly need the price ID here — but we still return
+      // we don't strictly need the price ID here - but we still return
       // one as a `basePriceId` reference in the line-item metadata for
       // reporting / audit. The PRO_ANNUAL fallback is fine when a
       // dedicated TEACHER env var isn't present in this environment.
@@ -79,7 +79,7 @@ function resolveStripePriceId(productId: string): string | null {
  * cascades through validate, redeem, and the UI.
  *
  * `finalAmountPennies` is the unit amount to charge AFTER the discount,
- * not the discount itself — Stripe's `price_data` works on the final
+ * not the discount itself - Stripe's `price_data` works on the final
  * amount for one-off sessions.
  */
 interface ProductPricing {
@@ -105,11 +105,11 @@ const REDEMPTION_RULES: Readonly<Record<string, RedemptionRule>> = Object.freeze
     productPricing: {
       student_annual: {
         finalAmountPennies: Math.round(PRICING.STUDENT_ANNUAL_WITH_CODE * 100),
-        description: `The English Hub — Student Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
+        description: `The English Hub - Student Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
       },
       teacher_annual: {
         finalAmountPennies: Math.round(PRICING.TEACHER_ANNUAL_WITH_CODE * 100),
-        description: `The English Hub — Teacher Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
+        description: `The English Hub - Teacher Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
       },
     },
   },
@@ -122,7 +122,7 @@ interface RedeemRequestBody {
 
 export async function POST(request: NextRequest) {
   try {
-    // Rate limit — 10 per IP per 5 minutes; matches the main checkout route.
+    // Rate limit - 10 per IP per 5 minutes; matches the main checkout route.
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`promo-redeem:${ip}`, {
       limit: 10,
@@ -155,7 +155,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Two-tier resolution for codes:
-    // 1. Hardcoded allowlist (only `2026ENGLISH` for MVP) — every user can
+    // 1. Hardcoded allowlist (only `2026ENGLISH` for MVP) - every user can
     //    use these regardless of attribution.
     // 2. Active affiliate codes from `affiliate_accounts` (Supabase). When
     //    a partner self-enrols via /affiliates, they get a code which
@@ -168,7 +168,7 @@ export async function POST(request: NextRequest) {
     if (!rule) {
       // Look up the code in affiliate_accounts. We use the service-role
       // client because the table is RLS-locked and this endpoint is
-      // authenticated via Supabase user — the user themselves doesn't
+      // authenticated via Supabase user - the user themselves doesn't
       // own the affiliate row, so the standard client can't read it.
       try {
         const adminClient = createServiceRoleClient()
@@ -193,11 +193,11 @@ export async function POST(request: NextRequest) {
               productPricing: {
                 student_annual: {
                   finalAmountPennies: baseRule.productPricing.student_annual.finalAmountPennies,
-                  description: `The English Hub — Student Annual (affiliate ${code})`,
+                  description: `The English Hub - Student Annual (affiliate ${code})`,
                 },
                 teacher_annual: {
                   finalAmountPennies: baseRule.productPricing.teacher_annual.finalAmountPennies,
-                  description: `The English Hub — Teacher Annual (affiliate ${code})`,
+                  description: `The English Hub - Teacher Annual (affiliate ${code})`,
                 },
               },
             }
@@ -205,7 +205,7 @@ export async function POST(request: NextRequest) {
         }
       } catch (lookupErr) {
         console.error('[api/promo/redeem] affiliate lookup failed:', lookupErr)
-        // Fall through to the "unknown code" path below — never let an
+        // Fall through to the "unknown code" path below - never let an
         // affiliate-table outage block the public 2026ENGLISH redemption.
       }
     }
@@ -229,7 +229,7 @@ export async function POST(request: NextRequest) {
       return errorResponse('Unknown productId.', 400)
     }
 
-    // Authenticate — the redeem flow requires a signed-in Supabase user so
+    // Authenticate - the redeem flow requires a signed-in Supabase user so
     // the Stripe customer can be bound to a Supabase userId. The web redeem
     // page routes unauthenticated users through sign-up before reaching here.
     const supabase = createServerSupabaseClient()
@@ -255,7 +255,7 @@ export async function POST(request: NextRequest) {
       throw e
     }
 
-    // Get / create Stripe customer — same pattern as /api/stripe/checkout.
+    // Get / create Stripe customer - same pattern as /api/stripe/checkout.
     const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('stripe_customer_id')
@@ -281,7 +281,7 @@ export async function POST(request: NextRequest) {
           verifyErr.code === 'resource_missing'
         ) {
           console.warn(
-            `[api/promo/redeem] Stale customer ${stripeCustomerId} for user ${user.id} — likely created in test mode. Re-linking.`,
+            `[api/promo/redeem] Stale customer ${stripeCustomerId} for user ${user.id} - likely created in test mode. Re-linking.`,
           )
           stripeCustomerId = null
         } else {
@@ -308,7 +308,7 @@ export async function POST(request: NextRequest) {
 
     // Build a Checkout Session with a discounted unit amount. We use
     // `price_data` so the discount is baked into the line item rather than
-    // relying on Stripe coupons — this keeps the route self-contained and
+    // relying on Stripe coupons - this keeps the route self-contained and
     // auditable for each code.
     const appUrl = process.env.NEXT_PUBLIC_APP_URL
     if (!appUrl) {
@@ -349,7 +349,7 @@ export async function POST(request: NextRequest) {
         // Attribute the redemption to the affiliate who issued the code
         // when applicable, so the webhook (handleCheckoutCompleted) can
         // credit commission. Empty string for the public 2026ENGLISH path
-        // since Stripe metadata only accepts strings — null isn't allowed.
+        // since Stripe metadata only accepts strings - null isn't allowed.
         affiliateId: attributedAffiliateId ?? '',
       },
       subscription_data: {
@@ -361,7 +361,7 @@ export async function POST(request: NextRequest) {
           affiliateId: attributedAffiliateId ?? '',
         },
       },
-      // Deliberately NOT setting `allow_promotion_codes: true` here — the
+      // Deliberately NOT setting `allow_promotion_codes: true` here - the
       // promo is already applied via `unit_amount`.
     }
 

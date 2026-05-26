@@ -21,11 +21,11 @@ const PARAGRAPH_PROMPTS = GUIDED_READING_PROMPTS.nonFiction.Paragraphs
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blogs & journals — non-fiction text types — iLowerSecondary English',
+    title: 'Blogs & journals - non-fiction text types - iLowerSecondary English',
     description:
       'A reading-and-writing guide to blogs and journals (including diary-style journals) for iLowerSecondary English: conventions, how to identify and analyse them, and how to write one for Section B, with original annotated extracts and model answers.',
   },
-  title: 'Blogs & journals — non-fiction text types — iLowerSecondary English',
+  title: 'Blogs & journals - non-fiction text types - iLowerSecondary English',
   description:
     'A reading-and-writing guide to blogs and journals (including diary-style journals): conventions, how to identify and analyse them, and how to write one for Section B, with original annotated extracts and model answers.',
   alternates: { canonical: PAGE_URL },
@@ -36,7 +36,7 @@ const SHARED_CONVENTIONS: { feature: string; explanation: string }[] = [
   {
     feature: 'Personal voice',
     explanation:
-      'The writer is present on the page. We hear an individual — their feelings, doubts and reactions — not a neutral, anonymous report.',
+      'The writer is present on the page. We hear an individual - their feelings, doubts and reactions - not a neutral, anonymous report.',
   },
   {
     feature: 'First person',
@@ -66,7 +66,7 @@ const SHARED_CONVENTIONS: { feature: string; explanation: string }[] = [
   {
     feature: 'Rhetorical questions',
     explanation:
-      'Questions the writer answers themselves — "So why did I bother?" — invite the reader to think and keep the tone reflective and engaging.',
+      'Questions the writer answers themselves - "So why did I bother?" - invite the reader to think and keep the tone reflective and engaging.',
   },
 ]
 
@@ -85,7 +85,7 @@ const BLOG_FEATURES: { feature: string; explanation: string }[] = [
   {
     feature: 'Links and signposting',
     explanation:
-      'Blogs point outward — to other posts, sources or pages — and signpost what is coming ("More on that below").',
+      'Blogs point outward - to other posts, sources or pages - and signpost what is coming ("More on that below").',
   },
   {
     feature: 'A call to the reader',
@@ -118,7 +118,7 @@ const JOURNAL_FEATURES: { feature: string; explanation: string }[] = [
   {
     feature: 'Reflection over time',
     explanation:
-      'Read across several entries, a journal shows change — a mood, a hope or an opinion shifting from one date to the next.',
+      'Read across several entries, a journal shows change - a mood, a hope or an opinion shifting from one date to the next.',
   },
   {
     feature: 'Self-address',
@@ -137,7 +137,7 @@ const IDENTIFY_CLUES: { clue: string; whatItTells: string }[] = [
   {
     clue: 'A title, subheadings, or a sign-off inviting comments',
     whatItTells:
-      'Points to a blog post — content shaped for a screen audience the writer cannot see.',
+      'Points to a blog post - content shaped for a screen audience the writer cannot see.',
   },
   {
     clue: 'Heavy first person and emotive opinion',
@@ -147,7 +147,7 @@ const IDENTIFY_CLUES: { clue: string; whatItTells: string }[] = [
   {
     clue: 'Direct address to "you" and rhetorical questions',
     whatItTells:
-      'Suggests the writer wants a relationship with a reader — typical of a blog, sometimes of a published diary.',
+      'Suggests the writer wants a relationship with a reader - typical of a blog, sometimes of a published diary.',
   },
   {
     clue: 'Mixed purpose: to inform and to express an opinion',
@@ -176,7 +176,7 @@ const ANALYSIS_STEPS: { step: string; detail: string }[] = [
   {
     step: 'Analyse one language choice closely',
     detail:
-      'Choose a single loaded verb, adjective or image and explain its effect — examiners credit precise word-level comment, not unexplained lifts.',
+      'Choose a single loaded verb, adjective or image and explain its effect - examiners credit precise word-level comment, not unexplained lifts.',
   },
   {
     step: 'Explain the structure',
@@ -186,7 +186,7 @@ const ANALYSIS_STEPS: { step: string; detail: string }[] = [
   {
     step: 'End with the effect on the reader',
     detail:
-      'Say how a real reader responds — drawn in, persuaded, made to reflect — and tie it back to the writer’s purpose.',
+      'Say how a real reader responds - drawn in, persuaded, made to reflect - and tie it back to the writer’s purpose.',
   },
 ]
 
@@ -220,7 +220,7 @@ const WRITING_MOVES: { move: string; detail: string }[] = [
   {
     move: 'Vary sentences and proofread',
     detail:
-      'Mix short, punchy sentences with longer reflective ones, use a rhetorical question, then check punctuation and spelling — accuracy is separately rewarded.',
+      'Mix short, punchy sentences with longer reflective ones, use a rhetorical question, then check punctuation and spelling - accuracy is separately rewarded.',
   },
 ]
 
@@ -235,19 +235,19 @@ const ANNOTATED_EXTRACTS: {
   {
     id: 'extract-blog',
     label: 'Extract 1',
-    kind: 'Blog post — original',
+    kind: 'Blog post - original',
     extract: [
       'Why I Started Walking to School (And Why I Won’t Stop)',
-      'Let me be honest with you: three weeks ago, the idea of leaving the house twenty minutes earlier sounded like a punishment. Who chooses that? I did, in the end — and I am genuinely glad I did.',
+      'Let me be honest with you: three weeks ago, the idea of leaving the house twenty minutes earlier sounded like a punishment. Who chooses that? I did, in the end - and I am genuinely glad I did.',
       'The first morning was awful. My bag felt heavier, the sky looked like it might fall on me, and I counted every single lamp post on the way. But here is the strange part. By the second week, that quiet half-hour had become the calmest part of my day.',
-      'So, would I recommend it? Honestly, yes. Try it for one week. Tell me in the comments how morning three goes — I promise it gets easier.',
+      'So, would I recommend it? Honestly, yes. Try it for one week. Tell me in the comments how morning three goes - I promise it gets easier.',
     ],
     annotations: [
       {
         feature: 'Informal title with parenthesis',
         evidence: '"Why I Started Walking to School (And Why I Won’t Stop)"',
         effect:
-          'A catchy, conversational headline typical of a blog — it teases the post’s argument and makes the reader want to click.',
+          'A catchy, conversational headline typical of a blog - it teases the post’s argument and makes the reader want to click.',
       },
       {
         feature: 'Direct address and conversational tone',
@@ -272,18 +272,18 @@ const ANNOTATED_EXTRACTS: {
         feature: 'Closing call to the reader',
         evidence: '"Tell me in the comments how morning three goes"',
         effect:
-          'A typical blog sign-off that invites a response and keeps the writer–reader relationship going.',
+          'A typical blog sign-off that invites a response and keeps the writer-reader relationship going.',
       },
     ],
   },
   {
     id: 'extract-journal',
     label: 'Extract 2',
-    kind: 'Journal / diary entry — original',
+    kind: 'Journal / diary entry - original',
     extract: [
       'Tuesday, 9 April',
       'I am writing this with the lamp still on because I cannot make my brain be quiet. Today the results went up, and for one whole hour I refused to look.',
-      'When I finally did, my hands were not steady. I had passed — not brilliantly, but enough. I am not sure why I expected the worst. Perhaps it is easier to plan for disappointment than to hope.',
+      'When I finally did, my hands were not steady. I had passed - not brilliantly, but enough. I am not sure why I expected the worst. Perhaps it is easier to plan for disappointment than to hope.',
       'Tomorrow I will tell Mum properly. Tonight, just this page knows. I think I am proud. I think, tomorrow, I might even believe it.',
     ],
     annotations: [
@@ -291,7 +291,7 @@ const ANNOTATED_EXTRACTS: {
         feature: 'Dated entry',
         evidence: '"Tuesday, 9 April"',
         effect:
-          'The date marks this as one journal entry — a snapshot of a single moment in a chronological sequence.',
+          'The date marks this as one journal entry - a snapshot of a single moment in a chronological sequence.',
       },
       {
         feature: 'Present-tense immediacy',
@@ -332,7 +332,7 @@ const PRACTICE_QUESTIONS: {
     q: 'Read Extract 1. How can you tell this is a blog post rather than a private diary entry? Give two pieces of evidence.',
     marks: '(2 marks)',
     model:
-      'It is a blog because it has an informal headline — "Why I Started Walking to School (And Why I Won’t Stop)" — and because it speaks to an audience it cannot see, ending with a direct call to the reader: "Tell me in the comments how morning three goes." A private diary would not have a title designed to attract clicks or invite comments.',
+      'It is a blog because it has an informal headline - "Why I Started Walking to School (And Why I Won’t Stop)" - and because it speaks to an audience it cannot see, ending with a direct call to the reader: "Tell me in the comments how morning three goes." A private diary would not have a title designed to attract clicks or invite comments.',
     markNote:
       'One mark for each appropriate piece of evidence (e.g. the catchy title, direct address to "you", the closing call for comments). A precise reference, not a vague gist, is required.',
   },
@@ -348,7 +348,7 @@ const PRACTICE_QUESTIONS: {
     q: 'Read Extract 2. How does the writer use structure to show a change in feeling across the entry?',
     marks: '(4 marks)',
     model:
-      'The entry is structured chronologically through the evening. It opens with anxiety — "I cannot make my brain be quiet" and the hour spent refusing to look at the results — placing the reader inside the worst moment first. The structure then moves to the discovery ("I had passed") and ends by looking forward to "Tomorrow", closing on cautious pride: "I think I am proud." This shift from sleepless dread at the start to tentative hope at the end shows the writer’s feelings changing over a single night, which is exactly how a reflective journal entry works.',
+      'The entry is structured chronologically through the evening. It opens with anxiety - "I cannot make my brain be quiet" and the hour spent refusing to look at the results - placing the reader inside the worst moment first. The structure then moves to the discovery ("I had passed") and ends by looking forward to "Tomorrow", closing on cautious pride: "I think I am proud." This shift from sleepless dread at the start to tentative hope at the end shows the writer’s feelings changing over a single night, which is exactly how a reflective journal entry works.',
     markNote:
       'Two developed points (the chronological evening structure; the move from dread to hope, including the forward-looking close), each with evidence and an explanation of the effect (2 + 2).',
   },
@@ -369,10 +369,10 @@ const WRITING_TASK = {
   formNote:
     'Form: blog post. Audience: students your own age. Purpose: to recount experience and to persuade.',
   model: [
-    'One Week, One New Thing — Just Try It',
+    'One Week, One New Thing - Just Try It',
     'I am going to be straight with you: I almost did not sign up. A whole week of doing something new, every single day? It sounded exhausting, and a small, lazy part of me wanted to scroll past the poster. I am so glad I did not.',
     'I chose chess club, mostly because the room was warm and I knew nobody there. The first session was uncomfortable. I lost three games in eleven minutes, which I think is a school record, and I nearly did not go back. But here is the thing nobody tells you about trying something new: the awkward part does not last. By Thursday I had won a game. By Friday I was the one explaining the rules to someone newer than me.',
-    'So why am I telling you this? Because the only thing standing between you and a week like mine is one slightly nervous walk into a room. You do not have to be good at the new thing. You just have to turn up. Pick something this week — anything — and give it five days. Then come back and tell me in the comments how day one went. I promise it is worth it.',
+    'So why am I telling you this? Because the only thing standing between you and a week like mine is one slightly nervous walk into a room. You do not have to be good at the new thing. You just have to turn up. Pick something this week - anything - and give it five days. Then come back and tell me in the comments how day one went. I promise it is worth it.',
   ],
   modelNote:
     'A Section B response is marked on WAO1 (form, communication and purpose) and WAO2 (grammar, punctuation and spelling). This model establishes the blog form immediately with an informal title and direct address, braids personal experience with persuasion, varies sentence length, uses a rhetorical question and a closing call to the reader, and keeps punctuation and spelling controlled.',

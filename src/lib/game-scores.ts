@@ -56,7 +56,7 @@ function writeGameData(gameId: string, data: StoredGameData): void {
   try {
     localStorage.setItem(storageKey(gameId), JSON.stringify(data))
   } catch {
-    // localStorage might be full — fail silently
+    // localStorage might be full - fail silently
   }
 }
 
@@ -142,7 +142,7 @@ export function getGameHistory(gameId: string): GameAttempt[] {
 }
 
 /**
- * Return scores from the current week (Monday–Sunday), sorted by
+ * Return scores from the current week (Monday-Sunday), sorted by
  * percentage descending. Acts as a simple weekly leaderboard.
  */
 export function getWeeklyLeaderboard(gameId: string): GameAttempt[] {
@@ -187,7 +187,7 @@ export function listPlayedGameIds(): string[] {
       }
     }
   } catch {
-    // Access denied / disabled — return whatever we have.
+    // Access denied / disabled - return whatever we have.
   }
   return ids
 }

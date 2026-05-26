@@ -58,7 +58,7 @@ export default function ReportIssuePage() {
       })
       if (!res.ok) throw new Error('Failed to submit report')
     } catch {
-      // Silently continue — the confirmation screen still shows so the user
+      // Silently continue - the confirmation screen still shows so the user
       // is not blocked. Once the API route exists it will persist properly.
     }
     setSubmitted(true)

@@ -36,7 +36,10 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -51,11 +54,20 @@ export async function POST(request: NextRequest) {
     // ── Validate ────────────────────────────────────────
     const errors: string[] = []
 
-    if (!body.name || typeof body.name !== 'string' || body.name.trim().length < 2 || body.name.trim().length > 100) {
-      errors.push('Name must be 2–100 characters')
+    if (
+      !body.name ||
+      typeof body.name !== 'string' ||
+      body.name.trim().length < 2 ||
+      body.name.trim().length > 100
+    ) {
+      errors.push('Name must be 2-100 characters')
     }
 
-    if (!body.email || typeof body.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
+    if (
+      !body.email ||
+      typeof body.email !== 'string' ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
+    ) {
       errors.push('A valid email address is required')
     }
 
@@ -63,8 +75,13 @@ export async function POST(request: NextRequest) {
       errors.push('Please select a valid subject')
     }
 
-    if (!body.message || typeof body.message !== 'string' || body.message.trim().length < 10 || body.message.trim().length > 2000) {
-      errors.push('Message must be 10–2000 characters')
+    if (
+      !body.message ||
+      typeof body.message !== 'string' ||
+      body.message.trim().length < 10 ||
+      body.message.trim().length > 2000
+    ) {
+      errors.push('Message must be 10-2000 characters')
     }
 
     if (errors.length > 0) {
@@ -73,21 +90,19 @@ export async function POST(request: NextRequest) {
 
     // ── Store in Supabase ───────────────────────────────
     const supabase = await createServiceRoleClient()
-    const { error: dbError } = await supabase
-      .from('contact_submissions')
-      .insert({
-        name: body.name.trim(),
-        email: body.email.trim(),
-        subject: body.subject,
-        message: body.message.trim(),
-        created_at: new Date().toISOString(),
-      })
+    const { error: dbError } = await supabase.from('contact_submissions').insert({
+      name: body.name.trim(),
+      email: body.email.trim(),
+      subject: body.subject,
+      message: body.message.trim(),
+      created_at: new Date().toISOString(),
+    })
 
     if (dbError) {
       console.error('[api/contact] Supabase insert error:', dbError)
       return NextResponse.json(
         { error: 'Failed to save your message. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -109,7 +124,7 @@ export async function POST(request: NextRequest) {
           body: JSON.stringify({
             from: fromAddress,
             to: 'info@Upskillenergy.com',
-            subject: `[Contact Form] ${body.subject} – from ${body.name.trim()}`,
+            subject: `[Contact Form] ${body.subject} - from ${body.name.trim()}`,
             html: [
               `<h2>New Contact Form Submission</h2>`,
               `<p><strong>Name:</strong> ${escapeHtml(body.name.trim())}</p>`,
@@ -130,7 +145,7 @@ export async function POST(request: NextRequest) {
           body: JSON.stringify({
             from: fromAddress,
             to: body.email.trim(),
-            subject: 'We received your message – The English Hub',
+            subject: 'We received your message - The English Hub',
             html: [
               `<h2>Thank you for contacting us, ${escapeHtml(body.name.trim())}!</h2>`,
               `<p>We've received your message regarding <strong>${escapeHtml(body.subject)}</strong> and will get back to you as soon as possible.</p>`,
@@ -153,9 +168,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('[api/contact] Unexpected error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

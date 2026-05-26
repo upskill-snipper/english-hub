@@ -12,7 +12,7 @@ type QuoteQuestion = {
   location: string
   technique: string
   theme: string
-  /** Distractor options per category — each array of 3 wrong answers */
+  /** Distractor options per category - each array of 3 wrong answers */
   wrongSpeakers: string[]
   wrongLocations: string[]
   wrongTechniques: string[]

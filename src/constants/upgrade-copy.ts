@@ -22,8 +22,8 @@ export function isTeacherFeature(feature: GatedFeature): boolean {
 // Headline is the Early Access monthly price; Standard shown as strikethrough
 // anchor with "from August 2026" urgency tag.
 
-export const STUDENT_PRICE_STRING = `Early Access ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year) — Standard ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD} from ${PRICING.PRICE_INCREASE_DATE}`
-export const TEACHER_PRICE_STRING = `Early Access ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year) — Standard ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD} from ${PRICING.PRICE_INCREASE_DATE}`
+export const STUDENT_PRICE_STRING = `Early Access ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year) - Standard ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD} from ${PRICING.PRICE_INCREASE_DATE}`
+export const TEACHER_PRICE_STRING = `Early Access ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month (or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year) - Standard ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD} from ${PRICING.PRICE_INCREASE_DATE}`
 
 export function getPriceString(feature: GatedFeature): string {
   return isTeacherFeature(feature) ? TEACHER_PRICE_STRING : STUDENT_PRICE_STRING
@@ -31,9 +31,9 @@ export function getPriceString(feature: GatedFeature): string {
 
 export function getFullPricingLine(feature: GatedFeature): string {
   if (isTeacherFeature(feature)) {
-    return `Teachers — Early Access: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year. Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL_STANDARD}/year. ${PRICING.TRIAL_TEXT} — card required, cancel before day 7. ⚡ ${PRICING.PRICE_INCREASE_MESSAGE}.`
+    return `Teachers - Early Access: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year. Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: ${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD}/month or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL_STANDARD}/year. ${PRICING.TRIAL_TEXT} - card required, cancel before day 7. ⚡ ${PRICING.PRICE_INCREASE_MESSAGE}.`
   }
-  return `Students — Early Access: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}). Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_STANDARD}/year. ${PRICING.TRIAL_TEXT} — card required, cancel before day 7. ⚡ ${PRICING.PRICE_INCREASE_MESSAGE}.`
+  return `Students - Early Access: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year (${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}). Standard pricing from ${PRICING.PRICE_INCREASE_DATE}: ${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD}/month or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_STANDARD}/year. ${PRICING.TRIAL_TEXT} - card required, cancel before day 7. ⚡ ${PRICING.PRICE_INCREASE_MESSAGE}.`
 }
 
 // ─── Feature-specific lockout messages ─────────────────────────────────
@@ -48,7 +48,7 @@ export const FEATURE_LOCKOUT_COPY: Record<GatedFeature, string> = {
   ai_study_recommendations:
     'Get personalised study plans that adapt to your strengths and gaps, keeping revision focused and efficient.',
   ai_lesson_plan:
-    'Create fully differentiated, curriculum-aligned lesson plans in minutes — not hours.',
+    'Create fully differentiated, curriculum-aligned lesson plans in minutes - not hours.',
   worksheet_builder:
     'Build differentiated worksheets with auto-generated questions and mark schemes, ready for any class.',
   mark_scheme_generator:
@@ -85,18 +85,18 @@ export function getBenefits(isTeacher: boolean): readonly string[] {
 
 export const SOFT_NUDGE_COPY = {
   student: (featureName: string, usageCount: number, freeLimit: number) =>
-    `You've used ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} uses. Students who use AI marking regularly improve by a full grade. Start a ${PRICING.TRIAL_TEXT} to continue — card required, cancel before day 7.`,
+    `You've used ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} uses. Students who use AI marking regularly improve by a full grade. Start a ${PRICING.TRIAL_TEXT} to continue - card required, cancel before day 7.`,
   teacher: (featureName: string, usageCount: number, freeLimit: number) =>
-    `You've generated ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} uses. Unlock unlimited planning, marking, and analytics with a ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`,
+    `You've generated ${usageCount} of your ${freeLimit} free ${featureName.toLowerCase()} uses. Unlock unlimited planning, marking, and analytics with a ${PRICING.TRIAL_TEXT} - card required, cancel before day 7.`,
 } as const
 
 // ─── Dashboard banner copy ─────────────────────────────────────────────
 
 export const DASHBOARD_BANNER_COPY = {
-  student: `You're making progress. Premium students get unlimited AI marking, mock exams, and personalised study plans. Start a ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`,
-  teacher: `You've started building with The English Hub. Unlock unlimited AI tools and full class analytics with a ${PRICING.TRIAL_TEXT} — card required, cancel before day 7.`,
+  student: `You're making progress. Premium students get unlimited AI marking, mock exams, and personalised study plans. Start a ${PRICING.TRIAL_TEXT} - card required, cancel before day 7.`,
+  teacher: `You've started building with The English Hub. Unlock unlimited AI tools and full class analytics with a ${PRICING.TRIAL_TEXT} - card required, cancel before day 7.`,
 } as const
 
 // ─── Promo banner (reusable across CTAs) ───────────────────────────────
 
-export const PROMO_BANNER_STUDENT_CODE = `Use code ${PRICING.AFFILIATE_PROMO_CODE} at checkout — annual plan ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE} (save ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_SAVINGS}).`
+export const PROMO_BANNER_STUDENT_CODE = `Use code ${PRICING.AFFILIATE_PROMO_CODE} at checkout - annual plan ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE} (save ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_SAVINGS}).`

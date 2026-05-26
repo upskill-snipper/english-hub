@@ -6,10 +6,10 @@
  * invite it *would* have sent but does not hit SendGrid or Trustpilot's API.
  *
  * Required environment variables before enabling:
- *   TRUSTPILOT_BUSINESS_UNIT_ID   — from Trustpilot Business account
- *   TRUSTPILOT_API_KEY            — Trustpilot API key (for AFS links)
- *   SENDGRID_API_KEY              — already in use for transactional email
- *   TRUSTPILOT_ENABLED            — set to "true" to enable sending
+ *   TRUSTPILOT_BUSINESS_UNIT_ID   - from Trustpilot Business account
+ *   TRUSTPILOT_API_KEY            - Trustpilot API key (for AFS links)
+ *   SENDGRID_API_KEY              - already in use for transactional email
+ *   TRUSTPILOT_ENABLED            - set to "true" to enable sending
  *
  * Cloudflare Email Routing note:
  *   The `from` address is `reviews@theenglishhub.app`. That alias must be
@@ -47,7 +47,7 @@ function isEnabled(): boolean {
 /**
  * Main entry point. Deduplicates, renders, and dispatches an invite.
  *
- * Dedup is the caller's job — this function does NOT look up or insert into
+ * Dedup is the caller's job - this function does NOT look up or insert into
  * the `trustpilot_invite` table. The caller should check `hasAlreadyBeenSent`
  * first and record the send afterwards.
  *
@@ -64,7 +64,7 @@ export async function sendTrustpilotInvite(
   }
 
   if (!isEnabled()) {
-    // Feature flag off — log only. Lets us ship the trigger code without
+    // Feature flag off - log only. Lets us ship the trigger code without
     // actually sending emails until Trustpilot Business + SendGrid + domain
     // auth are all configured.
     console.info('[trustpilot] would send', {
@@ -78,7 +78,7 @@ export async function sendTrustpilotInvite(
 
   const email = renderTrustpilotEmail(trigger, vars)
 
-  // Guard: ensure the invite link variable is set — rendering without it
+  // Guard: ensure the invite link variable is set - rendering without it
   // produces a broken CTA.
   if (!vars.trustpilot_invite_link) {
     return { sent: false, skipped: 'invalid', error: 'trustpilot_invite_link missing' }

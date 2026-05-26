@@ -21,7 +21,7 @@ import type { StudentAnalytics } from '@/lib/types'
 
 /* ── Types ──────────────────────────────────────────────────────────────────── */
 
-/** Extended student data for grade tracking — adds target and starting grades */
+/** Extended student data for grade tracking - adds target and starting grades */
 export interface GradeTrackerStudent extends StudentAnalytics {
   target_grade: number | null
   starting_grade: number | null

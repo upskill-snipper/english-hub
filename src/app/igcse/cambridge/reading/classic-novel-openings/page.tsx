@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Classic Novel Openings — Reading Practice Framework — The English Hub',
+    title: 'Classic Novel Openings - Reading Practice Framework - The English Hub',
     description:
       'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
   },
-  title: 'Classic Novel Openings — Reading Practice Framework',
+  title: 'Classic Novel Openings - Reading Practice Framework',
   description:
     'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
   alternates: {
@@ -226,7 +226,7 @@ export default async function ClassicNovelOpeningsPage() {
                 <strong>Sentence 2:</strong> The situation or conflict that the opening establishes.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two specific things we learn about the
+                <strong>Sentences 3-4:</strong> Two specific things we learn about the
                 character&rsquo;s world, mood or personality.
               </li>
               <li>

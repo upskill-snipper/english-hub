@@ -33,7 +33,7 @@ const pillars = [
     icon: BookOpen,
     title: 'Reading: analytical sophistication',
     points: [
-      'Identify layered, implicit meanings — not just surface detail',
+      'Identify layered, implicit meanings - not just surface detail',
       'Explore how word choice, imagery and structure interact',
       'Offer alternative interpretations where the text supports them',
       'Use short, precise quotations embedded in your own sentences',
@@ -46,7 +46,7 @@ const pillars = [
     points: [
       'Distinctive narrative or argumentative voice from the first line',
       'Varied sentence length and structure used for deliberate effect',
-      'Ambitious vocabulary used precisely — not showily',
+      'Ambitious vocabulary used precisely - not showily',
       'Complete control of punctuation, including colons and semicolons',
       'Structural craft: openings that hook, endings that resonate',
     ],
@@ -57,7 +57,7 @@ const pillars = [
     points: [
       'Plan every answer, even under pressure',
       'Match register perfectly to the form in directed writing',
-      'Summarise in your own words — never copy phrases',
+      'Summarise in your own words - never copy phrases',
       'Proofread for careless errors in the final five minutes',
       'Allocate time proportional to the mark weighting',
     ],
@@ -69,7 +69,7 @@ const upgrades = [
     before:
       'The writer describes the forest as dark and scary, which makes the reader feel afraid.',
     after:
-      'The writer layers a sensory darkness across the forest — the trees “thicken into a vault” — transforming the familiar landscape into something architectural, almost sacred. The metaphor traps the reader inside a structure they cannot see the edges of, so fear shifts from the visible to the spatial.',
+      'The writer layers a sensory darkness across the forest - the trees “thicken into a vault” - transforming the familiar landscape into something architectural, almost sacred. The metaphor traps the reader inside a structure they cannot see the edges of, so fear shifts from the visible to the spatial.',
     label: 'Language analysis',
   },
   {
@@ -111,7 +111,7 @@ export default async function Grade9GuidePage() {
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
             Grade 9 is more selective than A*. It&apos;s awarded to roughly the top 4% of entries.
             This guide breaks down exactly what sophistication looks like across reading and writing
-            — and the small habits that take a strong 8 to a clean 9.
+            - and the small habits that take a strong 8 to a clean 9.
           </p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export default async function Grade9GuidePage() {
             </span>
             <span>
               <strong className="text-foreground">Annotate mark schemes.</strong> Notice the
-              difference between Level 5 and Level 6 descriptors — usually it&apos;s about precision
+              difference between Level 5 and Level 6 descriptors - usually it&apos;s about precision
               of effect, not quantity of points.
             </span>
           </li>

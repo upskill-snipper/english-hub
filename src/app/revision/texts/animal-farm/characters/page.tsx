@@ -11,11 +11,11 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Animal Farm Characters — In-Depth Analysis | The English Hub',
+    title: 'Animal Farm Characters - In-Depth Analysis | The English Hub',
     description:
       'Detailed character analysis for Animal Farm: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover. Allegorical significance, key quotes and character arcs.',
   },
-  title: 'Animal Farm Characters — In-Depth Analysis',
+  title: 'Animal Farm Characters - In-Depth Analysis',
   description:
     'Detailed character analysis for Animal Farm: Napoleon, Snowball, Squealer, Boxer, Old Major, Benjamin, Mollie and Clover. Allegorical significance, key quotes and character arcs.',
   alternates: {

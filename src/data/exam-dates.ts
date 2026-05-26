@@ -1,7 +1,7 @@
 // @ts-nocheck
 // ── GCSE English Exam Timetable 2026 (Estimated May/June) ─────────────────────
 // Based on typical exam board scheduling patterns. Actual dates published by
-// boards in autumn of the preceding year — update once official timetables land.
+// boards in autumn of the preceding year - update once official timetables land.
 
 export interface ExamDate {
   id: string
@@ -28,7 +28,7 @@ export const examDates: ExamDate[] = [
     id: 'aqa-lang-2-2026',
     board: 'AQA',
     subject: 'English Language',
-    paper: 'Paper 2: Writers\' Viewpoints and Perspectives',
+    paper: "Paper 2: Writers' Viewpoints and Perspectives",
     date: '2026-06-05',
     time: 'morning',
     duration: 105,
@@ -148,7 +148,8 @@ export const examDates: ExamDate[] = [
     id: 'wjec-lang-2-2026',
     board: 'WJEC',
     subject: 'English Language',
-    paper: 'Component 2: 19th and 21st Century Non-Fiction Reading and Transactional/Persuasive Writing',
+    paper:
+      'Component 2: 19th and 21st Century Non-Fiction Reading and Transactional/Persuasive Writing',
     date: '2026-06-09',
     time: 'morning',
     duration: 120,

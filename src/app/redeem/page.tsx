@@ -1,5 +1,5 @@
 /**
- * /redeem — public, deep-link-friendly promo-code redemption page.
+ * /redeem - public, deep-link-friendly promo-code redemption page.
  *
  * This page is the ONLY place we present promo-coded discount pricing. It
  * lives on the web at `theenglishhub.app/redeem` and is linked from:
@@ -13,7 +13,7 @@
  * discount pricing inside an app that uses IAP. The redemption surface must
  * therefore live on the web. After Stripe Checkout completes, the Stripe
  * webhook updates the `Subscription` row, and mobile recognises entitlement
- * via `/api/me/entitlements` on next foreground — no app-side UI changes
+ * via `/api/me/entitlements` on next foreground - no app-side UI changes
  * required.
  *
  * Flow:
@@ -23,7 +23,7 @@
  *   4. On confirm, we call `/api/promo/redeem` (auth required; unauth users
  *      are routed via sign-up first) and forward to Stripe Checkout.
  *   5. Stripe redirects to `/redeem/success?session_id=…` which then deep-
- *      links back into the app via `theenglishhub://paywall?redeemed=1` —
+ *      links back into the app via `theenglishhub://paywall?redeemed=1` -
  *      the app shows a success toast and refreshes entitlements.
  *
  * British English in copy.
@@ -134,7 +134,7 @@ export default function RedeemPage() {
   const onRedeem = useCallback(async (): Promise<void> => {
     // If the user typed a code and clicked the button without blurring
     // first, validation hasn't fired yet and the button was previously
-    // disabled — leaving the user stuck. Validate inline before
+    // disabled - leaving the user stuck. Validate inline before
     // proceeding so a single Apply click works regardless of focus.
     let currentValidation = validation
     if (!currentValidation && CODE_REGEX.test(code.trim().toUpperCase())) {
@@ -172,7 +172,7 @@ export default function RedeemPage() {
         // so they come straight back here afterwards. The `next` param is
         // forward-compatible for when /auth/register starts honouring it;
         // until then users land on register and reach /redeem manually.
-        // (Note: the auth route is `/auth/register`, not `/auth/sign-up` —
+        // (Note: the auth route is `/auth/register`, not `/auth/sign-up` -
         // a stale path here previously 404'd promo redemptions for signed-out
         // users.)
         const next = `/redeem?code=${encodeURIComponent(code.trim().toUpperCase())}${deviceRef ? `&ref=${encodeURIComponent(deviceRef)}` : ''}`
@@ -215,7 +215,7 @@ export default function RedeemPage() {
       )}
 
       <Card className="space-y-5 p-6">
-        {/* Annual-only messaging — clarifies which plans the code applies to before the user types. */}
+        {/* Annual-only messaging - clarifies which plans the code applies to before the user types. */}
         <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
           <p className="font-semibold">{t('redeem.annual_only.title')}</p>
           <p className="mt-1 text-amber-800">{t('redeem.annual_only.body')}</p>
@@ -274,7 +274,7 @@ export default function RedeemPage() {
             code.length === 0 ||
             // Only block submission when we KNOW the code is invalid.
             // If validation hasn't run yet (validation === null) but the
-            // format is plausible, keep the button enabled — onRedeem
+            // format is plausible, keep the button enabled - onRedeem
             // will validate inline and surface the right error if it
             // fails. This prevents the "button stuck disabled until I
             // click somewhere else" UX trap.

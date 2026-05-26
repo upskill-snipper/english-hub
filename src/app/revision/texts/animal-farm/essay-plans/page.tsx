@@ -11,11 +11,11 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Animal Farm Essay Plans — GCSE Revision | The English Hub',
+    title: 'Animal Farm Essay Plans - GCSE Revision | The English Hub',
     description:
       'Five full essay plans for Animal Farm by George Orwell. Structured introductions, paragraph plans with quotes, and conclusions for GCSE English Literature.',
   },
-  title: 'Animal Farm Essay Plans — GCSE Revision',
+  title: 'Animal Farm Essay Plans - GCSE Revision',
   description:
     'Five full essay plans for Animal Farm by George Orwell. Structured introductions, paragraph plans with quotes, and conclusions for GCSE English Literature.',
   alternates: {

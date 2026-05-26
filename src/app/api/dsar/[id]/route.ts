@@ -13,7 +13,7 @@ const updateStatusSchema = z.object({
   responseDetails: z.string().max(5000).optional(),
 })
 
-// ─── GET /api/dsar/[id] — Get DSAR details ─────────────────────────────
+// ─── GET /api/dsar/[id] - Get DSAR details ─────────────────────────────
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -97,7 +97,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   }
 }
 
-// ─── PATCH /api/dsar/[id] — Update status (admin only) ─────────────────
+// ─── PATCH /api/dsar/[id] - Update status (admin only) ─────────────────
 
 export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {

@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Othello — Study Guide | The English Hub',
+    title: 'Othello - Study Guide | The English Hub',
     description:
       'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
   },
-  title: 'Othello — Study Guide',
+  title: 'Othello - Study Guide',
   description:
     'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
   alternates: {
@@ -597,7 +597,7 @@ export default async function OthelloPage() {
   return (
     <>
       <CourseJsonLd
-        name="Othello — A-Level Study Guide"
+        name="Othello - A-Level Study Guide"
         description="In-depth study guide for Othello covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
       />
       <BreadcrumbJsonLd

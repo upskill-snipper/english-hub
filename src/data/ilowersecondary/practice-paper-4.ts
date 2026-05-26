@@ -1,5 +1,5 @@
 /**
- * ORIGINAL PRACTICE PAPER 4 — theme: "Courage"
+ * ORIGINAL PRACTICE PAPER 4 - theme: "Courage"
  *
  * Modelled exactly on the Pearson Edexcel International Award in Lower
  * Secondary English achievement test LEH11/01 (structure only). EVERY
@@ -11,7 +11,7 @@
  * invented, fictional appeal scenario (Text 2). Text 3 is original
  * fiction.
  *
- * Qualification facts, AO codes and mark grids are NOT restated here —
+ * Qualification facts, AO codes and mark grids are NOT restated here -
  * the consumer page imports them from '@/lib/ilowersecondary/spec'.
  */
 
@@ -107,13 +107,13 @@ export const PRACTICE_PAPER_4: PracticePaper = {
   instructions: [
     'Use black ink or black ball-point pen.',
     'Answer ALL questions in Section A and the ONE question in Section B.',
-    'Answer the questions in the spaces provided — there may be more space than you need.',
+    'Answer the questions in the spaces provided - there may be more space than you need.',
     'Dictionaries may NOT be used in this examination.',
     'The total mark for this paper is 70. The marks for each question are shown in brackets.',
     'Read each question carefully before you start to answer it. Check your answers if you have time at the end.',
   ],
 
-  // ─── Source Booklet — three original texts ────────────────────────
+  // ─── Source Booklet - three original texts ────────────────────────
   texts: [
     {
       id: 1,
@@ -124,12 +124,12 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       title: 'What Fear Does Inside You',
       byline: 'An explanatory article written for The English Hub',
       paragraphs: [
-        'Most people think of courage as the absence of fear. It is not. Courage is what happens when a person feels fear in every cell of their body and chooses to act anyway. To understand the brave, then, we first have to understand what is going on inside them — because the same alarm fires in the hero and in the person who runs away.',
+        'Most people think of courage as the absence of fear. It is not. Courage is what happens when a person feels fear in every cell of their body and chooses to act anyway. To understand the brave, then, we first have to understand what is going on inside them - because the same alarm fires in the hero and in the person who runs away.',
         'It begins in a small, almond-shaped part of the brain called the amygdala. When the brain senses a threat, the amygdala does not wait for you to think it over. In less than a tenth of a second it sends an emergency signal, long before the slower, reasoning part of the brain has even noticed there is a problem. This is why your body can flinch before you know why.',
         'That signal triggers a flood of two chemicals: adrenaline and cortisol. Within seconds your heart beats harder and faster, your breathing quickens, and blood is pushed away from the skin and stomach and into the large muscles of the arms and legs. This is the famous "fight or flight" response, and it is the reason a frightened person may feel sick, shaky, or notice their hands turning cold and pale.',
-        'These changes are not weaknesses. They are tools. The pounding heart is delivering oxygen to muscles that may need to act. The narrowed focus — the sense that the rest of the world has gone quiet — keeps attention fixed on the danger. Even the trembling is simply muscles flooded with fuel they have not yet been asked to use.',
+        'These changes are not weaknesses. They are tools. The pounding heart is delivering oxygen to muscles that may need to act. The narrowed focus - the sense that the rest of the world has gone quiet - keeps attention fixed on the danger. Even the trembling is simply muscles flooded with fuel they have not yet been asked to use.',
         'What separates a courageous act from a panicked one is not the amount of fear but what the thinking brain does with it. The slower region behind the forehead, the prefrontal cortex, can step in a moment later and overrule the alarm: it can decide that the fear is worth enduring, hold the body steady, and choose the harder action. Brave people are not people whose alarm never rings. They are people who have learned to keep acting while it is ringing.',
-        'This is also why courage can be practised. Every time a person does something frightening and survives it — speaking aloud in class, admitting a mistake, standing up for someone — the thinking brain gets a little better and a little faster at holding the alarm in check. Courage, in the end, is less a gift than a habit the body can be taught.',
+        'This is also why courage can be practised. Every time a person does something frightening and survives it - speaking aloud in class, admitting a mistake, standing up for someone - the thinking brain gets a little better and a little faster at holding the alarm in check. Courage, in the end, is less a gift than a habit the body can be taught.',
       ],
     },
     {
@@ -143,9 +143,9 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       paragraphs: [
         'Somewhere in your school, today, there is a person sitting very still and very quiet because they have something true to say and they are terrified to say it. Maybe it is an answer they are almost sure is right. Maybe it is the words "that is not fair". Maybe it is simply "I need help." You know this person, because at least once, this person has been you.',
         'At the Speak Up Youth Project we believe the bravest thing a young person ever does is rarely loud. It is not jumping from a height or winning a fight. It is the small, shaking voice that decides, against every instinct telling it to stay safe, to be heard anyway.',
-        'And yet we train children for almost everything except this. We teach you to swim in case you fall in deep water. We teach you to cross a road. So why does no one teach you the one skill you will use every single day for the rest of your life — the courage to speak when speaking is hard?',
-        'That is the gap we exist to close. For just the cost of a school lunch, our volunteers can run a speaking workshop for a whole class — a safe room where the only rule is that a wobbling voice is a brave voice, and no one is laughed at for trying. Last year, students who finished our course were far more likely to ask for help when they needed it. That is not a small thing. For some young people, that is everything.',
-        'You do not have to be fearless to be brave. You only have to speak once while you are afraid, and discover that you survived it — and then do it again. So here is our challenge to you, today: find the smallest true thing you are scared to say, and say it. Then help us teach someone else to do the same.',
+        'And yet we train children for almost everything except this. We teach you to swim in case you fall in deep water. We teach you to cross a road. So why does no one teach you the one skill you will use every single day for the rest of your life - the courage to speak when speaking is hard?',
+        'That is the gap we exist to close. For just the cost of a school lunch, our volunteers can run a speaking workshop for a whole class - a safe room where the only rule is that a wobbling voice is a brave voice, and no one is laughed at for trying. Last year, students who finished our course were far more likely to ask for help when they needed it. That is not a small thing. For some young people, that is everything.',
+        'You do not have to be fearless to be brave. You only have to speak once while you are afraid, and discover that you survived it - and then do it again. So here is our challenge to you, today: find the smallest true thing you are scared to say, and say it. Then help us teach someone else to do the same.',
       ],
     },
     {
@@ -159,8 +159,8 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       paragraphs: [
         'Priya had known the answer for four whole minutes, and in those four minutes it had grown heavier and heavier in her chest, like a stone she could neither swallow nor put down. Mr Okafor asked the question again, more gently this time, scanning the rows of faces. Nobody moved. The clock above the whiteboard ticked once, very loudly, and Priya felt her own heartbeat answer it.',
         'Put your hand up. It was such a small thing. Children did it a hundred times a day without a second thought. So she could not understand why her arm felt as though it were bolted to the desk, or why her mouth had gone dry, or why some quiet, careful voice inside her kept whispering the same sensible warning: what if you are wrong, and everyone turns to look.',
-        'She thought of last September, of the laughter that had spread through the room when Daniel got an answer wrong, and how he had spent the rest of the lesson studying the grain of his desk. The memory pressed her arm flatter still. Yet underneath the fear was something steadier and more stubborn — a small, irritated certainty that she knew this, that the silence was wrong, and that someone ought to break it.',
-        'Mr Okafor sighed and reached for the register, ready to give up. Something about that small movement, that quiet surrender of his, decided it. Before the careful voice could argue again, Priya watched her own hand lift off the desk — slowly, unsteadily, only halfway — as if it had made the choice a fraction of a second before she had.',
+        'She thought of last September, of the laughter that had spread through the room when Daniel got an answer wrong, and how he had spent the rest of the lesson studying the grain of his desk. The memory pressed her arm flatter still. Yet underneath the fear was something steadier and more stubborn - a small, irritated certainty that she knew this, that the silence was wrong, and that someone ought to break it.',
+        'Mr Okafor sighed and reached for the register, ready to give up. Something about that small movement, that quiet surrender of his, decided it. Before the careful voice could argue again, Priya watched her own hand lift off the desk - slowly, unsteadily, only halfway - as if it had made the choice a fraction of a second before she had.',
         'Her voice came out smaller than she meant it to, and it shook on the second word. But she said the answer, all of it, to the end. There was a pause that lasted about a year. Then Mr Okafor smiled and said, simply, "Yes. Exactly that." And Priya sat back, her heart still hammering, astonished to find that the hardest thing she had done all year was already over, and that she was, somehow, still here.',
       ],
     },
@@ -214,13 +214,13 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       prompt:
         'In Text 1 the writer says the trembling of a frightened person is “simply muscles flooded with fuel they have not yet been asked to use”. Put a cross in ONE box to show what this suggests.',
       options: [
-        'A — the shaking is a sign the person is weak',
-        'B — the shaking means the muscles are damaged',
-        'C — the shaking is the body prepared for action it has not yet taken',
-        'D — the shaking will make the person fall over',
+        'A - the shaking is a sign the person is weak',
+        'B - the shaking means the muscles are damaged',
+        'C - the shaking is the body prepared for action it has not yet taken',
+        'D - the shaking will make the person fall over',
       ],
       markScheme: {
-        answer: 'C — the shaking is the body prepared for action it has not yet taken',
+        answer: 'C - the shaking is the body prepared for action it has not yet taken',
         notes: '1 mark for C only.',
       },
     },
@@ -233,7 +233,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
         'In Text 1, why does the writer say that “the same alarm fires in the hero and in the person who runs away”?',
       markScheme: {
         answer:
-          'To show that brave people feel exactly the same fear as everyone else — the difference is not whether they feel fear but what they do with it. Accept any answer showing courage is not the absence of fear.',
+          'To show that brave people feel exactly the same fear as everyone else - the difference is not whether they feel fear but what they do with it. Accept any answer showing courage is not the absence of fear.',
         notes: '1 mark for a clear inference.',
       },
     },
@@ -259,7 +259,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
         'In the final paragraph of Text 1 the writer says: “Courage, in the end, is less a gift than a habit the body can be taught.” What did the writer mean by this, and what is its effect on the reader?',
       markScheme: {
         answer:
-          'Meaning: courage is not something a lucky few are simply born with — it is a skill that anyone can build through practice and repetition. Effect: ends the article on an encouraging, empowering note; reassures the reader that they too could become braver, leaving them hopeful rather than excluded.',
+          'Meaning: courage is not something a lucky few are simply born with - it is a skill that anyone can build through practice and repetition. Effect: ends the article on an encouraging, empowering note; reassures the reader that they too could become braver, leaving them hopeful rather than excluded.',
         notes:
           '1 mark for explaining the meaning; 1 mark for the effect on the reader. Do not credit an unexplained lift of the quotation.',
       },
@@ -295,7 +295,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       ao: 'RAO3',
       marks: 2,
       prompt:
-        'In Text 2, paragraph 3, the writer uses a question mark: “So why does no one teach you the one skill you will use every single day for the rest of your life — the courage to speak when speaking is hard?” Explain the effect of this question mark.',
+        'In Text 2, paragraph 3, the writer uses a question mark: “So why does no one teach you the one skill you will use every single day for the rest of your life - the courage to speak when speaking is hard?” Explain the effect of this question mark.',
       markScheme: {
         answer:
           'Effect: the rhetorical question makes the reader stop and think, and feel that something obvious has been unfairly left out. Linked explanation: it challenges the reader to agree there is a real gap, building a sense that the project’s work is needed and worth supporting.',
@@ -352,7 +352,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       ],
       markScheme: {
         answer:
-          'Row 1 — Text 2; Row 2 — Neither (accept reasoning that neither uses them); Row 3 — Text 2; Row 4 — Text 1.',
+          'Row 1 - Text 2; Row 2 - Neither (accept reasoning that neither uses them); Row 3 - Text 2; Row 4 - Text 1.',
         notes:
           '2 marks for all four rows correct; 1 mark for two or three rows correct; 0 marks for one or none correct.',
       },
@@ -366,7 +366,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
         'How does the writer of Text 2 use language to persuade young readers to speak up? Make TWO developed points, each supported with evidence from the text.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the direct, accusing second person — “this person has been you” — forces the reader to recognise themselves, creating personal involvement and sympathy; (2) the everyday comparison — “For just the cost of a school lunch” — makes supporting the cause feel small, easy and almost selfish to refuse; (3) the contrast between things children are taught (“to swim”, “to cross a road”) and the untaught skill builds a sense of unfairness that demands action; (4) the redefinition “a wobbling voice is a brave voice” reassures the reader and lowers the barrier to taking part.',
+          'Indicative content (any two developed points): (1) the direct, accusing second person - “this person has been you” - forces the reader to recognise themselves, creating personal involvement and sympathy; (2) the everyday comparison - “For just the cost of a school lunch” - makes supporting the cause feel small, easy and almost selfish to refuse; (3) the contrast between things children are taught (“to swim”, “to cross a road”) and the untaught skill builds a sense of unfairness that demands action; (4) the redefinition “a wobbling voice is a brave voice” reassures the reader and lowers the barrier to taking part.',
         notes:
           'Up to 2 marks per developed point: 1 mark for an appropriate point with evidence, 1 mark for explaining the effect on the reader. Maximum 4 marks.',
       },
@@ -381,7 +381,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
       markScheme: {
         levelled: 'comparison',
         answer:
-          'Indicative comparison: Text 1’s writer uses the calm, balanced contrast of an “alarm” that “never rings” against one that keeps “ringing”, with the metaphor casting fear as a constant background signal the brave simply act through — this reflects an explanatory purpose that leaves the reader understanding courage scientifically and feeling it is achievable. Text 2’s writer uses the blunt, reassuring negative “do not have to be fearless” to strip away the reader’s excuse and reflect a persuasive purpose designed to push the reader into action. Where Text 1 positions the reader as someone gaining understanding, Text 2 positions them as someone being directly challenged to do something.',
+          'Indicative comparison: Text 1’s writer uses the calm, balanced contrast of an “alarm” that “never rings” against one that keeps “ringing”, with the metaphor casting fear as a constant background signal the brave simply act through - this reflects an explanatory purpose that leaves the reader understanding courage scientifically and feeling it is achievable. Text 2’s writer uses the blunt, reassuring negative “do not have to be fearless” to strip away the reader’s excuse and reflect a persuasive purpose designed to push the reader into action. Where Text 1 positions the reader as someone gaining understanding, Text 2 positions them as someone being directly challenged to do something.',
         notes:
           'Mark using the levelled comparison grid (COMPARISON_LEVELS). Top level: a clear explanation of the contrast that infers beyond the literal words, comments on language at word level, and identifies each writer’s purpose and effect on the reader.',
       },
@@ -445,7 +445,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
         'In Text 3 the writer says Priya “watched her own hand lift off the desk … as if it had made the choice a fraction of a second before she had.” What is the effect of describing her hand this way?',
       markScheme: {
         answer:
-          'It suggests the brave act almost happened on its own, before fear could talk her out of it — capturing how sudden and barely-controlled courage can feel. Effect: makes the moment feel real and tense, and makes the reader admire how she acted despite herself.',
+          'It suggests the brave act almost happened on its own, before fear could talk her out of it - capturing how sudden and barely-controlled courage can feel. Effect: makes the moment feel real and tense, and makes the reader admire how she acted despite herself.',
         notes:
           '1 mark for explaining the meaning of the hand acting on its own; 1 mark for the effect on the reader.',
       },
@@ -459,7 +459,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
         'How does the writer of Text 3 use language and structure to show that Priya is afraid but finds the courage to speak? Make TWO developed points, each supported with evidence.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the simile of the answer being “like a stone she could neither swallow nor put down” conveys how her fear physically traps her; (2) the personified “quiet, careful voice inside her” dramatises the inner conflict between fear and resolve; (3) the structural turning point — Mr Okafor’s “quiet surrender” reaching for the register — triggers her action, showing courage arriving at the last possible moment; (4) the short, broken final clause “still here” and the year-long “pause” stretch the tension and leave the reader sharing her relief.',
+          'Indicative content (any two developed points): (1) the simile of the answer being “like a stone she could neither swallow nor put down” conveys how her fear physically traps her; (2) the personified “quiet, careful voice inside her” dramatises the inner conflict between fear and resolve; (3) the structural turning point - Mr Okafor’s “quiet surrender” reaching for the register - triggers her action, showing courage arriving at the last possible moment; (4) the short, broken final clause “still here” and the year-long “pause” stretch the tension and leave the reader sharing her relief.',
         notes:
           'Up to 2 marks per developed point: 1 mark for a point with appropriate evidence, 1 mark for explaining the effect. Maximum 4 marks.',
       },
@@ -473,7 +473,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
         'In Text 3, why is Priya “astonished to find that the hardest thing she had done all year was already over”?',
       markScheme: {
         answer:
-          'Because the act she had been so afraid of turned out to be quick and survivable — the fear was far bigger than the thing itself, which surprises and relieves her.',
+          'Because the act she had been so afraid of turned out to be quick and survivable - the fear was far bigger than the thing itself, which surprises and relieves her.',
         notes:
           '1 mark for a clear inference about the fear being worse than the act / the relief of having done it.',
       },
@@ -487,7 +487,7 @@ export const PRACTICE_PAPER_4: PracticePaper = {
     ao: 'WAO1 + WAO2',
     marks: 30,
     context:
-      'The texts in Section A all explore the theme of courage — what fear does inside us, a call to be brave with our voices, and one person finding the courage to speak in a single ordinary moment.',
+      'The texts in Section A all explore the theme of courage - what fear does inside us, a call to be brave with our voices, and one person finding the courage to speak in a single ordinary moment.',
     task: 'Write a story in which a character has to find the courage to do something they are afraid of.',
     bullets: [
       'Write to entertain a reader of your own age.',

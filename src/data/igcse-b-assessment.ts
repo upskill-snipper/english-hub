@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CourseQuiz } from './courses';
+import type { CourseQuiz } from './courses'
 
 export const igcseLangBAssessment: CourseQuiz[] = [
   // ── Paper 1: Reading (4EB1/01) ──────────────────────────────────────────────
@@ -11,22 +11,22 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     options: [
       'They should spend equal time on both texts since each is worth 30 marks',
       'The literary text questions carry more marks, so more time on it is correct',
-      'They are spending too long overall — the paper is only 1 hour 30 minutes',
+      'They are spending too long overall - the paper is only 1 hour 30 minutes',
       'They should spend more time on the non-fiction text as retrieval questions are harder',
     ],
     correct: 1,
     explanation:
-      'In Paper 1, the literary text section carries more marks than the non-fiction section, so allocating more time to it is a reasonable strategy. The total exam time is 2 hours, so 120 minutes is available — the student is using all of it appropriately. The key principle is to match time allocation proportionally to the marks available for each section.',
+      'In Paper 1, the literary text section carries more marks than the non-fiction section, so allocating more time to it is a reasonable strategy. The total exam time is 2 hours, so 120 minutes is available - the student is using all of it appropriately. The key principle is to match time allocation proportionally to the marks available for each section.',
   },
   {
     id: 'igcse-b-final-q2',
     question:
-      'A Paper 1 question asks: "What do you learn about the narrator\'s childhood from lines 5–12?" Which assessment objective does this primarily target?',
+      'A Paper 1 question asks: "What do you learn about the narrator\'s childhood from lines 5-12?" Which assessment objective does this primarily target?',
     options: [
-      'AO2 — Analyse the effects of language and structure',
-      'AO4 — Evaluate texts critically with appropriate textual references',
-      'AO1 — Read and understand a variety of texts, selecting and interpreting information',
-      'AO3 — Compare writers\' ideas and perspectives',
+      'AO2 - Analyse the effects of language and structure',
+      'AO4 - Evaluate texts critically with appropriate textual references',
+      'AO1 - Read and understand a variety of texts, selecting and interpreting information',
+      "AO3 - Compare writers' ideas and perspectives",
     ],
     correct: 2,
     explanation:
@@ -44,7 +44,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Moving from retrieval to analysis requires exploring the connotations and effects of language choices rather than simply identifying what a word means on the surface. Explaining that "destroyed" implies total annihilation, permanence, and violence — and that this shapes the reader\'s emotional response — demonstrates genuine analytical skill. Simply labelling a device or adding more quotations without analysis would not constitute a meaningful improvement in quality.',
+      'Moving from retrieval to analysis requires exploring the connotations and effects of language choices rather than simply identifying what a word means on the surface. Explaining that "destroyed" implies total annihilation, permanence, and violence - and that this shapes the reader\'s emotional response - demonstrates genuine analytical skill. Simply labelling a device or adding more quotations without analysis would not constitute a meaningful improvement in quality.',
   },
   {
     id: 'igcse-b-final-q4',
@@ -72,7 +72,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'The phrase combines personification (silence cannot literally "scream" — it is given a human action) and oxymoron (silence and screaming are contradictory concepts placed together). This combination creates a powerful sense of oppressive emptiness. Recognising layered techniques in a single phrase is a higher-level analytical skill that examiners reward at the top mark bands.',
+      'The phrase combines personification (silence cannot literally "scream" - it is given a human action) and oxymoron (silence and screaming are contradictory concepts placed together). This combination creates a powerful sense of oppressive emptiness. Recognising layered techniques in a single phrase is a higher-level analytical skill that examiners reward at the top mark bands.',
   },
   {
     id: 'igcse-b-final-q6',
@@ -110,7 +110,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
       'Writing too much about one text and neglecting the other',
       'Using quotations that are too short',
       'Analysing language techniques instead of summarising key points',
-      'Both A and C — unbalanced coverage and drifting into analysis instead of synthesis',
+      'Both A and C - unbalanced coverage and drifting into analysis instead of synthesis',
     ],
     correct: 3,
     explanation:
@@ -136,7 +136,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
       'In evaluating a literary text, a student writes: "I think this is effective because it is interesting and makes me want to read on." Why would this earn limited marks?',
     options: [
       'Personal opinions are not allowed in evaluation questions',
-      'The response is vague and generic — it does not explain specifically what is effective or how the writer achieves the effect',
+      'The response is vague and generic - it does not explain specifically what is effective or how the writer achieves the effect',
       'The student has not used enough quotations from the text',
       'Evaluation questions require formal academic language, not first person',
     ],
@@ -149,10 +149,10 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     question:
       'A passage describes a storm using words like "hissing," "slashing," and "seething." What term best describes this pattern of sound, and what effect does it create?',
     options: [
-      'Onomatopoeia — the words imitate natural sounds to create realism',
-      'Sibilance — the repeated "s" and "sh" sounds create a hostile, threatening atmosphere',
-      'Alliteration — the repeated initial letters create a rhythmic, musical quality',
-      'Assonance — the repeated vowel sounds slow the pace of the passage',
+      'Onomatopoeia - the words imitate natural sounds to create realism',
+      'Sibilance - the repeated "s" and "sh" sounds create a hostile, threatening atmosphere',
+      'Alliteration - the repeated initial letters create a rhythmic, musical quality',
+      'Assonance - the repeated vowel sounds slow the pace of the passage',
     ],
     correct: 1,
     explanation:
@@ -164,13 +164,13 @@ export const igcseLangBAssessment: CourseQuiz[] = [
       'AO4 requires candidates to "evaluate texts critically and support this with appropriate textual references." Which response best demonstrates this skill?',
     options: [
       '"The writer uses a simile on line 7, which is effective."',
-      '"The writer\'s comparison of the city to a sleeping giant is striking because it transforms an urban landscape into something organic and potentially dangerous, suggesting the city could \'awaken\' at any moment."',
+      "\"The writer's comparison of the city to a sleeping giant is striking because it transforms an urban landscape into something organic and potentially dangerous, suggesting the city could 'awaken' at any moment.\"",
       '"I liked this text because it was well written and used lots of good vocabulary."',
       '"The text has five paragraphs, each beginning with a topic sentence."',
     ],
     correct: 1,
     explanation:
-      'Option B demonstrates critical evaluation by engaging with the specific implications of the writer\'s comparison, exploring what the metaphor suggests about the city, and considering its potential meanings. It goes beyond identification to interpretation and judgement. The other options either lack specificity (A and C) or describe structure without evaluating its effectiveness (D). AO4 demands that candidates offer a reasoned personal response grounded in textual evidence.',
+      "Option B demonstrates critical evaluation by engaging with the specific implications of the writer's comparison, exploring what the metaphor suggests about the city, and considering its potential meanings. It goes beyond identification to interpretation and judgement. The other options either lack specificity (A and C) or describe structure without evaluating its effectiveness (D). AO4 demands that candidates offer a reasoned personal response grounded in textual evidence.",
   },
 
   // ── Paper 2: Writing (4EB1/02) ──────────────────────────────────────────────
@@ -194,21 +194,21 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     question:
       'In a persuasive speech, a student writes: "We must act now. We must act decisively. We must act together." Which rhetorical device is being used, and why is it effective in a speech context?',
     options: [
-      'Tricolon with anaphora — the repetitive parallel structure builds momentum and is memorable when delivered aloud',
-      'Listing — it provides three separate arguments for the audience to consider',
-      'Hyperbole — it exaggerates the urgency of the situation for dramatic effect',
-      'Epistrophe — the repeated ending creates a rhythmic conclusion',
+      'Tricolon with anaphora - the repetitive parallel structure builds momentum and is memorable when delivered aloud',
+      'Listing - it provides three separate arguments for the audience to consider',
+      'Hyperbole - it exaggerates the urgency of the situation for dramatic effect',
+      'Epistrophe - the repeated ending creates a rhythmic conclusion',
     ],
     correct: 0,
     explanation:
-      'This combines tricolon (a group of three parallel clauses) with anaphora (repetition of "We must act" at the start of each clause). Together they create a rhythmic, escalating pattern that builds momentum and emotional force — particularly effective in spoken contexts where the audience experiences the cumulative impact aurally. Recognising how rhetorical devices interact with the spoken medium shows an understanding of audience awareness that examiners reward highly in transactional writing.',
+      'This combines tricolon (a group of three parallel clauses) with anaphora (repetition of "We must act" at the start of each clause). Together they create a rhythmic, escalating pattern that builds momentum and emotional force - particularly effective in spoken contexts where the audience experiences the cumulative impact aurally. Recognising how rhetorical devices interact with the spoken medium shows an understanding of audience awareness that examiners reward highly in transactional writing.',
   },
   {
     id: 'igcse-b-final-q15',
     question:
       'A candidate writes a newspaper article but formats it as a continuous essay with no subheadings, pull quotes, or short paragraphs. What mark-scheme impact does this have?',
     options: [
-      'None — format does not affect the mark in Paper 2',
+      'None - format does not affect the mark in Paper 2',
       'It only affects the SPaG marks, not the content marks',
       'It limits marks for purpose, audience, and form because the writing does not demonstrate awareness of the conventions of the genre',
       'It automatically fails the question regardless of content quality',
@@ -219,8 +219,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
   },
   {
     id: 'igcse-b-final-q16',
-    question:
-      'Which of the following is the best example of "ethos" in a persuasive argument?',
+    question: 'Which of the following is the best example of "ethos" in a persuasive argument?',
     options: [
       '"Statistics show that 78% of residents oppose the development."',
       '"As a parent of three children who use this park daily, I have seen first-hand the impact it has on our community."',
@@ -229,21 +228,21 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Ethos establishes the speaker\'s credibility and moral authority by drawing on personal experience or qualifications. Option B does this by positioning the speaker as a parent with direct, lived experience. Option A uses logos (statistical evidence), option C uses pathos (emotional appeal through hypothetical scenario), and option D uses emotive language. Understanding and deliberately deploying ethos, logos, and pathos allows candidates to construct sophisticated, multi-layered arguments.',
+      "Ethos establishes the speaker's credibility and moral authority by drawing on personal experience or qualifications. Option B does this by positioning the speaker as a parent with direct, lived experience. Option A uses logos (statistical evidence), option C uses pathos (emotional appeal through hypothetical scenario), and option D uses emotive language. Understanding and deliberately deploying ethos, logos, and pathos allows candidates to construct sophisticated, multi-layered arguments.",
   },
   {
     id: 'igcse-b-final-q17',
     question:
-      'In a descriptive writing task, a student writes: "The market was a symphony of colour — saffron yellows bleeding into crimson reds, while the cool blues of the pottery whispered against the warm terracotta." Which advanced technique is most prominent here?',
+      'In a descriptive writing task, a student writes: "The market was a symphony of colour - saffron yellows bleeding into crimson reds, while the cool blues of the pottery whispered against the warm terracotta." Which advanced technique is most prominent here?',
     options: [
-      'Pathetic fallacy — the weather reflects the mood',
-      'Synesthesia — sensory boundaries are crossed by describing colour in terms of sound and temperature',
-      'Extended simile — a detailed comparison using "like" or "as"',
-      'Foreshadowing — the colour imagery hints at future events',
+      'Pathetic fallacy - the weather reflects the mood',
+      'Synesthesia - sensory boundaries are crossed by describing colour in terms of sound and temperature',
+      'Extended simile - a detailed comparison using "like" or "as"',
+      'Foreshadowing - the colour imagery hints at future events',
     ],
     correct: 1,
     explanation:
-      'Synesthesia blends sensory experiences — here, colours "whisper" (sight described through sound) and are described as "cool" and "warm" (sight described through touch/temperature). This technique creates a rich, immersive sensory experience that elevates descriptive writing beyond simple visual cataloguing. Using synesthesia in creative writing demonstrates the kind of ambitious, crafted language use that distinguishes top-band responses.',
+      'Synesthesia blends sensory experiences - here, colours "whisper" (sight described through sound) and are described as "cool" and "warm" (sight described through touch/temperature). This technique creates a rich, immersive sensory experience that elevates descriptive writing beyond simple visual cataloguing. Using synesthesia in creative writing demonstrates the kind of ambitious, crafted language use that distinguishes top-band responses.',
   },
   {
     id: 'igcse-b-final-q18',
@@ -264,19 +263,18 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     question:
       'A student uses the following sentence in creative writing: "Walking through the forest, the trees seemed to close in around her." What grammatical issue does this contain?',
     options: [
-      'A comma splice — two independent clauses joined only by a comma',
-      'A dangling modifier — "walking through the forest" grammatically modifies "the trees" instead of "her"',
-      'A sentence fragment — it lacks a main verb',
-      'A tense inconsistency — "walking" and "seemed" are in different tenses',
+      'A comma splice - two independent clauses joined only by a comma',
+      'A dangling modifier - "walking through the forest" grammatically modifies "the trees" instead of "her"',
+      'A sentence fragment - it lacks a main verb',
+      'A tense inconsistency - "walking" and "seemed" are in different tenses',
     ],
     correct: 1,
     explanation:
-      'The participial phrase "Walking through the forest" should modify the subject of the main clause, but the subject is "the trees" — trees cannot walk through a forest. This is a dangling modifier. A corrected version would be: "Walking through the forest, she felt the trees close in around her." This type of error is common in creative writing under exam conditions and is penalised under SPaG accuracy, so candidates should proofread specifically for modifier placement.',
+      'The participial phrase "Walking through the forest" should modify the subject of the main clause, but the subject is "the trees" - trees cannot walk through a forest. This is a dangling modifier. A corrected version would be: "Walking through the forest, she felt the trees close in around her." This type of error is common in creative writing under exam conditions and is penalised under SPaG accuracy, so candidates should proofread specifically for modifier placement.',
   },
   {
     id: 'igcse-b-final-q20',
-    question:
-      'Which of the following correctly uses a semicolon?',
+    question: 'Which of the following correctly uses a semicolon?',
     options: [
       '"The rain fell heavily; and the streets were flooded within minutes."',
       '"She packed three items; a torch, a map, and a compass."',
@@ -292,8 +290,8 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     question:
       'In a narrative, a writer uses a series of short, fragmented sentences during an action scene, then shifts to long, complex sentences during a reflective passage. What structural effect does this variation achieve?',
     options: [
-      'It demonstrates the writer\'s range of vocabulary across different registers',
-      'It mirrors the pace of events — short sentences create urgency while longer sentences slow the pace for introspection',
+      "It demonstrates the writer's range of vocabulary across different registers",
+      'It mirrors the pace of events - short sentences create urgency while longer sentences slow the pace for introspection',
       'It is a grammatical inconsistency that should be corrected for coherence',
       'It creates ambiguity about whether the passage is fiction or non-fiction',
     ],
@@ -307,13 +305,13 @@ export const igcseLangBAssessment: CourseQuiz[] = [
       'A descriptive writing task asks you to describe a busy train station. Which approach to structure would be most effective?',
     options: [
       'A chronological account of a train journey from start to finish',
-      'A zooming technique — beginning with a wide panoramic view, then narrowing to focus on a single detail or individual',
+      'A zooming technique - beginning with a wide panoramic view, then narrowing to focus on a single detail or individual',
       'A list of everything visible in the station, organised alphabetically',
       'A formal argument about whether train stations should be modernised',
     ],
     correct: 1,
     explanation:
-      'The zooming technique provides a natural, cinematic structure for descriptive writing: a wide establishing shot gives the reader a sense of place before the focus narrows to reveal telling details — a cracked tile, a child\'s abandoned glove, the flicker of a departure board. This creates a sense of controlled craft and purposeful movement through the scene. Option A shifts to narrative (not description), option C lacks any structural logic, and option D changes the genre entirely.',
+      "The zooming technique provides a natural, cinematic structure for descriptive writing: a wide establishing shot gives the reader a sense of place before the focus narrows to reveal telling details - a cracked tile, a child's abandoned glove, the flicker of a departure board. This creates a sense of controlled craft and purposeful movement through the scene. Option A shifts to narrative (not description), option C lacks any structural logic, and option D changes the genre entirely.",
   },
   {
     id: 'igcse-b-final-q23',
@@ -327,7 +325,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'In creative writing, candidates must maintain a consistent narrative or descriptive voice. Using analytical terminology like "semantic field" or "establishes a gothic atmosphere" breaks the fourth wall — it reads like a literature essay, not a story or description. This is a surprisingly common error among well-prepared candidates who default to analytical mode. The same effect should be achieved by actually creating the dark atmosphere through word choice, not by naming the technique being used.',
+      'In creative writing, candidates must maintain a consistent narrative or descriptive voice. Using analytical terminology like "semantic field" or "establishes a gothic atmosphere" breaks the fourth wall - it reads like a literature essay, not a story or description. This is a surprisingly common error among well-prepared candidates who default to analytical mode. The same effect should be achieved by actually creating the dark atmosphere through word choice, not by naming the technique being used.',
   },
   {
     id: 'igcse-b-final-q24',
@@ -341,7 +339,7 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Embedded (parenthetical) clauses allow writers to layer additional information within a sentence, adding depth and complexity to prose. Here, "which had guided sailors for over a century" provides historical context that makes the lighthouse\'s darkening more poignant — all within a single, flowing sentence. This technique is a hallmark of mature writing and is specifically rewarded in the mark scheme for sentence variety and structural control.',
+      'Embedded (parenthetical) clauses allow writers to layer additional information within a sentence, adding depth and complexity to prose. Here, "which had guided sailors for over a century" provides historical context that makes the lighthouse\'s darkening more poignant - all within a single, flowing sentence. This technique is a hallmark of mature writing and is specifically rewarded in the mark scheme for sentence variety and structural control.',
   },
   {
     id: 'igcse-b-final-q25',
@@ -357,4 +355,4 @@ export const igcseLangBAssessment: CourseQuiz[] = [
     explanation:
       'A strong conclusion is disproportionately important because it is the last thing the examiner reads and creates a lasting impression. Even a brief conclusion that circles back to the main argument, echoes the opening, or ends with a powerful call to action can significantly improve the overall coherence and impact of the piece. Going back to rewrite earlier sections risks leaving the piece unfinished, which is more damaging than a slightly imperfect introduction. Time management and strategic prioritisation are essential exam skills.',
   },
-];
+]

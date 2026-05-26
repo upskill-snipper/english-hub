@@ -19,11 +19,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Narrative Writing — Cambridge IGCSE Composition',
+    title: 'Narrative Writing - Cambridge IGCSE Composition',
     description:
       'Cambridge IGCSE narrative writing techniques. Story structure, character, dialogue, tension and pacing, Grade 9 model stories and 30 practice prompts.',
   },
-  title: 'Narrative Writing — Cambridge IGCSE Composition',
+  title: 'Narrative Writing - Cambridge IGCSE Composition',
   description:
     'Cambridge IGCSE narrative writing techniques. Story structure, character, dialogue, tension and pacing, Grade 9 model stories and 30 practice prompts.',
   alternates: {
@@ -43,7 +43,7 @@ const sections = [
   {
     title: 'Character creation',
     description:
-      'The iceberg principle, show-don\u2019t-tell, quirks and contradictions — build a rounded character in two sentences.',
+      'The iceberg principle, show-don\u2019t-tell, quirks and contradictions - build a rounded character in two sentences.',
     href: '/igcse/cambridge/composition/narrative/character',
     icon: Users,
     level: 'Intermediate',
@@ -107,7 +107,7 @@ export default async function NarrativeHubPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Cambridge asks for a short story of{' '}
-            <strong className="text-foreground">350–450 words</strong>. That is a single scene, a
+            <strong className="text-foreground">350-450 words</strong>. That is a single scene, a
             single change, a single turn. The best stories cut the fat and let one small moment do
             all the work.
           </p>
@@ -165,7 +165,7 @@ export default async function NarrativeHubPage() {
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
           At 450 words, you cannot tell a life story. You can, however, tell a story about a single
           moment where something changes: a decision, a realisation, a loss, a meeting. The examiner
-          report uses the phrase <em>&ldquo;shapely and purposeful&rdquo;</em> — shapely means it
+          report uses the phrase <em>&ldquo;shapely and purposeful&rdquo;</em> - shapely means it
           has a beginning, middle and end; purposeful means the reader leaves knowing what has
           changed. Everything in the story should serve that one change.
         </p>

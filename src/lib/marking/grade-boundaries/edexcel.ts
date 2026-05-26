@@ -1,12 +1,12 @@
-// ─── Pearson Edexcel GCSE English — Grade Boundaries ─────────────────────────
-// Source: Pearson official "Grade Boundaries — Edexcel GCSE (9-1) — June 2024"
+// ─── Pearson Edexcel GCSE English - Grade Boundaries ─────────────────────────
+// Source: Pearson official "Grade Boundaries - Edexcel GCSE (9-1) - June 2024"
 // (subject-level raw boundaries), specifications 1EN0 (English Language) and
 // 1ET0 (English Literature). Maximum subject mark = 160.
 //
 // Transcribed from the official Pearson qualifications PDF (see sourceUrl).
 // English Language (1EN0) curve is exposed as the board default; the
 // Literature (1ET0) figures are recorded alongside for the human verifier.
-// Numbers are NOT yet human-verified — `verified` stays false until a person
+// Numbers are NOT yet human-verified - `verified` stays false until a person
 // checks them against the PDF and flips it (see ./types.ts header).
 //
 // Official June 2024 raw boundaries (max 160):
@@ -39,7 +39,7 @@ const EDEXCEL_1EN0_RAW: Record<NumericGrade, number | null> = {
 /**
  * Official Pearson June 2024 raw boundaries, English Literature 1ET0 (max 160).
  * Recorded for the human verifier; not wired into the single-table predictor
- * (English uses the 1EN0 curve as the board default — see file header).
+ * (English uses the 1EN0 curve as the board default - see file header).
  */
 export const EDEXCEL_1ET0_LITERATURE_RAW: Record<NumericGrade, number | null> = {
   '9': 133,

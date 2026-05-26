@@ -22,7 +22,7 @@ const PATTERN_BANK: PatternItem[] = [
   {
     options: ['recieve', 'receive', 'receeve', 'receve'],
     answerIndex: 1,
-    rule: "'i' before 'e' except after 'c' — so 'ceive', not 'cieve'.",
+    rule: "'i' before 'e' except after 'c' - so 'ceive', not 'cieve'.",
   },
   {
     options: ['beleive', 'beleeve', 'believe', 'bilieve'],
@@ -84,37 +84,37 @@ const PATTERN_BANK: PatternItem[] = [
   {
     options: ['runing', 'running', 'runnning', 'runeing'],
     answerIndex: 1,
-    rule: 'Short vowel + single final consonant: double it — run → running.',
+    rule: 'Short vowel + single final consonant: double it - run → running.',
   },
   {
     options: ['stoped', 'stopped', 'stoppd', 'stopeed'],
     answerIndex: 1,
-    rule: 'One syllable, one vowel, one consonant: double — stop → stopped.',
+    rule: 'One syllable, one vowel, one consonant: double - stop → stopped.',
   },
   {
     options: ['begining', 'beginning', 'beggining', 'beginnning'],
     answerIndex: 1,
-    rule: "Stress on last syllable: double the 'n' — begin → beginning.",
+    rule: "Stress on last syllable: double the 'n' - begin → beginning.",
   },
   {
     options: ['planed', 'plannned', 'planned', 'plaaned'],
     answerIndex: 2,
-    rule: 'Short vowel before single consonant: double — plan → planned.',
+    rule: 'Short vowel before single consonant: double - plan → planned.',
   },
   {
     options: ['swiming', 'swimming', 'swimeing', 'swimmming'],
     answerIndex: 1,
-    rule: "Short vowel + single 'm': double it — swim → swimming.",
+    rule: "Short vowel + single 'm': double it - swim → swimming.",
   },
   {
     options: ['prefered', 'preferred', 'preffered', 'prefferred'],
     answerIndex: 1,
-    rule: "Stress on final syllable: double the 'r' — prefer → preferred.",
+    rule: "Stress on final syllable: double the 'r' - prefer → preferred.",
   },
   {
     options: ['committed', 'comitted', 'commited', 'comited'],
     answerIndex: 0,
-    rule: "Stressed final syllable: double 't' (and keep both 'm's) — commit → committed.",
+    rule: "Stressed final syllable: double 't' (and keep both 'm's) - commit → committed.",
   },
   {
     options: ['controled', 'controlled', 'controled', 'controlld'],
@@ -176,12 +176,12 @@ const PATTERN_BANK: PatternItem[] = [
   {
     options: ['arguement', 'argument', 'arguemnt', 'argumant'],
     answerIndex: 1,
-    rule: "Exception: drop the 'e' — argue → argument.",
+    rule: "Exception: drop the 'e' - argue → argument.",
   },
   {
     options: ['truely', 'truly', 'trully', 'truley'],
     answerIndex: 1,
-    rule: "Exception: drop the 'e' — true → truly.",
+    rule: "Exception: drop the 'e' - true → truly.",
   },
 
   // ── Change 'y' to 'i' ────────────────────────────────────────────────────
@@ -312,12 +312,12 @@ const PATTERN_BANK: PatternItem[] = [
   {
     options: ['rooves', 'roofs', 'roofes', 'roovs'],
     answerIndex: 1,
-    rule: "Exception: 'roof' just adds 's' — roofs.",
+    rule: "Exception: 'roof' just adds 's' - roofs.",
   },
   {
     options: ['cheifs', 'chiefs', 'chieves', 'chiefes'],
     answerIndex: 1,
-    rule: "Exception: 'chief' just adds 's' — chiefs.",
+    rule: "Exception: 'chief' just adds 's' - chiefs.",
   },
 
   // ── UK spelling distinctions ─────────────────────────────────────────────
@@ -530,11 +530,11 @@ export default function SpellingPatternsPage() {
                   >
                     {selected === current.answerIndex ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on — great pattern spotting!
+                        <CheckCircle className="size-4" /> Spot on - great pattern spotting!
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite — the correct spelling is{' '}
+                        <XCircle className="size-4" /> Not quite - the correct spelling is{' '}
                         <span className="font-bold">{current.options[current.answerIndex]}</span>
                       </>
                     )}

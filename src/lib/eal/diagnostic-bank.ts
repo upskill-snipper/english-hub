@@ -7,7 +7,7 @@
 // (src/lib/eal/cefr.ts) uses both for placement and routing.
 //
 // Answer options for grammatical-form questions are intentionally
-// English-only (loc() falls back to EN) — you don't translate the
+// English-only (loc() falls back to EN) - you don't translate the
 // answer token. Question, prompt and explanation are fully bilingual
 // (Khaleeji AR), matching the rest of the EAL curriculum.
 //
@@ -29,8 +29,8 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
     options: [{ en: 'a' }, { en: 'an' }, { en: 'the' }, { en: '(no word)' }],
     correctIndex: 1,
     explanation: {
-      en: '"Honest" starts with a silent H — the first sound is a vowel /ɒ/, so we use "an".',
-      ar: 'كلمة "honest" تبدأ بحرف H صامت — أول صوت متحرّك، فنستخدم "an".',
+      en: '"Honest" starts with a silent H - the first sound is a vowel /ɒ/, so we use "an".',
+      ar: 'كلمة "honest" تبدأ بحرف H صامت - أول صوت متحرّك، فنستخدم "an".',
     },
   },
   {
@@ -92,7 +92,7 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
     ],
     correctIndex: 0,
     explanation: {
-      en: 'English is Subject–Verb–Object: "I (S) drink (V) coffee (O)", with the time phrase at the end.',
+      en: 'English is Subject-Verb-Object: "I (S) drink (V) coffee (O)", with the time phrase at the end.',
       ar: 'الإنجليزي ترتيبه فاعل-فعل-مفعول: "I drink coffee"، وعبارة الزمن في الآخر.',
     },
   },
@@ -118,8 +118,8 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
       ar: 'أي كلمة تبدأ بصوت /p/ (مو /b/)؟',
     },
     prompt: {
-      en: 'P vs B is not contrastive in Arabic — listen carefully.',
-      ar: 'صوت P و B ما يتفرّقون في العربي — انتبه.',
+      en: 'P vs B is not contrastive in Arabic - listen carefully.',
+      ar: 'صوت P و B ما يتفرّقون في العربي - انتبه.',
     },
     options: [{ en: 'park' }, { en: 'bark' }, { en: 'bin' }, { en: 'boat' }],
     correctIndex: 0,
@@ -142,8 +142,8 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
     ],
     correctIndex: 1,
     explanation: {
-      en: 'Arabic uses "have" for age (عندي ١٥ سنة) — English uses "be": "I am 15 years old".',
-      ar: 'العربي يقول "عندي ١٥ سنة" بفعل الملكية — الإنجليزي يستخدم "be": "I am 15 years old".',
+      en: 'Arabic uses "have" for age (عندي ١٥ سنة) - English uses "be": "I am 15 years old".',
+      ar: 'العربي يقول "عندي ١٥ سنة" بفعل الملكية - الإنجليزي يستخدم "be": "I am 15 years old".',
     },
   },
 
@@ -264,7 +264,7 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
     ],
     correctIndex: 1,
     explanation: {
-      en: '"Discuss" is transitive — no preposition: "discuss the topic" (not "discuss about").',
+      en: '"Discuss" is transitive - no preposition: "discuss the topic" (not "discuss about").',
       ar: '"Discuss" فعل متعدٍّ بدون حرف جر: "discuss the topic" (مو "discuss about").',
     },
   },
@@ -422,7 +422,7 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
     options: [{ en: 'he was' }, { en: 'was he' }, { en: 'he is' }, { en: 'is he' }],
     correctIndex: 1,
     explanation: {
-      en: 'A negative adverbial at the front ("Not only") triggers subject–auxiliary inversion: "was he".',
+      en: 'A negative adverbial at the front ("Not only") triggers subject-auxiliary inversion: "was he".',
       ar: 'الظرف المنفي في البداية ("Not only") يقلب الفاعل والمساعد: "was he".',
     },
   },
@@ -536,8 +536,8 @@ export const DIAGNOSTIC_BANK: DiagnosticQuestion[] = [
     ],
     correctIndex: 0,
     explanation: {
-      en: 'The fixed phrase is "on the contrary" — a common L1 transfer error is "in the contrary".',
-      ar: 'العبارة الثابتة "on the contrary" — وخطأ النقل الشائع هو "in the contrary".',
+      en: 'The fixed phrase is "on the contrary" - a common L1 transfer error is "in the contrary".',
+      ar: 'العبارة الثابتة "on the contrary" - وخطأ النقل الشائع هو "in the contrary".',
     },
   },
 ]
@@ -547,7 +547,7 @@ export function getDiagnosticQuestions(): DiagnosticQuestion[] {
   return DIAGNOSTIC_BANK
 }
 
-/** Questions for a single CEFR band — powers the per-level mock practice. */
+/** Questions for a single CEFR band - powers the per-level mock practice. */
 export function getQuestionsForLevel(level: DiagnosticQuestion['level']): DiagnosticQuestion[] {
   return DIAGNOSTIC_BANK.filter((q) => q.level === level)
 }

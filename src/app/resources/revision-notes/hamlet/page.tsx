@@ -349,31 +349,31 @@ export default function HamletPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Hamlet"
-                description="Prince of Denmark, university student at Wittenberg, and the play's central consciousness. Hamlet is intellectually brilliant, witty, sceptical, and deeply melancholic. His tragedy is not that he is incapable of action — he kills Polonius, dispatches Rosencrantz and Guildenstern, and finally Claudius — but that his philosophical and moral scrupulousness make every action feel insufficient. He oscillates between resolve and self-reproach across seven soliloquies, the most introspective protagonist in Shakespeare. Critics from Coleridge onwards have read him as a thinker paralysed by thought, while Bradley argued his delay stems from melancholy rather than intellect. By Act 5 he has reached a kind of stoic resignation: 'the readiness is all.'"
+                description="Prince of Denmark, university student at Wittenberg, and the play's central consciousness. Hamlet is intellectually brilliant, witty, sceptical, and deeply melancholic. His tragedy is not that he is incapable of action - he kills Polonius, dispatches Rosencrantz and Guildenstern, and finally Claudius - but that his philosophical and moral scrupulousness make every action feel insufficient. He oscillates between resolve and self-reproach across seven soliloquies, the most introspective protagonist in Shakespeare. Critics from Coleridge onwards have read him as a thinker paralysed by thought, while Bradley argued his delay stems from melancholy rather than intellect. By Act 5 he has reached a kind of stoic resignation: 'the readiness is all.'"
               />
               <CharacterCard
                 name="Claudius"
-                description="The play's antagonist: brother of the dead king, husband to Gertrude, usurper of the throne. Crucially, Claudius is not a stage villain but a competent ruler — eloquent, politically shrewd, capable of genuine remorse. His prayer scene ('O, my offence is rank') reveals self-awareness: he knows he cannot be forgiven while still possessing the queen and crown. He embodies Machiavellian statecraft against Hamlet's principled idealism. His use of Polonius, Ophelia, Rosencrantz and Guildenstern, and Laertes as instruments shows how political power corrupts every relationship it touches."
+                description="The play's antagonist: brother of the dead king, husband to Gertrude, usurper of the throne. Crucially, Claudius is not a stage villain but a competent ruler - eloquent, politically shrewd, capable of genuine remorse. His prayer scene ('O, my offence is rank') reveals self-awareness: he knows he cannot be forgiven while still possessing the queen and crown. He embodies Machiavellian statecraft against Hamlet's principled idealism. His use of Polonius, Ophelia, Rosencrantz and Guildenstern, and Laertes as instruments shows how political power corrupts every relationship it touches."
               />
               <CharacterCard
                 name="Gertrude"
-                description="Queen of Denmark, mother to Hamlet, and arguably the play's most ambiguous figure. Shakespeare leaves crucial questions open: did she know of the murder? Did she love Old Hamlet? Did she love Claudius? Her language is consistently brief and conventional, contrasting with Hamlet's torrents. The closet scene transforms her — Hamlet's accusations break through her composure, and she promises silence. Her death — drinking the poisoned cup, ignoring Claudius's order ('Gertrude, do not drink') — can be read as accident or as a final act of maternal sacrifice. Feminist criticism has rescued her from older readings that simply branded her weak."
+                description="Queen of Denmark, mother to Hamlet, and arguably the play's most ambiguous figure. Shakespeare leaves crucial questions open: did she know of the murder? Did she love Old Hamlet? Did she love Claudius? Her language is consistently brief and conventional, contrasting with Hamlet's torrents. The closet scene transforms her - Hamlet's accusations break through her composure, and she promises silence. Her death - drinking the poisoned cup, ignoring Claudius's order ('Gertrude, do not drink') - can be read as accident or as a final act of maternal sacrifice. Feminist criticism has rescued her from older readings that simply branded her weak."
               />
               <CharacterCard
                 name="Ophelia"
-                description="Polonius's daughter, Laertes's sister, and Hamlet's beloved. Ophelia is positioned at the intersection of every patriarchal authority in the play: her father uses her, her brother lectures her, her lover rejects her, and her king watches her. She has no soliloquies; she speaks largely in obedience or in the broken songs of madness. Her descent — caused by losing both Hamlet and her father — is arguably the play's bleakest tragedy because it is so passive. Her drowning, narrated rather than shown, becomes one of the most painted scenes in English literature. She represents the cost of female silence in a court of men."
+                description="Polonius's daughter, Laertes's sister, and Hamlet's beloved. Ophelia is positioned at the intersection of every patriarchal authority in the play: her father uses her, her brother lectures her, her lover rejects her, and her king watches her. She has no soliloquies; she speaks largely in obedience or in the broken songs of madness. Her descent - caused by losing both Hamlet and her father - is arguably the play's bleakest tragedy because it is so passive. Her drowning, narrated rather than shown, becomes one of the most painted scenes in English literature. She represents the cost of female silence in a court of men."
               />
               <CharacterCard
                 name="Polonius"
-                description="Lord Chamberlain to Claudius, father to Laertes and Ophelia. Polonius is verbose, sententious ('Brevity is the soul of wit' — said at length), and convinced of his own cunning. He treats his children as instruments and is the play's chief practitioner of surveillance: spying on Laertes through Reynaldo, on Hamlet through Ophelia, on Hamlet through the arras. His death — stabbed behind a curtain — is grimly fitting: he dies eavesdropping. Hamlet's flippant treatment of his corpse ('I'll lug the guts into the neighbour room') reveals an unpleasant streak in the prince and triggers Laertes's revenge plot."
+                description="Lord Chamberlain to Claudius, father to Laertes and Ophelia. Polonius is verbose, sententious ('Brevity is the soul of wit' - said at length), and convinced of his own cunning. He treats his children as instruments and is the play's chief practitioner of surveillance: spying on Laertes through Reynaldo, on Hamlet through Ophelia, on Hamlet through the arras. His death - stabbed behind a curtain - is grimly fitting: he dies eavesdropping. Hamlet's flippant treatment of his corpse ('I'll lug the guts into the neighbour room') reveals an unpleasant streak in the prince and triggers Laertes's revenge plot."
               />
               <CharacterCard
                 name="Laertes"
-                description="Polonius's son, Ophelia's brother. Laertes is Hamlet's most direct foil: when his father is killed, he returns from France within an act, raises a popular rebellion, and demands instant vengeance. His unhesitating, conventional honour-revenge response throws Hamlet's deliberation into sharp relief. Yet Laertes is easily manipulated by Claudius and agrees to use a poisoned, unbated blade — staining honourable revenge with treachery. His dying confession ('the king, the king's to blame') and forgiveness of Hamlet provide a small moral recovery."
+                description="Polonius's son, Ophelia's brother. Laertes is Hamlet's most direct foil: when his father is killed, he returns from France within an act, raises a popular rebellion, and demands instant vengeance. His unhesitating, conventional honour-revenge response throws Hamlet's deliberation into sharp relief. Yet Laertes is easily manipulated by Claudius and agrees to use a poisoned, unbated blade - staining honourable revenge with treachery. His dying confession ('the king, the king's to blame') and forgiveness of Hamlet provide a small moral recovery."
               />
               <CharacterCard
                 name="Horatio"
-                description="Hamlet's loyal friend from Wittenberg and the play's moral touchstone. Horatio is rational, sceptical (initially of the Ghost), Stoical, and discreet — Hamlet praises him as 'a man / That is not passion's slave.' He is the only major character to survive, and Hamlet's dying request that he 'tell my story' makes Horatio the play's authorised narrator. Structurally he serves as audience surrogate: questions he asks Hamlet allow exposition without artificiality."
+                description="Hamlet's loyal friend from Wittenberg and the play's moral touchstone. Horatio is rational, sceptical (initially of the Ghost), Stoical, and discreet - Hamlet praises him as 'a man / That is not passion's slave.' He is the only major character to survive, and Hamlet's dying request that he 'tell my story' makes Horatio the play's authorised narrator. Structurally he serves as audience surrogate: questions he asks Hamlet allow exposition without artificiality."
               />
               <CharacterCard
                 name="The Ghost"
@@ -381,11 +381,11 @@ export default function HamletPage() {
               />
               <CharacterCard
                 name="Fortinbras"
-                description="Prince of Norway, son of the king Old Hamlet defeated in single combat. Fortinbras shadows the play offstage for most of its length, then arrives at the close to inherit Denmark. He is Hamlet's political foil: a man of decisive martial action who fights for 'an eggshell' to gain honour. Shakespeare uses him to ask whether decisive action is in fact wiser than reflection — the answer is left deliberately uncertain. His final entry restores political order while underlining the human cost of the tragedy."
+                description="Prince of Norway, son of the king Old Hamlet defeated in single combat. Fortinbras shadows the play offstage for most of its length, then arrives at the close to inherit Denmark. He is Hamlet's political foil: a man of decisive martial action who fights for 'an eggshell' to gain honour. Shakespeare uses him to ask whether decisive action is in fact wiser than reflection - the answer is left deliberately uncertain. His final entry restores political order while underlining the human cost of the tragedy."
               />
               <CharacterCard
                 name="Rosencrantz and Guildenstern"
-                description="Hamlet's old schoolfellows, recruited by Claudius to spy on him. They function almost as a single unit — interchangeable, hollow, conventionally polite. Hamlet sees through them quickly ('You would play upon me') and ultimately rewrites the execution letter so that they, not he, are killed in England. Their offstage deaths are reported with chilling brevity: Hamlet has 'no shriving time allowed' for them. They embody the courtier class who survive by serving power without examining it — and pay the price."
+                description="Hamlet's old schoolfellows, recruited by Claudius to spy on him. They function almost as a single unit - interchangeable, hollow, conventionally polite. Hamlet sees through them quickly ('You would play upon me') and ultimately rewrites the execution letter so that they, not he, are killed in England. Their offstage deaths are reported with chilling brevity: Hamlet has 'no shriving time allowed' for them. They embody the courtier class who survive by serving power without examining it - and pay the price."
               />
             </div>
           </Section>
@@ -397,11 +397,11 @@ export default function HamletPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Revenge"
-                description="Hamlet is the most famous of the Elizabethan revenge tragedies, but Shakespeare interrogates rather than indulges the genre. The play stages three sons avenging fathers — Hamlet for Old Hamlet, Laertes for Polonius, Fortinbras for his father — and contrasts their methods. Hamlet hesitates because he wants his revenge to be morally and theologically right; Laertes vows to 'cut his throat i' the church'; Fortinbras turns vengeance into politics. Shakespeare exposes the ethical incoherence of revenge: the Ghost, supposedly in Purgatory, demands an act that Christianity forbids; the avenger himself becomes a murderer. By Act 5 Hamlet acts only when reactively trapped, suggesting that 'pure' revenge may be impossible."
+                description="Hamlet is the most famous of the Elizabethan revenge tragedies, but Shakespeare interrogates rather than indulges the genre. The play stages three sons avenging fathers - Hamlet for Old Hamlet, Laertes for Polonius, Fortinbras for his father - and contrasts their methods. Hamlet hesitates because he wants his revenge to be morally and theologically right; Laertes vows to 'cut his throat i' the church'; Fortinbras turns vengeance into politics. Shakespeare exposes the ethical incoherence of revenge: the Ghost, supposedly in Purgatory, demands an act that Christianity forbids; the avenger himself becomes a murderer. By Act 5 Hamlet acts only when reactively trapped, suggesting that 'pure' revenge may be impossible."
               />
               <ThemeCard
                 title="Madness and Sanity"
-                description="The play sustains a sustained ambiguity about what is real madness and what is performance. Hamlet warns his friends he will 'put an antic disposition on' — explicitly feigned. Yet his erratic behaviour with Ophelia, his rage in the closet, his frantic disposal of Polonius's body all blur the line. Ophelia's madness, by contrast, is unambiguous and devastating — caused by grief and patriarchal pressure. Shakespeare uses madness to expose truth: Ophelia's mad songs hint at sexual exploitation, while Hamlet's 'antic' jests cut closer to political reality than sane courtiers can. Madness is partly a strategy in a court that cannot tolerate honest speech."
+                description="The play sustains a sustained ambiguity about what is real madness and what is performance. Hamlet warns his friends he will 'put an antic disposition on' - explicitly feigned. Yet his erratic behaviour with Ophelia, his rage in the closet, his frantic disposal of Polonius's body all blur the line. Ophelia's madness, by contrast, is unambiguous and devastating - caused by grief and patriarchal pressure. Shakespeare uses madness to expose truth: Ophelia's mad songs hint at sexual exploitation, while Hamlet's 'antic' jests cut closer to political reality than sane courtiers can. Madness is partly a strategy in a court that cannot tolerate honest speech."
               />
               <ThemeCard
                 title="Death and Mortality"
@@ -409,11 +409,11 @@ export default function HamletPage() {
               />
               <ThemeCard
                 title="Corruption and Decay"
-                description="Marcellus's line — 'Something is rotten in the state of Denmark' — sets the play's controlling metaphor. Imagery of disease, ulcers, weeds, foul smells, and unweeded gardens runs throughout, suggesting a body politic poisoned at the head. Hamlet's 'unweeded garden / That grows to seed; things rank and gross in nature' makes corruption literal vegetation. Claudius's literal poisoning of Old Hamlet is the original sin from which the rest follows. The decay is not just political but metaphysical — a fall from a heroic, ordered past into a present of duplicity. The piled bodies of Act 5 are the final purging of the diseased body politic."
+                description="Marcellus's line - 'Something is rotten in the state of Denmark' - sets the play's controlling metaphor. Imagery of disease, ulcers, weeds, foul smells, and unweeded gardens runs throughout, suggesting a body politic poisoned at the head. Hamlet's 'unweeded garden / That grows to seed; things rank and gross in nature' makes corruption literal vegetation. Claudius's literal poisoning of Old Hamlet is the original sin from which the rest follows. The decay is not just political but metaphysical - a fall from a heroic, ordered past into a present of duplicity. The piled bodies of Act 5 are the final purging of the diseased body politic."
               />
               <ThemeCard
                 title="Appearance vs Reality"
-                description="The play distrusts surfaces. Claudius is a smooth king above and a murderer beneath; Polonius offers wisdom and practises espionage; Rosencrantz and Guildenstern come as friends and arrive as spies. Hamlet rejects 'seems' in his first scene with Gertrude — 'I know not seems' — and the verb haunts the play. The Mousetrap turns this concern into method: a stage performance proves real guilt. Even the Ghost may not be what he seems. Shakespeare asks how, in a court of perfect actors, anyone can know what is true — and answers, painfully, that only by performing your own version back at them."
+                description="The play distrusts surfaces. Claudius is a smooth king above and a murderer beneath; Polonius offers wisdom and practises espionage; Rosencrantz and Guildenstern come as friends and arrive as spies. Hamlet rejects 'seems' in his first scene with Gertrude - 'I know not seems' - and the verb haunts the play. The Mousetrap turns this concern into method: a stage performance proves real guilt. Even the Ghost may not be what he seems. Shakespeare asks how, in a court of perfect actors, anyone can know what is true - and answers, painfully, that only by performing your own version back at them."
               />
               <ThemeCard
                 title="Action vs Inaction"
@@ -514,12 +514,12 @@ export default function HamletPage() {
               <QuoteCard
                 quote="Something is rotten in the state of Denmark."
                 speaker="Marcellus, Act 1 Scene 4"
-                analysis="The play's controlling metaphor. Disease imagery establishes that the corruption is not just Claudius the man but the political body itself. 'Rotten' suggests the rot has set in beneath the surface and will spread. That Marcellus — a minor guard — voices it shows the disorder is felt even at the periphery of court."
+                analysis="The play's controlling metaphor. Disease imagery establishes that the corruption is not just Claudius the man but the political body itself. 'Rotten' suggests the rot has set in beneath the surface and will spread. That Marcellus - a minor guard - voices it shows the disorder is felt even at the periphery of court."
               />
               <QuoteCard
                 quote="Frailty, thy name is woman!"
                 speaker="Hamlet, Act 1 Scene 2"
-                analysis="From the first soliloquy. The personification ('thy name') universalises Hamlet's disgust at Gertrude's hasty remarriage into a misogynistic generalisation. The line reveals Hamlet's collapse from grief over his father into resentment of his mother — the first sign that his interiority is bound up with sexual revulsion at maternal sexuality. Feminist critics read it as Hamlet's psychological wound, not Shakespeare's verdict."
+                analysis="From the first soliloquy. The personification ('thy name') universalises Hamlet's disgust at Gertrude's hasty remarriage into a misogynistic generalisation. The line reveals Hamlet's collapse from grief over his father into resentment of his mother - the first sign that his interiority is bound up with sexual revulsion at maternal sexuality. Feminist critics read it as Hamlet's psychological wound, not Shakespeare's verdict."
               />
               <QuoteCard
                 quote="O, that this too too solid flesh would melt, / Thaw, and resolve itself into a dew!"
@@ -529,27 +529,27 @@ export default function HamletPage() {
               <QuoteCard
                 quote="The time is out of joint. O cursed spite, / That ever I was born to set it right!"
                 speaker="Hamlet, Act 1 Scene 5"
-                analysis="The closing couplet of Act 1. 'Out of joint' is a body-politic metaphor: Denmark is a dislocated limb. Hamlet feels reluctantly burdened — 'cursed spite' suggests fate, not vocation. The rhyming couplet gives a sense of grim acceptance, but the burden is the play's central problem: the violence required to 'set it right' is itself unjust."
+                analysis="The closing couplet of Act 1. 'Out of joint' is a body-politic metaphor: Denmark is a dislocated limb. Hamlet feels reluctantly burdened - 'cursed spite' suggests fate, not vocation. The rhyming couplet gives a sense of grim acceptance, but the burden is the play's central problem: the violence required to 'set it right' is itself unjust."
               />
               <QuoteCard
                 quote="Though this be madness, yet there is method in't."
                 speaker="Polonius, Act 2 Scene 2"
-                analysis="Polonius's famously self-undermining line: he detects Hamlet's coherence inside the chaos but cannot grasp its target — himself. The aphorism captures the play's central question about Hamlet's madness: feigned, real, or both? The dramatic irony is that the 'method' Polonius suspects will eventually kill him."
+                analysis="Polonius's famously self-undermining line: he detects Hamlet's coherence inside the chaos but cannot grasp its target - himself. The aphorism captures the play's central question about Hamlet's madness: feigned, real, or both? The dramatic irony is that the 'method' Polonius suspects will eventually kill him."
               />
               <QuoteCard
                 quote="What a piece of work is a man! How noble in reason, how infinite in faculty! ... And yet, to me, what is this quintessence of dust?"
                 speaker="Hamlet, Act 2 Scene 2"
-                analysis="A textbook humanist celebration of human dignity that collapses, mid-speech, into nihilism. The cadence rises with classical confidence and then crashes on 'quintessence of dust' — an alchemical term collapsed back into mere matter. The speech encapsulates Renaissance humanism in crisis: Hamlet knows what humanity is supposed to be, and cannot feel it."
+                analysis="A textbook humanist celebration of human dignity that collapses, mid-speech, into nihilism. The cadence rises with classical confidence and then crashes on 'quintessence of dust' - an alchemical term collapsed back into mere matter. The speech encapsulates Renaissance humanism in crisis: Hamlet knows what humanity is supposed to be, and cannot feel it."
               />
               <QuoteCard
                 quote="The play's the thing / Wherein I'll catch the conscience of the king."
                 speaker="Hamlet, Act 2 Scene 2"
-                analysis="The closing couplet of the 'rogue and peasant slave' soliloquy. Hamlet decides to use theatre as forensic instrument. Note the legal vocabulary ('catch the conscience') — Hamlet wants empirical proof before he acts, not just a ghost's word. The line is also Shakespeare's metatheatrical wink: the play onstage will diagnose the play we are watching."
+                analysis="The closing couplet of the 'rogue and peasant slave' soliloquy. Hamlet decides to use theatre as forensic instrument. Note the legal vocabulary ('catch the conscience') - Hamlet wants empirical proof before he acts, not just a ghost's word. The line is also Shakespeare's metatheatrical wink: the play onstage will diagnose the play we are watching."
               />
               <QuoteCard
                 quote="To be, or not to be, that is the question."
                 speaker="Hamlet, Act 3 Scene 1"
-                analysis="The most famous line in English drama. The infinitive 'to be' is deliberately abstract — is it about suicide, or action, or existence itself? The soliloquy weighs ending suffering ('a sea of troubles') against fear of 'something after death.' The answer is unresolved: thought itself ('conscience does make cowards of us all') paralyses choice. The speech is the central case for and against Hamlet's delay."
+                analysis="The most famous line in English drama. The infinitive 'to be' is deliberately abstract - is it about suicide, or action, or existence itself? The soliloquy weighs ending suffering ('a sea of troubles') against fear of 'something after death.' The answer is unresolved: thought itself ('conscience does make cowards of us all') paralyses choice. The speech is the central case for and against Hamlet's delay."
               />
               <QuoteCard
                 quote="Get thee to a nunnery."
@@ -559,47 +559,47 @@ export default function HamletPage() {
               <QuoteCard
                 quote="The lady doth protest too much, methinks."
                 speaker="Gertrude, Act 3 Scene 2"
-                analysis="Gertrude watches the Player Queen vow eternal devotion in the Mousetrap and judges the protests excessive. Dramatic irony: Gertrude herself remarried within a month. 'Protest' means 'declare', not 'object' — modern misuse has reversed it. Shakespeare uses Gertrude's critical eye to make her, briefly, seem self-aware: she sees performance even when she cannot see her own."
+                analysis="Gertrude watches the Player Queen vow eternal devotion in the Mousetrap and judges the protests excessive. Dramatic irony: Gertrude herself remarried within a month. 'Protest' means 'declare', not 'object' - modern misuse has reversed it. Shakespeare uses Gertrude's critical eye to make her, briefly, seem self-aware: she sees performance even when she cannot see her own."
               />
               <QuoteCard
                 quote="Now might I do it pat, now he is praying; / And now I'll do't. And so he goes to heaven."
                 speaker="Hamlet, Act 3 Scene 3"
-                analysis="The prayer scene. Hamlet refuses to kill Claudius mid-prayer because a soul caught in the act of penitence might be saved — and Hamlet's father, killed without confession, is in Purgatory. The reasoning is theologically serious: Hamlet wants damnation, not just death. Critics divide on whether this is conscience or rationalised cowardice. Note the cold arithmetic — 'hire and salary, not revenge' — at odds with Hamlet's earlier passion."
+                analysis="The prayer scene. Hamlet refuses to kill Claudius mid-prayer because a soul caught in the act of penitence might be saved - and Hamlet's father, killed without confession, is in Purgatory. The reasoning is theologically serious: Hamlet wants damnation, not just death. Critics divide on whether this is conscience or rationalised cowardice. Note the cold arithmetic - 'hire and salary, not revenge' - at odds with Hamlet's earlier passion."
               />
               <QuoteCard
                 quote="A little more than kin, and less than kind."
                 speaker="Hamlet, Act 1 Scene 2"
-                analysis="Hamlet's first line in the play, an aside about Claudius. The pun on 'kin' (relative) and 'kind' (natural / affectionate) compresses his disgust: Claudius is now twice his relative — uncle and stepfather — but unnatural in being both. The wordplay establishes Hamlet's defining mode: subversive wit beneath formal courtesy."
+                analysis="Hamlet's first line in the play, an aside about Claudius. The pun on 'kin' (relative) and 'kind' (natural / affectionate) compresses his disgust: Claudius is now twice his relative - uncle and stepfather - but unnatural in being both. The wordplay establishes Hamlet's defining mode: subversive wit beneath formal courtesy."
               />
               <QuoteCard
                 quote="I must be cruel only to be kind."
                 speaker="Hamlet, Act 3 Scene 4"
-                analysis="The closet scene. Hamlet justifies his violent confrontation with Gertrude — and the corpse of Polonius next door — as moral surgery. Now a proverbial phrase, but in context it is disturbing: the speaker has just killed an old man and is verbally savaging his mother. The line shows how Hamlet's moral self-image diverges from what he is actually doing."
+                analysis="The closet scene. Hamlet justifies his violent confrontation with Gertrude - and the corpse of Polonius next door - as moral surgery. Now a proverbial phrase, but in context it is disturbing: the speaker has just killed an old man and is verbally savaging his mother. The line shows how Hamlet's moral self-image diverges from what he is actually doing."
               />
               <QuoteCard
                 quote="How all occasions do inform against me, / And spur my dull revenge!"
                 speaker="Hamlet, Act 4 Scene 4"
-                analysis="The final soliloquy, prompted by seeing Fortinbras march to fight for 'an eggshell.' 'Occasions inform against me' is courtroom imagery — every event is a witness to his inaction. 'Dull' suggests blunted, unsharpened. The speech ends with the resolve 'O, from this time forth, / My thoughts be bloody, or be nothing worth' — yet Hamlet is being shipped off to England as he speaks, and will not act decisively until Act 5."
+                analysis="The final soliloquy, prompted by seeing Fortinbras march to fight for 'an eggshell.' 'Occasions inform against me' is courtroom imagery - every event is a witness to his inaction. 'Dull' suggests blunted, unsharpened. The speech ends with the resolve 'O, from this time forth, / My thoughts be bloody, or be nothing worth' - yet Hamlet is being shipped off to England as he speaks, and will not act decisively until Act 5."
               />
               <QuoteCard
                 quote="There's rosemary, that's for remembrance ... and there is pansies, that's for thoughts."
                 speaker="Ophelia, Act 4 Scene 5"
-                analysis="Ophelia distributes flowers in her madness. Each flower carries Renaissance symbolism (rosemary = remembrance, pansies = thoughts, rue = repentance, daisies = false love), turning the scene into a coded indictment of the court she addresses. The mad scene gives Ophelia, at last, a kind of speech she was denied while sane — fragmented but morally piercing."
+                analysis="Ophelia distributes flowers in her madness. Each flower carries Renaissance symbolism (rosemary = remembrance, pansies = thoughts, rue = repentance, daisies = false love), turning the scene into a coded indictment of the court she addresses. The mad scene gives Ophelia, at last, a kind of speech she was denied while sane - fragmented but morally piercing."
               />
               <QuoteCard
                 quote="Alas, poor Yorick! I knew him, Horatio."
                 speaker="Hamlet, Act 5 Scene 1"
-                analysis="The graveyard scene's emblematic image. Yorick was the court jester of Hamlet's childhood; his skull literalises memento mori — a reminder that all flesh, however lively, ends as bone. The line moves Hamlet from horror to a calm meditation on death's universality: 'Alexander died, Alexander was buried, Alexander returneth into dust.' The skull also visually echoes the play's revenge plot: a death that demands remembrance."
+                analysis="The graveyard scene's emblematic image. Yorick was the court jester of Hamlet's childhood; his skull literalises memento mori - a reminder that all flesh, however lively, ends as bone. The line moves Hamlet from horror to a calm meditation on death's universality: 'Alexander died, Alexander was buried, Alexander returneth into dust.' The skull also visually echoes the play's revenge plot: a death that demands remembrance."
               />
               <QuoteCard
                 quote="There's a special providence in the fall of a sparrow ... the readiness is all."
                 speaker="Hamlet, Act 5 Scene 2"
-                analysis="Hamlet's calmest theological statement, alluding to Matthew 10:29 — God's providence extends even to a sparrow. 'The readiness is all' replaces Hamlet's earlier obsessive deliberation with stoic acceptance. He no longer needs to control timing; he is willing to die. This shift is the play's spiritual climax — Hamlet gives up the project of being his own moral engineer."
+                analysis="Hamlet's calmest theological statement, alluding to Matthew 10:29 - God's providence extends even to a sparrow. 'The readiness is all' replaces Hamlet's earlier obsessive deliberation with stoic acceptance. He no longer needs to control timing; he is willing to die. This shift is the play's spiritual climax - Hamlet gives up the project of being his own moral engineer."
               />
               <QuoteCard
                 quote="The rest is silence."
                 speaker="Hamlet, Act 5 Scene 2"
-                analysis="Hamlet's dying line. 'Rest' carries multiple senses: remainder, repose, peace. 'Silence' is the play's final answer to its torrents of speech and questioning. After seven soliloquies, Hamlet ends in wordlessness — a refusal of the closure that words might falsely provide. Some editors add 'O, O, O, O' from the First Folio as final groans, but most modern productions keep the silence."
+                analysis="Hamlet's dying line. 'Rest' carries multiple senses: remainder, repose, peace. 'Silence' is the play's final answer to its torrents of speech and questioning. After seven soliloquies, Hamlet ends in wordlessness - a refusal of the closure that words might falsely provide. Some editors add 'O, O, O, O' from the First Folio as final groans, but most modern productions keep the silence."
               />
               <QuoteCard
                 quote="Good night, sweet prince, / And flights of angels sing thee to thy rest!"
@@ -609,7 +609,7 @@ export default function HamletPage() {
               <QuoteCard
                 quote="Bid the soldiers shoot."
                 speaker="Fortinbras, Act 5 Scene 2"
-                analysis="The play's literal final command. Fortinbras orders a military funeral for Hamlet — recognising him, posthumously, as the warrior-prince he barely was in life. The soldier's salute also signals political restoration: Denmark has a king again. The closing gunshots echo offstage as the play ends, completing the move from interior soliloquy to exterior, public, martial action — the world Hamlet always struggled to live in."
+                analysis="The play's literal final command. Fortinbras orders a military funeral for Hamlet - recognising him, posthumously, as the warrior-prince he barely was in life. The soldier's salute also signals political restoration: Denmark has a king again. The closing gunshots echo offstage as the play ends, completing the move from interior soliloquy to exterior, public, martial action - the world Hamlet always struggled to live in."
               />
             </div>
           </Section>

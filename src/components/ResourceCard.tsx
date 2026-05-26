@@ -47,7 +47,7 @@ const TYPE_STYLES: Record<ResourceTypeBadge, { bg: string; text: string; ring: s
   },
 }
 
-/** @deprecated Board colours removed — kept for type compat */
+/** @deprecated Board colours removed - kept for type compat */
 const BOARD_COLORS: Record<ExamBoardLabel, string> = {
   AQA: 'bg-primary/10 text-primary',
   Edexcel: 'bg-success-50 text-success-700',

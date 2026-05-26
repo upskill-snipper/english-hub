@@ -18,11 +18,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Descriptive Writing — Cambridge IGCSE Composition',
+    title: 'Descriptive Writing - Cambridge IGCSE Composition',
     description:
       'Cambridge IGCSE descriptive writing techniques. Sensory language, extended metaphors, cinematic zoom structure, Grade 9 model answers and 30 practice prompts.',
   },
-  title: 'Descriptive Writing — Cambridge IGCSE Composition',
+  title: 'Descriptive Writing - Cambridge IGCSE Composition',
   description:
     'Cambridge IGCSE descriptive writing techniques. Sensory language, extended metaphors, cinematic zoom structure, Grade 9 model answers and 30 practice prompts.',
   alternates: {
@@ -42,7 +42,7 @@ const sections = [
   {
     title: 'Extended metaphors',
     description:
-      'Build a single controlling image — the city as a sleeping animal, the storm as an orchestra — and sustain it across paragraphs.',
+      'Build a single controlling image - the city as a sleeping animal, the storm as an orchestra - and sustain it across paragraphs.',
     href: '/igcse/cambridge/composition/descriptive/extended-metaphors',
     icon: Palette,
     level: 'Intermediate',
@@ -66,7 +66,7 @@ const sections = [
   {
     title: '30 practice prompts',
     description:
-      'Cambridge-style titles graded by difficulty — from a crowded market to a derelict fairground — with planning frames.',
+      'Cambridge-style titles graded by difficulty - from a crowded market to a derelict fairground - with planning frames.',
     href: '/igcse/cambridge/composition/descriptive/practice-prompts',
     icon: ListChecks,
     level: 'All levels',
@@ -99,7 +99,7 @@ export default async function DescriptivePage() {
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             A descriptive composition should make the examiner see a place or moment in sharp,
             unfamiliar detail. Plot is not required. What is required is{' '}
-            <strong className="text-foreground">precision, variety and sustained control</strong> —
+            <strong className="text-foreground">precision, variety and sustained control</strong> -
             the three words Cambridge examiner reports return to every year.
           </p>
         </div>
@@ -165,14 +165,14 @@ export default async function DescriptivePage() {
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Sustained imagery</strong> — a metaphor that
+              <strong className="text-foreground">Sustained imagery</strong> - a metaphor that
               returns, evolves or inverts rather than appearing once and vanishing.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Controlled shape</strong> — an opening that is not
+              <strong className="text-foreground">Controlled shape</strong> - an opening that is not
               the same as the end. Movement through space, time or perspective.
             </span>
           </li>

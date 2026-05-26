@@ -382,7 +382,7 @@ export default function RevisionBuilderPage() {
               </Button>
             </div>
 
-            {/* Rendered notes — sanitised via DOMPurify (P2-SEC-1) to
+            {/* Rendered notes - sanitised via DOMPurify (P2-SEC-1) to
                 strip any HTML the AI might emit under prompt-injection
                 attack before it reaches a minor's browser. The markdown
                 converter above is whitespace-/regex-based and does not

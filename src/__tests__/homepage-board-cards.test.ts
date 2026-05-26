@@ -98,7 +98,7 @@ function findEntry(boards: readonly BoardEntry[], namePattern: RegExp): BoardEnt
   return boards.find((b) => namePattern.test(b.name))
 }
 
-describe('homepage board picker — source-level contract', () => {
+describe('homepage board picker - source-level contract', () => {
   it('parses both BOARDS arrays out of src/app/page.tsx', () => {
     expect(GCSE_BOARDS.length).toBeGreaterThan(0)
     expect(IGCSE_BOARDS.length).toBeGreaterThan(0)

@@ -241,7 +241,7 @@ function scoreColor(score: number): string {
   return 'text-red-400'
 }
 
-/** Glass meter — themed replacement for the old inline progress bar. */
+/** Glass meter - themed replacement for the old inline progress bar. */
 function GlassMeter({ value }: { value: number }) {
   const clamped = Math.min(Math.max(value, 0), 100)
   return (
@@ -393,7 +393,7 @@ export default function SchoolAnalyticsPage() {
     window.open(`mailto:${teacherEmail}?subject=${subject}&body=${body}`)
   }
 
-  // Derived series for RankBars + KPI sparks. Only real data is used — the
+  // Derived series for RankBars + KPI sparks. Only real data is used - the
   // spark for "avg working grade" is the per-year-group progression series
   // (a genuine derived array), not fabricated trend data.
   const rankBarData = useMemo(
@@ -539,7 +539,7 @@ export default function SchoolAnalyticsPage() {
                   suffix="%"
                 />
 
-                {/* Accessible per-year detail — keyboard-activatable rows */}
+                {/* Accessible per-year detail - keyboard-activatable rows */}
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <caption className="sr-only">
@@ -584,7 +584,7 @@ export default function SchoolAnalyticsPage() {
                             }}
                             tabIndex={0}
                             role="link"
-                            aria-label={`${row.year} — ${t('school.analytics.col.avg_progress')} ${pct(row.avgProgress)}`}
+                            aria-label={`${row.year} - ${t('school.analytics.col.avg_progress')} ${pct(row.avgProgress)}`}
                           >
                             <td className="py-3 font-medium">
                               <span className="flex items-center gap-1.5 transition-colors group-hover:text-primary">

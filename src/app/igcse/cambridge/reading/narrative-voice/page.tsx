@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Narrative Voice — Reading Practice Framework — The English Hub',
+    title: 'Narrative Voice - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
   },
-  title: 'Narrative Voice — Reading Practice Framework',
+  title: 'Narrative Voice - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
   alternates: {
@@ -212,7 +212,7 @@ export default async function NarrativeVoicePage() {
                 <strong>Sentence 2:</strong> How close the narrator feels to the main character.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two specific traits of the narrator’s voice.
+                <strong>Sentences 3-4:</strong> Two specific traits of the narrator’s voice.
               </li>
               <li>
                 <strong>Sentence 5:</strong> The effect of the chosen perspective on the reader.

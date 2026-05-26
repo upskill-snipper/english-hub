@@ -8,12 +8,12 @@ import type { LessonPlan } from '@/types'
 
 // ─── Imports ────────────────────────────────────────────────────────────────
 
-// Literature – Shakespeare
+// Literature - Shakespeare
 import { romeoJulietLessonPlans } from './romeo-juliet-lessons'
 import { macbethLessons as macbethLessonPlans } from './macbeth-lessons'
 import { shakespeareContextLessons } from './shakespeare-context-lessons'
 
-// Literature – Prose & Drama
+// Literature - Prose & Drama
 import { inspectorCallsLessonPlans } from './inspector-calls-lessons'
 import { christmasCarolLessons as christmasCarolLessonPlans } from './christmas-carol-lessons'
 import { jekyllHydeLessonPlans } from './jekyll-hyde-lessons'
@@ -85,11 +85,11 @@ import { y13IalExtendedLessons } from './y13-ial-extended-lessons'
 // ─── Master Array ───────────────────────────────────────────────────────────
 
 export const ALL_LESSON_PLANS: LessonPlan[] = [
-  // Literature – Shakespeare
+  // Literature - Shakespeare
   ...romeoJulietLessonPlans,
   ...macbethLessonPlans,
   ...shakespeareContextLessons,
-  // Literature – Prose & Drama
+  // Literature - Prose & Drama
   ...inspectorCallsLessonPlans,
   ...christmasCarolLessonPlans,
   ...jekyllHydeLessonPlans,
@@ -177,7 +177,7 @@ export function getLessonsByBoard(board: string): LessonPlan[] {
     (lp) =>
       lp.board.toLowerCase() === q ||
       lp.board.toLowerCase() === 'universal' ||
-      lp.board.toLowerCase() === 'all'
+      lp.board.toLowerCase() === 'all',
   )
 }
 
@@ -288,16 +288,26 @@ export function getTextLabel(lp: LessonPlan): string {
   if (idLower.startsWith('edexcel-')) return 'Edexcel'
   if (idLower.startsWith('ocr-') || idLower.startsWith('wjec-')) return 'OCR/WJEC'
   if (idLower.startsWith('igcse-')) return 'IGCSE'
-  if (idLower.startsWith('unseen-poetry') || titleLower.includes('unseen poetry')) return 'Unseen Poetry'
-  if (idLower.startsWith('creative-writing') || titleLower.includes('creative writing')) return 'Creative Writing'
-  if (idLower.startsWith('non-fiction') || titleLower.includes('non-fiction')) return 'Non-Fiction Writing'
-  if (idLower.startsWith('grammar') || titleLower.includes('grammar')) return 'Grammar & Punctuation'
-  if (idLower.startsWith('spoken-lang') || titleLower.includes('spoken language')) return 'Spoken Language'
-  if (idLower.startsWith('reading-comp') || titleLower.includes('reading comprehension')) return 'Reading Comprehension'
-  if (idLower.startsWith('revision') || titleLower.includes('revision')) return 'Revision Techniques'
-  if (idLower.startsWith('media-lit') || titleLower.includes('media literacy')) return 'Media Literacy'
-  if (idLower.startsWith('shakespeare-context') || titleLower.includes('shakespeare context')) return 'Shakespeare'
-  if (idLower.startsWith('19c-prose') || titleLower.includes('nineteenth century')) return '19th Century Prose'
+  if (idLower.startsWith('unseen-poetry') || titleLower.includes('unseen poetry'))
+    return 'Unseen Poetry'
+  if (idLower.startsWith('creative-writing') || titleLower.includes('creative writing'))
+    return 'Creative Writing'
+  if (idLower.startsWith('non-fiction') || titleLower.includes('non-fiction'))
+    return 'Non-Fiction Writing'
+  if (idLower.startsWith('grammar') || titleLower.includes('grammar'))
+    return 'Grammar & Punctuation'
+  if (idLower.startsWith('spoken-lang') || titleLower.includes('spoken language'))
+    return 'Spoken Language'
+  if (idLower.startsWith('reading-comp') || titleLower.includes('reading comprehension'))
+    return 'Reading Comprehension'
+  if (idLower.startsWith('revision') || titleLower.includes('revision'))
+    return 'Revision Techniques'
+  if (idLower.startsWith('media-lit') || titleLower.includes('media literacy'))
+    return 'Media Literacy'
+  if (idLower.startsWith('shakespeare-context') || titleLower.includes('shakespeare context'))
+    return 'Shakespeare'
+  if (idLower.startsWith('19c-prose') || titleLower.includes('nineteenth century'))
+    return '19th Century Prose'
 
   // Fallback: truncate if too long
   if (lp.text.length > 40) return lp.text.slice(0, 37) + '...'
@@ -323,9 +333,7 @@ export function getDifficulty(lp: LessonPlan): 'Foundation' | 'Intermediate' | '
 /** Get all lesson plans targeting a specific skill */
 export function getBySkill(skill: string): LessonPlan[] {
   const q = skill.toLowerCase()
-  return ALL_LESSON_PLANS.filter((lp) =>
-    lp.targetedSkills.some((s) => s.toLowerCase().includes(q))
-  )
+  return ALL_LESSON_PLANS.filter((lp) => lp.targetedSkills.some((s) => s.toLowerCase().includes(q)))
 }
 
 /** Full-text search across title, text, skills, objectives, and keywords */
@@ -333,22 +341,21 @@ export function searchLessons(query: string): LessonPlan[] {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
   if (terms.length === 0) return []
 
-  return ALL_LESSON_PLANS
-    .map((lp) => {
-      const searchable = [
-        lp.title,
-        lp.text,
-        lp.board,
-        ...lp.targetedSkills,
-        ...lp.objectives,
-        ...lp.keywords,
-      ]
-        .join(' ')
-        .toLowerCase()
+  return ALL_LESSON_PLANS.map((lp) => {
+    const searchable = [
+      lp.title,
+      lp.text,
+      lp.board,
+      ...lp.targetedSkills,
+      ...lp.objectives,
+      ...lp.keywords,
+    ]
+      .join(' ')
+      .toLowerCase()
 
-      const matchCount = terms.filter((t) => searchable.includes(t)).length
-      return { lp, matchCount }
-    })
+    const matchCount = terms.filter((t) => searchable.includes(t)).length
+    return { lp, matchCount }
+  })
     .filter(({ matchCount }) => matchCount > 0)
     .sort((a, b) => b.matchCount - a.matchCount)
     .map(({ lp }) => lp)
@@ -363,13 +370,13 @@ const WEAK_AREA_SKILL_MAP: Record<string, string[]> = {
   'poetry comparison': ['Poetry Comparison', 'Comparative Analysis', 'Poetry Analysis'],
   'poetry analysis': ['Poetry Analysis', 'Poetry Comparison', 'Unseen Poetry'],
   'unseen poetry': ['Unseen Poetry', 'Poetry Analysis', 'Poetry Comparison'],
-  'shakespeare': ['Shakespeare', 'Dramatic Techniques', 'Soliloquy Analysis'],
+  shakespeare: ['Shakespeare', 'Dramatic Techniques', 'Soliloquy Analysis'],
   'dramatic techniques': ['Dramatic Techniques', 'Stage Directions', 'Shakespeare'],
-  'context': ['Contextual Understanding', 'Historical Context', 'Social Context'],
+  context: ['Contextual Understanding', 'Historical Context', 'Social Context'],
   'quotation usage': ['Quotation Embedding', 'Evidence Selection', 'PEE/PEEL'],
 
   // Language skills
-  'language analysis': ['Language Analysis', 'Writer\'s Methods', 'Language Techniques'],
+  'language analysis': ['Language Analysis', "Writer's Methods", 'Language Techniques'],
   'structure analysis': ['Structure Analysis', 'Structural Techniques', 'Narrative Structure'],
   'creative writing': ['Creative Writing', 'Descriptive Writing', 'Narrative Writing'],
   'descriptive writing': ['Descriptive Writing', 'Creative Writing', 'Sensory Language'],
@@ -377,16 +384,16 @@ const WEAK_AREA_SKILL_MAP: Record<string, string[]> = {
   'transactional writing': ['Transactional Writing', 'Persuasive Writing', 'Rhetorical Devices'],
   'persuasive writing': ['Persuasive Writing', 'Transactional Writing', 'Rhetorical Devices'],
   'reading comprehension': ['Reading Comprehension', 'Inference', 'Summary'],
-  'evaluation': ['Evaluation', 'Critical Evaluation', 'Writer\'s Methods'],
-  'comparison': ['Comparison', 'Comparative Analysis', 'Synthesis'],
+  evaluation: ['Evaluation', 'Critical Evaluation', "Writer's Methods"],
+  comparison: ['Comparison', 'Comparative Analysis', 'Synthesis'],
 
   // Non-fiction & media skills
   'non-fiction writing': ['Non-Fiction Writing', 'Transactional Writing', 'Persuasive Writing'],
-  'grammar': ['Grammar', 'Punctuation', 'SPaG', 'Sentence Structure'],
-  'punctuation': ['Punctuation', 'Grammar', 'SPaG'],
+  grammar: ['Grammar', 'Punctuation', 'SPaG', 'Sentence Structure'],
+  punctuation: ['Punctuation', 'Grammar', 'SPaG'],
   'spoken language': ['Spoken Language', 'Presentation Skills', 'Oracy'],
   'media literacy': ['Media Literacy', 'Media Analysis', 'Critical Thinking'],
-  'revision': ['Revision Techniques', 'Exam Technique', 'Study Skills'],
+  revision: ['Revision Techniques', 'Exam Technique', 'Study Skills'],
 
   // General exam skills
   'essay structure': ['Essay Structure', 'PEE/PEEL', 'Paragraph Structure'],
@@ -411,7 +418,7 @@ const WEAK_AREA_SKILL_MAP: Record<string, string[]> = {
 export function recommendLessons(
   weakAreas: string[],
   board: string,
-  limit: number = 10
+  limit: number = 10,
 ): LessonPlan[] {
   if (weakAreas.length === 0 || ALL_LESSON_PLANS.length === 0) return []
 
@@ -463,7 +470,10 @@ export function recommendLessons(
 
       // Check partial matches
       for (const [weightKey, weight] of weightEntries) {
-        if (skillLower !== weightKey && (skillLower.includes(weightKey) || weightKey.includes(skillLower))) {
+        if (
+          skillLower !== weightKey &&
+          (skillLower.includes(weightKey) || weightKey.includes(skillLower))
+        ) {
           score += weight * 3
         }
       }

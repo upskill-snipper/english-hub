@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI Transparency',
     description:
-      'How our AI works at The English Hub — what it does, its limitations, and your rights.',
+      'How our AI works at The English Hub - what it does, its limitations, and your rights.',
   },
   alternates: { canonical: 'https://theenglishhub.app/legal/ai-transparency' },
   title: 'AI Transparency',
   description:
-    'How our AI works at The English Hub — what it does, its limitations, and your rights.',
+    'How our AI works at The English Hub - what it does, its limitations, and your rights.',
 }
 
 export default async function AITransparencyPage() {

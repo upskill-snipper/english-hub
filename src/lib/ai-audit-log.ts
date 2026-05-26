@@ -5,7 +5,7 @@
 // (marking, grading, CEFR banding, feedback, generated notes) must leave a
 // durable, queryable record describing WHAT the system was asked, WHICH model
 // and prompt/mark scheme produced the output, WHEN it ran, and WHAT it
-// returned — so the provider can demonstrate traceability and investigate a
+// returned - so the provider can demonstrate traceability and investigate a
 // contested or anomalous AI decision after the fact.
 //
 // ── Data-protection rationale (read before changing the default) ─────────────
@@ -30,7 +30,7 @@
 // throws into the route handler. A logging outage must not break marking.
 //
 // Persistence: writes to the existing `AuditLog` Prisma model
-// (action = 'ai_decision'). No new table/columns were introduced — the
+// (action = 'ai_decision'). No new table/columns were introduced - the
 // `details Json?` column carries the structured record below. `ipAddress` is
 // non-nullable on that model, so it always defaults to 'unknown' here, exactly
 // as the existing consent/data-retention audit writers do.
@@ -42,7 +42,7 @@ import { createHash } from 'crypto'
 
 /**
  * When `false` (default) only a SHA-256 hash + length of the learner input is
- * persisted — never the raw text. Set the `AI_AUDIT_STORE_RAW_INPUT` env var to
+ * persisted - never the raw text. Set the `AI_AUDIT_STORE_RAW_INPUT` env var to
  * the literal string `"true"` to additionally persist the raw input (e.g. for a
  * time-boxed model-quality investigation). This is deliberately a hard opt-in:
  * the default protects minors' free text per GDPR data-minimisation.
@@ -83,7 +83,7 @@ export interface AiAuditTokenUsage {
  * decision was taken while the user was opted-in) without a later join.
  */
 export interface AiConsentSnapshot {
-  /** `PrivacySettings.aiOptOut` — false because the route would have 403'd. */
+  /** `PrivacySettings.aiOptOut` - false because the route would have 403'd. */
   aiOptOut: boolean
   /** Whether AI_PROCESSING consent + (for minors) parental consent passed. */
   aiProcessingConsentOk: boolean
@@ -96,7 +96,7 @@ export interface LogAiDecisionInput {
   feature: AiAuditFeature
   /** User making the request, when authenticated and in scope. */
   userId?: string | null
-  /** `User.isMinor` — drives the data-minimisation posture of this record. */
+  /** `User.isMinor` - drives the data-minimisation posture of this record. */
   isMinor?: boolean | null
   /** Resolved request locale ('en' | 'ar' | other). */
   locale?: string | null
@@ -126,7 +126,7 @@ export interface LogAiDecisionInput {
   /** `true` on a successful, parsed AI decision; `false` on handled error. */
   success: boolean
   /**
-   * Compact, structured summary of the decision the model produced — e.g.
+   * Compact, structured summary of the decision the model produced - e.g.
    * `{ predictedGrade, band, aoScores }` for marking, `{ gradeBand }` for
    * feedback, `{ overallBand }` for CEFR. Keep it small; no raw model prose.
    */
@@ -158,8 +158,8 @@ function describeError(err: unknown): { errorClass: string; errorMessage: string
 }
 
 /**
- * Build the `details` JSON blob persisted on the AuditLog row. Pure + total —
- * never throws — so it is safe to call from the catch path too.
+ * Build the `details` JSON blob persisted on the AuditLog row. Pure + total -
+ * never throws - so it is safe to call from the catch path too.
  */
 function buildDetails(input: LogAiDecisionInput): Record<string, unknown> {
   const latencyMs = Math.max(
@@ -215,7 +215,7 @@ function buildDetails(input: LogAiDecisionInput): Record<string, unknown> {
  *
  * Awaiting it is fine (the body is wrapped in try/catch) but callers may also
  * fire-and-forget with `void logAiDecision(...).catch(() => {})` if they must
- * not add latency — the function already self-suppresses errors regardless.
+ * not add latency - the function already self-suppresses errors regardless.
  */
 export async function logAiDecision(input: LogAiDecisionInput): Promise<void> {
   try {

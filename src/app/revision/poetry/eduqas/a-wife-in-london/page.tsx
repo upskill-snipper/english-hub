@@ -15,7 +15,7 @@ const wifeInLondon: PoemData = {
   poet: 'Thomas Hardy',
   lines: [
     {
-      text: 'I — The Tragedy',
+      text: 'I - The Tragedy',
       annotations: [
         {
           type: 'Structure',
@@ -125,7 +125,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'He — has fallen — in the far South Land...',
+      text: 'He - has fallen - in the far South Land...',
       annotations: [
         {
           type: 'Punctuation',
@@ -145,7 +145,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'II — The Irony',
+      text: 'II - The Irony',
       annotations: [
         {
           type: 'Structure',
@@ -210,7 +210,7 @@ const wifeInLondon: PoemData = {
       ],
     },
     {
-      text: 'Fresh — firm — penned in highest feather —',
+      text: 'Fresh - firm - penned in highest feather -',
       annotations: [
         {
           type: 'Diction',
@@ -294,16 +294,16 @@ const wifeInLondon: PoemData = {
     <p>قصيدة "A Wife in London" انتشرت سنة 1899 خلال حرب البوير الثانية، اللي صارت بين بريطانيا وجمهوريات البوير في جنوب أفريقيا. هاي أول حرب استعمارية بريطانية حديثة تتنقل أخبارها عبر البرقيات والصور. والـ"far South Land" في القصيدة هي جنوب أفريقيا.</p>
 
     <h3>التواصل والمسافة</h3>
-    <p>القصيدة تجسّد ابتكار فيكتوري: التواصل الفوري عبر المسافات الطويلة. البرقية توصل خبر الموت بسرعة قريبة من لحظة وقوعه. بس البريد العادي أبطأ — فالزوجة تستلم رسالة زوجها الأخيرة (المكتوبة قبل وفاته) بعد البرقية اللي تعلن موته. هاي الفجوة الزمنية تخلق المفارقة الجوهرية.</p>
+    <p>القصيدة تجسّد ابتكار فيكتوري: التواصل الفوري عبر المسافات الطويلة. البرقية توصل خبر الموت بسرعة قريبة من لحظة وقوعه. بس البريد العادي أبطأ - فالزوجة تستلم رسالة زوجها الأخيرة (المكتوبة قبل وفاته) بعد البرقية اللي تعلن موته. هاي الفجوة الزمنية تخلق المفارقة الجوهرية.</p>
 
     <h3>تشاؤم Hardy</h3>
-    <p>Hardy معروف برؤيته المتشائمة. كان يشوف الكون لامبالي أو حتى قاسي بصورة فعّالة على البشر. "A Wife in London" تجسّد هاي الرؤية: توقيت الرسالتين مو نتيجة شر مقصود بل صدفة، ومع ذلك يخلق معاناة عميقة. "irony" عند Hardy حالة ميتافيزيقية — الطريقة اللي تسخر فيها الحقيقة دايماً من أمل الإنسان.</p>
+    <p>Hardy معروف برؤيته المتشائمة. كان يشوف الكون لامبالي أو حتى قاسي بصورة فعّالة على البشر. "A Wife in London" تجسّد هاي الرؤية: توقيت الرسالتين مو نتيجة شر مقصود بل صدفة، ومع ذلك يخلق معاناة عميقة. "irony" عند Hardy حالة ميتافيزيقية - الطريقة اللي تسخر فيها الحقيقة دايماً من أمل الإنسان.</p>
 
     <h3>النبرة المعادية للحرب</h3>
-    <p>Hardy كان ينتقد الإمبريالية البريطانية وحرب البوير. القصيدة مو معادية للحرب بصراحة، بس تركيزها على الكلفة الإنسانية — وبالأخص النساء اللي يتركن خلف — ينتقد ضمنياً حرب صارت تقتل الجنود في أراضٍ بعيدة من أجل أهداف بعيدة.</p>
+    <p>Hardy كان ينتقد الإمبريالية البريطانية وحرب البوير. القصيدة مو معادية للحرب بصراحة، بس تركيزها على الكلفة الإنسانية - وبالأخص النساء اللي يتركن خلف - ينتقد ضمنياً حرب صارت تقتل الجنود في أراضٍ بعيدة من أجل أهداف بعيدة.</p>
 
     <h3>المأساة الأهلية</h3>
-    <p>القصيدة تنتمي إلى تقليد Hardy في <strong>المأساة الأهلية (domestic tragedy)</strong> — اكتشاف معاناة عميقة في الحياة العادية. الزوجة بدون اسم، وزوجها بدون اسم، بس حزنهم كوني. Hardy يحوّل بيت فيكتوري عادي إلى مسرح حزن مدمّر.</p>
+    <p>القصيدة تنتمي إلى تقليد Hardy في <strong>المأساة الأهلية (domestic tragedy)</strong> - اكتشاف معاناة عميقة في الحياة العادية. الزوجة بدون اسم، وزوجها بدون اسم، بس حزنهم كوني. Hardy يحوّل بيت فيكتوري عادي إلى مسرح حزن مدمّر.</p>
   `,
 
   summary: `Section I - The Tragedy: A wife sits alone in foggy Victorian London. The fog and cold street-lamp create an oppressive atmosphere. A messenger knocks sharply at her door and hands her a telegram. The message is brief but devastating: her husband has been killed in the "far South Land" (South Africa, in the Boer War). She struggles to comprehend.
@@ -314,9 +314,9 @@ Overall meaning: Hardy uses the gap between the telegram and the letter to creat
 
   summaryAr: `القسم الأول - The Tragedy: زوجة جالسة لحالها في لندن الفيكتورية وسط الضباب. الضباب وضوء عمود الشارع البارد يخلقون جو خانق وقامع. مرسال يطرق بابها بشدة ويسلّمها برقية (telegram). الرسالة قصيرة بس مدمّرة: زوجها انقتل في الـ"far South Land" (جنوب أفريقيا، في حرب البوير). تكافح عشان تستوعب الخبر.
 
-القسم الثاني - The Irony: في اليوم اللي بعده، الضباب أثقل. ساعي البريد يقرب من بابها ويسلّمها رسالة. على ضوء النار، تتعرّف على خط يد زوجها المألوف — بس هاي اليد الحين تأكلها الديدان. الرسالة، المكتوبة قبل موته، "fresh, firm, penned in highest feather" (طازجة، ثابتة، مكتوبة بأعلى المعنويات). وايد مليانة بخططه عن رجوعه للبيت، وعن نزهات بريفية "in the summer weather"، وعن "new love that they would learn". تقرأ آماله لمستقبل ما راح يصير.
+القسم الثاني - The Irony: في اليوم اللي بعده، الضباب أثقل. ساعي البريد يقرب من بابها ويسلّمها رسالة. على ضوء النار، تتعرّف على خط يد زوجها المألوف - بس هاي اليد الحين تأكلها الديدان. الرسالة، المكتوبة قبل موته، "fresh, firm, penned in highest feather" (طازجة، ثابتة، مكتوبة بأعلى المعنويات). وايد مليانة بخططه عن رجوعه للبيت، وعن نزهات بريفية "in the summer weather"، وعن "new love that they would learn". تقرأ آماله لمستقبل ما راح يصير.
 
-المعنى العام: Hardy يستخدم الفجوة بين البرقية والرسالة عشان يخلق مفارقة لا تطاق. صوت الزوج الميّت المفعم بالأمل يوصل بعد ما يصير خبر موته معروف. القصيدة تجسّد مأساة شخصية ونقد للحرب الإمبريالية مع بعض: الناس العاديين يدفعون ثمن صراعات بعيدة. ورؤية Hardy المتشائمة — إن الكون يسخر من أمل الإنسان — تطلع بكامل وضوحها.`,
+المعنى العام: Hardy يستخدم الفجوة بين البرقية والرسالة عشان يخلق مفارقة لا تطاق. صوت الزوج الميّت المفعم بالأمل يوصل بعد ما يصير خبر موته معروف. القصيدة تجسّد مأساة شخصية ونقد للحرب الإمبريالية مع بعض: الناس العاديين يدفعون ثمن صراعات بعيدة. ورؤية Hardy المتشائمة - إن الكون يسخر من أمل الإنسان - تطلع بكامل وضوحها.`,
 
   formAndStructure: `Form: Two sections of two stanzas each, totalling four stanzas of five lines. The titled sections - "The Tragedy" and "The Irony" - announce the poem\'s argumentative purpose.
 
@@ -334,21 +334,21 @@ Time and gap: The poem dramatises the temporal gap between two pieces of informa
 
 Closure: The poem ends not with the wife\'s reaction but with the dead husband\'s words - "new love that they would learn". Hardy gives the dead voice the last word, leaving the reader (and the wife) with hope that has been killed.`,
 
-  formAndStructureAr: `الشكل: قسمين، كل قسم فيه مقطعين (stanzas)، المجموع أربع مقاطع من خمسة أبيات. والعناوين — "The Tragedy" و"The Irony" — تعلن الغرض الحجاجي للقصيدة.
+  formAndStructureAr: `الشكل: قسمين، كل قسم فيه مقطعين (stanzas)، المجموع أربع مقاطع من خمسة أبيات. والعناوين - "The Tragedy" و"The Irony" - تعلن الغرض الحجاجي للقصيدة.
 
-نظام القافية: ABBAB طول القصيدة (مع اختلافات). هاي القافية غير المعتادة تخلق إحساس بإن شي مو متوازن — ما في شي مريح، ويعكس عالم مضطرب ومحطّم.
+نظام القافية: ABBAB طول القصيدة (مع اختلافات). هاي القافية غير المعتادة تخلق إحساس بإن شي مو متوازن - ما في شي مريح، ويعكس عالم مضطرب ومحطّم.
 
 الوزن: غير منتظم، بس فيه نبض رباعي تقريبي. الوزن مهتزّ، فيه تنويعات متكررة تعكس صدمة الزوجة وحزنها.
 
 البنية الثنائية: القسمان المعنونان يخلقان قبل/بعد درامي. "The Tragedy" هو البرقية؛ "The Irony" هي الرسالة. هاي البنية تجبر القارئ يعيش التوقيت القاسي.
 
-Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the fog hangs thicker". طقس لندن يعكس ويضخّم حزن الزوجة. والمكان يصير جزء من حالتها الانفعالية.
+Pathetic fallacy: الضباب يصير أثقل بين القسمين - "the fog hangs thicker". طقس لندن يعكس ويضخّم حزن الزوجة. والمكان يصير جزء من حالتها الانفعالية.
 
-علامات الترقيم: استخدام مكثّف للشَّرَط (dashes) طول القصيدة، خصوصاً لمّا تقرأ الزوجة الرسائل. الـdashes تحاكي قراءتها المتقطعة واللاهثة. وتمثّل ثغرات ما تقدر تكمل عندها — لحظات صدمة محضة.
+علامات الترقيم: استخدام مكثّف للشَّرَط (dashes) طول القصيدة، خصوصاً لمّا تقرأ الزوجة الرسائل. الـdashes تحاكي قراءتها المتقطعة واللاهثة. وتمثّل ثغرات ما تقدر تكمل عندها - لحظات صدمة محضة.
 
 الزمن والفجوة: القصيدة تجسّد الفجوة الزمنية بين معلومتين ما يفترض إنهم يجوون مع بعض. رسالة الزوج الميت، المكتوبة لمّا كان حي ومتفائل، توصل بعد خبر موته. Hardy يحوّل الزمن نفسه إلى مصدر ألم.
 
-الخاتمة: القصيدة ما تنتهي بردة فعل الزوجة، بل بكلمات الزوج الميت — "new love that they would learn". Hardy يعطي الصوت الميت الكلمة الأخيرة، ويترك القارئ (والزوجة) مع أمل انقتل.`,
+الخاتمة: القصيدة ما تنتهي بردة فعل الزوجة، بل بكلمات الزوج الميت - "new love that they would learn". Hardy يعطي الصوت الميت الكلمة الأخيرة، ويترك القارئ (والزوجة) مع أمل انقتل.`,
 
   keyQuotes: [
     {
@@ -357,7 +357,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The opening images create a London of suffocating, entangling fog. "Tawny" is yellow-brown - the colour of polluted Victorian air. "Webby" suggests a spider\'s trap. The wife is enmeshed in an oppressive city before the news even arrives.',
       themes: ['Setting', 'Pathetic fallacy', 'Oppression'],
       analysisAr:
-        'الصور الافتتاحية تخلق لندن فيها ضباب خانق ومُحاصِر. كلمة "tawny" معناها أصفر-بني — لون الهواء الفيكتوري الملوّث. وكلمة "webby" توحي بفخّ عنكبوت. الزوجة محصورة في مدينة قامعة حتى قبل ما يوصل الخبر.',
+        'الصور الافتتاحية تخلق لندن فيها ضباب خانق ومُحاصِر. كلمة "tawny" معناها أصفر-بني - لون الهواء الفيكتوري الملوّث. وكلمة "webby" توحي بفخّ عنكبوت. الزوجة محصورة في مدينة قامعة حتى قبل ما يوصل الخبر.',
       themesAr: ['المكان', 'Pathetic fallacy', 'القمع'],
     },
     {
@@ -366,7 +366,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The simile compares the streetlamp (and implicitly the wife) to a dying candle. "Glimmers cold" - light without warmth. The image is of fading life and emotional bleakness, foreshadowing the death that will be announced moments later.',
       themes: ['Simile', 'Foreshadowing', 'Cold'],
       analysisAr:
-        'التشبيه يقارن عمود الشارع (وضمنياً الزوجة) بشمعة على وشك تنطفي. "Glimmers cold" — ضوء بدون دفء. الصورة عن حياة تذبل وكآبة عاطفية، وتمهّد للموت اللي راح يعلَن بعد دقائق.',
+        'التشبيه يقارن عمود الشارع (وضمنياً الزوجة) بشمعة على وشك تنطفي. "Glimmers cold" - ضوء بدون دفء. الصورة عن حياة تذبل وكآبة عاطفية، وتمهّد للموت اللي راح يعلَن بعد دقائق.',
       themesAr: ['التشبيه (Simile)', 'الاستباق', 'البرودة'],
     },
     {
@@ -375,16 +375,16 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The verb "cracks" is violent - the knock physically breaks the silence and the wife\'s peace. "Smartly" makes the messenger sound efficient, businesslike - the bureaucracy of war contrasts with the human catastrophe being delivered.',
       themes: ['Sudden violence', 'Onomatopoeia', 'Bureaucracy'],
       analysisAr:
-        'الفعل "cracks" عنيف — الطرقة تكسر فعلياً الصمت وسكينة الزوجة. وكلمة "smartly" تخلّي المرسال يحسّ كأنه موظف كفء وعملي — بيروقراطية الحرب تتناقض مع الكارثة الإنسانية اللي يجي يسلّمها.',
+        'الفعل "cracks" عنيف - الطرقة تكسر فعلياً الصمت وسكينة الزوجة. وكلمة "smartly" تخلّي المرسال يحسّ كأنه موظف كفء وعملي - بيروقراطية الحرب تتناقض مع الكارثة الإنسانية اللي يجي يسلّمها.',
       themesAr: ['عنف مفاجئ', 'محاكاة صوتية (Onomatopoeia)', 'البيروقراطية'],
     },
     {
-      quote: 'He — has fallen — in the far South Land',
+      quote: 'He - has fallen - in the far South Land',
       analysis:
         'The dashes mimic the wife\'s halting reading - she cannot speak the words fluently. "Has fallen" is the bureaucratic euphemism for died in battle. "Far South Land" emphasises the remoteness - he died thousands of miles from home for a war she cannot understand.',
       themes: ['Death', 'Distance', 'Fragmented speech'],
       analysisAr:
-        'الـdashes تحاكي قراءة الزوجة المتقطّعة — ما تقدر تنطق الكلمات بطلاقة. عبارة "has fallen" تورية بيروقراطية تعني "مات في المعركة". وعبارة "far South Land" تأكّد على البُعد — مات على بُعد آلاف الأميال من البيت في حرب ما تفهمها.',
+        'الـdashes تحاكي قراءة الزوجة المتقطّعة - ما تقدر تنطق الكلمات بطلاقة. عبارة "has fallen" تورية بيروقراطية تعني "مات في المعركة". وعبارة "far South Land" تأكّد على البُعد - مات على بُعد آلاف الأميال من البيت في حرب ما تفهمها.',
       themesAr: ['الموت', 'المسافة', 'كلام متقطّع'],
     },
     {
@@ -393,16 +393,16 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         "The most devastating image in the poem. The wife recognises her husband's handwriting on the envelope - but his actual hand has now been eaten by worms in the African earth. The familiar (his writing) and the horrifying (his decay) are placed side by side.",
       themes: ['Death', 'Decay', 'Body and absence'],
       analysisAr:
-        'أكثر صورة مدمّرة في القصيدة. الزوجة تتعرّف على خط زوجها على الظرف — بس يده الحقيقية صارت الديدان تأكلها في تراب أفريقيا. الشي المألوف (خطّه) والشي المرعب (تحلّله) موضوعين جنب بعض.',
+        'أكثر صورة مدمّرة في القصيدة. الزوجة تتعرّف على خط زوجها على الظرف - بس يده الحقيقية صارت الديدان تأكلها في تراب أفريقيا. الشي المألوف (خطّه) والشي المرعب (تحلّله) موضوعين جنب بعض.',
       themesAr: ['الموت', 'التحلّل', 'الجسد والغياب'],
     },
     {
-      quote: 'Fresh — firm — penned in highest feather',
+      quote: 'Fresh - firm - penned in highest feather',
       analysis:
         'The letter is written with energy and high spirits. The triple description and dashes mimic the wife\'s halting reading. Each word is more painful than the last - "fresh", "firm", "highest feather" all describe a man who is now dead.',
       themes: ['Tragic irony', 'Hope', 'Cruel contrast'],
       analysisAr:
-        'الرسالة مكتوبة بحيوية وبمعنويات عالية. الوصف الثلاثي والـdashes يحاكون قراءة الزوجة المتقطّعة. كل كلمة أكثر إيلاماً من اللي قبلها — "fresh" و"firm" و"highest feather" كلها توصف رجل صار ميتاً.',
+        'الرسالة مكتوبة بحيوية وبمعنويات عالية. الوصف الثلاثي والـdashes يحاكون قراءة الزوجة المتقطّعة. كل كلمة أكثر إيلاماً من اللي قبلها - "fresh" و"firm" و"highest feather" كلها توصف رجل صار ميتاً.',
       themesAr: ['المفارقة المأساوية', 'الأمل', 'التضاد القاسي'],
     },
     {
@@ -411,7 +411,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The letter is "page-full" - long, detailed - and filled with his hopes for coming home. Each plan is now a wound. The very hopefulness that should bring joy now brings unbearable grief because it is impossible.',
       themes: ['Hope', 'Irony', 'Future'],
       analysisAr:
-        'الرسالة "page-full" — طويلة ومفصّلة — ومليانة بآماله في الرجوع للبيت. وكل خطة من خططه صارت جرح. التفاؤل اللي المفروض يخلّيها مبسوطة، صار يجيب لها حزن لا يطاق، لأنه مستحيل.',
+        'الرسالة "page-full" - طويلة ومفصّلة - ومليانة بآماله في الرجوع للبيت. وكل خطة من خططه صارت جرح. التفاؤل اللي المفروض يخلّيها مبسوطة، صار يجيب لها حزن لا يطاق، لأنه مستحيل.',
       themesAr: ['الأمل', 'المفارقة', 'المستقبل'],
     },
     {
@@ -442,11 +442,11 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The reader knows what the wife knows: the husband is dead. So when we read his hopeful letter, we feel the irony - his plans are impossible. The structure of two sections creates the irony by separating the moment of knowledge from the moment of his hope.',
       lineRef: 17,
       effectAr:
-        'القارئ يعرف اللي تعرفه الزوجة: إن الزوج ميت. ولمّا نقرأ رسالته المفعمة بالأمل، نحسّ بالمفارقة — خططه مستحيلة. بنية القسمين تخلق المفارقة عبر فصل لحظة المعرفة عن لحظة أمله.',
+        'القارئ يعرف اللي تعرفه الزوجة: إن الزوج ميت. ولمّا نقرأ رسالته المفعمة بالأمل، نحسّ بالمفارقة - خططه مستحيلة. بنية القسمين تخلق المفارقة عبر فصل لحظة المعرفة عن لحظة أمله.',
     },
     {
       device: 'Punctuation (dashes)',
-      example: 'He — has fallen — in the far South Land ... Fresh — firm — penned',
+      example: 'He - has fallen - in the far South Land ... Fresh - firm - penned',
       effect:
         "The dashes mimic the wife's halting, breathless speech and reading. They mark moments of shock where she cannot continue. The visual fragmentation on the page enacts the emotional fragmentation of grief.",
       lineRef: 11,
@@ -460,7 +460,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The wife is compared to a dying candle - flickering, vulnerable, about to go out. The simile foreshadows her emotional collapse and gives the abstract idea of grief a physical, visual form.',
       lineRef: 4,
       effectAr:
-        'الزوجة مقارَنة بشمعة محتضرة — مرتعشة، هشّة، على وشك تنطفي. التشبيه يستبق انهيارها الانفعالي، ويعطي فكرة الحزن المجرّدة شكلاً مادياً ومرئياً.',
+        'الزوجة مقارَنة بشمعة محتضرة - مرتعشة، هشّة، على وشك تنطفي. التشبيه يستبق انهيارها الانفعالي، ويعطي فكرة الحزن المجرّدة شكلاً مادياً ومرئياً.',
     },
     {
       device: 'Personification',
@@ -469,7 +469,7 @@ Pathetic fallacy: الضباب يصير أثقل بين القسمين — "the 
         'The city is personified as actively producing the fog (it "uprolled" the vapour). Even more chillingly, the worm "knows" the husband\'s hand - decay is given consciousness. London and death become hostile presences.',
       lineRef: 3,
       effectAr:
-        'المدينة تتشخّص كأنها هي بنفسها تنتج الضباب (شوارعها "uprolled" البخار). والأكثر رعباً، إن الدودة "تعرف" يد الزوج — التحلّل صار له وعي. لندن والموت يصيرون حضوراً معادياً.',
+        'المدينة تتشخّص كأنها هي بنفسها تنتج الضباب (شوارعها "uprolled" البخار). والأكثر رعباً، إن الدودة "تعرف" يد الزوج - التحلّل صار له وعي. لندن والموت يصيرون حضوراً معادياً.',
     },
     {
       device: 'Two-part structure',
@@ -532,7 +532,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'In Part I, a wife receives a telegram telling her that her husband has been killed in the Boer War. In Part II, a letter from him arrives the next day — written before his death, full of plans for their future.',
+      'In Part I, a wife receives a telegram telling her that her husband has been killed in the Boer War. In Part II, a letter from him arrives the next day - written before his death, full of plans for their future.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -542,7 +542,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The telegram was wrong',
-      'The letter arrives after the death notice — full of hope and plans that can never be fulfilled',
+      'The letter arrives after the death notice - full of hope and plans that can never be fulfilled',
       'She already knew',
       'The letter is lost',
     ],
@@ -558,7 +558,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'To create sunshine',
-      'The fog and "tawny vapour" mirror the wife\'s emotional state — obscured, dark, suffocating',
+      'The fog and "tawny vapour" mirror the wife\'s emotional state - obscured, dark, suffocating',
       'To describe spring',
       'For decoration only',
     ],
@@ -574,7 +574,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'Two-part structure (Act I and Act II) with regular stanzas — like a two-act tragedy',
+      'Two-part structure (Act I and Act II) with regular stanzas - like a two-act tragedy',
       'A sonnet',
       'Blank verse',
     ],
@@ -606,13 +606,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Written with a fancy pen',
-      'Written in high spirits — the husband was optimistic and happy when he wrote the letter',
+      'Written in high spirits - the husband was optimistic and happy when he wrote the letter',
       'Written quickly',
       'Written in code',
     ],
     correctIndex: 1,
     explanation:
-      '"In highest feather" means in excellent spirits. The husband was happy and optimistic when he wrote — unaware he was about to die. This makes the letter unbearably poignant.',
+      '"In highest feather" means in excellent spirits. The husband was happy and optimistic when he wrote - unaware he was about to die. This makes the letter unbearably poignant.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -622,13 +622,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'War is glorious',
-      'War devastates those at home — the wife suffers the cruelest irony of receiving hope after receiving death',
+      'War devastates those at home - the wife suffers the cruelest irony of receiving hope after receiving death',
       'War is necessary',
       'War has no effects on civilians',
     ],
     correctIndex: 1,
     explanation:
-      "Hardy shows war's cruelty not through battlefield horror but through domestic devastation. The wife's suffering — receiving hope after death — is war's cruelest irony.",
+      "Hardy shows war's cruelty not through battlefield horror but through domestic devastation. The wife's suffering - receiving hope after death - is war's cruelest irony.",
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -655,13 +655,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It divides the poem in half for no reason',
-      'The labelling of "The Tragedy" and "The Irony" prepares and frames the reader\'s response — the irony is deliberate and devastating',
+      'The labelling of "The Tragedy" and "The Irony" prepares and frames the reader\'s response - the irony is deliberate and devastating',
       'It creates two different poems',
       'It makes the poem longer',
     ],
     correctIndex: 1,
     explanation:
-      'By labelling the sections "The Tragedy" and "The Irony", Hardy signals that Part II will deepen Part I\'s pain. The reader knows what\'s coming, which makes it more — not less — devastating.',
+      'By labelling the sections "The Tragedy" and "The Irony", Hardy signals that Part II will deepen Part I\'s pain. The reader knows what\'s coming, which makes it more - not less - devastating.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -671,13 +671,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'London pollution',
-      'Grief, confusion, and the obscuring of truth — the wife cannot see clearly, literally or emotionally',
+      'Grief, confusion, and the obscuring of truth - the wife cannot see clearly, literally or emotionally',
       'Morning dew',
       'Cooking smoke',
     ],
     correctIndex: 1,
     explanation:
-      "The fog symbolises the wife's grief and confusion — she cannot see clearly, physically or emotionally. The truth of her husband's death is delivered through a fog of disbelief.",
+      "The fog symbolises the wife's grief and confusion - she cannot see clearly, physically or emotionally. The truth of her husband's death is delivered through a fog of disbelief.",
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -689,9 +689,9 @@ const REVISION_TOPICS = [
     summary:
       'A Wife in London explores the devastating personal impact of war, cruel irony, and how death destroys domestic hope.',
     keyPoints: [
-      "War's civilian cost — the wife suffers at home",
-      'Cruel irony — hope arrives after death',
-      'Pathetic fallacy — fog mirrors grief',
+      "War's civilian cost - the wife suffers at home",
+      'Cruel irony - hope arrives after death',
+      'Pathetic fallacy - fog mirrors grief',
       'Anti-war message through domestic tragedy',
     ],
   },
@@ -700,20 +700,20 @@ const REVISION_TOPICS = [
     summary:
       'Hardy uses pathetic fallacy, dramatic irony, and precise timing to create devastating emotional impact.',
     keyPoints: [
-      'Fog and "tawny vapour" — grief made physical',
-      '"Penned in highest feather" — cruel optimism',
-      'Telegram vs letter — death vs hope, wrong order',
+      'Fog and "tawny vapour" - grief made physical',
+      '"Penned in highest feather" - cruel optimism',
+      'Telegram vs letter - death vs hope, wrong order',
       'Restrained, precise language intensifies emotion',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Two-part dramatic structure — "The Tragedy" and "The Irony" — frames the poem as a cruel, two-act drama.',
+      'Two-part dramatic structure - "The Tragedy" and "The Irony" - frames the poem as a cruel, two-act drama.',
     keyPoints: [
-      '"The Tragedy" (Part I) — death notice arrives',
-      '"The Irony" (Part II) — hopeful letter arrives too late',
-      'Regular stanzas — controlled form for uncontrollable grief',
+      '"The Tragedy" (Part I) - death notice arrives',
+      '"The Irony" (Part II) - hopeful letter arrives too late',
+      'Regular stanzas - controlled form for uncontrollable grief',
       "Labelling sections guides the reader's emotional response",
     ],
   },
@@ -729,7 +729,7 @@ export default function WifeInLondonEduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="A Wife in London by Thomas Hardy — Analysis & Annotations"
+        name="A Wife in London by Thomas Hardy - Analysis & Annotations"
         description="Line-by-line analysis of A Wife in London with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

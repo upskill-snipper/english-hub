@@ -1,4 +1,4 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y11IgcseLessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
@@ -72,7 +72,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Comparing Band Responses',
         duration: '20 minutes',
         instructions:
-          'Provide students with two anonymous student responses to the same descriptive writing prompt — one at Band 4 (competent) and one at Band 6 (highly effective). Students read both silently, then in pairs highlight specific differences in vocabulary, sentence structure, imagery, and organisation. Teacher leads a whole-class discussion using the mark scheme to justify which band each response falls into. Students then write three concrete targets for their own writing based on what separates the two bands.',
+          'Provide students with two anonymous student responses to the same descriptive writing prompt - one at Band 4 (competent) and one at Band 6 (highly effective). Students read both silently, then in pairs highlight specific differences in vocabulary, sentence structure, imagery, and organisation. Teacher leads a whole-class discussion using the mark scheme to justify which band each response falls into. Students then write three concrete targets for their own writing based on what separates the two bands.',
         differentiation: {
           support:
             'Provide guided annotations on the Band 4 response and a scaffold for writing targets (e.g. "To move from Band 4 to Band 6, I need to...").',
@@ -91,7 +91,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'My Paper 2 Strategy Card',
       duration: '8 minutes',
       instructions:
-        'Students complete a strategy card with four sections: (1) Time plan — how they will split their time across planning, writing, and checking; (2) Strengths — what they already do well in creative writing; (3) Targets — their top two areas for improvement; (4) First focus — which writing type (descriptive or narrative) they feel more confident with and why. Students keep this card in their folder as a reference for future lessons.',
+        'Students complete a strategy card with four sections: (1) Time plan - how they will split their time across planning, writing, and checking; (2) Strengths - what they already do well in creative writing; (3) Targets - their top two areas for improvement; (4) First focus - which writing type (descriptive or narrative) they feel more confident with and why. Students keep this card in their folder as a reference for future lessons.',
       differentiation: {
         support: 'Provide a partially completed strategy card with prompts for each section.',
         core: 'Students complete all four sections independently.',
@@ -115,7 +115,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Explain how marks are divided between content/structure and style/accuracy. Why is this division important for exam preparation?',
         lines: 4,
         modelAnswer:
-          'Marks are typically split equally or near-equally between content/structure and style/accuracy. This is important because it means technical accuracy — spelling, punctuation, grammar, and sentence variety — carries as much weight as the quality of ideas and organisation. Students must practise both.',
+          'Marks are typically split equally or near-equally between content/structure and style/accuracy. This is important because it means technical accuracy - spelling, punctuation, grammar, and sentence variety - carries as much weight as the quality of ideas and organisation. Students must practise both.',
         marks: 3,
       },
       {
@@ -131,7 +131,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Write a personal timing plan for a 1 hour 30 minute Paper 2 exam. Justify how you have allocated your time.',
         lines: 6,
         modelAnswer:
-          'Planning: 10 minutes — essential for structure and ideas. Writing: 60 minutes (30 per piece) — allows sustained development. Proofreading: 10 minutes (5 per piece) — catches SPaG errors. Remaining 10 minutes split as buffer. This ensures I do not rush the ending and have time to check accuracy, which is worth half the marks.',
+          'Planning: 10 minutes - essential for structure and ideas. Writing: 60 minutes (30 per piece) - allows sustained development. Proofreading: 10 minutes (5 per piece) - catches SPaG errors. Remaining 10 minutes split as buffer. This ensures I do not rush the ending and have time to check accuracy, which is worth half the marks.',
         marks: 4,
       },
       {
@@ -145,9 +145,9 @@ export const y11IgcseLessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'Use genuine past papers and examiner reports from Cambridge IGCSE where possible for authenticity.',
-      'The band comparison activity works best when the two responses address the same prompt — it makes differences in quality much clearer.',
-      'Emphasise from the outset that style/accuracy marks are often where students lose the most marks — this helps reframe proofreading as a high-value exam strategy.',
-      'Collect the strategy cards at the end to review — they provide useful diagnostic information about student confidence and self-awareness.',
+      'The band comparison activity works best when the two responses address the same prompt - it makes differences in quality much clearer.',
+      'Emphasise from the outset that style/accuracy marks are often where students lose the most marks - this helps reframe proofreading as a high-value exam strategy.',
+      'Collect the strategy cards at the end to review - they provide useful diagnostic information about student confidence and self-awareness.',
     ],
     targetedSkills: [
       'Exam Technique',
@@ -175,14 +175,14 @@ export const y11IgcseLessons: LessonPlan[] = [
       'I can write descriptions that engage at least three senses beyond sight',
       'I can structure a descriptive piece using a deliberate organisational technique such as zoom or circular structure',
       'I can select precise vocabulary and explain the effect of my word choices',
-      'I can convey a character\'s emotion through action and imagery rather than stating it directly',
+      "I can convey a character's emotion through action and imagery rather than stating it directly",
     ],
     keywords: [
       'sensory language',
       'imagery',
       'zoom structure',
       'circular structure',
-      'show don\'t tell',
+      "show don't tell",
       'precise vocabulary',
       'atmosphere',
       'pathetic fallacy',
@@ -206,7 +206,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Crafting Techniques Workshop',
         duration: '20 minutes',
         instructions:
-          'Teacher introduces four key descriptive techniques with examples: (1) Show don\'t tell — "Her knuckles whitened around the strap" vs "She was nervous"; (2) Pathetic fallacy — weather reflecting mood; (3) Zoom structure — wide establishing shot narrowing to a single detail; (4) Precise vocabulary — replacing generic words with exact ones. For each technique, students practise by transforming a weak sentence into a strong one. After independent practice, pairs share their best transformations and vote on the most effective in each category.',
+          'Teacher introduces four key descriptive techniques with examples: (1) Show don\'t tell - "Her knuckles whitened around the strap" vs "She was nervous"; (2) Pathetic fallacy - weather reflecting mood; (3) Zoom structure - wide establishing shot narrowing to a single detail; (4) Precise vocabulary - replacing generic words with exact ones. For each technique, students practise by transforming a weak sentence into a strong one. After independent practice, pairs share their best transformations and vote on the most effective in each category.',
         differentiation: {
           support:
             'Provide sentence starters and a word upgrade chart (e.g. "walked" becomes "trudged / ambled / staggered").',
@@ -267,7 +267,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'What is a "zoom structure" in descriptive writing? Describe how you would use it for the prompt: "Describe a beach at sunset."',
         lines: 5,
         modelAnswer:
-          'A zoom structure begins with a wide establishing shot and gradually narrows to a specific detail. For a beach at sunset: wide — the vast horizon where orange melts into the sea; mid — the shoreline with waves rolling over shells; close-up — a single crab scuttling into a crack in the rock, its shell catching the last light. This structure gives the reader a cinematic sense of moving deeper into the scene.',
+          'A zoom structure begins with a wide establishing shot and gradually narrows to a specific detail. For a beach at sunset: wide - the vast horizon where orange melts into the sea; mid - the shoreline with waves rolling over shells; close-up - a single crab scuttling into a crack in the rock, its shell catching the last light. This structure gives the reader a cinematic sense of moving deeper into the scene.',
         marks: 4,
       },
       {
@@ -288,7 +288,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Explain what pathetic fallacy is and write two sentences that use it to reflect a character\'s sadness.',
+          "Explain what pathetic fallacy is and write two sentences that use it to reflect a character's sadness.",
         lines: 5,
         modelAnswer:
           'Pathetic fallacy is when the weather or natural environment reflects or mirrors a character\'s emotions. Example: "The sky sagged with grey, heavy clouds that refused to break, pressing down on the rooftops like a weight that could not be shifted. Even the trees stood bare and motionless, as if they too had given up waiting."',
@@ -296,8 +296,8 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The "show don\'t tell" concept is transformative for most students — spend extra time on this if engagement is high.',
-      'Collect the timed writing pieces for formative assessment. Look for students who default to narrative when asked to describe — this is the most common error on Paper 2.',
+      'The "show don\'t tell" concept is transformative for most students - spend extra time on this if engagement is high.',
+      'Collect the timed writing pieces for formative assessment. Look for students who default to narrative when asked to describe - this is the most common error on Paper 2.',
       'The zoom structure is a reliable framework that gives weaker writers immediate structural improvement.',
       'Consider displaying a "word upgrade wall" in the classroom that students can add to throughout the year.',
     ],
@@ -306,7 +306,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       'Sensory Language',
       'Vocabulary Precision',
       'Structural Techniques',
-      'Show Don\'t Tell',
+      "Show Don't Tell",
     ],
   },
 
@@ -378,7 +378,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Voice and Pacing Workshop',
         duration: '22 minutes',
         instructions:
-          'Teacher models two versions of the same scene — one with flat, report-like narration and one with a strong, controlled voice. Class discusses: what creates "voice"? (Word choice, sentence rhythm, attitude, withholding.) Students then write the opening 150 words of a narrative in response to: "Write a story that begins with a journey." They must choose one of the four structures studied and write in either first person or third person limited. After 12 minutes, students swap with a partner. Partners identify: (a) the structure used, (b) the narrative perspective, (c) one moment where pacing is effective, and (d) one moment where pacing could be improved. Students revise based on feedback.',
+          'Teacher models two versions of the same scene - one with flat, report-like narration and one with a strong, controlled voice. Class discusses: what creates "voice"? (Word choice, sentence rhythm, attitude, withholding.) Students then write the opening 150 words of a narrative in response to: "Write a story that begins with a journey." They must choose one of the four structures studied and write in either first person or third person limited. After 12 minutes, students swap with a partner. Partners identify: (a) the structure used, (b) the narrative perspective, (c) one moment where pacing is effective, and (d) one moment where pacing could be improved. Students revise based on feedback.',
         differentiation: {
           support:
             'Provide a voice toolkit with sentence starters, tone words, and a pacing guide (short sentences = tension, long = reflection).',
@@ -413,7 +413,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Define "in medias res" and explain why it is an effective technique for exam narrative writing.',
         lines: 4,
         modelAnswer:
-          'In medias res means beginning a story in the middle of the action rather than at the chronological start. It is effective in exams because it immediately engages the reader, creates intrigue, and avoids wasting time on slow exposition — a common weakness in timed writing.',
+          'In medias res means beginning a story in the middle of the action rather than at the chronological start. It is effective in exams because it immediately engages the reader, creates intrigue, and avoids wasting time on slow exposition - a common weakness in timed writing.',
         marks: 3,
       },
       {
@@ -429,7 +429,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Explain how a writer can control pacing in a narrative. Give two specific techniques.',
         lines: 4,
         modelAnswer:
-          'Short, fragmented sentences speed up pacing and create tension or urgency. Longer, complex sentences with subordinate clauses slow the pace and create a reflective or descriptive tone. Paragraph breaks can also control pacing — a one-line paragraph isolates a moment and forces the reader to pause.',
+          'Short, fragmented sentences speed up pacing and create tension or urgency. Longer, complex sentences with subordinate clauses slow the pace and create a reflective or descriptive tone. Paragraph breaks can also control pacing - a one-line paragraph isolates a moment and forces the reader to pause.',
         marks: 4,
       },
       {
@@ -437,7 +437,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Read the dialogue below. Explain why it is weak and rewrite it so that it reveals character.\n\n"Hello," said John. "Hello," said Sarah. "How are you?" "I am fine. Let\'s go."',
         lines: 6,
         modelAnswer:
-          'This dialogue is weak because it is generic — it could be spoken by anyone and reveals nothing about the characters. Improved: "You\'re late," Sarah muttered, not looking up from her phone. John dropped into the seat opposite. "Didn\'t think you\'d notice." She locked the screen. "I always notice." This reveals tension, personality, and power dynamics between the characters.',
+          'This dialogue is weak because it is generic - it could be spoken by anyone and reveals nothing about the characters. Improved: "You\'re late," Sarah muttered, not looking up from her phone. John dropped into the seat opposite. "Didn\'t think you\'d notice." She locked the screen. "I always notice." This reveals tension, personality, and power dynamics between the characters.',
         marks: 5,
       },
       {
@@ -445,23 +445,17 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Write the opening paragraph (5-6 sentences) of a narrative using a circular structure. Then write the closing paragraph that mirrors it. The story should be about a character returning to a place from their past.',
         lines: 10,
         modelAnswer:
-          'Opening: "The gate still hung from one hinge, swinging in a wind that carried the smell of cut grass and something older — woodsmoke, maybe, or memory. She had not been back in eleven years. The garden had shrunk, as gardens do when you grow." Closing: "The gate swung behind her as she left, its rhythm unchanged. Eleven years and the wind still carried woodsmoke. But the garden — the garden had grown." The circular structure creates closure and emphasises how the character has changed.',
+          'Opening: "The gate still hung from one hinge, swinging in a wind that carried the smell of cut grass and something older - woodsmoke, maybe, or memory. She had not been back in eleven years. The garden had shrunk, as gardens do when you grow." Closing: "The gate swung behind her as she left, its rhythm unchanged. Eleven years and the wind still carried woodsmoke. But the garden - the garden had grown." The circular structure creates closure and emphasises how the character has changed.',
         marks: 5,
       },
     ],
     teacherNotes: [
-      'In medias res is the structure most students will benefit from — it solves the common problem of slow, meandering openings.',
+      'In medias res is the structure most students will benefit from - it solves the common problem of slow, meandering openings.',
       'Discourage over-reliance on dialogue. Many students fill their narratives with speech, which often reads as a script. Emphasise that dialogue should be used sparingly and purposefully.',
-      'The jigsaw activity ensures all students encounter all four structures — check understanding by cold-calling during the mixed-table phase.',
+      'The jigsaw activity ensures all students encounter all four structures - check understanding by cold-calling during the mixed-table phase.',
       'Consider displaying exemplar openings on the classroom wall and adding to them throughout the year as a reference bank.',
     ],
-    targetedSkills: [
-      'Narrative Writing',
-      'Structural Choice',
-      'Voice',
-      'Pacing',
-      'Dialogue',
-    ],
+    targetedSkills: ['Narrative Writing', 'Structural Choice', 'Voice', 'Pacing', 'Dialogue'],
   },
 
   // ── Lesson 4: Planning Under Exam Conditions ──────────────────────────────
@@ -498,9 +492,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Plan or No Plan?',
       duration: '6 minutes',
       instructions:
-        'Display two pieces of student writing side by side — one clearly planned (cohesive, well-structured, satisfying ending) and one clearly unplanned (repetitive, loses focus, rushed ending). Students identify which was planned and which was not, citing specific evidence. Teacher uses this to make the case: planning is not wasted time — it is the difference between Band 4 and Band 6.',
+        'Display two pieces of student writing side by side - one clearly planned (cohesive, well-structured, satisfying ending) and one clearly unplanned (repetitive, loses focus, rushed ending). Students identify which was planned and which was not, citing specific evidence. Teacher uses this to make the case: planning is not wasted time - it is the difference between Band 4 and Band 6.',
       differentiation: {
-        support: 'Highlight specific sections in both pieces and ask students to compare them directly.',
+        support:
+          'Highlight specific sections in both pieces and ask students to compare them directly.',
         core: 'Students identify differences independently and link them to planning (or lack of it).',
         stretch:
           'Students estimate what the plan for the successful piece might have looked like and sketch it.',
@@ -512,7 +507,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Planning Methods Carousel',
         duration: '18 minutes',
         instructions:
-          'Set up three stations, each with a different planning method: (1) Mind map — central image with sensory branches (best for descriptive); (2) Five-part linear plan — beginning, build, climax, falling action, resolution (best for narrative); (3) Paragraph plan — numbered paragraphs with one-line summaries and key vocabulary (versatile). Students spend 5 minutes at each station, creating a plan for the same prompt using that method. After rotating through all three, students decide which method they prefer and write a sentence explaining why.',
+          'Set up three stations, each with a different planning method: (1) Mind map - central image with sensory branches (best for descriptive); (2) Five-part linear plan - beginning, build, climax, falling action, resolution (best for narrative); (3) Paragraph plan - numbered paragraphs with one-line summaries and key vocabulary (versatile). Students spend 5 minutes at each station, creating a plan for the same prompt using that method. After rotating through all three, students decide which method they prefer and write a sentence explaining why.',
         differentiation: {
           support:
             'Provide a template for each planning method with examples and prompts to fill in.',
@@ -530,7 +525,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Timed Planning Sprint',
         duration: '24 minutes',
         instructions:
-          'Students complete three timed plans: Plan 1 (descriptive prompt, 5 minutes), Plan 2 (narrative prompt, 5 minutes), Plan 3 (student\'s choice of prompt type, 4 minutes — reduced time to increase pressure). After each plan, students peer-assess using a checklist: Does the plan include a clear structure? Key vocabulary? At least two techniques? A satisfying ending? After all three rounds, students select their strongest plan and write the opening paragraph from it in the remaining time. Teacher circulates to identify exemplar plans for class sharing.',
+          "Students complete three timed plans: Plan 1 (descriptive prompt, 5 minutes), Plan 2 (narrative prompt, 5 minutes), Plan 3 (student's choice of prompt type, 4 minutes - reduced time to increase pressure). After each plan, students peer-assess using a checklist: Does the plan include a clear structure? Key vocabulary? At least two techniques? A satisfying ending? After all three rounds, students select their strongest plan and write the opening paragraph from it in the remaining time. Teacher circulates to identify exemplar plans for class sharing.",
         differentiation: {
           support:
             'Allow 6 minutes per plan instead of 5, and provide a simplified checklist with three criteria.',
@@ -549,12 +544,11 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'My Go-To Method',
       duration: '5 minutes',
       instructions:
-        'Students write a brief reflection: which planning method will they use in the exam and why? They then pair-share and must listen to their partner\'s reasoning. If their partner\'s argument is convincing, they may change their mind. Teacher takes a quick poll of the room to see the spread of preferences.',
+        "Students write a brief reflection: which planning method will they use in the exam and why? They then pair-share and must listen to their partner's reasoning. If their partner's argument is convincing, they may change their mind. Teacher takes a quick poll of the room to see the spread of preferences.",
       differentiation: {
         support: 'Provide a sentence frame: "I will use ___ because ___. It helps me ___."',
         core: 'Students write and share independently.',
-        stretch:
-          'Students explain when they might switch methods depending on the prompt type.',
+        stretch: 'Students explain when they might switch methods depending on the prompt type.',
       },
     },
     homework:
@@ -580,15 +574,15 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Create a paragraph plan (4-5 paragraphs) for the prompt: "Describe a place where time seems to have stopped."',
         lines: 8,
         modelAnswer:
-          'P1: Wide establishing shot — the building from outside, dust on windows, silence. Key vocab: calcified, suspended. P2: Zoom in — a room with objects left mid-use (a teacup, an open book). Personification of objects waiting. P3: Sensory shift — the smell of age, dust catching light, the taste of stale air. P4: Close-up — a single photograph, faces fading. Metaphor for memory. P5: Return to wide shot — pull back to the building as evening falls, light withdrawing. Circular link to opening.',
+          'P1: Wide establishing shot - the building from outside, dust on windows, silence. Key vocab: calcified, suspended. P2: Zoom in - a room with objects left mid-use (a teacup, an open book). Personification of objects waiting. P3: Sensory shift - the smell of age, dust catching light, the taste of stale air. P4: Close-up - a single photograph, faces fading. Metaphor for memory. P5: Return to wide shot - pull back to the building as evening falls, light withdrawing. Circular link to opening.',
         marks: 5,
       },
       {
         question:
-          'A student says: "I don\'t plan because it wastes time — I just start writing." What advice would you give them? Use evidence from today\'s lesson.',
+          'A student says: "I don\'t plan because it wastes time - I just start writing." What advice would you give them? Use evidence from today\'s lesson.',
         lines: 5,
         modelAnswer:
-          'Planning takes 5 minutes but saves much more by preventing structural problems that cannot be fixed in a timed exam. Unplanned writing often repeats ideas, loses focus, and has a weak ending — all of which limit the response to Band 3-4. A plan ensures a clear structure, a satisfying ending, and space to include deliberate techniques, which are requirements for Band 5-6.',
+          'Planning takes 5 minutes but saves much more by preventing structural problems that cannot be fixed in a timed exam. Unplanned writing often repeats ideas, loses focus, and has a weak ending - all of which limit the response to Band 3-4. A plan ensures a clear structure, a satisfying ending, and space to include deliberate techniques, which are requirements for Band 5-6.',
         marks: 4,
       },
       {
@@ -601,17 +595,12 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson is crucial for exam preparation — many students resist planning because they feel it "wastes time." The planned vs unplanned comparison at the start is essential for buy-in.',
+      'This lesson is crucial for exam preparation - many students resist planning because they feel it "wastes time." The planned vs unplanned comparison at the start is essential for buy-in.',
       'The timed sprint is the most important activity. Students need repeated practice planning under pressure to build automaticity.',
-      'Encourage students to write key vocabulary directly into their plans — this prevents them from defaulting to generic language under exam pressure.',
-      'Consider running a follow-up lesson where students write a full response from one of today\'s plans to demonstrate the direct link between planning quality and writing quality.',
+      'Encourage students to write key vocabulary directly into their plans - this prevents them from defaulting to generic language under exam pressure.',
+      "Consider running a follow-up lesson where students write a full response from one of today's plans to demonstrate the direct link between planning quality and writing quality.",
     ],
-    targetedSkills: [
-      'Planning',
-      'Exam Technique',
-      'Time Management',
-      'Structural Decision-Making',
-    ],
+    targetedSkills: ['Planning', 'Exam Technique', 'Time Management', 'Structural Decision-Making'],
   },
 
   // ── Lesson 5: Full Paper 2 Practice ────────────────────────────────────────
@@ -650,7 +639,8 @@ export const y11IgcseLessons: LessonPlan[] = [
       instructions:
         'Teacher leads a brief focused discussion: "What will you do in the first 5 minutes of the exam?" Students write their answer, then share with a partner. Teacher reinforces the non-negotiables: read both prompts carefully, choose the one that sparks the most ideas, plan for 5 minutes before writing a word. Display a clock graphic showing the ideal time split. Students set up their desks in exam conditions.',
       differentiation: {
-        support: 'Provide a laminated time plan card for students to keep on their desk during the practice.',
+        support:
+          'Provide a laminated time plan card for students to keep on their desk during the practice.',
         core: 'Students recall and apply their own time plan from Lesson 1.',
         stretch:
           'Students identify two specific pitfalls they want to avoid today based on previous feedback.',
@@ -659,7 +649,7 @@ export const y11IgcseLessons: LessonPlan[] = [
     },
     mainActivities: [
       {
-        title: 'Timed Writing — Full Response',
+        title: 'Timed Writing - Full Response',
         duration: '40 minutes',
         instructions:
           'Students choose one of two prompts (one descriptive, one narrative) and complete a full response under timed conditions. The 40 minutes should be split: 5 minutes planning, 30 minutes writing, 5 minutes proofreading and editing. Teacher writes time checkpoints on the board (e.g. "By 10 minutes you should have finished your first paragraph"). During the writing phase, the room should be silent. Teacher circulates silently, noting common strengths and weaknesses for the debrief. At the 35-minute mark, announce that students should begin proofreading.',
@@ -684,8 +674,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       instructions:
         'Distribute simplified band descriptors for Paper 2. Students read their own work and highlight the band that best describes their content/structure and their style/accuracy separately. They then write: (1) which band they think they are in and why, (2) one specific strength with a quotation from their own work, (3) two specific targets for improvement with reference to the band above. Students share one target with their partner. Teacher collects all papers for marking and formative feedback.',
       differentiation: {
-        support:
-          'Provide a self-assessment frame with sentence starters for each section.',
+        support: 'Provide a self-assessment frame with sentence starters for each section.',
         core: 'Students self-assess independently using the band descriptors.',
         stretch:
           'Students identify specific sentences in their work that would need to change to move up one band and draft improved versions.',
@@ -700,7 +689,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Reflect on your time management during the practice. Did you follow your plan? What would you change next time?',
         lines: 4,
         modelAnswer:
-          'I spent 6 minutes planning, which was slightly over my target but produced a better structure. I finished writing with 3 minutes to spare for proofreading, which was not enough — I found two errors I had missed. Next time I will aim to finish writing with 5 full minutes for checking, as technical accuracy is worth significant marks.',
+          'I spent 6 minutes planning, which was slightly over my target but produced a better structure. I finished writing with 3 minutes to spare for proofreading, which was not enough - I found two errors I had missed. Next time I will aim to finish writing with 5 full minutes for checking, as technical accuracy is worth significant marks.',
         marks: 3,
       },
       {
@@ -708,7 +697,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Quote one sentence from your own work that you think is effective. Explain why, using mark scheme language.',
         lines: 5,
         modelAnswer:
-          'Example: "The fog did not arrive — it had always been there, patient as stone." This sentence is effective because the personification of fog as "patient" creates an unsettling, deliberate atmosphere (Band 5: "convincingly crafted effects"). The dash creates a syntactic pause that mirrors the fog\'s stillness, showing control of punctuation for effect (Band 5: "secure and deliberate").',
+          'Example: "The fog did not arrive - it had always been there, patient as stone." This sentence is effective because the personification of fog as "patient" creates an unsettling, deliberate atmosphere (Band 5: "convincingly crafted effects"). The dash creates a syntactic pause that mirrors the fog\'s stillness, showing control of punctuation for effect (Band 5: "secure and deliberate").',
         marks: 4,
       },
       {
@@ -724,7 +713,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Using the band descriptors, explain the difference between a Band 4 and a Band 6 response for style and accuracy.',
         lines: 5,
         modelAnswer:
-          'Band 4: Vocabulary is "sometimes effective" and sentences show "some variety" — the quality is inconsistent. Errors in spelling and punctuation may be present but do not significantly hinder meaning. Band 6: Vocabulary is "precise" and "creates deliberate effects." Sentences are "varied and controlled" throughout. Spelling and punctuation are "almost always accurate." The key difference is sustained quality and deliberate control versus occasional success.',
+          'Band 4: Vocabulary is "sometimes effective" and sentences show "some variety" - the quality is inconsistent. Errors in spelling and punctuation may be present but do not significantly hinder meaning. Band 6: Vocabulary is "precise" and "creates deliberate effects." Sentences are "varied and controlled" throughout. Spelling and punctuation are "almost always accurate." The key difference is sustained quality and deliberate control versus occasional success.',
         marks: 4,
       },
       {
@@ -732,15 +721,15 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Write a list of five things you will do in the first 5 minutes of the real Paper 2 exam.',
         lines: 5,
         modelAnswer:
-          '1. Read both prompts twice carefully before choosing. 2. Choose the prompt that gives me the most ideas, not the one that sounds easiest. 3. Decide on a structure (e.g. zoom for descriptive, in medias res for narrative). 4. Create a paragraph plan with key vocabulary and at least two techniques per paragraph. 5. Decide on my ending before I start writing — this is what separates good responses from great ones.',
+          '1. Read both prompts twice carefully before choosing. 2. Choose the prompt that gives me the most ideas, not the one that sounds easiest. 3. Decide on a structure (e.g. zoom for descriptive, in medias res for narrative). 4. Create a paragraph plan with key vocabulary and at least two techniques per paragraph. 5. Decide on my ending before I start writing - this is what separates good responses from great ones.',
         marks: 5,
       },
     ],
     teacherNotes: [
-      'This is the first full timed practice — manage expectations. Many students will not finish, and that is a valuable learning experience.',
+      'This is the first full timed practice - manage expectations. Many students will not finish, and that is a valuable learning experience.',
       'Resist the temptation to help during the writing phase. Silent circulation with notes for the debrief is more useful than interrupting individual students.',
       'The self-assessment plenary is critical. Students who can accurately assess their own band level are better equipped to improve.',
-      'Mark these responses with detailed formative comments — this is the baseline against which progress will be measured.',
+      'Mark these responses with detailed formative comments - this is the baseline against which progress will be measured.',
     ],
     targetedSkills: [
       'Exam Technique',
@@ -752,13 +741,13 @@ export const y11IgcseLessons: LessonPlan[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // LITERATURE PAPER 2 — AN INSPECTOR CALLS (5 lessons)
+  // LITERATURE PAPER 2 - AN INSPECTOR CALLS (5 lessons)
   // ═══════════════════════════════════════════════════════════════════════════
 
   // ── Lesson 6: Priestley's Context and Purpose ──────────────────────────────
   {
     id: 'y11-igcse-06-priestley-context-purpose',
-    title: 'Priestley\'s Context and Purpose',
+    title: "Priestley's Context and Purpose",
     text: 'An Inspector Calls',
     board: 'Cambridge IGCSE',
     yearGroup: 'Year 11',
@@ -766,13 +755,13 @@ export const y11IgcseLessons: LessonPlan[] = [
     objectives: [
       'Understand the historical and political context in which Priestley wrote An Inspector Calls',
       'Distinguish between the 1912 setting and the 1945 writing date and explain why this dual time frame matters',
-      'Identify Priestley\'s socialist purpose and how the play functions as a vehicle for his political message',
+      "Identify Priestley's socialist purpose and how the play functions as a vehicle for his political message",
       'Connect contextual knowledge to specific moments in the text',
     ],
     successCriteria: [
       'I can explain at least three key differences between 1912 and 1945 Britain',
       'I can explain why Priestley set the play in 1912 but wrote it in 1945',
-      'I can link Priestley\'s political beliefs to his characterisation and plot choices',
+      "I can link Priestley's political beliefs to his characterisation and plot choices",
       'I can write a paragraph connecting context to a specific moment in the play',
     ],
     keywords: [
@@ -790,27 +779,27 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Two Photographs, Two Worlds',
       duration: '7 minutes',
       instructions:
-        'Display two photographs side by side: one of upper-class Edwardian life (a grand dining room, 1912) and one of post-war Britain (bomb-damaged streets, 1945). Students write three observations about each photograph. Teacher reveals: the play is SET in the first image but WRITTEN for the audience in the second. Why does this matter? Brief class discussion establishing the concept of dramatic irony through hindsight — the audience knows what the Birlings do not (two World Wars, the sinking of the Titanic).',
+        'Display two photographs side by side: one of upper-class Edwardian life (a grand dining room, 1912) and one of post-war Britain (bomb-damaged streets, 1945). Students write three observations about each photograph. Teacher reveals: the play is SET in the first image but WRITTEN for the audience in the second. Why does this matter? Brief class discussion establishing the concept of dramatic irony through hindsight - the audience knows what the Birlings do not (two World Wars, the sinking of the Titanic).',
       differentiation: {
         support: 'Provide prompt questions beneath each photograph to guide observations.',
         core: 'Students make independent observations and begin to infer the significance.',
         stretch:
-          'Students predict how an audience in 1945 would react differently to Birling\'s speeches about war and the Titanic than an audience in 1912.',
+          "Students predict how an audience in 1945 would react differently to Birling's speeches about war and the Titanic than an audience in 1912.",
       },
       resources: ['Dual photograph slide', 'Observation grid'],
     },
     mainActivities: [
       {
-        title: 'Context Timeline and Priestley\'s Purpose',
+        title: "Context Timeline and Priestley's Purpose",
         duration: '20 minutes',
         instructions:
-          'Students create a dual timeline: one row for 1912 events and society, one row for 1945 events and society. Teacher provides key information through a structured presentation: the class system in 1912, workers\' rights, women\'s suffrage, the Liberal reforms, World Wars, the Beveridge Report, the 1945 Labour landslide, the creation of the welfare state. Students note connections between the timeline and the play. Then, teacher introduces Priestley\'s biography — his war experience, his socialism, his Postscripts broadcasts — and students answer: "What did Priestley want his 1945 audience to think, feel, and do after watching this play?"',
+          "Students create a dual timeline: one row for 1912 events and society, one row for 1945 events and society. Teacher provides key information through a structured presentation: the class system in 1912, workers' rights, women's suffrage, the Liberal reforms, World Wars, the Beveridge Report, the 1945 Labour landslide, the creation of the welfare state. Students note connections between the timeline and the play. Then, teacher introduces Priestley's biography - his war experience, his socialism, his Postscripts broadcasts - and students answer: \"What did Priestley want his 1945 audience to think, feel, and do after watching this play?\"",
         differentiation: {
           support:
             'Provide a partially completed timeline and a glossary of key terms (socialism, capitalism, welfare state).',
           core: 'Students complete the timeline and answer the purpose question in full sentences.',
           stretch:
-            'Students compare Priestley\'s purpose with another political writer or playwright and evaluate how effectively the play achieves its aims.',
+            "Students compare Priestley's purpose with another political writer or playwright and evaluate how effectively the play achieves its aims.",
         },
         resources: [
           'Context presentation slides',
@@ -822,10 +811,10 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Context in the Text',
         duration: '20 minutes',
         instructions:
-          'Provide students with five short extracts from the play. Each extract relates to a specific contextual point (e.g. Birling\'s speech about the Titanic — dramatic irony; Eva Smith\'s treatment — workers\' rights; Sheila\'s initial frivolity — gender roles). Students annotate each extract, identifying: (a) the contextual link, (b) Priestley\'s purpose in this moment, (c) how a 1945 audience would respond. After individual annotation, students write one full analytical paragraph linking context to one extract, using the frame: "Priestley uses [character/moment] to [purpose] because [contextual link]. A 1945 audience would..."',
+          "Provide students with five short extracts from the play. Each extract relates to a specific contextual point (e.g. Birling's speech about the Titanic - dramatic irony; Eva Smith's treatment - workers' rights; Sheila's initial frivolity - gender roles). Students annotate each extract, identifying: (a) the contextual link, (b) Priestley's purpose in this moment, (c) how a 1945 audience would respond. After individual annotation, students write one full analytical paragraph linking context to one extract, using the frame: \"Priestley uses [character/moment] to [purpose] because [contextual link]. A 1945 audience would...\"",
         differentiation: {
           support:
-            'Provide context cards that match to each extract — students pair them up before annotating.',
+            'Provide context cards that match to each extract - students pair them up before annotating.',
           core: 'Students annotate independently and write a full paragraph.',
           stretch:
             'Students write two paragraphs on different extracts and compare how Priestley uses different characters to convey the same message.',
@@ -857,15 +846,14 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Why did Priestley set the play in 1912 but write it in 1945? What effect does this create?',
         lines: 5,
         modelAnswer:
-          'Priestley set the play in 1912 so the audience in 1945 could see how wrong the Birlings\' confident, complacent views were. Birling\'s assertion that war is impossible and the Titanic is "unsinkable" would provoke dramatic irony — the audience knows both World Wars have happened and the Titanic sank. This makes Birling look foolish and undermines the capitalist, self-interested worldview he represents.',
+          'Priestley set the play in 1912 so the audience in 1945 could see how wrong the Birlings\' confident, complacent views were. Birling\'s assertion that war is impossible and the Titanic is "unsinkable" would provoke dramatic irony - the audience knows both World Wars have happened and the Titanic sank. This makes Birling look foolish and undermines the capitalist, self-interested worldview he represents.',
         marks: 4,
       },
       {
-        question:
-          'What were Priestley\'s political beliefs? How do they influence the play?',
+        question: "What were Priestley's political beliefs? How do they influence the play?",
         lines: 4,
         modelAnswer:
-          'Priestley was a socialist who believed in collective responsibility and the welfare state. This influences the play through the Inspector, who acts as Priestley\'s mouthpiece, delivering the message that society must care for its most vulnerable members. The Birlings represent the capitalist class Priestley wanted to challenge.',
+          "Priestley was a socialist who believed in collective responsibility and the welfare state. This influences the play through the Inspector, who acts as Priestley's mouthpiece, delivering the message that society must care for its most vulnerable members. The Birlings represent the capitalist class Priestley wanted to challenge.",
         marks: 3,
       },
       {
@@ -873,7 +861,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Explain what "dramatic irony" means and give one example from An Inspector Calls.',
         lines: 4,
         modelAnswer:
-          'Dramatic irony occurs when the audience knows something the characters do not. In the play, Birling says "the Titanic — she sails next week — forty-six thousand eight hundred tons — unsinkable, absolutely unsinkable." The 1945 audience knows the Titanic sank on its maiden voyage, which makes Birling look arrogant and foolish, undermining everything else he says.',
+          'Dramatic irony occurs when the audience knows something the characters do not. In the play, Birling says "the Titanic - she sails next week - forty-six thousand eight hundred tons - unsinkable, absolutely unsinkable." The 1945 audience knows the Titanic sank on its maiden voyage, which makes Birling look arrogant and foolish, undermining everything else he says.',
         marks: 3,
       },
       {
@@ -881,7 +869,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How would a 1945 audience have responded to the play differently from a modern audience? Explain with reference to context.',
         lines: 6,
         modelAnswer:
-          'A 1945 audience had just lived through the Second World War and the Blitz. They had experienced collective suffering and were about to vote for a Labour government promising a welfare state. Priestley\'s message about collective responsibility would have felt urgent and personal. A modern audience might view the play more as a period piece, but the themes of social inequality and responsibility for others remain relevant.',
+          "A 1945 audience had just lived through the Second World War and the Blitz. They had experienced collective suffering and were about to vote for a Labour government promising a welfare state. Priestley's message about collective responsibility would have felt urgent and personal. A modern audience might view the play more as a period piece, but the themes of social inequality and responsibility for others remain relevant.",
         marks: 5,
       },
       {
@@ -894,14 +882,14 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'Context is one of the most heavily rewarded elements in Literature essays — students must learn to integrate it seamlessly rather than bolting it on.',
+      'Context is one of the most heavily rewarded elements in Literature essays - students must learn to integrate it seamlessly rather than bolting it on.',
       'Avoid letting context become a separate "paragraph of facts." Model how to weave context into analytical points throughout a response.',
       'The dual timeline is a reference tool students should keep in their folders for revision.',
-      'Priestley\'s Postscripts broadcasts are available online and a short excerpt can be powerful for demonstrating his voice and convictions.',
+      "Priestley's Postscripts broadcasts are available online and a short excerpt can be powerful for demonstrating his voice and convictions.",
     ],
     targetedSkills: [
       'Contextual Understanding',
-      'Writer\'s Purpose',
+      "Writer's Purpose",
       'Dramatic Irony',
       'Analytical Writing',
       'AO3 Context',
@@ -918,14 +906,14 @@ export const y11IgcseLessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Analyse how Priestley constructs the Birling family as representatives of different social attitudes',
-      'Explore the Inspector as a dramatic device and mouthpiece for Priestley\'s message',
-      'Compare the older and younger generations\' responses to guilt and responsibility',
+      "Explore the Inspector as a dramatic device and mouthpiece for Priestley's message",
+      "Compare the older and younger generations' responses to guilt and responsibility",
       'Write a comparative character analysis integrating quotation, analysis, and context',
     ],
     successCriteria: [
-      'I can explain what each Birling family member represents in terms of Priestley\'s message',
-      'I can analyse the Inspector\'s function as both a character and a dramatic device',
-      'I can compare how the older and younger generations respond to the Inspector\'s questioning',
+      "I can explain what each Birling family member represents in terms of Priestley's message",
+      "I can analyse the Inspector's function as both a character and a dramatic device",
+      "I can compare how the older and younger generations respond to the Inspector's questioning",
       'I can write a comparative paragraph using embedded quotations and contextual references',
     ],
     keywords: [
@@ -942,12 +930,12 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Character Spectrum',
       duration: '7 minutes',
       instructions:
-        'Draw a spectrum on the board from "Accepts Responsibility" to "Rejects Responsibility." Students position each character (Mr Birling, Mrs Birling, Sheila, Eric, Gerald) on the spectrum using sticky notes and must justify their placement with a brief quotation or reference. Teacher facilitates debate where characters are contested — particularly Gerald, who is often placed differently by different students. Establish that the generational divide is central to Priestley\'s message.',
+        'Draw a spectrum on the board from "Accepts Responsibility" to "Rejects Responsibility." Students position each character (Mr Birling, Mrs Birling, Sheila, Eric, Gerald) on the spectrum using sticky notes and must justify their placement with a brief quotation or reference. Teacher facilitates debate where characters are contested - particularly Gerald, who is often placed differently by different students. Establish that the generational divide is central to Priestley\'s message.',
       differentiation: {
         support: 'Provide a quotation bank for each character to help with justification.',
         core: 'Students position and justify independently from memory.',
         stretch:
-          'Students argue for why a character\'s position might shift during the play — where do they start vs where do they end?',
+          "Students argue for why a character's position might shift during the play - where do they start vs where do they end?",
       },
       resources: ['Spectrum graphic on the board', 'Sticky notes', 'Quotation bank (support tier)'],
     },
@@ -956,13 +944,13 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Character Function Analysis',
         duration: '22 minutes',
         instructions:
-          'Students work in pairs, each pair assigned one character. Using a character analysis grid, they complete four sections: (1) What the character represents in society (e.g. Mr Birling = capitalist employer, Sheila = hope for change); (2) Key quotations (minimum three); (3) How the character responds to the Inspector — do they change or remain static?; (4) Priestley\'s purpose — why did he create this character? After 15 minutes, pairs present their findings in 60 seconds. Class completes the grid for all characters based on presentations. Then focus on the Inspector: teacher leads analysis of the Inspector as a dramatic device — his omniscience, his control of timing, his final speech. Is he a real inspector? A ghost? A collective conscience? Students discuss in pairs and write a statement about his function.',
+          "Students work in pairs, each pair assigned one character. Using a character analysis grid, they complete four sections: (1) What the character represents in society (e.g. Mr Birling = capitalist employer, Sheila = hope for change); (2) Key quotations (minimum three); (3) How the character responds to the Inspector - do they change or remain static?; (4) Priestley's purpose - why did he create this character? After 15 minutes, pairs present their findings in 60 seconds. Class completes the grid for all characters based on presentations. Then focus on the Inspector: teacher leads analysis of the Inspector as a dramatic device - his omniscience, his control of timing, his final speech. Is he a real inspector? A ghost? A collective conscience? Students discuss in pairs and write a statement about his function.",
         differentiation: {
           support:
             'Provide a partially completed grid with one section filled in for each character as a model.',
           core: 'Students complete the full grid and present independently.',
           stretch:
-            'Students evaluate which character is most effective as a vehicle for Priestley\'s message and write a justified argument.',
+            "Students evaluate which character is most effective as a vehicle for Priestley's message and write a justified argument.",
         },
         resources: [
           'Character analysis grid (A3 size)',
@@ -974,7 +962,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Comparative Paragraph Writing',
         duration: '18 minutes',
         instructions:
-          'Model a comparative paragraph on the board: "While Mr Birling [quotation + analysis], Sheila [quotation + analysis]. This generational contrast reveals Priestley\'s belief that [context + purpose]." Students then write their own comparative paragraph comparing any two characters\' responses to responsibility. They must include: embedded quotations, analysis of language, reference to Priestley\'s purpose, and a contextual link. After writing, students highlight their paragraph using four colours: quotation (yellow), analysis (green), purpose (blue), context (red). This visual check reveals any missing elements.',
+          "Model a comparative paragraph on the board: \"While Mr Birling [quotation + analysis], Sheila [quotation + analysis]. This generational contrast reveals Priestley's belief that [context + purpose].\" Students then write their own comparative paragraph comparing any two characters' responses to responsibility. They must include: embedded quotations, analysis of language, reference to Priestley's purpose, and a contextual link. After writing, students highlight their paragraph using four colours: quotation (yellow), analysis (green), purpose (blue), context (red). This visual check reveals any missing elements.",
         differentiation: {
           support:
             'Provide the comparative paragraph frame with sentence starters and a quotation bank.',
@@ -990,10 +978,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'The Inspector\'s Message',
+      title: "The Inspector's Message",
       duration: '5 minutes',
       instructions:
-        'Display the Inspector\'s final speech. Students read it silently. Then, in one sentence, answer: "Who is the Inspector really speaking to — the Birlings or the audience?" Students share responses. Teacher draws out the idea that the Inspector breaks the fourth wall — he is speaking directly to the 1945 audience, delivering Priestley\'s message.',
+        'Display the Inspector\'s final speech. Students read it silently. Then, in one sentence, answer: "Who is the Inspector really speaking to - the Birlings or the audience?" Students share responses. Teacher draws out the idea that the Inspector breaks the fourth wall - he is speaking directly to the 1945 audience, delivering Priestley\'s message.',
       differentiation: {
         support: 'Provide two possible interpretations for students to choose between.',
         core: 'Students write their own interpretation independently.',
@@ -1009,36 +997,34 @@ export const y11IgcseLessons: LessonPlan[] = [
           'What does Mr Birling represent in the play? Support your answer with a quotation.',
         lines: 5,
         modelAnswer:
-          'Mr Birling represents the capitalist establishment — wealthy, self-interested, and resistant to change. His assertion that "a man has to mind his own business" encapsulates his belief that individuals have no obligation to others. Priestley uses him as a target for criticism, making his predictions about war and the Titanic wrong to undermine his authority.',
+          'Mr Birling represents the capitalist establishment - wealthy, self-interested, and resistant to change. His assertion that "a man has to mind his own business" encapsulates his belief that individuals have no obligation to others. Priestley uses him as a target for criticism, making his predictions about war and the Titanic wrong to undermine his authority.',
         marks: 4,
       },
       {
-        question:
-          'How does Sheila change during the play? What does her change represent?',
+        question: 'How does Sheila change during the play? What does her change represent?',
         lines: 5,
         modelAnswer:
-          'Sheila begins as a naive, materialistic young woman but undergoes a moral awakening. By the end, she accepts full responsibility and is horrified by her parents\' refusal to do the same. Her transformation represents Priestley\'s hope that the younger generation can break from the selfish values of their parents and build a more just society.',
+          "Sheila begins as a naive, materialistic young woman but undergoes a moral awakening. By the end, she accepts full responsibility and is horrified by her parents' refusal to do the same. Her transformation represents Priestley's hope that the younger generation can break from the selfish values of their parents and build a more just society.",
         marks: 4,
       },
       {
-        question:
-          'Is the Inspector a realistic character? Explain his dramatic function.',
+        question: 'Is the Inspector a realistic character? Explain his dramatic function.',
         lines: 5,
         modelAnswer:
-          'The Inspector is not a realistic character — he is a dramatic device. He knows things he should not, controls the pace of revelations, and delivers a speech that sounds more like a political address than a police investigation. His function is to act as Priestley\'s mouthpiece, forcing each character (and the audience) to confront their responsibility. He may represent a collective conscience or a supernatural moral force.',
+          "The Inspector is not a realistic character - he is a dramatic device. He knows things he should not, controls the pace of revelations, and delivers a speech that sounds more like a political address than a police investigation. His function is to act as Priestley's mouthpiece, forcing each character (and the audience) to confront their responsibility. He may represent a collective conscience or a supernatural moral force.",
         marks: 4,
       },
       {
         question:
-          'Compare how Mr Birling and Eric respond to the Inspector\'s revelations about Eva Smith. What does this contrast suggest?',
+          "Compare how Mr Birling and Eric respond to the Inspector's revelations about Eva Smith. What does this contrast suggest?",
         lines: 6,
         modelAnswer:
-          'Mr Birling dismisses Eva\'s death as irrelevant to him and is more concerned about a potential scandal. Eric, by contrast, is devastated and cries "my child — your own grandchild." This generational contrast suggests that the older generation is hardened by privilege and self-interest, while the younger generation retains the capacity for empathy and moral growth. Priestley implies that social change depends on the young.',
+          'Mr Birling dismisses Eva\'s death as irrelevant to him and is more concerned about a potential scandal. Eric, by contrast, is devastated and cries "my child - your own grandchild." This generational contrast suggests that the older generation is hardened by privilege and self-interest, while the younger generation retains the capacity for empathy and moral growth. Priestley implies that social change depends on the young.',
         marks: 5,
       },
       {
         question:
-          'Write a comparative paragraph analysing how Priestley presents Mrs Birling and Sheila differently. Include quotations, analysis, and a reference to Priestley\'s purpose.',
+          "Write a comparative paragraph analysing how Priestley presents Mrs Birling and Sheila differently. Include quotations, analysis, and a reference to Priestley's purpose.",
         lines: 8,
         modelAnswer:
           'Priestley presents Mrs Birling as morally rigid and incapable of self-reflection. She refuses to accept blame, insisting "I did nothing wrong" even after learning the consequences of her actions. The flatness of this statement, with its monosyllabic certainty, reveals her emotional coldness. In contrast, Sheila\'s guilt is immediate and genuine: "If I could help her now, I would." The conditional "if I could" shows Sheila understands that responsibility extends beyond self-interest. Priestley uses this mother-daughter contrast to argue that the older generation\'s values are bankrupt, while the younger generation offers hope for the socialist society he envisioned after the war.',
@@ -1046,16 +1032,16 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The character spectrum starter provokes excellent debate — resist settling it too quickly. The ambiguity around Gerald is productive.',
+      'The character spectrum starter provokes excellent debate - resist settling it too quickly. The ambiguity around Gerald is productive.',
       'Students often struggle to analyse the Inspector because he does not fit conventional character analysis. Reframe him as a device first, then discuss his character qualities.',
-      'The colour-coding self-check in the writing activity is a powerful metacognitive tool — students can immediately see if their paragraph is analysis-heavy but context-light, for example.',
-      'The Inspector\'s final speech should be displayed permanently or stuck into folders — it is the single most important passage for understanding Priestley\'s message.',
+      'The colour-coding self-check in the writing activity is a powerful metacognitive tool - students can immediately see if their paragraph is analysis-heavy but context-light, for example.',
+      "The Inspector's final speech should be displayed permanently or stuck into folders - it is the single most important passage for understanding Priestley's message.",
     ],
     targetedSkills: [
       'Character Analysis',
       'Comparative Writing',
       'AO1 Textual Reference',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
       'AO3 Context',
     ],
   },
@@ -1076,9 +1062,9 @@ export const y11IgcseLessons: LessonPlan[] = [
     ],
     successCriteria: [
       'I can trace the theme of responsibility through at least three key moments in the play',
-      'I can explain how class differences contribute to Eva Smith\'s tragedy',
-      'I can analyse the generational divide and explain its significance to Priestley\'s message',
-      'I can write a thematic paragraph that integrates quotation, analysis, context, and writer\'s purpose',
+      "I can explain how class differences contribute to Eva Smith's tragedy",
+      "I can analyse the generational divide and explain its significance to Priestley's message",
+      "I can write a thematic paragraph that integrates quotation, analysis, context, and writer's purpose",
     ],
     keywords: [
       'collective responsibility',
@@ -1094,7 +1080,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Theme Web',
       duration: '7 minutes',
       instructions:
-        'Display the three key themes on the board: Responsibility, Class, Generational Conflict. Students have 4 minutes to create a web connecting the themes to characters, events, and quotations. The aim is to show that the themes are interconnected — class creates the conditions for exploitation, responsibility is the moral question that arises, and the generational divide determines who learns the lesson. Teacher facilitates a brief sharing round, drawing connections between student webs.',
+        'Display the three key themes on the board: Responsibility, Class, Generational Conflict. Students have 4 minutes to create a web connecting the themes to characters, events, and quotations. The aim is to show that the themes are interconnected - class creates the conditions for exploitation, responsibility is the moral question that arises, and the generational divide determines who learns the lesson. Teacher facilitates a brief sharing round, drawing connections between student webs.',
       differentiation: {
         support: 'Provide a pre-started web with some connections already drawn as a model.',
         core: 'Students create their web independently from memory of the text.',
@@ -1126,7 +1112,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Thematic Essay Paragraph',
         duration: '20 minutes',
         instructions:
-          'Teacher models writing a thematic paragraph using a clear structure: Theme statement → Embedded quotation → Language analysis → Contextual link → Writer\'s purpose. The model paragraph addresses responsibility. Students then write their own thematic paragraph on either class or generational conflict, following the same structure. After writing, students use a peer-assessment grid to evaluate their partner\'s paragraph against the five structural elements. Students redraft one section based on the feedback received.',
+          "Teacher models writing a thematic paragraph using a clear structure: Theme statement → Embedded quotation → Language analysis → Contextual link → Writer's purpose. The model paragraph addresses responsibility. Students then write their own thematic paragraph on either class or generational conflict, following the same structure. After writing, students use a peer-assessment grid to evaluate their partner's paragraph against the five structural elements. Students redraft one section based on the feedback received.",
         differentiation: {
           support:
             'Provide the paragraph structure as a frame with sentence starters and a quotation bank.',
@@ -1142,15 +1128,15 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'Priestley\'s Most Important Theme',
+      title: "Priestley's Most Important Theme",
       duration: '5 minutes',
       instructions:
-        'Students vote: which theme is most central to Priestley\'s message — Responsibility, Class, or Generational Conflict? They must justify their vote in one sentence. Teacher counts votes and facilitates a brief debate. Draw out the idea that responsibility is arguably the umbrella theme, but that class and generation determine how characters respond to it.',
+        "Students vote: which theme is most central to Priestley's message - Responsibility, Class, or Generational Conflict? They must justify their vote in one sentence. Teacher counts votes and facilitates a brief debate. Draw out the idea that responsibility is arguably the umbrella theme, but that class and generation determine how characters respond to it.",
       differentiation: {
         support: 'Provide three pre-written justifications for students to choose from.',
         core: 'Students write their own justification independently.',
         stretch:
-          'Students argue that the themes cannot be separated and that answering this question is itself a false choice — then justify that position.',
+          'Students argue that the themes cannot be separated and that answering this question is itself a false choice - then justify that position.',
       },
     },
     homework:
@@ -1161,31 +1147,31 @@ export const y11IgcseLessons: LessonPlan[] = [
           'What is the difference between "individual responsibility" and "collective responsibility"? How does the play explore both?',
         lines: 5,
         modelAnswer:
-          'Individual responsibility means each person is accountable for their own actions — each Birling contributed separately to Eva\'s downfall. Collective responsibility means society as a whole must care for its members. The Inspector\'s final speech ("We are responsible for each other") argues that individual failures are symptoms of a collective moral failure. Priestley wants the audience to see that both types of responsibility matter.',
+          'Individual responsibility means each person is accountable for their own actions - each Birling contributed separately to Eva\'s downfall. Collective responsibility means society as a whole must care for its members. The Inspector\'s final speech ("We are responsible for each other") argues that individual failures are symptoms of a collective moral failure. Priestley wants the audience to see that both types of responsibility matter.',
         marks: 4,
       },
       {
         question:
-          'How does class contribute to Eva Smith\'s tragedy? Give specific examples from the play.',
+          "How does class contribute to Eva Smith's tragedy? Give specific examples from the play.",
         lines: 5,
         modelAnswer:
-          'Eva is exploited at every turn because she is working-class and therefore powerless. Birling fires her for requesting fair wages. Sheila has her dismissed from a shop on a whim. Gerald keeps her as a mistress because her poverty makes her dependent. Mrs Birling refuses her charity because Eva used the Birling name. In each case, the Birlings\' class privilege enables them to act without consequences while Eva has no recourse.',
+          "Eva is exploited at every turn because she is working-class and therefore powerless. Birling fires her for requesting fair wages. Sheila has her dismissed from a shop on a whim. Gerald keeps her as a mistress because her poverty makes her dependent. Mrs Birling refuses her charity because Eva used the Birling name. In each case, the Birlings' class privilege enables them to act without consequences while Eva has no recourse.",
         marks: 4,
       },
       {
         question:
-          'Why is the generational divide important to Priestley\'s message? Use evidence from the play.',
+          "Why is the generational divide important to Priestley's message? Use evidence from the play.",
         lines: 5,
         modelAnswer:
-          'The generational divide is important because it represents Priestley\'s belief that social change is possible through the young. Mr and Mrs Birling refuse to learn — they revert to complacency the moment they think the Inspector might be fake. Sheila and Eric, however, maintain their guilt and moral growth regardless. Priestley was writing for a post-war audience deciding the future: the old ways (capitalism, class rigidity) or a new society (welfare state, collective responsibility).',
+          "The generational divide is important because it represents Priestley's belief that social change is possible through the young. Mr and Mrs Birling refuse to learn - they revert to complacency the moment they think the Inspector might be fake. Sheila and Eric, however, maintain their guilt and moral growth regardless. Priestley was writing for a post-war audience deciding the future: the old ways (capitalism, class rigidity) or a new society (welfare state, collective responsibility).",
         marks: 5,
       },
       {
         question:
-          'Choose one quotation from the Inspector\'s final speech and analyse it in detail, connecting it to the theme of responsibility.',
+          "Choose one quotation from the Inspector's final speech and analyse it in detail, connecting it to the theme of responsibility.",
         lines: 6,
         modelAnswer:
-          '"We don\'t live alone. We are members of one body. We are responsible for each other." The metaphor "members of one body" presents society as a single organism, implying that harm to one part damages the whole. This directly opposes Birling\'s individualism. The repeated "we" makes it universal and inclusive — no one is exempt. For the 1945 audience, this echoed the collective spirit of wartime and the emerging welfare state, making Priestley\'s political argument personal and urgent.',
+          '"We don\'t live alone. We are members of one body. We are responsible for each other." The metaphor "members of one body" presents society as a single organism, implying that harm to one part damages the whole. This directly opposes Birling\'s individualism. The repeated "we" makes it universal and inclusive - no one is exempt. For the 1945 audience, this echoed the collective spirit of wartime and the emerging welfare state, making Priestley\'s political argument personal and urgent.',
         marks: 5,
       },
       {
@@ -1193,21 +1179,21 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How are the themes of responsibility and class connected in the play? Write a paragraph explaining their relationship.',
         lines: 8,
         modelAnswer:
-          'Priestley presents class as the mechanism through which responsibility is avoided. The Birlings feel no responsibility towards Eva because she belongs to a different class — she is a "girl of that sort" to Mrs Birling, a disposable worker to Mr Birling. Class creates emotional and moral distance, allowing the wealthy to exploit without guilt. The Inspector disrupts this by forcing the Birlings to see Eva as a human being with feelings and rights. Priestley argues that a just society requires the abolition of class barriers so that responsibility can no longer be evaded through social hierarchy.',
+          'Priestley presents class as the mechanism through which responsibility is avoided. The Birlings feel no responsibility towards Eva because she belongs to a different class - she is a "girl of that sort" to Mrs Birling, a disposable worker to Mr Birling. Class creates emotional and moral distance, allowing the wealthy to exploit without guilt. The Inspector disrupts this by forcing the Birlings to see Eva as a human being with feelings and rights. Priestley argues that a just society requires the abolition of class barriers so that responsibility can no longer be evaded through social hierarchy.',
         marks: 5,
       },
     ],
     teacherNotes: [
       'Themes questions are the most common essay type in the Literature exam. Students must be able to write about themes with embedded textual evidence, not just discuss them in the abstract.',
-      'The theme poster activity creates revision resources — laminate and display them or photograph for digital revision folders.',
+      'The theme poster activity creates revision resources - laminate and display them or photograph for digital revision folders.',
       'Emphasise that examiners reward responses that connect themes rather than treating them in isolation.',
-      'The peer-assessment grid should be modelled carefully — students need to understand what "language analysis" looks like versus "retelling the plot."',
+      'The peer-assessment grid should be modelled carefully - students need to understand what "language analysis" looks like versus "retelling the plot."',
     ],
     targetedSkills: [
       'Thematic Analysis',
       'Essay Writing',
       'AO1 Textual Reference',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
       'AO3 Context',
     ],
   },
@@ -1223,13 +1209,13 @@ export const y11IgcseLessons: LessonPlan[] = [
     objectives: [
       'Identify and analyse key dramatic techniques used in An Inspector Calls',
       'Understand how Priestley uses stage directions, dramatic irony, the unities, and the well-made play structure',
-      'Analyse the effect of the ending — the phone call and its implications',
+      'Analyse the effect of the ending - the phone call and its implications',
       'Write about dramatic techniques using subject-specific terminology',
     ],
     successCriteria: [
       'I can identify at least four dramatic techniques and explain their effect on the audience',
-      'I can analyse Priestley\'s use of stage directions to convey meaning beyond dialogue',
-      'I can explain the significance of the final phone call and its impact on the play\'s message',
+      "I can analyse Priestley's use of stage directions to convey meaning beyond dialogue",
+      "I can explain the significance of the final phone call and its impact on the play's message",
       'I can write analytically about dramatic techniques using appropriate terminology',
     ],
     keywords: [
@@ -1247,9 +1233,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Stage Direction Detectives',
       duration: '7 minutes',
       instructions:
-        'Display three stage directions from the opening of the play (e.g. the lighting change from "pink and intimate" to "brighter and harder" when the Inspector arrives). Students discuss in pairs: what do these stage directions tell us that the dialogue does not? Teacher draws out the key point: Priestley is a playwright, not a novelist — meaning is created through visual and theatrical elements as much as through words. Students must write about the play AS A PLAY in their essays.',
+        'Display three stage directions from the opening of the play (e.g. the lighting change from "pink and intimate" to "brighter and harder" when the Inspector arrives). Students discuss in pairs: what do these stage directions tell us that the dialogue does not? Teacher draws out the key point: Priestley is a playwright, not a novelist - meaning is created through visual and theatrical elements as much as through words. Students must write about the play AS A PLAY in their essays.',
       differentiation: {
-        support: 'Provide an explanation of what stage directions are and what they control (lighting, movement, tone).',
+        support:
+          'Provide an explanation of what stage directions are and what they control (lighting, movement, tone).',
         core: 'Students analyse the stage directions independently and infer their significance.',
         stretch:
           'Students explain how a director might interpret these stage directions differently and what effect that would have on the audience.',
@@ -1261,13 +1248,13 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Dramatic Techniques Gallery Walk',
         duration: '20 minutes',
         instructions:
-          'Set up six stations around the room, each featuring a different dramatic technique with an extract and explanation card: (1) Dramatic irony (Birling\'s Titanic speech), (2) Stage directions (lighting change), (3) The unities of time/place/action, (4) The well-made play structure (exposition, complication, denouement), (5) The cliffhanger ending (the phone call), (6) Breaking the fourth wall (the Inspector\'s final speech). Students visit each station in pairs, spend 3 minutes reading and annotating, then write a single analytical sentence about the technique\'s effect. After the gallery walk, students identify which two techniques they feel most confident writing about.',
+          "Set up six stations around the room, each featuring a different dramatic technique with an extract and explanation card: (1) Dramatic irony (Birling's Titanic speech), (2) Stage directions (lighting change), (3) The unities of time/place/action, (4) The well-made play structure (exposition, complication, denouement), (5) The cliffhanger ending (the phone call), (6) Breaking the fourth wall (the Inspector's final speech). Students visit each station in pairs, spend 3 minutes reading and annotating, then write a single analytical sentence about the technique's effect. After the gallery walk, students identify which two techniques they feel most confident writing about.",
         differentiation: {
           support:
             'Provide an analytical sentence frame at each station (e.g. "Priestley uses [technique] to [effect], which makes the audience feel...").',
           core: 'Students write analytical sentences independently at each station.',
           stretch:
-            'Students rank the six techniques by importance to Priestley\'s message and write a justification for their top choice.',
+            "Students rank the six techniques by importance to Priestley's message and write a justification for their top choice.",
         },
         resources: [
           'Six station cards with extracts and explanations',
@@ -1279,13 +1266,13 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'The Ending: Analysing the Phone Call',
         duration: '20 minutes',
         instructions:
-          'Read the final page of the play aloud as a class. Then replay the final phone call: "A girl has just died... a police inspector is on his way." Students discuss in pairs: what is the effect of this ending? Is it a ghost story? A time loop? A moral warning? Teacher introduces the concept of the cyclical structure — the play threatens to repeat, which means the Birlings will be tested again. Will they pass this time? Students write two paragraphs: (1) What the ending means — analysing the cyclical structure and its effect; (2) Why Priestley chose this ending — connecting to his purpose and the 1945 audience.',
+          'Read the final page of the play aloud as a class. Then replay the final phone call: "A girl has just died... a police inspector is on his way." Students discuss in pairs: what is the effect of this ending? Is it a ghost story? A time loop? A moral warning? Teacher introduces the concept of the cyclical structure - the play threatens to repeat, which means the Birlings will be tested again. Will they pass this time? Students write two paragraphs: (1) What the ending means - analysing the cyclical structure and its effect; (2) Why Priestley chose this ending - connecting to his purpose and the 1945 audience.',
         differentiation: {
           support:
             'Provide guided questions for each paragraph and a word bank of analytical vocabulary.',
           core: 'Students write both paragraphs independently.',
           stretch:
-            'Students compare the ending to an alternative ending (e.g. if the second phone call never came) and evaluate which is more effective for Priestley\'s purpose.',
+            "Students compare the ending to an alternative ending (e.g. if the second phone call never came) and evaluate which is more effective for Priestley's purpose.",
         },
         resources: [
           'Final page of the play (printed extract)',
@@ -1307,14 +1294,14 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Write a 200-word analysis of the significance of the lighting change when the Inspector arrives. Explain what it symbolises and how it contributes to the audience\'s understanding of the Inspector\'s role.',
+      "Write a 200-word analysis of the significance of the lighting change when the Inspector arrives. Explain what it symbolises and how it contributes to the audience's understanding of the Inspector's role.",
     worksheetQuestions: [
       {
         question:
           'What is the significance of the lighting change from "pink and intimate" to "brighter and harder" when the Inspector arrives?',
         lines: 5,
         modelAnswer:
-          'The "pink and intimate" lighting represents the Birlings\' warm, comfortable, self-satisfied world. When the Inspector arrives, the "brighter and harder" light symbolises scrutiny, truth, and exposure — the family can no longer hide in their complacency. Priestley uses this stage direction to signal that the Inspector brings moral clarity that is uncomfortable and unavoidable.',
+          'The "pink and intimate" lighting represents the Birlings\' warm, comfortable, self-satisfied world. When the Inspector arrives, the "brighter and harder" light symbolises scrutiny, truth, and exposure - the family can no longer hide in their complacency. Priestley uses this stage direction to signal that the Inspector brings moral clarity that is uncomfortable and unavoidable.',
         marks: 4,
       },
       {
@@ -1322,7 +1309,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Explain how Priestley uses the "three unities" (time, place, action) and why this is significant.',
         lines: 5,
         modelAnswer:
-          'The play takes place in one room (the dining room), in one evening, with one continuous storyline. This creates a claustrophobic, pressure-cooker atmosphere where characters cannot escape the Inspector\'s questioning. It also mirrors the real-time experience for the audience, making the tension feel immediate and inescapable.',
+          "The play takes place in one room (the dining room), in one evening, with one continuous storyline. This creates a claustrophobic, pressure-cooker atmosphere where characters cannot escape the Inspector's questioning. It also mirrors the real-time experience for the audience, making the tension feel immediate and inescapable.",
         marks: 4,
       },
       {
@@ -1330,7 +1317,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Why does Priestley end the play with a second phone call? What effect does this have?',
         lines: 5,
         modelAnswer:
-          'The second phone call announces that a real inspector is on the way, creating a cyclical structure. This is significant because it suggests the Birlings will be tested again — those who have learned nothing (Mr and Mrs Birling) will be exposed, while those who have changed (Sheila and Eric) may respond differently. For the audience, it serves as a warning: if you do not learn from your mistakes, history will repeat itself.',
+          'The second phone call announces that a real inspector is on the way, creating a cyclical structure. This is significant because it suggests the Birlings will be tested again - those who have learned nothing (Mr and Mrs Birling) will be exposed, while those who have changed (Sheila and Eric) may respond differently. For the audience, it serves as a warning: if you do not learn from your mistakes, history will repeat itself.',
         marks: 5,
       },
       {
@@ -1338,27 +1325,27 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How does the Inspector\'s final speech break the "fourth wall"? Why is this important?',
         lines: 5,
         modelAnswer:
-          'The Inspector\'s speech — "We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish" — shifts from addressing the Birlings to addressing the audience directly. The prophetic tone and the reference to "fire and blood" (which a 1945 audience would associate with the Blitz) makes the message personal and urgent. Priestley breaks the fourth wall to transform the play from entertainment into a political call to action.',
+          'The Inspector\'s speech - "We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish" - shifts from addressing the Birlings to addressing the audience directly. The prophetic tone and the reference to "fire and blood" (which a 1945 audience would associate with the Blitz) makes the message personal and urgent. Priestley breaks the fourth wall to transform the play from entertainment into a political call to action.',
         marks: 4,
       },
       {
         question:
-          'Choose one dramatic technique from the play and write a paragraph explaining its effect on the audience. Include a quotation and a reference to Priestley\'s purpose.',
+          "Choose one dramatic technique from the play and write a paragraph explaining its effect on the audience. Include a quotation and a reference to Priestley's purpose.",
         lines: 8,
         modelAnswer:
-          'Priestley uses dramatic irony to undermine Mr Birling\'s authority and, by extension, the capitalist worldview he represents. When Birling confidently dismisses the possibility of war and declares the Titanic "unsinkable," the 1945 audience — who had lived through two World Wars — would recognise his ignorance immediately. This creates a sense of superiority over Birling, making the audience more receptive to the Inspector\'s opposing message of collective responsibility. Priestley\'s purpose is clear: if Birling is wrong about everything, his political philosophy of selfish individualism must also be wrong.',
+          "Priestley uses dramatic irony to undermine Mr Birling's authority and, by extension, the capitalist worldview he represents. When Birling confidently dismisses the possibility of war and declares the Titanic \"unsinkable,\" the 1945 audience - who had lived through two World Wars - would recognise his ignorance immediately. This creates a sense of superiority over Birling, making the audience more receptive to the Inspector's opposing message of collective responsibility. Priestley's purpose is clear: if Birling is wrong about everything, his political philosophy of selfish individualism must also be wrong.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      'Students often forget that An Inspector Calls is a PLAY — they analyse it as if it were a novel. This lesson addresses that directly.',
+      'Students often forget that An Inspector Calls is a PLAY - they analyse it as if it were a novel. This lesson addresses that directly.',
       'The gallery walk creates a revision resource. Consider photographing the station cards for digital revision folders.',
-      'The ending discussion can provoke excellent debate — allow time for genuine disagreement about what the ending means.',
+      'The ending discussion can provoke excellent debate - allow time for genuine disagreement about what the ending means.',
       'Examiners specifically reward students who analyse dramatic techniques (AO2) rather than simply retelling the plot. Drill this distinction.',
     ],
     targetedSkills: [
       'Dramatic Technique Analysis',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
       'Stage Direction Analysis',
       'Structural Analysis',
       'Exam Writing',
@@ -1393,7 +1380,9 @@ export const y11IgcseLessons: LessonPlan[] = [
       'essay structure',
       'sustained analysis',
       'band descriptors',
-      'AO1', 'AO2', 'AO3',
+      'AO1',
+      'AO2',
+      'AO3',
     ],
     starterActivity: {
       title: 'Annotation Race',
@@ -1401,10 +1390,11 @@ export const y11IgcseLessons: LessonPlan[] = [
       instructions:
         'Display a short extract (8-10 lines) from the play. Students have 3 minutes to annotate as many features as possible: language techniques, dramatic techniques, contextual links, links to themes, writer\'s purpose. After 3 minutes, pairs compare annotations and add anything they missed. Teacher models a "master annotation" on the board, highlighting the types of points that lead to top-band responses: those that combine technique identification with analysis of effect AND context.',
       differentiation: {
-        support: 'Provide an annotation key showing what to look for (e.g. circle language, underline stage directions, box contextual links).',
+        support:
+          'Provide an annotation key showing what to look for (e.g. circle language, underline stage directions, box contextual links).',
         core: 'Students annotate independently using their own system.',
         stretch:
-          'Students prioritise their annotations — which three points would make the strongest essay paragraphs and why?',
+          'Students prioritise their annotations - which three points would make the strongest essay paragraphs and why?',
       },
       resources: ['Extract slide', 'Annotation key (support tier)'],
     },
@@ -1413,7 +1403,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Essay Structure Masterclass',
         duration: '13 minutes',
         instructions:
-          'Teacher models the ideal structure for an extract response: (1) Brief introduction — address the question directly with a thesis; (2) Close analysis of the extract — 2-3 paragraphs on language, dramatic technique, and structure within the extract; (3) Wider textual links — how the extract connects to the rest of the play; (4) Contextual integration — woven throughout, not bolted on. Display a model essay on the board and students colour-code it: yellow for close analysis, green for wider links, red for context, blue for language analysis. This visual mapping shows what a balanced response looks like.',
+          'Teacher models the ideal structure for an extract response: (1) Brief introduction - address the question directly with a thesis; (2) Close analysis of the extract - 2-3 paragraphs on language, dramatic technique, and structure within the extract; (3) Wider textual links - how the extract connects to the rest of the play; (4) Contextual integration - woven throughout, not bolted on. Display a model essay on the board and students colour-code it: yellow for close analysis, green for wider links, red for context, blue for language analysis. This visual mapping shows what a balanced response looks like.',
         differentiation: {
           support:
             'Provide a pre-colour-coded version and ask students to explain why each section is that colour.',
@@ -1446,9 +1436,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Self-Assessment and Targets',
       duration: '7 minutes',
       instructions:
-        'Distribute simplified band descriptors. Students read their own response and highlight the band they think best describes their work. They identify: (1) their strongest paragraph — what makes it effective; (2) their weakest paragraph — what specifically needs improvement; (3) one target for next time, expressed as an action (e.g. "I will include more language analysis in my close reading paragraphs"). Students share their target with a partner.',
+        'Distribute simplified band descriptors. Students read their own response and highlight the band they think best describes their work. They identify: (1) their strongest paragraph - what makes it effective; (2) their weakest paragraph - what specifically needs improvement; (3) one target for next time, expressed as an action (e.g. "I will include more language analysis in my close reading paragraphs"). Students share their target with a partner.',
       differentiation: {
-        support: 'Provide a self-assessment checklist (Did I include quotations? Did I analyse language? Did I mention context?).',
+        support:
+          'Provide a self-assessment checklist (Did I include quotations? Did I analyse language? Did I mention context?).',
         core: 'Students self-assess against the band descriptors independently.',
         stretch:
           'Students rewrite their weakest paragraph to move it up one band, then annotate the changes.',
@@ -1456,7 +1447,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       resources: ['Simplified band descriptors', 'Self-assessment checklist (support tier)'],
     },
     homework:
-      'Rewrite your weakest paragraph from today\'s timed response. Then write a brief reflection (100 words) explaining what you changed and why.',
+      "Rewrite your weakest paragraph from today's timed response. Then write a brief reflection (100 words) explaining what you changed and why.",
     worksheetQuestions: [
       {
         question:
@@ -1471,7 +1462,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Why is it important to analyse individual words from quotations rather than just identifying techniques?',
         lines: 4,
         modelAnswer:
-          'Identifying a technique (e.g. "Priestley uses a metaphor") only tells the examiner what the writer did, not how it works. Analysing individual words shows deeper understanding — it explains the connotations, the effect on the reader, and why the writer chose that specific word. This level of detail is what separates top-band responses from mid-band ones.',
+          'Identifying a technique (e.g. "Priestley uses a metaphor") only tells the examiner what the writer did, not how it works. Analysing individual words shows deeper understanding - it explains the connotations, the effect on the reader, and why the writer chose that specific word. This level of detail is what separates top-band responses from mid-band ones.',
         marks: 3,
       },
       {
@@ -1479,7 +1470,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'What is the difference between "extract analysis" and "wider textual knowledge"? Why do you need both?',
         lines: 5,
         modelAnswer:
-          'Extract analysis focuses closely on the language and techniques within the given passage. Wider textual knowledge refers to the rest of the play — other scenes, characters, or events that connect to the extract. Both are needed because the extract is a snapshot; examiners want to see that students understand its significance within the whole play and can make connections across the text.',
+          'Extract analysis focuses closely on the language and techniques within the given passage. Wider textual knowledge refers to the rest of the play - other scenes, characters, or events that connect to the extract. Both are needed because the extract is a snapshot; examiners want to see that students understand its significance within the whole play and can make connections across the text.',
         marks: 4,
       },
       {
@@ -1495,13 +1486,13 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Write a thesis statement and the first analytical paragraph for the question: "How does Priestley present ideas about guilt in this extract and in the play as a whole?"',
         lines: 10,
         modelAnswer:
-          'Thesis: Priestley presents guilt as a moral test — those who accept it demonstrate the capacity for change, while those who deny it reveal the moral bankruptcy of the capitalist class. Paragraph: In the extract, Sheila\'s response to her role in Eva\'s dismissal reveals genuine guilt. Her cry of "I feel rotten about it" uses the colloquial adjective "rotten" to convey deep, visceral disgust at her own behaviour. The informality of the language contrasts with her mother\'s more controlled, dismissive tone, suggesting that Sheila\'s guilt is instinctive rather than performed. Priestley positions Sheila\'s guilt as a sign of moral awakening — she is the first Birling to accept responsibility, which aligns her with the Inspector\'s message of collective care. For a 1945 audience, Sheila represents the hope that the younger generation can build a more compassionate society.',
+          "Thesis: Priestley presents guilt as a moral test - those who accept it demonstrate the capacity for change, while those who deny it reveal the moral bankruptcy of the capitalist class. Paragraph: In the extract, Sheila's response to her role in Eva's dismissal reveals genuine guilt. Her cry of \"I feel rotten about it\" uses the colloquial adjective \"rotten\" to convey deep, visceral disgust at her own behaviour. The informality of the language contrasts with her mother's more controlled, dismissive tone, suggesting that Sheila's guilt is instinctive rather than performed. Priestley positions Sheila's guilt as a sign of moral awakening - she is the first Birling to accept responsibility, which aligns her with the Inspector's message of collective care. For a 1945 audience, Sheila represents the hope that the younger generation can build a more compassionate society.",
         marks: 5,
       },
     ],
     teacherNotes: [
       'This is the key assessment-style lesson for the An Inspector Calls unit. The timed response should be marked with full formative feedback.',
-      'The most common weakness is imbalance — students either write only about the extract (ignoring wider textual knowledge) or barely reference the extract at all. The colour-coding activity addresses this directly.',
+      'The most common weakness is imbalance - students either write only about the extract (ignoring wider textual knowledge) or barely reference the extract at all. The colour-coding activity addresses this directly.',
       'Encourage students to spend a full 5 minutes annotating before they write. Students who skip annotation tend to produce weaker, less detailed responses.',
       'Consider collecting responses and using anonymised excerpts in a future lesson for class-wide feedback on common issues.',
     ],
@@ -1515,13 +1506,13 @@ export const y11IgcseLessons: LessonPlan[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // LITERATURE PAPER 2 — MACBETH (5 lessons)
+  // LITERATURE PAPER 2 - MACBETH (5 lessons)
   // ═══════════════════════════════════════════════════════════════════════════
 
   // ── Lesson 11: Jacobean Context and Shakespeare's Purpose ──────────────────
   {
     id: 'y11-igcse-11-jacobean-context',
-    title: 'Jacobean Context and Shakespeare\'s Purpose',
+    title: "Jacobean Context and Shakespeare's Purpose",
     text: 'Macbeth',
     board: 'Cambridge IGCSE',
     yearGroup: 'Year 11',
@@ -1530,7 +1521,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       'Understand the key aspects of Jacobean society relevant to Macbeth: the Divine Right of Kings, the Great Chain of Being, and attitudes towards witchcraft',
       'Analyse how Shakespeare wrote Macbeth to flatter King James I and reinforce political orthodoxy',
       'Connect contextual knowledge to specific moments in the text',
-      'Explain why context is essential for understanding the play\'s moral framework',
+      "Explain why context is essential for understanding the play's moral framework",
     ],
     successCriteria: [
       'I can explain the Divine Right of Kings and the Great Chain of Being and their relevance to Macbeth',
@@ -1553,12 +1544,13 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'What Did They Believe?',
       duration: '7 minutes',
       instructions:
-        'Display five statements about Jacobean beliefs (e.g. "The king was appointed by God", "Witches were real and could control weather", "Women should be obedient to their husbands"). Students sort them into "Believed by Jacobeans" and "Not believed" — the twist is that all five were genuinely believed. Teacher uses this to establish that a Jacobean audience watched Macbeth with a completely different worldview from a modern audience. Understanding this worldview is essential for understanding the play.',
+        'Display five statements about Jacobean beliefs (e.g. "The king was appointed by God", "Witches were real and could control weather", "Women should be obedient to their husbands"). Students sort them into "Believed by Jacobeans" and "Not believed" - the twist is that all five were genuinely believed. Teacher uses this to establish that a Jacobean audience watched Macbeth with a completely different worldview from a modern audience. Understanding this worldview is essential for understanding the play.',
       differentiation: {
-        support: 'Provide the statements on cards for physical sorting with brief explanations on the back.',
+        support:
+          'Provide the statements on cards for physical sorting with brief explanations on the back.',
         core: 'Students sort independently and predict which are genuine Jacobean beliefs.',
         stretch:
-          'Students explain how each belief would change the audience\'s response to a specific moment in Macbeth.',
+          "Students explain how each belief would change the audience's response to a specific moment in Macbeth.",
       },
       resources: ['Belief statement cards or slide'],
     },
@@ -1567,13 +1559,13 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Contextual Knowledge Building',
         duration: '20 minutes',
         instructions:
-          'Teacher delivers structured input on three key contextual areas: (1) The Divine Right of Kings and the Great Chain of Being — killing a king is not just murder but a cosmic crime that disrupts the natural order; (2) King James I — his obsession with witchcraft (Daemonologie), his lineage from Banquo (historically), the Gunpowder Plot of 1605; (3) Gender and power — patriarchal expectations and the threat posed by powerful women (Lady Macbeth as a transgressive figure). Students take Cornell notes with a summary section. After input, students complete a matching activity pairing contextual facts to moments in the play (e.g. "The Gunpowder Plot" matches to "Macbeth explores the consequences of regicide").',
+          'Teacher delivers structured input on three key contextual areas: (1) The Divine Right of Kings and the Great Chain of Being - killing a king is not just murder but a cosmic crime that disrupts the natural order; (2) King James I - his obsession with witchcraft (Daemonologie), his lineage from Banquo (historically), the Gunpowder Plot of 1605; (3) Gender and power - patriarchal expectations and the threat posed by powerful women (Lady Macbeth as a transgressive figure). Students take Cornell notes with a summary section. After input, students complete a matching activity pairing contextual facts to moments in the play (e.g. "The Gunpowder Plot" matches to "Macbeth explores the consequences of regicide").',
         differentiation: {
           support:
             'Provide a partially completed Cornell notes template with key headings and some facts filled in.',
           core: 'Students take Cornell notes independently and complete the matching activity.',
           stretch:
-            'Students write a short analysis of how Shakespeare uses context to manipulate the audience\'s response, choosing one specific example.',
+            "Students write a short analysis of how Shakespeare uses context to manipulate the audience's response, choosing one specific example.",
         },
         resources: [
           'Context presentation slides',
@@ -1585,7 +1577,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Context in the Text: Analytical Writing',
         duration: '20 minutes',
         instructions:
-          'Provide students with three key extracts: (1) The witches\' opening scene, (2) Macbeth\'s soliloquy before Duncan\'s murder ("If it were done when \'tis done"), (3) Lady Macbeth\'s "unsex me here" speech. For each extract, students annotate contextual connections. Then, students choose one extract and write a full analytical paragraph that integrates context. The paragraph must follow the structure: What Shakespeare does → How he does it (quotation + analysis) → Why he does it (purpose + context). Teacher models one paragraph first.',
+          "Provide students with three key extracts: (1) The witches' opening scene, (2) Macbeth's soliloquy before Duncan's murder (\"If it were done when 'tis done\"), (3) Lady Macbeth's \"unsex me here\" speech. For each extract, students annotate contextual connections. Then, students choose one extract and write a full analytical paragraph that integrates context. The paragraph must follow the structure: What Shakespeare does → How he does it (quotation + analysis) → Why he does it (purpose + context). Teacher models one paragraph first.",
         differentiation: {
           support:
             'Provide a paragraph frame with sentence starters and a context connection bank for each extract.',
@@ -1620,15 +1612,14 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Explain the "Divine Right of Kings" and why it is important for understanding Macbeth.',
         lines: 5,
         modelAnswer:
-          'The Divine Right of Kings was the belief that monarchs were appointed by God and that their authority was sacred. Killing a king (regicide) was therefore not only a political crime but a sin against God and nature. This is important for Macbeth because it means that when Macbeth murders Duncan, he is committing the ultimate transgression — disrupting the divinely ordained order. A Jacobean audience would have understood his subsequent suffering and downfall as God\'s punishment.',
+          "The Divine Right of Kings was the belief that monarchs were appointed by God and that their authority was sacred. Killing a king (regicide) was therefore not only a political crime but a sin against God and nature. This is important for Macbeth because it means that when Macbeth murders Duncan, he is committing the ultimate transgression - disrupting the divinely ordained order. A Jacobean audience would have understood his subsequent suffering and downfall as God's punishment.",
         marks: 4,
       },
       {
-        question:
-          'Why did Shakespeare write Macbeth? How does the play relate to King James I?',
+        question: 'Why did Shakespeare write Macbeth? How does the play relate to King James I?',
         lines: 5,
         modelAnswer:
-          'Shakespeare wrote Macbeth partly to flatter King James I, who had recently become king of England. James claimed descent from Banquo, so Shakespeare presents Banquo as noble and loyal — the moral counterpart to Macbeth. James was also obsessed with witchcraft and had written a book on it, so the inclusion of the witches would have fascinated him. The play\'s message — that regicide leads to chaos and damnation — reinforced James\'s own political authority.',
+          "Shakespeare wrote Macbeth partly to flatter King James I, who had recently become king of England. James claimed descent from Banquo, so Shakespeare presents Banquo as noble and loyal - the moral counterpart to Macbeth. James was also obsessed with witchcraft and had written a book on it, so the inclusion of the witches would have fascinated him. The play's message - that regicide leads to chaos and damnation - reinforced James's own political authority.",
         marks: 4,
       },
       {
@@ -1636,7 +1627,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'What is the "Great Chain of Being"? How does Macbeth\'s murder of Duncan relate to it?',
         lines: 5,
         modelAnswer:
-          'The Great Chain of Being was a hierarchical ordering of all creation: God at the top, then angels, then the king, then nobles, down to animals and plants. Every being had a fixed place. Macbeth\'s murder of Duncan breaks this chain, which is reflected in the unnatural events that follow — storms, animals behaving strangely, darkness at midday. Shakespeare uses these disruptions to show that regicide is a crime against the natural order itself.',
+          "The Great Chain of Being was a hierarchical ordering of all creation: God at the top, then angels, then the king, then nobles, down to animals and plants. Every being had a fixed place. Macbeth's murder of Duncan breaks this chain, which is reflected in the unnatural events that follow - storms, animals behaving strangely, darkness at midday. Shakespeare uses these disruptions to show that regicide is a crime against the natural order itself.",
         marks: 4,
       },
       {
@@ -1644,27 +1635,27 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How would a Jacobean audience have responded to Lady Macbeth\'s "unsex me here" speech? Why?',
         lines: 5,
         modelAnswer:
-          'A Jacobean audience would have been deeply disturbed. In a patriarchal society, women were expected to be gentle, obedient, and nurturing. Lady Macbeth\'s call to be "unsexed" — to have her femininity removed — would have been seen as unnatural and transgressive. Her invocation of "spirits" would have been associated with witchcraft, which James I took very seriously. She would have been perceived as a threat to the natural order, making her ultimate madness and death a form of divine retribution.',
+          'A Jacobean audience would have been deeply disturbed. In a patriarchal society, women were expected to be gentle, obedient, and nurturing. Lady Macbeth\'s call to be "unsexed" - to have her femininity removed - would have been seen as unnatural and transgressive. Her invocation of "spirits" would have been associated with witchcraft, which James I took very seriously. She would have been perceived as a threat to the natural order, making her ultimate madness and death a form of divine retribution.',
         marks: 5,
       },
       {
         question:
-          'Write a paragraph explaining how Shakespeare uses the Gunpowder Plot context to shape the audience\'s response to Macbeth\'s regicide.',
+          "Write a paragraph explaining how Shakespeare uses the Gunpowder Plot context to shape the audience's response to Macbeth's regicide.",
         lines: 8,
         modelAnswer:
-          'Shakespeare wrote Macbeth shortly after the Gunpowder Plot of 1605, when Guy Fawkes and his co-conspirators attempted to blow up Parliament and kill King James I. The plot was fresh in the audience\'s memory, making the theme of regicide intensely relevant and disturbing. Shakespeare shows the catastrophic consequences of killing a king — Macbeth\'s guilt, Scotland\'s suffering, the unnatural disturbances in nature — to reinforce the message that treason against a divinely appointed monarch leads only to destruction. This would have reassured James and his supporters that the natural order, though temporarily disrupted, would always reassert itself through divine justice.',
+          "Shakespeare wrote Macbeth shortly after the Gunpowder Plot of 1605, when Guy Fawkes and his co-conspirators attempted to blow up Parliament and kill King James I. The plot was fresh in the audience's memory, making the theme of regicide intensely relevant and disturbing. Shakespeare shows the catastrophic consequences of killing a king - Macbeth's guilt, Scotland's suffering, the unnatural disturbances in nature - to reinforce the message that treason against a divinely appointed monarch leads only to destruction. This would have reassured James and his supporters that the natural order, though temporarily disrupted, would always reassert itself through divine justice.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      'Context is worth up to a third of the marks in some mark schemes — students cannot afford to neglect it.',
-      'The most common error is "context dumping" — writing a paragraph of historical facts disconnected from analysis. Model how to weave context into analytical points.',
+      'Context is worth up to a third of the marks in some mark schemes - students cannot afford to neglect it.',
+      'The most common error is "context dumping" - writing a paragraph of historical facts disconnected from analysis. Model how to weave context into analytical points.',
       'The Cornell notes from this lesson become a key revision resource. Encourage students to add to them throughout the Macbeth unit.',
       'Consider showing a short clip of a Jacobean-style performance alongside a modern production to illustrate how audience response changes with context.',
     ],
     targetedSkills: [
       'Contextual Understanding',
-      'Writer\'s Purpose',
+      "Writer's Purpose",
       'AO3 Context',
       'Analytical Writing',
       'Note-Taking',
@@ -1682,14 +1673,14 @@ export const y11IgcseLessons: LessonPlan[] = [
     objectives: [
       'Trace the character arcs of Macbeth and Lady Macbeth across the play',
       'Analyse how Shakespeare uses their relationship to explore themes of ambition and guilt',
-      'Identify the reversal in their roles — from Lady Macbeth\'s dominance to Macbeth\'s tyranny and her descent into madness',
+      "Identify the reversal in their roles - from Lady Macbeth's dominance to Macbeth's tyranny and her descent into madness",
       'Write a comparative analysis of both characters at different points in the play',
     ],
     successCriteria: [
       'I can plot the character arcs of Macbeth and Lady Macbeth on a trajectory diagram',
       'I can identify and explain the moment their roles reverse',
-      'I can analyse key quotations showing each character\'s development',
-      'I can write a comparative paragraph tracking a character\'s change with embedded quotations',
+      "I can analyse key quotations showing each character's development",
+      "I can write a comparative paragraph tracking a character's change with embedded quotations",
     ],
     keywords: [
       'tragic hero',
@@ -1706,12 +1697,12 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Power Graph',
       duration: '7 minutes',
       instructions:
-        'Display a graph with the x-axis as the play\'s timeline (Act 1 to Act 5) and the y-axis as "Power/Control." Students draw two lines — one for Macbeth and one for Lady Macbeth — showing how each character\'s power changes across the play. Students should notice the "X" shape: Lady Macbeth starts with power and loses it; Macbeth starts uncertain and gains tyrannical power before his final downfall. Pairs compare graphs and discuss: at what point do the lines cross?',
+        'Display a graph with the x-axis as the play\'s timeline (Act 1 to Act 5) and the y-axis as "Power/Control." Students draw two lines - one for Macbeth and one for Lady Macbeth - showing how each character\'s power changes across the play. Students should notice the "X" shape: Lady Macbeth starts with power and loses it; Macbeth starts uncertain and gains tyrannical power before his final downfall. Pairs compare graphs and discuss: at what point do the lines cross?',
       differentiation: {
-        support: 'Provide key events along the x-axis as reference points (e.g. Act 1: the witches, Act 2: Duncan\'s murder, Act 5: battle).',
+        support:
+          "Provide key events along the x-axis as reference points (e.g. Act 1: the witches, Act 2: Duncan's murder, Act 5: battle).",
         core: 'Students plot independently from their knowledge of the text.',
-        stretch:
-          'Students annotate their graph with quotations at each turning point.',
+        stretch: 'Students annotate their graph with quotations at each turning point.',
       },
       resources: ['Power graph template', 'Key events reference (support tier)'],
     },
@@ -1720,7 +1711,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Character Arc Tracking',
         duration: '22 minutes',
         instructions:
-          'Students work through a character arc worksheet for both Macbeth and Lady Macbeth. For each of five key moments, they record: (a) what the character does/says, (b) a key quotation, (c) what this reveals about their state of mind, (d) how they have changed since the previous moment. The five moments are: (1) Before the murder — ambition vs hesitation; (2) During the murder — who is in control?; (3) After the murder — guilt and paranoia; (4) Mid-play — the banquet scene; (5) The end — Macbeth\'s defiance and Lady Macbeth\'s madness. After completing the worksheet, students write a one-sentence summary of each character\'s overall arc.',
+          "Students work through a character arc worksheet for both Macbeth and Lady Macbeth. For each of five key moments, they record: (a) what the character does/says, (b) a key quotation, (c) what this reveals about their state of mind, (d) how they have changed since the previous moment. The five moments are: (1) Before the murder - ambition vs hesitation; (2) During the murder - who is in control?; (3) After the murder - guilt and paranoia; (4) Mid-play - the banquet scene; (5) The end - Macbeth's defiance and Lady Macbeth's madness. After completing the worksheet, students write a one-sentence summary of each character's overall arc.",
         differentiation: {
           support:
             'Provide quotations pre-selected for each moment and guided questions to help with the "state of mind" column.',
@@ -1744,7 +1735,7 @@ export const y11IgcseLessons: LessonPlan[] = [
             'Provide the two quotations (from "unsex me here" and the sleepwalking scene) and a comparative paragraph frame.',
           core: 'Students write independently and peer-assess.',
           stretch:
-            'Students write a second comparative paragraph on Macbeth and then link both paragraphs to argue that the two characters\' arcs mirror each other inversely.',
+            "Students write a second comparative paragraph on Macbeth and then link both paragraphs to argue that the two characters' arcs mirror each other inversely.",
         },
         resources: [
           'Model comparative paragraph slide',
@@ -1757,7 +1748,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Tragic Hero or Villain?',
       duration: '5 minutes',
       instructions:
-        'Students vote: is Macbeth a tragic hero or a villain? They must write a one-sentence justification using a quotation. Teacher facilitates a brief debate, drawing out the idea that the concept of "tragic hero" requires both sympathy and a fatal flaw — can we still sympathise with Macbeth by Act 5? The ambiguity is the point.',
+        'Students vote: is Macbeth a tragic hero or a villain? They must write a one-sentence justification using a quotation. Teacher facilitates a brief debate, drawing out the idea that the concept of "tragic hero" requires both sympathy and a fatal flaw - can we still sympathise with Macbeth by Act 5? The ambiguity is the point.',
       differentiation: {
         support: 'Provide definitions of "tragic hero" and "villain" and a quotation to use.',
         core: 'Students argue independently with their own quotation.',
@@ -1769,27 +1760,26 @@ export const y11IgcseLessons: LessonPlan[] = [
       'Write a 250-word response to: "How does Shakespeare present the relationship between Macbeth and Lady Macbeth as changing across the play?" Include quotations from at least two different acts.',
     worksheetQuestions: [
       {
-        question:
-          'What is a "tragic hero"? How does Macbeth fit this definition?',
+        question: 'What is a "tragic hero"? How does Macbeth fit this definition?',
         lines: 5,
         modelAnswer:
-          'A tragic hero is a character of high status who possesses a fatal flaw (hamartia) that leads to their downfall. Macbeth fits this definition: he is a respected warrior and Thane, but his ambition (hamartia) leads him to commit regicide, which triggers a chain of violence and guilt that destroys him. The audience experiences catharsis — pity for his suffering and fear that ambition could corrupt anyone.',
+          'A tragic hero is a character of high status who possesses a fatal flaw (hamartia) that leads to their downfall. Macbeth fits this definition: he is a respected warrior and Thane, but his ambition (hamartia) leads him to commit regicide, which triggers a chain of violence and guilt that destroys him. The audience experiences catharsis - pity for his suffering and fear that ambition could corrupt anyone.',
         marks: 4,
       },
       {
         question:
-          'How does Lady Macbeth\'s character change between Act 1 and Act 5? Use quotations to support your answer.',
+          "How does Lady Macbeth's character change between Act 1 and Act 5? Use quotations to support your answer.",
         lines: 6,
         modelAnswer:
-          'In Act 1, Lady Macbeth is commanding and ruthless. She calls on spirits to "unsex me here" and fill her "from the crown to the toe top-full of direst cruelty." She dominates Macbeth and orchestrates Duncan\'s murder. By Act 5, she is broken — the sleepwalking scene shows her compulsively washing her hands ("Out, damned spot") and speaking in fragmented prose rather than the controlled verse of her earlier speeches. Her madness reveals that guilt has consumed her, and her offstage death confirms her destruction.',
+          'In Act 1, Lady Macbeth is commanding and ruthless. She calls on spirits to "unsex me here" and fill her "from the crown to the toe top-full of direst cruelty." She dominates Macbeth and orchestrates Duncan\'s murder. By Act 5, she is broken - the sleepwalking scene shows her compulsively washing her hands ("Out, damned spot") and speaking in fragmented prose rather than the controlled verse of her earlier speeches. Her madness reveals that guilt has consumed her, and her offstage death confirms her destruction.',
         marks: 5,
       },
       {
         question:
-          'At what point in the play do Macbeth and Lady Macbeth\'s roles reverse? Explain what happens.',
+          "At what point in the play do Macbeth and Lady Macbeth's roles reverse? Explain what happens.",
         lines: 5,
         modelAnswer:
-          'The reversal begins around Act 3. After Banquo\'s murder, Macbeth acts independently — he arranges the murder without telling Lady Macbeth. At the banquet, Lady Macbeth tries to control the situation ("Are you a man?") but is no longer in command. From this point, Macbeth becomes increasingly tyrannical and isolated while Lady Macbeth withdraws into guilt and madness. The character who started in control ends powerless, and vice versa.',
+          'The reversal begins around Act 3. After Banquo\'s murder, Macbeth acts independently - he arranges the murder without telling Lady Macbeth. At the banquet, Lady Macbeth tries to control the situation ("Are you a man?") but is no longer in command. From this point, Macbeth becomes increasingly tyrannical and isolated while Lady Macbeth withdraws into guilt and madness. The character who started in control ends powerless, and vice versa.',
         marks: 4,
       },
       {
@@ -1797,30 +1787,30 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Analyse the significance of Macbeth\'s soliloquy "Tomorrow, and tomorrow, and tomorrow" (Act 5, Scene 5). What does it reveal about his state of mind?',
         lines: 6,
         modelAnswer:
-          'This soliloquy reveals Macbeth\'s nihilism and despair. The repetition of "tomorrow" suggests time has become meaningless — each day is identical and pointless. The metaphor of life as "a tale told by an idiot, full of sound and fury, signifying nothing" strips existence of all meaning and purpose. Macbeth has achieved everything he desired (the crown) and found it worthless. Shakespeare uses this moment to show the ultimate consequence of unchecked ambition: not just political downfall but spiritual emptiness.',
+          'This soliloquy reveals Macbeth\'s nihilism and despair. The repetition of "tomorrow" suggests time has become meaningless - each day is identical and pointless. The metaphor of life as "a tale told by an idiot, full of sound and fury, signifying nothing" strips existence of all meaning and purpose. Macbeth has achieved everything he desired (the crown) and found it worthless. Shakespeare uses this moment to show the ultimate consequence of unchecked ambition: not just political downfall but spiritual emptiness.',
         marks: 5,
       },
       {
         question:
-          'Write a comparative paragraph analysing Macbeth\'s state of mind before Duncan\'s murder (Act 1, Scene 7) and after Banquo\'s murder (Act 3, Scene 4). How has he changed?',
+          "Write a comparative paragraph analysing Macbeth's state of mind before Duncan's murder (Act 1, Scene 7) and after Banquo's murder (Act 3, Scene 4). How has he changed?",
         lines: 8,
         modelAnswer:
-          'Before Duncan\'s murder, Macbeth is tormented by moral conflict. His soliloquy "If it were done when \'tis done" shows him weighing the consequences, acknowledging Duncan\'s virtues, and recognising that only "vaulting ambition" drives him. The conditional "if" reveals his uncertainty. By Act 3, Scene 4, this hesitation has been replaced by paranoid violence — he has arranged Banquo\'s murder without consulting Lady Macbeth and sees Banquo\'s ghost at the feast. Shakespeare shows that once the moral threshold of regicide is crossed, each subsequent crime becomes easier, trapping Macbeth in a cycle of violence. This trajectory illustrates the play\'s central warning: unchecked ambition does not bring power but imprisonment.',
+          'Before Duncan\'s murder, Macbeth is tormented by moral conflict. His soliloquy "If it were done when \'tis done" shows him weighing the consequences, acknowledging Duncan\'s virtues, and recognising that only "vaulting ambition" drives him. The conditional "if" reveals his uncertainty. By Act 3, Scene 4, this hesitation has been replaced by paranoid violence - he has arranged Banquo\'s murder without consulting Lady Macbeth and sees Banquo\'s ghost at the feast. Shakespeare shows that once the moral threshold of regicide is crossed, each subsequent crime becomes easier, trapping Macbeth in a cycle of violence. This trajectory illustrates the play\'s central warning: unchecked ambition does not bring power but imprisonment.',
         marks: 5,
       },
     ],
     teacherNotes: [
-      'The power graph is a powerful visual tool — display student examples on the wall for revision.',
-      'Students often struggle to write about Lady Macbeth\'s change because they focus on her strength in Act 1 and her madness in Act 5 without tracing the gradual shift in between. The five-moment tracking worksheet addresses this.',
-      'The "tragic hero or villain" debate is deliberately unresolvable — use it to model the kind of sophisticated argument examiners reward.',
-      'Encourage students to use the word "Shakespeare" rather than "Macbeth" when discussing authorial intent — this keeps the focus on the writer\'s craft.',
+      'The power graph is a powerful visual tool - display student examples on the wall for revision.',
+      "Students often struggle to write about Lady Macbeth's change because they focus on her strength in Act 1 and her madness in Act 5 without tracing the gradual shift in between. The five-moment tracking worksheet addresses this.",
+      'The "tragic hero or villain" debate is deliberately unresolvable - use it to model the kind of sophisticated argument examiners reward.',
+      'Encourage students to use the word "Shakespeare" rather than "Macbeth" when discussing authorial intent - this keeps the focus on the writer\'s craft.',
     ],
     targetedSkills: [
       'Character Analysis',
       'Comparative Writing',
       'Quotation Selection',
       'AO1 Textual Reference',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
     ],
   },
 
@@ -1839,9 +1829,9 @@ export const y11IgcseLessons: LessonPlan[] = [
       'Write a thematic essay paragraph integrating quotation, analysis, and context',
     ],
     successCriteria: [
-      'I can trace the theme of ambition through Macbeth and Lady Macbeth\'s actions and language',
+      "I can trace the theme of ambition through Macbeth and Lady Macbeth's actions and language",
       'I can explain how Shakespeare dramatises guilt through imagery, soliloquy, and the sleepwalking scene',
-      'I can analyse the role of the witches and the supernatural within the play\'s moral framework',
+      "I can analyse the role of the witches and the supernatural within the play's moral framework",
       'I can write a thematic paragraph that addresses all three assessment objectives',
     ],
     keywords: [
@@ -1859,7 +1849,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Theme Word Association',
       duration: '6 minutes',
       instructions:
-        'Display the three themes: Ambition, Guilt, Supernatural. Students have 2 minutes to write as many words, quotations, characters, and scenes as they associate with each theme. Then compare with a partner — add any they missed. Teacher draws out key connections: ambition leads to the crime, guilt is the consequence, and the supernatural is the catalyst. These three themes form the play\'s moral architecture.',
+        "Display the three themes: Ambition, Guilt, Supernatural. Students have 2 minutes to write as many words, quotations, characters, and scenes as they associate with each theme. Then compare with a partner - add any they missed. Teacher draws out key connections: ambition leads to the crime, guilt is the consequence, and the supernatural is the catalyst. These three themes form the play's moral architecture.",
       differentiation: {
         support: 'Provide a quotation bank to prompt associations.',
         core: 'Students work from memory independently.',
@@ -1873,13 +1863,13 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Theme Deep Dives',
         duration: '22 minutes',
         instructions:
-          'Students work in groups of three, each group member taking one theme. Each student completes a theme analysis sheet for their theme: (1) Definition — what this theme means in the context of the play; (2) Three key quotations with analysis; (3) How the theme develops across the play (beginning → middle → end); (4) Contextual significance — why this theme mattered to a Jacobean audience. After 12 minutes, group members teach each other their themes. All students complete a summary grid with notes on all three themes. Teacher circulates to ensure accuracy.',
+          'Students work in groups of three, each group member taking one theme. Each student completes a theme analysis sheet for their theme: (1) Definition - what this theme means in the context of the play; (2) Three key quotations with analysis; (3) How the theme develops across the play (beginning → middle → end); (4) Contextual significance - why this theme mattered to a Jacobean audience. After 12 minutes, group members teach each other their themes. All students complete a summary grid with notes on all three themes. Teacher circulates to ensure accuracy.',
         differentiation: {
           support:
             'Provide a partially completed theme analysis sheet with one quotation and its analysis already modelled.',
           core: 'Students complete the full analysis independently and teach their group.',
           stretch:
-            'Students evaluate which theme is most important to Shakespeare\'s overall message and write a justified argument.',
+            "Students evaluate which theme is most important to Shakespeare's overall message and write a justified argument.",
         },
         resources: [
           'Theme analysis sheets (one per theme)',
@@ -1891,10 +1881,9 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Thematic Essay Paragraph',
         duration: '20 minutes',
         instructions:
-          'Teacher models a thematic paragraph on ambition, demonstrating how to move from theme statement → quotation → word-level analysis → contextual link → Shakespeare\'s purpose. Students then write their own thematic paragraph on either guilt or the supernatural. They must follow the modelled structure and include: an embedded quotation, analysis of at least two individual words, a reference to context, and a statement of Shakespeare\'s purpose. After writing, students swap with someone who wrote about the other theme and provide feedback using a checklist: Is the theme statement clear? Is the quotation embedded? Is there word-level analysis? Is context integrated?',
+          "Teacher models a thematic paragraph on ambition, demonstrating how to move from theme statement → quotation → word-level analysis → contextual link → Shakespeare's purpose. Students then write their own thematic paragraph on either guilt or the supernatural. They must follow the modelled structure and include: an embedded quotation, analysis of at least two individual words, a reference to context, and a statement of Shakespeare's purpose. After writing, students swap with someone who wrote about the other theme and provide feedback using a checklist: Is the theme statement clear? Is the quotation embedded? Is there word-level analysis? Is context integrated?",
         differentiation: {
-          support:
-            'Provide the paragraph structure as a writing frame with sentence starters.',
+          support: 'Provide the paragraph structure as a writing frame with sentence starters.',
           core: 'Students write independently and provide detailed peer feedback.',
           stretch:
             'Students write a linking sentence at the end that connects their theme to one of the other two themes, showing how they work together.',
@@ -1907,15 +1896,15 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'The Witches\' Responsibility',
+      title: "The Witches' Responsibility",
       duration: '5 minutes',
       instructions:
-        'Pose the question: "Are the witches responsible for Macbeth\'s downfall, or would he have done it anyway?" Students write a one-sentence answer with justification. Teacher takes a quick poll and facilitates a 2-minute debate. Draw out the key point: Shakespeare deliberately leaves this ambiguous — the witches prophesy but never command. This ambiguity is central to the play\'s exploration of free will and moral responsibility.',
+        'Pose the question: "Are the witches responsible for Macbeth\'s downfall, or would he have done it anyway?" Students write a one-sentence answer with justification. Teacher takes a quick poll and facilitates a 2-minute debate. Draw out the key point: Shakespeare deliberately leaves this ambiguous - the witches prophesy but never command. This ambiguity is central to the play\'s exploration of free will and moral responsibility.',
       differentiation: {
         support: 'Provide two pre-written positions for students to choose between.',
         core: 'Students argue independently with textual justification.',
         stretch:
-          'Students explain why the ambiguity itself is important — why does Shakespeare not give a definitive answer?',
+          'Students explain why the ambiguity itself is important - why does Shakespeare not give a definitive answer?',
       },
     },
     homework:
@@ -1926,7 +1915,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How does Shakespeare present ambition in Macbeth? Is ambition presented as entirely negative?',
         lines: 5,
         modelAnswer:
-          'Shakespeare presents ambition as a double-edged force. Macbeth\'s initial ambition is stirred by the witches\' prophecy and is not inherently evil — ambition is a natural human quality. However, when it overrides moral judgement ("I have no spur to prick the sides of my intent, but only vaulting ambition"), it becomes destructive. Shakespeare suggests that ambition without conscience leads to tyranny, while legitimate ambition (as seen in Malcolm) serves the common good.',
+          'Shakespeare presents ambition as a double-edged force. Macbeth\'s initial ambition is stirred by the witches\' prophecy and is not inherently evil - ambition is a natural human quality. However, when it overrides moral judgement ("I have no spur to prick the sides of my intent, but only vaulting ambition"), it becomes destructive. Shakespeare suggests that ambition without conscience leads to tyranny, while legitimate ambition (as seen in Malcolm) serves the common good.',
         marks: 4,
       },
       {
@@ -1939,10 +1928,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'What role do the witches play in the play? Are they the cause of Macbeth\'s downfall?',
+          "What role do the witches play in the play? Are they the cause of Macbeth's downfall?",
         lines: 5,
         modelAnswer:
-          'The witches introduce the idea of kingship but never tell Macbeth to murder Duncan — they prophesy, but the choice is his. Their equivocal language ("fair is foul") suggests they are agents of chaos and moral confusion. For a Jacobean audience, the witches were genuinely frightening — James I believed in witchcraft and had written about it. Shakespeare uses them to raise questions about fate, free will, and the nature of evil, without providing a definitive answer.',
+          'The witches introduce the idea of kingship but never tell Macbeth to murder Duncan - they prophesy, but the choice is his. Their equivocal language ("fair is foul") suggests they are agents of chaos and moral confusion. For a Jacobean audience, the witches were genuinely frightening - James I believed in witchcraft and had written about it. Shakespeare uses them to raise questions about fate, free will, and the nature of evil, without providing a definitive answer.',
         marks: 4,
       },
       {
@@ -1950,7 +1939,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'How does guilt affect Macbeth and Lady Macbeth differently? Compare their responses.',
         lines: 6,
         modelAnswer:
-          'Macbeth\'s guilt is immediate but transforms over time. After Duncan\'s murder, he is horrified ("I am afraid to think what I have done"), but as the play progresses, guilt hardens into paranoia and violence rather than remorse. Lady Macbeth initially suppresses her guilt ("A little water clears us of this deed") but it erupts uncontrollably in Act 5 through sleepwalking and hallucinated blood. Shakespeare suggests that guilt cannot be permanently suppressed — it will find expression, whether through conscious paranoia or unconscious madness.',
+          'Macbeth\'s guilt is immediate but transforms over time. After Duncan\'s murder, he is horrified ("I am afraid to think what I have done"), but as the play progresses, guilt hardens into paranoia and violence rather than remorse. Lady Macbeth initially suppresses her guilt ("A little water clears us of this deed") but it erupts uncontrollably in Act 5 through sleepwalking and hallucinated blood. Shakespeare suggests that guilt cannot be permanently suppressed - it will find expression, whether through conscious paranoia or unconscious madness.',
         marks: 5,
       },
       {
@@ -1958,21 +1947,21 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Write a thematic paragraph about the supernatural in Macbeth. Include a quotation, word-level analysis, and a contextual reference.',
         lines: 8,
         modelAnswer:
-          'Shakespeare uses the supernatural to externalise Macbeth\'s inner moral conflict and to unsettle the audience. The witches\' opening chant — "Fair is foul, and foul is fair" — establishes a world of moral inversion where good and evil are indistinguishable. The chiasmus mirrors their equivocal nature: they speak in riddles, making truth and deception interchangeable. For a Jacobean audience who believed in the reality of witchcraft — King James I had published Daemonologie in 1597 — the witches were not merely symbolic but a genuine representation of demonic evil. Shakespeare uses them to suggest that engaging with the supernatural corrupts moral clarity, leaving Macbeth unable to distinguish right from wrong.',
+          'Shakespeare uses the supernatural to externalise Macbeth\'s inner moral conflict and to unsettle the audience. The witches\' opening chant - "Fair is foul, and foul is fair" - establishes a world of moral inversion where good and evil are indistinguishable. The chiasmus mirrors their equivocal nature: they speak in riddles, making truth and deception interchangeable. For a Jacobean audience who believed in the reality of witchcraft - King James I had published Daemonologie in 1597 - the witches were not merely symbolic but a genuine representation of demonic evil. Shakespeare uses them to suggest that engaging with the supernatural corrupts moral clarity, leaving Macbeth unable to distinguish right from wrong.',
         marks: 5,
       },
     ],
     teacherNotes: [
       'The three themes in this lesson are the most commonly examined. Students should have detailed notes on each by the end.',
-      'Blood imagery is a particularly accessible entry point for students who struggle with word-level analysis — the imagery is vivid and recurs throughout the play.',
-      'The witches\' responsibility debate is deliberately irresolvable. Use it to model the kind of balanced, nuanced argument that examiners reward.',
+      'Blood imagery is a particularly accessible entry point for students who struggle with word-level analysis - the imagery is vivid and recurs throughout the play.',
+      "The witches' responsibility debate is deliberately irresolvable. Use it to model the kind of balanced, nuanced argument that examiners reward.",
       'Encourage students to keep a "theme tracker" in their folders that they add to after every Macbeth lesson.',
     ],
     targetedSkills: [
       'Thematic Analysis',
       'Language Analysis',
       'AO1 Textual Reference',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
       'AO3 Context',
     ],
   },
@@ -1980,20 +1969,20 @@ export const y11IgcseLessons: LessonPlan[] = [
   // ── Lesson 14: Shakespeare's Language and Stagecraft ────────────────────────
   {
     id: 'y11-igcse-14-language-and-stagecraft',
-    title: 'Shakespeare\'s Language and Stagecraft',
+    title: "Shakespeare's Language and Stagecraft",
     text: 'Macbeth',
     board: 'Cambridge IGCSE',
     yearGroup: 'Year 11',
     duration: '60 minutes',
     objectives: [
-      'Analyse Shakespeare\'s use of verse, prose, soliloquy, and aside as dramatic tools',
+      "Analyse Shakespeare's use of verse, prose, soliloquy, and aside as dramatic tools",
       'Examine key language techniques: imagery, symbolism, repetition, and irony',
-      'Understand how stagecraft — entrances, exits, asides, supernatural effects — creates meaning',
-      'Write analytically about Shakespeare\'s methods using subject-specific terminology',
+      'Understand how stagecraft - entrances, exits, asides, supernatural effects - creates meaning',
+      "Write analytically about Shakespeare's methods using subject-specific terminology",
     ],
     successCriteria: [
       'I can explain the significance of shifts between verse and prose in the play',
-      'I can analyse Shakespeare\'s use of imagery and symbolism with word-level precision',
+      "I can analyse Shakespeare's use of imagery and symbolism with word-level precision",
       'I can identify and explain at least three stagecraft techniques and their effects',
       'I can write a methods-focused paragraph that analyses HOW Shakespeare creates meaning',
     ],
@@ -2013,9 +2002,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Verse or Prose?',
       duration: '7 minutes',
       instructions:
-        'Display two short extracts side by side — one in blank verse (Macbeth\'s soliloquy) and one in prose (the Porter\'s speech). Students identify which is verse and which is prose, then discuss: why does Shakespeare switch? Teacher establishes the convention: verse = high status, formality, heightened emotion; prose = low status, madness, or comic relief. Crucially, Lady Macbeth\'s switch from verse to prose in the sleepwalking scene signals her breakdown. This is a method that students can analyse in their essays.',
+        "Display two short extracts side by side - one in blank verse (Macbeth's soliloquy) and one in prose (the Porter's speech). Students identify which is verse and which is prose, then discuss: why does Shakespeare switch? Teacher establishes the convention: verse = high status, formality, heightened emotion; prose = low status, madness, or comic relief. Crucially, Lady Macbeth's switch from verse to prose in the sleepwalking scene signals her breakdown. This is a method that students can analyse in their essays.",
       differentiation: {
-        support: 'Provide a simple explanation of the difference between verse and prose with visual cues.',
+        support:
+          'Provide a simple explanation of the difference between verse and prose with visual cues.',
         core: 'Students identify and explain the significance independently.',
         stretch:
           'Students find another moment in the play where the verse/prose shift is significant and explain its effect.',
@@ -2027,7 +2017,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Language and Stagecraft Analysis Stations',
         duration: '22 minutes',
         instructions:
-          'Set up four stations, each focusing on a different method: (1) Soliloquy — "Is this a dagger which I see before me?" — how soliloquy reveals inner conflict; (2) Imagery — darkness and blood imagery across the play — how imagery creates atmosphere and meaning; (3) Dramatic irony — "He\'s here in double trust" — how the audience\'s knowledge creates tension; (4) Stagecraft — the ghost of Banquo, the cauldron scene — how spectacle reinforces themes. At each station, students read the extract, identify the technique, and write an analytical sentence explaining its effect. Students spend 5 minutes per station and should complete all four.',
+          'Set up four stations, each focusing on a different method: (1) Soliloquy - "Is this a dagger which I see before me?" - how soliloquy reveals inner conflict; (2) Imagery - darkness and blood imagery across the play - how imagery creates atmosphere and meaning; (3) Dramatic irony - "He\'s here in double trust" - how the audience\'s knowledge creates tension; (4) Stagecraft - the ghost of Banquo, the cauldron scene - how spectacle reinforces themes. At each station, students read the extract, identify the technique, and write an analytical sentence explaining its effect. Students spend 5 minutes per station and should complete all four.',
         differentiation: {
           support:
             'Provide analytical sentence frames at each station and a glossary of key terms.',
@@ -2045,7 +2035,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Methods-Focused Analytical Writing',
         duration: '18 minutes',
         instructions:
-          'Teacher models a methods-focused paragraph: one that starts with the TECHNIQUE rather than the theme. For example: "Shakespeare uses the soliloquy form to reveal Macbeth\'s psychological disintegration..." rather than "The theme of guilt is shown when..." Students then write their own methods-focused paragraph on one of the four techniques studied. They must include: the technique named precisely, an embedded quotation, word-level analysis of at least two words, and a comment on the effect on the audience. After writing, students underline every instance where they name a specific technique — the more underlining, the more methods-focused the paragraph.',
+          'Teacher models a methods-focused paragraph: one that starts with the TECHNIQUE rather than the theme. For example: "Shakespeare uses the soliloquy form to reveal Macbeth\'s psychological disintegration..." rather than "The theme of guilt is shown when..." Students then write their own methods-focused paragraph on one of the four techniques studied. They must include: the technique named precisely, an embedded quotation, word-level analysis of at least two words, and a comment on the effect on the audience. After writing, students underline every instance where they name a specific technique - the more underlining, the more methods-focused the paragraph.',
         differentiation: {
           support:
             'Provide a methods paragraph frame with the technique already identified and sentence starters for analysis.',
@@ -2076,56 +2066,54 @@ export const y11IgcseLessons: LessonPlan[] = [
       'Choose one soliloquy from Macbeth and write a 200-word analysis focusing entirely on HOW Shakespeare creates meaning (methods), not WHAT the speech is about (content). Annotate the soliloquy before writing.',
     worksheetQuestions: [
       {
-        question:
-          'What is a soliloquy? Why does Shakespeare use soliloquies in Macbeth?',
+        question: 'What is a soliloquy? Why does Shakespeare use soliloquies in Macbeth?',
         lines: 4,
         modelAnswer:
-          'A soliloquy is a speech in which a character speaks their thoughts aloud while alone on stage. Shakespeare uses soliloquies to reveal Macbeth\'s inner conflict — the audience hears his doubts, fears, and guilt directly. This creates dramatic irony (the audience knows more than other characters) and generates sympathy by showing Macbeth\'s psychological suffering.',
+          "A soliloquy is a speech in which a character speaks their thoughts aloud while alone on stage. Shakespeare uses soliloquies to reveal Macbeth's inner conflict - the audience hears his doubts, fears, and guilt directly. This creates dramatic irony (the audience knows more than other characters) and generates sympathy by showing Macbeth's psychological suffering.",
         marks: 3,
       },
       {
         question:
-          'Why is the shift from verse to prose significant in Lady Macbeth\'s sleepwalking scene?',
+          "Why is the shift from verse to prose significant in Lady Macbeth's sleepwalking scene?",
         lines: 4,
         modelAnswer:
-          'Throughout the play, Lady Macbeth speaks in controlled blank verse, reflecting her authority and composure. In the sleepwalking scene, she switches to fragmented prose — "Out, damned spot! Out, I say!" The breakdown of verse into prose mirrors the breakdown of her mind. Shakespeare uses this formal shift as a dramatic signal that she has lost the control that defined her character.',
+          'Throughout the play, Lady Macbeth speaks in controlled blank verse, reflecting her authority and composure. In the sleepwalking scene, she switches to fragmented prose - "Out, damned spot! Out, I say!" The breakdown of verse into prose mirrors the breakdown of her mind. Shakespeare uses this formal shift as a dramatic signal that she has lost the control that defined her character.',
+        marks: 4,
+      },
+      {
+        question: 'Analyse the effect of darkness imagery in Macbeth. Give two examples.',
+        lines: 5,
+        modelAnswer:
+          'Darkness pervades the play. Macbeth calls on "stars, hide your fires; let not light see my black and deep desires" - darkness represents concealment and moral corruption. Later, Ross reports that "darkness does the face of earth entomb" after Duncan\'s murder, using the verb "entomb" to associate darkness with death and burial. Shakespeare uses darkness as a sustained motif: it symbolises evil, moral blindness, and the disruption of the natural order.',
         marks: 4,
       },
       {
         question:
-          'Analyse the effect of darkness imagery in Macbeth. Give two examples.',
+          "How does Shakespeare use the appearance of Banquo's ghost as a piece of stagecraft? What effect does it have?",
         lines: 5,
         modelAnswer:
-          'Darkness pervades the play. Macbeth calls on "stars, hide your fires; let not light see my black and deep desires" — darkness represents concealment and moral corruption. Later, Ross reports that "darkness does the face of earth entomb" after Duncan\'s murder, using the verb "entomb" to associate darkness with death and burial. Shakespeare uses darkness as a sustained motif: it symbolises evil, moral blindness, and the disruption of the natural order.',
-        marks: 4,
-      },
-      {
-        question:
-          'How does Shakespeare use the appearance of Banquo\'s ghost as a piece of stagecraft? What effect does it have?',
-        lines: 5,
-        modelAnswer:
-          'Banquo\'s ghost appears at the feast — a public event — forcing Macbeth\'s private guilt into the public sphere. The ghost is visible to Macbeth but not to other characters, which creates dramatic irony and makes Macbeth appear unstable to his guests. As a piece of stagecraft, the ghost is a visual manifestation of guilt that cannot be escaped. Shakespeare uses the spectacle to show that Macbeth\'s crimes are literally haunting him and that his grip on power is built on a foundation of terror.',
+          "Banquo's ghost appears at the feast - a public event - forcing Macbeth's private guilt into the public sphere. The ghost is visible to Macbeth but not to other characters, which creates dramatic irony and makes Macbeth appear unstable to his guests. As a piece of stagecraft, the ghost is a visual manifestation of guilt that cannot be escaped. Shakespeare uses the spectacle to show that Macbeth's crimes are literally haunting him and that his grip on power is built on a foundation of terror.",
         marks: 5,
       },
       {
         question:
-          'Write a methods-focused paragraph beginning with a technique rather than a theme. Analyse Shakespeare\'s use of one specific method in Macbeth.',
+          "Write a methods-focused paragraph beginning with a technique rather than a theme. Analyse Shakespeare's use of one specific method in Macbeth.",
         lines: 8,
         modelAnswer:
-          'Shakespeare employs dramatic irony to intensify the audience\'s sense of impending catastrophe. When Duncan arrives at Macbeth\'s castle and describes it as having a "pleasant seat" where "the air nimbly and sweetly recommends itself," the audience — who knows Macbeth is planning murder — experiences a sharp tension between Duncan\'s unsuspecting warmth and the violence that awaits. The adjectives "nimbly" and "sweetly" are cruelly ironic, associating the castle with life and gentleness at the very moment it is about to become a place of death. Shakespeare uses this disjunction to create a sense of helpless foreboding: the audience watches a good man walk willingly into a trap, deepening their horror at Macbeth\'s betrayal.',
+          'Shakespeare employs dramatic irony to intensify the audience\'s sense of impending catastrophe. When Duncan arrives at Macbeth\'s castle and describes it as having a "pleasant seat" where "the air nimbly and sweetly recommends itself," the audience - who knows Macbeth is planning murder - experiences a sharp tension between Duncan\'s unsuspecting warmth and the violence that awaits. The adjectives "nimbly" and "sweetly" are cruelly ironic, associating the castle with life and gentleness at the very moment it is about to become a place of death. Shakespeare uses this disjunction to create a sense of helpless foreboding: the audience watches a good man walk willingly into a trap, deepening their horror at Macbeth\'s betrayal.',
         marks: 5,
       },
     ],
     teacherNotes: [
-      'This lesson directly addresses AO2 (writer\'s methods), which is often the weakest area in student responses. Students need to write about HOW rather than WHAT.',
-      'The verse/prose distinction is a quick win — it is easy to spot, easy to analyse, and examiners reward it.',
+      "This lesson directly addresses AO2 (writer's methods), which is often the weakest area in student responses. Students need to write about HOW rather than WHAT.",
+      'The verse/prose distinction is a quick win - it is easy to spot, easy to analyse, and examiners reward it.',
       'Model the difference between a theme-led paragraph ("Guilt is shown when...") and a methods-led paragraph ("Shakespeare uses the soliloquy form to..."). The latter scores higher at AO2.',
-      'The station activity cards become revision resources — laminate them or add them to a digital revision folder.',
+      'The station activity cards become revision resources - laminate them or add them to a digital revision folder.',
     ],
     targetedSkills: [
       'Language Analysis',
       'Dramatic Technique',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
       'Word-Level Analysis',
       'Exam Writing',
     ],
@@ -2147,7 +2135,7 @@ export const y11IgcseLessons: LessonPlan[] = [
     ],
     successCriteria: [
       'I can plan and write a complete essay response within the time limit',
-      'I can integrate close analysis, wider textual references, context, and discussion of Shakespeare\'s methods',
+      "I can integrate close analysis, wider textual references, context, and discussion of Shakespeare's methods",
       'I can sustain analytical quality throughout the response, including the conclusion',
       'I can accurately identify my band level and set two specific targets for improvement',
     ],
@@ -2158,16 +2146,19 @@ export const y11IgcseLessons: LessonPlan[] = [
       'sustained analysis',
       'self-assessment',
       'band descriptors',
-      'AO1', 'AO2', 'AO3',
+      'AO1',
+      'AO2',
+      'AO3',
       'improvement targets',
     ],
     starterActivity: {
       title: 'Exam Ready Check',
       duration: '5 minutes',
       instructions:
-        'Students complete a quick self-audit: Do I know my top 10 quotations? Can I explain three contextual points? Can I name five methods and their effects? Do I have a go-to essay structure? Students rate themselves 1-5 on each area. Any area below 3 gets circled — these are the areas to focus on in today\'s response. Teacher reminds students of the time allocation and the key expectation: sustained quality throughout, including the conclusion. Set up exam conditions.',
+        "Students complete a quick self-audit: Do I know my top 10 quotations? Can I explain three contextual points? Can I name five methods and their effects? Do I have a go-to essay structure? Students rate themselves 1-5 on each area. Any area below 3 gets circled - these are the areas to focus on in today's response. Teacher reminds students of the time allocation and the key expectation: sustained quality throughout, including the conclusion. Set up exam conditions.",
       differentiation: {
-        support: 'Provide a revision prompt card with top quotations, context points, and methods listed as a reference during planning only (removed before writing).',
+        support:
+          'Provide a revision prompt card with top quotations, context points, and methods listed as a reference during planning only (removed before writing).',
         core: 'Students self-audit from memory.',
         stretch:
           'Students identify the specific question types they find hardest and mentally rehearse their approach before the timer starts.',
@@ -2176,10 +2167,10 @@ export const y11IgcseLessons: LessonPlan[] = [
     },
     mainActivities: [
       {
-        title: 'Timed Essay — Full Response',
+        title: 'Timed Essay - Full Response',
         duration: '42 minutes',
         instructions:
-          'Students complete a full essay response under exam conditions. Provide an extract from Macbeth and a question (e.g. "How does Shakespeare present the theme of guilt in this extract and in the play as a whole?" or "How does Shakespeare present Macbeth as a changing character?"). Time allocation: 5 minutes annotating the extract and planning, 32 minutes writing, 5 minutes proofreading and editing. The room must be silent during writing. Teacher circulates silently, noting patterns for the feedback discussion. At the 37-minute mark, announce "5 minutes remaining — begin proofreading." At the end, students draw a line under their work and write down how many paragraphs they completed and whether they reached a conclusion.',
+          'Students complete a full essay response under exam conditions. Provide an extract from Macbeth and a question (e.g. "How does Shakespeare present the theme of guilt in this extract and in the play as a whole?" or "How does Shakespeare present Macbeth as a changing character?"). Time allocation: 5 minutes annotating the extract and planning, 32 minutes writing, 5 minutes proofreading and editing. The room must be silent during writing. Teacher circulates silently, noting patterns for the feedback discussion. At the 37-minute mark, announce "5 minutes remaining - begin proofreading." At the end, students draw a line under their work and write down how many paragraphs they completed and whether they reached a conclusion.',
         differentiation: {
           support:
             'Provide a planning template and allow the revision prompt card during the planning phase (5 minutes only). Allow 5 additional minutes if needed.',
@@ -2199,7 +2190,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Self-Assessment, Reflection, and Targets',
       duration: '10 minutes',
       instructions:
-        'Distribute the mark scheme band descriptors. Students read their own work carefully and complete a self-assessment form: (1) Which band best describes my response for AO1, AO2, and AO3 separately? (2) My strongest moment — quote a sentence from my essay and explain why it works. (3) My weakest moment — identify a specific section that falls below my best standard and explain why. (4) Two targets for the real exam — expressed as concrete actions (e.g. "I will spend the first 2 minutes of proofreading checking that every quotation has analysis attached"). Students share their targets with a partner. Teacher collects all essays for detailed formative marking.',
+        'Distribute the mark scheme band descriptors. Students read their own work carefully and complete a self-assessment form: (1) Which band best describes my response for AO1, AO2, and AO3 separately? (2) My strongest moment - quote a sentence from my essay and explain why it works. (3) My weakest moment - identify a specific section that falls below my best standard and explain why. (4) Two targets for the real exam - expressed as concrete actions (e.g. "I will spend the first 2 minutes of proofreading checking that every quotation has analysis attached"). Students share their targets with a partner. Teacher collects all essays for detailed formative marking.',
       differentiation: {
         support:
           'Provide a simplified self-assessment form with sentence starters and a band descriptor summary sheet.',
@@ -2237,7 +2228,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Identify two specific weaknesses in your response. For each, explain exactly what you would do differently.',
         lines: 6,
         modelAnswer:
-          'Weakness 1: My third paragraph relied on retelling what happens in the banquet scene rather than analysing how Shakespeare presents it. Next time, I will start every paragraph with a method or technique rather than a plot summary. Weakness 2: I did not include enough contextual references — only one in the entire essay. I will embed a short contextual link in every paragraph using the structure: "A Jacobean audience would have understood this as..."',
+          'Weakness 1: My third paragraph relied on retelling what happens in the banquet scene rather than analysing how Shakespeare presents it. Next time, I will start every paragraph with a method or technique rather than a plot summary. Weakness 2: I did not include enough contextual references - only one in the entire essay. I will embed a short contextual link in every paragraph using the structure: "A Jacobean audience would have understood this as..."',
         marks: 4,
       },
       {
@@ -2245,7 +2236,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Look at the band descriptors. Which band does your response fall into? Justify your answer with specific reference to the descriptors.',
         lines: 5,
         modelAnswer:
-          'I believe my response falls into Band 4 ("competent, relevant analysis"). My evidence: I included relevant quotations and some analysis of language, which matches "supported by appropriate reference to the text." However, my analysis was not always developed — I sometimes identified a technique without fully explaining its effect, which places me below Band 5\'s requirement for "perceptive, detailed analysis." My context was also limited.',
+          'I believe my response falls into Band 4 ("competent, relevant analysis"). My evidence: I included relevant quotations and some analysis of language, which matches "supported by appropriate reference to the text." However, my analysis was not always developed - I sometimes identified a technique without fully explaining its effect, which places me below Band 5\'s requirement for "perceptive, detailed analysis." My context was also limited.',
         marks: 4,
       },
       {
@@ -2258,19 +2249,19 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This is the culminating assessment lesson. Mark these responses in detail with specific, actionable feedback — students should be able to use the feedback to improve measurably.',
+      'This is the culminating assessment lesson. Mark these responses in detail with specific, actionable feedback - students should be able to use the feedback to improve measurably.',
       'The self-assessment plenary is as important as the writing itself. Students who can accurately diagnose their own band level are in a strong position to improve.',
       'Consider scheduling a follow-up lesson where students read their marked essays and respond to feedback with a redraft of their weakest section.',
       'If time allows, share anonymised extracts from strong responses (with permission) so that students can see what top-band writing looks like from a peer rather than always from a model.',
-      'Remind students that this is practice — the purpose is to learn, not to achieve a perfect score. A lower band with clear targets is more useful than a higher band with no understanding of why.',
+      'Remind students that this is practice - the purpose is to learn, not to achieve a perfect score. A lower band with clear targets is more useful than a higher band with no understanding of why.',
     ],
     targetedSkills: [
       'Timed Essay Writing',
       'Self-Assessment',
       'Exam Technique',
       'AO1 Textual Reference',
-      'AO2 Writer\'s Methods',
+      "AO2 Writer's Methods",
       'AO3 Context',
     ],
   },
-];
+]

@@ -29,7 +29,7 @@ export default function SettingsPage() {
   // Streak nudges and marketing notifications are OFF for children.
   const isChildUser = profile?.is_minor === true && profile?.streaks_enabled === false
 
-  // Notification preferences (simple local stub — wire to backend later).
+  // Notification preferences (simple local stub - wire to backend later).
   const [emailNotifications, setEmailNotifications] = useState(!isChildUser)
   const [productUpdates, setProductUpdates] = useState(true)
 

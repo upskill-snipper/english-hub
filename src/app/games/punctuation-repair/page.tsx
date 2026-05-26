@@ -746,7 +746,7 @@ export default function PunctuationRepairPage() {
         <GameShell
           gameId="punctuation-repair"
           title="Punctuation Repair"
-          description="A sentence has been broken. Pick the version that uses punctuation correctly — capital letters, full stops, commas, speech marks and more."
+          description="A sentence has been broken. Pick the version that uses punctuation correctly - capital letters, full stops, commas, speech marks and more."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || QUESTIONS_PER_ROUND}
@@ -822,7 +822,7 @@ export default function PunctuationRepairPage() {
                   <div className="flex items-center gap-2 font-medium">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on — nicely repaired!
+                        <CheckCircle className="size-4" /> Spot on - nicely repaired!
                       </>
                     ) : (
                       <>

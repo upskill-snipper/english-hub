@@ -7,7 +7,7 @@ import { useT } from '@/lib/i18n/use-t'
 
 /**
  * Tier types exported for any legacy imports. All tier logic lives in
- * `src/lib/affiliate/tiers.ts` — this file is purely presentational.
+ * `src/lib/affiliate/tiers.ts` - this file is purely presentational.
  */
 export type AffiliateTier = 'tier-1' | 'tier-2' | 'tier-3' | 'tier-4' | 'tier-5'
 
@@ -26,31 +26,31 @@ export const TIER_CONFIG: Record<
     label: TIERS['tier-1'].label,
     commission: TIERS['tier-1'].commissionGbp,
     minReferrals: 0,
-    description: 'First 100 signups — start earning straight away',
+    description: 'First 100 signups - start earning straight away',
   },
   'tier-2': {
     label: TIERS['tier-2'].label,
     commission: TIERS['tier-2'].commissionGbp,
     minReferrals: TIERS['tier-2'].minSignup - 1,
-    description: 'Signups 101–250 — £1 bump per signup',
+    description: 'Signups 101-250 - £1 bump per signup',
   },
   'tier-3': {
     label: TIERS['tier-3'].label,
     commission: TIERS['tier-3'].commissionGbp,
     minReferrals: TIERS['tier-3'].minSignup - 1,
-    description: 'Signups 251–500 — established affiliate',
+    description: 'Signups 251-500 - established affiliate',
   },
   'tier-4': {
     label: TIERS['tier-4'].label,
     commission: TIERS['tier-4'].commissionGbp,
     minReferrals: TIERS['tier-4'].minSignup - 1,
-    description: 'Signups 501–1,000 — scaling partner',
+    description: 'Signups 501-1,000 - scaling partner',
   },
   'tier-5': {
     label: TIERS['tier-5'].label,
     commission: TIERS['tier-5'].commissionGbp,
     minReferrals: TIERS['tier-5'].minSignup - 1,
-    description: 'Signups 1,001+ — top-tier partner',
+    description: 'Signups 1,001+ - top-tier partner',
   },
 }
 

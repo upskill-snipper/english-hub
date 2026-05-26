@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
       return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
     }
 
-    // 4b. AI opt-out enforcement (Children's Code — GAP-12B)
+    // 4b. AI opt-out enforcement (Children's Code - GAP-12B)
     const aiOptedOut = await isAiOptedOutServer(user.id)
     if (aiOptedOut) {
       return forbiddenResponse(
@@ -134,7 +134,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 10. Call Claude (shared client — privacy posture documented in
+    // 10. Call Claude (shared client - privacy posture documented in
     // src/lib/anthropic-client.ts; behaviour identical to new Anthropic()).
     const anthropic = getAnthropicClient(apiKey)
     // EU AI Act Art. 12/19: bracket the model call for the audit record.
@@ -237,7 +237,7 @@ export async function POST(request: NextRequest) {
       return serverErrorResponse('Failed to process the AI response. Please try again.')
     }
 
-    // EU AI Act Art. 12/19 — record the successful CEFR assessment decision.
+    // EU AI Act Art. 12/19 - record the successful CEFR assessment decision.
     void logAiDecision({
       ...auditBase,
       requestStartedAt: aiRequestStartedAt,

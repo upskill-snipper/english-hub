@@ -1,14 +1,14 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y8FullLessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
-  // TERM 1 — THE HUNGER GAMES
+  // TERM 1 - THE HUNGER GAMES
   // ═══════════════════════════════════════════════════════════════════════════
 
-  // ── Lesson 1: Power and Inequality — First Reading ──────────────────────
+  // ── Lesson 1: Power and Inequality - First Reading ──────────────────────
   {
     id: 'y8-t1-01-power-inequality-first-reading',
-    title: 'Power and Inequality — First Reading',
+    title: 'Power and Inequality - First Reading',
     text: 'The Hunger Games',
     board: 'Universal',
     yearGroup: 'Year 8',
@@ -60,13 +60,9 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a pre-highlighted extract with key quotations underlined and the first two rows of the table completed as models.',
           core: 'Students annotate the extract and complete the table independently with at least three rows.',
           stretch:
-            'Students add a third column — "How the Reader is Positioned" — and explain how Collins makes us feel about the Capitol through her language choices.',
+            'Students add a third column - "How the Reader is Positioned" - and explain how Collins makes us feel about the Capitol through her language choices.',
         },
-        resources: [
-          'Chapter 1 extract handout',
-          'Two-column table worksheet',
-          'Annotation guide',
-        ],
+        resources: ['Chapter 1 extract handout', 'Two-column table worksheet', 'Annotation guide'],
       },
       {
         title: 'Exploring the Capitol vs. District 12',
@@ -96,11 +92,11 @@ export const y8FullLessons: LessonPlan[] = [
         support: 'Provide a sentence starter: "Collins shows inequality by..."',
         core: 'Students write their summary sentence independently with an embedded quotation.',
         stretch:
-          'Students write two sentences — one about inequality and one predicting how Katniss might challenge the power structure.',
+          'Students write two sentences - one about inequality and one predicting how Katniss might challenge the power structure.',
       },
     },
     homework:
-      'Read Chapters 2-3 of The Hunger Games. Write five bullet points noting examples of inequality or the Capitol\'s control over the Districts. Bring these to the next lesson.',
+      "Read Chapters 2-3 of The Hunger Games. Write five bullet points noting examples of inequality or the Capitol's control over the Districts. Bring these to the next lesson.",
     worksheetQuestions: [
       {
         question:
@@ -131,7 +127,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Compare the Capitol and District 12 using the extract. Identify two differences and explain what they suggest about power in Panem.',
         lines: 8,
         modelAnswer:
-          'The Capitol is presented as a place of excess and luxury, while District 12 is characterised by poverty and scarcity. For example, Capitol citizens have abundant food and extravagant clothing, whereas people in District 12 struggle to find enough to eat. This contrast suggests that power in Panem is based on exploitation — the Capitol maintains its wealth by taking from the Districts. The extreme inequality implies that the system is designed to keep the Districts weak and dependent, making rebellion almost impossible.',
+          'The Capitol is presented as a place of excess and luxury, while District 12 is characterised by poverty and scarcity. For example, Capitol citizens have abundant food and extravagant clothing, whereas people in District 12 struggle to find enough to eat. This contrast suggests that power in Panem is based on exploitation - the Capitol maintains its wealth by taking from the Districts. The extreme inequality implies that the system is designed to keep the Districts weak and dependent, making rebellion almost impossible.',
         marks: 5,
       },
       {
@@ -144,18 +140,18 @@ export const y8FullLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This is the first lesson in the Hunger Games unit — spend time establishing context and vocabulary before diving into analysis.',
+      'This is the first lesson in the Hunger Games unit - spend time establishing context and vocabulary before diving into analysis.',
       'If students have not read the novel, the extract-based approach works well; if they have, encourage them to draw on wider knowledge.',
       'Consider displaying a map of Panem to help students visualise the relationship between Capitol and Districts.',
-      'The comparison activity works well as a physical poster or a collaborative digital document — choose based on your class\'s needs.',
+      "The comparison activity works well as a physical poster or a collaborative digital document - choose based on your class's needs.",
     ],
     targetedSkills: ['8R.1', '8R.4', 'Inference', 'Contextual Understanding', 'Comparison'],
   },
 
-  // ── Lesson 2: Character Analysis — Katniss as Resistance ────────────────
+  // ── Lesson 2: Character Analysis - Katniss as Resistance ────────────────
   {
     id: 'y8-t1-02-character-analysis-katniss',
-    title: 'Character Analysis — Katniss as Resistance',
+    title: 'Character Analysis - Katniss as Resistance',
     text: 'The Hunger Games',
     board: 'Universal',
     yearGroup: 'Year 8',
@@ -168,9 +164,9 @@ export const y8FullLessons: LessonPlan[] = [
     ],
     successCriteria: [
       'I can identify at least three character traits of Katniss and support them with evidence',
-      'I can analyse how specific word choices reveal Katniss\'s role as a resistant figure',
+      "I can analyse how specific word choices reveal Katniss's role as a resistant figure",
       'I can write a PEEL paragraph exploring how Collins presents Katniss',
-      'I can explain how Katniss challenges the Capitol\'s power through her actions and choices',
+      "I can explain how Katniss challenges the Capitol's power through her actions and choices",
     ],
     keywords: [
       'protagonist',
@@ -186,7 +182,7 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Character Trait Auction',
       duration: '7 minutes',
       instructions:
-        'Display ten character traits on the board (e.g. brave, calculating, compassionate, rebellious, resourceful, loyal, stubborn, selfless, determined, fearful). Each pair has an imaginary budget of 100 points and must "bid" on the five traits they think best describe Katniss. Pairs justify their top choice with evidence from their reading so far. Teacher collects the most popular traits and displays them — these become the focus for analysis.',
+        'Display ten character traits on the board (e.g. brave, calculating, compassionate, rebellious, resourceful, loyal, stubborn, selfless, determined, fearful). Each pair has an imaginary budget of 100 points and must "bid" on the five traits they think best describe Katniss. Pairs justify their top choice with evidence from their reading so far. Teacher collects the most popular traits and displays them - these become the focus for analysis.',
       differentiation: {
         support:
           'Provide trait cards with simple definitions and a prompt: "I think Katniss is ___ because in the book she ___."',
@@ -201,13 +197,13 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'Close Analysis: Key Extracts Showing Resistance',
         duration: '20 minutes',
         instructions:
-          'Provide students with three short extracts showing key moments of Katniss\'s defiance (e.g. volunteering for Prim, the three-finger salute, her actions in the arena). For each extract, students annotate for: language techniques used, what the language reveals about Katniss, and how the reader is positioned. Teacher models annotation of the first extract using a visualiser, focusing on verb choices and their connotations. Students work independently on extracts two and three, then compare annotations with a partner.',
+          "Provide students with three short extracts showing key moments of Katniss's defiance (e.g. volunteering for Prim, the three-finger salute, her actions in the arena). For each extract, students annotate for: language techniques used, what the language reveals about Katniss, and how the reader is positioned. Teacher models annotation of the first extract using a visualiser, focusing on verb choices and their connotations. Students work independently on extracts two and three, then compare annotations with a partner.",
         differentiation: {
           support:
             'Provide annotated example of extract one and a word bank of analytical verbs (suggests, implies, reveals, conveys, emphasises).',
           core: 'Students annotate all three extracts independently, identifying at least two techniques per extract.',
           stretch:
-            'Students explore how Collins\'s use of first-person narration affects the reader\'s perception of Katniss\'s resistance — does her internal voice differ from her actions?',
+            "Students explore how Collins's use of first-person narration affects the reader's perception of Katniss's resistance - does her internal voice differ from her actions?",
         },
         resources: [
           'Three-extract handout',
@@ -225,7 +221,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a PEEL writing frame with sentence starters: "Collins presents Katniss as resistant through...", "This is evident when...", "The word ___ suggests...", "This reinforces the idea that..."',
           core: 'Students write a full PEEL paragraph and redraft after peer feedback.',
           stretch:
-            'Students write two linked PEEL paragraphs — one on Katniss\'s external actions and one on her internal thoughts — and explain how the contrast between them deepens her characterisation.',
+            "Students write two linked PEEL paragraphs - one on Katniss's external actions and one on her internal thoughts - and explain how the contrast between them deepens her characterisation.",
         },
         resources: [
           'PEEL writing frame',
@@ -243,7 +239,7 @@ export const y8FullLessons: LessonPlan[] = [
         support: 'Students choose one moment and explain why it shows resistance.',
         core: 'Students rank all three moments and justify their number one choice.',
         stretch:
-          'Students predict how Katniss\'s resistance might escalate in the rest of the novel and what consequences this might bring.',
+          "Students predict how Katniss's resistance might escalate in the rest of the novel and what consequences this might bring.",
       },
     },
     homework:
@@ -254,15 +250,15 @@ export const y8FullLessons: LessonPlan[] = [
           'List three character traits of Katniss Everdeen and provide a piece of evidence for each from the text.',
         lines: 6,
         modelAnswer:
-          'Brave — she volunteers as tribute in place of her sister, knowing she may die. Resourceful — she has taught herself to hunt with a bow to feed her family. Defiant — she challenges the Capitol\'s rules by forming an alliance and refusing to accept their control over her humanity.',
+          "Brave - she volunteers as tribute in place of her sister, knowing she may die. Resourceful - she has taught herself to hunt with a bow to feed her family. Defiant - she challenges the Capitol's rules by forming an alliance and refusing to accept their control over her humanity.",
         marks: 6,
       },
       {
         question:
-          'Analyse the significance of Katniss volunteering to take Prim\'s place at the Reaping. What does this action reveal about her character and the theme of resistance?',
+          "Analyse the significance of Katniss volunteering to take Prim's place at the Reaping. What does this action reveal about her character and the theme of resistance?",
         lines: 6,
         modelAnswer:
-          'Katniss\'s decision to volunteer is significant because it is one of the first moments of individual defiance against the Capitol\'s system. The Reaping is designed to enforce obedience through fear, but Katniss\'s act of love disrupts this — she turns a moment of submission into one of agency. This reveals her selflessness and establishes her as a character who will prioritise human bonds over institutional control, foreshadowing her role as a symbol of resistance.',
+          "Katniss's decision to volunteer is significant because it is one of the first moments of individual defiance against the Capitol's system. The Reaping is designed to enforce obedience through fear, but Katniss's act of love disrupts this - she turns a moment of submission into one of agency. This reveals her selflessness and establishes her as a character who will prioritise human bonds over institutional control, foreshadowing her role as a symbol of resistance.",
         marks: 5,
       },
       {
@@ -270,23 +266,23 @@ export const y8FullLessons: LessonPlan[] = [
           'Choose a quotation that shows Katniss as a figure of resistance. Write a PEEL paragraph analysing how Collins presents her.',
         lines: 10,
         modelAnswer:
-          'Collins presents Katniss as a figure of resistance who refuses to be dehumanised by the Games. This is evident when Katniss decorates Rue\'s body with flowers after her death, an act that is described as a deliberate statement. The verb choices suggest a conscious decision to honour humanity in a context designed to destroy it. By choosing beauty and dignity over the brutality the Capitol expects, Katniss transforms a moment of grief into an act of political defiance. This reinforces the novel\'s central theme that true power lies in compassion and solidarity, not in violence and control.',
+          "Collins presents Katniss as a figure of resistance who refuses to be dehumanised by the Games. This is evident when Katniss decorates Rue's body with flowers after her death, an act that is described as a deliberate statement. The verb choices suggest a conscious decision to honour humanity in a context designed to destroy it. By choosing beauty and dignity over the brutality the Capitol expects, Katniss transforms a moment of grief into an act of political defiance. This reinforces the novel's central theme that true power lies in compassion and solidarity, not in violence and control.",
         marks: 5,
       },
       {
         question:
-          'How does Collins\'s use of first-person narration affect the way we understand Katniss\'s resistance? Explain with reference to the text.',
+          "How does Collins's use of first-person narration affect the way we understand Katniss's resistance? Explain with reference to the text.",
         lines: 6,
         modelAnswer:
-          'First-person narration allows the reader to access Katniss\'s internal thoughts, revealing that her resistance is not always confident or planned — she often acts out of instinct, fear, or love rather than calculated rebellion. This makes her a more realistic and sympathetic protagonist because we see her doubts and vulnerabilities alongside her brave actions. It also positions the reader as an ally who understands her motivations in ways other characters cannot.',
+          "First-person narration allows the reader to access Katniss's internal thoughts, revealing that her resistance is not always confident or planned - she often acts out of instinct, fear, or love rather than calculated rebellion. This makes her a more realistic and sympathetic protagonist because we see her doubts and vulnerabilities alongside her brave actions. It also positions the reader as an ally who understands her motivations in ways other characters cannot.",
         marks: 4,
       },
     ],
     teacherNotes: [
-      'This lesson builds on Lesson 1 — ensure students have a solid understanding of the power dynamics in Panem before focusing on Katniss\'s character.',
-      'The peer feedback activity is crucial for developing self-editing skills — model what good feedback looks like before the activity.',
-      'If time allows, show a short clip from the film adaptation to compare how Katniss\'s resistance is conveyed visually versus textually.',
-      'Emphasise the difference between describing a character and analysing how a writer presents a character — this is a common KS3 misconception.',
+      "This lesson builds on Lesson 1 - ensure students have a solid understanding of the power dynamics in Panem before focusing on Katniss's character.",
+      'The peer feedback activity is crucial for developing self-editing skills - model what good feedback looks like before the activity.',
+      "If time allows, show a short clip from the film adaptation to compare how Katniss's resistance is conveyed visually versus textually.",
+      'Emphasise the difference between describing a character and analysing how a writer presents a character - this is a common KS3 misconception.',
     ],
     targetedSkills: ['8R.3', '8R.5', 'Character Analysis', 'PEEL Writing', 'Language Analysis'],
   },
@@ -294,7 +290,7 @@ export const y8FullLessons: LessonPlan[] = [
   // ── Lesson 3: Embedding Quotations ──────────────────────────────────────
   {
     id: 'y8-t1-03-embedding-quotations',
-    title: 'Embedding Quotations — "This suggests... because..."',
+    title: 'Embedding Quotations - "This suggests... because..."',
     text: 'The Hunger Games',
     board: 'Universal',
     yearGroup: 'Year 8',
@@ -325,10 +321,10 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Spot the Difference: Dropped vs. Embedded',
       duration: '7 minutes',
       instructions:
-        'Display two versions of the same analytical sentence — one with a "dropped-in" quotation and one with an embedded quotation. Students discuss in pairs: which sounds better and why? Teacher reveals the terms "dropped-in" and "embedded" and explains the rule: an embedded quotation should fit grammatically into the student\'s own sentence. Show three more pairs and students vote on which is embedded using thumbs up/down.',
+        'Display two versions of the same analytical sentence - one with a "dropped-in" quotation and one with an embedded quotation. Students discuss in pairs: which sounds better and why? Teacher reveals the terms "dropped-in" and "embedded" and explains the rule: an embedded quotation should fit grammatically into the student\'s own sentence. Show three more pairs and students vote on which is embedded using thumbs up/down.',
       differentiation: {
         support:
-          'Provide a colour-coded example where the student\'s words are blue and the quotation is red, making the integration visible.',
+          "Provide a colour-coded example where the student's words are blue and the quotation is red, making the integration visible.",
         core: 'Students identify embedded vs. dropped-in in three examples and explain the difference.',
         stretch:
           'Students rewrite the three dropped-in examples so they become embedded, changing the surrounding sentence as needed.',
@@ -364,7 +360,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a writing frame for one paragraph with the Point, Evidence (quotation selected), and sentence starters for Explain and Link.',
           core: 'Students write two paragraphs independently with embedded quotations and "This suggests..." analysis.',
           stretch:
-            'Students write a third paragraph that synthesises their analysis, drawing together the quotations from both paragraphs to make a broader argument about Collins\'s intentions.',
+            "Students write a third paragraph that synthesises their analysis, drawing together the quotations from both paragraphs to make a broader argument about Collins's intentions.",
         },
         resources: [
           'Three focus questions slide',
@@ -393,7 +389,7 @@ export const y8FullLessons: LessonPlan[] = [
           'What is the difference between a "dropped-in" quotation and an "embedded" quotation? Give an example of each.',
         lines: 5,
         modelAnswer:
-          'A dropped-in quotation is placed into writing without being grammatically integrated, e.g. "Katniss is brave. \'I volunteer as tribute.\'" An embedded quotation is woven into the writer\'s own sentence so it reads fluently, e.g. "When Katniss cries \'I volunteer as tribute,\' she demonstrates her courage and selflessness." Embedded quotations are more effective because they show the student can handle evidence skillfully.',
+          "A dropped-in quotation is placed into writing without being grammatically integrated, e.g. \"Katniss is brave. 'I volunteer as tribute.'\" An embedded quotation is woven into the writer's own sentence so it reads fluently, e.g. \"When Katniss cries 'I volunteer as tribute,' she demonstrates her courage and selflessness.\" Embedded quotations are more effective because they show the student can handle evidence skillfully.",
         marks: 3,
       },
       {
@@ -417,7 +413,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Write a full PEEL paragraph about The Hunger Games, embedding at least one quotation and using "This suggests... because..." in your explanation.',
         lines: 10,
         modelAnswer:
-          'Collins presents the Reaping as a mechanism of fear and control designed to maintain the Capitol\'s power. This is evident when the crowd is described as standing in "silence," a reaction that conveys both collective dread and enforced obedience. This suggests that the Capitol\'s authority is so absolute that even grief is suppressed, because any outward display of emotion could be interpreted as defiance and punished. The word "silence" also implies a loss of voice — the Districts literally cannot speak against their oppressors. This reinforces the novel\'s exploration of how totalitarian regimes use spectacle and terror to prevent resistance.',
+          'Collins presents the Reaping as a mechanism of fear and control designed to maintain the Capitol\'s power. This is evident when the crowd is described as standing in "silence," a reaction that conveys both collective dread and enforced obedience. This suggests that the Capitol\'s authority is so absolute that even grief is suppressed, because any outward display of emotion could be interpreted as defiance and punished. The word "silence" also implies a loss of voice - the Districts literally cannot speak against their oppressors. This reinforces the novel\'s exploration of how totalitarian regimes use spectacle and terror to prevent resistance.',
         marks: 5,
       },
       {
@@ -430,7 +426,7 @@ export const y8FullLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This is a skill-focused lesson — the Hunger Games content is the vehicle, not the primary focus. Students should leave confident in the mechanical skill of embedding.',
+      'This is a skill-focused lesson - the Hunger Games content is the vehicle, not the primary focus. Students should leave confident in the mechanical skill of embedding.',
       'Common mistakes to watch for: quotations that are too long (encourage single words or short phrases), quotations that do not fit grammatically, and analysis that retells rather than analyses.',
       'Display an "Analytical Verbs" poster (suggests, implies, conveys, reveals, emphasises, highlights, reinforces) for students to reference throughout.',
       'Consider using coloured pens: students write their own words in blue and quotations in red to visually check embedding quality.',
@@ -478,7 +474,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Provide labelled cards (Introduction, Body 1, Body 2, Body 3, Conclusion) so students match sections to labels.',
         core: 'Students arrange and label sections independently, explaining the function of each.',
         stretch:
-          'Students evaluate the model essay — which body paragraph is strongest and why? What could be improved?',
+          'Students evaluate the model essay - which body paragraph is strongest and why? What could be improved?',
       },
       resources: ['Cut-up model essay', 'Section label cards'],
     },
@@ -487,19 +483,15 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'Planning an Analytical Essay',
         duration: '15 minutes',
         instructions:
-          'Present the essay question: "How does Collins explore the theme of power in The Hunger Games?" Teacher models how to create a thesis statement — a single sentence that summarises the student\'s overall argument. Then, using a planning grid, teacher models selecting three key aspects of power (e.g. political control, surveillance, resistance) and matching each to a key quotation and analytical point. Students complete their own planning grid for the same question. Teacher circulates to check thesis statements and offer feedback before students begin writing.',
+          'Present the essay question: "How does Collins explore the theme of power in The Hunger Games?" Teacher models how to create a thesis statement - a single sentence that summarises the student\'s overall argument. Then, using a planning grid, teacher models selecting three key aspects of power (e.g. political control, surveillance, resistance) and matching each to a key quotation and analytical point. Students complete their own planning grid for the same question. Teacher circulates to check thesis statements and offer feedback before students begin writing.',
         differentiation: {
           support:
-            'Provide a pre-populated planning grid with thesis options to choose from and quotations already selected — students match quotations to aspects of power.',
+            'Provide a pre-populated planning grid with thesis options to choose from and quotations already selected - students match quotations to aspects of power.',
           core: 'Students create their own thesis and complete the planning grid with three points and quotations.',
           stretch:
             'Students plan a fourth "counter-argument" paragraph (e.g. "However, Collins also shows that power can be challenged through...") to add complexity.',
         },
-        resources: [
-          'Essay planning grid',
-          'Quotation bank handout',
-          'Thesis statement examples',
-        ],
+        resources: ['Essay planning grid', 'Quotation bank handout', 'Thesis statement examples'],
       },
       {
         title: 'Timed Essay Writing',
@@ -527,20 +519,20 @@ export const y8FullLessons: LessonPlan[] = [
         'Students swap their conclusion paragraph with a partner. Each student reads the other\'s conclusion and writes one positive comment and one improvement suggestion on a sticky note. Partners return the conclusions and students read their feedback. Teacher asks: "Did your conclusion synthesise your argument or just repeat it? What is the difference?" and takes two or three responses to reinforce the concept.',
       differentiation: {
         support: 'Provide a feedback frame: "One strength is... To improve, you could..."',
-        core: 'Students give specific, targeted feedback on the conclusion\'s effectiveness.',
+        core: "Students give specific, targeted feedback on the conclusion's effectiveness.",
         stretch:
-          'Students rewrite their conclusion in light of their partner\'s feedback, improving its sophistication.',
+          "Students rewrite their conclusion in light of their partner's feedback, improving its sophistication.",
       },
     },
     homework:
-      'Complete and polish your essay if unfinished. If finished, reread your essay and highlight every embedded quotation in one colour and every analytical comment in another — check you have a balance of both.',
+      'Complete and polish your essay if unfinished. If finished, reread your essay and highlight every embedded quotation in one colour and every analytical comment in another - check you have a balance of both.',
     worksheetQuestions: [
       {
         question:
           'What is a thesis statement? Write a thesis statement for the question: "How does Collins explore the theme of power in The Hunger Games?"',
         lines: 4,
         modelAnswer:
-          'A thesis statement is a single sentence that summarises the writer\'s overall argument in response to the essay question. Example: "Collins explores the theme of power through the Capitol\'s political control, the use of the Games as a tool of fear, and Katniss\'s emergence as a symbol of resistance, ultimately arguing that true power lies in hope and solidarity rather than oppression."',
+          "A thesis statement is a single sentence that summarises the writer's overall argument in response to the essay question. Example: \"Collins explores the theme of power through the Capitol's political control, the use of the Games as a tool of fear, and Katniss's emergence as a symbol of resistance, ultimately arguing that true power lies in hope and solidarity rather than oppression.\"",
         marks: 3,
       },
       {
@@ -556,7 +548,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Write the opening paragraph (introduction) for an essay responding to: "How does Collins use the character of Katniss to challenge ideas about power?"',
         lines: 8,
         modelAnswer:
-          'In The Hunger Games, Suzanne Collins presents Katniss Everdeen as a character who embodies resistance against an oppressive regime. Through her actions — volunteering for the Games, forming alliances, and refusing to play by the Capitol\'s rules — Katniss challenges the established power structures of Panem. Collins uses Katniss to argue that true strength comes not from political authority or violence, but from compassion, solidarity, and the courage to defy injustice. This essay will explore how Collins presents Katniss as a catalyst for change through her relationships, her choices in the arena, and her symbolic significance to the Districts.',
+          "In The Hunger Games, Suzanne Collins presents Katniss Everdeen as a character who embodies resistance against an oppressive regime. Through her actions - volunteering for the Games, forming alliances, and refusing to play by the Capitol's rules - Katniss challenges the established power structures of Panem. Collins uses Katniss to argue that true strength comes not from political authority or violence, but from compassion, solidarity, and the courage to defy injustice. This essay will explore how Collins presents Katniss as a catalyst for change through her relationships, her choices in the arena, and her symbolic significance to the Districts.",
         marks: 5,
       },
       {
@@ -564,20 +556,20 @@ export const y8FullLessons: LessonPlan[] = [
           'List three discourse markers that could be used to link body paragraphs in an analytical essay. For each, write a sentence showing how it could be used.',
         lines: 6,
         modelAnswer:
-          '"Furthermore" — Furthermore, Collins reinforces the theme of power through the Capitol\'s use of surveillance. "In contrast" — In contrast, Katniss\'s quiet acts of compassion reveal a different kind of strength. "Most significantly" — Most significantly, it is Katniss\'s refusal to kill Peeta that poses the greatest challenge to the Capitol\'s authority.',
+          '"Furthermore" - Furthermore, Collins reinforces the theme of power through the Capitol\'s use of surveillance. "In contrast" - In contrast, Katniss\'s quiet acts of compassion reveal a different kind of strength. "Most significantly" - Most significantly, it is Katniss\'s refusal to kill Peeta that poses the greatest challenge to the Capitol\'s authority.',
         marks: 3,
       },
     ],
     teacherNotes: [
       'This lesson consolidates skills from Lessons 1-3. Ensure students have their annotated extracts and notes available.',
-      'The timed writing element prepares students for assessment conditions — adjust timings based on class ability.',
+      'The timed writing element prepares students for assessment conditions - adjust timings based on class ability.',
       'Model the difference between a "repeating" and "synthesising" conclusion explicitly; this is a common weakness at KS3.',
       'Consider collecting essays for formative marking before the formal assessment in Lesson 5.',
     ],
     targetedSkills: ['8W.2', '8W.5', 'Essay Structure', 'Thesis Development', 'Analytical Writing'],
   },
 
-  // ── Lesson 5: Assessment — Theme of Power ──────────────────────────────
+  // ── Lesson 5: Assessment - Theme of Power ──────────────────────────────
   {
     id: 'y8-t1-05-assessment-theme-of-power',
     title: 'Assessment: Theme of Power in The Hunger Games',
@@ -623,7 +615,8 @@ export const y8FullLessons: LessonPlan[] = [
     },
     mainActivities: [
       {
-        title: 'Timed Assessment: "How does Collins explore the theme of power in The Hunger Games?"',
+        title:
+          'Timed Assessment: "How does Collins explore the theme of power in The Hunger Games?"',
         duration: '45 minutes',
         instructions:
           'Students complete the essay under timed conditions. The assessment question is: "How does Suzanne Collins explore the theme of power in The Hunger Games? You should consider: the relationship between the Capitol and the Districts, how characters respond to power, and how the writer uses language to convey ideas about power." Students are provided with an extract and a quotation bank. Teacher displays suggested time allocation: planning (5 mins), introduction (5 mins), body paragraphs (25 mins), conclusion (5 mins), proofreading (5 mins). Exam conditions: silent working, no talking, books closed except for the extract provided.',
@@ -649,14 +642,15 @@ export const y8FullLessons: LessonPlan[] = [
       instructions:
         'Students reread their essay and complete a self-assessment grid, rating themselves (Developing/Secure/Excelling) against five criteria: thesis statement, PEEL structure, embedded quotations, analytical language, and conclusion quality. Students then write one sentence identifying their biggest strength and one sentence identifying their area for development. Teacher collects essays and self-assessments together.',
       differentiation: {
-        support: 'Provide the self-assessment grid with clear descriptions of what each level looks like.',
+        support:
+          'Provide the self-assessment grid with clear descriptions of what each level looks like.',
         core: 'Students complete the self-assessment honestly and set a target for next term.',
         stretch:
           'Students write a short paragraph reflecting on how their analytical writing has improved across the five lessons of this unit.',
       },
     },
     homework:
-      'No written homework. Students should read ahead for next term\'s poetry unit. Optional extension: write a creative response — a diary entry from Katniss\'s perspective reflecting on power.',
+      "No written homework. Students should read ahead for next term's poetry unit. Optional extension: write a creative response - a diary entry from Katniss's perspective reflecting on power.",
     worksheetQuestions: [
       {
         question:
@@ -668,10 +662,10 @@ export const y8FullLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This is a formal assessment — set up the room in exam conditions before students arrive.',
+      'This is a formal assessment - set up the room in exam conditions before students arrive.',
       'Decide in advance whether support-tier students will receive the full scaffold or just the quotation bank, based on their progress in Lessons 1-4.',
-      'Mark using the school\'s KS3 assessment criteria or create a bespoke mark scheme aligned with 8R.2-8R.5 and 8W.2.',
-      'Use the self-assessment data to inform planning for Term 2 — students who scored themselves as "Developing" on quotation embedding will need continued reinforcement.',
+      "Mark using the school's KS3 assessment criteria or create a bespoke mark scheme aligned with 8R.2-8R.5 and 8W.2.",
+      'Use the self-assessment data to inform planning for Term 2 - students who scored themselves as "Developing" on quotation embedding will need continued reinforcement.',
       'Consider sharing marked work with individual targets before the start of the next unit.',
     ],
     targetedSkills: [
@@ -687,7 +681,7 @@ export const y8FullLessons: LessonPlan[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // TERM 2 — CONFLICT POETRY & SHAKESPEARE
+  // TERM 2 - CONFLICT POETRY & SHAKESPEARE
   // ═══════════════════════════════════════════════════════════════════════════
 
   // ── Lesson 6: Analysing a Conflict Poem ─────────────────────────────────
@@ -700,33 +694,25 @@ export const y8FullLessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Read and respond to a conflict poem, identifying its themes and key ideas (8R.3)',
-      'Analyse the poet\'s use of language, structure, and imagery to convey the experience of conflict (8R.5)',
+      "Analyse the poet's use of language, structure, and imagery to convey the experience of conflict (8R.5)",
       'Write analytical paragraphs about poetic techniques and their effects',
       'Begin to develop a personal response to poetry',
     ],
     successCriteria: [
-      'I can summarise the poem\'s content and identify its central theme',
+      "I can summarise the poem's content and identify its central theme",
       'I can identify at least three language or structural techniques used by the poet',
       'I can analyse how the poet uses these techniques to convey ideas about conflict',
       'I can write a PEEL paragraph about the poem using embedded quotations',
     ],
-    keywords: [
-      'imagery',
-      'metaphor',
-      'simile',
-      'tone',
-      'mood',
-      'enjambment',
-      'caesura',
-      'stanza',
-    ],
+    keywords: ['imagery', 'metaphor', 'simile', 'tone', 'mood', 'enjambment', 'caesura', 'stanza'],
     starterActivity: {
       title: 'Conflict Word Cloud',
       duration: '7 minutes',
       instructions:
         'Students have 90 seconds to write as many words as they associate with "conflict" on their mini-whiteboards. Teacher collects responses and builds a word cloud on the board. Discuss: do the words suggest conflict is only about war, or can it be broader (internal conflict, family conflict, societal conflict)? Teacher introduces the poem for the lesson and asks students to predict what kind of conflict it might explore based on its title.',
       differentiation: {
-        support: 'Provide prompt categories: physical conflict, emotional conflict, political conflict.',
+        support:
+          'Provide prompt categories: physical conflict, emotional conflict, political conflict.',
         core: 'Students generate at least eight words independently and group them into categories.',
         stretch:
           'Students predict what techniques a poet might use to convey each type of conflict (e.g. violent imagery for war, short sentences for tension).',
@@ -738,13 +724,13 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'First Reading and Annotation',
         duration: '20 minutes',
         instructions:
-          'Teacher reads the poem aloud while students listen with eyes closed to focus on the sounds and rhythm. Second reading: students follow the text and annotate for initial reactions, questions, and powerful words or images. Third reading: students annotate more formally for techniques — imagery, structural features, shifts in tone, and key quotations. Teacher models annotation of the first stanza on the board, labelling technique, quotation, and effect. Students complete the remaining stanzas independently. Pairs compare annotations and select the three most important quotations in the poem.',
+          'Teacher reads the poem aloud while students listen with eyes closed to focus on the sounds and rhythm. Second reading: students follow the text and annotate for initial reactions, questions, and powerful words or images. Third reading: students annotate more formally for techniques - imagery, structural features, shifts in tone, and key quotations. Teacher models annotation of the first stanza on the board, labelling technique, quotation, and effect. Students complete the remaining stanzas independently. Pairs compare annotations and select the three most important quotations in the poem.',
         differentiation: {
           support:
             'Provide a pre-annotated first stanza and a technique checklist (metaphor, simile, personification, enjambment, caesura, repetition) with definitions.',
           core: 'Students annotate the full poem independently, identifying at least four techniques.',
           stretch:
-            'Students annotate for structural features as well as language — how does the poem\'s shape, line length, or stanza arrangement contribute to meaning?',
+            "Students annotate for structural features as well as language - how does the poem's shape, line length, or stanza arrangement contribute to meaning?",
         },
         resources: [
           'Poem handout (large margins for annotation)',
@@ -762,7 +748,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a writing frame with sentence starters and a quotation already selected for the first paragraph.',
           core: 'Students write two independent PEEL paragraphs with embedded quotations.',
           stretch:
-            'Students write a third paragraph exploring how the poem\'s structure contributes to its meaning, moving beyond language analysis.',
+            "Students write a third paragraph exploring how the poem's structure contributes to its meaning, moving beyond language analysis.",
         },
         resources: ['PEEL writing frame', 'Model opening sentence slide'],
       },
@@ -771,7 +757,7 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Personal Response Exit Ticket',
       duration: '5 minutes',
       instructions:
-        'Students write on their exit ticket: "The most powerful moment in this poem is ___ because ___." Teacher collects exit tickets and reads two or three aloud, celebrating a range of personal responses. Remind students that there is no single "right" answer in poetry — what matters is supporting your interpretation with evidence.',
+        'Students write on their exit ticket: "The most powerful moment in this poem is ___ because ___." Teacher collects exit tickets and reads two or three aloud, celebrating a range of personal responses. Remind students that there is no single "right" answer in poetry - what matters is supporting your interpretation with evidence.',
       differentiation: {
         support: 'Use the prompt as written with a sentence starter provided.',
         core: 'Students write their personal response independently with evidence.',
@@ -784,7 +770,7 @@ export const y8FullLessons: LessonPlan[] = [
     worksheetQuestions: [
       {
         question:
-          'Summarise the poem in three to four sentences. What is it about? What is the poet\'s message?',
+          "Summarise the poem in three to four sentences. What is it about? What is the poet's message?",
         lines: 5,
         modelAnswer:
           'The poem explores the devastating impact of conflict on individuals and communities. The poet describes scenes of destruction and loss, using vivid imagery to convey both the physical horror and the emotional trauma of war. The central message is that conflict dehumanises people and leaves lasting scars that go beyond the battlefield.',
@@ -811,14 +797,14 @@ export const y8FullLessons: LessonPlan[] = [
           'Write a PEEL paragraph analysing how the poet presents the human cost of conflict.',
         lines: 10,
         modelAnswer:
-          'The poet powerfully presents the human cost of conflict through emotive language and personal detail. This is evident through the use of intimate, domestic imagery juxtaposed with scenes of destruction, which forces the reader to recognise the individual lives behind the statistics of war. The contrast between the ordinary and the horrific suggests that conflict violently disrupts normality, tearing apart the fabric of everyday life. This reinforces the poet\'s broader message that the true cost of conflict is measured not in territory gained but in humanity lost.',
+          "The poet powerfully presents the human cost of conflict through emotive language and personal detail. This is evident through the use of intimate, domestic imagery juxtaposed with scenes of destruction, which forces the reader to recognise the individual lives behind the statistics of war. The contrast between the ordinary and the horrific suggests that conflict violently disrupts normality, tearing apart the fabric of everyday life. This reinforces the poet's broader message that the true cost of conflict is measured not in territory gained but in humanity lost.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      'Choose a conflict poem appropriate to your class — options include poems by Wilfred Owen, Siegfried Sassoon, or contemporary poets exploring modern conflict.',
+      'Choose a conflict poem appropriate to your class - options include poems by Wilfred Owen, Siegfried Sassoon, or contemporary poets exploring modern conflict.',
       'The three-reading approach (listen, read, annotate) helps students build understanding gradually before analysis.',
-      'Emphasise that "conflict" in poetry can mean more than war — internal conflict, moral conflict, and societal tension are all valid interpretations.',
+      'Emphasise that "conflict" in poetry can mean more than war - internal conflict, moral conflict, and societal tension are all valid interpretations.',
       'Keep annotated copies of the poem as students will need them for the comparison task in Lesson 7.',
     ],
     targetedSkills: ['8R.3', '8R.5', 'Poetry Analysis', 'Language Analysis', 'Personal Response'],
@@ -879,7 +865,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a comparative connectives word mat and a copy of the model paragraph with gaps for students to fill in.',
           core: 'Students copy, annotate, and identify the structure of the model paragraph.',
           stretch:
-            'Students evaluate the model paragraph and suggest an improvement — could the analysis go deeper? Could a different quotation be more effective?',
+            'Students evaluate the model paragraph and suggest an improvement - could the analysis go deeper? Could a different quotation be more effective?',
         },
         resources: [
           'Model paragraph (written live)',
@@ -891,7 +877,7 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'Writing a Comparative Response',
         duration: '25 minutes',
         instructions:
-          'Students write their own comparative response to: "Compare how the two poets present the experience of conflict. You should compare: the poets\' ideas and perspectives, the poets\' use of language and structure." Students write at least two comparative PEEL paragraphs. Teacher circulates with a focus checklist: Are both poems discussed in each paragraph? Are comparative connectives used? Are quotations embedded? After 18 minutes, teacher pauses to share a strong comparative connective from a student\'s work. Students continue and aim to write a brief conclusion evaluating which poem they find more effective.',
+          "Students write their own comparative response to: \"Compare how the two poets present the experience of conflict. You should compare: the poets' ideas and perspectives, the poets' use of language and structure.\" Students write at least two comparative PEEL paragraphs. Teacher circulates with a focus checklist: Are both poems discussed in each paragraph? Are comparative connectives used? Are quotations embedded? After 18 minutes, teacher pauses to share a strong comparative connective from a student's work. Students continue and aim to write a brief conclusion evaluating which poem they find more effective.",
         differentiation: {
           support:
             'Provide a writing frame with the comparative structure scaffolded: "Both poets explore... In Poem A, the poet... Similarly/In contrast, Poem B..."',
@@ -910,7 +896,7 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Which Poem Wins?',
       duration: '5 minutes',
       instructions:
-        'Students vote (hands up or stand on a side of the room) for the poem they find more powerful. Three students from each side justify their choice in one sentence. Teacher summarises the debate and reinforces that evaluation is a high-level skill — explaining why you prefer one interpretation over another demonstrates sophisticated critical thinking.',
+        'Students vote (hands up or stand on a side of the room) for the poem they find more powerful. Three students from each side justify their choice in one sentence. Teacher summarises the debate and reinforces that evaluation is a high-level skill - explaining why you prefer one interpretation over another demonstrates sophisticated critical thinking.',
       differentiation: {
         support: 'Students choose a side and explain using: "I prefer Poem ___ because..."',
         core: 'Students justify their preference with specific reference to technique or effect.',
@@ -919,7 +905,7 @@ export const y8FullLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Write a third comparative paragraph focusing on the poems\' structures (e.g. stanza length, rhythm, enjambment). Use at least two comparative connectives.',
+      "Write a third comparative paragraph focusing on the poems' structures (e.g. stanza length, rhythm, enjambment). Use at least two comparative connectives.",
     worksheetQuestions: [
       {
         question:
@@ -934,7 +920,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Write a comparative PEEL paragraph comparing how the two poets use imagery to present conflict.',
         lines: 10,
         modelAnswer:
-          'Both poets use powerful imagery to convey the devastating effects of conflict, though they achieve this in different ways. In Poem A, the poet employs a visceral simile to describe the physical impact of violence, creating a raw and immediate sense of horror that forces the reader to confront the reality of war. Similarly, Poem B uses imagery to convey suffering, yet this poet favours metaphor over simile, creating a more abstract and haunting impression that lingers in the reader\'s mind. While Poem A\'s directness shocks, Poem B\'s subtlety unsettles, suggesting that both approaches are effective at communicating the human cost of conflict, but through fundamentally different emotional registers.',
+          "Both poets use powerful imagery to convey the devastating effects of conflict, though they achieve this in different ways. In Poem A, the poet employs a visceral simile to describe the physical impact of violence, creating a raw and immediate sense of horror that forces the reader to confront the reality of war. Similarly, Poem B uses imagery to convey suffering, yet this poet favours metaphor over simile, creating a more abstract and haunting impression that lingers in the reader's mind. While Poem A's directness shocks, Poem B's subtlety unsettles, suggesting that both approaches are effective at communicating the human cost of conflict, but through fundamentally different emotional registers.",
         marks: 5,
       },
       {
@@ -950,12 +936,12 @@ export const y8FullLessons: LessonPlan[] = [
           'Which of the two poems do you find more effective at presenting the experience of conflict? Explain your choice with reference to both poems.',
         lines: 8,
         modelAnswer:
-          'I find Poem A more effective because its use of first-person narration creates an intimate and immediate connection with the speaker, making the reader feel as though they are experiencing the conflict directly. While Poem B\'s broader perspective is powerful in showing the scale of destruction, Poem A\'s focus on one individual\'s sensory experience makes the horror more personal and therefore more impactful. However, Poem B\'s structural choices — particularly the fragmented lines — effectively mirror the chaos of conflict in a way that Poem A\'s more regular form does not achieve.',
+          "I find Poem A more effective because its use of first-person narration creates an intimate and immediate connection with the speaker, making the reader feel as though they are experiencing the conflict directly. While Poem B's broader perspective is powerful in showing the scale of destruction, Poem A's focus on one individual's sensory experience makes the horror more personal and therefore more impactful. However, Poem B's structural choices - particularly the fragmented lines - effectively mirror the chaos of conflict in a way that Poem A's more regular form does not achieve.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      'Students will need their annotated copies of the poem from Lesson 6 — remind them to bring these.',
+      'Students will need their annotated copies of the poem from Lesson 6 - remind them to bring these.',
       'The biggest challenge in comparative writing is getting students to discuss both poems together rather than writing about each separately. The model paragraph is crucial.',
       'Consider pairing poems with clear similarities and differences to make the comparison accessible (e.g. a World War I poem with a modern conflict poem).',
       'The evaluative question in the plenary and worksheet prepares students for the assessment in Lesson 10.',
@@ -963,10 +949,10 @@ export const y8FullLessons: LessonPlan[] = [
     targetedSkills: ['8R.6', '8W.2', 'Comparative Writing', 'Evaluation', 'Connective Use'],
   },
 
-  // ── Lesson 8: Introduction to Macbeth — Power and Ambition ──────────────
+  // ── Lesson 8: Introduction to Macbeth - Power and Ambition ──────────────
   {
     id: 'y8-t2-08-macbeth-power-ambition',
-    title: 'Introduction to Macbeth — Power and Ambition',
+    title: 'Introduction to Macbeth - Power and Ambition',
     text: 'Macbeth',
     board: 'Universal',
     yearGroup: 'Year 8',
@@ -974,13 +960,13 @@ export const y8FullLessons: LessonPlan[] = [
     objectives: [
       'Understand the plot, characters, and historical context of Macbeth (8R.3)',
       'Explore how Shakespeare presents the themes of power and ambition in the opening scenes',
-      'Make inferences about character motivations and their connection to the play\'s central themes',
+      "Make inferences about character motivations and their connection to the play's central themes",
       'Begin to engage with Shakespearean language and its effects',
     ],
     successCriteria: [
       'I can outline the basic plot of Macbeth and identify the key characters',
       'I can explain the historical context of the play (Jacobean England, the Divine Right of Kings)',
-      'I can identify how the witches and Lady Macbeth influence Macbeth\'s ambition',
+      "I can identify how the witches and Lady Macbeth influence Macbeth's ambition",
       'I can begin to analyse how Shakespeare uses language to present ambition as dangerous',
     ],
     keywords: [
@@ -1027,16 +1013,16 @@ export const y8FullLessons: LessonPlan[] = [
         ],
       },
       {
-        title: 'Reading Act 1, Scene 3: The Witches\' Prophecy',
+        title: "Reading Act 1, Scene 3: The Witches' Prophecy",
         duration: '25 minutes',
         instructions:
-          'Students read an edited extract from Act 1, Scene 3 (the witches\' prophecy and Macbeth\'s reaction). Teacher reads the witches\' lines aloud using dramatic delivery, then students take roles for Macbeth and Banquo. After reading, students complete a three-part analysis task: (1) What do the witches promise Macbeth? (2) How does Macbeth react — what do his words reveal about his character? (3) How does Shakespeare use language in this scene to suggest that ambition is dangerous? Teacher models the third question using one example, then students write their own response. Class discussion: "Are the witches creating Macbeth\'s ambition, or are they revealing something already inside him?"',
+          "Students read an edited extract from Act 1, Scene 3 (the witches' prophecy and Macbeth's reaction). Teacher reads the witches' lines aloud using dramatic delivery, then students take roles for Macbeth and Banquo. After reading, students complete a three-part analysis task: (1) What do the witches promise Macbeth? (2) How does Macbeth react - what do his words reveal about his character? (3) How does Shakespeare use language in this scene to suggest that ambition is dangerous? Teacher models the third question using one example, then students write their own response. Class discussion: \"Are the witches creating Macbeth's ambition, or are they revealing something already inside him?\"",
         differentiation: {
           support:
             'Provide the extract with a modern English translation alongside the original and the first two questions answered as a model.',
           core: 'Students answer all three questions with quotations from the extract.',
           stretch:
-            'Students explore the dramatic irony in the scene — what does the audience know (from the plot overview) that Macbeth does not? How does this affect tension?',
+            'Students explore the dramatic irony in the scene - what does the audience know (from the plot overview) that Macbeth does not? How does this affect tension?',
         },
         resources: [
           'Act 1, Scene 3 extract (edited)',
@@ -1049,7 +1035,7 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Macbeth: Victim or Villain?',
       duration: '5 minutes',
       instructions:
-        'Students write "VICTIM" or "VILLAIN" on their mini-whiteboard and hold it up. Teacher counts and displays the split. Three students from each side give their one-sentence justification. Teacher introduces the idea that Macbeth is a "tragic hero" — someone who is both victim and villain — and asks students to hold this ambiguity in mind throughout the unit.',
+        'Students write "VICTIM" or "VILLAIN" on their mini-whiteboard and hold it up. Teacher counts and displays the split. Three students from each side give their one-sentence justification. Teacher introduces the idea that Macbeth is a "tragic hero" - someone who is both victim and villain - and asks students to hold this ambiguity in mind throughout the unit.',
       differentiation: {
         support: 'Students choose a side and complete: "I think Macbeth is a ___ because..."',
         core: 'Students justify their position with reference to the scene studied.',
@@ -1065,7 +1051,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Who was the monarch when Macbeth was first performed? Why is this significant for understanding the play?',
         lines: 4,
         modelAnswer:
-          'Macbeth was first performed for King James I. This is significant because James I was fascinated by witchcraft (he even wrote a book about it) and had survived the Gunpowder Plot, a real assassination attempt. Shakespeare\'s play about regicide and supernatural evil would have directly appealed to the king\'s interests while also reinforcing the message that killing a monarch leads to chaos and divine punishment.',
+          "Macbeth was first performed for King James I. This is significant because James I was fascinated by witchcraft (he even wrote a book about it) and had survived the Gunpowder Plot, a real assassination attempt. Shakespeare's play about regicide and supernatural evil would have directly appealed to the king's interests while also reinforcing the message that killing a monarch leads to chaos and divine punishment.",
         marks: 3,
       },
       {
@@ -1073,30 +1059,29 @@ export const y8FullLessons: LessonPlan[] = [
           'What do the witches prophesy for Macbeth in Act 1, Scene 3? How does Macbeth react to their words?',
         lines: 5,
         modelAnswer:
-          'The witches prophesy that Macbeth will become Thane of Cawdor and then King of Scotland. Macbeth reacts with a mixture of shock, fascination, and barely concealed excitement. His reaction suggests that the idea of becoming king is not entirely new to him — the witches may be voicing an ambition he already harbours. His immediate desire to know more reveals that his ambition is quickly overtaking his moral judgement.',
+          'The witches prophesy that Macbeth will become Thane of Cawdor and then King of Scotland. Macbeth reacts with a mixture of shock, fascination, and barely concealed excitement. His reaction suggests that the idea of becoming king is not entirely new to him - the witches may be voicing an ambition he already harbours. His immediate desire to know more reveals that his ambition is quickly overtaking his moral judgement.',
         marks: 4,
       },
       {
-        question:
-          'Explain the term "tragic hero." Why might Macbeth be considered a tragic hero?',
+        question: 'Explain the term "tragic hero." Why might Macbeth be considered a tragic hero?',
         lines: 5,
         modelAnswer:
-          'A tragic hero is a character of high status who has a fatal flaw (hamartia) that leads to their downfall and eventual destruction. Macbeth is considered a tragic hero because he begins as a respected and loyal warrior, but his fatal flaw — his ambition — is exploited by the witches and Lady Macbeth, leading him to commit regicide and descend into tyranny and madness. His story follows the tragic arc from greatness to ruin.',
+          'A tragic hero is a character of high status who has a fatal flaw (hamartia) that leads to their downfall and eventual destruction. Macbeth is considered a tragic hero because he begins as a respected and loyal warrior, but his fatal flaw - his ambition - is exploited by the witches and Lady Macbeth, leading him to commit regicide and descend into tyranny and madness. His story follows the tragic arc from greatness to ruin.',
         marks: 4,
       },
       {
         question:
-          'Do you think the witches create Macbeth\'s ambition or reveal an ambition that was already there? Explain your reasoning with reference to the text.',
+          "Do you think the witches create Macbeth's ambition or reveal an ambition that was already there? Explain your reasoning with reference to the text.",
         lines: 6,
         modelAnswer:
-          'There is evidence for both interpretations. The fact that Macbeth is immediately captivated by the prophecy and does not dismiss it suggests the ambition was already present — the witches simply give it voice. However, without the prophecy, Macbeth might never have acted on his desire for power, which suggests the witches are the catalysts. Shakespeare leaves this deliberately ambiguous to explore the nature of temptation: is evil something done to us or something within us?',
+          'There is evidence for both interpretations. The fact that Macbeth is immediately captivated by the prophecy and does not dismiss it suggests the ambition was already present - the witches simply give it voice. However, without the prophecy, Macbeth might never have acted on his desire for power, which suggests the witches are the catalysts. Shakespeare leaves this deliberately ambiguous to explore the nature of temptation: is evil something done to us or something within us?',
         marks: 5,
       },
     ],
     teacherNotes: [
-      'This is an introductory lesson — prioritise engagement and contextual understanding over deep analysis. Deep language analysis comes in Lesson 9.',
-      'The moral dilemma starter sets up the central theme effectively. Choose scenarios appropriate to your class\'s maturity.',
-      'The "Victim or Villain?" debate will run throughout the Macbeth portion of this unit — consider keeping a class tally that evolves.',
+      'This is an introductory lesson - prioritise engagement and contextual understanding over deep analysis. Deep language analysis comes in Lesson 9.',
+      "The moral dilemma starter sets up the central theme effectively. Choose scenarios appropriate to your class's maturity.",
+      'The "Victim or Villain?" debate will run throughout the Macbeth portion of this unit - consider keeping a class tally that evolves.',
       'If students find the Shakespearean language challenging, use shared reading with frequent pausing to paraphrase.',
     ],
     targetedSkills: [
@@ -1118,15 +1103,15 @@ export const y8FullLessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Understand the dramatic function of a soliloquy and how it reveals character (8R.5)',
-      'Analyse Shakespeare\'s language choices in Macbeth\'s key soliloquy (8W.5)',
+      "Analyse Shakespeare's language choices in Macbeth's key soliloquy (8W.5)",
       'Explore how stagecraft (lighting, positioning, delivery) enhances meaning',
-      'Write an analytical response exploring how Shakespeare uses a soliloquy to present Macbeth\'s internal conflict',
+      "Write an analytical response exploring how Shakespeare uses a soliloquy to present Macbeth's internal conflict",
     ],
     successCriteria: [
       'I can define "soliloquy" and explain why Shakespeare uses it',
-      'I can analyse at least three language features in Macbeth\'s soliloquy',
-      'I can explain how stagecraft choices (tone of voice, movement, lighting) could enhance the soliloquy\'s meaning',
-      'I can write an analytical paragraph about how the soliloquy reveals Macbeth\'s inner conflict',
+      "I can analyse at least three language features in Macbeth's soliloquy",
+      "I can explain how stagecraft choices (tone of voice, movement, lighting) could enhance the soliloquy's meaning",
+      "I can write an analytical paragraph about how the soliloquy reveals Macbeth's inner conflict",
     ],
     keywords: [
       'soliloquy',
@@ -1142,12 +1127,13 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Inner Voice vs. Outer Voice',
       duration: '7 minutes',
       instructions:
-        'Display a scenario: "You see your best friend cheating on a test." Ask two volunteers to act it out: Student A speaks their "outer voice" (what they say to their friend) and Student B speaks the "inner voice" (what they are really thinking). Class discusses the difference between what we say and what we think. Teacher introduces the term "soliloquy" — a dramatic convention where a character speaks their inner thoughts aloud to the audience. Why is this a powerful tool for a playwright?',
+        'Display a scenario: "You see your best friend cheating on a test." Ask two volunteers to act it out: Student A speaks their "outer voice" (what they say to their friend) and Student B speaks the "inner voice" (what they are really thinking). Class discusses the difference between what we say and what we think. Teacher introduces the term "soliloquy" - a dramatic convention where a character speaks their inner thoughts aloud to the audience. Why is this a powerful tool for a playwright?',
       differentiation: {
-        support: 'Students contribute to the discussion by identifying the difference between inner and outer voice.',
+        support:
+          'Students contribute to the discussion by identifying the difference between inner and outer voice.',
         core: 'Students explain why a soliloquy is useful for revealing character to the audience.',
         stretch:
-          'Students predict what Macbeth\'s inner thoughts might be before committing the murder and explain why Shakespeare would want the audience to hear them.',
+          "Students predict what Macbeth's inner thoughts might be before committing the murder and explain why Shakespeare would want the audience to hear them.",
       },
       resources: ['Scenario slide'],
     },
@@ -1162,7 +1148,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a glossed version of the soliloquy with modern English translations and the first four annotations completed as a model.',
           core: 'Students annotate independently and write a full analytical paragraph.',
           stretch:
-            'Students consider how the soliloquy connects to the wider theme of appearance versus reality — Macbeth sees a dagger that is not there. What does this suggest about his mental state and the play\'s themes?',
+            "Students consider how the soliloquy connects to the wider theme of appearance versus reality - Macbeth sees a dagger that is not there. What does this suggest about his mental state and the play's themes?",
         },
         resources: [
           'Soliloquy extract with glossary',
@@ -1174,71 +1160,70 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'Stagecraft Workshop: Directing the Soliloquy',
         duration: '18 minutes',
         instructions:
-          'In groups of four, students become directors. Each group must plan how they would stage the soliloquy, making decisions about: lighting (bright? dim? flickering?), positioning (centre stage? creeping forward? reaching for the dagger?), delivery (whispering? crescendo? broken rhythm?), and costume/props (real dagger shown? nothing on stage?). Groups record their decisions on a stagecraft planning sheet and annotate the extract with director\'s notes. Each group performs a 30-second excerpt of their version for the class. Class discusses which staging choices were most effective at revealing Macbeth\'s inner turmoil and why.',
+          "In groups of four, students become directors. Each group must plan how they would stage the soliloquy, making decisions about: lighting (bright? dim? flickering?), positioning (centre stage? creeping forward? reaching for the dagger?), delivery (whispering? crescendo? broken rhythm?), and costume/props (real dagger shown? nothing on stage?). Groups record their decisions on a stagecraft planning sheet and annotate the extract with director's notes. Each group performs a 30-second excerpt of their version for the class. Class discusses which staging choices were most effective at revealing Macbeth's inner turmoil and why.",
         differentiation: {
           support:
             'Provide a menu of stagecraft options to choose from rather than generating ideas from scratch.',
           core: 'Groups make and justify four stagecraft decisions and perform their excerpt.',
           stretch:
-            'Groups consider how different stagecraft choices could change the audience\'s interpretation — could staging make Macbeth seem more sympathetic or more villainous?',
+            "Groups consider how different stagecraft choices could change the audience's interpretation - could staging make Macbeth seem more sympathetic or more villainous?",
         },
         resources: [
           'Stagecraft planning sheet',
-          'Director\'s notes template',
+          "Director's notes template",
           'Performance space in classroom',
         ],
       },
     ],
     plenaryActivity: {
-      title: 'One Thing I\'d Change',
+      title: "One Thing I'd Change",
       duration: '5 minutes',
       instructions:
-        'Students reflect on the performances they saw and write on a sticky note: "One stagecraft choice I would change and why." Teacher collects and reads three, facilitating brief discussion about how directorial choices shape audience interpretation. Link back to the key question: a soliloquy is not just words on a page — it is a living, performed moment, and our understanding of character changes depending on how it is delivered.',
+        'Students reflect on the performances they saw and write on a sticky note: "One stagecraft choice I would change and why." Teacher collects and reads three, facilitating brief discussion about how directorial choices shape audience interpretation. Link back to the key question: a soliloquy is not just words on a page - it is a living, performed moment, and our understanding of character changes depending on how it is delivered.',
       differentiation: {
         support: 'Students identify one thing they liked about a performance.',
         core: 'Students identify one change they would make and explain its effect on meaning.',
         stretch:
-          'Students connect their suggested change to what it would reveal about Macbeth\'s character or mental state.',
+          "Students connect their suggested change to what it would reveal about Macbeth's character or mental state.",
       },
     },
     homework:
-      'Learn the first six lines of the soliloquy by heart. Write a paragraph explaining why you think Shakespeare chose to include a soliloquy at this moment in the play — what does it achieve that dialogue between characters could not?',
+      'Learn the first six lines of the soliloquy by heart. Write a paragraph explaining why you think Shakespeare chose to include a soliloquy at this moment in the play - what does it achieve that dialogue between characters could not?',
     worksheetQuestions: [
       {
-        question:
-          'What is a soliloquy? Why does Shakespeare use soliloquies in his plays?',
+        question: 'What is a soliloquy? Why does Shakespeare use soliloquies in his plays?',
         lines: 4,
         modelAnswer:
-          'A soliloquy is a speech in which a character speaks their thoughts aloud while alone on stage, addressing the audience directly. Shakespeare uses soliloquies to reveal a character\'s inner thoughts, feelings, and conflicts that they would not share with other characters. This creates dramatic irony (the audience knows more than other characters) and deepens the audience\'s understanding of and relationship with the character.',
+          "A soliloquy is a speech in which a character speaks their thoughts aloud while alone on stage, addressing the audience directly. Shakespeare uses soliloquies to reveal a character's inner thoughts, feelings, and conflicts that they would not share with other characters. This creates dramatic irony (the audience knows more than other characters) and deepens the audience's understanding of and relationship with the character.",
         marks: 3,
       },
       {
         question:
-          'Analyse the imagery of the dagger in Macbeth\'s soliloquy. What does the imagined dagger reveal about Macbeth\'s state of mind?',
+          "Analyse the imagery of the dagger in Macbeth's soliloquy. What does the imagined dagger reveal about Macbeth's state of mind?",
         lines: 6,
         modelAnswer:
-          'The dagger that Macbeth sees before him is a hallucination, revealing that his mind is torn between his ambition and his conscience. The fact that the dagger is not real but seems tangible to Macbeth suggests he is being consumed by his murderous intent — his imagination is manifesting his darkest desires. The dagger leads him towards Duncan\'s chamber, symbolising how ambition pulls him towards a point of no return. This imagery reveals a man on the brink of moral collapse.',
+          "The dagger that Macbeth sees before him is a hallucination, revealing that his mind is torn between his ambition and his conscience. The fact that the dagger is not real but seems tangible to Macbeth suggests he is being consumed by his murderous intent - his imagination is manifesting his darkest desires. The dagger leads him towards Duncan's chamber, symbolising how ambition pulls him towards a point of no return. This imagery reveals a man on the brink of moral collapse.",
         marks: 4,
       },
       {
         question:
-          'If you were directing this soliloquy, what three stagecraft decisions would you make? Explain how each would enhance the audience\'s understanding.',
+          "If you were directing this soliloquy, what three stagecraft decisions would you make? Explain how each would enhance the audience's understanding.",
         lines: 8,
         modelAnswer:
-          'I would use dim, flickering lighting to suggest instability and moral darkness. I would have the actor begin whispering and gradually increase in volume as Macbeth\'s resolve hardens. I would position Macbeth downstage centre, reaching towards the empty air where the dagger appears, forcing the audience to share his perspective. These choices would enhance the soliloquy by making Macbeth\'s psychological disintegration visceral and immediate for the audience.',
+          "I would use dim, flickering lighting to suggest instability and moral darkness. I would have the actor begin whispering and gradually increase in volume as Macbeth's resolve hardens. I would position Macbeth downstage centre, reaching towards the empty air where the dagger appears, forcing the audience to share his perspective. These choices would enhance the soliloquy by making Macbeth's psychological disintegration visceral and immediate for the audience.",
         marks: 6,
       },
       {
         question:
-          'Write a paragraph analysing how Shakespeare uses language in the soliloquy to present Macbeth\'s internal conflict.',
+          "Write a paragraph analysing how Shakespeare uses language in the soliloquy to present Macbeth's internal conflict.",
         lines: 10,
         modelAnswer:
-          'Shakespeare presents Macbeth\'s internal conflict through a soliloquy that oscillates between doubt and determination. The opening question signals uncertainty and disbelief — Macbeth cannot trust his own senses, suggesting his conscience is resisting what his ambition demands. Shakespeare\'s use of dark imagery throughout the speech associates the murder with evil and the supernatural, revealing Macbeth\'s awareness that he is about to cross a moral threshold. Yet the soliloquy ends with resolution and action, suggesting that ambition ultimately overwhelms conscience. The shift from questioning to commanding in the final lines mirrors the character\'s tragic journey from hesitation to irreversible action.',
+          "Shakespeare presents Macbeth's internal conflict through a soliloquy that oscillates between doubt and determination. The opening question signals uncertainty and disbelief - Macbeth cannot trust his own senses, suggesting his conscience is resisting what his ambition demands. Shakespeare's use of dark imagery throughout the speech associates the murder with evil and the supernatural, revealing Macbeth's awareness that he is about to cross a moral threshold. Yet the soliloquy ends with resolution and action, suggesting that ambition ultimately overwhelms conscience. The shift from questioning to commanding in the final lines mirrors the character's tragic journey from hesitation to irreversible action.",
         marks: 5,
       },
     ],
     teacherNotes: [
-      'This lesson combines analytical reading with practical drama work — the stagecraft activity is essential, not optional.',
+      'This lesson combines analytical reading with practical drama work - the stagecraft activity is essential, not optional.',
       'The "Is this a dagger" soliloquy works well because it is vivid, relatively accessible, and connects directly to the themes of ambition and moral conflict.',
       'If time is short, reduce the performance element to one or two groups presenting rather than all.',
       'Consider showing two contrasting filmed versions of the soliloquy (e.g. Ian McKellen vs. a modern film) to demonstrate how stagecraft choices change interpretation.',
@@ -1253,7 +1238,7 @@ export const y8FullLessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 10: Assessment — Poetry Comparison ───────────────────────────
+  // ── Lesson 10: Assessment - Poetry Comparison ───────────────────────────
   {
     id: 'y8-t2-10-assessment-poetry-comparison',
     title: 'Assessment: Poetry Comparison',
@@ -1335,17 +1320,17 @@ export const y8FullLessons: LessonPlan[] = [
     worksheetQuestions: [
       {
         question:
-          'Assessment Question: Compare how the poets present the experience of conflict in the two poems you have studied. You should compare: the poets\' ideas and perspectives; their use of language and structure; and their overall effectiveness. Write a full comparative essay.',
+          "Assessment Question: Compare how the poets present the experience of conflict in the two poems you have studied. You should compare: the poets' ideas and perspectives; their use of language and structure; and their overall effectiveness. Write a full comparative essay.",
         lines: 40,
         modelAnswer:
-          'A strong response will include: an introduction identifying the central comparison; at least two comparative PEEL paragraphs that discuss both poems together (not sequentially); fluent use of comparative connectives (similarly, in contrast, whereas, however); embedded quotations from both poems with analytical commentary; exploration of both language and structural choices; and an evaluative conclusion that makes a judgement about which poem is more effective and why. Top-band responses will show nuance, explore the poets\' perspectives and contexts, and sustain a clear comparative argument throughout.',
+          "A strong response will include: an introduction identifying the central comparison; at least two comparative PEEL paragraphs that discuss both poems together (not sequentially); fluent use of comparative connectives (similarly, in contrast, whereas, however); embedded quotations from both poems with analytical commentary; exploration of both language and structural choices; and an evaluative conclusion that makes a judgement about which poem is more effective and why. Top-band responses will show nuance, explore the poets' perspectives and contexts, and sustain a clear comparative argument throughout.",
         marks: 30,
       },
     ],
     teacherNotes: [
       'This assessment covers skills from Lessons 6-9. Ensure students have had adequate practice with comparative writing before this point.',
-      'Decide whether to use the same poems studied in class or introduce one new unseen poem — the latter tests transfer of skills.',
-      'Mark using the school\'s KS3 assessment criteria with a focus on 8R.2-8R.6 and comparative writing quality.',
+      'Decide whether to use the same poems studied in class or introduce one new unseen poem - the latter tests transfer of skills.',
+      "Mark using the school's KS3 assessment criteria with a focus on 8R.2-8R.6 and comparative writing quality.",
       'Use results to identify students who need targeted support in comparative connective use or quotation embedding for Term 3.',
       'Return marked assessments with individual targets before Term 3 begins.',
     ],
@@ -1362,13 +1347,13 @@ export const y8FullLessons: LessonPlan[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // TERM 3 — RHETORIC & MEDIA
+  // TERM 3 - RHETORIC & MEDIA
   // ═══════════════════════════════════════════════════════════════════════════
 
-  // ── Lesson 11: Analysing a Speech — Persuasive Techniques ───────────────
+  // ── Lesson 11: Analysing a Speech - Persuasive Techniques ───────────────
   {
     id: 'y8-t3-11-analysing-speech-persuasive',
-    title: 'Analysing a Speech — Persuasive Techniques',
+    title: 'Analysing a Speech - Persuasive Techniques',
     text: 'Rhetoric & Persuasion',
     board: 'Universal',
     yearGroup: 'Year 8',
@@ -1414,13 +1399,13 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'Analysing a Famous Speech',
         duration: '22 minutes',
         instructions:
-          'Play an audio or video recording of a famous speech (e.g. a historical address on justice or equality — choose a speech appropriate to your context). Students listen once for overall impact, then receive the transcript. Second reading: students annotate the transcript for persuasive techniques using a colour code: rhetorical questions (red), emotive language (blue), repetition/anaphora (green), tricolon/list of three (purple), direct address (orange). Teacher models annotation of the first paragraph on the board. Students annotate the rest independently. After annotation, teacher leads a class discussion: "Which technique is the most powerful in this speech and why?"',
+          'Play an audio or video recording of a famous speech (e.g. a historical address on justice or equality - choose a speech appropriate to your context). Students listen once for overall impact, then receive the transcript. Second reading: students annotate the transcript for persuasive techniques using a colour code: rhetorical questions (red), emotive language (blue), repetition/anaphora (green), tricolon/list of three (purple), direct address (orange). Teacher models annotation of the first paragraph on the board. Students annotate the rest independently. After annotation, teacher leads a class discussion: "Which technique is the most powerful in this speech and why?"',
         differentiation: {
           support:
             'Provide a simplified version of the transcript with the first five techniques pre-identified and labelled.',
           core: 'Students annotate the full transcript independently, identifying at least eight techniques.',
           stretch:
-            'Students annotate for structural persuasion as well — how does the speech build? Where is the climax? How does the opening hook the audience?',
+            'Students annotate for structural persuasion as well - how does the speech build? Where is the climax? How does the opening hook the audience?',
         },
         resources: [
           'Audio/video of speech',
@@ -1439,7 +1424,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide a writing frame with the first paragraph partially completed and sentence starters for the second.',
           core: 'Students write two PEEL paragraphs independently and revise after peer feedback.',
           stretch:
-            'Students write a third paragraph connecting the speech\'s persuasive techniques to the rhetorical triangle — which appeal dominates and why is this effective for the specific audience?',
+            "Students write a third paragraph connecting the speech's persuasive techniques to the rhetorical triangle - which appeal dominates and why is this effective for the specific audience?",
         },
         resources: [
           'PEEL writing frame',
@@ -1468,7 +1453,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Define ethos, pathos, and logos. Give an example of each from the speech studied in this lesson.',
         lines: 6,
         modelAnswer:
-          'Ethos is an appeal to the speaker\'s credibility or authority — for example, when the speaker references their experience or position. Pathos is an appeal to the audience\'s emotions — for example, when the speaker uses emotive language to describe suffering or injustice. Logos is an appeal to logic and reason — for example, when the speaker uses statistics or logical arguments to support their point.',
+          "Ethos is an appeal to the speaker's credibility or authority - for example, when the speaker references their experience or position. Pathos is an appeal to the audience's emotions - for example, when the speaker uses emotive language to describe suffering or injustice. Logos is an appeal to logic and reason - for example, when the speaker uses statistics or logical arguments to support their point.",
         marks: 6,
       },
       {
@@ -1476,7 +1461,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Identify and analyse one example of repetition or anaphora in the speech. What effect does it create?',
         lines: 5,
         modelAnswer:
-          'The speaker uses anaphora to build momentum and emphasis, repeating a key phrase at the start of successive sentences. This creates a rhythmic, almost musical quality that makes the message memorable and emotionally powerful. The repetition also suggests conviction — the speaker returns to the same idea insistently, implying it is non-negotiable and central to their vision.',
+          'The speaker uses anaphora to build momentum and emphasis, repeating a key phrase at the start of successive sentences. This creates a rhythmic, almost musical quality that makes the message memorable and emotionally powerful. The repetition also suggests conviction - the speaker returns to the same idea insistently, implying it is non-negotiable and central to their vision.',
         marks: 4,
       },
       {
@@ -1492,14 +1477,14 @@ export const y8FullLessons: LessonPlan[] = [
           'Write a PEEL paragraph analysing how the speaker uses emotive language to persuade the audience.',
         lines: 10,
         modelAnswer:
-          'The speaker uses emotive language to create a powerful appeal to pathos, stirring the audience\'s feelings of injustice and hope. This is evident through carefully chosen words that evoke strong emotional responses, moving the audience from anger at the current situation to determination for change. The effect of this emotive language is to make the issue feel personal and immediate rather than abstract, because the speaker connects large-scale injustice to individual human suffering. This strategy is highly effective because it motivates action through feeling — the audience is not merely informed but moved, which is ultimately what persuasion requires.',
+          "The speaker uses emotive language to create a powerful appeal to pathos, stirring the audience's feelings of injustice and hope. This is evident through carefully chosen words that evoke strong emotional responses, moving the audience from anger at the current situation to determination for change. The effect of this emotive language is to make the issue feel personal and immediate rather than abstract, because the speaker connects large-scale injustice to individual human suffering. This strategy is highly effective because it motivates action through feeling - the audience is not merely informed but moved, which is ultimately what persuasion requires.",
         marks: 5,
       },
     ],
     teacherNotes: [
       'Choose a speech that is age-appropriate, engaging, and rich in techniques. Historical speeches about justice and equality tend to work well.',
       'Playing the audio/video first (before distributing the transcript) helps students experience the speech as a performance, not just a text.',
-      'The rhetorical triangle provides a framework that students can apply to any persuasive text — reinforce it throughout Term 3.',
+      'The rhetorical triangle provides a framework that students can apply to any persuasive text - reinforce it throughout Term 3.',
       'Consider creating a classroom display of persuasive techniques with examples that students can reference in Lessons 12-15.',
     ],
     targetedSkills: [
@@ -1596,7 +1581,7 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Golden Sentence',
       duration: '5 minutes',
       instructions:
-        'Each student rereads their speech and underlines the one sentence they are most proud of — their "golden sentence." Five students read their golden sentence aloud. Teacher asks: "Why is this sentence effective? Which technique does it use?" Celebrate strong writing and remind students that these skills transfer to all persuasive writing, not just speeches.',
+        'Each student rereads their speech and underlines the one sentence they are most proud of - their "golden sentence." Five students read their golden sentence aloud. Teacher asks: "Why is this sentence effective? Which technique does it use?" Celebrate strong writing and remind students that these skills transfer to all persuasive writing, not just speeches.',
       differentiation: {
         support: 'Students choose their golden sentence and identify the technique used.',
         core: 'Students explain why their golden sentence is effective and how it would impact the audience.',
@@ -1612,7 +1597,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Write an effective opening for a speech arguing that homework should be reduced. Use at least one rhetorical technique.',
         lines: 5,
         modelAnswer:
-          'How many hours of your life have you spent staring at textbooks when you could have been pursuing your passions, spending time with your family, or simply resting? Every evening, millions of students sacrifice their wellbeing at the altar of homework — and for what? It is time to ask whether the mountains of homework we assign are truly helping our young people learn, or whether they are simply drowning them.',
+          'How many hours of your life have you spent staring at textbooks when you could have been pursuing your passions, spending time with your family, or simply resting? Every evening, millions of students sacrifice their wellbeing at the altar of homework - and for what? It is time to ask whether the mountains of homework we assign are truly helping our young people learn, or whether they are simply drowning them.',
         marks: 4,
       },
       {
@@ -1620,7 +1605,7 @@ export const y8FullLessons: LessonPlan[] = [
           'What is a "call to action" and why is it important at the end of a speech? Write an example.',
         lines: 4,
         modelAnswer:
-          'A call to action is a direct instruction or appeal to the audience telling them what you want them to do next. It is important because it turns passive listening into active response — the audience leaves the speech knowing exactly how to make a difference. Example: "So I urge you — speak up, sign the petition, and demand change. Because if we do not act now, no one will."',
+          'A call to action is a direct instruction or appeal to the audience telling them what you want them to do next. It is important because it turns passive listening into active response - the audience leaves the speech knowing exactly how to make a difference. Example: "So I urge you - speak up, sign the petition, and demand change. Because if we do not act now, no one will."',
         marks: 3,
       },
       {
@@ -1628,23 +1613,23 @@ export const y8FullLessons: LessonPlan[] = [
           'Write the body of a speech (one argument paragraph) using at least three persuasive techniques. Label each technique in the margin.',
         lines: 10,
         modelAnswer:
-          '[Direct address] You know what it feels like to be ignored. You know the frustration of speaking and not being heard. [Tricolon] Our voices matter, our experiences matter, our futures matter. [Statistic/logos] Research shows that when young people are given a platform, communities become stronger, schools become fairer, and society moves forward. [Emotive language/pathos] We cannot afford to silence an entire generation simply because they are young. The cost of their silence is not measured in grades or attendance — it is measured in lost potential, crushed confidence, and broken trust.',
+          '[Direct address] You know what it feels like to be ignored. You know the frustration of speaking and not being heard. [Tricolon] Our voices matter, our experiences matter, our futures matter. [Statistic/logos] Research shows that when young people are given a platform, communities become stronger, schools become fairer, and society moves forward. [Emotive language/pathos] We cannot afford to silence an entire generation simply because they are young. The cost of their silence is not measured in grades or attendance - it is measured in lost potential, crushed confidence, and broken trust.',
         marks: 5,
       },
       {
         question:
-          'Explain how a speaker\'s delivery (tone, pace, volume, pauses) can enhance the persuasiveness of a speech. Give two specific examples.',
+          "Explain how a speaker's delivery (tone, pace, volume, pauses) can enhance the persuasiveness of a speech. Give two specific examples.",
         lines: 5,
         modelAnswer:
-          'Delivery transforms words on a page into a living, breathing argument. For example, slowing pace before a key point creates anticipation and signals to the audience that something important is coming, making the message more memorable. Similarly, raising volume during an emotional climax intensifies the pathos and conveys passion and conviction, which can inspire the audience to feel the speaker\'s urgency.',
+          "Delivery transforms words on a page into a living, breathing argument. For example, slowing pace before a key point creates anticipation and signals to the audience that something important is coming, making the message more memorable. Similarly, raising volume during an emotional climax intensifies the pathos and conveys passion and conviction, which can inspire the audience to feel the speaker's urgency.",
         marks: 4,
       },
     ],
     teacherNotes: [
-      'This lesson is the creative counterpart to Lesson 11 — students move from analysis to application.',
+      'This lesson is the creative counterpart to Lesson 11 - students move from analysis to application.',
       'The 30-second pitch starter is energising and lowers the stakes before formal speech writing begins.',
       'If time is tight, reduce the performance element to partner delivery only and save whole-class performances for a future lesson.',
-      'Consider recording willing students\' speeches on video for use in self-reflection or portfolio work.',
+      "Consider recording willing students' speeches on video for use in self-reflection or portfolio work.",
     ],
     targetedSkills: [
       '8W.1',
@@ -1656,10 +1641,10 @@ export const y8FullLessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 13: Media Literacy — Bias in News ───────────────────────────
+  // ── Lesson 13: Media Literacy - Bias in News ───────────────────────────
   {
     id: 'y8-t3-13-media-literacy-bias',
-    title: 'Media Literacy — Bias in News',
+    title: 'Media Literacy - Bias in News',
     text: 'Rhetoric & Media',
     board: 'Universal',
     yearGroup: 'Year 8',
@@ -1674,7 +1659,7 @@ export const y8FullLessons: LessonPlan[] = [
       'I can define media bias and explain why it matters',
       'I can identify at least three techniques used to create bias in a news article',
       'I can compare two reports on the same event and explain how they present different perspectives',
-      'I can explain how word choice affects the reader\'s perception of an event',
+      "I can explain how word choice affects the reader's perception of an event",
     ],
     keywords: [
       'bias',
@@ -1690,9 +1675,10 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Same Event, Different Headlines',
       duration: '8 minutes',
       instructions:
-        'Display two contrasting headlines about the same event (e.g. "Brave Protesters Stand Up for Rights" vs. "Mob Causes Chaos in City Centre"). Students discuss in pairs: Do these headlines describe the same event? How do you know? What is different about them? Which one do you trust more — and why? Teacher reveals both headlines are about the same event and introduces the concept of "framing" — how the way a story is told shapes the reader\'s response. Ask: "Is any news truly objective?"',
+        'Display two contrasting headlines about the same event (e.g. "Brave Protesters Stand Up for Rights" vs. "Mob Causes Chaos in City Centre"). Students discuss in pairs: Do these headlines describe the same event? How do you know? What is different about them? Which one do you trust more - and why? Teacher reveals both headlines are about the same event and introduces the concept of "framing" - how the way a story is told shapes the reader\'s response. Ask: "Is any news truly objective?"',
       differentiation: {
-        support: 'Provide a sentence frame: "Headline A makes me feel ___ because the word ___ suggests..."',
+        support:
+          'Provide a sentence frame: "Headline A makes me feel ___ because the word ___ suggests..."',
         core: 'Students identify the different perspectives and explain how word choice creates bias.',
         stretch:
           'Students write a third headline that attempts to be neutral and explain what they had to change and why pure neutrality is difficult.',
@@ -1722,7 +1708,7 @@ export const y8FullLessons: LessonPlan[] = [
         title: 'The Power of Word Choice',
         duration: '17 minutes',
         instructions:
-          'Teacher presents five pairs of sentences describing the same action with different word choices (e.g. "The politician explained his policy" vs. "The politician defended his controversial policy"). For each pair, students identify how the word choice changes the reader\'s perception. Students then complete a word-swap challenge: given a "neutral" news paragraph, they rewrite it twice — once with a positive bias and once with a negative bias — changing only the adjectives, verbs, and adverbs. Pairs swap their biased paragraphs and try to identify which is positive and which is negative. Class discussion: "How easy is it to manipulate a reader through word choice alone?"',
+          'Teacher presents five pairs of sentences describing the same action with different word choices (e.g. "The politician explained his policy" vs. "The politician defended his controversial policy"). For each pair, students identify how the word choice changes the reader\'s perception. Students then complete a word-swap challenge: given a "neutral" news paragraph, they rewrite it twice - once with a positive bias and once with a negative bias - changing only the adjectives, verbs, and adverbs. Pairs swap their biased paragraphs and try to identify which is positive and which is negative. Class discussion: "How easy is it to manipulate a reader through word choice alone?"',
         differentiation: {
           support:
             'Provide a word bank of positive and negative alternatives for the key words in the neutral paragraph.',
@@ -1765,7 +1751,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Explain the difference between "selection bias" and "framing." Give an example of each.',
         lines: 5,
         modelAnswer:
-          'Selection bias is when a news source chooses which facts, quotes, or details to include and which to leave out, creating a one-sided impression. Example: a report on a protest that only interviews police officers and not protesters. Framing is how a story is presented — the angle, headline, and context that shape how the reader interprets events. Example: framing a tax increase as "investing in public services" (positive) versus "government taking more of your money" (negative).',
+          'Selection bias is when a news source chooses which facts, quotes, or details to include and which to leave out, creating a one-sided impression. Example: a report on a protest that only interviews police officers and not protesters. Framing is how a story is presented - the angle, headline, and context that shape how the reader interprets events. Example: framing a tax increase as "investing in public services" (positive) versus "government taking more of your money" (negative).',
         marks: 4,
       },
       {
@@ -1786,10 +1772,10 @@ export const y8FullLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'Choose news reports that are age-appropriate and politically neutral enough not to impose a particular viewpoint on students — the goal is to develop critical thinking, not to promote a stance.',
-      'The word-swap activity is highly effective — students are often surprised by how much power individual word choices hold.',
-      'This lesson connects strongly to PSHE and citizenship — consider cross-curricular links.',
-      'Remind students that bias is not the same as lying — all texts have a perspective, and the skill is in recognising it.',
+      'Choose news reports that are age-appropriate and politically neutral enough not to impose a particular viewpoint on students - the goal is to develop critical thinking, not to promote a stance.',
+      'The word-swap activity is highly effective - students are often surprised by how much power individual word choices hold.',
+      'This lesson connects strongly to PSHE and citizenship - consider cross-curricular links.',
+      'Remind students that bias is not the same as lying - all texts have a perspective, and the skill is in recognising it.',
     ],
     targetedSkills: [
       '8R.4',
@@ -1812,13 +1798,13 @@ export const y8FullLessons: LessonPlan[] = [
       'Plan and create a piece of persuasive media for a specific audience and purpose (8W.1)',
       'Apply understanding of bias, rhetoric, and persuasive techniques to original media creation (8W.6)',
       'Make deliberate choices about language, layout, and visual elements to maximise impact',
-      'Evaluate the effectiveness of peers\' media creations',
+      "Evaluate the effectiveness of peers' media creations",
     ],
     successCriteria: [
       'I can identify my target audience and tailor my language and design accordingly',
       'I can use at least four persuasive techniques deliberately in my media piece',
       'I can explain the choices I have made and why they will be effective',
-      'I can evaluate a peer\'s media piece and suggest improvements',
+      "I can evaluate a peer's media piece and suggest improvements",
     ],
     keywords: [
       'audience',
@@ -1836,10 +1822,11 @@ export const y8FullLessons: LessonPlan[] = [
       instructions:
         'Display four examples of persuasive media (an advertisement, a charity leaflet, a political poster, a social media campaign). Students work in pairs and have three minutes to find as many persuasive techniques as possible across all four examples. Pairs tally their findings and the pair with the most techniques identified wins. Teacher reviews the most common techniques found and adds any missed, creating a class reference list for the main activity.',
       differentiation: {
-        support: 'Provide a techniques checklist to look for (e.g. emotive language, imperative verbs, statistics, images).',
+        support:
+          'Provide a techniques checklist to look for (e.g. emotive language, imperative verbs, statistics, images).',
         core: 'Students identify techniques independently and name them using correct terminology.',
         stretch:
-          'Students analyse not just the techniques but the layout choices — why are certain elements larger, positioned centrally, or in particular colours?',
+          'Students analyse not just the techniques but the layout choices - why are certain elements larger, positioned centrally, or in particular colours?',
       },
       resources: ['Four persuasive media examples (projected or printed)', 'Techniques checklist'],
     },
@@ -1918,7 +1905,7 @@ export const y8FullLessons: LessonPlan[] = [
           'Explain how visual elements (images, colour, layout) contribute to persuasion in media. Give two examples.',
         lines: 6,
         modelAnswer:
-          'Visual elements work alongside language to create emotional impact and guide the reader\'s attention. For example, a charity advert might use a large, close-up photograph of a child\'s face to create empathy (pathos), making the cause personal rather than abstract. Similarly, colour choices affect mood — red can convey urgency or danger, while green suggests nature, growth, or safety. The layout itself is persuasive: placing the call to action at the bottom right (where the eye naturally ends) ensures it is the last thing the reader sees.',
+          "Visual elements work alongside language to create emotional impact and guide the reader's attention. For example, a charity advert might use a large, close-up photograph of a child's face to create empathy (pathos), making the cause personal rather than abstract. Similarly, colour choices affect mood - red can convey urgency or danger, while green suggests nature, growth, or safety. The layout itself is persuasive: placing the call to action at the bottom right (where the eye naturally ends) ensures it is the last thing the reader sees.",
         marks: 4,
       },
       {
@@ -1931,10 +1918,10 @@ export const y8FullLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson is the creative application of Lessons 11-13 — students move from analysis to creation.',
-      'The gallery walk is motivating and builds a sense of audience — students write differently when they know their work will be displayed.',
+      'This lesson is the creative application of Lessons 11-13 - students move from analysis to creation.',
+      'The gallery walk is motivating and builds a sense of audience - students write differently when they know their work will be displayed.',
       'If devices are available, students can use tools like Canva or Google Slides to create professional-looking media. If not, hand-drawn work is equally valid.',
-      'The "creator\'s statement" homework is important — it develops metacognition and prepares students for the reflective element of the final assessment.',
+      'The "creator\'s statement" homework is important - it develops metacognition and prepares students for the reflective element of the final assessment.',
     ],
     targetedSkills: [
       '8W.1',
@@ -1946,7 +1933,7 @@ export const y8FullLessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 15: Assessment — Speech and Media Analysis ───────────────────
+  // ── Lesson 15: Assessment - Speech and Media Analysis ───────────────────
   {
     id: 'y8-t3-15-assessment-speech-media',
     title: 'Assessment: Speech and Media Analysis',
@@ -1980,9 +1967,10 @@ export const y8FullLessons: LessonPlan[] = [
       title: 'Rhetorical Triangle Quick-Fire',
       duration: '5 minutes',
       instructions:
-        'Teacher reads five short extracts from persuasive texts. For each, students hold up an E (ethos), P (pathos), or L (logos) card to identify the dominant appeal. Teacher confirms answers and offers a final tip for the assessment: "When you analyse a persuasive technique, always explain its effect on the audience — why does the speaker/writer choose this approach?" Distribute the assessment materials.',
+        'Teacher reads five short extracts from persuasive texts. For each, students hold up an E (ethos), P (pathos), or L (logos) card to identify the dominant appeal. Teacher confirms answers and offers a final tip for the assessment: "When you analyse a persuasive technique, always explain its effect on the audience - why does the speaker/writer choose this approach?" Distribute the assessment materials.',
       differentiation: {
-        support: 'Provide a reference card with ethos/pathos/logos definitions for use during the quick-fire.',
+        support:
+          'Provide a reference card with ethos/pathos/logos definitions for use during the quick-fire.',
         core: 'Students identify the dominant appeal and briefly justify their choice.',
         stretch:
           'Students identify secondary appeals in each extract, noting how speakers often blend ethos, pathos, and logos.',
@@ -2000,7 +1988,7 @@ export const y8FullLessons: LessonPlan[] = [
             'Provide the text with key techniques pre-highlighted, a planning frame, and sentence starters for the introduction and conclusion. Allow students to focus on three techniques rather than attempting comprehensive analysis.',
           core: 'Students write a full analytical response independently using the unseen text.',
           stretch:
-            'Students are encouraged to discuss how the text\'s persuasive strategies might work differently on different audiences, demonstrating sophisticated critical evaluation.',
+            "Students are encouraged to discuss how the text's persuasive strategies might work differently on different audiences, demonstrating sophisticated critical evaluation.",
         },
         resources: [
           'Assessment question sheet',
@@ -2016,7 +2004,7 @@ export const y8FullLessons: LessonPlan[] = [
       instructions:
         'Students complete a self-assessment grid covering the three terms of Year 8 English: Hunger Games analysis (Term 1), Poetry and Shakespeare (Term 2), Rhetoric and Media (Term 3). For each term, students rate their confidence (Developing/Secure/Excelling) and write one highlight and one area for development. Students then write a final reflection sentence: "The most important thing I have learned in Year 8 English is..." Teacher collects assessments and reflections.',
       differentiation: {
-        support: 'Provide the self-assessment grid with prompts for each term\'s key skills.',
+        support: "Provide the self-assessment grid with prompts for each term's key skills.",
         core: 'Students complete the full reflection with honest self-assessment across all three terms.',
         stretch:
           'Students write a paragraph reflecting on their overall growth as a reader, writer, and critical thinker across Year 8.',
@@ -2030,15 +2018,15 @@ export const y8FullLessons: LessonPlan[] = [
           'Assessment Question: How does the writer/speaker use language to persuade the audience? You should consider: the persuasive techniques used and their effects; how the writer/speaker uses the rhetorical triangle (ethos, pathos, logos); and the overall effectiveness of the text. Write a full analytical response.',
         lines: 40,
         modelAnswer:
-          'A strong response will include: an introduction identifying the text\'s purpose, audience, and overall persuasive strategy; at least two developed PEEL paragraphs analysing specific techniques with embedded quotations and audience-focused effects; reference to the rhetorical triangle (naming which appeal dominates and why this is effective); and an evaluative conclusion assessing the overall effectiveness of the text. Top-band responses will show awareness of how techniques work in combination, consider how different audiences might respond, and offer a nuanced evaluation that acknowledges both strengths and limitations of the persuasive approach.',
+          "A strong response will include: an introduction identifying the text's purpose, audience, and overall persuasive strategy; at least two developed PEEL paragraphs analysing specific techniques with embedded quotations and audience-focused effects; reference to the rhetorical triangle (naming which appeal dominates and why this is effective); and an evaluative conclusion assessing the overall effectiveness of the text. Top-band responses will show awareness of how techniques work in combination, consider how different audiences might respond, and offer a nuanced evaluation that acknowledges both strengths and limitations of the persuasive approach.",
         marks: 30,
       },
     ],
     teacherNotes: [
-      'This assessment tests the full range of Term 3 skills — choose an unseen text that is rich in techniques but accessible in content.',
+      'This assessment tests the full range of Term 3 skills - choose an unseen text that is rich in techniques but accessible in content.',
       'A speech transcript works well because students have practised analysing speeches, but a persuasive article or media text is also valid.',
-      'Mark using the school\'s KS3 assessment criteria with a focus on analytical quality, technique identification, and audience awareness.',
-      'The end-of-year reflection is valuable data — use it to inform Year 9 planning and to identify students who need continued support in specific skill areas.',
+      "Mark using the school's KS3 assessment criteria with a focus on analytical quality, technique identification, and audience awareness.",
+      'The end-of-year reflection is valuable data - use it to inform Year 9 planning and to identify students who need continued support in specific skill areas.',
       'Consider sharing final assessment results and individual targets with Year 9 teachers for continuity.',
     ],
     targetedSkills: [
@@ -2051,4 +2039,4 @@ export const y8FullLessons: LessonPlan[] = [
       'Evaluation',
     ],
   },
-];
+]

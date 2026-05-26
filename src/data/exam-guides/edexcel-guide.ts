@@ -6,13 +6,13 @@ export const edexcelGuide: BoardExamGuide = {
   boardName: 'Pearson Edexcel',
   boardColor: '#7C3AED',
 
-  overview: `<p>Edexcel (Pearson) is distinctive among GCSE English exam boards in running both a domestic GCSE — <strong>1EN0 (Language)</strong> and <strong>1ET0 (Literature)</strong> — and a widely taken <strong>International GCSE (4EA1)</strong>. The board's philosophy centres on <strong>"Reading as a Writer, Writing as a Reader"</strong>: the idea that close analytical reading and crafted writing are reciprocal skills that reinforce each other. This approach permeates the marking guides, which consistently reward students who demonstrate awareness of <em>how</em> and <em>why</em> writers make choices, not just <em>what</em> those choices are.</p>
+  overview: `<p>Edexcel (Pearson) is distinctive among GCSE English exam boards in running both a domestic GCSE - <strong>1EN0 (Language)</strong> and <strong>1ET0 (Literature)</strong> - and a widely taken <strong>International GCSE (4EA1)</strong>. The board's philosophy centres on <strong>"Reading as a Writer, Writing as a Reader"</strong>: the idea that close analytical reading and crafted writing are reciprocal skills that reinforce each other. This approach permeates the marking guides, which consistently reward students who demonstrate awareness of <em>how</em> and <em>why</em> writers make choices, not just <em>what</em> those choices are.</p>
 
-<p>Key structural features set Edexcel apart from AQA and OCR. Language Paper 2 carries <strong>96 marks over 2 hours 5 minutes</strong>, making it one of the most demanding single papers at GCSE level. The reading section requires students to work across two non-fiction extracts — one 19th century and one modern — with synthesis, comparison, language analysis, and evaluation questions. The writing section uniquely demands <strong>two transactional writing tasks</strong> (one shorter, one longer), testing versatility across different forms such as letters, articles, speeches, and reviews. This dual-task format is exclusive to Edexcel and requires careful time management.</p>
+<p>Key structural features set Edexcel apart from AQA and OCR. Language Paper 2 carries <strong>96 marks over 2 hours 5 minutes</strong>, making it one of the most demanding single papers at GCSE level. The reading section requires students to work across two non-fiction extracts - one 19th century and one modern - with synthesis, comparison, language analysis, and evaluation questions. The writing section uniquely demands <strong>two transactional writing tasks</strong> (one shorter, one longer), testing versatility across different forms such as letters, articles, speeches, and reviews. This dual-task format is exclusive to Edexcel and requires careful time management.</p>
 
-<p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare section splits into an <strong>extract-based essay and a whole-text essay</strong>, each worth 40 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel with poetry — anthology comparison plus unseen poetry — across 2 hours 15 minutes. The marking guides reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
+<p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare section splits into an <strong>extract-based essay and a whole-text essay</strong>, each worth 40 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel with poetry - anthology comparison plus unseen poetry - across 2 hours 15 minutes. The marking guides reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
 
-<p>The IGCSE (4EA1) features a particularly extensive <strong>45-poem anthology divided across 6 clusters</strong>, giving international students extraordinary breadth but also demanding thorough revision. For domestic GCSE students, the poetry anthology is divided into three collections — <em>Relationships</em>, <em>Conflict</em>, and <em>Time and Place</em> — and schools select one. Edexcel also applies an <strong>explicit SPaG grid for writing tasks</strong>, where spelling, punctuation, and grammar marks are clearly separated from content marks, making technical accuracy a visible and targetable component of the grade.</p>
+<p>The IGCSE (4EA1) features a particularly extensive <strong>45-poem anthology divided across 6 clusters</strong>, giving international students extraordinary breadth but also demanding thorough revision. For domestic GCSE students, the poetry anthology is divided into three collections - <em>Relationships</em>, <em>Conflict</em>, and <em>Time and Place</em> - and schools select one. Edexcel also applies an <strong>explicit SPaG grid for writing tasks</strong>, where spelling, punctuation, and grammar marks are clearly separated from content marks, making technical accuracy a visible and targetable component of the grade.</p>
 
 <p>Strategically, students should note that Edexcel's grade boundaries tend to be moderately demanding: a Grade 9 typically requires around 80% of the total mark, while a Grade 4 sits at approximately 31%. The most efficient revision strategy focuses on AO2 (language analysis), which carries the heaviest weighting across both Language and Literature, and on practising the dual transactional writing tasks under timed conditions. Always plan before writing, select quotations judiciously rather than copiously, and sustain your personal response throughout rather than bolting on a conclusion.</p>`,
 
@@ -106,41 +106,41 @@ export const edexcelGuide: BoardExamGuide = {
           marks: 24,
           questions: [
             {
-              question: 'Q1 — Short-answer retrieval from specified lines',
+              question: 'Q1 - Short-answer retrieval from specified lines',
               marks: 1,
               ao: 'AO1',
               skill: 'Identify explicit information',
-              time: '1–2 minutes',
+              time: '1-2 minutes',
               advice:
-                'A single-mark question requiring a brief, precise answer drawn directly from the text. Read within the specified line references only. No analysis or explanation is needed — this is a warm-up question to settle you into the extract.',
+                'A single-mark question requiring a brief, precise answer drawn directly from the text. Read within the specified line references only. No analysis or explanation is needed - this is a warm-up question to settle you into the extract.',
             },
             {
-              question: 'Q2 — Retrieve two pieces of information from a specified section',
+              question: 'Q2 - Retrieve two pieces of information from a specified section',
               marks: 2,
               ao: 'AO1',
               skill: 'Inference and information retrieval',
-              time: '2–3 minutes',
+              time: '2-3 minutes',
               advice:
-                'Identify two distinct pieces of information. Keep your answers concise and either quote directly or closely paraphrase from the text. These are straightforward marks — do not overthink them.',
+                'Identify two distinct pieces of information. Keep your answers concise and either quote directly or closely paraphrase from the text. These are straightforward marks - do not overthink them.',
             },
             {
               question:
-                'Q3 — Analyse how the writer uses language to create a specific effect in a specified section',
+                'Q3 - Analyse how the writer uses language to create a specific effect in a specified section',
               marks: 6,
               ao: 'AO2',
               skill: 'Language analysis of a specified section',
-              time: '8–10 minutes',
+              time: '8-10 minutes',
               advice:
                 'Embed short quotations and analyse specific word choices, imagery, and rhetorical techniques. Always explain the <em>effect</em> on the reader rather than simply naming techniques. Two well-developed analytical points are sufficient. Use evaluative verbs: "implies", "connotes", "evokes", "suggests".',
             },
             {
-              question: 'Q4 — Critically evaluate the text with reference to a given focus',
+              question: 'Q4 - Critically evaluate the text with reference to a given focus',
               marks: 15,
               ao: 'AO4',
               skill: 'Critical evaluation with textual references',
-              time: '18–20 minutes',
+              time: '18-20 minutes',
               advice:
-                'This is the highest-tariff reading question on this paper. You must <strong>evaluate</strong>, not merely describe. Develop a clear personal response supported by well-chosen quotations. Assess <em>how effectively</em> the writer achieves their purpose — go beyond description into judgement. Partially agree with the statement to show nuance: present supporting evidence, then explore counter-evidence or alternative readings. Three well-developed evaluative paragraphs plus a brief conclusion is the target.',
+                'This is the highest-tariff reading question on this paper. You must <strong>evaluate</strong>, not merely describe. Develop a clear personal response supported by well-chosen quotations. Assess <em>how effectively</em> the writer achieves their purpose - go beyond description into judgement. Partially agree with the statement to show nuance: present supporting evidence, then explore counter-evidence or alternative readings. Three well-developed evaluative paragraphs plus a brief conclusion is the target.',
             },
           ],
         },
@@ -150,13 +150,13 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q5 — Imaginative writing from a choice of prompts (one prompt linked to the extract)',
+                'Q5 - Imaginative writing from a choice of prompts (one prompt linked to the extract)',
               marks: 40,
               ao: 'AO5 (24 marks) + AO6 (16 marks)',
-              skill: 'Creative/narrative writing — imaginative prose',
-              time: '45 minutes (including 5–7 minutes planning)',
+              skill: 'Creative/narrative writing - imaginative prose',
+              time: '45 minutes (including 5-7 minutes planning)',
               advice:
-                'Plan for 5–7 minutes before writing. Open with a hook — a striking image, a sensory detail, or a provocative line of dialogue. Vary sentence openings (adverbial, participial, one-word) and lengths (short for dramatic impact, longer for descriptive passages). Use the full punctuation range: semicolons, colons, dashes, ellipses. End with circularity — echo your opening image or motif. AO6 carries 16 marks for SPaG, so proofread carefully. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence that you have <em>crafted</em> your writing with conscious technique.',
+                'Plan for 5-7 minutes before writing. Open with a hook - a striking image, a sensory detail, or a provocative line of dialogue. Vary sentence openings (adverbial, participial, one-word) and lengths (short for dramatic impact, longer for descriptive passages). Use the full punctuation range: semicolons, colons, dashes, ellipses. End with circularity - echo your opening image or motif. AO6 carries 16 marks for SPaG, so proofread carefully. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence that you have <em>crafted</em> your writing with conscious technique.',
             },
           ],
         },
@@ -176,43 +176,43 @@ export const edexcelGuide: BoardExamGuide = {
           marks: 56,
           questions: [
             {
-              question: 'Q1 — Identify four true statements from a list of eight (Source A)',
+              question: 'Q1 - Identify four true statements from a list of eight (Source A)',
               marks: 4,
               ao: 'AO1',
               skill: 'Identify explicit information (true/false)',
-              time: '3–5 minutes',
+              time: '3-5 minutes',
               advice:
-                'Read each statement carefully against the text. There are exactly four correct answers — if you think you have found more, re-check. This is a straightforward retrieval question and a reliable marks-grab. Use it to familiarise yourself with Source A.',
+                'Read each statement carefully against the text. There are exactly four correct answers - if you think you have found more, re-check. This is a straightforward retrieval question and a reliable marks-grab. Use it to familiarise yourself with Source A.',
             },
             {
               question:
-                'Q2 — Summarise and synthesise information from both texts on a given topic',
+                'Q2 - Summarise and synthesise information from both texts on a given topic',
               marks: 8,
               ao: 'AO1',
               skill: 'Summary and synthesis from two sources',
-              time: '8–10 minutes',
+              time: '8-10 minutes',
               advice:
-                'You must synthesise from <strong>both</strong> texts — responses that neglect one source cannot reach the top band. Cross-reference the sources explicitly: "Both writers suggest…", "While Source A emphasises…, Source B instead…". Use brief embedded quotations and keep your language concise. Three to four well-developed comparative points are sufficient.',
+                'You must synthesise from <strong>both</strong> texts - responses that neglect one source cannot reach the top band. Cross-reference the sources explicitly: "Both writers suggest…", "While Source A emphasises…, Source B instead…". Use brief embedded quotations and keep your language concise. Three to four well-developed comparative points are sufficient.',
             },
             {
               question:
-                'Q3 — Analyse how language is used to create a specific effect in one specified text',
+                'Q3 - Analyse how language is used to create a specific effect in one specified text',
               marks: 12,
               ao: 'AO2',
               skill: 'Language analysis of a specified source',
-              time: '12–15 minutes',
+              time: '12-15 minutes',
               advice:
                 'Analyse language techniques in detail: name the device, quote the evidence, and explain the effect on the reader. Three well-developed analytical paragraphs with embedded quotations will comfortably reach the upper bands. Explore connotations at word level and use precise subject terminology throughout.',
             },
             {
               question:
-                'Q4 — Evaluate and compare how the two writers convey their different perspectives',
+                'Q4 - Evaluate and compare how the two writers convey their different perspectives',
               marks: 16,
               ao: 'AO3 + AO4',
               skill: 'Compare perspectives and evaluate methods across both sources',
-              time: '18–20 minutes',
+              time: '18-20 minutes',
               advice:
-                'You must compare <strong>both</strong> texts throughout your response — discussing only one text means you cannot access the upper bands. Focus on the writers\' perspectives (what they think/feel) and the methods they use to convey those perspectives. Use comparative connectives: "whereas", "in contrast", "similarly", "conversely". Consider how the different time periods shape the writers\' viewpoints. Aim for three or four comparative paragraphs.',
+                'You must compare <strong>both</strong> texts throughout your response - discussing only one text means you cannot access the upper bands. Focus on the writers\' perspectives (what they think/feel) and the methods they use to convey those perspectives. Use comparative connectives: "whereas", "in contrast", "similarly", "conversely". Consider how the different time periods shape the writers\' viewpoints. Aim for three or four comparative paragraphs.',
             },
           ],
         },
@@ -222,23 +222,23 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q5 — Shorter transactional writing task (letter, article, speech, review, etc.)',
+                'Q5 - Shorter transactional writing task (letter, article, speech, review, etc.)',
               marks: 16,
               ao: 'AO5 (10 marks) + AO6 (6 marks)',
-              skill: 'Transactional writing — shorter form',
-              time: '20–25 minutes',
+              skill: 'Transactional writing - shorter form',
+              time: '20-25 minutes',
               advice:
-                'Match your register precisely to the specified form and audience. This is the shorter of two tasks, so be focused and purposeful. Open with impact, use rhetorical techniques (tricolon, anaphora, direct address) with control, and structure your paragraphs around clear topic sentences. Accuracy matters — AO6 is assessed separately on the SPaG grid.',
+                'Match your register precisely to the specified form and audience. This is the shorter of two tasks, so be focused and purposeful. Open with impact, use rhetorical techniques (tricolon, anaphora, direct address) with control, and structure your paragraphs around clear topic sentences. Accuracy matters - AO6 is assessed separately on the SPaG grid.',
             },
             {
               question:
-                'Q6 — Longer transactional writing task (letter, article, speech, review, etc.)',
+                'Q6 - Longer transactional writing task (letter, article, speech, review, etc.)',
               marks: 24,
               ao: 'AO5 (16 marks) + AO6 (8 marks)',
-              skill: 'Transactional writing — longer form',
-              time: '30–35 minutes',
+              skill: 'Transactional writing - longer form',
+              time: '30-35 minutes',
               advice:
-                'This longer task allows you to demonstrate sustained control of tone, style, and structural organisation. Develop your argument or viewpoint across multiple well-constructed paragraphs. Use a range of persuasive and rhetorical devices, but ensure your content drives the response rather than technique alone. End with a powerful concluding statement that circles back to your opening. Proofread carefully — the explicit SPaG grid means technical accuracy is a visible, targetable component of your mark.',
+                'This longer task allows you to demonstrate sustained control of tone, style, and structural organisation. Develop your argument or viewpoint across multiple well-constructed paragraphs. Use a range of persuasive and rhetorical devices, but ensure your content drives the response rather than technique alone. End with a powerful concluding statement that circles back to your opening. Proofread carefully - the explicit SPaG grid means technical accuracy is a visible, targetable component of your mark.',
             },
           ],
         },
@@ -255,7 +255,7 @@ export const edexcelGuide: BoardExamGuide = {
       marks: 80,
       weighting: '50%',
       textType:
-        'Section A: Shakespeare play — extract-based essay (40 marks) combining close reading of a printed extract with exploration of the whole play. Section B: Post-1914 British play or novel — essay question (40 marks) requiring whole-text knowledge.',
+        'Section A: Shakespeare play - extract-based essay (40 marks) combining close reading of a printed extract with exploration of the whole play. Section B: Post-1914 British play or novel - essay question (40 marks) requiring whole-text knowledge.',
       sections: [
         {
           title: 'Section A: Shakespeare',
@@ -267,9 +267,9 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 40,
               ao: 'AO1 + AO2 + AO3 + AO4',
               skill: 'Extract-to-whole analysis of Shakespeare play',
-              time: '50–55 minutes',
+              time: '50-55 minutes',
               advice:
-                "Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first — Shakespeare's word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis — do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> — Edexcel's marking guide specifically rewards quality of selection over quantity.",
+                "Divide your response roughly 40/60 between the extract and the wider play. Analyse the extract in close detail first - Shakespeare's word-level choices, imagery, dramatic irony, use of verse or prose, and rhetorical devices. Then broaden to the whole play, exploring how the theme or character develops across the text. Weave context (AO3) naturally into your analysis - do not bolt it on as a separate paragraph. AO4 rewards accurate written expression, so spell literary terms correctly and punctuate quotations accurately. Select quotations <strong>judiciously</strong> - Edexcel's marking guide specifically rewards quality of selection over quantity.",
             },
           ],
         },
@@ -279,13 +279,13 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Write about a character, theme, or idea in your studied post-1914 text. No extract is provided — this is a whole-text essay.',
+                'Write about a character, theme, or idea in your studied post-1914 text. No extract is provided - this is a whole-text essay.',
               marks: 40,
               ao: 'AO1 + AO2 + AO3 + AO4',
               skill: 'Whole-text essay from memory on post-1914 prose/drama',
-              time: '45–50 minutes',
+              time: '45-50 minutes',
               advice:
-                'No extract is provided, so you must have memorised quotations from across the text. Aim for 10–15 short, precise quotations committed to memory. Structure your essay thematically rather than chronologically. Each paragraph should make a clear point, support it with an embedded quotation, analyse language in detail, and link to relevant context. Edexcel rewards <strong>assured personal response</strong> — thread a clear, overarching argument through your entire essay rather than analysing quotations in isolation. This is a 40-mark question, so allocate significant time and plan carefully.',
+                'No extract is provided, so you must have memorised quotations from across the text. Aim for 10-15 short, precise quotations committed to memory. Structure your essay thematically rather than chronologically. Each paragraph should make a clear point, support it with an embedded quotation, analyse language in detail, and link to relevant context. Edexcel rewards <strong>assured personal response</strong> - thread a clear, overarching argument through your entire essay rather than analysing quotations in isolation. This is a 40-mark question, so allocate significant time and plan carefully.',
             },
           ],
         },
@@ -310,9 +310,9 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 40,
               ao: 'AO1 + AO2 + AO3 + AO4',
               skill: 'Extract-to-whole analysis of 19th-century novel',
-              time: '55–60 minutes',
+              time: '55-60 minutes',
               advice:
-                "Begin with detailed analysis of the extract — close-read the writer's language choices, sentence structures, and narrative techniques. Then broaden to the whole novel, selecting key moments that develop the theme or character. Context (AO3) is important for 19th-century texts — integrate understanding of Victorian society, class, gender, or morality where it illuminates meaning. Embed quotations fluently and analyse at word level. This is a high-tariff question, so plan carefully and maintain analytical depth throughout.",
+                "Begin with detailed analysis of the extract - close-read the writer's language choices, sentence structures, and narrative techniques. Then broaden to the whole novel, selecting key moments that develop the theme or character. Context (AO3) is important for 19th-century texts - integrate understanding of Victorian society, class, gender, or morality where it illuminates meaning. Embed quotations fluently and analyse at word level. This is a high-tariff question, so plan carefully and maintain analytical depth throughout.",
             },
           ],
         },
@@ -326,10 +326,10 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 30,
               ao: 'AO1 + AO2 + AO3',
               skill:
-                'Poetry comparison — named poem (printed) with free-choice poem from same cluster',
-              time: '35–40 minutes',
+                'Poetry comparison - named poem (printed) with free-choice poem from same cluster',
+              time: '35-40 minutes',
               advice:
-                "The exam names one poem and prints it on the paper — you must choose the second from your studied collection and write about it from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems using comparative connectives. Analyse language, form, and structure in both poems. Context (AO3) should be integrated concisely — comment on how biographical or historical factors shape the poets' perspectives.",
+                "The exam names one poem and prints it on the paper - you must choose the second from your studied collection and write about it from memory. Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic or methodological links. Structure comparatively throughout: do not write about one poem then the other. Each paragraph should address both poems using comparative connectives. Analyse language, form, and structure in both poems. Context (AO3) should be integrated concisely - comment on how biographical or historical factors shape the poets' perspectives.",
             },
           ],
         },
@@ -339,22 +339,22 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Part 1: Analyse one unseen poem — how does the poet present a theme or idea?',
+                'Part 1: Analyse one unseen poem - how does the poet present a theme or idea?',
               marks: 6,
               ao: 'AO1 + AO2',
               skill: 'Analyse one unseen poem independently',
-              time: '10–12 minutes',
+              time: '10-12 minutes',
               advice:
-                "Read the poem at least twice before writing. Identify the poem's subject, tone, and shifts in mood. Analyse language devices (imagery, diction, sound) and structural features (form, enjambment, stanza breaks). Use short embedded quotations and explore multiple layers of meaning. Do not try to cover every line — select the richest details and analyse them in depth.",
+                "Read the poem at least twice before writing. Identify the poem's subject, tone, and shifts in mood. Analyse language devices (imagery, diction, sound) and structural features (form, enjambment, stanza breaks). Use short embedded quotations and explore multiple layers of meaning. Do not try to cover every line - select the richest details and analyse them in depth.",
             },
             {
               question: 'Part 2: Compare how the poets present a shared theme in both unseen poems',
               marks: 4,
               ao: 'AO2',
               skill: 'Compare two unseen poems on a shared theme',
-              time: '8–10 minutes',
+              time: '8-10 minutes',
               advice:
-                'This is a shorter question — focus on two or three sharp comparative points. Compare methods (how the poets achieve their effects) rather than just content (what the poems are about). Use comparative language: "Both poets use…", "While Poem 1 employs…, Poem 2 instead…". Keep quotations very short — single words or phrases work best.',
+                'This is a shorter question - focus on two or three sharp comparative points. Compare methods (how the poets achieve their effects) rather than just content (what the poems are about). Use comparative language: "Both poets use…", "While Poem 1 employs…, Poem 2 instead…". Keep quotations very short - single words or phrases work best.',
             },
           ],
         },
@@ -435,94 +435,94 @@ export const edexcelGuide: BoardExamGuide = {
   // ─── Marker Tips ───────────────────────────────────────────────────────────
   examinerTips: [
     {
-      question: 'Language Paper 1, Q1–Q2 — Short-Answer Retrieval (1–2 marks each)',
+      question: 'Language Paper 1, Q1-Q2 - Short-Answer Retrieval (1-2 marks each)',
       tips: [
-        'Read only within the specified line references — answers outside those lines will not be credited.',
+        'Read only within the specified line references - answers outside those lines will not be credited.',
         'No analysis or explanation is required. Simply identify the information requested.',
-        'Keep answers brief and precise — these are warm-up questions designed to settle you into the extract.',
+        'Keep answers brief and precise - these are warm-up questions designed to settle you into the extract.',
         'Use these questions to begin absorbing the fiction extract before tackling the higher-tariff questions.',
       ],
     },
     {
-      question: 'Language Paper 1, Q3 — Language Analysis (6 marks)',
+      question: 'Language Paper 1, Q3 - Language Analysis (6 marks)',
       tips: [
         'Embed short quotations and analyse specific word choices, imagery, and rhetorical techniques.',
-        'Always explain the <em>effect</em> on the reader — do not simply name techniques without exploring what they achieve.',
+        'Always explain the <em>effect</em> on the reader - do not simply name techniques without exploring what they achieve.',
         'Two well-developed analytical points will outscore four or five shallow ones.',
         'Use evaluative verbs: "implies", "connotes", "evokes", "suggests", "underscores".',
-        'Stay strictly within the specified section — material from outside will not be credited.',
+        'Stay strictly within the specified section - material from outside will not be credited.',
       ],
     },
     {
-      question: 'Language Paper 1, Q4 — Critical Evaluation (15 marks)',
+      question: 'Language Paper 1, Q4 - Critical Evaluation (15 marks)',
       tips: [
-        'This is the highest-tariff reading question on Paper 1 — it separates the upper bands from the rest.',
+        'This is the highest-tariff reading question on Paper 1 - it separates the upper bands from the rest.',
         'You must <strong>evaluate</strong>, not merely describe. Assess how effectively the writer achieves the stated focus.',
         'Show nuance by partially agreeing: present supporting evidence, then explore counter-evidence or alternative readings.',
-        'Embed short quotations fluently within your sentences — avoid long block quotations.',
+        'Embed short quotations fluently within your sentences - avoid long block quotations.',
         'Use evaluative language throughout: "effectively", "compellingly", "the writer succeeds in… because…".',
         'A strong response has three well-developed evaluative paragraphs plus a brief, decisive conclusion.',
       ],
     },
     {
-      question: 'Language Paper 1, Q5 — Imaginative Writing (40 marks)',
+      question: 'Language Paper 1, Q5 - Imaginative Writing (40 marks)',
       tips: [
-        'Spend 5–7 minutes planning. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence of conscious craft.',
+        'Spend 5-7 minutes planning. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence of conscious craft.',
         'Open with a hook: a striking image, an unusual perspective, a sensory detail, or a line of dialogue.',
         'Vary sentence openings (adverbial, participial, one-word) and lengths (short for impact, long for description).',
         'Use the full punctuation range: semicolons, colons, dashes, ellipses, parenthetical commas.',
-        'End with circularity — echo your opening image, phrase, or motif to create a satisfying structure.',
-        "AO6 (16 marks) is assessed on Edexcel's explicit SPaG grid — proofread your work and correct errors.",
+        'End with circularity - echo your opening image, phrase, or motif to create a satisfying structure.',
+        "AO6 (16 marks) is assessed on Edexcel's explicit SPaG grid - proofread your work and correct errors.",
       ],
     },
     {
-      question: 'Language Paper 2, Q2 — Synthesis (8 marks)',
+      question: 'Language Paper 2, Q2 - Synthesis (8 marks)',
       tips: [
-        'You must use details from <strong>both</strong> sources — neglecting either source caps your mark significantly.',
+        'You must use details from <strong>both</strong> sources - neglecting either source caps your mark significantly.',
         'Cross-reference the sources explicitly: "Both writers suggest…", "While Source A emphasises…, Source B instead…".',
         'Use brief embedded quotations from each source to support your synthesis.',
-        'Three to four well-developed comparative points are sufficient — keep your language concise.',
+        'Three to four well-developed comparative points are sufficient - keep your language concise.',
       ],
     },
     {
-      question: 'Language Paper 2, Q5–Q6 — Dual Transactional Writing (16 + 24 marks)',
+      question: 'Language Paper 2, Q5-Q6 - Dual Transactional Writing (16 + 24 marks)',
       tips: [
-        'Edexcel uniquely requires <strong>two</strong> writing tasks on Paper 2 — manage your time carefully between them.',
+        'Edexcel uniquely requires <strong>two</strong> writing tasks on Paper 2 - manage your time carefully between them.',
         "Match your register precisely to each task's specified form, audience, and purpose.",
-        'The shorter task (Q5, ~16 marks) should be focused and purposeful — do not over-elaborate.',
+        'The shorter task (Q5, ~16 marks) should be focused and purposeful - do not over-elaborate.',
         'The longer task (Q6, ~24 marks) allows you to demonstrate sustained control of argument and rhetoric.',
         'Use rhetorical techniques (tricolon, anaphora, direct address, counter-argument) with confident control.',
-        'The explicit SPaG grid means technical accuracy is a visible component — proofread both tasks.',
+        'The explicit SPaG grid means technical accuracy is a visible component - proofread both tasks.',
       ],
     },
     {
-      question: 'Literature Paper 1 — Shakespeare (40 marks)',
+      question: 'Literature Paper 1 - Shakespeare (40 marks)',
       tips: [
         'The extract is printed, but you must also write about the whole play. Divide your response roughly 40/60 between extract and wider text.',
         "Analyse Shakespeare's word-level choices: imagery, verse form, rhetorical devices, dramatic irony, use of prose vs. verse.",
-        'Select quotations <strong>judiciously</strong> — Edexcel specifically rewards quality of selection over quantity.',
+        'Select quotations <strong>judiciously</strong> - Edexcel specifically rewards quality of selection over quantity.',
         'Weave context (AO3) naturally into your analysis rather than bolting it on as a separate paragraph.',
         'The 4 SPaG marks reward accurate spelling of literary terms, clear expression, and correct quotation punctuation.',
       ],
     },
     {
-      question: 'Literature Paper 2, Section B — Poetry Anthology (30 marks)',
+      question: 'Literature Paper 2, Section B - Poetry Anthology (30 marks)',
       tips: [
-        'Know every poem in your collection — the exam names one, and you must choose the comparison from memory.',
+        'Know every poem in your collection - the exam names one, and you must choose the comparison from memory.',
         'Choose your comparison poem quickly (within 2 minutes) based on the strongest thematic and methodological links.',
-        'Structure comparatively throughout — do not write about one poem then the other.',
+        'Structure comparatively throughout - do not write about one poem then the other.',
         'Analyse language, form, and structure in both poems. Integrate context concisely.',
         'A strong response offers genuine points of both similarity and contrast between the two poems.',
       ],
     },
     {
-      question: 'Literature General — Achieving the Top Bands',
+      question: 'Literature General - Achieving the Top Bands',
       tips: [
         '"Perceptive" and "assured" are the key descriptors for Level 6. This means threading a clear, overarching argument through your entire essay.',
-        '"Judicious" quotation selection is specifically rewarded — choose the most revealing quotations rather than the longest.',
+        '"Judicious" quotation selection is specifically rewarded - choose the most revealing quotations rather than the longest.',
         'Sustained personal response means maintaining your critical voice throughout, not just in the introduction and conclusion.',
         'Context should illuminate meaning, not demonstrate knowledge for its own sake. Ask: "How does this context change how we read the text?"',
-        'AO4 (SPaG) carries up to 40% in Literature — accurate written expression is not optional at this level.',
+        'AO4 (SPaG) carries up to 40% in Literature - accurate written expression is not optional at this level.',
       ],
     },
   ],
@@ -542,7 +542,7 @@ export const edexcelGuide: BoardExamGuide = {
     {
       year: '2026',
       change:
-        'Clarified marking guide descriptors: Edexcel has refined the wording of mark band descriptors across both Language and Literature to reduce ambiguity, with clearer differentiation between adjacent levels — particularly between Levels 4 and 5.',
+        'Clarified marking guide descriptors: Edexcel has refined the wording of mark band descriptors across both Language and Literature to reduce ambiguity, with clearer differentiation between adjacent levels - particularly between Levels 4 and 5.',
     },
   ],
 
@@ -603,16 +603,16 @@ export const edexcelGuide: BoardExamGuide = {
           quote:
             'If men will not learn that lesson, then they will be taught it in fire and blood and anguish.',
           analysis:
-            'A prophetic warning that gains power from dramatic irony — the audience knows two world wars followed 1912. "Fire and blood and anguish" uses a tricolon of increasingly visceral nouns.',
+            'A prophetic warning that gains power from dramatic irony - the audience knows two world wars followed 1912. "Fire and blood and anguish" uses a tricolon of increasingly visceral nouns.',
         },
         {
-          quote: "But these girls aren't cheap labour — they're people.",
+          quote: "But these girls aren't cheap labour - they're people.",
           analysis:
             "Sheila's rebuke to her father marks her moral awakening. The dash creates a rhetorical pivot, contrasting Birling's economic view of workers with their humanity.",
         },
       ],
       examStrategy:
-        "For Edexcel, focus on Priestley's dramatic methods — staging, dramatic irony, the well-made play structure, and the Inspector as a dramatic device. The post-1914 question carries 40 marks and demands both extract analysis and whole-text knowledge. Memorise quotations from across the play and structure your essay thematically. Context should focus on the 1912/1945 dual setting and Priestley's political purpose.",
+        "For Edexcel, focus on Priestley's dramatic methods - staging, dramatic irony, the well-made play structure, and the Inspector as a dramatic device. The post-1914 question carries 40 marks and demands both extract analysis and whole-text knowledge. Memorise quotations from across the play and structure your essay thematically. Context should focus on the 1912/1945 dual setting and Priestley's political purpose.",
     },
     {
       title: 'A Christmas Carol',
@@ -635,7 +635,7 @@ export const edexcelGuide: BoardExamGuide = {
         {
           name: 'Bob Cratchit',
           description:
-            "Scrooge's underpaid clerk who embodies cheerful resilience despite poverty. His family — especially Tiny Tim — personalise the human cost of Scrooge's greed.",
+            "Scrooge's underpaid clerk who embodies cheerful resilience despite poverty. His family - especially Tiny Tim - personalise the human cost of Scrooge's greed.",
         },
         {
           name: 'Tiny Tim',
@@ -671,7 +671,7 @@ export const edexcelGuide: BoardExamGuide = {
         },
       ],
       examStrategy:
-        "For Edexcel's 19th-century novel question (Paper 2, Section A, 40 marks), you will receive a printed extract and must write about both the extract and the whole text. Prioritise close language analysis (AO2) of Dickens's methods — his use of listing, personification, pathetic fallacy, and contrast. Context (AO3) should focus on Victorian attitudes to poverty, the Poor Law, and Dickens's social purpose. Memorise quotations from each Stave to demonstrate whole-text knowledge.",
+        "For Edexcel's 19th-century novel question (Paper 2, Section A, 40 marks), you will receive a printed extract and must write about both the extract and the whole text. Prioritise close language analysis (AO2) of Dickens's methods - his use of listing, personification, pathetic fallacy, and contrast. Context (AO3) should focus on Victorian attitudes to poverty, the Poor Law, and Dickens's social purpose. Memorise quotations from each Stave to demonstrate whole-text knowledge.",
     },
     {
       title: 'Romeo and Juliet',
@@ -684,7 +684,7 @@ export const edexcelGuide: BoardExamGuide = {
         'Light and dark imagery',
       ],
       context:
-        "Written c.1594–96, drawing on Arthur Brooke's narrative poem. Set in Verona, the play reflects Elizabethan concerns about family honour, patriarchal authority, and the disruptive power of passion. The Prologue's revelation of the lovers' fate creates dramatic irony throughout.",
+        "Written c.1594-96, drawing on Arthur Brooke's narrative poem. Set in Verona, the play reflects Elizabethan concerns about family honour, patriarchal authority, and the disruptive power of passion. The Prologue's revelation of the lovers' fate creates dramatic irony throughout.",
       characters: [
         {
           name: 'Romeo',
@@ -699,7 +699,7 @@ export const edexcelGuide: BoardExamGuide = {
         {
           name: 'Mercutio',
           description:
-            "Romeo's witty, cynical friend whose Queen Mab speech reveals imagination beneath his bravado. His death — \"a plague o' both your houses\" — marks the play's tonal shift from comedy to tragedy.",
+            "Romeo's witty, cynical friend whose Queen Mab speech reveals imagination beneath his bravado. His death - \"a plague o' both your houses\" - marks the play's tonal shift from comedy to tragedy.",
         },
         {
           name: 'Tybalt',
@@ -732,7 +732,7 @@ export const edexcelGuide: BoardExamGuide = {
         },
       ],
       examStrategy:
-        "For Edexcel's Shakespeare question (Paper 1, Section A, 40 marks), you receive a printed extract and must write about both the extract and the whole play. Begin with close analysis of the extract — word-level choices, imagery, verse form, dramatic techniques — then broaden to the whole play. Weave context naturally into your analysis. Select quotations judiciously: a few well-chosen, deeply analysed quotations will outscore many superficial ones.",
+        "For Edexcel's Shakespeare question (Paper 1, Section A, 40 marks), you receive a printed extract and must write about both the extract and the whole play. Begin with close analysis of the extract - word-level choices, imagery, verse form, dramatic techniques - then broaden to the whole play. Weave context naturally into your analysis. Select quotations judiciously: a few well-chosen, deeply analysed quotations will outscore many superficial ones.",
     },
     {
       title: 'Macbeth',
@@ -783,16 +783,16 @@ export const edexcelGuide: BoardExamGuide = {
         {
           quote: 'Is this a dagger which I see before me, The handle toward my hand?',
           analysis:
-            'Macbeth\'s soliloquy uses a rhetorical question that reveals his psychological torment. The hallucinated dagger — "handle toward my hand" — with its alliterative pull suggests the murder is both invitation and compulsion.',
+            'Macbeth\'s soliloquy uses a rhetorical question that reveals his psychological torment. The hallucinated dagger - "handle toward my hand" - with its alliterative pull suggests the murder is both invitation and compulsion.',
         },
         {
           quote: 'Out, damned spot! Out, I say!',
           analysis:
-            'Lady Macbeth\'s sleepwalking exclamation reduces her earlier commanding rhetoric to desperate, fragmented utterance. The irremovable "spot" of blood symbolises guilt that cannot be washed away — a physical manifestation of moral stain.',
+            'Lady Macbeth\'s sleepwalking exclamation reduces her earlier commanding rhetoric to desperate, fragmented utterance. The irremovable "spot" of blood symbolises guilt that cannot be washed away - a physical manifestation of moral stain.',
         },
       ],
       examStrategy:
-        'For Edexcel\'s Shakespeare question, focus on close language analysis of the extract before broadening to the whole play. Macbeth is rich in imagery (blood, darkness, clothing, disease) — track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The marking guide rewards "judicious" quotation — select the most revealing phrases and analyse them in depth.',
+        'For Edexcel\'s Shakespeare question, focus on close language analysis of the extract before broadening to the whole play. Macbeth is rich in imagery (blood, darkness, clothing, disease) - track these patterns across the text. Context should centre on Jacobean attitudes to regicide, the supernatural, and gender roles, but always link context to the effect on the audience rather than presenting it as standalone knowledge. The marking guide rewards "judicious" quotation - select the most revealing phrases and analyse them in depth.',
     },
   ],
 
@@ -826,7 +826,7 @@ export const edexcelGuide: BoardExamGuide = {
       topComparison: 'Poppies',
       formAnalysis:
         "Series of couplets tracing the body from surface to depth, mirroring the wife's gradual discovery of her husband's hidden injuries.",
-      // VERIFY: keyQuotation withheld — the previous text contained an unverifiable corruption. Restore an exact phrase from Simon Armitage's "The Manhunt" only against a verified primary source (e.g. The Not Dead, Pomona, 2008).
+      // VERIFY: keyQuotation withheld - the previous text contained an unverifiable corruption. Restore an exact phrase from Simon Armitage's "The Manhunt" only against a verified primary source (e.g. The Not Dead, Pomona, 2008).
       keyQuotation: '[Quotation withheld pending source verification.]',
     },
     {
@@ -836,7 +836,7 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Love', 'Time', 'Wealth vs. love', 'Transience'],
       topComparison: 'To His Coy Mistress',
       formAnalysis:
-        'Sonnet form — subverts Petrarchan conventions by celebrating a single hour rather than eternal devotion. The form itself becomes an argument about the preciousness of limited time.',
+        'Sonnet form - subverts Petrarchan conventions by celebrating a single hour rather than eternal devotion. The form itself becomes an argument about the preciousness of limited time.',
       keyQuotation:
         '"Love\'s time\'s beggar, but even a single hour, / bright as a dropped coin, makes love rich"',
     },
@@ -868,7 +868,7 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Loss', 'Motherhood', 'Memory', 'Grief'],
       topComparison: 'The Manhunt',
       formAnalysis:
-        'Free verse with domestic imagery woven through military references. No regular rhyme — reflecting the disorientation of grief.',
+        'Free verse with domestic imagery woven through military references. No regular rhyme - reflecting the disorientation of grief.',
       keyQuotation:
         '"I traced / the gilt lettering on the war memorial, / leaning against it like a wishbone"',
     },
@@ -889,7 +889,7 @@ export const edexcelGuide: BoardExamGuide = {
       themes: ['Duty', 'Heroism', 'Military blunders', 'Honour'],
       topComparison: 'Bayonet Charge',
       formAnalysis:
-        'Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") — the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
+        'Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
       keyQuotation: '"Theirs not to reason why, / Theirs but to do and die"',
     },
     {

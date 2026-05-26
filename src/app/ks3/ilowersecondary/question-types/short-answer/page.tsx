@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'iLowerSecondary English: short open-response answers',
     description:
-      'A masterclass on the 1- and 2-mark short open-response questions — answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
+      'A masterclass on the 1- and 2-mark short open-response questions - answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
   },
   title: 'iLowerSecondary English: short open-response answers',
   description:
-    'A masterclass on the 1- and 2-mark short open-response questions — answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
+    'A masterclass on the 1- and 2-mark short open-response questions - answer length discipline, reading the question stem, quoting vs paraphrasing, and worked examples with weak and credited model answers.',
   alternates: { canonical: PAGE_URL },
 }
 
@@ -29,7 +29,7 @@ const HABITS = [
   {
     title: 'Match the length to the marks',
     detail:
-      'A 1-mark item wants one precise piece of information; a 2-mark item wants that, plus a short development. One or two lines is enough. Extra sentences do not earn extra marks — they only cost you time you need for the high-tariff comparison and the writing task.',
+      'A 1-mark item wants one precise piece of information; a 2-mark item wants that, plus a short development. One or two lines is enough. Extra sentences do not earn extra marks - they only cost you time you need for the high-tariff comparison and the writing task.',
   },
   {
     title: 'Answer the actual stem',
@@ -39,7 +39,7 @@ const HABITS = [
   {
     title: 'Be specific, not vague',
     detail:
-      'A general gist — "because it was bad" or "to make it interesting" — is not creditable. Name the exact reason, detail or idea the text gives. Specificity is what separates a mark from no mark on these items.',
+      'A general gist - "because it was bad" or "to make it interesting" - is not creditable. Name the exact reason, detail or idea the text gives. Specificity is what separates a mark from no mark on these items.',
   },
   {
     title: 'Quote or paraphrase deliberately',
@@ -49,10 +49,10 @@ const HABITS = [
 ]
 
 const WHY_VAGUE_FAILS = [
-  'A vague reference could be true of almost any text — it does not prove you located the right place or understood the specific point, so the examiner cannot award the mark.',
+  'A vague reference could be true of almost any text - it does not prove you located the right place or understood the specific point, so the examiner cannot award the mark.',
   "A lift without expansion just re-copies the writer's words. On a retrieval item a precise lift can be enough; on a meaning or inference item it shows no understanding, so it is not credited.",
   'The mark scheme lists the creditable points. "Do not accept vague references" tells the examiner to withhold the mark when the answer is too general to match a listed point.',
-  'Answering the wrong question stem — giving a reason when the stem asked "how", or vice versa — means the response, however neat, does not address what was assessed.',
+  'Answering the wrong question stem - giving a reason when the stem asked "how", or vice versa - means the response, however neat, does not address what was assessed.',
 ]
 
 // ─── Worked extracts (all original, written by The English Hub) ───────
@@ -75,7 +75,7 @@ type Worked = {
 const EXTRACTS: Worked[] = [
   {
     id: 'lighthouse',
-    title: 'Extract A — The keeper (fiction)',
+    title: 'Extract A - The keeper (fiction)',
     context: 'Original third-person narrative written for this page.',
     extract:
       'Morag had kept the light for thirty winters, and not once had she let it fail. The lamp did not care that her hands were slower now, or that the stairs to the lantern room took her twice as long. Each evening she climbed them anyway, counting the steps aloud so the climb would feel shorter, and each evening the beam swung out across the water exactly when the boats expected it.',
@@ -105,7 +105,7 @@ const EXTRACTS: Worked[] = [
   },
   {
     id: 'market',
-    title: 'Extract B — The night market (non-fiction recount)',
+    title: 'Extract B - The night market (non-fiction recount)',
     context: 'Original first-person recount written for this page.',
     extract:
       'I had read that the market only came alive after dark, but I did not believe it until I arrived. By six the square was half-empty; by nine you could not move. Stallholders who had looked half-asleep an hour earlier were now calling out their prices over each other, and the smell of frying onions had replaced the dust of the afternoon.',
@@ -115,7 +115,7 @@ const EXTRACTS: Worked[] = [
         marks: 1,
         weak: 'Because markets are usually busy in the day.',
         weakNote:
-          'Invented reasoning. The text gives the reason — the writer had only read it, not seen it.',
+          'Invented reasoning. The text gives the reason - the writer had only read it, not seen it.',
         model: 'Because they had only read about it and had not seen it for themselves.',
         markNote:
           '1 mark for the reason the text supplies (it was something read, not witnessed / not believed until seen). Do not accept general comments about markets.',
@@ -127,7 +127,7 @@ const EXTRACTS: Worked[] = [
         weakNote:
           'Minimal. "Busy" restates without explaining what the phrase implies, so it cannot reach 2 marks.',
         model:
-          'It suggests the square had become extremely crowded — so packed with people that there was no space to walk — which contrasts sharply with it being half-empty at six.',
+          'It suggests the square had become extremely crowded - so packed with people that there was no space to walk - which contrasts sharply with it being half-empty at six.',
         markNote:
           '1 mark for the implied meaning (extremely crowded / no room to move); 1 mark for development (the contrast with the half-empty earlier square). Do not accept an unexplained lift of the phrase.',
       },
@@ -135,17 +135,17 @@ const EXTRACTS: Worked[] = [
   },
   {
     id: 'glacier',
-    title: 'Extract C — Reading the ice (non-fiction explanation)',
+    title: 'Extract C - Reading the ice (non-fiction explanation)',
     context: 'Original explanatory text written for this page.',
     extract:
-      'A glacier looks still, but it is always moving. Snow falling near the top is slowly pressed into ice, and the weight of all that ice forces the whole mass to creep downhill — sometimes only a few centimetres a day. Scientists push thin stakes into the surface and return months later to measure how far each stake has travelled.',
+      'A glacier looks still, but it is always moving. Snow falling near the top is slowly pressed into ice, and the weight of all that ice forces the whole mass to creep downhill - sometimes only a few centimetres a day. Scientists push thin stakes into the surface and return months later to measure how far each stake has travelled.',
     items: [
       {
         q: 'Why do scientists return months later to measure the stakes?',
         marks: 1,
         weak: 'To check on the glacier.',
         weakNote: 'Too vague to match the point. It does not say what the measurement shows.',
-        model: 'To measure how far each stake — and so the ice — has moved.',
+        model: 'To measure how far each stake - and so the ice - has moved.',
         markNote:
           '1 mark for the specific purpose (to measure how far the ice/stake has moved/travelled). Do not accept vague references such as "to check the glacier".',
       },
@@ -154,7 +154,7 @@ const EXTRACTS: Worked[] = [
         marks: 2,
         weak: 'The writer says it moves a lot every day.',
         weakNote:
-          'Inaccurate — the text says only a few centimetres a day. A wrong detail cannot be credited.',
+          'Inaccurate - the text says only a few centimetres a day. A wrong detail cannot be credited.',
         model:
           'The writer states it is "always moving" and explains the weight of the ice "forces the whole mass to creep downhill", even if only a few centimetres a day.',
         markNote:
@@ -164,7 +164,7 @@ const EXTRACTS: Worked[] = [
   },
   {
     id: 'letter',
-    title: 'Extract D — A letter home (non-fiction, autobiographical)',
+    title: 'Extract D - A letter home (non-fiction, autobiographical)',
     context: 'Original autobiographical letter written for this page.',
     extract:
       'Dear Aunt Priya, I promise the food here is better than I made it sound on the phone. The first week I lived on bread because I was too shy to ask where anything was. Then a girl in my corridor took me to the canteen, pointed at everything, and named it for me. Now I eat with her every evening.',
@@ -174,7 +174,7 @@ const EXTRACTS: Worked[] = [
         marks: 1,
         weak: 'Because the food was bad.',
         weakNote:
-          'Contradicts the text — the writer says the food is good. The reason given is shyness.',
+          'Contradicts the text - the writer says the food is good. The reason given is shyness.',
         model: 'Because they were too shy to ask where anything was.',
         markNote:
           '1 mark for the stated reason (too shy to ask / did not know where things were). Do not accept references to the food being bad.',
@@ -193,7 +193,7 @@ const EXTRACTS: Worked[] = [
   },
   {
     id: 'race',
-    title: 'Extract E — The last lap (fiction)',
+    title: 'Extract E - The last lap (fiction)',
     context: 'Original third-person narrative written for this page.',
     extract:
       'On the final bend Dele heard the crowd before he saw them. His legs had stopped feeling like his own a hundred metres ago. He did not look at the runner beside him; he had learned, the hard way, that looking sideways was how you lost. He fixed his eyes on the line and let everything else fall away.',
@@ -223,7 +223,7 @@ const EXTRACTS: Worked[] = [
   },
   {
     id: 'workshop',
-    title: 'Extract F — The repair shop (non-fiction report)',
+    title: 'Extract F - The repair shop (non-fiction report)',
     context: 'Original report-style text written for this page.',
     extract:
       'The shop does not advertise. It does not need to. People bring in clocks that other repairers have already given up on, because word has spread that Mr Owusu will not return a clock until it keeps perfect time. He says a clock that is "nearly right" is just a clock that is wrong more slowly.',
@@ -244,7 +244,7 @@ const EXTRACTS: Worked[] = [
         weak: 'He means the clock is a bit wrong.',
         weakNote: 'Surface only. It repeats "wrong" without explaining the standard he is setting.',
         model:
-          'He means that "nearly right" is not good enough — a clock that is slightly inaccurate is still inaccurate, just less obviously, so he insists on perfect accuracy before returning it.',
+          'He means that "nearly right" is not good enough - a clock that is slightly inaccurate is still inaccurate, just less obviously, so he insists on perfect accuracy before returning it.',
         markNote:
           '1 mark for the core meaning (nearly right still counts as wrong/inaccurate); 1 mark for development (he therefore demands perfect accuracy). Do not credit an unexplained restatement.',
       },
@@ -379,7 +379,7 @@ export default async function ShortAnswerPage() {
                 {
                   a: 'Length',
                   one: 'A phrase or one short sentence.',
-                  two: 'One to two short sentences — no more.',
+                  two: 'One to two short sentences - no more.',
                 },
                 {
                   a: 'Quote or paraphrase',

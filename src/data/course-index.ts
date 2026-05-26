@@ -1,6 +1,6 @@
 /**
  * Lightweight course metadata for catalogue/listing pages.
- * Does NOT include full moduleList content — only metadata needed for cards.
+ * Does NOT include full moduleList content - only metadata needed for cards.
  * Import `allCourses` from './courses' only when you need full module content.
  */
 

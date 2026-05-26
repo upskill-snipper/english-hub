@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * ThemeToggle — light/dark switcher, visually paired with
+ * ThemeToggle - light/dark switcher, visually paired with
  * LanguageToggle (same segmented-pill shape) so the header chrome
  * stays consistent. Uses next-themes; persistence + the `.dark` class
  * on <html> are handled by the provider.

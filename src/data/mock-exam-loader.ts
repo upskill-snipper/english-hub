@@ -1,5 +1,5 @@
 /**
- * Dynamic mock exam loader — loads exam data by board on demand.
+ * Dynamic mock exam loader - loads exam data by board on demand.
  * Avoids importing all ~650KB of mock exam data on every page.
  */
 
@@ -37,7 +37,7 @@ export async function loadMockExamsByKey(key: string): Promise<MockExamPaper[]> 
  */
 export async function loadAllMockExams(): Promise<MockExamPaper[]> {
   const keys = Object.keys(MOCK_EXAM_LOADERS)
-  const results = await Promise.all(keys.map(k => loadMockExamsByKey(k)))
+  const results = await Promise.all(keys.map((k) => loadMockExamsByKey(k)))
   // Deduplicate by ID in case of overlaps
   const seen = new Set<string>()
   const all: MockExamPaper[] = []

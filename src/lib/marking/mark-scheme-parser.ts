@@ -2,9 +2,9 @@
 // Parse raw mark scheme text (for example, copied from an AQA PDF or a teacher
 // upload) into the structured `MarkScheme` shape used by the marking engine.
 //
-// The parser is intentionally forgiving — real mark schemes have messy layout,
+// The parser is intentionally forgiving - real mark schemes have messy layout,
 // inconsistent labels, and extra whitespace. We normalise line endings, strip
-// boilerplate and look for AO headings plus "Level N — min-max" band rows.
+// boilerplate and look for AO headings plus "Level N - min-max" band rows.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type {
@@ -12,14 +12,14 @@ import type {
   BandDescriptor,
   MarkScheme,
   QuestionScheme,
-} from "./mark-schemes/types"
+} from './mark-schemes/types'
 
 // ─── Input shapes ────────────────────────────────────────────────────────────
 
 export interface RawMarkSchemeInput {
   id: string
   board: string
-  subject: MarkScheme["subject"]
+  subject: MarkScheme['subject']
   paper: string
   title: string
   totalMarks: number
@@ -43,28 +43,28 @@ export interface ParseResult {
 // ─── Regex helpers ───────────────────────────────────────────────────────────
 
 // Examples matched:
-//   "AO1 — Read, understand and respond (12 marks)"
+//   "AO1 - Read, understand and respond (12 marks)"
 //   "AO2: Language, form and structure [12]"
-const AO_HEADING = /^AO([1-6])\s*[—\-:–]?\s*(.+?)(?:\s*[\(\[](\d+)\s*marks?[\)\]])?$/i
+const AO_HEADING = /^AO([1-6])\s*[-\-:-]?\s*(.+?)(?:\s*[\(\[](\d+)\s*marks?[\)\]])?$/i
 
 // Examples matched:
 //   "Level 1 (1-4): Simple, explicit"
 //   "Band 3 5 - 8 Some understanding"
 const BAND_HEADING =
-  /^(?:Level|Band)\s+(\d+|Threshold|Intermediate|High)\s*(?:\(|\[|)?\s*(\d+)\s*[-–—]\s*(\d+)\s*(?:\)|\])?\s*:?\s*(.*)$/i
+  /^(?:Level|Band)\s+(\d+|Threshold|Intermediate|High)\s*(?:\(|\[|)?\s*(\d+)\s*[---]\s*(\d+)\s*(?:\)|\])?\s*:?\s*(.*)$/i
 
 // Recognise new question sections in raw dumps:
-//   "Question 5 — Creative Writing (40 marks)"
+//   "Question 5 - Creative Writing (40 marks)"
 const QUESTION_HEADING =
-  /^(?:Question|Q)\s*(\d+[A-Za-z]?)\s*[—\-:–]?\s*(.+?)(?:\s*[\(\[](\d+)\s*marks?[\)\]])?$/i
+  /^(?:Question|Q)\s*(\d+[A-Za-z]?)\s*[-\-:-]?\s*(.+?)(?:\s*[\(\[](\d+)\s*marks?[\)\]])?$/i
 
 // ─── Normalisation ───────────────────────────────────────────────────────────
 
 function normalise(input: string): string[] {
   return input
-    .replace(/\r\n?/g, "\n")
-    .split("\n")
-    .map((l) => l.replace(/\s+/g, " ").trim())
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map((l) => l.replace(/\s+/g, ' ').trim())
     .filter((l) => l.length > 0)
 }
 
@@ -74,7 +74,7 @@ function normalise(input: string): string[] {
  * Parse a raw mark scheme text dump into a `MarkScheme`.
  *
  * The parser walks the lines and groups them into:
- *   1. Question sections (optional — a scheme may have just one question).
+ *   1. Question sections (optional - a scheme may have just one question).
  *   2. Assessment Objective blocks within each question.
  *   3. Band rows within each AO.
  *
@@ -106,8 +106,8 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
       finaliseQuestion(state.question, questions)
       state.question = {
         id: `Q${qMatch[1]}`,
-        questionType: qMatch[2]?.trim() ?? "Question",
-        taskDescription: "",
+        questionType: qMatch[2]?.trim() ?? 'Question',
+        taskDescription: '',
         totalMarks: qMatch[3] ? Number(qMatch[3]) : 0,
         aos: [],
       }
@@ -123,8 +123,8 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
       if (state.ao) state.question.aos.push(state.ao)
       state.ao = {
         id: `AO${aMatch[1]}`,
-        label: `AO${aMatch[1]} — ${aMatch[2]?.trim() ?? ""}`,
-        description: "",
+        label: `AO${aMatch[1]} - ${aMatch[2]?.trim() ?? ''}`,
+        description: '',
         maxMarks: aMatch[3] ? Number(aMatch[3]) : 0,
         weighting: 0,
         bands: [],
@@ -148,17 +148,17 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
         band: `Level ${bMatch[1]}`,
         minMarks: Number(bMatch[2]),
         maxMarks: Number(bMatch[3]),
-        label: bMatch[4]?.trim() ?? "",
-        descriptor: "",
+        label: bMatch[4]?.trim() ?? '',
+        descriptor: '',
         indicators: [],
       }
       return
     }
 
-    // Prose — attach to the most specific open node.
+    // Prose - attach to the most specific open node.
     if (state.band) {
-      if (line.startsWith("- ") || line.startsWith("• ")) {
-        state.band.indicators.push(line.replace(/^[-•]\s*/, ""))
+      if (line.startsWith('- ') || line.startsWith('• ')) {
+        state.band.indicators.push(line.replace(/^[-•]\s*/, ''))
       } else {
         state.band.descriptor = joinProse(state.band.descriptor, line)
       }
@@ -169,10 +169,7 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
       return
     }
     if (state.question) {
-      state.question.taskDescription = joinProse(
-        state.question.taskDescription,
-        line,
-      )
+      state.question.taskDescription = joinProse(state.question.taskDescription, line)
     }
   })
 
@@ -184,7 +181,7 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
   if (questions.length === 0) {
     errors.push({
       line: 0,
-      message: "No assessment objectives could be parsed from the input.",
+      message: 'No assessment objectives could be parsed from the input.',
     })
     return { scheme: null, errors }
   }
@@ -235,9 +232,9 @@ interface MutableQuestion {
 
 function createDefaultQuestion(input: RawMarkSchemeInput): MutableQuestion {
   return {
-    id: "Q1",
+    id: 'Q1',
     questionType: input.title,
-    taskDescription: "",
+    taskDescription: '',
     totalMarks: input.totalMarks,
     aos: [],
   }
@@ -249,10 +246,7 @@ function joinProse(existing: string, next: string): string {
   return `${existing} ${next}`
 }
 
-function finaliseQuestion(
-  q: MutableQuestion | null,
-  out: QuestionScheme[],
-): void {
+function finaliseQuestion(q: MutableQuestion | null, out: QuestionScheme[]): void {
   if (!q || q.aos.length === 0) return
   const totalFromAOs = q.aos.reduce((sum, ao) => sum + ao.maxMarks, 0)
   const totalMarks = q.totalMarks || totalFromAOs
@@ -283,4 +277,3 @@ function finaliseQuestion(
     assessmentObjectives: aos,
   })
 }
-

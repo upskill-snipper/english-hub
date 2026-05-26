@@ -13,7 +13,7 @@ import type { StudentAnalytics, ClassAnalytics } from '@/lib/types'
 export function escapeCsvField(value: string | number | boolean | null | undefined): string {
   if (value === null || value === undefined) return ''
   const str = String(value)
-  // Prevent CSV formula injection — prefix dangerous leading characters
+  // Prevent CSV formula injection - prefix dangerous leading characters
   const safe = /^[=+\-@\t\r]/.test(str) ? `'${str}` : str
   if (safe.includes(',') || safe.includes('"') || safe.includes('\n') || safe.includes('\r')) {
     return `"${safe.replace(/"/g, '""')}"`
@@ -22,7 +22,10 @@ export function escapeCsvField(value: string | number | boolean | null | undefin
 }
 
 /** Build a complete CSV string from headers and row data. Includes UTF-8 BOM for Excel compatibility. */
-export function buildCsvString(headers: string[], rows: (string | number | boolean | null | undefined)[][]): string {
+export function buildCsvString(
+  headers: string[],
+  rows: (string | number | boolean | null | undefined)[][],
+): string {
   const BOM = '\uFEFF'
   const headerLine = headers.map(escapeCsvField).join(',')
   const dataLines = rows.map((row) => row.map(escapeCsvField).join(','))
@@ -54,7 +57,7 @@ export function downloadCsv(csvContent: string, filename: string): void {
 export function exportToCSV<T extends Record<string, unknown>>(
   data: T[],
   headers: { key: keyof T & string; label: string }[],
-  filename: string
+  filename: string,
 ): void {
   const headerLabels = headers.map((h) => h.label)
   const rows = data.map((item) => headers.map((h) => item[h.key] as string | number | null))
@@ -70,7 +73,7 @@ export function exportToCSV<T extends Record<string, unknown>>(
 export function exportClassReport(
   classAnalytics: ClassAnalytics,
   students: StudentAnalytics[],
-  filename?: string
+  filename?: string,
 ): void {
   const headers = [
     'Student Name',
@@ -91,7 +94,21 @@ export function exportClassReport(
   // Summary rows at top
   const summaryRows: (string | number | null)[][] = [
     ['CLASS SUMMARY', '', '', '', '', '', '', '', '', '', '', '', ''],
-    ['Class', classAnalytics.class_name, 'Students', classAnalytics.student_count, 'Avg Score', classAnalytics.avg_score, 'Completion', `${classAnalytics.completion_rate}%`, 'At Risk', classAnalytics.students_at_risk, '', '', ''],
+    [
+      'Class',
+      classAnalytics.class_name,
+      'Students',
+      classAnalytics.student_count,
+      'Avg Score',
+      classAnalytics.avg_score,
+      'Completion',
+      `${classAnalytics.completion_rate}%`,
+      'At Risk',
+      classAnalytics.students_at_risk,
+      '',
+      '',
+      '',
+    ],
     ['', '', '', '', '', '', '', '', '', '', '', '', ''],
     ['STUDENT DATA', '', '', '', '', '', '', '', '', '', '', '', ''],
   ]
@@ -114,7 +131,9 @@ export function exportClassReport(
 
   const allRows = [...summaryRows, ...studentRows]
   const csv = buildCsvString(headers, allRows)
-  const fname = filename || `class-report-${classAnalytics.class_name.replace(/\s+/g, '-').toLowerCase()}-${todayISO()}`
+  const fname =
+    filename ||
+    `class-report-${classAnalytics.class_name.replace(/\s+/g, '-').toLowerCase()}-${todayISO()}`
   downloadCsv(csv, fname)
 }
 
@@ -144,7 +163,9 @@ export function exportStudentReport(student: StudentAnalytics, filename?: string
   ]
 
   const csv = buildCsvString(headers, rows)
-  const fname = filename || `student-report-${student.student_name.replace(/\s+/g, '-').toLowerCase()}-${todayISO()}`
+  const fname =
+    filename ||
+    `student-report-${student.student_name.replace(/\s+/g, '-').toLowerCase()}-${todayISO()}`
   downloadCsv(csv, fname)
 }
 
@@ -164,7 +185,11 @@ export interface AttendanceRow {
  * Export engagement/activity data for a class.
  * The caller provides the attendance rows (fetched from the API).
  */
-export function exportAttendanceData(attendanceRows: AttendanceRow[], classId: string, filename?: string): void {
+export function exportAttendanceData(
+  attendanceRows: AttendanceRow[],
+  classId: string,
+  filename?: string,
+): void {
   const headers = [
     'Student Name',
     'Last Active',
@@ -205,7 +230,11 @@ export interface GradeRow {
 /**
  * Export grades with target grades and gaps.
  */
-export function exportGradeData(students: StudentAnalytics[], targetGrades?: Map<string, string>, filename?: string): void {
+export function exportGradeData(
+  students: StudentAnalytics[],
+  targetGrades?: Map<string, string>,
+  filename?: string,
+): void {
   const headers = [
     'Student Name',
     'Year Group',
@@ -334,7 +363,13 @@ export function exportForALPS(students: StudentAnalytics[], filename?: string): 
 
 /* ── Preview Helpers ─────────────────────────────────────────────────────────── */
 
-export type ExportType = 'class-report' | 'student-report' | 'attendance' | 'grades' | 'sims' | 'alps'
+export type ExportType =
+  | 'class-report'
+  | 'student-report'
+  | 'attendance'
+  | 'grades'
+  | 'sims'
+  | 'alps'
 export type DateRange = 'this-term' | 'this-year' | 'all-time'
 export type ExportFormat = 'csv' | 'print'
 
@@ -343,7 +378,7 @@ export type ExportFormat = 'csv' | 'print'
  */
 export function generatePreview(
   csvContent: string,
-  maxRows: number = 5
+  maxRows: number = 5,
 ): { headers: string[]; rows: string[][] } {
   // Strip BOM if present
   const content = csvContent.replace(/^\uFEFF/, '')

@@ -9,11 +9,11 @@
 
 export interface CardReviewState {
   cardId: string
-  easinessFactor: number   // EF >= 1.3, default 2.5
-  interval: number         // days until next review
-  repetitions: number      // consecutive correct answers
-  nextReviewDate: string   // ISO date string
-  lastReviewDate: string   // ISO date string
+  easinessFactor: number // EF >= 1.3, default 2.5
+  interval: number // days until next review
+  repetitions: number // consecutive correct answers
+  nextReviewDate: string // ISO date string
+  lastReviewDate: string // ISO date string
 }
 
 export type Quality = 0 | 1 | 2 | 3 | 4 | 5
@@ -29,10 +29,34 @@ export const QUALITY_LABELS: Record<Quality, string> = {
 
 /** The four buttons shown in the UI, mapped to quality values */
 export const QUALITY_BUTTONS = [
-  { quality: 1 as Quality, label: 'Again', shortLabel: 'Again', color: 'destructive' as const, description: 'Complete failure' },
-  { quality: 2 as Quality, label: 'Hard', shortLabel: 'Hard', color: 'warning' as const, description: 'Significant difficulty' },
-  { quality: 4 as Quality, label: 'Good', shortLabel: 'Good', color: 'success' as const, description: 'Correct with effort' },
-  { quality: 5 as Quality, label: 'Easy', shortLabel: 'Easy', color: 'easy' as const, description: 'Perfect response' },
+  {
+    quality: 1 as Quality,
+    label: 'Again',
+    shortLabel: 'Again',
+    color: 'destructive' as const,
+    description: 'Complete failure',
+  },
+  {
+    quality: 2 as Quality,
+    label: 'Hard',
+    shortLabel: 'Hard',
+    color: 'warning' as const,
+    description: 'Significant difficulty',
+  },
+  {
+    quality: 4 as Quality,
+    label: 'Good',
+    shortLabel: 'Good',
+    color: 'success' as const,
+    description: 'Correct with effort',
+  },
+  {
+    quality: 5 as Quality,
+    label: 'Easy',
+    shortLabel: 'Easy',
+    color: 'easy' as const,
+    description: 'Perfect response',
+  },
 ] as const
 
 // ─── SM-2 Core Algorithm ────────────────────────────────────────────────────
@@ -68,7 +92,7 @@ export function calculateNextReview(current: CardReviewState, quality: Quality):
   let newRepetitions: number
 
   if (quality < 3) {
-    // Failed — reset repetitions, review again soon
+    // Failed - reset repetitions, review again soon
     newRepetitions = 0
     newInterval = 1 // review again tomorrow (or in 10 min for same-session, but we use days)
   } else {
@@ -110,14 +134,14 @@ interface CardWithId {
  */
 export function getDueCards<T extends CardWithId>(
   allCards: T[],
-  reviewStates: Record<string, CardReviewState>
+  reviewStates: Record<string, CardReviewState>,
 ): T[] {
   const now = new Date()
 
   return allCards
     .filter((card) => {
       const state = reviewStates[card.id]
-      if (!state) return false // unseen cards are not "due" — they are new
+      if (!state) return false // unseen cards are not "due" - they are new
       return new Date(state.nextReviewDate) <= now
     })
     .sort((a, b) => {
@@ -134,11 +158,9 @@ export function getDueCards<T extends CardWithId>(
 export function getNewCards<T extends CardWithId>(
   allCards: T[],
   reviewStates: Record<string, CardReviewState>,
-  limit: number = 10
+  limit: number = 10,
 ): T[] {
-  return allCards
-    .filter((card) => !reviewStates[card.id])
-    .slice(0, limit)
+  return allCards.filter((card) => !reviewStates[card.id]).slice(0, limit)
 }
 
 /**
@@ -147,7 +169,7 @@ export function getNewCards<T extends CardWithId>(
 export function getStudyQueue<T extends CardWithId>(
   allCards: T[],
   reviewStates: Record<string, CardReviewState>,
-  newCardsLimit: number = 10
+  newCardsLimit: number = 10,
 ): T[] {
   const due = getDueCards(allCards, reviewStates)
   const fresh = getNewCards(allCards, reviewStates, newCardsLimit)
@@ -159,7 +181,7 @@ export function getStudyQueue<T extends CardWithId>(
  */
 export function sortByPriority<T extends CardWithId>(
   cards: T[],
-  reviewStates: Record<string, CardReviewState>
+  reviewStates: Record<string, CardReviewState>,
 ): T[] {
   const now = new Date().getTime()
 
@@ -189,14 +211,14 @@ export function sortByPriority<T extends CardWithId>(
 
 export function countDueToday<T extends CardWithId>(
   allCards: T[],
-  reviewStates: Record<string, CardReviewState>
+  reviewStates: Record<string, CardReviewState>,
 ): number {
   return getDueCards(allCards, reviewStates).length
 }
 
 export function countDueThisWeek<T extends CardWithId>(
   allCards: T[],
-  reviewStates: Record<string, CardReviewState>
+  reviewStates: Record<string, CardReviewState>,
 ): number {
   const weekFromNow = new Date()
   weekFromNow.setDate(weekFromNow.getDate() + 7)
@@ -214,7 +236,7 @@ export function countDueThisWeek<T extends CardWithId>(
  */
 export function getMasteryPercentage<T extends CardWithId>(
   allCards: T[],
-  reviewStates: Record<string, CardReviewState>
+  reviewStates: Record<string, CardReviewState>,
 ): number {
   if (allCards.length === 0) return 0
   const mastered = allCards.filter((card) => {

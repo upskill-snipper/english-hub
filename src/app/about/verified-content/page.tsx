@@ -5,10 +5,10 @@ import { tMany } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'Verified Content',
   description:
-    'Every quote, date, and biography on The English Hub is cross-checked against primary sources — Project Gutenberg, Folger Shakespeare Library, and official board syllabus PDFs.',
+    'Every quote, date, and biography on The English Hub is cross-checked against primary sources - Project Gutenberg, Folger Shakespeare Library, and official board syllabus PDFs.',
   alternates: { canonical: 'https://theenglishhub.app/about/verified-content' },
   openGraph: {
-    title: 'Verified Content — The English Hub',
+    title: 'Verified Content - The English Hub',
     description:
       'Every quote, date, and biography on The English Hub is cross-checked against primary sources.',
   },
@@ -130,17 +130,17 @@ export default async function VerifiedContentPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">{sourcesLede}</p>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <strong className="text-foreground">{sourceGutenbergStrong}</strong> —{' '}
+              <strong className="text-foreground">{sourceGutenbergStrong}</strong> -{' '}
               {sourceGutenbergBody}
             </li>
             <li>
-              <strong className="text-foreground">{sourceFolgerStrong}</strong> — {sourceFolgerBody}
+              <strong className="text-foreground">{sourceFolgerStrong}</strong> - {sourceFolgerBody}
             </li>
             <li>
-              <strong className="text-foreground">{sourceBbcStrong}</strong> — {sourceBbcBody}
+              <strong className="text-foreground">{sourceBbcStrong}</strong> - {sourceBbcBody}
             </li>
             <li>
-              <strong className="text-foreground">{sourceBoardStrong}</strong> — {sourceBoardBody}
+              <strong className="text-foreground">{sourceBoardStrong}</strong> - {sourceBoardBody}
             </li>
           </ul>
         </section>

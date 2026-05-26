@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Build your academic vocabulary for GCSE English essays. Formal word choices, analytical verbs, and connective phrases to elevate your writing.',
   alternates: { canonical: 'https://theenglishhub.app/resources/vocabulary/academic' },
   openGraph: {
-    title: 'Academic Vocabulary — The English Hub',
+    title: 'Academic Vocabulary - The English Hub',
     description:
       'Build your academic vocabulary for GCSE English essays. Formal word choices, analytical verbs, and connective phrases to elevate your writing.',
   },

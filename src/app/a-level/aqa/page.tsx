@@ -4,7 +4,7 @@ import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'AQA A-Level English — The English Hub',
+    title: 'AQA A-Level English - The English Hub',
     description:
       'AQA A-Level English Literature (7712) and Language (7702) revision hub. Cross-board set text analysis, essay technique and language study while full AQA A-Level content is on our roadmap.',
   },

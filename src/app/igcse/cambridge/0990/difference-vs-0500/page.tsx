@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language A vs Language B — What is the difference? | Cambridge IGCSE | The English Hub',
+    title: 'Language A vs Language B - What is the difference? | Cambridge IGCSE | The English Hub',
     description:
       'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
   },
-  title: 'Language A vs Language B — What is the difference? | Cambridge IGCSE',
+  title: 'Language A vs Language B - What is the difference? | Cambridge IGCSE',
   description:
     'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
   alternates: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const sameRows = [
   {
     label: 'Syllabus content',
-    value: 'Identical — same reading and writing skills taught',
+    value: 'Identical - same reading and writing skills taught',
   },
   {
     label: 'Papers',
@@ -31,7 +31,7 @@ const sameRows = [
   },
   {
     label: 'Assessment objectives',
-    value: 'Reading skills, Writing skills — same weighting',
+    value: 'Reading skills, Writing skills - same weighting',
   },
   {
     label: 'Marks per paper',
@@ -61,7 +61,7 @@ const differentRows = [
   {
     label: 'Top grade',
     a: 'Language A: A* (approximately 75%+)',
-    b: 'Language B: 9 (approximately 85%+ — more selective)',
+    b: 'Language B: 9 (approximately 85%+ - more selective)',
   },
   {
     label: 'Typical use',
@@ -188,7 +188,7 @@ export default async function Difference0990vs0500Page() {
             <span>
               <strong className="text-foreground">Use Language A resources freely.</strong> Past
               papers, mark schemes and examiner reports for Language A are valid revision material
-              for Language B candidates — the questions and mark schemes are interchangeable.
+              for Language B candidates - the questions and mark schemes are interchangeable.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -209,7 +209,7 @@ export default async function Difference0990vs0500Page() {
             <span>
               <strong className="text-foreground">Grade 9 is harder than A*.</strong> On the 9-1
               scale the top grade is more selective. If you were aiming for A*, aim now for a strong
-              8 or 9 — read our{' '}
+              8 or 9 - read our{' '}
               <Link
                 href="/igcse/cambridge/0990/grade-9-guide"
                 className="text-primary underline-offset-2 hover:underline"

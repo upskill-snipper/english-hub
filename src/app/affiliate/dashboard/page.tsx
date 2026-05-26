@@ -23,7 +23,7 @@ import {
 import { useT } from '@/lib/i18n/use-t'
 import { MousePointerClick, TrendingUp, PoundSterling, Users, ArrowUpRight } from 'lucide-react'
 
-// Phase-7: Supabase — hydrate dashboard from server queries instead of localStorage
+// Phase-7: Supabase - hydrate dashboard from server queries instead of localStorage
 
 export default function AffiliateDashboardPage() {
   const t = useT()

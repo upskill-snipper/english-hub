@@ -27,7 +27,7 @@ export const dynamic = 'force-dynamic'
 // The aggregation itself lives in src/lib/eal/cefr-aggregate.ts. It
 // returns `available: false` (a normal 200) when the progress_cefr
 // migration has not been applied yet, and only throws on unexpected
-// errors — which we map to a 500.
+// errors - which we map to a 500.
 // ---------------------------------------------------------------------------
 
 export async function GET(request: NextRequest) {
@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
     let scopedStudentIds: string[] = []
 
     if (classIdParam) {
-      // Scope to a single class — but only if it belongs to this school
+      // Scope to a single class - but only if it belongs to this school
       // (and to this teacher, when the caller is a teacher).
       let classQuery = admin
         .from('classes')

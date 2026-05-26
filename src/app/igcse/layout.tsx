@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'IGCSE English Literature and Language revision resources. Study guides, exam technique and past-paper practice for top grades.',
   alternates: { canonical: 'https://theenglishhub.app/igcse' },
   openGraph: {
-    title: 'IGCSE English — The English Hub',
+    title: 'IGCSE English - The English Hub',
     description:
       'IGCSE English Literature and Language revision resources. Study guides, exam technique and past-paper practice for top grades.',
   },

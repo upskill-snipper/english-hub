@@ -8,10 +8,10 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'He Never Expected Much — Thomas Hardy | Cambridge IGCSE 0475',
+    title: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
     description: 'Study guide for ',
   },
-  title: 'He Never Expected Much — Thomas Hardy | Cambridge IGCSE 0475',
+  title: 'He Never Expected Much - Thomas Hardy | Cambridge IGCSE 0475',
   description:
     "Study guide for 'He Never Expected Much' by Thomas Hardy (1928). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
   alternates: {
@@ -24,7 +24,7 @@ export default function HeNeverExpectedMuchPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
-        name="He Never Expected Much — Thomas Hardy (Cambridge IGCSE 0475)"
+        name="He Never Expected Much - Thomas Hardy (Cambridge IGCSE 0475)"
         description="Study guide stub for 'He Never Expected Much' by Thomas Hardy (1928). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4."
       />
       <BreadcrumbJsonLd

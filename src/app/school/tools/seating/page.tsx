@@ -54,7 +54,7 @@ interface SavedPlan {
 type ArrangeMode = 'mixed' | 'friendship' | 'target' | 'random'
 type ColorMode = 'grade' | 'trajectory' | 'target' | 'gender'
 
-// Option lists store i18n keys instead of literal strings — looked up at
+// Option lists store i18n keys instead of literal strings - looked up at
 // render time via useT() so toggling AR re-renders without re-deriving
 // option arrays. Selector identity (`value`) stays English/internal.
 const ARRANGE_OPTIONS: {

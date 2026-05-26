@@ -16,7 +16,7 @@ export function GradeBadge({ grade, color }: { grade: string; color: string }) {
 /* ─── "What makes this a Grade X?" summary box ──────────────── */
 
 // Maps the EN descriptor strings on the GradeLevel records to dictionary keys.
-// Keeps grade-data.ts framework-agnostic — only this consumer translates.
+// Keeps grade-data.ts framework-agnostic - only this consumer translates.
 const DESCRIPTOR_KEY: Record<string, string> = {
   Exceptional: 'model_answers.grade.descriptor.exceptional',
   Strong: 'model_answers.grade.descriptor.strong',

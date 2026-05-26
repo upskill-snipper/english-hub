@@ -47,14 +47,14 @@ const questions = [
     marks: '25 marks',
     focus: 'Extended response on Texts A and/or B',
     description:
-      'Longer analytical response — explore how the writer of one of the texts uses language and structure to create effects.',
+      'Longer analytical response - explore how the writer of one of the texts uses language and structure to create effects.',
   },
   {
     q: 'Question 3',
     marks: '15 + 25 marks',
     focus: 'Summary task',
     description:
-      'Select and summarise information from Texts A and B on a given topic. Marked for content (15) and writing (25 for the whole paper is split — see mark scheme).',
+      'Select and summarise information from Texts A and B on a given topic. Marked for content (15) and writing (25 for the whole paper is split - see mark scheme).',
   },
 ]
 
@@ -103,7 +103,7 @@ export default async function Paper1Page() {
             Paper 1: Reading
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Two hours. Two unseen non-fiction texts. Three compulsory questions worth 80 marks — 50%
+            Two hours. Two unseen non-fiction texts. Three compulsory questions worth 80 marks - 50%
             of the IGCSE Language B qualification.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
@@ -230,28 +230,28 @@ export default async function Paper1Page() {
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Precise, short quotations</strong> — one or two
+              <strong className="text-foreground">Precise, short quotations</strong> - one or two
               words often beats a whole sentence. Embed them in your analysis, don&apos;t dump them.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Comment on effect</strong> — say what the language{' '}
+              <strong className="text-foreground">Comment on effect</strong> - say what the language{' '}
               <em>does</em> to the reader, not just what technique is used.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Own words in the summary</strong> — paraphrase
+              <strong className="text-foreground">Own words in the summary</strong> - paraphrase
               rather than copy whole phrases from the original texts.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Cover the full range</strong> — the extended
+              <strong className="text-foreground">Cover the full range</strong> - the extended
               analysis should explore language <em>and</em> structure, not just word choices.
             </span>
           </li>

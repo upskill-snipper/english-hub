@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'iLowerSecondary English: tables & closed questions masterclass',
     description:
-      'Master the closed iLowerSecondary English items — feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
+      'Master the closed iLowerSecondary English items - feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
   },
   title: 'Tables & closed questions: a masterclass',
   description:
-    'Master the closed iLowerSecondary English items — feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
+    'Master the closed iLowerSecondary English items - feature tick-tables with partial credit, A/B/C/D multiple choice, underline/circle the correct word, and the “which text is more appealing” evidence question. Worked examples and technique.',
   alternates: { canonical: PAGE_URL },
 }
 
@@ -45,7 +45,7 @@ const SCANNING_STEPS = [
   {
     label: 'Mark a tiny tick on the text as you find it',
     detail:
-      'Put a faint pencil mark next to the first clear example you spot. One genuine example is enough to justify the column — you do not need to count them all.',
+      'Put a faint pencil mark next to the first clear example you spot. One genuine example is enough to justify the column - you do not need to count them all.',
   },
   {
     label: 'Decide the column deliberately',
@@ -94,17 +94,17 @@ const PAIRED_SETS: PairedSet[] = [
   {
     id: 'rockpools',
     theme: 'Theme: the natural world',
-    text1Label: 'Text 1 — a leaflet for a coastal nature reserve',
+    text1Label: 'Text 1 - a leaflet for a coastal nature reserve',
     text1:
-      'Welcome to Saltmarsh Point! Have you ever wondered what hides beneath a rock pool? Crouch down — quietly — and a whole tiny world appears. Crabs scuttle. Anemones bloom. The reserve’s wardens (all of them volunteers) ask one thing of every visitor: leave each pool exactly as you found it.',
-    text2Label: 'Text 2 — a diary entry by a young rock-pooler',
+      'Welcome to Saltmarsh Point! Have you ever wondered what hides beneath a rock pool? Crouch down - quietly - and a whole tiny world appears. Crabs scuttle. Anemones bloom. The reserve’s wardens (all of them volunteers) ask one thing of every visitor: leave each pool exactly as you found it.',
+    text2Label: 'Text 2 - a diary entry by a young rock-pooler',
     text2:
       'Today was the best day of the whole holiday. I found a crab the size of my thumbnail and watched it sidestep across the sand. Dad said it was probably a shore crab. I wanted to keep it, but I knew I shouldn’t, so I tipped it gently back into the cold water and we walked home.',
     rows: [
       {
         feature: 'A question to draw the reader in',
         answer: 'Text 1',
-        why: 'Text 1 asks “Have you ever wondered what hides beneath a rock pool?”. Text 2 contains no question mark, so the credited column is Text 1 only — proof that you must scan, not assume.',
+        why: 'Text 1 asks “Have you ever wondered what hides beneath a rock pool?”. Text 2 contains no question mark, so the credited column is Text 1 only - proof that you must scan, not assume.',
       },
       {
         feature: 'An exclamation mark',
@@ -114,7 +114,7 @@ const PAIRED_SETS: PairedSet[] = [
       {
         feature: 'A dash used to interrupt',
         answer: 'Text 1',
-        why: 'Text 1 uses “Crouch down — quietly —” to break the sentence and add a whispered instruction. Text 2 has no dash.',
+        why: 'Text 1 uses “Crouch down - quietly -” to break the sentence and add a whispered instruction. Text 2 has no dash.',
       },
       {
         feature: 'Brackets enclosing extra information',
@@ -131,12 +131,12 @@ const PAIRED_SETS: PairedSet[] = [
   {
     id: 'storm',
     theme: 'Theme: facing danger',
-    text1Label: 'Text 1 — a news report on a coastal storm',
+    text1Label: 'Text 1 - a news report on a coastal storm',
     text1:
       'A severe storm battered the harbour town overnight. Wind speeds reached ninety miles an hour. Three boats were torn from their moorings. The lifeboat crew, who launched twice before dawn, rescued all six fishermen. No injuries were reported.',
-    text2Label: 'Text 2 — the opening of an adventure story',
+    text2Label: 'Text 2 - the opening of an adventure story',
     text2:
-      'The wave didn’t roar — it screamed. Mara’s hands locked round the wheel. Could the little boat hold? She didn’t know. She only knew that letting go meant the sea would take her, and she had not come this far to be taken.',
+      'The wave didn’t roar - it screamed. Mara’s hands locked round the wheel. Could the little boat hold? She didn’t know. She only knew that letting go meant the sea would take her, and she had not come this far to be taken.',
     rows: [
       {
         feature: 'A rhetorical or unanswered question',
@@ -151,12 +151,12 @@ const PAIRED_SETS: PairedSet[] = [
       {
         feature: 'A dash used for dramatic effect',
         answer: 'Text 2',
-        why: 'Text 2 uses “The wave didn’t roar — it screamed.” to delay and punch the verb. Text 1 contains no dash.',
+        why: 'Text 2 uses “The wave didn’t roar - it screamed.” to delay and punch the verb. Text 1 contains no dash.',
       },
       {
         feature: 'A pair of commas marking off extra information',
         answer: 'Text 1',
-        why: 'Text 1: “The lifeboat crew, who launched twice before dawn, rescued…” brackets a clause with a comma pair. Text 2 uses no such pair, so the column is Text 1 — train yourself to check, not guess.',
+        why: 'Text 1: “The lifeboat crew, who launched twice before dawn, rescued…” brackets a clause with a comma pair. Text 2 uses no such pair, so the column is Text 1 - train yourself to check, not guess.',
       },
       {
         feature: 'Past-tense narrative verbs',
@@ -168,10 +168,10 @@ const PAIRED_SETS: PairedSet[] = [
   {
     id: 'food',
     theme: 'Theme: food and culture',
-    text1Label: 'Text 1 — a recipe instruction sheet',
+    text1Label: 'Text 1 - a recipe instruction sheet',
     text1:
       'First, warm the oil gently. Add the onions and stir until they soften. Do not let them brown! Next, pour in the stock and simmer for twenty minutes. Finally, taste and season before serving.',
-    text2Label: 'Text 2 — a blog post about a family kitchen',
+    text2Label: 'Text 2 - a blog post about a family kitchen',
     text2:
       'My grandmother’s kitchen always smelled of cinnamon and patience. She never measured anything; her hands simply knew. “A little more,” she would murmur, tipping in spices as though she were telling the pot a secret.',
     rows: [
@@ -205,10 +205,10 @@ const PAIRED_SETS: PairedSet[] = [
   {
     id: 'space',
     theme: 'Theme: exploration',
-    text1Label: 'Text 1 — a magazine article about a space mission',
+    text1Label: 'Text 1 - a magazine article about a space mission',
     text1:
-      'Could humans ever live on Mars? Scientists believe the answer is “perhaps”. The planet is freezing, dry and bathed in radiation — yet its frozen poles hold water, and water means hope. The next robotic lander is due to touch down in 2031.',
-    text2Label: 'Text 2 — a science-fiction story extract',
+      'Could humans ever live on Mars? Scientists believe the answer is “perhaps”. The planet is freezing, dry and bathed in radiation - yet its frozen poles hold water, and water means hope. The next robotic lander is due to touch down in 2031.',
+    text2Label: 'Text 2 - a science-fiction story extract',
     text2:
       'The hatch hissed open. Red dust swirled past Nadia’s boots and settled, slow as snow. She had trained for eleven years for this single, silent step. Behind her visor, she allowed herself one whispered word: “Finally.”',
     rows: [
@@ -220,7 +220,7 @@ const PAIRED_SETS: PairedSet[] = [
       {
         feature: 'A dash to add a contrasting idea',
         answer: 'Text 1',
-        why: 'Text 1: “bathed in radiation — yet its frozen poles hold water” pivots with a dash. Text 2 has no dash.',
+        why: 'Text 1: “bathed in radiation - yet its frozen poles hold water” pivots with a dash. Text 2 has no dash.',
       },
       {
         feature: 'A specific future date',
@@ -265,7 +265,7 @@ const MCQ_ITEMS: McqItem[] = [
     ],
     answer: 'B',
     rationale:
-      '“Groaned” personifies the bridge, giving it a sound a person makes under effort or pain — so it is being strained. A contradicts “old”; C and D are never suggested.',
+      '“Groaned” personifies the bridge, giving it a sound a person makes under effort or pain - so it is being strained. A contradicts “old”; C and D are never suggested.',
   },
   {
     id: 'mcq2',
@@ -279,7 +279,7 @@ const MCQ_ITEMS: McqItem[] = [
     ],
     answer: 'C',
     rationale:
-      'Repeating “very” stretches the action out, implying she is delaying — reluctant or deep in thought. A is the opposite of slow; B and D are not supported by the careful re-reading.',
+      'Repeating “very” stretches the action out, implying she is delaying - reluctant or deep in thought. A is the opposite of slow; B and D are not supported by the careful re-reading.',
   },
   {
     id: 'mcq3',
@@ -339,7 +339,7 @@ const MCQ_ITEMS: McqItem[] = [
   },
   {
     id: 'mcq7',
-    context: '“The charity needs your help today — every coin counts.”',
+    context: '“The charity needs your help today - every coin counts.”',
     stem: 'The main purpose of this sentence is to:',
     options: [
       { letter: 'A', text: 'inform the reader of opening times' },
@@ -349,7 +349,7 @@ const MCQ_ITEMS: McqItem[] = [
     ],
     answer: 'C',
     rationale:
-      '“needs your help today” and “every coin counts” are direct appeals for donations — persuasion. The other options name purposes the sentence does not serve.',
+      '“needs your help today” and “every coin counts” are direct appeals for donations - persuasion. The other options name purposes the sentence does not serve.',
   },
   {
     id: 'mcq8',
@@ -405,7 +405,7 @@ const APPEALING_ANSWERS = [
     answer:
       'I found Text 2 more appealing because it tells a real, personal experience that makes me feel I was there with the writer. The detail “a crab the size of my thumbnail” is so exact that I can picture the tiny creature, and the moment the writer “tipped it gently back into the cold water” makes the kindness feel genuine rather than instructed.',
     marks: [
-      'Reason / explanation of preference: a clear preference (Text 2) with a developed reason — the personal recount makes the reader feel present.',
+      'Reason / explanation of preference: a clear preference (Text 2) with a developed reason - the personal recount makes the reader feel present.',
       'Textual evidence: an apt, embedded quotation (“a crab the size of my thumbnail”) that genuinely supports the reason.',
     ],
   },
@@ -417,25 +417,25 @@ const APPEALING_ANSWERS = [
     answer:
       'I preferred Text 1 because it answers a question I genuinely wonder about and makes the science feel hopeful. The line “water means hope” turns a dry fact into something I want to keep reading about, and the promise that a lander is “due to touch down in 2031” gives me a real event to look forward to, which the story version does not.',
     marks: [
-      'Reason / explanation of preference: a clear preference (Text 1) with a developed reason — the article makes real science feel hopeful and forward-looking.',
+      'Reason / explanation of preference: a clear preference (Text 1) with a developed reason - the article makes real science feel hopeful and forward-looking.',
       'Textual evidence: a precise supporting quotation (“water means hope” / “due to touch down in 2031”) tied directly to the reason.',
     ],
   },
 ]
 
 const PARTIAL_CREDIT_NOTES = [
-  'A feature table is not all-or-nothing. Getting most rows right usually still earns a mark, so always attempt every row — never leave one blank because you are unsure.',
+  'A feature table is not all-or-nothing. Getting most rows right usually still earns a mark, so always attempt every row - never leave one blank because you are unsure.',
   'A blank row scores nothing; a guessed row at least has a chance. With three columns (Text 1 / Text 2 / Both), an informed elimination is far better than no answer.',
   'One clear example is enough to justify a column. You do not need to find or count every instance of the feature.',
-  '“Both texts” is only correct when you have actually found the feature in each text — not when you are running out of time and hedging.',
+  '“Both texts” is only correct when you have actually found the feature in each text - not when you are running out of time and hedging.',
 ]
 
 const COMMON_MISTAKES = [
-  'Ticking a column from memory instead of checking the text — always find a real example on the page first.',
+  'Ticking a column from memory instead of checking the text - always find a real example on the page first.',
   'Confusing an apostrophe for possession (the dog’s lead) with an apostrophe for omission (don’t). The table usually names which one it wants.',
-  'Leaving feature-table rows blank — partial credit means a sensible attempt can still score.',
+  'Leaving feature-table rows blank - partial credit means a sensible attempt can still score.',
   'Crossing two boxes on a multiple-choice item, so the examiner can award nothing.',
-  'On the “which text is more appealing” question, giving a preference but no quotation — that throws away the evidence mark.',
+  'On the “which text is more appealing” question, giving a preference but no quotation - that throws away the evidence mark.',
   'Underlining or circling more than one option when only one is correct.',
 ]
 
@@ -484,7 +484,7 @@ export default async function FeatureTablesPage() {
       <h1>Tables &amp; closed questions: a masterclass</h1>
       <p className="lead">
         The closed questions are the marks you should never drop. They test whether you can scan
-        accurately and read precisely — not whether you can write at length. This masterclass covers
+        accurately and read precisely - not whether you can write at length. This masterclass covers
         four of them: the feature tick-table, the A/B/C/D multiple-choice item, the
         underline/circle-the-correct-word item, and the short &ldquo;which text is more
         appealing&rdquo; question that needs a reason <em>and</em> a quotation.
@@ -617,7 +617,7 @@ export default async function FeatureTablesPage() {
         </div>
         <p className="text-sm text-muted-foreground">
           Notice how often the right answer is decided by one clear example. You never have to find
-          every instance — just one that genuinely shows the feature in that text.
+          every instance - just one that genuinely shows the feature in that text.
         </p>
       </section>
 
@@ -645,7 +645,7 @@ export default async function FeatureTablesPage() {
         <h2>Ten worked multiple-choice items</h2>
         <p>
           Each item below is original. Decide your answer before you read the rationale. The
-          rationale always explains why the wrong options are wrong — that is the elimination skill
+          rationale always explains why the wrong options are wrong - that is the elimination skill
           you are training.
         </p>
         <div className="not-prose my-6 space-y-4">
@@ -677,7 +677,7 @@ export default async function FeatureTablesPage() {
                 })}
               </ul>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                <span className="font-medium text-foreground">Answer {item.answer} — why: </span>
+                <span className="font-medium text-foreground">Answer {item.answer} - why: </span>
                 {item.rationale}
               </p>
             </div>
@@ -688,7 +688,7 @@ export default async function FeatureTablesPage() {
       <section className="my-10">
         <h2>Underline or circle the correct word</h2>
         <p>
-          This item asks you to underline or circle one option — for example the imperative verb,
+          This item asks you to underline or circle one option - for example the imperative verb,
           the modal verb, or the word that is a synonym for a word in the text.{' '}
           {UNDERLINE.howToAnswer} Two rules matter most: apply the grammatical word precisely, and
           mark only one option.
@@ -744,7 +744,7 @@ export default async function FeatureTablesPage() {
       </section>
 
       <section className="my-10">
-        <h2>&ldquo;Which text is more appealing&rdquo; — reason + quotation</h2>
+        <h2>&ldquo;Which text is more appealing&rdquo; - reason + quotation</h2>
         <p>
           This short item is worth two marks, and the two marks do different jobs.{' '}
           {APPEALING.howToAnswer} In plain terms: one mark is for a sensible reason for your

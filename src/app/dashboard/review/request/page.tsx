@@ -1,105 +1,105 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 
 const REASON_OPTIONS = [
-  { value: "", label: "Select a reason..." },
-  { value: "inaccurate", label: "Feedback seems inaccurate" },
-  { value: "unclear", label: "I don't understand the feedback" },
-  { value: "unfair-score", label: "Score seems unfair" },
-  { value: "missed-points", label: "AI missed important points" },
-  { value: "other", label: "Other" },
-] as const;
+  { value: '', label: 'Select a reason...' },
+  { value: 'inaccurate', label: 'Feedback seems inaccurate' },
+  { value: 'unclear', label: "I don't understand the feedback" },
+  { value: 'unfair-score', label: 'Score seems unfair' },
+  { value: 'missed-points', label: 'AI missed important points' },
+  { value: 'other', label: 'Other' },
+] as const
 
-const DETAIL_MAX = 2000;
-const SELF_ASSESSMENT_MAX = 1500;
+const DETAIL_MAX = 2000
+const SELF_ASSESSMENT_MAX = 1500
 
 interface Essay {
-  id: string;
-  title: string;
+  id: string
+  title: string
 }
 
 interface SubmissionResult {
-  referenceNumber: string;
-  estimatedResponse: string;
+  referenceNumber: string
+  estimatedResponse: string
 }
 
 export default function ReviewRequestPage() {
-  const searchParams = useSearchParams();
-  const preselectedEssayId = searchParams.get("essayId") ?? "";
+  const searchParams = useSearchParams()
+  const preselectedEssayId = searchParams.get('essayId') ?? ''
 
-  const [essays, setEssays] = useState<Essay[]>([]);
-  const [essayId, setEssayId] = useState(preselectedEssayId);
-  const [reason, setReason] = useState("");
-  const [detail, setDetail] = useState("");
-  const [selfAssessment, setSelfAssessment] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<SubmissionResult | null>(null);
+  const [essays, setEssays] = useState<Essay[]>([])
+  const [essayId, setEssayId] = useState(preselectedEssayId)
+  const [reason, setReason] = useState('')
+  const [detail, setDetail] = useState('')
+  const [selfAssessment, setSelfAssessment] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [result, setResult] = useState<SubmissionResult | null>(null)
 
   // Fetch user's essays for the dropdown
   useEffect(() => {
     async function fetchEssays() {
       try {
-        const res = await fetch("/api/essays");
+        const res = await fetch('/api/essays')
         if (res.ok) {
-          const data = await res.json();
-          setEssays(data.essays ?? []);
+          const data = await res.json()
+          setEssays(data.essays ?? [])
         }
       } catch {
-        // Silently fail — user can still type an ID manually
+        // Silently fail - user can still type an ID manually
       }
     }
-    fetchEssays();
-  }, []);
+    fetchEssays()
+  }, [])
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError(null);
+    e.preventDefault()
+    setError(null)
 
     if (!essayId) {
-      setError("Please select an essay to review.");
-      return;
+      setError('Please select an essay to review.')
+      return
     }
     if (!reason) {
-      setError("Please select a reason for your review request.");
-      return;
+      setError('Please select a reason for your review request.')
+      return
     }
     if (!detail.trim()) {
-      setError("Please provide some detail about your request.");
-      return;
+      setError('Please provide some detail about your request.')
+      return
     }
 
-    setSubmitting(true);
+    setSubmitting(true)
 
     try {
-      const res = await fetch("/api/review", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           essayId,
           reason,
           detail: detail.trim(),
           selfAssessment: selfAssessment.trim() || undefined,
         }),
-      });
+      })
 
       if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        throw new Error(body?.error ?? "Something went wrong. Please try again.");
+        const body = await res.json().catch(() => null)
+        throw new Error(body?.error ?? 'Something went wrong. Please try again.')
       }
 
-      const data = await res.json();
+      const data = await res.json()
       setResult({
         referenceNumber: data.referenceNumber,
         estimatedResponse: data.estimatedResponse,
-      });
+      })
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError(err instanceof Error ? err.message : 'Something went wrong.')
     } finally {
-      setSubmitting(false);
+      setSubmitting(false)
     }
   }
 
@@ -123,12 +123,10 @@ export default function ReviewRequestPage() {
             </svg>
           </div>
 
-          <h1 className="text-2xl font-semibold text-primary">
-            Review Request Submitted
-          </h1>
+          <h1 className="text-2xl font-semibold text-primary">Review Request Submitted</h1>
           <p className="mt-2 text-muted-foreground">
-            Your request has been received. A qualified reviewer will look at
-            your essay and the AI feedback.
+            Your request has been received. A qualified reviewer will look at your essay and the AI
+            feedback.
           </p>
 
           <div className="mt-6 rounded-lg bg-background p-4 text-sm">
@@ -140,8 +138,7 @@ export default function ReviewRequestPage() {
 
           <div className="mt-4 rounded-lg bg-accent/5 border border-accent/20 p-4 text-sm text-foreground">
             <p>
-              <strong>Estimated response time:</strong>{" "}
-              {result.estimatedResponse}
+              <strong>Estimated response time:</strong> {result.estimatedResponse}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
               We&apos;ll notify you by email when the review is complete.
@@ -161,7 +158,7 @@ export default function ReviewRequestPage() {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   // ---------- Form ----------
@@ -176,24 +173,20 @@ export default function ReviewRequestPage() {
         </Link>
       </div>
 
-      <h1 className="text-2xl font-semibold text-primary">
-        Request a Human Review
-      </h1>
+      <h1 className="text-2xl font-semibold text-primary">Request a Human Review</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        If you&apos;re unsure about the AI&apos;s feedback on your essay, you
-        can ask a real person to take a look. This is completely normal and
-        it&apos;s your right — not a complaint.
+        If you&apos;re unsure about the AI&apos;s feedback on your essay, you can ask a real person
+        to take a look. This is completely normal and it&apos;s your right - not a complaint.
       </p>
 
       {/* Rights notice */}
       <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
         <p className="font-medium text-primary">Your rights</p>
         <p className="mt-1">
-          Under UK data protection law (UK GDPR &amp; the Data Use and Access
-          Act 2025), you have the right to request human intervention when
-          decisions are made by automated systems. This is that right in action
-          — it&apos;s not a complaint, and there&apos;s no wrong reason to use
-          it.
+          Under UK data protection law (UK GDPR &amp; the Data Use and Access Act 2025), you have
+          the right to request human intervention when decisions are made by automated systems. This
+          is that right in action - it&apos;s not a complaint, and there&apos;s no wrong reason to
+          use it.
         </p>
       </div>
 
@@ -217,12 +210,9 @@ export default function ReviewRequestPage() {
               </option>
             ))}
             {/* If preselected ID isn't in the list, still show it */}
-            {preselectedEssayId &&
-              !essays.find((e) => e.id === preselectedEssayId) && (
-                <option value={preselectedEssayId}>
-                  Essay {preselectedEssayId}
-                </option>
-              )}
+            {preselectedEssayId && !essays.find((e) => e.id === preselectedEssayId) && (
+              <option value={preselectedEssayId}>Essay {preselectedEssayId}</option>
+            )}
           </select>
         </div>
 
@@ -257,9 +247,7 @@ export default function ReviewRequestPage() {
           <textarea
             id="detail"
             value={detail}
-            onChange={(e) =>
-              setDetail(e.target.value.slice(0, DETAIL_MAX))
-            }
+            onChange={(e) => setDetail(e.target.value.slice(0, DETAIL_MAX))}
             rows={5}
             className="input-field mt-1 resize-y"
             placeholder="e.g. The AI said my conclusion was weak, but I think I addressed the question clearly..."
@@ -267,7 +255,7 @@ export default function ReviewRequestPage() {
           />
           <p
             className={`mt-1 text-right text-xs ${
-              detail.length >= DETAIL_MAX ? "text-red-500 font-medium" : "text-muted-foreground"
+              detail.length >= DETAIL_MAX ? 'text-red-500 font-medium' : 'text-muted-foreground'
             }`}
           >
             {detail.length}/{DETAIL_MAX}
@@ -276,24 +264,18 @@ export default function ReviewRequestPage() {
 
         {/* Self-assessment (optional) */}
         <div>
-          <label
-            htmlFor="selfAssessment"
-            className="block text-sm font-medium text-foreground"
-          >
-            Your own thoughts on your essay{" "}
+          <label htmlFor="selfAssessment" className="block text-sm font-medium text-foreground">
+            Your own thoughts on your essay{' '}
             <span className="text-muted-foreground font-normal">(optional)</span>
           </label>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            If you&apos;d like, share what you think you did well or what you
-            were trying to achieve. This helps the reviewer understand your
-            perspective.
+            If you&apos;d like, share what you think you did well or what you were trying to
+            achieve. This helps the reviewer understand your perspective.
           </p>
           <textarea
             id="selfAssessment"
             value={selfAssessment}
-            onChange={(e) =>
-              setSelfAssessment(e.target.value.slice(0, SELF_ASSESSMENT_MAX))
-            }
+            onChange={(e) => setSelfAssessment(e.target.value.slice(0, SELF_ASSESSMENT_MAX))}
             rows={4}
             className="input-field mt-1 resize-y"
             placeholder="e.g. I was trying to argue that Lady Macbeth is more ambitious than Macbeth..."
@@ -301,8 +283,8 @@ export default function ReviewRequestPage() {
           <p
             className={`mt-1 text-right text-xs ${
               selfAssessment.length >= SELF_ASSESSMENT_MAX
-                ? "text-red-500 font-medium"
-                : "text-muted-foreground"
+                ? 'text-red-500 font-medium'
+                : 'text-muted-foreground'
             }`}
           >
             {selfAssessment.length}/{SELF_ASSESSMENT_MAX}
@@ -320,14 +302,10 @@ export default function ReviewRequestPage() {
         )}
 
         {/* Submit */}
-        <button
-          type="submit"
-          disabled={submitting}
-          className="btn-primary w-full"
-        >
-          {submitting ? "Submitting..." : "Submit Review Request"}
+        <button type="submit" disabled={submitting} className="btn-primary w-full">
+          {submitting ? 'Submitting...' : 'Submit Review Request'}
         </button>
       </form>
     </div>
-  );
+  )
 }

@@ -13,13 +13,13 @@ export const dynamic = 'force-dynamic'
  * Daily cron that promotes `affiliate_conversions` rows from
  * `status='pending'` to `confirmed` once they're past the 60-day
  * clearance window (14-day UK statutory refund + 46-day clawback
- * buffer — see src/lib/affiliate/tiers.ts for the rationale).
+ * buffer - see src/lib/affiliate/tiers.ts for the rationale).
  *
  * BUG-2 fix (3 May 2026): the legacy cron at /api/cron/affiliate-confirm
  * only operates on the legacy `affiliate_referrals` table. The new
  * `affiliate_conversions` table (populated by both
  * /api/affiliate/track-conversion and the webhook's
- * recordCodeBasedConversion) had no equivalent confirm cron — rows
+ * recordCodeBasedConversion) had no equivalent confirm cron - rows
  * inserted at status='pending' would sit there forever. The dashboard's
  * "All-time earnings" stat (which counts only confirmed/paid) showed
  * £0 even after a successful affiliate sale.
@@ -100,7 +100,7 @@ export async function GET(request: NextRequest) {
       const results = await Promise.allSettled(
         batch.map(async (conv) => {
           // Non-subscription products (one-time, course) clear immediately
-          // — there's no subscription to check, and the 60-day window has
+          // - there's no subscription to check, and the 60-day window has
           // already absorbed the refund risk.
           if (conv.product_type !== 'subscription') {
             await supabase
@@ -135,7 +135,7 @@ export async function GET(request: NextRequest) {
           }
 
           if (!stripeSubscriptionId) {
-            // No subscription found — confirm anyway. A subscription that
+            // No subscription found - confirm anyway. A subscription that
             // was cancelled within the 60-day window would still appear
             // in the list (status: 'canceled'), so absence here usually
             // means the user paid for a different SKU or used a different
@@ -178,7 +178,7 @@ export async function GET(request: NextRequest) {
         if (result.status === 'fulfilled') {
           if (result.value === 'confirmed') confirmed++
           else voided++
-          // Mark this affiliate for a recount after we finish the run —
+          // Mark this affiliate for a recount after we finish the run -
           // confirmed_referral_count drives tier advancement.
           affiliateIdsToRecount.add(conv.affiliate_id)
         } else {
@@ -201,7 +201,7 @@ export async function GET(request: NextRequest) {
           p_affiliate_id: affiliateId,
         })
         if (rpcErr) {
-          // Non-fatal — the count is rebuilt on next run. Log and continue.
+          // Non-fatal - the count is rebuilt on next run. Log and continue.
           console.error(
             `[affiliate-confirm-v2] recount failed for affiliate ${affiliateId}:`,
             rpcErr,
@@ -212,7 +212,7 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // 10% error threshold — same as the legacy cron.
+    // 10% error threshold - same as the legacy cron.
     const totalProcessed = pending.length
     if (errors.length > 0 && errors.length > totalProcessed * 0.1) {
       const err = new Error(

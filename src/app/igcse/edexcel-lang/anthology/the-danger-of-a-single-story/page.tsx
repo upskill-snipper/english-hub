@@ -19,11 +19,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'The Danger of a Single Story — Chimamanda Ngozi Adichie — IGCSE Language A Anthology — The English Hub',
+      'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology - The English Hub',
     description:
       'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   },
-  title: 'The Danger of a Single Story — Chimamanda Ngozi Adichie — IGCSE Language A Anthology',
+  title: 'The Danger of a Single Story - Chimamanda Ngozi Adichie - IGCSE Language A Anthology',
   description:
     'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: {
@@ -51,7 +51,7 @@ const verifiedTedLines = [
   },
   {
     id: 3,
-    label: 'Closing image — paradise regained',
+    label: 'Closing image - paradise regained',
     text: '"When we reject the single story, when we realize that there is never a single story about any place, we regain a kind of paradise."',
     context:
       'The final sentence of the TED talk: rejecting the single story is framed as a recovery of fullness and humanity.',
@@ -97,7 +97,7 @@ const languageFeatures = [
   {
     technique: 'Inclusive pronouns',
     explanation:
-      'Adichie uses "we" to include herself and the audience in the problem. She is not exempting herself from the tendency to create single stories — she admits her own complicity.',
+      'Adichie uses "we" to include herself and the audience in the problem. She is not exempting herself from the tendency to create single stories - she admits her own complicity.',
   },
   {
     technique: 'Irony',
@@ -107,7 +107,7 @@ const languageFeatures = [
   {
     technique: 'Metaphor',
     explanation:
-      'The "single story" itself functions as a metaphor — one narrative standing in for an entire culture or identity. The metaphor makes an abstract idea tangible and memorable.',
+      'The "single story" itself functions as a metaphor - one narrative standing in for an entire culture or identity. The metaphor makes an abstract idea tangible and memorable.',
   },
 ]
 
@@ -117,14 +117,14 @@ const structuralAnalysis = {
   development:
     "The text develops chronologically through Adichie's life: childhood reading, discovering African literature, arriving in America, travelling to Mexico. Each anecdote builds the argument that single stories are everywhere and affect everyone.",
   climax:
-    "The emotional climax comes when Adichie describes her American roommate's patronising assumptions — this is the moment where the abstract concept of the single story becomes painfully personal and concrete.",
+    "The emotional climax comes when Adichie describes her American roommate's patronising assumptions - this is the moment where the abstract concept of the single story becomes painfully personal and concrete.",
   resolution:
     'Adichie resolves by widening her argument from personal experience to a universal principle: that seeking many stories is an act of empowerment. She ends with a call to action rather than a neat conclusion.',
   perspective:
     'First person throughout, using "I" to ground every argument in personal experience. This is a deliberate rhetorical choice: by making herself both victim and perpetrator of single stories, Adichie removes any sense of moral superiority.',
   paragraphing:
     'As a speech transcript, the text uses short, punchy paragraphs suited to oral delivery. Longer narrative sections alternate with concise, memorable thesis statements.',
-  time: 'Broadly chronological (childhood to adulthood) but with embedded flashbacks and flash-forwards. The chronological structure mirrors a journey of understanding — the speaker grows as the text progresses.',
+  time: 'Broadly chronological (childhood to adulthood) but with embedded flashbacks and flash-forwards. The chronological structure mirrors a journey of understanding - the speaker grows as the text progresses.',
   openingClosing:
     'The opening uses a specific, small-scale anecdote (a child reading); the closing uses a large-scale, universal claim about the power of stories. This movement from particular to universal gives the text its persuasive arc.',
 }
@@ -133,9 +133,9 @@ const writersPurpose = {
   achieve:
     'Adichie wants to persuade her audience that relying on a single narrative about any group of people is dangerous. She argues that stereotypes are not necessarily untrue but are fundamentally incomplete.',
   readerFeel:
-    'She wants the audience to feel uncomfortable — to recognise their own single stories and the harm those stories cause. She also wants them to feel empowered to seek out multiple perspectives.',
+    'She wants the audience to feel uncomfortable - to recognise their own single stories and the harm those stories cause. She also wants them to feel empowered to seek out multiple perspectives.',
   message:
-    'Her central argument is that stories carry power, and that the dominance of a single story — whether about Africa, about immigrants, about any group — flattens complexity and denies humanity. The antidote is a balance of stories.',
+    'Her central argument is that stories carry power, and that the dominance of a single story - whether about Africa, about immigrants, about any group - flattens complexity and denies humanity. The antidote is a balance of stories.',
 }
 
 const keyVocabulary = [
@@ -196,22 +196,22 @@ const examPractice = {
   q1: {
     question:
       "List four things you learn about Adichie's childhood reading habits from the opening of the text.",
-    type: 'Retrieval — 4 marks',
+    type: 'Retrieval - 4 marks',
   },
   q2: {
     question: 'How does Adichie use language to convey the impact of stereotypes on individuals?',
-    type: 'Language analysis — 12 marks',
+    type: 'Language analysis - 12 marks',
     modelOutline: [
       'Adichie uses emotive language to convey the patronising assumptions of her American roommate, making the reader feel the frustration of being reduced to a single narrative.',
       'The repetition of the phrase "single story" throughout the text reinforces the central concept and mirrors how stereotypes are themselves reinforced through repetition, creating a cumulative effect on the audience.',
-      'Antithetical pairings — stories that diminish set against stories that empower — present narrative as a tool with dual potential, sharpening the argument that storytelling power must be used responsibly.',
-      "Adichie's use of personal anecdote — her own single story of her family's house boy, Fide — is particularly effective because it removes moral superiority: she includes herself as both perpetrator and victim of stereotyping, which strengthens her credibility.",
+      'Antithetical pairings - stories that diminish set against stories that empower - present narrative as a tool with dual potential, sharpening the argument that storytelling power must be used responsibly.',
+      "Adichie's use of personal anecdote - her own single story of her family's house boy, Fide - is particularly effective because it removes moral superiority: she includes herself as both perpetrator and victim of stereotyping, which strengthens her credibility.",
     ],
   },
   q3: {
     question:
       'How does Adichie structure her speech to build a persuasive argument about the danger of single stories?',
-    type: 'Structural analysis — 12 marks',
+    type: 'Structural analysis - 12 marks',
   },
 }
 
@@ -226,15 +226,15 @@ const comparisonLinks = [
   },
   {
     title: 'Young and Dyslexic',
-    author: 'Benjamin Zephaniah (1958–2023)',
+    author: 'Benjamin Zephaniah (1958-2023)',
     href: '/igcse/edexcel-lang/anthology/young-and-dyslexic',
     reason:
-      'Both writers challenge the single story others have constructed about them — Adichie as an African, Zephaniah as a dyslexic person. Compare how each uses personal voice and direct address to reclaim their identity.',
+      'Both writers challenge the single story others have constructed about them - Adichie as an African, Zephaniah as a dyslexic person. Compare how each uses personal voice and direct address to reclaim their identity.',
     themes: ['Identity', 'Challenging assumptions', 'Self-belief'],
   },
   {
     title: 'A Passage to Africa',
-    author: 'George Alagiah (1955–2023)',
+    author: 'George Alagiah (1955-2023)',
     href: '/igcse/edexcel-lang/anthology/a-passage-to-africa',
     reason:
       'Adichie warns about the single story of Africa; Alagiah wrestled with being part of the media that helps create it. Compare how each writer handles the ethics of representing African suffering.',
@@ -290,7 +290,7 @@ export default async function TheDangerOfASingleStoryPage() {
           <AlertTriangle className="mt-0.5 size-4.5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="text-body-sm text-foreground/90 leading-relaxed">
             <strong className="text-foreground">
-              Page rebuilt April 2026 — direct quotations removed pending verified anthology review.
+              Page rebuilt April 2026 - direct quotations removed pending verified anthology review.
             </strong>{' '}
             We retain only widely-attested lines from the TED talk transcript while we re-verify the
             Edexcel anthology adaptation against a licensed copy. Structural and thematic

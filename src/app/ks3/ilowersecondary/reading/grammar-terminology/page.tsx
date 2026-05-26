@@ -10,11 +10,11 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Grammar terminology reference — iLowerSecondary English',
+    title: 'Grammar terminology reference - iLowerSecondary English',
     description:
       'A precise, plain-English glossary of every word class, sentence type, clause and punctuation term tested by the “underline the word / verb class” question, with original examples and a 15-item self-test.',
   },
-  title: 'Grammar terminology reference — iLowerSecondary English',
+  title: 'Grammar terminology reference - iLowerSecondary English',
   description:
     'A precise, plain-English glossary of every word class, sentence type, clause and punctuation term tested by the “underline the word / verb class” question, with original examples and a 15-item self-test.',
   alternates: {
@@ -45,12 +45,12 @@ const GROUPS: Group[] = [
   {
     heading: 'Nouns',
     intro:
-      'A noun names a person, place, thing, idea or group. The four sub-types below are all still nouns — the label just tells you what kind of thing is being named.',
+      'A noun names a person, place, thing, idea or group. The four sub-types below are all still nouns - the label just tells you what kind of thing is being named.',
     terms: [
       {
         term: 'Common noun',
         definition:
-          'A general, everyday name for a type of thing — not a specific name. It is not given a capital letter unless it begins a sentence.',
+          'A general, everyday name for a type of thing - not a specific name. It is not given a capital letter unless it begins a sentence.',
         examples: [
           'The kettle boiled while the dog slept by the door.',
           'A storm flattened the wheat in the field.',
@@ -68,7 +68,7 @@ const GROUPS: Group[] = [
       {
         term: 'Abstract noun',
         definition:
-          'Names something you cannot touch, see or hear — a feeling, quality, state or idea.',
+          'Names something you cannot touch, see or hear - a feeling, quality, state or idea.',
         examples: [
           'Her courage during the rescue surprised everyone.',
           'The silence carried a strange sense of dread.',
@@ -93,7 +93,7 @@ const GROUPS: Group[] = [
       {
         term: 'Personal pronoun',
         definition:
-          'Replaces a noun that refers to a person or thing — for example I, you, he, she, it, we, they (and the object forms me, him, her, us, them).',
+          'Replaces a noun that refers to a person or thing - for example I, you, he, she, it, we, they (and the object forms me, him, her, us, them).',
         examples: [
           'When the dancers finished, they bowed and the crowd cheered them.',
           'I left the parcel on the step because it was raining.',
@@ -102,7 +102,7 @@ const GROUPS: Group[] = [
       {
         term: 'Possessive pronoun',
         definition:
-          'Shows ownership and replaces a noun entirely — mine, yours, his, hers, ours, theirs. (Words like my or our are possessive determiners, not pronouns, because they sit in front of a noun.)',
+          'Shows ownership and replaces a noun entirely - mine, yours, his, hers, ours, theirs. (Words like my or our are possessive determiners, not pronouns, because they sit in front of a noun.)',
         examples: [
           'That umbrella is not yours; the red one is mine.',
           'Their garden is tidy, but ours has the taller sunflowers.',
@@ -111,7 +111,7 @@ const GROUPS: Group[] = [
       {
         term: 'Relative pronoun',
         definition:
-          'Introduces a relative clause and links it to a noun — who, whom, whose, which or that.',
+          'Introduces a relative clause and links it to a noun - who, whom, whose, which or that.',
         examples: [
           'The mechanic who fixed the brakes also checked the tyres.',
           'We climbed the hill that overlooks the harbour.',
@@ -155,12 +155,12 @@ const GROUPS: Group[] = [
       {
         term: 'Modal verb',
         definition:
-          'A special auxiliary that shows possibility, ability, permission or obligation — can, could, may, might, shall, should, will, would, must.',
+          'A special auxiliary that shows possibility, ability, permission or obligation - can, could, may, might, shall, should, will, would, must.',
         examples: [
           'You must wear a helmet, but you may remove your gloves.',
           'The bridge could collapse if the river rises further.',
         ],
-        tip: 'There are only nine common modals — can, could, may, might, shall, should, will, would, must. Memorise the list; if the word is on it and sits before another verb, it is a modal.',
+        tip: 'There are only nine common modals - can, could, may, might, shall, should, will, would, must. Memorise the list; if the word is on it and sits before another verb, it is a modal.',
       },
       {
         term: 'Imperative verb',
@@ -214,7 +214,7 @@ const GROUPS: Group[] = [
       {
         term: 'Preposition',
         definition:
-          'Shows the relationship — usually of place, time or direction — between a noun (or pronoun) and the rest of the sentence: in, on, under, before, between, towards, during.',
+          'Shows the relationship - usually of place, time or direction - between a noun (or pronoun) and the rest of the sentence: in, on, under, before, between, towards, during.',
         examples: [
           'The cat slept under the table during the storm.',
           'We walked towards the lighthouse after lunch.',
@@ -239,7 +239,7 @@ const GROUPS: Group[] = [
       {
         term: 'Subordinating conjunction',
         definition:
-          'Begins a subordinate clause and shows how it depends on the main clause — because, although, while, if, when, since, unless, until.',
+          'Begins a subordinate clause and shows how it depends on the main clause - because, although, while, if, when, since, unless, until.',
         examples: [
           'Although it was late, the workers stayed until the wall was finished.',
           'The match continued because the rain had stopped.',
@@ -248,7 +248,7 @@ const GROUPS: Group[] = [
       {
         term: 'Complex connective',
         definition:
-          'A linking word or phrase (often more than one word) that signals a sophisticated relationship between ideas — such as a contrast, a result or a sequence: however, therefore, on the other hand, as a result, consequently, in addition.',
+          'A linking word or phrase (often more than one word) that signals a sophisticated relationship between ideas - such as a contrast, a result or a sequence: however, therefore, on the other hand, as a result, consequently, in addition.',
         examples: [
           'The plan was expensive; however, the council approved it.',
           'The river had burst its banks. Consequently, the road was closed.',
@@ -302,7 +302,7 @@ const GROUPS: Group[] = [
       {
         term: 'Minor sentence',
         definition:
-          'A grammatically incomplete unit used deliberately for effect — it lacks a finite verb but works as a sentence (often a single word, phrase or exclamation).',
+          'A grammatically incomplete unit used deliberately for effect - it lacks a finite verb but works as a sentence (often a single word, phrase or exclamation).',
         examples: ['No way.', 'Silence. Then a single, distant knock.'],
       },
     ],
@@ -318,7 +318,7 @@ const GROUPS: Group[] = [
           'A clause that contains a subject and verb and makes complete sense on its own. (Also called an independent clause.)',
         examples: [
           'The tide came in quickly.',
-          '“She locked the door before she left.” — “She locked the door” is the main clause.',
+          '“She locked the door before she left.” - “She locked the door” is the main clause.',
         ],
       },
       {
@@ -326,8 +326,8 @@ const GROUPS: Group[] = [
         definition:
           'A clause that adds information to a main clause but cannot stand alone. It usually begins with a subordinating conjunction.',
         examples: [
-          '“When the music stopped, everyone turned round.” — “When the music stopped” is the subordinate clause.',
-          '“We waited until the storm passed.” — “until the storm passed” is the subordinate clause.',
+          '“When the music stopped, everyone turned round.” - “When the music stopped” is the subordinate clause.',
+          '“We waited until the storm passed.” - “until the storm passed” is the subordinate clause.',
         ],
       },
       {
@@ -335,8 +335,8 @@ const GROUPS: Group[] = [
         definition:
           'A type of subordinate clause that gives extra information about a noun. It begins with a relative pronoun (who, which, that, whose).',
         examples: [
-          '“The scientist who discovered the leak alerted the team.” — “who discovered the leak” is the relative clause.',
-          '“The bridge, which was rebuilt last year, is safe again.” — “which was rebuilt last year” is the relative clause.',
+          '“The scientist who discovered the leak alerted the team.” - “who discovered the leak” is the relative clause.',
+          '“The bridge, which was rebuilt last year, is safe again.” - “which was rebuilt last year” is the relative clause.',
         ],
       },
     ],
@@ -367,7 +367,7 @@ const GROUPS: Group[] = [
       {
         term: 'Colon',
         definition:
-          'Introduces something that follows on directly — usually a list, an explanation or an example — after a clause that could stand alone.',
+          'Introduces something that follows on directly - usually a list, an explanation or an example - after a clause that could stand alone.',
         examples: [
           'Pack three things: a torch, water and a map.',
           'The reason was simple: nobody had checked the lock.',
@@ -387,8 +387,8 @@ const GROUPS: Group[] = [
         definition:
           'Marks a sharp break, an afterthought or added information. A pair of dashes works like a pair of brackets to enclose extra detail.',
         examples: [
-          'She opened the box — and froze.',
-          'The hall — cold, dim and dusty — had not been used for years.',
+          'She opened the box - and froze.',
+          'The hall - cold, dim and dusty - had not been used for years.',
         ],
       },
       {
@@ -424,77 +424,77 @@ const SELF_TEST: SelfTest[] = [
   {
     sentence: 'The exhausted hikers reached the summit at last.',
     target: 'exhausted',
-    answer: 'Adjective — it describes the noun “hikers”.',
+    answer: 'Adjective - it describes the noun “hikers”.',
   },
   {
     sentence: 'Switch off the lights before you leave the lab.',
     target: 'Switch',
-    answer: 'Imperative verb — it gives a command with an understood subject “you”.',
+    answer: 'Imperative verb - it gives a command with an understood subject “you”.',
   },
   {
     sentence: 'A swarm of bees settled on the old apple tree.',
     target: 'swarm',
-    answer: 'Collective noun — it names a whole group of bees as one unit.',
+    answer: 'Collective noun - it names a whole group of bees as one unit.',
   },
   {
     sentence: 'You must finish the report before Friday.',
     target: 'must',
-    answer: 'Modal verb — it shows obligation and is on the nine-modal list.',
+    answer: 'Modal verb - it shows obligation and is on the nine-modal list.',
   },
   {
     sentence: 'The detective walked towards the locked warehouse.',
     target: 'towards',
-    answer: 'Preposition — it shows the direction relating “walked” to “warehouse”.',
+    answer: 'Preposition - it shows the direction relating “walked” to “warehouse”.',
   },
   {
     sentence: 'Honesty mattered more to her than winning.',
     target: 'Honesty',
-    answer: 'Abstract noun — it names a quality you cannot touch or see.',
+    answer: 'Abstract noun - it names a quality you cannot touch or see.',
   },
   {
     sentence: 'They had repaired the roof before the rain returned.',
     target: 'had',
-    answer: 'Auxiliary verb — a form of “have” helping the main verb “repaired”.',
+    answer: 'Auxiliary verb - a form of “have” helping the main verb “repaired”.',
   },
   {
     sentence: 'Although it was freezing, the match went ahead.',
     target: 'Although',
-    answer: 'Subordinating conjunction — it begins the subordinate clause.',
+    answer: 'Subordinating conjunction - it begins the subordinate clause.',
   },
   {
     sentence: 'The novelist who wrote that mystery lives nearby.',
     target: 'who',
-    answer: 'Relative pronoun — it introduces the relative clause about “novelist”.',
+    answer: 'Relative pronoun - it introduces the relative clause about “novelist”.',
   },
   {
     sentence: 'She quickly sealed the envelope and posted it.',
     target: 'quickly',
-    answer: 'Adverb — it modifies the verb “sealed”, telling us how.',
+    answer: 'Adverb - it modifies the verb “sealed”, telling us how.',
   },
   {
     sentence: 'That red bicycle is mine, not yours.',
     target: 'mine',
-    answer: 'Possessive pronoun — it replaces the noun and shows ownership.',
+    answer: 'Possessive pronoun - it replaces the noun and shows ownership.',
   },
   {
     sentence: 'The team flew to Tokyo for the championship.',
     target: 'flew',
-    answer: 'Irregular verb — the past of “fly” changes spelling instead of adding -ed.',
+    answer: 'Irregular verb - the past of “fly” changes spelling instead of adding -ed.',
   },
   {
     sentence: 'Every passenger showed a ticket at the barrier.',
     target: 'Every',
-    answer: 'Determiner — a quantifier introducing and limiting the noun “passenger”.',
+    answer: 'Determiner - a quantifier introducing and limiting the noun “passenger”.',
   },
   {
     sentence: 'He hoped to travel across the desert by spring.',
     target: 'to travel',
-    answer: 'Infinitive — the base verb with “to”, naming the action untensed.',
+    answer: 'Infinitive - the base verb with “to”, naming the action untensed.',
   },
   {
     sentence: 'The committee met on Thursday in Manchester.',
     target: 'Manchester',
-    answer: 'Proper noun — the specific name of one place, so capitalised.',
+    answer: 'Proper noun - the specific name of one place, so capitalised.',
   },
 ]
 
@@ -550,7 +550,7 @@ export default function GrammarTerminologyPage() {
 
       <h1>Grammar terminology reference</h1>
       <p className="lead">
-        One marked question on the reading paper asks you to underline a word and label its class —
+        One marked question on the reading paper asks you to underline a word and label its class -
         and it rewards exact terminology. This page defines every term that question can use, with
         original example sentences written by The English Hub, plus quick spotting tips for the
         terms students most often confuse.
@@ -565,16 +565,16 @@ export default function GrammarTerminologyPage() {
         </p>
         <ul>
           <li>
-            <strong>{RAO3.code}</strong> — {RAO3.descriptor}
+            <strong>{RAO3.code}</strong> - {RAO3.descriptor}
           </li>
           <li>
-            <strong>{RAO4.code}</strong> — {RAO4.descriptor}
+            <strong>{RAO4.code}</strong> - {RAO4.descriptor}
           </li>
         </ul>
         <p>
           It maps directly to Year 9 objective{' '}
           <span className="font-mono text-sm text-primary">{W93J.code}</span>:{' '}
-          {W93J.descriptor.toLowerCase()} The instruction to examiners is simple — “
+          {W93J.descriptor.toLowerCase()} The instruction to examiners is simple - “
           {UNDERLINE_Q.howToAnswer}” In short: name the class with the correct technical word, and
           underline only the word the question asks for.
         </p>

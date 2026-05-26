@@ -14,7 +14,7 @@
  *   - pronunciation (P/B, V/F, consonant clusters)
  *   - common Arabic-to-English transfer errors
  *
- * Bilingual by design — every user-facing string carries en + optional
+ * Bilingual by design - every user-facing string carries en + optional
  * ar (Khaleeji). Schema mirrors src/lib/ks3/types.ts so /eal and /ks3
  * can share rendering helpers and the existing dictionary lookups.
  */
@@ -46,11 +46,11 @@ export const EAL_CATEGORY_LABEL: Record<EALCategory, LocalizedString> = {
 
 export const EAL_CATEGORY_DESCRIPTION: Record<EALCategory, LocalizedString> = {
   grammar: {
-    en: 'Tenses, articles, pronouns and modal verbs — the grammatical patterns Arabic L1 learners most often need to retrain.',
-    ar: 'الأزمنة وأدوات التعريف والضمائر والأفعال الناقصة — الأنماط القواعدية اللي يحتاجها المتعلم العربي يعيد بناءها بأكثر دقّة.',
+    en: 'Tenses, articles, pronouns and modal verbs - the grammatical patterns Arabic L1 learners most often need to retrain.',
+    ar: 'الأزمنة وأدوات التعريف والضمائر والأفعال الناقصة - الأنماط القواعدية اللي يحتاجها المتعلم العربي يعيد بناءها بأكثر دقّة.',
   },
   sentence: {
-    en: 'Building English sentences: word order, joining clauses, avoiding fragments and run-ons. Arabic uses VSO order — English insists on SVO.',
+    en: 'Building English sentences: word order, joining clauses, avoiding fragments and run-ons. Arabic uses VSO order - English insists on SVO.',
     ar: 'بناء الجملة الإنجليزية: ترتيب الكلمات، الربط بين الجمل، تجنّب الجمل الناقصة والمتداخلة. العربي يستخدم ترتيب فعل-فاعل-مفعول، والإنجليزي يصرّ على فاعل-فعل-مفعول.',
   },
   vocabulary: {
@@ -62,8 +62,8 @@ export const EAL_CATEGORY_DESCRIPTION: Record<EALCategory, LocalizedString> = {
     ar: 'الفوارق الصوتية اللي ما توجد في العربي: P و B، V و F، وغياب التكتّلات الساكنة في العربي. وكذلك الحروف الصامتة وأنماط النبر في الإنجليزي.',
   },
   common_errors: {
-    en: 'Direct Arabic-to-English transfer errors — patterns Arabic speakers reach for instinctively that examiners flag every time.',
-    ar: 'أخطاء النقل المباشر من العربي للإنجليزي — أنماط ينحاز إليها المتعلم العربي تلقائياً، والمصحّحون يرصدونها كل مرة.',
+    en: 'Direct Arabic-to-English transfer errors - patterns Arabic speakers reach for instinctively that examiners flag every time.',
+    ar: 'أخطاء النقل المباشر من العربي للإنجليزي - أنماط ينحاز إليها المتعلم العربي تلقائياً، والمصحّحون يرصدونها كل مرة.',
   },
 }
 
@@ -75,14 +75,14 @@ export const EAL_CATEGORY_DESCRIPTION: Record<EALCategory, LocalizedString> = {
 export type EALExample = {
   /** Target English sentence (the form the student should produce). */
   en: string
-  /** Arabic translation — meaning, not literal word-for-word. */
+  /** Arabic translation - meaning, not literal word-for-word. */
   ar: string
   /** Optional teaching note (e.g. "Note the past participle form"). */
   note?: LocalizedString
 }
 
 /**
- * A common error students make — wrong vs right with an explanation
+ * A common error students make - wrong vs right with an explanation
  * the teacher would give in an Arabic L1 classroom.
  */
 export type EALError = {
@@ -112,8 +112,8 @@ export type EALExercise = {
 }
 
 /**
- * One EAL topic. Mirrors the depth of a KS3 weekly lesson plan —
- * concept + examples + common errors + practice — but framed around
+ * One EAL topic. Mirrors the depth of a KS3 weekly lesson plan -
+ * concept + examples + common errors + practice - but framed around
  * the single grammatical or sentence-level idea the topic teaches.
  */
 export type EALTopic = {
@@ -129,7 +129,7 @@ export type EALTopic = {
   title: LocalizedString
   /** One-sentence hook for the landing card. */
   description: LocalizedString
-  /** Long-form concept explanation — 2-4 paragraphs. */
+  /** Long-form concept explanation - 2-4 paragraphs. */
   concept: LocalizedString
   /** 6-10 illustrative examples. */
   examples: EALExample[]

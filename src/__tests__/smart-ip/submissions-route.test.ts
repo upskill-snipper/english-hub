@@ -100,7 +100,7 @@ beforeEach(() => {
   insertSubmissionMock.mockResolvedValue({ id: 'sub-new-1' })
 })
 
-describe('POST /api/submissions — gate order', () => {
+describe('POST /api/submissions - gate order', () => {
   it('415 when Content-Type is not application/json', async () => {
     const res = await POST(makeRequest(validBody, { json: false }))
     expect(res.status).toBe(415)
@@ -147,7 +147,7 @@ describe('POST /api/submissions — gate order', () => {
   })
 })
 
-describe('POST /api/submissions — validation', () => {
+describe('POST /api/submissions - validation', () => {
   it('400 when source is neither b2c_self nor b2b_class', async () => {
     const res = await POST(makeRequest({ ...validBody, source: 'nonsense' }))
     expect(res.status).toBe(400)
@@ -192,7 +192,7 @@ describe('POST /api/submissions — validation', () => {
   })
 })
 
-describe('POST /api/submissions — happy path & mapping', () => {
+describe('POST /api/submissions - happy path & mapping', () => {
   it('returns 201 { submissionId } and binds student_id from the SESSION not the body', async () => {
     const res = await POST(
       makeRequest({ ...validBody, studentId: 'attacker-supplied-id' } as Record<string, unknown>),

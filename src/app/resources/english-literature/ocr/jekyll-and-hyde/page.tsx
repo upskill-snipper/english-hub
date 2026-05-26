@@ -27,63 +27,63 @@ const keyQuotations = [
     quote: 'Man is not truly one, but truly two',
     speaker: 'Dr Jekyll (Chapter 10)',
     analysis:
-      "Jekyll's central revelation about human nature. Stevenson uses the adverb 'truly' twice to emphasise the fundamental duality of human nature. This challenges the Victorian belief in a single, unified moral self. Jekyll argues that everyone contains both good and evil — his experiment merely separates what already exists. This reflects emerging psychological theories about the unconscious mind.",
+      "Jekyll's central revelation about human nature. Stevenson uses the adverb 'truly' twice to emphasise the fundamental duality of human nature. This challenges the Victorian belief in a single, unified moral self. Jekyll argues that everyone contains both good and evil - his experiment merely separates what already exists. This reflects emerging psychological theories about the unconscious mind.",
   },
   {
     quote: 'If he be Mr Hyde, I shall be Mr Seek',
     speaker: 'Mr Utterson (Chapter 2)',
     analysis:
-      "Utterson's pun on the children's game 'hide and seek' introduces the novella's central dynamic of concealment and pursuit. The wordplay is uncharacteristically playful for the serious lawyer, revealing his determination. The pun also foreshadows the novella's structure — it is fundamentally a story about uncovering hidden truths. 'Hyde' as a name literally means 'hidden'.",
+      "Utterson's pun on the children's game 'hide and seek' introduces the novella's central dynamic of concealment and pursuit. The wordplay is uncharacteristically playful for the serious lawyer, revealing his determination. The pun also foreshadows the novella's structure - it is fundamentally a story about uncovering hidden truths. 'Hyde' as a name literally means 'hidden'.",
   },
   {
     quote: "Satan's signature upon a face",
     speaker: 'Mr Enfield (Chapter 1)',
     analysis:
-      "Enfield's description of Hyde associates him with the Devil, placing the novella within a Christian moral framework. The alliteration of 'Satan's signature' is hissing and sinister. The idea that evil can be read on the face reflects Victorian physiognomy — the pseudo-scientific belief that character could be determined from physical appearance. Hyde's repulsiveness is the outward sign of inner evil.",
+      "Enfield's description of Hyde associates him with the Devil, placing the novella within a Christian moral framework. The alliteration of 'Satan's signature' is hissing and sinister. The idea that evil can be read on the face reflects Victorian physiognomy - the pseudo-scientific belief that character could be determined from physical appearance. Hyde's repulsiveness is the outward sign of inner evil.",
   },
   {
     quote: "He was trampling calmly over the child's body",
     speaker: 'Mr Enfield (Chapter 1)',
     analysis:
-      "The oxymoron 'trampling calmly' is deeply disturbing. Trampling suggests violence and chaos, while 'calmly' implies indifference — Hyde feels no remorse or emotional response. The contrast encapsulates Hyde's nature: he is capable of violence without conscience. The child victim emphasises Hyde's moral depravity — he attacks the most innocent and vulnerable members of society.",
+      "The oxymoron 'trampling calmly' is deeply disturbing. Trampling suggests violence and chaos, while 'calmly' implies indifference - Hyde feels no remorse or emotional response. The contrast encapsulates Hyde's nature: he is capable of violence without conscience. The child victim emphasises Hyde's moral depravity - he attacks the most innocent and vulnerable members of society.",
   },
   {
     quote: 'I learned to recognise the thorough and primitive duality of man',
     speaker: 'Dr Jekyll (Chapter 10)',
     analysis:
-      "Jekyll describes his scientific and philosophical discovery. The adjective 'thorough' suggests the duality is complete and inescapable, while 'primitive' implies it is fundamental and ancient — predating civilisation and its moral codes. The word 'duality' became central to literary criticism of the novella. Stevenson suggests that the human condition is defined by internal conflict between civilised behaviour and primal instinct.",
+      "Jekyll describes his scientific and philosophical discovery. The adjective 'thorough' suggests the duality is complete and inescapable, while 'primitive' implies it is fundamental and ancient - predating civilisation and its moral codes. The word 'duality' became central to literary criticism of the novella. Stevenson suggests that the human condition is defined by internal conflict between civilised behaviour and primal instinct.",
   },
   {
     quote: 'All human beings, as we meet them, are commingled out of good and evil',
     speaker: 'Dr Jekyll (Chapter 10)',
     analysis:
-      "The verb 'commingled' means mixed together inseparably, suggesting that good and evil are not separate compartments but are blended within every person. The phrase 'as we meet them' emphasises that this applies to everyone without exception. This universalising statement is Stevenson's central theme — the respectable surface of Victorian society conceals the same capacity for evil that Hyde represents.",
+      "The verb 'commingled' means mixed together inseparably, suggesting that good and evil are not separate compartments but are blended within every person. The phrase 'as we meet them' emphasises that this applies to everyone without exception. This universalising statement is Stevenson's central theme - the respectable surface of Victorian society conceals the same capacity for evil that Hyde represents.",
   },
   {
     quote:
       'The pleasures which I made haste to seek in my disguise were, as I have said, undignified',
     speaker: 'Dr Jekyll (Chapter 10)',
     analysis:
-      "Jekyll's euphemistic description of Hyde's activities is deliberately vague. The word 'undignified' is a massive understatement for the violence and depravity Hyde commits. The phrase 'made haste' suggests urgency and appetite. Stevenson never specifies exactly what Hyde does — this ambiguity allows the Victorian reader's imagination to fill in the blanks, making the horror more personal and unsettling.",
+      "Jekyll's euphemistic description of Hyde's activities is deliberately vague. The word 'undignified' is a massive understatement for the violence and depravity Hyde commits. The phrase 'made haste' suggests urgency and appetite. Stevenson never specifies exactly what Hyde does - this ambiguity allows the Victorian reader's imagination to fill in the blanks, making the horror more personal and unsettling.",
   },
   {
     quote:
       'I feel very strongly about putting questions; it partakes too much of the style of the day of judgement',
     speaker: 'Mr Enfield (Chapter 1)',
     analysis:
-      "Enfield's reluctance to ask questions is characteristic of Victorian gentlemen who valued privacy and discretion above truth. The religious allusion to the 'day of judgement' suggests that asking questions is a form of moral scrutiny that gentlemen should leave to God. Stevenson critiques this code of silence — it is precisely this refusal to investigate that allows Hyde (and the hidden sins of respectable men) to flourish.",
+      "Enfield's reluctance to ask questions is characteristic of Victorian gentlemen who valued privacy and discretion above truth. The religious allusion to the 'day of judgement' suggests that asking questions is a form of moral scrutiny that gentlemen should leave to God. Stevenson critiques this code of silence - it is precisely this refusal to investigate that allows Hyde (and the hidden sins of respectable men) to flourish.",
   },
   {
     quote: 'If I am the chief of sinners, I am the chief of sufferers also',
     speaker: 'Dr Jekyll (Chapter 10)',
     analysis:
-      "Jekyll's self-description as 'chief of sinners' echoes St Paul's words in 1 Timothy 1:15, placing his story within a Christian framework of sin and suffering. The parallel structure ('chief of sinners... chief of sufferers') suggests that sin and suffering are inseparable — wrongdoing brings its own punishment. However, Jekyll's focus on his own suffering reveals a persistent selfishness; he is more concerned with his pain than with his victims'.",
+      "Jekyll's self-description as 'chief of sinners' echoes St Paul's words in 1 Timothy 1:15, placing his story within a Christian framework of sin and suffering. The parallel structure ('chief of sinners... chief of sufferers') suggests that sin and suffering are inseparable - wrongdoing brings its own punishment. However, Jekyll's focus on his own suffering reveals a persistent selfishness; he is more concerned with his pain than with his victims'.",
   },
   {
     quote: 'the body of a self-destroyer',
     speaker: 'Mr Poole (Chapter 8)',
     analysis:
-      "Poole's description of Jekyll/Hyde's death avoids the word 'suicide', which was a criminal offence and social taboo in Victorian England. The compound noun 'self-destroyer' captures the deeper truth: Jekyll has literally destroyed himself by splitting his identity. The ambiguity of who has died — Jekyll or Hyde — reinforces the idea that they were always one person. Self-destruction is the inevitable consequence of attempting to separate good from evil.",
+      "Poole's description of Jekyll/Hyde's death avoids the word 'suicide', which was a criminal offence and social taboo in Victorian England. The compound noun 'self-destroyer' captures the deeper truth: Jekyll has literally destroyed himself by splitting his identity. The ambiguity of who has died - Jekyll or Hyde - reinforces the idea that they were always one person. Self-destruction is the inevitable consequence of attempting to separate good from evil.",
   },
   {
     quote:
@@ -103,21 +103,21 @@ const keyQuotations = [
       'He had always been known for charities... he was now no less distinguished for religion',
     speaker: 'Narrator (Chapter 6)',
     analysis:
-      'After murdering Sir Danvers Carew, Jekyll appears to become more virtuous, not less. The irony is devastating: his public respectability increases even as his private evil deepens. Stevenson exposes the hypocrisy at the heart of Victorian society — outward charity and religious devotion can coexist with, and even mask, profound moral corruption.',
+      'After murdering Sir Danvers Carew, Jekyll appears to become more virtuous, not less. The irony is devastating: his public respectability increases even as his private evil deepens. Stevenson exposes the hypocrisy at the heart of Victorian society - outward charity and religious devotion can coexist with, and even mask, profound moral corruption.',
   },
   {
     quote:
       'The large handsome face of Dr Jekyll grew pale to the very lips, and there came a blackness about his eyes',
     speaker: 'Narrator (Chapter 3)',
     analysis:
-      "Jekyll's physical reaction when Utterson mentions Hyde reveals the emotional turmoil beneath his composed exterior. The colour draining from his face ('pale to the very lips') suggests shock and fear, while the 'blackness about his eyes' foreshadows the darkness within him. Stevenson uses physical description to hint at psychological truth — the body betrays what the mind tries to conceal.",
+      "Jekyll's physical reaction when Utterson mentions Hyde reveals the emotional turmoil beneath his composed exterior. The colour draining from his face ('pale to the very lips') suggests shock and fear, while the 'blackness about his eyes' foreshadows the darkness within him. Stevenson uses physical description to hint at psychological truth - the body betrays what the mind tries to conceal.",
   },
   {
     quote:
       'This was the shocking thing; that the slime of the pit seemed to utter cries and voices',
     speaker: 'Mr Utterson (Chapter 10)',
     analysis:
-      "Utterson's reaction to Jekyll's confession uses Biblical imagery: 'the slime of the pit' evokes Hell. The word 'slime' connotes something primitive and repulsive. The shock is that this 'slime' can 'utter cries and voices' — evil is not mute and distant but articulate and human. Stevenson disturbs the reader by showing that evil is not an external threat but exists within ordinary, respectable people.",
+      "Utterson's reaction to Jekyll's confession uses Biblical imagery: 'the slime of the pit' evokes Hell. The word 'slime' connotes something primitive and repulsive. The shock is that this 'slime' can 'utter cries and voices' - evil is not mute and distant but articulate and human. Stevenson disturbs the reader by showing that evil is not an external threat but exists within ordinary, respectable people.",
   },
   {
     quote: 'It was Hyde, after all, and Hyde alone, that was guilty',
@@ -243,7 +243,7 @@ export default async function OCRJekyllAndHydePage() {
                   respect his privacy. Nearly a year later, Hyde brutally murders Sir Danvers Carew,
                   a distinguished MP, beating him to death with a cane. Utterson leads police to
                   Hyde&rsquo;s Soho lodgings, but Hyde has vanished. Jekyll claims to have broken
-                  with Hyde and produces a letter — which Utterson&rsquo;s clerk later suggests was
+                  with Hyde and produces a letter - which Utterson&rsquo;s clerk later suggests was
                   forged by Jekyll himself.
                 </p>
               </div>

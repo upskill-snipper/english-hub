@@ -16,7 +16,7 @@ import { NextResponse, type NextRequest } from 'next/server'
  *      Set-Cookie headers.
  *
  * The previous implementation used the deprecated `get` / `set` / `remove`
- * triplet, which Supabase explicitly warns against — it does not handle
+ * triplet, which Supabase explicitly warns against - it does not handle
  * chunked-cookie edge cases and was the suspected root cause of
  * intermittent "logged out after sign-in" reports.
  */
@@ -56,7 +56,7 @@ export async function updateSession(request: NextRequest) {
   )
 
   // IMPORTANT: keep this `getUser()` call here. The Supabase client uses
-  // lazy session initialisation — the cookies are not actually read or
+  // lazy session initialisation - the cookies are not actually read or
   // refreshed until the first auth call. Putting any logic between
   // `createServerClient` and `getUser()` risks the session being
   // committed to the response after the response has already been sent.
@@ -64,9 +64,9 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // /learn is NOT listed here — it handles its own access control so preview modules stay public.
+  // /learn is NOT listed here - it handles its own access control so preview modules stay public.
   //
-  // /revision is NOT listed here either — pages in /revision/** are pure server components that
+  // /revision is NOT listed here either - pages in /revision/** are pure server components that
   // render board-agnostic content via getServerBoard() (returns null for anonymous visitors).
   // Personalisation (progress tracking, AI marking, saved notes) is gated inside those pages by
   // checking for a user session in the specific UI elements that need it. This lets Googlebot

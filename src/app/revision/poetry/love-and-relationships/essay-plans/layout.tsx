@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Essay Plans — AQA Love & Relationships Poetry',
+  title: 'Essay Plans - AQA Love & Relationships Poetry',
   description:
     'Grade 9 comparative essay plans for AQA Love & Relationships poetry: model theses, paragraph structures, quotations and examiner technique for Paper 2.',
   alternates: {

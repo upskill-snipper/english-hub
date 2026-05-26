@@ -1,5 +1,5 @@
 /**
- * /legal/ai-governance — public AI governance + ethics audit.
+ * /legal/ai-governance - public AI governance + ethics audit.
  *
  * This page is an honest assessment of where The English Hub sits
  * against Qatar's PDPPL / Cybercrime Law / QCB / NCSA / MCIT
@@ -7,7 +7,7 @@
  * parents in the Gulf market, and diligence reviewers.
  *
  * Content was drafted via a compliance-mapping research agent using
- * the user's "COMPLIANCE REFERENCE · v1.0 — Qatar's AI & Data
+ * the user's "COMPLIANCE REFERENCE · v1.0 - Qatar's AI & Data
  * Governance Framework" as the source.
  *
  * If you're updating this page, the editorial bar is: be specific
@@ -824,7 +824,7 @@ export default async function AIGovernancePage() {
         <p>{s9P3}</p>
       </section>
 
-      {/* Section 11 — Audit findings */}
+      {/* Section 11 - Audit findings */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s11H2}</h2>
         <p className="mb-3">{s11P1}</p>
@@ -860,7 +860,7 @@ export default async function AIGovernancePage() {
         <p className="text-muted-foreground text-sm mt-6">{s11Out}</p>
       </section>
 
-      {/* Section 10 — Contact */}
+      {/* Section 10 - Contact */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">{s10H2}</h2>
         <p className="mb-3">{s10P1}</p>

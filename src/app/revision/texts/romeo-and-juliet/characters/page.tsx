@@ -416,7 +416,7 @@ export default function RomeoAndJulietCharactersPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Characters — Deep Study
+              Characters - Deep Study
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Romeo and Juliet by William Shakespeare

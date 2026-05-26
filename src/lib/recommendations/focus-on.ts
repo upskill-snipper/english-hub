@@ -147,7 +147,7 @@ export async function getFocusRecommendations(
   userId: string,
   supabase: SupabaseClient,
 ): Promise<FocusRecommendation[]> {
-  // Children's Code gate — bail out unless explicit opt-in.
+  // Children's Code gate - bail out unless explicit opt-in.
   const allowed = await isRecommendationsAllowed(userId, supabase)
   if (!allowed) return []
 
@@ -185,7 +185,7 @@ export async function getFocusRecommendations(
   const recs: FocusRecommendation[] = []
   const seen = new Set<string>()
 
-  // ── 1. Weak quizzes (best_score < 60%) — priority 1 ────────────────────
+  // ── 1. Weak quizzes (best_score < 60%) - priority 1 ────────────────────
   const weakQuizzes = quizzes
     .filter((q) => typeof q.best_score === 'number' && q.best_score < 60)
     .sort(
@@ -216,7 +216,7 @@ export async function getFocusRecommendations(
     if (recs.length >= 5) break
   }
 
-  // ── 2. Poems "seen" but not "studied" for > 7 days — priority 2 ────────
+  // ── 2. Poems "seen" but not "studied" for > 7 days - priority 2 ────────
   if (recs.length < 5) {
     const studiedSlugs = new Set(
       poems.filter((p) => p.status === 'studied').map((p) => p.poem_slug),
@@ -246,7 +246,7 @@ export async function getFocusRecommendations(
     }
   }
 
-  // ── 3. Untouched board poem — priority 3 ───────────────────────────────
+  // ── 3. Untouched board poem - priority 3 ───────────────────────────────
   if (recs.length < 5 && board) {
     const touched = new Set(poems.map((p) => p.poem_slug))
     // Look for poems on this board the user has never touched. We use
@@ -277,7 +277,7 @@ export async function getFocusRecommendations(
     }
   }
 
-  // ── 4. Flat / decreasing reading-age trend — priority 2 ────────────────
+  // ── 4. Flat / decreasing reading-age trend - priority 2 ────────────────
   if (recs.length < 5 && readings.length >= 2) {
     // Stored newest-first; reverse so index increases with time.
     const series = readings
@@ -302,11 +302,11 @@ export async function getFocusRecommendations(
     }
   }
 
-  // ── 5. No game in 5 days — priority 3 ──────────────────────────────────
+  // ── 5. No game in 5 days - priority 3 ──────────────────────────────────
   if (recs.length < 5) {
     const lastPlayed = games[0]?.played_at ?? null
     if (daysSince(lastPlayed) > 5) {
-      // Find weakest text — lowest best_score quiz that has a text_slug.
+      // Find weakest text - lowest best_score quiz that has a text_slug.
       const weakestText =
         weakQuizzes.find((q) => q.text_slug)?.text_slug ??
         quizzes
@@ -324,8 +324,8 @@ export async function getFocusRecommendations(
         {
           priority: 3,
           reason: lastPlayed
-            ? `It's been ${Math.round(daysSince(lastPlayed))} days since you played a game — a quick round keeps recall sharp.`
-            : "You haven't played any games yet — they're a quick way to lock in vocabulary.",
+            ? `It's been ${Math.round(daysSince(lastPlayed))} days since you played a game - a quick round keeps recall sharp.`
+            : "You haven't played any games yet - they're a quick way to lock in vocabulary.",
           action: { label, href },
         },
         seen,

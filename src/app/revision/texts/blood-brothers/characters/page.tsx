@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers — Character Analysis | The English Hub',
+    title: 'Blood Brothers - Character Analysis | The English Hub',
     description:
       'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
   },
-  title: 'Blood Brothers — Character Analysis',
+  title: 'Blood Brothers - Character Analysis',
   description:
     'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
   alternates: {
@@ -39,24 +39,24 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Mickey Johnstone',
     role: 'The twin raised in poverty',
     overview:
-      "Mickey is energetic, funny and warm as a child, then ground down by unemployment, prison and depression as an adult. Russell uses his trajectory to argue that environment, not innate character, decides a person's life. Mickey begins as the more charismatic twin but ends broken, while Edward — genetically identical — thrives.",
+      "Mickey is energetic, funny and warm as a child, then ground down by unemployment, prison and depression as an adult. Russell uses his trajectory to argue that environment, not innate character, decides a person's life. Mickey begins as the more charismatic twin but ends broken, while Edward - genetically identical - thrives.",
     arc: "Mickey moves from childhood innocence through teenage swagger to adult desperation. His decline mirrors Liverpool's economic collapse in the 1980s. After prison, he becomes dependent on antidepressants and cannot reconnect with Linda or with his own sense of self. His final confrontation with Edward is driven not by jealousy alone but by the unbearable realisation that his suffering was arbitrary.",
     keyQuotes: [
       {
         text: '"I wish I was our Sammy."',
-        context: 'Act 1 — childhood song',
+        context: 'Act 1 - childhood song',
         analysis:
           "Innocent wish to be older that foreshadows Mickey's later, devastating wish to have been Edward. Russell plants the pattern of wanting a different life early.",
       },
       {
         text: '"Well, how come you got everything... an\' I got nothin\'?"',
-        context: 'Act 2 — final scene',
+        context: 'Act 2 - final scene',
         analysis:
           "The play's thesis distilled into ordinary speech. Mickey articulates class rage as a raw question, making the political argument viscerally personal.",
       },
       {
         text: '"I could have been him."',
-        context: 'Act 2 — confrontation',
+        context: 'Act 2 - confrontation',
         analysis:
           'Mickey grasps the nature-versus-nurture argument the audience already knows. Russell delays this revelation to maximum dramatic effect.',
       },
@@ -68,14 +68,14 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Edward Lyons',
     role: 'The twin raised in wealth',
     overview:
-      "Edward is kind, bookish and generous, but his privilege is unmistakable. Russell carefully shows that the same warmth is read as charming in Edward and foolish in Mickey, simply because of accent and address. Edward's advantages — private school, university, a career in local politics — are not earned but inherited.",
+      "Edward is kind, bookish and generous, but his privilege is unmistakable. Russell carefully shows that the same warmth is read as charming in Edward and foolish in Mickey, simply because of accent and address. Edward's advantages - private school, university, a career in local politics - are not earned but inherited.",
     arc: 'Edward moves from sheltered childhood through boarding school to university and a council career. He remains generous throughout, yet Russell never lets the audience forget that his generosity is underwritten by wealth. His attempt to help Mickey in adulthood is well-meaning but patronising, and it accelerates the catastrophe.',
     keyQuotes: [
       {
         text: '"I thought we always stuck together."',
-        context: 'Act 2 — confrontation with Mickey',
+        context: 'Act 2 - confrontation with Mickey',
         analysis:
-          "Edward's plea to their boyhood blood-brother bond exposes the gulf between his sentimental faith in friendship and Mickey's lived reality. What he sees as friendship, Mickey experiences as charity — a gulf Russell makes structurally inevitable.",
+          "Edward's plea to their boyhood blood-brother bond exposes the gulf between his sentimental faith in friendship and Mickey's lived reality. What he sees as friendship, Mickey experiences as charity - a gulf Russell makes structurally inevitable.",
       },
     ],
     examTip:
@@ -85,24 +85,24 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Mrs Johnstone',
     role: 'Biological mother of both boys',
     overview:
-      "Warm, funny, exhausted and trapped, Mrs Johnstone is Russell's portrait of working-class motherhood under Thatcherism. She is not feckless or negligent — she gives up her child because Mrs Lyons exploits her economic vulnerability. Her opening and closing songs frame the play as her testimony.",
+      "Warm, funny, exhausted and trapped, Mrs Johnstone is Russell's portrait of working-class motherhood under Thatcherism. She is not feckless or negligent - she gives up her child because Mrs Lyons exploits her economic vulnerability. Her opening and closing songs frame the play as her testimony.",
     arc: "Mrs Johnstone begins as a young woman abandoned by her husband, working to feed seven children. She agrees to the pact not from greed but from desperation. Throughout the play she carries guilt silently. Her final revelation of the truth to both boys is an act of honesty that arrives too late, underlining Russell's point that class structures deny working-class people the power to shape their own stories.",
     keyQuotes: [
       {
         text: '"Tell me it\'s not true, say it\'s just a story."',
-        context: 'Act 2 — closing song',
+        context: 'Act 2 - closing song',
         analysis:
           'The haunting refrain asks the audience to refuse the tragedy. Russell implicates the viewers: if they are moved, they must ask why society allows this.',
       },
       {
         text: '"Shoes upon the table."',
-        context: 'Act 1 — superstition motif',
+        context: 'Act 1 - superstition motif',
         analysis:
           "Working-class superstition used as a motif. Russell parallels genuine folk belief with Mrs Lyons's invented curse to question who controls narratives of fate.",
       },
       {
         text: '"Only mine until the time comes round to pay the bill."',
-        context: 'Act 1 — giving up the baby',
+        context: 'Act 1 - giving up the baby',
         analysis:
           "Mrs Johnstone's anguish when she tries to reclaim the child. Russell shows that maternal love is powerless against class privilege.",
       },
@@ -115,23 +115,23 @@ const CHARACTERS: CharacterProfile[] = [
     role: 'Middle-class adoptive mother',
     overview:
       'Lonely, infertile and increasingly unhinged, Mrs Lyons uses class privilege to claim a child she did not bear. Russell refuses simple villainy: her loneliness is real, and her descent into paranoia is tragic in its own right. She fabricates the twins superstition as a weapon of control, then becomes its prisoner.',
-    arc: 'Mrs Lyons begins as a desperate but outwardly composed woman. After taking Edward, her fear of discovery grows into obsessive paranoia. She attacks Mrs Johnstone, tries to bribe her and eventually attempts violence. Her trajectory shows that privilege does not bring peace — it only provides different forms of suffering.',
+    arc: 'Mrs Lyons begins as a desperate but outwardly composed woman. After taking Edward, her fear of discovery grows into obsessive paranoia. She attacks Mrs Johnstone, tries to bribe her and eventually attempts violence. Her trajectory shows that privilege does not bring peace - it only provides different forms of suffering.',
     keyQuotes: [
       {
         text: '"Give one to me."',
-        context: 'Act 1 — the pact',
+        context: 'Act 1 - the pact',
         analysis:
           'A blunt imperative exposing class entitlement. Mrs Lyons frames buying a child as reasonable because her social position permits it.',
       },
       {
         text: '"You do know what they say about twins, secretly parted, don\'t you?"',
-        context: 'Act 1 — the invented superstition',
+        context: 'Act 1 - the invented superstition',
         analysis:
           'Mrs Lyons creates the curse that drives the plot. Russell turns an act of manipulation into a self-fulfilling prophecy driven by class forces.',
       },
       {
         text: '"You see why I don\'t want you mixing with boys like that!"',
-        context: 'Act 1 — forbidding friendship',
+        context: 'Act 1 - forbidding friendship',
         analysis:
           "Mrs Lyons polices the class boundary. Her fear is not of Mickey but of what his existence reveals about Edward's origins.",
       },
@@ -143,18 +143,18 @@ const CHARACTERS: CharacterProfile[] = [
     name: 'Linda',
     role: "Mickey's childhood sweetheart and wife",
     overview:
-      'Feisty, loyal and outspoken as a girl, Linda grows up alongside Mickey and Edward. She marries Mickey, but as his depression deepens she is left isolated and desperate. Russell uses her to show how poverty and mental illness do not just destroy individuals — they destroy relationships.',
-    arc: 'Linda begins as a bold, equal presence in the childhood trio. As an adult, she supports Mickey through unemployment and prison. When Mickey withdraws into medication, she turns to Edward for help — an act of pragmatism, not betrayal. Russell makes clear that her choices are constrained by the same class forces that crush Mickey.',
+      'Feisty, loyal and outspoken as a girl, Linda grows up alongside Mickey and Edward. She marries Mickey, but as his depression deepens she is left isolated and desperate. Russell uses her to show how poverty and mental illness do not just destroy individuals - they destroy relationships.',
+    arc: 'Linda begins as a bold, equal presence in the childhood trio. As an adult, she supports Mickey through unemployment and prison. When Mickey withdraws into medication, she turns to Edward for help - an act of pragmatism, not betrayal. Russell makes clear that her choices are constrained by the same class forces that crush Mickey.',
     keyQuotes: [
       {
         text: '"If you\'d been born here, you would have been just like him."',
-        context: 'Act 2 — adolescence',
+        context: 'Act 2 - adolescence',
         analysis:
           "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
       },
       {
         text: '"I wanna kiss y\'."',
-        context: 'Act 2 — Mickey to Linda, on medication',
+        context: 'Act 2 - Mickey to Linda, on medication',
         analysis:
           "A fragmented moment of tenderness from a Mickey numbed by antidepressants. Russell shows love persisting inside structures designed to crush it, while making the cost of poverty and prison painfully visible in Mickey's broken speech.",
       },
@@ -177,13 +177,13 @@ const CHARACTERS: CharacterProfile[] = [
       },
       {
         text: '"There\'s a man gone mad in the town tonight."',
-        context: 'Act 2 — approaching climax',
+        context: 'Act 2 - approaching climax',
         analysis:
           "The Narrator's warning drives rising dread. Russell uses the ballad form to make Mickey's breakdown feel both personal and historically inevitable.",
       },
       {
         text: '"And do we blame superstition for what came to pass?"',
-        context: 'Act 2 — final line',
+        context: 'Act 2 - final line',
         analysis:
           "The Narrator's closing question rejects the supernatural reading. Russell demands the audience locate blame in class structures, not fate.",
       },
@@ -200,7 +200,7 @@ const CHARACTERS: CharacterProfile[] = [
     keyQuotes: [
       {
         text: '"I\'ll get y\' after."',
-        context: 'Act 1 — Sammy threatening',
+        context: 'Act 1 - Sammy threatening',
         analysis:
           "Even as children, Sammy's aggression is apparent. Casual childhood threats foreshadow the adult violence that culminates in armed robbery. Russell shows how the Johnstone environment normalises aggression where power is scarce.",
       },
@@ -254,7 +254,7 @@ export default async function BloodBrothersCharactersPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text — Play
+              Modern Text - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />

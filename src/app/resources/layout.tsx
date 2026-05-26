@@ -4,12 +4,12 @@ import { GeoFaq, RESOURCES_FAQS } from '@/components/seo/GeoFaq'
 import { t } from '@/lib/i18n/t'
 
 // Created 2026-05-16 for GEO: /resources had NO layout and ~181 leaf
-// pages emitted zero structured data — the single biggest schema gap.
+// pages emitted zero structured data - the single biggest schema gap.
 // A hub-level LearningResource node here cascades +12 GEO to every
 // page in the tree. Distinct hub url, so it does not conflict with any
 // child page that emits its own (different-url) schema.
 export const metadata: Metadata = {
-  title: { default: 'Free English Resources', template: '%s — The English Hub' },
+  title: { default: 'Free English Resources', template: '%s - The English Hub' },
 }
 
 export default async function ResourcesLayout({ children }: { children: React.ReactNode }) {

@@ -11,7 +11,7 @@ interface ExamBoardDisclaimerProps {
   /** @default "content" */
   variant?: DisclaimerVariant
   className?: string
-  /** @deprecated No longer used — kept for API compatibility */
+  /** @deprecated No longer used - kept for API compatibility */
   selectedBoard?: string | null
 }
 

@@ -77,7 +77,7 @@ export default async function Paper2Page() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  No extract — you choose your own evidence from across the text.
+                  No extract - you choose your own evidence from across the text.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -151,7 +151,7 @@ export default async function Paper2Page() {
             <div className="rounded-xl border border-border p-6 shadow-md">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <h3 className="text-xl font-bold text-foreground">
-                  A Christmas Carol — Charles Dickens (1843)
+                  A Christmas Carol - Charles Dickens (1843)
                 </h3>
                 <Link
                   href="/resources/english-literature/edexcel/christmas-carol"
@@ -199,7 +199,7 @@ export default async function Paper2Page() {
             {/* Great Expectations */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Great Expectations — Charles Dickens (1861)
+                Great Expectations - Charles Dickens (1861)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Pip, an orphan raised by his sister and her husband Joe, comes into a mysterious
@@ -230,7 +230,7 @@ export default async function Paper2Page() {
             {/* Jekyll and Hyde */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                The Strange Case of Dr Jekyll and Mr Hyde — R.L. Stevenson (1886)
+                The Strange Case of Dr Jekyll and Mr Hyde - R.L. Stevenson (1886)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The respectable Dr Jekyll creates a potion that transforms him into the evil Mr
@@ -260,7 +260,7 @@ export default async function Paper2Page() {
             {/* Jane Eyre */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Jane Eyre — Charlotte Bronte (1847)
+                Jane Eyre - Charlotte Bronte (1847)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 An orphaned girl endures a cruel childhood, becomes a governess at Thornfield Hall,
@@ -291,7 +291,7 @@ export default async function Paper2Page() {
             {/* Pride and Prejudice */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Pride and Prejudice — Jane Austen (1813)
+                Pride and Prejudice - Jane Austen (1813)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Elizabeth Bennet and Mr Darcy overcome their initial misjudgements to find love.
@@ -323,7 +323,7 @@ export default async function Paper2Page() {
             {/* Frankenstein */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Frankenstein — Mary Shelley (1818)
+                Frankenstein - Mary Shelley (1818)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Victor Frankenstein creates a living creature from dead body parts, then abandons it
@@ -355,7 +355,7 @@ export default async function Paper2Page() {
             {/* Silas Marner */}
             <div className="rounded-xl border border-border p-6 shadow-md">
               <h3 className="text-xl font-bold text-foreground">
-                Silas Marner — George Eliot (1861)
+                Silas Marner - George Eliot (1861)
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 A weaver falsely accused of theft becomes a recluse obsessed with his gold. When his
@@ -399,21 +399,21 @@ export default async function Paper2Page() {
               <h3 className="text-lg font-bold text-foreground">{_tr(`Relationships Cluster`)}</h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
-                  'Sonnet 43 — Elizabeth Barrett Browning',
-                  "Love's Philosophy — Percy Bysshe Shelley",
-                  'Sonnet 29 — Edna St Vincent Millay',
-                  'My Last Duchess — Robert Browning',
-                  'La Belle Dame sans Merci — John Keats',
-                  'She Walks in Beauty — Lord Byron',
-                  'A Child to His Sick Grandfather — Joanna Baillie',
-                  '1st Date — She / 1st Date — He — Wendy Cope',
-                  'Valentine — Carol Ann Duffy',
-                  'One Flesh — Elizabeth Jennings',
-                  'i wanna be yours — John Cooper Clarke',
-                  "Love's Dog — Jen Hadfield",
-                  'Nettles — Vernon Scannell',
-                  'Climbing My Grandfather — Andrew Waterhouse',
-                  'Singh Song! — Daljit Nagra',
+                  'Sonnet 43 - Elizabeth Barrett Browning',
+                  "Love's Philosophy - Percy Bysshe Shelley",
+                  'Sonnet 29 - Edna St Vincent Millay',
+                  'My Last Duchess - Robert Browning',
+                  'La Belle Dame sans Merci - John Keats',
+                  'She Walks in Beauty - Lord Byron',
+                  'A Child to His Sick Grandfather - Joanna Baillie',
+                  '1st Date - She / 1st Date - He - Wendy Cope',
+                  'Valentine - Carol Ann Duffy',
+                  'One Flesh - Elizabeth Jennings',
+                  'i wanna be yours - John Cooper Clarke',
+                  "Love's Dog - Jen Hadfield",
+                  'Nettles - Vernon Scannell',
+                  'Climbing My Grandfather - Andrew Waterhouse',
+                  'Singh Song! - Daljit Nagra',
                 ].map((poem) => (
                   <li key={poem} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -433,21 +433,21 @@ export default async function Paper2Page() {
               <h3 className="text-lg font-bold text-foreground">{_tr(`Conflict Cluster`)}</h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
-                  'The Charge of the Light Brigade — Alfred Lord Tennyson',
-                  'Exposure — Wilfred Owen',
-                  'Catrin — Gillian Clarke',
-                  'War Photographer — Carole Satyamurti',
-                  'Belfast Confetti — Ciaran Carson',
-                  'The Destruction of Sennacherib — Lord Byron',
-                  'Half-caste — John Agard',
-                  'A Poison Tree — William Blake',
-                  'The Man He Killed — Thomas Hardy',
-                  'Cousin Kate — Christina Rossetti',
-                  'No Problem — Benjamin Zephaniah',
-                  'What Were They Like? — Denise Levertov',
-                  'The Class Game — Mary Casey',
-                  'Poppies — Jane Weir',
-                  'Extract from The Prelude — William Wordsworth',
+                  'The Charge of the Light Brigade - Alfred Lord Tennyson',
+                  'Exposure - Wilfred Owen',
+                  'Catrin - Gillian Clarke',
+                  'War Photographer - Carole Satyamurti',
+                  'Belfast Confetti - Ciaran Carson',
+                  'The Destruction of Sennacherib - Lord Byron',
+                  'Half-caste - John Agard',
+                  'A Poison Tree - William Blake',
+                  'The Man He Killed - Thomas Hardy',
+                  'Cousin Kate - Christina Rossetti',
+                  'No Problem - Benjamin Zephaniah',
+                  'What Were They Like? - Denise Levertov',
+                  'The Class Game - Mary Casey',
+                  'Poppies - Jane Weir',
+                  'Extract from The Prelude - William Wordsworth',
                 ].map((poem) => (
                   <li key={poem} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -566,7 +566,7 @@ export default async function Paper2Page() {
                 Poetry Analysis Techniques Checklist
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Use these when approaching any poem — anthology or unseen.
+                Use these when approaching any poem - anthology or unseen.
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
@@ -650,12 +650,12 @@ export default async function Paper2Page() {
           <h2 className="text-2xl font-bold text-foreground">{_tr(`Paper 2 Exam Technique`)}</h2>
 
           <div className="mt-6 rounded-xl bg-muted p-6">
-            <h3 className="text-lg font-bold text-foreground">19th-Century Novel — Top Tips</h3>
+            <h3 className="text-lg font-bold text-foreground">19th-Century Novel - Top Tips</h3>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`Memorise short, versatile quotes`)}</strong> — since there is no
+                  <strong>{_tr(`Memorise short, versatile quotes`)}</strong> - since there is no
                   extract, you need quotes ready for multiple topics. Learn 15-20 key quotes that
                   cover major themes and characters.
                 </span>
@@ -663,7 +663,7 @@ export default async function Paper2Page() {
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`Context is crucial`)}</strong> — 19th-century novels are rooted in
+                  <strong>{_tr(`Context is crucial`)}</strong> - 19th-century novels are rooted in
                   their historical context. Link to the writer&apos;s purpose, social conditions,
                   and literary movements (e.g., Gothic, Romantic, Victorian realism).
                 </span>
@@ -671,14 +671,14 @@ export default async function Paper2Page() {
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`SPaG matters`)}</strong> — 4 marks are awarded for spelling,
+                  <strong>{_tr(`SPaG matters`)}</strong> - 4 marks are awarded for spelling,
                   punctuation, and grammar. Write clearly and use literary terminology accurately.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>{_tr(`Show awareness of the whole text`)}</strong> — reference the
+                  <strong>{_tr(`Show awareness of the whole text`)}</strong> - reference the
                   beginning, middle, and end to demonstrate complete knowledge.
                 </span>
               </li>

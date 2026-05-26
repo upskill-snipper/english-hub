@@ -1,5 +1,5 @@
 /**
- * Entitlement resolution — shared between `/api/me` and
+ * Entitlement resolution - shared between `/api/me` and
  * `/api/me/entitlements`.
  *
  * Reads the caller's `Subscription` row(s) from Prisma and projects them
@@ -18,7 +18,7 @@
  * 1. `pro` is true whenever the row is in an access-granting state
  *    (ACTIVE, TRIALING, PAUSED, or a cancelled row whose paid period
  *    has not yet ended). PAST_DUE grants *read-only* access on mobile
- *    but does NOT grant `pro` — the status field carries the
+ *    but does NOT grant `pro` - the status field carries the
  *    `grace_period` signal so the client can degrade gracefully.
  *
  * 2. `teacher_tools` additionally requires `isTeacherPlan = true`.
@@ -29,7 +29,7 @@
  *    `warning` string so the caller can show a "multiple
  *    subscriptions detected" banner.
  *
- * 4. Returning `null` for every field means "no known subscription" —
+ * 4. Returning `null` for every field means "no known subscription" -
  *    a free user. Mobile treats this as `free_with_demo_credits`.
  */
 
@@ -58,12 +58,10 @@ export interface EntitlementPayload {
   currentPeriodEnd: string | null
   trialEndsAt: string | null
   cancelledAt: string | null
-  subscription:
-    | {
-        plan: 'MONTHLY' | 'ANNUAL'
-        isTeacherPlan: boolean
-      }
-    | null
+  subscription: {
+    plan: 'MONTHLY' | 'ANNUAL'
+    isTeacherPlan: boolean
+  } | null
   /**
    * Populated only when the user has more than one live Subscription
    * row. Multi-sub prevention is enforced at purchase time; this is
@@ -108,7 +106,7 @@ function projectStatus(sub: Subscription, now: Date): EntitlementStatus {
       // PAST_DUE covers Apple's grace window AND Google's account-hold
       // / billing-retry window. We surface `grace_period` while the
       // paid period is still live and `billing_retry` once we're past
-      // it — mobile uses the same read-only gate for both so the
+      // it - mobile uses the same read-only gate for both so the
       // distinction is informational only.
       return stillInPeriod ? 'grace_period' : 'billing_retry'
     case 'CANCELLED':
@@ -129,9 +127,11 @@ function projectStatus(sub: Subscription, now: Date): EntitlementStatus {
 
 function grantsPro(status: EntitlementStatus): boolean {
   // ACTIVE, TRIALING, PAUSED, and CANCELLED-in-period grant Pro.
-  // grace_period / billing_retry are explicitly read-only — mobile
+  // grace_period / billing_retry are explicitly read-only - mobile
   // shows the past essays but blocks new marking.
-  return status === 'active' || status === 'trialing' || status === 'paused' || status === 'cancelled'
+  return (
+    status === 'active' || status === 'trialing' || status === 'paused' || status === 'cancelled'
+  )
 }
 
 // ─── Platform projection ───────────────────────────────────────────────
@@ -158,7 +158,7 @@ function projectPlatform(sub: Subscription): EntitlementPlatform {
 // ─── Trial end projection ──────────────────────────────────────────────
 //
 // A Subscription row in TRIALING status has its `currentPeriodEnd`
-// pointing at the trial end date (per the reconciler — INITIAL_PURCHASE
+// pointing at the trial end date (per the reconciler - INITIAL_PURCHASE
 // with `is_trial_period=true` writes the Apple/Play-reported expiry
 // into `currentPeriodEnd`). We only surface `trialEndsAt` while the
 // status is actually trialing; once the trial converts to ACTIVE the
@@ -173,7 +173,7 @@ function projectTrialEndsAt(sub: Subscription): string | null {
 //
 // Prisma's `User.subscription` is 1:1, so in normal operation this is a
 // single-row fetch. The schema has a `@unique` on `Subscription.userId`
-// which enforces the invariant at the DB level — this helper therefore
+// which enforces the invariant at the DB level - this helper therefore
 // only has to handle the "zero rows" branch and a defensive "multiple
 // rows" branch for platform drift (e.g., if an out-of-band migration or
 // a school-seat grant inserts a second row bypassing the unique
@@ -194,7 +194,7 @@ export function pickEntitlement(
     return emptyEntitlement()
   }
 
-  // Pick the row with the latest `currentPeriodEnd` — this is the
+  // Pick the row with the latest `currentPeriodEnd` - this is the
   // "freshest" entitlement and matches the mobile spec.
   const sorted = [...rows].sort(
     (a, b) => b.currentPeriodEnd.getTime() - a.currentPeriodEnd.getTime(),
@@ -222,7 +222,7 @@ export function pickEntitlement(
 
   if (rows.length > 1) {
     payload.warning =
-      'multiple_active_subscriptions: user has more than one Subscription row — returning the latest by currentPeriodEnd'
+      'multiple_active_subscriptions: user has more than one Subscription row - returning the latest by currentPeriodEnd'
   }
 
   return payload

@@ -6,7 +6,7 @@
  * sorted newest-first (by ISO `date`) so callers don't need to repeat
  * that work.
  *
- * Server-only — `src/lib/mdx.ts` reads the filesystem.
+ * Server-only - `src/lib/mdx.ts` reads the filesystem.
  */
 
 import readingTime from 'reading-time'
@@ -19,7 +19,7 @@ const BLOG_DIR = 'blog'
 export type EducationalLevel = 'KS3' | 'GCSE' | 'IGCSE' | 'A-Level'
 
 /**
- * A fully-resolved blog post — i.e. frontmatter + raw MDX body + computed
+ * A fully-resolved blog post - i.e. frontmatter + raw MDX body + computed
  * fields like `readingTime`. Pages render this directly.
  */
 export type BlogPost = {
@@ -32,13 +32,13 @@ export type BlogPost = {
   /** Either an `/api/og?title=…` URL or a `/images/blog/<slug>.png` path. */
   cover: string
   tags: string[]
-  /** 140–180 character teaser used on the index card. */
+  /** 140-180 character teaser used on the index card. */
   excerpt: string
   category: string
   educationalLevel: EducationalLevel
-  /** Minutes — computed from the MDX body via `reading-time`. */
+  /** Minutes - computed from the MDX body via `reading-time`. */
   readingTime: number
-  /** Raw MDX body (post-frontmatter) — passed to `compileMDX`. */
+  /** Raw MDX body (post-frontmatter) - passed to `compileMDX`. */
   content: string
 }
 
@@ -71,7 +71,7 @@ function toIsoDate(value: string | Date): string {
  * Build a `BlogPost` from the raw frontmatter + MDX body.
  *
  * Throws if a required field is missing or the educational level is
- * outside our allow-list — better to fail loudly at build time than to
+ * outside our allow-list - better to fail loudly at build time than to
  * ship a half-broken post.
  */
 function toBlogPost(slug: string, data: BlogPostFrontmatter, content: string): BlogPost {
@@ -115,7 +115,7 @@ export function getAllBlogPosts(): BlogPost[] {
  * Returns one blog post by slug, or `null` if it doesn't exist.
  *
  * When `locale === 'ar'` and a sibling `<slug>.ar.mdx` file exists,
- * we serve the Arabic variant — its frontmatter overrides title and
+ * we serve the Arabic variant - its frontmatter overrides title and
  * description, and its body is rendered instead of the English one.
  * If no AR sibling exists, we fall back gracefully to the English
  * post so the URL still resolves (better UX than a 404 mid-rollout
@@ -130,7 +130,7 @@ export function getBlogPost(slug: string, locale: 'en' | 'ar' = 'en'): BlogPost 
       // entries continue to work.
       return toBlogPost(slug, arFile.data, arFile.content)
     }
-    // Fall through to English — graceful degradation while the AR
+    // Fall through to English - graceful degradation while the AR
     // translation pipeline backfills the corpus.
   }
   const file = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, slug)
@@ -141,7 +141,7 @@ export function getBlogPost(slug: string, locale: 'en' | 'ar' = 'en'): BlogPost 
 /**
  * Returns the slugs of every blog post, sorted alphabetically.
  *
- * Used by `generateStaticParams` and the sitemap — both of those care
+ * Used by `generateStaticParams` and the sitemap - both of those care
  * about coverage, not order, so we keep this lightweight (no MDX parse).
  */
 export function getBlogSlugs(): string[] {

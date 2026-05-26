@@ -92,17 +92,22 @@ const MODULE_SKILL_MAP: Record<string, string[]> = {
   'creative-writing': ['Imagination', 'Vocabulary', 'Sentence Structure', 'Descriptive Writing'],
   'language-analysis': ['Comprehension', 'Inference', 'Language Techniques', 'Critical Analysis'],
   'unseen-poetry': ['Poetry Analysis', 'Language Techniques', 'Comparison', 'Critical Thinking'],
-  'shakespeare': ['Shakespeare', 'Contextual Understanding', 'Character Analysis', 'Quotation'],
+  shakespeare: ['Shakespeare', 'Contextual Understanding', 'Character Analysis', 'Quotation'],
   'narrative-voice': ['Narrative Techniques', 'Tone', 'Perspective', 'Critical Analysis'],
   'structure-analysis': ['Text Structure', 'Cohesion', 'Argument Building', 'Critical Analysis'],
   'transactional-writing': ['Persuasion', 'Formal Writing', 'Audience Awareness', 'Rhetoric'],
-  'poetry-anthology': ['Poetry Analysis', 'Comparison', 'Contextual Understanding', 'Memory Recall'],
+  'poetry-anthology': [
+    'Poetry Analysis',
+    'Comparison',
+    'Contextual Understanding',
+    'Memory Recall',
+  ],
   'prose-study': ['Prose Analysis', 'Character Analysis', 'Theme Analysis', 'Quotation'],
   'spoken-language': ['Speaking Skills', 'Listening', 'Rhetoric', 'Audience Awareness'],
   'reading-comprehension': ['Comprehension', 'Inference', 'Summary', 'Vocabulary'],
   'modern-prose': ['Prose Analysis', 'Theme Analysis', 'Character Analysis', 'Modern Context'],
   'poetry-comparison': ['Poetry Analysis', 'Comparison', 'Critical Thinking', 'Structure Analysis'],
-  'oracy': ['Speaking Skills', 'Debate', 'Presentation', 'Rhetoric'],
+  oracy: ['Speaking Skills', 'Debate', 'Presentation', 'Rhetoric'],
 }
 
 function inferSkillsFromModule(moduleId: string, moduleName: string): string[] {
@@ -156,9 +161,7 @@ export function analyzeClassPerformance(scores: StudentScore[]): ClassAnalysisRe
   const sorted = [...allScores].sort((a, b) => a - b)
   const mid = Math.floor(sorted.length / 2)
   const median =
-    sorted.length % 2 !== 0
-      ? sorted[mid]
-      : Math.round((sorted[mid - 1] + sorted[mid]) / 2)
+    sorted.length % 2 !== 0 ? sorted[mid] : Math.round((sorted[mid - 1] + sorted[mid]) / 2)
 
   // Score distribution buckets
   const buckets = [
@@ -287,9 +290,7 @@ export function analyzeClassPerformance(scores: StudentScore[]): ClassAnalysisRe
 
   const sortedByScore = [...moduleResults].sort((a, b) => a.avg_score - b.avg_score)
   const topWeaknesses = sortedByScore.filter((m) => m.avg_score < 70).slice(0, 3)
-  const topStrengths = [...moduleResults]
-    .sort((a, b) => b.avg_score - a.avg_score)
-    .slice(0, 3)
+  const topStrengths = [...moduleResults].sort((a, b) => b.avg_score - a.avg_score).slice(0, 3)
 
   return {
     class_avg_score: classAvg,
@@ -306,7 +307,10 @@ export function analyzeClassPerformance(scores: StudentScore[]): ClassAnalysisRe
 
 // ── Resource mapping ─────────────────────────────────────────────────────────
 
-const BOARD_RESOURCE_MAP: Record<string, Record<string, { lessons: string[]; modules: string[]; practice: string[]; flashcards: string[] }>> = {
+const BOARD_RESOURCE_MAP: Record<
+  string,
+  Record<string, { lessons: string[]; modules: string[]; practice: string[]; flashcards: string[] }>
+> = {
   AQA: {
     'creative-writing': {
       lessons: ['Descriptive & Narrative Writing Masterclass', 'Sensory Language Workshop'],
@@ -315,12 +319,12 @@ const BOARD_RESOURCE_MAP: Record<string, Record<string, { lessons: string[]; mod
       flashcards: ['Literary Devices', 'Sensory Vocabulary Builder'],
     },
     'language-analysis': {
-      lessons: ['Language Analysis Step-by-Step', 'Identifying Writer\'s Methods'],
+      lessons: ['Language Analysis Step-by-Step', "Identifying Writer's Methods"],
       modules: ['Paper 1 Reading Skills', 'Language Techniques Toolkit'],
       practice: ['Unseen Extract Analysis', 'Paper 1 Section A Practice'],
       flashcards: ['Language Techniques Definitions', 'Effect Words Bank'],
     },
-    'shakespeare': {
+    shakespeare: {
       lessons: ['Approaching Shakespeare Essays', 'Context & Character Deep Dive'],
       modules: ['Shakespeare Study Guide', 'Quotation & Analysis Techniques'],
       practice: ['Shakespeare Extract Questions', 'Essay Planning Practice'],
@@ -335,12 +339,12 @@ const BOARD_RESOURCE_MAP: Record<string, Record<string, { lessons: string[]; mod
       flashcards: ['Rhetorical Devices', 'Formal Vocabulary Bank'],
     },
     'language-analysis': {
-      lessons: ['Close Reading Strategies', 'Comparing Writers\' Viewpoints'],
+      lessons: ['Close Reading Strategies', "Comparing Writers' Viewpoints"],
       modules: ['Non-Fiction Reading Skills', 'Analytical Response Framework'],
       practice: ['Paper 2 Reading Practice', 'Comparison Response Tasks'],
       flashcards: ['Analysis Vocabulary', 'Structural Features'],
     },
-    'shakespeare': {
+    shakespeare: {
       lessons: ['Shakespeare in Context', 'Character & Theme Exploration'],
       modules: ['Shakespeare Anthology Guide', 'Essay Writing Workshop'],
       practice: ['Extract-Based Essay Practice', 'Theme Comparison Tasks'],
@@ -350,7 +354,10 @@ const BOARD_RESOURCE_MAP: Record<string, Record<string, { lessons: string[]; mod
 }
 
 // Fallback resources for any board/area combination
-const GENERIC_RESOURCES: Record<string, { lessons: string[]; modules: string[]; practice: string[]; flashcards: string[] }> = {
+const GENERIC_RESOURCES: Record<
+  string,
+  { lessons: string[]; modules: string[]; practice: string[]; flashcards: string[] }
+> = {
   writing: {
     lessons: ['Effective Writing Techniques', 'Planning & Structuring Responses'],
     modules: ['Writing Skills Foundation', 'Advanced Writing Workshop'],
@@ -391,21 +398,26 @@ const GENERIC_RESOURCES: Record<string, { lessons: string[]; modules: string[]; 
 
 function matchWeakAreaCategory(weakArea: string): string {
   const lower = weakArea.toLowerCase()
-  if (lower.includes('writ') || lower.includes('creative') || lower.includes('narrative')) return 'writing'
+  if (lower.includes('writ') || lower.includes('creative') || lower.includes('narrative'))
+    return 'writing'
   if (lower.includes('read') || lower.includes('comprehension')) return 'reading'
   if (lower.includes('analy') || lower.includes('language')) return 'analysis'
-  if (lower.includes('poetry') || lower.includes('poem') || lower.includes('unseen')) return 'poetry'
+  if (lower.includes('poetry') || lower.includes('poem') || lower.includes('unseen'))
+    return 'poetry'
   if (lower.includes('shakesp')) return 'shakespeare'
   return 'general'
 }
 
 function slugify(text: string): string {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
 }
 
 export function mapWeakAreasToResources(
   weakAreas: string[],
-  board: string
+  board: string,
 ): ResourceRecommendation[] {
   const resources: ResourceRecommendation[] = []
   const boardResources = BOARD_RESOURCE_MAP[board] ?? {}
@@ -415,10 +427,12 @@ export function mapWeakAreasToResources(
     const areaSlug = slugify(area)
 
     // Try board-specific first, then fall back to generic
-    const boardMatch = Object.entries(boardResources).find(([key]) =>
-      areaSlug.includes(key) || key.includes(category)
+    const boardMatch = Object.entries(boardResources).find(
+      ([key]) => areaSlug.includes(key) || key.includes(category),
     )
-    const source = boardMatch ? boardMatch[1] : (GENERIC_RESOURCES[category] ?? GENERIC_RESOURCES.general)
+    const source = boardMatch
+      ? boardMatch[1]
+      : (GENERIC_RESOURCES[category] ?? GENERIC_RESOURCES.general)
 
     // Lesson plans
     for (const lesson of source.lessons) {
@@ -482,11 +496,7 @@ export function mapWeakAreasToResources(
 
 // ── Study path generation ────────────────────────────────────────────────────
 
-export function generateStudyPath(
-  weakAreas: string[],
-  board: string,
-  weeks: number
-): WeeklyPlan[] {
+export function generateStudyPath(weakAreas: string[], board: string, weeks: number): WeeklyPlan[] {
   const allResources = mapWeakAreasToResources(weakAreas, board)
   const plans: WeeklyPlan[] = []
 
@@ -505,14 +515,11 @@ export function generateStudyPath(
   for (let w = 0; w < weeks; w++) {
     const weekAreas = weakAreas.slice(
       w * areasPerWeek,
-      Math.min((w + 1) * areasPerWeek, weakAreas.length)
+      Math.min((w + 1) * areasPerWeek, weakAreas.length),
     )
 
     // If we've run out of unique areas, cycle back
-    const focusAreas =
-      weekAreas.length > 0
-        ? weekAreas
-        : [weakAreas[w % weakAreas.length]]
+    const focusAreas = weekAreas.length > 0 ? weekAreas : [weakAreas[w % weakAreas.length]]
 
     // Get resources for this week's focus areas
     const weekResources: ResourceRecommendation[] = []
@@ -532,12 +539,15 @@ export function generateStudyPath(
 
     // Determine week theme
     const theme =
-      focusAreas.length === 1
-        ? `Deep dive: ${focusAreas[0]}`
-        : `Focus: ${focusAreas.join(' & ')}`
+      focusAreas.length === 1 ? `Deep dive: ${focusAreas[0]}` : `Focus: ${focusAreas.join(' & ')}`
 
     // Target outcome
-    const phaseNames = ['Foundation & Understanding', 'Practice & Application', 'Consolidation & Mastery', 'Revision & Assessment']
+    const phaseNames = [
+      'Foundation & Understanding',
+      'Practice & Application',
+      'Consolidation & Mastery',
+      'Revision & Assessment',
+    ]
     const phase = phaseNames[Math.min(w, phaseNames.length - 1)]
 
     plans.push({
@@ -545,7 +555,7 @@ export function generateStudyPath(
       theme,
       resources: weekResources,
       focus_areas: focusAreas,
-      target_outcome: `${phase} — Students should be able to demonstrate improved performance in ${focusAreas.join(', ')}.`,
+      target_outcome: `${phase} - Students should be able to demonstrate improved performance in ${focusAreas.join(', ')}.`,
     })
   }
 
@@ -581,7 +591,12 @@ export interface InterventionRecommendation {
   studentName: string
   priorityLevel: 'urgent' | 'high' | 'medium'
   weakSkillAreas: string[]
-  interventionType: 'one-to-one' | 'small-group' | 'targeted-homework' | 'peer-mentoring' | 'parental-engagement'
+  interventionType:
+    | 'one-to-one'
+    | 'small-group'
+    | 'targeted-homework'
+    | 'peer-mentoring'
+    | 'parental-engagement'
   estimatedWeeksToImprove: number
   currentAvgScore: number
   targetScore: number
@@ -693,18 +708,18 @@ function getNextGradeBoundary(score: number): { grade: string; minScore: number 
 
 const SKILL_EXAM_WEIGHT: Record<string, number> = {
   'Creative Writing': 0.15,
-  'Descriptive Writing': 0.10,
+  'Descriptive Writing': 0.1,
   'Language Techniques': 0.12,
-  'Comprehension': 0.12,
-  'Critical Analysis': 0.10,
+  Comprehension: 0.12,
+  'Critical Analysis': 0.1,
   'Poetry Analysis': 0.08,
-  'Shakespeare': 0.08,
-  'Quotation': 0.06,
-  'Inference': 0.05,
-  'Vocabulary': 0.04,
+  Shakespeare: 0.08,
+  Quotation: 0.06,
+  Inference: 0.05,
+  Vocabulary: 0.04,
   'Sentence Structure': 0.04,
-  'Persuasion': 0.03,
-  'Comparison': 0.03,
+  Persuasion: 0.03,
+  Comparison: 0.03,
 }
 
 function getExamWeight(skill: string): number {
@@ -723,43 +738,43 @@ function getExamWeight(skill: string): number {
 // ── Platform average simulation (used for peer comparison) ───────────────────
 
 const PLATFORM_SKILL_AVERAGES: Record<string, number> = {
-  'Imagination': 62,
-  'Vocabulary': 58,
+  Imagination: 62,
+  Vocabulary: 58,
   'Sentence Structure': 55,
   'Descriptive Writing': 60,
-  'Comprehension': 64,
-  'Inference': 59,
+  Comprehension: 64,
+  Inference: 59,
   'Language Techniques': 56,
   'Critical Analysis': 52,
   'Poetry Analysis': 50,
-  'Comparison': 54,
+  Comparison: 54,
   'Critical Thinking': 53,
-  'Shakespeare': 48,
+  Shakespeare: 48,
   'Contextual Understanding': 55,
   'Character Analysis': 58,
-  'Quotation': 51,
+  Quotation: 51,
   'Narrative Techniques': 57,
-  'Tone': 60,
-  'Perspective': 56,
+  Tone: 60,
+  Perspective: 56,
   'Text Structure': 59,
-  'Cohesion': 57,
+  Cohesion: 57,
   'Argument Building': 54,
-  'Persuasion': 61,
+  Persuasion: 61,
   'Formal Writing': 55,
   'Audience Awareness': 58,
-  'Rhetoric': 53,
+  Rhetoric: 53,
   'Memory Recall': 62,
   'Prose Analysis': 54,
   'Theme Analysis': 56,
   'Speaking Skills': 65,
-  'Listening': 67,
-  'Summary': 60,
+  Listening: 67,
+  Summary: 60,
   'Modern Context': 58,
   'Structure Analysis': 55,
-  'Debate': 60,
-  'Presentation': 63,
-  'Writing': 58,
-  'Grammar': 60,
+  Debate: 60,
+  Presentation: 63,
+  Writing: 58,
+  Grammar: 60,
   'General English': 57,
 }
 
@@ -772,7 +787,7 @@ function getPlatformAverage(skill: string): number {
 export function generateWeeklyTeachingPlan(
   classAnalytics: AnalyticsClassAnalytics,
   weakAreas: WeakArea[],
-  examBoard: string
+  examBoard: string,
 ): WeeklyTeachingPlan {
   const days: LessonSlot['day'][] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
@@ -800,9 +815,8 @@ export function generateWeeklyTeachingPlan(
     const supportResources = areaResources.filter((r) => r.type !== 'lesson_plan').slice(0, 2)
     const linkedResources = [...lessonResources.slice(0, 1), ...supportResources]
 
-    const lessonPlanId = lessonResources.length > 0
-      ? lessonResources[0].id
-      : `lp-${slugify(areaName)}-day-${i + 1}`
+    const lessonPlanId =
+      lessonResources.length > 0 ? lessonResources[0].id : `lp-${slugify(areaName)}-day-${i + 1}`
 
     // Vary lesson type across the week
     const lessonTypes = [
@@ -816,7 +830,7 @@ export function generateWeeklyTeachingPlan(
     return {
       day,
       lessonNumber: i + 1,
-      title: `${areaName} — ${lessonTypes[i]}`,
+      title: `${areaName} - ${lessonTypes[i]}`,
       focusSkill: areaCategory,
       objectiveSummary: area
         ? `Address ${area.severity} weakness in ${areaName} (current avg: ${area.avgScore}%). ${area.studentsBelowThreshold} student${area.studentsBelowThreshold !== 1 ? 's' : ''} below threshold.`
@@ -838,14 +852,16 @@ export function generateWeeklyTeachingPlan(
     weekStarting,
     examBoard,
     classId: classAnalytics.classId,
-    overallTheme: targetAreaNames.length > 0
-      ? `Targeted intervention: ${targetAreaNames.slice(0, 3).join(', ')}${targetAreaNames.length > 3 ? ' and more' : ''}`
-      : 'General skills consolidation',
+    overallTheme:
+      targetAreaNames.length > 0
+        ? `Targeted intervention: ${targetAreaNames.slice(0, 3).join(', ')}${targetAreaNames.length > 3 ? ' and more' : ''}`
+        : 'General skills consolidation',
     targetWeakAreas: targetAreaNames,
     lessons,
-    homeworkSuggestion: targetAreas.length > 0
-      ? `Assign practice questions on ${targetAreaNames[0]}. Recommend 20-30 minutes of flashcard revision covering ${targetAreaNames.slice(0, 2).join(' and ')}.`
-      : 'Assign mixed revision tasks covering core skills.',
+    homeworkSuggestion:
+      targetAreas.length > 0
+        ? `Assign practice questions on ${targetAreaNames[0]}. Recommend 20-30 minutes of flashcard revision covering ${targetAreaNames.slice(0, 2).join(' and ')}.`
+        : 'Assign mixed revision tasks covering core skills.',
     expectedOutcome: `By end of week, students should show measurable improvement in ${targetAreaNames.slice(0, 2).join(' and ')}. Target: +5-10% on weak area scores.`,
   }
 }
@@ -853,7 +869,7 @@ export function generateWeeklyTeachingPlan(
 // ── 2. generateInterventionRecommendations ───────────────────────────────────
 
 export function generateInterventionRecommendations(
-  students: AnalyticsStudentAnalytics[]
+  students: AnalyticsStudentAnalytics[],
 ): InterventionRecommendation[] {
   const recommendations: InterventionRecommendation[] = []
 
@@ -908,10 +924,17 @@ export function generateInterventionRecommendations(
 
     const lessonResources = allResources.filter((r) => r.type === 'lesson_plan').slice(0, 3)
     const flashcardResources = allResources.filter((r) => r.type === 'flashcard_deck').slice(0, 2)
-    const practiceResources = allResources.filter((r) => r.type === 'practice_questions').slice(0, 2)
+    const practiceResources = allResources
+      .filter((r) => r.type === 'practice_questions')
+      .slice(0, 2)
 
     // Rationale
-    const trajectoryText = trajectory === 'declining' ? 'performance is declining' : trajectory === 'stable' ? 'performance is stagnant' : 'showing some improvement but still below target'
+    const trajectoryText =
+      trajectory === 'declining'
+        ? 'performance is declining'
+        : trajectory === 'stable'
+          ? 'performance is stagnant'
+          : 'showing some improvement but still below target'
     const rationale = `${student.fullName ?? 'This student'} has an average of ${percentageToGCSEGradeLabel(avgScore)} and ${trajectoryText}. ${completionRate < 50 ? `Completion rate is only ${completionRate}%, suggesting engagement issues. ` : ''}Weakest areas: ${weakSkillAreas.slice(0, 3).join(', ') || 'general skills'}.`
 
     recommendations.push({
@@ -942,7 +965,7 @@ export function generateInterventionRecommendations(
 // ── 3. generateParentUpdateSummary ───────────────────────────────────────────
 
 export function generateParentUpdateSummary(
-  student: AnalyticsStudentAnalytics
+  student: AnalyticsStudentAnalytics,
 ): ParentUpdateSummary {
   const avgScore = student.avgQuizScore
 
@@ -950,7 +973,9 @@ export function generateParentUpdateSummary(
   const doingWell: string[] = []
   for (const strength of student.strengths.slice(0, 3)) {
     if (strength.avgScore >= 70) {
-      doingWell.push(`Performing strongly in ${strength.courseName} (${percentageToGCSEGradeLabel(strength.avgScore)})`)
+      doingWell.push(
+        `Performing strongly in ${strength.courseName} (${percentageToGCSEGradeLabel(strength.avgScore)})`,
+      )
     } else if (strength.avgScore >= 50) {
       doingWell.push(`Making good progress in ${strength.courseName}`)
     }
@@ -962,7 +987,9 @@ export function generateParentUpdateSummary(
     doingWell.push('Consistently completing assigned work on time')
   }
   if (student.certificates > 0) {
-    doingWell.push(`Has earned ${student.certificates} certificate${student.certificates !== 1 ? 's' : ''}, demonstrating strong commitment`)
+    doingWell.push(
+      `Has earned ${student.certificates} certificate${student.certificates !== 1 ? 's' : ''}, demonstrating strong commitment`,
+    )
   }
   if (student.practiceSessions >= 10) {
     doingWell.push('Regularly engaging with additional practice materials')
@@ -972,22 +999,32 @@ export function generateParentUpdateSummary(
     doingWell.push('Engaging with the course materials and working towards their targets')
   }
 
-  // Areas for development — diplomatic phrasing
+  // Areas for development - diplomatic phrasing
   const areasForDevelopment: string[] = []
   for (const weakness of student.weaknesses.slice(0, 3)) {
     if (weakness.avgScore < 30) {
-      areasForDevelopment.push(`Would benefit from additional support in ${weakness.courseName} to build foundational understanding`)
+      areasForDevelopment.push(
+        `Would benefit from additional support in ${weakness.courseName} to build foundational understanding`,
+      )
     } else if (weakness.avgScore < 50) {
-      areasForDevelopment.push(`${weakness.courseName} is an area where focused revision would help build confidence`)
+      areasForDevelopment.push(
+        `${weakness.courseName} is an area where focused revision would help build confidence`,
+      )
     } else {
-      areasForDevelopment.push(`There is room to strengthen skills in ${weakness.courseName} with regular practice`)
+      areasForDevelopment.push(
+        `There is room to strengthen skills in ${weakness.courseName} with regular practice`,
+      )
     }
   }
   if (student.completionRate < 50) {
-    areasForDevelopment.push('Completing more of the set work would help reinforce classroom learning')
+    areasForDevelopment.push(
+      'Completing more of the set work would help reinforce classroom learning',
+    )
   }
   if (student.trajectory === 'declining') {
-    areasForDevelopment.push('Recent results suggest a dip in performance — a refreshed revision routine could help')
+    areasForDevelopment.push(
+      'Recent results suggest a dip in performance - a refreshed revision routine could help',
+    )
   }
 
   // Home revision suggestions
@@ -995,15 +1032,25 @@ export function generateParentUpdateSummary(
   const weakAreaNames = student.weaknesses.map((w) => w.courseName)
 
   if (weakAreaNames.length > 0) {
-    homeRevisionSuggestions.push(`Focus revision time on ${weakAreaNames.slice(0, 2).join(' and ')} using the flashcard decks on the platform`)
+    homeRevisionSuggestions.push(
+      `Focus revision time on ${weakAreaNames.slice(0, 2).join(' and ')} using the flashcard decks on the platform`,
+    )
   }
-  homeRevisionSuggestions.push('Use the practice question feature to attempt exam-style questions under timed conditions')
+  homeRevisionSuggestions.push(
+    'Use the practice question feature to attempt exam-style questions under timed conditions',
+  )
   if (student.completionRate < 70) {
-    homeRevisionSuggestions.push('Encourage completing any unfinished course modules before moving on to new topics')
+    homeRevisionSuggestions.push(
+      'Encourage completing any unfinished course modules before moving on to new topics',
+    )
   }
-  homeRevisionSuggestions.push('Short, regular revision sessions (15-20 minutes daily) are more effective than longer, infrequent sessions')
+  homeRevisionSuggestions.push(
+    'Short, regular revision sessions (15-20 minutes daily) are more effective than longer, infrequent sessions',
+  )
   if (avgScore < 50) {
-    homeRevisionSuggestions.push('Reading for pleasure for 15 minutes a day can significantly improve comprehension and vocabulary')
+    homeRevisionSuggestions.push(
+      'Reading for pleasure for 15 minutes a day can significantly improve comprehension and vocabulary',
+    )
   }
 
   // Time recommendation based on current performance
@@ -1045,7 +1092,7 @@ export function generateParentUpdateSummary(
 
 export function predictGradeTrajectory(
   student: AnalyticsStudentAnalytics,
-  weeksUntilExam: number
+  weeksUntilExam: number,
 ): GradeTrajectory {
   const currentScore = student.avgQuizScore
   const trajectory = student.trajectory
@@ -1065,19 +1112,26 @@ export function predictGradeTrajectory(
   }
 
   // Predicted score at exam time (capped at 100)
-  const predictedScore = Math.min(100, Math.max(0, Math.round(currentScore + weeklyProgressRate * weeksUntilExam)))
+  const predictedScore = Math.min(
+    100,
+    Math.max(0, Math.round(currentScore + weeklyProgressRate * weeksUntilExam)),
+  )
 
   // Score if effort increases by 25%
-  const increasedRate = weeklyProgressRate >= 0
-    ? weeklyProgressRate * 1.25 + 0.5
-    : weeklyProgressRate * 0.5 + 1.0 // declining students who increase effort flip towards positive
-  const increasedScore = Math.min(100, Math.max(0, Math.round(currentScore + increasedRate * weeksUntilExam)))
+  const increasedRate =
+    weeklyProgressRate >= 0 ? weeklyProgressRate * 1.25 + 0.5 : weeklyProgressRate * 0.5 + 1.0 // declining students who increase effort flip towards positive
+  const increasedScore = Math.min(
+    100,
+    Math.max(0, Math.round(currentScore + increasedRate * weeksUntilExam)),
+  )
 
   // Score if effort decreases by 25%
-  const decreasedRate = weeklyProgressRate >= 0
-    ? weeklyProgressRate * 0.75 - 0.3
-    : weeklyProgressRate * 1.25 - 0.3
-  const decreasedScore = Math.min(100, Math.max(0, Math.round(currentScore + decreasedRate * weeksUntilExam)))
+  const decreasedRate =
+    weeklyProgressRate >= 0 ? weeklyProgressRate * 0.75 - 0.3 : weeklyProgressRate * 1.25 - 0.3
+  const decreasedScore = Math.min(
+    100,
+    Math.max(0, Math.round(currentScore + decreasedRate * weeksUntilExam)),
+  )
 
   const predictedGrade = scoreToGrade(predictedScore)
   const gradeIfIncrease = scoreToGrade(increasedScore)
@@ -1089,29 +1143,40 @@ export function predictGradeTrajectory(
 
   if (nextBoundary) {
     const pointsNeeded = nextBoundary.minScore - currentScore
-    const weeklyPointsNeeded = weeksUntilExam > 0 ? Math.ceil(pointsNeeded / weeksUntilExam) : pointsNeeded
+    const weeklyPointsNeeded =
+      weeksUntilExam > 0 ? Math.ceil(pointsNeeded / weeksUntilExam) : pointsNeeded
 
-    keyActions.push(`Aim to improve by ${weeklyPointsNeeded}% per week to reach grade ${nextBoundary.grade} (need ${pointsNeeded} more marks)`)
+    keyActions.push(
+      `Aim to improve by ${weeklyPointsNeeded}% per week to reach grade ${nextBoundary.grade} (need ${pointsNeeded} more marks)`,
+    )
   }
 
   // Add weakness-specific actions
   for (const weakness of student.weaknesses.slice(0, 2)) {
     if (weakness.avgScore < 40) {
-      keyActions.push(`Prioritise intensive revision in ${weakness.courseName} — currently at ${weakness.avgScore}%`)
+      keyActions.push(
+        `Prioritise intensive revision in ${weakness.courseName} - currently at ${weakness.avgScore}%`,
+      )
     } else {
-      keyActions.push(`Regular practice in ${weakness.courseName} to move from ${weakness.avgScore}% towards 60%+`)
+      keyActions.push(
+        `Regular practice in ${weakness.courseName} to move from ${weakness.avgScore}% towards 60%+`,
+      )
     }
   }
 
   if (student.completionRate < 60) {
-    keyActions.push(`Complete outstanding modules (currently ${student.completionRate}% completion) to ensure full syllabus coverage`)
+    keyActions.push(
+      `Complete outstanding modules (currently ${student.completionRate}% completion) to ensure full syllabus coverage`,
+    )
   }
 
   if (student.practiceSessions < 5) {
     keyActions.push('Increase use of practice questions to build exam technique and confidence')
   }
 
-  keyActions.push('Maintain consistent daily revision of 20-30 minutes rather than occasional long sessions')
+  keyActions.push(
+    'Maintain consistent daily revision of 20-30 minutes rather than occasional long sessions',
+  )
 
   // Confidence level based on data available
   let confidenceLevel: GradeTrajectory['confidenceLevel']
@@ -1125,9 +1190,10 @@ export function predictGradeTrajectory(
   }
 
   // Weekly progress needed to reach next grade boundary
-  const weeklyProgressNeeded = nextBoundary && weeksUntilExam > 0
-    ? Math.round(((nextBoundary.minScore - currentScore) / weeksUntilExam) * 10) / 10
-    : 0
+  const weeklyProgressNeeded =
+    nextBoundary && weeksUntilExam > 0
+      ? Math.round(((nextBoundary.minScore - currentScore) / weeksUntilExam) * 10) / 10
+      : 0
 
   return {
     studentId: student.studentId,
@@ -1146,9 +1212,7 @@ export function predictGradeTrajectory(
 
 // ── 5. identifyQuickWins ─────────────────────────────────────────────────────
 
-export function identifyQuickWins(
-  classAnalytics: AnalyticsClassAnalytics
-): QuickWinsResult {
+export function identifyQuickWins(classAnalytics: AnalyticsClassAnalytics): QuickWinsResult {
   const quickWins: QuickWin[] = []
   const examBoard = classAnalytics.examBoard ?? 'AQA'
 
@@ -1161,7 +1225,9 @@ export function identifyQuickWins(
     })
 
     if (justBelow.length > 0) {
-      const avgScore = Math.round(justBelow.reduce((sum, s) => sum + s.avgQuizScore, 0) / justBelow.length)
+      const avgScore = Math.round(
+        justBelow.reduce((sum, s) => sum + s.avgQuizScore, 0) / justBelow.length,
+      )
       const studentIds = justBelow.map((s) => s.studentId)
 
       // Get resources for these students' weakest areas
@@ -1191,13 +1257,13 @@ export function identifyQuickWins(
 
     if (impactScore > 2.0 && weakArea.avgScore < 60) {
       const affectedStudents = classAnalytics.students.filter((s) =>
-        s.weaknesses.some((w) => w.courseId === weakArea.courseId)
+        s.weaknesses.some((w) => w.courseId === weakArea.courseId),
       )
       const resources = mapWeakAreasToResources([weakArea.moduleName], examBoard)
 
       quickWins.push({
         type: 'high-impact-skill',
-        title: `${weakArea.moduleName} — high exam weight, low score`,
+        title: `${weakArea.moduleName} - high exam weight, low score`,
         description: `This skill accounts for approximately ${Math.round(examWeight * 100)}% of the exam but the class averages only ${weakArea.avgScore}%. Improving here yields disproportionate grade gains.`,
         affectedStudentIds: affectedStudents.map((s) => s.studentId),
         affectedStudentCount: affectedStudents.length,
@@ -1217,25 +1283,25 @@ export function identifyQuickWins(
     .sort((a, b) => {
       const weightA = getExamWeight(a.moduleName)
       const weightB = getExamWeight(b.moduleName)
-      return (weightB * b.studentsBelowThreshold) - (weightA * a.studentsBelowThreshold)
+      return weightB * b.studentsBelowThreshold - weightA * a.studentsBelowThreshold
     })
     .slice(0, 3)
 
   for (const area of examWeightedWeak) {
     // Only add if not already covered by type 2
     const alreadyCovered = quickWins.some(
-      (qw) => qw.type === 'high-impact-skill' && qw.title.includes(area.moduleName)
+      (qw) => qw.type === 'high-impact-skill' && qw.title.includes(area.moduleName),
     )
     if (alreadyCovered) continue
 
     const affectedStudents = classAnalytics.students.filter((s) =>
-      s.weaknesses.some((w) => w.courseId === area.courseId)
+      s.weaknesses.some((w) => w.courseId === area.courseId),
     )
     const resources = mapWeakAreasToResources([area.moduleName], examBoard)
 
     quickWins.push({
       type: 'exam-weighted-topic',
-      title: `${area.moduleName} — ${area.studentsBelowThreshold} students below threshold`,
+      title: `${area.moduleName} - ${area.studentsBelowThreshold} students below threshold`,
       description: `${area.studentsBelowThreshold} students are scoring below 50% in ${area.moduleName}. This topic carries significant exam weight and targeted revision could benefit a large portion of the class.`,
       affectedStudentIds: affectedStudents.map((s) => s.studentId),
       affectedStudentCount: affectedStudents.length,
@@ -1261,9 +1327,10 @@ export function identifyQuickWins(
     className: classAnalytics.className,
     quickWins: quickWins.slice(0, 10),
     totalStudentsBenefiting: uniqueStudentIds.size,
-    summary: quickWins.length > 0
-      ? `Identified ${quickWins.length} quick win${quickWins.length !== 1 ? 's' : ''} that could benefit ${uniqueStudentIds.size} student${uniqueStudentIds.size !== 1 ? 's' : ''}. Focus on grade-boundary students and high-impact skills for the best return on teaching time.`
-      : 'No significant quick wins identified — the class is performing consistently across skill areas.',
+    summary:
+      quickWins.length > 0
+        ? `Identified ${quickWins.length} quick win${quickWins.length !== 1 ? 's' : ''} that could benefit ${uniqueStudentIds.size} student${uniqueStudentIds.size !== 1 ? 's' : ''}. Focus on grade-boundary students and high-impact skills for the best return on teaching time.`
+        : 'No significant quick wins identified - the class is performing consistently across skill areas.',
   }
 }
 
@@ -1281,9 +1348,7 @@ function findCommonWeakAreas(students: AnalyticsStudentAnalytics[]): string[] {
 
 // ── 6. compareToPeerGroups ───────────────────────────────────────────────────
 
-export function compareToPeerGroups(
-  classAnalytics: AnalyticsClassAnalytics
-): PeerGroupComparison {
+export function compareToPeerGroups(classAnalytics: AnalyticsClassAnalytics): PeerGroupComparison {
   // Build skill averages for this class from student data
   const classSkillScores = new Map<string, { total: number; count: number }>()
 

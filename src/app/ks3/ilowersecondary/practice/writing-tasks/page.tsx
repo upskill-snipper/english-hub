@@ -36,7 +36,7 @@ const TASKS: Task[] = [
     prompt:
       'You spent a night lost on a hillside before being found safe. Write a letter to your best friend explaining what happened and how you felt.',
     steer:
-      'Open with the situation, move chronologically, and let feeling build — fear, then relief. Sign off warmly.',
+      'Open with the situation, move chronologically, and let feeling build - fear, then relief. Sign off warmly.',
   },
   {
     theme: 'Journeys',
@@ -209,7 +209,7 @@ const TASKS: Task[] = [
     purpose: 'Entertain',
     prompt: 'Write a story that takes place entirely during one bus, train or boat journey.',
     steer:
-      'Confined setting; reveal character through small actions; end at the destination — literal or emotional.',
+      'Confined setting; reveal character through small actions; end at the destination - literal or emotional.',
   },
 ]
 
@@ -258,7 +258,7 @@ export default async function WritingTaskBankPage() {
       <p className="lead">
         {TASKS.length} original extended-writing prompts to drill Section B on its own. Each is
         mapped to a form, audience and purpose from the specification, with a quick planning steer.
-        Give yourself about {SECTIONS.B.recommendedLabel} — the recommended Section B time — and
+        Give yourself about {SECTIONS.B.recommendedLabel} - the recommended Section B time - and
         mark with the <Link href="/ks3/ilowersecondary/mark-scheme">writing grids</Link>.
       </p>
 
@@ -291,7 +291,7 @@ export default async function WritingTaskBankPage() {
           <strong>purpose</strong> before you write a word.
         </li>
         <li>
-          Spend three minutes planning — see{' '}
+          Spend three minutes planning - see{' '}
           <Link href="/ks3/ilowersecondary/writing/planning-proofreading">
             planning &amp; proofreading
           </Link>

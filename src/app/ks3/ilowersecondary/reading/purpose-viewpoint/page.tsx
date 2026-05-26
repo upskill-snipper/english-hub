@@ -19,11 +19,11 @@ const APPEAL_Q = QUESTION_TYPES.find((q) => q.id === 'which-text-appealing')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Purpose & viewpoint (RAO5) — iLowerSecondary English reading masterclass',
+    title: 'Purpose & viewpoint (RAO5) - iLowerSecondary English reading masterclass',
     description:
       "A masterclass on RAO5: identifying a writer's purpose and signposting language, detecting viewpoint, bias and tone across a whole text, and answering the meaning/impact and text-appeal questions in Pearson style.",
   },
-  title: 'Purpose & viewpoint (RAO5) — reading masterclass',
+  title: 'Purpose & viewpoint (RAO5) - reading masterclass',
   description:
     "A masterclass on RAO5: identifying a writer's purpose and signposting language, detecting viewpoint, bias and tone across a whole text, and answering the meaning/impact and text-appeal questions in Pearson style.",
   alternates: { canonical: PAGE_URL },
@@ -50,7 +50,7 @@ const PURPOSE_GUIDE: Record<
   describe: {
     aim: 'To create a vivid picture so the reader can imagine a place, person or moment.',
     signposts: [
-      'Sensory detail — what things look, sound, smell, feel like',
+      'Sensory detail - what things look, sound, smell, feel like',
       'Adjectives and adverbs stacked for atmosphere ("a thin, grey light")',
       'Similes and metaphors that compare to make the unfamiliar clear',
       'Slowed pace; little new information, much sensory texture',
@@ -58,14 +58,14 @@ const PURPOSE_GUIDE: Record<
     tellTale: 'You could draw the scene afterwards. Mood matters more than facts or instructions.',
   },
   explain: {
-    aim: 'To make a process, idea or reason clear — answering "how?" or "why?"',
+    aim: 'To make a process, idea or reason clear - answering "how?" or "why?"',
     signposts: [
       'Because… / This happens when… / As a result… (cause and effect)',
       'Sequencing: "First… then… finally…"',
       'Defining language: "This means that…", "In other words…"',
       'A calm, neutral tone that assumes the reader does not yet understand',
     ],
-    tellTale: 'After reading you understand a process or reason — not just a list of facts.',
+    tellTale: 'After reading you understand a process or reason - not just a list of facts.',
   },
   inform: {
     aim: 'To give the reader accurate facts and information about a subject.',
@@ -83,7 +83,7 @@ const PURPOSE_GUIDE: Record<
       'Direct address ("you", "imagine", "join us")',
       'Emotive vocabulary and rhetorical questions',
       'Rule of three, repetition and a memorable closing call to action',
-      'Selective, flattering evidence — the best case, not the full picture',
+      'Selective, flattering evidence - the best case, not the full picture',
     ],
     tellTale:
       'You are nudged to do or buy or believe something. Feeling is targeted, not just thought.',
@@ -114,7 +114,7 @@ const DETECTIVE_STEPS = [
   },
   {
     clue: 'Tone across the whole text',
-    ask: 'Is the attitude steady or does it shift? Track tone start, middle and end — viewpoint lives in the pattern, not one line.',
+    ask: 'Is the attitude steady or does it shift? Track tone start, middle and end - viewpoint lives in the pattern, not one line.',
   },
   {
     clue: 'What is left out',
@@ -149,7 +149,7 @@ const EFFECT_VOCAB: { band: string; words: string }[] = [
   },
 ]
 
-// ── Original practice extracts (100% original — no past-paper text) ────
+// ── Original practice extracts (100% original - no past-paper text) ────
 const EXTRACTS = [
   {
     label: 'Extract A',
@@ -163,7 +163,7 @@ const EXTRACTS = [
       stem: 'The writer says the path "is surfaced for wheelchairs and pushchairs". What did the writer mean by including this detail, and what is its effect on the reader? (2 marks)',
       qType: MEANING_Q,
       model:
-        'The writer means the path has a smooth, hard surface chosen so that wheels do not sink or get stuck, so people who use wheelchairs or push prams can use it easily (1 mark — explains the deeper meaning, not just a lift). The effect is that the reader sees the path as welcoming and open to everyone, which reassures families and disabled visitors that it has been planned with them in mind (1 mark — effect on the reader).',
+        'The writer means the path has a smooth, hard surface chosen so that wheels do not sink or get stuck, so people who use wheelchairs or push prams can use it easily (1 mark - explains the deeper meaning, not just a lift). The effect is that the reader sees the path as welcoming and open to everyone, which reassures families and disabled visitors that it has been planned with them in mind (1 mark - effect on the reader).',
       markNote:
         'This is the RAO5 "What did the writer mean / impact" item: 1 mark for explaining the deeper meaning (an unexplained copy of the words scores nothing), 1 mark for the effect on the reader.',
     },
@@ -175,13 +175,13 @@ const EXTRACTS = [
     viewpoint:
       'Strongly one-sided. The writer is committed to the cause and wants the reader to act, using "you", emotive words and a closing call to action.',
     text: [
-      'Picture your last walk by the river. Now picture it lined with discarded bottles, the reeds choking on plastic. This is not a distant problem — it is happening on your doorstep, today. Every bag you carry home, every litter pick you join, turns the tide a little. Surely none of us wants to hand our children a poisoned river. Give one Saturday morning this month. The river cannot wait, and neither should you.',
+      'Picture your last walk by the river. Now picture it lined with discarded bottles, the reeds choking on plastic. This is not a distant problem - it is happening on your doorstep, today. Every bag you carry home, every litter pick you join, turns the tide a little. Surely none of us wants to hand our children a poisoned river. Give one Saturday morning this month. The river cannot wait, and neither should you.',
     ],
     question: {
       stem: 'How does the writer try to influence the reader in this extract? Explain the writer’s viewpoint and its effect. (2 marks)',
       qType: MEANING_Q,
       model:
-        'The writer’s viewpoint is that river pollution is an urgent local crisis that every reader is personally responsible for solving (1 mark — identifies the viewpoint across the text, not one phrase). The effect is achieved through direct address ("your", "you") and the emotive image of children inheriting a "poisoned river", which makes the reader feel guilt and urgency and so more likely to volunteer (1 mark — effect on the reader linked to method).',
+        'The writer’s viewpoint is that river pollution is an urgent local crisis that every reader is personally responsible for solving (1 mark - identifies the viewpoint across the text, not one phrase). The effect is achieved through direct address ("your", "you") and the emotive image of children inheriting a "poisoned river", which makes the reader feel guilt and urgency and so more likely to volunteer (1 mark - effect on the reader linked to method).',
       markNote:
         'Viewpoint is judged across the whole extract: the steady one-sided stance plus the final call to action ("Give one Saturday") confirms a persuasive purpose, not a neutral one.',
     },
@@ -199,9 +199,9 @@ const EXTRACTS = [
       stem: 'Texts B and C both describe a river. Which text do you find more appealing? Give one piece of evidence to support your choice. (2 marks)',
       qType: APPEAL_Q,
       model:
-        'I find Text C more appealing because its calm, sensory description ("we lay on the warm planks of the jetty until the wood stuck to our skin") lets me picture and almost feel the lazy summer scene, which is more enjoyable to read than Text B’s pressure to act (1 mark — reasonable explanation of preference; 1 mark — appropriate textual evidence). [A choice of Text B, justified with its own evidence such as the emotive image of a "poisoned river", is equally creditable.]',
+        'I find Text C more appealing because its calm, sensory description ("we lay on the warm planks of the jetty until the wood stuck to our skin") lets me picture and almost feel the lazy summer scene, which is more enjoyable to read than Text B’s pressure to act (1 mark - reasonable explanation of preference; 1 mark - appropriate textual evidence). [A choice of Text B, justified with its own evidence such as the emotive image of a "poisoned river", is equally creditable.]',
       markNote:
-        'The RAO5 "which text is more appealing" item: 1 mark for a reasonable explanation of the preference and 1 mark for appropriate evidence. Either text can be chosen — the marks are for the quality of the reason and the evidence, not which one is picked.',
+        'The RAO5 "which text is more appealing" item: 1 mark for a reasonable explanation of the preference and 1 mark for appropriate evidence. Either text can be chosen - the marks are for the quality of the reason and the evidence, not which one is picked.',
     },
   },
 ] as const
@@ -247,7 +247,7 @@ export default async function PurposeViewpointPage() {
         <span>Purpose &amp; viewpoint (RAO5)</span>
       </p>
 
-      <h1>Purpose &amp; viewpoint — the {RAO5.code} masterclass</h1>
+      <h1>Purpose &amp; viewpoint - the {RAO5.code} masterclass</h1>
       <p className="lead">
         {RAO5.code} asks you to {RAO5.descriptor.toLowerCase()} It is one of the most heavily
         weighted reading objectives on the paper, and it is the skill behind two short questions
@@ -268,13 +268,13 @@ export default async function PurposeViewpointPage() {
               Qualification weighting
             </p>
             <p className="text-sm text-muted-foreground">
-              {RAO5.weightPct}% of the whole qualification — among the largest single reading
+              {RAO5.weightPct}% of the whole qualification - among the largest single reading
               weightings.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Content skill {SKILL_14.code} — {SKILL_14.title}
+              Content skill {SKILL_14.code} - {SKILL_14.title}
             </p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               {SKILL_14.bullets.map((b) => (
@@ -291,18 +291,18 @@ export default async function PurposeViewpointPage() {
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
           In plain English: the examiner wants proof that you have worked out <em>why</em> the
           writer wrote the text, what attitude they hold towards the subject, and how the text is
-          designed to land on you, the reader. It is not enough to copy out the writer’s words — you
+          designed to land on you, the reader. It is not enough to copy out the writer’s words - you
           must explain the thinking behind them.
         </p>
       </section>
 
       {/* ── Identifying purpose ───────────────────────────────────────── */}
       <section className="my-10">
-        <h2>Step 1 — Identify the purpose</h2>
+        <h2>Step 1 - Identify the purpose</h2>
         <p className="text-sm text-muted-foreground">
           Every non-fiction text in Section A is written to do one main job. The five purposes you
           will meet are below, each with the signposting language that gives the game away. Most
-          real texts mix purposes — name the <em>dominant</em> one.
+          real texts mix purposes - name the <em>dominant</em> one.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-2">
           {NON_FICTION_PURPOSES.map((p) => {
@@ -336,10 +336,10 @@ export default async function PurposeViewpointPage() {
 
       {/* ── Detecting viewpoint, bias and tone ────────────────────────── */}
       <section className="my-10">
-        <h2>Step 2 — Track viewpoint, bias and tone</h2>
+        <h2>Step 2 - Track viewpoint, bias and tone</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Purpose is <em>what</em> the text is for; viewpoint is the writer’s attitude towards the
-          subject. Viewpoint is rarely stated in one sentence — it builds across the whole text, so
+          subject. Viewpoint is rarely stated in one sentence - it builds across the whole text, so
           you must read for the pattern, not a single line.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-3">
@@ -367,7 +367,7 @@ export default async function PurposeViewpointPage() {
               Tone
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The "voice" you hear: urgent, admiring, critical, ironic, measured. Tone can shift —
+              The "voice" you hear: urgent, admiring, critical, ironic, measured. Tone can shift -
               track it at the start, the middle and the end to read viewpoint accurately.
             </p>
           </div>
@@ -403,7 +403,7 @@ export default async function PurposeViewpointPage() {
 
       {/* ── The two RAO5 short questions ──────────────────────────────── */}
       <section className="my-10">
-        <h2>The two {RAO5.code} short questions — and how each is marked</h2>
+        <h2>The two {RAO5.code} short questions - and how each is marked</h2>
         <p className="text-sm text-muted-foreground">
           Two short open-response questions test this objective directly. Knowing exactly where each
           mark comes from is the difference between one mark and two.
@@ -425,21 +425,21 @@ export default async function PurposeViewpointPage() {
         <div className="not-prose mt-3 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Mark 1 + Mark 2 — meaning / impact
+              Mark 1 + Mark 2 - meaning / impact
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               One mark for explaining the deeper meaning behind the words; one mark for the effect
-              on the reader. An unexplained lift of the writer’s words earns nothing — you must add
+              on the reader. An unexplained lift of the writer’s words earns nothing - you must add
               the thinking.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Mark 1 + Mark 2 — which text is more appealing
+              Mark 1 + Mark 2 - which text is more appealing
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               One mark for a reasonable explanation of your preference; one mark for appropriate
-              textual evidence. There is no "right" text — both choices are creditable if the reason
+              textual evidence. There is no "right" text - both choices are creditable if the reason
               and evidence hold up.
             </p>
           </div>
@@ -467,7 +467,7 @@ export default async function PurposeViewpointPage() {
 
       {/* ── Worked practice extracts ──────────────────────────────────── */}
       <section className="my-10">
-        <h2>Worked practice — three texts, three purposes</h2>
+        <h2>Worked practice - three texts, three purposes</h2>
         <p className="text-sm text-muted-foreground">
           Three short original extracts about the same subject, each written for a different purpose
           and viewpoint, with an exam- style question and a model answer marked in Pearson style.
@@ -521,14 +521,14 @@ export default async function PurposeViewpointPage() {
 
       {/* ── Quick revision checklist ──────────────────────────────────── */}
       <section className="my-10">
-        <h2>Before the exam — the {RAO5.code} checklist</h2>
+        <h2>Before the exam - the {RAO5.code} checklist</h2>
         <div className="not-prose rounded-xl border border-border/60 bg-card p-5">
           <ul className="space-y-2 text-sm text-muted-foreground">
             {[
               'Name the dominant purpose using the signposting language, not a guess.',
               'State the viewpoint as a stance ("the writer is critical of…"), not a summary of content.',
               'Track tone at the start, middle and end before deciding the overall effect.',
-              'For "what did the writer mean?": explain the meaning AND the effect — never lift without explaining.',
+              'For "what did the writer mean?": explain the meaning AND the effect - never lift without explaining.',
               'For "which text is more appealing?": give a clear reason AND one piece of evidence.',
               'Use precise effect-on-the-reader vocabulary instead of "interesting" or "good".',
             ].map((c) => (

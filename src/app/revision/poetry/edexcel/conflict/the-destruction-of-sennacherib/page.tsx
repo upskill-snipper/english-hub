@@ -356,11 +356,11 @@ Anaphora: Phrases like "And there lay the steed", "And there lay the rider", "An
 
   formAndStructureAr: `Form: ستّة quatrains على شكل أبيات مزدوجة القافية (AABB طول القصيدة). البنية المنتظمة الشبيهة بالأغنية تناسب أصل القصيدة في <em>Hebrew Melodies</em>، اللي وُضعت أصلاً عشان تنغنّى.
 
-Metre (الوزن): Anapaestic tetrameter (أربع تفعيلات anapaest في كل بيت: دَ-دَ-دُمْ دَ-دَ-دُمْ دَ-دَ-دُمْ دَ-دَ-دُمْ). الإيقاع الراكض يحاكي صوت الفرسان وهم ينقضّون، ويستمر حتى بعد ما الجيش ينّدمر — وهذا يخلّي الصمت في النهاية يحسّ ساخر.
+Metre (الوزن): Anapaestic tetrameter (أربع تفعيلات anapaest في كل بيت: دَ-دَ-دُمْ دَ-دَ-دُمْ دَ-دَ-دُمْ دَ-دَ-دُمْ). الإيقاع الراكض يحاكي صوت الفرسان وهم ينقضّون، ويستمر حتى بعد ما الجيش ينّدمر - وهذا يخلّي الصمت في النهاية يحسّ ساخر.
 
 Rhyme scheme: الـcouplets على AABB تعطي القصيدة طابع ترتيل أو ballad. كل couplet يغلق المشهد عليه، وهذا يعكس كيف إن كل خطوة في الدمار تكتمل بنفسها.
 
-الشكل البنائي: القصيدة تتحرّك من الفخامة (Stanzas 1–2) للدمار (Stanza 3) للأثر اللي خلّفه الدمار (Stanzas 4–6). نقطة المحور هي تشبيه الغابة المكرّر في Stanza 2: الصيف يصير خريف في بيت واحد.
+الشكل البنائي: القصيدة تتحرّك من الفخامة (Stanzas 1-2) للدمار (Stanza 3) للأثر اللي خلّفه الدمار (Stanzas 4-6). نقطة المحور هي تشبيه الغابة المكرّر في Stanza 2: الصيف يصير خريف في بيت واحد.
 
 Caesura و end-stopping: معظم الأبيات end-stopped، وهذا يعطي القصيدة نبض ثابت زي خطوات الجيش. والوقفات داخل الأبيات (خصوصاً في Stanza 3) تخلّي كل حالة موت تحسّ مدروسة وحاضرة.
 
@@ -582,13 +582,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It shows the Assyrians are kind',
-      'It presents the Assyrian army as predatory, dangerous, and aggressive — attacking the innocent',
+      'It presents the Assyrian army as predatory, dangerous, and aggressive - attacking the innocent',
       'It describes actual wolves',
       'It is about farming',
     ],
     correctIndex: 1,
     explanation:
-      'Comparing the Assyrians to a wolf attacking a flock of sheep presents them as predatory aggressors. The "fold" (sheepfold) represents the vulnerable Israelites — prey to be devoured.',
+      'Comparing the Assyrians to a wolf attacking a flock of sheep presents them as predatory aggressors. The "fold" (sheepfold) represents the vulnerable Israelites - prey to be devoured.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -598,7 +598,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Iambic pentameter',
-      'Anapaestic tetrameter — creating a galloping, charging rhythm',
+      'Anapaestic tetrameter - creating a galloping, charging rhythm',
       'Free verse',
       'Trochaic',
     ],
@@ -614,7 +614,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'War is glamorous',
-      'The greater the human power, the more completely divine power can destroy it — pride comes before a fall',
+      'The greater the human power, the more completely divine power can destroy it - pride comes before a fall',
       'The army was not well equipped',
       'Nothing in particular',
     ],
@@ -630,7 +630,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Six quatrains with AABB rhyme — fast-paced, narrative ballad form',
+      'Six quatrains with AABB rhyme - fast-paced, narrative ballad form',
       'Free verse',
       'Blank verse',
     ],
@@ -646,13 +646,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'An angel is flying normally',
-      'Divine destruction is presented as magnificent and terrifying — the angel rides the wind itself',
+      'Divine destruction is presented as magnificent and terrifying - the angel rides the wind itself',
       'There was a storm',
       'The angel is peaceful',
     ],
     correctIndex: 1,
     explanation:
-      'The Angel of Death is personified as a magnificent, terrifying figure riding on the wind. The image fuses beauty with destruction — divine power is both awesome and deadly.',
+      'The Angel of Death is personified as a magnificent, terrifying figure riding on the wind. The image fuses beauty with destruction - divine power is both awesome and deadly.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -678,13 +678,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Randomly',
-      'Gold and purple (living army) contrast with pale/cold death imagery — colour drains as life ends',
+      'Gold and purple (living army) contrast with pale/cold death imagery - colour drains as life ends',
       'Only dark colours',
       'Only bright colours',
     ],
     correctIndex: 1,
     explanation:
-      'The living army glitters in "purple and gold" and "the sheen of their spears." After the angel strikes, colour drains — faces become pale, the army is reduced to lifeless grey.',
+      'The living army glitters in "purple and gold" and "the sheen of their spears." After the angel strikes, colour drains - faces become pale, the army is reduced to lifeless grey.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -694,13 +694,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Military power always wins',
-      'No human military power can stand against divine will — the mightiest armies are destroyed overnight',
+      'No human military power can stand against divine will - the mightiest armies are destroyed overnight',
       'Power is unimportant',
       'The Assyrians were weak',
     ],
     correctIndex: 1,
     explanation:
-      'The poem argues that divine power utterly surpasses human military might. The greatest army in the ancient world is destroyed in a single night — all human power is temporary.',
+      'The poem argues that divine power utterly surpasses human military might. The greatest army in the ancient world is destroyed in a single night - all human power is temporary.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -716,7 +716,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The galloping rhythm initially suits the charging army, but after the angel strikes, the same rhythm continues over descriptions of death. The relentless beat becomes ironic — it marches over corpses.',
+      'The galloping rhythm initially suits the charging army, but after the angel strikes, the same rhythm continues over descriptions of death. The relentless beat becomes ironic - it marches over corpses.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -728,10 +728,10 @@ const REVISION_TOPICS = [
     summary:
       'The Destruction of Sennacherib explores divine power vs military might, the futility of human ambition, and sudden, total destruction.',
     keyPoints: [
-      "Divine power triumphs — no army can resist God's will",
-      'The futility of military splendour — gold and purple reduced to corpses',
-      'Pride before destruction — the mightier the army, the greater the fall',
-      'Biblical narrative — retelling of 2 Kings 19',
+      "Divine power triumphs - no army can resist God's will",
+      'The futility of military splendour - gold and purple reduced to corpses',
+      'Pride before destruction - the mightier the army, the greater the fall',
+      'Biblical narrative - retelling of 2 Kings 19',
     ],
   },
   {
@@ -739,20 +739,20 @@ const REVISION_TOPICS = [
     summary:
       'Byron uses colour contrast, simile, personification of the Angel of Death, and vivid sensory detail to dramatise divine destruction.',
     keyPoints: [
-      '"Like the wolf on the fold" — the Assyrians as predators',
-      'Colour imagery — gold/purple (life) vs pale/cold (death)',
-      '"Angel of Death spread his wings" — divine power as magnificent and terrifying',
+      '"Like the wolf on the fold" - the Assyrians as predators',
+      'Colour imagery - gold/purple (life) vs pale/cold (death)',
+      '"Angel of Death spread his wings" - divine power as magnificent and terrifying',
       'Sensory detail tracks the army from splendour to silence',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Six quatrains in anapaestic tetrameter with AABB rhyme — the galloping rhythm mirrors cavalry then becomes ironic over corpses.',
+      'Six quatrains in anapaestic tetrameter with AABB rhyme - the galloping rhythm mirrors cavalry then becomes ironic over corpses.',
     keyPoints: [
-      'Anapaestic metre — galloping rhythm of cavalry charge',
-      'AABB rhyme — fast-paced, driving narrative',
-      'Rhythm continues over death descriptions — becomes grimly ironic',
+      'Anapaestic metre - galloping rhythm of cavalry charge',
+      'AABB rhyme - fast-paced, driving narrative',
+      'Rhythm continues over death descriptions - becomes grimly ironic',
       'Progression: splendour → destruction → silence',
     ],
   },
@@ -768,7 +768,7 @@ export default function SennacheribPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="The Destruction of Sennacherib by Lord Byron — Analysis & Annotations"
+        name="The Destruction of Sennacherib by Lord Byron - Analysis & Annotations"
         description="Line-by-line analysis of The Destruction of Sennacherib with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

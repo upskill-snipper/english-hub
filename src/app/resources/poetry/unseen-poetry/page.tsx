@@ -741,7 +741,7 @@ export default async function UnseenPoetryPage() {
               {/* VERIFY: previous PoemBlock contained heavily fabricated lines presented as Carol Rumens's The Émigrée (e.g. "its hills are paperwhite", "its sky shines like a coin", "my city comes to me in its own white plane", "It lies down in front of me, docile as paper", "city of walls"). These do NOT appear in the real Rumens poem and are dangerous in an "unseen poetry" practice section because students preparing for AQA P&C would mistake them for the set text. Replaced with the verified opening of The Émigrée + a note flagging the rest of the practice extract for re-verification against the primary source before any further use. */}
               <PoemBlock
                 title={_tr(`The Émigrée`)}
-                author="Carol Rumens (verified opening only — full extract under review)"
+                author="Carol Rumens (verified opening only - full extract under review)"
                 lines={[
                   'There once was a country... I left it as a child',
                   'but my memory of it is sunlight-clear,',
@@ -752,7 +752,7 @@ export default async function UnseenPoetryPage() {
                   'It may be at war, it may be sick with tyrants,',
                   'but I am branded by an impression of sunlight.',
                   '',
-                  '[Practice extract paused: remaining lines flagged for primary-source verification — restore from your AQA Power & Conflict anthology / Rumens, Thinking of Skins (Bloodaxe, 1993).]',
+                  '[Practice extract paused: remaining lines flagged for primary-source verification - restore from your AQA Power & Conflict anthology / Rumens, Thinking of Skins (Bloodaxe, 1993).]',
                 ]}
               />
 

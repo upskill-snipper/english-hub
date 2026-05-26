@@ -9,7 +9,7 @@
  *   - the child must have an active or trialing subscription OR belong to a
  *     Parent-tier subscription owned by the parent themselves
  *
- * These helpers never short-circuit on admin/staff roles — the parent tier
+ * These helpers never short-circuit on admin/staff roles - the parent tier
  * is intentionally locked to the linked-child relationship.
  */
 
@@ -39,7 +39,7 @@ export interface ParentAccessResult {
  * Role is stored in user_metadata.role.
  */
 export function isParentRole(
-  user: { user_metadata?: { role?: string } } | null | undefined
+  user: { user_metadata?: { role?: string } } | null | undefined,
 ): boolean {
   return user?.user_metadata?.role === 'parent'
 }
@@ -58,7 +58,7 @@ export function isParentRole(
 export async function assertParentCanAccessChild(
   serviceClient: SupabaseClient,
   parentUser: { id: string; user_metadata?: { role?: string } } | null,
-  childId: string
+  childId: string,
 ): Promise<ParentAccessResult> {
   if (!parentUser) {
     return { ok: false, error: 'NOT_AUTHENTICATED' }
@@ -108,7 +108,7 @@ export async function assertParentCanAccessChild(
  */
 export async function listLinkedChildIds(
   serviceClient: SupabaseClient,
-  parentId: string
+  parentId: string,
 ): Promise<string[]> {
   const { data, error } = await serviceClient
     .from('parent_child_links')
@@ -146,8 +146,7 @@ export function accessErrorToHttpStatus(err: ParentAccessError): {
     case 'LINK_NOT_ACTIVE':
       return {
         status: 403,
-        message:
-          'You are not linked to this child account. Ask your child to share a link code.',
+        message: 'You are not linked to this child account. Ask your child to share a link code.',
       }
     case 'CHILD_NOT_FOUND':
       return { status: 404, message: 'Child account not found.' }

@@ -195,7 +195,7 @@ const COMPARISON_DATA: {
     poem: 'Walking Away',
     poet: 'Day-Lewis',
     type: 'Modern',
-    themes: 'Parent–child love, letting go',
+    themes: 'Parent-child love, letting go',
     tone: 'Nostalgic, accepting',
     form: 'Five quintains, loose ABACA rhyme',
   },
@@ -219,7 +219,7 @@ const COMPARISON_DATA: {
     poem: 'Mother, Any Distance',
     poet: 'Armitage',
     type: 'Modern',
-    themes: 'Parent–child bond, independence',
+    themes: 'Parent-child bond, independence',
     tone: 'Uncertain, bittersweet',
     form: 'Extended sonnet (16 lines)',
   },
@@ -227,7 +227,7 @@ const COMPARISON_DATA: {
     poem: 'Before You Were Mine',
     poet: 'Duffy',
     type: 'Modern',
-    themes: 'Memory, possession, mother–daughter',
+    themes: 'Memory, possession, mother-daughter',
     tone: 'Celebratory, possessive',
     form: 'Four quintains, free verse',
   },
@@ -537,7 +537,7 @@ export default function LoveAndRelationshipsPage() {
             <p className="text-sm text-muted-foreground">
               Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15
               poems
-              {matchCount === 0 && ' — try broadening your search.'}
+              {matchCount === 0 && ' - try broadening your search.'}
             </p>
           )}
         </div>
@@ -892,7 +892,7 @@ export default function LoveAndRelationshipsPage() {
           >
             <Section
               id="sonnet-29"
-              title="Sonnet 29 — 'I think of thee!'"
+              title="Sonnet 29 - 'I think of thee!'"
               poet="Elizabeth Barrett Browning (1850)"
               studyHref="/revision/poetry/love-and-relationships/sonnet-29"
             >
@@ -930,7 +930,7 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="I think of thee! — my thoughts do twine and bud / About thee, as wild vines, about a tree"
+                    text="I think of thee! - my thoughts do twine and bud / About thee, as wild vines, about a tree"
                     technique="Extended metaphor / natural imagery"
                     analysis="The vine/tree metaphor presents the beloved as strong and stable (the tree) while the speaker's thoughts grow wild and uncontrolled around him. 'Twine and bud' suggests organic, living growth, making the love feel natural and vital."
                   />
@@ -1457,7 +1457,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="I had not thought that it would be like this"
                     technique="Understatement / ambiguity"
-                    analysis="The poem's final line is deliberately ambiguous. 'This' could refer to death, the afterlife, or the experience of memory. The understatement — no grand emotion, just quiet surprise — makes the moment deeply moving. The past tense 'had not thought' suggests the crossing has already begun."
+                    analysis="The poem's final line is deliberately ambiguous. 'This' could refer to death, the afterlife, or the experience of memory. The understatement - no grand emotion, just quiet surprise - makes the moment deeply moving. The past tense 'had not thought' suggests the crossing has already begun."
                   />
                 </div>
               </SubSection>
@@ -1609,7 +1609,7 @@ export default function LoveAndRelationshipsPage() {
                   since May 2019 (succeeding Carol Ann Duffy, 2009-2019). He originally trained as a
                   probation officer and is now a professor at Leeds University. (Although his work
                   includes war poems such as <em>Remains</em> and <em>The Manhunt</em>, Armitage
-                  never served in any military or combat role — those poems are based on interviews
+                  never served in any military or combat role - those poems are based on interviews
                   with veterans.) This poem comes from his collection <em>Book of Matches</em>,
                   where each poem is designed to be read in the time it takes a match to burn. The
                   poem describes a son measuring up a new house with his mother&apos;s help, using
@@ -1649,7 +1649,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="You at the zero-end, me with the spool of tape"
                     technique="Spatial metaphor"
-                    analysis="The mother anchors the 'zero-end' — the starting point, the origin. The speaker moves away with the 'spool,' which can extend but is still connected. This precisely captures the parent-child dynamic: she is the fixed foundation; he is the explorer."
+                    analysis="The mother anchors the 'zero-end' - the starting point, the origin. The speaker moves away with the 'spool,' which can extend but is still connected. This precisely captures the parent-child dynamic: she is the fixed foundation; he is the explorer."
                   />
                   <Quote
                     text="Anchor. Kite."
@@ -1659,12 +1659,12 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="I space-walk through the empty bedrooms"
                     technique="Metaphor / verb choice"
-                    analysis="'Space-walk' suggests the son is an astronaut exploring unknown territory, making the new home feel alien and exciting. It also implies weightlessness and vulnerability — he is untethered and in unfamiliar space."
+                    analysis="'Space-walk' suggests the son is an astronaut exploring unknown territory, making the new home feel alien and exciting. It also implies weightlessness and vulnerability - he is untethered and in unfamiliar space."
                   />
                   <Quote
                     text="to fall or fly"
                     technique="Alliteration / antithesis"
-                    analysis="The alliterative pair encapsulates the poem's central tension: independence brings both the possibility of failure ('fall') and freedom ('fly'). The ambiguity is deliberate — the outcome is uncertain, and that uncertainty is the cost of growing up."
+                    analysis="The alliterative pair encapsulates the poem's central tension: independence brings both the possibility of failure ('fall') and freedom ('fly'). The ambiguity is deliberate - the outcome is uncertain, and that uncertainty is the cost of growing up."
                   />
                 </div>
               </SubSection>
@@ -1756,7 +1756,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="your polka-dot dress blows round your legs. Marilyn"
                     technique="Pop culture allusion / visual imagery"
-                    analysis="The comparison to Marilyn Monroe elevates the mother to iconic status. The polka-dot dress blowing in the wind recreates the famous Monroe image, presenting the mother as glamorous and desirable — an identity she had before becoming 'just' a mother."
+                    analysis="The comparison to Marilyn Monroe elevates the mother to iconic status. The polka-dot dress blowing in the wind recreates the famous Monroe image, presenting the mother as glamorous and desirable - an identity she had before becoming 'just' a mother."
                   />
                   <Quote
                     text="I knew you would dance like that"
@@ -1844,9 +1844,9 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="The clouds had given their all — two days of rain and then a break"
+                    text="The clouds had given their all - two days of rain and then a break"
                     technique="Pathetic fallacy / double meaning"
-                    analysis="The weather mirrors the relationship: 'two days of rain' suggests a period of emotional turmoil, and 'a break' is ambiguous — both a break in the weather and a relationship break. 'Given their all' personifies the clouds, implying exhaustion after conflict."
+                    analysis="The weather mirrors the relationship: 'two days of rain' suggests a period of emotional turmoil, and 'a break' is ambiguous - both a break in the weather and a relationship break. 'Given their all' personifies the clouds, implying exhaustion after conflict."
                   />
                   <Quote
                     text="waterlogged earth / gulping for breath"
@@ -1856,7 +1856,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="they halved themselves in the water, / icebergs of white feather"
                     technique="Metaphor / visual imagery"
-                    analysis="The swans are 'halved' — half visible, half hidden — like the couple, who have hidden emotions beneath the surface. The 'iceberg' metaphor reinforces this: there is much more beneath the surface than is visible."
+                    analysis="The swans are 'halved' - half visible, half hidden - like the couple, who have hidden emotions beneath the surface. The 'iceberg' metaphor reinforces this: there is much more beneath the surface than is visible."
                   />
                   <Quote
                     text="and I noticed our hands, that had moved somehow, / palm to palm"
@@ -1960,7 +1960,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="she is di milk dat is churn / she is di bread dat is bake"
                     technique="Metaphor / phonetic spelling"
-                    analysis="The wife is described through shop imagery — milk and bread — humorously blending romance with the everyday world of the shop. The phonetic spelling ('dat,' 'di') captures the speaker's accent and cultural identity. She is essential sustenance."
+                    analysis="The wife is described through shop imagery - milk and bread - humorously blending romance with the everyday world of the shop. The phonetic spelling ('dat,' 'di') captures the speaker's accent and cultural identity. She is essential sustenance."
                   />
                   <Quote
                     text="from di stool each ov us say / dat moon is a yoyo"
@@ -2062,7 +2062,7 @@ export default function LoveAndRelationshipsPage() {
                   <Quote
                     text="the soft leather of his belly"
                     technique="Tactile imagery / metaphor"
-                    analysis="'Soft leather' is wonderfully specific — it suggests something worn, warm, and comfortable. Leather is strong but yielding, capturing the grandfather's combination of toughness and tenderness."
+                    analysis="'Soft leather' is wonderfully specific - it suggests something worn, warm, and comfortable. Leather is strong but yielding, capturing the grandfather's combination of toughness and tenderness."
                   />
                   <Quote
                     text="his still firm chin"
@@ -2258,7 +2258,7 @@ export default function LoveAndRelationshipsPage() {
             {[
               {
                 title: 'Choose Your Comparison Wisely',
-                text: "You'll be given one poem and asked to compare it to another of your choice. Pick a poem with clear thematic or structural links — not just the one you know best.",
+                text: "You'll be given one poem and asked to compare it to another of your choice. Pick a poem with clear thematic or structural links - not just the one you know best.",
               },
               {
                 title: "Weave, Don't Split",
@@ -2278,7 +2278,7 @@ export default function LoveAndRelationshipsPage() {
               },
               {
                 title: 'Use Subject Terminology',
-                text: 'Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue. But always explain the effect — feature-spotting without analysis scores poorly.',
+                text: 'Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue. But always explain the effect - feature-spotting without analysis scores poorly.',
               },
             ].map((tip) => (
               <div

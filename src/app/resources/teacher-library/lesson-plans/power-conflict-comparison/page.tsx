@@ -5,11 +5,11 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Ozymandias vs My Last Duchess — Comparison Lesson Plan',
+    title: 'Ozymandias vs My Last Duchess - Comparison Lesson Plan',
     description:
       'Full 60-minute comparison lesson for the Power & Conflict anthology. Compare Ozymandias and My Last Duchess as presentations of power.',
   },
-  title: 'Ozymandias vs My Last Duchess — Comparison Lesson Plan',
+  title: 'Ozymandias vs My Last Duchess - Comparison Lesson Plan',
   description:
     'Full 60-minute comparison lesson for the Power & Conflict anthology. Compare Ozymandias and My Last Duchess as presentations of power.',
   alternates: {
@@ -183,7 +183,7 @@ export default async function PowerConflictLessonPlan() {
                   <h4 className="font-semibold">Part 2: Finding the link (10 min)</h4>
                   <p className="mt-1 text-sm leading-relaxed">
                     Discussion: What do the two speakers have in common? How do they differ? Draw
-                    out the key comparative point — both men use language to dominate and possess,
+                    out the key comparative point - both men use language to dominate and possess,
                     but both are ultimately exposed.
                   </p>
                 </div>
@@ -252,7 +252,7 @@ export default async function PowerConflictLessonPlan() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Don&apos;t skip the matrix:</strong> It&apos;s tempting to jump straight to
@@ -264,7 +264,7 @@ export default async function PowerConflictLessonPlan() {
             </li>
             <li>
               <strong>Comparative connectives:</strong> Insist on them. &quot;Similarly&quot;,
-              &quot;in contrast&quot;, &quot;whereas&quot; — print a bank and leave it visible
+              &quot;in contrast&quot;, &quot;whereas&quot; - print a bank and leave it visible
               throughout.
             </li>
           </ul>

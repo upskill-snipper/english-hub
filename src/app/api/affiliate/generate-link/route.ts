@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many link generations. Please slow down.' },
-        { status: 429 }
+        { status: 429 },
       )
     }
 
@@ -71,8 +71,8 @@ export async function POST(request: NextRequest) {
       const value = body[key]
       if (value && !TAG_REGEX.test(value)) {
         return NextResponse.json(
-          { error: `Invalid ${key}: must be 1–40 chars (letters, digits, _ or -)` },
-          { status: 400 }
+          { error: `Invalid ${key}: must be 1-40 chars (letters, digits, _ or -)` },
+          { status: 400 },
         )
       }
     }
@@ -94,17 +94,16 @@ export async function POST(request: NextRequest) {
     if (!account) {
       return NextResponse.json(
         { error: 'No affiliate account found for this user' },
-        { status: 404 }
+        { status: 404 },
       )
     }
 
     if (account.status !== 'active') {
       return NextResponse.json(
         {
-          error:
-            'Affiliate account is not active yet. Link generation is enabled after approval.',
+          error: 'Affiliate account is not active yet. Link generation is enabled after approval.',
         },
-        { status: 403 }
+        { status: 403 },
       )
     }
 
@@ -130,10 +129,10 @@ export async function POST(request: NextRequest) {
     const target = body.target_path ?? '/'
     const joinChar = target.includes('?') ? '&' : '?'
     const url = `${site}${target}${joinChar}ref=${encodeURIComponent(
-      account.code
+      account.code,
     )}&aff_link=${encodeURIComponent(link.token ?? link.id)}`
 
-    // Short URL pattern — the DB token is expected to be short (see migration)
+    // Short URL pattern - the DB token is expected to be short (see migration)
     const shortUrl = `${site}/r/${encodeURIComponent(link.token ?? link.id)}`
 
     return NextResponse.json(
@@ -144,7 +143,7 @@ export async function POST(request: NextRequest) {
         url,
         short_url: shortUrl,
       },
-      { status: 201 }
+      { status: 201 },
     )
   } catch (err) {
     console.error('[affiliate/generate-link] unexpected error:', err)

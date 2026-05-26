@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'Complete GCSE English revision hub: grade 9 guides, timetables, grade boundaries, exam-day tips and parent help. 25 guides written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/revision' },
   openGraph: {
-    title: 'GCSE English Revision & Grade Guides — The English Hub',
+    title: 'GCSE English Revision & Grade Guides - The English Hub',
     description:
       'Free, marker-written GCSE English revision guides covering grade targets, revision plans, exam day prep and parent support.',
   },

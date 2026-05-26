@@ -6,7 +6,7 @@
  * product IDs it applies to.
  *
  * This endpoint is WEB-ONLY. Under no circumstances should the mobile app
- * call it — Apple § 3.1.1 forbids presenting promo-coded discount pricing
+ * call it - Apple § 3.1.1 forbids presenting promo-coded discount pricing
  * inside an app that uses IAP. The mobile side recognises entitlement only
  * AFTER the user has completed the web redemption + Stripe Checkout flow
  * (via `/api/me/entitlements`). See `english-hub-mobile/docs/PROMO_CODE_COMPLIANCE.md`.
@@ -24,7 +24,7 @@
  * Response shape:
  *   `{ valid: boolean, discountPennies: number, productIds: string[], reason?: string }`
  *
- * Not authenticated — public endpoint. Rate-limited aggressively to deter
+ * Not authenticated - public endpoint. Rate-limited aggressively to deter
  * code-brute-forcing.
  */
 
@@ -45,7 +45,7 @@ const CODE_REGEX = /^[A-Z0-9_-]{3,64}$/
  * what that future row will return, so the handler stays stable.
  *
  * `discountPennies` is the absolute discount off the base annual SKU. We do
- * NOT use percentage coupons here — the redemption creates a Stripe Checkout
+ * NOT use percentage coupons here - the redemption creates a Stripe Checkout
  * Session with a pre-discounted unit amount, which is simpler to reason
  * about and audit.
  *
@@ -61,7 +61,7 @@ interface PromoRule {
 const HOUSE_PROMO_ALLOWLIST: Readonly<Record<string, PromoRule>> = Object.freeze({
   [PRICING.AFFILIATE_PROMO_CODE]: {
     // Both Student Annual and Teacher Annual qualify for the same flat
-    // £9.99 discount — STUDENT_ANNUAL_SAVINGS and TEACHER_ANNUAL_SAVINGS
+    // £9.99 discount - STUDENT_ANNUAL_SAVINGS and TEACHER_ANNUAL_SAVINGS
     // are kept identical in pricing.ts so this single value covers both
     // cases for display purposes. The actual per-product final price is
     // resolved by /api/promo/redeem at redemption time.

@@ -1,18 +1,18 @@
 // ──────────────────────────────────────────────────────────────────────────────
-// IAL English Language — Essay Planning Frameworks and Model Plans
+// IAL English Language - Essay Planning Frameworks and Model Plans
 // Edexcel IAL Units WEN01-WEN04
 // ──────────────────────────────────────────────────────────────────────────────
 
 export interface EssayFramework {
-  id: string;
-  title: string;
-  unit: 'WEN01' | 'WEN02' | 'WEN03' | 'WEN04';
-  yearGroup: 'Year 12' | 'Year 13';
-  questionType: string;
-  structure: { section: string; purpose: string; timing: string; guidance: string }[];
-  keyPhrases: string[];
-  commonMistakes: string[];
-  modelPlanOutline: string[];
+  id: string
+  title: string
+  unit: 'WEN01' | 'WEN02' | 'WEN03' | 'WEN04'
+  yearGroup: 'Year 12' | 'Year 13'
+  questionType: string
+  structure: { section: string; purpose: string; timing: string; guidance: string }[]
+  keyPhrases: string[]
+  commonMistakes: string[]
+  modelPlanOutline: string[]
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
@@ -20,7 +20,6 @@ export interface EssayFramework {
 // ──────────────────────────────────────────────────────────────────────────────
 
 export const ialEssayFrameworks: EssayFramework[] = [
-
   // ── WEN01 Framework 1: Data Analysis Essay ─────────────────────────────────
   {
     id: 'wen01-fw-01',
@@ -36,7 +35,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         guidance:
           'Identify the text types, contexts and purposes. Name the two or three linguistic ' +
           'frameworks most relevant to the data (e.g. lexis, pragmatics, discourse). Offer a ' +
-          'focused claim about what the data reveals — do not list features; establish an ' +
+          'focused claim about what the data reveals - do not list features; establish an ' +
           'analytical direction that you will sustain throughout.',
       },
       {
@@ -64,7 +63,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         timing: '10 minutes',
         guidance:
           'Consider cohesion devices, turn-taking (if spoken), politeness strategies, face ' +
-          'management, and implied meaning. Reference relevant theories (e.g. Grice\'s ' +
+          "management, and implied meaning. Reference relevant theories (e.g. Grice's " +
           'maxims, Brown and Levinson) to support analysis.',
       },
       {
@@ -82,7 +81,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'this lexical choice foregrounds...',
       'the syntactic structure here functions to...',
       'from a pragmatic perspective, this utterance...',
-      'applying Goffman\'s concept of face, we can observe...',
+      "applying Goffman's concept of face, we can observe...",
       'the discourse structure reinforces...',
       'this semantic field signals...',
       'the register shifts in the data suggest...',
@@ -106,7 +105,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         'and second-person pronouns in Text B build rapport',
       'Discourse/pragmatics: Text A follows formal adjacency pair structure; ' +
         'Text B uses positive politeness strategies and shared references',
-      'Synthesis: both texts construct authority but through contrasting orientations — ' +
+      'Synthesis: both texts construct authority but through contrasting orientations - ' +
         'power-over (Text A) vs. power-with (Text B)',
       'Conclusion: the data illustrates that authority is contextually contingent and ' +
         'realised through complementary linguistic choices across mode and register',
@@ -163,12 +162,12 @@ export const ialEssayFrameworks: EssayFramework[] = [
         timing: '5 minutes',
         guidance:
           'Return to your thesis and refine it in light of the evidence discussed. Avoid ' +
-          'sitting on the fence — commit to a position while acknowledging complexity.',
+          'sitting on the fence - commit to a position while acknowledging complexity.',
       },
     ],
     keyPhrases: [
       'identity is not fixed but dynamically constructed through language...',
-      'Labov\'s findings suggest that speakers accommodate to...',
+      "Labov's findings suggest that speakers accommodate to...",
       'the concept of code-switching indicates...',
       'intersectionality complicates the straightforward equation of language with...',
       'this position is complicated by evidence from...',
@@ -187,7 +186,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
     modelPlanOutline: [
       'Introduction: define identity as socially constructed; state that language is the ' +
         'primary means through which identity is performed and negotiated',
-      'Argument 1: Labov\'s New York department store study demonstrates that speakers ' +
+      "Argument 1: Labov's New York department store study demonstrates that speakers " +
         'adjust phonological features to align with social aspirations',
       'Argument 2: Gumperz and code-switching evidence shows identity is multiple and ' +
         'context-dependent rather than singular',
@@ -214,7 +213,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         timing: '1 minute',
         guidance:
           'Open with a claim, not an observation. For example: "The speaker\'s use of ' +
-          'non-standard syntax functions as a marker of in-group solidarity" — not ' +
+          'non-standard syntax functions as a marker of in-group solidarity" - not ' +
           '"The speaker uses non-standard syntax."',
       },
       {
@@ -248,9 +247,9 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'the pragmatic effect of this choice is...',
       'this can be understood through the lens of...',
       'the social meaning encoded here is...',
-      'drawing on Labov\'s notion of prestige, we can argue...',
+      "drawing on Labov's notion of prestige, we can argue...",
       'this linguistic choice indexes...',
-      'the speaker\'s deployment of X signals...',
+      "the speaker's deployment of X signals...",
       'this is consistent with research into...',
       'the contextual variable most relevant here is...',
       'this finding suggests a broader pattern of...',
@@ -267,9 +266,9 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Evidence: "sort of", "I suppose", "maybe" appear in close proximity within ' +
         'a single turn',
       'Analysis: these are positive politeness strategies (Brown and Levinson) that ' +
-        'mitigate the imposition of the speaker\'s request',
-      'Analysis extended: modal hedges also reduce the speaker\'s epistemic commitment, ' +
-        'consistent with Labov\'s findings on vernacular speech in formal contexts',
+        "mitigate the imposition of the speaker's request",
+      "Analysis extended: modal hedges also reduce the speaker's epistemic commitment, " +
+        "consistent with Labov's findings on vernacular speech in formal contexts",
       'Contextualisation: the institutional setting (job interview) amplifies the ' +
         'pressure to manage face, motivating the density of hedging',
       'Conclusion sentence: the convergence of these features reveals how speakers ' +
@@ -292,7 +291,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         guidance:
           'Briefly contextualise both texts. Identify the key point of similarity or ' +
           'contrast that will organise your comparison. Avoid a simple "Text A does X, ' +
-          'Text B does Y" listing approach — instead, establish a comparative claim.',
+          'Text B does Y" listing approach - instead, establish a comparative claim.',
       },
       {
         section: 'Comparative Point 1: Lexis and Register',
@@ -356,7 +355,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         'objectivity; Text B uses active voice and imperative mood to create directness',
       'Pragmatics: Text A manages face through formal politeness conventions; ' +
         'Text B uses solidarity-based positive politeness',
-      'Synthesis: the contrast reflects mode and audience — formal register signals ' +
+      'Synthesis: the contrast reflects mode and audience - formal register signals ' +
         'institutional authority; informal register signals peer credibility',
       'Conclusion: the comparison illustrates that expertise is not a fixed linguistic ' +
         'property but is constructed differently according to context and audience expectations',
@@ -378,7 +377,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         guidance:
           'Identify the time period and language level(s) under examination. State the ' +
           'primary change under discussion and the external factors (social, political, ' +
-          'technological) that drove it. Avoid a narrative account — establish an ' +
+          'technological) that drove it. Avoid a narrative account - establish an ' +
           'analytical thesis from the outset.',
       },
       {
@@ -436,7 +435,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Failing to distinguish between different levels of language change (lexis, grammar, phonology)',
     ],
     modelPlanOutline: [
-      'Introduction: Old English to Present Day — claim that social upheaval is the ' +
+      'Introduction: Old English to Present Day - claim that social upheaval is the ' +
         'primary driver of the most significant lexical and grammatical changes',
       'Lexis: Norman Conquest introduced French borrowings that stratified the lexicon ' +
         'by social register (e.g. beef/cow, pork/pig)',
@@ -447,7 +446,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Context: printing press (1476) standardised spelling and accelerated the ' +
         'prestige of London dialect; digital media now drives rapid lexical innovation',
       'Conclusion: language change is inevitable, socially driven, and neither ' +
-        'degenerative nor progressive — it reflects the society that speaks it',
+        'degenerative nor progressive - it reflects the society that speaks it',
     ],
   },
 
@@ -457,7 +456,8 @@ export const ialEssayFrameworks: EssayFramework[] = [
     title: 'Contemporary Language Change: Discursive Essay',
     unit: 'WEN02',
     yearGroup: 'Year 12',
-    questionType: 'Discursive essay: evaluate the nature and significance of contemporary language change',
+    questionType:
+      'Discursive essay: evaluate the nature and significance of contemporary language change',
     structure: [
       {
         section: 'Introduction',
@@ -488,7 +488,8 @@ export const ialEssayFrameworks: EssayFramework[] = [
       },
       {
         section: 'Evaluation of Significance',
-        purpose: 'Assess whether contemporary change is exceptional or continuous with historical patterns',
+        purpose:
+          'Assess whether contemporary change is exceptional or continuous with historical patterns',
         timing: '10 minutes',
         guidance:
           'Compare the pace and nature of contemporary change with historical precedents. ' +
@@ -505,7 +506,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
     ],
     keyPhrases: [
       'the process of blending (portmanteau formation) is particularly productive in...',
-      'Crystal\'s analysis of Netspeak reveals...',
+      "Crystal's analysis of Netspeak reveals...",
       'globalisation has accelerated the spread of American English lexis into...',
       'this innovation is consistent with the systemic principle of...',
       'the register of digital communication has enabled...',
@@ -543,7 +544,8 @@ export const ialEssayFrameworks: EssayFramework[] = [
     title: 'Language Debate Essay: Prescriptivism vs Descriptivism',
     unit: 'WEN02',
     yearGroup: 'Year 12',
-    questionType: 'Debate essay: evaluate competing attitudes toward language change and correctness',
+    questionType:
+      'Debate essay: evaluate competing attitudes toward language change and correctness',
     structure: [
       {
         section: 'Introduction',
@@ -599,7 +601,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'standard language ideology conflates social prestige with linguistic correctness',
       'corpus evidence demonstrates that the alleged "error" is in fact...',
       'the policing of language often functions as a proxy for...',
-      'Crystal\'s distinction between descriptive adequacy and prescriptive prejudice...',
+      "Crystal's distinction between descriptive adequacy and prescriptive prejudice...",
       'the prescriptivist position is weakened by its failure to account for...',
       'all natural languages are equally systematic; variation is not deviation but...',
       'the ideological dimension of this debate reveals that...',
@@ -611,11 +613,11 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Concluding without committing to a clearly argued evaluative position',
     ],
     modelPlanOutline: [
-      'Introduction: define both positions; thesis — descriptivism is linguistically ' +
+      'Introduction: define both positions; thesis - descriptivism is linguistically ' +
         'better supported but prescriptivism reflects real social pressures',
       'Prescriptivist case: standard language serves communication across communities; ' +
         'Humphrys argues that change erodes clarity and precision',
-      'Descriptivist case: Aitchison — "damp spoon" fallacy; change is systematic; ' +
+      'Descriptivist case: Aitchison - "damp spoon" fallacy; change is systematic; ' +
         'all dialects are rule-governed; Crystal on the historical inevitability of change',
       'Ideological critique: prescriptive attitudes frequently police working-class, ' +
         'ethnic minority, or female language use rather than logic of the language system',
@@ -632,7 +634,8 @@ export const ialEssayFrameworks: EssayFramework[] = [
     title: 'Child Language Acquisition Essay',
     unit: 'WEN02',
     yearGroup: 'Year 12',
-    questionType: 'Theory evaluation essay: assess theoretical accounts of child language acquisition',
+    questionType:
+      'Theory evaluation essay: assess theoretical accounts of child language acquisition',
     structure: [
       {
         section: 'Introduction',
@@ -649,7 +652,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         timing: '10 minutes',
         guidance:
           'Cover the major milestones: pre-linguistic (cooing, babbling), holophrastic, ' +
-          'two-word, telegraphic, and beyond. Use research evidence (e.g. Brown\'s ' +
+          "two-word, telegraphic, and beyond. Use research evidence (e.g. Brown's " +
           'morpheme acquisition order) to support stage claims.',
       },
       {
@@ -679,32 +682,32 @@ export const ialEssayFrameworks: EssayFramework[] = [
       },
     ],
     keyPhrases: [
-      'Chomsky\'s notion of the Language Acquisition Device proposes that...',
+      "Chomsky's notion of the Language Acquisition Device proposes that...",
       'the poverty of the stimulus argument suggests that...',
-      'Skinner\'s behaviourist account is undermined by evidence of...',
+      "Skinner's behaviourist account is undermined by evidence of...",
       'the interactionist framework, supported by Vygotsky, holds that...',
       'child-directed speech (CDS) features such as higher pitch and simplified syntax...',
       'over-generalisation errors (e.g. "goed", "runned") suggest that children are...',
-      'Brown\'s morpheme acquisition order provides evidence that...',
+      "Brown's morpheme acquisition order provides evidence that...",
       'the critical period hypothesis (Lenneberg) is supported by cases such as...',
       'usage-based approaches challenge nativism by arguing that...',
       'the most compelling account synthesises innate capacity with environmental input',
     ],
     commonMistakes: [
       'Describing stages of acquisition without relating them to theoretical frameworks',
-      'Treating Chomsky\'s nativism as definitively correct without acknowledging challenges',
+      "Treating Chomsky's nativism as definitively correct without acknowledging challenges",
       'Confusing the LAD as a physical brain structure rather than a theoretical construct',
       'Failing to use specific child language examples to test and illustrate theoretical claims',
     ],
     modelPlanOutline: [
       'Introduction: three main accounts (nativist, behaviourist, interactionist); ' +
-        'thesis — interactionist accounts best explain the full range of acquisition evidence',
+        'thesis - interactionist accounts best explain the full range of acquisition evidence',
       'Stage overview: pre-linguistic through telegraphic stage; key milestone evidence ' +
         'from Brown, Berko, and Bates',
       'Nativism: LAD explains speed of acquisition and universal grammar; ' +
-        'weaknesses — cannot account for role of input or cultural variation',
-      'Behaviourism: reinforcement model — fails to explain novel utterances and ' +
-        'virtuous errors; Chomsky\'s 1959 critique remains relevant',
+        'weaknesses - cannot account for role of input or cultural variation',
+      'Behaviourism: reinforcement model - fails to explain novel utterances and ' +
+        "virtuous errors; Chomsky's 1959 critique remains relevant",
       'Interactionism: ZPD and scaffolding; CDS as finely tuned input; ' +
         'usage-based theories (Tomasello) support constructivist view',
       'Conclusion: no single account is sufficient; the weight of evidence supports an ' +
@@ -797,12 +800,12 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Register/style plan: intimate second-person address; fragmented syntax to ' +
         'represent disorientation; bilingual code-switching as a structural device; ' +
         'extended metaphor of "translation" as loss',
-      'Draft focus: opening paragraph — sensory detail and second-person address to ' +
-        'create immediacy; closing paragraph — resolution through ambiguity, not resolution',
+      'Draft focus: opening paragraph - sensory detail and second-person address to ' +
+        'create immediacy; closing paragraph - resolution through ambiguity, not resolution',
       'Self-evaluation: assess whether the code-switching feels organic or performative; ' +
         'revise sentence length variation in the central section',
-      'Commentary hook: the non-linear structure enacts the essay\'s central argument ' +
-        'that identity cannot be linearised — it is a form of active, ongoing negotiation',
+      "Commentary hook: the non-linear structure enacts the essay's central argument " +
+        'that identity cannot be linearised - it is a form of active, ongoing negotiation',
     ],
   },
 
@@ -876,7 +879,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Describing what happens in the piece rather than explaining why specific choices were made',
       'Using imprecise or incorrect metalanguage (e.g. calling a metaphor a "simile")',
       'Claiming effects without quoting the specific text that produces them',
-      'Failing to evaluate the piece critically — only celebrating its successes',
+      'Failing to evaluate the piece critically - only celebrating its successes',
     ],
     modelPlanOutline: [
       'Statement of intent: short story for an educated adult reader; purpose to ' +
@@ -885,12 +888,12 @@ export const ialEssayFrameworks: EssayFramework[] = [
         'temporal ellipsis to enact the disorientation of bereavement',
       'Language analysis: semantic field of domestic routine to contrast with the ' +
         'enormity of loss (bathetic juxtaposition); free indirect discourse to allow ' +
-        'reader access to character\'s interior voice without direct statement',
-      'Influences: Carver\'s minimalism — saying less to mean more; O\'Brien\'s ' +
+        "reader access to character's interior voice without direct statement",
+      "Influences: Carver's minimalism - saying less to mean more; O'Brien's " +
         'use of repetition to enact psychological fixation',
       'Self-evaluation: the final paragraph risks sentimentality; a revision could ' +
         'replace the closing image with a more ambiguous domestic detail',
-      'Meta-reflection: the restraint of the prose is itself the argument — ' +
+      'Meta-reflection: the restraint of the prose is itself the argument - ' +
         'grief that exceeds language is best approached by withholding language',
     ],
   },
@@ -908,7 +911,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         purpose: 'Establish the focus and rationale for the investigation',
         timing: '1-2 hours drafting',
         guidance:
-          'State the research question precisely. Justify its linguistic significance — ' +
+          'State the research question precisely. Justify its linguistic significance - ' +
           'why is this question worth investigating? Identify the key variables and ' +
           'explain how they connect to established linguistic research. Avoid questions ' +
           'that are too broad or too narrow to yield meaningful findings.',
@@ -920,7 +923,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         guidance:
           'Review a minimum of three to four relevant academic sources. Explain how ' +
           'existing research informs your hypotheses. Identify any gaps in the literature ' +
-          'that your investigation addresses. Do not summarise sources — evaluate them.',
+          'that your investigation addresses. Do not summarise sources - evaluate them.',
       },
       {
         section: 'Methodology',
@@ -938,7 +941,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         timing: '2-3 hours drafting',
         guidance:
           'Organise findings by theme or linguistic level. Use tables, frequency counts, ' +
-          'or charts where appropriate. Present data objectively at this stage — ' +
+          'or charts where appropriate. Present data objectively at this stage - ' +
           'interpretation belongs in the discussion section.',
       },
       {
@@ -957,7 +960,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         guidance:
           'Summarise the key findings concisely. Reflect on the limitations of your ' +
           'methodology. Propose two or three directions for future research. End with a ' +
-          'clear statement of the investigation\'s contribution to the field.',
+          "clear statement of the investigation's contribution to the field.",
       },
     ],
     keyPhrases: [
@@ -982,7 +985,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
     modelPlanOutline: [
       'Research question: to what extent does gender influence the use of hedging ' +
         'devices in professional workplace email communication?',
-      'Literature review: Lakoff (1975) on women\'s language features; Holmes (1995) ' +
+      "Literature review: Lakoff (1975) on women's language features; Holmes (1995) " +
         'on politeness and gender; Cameron (2007) critique of gender essentialism; ' +
         'corpus studies of CMC register',
       'Methodology: 60-email corpus (30 per gender) from a single workplace; ' +
@@ -991,7 +994,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'Data: frequency table of hedge types by gender; annotated extracts showing ' +
         'hedging in context',
       'Discussion: data partially supports Lakoff but is complicated by role hierarchy; ' +
-        'Cameron\'s critique of gender essentialism supported by variation within groups',
+        "Cameron's critique of gender essentialism supported by variation within groups",
       'Conclusion: gender is a significant but not deterministic variable; ' +
         'professional role may be a stronger predictor; future research should ' +
         'control for seniority as an independent variable',
@@ -1004,7 +1007,8 @@ export const ialEssayFrameworks: EssayFramework[] = [
     title: 'Language Investigation: Findings and Discussion Section Guide',
     unit: 'WEN04',
     yearGroup: 'Year 13',
-    questionType: 'Coursework: write the findings and discussion sections of a language investigation',
+    questionType:
+      'Coursework: write the findings and discussion sections of a language investigation',
     structure: [
       {
         section: 'Organising the Findings Section',
@@ -1013,7 +1017,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
         guidance:
           'Group findings by linguistic level (lexis, grammar, discourse) or by theme. ' +
           'Use precise frequency data, percentages, or counts. Use labelled tables or ' +
-          'charts. At this stage, describe what you found — do not explain why or ' +
+          'charts. At this stage, describe what you found - do not explain why or ' +
           'interpret significance.',
       },
       {
@@ -1060,7 +1064,7 @@ export const ialEssayFrameworks: EssayFramework[] = [
       'the data challenges the prediction of X because...',
       'a close reading of Extract 2 reveals...',
       'applying critical discourse analysis, we can observe...',
-      'this pattern is consistent with Holmes\'s claim that...',
+      "this pattern is consistent with Holmes's claim that...",
       'the anomalous finding in the subset may be attributed to...',
       'the limitation of this analysis is that...',
       'taken together, these findings suggest that...',
@@ -1074,14 +1078,14 @@ export const ialEssayFrameworks: EssayFramework[] = [
         'as isolated observations rather than contributions to a field',
     ],
     modelPlanOutline: [
-      'Findings: frequency table — hedging devices per 1000 words by gender category; ' +
+      'Findings: frequency table - hedging devices per 1000 words by gender category; ' +
         'clear labelling and objective description of the distribution',
       'Hypothesis check: Hypothesis 1 (female writers hedge more frequently) partially ' +
         'supported (58% vs 42%) but less strongly than Lakoff predicted',
       'Close analysis: Extract A (senior female manager) shows minimal hedging despite ' +
         'gender, suggesting role overrides gender as a variable',
-      'Contextualisation: Cameron\'s (2007) critique of gender essentialism is supported ' +
-        'by the within-group variation; Lakoff\'s claims are shown to be insufficiently contextualised',
+      "Contextualisation: Cameron's (2007) critique of gender essentialism is supported " +
+        "by the within-group variation; Lakoff's claims are shown to be insufficiently contextualised",
       'Anomalies: two male participants in junior roles showed hedging frequency above ' +
         'the female mean; this suggests hierarchy is a confounding variable worth controlling',
       'Implications: findings support a social constructionist rather than essentialist ' +
@@ -1089,4 +1093,4 @@ export const ialEssayFrameworks: EssayFramework[] = [
         'of evidence complicating binary gender-language claims',
     ],
   },
-];
+]

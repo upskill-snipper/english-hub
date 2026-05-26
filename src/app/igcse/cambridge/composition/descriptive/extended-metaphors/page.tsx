@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Extended Metaphors — Cambridge IGCSE Descriptive Writing',
+    title: 'Extended Metaphors - Cambridge IGCSE Descriptive Writing',
     description:
       'How to build, sustain and evolve an extended metaphor for Cambridge IGCSE descriptive composition, with worked examples and controlling-image patterns.',
   },
-  title: 'Extended Metaphors — Cambridge IGCSE Descriptive Writing',
+  title: 'Extended Metaphors - Cambridge IGCSE Descriptive Writing',
   description:
     'How to build, sustain and evolve an extended metaphor for Cambridge IGCSE descriptive composition, with worked examples and controlling-image patterns.',
   alternates: {
@@ -82,7 +82,7 @@ export default async function ExtendedMetaphorsPage() {
             One-off metaphors decorate a description. An{' '}
             <strong className="text-foreground">extended metaphor</strong> holds the whole piece
             together. Cambridge examiners describe top-band work as &ldquo;sustained&rdquo; and
-            &ldquo;controlled&rdquo; — sustained is what a good extended metaphor provides.
+            &ldquo;controlled&rdquo; - sustained is what a good extended metaphor provides.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default async function ExtendedMetaphorsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-heading-sm font-heading">
-            Step 1 — Choose a controlling image
+            Step 1 - Choose a controlling image
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
@@ -120,7 +120,7 @@ export default async function ExtendedMetaphorsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-heading-sm font-heading">
-            Step 2 — Return to the image, don&rsquo;t repeat it
+            Step 2 - Return to the image, don&rsquo;t repeat it
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
@@ -140,7 +140,7 @@ export default async function ExtendedMetaphorsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-heading-sm font-heading">
-            Step 3 — Invert the image at the end
+            Step 3 - Invert the image at the end
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
@@ -205,7 +205,7 @@ export default async function ExtendedMetaphorsPage() {
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong className="text-foreground">Over-explaining.</strong> You do not need to write
-              &ldquo;it was like an animal&rdquo; every time. Trust the reader — use verbs and nouns
+              &ldquo;it was like an animal&rdquo; every time. Trust the reader - use verbs and nouns
               that belong to the image.
             </span>
           </li>

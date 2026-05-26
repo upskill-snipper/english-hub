@@ -44,7 +44,7 @@ export async function DELETE(request: NextRequest) {
       where: { supabaseUserId: authUser.id },
       select: { id: true },
     })
-    // Fallback for pre-backfill or mismatched rows — logged as a warning.
+    // Fallback for pre-backfill or mismatched rows - logged as a warning.
     const user =
       prismaUser ??
       (await prisma.user.findUnique({

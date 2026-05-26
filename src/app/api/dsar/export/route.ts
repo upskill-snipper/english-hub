@@ -5,7 +5,7 @@ import { compileUserData } from '@/lib/dsar'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
-// ─── GET /api/dsar/export — Export all user data ───────────────────────
+// ─── GET /api/dsar/export - Export all user data ───────────────────────
 
 export async function GET(request: NextRequest) {
   try {

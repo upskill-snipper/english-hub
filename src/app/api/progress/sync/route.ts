@@ -6,19 +6,19 @@ import { rateLimit } from '@/lib/rate-limit'
 // ─── POST /api/progress/sync ──────────────────────────────────────────
 //
 // Bulk upsert localStorage progress into Supabase tables. Splits the
-// payload across four tables — `progress_poems`, `progress_games`,
-// `progress_quizzes`, `progress_reading_age` — and stamps `user_id`
+// payload across four tables - `progress_poems`, `progress_games`,
+// `progress_quizzes`, `progress_reading_age` - and stamps `user_id`
 // from the authenticated session on every row (clients cannot forge
 // the user id by including it in the body).
 //
-// Auth: requires a Supabase session — returns 401 otherwise.
+// Auth: requires a Supabase session - returns 401 otherwise.
 // Rate limit: 10 syncs per hour per user (writes can be expensive and
 // the typical client only needs one sync per session).
 //
 // Response shape (always):
 //   { inserted: number, updated: number, errors: string[] }
 //
-// `errors` is best-effort per-table — a failure on one table does not
+// `errors` is best-effort per-table - a failure on one table does not
 // abort the others, and partial successes are still reported in the
 // counters. This avoids losing already-committed work on a partial
 // failure (e.g. quizzes succeed but reading_age trips a constraint).
@@ -129,7 +129,7 @@ async function syncUpsertTable<T extends { [k: string]: unknown }>(
   if (rows.length === 0) return
 
   // Determine which keys are already present so we can attribute
-  // counts. A failure here is non-fatal — fall back to treating
+  // counts. A failure here is non-fatal - fall back to treating
   // every row as inserted, which is the safer over-count.
   let existingKeys = new Set<string>()
   try {
@@ -144,7 +144,7 @@ async function syncUpsertTable<T extends { [k: string]: unknown }>(
       existingKeys = new Set(data.map((r) => String(r[keyField as string])))
     }
   } catch {
-    // Swallow — we'll just over-attribute to inserted.
+    // Swallow - we'll just over-attribute to inserted.
   }
 
   const { error } = await supabase.from(table).upsert(rows, { onConflict: conflictKey })
@@ -246,7 +246,7 @@ async function syncReadingAge(
 ): Promise<void> {
   if (readingAge.length === 0) return
 
-  // No natural conflict key — each completion is a new row. Insert
+  // No natural conflict key - each completion is a new row. Insert
   // straight into the table; every successful row counts as
   // inserted.
   const rows = readingAge.map((r) => ({

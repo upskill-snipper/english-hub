@@ -9,14 +9,14 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Much Ado About Nothing — Edexcel IGCSE Literature Study Guide',
+    title: 'Much Ado About Nothing - Edexcel IGCSE Literature Study Guide',
     description:
       'Much Ado About Nothing study hub for Edexcel IGCSE English Literature: plot, characters, themes overview and exam technique.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado',
   },
-  title: 'Much Ado About Nothing — Edexcel IGCSE Literature Study Guide',
+  title: 'Much Ado About Nothing - Edexcel IGCSE Literature Study Guide',
   description:
     'Much Ado About Nothing study hub for Edexcel IGCSE English Literature: plot, characters, themes overview and exam technique.',
 }
@@ -113,7 +113,7 @@ export default async function MuchAdoHubPage() {
   return (
     <main className="min-h-screen bg-background">
       <CourseJsonLd
-        name="Much Ado About Nothing — Edexcel IGCSE Literature Study Guide"
+        name="Much Ado About Nothing - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Much Ado About Nothing for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd

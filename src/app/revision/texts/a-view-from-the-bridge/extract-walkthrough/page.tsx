@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ────────────────────────────────────────────────────────────────────── */
-/*  Data — fragmentary fair-dealing only (≤15 words per fragment)         */
+/*  Data - fragmentary fair-dealing only (≤15 words per fragment)         */
 /* ────────────────────────────────────────────────────────────────────── */
 
 type WalkthroughCard = {
@@ -31,7 +31,7 @@ const CARDS: WalkthroughCard[] = [
   {
     id: 2,
     notice: 'Eddie repeatedly demands his "name", a single word he hurls at Marco like a weapon.',
-    say: 'The fragment "I want my name" — only four words long — is the play\'s tragic core. "Name" here is not identity but reputation, social standing, the right to walk through Red Hook unspat-upon. Eddie has destroyed this himself by phoning Immigration, yet he refuses to know it. The demand is therefore a refusal: a refusal to admit that the man who can return his name is the man he himself has annihilated.',
+    say: 'The fragment "I want my name" - only four words long - is the play\'s tragic core. "Name" here is not identity but reputation, social standing, the right to walk through Red Hook unspat-upon. Eddie has destroyed this himself by phoning Immigration, yet he refuses to know it. The demand is therefore a refusal: a refusal to admit that the man who can return his name is the man he himself has annihilated.',
     zoomOut:
       'Honour cultures across the Mediterranean treat name and reputation as transferable property that can be stolen. Marco, the Sicilian, accepts the grammar; Alfieri, the lawyer, knows the American court has no statute for it.',
   },
@@ -39,7 +39,7 @@ const CARDS: WalkthroughCard[] = [
     id: 3,
     notice:
       'Alfieri stands aside, narrating, his earlier prophecy of "destiny" now visibly arriving.',
-    say: 'Alfieri\'s presence at the climax converts the fight into theatre-within-theatre. He told us at the opening that he watched it "run its bloody course"; now we watch him watch. Miller deliberately removes suspense to install inevitability — the structural signature of Greek tragedy transposed to a longshoreman\'s street.',
+    say: 'Alfieri\'s presence at the climax converts the fight into theatre-within-theatre. He told us at the opening that he watched it "run its bloody course"; now we watch him watch. Miller deliberately removes suspense to install inevitability - the structural signature of Greek tragedy transposed to a longshoreman\'s street.',
     zoomOut:
       'The chorus in Sophocles narrates and laments without intervening. Alfieri is a lawyer precisely so the chorus has a modern profession: he is the institution that knows but cannot stop.',
   },
@@ -53,7 +53,7 @@ const CARDS: WalkthroughCard[] = [
   {
     id: 5,
     notice: "Catherine and Beatrice cry out as Eddie falls into Beatrice's arms, calling her name.",
-    say: "In dying, Eddie speaks his wife's name and not his niece's. Miller grants a flicker of return — the marriage acknowledged, however briefly — but withholds redemption. The fragment is too short to absolve a man who has done what Eddie has done; it is long enough only to humanise him.",
+    say: "In dying, Eddie speaks his wife's name and not his niece's. Miller grants a flicker of return - the marriage acknowledged, however briefly - but withholds redemption. The fragment is too short to absolve a man who has done what Eddie has done; it is long enough only to humanise him.",
     zoomOut:
       'Miller\'s essay "Tragedy and the Common Man" insists that ordinary lives can carry tragic weight. The Brooklyn waterfront is not a flaw in the form; it is the proof of the argument.',
   },
@@ -68,7 +68,7 @@ const CARDS: WalkthroughCard[] = [
   },
 ]
 
-const MODEL_PARAGRAPH = `The climactic confrontation between Eddie and Marco fulfils the prophetic structure that Alfieri has been laying down since the opening monologue, in which he tells the audience he watched the case "run its bloody course". The fragment "destiny" — invoked early and abandoned — returns wordlessly when Marco turns Eddie\'s own knife back upon him: Miller obeys the Aristotelian rule that the tragic instrument must be supplied by the hero himself. Eddie\'s repeated demand, only four words long — "I want my name" — exposes the substitution at the heart of the play. He has confused reputation with identity, and the Sicilian honour code Marco embodies recognises this confusion exactly as a Theban audience would have recognised hubris. Alfieri, narrating from the side, fulfils the formal role of the Greek chorus: he knows, he warns, he cannot prevent. Miller\'s genius is to relocate the agora to the Red Hook waterfront without losing the form\'s gravity. The neighbours become the polis; the longshoreman becomes the protagonist; the lawyer becomes Tiresias. When Alfieri concedes, in the closing fragment, his "alarm" alongside admiration, Miller is staging the precise catharsis Aristotle demanded — pity and fear held in unresolved tension — and proving that tragic dignity is not a privilege of kings but is available, terribly, to a Brooklyn dock-worker who allowed himself to be wholly known.`
+const MODEL_PARAGRAPH = `The climactic confrontation between Eddie and Marco fulfils the prophetic structure that Alfieri has been laying down since the opening monologue, in which he tells the audience he watched the case "run its bloody course". The fragment "destiny" - invoked early and abandoned - returns wordlessly when Marco turns Eddie\'s own knife back upon him: Miller obeys the Aristotelian rule that the tragic instrument must be supplied by the hero himself. Eddie\'s repeated demand, only four words long - "I want my name" - exposes the substitution at the heart of the play. He has confused reputation with identity, and the Sicilian honour code Marco embodies recognises this confusion exactly as a Theban audience would have recognised hubris. Alfieri, narrating from the side, fulfils the formal role of the Greek chorus: he knows, he warns, he cannot prevent. Miller\'s genius is to relocate the agora to the Red Hook waterfront without losing the form\'s gravity. The neighbours become the polis; the longshoreman becomes the protagonist; the lawyer becomes Tiresias. When Alfieri concedes, in the closing fragment, his "alarm" alongside admiration, Miller is staging the precise catharsis Aristotle demanded - pity and fear held in unresolved tension - and proving that tragic dignity is not a privilege of kings but is available, terribly, to a Brooklyn dock-worker who allowed himself to be wholly known.`
 
 const MODEL_WORD_COUNT = MODEL_PARAGRAPH.trim().split(/\s+/).length
 
@@ -109,7 +109,7 @@ export default function ExtractWalkthroughPage() {
             <Badge variant="outline">Extract Skills</Badge>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Extract Walkthrough — The Climactic Confrontation
+            Extract Walkthrough - The Climactic Confrontation
           </h1>
           <p className="text-muted-foreground text-lg">
             Eddie versus Marco in the Red Hook street: how Arthur Miller stages the inevitable. A
@@ -133,8 +133,8 @@ export default function ExtractWalkthroughPage() {
           </CardHeader>
           <CardContent className="space-y-3 text-sm leading-relaxed">
             <p>
-              By this point Alfieri\'s opening prophecy — that he watched the case "run its bloody
-              course" — is about to land. The neighbours are gathered. Beatrice and Catherine try to
+              By this point Alfieri\'s opening prophecy - that he watched the case "run its bloody
+              course" - is about to land. The neighbours are gathered. Beatrice and Catherine try to
               hold Eddie back. Marco arrives publicly. Within minutes a knife will be drawn, turned,
               and Eddie will die in his wife\'s arms.
             </p>
@@ -202,10 +202,10 @@ export default function ExtractWalkthroughPage() {
               <CardTitle className="text-lg">Eddie\'s name as honour</CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
-              {/* VERIFIED: Penguin Modern Classics edition — Eddie's line is "He's gonna give it back to me" (not "give it to me"). Fragments rephrased to match the original wording. */}
+              {/* VERIFIED: Penguin Modern Classics edition - Eddie's line is "He's gonna give it back to me" (not "give it to me"). Fragments rephrased to match the original wording. */}
               <p>
-                Eddie spends the climax demanding the return of his "name". Across short fragments —
-                "I want my name", "Marco's got my name", "he's gonna give it back to me" — Miller
+                Eddie spends the climax demanding the return of his "name". Across short fragments -
+                "I want my name", "Marco's got my name", "he's gonna give it back to me" - Miller
                 exposes how the Sicilian honour code has migrated, untranslated, into 1950s
                 Brooklyn.
               </p>
@@ -228,8 +228,8 @@ export default function ExtractWalkthroughPage() {
                 must come from the institution that knows the law but cannot enforce justice.
               </p>
               <p>
-                The climax is therefore framed by him on both sides — prophesied at the start,
-                lamented at the end — and the audience experiences inevitability rather than
+                The climax is therefore framed by him on both sides - prophesied at the start,
+                lamented at the end - and the audience experiences inevitability rather than
                 surprise, exactly the effect Sophocles built into Oedipus.
               </p>
             </CardContent>
@@ -258,9 +258,9 @@ export default function ExtractWalkthroughPage() {
               <CardTitle className="text-lg">Immigrant code vs American law</CardTitle>
             </CardHeader>
             <CardContent className="text-sm leading-relaxed space-y-2">
-              {/* VERIFIED: Penguin Modern Classics edn — Marco's line is "In my country he would be dead by now" (the word "by" was missing in the earlier draft). */}
+              {/* VERIFIED: Penguin Modern Classics edn - Marco's line is "In my country he would be dead by now" (the word "by" was missing in the earlier draft). */}
               <p>
-                Marco\'s earlier fragment — "In my country he would be dead by now" — is fulfilled
+                Marco\'s earlier fragment - "In my country he would be dead by now" - is fulfilled
                 in the climax. Two legal systems are visibly in collision: Alfieri\'s American
                 statute book, which has nothing to say about informing on a cousin, and the Sicilian
                 code, which demands blood.
@@ -280,7 +280,7 @@ export default function ExtractWalkthroughPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-primary" />
-                Model paragraph — 250 words
+                Model paragraph - 250 words
               </CardTitle>
               <CardDescription>
                 How the climax fulfils Alfieri\'s foreshadowing of "destiny" and Miller\'s
@@ -308,7 +308,7 @@ export default function ExtractWalkthroughPage() {
                 </li>
                 <li>
                   Always link Alfieri to the Greek chorus tradition when discussing structure or
-                  inevitability — this is high-value AO3 territory.
+                  inevitability - this is high-value AO3 territory.
                 </li>
                 <li>
                   Treat "name" as a near-technical term in the play\'s honour vocabulary. Tracking
@@ -316,7 +316,7 @@ export default function ExtractWalkthroughPage() {
                 </li>
                 <li>
                   Marco turning Eddie\'s own knife on him is the play\'s clearest dramatisation of
-                  hamartia — the tragic instrument is supplied by the hero himself.
+                  hamartia - the tragic instrument is supplied by the hero himself.
                 </li>
                 <li>
                   Connect the play to Miller\'s essay "Tragedy and the Common Man" if you have read

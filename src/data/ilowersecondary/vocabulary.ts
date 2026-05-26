@@ -1,10 +1,10 @@
 /**
- * VOCABULARY BUILDER — iLowerSecondary English (LEH11).
+ * VOCABULARY BUILDER - iLowerSecondary English (LEH11).
  *
  * Theme-organised word banks for the recurring Section A / Section B
  * topics on the Pearson Edexcel International Award in Lower Secondary
  * English. Precise vocabulary is rewarded under WAO1 (form, communication
- * and purpose) and WAO2 (ambitious spelling) — see `@/lib/ilowersecondary/spec`.
+ * and purpose) and WAO2 (ambitious spelling) - see `@/lib/ilowersecondary/spec`.
  *
  * Every definition is original, written in UK English and checked for
  * accuracy. Every example sentence is an original work by The English Hub

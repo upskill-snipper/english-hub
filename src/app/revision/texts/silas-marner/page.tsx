@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Silas Marner — Study Guide | The English Hub',
+    title: 'Silas Marner - Study Guide | The English Hub',
     description:
       'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
   },
-  title: 'Silas Marner — Study Guide',
+  title: 'Silas Marner - Study Guide',
   description:
     'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -606,7 +606,7 @@ export default async function SilasMarnerPage() {
   return (
     <>
       <CourseJsonLd
-        name="Silas Marner — Complete GCSE Study Guide"
+        name="Silas Marner - Complete GCSE Study Guide"
         description="In-depth study guide for Silas Marner covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

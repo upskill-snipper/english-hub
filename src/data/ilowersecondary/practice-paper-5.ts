@@ -1,5 +1,5 @@
 /**
- * ORIGINAL PRACTICE PAPER 5 — theme: "Change"
+ * ORIGINAL PRACTICE PAPER 5 - theme: "Change"
  *
  * Modelled exactly on the Pearson Edexcel International Award in Lower
  * Secondary English achievement test LEH11/01 (structure only). EVERY
@@ -7,12 +7,12 @@
  * No past-paper text, novel or website has been reproduced or adapted.
  *
  * Factual content in the two non-fiction texts is limited to
- * well-known, verifiable biology (Text 1 — the metamorphosis of a
- * butterfly) or a clearly fictional, invented town scenario (Text 2 —
+ * well-known, verifiable biology (Text 1 - the metamorphosis of a
+ * butterfly) or a clearly fictional, invented town scenario (Text 2 -
  * an opinion column about the made-up town of Marrowfield). Text 3 is
  * original fiction.
  *
- * Qualification facts, AO codes and mark grids are NOT restated here —
+ * Qualification facts, AO codes and mark grids are NOT restated here -
  * the consumer page imports them from '@/lib/ilowersecondary/spec'.
  */
 
@@ -108,13 +108,13 @@ export const PRACTICE_PAPER_5: PracticePaper = {
   instructions: [
     'Use black ink or black ball-point pen.',
     'Answer ALL questions in Section A and the ONE question in Section B.',
-    'Answer the questions in the spaces provided — there may be more space than you need.',
+    'Answer the questions in the spaces provided - there may be more space than you need.',
     'Dictionaries may NOT be used in this examination.',
     'The total mark for this paper is 70. The marks for each question are shown in brackets.',
     'Read each question carefully before you start to answer it. Check your answers if you have time at the end.',
   ],
 
-  // ─── Source Booklet — three original texts on the theme of change ──
+  // ─── Source Booklet - three original texts on the theme of change ──
   texts: [
     {
       id: 1,
@@ -145,8 +145,8 @@ export const PRACTICE_PAPER_5: PracticePaper = {
         'Next month the people of Marrowfield will be asked a simple question: should the old, fenced-off stretch of riverbank be turned into a public walking and cycling path? I have lived in this town for thirty years, and I believe the answer should be a confident yes.',
         'I understand why some neighbours are nervous. Change is uncomfortable, and the riverbank has looked the same for as long as most of us can remember. But "the same" is not the same as "good". That fence has kept families away from the water for a generation. It has kept children indoors when they could have been outdoors. Is that really the Marrowfield we want to protect?',
         'Picture the path on a Saturday morning. Picture older residents walking safely beside the river instead of along a narrow road. Picture children learning to ride a bicycle somewhere green rather than grey. Picture neighbours who have never spoken stopping to talk. None of that is happening behind a locked fence.',
-        'The objections we hear most often do not survive a closer look. Some say the path will cost too much; in fact the council has set the money aside and no household will pay a penny more. Others worry about noise and litter, yet every town that has opened a riverside path has reported the opposite — cleaner banks, because people finally care for a place they are allowed to use.',
-        'Towns that refuse to change do not stay the same; they slowly fade. Marrowfield has a chance to choose the braver path — quite literally. When the vote comes, please choose it. Our river has waited long enough, and so have we.',
+        'The objections we hear most often do not survive a closer look. Some say the path will cost too much; in fact the council has set the money aside and no household will pay a penny more. Others worry about noise and litter, yet every town that has opened a riverside path has reported the opposite - cleaner banks, because people finally care for a place they are allowed to use.',
+        'Towns that refuse to change do not stay the same; they slowly fade. Marrowfield has a chance to choose the braver path - quite literally. When the vote comes, please choose it. Our river has waited long enough, and so have we.',
       ],
     },
     {
@@ -158,11 +158,11 @@ export const PRACTICE_PAPER_5: PracticePaper = {
       title: 'The Last Box',
       byline: 'An original short story written for The English Hub',
       paragraphs: [
-        'The last box was the smallest, and Priya carried it down the stairs as if it might break. The house was empty now in a way it had never been before — no carpet to soften her footsteps, no pictures to tell her which wall was which. Her voice, when she tested it with a quiet "hello", came back to her as a stranger.',
-        'She had not wanted any of this. Her parents had used careful words — "a fresh start", "a wonderful opportunity", "you will love it once you settle in" — but careful words, Priya had learned, were the ones adults used when they already knew you would not like the answer. Three hundred miles. A new school. A bedroom she had not chosen.',
+        'The last box was the smallest, and Priya carried it down the stairs as if it might break. The house was empty now in a way it had never been before - no carpet to soften her footsteps, no pictures to tell her which wall was which. Her voice, when she tested it with a quiet "hello", came back to her as a stranger.',
+        'She had not wanted any of this. Her parents had used careful words - "a fresh start", "a wonderful opportunity", "you will love it once you settle in" - but careful words, Priya had learned, were the ones adults used when they already knew you would not like the answer. Three hundred miles. A new school. A bedroom she had not chosen.',
         'In the doorway of what used to be her room she stopped. The walls still held faint pale rectangles where her posters had been, like the shadows of things rather than the things themselves. She pressed her palm flat against the cool plaster and, for a moment, refused to take it away.',
         'Her father called from the van, not unkindly, that it was time. Priya did not answer at once. She was looking at the small mark by the window where, years ago, she had stood against the wall while her grandmother drew a pencil line above her head and wrote the date beside it. The line was higher now than she remembered. She had grown into this house, and she was leaving it anyway.',
-        'She closed the door softly, the way you close a door on someone who is sleeping. Outside, the morning was bright and ordinary and did not care that anything had ended. Priya climbed into the van, set the small box on her lap, and looked straight ahead — not because she was ready, but because the road only went one way, and she had decided she would rather meet it than be dragged.',
+        'She closed the door softly, the way you close a door on someone who is sleeping. Outside, the morning was bright and ordinary and did not care that anything had ended. Priya climbed into the van, set the small box on her lap, and looked straight ahead - not because she was ready, but because the road only went one way, and she had decided she would rather meet it than be dragged.',
       ],
     },
   ],
@@ -214,13 +214,13 @@ export const PRACTICE_PAPER_5: PracticePaper = {
       prompt:
         'In Text 1 the writer describes the inside of the chrysalis as “a kind of living soup”. Put a cross in ONE box to show what this comparison suggests.',
       options: [
-        'A — the caterpillar is being cooked',
-        'B — much of the body has broken down into a fluid state',
-        'C — the chrysalis is full of water',
-        'D — the caterpillar has died inside the case',
+        'A - the caterpillar is being cooked',
+        'B - much of the body has broken down into a fluid state',
+        'C - the chrysalis is full of water',
+        'D - the caterpillar has died inside the case',
       ],
       markScheme: {
-        answer: 'B — much of the body has broken down into a fluid state',
+        answer: 'B - much of the body has broken down into a fluid state',
         notes: '1 mark for B only.',
       },
     },
@@ -259,7 +259,7 @@ export const PRACTICE_PAPER_5: PracticePaper = {
         'In the final paragraph of Text 1 the writer says: “Change, in this case, is not an ending. It is the whole point.” What did the writer mean by this, and what is its effect on the reader?',
       markScheme: {
         answer:
-          'Meaning: for the butterfly, the transformation is not a loss of its old life but the very purpose of its existence — it was always heading towards this. Effect: ends the article on a thoughtful, reassuring note; reframes change as something positive and intended, leaving the reader with a wider message about change itself.',
+          'Meaning: for the butterfly, the transformation is not a loss of its old life but the very purpose of its existence - it was always heading towards this. Effect: ends the article on a thoughtful, reassuring note; reframes change as something positive and intended, leaving the reader with a wider message about change itself.',
         notes:
           '1 mark for explaining the meaning; 1 mark for the effect on the reader. Do not credit an unexplained lift of the quotation.',
       },
@@ -312,7 +312,7 @@ export const PRACTICE_PAPER_5: PracticePaper = {
         'In Text 2 the writer states: “Towns that refuse to change do not stay the same; they slowly fade.” What is the writer’s purpose here, and how does this affect the reader?',
       markScheme: {
         answer:
-          'Purpose: to warn the reader that refusing change is not a safe, neutral choice but a harmful one — standing still actually means decline. Effect: creates a sense of risk and urgency, making the reader more willing to vote for the path to avoid the town “fading”.',
+          'Purpose: to warn the reader that refusing change is not a safe, neutral choice but a harmful one - standing still actually means decline. Effect: creates a sense of risk and urgency, making the reader more willing to vote for the path to avoid the town “fading”.',
         notes: '1 mark for the writer’s purpose; 1 mark for the effect on the reader.',
       },
     },
@@ -354,7 +354,7 @@ export const PRACTICE_PAPER_5: PracticePaper = {
         },
       ],
       markScheme: {
-        answer: 'Row 1 — Text 2; Row 2 — Text 1; Row 3 — Text 2; Row 4 — Neither.',
+        answer: 'Row 1 - Text 2; Row 2 - Text 1; Row 3 - Text 2; Row 4 - Neither.',
         notes:
           '2 marks for all four rows correct; 1 mark for two or three rows correct; 0 marks for one or none correct.',
       },
@@ -368,7 +368,7 @@ export const PRACTICE_PAPER_5: PracticePaper = {
         'How does the writer of Text 2 use language to persuade the people of Marrowfield to vote for the path? Make TWO developed points, each supported with evidence from the text.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the inclusive first person and direct address — “I have lived in this town for thirty years”, “the Marrowfield we want to protect” — builds trust and a shared sense of community; (2) the anaphora of “Picture…” paints an appealing, concrete future that makes change feel desirable; (3) the structured rebuttal of objections — “The objections we hear most often do not survive a closer look” — makes the argument seem fair and reasonable; (4) the warning metaphor “they slowly fade” presents refusing change as a real danger, creating urgency.',
+          'Indicative content (any two developed points): (1) the inclusive first person and direct address - “I have lived in this town for thirty years”, “the Marrowfield we want to protect” - builds trust and a shared sense of community; (2) the anaphora of “Picture…” paints an appealing, concrete future that makes change feel desirable; (3) the structured rebuttal of objections - “The objections we hear most often do not survive a closer look” - makes the argument seem fair and reasonable; (4) the warning metaphor “they slowly fade” presents refusing change as a real danger, creating urgency.',
         notes:
           'Up to 2 marks per developed point: 1 mark for an appropriate point with evidence, 1 mark for explaining the effect on the reader. Maximum 4 marks.',
       },
@@ -463,7 +463,7 @@ export const PRACTICE_PAPER_5: PracticePaper = {
         'How does the writer of Text 3 use language and structure to show that Priya is upset by the change but is starting to accept it? Make TWO developed points, each supported with evidence.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the simile of the pale rectangles “like the shadows of things rather than the things themselves” shows her sense of loss as the home empties; (2) the pencil growth line she “had grown into this house, and she was leaving it anyway” uses a small concrete detail to convey a large emotional change; (3) the structural turn in the final paragraph — closing the door “the way you close a door on someone who is sleeping” — marks a quiet, gentle acceptance; (4) the ending “not because she was ready… but because the road only went one way” shows determination replacing resistance.',
+          'Indicative content (any two developed points): (1) the simile of the pale rectangles “like the shadows of things rather than the things themselves” shows her sense of loss as the home empties; (2) the pencil growth line she “had grown into this house, and she was leaving it anyway” uses a small concrete detail to convey a large emotional change; (3) the structural turn in the final paragraph - closing the door “the way you close a door on someone who is sleeping” - marks a quiet, gentle acceptance; (4) the ending “not because she was ready… but because the road only went one way” shows determination replacing resistance.',
         notes:
           'Up to 2 marks per developed point: 1 mark for a point with appropriate evidence, 1 mark for explaining the effect. Maximum 4 marks.',
       },
@@ -490,7 +490,7 @@ export const PRACTICE_PAPER_5: PracticePaper = {
     ao: 'WAO1 + WAO2',
     marks: 30,
     context:
-      'The texts in Section A all explore the theme of change — a creature being completely rebuilt, a town deciding whether to change, and one person facing a change she did not choose.',
+      'The texts in Section A all explore the theme of change - a creature being completely rebuilt, a town deciding whether to change, and one person facing a change she did not choose.',
     task: 'Write the opening of a story in which a character experiences a big change in their life and slowly comes to accept it.',
     bullets: [
       'Write to entertain a reader of your own age.',

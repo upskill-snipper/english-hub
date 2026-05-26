@@ -15,7 +15,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { NextRequest } from 'next/server'
 
 // ---------------------------------------------------------------------------
-// Mocks — defined before the route module is loaded
+// Mocks - defined before the route module is loaded
 // ---------------------------------------------------------------------------
 
 interface SupabaseSessionFixture {
@@ -47,7 +47,7 @@ let insertCalls: InsertCall[] = []
 // echo back rows so the route's inserted-vs-updated split is testable.
 let existingRows: Record<string, Array<Record<string, unknown>>> = {}
 
-// Per-table error fixtures — let a test simulate a DB failure on a
+// Per-table error fixtures - let a test simulate a DB failure on a
 // single table without breaking the others.
 let upsertErrors: Record<string, { message: string } | null> = {}
 let insertErrors: Record<string, { message: string } | null> = {}
@@ -235,7 +235,7 @@ describe('POST /api/progress/sync', () => {
 
   it('ignores any client-supplied user_id and binds to the session id', async () => {
     // Even if the schema permitted extra fields, the route never copies
-    // them — the row's user_id always comes from the session.
+    // them - the row's user_id always comes from the session.
     await invokePost(
       buildRequest({
         poems: [{ slug: 'tissue', board: 'aqa' }],
@@ -297,7 +297,7 @@ describe('POST /api/progress/sync', () => {
     })
   })
 
-  // ── Reading age (insert only — no natural key) ─────────────────────
+  // ── Reading age (insert only - no natural key) ─────────────────────
 
   it('inserts (does NOT upsert) reading age rows', async () => {
     await invokePost(

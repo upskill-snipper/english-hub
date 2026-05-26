@@ -12,11 +12,11 @@ import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge — Key Quotes | The English Hub',
+    title: 'A View from the Bridge - Key Quotes | The English Hub',
     description:
       'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
   },
-  title: 'A View from the Bridge — Key Quotes',
+  title: 'A View from the Bridge - Key Quotes',
   description:
     'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
   alternates: {
@@ -49,7 +49,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 2,
     text: '"You can quicker get back a million dollars that was stole than a word that you gave away."',
     speaker: 'Eddie',
-    context: 'Act 1 — warning about informers',
+    context: 'Act 1 - warning about informers',
     analysis:
       "Eddie states the community's code of silence. Miller uses dramatic irony: the audience will remember this line when Eddie makes his phone call, making his betrayal doubly devastating.",
     themes: ['Betrayal', 'Immigration'],
@@ -58,16 +58,16 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 3,
     text: '"She\'s a baby."',
     speaker: 'Eddie',
-    context: 'Act 1 — on Catherine, repeated',
+    context: 'Act 1 - on Catherine, repeated',
     analysis:
-      "Eddie's refusal to see Catherine as an adult. Miller uses the repetition to show that this is not observation but compulsion — Eddie needs Catherine to remain a child to justify his possessiveness.",
+      "Eddie's refusal to see Catherine as an adult. Miller uses the repetition to show that this is not observation but compulsion - Eddie needs Catherine to remain a child to justify his possessiveness.",
     themes: ['Love and obsession', 'Masculinity'],
   },
   {
     id: 4,
     text: '"I want my name!"',
     speaker: 'Eddie',
-    context: 'Act 2 — final confrontation with Marco',
+    context: 'Act 2 - final confrontation with Marco',
     analysis:
       "Eddie's last demand. Reputation is the only currency he values, and he has destroyed it himself. Miller concentrates the entire tragedy into four words.",
     themes: ['Masculinity', 'Betrayal'],
@@ -78,7 +78,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Alfieri',
     context: 'Closing monologue',
     analysis:
-      "Alfieri's troubled eulogy. Miller suggests that Eddie's self-destruction made him fully transparent — terrible and, in some formal sense, admirable. The play refuses simple moral judgment.",
+      "Alfieri's troubled eulogy. Miller suggests that Eddie's self-destruction made him fully transparent - terrible and, in some formal sense, admirable. The play refuses simple moral judgment.",
     themes: ['Tragedy', 'Love and obsession'],
   },
   {
@@ -94,16 +94,16 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 7,
     text: '"In my country he would be dead now."',
     speaker: 'Marco',
-    context: 'Act 2 — to Alfieri in jail',
+    context: 'Act 2 - to Alfieri in jail',
     analysis:
-      'Marco invokes the Sicilian code. Miller shows that the "old world" justice system has no room for mercy or delay — it is immediate and absolute.',
+      'Marco invokes the Sicilian code. Miller shows that the "old world" justice system has no room for mercy or delay - it is immediate and absolute.',
     themes: ['Justice vs law', 'Immigration'],
   },
   {
     id: 8,
     text: '"You want somethin\' else, Eddie, and you can never have her."',
     speaker: 'Beatrice',
-    context: 'Act 2 — confrontation',
+    context: 'Act 2 - confrontation',
     analysis:
       "The play's most shocking line. Beatrice names the desire everyone else has only hinted at. Miller gives the truth to the wife, making it an act of love, anger and desperation.",
     themes: ['Love and obsession', 'Betrayal'],
@@ -112,9 +112,9 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 9,
     text: '"His eyes were like tunnels."',
     speaker: 'Alfieri',
-    context: 'Act 1 — describing Eddie',
+    context: 'Act 1 - describing Eddie',
     analysis:
-      "Alfieri sees Eddie's obsession narrowing his vision. Miller uses the metaphor to show that fixation eliminates peripheral awareness — Eddie can see only Catherine.",
+      "Alfieri sees Eddie's obsession narrowing his vision. Miller uses the metaphor to show that fixation eliminates peripheral awareness - Eddie can see only Catherine.",
     themes: ['Love and obsession', 'Tragedy'],
   },
   {
@@ -148,7 +148,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 13,
     text: '"It is my fault, Eddie."',
     speaker: 'Rodolpho',
-    context: "Act 2 — before Eddie's death",
+    context: "Act 2 - before Eddie's death",
     analysis:
       'Rodolpho offers reconciliation. Miller shows that the younger generation is capable of the compromise Alfieri values. Eddie cannot accept it, and that inability kills him.',
     themes: ['Betrayal', 'The American Dream'],
@@ -157,7 +157,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 14,
     text: '"Animal! You go on your knees to me!"',
     speaker: 'Eddie to Marco',
-    context: 'Act 2 — final confrontation',
+    context: 'Act 2 - final confrontation',
     analysis:
       'Eddie demands physical submission from the man who exposed him. Miller shows that even at the end Eddie cannot see himself; he calls Marco the animal at the moment his own degradation is total.',
     themes: ['Masculinity', 'Tragedy'],
@@ -211,7 +211,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 20,
     text: '"Marco goes around shakin\' hands."',
     speaker: 'Louis',
-    context: 'Act 2 — community reaction',
+    context: 'Act 2 - community reaction',
     analysis:
       "A single line showing how quickly Eddie's betrayal becomes public knowledge. Miller uses community gossip to demonstrate that Eddie's reputation is already destroyed.",
     themes: ['Betrayal', 'Immigration'],
@@ -261,7 +261,7 @@ export default async function AViewFromTheBridgeKeyQuotesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text — Play
+              Modern Text - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -298,7 +298,7 @@ export default async function AViewFromTheBridgeKeyQuotesPage() {
                   </span>
                 </div>
                 <p className="text-caption uppercase tracking-wide text-primary">
-                  {q.speaker} — {q.context}
+                  {q.speaker} - {q.context}
                 </p>
                 <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                 <div className="flex flex-wrap gap-1.5 pt-1">

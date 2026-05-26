@@ -10,10 +10,10 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Funeral Blues — W.H. Auden | Cambridge IGCSE 0475',
+    title: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
     description: 'Study guide for ',
   },
-  title: 'Funeral Blues — W.H. Auden | Cambridge IGCSE 0475',
+  title: 'Funeral Blues - W.H. Auden | Cambridge IGCSE 0475',
   description:
     "Study guide for 'Funeral Blues' by W.H. Auden (1940 revised version). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",
   alternates: {
@@ -37,7 +37,7 @@ export default async function FuneralBluesPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
-        name="Funeral Blues — W.H. Auden (Cambridge IGCSE 0475)"
+        name="Funeral Blues - W.H. Auden (Cambridge IGCSE 0475)"
         description="Study guide stub for 'Funeral Blues' by W.H. Auden (1940 revised version). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4."
       />
       <BreadcrumbJsonLd

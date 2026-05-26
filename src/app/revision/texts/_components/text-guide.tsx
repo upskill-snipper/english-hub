@@ -135,8 +135,8 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
               {isAr
-                ? `${CHROME_AR.modernText} — ${data.category}`
-                : `Modern Text — ${data.category}`}
+                ? `${CHROME_AR.modernText} - ${data.category}`
+                : `Modern Text - ${data.category}`}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -149,8 +149,8 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             {isAr
-              ? `${CHROME_AR.byAuthor} ${data.author} — ${pick(data.year, data.yearAr)}`
-              : `by ${data.author} — ${data.year}`}
+              ? `${CHROME_AR.byAuthor} ${data.author} - ${pick(data.year, data.yearAr)}`
+              : `by ${data.author} - ${data.year}`}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             {pick(data.intro, data.introAr)}

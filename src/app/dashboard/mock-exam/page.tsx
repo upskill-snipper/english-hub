@@ -552,7 +552,7 @@ function ExamInProgress() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Top Bar — Timer & Progress */}
+      {/* Top Bar - Timer & Progress */}
       <div
         className={cn(
           'sticky top-14 z-40 border-b bg-background/95 backdrop-blur-sm',
@@ -644,7 +644,7 @@ function ExamInProgress() {
       </div>
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 gap-0">
-        {/* Sidebar — Section Navigation */}
+        {/* Sidebar - Section Navigation */}
         <aside className="hidden w-56 shrink-0 border-r bg-card/40 p-4 lg:block">
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Sections
@@ -704,7 +704,7 @@ function ExamInProgress() {
           </Dialog>
         </aside>
 
-        {/* Main Content — Questions */}
+        {/* Main Content - Questions */}
         <main className="flex-1 px-4 py-6 sm:px-6">
           {/* Section Header */}
           <div className="mb-6">
@@ -1151,7 +1151,7 @@ function ExamResults() {
                         </div>
                       )}
 
-                      {/* AI Essay Feedback (inline) — only for long-form answers */}
+                      {/* AI Essay Feedback (inline) - only for long-form answers */}
                       {hasAnswer && wordCountForAnswer(studentAnswer) >= 100 && (
                         <EssayFeedbackInline
                           board={paper.board}

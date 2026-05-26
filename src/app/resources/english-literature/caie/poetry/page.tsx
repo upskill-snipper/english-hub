@@ -181,12 +181,12 @@ const poems = [
       {
         point: 'Resistance and surrender',
         detail:
-          "\"In spite of myself, the insidious mastery of song / Betrays me back\" — the speaker fights the pull of nostalgia. 'Insidious' and 'Betrays' are negative words, suggesting he views nostalgia as a weakness. Yet he cannot resist.",
+          "\"In spite of myself, the insidious mastery of song / Betrays me back\" - the speaker fights the pull of nostalgia. 'Insidious' and 'Betrays' are negative words, suggesting he views nostalgia as a weakness. Yet he cannot resist.",
       },
       {
         point: 'Childhood detail',
         detail:
-          "\"A child sitting under the piano, in the boom of the tinkling strings\" — the juxtaposition of 'boom' and 'tinkling' captures both the physical vibration of the instrument and its delicate sound. The child sits beneath the piano, suggesting smallness and protection.",
+          "\"A child sitting under the piano, in the boom of the tinkling strings\" - the juxtaposition of 'boom' and 'tinkling' captures both the physical vibration of the instrument and its delicate sound. The child sits beneath the piano, suggesting smallness and protection.",
       },
       {
         point: 'The ending',
@@ -222,7 +222,7 @@ const poems = [
       {
         point: 'Turning point',
         detail:
-          "\"The game is over. / Come out, come out\" — the shift from others calling to silence is abrupt. The child's triumph ('I've won! Here I am!') is immediately undercut by the emptiness.",
+          "\"The game is over. / Come out, come out\" - the shift from others calling to silence is abrupt. The child's triumph ('I've won! Here I am!') is immediately undercut by the emptiness.",
       },
       {
         point: 'The final line',
@@ -253,7 +253,7 @@ const poems = [
       {
         point: 'God-like self-image',
         detail:
-          '"It took the whole of Creation / To produce my foot, my each feather" — the hawk sees itself as the pinnacle of evolution, the purpose of Creation. The capitalisation of \'Creation\' suggests divine origin, elevating the hawk to godlike status.',
+          '"It took the whole of Creation / To produce my foot, my each feather" - the hawk sees itself as the pinnacle of evolution, the purpose of Creation. The capitalisation of \'Creation\' suggests divine origin, elevating the hawk to godlike status.',
       },
       {
         point: 'Violence without apology',
@@ -294,12 +294,12 @@ const poems = [
       {
         point: 'Sound and movement',
         detail:
-          "\"the rush of fortune ... silver crashes to the ground\" — the onomatopoeia and dynamic verbs create a sense of urgent, joyful chaos. The sibilance in 'silver' and 'crashes' mimics the sound of flowing water.",
+          "\"the rush of fortune ... silver crashes to the ground\" - the onomatopoeia and dynamic verbs create a sense of urgent, joyful chaos. The sibilance in 'silver' and 'crashes' mimics the sound of flowing water.",
       },
       {
         point: 'The ending',
         detail:
-          '"the small bones of her feet" — this intimate, fragile image of a child in the water is beautiful but also poignant. The \'small bones\' remind us of vulnerability; the blessing is temporary, the poverty enduring.',
+          '"the small bones of her feet" - this intimate, fragile image of a child in the water is beautiful but also poignant. The \'small bones\' remind us of vulnerability; the blessing is temporary, the poverty enduring.',
       },
     ],
     keyQuotes: [
@@ -309,7 +309,7 @@ const poems = [
       'over the small bones of her feet',
     ],
     rights:
-      '© Bloodaxe Books — fair-dealing extract. Imtiaz Dharker is a Pakistani-born British poet; raised in Glasgow; divides time between London and Mumbai.',
+      '© Bloodaxe Books - fair-dealing extract. Imtiaz Dharker is a Pakistani-born British poet; raised in Glasgow; divides time between London and Mumbai.',
   },
   {
     title: 'Half-Past Two',
@@ -327,12 +327,12 @@ const poems = [
       {
         point: "The teacher's authority",
         detail:
-          "\"She said he'd done Something Very Wrong\" — the capitalisation parodies the teacher's gravity from the child's perspective. The child does not understand the offence; he only understands the emotional weight adults impose.",
+          "\"She said he'd done Something Very Wrong\" - the capitalisation parodies the teacher's gravity from the child's perspective. The child does not understand the offence; he only understands the emotional weight adults impose.",
       },
       {
         point: 'Timelessness',
         detail:
-          '"He was intolerably the clockless land for ever" — once freed from imposed time, the child experiences a dreamlike state. The adverb \'intolerably\' is ambiguous: is the timelessness frightening or liberating? Fanthorpe suggests both.',
+          '"He was intolerably the clockless land for ever" - once freed from imposed time, the child experiences a dreamlike state. The adverb \'intolerably\' is ambiguous: is the timelessness frightening or liberating? Fanthorpe suggests both.',
       },
       {
         point: 'The ending',
@@ -358,22 +358,22 @@ const poems = [
       {
         point: 'Opening line',
         detail:
-          '"The moon rolls over the roof and falls behind / my house" — the enjambment makes the moon seem to literally fall, creating a sense of instability. The domestic setting (\'my house\') contrasts with the cosmic scale of the moon.',
+          '"The moon rolls over the roof and falls behind / my house" - the enjambment makes the moon seem to literally fall, creating a sense of instability. The domestic setting (\'my house\') contrasts with the cosmic scale of the moon.',
       },
       {
         point: 'Self-reflexive writing',
         detail:
-          '"A long winded poem about nothing" — the poet\'s self-deprecation acknowledges the absurdity of writing about not being able to write. This metapoetic quality (a poem about poetry) is characteristic of the Songs of Ourselves anthology.',
+          '"A long winded poem about nothing" - the poet\'s self-deprecation acknowledges the absurdity of writing about not being able to write. This metapoetic quality (a poem about poetry) is characteristic of the Songs of Ourselves anthology.',
       },
       {
         point: 'Disconnection',
         detail:
-          '"I am not in this poem" — the speaker feels alienated from his own creative output. The statement is paradoxical: he is literally in the poem (he wrote it), yet emotionally absent. This captures the feeling of creative impotence.',
+          '"I am not in this poem" - the speaker feels alienated from his own creative output. The statement is paradoxical: he is literally in the poem (he wrote it), yet emotionally absent. This captures the feeling of creative impotence.',
       },
       {
         point: 'The ending',
         detail:
-          "\"and / close the door behind him on the night\" — the pronoun shift from 'I' to 'him' is significant. The poet steps outside himself, viewing himself in the third person. The closed door suggests resolution, or perhaps just avoidance.",
+          "\"and / close the door behind him on the night\" - the pronoun shift from 'I' to 'him' is significant. The poet steps outside himself, viewing himself in the third person. The closed door suggests resolution, or perhaps just avoidance.",
       },
     ],
     keyQuotes: [
@@ -394,17 +394,17 @@ const poems = [
       {
         point: 'Scale and power',
         detail:
-          "\"Their conquering hooves which trod the stubble down\" — the verb 'conquering' elevates the horses to warrior-like status. The alliteration of 'hooves' and the heavy stress pattern mimic the rhythmic pounding of their movement.",
+          "\"Their conquering hooves which trod the stubble down\" - the verb 'conquering' elevates the horses to warrior-like status. The alliteration of 'hooves' and the heavy stress pattern mimic the rhythmic pounding of their movement.",
       },
       {
         point: 'Elemental imagery',
         detail:
-          '"Their eyes as brilliant and as wide as night" — the simile grants the horses cosmic qualities. They are not merely animals but embodiments of natural power, linked to darkness and vastness.',
+          '"Their eyes as brilliant and as wide as night" - the simile grants the horses cosmic qualities. They are not merely animals but embodiments of natural power, linked to darkness and vastness.',
       },
       {
         point: 'Childhood perspective',
         detail:
-          '"I was a child then, and now I am old" — the simple temporal contrast frames the poem as retrospective. The childish awe has not faded but crystallised, suggesting some experiences are so powerful they transcend time.',
+          '"I was a child then, and now I am old" - the simple temporal contrast frames the poem as retrospective. The childish awe has not faded but crystallised, suggesting some experiences are so powerful they transcend time.',
       },
       {
         point: 'Mythological quality',

@@ -46,10 +46,7 @@ function memCleanup() {
   })
 }
 
-function memRateLimit(
-  key: string,
-  options: RateLimitOptions
-): RateLimitResult {
+function memRateLimit(key: string, options: RateLimitOptions): RateLimitResult {
   memCleanup()
   const now = Date.now()
   const windowMs = options.windowSeconds * 1000
@@ -74,7 +71,7 @@ function memRateLimit(
 }
 
 // ---------------------------------------------------------------------------
-// Public API (same interface — drop-in replacement)
+// Public API (same interface - drop-in replacement)
 // ---------------------------------------------------------------------------
 
 interface RateLimitOptions {
@@ -97,18 +94,17 @@ const rlCache = new Map<string, Ratelimit>()
  * Check rate limit for a given key (typically IP or user ID).
  * Uses Upstash Redis when configured, falls back to in-memory for local dev.
  */
-export async function rateLimit(
-  key: string,
-  options: RateLimitOptions
-): Promise<RateLimitResult> {
+export async function rateLimit(key: string, options: RateLimitOptions): Promise<RateLimitResult> {
   const client = getRedis()
 
   if (!client) {
-    // Fallback to in-memory — only suitable for local dev.
+    // Fallback to in-memory - only suitable for local dev.
     // In production serverless, each instance has its own Map so rate
     // limiting is effectively disabled.
     if (process.env.NODE_ENV === 'production') {
-      console.error('[rate-limit] CRITICAL: Redis not configured — rate limiting is non-functional in production')
+      console.error(
+        '[rate-limit] CRITICAL: Redis not configured - rate limiting is non-functional in production',
+      )
     }
     return memRateLimit(key, options)
   }
@@ -144,8 +140,6 @@ export async function rateLimit(
  */
 export function getClientIp(headers: Headers): string {
   return (
-    headers.get('x-real-ip') ||
-    headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    'unknown'
+    headers.get('x-real-ip') || headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
   )
 }

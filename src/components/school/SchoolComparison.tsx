@@ -179,7 +179,7 @@ export function SchoolComparison() {
         <span className="font-medium">first 10 schools only</span>
       </p>
       <p className="max-w-5xl mx-auto mt-1 text-center text-amber-700 text-xs font-medium">
-        ⚡ Prices increasing August 2026 — lock in your founding rate now.
+        ⚡ Prices increasing August 2026 - lock in your founding rate now.
       </p>
       <p className="max-w-5xl mx-auto mt-2 text-center text-slate-500 text-xs">{VAT_LABEL}</p>
     </section>

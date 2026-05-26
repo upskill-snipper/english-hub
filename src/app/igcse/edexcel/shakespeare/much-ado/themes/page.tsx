@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Much Ado About Nothing Themes — Edexcel IGCSE Literature',
+    title: 'Much Ado About Nothing Themes - Edexcel IGCSE Literature',
     description:
       'Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE Literature: love, deception, honour, marriage and gender, with quotes and analysis.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes',
   },
-  title: 'Much Ado About Nothing Themes — Edexcel IGCSE Literature',
+  title: 'Much Ado About Nothing Themes - Edexcel IGCSE Literature',
   description:
     'Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE Literature: love, deception, honour, marriage and gender, with quotes and analysis.',
 }

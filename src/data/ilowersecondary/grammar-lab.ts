@@ -1,5 +1,5 @@
 /**
- * GRAMMAR LAB — original skill-builder reference data for LEH11.
+ * GRAMMAR LAB - original skill-builder reference data for LEH11.
  *
  * Supports the spec's grammar, punctuation and spelling expectations
  * (RAO3/RAO4 reading; WAO2 / writing skill 2.3). Every definition is
@@ -7,7 +7,7 @@
  * original work composed for The English Hub and is not reproduced from
  * any past paper or copyrighted source.
  *
- * Spec figures, AO codes and skill descriptors are NOT restated here —
+ * Spec figures, AO codes and skill descriptors are NOT restated here -
  * the consumer page imports those from '@/lib/ilowersecondary/spec'.
  */
 
@@ -303,7 +303,7 @@ export const WORD_CLASSES: WordClassGroup[] = [
     id: 'determiners',
     name: 'Determiners',
     summary:
-      'A determiner comes before a noun to clarify what the noun refers to — including articles, demonstratives, possessives and quantifiers.',
+      'A determiner comes before a noun to clarify what the noun refers to - including articles, demonstratives, possessives and quantifiers.',
     entries: [
       {
         id: 'determiner',
@@ -373,7 +373,7 @@ export const SENTENCE_TYPES: SentenceType[] = [
       'A minor sentence is a deliberately incomplete sentence (lacking a main verb or subject) used for effect; it is grammatically irregular but communicatively complete.',
     examples: ['Silence.', 'No way back now.'],
     whenToUse:
-      'Use a minor sentence sparingly in narrative or persuasive writing for dramatic emphasis or a punchy, conversational tone — not in formal writing.',
+      'Use a minor sentence sparingly in narrative or persuasive writing for dramatic emphasis or a punchy, conversational tone - not in formal writing.',
   },
 ]
 
@@ -417,7 +417,7 @@ export const PUNCTUATION: PunctuationEntry[] = [
     rule: 'Use commas to separate items in a list, to mark off a subordinate clause or a fronted adverbial, and to enclose extra (parenthetical) information.',
     example: 'After the storm, the volunteers, who had worked all night, cleared the road.',
     commonError:
-      'The comma splice — joining two complete sentences with only a comma, e.g. "It rained, we stayed in."',
+      'The comma splice - joining two complete sentences with only a comma, e.g. "It rained, we stayed in."',
   },
   {
     id: 'speech-marks',
@@ -460,7 +460,7 @@ export const PUNCTUATION: PunctuationEntry[] = [
     name: 'Dash',
     specNamed: false,
     rule: 'Use a pair of dashes to enclose an interruption or aside, or a single dash to add a dramatic afterthought or summary.',
-    example: 'The cellar held one thing — and it was not the treasure they expected.',
+    example: 'The cellar held one thing - and it was not the treasure they expected.',
     commonError:
       'Overusing dashes in place of all other punctuation, which makes writing feel breathless.',
   },
@@ -495,13 +495,13 @@ export interface SpellingTrap {
 export const SPELLING_TRAPS: SpellingTrap[] = [
   {
     word: 'separate',
-    whyTricky: 'Often misspelled "seperate" — the unstressed middle vowel sounds like "er".',
+    whyTricky: 'Often misspelled "seperate" - the unstressed middle vowel sounds like "er".',
     tip: 'There is "a rat" in sep-a-rat-e.',
   },
   {
     word: 'definitely',
     whyTricky: 'Frequently written "definately"; the vowel before "ly" is an i, not an a.',
-    tip: 'There is no "a" — it contains the word "finite".',
+    tip: 'There is no "a" - it contains the word "finite".',
   },
   {
     word: 'necessary',
@@ -525,7 +525,7 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   },
   {
     word: 'occasion',
-    whyTricky: 'Double c but only a single s — the reverse is a common error.',
+    whyTricky: 'Double c but only a single s - the reverse is a common error.',
     tip: 'Two c’s but only one s for the occasion.',
   },
   {
@@ -536,7 +536,7 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   {
     word: 'believe',
     whyTricky: 'The i/e order is easily reversed.',
-    tip: 'Never beLIEve a LIE — the lie is in the middle.',
+    tip: 'Never beLIEve a LIE - the lie is in the middle.',
   },
   {
     word: 'weird',
@@ -551,7 +551,7 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   {
     word: 'government',
     whyTricky: 'The first n is silent and often dropped.',
-    tip: 'A government should govern — keep the "n" you can hear in "govern".',
+    tip: 'A government should govern - keep the "n" you can hear in "govern".',
   },
   {
     word: 'February',
@@ -566,22 +566,22 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   {
     word: 'colleague',
     whyTricky: 'The double l and the silent -ue ending are easy to miss.',
-    tip: 'A colleague is in your league — keep "league" at the end.',
+    tip: 'A colleague is in your league - keep "league" at the end.',
   },
   {
     word: 'privilege',
     whyTricky: 'Contains no d and no t, despite sounding like it might.',
-    tip: 'It is vile to lose a privilege — spot "vile" inside (privi-lege).',
+    tip: 'It is vile to lose a privilege - spot "vile" inside (privi-lege).',
   },
   {
     word: 'definite',
     whyTricky: 'Often spelled with an a; the ending is "-ite".',
-    tip: 'A "finite" thing is definite — both end "-ite".',
+    tip: 'A "finite" thing is definite - both end "-ite".',
   },
   {
     word: 'lightning',
     whyTricky: 'Confused with "lightening" (making lighter); the weather word has no e.',
-    tip: 'Lightning strikes fast — it is too quick for an extra "e".',
+    tip: 'Lightning strikes fast - it is too quick for an extra "e".',
   },
   {
     word: 'argument',
@@ -595,18 +595,18 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   },
   {
     word: 'tomorrow',
-    whyTricky: 'One m but double r — frequently reversed.',
+    whyTricky: 'One m but double r - frequently reversed.',
     tip: 'Tomorrow you will row, row: one m, two r’s.',
   },
   {
     word: 'disappear',
-    whyTricky: 'One s, double p — the opposite is a common error.',
+    whyTricky: 'One s, double p - the opposite is a common error.',
     tip: 'Dis + appear: "appear" still has its double p when it disappears.',
   },
   {
     word: 'until',
     whyTricky: 'Only one l, unlike "till" or "fulfil" assumptions.',
-    tip: 'Wait until — just one l at the end.',
+    tip: 'Wait until - just one l at the end.',
   },
   {
     word: 'forty',
@@ -616,7 +616,7 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   {
     word: 'truly',
     whyTricky: 'Drops the e of "true" before -ly.',
-    tip: 'Truly loses the "e" — it is true.',
+    tip: 'Truly loses the "e" - it is true.',
   },
   {
     word: 'foreign',
@@ -630,12 +630,12 @@ export const SPELLING_TRAPS: SpellingTrap[] = [
   },
   {
     word: 'pronunciation',
-    whyTricky: 'Differs from "pronounce" — there is no "ou" in the middle.',
+    whyTricky: 'Differs from "pronounce" - there is no "ou" in the middle.',
     tip: 'You pro-NUN-ciate it: keep "nun", drop the "ou" of pronounce.',
   },
   {
     word: 'recommend',
-    whyTricky: 'One c, double m — frequently reversed.',
+    whyTricky: 'One c, double m - frequently reversed.',
     tip: 'Re + commend: "commend" keeps its single c and double m.',
   },
   {
@@ -662,63 +662,63 @@ export const SELF_TEST: SelfTestItem[] = [
     kind: 'identify-class',
     prompt:
       'Name the word class of the underlined word: "The hikers walked QUICKLY before the storm broke."',
-    answer: 'Adverb — "quickly" modifies the verb "walked", describing how they walked.',
+    answer: 'Adverb - "quickly" modifies the verb "walked", describing how they walked.',
   },
   {
     id: 2,
     kind: 'identify-class',
     prompt: 'Name the word class of the underlined word: "She MUST finish the report before noon."',
-    answer: 'Modal verb — "must" expresses obligation and is followed by the base verb "finish".',
+    answer: 'Modal verb - "must" expresses obligation and is followed by the base verb "finish".',
   },
   {
     id: 3,
     kind: 'identify-class',
     prompt: 'Name the word class of the underlined word: "A FLOCK of geese landed on the pond."',
-    answer: 'Collective noun — "flock" names a group treated as one unit.',
+    answer: 'Collective noun - "flock" names a group treated as one unit.',
   },
   {
     id: 4,
     kind: 'identify-class',
     prompt: 'Name the word class of the underlined word: "We waited BENEATH the bridge."',
-    answer: 'Preposition — "beneath" shows the position of "we" in relation to the bridge.',
+    answer: 'Preposition - "beneath" shows the position of "we" in relation to the bridge.',
   },
   {
     id: 5,
     kind: 'identify-class',
     prompt:
       'Name the word class of the underlined word: "ALTHOUGH it was late, they kept working."',
-    answer: 'Subordinating conjunction — "although" introduces a subordinate clause.',
+    answer: 'Subordinating conjunction - "although" introduces a subordinate clause.',
   },
   {
     id: 6,
     kind: 'identify-class',
     prompt: 'Name the word class of the underlined word: "Those keys are MINE."',
-    answer: 'Possessive pronoun — "mine" shows ownership and stands alone (no apostrophe).',
+    answer: 'Possessive pronoun - "mine" shows ownership and stands alone (no apostrophe).',
   },
   {
     id: 7,
     kind: 'identify-class',
     prompt: 'Is "Stir the sauce gently" a command? Name the class of "Stir".',
     answer:
-      'Yes — it is a command. "Stir" is an imperative verb (the subject "you" is understood).',
+      'Yes - it is a command. "Stir" is an imperative verb (the subject "you" is understood).',
   },
   {
     id: 8,
     kind: 'identify-class',
     prompt: 'Name the word class of the underlined word: "She wanted TO LEARN Arabic."',
-    answer: 'Infinitive — "to learn" is the base form of the verb preceded by "to".',
+    answer: 'Infinitive - "to learn" is the base form of the verb preceded by "to".',
   },
   {
     id: 9,
     kind: 'identify-class',
     prompt: 'Regular or irregular verb? "The vase BROKE when it fell."',
-    answer: 'Irregular verb — "break" becomes "broke" (it does not add -ed).',
+    answer: 'Irregular verb - "break" becomes "broke" (it does not add -ed).',
   },
   {
     id: 10,
     kind: 'identify-class',
     prompt: 'Name the word class of the underlined word: "SEVERAL volunteers arrived early."',
-    answer: 'Determiner (a quantifier) — "several" comes before the noun and tells how many.',
+    answer: 'Determiner (a quantifier) - "several" comes before the noun and tells how many.',
   },
   {
     id: 11,

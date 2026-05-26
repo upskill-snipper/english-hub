@@ -22,7 +22,7 @@ export const metadata = {
     'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
   alternates: { canonical: 'https://theenglishhub.app/for-students' },
   openGraph: {
-    title: 'GCSE and IGCSE English revision for students — The English Hub',
+    title: 'GCSE and IGCSE English revision for students - The English Hub',
     description:
       'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
     images: [
@@ -30,13 +30,13 @@ export const metadata = {
         url: '/api/og?title=Your+English+revision,+in+one+place&subtitle=GCSE+and+IGCSE+%E2%80%94+built+around+your+exam+board',
         width: 1200,
         height: 630,
-        alt: 'Your English revision, in one place — GCSE and IGCSE built around your exam board',
+        alt: 'Your English revision, in one place - GCSE and IGCSE built around your exam board',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GCSE and IGCSE English revision for students — The English Hub',
+    title: 'GCSE and IGCSE English revision for students - The English Hub',
     description:
       'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
     images: [
@@ -152,7 +152,7 @@ export default async function ForStudentsPage() {
           { name: 'For Students', url: 'https://theenglishhub.app/for-students' },
         ]}
       />
-      {/* Infographic banner — one-glance product summary for students */}
+      {/* Infographic banner - one-glance product summary for students */}
       {/* TODO(designer): regenerate /infographics/for-students.png to remove "Aanya, Student" testimonial */}
       <InfographicBanner
         src="/infographics/for-students.png"
@@ -256,7 +256,7 @@ export default async function ForStudentsPage() {
         </div>
       </section>
 
-      {/* FAQ section — also emits FAQPage JSON-LD below for rich results */}
+      {/* FAQ section - also emits FAQPage JSON-LD below for rich results */}
       <section className="px-4 sm:px-6 py-16">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center">

@@ -195,13 +195,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Quiet and traditional',
-      'Rebellious, playful, and unconventional — she defies traditional expectations',
+      'Rebellious, playful, and unconventional - she defies traditional expectations',
       'Angry and critical',
       'Absent from the poem',
     ],
     correctIndex: 1,
     explanation:
-      'The wife is presented as unconventional and rebellious — striking in appearance, irreverent towards traditional roles, and playfully disruptive. She defies expectations. (Description paraphrased; verify wording against the primary edition.)',
+      'The wife is presented as unconventional and rebellious - striking in appearance, irreverent towards traditional roles, and playfully disruptive. She defies expectations. (Description paraphrased; verify wording against the primary edition.)',
     topic: 'Meaning',
     difficulty: 'higher',
   },
@@ -211,13 +211,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Sad and melancholy',
-      'Joyful, humorous, and celebratory — love is presented as fun and liberating',
+      'Joyful, humorous, and celebratory - love is presented as fun and liberating',
       'Angry and bitter',
       'Formal and serious',
     ],
     correctIndex: 1,
     explanation:
-      'The poem is consistently joyful and humorous. Love is presented as playful, passionate, and liberating — a stark contrast to the more painful love poems in the anthology.',
+      'The poem is consistently joyful and humorous. Love is presented as playful, passionate, and liberating - a stark contrast to the more painful love poems in the anthology.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -227,7 +227,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Wealth and success',
-      'Duty, family expectation, and the older generation — which the speaker neglects for love',
+      'Duty, family expectation, and the older generation - which the speaker neglects for love',
       'A happy workplace',
       "The speaker's dream",
     ],
@@ -291,7 +291,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They make the speaker sad',
-      "Their comic complaints highlight the speaker's neglect of duty — but the reader sides with love over commerce",
+      "Their comic complaints highlight the speaker's neglect of duty - but the reader sides with love over commerce",
       'They are supportive',
       'They are ignored entirely',
     ],
@@ -320,10 +320,10 @@ const REVISION_TOPICS = [
     summary:
       'Singh Song! celebrates joyful, playful love, cultural identity, the tension between duty and desire, and unconventional relationships.',
     keyPoints: [
-      'Love as joy and play — contrasts with painful love poems in the anthology',
-      'Duty vs desire — the shop (obligation) vs the wife (passion)',
-      'Cultural identity — Punjabi-British experience celebrated through language',
-      'The wife as unconventional — she defies traditional expectations',
+      'Love as joy and play - contrasts with painful love poems in the anthology',
+      'Duty vs desire - the shop (obligation) vs the wife (passion)',
+      'Cultural identity - Punjabi-British experience celebrated through language',
+      'The wife as unconventional - she defies traditional expectations',
     ],
   },
   {
@@ -331,10 +331,10 @@ const REVISION_TOPICS = [
     summary:
       'Nagra uses Punjabi-English dialect, humour, food imagery, and playful cultural references to celebrate love.',
     keyPoints: [
-      'Punjabi-English dialect — language as cultural identity',
-      'Food imagery — chutney and cooking as expressions of intimacy',
-      'Humour — love is fun, not solemn',
-      "Customers' complaints — comic contrast with the love story",
+      'Punjabi-English dialect - language as cultural identity',
+      'Food imagery - chutney and cooking as expressions of intimacy',
+      'Humour - love is fun, not solemn',
+      "Customers' complaints - comic contrast with the love story",
     ],
   },
   {
@@ -342,10 +342,10 @@ const REVISION_TOPICS = [
     summary:
       "Free verse with song-like qualities, dialogue sections, and a refrain. The loose form mirrors the speaker's carefree attitude.",
     keyPoints: [
-      "Free verse — no rigid form, matching the speaker's freedom",
-      'Song-like refrain — "Singh Song!" as musical, oral quality',
-      'Dialogue — voices of customers contrast with the love story',
-      'Long, flowing lines — energy and exuberance',
+      "Free verse - no rigid form, matching the speaker's freedom",
+      'Song-like refrain - "Singh Song!" as musical, oral quality',
+      'Dialogue - voices of customers contrast with the love story',
+      'Long, flowing lines - energy and exuberance',
     ],
   },
 ]
@@ -389,7 +389,7 @@ export default function SinghSongPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Singh Song! by Daljit Nagra — Analysis & Annotations"
+        name="Singh Song! by Daljit Nagra - Analysis & Annotations"
         description="Line-by-line analysis of Singh Song! with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd
@@ -451,7 +451,7 @@ export default function SinghSongPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Copyright / verification notice — Singh Song! is in copyright (Faber & Faber on behalf of
+      {/* Copyright / verification notice - Singh Song! is in copyright (Faber & Faber on behalf of
           Daljit Nagra) and its exact wording cannot be verified here, so the poem is NOT reproduced.
           The study guide below is paraphrase only. */}
       <aside
@@ -460,7 +460,7 @@ export default function SinghSongPage() {
         className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
       >
         <p>
-          <strong>Important — not the poem text:</strong> &ldquo;Singh Song!&rdquo; is in copyright
+          <strong>Important - not the poem text:</strong> &ldquo;Singh Song!&rdquo; is in copyright
           (Faber &amp; Faber on behalf of Daljit Nagra) and its exact wording could not be verified
           for this guide, so the poem is <strong>not reproduced here</strong>. The reading guide
           below is a <strong>paraphrase in our own words</strong> describing the poem&rsquo;s

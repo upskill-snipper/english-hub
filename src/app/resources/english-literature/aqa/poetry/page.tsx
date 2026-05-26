@@ -9,12 +9,12 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'AQA Poetry Anthology — Power and Conflict & Love and Relationships',
+    title: 'AQA Poetry Anthology - Power and Conflict & Love and Relationships',
     description:
       'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology. Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/poetry' },
-  title: 'AQA Poetry Anthology — Power and Conflict & Love and Relationships',
+  title: 'AQA Poetry Anthology - Power and Conflict & Love and Relationships',
   description:
     'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology. Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
 }
@@ -141,7 +141,7 @@ const LOVE_AND_RELATIONSHIPS_POEMS: PoemEntry[] = [
     slug: 'porphyrias-lover',
   },
   {
-    title: "Sonnet 29 — 'I think of thee!'",
+    title: "Sonnet 29 - 'I think of thee!'",
     poet: 'Elizabeth Barrett Browning',
     themes: ['Longing', 'Romantic love', 'Absence'],
     slug: 'sonnet-29',
@@ -284,7 +284,7 @@ export default async function AqaPoetryPage() {
                 {POWER_AND_CONFLICT_POEMS.map((p) => (
                   <li key={p.title}>
                     <a href={`#pac-${p.slug}`} className="text-primary hover:underline">
-                      {p.title} — {p.poet}
+                      {p.title} - {p.poet}
                     </a>
                   </li>
                 ))}
@@ -298,7 +298,7 @@ export default async function AqaPoetryPage() {
                 {LOVE_AND_RELATIONSHIPS_POEMS.map((p) => (
                   <li key={p.title}>
                     <a href={`#lar-${p.slug}`} className="text-primary hover:underline">
-                      {p.title} — {p.poet}
+                      {p.title} - {p.poet}
                     </a>
                   </li>
                 ))}
@@ -314,7 +314,7 @@ export default async function AqaPoetryPage() {
           </h2>
           <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
-              Your school will have studied <strong>one cluster</strong> — either Power and Conflict
+              Your school will have studied <strong>one cluster</strong> - either Power and Conflict
               or Love and Relationships. In the exam (Paper 2, Section B), one poem from your
               cluster will be <strong>printed on the paper</strong>, and you must compare it with{' '}
               <strong>another poem of your choice</strong> from the same cluster (from memory).
@@ -335,7 +335,7 @@ export default async function AqaPoetryPage() {
         {/* ── AO breakdown ────────────────────────────────────── */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
-            {_tr(`Key Skills — What Markers Look For`)}
+            {_tr(`Key Skills - What Markers Look For`)}
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border p-5 shadow-md">
@@ -367,7 +367,7 @@ export default async function AqaPoetryPage() {
                 effects. Use relevant subject terminology.
               </p>
               <p className="mt-2 text-xs font-medium text-primary">
-                Tip: Don&apos;t just identify techniques — explain the effect on the reader. Compare
+                Tip: Don&apos;t just identify techniques - explain the effect on the reader. Compare
                 how both poets use different methods to achieve similar or contrasting effects.
               </p>
             </div>
@@ -384,7 +384,7 @@ export default async function AqaPoetryPage() {
               </p>
               <p className="mt-2 text-xs font-medium text-primary">
                 Tip: Weave context into your analysis naturally. Explain how the poet&apos;s
-                background or historical period shapes the poem&apos;s meaning — don&apos;t bolt on
+                background or historical period shapes the poem&apos;s meaning - don&apos;t bolt on
                 a paragraph of biography.
               </p>
             </div>
@@ -412,7 +412,7 @@ export default async function AqaPoetryPage() {
                   <li className="flex gap-2">
                     <span className="font-semibold text-foreground">5 mins</span>
                     <span>
-                      Plan your response — identify 3-4 comparison points (themes, methods,
+                      Plan your response - identify 3-4 comparison points (themes, methods,
                       context).
                     </span>
                   </li>
@@ -438,7 +438,7 @@ export default async function AqaPoetryPage() {
                     caught off guard.
                   </li>
                   <li>
-                    Write about the <strong>named poem in more detail</strong> — you have it in
+                    Write about the <strong>named poem in more detail</strong> - you have it in
                     front of you, so quote precisely.
                   </li>
                   <li>
@@ -458,7 +458,7 @@ export default async function AqaPoetryPage() {
         {/* ── Power and Conflict cluster ──────────────────────── */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
-            {_tr(`Power and Conflict — All 15 Poems`)}
+            {_tr(`Power and Conflict - All 15 Poems`)}
           </h2>
           <p className="mt-2 text-muted-foreground">
             15 poems exploring the abuse and loss of power, the reality of conflict, the power of
@@ -478,7 +478,7 @@ export default async function AqaPoetryPage() {
         {/* ── Love and Relationships cluster ──────────────────── */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
-            Love and Relationships — All 15 Poems
+            Love and Relationships - All 15 Poems
           </h2>
           <p className="mt-2 text-muted-foreground">
             15 poems exploring romantic love, family bonds, desire, memory, loss, and the
@@ -512,7 +512,7 @@ export default async function AqaPoetryPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction</strong> — briefly state how both poems present the named
+                    <strong>Introduction</strong> - briefly state how both poems present the named
                     theme. Identify a key overarching similarity or difference to give your essay a
                     clear argument.
                   </span>
@@ -522,7 +522,7 @@ export default async function AqaPoetryPage() {
                     2
                   </span>
                   <span>
-                    <strong>{_tr(`Comparative paragraphs (3-4)`)}</strong> — each paragraph should
+                    <strong>{_tr(`Comparative paragraphs (3-4)`)}</strong> - each paragraph should
                     discuss <strong>both poems</strong>. Compare a specific technique, image, or
                     idea. Use comparative connectives throughout.
                   </span>
@@ -532,7 +532,7 @@ export default async function AqaPoetryPage() {
                     3
                   </span>
                   <span>
-                    <strong>{_tr(`Analyse methods (analysing language and structure)`)}</strong> —
+                    <strong>{_tr(`Analyse methods (analysing language and structure)`)}</strong> -
                     don&apos;t just compare what the poems say, but <em>how</em> they say it.
                     Compare language choices, structural techniques, form, tone, and imagery. Name
                     the technique and explain its effect.
@@ -543,7 +543,7 @@ export default async function AqaPoetryPage() {
                     4
                   </span>
                   <span>
-                    <strong>{_tr(`Integrate context (relating to context)`)}</strong> — weave in
+                    <strong>{_tr(`Integrate context (relating to context)`)}</strong> - weave in
                     relevant context about the poet&apos;s life, the time period, or social
                     attitudes. Explain how context shapes the poem&apos;s meaning rather than
                     bolting on biographical facts.
@@ -554,7 +554,7 @@ export default async function AqaPoetryPage() {
                     5
                   </span>
                   <span>
-                    <strong>{_tr(`Brief conclusion`)}</strong> — return to your overarching
+                    <strong>{_tr(`Brief conclusion`)}</strong> - return to your overarching
                     argument. Which poem is more effective or striking? Or how do they complement
                     each other?
                   </span>
@@ -602,31 +602,31 @@ export default async function AqaPoetryPage() {
                   </h4>
                   <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     <li>
-                      <strong>Ozymandias</strong> + <strong>{_tr(`My Last Duchess`)}</strong> —
+                      <strong>Ozymandias</strong> + <strong>{_tr(`My Last Duchess`)}</strong> -
                       abuse of power, arrogance
                     </li>
                     <li>
-                      <strong>Exposure</strong> + <strong>{_tr(`Bayonet Charge`)}</strong> — reality
+                      <strong>Exposure</strong> + <strong>{_tr(`Bayonet Charge`)}</strong> - reality
                       of war, suffering
                     </li>
                     <li>
-                      <strong>Remains</strong> + <strong>{_tr(`War Photographer`)}</strong> — guilt,
+                      <strong>Remains</strong> + <strong>{_tr(`War Photographer`)}</strong> - guilt,
                       lasting trauma
                     </li>
                     <li>
                       <strong>{_tr(`Storm on the Island`)}</strong> +{' '}
-                      <strong>{_tr(`Extract from The Prelude`)}</strong> — power of nature, fear
+                      <strong>{_tr(`Extract from The Prelude`)}</strong> - power of nature, fear
                     </li>
                     <li>
-                      <strong>Poppies</strong> + <strong>Kamikaze</strong> — family and war,
+                      <strong>Poppies</strong> + <strong>Kamikaze</strong> - family and war,
                       personal cost
                     </li>
                     <li>
-                      <strong>London</strong> + <strong>{_tr(`Checking Out Me History`)}</strong> —
+                      <strong>London</strong> + <strong>{_tr(`Checking Out Me History`)}</strong> -
                       anger at authority, oppression
                     </li>
                     <li>
-                      <strong>Tissue</strong> + <strong>Ozymandias</strong> — fragility of power,
+                      <strong>Tissue</strong> + <strong>Ozymandias</strong> - fragility of power,
                       impermanence
                     </li>
                   </ul>
@@ -638,30 +638,30 @@ export default async function AqaPoetryPage() {
                   <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     <li>
                       <strong>{_tr(`When We Two Parted`)}</strong> +{' '}
-                      <strong>{_tr(`Neutral Tones`)}</strong> — end of love, bitterness
+                      <strong>{_tr(`Neutral Tones`)}</strong> - end of love, bitterness
                     </li>
                     <li>
                       <strong>{_tr(`Love&apos;s Philosophy`)}</strong> + <strong>Sonnet 29</strong>{' '}
-                      — desire and longing
+                      - desire and longing
                     </li>
                     <li>
                       <strong>{_tr(`Porphyria&apos;s Lover`)}</strong> +{' '}
-                      <strong>{_tr(`The Farmer&apos;s Bride`)}</strong> — obsession, power imbalance
+                      <strong>{_tr(`The Farmer&apos;s Bride`)}</strong> - obsession, power imbalance
                     </li>
                     <li>
-                      <strong>{_tr(`Walking Away`)}</strong> + <strong>Follower</strong> —
+                      <strong>{_tr(`Walking Away`)}</strong> + <strong>Follower</strong> -
                       parent-child bonds, letting go
                     </li>
                     <li>
                       <strong>{_tr(`Mother, any distance`)}</strong> +{' '}
-                      <strong>{_tr(`Walking Away`)}</strong> — growing independence
+                      <strong>{_tr(`Walking Away`)}</strong> - growing independence
                     </li>
                     <li>
-                      <strong>Eden Rock</strong> + <strong>Follower</strong> — memory, family bonds
+                      <strong>Eden Rock</strong> + <strong>Follower</strong> - memory, family bonds
                     </li>
                     <li>
                       <strong>{_tr(`Singh Song!`)}</strong> +{' '}
-                      <strong>{_tr(`Love&apos;s Philosophy`)}</strong> — joyful desire, devotion
+                      <strong>{_tr(`Love&apos;s Philosophy`)}</strong> - joyful desire, devotion
                     </li>
                   </ul>
                 </div>

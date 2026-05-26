@@ -394,7 +394,7 @@ export default function PersonalisedRevisionPage() {
             {modelParagraph && (
               <div>
                 <h3 className="font-serif text-lg font-medium mb-3">
-                  Model Paragraph — Grade {profile.predictedGrade}
+                  Model Paragraph - Grade {profile.predictedGrade}
                 </h3>
                 <div className="rounded-lg border border-border bg-muted/30 p-4 mb-3">
                   <p className="text-sm leading-relaxed italic">
@@ -447,7 +447,7 @@ export default function PersonalisedRevisionPage() {
               </div>
               <p className="text-xs text-muted-foreground mb-4">
                 These are designed to make you think beyond surface-level analysis. Do not look for
-                a &ldquo;right answer&rdquo; — the thinking process is what matters.
+                a &ldquo;right answer&rdquo; - the thinking process is what matters.
               </p>
               <div className="space-y-3">
                 {gradeAdvice?.stretch.map((q, i) => (
@@ -713,11 +713,11 @@ function getAOAdvice(ao: string, percentage: number): string {
     case 'AO2':
       return percentage < 50
         ? 'Your AO2 (language analysis) is your biggest area for improvement. Start with the What-How-Why framework: What technique is used? How does it work? Why did the writer choose it? Practise identifying techniques in short extracts before writing full paragraphs.'
-        : 'Your AO2 is developing but needs more depth. Move beyond naming techniques — analyse the connotations of specific words and explore how multiple techniques work together to create effects.'
+        : 'Your AO2 is developing but needs more depth. Move beyond naming techniques - analyse the connotations of specific words and explore how multiple techniques work together to create effects.'
     case 'AO3':
       return percentage < 50
         ? 'Your AO3 (context) needs attention. Learn 3-4 key contextual facts for each set text and practise weaving them into your analysis rather than adding them as separate paragraphs.'
-        : 'Your AO3 is developing. Focus on integrating context naturally — instead of "In Victorian times...", try "Dickens, writing in a society where..." This shows understanding rather than just knowledge.'
+        : 'Your AO3 is developing. Focus on integrating context naturally - instead of "In Victorian times...", try "Dickens, writing in a society where..." This shows understanding rather than just knowledge.'
     case 'AO4':
       return percentage < 50
         ? "Your AO4 (spelling, punctuation, and grammar) is holding you back. Read your work aloud to catch errors. Focus on the most common mistakes: there/their/they're, affect/effect, and comma splices."
@@ -731,7 +731,7 @@ function getGradeTips(grade: number): string[] {
   if (grade <= 3) {
     return [
       'Write in full sentences and paragraphs. Every paragraph should make one clear point.',
-      'Include at least one quotation per paragraph — even a short phrase like "brave Macbeth" counts.',
+      'Include at least one quotation per paragraph - even a short phrase like "brave Macbeth" counts.',
       'Use the PEE framework: Point, Evidence, Explain. This gives your writing clear structure.',
       'Read the question at least twice before writing. Underline the key words.',
       'Save 5 minutes at the end to check your spelling, punctuation, and grammar.',
@@ -741,16 +741,16 @@ function getGradeTips(grade: number): string[] {
     return [
       'Use the PEEL framework: Point, Evidence, Explain, Link back to the question.',
       'Embed quotations into your sentences rather than using standalone quotes.',
-      'Analyse specific word choices — explain what individual words suggest, connote, or imply.',
+      'Analyse specific word choices - explain what individual words suggest, connote, or imply.',
       'Include contextual knowledge linked to your analysis, not as a separate paragraph.',
       'Use the writer\'s name frequently: "Shakespeare presents..." to show awareness of the text as a construct.',
     ]
   }
   if (grade <= 7) {
     return [
-      'Structure your response around a clear thesis — an argument that runs through every paragraph.',
+      'Structure your response around a clear thesis - an argument that runs through every paragraph.',
       'Explore alternative interpretations: "While this could suggest X, it might also imply Y..."',
-      "Analyse structure and form alongside language — how does the writer's structure reinforce their themes?",
+      "Analyse structure and form alongside language - how does the writer's structure reinforce their themes?",
       'Use precise academic vocabulary and subject terminology naturally, not forced.',
       'Integrate context as an analytical tool: explain how context shapes meaning, not just what the context is.',
     ]
@@ -759,8 +759,8 @@ function getGradeTips(grade: number): string[] {
   return [
     'Write conceptualised responses where every paragraph advances your central argument.',
     'Engage with critical perspectives: consider feminist, Marxist, or post-colonial readings where appropriate.',
-    'Explore ambiguity and tension within the text — the best literature resists simple interpretation.',
+    'Explore ambiguity and tension within the text - the best literature resists simple interpretation.',
     'Show how form enacts meaning: a fragmented structure mirrors fragmentation, a circular narrative suggests entrapment.',
-    'Write with an assured scholarly voice — demonstrate sophisticated thinking, not just sophisticated vocabulary.',
+    'Write with an assured scholarly voice - demonstrate sophisticated thinking, not just sophisticated vocabulary.',
   ]
 }

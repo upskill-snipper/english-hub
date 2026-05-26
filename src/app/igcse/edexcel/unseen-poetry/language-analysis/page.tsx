@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
   MessageSquare,
@@ -68,26 +68,22 @@ const SEMANTIC_FIELDS = [
   {
     field: 'Warfare and conflict',
     words: ['battle', 'siege', 'wound', 'arm', 'victory', 'defeat', 'scar'],
-    typicalUse:
-      'Internal struggle, romantic conflict, political protest, the cost of survival.',
+    typicalUse: 'Internal struggle, romantic conflict, political protest, the cost of survival.',
   },
   {
     field: 'Religion and the sacred',
     words: ['prayer', 'soul', 'grace', 'sin', 'heaven', 'faith', 'bow'],
-    typicalUse:
-      'Moral weight, mortality, longing for transcendence, guilt, devotion to a beloved.',
+    typicalUse: 'Moral weight, mortality, longing for transcendence, guilt, devotion to a beloved.',
   },
   {
     field: 'The body',
     words: ['breath', 'pulse', 'hand', 'skin', 'heart', 'bone', 'tongue'],
-    typicalUse:
-      'Intimacy, mortality, desire, vulnerability, the self under pressure.',
+    typicalUse: 'Intimacy, mortality, desire, vulnerability, the self under pressure.',
   },
   {
     field: 'Movement and stillness',
     words: ['flutter', 'pause', 'drift', 'halt', 'rush', 'still', 'sway'],
-    typicalUse:
-      'Emotional shifts, the passage of time, freedom vs constraint, uncertainty.',
+    typicalUse: 'Emotional shifts, the passage of time, freedom vs constraint, uncertainty.',
   },
 ]
 
@@ -165,8 +161,8 @@ export default function LanguageAnalysisPage() {
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              What-How-Why, semantic fields, sound effects, and the tools that turn observation
-              into analysis
+              What-How-Why, semantic fields, sound effects, and the tools that turn observation into
+              analysis
             </p>
           </div>
         </div>
@@ -183,11 +179,10 @@ export default function LanguageAnalysisPage() {
           The difference between spotting a technique and analysing it
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          "There is a metaphor here" is a starting point, not an answer. The examiner
-          wants you to explain how the technique works and why the poet chose it. The
-          What-How-Why framework is the simplest, most reliable way to force your writing from
-          identification into analysis -- and it scales from a single-paragraph answer to a
-          full comparative essay.
+          "There is a metaphor here" is a starting point, not an answer. The examiner wants you to
+          explain how the technique works and why the poet chose it. The What-How-Why framework is
+          the simplest, most reliable way to force your writing from identification into analysis --
+          and it scales from a single-paragraph answer to a full comparative essay.
         </p>
       </section>
 
@@ -202,10 +197,7 @@ export default function LanguageAnalysisPage() {
 
         <div className="grid gap-4 md:grid-cols-3">
           {WHW_STEPS.map((step) => (
-            <div
-              key={step.letter}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
+            <div key={step.letter} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="mb-3 flex items-center gap-3">
                 <div
                   className={`flex size-12 items-center justify-center rounded-xl ${step.bgColour}`}
@@ -239,16 +231,15 @@ export default function LanguageAnalysisPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
-          Analysing a single image from Wordsworth&apos;s &ldquo;I Wandered Lonely as a Cloud&rdquo;:
+          Analysing a single image from Wordsworth&apos;s &ldquo;I Wandered Lonely as a
+          Cloud&rdquo;:
         </p>
         <div className="rounded-xl border border-border/40 bg-background/50 p-5 text-body-sm italic leading-relaxed text-foreground/90">
           {`Wordsworth personifies the daffodils as "tossing their heads in sprightly dance", imbuing the flowers with human vitality and communal joy. The participle "tossing" suggests unrestrained, almost mischievous movement, while the adjective "sprightly" -- archaic and slightly elevated -- lifts the daffodils out of mere description and into the realm of spirited agency. In this moment, the poet's loneliness (established in the opening simile) is answered not by another human but by the natural world acting as a community, reshaping the reader's sense of solitude: the speaker is alone, yet never truly by himself.`}
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <div className="rounded-xl border border-sky-500/20 bg-sky-500/[0.04] p-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1">
-              What
-            </p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1">What</p>
             <p className="text-xs text-muted-foreground">
               Personification of daffodils "tossing their heads in sprightly dance".
             </p>
@@ -279,9 +270,9 @@ export default function LanguageAnalysisPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Semantic Fields</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          A semantic field is a cluster of words drawn from the same area of meaning. Spotting
-          one tells the examiner you are reading the whole poem, not just one line at a time.
-          Here are the fields you will meet most often in unseen poetry.
+          A semantic field is a cluster of words drawn from the same area of meaning. Spotting one
+          tells the examiner you are reading the whole poem, not just one line at a time. Here are
+          the fields you will meet most often in unseen poetry.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -312,16 +303,12 @@ export default function LanguageAnalysisPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
           Sound is never neutral. Every time you identify a sound effect, immediately ask what
-          emotional texture it creates -- softness, harshness, rhythm, disruption. Sound is
-          meaning.
+          emotional texture it creates -- softness, harshness, rhythm, disruption. Sound is meaning.
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2">
           {SOUND_EFFECTS.map((s) => (
-            <div
-              key={s.name}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
+            <div key={s.name} className="rounded-2xl border border-border/60 bg-card p-5">
               <h3 className="text-sm font-semibold text-foreground">{s.name}</h3>
               <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                 <span className="font-semibold text-foreground">Definition: </span>
@@ -346,8 +333,8 @@ export default function LanguageAnalysisPage() {
           Now read the shape of the poem
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Language is only half the story. The form and structure of a poem -- sonnet, ballad,
-          free verse, enjambment -- carry as much meaning as the words.
+          Language is only half the story. The form and structure of a poem -- sonnet, ballad, free
+          verse, enjambment -- carry as much meaning as the words.
         </p>
         <Button
           variant="default"

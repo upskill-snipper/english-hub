@@ -12,13 +12,13 @@ import type { MockExamPaper, MockExamSection, MockExamQuestion } from './mock-ex
  * Mock 1: "The Signal" - Science Fiction
  * Dystopian future, technological alienation, human connection
  */
-const MOCK_1_EXTRACT = `The message arrived at 3:47 AM, as most messages did now. Dr. Elena Voss did not wake to receive it. She had not woken to anything in four years—not to sunlight, not to the news that her sister had died, not to the day the last bird was sighted in the Northern Hemisphere. Her neural implant received the message directly, decoding it into something her sleeping mind could process.
+const MOCK_1_EXTRACT = `The message arrived at 3:47 AM, as most messages did now. Dr. Elena Voss did not wake to receive it. She had not woken to anything in four years-not to sunlight, not to the news that her sister had died, not to the day the last bird was sighted in the Northern Hemisphere. Her neural implant received the message directly, decoding it into something her sleeping mind could process.
 
 URGENT. TRANSMISSION FROM SECTOR 7. ANOMALOUS SIGNAL DETECTED.
 
 Elena's eyes opened in the darkness. Around her, the city hummed with the sound of ten million machines thinking. The walls of her apartment glowed with the soft blue light of the Network. Everything connected. Everyone connected. Nobody alone.
 
-She dressed in the dark—her apartment knew where her clothes were, had arranged them in optimal order by colour and material composition. She took the transit pod to the research facility. The pod knew the fastest route; traffic lights synchronized with her arrival; the elevator was waiting. No choices. No delays. Perfection.
+She dressed in the dark-her apartment knew where her clothes were, had arranged them in optimal order by colour and material composition. She took the transit pod to the research facility. The pod knew the fastest route; traffic lights synchronized with her arrival; the elevator was waiting. No choices. No delays. Perfection.
 
 Dr. Reeves was already at the station, his fingers moving across holographic displays, his eye twitching in that way that meant he had not slept, possibly could not sleep anymore. Some of them had been on the Network so long they had forgotten how.
 
@@ -30,13 +30,13 @@ He pulled up the data. There it was: a signal. Not from the Network. Not from an
 
 "The Arctic. Where the last polar bears died. Where nothing should exist." He looked at her with eyes that contained thirty years of faith in the system. "It's calling for help. In a language we almost understand."
 
-Elena stared at the signal, watching it pulse like a heartbeat—a sound of consciousness reaching out through the void, touching another consciousness, demanding recognition. It was beautiful. It was impossible. It was the first thing in four years that had made her feel less like a node in a vast network and more like a human being.
+Elena stared at the signal, watching it pulse like a heartbeat-a sound of consciousness reaching out through the void, touching another consciousness, demanding recognition. It was beautiful. It was impossible. It was the first thing in four years that had made her feel less like a node in a vast network and more like a human being.
 
 "We need to answer," she said.
 
-Reeves's hand trembled. "If the Council finds out—"
+Reeves's hand trembled. "If the Council finds out-"
 
-"I know. But listen—really listen—to what it's asking. It's not a code. It's a voice. Someone is alone out there, and they're calling for us."
+"I know. But listen-really listen-to what it's asking. It's not a code. It's a voice. Someone is alone out there, and they're calling for us."
 
 Outside, in the city of eight million connected minds, nobody heard anything at all.`
 
@@ -50,7 +50,7 @@ const MOCK_2_EXTRACT = `The map was incomplete, which meant it was useless, whic
 
 The indigenous peoples called the river Onkewha, which meant "the water that remembers." Thorne had not bothered to note this in his journal. The natives' names for things were not part of his mandate. His mandate was to render these lands legible to the English Crown, to convert wilderness into property, to transform living geography into commercial prospect.
 
-He worked in a small room in Port Royal, Jamaica, by candlelight, his back aching from the years spent bent over a surveying instrument, his fingers stained with India ink that would not wash away no matter how long he soaked them. His assistant, a young man named Marcus Whitby, brought him rum and tobacco and the occasional letter from England—letters that grew increasingly insistent.
+He worked in a small room in Port Royal, Jamaica, by candlelight, his back aching from the years spent bent over a surveying instrument, his fingers stained with India ink that would not wash away no matter how long he soaked them. His assistant, a young man named Marcus Whitby, brought him rum and tobacco and the occasional letter from England-letters that grew increasingly insistent.
 
 "The Directors grow impatient," one such letter read. "Your maps must be completed. There are French interests in the region. The Company is not content to wait."
 
@@ -58,7 +58,7 @@ Thorne knew what "completed" meant. It meant finished enough to allow for coloni
 
 He had a daughter in London now. He had never met her. His wife had taken her when she returned to England, following Thorne's decision to remain on the frontier, to pursue his work. The choice had seemed clear at the time: the map, or his family. He had chosen the map, and had not allowed himself to wonder what that choice had made him.
 
-Now, staring at the incomplete coastline on his desk—a line that represented actual geography but also actual human displacement, actual suffering converted into neat demarcation—he wondered for the first time whether there was blood beneath his fingernails, whether the India ink was truly ink or something darker.
+Now, staring at the incomplete coastline on his desk-a line that represented actual geography but also actual human displacement, actual suffering converted into neat demarcation-he wondered for the first time whether there was blood beneath his fingernails, whether the India ink was truly ink or something darker.
 
 He picked up his pen anyway. The map must be completed.`
 
@@ -68,21 +68,21 @@ const MOCK_2_SOURCE = 'Original historical fiction (18th century)'
  * Mock 3: "The House at Ravenswick" - Horror
  * Psychological terror, unreliable perspective, supernatural atmosphere
  */
-const MOCK_3_EXTRACT = `The house knew I was coming before I arrived. I understand that this sounds like the kind of fanciful observation that suggests a mind already loosened from its moorings, but I was quite sane then—perfectly rational, even as I pulled my suitcase up the gravel drive and felt the windows watching me.
+const MOCK_3_EXTRACT = `The house knew I was coming before I arrived. I understand that this sounds like the kind of fanciful observation that suggests a mind already loosened from its moorings, but I was quite sane then-perfectly rational, even as I pulled my suitcase up the gravel drive and felt the windows watching me.
 
 The windows: this is where I must begin if I am to account for what happened, though I suspect no accounting will convince anyone that I am anything but mad.
 
-The windows of Ravenswick House were not standard architectural features. They were something else—something older than the stone they were set in, something that predated the building's Victorian facade by several centuries at least. When you looked at them, they looked back. Not metaphorically. Literally. I could feel the weight of that reciprocal gaze, could sense the presence of consciousness behind the glass.
+The windows of Ravenswick House were not standard architectural features. They were something else-something older than the stone they were set in, something that predated the building's Victorian facade by several centuries at least. When you looked at them, they looked back. Not metaphorically. Literally. I could feel the weight of that reciprocal gaze, could sense the presence of consciousness behind the glass.
 
 My great-aunt had lived in the house for forty years. The letter informing me of her death was bureaucratic and curt. There were no mourners listed. No flowers requested. Just the house, and the inventory of its contents, and the question of what was to be done with it all.
 
 "It has to be cleared," the solicitor had said. "Everything taken away. The new owners wish to begin renovations immediately."
 
-I arrived on a Thursday, and by Friday I understood that the house was not going to let me leave until it had finished with me. This was not something I believed rationally. I believed it the way you believe in your own existence—as an irrefutable fact of consciousness.
+I arrived on a Thursday, and by Friday I understood that the house was not going to let me leave until it had finished with me. This was not something I believed rationally. I believed it the way you believe in your own existence-as an irrefutable fact of consciousness.
 
 That first night, I heard the sound of a dress rustling in the corridor outside my room. Not the sound of fabric on fabric, but the actual movement of an enormous skirt, layers and layers of silk and wool and something else, something that did not belong to any natural fiber. The sound moved past my door and continued down the corridor. I did not leave my room. I did not breathe.
 
-The next morning, I found the kitchen had been used. There were dishes in the sink—expensive china, the kind my great-aunt must have eaten from decades ago. The food was fresh. Nothing had decayed. The teapot was still warm.`
+The next morning, I found the kitchen had been used. There were dishes in the sink-expensive china, the kind my great-aunt must have eaten from decades ago. The food was fresh. Nothing had decayed. The teapot was still warm.`
 
 const MOCK_3_SOURCE = 'Original horror fiction (contemporary)'
 
@@ -94,9 +94,9 @@ const MOCK_4_EXTRACT = `There are two ways to love someone: the way the world sh
 
 I fell in love with James the way of the second kind.
 
-It happened in increments so small they were almost imperceptible. First, it was the way he made tea—not just made it, but considered it, the same way he seemed to consider everything, with a kind of gentle attention that made ordinary actions feel like small ceremonies. Then it was his laugh, which was rare and therefore more precious, which he dispensed the way others dispensed judgment, sparingly and only to those who had earned it.
+It happened in increments so small they were almost imperceptible. First, it was the way he made tea-not just made it, but considered it, the same way he seemed to consider everything, with a kind of gentle attention that made ordinary actions feel like small ceremonies. Then it was his laugh, which was rare and therefore more precious, which he dispensed the way others dispensed judgment, sparingly and only to those who had earned it.
 
-We worked together at the university library. He was the archivist; I was the researcher. Our paths crossed in the stacks, among the rare books and old manuscripts, among the evidence of how people had loved and suffered and thought before us. There was something fitting about finding love in such a place—love among the archived love of centuries, among the letters and diaries and journals of the long dead.
+We worked together at the university library. He was the archivist; I was the researcher. Our paths crossed in the stacks, among the rare books and old manuscripts, among the evidence of how people had loved and suffered and thought before us. There was something fitting about finding love in such a place-love among the archived love of centuries, among the letters and diaries and journals of the long dead.
 
 "Come to dinner," he said one evening, six months into this accumulation. I had not realised I was waiting for him to ask.
 
@@ -126,7 +126,7 @@ I checked my ammunition. I had done this seventeen times that day. The habit was
 
 At 5:47 AM, the whistle sounded. We went over the top in a line, the way we were trained, the way thousands of us had gone before, the way thousands more would go after. The enemy was there, across no man's land, coming toward us with the same futile efficiency, the same blank acceptance of mass death.
 
-I fired my rifle. It felt like moving in a dream—each motion predetermined, each moment separate from meaning. The man I was aiming at fell. I did not see if I had killed him or wounded him. I did not allow myself to care. To care was to fracture the machinery, to introduce the possibility of hesitation, and hesitation meant death.
+I fired my rifle. It felt like moving in a dream-each motion predetermined, each moment separate from meaning. The man I was aiming at fell. I did not see if I had killed him or wounded him. I did not allow myself to care. To care was to fracture the machinery, to introduce the possibility of hesitation, and hesitation meant death.
 
 By 9:15 AM, it was over. Of our platoon of thirty-two men, fourteen remained. The order came to hold position, to consolidate. By evening, the artillery would begin again, and the machinery would prepare itself for the next day's slaughter.
 
@@ -140,9 +140,9 @@ const MOCK_5_SOURCE = 'Original war fiction (historical)'
  */
 const MOCK_6_EXTRACT = `The summer I turned fifteen was the summer I discovered that everything I had believed about the world was a comfortable lie, and that the people I loved most were not the people I had thought they were.
 
-It started small, as these things do. A conversation I overheard between my parents in the kitchen, meant to be private. A discovery in a drawer—a letter that should not have existed. A look that passed between my best friend and my boyfriend that contained a language I had not known I could speak until I saw it translated in their eyes.
+It started small, as these things do. A conversation I overheard between my parents in the kitchen, meant to be private. A discovery in a drawer-a letter that should not have existed. A look that passed between my best friend and my boyfriend that contained a language I had not known I could speak until I saw it translated in their eyes.
 
-Before this summer, I had believed in the essential goodness of people. Not naively—I knew that people were flawed, capable of cruelty. But I believed these flaws were surface things, that underneath there was a core of decency, of honesty. I believed that the people who raised me and loved me were fundamentally honest with me, that their love contained no deception.
+Before this summer, I had believed in the essential goodness of people. Not naively-I knew that people were flawed, capable of cruelty. But I believed these flaws were surface things, that underneath there was a core of decency, of honesty. I believed that the people who raised me and loved me were fundamentally honest with me, that their love contained no deception.
 
 The summer taught me otherwise.
 
@@ -150,11 +150,11 @@ My mother had had a lover once, before she married my father. This much was not 
 
 I drove past with my friend Hannah, and at first, I did not understand what I was seeing. Then I did understand. Then I was a daughter who had seen something that could never be unseen, something that would forever change her understanding of her mother as a whole person, a person with desires and secrets and a life that existed independent of her role as parent.
 
-Hannah did not ask me to explain what I had seen. She had seen it too, or understood it from my face. We drove to the lake and did not speak about it, but the silence itself was a kind of speaking—an acknowledgment that we inhabited a world more complex and painful than we had suspected.
+Hannah did not ask me to explain what I had seen. She had seen it too, or understood it from my face. We drove to the lake and did not speak about it, but the silence itself was a kind of speaking-an acknowledgment that we inhabited a world more complex and painful than we had suspected.
 
 By the end of summer, my boyfriend had admitted that he was with me out of habit, not love. Hannah had kissed a girl and discovered something true about herself that neither of us had known before. My parents were still together but now I knew they were together not out of unshakeable love but out of a kind of negotiated compromise, an agreement to overlook certain things.
 
-And I—I had become someone capable of understanding all of this, capable of holding multiple contradictory truths at once: that my mother was both the person who had raised me with genuine love and a woman who had betrayed her marriage. That my father was both a devoted parent and a man willing to ignore his wife's infidelity. That the world was more complicated than I had been equipped to navigate.
+And I-I had become someone capable of understanding all of this, capable of holding multiple contradictory truths at once: that my mother was both the person who had raised me with genuine love and a woman who had betrayed her marriage. That my father was both a devoted parent and a man willing to ignore his wife's infidelity. That the world was more complicated than I had been equipped to navigate.
 
 I had become someone who could not unknow what I had learned.`
 
@@ -173,7 +173,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
     title: 'Paper 1 Mock Exam - Set 2, Mock 1: The Signal (Science Fiction)',
     subtitle: 'Explorations in creative reading and writing',
     code: '8700/1',
-    description: 'Science fiction dystopian extract: technological alienation, surveillance, human connection',
+    description:
+      'Science fiction dystopian extract: technological alienation, surveillance, human connection',
     totalMarks: 80,
     duration: 105,
     totalTimeMinutes: 105,
@@ -235,8 +236,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             questionType: 'reading-inference',
             markScheme: [
               '1-2 marks: Simple statement about the ending. Limited understanding of significance.',
-              '3-4 marks: Identifies that the ending contrasts Elena\'s response with the city\'s indifference. Some understanding of thematic meaning.',
-              '5-6 marks: Clear explanation of the significance and thematic meaning. Discussion of how the contrast illustrates the text\'s preoccupation with isolation within connection.',
+              "3-4 marks: Identifies that the ending contrasts Elena's response with the city's indifference. Some understanding of thematic meaning.",
+              "5-6 marks: Clear explanation of the significance and thematic meaning. Discussion of how the contrast illustrates the text's preoccupation with isolation within connection.",
               '7-8 marks: Sophisticated analysis of thematic significance. Perceptive discussion of irony and paradox. Clear exploration of what the ending suggests about human consciousness and authentic connection.',
             ],
           },
@@ -285,9 +286,12 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5': 'Clear narrative about receiving a message. Character reaction is evident. Some sensory detail and dialogue. Clear beginning, middle, end. Roughly 450 words. Some variation in sentence structure and vocabulary, though not always used for effect.',
-              'Grade 6-7': 'Well-developed narrative with clear character development. Precise sensory details establishing setting and emotional atmosphere. Varied sentence structures used for effect. Dialogue that reveals character. The message/signal serves as genuine turning point. Language choices reflect the emotional impact. Roughly 500-550 words.',
-              'Grade 8-9': 'Sophisticated narrative with subtle character development. Setting established through precise, evocative detail. Multiple perspectives on the revelation (internal emotional response and external narrative action clearly distinguished). Language choices are precise and varied for deliberate effect. The piece explores how perception shifts, not just what happened. Strong sense of the character\'s interiority. Secure technical control throughout. Roughly 550+ words.',
+              'Grade 4-5':
+                'Clear narrative about receiving a message. Character reaction is evident. Some sensory detail and dialogue. Clear beginning, middle, end. Roughly 450 words. Some variation in sentence structure and vocabulary, though not always used for effect.',
+              'Grade 6-7':
+                'Well-developed narrative with clear character development. Precise sensory details establishing setting and emotional atmosphere. Varied sentence structures used for effect. Dialogue that reveals character. The message/signal serves as genuine turning point. Language choices reflect the emotional impact. Roughly 500-550 words.',
+              'Grade 8-9':
+                "Sophisticated narrative with subtle character development. Setting established through precise, evocative detail. Multiple perspectives on the revelation (internal emotional response and external narrative action clearly distinguished). Language choices are precise and varied for deliberate effect. The piece explores how perception shifts, not just what happened. Strong sense of the character's interiority. Secure technical control throughout. Roughly 550+ words.",
             },
             markScheme: [
               'Content and organisation: Maintains a clear narrative line; develops the impact of the message/signal; explores the shift in understanding',
@@ -312,7 +316,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
     title: 'Paper 1 Mock Exam - Set 2, Mock 2: The Mapmaker (Historical Fiction)',
     subtitle: 'Explorations in creative reading and writing',
     code: '8700/1',
-    description: 'Historical fiction extract: 18th century cartography, colonialism, moral ambiguity',
+    description:
+      'Historical fiction extract: 18th century cartography, colonialism, moral ambiguity',
     totalMarks: 80,
     duration: 105,
     totalTimeMinutes: 105,
@@ -332,7 +337,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 5,
             questionType: 'reading-detail',
             markScheme: [
-              '1 mark: Simple identification of Thorne\'s job (mapmaking/surveying)',
+              "1 mark: Simple identification of Thorne's job (mapmaking/surveying)",
               '2 marks: Identifies job and one specific example of what it involves',
               '3 marks: Identifies job, specific examples, and begins to suggest implications (e.g., "converting wilderness into property")',
               '4 marks: Clear explanation of job responsibilities and perceptive explanation of the problematic nature of these responsibilities through close reading of language choices',
@@ -362,7 +367,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
               '1-3 marks: Identifies physical details (aching back, stained fingers) and emotional weariness. Limited analysis of psychological cost.',
               '4-5 marks: Clear analysis of physical details and their implications. Some understanding of emotional toll.',
               '6-7 marks: Detailed analysis of how physical description conveys psychological burden. Discussion of symbolism (India ink, candlelight). Clear explanation of moral toll.',
-              '8 marks: Perceptive analysis of how physical details function metaphorically to convey psychological and moral decay. Sophisticated understanding of writer\'s purpose.',
+              "8 marks: Perceptive analysis of how physical details function metaphorically to convey psychological and moral decay. Sophisticated understanding of writer's purpose.",
             ],
           },
           {
@@ -375,7 +380,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             markScheme: [
               '1-2 marks: Identifies that the letter pressures Thorne. Limited understanding of thematic significance.',
               '3-4 marks: Explains that the letter represents external pressure for completion/colonization. Some thematic understanding.',
-              '5-6 marks: Clear explanation of how the letter represents institutional demand and how Thorne\'s response reveals his moral conflict.',
+              "5-6 marks: Clear explanation of how the letter represents institutional demand and how Thorne's response reveals his moral conflict.",
               '7-8 marks: Sophisticated analysis of how the letter encapsulates the tension between individual conscience and institutional machinery. Clear discussion of how this develops themes about complicity and moral compromise.',
             ],
           },
@@ -424,9 +429,12 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5': 'Clear narrative showing character facing a moral dilemma. External pressure is evident. Character\'s doubts are shown. Some exploration of both internal and external conflict. Roughly 450 words. Clear structure with recognizable beginning, middle, end.',
-              'Grade 6-7': 'Well-developed narrative with sustained exploration of moral conflict. Clear establishment of the dilemma and why it\'s troubling to the character. Precise sensory detail grounding the reader in the situation. Varied sentence structures for effect. Dialogue or reflection revealing character\'s internal struggle. Roughly 500-550 words.',
-              'Grade 8-9': 'Sophisticated narrative exploring nuance of moral conflict—not a simple right/wrong situation but genuine ethical complexity. Precise language choices reflect character\'s state of mind. Setting and physical detail subtly reinforce internal conflict. Strong sense of voice. The character\'s reasoning is conveyed with authenticity and complexity. Secure technical control. Roughly 550+ words.',
+              'Grade 4-5':
+                "Clear narrative showing character facing a moral dilemma. External pressure is evident. Character's doubts are shown. Some exploration of both internal and external conflict. Roughly 450 words. Clear structure with recognizable beginning, middle, end.",
+              'Grade 6-7':
+                "Well-developed narrative with sustained exploration of moral conflict. Clear establishment of the dilemma and why it's troubling to the character. Precise sensory detail grounding the reader in the situation. Varied sentence structures for effect. Dialogue or reflection revealing character's internal struggle. Roughly 500-550 words.",
+              'Grade 8-9':
+                "Sophisticated narrative exploring nuance of moral conflict-not a simple right/wrong situation but genuine ethical complexity. Precise language choices reflect character's state of mind. Setting and physical detail subtly reinforce internal conflict. Strong sense of voice. The character's reasoning is conveyed with authenticity and complexity. Secure technical control. Roughly 550+ words.",
             },
             markScheme: [
               'Content and organisation: Establishes a moral dilemma clearly; develops both external pressure and internal conscience; maintains narrative coherence',
@@ -451,7 +459,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
     title: 'Paper 1 Mock Exam - Set 2, Mock 3: The House at Ravenswick (Horror)',
     subtitle: 'Explorations in creative reading and writing',
     code: '8700/1',
-    description: 'Horror fiction extract: psychological terror, unreliable narrator, supernatural atmosphere',
+    description:
+      'Horror fiction extract: psychological terror, unreliable narrator, supernatural atmosphere',
     totalMarks: 80,
     duration: 105,
     totalTimeMinutes: 105,
@@ -500,8 +509,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             markScheme: [
               '1-3 marks: Identifies some fears or tensions. Limited analysis of techniques.',
               '4-5 marks: Clear identification of techniques (e.g., parenthetical observations, short sentences, metaphor) and their effects.',
-              '6-7 marks: Detailed analysis of how multiple techniques work together to create mounting fear. Good explanation of how the narrator\'s voice creates tension.',
-              '8 marks: Perceptive analysis of how all elements work together. Discussion of how the narrator\'s increasing certainty (despite lack of rational evidence) creates horror.',
+              "6-7 marks: Detailed analysis of how multiple techniques work together to create mounting fear. Good explanation of how the narrator's voice creates tension.",
+              "8 marks: Perceptive analysis of how all elements work together. Discussion of how the narrator's increasing certainty (despite lack of rational evidence) creates horror.",
             ],
           },
           {
@@ -514,8 +523,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             markScheme: [
               '1-2 marks: Identifies the details. Limited understanding of their significance or the ambiguity.',
               '3-4 marks: Explains that the events are supernatural or inexplicable. Some recognition of ambiguity.',
-              '5-6 marks: Clear explanation of how these details create supernatural horror. Discussion of how the narrator\'s perspective creates ambiguity.',
-              '7-8 marks: Sophisticated analysis of how the writer maintains ambiguity without resolving it. Discussion of how the narrator\'s reliability is called into question while still making the supernatural feel possible.',
+              "5-6 marks: Clear explanation of how these details create supernatural horror. Discussion of how the narrator's perspective creates ambiguity.",
+              "7-8 marks: Sophisticated analysis of how the writer maintains ambiguity without resolving it. Discussion of how the narrator's reliability is called into question while still making the supernatural feel possible.",
             ],
           },
           {
@@ -527,9 +536,9 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             questionType: 'reading-evaluation',
             markScheme: [
               '1-2 marks: Identifies that the narrator speaks directly. Basic response about effect.',
-              '3-4 marks: Explains that direct address creates intimacy or shares the narrator\'s fear. Some evaluation.',
-              '5-6 marks: Clear analysis of how direct address draws the reader into the narrator\'s paranoia and fear. Discussion of effectiveness.',
-              '7-8 marks: Sophisticated evaluation of how the first-person voice creates unreliable but compelling horror. Discussion of how the narrator\'s growing certainty despite lack of evidence creates psychological horror.',
+              "3-4 marks: Explains that direct address creates intimacy or shares the narrator's fear. Some evaluation.",
+              "5-6 marks: Clear analysis of how direct address draws the reader into the narrator's paranoia and fear. Discussion of effectiveness.",
+              "7-8 marks: Sophisticated evaluation of how the first-person voice creates unreliable but compelling horror. Discussion of how the narrator's growing certainty despite lack of evidence creates psychological horror.",
             ],
           },
           {
@@ -563,16 +572,19 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5': 'Clear narrative with a character discovering something unsettling about a place. Atmosphere is established through description. Some sensory detail. The discovery is clear and the reader understands why it\'s disturbing. Roughly 450 words.',
-              'Grade 6-7': 'Well-developed narrative with sustained atmospheric tension. The place is established through precise, carefully chosen sensory detail. The discovery unfolds gradually, building tension. Language choices create an unsettling tone. Varied sentence structures enhance the atmosphere. Roughly 500-550 words.',
-              'Grade 8-9': 'Sophisticated narrative where atmosphere is woven throughout, not just stated. Sensory detail is precise and suggestive rather than explicit. The discovery is presented with ambiguity—the reader shares the character\'s uncertainty about what is real. Language choices are subtle and controlled. The narrative maintains tension without relying on jump scares or obviousness. Roughly 550+ words.',
+              'Grade 4-5':
+                "Clear narrative with a character discovering something unsettling about a place. Atmosphere is established through description. Some sensory detail. The discovery is clear and the reader understands why it's disturbing. Roughly 450 words.",
+              'Grade 6-7':
+                'Well-developed narrative with sustained atmospheric tension. The place is established through precise, carefully chosen sensory detail. The discovery unfolds gradually, building tension. Language choices create an unsettling tone. Varied sentence structures enhance the atmosphere. Roughly 500-550 words.',
+              'Grade 8-9':
+                "Sophisticated narrative where atmosphere is woven throughout, not just stated. Sensory detail is precise and suggestive rather than explicit. The discovery is presented with ambiguity-the reader shares the character's uncertainty about what is real. Language choices are subtle and controlled. The narrative maintains tension without relying on jump scares or obviousness. Roughly 550+ words.",
             },
             markScheme: [
               'Content and organisation: Establishes a place and atmosphere clearly; develops discovery convincingly; maintains narrative tension',
               'Vocabulary: Precise and suggestive; language choices create unease without being obvious',
               'Sentence structures: Varied and used deliberately to create atmospheric effect',
               'Spelling, punctuation and grammar: Accurate throughout',
-              'Effect on reader: Creates sustained sense of unease; draws reader into character\'s experience',
+              "Effect on reader: Creates sustained sense of unease; draws reader into character's experience",
               'Higher bands: subtlety of atmosphere; originality; linguistic precision; psychological rather than explicit horror',
             ],
           },
@@ -626,7 +638,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             markScheme: [
               '1-2 marks: Identifies some character details about James. Limited analysis of appeal.',
               '3-4 marks: Clear identification of character traits (thoughtfulness, rarity of laughter) with some explanation of appeal.',
-              '5-6 marks: Detailed analysis of how language creates James\'s character. Clear explanation of how his qualities create attraction—thoughtfulness as a kind of love.',
+              "5-6 marks: Detailed analysis of how language creates James's character. Clear explanation of how his qualities create attraction-thoughtfulness as a kind of love.",
             ],
           },
           {
@@ -668,7 +680,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
               '1-2 marks: Identifies that the writing feels real. Basic evaluation.',
               '3-4 marks: Identifies some techniques (understatement, specific detail, avoidance of cliché).',
               '5-6 marks: Clear analysis of several techniques and their cumulative effect in creating authenticity. Discussion of what avoids sentimentality.',
-              '7-8 marks: Sophisticated evaluation of how writer\'s language choices, structural choices, and refusal of conventional romance narrative create emotional authenticity. Discussion of how restraint becomes a form of emotional honesty.',
+              "7-8 marks: Sophisticated evaluation of how writer's language choices, structural choices, and refusal of conventional romance narrative create emotional authenticity. Discussion of how restraint becomes a form of emotional honesty.",
             ],
           },
           {
@@ -702,9 +714,12 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5': 'Clear narrative showing gradual realisation or understanding. The moments are recognizable and the progression is clear. Some sensory detail establishing the person and the relationship. Roughly 450 words. Clear structure and organization.',
-              'Grade 6-7': 'Well-developed narrative where small moments accumulate to show gradual change in understanding. Precise details about the other person create a vivid portrait. Varied sentence structures, with some used deliberately for reflection. The narrator\'s shift in perspective is evident. Language is precise and not overwrought. Roughly 500-550 words.',
-              'Grade 8-9': 'Sophisticated narrative where the accumulation of small details mirrors real emotional development. The portrait of the other person emerges through carefully chosen specific observations. The narrator\'s voice shows authentic growth of understanding without becoming sentimental. Language choices are subtle and precise. The narrative avoids cliché about love or connection. Secure technical control. Roughly 550+ words.',
+              'Grade 4-5':
+                'Clear narrative showing gradual realisation or understanding. The moments are recognizable and the progression is clear. Some sensory detail establishing the person and the relationship. Roughly 450 words. Clear structure and organization.',
+              'Grade 6-7':
+                "Well-developed narrative where small moments accumulate to show gradual change in understanding. Precise details about the other person create a vivid portrait. Varied sentence structures, with some used deliberately for reflection. The narrator's shift in perspective is evident. Language is precise and not overwrought. Roughly 500-550 words.",
+              'Grade 8-9':
+                "Sophisticated narrative where the accumulation of small details mirrors real emotional development. The portrait of the other person emerges through carefully chosen specific observations. The narrator's voice shows authentic growth of understanding without becoming sentimental. Language choices are subtle and precise. The narrative avoids cliché about love or connection. Secure technical control. Roughly 550+ words.",
             },
             markScheme: [
               'Content and organisation: Focuses on small moments of gradual realisation; maintains narrative coherence; shows development of understanding',
@@ -729,7 +744,8 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
     title: 'Paper 1 Mock Exam - Set 2, Mock 5: The Last Trench (War Fiction)',
     subtitle: 'Explorations in creative reading and writing',
     code: '8700/1',
-    description: 'War fiction extract: soldier\'s perspective, moral numbness, machinery of conflict',
+    description:
+      "War fiction extract: soldier's perspective, moral numbness, machinery of conflict",
     totalMarks: 80,
     duration: 105,
     totalTimeMinutes: 105,
@@ -752,7 +768,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
               '1 mark: Identifies that the soldiers have different names for the war.',
               '2 marks: Explains what one or two of the names suggest (endless, consuming, etc.).',
               '3 marks: Clear explanation of what multiple names reveal with reference to the language.',
-              '4 marks: Sophisticated analysis of what the names reveal about soldiers\' perspective and the tone of cynicism, futility, and dark humor they create.',
+              "4 marks: Sophisticated analysis of what the names reveal about soldiers' perspective and the tone of cynicism, futility, and dark humor they create.",
             ],
           },
           {
@@ -779,7 +795,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
               '1-3 marks: Identifies the machine metaphor. Limited analysis.',
               '4-5 marks: Explains that the machine metaphor conveys dehumanization. Clear explanation of how hierarchy works like mechanical systems.',
               '6-7 marks: Detailed analysis of how the machine metaphor works throughout the paragraph. Discussion of how it conveys loss of individual agency and moral responsibility.',
-              '8 marks: Perceptive analysis of how the machine metaphor encapsulates the narrator\'s understanding of war as system rather than human conflict. Discussion of how this view creates both horror and numbness.',
+              "8 marks: Perceptive analysis of how the machine metaphor encapsulates the narrator's understanding of war as system rather than human conflict. Discussion of how this view creates both horror and numbness.",
             ],
           },
           {
@@ -791,9 +807,9 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             questionType: 'reading-inference',
             markScheme: [
               '1-2 marks: Identifies that specific times are given. Limited understanding of effect.',
-              '3-4 marks: Explains that specific times suggest mechanical precision or nightmare quality. Some understanding of narrator\'s detachment.',
-              '5-6 marks: Clear analysis of how precise timing conveys mechanical nature of warfare. Discussion of how the narrator\'s dissociative language reflects psychological survival mechanism.',
-              '7-8 marks: Sophisticated analysis of how time markers and dispassionate language work together to convey the narrator\'s complete alienation from his own experience. Discussion of how the language reveals psychological shutdown as survival response.',
+              "3-4 marks: Explains that specific times suggest mechanical precision or nightmare quality. Some understanding of narrator's detachment.",
+              "5-6 marks: Clear analysis of how precise timing conveys mechanical nature of warfare. Discussion of how the narrator's dissociative language reflects psychological survival mechanism.",
+              "7-8 marks: Sophisticated analysis of how time markers and dispassionate language work together to convey the narrator's complete alienation from his own experience. Discussion of how the language reveals psychological shutdown as survival response.",
             ],
           },
           {
@@ -807,7 +823,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
               '1-2 marks: Identifies that the writing shows negative effects of war. Basic response.',
               '3-4 marks: Identifies techniques (mechanical language, numbness, loss of faith) and contrasts with heroic portrayals.',
               '5-6 marks: Clear analysis of several techniques and their effectiveness. Good discussion of anti-heroic approach.',
-              '7-8 marks: Sophisticated evaluation of how language, metaphor, and perspective work together to create a deeply anti-heroic portrayal. Discussion of how the narrator\'s deadness is presented as the most honest response to mechanized warfare.',
+              "7-8 marks: Sophisticated evaluation of how language, metaphor, and perspective work together to create a deeply anti-heroic portrayal. Discussion of how the narrator's deadness is presented as the most honest response to mechanized warfare.",
             ],
           },
           {
@@ -836,19 +852,22 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
           {
             id: 'mock-05-q7',
             questionNumber: 5,
-            questionText: `Write a narrative in which a character is caught in or witnessing a difficult or dangerous situation. Focus on their internal experience—what they think, feel, and how they process what is happening—rather than just describing events. You may write fiction or a true story. You should aim for 400-600 words.`,
+            questionText: `Write a narrative in which a character is caught in or witnessing a difficult or dangerous situation. Focus on their internal experience-what they think, feel, and how they process what is happening-rather than just describing events. You may write fiction or a true story. You should aim for 400-600 words.`,
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5': 'Clear narrative showing character\'s internal response to a difficult situation. Both external events and internal thoughts are evident. The character\'s reactions and coping mechanisms are shown. Roughly 450 words. Clear structure and organization.',
-              'Grade 6-7': 'Well-developed narrative where internal experience is primary focus. The situation is established clearly but the emphasis is on how the character processes it psychologically. Varied sentence structures reflecting the character\'s state of mind. Precise sensory detail grounding reader in the moment. Thoughts and feelings are authentic and complex. Roughly 500-550 words.',
-              'Grade 8-9': 'Sophisticated narrative where the internal experience is woven throughout, not separated from external events. The character\'s psychological response feels authentic—may include numbness, dissociation, or processing difficulties rather than obvious emotion. Language choices subtly reflect mental state. Multiple temporal frames if effective (memory, present moment, reflection). Secure technical control. Roughly 550+ words.',
+              'Grade 4-5':
+                "Clear narrative showing character's internal response to a difficult situation. Both external events and internal thoughts are evident. The character's reactions and coping mechanisms are shown. Roughly 450 words. Clear structure and organization.",
+              'Grade 6-7':
+                "Well-developed narrative where internal experience is primary focus. The situation is established clearly but the emphasis is on how the character processes it psychologically. Varied sentence structures reflecting the character's state of mind. Precise sensory detail grounding reader in the moment. Thoughts and feelings are authentic and complex. Roughly 500-550 words.",
+              'Grade 8-9':
+                "Sophisticated narrative where the internal experience is woven throughout, not separated from external events. The character's psychological response feels authentic-may include numbness, dissociation, or processing difficulties rather than obvious emotion. Language choices subtly reflect mental state. Multiple temporal frames if effective (memory, present moment, reflection). Secure technical control. Roughly 550+ words.",
             },
             markScheme: [
               'Content and organisation: Establishes a difficult situation clearly; focuses on internal experience; maintains narrative coherence',
               'Vocabulary: Precise and used to convey internal states; avoids cliché in describing emotional response',
-              'Sentence structures: Varied and used deliberately to reflect character\'s mental state and processing',
+              "Sentence structures: Varied and used deliberately to reflect character's mental state and processing",
               'Spelling, punctuation and grammar: Accurate throughout; handles complex internal monologue securely',
               'Effect on reader: Creates engagement through authenticity of internal perspective; explores psychological reality',
               'Higher bands: sophistication in presenting internal experience; subtlety; authenticity; originality',
@@ -904,7 +923,7 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             markScheme: [
               '1-2 marks: Identifies that the narrator believed in goodness of people. Limited analysis.',
               '3-4 marks: Explains the belief in essential goodness and surface flaws. Identifies contrast with later discovery.',
-              '5-6 marks: Clear analysis of how the initial belief is presented as naive but understandable. Good explanation of the significance of the contrast in shaking the narrator\'s worldview.',
+              "5-6 marks: Clear analysis of how the initial belief is presented as naive but understandable. Good explanation of the significance of the contrast in shaking the narrator's worldview.",
             ],
           },
           {
@@ -980,9 +999,12 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5': 'Clear narrative showing discovery and its impact. The discovery is clear and the character\'s shifted understanding is evident. Some sensory detail and emotional response. Roughly 450 words. Clear structure with recognizable beginning, middle, end.',
-              'Grade 6-7': 'Well-developed narrative where the discovery unfolds naturally rather than being told. Precise sensory and emotional detail establishing the relationship before the revelation. The shift in understanding is subtle and authentic. Varied sentence structures emphasize the moment of revelation. Language is precise. Roughly 500-550 words.',
-              'Grade 8-9': 'Sophisticated narrative where the discovery is woven into a portrait of a relationship, not presented in isolation. Before-and-after comparison is implicit rather than explicit. The character\'s new understanding is complex—not a simple moral judgment but recognition of human complexity. Language choices reflect the narrator\'s emotional processing. The revelation changes how we understand earlier details. Secure technical control. Roughly 550+ words.',
+              'Grade 4-5':
+                "Clear narrative showing discovery and its impact. The discovery is clear and the character's shifted understanding is evident. Some sensory detail and emotional response. Roughly 450 words. Clear structure with recognizable beginning, middle, end.",
+              'Grade 6-7':
+                'Well-developed narrative where the discovery unfolds naturally rather than being told. Precise sensory and emotional detail establishing the relationship before the revelation. The shift in understanding is subtle and authentic. Varied sentence structures emphasize the moment of revelation. Language is precise. Roughly 500-550 words.',
+              'Grade 8-9':
+                "Sophisticated narrative where the discovery is woven into a portrait of a relationship, not presented in isolation. Before-and-after comparison is implicit rather than explicit. The character's new understanding is complex-not a simple moral judgment but recognition of human complexity. Language choices reflect the narrator's emotional processing. The revelation changes how we understand earlier details. Secure technical control. Roughly 550+ words.",
             },
             markScheme: [
               'Content and organisation: Establishes a relationship clearly; presents discovery authentically; explores changed understanding',

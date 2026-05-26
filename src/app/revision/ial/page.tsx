@@ -28,12 +28,12 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'IAL English — Your Hub',
+  title: 'IAL English - Your Hub',
   description:
     'Pearson Edexcel International A-Level (IAL) English Literature & Language revision hub. Unit-by-unit breakdown, mock exam packs, AI self-learning, set-text guides and exam technique for IAL success.',
   alternates: { canonical: 'https://theenglishhub.app/revision/ial' },
   openGraph: {
-    title: 'IAL English — The English Hub',
+    title: 'IAL English - The English Hub',
     description:
       'Pearson IAL English unit breakdown, mock exams, AI self-learning guidance and set-text guides.',
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 // ─── Unit structure (Pearson IAL English Literature YLE0 / WET04) ─────────
 // International A-Level English Literature is modular (AS + A2). Unit data
-// below is compiled from the Pearson IAL specification — always cross-check
+// below is compiled from the Pearson IAL specification - always cross-check
 // against the current live specification before exam entry.
 
 interface Unit {
@@ -67,7 +67,7 @@ const UNITS: Unit[] = [
     assessedAOs: 'AO1, AO2, AO3, AO4',
     keyComponents: [
       'Unseen poem + anthology comparison (Section A)',
-      'Drama text essay (Section B) — choice of two questions',
+      'Drama text essay (Section B) - choice of two questions',
       'Handwritten essay responses',
       'Accurate literary terminology and methods-focused analysis',
     ],
@@ -82,7 +82,7 @@ const UNITS: Unit[] = [
       'Closed-book. Comparison essay on two prose texts from different time periods, linked by a shared theme. Strong comparative scaffolding is essential.',
     assessedAOs: 'AO1, AO2, AO3, AO4',
     keyComponents: [
-      'Comparative essay — two prose texts on a shared theme',
+      'Comparative essay - two prose texts on a shared theme',
       'One pre-1900, one post-1900 (typical pairing)',
       'Single extended response',
       'Connections AND differences required across both texts',
@@ -100,7 +100,7 @@ const UNITS: Unit[] = [
     keyComponents: [
       'Unseen pre-1900 poem linked to anthology (Section A)',
       'Prose essay with named critical perspective (Section B)',
-      'AO5 — engagement with alternative interpretations',
+      'AO5 - engagement with alternative interpretations',
       'Historical context integrated, not bolted on',
     ],
   },
@@ -116,7 +116,7 @@ const UNITS: Unit[] = [
     keyComponents: [
       'Shakespeare essay (Section A)',
       'Pre-1900 drama essay (Section B)',
-      'AO5 — named critics or theoretical framings',
+      'AO5 - named critics or theoretical framings',
       'Deep AO3 (context as argument, not backdrop)',
     ],
   },
@@ -165,7 +165,7 @@ const AOS: AO[] = [
     name: 'Evaluate alternative interpretations (A2 only)',
     weight: '~15% A2 papers',
     summary:
-      "Name critics or critical positions, then defend your own reading against them. Feminist, Marxist, New Historicist, psychoanalytic frames all count — as long as they're used accurately.",
+      "Name critics or critical positions, then defend your own reading against them. Feminist, Marxist, New Historicist, psychoanalytic frames all count - as long as they're used accurately.",
   },
 ]
 
@@ -183,7 +183,7 @@ interface MockExamEntry {
 const MOCK_EXAMS: MockExamEntry[] = [
   {
     unit: 'WET01',
-    title: 'Unit 1 unseen poetry comparison — drill set',
+    title: 'Unit 1 unseen poetry comparison - drill set',
     description:
       'Three unseen poems paired with anthology selections. Time yourself to 45 minutes per comparison.',
     href: '/mock-exams?board=ial-edexcel&unit=WET01',
@@ -192,7 +192,7 @@ const MOCK_EXAMS: MockExamEntry[] = [
   },
   {
     unit: 'WET01',
-    title: 'Unit 1 full mock paper — timed',
+    title: 'Unit 1 full mock paper - timed',
     description:
       'Complete 2h 15m paper. Section A unseen + Section B drama essay. Auto-scored against IAL mark scheme bands.',
     href: '/mock-exams?board=ial-edexcel&paper=WET01-full',
@@ -201,7 +201,7 @@ const MOCK_EXAMS: MockExamEntry[] = [
   },
   {
     unit: 'WET02',
-    title: 'Unit 2 prose comparison — drill set',
+    title: 'Unit 2 prose comparison - drill set',
     description:
       'Paired prose extracts on five common themes (power, identity, family, class, gender).',
     href: '/mock-exams?board=ial-edexcel&unit=WET02',
@@ -210,7 +210,7 @@ const MOCK_EXAMS: MockExamEntry[] = [
   },
   {
     unit: 'WET02',
-    title: 'Unit 2 full mock — timed',
+    title: 'Unit 2 full mock - timed',
     description:
       '1h 45m sustained comparative essay. Paired pre-1900 + post-1900 prose on a shared theme.',
     href: '/mock-exams?board=ial-edexcel&paper=WET02-full',
@@ -248,7 +248,7 @@ interface AISurface {
 
 const AI_SURFACES: AISurface[] = [
   {
-    title: 'AI essay marking — IAL rubric',
+    title: 'AI essay marking - IAL rubric',
     description:
       'Submit a timed Unit 1-4 essay. AI returns a band-by-band breakdown aligned to IAL AO weightings (AO1/AO2/AO3/AO4 + AO5 for A2), plus three concrete rewrite suggestions.',
     href: '/dashboard/essay/new?board=ial-edexcel',
@@ -266,7 +266,7 @@ const AI_SURFACES: AISurface[] = [
   {
     title: 'AI critic simulator',
     description:
-      'Unit 3 + 4 require AO5 — engagement with critical perspectives. The AI roleplays a named critic (feminist, Marxist, New Historicist) and pushes back on your thesis so you learn to defend.',
+      'Unit 3 + 4 require AO5 - engagement with critical perspectives. The AI roleplays a named critic (feminist, Marxist, New Historicist) and pushes back on your thesis so you learn to defend.',
     href: '/toolkit/critic',
     icon: Brain,
     tag: 'AO5 trainer',
@@ -286,7 +286,7 @@ const AI_SURFACES: AISurface[] = [
 const PITFALLS = [
   {
     title: 'Treating IAL like UK A-Level',
-    body: "IAL is MODULAR — four exams spread across AS + A2 — whereas UK A-Level since 2015 is linear. Your revision should target each unit at its own exam window; don't try to revise everything at once.",
+    body: "IAL is MODULAR - four exams spread across AS + A2 - whereas UK A-Level since 2015 is linear. Your revision should target each unit at its own exam window; don't try to revise everything at once.",
   },
   {
     title: 'Under-using AO5 at A2',
@@ -298,7 +298,7 @@ const PITFALLS = [
   },
   {
     title: 'Context as a separate paragraph',
-    body: 'IAL markers penalise "context paragraphs" that feel bolted on. AO3 marks come from contextual points woven into close reading — one sentence per analytical paragraph, tied to the quote you just analysed.',
+    body: 'IAL markers penalise "context paragraphs" that feel bolted on. AO3 marks come from contextual points woven into close reading - one sentence per analytical paragraph, tied to the quote you just analysed.',
   },
   {
     title: 'Writing too much on plot in Unit 4 Shakespeare',
@@ -416,7 +416,7 @@ export default async function IalHubPage() {
                       {unit.level}
                     </Badge>
                     <CardTitle className="text-heading-md font-heading">
-                      <span className="font-mono text-primary">{unit.code}</span> — {unit.name}
+                      <span className="font-mono text-primary">{unit.code}</span> - {unit.name}
                     </CardTitle>
                   </div>
                   <div className="text-right text-xs text-muted-foreground">
@@ -584,7 +584,7 @@ export default async function IalHubPage() {
             <Link href="/revision/texts" className="text-primary underline">
               Set Texts library
             </Link>{' '}
-            in the meantime — all major IAL texts (Hamlet, King Lear, Othello, Gatsby,
+            in the meantime - all major IAL texts (Hamlet, King Lear, Othello, Gatsby,
             Handmaid&rsquo;s Tale, Streetcar, Waste Land, Pride and Prejudice, Jane Eyre) are
             authored.
           </p>

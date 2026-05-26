@@ -25,13 +25,13 @@ const keyQuotations = [
     quote: 'Fair is foul, and foul is fair',
     speaker: 'The Witches (Act 1, Scene 1)',
     analysis:
-      "The Witches' paradox establishes the play's central theme of moral inversion. The chiasmus (reversal of structure) mirrors the topsy-turvy world Macbeth is about to enter, where appearance and reality are indistinguishable. This line foreshadows Macbeth's own moral corruption — what seems 'fair' (the prophecy of kingship) will lead to 'foul' consequences.",
+      "The Witches' paradox establishes the play's central theme of moral inversion. The chiasmus (reversal of structure) mirrors the topsy-turvy world Macbeth is about to enter, where appearance and reality are indistinguishable. This line foreshadows Macbeth's own moral corruption - what seems 'fair' (the prophecy of kingship) will lead to 'foul' consequences.",
   },
   {
     quote: 'Stars, hide your fires; / Let not light see my black and deep desires',
     speaker: 'Macbeth (Act 1, Scene 4)',
     analysis:
-      "Macbeth invokes darkness to conceal his ambition, revealing that he already harbours murderous thoughts even before Lady Macbeth's influence. The metaphor of 'black and deep desires' associates his ambition with something hidden, shameful, and bottomless. The imperative 'hide' shows Macbeth's awareness that his desires are morally wrong — he knows he must conceal them from the world and from God.",
+      "Macbeth invokes darkness to conceal his ambition, revealing that he already harbours murderous thoughts even before Lady Macbeth's influence. The metaphor of 'black and deep desires' associates his ambition with something hidden, shameful, and bottomless. The imperative 'hide' shows Macbeth's awareness that his desires are morally wrong - he knows he must conceal them from the world and from God.",
   },
   {
     quote: "Look like th'innocent flower, / But be the serpent under't",
@@ -43,33 +43,33 @@ const keyQuotations = [
     quote: 'Is this a dagger which I see before me, / The handle toward my hand?',
     speaker: 'Macbeth (Act 2, Scene 1)',
     analysis:
-      "This soliloquy reveals Macbeth's deteriorating mental state as he hallucinates before Duncan's murder. The rhetorical question suggests uncertainty and internal conflict. The dagger pointing towards his hand could symbolise fate drawing him towards the act, or his own guilty conscience manifesting his intentions. The ambiguity is deliberate — Shakespeare leaves it to the audience to decide whether Macbeth is driven by supernatural forces or his own ambition.",
+      "This soliloquy reveals Macbeth's deteriorating mental state as he hallucinates before Duncan's murder. The rhetorical question suggests uncertainty and internal conflict. The dagger pointing towards his hand could symbolise fate drawing him towards the act, or his own guilty conscience manifesting his intentions. The ambiguity is deliberate - Shakespeare leaves it to the audience to decide whether Macbeth is driven by supernatural forces or his own ambition.",
   },
   {
     quote: "Will all great Neptune's ocean wash this blood / Clean from my hand?",
     speaker: 'Macbeth (Act 2, Scene 2)',
     analysis:
-      "Hyperbole conveys the enormity of Macbeth's guilt. The classical allusion to Neptune (god of the sea) suggests that even divine power cannot absolve him. The blood is not literal but symbolic — it represents the stain of murder on his conscience. This contrasts with Lady Macbeth's earlier dismissal: 'A little water clears us of this deed,' showing how differently they initially process guilt.",
+      "Hyperbole conveys the enormity of Macbeth's guilt. The classical allusion to Neptune (god of the sea) suggests that even divine power cannot absolve him. The blood is not literal but symbolic - it represents the stain of murder on his conscience. This contrasts with Lady Macbeth's earlier dismissal: 'A little water clears us of this deed,' showing how differently they initially process guilt.",
   },
   {
     quote: 'Out, damned spot! Out, I say!',
     speaker: 'Lady Macbeth (Act 5, Scene 1)',
     analysis:
-      "Lady Macbeth's sleepwalking scene reveals the psychological destruction caused by guilt. The exclamatory 'Out!' is desperate and frantic, contrasting sharply with her earlier composed ruthlessness. The 'spot' of blood she tries to wash away mirrors Macbeth's earlier blood imagery — both characters are consumed by guilt, but Lady Macbeth's manifests as madness. The word 'damned' carries religious connotations, suggesting she believes her soul is beyond salvation.",
+      "Lady Macbeth's sleepwalking scene reveals the psychological destruction caused by guilt. The exclamatory 'Out!' is desperate and frantic, contrasting sharply with her earlier composed ruthlessness. The 'spot' of blood she tries to wash away mirrors Macbeth's earlier blood imagery - both characters are consumed by guilt, but Lady Macbeth's manifests as madness. The word 'damned' carries religious connotations, suggesting she believes her soul is beyond salvation.",
   },
   {
     quote:
       "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th'other",
     speaker: 'Macbeth (Act 1, Scene 7)',
     analysis:
-      "Macbeth uses the extended metaphor of horse-riding to describe his ambition. 'Vaulting ambition' suggests something that overreaches — jumping too high and falling. This reveals Macbeth's self-awareness: he knows his ambition is excessive and will lead to his downfall. The word 'only' is significant — it suggests ambition is his sole motivation, stripped of any moral justification.",
+      "Macbeth uses the extended metaphor of horse-riding to describe his ambition. 'Vaulting ambition' suggests something that overreaches - jumping too high and falling. This reveals Macbeth's self-awareness: he knows his ambition is excessive and will lead to his downfall. The word 'only' is significant - it suggests ambition is his sole motivation, stripped of any moral justification.",
   },
   {
     quote:
       "Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more",
     speaker: 'Macbeth (Act 5, Scene 5)',
     analysis:
-      "Macbeth's nihilistic soliloquy after learning of Lady Macbeth's death reveals total despair. The extended metaphor of life as a theatrical performance ('poor player', 'struts and frets', 'stage') suggests that life is meaningless, temporary, and performative. The phrase 'walking shadow' implies something insubstantial and fleeting. This is the culmination of Macbeth's tragic arc — from ambitious warrior to despairing nihilist.",
+      "Macbeth's nihilistic soliloquy after learning of Lady Macbeth's death reveals total despair. The extended metaphor of life as a theatrical performance ('poor player', 'struts and frets', 'stage') suggests that life is meaningless, temporary, and performative. The phrase 'walking shadow' implies something insubstantial and fleeting. This is the culmination of Macbeth's tragic arc - from ambitious warrior to despairing nihilist.",
   },
 ]
 

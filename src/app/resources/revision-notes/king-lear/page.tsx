@@ -283,15 +283,15 @@ export default function KingLearPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="King Lear"
-                description="The aged King of Britain whose tragic flaw is a confusion of love with flattery and authority with display. Lear demands public declarations of affection and divides his kingdom on the basis of words rather than deeds. Shakespeare presents his journey as a brutal stripping-away: of crown, knights, clothing, sanity, and finally his daughter. His madness on the heath is paradoxically the source of his moral education — only in unaccommodated suffering does he begin to recognise the &lsquo;poor naked wretches&rsquo; he has previously ignored. His final speech, repeating &lsquo;Never&rsquo; five times over Cordelia's body, is one of the most emotionally devastating moments in English drama. Critically he can be read as a Job-like figure tested by the gods, or as a study in narcissism, or as a representation of a king who falsely believes the body politic can be separated from the body natural."
+                description="The aged King of Britain whose tragic flaw is a confusion of love with flattery and authority with display. Lear demands public declarations of affection and divides his kingdom on the basis of words rather than deeds. Shakespeare presents his journey as a brutal stripping-away: of crown, knights, clothing, sanity, and finally his daughter. His madness on the heath is paradoxically the source of his moral education - only in unaccommodated suffering does he begin to recognise the &lsquo;poor naked wretches&rsquo; he has previously ignored. His final speech, repeating &lsquo;Never&rsquo; five times over Cordelia's body, is one of the most emotionally devastating moments in English drama. Critically he can be read as a Job-like figure tested by the gods, or as a study in narcissism, or as a representation of a king who falsely believes the body politic can be separated from the body natural."
               />
               <CharacterCard
                 name="Goneril"
-                description="Lear's eldest daughter and the Duchess of Albany. Goneril opens the play with hyperbolic flattery — &lsquo;Sir, I love you more than word can wield the matter&rsquo; — and is shown immediately afterwards plotting with Regan to undermine her father. She is politically shrewd, sexually predatory in her pursuit of Edmund, and contemptuous of her gentler husband Albany, whom she calls a &lsquo;milk-livered man.&rsquo; Shakespeare uses her to dramatise the perversion of natural family bonds; her downfall — poisoning her sister and then taking her own life — completes the play's pattern of evil consuming itself."
+                description="Lear's eldest daughter and the Duchess of Albany. Goneril opens the play with hyperbolic flattery - &lsquo;Sir, I love you more than word can wield the matter&rsquo; - and is shown immediately afterwards plotting with Regan to undermine her father. She is politically shrewd, sexually predatory in her pursuit of Edmund, and contemptuous of her gentler husband Albany, whom she calls a &lsquo;milk-livered man.&rsquo; Shakespeare uses her to dramatise the perversion of natural family bonds; her downfall - poisoning her sister and then taking her own life - completes the play's pattern of evil consuming itself."
               />
               <CharacterCard
                 name="Regan"
-                description="Lear's middle daughter and the Duchess of Cornwall. If Goneril is the strategist, Regan is the visceral cruelty: she physically pulls Gloucester's beard, urges Cornwall on as he blinds him, and dispatches the wounded servant with a sword from behind. She mirrors Goneril's flattery in Act I — &lsquo;I am made of that self mettle as my sister&rsquo; — but quickly becomes a rival, and her lust for Edmund fractures their alliance. She dies poisoned by her sister, off-stage, dismissed in a single line."
+                description="Lear's middle daughter and the Duchess of Cornwall. If Goneril is the strategist, Regan is the visceral cruelty: she physically pulls Gloucester's beard, urges Cornwall on as he blinds him, and dispatches the wounded servant with a sword from behind. She mirrors Goneril's flattery in Act I - &lsquo;I am made of that self mettle as my sister&rsquo; - but quickly becomes a rival, and her lust for Edmund fractures their alliance. She dies poisoned by her sister, off-stage, dismissed in a single line."
               />
               <CharacterCard
                 name="Cordelia"
@@ -307,7 +307,7 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="Edmund"
-                description="Gloucester's illegitimate son and the play's great Machiavellian villain. Edmund opens his soliloquy with a defiant address to &lsquo;Nature&rsquo; as his goddess, rejecting the legitimacy of laws based on accident of birth: &lsquo;Why bastard? Wherefore base?&rsquo; He frames Edgar, betrays Gloucester, courts both Goneril and Regan simultaneously, and orders Cordelia's execution. Yet Shakespeare gives him a remarkable death-bed reversal — &lsquo;Some good I mean to do, despite of mine own nature&rsquo; — which he attempts too late. He embodies a new, sceptical, post-feudal order in which loyalty and birthright are merely conventions to be exploited."
+                description="Gloucester's illegitimate son and the play's great Machiavellian villain. Edmund opens his soliloquy with a defiant address to &lsquo;Nature&rsquo; as his goddess, rejecting the legitimacy of laws based on accident of birth: &lsquo;Why bastard? Wherefore base?&rsquo; He frames Edgar, betrays Gloucester, courts both Goneril and Regan simultaneously, and orders Cordelia's execution. Yet Shakespeare gives him a remarkable death-bed reversal - &lsquo;Some good I mean to do, despite of mine own nature&rsquo; - which he attempts too late. He embodies a new, sceptical, post-feudal order in which loyalty and birthright are merely conventions to be exploited."
               />
               <CharacterCard
                 name="The Earl of Gloucester"
@@ -315,7 +315,7 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="The Earl of Kent"
-                description="The most loyal of Lear's nobles. Banished in the opening scene for daring to call the king mad — &lsquo;See better, Lear&rsquo; — he returns in disguise as &lsquo;Caius&rsquo; to serve his master through the storm and beyond. Kent is the moral counterweight to Edmund: a man who serves out of fidelity, not interest, and who will not survive the new order. His final lines suggest he intends to follow Lear into death: &lsquo;I have a journey, sir, shortly to go; / My master calls me; I must not say no.&rsquo;"
+                description="The most loyal of Lear's nobles. Banished in the opening scene for daring to call the king mad - &lsquo;See better, Lear&rsquo; - he returns in disguise as &lsquo;Caius&rsquo; to serve his master through the storm and beyond. Kent is the moral counterweight to Edmund: a man who serves out of fidelity, not interest, and who will not survive the new order. His final lines suggest he intends to follow Lear into death: &lsquo;I have a journey, sir, shortly to go; / My master calls me; I must not say no.&rsquo;"
               />
               <CharacterCard
                 name="The Duke of Albany"
@@ -323,11 +323,11 @@ export default function KingLearPage() {
               />
               <CharacterCard
                 name="The Duke of Cornwall"
-                description="Regan's husband, a sadistic and authoritarian figure. Cornwall's blinding of Gloucester is one of the most disturbing acts of cruelty in Shakespeare, performed without legal pretence and in defiance of his own servants' protests. He is fatally wounded by one of those servants — a rare moment in Shakespearean drama where the lower orders openly challenge tyranny. His death does not redeem the act; Regan simply takes over."
+                description="Regan's husband, a sadistic and authoritarian figure. Cornwall's blinding of Gloucester is one of the most disturbing acts of cruelty in Shakespeare, performed without legal pretence and in defiance of his own servants' protests. He is fatally wounded by one of those servants - a rare moment in Shakespearean drama where the lower orders openly challenge tyranny. His death does not redeem the act; Regan simply takes over."
               />
               <CharacterCard
                 name="King of France &amp; Duke of Burgundy"
-                description="The two suitors for Cordelia's hand in Act I. Burgundy, on hearing Cordelia is dowerless, immediately withdraws — &lsquo;Peace be with Burgundy: / Since that respects of fortune are his love, / I shall not be his wife.&rsquo; France marries her on principle, declaring &lsquo;She is herself a dowry.&rsquo; The two figures form a brief but pointed structural contrast between transactional and unconditional love, foreshadowing the play's broader interrogation of what binds people to one another. France remains off-stage thereafter; Cordelia returns as queen of France at the head of his army, but he himself is conspicuously absent from the final acts."
+                description="The two suitors for Cordelia's hand in Act I. Burgundy, on hearing Cordelia is dowerless, immediately withdraws - &lsquo;Peace be with Burgundy: / Since that respects of fortune are his love, / I shall not be his wife.&rsquo; France marries her on principle, declaring &lsquo;She is herself a dowry.&rsquo; The two figures form a brief but pointed structural contrast between transactional and unconditional love, foreshadowing the play's broader interrogation of what binds people to one another. France remains off-stage thereafter; Cordelia returns as queen of France at the head of his army, but he himself is conspicuously absent from the final acts."
               />
             </div>
           </Section>
@@ -339,15 +339,15 @@ export default function KingLearPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Power and Authority`)}
-                description="The play opens with the most catastrophic political act imaginable in early modern thought: a king dividing his realm and abdicating power without dying. Shakespeare anatomises what authority is once stripped of its theatrical trappings. Lear retains the &lsquo;name and all th' addition&rsquo; of king while giving away the substance, and discovers — too late — that his daughters value the substance, not the name. Power changes hands violently and repeatedly: from Lear to his daughters, from Gloucester to Edmund, from Cornwall to Albany, and finally to a depleted, exhausted Edgar. The play's political vision is profoundly pessimistic; even a legitimate restoration carries the weight of catastrophe."
+                description="The play opens with the most catastrophic political act imaginable in early modern thought: a king dividing his realm and abdicating power without dying. Shakespeare anatomises what authority is once stripped of its theatrical trappings. Lear retains the &lsquo;name and all th' addition&rsquo; of king while giving away the substance, and discovers - too late - that his daughters value the substance, not the name. Power changes hands violently and repeatedly: from Lear to his daughters, from Gloucester to Edmund, from Cornwall to Albany, and finally to a depleted, exhausted Edgar. The play's political vision is profoundly pessimistic; even a legitimate restoration carries the weight of catastrophe."
               />
               <ThemeCard
                 title={tr(`Sight and Blindness`)}
-                description="Few Shakespeare plays use a single image so insistently. Lear's opening fault is one of moral blindness — he cannot see Cordelia's love, nor read his elder daughters' flattery — and Kent's rebuke &lsquo;See better, Lear&rsquo; sets the motif in motion. Gloucester's literal blinding in Act III externalises the metaphor: only when his eyes are gone does he understand his sons. The paradox is sharpened in IV.vi when the blind Gloucester meets the mad Lear: &lsquo;A man may see how this world goes with no eyes. Look with thine ears.&rsquo; True sight in this play is moral, not physical; both fathers must be blinded, literally or figuratively, to perceive what they have done."
+                description="Few Shakespeare plays use a single image so insistently. Lear's opening fault is one of moral blindness - he cannot see Cordelia's love, nor read his elder daughters' flattery - and Kent's rebuke &lsquo;See better, Lear&rsquo; sets the motif in motion. Gloucester's literal blinding in Act III externalises the metaphor: only when his eyes are gone does he understand his sons. The paradox is sharpened in IV.vi when the blind Gloucester meets the mad Lear: &lsquo;A man may see how this world goes with no eyes. Look with thine ears.&rsquo; True sight in this play is moral, not physical; both fathers must be blinded, literally or figuratively, to perceive what they have done."
               />
               <ThemeCard
                 title="Madness"
-                description="Madness in <em>King Lear</em> is not merely affliction but a strange form of revelation. Lear's mind cracks under the weight of betrayal, but as it does so he speaks more truth — about justice, about the rich and poor, about the body — than he ever did in sanity. Edgar feigns madness as Poor Tom, and his fragmented, demonic speeches blur the line between performance and possession. The Fool's licensed folly, the king's genuine derangement, and Edgar's assumed lunacy together form a bleak Jacobean meditation on whether reason itself is the highest faculty. Shakespeare seems to suggest that institutional reason has failed, and that wisdom can only be glimpsed from outside it."
+                description="Madness in <em>King Lear</em> is not merely affliction but a strange form of revelation. Lear's mind cracks under the weight of betrayal, but as it does so he speaks more truth - about justice, about the rich and poor, about the body - than he ever did in sanity. Edgar feigns madness as Poor Tom, and his fragmented, demonic speeches blur the line between performance and possession. The Fool's licensed folly, the king's genuine derangement, and Edgar's assumed lunacy together form a bleak Jacobean meditation on whether reason itself is the highest faculty. Shakespeare seems to suggest that institutional reason has failed, and that wisdom can only be glimpsed from outside it."
               />
               <ThemeCard
                 title={tr(`Family and Filial Loyalty`)}
@@ -355,7 +355,7 @@ export default function KingLearPage() {
               />
               <ThemeCard
                 title={tr(`Nature and Order`)}
-                description="&lsquo;Nature&rsquo; is the play's most contested word. For Lear and Gloucester it means the divinely ordered hierarchy of family and state — the Great Chain of Being — and its violation is monstrous. For Edmund it means raw appetite: &lsquo;Thou, Nature, art my goddess; to thy law / My services are bound.&rsquo; The storm on the heath is the cosmos itself in revolt: a Jacobean audience would have read tempests as omens of disorder in the body politic. Yet Shakespeare resists giving the moral universe a stable centre. The gods are silent, the storm passes, and natural order is not restored — only exhaustion remains."
+                description="&lsquo;Nature&rsquo; is the play's most contested word. For Lear and Gloucester it means the divinely ordered hierarchy of family and state - the Great Chain of Being - and its violation is monstrous. For Edmund it means raw appetite: &lsquo;Thou, Nature, art my goddess; to thy law / My services are bound.&rsquo; The storm on the heath is the cosmos itself in revolt: a Jacobean audience would have read tempests as omens of disorder in the body politic. Yet Shakespeare resists giving the moral universe a stable centre. The gods are silent, the storm passes, and natural order is not restored - only exhaustion remains."
               />
               <ThemeCard
                 title={tr(`Suffering and Redemption`)}
@@ -394,7 +394,7 @@ export default function KingLearPage() {
                   answerable to him alone. His treatise{' '}
                   <em>{tr(`The Trew Law of Free Monarchies`)}</em> (1598) argued that subjects could
                   never legitimately resist a king. Lear&apos;s abdication is therefore not just
-                  imprudent but cosmically transgressive — kingship cannot be given away. The play
+                  imprudent but cosmically transgressive - kingship cannot be given away. The play
                   tests divine-right theory to destruction: if the king is the earthly image of God,
                   what becomes of order when he himself is mad, naked and weeping in a storm?
                 </p>
@@ -411,7 +411,7 @@ export default function KingLearPage() {
                   is a deliberate, shocking departure. Raphael Holinshed&apos;s <em>Chronicles</em>
                   (1577/1587) supplied the chronicle-history framing and the legendary status of
                   Lear as an ancient British king. The Gloucester subplot is borrowed from the story
-                  of the Paphlagonian king in Sir Philip Sidney&apos;s <em>Arcadia</em> (1590) —
+                  of the Paphlagonian king in Sir Philip Sidney&apos;s <em>Arcadia</em> (1590) -
                   Shakespeare&apos;s grafting of this parallel plot onto the Lear story is one of
                   his most important structural innovations.
                 </p>
@@ -434,10 +434,10 @@ export default function KingLearPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Elizabethan and Jacobean worldview was structured around a hierarchy
                   descending from God through angels, monarchs, nobles, commoners, animals and
-                  minerals — the Great Chain of Being. Each link had its proper place, and any
+                  minerals - the Great Chain of Being. Each link had its proper place, and any
                   disruption threatened the whole. Lear&apos;s abdication, daughters who outrank
                   fathers, a bastard who supplants his legitimate brother, servants who strike their
-                  masters — all are violations of the Chain. Shakespeare uses the vocabulary of the
+                  masters - all are violations of the Chain. Shakespeare uses the vocabulary of the
                   Chain (&lsquo;nature,&rsquo; &lsquo;degree,&rsquo; &lsquo;bond&rsquo;) even as the
                   play seems to dismantle confidence in it.
                 </p>
@@ -473,7 +473,7 @@ export default function KingLearPage() {
               <QuoteCard
                 quote="Nothing will come of nothing. Speak again."
                 speaker="Lear, I.i"
-                analysis="The opening confrontation with Cordelia. The chiasmic phrase &lsquo;nothing... nothing&rsquo; sets up a key motif: the word &lsquo;nothing&rsquo; recurs more than thirty times in the play, becoming a kind of leitmotif for what Lear loses (kingdom, daughters, sanity, identity). Cordelia's answer — &lsquo;Nothing&rsquo; — is the seed of the entire tragedy. Lear's injunction &lsquo;Speak again&rsquo; reveals his confusion of love with verbal performance, the foundational error of the play."
+                analysis="The opening confrontation with Cordelia. The chiasmic phrase &lsquo;nothing... nothing&rsquo; sets up a key motif: the word &lsquo;nothing&rsquo; recurs more than thirty times in the play, becoming a kind of leitmotif for what Lear loses (kingdom, daughters, sanity, identity). Cordelia's answer - &lsquo;Nothing&rsquo; - is the seed of the entire tragedy. Lear's injunction &lsquo;Speak again&rsquo; reveals his confusion of love with verbal performance, the foundational error of the play."
               />
               <QuoteCard
                 quote="I love your majesty according to my bond, no more nor less."
@@ -528,7 +528,7 @@ export default function KingLearPage() {
               <QuoteCard
                 quote="I stumbled when I saw."
                 speaker="Gloucester, IV.i"
-                analysis="The most concise statement of the sight/blindness paradox. The verb &lsquo;stumbled&rsquo; reverses the usual association of sight with security; only blindness has given Gloucester clear vision. Brilliant for AO2 (language) work because of its compression — five words contain the entire metaphorical structure of the subplot."
+                analysis="The most concise statement of the sight/blindness paradox. The verb &lsquo;stumbled&rsquo; reverses the usual association of sight with security; only blindness has given Gloucester clear vision. Brilliant for AO2 (language) work because of its compression - five words contain the entire metaphorical structure of the subplot."
               />
               <QuoteCard
                 quote="A man may see how this world goes with no eyes. Look with thine ears."
@@ -548,7 +548,7 @@ export default function KingLearPage() {
               <QuoteCard
                 quote="Howl, howl, howl, howl! O, you are men of stones."
                 speaker="Lear, V.iii"
-                analysis="Lear enters with Cordelia in his arms. The four-fold imperative is reducible to no rational meaning — it is grief-as-sound. The contrast with the urbane verse he speaks elsewhere is shattering. &lsquo;Men of stones&rsquo; transforms the on-stage witnesses into a chorus of unfeeling rock. Critics often note that the line is Shakespeare's most extreme attempt to push tragic verse to the limit of articulation."
+                analysis="Lear enters with Cordelia in his arms. The four-fold imperative is reducible to no rational meaning - it is grief-as-sound. The contrast with the urbane verse he speaks elsewhere is shattering. &lsquo;Men of stones&rsquo; transforms the on-stage witnesses into a chorus of unfeeling rock. Critics often note that the line is Shakespeare's most extreme attempt to push tragic verse to the limit of articulation."
               />
               <QuoteCard
                 quote="Never, never, never, never, never."
@@ -573,7 +573,7 @@ export default function KingLearPage() {
                   storm through Lear&apos;s imperatives (&lsquo;Blow, winds&rsquo;) so that the king
                   and the elements seem to share a single voice, even as nature refuses to obey him.
                   The storm passes, but unlike the tempest at the end of{' '}
-                  <em>{tr(`The Tempest`)}</em>, it is not redemptive — it merely exhausts.
+                  <em>{tr(`The Tempest`)}</em>, it is not redemptive - it merely exhausts.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -582,10 +582,10 @@ export default function KingLearPage() {
                   Clothing is the visible sign of social position. Lear&apos;s descent is marked by
                   progressive unclothing: he gives away his crown, then his retinue, and finally
                   tears off his own garments on the heath when he sees Edgar as the &lsquo;poor,
-                  bare, forked animal&rsquo; Poor Tom. Edgar&apos;s beggar disguise — naked but for
-                  a blanket and mud — is the play&apos;s emblem of unaccommodated humanity. The
+                  bare, forked animal&rsquo; Poor Tom. Edgar&apos;s beggar disguise - naked but for
+                  a blanket and mud - is the play&apos;s emblem of unaccommodated humanity. The
                   motif culminates in the recovery scene of IV.vii, where Lear is brought on stage
-                  in fresh clothes provided by Cordelia&apos;s attendants — re-clothed by his
+                  in fresh clothes provided by Cordelia&apos;s attendants - re-clothed by his
                   daughter&apos;s love. Clothing is identity in Lear; to lose it is to become
                   nothing, but also, paradoxically, to see truly.
                 </p>
@@ -608,8 +608,8 @@ export default function KingLearPage() {
                 <h4 className="font-bold text-foreground">{tr(`Lear&apos;s Crown`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The crown is given away in I.i and never literally returned. In its place, Lear in
-                  IV.vi wears a crown of weeds and wild flowers — &lsquo;crown&apos;d with rank
-                  fumiter and furrow-weeds&rsquo; — a savage parody of regal display. The
+                  IV.vi wears a crown of weeds and wild flowers - &lsquo;crown&apos;d with rank
+                  fumiter and furrow-weeds&rsquo; - a savage parody of regal display. The
                   substitution dramatises the play&apos;s collapse of the body politic into the body
                   natural. The crown of weeds also recalls Christ&apos;s crown of thorns; readings
                   that emphasise the play&apos;s religious imagery often pivot on this image.
@@ -625,7 +625,7 @@ export default function KingLearPage() {
                   arc of the lower characters: an unnamed servant draws his sword in protest and
                   kills his master, the only such moment of insubordination in Shakespeare. After
                   the blinding, every encounter Gloucester has is framed by the audience&apos;s
-                  awareness that he cannot see — a sustained dramatic irony that intensifies pathos.
+                  awareness that he cannot see - a sustained dramatic irony that intensifies pathos.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -649,7 +649,7 @@ export default function KingLearPage() {
                   kite.&rsquo; Albany denounces Goneril and Regan as &lsquo;Tigers, not
                   daughters.&rsquo; Edgar as Poor Tom describes himself as &lsquo;hog in sloth, fox
                   in stealth, wolf in greediness, dog in madness, lion in prey.&rsquo; The
-                  cumulative effect is a vision of humanity collapsing into the bestial — a Jacobean
+                  cumulative effect is a vision of humanity collapsing into the bestial - a Jacobean
                   nightmare about the porous boundary between man and animal, reinforced by the
                   period&apos;s anxieties about disorder and social rebellion.
                 </p>
@@ -702,7 +702,7 @@ export default function KingLearPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Gloucester&apos;s &lsquo;I stumbled when I saw.&rsquo; The blinding is the
-                      play&apos;s most graphic suffering, and it produces clear moral perception —
+                      play&apos;s most graphic suffering, and it produces clear moral perception -
                       but it cannot save him.
                     </p>
                   </div>
@@ -846,7 +846,7 @@ export default function KingLearPage() {
                       differently: in <em>Macbeth</em> ambition is internal and demonic, hunting
                       from within the protagonist&apos;s soul; in <em>Lear</em> the destructive
                       ambition belongs to the next generation, while the protagonist&apos;s fall is
-                      from a different vice — pride. Yet the trajectory of catastrophe and the
+                      from a different vice - pride. Yet the trajectory of catastrophe and the
                       cosmological imagery are strikingly similar.
                     </p>
                   </div>
@@ -921,7 +921,7 @@ export default function KingLearPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;According to my bond, no more nor less.&rsquo; Cordelia is not a
-                      sentimental heroine — her language is austere. AO5: feminist readings
+                      sentimental heroine - her language is austere. AO5: feminist readings
                       (Kathleen McLuskie) that see her as defined by her function in a patriarchal
                       economy of love.
                     </p>
@@ -983,7 +983,7 @@ export default function KingLearPage() {
             <span>
               <strong>{tr(`Engage with critical readings (AO5).`)}</strong> A.C. Bradley&apos;s
               redemptive reading; Jan Kott&apos;s absurdist reading; feminist readings (McLuskie);
-              New Historicist readings (Greenblatt). You don&apos;t need many — two well-chosen
+              New Historicist readings (Greenblatt). You don&apos;t need many - two well-chosen
               critics, deployed accurately, beat a list.
             </span>
           </li>
@@ -992,7 +992,7 @@ export default function KingLearPage() {
             <span>
               <strong>{tr(`Anchor context (AO3) precisely.`)}</strong> Don&apos;t just say
               &ldquo;Jacobean audiences believed in the Divine Right of Kings.&rdquo; Show how that
-              belief makes a specific moment — Lear&apos;s abdication, the storm, the blinding —
+              belief makes a specific moment - Lear&apos;s abdication, the storm, the blinding -
               register more powerfully.
             </span>
           </li>

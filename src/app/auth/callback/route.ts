@@ -68,7 +68,7 @@ export async function GET(request: NextRequest) {
     return response
   }
 
-  // Handle PKCE flow (code exchange) — covers email-confirmed signup,
+  // Handle PKCE flow (code exchange) - covers email-confirmed signup,
   // OAuth, magic links and password reset when the project uses PKCE.
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code)

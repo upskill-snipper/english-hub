@@ -42,7 +42,7 @@ export default async function SchoolAdminLayout({ children }: { children: React.
         accessUntil={access.accessUntil ?? undefined}
       />
 
-      {/* Main content area — id matches the skip-to-content link in
+      {/* Main content area - id matches the skip-to-content link in
           src/app/layout.tsx. The root layout-shell suppresses its own
           #main-content wrapper on /school/* routes, so this is the only
           anchor keyboard users land on after using the skip link. */}

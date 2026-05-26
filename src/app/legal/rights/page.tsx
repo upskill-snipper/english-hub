@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Rights & Permissions — The English Hub',
+    title: 'Rights & Permissions - The English Hub',
     description:
       'Directory of publishers, literary agents, and rights-holders we contact for permissions and source attribution. Quotations on the platform are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation).',
   },
@@ -127,7 +127,7 @@ const RIGHTS_HOLDERS: RightsHolder[] = [
     publisher: 'Orwell Estate / A. M. Heath',
     website: 'amheath.com',
     url: 'https://www.amheath.com',
-    keyTexts: 'George Orwell (Animal Farm) — actively enforced',
+    keyTexts: 'George Orwell (Animal Farm) - actively enforced',
   },
   {
     publisher: 'Farrar, Straus & Giroux',
@@ -164,7 +164,7 @@ export default function RightsAndPermissionsPage() {
     <>
       <h1 className="text-3xl font-bold mb-2">Rights & Permissions</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>The English Hub</strong> — operated by Upskill Energy Limited
+        <strong>The English Hub</strong> - operated by Upskill Energy Limited
         <br />
         Last updated: 28 April 2026
       </p>
@@ -182,7 +182,7 @@ export default function RightsAndPermissionsPage() {
         <p className="mt-3">
           We maintain this directory so that students, teachers, parents, and third parties can
           verify our sources and reach the appropriate rights-holder when they need to use a longer
-          extract — for example, in a printed worksheet, a school anthology, or a public
+          extract - for example, in a printed worksheet, a school anthology, or a public
           performance.
         </p>
       </section>
@@ -267,7 +267,7 @@ export default function RightsAndPermissionsPage() {
           <ul className="list-disc pl-6 space-y-1">
             {US_PD_NOT_UK.map((entry) => (
               <li key={entry.author}>
-                <strong>{entry.author}</strong> (d.&nbsp;{entry.died}) — UK copyright expires{' '}
+                <strong>{entry.author}</strong> (d.&nbsp;{entry.died}) - UK copyright expires{' '}
                 {entry.ukExpires}.
               </li>
             ))}
@@ -284,8 +284,8 @@ export default function RightsAndPermissionsPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">How to Request Extended Quotation Rights</h2>
         <p className="mb-3">
-          If you wish to reproduce more than a fair-dealing extract — for example, a full poem, a
-          long passage from a novel, or a scene from a play — please follow these steps:
+          If you wish to reproduce more than a fair-dealing extract - for example, a full poem, a
+          long passage from a novel, or a scene from a play - please follow these steps:
         </p>
         <ol className="list-decimal pl-6 space-y-2">
           <li>
@@ -305,7 +305,7 @@ export default function RightsAndPermissionsPage() {
             use is commercial or non-commercial.
           </li>
           <li>
-            <strong>Allow time for a response.</strong> Most publishers respond within 4–8 weeks.
+            <strong>Allow time for a response.</strong> Most publishers respond within 4-8 weeks.
             Some texts (especially anthology entries) may require sub-licensing through more than
             one rights-holder.
           </li>
@@ -336,7 +336,7 @@ export default function RightsAndPermissionsPage() {
             <Link href="/legal/disclaimer" className="text-foreground underline hover:no-underline">
               Full Disclaimer
             </Link>{' '}
-            — exam-board non-affiliation and trademark attributions.
+            - exam-board non-affiliation and trademark attributions.
           </li>
           <li>
             <Link
@@ -345,11 +345,11 @@ export default function RightsAndPermissionsPage() {
             >
               AI Transparency
             </Link>{' '}
-            — how AI feedback uses these source materials.
+            - how AI feedback uses these source materials.
           </li>
           <li>
             {/* TODO: add /legal/copyright when the dedicated copyright notice page is created */}
-            <span className="text-muted-foreground">Copyright Notice — coming soon.</span>
+            <span className="text-muted-foreground">Copyright Notice - coming soon.</span>
           </li>
         </ul>
       </section>

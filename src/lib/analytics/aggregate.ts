@@ -85,24 +85,24 @@ export interface AggregateSnapshot {
  *
  * History:
  *   - Originally a mock array of 8 fabricated questions.
- *   - Cycle 7: dropped to `return []` (honest zero — no source table).
+ *   - Cycle 7: dropped to `return []` (honest zero - no source table).
  *   - 2026-04-20: implemented against `public.quiz_responses`, landed in
  *     migration `20260420_quiz_responses.sql` and wired to the client in
  *     `src/app/revision/quiz/quiz-engine.tsx`.
  *
  * Definitions:
- *   - `correctRate = correctCount / totalAttempts * 100` (0–100 integer).
+ *   - `correctRate = correctCount / totalAttempts * 100` (0-100 integer).
  *   - `difficulty` bands map to correctRate:
  *       easy       ≥ 80%
- *       medium     50–79%
- *       hard       25–49%
+ *       medium     50-79%
+ *       hard       25-49%
  *       very-hard  < 25%
  *   - `avgTimeSeconds` is the mean over all responses for this questionId.
  *
  * Schema notes:
  *   - `quiz_responses.module_id` is OPTIONAL (FK SET NULL). The client
  *     doesn't send it (quiz "topics" aren't `modules` rows). So we don't
- *     join modules — moduleId/moduleName/courseId/courseName are returned
+ *     join modules - moduleId/moduleName/courseId/courseName are returned
  *     as empty strings when module_id is NULL. A future modules-aware
  *     client can populate them without schema change.
  *   - Minimum-attempts gate: we exclude question_ids with fewer than 3
@@ -127,7 +127,7 @@ export async function getQuestionDifficulty(
   }
   if (!data || data.length === 0) return []
 
-  // Aggregate in-app — Supabase doesn't support GROUP BY via PostgREST.
+  // Aggregate in-app - Supabase doesn't support GROUP BY via PostgREST.
   const buckets = new Map<
     string,
     { moduleId: string; total: number; correct: number; timeSum: number }
@@ -144,7 +144,7 @@ export async function getQuestionDifficulty(
     if (row.is_correct) existing.correct += 1
     existing.timeSum += Number(row.time_taken_seconds) || 0
     // First-seen moduleId wins. If later rows have a different non-null
-    // moduleId we keep the first — not load-bearing, moduleId is best-effort.
+    // moduleId we keep the first - not load-bearing, moduleId is best-effort.
     buckets.set(qid, existing)
   }
 
@@ -192,7 +192,7 @@ export async function getQuestionDifficulty(
  * Source: `module_progress` grouped by `module_id`, joined to `modules` and
  * `courses` for titles. "textId" maps to `module.id`, "textTitle" to
  * `module.title`, "author" is left blank because the schema has no author
- * field — returning "" is honest; we do NOT fabricate Shakespeare/Dickens.
+ * field - returning "" is honest; we do NOT fabricate Shakespeare/Dickens.
  *
  * Trend direction: computed by comparing the last 14 days of sessions vs.
  * the 14 days before that. rising/stable/falling within +-10%.
@@ -200,7 +200,7 @@ export async function getQuestionDifficulty(
  * Bounded cost: pulls `module_progress` rows (user_id, module_id,
  * completed, time_spent_seconds, completed_at). With indexes on
  * (user_id, course_id) and (user_id, completed, completed_at) this is a
- * single sequential scan of active rows — fine at current scale.
+ * single sequential scan of active rows - fine at current scale.
  */
 export async function getMostStudiedTexts(supabase: SupabaseClient): Promise<TextPopularity[]> {
   const [progressResult, modulesResult] = await Promise.all([
@@ -556,7 +556,7 @@ export async function getGradeDistribution(supabase: SupabaseClient): Promise<Gr
  * getMostStudiedTexts. Returns the top 5.
  *
  * Bounded cost: one filtered scan of module_progress plus a modules lookup.
- * If `completed_at` is indexed (it isn't today — see follow-up), this is
+ * If `completed_at` is indexed (it isn't today - see follow-up), this is
  * near-instant; without an index it's a sequential scan of module_progress.
  */
 export async function getWeeklyPopularTexts(supabase: SupabaseClient): Promise<TextPopularity[]> {
@@ -647,7 +647,7 @@ export async function getWeeklyPopularTexts(supabase: SupabaseClient): Promise<T
  *
  * Was: sliced from the mock question-difficulty array.
  *
- * Honest zero: same reason as getQuestionDifficulty — the schema has no
+ * Honest zero: same reason as getQuestionDifficulty - the schema has no
  * per-question outcome table. Returns [] until a `quiz_responses` table
  * exists.
  */
@@ -667,7 +667,7 @@ export async function getHardestQuestions(
  * Totals computed here:
  *   - totalStudents: `profiles` count where `role = 'student'` (or NULL,
  *     since pre-existing rows may predate the role column). We use
- *     `count: 'exact', head: true` so no rows are returned — just the
+ *     `count: 'exact', head: true` so no rows are returned - just the
  *     count header.
  *     Was: hardcoded 46,219.
  *   - totalQuizAttempts: `module_progress` count where `quiz_attempts > 0`
@@ -693,7 +693,7 @@ export async function getAggregateSnapshot(supabase: SupabaseClient): Promise<Ag
     getGradeDistribution(supabase),
     getWeeklyPopularTexts(supabase),
     getHardestQuestions(supabase),
-    // Counts — head:true returns a count header without row payload.
+    // Counts - head:true returns a count header without row payload.
     supabase.from('profiles').select('*', { count: 'exact', head: true }),
     supabase
       .from('module_progress')
@@ -706,7 +706,7 @@ export async function getAggregateSnapshot(supabase: SupabaseClient): Promise<Ag
     // Was: 46219. Now: live profile count (every signed-up user counts).
     totalStudents: totalStudentsResult.count ?? 0,
     // Was: 312847. Now: number of module_progress rows with a recorded
-    // quiz score — a conservative, honest proxy for "quiz attempts".
+    // quiz score - a conservative, honest proxy for "quiz attempts".
     totalQuizAttempts: totalQuizAttemptsResult.count ?? 0,
     totalTextsStudied: mostStudiedTexts.length,
     questionDifficulty,

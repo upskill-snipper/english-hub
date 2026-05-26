@@ -4,7 +4,7 @@ import { ClassComparison } from '@/components/school/ClassComparison'
 import { Skeleton } from '@/components/ui/skeleton'
 import { t } from '@/lib/i18n/t'
 
-// SEO metadata stays in English — Google's English crawl is canonical for this
+// SEO metadata stays in English - Google's English crawl is canonical for this
 // admin-only page (robots: noindex anyway). User-facing chrome below is wired
 // through useT/t for the Khaleeji-AR toggle.
 export const metadata: Metadata = {

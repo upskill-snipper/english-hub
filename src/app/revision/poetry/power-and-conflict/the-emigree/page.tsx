@@ -178,7 +178,7 @@ const POEM: PoemData = {
   ],
 
   context: `<p><strong>Carol Rumens</strong> (born 1944) is a British poet, novelist, and critic. Although not an émigrée herself, Rumens has a deep interest in Eastern European politics and culture, particularly the experiences of those displaced by political conflict.</p>
-<p><strong>The unnamed city:</strong> The city is intentionally <strong>unnamed</strong>, allowing the poem to speak to any displaced person. Rumens has confirmed the absence of specifics is deliberate. Avoid identifying it as Sarajevo, Beirut, or any specific place — the universality is the point.</p>
+<p><strong>The unnamed city:</strong> The city is intentionally <strong>unnamed</strong>, allowing the poem to speak to any displaced person. Rumens has confirmed the absence of specifics is deliberate. Avoid identifying it as Sarajevo, Beirut, or any specific place - the universality is the point.</p>
 <p><strong>Emigration and exile:</strong> The poem explores the experience of being forced to leave one's homeland -- a reality for millions displaced by war, political oppression, and regime change. The speaker's country is deliberately left unnamed, making the poem universal rather than tied to one specific conflict.</p>
 <p><strong>Cold War context:</strong> Written in 1993, the poem resonates with Cold War-era displacement, the fall of the Berlin Wall (1989), and the breakup of the Soviet Union and Yugoslavia. Many people were separated from homelands that were physically transformed or politically erased.</p>
 <p><strong>Nostalgia vs. reality:</strong> A central tension in the poem is between the speaker's idealised, sunlit memory of their homeland and the brutal present reality of war, tyranny, and destruction. Memory becomes a form of resistance against political erasure.</p>
@@ -186,12 +186,12 @@ const POEM: PoemData = {
 <p><strong>Identity and belonging:</strong> The speaker exists between two worlds -- exiled from a homeland they remember with love, and undocumented in a new country where they lack formal identity. Memory becomes the true "passport" and source of selfhood.</p>`,
 
   contextAr: `<p><strong>Carol Rumens</strong> (مواليد 1944) شاعرة وروائية وناقدة بريطانية. مع إنها هي بنفسها مو émigrée، إلا إنها مهتمّة وايد بسياسة وثقافة شرق أوروبا، خصوصاً تجارب الناس اللي تشرّدوا بسبب الصراعات السياسية.</p>
-<p><strong>المدينة المجهولة:</strong> المدينة في القصيدة <strong>ما لها اسم</strong> عن قصد، عشان القصيدة تخاطب كل شخص تشرّد. Rumens أكّدت إن غياب التفاصيل مقصود. لا تحدّدها على إنها سراييفو أو بيروت أو أي مكان بعينه — العمومية هي بيت القصيد.</p>
-<p><strong>الهجرة والمنفى:</strong> القصيدة تستكشف تجربة الإجبار على ترك الوطن — واقع عاشه ملايين البشر بسبب الحرب والقمع السياسي وتغيّر الأنظمة. بلد المتكلّمة ما تتسمّى عن قصد، وهذا يخلّي القصيدة عالمية مو مرتبطة بصراع واحد بعينه.</p>
+<p><strong>المدينة المجهولة:</strong> المدينة في القصيدة <strong>ما لها اسم</strong> عن قصد، عشان القصيدة تخاطب كل شخص تشرّد. Rumens أكّدت إن غياب التفاصيل مقصود. لا تحدّدها على إنها سراييفو أو بيروت أو أي مكان بعينه - العمومية هي بيت القصيد.</p>
+<p><strong>الهجرة والمنفى:</strong> القصيدة تستكشف تجربة الإجبار على ترك الوطن - واقع عاشه ملايين البشر بسبب الحرب والقمع السياسي وتغيّر الأنظمة. بلد المتكلّمة ما تتسمّى عن قصد، وهذا يخلّي القصيدة عالمية مو مرتبطة بصراع واحد بعينه.</p>
 <p><strong>سياق الحرب الباردة:</strong> القصيدة كُتبت سنة 1993، وتتجاوب مع التشريد في حقبة الحرب الباردة، وسقوط جدار برلين (1989)، وتفكّك الاتحاد السوفيتي ويوغوسلافيا. وايد من الناس انفصلوا عن أوطانهم اللي تغيّرت مادياً أو مُحيت سياسياً.</p>
 <p><strong>الحنين مقابل الواقع:</strong> التوتّر الأساسي في القصيدة بين ذاكرة المتكلّمة المثالية والمشمسة عن وطنها، وبين الواقع الحاضر القاسي من حرب وطغيان ودمار. الذاكرة تتحوّل لشكل من أشكال المقاومة ضد المحو السياسي.</p>
 <p><strong>القمع السياسي:</strong> الإشارات للطغاة (tyrants) والمذابح (massacres) والجرّافات (bulldozers) والحدود اللي ترتفع (frontiers) تستحضر أنظمة استبدادية تدمّر المدن وتمحي الثقافات وتمنع المواطنين من الرجوع. القصيدة تلمّح إن الأماكن المادية ممكن تتدمّر، بس الذاكرة ما يقدر أصحاب السلطة يسيطرون عليها.</p>
-<p><strong>الهوية والانتماء:</strong> المتكلّمة تعيش بين عالمين — منفية من وطن تتذكّره بحب، وبدون أوراق رسمية في بلد جديد ما تملك فيه هوية موثّقة. الذاكرة تصير "passport" الحقيقي ومصدر الذات.</p>`,
+<p><strong>الهوية والانتماء:</strong> المتكلّمة تعيش بين عالمين - منفية من وطن تتذكّره بحب، وبدون أوراق رسمية في بلد جديد ما تملك فيه هوية موثّقة. الذاكرة تصير "passport" الحقيقي ومصدر الذات.</p>`,
 
   summary: `The speaker reflects on a country they left as a child, describing memories bathed in an unchanging sunlight that no amount of political violence or personal distance can extinguish.
 
@@ -203,11 +203,11 @@ The final stanza is the most defiant. Memory becomes a passport granting free ac
 
   summaryAr: `المتكلّمة تتذكّر بلد تركتها وهي صغيرة، وتوصف ذكريات مغمورة بشمس ما تتغيّر، ما يقدر يطفيها لا عنف سياسي ولا بعد مكاني.
 
-في المقطع الأول، المتكلّمة تعرّف وطنها من خلال عدسة ذكريات الطفولة. مع إنها تعترف إن البلد يمكن الآن في حرب أو تحت حكم طغيان، ذاكرتها تبقى صافية مثل ضوء الشمس — حيّة ودافية ومطبوعة بشكل دائم.
+في المقطع الأول، المتكلّمة تعرّف وطنها من خلال عدسة ذكريات الطفولة. مع إنها تعترف إن البلد يمكن الآن في حرب أو تحت حكم طغيان، ذاكرتها تبقى صافية مثل ضوء الشمس - حيّة ودافية ومطبوعة بشكل دائم.
 
 المقطع الثاني يطوّر التباين بين المدينة الجميلة المتذكَّرة وبين دمارها المحتمل. الشوارع البيضاء والمنحدرات الرشيقة تتحوّل إلى مذابح وجرّافات. المتكلّمة يقولون لها ما تقدر ترجع، ويمكن المدينة انمحت، بس اللازمة (refrain) تصرّ: انطباع الشمس يدوم.
 
-المقطع الأخير هو الأكثر تحدّياً. الذاكرة تصير جواز سفر (passport) يمنحها حرية الوصول لكل ركن من المدينة المفقودة. المدينة، بالتشخيص، تأخذها ترقص. وفي البلد الجديد، المتكلّمة ما عندها هوية رسمية، بس السلطات ما تقدر تخترق عالمها الداخلي. القصيدة تختم بالمتكلّمة وهي تصف نفسها وكأنها تُبعِد نفسها نحو ضوء الشمس — استرجاع قوي للغة المنفى، يحوّل الإبعاد القسري إلى عودة يومية اختيارية لنور الذاكرة.`,
+المقطع الأخير هو الأكثر تحدّياً. الذاكرة تصير جواز سفر (passport) يمنحها حرية الوصول لكل ركن من المدينة المفقودة. المدينة، بالتشخيص، تأخذها ترقص. وفي البلد الجديد، المتكلّمة ما عندها هوية رسمية، بس السلطات ما تقدر تخترق عالمها الداخلي. القصيدة تختم بالمتكلّمة وهي تصف نفسها وكأنها تُبعِد نفسها نحو ضوء الشمس - استرجاع قوي للغة المنفى، يحوّل الإبعاد القسري إلى عودة يومية اختيارية لنور الذاكرة.`,
 
   formAndStructure: `Form: Free verse with no regular rhyme scheme or metre, reflecting the fragmented, displaced nature of the émigrée's experience.
 
@@ -229,13 +229,13 @@ Contrast: The structure consistently juxtaposes the bright, idealised past again
 
 اللازمة (Refrain): إشارة لضوء الشمس تختم كل مقطع، وتتطوّر من ذاكرة سلبية (الإحساس بأنها موسومة بانطباع من ضوء الشمس) لتحدٍّ فاعل (إبعاد النفس نحو ضوء الشمس). هذا التدرّج يعكس تأكيد المتكلّمة المتنامي لهويتها.
 
-Enjambment: الأبيات وايد منها تتواصل بدون توقّف، ويخلق هذا تدفّق ذهني (stream-of-consciousness) يعكس طريقة عمل الذاكرة — غير متوقّعة، ترابطية، صعب تتحكّم فيها.
+Enjambment: الأبيات وايد منها تتواصل بدون توقّف، ويخلق هذا تدفّق ذهني (stream-of-consciousness) يعكس طريقة عمل الذاكرة - غير متوقّعة، ترابطية، صعب تتحكّم فيها.
 
 Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل المتكلّمة من عجزها عن الوصول للمدينة إلى احتمال وقوع مذبحة) تخلق تحوّلات نبرية مفاجئة، تنقل القارئ بصدمة من الجمال إلى العنف.
 
 ضمير المتكلّم (First person): استخدام "I" و"my" بشكل مستمر يخلق نبرة حميمة وشخصية. ولغة التملّك ("my memory"، "my city") تأكّد على ملكية المتكلّمة لوطنها.
 
-التباين (Contrast): البنية باستمرار تضع الماضي المضيء المثالي قبال الحاضر المظلم العنيف، بس دائماً ترجع للنور — يلمّح بانتصار الذاكرة على الدمار السياسي.`,
+التباين (Contrast): البنية باستمرار تضع الماضي المضيء المثالي قبال الحاضر المظلم العنيف، بس دائماً ترجع للنور - يلمّح بانتصار الذاكرة على الدمار السياسي.`,
 
   // Quotation note: "The Émigrée" is in copyright. The references below
   // describe and paraphrase the poem's lines rather than reproducing them
@@ -244,7 +244,7 @@ Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل
   // in an exam answer.
   keyQuotes: [
     {
-      quote: 'The fairy-tale opening line (a country left in childhood) — paraphrase',
+      quote: 'The fairy-tale opening line (a country left in childhood) - paraphrase',
       analysis:
         'The fairy-tale-style opening creates a sense of nostalgia and distance, as if the homeland exists only in story. The ellipsis represents a gap in memory or a reluctance to fully confront the past. Leaving the country in childhood explains why the memory is so pure and uncomplicated.',
       themes: ['Memory', 'Loss', 'Identity'],
@@ -253,7 +253,7 @@ Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل
       themesAr: ['الذاكرة', 'الخسارة', 'الهوية'],
     },
     {
-      quote: 'The "sunlight"/clarity compound describing the memory — paraphrase',
+      quote: 'The "sunlight"/clarity compound describing the memory - paraphrase',
       analysis:
         "A compound adjective fuses the poem's central motif of light with absolute clarity. The memory is presented as transparent and uncorrupted, contrasting with the murky political reality of the present.",
       themes: ['Memory', 'Light imagery', 'Nostalgia'],
@@ -262,16 +262,16 @@ Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل
       themesAr: ['الذاكرة', 'صور النور', 'الحنين'],
     },
     {
-      quote: 'The recurring "branded by an impression of sunlight" refrain — paraphrase',
+      quote: 'The recurring "branded by an impression of sunlight" refrain - paraphrase',
       analysis:
         'The idea of being "branded" carries connotations of both ownership (as in cattle branding) and permanent marking (as in a burn). The memory is not gentle -- it is seared into the speaker, suggesting both pain and permanence. This refrain anchors each stanza.',
       themes: ['Memory', 'Identity', 'Power of the past'],
       analysisAr:
-        'كلمة "branded" فيها إيحاء بالملكية (مثل وسم المواشي) وبالعلامة الدائمة (مثل حرق). الذاكرة مو هاديّة — هي مكويّة على المتكلّمة، وهذا يلمّح بالألم وبالدوام في نفس الوقت. وهذي اللازمة (refrain) تثبّت كل مقطع.',
+        'كلمة "branded" فيها إيحاء بالملكية (مثل وسم المواشي) وبالعلامة الدائمة (مثل حرق). الذاكرة مو هاديّة - هي مكويّة على المتكلّمة، وهذا يلمّح بالألم وبالدوام في نفس الوقت. وهذي اللازمة (refrain) تثبّت كل مقطع.',
       themesAr: ['الذاكرة', 'الهوية', 'قوة الماضي'],
     },
     {
-      quote: 'The "sick with tyrants" image of the homeland — paraphrase',
+      quote: 'The "sick with tyrants" image of the homeland - paraphrase',
       analysis:
         'Personifying the country as "sick" suggests tyranny is a disease infecting the nation. The tentative "may be" phrasing shows the speaker is cut off from current information, relying on speculation rather than knowledge.',
       themes: ['Political oppression', 'Conflict', 'Displacement'],
@@ -280,7 +280,7 @@ Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل
       themesAr: ['القمع السياسي', 'الصراع', 'التشريد'],
     },
     {
-      quote: 'The "frontiers rise between us" border image — paraphrase',
+      quote: 'The "frontiers rise between us" border image - paraphrase',
       analysis:
         'Personifying borders as actively "rising" presents political boundaries as aggressive, living barriers. The "between us" phrasing implies a personal, almost romantic separation between the speaker and their city.',
       themes: ['Conflict', 'Political oppression', 'Displacement'],
@@ -289,16 +289,16 @@ Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل
       themesAr: ['الصراع', 'القمع السياسي', 'التشريد'],
     },
     {
-      quote: 'The "memory is a passport" metaphor — paraphrase',
+      quote: 'The "memory is a passport" metaphor - paraphrase',
       analysis:
         "This metaphor is the poem's most powerful image. A passport is a document of identity and freedom of movement -- things the émigrée has been denied. By making memory a passport, the speaker asserts that internal experience transcends political control.",
       themes: ['Memory', 'Identity', 'Power', 'Defiance'],
       analysisAr:
-        'هذي الاستعارة هي أقوى صورة في القصيدة. الـpassport وثيقة هوية وحرية تنقّل — وهذي الأشياء الـémigrée محرومة منها. لمّا تخلّي المتكلّمة الذاكرة passport، فهي تأكّد إن التجربة الداخلية تتجاوز السيطرة السياسية.',
+        'هذي الاستعارة هي أقوى صورة في القصيدة. الـpassport وثيقة هوية وحرية تنقّل - وهذي الأشياء الـémigrée محرومة منها. لمّا تخلّي المتكلّمة الذاكرة passport، فهي تأكّد إن التجربة الداخلية تتجاوز السيطرة السياسية.',
       themesAr: ['الذاكرة', 'الهوية', 'السلطة', 'التحدّي'],
     },
     {
-      quote: 'The personified city "takes me dancing" image — paraphrase',
+      quote: 'The personified city "takes me dancing" image - paraphrase',
       analysis:
         'Personifying the city as a dance partner creates an image of joyful intimacy. The city actively welcomes and embraces the speaker, suggesting a reciprocal relationship of love. This happens in dreams, where political restrictions have no power.',
       themes: ['Memory', 'Belonging', 'Joy', 'Personification'],
@@ -308,12 +308,12 @@ Caesura: التوقّفات في وسط البيت (مثلاً حين تنتقل
     },
     {
       quote:
-        'The final line — the speaker "deporting" herself to sunlight each morning (paraphrase; flagged UNVERIFIED by audit)',
+        'The final line - the speaker "deporting" herself to sunlight each morning (paraphrase; flagged UNVERIFIED by audit)',
       analysis:
         'The final line subverts the violent language of "deportation" -- normally something done to a person against their will -- into a voluntary, daily act of self-determination. The speaker chooses to return to the light of memory, transforming exile from punishment into liberation.',
       themes: ['Defiance', 'Memory', 'Identity', 'Power'],
       analysisAr:
-        'البيت الأخير يقلب لغة "deportation" العنيفة — اللي عادة شي يُفرض على الشخص رغماً عنه — إلى فعل اختياري يومي من تقرير المصير. المتكلّمة تختار ترجع لنور الذاكرة، وتحوّل المنفى من عقوبة إلى تحرّر.',
+        'البيت الأخير يقلب لغة "deportation" العنيفة - اللي عادة شي يُفرض على الشخص رغماً عنه - إلى فعل اختياري يومي من تقرير المصير. المتكلّمة تختار ترجع لنور الذاكرة، وتحوّل المنفى من عقوبة إلى تحرّر.',
       themesAr: ['التحدّي', 'الذاكرة', 'الهوية', 'السلطة'],
     },
   ],
@@ -424,7 +424,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She has a sunburn',
-      'The memory is permanently and painfully marked onto her — like a brand on skin, it cannot be removed',
+      'The memory is permanently and painfully marked onto her - like a brand on skin, it cannot be removed',
       'She enjoys sunny weather',
       'She has a tattoo of the sun',
     ],
@@ -440,13 +440,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She carries a real passport from her old country',
-      'Memory grants her access to a homeland that politics denies her — memory becomes a document of identity and freedom',
+      'Memory grants her access to a homeland that politics denies her - memory becomes a document of identity and freedom',
       'She needs a passport to travel',
       'Her memory is unreliable',
     ],
     correctIndex: 1,
     explanation:
-      'This powerful metaphor shows that memory functions like an identity document — it allows the speaker to return to her homeland mentally even though she is denied physical return. Memory is freedom.',
+      'This powerful metaphor shows that memory functions like an identity document - it allows the speaker to return to her homeland mentally even though she is denied physical return. Memory is freedom.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -462,7 +462,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Frontiers rise" personifies political borders as aggressive barriers that actively prevent the speaker from returning. The verb "rise" makes them seem threatening and dynamic — they are growing, not static.',
+      '"Frontiers rise" personifies political borders as aggressive barriers that actively prevent the speaker from returning. The verb "rise" makes them seem threatening and dynamic - they are growing, not static.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -488,13 +488,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Mountains have grown taller',
-      'Political borders are personified as actively rising barriers — separating the speaker from a homeland she cannot reach',
+      'Political borders are personified as actively rising barriers - separating the speaker from a homeland she cannot reach',
       'She has built a wall',
       'She is leaving the country',
     ],
     correctIndex: 1,
     explanation:
-      '"Frontiers rise" personifies political boundaries as aggressive, growing barriers. The verb "rise" makes them feel dynamic and threatening — the gap between speaker and homeland is widening, not static.',
+      '"Frontiers rise" personifies political boundaries as aggressive, growing barriers. The verb "rise" makes them feel dynamic and threatening - the gap between speaker and homeland is widening, not static.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -521,7 +521,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It shows memory fading over time',
-      "Despite war, massacres, and frontiers, the speaker's childhood memory stays as bright as sunlight — personal truth resists political propaganda",
+      "Despite war, massacres, and frontiers, the speaker's childhood memory stays as bright as sunlight - personal truth resists political propaganda",
       'Memory and reality are the same in the poem',
       'The speaker accepts that her memory is false',
     ],
@@ -556,10 +556,10 @@ const REVISION_TOPICS = [
     summary:
       'The Émigrée explores memory, exile, identity, and the power of personal truth to resist political darkness.',
     keyPoints: [
-      'Memory as resistance — childhood memory defies political reality',
-      'Identity — language, place, and memory define who the speaker is',
-      'Exile and displacement — the speaker cannot return but refuses to forget',
-      "Light vs darkness — the sunlight motif represents memory's triumph",
+      'Memory as resistance - childhood memory defies political reality',
+      'Identity - language, place, and memory define who the speaker is',
+      'Exile and displacement - the speaker cannot return but refuses to forget',
+      "Light vs darkness - the sunlight motif represents memory's triumph",
     ],
   },
   {
@@ -567,21 +567,21 @@ const REVISION_TOPICS = [
     summary:
       'Rumens uses light/dark imagery, metaphor, personification, and a consistent sunlight refrain to present memory as a powerful, defiant force.',
     keyPoints: [
-      '"Sunlight-clear" — memory presented as luminous and pure',
-      '"Branded" — memory is permanent, painful, and identity-defining',
-      'The "memory is a passport" metaphor — memory as freedom and identity document',
-      '"Frontiers rise between us" — borders personified as aggressive barriers',
+      '"Sunlight-clear" - memory presented as luminous and pure',
+      '"Branded" - memory is permanent, painful, and identity-defining',
+      'The "memory is a passport" metaphor - memory as freedom and identity document',
+      '"Frontiers rise between us" - borders personified as aggressive barriers',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Three stanzas of increasing political darkness, each ending with the sunlight refrain — structurally enacting the triumph of memory over reality.',
+      'Three stanzas of increasing political darkness, each ending with the sunlight refrain - structurally enacting the triumph of memory over reality.',
     keyPoints: [
-      'Three stanzas — each introduces darker political reality',
-      'Sunlight refrain at end of each stanza — memory always wins',
-      'Enjambment — ideas flow across lines like unstoppable memory',
-      'No regular rhyme — reflecting the displaced, unstructured nature of exile',
+      'Three stanzas - each introduces darker political reality',
+      'Sunlight refrain at end of each stanza - memory always wins',
+      'Enjambment - ideas flow across lines like unstoppable memory',
+      'No regular rhyme - reflecting the displaced, unstructured nature of exile',
     ],
   },
 ]
@@ -651,7 +651,7 @@ export default function TheEmigreePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="The Émigrée by Carol Rumens — Analysis & Annotations"
+        name="The Émigrée by Carol Rumens - Analysis & Annotations"
         description="Line-by-line analysis of The Émigrée with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

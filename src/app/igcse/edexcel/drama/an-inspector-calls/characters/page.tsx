@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Characters — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for An Inspector Calls: Arthur and Sybil Birling, Sheila, Eric, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',
   },
-  title: 'An Inspector Calls Characters — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Characters - Edexcel IGCSE Literature',
   description:
     'Character analysis for An Inspector Calls: Arthur and Sybil Birling, Sheila, Eric, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',
   alternates: {
@@ -25,7 +25,7 @@ const characters = [
     name: 'Arthur Birling',
     role: 'Self-made industrialist',
     analysis:
-      'A "heavy-looking, rather portentous man" in his mid-fifties, Birling is the voice of the capitalist status quo. His opening speeches — about unsinkable ships, unstoppable progress and the nonsense of "community" — are demolished by every subsequent revelation. Priestley uses him to show how men in power absorb new information without updating their convictions. His preoccupation with his possible knighthood reveals an unshaken faith that the social order will reward him.',
+      'A "heavy-looking, rather portentous man" in his mid-fifties, Birling is the voice of the capitalist status quo. His opening speeches - about unsinkable ships, unstoppable progress and the nonsense of "community" - are demolished by every subsequent revelation. Priestley uses him to show how men in power absorb new information without updating their convictions. His preoccupation with his possible knighthood reveals an unshaken faith that the social order will reward him.',
     quote: '”It would be very awkward, wouldn\u2019t it?”',
   },
   {
@@ -39,28 +39,28 @@ const characters = [
     name: 'Sheila Birling',
     role: 'Daughter and moral barometer',
     analysis:
-      'Early in Act One Sheila is "pretty" and "pleased with life". By Act Three she has become the play\u2019s sharpest conscience — alert, sarcastic, morally clear. Priestley uses her trajectory as evidence that young women can shed the worldview they are raised into. Her engagement ring is first a symbol of belonging and later a symbol of what she chooses to set down.',
-    quote: '“These girls aren\u2019t cheap labour — they\u2019re people.”',
+      'Early in Act One Sheila is "pretty" and "pleased with life". By Act Three she has become the play\u2019s sharpest conscience - alert, sarcastic, morally clear. Priestley uses her trajectory as evidence that young women can shed the worldview they are raised into. Her engagement ring is first a symbol of belonging and later a symbol of what she chooses to set down.',
+    quote: '“These girls aren\u2019t cheap labour - they\u2019re people.”',
   },
   {
     name: 'Eric Birling',
     role: 'Son and alcoholic heir',
     analysis:
-      'Eric is "half shy, half assertive" and clearly drinks heavily. His exploitation of Eva — which tips into what the text treats as something like rape ("I was in that state when a chap easily turns nasty") — is the play\u2019s ugliest moment. Yet, like Sheila, he accepts responsibility where his parents refuse. Priestley gives him no easy redemption but does give him a future.',
+      'Eric is "half shy, half assertive" and clearly drinks heavily. His exploitation of Eva - which tips into what the text treats as something like rape ("I was in that state when a chap easily turns nasty") - is the play\u2019s ugliest moment. Yet, like Sheila, he accepts responsibility where his parents refuse. Priestley gives him no easy redemption but does give him a future.',
     quote: '“You don\u2019t understand anything. You never did. You never even tried.”',
   },
   {
     name: 'Gerald Croft',
     role: 'Sheila\u2019s fiancé',
     analysis:
-      '"An attractive chap about thirty", Gerald is the old-money aristocrat among the new-money Birlings. His affair with Daisy Renton is presented with complicated sympathy — the Inspector treats him more gently than the others — but by Act Three he has chosen to join the Birling parents in denial, offering Sheila her ring back. His decision to retreat marks him as more Birling than he first appears.',
+      '"An attractive chap about thirty", Gerald is the old-money aristocrat among the new-money Birlings. His affair with Daisy Renton is presented with complicated sympathy - the Inspector treats him more gently than the others - but by Act Three he has chosen to join the Birling parents in denial, offering Sheila her ring back. His decision to retreat marks him as more Birling than he first appears.',
     quote: '“Everything\u2019s all right now, Sheila. What about this ring?”',
   },
   {
     name: 'Eva Smith / Daisy Renton',
     role: 'The absent victim',
     analysis:
-      'Eva never appears on stage. Priestley\u2019s most important dramatic choice: she is reconstructed entirely through the Birlings\u2019 stories and the Inspector\u2019s photographs. Her absence makes her a representative figure — the name changes (Eva Smith, Daisy Renton, Mrs Birling) tracking the working-class woman\u2019s instability in the Edwardian economy. Whether "she" is one person or several, the Inspector argues, the moral calculus is identical.',
+      'Eva never appears on stage. Priestley\u2019s most important dramatic choice: she is reconstructed entirely through the Birlings\u2019 stories and the Inspector\u2019s photographs. Her absence makes her a representative figure - the name changes (Eva Smith, Daisy Renton, Mrs Birling) tracking the working-class woman\u2019s instability in the Edwardian economy. Whether "she" is one person or several, the Inspector argues, the moral calculus is identical.',
     quote: 'Inspector: “Young women living that sort of existence in every city… Miss Birling.”',
   },
   {
@@ -124,7 +124,7 @@ export default async function InspectorCallsCharactersPage() {
             An Inspector Calls: Characters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical profiles of the Birlings, Gerald Croft, Eva Smith and Inspector Goole — with
+            Analytical profiles of the Birlings, Gerald Croft, Eva Smith and Inspector Goole - with
             one short, fair-dealing quotation each.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default async function InspectorCallsCharactersPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

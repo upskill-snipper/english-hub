@@ -10,13 +10,13 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: vocabulary & cohesion masterclass — The English Hub',
+    title: 'iLowerSecondary English: vocabulary & cohesion masterclass - The English Hub',
     description:
       'Choose the exact word, vary synonyms without thesaurus-abuse, match register to your reader, and bind paragraphs with cohesion devices. Upgrade tables, a labelled rewrite and a 15-word challenge.',
   },
   title: 'Vocabulary & cohesion: precision, synonyms and register',
   description:
-    'A plain-English masterclass on selecting vocabulary for clarity and impact and using synonyms for cohesion — with original upgrade tables, a labelled rewrite, a thesaurus-trap warning and an upgrade challenge.',
+    'A plain-English masterclass on selecting vocabulary for clarity and impact and using synonyms for cohesion - with original upgrade tables, a labelled rewrite, a thesaurus-trap warning and an upgrade challenge.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/vocabulary-cohesion',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const SITE = 'https://theenglishhub.app'
 
-/* ─── Skill anchors (labels only — never restate spec numbers inline) ─── */
+/* ─── Skill anchors (labels only - never restate spec numbers inline) ─── */
 
 const skill23 = WRITING_SKILLS.find((s) => s.code === '2.3') as
   | (typeof WRITING_SKILLS)[number]
@@ -54,15 +54,15 @@ const UPGRADES: Upgrade[] = [
     options: [
       {
         word: 'murmured',
-        nuance: 'low and barely audible — signals secrecy or exhaustion, not volume.',
+        nuance: 'low and barely audible - signals secrecy or exhaustion, not volume.',
       },
       {
         word: 'insisted',
-        nuance: 'repetition under pressure — implies the listener has resisted before.',
+        nuance: 'repetition under pressure - implies the listener has resisted before.',
       },
       {
         word: 'conceded',
-        nuance: 'agreement given reluctantly — carries the loss of an argument inside one verb.',
+        nuance: 'agreement given reluctantly - carries the loss of an argument inside one verb.',
       },
     ],
   },
@@ -72,15 +72,15 @@ const UPGRADES: Upgrade[] = [
     options: [
       {
         word: 'substantial',
-        nuance: 'measurable and serious — neutral, suited to a report or formal letter.',
+        nuance: 'measurable and serious - neutral, suited to a report or formal letter.',
       },
       {
         word: 'sprawling',
-        nuance: 'large and spreading without order — adds the idea of being unmanaged.',
+        nuance: 'large and spreading without order - adds the idea of being unmanaged.',
       },
       {
         word: 'colossal',
-        nuance: 'overwhelmingly large — emphatic, better for persuasion than for analysis.',
+        nuance: 'overwhelmingly large - emphatic, better for persuasion than for analysis.',
       },
     ],
   },
@@ -90,15 +90,15 @@ const UPGRADES: Upgrade[] = [
     options: [
       {
         word: 'trudged',
-        nuance: 'heavy, effortful steps — implies tiredness, mud or low spirits.',
+        nuance: 'heavy, effortful steps - implies tiredness, mud or low spirits.',
       },
       {
         word: 'strode',
-        nuance: 'long, confident steps — implies purpose and energy, the opposite mood.',
+        nuance: 'long, confident steps - implies purpose and energy, the opposite mood.',
       },
       {
         word: 'wandered',
-        nuance: 'movement with no fixed route — suggests aimlessness or distraction.',
+        nuance: 'movement with no fixed route - suggests aimlessness or distraction.',
       },
     ],
   },
@@ -108,15 +108,15 @@ const UPGRADES: Upgrade[] = [
     options: [
       {
         word: 'thorough',
-        nuance: 'praises completeness — nothing has been left out or skimped.',
+        nuance: 'praises completeness - nothing has been left out or skimped.',
       },
       {
         word: 'inventive',
-        nuance: 'praises originality — the ideas, not the effort, are what impress.',
+        nuance: 'praises originality - the ideas, not the effort, are what impress.',
       },
       {
         word: 'dependable',
-        nuance: 'praises consistency — quietly reliable rather than brilliant once.',
+        nuance: 'praises consistency - quietly reliable rather than brilliant once.',
       },
     ],
   },
@@ -126,7 +126,7 @@ const UPGRADES: Upgrade[] = [
     options: [
       {
         word: 'harmful',
-        nuance: 'states real damage — factual, fits an explanatory tone.',
+        nuance: 'states real damage - factual, fits an explanatory tone.',
       },
       {
         word: 'reckless',
@@ -145,16 +145,16 @@ const UPGRADES: Upgrade[] = [
     options: [
       {
         word: 'relieved',
-        nuance: 'happiness that follows worry — implies a fear has just lifted.',
+        nuance: 'happiness that follows worry - implies a fear has just lifted.',
       },
       {
         word: 'elated',
-        nuance: 'intense, almost giddy joy — short-lived and overwhelming.',
+        nuance: 'intense, almost giddy joy - short-lived and overwhelming.',
       },
       {
         word: 'content',
         nuance:
-          'quiet, settled satisfaction — calm rather than excited, a different feeling entirely.',
+          'quiet, settled satisfaction - calm rather than excited, a different feeling entirely.',
       },
     ],
   },
@@ -173,24 +173,24 @@ const DEVICES: Device[] = [
     name: 'Referencing',
     what: 'A pronoun or determiner points back to something already named, so you do not repeat the noun.',
     example:
-      'The committee rejected the plan. They argued it would cost too much. — “They” and “it” carry the earlier nouns forward.',
+      'The committee rejected the plan. They argued it would cost too much. - “They” and “it” carry the earlier nouns forward.',
   },
   {
     name: 'Substitution',
     what: 'A short word stands in for a longer phrase already used, keeping the sentence light.',
-    example: 'My first idea failed, so I tried a different one. — “one” substitutes for “idea”.',
+    example: 'My first idea failed, so I tried a different one. - “one” substitutes for “idea”.',
   },
   {
     name: 'Lexical chains',
     what: 'A run of related words keeps a topic alive across a paragraph without repeating a single term.',
     example:
-      'The harbour was silent: no gulls, no engines, no voices — only the slap of water on stone. — “gulls / engines / voices / water” chain the idea of sound.',
+      'The harbour was silent: no gulls, no engines, no voices - only the slap of water on stone. - “gulls / engines / voices / water” chain the idea of sound.',
   },
   {
     name: 'Connectives',
     what: 'A linking word signals the logical relationship between sentences, so the reader is never guessing.',
     example:
-      'The repairs were expensive. Nevertheless, the bridge reopened on time. — “Nevertheless” marks a contrast the reader would otherwise have to infer.',
+      'The repairs were expensive. Nevertheless, the bridge reopened on time. - “Nevertheless” marks a contrast the reader would otherwise have to infer.',
   },
 ]
 
@@ -267,12 +267,12 @@ export default function VocabularyCohesionPage() {
 
       {synonymBullet && vocabBullet ? (
         <p className="text-sm text-muted-foreground">
-          It develops two strands of the iLowerSecondary writing content —{' '}
+          It develops two strands of the iLowerSecondary writing content -{' '}
           <em>{synonymBullet.replace(/\.$/, '')}</em> and <em>{vocabBullet.replace(/\.$/, '')}</em>
           {w93g ? (
             <>
               {' '}
-              — and the Year 9 objective <span className="font-mono">{w93g.code}</span>:{' '}
+              - and the Year 9 objective <span className="font-mono">{w93g.code}</span>:{' '}
               {w93g.descriptor.charAt(0).toLowerCase() + w93g.descriptor.slice(1)}
             </>
           ) : null}
@@ -290,7 +290,7 @@ export default function VocabularyCohesionPage() {
         </p>
         <p>
           Each table below takes one tired word and offers three precise replacements. They are{' '}
-          <strong>not interchangeable</strong> — the nuance note explains what each one adds,
+          <strong>not interchangeable</strong> - the nuance note explains what each one adds,
           because choosing well means knowing the difference, not just having options.
         </p>
 
@@ -306,7 +306,7 @@ export default function VocabularyCohesionPage() {
                     Weak word
                   </span>{' '}
                   <span className="font-semibold text-primary">“{u.weak}”</span>{' '}
-                  <span className="text-muted-foreground">— {u.context}</span>
+                  <span className="text-muted-foreground">- {u.context}</span>
                 </p>
               </div>
               <ul className="divide-y divide-border/60">
@@ -327,10 +327,10 @@ export default function VocabularyCohesionPage() {
       </section>
 
       <section className="my-10">
-        <h2>2. Synonym variation — without thesaurus-abuse</h2>
+        <h2>2. Synonym variation - without thesaurus-abuse</h2>
         <p>
           Repeating the same noun five times in a paragraph is dull and can read as carelessness.
-          Varying it — through a synonym, a pronoun or a related phrase — keeps the prose alive and
+          Varying it - through a synonym, a pronoun or a related phrase - keeps the prose alive and
           is one way to achieve cohesion. But variation has a strict rule:{' '}
           <strong>only swap in a word that means what you actually mean</strong>.
         </p>
@@ -349,18 +349,18 @@ export default function VocabularyCohesionPage() {
             <li>
               <span className="text-foreground">Meant:</span> &ldquo;She was <em>sad</em> when the
               team lost.&rdquo; → <span className="text-foreground">Trap:</span> &ldquo;She was{' '}
-              <em>lugubrious</em> when the team lost.&rdquo; — technically a synonym, but absurdly
+              <em>lugubrious</em> when the team lost.&rdquo; - technically a synonym, but absurdly
               formal for the moment.
             </li>
             <li>
               <span className="text-foreground">Meant:</span> &ldquo;a <em>quick</em> reply&rdquo; →{' '}
               <span className="text-foreground">Trap:</span> &ldquo;an <em>expeditious</em>{' '}
-              reply&rdquo; — correct in a dictionary, wrong in a friendly email.
+              reply&rdquo; - correct in a dictionary, wrong in a friendly email.
             </li>
             <li>
               <span className="text-foreground">Meant:</span> &ldquo;He <em>used</em> the
               tool.&rdquo; → <span className="text-foreground">Trap:</span> &ldquo;He{' '}
-              <em>utilised</em> the tool.&rdquo; — longer, not clearer; plain &ldquo;used&rdquo; is
+              <em>utilised</em> the tool.&rdquo; - longer, not clearer; plain &ldquo;used&rdquo; is
               the better choice.
             </li>
           </ul>
@@ -383,23 +383,23 @@ export default function VocabularyCohesionPage() {
         <p>
           Register is the level of formality a piece of writing keeps. The same idea is worded
           differently for different readers, and the iLowerSecondary writing tasks can address
-          adults, older children or students of the same age — so the audience decides the words,
+          adults, older children or students of the same age - so the audience decides the words,
           not your largest vocabulary.
         </p>
         <div className="not-prose mt-5 grid gap-4 sm:grid-cols-3">
           {[
             {
-              tag: 'Formal — a letter to a manufacturer',
+              tag: 'Formal - a letter to a manufacturer',
               line: '“I am writing to report a recurring fault and to request a replacement.”',
               note: 'Full forms, precise nouns, a measured tone.',
             },
             {
-              tag: 'Neutral — an article for a general readership',
+              tag: 'Neutral - an article for a general readership',
               line: '“The fault keeps coming back, and most owners want a straightforward fix.”',
-              note: 'Clear and plain — neither stiff nor casual.',
+              note: 'Clear and plain - neither stiff nor casual.',
             },
             {
-              tag: 'Informal — a diary entry',
+              tag: 'Informal - a diary entry',
               line: '“It’s broken again. I just want the thing to work.”',
               note: 'Contractions and short sentences suit a private voice.',
             },
@@ -414,7 +414,7 @@ export default function VocabularyCohesionPage() {
           ))}
         </div>
         <p className="mt-5 text-sm text-muted-foreground">
-          The content is identical in all three. Only the register changes — and changing it well is
+          The content is identical in all three. Only the register changes - and changing it well is
           itself a vocabulary skill.
         </p>
       </section>
@@ -448,7 +448,7 @@ export default function VocabularyCohesionPage() {
         <div className="not-prose mt-5 grid gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
-              Before — flat and repetitive
+              Before - flat and repetitive
             </p>
             <p className="mt-3 text-sm leading-relaxed">
               &ldquo;The town was bad after the flood. The flood made the town bad. People were sad
@@ -462,7 +462,7 @@ export default function VocabularyCohesionPage() {
           </div>
           <div className="rounded-xl border border-primary/40 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary">
-              After — precise and cohesive
+              After - precise and cohesive
             </p>
             <p className="mt-3 text-sm leading-relaxed">
               &ldquo;The flood left the town <strong>devastated</strong>. Streets that had been busy
@@ -518,7 +518,7 @@ export default function VocabularyCohesionPage() {
         <h2>The 15-word upgrade challenge</h2>
         <p>
           Cover the right-hand column. For each weak phrase, write one precise replacement{' '}
-          <em>before</em> you check the model. There is rarely a single correct answer — judge yours
+          <em>before</em> you check the model. There is rarely a single correct answer - judge yours
           by whether it is sharper and still says exactly what was meant. Avoid the thesaurus trap:
           do not pick a word just because it is longer.
         </p>
@@ -541,7 +541,7 @@ export default function VocabularyCohesionPage() {
         <p className="mt-5 text-sm text-muted-foreground">
           Notice that several models are <em>shorter</em> than the weak phrase (&ldquo;a lot of
           people&rdquo; → &ldquo;a crowd&rdquo;). Precision often cuts words rather than adding long
-          ones — exactly what the highest band rewards, where{' '}
+          ones - exactly what the highest band rewards, where{' '}
           <em>{topBand.descriptors[2].replace(/\.$/, '').toLowerCase()}</em>.
         </p>
       </section>

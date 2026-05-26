@@ -43,7 +43,7 @@ const SENTENCE_BANK: TenseItem[] = [
   {
     sentence: 'The train leaves at half past seven every morning.',
     tense: 'Present Simple',
-    why: '"leaves" describes a regular timetable or routine — a hallmark of the present simple.',
+    why: '"leaves" describes a regular timetable or routine - a hallmark of the present simple.',
   },
   {
     sentence: 'My sister works in a small bakery on the high street.',
@@ -305,7 +305,7 @@ const SENTENCE_BANK: TenseItem[] = [
     why: '"are going to visit" describes a planned future intention.',
   },
   {
-    sentence: 'Look at those dark clouds — it is going to rain.',
+    sentence: 'Look at those dark clouds - it is going to rain.',
     tense: "'going to' Future",
     why: '"is going to rain" is a prediction based on present evidence.',
   },
@@ -325,7 +325,7 @@ const SENTENCE_BANK: TenseItem[] = [
     why: '"am going to start" describes a prior intention.',
   },
   {
-    sentence: 'Be careful — you are going to drop those plates!',
+    sentence: 'Be careful - you are going to drop those plates!',
     tense: "'going to' Future",
     why: '"are going to drop" predicts the near future from present evidence.',
   },
@@ -521,11 +521,11 @@ export default function TenseTimelinePage() {
                   <div className="flex items-center gap-2 font-semibold">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Well done — that&rsquo;s right!
+                        <CheckCircle className="size-4" /> Well done - that&rsquo;s right!
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite — it&rsquo;s{' '}
+                        <XCircle className="size-4" /> Not quite - it&rsquo;s{' '}
                         <span className="font-bold">{currentQ.tense}</span>.
                       </>
                     )}

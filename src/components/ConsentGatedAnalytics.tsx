@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * ConsentGatedAnalytics — mounts Vercel Analytics, Vercel Speed Insights,
+ * ConsentGatedAnalytics - mounts Vercel Analytics, Vercel Speed Insights,
  * and the Rewardful affiliate script ONLY after the visitor has accepted
  * analytics cookies.
  *
  * Before consent: nothing is rendered AND nothing is bundled into the
- * initial client chunk — the three tracking libraries are pulled in via
+ * initial client chunk - the three tracking libraries are pulled in via
  * `next/dynamic` with `ssr: false`, so first-paint weight is zero and the
  * 80-120 KB cost only materialises after a user opts in.
  *
@@ -15,8 +15,8 @@
  * banner saves a choice.
  *
  * Compliance:
- *   - PECR reg. 6 (UK) — no non-essential tracking before consent.
- *   - ICO Children's Code standard 15 — third-party online tools are
+ *   - PECR reg. 6 (UK) - no non-essential tracking before consent.
+ *   - ICO Children's Code standard 15 - third-party online tools are
  *     suppressed until the user opts in; under-16 accounts have
  *     child-defaults that keep analytics OFF by default, so the
  *     consent flag is not flipped to 'all' without an affirmative

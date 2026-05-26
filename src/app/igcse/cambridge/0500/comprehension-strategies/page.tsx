@@ -18,11 +18,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Comprehension Strategies — IGCSE Language A Paper 1',
+    title: 'Comprehension Strategies - IGCSE Language A Paper 1',
     description:
       'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
   },
-  title: 'Comprehension Strategies — IGCSE Language A Paper 1',
+  title: 'Comprehension Strategies - IGCSE Language A Paper 1',
   description:
     'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
   alternates: {
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   QUESTION 1 — RETRIEVAL / COMPREHENSION
+   QUESTION 1 - RETRIEVAL / COMPREHENSION
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q1 = {
-  title: 'Question 1 — Retrieval and comprehension',
+  title: 'Question 1 - Retrieval and comprehension',
   marks: '15 marks',
   time: '25 minutes recommended',
   overview:
@@ -89,11 +89,11 @@ const q1 = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   QUESTION 2 — LANGUAGE ANALYSIS
+   QUESTION 2 - LANGUAGE ANALYSIS
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q2 = {
-  title: 'Question 2 — Language analysis',
+  title: 'Question 2 - Language analysis',
   marks: '15 marks',
   time: '25 minutes recommended',
   overview:
@@ -147,11 +147,11 @@ const q2 = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   QUESTION 3 — SUMMARY
+   QUESTION 3 - SUMMARY
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q3 = {
-  title: 'Question 3 — Summary writing',
+  title: 'Question 3 - Summary writing',
   marks: '15 marks',
   time: '25 minutes recommended',
   overview:
@@ -334,7 +334,7 @@ export default async function ComprehensionStrategiesPage() {
             className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5 text-body-xs text-muted-foreground transition-colors hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
           >
             <Target className="size-3.5" />
-            {q.title.split(' — ')[0]}
+            {q.title.split(' - ')[0]}
           </a>
         ))}
       </div>

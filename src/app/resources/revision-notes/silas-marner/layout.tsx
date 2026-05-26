@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Free Silas Marner revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   alternates: { canonical: 'https://theenglishhub.app/resources/revision-notes/silas-marner' },
   openGraph: {
-    title: 'Silas Marner Revision Notes — The English Hub',
+    title: 'Silas Marner Revision Notes - The English Hub',
     description:
       'Free Silas Marner revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   },

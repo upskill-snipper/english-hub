@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * LearningProfileView — renders the learner's game-derived learning
+ * LearningProfileView - renders the learner's game-derived learning
  * profile: time invested, strand mastery, named strengths, focus areas,
  * and one-tap "next step" actions.
  *
@@ -57,7 +57,7 @@ const EMPTY_STATE = (
   <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
     <Gamepad2 className="mx-auto size-7 text-muted-foreground" />
     <h3 className="mt-3 text-base font-semibold text-foreground">
-      Your learning profile is empty — for now
+      Your learning profile is empty - for now
     </h3>
     <p className="mx-auto mt-1 max-w-md text-sm text-muted-foreground">
       Play a few games and we’ll track your time and accuracy to map your strengths, spot what to

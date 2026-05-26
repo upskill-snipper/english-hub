@@ -1,6 +1,6 @@
 'use client'
 
-// ─── useSpeak — free, browser-native text-to-speech (read-aloud) ────────────
+// ─── useSpeak - free, browser-native text-to-speech (read-aloud) ────────────
 // Wraps the Web Speech SpeechSynthesis API (free, broad browser support). Used
 // for "read this aloud" affordances (feedback, content, accessibility). An
 // optional Azure TTS backend (higher-quality, multi-voice) can be layered in

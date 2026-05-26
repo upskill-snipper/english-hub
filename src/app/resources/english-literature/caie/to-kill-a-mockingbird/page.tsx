@@ -41,11 +41,11 @@ const keyQuotes = [
   },
   {
     quote:
-      "As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it — whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash",
+      "As you grow older, you'll see white men cheat black men every day of your life, but let me tell you something and don't you forget it - whenever a white man does that to a black man, no matter who he is, how rich he is, or how fine a family he comes from, that white man is trash",
     speaker: 'Atticus Finch',
     chapter: 'Chapter 23',
     analysis:
-      "Atticus uses the loaded term 'trash' — usually reserved for poor whites in Maycomb's class hierarchy — to condemn racial injustice. By inverting the social vocabulary, Lee exposes how the town's real moral failing is not poverty but prejudice. The direct address to Jem ('don't you forget it') signals that this is a lesson meant to shape the next generation. Atticus's quiet fury here reveals that his calm exterior masks deep anger at systemic injustice.",
+      "Atticus uses the loaded term 'trash' - usually reserved for poor whites in Maycomb's class hierarchy - to condemn racial injustice. By inverting the social vocabulary, Lee exposes how the town's real moral failing is not poverty but prejudice. The direct address to Jem ('don't you forget it') signals that this is a lesson meant to shape the next generation. Atticus's quiet fury here reveals that his calm exterior masks deep anger at systemic injustice.",
   },
   {
     quote:
@@ -57,25 +57,25 @@ const keyQuotes = [
   },
   {
     quote:
-      "There's something in our world that makes men lose their heads — they couldn't be fair if they tried. In our courts, when it's a white man's word against a black man's, the white man always wins. They're ugly, but those are the facts of life",
+      "There's something in our world that makes men lose their heads - they couldn't be fair if they tried. In our courts, when it's a white man's word against a black man's, the white man always wins. They're ugly, but those are the facts of life",
     speaker: 'Atticus Finch',
     chapter: 'Chapter 23',
     analysis:
-      "Atticus acknowledges the systemic nature of racism in the American South. 'Lose their heads' implies irrationality — prejudice overrides reason. The frank admission that courts are unjust is remarkable from a lawyer who reveres the legal system, showing how deeply embedded racism is. Lee uses Atticus's disillusionment to convey her critique of Southern racial justice without descending into polemic.",
+      "Atticus acknowledges the systemic nature of racism in the American South. 'Lose their heads' implies irrationality - prejudice overrides reason. The frank admission that courts are unjust is remarkable from a lawyer who reveres the legal system, showing how deeply embedded racism is. Lee uses Atticus's disillusionment to convey her critique of Southern racial justice without descending into polemic.",
   },
   {
     quote: "I think there's just one kind of folks. Folks",
     speaker: 'Scout Finch',
     chapter: 'Chapter 23',
     analysis:
-      "Scout articulates a child's instinctive egalitarianism, cutting through Maycomb's elaborate social hierarchy. The simple repetition of 'folks' strips away all distinctions of race, class, and family name. Lee uses Scout's innocence to expose the absurdity of adult prejudice. Jem's weary response — that he used to think so too — suggests that growing up in Maycomb means losing this moral clarity, reinforcing the theme of lost innocence.",
+      "Scout articulates a child's instinctive egalitarianism, cutting through Maycomb's elaborate social hierarchy. The simple repetition of 'folks' strips away all distinctions of race, class, and family name. Lee uses Scout's innocence to expose the absurdity of adult prejudice. Jem's weary response - that he used to think so too - suggests that growing up in Maycomb means losing this moral clarity, reinforcing the theme of lost innocence.",
   },
   {
     quote: "Miss Jean Louise, stand up. Your father's passin'",
     speaker: 'Reverend Sykes',
     chapter: 'Chapter 21',
     analysis:
-      "One of the novel's most emotionally powerful moments. Despite the guilty verdict, the Black community in the gallery stands to honour Atticus. The formality of 'Miss Jean Louise' elevates Scout and her father, while 'passin'' carries connotations of a solemn procession. Lee creates a tableau of moral authority: the people who have been denied justice recognise true courage. The moment inverts Maycomb's racial hierarchy — the marginalised community passes judgement on the white establishment.",
+      "One of the novel's most emotionally powerful moments. Despite the guilty verdict, the Black community in the gallery stands to honour Atticus. The formality of 'Miss Jean Louise' elevates Scout and her father, while 'passin'' carries connotations of a solemn procession. Lee creates a tableau of moral authority: the people who have been denied justice recognise true courage. The moment inverts Maycomb's racial hierarchy - the marginalised community passes judgement on the white establishment.",
   },
   {
     quote: 'Atticus, he was real nice',
@@ -86,7 +86,7 @@ const keyQuotes = [
   },
   {
     quote:
-      'The witnesses for the state... have presented themselves to you gentlemen... in the cynical confidence that their testimony would not be doubted, confident that you gentlemen would go along with them on the assumption — the evil assumption — that all Negroes lie, all Negroes are basically immoral beings',
+      'The witnesses for the state... have presented themselves to you gentlemen... in the cynical confidence that their testimony would not be doubted, confident that you gentlemen would go along with them on the assumption - the evil assumption - that all Negroes lie, all Negroes are basically immoral beings',
     speaker: 'Atticus Finch',
     chapter: 'Chapter 20',
     analysis:
@@ -97,7 +97,7 @@ const keyQuotes = [
     speaker: 'Atticus Finch',
     chapter: 'Chapter 11',
     analysis:
-      "Atticus explains to Scout why he must defend Tom Robinson regardless of public opinion. Personal integrity is placed above social acceptance. Lee presents conscience as the ultimate authority: Atticus cannot function as a moral guide to his children if he compromises his own principles. The statement encapsulates Lee's humanist philosophy — that moral courage begins with individual accountability.",
+      "Atticus explains to Scout why he must defend Tom Robinson regardless of public opinion. Personal integrity is placed above social acceptance. Lee presents conscience as the ultimate authority: Atticus cannot function as a moral guide to his children if he compromises his own principles. The statement encapsulates Lee's humanist philosophy - that moral courage begins with individual accountability.",
   },
   {
     quote:
@@ -105,7 +105,7 @@ const keyQuotes = [
     speaker: 'Scout Finch (narrating)',
     chapter: 'Chapter 31',
     analysis:
-      "Scout's mature retrospective voice recognises that Boo Radley has been a good neighbour all along — leaving gifts, mending Jem's trousers, wrapping a blanket around Scout, and ultimately saving the children's lives. The simple declaration 'Boo was our neighbour' strips away years of fear and fantasy. Lee uses this realisation to complete the novel's moral arc: true understanding replaces prejudice when we see people as they really are.",
+      "Scout's mature retrospective voice recognises that Boo Radley has been a good neighbour all along - leaving gifts, mending Jem's trousers, wrapping a blanket around Scout, and ultimately saving the children's lives. The simple declaration 'Boo was our neighbour' strips away years of fear and fantasy. Lee uses this realisation to complete the novel's moral arc: true understanding replaces prejudice when we see people as they really are.",
   },
   {
     quote:
@@ -129,7 +129,7 @@ const characters = [
   {
     name: 'Scout Finch (Jean Louise)',
     description:
-      "The novel's protagonist and first-person narrator. Scout is a tomboyish, intelligent, and fiercely curious six-to-nine-year-old who serves as the lens through which the reader experiences Maycomb. Her childish innocence allows Lee to expose adult hypocrisy and racial prejudice with devastating clarity: Scout asks the questions that adults cannot or will not answer. Over the course of the novel, Scout matures from a girl who settles disputes with her fists to one who can stand on Boo Radley's porch and see the world from his perspective — completing the empathetic education Atticus set out for her in Chapter 3.",
+      "The novel's protagonist and first-person narrator. Scout is a tomboyish, intelligent, and fiercely curious six-to-nine-year-old who serves as the lens through which the reader experiences Maycomb. Her childish innocence allows Lee to expose adult hypocrisy and racial prejudice with devastating clarity: Scout asks the questions that adults cannot or will not answer. Over the course of the novel, Scout matures from a girl who settles disputes with her fists to one who can stand on Boo Radley's porch and see the world from his perspective - completing the empathetic education Atticus set out for her in Chapter 3.",
   },
   {
     name: 'Atticus Finch',
@@ -144,22 +144,22 @@ const characters = [
   {
     name: 'Boo Radley (Arthur)',
     description:
-      "A reclusive neighbour who has not left his house for years, Boo is initially a figure of childhood terror and gothic fantasy for Scout, Jem, and Dill. Lee gradually reveals Boo as a gentle, damaged man who watches over the children: he leaves gifts in the tree knothole, mends Jem's trousers, places a blanket around Scout during the fire, and ultimately saves the children from Bob Ewell's attack. Boo is the novel's primary 'mockingbird' alongside Tom Robinson — an innocent destroyed by cruelty and isolation. Scout's final understanding of Boo completes her moral education.",
+      "A reclusive neighbour who has not left his house for years, Boo is initially a figure of childhood terror and gothic fantasy for Scout, Jem, and Dill. Lee gradually reveals Boo as a gentle, damaged man who watches over the children: he leaves gifts in the tree knothole, mends Jem's trousers, places a blanket around Scout during the fire, and ultimately saves the children from Bob Ewell's attack. Boo is the novel's primary 'mockingbird' alongside Tom Robinson - an innocent destroyed by cruelty and isolation. Scout's final understanding of Boo completes her moral education.",
   },
   {
     name: 'Tom Robinson',
     description:
-      "A Black man falsely accused of raping Mayella Ewell. Tom is honest, dignified, and compassionate — he helped Mayella out of genuine kindness, which the racist social order cannot comprehend. Despite Atticus's compelling defence, the all-white jury convicts Tom, and he is later shot dead while allegedly attempting to escape prison. Tom is a 'mockingbird': an innocent man whose destruction exposes the moral bankruptcy of Maycomb's racial caste system. His disabled left arm is a physical symbol of his powerlessness against the machinery of injustice.",
+      "A Black man falsely accused of raping Mayella Ewell. Tom is honest, dignified, and compassionate - he helped Mayella out of genuine kindness, which the racist social order cannot comprehend. Despite Atticus's compelling defence, the all-white jury convicts Tom, and he is later shot dead while allegedly attempting to escape prison. Tom is a 'mockingbird': an innocent man whose destruction exposes the moral bankruptcy of Maycomb's racial caste system. His disabled left arm is a physical symbol of his powerlessness against the machinery of injustice.",
   },
   {
     name: 'Calpurnia',
     description:
-      "The Finches' Black housekeeper, who serves as a surrogate mother to Scout and Jem. Calpurnia is strict, loving, and morally authoritative — she disciplines the children and teaches them manners and empathy (her rebuke to Scout for mocking Walter Cunningham is a key moral lesson). She bridges Maycomb's racial divide: when she takes the children to First Purchase Church, they glimpse the Black community's world. Calpurnia lives a 'double life', speaking differently in each community, which Lee uses to explore the social pressures of racial segregation.",
+      "The Finches' Black housekeeper, who serves as a surrogate mother to Scout and Jem. Calpurnia is strict, loving, and morally authoritative - she disciplines the children and teaches them manners and empathy (her rebuke to Scout for mocking Walter Cunningham is a key moral lesson). She bridges Maycomb's racial divide: when she takes the children to First Purchase Church, they glimpse the Black community's world. Calpurnia lives a 'double life', speaking differently in each community, which Lee uses to explore the social pressures of racial segregation.",
   },
   {
     name: 'Mayella Ewell',
     description:
-      "The eldest Ewell child, who accuses Tom Robinson of rape. Mayella is a complex figure: she is a victim of poverty, neglect, and her father's physical and implied sexual abuse, yet she becomes complicit in the racist system that condemns an innocent man. Her crime is reaching across the racial barrier by kissing Tom, and she destroys him to conceal her transgression. Lee presents Mayella with some sympathy — her loneliness is 'the loneliest person in the world' — but ultimately she chooses to sacrifice Tom rather than challenge her father or her society.",
+      "The eldest Ewell child, who accuses Tom Robinson of rape. Mayella is a complex figure: she is a victim of poverty, neglect, and her father's physical and implied sexual abuse, yet she becomes complicit in the racist system that condemns an innocent man. Her crime is reaching across the racial barrier by kissing Tom, and she destroys him to conceal her transgression. Lee presents Mayella with some sympathy - her loneliness is 'the loneliest person in the world' - but ultimately she chooses to sacrifice Tom rather than challenge her father or her society.",
   },
   {
     name: 'Bob Ewell',
@@ -172,22 +172,22 @@ const themes = [
   {
     name: 'Justice and Racial Prejudice',
     detail:
-      "The trial of Tom Robinson is the novel's central dramatic event and Lee's most sustained critique of racial injustice in the American South. Despite overwhelming evidence of Tom's innocence, the all-white jury convicts him because, as Atticus explains, 'when it's a white man's word against a black man's, the white man always wins.' Lee exposes how the legal system — which should embody fairness — is corrupted by institutionalised racism. The guilty verdict represents not just Tom's personal tragedy but the systematic denial of justice to an entire race. Lee uses the courtroom as a microcosm of Southern society to argue that prejudice destroys the very foundations of civilisation.",
+      "The trial of Tom Robinson is the novel's central dramatic event and Lee's most sustained critique of racial injustice in the American South. Despite overwhelming evidence of Tom's innocence, the all-white jury convicts him because, as Atticus explains, 'when it's a white man's word against a black man's, the white man always wins.' Lee exposes how the legal system - which should embody fairness - is corrupted by institutionalised racism. The guilty verdict represents not just Tom's personal tragedy but the systematic denial of justice to an entire race. Lee uses the courtroom as a microcosm of Southern society to argue that prejudice destroys the very foundations of civilisation.",
   },
   {
     name: 'Moral Courage',
     detail:
-      "Lee distinguishes between physical bravery and moral courage through Atticus's defence of Tom Robinson and his teaching about Mrs Dubose. 'Real courage' is defined as persisting in doing right when you know you will fail. Atticus defends Tom knowing the jury will convict; Mrs Dubose fights her addiction knowing she will die. Lee argues that moral courage — standing by your principles regardless of social pressure or personal cost — is the highest form of human virtue. This theme challenges Maycomb's culture of conformity, where most citizens lack the courage to oppose racial injustice.",
+      "Lee distinguishes between physical bravery and moral courage through Atticus's defence of Tom Robinson and his teaching about Mrs Dubose. 'Real courage' is defined as persisting in doing right when you know you will fail. Atticus defends Tom knowing the jury will convict; Mrs Dubose fights her addiction knowing she will die. Lee argues that moral courage - standing by your principles regardless of social pressure or personal cost - is the highest form of human virtue. This theme challenges Maycomb's culture of conformity, where most citizens lack the courage to oppose racial injustice.",
   },
   {
     name: 'Growing Up and Loss of Innocence',
     detail:
-      "Scout and Jem's journey from childhood innocence to moral awareness structures the entire novel. Their early fascination with Boo Radley represents the safe mysteries of childhood, while the trial forces them to confront adult cruelty, racism, and injustice. Jem's reaction to the guilty verdict — he weeps and cannot understand how people can be so unjust — marks the death of his childhood idealism. Scout's education is gentler: guided by Atticus, she learns to see people with empathy rather than fear. Lee suggests that growing up inevitably means encountering evil, but that moral education can shape how children respond to it.",
+      "Scout and Jem's journey from childhood innocence to moral awareness structures the entire novel. Their early fascination with Boo Radley represents the safe mysteries of childhood, while the trial forces them to confront adult cruelty, racism, and injustice. Jem's reaction to the guilty verdict - he weeps and cannot understand how people can be so unjust - marks the death of his childhood idealism. Scout's education is gentler: guided by Atticus, she learns to see people with empathy rather than fear. Lee suggests that growing up inevitably means encountering evil, but that moral education can shape how children respond to it.",
   },
   {
     name: 'Empathy and Understanding',
     detail:
-      "Atticus's instruction to 'climb into [another person's] skin and walk around in it' is the novel's moral foundation. Lee tests this principle against every relationship in the book: Scout must learn empathy for Boo Radley, Walter Cunningham, Mrs Dubose, and even Mayella Ewell. The novel argues that prejudice — whether racial, social, or personal — is fundamentally a failure of empathy. Those who can see the world from another's perspective (Atticus, Scout by the end) achieve moral clarity; those who cannot (Bob Ewell, the jury) cause destruction. Lee positions empathy as both a personal virtue and a social necessity.",
+      "Atticus's instruction to 'climb into [another person's] skin and walk around in it' is the novel's moral foundation. Lee tests this principle against every relationship in the book: Scout must learn empathy for Boo Radley, Walter Cunningham, Mrs Dubose, and even Mayella Ewell. The novel argues that prejudice - whether racial, social, or personal - is fundamentally a failure of empathy. Those who can see the world from another's perspective (Atticus, Scout by the end) achieve moral clarity; those who cannot (Bob Ewell, the jury) cause destruction. Lee positions empathy as both a personal virtue and a social necessity.",
   },
   {
     name: 'Social Class in the American South',
@@ -204,16 +204,16 @@ const chapterEvents = [
       "Lee establishes Maycomb as a tired, insular Southern town during the Great Depression. Scout, Jem, and their summer friend Dill become fascinated by the mysterious Boo Radley. Scout's first day at school introduces the Cunningham family (proud but poor) and exposes the rigid social hierarchy. Miss Caroline's failure to understand Walter Cunningham's refusal of a quarter demonstrates institutional ignorance of class realities.",
     keyQuote:
       'You never really understand a person until you consider things from his point of view... Until you climb inside of his skin and walk around in it',
-    quoteContext: "Atticus to Scout, Chapter 3 — the novel's moral foundation",
+    quoteContext: "Atticus to Scout, Chapter 3 - the novel's moral foundation",
   },
   {
     chapters: 'Chapters 4-7',
     title: 'Gifts in the Knothole and the Radley Game',
     events:
-      "Scout and Jem discover gifts left in a knothole of the Radley oak tree: chewing gum, pennies, carved soap figures, a watch, and a medal. The children act out 'the Radley game', dramatising Boo's story. Nathan Radley cements the knothole shut, cutting off Boo's only line of communication. Jem weeps silently — his first moment of adult understanding that kindness can be deliberately destroyed.",
+      "Scout and Jem discover gifts left in a knothole of the Radley oak tree: chewing gum, pennies, carved soap figures, a watch, and a medal. The children act out 'the Radley game', dramatising Boo's story. Nathan Radley cements the knothole shut, cutting off Boo's only line of communication. Jem weeps silently - his first moment of adult understanding that kindness can be deliberately destroyed.",
     keyQuote: 'Jem stayed moody and silent for a week',
     quoteContext:
-      'After Nathan Radley fills the knothole, Chapter 7 — Jem begins to understand adult cruelty',
+      'After Nathan Radley fills the knothole, Chapter 7 - Jem begins to understand adult cruelty',
   },
   {
     chapters: 'Chapters 8-9',
@@ -222,16 +222,16 @@ const chapterEvents = [
       "Miss Maudie's house burns down on the coldest night Maycomb has known. During the fire, someone (Boo Radley) places a blanket around Scout's shoulders without her noticing. Atticus agrees to defend Tom Robinson, and Scout fights Cecil Jacobs and her cousin Francis for calling Atticus a 'nigger-lover'. Atticus tells Uncle Jack that he hopes Scout and Jem will come to him rather than the town for answers about the case.",
     keyQuote:
       "I hope and pray I can get Jem and Scout through it without bitterness, and most of all, without catching Maycomb's usual disease",
-    quoteContext: "Atticus to Uncle Jack, Chapter 9 — 'Maycomb's usual disease' is racism",
+    quoteContext: "Atticus to Uncle Jack, Chapter 9 - 'Maycomb's usual disease' is racism",
   },
   {
     chapters: 'Chapters 10-11',
     title: 'The Mad Dog and Mrs Dubose',
     events:
-      "Atticus shoots a rabid dog (Tim Johnson) in a single shot, revealing his hidden skill as a marksman. The children discover he was once known as 'One-Shot Finch' but has chosen not to use guns. The mad dog symbolises the madness of racism approaching Maycomb. Mrs Dubose, a morphine-addicted neighbour, insults Atticus. Jem destroys her camellia bushes; as punishment, he reads to her daily. After her death, Atticus reveals she was battling addiction to die free — his example of 'real courage'.",
+      "Atticus shoots a rabid dog (Tim Johnson) in a single shot, revealing his hidden skill as a marksman. The children discover he was once known as 'One-Shot Finch' but has chosen not to use guns. The mad dog symbolises the madness of racism approaching Maycomb. Mrs Dubose, a morphine-addicted neighbour, insults Atticus. Jem destroys her camellia bushes; as punishment, he reads to her daily. After her death, Atticus reveals she was battling addiction to die free - his example of 'real courage'.",
     keyQuote:
       'I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand',
-    quoteContext: 'Atticus to Jem, Chapter 11 — redefining courage from physical to moral',
+    quoteContext: 'Atticus to Jem, Chapter 11 - redefining courage from physical to moral',
   },
   {
     chapters: 'Chapters 12-14',
@@ -239,63 +239,63 @@ const chapterEvents = [
     events:
       "Calpurnia takes Scout and Jem to First Purchase African M.E. Church, where they witness the Black community's poverty, dignity, and solidarity in supporting Tom Robinson's family. Aunt Alexandra arrives to provide 'feminine influence' for Scout and insists on proper behaviour and awareness of family heritage. Dill runs away from home to Maycomb, revealing his own neglect. Tensions rise as the trial approaches.",
     keyQuote:
-      "It's not necessary to tell all you know. It's not ladylike — in the second place, folks don't like to have somebody around knowin' more than they do",
+      "It's not necessary to tell all you know. It's not ladylike - in the second place, folks don't like to have somebody around knowin' more than they do",
     quoteContext:
-      'Calpurnia to Scout, Chapter 12 — Calpurnia explains code-switching between communities',
+      'Calpurnia to Scout, Chapter 12 - Calpurnia explains code-switching between communities',
   },
   {
     chapters: 'Chapters 15-16',
     title: 'The Mob at the Jail',
     events:
-      "A lynch mob arrives at the jail where Tom Robinson is held. Atticus sits alone outside to protect Tom. Scout, Jem, and Dill intervene. Scout recognises Walter Cunningham's father in the mob and speaks to him with childish innocence about his son and his legal affairs. Her empathy — seeing him as a person, not a member of a mob — shames him into dispersing the group. The next day, the trial begins and the courtroom is packed. The children watch from the 'Colored balcony'.",
+      "A lynch mob arrives at the jail where Tom Robinson is held. Atticus sits alone outside to protect Tom. Scout, Jem, and Dill intervene. Scout recognises Walter Cunningham's father in the mob and speaks to him with childish innocence about his son and his legal affairs. Her empathy - seeing him as a person, not a member of a mob - shames him into dispersing the group. The next day, the trial begins and the courtroom is packed. The children watch from the 'Colored balcony'.",
     keyQuote:
-      "It took an eight-year-old child to bring 'em to their senses... That proves something — that a gang of wild animals can be stopped, simply because they're still human",
-    quoteContext: "Atticus to Jem, Chapter 16 — Scout's innocence defeats mob mentality",
+      "It took an eight-year-old child to bring 'em to their senses... That proves something - that a gang of wild animals can be stopped, simply because they're still human",
+    quoteContext: "Atticus to Jem, Chapter 16 - Scout's innocence defeats mob mentality",
   },
   {
     chapters: 'Chapters 17-19',
     title: 'The Trial: Testimony',
     events:
-      "Bob Ewell testifies that he found Tom Robinson raping Mayella. Atticus establishes that Ewell is left-handed and that Mayella's injuries were on the right side of her face — consistent with a left-handed attacker. Tom Robinson's left arm is crippled, making it impossible for him to have inflicted the injuries. Mayella's testimony is contradictory and emotional. Tom testifies that Mayella kissed him and that he ran because he knew no Black man could be safe in that situation. The prosecutor exploits Tom's admission that he felt 'sorry' for Mayella — an unforgivable transgression in the racial hierarchy.",
+      "Bob Ewell testifies that he found Tom Robinson raping Mayella. Atticus establishes that Ewell is left-handed and that Mayella's injuries were on the right side of her face - consistent with a left-handed attacker. Tom Robinson's left arm is crippled, making it impossible for him to have inflicted the injuries. Mayella's testimony is contradictory and emotional. Tom testifies that Mayella kissed him and that he ran because he knew no Black man could be safe in that situation. The prosecutor exploits Tom's admission that he felt 'sorry' for Mayella - an unforgivable transgression in the racial hierarchy.",
     keyQuote: 'You felt sorry for her, you felt sorry for her?',
     quoteContext:
-      'Mr Gilmer to Tom Robinson, Chapter 19 — a Black man pitying a white woman violates Southern social code',
+      'Mr Gilmer to Tom Robinson, Chapter 19 - a Black man pitying a white woman violates Southern social code',
   },
   {
     chapters: 'Chapters 20-22',
     title: 'The Verdict',
     events:
-      "Atticus delivers his closing argument, appealing to the jury's sense of justice and the ideal that 'all men are created equal' before the law. Despite the strength of the defence, the jury returns a guilty verdict. Jem weeps. As Atticus leaves the courtroom, the entire Black community in the gallery stands in his honour. The next morning, the Black community leaves gifts of food at the Finches' door. Miss Maudie tells the children that Atticus was the only man who could have made the jury deliberate for hours rather than minutes — a small victory.",
+      "Atticus delivers his closing argument, appealing to the jury's sense of justice and the ideal that 'all men are created equal' before the law. Despite the strength of the defence, the jury returns a guilty verdict. Jem weeps. As Atticus leaves the courtroom, the entire Black community in the gallery stands in his honour. The next morning, the Black community leaves gifts of food at the Finches' door. Miss Maudie tells the children that Atticus was the only man who could have made the jury deliberate for hours rather than minutes - a small victory.",
     keyQuote: "Miss Jean Louise, stand up. Your father's passin'",
     quoteContext:
-      "Reverend Sykes to Scout, Chapter 21 — the Black community honours Atticus's moral courage",
+      "Reverend Sykes to Scout, Chapter 21 - the Black community honours Atticus's moral courage",
   },
   {
     chapters: 'Chapters 23-25',
     title: 'Aftermath of the Trial',
     events:
-      "Bob Ewell spits in Atticus's face; Atticus absorbs the insult without retaliation. Jem and Atticus discuss the jury system and why the verdict was unjust. Scout reflects that 'there's just one kind of folks. Folks.' Tom Robinson is shot dead attempting to escape prison — seventeen bullet wounds. Mr Underwood's editorial compares Tom's death to 'the senseless slaughter of songbirds', directly linking Tom to the mockingbird symbol. Aunt Alexandra and the missionary circle reveal the hypocrisy of white Christian women who pity Africans but endorse local racism.",
+      "Bob Ewell spits in Atticus's face; Atticus absorbs the insult without retaliation. Jem and Atticus discuss the jury system and why the verdict was unjust. Scout reflects that 'there's just one kind of folks. Folks.' Tom Robinson is shot dead attempting to escape prison - seventeen bullet wounds. Mr Underwood's editorial compares Tom's death to 'the senseless slaughter of songbirds', directly linking Tom to the mockingbird symbol. Aunt Alexandra and the missionary circle reveal the hypocrisy of white Christian women who pity Africans but endorse local racism.",
     keyQuote:
       "Mr Underwood didn't talk about miscarriages of justice, he was writing so children could understand. Mr Underwood simply figured it was a sin to kill cripples, be they standing, sitting, or escaping",
-    quoteContext: "Scout narrating, Chapter 25 — Tom's death linked to the mockingbird motif",
+    quoteContext: "Scout narrating, Chapter 25 - Tom's death linked to the mockingbird motif",
   },
   {
     chapters: 'Chapters 26-28',
     title: 'Hypocrisy, Halloween, and the Attack',
     events:
-      "Scout's teacher Miss Gates condemns Hitler's persecution of Jews but sees no contradiction with Maycomb's treatment of Black people — Lee's sharpest critique of Southern hypocrisy. On Halloween night, Scout and Jem walk home from a school pageant through dark streets. Bob Ewell attacks them. Scout's ham costume (made of wire mesh) saves her. A mysterious figure carries the injured Jem home. Scout realises the rescuer is Boo Radley.",
+      "Scout's teacher Miss Gates condemns Hitler's persecution of Jews but sees no contradiction with Maycomb's treatment of Black people - Lee's sharpest critique of Southern hypocrisy. On Halloween night, Scout and Jem walk home from a school pageant through dark streets. Bob Ewell attacks them. Scout's ham costume (made of wire mesh) saves her. A mysterious figure carries the injured Jem home. Scout realises the rescuer is Boo Radley.",
     keyQuote:
       "How can you hate Hitler so bad an' then turn around and be ugly about folks right at home?",
-    quoteContext: 'Scout to Jem, Chapter 26 — exposing the hypocrisy of selective morality',
+    quoteContext: 'Scout to Jem, Chapter 26 - exposing the hypocrisy of selective morality',
   },
   {
     chapters: 'Chapters 29-31',
     title: 'Boo Radley Revealed',
     events:
-      "Heck Tate reports that Bob Ewell fell on his own knife and died. Atticus initially believes Jem killed Ewell and insists on a public trial, but Tate explains it was Boo Radley and argues that exposing Boo to public attention would destroy him — it would be 'like shootin' a mockingbird'. Scout agrees: she has finally learned to see Boo as a person, not a phantom. She walks Boo home and stands on his porch, seeing the neighbourhood from his perspective — the ultimate fulfilment of Atticus's empathy lesson.",
+      "Heck Tate reports that Bob Ewell fell on his own knife and died. Atticus initially believes Jem killed Ewell and insists on a public trial, but Tate explains it was Boo Radley and argues that exposing Boo to public attention would destroy him - it would be 'like shootin' a mockingbird'. Scout agrees: she has finally learned to see Boo as a person, not a phantom. She walks Boo home and stands on his porch, seeing the neighbourhood from his perspective - the ultimate fulfilment of Atticus's empathy lesson.",
     keyQuote: "Well, it'd be sort of like shootin' a mockingbird, wouldn't it?",
     quoteContext:
-      'Scout to Atticus, Chapter 30 — Scout applies the mockingbird principle to protect Boo Radley',
+      'Scout to Atticus, Chapter 30 - Scout applies the mockingbird principle to protect Boo Radley',
   },
 ]
 
@@ -318,17 +318,17 @@ const narrativeTechniques = [
   {
     name: 'Symbolism: The Radley House',
     detail:
-      "The Radley house represents the unknown, fear, and the danger of prejudging others. At the novel's start, it is a gothic site of childhood terror — 'a malevolent phantom' inhabits it. As the children mature, the house is gradually domesticated: Boo leaves gifts, mends trousers, and wraps a blanket around Scout. By the end, Scout enters the house and sees Boo as a shy, gentle man. The transformation of the Radley house from threatening to welcoming mirrors the novel's moral argument: fear and prejudice dissolve when we make the effort to understand others.",
+      "The Radley house represents the unknown, fear, and the danger of prejudging others. At the novel's start, it is a gothic site of childhood terror - 'a malevolent phantom' inhabits it. As the children mature, the house is gradually domesticated: Boo leaves gifts, mends trousers, and wraps a blanket around Scout. By the end, Scout enters the house and sees Boo as a shy, gentle man. The transformation of the Radley house from threatening to welcoming mirrors the novel's moral argument: fear and prejudice dissolve when we make the effort to understand others.",
   },
   {
     name: 'Southern Gothic Elements',
     detail:
-      "Lee draws on the Southern Gothic tradition: the decaying town, the reclusive Boo Radley, the mad dog, the fire, the courtroom drama, and the violent attack in darkness. These gothic elements create atmosphere and tension, but Lee subverts the genre by revealing that the true horror is not supernatural but social — Maycomb's racism is more monstrous than any ghost story. The gothic Radley plot and the realist trial plot converge in the final chapters, showing that innocence is threatened by human evil, not by phantoms.",
+      "Lee draws on the Southern Gothic tradition: the decaying town, the reclusive Boo Radley, the mad dog, the fire, the courtroom drama, and the violent attack in darkness. These gothic elements create atmosphere and tension, but Lee subverts the genre by revealing that the true horror is not supernatural but social - Maycomb's racism is more monstrous than any ghost story. The gothic Radley plot and the realist trial plot converge in the final chapters, showing that innocence is threatened by human evil, not by phantoms.",
   },
   {
     name: 'Dual Plot Structure',
     detail:
-      "The novel interweaves two plots: the children's fascination with Boo Radley (the 'innocence' plot) and the trial of Tom Robinson (the 'justice' plot). Both plots concern mockingbirds — innocent figures destroyed by prejudice. Lee uses the Radley plot to frame the trial: the children begin by misunderstanding Boo and end by understanding him, just as the novel begins with racial prejudice as an unexamined norm and ends by exposing its devastating consequences. The plots converge when Boo saves the children from Bob Ewell, bringing the novel to its climactic resolution.",
+      "The novel interweaves two plots: the children's fascination with Boo Radley (the 'innocence' plot) and the trial of Tom Robinson (the 'justice' plot). Both plots concern mockingbirds - innocent figures destroyed by prejudice. Lee uses the Radley plot to frame the trial: the children begin by misunderstanding Boo and end by understanding him, just as the novel begins with racial prejudice as an unexamined norm and ends by exposing its devastating consequences. The plots converge when Boo saves the children from Bob Ewell, bringing the novel to its climactic resolution.",
   },
 ]
 
@@ -337,7 +337,7 @@ const assessmentObjectives = [
     code: 'Textual Knowledge',
     description: 'Show detailed knowledge and understanding of the text',
     guidance:
-      "Demonstrate thorough knowledge of the novel's plot, characters, and themes. Reference specific chapters and events accurately. Use precise, embedded quotations (not long block quotes). Show that you understand the significance of events, not just what happens: explain why the jury's verdict matters, why Boo Radley's gifts are significant, and what the mockingbird symbolises. Do not retell the story — select and deploy evidence purposefully to support your argument.",
+      "Demonstrate thorough knowledge of the novel's plot, characters, and themes. Reference specific chapters and events accurately. Use precise, embedded quotations (not long block quotes). Show that you understand the significance of events, not just what happens: explain why the jury's verdict matters, why Boo Radley's gifts are significant, and what the mockingbird symbolises. Do not retell the story - select and deploy evidence purposefully to support your argument.",
   },
   {
     code: "Writer's Methods",
@@ -351,7 +351,7 @@ const assessmentObjectives = [
     description:
       'Demonstrate understanding of the relationships between texts and the contexts in which they were written and received',
     guidance:
-      'To Kill a Mockingbird was published in 1960 but set in the 1930s during the Great Depression. Discuss the Jim Crow South, racial segregation, the Scottsboro Boys case (a real trial that influenced the novel), and the emerging Civil Rights Movement. Show how Lee wrote during a period of racial upheaval — the Montgomery Bus Boycott (1955), Brown v. Board of Education (1954) — and how the novel intervened in contemporary debates about racial justice. Integrate context into your analysis rather than treating it as a separate section.',
+      'To Kill a Mockingbird was published in 1960 but set in the 1930s during the Great Depression. Discuss the Jim Crow South, racial segregation, the Scottsboro Boys case (a real trial that influenced the novel), and the emerging Civil Rights Movement. Show how Lee wrote during a period of racial upheaval - the Montgomery Bus Boycott (1955), Brown v. Board of Education (1954) - and how the novel intervened in contemporary debates about racial justice. Integrate context into your analysis rather than treating it as a separate section.',
   },
   {
     code: 'Personal Response',
@@ -366,7 +366,7 @@ const sampleQuestion = {
   question:
     "Re-read the passage in Chapter 21 from 'I shut my eyes' to 'Your father's passin'.' How does Lee make this such a powerful and moving moment in the novel?",
   modelParagraph:
-    "Lee makes this moment profoundly moving through the contrast between the devastating guilty verdict and the Black community's act of silent honour. The child narrator's physical response — 'I shut my eyes' — conveys Scout's instinctive recoil from injustice, and the sensory detail immerses the reader in the emotional weight of the scene. Reverend Sykes's instruction, 'Miss Jean Louise, stand up. Your father's passin'', transforms Atticus's walk from the courtroom into a solemn procession. The formal address 'Miss Jean Louise' elevates the moment above the everyday, lending it ceremonial gravity. Lee structures this as a tableau — the entire gallery rising in unison — which inverts Maycomb's racial hierarchy: the powerless community passes moral judgement on the white establishment that has just condemned an innocent man. The word 'passin'' carries connotations of both physical movement and something greater, almost spiritual, suggesting that Atticus's moral stand transcends the courtroom. This moment is significant structurally because it follows immediately after the verdict, creating a sharp juxtaposition between legal failure and moral triumph. Lee ensures that the reader understands the trial is not simply a defeat: Atticus's courage has been witnessed and honoured by those who understand its true cost.",
+    "Lee makes this moment profoundly moving through the contrast between the devastating guilty verdict and the Black community's act of silent honour. The child narrator's physical response - 'I shut my eyes' - conveys Scout's instinctive recoil from injustice, and the sensory detail immerses the reader in the emotional weight of the scene. Reverend Sykes's instruction, 'Miss Jean Louise, stand up. Your father's passin'', transforms Atticus's walk from the courtroom into a solemn procession. The formal address 'Miss Jean Louise' elevates the moment above the everyday, lending it ceremonial gravity. Lee structures this as a tableau - the entire gallery rising in unison - which inverts Maycomb's racial hierarchy: the powerless community passes moral judgement on the white establishment that has just condemned an innocent man. The word 'passin'' carries connotations of both physical movement and something greater, almost spiritual, suggesting that Atticus's moral stand transcends the courtroom. This moment is significant structurally because it follows immediately after the verdict, creating a sharp juxtaposition between legal failure and moral triumph. Lee ensures that the reader understands the trial is not simply a defeat: Atticus's courage has been witnessed and honoured by those who understand its true cost.",
 }
 
 /* ─── Page component ─────────────────────────────────────────── */
@@ -551,7 +551,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                 racial segregation throughout the American South. Black citizens were denied equal
                 access to education, public facilities, and the legal system. All-white juries were
                 the norm, and Black defendants faced systemic bias. Maycomb&rsquo;s rigid racial
-                hierarchy — where even the Ewells outrank Tom Robinson — reflects this historical
+                hierarchy - where even the Ewells outrank Tom Robinson - reflects this historical
                 reality. Lee uses the fictional trial to dramatise the real injustice of a legal
                 system that was designed to maintain white supremacy.
               </p>
@@ -599,7 +599,7 @@ export default function ToKillAMockingbirdStudyGuide() {
               </h3>
               <p className="mt-2">
                 Lee grew up in Monroeville, Alabama, the model for Maycomb. Her father, Amasa
-                Coleman Lee, was a lawyer who defended Black clients — a clear inspiration for
+                Coleman Lee, was a lawyer who defended Black clients - a clear inspiration for
                 Atticus Finch. Lee&rsquo;s childhood friend Truman Capote is widely considered the
                 basis for Dill. The novel draws heavily on Lee&rsquo;s personal experience of
                 small-town Southern life, racial tension, and the legal profession. Understanding
@@ -774,7 +774,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                     (defending Tom)
                   </li>
                   <li>
-                    &bull; Discuss Atticus as a father figure and moral educator — his methods of
+                    &bull; Discuss Atticus as a father figure and moral educator - his methods of
                     teaching through example
                   </li>
                   <li>
@@ -787,7 +787,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                   </li>
                   <li>
                     &bull; Discuss Lee&rsquo;s purpose: Atticus embodies the novel&rsquo;s argument
-                    that moral courage can challenge — even if it cannot immediately defeat —
+                    that moral courage can challenge - even if it cannot immediately defeat -
                     institutional injustice
                   </li>
                 </ul>
@@ -807,7 +807,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                 <p className="text-xs font-semibold text-foreground">{tr(`How to approach:`)}</p>
                 <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
-                    &bull; Analyse Scout standing on Boo&rsquo;s porch — the fulfilment of
+                    &bull; Analyse Scout standing on Boo&rsquo;s porch - the fulfilment of
                     Atticus&rsquo;s empathy lesson from Chapter 3
                   </li>
                   <li>
@@ -819,7 +819,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                     been transformed
                   </li>
                   <li>
-                    &bull; Analyse the gentle, reflective tone — Lee signals that Scout&rsquo;s
+                    &bull; Analyse the gentle, reflective tone - Lee signals that Scout&rsquo;s
                     childhood is ending
                   </li>
                   <li>
@@ -874,7 +874,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                   <strong className="text-foreground">{tr(`Quote precisely:`)}</strong> Short,
                   embedded quotations (&lsquo;climb inside of his skin&rsquo;) are more effective
                   than long block quotes. Aim for at least one quotation per paragraph. Accuracy
-                  matters — learn key quotes exactly.
+                  matters - learn key quotes exactly.
                 </li>
                 <li>
                   <strong className="text-foreground">

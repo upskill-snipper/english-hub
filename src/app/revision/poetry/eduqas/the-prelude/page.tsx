@@ -345,7 +345,7 @@ const prelude: PoemData = {
       ],
     },
     {
-      text: 'There in her mooring-place I left my bark,—',
+      text: 'There in her mooring-place I left my bark,-',
       annotations: [
         {
           type: 'Action',
@@ -501,7 +501,7 @@ const prelude: PoemData = {
   `,
 
   contextAr: `
-    <h3>William Wordsworth (1770–1850)</h3>
+    <h3>William Wordsworth (1770-1850)</h3>
     <p>Wordsworth واحد من مؤسّسي الرومانسية الإنجليزية، يم Samuel Taylor Coleridge. ترعرع في منطقة Lake District، وحبّه العميق للطبيعة شكّل رؤيته الشعرية كاملة. كان يؤمن إن تجارب الطفولة في الطبيعة تجارب مكوّنة ومقدّسة.</p>
 
     <h3>The Prelude</h3>
@@ -510,13 +510,13 @@ const prelude: PoemData = {
     <p><strong>ملاحظة عن النسخة:</strong> منهج Eduqas يستخدم <strong>نسخة 1850 المنشورة من The Prelude</strong> (نفس النسخة اللي يستخدمها منهج AQA Power & Conflict). أما منهج OCR "Towards a World Unknown" فيستخدم النسخة الأقدم من <strong>1799 (The Prelude بنسختين)</strong>، اللي تختلف ماديّاً في الصياغة. لازم تقتبس من نسخة 1850 لما تجاوب على أسئلة Eduqas.</p>
 
     <h3>"Spots of Time"</h3>
-    <p>Wordsworth كان يؤمن إن بعض تجارب الطفولة تترك أثر دائم على العقل — كان يسمّيها "spots of time". حادثة سرقة القارب وحدة من هذي الـspots. هالذكريات مكوّنة، وتستمر تشكّل الإنسان البالغ.</p>
+    <p>Wordsworth كان يؤمن إن بعض تجارب الطفولة تترك أثر دائم على العقل - كان يسمّيها "spots of time". حادثة سرقة القارب وحدة من هذي الـspots. هالذكريات مكوّنة، وتستمر تشكّل الإنسان البالغ.</p>
 
     <h3>الحركة الرومانسية</h3>
     <p>الشعراء الرومانسيون كانوا يقدّرون <strong>العاطفة والخيال والطبيعة</strong> أكثر من العقل. كانوا يشوفون الطبيعة كمعلّم وقوة أخلاقية. Wordsworth بالذات كان يؤمن إن الطبيعة حيّة وتقدر تتواصل مع البشر.</p>
 
     <h3>السامي (The Sublime)</h3>
-    <p>مفهوم <strong>السامي</strong> الرومانسي — الجمال مع الرعب — مركزي في القصيدة. الجبل اللي يطلع سامي: ضخم، يبعث الرهبة، ومخيف. Wordsworth كان يؤمن إن السامي يعلّم الإنسان التواضع أمام العالم الطبيعي.</p>
+    <p>مفهوم <strong>السامي</strong> الرومانسي - الجمال مع الرعب - مركزي في القصيدة. الجبل اللي يطلع سامي: ضخم، يبعث الرهبة، ومخيف. Wordsworth كان يؤمن إن السامي يعلّم الإنسان التواضع أمام العالم الطبيعي.</p>
   `,
 
   summary: `Opening: The young Wordsworth finds a boat tied to a willow tree on a summer evening. He impulsively unties it ("an act of stealth and troubled pleasure") and pushes off into the lake.
@@ -539,9 +539,9 @@ Overall meaning: A childhood encounter with the sublime power of nature teaches 
 
 التراجع: الولد مذعور، يستدير ويجدّف بالعكس. يرجّع القارب لمرساه تحت شجرة الصفصاف، ويمشي للبيت في "grave and serious mood".
 
-ما بعد الحدث: لأيام بعدها، عقله يطارده "huge and mighty forms" — أشكال غير بشرية تتحرّك عبر أفكاره وتزعج أحلامه. التجربة غيّرته: ما عاد يقدر يشوف الطبيعة كصديقة ومألوفة.
+ما بعد الحدث: لأيام بعدها، عقله يطارده "huge and mighty forms" - أشكال غير بشرية تتحرّك عبر أفكاره وتزعج أحلامه. التجربة غيّرته: ما عاد يقدر يشوف الطبيعة كصديقة ومألوفة.
 
-المعنى العام: لقاء طفولي مع قوة الطبيعة السامية يعلّم Wordsworth الصغير التواضع، ويكشف إن الطبيعة حيّة — بس مو بالطريقة اللطيفة المريحة اللي تخيّلها. الكبرياء يُعاقب، والتجربة تشكّل عقله البالغ للأبد.`,
+المعنى العام: لقاء طفولي مع قوة الطبيعة السامية يعلّم Wordsworth الصغير التواضع، ويكشف إن الطبيعة حيّة - بس مو بالطريقة اللطيفة المريحة اللي تخيّلها. الكبرياء يُعاقب، والتجربة تشكّل عقله البالغ للأبد.`,
 
   formAndStructure: `Form: Blank verse - unrhymed iambic pentameter. This is the form of epic poetry (Milton\'s Paradise Lost) and gives the personal memory a serious, elevated quality. It also feels natural and conversational.
 
@@ -559,9 +559,9 @@ Repetition: "Huge ... huge", "struck and struck", "still ... still". The repetit
 
 Personification: Nature is constantly personified. The boat has a "home", the lake is "silent" (watching), the mountain has "voluntary power" and "purpose". This is Wordsworth\'s pantheistic vision of nature as alive and conscious.`,
 
-  formAndStructureAr: `Form: Blank verse — iambic pentameter بدون قافية. هذا هو شكل الشعر الملحمي (Paradise Lost لـMilton)، ويعطي الذكرى الشخصية طابع جدّي ورفيع. وفي نفس الوقت يحسّ طبيعي وحواري.
+  formAndStructureAr: `Form: Blank verse - iambic pentameter بدون قافية. هذا هو شكل الشعر الملحمي (Paradise Lost لـMilton)، ويعطي الذكرى الشخصية طابع جدّي ورفيع. وفي نفس الوقت يحسّ طبيعي وحواري.
 
-الطول: مقطع متواصل من 44 بيت من قصيدة ملحمية أطول. غياب تقسيمات المقاطع يخلق سرد منساب متّصل، يحاكي طريقة عمل الذاكرة — صورة تجرّ صورة ثانية.
+الطول: مقطع متواصل من 44 بيت من قصيدة ملحمية أطول. غياب تقسيمات المقاطع يخلق سرد منساب متّصل، يحاكي طريقة عمل الذاكرة - صورة تجرّ صورة ثانية.
 
 الراوي بضمير المتكلّم: "I found"، "I struck"، "my brain". حميمية صوت المتكلّم تعطي القصيدة طابع اعترافي. Wordsworth يشارك ذكرى شخصية مكوّنة.
 
@@ -569,7 +569,7 @@ Personification: Nature is constantly personified. The boat has a "home", the la
 
 التحوّل البنيوي: القصيدة عندها volta واضح لما يطلع الجبل ("a huge peak, black and huge"). قبلها، اللغة هادئة وواثقة. بعدها تصير مكسّرة، متكرّرة، خائفة.
 
-الرحلة الدائرية: الولد يترك شجرة الصفصاف ويرجع لها — بس وهو متغيّر. هالبنية الدائرية تحاكي كيف إن التجربة تكمّل رحلة اكتشاف الذات.
+الرحلة الدائرية: الولد يترك شجرة الصفصاف ويرجع لها - بس وهو متغيّر. هالبنية الدائرية تحاكي كيف إن التجربة تكمّل رحلة اكتشاف الذات.
 
 التكرار: "Huge ... huge"، "struck and struck"، "still ... still". التكرارات توحي بإدراك الطفل المرعوب المتأثّر. الكلمات تعجز.
 
@@ -582,7 +582,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
         'The oxymoron captures the conflicted thrill of transgression. "Stealth" admits guilt - he knows it\'s wrong. "Troubled pleasure" shows the complex psychology of doing something forbidden. This sets up the moral framework: he has crossed a line, and nature will respond.',
       themes: ['Guilt', 'Transgression', 'Childhood'],
       analysisAr:
-        'الـoxymoron يلتقط نشوة التجاوز المتعارضة. "Stealth" تعترف بالذنب — يعرف إن اللي يسوّيه غلط. و"troubled pleasure" تبيّن نفسية معقّدة لما يسوّي الشخص شي ممنوع. هذا يأسّس الإطار الأخلاقي: تجاوز الحدّ، والطبيعة بترد.',
+        'الـoxymoron يلتقط نشوة التجاوز المتعارضة. "Stealth" تعترف بالذنب - يعرف إن اللي يسوّيه غلط. و"troubled pleasure" تبيّن نفسية معقّدة لما يسوّي الشخص شي ممنوع. هذا يأسّس الإطار الأخلاقي: تجاوز الحدّ، والطبيعة بترد.',
       themesAr: ['الذنب', 'التجاوز', 'الطفولة'],
     },
     {
@@ -600,7 +600,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
         'The most famous line in the extract. The repetition of "huge" shows the speaker is too overwhelmed for elegant language - he can only repeat. "Black" suggests menace and the unknown. The mountain emerges almost like a living monster, breaking the peaceful spell of the rowing.',
       themes: ['Sublime', 'Power of nature', 'Fear'],
       analysisAr:
-        'أشهر بيت في المقطع. تكرار "huge" يبيّن إن المتكلّم منهار، ما يقدر يستخدم لغة منمّقة — بس يكرّر. كلمة "black" توحي بالتهديد والمجهول. الجبل يطلع شبه وحش حيّ، يكسر سحر التجديف الهادي.',
+        'أشهر بيت في المقطع. تكرار "huge" يبيّن إن المتكلّم منهار، ما يقدر يستخدم لغة منمّقة - بس يكرّر. كلمة "black" توحي بالتهديد والمجهول. الجبل يطلع شبه وحش حيّ، يكسر سحر التجديف الهادي.',
       themesAr: ['السامي', 'قوة الطبيعة', 'الخوف'],
     },
     {
@@ -609,7 +609,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
         'The mountain has "voluntary power" - its own will. "Upreared its head" makes it animal-like, as if a giant beast is rising up. Wordsworth\'s pantheism (belief that nature is alive) is here at full force. This is the sublime: nature so vast it has agency.',
       themes: ['Personification', 'Sublime', 'Power of nature'],
       analysisAr:
-        'الجبل عنده "voluntary power" — إرادة خاصة فيه. "Upreared its head" يخلّيه شبه حيوان، كأن وحش عملاق يقوم. الـpantheism عند Wordsworth (إيمانه إن الطبيعة حيّة) في أوج قوّته هنا. هذا هو السامي: طبيعة ضخمة لدرجة إن عندها إرادة.',
+        'الجبل عنده "voluntary power" - إرادة خاصة فيه. "Upreared its head" يخلّيه شبه حيوان، كأن وحش عملاق يقوم. الـpantheism عند Wordsworth (إيمانه إن الطبيعة حيّة) في أوج قوّته هنا. هذا هو السامي: طبيعة ضخمة لدرجة إن عندها إرادة.',
       themesAr: ['Personification', 'السامي', 'قوة الطبيعة'],
     },
     {
@@ -645,7 +645,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
         'The closing lines show the lasting impact. "Huge" returns from the mountain scene. The forms "do not live like living men" - they are alive but in non-human ways. They invade his dreams, showing how a single childhood experience can shape the adult mind permanently.',
       themes: ['Memory', 'Lasting impact', 'Sublime'],
       analysisAr:
-        'الأبيات الختامية تبيّن الأثر الباقي. كلمة "huge" ترجع من مشهد الجبل. الأشكال "do not live like living men" — حيّة بس بطرق غير بشرية. تغزو أحلامه، وهذا يبيّن كيف إن تجربة طفولة واحدة تقدر تشكّل العقل البالغ للأبد.',
+        'الأبيات الختامية تبيّن الأثر الباقي. كلمة "huge" ترجع من مشهد الجبل. الأشكال "do not live like living men" - حيّة بس بطرق غير بشرية. تغزو أحلامه، وهذا يبيّن كيف إن تجربة طفولة واحدة تقدر تشكّل العقل البالغ للأبد.',
       themesAr: ['الذاكرة', 'الأثر الباقي', 'السامي'],
     },
   ],
@@ -659,7 +659,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
         "Wordsworth personifies the mountain as a living giant with intention. This is the central technique of the poem - nature is alive, conscious, and powerful. The personification captures both the child's terrified perception and Wordsworth's philosophical view of nature as a living force.",
       lineRef: 21,
       effectAr:
-        'Wordsworth يشخصن الجبل كعملاق حيّ عنده نيّة. هذي هي التقنية المركزية في القصيدة — الطبيعة حيّة، واعية، وقوية. الـpersonification يلتقط إدراك الطفل المرعوب ورؤية Wordsworth الفلسفية للطبيعة كقوة حيّة.',
+        'Wordsworth يشخصن الجبل كعملاق حيّ عنده نيّة. هذي هي التقنية المركزية في القصيدة - الطبيعة حيّة، واعية، وقوية. الـpersonification يلتقط إدراك الطفل المرعوب ورؤية Wordsworth الفلسفية للطبيعة كقوة حيّة.',
     },
     {
       device: 'Repetition',
@@ -668,7 +668,7 @@ Personification: الطبيعة دايماً مشخصنة. القارب عنده
         "The repetitions show the speaker overwhelmed by experience - words fail him. They also create a sense of the mountain's relentlessness and the speaker's panic. The simple repeated language mirrors a child's response to fear.",
       lineRef: 21,
       effectAr:
-        'التكرارات تبيّن المتكلّم منهار من التجربة — الكلمات تعجزه. وفي نفس الوقت يخلق إحساس بإصرار الجبل وذعر المتكلّم. اللغة البسيطة المكرّرة تحاكي ردّة فعل الطفل على الخوف.',
+        'التكرارات تبيّن المتكلّم منهار من التجربة - الكلمات تعجزه. وفي نفس الوقت يخلق إحساس بإصرار الجبل وذعر المتكلّم. اللغة البسيطة المكرّرة تحاكي ردّة فعل الطفل على الخوف.',
     },
     {
       device: 'Oxymoron',
@@ -750,7 +750,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'He finds a boat and rows it across a lake — an "act of stealth" that leads to a terrifying encounter with a mountain.',
+      'He finds a boat and rows it across a lake - an "act of stealth" that leads to a terrifying encounter with a mountain.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -761,7 +761,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Crumble', 'Rise up and stride after the boy', 'Disappear', 'Shine'],
     correctIndex: 1,
     explanation:
-      'The mountain "Upreared its head" and "Strode after me" — personified as a living creature pursuing the terrified boy.',
+      'The mountain "Upreared its head" and "Strode after me" - personified as a living creature pursuing the terrified boy.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -777,7 +777,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Troubled pleasure" combines contradictory emotions — thrill and guilt about stealing the boat.',
+      '"Troubled pleasure" combines contradictory emotions - thrill and guilt about stealing the boat.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -819,13 +819,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A new species',
-      'Something beyond human comprehension — a spiritual power in nature',
+      'Something beyond human comprehension - a spiritual power in nature',
       'A new language',
       'Memory loss',
     ],
     correctIndex: 1,
     explanation:
-      'Deliberately abstract — the boy has glimpsed something transcendent that exceeds human understanding.',
+      'Deliberately abstract - the boy has glimpsed something transcendent that exceeds human understanding.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -851,7 +851,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Pathetic fallacy',
-      'The sublime — awe and terror from vast natural phenomena',
+      'The sublime - awe and terror from vast natural phenomena',
       'The pastoral',
       'The picturesque',
     ],
@@ -873,7 +873,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The single block mirrors how memory flows without divisions — the experience consumed everything.',
+      'The single block mirrors how memory flows without divisions - the experience consumed everything.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -883,7 +883,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       "It doesn't",
-      '"Huge and mighty forms" replace pleasant images — nature is no longer comforting but overwhelming and unknowable',
+      '"Huge and mighty forms" replace pleasant images - nature is no longer comforting but overwhelming and unknowable',
       'He becomes happier',
       'He forgets',
     ],
@@ -901,10 +901,10 @@ const REVISION_TOPICS = [
     summary:
       'The Prelude explores the power of nature, the Romantic sublime, growing up, and the lasting impact of formative experience.',
     keyPoints: [
-      'Nature has "voluntary power" — it can humble humans',
-      'The sublime — overwhelming awe and terror',
-      'Growing up — confidence permanently replaced by uncertainty',
-      'Memory — the experience haunts him day and night',
+      'Nature has "voluntary power" - it can humble humans',
+      'The sublime - overwhelming awe and terror',
+      'Growing up - confidence permanently replaced by uncertainty',
+      'Memory - the experience haunts him day and night',
     ],
   },
   {
@@ -912,10 +912,10 @@ const REVISION_TOPICS = [
     summary:
       'Wordsworth uses personification, contrast, simile, and abstract language to chart the shift from confidence to existential terror.',
     keyPoints: [
-      '"Upreared its head", "Strode after me" — mountain personified',
-      '"Lustily" vs "trembling" — confidence replaced by fear',
-      'Swan simile — grace before the terrifying encounter',
-      '"Unknown modes of being" — beyond comprehension',
+      '"Upreared its head", "Strode after me" - mountain personified',
+      '"Lustily" vs "trembling" - confidence replaced by fear',
+      'Swan simile - grace before the terrifying encounter',
+      '"Unknown modes of being" - beyond comprehension',
     ],
   },
   {
@@ -923,10 +923,10 @@ const REVISION_TOPICS = [
     summary:
       "Blank verse in a single block, with enjambment mirroring memory's flow and the journey's momentum.",
     keyPoints: [
-      'Blank verse — natural rhythm',
+      'Blank verse - natural rhythm',
       'Volta at the mountain encounter',
-      'Enjambment — momentum and overflow',
-      'First-person retrospective — adult reflecting on childhood',
+      'Enjambment - momentum and overflow',
+      'First-person retrospective - adult reflecting on childhood',
     ],
   },
 ]
@@ -941,7 +941,7 @@ export default function PreludeEduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="The Prelude by William Wordsworth — Analysis & Annotations"
+        name="The Prelude by William Wordsworth - Analysis & Annotations"
         description="Line-by-line analysis of The Prelude with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

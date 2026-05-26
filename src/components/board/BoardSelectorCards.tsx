@@ -14,7 +14,7 @@ type BoardSelectorCardsProps = {
   /** Restrict displayed boards (e.g. only 'gcse' or 'igcse'). */
   filterType?: 'gcse' | 'igcse' | 'ial' | 'a-level'
   className?: string
-  /** Render the cards in a tighter grid — used inside the modal gate. */
+  /** Render the cards in a tighter grid - used inside the modal gate. */
   compact?: boolean
 }
 

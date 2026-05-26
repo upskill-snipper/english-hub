@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'How The English Hub uses cookies and similar technologies to improve your experience, remember preferences, and analyse site traffic responsibly.',
   alternates: { canonical: 'https://theenglishhub.app/cookie-policy' },
   openGraph: {
-    title: 'Cookie Policy — The English Hub',
+    title: 'Cookie Policy - The English Hub',
     description:
       'How The English Hub uses cookies and similar technologies to improve your experience, remember preferences, and analyse site traffic responsibly.',
   },

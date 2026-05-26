@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import { useState } from 'react'
 import {
@@ -52,8 +52,7 @@ I've heard it in the chillest land -
 And on the strangest Sea -
 Yet - never - in Extremity,
 It asked a crumb - of me.`,
-    question:
-      'How does Dickinson present hope as a source of quiet endurance in the poem?',
+    question: 'How does Dickinson present hope as a source of quiet endurance in the poem?',
     modelOpening: `Dickinson presents hope not as a grand, triumphant force but as a small, persistent presence that endures without demanding anything in return. From the opening line, the extended metaphor of hope as "the thing with feathers" immediately transforms an abstract emotion into a delicate, living creature, and the definite article "the" implies a universal, almost taxonomic truth -- as if hope were a species we all recognise. The verb "perches" is crucial: it suggests not permanence but poised readiness, a bird that rests lightly in the soul yet is capable of flight. Through this opening, Dickinson establishes hope as fragile in form but steadfast in nature.`,
     analysisNotes: [
       {
@@ -64,7 +63,7 @@ It asked a crumb - of me.`,
       },
       {
         focus: 'Dashes',
-        observation: 'Dickinson\'s trademark dashes fragment and pause the lines',
+        observation: "Dickinson's trademark dashes fragment and pause the lines",
         effect:
           'Create hesitation and breath, mirroring the fragile persistence of hope. The dashes force the reader to slow down -- hope itself resists being rushed.',
       },
@@ -84,7 +83,7 @@ It asked a crumb - of me.`,
         focus: 'Form',
         observation: 'Three quatrains in loose ballad metre, ABCB rhyme',
         effect:
-          'The ballad form connects hope to folk memory and oral tradition -- something passed down, simple, and universal. The regularity reinforces hope\'s reliability.',
+          "The ballad form connects hope to folk memory and oral tradition -- something passed down, simple, and universal. The regularity reinforces hope's reliability.",
       },
     ],
   },
@@ -121,27 +120,26 @@ They flash upon that inward eye
 Which is the bliss of solitude;
 And then my heart with pleasure fills,
 And dances with the daffodils.`,
-    question:
-      'How does Wordsworth use the memory of the daffodils to transform solitude into joy?',
+    question: 'How does Wordsworth use the memory of the daffodils to transform solitude into joy?',
     modelOpening: `Wordsworth stages a quiet emotional journey from isolation to transcendence, and the daffodils themselves become the turning point. The opening simile "lonely as a cloud" does double work: it expresses the speaker\'s solitude but also places him aloft, detached from the world beneath him. Yet within three lines this isolation is ruptured by the sudden vision -- "When all at once I saw a crowd" -- where the abrupt adverbial phrase mimics the shock of joy breaking into loneliness. The metaphor of the daffodils as "a crowd" and "a host" reverses the speaker\'s solitude by surrounding him with communal life, even though that life is botanical rather than human.`,
     analysisNotes: [
       {
         focus: 'Opening simile',
         observation: '"I wandered lonely as a cloud"',
         effect:
-          'Establishes the speaker\'s isolation while simultaneously elevating him. The comparison to a cloud suggests detachment but also freedom of perspective.',
+          "Establishes the speaker's isolation while simultaneously elevating him. The comparison to a cloud suggests detachment but also freedom of perspective.",
       },
       {
         focus: 'Personification',
         observation: 'Daffodils "dancing", "tossing their heads", "in glee"',
         effect:
-          'The flowers are given human vitality, transforming them from passive scenery into active companions. Nature becomes communal, answering the speaker\'s loneliness.',
+          "The flowers are given human vitality, transforming them from passive scenery into active companions. Nature becomes communal, answering the speaker's loneliness.",
       },
       {
         focus: 'Hyperbole',
         observation: '"Ten thousand saw I at a glance"',
         effect:
-          'The deliberate exaggeration conveys the overwhelming abundance of the scene. The speaker\'s perception is enlarged by beauty.',
+          "The deliberate exaggeration conveys the overwhelming abundance of the scene. The speaker's perception is enlarged by beauty.",
       },
       {
         focus: 'Volta in final stanza',
@@ -206,7 +204,7 @@ Were toward Eternity -`,
         focus: 'Pacing and tempo',
         observation: '"We slowly drove - He knew no haste"',
         effect:
-          'The leisurely pace of the carriage mirrors the speaker\'s reluctant but unresisting journey. Time slows, reinforcing the sense that death is not an ending but a passage.',
+          "The leisurely pace of the carriage mirrors the speaker's reluctant but unresisting journey. Time slows, reinforcing the sense that death is not an ending but a passage.",
       },
       {
         focus: 'Anaphora',
@@ -224,7 +222,7 @@ Were toward Eternity -`,
         focus: 'Final stanza temporal collapse',
         observation: '"Since then - \'tis Centuries - and yet / Feels shorter than the Day"',
         effect:
-          'Time becomes elastic in eternity. The speaker\'s calm, almost amused tone suggests that death, once entered, is not frightening but expansive.',
+          "Time becomes elastic in eternity. The speaker's calm, almost amused tone suggests that death, once entered, is not frightening but expansive.",
       },
     ],
   },
@@ -289,10 +287,7 @@ function PoemCard({ poem }: { poem: Poem }) {
               </p>
               <div className="space-y-3">
                 {poem.analysisNotes.map((n, i) => (
-                  <div
-                    key={i}
-                    className="rounded-xl border border-border/40 bg-background/50 p-4"
-                  >
+                  <div key={i} className="rounded-xl border border-border/40 bg-background/50 p-4">
                     <p className="text-sm font-semibold text-foreground">{n.focus}</p>
                     <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                       <span className="font-semibold text-foreground">Observation: </span>
@@ -338,8 +333,7 @@ export default function UnseenPoetryPracticePage() {
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground">
-              Three public-domain poems with practice questions, model openings, and analysis
-              notes
+              Three public-domain poems with practice questions, model openings, and analysis notes
             </p>
           </div>
         </div>
@@ -357,10 +351,10 @@ export default function UnseenPoetryPracticePage() {
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
           Work through each poem in order. Read the poem first without looking at the question,
-          apply the 5-step approach, then attempt the question yourself before revealing the
-          model opening. The analysis notes show you how an examiner would break down language,
-          form, and structure. For extra challenge, try comparing any two of these poems in a
-          single timed essay.
+          apply the 5-step approach, then attempt the question yourself before revealing the model
+          opening. The analysis notes show you how an examiner would break down language, form, and
+          structure. For extra challenge, try comparing any two of these poems in a single timed
+          essay.
         </p>
       </section>
 
@@ -402,13 +396,11 @@ export default function UnseenPoetryPracticePage() {
       <section className="rounded-2xl border border-violet-500/20 bg-violet-500/[0.04] p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-violet-400" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Comparison Challenge
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Comparison Challenge</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4 leading-relaxed">
-          Once you are comfortable analysing each poem individually, try these comparison
-          prompts. Aim for a 40-minute timed response.
+          Once you are comfortable analysing each poem individually, try these comparison prompts.
+          Aim for a 40-minute timed response.
         </p>
         <ul className="space-y-3">
           {[
@@ -420,9 +412,7 @@ export default function UnseenPoetryPracticePage() {
               key={i}
               className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4"
             >
-              <span className="text-violet-400 font-mono text-xs shrink-0">
-                0{i + 1}
-              </span>
+              <span className="text-violet-400 font-mono text-xs shrink-0">0{i + 1}</span>
               <p className="text-body-sm text-muted-foreground leading-relaxed">{prompt}</p>
             </li>
           ))}
@@ -436,8 +426,8 @@ export default function UnseenPoetryPracticePage() {
           Ready to write full essays?
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head to the essay technique hub for detailed guidance on introductions, PEEL
-          paragraphs, and comparison structures.
+          Head to the essay technique hub for detailed guidance on introductions, PEEL paragraphs,
+          and comparison structures.
         </p>
         <Button
           variant="default"

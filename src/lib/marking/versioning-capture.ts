@@ -7,13 +7,13 @@
 // `marking_submissions.{model,prompt,rubric}_version_id` columns.
 //
 // CONTRACT: best-effort. Any failure (table missing pre-migration, race, RLS)
-// returns nulls for the affected id(s) and NEVER throws — a provenance gap must
+// returns nulls for the affected id(s) and NEVER throws - a provenance gap must
 // never break marking. Uses the Supabase SERVICE client only (these *_versions
 // tables have no authenticated RLS policy).
 //
 // Uniqueness keys (mirror supabase/migrations/20260518_smart_ip_marking.sql):
 //   • model_versions  : (provider, model_name, model_version)
-//   • prompt_versions : (content_hash)            — global unique
+//   • prompt_versions : (content_hash)            - global unique
 //   • rubric_versions : (mark_scheme_id, content_hash)
 // We SELECT-existing-first then INSERT, swallowing a duplicate-race by
 // re-selecting, so concurrent marks converge on the same row.
@@ -65,7 +65,7 @@ async function selectId(
 /**
  * Get-or-create one lookup row. Selects on `selectMatch` first; if absent,
  * inserts `insertRow`; on a unique-violation race re-selects. Returns the id
- * or null — never throws.
+ * or null - never throws.
  */
 async function upsertByUnique(
   svc: SupabaseClient,
@@ -80,7 +80,7 @@ async function upsertByUnique(
     const { data, error } = await svc.from(table).insert(insertRow).select('id').single()
     if (!error && data) return (data as { id: string }).id
 
-    // Lost an insert race (or unique hit) — the row now exists; re-select.
+    // Lost an insert race (or unique hit) - the row now exists; re-select.
     if (isUniqueViolation(error)) {
       return await selectId(svc, table, selectMatch)
     }
@@ -107,7 +107,7 @@ export async function captureVersions(
   }
 
   try {
-    // 1. Model — provider 'anthropic', name/version both ANTHROPIC_MODEL.
+    // 1. Model - provider 'anthropic', name/version both ANTHROPIC_MODEL.
     result.modelVersionId = await upsertByUnique(
       svc,
       'model_versions',
@@ -120,7 +120,7 @@ export async function captureVersions(
       },
     )
 
-    // 2. Rubric — content_hash over (markSchemeId + schemeVersion).
+    // 2. Rubric - content_hash over (markSchemeId + schemeVersion).
     const schemeVersion = input.schemeVersion || 'v1.0'
     const rubricHash = hashAuditInput(`${input.markSchemeId}${schemeVersion}`)
     result.rubricVersionId = await upsertByUnique(
@@ -137,7 +137,7 @@ export async function captureVersions(
       },
     )
 
-    // 3. Prompt — content_hash over the full prompt text; key by board:scheme.
+    // 3. Prompt - content_hash over the full prompt text; key by board:scheme.
     const promptHash = hashAuditInput(input.promptText)
     result.promptVersionId = await upsertByUnique(
       svc,
@@ -153,7 +153,7 @@ export async function captureVersions(
       },
     )
   } catch {
-    // Defensive — upsertByUnique already self-suppresses, but never let a
+    // Defensive - upsertByUnique already self-suppresses, but never let a
     // provenance failure escape into the marking path.
   }
 

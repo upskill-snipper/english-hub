@@ -579,7 +579,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Walking a dog on the beach',
-      "A walk to the sea that becomes an encounter with a powerful, pursuing force — often read as a metaphor for desire, death, or nature's power",
+      "A walk to the sea that becomes an encounter with a powerful, pursuing force - often read as a metaphor for desire, death, or nature's power",
       'A boat trip',
       'Fishing',
     ],
@@ -601,7 +601,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The sea is personified as a masculine force that pursues the female speaker — advancing, rising, threatening to consume her. It can be read as a metaphor for desire or death.',
+      'The sea is personified as a masculine force that pursues the female speaker - advancing, rising, threatening to consume her. It can be read as a metaphor for desire or death.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -611,13 +611,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      "Ballad form (common metre) with ABCB rhyme — Dickinson's characteristic form",
+      "Ballad form (common metre) with ABCB rhyme - Dickinson's characteristic form",
       'Blank verse',
       'Free verse',
     ],
     correctIndex: 1,
     explanation:
-      'Dickinson uses her characteristic ballad/hymn form with common metre (alternating 8 and 6 syllable lines) and ABCB rhyme — deceptively simple for complex content.',
+      'Dickinson uses her characteristic ballad/hymn form with common metre (alternating 8 and 6 syllable lines) and ABCB rhyme - deceptively simple for complex content.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -627,13 +627,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Normal tidal patterns',
-      'The speaker escapes the overwhelming force — she retreats to safety (the solid town) before being consumed',
+      'The speaker escapes the overwhelming force - she retreats to safety (the solid town) before being consumed',
       'The sea is tired',
       'It is evening',
     ],
     correctIndex: 1,
     explanation:
-      'The speaker escapes by retreating to the town — solid, human territory. The sea cannot follow her there. This suggests reason or civilisation provides a boundary against overwhelming natural or emotional forces.',
+      'The speaker escapes by retreating to the town - solid, human territory. The sea cannot follow her there. This suggests reason or civilisation provides a boundary against overwhelming natural or emotional forces.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -655,17 +655,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'ise-6',
-    question: 'What does "He followed — close behind" suggest about the sea?',
+    question: 'What does "He followed - close behind" suggest about the sea?',
     type: 'multiple-choice',
     options: [
       'The sea is friendly',
-      'The pursuit is relentless and threatening — the sea/masculine force refuses to let the speaker go',
+      'The pursuit is relentless and threatening - the sea/masculine force refuses to let the speaker go',
       'The speaker is slow',
       'It describes a dog following',
     ],
     correctIndex: 1,
     explanation:
-      'The sea\'s pursuit becomes increasingly aggressive. "Close behind" suggests an inescapable, predatory force — the speaker is being hunted by something she cannot outrun.',
+      'The sea\'s pursuit becomes increasingly aggressive. "Close behind" suggests an inescapable, predatory force - the speaker is being hunted by something she cannot outrun.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -691,13 +691,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The speaker is at a harbour',
-      'The sea is imagined as a realm of fantasy and danger — both enchanting and threatening',
+      'The sea is imagined as a realm of fantasy and danger - both enchanting and threatening',
       'She is reading a book',
       'The navy is nearby',
     ],
     correctIndex: 1,
     explanation:
-      'Mermaids (enchantment) and frigates (military power) combine fantasy with threat. The sea is simultaneously alluring and dangerous — like desire itself.',
+      'Mermaids (enchantment) and frigates (military power) combine fantasy with threat. The sea is simultaneously alluring and dangerous - like desire itself.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -707,7 +707,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Pure terror',
-      "Ambivalent — the speaker is both attracted to and frightened by the sea's power, creating tension between desire and self-preservation",
+      "Ambivalent - the speaker is both attracted to and frightened by the sea's power, creating tension between desire and self-preservation",
       'Pure joy',
       'Indifference',
     ],
@@ -723,13 +723,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A specific place',
-      'Safety, civilisation, and rational control — a boundary that keeps the overwhelming force at bay',
+      'Safety, civilisation, and rational control - a boundary that keeps the overwhelming force at bay',
       'A prison',
       'Loneliness',
     ],
     correctIndex: 1,
     explanation:
-      'The "Solid Town" represents human civilisation, rational control, and safety. It is the boundary that the sea (nature/desire/death) cannot cross — the speaker retreats to solid ground.',
+      'The "Solid Town" represents human civilisation, rational control, and safety. It is the boundary that the sea (nature/desire/death) cannot cross - the speaker retreats to solid ground.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -741,10 +741,10 @@ const REVISION_TOPICS = [
     summary:
       'I Started Early explores the power of nature (or desire/death), the tension between attraction and self-preservation, and boundaries between the wild and civilised.',
     keyPoints: [
-      'The sea as overwhelming force — nature, desire, or death',
-      'Pursuit — the speaker is hunted by something she cannot control',
-      'Ambivalence — both attracted to and frightened by the force',
-      'Escape to the "Solid Town" — civilisation as safety',
+      'The sea as overwhelming force - nature, desire, or death',
+      'Pursuit - the speaker is hunted by something she cannot control',
+      'Ambivalence - both attracted to and frightened by the force',
+      'Escape to the "Solid Town" - civilisation as safety',
     ],
   },
   {
@@ -753,20 +753,20 @@ const REVISION_TOPICS = [
       'Dickinson uses personification of the sea as a masculine pursuer, maritime imagery, and deceptively simple language for complex themes.',
     keyPoints: [
       'Sea personified as aggressive masculine force',
-      'Mermaids and frigates — enchantment and military threat',
-      '"He followed — close behind" — relentless pursuit',
+      'Mermaids and frigates - enchantment and military threat',
+      '"He followed - close behind" - relentless pursuit',
       'Simple diction containing complex, disturbing ideas',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Ballad/hymn form with common metre — the deceptively simple, nursery-rhyme-like structure disguises dark, complex content.',
+      'Ballad/hymn form with common metre - the deceptively simple, nursery-rhyme-like structure disguises dark, complex content.',
     keyPoints: [
-      'Common metre (8/6 syllable lines) — childlike simplicity',
-      'ABCB rhyme — familiar, hymn-like pattern',
-      "Simple form for complex content — Dickinson's signature technique",
-      'Narrative progression — approach, encounter, retreat, escape',
+      'Common metre (8/6 syllable lines) - childlike simplicity',
+      'ABCB rhyme - familiar, hymn-like pattern',
+      "Simple form for complex content - Dickinson's signature technique",
+      'Narrative progression - approach, encounter, retreat, escape',
     ],
   },
 ]
@@ -781,8 +781,8 @@ export default function IStartedEarlyPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="I Started Early — Took My Dog by Emily Dickinson — Analysis & Annotations"
-        description="Line-by-line analysis of I Started Early — Took My Dog with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
+        name="I Started Early - Took My Dog by Emily Dickinson - Analysis & Annotations"
+        description="Line-by-line analysis of I Started Early - Took My Dog with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd
         items={[
@@ -791,7 +791,7 @@ export default function IStartedEarlyPage() {
           { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
           { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
           {
-            name: 'I Started Early — Took My Dog',
+            name: 'I Started Early - Took My Dog',
             url: 'https://theenglishhub.app/revision/poetry/edexcel/i-started-early-took-my-dog',
           },
         ]}

@@ -9,36 +9,36 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/reading-skills'
 export const metadata: Metadata = {
   title: 'Reading skills',
   description:
-    'Every Section A reading skill for the iLowerSecondary English exam — ' +
+    'Every Section A reading skill for the iLowerSecondary English exam - ' +
     'retrieval, inference, structure, language, purpose and viewpoint, ' +
-    'critical response and comparison — each a full masterclass.',
+    'critical response and comparison - each a full masterclass.',
   alternates: { canonical: PAGE_URL },
 }
 
 const PAGES: { href: string; title: string; blurb: string }[] = [
   {
     href: '/ks3/ilowersecondary/reading/retrieval',
-    title: `Retrieval — RAO1 (${ASSESSMENT_OBJECTIVES.RAO1.weightPct}%)`,
+    title: `Retrieval - RAO1 (${ASSESSMENT_OBJECTIVES.RAO1.weightPct}%)`,
     blurb: 'Identify and retrieve explicit ideas and information precisely.',
   },
   {
     href: '/ks3/ilowersecondary/reading/inference',
-    title: `Inference — RAO2 (${ASSESSMENT_OBJECTIVES.RAO2.weightPct}%)`,
+    title: `Inference - RAO2 (${ASSESSMENT_OBJECTIVES.RAO2.weightPct}%)`,
     blurb: 'Deduce, infer and interpret beyond the literal.',
   },
   {
     href: '/ks3/ilowersecondary/reading/structure',
-    title: `Structure & organisation — RAO3 (${ASSESSMENT_OBJECTIVES.RAO3.weightPct}%)`,
+    title: `Structure & organisation - RAO3 (${ASSESSMENT_OBJECTIVES.RAO3.weightPct}%)`,
     blurb: 'Comment on how a text is built and the effect of its order.',
   },
   {
     href: '/ks3/ilowersecondary/reading/language',
-    title: `Language — RAO4 (${ASSESSMENT_OBJECTIVES.RAO4.weightPct}%)`,
+    title: `Language - RAO4 (${ASSESSMENT_OBJECTIVES.RAO4.weightPct}%)`,
     blurb: 'The biggest-weighted objective: word- and sentence-level analysis.',
   },
   {
     href: '/ks3/ilowersecondary/reading/purpose-viewpoint',
-    title: `Purpose & viewpoint — RAO5 (${ASSESSMENT_OBJECTIVES.RAO5.weightPct}%)`,
+    title: `Purpose & viewpoint - RAO5 (${ASSESSMENT_OBJECTIVES.RAO5.weightPct}%)`,
     blurb: 'Writers’ purposes, viewpoint and the overall effect on you.',
   },
   {
@@ -49,7 +49,7 @@ const PAGES: { href: string; title: string; blurb: string }[] = [
   {
     href: '/ks3/ilowersecondary/reading/comparison',
     title: 'Comparison',
-    blurb: 'Link and contrast two non-fiction texts — the 6-mark question.',
+    blurb: 'Link and contrast two non-fiction texts - the 6-mark question.',
   },
   {
     href: '/ks3/ilowersecondary/reading/grammar-terminology',
@@ -97,7 +97,7 @@ export default async function ReadingSkillsIndex() {
           ASSESSMENT_OBJECTIVES.RAO3.weightPct +
           ASSESSMENT_OBJECTIVES.RAO4.weightPct +
           ASSESSMENT_OBJECTIVES.RAO5.weightPct}
-        % of the qualification across five reading objectives. Work through each masterclass — they
+        % of the qualification across five reading objectives. Work through each masterclass - they
         include original practice extracts and model answers in the Pearson mark style.
       </p>
 

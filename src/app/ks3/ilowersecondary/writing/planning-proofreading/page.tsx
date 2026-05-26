@@ -39,20 +39,20 @@ const SAMPLE_TASK = {
 
 // ── Worked 3-minute plan (spider → FAP box → skeleton) ────────────────
 const FAP_BOX = [
-  { label: 'Form', value: 'Letter — address, greeting, sign-off, formal register' },
-  { label: 'Audience', value: 'Head teacher — respectful, reasoned, not slang' },
+  { label: 'Form', value: 'Letter - address, greeting, sign-off, formal register' },
+  { label: 'Audience', value: 'Head teacher - respectful, reasoned, not slang' },
   {
     label: 'Purpose',
-    value: 'Persuade — rhetorical questions, evidence, a counter-argument answered',
+    value: 'Persuade - rhetorical questions, evidence, a counter-argument answered',
   },
 ] as const
 
 const SPIDER_LEGS = [
-  'Quiet space — somewhere to think away from screens',
-  'Books open doors — discovering writers you would never search for',
-  'Fairness — not every pupil has devices or quiet space at home',
-  'Counter-argument — "computers are the future" — answer: a library can hold both',
-  'Memory hook — a personal moment that the library made possible',
+  'Quiet space - somewhere to think away from screens',
+  'Books open doors - discovering writers you would never search for',
+  'Fairness - not every pupil has devices or quiet space at home',
+  'Counter-argument - "computers are the future" - answer: a library can hold both',
+  'Memory hook - a personal moment that the library made possible',
 ] as const
 
 const PARAGRAPH_SKELETON = [
@@ -66,11 +66,11 @@ const PARAGRAPH_SKELETON = [
   },
   {
     para: 'Point 2',
-    job: 'Fairness — the library levels the field for pupils without devices at home.',
+    job: 'Fairness - the library levels the field for pupils without devices at home.',
   },
   {
     para: 'Counter + rebuttal',
-    job: '“Computers are the future” — concede, then show a library serves that future too.',
+    job: '“Computers are the future” - concede, then show a library serves that future too.',
   },
   {
     para: 'Close',
@@ -90,7 +90,7 @@ const TIME_BUDGET = [
     phase: 'Write',
     minutes: SECTIONS.B.recommendedMinutes - 3 - 4,
     detail:
-      'Follow the skeleton paragraph by paragraph. Keep moving; do not rewrite openings — you can polish those when checking.',
+      'Follow the skeleton paragraph by paragraph. Keep moving; do not rewrite openings - you can polish those when checking.',
   },
   {
     phase: 'Check',
@@ -141,17 +141,17 @@ const WAO2_CHECKLIST = [
 // ── Last-3-minutes rescue routine ─────────────────────────────────────
 const RESCUE_ROUTINE = [
   {
-    step: 'Minute 1 — full stops',
+    step: 'Minute 1 - full stops',
     action:
       'Run a pen-tip under each line and pause at every full stop. Where a sentence runs on too long, split it. A short correct sentence beats a long broken one.',
   },
   {
-    step: 'Minute 2 — your three errors',
+    step: 'Minute 2 - your three errors',
     action:
-      'Hunt only for the three mistakes you make most (e.g. comma splices, its/it’s, missing capitals). You know your own pattern — target it, do not re-read everything.',
+      'Hunt only for the three mistakes you make most (e.g. comma splices, its/it’s, missing capitals). You know your own pattern - target it, do not re-read everything.',
   },
   {
-    step: 'Minute 3 — strongest finish',
+    step: 'Minute 3 - strongest finish',
     action:
       'Make sure the final sentence lands clearly and the form is closed correctly (sign-off, name). A weak or unfinished ending costs more than an early typo.',
   },
@@ -201,7 +201,7 @@ export default async function PlanningProofreadingPage() {
       <h1>Planning &amp; proofreading the Section B writing task</h1>
       <p className="lead">
         {SECTIONS.B.name} is a single extended task with a tight, recommended time window of{' '}
-        {SECTIONS.B.recommendedLabel}. The pupils who do best are not the fastest writers — they are
+        {SECTIONS.B.recommendedLabel}. The pupils who do best are not the fastest writers - they are
         the ones who spend a little time planning, write to a clear skeleton, and leave time to
         check. This masterclass shows you exactly how.
       </p>
@@ -223,7 +223,7 @@ export default async function PlanningProofreadingPage() {
       <section className="my-10">
         <h2>An invented sample task</h2>
         <p className="text-sm text-muted-foreground">
-          This task is original and written for practice on this page — it is not taken from any
+          This task is original and written for practice on this page - it is not taken from any
           past paper. We use it throughout so the plan, the writing and the checking all join up.
         </p>
         <div className="not-prose mt-4 rounded-xl border border-border/60 bg-card p-5">
@@ -245,7 +245,7 @@ export default async function PlanningProofreadingPage() {
       {/* ── W9.1A: the 3-minute plan ─────────────────────────────────── */}
       <section className="my-10">
         <h2>
-          Gathering and shaping ideas — a 3-minute plan{' '}
+          Gathering and shaping ideas - a 3-minute plan{' '}
           <span className="font-mono text-sm text-primary">({W9_1A.code})</span>
         </h2>
         <p className="text-sm text-muted-foreground">
@@ -257,7 +257,7 @@ export default async function PlanningProofreadingPage() {
         <div className="not-prose mt-4 grid gap-3 lg:grid-cols-3">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              1 · Spider — dump every idea
+              1 · Spider - dump every idea
             </p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               {SPIDER_LEGS.map((leg) => (
@@ -273,7 +273,7 @@ export default async function PlanningProofreadingPage() {
 
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              2 · FAP box — lock the brief
+              2 · FAP box - lock the brief
             </p>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {FAP_BOX.map((row) => (
@@ -313,7 +313,7 @@ export default async function PlanningProofreadingPage() {
       <section className="my-10">
         <h2>Budgeting the {SECTIONS.B.recommendedLabel}</h2>
         <p className="text-sm text-muted-foreground">
-          Split the recommended window into three jobs and protect the checking time — it is the
+          Split the recommended window into three jobs and protect the checking time - it is the
           easiest set of marks to lose by simply running out of time.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-3">
@@ -329,7 +329,7 @@ export default async function PlanningProofreadingPage() {
         </div>
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
           The figures add up to the full {SECTIONS.B.recommendedLabel} recommended for{' '}
-          {SECTIONS.B.name}. If you wrote slowly, take the extra time from the writing phase — never
+          {SECTIONS.B.name}. If you wrote slowly, take the extra time from the writing phase - never
           from checking.
         </p>
       </section>
@@ -342,7 +342,7 @@ export default async function PlanningProofreadingPage() {
         </h2>
         <p className="text-sm text-muted-foreground">
           {W9_1B.descriptor} The key word is <em>your</em>: a good proofreader does not re-read
-          everything hoping to spot mistakes — they hunt for the specific errors they personally
+          everything hoping to spot mistakes - they hunt for the specific errors they personally
           make. Before the exam, look back at marked work and write down your top three recurring
           slips. In the exam, search for those first.
         </p>
@@ -369,8 +369,8 @@ export default async function PlanningProofreadingPage() {
           </table>
         </div>
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-          The five named punctuation marks above — capital letters, end punctuation, commas, speech
-          marks and apostrophes — are exactly the marks the writing skills ask you to use with
+          The five named punctuation marks above - capital letters, end punctuation, commas, speech
+          marks and apostrophes - are exactly the marks the writing skills ask you to use with
           accuracy and confidence. Accurate sentence demarcation and spelling are what move work up
           the grammar, punctuation and spelling grid, so make them your first checking priority.
         </p>
@@ -419,10 +419,10 @@ export default async function PlanningProofreadingPage() {
 
       {/* ── Rescue routine ───────────────────────────────────────────── */}
       <section className="my-10">
-        <h2>The last 3 minutes — a rescue routine</h2>
+        <h2>The last 3 minutes - a rescue routine</h2>
         <p className="text-sm text-muted-foreground">
           When time is nearly gone, do not start a new paragraph and do not panic-read the whole
-          answer. Run this fixed routine instead — it recovers the most marks for the least time.
+          answer. Run this fixed routine instead - it recovers the most marks for the least time.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-3">
           {RESCUE_ROUTINE.map((r) => (

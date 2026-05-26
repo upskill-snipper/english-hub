@@ -141,11 +141,11 @@ export default function AnthologyPricing() {
             .
           </p>
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[11px] font-mono font-medium uppercase tracking-[0.14em] text-amber-700">
-            ⚡ {PRICING.PRICE_INCREASE_MESSAGE} — {t('pricing.anth.lock_in_early')}
+            ⚡ {PRICING.PRICE_INCREASE_MESSAGE} - {t('pricing.anth.lock_in_early')}
           </p>
         </div>
 
-        {/* Promo code prompt — type a code, click Apply, lands on
+        {/* Promo code prompt - type a code, click Apply, lands on
             /pricing?code=X where the full field auto-applies. */}
         <PromoCodePrompt className="mb-8" />
 

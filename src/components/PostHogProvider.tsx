@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * PostHogProvider — mounts PostHog on the client and captures $pageview
+ * PostHogProvider - mounts PostHog on the client and captures $pageview
  * events on every App Router route change.
  *
  * Consent: PostHog is initialised with `opt_out_capturing_by_default: true`
@@ -60,10 +60,7 @@ function PageviewTracker() {
     const qs = searchParams?.toString()
     const url = qs ? `${pathname}?${qs}` : pathname
     capture('$pageview', {
-      $current_url:
-        typeof window !== 'undefined'
-          ? `${window.location.origin}${url}`
-          : url,
+      $current_url: typeof window !== 'undefined' ? `${window.location.origin}${url}` : url,
       path: pathname,
     })
   }, [pathname, searchParams])

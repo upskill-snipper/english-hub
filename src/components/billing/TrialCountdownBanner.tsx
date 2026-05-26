@@ -8,9 +8,9 @@
  * existing hero on /dashboard and /revision.
  *
  * Visibility rules (intentionally fail-closed):
- *   - hides when `isPremium === true` — they have already converted
- *   - hides when `trialEndsAt === null` — no active trial
- *   - hides once the trial end is in the past — server SHOULD have
+ *   - hides when `isPremium === true` - they have already converted
+ *   - hides when `trialEndsAt === null` - no active trial
+ *   - hides once the trial end is in the past - server SHOULD have
  *     filtered this out already, but we double-check on the client so a
  *     stale page never shows a negative countdown
  *
@@ -20,7 +20,7 @@
  *     remain (covers days 0 and 1 in the founder's spec)
  *
  * The countdown re-renders every 60 s. We intentionally do NOT tick at
- * 1 Hz — minute-level granularity is enough for a multi-day timer and
+ * 1 Hz - minute-level granularity is enough for a multi-day timer and
  * keeps the React reconciler quiet.
  */
 
@@ -35,7 +35,7 @@ import { useT } from '@/lib/i18n/use-t'
 interface TrialCountdownBannerProps {
   /** ISO string or Date. Null when the user has no active trial. */
   trialEndsAt: Date | string | null
-  /** True once the user converts to a paid plan — banner self-hides. */
+  /** True once the user converts to a paid plan - banner self-hides. */
   isPremium: boolean
   /** Optional className passthrough so callers can tweak spacing. */
   className?: string
@@ -63,7 +63,7 @@ export function TrialCountdownBanner({
   className,
 }: TrialCountdownBannerProps) {
   const t = useT()
-  // Normalise once per render — props may be a Date (server-rendered) or
+  // Normalise once per render - props may be a Date (server-rendered) or
   // an ISO string (after JSON round-trip via the client cache).
   const targetMs =
     trialEndsAt == null
@@ -82,7 +82,7 @@ export function TrialCountdownBanner({
     return () => clearInterval(id)
   }, [targetMs])
 
-  // Hidden states — return null AFTER hooks so the hook order stays
+  // Hidden states - return null AFTER hooks so the hook order stays
   // stable across renders.
   if (isPremium) return null
   if (targetMs == null) return null
@@ -121,11 +121,11 @@ export function TrialCountdownBanner({
       className={cn(
         'rounded-2xl border px-4 py-3 sm:px-5 sm:py-4',
         'flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between',
-        // Default brand variant — teal accent on cream tint, navy text.
+        // Default brand variant - teal accent on cream tint, navy text.
         // Mirrors the existing /revision hero gradient family.
         !isLastDay &&
           'border-teal-500/30 bg-gradient-to-r from-teal-500/[0.08] via-cream-50 to-teal-500/[0.04] text-ink-800 dark:from-teal-500/10 dark:via-card dark:to-teal-500/5 dark:text-foreground',
-        // Last-day variant — amber alert.
+        // Last-day variant - amber alert.
         isLastDay &&
           'border-ochre-500/50 bg-gradient-to-r from-ochre-200/60 via-clay-200/40 to-ochre-200/60 text-ink-900 dark:from-amber-500/15 dark:via-amber-500/10 dark:to-amber-500/15 dark:text-foreground',
         className,

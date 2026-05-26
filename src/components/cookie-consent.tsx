@@ -84,7 +84,7 @@ export function CookieConsent() {
         visitorId,
       }),
     }).catch(() => {
-      // Best-effort — consent is also stored client-side as the primary record
+      // Best-effort - consent is also stored client-side as the primary record
     })
   }
 
@@ -98,7 +98,7 @@ export function CookieConsent() {
     if (analyticsEnabled) {
       saveConsent('all')
     } else {
-      // Custom selection with analytics disabled — still log as "custom"
+      // Custom selection with analytics disabled - still log as "custom"
       localStorage.setItem('cookie-consent', 'essential')
       setVisible(false)
       window.dispatchEvent(new CustomEvent('cookie-consent-changed'))
@@ -180,7 +180,7 @@ export function CookieConsent() {
     >
       <div className="mx-auto max-w-4xl p-4">
         <div className="relative rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-2xl p-6">
-          {/* Dismiss (close) — ePrivacy: user must be able to close without consenting */}
+          {/* Dismiss (close) - ePrivacy: user must be able to close without consenting */}
           <button
             type="button"
             onClick={handleDismiss}

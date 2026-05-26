@@ -19,7 +19,7 @@ const createDSARSchema = z.object({
   details: z.string().max(2000).optional(),
 })
 
-// ─── POST /api/dsar — Create a new DSAR ────────────────────────────────
+// ─── POST /api/dsar - Create a new DSAR ────────────────────────────────
 
 export async function POST(request: NextRequest) {
   try {
@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// ─── GET /api/dsar — List user's DSARs ─────────────────────────────────
+// ─── GET /api/dsar - List user's DSARs ─────────────────────────────────
 
 export async function GET(request: NextRequest) {
   try {

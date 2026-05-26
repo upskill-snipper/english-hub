@@ -335,10 +335,10 @@ const THEMES: Theme[] = [
         note: 'A city at dawn described in the language of natural beauty.',
       },
       {
-        title: 'The Prelude (extract) — 1799 two-part Prelude (Part First, lines 81–129)',
+        title: 'The Prelude (extract) - 1799 two-part Prelude (Part First, lines 81-129)',
         poet: 'William Wordsworth',
         cluster: 'Power and the Natural World',
-        note: "Nature as a terrifying, educative force that dwarfs human confidence. OCR prescribes the 1799 two-part Prelude (Part First, lines 81–129), drafted in Wordsworth's lifetime but unpublished until 1973 — not the 1850 posthumous Prelude used by AQA. The wording is materially different; never cross-quote between versions.",
+        note: "Nature as a terrifying, educative force that dwarfs human confidence. OCR prescribes the 1799 two-part Prelude (Part First, lines 81-129), drafted in Wordsworth's lifetime but unpublished until 1973 - not the 1850 posthumous Prelude used by AQA. The wording is materially different; never cross-quote between versions.",
       },
       {
         title: 'Wind',

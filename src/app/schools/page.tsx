@@ -64,7 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SchoolsPage() {
-  /* Problem cards — each is a distinct concern, given its own accent border
+  /* Problem cards - each is a distinct concern, given its own accent border
      and icon to break the monotony of identical bullets. */
   const PROBLEMS = [
     {
@@ -100,7 +100,7 @@ export default async function SchoolsPage() {
   ]
 
   /* Aspirational/forward-looking lozenges for the hero stat strip. Qualitative
-     only — no fabricated user numbers (brand-voice §9). */
+     only - no fabricated user numbers (brand-voice §9). */
   const HERO_LOZENGES = [
     await t('mkt.schools.hero.lozenge.language_literature'),
     await t('mkt.schools.hero.lozenge.levels'),
@@ -383,7 +383,7 @@ export default async function SchoolsPage() {
           </h2>
         </div>
 
-        {/* Aspirational tiles — qualitative only, no fabricated numbers. */}
+        {/* Aspirational tiles - qualitative only, no fabricated numbers. */}
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {VALUE_TILES.map(({ label, headline, body, icon: Icon, accent }) => (
             <GlassPanel key={label} accent={accent} className="p-5">
@@ -406,7 +406,7 @@ export default async function SchoolsPage() {
         </div>
       </section>
 
-      {/* 5. Demo showcase — explore the platform as a guest */}
+      {/* 5. Demo showcase - explore the platform as a guest */}
       <section
         aria-labelledby="demo-heading"
         className="relative overflow-hidden border-y border-border/60 bg-muted/30"

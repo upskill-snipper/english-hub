@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Plot Summary — Edexcel IGCSE Literature',
+    title: 'Macbeth Plot Summary - Edexcel IGCSE Literature',
     description:
       'Scene-by-scene Macbeth plot summary for Edexcel IGCSE English Literature. Follow the whole play from the witches',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/plot',
   },
-  title: 'Macbeth Plot Summary — Edexcel IGCSE Literature',
+  title: 'Macbeth Plot Summary - Edexcel IGCSE Literature',
   description:
     "Scene-by-scene Macbeth plot summary for Edexcel IGCSE English Literature. Follow the whole play from the witches' prophecy to Macbeth's downfall.",
 }
@@ -24,12 +24,12 @@ const ACTS = [
     act: 'Act 1',
     title: 'Prophecy and temptation',
     overview:
-      "The play opens on a blasted heath with three witches. Macbeth and Banquo return from victory in battle, and meet the witches, who prophesy that Macbeth will become Thane of Cawdor and then king, and that Banquo's descendants will be kings. When the first prophecy comes true almost immediately, Macbeth writes to his wife. Lady Macbeth resolves to push him to murder King Duncan, who is visiting their castle. Macbeth wavers — but she questions his manhood until he commits.",
+      "The play opens on a blasted heath with three witches. Macbeth and Banquo return from victory in battle, and meet the witches, who prophesy that Macbeth will become Thane of Cawdor and then king, and that Banquo's descendants will be kings. When the first prophecy comes true almost immediately, Macbeth writes to his wife. Lady Macbeth resolves to push him to murder King Duncan, who is visiting their castle. Macbeth wavers - but she questions his manhood until he commits.",
     scenes: [
       {
         scene: '1.1',
         summary:
-          "Three witches meet on a heath and agree to meet Macbeth 'when the battle's lost and won'. Their paradox — 'Fair is foul, and foul is fair' — establishes a world of moral inversion.",
+          "Three witches meet on a heath and agree to meet Macbeth 'when the battle's lost and won'. Their paradox - 'Fair is foul, and foul is fair' - establishes a world of moral inversion.",
       },
       {
         scene: '1.2',
@@ -39,7 +39,7 @@ const ACTS = [
       {
         scene: '1.3',
         summary:
-          "The witches hail Macbeth as Glamis, Cawdor and 'king hereafter'. They promise Banquo that his descendants will be kings. When Ross arrives and confirms Macbeth is now Thane of Cawdor, Macbeth is stunned — and begins to imagine murder.",
+          "The witches hail Macbeth as Glamis, Cawdor and 'king hereafter'. They promise Banquo that his descendants will be kings. When Ross arrives and confirms Macbeth is now Thane of Cawdor, Macbeth is stunned - and begins to imagine murder.",
       },
       {
         scene: '1.4',
@@ -54,12 +54,12 @@ const ACTS = [
       {
         scene: '1.6',
         summary:
-          "Duncan arrives at Macbeth's castle, praising its 'pleasant seat'. The dramatic irony is brutal — the audience knows what awaits him.",
+          "Duncan arrives at Macbeth's castle, praising its 'pleasant seat'. The dramatic irony is brutal - the audience knows what awaits him.",
       },
       {
         scene: '1.7',
         summary:
-          "Macbeth soliloquises, listing reasons not to kill Duncan — hospitality, loyalty, the king's goodness. He concludes that only 'vaulting ambition' drives him. Lady Macbeth bullies him back into the plan by questioning his courage and manhood.",
+          "Macbeth soliloquises, listing reasons not to kill Duncan - hospitality, loyalty, the king's goodness. He concludes that only 'vaulting ambition' drives him. Lady Macbeth bullies him back into the plan by questioning his courage and manhood.",
       },
     ],
   },
@@ -72,12 +72,12 @@ const ACTS = [
       {
         scene: '2.1',
         summary:
-          "Banquo confesses he too has dreamed of the witches. Alone, Macbeth imagines a floating dagger pointing him toward Duncan: 'Is this a dagger which I see before me?' A bell rings — his cue.",
+          "Banquo confesses he too has dreamed of the witches. Alone, Macbeth imagines a floating dagger pointing him toward Duncan: 'Is this a dagger which I see before me?' A bell rings - his cue.",
       },
       {
         scene: '2.2',
         summary:
-          "Macbeth returns with bloody hands. He is in pieces: 'Will all great Neptune's ocean wash this blood clean from my hand?' Lady Macbeth dismisses him — 'A little water clears us of this deed' — and returns the daggers herself.",
+          "Macbeth returns with bloody hands. He is in pieces: 'Will all great Neptune's ocean wash this blood clean from my hand?' Lady Macbeth dismisses him - 'A little water clears us of this deed' - and returns the daggers herself.",
       },
       {
         scene: '2.3',
@@ -105,7 +105,7 @@ const ACTS = [
       {
         scene: '3.2',
         summary:
-          "The Macbeths' intimacy has curdled. Macbeth tells Lady Macbeth nothing of the new plot — 'Be innocent of the knowledge, dearest chuck' — and admits: 'O, full of scorpions is my mind, dear wife!'",
+          "The Macbeths' intimacy has curdled. Macbeth tells Lady Macbeth nothing of the new plot - 'Be innocent of the knowledge, dearest chuck' - and admits: 'O, full of scorpions is my mind, dear wife!'",
       },
       {
         scene: '3.3',
@@ -142,7 +142,7 @@ const ACTS = [
       {
         scene: '4.2',
         summary:
-          "Lady Macduff, bewildered by her husband's flight, talks with her clever young son. Murderers arrive and kill them both on stage — one of Shakespeare's cruellest scenes.",
+          "Lady Macduff, bewildered by her husband's flight, talks with her clever young son. Murderers arrive and kill them both on stage - one of Shakespeare's cruellest scenes.",
       },
       {
         scene: '4.3',
@@ -155,7 +155,7 @@ const ACTS = [
     act: 'Act 5',
     title: 'Downfall and death',
     overview:
-      "Lady Macbeth sleepwalks, tormented by guilt, and dies offstage (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood and advances on Dunsinane. Macbeth, hearing of his wife's death, delivers his nihilistic 'Tomorrow' soliloquy. Macduff — 'from his mother's womb untimely ripped' — kills Macbeth in single combat. Malcolm is crowned rightful king.",
+      "Lady Macbeth sleepwalks, tormented by guilt, and dies offstage (implied suicide). Malcolm's army camouflages itself with branches from Birnam Wood and advances on Dunsinane. Macbeth, hearing of his wife's death, delivers his nihilistic 'Tomorrow' soliloquy. Macduff - 'from his mother's womb untimely ripped' - kills Macbeth in single combat. Malcolm is crowned rightful king.",
     scenes: [
       {
         scene: '5.1',
@@ -175,12 +175,12 @@ const ACTS = [
       {
         scene: '5.4',
         summary:
-          'Malcolm orders his soldiers to hew branches from Birnam Wood as camouflage — unknowingly fulfilling the prophecy.',
+          'Malcolm orders his soldiers to hew branches from Birnam Wood as camouflage - unknowingly fulfilling the prophecy.',
       },
       {
         scene: '5.5',
         summary:
-          "A cry within reveals Lady Macbeth is dead. Macbeth responds with the 'Tomorrow, and tomorrow, and tomorrow' soliloquy — life is 'a tale told by an idiot, full of sound and fury, signifying nothing'. A messenger reports that Birnam Wood is moving.",
+          "A cry within reveals Lady Macbeth is dead. Macbeth responds with the 'Tomorrow, and tomorrow, and tomorrow' soliloquy - life is 'a tale told by an idiot, full of sound and fury, signifying nothing'. A messenger reports that Birnam Wood is moving.",
       },
       {
         scene: '5.6',
@@ -194,7 +194,7 @@ const ACTS = [
       {
         scene: '5.8',
         summary:
-          "Macduff finds Macbeth. He reveals he was 'from his mother's womb untimely ripped' — born by Caesarean, and so 'not of woman born'. They fight. Macbeth dies.",
+          "Macduff finds Macbeth. He reveals he was 'from his mother's womb untimely ripped' - born by Caesarean, and so 'not of woman born'. They fight. Macbeth dies.",
       },
       {
         scene: '5.9',

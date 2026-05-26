@@ -30,10 +30,10 @@ type ContextSection = {
 
 const CONTEXT_SECTIONS: ContextSection[] = [
   {
-    title: '1912 Setting vs 1945 Writing — The Dramatic Irony Gap',
+    title: '1912 Setting vs 1945 Writing - The Dramatic Irony Gap',
     body: [
       'Priestley made a deliberate and politically motivated decision to set the play in 1912 but write it in 1945. The 33-year gap between setting and writing is the source of the play\u2019s most powerful dramatic device: the audience knows what the characters do not. When Birling predicts the Titanic is "unsinkable, absolutely unsinkable," the audience knows it sank within weeks, killing over 1,500 people. When he dismisses the threat of war, the audience has lived through two world wars that killed over 80 million people. Every confident prediction Birling makes is catastrophically wrong.',
-      'This dramatic irony is not merely comic. Priestley uses it to discredit the entire capitalist philosophy Birling represents. If Birling is wrong about facts — the Titanic, war, social progress — then Priestley invites the audience to conclude he is equally wrong about values. His individualist creed ("a man has to look after himself and his own") is presented as belonging to a world that history has already destroyed.',
+      'This dramatic irony is not merely comic. Priestley uses it to discredit the entire capitalist philosophy Birling represents. If Birling is wrong about facts - the Titanic, war, social progress - then Priestley invites the audience to conclude he is equally wrong about values. His individualist creed ("a man has to look after himself and his own") is presented as belonging to a world that history has already destroyed.',
       'The 1945 audience was uniquely positioned to receive this message. They had survived the Blitz, rationing, and six years of collective sacrifice. They had just elected a Labour government in a landslide. They knew, from lived experience, that Birling\u2019s world had been swept away by exactly the forces he denied.',
     ],
     keyPoint:
@@ -49,16 +49,16 @@ const CONTEXT_SECTIONS: ContextSection[] = [
       'Priestley himself fought in the trenches of WWI. He was wounded, buried alive by a trench mortar shell, and gassed. His wartime experience shaped his lifelong commitment to social justice and his belief that the old class system must never be allowed to return.',
     ],
     keyPoint:
-      'The Titanic and WWI are not just background facts — they are the historical evidence that proves Birling wrong and the Inspector right. Priestley uses the audience\u2019s knowledge of these events to make his political argument irrefutable.',
+      'The Titanic and WWI are not just background facts - they are the historical evidence that proves Birling wrong and the Inspector right. Priestley uses the audience\u2019s knowledge of these events to make his political argument irrefutable.',
     examLink:
-      'When discussing dramatic irony, be specific about the historical events. Don\u2019t just say "the audience knows Birling is wrong" — explain what they know (the Titanic sank, WWI happened) and what this tells them about Birling\u2019s judgment.',
+      'When discussing dramatic irony, be specific about the historical events. Don\u2019t just say "the audience knows Birling is wrong" - explain what they know (the Titanic sank, WWI happened) and what this tells them about Birling\u2019s judgment.',
   },
   {
     title: 'Priestley\u2019s Socialism and the Beveridge Report',
     body: [
       'J.B. Priestley (1894\u20131984) was a committed democratic socialist throughout his adult life. His political views were shaped by three formative experiences: fighting in the trenches of WWI as an infantryman in the Duke of Wellington\u2019s Regiment (he was wounded by a trench mortar in 1916 and later gassed), witnessing the mass unemployment and poverty of the 1930s during his English Journey (1934), and broadcasting his Postscripts on BBC radio during WWII. In 1942 he co-founded the Common Wealth Party with Sir Richard Acland, a small left-wing party that argued for common ownership and a more ethical politics.',
-      'The Postscripts, broadcast on BBC radio on Sunday evenings after the nine o’clock news from June to October 1940, reached an estimated 16 million listeners — roughly a third of the adult population. Priestley argued that Britain was fighting not just against Nazism but for a fairer society at home. He called for an end to the class system, the creation of a welfare state, and the rejection of the selfish individualism that had produced the Depression. The first series was dropped in October 1940 after complaints from inside government; a brief second run in 1941 was also cut short.',
-      'The Beveridge Report (Social Insurance and Allied Services), authored by Sir William Beveridge and published in November 1942, proposed a comprehensive welfare state to fight the "five giants" of Want, Disease, Ignorance, Squalor, and Idleness. It sold over 600,000 copies and generated enormous public enthusiasm for post-war reform. Priestley was a vocal supporter. An Inspector Calls, written in the winter of 1944–1945, is the dramatic expression of the same argument: that British society must take collective responsibility for its members.',
+      'The Postscripts, broadcast on BBC radio on Sunday evenings after the nine o’clock news from June to October 1940, reached an estimated 16 million listeners - roughly a third of the adult population. Priestley argued that Britain was fighting not just against Nazism but for a fairer society at home. He called for an end to the class system, the creation of a welfare state, and the rejection of the selfish individualism that had produced the Depression. The first series was dropped in October 1940 after complaints from inside government; a brief second run in 1941 was also cut short.',
+      'The Beveridge Report (Social Insurance and Allied Services), authored by Sir William Beveridge and published in November 1942, proposed a comprehensive welfare state to fight the "five giants" of Want, Disease, Ignorance, Squalor, and Idleness. It sold over 600,000 copies and generated enormous public enthusiasm for post-war reform. Priestley was a vocal supporter. An Inspector Calls, written in the winter of 1944-1945, is the dramatic expression of the same argument: that British society must take collective responsibility for its members.',
     ],
     keyPoint:
       'Priestley did not write An Inspector Calls as a neutral exploration of ideas. He wrote it as an argument for socialism, the welfare state, and the political programme of the 1945 Labour government. The Inspector is Priestley\u2019s mouthpiece.',
@@ -69,8 +69,8 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'The Post-War Welfare State',
     body: [
       'The Labour government elected in July 1945 under Clement Attlee implemented the most radical programme of social reform in British history. It created the National Health Service (1948), which provided free healthcare for all citizens regardless of income. It expanded national insurance to provide unemployment benefits, pensions, and sickness pay. It built millions of council houses to address the housing crisis. It nationalised key industries including coal, steel, railways, and utilities.',
-      'These reforms were the practical expression of the Inspector\u2019s message: "We are members of one body. We are responsible for each other." The welfare state was built on the principle that society has a collective duty to protect its weakest members — precisely the argument Birling rejects.',
-      'Priestley\u2019s play was written during the election campaign of 1945 and first performed in 1946. The audience would have understood the Inspector\u2019s final speech as a direct endorsement of the reforms being implemented around them. The play is not set in a political vacuum — it is a weapon in a specific political argument about the kind of society Britain should build after the war.',
+      'These reforms were the practical expression of the Inspector\u2019s message: "We are members of one body. We are responsible for each other." The welfare state was built on the principle that society has a collective duty to protect its weakest members - precisely the argument Birling rejects.',
+      'Priestley\u2019s play was written during the election campaign of 1945 and first performed in 1946. The audience would have understood the Inspector\u2019s final speech as a direct endorsement of the reforms being implemented around them. The play is not set in a political vacuum - it is a weapon in a specific political argument about the kind of society Britain should build after the war.',
     ],
     keyPoint:
       'The welfare state is the historical answer to the Inspector\u2019s challenge. When Birling asks "if we were all responsible for everything \u2026 it would be very awkward," the 1945 audience knew that the country had just voted to make exactly that responsibility into law.',
@@ -80,22 +80,22 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'The Class System in Edwardian England',
     body: [
-      'Edwardian England (roughly 1901\u20131914) was rigidly divided by class. At the top were the aristocracy and landed gentry, followed by the upper-middle class of wealthy industrialists and professionals, the lower-middle class of clerks and shopkeepers, and at the bottom the working class — factory workers, servants, labourers — who made up the vast majority of the population.',
+      'Edwardian England (roughly 1901\u20131914) was rigidly divided by class. At the top were the aristocracy and landed gentry, followed by the upper-middle class of wealthy industrialists and professionals, the lower-middle class of clerks and shopkeepers, and at the bottom the working class - factory workers, servants, labourers - who made up the vast majority of the population.',
       'The Birlings occupy the upper-middle class. Arthur Birling is a self-made manufacturer who has accumulated wealth but lacks the social status of the aristocracy. His aspiration to a knighthood and his eagerness to connect with Gerald Croft\u2019s family (Gerald\u2019s mother is "Lady Croft") reveal his anxiety about social position. He is wealthy but not yet fully established, which makes him both powerful (over workers like Eva) and insecure (in the presence of his social superiors).',
       'Eva Smith occupies the bottom of this hierarchy. As a working-class woman with no family connections, she has no economic security, no political voice, and no institutional protection. She can be sacked by Birling, dismissed by Sheila, used by Gerald, assaulted by Eric, and denied charity by Sybil, all without consequence. The class system grants the Birlings impunity and denies Eva agency.',
       'Priestley exposes this system as morally indefensible. The play\u2019s argument is that class is not a natural order but a man-made structure that enables exploitation. By 1945, much of the audience agreed: the Labour landslide was a vote to dismantle the class system the Birlings represent.',
     ],
     keyPoint:
-      'Class in the play is not just a backdrop — it is the mechanism through which every injustice operates. Without the class system, Birling could not fire Eva, Sybil could not deny her charity, and Gerald and Eric could not exploit her with impunity.',
+      'Class in the play is not just a backdrop - it is the mechanism through which every injustice operates. Without the class system, Birling could not fire Eva, Sybil could not deny her charity, and Gerald and Eric could not exploit her with impunity.',
     examLink:
       'Describe the specific positions within the class system rather than generalising. Birling is upper-middle class aspiring upward; Eva is working class with no safety net. This precision improves your AO3 marks.',
   },
   {
     title: 'Women\u2019s Rights: 1912 vs 1945',
     body: [
-      'In 1912, women could not vote in parliamentary elections. The suffragette movement was at its height — Emmeline Pankhurst and the WSPU were staging increasingly militant protests — but full female suffrage would not be achieved until 1928. Women had limited access to education, few employment options beyond domestic service, factory work, or shop work, and were legally subordinate to their husbands in marriage.',
+      'In 1912, women could not vote in parliamentary elections. The suffragette movement was at its height - Emmeline Pankhurst and the WSPU were staging increasingly militant protests - but full female suffrage would not be achieved until 1928. Women had limited access to education, few employment options beyond domestic service, factory work, or shop work, and were legally subordinate to their husbands in marriage.',
       'Working-class women like Eva were doubly oppressed: by their class and by their gender. Eva has no legal recourse when she is sacked, no institutional protection when she is exploited by Gerald and Eric, and no welfare support when she is pregnant. The charity committee that should have helped her instead punishes her for having "fine feelings" above her class.',
-      'By 1945, women had gained the vote, had worked in factories and the armed services during WWII, and were increasingly demanding equal treatment. The welfare state created after 1945 provided some protections — maternity benefits, healthcare, housing — that would have saved Eva. Priestley\u2019s play argues that these protections are essential and that the treatment of women like Eva must never be repeated.',
+      'By 1945, women had gained the vote, had worked in factories and the armed services during WWII, and were increasingly demanding equal treatment. The welfare state created after 1945 provided some protections - maternity benefits, healthcare, housing - that would have saved Eva. Priestley\u2019s play argues that these protections are essential and that the treatment of women like Eva must never be repeated.',
       'The contrast between Sheila and Sybil illustrates the generational shift in women\u2019s attitudes. Sybil enforces patriarchal morality by punishing Eva for being pregnant and unmarried. Sheila rejects patriarchal control by returning Gerald\u2019s ring and demanding the right to make her own moral judgments. Priestley uses Sheila to represent the modern, independent woman he hoped would emerge from the post-war settlement.',
     ],
     keyPoint:
@@ -109,7 +109,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
       'The general election of July 1945 produced one of the most dramatic results in British political history. Despite Winston Churchill\u2019s enormous popularity as a war leader, the Labour Party under Clement Attlee won a landslide victory with 393 seats to the Conservatives\u2019 164. The swing was driven by a widespread desire for social change: voters did not want to return to the poverty, unemployment, and inequality of the pre-war years.',
       'Priestley\u2019s influence on this political moment should not be underestimated. His Postscripts broadcasts had reached millions and articulated the case for a post-war welfare state in accessible, emotional terms. He argued that the collective sacrifice of the war years had earned the British people the right to a fairer society. His plays, including An Inspector Calls, translated these political arguments into dramatic form.',
       'The play was written in the winter of 1944\u20131945 and, because no London theatre was available, was first performed in the Soviet Union in 1945 \u2014 in simultaneous productions at the Kamerny Theatre in Moscow (directed by Aleksandr Tairov) and the Leningrad Theatre Comedy. The London premiere followed at the New Theatre (now the No\u00ebl Coward Theatre) on 1 October 1946, directed by Basil Dean. Priestley\u2019s timing was deliberate: the play is a contribution to the political argument that was being settled at the ballot box. The Inspector\u2019s final speech is not a general moral plea but a specific political endorsement of the Labour programme.',
-      'Understanding this context transforms the play from a detective story into a political intervention. Every dramatic choice Priestley makes — the 1912 setting, the dramatic irony, the generational split, the cyclical ending — serves his argument that Britain must embrace collective responsibility or face the consequences.',
+      'Understanding this context transforms the play from a detective story into a political intervention. Every dramatic choice Priestley makes - the 1912 setting, the dramatic irony, the generational split, the cyclical ending - serves his argument that Britain must embrace collective responsibility or face the consequences.',
     ],
     keyPoint:
       'An Inspector Calls is not politically neutral. It was written to support the Labour government\u2019s programme of welfare reform and to warn against a return to Edwardian-era individualism.',
@@ -217,7 +217,7 @@ const TIMELINE: TimelineEvent[] = [
       'Blueprint for the welfare state; addresses the "five giants"; sells 600,000+ copies',
   },
   {
-    year: '1944–45',
+    year: '1944-45',
     event: 'An Inspector Calls written',
     relevance: 'Composed in the closing months of WWII as Britain debates post-war reform',
   },
@@ -281,7 +281,7 @@ export default function ContextPage() {
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-teal-500/20 px-3 py-1 text-xs text-teal-600 dark:text-teal-300">
               <Sparkles className="size-3" />
-              AO3 — Context
+              AO3 - Context
             </span>
           </div>
 
@@ -301,10 +301,10 @@ export default function ContextPage() {
           <div className="flex items-start gap-3">
             <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
             <div className="text-sm text-muted-foreground">
-              <p className="mb-1 font-bold text-foreground">AO3 — What examiners want</p>
+              <p className="mb-1 font-bold text-foreground">AO3 - What examiners want</p>
               <p>
                 AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
-                simply list historical facts — explain how the 1912 setting and 1945 writing date
+                simply list historical facts - explain how the 1912 setting and 1945 writing date
                 affect the audience&rsquo;s response to the play. The best AO3 answers explain{' '}
                 <em>why</em> Priestley made specific choices, not just <em>when</em> things
                 happened.

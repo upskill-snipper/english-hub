@@ -1,9 +1,9 @@
 /**
- * Anthology Template System — Public API
+ * Anthology Template System - Public API
  *
  * The master template for every printable resource The English Hub produces.
- * Every printed artefact — study guides, essay feedback, revision booklets,
- * progress reports, lesson plans, worksheets, homework — uses this template.
+ * Every printed artefact - study guides, essay feedback, revision booklets,
+ * progress reports, lesson plans, worksheets, homework - uses this template.
  *
  * Usage:
  *   import { generateAnthologyPdf, downloadAnthologyWord } from '@/lib/anthology'
@@ -125,7 +125,7 @@ export function generateAnthologyPdf(doc: AnthologyDocument): boolean {
     }
 
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-      // Popup blocked — trigger download instead
+      // Popup blocked - trigger download instead
       const a = document.createElement('a')
       a.href = url
       a.download = (title.replace(/[^a-zA-Z0-9]/g, '-') || 'document') + '.html'
@@ -137,7 +137,7 @@ export function generateAnthologyPdf(doc: AnthologyDocument): boolean {
     return true
   } catch (err) {
     console.error('[generateAnthologyPdf] Failed:', err)
-    // Don't throw — the React error boundary will catch it and crash the page.
+    // Don't throw - the React error boundary will catch it and crash the page.
     // Return false so caller can handle gracefully.
     return false
   }
@@ -150,10 +150,7 @@ export function generateAnthologyPdf(doc: AnthologyDocument): boolean {
  * Word and Google Docs can open HTML files saved with a .doc extension.
  * CSS variables are resolved to hex values for Word compatibility.
  */
-export function downloadAnthologyWord(
-  doc: AnthologyDocument,
-  fileName?: string,
-): boolean {
+export function downloadAnthologyWord(doc: AnthologyDocument, fileName?: string): boolean {
   try {
     const content = getContent(doc)
     const title = getTitle(doc)
@@ -181,7 +178,7 @@ export function downloadAnthologyWord(
     return true
   } catch (err) {
     console.error('[downloadAnthologyWord] Failed:', err)
-    // Don't throw — return false so caller can show error gracefully.
+    // Don't throw - return false so caller can show error gracefully.
     return false
   }
 }
@@ -192,10 +189,7 @@ export function downloadAnthologyWord(
  * Returns the raw HTML string for the Anthology document.
  * Useful when you need the HTML for custom rendering (e.g. in an iframe).
  */
-export function getAnthologyHtml(
-  doc: AnthologyDocument,
-  opts?: { preview?: boolean },
-): string {
+export function getAnthologyHtml(doc: AnthologyDocument, opts?: { preview?: boolean }): string {
   const content = getContent(doc)
   const title = getTitle(doc)
 

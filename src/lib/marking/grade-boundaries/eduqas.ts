@@ -1,14 +1,14 @@
-// ─── WJEC Eduqas GCSE English — Grade Boundaries ─────────────────────────────
-// Source: Eduqas official "Eduqas GCSE Grade Points — June 2024"
+// ─── WJEC Eduqas GCSE English - Grade Boundaries ─────────────────────────────
+// Source: Eduqas official "Eduqas GCSE Grade Points - June 2024"
 // (qualification-level "QS" boundaries), specifications C700QS (English
 // Language) and C720QS (English Literature). Maximum qualification mark = 200
-// (Eduqas uses a 200-mark aggregate, NOT 160 — percentage normalisation in
+// (Eduqas uses a 200-mark aggregate, NOT 160 - percentage normalisation in
 // ./types.ts handles this transparently).
 //
 // Transcribed from the official Eduqas PDF (see sourceUrl). English Language
 // (C700) curve is the board default; the Literature (C720) figures are
 // recorded alongside for the human verifier. Numbers are NOT yet
-// human-verified — `verified` stays false until a person checks them against
+// human-verified - `verified` stays false until a person checks them against
 // the PDF and flips it (see ./types.ts header).
 //
 // Official June 2024 raw qualification boundaries (max 200):

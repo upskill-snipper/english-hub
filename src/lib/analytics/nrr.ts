@@ -7,20 +7,17 @@
 //   NRR = (starting_mrr + expansion + upgrade - contraction - downgrade - churn)
 //         / starting_mrr
 //
-// NRR is calculated against the *existing customer* base only — new MRR is
+// NRR is calculated against the *existing customer* base only - new MRR is
 // explicitly excluded. Values > 100% indicate net expansion ("negative net
 // churn"), which is the key investor signal.
 
-import {
-  generateMRRMovements,
-  type MonthlyMRR,
-} from "./mrr-movements"
+import { generateMRRMovements, type MonthlyMRR } from './mrr-movements'
 
 export interface NRRPoint {
   month: string
   label: string
   nrr: number // percentage, e.g. 112.3
-  grossRetention: number // percentage — excludes expansion/upgrade
+  grossRetention: number // percentage - excludes expansion/upgrade
   startingMRR: number
   endingMRR: number
 }
@@ -53,12 +50,11 @@ export function calculateNRR(row: MonthlyMRR): number {
 
 /**
  * Gross Revenue Retention: excludes expansion and upgrades.
- * Measures pure retention — customers who stayed with what they had.
+ * Measures pure retention - customers who stayed with what they had.
  */
 export function calculateGRR(row: MonthlyMRR): number {
   if (row.startingMRR <= 0) return 0
-  const retained =
-    row.startingMRR - row.contractionMRR - row.downgradeMRR - row.churnMRR
+  const retained = row.startingMRR - row.contractionMRR - row.downgradeMRR - row.churnMRR
   return (retained / row.startingMRR) * 100
 }
 
@@ -114,16 +110,16 @@ export function formatPct(value: number, digits = 1): string {
 /** Formats a GBP value as a compact currency string. */
 export function formatGBP(value: number, compact = false): string {
   if (compact) {
-    return new Intl.NumberFormat("en-GB", {
-      style: "currency",
-      currency: "GBP",
-      notation: "compact",
+    return new Intl.NumberFormat('en-GB', {
+      style: 'currency',
+      currency: 'GBP',
+      notation: 'compact',
       maximumFractionDigits: 1,
     }).format(value)
   }
-  return new Intl.NumberFormat("en-GB", {
-    style: "currency",
-    currency: "GBP",
+  return new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
     maximumFractionDigits: 0,
   }).format(value)
 }
@@ -135,20 +131,20 @@ export function formatGBP(value: number, compact = false): string {
  */
 export function nrrSummaryToCSV(summary: NRRSummary): string {
   const header = [
-    "month",
-    "starting_mrr_gbp",
-    "new_mrr_gbp",
-    "expansion_mrr_gbp",
-    "upgrade_mrr_gbp",
-    "contraction_mrr_gbp",
-    "downgrade_mrr_gbp",
-    "churn_mrr_gbp",
-    "reactivation_mrr_gbp",
-    "ending_mrr_gbp",
-    "customers",
-    "nrr_pct",
-    "grr_pct",
-  ].join(",")
+    'month',
+    'starting_mrr_gbp',
+    'new_mrr_gbp',
+    'expansion_mrr_gbp',
+    'upgrade_mrr_gbp',
+    'contraction_mrr_gbp',
+    'downgrade_mrr_gbp',
+    'churn_mrr_gbp',
+    'reactivation_mrr_gbp',
+    'ending_mrr_gbp',
+    'customers',
+    'nrr_pct',
+    'grr_pct',
+  ].join(',')
 
   const rows = summary.monthly.map((row) => {
     const nrr = calculateNRR(row).toFixed(2)
@@ -167,10 +163,10 @@ export function nrrSummaryToCSV(summary: NRRSummary): string {
       row.customers,
       nrr,
       grr,
-    ].join(",")
+    ].join(',')
   })
 
-  return [header, ...rows].join("\n")
+  return [header, ...rows].join('\n')
 }
 
 /**
@@ -178,14 +174,12 @@ export function nrrSummaryToCSV(summary: NRRSummary): string {
  * client code (uses `window`/`document`).
  */
 export function downloadNRRCsv(summary: NRRSummary, filename?: string): void {
-  if (typeof window === "undefined") return
+  if (typeof window === 'undefined') return
   const csv = nrrSummaryToCSV(summary)
-  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" })
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
   const url = URL.createObjectURL(blob)
-  const link = document.createElement("a")
-  const name =
-    filename ??
-    `english-hub-nrr-${new Date().toISOString().slice(0, 10)}.csv`
+  const link = document.createElement('a')
+  const name = filename ?? `english-hub-nrr-${new Date().toISOString().slice(0, 10)}.csv`
   link.href = url
   link.download = name
   document.body.appendChild(link)

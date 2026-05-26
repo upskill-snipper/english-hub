@@ -81,7 +81,7 @@ const STRATEGY_OPTIONS: {
   },
 ]
 
-// Group letter suffixes stay Latin (A, B, C…) — names are paired with a
+// Group letter suffixes stay Latin (A, B, C…) - names are paired with a
 // translated "Group / مجموعة" prefix at render time.
 const GROUP_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
 
@@ -360,7 +360,7 @@ export default function GroupGeneratorPage() {
     const strategyOpt = STRATEGY_OPTIONS.find((s) => s.value === strategy)
     const groupPrefix = t('school.group_gen.group_prefix')
     const lines: string[] = [
-      `${t('school.group_gen.export.heading')} — ${selectedClass?.name ?? t('school.group_gen.print_class_fallback')}`,
+      `${t('school.group_gen.export.heading')} - ${selectedClass?.name ?? t('school.group_gen.print_class_fallback')}`,
       `${t('school.group_gen.export.strategy_label')}: ${strategyOpt ? t(strategyOpt.labelKey) : ''}`,
       `${t('school.group_gen.export.generated_label')}: ${new Date().toLocaleDateString('en-GB')}`,
       '',
@@ -370,7 +370,7 @@ export default function GroupGeneratorPage() {
       lines.push(
         `${groupPrefix} ${group.name} (${group.students.length} ${t('school.group_gen.export.students_suffix')})`,
       )
-      lines.push('—'.repeat(40))
+      lines.push('-'.repeat(40))
       group.students.forEach((s) => {
         lines.push(
           `  ${s.name}  |  ${t('school.group_gen.export.grade_label')}: ${s.grade ?? t('school.group_gen.export.na')}  |  ${t('school.group_gen.export.ability_label')}: ${t(`school.group_gen.ability.${s.abilityLevel}`)}`,
@@ -626,7 +626,7 @@ export default function GroupGeneratorPage() {
                       <span className="font-medium">{student.name}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-xs text-muted-foreground">
-                          {student.grade ?? '—'}
+                          {student.grade ?? '-'}
                         </span>
                         <span
                           className={cn(

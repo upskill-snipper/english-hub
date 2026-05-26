@@ -1,4 +1,4 @@
-// ─── Lesson Plans – Library Re-exports ──────────────────────────────────────
+// ─── Lesson Plans - Library Re-exports ──────────────────────────────────────
 //
 // Convenience re-export layer so consumers can import from '@/lib/lesson-plans'
 // instead of reaching into '@/data/lesson-plans' directly.

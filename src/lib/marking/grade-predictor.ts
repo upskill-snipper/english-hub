@@ -3,7 +3,7 @@
 // grade, using PER-BOARD published grade boundaries where they are available
 // and human-verified.
 //
-// VALIDITY / SCOPE — read before changing the boundary model:
+// VALIDITY / SCOPE - read before changing the boundary model:
 //
 // Exam boards do NOT publish a fixed mark→grade table; boundaries move year on
 // year with cohort performance and differ between boards. We now hold a typed,
@@ -26,7 +26,7 @@
 // additive/optional in spirit; existing callers that ignore them are
 // unaffected) while removing the cross-board *numeric* defect: non-AQA
 // students now either get verified board boundaries, or an explicitly
-// flagged indicative proxy — never a silently mis-calibrated AQA grade.
+// flagged indicative proxy - never a silently mis-calibrated AQA grade.
 //
 // The ONLY remaining human step to make a board's real boundaries take effect
 // is to verify its transcribed numbers against the official PDF and flip
@@ -49,7 +49,7 @@ import {
  *   from ./grade-boundaries was used. The specific board/series is in
  *   {@link GradePrediction.boundaryDetail}.
  * - `"aqa-5yr-average"`: the AQA five-year-average curve applied to an AQA
- *   board (a same-board, still-indicative estimate) — used when AQA's own
+ *   board (a same-board, still-indicative estimate) - used when AQA's own
  *   verified table is not yet enabled.
  * - `"aqa-5yr-average-proxy"`: the AQA curve applied as a cross-board proxy
  *   (legacy provenance tag; retained for backward compatibility).
@@ -123,7 +123,7 @@ export interface GradePrediction {
   indicativeOnly?: boolean
   /**
    * Human-readable provenance detail for traceability (EU AI Act Art. 12/15),
-   * e.g. "AQA GCSE English (8700) — June 2024" or
+   * e.g. "AQA GCSE English (8700) - June 2024" or
    * "AQA 5-year-average proxy (board 'edexcel' not yet verified)".
    */
   boundaryDetail?: string
@@ -140,7 +140,7 @@ interface PctThreshold {
  * Indicative percentage thresholds (5-year rolling average) for the AQA
  * English Language (8700) / Literature (8702) full-paper grade boundaries.
  * Used ONLY as the fallback proxy when a board has no verified table. These
- * are *lower* bounds — a mark >= threshold earns that grade.
+ * are *lower* bounds - a mark >= threshold earns that grade.
  *
  * NOTE: kept numerically identical to the historical proxy table so the
  * fallback path is behaviour-preserving for existing callers/tests.
@@ -249,7 +249,7 @@ function resolveBoundaryModel(board?: string | null): ResolvedBoundaryModel {
       thresholds: toPctThresholds(table),
       source: 'board-verified',
       indicativeOnly: false,
-      detail: `${table.qualification} — ${table.series} (verified; source: ${table.sourceUrl})`,
+      detail: `${table.qualification} - ${table.series} (verified; source: ${table.sourceUrl})`,
     }
   }
 
@@ -260,16 +260,16 @@ function resolveBoundaryModel(board?: string | null): ResolvedBoundaryModel {
   const indicativeOnly = source !== 'board-verified'
   let detail: string
   if (!board) {
-    detail = 'AQA 5-year-average proxy (no board supplied) — indicative only'
+    detail = 'AQA 5-year-average proxy (no board supplied) - indicative only'
   } else if (source === 'aqa-5yr-average') {
     detail =
-      'AQA 5-year-average curve (AQA board; verified AQA table not yet enabled) — indicative only'
+      'AQA 5-year-average curve (AQA board; verified AQA table not yet enabled) - indicative only'
   } else {
     const key = normaliseBoardId(board)
     detail =
       `AQA 5-year-average proxy (board ${JSON.stringify(board)}` +
       (key ? ` → '${key}'` : '') +
-      ' has no verified boundary table) — indicative only'
+      ' has no verified boundary table) - indicative only'
   }
   return { thresholds: AQA_PROXY_THRESHOLDS, source, indicativeOnly, detail }
 }

@@ -2,10 +2,10 @@
 //
 // FABRICATION WARNING (FC20 audit, 2026-04-28):
 // Several Shakespeare and Dickens "extracts" in this file are quote-collages or
-// paraphrases — NOT verbatim source text. The R&J Act 3 Sc 1 extract
+// paraphrases - NOT verbatim source text. The R&J Act 3 Sc 1 extract
 // (edexcel-lit-001 q1) reorders dialogue and adds invented connective material;
 // the Marley extract (edexcel-lit-003 q1) inserts the fabricated line "Every
-// man is bound up in some such chain. Every man must justify his existence—or
+// man is bound up in some such chain. Every man must justify his existence-or
 // sink into oblivion" and other invented passages. Treat all extracts as
 // practice stimuli; verify against primary text before classroom citation.
 export interface MockExamPaper {
@@ -339,7 +339,7 @@ Band 1 (0-7 marks): Minimal response.`,
 
 SCROOGE: Couldn't I take them all at once, and have it over, Jacob?
 
-MARLEY: I have wandered far and wide—and watched with wide-wandering eyes—the broad field of my profession—
+MARLEY: I have wandered far and wide-and watched with wide-wandering eyes-the broad field of my profession-
 
 SCROOGE: Our profession.
 
@@ -347,7 +347,7 @@ MARLEY: I came not here in life to visit you. Why do I come in death? Because I 
 
 [The phantom's chains are described as long, forged link by link, and yard by yard. He wraps them about himself, and with gesture and voice conveys their terrible weight.]
 
-MARLEY: This chain I forged in life. Link by link, yard by yard. I girded it on of my own free will, or rather with every thought I chose. Every man is bound up in some such chain. Every man must justify his existence—or sink into oblivion.`,
+MARLEY: This chain I forged in life. Link by link, yard by yard. I girded it on of my own free will, or rather with every thought I chose. Every man is bound up in some such chain. Every man must justify his existence-or sink into oblivion.`,
             markScheme: `Band 5 (40-48 marks): Perceptive analysis of how Dickens establishes Marley's warning role. Sophisticated understanding of supernatural imagery and its symbolic significance. Detailed analysis of language (imperatives, repetition, metaphor). Excellent exploration of chain metaphor and its connection to moral consequence. Shows how this initiates Scrooge's transformation. Insightful contextual understanding.
 
 Band 4 (32-39 marks): Clear exploration of Marley's role as messenger. Good analysis of supernatural elements and language. Makes connections between chain imagery and moral accountability. Good understanding of the scene's significance to Scrooge's journey.
@@ -365,7 +365,7 @@ The chain imagery is extraordinary in its symbolic power. Marley's chains are no
 
 The physical description of the chains - their terrible weight and length - makes the abstract concrete and terrifying. Dickens describes them in ways that force visualization: the phantom "wraps them about himself," and the mention of "their terrible weight" suggests palpable suffering. This is not metaphorical punishment but psychological and spiritual agony made tangible. Marley's question to Scrooge - "Why do I come in death?" - and his answer, "Because I cannot rest," reveal the true punishment: not physical torment but the inability to find peace. The spirit is bound by his own choices, doomed to wander and witness suffering he can no longer alleviate.
 
-The philosophical pronouncement - "Every man is bound up in some such chain... Every man must justify his existence—or sink into oblivion" - universalizes the warning. Dickens is not suggesting Marley's fate applies only to him; every human is forging chains through their choices. This elevates the scene beyond personal narrative into social commentary: Dickens is warning all readers, particularly wealthy readers like Scrooge, that their choices have eternal consequences. To "sink into oblivion" is perhaps worse than damnation - it is complete meaninglessness, the erasure of any positive legacy.
+The philosophical pronouncement - "Every man is bound up in some such chain... Every man must justify his existence-or sink into oblivion" - universalizes the warning. Dickens is not suggesting Marley's fate applies only to him; every human is forging chains through their choices. This elevates the scene beyond personal narrative into social commentary: Dickens is warning all readers, particularly wealthy readers like Scrooge, that their choices have eternal consequences. To "sink into oblivion" is perhaps worse than damnation - it is complete meaninglessness, the erasure of any positive legacy.
 
 The supernatural framework is essential to Dickens's purpose. A living man confronting Scrooge could be ignored or dismissed; a ghost, particularly one Scrooge knew and respects, forces acknowledgment. The supernatural operates as the language of revelation - it breaks through Scrooge's rational defenses to reach his conscience. The appearance of Marley initiates Scrooge's transformation not through argument but through terror and recognition. Scrooge sees what he might become: a man whose life was meaningful only in acquisition, whose chains will bind him eternally because he failed to "justify his existence" through compassion and human connection.`,
           },
@@ -621,29 +621,29 @@ Band 1 (0-7 marks): Minimal response.`,
             marks: 40,
             questionText:
               "Read the extract below from An Inspector Calls where Inspector Goole questions Sheila about her role in Eva Smith's dismissal. Explore how Priestley uses language, dramatic tension, and Sheila's response to reveal character and develop the play's themes about social responsibility.",
-            extract: `INSPECTOR: Miss Sheila, did you know this girl—Eva Smith?
+            extract: `INSPECTOR: Miss Sheila, did you know this girl-Eva Smith?
 
-SHEILA: No—that is—not to know very well.
+SHEILA: No-that is-not to know very well.
 
 INSPECTOR: But you knew her?
 
 SHEILA: Yes. Yes, I did know her. She used to work in Milwards.
 
-INSPECTOR: And this girl, Eva Smith, was given the sack—was dismissed from her job there—because of something you did?
+INSPECTOR: And this girl, Eva Smith, was given the sack-was dismissed from her job there-because of something you did?
 
-SHEILA: [startled]: Me? But I don't see—I didn't—
+SHEILA: [startled]: Me? But I don't see-I didn't-
 
 INSPECTOR: It wasn't a case of the girl exceeding her duties. It wasn't anything to do with the usual sticky-fingered customer or showing off or anything of that kind. It was simply and solely because you were annoyed by the girl's appearance and manner.
 
-SHEILA: [stormily]: Well, she was impertinent to me—
+SHEILA: [stormily]: Well, she was impertinent to me-
 
 INSPECTOR: In what way was she impertinent?
 
-SHEILA: She—smirked at me—yes, she did—
+SHEILA: She-smirked at me-yes, she did-
 
 INSPECTOR: Did she? Are you sure about that?
 
-SHEILA: [less stormily]: I—it isn't a pleasant thing to remember—but she was impertinent—`,
+SHEILA: [less stormily]: I-it isn't a pleasant thing to remember-but she was impertinent-`,
             markScheme: `Band 5 (32-40 marks): Perceptive analysis of how Priestley uses interrogation, language shifts, and dramatic tension. Excellent understanding of Sheila's character development and psychological realism. Sophisticated analysis of how her discomfort reveals the play's themes about social responsibility. Excellent textual analysis showing how the Inspector's questioning technique works.
 
 Band 4 (24-31 marks): Clear analysis of language and dramatic technique. Good understanding of Sheila's character and the themes. Good textual support.
@@ -655,7 +655,7 @@ Band 2 (8-15 marks): Limited analysis. Basic identification of features.
 Band 1 (0-7 marks): Minimal response.`,
             modelAnswer: `Priestley uses this interrogation scene to reveal Sheila's capacity for conscience and moral development, employing the Inspector's persistent questioning to strip away her initial defensiveness and reveal the uncomfortable truth about her callous actions. The scene is crucial because Sheila becomes the only family member capable of genuine moral awakening.
 
-The language shifts in this exchange are telling. Sheila's initial response - "No—that is—not to know very well" - shows hesitation and equivocation. The fragmented syntax reflects her discomfort with memory. The Inspector's short, direct questions ("But you knew her?" "And this girl...was dismissed...because of something you did?") use minimal language but maximum effect. His questions are not aggressive but relentlessly logical, each one narrowing the scope for evasion.
+The language shifts in this exchange are telling. Sheila's initial response - "No-that is-not to know very well" - shows hesitation and equivocation. The fragmented syntax reflects her discomfort with memory. The Inspector's short, direct questions ("But you knew her?" "And this girl...was dismissed...because of something you did?") use minimal language but maximum effect. His questions are not aggressive but relentlessly logical, each one narrowing the scope for evasion.
 
 Sheila's defensive response - "Well, she was impertinent to me" - attempts to justify her actions through perceived offense. Yet her justification grows progressively weaker. She claims Eva "smirked" at her, but the Inspector's simple question "Did she? Are you sure about that?" forces her to confront the uncertainty of her memory. Her eventual admission - "it isn't a pleasant thing to remember - but she was impertinent" - is psychologically revealing. The acknowledgment that this is "not pleasant to remember" suggests that Sheila's conscience is beginning to function; she is uncomfortable with her past behavior.
 

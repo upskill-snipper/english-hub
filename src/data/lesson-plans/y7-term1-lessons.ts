@@ -1,4 +1,4 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y7Term1Lessons: LessonPlan[] = [
   // ── Lesson 1: Meeting the Characters ──────────────────────────────────────
@@ -76,10 +76,7 @@ export const y7Term1Lessons: LessonPlan[] = [
           stretch:
             'Students write two additional retrieval questions of their own and provide model answers, then challenge a partner to answer them.',
         },
-        resources: [
-          'Retrieval questions worksheet',
-          'Model answers slide for peer-marking',
-        ],
+        resources: ['Retrieval questions worksheet', 'Model answers slide for peer-marking'],
       },
     ],
     plenaryActivity: {
@@ -99,16 +96,14 @@ export const y7Term1Lessons: LessonPlan[] = [
       'Read the next two pages of the text independently. Write down three facts you learn about the main character and one question you would like to ask them.',
     worksheetQuestions: [
       {
-        question:
-          'What is the name of the main character? Where do they live?',
+        question: 'What is the name of the main character? Where do they live?',
         lines: 2,
         modelAnswer:
           'The main character is [name]. They live in [location]. This is shown in the opening paragraph where the narrator describes their home.',
         marks: 2,
       },
       {
-        question:
-          'List three facts we learn about the main character from the opening.',
+        question: 'List three facts we learn about the main character from the opening.',
         lines: 4,
         modelAnswer:
           'We learn that the character is [age], that they [key detail 1], and that they [key detail 2]. These facts are stated directly in the text when the narrator introduces the character.',
@@ -123,8 +118,7 @@ export const y7Term1Lessons: LessonPlan[] = [
         marks: 2,
       },
       {
-        question:
-          'Who does the main character live with? How do you know this?',
+        question: 'Who does the main character live with? How do you know this?',
         lines: 3,
         modelAnswer:
           'The main character lives with [family members]. We know this because the text states [relevant detail], making it clear who is part of their household.',
@@ -140,9 +134,9 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'Choose either Fox Girl or White Gazelle to begin with depending on your class — Fox Girl has a UK setting that may feel more accessible initially, while White Gazelle opens with a more dramatic situation.',
+      'Choose either Fox Girl or White Gazelle to begin with depending on your class - Fox Girl has a UK setting that may feel more accessible initially, while White Gazelle opens with a more dramatic situation.',
       'Pre-teach any unfamiliar vocabulary before the shared reading to ensure all students can access the text.',
-      'Use the exit tickets diagnostically to identify students who struggle to locate information in a text — these students will need additional scaffolding in Lesson 2.',
+      'Use the exit tickets diagnostically to identify students who struggle to locate information in a text - these students will need additional scaffolding in Lesson 2.',
       'If reading time is limited, select a focused extract of approximately 3-4 pages rather than an entire chapter.',
     ],
     targetedSkills: [
@@ -188,10 +182,9 @@ export const y7Term1Lessons: LessonPlan[] = [
       title: 'Quote or No Quote?',
       duration: '7 minutes',
       instructions:
-        'Display five short quotations on the board — three are from the text studied in Lesson 1, and two are made up. Students decide which are genuine quotations from the text by holding up green (real) or red (fake) cards. Teacher discusses what makes a quotation recognisable and introduces the idea that some quotations are more important than others.',
+        'Display five short quotations on the board - three are from the text studied in Lesson 1, and two are made up. Students decide which are genuine quotations from the text by holding up green (real) or red (fake) cards. Teacher discusses what makes a quotation recognisable and introduces the idea that some quotations are more important than others.',
       differentiation: {
-        support:
-          'Provide students with the text open at the relevant pages so they can check.',
+        support: 'Provide students with the text open at the relevant pages so they can check.',
         core: 'Students identify real vs fake quotations from memory and justify their choices.',
         stretch:
           'Students rank the three genuine quotations from most to least important and explain their ranking.',
@@ -294,13 +287,13 @@ export const y7Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'The "This shows..." sentence starter is a crucial scaffolding tool at this stage. Students should be encouraged to use it consistently before moving to more varied analytical phrasing in later lessons.',
-      'During the Discussion Carousel, circulate and note which students offer evidence-based responses — this will inform groupings for the guided writing in Lesson 4.',
+      'During the Discussion Carousel, circulate and note which students offer evidence-based responses - this will inform groupings for the guided writing in Lesson 4.',
       'If time is tight, reduce the carousel to three stations at 5 minutes each rather than cutting the modelled example.',
       'Display a Word Wall of useful analytical verbs (suggests, reveals, implies, demonstrates, highlights) for students to draw on.',
     ],
     targetedSkills: [
       '7R.2 - Selecting Evidence',
-      '7R.5 - Writer\'s Effect',
+      "7R.5 - Writer's Effect",
       'Discussion Skills',
       'Quotation Selection',
       'Explanation Writing',
@@ -327,21 +320,12 @@ export const y7Term1Lessons: LessonPlan[] = [
       'I can write a What/How/Why paragraph with teacher support',
       'I can use sentence starters accurately for each section',
     ],
-    keywords: [
-      'what',
-      'how',
-      'why',
-      'paragraph',
-      'analytical',
-      'structure',
-      'technique',
-      'effect',
-    ],
+    keywords: ['what', 'how', 'why', 'paragraph', 'analytical', 'structure', 'technique', 'effect'],
     starterActivity: {
       title: 'What, How, Why Sorting',
       duration: '8 minutes',
       instructions:
-        'Display nine sentence strips on the board (three What sentences, three How sentences, three Why sentences) all mixed up. Students work in pairs to sort them into the correct categories. Teacher reveals the answers and introduces the What/How/Why framework: What does the writer do? How do they do it? Why do they do it — what is the effect on the reader?',
+        'Display nine sentence strips on the board (three What sentences, three How sentences, three Why sentences) all mixed up. Students work in pairs to sort them into the correct categories. Teacher reveals the answers and introduces the What/How/Why framework: What does the writer do? How do they do it? Why do they do it - what is the effect on the reader?',
       differentiation: {
         support:
           'Provide the sentences on colour-coded cards with a key showing which colour matches which category.',
@@ -377,7 +361,7 @@ export const y7Term1Lessons: LessonPlan[] = [
           'Teacher provides a question about the text (e.g. "How does the writer show that [character] feels out of place?") and a relevant extract. Using a shared writing approach, teacher and students construct a What/How/Why paragraph together on the board. Teacher writes the What sentence, then asks students to suggest the How sentence (identifying a technique or word choice). Finally, students draft the Why sentence independently in their books before the teacher selects the strongest example to complete the class paragraph. Students then copy the completed paragraph and write a second paragraph independently on a different aspect of the extract.',
         differentiation: {
           support:
-            'Provide a writing frame with sentence starters: What — "The writer presents [character] as...", How — "This is shown through the use of...", Why — "This makes the reader feel... because...".',
+            'Provide a writing frame with sentence starters: What - "The writer presents [character] as...", How - "This is shown through the use of...", Why - "This makes the reader feel... because...".',
           core: 'Students use the sentence starters for their first paragraph but attempt the second without them.',
           stretch:
             'Students write their second paragraph without sentence starters and include an additional sentence in the Why section that links to the wider themes of the text.',
@@ -394,12 +378,11 @@ export const y7Term1Lessons: LessonPlan[] = [
       title: 'Label My Paragraph',
       duration: '7 minutes',
       instructions:
-        'Display a student\'s paragraph (anonymous or volunteer) under the visualiser. Class works together to identify and label the What, How, and Why sections. Discuss: Is anything missing? Is the Why section developed enough? Students write one improvement target in their books.',
+        "Display a student's paragraph (anonymous or volunteer) under the visualiser. Class works together to identify and label the What, How, and Why sections. Discuss: Is anything missing? Is the Why section developed enough? Students write one improvement target in their books.",
       differentiation: {
         support: 'Students use a checklist to verify each section is present.',
         core: 'Students identify sections and suggest one improvement.',
-        stretch:
-          'Students rewrite the weakest section to demonstrate how it could be improved.',
+        stretch: 'Students rewrite the weakest section to demonstrate how it could be improved.',
       },
     },
     homework:
@@ -426,12 +409,12 @@ export const y7Term1Lessons: LessonPlan[] = [
           'What does "Why" mean in a What/How/Why paragraph? Why is this section usually the longest?',
         lines: 3,
         modelAnswer:
-          'The "Why" explains the effect on the reader — why the writer made this choice and what impact it has. It is the longest section because this is where the analysis happens; it is not enough to just identify a technique, you must explain what it does.',
+          'The "Why" explains the effect on the reader - why the writer made this choice and what impact it has. It is the longest section because this is where the analysis happens; it is not enough to just identify a technique, you must explain what it does.',
         marks: 2,
       },
       {
         question:
-          'Read the paragraph below and identify the What, How, and Why sections by labelling them.\n\n"The writer presents the character as lonely. This is shown through the simile \'she sat like a stone in an empty room.\' The word \'stone\' suggests she is cold and unmoving, as if she has given up hope. The reader feels sympathy for her because she seems completely alone."',
+          "Read the paragraph below and identify the What, How, and Why sections by labelling them.\n\n\"The writer presents the character as lonely. This is shown through the simile 'she sat like a stone in an empty room.' The word 'stone' suggests she is cold and unmoving, as if she has given up hope. The reader feels sympathy for her because she seems completely alone.\"",
         lines: 5,
         modelAnswer:
           'What: "The writer presents the character as lonely." How: "This is shown through the simile \'she sat like a stone in an empty room.\'" Why: "The word \'stone\' suggests she is cold and unmoving, as if she has given up hope. The reader feels sympathy for her because she seems completely alone."',
@@ -448,7 +431,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'What/How/Why is a simplified version of PEE/PEEL designed to be more accessible for Year 7. As students grow in confidence, transition them towards the more formal PEE/PEEL structure.',
-      'The shared writing section is crucial — do not rush it. Students need to see the thinking process, not just the finished product.',
+      'The shared writing section is crucial - do not rush it. Students need to see the thinking process, not just the finished product.',
       'Display the What/How/Why framework on the working wall and refer to it consistently in every subsequent writing task.',
       'Avoid over-relying on sentence starters. Begin to phase them out for core and stretch students by Lesson 5.',
     ],
@@ -457,7 +440,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       'Analytical Writing',
       'What/How/Why Framework',
       'Sentence Starters',
-      'Writer\'s Effect',
+      "Writer's Effect",
     ],
   },
 
@@ -472,7 +455,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     objectives: [
       'Apply the PEE paragraph structure to analyse character in the text (7W.3)',
       'Select appropriate quotations to support a point about a character',
-      'Write an explanation that explores the effect of a writer\'s word choice',
+      "Write an explanation that explores the effect of a writer's word choice",
       'Develop confidence in paragraph writing through guided and scaffolded practice',
     ],
     successCriteria: [
@@ -572,7 +555,7 @@ export const y7Term1Lessons: LessonPlan[] = [
           'Why is it important to choose a short, relevant quotation rather than copying a whole sentence? Explain your answer.',
         lines: 3,
         modelAnswer:
-          'Short quotations are better because they allow you to focus your explanation on specific words. If you copy a whole sentence, your analysis becomes too general. A focused quotation lets you zoom in on the writer\'s word choices and their effects.',
+          "Short quotations are better because they allow you to focus your explanation on specific words. If you copy a whole sentence, your analysis becomes too general. A focused quotation lets you zoom in on the writer's word choices and their effects.",
         marks: 2,
       },
       {
@@ -602,7 +585,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'This lesson builds directly on the What/How/Why framework from Lesson 3, now formalising it as PEE. Explicitly make the connection for students: What = Point, How = Evidence, Why = Explain.',
-      'The guided writing section is the core of this lesson. Resist the temptation to let students write independently too quickly — they need to see expert thinking modelled first.',
+      'The guided writing section is the core of this lesson. Resist the temptation to let students write independently too quickly - they need to see expert thinking modelled first.',
       'Use the peer assessment activity to identify students who are ready for greater independence in Lesson 5.',
       'Keep the word bank of analytical verbs visible throughout and add to it as the term progresses.',
     ],
@@ -649,7 +632,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       title: 'Spot the Difference: Two Paragraphs',
       duration: '8 minutes',
       instructions:
-        'Display two paragraphs side by side on the board — one is a weak response (vague point, long quotation, surface-level explanation) and one is a strong response (clear point, embedded quotation, detailed explanation exploring word choice). Students identify three differences between them and discuss which is more convincing and why. Teacher draws out the key features of a strong analytical paragraph.',
+        'Display two paragraphs side by side on the board - one is a weak response (vague point, long quotation, surface-level explanation) and one is a strong response (clear point, embedded quotation, detailed explanation exploring word choice). Students identify three differences between them and discuss which is more convincing and why. Teacher draws out the key features of a strong analytical paragraph.',
       differentiation: {
         support:
           'Provide a comparison table with categories (Point, Evidence, Explanation) for students to fill in for each paragraph.',
@@ -664,7 +647,7 @@ export const y7Term1Lessons: LessonPlan[] = [
         title: 'Planning Your Paragraph',
         duration: '10 minutes',
         instructions:
-          'Teacher provides a question and extract: "How does the writer present [character]\'s feelings in this extract?" Students spend 10 minutes planning their paragraph using a simple planning grid (Point — what will I argue? Evidence — which quotation will I use? Explain — what does the word choice suggest?). Teacher models completing the planning grid for a different question before students begin, emphasising that planning prevents vague writing.',
+          'Teacher provides a question and extract: "How does the writer present [character]\'s feelings in this extract?" Students spend 10 minutes planning their paragraph using a simple planning grid (Point - what will I argue? Evidence - which quotation will I use? Explain - what does the word choice suggest?). Teacher models completing the planning grid for a different question before students begin, emphasising that planning prevents vague writing.',
         differentiation: {
           support:
             'Provide a pre-highlighted extract with three potential quotations circled. Students choose one and plan around it.',
@@ -756,7 +739,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'This is a formative assessment point. Collect books and provide written feedback that is specific, actionable, and directly linked to the success criteria.',
-      'Use the planning stage to identify students who are still struggling with quotation selection — these students may need additional small group intervention.',
+      'Use the planning stage to identify students who are still struggling with quotation selection - these students may need additional small group intervention.',
       'The shift from guided to independent writing is significant for Year 7. Expect a range of quality and focus your feedback on progress from Lessons 3-4 rather than absolute quality.',
       'Consider creating a display of strong paragraphs (anonymised) to serve as models for future lessons.',
     ],
@@ -860,8 +843,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       differentiation: {
         support: 'Provide the bingo grid pre-filled with technique names.',
         core: 'Students choose their own four techniques from the lesson to fill the grid.',
-        stretch:
-          'Students create their own bingo clues for a partner to solve.',
+        stretch: 'Students create their own bingo clues for a partner to solve.',
       },
     },
     homework:
@@ -885,7 +867,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
       {
         question:
-          'Find an example of imagery in the extract. What picture does it create in the reader\'s mind?',
+          "Find an example of imagery in the extract. What picture does it create in the reader's mind?",
         lines: 4,
         modelAnswer:
           'The imagery "[quotation]" creates a picture of [description]. This is effective because it helps the reader visualise [scene] and creates a feeling of [atmosphere].',
@@ -909,9 +891,9 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson introduces formal literary terminology. Ensure students understand the terms before asking them to write about techniques — misidentified techniques undermine otherwise good analysis.',
+      'This lesson introduces formal literary terminology. Ensure students understand the terms before asking them to write about techniques - misidentified techniques undermine otherwise good analysis.',
       'Focus on three techniques only (adjectives, dialogue, imagery) to avoid overwhelming Year 7 students. Additional techniques can be introduced in subsequent terms.',
-      'The Language Feature Hunt works well as a competitive activity — award points for the most examples found and discussed.',
+      'The Language Feature Hunt works well as a competitive activity - award points for the most examples found and discussed.',
       'Create a "Technique Toolkit" display in the classroom that students can add to throughout the year.',
     ],
     targetedSkills: [
@@ -940,7 +922,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     successCriteria: [
       'I can define identity and belonging and explain why they are important themes',
       'I can identify at least two moments in the text that relate to these themes',
-      'I can explain how a character\'s actions or feelings connect to the theme of identity',
+      "I can explain how a character's actions or feelings connect to the theme of identity",
       'I can write a paragraph linking a quotation to the theme of identity or belonging',
     ],
     keywords: [
@@ -972,7 +954,7 @@ export const y7Term1Lessons: LessonPlan[] = [
         title: 'Theme Tracking in the Text',
         duration: '20 minutes',
         instructions:
-          'Teacher introduces the concepts of identity and belonging with clear definitions on the board. Students then revisit key sections of the text in pairs, using sticky notes to mark moments where a character\'s identity is explored, challenged, or celebrated. For each moment, students write on the sticky note: the page number, a brief quotation, and a one-sentence explanation of how it connects to identity or belonging. Teacher leads a class discussion gathering the strongest examples.',
+          "Teacher introduces the concepts of identity and belonging with clear definitions on the board. Students then revisit key sections of the text in pairs, using sticky notes to mark moments where a character's identity is explored, challenged, or celebrated. For each moment, students write on the sticky note: the page number, a brief quotation, and a one-sentence explanation of how it connects to identity or belonging. Teacher leads a class discussion gathering the strongest examples.",
         differentiation: {
           support:
             'Direct students to three specific pages/passages and provide the prompt: "This connects to identity because...".',
@@ -1011,7 +993,8 @@ export const y7Term1Lessons: LessonPlan[] = [
       instructions:
         'Students complete the sentence: "In [text], the author explores the theme of identity by showing that..." on a sticky note. Teacher collects and reads three aloud, discussing which statements are the most precise and insightful. This serves as an exit ticket to assess thematic understanding.',
       differentiation: {
-        support: 'Provide the sentence starter and a word bank (struggle, search, discover, challenge, belong).',
+        support:
+          'Provide the sentence starter and a word bank (struggle, search, discover, challenge, belong).',
         core: 'Students complete the theme statement independently.',
         stretch:
           'Students write a theme statement that refers to both the character and the reader: "The author shows us that... which makes the reader consider...".',
@@ -1021,8 +1004,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       'Write a paragraph explaining how the theme of belonging is explored in the text. Include at least one quotation and explain how it connects to the theme.',
     worksheetQuestions: [
       {
-        question:
-          'What is a "theme" in a story? Write a definition in your own words.',
+        question: 'What is a "theme" in a story? Write a definition in your own words.',
         lines: 2,
         modelAnswer:
           'A theme is a big idea or message that runs through a text. It is not the plot (what happens) but the deeper meaning the author wants the reader to think about, such as love, identity, or growing up.',
@@ -1033,12 +1015,12 @@ export const y7Term1Lessons: LessonPlan[] = [
           'Define "identity" and "belonging" in your own words. How are these ideas different?',
         lines: 4,
         modelAnswer:
-          'Identity is who you are — the things that make you unique, such as your culture, personality, family, and beliefs. Belonging is the feeling of being accepted and connected to a group, place, or community. They are different because you can have a strong identity but still not feel like you belong somewhere.',
+          'Identity is who you are - the things that make you unique, such as your culture, personality, family, and beliefs. Belonging is the feeling of being accepted and connected to a group, place, or community. They are different because you can have a strong identity but still not feel like you belong somewhere.',
         marks: 2,
       },
       {
         question:
-          'Find a moment in the text where the character\'s identity is challenged or questioned. Write out a short quotation and explain how it connects to the theme.',
+          "Find a moment in the text where the character's identity is challenged or questioned. Write out a short quotation and explain how it connects to the theme.",
         lines: 6,
         modelAnswer:
           'The theme of identity is explored when [character] [situation]. The quotation "[quotation]" shows that the character feels [emotion] about [aspect of identity]. The word "[word]" suggests [meaning], implying that [character] is struggling with [aspect]. This connects to the wider theme of identity because it shows that who we are can be shaped by [experience/place/people].',
@@ -1046,10 +1028,10 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
       {
         question:
-          'How might the character\'s experience of belonging or not belonging be similar to experiences people have in real life? Explain your answer with reference to the text.',
+          "How might the character's experience of belonging or not belonging be similar to experiences people have in real life? Explain your answer with reference to the text.",
         lines: 5,
         modelAnswer:
-          'The character\'s experience of [situation in text] is similar to real life because many people feel like outsiders when they [real-world situation]. In the text, [character] feels [emotion] because [reason], and this is relatable because [connection to wider experience]. The author may have chosen to explore this theme to help readers understand [message].',
+          "The character's experience of [situation in text] is similar to real life because many people feel like outsiders when they [real-world situation]. In the text, [character] feels [emotion] because [reason], and this is relatable because [connection to wider experience]. The author may have chosen to explore this theme to help readers understand [message].",
         marks: 3,
       },
       {
@@ -1062,7 +1044,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The identity map starter is a personal activity — remind students they only share what they are comfortable with. Do not pressure students to disclose sensitive information.',
+      'The identity map starter is a personal activity - remind students they only share what they are comfortable with. Do not pressure students to disclose sensitive information.',
       'Both Fox Girl and White Gazelle explore themes of displacement and belonging in different cultural contexts. Be sensitive to students in your class who may have personal experience of migration or displacement.',
       'This lesson marks the first explicit focus on theme. Ensure students understand the difference between theme (big idea) and plot (what happens).',
       'The theme of identity will recur throughout the unit. Consider creating a running "Theme Tracker" display that students add to each lesson.',
@@ -1085,7 +1067,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     yearGroup: 'Year 7',
     duration: '60 minutes',
     objectives: [
-      'Understand how narrative structure shapes a reader\'s experience (7R.3)',
+      "Understand how narrative structure shapes a reader's experience (7R.3)",
       'Identify the key structural elements: exposition, rising action, climax, falling action, resolution',
       'Analyse how the writer uses structure to build tension, develop character, and convey theme',
       'Comment on the effect of structural choices made by the author',
@@ -1129,7 +1111,7 @@ export const y7Term1Lessons: LessonPlan[] = [
         differentiation: {
           support:
             'Provide a list of eight key events from the text on cards for students to sequence and place on the timeline.',
-          core: 'Students identify events independently and explain the reader\'s response at each stage.',
+          core: "Students identify events independently and explain the reader's response at each stage.",
           stretch:
             'Students consider whether the text follows a traditional structure or deviates from it, and discuss what effect this has.',
         },
@@ -1162,12 +1144,11 @@ export const y7Term1Lessons: LessonPlan[] = [
       title: 'Structure Quiz',
       duration: '7 minutes',
       instructions:
-        'Teacher reads five quick-fire statements about narrative structure (e.g. "The climax is always at the end of the story — true or false?"). Students respond on mini-whiteboards. Teacher addresses misconceptions and reinforces key learning. Final question: "Why does structure matter to a reader?"',
+        'Teacher reads five quick-fire statements about narrative structure (e.g. "The climax is always at the end of the story - true or false?"). Students respond on mini-whiteboards. Teacher addresses misconceptions and reinforces key learning. Final question: "Why does structure matter to a reader?"',
       differentiation: {
         support: 'Students may refer to their story mountain handout.',
         core: 'Students answer from memory.',
-        stretch:
-          'Students explain why each true/false answer is correct in full sentences.',
+        stretch: 'Students explain why each true/false answer is correct in full sentences.',
       },
     },
     homework:
@@ -1182,8 +1163,7 @@ export const y7Term1Lessons: LessonPlan[] = [
         marks: 2,
       },
       {
-        question:
-          'What is a "climax"? Why is it usually the most important moment in a story?',
+        question: 'What is a "climax"? Why is it usually the most important moment in a story?',
         lines: 3,
         modelAnswer:
           'The climax is the turning point or moment of highest tension in a story. It is usually the most important moment because it is where the main conflict reaches its peak and the outcome of the story begins to become clear.',
@@ -1202,7 +1182,7 @@ export const y7Term1Lessons: LessonPlan[] = [
           'Choose one moment in the text where the tension increases (rising action). Explain how the writer builds tension at this point.',
         lines: 5,
         modelAnswer:
-          'Tension increases when [event]. The writer builds tension by [technique, e.g. using short sentences, withholding information, describing the character\'s fear]. This is effective because it makes the reader feel [emotion] and want to find out what happens next.',
+          "Tension increases when [event]. The writer builds tension by [technique, e.g. using short sentences, withholding information, describing the character's fear]. This is effective because it makes the reader feel [emotion] and want to find out what happens next.",
         marks: 3,
       },
       {
@@ -1216,7 +1196,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'Many Year 7 students conflate structure with language. Be explicit that structure refers to how the text is organised (beginning, middle, end; paragraph placement; shifts in time/perspective), not individual word choices.',
-      'The story mountain is a useful simplified model but has limitations — many modern texts do not follow a neat five-stage arc. Acknowledge this with stretch students.',
+      'The story mountain is a useful simplified model but has limitations - many modern texts do not follow a neat five-stage arc. Acknowledge this with stretch students.',
       'If the class has not finished reading the text, focus the timeline activity on the sections read so far and use prediction for the remaining stages.',
       'This lesson pairs well with a later creative writing unit where students apply structural techniques to their own narratives.',
     ],
@@ -1246,7 +1226,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     successCriteria: [
       'I can identify how the writer describes a setting and the atmosphere it creates',
       'I can explain how specific language choices contribute to atmosphere',
-      'I can connect the setting to the character\'s emotions or the theme',
+      "I can connect the setting to the character's emotions or the theme",
       'I can write my own descriptive paragraph about a setting using at least two techniques',
     ],
     keywords: [
@@ -1271,7 +1251,11 @@ export const y7Term1Lessons: LessonPlan[] = [
         stretch:
           'Students write a sentence for each image using a technique (simile, personification) to describe the atmosphere.',
       },
-      resources: ['Four contrasting setting photographs on slides', 'Mini-whiteboards', 'Atmosphere word bank'],
+      resources: [
+        'Four contrasting setting photographs on slides',
+        'Mini-whiteboards',
+        'Atmosphere word bank',
+      ],
     },
     mainActivities: [
       {
@@ -1284,7 +1268,7 @@ export const y7Term1Lessons: LessonPlan[] = [
             'Pre-highlight three key phrases in the extract and provide a partially completed table with the techniques already identified.',
           core: 'Students annotate independently and complete the full table with at least four examples.',
           stretch:
-            'Students consider whether the setting acts as a mirror for the character\'s emotions (pathetic fallacy) and explain the connection in a written sentence.',
+            "Students consider whether the setting acts as a mirror for the character's emotions (pathetic fallacy) and explain the connection in a written sentence.",
         },
         resources: [
           'Two extracts from the text (setting descriptions)',
@@ -1296,13 +1280,13 @@ export const y7Term1Lessons: LessonPlan[] = [
         title: 'Creative Writing: Describe a Setting',
         duration: '20 minutes',
         instructions:
-          'Students write their own descriptive paragraph about a setting, choosing from three options: the character\'s home, a place that feels unsafe, or a place that feels like freedom. Before writing, teacher models planning a descriptive paragraph, choosing three senses to include and one technique (simile, metaphor, or personification). Students plan for 5 minutes, then write for 12 minutes. In the final 3 minutes, students underline the techniques they have used and label them in the margin.',
+          "Students write their own descriptive paragraph about a setting, choosing from three options: the character's home, a place that feels unsafe, or a place that feels like freedom. Before writing, teacher models planning a descriptive paragraph, choosing three senses to include and one technique (simile, metaphor, or personification). Students plan for 5 minutes, then write for 12 minutes. In the final 3 minutes, students underline the techniques they have used and label them in the margin.",
         differentiation: {
           support:
             'Provide a descriptive writing frame with prompts: "I could see...", "I could hear...", "It felt like...", with a sentence starter using a simile.',
           core: 'Students write a paragraph using at least two techniques and three senses.',
           stretch:
-            'Students write a paragraph where the setting reflects the character\'s emotional state (pathetic fallacy) and explain this connection in a short note at the end.',
+            "Students write a paragraph where the setting reflects the character's emotional state (pathetic fallacy) and explain this connection in a short note at the end.",
         },
         resources: [
           'Setting options displayed on board',
@@ -1316,7 +1300,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       title: 'Read and React',
       duration: '7 minutes',
       instructions:
-        'Three volunteers read their descriptive paragraphs aloud. After each reading, the class identifies: one technique used effectively, the atmosphere created, and one word or phrase that stood out. Teacher summarises the key learning: setting is never just a backdrop — it reflects character, creates atmosphere, and conveys theme.',
+        'Three volunteers read their descriptive paragraphs aloud. After each reading, the class identifies: one technique used effectively, the atmosphere created, and one word or phrase that stood out. Teacher summarises the key learning: setting is never just a backdrop - it reflects character, creates atmosphere, and conveys theme.',
       differentiation: {
         support: 'Students can identify the atmosphere using one adjective.',
         core: 'Students identify a technique and the atmosphere it creates.',
@@ -1328,19 +1312,17 @@ export const y7Term1Lessons: LessonPlan[] = [
       'Rewrite or extend your descriptive paragraph, adding at least one more technique and one more sensory detail. Aim for 100-150 words.',
     worksheetQuestions: [
       {
-        question:
-          'What is "atmosphere" in a text? How is it different from "setting"?',
+        question: 'What is "atmosphere" in a text? How is it different from "setting"?',
         lines: 3,
         modelAnswer:
           'Setting is the physical location where a scene takes place. Atmosphere is the mood or feeling created by the way the setting is described. The same setting can have different atmospheres depending on the language used.',
         marks: 2,
       },
       {
-        question:
-          'What is "pathetic fallacy"? Give an example of how a writer might use it.',
+        question: 'What is "pathetic fallacy"? Give an example of how a writer might use it.',
         lines: 3,
         modelAnswer:
-          'Pathetic fallacy is when the weather or environment reflects a character\'s emotions. For example, a storm might be described during an argument to mirror the character\'s anger, or sunshine might accompany a moment of happiness.',
+          "Pathetic fallacy is when the weather or environment reflects a character's emotions. For example, a storm might be described during an argument to mirror the character's anger, or sunshine might accompany a moment of happiness.",
         marks: 2,
       },
       {
@@ -1353,7 +1335,7 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
       {
         question:
-          'How does the setting in this extract reflect the character\'s feelings? Use evidence from the text to support your answer.',
+          "How does the setting in this extract reflect the character's feelings? Use evidence from the text to support your answer.",
         lines: 6,
         modelAnswer:
           'The setting reflects [character]\'s feelings of [emotion] because the description uses [techniques]. For example, "[quotation]" suggests [meaning], which mirrors the character\'s [emotional state]. This shows how the writer uses the setting not just as a backdrop but as a way of showing the reader how the character feels inside.',
@@ -1369,13 +1351,13 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson blends reading analysis with creative writing. Adjust the time split based on your class — some groups may benefit from more time on analysis, others from more time on their own writing.',
-      'Pathetic fallacy is a useful but often misunderstood term. Keep the definition simple: the weather or setting reflects the character\'s emotions.',
+      'This lesson blends reading analysis with creative writing. Adjust the time split based on your class - some groups may benefit from more time on analysis, others from more time on their own writing.',
+      "Pathetic fallacy is a useful but often misunderstood term. Keep the definition simple: the weather or setting reflects the character's emotions.",
       'The creative writing element provides an opportunity for students who are stronger at creative work to shine. Celebrate good descriptive writing alongside strong analytical work.',
-      'Consider using extracts from both texts to compare how settings are described differently across cultures — this ties back to the identity and belonging theme from Lesson 7.',
+      'Consider using extracts from both texts to compare how settings are described differently across cultures - this ties back to the identity and belonging theme from Lesson 7.',
     ],
     targetedSkills: [
-      '7R.5 - Writer\'s Effect on Setting',
+      "7R.5 - Writer's Effect on Setting",
       '7W.5 - Descriptive Writing',
       'Atmosphere Analysis',
       'Sensory Language',
@@ -1400,7 +1382,7 @@ export const y7Term1Lessons: LessonPlan[] = [
     successCriteria: [
       'I can write at least two PEE paragraphs that answer the assessment question',
       'I can select relevant quotations and analyse specific word choices',
-      'I can explain the effect of the writer\'s choices on the reader',
+      "I can explain the effect of the writer's choices on the reader",
       'I can link my analysis to the wider themes of the text (identity, belonging)',
     ],
     keywords: [
@@ -1475,7 +1457,7 @@ export const y7Term1Lessons: LessonPlan[] = [
           'How does the writer present [character] in the extract? You should write about:\n- the language the writer uses\n- how the writer structures the text\n- the themes explored\n\nSupport your ideas with quotations from the extract.',
         lines: 30,
         modelAnswer:
-          'A strong response (Grade 5+) would include: an introduction that addresses the question directly; two or three developed PEE/PEEL paragraphs, each with a clear point, an embedded quotation, and detailed analysis of specific word choices; reference to at least one language technique with correct terminology; a comment on structure (e.g. how the character is introduced, how they change); a link to the theme of identity or belonging; and a concluding sentence that summarises the writer\'s overall intention.',
+          "A strong response (Grade 5+) would include: an introduction that addresses the question directly; two or three developed PEE/PEEL paragraphs, each with a clear point, an embedded quotation, and detailed analysis of specific word choices; reference to at least one language technique with correct terminology; a comment on structure (e.g. how the character is introduced, how they change); a link to the theme of identity or belonging; and a concluding sentence that summarises the writer's overall intention.",
         marks: 20,
       },
       {
@@ -1512,9 +1494,9 @@ export const y7Term1Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This is a summative assessment and should be marked against your department\'s KS3 assessment criteria. Use the data to inform groupings and interventions for the next half-term.',
-      'Allow the full 40 minutes for writing — Year 7 students need time to think, plan, and re-read. Resist shortening this.',
-      'The self-assessment reflection is valuable formative data. Compare students\' self-assessment with your own marking to identify students with poor metacognitive awareness.',
+      "This is a summative assessment and should be marked against your department's KS3 assessment criteria. Use the data to inform groupings and interventions for the next half-term.",
+      'Allow the full 40 minutes for writing - Year 7 students need time to think, plan, and re-read. Resist shortening this.',
+      "The self-assessment reflection is valuable formative data. Compare students' self-assessment with your own marking to identify students with poor metacognitive awareness.",
       'Plan a follow-up DIRT (Dedicated Improvement and Reflection Time) lesson where students respond to your feedback and improve one paragraph from their assessment.',
       'Keep exemplar responses (with student permission) to use as models for future cohorts.',
     ],
@@ -1522,10 +1504,10 @@ export const y7Term1Lessons: LessonPlan[] = [
       '7R.2 - Evidence Selection',
       '7R.3 - Language & Structure Analysis',
       '7R.4 - Independent Response',
-      '7R.5 - Writer\'s Effect',
+      "7R.5 - Writer's Effect",
       '7W.2 - Paragraph Structure',
       '7W.3 - Guided to Independent Writing',
       '7W.4 - Independent Writing',
     ],
   },
-];
+]

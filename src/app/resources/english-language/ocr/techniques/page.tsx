@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/resources/english-language/ocr/techniques',
   },
   openGraph: {
-    title: 'OCR GCSE English Language techniques — The English Hub',
+    title: 'OCR GCSE English Language techniques - The English Hub',
     description:
       'Language and structural techniques for OCR GCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/ocr/techniques',
@@ -42,7 +42,7 @@ const languageTechniques = [
     name: 'Extended metaphor',
     definition: 'A metaphor that is developed over several lines or throughout a passage.',
     example:
-      '"Life is a journey — sometimes the road is smooth, other times we stumble over rocks, and occasionally we lose the map entirely."',
+      '"Life is a journey - sometimes the road is smooth, other times we stumble over rocks, and occasionally we lose the map entirely."',
     effect:
       "Builds a sustained comparison that deepens the reader's understanding. Creates cohesion and can structure an entire paragraph or text.",
   },
@@ -226,7 +226,7 @@ const structuralTechniques = [
   {
     name: 'Shift in focus',
     definition:
-      "A change in the narrative's attention — from one character, setting, time, or perspective to another.",
+      "A change in the narrative's attention - from one character, setting, time, or perspective to another.",
     example:
       "Moving from a wide establishing shot of a city to a close focus on a single person's face.",
     effect:

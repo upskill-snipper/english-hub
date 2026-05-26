@@ -1,5 +1,5 @@
 /**
- * AI preference helpers — Children's Code compliance (GAP-12B).
+ * AI preference helpers - Children's Code compliance (GAP-12B).
  *
  * Client-side: stores a boolean flag in localStorage for immediate UI gating.
  * Server-side: checks the `aiOptOut` field on `PrivacySettings` in the
@@ -32,7 +32,7 @@ export function setAiOptedOut(optedOut: boolean): void {
 
 /**
  * Check the database for whether a user has opted out of AI features.
- * This is the authoritative check — API routes must use this rather than
+ * This is the authoritative check - API routes must use this rather than
  * relying on the client-side localStorage flag.
  *
  * Import only in server code (API routes, server components).

@@ -82,7 +82,7 @@ export async function DELETE(request: NextRequest) {
     })
 
     if (!prismaUser) {
-      // No Prisma row — nothing app-side to soft-delete. Still sign the
+      // No Prisma row - nothing app-side to soft-delete. Still sign the
       // user out so the session is invalidated and surface success: the
       // user's request to be erased is honoured.
       await supabase.auth.signOut().catch(() => {})
@@ -134,7 +134,7 @@ export async function DELETE(request: NextRequest) {
 
     // 6. Best-effort confirmation email via Resend. We have a helper at
     //    src/lib/email/resend.ts so use it directly. The helper is safe
-    //    when RESEND_API_KEY is missing — it just logs and returns.
+    //    when RESEND_API_KEY is missing - it just logs and returns.
     const recipient = prismaUser.email || sessionUser.email
     if (recipient) {
       const purgeDateLabel = scheduledPurgeAt.toLocaleDateString('en-GB', {
@@ -153,12 +153,12 @@ export async function DELETE(request: NextRequest) {
             <h1 style="font-size: 20px; margin: 0 0 12px;">Hi ${firstNameSafe},</h1>
             <p style="line-height: 1.6; font-size: 15px;">
               Your English Hub account has been scheduled for deletion.
-              All personal data — your profile, scores, and history — will be
+              All personal data - your profile, scores, and history - will be
               permanently removed on <strong>${purgeDateSafe}</strong>.
             </p>
             <p style="line-height: 1.6; font-size: 15px;">
               Aggregate analytics will be anonymised and retained for service
-              improvement only — they cannot be linked back to you.
+              improvement only - they cannot be linked back to you.
             </p>
             <p style="line-height: 1.6; font-size: 15px;">
               <strong>Changed your mind?</strong> Sign in any time before
@@ -180,7 +180,7 @@ export async function DELETE(request: NextRequest) {
           `removed on ${purgeDateLabel}.`,
           ``,
           `Aggregate analytics will be anonymised and retained for service`,
-          `improvement only — they cannot be linked back to you.`,
+          `improvement only - they cannot be linked back to you.`,
           ``,
           `Changed your mind? Sign in before ${purgeDateLabel} and contact`,
           `dpo@theenglishhub.app to restore your account.`,

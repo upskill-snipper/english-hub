@@ -35,7 +35,7 @@ interface UseExamTimerReturn {
 
 export function useExamTimer(
   totalTimeMinutes: number,
-  { onTimeUp, onWarning, onTabSwitch }: UseExamTimerOptions = {}
+  { onTimeUp, onWarning, onTabSwitch }: UseExamTimerOptions = {},
 ): UseExamTimerReturn {
   const {
     timeRemainingSeconds,
@@ -51,7 +51,7 @@ export function useExamTimer(
   /** The timeRemainingSeconds value captured when the interval started */
   const baseRemainingRef = useRef<number>(0)
 
-  // Wall-clock based tick — immune to setInterval drift and tab throttling
+  // Wall-clock based tick - immune to setInterval drift and tab throttling
   useEffect(() => {
     if (isPaused || timeRemainingSeconds <= 0) return
 
@@ -124,9 +124,8 @@ export function useExamTimer(
   const formattedTime = formatTimerDisplay(timeRemainingSeconds)
 
   const totalSeconds = totalTimeMinutes * 60
-  const percentRemaining = totalSeconds > 0
-    ? Math.max(0, Math.min(100, (timeRemainingSeconds / totalSeconds) * 100))
-    : 0
+  const percentRemaining =
+    totalSeconds > 0 ? Math.max(0, Math.min(100, (timeRemainingSeconds / totalSeconds) * 100)) : 0
 
   return {
     timeRemaining: timeRemainingSeconds,

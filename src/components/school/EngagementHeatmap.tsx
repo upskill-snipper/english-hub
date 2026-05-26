@@ -3,31 +3,26 @@
 import { useMemo, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { Card, CardContent } from '@/components/ui/card'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import type { DailyActivity } from '@/lib/engagement-metrics'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
 interface EngagementHeatmapProps {
   studentName: string
-  data: DailyActivity[]          // 12 weeks of daily activity
-  metric?: 'time' | 'modules'   // which metric drives colour intensity
+  data: DailyActivity[] // 12 weeks of daily activity
+  metric?: 'time' | 'modules' // which metric drives colour intensity
   className?: string
 }
 
 /* ── Colour Scale ──────────────────────────────────────────────────────────── */
 
 const INTENSITY_CLASSES = [
-  'bg-muted',                         // 0 — no activity
-  'bg-emerald-200 dark:bg-emerald-900',  // 1
-  'bg-emerald-400 dark:bg-emerald-700',  // 2
-  'bg-emerald-500 dark:bg-emerald-500',  // 3
-  'bg-emerald-700 dark:bg-emerald-400',  // 4 — highest
+  'bg-muted', // 0 - no activity
+  'bg-emerald-200 dark:bg-emerald-900', // 1
+  'bg-emerald-400 dark:bg-emerald-700', // 2
+  'bg-emerald-500 dark:bg-emerald-500', // 3
+  'bg-emerald-700 dark:bg-emerald-400', // 4 - highest
 ] as const
 
 function getIntensityLevel(value: number, maxValue: number): number {
@@ -97,9 +92,7 @@ export function EngagementHeatmap({
         const dt = new Date(day.date)
         return dt.getDate() <= 7
       })
-      return hasFirst
-        ? d.toLocaleDateString('en-GB', { month: 'short' })
-        : ''
+      return hasFirst ? d.toLocaleDateString('en-GB', { month: 'short' }) : ''
     })
 
     return { grid: weeks, weekLabels: labels, maxValue: max }
@@ -116,10 +109,7 @@ export function EngagementHeatmap({
           <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
             <span>Less</span>
             {INTENSITY_CLASSES.map((cls, i) => (
-              <div
-                key={i}
-                className={cn('h-2.5 w-2.5 rounded-[2px]', cls)}
-              />
+              <div key={i} className={cn('h-2.5 w-2.5 rounded-[2px]', cls)} />
             ))}
             <span>More</span>
           </div>
@@ -168,10 +158,7 @@ export function EngagementHeatmap({
                             onMouseLeave={() => setHoveredCell(null)}
                           />
                         </TooltipTrigger>
-                        <TooltipContent
-                          side="top"
-                          className="text-xs"
-                        >
+                        <TooltipContent side="top" className="text-xs">
                           <p className="font-medium">{formatDate(day.date)}</p>
                           <p className="text-muted-foreground">
                             Time spent: {formatTime(day.timeSpentSeconds)}

@@ -113,7 +113,7 @@ describe('getQuestionsForBoard', () => {
         expect(q.boards).toContain('cambridge-0500')
       }
       // When no topics are specified, getQuestionsForBoard only filters by
-      // board matching — untagged questions from any topic pass through.
+      // board matching - untagged questions from any topic pass through.
       // Topic restriction is the caller's responsibility (e.g. via
       // getTopicsForBoard).
     }
@@ -186,7 +186,7 @@ describe('pickQuestions', () => {
 // expected to shuffle options deterministically so that, across a full bank
 // run, the correct answer lands in roughly even proportion at A / B / C / D.
 //
-// We deliberately do not require a perfect 25/25/25/25 split — the shuffle
+// We deliberately do not require a perfect 25/25/25/25 split - the shuffle
 // is seeded by question id, so the distribution depends on the bank. We
 // assert that every position holds at least 12% of correct answers (well
 // below 25% but well above the pre-fix ~0% for A and D).
@@ -239,7 +239,7 @@ describe('Option shuffling balances correct-answer position', () => {
       }
     }
     // Expected uniform share is 25%. We allow a generous tolerance band
-    // (12% – 38%) to keep the test stable while still catching a broken
+    // (12% - 38%) to keep the test stable while still catching a broken
     // shuffle (e.g. always-B would put position 1 well above 38%).
     for (let i = 0; i < 4; i++) {
       const share = counts[i] / total

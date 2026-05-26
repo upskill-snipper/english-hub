@@ -144,7 +144,7 @@ const CHARACTERS: CharacterStudy[] = [
           "Though spoken by Macbeth, this reveals Banquo's continued power. The ghost's silent accusation is more devastating than any words, and Macbeth's denial (\"I did it\") is a confession disguised as a protest.",
       },
     ],
-    arc: "Banquo's arc is deliberately limited by his murder in Act 3, but his ghost's appearances extend his influence beyond death. Alive, he represents the moral path Macbeth rejected; dead, he becomes the guilt that Macbeth cannot escape. The Stuart claim of descent from his son Fleance — a genealogy Shakespeare's audience accepted as fact, though historians now treat Banquo as legendary — gives him a symbolic victory over Macbeth's childless tyranny.",
+    arc: "Banquo's arc is deliberately limited by his murder in Act 3, but his ghost's appearances extend his influence beyond death. Alive, he represents the moral path Macbeth rejected; dead, he becomes the guilt that Macbeth cannot escape. The Stuart claim of descent from his son Fleance - a genealogy Shakespeare's audience accepted as fact, though historians now treat Banquo as legendary - gives him a symbolic victory over Macbeth's childless tyranny.",
     themeLinks: ['Loyalty & Betrayal', 'Supernatural & Fate', 'Ambition'],
     examTip:
       "Banquo is most effective as a comparison character. In any essay about Macbeth's choices, use Banquo to prove that the witches did not force Macbeth to act -- Banquo heard the same prophecy and chose differently. This supports the argument that Macbeth bears personal responsibility for his actions.",
@@ -445,7 +445,7 @@ export default function MacbethCharactersPage() {
               <Badge variant="outline">11 characters</Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth — Character Analysis
+              Macbeth - Character Analysis
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Full character studies for every significant figure in Macbeth, with key quotes,

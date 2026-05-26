@@ -19,7 +19,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE Literature Exam Technique — The English Hub',
+    title: 'Edexcel IGCSE Literature Exam Technique - The English Hub',
     description:
       'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
   },
@@ -35,7 +35,7 @@ const questionTypes = [
   {
     icon: Layers,
     title: 'Comparison questions',
-    subtitle: 'Paper 1, Section B — Anthology poetry',
+    subtitle: 'Paper 1, Section B - Anthology poetry',
     description:
       'You are given one named anthology poem and asked to compare how another poem of your choice from the anthology presents a particular idea, theme or feeling.',
     technique: [
@@ -50,15 +50,15 @@ const questionTypes = [
   {
     icon: ScanText,
     title: 'Extract-based questions',
-    subtitle: 'Paper 2, Section A — Modern Drama',
+    subtitle: 'Paper 2, Section A - Modern Drama',
     description:
       'You are given a short extract from the studied drama text and asked to analyse how the writer presents a character, theme or dramatic moment in the extract and wider play.',
     technique: [
       'Spend 5 minutes annotating the extract before writing.',
       'Anchor every paragraph in a specific quotation or stage direction from the extract.',
-      'Zoom out regularly — show how the moment connects to the whole play.',
+      'Zoom out regularly - show how the moment connects to the whole play.',
       'Track dramatic methods: stage directions, dialogue, silence, lighting.',
-      'Balance extract and wider play — roughly 60% extract, 40% elsewhere.',
+      'Balance extract and wider play - roughly 60% extract, 40% elsewhere.',
     ],
     ao: ['Understanding the text', 'Analysing language and structure'],
   },
@@ -69,11 +69,11 @@ const questionTypes = [
     description:
       'Closed-book essays on modern prose and Shakespeare. You must recall quotations from memory and structure a sustained argument in response to a thematic prompt.',
     technique: [
-      'Memorise 20–30 short, flexible quotations per text — prioritise range over length.',
+      'Memorise 20-30 short, flexible quotations per text - prioritise range over length.',
       'Open with a clear, argumentative thesis. Avoid plot summary.',
       'Use a five-paragraph PEEAL (Point, Evidence, Explain, Analyse, Link) structure.',
       'Weave context into analysis, not a separate paragraph.',
-      'Keep an eye on the time — aim to finish with 3–5 minutes to review.',
+      'Keep an eye on the time - aim to finish with 3-5 minutes to review.',
     ],
     ao: ['Understanding the text', 'Analysing language and structure', 'Relating to context'],
   },
@@ -84,10 +84,10 @@ const questionTypes = [
     description:
       'You are given a previously unseen poem and asked to explore how the poet uses language, structure and form to create meaning.',
     technique: [
-      'Read the poem twice before annotating — first for sense, then for method.',
+      'Read the poem twice before annotating - first for sense, then for method.',
       'Identify the core feeling or argument, then track how it develops.',
       'Comment on form (sonnet, free verse, dramatic monologue) where relevant.',
-      'Use subject terminology precisely — enjambment, caesura, sibilance.',
+      'Use subject terminology precisely - enjambment, caesura, sibilance.',
       'Write analytically, not descriptively: always link method to effect.',
     ],
     ao: ['Understanding the text', 'Analysing language and structure'],
@@ -130,7 +130,7 @@ const pitfalls = [
 const checklist = [
   'Thesis statement in the opening paragraph',
   'Every paragraph tracks back to the question wording',
-  'Short, embedded, well-chosen quotations (3–5 words)',
+  'Short, embedded, well-chosen quotations (3-5 words)',
   'Writer\u2019s methods named and effects explained (language and structure)',
   'Relevant context woven into analysis (where assessed)',
   'Comparison integrated paragraph by paragraph (anthology only)',
@@ -176,7 +176,7 @@ export default async function EdexcelExamTechniquePage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Specific strategies for the three question types that show up in Edexcel IGCSE English
-            Literature — comparison, extract-based and essay-style questions. Each approach is
+            Literature - comparison, extract-based and essay-style questions. Each approach is
             mapped to what examiners are actually rewarding.
           </p>
         </div>

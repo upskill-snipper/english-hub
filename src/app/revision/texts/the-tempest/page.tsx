@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Tempest revision guide — themes, characters, key quotes — The English Hub',
-    description: 'The Tempest GCSE revision — Shakespeare',
+    title: 'The Tempest revision guide - themes, characters, key quotes - The English Hub',
+    description: 'The Tempest GCSE revision - Shakespeare',
   },
-  title: 'The Tempest revision guide — themes, characters, key quotes',
+  title: 'The Tempest revision guide - themes, characters, key quotes',
   description:
-    "The Tempest GCSE revision — Shakespeare's late romance with plot, characters, themes, context and key quotes. Aligned to AQA and OCR English Literature.",
+    "The Tempest GCSE revision - Shakespeare's late romance with plot, characters, themes, context and key quotes. Aligned to AQA and OCR English Literature.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/the-tempest',
   },
@@ -258,7 +258,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ["Ariel, on Prospero's orders", 'Caliban', 'Sycorax', 'The gods'],
     correctIndex: 0,
     explanation:
-      "Prospero commands the storm through his art; Ariel carries it out. No one on board actually dies — the tempest is an illusion designed to bring Prospero's enemies within his reach.",
+      "Prospero commands the storm through his art; Ariel carries it out. No one on board actually dies - the tempest is an illusion designed to bring Prospero's enemies within his reach.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -426,7 +426,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'As a triumphant closing line',
-      "As an ironic moment — she is greeting men including Antonio and Sebastian, the play's villains",
+      "As an ironic moment - she is greeting men including Antonio and Sebastian, the play's villains",
       'As a prophecy of the future',
       'As a rebuke to Prospero',
     ],
@@ -496,7 +496,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Prospero's final couplet — \"As you from crimes would pardon'd be, / Let your indulgence set me free\" — makes the audience participants in the play's economy of forgiveness, a strikingly metatheatrical close.",
+      "Prospero's final couplet - \"As you from crimes would pardon'd be, / Let your indulgence set me free\" - makes the audience participants in the play's economy of forgiveness, a strikingly metatheatrical close.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -547,7 +547,7 @@ const REVISION_TOPICS = [
     summary:
       "The play moves through loss and suffering towards the choice of mercy over revenge, the moral climax of Shakespeare's late romances.",
     keyPoints: [
-      '"The rarer action is / In virtue than in vengeance" — Act 5 pivot',
+      '"The rarer action is / In virtue than in vengeance" - Act 5 pivot',
       "Ariel's pity shames Prospero into forgiveness",
       "Ferdinand and Miranda's marriage heals the rift between Milan and Naples",
       'Alonso repents; Caliban promises to "seek for grace"',
@@ -571,7 +571,7 @@ const REVISION_TOPICS = [
     summary:
       "Most of the action takes place inside Prospero's illusions, and Shakespeare constantly links the magic to his own theatrical art.",
     keyPoints: [
-      'The storm drowns no one — it is a moral instrument, not a disaster',
+      'The storm drowns no one - it is a moral instrument, not a disaster',
       'The vanishing banquet, the masque and the spirit-hounds all stage judgement',
       '"Our revels now are ended" equates masque, life and play',
       '"We are such stuff / As dreams are made on" meditates on mortality',
@@ -584,7 +584,7 @@ const REVISION_TOPICS = [
       "The play tests Prospero's claim that Caliban is irredeemably savage by nature against Caliban's own lyrical voice and final repentance.",
     keyPoints: [
       '"A devil, a born devil, on whose nature / Nurture can never stick" (Prospero)',
-      '"You taught me language..." — education turned against its giver',
+      '"You taught me language..." - education turned against its giver',
       'Caliban\'s "isle is full of noises" speech complicates the "savage" label',
       "Miranda's isolated but compassionate upbringing is a counter-case",
       'Caliban\'s closing promise to "seek for grace" leaves the question open',
@@ -622,7 +622,7 @@ export default async function TheTempestPage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="The Tempest — Study Guide"
+        name="The Tempest - Study Guide"
         description="In-depth study guide for The Tempest by William Shakespeare covering plot, characters, themes, key quotations and historical context for GCSE and A-Level English Literature."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -630,7 +630,7 @@ export default async function TheTempestPage() {
         url="https://theenglishhub.app/revision/texts/the-tempest"
       />
       <CourseJsonLd
-        name="The Tempest — Study Guide"
+        name="The Tempest - Study Guide"
         description="In-depth study guide for The Tempest by William Shakespeare covering plot, characters, themes, key quotations and historical context for GCSE and A-Level English Literature."
       />
       <BreadcrumbJsonLd
@@ -723,7 +723,7 @@ export default async function TheTempestPage() {
       />
 
       <div className="mx-auto my-4 max-w-5xl rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-700 dark:text-amber-200">
-        <strong className="font-semibold">Draft — awaiting English-teacher review.</strong> This
+        <strong className="font-semibold">Draft - awaiting English-teacher review.</strong> This
         study guide for The Tempest has been auto-drafted and has not yet been checked by a subject
         specialist. Plot details, character descriptions and quotations should be verified against a
         trusted edition before exam use.

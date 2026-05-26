@@ -11,11 +11,11 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Comparing non-fiction texts — iLowerSecondary English',
+    title: 'Comparing non-fiction texts - iLowerSecondary English',
     description:
       'Masterclass on the levelled comparison question: linking ideas and viewpoints across two texts, comparative connectives, the feature-tick table, and graded model answers for every level.',
   },
-  title: 'Comparing non-fiction texts — iLowerSecondary English',
+  title: 'Comparing non-fiction texts - iLowerSecondary English',
   description:
     'Masterclass on the levelled comparison question: linking ideas and viewpoints across two texts, comparative connectives, the feature-tick table, and graded model answers for every level.',
   alternates: {
@@ -29,7 +29,7 @@ const RAO4 = ASSESSMENT_OBJECTIVES.RAO4
 const RAO5 = ASSESSMENT_OBJECTIVES.RAO5
 const COMPARE_Q = QUESTION_TYPES.find((q) => q.id === 'comparison-6-mark')!
 const TICK_Q = QUESTION_TYPES.find((q) => q.id === 'feature-tick-table')!
-const TOP_MARKS = COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('–')[1]
+const TOP_MARKS = COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('-')[1]
 
 const CONNECTIVES = [
   {
@@ -94,7 +94,7 @@ export default function ComparisonPage() {
 
       <h1>Comparing non-fiction texts</h1>
       <p className="lead">
-        Reading skill {SKILL.code} — {SKILL.title}. This is the one question on the paper that asks
+        Reading skill {SKILL.code} - {SKILL.title}. This is the one question on the paper that asks
         you to read <em>two</em> texts together and explain how they relate. Get the technique right
         and it is the biggest single block of reading marks you can win.
       </p>
@@ -109,7 +109,7 @@ export default function ComparisonPage() {
           ))}
         </ul>
         <p>
-          The big comparison question — “{COMPARE_Q.name}” — is worth {COMPARE_Q.typicalMarks} marks
+          The big comparison question - “{COMPARE_Q.name}” - is worth {COMPARE_Q.typicalMarks} marks
           and is the only item on the paper marked against three reading objectives at once:
         </p>
         <div className="not-prose my-5 grid gap-3 sm:grid-cols-3">
@@ -125,41 +125,41 @@ export default function ComparisonPage() {
         <p className="text-sm text-muted-foreground">
           In plain English: read beyond the literal ({RAO2.code}), look closely at the writers&apos;
           word choices ({RAO4.code}), and explain what each writer is trying to do to the reader (
-          {RAO5.code}) — and do all of this <em>across</em> the two texts, not one then the other.
+          {RAO5.code}) - and do all of this <em>across</em> the two texts, not one then the other.
         </p>
       </section>
 
       {/* ── Linking ideas and viewpoints ─────────────────────────── */}
       <section className="my-10">
-        <h2>Step 1 — link the key ideas and viewpoints</h2>
+        <h2>Step 1 - link the key ideas and viewpoints</h2>
         <p>
           Before you write a word, find the <strong>point of contact</strong> between the two texts.
           They will be on the same theme, but they almost always have different purposes or
-          viewpoints — one might inform calmly while the other argues passionately, or one might be
+          viewpoints - one might inform calmly while the other argues passionately, or one might be
           enthusiastic while the other is critical. Ask:
         </p>
         <ul>
           <li>What is each writer&apos;s main idea or claim about the theme?</li>
           <li>
-            What is each writer&apos;s viewpoint — are they for it, against it, neutral, excited,
+            What is each writer&apos;s viewpoint - are they for it, against it, neutral, excited,
             worried?
           </li>
           <li>
-            What is each writer&apos;s purpose — to inform, explain, persuade, argue, describe?
+            What is each writer&apos;s purpose - to inform, explain, persuade, argue, describe?
           </li>
           <li>
             Where do the texts <em>agree</em>, and where do they <em>pull apart</em>?
           </li>
         </ul>
         <p>
-          A strong answer is built around the differences and similarities you find here — not a
+          A strong answer is built around the differences and similarities you find here - not a
           feature spotted in Text 1 and an unrelated feature spotted in Text 2.
         </p>
       </section>
 
       {/* ── Comparative connectives ──────────────────────────────── */}
       <section className="my-10">
-        <h2>Step 2 — join the texts with comparative connectives</h2>
+        <h2>Step 2 - join the texts with comparative connectives</h2>
         <p>
           The difference between a Level 1 and a Level 3 answer is often a single word. An{' '}
           <em>implicit</em> comment puts the two texts near each other and hopes the examiner sees
@@ -185,7 +185,7 @@ export default function ComparisonPage() {
           <em>
             “The first writer … <strong>whereas</strong> the second writer …, which suggests …”
           </em>{' '}
-          — claim, connective, contrast, then the effect on the reader.
+          - claim, connective, contrast, then the effect on the reader.
         </p>
       </section>
 
@@ -232,7 +232,7 @@ export default function ComparisonPage() {
         <p className="mt-4 text-sm text-muted-foreground">
           Notice the ladder: Level 1 touches one or two of the three strands <em>implicitly</em>;
           Level 2 makes the contrast <em>explicit</em> and focuses on two strands; Level 3 explains
-          the contrast <em>clearly</em> across all three — inference, language at word level, and
+          the contrast <em>clearly</em> across all three - inference, language at word level, and
           purpose and effect on the reader.
         </p>
       </section>
@@ -241,7 +241,7 @@ export default function ComparisonPage() {
       <section className="my-10">
         <h2>The other comparison item: the feature-tick table</h2>
         <p>
-          Alongside the extended question there is a quicker closed comparison item — “{TICK_Q.name}
+          Alongside the extended question there is a quicker closed comparison item - “{TICK_Q.name}
           ”, worth {TICK_Q.typicalMarks} marks. You are given a list of language or punctuation
           features and you tick whether each appears in Text 1, Text 2, or both.{' '}
           {TICK_Q.howToAnswer}
@@ -269,8 +269,8 @@ export default function ComparisonPage() {
               {FEATURE_ROWS.map((r) => (
                 <tr key={r.feature} className="border-b border-border/40 align-top">
                   <td className="p-3 text-muted-foreground">{r.feature}</td>
-                  <td className="p-3 text-center text-foreground">{r.text1 ? '✓' : '—'}</td>
-                  <td className="p-3 text-center text-foreground">{r.text2 ? '✓' : '—'}</td>
+                  <td className="p-3 text-center text-foreground">{r.text1 ? '✓' : '-'}</td>
+                  <td className="p-3 text-center text-foreground">{r.text2 ? '✓' : '-'}</td>
                 </tr>
               ))}
             </tbody>
@@ -278,7 +278,7 @@ export default function ComparisonPage() {
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
           Scan each text once per row. Marks are usually awarded for most rows correct, so do not
-          leave any blank — an even guess on a row you are unsure of risks nothing.
+          leave any blank - an even guess on a row you are unsure of risks nothing.
         </p>
       </section>
 
@@ -287,15 +287,15 @@ export default function ComparisonPage() {
         <h2>Worked example: a pair of extracts</h2>
         <p>
           The two short non-fiction extracts below are completely original works written by The
-          English Hub for this masterclass. They are on the same theme —{' '}
-          <strong>keeping a city river clean</strong> — but they have deliberately contrasting
+          English Hub for this masterclass. They are on the same theme -{' '}
+          <strong>keeping a city river clean</strong> - but they have deliberately contrasting
           purposes and viewpoints.
         </p>
 
         <div className="not-prose my-5 grid gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-1">
-              Text 1 — Council information leaflet
+              Text 1 - Council information leaflet
             </p>
             <p className="text-xs text-muted-foreground mb-3">
               Purpose: to inform. Viewpoint: neutral and factual.
@@ -317,7 +317,7 @@ export default function ComparisonPage() {
 
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-1">
-              Text 2 — Campaigner&apos;s blog post
+              Text 2 - Campaigner&apos;s blog post
             </p>
             <p className="text-xs text-muted-foreground mb-3">
               Purpose: to argue and persuade. Viewpoint: angry and urgent.
@@ -326,7 +326,7 @@ export default function ComparisonPage() {
               <p>
                 Have you actually walked along the Calden lately? I have. Last Saturday I counted
                 seven bottles, a tyre and a supermarket trolley in a single bend of the river. This
-                is not somebody else&apos;s problem — it is ours, and it is getting worse every
+                is not somebody else&apos;s problem - it is ours, and it is getting worse every
                 single month.
               </p>
               <p>
@@ -355,13 +355,13 @@ export default function ComparisonPage() {
         <h2>The same answer at every level</h2>
         <p>
           Read these three responses to the question above. They climb the official grid one rung at
-          a time — watch what changes.
+          a time - watch what changes.
         </p>
 
         <div className="not-prose my-5 space-y-4">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-              {COMPARISON_LEVELS[0].level} ({COMPARISON_LEVELS[0].marks} marks) — a simple comment,
+              {COMPARISON_LEVELS[0].level} ({COMPARISON_LEVELS[0].marks} marks) - a simple comment,
               implicit contrast
             </p>
             <p className="text-sm text-foreground italic mb-3">
@@ -369,7 +369,7 @@ export default function ComparisonPage() {
               anger to the river. They are both about the river but they end in different ways.”
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The contrast is only <em>implicit</em> — the writer places the two endings side by
+              The contrast is only <em>implicit</em> - the writer places the two endings side by
               side and says they are “different” without explaining how or why. It touches one
               strand (a vague sense of purpose) but offers no comment on word choice and no effect
               on the reader. Best-fit: Level 1.
@@ -378,7 +378,7 @@ export default function ComparisonPage() {
 
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-              {COMPARISON_LEVELS[1].level} ({COMPARISON_LEVELS[1].marks} marks) — explicit
+              {COMPARISON_LEVELS[1].level} ({COMPARISON_LEVELS[1].marks} marks) - explicit
               explanation of the contrast
             </p>
             <p className="text-sm text-foreground italic mb-3">
@@ -389,7 +389,7 @@ export default function ComparisonPage() {
               give information.”
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Now the contrast is <em>explicit</em> — “in contrast” signals it directly. Two strands
+              Now the contrast is <em>explicit</em> - “in contrast” signals it directly. Two strands
               are covered: a word-level comment (“factual” vs the emotive “anger”) and each
               writer&apos;s purpose. What is still thin is the effect on the reader. Best-fit: Level
               2.
@@ -398,7 +398,7 @@ export default function ComparisonPage() {
 
           <div className="rounded-xl border border-primary/40 bg-primary/[0.04] p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-              {COMPARISON_LEVELS[2].level} ({COMPARISON_LEVELS[2].marks} marks) — clear, developed
+              {COMPARISON_LEVELS[2].level} ({COMPARISON_LEVELS[2].marks} marks) - clear, developed
               explanation of the contrast
             </p>
             <p className="text-sm text-foreground italic mb-3">
@@ -406,11 +406,11 @@ export default function ComparisonPage() {
               the precise number and the bureaucratic tone imply a writer whose purpose is purely to
               inform, leaving the reader feeling calmly reassured that a system is in place.{' '}
               <strong>Whereas</strong> the second writer ends on ‘the anger this beautiful,
-              neglected river deserves’ — the loaded noun ‘anger’ and the bitter contrast between
+              neglected river deserves’ - the loaded noun ‘anger’ and the bitter contrast between
               ‘beautiful’ and ‘neglected’ reveal a purpose to provoke and persuade, deliberately
               leaving the reader unsettled and pushed towards action. <strong>However</strong>,
               although their tones pull sharply apart, both writers ultimately want the reader to
-              care about the river — one through quiet trust, the other through stirred emotion.”
+              care about the river - one through quiet trust, the other through stirred emotion.”
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               This is a <em>clear, developed</em> explanation of the contrast. All three strands are

@@ -19,7 +19,7 @@ const PROLOGUE_LINES: { number: string; line: string; analysis: string }[] = [
     number: '1',
     line: 'Two households, both alike in dignity,',
     analysis:
-      'The opening line establishes social symmetry: the Montagues and Capulets are equals in status and reputation. "Alike in dignity" is loaded with quiet irony — they are also alike in pride, in violence and in the futility of their grudge. The iambic pentameter (di-DUM di-DUM di-DUM di-DUM di-DUM) gives the line the steady, processional weight of a public announcement, fitting for a Chorus addressing the audience directly.',
+      'The opening line establishes social symmetry: the Montagues and Capulets are equals in status and reputation. "Alike in dignity" is loaded with quiet irony - they are also alike in pride, in violence and in the futility of their grudge. The iambic pentameter (di-DUM di-DUM di-DUM di-DUM di-DUM) gives the line the steady, processional weight of a public announcement, fitting for a Chorus addressing the audience directly.',
   },
   {
     number: '2',
@@ -31,40 +31,40 @@ const PROLOGUE_LINES: { number: string; line: string; analysis: string }[] = [
     number: '3',
     line: 'From ancient grudge break to new mutiny,',
     analysis:
-      'The temporal contrast between "ancient" and "new" suggests a feud that constantly regenerates itself. "Break" carries the violence of a wound reopening or a storm bursting. The word "mutiny" is striking — it elevates a private quarrel into something that resembles civil insurrection, anticipating the Prince\'s political concern with public order.',
+      'The temporal contrast between "ancient" and "new" suggests a feud that constantly regenerates itself. "Break" carries the violence of a wound reopening or a storm bursting. The word "mutiny" is striking - it elevates a private quarrel into something that resembles civil insurrection, anticipating the Prince\'s political concern with public order.',
   },
   {
     number: '4',
     line: 'Where civil blood makes civil hands unclean.',
     analysis:
-      'The line\'s power comes from a tricolon built on the word "civil," which Shakespeare uses with brutal ambiguity. "Civil" first means citizens of the same city, then suggests civility (the very thing the feud destroys), and finally implies civil war — Veronese killing Veronese. The chiastic balance ("civil blood... civil hands") makes the violence feel mathematically inevitable. "Unclean" carries Biblical weight, hinting at moral and religious pollution that only sacrifice can wash away.',
+      'The line\'s power comes from a tricolon built on the word "civil," which Shakespeare uses with brutal ambiguity. "Civil" first means citizens of the same city, then suggests civility (the very thing the feud destroys), and finally implies civil war - Veronese killing Veronese. The chiastic balance ("civil blood... civil hands") makes the violence feel mathematically inevitable. "Unclean" carries Biblical weight, hinting at moral and religious pollution that only sacrifice can wash away.',
   },
   {
-    number: '5–6',
+    number: '5-6',
     line: "From forth the fatal loins of these two foes / A pair of star-cross'd lovers take their life;",
     analysis:
-      'Here Shakespeare delivers the play\'s most famous spoiler. "Fatal loins" fuses birth and death in two words: the lovers are condemned by their parentage. "Star-cross\'d" introduces fate — the stars themselves are working against them — while preparing the audience for Romeo\'s later cry "Then I defy you, stars!" The phrase "take their life" is deliberately ambiguous: it means both "are born" and "kill themselves." The whole tragedy is folded into one line.',
+      'Here Shakespeare delivers the play\'s most famous spoiler. "Fatal loins" fuses birth and death in two words: the lovers are condemned by their parentage. "Star-cross\'d" introduces fate - the stars themselves are working against them - while preparing the audience for Romeo\'s later cry "Then I defy you, stars!" The phrase "take their life" is deliberately ambiguous: it means both "are born" and "kill themselves." The whole tragedy is folded into one line.',
   },
   {
-    number: '7–8',
+    number: '7-8',
     line: "Whose misadventur'd piteous overthrows / Doth with their death bury their parents' strife.",
     analysis:
-      '"Misadventur\'d" softens fate slightly — it suggests bad luck rather than cosmic decree, opening the door to the play\'s sustained tension between fate and human responsibility. "Bury their parents\' strife" makes the lovers\' deaths function as sacrificial: only their corpses, laid in the tomb, can end the feud. The verb "bury" puns chillingly on the literal burials to come.',
+      '"Misadventur\'d" softens fate slightly - it suggests bad luck rather than cosmic decree, opening the door to the play\'s sustained tension between fate and human responsibility. "Bury their parents\' strife" makes the lovers\' deaths function as sacrificial: only their corpses, laid in the tomb, can end the feud. The verb "bury" puns chillingly on the literal burials to come.',
   },
   {
-    number: '9–10',
+    number: '9-10',
     line: "The fearful passage of their death-mark'd love, / And the continuance of their parents' rage,",
     analysis:
-      '"Death-mark\'d love" is one of the most arresting compound images in Shakespeare. The hyphen welds love and death into a single concept — they cannot be separated. "Mark\'d" suggests both branded (like cattle for slaughter) and noted (predestined). "Continuance" emphasises that the parents\' rage is what gives the tragedy its duration — without their feud, the lovers\' love would simply be young love.',
+      '"Death-mark\'d love" is one of the most arresting compound images in Shakespeare. The hyphen welds love and death into a single concept - they cannot be separated. "Mark\'d" suggests both branded (like cattle for slaughter) and noted (predestined). "Continuance" emphasises that the parents\' rage is what gives the tragedy its duration - without their feud, the lovers\' love would simply be young love.',
   },
   {
-    number: '11–12',
+    number: '11-12',
     line: "Which, but their children's end, naught could remove, / Is now the two hours' traffic of our stage;",
     analysis:
-      'The metatheatrical close. "Two hours\' traffic" reduces the entire tragedy to a commercial transaction with the audience — they have paid for a couple of hours of grief. "Traffic" carries connotations of trade and bustle, reminding the audience that theatre is a business as well as an art. Shakespeare also acknowledges the play\'s compressed timeline: the fictional events take a few days, but the performance takes only two hours.',
+      'The metatheatrical close. "Two hours\' traffic" reduces the entire tragedy to a commercial transaction with the audience - they have paid for a couple of hours of grief. "Traffic" carries connotations of trade and bustle, reminding the audience that theatre is a business as well as an art. Shakespeare also acknowledges the play\'s compressed timeline: the fictional events take a few days, but the performance takes only two hours.',
   },
   {
-    number: '13–14',
+    number: '13-14',
     line: 'The which if you with patient ears attend, / What here shall miss, our toil shall strive to mend.',
     analysis:
       'The final couplet of the Shakespearean sonnet (rhyming "attend" / "mend") functions as a humble plea for the audience\'s attention. The closing couplet of a love sonnet usually offers a witty resolution or a declaration of devotion; here, instead, it asks for patience with the actors\' effort. This subverted ending mirrors the larger inversion of the prologue itself: a love sonnet that announces deaths.',
@@ -74,15 +74,15 @@ const PROLOGUE_LINES: { number: string; line: string; analysis: string }[] = [
 const FORM_NOTES: { title: string; body: string }[] = [
   {
     title: 'A Shakespearean sonnet for a tragedy',
-    body: 'The most striking choice Shakespeare makes is to write his prologue as a fourteen-line Shakespearean sonnet (three quatrains rhyming ABAB CDCD EFEF and a closing couplet GG). The sonnet was, in the 1590s, the dominant form of love poetry — the form in which Sidney, Spenser and Shakespeare himself courted real or imagined mistresses. By using it as the gateway to a tragedy, Shakespeare immediately fuses the language of love with the announcement of death. The audience is told from the very first moments that this play will be a love poem with corpses.',
+    body: 'The most striking choice Shakespeare makes is to write his prologue as a fourteen-line Shakespearean sonnet (three quatrains rhyming ABAB CDCD EFEF and a closing couplet GG). The sonnet was, in the 1590s, the dominant form of love poetry - the form in which Sidney, Spenser and Shakespeare himself courted real or imagined mistresses. By using it as the gateway to a tragedy, Shakespeare immediately fuses the language of love with the announcement of death. The audience is told from the very first moments that this play will be a love poem with corpses.',
   },
   {
     title: 'Iambic pentameter as public voice',
-    body: "The whole prologue is in regular iambic pentameter — five unstressed/stressed feet per line. The metre gives the Chorus the formal, ceremonial register of someone making a public announcement. Unlike the more fluid, broken rhythms of the play's later soliloquies, the prologue moves with the steady tread of inevitability, which suits its subject: a tragedy whose ending is already known.",
+    body: "The whole prologue is in regular iambic pentameter - five unstressed/stressed feet per line. The metre gives the Chorus the formal, ceremonial register of someone making a public announcement. Unlike the more fluid, broken rhythms of the play's later soliloquies, the prologue moves with the steady tread of inevitability, which suits its subject: a tragedy whose ending is already known.",
   },
   {
     title: 'The immediate spoiler',
-    body: 'Shakespeare does something extraordinary: he tells the audience the ending before the play begins. "Star-cross\'d lovers take their life" and "death-mark\'d love" remove all suspense. This converts the experience of watching the play from "what will happen?" into "how, and when, and why?" Every moment of hope is shadowed by the audience\'s knowledge of the inevitable end — dramatic irony on the largest possible scale.',
+    body: 'Shakespeare does something extraordinary: he tells the audience the ending before the play begins. "Star-cross\'d lovers take their life" and "death-mark\'d love" remove all suspense. This converts the experience of watching the play from "what will happen?" into "how, and when, and why?" Every moment of hope is shadowed by the audience\'s knowledge of the inevitable end - dramatic irony on the largest possible scale.',
   },
   {
     title: 'The tricolon on "civil"',
@@ -90,11 +90,11 @@ const FORM_NOTES: { title: string; body: string }[] = [
   },
   {
     title: 'Metatheatre and the two-hour traffic',
-    body: 'The prologue\'s closing image — "the two hours\' traffic of our stage" — is openly metatheatrical. Shakespeare reminds the audience they are watching a play, not witnessing reality. This is a confident gesture from a playwright who trusts his audience to know that artificial form (sonnet, stage, two hours) can carry real emotional truth. It also disarms criticism in advance: if the play feels rushed, that is the necessary condition of theatre itself.',
+    body: 'The prologue\'s closing image - "the two hours\' traffic of our stage" - is openly metatheatrical. Shakespeare reminds the audience they are watching a play, not witnessing reality. This is a confident gesture from a playwright who trusts his audience to know that artificial form (sonnet, stage, two hours) can carry real emotional truth. It also disarms criticism in advance: if the play feels rushed, that is the necessary condition of theatre itself.',
   },
 ]
 
-const MODEL_PARAGRAPH = `The Prologue\'s most striking effect comes from the collision between its form and its content: Shakespeare borrows the love sonnet — the dominant form of Elizabethan amorous poetry — to announce a tragedy of death and feud, and that contradiction sets up the central paradox the play will spend five acts unfolding. The fourteen lines of regular iambic pentameter, organised into the familiar Shakespearean pattern of three quatrains and a closing couplet, carry all the formal expectations of a Petrarchan love poem; an Elizabethan audience would have heard the metre and immediately anticipated declarations of devotion. Instead, Shakespeare fills the form with violence, inheritance and inevitable death, fusing love and death into the unforgettable compound "death-mark\'d love" — a hyphen that welds the two ideas into a single inseparable concept. The tricolon on "civil" — "civil blood makes civil hands unclean" — pushes this contradiction further still, exposing how the very citizens who claim to embody civilisation are slaughtering each other. By spoiling the ending in the opening line ("star-cross\'d lovers take their life"), Shakespeare converts the audience\'s experience from suspense into tragic irony: every moment of hope in the play to come will be shadowed by the prologue\'s grim certainty. The metatheatrical close ("the two hours\' traffic of our stage") admits the artifice of what we are about to witness, but the form itself argues otherwise: a love sonnet that announces deaths is the perfect emblem of a love that cannot survive the world that produces it.`
+const MODEL_PARAGRAPH = `The Prologue\'s most striking effect comes from the collision between its form and its content: Shakespeare borrows the love sonnet - the dominant form of Elizabethan amorous poetry - to announce a tragedy of death and feud, and that contradiction sets up the central paradox the play will spend five acts unfolding. The fourteen lines of regular iambic pentameter, organised into the familiar Shakespearean pattern of three quatrains and a closing couplet, carry all the formal expectations of a Petrarchan love poem; an Elizabethan audience would have heard the metre and immediately anticipated declarations of devotion. Instead, Shakespeare fills the form with violence, inheritance and inevitable death, fusing love and death into the unforgettable compound "death-mark\'d love" - a hyphen that welds the two ideas into a single inseparable concept. The tricolon on "civil" - "civil blood makes civil hands unclean" - pushes this contradiction further still, exposing how the very citizens who claim to embody civilisation are slaughtering each other. By spoiling the ending in the opening line ("star-cross\'d lovers take their life"), Shakespeare converts the audience\'s experience from suspense into tragic irony: every moment of hope in the play to come will be shadowed by the prologue\'s grim certainty. The metatheatrical close ("the two hours\' traffic of our stage") admits the artifice of what we are about to witness, but the form itself argues otherwise: a love sonnet that announces deaths is the perfect emblem of a love that cannot survive the world that produces it.`
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
@@ -147,7 +147,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
             </h1>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
               A line-by-line walkthrough of the opening fourteen lines of <em>Romeo and Juliet</em>{' '}
-              — Shakespeare’s decision to frame his tragedy in the form of a love sonnet, and the
+              - Shakespeare’s decision to frame his tragedy in the form of a love sonnet, and the
               central paradox that choice creates.
             </p>
           </div>

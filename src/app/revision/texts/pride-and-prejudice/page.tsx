@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Pride and Prejudice GCSE revision — Austen',
+    title: 'Pride and Prejudice revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Pride and Prejudice GCSE revision - Austen',
   },
-  title: 'Pride and Prejudice revision guide — themes, characters, key quotes',
+  title: 'Pride and Prejudice revision guide - themes, characters, key quotes',
   description:
-    "Pride and Prejudice GCSE revision — Austen's novel of manners by chapter with character analysis. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.",
+    "Pride and Prejudice GCSE revision - Austen's novel of manners by chapter with character analysis. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/pride-and-prejudice',
   },
@@ -38,7 +38,7 @@ const data: TextGuideData = {
   plotSummary: [
     'The Bennet family of Longbourn are thrown into excitement when the wealthy Mr Bingley arrives in the neighbourhood. At a local ball, Bingley is immediately attracted to the eldest Bennet daughter, Jane, while his proud friend Mr Darcy offends the second daughter, Elizabeth, by refusing to dance with her and calling her merely "tolerable." Elizabeth forms a strong prejudice against Darcy, while Darcy finds himself increasingly drawn to her intelligence and wit.',
 
-    'The charming officer Mr Wickham tells Elizabeth that Darcy cheated him out of a living. Elizabeth believes him and her dislike of Darcy deepens. Meanwhile, Bingley abruptly leaves Netherfield, and Jane is heartbroken. At the parsonage of her friend Charlotte Lucas, Elizabeth encounters Darcy again. He proposes in person — a speech that is half declaration, half insult, telling her he loves her against his better judgement. Elizabeth furiously refuses him.',
+    'The charming officer Mr Wickham tells Elizabeth that Darcy cheated him out of a living. Elizabeth believes him and her dislike of Darcy deepens. Meanwhile, Bingley abruptly leaves Netherfield, and Jane is heartbroken. At the parsonage of her friend Charlotte Lucas, Elizabeth encounters Darcy again. He proposes in person - a speech that is half declaration, half insult, telling her he loves her against his better judgement. Elizabeth furiously refuses him.',
 
     "Darcy writes Elizabeth a letter that overturns her assumptions: Wickham is a liar who attempted to elope with Darcy's fifteen-year-old sister for her fortune, and Darcy separated Bingley from Jane because he honestly believed Jane did not love him. Elizabeth is humiliated to realise that her own pride in her judgement led her astray. She begins to see Darcy differently.",
 
@@ -111,46 +111,46 @@ const data: TextGuideData = {
     {
       quote:
         '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
-      who: 'Narrator — Chapter 1',
+      who: 'Narrator - Chapter 1',
       analysis:
         'The novel\'s famous opening sentence is pure irony. The "truth" is really the assumption of matchmaking mothers, not a universal law.',
     },
     {
       quote: '"She is tolerable, but not handsome enough to tempt me."',
-      who: 'Mr Darcy — Chapter 3',
+      who: 'Mr Darcy - Chapter 3',
       analysis:
         "Darcy's dismissive remark at the first ball establishes Elizabeth's prejudice against him and his pride in his own judgement.",
     },
     {
       quote:
         '"In vain have I struggled. It will not do. My feelings will not be repressed. You must allow me to tell you how ardently I admire and love you."',
-      who: 'Mr Darcy — Chapter 34',
+      who: 'Mr Darcy - Chapter 34',
       analysis:
         "Darcy's first proposal is undermined by his emphasis on the social gulf between them. He confesses love while insulting her family.",
     },
     {
       quote: '"Till this moment I never knew myself."',
-      who: 'Elizabeth — Chapter 36',
+      who: 'Elizabeth - Chapter 36',
       analysis:
         "Elizabeth's moment of self-recognition after reading Darcy's letter. She realises her pride in her own judgement has been her greatest flaw.",
     },
     {
       quote: '"I was given good principles, but left to follow them in pride and conceit."',
-      who: 'Mr Darcy — Chapter 58',
+      who: 'Mr Darcy - Chapter 58',
       analysis:
         "Darcy acknowledges that good values are not enough without humility. His growth mirrors Elizabeth's.",
     },
     {
       quote:
         '"You are too generous to trifle with me. If your feelings are still what they were last April, tell me so at once."',
-      who: 'Mr Darcy — Chapter 58',
+      who: 'Mr Darcy - Chapter 58',
       analysis:
         "Darcy's second proposal is vulnerable and honest, showing how far he has come from the arrogance of his first attempt.",
     },
     {
       quote:
         '"I am only resolved to act in that manner, which will, in my own opinion, constitute my happiness."',
-      who: 'Elizabeth — Chapter 56',
+      who: 'Elizabeth - Chapter 56',
       analysis:
         'Elizabeth defies Lady Catherine with quiet dignity, asserting her right to choose her own future regardless of rank.',
     },
@@ -208,7 +208,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Mr Collins', 'Mr Bingley', 'Mr Wickham', 'Lady Catherine'],
     correctIndex: 2,
     explanation:
-      "Wickham tells Elizabeth that Darcy cheated him out of a living. She believes him, and her dislike of Darcy deepens. Wickham's charm is the novel's test of judgement — Elizabeth's willingness to believe him exposes the danger of trusting appearances.",
+      "Wickham tells Elizabeth that Darcy cheated him out of a living. She believes him, and her dislike of Darcy deepens. Wickham's charm is the novel's test of judgement - Elizabeth's willingness to believe him exposes the danger of trusting appearances.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -218,7 +218,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She is in love with Wickham',
-      'His proposal is insulting — he confesses love while emphasising the social gulf and insulting her family',
+      'His proposal is insulting - he confesses love while emphasising the social gulf and insulting her family',
       'Her father forbids it',
       'She does not know him well enough',
     ],
@@ -398,7 +398,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       "Darcy's pride in social position leads him to insult Elizabeth",
       "Elizabeth's pride in her own judgement makes her blind to Wickham's lies",
-      '"Till this moment I never knew myself" — Elizabeth\'s self-recognition',
+      '"Till this moment I never knew myself" - Elizabeth\'s self-recognition',
       'Darcy learns humility; Elizabeth learns to question first impressions',
       'Self-knowledge is the foundation of moral growth',
     ],
@@ -470,7 +470,7 @@ export default async function PrideAndPrejudicePage() {
   return (
     <>
       <CourseJsonLd
-        name="Pride and Prejudice — Complete GCSE Study Guide"
+        name="Pride and Prejudice - Complete GCSE Study Guide"
         description="In-depth study guide for Pride and Prejudice covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

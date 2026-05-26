@@ -31,7 +31,7 @@ function buildSubscription(overrides?: Record<string, unknown>) {
 // ── Tests ─────────────────────────────────────────────────────────────
 
 describe('Subscription (DMCC Act Compliance)', () => {
-  // ── shouldSendRenewalReminder — Monthly ─────────────────────────────
+  // ── shouldSendRenewalReminder - Monthly ─────────────────────────────
 
   describe('shouldSendRenewalReminder - Monthly plan', () => {
     it('returns true when next payment would be the 6th (paymentCount=5)', () => {
@@ -65,7 +65,7 @@ describe('Subscription (DMCC Act Compliance)', () => {
     })
   })
 
-  // ── shouldSendRenewalReminder — Annual ──────────────────────────────
+  // ── shouldSendRenewalReminder - Annual ──────────────────────────────
 
   describe('shouldSendRenewalReminder - Annual plan', () => {
     it('returns true when within 30 days of renewal', () => {

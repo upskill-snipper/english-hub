@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Literary Device Speed Round — 5-Minute Starter',
+    title: 'Literary Device Speed Round - 5-Minute Starter',
     description:
       'A 5-minute quick-fire starter with 10 literary device definitions. No printing required.',
   },
-  title: 'Literary Device Speed Round — 5-Minute Starter',
+  title: 'Literary Device Speed Round - 5-Minute Starter',
   description:
     'A 5-minute quick-fire starter with 10 literary device definitions. No printing required.',
   alternates: {
@@ -98,7 +98,7 @@ export default function LiteraryDeviceSpeedRound() {
             Literary Device Speed Round
           </h1>
           <p className="mt-3 text-lg text-muted-foreground">
-            A 5-minute quick-fire starter. 10 literary devices, 10 snappy clues — students shout out
+            A 5-minute quick-fire starter. 10 literary devices, 10 snappy clues - students shout out
             the answer or write it on a mini-whiteboard. No prep, no printing.
           </p>
 
@@ -113,7 +113,7 @@ export default function LiteraryDeviceSpeedRound() {
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Year Group
               </div>
-              <div className="mt-1 text-sm font-semibold text-foreground">KS3–KS4</div>
+              <div className="mt-1 text-sm font-semibold text-foreground">KS3-KS4</div>
             </div>
             <div className="rounded-lg border border-border bg-background p-3">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -202,7 +202,7 @@ export default function LiteraryDeviceSpeedRound() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Keep the pace:</strong> The magic of a speed round is momentum. Don&apos;t

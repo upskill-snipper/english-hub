@@ -69,7 +69,7 @@ export default function AnthologyHero() {
 
           {/* Grid: content left, chips right */}
           <div className="relative grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-16 items-center">
-            {/* Left column — text content */}
+            {/* Left column - text content */}
             <div>
               {/* Eyebrow */}
               <p className="mb-4 text-sm font-medium tracking-widest uppercase text-clay-300">
@@ -112,7 +112,7 @@ export default function AnthologyHero() {
                 </Link>
               </div>
 
-              {/* Board badges (Latin codes — no translation) */}
+              {/* Board badges (Latin codes - no translation) */}
               <div className="flex flex-wrap items-center gap-2">
                 {boards.map((b) => (
                   <span
@@ -125,7 +125,7 @@ export default function AnthologyHero() {
               </div>
             </div>
 
-            {/* Right column — stacked chip tiles */}
+            {/* Right column - stacked chip tiles */}
             <div
               className="relative hidden lg:flex flex-col items-center gap-3 py-4"
               aria-hidden="true"

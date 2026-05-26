@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     }
   }
   return {
-    title: `${text.title} — Study Guide | The English Hub`,
+    title: `${text.title} - Study Guide | The English Hub`,
     description: `In-depth study guide for ${text.title} by ${text.author}: characters, themes, key quotations and exam-ready analysis.`,
     alternates: {
       canonical: `https://theenglishhub.app/revision/texts/${text.slug}`,
@@ -114,7 +114,7 @@ const REVISION_NOTES_SLUG_MAP: Record<string, string> = {
 // revision-notes/<slug>/page.tsx file. The "Open revision notes" Card is
 // only rendered when the resolved slug is in this set. Without this gate,
 // texts like To Kill a Mockingbird and Things Fall Apart linked to a 404
-// — surfaced by the iOS WebView during ship-day TestFlight testing.
+// - surfaced by the iOS WebView during ship-day TestFlight testing.
 const REVISION_NOTES_AVAILABLE: ReadonlySet<string> = new Set([
   'animal-farm',
   'blood-brothers',
@@ -184,7 +184,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
   const igcseProseSlug = IGCSE_PROSE_SLUG_MAP[text.slug]
 
   // Chrome translations. Author name, title, description, themes and key
-  // quotations stay in source language — literary content per task scope.
+  // quotations stay in source language - literary content per task scope.
   const tCategoryLabel = await t(category.labelKey)
   const tBackToTexts = await t('analysis.deep.set_text.back_to_texts')
   const tBackToAll = await t('analysis.deep.set_text.back_to_all_texts')

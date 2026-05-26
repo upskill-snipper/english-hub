@@ -1,6 +1,6 @@
 /**
  * GET /api/school/consent/details?token=xxx
- * Public endpoint — returns consent details for the parent consent page.
+ * Public endpoint - returns consent details for the parent consent page.
  * No auth required (parent may not have an account).
  */
 
@@ -17,7 +17,10 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -37,29 +40,21 @@ export async function GET(request: NextRequest) {
     if (lookupError || !consent) {
       return NextResponse.json(
         { error: 'This consent link is invalid or has already been used.' },
-        { status: 404 }
+        { status: 404 },
       )
     }
 
     if (consent.status !== 'pending') {
       return NextResponse.json(
         { error: `This consent request has already been ${consent.status}.` },
-        { status: 410 }
+        { status: 410 },
       )
     }
 
     // Fetch student name and school name
     const [{ data: profile }, { data: school }] = await Promise.all([
-      admin
-        .from('profiles')
-        .select('full_name')
-        .eq('id', consent.student_user_id)
-        .single(),
-      admin
-        .from('schools')
-        .select('name')
-        .eq('id', consent.school_id)
-        .single(),
+      admin.from('profiles').select('full_name').eq('id', consent.student_user_id).single(),
+      admin.from('schools').select('name').eq('id', consent.school_id).single(),
     ])
 
     return NextResponse.json({

@@ -16,7 +16,7 @@ interface SynonymItem {
   sentence: string
   /** The tired/overused word to replace */
   weakWord: string
-  /** Four options — exactly one is the best precise upgrade for this context */
+  /** Four options - exactly one is the best precise upgrade for this context */
   options: [string, string, string, string]
   /** The correct, most precise ambitious synonym */
   answer: string
@@ -32,7 +32,7 @@ const SYNONYM_BANK: SynonymItem[] = [
     options: ['whispered', 'declared', 'shouted', 'announced'],
     answer: 'whispered',
     nuanceNote:
-      '"Whispered" captures the quiet, careful tone — "declared" and "announced" are loud and public.',
+      '"Whispered" captures the quiet, careful tone - "declared" and "announced" are loud and public.',
   },
   {
     sentence: 'Standing before the court, the lawyer ⟨said⟩ that her client was innocent.',
@@ -55,7 +55,7 @@ const SYNONYM_BANK: SynonymItem[] = [
     options: ['proclaimed', 'muttered', 'bellowed', 'announced'],
     answer: 'muttered',
     nuanceNote:
-      '"Muttered" means to speak low and unclearly — fitting hesitation; the others are loud.',
+      '"Muttered" means to speak low and unclearly - fitting hesitation; the others are loud.',
   },
   {
     sentence: 'She ⟨said⟩ that the holiday had been the best week of her life.',
@@ -171,7 +171,7 @@ const SYNONYM_BANK: SynonymItem[] = [
       '"Pleasant" suits agreeable weather; "generous" and "honest" describe character, not days.',
   },
   {
-    sentence: 'That was a very ⟨nice⟩ thing to do — you helped without expecting thanks.',
+    sentence: 'That was a very ⟨nice⟩ thing to do - you helped without expecting thanks.',
     weakWord: 'nice',
     options: ['kind', 'mild', 'tidy', 'rapid'],
     answer: 'kind',
@@ -362,7 +362,7 @@ const SYNONYM_BANK: SynonymItem[] = [
     options: ['glanced', 'studied', 'examined', 'scrutinised'],
     answer: 'glanced',
     nuanceNote:
-      '"Glanced" means a quick brief look — fitting a rush; the others mean careful study.',
+      '"Glanced" means a quick brief look - fitting a rush; the others mean careful study.',
   },
   {
     sentence: 'He ⟨looked⟩ angrily at the boy who had broken his window.',
@@ -606,7 +606,7 @@ export default function SynonymShufflePage() {
         <GameShell
           gameId="synonym-shuffle"
           title="Synonym Shuffle"
-          description="A tired word is hiding in each sentence. Pick the most precise, ambitious synonym for that context — because synonyms aren't always swappable."
+          description="A tired word is hiding in each sentence. Pick the most precise, ambitious synonym for that context - because synonyms aren't always swappable."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -682,7 +682,7 @@ export default function SynonymShufflePage() {
                   >
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Brilliant — that&apos;s the sharpest
+                        <CheckCircle className="size-4" /> Brilliant - that&apos;s the sharpest
                         choice!
                       </>
                     ) : (

@@ -42,7 +42,7 @@ export default function ResendVerificationPage() {
       // generic OK message, but if the account is already verified the
       // body includes `status: 'already_verified'` so we can redirect
       // the user to the password-reset flow (which is what they actually
-      // need — they don't need a verification link, they need to sign in
+      // need - they don't need a verification link, they need to sign in
       // or reset their password).
       const res = await fetch('/api/auth/resend-verification', {
         method: 'POST',
@@ -54,7 +54,7 @@ export default function ResendVerificationPage() {
       try {
         payload = await res.json()
       } catch {
-        // Tolerate unexpected non-JSON bodies — fall through to generic
+        // Tolerate unexpected non-JSON bodies - fall through to generic
         // success state.
       }
 

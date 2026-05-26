@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 function generateCode(length = 8): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789' // no ambiguous chars (no 0/O, 1/I/L)
   const randomBytes = crypto.getRandomValues(new Uint8Array(length))
-  return Array.from(randomBytes, b => chars[b % chars.length]).join('')
+  return Array.from(randomBytes, (b) => chars[b % chars.length]).join('')
 }
 
 export async function GET(request: NextRequest) {
@@ -18,19 +18,28 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const membership = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: requires admin or head of department role' },
+        { status: 403 },
+      )
     }
 
     const admin = createServiceRoleClient()
@@ -46,18 +55,27 @@ export async function GET(request: NextRequest) {
     }
 
     // Add usage stats: remaining uses, expired status
-    const codesWithStats = (codes || []).map((code: {
-      id: string; code: string; max_uses: number; uses: number;
-      expires_at: string | null; is_active: boolean; created_at: string;
-      class_id: string | null; classes: { id: string; name: string } | null
-    }) => ({
-      ...code,
-      remaining_uses: code.max_uses > 0 ? Math.max(0, code.max_uses - code.uses) : null,
-      is_expired: code.expires_at ? new Date(code.expires_at) < new Date() : false,
-      is_usable: code.is_active
-        && (code.max_uses <= 0 || code.uses < code.max_uses)
-        && (!code.expires_at || new Date(code.expires_at) >= new Date()),
-    }))
+    const codesWithStats = (codes || []).map(
+      (code: {
+        id: string
+        code: string
+        max_uses: number
+        uses: number
+        expires_at: string | null
+        is_active: boolean
+        created_at: string
+        class_id: string | null
+        classes: { id: string; name: string } | null
+      }) => ({
+        ...code,
+        remaining_uses: code.max_uses > 0 ? Math.max(0, code.max_uses - code.uses) : null,
+        is_expired: code.expires_at ? new Date(code.expires_at) < new Date() : false,
+        is_usable:
+          code.is_active &&
+          (code.max_uses <= 0 || code.uses < code.max_uses) &&
+          (!code.expires_at || new Date(code.expires_at) >= new Date()),
+      }),
+    )
 
     return NextResponse.json({ join_codes: codesWithStats })
   } catch (error) {
@@ -73,19 +91,28 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const membership = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: requires admin or head of department role' },
+        { status: 403 },
+      )
     }
 
     let body: {
@@ -114,13 +141,24 @@ export async function POST(request: NextRequest) {
     const customCode = body.code?.trim().toUpperCase() || null
 
     // Validate numeric parameters
-    if (typeof max_uses !== 'number' || !Number.isInteger(max_uses) || max_uses < 0 || max_uses > 10000) {
-      return NextResponse.json({ error: 'max_uses must be an integer between 0 and 10000' }, { status: 422 })
+    if (
+      typeof max_uses !== 'number' ||
+      !Number.isInteger(max_uses) ||
+      max_uses < 0 ||
+      max_uses > 10000
+    ) {
+      return NextResponse.json(
+        { error: 'max_uses must be an integer between 0 and 10000' },
+        { status: 422 },
+      )
     }
 
     // Validate custom code if provided
     if (customCode && !/^[A-Z0-9]{3,12}$/.test(customCode)) {
-      return NextResponse.json({ error: 'Custom code must be 3-12 uppercase alphanumeric characters' }, { status: 422 })
+      return NextResponse.json(
+        { error: 'Custom code must be 3-12 uppercase alphanumeric characters' },
+        { status: 422 },
+      )
     }
 
     // Resolve expiry: explicit ISO date, expires_days offset, or null (never)
@@ -129,15 +167,26 @@ export async function POST(request: NextRequest) {
       if (body.expiresAt !== null) {
         const parsed = new Date(body.expiresAt)
         if (isNaN(parsed.getTime()) || parsed <= new Date()) {
-          return NextResponse.json({ error: 'expiresAt must be a future ISO date string or null' }, { status: 422 })
+          return NextResponse.json(
+            { error: 'expiresAt must be a future ISO date string or null' },
+            { status: 422 },
+          )
         }
         expiresAt = parsed.toISOString()
       }
-      // null means never expires — leave as null
+      // null means never expires - leave as null
     } else if (body.expires_days !== undefined) {
       const expires_days = body.expires_days
-      if (typeof expires_days !== 'number' || !Number.isInteger(expires_days) || expires_days < 1 || expires_days > 365) {
-        return NextResponse.json({ error: 'expires_days must be an integer between 1 and 365' }, { status: 422 })
+      if (
+        typeof expires_days !== 'number' ||
+        !Number.isInteger(expires_days) ||
+        expires_days < 1 ||
+        expires_days > 365
+      ) {
+        return NextResponse.json(
+          { error: 'expires_days must be an integer between 1 and 365' },
+          { status: 422 },
+        )
       }
       expiresAt = new Date(Date.now() + expires_days * 24 * 60 * 60 * 1000).toISOString()
     } else {
@@ -181,7 +230,7 @@ export async function POST(request: NextRequest) {
 
     if (createError) {
       console.error('Join code create error:', createError)
-      // Handle unique constraint violation (code collision) — retry once with auto-generated code
+      // Handle unique constraint violation (code collision) - retry once with auto-generated code
       if (createError.code === '23505') {
         const retryCode = generateCode()
         const { data: retryJoinCode, error: retryError } = await admin

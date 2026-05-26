@@ -4,7 +4,7 @@
 // emails that don't need the trustpilot-BCC pipeline (that lives in
 // `src/lib/email.ts`). Safe-by-default: when `RESEND_API_KEY` is missing,
 // every send returns `{ sent: false, reason: 'no-key' }` without throwing,
-// so calling code can always progress — the user-facing success state
+// so calling code can always progress - the user-facing success state
 // should never depend on email delivery.
 //
 // Uses the raw HTTPS endpoint instead of the `resend` SDK because we
@@ -31,7 +31,7 @@ const DEFAULT_FROM = 'The English Hub <noreply@theenglishhub.app>'
 export async function sendViaResend(opts: ResendSendOptions): Promise<ResendSendResult> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
-    console.warn('[resend] RESEND_API_KEY not set — email not sent.', {
+    console.warn('[resend] RESEND_API_KEY not set - email not sent.', {
       to: opts.to,
       subject: opts.subject,
     })
@@ -71,7 +71,7 @@ export async function sendViaResend(opts: ResendSendOptions): Promise<ResendSend
   }
 }
 
-// ─── Plain-text HTML escape — used everywhere we interpolate user input ───
+// ─── Plain-text HTML escape - used everywhere we interpolate user input ───
 
 export function escapeHtml(s: string): string {
   return s

@@ -52,7 +52,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
 
         setIsEnrolled(!!data)
       } catch {
-        // fail silently — user simply sees buy button
+        // fail silently - user simply sees buy button
       } finally {
         setLoading(false)
       }
@@ -159,7 +159,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
               )}
             </div>
 
-            {/* Desktop sidebar subscription card removed — single CTA in sticky aside below */}
+            {/* Desktop sidebar subscription card removed - single CTA in sticky aside below */}
           </div>
         </div>
       </section>
@@ -193,7 +193,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
 
                   const content = (
                     <>
-                      {/* Number circle — uses stable original position, not filtered index */}
+                      {/* Number circle - uses stable original position, not filtered index */}
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${locked ? 'bg-muted text-muted-foreground' : ''}`}
                         style={
@@ -263,7 +263,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
             </div>
           </div>
 
-          {/* Desktop sidebar (sticky) — subscription card for scroll */}
+          {/* Desktop sidebar (sticky) - subscription card for scroll */}
           <aside className="hidden w-80 shrink-0 lg:block">
             <div className="sticky top-24">
               <SubscriptionCard

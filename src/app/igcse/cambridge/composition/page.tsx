@@ -25,7 +25,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Cambridge IGCSE Composition — The English Hub',
+    title: 'Cambridge IGCSE Composition - The English Hub',
     description:
       'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
   },
@@ -79,7 +79,7 @@ const narrativeSections = [
   {
     title: 'Story structure',
     description:
-      'Freytag’s triangle, the five-part arc and in medias res openings for a 600–900 word short story.',
+      'Freytag’s triangle, the five-part arc and in medias res openings for a 600-900 word short story.',
     href: '/igcse/cambridge/composition/narrative/structure',
     icon: ScrollText,
   },
@@ -160,7 +160,7 @@ export default async function CompositionHubPage() {
               <Sparkles className="mr-1 size-3" />
               Cambridge IGCSE
             </Badge>
-            <Badge variant="secondary">Paper 2 — Section B</Badge>
+            <Badge variant="secondary">Paper 2 - Section B</Badge>
             <Badge variant="secondary">40 marks</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
@@ -168,8 +168,8 @@ export default async function CompositionHubPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Cambridge IGCSE Language Paper 2 Section B asks you to write a descriptive or narrative
-            composition of <strong className="text-foreground">350–450 words</strong>. It is worth{' '}
-            <strong className="text-foreground">40 marks</strong> — 16 for content and structure, 24
+            composition of <strong className="text-foreground">350-450 words</strong>. It is worth{' '}
+            <strong className="text-foreground">40 marks</strong> - 16 for content and structure, 24
             for style and accuracy. This hub breaks the task into techniques you can learn and
             rehearse.
           </p>

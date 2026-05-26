@@ -9,13 +9,13 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Worlds and Lives poetry — AQA GCSE revision — The English Hub',
+    title: 'Worlds and Lives poetry - AQA GCSE revision - The English Hub',
     description:
-      'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
+      'AQA GCSE Worlds and Lives - the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
   },
-  title: 'Worlds and Lives poetry — AQA GCSE revision',
+  title: 'Worlds and Lives poetry - AQA GCSE revision',
   description:
-    'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
+    'AQA GCSE Worlds and Lives - the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/aqa-worlds-and-lives' },
 }
 
@@ -109,7 +109,7 @@ export default function AqaWorldsAndLivesHubPage() {
         <section className="flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
           <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
           <p className="text-body-sm text-muted-foreground">
-            Worlds and Lives is one of three AQA clusters — schools choose either{' '}
+            Worlds and Lives is one of three AQA clusters - schools choose either{' '}
             <Link
               href="/revision/poetry/power-and-conflict"
               className="font-medium text-foreground underline-offset-4 hover:underline"
@@ -231,7 +231,7 @@ export default function AqaWorldsAndLivesHubPage() {
             <div className="space-y-1">
               <h3 className="text-sm font-semibold text-foreground">Place and landscape</h3>
               <p className="text-body-sm text-muted-foreground">
-                Landscapes as memory, refuge or critique — Tintern Abbey, In a London Drawingroom
+                Landscapes as memory, refuge or critique - Tintern Abbey, In a London Drawingroom
                 and Homing.
               </p>
             </div>

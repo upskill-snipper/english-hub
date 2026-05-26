@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 // ─── Mock Data ───────────────────────────────────────────────────────────────
 
-// Neon palette tokens — Tailwind class strings (not hex literals) so the
+// Neon palette tokens - Tailwind class strings (not hex literals) so the
 // brutalist neon identity is preserved while staying lint-clean. `hex`
 // drives the inline brutalist hard-shadow offsets (boxShadow is a
 // non-colour dynamic style and is intentionally retained).
@@ -33,16 +33,16 @@ const COURSES: ReadonlyArray<{
 
 const ACTIVITY: ReadonlyArray<{ time: string; action: string; xp: string; neon: NeonKey }> = [
   { time: '2m ago', action: 'Completed "Unseen Poetry" drill', xp: '+45 XP', neon: 'pink' },
-  { time: '1h ago', action: 'Streak restored — 14 days running', xp: '+20 XP', neon: 'lime' },
+  { time: '1h ago', action: 'Streak restored - 14 days running', xp: '+20 XP', neon: 'lime' },
   { time: '3h ago', action: 'Paper 1 Q5 practice submitted', xp: '+80 XP', neon: 'blue' },
   { time: '5h ago', action: 'Flashcard set "Macbeth Act 3" cleared', xp: '+35 XP', neon: 'yellow' },
-  { time: '1d ago', action: 'Timed essay: 38/40 — new personal best', xp: '+120 XP', neon: 'pink' },
+  { time: '1d ago', action: 'Timed essay: 38/40 - new personal best', xp: '+120 XP', neon: 'pink' },
 ]
 
 const TERMINAL_LINES = [
   '> loading module: unseen-prose-extraction.v3',
   '> user.streak = 14 | user.xp = 5140 | rank = "RELENTLESS"',
-  '> next_task: Paper 2 Section B — Descriptive Writing',
+  '> next_task: Paper 2 Section B - Descriptive Writing',
 ]
 
 // ─── Page ────────────────────────────────────────────────────────────────────
@@ -310,7 +310,7 @@ export default function NeonBrutalistDashboard() {
         </div>
       </div>
 
-      {/* ── NOW STUDYING — TERMINAL BAR ── */}
+      {/* ── NOW STUDYING - TERMINAL BAR ── */}
       <footer className="fixed bottom-0 left-0 right-0 border-t-2 border-lime-400 bg-background z-50">
         <div className="px-6 py-3 flex items-center gap-4 overflow-hidden">
           <span className="shrink-0 bg-lime-400 text-black text-[10px] font-black uppercase px-2 py-0.5 tracking-wider">

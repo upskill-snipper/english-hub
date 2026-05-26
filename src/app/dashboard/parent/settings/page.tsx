@@ -168,7 +168,7 @@ export default function ParentSettingsPage() {
   async function handleSaveNotifications() {
     setSavingNotifications(true)
     try {
-      // Stub: PUT /api/parent/notifications — simulated until endpoint exists
+      // Stub: PUT /api/parent/notifications - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500))
       showSuccess('Notification preferences saved.')
     } finally {
@@ -179,7 +179,7 @@ export default function ParentSettingsPage() {
   async function handleSaveSchedule() {
     setSavingSchedule(true)
     try {
-      // Stub: PUT /api/parent/report-schedule — simulated until endpoint exists
+      // Stub: PUT /api/parent/report-schedule - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500))
       showSuccess('Report schedule saved.')
     } finally {
@@ -200,7 +200,7 @@ export default function ParentSettingsPage() {
 
     setInviting(true)
     try {
-      // Stub: POST /api/parent/invite-student — simulated until endpoint exists
+      // Stub: POST /api/parent/invite-student - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 1000))
       showSuccess(`Invitation sent to ${inviteEmail}. The student must accept the link request.`)
       setInviteEmail('')
@@ -218,7 +218,7 @@ export default function ParentSettingsPage() {
     ) {
       return
     }
-    // Stub: DELETE /api/parent/students/:id — currently only removes from local state
+    // Stub: DELETE /api/parent/students/:id - currently only removes from local state
     setStudents((prev) => prev.filter((s) => s.id !== studentId))
     showSuccess('Student unlinked successfully.')
   }
@@ -235,7 +235,7 @@ export default function ParentSettingsPage() {
   async function handleSaveGrades(studentId: string) {
     setSavingGrades(true)
     try {
-      // Stub: PUT /api/parent/students/:id/grades — simulated until endpoint exists
+      // Stub: PUT /api/parent/students/:id/grades - simulated until endpoint exists
       await new Promise((resolve) => setTimeout(resolve, 500))
       setStudents((prev) =>
         prev.map((s) => {

@@ -46,7 +46,7 @@ const walkingAwayPoem: PoemData = {
     { text: 'To the ignominy of a side that lost;' },
     { text: 'And in the agony of having to decide,' },
     { text: "It's as if the child I'd fathered had, grown," },
-    // VERIFY: line redacted — previously contained an unverifiable phrase ('survey of himself' was a corruption that does not match any verified Day-Lewis text). Restore only against a primary source.
+    // VERIFY: line redacted - previously contained an unverifiable phrase ('survey of himself' was a corruption that does not match any verified Day-Lewis text). Restore only against a primary source.
     { text: '' },
     // Stanza break
     { text: '' },
@@ -66,7 +66,7 @@ const walkingAwayPoem: PoemData = {
       annotations: [
         {
           type: 'Simile / natural imagery',
-          note: 'The organic image reframes separation as natural and necessary for growth — a seed must leave the parent stem to take root elsewhere. "Loosened" suggests gradual release rather than violent rupture.',
+          note: 'The organic image reframes separation as natural and necessary for growth - a seed must leave the parent stem to take root elsewhere. "Loosened" suggests gradual release rather than violent rupture.',
           color: '#10b981',
         },
       ],
@@ -81,12 +81,12 @@ const walkingAwayPoem: PoemData = {
         },
       ],
     },
-    // VERIFY: line redacted — 'survey of the road' was a corruption that does not match any verified Day-Lewis text. Restore only against a primary source.
+    // VERIFY: line redacted - 'survey of the road' was a corruption that does not match any verified Day-Lewis text. Restore only against a primary source.
     { text: '' },
     // Stanza break
     { text: '' },
     // Stanza 4
-    // VERIFY: line redacted — 'survey of the road' was a corruption that does not match any verified Day-Lewis text. Restore only against a primary source.
+    // VERIFY: line redacted - 'survey of the road' was a corruption that does not match any verified Day-Lewis text. Restore only against a primary source.
     { text: '' },
     {
       text: 'Has altered, though it was not so at first.',
@@ -339,7 +339,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker (a father) recalls watching his son walk away to a football game or school — a small moment of separation that represents the larger process of letting go.',
+      'The speaker (a father) recalls watching his son walk away to a football game or school - a small moment of separation that represents the larger process of letting go.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -355,7 +355,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The simile compares the son to a satellite torn from its orbit — suggesting the parent-child bond has a gravitational pull, and separation feels violent and unnatural.',
+      'The simile compares the son to a satellite torn from its orbit - suggesting the parent-child bond has a gravitational pull, and separation feels violent and unnatural.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -365,13 +365,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Walking is good exercise',
-      'Becoming your own person requires separating from your parents — independence starts with leaving',
+      'Becoming your own person requires separating from your parents - independence starts with leaving',
       'Walking away is always sad',
       'Children should walk more',
     ],
     correctIndex: 1,
     explanation:
-      'The father recognises that his child must walk away to become an independent person. "Selfhood" — individual identity — can only develop through separation, however painful.',
+      'The father recognises that his child must walk away to become an independent person. "Selfhood" - individual identity - can only develop through separation, however painful.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -381,7 +381,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Gardening advice',
-      '"Like a winged seed loosened from its parent stem" — the child must be released to grow independently, like a seed dispersing',
+      '"Like a winged seed loosened from its parent stem" - the child must be released to grow independently, like a seed dispersing',
       'The son plants a garden',
       'Seeds represent food',
     ],
@@ -429,7 +429,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It was a bad football match',
-      '"Eighteen years ago, almost to the day" — the moment symbolises the larger, ongoing process of letting go',
+      '"Eighteen years ago, almost to the day" - the moment symbolises the larger, ongoing process of letting go',
       'He forgot something',
       'The weather was bad',
     ],
@@ -445,7 +445,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Love means holding on tightly',
-      'True love means giving the other person freedom — the greatest act of love is releasing your child',
+      'True love means giving the other person freedom - the greatest act of love is releasing your child',
       'Love is easy',
       'Letting go is selfish',
     ],
@@ -461,9 +461,9 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Only pain, no acceptance',
-      'The poem moves from painful memory to philosophical acceptance — separation hurts but is necessary for growth',
+      'The poem moves from painful memory to philosophical acceptance - separation hurts but is necessary for growth',
       'Only acceptance, no pain',
-      'Neither — the tone is neutral',
+      'Neither - the tone is neutral',
     ],
     correctIndex: 1,
     explanation:
@@ -495,9 +495,9 @@ const REVISION_TOPICS = [
     summary:
       'Walking Away explores the pain of parental love, the necessity of letting go, and how independence is the ultimate gift a parent gives.',
     keyPoints: [
-      'Letting go — the hardest act of love',
-      '"Selfhood begins with a walking away" — independence requires separation',
-      'Memory — one small moment haunts the father for 18 years',
+      'Letting go - the hardest act of love',
+      '"Selfhood begins with a walking away" - independence requires separation',
+      'Memory - one small moment haunts the father for 18 years',
       'Love is proved in release, not possession',
     ],
   },
@@ -506,10 +506,10 @@ const REVISION_TOPICS = [
     summary:
       'Day-Lewis uses satellite and seed metaphors to present separation as both painful and natural.',
     keyPoints: [
-      '"Satellite wrenched from its orbit" — violent, unnatural separation',
-      '"Winged seed loosened from its parent stem" — natural, necessary dispersal',
-      '"Dazed" — the father\'s bewilderment at losing control',
-      '"Proved in the letting go" — love defined by release',
+      '"Satellite wrenched from its orbit" - violent, unnatural separation',
+      '"Winged seed loosened from its parent stem" - natural, necessary dispersal',
+      '"Dazed" - the father\'s bewilderment at losing control',
+      '"Proved in the letting go" - love defined by release',
     ],
   },
   {
@@ -517,10 +517,10 @@ const REVISION_TOPICS = [
     summary:
       'Five quintains (five-line stanzas) with a loose ABACA rhyme scheme moving from specific memory to philosophical reflection on the nature of love.',
     keyPoints: [
-      'Five quintains — orderly structure containing complex emotion',
-      'ABACA loose rhyme — things not quite resolved, like parental worry',
+      'Five quintains - orderly structure containing complex emotion',
+      'ABACA loose rhyme - things not quite resolved, like parental worry',
       'Progression from memory to philosophy',
-      '"Eighteen years ago" — the specific opening grounds the universal theme',
+      '"Eighteen years ago" - the specific opening grounds the universal theme',
     ],
   },
 ]
@@ -564,7 +564,7 @@ export default function WalkingAwayPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Walking Away by C. Day-Lewis — Analysis & Annotations"
+        name="Walking Away by C. Day-Lewis - Analysis & Annotations"
         description="Line-by-line analysis of Walking Away with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

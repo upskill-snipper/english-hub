@@ -4,7 +4,7 @@
 // into the anonymised `public.training_data` row shape (snake_case keys exactly
 // matching supabase/migrations/20260518_smart_ip_marking.sql).
 //
-// DATA-PROTECTION CONTRACT (UK GDPR / Children's Code — most candidates are
+// DATA-PROTECTION CONTRACT (UK GDPR / Children's Code - most candidates are
 // minors). The output MUST NOT contain any direct identifier:
 //   • NO student / teacher / parent names
 //   • NO emails, dates of birth, addresses
@@ -16,7 +16,7 @@
 // hexdigest via `hashAuditInput`, injected by the caller so this file stays
 // free of any crypto/Node import and trivially unit-testable). Free-text the
 // learner wrote (`student_answer`, feedback) is retained verbatim because it is
-// the markable signal — in-text scrubbing of self-identifying content is the
+// the markable signal - in-text scrubbing of self-identifying content is the
 // separate human/redaction step described in REAL-DATA-PROTOCOL.md §3.2; this
 // function never *introduces* PII and never copies a name/email/DOB field.
 //
@@ -29,7 +29,7 @@
 /**
  * The minimal, already-loaded inputs `anonymiseRecord` needs. The caller
  * (prepare.ts) populates this from a `marking_submissions` row plus the latest
- * `teacher_moderations` row — it never passes the whole DB row through, so
+ * `teacher_moderations` row - it never passes the whole DB row through, so
  * unexpected PII-bearing columns cannot leak by accident.
  *
  * Every id field here is the RAW id; `anonymiseRecord` hashes the three that
@@ -42,7 +42,7 @@ export interface RawSubmissionBundle {
   schoolId: string | null
   /** Raw `marking_submissions.class_id` (nullable). Hashed → `anon_class_id`. */
   classId: string | null
-  /** `marking_submissions.source` — 'b2c_self' | 'b2b_class'. */
+  /** `marking_submissions.source` - 'b2c_self' | 'b2b_class'. */
   source: string | null
 
   // ── Structured, non-identifying question context ──────────────────────────
@@ -54,7 +54,7 @@ export interface RawSubmissionBundle {
   /** Resolved rubric/scheme version label (NOT a person). */
   rubricVersion: string | null
 
-  /** The learner's answer — the markable signal, retained verbatim. */
+  /** The learner's answer - the markable signal, retained verbatim. */
   studentAnswer: string
 
   // ── AI prediction (non-identifying) ───────────────────────────────────────
@@ -74,7 +74,7 @@ export interface RawSubmissionBundle {
   /** ISO timestamp the teacher approved the submission. */
   approvedAt: string | null
 
-  // ── Provenance (model/prompt version strings — not people) ────────────────
+  // ── Provenance (model/prompt version strings - not people) ────────────────
   modelVersion: string | null
   promptVersion: string | null
 }
@@ -165,7 +165,7 @@ export function anonymiseRecord(
       : (raw.aiAoBreakdown ?? null)
 
   return {
-    // Hashed correlation key — non-reversible, unique per submission.
+    // Hashed correlation key - non-reversible, unique per submission.
     anon_submission_id: hashId(raw.submissionId),
     // Real FK retained ONLY in the service-role-only table (never exported).
     source_submission_id: raw.submissionId,
@@ -196,7 +196,7 @@ export function anonymiseRecord(
     model_version: blankToNull(raw.modelVersion),
     prompt_version: blankToNull(raw.promptVersion),
 
-    // Hashed school / class — null stays null (b2c self-study has no school).
+    // Hashed school / class - null stays null (b2c self-study has no school).
     anon_school_id: raw.schoolId ? hashId(raw.schoolId) : null,
     anon_class_id: raw.classId ? hashId(raw.classId) : null,
 

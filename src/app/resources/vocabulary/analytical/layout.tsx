@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Master analytical vocabulary for GCSE English Literature and Language. Key terms for discussing techniques, effects, and writers intentions.',
   alternates: { canonical: 'https://theenglishhub.app/resources/vocabulary/analytical' },
   openGraph: {
-    title: 'Analytical Vocabulary — The English Hub',
+    title: 'Analytical Vocabulary - The English Hub',
     description:
       'Master analytical vocabulary for GCSE English Literature and Language. Key terms for discussing techniques, effects, and writers intentions.',
   },

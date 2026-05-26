@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Frankenstein revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Frankenstein GCSE revision — Shelley',
+    title: 'Frankenstein revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Frankenstein GCSE revision - Shelley',
   },
-  title: 'Frankenstein revision guide — themes, characters, key quotes',
+  title: 'Frankenstein revision guide - themes, characters, key quotes',
   description:
-    "Frankenstein GCSE revision — Shelley's Gothic novel by chapter with characters, themes, key quotes and essay plans. Aligned to AQA, Edexcel, OCR.",
+    "Frankenstein GCSE revision - Shelley's Gothic novel by chapter with characters, themes, key quotes and essay plans. Aligned to AQA, Edexcel, OCR.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/frankenstein',
   },
@@ -105,45 +105,45 @@ const data: TextGuideData = {
   quotations: [
     {
       quote: '"I ought to be thy Adam, but I am rather the fallen angel."',
-      who: 'The Creature — Chapter 10',
+      who: 'The Creature - Chapter 10',
       analysis:
         "The Creature uses Milton's Paradise Lost to articulate his abandonment. He should have been loved as a first creation but has been cast out like Satan.",
     },
     {
       quote: '"Beware; for I am fearless, and therefore powerful."',
-      who: 'The Creature — Chapter 20',
+      who: 'The Creature - Chapter 20',
       analysis:
         "The Creature's warning reveals that his power comes from having nothing left to lose. Rejection has made him dangerous.",
     },
     {
       quote:
         '"I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body."',
-      who: 'Victor — Chapter 5',
+      who: 'Victor - Chapter 5',
       analysis:
         "Victor's single-minded obsession is laid bare. He has sacrificed health, relationships and moral reflection for one goal.",
     },
     {
-      quote: '"I beheld the wretch — the miserable monster whom I had created."',
-      who: 'Victor — Chapter 5',
+      quote: '"I beheld the wretch - the miserable monster whom I had created."',
+      who: 'Victor - Chapter 5',
       analysis:
         'Victor\'s immediate revulsion at his creation. The word "wretch" shows he denies the Creature humanity from the very first moment.',
     },
     {
       quote:
         '"Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge."',
-      who: 'Victor — Chapter 4',
+      who: 'Victor - Chapter 4',
       analysis:
         'Victor warns Walton directly, making his story a cautionary tale about the pursuit of forbidden knowledge.',
     },
     {
       quote: '"I was benevolent and good; misery made me a fiend."',
-      who: 'The Creature — Chapter 10',
+      who: 'The Creature - Chapter 10',
       analysis:
         "The Creature articulates the novel's nature-versus-nurture argument in a single sentence. He was born innocent.",
     },
     {
       quote: '"If I cannot inspire love, I will cause fear."',
-      who: 'The Creature — Chapter 17',
+      who: 'The Creature - Chapter 17',
       analysis:
         'The Creature turns to terror as the only form of power available to someone denied all affection.',
     },
@@ -177,10 +177,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     id: 'fr-3',
     question: "What is Victor's immediate reaction when the Creature opens its eyes?",
     type: 'multiple-choice',
-    options: ['Joy and wonder', 'He embraces it', 'Horror and revulsion — he flees', 'He names it'],
+    options: ['Joy and wonder', 'He embraces it', 'Horror and revulsion - he flees', 'He names it'],
     correctIndex: 2,
     explanation:
-      'Victor is revolted by what he has made and abandons the Creature immediately. This act of irresponsibility is the origin of all the tragedy that follows — a creator who refuses to care for his creation.',
+      'Victor is revolted by what he has made and abandons the Creature immediately. This act of irresponsibility is the origin of all the tragedy that follows - a creator who refuses to care for his creation.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -246,7 +246,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He was always evil',
-      'He was born innocent and driven to violence only by rejection — supporting nature vs nurture',
+      'He was born innocent and driven to violence only by rejection - supporting nature vs nurture',
       'He enjoys being a fiend',
       'He blames the weather',
     ],
@@ -262,7 +262,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They look similar',
-      "Both are driven by dangerous ambition and isolation — Victor's story serves as a warning Walton heeds",
+      "Both are driven by dangerous ambition and isolation - Victor's story serves as a warning Walton heeds",
       'They are from the same city',
       'They share the same profession',
     ],
@@ -396,7 +396,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The Arctic represents ambition pushed to its furthest extreme — beautiful but deadly. Both Victor and Walton pursue glory into the frozen waste. The desolation mirrors Victor's destroyed life and the Creature's isolation from all human warmth.",
+      "The Arctic represents ambition pushed to its furthest extreme - beautiful but deadly. Both Victor and Walton pursue glory into the frozen waste. The desolation mirrors Victor's destroyed life and the Creature's isolation from all human warmth.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -407,7 +407,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: [
       'The Creature alone',
       'Victor alone',
-      'The question is deliberately ambiguous — Shelley challenges the reader to reconsider who the real monster is',
+      'The question is deliberately ambiguous - Shelley challenges the reader to reconsider who the real monster is',
       'Neither',
     ],
     correctIndex: 2,
@@ -514,7 +514,7 @@ export default async function FrankensteinPage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="Frankenstein — Complete GCSE Study Guide"
+        name="Frankenstein - Complete GCSE Study Guide"
         description="In-depth study guide for Frankenstein covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -522,7 +522,7 @@ export default async function FrankensteinPage() {
         url="https://theenglishhub.app/revision/texts/frankenstein"
       />
       <CourseJsonLd
-        name="Frankenstein — Complete GCSE Study Guide"
+        name="Frankenstein - Complete GCSE Study Guide"
         description="In-depth study guide for Frankenstein covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

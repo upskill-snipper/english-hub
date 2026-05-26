@@ -9,7 +9,7 @@ function ao(id: string, marks: number, maxMarks: number): AOScore {
   return { id, label: id, marks, maxMarks, band: '', justification: '' }
 }
 
-// ─── predictGrade — various AO score combinations ──────────────────────────────
+// ─── predictGrade - various AO score combinations ──────────────────────────────
 
 describe('predictGrade', () => {
   it('returns Grade 9 for 82%+ (AQA boundary)', () => {
@@ -74,12 +74,7 @@ describe('predictGrade', () => {
   })
 
   it('sums marks across multiple AOs', () => {
-    const scores = [
-      ao('AO1', 20, 25),
-      ao('AO2', 18, 25),
-      ao('AO3', 15, 25),
-      ao('AO4', 12, 25),
-    ]
+    const scores = [ao('AO1', 20, 25), ao('AO2', 18, 25), ao('AO3', 15, 25), ao('AO4', 12, 25)]
     // Total: 65/100 = 65%
     const result = predictGrade(scores)
     expect(result.totalMarks).toBe(65)

@@ -394,7 +394,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     .upsert(profileUpsert, { onConflict: 'id' })
 
   if (profileError) {
-    // Non-fatal: log and continue — the user and school exist
+    // Non-fatal: log and continue - the user and school exist
     console.warn('[school/register] Profile upsert failed (non-fatal):', profileError)
   }
 
@@ -421,7 +421,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     )
   }
 
-  // ── Send welcome email (log only — no sendEmail utility found) ───────────
+  // ── Send welcome email (log only - no sendEmail utility found) ───────────
   console.info(
     `[school/register] New school registered: ${schoolName} (${slug}) | admin: ${normalizedEmail} | access: ${accessType}`,
   )

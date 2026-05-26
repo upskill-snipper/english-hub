@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'iLowerSecondary English: what the exam looks like',
     description:
-      'A practical walkthrough of the single iLowerSecondary English achievement test — the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
+      'A practical walkthrough of the single iLowerSecondary English achievement test - the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
   },
   title: 'iLowerSecondary English: exam format & strategy',
   description:
-    'A practical walkthrough of the single iLowerSecondary English achievement test — the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
+    'A practical walkthrough of the single iLowerSecondary English achievement test - the Source Booklet, timing strategy, answering conventions, the question journey, and an exam-day checklist.',
   alternates: { canonical: PAGE_URL },
 }
 
@@ -27,7 +27,7 @@ const SECTION_A_TIMING = [
   {
     label: 'Read the Source Booklet',
     detail:
-      'Read one text at a time, in the order it is set. Read each text right through before you look at the questions on it. This is the approach Pearson itself recommends — it stops you skim-reading and missing the writer’s purpose.',
+      'Read one text at a time, in the order it is set. Read each text right through before you look at the questions on it. This is the approach Pearson itself recommends - it stops you skim-reading and missing the writer’s purpose.',
   },
   {
     label: 'Answer Section A in order',
@@ -42,25 +42,25 @@ const SECTION_A_TIMING = [
 ]
 
 const ANSWERING_CONVENTIONS = [
-  'For closed questions, put a clear cross in the box. Make it unambiguous — one box only.',
+  'For closed questions, put a clear cross in the box. Make it unambiguous - one box only.',
   'If you change your mind, put a line through the box you no longer want and mark your new answer with a cross.',
   'When you are asked to underline or circle, do it clearly. A single, obvious mark is what the examiner credits.',
   'Treat the marks in brackets as a time guide: a 1-mark answer is short; a 6-mark answer needs development.',
-  'No dictionaries are allowed in the exam — spelling and vocabulary are assessed in Section B.',
+  'No dictionaries are allowed in the exam - spelling and vocabulary are assessed in Section B.',
 ]
 
 const EXAM_DAY_CHECKLIST = [
-  'Bring black or blue pen — and a spare pen.',
+  'Bring black or blue pen - and a spare pen.',
   'Know that there is one paper, one Source Booklet, and that you answer every question in Section A.',
   'Check you have the Source Booklet as well as the question paper before you start.',
-  'No dictionaries — do not plan to look words up.',
+  'No dictionaries - do not plan to look words up.',
   'Write your answers in the spaces provided; if you need more room, use the continuation pages and label clearly.',
   'Keep an eye on the clock against the recommended split between the two sections.',
 ]
 
 const COMMON_MISTAKES = [
   'Skim-reading the Source Booklet and missing the writer’s purpose, then having to re-read mid-question.',
-  'Lifting words straight from the text without explaining them — unexplained lifts are not credited on impact questions.',
+  'Lifting words straight from the text without explaining them - unexplained lifts are not credited on impact questions.',
   'Ticking or crossing more than one box on a closed question, so no mark can be given.',
   'Spending too long on 1-mark items and running out of time for the high-tariff comparison and the writing task.',
   'Writing a vague, implicit comparison instead of an explicit, developed one.',
@@ -129,7 +129,7 @@ export default async function ExamFormatPage() {
         </div>
         <p className="text-sm text-muted-foreground">
           The two recommended times add up to less than the full paper length, which leaves you
-          reading and checking time built in — use it.
+          reading and checking time built in - use it.
         </p>
       </section>
 
@@ -139,7 +139,7 @@ export default async function ExamFormatPage() {
           Section A is answered against a separate Source Booklet. It contains{' '}
           <strong>three unseen texts you will not have seen before</strong>: two non-fiction texts
           and one fiction text. All three are linked by a <strong>common theme</strong>. That shared
-          theme matters — it is what lets the paper ask you to compare across texts, and the Section
+          theme matters - it is what lets the paper ask you to compare across texts, and the Section
           B writing task is related to the same theme. So the reading you do in Section A also feeds
           the ideas you will need for your writing.
         </p>
@@ -150,7 +150,7 @@ export default async function ExamFormatPage() {
           <p className="text-sm text-muted-foreground leading-relaxed">
             Read <strong>one text at a time</strong>. Read each text right through before turning to
             the questions on it. Trying to read and answer at the same time leads to skim-reading
-            and missed meaning — reading whole texts in order is the genuine approach Pearson
+            and missed meaning - reading whole texts in order is the genuine approach Pearson
             recommends.
           </p>
         </div>
@@ -220,7 +220,7 @@ export default async function ExamFormatPage() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground">
-          Marks and formats above are typical of the question types — the exact wording, order and
+          Marks and formats above are typical of the question types - the exact wording, order and
           number of items can vary between papers.
         </p>
       </section>

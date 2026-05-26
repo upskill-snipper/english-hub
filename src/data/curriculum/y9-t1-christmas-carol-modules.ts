@@ -13,7 +13,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>London in the 1840s was a city of extremes. The wealthy lived in townhouses in Mayfair and Belgravia; the poor crammed into cellars and tenements in areas like Whitechapel and St Giles, where entire families shared a single room. Cholera, typhus, and tuberculosis were rampant because there was no proper sewage system. Life expectancy for a working-class Londoner was approximately twenty-two years. For the upper classes, it was over forty. These are not abstract statistics; they are the lived reality that Dickens dramatises through Scrooge's wilful blindness to suffering.</p>
 
-<div class="key-term"><strong>Key Term: Laissez-faire economics</strong> — The dominant economic philosophy of Victorian Britain, holding that the government should not interfere in the free market. This ideology was used to justify poverty: if the poor were suffering, it was because they had failed to compete, not because the system was unjust.</div>
+<div class="key-term"><strong>Key Term: Laissez-faire economics</strong> - The dominant economic philosophy of Victorian Britain, holding that the government should not interfere in the free market. This ideology was used to justify poverty: if the poor were suffering, it was because they had failed to compete, not because the system was unjust.</div>
 
 <h3>The New Poor Law of 1834</h3>
 <p>The Poor Law Amendment Act of 1834 was one of the most controversial pieces of legislation in Victorian Britain. It replaced the old system of parish relief with a network of workhouses. The principle behind the law was simple and brutal: poverty should be made so unpleasant that people would do anything to avoid it. This was called the principle of "less eligibility" -- conditions inside the workhouse had to be worse than the worst conditions outside it.</p>
@@ -22,7 +22,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>When Scrooge says the poor should go to the "prisons" and "workhouses," Dickens is directly quoting the callous attitudes of the wealthy. When Scrooge asks, "Are there no prisons? Are there no workhouses?", he is parroting the language of those who believed they had discharged their social obligations simply because institutions existed, however cruel those institutions might be.</p>
 
-<div class="key-term"><strong>Key Term: Malthusian economics</strong> — Thomas Malthus argued that population growth would always outstrip food supply, and that poverty was therefore inevitable and even necessary to control population. Scrooge's reference to "decreasing the surplus population" echoes Malthus directly. Dickens despised this philosophy.</div>
+<div class="key-term"><strong>Key Term: Malthusian economics</strong> - Thomas Malthus argued that population growth would always outstrip food supply, and that poverty was therefore inevitable and even necessary to control population. Scrooge's reference to "decreasing the surplus population" echoes Malthus directly. Dickens despised this philosophy.</div>
 
 <h3>The "Two Nations" Divide</h3>
 <p>Benjamin Disraeli, who would later become Prime Minister, described Victorian Britain as "two nations" -- the rich and the poor -- "between whom there is no intercourse and no sympathy; who are as ignorant of each other's habits, thoughts, and feelings, as if they were dwellers in different zones, or inhabitants of different planets." This is precisely the division that Dickens dramatises. Scrooge lives within walking distance of the Cratchit family, yet he is utterly ignorant of their suffering. The ghosts do not take him to some foreign land; they show him his own neighbourhood. The horror is proximity: misery exists all around him, and he has simply chosen not to see it.</p>
@@ -111,7 +111,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>This personal history is crucial. When Dickens writes about poverty, he is not writing from the comfortable distance of a wealthy observer. He had tasted destitution himself. He knew the terror of being abandoned by the adults who were supposed to protect you. This gives his social criticism an emotional authenticity that separates it from mere moralising. When he creates Tiny Tim -- a vulnerable child whose life depends on the generosity of those more powerful than him -- he is drawing on his own childhood fear that the world did not care whether he lived or died.</p>
 
-<div class="key-term"><strong>Key Term: Authorial intent</strong> — The purpose behind a writer's choices. Dickens' intent in <em>A Christmas Carol</em> is didactic: he wants to teach his readers a moral lesson about social responsibility. Identifying authorial intent allows you to move beyond describing what happens to explaining why the writer made it happen.</div>
+<div class="key-term"><strong>Key Term: Authorial intent</strong> - The purpose behind a writer's choices. Dickens' intent in <em>A Christmas Carol</em> is didactic: he wants to teach his readers a moral lesson about social responsibility. Identifying authorial intent allows you to move beyond describing what happens to explaining why the writer made it happen.</div>
 
 <h3>The Pamphlet That Became a Novella</h3>
 <p>In 1843, Dickens visited a "Ragged School" in Field Lane, one of London's most notorious slums. These were charitable schools for children too poor to attend any other kind of education. What he saw shocked him: children in rags, barefoot, many of them orphans or the children of criminals, living in conditions of absolute squalor. Dickens was so disturbed that he initially planned to write a political pamphlet called "An Appeal to the People of England, on behalf of the Poor Man's Child."</p>
@@ -220,7 +220,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Notice that Dickens uses the pathetic fallacy in reverse. Usually, cold weather reflects a character's inner gloom. Here, Scrooge generates his own cold. External weather "had little influence on Scrooge" because his internal coldness is already absolute. This is a sophisticated characterisation technique: Scrooge is not a victim of his environment; he is its cause. The cold radiates outward from him, affecting everyone he encounters.</p>
 
-<div class="key-term"><strong>Key Term: Pathetic fallacy</strong> — When the natural environment reflects or mirrors a character's emotional state. Dickens inverts this convention with Scrooge: rather than the weather affecting him, his coldness affects the world around him, symbolising how the selfishness of the wealthy creates suffering for others.</div>
+<div class="key-term"><strong>Key Term: Pathetic fallacy</strong> - When the natural environment reflects or mirrors a character's emotional state. Dickens inverts this convention with Scrooge: rather than the weather affecting him, his coldness affects the world around him, symbolising how the selfishness of the wealthy creates suffering for others.</div>
 
 <p>Dickens also establishes Scrooge through dialogue. His responses to the charity collectors are clinical and dismissive. His language is transactional: he thinks in terms of profit, loss, and expenditure. When told that many would "rather die" than enter a workhouse, he replies that they had better do so and "decrease the surplus population." This is not naturalistic speech; it is ideological speech. Scrooge does not sound like a real person -- he sounds like a Malthusian pamphlet. Dickens is using him as a mouthpiece for the attitudes he wants to attack.</p>
 
@@ -326,7 +326,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Marley's function is cautionary. He tells Scrooge that he has been condemned to wander the earth, witnessing suffering he can no longer alleviate. His torment is not physical pain but the agony of powerlessness -- of seeing the good he could have done and knowing it is too late. This is strategically placed before the three ghosts because it establishes the stakes. Scrooge is not being offered a pleasant educational experience; he is being offered his last chance to avoid Marley's fate.</p>
 
-<div class="key-term"><strong>Key Term: Tripartite structure</strong> — A three-part structure common in fairy tales, parables, and allegories. The pattern of three creates a sense of completeness and escalation. In <em>A Christmas Carol</em>, the three ghosts represent past, present, and future, providing a comprehensive moral education.</div>
+<div class="key-term"><strong>Key Term: Tripartite structure</strong> - A three-part structure common in fairy tales, parables, and allegories. The pattern of three creates a sense of completeness and escalation. In <em>A Christmas Carol</em>, the three ghosts represent past, present, and future, providing a comprehensive moral education.</div>
 
 <h3>The Ghost of Christmas Past: Memory and Regret</h3>
 <p>The first spirit is described as a strange, contradictory figure -- "like a child: yet not so like a child as like an old man." It flickers between youth and age, brightness and shadow. This ambiguity is deliberate: the past itself is ambiguous, containing both joy and pain, innocence and experience. The ghost's light, which emanates from its head, symbolises the illuminating power of memory -- but also its danger, which is why it carries an extinguisher cap. Some memories are too painful to bear.</p>
@@ -340,7 +340,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>The most disturbing moment comes at the end of this stave, when the ghost reveals two emaciated children hiding beneath its robes: Ignorance and Want. These allegorical figures represent the twin failures of Victorian society. Ignorance (the failure to educate the poor) and Want (the failure to feed and house them) are described as "wretched, abject, frightful, hideous, miserable." The ghost warns that Ignorance is the greater threat, because an uneducated populace is a dangerous one. This is Dickens at his most directly political.</p>
 
-<div class="key-term"><strong>Key Term: Allegory</strong> — A narrative in which characters, events, and settings represent abstract ideas or moral concepts. Ignorance and Want are allegorical figures: they are not realistic children but symbolic representations of social failure.</div>
+<div class="key-term"><strong>Key Term: Allegory</strong> - A narrative in which characters, events, and settings represent abstract ideas or moral concepts. Ignorance and Want are allegorical figures: they are not realistic children but symbolic representations of social failure.</div>
 
 <h3>The Ghost of Christmas Yet to Come: Fear and Silence</h3>
 <p>The third ghost is the most dramatically powerful because it is the most restrained. It does not speak. It does not explain. It simply points. Dickens strips away all warmth, all humour, all comfort. The ghost is "shrouded in a deep black garment" that conceals everything except one outstretched hand. It resembles the Grim Reaper, and this is intentional: this ghost deals in death.</p>
@@ -442,7 +442,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>When Dickens describes Scrooge as "hard and sharp as flint, from which no steel had ever struck out generous fire," he is using a single simile to operate on all four levels. "Flint" is cold, hard, and associated with a lack of generosity (no "fire" of warmth). The word "steel" suggests industrial hardness. The absence of "generous fire" is simultaneously physical (no warmth), emotional (no compassion), moral (no charity), and social (no contribution to community). This is the density of Dickens' language: one image carries multiple layers of meaning.</p>
 
-<div class="key-term"><strong>Key Term: Semantic field</strong> — A group of words related to the same topic or concept. Dickens constructs a semantic field of cold around Scrooge (frost, ice, chill, frozen, nipped) and a semantic field of warmth around the Cratchits and the reformed Scrooge (fire, hearth, glow, blaze). Tracking semantic fields across a text reveals the writer's underlying argument.</div>
+<div class="key-term"><strong>Key Term: Semantic field</strong> - A group of words related to the same topic or concept. Dickens constructs a semantic field of cold around Scrooge (frost, ice, chill, frozen, nipped) and a semantic field of warmth around the Cratchits and the reformed Scrooge (fire, hearth, glow, blaze). Tracking semantic fields across a text reveals the writer's underlying argument.</div>
 
 <h3>Light and Darkness</h3>
 <p>Alongside cold and warmth, Dickens uses light and darkness symbolically. Scrooge lives in darkness: his chambers are dark, his counting house is dark, his emotional life is dark. The Ghost of Christmas Past emits light from its head, symbolising the illuminating power of memory. The Ghost of Christmas Present carries a torch that showers blessings on the food of the poor. The Ghost of Christmas Yet to Come exists in shadow.</p>
@@ -554,7 +554,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>However, Dickens secularises the concept. Scrooge's redemption is not achieved through prayer, church attendance, or divine forgiveness. It is achieved through empathy -- the ability to see the world through other people's eyes. The ghosts do not preach sermons; they show him visions. Scrooge's transformation occurs because he finally sees the consequences of his actions and feels their emotional weight. Dickens is arguing that moral change comes not from religious instruction but from human connection.</p>
 
-<div class="key-term"><strong>Key Term: Redemption</strong> — The act of being saved from sin, error, or evil. In <em>A Christmas Carol</em>, Dickens presents redemption as achievable through empathy and action rather than through religious ritual, secularising a fundamentally Christian concept for a broad audience.</div>
+<div class="key-term"><strong>Key Term: Redemption</strong> - The act of being saved from sin, error, or evil. In <em>A Christmas Carol</em>, Dickens presents redemption as achievable through empathy and action rather than through religious ritual, secularising a fundamentally Christian concept for a broad audience.</div>
 
 <h3>The Moral Framework</h3>
 <p>Dickens' morality in this novella is relatively simple but powerfully argued. It can be summarised in a few propositions:</p>
@@ -663,7 +663,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Scrooge's response is a masterclass in ideological characterisation. He asks whether prisons and workhouses are still operating. When told they are, he considers his obligation discharged: "I help to support the establishments I have mentioned -- they cost enough." He then refuses to donate, declaring that those who are badly off "had better do it, and decrease the surplus population." Every word is carefully chosen by Dickens to represent the attitudes of the Victorian upper class. Scrooge is not speaking as an individual; he is channelling an entire ideology.</p>
 
-<div class="key-term"><strong>Key Term: Ideological characterisation</strong> — When a character is constructed to represent a set of beliefs or a social position rather than (or in addition to) being a psychologically realistic individual. Scrooge in Stave One is as much an ideology as a person.</div>
+<div class="key-term"><strong>Key Term: Ideological characterisation</strong> - When a character is constructed to represent a set of beliefs or a social position rather than (or in addition to) being a psychologically realistic individual. Scrooge in Stave One is as much an ideology as a person.</div>
 
 <h3>The Cratchit Family: Dickens' Counter-Argument</h3>
 <p>The Cratchit family functions as the moral counterweight to Scrooge. They are poor, but they are rich in love, gratitude, and mutual support. Their Christmas dinner is modest -- the goose is small, the pudding is tiny -- but it is celebrated with genuine joy. Dickens deliberately idealises the Cratchits to make his argument: poverty does not destroy the human spirit, but a society that tolerates poverty is morally bankrupt.</p>
@@ -779,7 +779,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <li><strong>Stave Five (Resolution):</strong> Scrooge's transformation and redemption.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Stave</strong> — A section or verse of a song or poem. By using this term, Dickens signals that the novella should be understood as a form of song -- a "carol" -- connecting it to musical performance, communal celebration, and the oral tradition of storytelling.</div>
+<div class="key-term"><strong>Key Term: Stave</strong> - A section or verse of a song or poem. By using this term, Dickens signals that the novella should be understood as a form of song -- a "carol" -- connecting it to musical performance, communal celebration, and the oral tradition of storytelling.</div>
 
 <h3>The Novella as Allegory</h3>
 <p>An allegory is a narrative in which characters, events, and settings represent abstract ideas or moral concepts beyond their literal meaning. <em>A Christmas Carol</em> operates as an allegory on multiple levels:</p>
@@ -891,7 +891,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Notice how Level 3 moves beyond the text itself to engage with broader ideas: collective responsibility, systemic injustice, the moral health of society. These are the kinds of conceptual connections that demonstrate sophisticated thinking.</p>
 
-<div class="key-term"><strong>Key Term: Conceptual interpretation</strong> — An analytical approach that connects specific textual details to broader ideas about society, humanity, or morality. The phrase "this reflects wider ideas about..." is a useful formula for introducing conceptual points.</div>
+<div class="key-term"><strong>Key Term: Conceptual interpretation</strong> - An analytical approach that connects specific textual details to broader ideas about society, humanity, or morality. The phrase "this reflects wider ideas about..." is a useful formula for introducing conceptual points.</div>
 
 <h3>Key Concepts for <em>A Christmas Carol</em></h3>
 <p>The following conceptual lenses can be applied to the novella. Practice using each one to interpret different moments in the text:</p>
@@ -1034,7 +1034,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>Notice how the context (New Poor Law, Malthusian logic, Victorian establishment attitudes) is woven into the same sentences as the textual analysis (rhetorical questions, performance of indifference). The context is not decorative; it is functional -- it explains why Dickens makes Scrooge speak this way.</p>
 
-<div class="key-term"><strong>Key Term: Integrated context</strong> — Context that is embedded within analytical sentences rather than presented as a separate block of information. The test is simple: if you can remove the contextual sentence without affecting the analysis, it is not properly integrated.</div>
+<div class="key-term"><strong>Key Term: Integrated context</strong> - Context that is embedded within analytical sentences rather than presented as a separate block of information. The test is simple: if you can remove the contextual sentence without affecting the analysis, it is not properly integrated.</div>
 
 <h3>Useful Phrases for Integrating Context</h3>
 <p>The following phrases help you embed context naturally within analytical sentences:</p>
@@ -1142,7 +1142,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 
 <p>The second version takes a position. It can be debated, developed, and supported with evidence. It drives the essay forward because every paragraph must contribute to proving this claim.</p>
 
-<div class="key-term"><strong>Key Term: Thesis</strong> — The central argument of an essay, usually stated in the introduction. A strong thesis is specific, debatable, and complex enough to sustain an entire essay. It should not be a statement of fact or a vague generalisation.</div>
+<div class="key-term"><strong>Key Term: Thesis</strong> - The central argument of an essay, usually stated in the introduction. A strong thesis is specific, debatable, and complex enough to sustain an entire essay. It should not be a statement of fact or a vague generalisation.</div>
 
 <h3>Essay Structure: The Progression Model</h3>
 <p>Instead of thinking about your essay as a collection of separate points (Point 1, Point 2, Point 3), think about it as a progression -- a journey through an argument that builds in complexity:</p>
@@ -1318,7 +1318,7 @@ export const y9T1ChristmasCarolModules: CourseModule[] = [
 <li><strong>If you cannot remember the exact words, paraphrase.</strong> Write "Dickens describes Scrooge as being cold and hard, comparing him to flint" rather than leaving a gap. Paraphrasing is less effective than quoting but far better than saying nothing.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Embedded quotation</strong> — A quotation woven into your own sentence so that it reads as a natural part of your argument. Under exam pressure, embedding is essential because it saves time and demonstrates analytical sophistication simultaneously.</div>
+<div class="key-term"><strong>Key Term: Embedded quotation</strong> - A quotation woven into your own sentence so that it reads as a natural part of your argument. Under exam pressure, embedding is essential because it saves time and demonstrates analytical sophistication simultaneously.</div>
 
 <h3>Common Pitfalls Under Timed Conditions</h3>
 <ul>

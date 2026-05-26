@@ -1,5 +1,5 @@
 /**
- * fired-check route — auth, happy canFire, race protection.
+ * fired-check route - auth, happy canFire, race protection.
  */
 
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest'
@@ -23,7 +23,9 @@ vi.mock('@/lib/supabase/server', () => ({
       }),
       select: () => ({
         eq: () => ({
-          eq: () => ({ in: () => ({ gte: () => ({ limit: async () => ({ data: [], error: null }) }) }) }),
+          eq: () => ({
+            in: () => ({ gte: () => ({ limit: async () => ({ data: [], error: null }) }) }),
+          }),
           in: () => ({ gte: () => ({ limit: async () => ({ data: [], error: null }) }) }),
         }),
       }),
@@ -36,18 +38,20 @@ let reserveShouldFail = false
 vi.mock('@/lib/prisma', () => ({
   prisma: {
     user: {
-      findUnique: vi.fn().mockImplementation(async ({ where }: { where: { id?: string; email?: string } }) => {
-        if (where.email === 'a@b.com' || where.id === 'u1') {
-          return {
-            id: 'u1',
-            dateOfBirth: new Date('2000-01-01'),
-            isMinor: false,
-            deletedAt: null,
-            privacySettings: { marketingEnabled: true, aiOptOut: false },
+      findUnique: vi
+        .fn()
+        .mockImplementation(async ({ where }: { where: { id?: string; email?: string } }) => {
+          if (where.email === 'a@b.com' || where.id === 'u1') {
+            return {
+              id: 'u1',
+              dateOfBirth: new Date('2000-01-01'),
+              isMinor: false,
+              deletedAt: null,
+              privacySettings: { marketingEnabled: true, aiOptOut: false },
+            }
           }
-        }
-        return null
-      }),
+          return null
+        }),
     },
   },
 }))
@@ -74,7 +78,9 @@ afterEach(() => {
 
 describe('POST /api/trustpilot/fired-check', () => {
   it('401 when unauthenticated', async () => {
-    const res = await POST(makeRequest({ trigger: 'student_first_mark', referenceId: 'u1' }) as never)
+    const res = await POST(
+      makeRequest({ trigger: 'student_first_mark', referenceId: 'u1' }) as never,
+    )
     expect(res.status).toBe(401)
     const json = await (res as unknown as Response).json()
     expect(json.canFire).toBe(false)
@@ -82,7 +88,9 @@ describe('POST /api/trustpilot/fired-check', () => {
 
   it('200 with canFire:true when authenticated and dedup clear', async () => {
     authUser = { id: 'u1', email: 'a@b.com' }
-    const res = await POST(makeRequest({ trigger: 'student_first_mark', referenceId: 'u1' }) as never)
+    const res = await POST(
+      makeRequest({ trigger: 'student_first_mark', referenceId: 'u1' }) as never,
+    )
     expect(res.status).toBe(200)
     const json = await (res as unknown as Response).json()
     expect(json).toEqual({ canFire: true })
@@ -91,7 +99,9 @@ describe('POST /api/trustpilot/fired-check', () => {
   it('atomic reserve denies when 23505 unique_violation fires', async () => {
     authUser = { id: 'u1', email: 'a@b.com' }
     reserveShouldFail = true
-    const res = await POST(makeRequest({ trigger: 'student_first_mark', referenceId: 'u1' }) as never)
+    const res = await POST(
+      makeRequest({ trigger: 'student_first_mark', referenceId: 'u1' }) as never,
+    )
     const json = await (res as unknown as Response).json()
     expect(json.canFire).toBe(false)
     expect(json.reason).toBe('duplicate_trigger_12m')

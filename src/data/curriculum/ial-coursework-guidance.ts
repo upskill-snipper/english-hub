@@ -1,42 +1,42 @@
 // ──────────────────────────────────────────────
-// IAL English Language — Coursework Guidance
+// IAL English Language - Coursework Guidance
 // Units 3 (WEN03) and 4 (WEN04)
 // Pearson Edexcel International A Level
 // ──────────────────────────────────────────────
 
 export interface CourseworkGuidance {
-  id: string;
-  unit: 'Unit 3' | 'Unit 4';
-  component: string;
-  title: string;
-  wordCount: string;
-  marks: number;
-  percentage: number;
-  requirements: string[];
-  commonMistakes: string[];
-  topTips: string[];
-  checklistItems: string[];
+  id: string
+  unit: 'Unit 3' | 'Unit 4'
+  component: string
+  title: string
+  wordCount: string
+  marks: number
+  percentage: number
+  requirements: string[]
+  commonMistakes: string[]
+  topTips: string[]
+  checklistItems: string[]
 }
 
 export interface CourseworkTimeline {
-  id: string;
-  unit: 'Unit 3' | 'Unit 4';
-  week: number;
-  milestone: string;
-  tasks: string[];
-  teacherFeedbackPoint: boolean;
-  submissionType: 'draft' | 'final' | 'none';
+  id: string
+  unit: 'Unit 3' | 'Unit 4'
+  week: number
+  milestone: string
+  tasks: string[]
+  teacherFeedbackPoint: boolean
+  submissionType: 'draft' | 'final' | 'none'
 }
 
 export interface AnnouncedExemplar {
-  id: string;
-  unit: string;
-  component: string;
-  band: number;
-  examinerComment: string;
-  whatWorksWell: string[];
-  whatToImprove: string[];
-  grade: string;
+  id: string
+  unit: string
+  component: string
+  band: number
+  examinerComment: string
+  whatWorksWell: string[]
+  whatToImprove: string[]
+  grade: string
 }
 
 // ──────────────────────────────────────────────
@@ -49,7 +49,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
     id: 'ial-cw-u3-original-writing',
     unit: 'Unit 3',
     component: 'Original Writing',
-    title: 'Unit 3 Original Writing — Two Crafted Texts',
+    title: 'Unit 3 Original Writing - Two Crafted Texts',
     wordCount: '750-1,500 words per piece (total 1,500-3,000 words for both pieces combined)',
     marks: 40,
     percentage: 20,
@@ -68,11 +68,11 @@ export const courseworkGuidance: CourseworkGuidance[] = [
     commonMistakes: [
       'Choosing two genres that are too similar (e.g., two personal essays), which limits the range of techniques on display.',
       'Writing for a vague or undefined audience, resulting in inconsistent register throughout the piece.',
-      'Over-relying on narrative description at the expense of linguistic craft — examiners reward deliberate technique, not just storytelling.',
+      'Over-relying on narrative description at the expense of linguistic craft - examiners reward deliberate technique, not just storytelling.',
       'Neglecting structure: beginning both pieces the same way (e.g., chronological openings) when the genre demands a different structural logic.',
       'Using informal internet language or text-speak in formal genres without deliberate stylistic justification.',
       'Exceeding the word count and then cutting indiscriminately, removing carefully crafted passages rather than planning length from the outset.',
-      'Producing writing that reads as a first draft rather than a refined, redrafted piece — coursework rewards revision.',
+      'Producing writing that reads as a first draft rather than a refined, redrafted piece - coursework rewards revision.',
       'Failing to sustain the chosen register across the full length of the piece; register drift is penalised heavily in Band 3 and above.',
       'Choosing sensationalist or shock-value subjects as a substitute for genuine linguistic craft.',
       'Ignoring genre conventions entirely in the name of "originality" without demonstrating awareness of the conventions being subverted.',
@@ -82,11 +82,11 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Write a genre profile before you begin: define the conventions, register, structural expectations, and typical audience for your chosen genre.',
       'Draft an opening paragraph in at least two different ways, then choose the stronger one and analyse why it is more effective.',
       'Use a technique log as you draft: keep a running list of every deliberate linguistic choice you make, as this material feeds directly into your commentary.',
-      'Read your work aloud during revision — you will catch awkward rhythms, inconsistent register, and overlong sentences that the eye skips over.',
+      'Read your work aloud during revision - you will catch awkward rhythms, inconsistent register, and overlong sentences that the eye skips over.',
       'Vary your sentence architecture deliberately: examiners look for a repertoire of structures (simple, compound, complex, minor, fragmented) deployed for effect.',
       'Use a trusted peer reader and ask them to identify any moment where the genre illusion breaks down or the register shifts unexpectedly.',
       'Allocate your word count strategically: identify the two or three moments in each piece where the most linguistic complexity should be concentrated.',
-      'Revisit your opening and closing last — these carry the most weight in a reader\'s impression and often need to be rewritten after the full piece exists.',
+      "Revisit your opening and closing last - these carry the most weight in a reader's impression and often need to be rewritten after the full piece exists.",
       'Submit your penultimate draft to your teacher for formative feedback at least two weeks before the internal deadline.',
     ],
     checklistItems: [
@@ -110,7 +110,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
     id: 'ial-cw-u3-commentary',
     unit: 'Unit 3',
     component: 'Commentary',
-    title: 'Unit 3 Commentary — Analytical Reflection on Original Writing',
+    title: 'Unit 3 Commentary - Analytical Reflection on Original Writing',
     wordCount: '500-750 words (total for commentary on both pieces)',
     marks: 20,
     percentage: 10,
@@ -122,14 +122,14 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Use accurate linguistic metalanguage (e.g., semantic field, syndetic listing, modal verbs, deixis) to describe your choices.',
       'Explain the intended effect of key techniques on the target audience.',
       'Reflect honestly on what works well and acknowledge any compromises or challenges encountered.',
-      'The commentary is not a creative piece — it must be written in formal academic register.',
+      'The commentary is not a creative piece - it must be written in formal academic register.',
       'Do not merely describe what you wrote; every observation must be analytical (explain why a choice was made and what effect it achieves).',
       'The commentary is marked separately from the original writing under AO5 (context and independent thinking).',
     ],
     commonMistakes: [
       'Writing a descriptive summary of the content of each piece rather than an analysis of language choices.',
       'Using vague metalanguage ("I used lots of adjectives to describe the scene") without naming specific techniques or explaining their effects.',
-      'Forgetting to reference both pieces — commentaries that focus on one piece and ignore the other lose marks immediately.',
+      'Forgetting to reference both pieces - commentaries that focus on one piece and ignore the other lose marks immediately.',
       'Treating the commentary as an afterthought written in one sitting after the creative work is complete, rather than as a parallel analytical process.',
       'Quoting too much from the original writing, leaving insufficient space for analysis within the word limit.',
       'Writing in an informal or semi-creative register rather than the formal academic register required.',
@@ -144,9 +144,9 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Aim for at least four or five precisely named linguistic techniques per piece, each discussed with a short quotation and a clear explanation of effect.',
       'Use connectives that signal comparison across pieces ("In contrast to the speech, my short story deploys...") to add analytical sophistication.',
       'Check that every paragraph contains at least one piece of embedded evidence from the original writing.',
-      'Consult the mark scheme language: Band 4 and 5 commentaries "evaluate" and "reflect critically" — use these words as a prompt to push analysis further.',
-      'Avoid the word "effective" without qualification — instead, name the specific effect (creates a sense of urgency, foregrounds the political argument, positions the reader as complicit).',
-      'End the commentary with a reflective sentence about what you would refine if you had additional time — this signals the independent critical awareness valued at the top bands.',
+      'Consult the mark scheme language: Band 4 and 5 commentaries "evaluate" and "reflect critically" - use these words as a prompt to push analysis further.',
+      'Avoid the word "effective" without qualification - instead, name the specific effect (creates a sense of urgency, foregrounds the political argument, positions the reader as complicit).',
+      'End the commentary with a reflective sentence about what you would refine if you had additional time - this signals the independent critical awareness valued at the top bands.',
       'Read your commentary against your original writing to check that every analytical claim is actually visible in the text.',
       'Ask your teacher to read the commentary before the final submission and check that your metalanguage is used accurately.',
     ],
@@ -169,7 +169,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
     id: 'ial-cw-u4-investigation',
     unit: 'Unit 4',
     component: 'Language Investigation',
-    title: 'Unit 4 Language Investigation — Independent Research Project',
+    title: 'Unit 4 Language Investigation - Independent Research Project',
     wordCount: '2,500-3,000 words (excluding bibliography and data appendix)',
     marks: 60,
     percentage: 30,
@@ -178,7 +178,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Formulate a clear research question or hypothesis at the outset of the investigation.',
       'Collect and analyse a primary data set of your own: this may include written texts, transcripts of spoken language, advertisements, social media posts, or other authentic language samples.',
       'Apply at least two named linguistic frameworks or analytical approaches (e.g., Hallidayan systemic functional grammar, Gricean maxims, sociolinguistic variation frameworks, discourse analysis).',
-      'Contextualise findings within relevant linguistic theory and scholarship — secondary sources must be cited accurately.',
+      'Contextualise findings within relevant linguistic theory and scholarship - secondary sources must be cited accurately.',
       'Present findings objectively and interpret them in relation to the original research question.',
       'Include a data appendix with a sample or full set of the primary data analysed.',
       'All sources must be listed in a full bibliography using a consistent referencing style (Harvard or MLA).',
@@ -204,7 +204,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Plan your methodology carefully and write it up as you go, noting decisions made, alternatives rejected, and limitations acknowledged.',
       'Read at least three academic sources on your topic area before you begin data collection, so that you have a theoretical lens in place when you analyse.',
       'Use a systematic coding system when you analyse your data: colour-code or annotate features consistently so that your findings are replicable.',
-      'Write your introduction and research question first, then your methodology, then your analysis, then your conclusion — in that order. Revise the introduction last.',
+      'Write your introduction and research question first, then your methodology, then your analysis, then your conclusion - in that order. Revise the introduction last.',
       'Use tables, frequency counts, or simple statistical comparisons where appropriate to present quantitative patterns clearly.',
       'Signpost your structure clearly: subheadings for Introduction, Methodology, Analysis, Conclusion, and Bibliography are expected and help the examiner follow your argument.',
       'Leave at least a week between completing a full draft and your final revision, so you can read the investigation with fresh critical distance.',
@@ -230,8 +230,9 @@ export const courseworkGuidance: CourseworkGuidance[] = [
     id: 'ial-cw-u4-bibliography',
     unit: 'Unit 4',
     component: 'Bibliography',
-    title: 'Unit 4 Bibliography — Academic Referencing and Source Management',
-    wordCount: 'No word limit (excluded from total count); typically 8-15 entries for a strong investigation',
+    title: 'Unit 4 Bibliography - Academic Referencing and Source Management',
+    wordCount:
+      'No word limit (excluded from total count); typically 8-15 entries for a strong investigation',
     marks: 0,
     percentage: 0,
     requirements: [
@@ -251,7 +252,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Omitting sources that are clearly drawn upon in the analysis but never formally cited.',
       'Mixing two different referencing styles (e.g., Harvard for books, numbered footnotes for websites) in the same bibliography.',
       'Providing incomplete entries that omit year of publication, publisher, or page range for journal articles.',
-      'Citing Wikipedia or general encyclopedias as academic sources — these are not peer-reviewed and should not appear as primary scholarly references.',
+      'Citing Wikipedia or general encyclopedias as academic sources - these are not peer-reviewed and should not appear as primary scholarly references.',
       'Including only web sources with no academic books or journal articles, which signals limited independent research.',
       'Failing to include the date accessed for online sources, which makes the reference unverifiable.',
       'Listing an entire website rather than the specific page or article consulted.',
@@ -267,7 +268,7 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'If you cite a website, include the full URL not a shortened link, so the examiner can locate the original source.',
       'A bibliography with eight to twelve well-chosen academic sources signals independent scholarly reading; more entries do not automatically mean more marks.',
       'Check the year of publication for all sources: linguistic scholarship from more than twenty years ago may be foundational but should be complemented by more recent work.',
-      'Ask your teacher to check your referencing format before final submission — minor errors (missing commas, wrong order of elements) are easy to fix.',
+      'Ask your teacher to check your referencing format before final submission - minor errors (missing commas, wrong order of elements) are easy to fix.',
       'Alphabetical ordering is required in Harvard style: sort your entries carefully, especially when authors share the same surname or you have multiple works by the same author.',
     ],
     checklistItems: [
@@ -283,14 +284,14 @@ export const courseworkGuidance: CourseworkGuidance[] = [
       'Titles are formatted correctly: books and journals in italics, articles and chapters in quotation marks.',
     ],
   },
-];
+]
 
 // ──────────────────────────────────────────────
 // COURSEWORK TIMELINES
 // ──────────────────────────────────────────────
 
 export const courseworkTimelines: CourseworkTimeline[] = [
-  // ── Unit 3 — 12-Week Timeline ────────────────
+  // ── Unit 3 - 12-Week Timeline ────────────────
   {
     id: 'u3-week-01',
     unit: 'Unit 3',
@@ -326,7 +327,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     milestone: 'Planning and Structural Mapping',
     tasks: [
       'Produce a detailed structural plan for both pieces: map the arc of each piece, identifying opening, development, and closing strategies.',
-      'Draft the opening paragraph of each piece in two different ways and compare — choose the stronger option with written justification.',
+      'Draft the opening paragraph of each piece in two different ways and compare - choose the stronger option with written justification.',
       'Begin your commentary log: write your first analytical entry explaining the genre and audience choices you have made so far.',
       'Identify potential word count distribution: how much space will each section or scene require?',
     ],
@@ -337,7 +338,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u3-week-04',
     unit: 'Unit 3',
     week: 4,
-    milestone: 'First Full Draft — Piece 1',
+    milestone: 'First Full Draft - Piece 1',
     tasks: [
       'Write a complete first draft of your first original writing piece.',
       'Do not self-edit as you write: the goal this week is to get a full draft on paper.',
@@ -351,7 +352,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u3-week-05',
     unit: 'Unit 3',
     week: 5,
-    milestone: 'Peer Review and Revision — Piece 1',
+    milestone: 'Peer Review and Revision - Piece 1',
     tasks: [
       'Exchange Piece 1 draft with a peer and give each other structured written feedback using the genre profile criteria.',
       'Complete a self-review checklist against the mark scheme Band descriptors.',
@@ -365,12 +366,12 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u3-week-06',
     unit: 'Unit 3',
     week: 6,
-    milestone: 'First Full Draft — Piece 2',
+    milestone: 'First Full Draft - Piece 2',
     tasks: [
       'Write a complete first draft of your second original writing piece.',
       'Apply lessons learned from the Piece 1 drafting process: plan technique deployment more deliberately from the start.',
       'Read the draft aloud and annotate it with technique labels as you go, noting where the genre logic breaks down.',
-      'Update your commentary log with entries specific to Piece 2\'s genre, audience, and language choices.',
+      "Update your commentary log with entries specific to Piece 2's genre, audience, and language choices.",
     ],
     teacherFeedbackPoint: false,
     submissionType: 'draft',
@@ -379,7 +380,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u3-week-07',
     unit: 'Unit 3',
     week: 7,
-    milestone: 'Peer Review and Revision — Piece 2',
+    milestone: 'Peer Review and Revision - Piece 2',
     tasks: [
       'Peer-review Piece 2 with a different partner than Week 5, asking them to focus on genre authenticity and audience impact.',
       'Complete a self-review of Piece 2 against the mark scheme.',
@@ -393,7 +394,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u3-week-08',
     unit: 'Unit 3',
     week: 8,
-    milestone: 'Incorporating Teacher Feedback — Both Pieces',
+    milestone: 'Incorporating Teacher Feedback - Both Pieces',
     tasks: [
       'Read teacher feedback carefully and categorise suggestions: structural, lexical, technical, register-related.',
       'Produce a revision action plan specifying the exact changes you will make to each piece.',
@@ -460,7 +461,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     submissionType: 'final',
   },
 
-  // ── Unit 4 — 12-Week Timeline ────────────────
+  // ── Unit 4 - 12-Week Timeline ────────────────
   {
     id: 'u4-week-01',
     unit: 'Unit 4',
@@ -468,7 +469,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     milestone: 'Topic Selection and Research Question Formulation',
     tasks: [
       'Brainstorm at least eight potential investigation topics across the areas of: language change, language variation, language and identity, language and power, or language in digital contexts.',
-      'Narrow the list to three candidates and for each write a draft research question — specific, focused, and answerable through primary data.',
+      'Narrow the list to three candidates and for each write a draft research question - specific, focused, and answerable through primary data.',
       'Discuss all three candidates with your teacher and confirm your final topic and research question.',
       'Begin an investigation notebook to log reading, data ideas, analytical observations, and bibliography entries.',
     ],
@@ -482,7 +483,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     milestone: 'Literature Review and Theoretical Framework',
     tasks: [
       'Read at least three academic sources directly relevant to your research question and take detailed notes.',
-      'Identify the theoretical frameworks you will use (e.g., Grice\'s maxims, Labovian sociolinguistics, Fairclough\'s critical discourse analysis).',
+      "Identify the theoretical frameworks you will use (e.g., Grice's maxims, Labovian sociolinguistics, Fairclough's critical discourse analysis).",
       'Write a 300-word literature review summary: what does existing scholarship say about your topic area?',
       'Add all sources read this week to your developing bibliography in the correct referencing format.',
     ],
@@ -521,7 +522,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u4-week-05',
     unit: 'Unit 4',
     week: 5,
-    milestone: 'Systematic Data Analysis — First Pass',
+    milestone: 'Systematic Data Analysis - First Pass',
     tasks: [
       'Apply your first analytical framework systematically to the full data set, coding features consistently.',
       'Record quantitative counts where appropriate (e.g., frequency of hedging expressions, instances of code-switching).',
@@ -535,7 +536,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u4-week-06',
     unit: 'Unit 4',
     week: 6,
-    milestone: 'Systematic Data Analysis — Second Pass and Theoretical Integration',
+    milestone: 'Systematic Data Analysis - Second Pass and Theoretical Integration',
     tasks: [
       'Apply your second analytical framework to the data, looking for patterns the first framework may have missed.',
       'Return to your secondary sources and identify specific scholarly arguments that your data either supports or complicates.',
@@ -549,7 +550,7 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     id: 'u4-week-07',
     unit: 'Unit 4',
     week: 7,
-    milestone: 'Full Investigation Draft — Introduction, Methodology, and Analysis',
+    milestone: 'Full Investigation Draft - Introduction, Methodology, and Analysis',
     tasks: [
       'Write the complete introduction section: context, research question, significance, and structure overview.',
       'Finalise and polish the methodology section, ensuring limitations are acknowledged.',
@@ -629,21 +630,21 @@ export const courseworkTimelines: CourseworkTimeline[] = [
     teacherFeedbackPoint: false,
     submissionType: 'final',
   },
-];
+]
 
 // ──────────────────────────────────────────────
 // COURSEWORK EXEMPLARS
 // ──────────────────────────────────────────────
 
 export const courseworkExemplars: AnnouncedExemplar[] = [
-  // ── Unit 3 — Band 2 ──────────────────────────
+  // ── Unit 3 - Band 2 ──────────────────────────
   {
     id: 'u3-exemplar-band2-a',
     unit: 'Unit 3',
     component: 'Original Writing',
     band: 2,
     examinerComment:
-      'This piece demonstrates some awareness of the chosen genre — a travel article — and maintains a broadly appropriate register for much of its length. The candidate attempts a variety of sentence structures and includes some descriptive imagery. However, the writing lacks the consistent linguistic control required for the higher bands. Register shifts occur across the piece, moving between formal journalistic style and colloquial phrasing without deliberate effect. The opening is competent but generic, and the closing fails to resolve the piece in a way that is specific to travel writing conventions. Several technique choices feel accidental rather than crafted.',
+      'This piece demonstrates some awareness of the chosen genre - a travel article - and maintains a broadly appropriate register for much of its length. The candidate attempts a variety of sentence structures and includes some descriptive imagery. However, the writing lacks the consistent linguistic control required for the higher bands. Register shifts occur across the piece, moving between formal journalistic style and colloquial phrasing without deliberate effect. The opening is competent but generic, and the closing fails to resolve the piece in a way that is specific to travel writing conventions. Several technique choices feel accidental rather than crafted.',
     whatWorksWell: [
       'Genre is identifiable throughout: the candidate uses subheadings, a scene-setting opening paragraph, and evaluative commentary consistent with travel writing.',
       'Some specific sensory detail is present, showing an awareness that description should engage multiple senses.',
@@ -652,7 +653,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
     ],
     whatToImprove: [
       'Develop register consistency: identify moments where colloquial vocabulary intrudes on the formal journalistic tone and revise these deliberately.',
-      'Make structural choices more genre-specific: a travel article typically builds towards a recommendation — restructure the closing paragraph to fulfil this generic expectation.',
+      'Make structural choices more genre-specific: a travel article typically builds towards a recommendation - restructure the closing paragraph to fulfil this generic expectation.',
       'Replace generic descriptors (beautiful, amazing, incredible) with precise, original language choices that create a distinctive voice.',
       'The commentary should name and explain specific techniques rather than describing the content of the writing; band 3 and above requires linguistic metalanguage.',
     ],
@@ -680,7 +681,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
     grade: '6',
   },
 
-  // ── Unit 3 — Band 4 ──────────────────────────
+  // ── Unit 3 - Band 4 ──────────────────────────
   {
     id: 'u3-exemplar-band4-a',
     unit: 'Unit 3',
@@ -692,7 +693,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'Register is highly consistent throughout: the candidate navigates the distinctive demands of formal political oratory without slipping into either stiff bureaucratic language or inappropriate informality.',
       'Structural control is impressive: the speech follows the convention of building argument through a series of reframings of the central issue, with the anaphoric refrain providing cohesion across the whole text.',
       'Rhetorical technique is deployed purposefully and with variety: anaphora, tricolon, rhetorical question, antithesis, and direct address are all present and contribute to the cumulative persuasive effect.',
-      'The opening is original and immediately establishes the speaker\'s ethos, and the closing circles back to the opening image in a way that is structurally sophisticated.',
+      "The opening is original and immediately establishes the speaker's ethos, and the closing circles back to the opening image in a way that is structurally sophisticated.",
       'Lexical choices reflect a strong vocabulary range, including precise abstract nouns and carefully chosen modal verbs that modulate the degree of assertion across the argument.',
     ],
     whatToImprove: [
@@ -708,7 +709,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
     component: 'Commentary',
     band: 4,
     examinerComment:
-      'An analytical and well-structured commentary that demonstrates clear understanding of the relationship between linguistic choices and communicative effect. The candidate uses metalanguage accurately and consistently and provides well-chosen embedded quotations to anchor each analytical point. The discussion of both pieces is balanced and the comparative element in the final paragraph is a strong feature. To reach Band 5 the candidate would need to develop the evaluative and reflective dimension more fully — questioning why particular choices were more or less successful rather than only affirming that they work.',
+      'An analytical and well-structured commentary that demonstrates clear understanding of the relationship between linguistic choices and communicative effect. The candidate uses metalanguage accurately and consistently and provides well-chosen embedded quotations to anchor each analytical point. The discussion of both pieces is balanced and the comparative element in the final paragraph is a strong feature. To reach Band 5 the candidate would need to develop the evaluative and reflective dimension more fully - questioning why particular choices were more or less successful rather than only affirming that they work.',
     whatWorksWell: [
       'Metalanguage is used accurately and with clear understanding: terms such as syndetic listing, second-person deixis, and modal epistemic verb are all applied correctly with appropriate examples.',
       'The analytical structure is disciplined: each paragraph uses point-evidence-effect with precision, and there is genuine insight about how techniques create meaning for the specific audience.',
@@ -718,20 +719,20 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
     ],
     whatToImprove: [
       'Develop the evaluative dimension: at Band 5 commentaries reflect critically on whether choices fully achieved their intended effect, not only that an effect was intended.',
-      'The discussion of the second piece\'s structure is thinner than that of the first — the final section feels slightly rushed and could benefit from two or three additional precise analytical observations.',
-      'Consider discussing a moment where an initial choice was rejected in favour of a better alternative — this kind of meta-reflective writing is highly valued at the top of the band.',
+      "The discussion of the second piece's structure is thinner than that of the first - the final section feels slightly rushed and could benefit from two or three additional precise analytical observations.",
+      'Consider discussing a moment where an initial choice was rejected in favour of a better alternative - this kind of meta-reflective writing is highly valued at the top of the band.',
     ],
     grade: '8',
   },
 
-  // ── Unit 4 — Band 2 ──────────────────────────
+  // ── Unit 4 - Band 2 ──────────────────────────
   {
     id: 'u4-exemplar-band2-a',
     unit: 'Unit 4',
     component: 'Language Investigation',
     band: 2,
     examinerComment:
-      'The investigation addresses a recognisable linguistic topic — gender differences in conversational turn-taking — and the candidate has made a genuine attempt to collect primary data through two recorded conversations. However, the analysis remains largely at the level of data description: the candidate notes that female speakers take longer turns and uses more back-channelling, but does not connect these observations to the theoretical frameworks named in the introduction (Tannen\'s rapport versus report talk model goes uncited in the analysis itself). The bibliography contains two sources but one is a general website with no named author or publication date.',
+      "The investigation addresses a recognisable linguistic topic - gender differences in conversational turn-taking - and the candidate has made a genuine attempt to collect primary data through two recorded conversations. However, the analysis remains largely at the level of data description: the candidate notes that female speakers take longer turns and uses more back-channelling, but does not connect these observations to the theoretical frameworks named in the introduction (Tannen's rapport versus report talk model goes uncited in the analysis itself). The bibliography contains two sources but one is a general website with no named author or publication date.",
     whatWorksWell: [
       'Primary data has been collected and is attached as an appendix, meeting a basic requirement of the task.',
       'The research question is identifiable and focused on a specific linguistic variable.',
@@ -763,19 +764,19 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'Narrow the research question: instead of "social media language", focus on one specific feature (e.g., hedging strategies in personal posts versus brand posts) that can be analysed systematically.',
       'Develop a coding methodology: categorise data features consistently before beginning the written analysis.',
       'Moderate the conclusion: acknowledge the limitations of the sample size and avoid generalisations that the data cannot support.',
-      'Engage more specifically with linguistic theory: Crystal\'s work on language and the internet or Baron\'s research on digital communication should be cited and applied in the analysis.',
+      "Engage more specifically with linguistic theory: Crystal's work on language and the internet or Baron's research on digital communication should be cited and applied in the analysis.",
     ],
     grade: '5',
   },
 
-  // ── Unit 4 — Band 4 ──────────────────────────
+  // ── Unit 4 - Band 4 ──────────────────────────
   {
     id: 'u4-exemplar-band4-a',
     unit: 'Unit 4',
     component: 'Language Investigation',
     band: 4,
     examinerComment:
-      'This is a rigorous and well-constructed investigation into code-switching patterns among bilingual speakers in a multilingual family setting. The research question is sharply focused, the methodology is clearly explained and appropriately justified, and the analysis demonstrates genuine fluency with sociolinguistic theory. Gumperz\'s concept of situational code-switching and Myers-Scotton\'s Markedness Model are both applied accurately and productively to the transcribed data. The conclusion is appropriately measured, acknowledging the limitations of the small sample while drawing meaningful interpretations that are well-supported by evidence. A full and correctly formatted bibliography is presented.',
+      "This is a rigorous and well-constructed investigation into code-switching patterns among bilingual speakers in a multilingual family setting. The research question is sharply focused, the methodology is clearly explained and appropriately justified, and the analysis demonstrates genuine fluency with sociolinguistic theory. Gumperz's concept of situational code-switching and Myers-Scotton's Markedness Model are both applied accurately and productively to the transcribed data. The conclusion is appropriately measured, acknowledging the limitations of the small sample while drawing meaningful interpretations that are well-supported by evidence. A full and correctly formatted bibliography is presented.",
     whatWorksWell: [
       'The research question is precise, answerable within the word count, and genuinely advances understanding rather than merely confirming prior expectations.',
       'The methodology section is thorough and honest about limitations: the candidate acknowledges that the presence of a recorder may have affected natural speech patterns.',
@@ -786,7 +787,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
     ],
     whatToImprove: [
       'The comparison between the two speakers in the family could be developed further: the current analysis identifies differences but does not fully explore the social motivations behind them.',
-      'One analytical paragraph in the central section moves away from the data to discuss broader sociolinguistic theory at length — this should be tightened to maintain focus on what the primary data reveals.',
+      'One analytical paragraph in the central section moves away from the data to discuss broader sociolinguistic theory at length - this should be tightened to maintain focus on what the primary data reveals.',
       'The conclusion could go slightly further in positioning the findings within the wider scholarly debate about bilingual identity and code-switching function.',
     ],
     grade: '9',
@@ -797,19 +798,19 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
     component: 'Language Investigation',
     band: 4,
     examinerComment:
-      'An impressive investigation that examines the representation of scientific uncertainty in newspaper reporting of climate change across two broadsheet publications. The candidate has designed a focused corpus of 20 articles and applied a systematic discourse analysis using Fairclough\'s framework alongside a specific examination of modal verb use and hedging devices. The analysis moves fluently between micro-level linguistic detail and the broader ideological framing of the two newspapers, creating an investigation that is genuinely analytical at both levels. The bibliography is thorough and includes both linguistic theory and media studies scholarship relevant to the topic.',
+      "An impressive investigation that examines the representation of scientific uncertainty in newspaper reporting of climate change across two broadsheet publications. The candidate has designed a focused corpus of 20 articles and applied a systematic discourse analysis using Fairclough's framework alongside a specific examination of modal verb use and hedging devices. The analysis moves fluently between micro-level linguistic detail and the broader ideological framing of the two newspapers, creating an investigation that is genuinely analytical at both levels. The bibliography is thorough and includes both linguistic theory and media studies scholarship relevant to the topic.",
     whatWorksWell: [
       'The corpus is well-designed: the candidate has matched articles by date and topic across the two newspapers, controlling for variables beyond linguistic choice.',
       'The analytical method is transparent and systematic: the candidate explains how modal verbs were categorised (epistemic, deontic, dynamic) and counts are presented in a clear table.',
-      'Fairclough\'s framework is applied with genuine understanding: the candidate moves convincingly between the textual, discursive, and social dimensions of the analysis.',
+      "Fairclough's framework is applied with genuine understanding: the candidate moves convincingly between the textual, discursive, and social dimensions of the analysis.",
       'The investigation demonstrates independent thinking: the candidate identifies a pattern in the data that contradicts the initial hypothesis and adjusts the argument accordingly rather than ignoring the counter-evidence.',
       'Writing is fluent, precise, and consistently academic in register; hedging in the conclusion is itself an interesting meta-linguistic demonstration of the topic under investigation.',
     ],
     whatToImprove: [
-      'A small number of secondary sources in the bibliography are cited in the introduction but not revisited in the analysis section itself — ensure every source cited is actually integrated into the argument.',
+      'A small number of secondary sources in the bibliography are cited in the introduction but not revisited in the analysis section itself - ensure every source cited is actually integrated into the argument.',
       'The investigation would benefit from a brief discussion of the role of editorial policy in shaping linguistic choices, which would add another layer of contextual awareness to the discourse analysis.',
-      'Some of the modal verb frequency tables could be more precisely labelled to distinguish instances in direct quotation from scientists from those in the journalist\'s own prose.',
+      "Some of the modal verb frequency tables could be more precisely labelled to distinguish instances in direct quotation from scientists from those in the journalist's own prose.",
     ],
     grade: '9',
   },
-];
+]

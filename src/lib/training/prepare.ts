@@ -3,7 +3,7 @@
 // `prepareTrainingRecord(submissionId)` promotes ONE teacher-approved marking
 // submission into the anonymised, consent-gated `public.training_data` corpus.
 //
-// Hard gates (ALL must pass — otherwise the function returns { ok:false } and
+// Hard gates (ALL must pass - otherwise the function returns { ok:false } and
 // writes NOTHING to training_data):
 //   1. The submission exists.
 //   2. status === 'approved' AND training_eligible === true   (teacher sign-off
@@ -27,10 +27,10 @@
 //
 // DB ACCESS RULES (house style):
 //   • The NEW Smart-IP tables (marking_submissions read/update, training_data
-//     insert) are touched via the Supabase SERVICE-ROLE client only — NEVER
+//     insert) are touched via the Supabase SERVICE-ROLE client only - NEVER
 //     Prisma (client not regenerated on this Windows box; training_data has no
 //     authenticated RLS policy by design).
-//   • `prisma.privacySettings` / `prisma.user` ARE existing generated models —
+//   • `prisma.privacySettings` / `prisma.user` ARE existing generated models -
 //     OK to use Prisma for the consent lookup.
 //   • The audit row uses the existing `prisma.auditLog` model.
 //
@@ -44,7 +44,7 @@ import { anonymiseRecord, type RawSubmissionBundle } from '@/lib/training/anonym
 
 export type PrepareTrainingResult = { ok: true; trainingId: string } | { ok: false; reason: string }
 
-// ─── Internal: shapes we read from Supabase (cast — generated types don't yet
+// ─── Internal: shapes we read from Supabase (cast - generated types don't yet
 //     know the extended marking_submissions columns; same pattern as the
 //     /api/school/marking/override route). ─────────────────────────────────────
 
@@ -192,7 +192,7 @@ export async function prepareTrainingRecord(submissionId: string): Promise<Prepa
 
   // Real-pupil sources have a living, identifiable data subject and MUST pass
   // the consent gate. 'commissioned' (paid-marker / author work) and
-  // 'specimen' (exam-board material) have NO pupil data subject — the consent,
+  // 'specimen' (exam-board material) have NO pupil data subject - the consent,
   // student-resolution and minor checks are skipped for them (the record is
   // still anonymised + inserted + audited below).
   const PUPIL_SOURCES = ['b2c_self', 'b2b_class'] as const
@@ -283,7 +283,7 @@ export async function prepareTrainingRecord(submissionId: string): Promise<Prepa
   }
 
   if (existing) {
-    // Already prepared — make the status transition idempotent too, then
+    // Already prepared - make the status transition idempotent too, then
     // report success with the existing id.
     const existingId = (existing as { id: string }).id
     await admin
@@ -338,7 +338,7 @@ export async function prepareTrainingRecord(submissionId: string): Promise<Prepa
 
   // ── 7. Build the raw bundle + anonymise ───────────────────────────────────
   // teacher_final_mark/feedback live on the submission as the inline final
-  // decision; the latest moderation row is the richer label source — prefer
+  // decision; the latest moderation row is the richer label source - prefer
   // moderation values, fall back to the inline submission columns.
   const teacherFinalMark = parseMark(mod?.teacher_score) ?? parseMark(sub.final_teacher_mark)
   const teacherFinalFeedback = mod?.feedback_after ?? sub.final_teacher_feedback ?? null

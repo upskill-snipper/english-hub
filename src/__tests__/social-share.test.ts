@@ -16,7 +16,7 @@ function buildShareUrl(
   baseUrl: string,
   utmSource: string,
   utmMedium: string,
-  utmCampaign?: string
+  utmCampaign?: string,
 ): string {
   const url = new URL(baseUrl)
   url.searchParams.set('utm_source', utmSource)
@@ -27,7 +27,7 @@ function buildShareUrl(
   return url.toString()
 }
 
-describe('SocialShare — child account suppression', () => {
+describe('SocialShare - child account suppression', () => {
   /**
    * The component returns `null` when `isChildAccount` is true.
    * This mirrors the check: `if (isChildAccount) { return null }`
@@ -54,7 +54,7 @@ describe('SocialShare — child account suppression', () => {
   })
 })
 
-describe('SocialShare — buildShareUrl', () => {
+describe('SocialShare - buildShareUrl', () => {
   const baseUrl = 'https://theenglishhub.co.uk/analysis/macbeth'
 
   it('appends utm_source and utm_medium', () => {
@@ -93,12 +93,12 @@ describe('SocialShare — buildShareUrl', () => {
   })
 })
 
-describe('SocialShare — platform share URLs', () => {
+describe('SocialShare - platform share URLs', () => {
   it('generates correct Twitter intent URL structure', () => {
     const shareUrl = buildShareUrl(
       'https://theenglishhub.co.uk/analysis/macbeth',
       'social_share',
-      'twitter'
+      'twitter',
     )
     const shareText = 'Macbeth Analysis'
     const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`
@@ -112,7 +112,7 @@ describe('SocialShare — platform share URLs', () => {
     const shareUrl = buildShareUrl(
       'https://theenglishhub.co.uk/analysis/macbeth',
       'social_share',
-      'whatsapp'
+      'whatsapp',
     )
     const shareText = 'Macbeth Analysis'
     const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`

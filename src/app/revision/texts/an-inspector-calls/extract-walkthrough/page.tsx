@@ -14,7 +14,7 @@ import {
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ────────────────────────────────────────────────────────────────────── */
-/*  Data — fragments of the Inspector's final speech (Act 3)             */
+/*  Data - fragments of the Inspector's final speech (Act 3)             */
 /*  Each direct quotation is ≤15 words, used under fair-dealing for      */
 /*  criticism, review and educational study (CDPA 1988 s.30).            */
 /* ────────────────────────────────────────────────────────────────────── */
@@ -38,7 +38,7 @@ const FRAGMENTS: Fragment[] = [
     bridge:
       'The speech opens with the Inspector’s thesis statement, distilled into a single declarative sentence.',
     notice:
-      'A short, balanced declarative. No qualifiers, no conditionals — just the simple present tense “are.” The metaphor of the “one body” casts the audience as a single organism rather than a crowd of separate individuals.',
+      'A short, balanced declarative. No qualifiers, no conditionals - just the simple present tense “are.” The metaphor of the “one body” casts the audience as a single organism rather than a crowd of separate individuals.',
     say: 'Priestley borrows the cadence of St Paul’s First Letter to the Corinthians, lending socialist ethics the moral weight of scripture. The collective pronoun "we" silently enrols the 1945 audience in the Inspector’s argument before they have agreed to it.',
     zoomOut:
       'Compare this to Birling’s Act 1 creed that "a man has to look after himself and his own." Priestley structurally bookends the play with two opposing definitions of selfhood: atomised individual versus connected member.',
@@ -50,9 +50,9 @@ const FRAGMENTS: Fragment[] = [
     wordCount: 6,
     bridge: 'The thesis is restated in plainer, secular language so nobody can mistake it.',
     notice:
-      'The repetition of the "We are…" structure creates anaphora; the message is the same ethical claim translated from religious metaphor into civic obligation. "Responsible" is abstract but inescapable — there is no opt-out clause.',
+      'The repetition of the "We are…" structure creates anaphora; the message is the same ethical claim translated from religious metaphor into civic obligation. "Responsible" is abstract but inescapable - there is no opt-out clause.',
     say: 'By stating the same idea twice in different registers, Priestley closes the escape route a sceptical audience member might use ("that’s religion, not me"). Whether you read the line through Christianity or through citizenship, the conclusion is identical.',
-    // VERIFIED: Heinemann 1992 edn., Act 3 — the line "what we all did to her that matters" is spoken by ERIC ("It's still the same rotten story whether it's been told to a police inspector or to somebody else... It's what happened to the girl and what we all did to her that matters"), NOT Sheila. Corrected here.
+    // VERIFIED: Heinemann 1992 edn., Act 3 - the line "what we all did to her that matters" is spoken by ERIC ("It's still the same rotten story whether it's been told to a police inspector or to somebody else... It's what happened to the girl and what we all did to her that matters"), NOT Sheila. Corrected here.
     zoomOut:
       'Eric echoes the same ethic moments later in the same act, insisting it is "what we all did to her that matters." Priestley dramatises the Inspector’s message being received and re-spoken by the next generation in real time.',
   },
@@ -75,10 +75,10 @@ const FRAGMENTS: Fragment[] = [
     wordCount: 7,
     bridge: 'The conditional names the price of refusing the speech’s argument.',
     notice:
-      'The conditional "if" places the choice on the audience’s shoulders. "Men" is generalising — not just the Birlings but humanity. "Lesson" frames the entire play as pedagogy, with the audience as pupils and the stage as classroom.',
+      'The conditional "if" places the choice on the audience’s shoulders. "Men" is generalising - not just the Birlings but humanity. "Lesson" frames the entire play as pedagogy, with the audience as pupils and the stage as classroom.',
     say: 'Priestley’s diction reframes theatre as moral instruction. The play is not entertainment that happens to have a message; it is a lesson with dramatised illustrations. The Inspector is the teacher; failure to learn carries consequences.',
     zoomOut:
-      'This didactic register is consistent with Priestley’s Postscripts broadcasts (1940–41), which reached around 16 million listeners and openly advocated collective responsibility as the post-war settlement.',
+      'This didactic register is consistent with Priestley’s Postscripts broadcasts (1940-41), which reached around 16 million listeners and openly advocated collective responsibility as the post-war settlement.',
   },
   {
     id: 5,
@@ -94,15 +94,15 @@ const FRAGMENTS: Fragment[] = [
   },
   {
     id: 6,
-    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3 — exit line immediately after the prophecy. 2 words.
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3 - exit line immediately after the prophecy. 2 words.
     quote: '"Good night."',
     wordCount: 2,
     bridge: 'The Inspector exits on a chillingly civil two-word coda.',
     notice:
-      'After apocalyptic prophecy, the Inspector signs off with the polite formula of a departing dinner guest. The juxtaposition of register is jarring — prophetic thunder collapsing into bourgeois courtesy.',
+      'After apocalyptic prophecy, the Inspector signs off with the polite formula of a departing dinner guest. The juxtaposition of register is jarring - prophetic thunder collapsing into bourgeois courtesy.',
     say: 'Priestley closes the speech with deliberate anti-climax. The Inspector refuses the dignity of a grand exit because the moral burden has been transferred entirely to the audience. There is nothing more to say; the question is what the listeners will do.',
     zoomOut:
-      'Goole’s departure leaves a vacuum that the Birlings immediately try to fill with denial ("a hoax", "a fake"). Priestley uses the silence after "good night" to test which characters — and which audience members — will hold the lesson.',
+      'Goole’s departure leaves a vacuum that the Birlings immediately try to fill with denial ("a hoax", "a fake"). Priestley uses the silence after "good night" to test which characters - and which audience members - will hold the lesson.',
   },
 ]
 

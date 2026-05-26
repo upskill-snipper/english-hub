@@ -123,7 +123,7 @@ function QuizCard({
         })}
       </div>
 
-      {/* Submit button — shown after selecting an option but before submitting */}
+      {/* Submit button - shown after selecting an option but before submitting */}
       {selected !== null && !submitted && (
         <button
           onClick={handleSubmit}
@@ -396,7 +396,7 @@ export default function CoursePlayerPage() {
 
   // Check if user has access (preview module, pro subscriber, OR enrolled)
   useEffect(() => {
-    // Don't check access until course data has loaded — without it we can't
+    // Don't check access until course data has loaded - without it we can't
     // know which module index this is and whether it's the free preview.
     if (!course) return
 
@@ -576,7 +576,7 @@ export default function CoursePlayerPage() {
   }
 
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
-    // Board names (AQA, OCR, etc.) stay Latin even in AR — replace into the
+    // Board names (AQA, OCR, etc.) stay Latin even in AR - replace into the
     // translated sentence so we don't fork into one key per board.
     const boardBody = t('learn.board.unavailable.body').split('{board}')
     return (
@@ -790,7 +790,7 @@ export default function CoursePlayerPage() {
               </div>
             )}
 
-            {/* Preview CTA — shown on free preview modules for non-subscribed users */}
+            {/* Preview CTA - shown on free preview modules for non-subscribed users */}
             {isPreviewModule && (!user || profile?.subscription_status !== 'pro') && (
               <div className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 sm:p-8 text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">

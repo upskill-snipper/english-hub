@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Themes — Edexcel IGCSE Literature',
+    title: 'Macbeth Themes - Edexcel IGCSE Literature',
     description:
       'The seven major themes of Macbeth for Edexcel IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes',
   },
-  title: 'Macbeth Themes — Edexcel IGCSE Literature',
+  title: 'Macbeth Themes - Edexcel IGCSE Literature',
   description:
     'The seven major themes of Macbeth for Edexcel IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.',
 }
@@ -23,7 +23,7 @@ const THEMES = [
   {
     theme: 'Ambition',
     summary:
-      "The engine of the tragedy. Macbeth's 'vaulting ambition' is named in his own 1.7 soliloquy as the only reason to kill Duncan — there is no grievance, no injustice, just appetite. Shakespeare tracks ambition across both Macbeths: in him it curdles into paranoid tyranny, in her into self-destruction.",
+      "The engine of the tragedy. Macbeth's 'vaulting ambition' is named in his own 1.7 soliloquy as the only reason to kill Duncan - there is no grievance, no injustice, just appetite. Shakespeare tracks ambition across both Macbeths: in him it curdles into paranoid tyranny, in her into self-destruction.",
     how_it_develops:
       "Planted by the witches' prophecy, sharpened by Lady Macbeth, released by Duncan's murder, and ultimately hollowed out by the 'Tomorrow' soliloquy.",
     quotes: [
@@ -37,7 +37,7 @@ const THEMES = [
     summary:
       "Both Macbeths suffer overwhelming guilt, but they experience it in opposite rhythms. Macbeth is haunted immediately (the dagger, Banquo's ghost) and then dulled by repetition. Lady Macbeth suppresses guilt at first ('a little water clears us of this deed') but it returns catastrophically in sleepwalking. Shakespeare's argument is clear: you cannot out-think conscience.",
     how_it_develops:
-      "From Macbeth's bloody hands in Act 2, through the banquet ghost in Act 3, to Lady Macbeth's sleepwalking in Act 5 — the guilt that she denies early on eventually consumes her.",
+      "From Macbeth's bloody hands in Act 2, through the banquet ghost in Act 3, to Lady Macbeth's sleepwalking in Act 5 - the guilt that she denies early on eventually consumes her.",
     quotes: [
       '"Will all great Neptune\'s ocean wash this blood clean from my hand?" (2.2)',
       '"Out, damned spot! Out, I say!" (5.1)',
@@ -47,7 +47,7 @@ const THEMES = [
   {
     theme: 'The supernatural',
     summary:
-      "The witches, the floating dagger, Banquo's ghost, the apparitions, the storms and unnatural omens — the supernatural frames the whole play. For a Jacobean audience steeped in James I's Daemonologie, these were not theatrical flourishes but genuine evils. Shakespeare exploits this to ask whether Macbeth is pushed by external forces or pulled by his own desires.",
+      "The witches, the floating dagger, Banquo's ghost, the apparitions, the storms and unnatural omens - the supernatural frames the whole play. For a Jacobean audience steeped in James I's Daemonologie, these were not theatrical flourishes but genuine evils. Shakespeare exploits this to ask whether Macbeth is pushed by external forces or pulled by his own desires.",
     how_it_develops:
       "Opens the play (1.1), triggers the plot (1.3), externalises Macbeth's guilt (2.1 dagger, 3.4 ghost), and equivocates him to his death (4.1, fulfilled in 5.5 and 5.8).",
     quotes: [
@@ -71,7 +71,7 @@ const THEMES = [
   {
     theme: 'Appearance vs reality',
     summary:
-      "The witches' opening paradox — 'Fair is foul, and foul is fair' — sets the pattern. Lady Macbeth tells her husband to 'look like the innocent flower, but be the serpent under't'. The witches' later prophecies are literally true but functionally deceptive (equivocation). The play's world is one where surfaces cannot be trusted.",
+      "The witches' opening paradox - 'Fair is foul, and foul is fair' - sets the pattern. Lady Macbeth tells her husband to 'look like the innocent flower, but be the serpent under't'. The witches' later prophecies are literally true but functionally deceptive (equivocation). The play's world is one where surfaces cannot be trusted.",
     how_it_develops:
       "Established in 1.1, weaponised by the Macbeths in 1.5&ndash;1.7, turned back on Macbeth by the witches' equivocations in 4.1, and resolved only in Act 5 when reality finally catches up.",
     quotes: [
@@ -83,7 +83,7 @@ const THEMES = [
   {
     theme: 'Masculinity and gender',
     summary:
-      "Lady Macbeth first shames her husband into murder by questioning his manhood — 'When you durst do it, then you were a man'. Macbeth absorbs this and begins to equate masculinity with violence. Macduff offers a counter-model in 4.3, insisting he must 'feel it as a man' when grieving his family. Lady Macbeth's earlier rejection of femininity ('unsex me here') is answered by her breakdown.",
+      "Lady Macbeth first shames her husband into murder by questioning his manhood - 'When you durst do it, then you were a man'. Macbeth absorbs this and begins to equate masculinity with violence. Macduff offers a counter-model in 4.3, insisting he must 'feel it as a man' when grieving his family. Lady Macbeth's earlier rejection of femininity ('unsex me here') is answered by her breakdown.",
     how_it_develops:
       "Lady Macbeth weaponises masculinity in 1.7; Macbeth ramps up violence to prove it; Macduff rewrites it in 4.3; Lady Macbeth's suppressed femininity returns in 5.1.",
     quotes: [
@@ -95,7 +95,7 @@ const THEMES = [
   {
     theme: 'Fate vs free will',
     summary:
-      "The witches' prophecies set the tragedy in motion — but Banquo hears the same words and resists. Macbeth's soliloquies repeatedly show him <em>choosing</em> to act: 'I am settled, and bend up each corporal agent to this terrible feat'. Shakespeare leaves the question genuinely open, but the weight of the soliloquies suggests free will, not fate, bears the moral load.",
+      "The witches' prophecies set the tragedy in motion - but Banquo hears the same words and resists. Macbeth's soliloquies repeatedly show him <em>choosing</em> to act: 'I am settled, and bend up each corporal agent to this terrible feat'. Shakespeare leaves the question genuinely open, but the weight of the soliloquies suggests free will, not fate, bears the moral load.",
     how_it_develops:
       "Prophecy in 1.3 \u2192 Macbeth's active choices in 1.7 and 2.1 \u2192 the moral contrast with Banquo \u2192 the equivocation of 4.1 \u2192 the realisation in 5.8 that the prophecies are half-truths.",
     quotes: [

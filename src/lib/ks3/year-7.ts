@@ -1,8 +1,8 @@
 /**
- * Year 7 — Foundations.
+ * Year 7 - Foundations.
  *
  * Set text in T1: *The Fox Girl and the White Gazelle* by Victoria
- * Williamson (contemporary novel — empathy, identity, refugee
+ * Williamson (contemporary novel - empathy, identity, refugee
  * experience). Weeks 2-13 carry the full lesson-by-lesson detail
  * the head of department provided.
  *
@@ -13,7 +13,7 @@
 
 import type { Year, Lesson, LessonFocus } from './types'
 
-// Compact lesson builder — Y7 T1 was authored before this helper landed
+// Compact lesson builder - Y7 T1 was authored before this helper landed
 // and uses the full {focus, skillCodes, whatStudentsDo, task, successCriteria}
 // form directly. T2 and T3 use this helper for readability.
 type Quick = {
@@ -36,9 +36,9 @@ const lesson = (q: Quick): Lesson => ({
 
 const Y7_T1: Year['terms'][number] = {
   number: 1,
-  label: { en: 'Term 1 — Autumn', ar: 'الفصل الدراسي الأول — الخريف' },
+  label: { en: 'Term 1 - Autumn', ar: 'الفصل الدراسي الأول - الخريف' },
   overview: {
-    en: 'Year 7 opens with a contemporary dual-narrative novel — *The Fox Girl and the White Gazelle* by Victoria Williamson. Two girls (Caylin, a Glasgow native presented as tough and defensive; Reema, a Syrian refugee carrying memories of Aleppo and her brother Jamal) cross paths in a story that asks how first impressions form, how loneliness hides itself, and how empathy can be earned. The term anchors KS3 reading habits — echo reading, sentence stems, WHAT/HOW/WHY paragraphs — and writes our shared analytical vocabulary.',
+    en: 'Year 7 opens with a contemporary dual-narrative novel - *The Fox Girl and the White Gazelle* by Victoria Williamson. Two girls (Caylin, a Glasgow native presented as tough and defensive; Reema, a Syrian refugee carrying memories of Aleppo and her brother Jamal) cross paths in a story that asks how first impressions form, how loneliness hides itself, and how empathy can be earned. The term anchors KS3 reading habits - echo reading, sentence stems, WHAT/HOW/WHY paragraphs - and writes our shared analytical vocabulary.',
     ar: 'تبدأ السنة السابعة برواية معاصرة ذات منظورين سرديين هما رواية *The Fox Girl and the White Gazelle* للكاتبة فيكتوريا ويليامسون. فتاتان تلتقي طريقاهما، إحداهما (كيلين) من غلاسكو تظهر متمرّدة ومنغلقة، والأخرى (ريما) لاجئة سورية تحمل ذكريات حلب وأخيها جمال. تطرح الرواية أسئلة عن كيفية تكوّن الانطباعات الأولى وكيف تختبئ الوحدة وكيف يُكتسب التعاطف. يُرسّخ هذا الفصل عادات القراءة في المرحلة الأساسية الثالثة.',
   },
   setText: {
@@ -59,15 +59,15 @@ const Y7_T1: Year['terms'][number] = {
   halfTerms: [
     {
       id: '1.1',
-      label: { en: 'Term 1.1 — First half', ar: 'الفصل 1.1 — النصف الأول' },
+      label: { en: 'Term 1.1 - First half', ar: 'الفصل 1.1 - النصف الأول' },
       assessment: {
-        en: 'Google-Form reading quiz (Chapters 1–5) + 20-minute mini analytical paragraph: "Who do we feel more sympathy for so far — Caylin or Reema?"',
-        ar: 'اختبار قراءة عبر Google Form (الفصول 1–5) + فقرة تحليلية قصيرة لمدة 20 دقيقة: "مَن يستحقّ التعاطف أكثر حتى الآن — كيلين أم ريما؟"',
+        en: 'Google-Form reading quiz (Chapters 1-5) + 20-minute mini analytical paragraph: "Who do we feel more sympathy for so far - Caylin or Reema?"',
+        ar: 'اختبار قراءة عبر Google Form (الفصول 1-5) + فقرة تحليلية قصيرة لمدة 20 دقيقة: "مَن يستحقّ التعاطف أكثر حتى الآن - كيلين أم ريما؟"',
       },
       weeks: [
         {
           number: 2,
-          pages: 'Chapter 1, pp. 1–4',
+          pages: 'Chapter 1, pp. 1-4',
           keyVocabulary: [
             { en: 'inference', ar: 'الاستنتاج' },
             { en: 'lonely', ar: 'وحيد' },
@@ -76,16 +76,16 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'vulnerable', ar: 'هشّ / سريع التأثّر' },
           ],
           contextNote: {
-            en: 'Caylin is introduced — first impressions vs hidden struggle.',
-            ar: 'تُقدَّم شخصية كيلين — الانطباع الأول مقابل المعاناة الخفية.',
+            en: 'Caylin is introduced - first impressions vs hidden struggle.',
+            ar: 'تُقدَّم شخصية كيلين - الانطباع الأول مقابل المعاناة الخفية.',
           },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
-                en: "Teacher reads aloud pp. 1–4 using echo strategy. Students track Caylin's behaviour, speech and actions.",
-                ar: 'يقرأ المعلّم الصفحات 1–4 بصوتٍ عالٍ بأسلوب الترديد (echo)، والطلاب يتتبّعون تصرّفات كيلين وكلامها وأفعالها.',
+                en: "Teacher reads aloud pp. 1-4 using echo strategy. Students track Caylin's behaviour, speech and actions.",
+                ar: 'يقرأ المعلّم الصفحات 1-4 بصوتٍ عالٍ بأسلوب الترديد (echo)، والطلاب يتتبّعون تصرّفات كيلين وكلامها وأفعالها.',
               },
               task: {
                 en: 'What is Caylin trying to do? How does she behave to others? Which words make her seem tough? What do we learn of her home life? What might this suggest?',
@@ -100,8 +100,8 @@ const Y7_T1: Year['terms'][number] = {
               focus: 'reading-discussion',
               skillCodes: ['7R.5', '7SL.3'],
               whatStudentsDo: {
-                en: 'Tables analyse 4 quotations from pp. 1–4 using sentence stems; whole-class feedback; present one inference about Caylin.',
-                ar: 'تُحلّل المجموعات على الطاولات أربعة اقتباسات من الصفحات 1–4 باستخدام صيغ بداية الجمل، ثم يتشارك الصفّ في النقاش، ويُقدّم كلّ فريق استنتاجاً واحداً عن كيلين.',
+                en: 'Tables analyse 4 quotations from pp. 1-4 using sentence stems; whole-class feedback; present one inference about Caylin.',
+                ar: 'تُحلّل المجموعات على الطاولات أربعة اقتباسات من الصفحات 1-4 باستخدام صيغ بداية الجمل، ثم يتشارك الصفّ في النقاش، ويُقدّم كلّ فريق استنتاجاً واحداً عن كيلين.',
               },
               task: {
                 en: 'Quote bank: "But not because I\'m her friend." / "Talk about an open invitation." / "I haven\'t had one of those special pink envelopes filled with glitter from anyone for years." / "I don\'t need friends." Stems: "I think Caylin is… because…" / "This suggests…" / "A word/phrase that stands out is…"',
@@ -116,8 +116,8 @@ const Y7_T1: Year['terms'][number] = {
               focus: 'explicit-writing',
               skillCodes: ['7W.1', '7W.2', '7R.3', '7W.4'],
               whatStudentsDo: {
-                en: 'Teacher introduces WHAT / HOW / WHY. Live-models one paragraph answering "How is Caylin presented in the opening?" using a direct quote from pp. 1–4. Students copy and label in different colours.',
-                ar: 'يُقدِّم المعلّم صيغة "ماذا / كيف / لماذا" (WHAT / HOW / WHY)، ويكتب أمام الطلاب فقرة نموذجية تُجيب عن سؤال "كيف تُقدَّم كيلين في الافتتاحية؟" باستخدام اقتباس مباشر من الصفحات 1–4. ينسخ الطلاب الفقرة ويُلوّنون كلّ جزء بلون مختلف.',
+                en: 'Teacher introduces WHAT / HOW / WHY. Live-models one paragraph answering "How is Caylin presented in the opening?" using a direct quote from pp. 1-4. Students copy and label in different colours.',
+                ar: 'يُقدِّم المعلّم صيغة "ماذا / كيف / لماذا" (WHAT / HOW / WHY)، ويكتب أمام الطلاب فقرة نموذجية تُجيب عن سؤال "كيف تُقدَّم كيلين في الافتتاحية؟" باستخدام اقتباس مباشر من الصفحات 1-4. ينسخ الطلاب الفقرة ويُلوّنون كلّ جزء بلون مختلف.',
               },
               task: {
                 en: 'Modelled paragraph: WHAT = Caylin is presented as aggressive/tough; HOW = quotation/word choice/action; WHY = she pushes people away and seems used to surviving alone.',
@@ -148,8 +148,8 @@ const Y7_T1: Year['terms'][number] = {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4'],
               whatStudentsDo: {
-                en: 'Vocabulary retrieval (spell, define, use in sentence — 2 current week + 2 prior + 1 analytical word). Then students write their own paragraph choosing from 3 quotations from pp. 1–4; heavily scaffolded frame.',
-                ar: 'استرجاع المفردات (تهجئة، تعريف، توظيف في جملة — مفردتان من الأسبوع الحالي + مفردتان من أسبوعٍ سابق + مفردة تحليلية واحدة). بعد ذلك يكتب الطلاب فقرتهم الخاصة مختارين من بين ثلاثة اقتباسات من الصفحات 1–4 ضمن قالبٍ موجَّه بدعمٍ مرتفع.',
+                en: 'Vocabulary retrieval (spell, define, use in sentence - 2 current week + 2 prior + 1 analytical word). Then students write their own paragraph choosing from 3 quotations from pp. 1-4; heavily scaffolded frame.',
+                ar: 'استرجاع المفردات (تهجئة، تعريف، توظيف في جملة - مفردتان من الأسبوع الحالي + مفردتان من أسبوعٍ سابق + مفردة تحليلية واحدة). بعد ذلك يكتب الطلاب فقرتهم الخاصة مختارين من بين ثلاثة اقتباسات من الصفحات 1-4 ضمن قالبٍ موجَّه بدعمٍ مرتفع.',
               },
               task: {
                 en: 'What do we learn about Caylin in the opening of the novel? Support level: HIGH. Sentence starters and quotes provided. Write one clear WHAT, use one quotation, explain using "This shows…".',
@@ -164,7 +164,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 3,
-          pages: 'Chapter 2, pp. 5–9',
+          pages: 'Chapter 2, pp. 5-9',
           keyVocabulary: [
             { en: 'refugee', ar: 'لاجئ' },
             { en: 'displaced', ar: 'نازح' },
@@ -173,16 +173,16 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'determined', ar: 'مُصمِّم / عازم' },
           ],
           contextNote: {
-            en: 'Reema introduced through a race — physical struggle interlaced with memories of Aleppo and her brother Jamal.',
-            ar: 'تُقدَّم شخصية ريما من خلال سباق — جهد جسدي يتشابك مع ذكرياتها عن حلب وأخيها جمال.',
+            en: 'Reema introduced through a race - physical struggle interlaced with memories of Aleppo and her brother Jamal.',
+            ar: 'تُقدَّم شخصية ريما من خلال سباق - جهد جسدي يتشابك مع ذكرياتها عن حلب وأخيها جمال.',
           },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
-                en: 'Teacher reads pp. 5–9 with echo strategy. Teacher frames Reema running while remembering home; students track physical action vs emotional memory.',
-                ar: 'يقرأ المعلّم الصفحات 5–9 بأسلوب الترديد، ويُؤطّر مشهد ريما وهي تركض وتسترجع وطنها، والطلاب يتتبّعون الفعل الجسدي مقابل الذاكرة العاطفية.',
+                en: 'Teacher reads pp. 5-9 with echo strategy. Teacher frames Reema running while remembering home; students track physical action vs emotional memory.',
+                ar: 'يقرأ المعلّم الصفحات 5-9 بأسلوب الترديد، ويُؤطّر مشهد ريما وهي تركض وتسترجع وطنها، والطلاب يتتبّعون الفعل الجسدي مقابل الذاكرة العاطفية.',
               },
               task: {
                 en: 'What is Reema doing? Which words show the race is difficult? Who does she think about? What memories surface? What does this suggest about what she has lost?',
@@ -249,7 +249,7 @@ const Y7_T1: Year['terms'][number] = {
                 ar: 'تدريب على استرجاع المفردات، ثم يكتب الطلاب فقرتهم الخاصة ضمن قالبٍ موجَّه، ويختارون اقتباساً من قائمة بدل اقتباسٍ ثابت.',
               },
               task: {
-                en: 'What do we learn about Reema in the opening of her chapter? Support level: MEDIUM–HIGH. Sentence starters provided; quotes list provided; no full paragraph model beside them.',
+                en: 'What do we learn about Reema in the opening of her chapter? Support level: MEDIUM-HIGH. Sentence starters provided; quotes list provided; no full paragraph model beside them.',
                 ar: 'ماذا نتعلّم عن ريما في افتتاحية فصلها؟ مستوى الدعم: متوسّط إلى مرتفع. تتوفّر بدايات جمل وقائمة اقتباسات، دون نموذج فقرة كاملة مرافق.',
               },
               successCriteria: {
@@ -261,7 +261,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 4,
-          pages: 'Chapter 3, pp. 10–14',
+          pages: 'Chapter 3, pp. 10-14',
           keyVocabulary: [
             { en: 'poverty', ar: 'الفقر' },
             { en: 'responsibility', ar: 'المسؤولية' },
@@ -270,16 +270,16 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'sympathy', ar: 'التعاطف' },
           ],
           contextNote: {
-            en: "Caylin's home life surfaces — money worries, sibling responsibility. Readers begin to feel sympathy.",
-            ar: 'تتكشّف حياة كيلين في البيت — هموم المال ومسؤولية الإخوة، ويبدأ القارئ في التعاطف معها.',
+            en: "Caylin's home life surfaces - money worries, sibling responsibility. Readers begin to feel sympathy.",
+            ar: 'تتكشّف حياة كيلين في البيت - هموم المال ومسؤولية الإخوة، ويبدأ القارئ في التعاطف معها.',
           },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
-                en: 'Teacher reads pp. 10–14 with echo. Pauses to surface what problems Caylin faces and what this reveals.',
-                ar: 'يقرأ المعلّم الصفحات 10–14 بأسلوب الترديد، ويتوقّف ليُظهر المشاكل التي تواجهها كيلين وما تكشفه عن وضعها.',
+                en: 'Teacher reads pp. 10-14 with echo. Pauses to surface what problems Caylin faces and what this reveals.',
+                ar: 'يقرأ المعلّم الصفحات 10-14 بأسلوب الترديد، ويتوقّف ليُظهر المشاكل التي تواجهها كيلين وما تكشفه عن وضعها.',
               },
               task: {
                 en: "What do we learn about Caylin's home life? What responsibilities does she carry? How do others around her behave? Which moments suggest she is less confident than she appears?",
@@ -346,7 +346,7 @@ const Y7_T1: Year['terms'][number] = {
                 ar: 'تدريب على استرجاع المفردات، ثم يكتب الطلاب فقرتهم الخاصة بدعمٍ مُخفَّف.',
               },
               task: {
-                en: 'How does Chapter 3 change our opinion of Caylin? Support: HIGH–MEDIUM. Sentence starters and quote bank; no full paragraph model alongside.',
+                en: 'How does Chapter 3 change our opinion of Caylin? Support: HIGH-MEDIUM. Sentence starters and quote bank; no full paragraph model alongside.',
                 ar: 'كيف يُغيِّر الفصل الثالث رأينا في كيلين؟ مستوى الدعم: مرتفع إلى متوسّط. تتوفّر بدايات جمل وبنك اقتباسات، دون نموذج فقرة كاملة مرافق.',
               },
               successCriteria: {
@@ -358,7 +358,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 5,
-          pages: 'Chapter 4, pp. 15–19',
+          pages: 'Chapter 4, pp. 15-19',
           keyVocabulary: [
             { en: 'grief', ar: 'الحزن' },
             { en: 'loss', ar: 'الفقد' },
@@ -367,16 +367,16 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'courage', ar: 'الشجاعة' },
           ],
           contextNote: {
-            en: "Reema's memories surface — Jamal, Aleppo. Physical running, emotional return.",
-            ar: 'تطفو ذكريات ريما إلى السطح — جمال وحلب. ركضٌ جسدي وعودة عاطفية إلى ما كان.',
+            en: "Reema's memories surface - Jamal, Aleppo. Physical running, emotional return.",
+            ar: 'تطفو ذكريات ريما إلى السطح - جمال وحلب. ركضٌ جسدي وعودة عاطفية إلى ما كان.',
           },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
-                en: "Teacher reads pp. 15–19 with echo. Pauses to explore Reema's thoughts, memories of Jamal, references to Aleppo.",
-                ar: 'يقرأ المعلّم الصفحات 15–19 بأسلوب الترديد، ويتوقّف ليستكشف أفكار ريما وذكرياتها عن جمال والإشارات إلى حلب.',
+                en: "Teacher reads pp. 15-19 with echo. Pauses to explore Reema's thoughts, memories of Jamal, references to Aleppo.",
+                ar: 'يقرأ المعلّم الصفحات 15-19 بأسلوب الترديد، ويتوقّف ليستكشف أفكار ريما وذكرياتها عن جمال والإشارات إلى حلب.',
               },
               task: {
                 en: 'What is Reema thinking about during the race? What memories of Jamal are mentioned? Which words show she is still emotionally affected? What does this suggest about what she has lost?',
@@ -443,7 +443,7 @@ const Y7_T1: Year['terms'][number] = {
                 ar: 'استرجاع المفردات، ثم يختار الطلاب من بنك الاقتباسات ويكتبون باستقلاليّة أكبر.',
               },
               task: {
-                en: "How do Reema's memories affect the way the reader sees her? Support: MEDIUM–LOW.",
+                en: "How do Reema's memories affect the way the reader sees her? Support: MEDIUM-LOW.",
                 ar: 'كيف تُؤثِّر ذكريات ريما في نظرة القارئ إليها؟ مستوى الدعم: متوسّط إلى منخفض.',
               },
               successCriteria: {
@@ -455,7 +455,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 6,
-          pages: 'Chapter 5, pp. 21–26',
+          pages: 'Chapter 5, pp. 21-26',
           keyVocabulary: [
             { en: 'judgement', ar: 'الحكم على الآخرين' },
             { en: 'stereotype', ar: 'صورة نمطية' },
@@ -465,16 +465,16 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'loneliness', ar: 'الوحدة' },
           ],
           contextNote: {
-            en: 'Caylin becomes more sympathetic — struggle, loneliness, pressure.',
-            ar: 'تكتسب كيلين تعاطف القارئ أكثر — معاناة ووحدة وضغط.',
+            en: 'Caylin becomes more sympathetic - struggle, loneliness, pressure.',
+            ar: 'تكتسب كيلين تعاطف القارئ أكثر - معاناة ووحدة وضغط.',
           },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.1', '7R.2', '7R.4'],
               whatStudentsDo: {
-                en: "Teacher reads pp. 21–26 with echo. Pauses to discuss Caylin's difficult home life, emotions and responsibilities; introduces thematic words struggle / loneliness / pressure.",
-                ar: 'يقرأ المعلّم الصفحات 21–26 بأسلوب الترديد، ويتوقّف ليُناقش حياة كيلين الصعبة في البيت ومشاعرها ومسؤوليّاتها، ويُقدّم المفردات الموضوعيّة: المعاناة / الوحدة / الضغط.',
+                en: "Teacher reads pp. 21-26 with echo. Pauses to discuss Caylin's difficult home life, emotions and responsibilities; introduces thematic words struggle / loneliness / pressure.",
+                ar: 'يقرأ المعلّم الصفحات 21-26 بأسلوب الترديد، ويتوقّف ليُناقش حياة كيلين الصعبة في البيت ومشاعرها ومسؤوليّاتها، ويُقدّم المفردات الموضوعيّة: المعاناة / الوحدة / الضغط.',
               },
               task: {
                 en: 'What problems does Caylin face? Which moments make us feel sympathy? What words suggest she is under pressure?',
@@ -553,7 +553,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 7,
-          pages: 'Chapters 1–5 (consolidation + T1.1 assessment)',
+          pages: 'Chapters 1-5 (consolidation + T1.1 assessment)',
           keyVocabulary: [
             { en: 'isolation', ar: 'العزلة' },
             { en: 'belonging', ar: 'الانتماء' },
@@ -566,8 +566,8 @@ const Y7_T1: Year['terms'][number] = {
             ar: 'أسبوع تثبيت للمعرفة + التقييم الخاص بنصف الفصل 1.1.',
           },
           homework: {
-            en: 'Read Chapters 6–7 over October half-term break.',
-            ar: 'اقرأ الفصلين 6–7 خلال إجازة منتصف الفصل في أكتوبر.',
+            en: 'Read Chapters 6-7 over October half-term break.',
+            ar: 'اقرأ الفصلين 6-7 خلال إجازة منتصف الفصل في أكتوبر.',
           },
           lessons: [
             {
@@ -622,12 +622,12 @@ const Y7_T1: Year['terms'][number] = {
               focus: 'assessment',
               skillCodes: ['7R.1', '7R.2', '7R.4', '7W.1', '7W.2'],
               whatStudentsDo: {
-                en: 'Google-Form reading quiz (20–25 mins). Multiple choice, quote recognition, simple inference; auto-marked. Covers Chapters 1–5.',
-                ar: 'اختبار قراءة عبر Google Form لمدّة 20–25 دقيقة. اختيار من متعدّد، وتمييز اقتباسات، واستنتاج بسيط، يُصحَّح آلياً، ويُغطّي الفصول 1–5.',
+                en: 'Google-Form reading quiz (20-25 mins). Multiple choice, quote recognition, simple inference; auto-marked. Covers Chapters 1-5.',
+                ar: 'اختبار قراءة عبر Google Form لمدّة 20-25 دقيقة. اختيار من متعدّد، وتمييز اقتباسات، واستنتاج بسيط، يُصحَّح آلياً، ويُغطّي الفصول 1-5.',
               },
               task: {
-                en: 'T1.1 Reading Quiz — auto-marked Google Form.',
-                ar: 'اختبار قراءة T1.1 — نموذج Google Form يُصحَّح تلقائياً.',
+                en: 'T1.1 Reading Quiz - auto-marked Google Form.',
+                ar: 'اختبار قراءة T1.1 - نموذج Google Form يُصحَّح تلقائياً.',
               },
               successCriteria: {
                 en: 'Reading understanding assessed independently.',
@@ -642,8 +642,8 @@ const Y7_T1: Year['terms'][number] = {
                 ar: 'استرجاع المفردات، ثم يكتب الطلاب فقرة تحليلية واحدة محسوبة الوقت (20 دقيقة).',
               },
               task: {
-                en: 'Assessment task: Who do we feel more sympathy for so far — Caylin or Reema?',
-                ar: 'مهمّة التقييم: مَن يستحقّ تعاطفنا أكثر حتى الآن — كيلين أم ريما؟',
+                en: 'Assessment task: Who do we feel more sympathy for so far - Caylin or Reema?',
+                ar: 'مهمّة التقييم: مَن يستحقّ تعاطفنا أكثر حتى الآن - كيلين أم ريما؟',
               },
               successCriteria: {
                 en: 'Can independently select one quotation and explain it in one paragraph.',
@@ -656,15 +656,15 @@ const Y7_T1: Year['terms'][number] = {
     },
     {
       id: '1.2',
-      label: { en: 'Term 1.2 — Second half', ar: 'الفصل 1.2 — النصف الثاني' },
+      label: { en: 'Term 1.2 - Second half', ar: 'الفصل 1.2 - النصف الثاني' },
       assessment: {
-        en: 'Term 1.2 formal assessment — analytical response: "How does Victoria Williamson show that understanding others can change the way we see them?"',
+        en: 'Term 1.2 formal assessment - analytical response: "How does Victoria Williamson show that understanding others can change the way we see them?"',
         ar: 'تقييم نهاية الفصل 1.2: مقالة تحليلية حول كيف تُظهر فيكتوريا ويليامسون أنّ فهم الآخرين يمكن أن يُغيّر نظرتنا إليهم.',
       },
       weeks: [
         {
           number: 8,
-          pages: 'Chapters 8–9 + read Chapters 10–11 for homework',
+          pages: 'Chapters 8-9 + read Chapters 10-11 for homework',
           keyVocabulary: [
             { en: 'prejudice', ar: 'التحامل / التعصّب' },
             { en: 'assumption', ar: 'افتراض مُسبَق' },
@@ -673,12 +673,12 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'discrimination', ar: 'التمييز' },
           ],
           contextNote: {
-            en: 'Both girls experience prejudice and loneliness differently — first comparative writing.',
-            ar: 'تعيش الفتاتان تجربتي التحامل والوحدة بطريقتين مختلفتين — أوّل تجربة كتابة مقارنة.',
+            en: 'Both girls experience prejudice and loneliness differently - first comparative writing.',
+            ar: 'تعيش الفتاتان تجربتي التحامل والوحدة بطريقتين مختلفتين - أوّل تجربة كتابة مقارنة.',
           },
           homework: {
-            en: 'Read Chapters 10–11.',
-            ar: 'اقرأ الفصلين 10–11.',
+            en: 'Read Chapters 10-11.',
+            ar: 'اقرأ الفصلين 10-11.',
           },
           lessons: [
             {
@@ -701,8 +701,8 @@ const Y7_T1: Year['terms'][number] = {
               focus: 'reading-discussion',
               skillCodes: ['7R.1', '7R.5', '7SL.2', '7SL.3'],
               whatStudentsDo: {
-                en: 'Groups compare quotations from Chapters 6–9; create comparison notes on loneliness and belonging.',
-                ar: 'تُقارن المجموعات بين الاقتباسات من الفصول 6–9، وتُجهِّز ملاحظات مقارنة حول الوحدة والانتماء.',
+                en: 'Groups compare quotations from Chapters 6-9; create comparison notes on loneliness and belonging.',
+                ar: 'تُقارن المجموعات بين الاقتباسات من الفصول 6-9، وتُجهِّز ملاحظات مقارنة حول الوحدة والانتماء.',
               },
               task: {
                 en: 'Stems: "Both girls experience…" / "This suggests…" / "A difference between them is…"',
@@ -753,8 +753,8 @@ const Y7_T1: Year['terms'][number] = {
                 ar: 'استرجاع المفردات، ثم يكتب الطلاب فقرة تحليلية مقارنة واحدة بشكلٍ مستقل (مستوى الدعم: متوسّط).',
               },
               task: {
-                en: 'How are Caylin and Reema presented as lonely in Chapters 6–9?',
-                ar: 'كيف تُقدَّم كيلين وريما شخصيّتين تعيشان الوحدة في الفصول 6–9؟',
+                en: 'How are Caylin and Reema presented as lonely in Chapters 6-9?',
+                ar: 'كيف تُقدَّم كيلين وريما شخصيّتين تعيشان الوحدة في الفصول 6-9؟',
               },
               successCriteria: {
                 en: 'Uses quotations from both characters and explains ideas clearly.',
@@ -765,7 +765,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 9,
-          pages: 'Chapters 12–13 + read Chapters 14–15 for homework',
+          pages: 'Chapters 12-13 + read Chapters 14-15 for homework',
           keyVocabulary: [
             { en: 'empathy', ar: 'التعاطف' },
             { en: 'similarity', ar: 'التشابه' },
@@ -774,8 +774,8 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'understanding', ar: 'الفهم' },
           ],
           homework: {
-            en: 'Read Chapters 14–15.',
-            ar: 'اقرأ الفصلين 14–15.',
+            en: 'Read Chapters 14-15.',
+            ar: 'اقرأ الفصلين 14-15.',
           },
           lessons: [
             {
@@ -862,7 +862,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 10,
-          pages: 'Chapters 16–17 + read Chapters 18–19 for homework',
+          pages: 'Chapters 16-17 + read Chapters 18-19 for homework',
           keyVocabulary: [
             { en: 'symbolism', ar: 'الرمزية' },
             { en: 'metaphor', ar: 'استعارة' },
@@ -871,8 +871,8 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'survival', ar: 'البقاء / النجاة' },
           ],
           homework: {
-            en: 'Read Chapters 18–19.',
-            ar: 'اقرأ الفصلين 18–19.',
+            en: 'Read Chapters 18-19.',
+            ar: 'اقرأ الفصلين 18-19.',
           },
           lessons: [
             {
@@ -943,7 +943,7 @@ const Y7_T1: Year['terms'][number] = {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4', '7W.9'],
               whatStudentsDo: {
-                en: 'Independent writing. Support: LOW–MEDIUM.',
+                en: 'Independent writing. Support: LOW-MEDIUM.',
                 ar: 'كتابة مستقلّة. مستوى الدعم: منخفض إلى متوسّط.',
               },
               task: {
@@ -959,7 +959,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 11,
-          pages: 'Chapters 20–22 + read Chapters 23–29 for homework',
+          pages: 'Chapters 20-22 + read Chapters 23-29 for homework',
           keyVocabulary: [
             { en: 'acceptance', ar: 'القبول' },
             { en: 'friendship', ar: 'الصداقة' },
@@ -968,8 +968,8 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'support', ar: 'الدعم' },
           ],
           homework: {
-            en: 'Read Chapters 23–29.',
-            ar: 'اقرأ الفصول 23–29.',
+            en: 'Read Chapters 23-29.',
+            ar: 'اقرأ الفصول 23-29.',
           },
           lessons: [
             {
@@ -1056,7 +1056,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 12,
-          pages: 'Chapters 29–31 + read Chapters 32–33 for homework',
+          pages: 'Chapters 29-31 + read Chapters 32-33 for homework',
           keyVocabulary: [
             { en: 'identity' },
             { en: 'empathy' },
@@ -1064,7 +1064,7 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'belonging' },
             { en: 'change' },
           ],
-          homework: { en: 'Read Chapters 32–33.' },
+          homework: { en: 'Read Chapters 32-33.' },
           lessons: [
             {
               focus: 'explicit-reading',
@@ -1115,7 +1115,7 @@ const Y7_T1: Year['terms'][number] = {
         },
         {
           number: 13,
-          pages: 'Chapters 34–36 + revision',
+          pages: 'Chapters 34-36 + revision',
           keyVocabulary: [
             { en: 'resolution' },
             { en: 'transformation' },
@@ -1124,7 +1124,7 @@ const Y7_T1: Year['terms'][number] = {
             { en: 'reconciliation' },
           ],
           contextNote: {
-            en: 'Final week — independent analytical reading + Term 1.2 formal assessment.',
+            en: 'Final week - independent analytical reading + Term 1.2 formal assessment.',
           },
           homework: { en: 'Revision.' },
           lessons: [
@@ -1188,7 +1188,7 @@ const Y7_T1: Year['terms'][number] = {
 // detail is produced by the lesson_planner agent over the coming weeks.
 const Y7_T2: Year['terms'][number] = {
   number: 2,
-  label: { en: 'Term 2 — Voices Across Time', ar: 'الفصل الدراسي الثاني — أصوات عبر الزمن' },
+  label: { en: 'Term 2 - Voices Across Time', ar: 'الفصل الدراسي الثاني - أصوات عبر الزمن' },
   overview: {
     en: 'Poetry anthology (HT1) + Pre-1914 short stories (HT2). Students meet older syntax in bite-sized form before tackling Shakespeare in T3. Poetry compresses meaning; Victorian short stories build stamina with archaic register. Both feed the National Curriculum requirement for pre-1914 reading.',
     ar: 'مختارات شعرية في النصف الأول + قصص قصيرة قبل عام 1914 في النصف الثاني. يلتقي الطلاب بالتراكيب اللغوية الأقدم بجرعات صغيرة قبل دراسة شكسبير في الفصل الثالث.',
@@ -1211,15 +1211,15 @@ const Y7_T2: Year['terms'][number] = {
   halfTerms: [
     {
       id: '2.1',
-      label: { en: 'Term 2.1 — Poetry anthology', ar: 'الفصل 2.1 — مختارات شعرية' },
+      label: { en: 'Term 2.1 - Poetry anthology', ar: 'الفصل 2.1 - مختارات شعرية' },
       assessment: {
-        en: 'Analytical essay comparing two anthology poems on a shared theme (e.g. outsiders, longing) — 45 minutes.',
-        ar: 'مقالة تحليلية تقارن بين قصيدتين من المختارات تشتركان في موضوع واحد (مثل المهمَّشين أو الشوق) — 45 دقيقة.',
+        en: 'Analytical essay comparing two anthology poems on a shared theme (e.g. outsiders, longing) - 45 minutes.',
+        ar: 'مقالة تحليلية تقارن بين قصيدتين من المختارات تشتركان في موضوع واحد (مثل المهمَّشين أو الشوق) - 45 دقيقة.',
       },
       weeks: [
         {
           number: 2,
-          pages: 'Half-caste — John Agard',
+          pages: 'Half-caste - John Agard',
           keyVocabulary: [
             { en: 'dialect', ar: 'لهجة' },
             { en: 'identity', ar: 'هوية' },
@@ -1287,7 +1287,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 3,
-          pages: 'Refugee Blues — W. H. Auden',
+          pages: 'Refugee Blues - W. H. Auden',
           keyVocabulary: [
             { en: 'refrain', ar: 'لازمة' },
             { en: 'displacement', ar: 'تشريد' },
@@ -1354,7 +1354,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 4,
-          pages: 'The Highwayman — Alfred Noyes',
+          pages: 'The Highwayman - Alfred Noyes',
           keyVocabulary: [
             { en: 'narrative', ar: 'سرد' },
             { en: 'imagery', ar: 'صور أدبية' },
@@ -1422,7 +1422,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 5,
-          pages: 'My Last Duchess — Robert Browning (extract)',
+          pages: 'My Last Duchess - Robert Browning (extract)',
           keyVocabulary: [
             { en: 'monologue', ar: 'مونولوج' },
             { en: 'duke', ar: 'دوق' },
@@ -1431,7 +1431,7 @@ const Y7_T2: Year['terms'][number] = {
             { en: 'speaker', ar: 'متكلّم' },
           ],
           contextNote: {
-            en: 'A dramatic monologue set in Renaissance Italy. The Duke shows a visitor a painting of his late wife and reveals — without meaning to — that he had her killed.',
+            en: 'A dramatic monologue set in Renaissance Italy. The Duke shows a visitor a painting of his late wife and reveals - without meaning to - that he had her killed.',
             ar: 'مونولوج درامي تدور أحداثه في إيطاليا عصر النهضة. يُري الدوق ضيفه لوحة لزوجته الراحلة ويكشف من حيث لا يقصد أنه أمر بقتلها.',
           },
           lessons: [
@@ -1489,7 +1489,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 6,
-          pages: 'Caged Bird — Maya Angelou',
+          pages: 'Caged Bird - Maya Angelou',
           keyVocabulary: [
             { en: 'symbolism', ar: 'رمزية' },
             { en: 'contrast', ar: 'تضاد' },
@@ -1556,7 +1556,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 7,
-          pages: 'The Listeners — Walter de la Mare + HT1 assessment',
+          pages: 'The Listeners - Walter de la Mare + HT1 assessment',
           keyVocabulary: [
             { en: 'atmosphere', ar: 'الجو العام' },
             { en: 'mystery', ar: 'غموض' },
@@ -1625,15 +1625,15 @@ const Y7_T2: Year['terms'][number] = {
     },
     {
       id: '2.2',
-      label: { en: 'Term 2.2 — Pre-1914 short stories', ar: 'الفصل 2.2 — قصص قصيرة قبل 1914' },
+      label: { en: 'Term 2.2 - Pre-1914 short stories', ar: 'الفصل 2.2 - قصص قصيرة قبل 1914' },
       assessment: {
-        en: 'Analytical response on one pre-1914 short story — "How does Dickens/Wells build tension in [extract]?" — 60 minutes.',
-        ar: 'إجابة تحليلية على قصّة قصيرة واحدة من قبل عام 1914 — "كيف يبني ديكنز/ويلز التوتّر في [المقتطف]؟" — 60 دقيقة.',
+        en: 'Analytical response on one pre-1914 short story - "How does Dickens/Wells build tension in [extract]?" - 60 minutes.',
+        ar: 'إجابة تحليلية على قصّة قصيرة واحدة من قبل عام 1914 - "كيف يبني ديكنز/ويلز التوتّر في [المقتطف]؟" - 60 دقيقة.',
       },
       weeks: [
         {
           number: 8,
-          pages: 'The Signalman — Charles Dickens (opening)',
+          pages: 'The Signalman - Charles Dickens (opening)',
           keyVocabulary: [
             { en: 'gothic', ar: 'قوطي' },
             { en: 'foreboding', ar: 'نذير' },
@@ -1700,7 +1700,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 9,
-          pages: 'The Signalman — middle and ending',
+          pages: 'The Signalman - middle and ending',
           keyVocabulary: [
             { en: 'tension', ar: 'توتّر' },
             { en: 'supernatural', ar: 'ما وراء الطبيعة' },
@@ -1767,7 +1767,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 10,
-          pages: 'The Red Room — H. G. Wells',
+          pages: 'The Red Room - H. G. Wells',
           keyVocabulary: [
             { en: 'fear', ar: 'خوف' },
             { en: 'rationalism', ar: 'عقلانية' },
@@ -1834,7 +1834,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 11,
-          pages: 'The Necklace — Guy de Maupassant',
+          pages: 'The Necklace - Guy de Maupassant',
           keyVocabulary: [
             { en: 'irony', ar: 'مفارقة' },
             { en: 'twist', ar: 'مفاجأة' },
@@ -1843,7 +1843,7 @@ const Y7_T2: Year['terms'][number] = {
             { en: 'protagonist', ar: 'بطل' },
           ],
           contextNote: {
-            en: 'Maupassant (1884): Mathilde borrows a necklace, loses it, and works ten years to replace it — only to learn the original was fake.',
+            en: 'Maupassant (1884): Mathilde borrows a necklace, loses it, and works ten years to replace it - only to learn the original was fake.',
             ar: 'كتبها موباسان عام 1884: تستعير ماتيلد عقدًا وتفقده، ثم تعمل عشر سنوات لتعويضه، لتكتشف في النهاية أن الأصل كان مزيّفًا.',
           },
           lessons: [
@@ -1968,7 +1968,7 @@ const Y7_T2: Year['terms'][number] = {
         },
         {
           number: 13,
-          pages: 'The Signalman revisited — HT2 assessment',
+          pages: 'The Signalman revisited - HT2 assessment',
           keyVocabulary: [
             { en: 'analyse', ar: 'حلِّل' },
             { en: 'tension', ar: 'توتّر' },
@@ -2041,13 +2041,13 @@ const Y7_T2: Year['terms'][number] = {
 
 const Y7_T3: Year['terms'][number] = {
   number: 3,
-  label: { en: 'Term 3 — Stories That Endure', ar: 'الفصل الدراسي الثالث — قصص باقية' },
+  label: { en: 'Term 3 - Stories That Endure', ar: 'الفصل الدراسي الثالث - قصص باقية' },
   overview: {
-    en: "Shakespeare (A Midsummer Night's Dream — Acts 1.1, 2.1, 3.1, 5.1) in HT1 + extended narrative writing in HT2. Students study three forms (novel, poem/story, play) then USE the storytelling craft they have studied to make their own narrative.",
+    en: "Shakespeare (A Midsummer Night's Dream - Acts 1.1, 2.1, 3.1, 5.1) in HT1 + extended narrative writing in HT2. Students study three forms (novel, poem/story, play) then USE the storytelling craft they have studied to make their own narrative.",
     ar: 'شكسبير (حلم ليلة منتصف الصيف) في النصف الأول + الكتابة السردية الموسّعة في النصف الثاني.',
   },
   setText: {
-    en: "A Midsummer Night's Dream (Shakespeare) — key extracts; model narrative openings",
+    en: "A Midsummer Night's Dream (Shakespeare) - key extracts; model narrative openings",
     ar: 'حلم ليلة منتصف الصيف لشكسبير + نماذج بداية سردية',
   },
   vocabularyThemes: [
@@ -2067,7 +2067,7 @@ const Y7_T3: Year['terms'][number] = {
   halfTerms: [
     {
       id: '3.1',
-      label: { en: 'Term 3.1 — Shakespeare', ar: 'الفصل 3.1 — شكسبير' },
+      label: { en: 'Term 3.1 - Shakespeare', ar: 'الفصل 3.1 - شكسبير' },
       assessment: {
         en: 'Shakespeare performance + 30-minute analytical paragraph on a scene.',
         ar: 'أداء مَشهد شكسبيري + فقرة تحليلية مدّتها 30 دقيقة حول أحد المشاهد.',
@@ -2075,7 +2075,7 @@ const Y7_T3: Year['terms'][number] = {
       weeks: [
         {
           number: 2,
-          pages: 'Act 1.1 — Court of Theseus',
+          pages: 'Act 1.1 - Court of Theseus',
           keyVocabulary: [
             { en: 'court', ar: 'البلاط الملكي' },
             { en: 'decree', ar: 'مرسوم' },
@@ -2093,17 +2093,17 @@ const Y7_T3: Year['terms'][number] = {
               skills: ['7R.1', '7R.2'],
               do: 'Read Theseus\'s opening + Egeus\'s complaint aloud. Annotate "Full of vexation come I, with complaint / Against my child".',
               doAr: 'اقرؤوا بصوتٍ عالٍ مَطلع كلام ثيسيوس وشكوى إيجيوس، ثمّ علّقوا على عبارة "Full of vexation come I, with complaint / Against my child".',
-              task: 'Highlight every word in 1.1 lines 1–45 that signals law, ownership or hierarchy.',
+              task: 'Highlight every word in 1.1 lines 1-45 that signals law, ownership or hierarchy.',
               taskAr:
-                'ظلّلوا كلّ كلمة في الأسطر 1–45 من المشهد 1.1 تدلّ على القانون أو التملّك أو التراتُب الهرَمي.',
+                'ظلّلوا كلّ كلمة في الأسطر 1-45 من المشهد 1.1 تدلّ على القانون أو التملّك أو التراتُب الهرَمي.',
               success: 'Lists 6+ legal/hierarchical words.',
               successAr: 'يُدرج الطالب ستّ كلمات أو أكثر من معجم القانون أو التراتُب الهرَمي.',
             }),
             lesson({
               focus: 'reading-discussion',
               skills: ['7R.3', '7SL.1', '7SL.2'],
-              do: 'Hot-seat Hermia. Model: "I would my father look\'d but with my eyes" — what does she risk?',
-              doAr: 'مَقعَد الاستجواب لشخصية هيرميا. النموذج: "I would my father look\'d but with my eyes" — ماذا تخاطر هيرميا بفقدانه؟',
+              do: 'Hot-seat Hermia. Model: "I would my father look\'d but with my eyes" - what does she risk?',
+              doAr: 'مَقعَد الاستجواب لشخصية هيرميا. النموذج: "I would my father look\'d but with my eyes" - ماذا تخاطر هيرميا بفقدانه؟',
               task: "Pair-debate: is Hermia's defiance brave or foolish?",
               taskAr: 'نقاشٌ ثنائي: هل تحدّي هيرميا شجاعةٌ أم تهوّر؟',
               success: 'Contributes a point supported by a short quotation.',
@@ -2123,7 +2123,7 @@ const Y7_T3: Year['terms'][number] = {
             lesson({
               focus: 'application',
               skills: ['7W.1', '7W.3'],
-              do: 'Zoom in on "decree" — connotations of permanence, law, public record.',
+              do: 'Zoom in on "decree" - connotations of permanence, law, public record.',
               doAr: 'ركّزوا على كلمة "decree" وما تحمله من إيحاءات الديمومة والقانون والتسجيل الرسمي.',
               task: 'Write a paragraph zooming in on "obedience" or "decree".',
               taskAr: 'اكتبوا فقرةً تُحلّلون فيها بدقّة كلمة "obedience" أو "decree".',
@@ -2145,7 +2145,7 @@ const Y7_T3: Year['terms'][number] = {
         },
         {
           number: 3,
-          pages: 'Act 2.1 — Fairy realm',
+          pages: 'Act 2.1 - Fairy realm',
           keyVocabulary: [
             { en: 'enchantment', ar: 'سحرٌ آسر' },
             { en: 'supernatural', ar: 'خارقٌ للطبيعة' },
@@ -2163,8 +2163,8 @@ const Y7_T3: Year['terms'][number] = {
               skills: ['7R.1', '7R.5'],
               do: 'Read Titania\'s "forgeries of jealousy" speech. Map the disorders (winds, fogs, rivers, corn, sheep).',
               doAr: 'اقرؤوا خطاب تيتانيا "forgeries of jealousy"، ثمّ ارسموا خريطةً لمظاهر الخلل (الرياح، الضباب، الأنهار، الحبوب، الأغنام).',
-              task: 'Underline every image of disorder in lines 81–117.',
-              taskAr: 'ضعوا خطّاً تحت كلّ صورة من صور الخلل في الأسطر 81–117.',
+              task: 'Underline every image of disorder in lines 81-117.',
+              taskAr: 'ضعوا خطّاً تحت كلّ صورة من صور الخلل في الأسطر 81-117.',
               success: 'Lists 5+ disorder images linked to the fairy quarrel.',
               successAr: 'يُدرج الطالب خمس صور للخلل أو أكثر، مربوطةً بشِجار الجنّ.',
             }),
@@ -2217,7 +2217,7 @@ const Y7_T3: Year['terms'][number] = {
         },
         {
           number: 4,
-          pages: "Act 3.1 — Bottom's transformation",
+          pages: "Act 3.1 - Bottom's transformation",
           keyVocabulary: [
             { en: 'transformation', ar: 'تحوّل' },
             { en: 'absurdity', ar: 'عبثيّة' },
@@ -2290,7 +2290,7 @@ const Y7_T3: Year['terms'][number] = {
         },
         {
           number: 5,
-          pages: 'Act 5.1 — Play-within-a-play',
+          pages: 'Act 5.1 - Play-within-a-play',
           keyVocabulary: [
             { en: 'meta-theatre', ar: 'مسرحٌ موازٍ / مسرحٌ داخل المسرح' },
             { en: 'framing', ar: 'تأطير' },
@@ -2299,8 +2299,8 @@ const Y7_T3: Year['terms'][number] = {
             { en: 'resolution', ar: 'حلّ / خاتمة' },
           ],
           contextNote: {
-            en: 'Lovers reconciled and married. Mechanicals perform Pyramus and Thisbe at court. We watch them watching a play — meta-theatre. Puck closes by breaking the frame.',
-            ar: 'يصطلح العشّاق ويتزوّجون. ويُؤدّي الحرفيّون مسرحية "Pyramus and Thisbe" في البلاط، فنُشاهدهم وهم يُشاهدون مسرحيّة — وهذا هو المسرح الموازي. ويختم باك بكسر الإطار الدرامي.',
+            en: 'Lovers reconciled and married. Mechanicals perform Pyramus and Thisbe at court. We watch them watching a play - meta-theatre. Puck closes by breaking the frame.',
+            ar: 'يصطلح العشّاق ويتزوّجون. ويُؤدّي الحرفيّون مسرحية "Pyramus and Thisbe" في البلاط، فنُشاهدهم وهم يُشاهدون مسرحيّة - وهذا هو المسرح الموازي. ويختم باك بكسر الإطار الدرامي.',
           },
           lessons: [
             lesson({
@@ -2408,8 +2408,8 @@ const Y7_T3: Year['terms'][number] = {
             lesson({
               focus: 'application',
               skills: ['7W.3', '7W.4'],
-              do: "Use \"motif\" — transformation runs from Hermia's defiance to Bottom's ass-head to the lovers' shifting affections.",
-              doAr: 'استخدموا مصطلح "motif" — يسري التحوّل من تحدّي هيرميا، إلى رأس حمار بوتُم، إلى عواطف العشّاق المتقلّبة.',
+              do: "Use \"motif\" - transformation runs from Hermia's defiance to Bottom's ass-head to the lovers' shifting affections.",
+              doAr: 'استخدموا مصطلح "motif" - يسري التحوّل من تحدّي هيرميا، إلى رأس حمار بوتُم، إلى عواطف العشّاق المتقلّبة.',
               task: 'Write a paragraph tracing the motif of transformation across two scenes.',
               taskAr: 'اكتبوا فقرةً تتبّعون فيها موتيف التحوّل عبر مشهدَين.',
               success: 'Names the motif, gives two examples, explains how it builds.',
@@ -2431,7 +2431,7 @@ const Y7_T3: Year['terms'][number] = {
         },
         {
           number: 7,
-          pages: 'Assessment week — performance + analytical paragraph',
+          pages: 'Assessment week - performance + analytical paragraph',
           keyVocabulary: [
             { en: 'rehearsal', ar: 'بروفة' },
             { en: 'projection', ar: 'إيصال الصوت' },
@@ -2447,8 +2447,8 @@ const Y7_T3: Year['terms'][number] = {
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.1', '7R.2'],
-              do: 'Issue extract choices (12–16 lines from 1.1, 2.1, 3.1, 5.1). Model annotation: stresses, pauses, tone shifts.',
-              doAr: 'وزّعوا خيارات المقاطع (12–16 سطراً من المشاهد 1.1 و2.1 و3.1 و5.1). اعرضوا نموذج تعليق: مواضع التشديد والوقَفات وتحوّلات النبرة.',
+              do: 'Issue extract choices (12-16 lines from 1.1, 2.1, 3.1, 5.1). Model annotation: stresses, pauses, tone shifts.',
+              doAr: 'وزّعوا خيارات المقاطع (12-16 سطراً من المشاهد 1.1 و2.1 و3.1 و5.1). اعرضوا نموذج تعليق: مواضع التشديد والوقَفات وتحوّلات النبرة.',
               task: 'Annotate your extract for performance: stresses, pauses, tone.',
               taskAr: 'علِّقوا على مقطعكم استعداداً للأداء: مواضع التشديد والوقَفات والنبرة.',
               success: 'Extract fully annotated with at least six marks.',
@@ -2459,9 +2459,9 @@ const Y7_T3: Year['terms'][number] = {
               skills: ['7SL.1', '7SL.2', '7SL.3'],
               do: 'Rehearsal workshop. Demonstrate projection, eye-contact, consonants on "Out of this wood do not desire to go."',
               doAr: 'ورشة بروفة. اعرضوا إيصال الصوت والتواصل البصري ونُطق الصوامت في عبارة "Out of this wood do not desire to go."',
-              task: 'Rehearse in groups of 3–4; peer-feedback on projection and intonation.',
+              task: 'Rehearse in groups of 3-4; peer-feedback on projection and intonation.',
               taskAr:
-                'تدرّبوا في مجموعاتٍ من 3–4، مع تغذية راجعة من الأقران على إيصال الصوت والتنغيم.',
+                'تدرّبوا في مجموعاتٍ من 3-4، مع تغذية راجعة من الأقران على إيصال الصوت والتنغيم.',
               success: 'Each pupil acts on at least one piece of feedback.',
               successAr: 'يعمل كلّ طالبٍ بملاحظةٍ واحدة على الأقلّ من التغذية الراجعة.',
             }),
@@ -2504,12 +2504,12 @@ const Y7_T3: Year['terms'][number] = {
     {
       id: '3.2',
       label: {
-        en: 'Term 3.2 — Extended narrative writing',
-        ar: 'الفصل 3.2 — الكتابة السردية الموسّعة',
+        en: 'Term 3.2 - Extended narrative writing',
+        ar: 'الفصل 3.2 - الكتابة السردية الموسّعة',
       },
       assessment: {
-        en: 'Extended narrative writing (1,000–1,500 words) drafted, peer-reviewed, redrafted — final piece assessed.',
-        ar: 'كتابة سردية موسّعة (1,000–1,500 كلمة): مسودّة أولى، ثمّ مراجعة الأقران، ثمّ إعادة صياغة — يُقيَّم العمل النهائي.',
+        en: 'Extended narrative writing (1,000-1,500 words) drafted, peer-reviewed, redrafted - final piece assessed.',
+        ar: 'كتابة سردية موسّعة (1,000-1,500 كلمة): مسودّة أولى، ثمّ مراجعة الأقران، ثمّ إعادة صياغة - يُقيَّم العمل النهائي.',
       },
       weeks: [],
     },
@@ -2518,37 +2518,37 @@ const Y7_T3: Year['terms'][number] = {
 
 export const YEAR_7: Year = {
   number: 7,
-  name: { en: 'Year 7 — Foundations', ar: 'السنة السابعة — الأسس' },
+  name: { en: 'Year 7 - Foundations', ar: 'السنة السابعة - الأسس' },
   overview: {
-    en: 'Year 7 builds the foundations of KS3 English — explicit reading via teacher-led aloud + echo strategies, the WHAT/HOW/WHY analytical paragraph, sentence stems ("This shows…", "I think… because…"), and a steady move from heavy scaffolding to one independent analytical paragraph by end of term. The arc moves through a contemporary novel of empathy and identity (T1), poetry and pre-1914 short stories (T2), and Shakespeare + extended narrative writing (T3).',
+    en: 'Year 7 builds the foundations of KS3 English - explicit reading via teacher-led aloud + echo strategies, the WHAT/HOW/WHY analytical paragraph, sentence stems ("This shows…", "I think… because…"), and a steady move from heavy scaffolding to one independent analytical paragraph by end of term. The arc moves through a contemporary novel of empathy and identity (T1), poetry and pre-1914 short stories (T2), and Shakespeare + extended narrative writing (T3).',
     ar: 'تبني السنة السابعة أسس اللغة الإنجليزية في المرحلة الأساسية الثالثة من خلال القراءة الموجَّهة وفقرات "ماذا/كيف/لماذا" والانتقال التدريجي من الدعم المُكثّف إلى الكتابة المستقلّة.',
   },
   yearlyExpectations: {
     reading: [
-      { en: '7R.1 — Identify language and structural features.' },
-      { en: '7R.2 — Understand explicit and implicit meaning.' },
-      { en: '7R.3 — Select relevant quotations.' },
-      { en: '7R.4 — Make simple inferences.' },
-      { en: '7R.5 — Comment on effects using "This shows…".' },
-      { en: '7R.6 — Make connections between texts (themes, ideas, methods).' },
+      { en: '7R.1 - Identify language and structural features.' },
+      { en: '7R.2 - Understand explicit and implicit meaning.' },
+      { en: '7R.3 - Select relevant quotations.' },
+      { en: '7R.4 - Make simple inferences.' },
+      { en: '7R.5 - Comment on effects using "This shows…".' },
+      { en: '7R.6 - Make connections between texts (themes, ideas, methods).' },
     ],
     writing: [
-      { en: '7W.1 — Organise ideas into clear paragraphs.' },
-      { en: '7W.2 — Use basic punctuation mostly accurately.' },
-      { en: '7W.3 — Use simple and some varied sentence structures.' },
-      { en: '7W.4 — Develop ideas with some detail.' },
-      { en: '7W.5 — Write simple narratives with structure, description, voice.' },
-      { en: '7W.6 — Write for different purposes (describe, narrate, explain).' },
+      { en: '7W.1 - Organise ideas into clear paragraphs.' },
+      { en: '7W.2 - Use basic punctuation mostly accurately.' },
+      { en: '7W.3 - Use simple and some varied sentence structures.' },
+      { en: '7W.4 - Develop ideas with some detail.' },
+      { en: '7W.5 - Write simple narratives with structure, description, voice.' },
+      { en: '7W.6 - Write for different purposes (describe, narrate, explain).' },
     ],
     language: [
-      { en: '7W.7 — Recognise differences between spoken and written language.' },
-      { en: '7W.8 — Make simple edits to improve clarity, vocabulary and punctuation.' },
-      { en: '7W.9 — Begin to adapt vocabulary and sentence structures for purpose and audience.' },
+      { en: '7W.7 - Recognise differences between spoken and written language.' },
+      { en: '7W.8 - Make simple edits to improve clarity, vocabulary and punctuation.' },
+      { en: '7W.9 - Begin to adapt vocabulary and sentence structures for purpose and audience.' },
     ],
     speaking: [
-      { en: '7SL.1 — Listen and respond appropriately.' },
-      { en: '7SL.2 — Share ideas with some confidence.' },
-      { en: '7SL.3 — Speak clearly in discussions.' },
+      { en: '7SL.1 - Listen and respond appropriately.' },
+      { en: '7SL.2 - Share ideas with some confidence.' },
+      { en: '7SL.3 - Speak clearly in discussions.' },
     ],
   },
   rubric: [], // populated by curriculum.ts via filter on shared RUBRICS

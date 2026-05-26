@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
 
-export const metadata = { title: 'Lesson Plans — Teacher Resources' }
+export const metadata = { title: 'Lesson Plans - Teacher Resources' }
 
 /* ─── Example Lesson Plan Content ─────────────────────────────────── */
 
@@ -15,7 +15,7 @@ const LESSON_PLANS = [
     overview:
       "A complete scheme of work exploring J.B. Priestley's An Inspector Calls. Students analyse how Priestley uses the Birling family to critique Edwardian social attitudes and explore collective responsibility.",
     objectives: [
-      'AO1: Read, understand and respond to texts — select and synthesise evidence',
+      'AO1: Read, understand and respond to texts - select and synthesise evidence',
       'AO2: Analyse language, form and structure using subject terminology',
       'AO3: Show understanding of relationships between texts and the contexts in which they were written',
     ],
@@ -27,7 +27,7 @@ const LESSON_PLANS = [
           'Brainstorm: What was life like in 1912 vs 1945? Display two photographs and ask students to identify key differences.',
         mainActivities: [
           'Teacher-led: 10-minute context presentation covering Edwardian class system, capitalism vs socialism, the welfare state',
-          "Paired reading: Act 1 opening stage directions — annotate what we learn about the Birlings from Priestley's descriptions",
+          "Paired reading: Act 1 opening stage directions - annotate what we learn about the Birlings from Priestley's descriptions",
           "Group task: Create a 'Family Profile' poster for the Birlings using evidence from Act 1. Include: social status, attitudes to others, key quotes",
         ],
         plenary:
@@ -46,7 +46,7 @@ const LESSON_PLANS = [
         title: "The Inspector's Arrival & Eva Smith",
         starter: 'Recall quiz: 5 questions on Act 1 context (mini whiteboards).',
         mainActivities: [
-          "Shared reading: Inspector Goole's entrance — track stage directions and language choices",
+          "Shared reading: Inspector Goole's entrance - track stage directions and language choices",
           'Language analysis: How does Priestley present the Inspector differently from the Birlings? Complete a comparison table',
           "Close reading: Eva Smith's story through Sheila's confession. Students highlight linguistic techniques and annotate effects",
           "Timed practice: Write 2 PEEL paragraphs on 'How does Priestley present the Inspector as a mouthpiece for his socialist views?'",
@@ -69,7 +69,7 @@ const LESSON_PLANS = [
           "Spectrum line: 'Who is most responsible for Eva Smith's death?' Students physically position themselves and justify.",
         mainActivities: [
           "Character study: Create a Venn diagram comparing Sheila and Mr Birling's responses to the Inspector's revelations",
-          'Quote explosion: Each group given 3 key quotes — explode with annotations covering language, structure, context',
+          'Quote explosion: Each group given 3 key quotes - explode with annotations covering language, structure, context',
           "Essay planning: 'How does Priestley use the character of Sheila to convey his message about responsibility?' Plan using a structured template",
         ],
         plenary:
@@ -89,7 +89,7 @@ const LESSON_PLANS = [
         starter:
           "Dramatic reading: Two students perform Mrs Birling's confrontation with the Inspector. Class note down 3 key quotes.",
         mainActivities: [
-          'Hot-seating: Student volunteers answer questions as Mrs Birling and Eric — class prepares questions in advance',
+          'Hot-seating: Student volunteers answer questions as Mrs Birling and Eric - class prepares questions in advance',
           "Thematic tracking: Complete a 'Responsibility Grid' showing how each character responds to guilt",
           "Extended writing: Timed 25-minute exam-style response: 'How does Priestley present ideas about responsibility in An Inspector Calls?'",
         ],
@@ -109,7 +109,7 @@ const LESSON_PLANS = [
         starter:
           "Discussion: 'Is the Inspector real?' Students debate in pairs before sharing with the class.",
         mainActivities: [
-          'Close reading: The final phone call — analyse the cyclical structure and its significance',
+          'Close reading: The final phone call - analyse the cyclical structure and its significance',
           "Context connection: How does the play's 1945 audience change the meaning of the ending compared to a modern audience?",
           "Full essay: 'Starting with this extract, explore how Priestley presents the theme of social responsibility.' (40 minutes, exam conditions)",
         ],
@@ -128,8 +128,8 @@ const LESSON_PLANS = [
     assessmentOpportunities: [
       'Lesson 1: Exit ticket (formative)',
       'Lesson 2: Peer-assessed PEEL paragraphs (formative)',
-      'Lesson 4: Timed exam response — teacher-marked (summative)',
-      'Lesson 5: Full essay under exam conditions — teacher-marked (summative)',
+      'Lesson 4: Timed exam response - teacher-marked (summative)',
+      'Lesson 5: Full essay under exam conditions - teacher-marked (summative)',
     ],
     crossCurricular: [
       'History: Edwardian Britain, class system, WWI and WWII',

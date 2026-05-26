@@ -5,7 +5,7 @@
  * aggregations used both inside the app and on marketing pages
  * (most-read poems, hardest questions, board averages, game
  * engagement). Cached at the edge for 5 minutes with a 60-second
- * stale-while-revalidate window — these numbers are aesthetic, never
+ * stale-while-revalidate window - these numbers are aesthetic, never
  * load-bearing for billing or grades.
  *
  * Privacy posture:
@@ -21,7 +21,7 @@ import { NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { buildLeaderboardAggregations, redactPII } from '@/lib/analytics/aggregate-progress'
 
-// Force runtime evaluation per request — `s-maxage` handles caching.
+// Force runtime evaluation per request - `s-maxage` handles caching.
 // The default static-render heuristic would otherwise try to evaluate
 // the route at build time, where there is no Supabase session.
 export const dynamic = 'force-dynamic'
@@ -39,7 +39,7 @@ export async function GET() {
       },
     })
   } catch (err) {
-    // Never leak the underlying error to a public endpoint — log via
+    // Never leak the underlying error to a public endpoint - log via
     // the platform's stderr capture (Vercel/observability) and return
     // an opaque 500. This route is best-effort marketing data; callers
     // already gracefully degrade when it fails.

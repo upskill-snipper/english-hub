@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Context — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Context - Edexcel IGCSE Literature',
     description:
       'Context for An Inspector Calls: Edwardian 1912 vs 1945 Britain, J. B. Priestley\u2019s socialism, the welfare state, dramatic inheritance.',
   },
-  title: 'An Inspector Calls Context — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Context - Edexcel IGCSE Literature',
   description:
     'Context for An Inspector Calls: Edwardian 1912 vs 1945 Britain, J. B. Priestley\u2019s socialism, the welfare state, dramatic inheritance.',
   alternates: {
@@ -23,23 +23,23 @@ export const metadata: Metadata = {
 const contextBlocks = [
   {
     title: 'Two historical moments: 1912 and 1945',
-    body: 'Priestley sets An Inspector Calls in the spring of 1912 but wrote and first staged it in 1945. That double date is the heart of the play\u2019s dramatic irony: a 1945 audience, having lived through two world wars, the 1918 flu pandemic, the General Strike, the Great Depression and the Labour landslide, hears Birling\u2019s Edwardian confidence as absurd. Everything the characters trust — empire, capital, class — has already been shattered by the time the play is performed.',
+    body: 'Priestley sets An Inspector Calls in the spring of 1912 but wrote and first staged it in 1945. That double date is the heart of the play\u2019s dramatic irony: a 1945 audience, having lived through two world wars, the 1918 flu pandemic, the General Strike, the Great Depression and the Labour landslide, hears Birling\u2019s Edwardian confidence as absurd. Everything the characters trust - empire, capital, class - has already been shattered by the time the play is performed.',
   },
   {
-    title: 'Edwardian Britain (1901–1914)',
-    body: 'The "Edwardian summer" is often remembered as a period of stability but was, in reality, riven by strikes, suffragette militancy, Irish home rule crises and German naval rivalry. Trade union membership doubled between 1910 and 1914, and female workers — like Priestley\u2019s Eva — organised for better wages in industries including textiles and domestic service. Priestley\u2019s Birling, dismissing "community and all that nonsense", misreads a genuinely turbulent moment as one of certain progress.',
+    title: 'Edwardian Britain (1901-1914)',
+    body: 'The "Edwardian summer" is often remembered as a period of stability but was, in reality, riven by strikes, suffragette militancy, Irish home rule crises and German naval rivalry. Trade union membership doubled between 1910 and 1914, and female workers - like Priestley\u2019s Eva - organised for better wages in industries including textiles and domestic service. Priestley\u2019s Birling, dismissing "community and all that nonsense", misreads a genuinely turbulent moment as one of certain progress.',
   },
   {
     title: 'J. B. Priestley\u2019s socialism',
-    body: 'Priestley (1894–1984) was a Yorkshire-born novelist, playwright and broadcaster. His WWII Postscript broadcasts on the BBC — second only to Churchill in their reach — articulated a vision of post-war Britain built on collective responsibility. He helped found the Common Wealth Party and the later Campaign for Nuclear Disarmament. The Inspector\u2019s "one body" speech is essentially an articulation of Priestley\u2019s democratic socialism on stage.',
+    body: 'Priestley (1894-1984) was a Yorkshire-born novelist, playwright and broadcaster. His WWII Postscript broadcasts on the BBC - second only to Churchill in their reach - articulated a vision of post-war Britain built on collective responsibility. He helped found the Common Wealth Party and the later Campaign for Nuclear Disarmament. The Inspector\u2019s "one body" speech is essentially an articulation of Priestley\u2019s democratic socialism on stage.',
   },
   {
     title: 'Post-WW2 Britain and the welfare state',
-    body: 'An Inspector Calls premiered in Moscow in 1945 and in London in 1946 — between the end of the war and the Attlee government\u2019s creation of the NHS (1948) and welfare state. Priestley\u2019s play functions as rhetorical support for that project: by showing 1912 capitalism as morally bankrupt, it implicitly argues that the post-war settlement should look radically different.',
+    body: 'An Inspector Calls premiered in Moscow in 1945 and in London in 1946 - between the end of the war and the Attlee government\u2019s creation of the NHS (1948) and welfare state. Priestley\u2019s play functions as rhetorical support for that project: by showing 1912 capitalism as morally bankrupt, it implicitly argues that the post-war settlement should look radically different.',
   },
   {
     title: 'The Beveridge Report and "Five Giants"',
-    body: 'Beveridge\u2019s 1942 report on "Social Insurance and Allied Services" identified five "giants" blocking post-war reconstruction: Want, Disease, Ignorance, Squalor and Idleness. Priestley\u2019s Eva embodies all five. The report\u2019s recommendations informed the NHS, the welfare state, and the 1944 Education Act — and Priestley is in effect dramatising the moral argument that Beveridge made in actuarial language.',
+    body: 'Beveridge\u2019s 1942 report on "Social Insurance and Allied Services" identified five "giants" blocking post-war reconstruction: Want, Disease, Ignorance, Squalor and Idleness. Priestley\u2019s Eva embodies all five. The report\u2019s recommendations informed the NHS, the welfare state, and the 1944 Education Act - and Priestley is in effect dramatising the moral argument that Beveridge made in actuarial language.',
   },
   {
     title: 'The "well-made play" tradition',
@@ -47,7 +47,7 @@ const contextBlocks = [
   },
   {
     title: 'Priestley, time and metaphysics',
-    body: 'Priestley was influenced by J. W. Dunne\u2019s "An Experiment with Time" and other non-linear theories of time. His earlier "time plays" — Dangerous Corner, Time and the Conways, I Have Been Here Before — use plot loops, dream structures and alternative timelines. An Inspector Calls\u2019 phone-call twist is part of the same body of work: it implies the Birlings are being offered a rehearsal, a second chance they are already on the verge of squandering.',
+    body: 'Priestley was influenced by J. W. Dunne\u2019s "An Experiment with Time" and other non-linear theories of time. His earlier "time plays" - Dangerous Corner, Time and the Conways, I Have Been Here Before - use plot loops, dream structures and alternative timelines. An Inspector Calls\u2019 phone-call twist is part of the same body of work: it implies the Birlings are being offered a rehearsal, a second chance they are already on the verge of squandering.',
   },
   {
     title: 'Reception and lasting influence',
@@ -100,7 +100,7 @@ export default async function InspectorCallsContextPage() {
             An Inspector Calls: Context
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Historical, biographical and dramatic context for Priestley’s play — essential for
+            Historical, biographical and dramatic context for Priestley’s play - essential for
             Relating to context responses on social, cultural and historical context.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default async function InspectorCallsContextPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               This guide is a study companion, not a replacement for reading or watching the play.

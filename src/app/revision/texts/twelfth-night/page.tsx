@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Twelfth Night — Study Guide | The English Hub',
+    title: 'Twelfth Night - Study Guide | The English Hub',
     description:
       'In-depth study guide for Twelfth Night by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Twelfth Night — Study Guide',
+  title: 'Twelfth Night - Study Guide',
   description:
     'In-depth study guide for Twelfth Night by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -107,7 +107,7 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Twelfth Night takes its name from the twelfth night of Christmas, celebrated on 5 or 6 January as the eve of Epiphany. In Elizabethan England this was the climax of the Christmas holidays, marked by feasting, music, cross-dressing games and the appointment of a \u201cLord of Misrule\u201d who presided over an inverted social order for the night. Servants were briefly served by masters, and the normal rules of dignity and deference were suspended. Shakespeare\u2019s play absorbs this festive atmosphere into its plot: Sir Toby\u2019s revels, Feste\u2019s licensed mockery, Viola\u2019s cross-dressing and Malvolio\u2019s humiliation all echo the rhythms of the Twelfth Night feast. The subtitle \u201cWhat You Will\u201d reinforces the mood of holiday freedom.',
-    'On the Elizabethan stage, all female roles were played by boys, since women were forbidden from acting publicly. This convention shapes the gender play of Twelfth Night at every level. When Viola dresses as Cesario, the audience watches a boy actor playing a woman playing a young man — a layering that the play explicitly draws attention to in moments like Viola\u2019s reference to \u201cmy little body.\u201d The first audience would have found the device less jarring than a modern one, and the fluidity between male and female roles was part of the theatrical pleasure. When Orsino addresses Viola as \u201cCesario\u201d at the close of the play, the line acknowledges that the boy-actor on stage has not, in fact, changed costume.',
+    'On the Elizabethan stage, all female roles were played by boys, since women were forbidden from acting publicly. This convention shapes the gender play of Twelfth Night at every level. When Viola dresses as Cesario, the audience watches a boy actor playing a woman playing a young man - a layering that the play explicitly draws attention to in moments like Viola\u2019s reference to \u201cmy little body.\u201d The first audience would have found the device less jarring than a modern one, and the fluidity between male and female roles was part of the theatrical pleasure. When Orsino addresses Viola as \u201cCesario\u201d at the close of the play, the line acknowledges that the boy-actor on stage has not, in fact, changed costume.',
     'Shakespeare also drew on the long tradition of Italian commedia erudita and commedia dell\u2019arte for the play\u2019s structure. A direct source is the Italian play Gl\u2019Ingannati (\u201cThe Deceived\u201d, 1531), which features separated twins, a disguised heroine who falls in love with her employer, and a mistaken-identity resolution. Shipwrecked twins and cross-dressing heroines were staples of Italian comedy, and English dramatists borrowed freely. Shakespeare adds the melancholy songs, the sub-plot of Malvolio\u2019s gulling and the figure of Feste, transforming the conventional comic formula into something unusually reflective. Twelfth Night was performed at the Inns of Court in February 1602 and is thought to have been written in the preceding months, placing it alongside Hamlet as one of the plays of Shakespeare\u2019s great transitional period.',
   ],
   quotations: [
@@ -603,7 +603,7 @@ export default async function TwelfthNightPage() {
   return (
     <>
       <CourseJsonLd
-        name="Twelfth Night — Complete GCSE Study Guide"
+        name="Twelfth Night - Complete GCSE Study Guide"
         description="In-depth study guide for Twelfth Night covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers — Themes | The English Hub',
+    title: 'Blood Brothers - Themes | The English Hub',
     description:
       'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
   },
-  title: 'Blood Brothers — Themes',
+  title: 'Blood Brothers - Themes',
   description:
     'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
   alternates: {
@@ -38,7 +38,7 @@ const THEMES: ThemeData[] = [
   {
     title: 'Class and inequality',
     overview:
-      'Class is the engine of the entire play. Russell sets up a controlled experiment — two genetically identical boys raised on opposite sides of the class divide — to prove that life outcomes are determined by environment, not character. Everything from accent to ambition to survival is shown to be a product of social position.',
+      'Class is the engine of the entire play. Russell sets up a controlled experiment - two genetically identical boys raised on opposite sides of the class divide - to prove that life outcomes are determined by environment, not character. Everything from accent to ambition to survival is shown to be a product of social position.',
     howRussellPresentsIt:
       'Russell uses parallel structure throughout: the same birthday, the same mother, even the same blood-brother oath, yet radically different lives. The Johnstones are rehoused in a council estate while the Lyons move to the suburbs. Mickey works in a factory; Edward goes to university. The gap widens with every scene until it becomes lethal.',
     keyQuotes: [
@@ -69,7 +69,7 @@ const THEMES: ThemeData[] = [
   {
     title: 'Nature versus nurture',
     overview:
-      "Blood Brothers is structured as an experiment: take two identical subjects, place them in different environments, and observe the results. Russell's conclusion is unambiguous — nurture wins. Mickey and Edward share genes but not life chances, and every difference between them can be traced to upbringing.",
+      "Blood Brothers is structured as an experiment: take two identical subjects, place them in different environments, and observe the results. Russell's conclusion is unambiguous - nurture wins. Mickey and Edward share genes but not life chances, and every difference between them can be traced to upbringing.",
     howRussellPresentsIt:
       "Russell stages the boys' childhood as near-identical in personality: both are curious, generous and brave. The divergence begins when their environments impose different expectations. Edward is encouraged to read and play; Mickey is left to fend for himself. By adulthood, the gap is a chasm. Russell never allows the audience to attribute Mickey's decline to personal failings.",
     keyQuotes: [
@@ -89,20 +89,20 @@ const THEMES: ThemeData[] = [
     contextLink:
       "The nature-versus-nurture debate was politically charged in the 1980s. Right-wing arguments attributed poverty to personal deficiency. Russell's play is a direct rebuttal: it insists that social conditions, not individual character, create outcomes.",
     examTip:
-      'Link this theme explicitly to the play\'s structure as a "twin study." Examiners reward candidates who discuss Russell\'s dramatic method — the controlled experiment — not just the content of the argument.',
+      'Link this theme explicitly to the play\'s structure as a "twin study." Examiners reward candidates who discuss Russell\'s dramatic method - the controlled experiment - not just the content of the argument.',
   },
   {
     title: 'Superstition and fate',
     overview:
-      "Superstition runs through the play as a constant motif — shoes on the table, broken mirrors, the Narrator's devilish warnings. But Russell uses superstition to critique, not to endorse. The real forces that destroy Mickey and Edward are economic and political, not magical. Superstition is the story society tells itself to avoid responsibility.",
+      "Superstition runs through the play as a constant motif - shoes on the table, broken mirrors, the Narrator's devilish warnings. But Russell uses superstition to critique, not to endorse. The real forces that destroy Mickey and Edward are economic and political, not magical. Superstition is the story society tells itself to avoid responsibility.",
     howRussellPresentsIt:
-      'Mrs Lyons invents the twins superstition to control Mrs Johnstone, but it becomes a self-fulfilling prophecy not because of magic but because of the class structures that make the separation permanent. The Narrator\'s repeated refrain — "the devil\'s got your number" — sounds supernatural but functions as a metaphor for systemic injustice. In the final line, the Narrator asks the audience directly whether they blame superstition or something else.',
+      'Mrs Lyons invents the twins superstition to control Mrs Johnstone, but it becomes a self-fulfilling prophecy not because of magic but because of the class structures that make the separation permanent. The Narrator\'s repeated refrain - "the devil\'s got your number" - sounds supernatural but functions as a metaphor for systemic injustice. In the final line, the Narrator asks the audience directly whether they blame superstition or something else.',
     keyQuotes: [
       {
         text: '"You do know what they say about twins, secretly parted, don\'t you?"',
         speaker: 'Mrs Lyons',
         analysis:
-          'An invented curse that becomes true — not through magic but through the class system Mrs Lyons exploits. Russell collapses the boundary between superstition and social power.',
+          'An invented curse that becomes true - not through magic but through the class system Mrs Lyons exploits. Russell collapses the boundary between superstition and social power.',
       },
       {
         text: '"You know the devil\'s got your number."',
@@ -118,16 +118,16 @@ const THEMES: ThemeData[] = [
       },
     ],
     contextLink:
-      'Working-class communities have rich traditions of folk superstition. Russell draws on these authentically but also shows how powerful people — like Mrs Lyons — weaponise belief to maintain control. The play critiques both genuine superstition and the "superstition" of meritocracy.',
+      'Working-class communities have rich traditions of folk superstition. Russell draws on these authentically but also shows how powerful people - like Mrs Lyons - weaponise belief to maintain control. The play critiques both genuine superstition and the "superstition" of meritocracy.',
     examTip:
-      'The strongest answers on this theme argue that Russell uses superstition as a dramatic device to expose class determinism. Avoid simply listing superstitious moments — analyse what they represent.',
+      'The strongest answers on this theme argue that Russell uses superstition as a dramatic device to expose class determinism. Avoid simply listing superstitious moments - analyse what they represent.',
   },
   {
     title: 'Friendship',
     overview:
       "Mickey and Edward's friendship is genuine, unselfconscious and cross-class. As children, they see no difference between themselves. Russell uses their bond to expose how artificial and destructive class barriers are: the boys have to be taught to be separate. Friendship is natural; division is imposed.",
     howRussellPresentsIt:
-      "The blood-brother ritual is the play's central symbol: a chosen bond that mirrors the biological bond the boys do not know about. Russell stages their childhood scenes in parallel — shared games, shared language, shared laughter — to make the later separation feel violent. As adults, the friendship cannot survive the pressure of inequality. Edward's privilege and Mickey's deprivation make genuine equality between them impossible.",
+      "The blood-brother ritual is the play's central symbol: a chosen bond that mirrors the biological bond the boys do not know about. Russell stages their childhood scenes in parallel - shared games, shared language, shared laughter - to make the later separation feel violent. As adults, the friendship cannot survive the pressure of inequality. Edward's privilege and Mickey's deprivation make genuine equality between them impossible.",
     keyQuotes: [
       {
         text: '"We\'re blood brothers."',
@@ -150,7 +150,7 @@ const THEMES: ThemeData[] = [
   {
     title: 'Violence',
     overview:
-      "Violence escalates steadily through the play, from Sammy's childhood aggression to the armed robbery to the fatal shooting. Russell traces this escalation to deprivation: violence is not innate but learned, and it intensifies as hope diminishes. The final scene — Mickey shooting Edward, police shooting Mickey — makes the link between personal violence and state violence explicit.",
+      "Violence escalates steadily through the play, from Sammy's childhood aggression to the armed robbery to the fatal shooting. Russell traces this escalation to deprivation: violence is not innate but learned, and it intensifies as hope diminishes. The final scene - Mickey shooting Edward, police shooting Mickey - makes the link between personal violence and state violence explicit.",
     howRussellPresentsIt:
       "Russell uses Sammy as the early marker of violence, showing how poverty normalises aggression. Mickey resists violence for most of the play, but prison and depression push him toward it. The climax is deliberately chaotic: Mickey's gun goes off almost accidentally, and the police response is immediate and lethal. Russell refuses a clean moral: the violence is everyone's fault and no one's.",
     keyQuotes: [
@@ -175,9 +175,9 @@ const THEMES: ThemeData[] = [
   {
     title: 'Fate and free will',
     overview:
-      "The play opens with its ending: the audience knows from the first line that the twins will die. This creates a powerful sense of inevitability — but Russell's point is that the inevitability is social, not cosmic. The boys' fate is sealed not by prophecy but by class. Free will exists in the play, but it is unequally distributed: the rich have choices, the poor do not.",
+      "The play opens with its ending: the audience knows from the first line that the twins will die. This creates a powerful sense of inevitability - but Russell's point is that the inevitability is social, not cosmic. The boys' fate is sealed not by prophecy but by class. Free will exists in the play, but it is unequally distributed: the rich have choices, the poor do not.",
     howRussellPresentsIt:
-      'The prologue establishes dramatic irony that persists for the entire play. Every moment of childhood innocence is shadowed by the knowledge of the ending. Russell uses the Narrator as a fate figure, but his final question — "do we blame superstition?" — invites the audience to reject fate as an explanation. The real determinism is economic.',
+      'The prologue establishes dramatic irony that persists for the entire play. Every moment of childhood innocence is shadowed by the knowledge of the ending. Russell uses the Narrator as a fate figure, but his final question - "do we blame superstition?" - invites the audience to reject fate as an explanation. The real determinism is economic.',
     keyQuotes: [
       {
         text: '"So did y’ hear the story of the Johnstone twins?"',
@@ -246,7 +246,7 @@ export default async function BloodBrothersThemesPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text — Play
+              Modern Text - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />

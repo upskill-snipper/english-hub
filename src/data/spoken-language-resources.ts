@@ -1,16 +1,16 @@
 // @ts-nocheck
 export interface SpokenLanguageTask {
-  id: string;
-  title: string;
-  board: string;
-  taskType: 'presentation' | 'discussion' | 'role-play';
-  topic: string;
-  duration: string;
-  preparationGuide: string;
-  assessmentCriteria: string[];
-  modelScript: string;
-  teacherNotes: string;
-  peerAssessmentSheet: string;
+  id: string
+  title: string
+  board: string
+  taskType: 'presentation' | 'discussion' | 'role-play'
+  topic: string
+  duration: string
+  preparationGuide: string
+  assessmentCriteria: string[]
+  modelScript: string
+  teacherNotes: string
+  peerAssessmentSheet: string
 }
 
 // AQA TASKS (4 total: 1 presentation, 1 discussion, 1 role-play, 1 presentation)
@@ -27,7 +27,7 @@ const aqaTask1: SpokenLanguageTask = {
     'Persuasive techniques: Effective use of rhetorical devices and evidence',
     'Engagement: Maintains audience interest through delivery and content',
     'Presentation skills: Clear articulation, appropriate pace, confident body language',
-    'Evidence quality: Uses credible sources and specific, relevant data'
+    'Evidence quality: Uses credible sources and specific, relevant data',
   ],
   modelScript: `Good morning. Did you know British schools generate enough plastic waste annually to fill 50 Olympic swimming pools? That's a problem we can solve, starting right here.
 
@@ -44,8 +44,8 @@ STRUCTURE: Opening hook, logical progression, closing statement
 PERSUASION: Rhetorical devices, evidence integration, audience impact
 DELIVERY: Articulation, pacing, eye contact, body language
 EVIDENCE: Specific examples, credible sources, proper integration
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const aqaTask2: SpokenLanguageTask = {
   id: 'aqa-002',
@@ -58,9 +58,9 @@ const aqaTask2: SpokenLanguageTask = {
   assessmentCriteria: [
     'Engagement: Actively contributes relevant points throughout',
     'Evidence: Supports arguments with specific, credible data and examples',
-    'Listening: Responds to others\' points and builds on discussion',
+    "Listening: Responds to others' points and builds on discussion",
     'Clarity: Articulates ideas clearly without frequent hesitation',
-    'Balance: Acknowledges validity of different viewpoints'
+    'Balance: Acknowledges validity of different viewpoints',
   ],
   modelScript: `Participant 1: "Social media has destroyed real connection. Everyone's on phones instead of talking."
 
@@ -86,8 +86,8 @@ LISTENING: References others' points, builds on ideas
 CONTRIBUTION: Regular, substantive, raises new angles
 EVIDENCE: Specific examples, credible sources
 PERSPECTIVE: Acknowledges validity of different views
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const aqaTask3: SpokenLanguageTask = {
   id: 'aqa-003',
@@ -102,7 +102,7 @@ const aqaTask3: SpokenLanguageTask = {
     'Communication: Articulate, grammatically correct responses',
     'Relevance: Answers directly address questions with specific examples',
     'Listening: Demonstrates understanding and responds appropriately',
-    'Confidence: Handles questions calmly without excessive hesitation'
+    'Confidence: Handles questions calmly without excessive hesitation',
   ],
   modelScript: `INTERVIEWER: "Good morning. Tell me about yourself and why you're interested in this marketing manager role."
 
@@ -110,15 +110,15 @@ CANDIDATE: "I've spent five years in digital marketing as Senior Marketing Execu
 
 INTERVIEWER: "Impressive results. Can you give me a specific example of a successful campaign?"
 
-CANDIDATE: "Last year, I launched a social media campaign targeting millennial women interested in wellness. Rather than traditional advertising, we partnered with micro-influencers who genuinely used our products. We provided creative freedom while establishing brand guidelines. The result was 150,000 new followers and 28% conversion rate—well above the 3-5% industry benchmark. The key was authenticity."
+CANDIDATE: "Last year, I launched a social media campaign targeting millennial women interested in wellness. Rather than traditional advertising, we partnered with micro-influencers who genuinely used our products. We provided creative freedom while establishing brand guidelines. The result was 150,000 new followers and 28% conversion rate-well above the 3-5% industry benchmark. The key was authenticity."
 
 INTERVIEWER: "How do you use analytics to inform decision-making?"
 
-CANDIDATE: "Data is fundamental. I track KPIs—cost per acquisition, customer lifetime value, engagement rates. But I'm careful not to become paralyzed by data. I look for patterns, test hypotheses. When we saw drop-off in the customer journey, I analyzed through user testing and surveys, then A/B tested solutions. Data helps me ask better questions."
+CANDIDATE: "Data is fundamental. I track KPIs-cost per acquisition, customer lifetime value, engagement rates. But I'm careful not to become paralyzed by data. I look for patterns, test hypotheses. When we saw drop-off in the customer journey, I analyzed through user testing and surveys, then A/B tested solutions. Data helps me ask better questions."
 
 INTERVIEWER: "Tell me about a time you faced failure."
 
-CANDIDATE: "Two years ago, we invested heavily in a video campaign. But when we tested it, engagement was weak. Rather than launch anyway, we pulled back, analyzed why—tone was too formal—and recreated it more conversationally. It delayed launch three weeks but ultimately performed 40% better. The lesson: fail quickly and pivot rather than commit fully to a flawed direction."`,
+CANDIDATE: "Two years ago, we invested heavily in a video campaign. But when we tested it, engagement was weak. Rather than launch anyway, we pulled back, analyzed why-tone was too formal-and recreated it more conversationally. It delayed launch three weeks but ultimately performed 40% better. The lesson: fail quickly and pivot rather than commit fully to a flawed direction."`,
   teacherNotes: `Assess candidate preparation depth, specific examples, confidence, and thinking on their feet. Assess interviewer on question quality and eliciting meaningful responses. Look for natural interaction, realistic interview feel.`,
   peerAssessmentSheet: `Rate each section: 1=Needs improvement, 2=Developing, 3=Good, 4=Excellent
 PROFESSIONALISM: Body language, etiquette, courtesy
@@ -126,8 +126,8 @@ COMMUNICATION: Clarity, grammar, vocabulary, articulation
 CONTENT: Specific examples with evidence, relevant answers
 LISTENING: Understanding, responsiveness to interviewer
 CONFIDENCE: Composure, handling without excessive hesitation
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const aqaTask4: SpokenLanguageTask = {
   id: 'aqa-004',
@@ -142,21 +142,21 @@ const aqaTask4: SpokenLanguageTask = {
     'Argument structure: Ideas flow coherently with clear progression',
     'Evidence: Uses student feedback and research to support claims',
     'Tone: Balances passion with respect; not accusatory',
-    'Solution: Proposes feasible implementation with realistic timeline'
+    'Solution: Proposes feasible implementation with realistic timeline',
   ],
   modelScript: `Thank you for taking time to hear this. I'm representing students who want to discuss our uniform policy.
 
-If you were told exactly what to wear every day—down to the color of your socks—how would that affect your sense of self? That's the reality for our students during exactly the time they're figuring out who they are.
+If you were told exactly what to wear every day-down to the color of your socks-how would that affect your sense of self? That's the reality for our students during exactly the time they're figuring out who they are.
 
 I surveyed 180 students. 76% reported uniform restrictions negatively affected their confidence. 63% felt anxious worrying about infractions.
 
-I understand why uniform policies exist—cohesion, equality. But we can achieve those goals while respecting student autonomy.
+I understand why uniform policies exist-cohesion, equality. But we can achieve those goals while respecting student autonomy.
 
-Hixton Academy in Essex implemented a choice-based uniform system. Students select from an approved color palette—navy, grey, or black—across approved garment types. They maintained blazer requirements but allowed style variation.
+Hixton Academy in Essex implemented a choice-based uniform system. Students select from an approved color palette-navy, grey, or black-across approved garment types. They maintained blazer requirements but allowed style variation.
 
 The results: zero increase in discipline issues, improved student engagement scores, higher parental satisfaction.
 
-Here's what I'm proposing: maintain uniform cohesion but introduce choice. Students select from approved colors across approved garments. This maintains unity—students are still recognizable as belonging to this school. It reduces socioeconomic visibility. But it respects growing autonomy at exactly the age when that's developmentally crucial.
+Here's what I'm proposing: maintain uniform cohesion but introduce choice. Students select from approved colors across approved garments. This maintains unity-students are still recognizable as belonging to this school. It reduces socioeconomic visibility. But it respects growing autonomy at exactly the age when that's developmentally crucial.
 
 Implementation is straightforward: communicate policy, provide purchasing window, establish clear guidelines. The cost to the school? Minimal. The cost to families? Potentially lower due to more uniform suppliers and competition.
 
@@ -170,8 +170,8 @@ ARGUMENT: Logical structure, coherent progression
 EVIDENCE: Student feedback, research, specific examples
 TONE: Respectful while passionate, balanced
 PROPOSAL: Specific, feasible, realistic timeline
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 // EDEXCEL TASKS (4 total)
 const edexcelTask1: SpokenLanguageTask = {
@@ -187,19 +187,19 @@ const edexcelTask1: SpokenLanguageTask = {
     'Evidence: Uses research, data, and interviews effectively',
     'Structure: Ideas flow logically with clear progression',
     'Analysis: Goes beyond surface observations',
-    'Engagement: Uses language and delivery to maintain interest'
+    'Engagement: Uses language and delivery to maintain interest',
   ],
   modelScript: `Before 2020, remote work was a perk. Now it's a question: is it the future? I'd argue it's in between.
 
 In 2019, 5% of workers globally worked from home full-time. By 2024, that jumped to 35%. Now we're stabilizing at 26% permanent remote work with 45% hybrid arrangements.
 
-Benefits are obvious. You save 40 minutes daily commuting—130 hours annually. Environmentally, if 50% of office workers worked remotely half-time, we'd reduce carbon emissions by 54 million metric tons.
+Benefits are obvious. You save 40 minutes daily commuting-130 hours annually. Environmentally, if 50% of office workers worked remotely half-time, we'd reduce carbon emissions by 54 million metric tons.
 
 But I interviewed seven workers. Two thrived remotely; five struggled. One junior architect said, "I learned my job sitting next to seniors. I'm missing crucial informal mentoring."
 
 Research shows: remote work increases individual productivity 12-15% but slightly decreases collaboration. The impact isn't universal. Parents benefit from flexibility. Early-career workers suffer. Introverts thrive; extroverts struggle.
 
-The likely future? Hybrid. Three days office, two remote. This solves for most concerns—focused work time, collaborative time preserved, mentorship available, yet significant flexibility.
+The likely future? Hybrid. Three days office, two remote. This solves for most concerns-focused work time, collaborative time preserved, mentorship available, yet significant flexibility.
 
 The challenge: hybrid requires intentional management. Clear collaboration days, communication norms, expectations.
 
@@ -211,8 +211,8 @@ ANALYSIS: Beyond obvious observations, acknowledges complexity
 STRUCTURE: Clear opening, logical progression, strong conclusion
 DELIVERY: Clear articulation, varied pace, confident engagement
 EVIDENCE: Specific data, credible sources, interview integration
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const edexcelTask2: SpokenLanguageTask = {
   id: 'edexcel-002',
@@ -225,15 +225,15 @@ const edexcelTask2: SpokenLanguageTask = {
   assessmentCriteria: [
     'Knowledge: Demonstrates understanding of AI and employment issues',
     'Evidence: Uses specific, credible data and examples',
-    'Listening: Responds thoughtfully to others\' points',
+    "Listening: Responds thoughtfully to others' points",
     'Balance: Acknowledges validity of different viewpoints',
-    'Thinking: Explores complexity rather than oversimplifying'
+    'Thinking: Explores complexity rather than oversimplifying',
   ],
   modelScript: `Participant 1: "AI will significantly displace workers. McKinsey estimates 400 million workers might be displaced by 2030."
 
 Participant 2: "But that same research shows 375 million new jobs could be created. Not net job loss; job displacement and transition."
 
-Participant 3: "You're both right about displacement, but the distribution problem matters. Jobs lost are in specific sectors—transportation, data entry—affecting specific regions and demographics."
+Participant 3: "You're both right about displacement, but the distribution problem matters. Jobs lost are in specific sectors-transportation, data entry-affecting specific regions and demographics."
 
 Participant 4: "So technology isn't good or bad. What matters is how we respond. Do we invest in retraining? Support affected workers? Ensure benefits are shared broadly?"
 
@@ -245,8 +245,8 @@ LISTENING: References others' points, builds on ideas
 CONTRIBUTION: Regular, substantive, new angles
 EVIDENCE: Specific examples, credible sources
 CRITICAL THINKING: Acknowledges complexity, avoids binary thinking
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const edexcelTask3: SpokenLanguageTask = {
   id: 'edexcel-003',
@@ -260,14 +260,14 @@ const edexcelTask3: SpokenLanguageTask = {
     'Character consistency: Maintains realistic role throughout',
     'Specificity: Proposes concrete ideas, not vague wishes',
     'Evidence: Supports positions with relevant information',
-    'Listening: Responds to others\' points rather than just advocating',
-    'Engagement: Seeks common ground and workable solutions'
+    "Listening: Responds to others' points rather than just advocating",
+    'Engagement: Seeks common ground and workable solutions',
   ],
   modelScript: `COUNCIL REP: "We have £200,000 for park renovation. We want community input on priorities."
 
 PARENT: "Safety is my biggest concern. The playground equipment is dangerous. I've stopped bringing my children."
 
-ELDERLY RESIDENT: "I agree on safety. Please consider accessibility. I can barely walk the path. There's no resting seating and no lighting—I won't come after 4pm."
+ELDERLY RESIDENT: "I agree on safety. Please consider accessibility. I can barely walk the path. There's no resting seating and no lighting-I won't come after 4pm."
 
 TEENAGER: "The park is empty. What would make it somewhere young people want to be? Better lighting, shelter, gathering space?"
 
@@ -283,8 +283,8 @@ SPECIFICITY: Concrete suggestions, not vague ideas
 EVIDENCE: Supports position with reasoning or information
 LISTENING: Responds to others' points, shows understanding
 ENGAGEMENT: Seeks solutions, willing to compromise, collaborative
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const edexcelTask4: SpokenLanguageTask = {
   id: 'edexcel-004',
@@ -295,11 +295,11 @@ const edexcelTask4: SpokenLanguageTask = {
   duration: '4-5 minutes',
   preparationGuide: `Research real local charity, their mission and impact. Interview staff or people served. Gather financial data, outcomes achieved, specific funding needs. Develop persuasive case combining logic and emotion.`,
   assessmentCriteria: [
-    'Knowledge: Demonstrates genuine understanding of charity\'s work',
+    "Knowledge: Demonstrates genuine understanding of charity's work",
     'Problem framing: Articulates need or problem convincingly',
     'Strategy: Combines emotional appeal with logical evidence',
     'Evidence: Uses real data and stories appropriately',
-    'Ask: Clear about what support is needed'
+    'Ask: Clear about what support is needed',
   ],
   modelScript: `I want to tell you about the Riverside Youth Center. They work with young people aged 11-19 facing significant challenges. Last year, they worked with 240 young people. Of those, 89% improved academically, 76% developed measurable social skills.
 
@@ -319,8 +319,8 @@ PROBLEM: Clearly identifies need, uses data appropriately
 STRATEGY: Combines emotion and logic, respectful storytelling
 EVIDENCE: Real data, credible sources, appropriate story use
 ASK: Clear about what support is needed, outcomes explained
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 // OCR TASKS (4 total)
 const ocrTask1: SpokenLanguageTask = {
@@ -336,7 +336,7 @@ const ocrTask1: SpokenLanguageTask = {
     'Historical grounding: Shows understanding of fashion evolution and context',
     'Evidence integration: Uses images, research, interviews effectively',
     'Analysis: Explores deeper significance, not just "fashion is fun"',
-    'Engagement: Shows genuine interest and insight'
+    'Engagement: Shows genuine interest and insight',
   ],
   modelScript: `When I was eleven, my mum bought me sensible shoes. I hated them. So I bought Converse. The moment I put them on, something shifted. I wasn't "sensible." I felt like myself.
 
@@ -344,7 +344,7 @@ That's what I want to discuss: fashion as identity communication.
 
 Fashion isn't frivolous. It's how we tell the world who we are.
 
-Historically, the 1950s enforced rigid gender roles through fashion: corseted women, identical men. The 1960s miniskirt was rebellion—young people rejecting conservative fashion. Fashion became protest.
+Historically, the 1950s enforced rigid gender roles through fashion: corseted women, identical men. The 1960s miniskirt was rebellion-young people rejecting conservative fashion. Fashion became protest.
 
 The 1970s punk movement: ripped clothes, safety pins, deliberately shocking combinations. This wasn't accidental. It was consciously rejecting mainstream consumer culture.
 
@@ -352,13 +352,13 @@ Now fashion is incredibly complex. Hip-hop culture used fashion to communicate c
 
 Fashion also marks class. You can estimate someone's socioeconomic status from what they wear.
 
-Contemporary issue: fast fashion. Companies produce thousands of styles weekly, each worn briefly, discarded. Environmentally catastrophic—10% of global carbon emissions. But it's democratizing. Thirty years ago, only wealthy people could afford frequent wardrobe changes.
+Contemporary issue: fast fashion. Companies produce thousands of styles weekly, each worn briefly, discarded. Environmentally catastrophic-10% of global carbon emissions. But it's democratizing. Thirty years ago, only wealthy people could afford frequent wardrobe changes.
 
 Trade-off: fast fashion erases meaning. When everyone wears identical outfits from same retailers, you lose identity differentiation that made fashion powerful.
 
 But fashion reclaims meaning through sustainability and activism. People choosing vintage make statements about consumerism. People wearing traditional clothing reclaim cultural identity. People choosing androgynous or non-binary fashion express identity beyond binary gender.
 
-Conclusion: Fashion has always been identity work. Currently, fast fashion erodes that function. But thoughtful approaches—sustainable, culturally aware, identity-conscious—reclaim fashion's power.
+Conclusion: Fashion has always been identity work. Currently, fast fashion erodes that function. But thoughtful approaches-sustainable, culturally aware, identity-conscious-reclaim fashion's power.
 
 What we wear is never purely personal. It's cultural, political, identity.`,
   teacherNotes: `Assess analytical depth beyond personal opinion. Look for cultural awareness without stereotyping, historical understanding, genuine connection between examples and thesis. Can student discuss why fashion matters at societal level?`,
@@ -368,8 +368,8 @@ HISTORICAL: Accurate examples, proper contextualization, connection to present
 EVIDENCE: Specific examples, research demonstrated, well-chosen support
 DELIVERY: Clear articulation, confident engagement, genuine interest
 ANALYSIS: Explores significance, acknowledges complexity, thoughtful conclusions
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const ocrTask2: SpokenLanguageTask = {
   id: 'ocr-002',
@@ -382,9 +382,9 @@ const ocrTask2: SpokenLanguageTask = {
   assessmentCriteria: [
     'Knowledge: Understands privacy issues, regulation, and current cases',
     'Engagement: Contributes substantively and regularly',
-    'Listening: Responds to others\' actual points',
+    "Listening: Responds to others' actual points",
     'Evidence: Supports claims with specific cases or data',
-    'Nuance: Acknowledges complexity; avoids simplistic positions'
+    'Nuance: Acknowledges complexity; avoids simplistic positions',
   ],
   modelScript: `Participant 1: "Privacy is lost. Every app wants access to my location, contacts, camera. Google knows my search history, location. Facebook knows my interests."
 
@@ -404,8 +404,8 @@ LISTENING: References others' points, builds on ideas, asks questions
 CONTRIBUTION: Regular, substantive, raises new angles
 EVIDENCE: Specific examples, credible sources, logical explanations
 CULTURAL: Respects multiple perspectives, recognizes power dynamics, avoids stereotyping
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const ocrTask3: SpokenLanguageTask = {
   id: 'ocr-003',
@@ -419,8 +419,8 @@ const ocrTask3: SpokenLanguageTask = {
     'Student authenticity: Portrays realistic concerns and emotions',
     'Counselor listening: Genuinely hears student rather than following script',
     'Questions: Asks to understand, not interrogate',
-    'Validation: Student\'s concerns are acknowledged as legitimate',
-    'Support: Discussion moves toward concrete next steps'
+    "Validation: Student's concerns are acknowledged as legitimate",
+    'Support: Discussion moves toward concrete next steps',
   ],
   modelScript: `COUNSELOR: "Hi Sarah, I want to hear from you what's going on. What brought you in today?"
 
@@ -454,7 +454,7 @@ COUNSELOR: "Three interconnected things: loneliness, academic struggle, fear of 
 
 STUDENT: "Maybe. Friends would help. Math being easier would help. I don't know about the parent thing."
 
-COUNSELOR: "Let's work on these. The friend situation—can it be repaired or can you build new connections?"
+COUNSELOR: "Let's work on these. The friend situation-can it be repaired or can you build new connections?"
 
 STUDENT: "We grew apart. They're into parties; I'm introverted. There's a girl in English class I like."
 
@@ -475,15 +475,15 @@ COUNSELOR: "How would she respond if she knew?"
 STUDENT: "Probably want to help. She cares a lot about success but she's not bad."
 
 COUNSELOR: "So there's possibility there for support. Let me propose next steps..."`,
-  teacherNotes: `Assess counselor on genuine listening vs. following script. Does student feel heard? Assess student on authenticity—is struggle realistic? Do they open up gradually? Both should feel like genuine human interaction.`,
+  teacherNotes: `Assess counselor on genuine listening vs. following script. Does student feel heard? Assess student on authenticity-is struggle realistic? Do they open up gradually? Both should feel like genuine human interaction.`,
   peerAssessmentSheet: `Rate each section: 1=Needs improvement, 2=Developing, 3=Good, 4=Excellent
 AUTHENTICITY: Realistic struggle, genuine emotions, realistic progression
 LISTENING: Asks to understand, references what was said, validates concerns
 PRACTICAL: Identifies problems, supports exploration of solutions, collaborative
 SAFETY: Non-judgmental space, genuine care, validates experience
 INTERACTION: Natural conversation, not scripted, genuine emotion, moved toward understanding
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const ocrTask4: SpokenLanguageTask = {
   id: 'ocr-004',
@@ -498,7 +498,7 @@ const ocrTask4: SpokenLanguageTask = {
     'Evidence quality: Uses statistics and case studies credibly',
     'Understanding: Addresses current system limitations',
     'Strategy: Combines logic, emotion, and values appeal',
-    'Proposal: Clear about what changes are needed'
+    'Proposal: Clear about what changes are needed',
   ],
   modelScript: `One in four students in this school will experience a diagnosable mental health condition this year. One in four.
 
@@ -530,8 +530,8 @@ EVIDENCE: Uses credible sources, appropriate data, case study respectful
 UNDERSTANDING: Addresses system limitations, recognizes complexity
 STRATEGY: Combines logic and emotion appropriately
 PROPOSAL: Specific changes, realistic costs, expected outcomes
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 // WJEC TASKS (4 total)
 const wjecTask1: SpokenLanguageTask = {
@@ -547,7 +547,7 @@ const wjecTask1: SpokenLanguageTask = {
     'Cultural awareness: Respectfully engages with traditions beyond own experience',
     'Evidence: Uses examples, research, and personal reflection appropriately',
     'Analysis: Explores why storytelling matters, not just that it does',
-    'Engagement: Shows genuine interest and insight'
+    'Engagement: Shows genuine interest and insight',
   ],
   modelScript: `My grandmother told me a Welsh folktale when I was five about a selkie. I don't remember all details, but I remember the feeling: magic, longing, bittersweet beauty. That story became part of me.
 
@@ -563,7 +563,7 @@ Across cultures, storytelling served critical functions. African griots were his
 
 But storytelling does something beyond information transfer: it preserves cultural identity. When culture's stories are suppressed, something fundamental is lost. During colonization, indigenous storytelling was actively discouraged. Yet communities maintained oral traditions anyway. Why? Because stories carry meaning facts alone can't.
 
-We think storytelling is past tense. But Netflix exists because we crave narrative. Podcasts explode because we want stories. Social media is largely storytelling—people narrating their lives.
+We think storytelling is past tense. But Netflix exists because we crave narrative. Podcasts explode because we want stories. Social media is largely storytelling-people narrating their lives.
 
 Contemporary: storytelling drives social change. #MeToo wasn't driven by statistics. It was driven by women sharing personal stories. Stories made abstract injustice human.
 
@@ -577,8 +577,8 @@ CULTURAL: Respectful, demonstrates understanding, avoids stereotyping
 EVIDENCE: Specific examples, credible research, well-chosen support
 DELIVERY: Clear articulation, confident engagement, genuine interest
 DEPTH: Explains significance, connects examples to thesis, insightful conclusions
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const wjecTask2: SpokenLanguageTask = {
   id: 'wjec-002',
@@ -592,12 +592,12 @@ const wjecTask2: SpokenLanguageTask = {
     'Knowledge: Understands tradition, modernization, and their tensions',
     'Nuance: Avoids binary "preserve all" or "discard all" positions',
     'Evidence: Grounds discussion in specific examples and research',
-    'Listening: Responds to others\' points; builds on ideas',
-    'Sensitivity: Recognizes tradition has different weight in different communities'
+    "Listening: Responds to others' points; builds on ideas",
+    'Sensitivity: Recognizes tradition has different weight in different communities',
   ],
   modelScript: `Participant 1: "We're losing traditions too quickly. Everything is becoming globalized into sameness."
 
-Participant 2: "But some traditions were genuinely harmful. Foot-binding in China disabled women. Child marriage, honor killings—these are traditions causing real harm."
+Participant 2: "But some traditions were genuinely harmful. Foot-binding in China disabled women. Child marriage, honor killings-these are traditions causing real harm."
 
 Participant 3: "Right, and that's an important distinction. Not all traditions are equal. Some have real value for identity. Others are based in genuine harm."
 
@@ -611,8 +611,8 @@ LISTENING: References others' points, builds on ideas, asks clarifying questions
 CONTRIBUTION: Regular, substantive, raises new angles
 EVIDENCE: Specific examples, credible sources, logical explanations
 CULTURAL: Respectful of perspectives, avoids stereotyping, recognizes power dynamics
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const wjecTask3: SpokenLanguageTask = {
   id: 'wjec-003',
@@ -627,7 +627,7 @@ const wjecTask3: SpokenLanguageTask = {
     'Leader: Ensures balanced participation, draws in quieter members',
     'Participants: Support interpretations with textual evidence',
     'Participants: Engage with different interpretations genuinely',
-    'Overall: Discussion moves deeper into text rather than staying surface'
+    'Overall: Discussion moves deeper into text rather than staying surface',
   ],
   modelScript: `LEADER: "Welcome to book club. Before we dig in, I want to hear what stood out for you. What was your initial reaction?"
 
@@ -635,7 +635,7 @@ EMILY: "I loved it. I found the main character so compelling. The way she naviga
 
 MARCUS: "I had a different read. I thought she was self-serving. Her choices benefited her but hurt people."
 
-LEADER: "Interesting—different interpretations. Marcus, can you point to a specific moment?"
+LEADER: "Interesting-different interpretations. Marcus, can you point to a specific moment?"
 
 MARCUS: "Around page 200, when she betrayed her friend to protect herself."
 
@@ -662,8 +662,8 @@ LISTENING: References specific points, helps see connections
 TEXT ENGAGEMENT: Supports ideas with textual evidence
 DISCUSSION: Contributes meaningfully, respects different readings
 DEPTH: Goes deeper into text, multiple perspectives valued, evidence-based
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const wjecTask4: SpokenLanguageTask = {
   id: 'wjec-004',
@@ -674,11 +674,11 @@ const wjecTask4: SpokenLanguageTask = {
   duration: '5-6 minutes',
   preparationGuide: `Research educational funding trends favoring STEM, declining English enrollment. Find evidence of literature's impact on thinking, empathy, civic engagement. Research utilitarian arguments and address them thoughtfully.`,
   assessmentCriteria: [
-    'Problem articulation: Establishes why literature\'s value is questioned',
+    "Problem articulation: Establishes why literature's value is questioned",
     'Reasoning: Explains what literature teaches beyond job skills',
     'Evidence: Uses research, examples, personal reflection appropriately',
     'Counterargument: Addresses utilitarian objections thoughtfully',
-    'Call to action: Clear about supporting literature in curriculum'
+    'Call to action: Clear about supporting literature in curriculum',
   ],
   modelScript: `I want to start with a question: why do you read? Not for a test or job, but why?
 
@@ -690,7 +690,7 @@ I want to argue this framing is incomplete. Literature isn't valuable only if it
 
 Brain imaging shows reading narrative fiction shapes how our brains process information. Reading involves simulation: your brain imagines scenes, considers characters' motivations. That's active cognitive work.
 
-Literature develops critical thinking in concrete ways. When you analyze a poem, you're learning to examine language carefully, consider multiple interpretations, support claims with evidence. That exact thinking—detailed analysis, evidence-based argument—is valuable in virtually every field.
+Literature develops critical thinking in concrete ways. When you analyze a poem, you're learning to examine language carefully, consider multiple interpretations, support claims with evidence. That exact thinking-detailed analysis, evidence-based argument-is valuable in virtually every field.
 
 Research shows reading literary fiction increases empathy. A Carnegie Mellon study found literary fiction readers performed better on tests measuring understanding of others' mental states.
 
@@ -698,7 +698,7 @@ Why does that matter? Because democracy requires empathy. It requires citizens w
 
 Literature preserves human experience across centuries and cultures. When you read Toni Morrison, you're accessing specific African American experience. When you read Adichie, you're understanding Nigerian girlhood.
 
-Now, I'll address the practical objection: "Literature doesn't lead to jobs." Narrowly true. But creative industries—publishing, film, media, games—are massive economic drivers. They require people who understand narrative, character, language.
+Now, I'll address the practical objection: "Literature doesn't lead to jobs." Narrowly true. But creative industries-publishing, film, media, games-are massive economic drivers. They require people who understand narrative, character, language.
 
 More broadly, people educated with strong humanities become better leaders, more creative thinkers, better at navigating complexity. That has economic value.
 
@@ -706,7 +706,7 @@ But I want to push back on the premise. We don't require everything be economica
 
 Literature should be valued the same way. Not because it guarantees a job, but because it teaches deep thinking, understanding of others, meaning-making.
 
-So I'm asking: when schools face budget cuts, don't cut literature. Recognize that an educated person—prepared for citizenship, meaningful work, genuine thinking—is someone who reads, thinks critically about meaning, understands diverse experiences.
+So I'm asking: when schools face budget cuts, don't cut literature. Recognize that an educated person-prepared for citizenship, meaningful work, genuine thinking-is someone who reads, thinks critically about meaning, understands diverse experiences.
 
 That's not soft. That's essential.`,
   teacherNotes: `Assess argument sophistication and genuine engagement. Look for understanding of why the question is being asked, serious engagement with utilitarian objections, recognition that humanities are under real pressure. Is this performative or genuine advocacy?`,
@@ -716,8 +716,8 @@ ARGUMENT: Logical, developed, avoids simplistic framing
 EVIDENCE: Credible research, specific examples, personal reflection
 COUNTERARGUMENT: Addresses practical objections thoughtfully
 CALL TO ACTION: Clear about supporting literature, meaningful closing
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 // IGCSE TASKS (4 total)
 const igcseTask1: SpokenLanguageTask = {
@@ -733,19 +733,19 @@ const igcseTask1: SpokenLanguageTask = {
     'Awareness: Uses examples from multiple regions, not just Western perspective',
     'Evidence: Grounds analysis in specific examples and data',
     'Nuance: Recognizes complexity, contradictions, individual agency',
-    'Connection: Shows how globalization is relevant to listener'
+    'Connection: Shows how globalization is relevant to listener',
   ],
   modelScript: `Three years ago, I didn't think about globalization. Then I noticed: my favorite music is Korean pop sung in Korean. My friend's family cooks Nigerian food from Instagram. My school celebrates Diwali and Eid alongside Western holidays. I wear clothes manufactured in Bangladesh. I watch Netflix shows from UK, USA, Korea, Mexico.
 
 I'm living globalization. And it's more complicated than I'd been taught.
 
-I initially imagined cultural homogenization—world becoming one Starbucks, all local cultures erased. That does happen: American fast food displaces local food cultures. English dominates business language.
+I initially imagined cultural homogenization-world becoming one Starbucks, all local cultures erased. That does happen: American fast food displaces local food cultures. English dominates business language.
 
 But that's not the complete story.
 
 Simultaneously, globalization enables creative exchange. K-pop is manufactured and distributed globally while remaining distinctly Korean. Korean artists compete globally while maintaining Korean identity. Their success increased interest in Korean language and culture.
 
-Same with Afrobeat. Nigerian and Ghanaian musicians using global platforms reach worldwide audiences not by erasing African identity but by centering it. Burna Boy, Wizkid, Rema—globally successful while distinctly West African.
+Same with Afrobeat. Nigerian and Ghanaian musicians using global platforms reach worldwide audiences not by erasing African identity but by centering it. Burna Boy, Wizkid, Rema-globally successful while distinctly West African.
 
 This flows both directions. Latin trap fuses Spanish rap with trap production. Japanese anime uses Western storytelling alongside distinctly Japanese aesthetics. Food demonstrates this: Thai restaurants adapt dishes to local taste; chefs travel to Bangkok studying authenticity; fusion cuisine emerges from genuine cultural interaction.
 
@@ -771,8 +771,8 @@ AWARENESS: Examples from multiple regions, avoids Western-centric view
 EVIDENCE: Specific examples, well-explained, well-integrated
 ENGAGEMENT: Makes topic relevant, genuine reflection, balanced approach
 DELIVERY: Ideas explained clearly, accessible language, strong opening and closing
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const igcseTask2: SpokenLanguageTask = {
   id: 'igcse-002',
@@ -783,11 +783,11 @@ const igcseTask2: SpokenLanguageTask = {
   duration: '10-12 minutes (4 participants)',
   preparationGuide: `Research technology's role in relationships, social media and loneliness, but also connection enabled. Develop positions exploring both benefits and harms. Gather evidence, interviews, statistics.`,
   assessmentCriteria: [
-    'Knowledge: Understands technology\'s role in relationships deeply',
+    "Knowledge: Understands technology's role in relationships deeply",
     'Nuance: Acknowledges both positive and negative impacts',
     'Evidence: Grounds discussion in specific examples',
-    'Listening: Responds to others\' points, builds on ideas',
-    'Perspective-taking: Considers how others experience differently'
+    "Listening: Responds to others' points, builds on ideas",
+    'Perspective-taking: Considers how others experience differently',
   ],
   modelScript: `Participant 1: "Technology has destroyed real connection. Everyone on phones instead of talking."
 
@@ -813,8 +813,8 @@ LISTENING: References others' points, builds on ideas
 CONTRIBUTION: Regular, substantive, new angles
 EVIDENCE: Specific examples, credible sources
 PERSPECTIVE: Considers how others experience differently, acknowledges complexity
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const igcseTask3: SpokenLanguageTask = {
   id: 'igcse-003',
@@ -829,7 +829,7 @@ const igcseTask3: SpokenLanguageTask = {
     'Evidence: Supports position with specific data',
     'Listening: Responds to others rather than just advocating',
     'Disagreement: Challenges ideas respectfully',
-    'Problem-solving: Seeks common ground and workable solutions'
+    'Problem-solving: Seeks common ground and workable solutions',
   ],
   modelScript: `MODERATOR: "The education committee is considering curriculum reform. What changes would most improve education?"
 
@@ -839,7 +839,7 @@ TEACHER: "I understand, and I agree learning should be meaningful. But you have 
 
 PARENT: "I want to push back. We moved to this area for good schools because we want our son to succeed at university. That requires solid foundations in core subjects. If curriculum becomes too vague and project-based, won't students be unprepared?"
 
-POLICY ADVISOR: "Both valid concerns. Research shows project-based learning doesn't decrease exam performance—it can improve it because students understand concepts more deeply. But the teacher's right about implementation. You can't just add projects without restructuring how time is spent."
+POLICY ADVISOR: "Both valid concerns. Research shows project-based learning doesn't decrease exam performance-it can improve it because students understand concepts more deeply. But the teacher's right about implementation. You can't just add projects without restructuring how time is spent."
 
 [Discussion continues toward negotiated solution: fewer standardized tests, project-based assessment, reduced teacher workload, professional development]`,
   teacherNotes: `Assess whether participants listen and seek solutions or entrench. Does someone dominate? Do they acknowledge other perspectives' validity? Is movement toward common ground evident?`,
@@ -849,8 +849,8 @@ EVIDENCE: Supports position with specific data or examples
 LISTENING: Listens to others' perspectives, shows understanding
 DISAGREEMENT: Challenges respectfully, acknowledges valid points
 COLLABORATION: Seeks common ground, willing to modify position
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 const igcseTask4: SpokenLanguageTask = {
   id: 'igcse-004',
@@ -865,15 +865,15 @@ const igcseTask4: SpokenLanguageTask = {
     'Evidence: Uses research on participation outcomes',
     'Counterargument: Addresses skepticism about youth capacity respectfully',
     'Strategy: Combines logic, emotion, and values appeal',
-    'Proposals: Clear about what changes are wanted'
+    'Proposals: Clear about what changes are wanted',
   ],
-  modelScript: `When I was eight, adults made a decision about my school's lunch program without asking us: when it was served, how it was served, what options existed. The new system was worse—longer lines, less variety, food got cold. It took a year of complaints before they changed it back.
+  modelScript: `When I was eight, adults made a decision about my school's lunch program without asking us: when it was served, how it was served, what options existed. The new system was worse-longer lines, less variety, food got cold. It took a year of complaints before they changed it back.
 
 The frustrating part wasn't that they made a bad decision. It was that they made a decision about something affecting us, without asking us what we thought.
 
 This isn't unique to schools. Young people are excluded from decision-making across institutions. Politicians make education policy without consulting students. Employers design entry-level jobs without asking what young people need. Environmentalists make climate policy without centering youth, even though we'll live longest with consequences.
 
-I'm here to argue that this is wrong—ethically, practically, and legally. Young people should have a voice in decisions affecting us.
+I'm here to argue that this is wrong-ethically, practically, and legally. Young people should have a voice in decisions affecting us.
 
 First, the ethical case: the UN Convention on the Rights of the Child explicitly protects the right of children and young people to be heard. It's an international human right. Yet most institutions ignore this.
 
@@ -883,7 +883,7 @@ Research on youth participation consistently shows positive outcomes. A study on
 
 A school study showed that when students were included on decision-making committees, school policies improved measurably. Not because students replaced good judgment with bad, but because they contributed perspectives adults hadn't considered.
 
-Here's a specific example: a London school restructured their uniform policy with student input. Without student input, adults would have kept it unchanged or made assumptions. With student input, they created a policy that worked better for everyone—maintained discipline while increasing student agency.
+Here's a specific example: a London school restructured their uniform policy with student input. Without student input, adults would have kept it unchanged or made assumptions. With student input, they created a policy that worked better for everyone-maintained discipline while increasing student agency.
 
 Counterargument: "Young people lack experience. They'll make bad decisions." First, young people don't typically make decisions alone. They're part of committees with adults. Second, young people do have expertise. We're experts on being young in this world. We understand pressures and possibilities adults might not.
 
@@ -891,7 +891,7 @@ Third, the outcome evidence doesn't support the assumption. Youth participation 
 
 Moreover, young people develop judgment by participating, not by being excluded. If you never ask someone's opinion, they never develop the skills to offer it thoughtfully.
 
-So what would I propose concretely? First: youth representation on decision-making bodies. School leadership, local government, youth justice—anywhere decisions affect young people, there should be youth voices. Second: structured youth councils with real power, not just advisory roles. If youth input doesn't influence decisions, it's tokenism. Third: training for adults on facilitating youth participation respectfully.
+So what would I propose concretely? First: youth representation on decision-making bodies. School leadership, local government, youth justice-anywhere decisions affect young people, there should be youth voices. Second: structured youth councils with real power, not just advisory roles. If youth input doesn't influence decisions, it's tokenism. Third: training for adults on facilitating youth participation respectfully.
 
 Here's what shifts when adults actually listen: young people feel agency. They're more engaged in their institutions because they have voice. They develop leadership skills. And institutions make better decisions because they have access to the people most affected by them.
 
@@ -905,16 +905,31 @@ EVIDENCE: Uses credible research, case studies
 COUNTERARGUMENT: Addresses skepticism respectfully, evidence-based responses
 STRATEGY: Combines logic, emotion, values appropriately
 PROPOSAL: Specific changes, concrete and feasible, expected outcomes explained
-Score out of 80.`
-};
+Score out of 80.`,
+}
 
 // EXPORT
 export const spokenLanguageTasks: SpokenLanguageTask[] = [
-  aqaTask1, aqaTask2, aqaTask3, aqaTask4,
-  edexcelTask1, edexcelTask2, edexcelTask3, edexcelTask4,
-  ocrTask1, ocrTask2, ocrTask3, ocrTask4,
-  wjecTask1, wjecTask2, wjecTask3, wjecTask4,
-  igcseTask1, igcseTask2, igcseTask3, igcseTask4
-];
+  aqaTask1,
+  aqaTask2,
+  aqaTask3,
+  aqaTask4,
+  edexcelTask1,
+  edexcelTask2,
+  edexcelTask3,
+  edexcelTask4,
+  ocrTask1,
+  ocrTask2,
+  ocrTask3,
+  ocrTask4,
+  wjecTask1,
+  wjecTask2,
+  wjecTask3,
+  wjecTask4,
+  igcseTask1,
+  igcseTask2,
+  igcseTask3,
+  igcseTask4,
+]
 
-export default spokenLanguageTasks;
+export default spokenLanguageTasks

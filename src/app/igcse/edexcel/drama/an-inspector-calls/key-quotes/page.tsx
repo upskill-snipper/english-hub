@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Key Quotes — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Key Quotes - Edexcel IGCSE Literature',
     description:
       'Twenty key quotations from An Inspector Calls with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
   },
-  title: 'An Inspector Calls Key Quotes — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Key Quotes - Edexcel IGCSE Literature',
   description:
     'Twenty key quotations from An Inspector Calls with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
   alternates: {

@@ -1,9 +1,9 @@
 /**
- * Weekly Parent Report — transactional email builder.
+ * Weekly Parent Report - transactional email builder.
  *
  * Produces `{ subject, html, text }` from a {@link WeeklyReportPayload}. The
  * copy is British English, calm in tone, and respectful of Children's Code
- * §5 (no detrimental framing) and §8 (data minimisation — body and
+ * §5 (no detrimental framing) and §8 (data minimisation - body and
  * rationale are not rendered because the generator never collects them).
  *
  * Shape note: we intentionally ship a hand-rolled HTML string rather than
@@ -47,9 +47,7 @@ export interface BuiltEmail {
 
 // ─── Entry point ─────────────────────────────────────────────────────────
 
-export function buildWeeklyParentReportEmail(
-  props: WeeklyParentReportEmailProps,
-): BuiltEmail {
+export function buildWeeklyParentReportEmail(props: WeeklyParentReportEmailProps): BuiltEmail {
   const { parentFirstName, report, unsubscribeToken } = props
   const subject = `${report.childFirstName}\u2019s English Hub weekly update`
 
@@ -188,7 +186,7 @@ export function buildWeeklyParentReportEmail(
               <td style="background:#f9f9f9;padding:20px 32px;border-top:1px solid #eeeeee;">
                 <p style="margin:0 0 6px 0;font-size:12px;color:#888;line-height:1.5;">
                   Sent because you are linked to ${escapeHtml(report.childFirstName)}\u2019s account.
-                  We do not share essay content with anyone — this update is a summary only.
+                  We do not share essay content with anyone - this update is a summary only.
                 </p>
                 <p style="margin:0 0 6px 0;font-size:12px;color:#888;line-height:1.5;">
                   <a href="${TERMS_URL}" style="color:${BRAND_COLOR};">Terms</a> &nbsp;|&nbsp;
@@ -220,9 +218,7 @@ export function buildWeeklyParentReportEmail(
     typeof report.averageScore === 'number'
       ? `Average mark: ${report.averageScore}%`
       : 'No marked essays this week.',
-    report.assignmentsCompleted > 0
-      ? `Assignments completed: ${report.assignmentsCompleted}`
-      : '',
+    report.assignmentsCompleted > 0 ? `Assignments completed: ${report.assignmentsCompleted}` : '',
     '',
     report.strengths.length > 0 ? 'Strengths:' : '',
     ...report.strengths.map((s) => `- ${s}`),

@@ -11,7 +11,7 @@
 //
 // TODO(school-scope): filter to questions attempted by students of the
 // caller's school. Needs a join through `school_members.user_id` →
-// `quiz_responses.user_id`. For now this returns platform-wide data —
+// `quiz_responses.user_id`. For now this returns platform-wide data -
 // honest and useful while we grow.
 // ────────────────────────────────────────────────────────────────────────────
 

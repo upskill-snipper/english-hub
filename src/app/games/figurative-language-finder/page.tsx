@@ -528,7 +528,7 @@ export default function FigurativeLanguageFinderPage() {
                   <div className="flex items-center gap-2 font-semibold">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Brilliant — that&apos;s right!
+                        <CheckCircle className="size-4" /> Brilliant - that&apos;s right!
                       </>
                     ) : (
                       <>

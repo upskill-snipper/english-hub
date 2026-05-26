@@ -5,28 +5,23 @@ import type { StudentAnalytics } from '@/lib/types'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
-export type EngagementLevel =
-  | 'highly-engaged'
-  | 'engaged'
-  | 'moderate'
-  | 'at-risk'
-  | 'disengaged'
+export type EngagementLevel = 'highly-engaged' | 'engaged' | 'moderate' | 'at-risk' | 'disengaged'
 
 export interface SessionRecord {
   student_id: string
-  started_at: string          // ISO date-time
+  started_at: string // ISO date-time
   duration_seconds: number
   modules_completed: number
 }
 
 export interface ActivityPattern {
-  peakDay: string             // e.g. 'Monday'
-  peakHour: number            // 0-23
-  avgSessionLength: number    // seconds
+  peakDay: string // e.g. 'Monday'
+  peakHour: number // 0-23
+  avgSessionLength: number // seconds
 }
 
 export interface DailyActivity {
-  date: string                // YYYY-MM-DD
+  date: string // YYYY-MM-DD
   timeSpentSeconds: number
   modulesCompleted: number
 }
@@ -45,8 +40,8 @@ const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 const ENGAGEMENT_THRESHOLDS = {
   'highly-engaged': 80,
-  'engaged': 60,
-  'moderate': 40,
+  engaged: 60,
+  moderate: 40,
   'at-risk': 20,
 } as const
 
@@ -56,10 +51,10 @@ const ENGAGEMENT_THRESHOLDS = {
  * Compute a 0-100 engagement score from multiple activity signals.
  *
  * Weights:
- *   - sessions count (30%) — normalised against 14 sessions/week target
- *   - modules completed (25%) — normalised against 10 modules target
- *   - streak (25%) — normalised against 14-day streak target
- *   - time spent (20%) — normalised against 3600 seconds (1 hr) target
+ *   - sessions count (30%) - normalised against 14 sessions/week target
+ *   - modules completed (25%) - normalised against 10 modules target
+ *   - streak (25%) - normalised against 14-day streak target
+ *   - time spent (20%) - normalised against 3600 seconds (1 hr) target
  */
 export function calculateEngagementScore(
   sessions: number,
@@ -95,11 +90,9 @@ export function calculateStreak(sessions: SessionRecord[]): number {
   if (sessions.length === 0) return 0
 
   // Unique dates, sorted descending
-  const uniqueDates = [
-    ...new Set(
-      sessions.map((s) => s.started_at.slice(0, 10)),
-    ),
-  ].sort((a, b) => b.localeCompare(a))
+  const uniqueDates = [...new Set(sessions.map((s) => s.started_at.slice(0, 10)))].sort((a, b) =>
+    b.localeCompare(a),
+  )
 
   if (uniqueDates.length === 0) return 0
 
@@ -215,22 +208,18 @@ export function identifyDisengagedStudents(
 
   for (const student of students) {
     const studentSessions = sessionsByStudent.get(student.student_id) ?? []
-    const recentSessions = studentSessions.filter(
-      (s) => new Date(s.started_at) >= thresholdDate,
-    )
+    const recentSessions = studentSessions.filter((s) => new Date(s.started_at) >= thresholdDate)
 
     // Zero recent sessions or declining trajectory
     if (recentSessions.length === 0 || student.trajectory === 'declining') {
-      const lastSession = studentSessions.length > 0
-        ? studentSessions.reduce((latest, s) =>
-            s.started_at > latest.started_at ? s : latest,
-          )
-        : null
+      const lastSession =
+        studentSessions.length > 0
+          ? studentSessions.reduce((latest, s) => (s.started_at > latest.started_at ? s : latest))
+          : null
 
       const daysSinceLastActive = lastSession
         ? Math.floor(
-            (now.getTime() - new Date(lastSession.started_at).getTime()) /
-              (1000 * 60 * 60 * 24),
+            (now.getTime() - new Date(lastSession.started_at).getTime()) / (1000 * 60 * 60 * 24),
           )
         : Infinity
 
@@ -254,10 +243,7 @@ export function identifyDisengagedStudents(
  * Build 12 weeks of daily activity data for a student, suitable for a
  * contribution-graph heatmap.
  */
-export function buildHeatmapData(
-  sessions: SessionRecord[],
-  weeks = 12,
-): DailyActivity[] {
+export function buildHeatmapData(sessions: SessionRecord[], weeks = 12): DailyActivity[] {
   const now = new Date()
   const startDate = new Date(now)
   startDate.setDate(startDate.getDate() - weeks * 7 + 1)

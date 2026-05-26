@@ -18,7 +18,7 @@ async function fetchAllRows<T>(
   table: string,
   select: string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  filters: (query: any) => any
+  filters: (query: any) => any,
 ): Promise<T[]> {
   const all: T[] = []
   let from = 0
@@ -39,7 +39,7 @@ async function fetchAllRows<T>(
 function escapeCsvField(value: string | number | null | undefined): string {
   if (value === null || value === undefined) return ''
   let str = String(value)
-  // Prevent CSV formula injection — prefix dangerous leading characters
+  // Prevent CSV formula injection - prefix dangerous leading characters
   if (/^[=+\-@]/.test(str)) {
     str = `'${str}`
   }
@@ -80,28 +80,40 @@ export async function POST(request: NextRequest) {
 }
 
 const SUPPORTED_FORMATS = ['csv', 'sims', 'alps', 'json'] as const
-type ExportFormat = typeof SUPPORTED_FORMATS[number]
+type ExportFormat = (typeof SUPPORTED_FORMATS)[number]
 
-async function handleExport(request: NextRequest, params: { class_id?: string; format?: string; date_range?: string }) {
+async function handleExport(
+  request: NextRequest,
+  params: { class_id?: string; format?: string; date_range?: string },
+) {
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-export:${ip}`, { limit: 5, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const membership = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: requires admin or head of department role' },
+        { status: 403 },
+      )
     }
 
     const { class_id, format = 'csv', date_range } = params
@@ -110,7 +122,7 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
     if (!SUPPORTED_FORMATS.includes(exportFormat)) {
       return NextResponse.json(
         { error: `Unsupported format. Supported: ${SUPPORTED_FORMATS.join(', ')}` },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
@@ -152,7 +164,9 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
       .in('class_id', classIds)
       .eq('is_active', true)
 
-    const studentIds = Array.from(new Set((classStudents || []).map((s: { student_id: string }) => s.student_id)))
+    const studentIds = Array.from(
+      new Set((classStudents || []).map((s: { student_id: string }) => s.student_id)),
+    )
 
     if (studentIds.length === 0) {
       return new NextResponse('No student data to export', { status: 200 })
@@ -167,40 +181,50 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
     // Fetch all data in parallel, paginating to avoid the default 1000-row limit
     const [profiles, progressRows, practiceRows, certificateRows] = await Promise.all([
       fetchAllRows<{ id: string; email: string; full_name: string; year_group: string }>(
-        admin, 'profiles', 'id, email, full_name, year_group',
-        (q) => q.in('id', studentIds)
+        admin,
+        'profiles',
+        'id, email, full_name, year_group',
+        (q) => q.in('id', studentIds),
       ),
-      fetchAllRows<{ user_id: string; quiz_score: number | null; completed: boolean; time_spent_seconds: number; completed_at: string | null }>(
-        admin, 'module_progress', 'user_id, quiz_score, completed, time_spent_seconds, completed_at',
+      fetchAllRows<{
+        user_id: string
+        quiz_score: number | null
+        completed: boolean
+        time_spent_seconds: number
+        completed_at: string | null
+      }>(
+        admin,
+        'module_progress',
+        'user_id, quiz_score, completed, time_spent_seconds, completed_at',
         (q) => {
           let filtered = q.in('user_id', studentIds)
           if (dateFilter) filtered = filtered.gte('completed_at', dateFilter)
           return filtered
-        }
+        },
       ),
-      fetchAllRows<{ user_id: string }>(
-        admin, 'practice_sessions', 'user_id',
-        (q) => {
-          let filtered = q.in('user_id', studentIds)
-          if (dateFilter) filtered = filtered.gte('created_at', dateFilter)
-          return filtered
-        }
-      ),
-      fetchAllRows<{ user_id: string }>(
-        admin, 'certificates', 'user_id',
-        (q) => {
-          let filtered = q.in('user_id', studentIds)
-          if (dateFilter) filtered = filtered.gte('issued_at', dateFilter)
-          return filtered
-        }
-      ),
+      fetchAllRows<{ user_id: string }>(admin, 'practice_sessions', 'user_id', (q) => {
+        let filtered = q.in('user_id', studentIds)
+        if (dateFilter) filtered = filtered.gte('created_at', dateFilter)
+        return filtered
+      }),
+      fetchAllRows<{ user_id: string }>(admin, 'certificates', 'user_id', (q) => {
+        let filtered = q.in('user_id', studentIds)
+        if (dateFilter) filtered = filtered.gte('issued_at', dateFilter)
+        return filtered
+      }),
     ])
 
     // Aggregate module progress per student
-    const progressByStudent = new Map<string, {
-      scores: number[]; completed: number; timeSpent: number;
-      recentScores: number[]; previousScores: number[]
-    }>()
+    const progressByStudent = new Map<
+      string,
+      {
+        scores: number[]
+        completed: number
+        timeSpent: number
+        recentScores: number[]
+        previousScores: number[]
+      }
+    >()
 
     const now = new Date()
     const fourWeeksAgo = new Date(now.getTime() - 28 * 24 * 60 * 60 * 1000)
@@ -208,7 +232,13 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
 
     for (const p of progressRows) {
       if (!progressByStudent.has(p.user_id)) {
-        progressByStudent.set(p.user_id, { scores: [], completed: 0, timeSpent: 0, recentScores: [], previousScores: [] })
+        progressByStudent.set(p.user_id, {
+          scores: [],
+          completed: 0,
+          timeSpent: 0,
+          recentScores: [],
+          previousScores: [],
+        })
       }
       const entry = progressByStudent.get(p.user_id)!
       if (p.completed) entry.completed++
@@ -245,23 +275,23 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
       const certCount = certsByStudent.get(profile.id) || 0
 
       const modulesCompleted = progress?.completed || 0
-      const completionPct = totalModulesAvailable > 0
-        ? Math.round((modulesCompleted / totalModulesAvailable) * 100)
-        : 0
+      const completionPct =
+        totalModulesAvailable > 0 ? Math.round((modulesCompleted / totalModulesAvailable) * 100) : 0
 
-      const avgScore = progress && progress.scores.length > 0
-        ? Math.round(progress.scores.reduce((a, b) => a + b, 0) / progress.scores.length)
-        : null
+      const avgScore =
+        progress && progress.scores.length > 0
+          ? Math.round(progress.scores.reduce((a, b) => a + b, 0) / progress.scores.length)
+          : null
 
-      const timeSpentHours = progress
-        ? Math.round((progress.timeSpent / 3600) * 10) / 10
-        : 0
+      const timeSpentHours = progress ? Math.round((progress.timeSpent / 3600) * 10) / 10 : 0
 
       // Trajectory
       let trajectory = 'Stable'
       if (progress && progress.recentScores.length > 0 && progress.previousScores.length > 0) {
-        const recentAvg = progress.recentScores.reduce((a, b) => a + b, 0) / progress.recentScores.length
-        const previousAvg = progress.previousScores.reduce((a, b) => a + b, 0) / progress.previousScores.length
+        const recentAvg =
+          progress.recentScores.reduce((a, b) => a + b, 0) / progress.recentScores.length
+        const previousAvg =
+          progress.previousScores.reduce((a, b) => a + b, 0) / progress.previousScores.length
         const diff = recentAvg - previousAvg
         if (diff > 5) trajectory = 'Improving'
         else if (diff < -5) trajectory = 'Declining'
@@ -296,15 +326,23 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
           headers: {
             'Content-Disposition': `attachment; filename="school-export-${today}.json"`,
           },
-        }
+        },
       )
     }
 
     // ── SIMS format ──────────────────────────────────────────────
     if (exportFormat === 'sims') {
       const simsHeaders = [
-        'Forename', 'Surname', 'Email', 'Year Group', 'Subject',
-        'Assessment Name', 'Assessment Date', 'Grade', 'Score', 'Comment',
+        'Forename',
+        'Surname',
+        'Email',
+        'Year Group',
+        'Subject',
+        'Assessment Name',
+        'Assessment Date',
+        'Grade',
+        'Score',
+        'Comment',
       ]
       const simsRows = studentData.map((s) => {
         const nameParts = splitName(s.name)
@@ -334,8 +372,15 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
     // ── ALPS format ──────────────────────────────────────────────
     if (exportFormat === 'alps') {
       const alpsHeaders = [
-        'Candidate Name', 'Candidate Number', 'Subject', 'Qualification',
-        'Prior Attainment', 'Current Grade', 'ALPS Score', 'Value Added', 'Teaching Group',
+        'Candidate Name',
+        'Candidate Number',
+        'Subject',
+        'Qualification',
+        'Prior Attainment',
+        'Current Grade',
+        'ALPS Score',
+        'Value Added',
+        'Teaching Group',
       ]
       const alpsRows = studentData.map((s) => {
         const alpsScore = computeALPSScore(s.avg_score ?? 0, s.completion_pct)
@@ -363,9 +408,18 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
 
     // ── Default CSV format ───────────────────────────────────────
     const headers = [
-      'Name', 'Email', 'Year Group', 'Modules Completed', 'Total Modules',
-      'Completion %', 'Avg Score', 'Time Spent (hrs)', 'Practice Sessions',
-      'Certificates', 'Trajectory', 'Predicted Grade',
+      'Name',
+      'Email',
+      'Year Group',
+      'Modules Completed',
+      'Total Modules',
+      'Completion %',
+      'Avg Score',
+      'Time Spent (hrs)',
+      'Practice Sessions',
+      'Certificates',
+      'Trajectory',
+      'Predicted Grade',
     ]
 
     const rows = studentData.map((s) =>
@@ -382,7 +436,7 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
         s.certificates,
         s.trajectory,
         escapeCsvField(s.predicted_grade),
-      ].join(',')
+      ].join(','),
     )
 
     const csv = BOM + [headers.join(','), ...rows].join('\r\n')

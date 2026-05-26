@@ -39,7 +39,7 @@ export interface ExtraGradeQuestion {
 
 export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
   // ═══════════════════════════════════════════════════════════════════════════
-  // GRADE 4 — Basic recall, simple definitions (20 questions)
+  // GRADE 4 - Basic recall, simple definitions (20 questions)
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'gc-extra-g4-001',
@@ -293,7 +293,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // GRADE 5 — Solid technique recognition and effect (20 questions)
+  // GRADE 5 - Solid technique recognition and effect (20 questions)
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'gc-extra-g5-001',
@@ -548,14 +548,14 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // GRADE 6 — Identify a technique used (20 questions, real quotations)
+  // GRADE 6 - Identify a technique used (20 questions, real quotations)
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'gc-extra-g6-001',
     grade: 6,
     type: 'technique',
     prompt:
-      '"Fair is foul, and foul is fair" (Macbeth, Act 1 Scene 1) — what technique structures this line?',
+      '"Fair is foul, and foul is fair" (Macbeth, Act 1 Scene 1) - what technique structures this line?',
     options: ['Simile', 'Antithesis / chiasmus', 'Hyperbole', 'Onomatopoeia'],
     correctIndex: 1,
   },
@@ -564,7 +564,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"But, soft! what light through yonder window breaks?" (Romeo and Juliet) — the line opens with a:',
+      '"But, soft! what light through yonder window breaks?" (Romeo and Juliet) - the line opens with a:',
     options: ['Rhetorical question', 'Simile', 'Apostrophe', 'Hyperbole'],
     correctIndex: 0,
   },
@@ -572,7 +572,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-003',
     grade: 6,
     type: 'technique',
-    prompt: '"It is the east, and Juliet is the sun" (Romeo and Juliet) — Romeo uses a:',
+    prompt: '"It is the east, and Juliet is the sun" (Romeo and Juliet) - Romeo uses a:',
     options: ['Simile', 'Metaphor', 'Personification', 'Pun'],
     correctIndex: 1,
   },
@@ -580,7 +580,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-004',
     grade: 6,
     type: 'technique',
-    prompt: '"Solitary as an oyster" (A Christmas Carol, Stave 1) — Dickens uses a:',
+    prompt: '"Solitary as an oyster" (A Christmas Carol, Stave 1) - Dickens uses a:',
     options: ['Metaphor', 'Simile', 'Personification', 'Hyperbole'],
     correctIndex: 1,
   },
@@ -589,7 +589,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"Squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!" (A Christmas Carol) — what device dominates?',
+      '"Squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!" (A Christmas Carol) - what device dominates?',
     options: [
       'Listing of present participles',
       'Rhyming couplets',
@@ -602,7 +602,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-006',
     grade: 6,
     type: 'technique',
-    prompt: '"My mistress\' eyes are nothing like the sun" (Sonnet 130) — Shakespeare opens with:',
+    prompt: '"My mistress\' eyes are nothing like the sun" (Sonnet 130) - Shakespeare opens with:',
     options: [
       'A conventional simile',
       'A subverted/negated simile',
@@ -615,7 +615,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-007',
     grade: 6,
     type: 'technique',
-    prompt: '"I wandered lonely as a cloud" (Wordsworth) — the technique is a:',
+    prompt: '"I wandered lonely as a cloud" (Wordsworth) - the technique is a:',
     options: ['Metaphor', 'Simile', 'Personification', 'Pathetic fallacy'],
     correctIndex: 1,
   },
@@ -624,7 +624,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"Bent double, like old beggars under sacks" (Owen, Dulce et Decorum Est) — what device opens the poem?',
+      '"Bent double, like old beggars under sacks" (Owen, Dulce et Decorum Est) - what device opens the poem?',
     options: ['Metaphor', 'Simile', 'Hyperbole', 'Personification'],
     correctIndex: 1,
   },
@@ -632,7 +632,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-009',
     grade: 6,
     type: 'technique',
-    prompt: '"Drunk with fatigue" (Owen, Dulce et Decorum Est) — what is this?',
+    prompt: '"Drunk with fatigue" (Owen, Dulce et Decorum Est) - what is this?',
     options: ['Simile', 'Metaphor', 'Onomatopoeia', 'Litotes'],
     correctIndex: 1,
   },
@@ -641,7 +641,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"My name is Ozymandias, King of Kings" (Shelley) — the repetition "King of Kings" is an example of:',
+      '"My name is Ozymandias, King of Kings" (Shelley) - the repetition "King of Kings" is an example of:',
     options: [
       'Anaphora',
       'Polyptoton (repetition with grammatical variation)',
@@ -655,7 +655,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"The frost performs its secret ministry" (Coleridge, Frost at Midnight) — what device?',
+      '"The frost performs its secret ministry" (Coleridge, Frost at Midnight) - what device?',
     options: ['Personification', 'Simile', 'Hyperbole', 'Onomatopoeia'],
     correctIndex: 0,
   },
@@ -664,7 +664,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"The yellow fog that rubs its back upon the window-panes" (Eliot, Prufrock) — what device?',
+      '"The yellow fog that rubs its back upon the window-panes" (Eliot, Prufrock) - what device?',
     options: ['Personification', 'Simile', 'Onomatopoeia', 'Metaphor only'],
     correctIndex: 0,
   },
@@ -672,7 +672,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-013',
     grade: 6,
     type: 'technique',
-    prompt: '"The sea is calm tonight" (Arnold, Dover Beach) — what device opens the poem?',
+    prompt: '"The sea is calm tonight" (Arnold, Dover Beach) - what device opens the poem?',
     options: ['Pathetic fallacy', 'Hyperbole', 'Metaphor', 'Caesura'],
     correctIndex: 0,
   },
@@ -681,7 +681,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"Half a league, half a league, / Half a league onward" (Tennyson, Charge of the Light Brigade) — what device?',
+      '"Half a league, half a league, / Half a league onward" (Tennyson, Charge of the Light Brigade) - what device?',
     options: ['Anaphora and dactylic rhythm', 'Sibilance', 'Iambic pentameter', 'Caesura'],
     correctIndex: 0,
   },
@@ -690,7 +690,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"And miles to go before I sleep, / And miles to go before I sleep" (Frost) — the repetition functions as:',
+      '"And miles to go before I sleep, / And miles to go before I sleep" (Frost) - the repetition functions as:',
     options: ['Refrain / epistrophe', 'Pun', 'Caesura', 'Enjambment'],
     correctIndex: 0,
   },
@@ -699,7 +699,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 6,
     type: 'technique',
     prompt:
-      '"The boy stood on the burning deck" (Hemans, Casabianca) — what device dominates the line?',
+      '"The boy stood on the burning deck" (Hemans, Casabianca) - what device dominates the line?',
     options: ['Alliteration of "b"', 'Sibilance', 'Onomatopoeia', 'Personification'],
     correctIndex: 0,
   },
@@ -707,7 +707,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-017',
     grade: 6,
     type: 'technique',
-    prompt: '"Shall I compare thee to a summer\'s day?" (Sonnet 18) — the line is a:',
+    prompt: '"Shall I compare thee to a summer\'s day?" (Sonnet 18) - the line is a:',
     options: [
       'Statement',
       'Rhetorical question opening an extended comparison',
@@ -720,7 +720,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-018',
     grade: 6,
     type: 'technique',
-    prompt: '"Out, damned spot! out, I say!" (Macbeth, Act 5 Scene 1) — what device?',
+    prompt: '"Out, damned spot! out, I say!" (Macbeth, Act 5 Scene 1) - what device?',
     options: ['Imperative and exclamation', 'Simile', 'Iambic pentameter only', 'Pun'],
     correctIndex: 0,
   },
@@ -728,7 +728,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-019',
     grade: 6,
     type: 'technique',
-    prompt: '"The curfew tolls the knell of parting day" (Gray, Elegy) — what device?',
+    prompt: '"The curfew tolls the knell of parting day" (Gray, Elegy) - what device?',
     options: ['Personification', 'Simile', 'Hyperbole', 'Onomatopoeia'],
     correctIndex: 0,
   },
@@ -736,7 +736,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g6-020',
     grade: 6,
     type: 'technique',
-    prompt: '"Two roads diverged in a yellow wood" (Frost) — the two roads operate as:',
+    prompt: '"Two roads diverged in a yellow wood" (Frost) - the two roads operate as:',
     options: [
       'Literal description only',
       'An extended metaphor / symbol for choice',
@@ -747,14 +747,14 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // GRADE 7 — Analyse a short quotation (20 questions, real quotations)
+  // GRADE 7 - Analyse a short quotation (20 questions, real quotations)
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'gc-extra-g7-001',
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Look like the innocent flower, / But be the serpent under\'t" (Macbeth, Act 1 Scene 5) — what does Lady Macbeth\'s contrast reveal?',
+      '"Look like the innocent flower, / But be the serpent under\'t" (Macbeth, Act 1 Scene 5) - what does Lady Macbeth\'s contrast reveal?',
     options: [
       'She admires honesty',
       'She advises hiding murderous intent behind virtuous appearance, weaponising deception',
@@ -768,7 +768,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Is this a dagger which I see before me, / The handle toward my hand?" (Macbeth, Act 2 Scene 1) — the question form suggests:',
+      '"Is this a dagger which I see before me, / The handle toward my hand?" (Macbeth, Act 2 Scene 1) - the question form suggests:',
     options: [
       'Macbeth is calmly planning',
       "Macbeth's unstable, hallucinatory state and moral hesitation before the murder",
@@ -782,7 +782,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"A pair of star-cross\'d lovers take their life" (Romeo and Juliet, Prologue) — what does the metaphor "star-cross\'d" imply?',
+      '"A pair of star-cross\'d lovers take their life" (Romeo and Juliet, Prologue) - what does the metaphor "star-cross\'d" imply?',
     options: [
       'Their love is cosmic and successful',
       'Fate, governed by the stars, dooms the lovers from the outset',
@@ -796,22 +796,22 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"What\'s in a name? That which we call a rose / By any other name would smell as sweet" (R&J) — Juliet argues:',
+      '"What\'s in a name? That which we call a rose / By any other name would smell as sweet" (R&J) - Juliet argues:',
     options: [
       'Names are everything',
-      "Identity is separable from family labels — challenging the feud's power over them",
+      "Identity is separable from family labels - challenging the feud's power over them",
       'Roses are her favourite flower',
       'She wants to change her name to Rose',
     ],
     correctIndex: 1,
   },
   {
-    // VERIFIED: Heinemann/Penguin Acts 1-3 — Birling's repeated "hard-headed business man" mantra appears in Act 1 (3 separate instances)
+    // VERIFIED: Heinemann/Penguin Acts 1-3 - Birling's repeated "hard-headed business man" mantra appears in Act 1 (3 separate instances)
     id: 'gc-extra-g7-005',
     grade: 7,
     type: 'analysis',
     prompt:
-      '"I speak as a hard-headed business man" (An Inspector Calls, Mr Birling, Act 1) — what does this self-description reveal?',
+      '"I speak as a hard-headed business man" (An Inspector Calls, Mr Birling, Act 1) - what does this self-description reveal?',
     options: [
       'Birling is intellectually humble',
       "His pride in pragmatic capitalism, dramatic irony given his subsequent wrong predictions, and Priestley's caricature of pre-war complacency",
@@ -825,7 +825,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"We are members of one body" (Inspector Goole, An Inspector Calls) — the metaphor argues:',
+      '"We are members of one body" (Inspector Goole, An Inspector Calls) - the metaphor argues:',
     options: [
       'A literal anatomy lesson',
       'Society is interconnected; we share collective responsibility for one another',
@@ -839,7 +839,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"If they will not learn that lesson when they are taught it by Inspectors and by the police, they will be taught it in fire and blood and anguish" (An Inspector Calls) — the tricolon foreshadows:',
+      '"If they will not learn that lesson when they are taught it by Inspectors and by the police, they will be taught it in fire and blood and anguish" (An Inspector Calls) - the tricolon foreshadows:',
     options: [
       'A house fire',
       'The world wars and apocalyptic consequences of social neglect',
@@ -853,7 +853,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Mankind was my business" (Marley\'s ghost, A Christmas Carol) — what does this reveal?',
+      '"Mankind was my business" (Marley\'s ghost, A Christmas Carol) - what does this reveal?',
     options: [
       'He owned a successful firm',
       "His posthumous realisation that human welfare, not commerce, should be one's true vocation",
@@ -867,7 +867,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Are there no prisons? Are there no workhouses?" (Scrooge, A Christmas Carol) — the rhetorical questions show:',
+      '"Are there no prisons? Are there no workhouses?" (Scrooge, A Christmas Carol) - the rhetorical questions show:',
     options: [
       'Genuine inquiry',
       'Callous endorsement of harsh Poor Law institutions; Dickens satirises Malthusian attitudes',
@@ -877,13 +877,13 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     correctIndex: 1,
   },
   {
-    // VERIFIED: Project Gutenberg eBook #46, Stave 4 — Bob Cratchit's "I am very happy" speech: "I wish you could have gone. It would have done you good to see how green a place it is."
-    // Original "Pale as a lily" was a fabricated quotation — replaced with the verified Stave 3 description of Tiny Tim's frailty.
+    // VERIFIED: Project Gutenberg eBook #46, Stave 4 - Bob Cratchit's "I am very happy" speech: "I wish you could have gone. It would have done you good to see how green a place it is."
+    // Original "Pale as a lily" was a fabricated quotation - replaced with the verified Stave 3 description of Tiny Tim's frailty.
     id: 'gc-extra-g7-010',
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Alas for Tiny Tim, he bore a little crutch, and had his limbs supported by an iron frame!" (A Christmas Carol, Stave 3) — the exclamation suggests:',
+      '"Alas for Tiny Tim, he bore a little crutch, and had his limbs supported by an iron frame!" (A Christmas Carol, Stave 3) - the exclamation suggests:',
     options: [
       'Tiny Tim is healthy',
       "Dickens's sentimental appeal: pathos through Tim's physical frailty solicits middle-class compassion for the industrial poor",
@@ -896,7 +896,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g7-011',
     grade: 7,
     type: 'analysis',
-    prompt: '"Ape-like fury" used of Hyde (Jekyll and Hyde) — the simile draws on:',
+    prompt: '"Ape-like fury" used of Hyde (Jekyll and Hyde) - the simile draws on:',
     options: [
       'Affectionate humour',
       'Victorian fears of devolution and Darwinian regression to a primitive state',
@@ -910,7 +910,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Trampled calmly over the child\'s body" (Jekyll and Hyde, opening) — the oxymoron of "trampled calmly" suggests:',
+      '"Trampled calmly over the child\'s body" (Jekyll and Hyde, opening) - the oxymoron of "trampled calmly" suggests:',
     options: [
       'Hyde is gentle',
       'Disturbing, unnatural detachment; evil is cool, deliberate and inhuman',
@@ -924,7 +924,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"My love is like a red, red rose" (Burns) — what does the doubled "red, red" intensify?',
+      '"My love is like a red, red rose" (Burns) - what does the doubled "red, red" intensify?',
     options: [
       'A botanical fact',
       "The vivid passion of new love and the rose's symbolic associations with romance and transience",
@@ -938,7 +938,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Tyger Tyger, burning bright, / In the forests of the night" (Blake) — the metaphor "burning bright" implies:',
+      '"Tyger Tyger, burning bright, / In the forests of the night" (Blake) - the metaphor "burning bright" implies:',
     options: [
       'Literal fire',
       'Dangerous, divine, almost terrifying energy and beauty',
@@ -952,7 +952,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Do not go gentle into that good night" (Dylan Thomas) — what does the imperative urge?',
+      '"Do not go gentle into that good night" (Dylan Thomas) - what does the imperative urge?',
     options: [
       'A peaceful end',
       'Active, furious resistance against death rather than passive acceptance',
@@ -966,10 +966,10 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"The hand that signed the paper felled a city" (Dylan Thomas) — what does the synecdoche emphasise?',
+      '"The hand that signed the paper felled a city" (Dylan Thomas) - what does the synecdoche emphasise?',
     options: [
       'Literal hand size',
-      'The detached bureaucratic violence of distant power — a small action causes vast destruction',
+      'The detached bureaucratic violence of distant power - a small action causes vast destruction',
       "A signature's elegance",
       'A peace treaty',
     ],
@@ -980,7 +980,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Death is the mother of beauty" (Wallace Stevens, Sunday Morning) — the paradox argues:',
+      '"Death is the mother of beauty" (Wallace Stevens, Sunday Morning) - the paradox argues:',
     options: [
       'Death gives birth literally',
       'Mortality gives meaning and intensity to beauty; the transient is what we treasure',
@@ -994,7 +994,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"April is the cruellest month" (Eliot, The Waste Land) — the personification subverts:',
+      '"April is the cruellest month" (Eliot, The Waste Land) - the personification subverts:',
     options: [
       'A weather forecast',
       'Conventional spring renewal imagery, pairing rebirth with painful memory',
@@ -1007,10 +1007,10 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     id: 'gc-extra-g7-019',
     grade: 7,
     type: 'analysis',
-    prompt: '"Hope is the thing with feathers" (Dickinson) — the metaphor presents hope as:',
+    prompt: '"Hope is the thing with feathers" (Dickinson) - the metaphor presents hope as:',
     options: [
       'A literal bird',
-      'A small, persistent, song-bearing presence within the soul — fragile yet resilient',
+      'A small, persistent, song-bearing presence within the soul - fragile yet resilient',
       'A pillow',
       'A weather vane',
     ],
@@ -1021,7 +1021,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 7,
     type: 'analysis',
     prompt:
-      '"Because I could not stop for Death — / He kindly stopped for me" (Dickinson) — the personification of Death as a courteous suitor:',
+      '"Because I could not stop for Death - / He kindly stopped for me" (Dickinson) - the personification of Death as a courteous suitor:',
     options: [
       'Mocks the speaker',
       "Renders mortality unexpectedly civil and intimate, unsettling the reader's assumptions",
@@ -1032,14 +1032,14 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // GRADE 8 — Multi-step inference (15 questions)
+  // GRADE 8 - Multi-step inference (15 questions)
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'gc-extra-g8-001',
     grade: 8,
     type: 'analysis',
     prompt:
-      '"Unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty" (Lady Macbeth) — across the imperative, the spatial detail and the verb "fill", what is suggested?',
+      '"Unsex me here, / And fill me, from the crown to the toe, top-full / Of direst cruelty" (Lady Macbeth) - across the imperative, the spatial detail and the verb "fill", what is suggested?',
     options: [
       'A medical complaint',
       'A self-conscious rejection of gendered limits, invocation of supernatural transformation, and a desire to vessel violent agency that ultimately destabilises her',
@@ -1053,7 +1053,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      '"Will all great Neptune\'s ocean wash this blood / Clean from my hand?" (Macbeth, 2.2) followed by "this my hand will rather / The multitudinous seas incarnadine" — the shift from Latinate "incarnadine" to monosyllabic "Making the green one red" suggests:',
+      '"Will all great Neptune\'s ocean wash this blood / Clean from my hand?" (Macbeth, 2.2) followed by "this my hand will rather / The multitudinous seas incarnadine" - the shift from Latinate "incarnadine" to monosyllabic "Making the green one red" suggests:',
     options: [
       'Macbeth is calm',
       'Linguistic disintegration mirroring guilt: grand classical register collapses into stark, simple horror as conscience overwhelms rhetoric',
@@ -1067,7 +1067,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'Sheila Birling shifts from "(half playful, half serious)" stage directions to assertive interrogation of her parents — what does this trajectory signify in An Inspector Calls?',
+      'Sheila Birling shifts from "(half playful, half serious)" stage directions to assertive interrogation of her parents - what does this trajectory signify in An Inspector Calls?',
     options: [
       'Random mood swings',
       "Priestley uses Sheila as the play's redeemable conscience, modelling generational change away from capitalist complacency toward socialist responsibility",
@@ -1081,7 +1081,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'In Jekyll and Hyde, Stevenson stages most of Hyde\'s violence at night, in fog, in narrow back streets and behind a "blistered and distained" door — cumulatively this Gothic setting:',
+      'In Jekyll and Hyde, Stevenson stages most of Hyde\'s violence at night, in fog, in narrow back streets and behind a "blistered and distained" door - cumulatively this Gothic setting:',
     options: [
       'Saves on lighting costs',
       'Externalises repressed Victorian anxieties about urban modernity, the unconscious and the duality lurking beneath respectable façades',
@@ -1095,7 +1095,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'Scrooge\'s journey across the Staves of A Christmas Carol moves from "solitary as an oyster" to "I am as light as a feather" — tracking these similes:',
+      'Scrooge\'s journey across the Staves of A Christmas Carol moves from "solitary as an oyster" to "I am as light as a feather" - tracking these similes:',
     options: [
       'Show only weight loss',
       "Track a moral metamorphosis from closed, hardened isolation to weightless joy, marking Dickens's allegorical structure of redemption",
@@ -1109,7 +1109,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'Owen\'s Dulce et Decorum Est moves from collective "we" through second-person "you" addressing the reader directly to the bitter Latin tag — across this pronoun shift:',
+      'Owen\'s Dulce et Decorum Est moves from collective "we" through second-person "you" addressing the reader directly to the bitter Latin tag - across this pronoun shift:',
     options: [
       'Owen makes the reader complicit, dragging civilians from comfortable distance into shared moral indictment of pro-war propaganda',
       'Pronoun usage is random',
@@ -1137,7 +1137,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'Carol Ann Duffy\'s War Photographer juxtaposes "Rural England" with "running children in a nightmare heat" — the structural placement of these contrasts suggests:',
+      'Carol Ann Duffy\'s War Photographer juxtaposes "Rural England" with "running children in a nightmare heat" - the structural placement of these contrasts suggests:',
     options: [
       'A travel itinerary',
       'The moral discomfort of Western consumption of suffering: comfortable readers turn the page while the photographer carries unbearable knowledge',
@@ -1193,7 +1193,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'Heaney\'s Follower closes "But today / It is my father who keeps stumbling / Behind me, and will not go away" — the structural reversal compared to the opening father-figure suggests:',
+      'Heaney\'s Follower closes "But today / It is my father who keeps stumbling / Behind me, and will not go away" - the structural reversal compared to the opening father-figure suggests:',
     options: [
       'A literal walk',
       "Time's inexorable role-reversal between generations and the haunting persistence of paternal influence, both physical and psychological",
@@ -1207,7 +1207,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'In Hughes\'s Bayonet Charge, the soldier "almost stopped — / In bewilderment" mid-line; combined with the violent verbs and the "cold clockwork of the stars and the nations", what is implied?',
+      'In Hughes\'s Bayonet Charge, the soldier "almost stopped - / In bewilderment" mid-line; combined with the violent verbs and the "cold clockwork of the stars and the nations", what is implied?',
     options: [
       'Stars are clocks',
       'The dehumanising mechanism of war reduces individual moral agency to a momentary, discarded hesitation within an indifferent cosmic and political machine',
@@ -1221,7 +1221,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'Duffy\'s Mrs Midas turns "He was standing under the pear tree snapping a twig" into eventual exile of the husband — the domestic opening contrasted with mythic consequence demonstrates:',
+      'Duffy\'s Mrs Midas turns "He was standing under the pear tree snapping a twig" into eventual exile of the husband - the domestic opening contrasted with mythic consequence demonstrates:',
     options: [
       'A literal myth retelling',
       "A feminist re-reading: the female perspective reveals how male greed (or even ambition) destroys intimacy, foregrounding the woman's loss within the classical tale",
@@ -1235,7 +1235,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     grade: 8,
     type: 'analysis',
     prompt:
-      'In Remains, Armitage repeats "probably armed, possibly not" and ends "his bloody life in my bloody hands" — across this structural framing:',
+      'In Remains, Armitage repeats "probably armed, possibly not" and ends "his bloody life in my bloody hands" - across this structural framing:',
     options: [
       'Just rhyme',
       "The uncertainty drives PTSD; the Macbeth allusion universalises the soldier's guilt as an inheritance of unresolvable moral injury",
@@ -1246,7 +1246,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // GRADE 9 — Conceptual / multi-AO / contextually rich (15 questions)
+  // GRADE 9 - Conceptual / multi-AO / contextually rich (15 questions)
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'gc-extra-g9-001',
@@ -1256,7 +1256,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       'Critically evaluate how Shakespeare uses Lady Macbeth as a vehicle for early-modern anxieties about gender, sovereignty and the unnatural.',
     options: [
       'She is just a wife',
-      'She is presented as transgressively rejecting "feminine" categories — invoking spirits to "unsex" her — which a Jacobean audience under James I (and his fascination with witchcraft in Daemonologie) would have read as both dramatic transgression and theological threat to the divinely ordered hierarchy',
+      'She is presented as transgressively rejecting "feminine" categories - invoking spirits to "unsex" her - which a Jacobean audience under James I (and his fascination with witchcraft in Daemonologie) would have read as both dramatic transgression and theological threat to the divinely ordered hierarchy',
       'She is purely sympathetic',
       'She is a comic figure',
     ],
@@ -1297,7 +1297,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       'To what extent is Jekyll and Hyde a Gothic text, a scientific cautionary tale, or a critique of Victorian respectability?',
     options: [
       'It is only Gothic',
-      'It is all three: Stevenson fuses Gothic doubling, fin-de-siècle anxieties about Darwinian degeneration and unregulated science, and a satire of professional male hypocrisy in fog-bound London — the "respectable" Jekyll requires Hyde precisely because Victorian morality demanded performance over integration',
+      'It is all three: Stevenson fuses Gothic doubling, fin-de-siècle anxieties about Darwinian degeneration and unregulated science, and a satire of professional male hypocrisy in fog-bound London - the "respectable" Jekyll requires Hyde precisely because Victorian morality demanded performance over integration',
       'It is just a horror story',
       'It is purely autobiographical',
     ],
@@ -1325,7 +1325,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       "How does Browning's My Last Duchess function as both a Renaissance period-piece and a Victorian ethical inquiry?",
     options: [
       'Only as historical fiction',
-      'The dramatic monologue places a Renaissance Duke (modelled on Alfonso II of Ferrara) on stage, but the implied 19th-century reader is invited to judge the speaker — Browning thus uses historical distance to interrogate contemporary patriarchal power, art-as-possession, and the moral complicity of aestheticism',
+      'The dramatic monologue places a Renaissance Duke (modelled on Alfonso II of Ferrara) on stage, but the implied 19th-century reader is invited to judge the speaker - Browning thus uses historical distance to interrogate contemporary patriarchal power, art-as-possession, and the moral complicity of aestheticism',
       'Pure character study',
       'A love poem',
     ],
@@ -1339,7 +1339,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       'Critically assess how Owen reshapes the elegiac and Horatian traditions in Dulce et Decorum Est to dismantle pro-war rhetoric.',
     options: [
       'He praises war',
-      'Owen subverts the Horatian "old lie" through harrowing iambic disruption, second-person address, and the central simile "like a devil\'s sick of sin" — converting elegy into accusation and exposing how classical pieties enabled industrial slaughter',
+      'Owen subverts the Horatian "old lie" through harrowing iambic disruption, second-person address, and the central simile "like a devil\'s sick of sin" - converting elegy into accusation and exposing how classical pieties enabled industrial slaughter',
       'It is a neutral report',
       'It celebrates Latin culture',
     ],
@@ -1353,7 +1353,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       'How does Shelley use Ozymandias to engage with Romantic ideas about tyranny, time and the artist?',
     options: [
       'It is purely descriptive',
-      'Within the post-Napoleonic political context, Shelley dismantles imperial pretension — the sculptor\'s "hand that mocked them" outlives the king, suggesting the Romantic conviction that art and nature ultimately humble even the most absolute political power',
+      'Within the post-Napoleonic political context, Shelley dismantles imperial pretension - the sculptor\'s "hand that mocked them" outlives the king, suggesting the Romantic conviction that art and nature ultimately humble even the most absolute political power',
       'It admires Egypt',
       'It is anti-art',
     ],
@@ -1409,7 +1409,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       'In what ways does Jane Eyre (or comparable 19th-century fiction studied at GCSE) negotiate gender, class and religion through its narrative voice?',
     options: [
       'Through dialogue only',
-      'The retrospective first-person voice fuses Bildungsroman convention with proto-feminist interiority — Jane\'s "I am no bird; and no net ensnares me" claims subjectivity against the Victorian triple constraint of femininity, dependency and Evangelical self-renunciation',
+      'The retrospective first-person voice fuses Bildungsroman convention with proto-feminist interiority - Jane\'s "I am no bird; and no net ensnares me" claims subjectivity against the Victorian triple constraint of femininity, dependency and Evangelical self-renunciation',
       'It is purely Romantic',
       'It is anti-religious',
     ],
@@ -1437,7 +1437,7 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
       'For Level 6 (Mark Scheme top band) on AQA Literature unseen poetry, what most distinguishes a Grade 9 response?',
     options: [
       'Length and number of quotations',
-      "A conceptualised, critical thesis sustained across the response, with precise textual analysis that integrates language, form and structure, alternative interpretations, and an alert sensitivity to the writer's methods — not just a list of features",
+      "A conceptualised, critical thesis sustained across the response, with precise textual analysis that integrates language, form and structure, alternative interpretations, and an alert sensitivity to the writer's methods - not just a list of features",
       'Listing techniques',
       'Pure context',
     ],

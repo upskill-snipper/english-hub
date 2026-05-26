@@ -11,7 +11,7 @@
 //
 // The `marking_submissions` Supabase table is created out-of-band by a
 // pending migration (see B4 agent report). Until that migration lands the
-// endpoint will return an empty `submissions` array — the UI degrades to
+// endpoint will return an empty `submissions` array - the UI degrades to
 // the "no submissions yet" state rather than throwing.
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -134,7 +134,7 @@ export async function GET(_req: NextRequest) {
     }
 
     // Supabase generated types don't yet know about marking_submissions /
-    // the Smart-IP columns (Prisma client not regenerated — see migration
+    // the Smart-IP columns (Prisma client not regenerated - see migration
     // note), so pin the SELECT shape we expect.
     const rows = (rowsRaw ?? []) as unknown as Array<{
       id: string
@@ -169,7 +169,7 @@ export async function GET(_req: NextRequest) {
 
     // Hydrate student names + class names in two batched lookups so we
     // never N+1 the database. Failures here also degrade to nulls rather
-    // than 500 — the UI prefers a missing label to a broken page.
+    // than 500 - the UI prefers a missing label to a broken page.
     const studentIds = Array.from(new Set(rows.map((r) => r.student_id)))
     const classIds = Array.from(new Set(rows.map((r) => r.class_id).filter(Boolean) as string[]))
 
@@ -254,7 +254,7 @@ export async function GET(_req: NextRequest) {
     const submissions = rows.map((r) => {
       const aiResult = r.ai_result && typeof r.ai_result === 'object' ? r.ai_result : null
       return {
-        // ── Original keys (byte-identical — do not change) ────────────────
+        // ── Original keys (byte-identical - do not change) ────────────────
         id: r.id,
         student_id: r.student_id,
         student_name: studentNameById.get(r.student_id) ?? 'Student',

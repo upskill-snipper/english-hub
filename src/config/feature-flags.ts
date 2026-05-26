@@ -1,5 +1,5 @@
 /**
- * Feature flags — MVP static config.
+ * Feature flags - MVP static config.
  *
  * This is the authoritative map of server-evaluated flags exposed to
  * authenticated clients via `GET /api/flags` (and embedded in `GET /me`).
@@ -13,17 +13,17 @@
  * a default-true marketing flag (e.g. `trustpilot_enabled` is auto
  * false for users with `marketingEnabled = false`).
  *
- * Keep additions typed — the `FeatureFlagKey` literal union drives the
+ * Keep additions typed - the `FeatureFlagKey` literal union drives the
  * shape of the `/api/flags` response and the `flags` block inside
  * `/api/me`, so mobile types stay in lock-step with the server truth.
  *
  * Wave 5 additions (see `english-hub-mobile/docs/FEATURE_FLAGS.md`):
- *   - parent_dashboard_enabled — staging-first rollout.
- *   - teacher_assignments_mobile_enabled — teacher tools (mobile).
- *   - teacher_analytics_mobile_enabled — teacher tools (mobile).
- *   - teacher_submissions_mobile_enabled — teacher tools (mobile).
- *   - school_csv_upload_enabled — admin bulk invite, staging-first.
- *   - weekly_parent_reports_enabled — Compliance review pending,
+ *   - parent_dashboard_enabled - staging-first rollout.
+ *   - teacher_assignments_mobile_enabled - teacher tools (mobile).
+ *   - teacher_analytics_mobile_enabled - teacher tools (mobile).
+ *   - teacher_submissions_mobile_enabled - teacher tools (mobile).
+ *   - school_csv_upload_enabled - admin bulk invite, staging-first.
+ *   - weekly_parent_reports_enabled - Compliance review pending,
  *     staging-first.
  */
 
@@ -32,9 +32,9 @@
 // We need to distinguish `prod` from `staging` so that staging picks up
 // work-in-progress features before production does. Resolution order:
 //
-//   1. `APP_ENV` — explicit override, used by EAS / CI.
-//   2. `VERCEL_ENV` — Vercel sets `production`, `preview`, `development`.
-//   3. `NODE_ENV` — final fallback (`production` → `prod`).
+//   1. `APP_ENV` - explicit override, used by EAS / CI.
+//   2. `VERCEL_ENV` - Vercel sets `production`, `preview`, `development`.
+//   3. `NODE_ENV` - final fallback (`production` → `prod`).
 //
 // Anything we cannot confidently classify as `prod` is treated as
 // `staging`, which is the safer default for gated rollouts (new
@@ -43,11 +43,7 @@
 type DeployEnv = 'dev' | 'staging' | 'prod'
 
 function resolveDeployEnv(): DeployEnv {
-  const raw =
-    process.env.APP_ENV ??
-    process.env.VERCEL_ENV ??
-    process.env.NODE_ENV ??
-    ''
+  const raw = process.env.APP_ENV ?? process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? ''
   const normalised = raw.toLowerCase()
   if (normalised === 'prod' || normalised === 'production') return 'prod'
   if (normalised === 'dev' || normalised === 'development') return 'dev'
@@ -97,7 +93,7 @@ export function getFeatureFlagDefaults(): FeatureFlags {
     // commercial team can disable during a reputation incident.
     trustpilot_enabled: process.env.TRUSTPILOT_ENABLED === 'true',
 
-    // Mobile capability flags — see
+    // Mobile capability flags - see
     // english-hub-mobile/docs/API_SPEC.md §4.1 `/me.flags`.
     mobile_offline_queue: true,
     mobile_siwa_required: true,
@@ -113,7 +109,7 @@ export function getFeatureFlagDefaults(): FeatureFlags {
     // the web dashboard.
     parent_dashboard_enabled: !IS_PROD,
 
-    // Teacher tooling on mobile defaults on — these mirror existing
+    // Teacher tooling on mobile defaults on - these mirror existing
     // web endpoints already used in production. The flags exist to
     // give us an instant kill switch.
     teacher_assignments_mobile_enabled: true,
@@ -133,8 +129,8 @@ export function getFeatureFlagDefaults(): FeatureFlags {
 // ─── Per-user override application ────────────────────────────────────
 //
 // Callers pass in whatever privacy / override state they have for the
-// user and receive the final flag map. Keep this pure — no I/O, no
-// Prisma — so it can be reused inside `/api/me`, `/api/flags`, and
+// user and receive the final flag map. Keep this pure - no I/O, no
+// Prisma - so it can be reused inside `/api/me`, `/api/flags`, and
 // future SSR code paths without a DB round-trip.
 
 export interface FlagOverrideInput {
@@ -147,7 +143,7 @@ export interface FlagOverrideInput {
 export function resolveFeatureFlags(overrides: FlagOverrideInput = {}): FeatureFlags {
   const flags = getFeatureFlagDefaults()
 
-  // Marketing opt-out forces Trustpilot off for the calling user —
+  // Marketing opt-out forces Trustpilot off for the calling user -
   // Trustpilot is a marketing surface and honouring the opt-out is
   // part of our GDPR Art. 7 posture. We never flip it *on* here; if
   // the env default is off, it stays off regardless of the flag.

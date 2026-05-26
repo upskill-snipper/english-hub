@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 1 Model Answers — IGCSE Language A 0500',
+    title: 'Paper 1 Model Answers - IGCSE Language A 0500',
     description:
       'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
   },
-  title: 'Paper 1 Model Answers — IGCSE Language A 0500',
+  title: 'Paper 1 Model Answers - IGCSE Language A 0500',
   description:
     'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
   alternates: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Q1 — RETRIEVAL MODEL ANSWERS (2 examples)
+   Q1 - RETRIEVAL MODEL ANSWERS (2 examples)
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q1Models = [
@@ -110,7 +110,7 @@ const q1Models = [
 ]
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Q2 — LANGUAGE ANALYSIS: GRADE C vs A* COMPARISON
+   Q2 - LANGUAGE ANALYSIS: GRADE C vs A* COMPARISON
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q2Passage =
@@ -155,7 +155,7 @@ const q2GradeA = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Q3 — SUMMARY MODEL ANSWER
+   Q3 - SUMMARY MODEL ANSWER
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q3Model = {
@@ -230,7 +230,7 @@ export default async function Paper1ModelAnswersPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Question 1 — Retrieval</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Question 1 - Retrieval</h2>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -286,7 +286,7 @@ export default async function Paper1ModelAnswersPage() {
         <div className="flex items-center gap-3">
           <ArrowUpDown className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Question 2 — Language analysis: Grade C vs A*
+            Question 2 - Language analysis: Grade C vs A*
           </h2>
         </div>
 
@@ -421,7 +421,7 @@ export default async function Paper1ModelAnswersPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <Award className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Question 3 — Summary</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Question 3 - Summary</h2>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">

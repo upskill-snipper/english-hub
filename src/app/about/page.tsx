@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
-// 2026-05-04: Founder-section removed at the founder's request — the
+// 2026-05-04: Founder-section removed at the founder's request - the
 // site does not currently make any examiner / qualification claims,
 // and the founder's name is not surfaced. The page is purely
 // informational about the product itself.
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
   alternates: { canonical: 'https://theenglishhub.app/about' },
   openGraph: {
-    title: 'About — The English Hub',
+    title: 'About - The English Hub',
     description:
       'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
     url: 'https://theenglishhub.app/about',
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
         url: '/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision',
         width: 1200,
         height: 630,
-        alt: 'About The English Hub — GCSE & IGCSE English revision',
+        alt: 'About The English Hub - GCSE & IGCSE English revision',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About — The English Hub',
+    title: 'About - The English Hub',
     description:
       'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
     images: ['/api/og?title=About+The+English+Hub&subtitle=GCSE+%26+IGCSE+English+revision'],
@@ -162,17 +162,17 @@ export default async function AboutPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">{approachIntro}</p>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <strong className="text-foreground">{approachExamBoardName}</strong> —{' '}
+              <strong className="text-foreground">{approachExamBoardName}</strong> -{' '}
               {approachExamBoardDesc}
             </li>
             <li>
-              <strong className="text-foreground">{approachAiName}</strong> — {approachAiDesc}
+              <strong className="text-foreground">{approachAiName}</strong> - {approachAiDesc}
             </li>
             <li>
-              <strong className="text-foreground">{approachMockName}</strong> — {approachMockDesc}
+              <strong className="text-foreground">{approachMockName}</strong> - {approachMockDesc}
             </li>
             <li>
-              <strong className="text-foreground">{approachGamesName}</strong> — {approachGamesDesc}
+              <strong className="text-foreground">{approachGamesName}</strong> - {approachGamesDesc}
             </li>
           </ul>
         </section>
@@ -188,16 +188,16 @@ export default async function AboutPage() {
           <h2 className="text-xl font-semibold text-foreground">{valuesH2}</h2>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <strong className="text-foreground">{valueQualityName}</strong> — {valueQualityDesc}
+              <strong className="text-foreground">{valueQualityName}</strong> - {valueQualityDesc}
             </li>
             <li>
-              <strong className="text-foreground">{valueAccessName}</strong> — {valueAccessDesc}
+              <strong className="text-foreground">{valueAccessName}</strong> - {valueAccessDesc}
             </li>
             <li>
-              <strong className="text-foreground">{valueEvidenceName}</strong> — {valueEvidenceDesc}
+              <strong className="text-foreground">{valueEvidenceName}</strong> - {valueEvidenceDesc}
             </li>
             <li>
-              <strong className="text-foreground">{valueAlignName}</strong> — {valueAlignDesc}
+              <strong className="text-foreground">{valueAlignName}</strong> - {valueAlignDesc}
             </li>
           </ul>
         </section>
@@ -220,7 +220,7 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        {/* Entity details — reconciled against Companies House 2026-04-24 */}
+        {/* Entity details - reconciled against Companies House 2026-04-24 */}
         <section id="entity">
           <h2 className="text-xl font-semibold text-foreground">{entityH2}</h2>
           <ul className="mt-4 space-y-1 text-muted-foreground leading-relaxed">

@@ -7,7 +7,7 @@ import { calculateCommissionPence, getCurrentTierInfo } from '@/lib/affiliate/ti
 import { prisma } from '@/lib/prisma'
 import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
 
-// Disable body parsing — we need the raw body for signature verification
+// Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
 
 /** Thrown when required metadata fields are missing from a Stripe event. */
@@ -20,7 +20,7 @@ class WebhookMetadataError extends Error {
 
 /**
  * Map a Stripe subscription `status` to our Prisma `SubscriptionStatus`
- * enum. Kept narrow on purpose — `incomplete` / `unpaid` etc. fall back
+ * enum. Kept narrow on purpose - `incomplete` / `unpaid` etc. fall back
  * to `PAST_DUE` so the entitlement layer still revokes Pro access.
  */
 function mapStripeToPrismaStatus(
@@ -93,7 +93,7 @@ async function upsertStripeSubscriptionRow(
       },
     })
   } catch (err) {
-    // Log but do not fail the webhook — the Supabase profile write is the
+    // Log but do not fail the webhook - the Supabase profile write is the
     // load-bearing one for entitlement gating; the Prisma row is the
     // canonical record for renewals / dashboards and can be back-filled.
     console.error('[stripe/webhook] Failed to upsert Subscription row:', err)
@@ -125,7 +125,7 @@ export async function POST(request: NextRequest) {
 
   const supabase = createServiceRoleClient()
 
-  // Idempotency check — skip if this event has already been processed
+  // Idempotency check - skip if this event has already been processed
   const { data: existing } = await supabase
     .from('webhook_events')
     .select('event_id')
@@ -152,7 +152,7 @@ export async function POST(request: NextRequest) {
               supabase,
             })
           } catch (err) {
-            // Log but do not fail the webhook — attribution is non-critical
+            // Log but do not fail the webhook - attribution is non-critical
             console.error('Affiliate attribution error:', err)
           }
         }
@@ -164,7 +164,7 @@ export async function POST(request: NextRequest) {
         // /redeem. We book a row in `affiliate_conversions` so the
         // affiliate's dashboard reflects the conversion and the
         // commission is queued for later payout. Idempotent on
-        // session.id (external_id) — webhook retries are safe.
+        // session.id (external_id) - webhook retries are safe.
         const affiliateId = session.metadata?.affiliateId
         const promoCode = session.metadata?.promoCode
         if (affiliateId && promoCode) {
@@ -223,7 +223,7 @@ export async function POST(request: NextRequest) {
 
         // Mark the profile past_due immediately. Stripe will eventually fire
         // a `customer.subscription.updated` with `status: 'past_due'`, but
-        // delivery order / lag is not guaranteed — flipping the flag here
+        // delivery order / lag is not guaranteed - flipping the flag here
         // keeps the entitlement gate honest from the moment the charge fails.
         if (failedProfile) {
           const { error: pastDueError } = await supabase
@@ -243,7 +243,7 @@ export async function POST(request: NextRequest) {
         // Send payment-failed notification via Resend (non-blocking)
         const resendApiKey = process.env.RESEND_API_KEY
         if (resendApiKey) {
-          // Resolve customer email — first try Stripe, then fall back to profiles table
+          // Resolve customer email - first try Stripe, then fall back to profiles table
           let customerEmail: string | null = null
 
           try {
@@ -301,7 +301,7 @@ export async function POST(request: NextRequest) {
                 )
               }
             } catch (err) {
-              // Log but do not fail the webhook — email is non-critical
+              // Log but do not fail the webhook - email is non-critical
               console.error('[stripe/webhook] Error sending payment_failed email:', err)
             }
           } else {
@@ -311,7 +311,7 @@ export async function POST(request: NextRequest) {
           }
         } else {
           console.warn(
-            '[stripe/webhook] RESEND_API_KEY not configured — skipping payment_failed email',
+            '[stripe/webhook] RESEND_API_KEY not configured - skipping payment_failed email',
           )
         }
 
@@ -360,7 +360,7 @@ export async function POST(request: NextRequest) {
         const charge = event.data.object as Stripe.Charge
 
         try {
-          // Resolve subscription ID — may be directly on the charge or via the invoice
+          // Resolve subscription ID - may be directly on the charge or via the invoice
           let subscriptionId: string | null = null
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -403,7 +403,7 @@ export async function POST(request: NextRequest) {
             )
           }
         } catch (err) {
-          // Log but do not fail the webhook — commission voiding is non-critical
+          // Log but do not fail the webhook - commission voiding is non-critical
           console.error('[stripe/webhook] charge.refunded handler error:', err)
         }
 
@@ -432,7 +432,7 @@ export async function POST(request: NextRequest) {
         }
         if (!userId) {
           // Loud, structured error so it shows up in Sentry / log search.
-          // Returning 500 makes Stripe retry — preferable to silently
+          // Returning 500 makes Stripe retry - preferable to silently
           // dropping a paying customer's first subscription event.
           console.error(
             JSON.stringify({
@@ -481,7 +481,7 @@ export async function POST(request: NextRequest) {
       }
 
       default: {
-        // Unhandled event type — acknowledge receipt
+        // Unhandled event type - acknowledge receipt
         break
       }
     }
@@ -520,7 +520,7 @@ export async function POST(request: NextRequest) {
  * Code-based affiliate conversion booking.
  *
  * Called from the `checkout.session.completed` handler when the session
- * carries `metadata.affiliateId` + `metadata.promoCode` — i.e. the
+ * carries `metadata.affiliateId` + `metadata.promoCode` - i.e. the
  * customer typed an affiliate's code at /redeem and our /api/promo/redeem
  * endpoint stamped the affiliate's row ID onto the session.
  *
@@ -528,10 +528,10 @@ export async function POST(request: NextRequest) {
  * /api/affiliate/track-conversion uses for cookie-based attribution
  * (so the affiliate dashboard, payout pipeline and commission ledger
  * see code-based redemptions identically). Idempotent on
- * external_id = session.id — Stripe retries every event for 3 days and
+ * external_id = session.id - Stripe retries every event for 3 days and
  * we must never double-count.
  *
- * Failures are caught by the calling try/catch — this function may
+ * Failures are caught by the calling try/catch - this function may
  * throw freely on schema/RLS/network errors and the webhook will still
  * return 200 to Stripe so retries don't stack up.
  */
@@ -546,7 +546,7 @@ async function recordCodeBasedConversion({
   promoCode: string
   supabase: ReturnType<typeof createServiceRoleClient>
 }): Promise<void> {
-  // 1. Idempotency — we must never insert two conversions for the same
+  // 1. Idempotency - we must never insert two conversions for the same
   // session ID, regardless of how many times Stripe retries.
   const { data: existing } = await supabase
     .from('affiliate_conversions')
@@ -575,7 +575,7 @@ async function recordCodeBasedConversion({
     throw new Error(`Failed to resolve affiliate account ${affiliateId}: ${accountErr.message}`)
   }
   if (!account) {
-    throw new Error(`No affiliate account row for ${affiliateId} — promoCode ${promoCode}`)
+    throw new Error(`No affiliate account row for ${affiliateId} - promoCode ${promoCode}`)
   }
   if (account.status !== 'active') {
     console.warn(
@@ -583,7 +583,7 @@ async function recordCodeBasedConversion({
     )
   }
 
-  // 3. Order value — Stripe gives us amount_total in pence, currency
+  // 3. Order value - Stripe gives us amount_total in pence, currency
   // already lower-cased. Use 0 if the session somehow has no total
   // (subscription with trial: amount_total can be 0 on first invoice).
   const orderValuePence = Math.max(0, session.amount_total ?? 0)
@@ -596,7 +596,7 @@ async function recordCodeBasedConversion({
   const referralCount = Number(account.confirmed_referral_count ?? 0)
   const commissionPence = calculateCommissionPence(referralCount)
   // Internal tier-1..tier-5 ladder (display + commission ladder helper)
-  // — kept in scope for log lines so we can correlate the commission
+  // - kept in scope for log lines so we can correlate the commission
   // amount with the flat-rate ladder. Never written to the DB; the DB's
   // tier_at_conversion column is constrained to 'bronze'/'silver'/'gold'.
   const tierInfo = getCurrentTierInfo(referralCount + 1)
@@ -700,7 +700,7 @@ async function handleCheckoutCompleted(
     // Grandfathering capture (R-031). Lock the price + tier on the Prisma
     // Subscription row at signup so renewals after the Aug 2026 Standard
     // rollover still charge / display the Early Access price. Preserves any
-    // pre-existing locked price on an existing row — never overwrites.
+    // pre-existing locked price on an existing row - never overwrites.
     try {
       const existingSub = await prisma.subscription.findUnique({ where: { userId } })
       if (!existingSub?.grandfatheredPriceMinor) {
@@ -723,7 +723,7 @@ async function handleCheckoutCompleted(
         }
       }
     } catch (err) {
-      // Non-fatal — grandfathering capture must not break checkout.
+      // Non-fatal - grandfathering capture must not break checkout.
       console.error('[stripe/webhook] Grandfather capture failed (non-fatal):', err)
     }
   }
@@ -912,7 +912,7 @@ async function handleTrialWillEnd(
 ) {
   const customerId = subscription.customer as string
 
-  // Resolve customer email — first try Stripe, then fall back to profiles table
+  // Resolve customer email - first try Stripe, then fall back to profiles table
   let customerEmail: string | null = null
 
   try {
@@ -963,12 +963,12 @@ async function handleTrialWillEnd(
   // Send trial-ending notification via Resend
   const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
-    console.warn('[stripe/webhook] RESEND_API_KEY not configured — skipping trial_will_end email')
+    console.warn('[stripe/webhook] RESEND_API_KEY not configured - skipping trial_will_end email')
     return
   }
 
   const fromAddress = 'The English Hub <noreply@theenglishhub.app>'
-  const subject = 'Your free trial is ending soon — The English Hub'
+  const subject = 'Your free trial is ending soon - The English Hub'
 
   const html = [
     `<h2>Your trial is ending ${trialEndFormatted === 'soon' ? 'soon' : `on ${trialEndFormatted}`}</h2>`,
@@ -1005,7 +1005,7 @@ async function handleTrialWillEnd(
       )
     }
   } catch (err) {
-    // Log but do not fail the webhook — email is non-critical
+    // Log but do not fail the webhook - email is non-critical
     console.error('[stripe/webhook] Error sending trial_will_end email:', err)
   }
 }

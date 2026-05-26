@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -8,12 +8,12 @@ import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Pigeon English GCSE revision — Stephen Kelman',
+    title: 'Pigeon English revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Pigeon English GCSE revision - Stephen Kelman',
   },
-  title: 'Pigeon English revision guide — themes, characters, key quotes',
+  title: 'Pigeon English revision guide - themes, characters, key quotes',
   description:
-    "Pigeon English GCSE revision — Stephen Kelman's 2011 novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE Literature spec.",
+    "Pigeon English GCSE revision - Stephen Kelman's 2011 novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE Literature spec.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/pigeon-english',
   },

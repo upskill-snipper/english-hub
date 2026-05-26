@@ -7,7 +7,7 @@ import { t } from '@/lib/i18n/t'
  *
  * Body copy and CTAs are translated via the master dictionary so the
  * AR ("safeguard.*") variants are surfaced when the visitor is on the
- * Arabic locale. Keep "Childline" + the 0800 1111 number in Latin —
+ * Arabic locale. Keep "Childline" + the 0800 1111 number in Latin -
  * it's a UK regulator-recognised brand and the digits must remain
  * dial-able exactly as written.
  */

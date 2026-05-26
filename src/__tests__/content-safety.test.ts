@@ -8,7 +8,8 @@ function input(essay: string, questionText = 'Describe the theme of power in Mac
 
 /** Generate a long prose paragraph of N words */
 function prose(wordCount: number): string {
-  const sentence = 'The author uses vivid imagery and powerful language to convey the theme throughout the text in a compelling and thought provoking manner that engages the reader deeply'
+  const sentence =
+    'The author uses vivid imagery and powerful language to convey the theme throughout the text in a compelling and thought provoking manner that engages the reader deeply'
   const words = sentence.split(' ')
   const out: string[] = []
   for (let i = 0; i < wordCount; i++) {
@@ -26,7 +27,7 @@ describe('contentSafetyCheck', () => {
   })
 
   it('passes short creative writing with valid prose', () => {
-    // This was the bug that was fixed — short but legitimate creative writing
+    // This was the bug that was fixed - short but legitimate creative writing
     const essay = [
       'The rain fell softly on the cobblestones. She hesitated at the door, her hand trembling.',
       '"Come in," he whispered. The room smelled of old books and coffee.',
@@ -161,7 +162,9 @@ describe('contentSafetyCheck', () => {
   // ── Code-like content ──────────────────────────────────────────────────────
 
   it('catches code-like content with braces and semicolons', () => {
-    const code = Array(30).fill('function foo() { if (x > 0) { return x; } else { return 0; } }').join('\n')
+    const code = Array(30)
+      .fill('function foo() { if (x > 0) { return x; } else { return 0; } }')
+      .join('\n')
     const result = contentSafetyCheck(input(code))
     expect(result).not.toBeNull()
     expect(result).toContain('code')
@@ -187,9 +190,9 @@ describe('contentSafetyCheck', () => {
   it('catches keyboard mashing / gibberish', () => {
     // Mix numbers and special chars (avoiding code chars {};<>=()) so the
     // alpha-word ratio drops below 0.4, triggering the gibberish detector
-    const tokens = Array(100).fill(0).map((_, i) =>
-      i % 3 === 0 ? `${i * 7}` : i % 3 === 1 ? `#$%${i}` : `@!~${i}`
-    )
+    const tokens = Array(100)
+      .fill(0)
+      .map((_, i) => (i % 3 === 0 ? `${i * 7}` : i % 3 === 1 ? `#$%${i}` : `@!~${i}`))
     const gibberish = tokens.join(' ')
     const result = contentSafetyCheck(input(gibberish))
     expect(result).not.toBeNull()
@@ -197,7 +200,10 @@ describe('contentSafetyCheck', () => {
   })
 
   it('catches numeric gibberish', () => {
-    const nums = Array(100).fill(0).map((_, i) => `${i * 37 % 1000}`).join(' ')
+    const nums = Array(100)
+      .fill(0)
+      .map((_, i) => `${(i * 37) % 1000}`)
+      .join(' ')
     const result = contentSafetyCheck(input(nums))
     expect(result).not.toBeNull()
   })

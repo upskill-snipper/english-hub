@@ -88,7 +88,7 @@ function RegisterForm() {
   // Until this state existed the signup flow only carried a generic
   // "Terms" consent, which silently breached our own published Article 17
   // posture. The Zod registration schema in src/lib/auth.ts has long
-  // required consentDataTransfer when country === 'QA' — this UI now
+  // required consentDataTransfer when country === 'QA' - this UI now
   // surfaces both. Country values are constrained to the same set the
   // Prisma schema + lib/auth.ts already accept: UK / QA / OTHER.
   const [country, setCountry] = useState<'UK' | 'QA' | 'OTHER' | ''>('')
@@ -148,7 +148,7 @@ function RegisterForm() {
       }
     }
 
-    // PDPPL Article 17 — explicit cross-border consent required for QA
+    // PDPPL Article 17 - explicit cross-border consent required for QA
     // residents before the account can be created. The signup flow now
     // collects country of residence; if QA, a named-destination consent
     // panel must be ticked. Mirrors the requirement in the Zod schema in
@@ -167,7 +167,7 @@ function RegisterForm() {
 
     setLoading(true)
 
-    // Funnel: signup_started — email has been entered and submit clicked.
+    // Funnel: signup_started - email has been entered and submit clicked.
     // phCapture is consent-gated + minor-gated inside src/lib/posthog.ts.
     phCapture(PH_EVENTS.SIGNUP_STARTED, { accountType })
 
@@ -225,7 +225,7 @@ function RegisterForm() {
       // raw "User already registered" message. That branch lets an attacker
       // probe which emails have existing accounts on a platform used by
       // minors. We show the same neutral response regardless of whether
-      // the email was new, existed, or any other failure reason — the
+      // the email was new, existed, or any other failure reason - the
       // user's expected next action is the same in every case (check the
       // inbox for a verification email; Supabase sends one automatically
       // on duplicate signup to the existing account).
@@ -266,7 +266,7 @@ function RegisterForm() {
           marketing_opt_in: false,
         }),
         // PDPPL G7 (2026-05-20): persist declared country of residence and
-        // — for QA — the explicit Article 17 cross-border consent grant.
+        // - for QA - the explicit Article 17 cross-border consent grant.
         // Column names match the Supabase profiles schema; if the columns
         // don't exist yet a non-blocking error is logged (see the
         // diagnostic console.error below) and the signup still proceeds.
@@ -313,7 +313,7 @@ function RegisterForm() {
             }),
           })
         } catch (err) {
-          // Non-blocking — don't fail signup for parent notification error
+          // Non-blocking - don't fail signup for parent notification error
           console.error('Parent notification error:', err)
         }
       }
@@ -341,13 +341,13 @@ function RegisterForm() {
     }
 
     trackEvent('sign_up', { method: 'email' })
-    // Funnel: signup_completed — Supabase returned a verified/created user.
+    // Funnel: signup_completed - Supabase returned a verified/created user.
     phCapture(PH_EVENTS.SIGNUP_COMPLETED, { accountType })
 
     // Auto-login path: when Supabase email-confirmation is disabled (or the
     // user already had a confirmed identity), signUp() returns a session
     // alongside the user. We don't want to render "Check your email" in
-    // that case — the user is already logged in. Send them straight to the
+    // that case - the user is already logged in. Send them straight to the
     // dashboard with the welcome flag so onboarding fires. When there's no
     // session, fall back to the verification-pending success card.
     // When Supabase email-confirmation is OFF, signUp() returns a session and we go straight to /dashboard. When confirmation is ON, no session → fall through to the verification-pending success card below.
@@ -873,7 +873,7 @@ function RegisterForm() {
               {country === 'QA' && (
                 <div className="rounded-md border border-amber-300/50 bg-amber-50 dark:bg-amber-950/20 p-4 space-y-2 text-sm">
                   <p className="font-semibold">
-                    Qatar — explicit cross-border consent (PDPPL Article 17)
+                    Qatar - explicit cross-border consent (PDPPL Article 17)
                   </p>
                   <p>
                     Because you are signing up from Qatar, we need your explicit consent to transfer
@@ -882,26 +882,26 @@ function RegisterForm() {
                   </p>
                   <ul className="list-disc pl-5 text-sm">
                     <li>
-                      <strong>European Union (Frankfurt, Germany)</strong> — Supabase (account,
+                      <strong>European Union (Frankfurt, Germany)</strong> - Supabase (account,
                       essays, marking results); PostHog (analytics, consented only); Sentry (error
                       monitoring)
                     </li>
                     <li>
-                      <strong>United States</strong> — Anthropic (AI essay marking, contractually
+                      <strong>United States</strong> - Anthropic (AI essay marking, contractually
                       prohibited from training on your submissions); Postmark / Resend
                       (transactional email); Vercel (front end); Google Analytics 4 / Rewardful /
                       Trustpilot (consented only)
                     </li>
                     <li>
-                      <strong>United Kingdom</strong> — Microsoft Azure UK South (backend API);
+                      <strong>United Kingdom</strong> - Microsoft Azure UK South (backend API);
                       controller seat (Upskill Energy Limited)
                     </li>
                     <li>
-                      <strong>Ireland</strong> — Stripe (primary payment processor for European
+                      <strong>Ireland</strong> - Stripe (primary payment processor for European
                       customers)
                     </li>
                     <li>
-                      <strong>Global edge</strong> — Cloudflare (CDN + WAF, ephemeral; no personal
+                      <strong>Global edge</strong> - Cloudflare (CDN + WAF, ephemeral; no personal
                       data stored at the edge)
                     </li>
                   </ul>

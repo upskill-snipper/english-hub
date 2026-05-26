@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'IGCSE English Literature and Language revision for British international schools worldwide. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 covered.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'IGCSE English for international schools — The English Hub',
+    title: 'IGCSE English for international schools - The English Hub',
     description:
       'IGCSE English Literature and Language revision for British international schools worldwide. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 covered.',
     url: PAGE_URL,
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'IGCSE English for international schools — Pearson Edexcel and Cambridge covered',
+        alt: 'IGCSE English for international schools - Pearson Edexcel and Cambridge covered',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IGCSE English for international schools — The English Hub',
+    title: 'IGCSE English for international schools - The English Hub',
     description:
       'IGCSE English Literature and Language revision for British international schools worldwide. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 covered.',
     images: [OG_IMAGE],

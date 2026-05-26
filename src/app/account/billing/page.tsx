@@ -77,7 +77,7 @@ export default function BillingPage() {
 
   const isPro = profile?.subscription_status === 'pro'
 
-  // Trustpilot InviteJS — fire on mount for Premium subscribers returning to
+  // Trustpilot InviteJS - fire on mount for Premium subscribers returning to
   // the billing page (the Stripe checkout return URL). The server-side
   // `/api/trustpilot/fired-check` gates on age + opt-outs + dedup, so a
   // minor or opted-out user reaching this page is a silent no-op.
@@ -87,7 +87,7 @@ export default function BillingPage() {
       email: user.email ?? '',
       // Trustpilot Invite wants a given name, not the full name. Profile
       // stores `full_name` (one string) so we take the first whitespace-
-      // delimited token — good enough for Trustpilot's greeting, and empty
+      // delimited token - good enough for Trustpilot's greeting, and empty
       // string is an acceptable fallback per the InviteJS contract.
       name: (profile?.full_name ?? '').trim().split(/\s+/)[0] ?? '',
       referenceId: user.id,
@@ -107,7 +107,7 @@ export default function BillingPage() {
   // teacher at the student price.
   type CheckoutPlan = 'student_monthly' | 'student_annual' | 'teacher_monthly' | 'teacher_annual'
 
-  // Affiliate / promo code field state — same component shown on /pricing.
+  // Affiliate / promo code field state - same component shown on /pricing.
   // When a code is applied and the user clicks an eligible plan, we
   // route through /api/promo/redeem instead of /api/stripe/checkout.
   const codeField = useAffiliateCodeField()
@@ -118,7 +118,7 @@ export default function BillingPage() {
     setNeedsEmailVerification(false)
 
     // Code-redemption path: Student Annual AND Teacher Annual both
-    // qualify (3 May 2026 update — same flat £9.99 saving on each).
+    // qualify (3 May 2026 update - same flat £9.99 saving on each).
     if (codeField.appliedCode) {
       const productIdForPlan: 'student_annual' | 'teacher_annual' | null =
         plan === 'student_annual'
@@ -140,7 +140,7 @@ export default function BillingPage() {
             productId: productIdForPlan,
           }),
         })
-        // /api/promo/redeem uses successResponse — payload at top level,
+        // /api/promo/redeem uses successResponse - payload at top level,
         // no { data: ... } envelope.
         const json = (await res.json().catch(() => ({}))) as {
           url?: string
@@ -184,7 +184,7 @@ export default function BillingPage() {
       if (!res.ok) {
         // Soft email-verification gate (403). Render a calm inline notice
         // with a link to resend the verification email, instead of the
-        // generic red error banner — this is the one expected non-error
+        // generic red error banner - this is the one expected non-error
         // failure mode pre-checkout.
         if (res.status === 403 && data?.error === 'email_verification_required') {
           setNeedsEmailVerification(true)
@@ -197,7 +197,7 @@ export default function BillingPage() {
       }
 
       trackEvent('begin_checkout', { currency: 'GBP' })
-      // Funnel: subscription_started — 7-day free trial begins when the
+      // Funnel: subscription_started - 7-day free trial begins when the
       // user lands on Stripe Checkout. Consent + minor gating happens in
       // src/lib/posthog.ts.
       phCapture(PH_EVENTS.SUBSCRIPTION_STARTED, { plan })
@@ -359,7 +359,7 @@ export default function BillingPage() {
             <div className="space-y-4">
               <p className="text-muted-foreground text-sm">{t('account.billing.upgrade_blurb')}</p>
 
-              {/* Promo / affiliate code field — same component as /pricing.
+              {/* Promo / affiliate code field - same component as /pricing.
                   Renders above the plan options so users can apply a code
                   before clicking Upgrade. Only the Student Annual plan
                   honours codes right now; the field shows a clear error

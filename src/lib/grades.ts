@@ -51,7 +51,7 @@ export function percentageToGCSEGradeLabel(percentage: number): string {
 }
 
 /**
- * Format a percentage with its GCSE grade — grade first, percentage in brackets.
+ * Format a percentage with its GCSE grade - grade first, percentage in brackets.
  * e.g. "Grade 7 (72%)"
  *
  * @param percentage - Score as a percentage (0-100)
@@ -64,10 +64,10 @@ export function formatPercentageWithGrade(percentage: number): string {
 /**
  * Get a colour class for a GCSE grade (for use in Tailwind).
  * RAG colour scheme:
- *   Grade 9:     yellow-400 (gold) — exceeding / over-achieving
- *   Grade 7-8:   emerald-400 (green) — on track / good
- *   Grade 5-6:   amber-400 (amber) — needs attention
- *   Grade 1-4:   red-400 (red) — at risk / significantly behind
+ *   Grade 9:     yellow-400 (gold) - exceeding / over-achieving
+ *   Grade 7-8:   emerald-400 (green) - on track / good
+ *   Grade 5-6:   amber-400 (amber) - needs attention
+ *   Grade 1-4:   red-400 (red) - at risk / significantly behind
  */
 export function gcseGradeColor(grade: number): string {
   if (grade >= 9) return 'text-yellow-400'
@@ -104,15 +104,24 @@ export function gcseGradeBand(grade: number): string {
  */
 export function letterGradeToGCSE(letter: string): GCSEGrade {
   switch (letter.toUpperCase().trim()) {
-    case 'A*': return 9
-    case 'A': return 8
-    case 'B': return 7
-    case 'C': return 6
-    case 'D': return 5
-    case 'E': return 4
-    case 'F': return 3
-    case 'U': return 1
-    default: return 1
+    case 'A*':
+      return 9
+    case 'A':
+      return 8
+    case 'B':
+      return 7
+    case 'C':
+      return 6
+    case 'D':
+      return 5
+    case 'E':
+      return 4
+    case 'F':
+      return 3
+    case 'U':
+      return 1
+    default:
+      return 1
   }
 }
 
@@ -224,7 +233,7 @@ export function getGradeRecommendation(currentGrade: number): string {
  */
 export function getPersonalisedRecommendations(
   currentGrade: number,
-  weakAreas: string[]
+  weakAreas: string[],
 ): string[] {
   const baseRec = getGradeRecommendation(currentGrade)
   const recs: string[] = []
@@ -236,7 +245,11 @@ export function getPersonalisedRecommendations(
   // Add weak-area-specific recommendations
   for (const area of weakAreas.slice(0, 3)) {
     const lowerArea = typeof area === 'string' ? area.toLowerCase() : ''
-    if (lowerArea.includes('spelling') || lowerArea.includes('spag') || lowerArea.includes('grammar'))
+    if (
+      lowerArea.includes('spelling') ||
+      lowerArea.includes('spag') ||
+      lowerArea.includes('grammar')
+    )
       recs.push('Practise SPaG rules daily using the Grammar & Spelling flashcards.')
     else if (lowerArea.includes('paragraph') || lowerArea.includes('structure'))
       recs.push('Use PEEL paragraph frames to structure analytical responses.')
@@ -246,7 +259,11 @@ export function getPersonalisedRecommendations(
       recs.push('Learn 5 new academic vocabulary words per week from the Vocabulary Builder.')
     else if (lowerArea.includes('reading') || lowerArea.includes('comprehension'))
       recs.push('Complete daily 10-minute reading exercises to improve comprehension speed.')
-    else if (lowerArea.includes('exam') || lowerArea.includes('timed') || lowerArea.includes('time'))
+    else if (
+      lowerArea.includes('exam') ||
+      lowerArea.includes('timed') ||
+      lowerArea.includes('time')
+    )
       recs.push('Practise timed responses: 5 minutes planning, 35 minutes writing per essay.')
     else if (lowerArea.includes('analytical') || lowerArea.includes('analysis'))
       recs.push('Focus on explaining HOW and WHY writers use specific techniques.')
@@ -255,7 +272,9 @@ export function getPersonalisedRecommendations(
     else if (lowerArea.includes('poetry') || lowerArea.includes('comparison'))
       recs.push('Practise annotating unseen poems under timed conditions using the Poetry Toolkit.')
     else if (lowerArea.includes('context'))
-      recs.push('Integrate contextual knowledge throughout responses, not just in the introduction.')
+      recs.push(
+        'Integrate contextual knowledge throughout responses, not just in the introduction.',
+      )
   }
 
   return recs
@@ -265,9 +284,7 @@ export function getPersonalisedRecommendations(
  * Check whether a year group is post-Y9 (i.e. should use GCSE grades only).
  */
 export function isGCSEYearGroup(yearGroup: string | number): boolean {
-  const num = typeof yearGroup === 'string'
-    ? parseInt(yearGroup.replace(/\D/g, ''), 10)
-    : yearGroup
+  const num = typeof yearGroup === 'string' ? parseInt(yearGroup.replace(/\D/g, ''), 10) : yearGroup
   return num >= 10
 }
 

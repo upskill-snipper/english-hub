@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Frankenstein Essay Plans — GCSE Revision | The English Hub',
+    title: 'Frankenstein Essay Plans - GCSE Revision | The English Hub',
     description:
       'Five model GCSE essay plans for Frankenstein by Mary Shelley covering creation, monstrosity, isolation, ambition, and the Creature as a sympathetic figure.',
   },
-  title: 'Frankenstein Essay Plans — GCSE Revision',
+  title: 'Frankenstein Essay Plans - GCSE Revision',
   description:
     'Five model GCSE essay plans for Frankenstein by Mary Shelley covering creation, monstrosity, isolation, ambition, and the Creature as a sympathetic figure.',
   alternates: {

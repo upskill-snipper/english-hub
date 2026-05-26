@@ -12,7 +12,7 @@ type Difficulty = 'foundation' | 'higher' | null
 
 interface ResourceFilters {
   subject: Subject
-  /** @deprecated Exam board filtering removed — kept for type compatibility */
+  /** @deprecated Exam board filtering removed - kept for type compatibility */
   examBoards: ExamBoard[]
   topic: string
   type: ResourceType

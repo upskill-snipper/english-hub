@@ -503,7 +503,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A friend',
-      'Her mother — imagining her life before she became a parent',
+      'Her mother - imagining her life before she became a parent',
       'A lover',
       'Herself',
     ],
@@ -519,7 +519,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The mother belongs to the daughter',
-      'The speaker possessively claims her mother — "mine" suggests ownership of the mother by the child',
+      'The speaker possessively claims her mother - "mine" suggests ownership of the mother by the child',
       'The mother was sold',
       'It refers to a pet',
     ],
@@ -535,7 +535,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'As sad and lonely',
-      'As glamorous, carefree, and full of life — dancing, laughing, like Marilyn Monroe',
+      'As glamorous, carefree, and full of life - dancing, laughing, like Marilyn Monroe',
       'As strict and serious',
       'As elderly',
     ],
@@ -557,7 +557,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Comparing the mother to Marilyn Monroe — a glamorous, iconic figure — elevates her ordinary youth into something extraordinary and emphasises what was lost when motherhood began.',
+      'Comparing the mother to Marilyn Monroe - a glamorous, iconic figure - elevates her ordinary youth into something extraordinary and emphasises what was lost when motherhood began.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -567,7 +567,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Four quintains (four five-line stanzas) — 20 lines in total, written in free verse',
+      'Four quintains (four five-line stanzas) - 20 lines in total, written in free verse',
       'Free verse with no stanza divisions',
       'Blank verse',
     ],
@@ -584,13 +584,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The speaker wanted a sister',
-      'The speaker loved her mother before she was even born — love transcends chronology',
+      'The speaker loved her mother before she was even born - love transcends chronology',
       'The speaker is selfish',
       'It refers to a friend',
     ],
     correctIndex: 1,
     explanation:
-      'Duffy imagines wanting her mother even before being born. This impossibility intensifies the love — it is so powerful it breaks the rules of time itself.',
+      'Duffy imagines wanting her mother even before being born. This impossibility intensifies the love - it is so powerful it breaks the rules of time itself.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -616,13 +616,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Only past tense',
-      "She blends past and present tense, collapsing time — the mother's past life is imagined as vividly present",
+      "She blends past and present tense, collapsing time - the mother's past life is imagined as vividly present",
       'Only future tense',
       'Only present tense',
     ],
     correctIndex: 1,
     explanation:
-      "Duffy moves between past and present tense, making the mother's pre-parenthood life feel vivid and immediate. Time collapses — the past is as real as the present.",
+      "Duffy moves between past and present tense, making the mother's pre-parenthood life feel vivid and immediate. Time collapses - the past is as real as the present.",
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -631,7 +631,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What tension exists in the poem about motherhood?',
     type: 'multiple-choice',
     options: [
-      'None — motherhood is celebrated',
+      'None - motherhood is celebrated',
       "The daughter loves being the child, but recognises her birth took away her mother's freedom and glamour",
       'The mother regrets having children',
       'The daughter wants to leave home',
@@ -666,10 +666,10 @@ const REVISION_TOPICS = [
     summary:
       'Before You Were Mine explores possessive love, the impact of motherhood on identity, memory, and the tension between gratitude and guilt.',
     keyPoints: [
-      'Possessive love — the daughter claims ownership of her mother',
-      'Identity and sacrifice — motherhood changed who the mother was',
-      'Memory and imagination — the daughter recreates a past she never witnessed',
-      'Time — love transcends chronology',
+      'Possessive love - the daughter claims ownership of her mother',
+      'Identity and sacrifice - motherhood changed who the mother was',
+      'Memory and imagination - the daughter recreates a past she never witnessed',
+      'Time - love transcends chronology',
     ],
   },
   {
@@ -677,21 +677,21 @@ const REVISION_TOPICS = [
     summary:
       "Duffy uses glamorous imagery, pop culture references, sensory detail, and possessive language to recreate her mother's youth.",
     keyPoints: [
-      'Marilyn Monroe comparison — the mother as glamorous icon',
-      'The possessive title — a claim of ownership over the mother',
-      'Dancing and laughing imagery — freedom and joy before motherhood',
-      'Wanting the bold young mother even before birth — love that transcends time',
+      'Marilyn Monroe comparison - the mother as glamorous icon',
+      'The possessive title - a claim of ownership over the mother',
+      'Dancing and laughing imagery - freedom and joy before motherhood',
+      'Wanting the bold young mother even before birth - love that transcends time',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four quintains (five-line stanzas) — 20 lines total — with tense shifts that collapse past and present into a vivid, immediate experience.',
+      'Four quintains (five-line stanzas) - 20 lines total - with tense shifts that collapse past and present into a vivid, immediate experience.',
     keyPoints: [
-      'Four five-line stanzas (quintains) — 20 lines total',
-      'Tense shifts — past becomes present, making memories vivid',
-      'Direct address ("you") — intimate, personal tone',
-      'No regular rhyme — conversational, natural voice',
+      'Four five-line stanzas (quintains) - 20 lines total',
+      'Tense shifts - past becomes present, making memories vivid',
+      'Direct address ("you") - intimate, personal tone',
+      'No regular rhyme - conversational, natural voice',
     ],
   },
 ]
@@ -735,7 +735,7 @@ export default function BeforeYouWereMinePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Before You Were Mine by Carol Ann Duffy — Analysis & Annotations"
+        name="Before You Were Mine by Carol Ann Duffy - Analysis & Annotations"
         description="Line-by-line analysis of Before You Were Mine with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

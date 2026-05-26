@@ -3,7 +3,7 @@
 /**
  * Async-loads the Trustpilot InviteJS bootstrap script and registers the
  * integration key once. No-op when `NEXT_PUBLIC_TRUSTPILOT_INVITE_KEY` is
- * empty — keeps preview deployments clean.
+ * empty - keeps preview deployments clean.
  *
  * Loads from https://invitejs.trustpilot.com/tp.min.js. Registration is
  * idempotent: guarded by `window.__tpLoaded` so re-mounts (React strict

@@ -58,7 +58,7 @@ export default async function EssayStructurePage() {
     <>
       <HowToJsonLd
         name="Essay Structure Templates"
-        description="Proven templates and frameworks for structuring exam essays — introductions, PEEL paragraphs, topic sentences, linking, conclusions, and paragraph counts by mark allocation."
+        description="Proven templates and frameworks for structuring exam essays - introductions, PEEL paragraphs, topic sentences, linking, conclusions, and paragraph counts by mark allocation."
         totalTime="PT20M"
         url="https://theenglishhub.app/resources/exam-technique/essay-structure"
         steps={[
@@ -72,7 +72,7 @@ export default async function EssayStructurePage() {
           },
           {
             name: 'Lead each paragraph with a strong topic sentence',
-            text: "The first sentence of each paragraph must be specific, analytical, and directly address the question. Avoid signposting phrases like 'In this paragraph I will' — the topic sentence is your argument, not an announcement.",
+            text: "The first sentence of each paragraph must be specific, analytical, and directly address the question. Avoid signposting phrases like 'In this paragraph I will' - the topic sentence is your argument, not an announcement.",
           },
           {
             name: 'Link paragraphs to build an argument',
@@ -84,7 +84,7 @@ export default async function EssayStructurePage() {
           },
           {
             name: 'Close with a strong conclusion',
-            text: 'End with a definitive answer, wider significance, shift in perspective, or a cyclical link back to your introduction. Never introduce new evidence — your conclusion should leave the marker with a final insight.',
+            text: 'End with a definitive answer, wider significance, shift in perspective, or a cyclical link back to your introduction. Never introduce new evidence - your conclusion should leave the marker with a final insight.',
           },
         ]}
       />

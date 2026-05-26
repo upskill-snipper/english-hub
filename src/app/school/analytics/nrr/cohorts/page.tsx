@@ -126,7 +126,7 @@ export default function CohortsPage() {
             </p>
             <p>
               <span className="font-medium text-emerald-400">Green cells above 100%</span> mean
-              expansion outpaces churn — the cohort is now paying more than it did at signup.
+              expansion outpaces churn - the cohort is now paying more than it did at signup.
             </p>
             <p>
               <span className="font-medium text-clay-600">Amber</span> and

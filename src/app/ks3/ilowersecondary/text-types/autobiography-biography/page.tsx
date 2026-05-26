@@ -16,11 +16,11 @@ const GENRE_PROMPTS = GUIDED_READING_PROMPTS.nonFiction.Genre
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Autobiography & biography — iLowerSecondary English text types',
+    title: 'Autobiography & biography - iLowerSecondary English text types',
     description:
       'A reading-and-writing guide to autobiography and biography for LEH11: definitions, conventions, language features to spot, exam questions, and original annotated extracts with model answers.',
   },
-  title: 'Autobiography & biography — iLowerSecondary English',
+  title: 'Autobiography & biography - iLowerSecondary English',
   description:
     'A reading-and-writing guide to autobiography and biography for LEH11: definitions, conventions, language features to spot, exam questions, and original annotated extracts with model answers.',
   alternates: { canonical: PAGE_URL },
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
 const DEFINITIONS: { term: string; person: string; meaning: string }[] = [
   {
     term: 'Autobiography',
-    person: 'First person — written by the subject',
+    person: 'First person - written by the subject',
     meaning:
       'A person tells the story of their own life. The writer and the subject are the same person, so the account is shaped by memory, hindsight and personal feeling. Look for "I", "we", "my" and a reflective, looking-back tone.',
   },
   {
     term: 'Biography',
-    person: 'Third person — written about someone else',
+    person: 'Third person - written about someone else',
     meaning:
       'A writer tells the story of another person’s life, usually after researching it. The writer stands outside the events, so the account often feels more distanced and may weigh up evidence. Look for "he", "she", "they" and the subject’s name.',
   },
@@ -119,7 +119,7 @@ const EXAM_FOCUS: { focus: string; detail: string }[] = [
   {
     focus: 'Identify the text type and how you can tell',
     detail:
-      'A genre question may ask you to point at the language features that show this is autobiography or biography — first-person pronouns and a reflective tone, or third-person reference and a researched, distanced voice.',
+      'A genre question may ask you to point at the language features that show this is autobiography or biography - first-person pronouns and a reflective tone, or third-person reference and a researched, distanced voice.',
   },
   {
     focus: 'Retrieval and inference',
@@ -129,7 +129,7 @@ const EXAM_FOCUS: { focus: string; detail: string }[] = [
   {
     focus: 'Language at word level',
     detail:
-      'You may be asked how an emotive or reflective word changes how you see the subject — name the word, explain the connotation, and link it to the effect on the reader.',
+      'You may be asked how an emotive or reflective word changes how you see the subject - name the word, explain the connotation, and link it to the effect on the reader.',
   },
   {
     focus: 'Writer’s purpose and viewpoint',
@@ -158,7 +158,7 @@ const WRITING_STEPS: { step: string; detail: string }[] = [
   {
     step: 'Use hindsight and reflection',
     detail:
-      'Add a sentence that judges the moment from now — "I did not know it then, but…" — to show the reflective tone examiners reward in this form.',
+      'Add a sentence that judges the moment from now - "I did not know it then, but…" - to show the reflective tone examiners reward in this form.',
   },
   {
     step: 'Control the timeline with time markers',
@@ -183,7 +183,7 @@ const EXTRACTS: {
   {
     id: 'extract-auto',
     label: 'Extract 1',
-    kind: 'Autobiographical — first person, original',
+    kind: 'Autobiographical - first person, original',
     paragraphs: [
       'I was eleven the summer my grandmother taught me to mend a net. We sat on the cold step behind her house, the twine cutting small red lines into my fingers, and I complained until my voice ran out. She never once told me to be quiet. She simply waited, her hands moving in the slow, certain way I would spend the rest of my life trying to copy.',
       'I did not understand, then, that she was not really teaching me about nets. Years later, when my own work fell apart and there was no one beside me on any step, I finally heard what she had been saying with her hands. You learn patience or you learn nothing. I think of her every time I tie a knot, and I am no longer in any hurry.',
@@ -191,11 +191,11 @@ const EXTRACTS: {
     annotations: [
       {
         feature: 'First-person pronouns',
-        note: '"I was eleven", "my grandmother", "my fingers" — the writer is the subject; this is a self-account.',
+        note: '"I was eleven", "my grandmother", "my fingers" - the writer is the subject; this is a self-account.',
       },
       {
         feature: 'Past tense',
-        note: '"We sat", "She never once told me", "her hands moving" — recounting events already lived.',
+        note: '"We sat", "She never once told me", "her hands moving" - recounting events already lived.',
       },
       {
         feature: 'Hindsight / reflective tone',
@@ -218,7 +218,7 @@ const EXTRACTS: {
   {
     id: 'extract-bio',
     label: 'Extract 2',
-    kind: 'Biographical — third person, original',
+    kind: 'Biographical - third person, original',
     paragraphs: [
       'Esther Vane was forty years old before she repaired her first engine, and almost sixty before anyone outside her village had heard her name. She had grown up believing, as she was told, that machines were not for her. For nearly two decades she ignored that belief only in private, taking watches apart at the kitchen table and rebuilding them by candlelight while the house slept.',
       'By the time the regional newspaper finally photographed her workshop, Vane had trained eleven young engineers, nine of them women. She rarely spoke about the early years and never asked for sympathy. Those who knew her best say she measured her life not by the recognition that came late, but by the quiet hours she had refused to waste.',
@@ -226,11 +226,11 @@ const EXTRACTS: {
     annotations: [
       {
         feature: 'Third-person reference',
-        note: '"Esther Vane was forty", "She had grown up", "her workshop" — a writer reporting on another person.',
+        note: '"Esther Vane was forty", "She had grown up", "her workshop" - a writer reporting on another person.',
       },
       {
         feature: 'Past tense',
-        note: '"was forty", "had grown up", "ignored that belief" — a researched account of events that have happened.',
+        note: '"was forty", "had grown up", "ignored that belief" - a researched account of events that have happened.',
       },
       {
         feature: 'Time markers',
@@ -242,7 +242,7 @@ const EXTRACTS: {
       },
       {
         feature: 'Viewpoint of the biographer',
-        note: '"never asked for sympathy" and "refused to waste" shape the reader to admire her — biography is not neutral.',
+        note: '"never asked for sympathy" and "refused to waste" shape the reader to admire her - biography is not neutral.',
       },
       {
         feature: 'Sourcing',
@@ -265,7 +265,7 @@ const PRACTICE: {
     ao: 'RAO4 · genre identification',
     marks: '(2 marks)',
     model:
-      'It uses first-person pronouns — "I was eleven", "my grandmother" — which shows the writer is also the subject. It also uses a reflective, hindsight tone — "I did not understand, then" — judging the writer’s own past from the present.',
+      'It uses first-person pronouns - "I was eleven", "my grandmother" - which shows the writer is also the subject. It also uses a reflective, hindsight tone - "I did not understand, then" - judging the writer’s own past from the present.',
     markNote:
       'One mark for each correctly named feature with appropriate evidence (first-person pronouns; reflective / hindsight tone; direct address). Naming a feature without evidence is not credited.',
   },
@@ -301,14 +301,14 @@ const PRACTICE: {
 // ── Original "write the opening" task with model ────────────────────
 const WRITE_TASK = {
   prompt:
-    'Write the opening of an autobiographical piece (about 120–150 words) describing a moment when you first tried something difficult. Write in the first person and include at least one moment of hindsight.',
+    'Write the opening of an autobiographical piece (about 120-150 words) describing a moment when you first tried something difficult. Write in the first person and include at least one moment of hindsight.',
   model: [
-    'The first time I stood in front of a crowd, I forgot my own name. I was thirteen. The hall smelt of floor polish and nerves — most of them mine — and the small card in my hand had stopped meaning anything, as if the words had quietly walked off it while I waited.',
+    'The first time I stood in front of a crowd, I forgot my own name. I was thirteen. The hall smelt of floor polish and nerves - most of them mine - and the small card in my hand had stopped meaning anything, as if the words had quietly walked off it while I waited.',
     'I got through perhaps four sentences before my voice cracked, and I remember staring at a single light on the ceiling as though it might rescue me. It did not. Somehow, I finished.',
     'I did not know it then, but that ordinary, awful afternoon was the most useful thing that happened to me all year. I have been nervous many times since, in rooms far larger than that one. I have never again been quite that frightened. Looking back, I am almost grateful to the boy who forgot his name, because everything I can do now began with him.',
   ],
   markNote:
-    'A strong response (toward S3–S4 on WAO1) maintains the autobiographical form throughout, selects one significant moment rather than summarising, and includes genuine hindsight ("I did not know it then…"). On WAO2, sentences are varied and correctly demarcated, with confident commas and dashes.',
+    'A strong response (toward S3-S4 on WAO1) maintains the autobiographical form throughout, selects one significant moment rather than summarising, and includes genuine hindsight ("I did not know it then…"). On WAO2, sentences are varied and correctly demarcated, with confident commas and dashes.',
 }
 
 export default async function AutobiographyBiographyPage() {

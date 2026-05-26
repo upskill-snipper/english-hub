@@ -82,7 +82,12 @@ interface GeneratedTask {
 // Constants
 // ---------------------------------------------------------------------------
 
-const TASK_TYPES: { value: TaskType; label: string; icon: React.ReactNode; subTypes?: { value: EssaySubType; label: string }[] }[] = [
+const TASK_TYPES: {
+  value: TaskType
+  label: string
+  icon: React.ReactNode
+  subTypes?: { value: EssaySubType; label: string }[]
+}[] = [
   {
     value: 'essay_writing',
     label: 'Essay Writing',
@@ -99,7 +104,17 @@ const TASK_TYPES: { value: TaskType; label: string; icon: React.ReactNode; subTy
   { value: 'comparison', label: 'Comparison', icon: <GitCompare className="h-4 w-4" /> },
 ]
 
-const LEVEL_CONFIG: Record<DifferentiationLevel, { label: string; tag: string; colour: string; bgColour: string; borderColour: string; description: string }> = {
+const LEVEL_CONFIG: Record<
+  DifferentiationLevel,
+  {
+    label: string
+    tag: string
+    colour: string
+    bgColour: string
+    borderColour: string
+    description: string
+  }
+> = {
   foundation: {
     label: 'Foundation',
     tag: 'LA',
@@ -161,13 +176,13 @@ function generateTasks(
         id: `fallback-${taskType}-${level}`,
         taskType,
         level,
-        title: `${taskType} — ${level}`,
+        title: `${taskType} - ${level}`,
         description: 'Custom task',
         frame: ['Complete the task as instructed by your teacher.'],
       }
     }
 
-    // Gather sentence starters — use scaffold's own + skill-based starters
+    // Gather sentence starters - use scaffold's own + skill-based starters
     const skillMap: Record<TaskType, string> = {
       essay_writing: 'Analysis',
       extract_analysis: 'Analysis',
@@ -196,9 +211,10 @@ function generateTasks(
     const tips = scaffold.tips ?? []
 
     // Build task instructions
-    const taskLabel = taskType === 'essay_writing' && essaySubType
-      ? `${essaySubType.charAt(0).toUpperCase() + essaySubType.slice(1)} Essay`
-      : TASK_TYPES.find((t) => t.value === taskType)?.label ?? taskType
+    const taskLabel =
+      taskType === 'essay_writing' && essaySubType
+        ? `${essaySubType.charAt(0).toUpperCase() + essaySubType.slice(1)} Essay`
+        : (TASK_TYPES.find((t) => t.value === taskType)?.label ?? taskType)
 
     const taskInstructions = customPrompt
       ? `${customPrompt}\n\nTopic/Text: ${topic}`
@@ -224,33 +240,41 @@ function generateTasks(
 
 function buildPrintHtml(tasks: GeneratedTask[], which: 'all' | DifferentiationLevel): string {
   const filtered = which === 'all' ? tasks : tasks.filter((t) => t.level === which)
-  const sections = filtered.map((task) => {
-    const cfg = LEVEL_CONFIG[task.level]
-    const frameHtml = task.scaffold.frame.map((line) =>
-      line === '' ? '<br/>' : `<p style="margin:2px 0;font-family:serif;">${line}</p>`
-    ).join('')
+  const sections = filtered
+    .map((task) => {
+      const cfg = LEVEL_CONFIG[task.level]
+      const frameHtml = task.scaffold.frame
+        .map((line) =>
+          line === '' ? '<br/>' : `<p style="margin:2px 0;font-family:serif;">${line}</p>`,
+        )
+        .join('')
 
-    const startersHtml = task.sentenceStarters.length > 0
-      ? `<div style="margin-top:12px;"><strong>Sentence Starters:</strong><ul>${task.sentenceStarters.map((s) => `<li>${s}</li>`).join('')}</ul></div>`
-      : ''
+      const startersHtml =
+        task.sentenceStarters.length > 0
+          ? `<div style="margin-top:12px;"><strong>Sentence Starters:</strong><ul>${task.sentenceStarters.map((s) => `<li>${s}</li>`).join('')}</ul></div>`
+          : ''
 
-    const wordBankHtml = task.wordBank.length > 0
-      ? `<div style="margin-top:12px;"><strong>Word Bank:</strong> ${task.wordBank.join(' &bull; ')}</div>`
-      : ''
+      const wordBankHtml =
+        task.wordBank.length > 0
+          ? `<div style="margin-top:12px;"><strong>Word Bank:</strong> ${task.wordBank.join(' &bull; ')}</div>`
+          : ''
 
-    const vocabHtml = task.vocabularySupport.length > 0
-      ? `<div style="margin-top:12px;"><strong>Key Vocabulary:</strong><table border="1" cellpadding="4" cellspacing="0" style="border-collapse:collapse;width:100%;margin-top:4px;"><tr><th>Term</th><th>Definition</th></tr>${task.vocabularySupport.map((v) => `<tr><td><strong>${v.term}</strong></td><td>${v.definition}</td></tr>`).join('')}</table></div>`
-      : ''
+      const vocabHtml =
+        task.vocabularySupport.length > 0
+          ? `<div style="margin-top:12px;"><strong>Key Vocabulary:</strong><table border="1" cellpadding="4" cellspacing="0" style="border-collapse:collapse;width:100%;margin-top:4px;"><tr><th>Term</th><th>Definition</th></tr>${task.vocabularySupport.map((v) => `<tr><td><strong>${v.term}</strong></td><td>${v.definition}</td></tr>`).join('')}</table></div>`
+          : ''
 
-    const quotesHtml = task.quotes.length > 0
-      ? `<div style="margin-top:12px;"><strong>Key Quotations:</strong><ul>${task.quotes.map((q) => `<li>"${q.quote}"${q.speaker ? ` — ${q.speaker}` : ''} <em>(${q.context})</em></li>`).join('')}</ul></div>`
-      : ''
+      const quotesHtml =
+        task.quotes.length > 0
+          ? `<div style="margin-top:12px;"><strong>Key Quotations:</strong><ul>${task.quotes.map((q) => `<li>"${q.quote}"${q.speaker ? ` - ${q.speaker}` : ''} <em>(${q.context})</em></li>`).join('')}</ul></div>`
+          : ''
 
-    const tipsHtml = task.tips.length > 0
-      ? `<div style="margin-top:12px;padding:8px;border:1px dashed #888;"><strong>Tips:</strong><ul>${task.tips.map((t) => `<li>${t}</li>`).join('')}</ul></div>`
-      : ''
+      const tipsHtml =
+        task.tips.length > 0
+          ? `<div style="margin-top:12px;padding:8px;border:1px dashed #888;"><strong>Tips:</strong><ul>${task.tips.map((t) => `<li>${t}</li>`).join('')}</ul></div>`
+          : ''
 
-    return `
+      return `
       <div style="page-break-after:always;padding:24px;">
         <h2 style="margin-bottom:4px;">${cfg.label} (${cfg.tag})</h2>
         <p style="color:#666;margin-top:0;">${cfg.description}</p>
@@ -266,7 +290,8 @@ function buildPrintHtml(tasks: GeneratedTask[], which: 'all' | DifferentiationLe
         ${tipsHtml}
       </div>
     `
-  }).join('')
+    })
+    .join('')
 
   return `<!DOCTYPE html><html><head><title>Differentiated Resources</title><style>body{font-family:system-ui,sans-serif;font-size:14px;color:#222;}h2{font-size:20px;}h3{font-size:16px;margin-top:16px;}ul{margin:4px 0;padding-left:20px;}table{font-size:13px;}</style></head><body>${sections}</body></html>`
 }
@@ -295,13 +320,22 @@ function ClassDataBanner({ dist }: { dist: ClassDistribution }) {
           <span className="text-sm font-medium">Based on your class data:</span>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Badge variant="outline" className="border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/30">
+          <Badge
+            variant="outline"
+            className="border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-700 dark:bg-amber-950/30"
+          >
             {dist.foundation} students need Foundation
           </Badge>
-          <Badge variant="outline" className="border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-700 dark:bg-blue-950/30 dark:text-blue-400">
+          <Badge
+            variant="outline"
+            className="border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-700 dark:bg-blue-950/30 dark:text-blue-400"
+          >
             {dist.core} students need Core
           </Badge>
-          <Badge variant="outline" className="border-purple-300 bg-purple-50 text-purple-700 dark:border-purple-700 dark:bg-purple-950/30 dark:text-purple-400">
+          <Badge
+            variant="outline"
+            className="border-purple-300 bg-purple-50 text-purple-700 dark:border-purple-700 dark:bg-purple-950/30 dark:text-purple-400"
+          >
             {dist.extension} students need Extension
           </Badge>
         </div>
@@ -329,18 +363,22 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
       ...(task.sentenceStarters.length > 0
         ? ['SENTENCE STARTERS:', ...task.sentenceStarters.map((s) => `  • ${s}`), '']
         : []),
-      ...(task.wordBank.length > 0
-        ? ['WORD BANK:', task.wordBank.join(', '), '']
-        : []),
+      ...(task.wordBank.length > 0 ? ['WORD BANK:', task.wordBank.join(', '), ''] : []),
       ...(task.vocabularySupport.length > 0
-        ? ['KEY VOCABULARY:', ...task.vocabularySupport.map((v) => `  ${v.term}: ${v.definition}`), '']
+        ? [
+            'KEY VOCABULARY:',
+            ...task.vocabularySupport.map((v) => `  ${v.term}: ${v.definition}`),
+            '',
+          ]
         : []),
       ...(task.quotes.length > 0
-        ? ['KEY QUOTATIONS:', ...task.quotes.map((q) => `  "${q.quote}"${q.speaker ? ` — ${q.speaker}` : ''}`), '']
+        ? [
+            'KEY QUOTATIONS:',
+            ...task.quotes.map((q) => `  "${q.quote}"${q.speaker ? ` - ${q.speaker}` : ''}`),
+            '',
+          ]
         : []),
-      ...(task.tips.length > 0
-        ? ['TIPS:', ...task.tips.map((t) => `  • ${t}`)]
-        : []),
+      ...(task.tips.length > 0 ? ['TIPS:', ...task.tips.map((t) => `  • ${t}`)] : []),
     ].join('\n')
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true)
@@ -359,9 +397,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
                 {cfg.tag}
               </Badge>
             </CardTitle>
-            <CardDescription className="mt-1 text-xs">
-              {cfg.description}
-            </CardDescription>
+            <CardDescription className="mt-1 text-xs">{cfg.description}</CardDescription>
           </div>
           <div className="flex gap-1">
             <Button
@@ -389,7 +425,9 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
         {/* Task instructions */}
         <div>
           <p className="text-sm font-semibold">Task</p>
-          <p className="mt-1 text-sm text-muted-foreground whitespace-pre-line">{task.taskInstructions}</p>
+          <p className="mt-1 text-sm text-muted-foreground whitespace-pre-line">
+            {task.taskInstructions}
+          </p>
         </div>
 
         <Separator />
@@ -440,7 +478,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
               {task.vocabularySupport.map((v, i) => (
                 <div key={i} className="text-sm">
                   <span className="font-medium">{v.term}</span>
-                  <span className="text-muted-foreground"> — {v.definition}</span>
+                  <span className="text-muted-foreground"> - {v.definition}</span>
                 </div>
               ))}
             </div>
@@ -456,7 +494,7 @@ function TaskPreviewCard({ task }: { task: GeneratedTask }) {
                 <div key={i} className="rounded-md border p-2 text-sm">
                   <p className="italic">&ldquo;{q.quote}&rdquo;</p>
                   <p className="mt-0.5 text-xs text-muted-foreground">
-                    {q.speaker && <span className="font-medium">{q.speaker} — </span>}
+                    {q.speaker && <span className="font-medium">{q.speaker} - </span>}
                     {q.context}
                     {q.technique && <span className="ml-1 text-xs">({q.technique})</span>}
                   </p>
@@ -553,7 +591,10 @@ export function DifferentiationBuilder() {
             {taskType === 'essay_writing' && selectedTaskConfig?.subTypes && (
               <div className="space-y-2">
                 <Label>Essay Type</Label>
-                <Select value={essaySubType} onValueChange={(v) => setEssaySubType(v as EssaySubType)}>
+                <Select
+                  value={essaySubType}
+                  onValueChange={(v) => setEssaySubType(v as EssaySubType)}
+                >
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
@@ -632,11 +673,7 @@ export function DifferentiationBuilder() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="text-xl font-semibold">Preview</h2>
             <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => handlePrint(generated, 'all')}
-              >
+              <Button variant="outline" size="sm" onClick={() => handlePrint(generated, 'all')}>
                 <Printer className="mr-2 h-4 w-4" />
                 Print All
               </Button>
@@ -656,10 +693,30 @@ export function DifferentiationBuilder() {
 
           <Tabs value={previewTab} onValueChange={setPreviewTab}>
             <TabsList className="bg-transparent gap-1.5 p-0">
-              <TabsTrigger value="side-by-side" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Side by Side</TabsTrigger>
-              <TabsTrigger value="foundation" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Foundation</TabsTrigger>
-              <TabsTrigger value="core" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Core</TabsTrigger>
-              <TabsTrigger value="extension" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Extension</TabsTrigger>
+              <TabsTrigger
+                value="side-by-side"
+                className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+              >
+                Side by Side
+              </TabsTrigger>
+              <TabsTrigger
+                value="foundation"
+                className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+              >
+                Foundation
+              </TabsTrigger>
+              <TabsTrigger
+                value="core"
+                className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+              >
+                Core
+              </TabsTrigger>
+              <TabsTrigger
+                value="extension"
+                className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+              >
+                Extension
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="side-by-side">
@@ -673,9 +730,11 @@ export function DifferentiationBuilder() {
             {LEVELS.map((level) => (
               <TabsContent key={level} value={level}>
                 <div className="max-w-2xl">
-                  {generated.filter((t) => t.level === level).map((task) => (
-                    <TaskPreviewCard key={task.level} task={task} />
-                  ))}
+                  {generated
+                    .filter((t) => t.level === level)
+                    .map((task) => (
+                      <TaskPreviewCard key={task.level} task={task} />
+                    ))}
                 </div>
               </TabsContent>
             ))}
@@ -705,11 +764,18 @@ export function DifferentiationBuilder() {
                   const cfg = LEVEL_CONFIG[level]
                   const banks = sentenceStarterBanks.filter((b) => b.level === level)
                   return (
-                    <div key={level} className={`rounded-lg border-2 ${cfg.borderColour} ${cfg.bgColour} p-4`}>
-                      <p className={`text-sm font-semibold ${cfg.colour}`}>{cfg.label} ({cfg.tag})</p>
+                    <div
+                      key={level}
+                      className={`rounded-lg border-2 ${cfg.borderColour} ${cfg.bgColour} p-4`}
+                    >
+                      <p className={`text-sm font-semibold ${cfg.colour}`}>
+                        {cfg.label} ({cfg.tag})
+                      </p>
                       {banks.map((bank) => (
                         <div key={bank.id} className="mt-3">
-                          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{bank.skill}</p>
+                          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                            {bank.skill}
+                          </p>
                           <ul className="mt-1 list-disc pl-4 text-sm space-y-0.5">
                             {bank.starters.map((s, i) => (
                               <li key={i}>{s}</li>
@@ -734,13 +800,16 @@ export function DifferentiationBuilder() {
                         const sheet = getVocabularySheet(text, level)
                         if (!sheet) return null
                         return (
-                          <div key={level} className={`rounded-lg border-2 ${cfg.borderColour} ${cfg.bgColour} p-4`}>
+                          <div
+                            key={level}
+                            className={`rounded-lg border-2 ${cfg.borderColour} ${cfg.bgColour} p-4`}
+                          >
                             <p className={`text-sm font-semibold ${cfg.colour}`}>{cfg.label}</p>
                             <div className="mt-2 space-y-2">
                               {sheet.words.map((w, i) => (
                                 <div key={i} className="text-sm">
                                   <span className="font-medium">{w.term}</span>
-                                  <span className="text-muted-foreground"> — {w.definition}</span>
+                                  <span className="text-muted-foreground"> - {w.definition}</span>
                                 </div>
                               ))}
                             </div>
@@ -759,30 +828,41 @@ export function DifferentiationBuilder() {
                   <div key={text}>
                     <h3 className="text-base font-semibold">{text}</h3>
                     <div className="mt-2 grid gap-4 md:grid-cols-3">
-                      {(['accessible', 'moderate', 'challenging'] as const).map((difficulty, idx) => {
-                        const level = LEVELS[idx]
-                        const cfg = LEVEL_CONFIG[level]
-                        const bank = getQuoteBank(text, difficulty)
-                        if (!bank) return null
-                        return (
-                          <div key={difficulty} className={`rounded-lg border-2 ${cfg.borderColour} ${cfg.bgColour} p-4`}>
-                            <p className={`text-sm font-semibold ${cfg.colour}`}>
-                              {cfg.label} — {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
-                            </p>
-                            <div className="mt-2 space-y-2">
-                              {bank.quotes.map((q, i) => (
-                                <div key={i} className="rounded-md border bg-background p-2 text-sm">
-                                  <p className="italic">&ldquo;{q.quote}&rdquo;</p>
-                                  <p className="mt-0.5 text-xs text-muted-foreground">
-                                    {q.speaker && <span className="font-medium">{q.speaker}</span>}
-                                    {q.technique && <span className="ml-1">({q.technique})</span>}
-                                  </p>
-                                </div>
-                              ))}
+                      {(['accessible', 'moderate', 'challenging'] as const).map(
+                        (difficulty, idx) => {
+                          const level = LEVELS[idx]
+                          const cfg = LEVEL_CONFIG[level]
+                          const bank = getQuoteBank(text, difficulty)
+                          if (!bank) return null
+                          return (
+                            <div
+                              key={difficulty}
+                              className={`rounded-lg border-2 ${cfg.borderColour} ${cfg.bgColour} p-4`}
+                            >
+                              <p className={`text-sm font-semibold ${cfg.colour}`}>
+                                {cfg.label} -{' '}
+                                {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
+                              </p>
+                              <div className="mt-2 space-y-2">
+                                {bank.quotes.map((q, i) => (
+                                  <div
+                                    key={i}
+                                    className="rounded-md border bg-background p-2 text-sm"
+                                  >
+                                    <p className="italic">&ldquo;{q.quote}&rdquo;</p>
+                                    <p className="mt-0.5 text-xs text-muted-foreground">
+                                      {q.speaker && (
+                                        <span className="font-medium">{q.speaker}</span>
+                                      )}
+                                      {q.technique && <span className="ml-1">({q.technique})</span>}
+                                    </p>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        )
-                      })}
+                          )
+                        },
+                      )}
                     </div>
                   </div>
                 ))}

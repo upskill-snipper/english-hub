@@ -1,7 +1,7 @@
-// ─── Smart IP — Paid-marker QA: gold-set calibration & inter-marker agreement ─
+// ─── Smart IP - Paid-marker QA: gold-set calibration & inter-marker agreement ─
 //
 // PURE functions only. No I/O, no network, no `@/...` imports, no Date.now(),
-// no Math.random() — every output is a deterministic function of its inputs so
+// no Math.random() - every output is a deterministic function of its inputs so
 // the API layer and the unit tests share one auditable implementation.
 //
 // Two QA signals are computed here:
@@ -11,7 +11,7 @@
 //      blind into a marker's queue. When that marker APPROVES the item, their
 //      `teacher_moderations` decision is compared to `gold_expected`:
 //        • mark-level   exact / within ±1 / mean-abs-error  (raw marks)
-//        • grade-level  QWK vs gold        (reuses evals/stats.ts — the same
+//        • grade-level  QWK vs gold        (reuses evals/stats.ts - the same
 //                                            Art. 15 ordinal-kappa core)
 //
 //   2. Inter-marker agreement.  Where the SAME logical script
@@ -23,12 +23,12 @@
 //      below an absolute floor, OR their most-recent N gold items dropped a
 //      configurable margin below their own earlier baseline (regression).
 //
-// gold_expected is the expert ground truth and is ADMIN-ONLY — these functions
+// gold_expected is the expert ground truth and is ADMIN-ONLY - these functions
 // never travel to a marker; the marker console is a different workspace. The
 // only place gold leaves the DB is the admin-gated routes that call this file.
 //
 // Statistics REUSE: grade-scale agreement (exact/adjacent/QWK/distance) is
-// delegated to `evals/stats.ts` (the EU AI Act Art. 15 core) — NOT duplicated.
+// delegated to `evals/stats.ts` (the EU AI Act Art. 15 core) - NOT duplicated.
 // Raw-mark exact/±1/MAE are computed here because that core operates on the
 // ordinal grade scale, not arbitrary integer mark totals.
 // ────────────────────────────────────────────────────────────────────────────
@@ -42,23 +42,23 @@ import { exactAgreement as gradeExactAgreement, quadraticWeightedKappa } from '.
 // essay is inherently noisy. Tunable via `QaThresholds` per call; these are the
 // defaults the scorecard publishes.
 //
-//   • GOLD_EXACT_MIN      0.55  — ≥55% of approved gold items must hit the
+//   • GOLD_EXACT_MIN      0.55  - ≥55% of approved gold items must hit the
 //                                 expert mark EXACTLY. Below ⇒ accuracy flag.
-//   • GOLD_WITHIN1_MIN    0.85  — ≥85% must land within ±1 mark of expert.
+//   • GOLD_WITHIN1_MIN    0.85  - ≥85% must land within ±1 mark of expert.
 //                                 ±1 is the accepted marking tolerance, so a
 //                                 marker below this is materially miscalibrated.
-//   • GOLD_QWK_MIN        0.70  — grade-level QWK vs gold ≥ 0.70 ("substantial"
-//                                 agreement on the Landis–Koch scale).
-//   • DRIFT_WINDOW        8     — size of the "recent" gold window (last N, by
+//   • GOLD_QWK_MIN        0.70  - grade-level QWK vs gold ≥ 0.70 ("substantial"
+//                                 agreement on the Landis-Koch scale).
+//   • DRIFT_WINDOW        8     - size of the "recent" gold window (last N, by
 //                                 moderation time) used for regression checks.
-//   • DRIFT_MIN_BASELINE  4     — need ≥4 gold items BEFORE the window to have
+//   • DRIFT_MIN_BASELINE  4     - need ≥4 gold items BEFORE the window to have
 //                                 a meaningful earlier baseline to regress from.
-//   • DRIFT_DROP          0.15  — flag drift if recent-window exact-rate is
+//   • DRIFT_DROP          0.15  - flag drift if recent-window exact-rate is
 //                                 ≥15 percentage points below the earlier
 //                                 baseline exact-rate (sustained regression).
 //
 // A marker with too few gold items to judge is reported `insufficientData`
-// (NOT flagged) — we never fail a marker on noise.
+// (NOT flagged) - we never fail a marker on noise.
 export interface QaThresholds {
   goldExactMin: number
   goldWithin1Min: number
@@ -110,7 +110,7 @@ export interface GoldOutcomeRow {
   markerMark: number | null
   /** The marker's grade on this item (teacher_moderations.teacher_grade). */
   markerGrade: string | null
-  /** Moderation timestamp (ISO) — used only for drift ordering. */
+  /** Moderation timestamp (ISO) - used only for drift ordering. */
   decidedAt: string | null
 }
 
@@ -205,7 +205,7 @@ export function perMarkerGoldAccuracy(rows: readonly GoldOutcomeRow[]): PerMarke
       }
       // Grade-level: needs both an expert grade and a marker grade. Paired
       // positionally for QWK (evals/stats.ts clamps unknown grades, never
-      // silently drops — a garbled marker grade is penalised, as intended).
+      // silently drops - a garbled marker grade is penalised, as intended).
       if (str(it.goldExpected.grade) && str(it.markerGrade)) {
         goldGrades.push(it.goldExpected.grade)
         markerGrades.push(it.markerGrade)
@@ -502,7 +502,7 @@ export function markerDriftFlags(
     })
   }
 
-  // Flagged markers first, then by worst exact drop — triage order.
+  // Flagged markers first, then by worst exact drop - triage order.
   return out.sort((a, b) => {
     if (a.flagged !== b.flagged) return a.flagged ? -1 : 1
     return b.exactDrop - a.exactDrop

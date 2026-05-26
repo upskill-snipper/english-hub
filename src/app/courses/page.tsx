@@ -1,10 +1,10 @@
 /**
- * /courses — server-rendered catalogue (SEO item #23).
+ * /courses - server-rendered catalogue (SEO item #23).
  *
  * This page used to be 'use client' with a `useEffect(loadAllCourses)`, which
  * meant crawlers and first-paint users saw "Loading...". Now the course list
  * is fetched on the server via `loadAllCourses()` (a memoised dynamic-import
- * aggregator — see `@/data/course-loader`) and handed to the client island as
+ * aggregator - see `@/data/course-loader`) and handed to the client island as
  * `initialCourses`, so the rendered HTML contains real category + course
  * content on first byte. Interactive filters, search and board-hydration
  * still live in the client island.
@@ -19,7 +19,7 @@ import CourseCatalogueClient from './catalogue-client'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Courses — The English Hub',
+    title: 'Courses - The English Hub',
     description:
       'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   alternates: { canonical: selfCanonical('/courses') },
 }
 
-// Revalidate the aggregated course list every 6h (21600 seconds) — the
+// Revalidate the aggregated course list every 6h (21600 seconds) - the
 // underlying data is code-imported so it only changes on deploy, but this
 // lets ISR re-generate without a full rebuild if we ever move to DB-backed
 // courses. Next.js statically analyses this value, so it MUST be a plain
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export const revalidate = 21600
 
 // Categories used for the server-rendered SEO skeleton. Kept in sync with the
-// client island — if you change categories there, change them here too.
+// client island - if you change categories there, change them here too.
 const SEO_CATEGORIES = [
   { id: 'language', label: 'Language' },
   { id: 'literature', label: 'Literature' },
@@ -48,7 +48,7 @@ const SEO_CATEGORIES = [
 
 export default async function CoursesPage() {
   const courses = await loadAllCourses()
-  // Top 6 — crawlers + the above-the-fold paint get real course titles + links
+  // Top 6 - crawlers + the above-the-fold paint get real course titles + links
   // as static HTML without waiting for the client island to hydrate.
   const topSix = courses.slice(0, 6)
 
@@ -81,7 +81,7 @@ export default async function CoursesPage() {
           {topSix.map((c) => (
             <li key={c.id}>
               <Link href={`/courses/${c.id}`}>{c.title}</Link>
-              {c.subtitle ? ` — ${c.subtitle}` : null}
+              {c.subtitle ? ` - ${c.subtitle}` : null}
             </li>
           ))}
         </ul>

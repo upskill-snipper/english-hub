@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Frankenstein Themes — Deep Study | The English Hub',
+    title: 'Frankenstein Themes - Deep Study | The English Hub',
     description:
       'In-depth GCSE theme analysis for Frankenstein by Mary Shelley: Creation & Responsibility, Nature vs Nurture, Isolation, Knowledge, Ambition, and Monstrosity.',
   },
-  title: 'Frankenstein Themes — Deep Study',
+  title: 'Frankenstein Themes - Deep Study',
   description:
     'In-depth GCSE theme analysis for Frankenstein by Mary Shelley: Creation & Responsibility, Nature vs Nurture, Isolation, Knowledge, Ambition, and Monstrosity.',
   alternates: {
@@ -283,7 +283,7 @@ export default async function FrankensteinThemesPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Themes — Deep Study
+            Themes - Deep Study
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">

@@ -21,16 +21,16 @@ import { t } from '@/lib/i18n/t'
 
 // The KS3 `title` template + description used to live on the (now
 // client) layout. A Client Component can't export `metadata`, so the
-// index — a Server Component — owns it. KS3 sub-pages keep their own
-// per-page `title` and inherit the site-wide `'%s — The English Hub'`
+// index - a Server Component - owns it. KS3 sub-pages keep their own
+// per-page `title` and inherit the site-wide `'%s - The English Hub'`
 // template from the root layout.
 export const metadata: Metadata = {
   title: {
-    default: 'KS3 English — Years 7, 8 & 9',
+    default: 'KS3 English - Years 7, 8 & 9',
     template: '%s · KS3 English · The English Hub',
   },
   description:
-    'The full KS3 English curriculum (Years 7–9) — yearly expectations, termly plans, weekly lesson frameworks, marking rubrics, skill progression, and end-of-KS3 standards.',
+    'The full KS3 English curriculum (Years 7-9) - yearly expectations, termly plans, weekly lesson frameworks, marking rubrics, skill progression, and end-of-KS3 standards.',
   alternates: { canonical: 'https://theenglishhub.app/ks3' },
 }
 
@@ -92,9 +92,9 @@ export default async function KS3HubPage() {
   const skillCount = KS3.skillCodes.length
   const rubricCount = KS3.years.reduce((n, y) => n + (y.rubric?.length ?? 0), 0)
 
-  // Year cards — Foundations / Development / Mastery.
+  // Year cards - Foundations / Development / Mastery.
   const yearSections: KS3Section[] = KS3.years.map((y) => ({
-    title: yearNameTr[y.number] ?? y.name.en.replace(`Year ${y.number} — `, ''),
+    title: yearNameTr[y.number] ?? y.name.en.replace(`Year ${y.number} - `, ''),
     caption: `${yearLabelTr[y.number]} · ${y.terms.length} terms`,
     desc: y.overview.en,
     href: `/ks3/year-${y.number}`,
@@ -104,11 +104,11 @@ export default async function KS3HubPage() {
       y.number === 7 ? 'bg-blue-500/10' : y.number === 8 ? 'bg-violet-500/10' : 'bg-rose-500/10',
   }))
 
-  // Reference + standards cards — the other real /ks3 destinations.
+  // Reference + standards cards - the other real /ks3 destinations.
   const referenceSections: KS3Section[] = [
     {
       title: tr[12], // Skill codes
-      caption: `${skillCount} codes · Y7–Y9`,
+      caption: `${skillCount} codes · Y7-Y9`,
       desc: tr[23],
       href: '/ks3/skills',
       icon: Compass,
@@ -164,7 +164,7 @@ export default async function KS3HubPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{tr[2]}</p>
 
-          {/* Quick stats — real curriculum counts */}
+          {/* Quick stats - real curriculum counts */}
           <div className="mt-6 flex flex-wrap gap-4 sm:gap-6">
             {[
               { label: tr[15], value: String(yearCount), icon: GraduationCap },
@@ -312,7 +312,7 @@ export default async function KS3HubPage() {
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">{tr[26]}</p>
         <Button variant="default" size="lg" className="mt-5" render={<Link href="/ks3/year-7" />}>
-          {tr[4]} 7 — {tr[14]}
+          {tr[4]} 7 - {tr[14]}
           <ArrowRight className="size-4" />
         </Button>
       </section>

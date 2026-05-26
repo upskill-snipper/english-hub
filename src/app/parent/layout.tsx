@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { ParentSidebar } from '@/components/parent/ParentSidebar'
 
-// [P2:auth] Supabase — read parent session from server cookies instead
+// [P2:auth] Supabase - read parent session from server cookies instead
 interface ParentAccount {
   name?: string
   email?: string
@@ -17,18 +17,14 @@ const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 // Routes that should render without the sidebar shell (pre-auth)
 const PUBLIC_ROUTES = ['/parent/signup', '/parent/login']
 
-export default function ParentLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function ParentLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [account, setAccount] = useState<ParentAccount | null>(null)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    // [P2:auth] Supabase — replace with supabase.auth.getUser()
+    // [P2:auth] Supabase - replace with supabase.auth.getUser()
     try {
       const raw = localStorage.getItem(PARENT_ACCOUNT_KEY)
       if (raw) {
@@ -43,11 +39,7 @@ export default function ParentLayout({
 
   // Public (signup / login) pages render children directly
   if (isPublicRoute) {
-    return (
-      <div className="min-h-screen bg-background">
-        {children}
-      </div>
-    )
+    return <div className="min-h-screen bg-background">{children}</div>
   }
 
   return (
@@ -59,9 +51,7 @@ export default function ParentLayout({
 
       {/* Main content */}
       <main className="flex-1 pt-14 lg:pt-0">
-        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-          {children}
-        </div>
+        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</div>
       </main>
     </div>
   )

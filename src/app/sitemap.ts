@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/mock-exams`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/games`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
 
-    // Audience / institutional pages — the canonical marketing surface as of
+    // Audience / institutional pages - the canonical marketing surface as of
     // 2026-05-20. The legacy /for-teachers · /for-schools · /for-parents now
     // 308-redirect to these, so the redirecting URLs are intentionally
     // EXCLUDED from the sitemap (listing a 3xx URL is an SEO anti-pattern;
@@ -241,7 +241,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
-    // CAIE 0475 Songs of Ourselves Volume 1 — individual poems
+    // CAIE 0475 Songs of Ourselves Volume 1 - individual poems
     ...[
       'funeral-blues',
       'hawk-roosting',
@@ -739,7 +739,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
 
-    // Individual poems — Power and Conflict (AQA)
+    // Individual poems - Power and Conflict (AQA)
     ...[
       'ozymandias',
       'london',
@@ -763,7 +763,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
-    // Individual poems — Love and Relationships (AQA)
+    // Individual poems - Love and Relationships (AQA)
     ...[
       'when-we-two-parted',
       'loves-philosophy',
@@ -787,7 +787,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
-    // Individual poems — Edexcel Conflict
+    // Individual poems - Edexcel Conflict
     ...['a-poison-tree', 'the-destruction-of-sennacherib'].map((poem) => ({
       url: `${base}/revision/poetry/edexcel/conflict/${poem}`,
       lastModified: now,
@@ -795,7 +795,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
-    // Individual poems — Edexcel Time and Place
+    // Individual poems - Edexcel Time and Place
     ...[
       'london',
       'composed-upon-westminster-bridge',
@@ -808,7 +808,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
-    // Individual poems — Eduqas (legacy pre-2025 anthology)
+    // Individual poems - Eduqas (legacy pre-2025 anthology)
     // These poems are NOT part of the Eduqas 2025 cluster but still serve content as a
     // study reference. Demoted to priority 0.1 to prevent SEO promotion of legacy content.
     ...[
@@ -827,7 +827,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.1,
     })),
 
-    // Individual poems — OCR Love and Relationships
+    // Individual poems - OCR Love and Relationships
     ...['neutral-tones', 'she-dwelt-among-the-untrodden-ways', 'she-walks-in-beauty'].map(
       (poem) => ({
         url: `${base}/revision/poetry/ocr/love-and-relationships/${poem}`,
@@ -837,7 +837,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }),
     ),
 
-    // Individual poems — OCR Power and Natural World
+    // Individual poems - OCR Power and Natural World
     ...['the-eagle'].map((poem) => ({
       url: `${base}/revision/poetry/ocr/power-and-natural-world/${poem}`,
       lastModified: now,
@@ -845,7 +845,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
-    // Individual poems — OCR Youth and Age
+    // Individual poems - OCR Youth and Age
     ...['crossing-the-bar', 'when-i-have-fears'].map((poem) => ({
       url: `${base}/revision/poetry/ocr/youth-and-age/${poem}`,
       lastModified: now,
@@ -854,7 +854,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
 
     // ============================================================
-    // IGCSE — Edexcel
+    // IGCSE - Edexcel
     // ============================================================
     { url: `${base}/igcse/edexcel`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     {
@@ -996,7 +996,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })),
     ]),
 
-    // IGCSE Edexcel Poetry — official 4ET1 Anthology Issue 2 (13 poems)
+    // IGCSE Edexcel Poetry - official 4ET1 Anthology Issue 2 (13 poems)
     {
       url: `${base}/igcse/edexcel/poetry`,
       lastModified: now,
@@ -1023,7 +1023,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
-    // Orphan IGCSE Edexcel poetry slugs — pages exist but are NOT in the
+    // Orphan IGCSE Edexcel poetry slugs - pages exist but are NOT in the
     // current 4ET1 Anthology Issue 2. Demoted to priority 0.3 to keep them
     // discoverable for archived study traffic without promoting in SEO.
     ...['cousin-kate', 'piano', 'the-man-he-killed'].map((poem) => ({
@@ -1048,7 +1048,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
 
     // ============================================================
-    // IGCSE — Edexcel Language
+    // IGCSE - Edexcel Language
     // ============================================================
     {
       url: `${base}/igcse/edexcel-lang`,
@@ -1062,7 +1062,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    // Edexcel IGCSE English Language A (4EA1) — all 10 prescribed Anthology texts
+    // Edexcel IGCSE English Language A (4EA1) - all 10 prescribed Anthology texts
     ...[
       '127-hours',
       'a-game-of-polo-with-a-headless-goat',
@@ -1082,7 +1082,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
 
     // ============================================================
-    // IGCSE — Cambridge
+    // IGCSE - Cambridge
     // ============================================================
     { url: `${base}/igcse/cambridge`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
 
@@ -1321,7 +1321,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ============================================================
     // Free resources & local-SEO landing pages
-    // Top-level URLs maintained by sibling agents — listed here so they
+    // Top-level URLs maintained by sibling agents - listed here so they
     // appear in the sitemap alongside the rest of the site.
     // ============================================================
     {
@@ -1457,7 +1457,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Blog post URLs — discovered at build time by listing every `.mdx`
+  // Blog post URLs - discovered at build time by listing every `.mdx`
   // file under `content/blog/`. Returns an empty array before the first
   // post lands, which keeps the sitemap valid.
   const blogPostRoutes: MetadataRoute.Sitemap = getBlogSlugs().map((slug) => ({
@@ -1547,7 +1547,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p === '/ks3' || p === '/ks3/ilowersecondary' ? 0.8 : 0.6,
   }))
 
-  // Standalone games — GCSE/IGCSE plus the EAL & KS3 literacy games.
+  // Standalone games - GCSE/IGCSE plus the EAL & KS3 literacy games.
   const gameSlugs: string[] = [
     'theme-matcher',
     'speed-analysis',
@@ -1597,7 +1597,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // ============================================================
-  // EAL — English for Arabic speakers (CEFR A2–C1)
+  // EAL - English for Arabic speakers (CEFR A2-C1)
   // Landing + placement test + 10 topics × 4 banded views +
   // 4 banded practice sets.
   // ============================================================
@@ -1635,7 +1635,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]),
   ]
 
-  // IELTS readiness-program lessons — the leveled strategy library served at
+  // IELTS readiness-program lessons - the leveled strategy library served at
   // /ielts/learn/<skill>/<slug> (route + slug contract: src/lib/ielts/curriculum.ts).
   // Generated from the authored lesson set so new lessons appear automatically.
   const ieltsLessonRoutes: MetadataRoute.Sitemap = ALL_LESSONS.map((lesson) => ({

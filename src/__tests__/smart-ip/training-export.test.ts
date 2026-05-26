@@ -6,9 +6,9 @@
 // training_data rows, and parse the streamed response body.
 //
 // Contract under test:
-//   • jsonl — EXACT { input, expected_output, metadata } shape
-//   • csv   — header order + quoting/escaping; FK/PII columns absent
-//   • eval  — matches evals/types.ts GoldStandardCase (gold = teacher marks)
+//   • jsonl - EXACT { input, expected_output, metadata } shape
+//   • csv   - header order + quoting/escaping; FK/PII columns absent
+//   • eval  - matches evals/types.ts GoldStandardCase (gold = teacher marks)
 //   • the PII assertion SKIPS a poisoned row and COUNTS it in
 //     X-Training-Skipped-Pii (never emitted)
 // ────────────────────────────────────────────────────────────────────────────
@@ -89,7 +89,7 @@ beforeEach(() => {
   queryResult = { data: [], error: null }
 })
 
-describe('training/export — auth & params', () => {
+describe('training/export - auth & params', () => {
   it('401 when unauthenticated', async () => {
     session = { user: null, error: { message: 'x' } }
     const res = await GET('http://localhost/api/training/export?format=jsonl')
@@ -121,7 +121,7 @@ describe('training/export — auth & params', () => {
   })
 })
 
-describe('training/export — JSONL exact shape', () => {
+describe('training/export - JSONL exact shape', () => {
   it('emits exactly { input, expected_output, metadata } with teacher gold', async () => {
     queryResult = { data: [row()], error: null }
     const res = await GET('http://localhost/api/training/export?format=jsonl')
@@ -168,7 +168,7 @@ describe('training/export — JSONL exact shape', () => {
   })
 })
 
-describe('training/export — CSV header & escaping', () => {
+describe('training/export - CSV header & escaping', () => {
   it('first line is the exact CSV header (FK / PII columns absent)', async () => {
     queryResult = { data: [], error: null }
     const res = await GET('http://localhost/api/training/export?format=csv')
@@ -228,7 +228,7 @@ describe('training/export — CSV header & escaping', () => {
   })
 })
 
-describe('training/export — eval shape (GoldStandardCase)', () => {
+describe('training/export - eval shape (GoldStandardCase)', () => {
   it('matches the evals/types.ts GoldStandardCase contract with teacher gold', async () => {
     queryResult = { data: [row()], error: null }
     const res = await GET('http://localhost/api/training/export?format=eval')
@@ -259,7 +259,7 @@ describe('training/export — eval shape (GoldStandardCase)', () => {
   })
 })
 
-describe('training/export — PII guard (strip + skip + count)', () => {
+describe('training/export - PII guard (strip + skip + count)', () => {
   it('defence-in-depth: a stray forbidden key (student_email) is STRIPPED, never emitted, row still safe', async () => {
     // stripForbidden() deletes every FORBIDDEN_EXPORT_KEY before assertNoPii,
     // so a leaked column is scrubbed (not skipped) and the row is still emitted

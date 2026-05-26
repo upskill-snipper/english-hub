@@ -2,9 +2,9 @@
  * IGCSE board guard helpers.
  *
  * Two APIs:
- * - getBoardMismatchState(allowed) — preferred. Returns { matched, currentBoard }
+ * - getBoardMismatchState(allowed) - preferred. Returns { matched, currentBoard }
  *   for use with <BoardMismatchBanner>. Never redirects.
- * - requireIgcseBoard(allowed) — legacy no-op shim retained for backward compat
+ * - requireIgcseBoard(allowed) - legacy no-op shim retained for backward compat
  *   while the 127 existing callers across /igcse/* migrate to the new pattern.
  *
  * Migration: each page that currently calls `await requireIgcseBoard(['edexcel-igcse'])`

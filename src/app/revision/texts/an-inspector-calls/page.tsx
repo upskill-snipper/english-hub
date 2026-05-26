@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls revision guide — themes, characters, key quotes — The English Hub',
-    description: 'An Inspector Calls GCSE revision — Priestley',
+    title: 'An Inspector Calls revision guide - themes, characters, key quotes - The English Hub',
+    description: 'An Inspector Calls GCSE revision - Priestley',
   },
-  title: 'An Inspector Calls revision guide — themes, characters, key quotes',
+  title: 'An Inspector Calls revision guide - themes, characters, key quotes',
   description:
-    "An Inspector Calls GCSE revision — Priestley's play act-by-act with characters, themes, context, key quotes and essays. AQA, Edexcel, OCR, Eduqas.",
+    "An Inspector Calls GCSE revision - Priestley's play act-by-act with characters, themes, context, key quotes and essays. AQA, Edexcel, OCR, Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
   },
@@ -24,14 +24,14 @@ export const metadata: Metadata = {
 const data: TextGuideData = {
   title: 'An Inspector Calls',
   author: 'J.B. Priestley',
-  year: 'Written 1944–45; first performed Moscow 1945; London premiere 1 Oct 1946',
-  yearAr: 'مكتوبة 1944–45؛ أول عرض في Moscow 1945؛ العرض الافتتاحي في London 1 أكتوبر 1946',
+  year: 'Written 1944-45; first performed Moscow 1945; London premiere 1 Oct 1946',
+  yearAr: 'مكتوبة 1944-45؛ أول عرض في Moscow 1945؛ العرض الافتتاحي في London 1 أكتوبر 1946',
   category: 'Play',
   badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE',
   intro:
-    'J.B. Priestley wrote An Inspector Calls in 1944–1945 but deliberately set it in spring 1912 — before the sinking of the Titanic (April 1912), the First World War, and the creation of the welfare state. The play uses a mysterious police inspector to expose how every member of the wealthy Birling family has contributed to the death of a young working-class woman. It is at once a detective thriller, a morality play and a socialist argument for collective responsibility.',
+    'J.B. Priestley wrote An Inspector Calls in 1944-1945 but deliberately set it in spring 1912 - before the sinking of the Titanic (April 1912), the First World War, and the creation of the welfare state. The play uses a mysterious police inspector to expose how every member of the wealthy Birling family has contributed to the death of a young working-class woman. It is at once a detective thriller, a morality play and a socialist argument for collective responsibility.',
   introAr:
-    'كتب J.B. Priestley مسرحية An Inspector Calls في الفترة 1944–1945، بس تعمّد إنه يحط أحداثها في ربيع 1912 — قبل غرق Titanic (أبريل 1912)، وقبل الحرب العالمية الأولى، وقبل تأسيس دولة الرفاه. المسرحية تستخدم مفتش شرطة غامض عشان يكشف شلون ساهم كل واحد من أفراد عائلة Birling الثرية في موت بنت صغيرة من الطبقة العاملة. هي في نفس الوقت رواية بوليسية، ومسرحية أخلاقية، وحجة اشتراكية لصالح المسؤولية الجماعية.',
+    'كتب J.B. Priestley مسرحية An Inspector Calls في الفترة 1944-1945، بس تعمّد إنه يحط أحداثها في ربيع 1912 - قبل غرق Titanic (أبريل 1912)، وقبل الحرب العالمية الأولى، وقبل تأسيس دولة الرفاه. المسرحية تستخدم مفتش شرطة غامض عشان يكشف شلون ساهم كل واحد من أفراد عائلة Birling الثرية في موت بنت صغيرة من الطبقة العاملة. هي في نفس الوقت رواية بوليسية، ومسرحية أخلاقية، وحجة اشتراكية لصالح المسؤولية الجماعية.',
   quickInfo: {
     genre: 'Well-made play / Morality play',
     setting:
@@ -48,13 +48,13 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'The play opens on the Birling family celebrating the engagement of Sheila Birling to Gerald Croft, the son of a rival industrialist. Arthur Birling delivers a confident after-dinner speech praising capitalism and dismissing the idea that people should look after one another. He predicts the Titanic is unsinkable and that war is impossible. The doorbell rings, and Inspector Goole arrives to investigate the death of a young woman named Eva Smith, who has killed herself by swallowing disinfectant.',
-    'In Act One, the Inspector reveals that Arthur Birling sacked Eva from his factory for leading a strike over pay. Sheila then recognises Eva as a shop girl she had dismissed from Milwards out of jealous spite. Gerald admits he kept Eva — now calling herself Daisy Renton — as his mistress before ending the affair. Each revelation peels back the family\u2019s respectable surface to expose selfishness and exploitation underneath.',
+    'In Act One, the Inspector reveals that Arthur Birling sacked Eva from his factory for leading a strike over pay. Sheila then recognises Eva as a shop girl she had dismissed from Milwards out of jealous spite. Gerald admits he kept Eva - now calling herself Daisy Renton - as his mistress before ending the affair. Each revelation peels back the family\u2019s respectable surface to expose selfishness and exploitation underneath.',
     'In Act Two, the Inspector turns to Sybil Birling, who chaired a charity committee that refused Eva help when she was pregnant and desperate. Sybil insists the father of the child should bear full responsibility, not realising that the father is her own son Eric. When Eric is exposed in Act Three, the full chain of responsibility is laid bare: every Birling played a part in driving Eva to her death.',
     'After the Inspector leaves with a final speech about shared responsibility, the family fractures. Gerald and Arthur discover that no inspector by that name exists on the police force and that no girl has died at the infirmary. The older Birlings celebrate their apparent escape, but Sheila and Eric remain shaken. The telephone rings: a real inspector is on his way to investigate a suicide. The cycle begins again.',
   ],
   plotSummaryAr: [
     'تفتح المسرحية على عائلة Birling وهي تحتفل بخطوبة Sheila Birling من Gerald Croft، اللي هو ابن صناعي منافس. يلقي Arthur Birling خطبة واثقة بعد العشاء يمدح فيها الرأسمالية ويرفض فكرة إن الناس لازم تهتم ببعضها. ويتنبأ بإن سفينة Titanic ما تغرق وإن الحرب مستحيلة. يرنّ جرس الباب، ويوصل Inspector Goole عشان يحقق في وفاة بنت شابة اسمها Eva Smith، اللي قتلت نفسها بشُربها مادة مطهّرة.',
-    'في الفصل الأول، يكشف المفتش إن Arthur Birling طرد Eva من مصنعه لأنها قادت إضراباً يطالب برفع الأجور. وبعدها تتعرّف Sheila على Eva كبائعة في محل Milwards كانت قد سبّبت في فصلها من باب الغيرة الحقودة. ويعترف Gerald بإنه احتفظ بـ Eva — اللي صارت تسمّي نفسها Daisy Renton — كعشيقة قبل ما ينهي العلاقة. كل اعتراف يكشف القشرة المحترمة للعائلة ويعرّي الأنانية والاستغلال اللي تحتها.',
+    'في الفصل الأول، يكشف المفتش إن Arthur Birling طرد Eva من مصنعه لأنها قادت إضراباً يطالب برفع الأجور. وبعدها تتعرّف Sheila على Eva كبائعة في محل Milwards كانت قد سبّبت في فصلها من باب الغيرة الحقودة. ويعترف Gerald بإنه احتفظ بـ Eva - اللي صارت تسمّي نفسها Daisy Renton - كعشيقة قبل ما ينهي العلاقة. كل اعتراف يكشف القشرة المحترمة للعائلة ويعرّي الأنانية والاستغلال اللي تحتها.',
     'في الفصل الثاني، يتوجه المفتش إلى Sybil Birling، اللي ترأست لجنة خيرية رفضت تساعد Eva لمّا كانت حامل ومحتاجة. تصرّ Sybil على إن أب الطفل لازم يتحمل المسؤولية كاملة، وهي ما تدري إن الأب هو ابنها Eric. ولمّا يتعرّى Eric في الفصل الثالث، تنكشف سلسلة المسؤولية كاملة: كل فرد من آل Birling شارك في دفع Eva لموتها.',
     'بعد ما يغادر المفتش بخطبة ختامية عن المسؤولية المشتركة، تتصدّع العائلة. يكتشف Gerald و Arthur إنه ما في مفتش بهذا الاسم في الشرطة، وإنه ما في بنت ماتت في المستشفى. كبار آل Birling يحتفلون بهروبهم الظاهري، لكن Sheila و Eric يظلّون مهزوزين. يرنّ التلفون: مفتش حقيقي في طريقه عشان يحقق في حالة انتحار. وتبدأ الدورة من جديد.',
   ],
@@ -63,9 +63,9 @@ const data: TextGuideData = {
       name: 'Arthur Birling',
       role: 'Prosperous factory owner and family patriarch',
       roleAr: 'صاحب مصنع ثري ورب العائلة',
-      body: 'Birling is a self-made businessman obsessed with profit, reputation and his upcoming knighthood. His speeches about progress and individual responsibility are deliberately undercut by dramatic irony — the audience knows his predictions about the Titanic and war are catastrophically wrong. He represents the capitalist ruling class that Priestley wanted post-war Britain to reject.',
+      body: 'Birling is a self-made businessman obsessed with profit, reputation and his upcoming knighthood. His speeches about progress and individual responsibility are deliberately undercut by dramatic irony - the audience knows his predictions about the Titanic and war are catastrophically wrong. He represents the capitalist ruling class that Priestley wanted post-war Britain to reject.',
       bodyAr:
-        'Birling رجل أعمال صنع نفسه بنفسه، مهووس بالربح والسمعة ولقب الفروسية اللي ينتظره. خطبه عن التقدم والمسؤولية الفردية مقصود إنها تنهار تحت ضربات السخرية الدرامية — الجمهور يدري إن توقعاته عن Titanic وعن الحرب طلعت غلط طلعة كارثية. هو يمثّل الطبقة الرأسمالية الحاكمة اللي بغى Priestley إن بريطانيا ما بعد الحرب ترفضها.',
+        'Birling رجل أعمال صنع نفسه بنفسه، مهووس بالربح والسمعة ولقب الفروسية اللي ينتظره. خطبه عن التقدم والمسؤولية الفردية مقصود إنها تنهار تحت ضربات السخرية الدرامية - الجمهور يدري إن توقعاته عن Titanic وعن الحرب طلعت غلط طلعة كارثية. هو يمثّل الطبقة الرأسمالية الحاكمة اللي بغى Priestley إن بريطانيا ما بعد الحرب ترفضها.',
     },
     {
       name: 'Sybil Birling',
@@ -113,9 +113,9 @@ const data: TextGuideData = {
       name: 'Eva Smith / Daisy Renton',
       role: 'The unseen working-class victim',
       roleAr: 'الضحيّة من الطبقة العاملة، اللي ما تظهر على المسرح',
-      body: 'Eva never appears on stage but is the moral centre of the play. She represents every exploited worker, every abandoned woman, every person failed by the class system. Whether she is one girl or several is deliberately ambiguous — Priestley\u2019s point is that countless Evas exist and that their suffering is collective, not individual.',
+      body: 'Eva never appears on stage but is the moral centre of the play. She represents every exploited worker, every abandoned woman, every person failed by the class system. Whether she is one girl or several is deliberately ambiguous - Priestley\u2019s point is that countless Evas exist and that their suffering is collective, not individual.',
       bodyAr:
-        'ما تظهر Eva على المسرح أبداً، لكنّها المركز الأخلاقي للمسرحية. تمثّل كل عاملة استُغلّت، وكل بنت تخلّى عنها الناس، وكل شخص خذلته المنظومة الطبقية. هل هي بنت واحدة أو عدّة بنات؟ الغموض مقصود — مقصد Priestley إن في عدد لا يُحصى من Eva-ات موجودات، وإنّ معاناتهنّ جماعية مو فردية.',
+        'ما تظهر Eva على المسرح أبداً، لكنّها المركز الأخلاقي للمسرحية. تمثّل كل عاملة استُغلّت، وكل بنت تخلّى عنها الناس، وكل شخص خذلته المنظومة الطبقية. هل هي بنت واحدة أو عدّة بنات؟ الغموض مقصود - مقصد Priestley إن في عدد لا يُحصى من Eva-ات موجودات، وإنّ معاناتهنّ جماعية مو فردية.',
     },
     {
       name: 'Edna',
@@ -175,21 +175,21 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'Priestley set the play in 1912, a year of imperial confidence before the First World War shattered the old European order. The Edwardian upper-middle class that the Birlings represent believed in progress, empire and the superiority of the free market. Priestley chose this date so the audience would recognise that every one of Birling\u2019s confident predictions — about peace, the Titanic, and the impossibility of strikes — turned out to be disastrously wrong.',
+    'Priestley set the play in 1912, a year of imperial confidence before the First World War shattered the old European order. The Edwardian upper-middle class that the Birlings represent believed in progress, empire and the superiority of the free market. Priestley chose this date so the audience would recognise that every one of Birling\u2019s confident predictions - about peace, the Titanic, and the impossibility of strikes - turned out to be disastrously wrong.',
     'Priestley was a committed democratic socialist who had fought in the First World War and witnessed the unemployment and poverty of the 1930s. His wartime radio broadcasts, the Postscripts, reached millions and argued that Britain should never return to the inequality of the pre-war years. An Inspector Calls is the dramatic expression of the same argument: that unchecked capitalism destroys lives and that society must take collective responsibility for its weakest members.',
-    'The play was written in 1945, the year the Labour government of Clement Attlee was elected with a landslide majority. Attlee\u2019s government created the National Health Service, expanded national insurance and built the modern welfare state. Priestley\u2019s audience would have understood the Inspector\u2019s closing speech as a direct endorsement of these reforms — a warning that the alternative was a return to the cruelty of 1912.',
+    'The play was written in 1945, the year the Labour government of Clement Attlee was elected with a landslide majority. Attlee\u2019s government created the National Health Service, expanded national insurance and built the modern welfare state. Priestley\u2019s audience would have understood the Inspector\u2019s closing speech as a direct endorsement of these reforms - a warning that the alternative was a return to the cruelty of 1912.',
     'Priestley uses dramatic irony extensively because the audience knows what the characters do not. When Birling calls the Titanic unsinkable and dismisses the threat of war, the audience recognises his arrogance and short-sightedness. This technique turns the play into an argument about hindsight and foresight: the audience is asked to learn from history in a way the Birlings refuse to.',
   ],
   historicalContextAr: [
-    'حطّ Priestley أحداث المسرحية في 1912، اللي كانت سنة ثقة إمبراطورية قبل ما تحطّم الحرب العالمية الأولى النظام الأوروبي القديم. الطبقة الإدواردية الوسطى-العليا اللي يمثّلها آل Birling كانت تؤمن بالتقدّم والإمبراطورية وتفوّق السوق الحر. اختار Priestley هذا التاريخ عشان الجمهور يلاحظ إن كل توقّع واثق من توقعات Birling — عن السلام، وعن Titanic، وعن استحالة الإضرابات — طلع غلط غلطة كارثية.',
+    'حطّ Priestley أحداث المسرحية في 1912، اللي كانت سنة ثقة إمبراطورية قبل ما تحطّم الحرب العالمية الأولى النظام الأوروبي القديم. الطبقة الإدواردية الوسطى-العليا اللي يمثّلها آل Birling كانت تؤمن بالتقدّم والإمبراطورية وتفوّق السوق الحر. اختار Priestley هذا التاريخ عشان الجمهور يلاحظ إن كل توقّع واثق من توقعات Birling - عن السلام، وعن Titanic، وعن استحالة الإضرابات - طلع غلط غلطة كارثية.',
     'Priestley كان اشتراكياً ديمقراطياً ملتزماً، قاتل في الحرب العالمية الأولى وشاف البطالة والفقر في الثلاثينات. إذاعاته في زمن الحرب، الـ Postscripts، وصلت ملايين، وكان يحاجج إن بريطانيا ما تلازم ترجع للتفاوت اللي كان قبل الحرب. An Inspector Calls هي التعبير الدرامي لنفس الحجّة: إن الرأسمالية المفلوتة تدمّر الأرواح، وإن المجتمع لازم يتحمّل المسؤولية الجماعية عن أضعف أفراده.',
-    'كُتبت المسرحية في 1945، السنة اللي انتُخبت فيها حكومة العمال برئاسة Clement Attlee بأغلبية كاسحة. حكومة Attlee أسّست National Health Service ووسّعت التأمين الوطني وبنت دولة الرفاه الحديثة. جمهور Priestley كان راح يفهم خطبة المفتش الختامية كتأييد مباشر لهذي الإصلاحات — وكتحذير إن البديل هو الرجوع لقسوة 1912.',
+    'كُتبت المسرحية في 1945، السنة اللي انتُخبت فيها حكومة العمال برئاسة Clement Attlee بأغلبية كاسحة. حكومة Attlee أسّست National Health Service ووسّعت التأمين الوطني وبنت دولة الرفاه الحديثة. جمهور Priestley كان راح يفهم خطبة المفتش الختامية كتأييد مباشر لهذي الإصلاحات - وكتحذير إن البديل هو الرجوع لقسوة 1912.',
     'يستعمل Priestley السخرية الدرامية بكثرة لأن الجمهور يعرف اللي ما تعرفه الشخصيات. لمّا يسمّي Birling السفينة Titanic "لا تغرق" ويرفض تهديد الحرب، يلاحظ الجمهور غروره وقصر نظره. هذي التقنية تحوّل المسرحية إلى حجة عن النظر للخلف والنظر للأمام: الجمهور يُطلب منه يتعلّم من التاريخ بطريقة آل Birling يرفضون يتعلّمونها.',
   ],
   quotations: [
     {
       quote: '"We are members of one body. We are responsible for each other."',
-      who: 'Inspector Goole — Act 3',
+      who: 'Inspector Goole - Act 3',
       whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'The play\u2019s thesis statement, delivered as the Inspector\u2019s final warning. It echoes the communal ethos of the 1945 welfare-state moment.',
@@ -198,8 +198,8 @@ const data: TextGuideData = {
     },
     {
       quote: '"Fire and blood and anguish."',
-      who: 'Inspector Goole — Act 3',
-      whoAr: 'Inspector Goole — الفصل 3',
+      who: 'Inspector Goole - Act 3',
+      whoAr: 'Inspector Goole - الفصل 3',
       analysis:
         'A prophetic reference to the two world wars the audience already knows about, lending the Inspector an almost supernatural authority.',
       analysisAr:
@@ -207,7 +207,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"The Titanic \u2014 unsinkable, absolutely unsinkable."',
-      who: 'Arthur Birling — Act 1',
+      who: 'Arthur Birling - Act 1',
       whoAr: 'Arthur Birling \u2014 \u0627\u0644\u0641\u0635\u0644 1',
       analysis:
         'Dramatic irony at its sharpest. Birling\u2019s certainty immediately marks him as a man whose judgment cannot be trusted.',
@@ -217,8 +217,8 @@ const data: TextGuideData = {
     {
       quote:
         '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
-      who: 'Arthur Birling — Act 3',
-      whoAr: 'Arthur Birling — الفصل 3',
+      who: 'Arthur Birling - Act 3',
+      whoAr: 'Arthur Birling - الفصل 3',
       analysis:
         'Birling reduces a moral question to a practical inconvenience, revealing the hollowness of capitalist individualism.',
       analysisAr:
@@ -226,7 +226,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"But these girls aren\u2019t cheap labour \u2014 they\u2019re people."',
-      who: 'Sheila Birling — Act 1',
+      who: 'Sheila Birling - Act 1',
       whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 1',
       analysis:
         'Sheila\u2019s awakening to social responsibility, phrased simply but powerfully against her father\u2019s economic logic.',
@@ -235,8 +235,8 @@ const data: TextGuideData = {
     },
     {
       quote: '"I\u2019ll never, never do it again to anybody."',
-      who: 'Sheila Birling — Act 1',
-      whoAr: 'Sheila Birling — الفصل 1',
+      who: 'Sheila Birling - Act 1',
+      whoAr: 'Sheila Birling - الفصل 1',
       analysis:
         'Sheila is the first character to accept guilt fully, modelling the moral change Priestley wants from his audience.',
       analysisAr:
@@ -244,7 +244,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"You\u2019re not the kind of father a chap could go to."',
-      who: 'Eric Birling — Act 3',
+      who: 'Eric Birling - Act 3',
       whoAr: 'Eric Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'Eric\u2019s accusation exposes the emotional bankruptcy beneath Birling\u2019s patriarchal authority.',
@@ -253,7 +253,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"We don\u2019t live alone. We are members of one body."',
-      who: 'Inspector Goole — Act 3',
+      who: 'Inspector Goole - Act 3',
       whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'A compressed restatement of the play\u2019s core socialist message, linking individual action to communal consequence.',
@@ -262,7 +262,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
-      who: 'Inspector Goole — Act 1',
+      who: 'Inspector Goole - Act 1',
       whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 1',
       analysis:
         'The Inspector directly challenges Birling\u2019s belief that wealth entitles him to immunity from scrutiny.',
@@ -271,7 +271,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"It\u2019s what happened to the girl and what we all did to her that matters."',
-      who: 'Sheila Birling — Act 3',
+      who: 'Sheila Birling - Act 3',
       whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'Sheila cuts through her parents\u2019 evasion, insisting that the moral lesson matters regardless of the Inspector\u2019s identity.',
@@ -280,7 +280,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"I was quite justified."',
-      who: 'Sybil Birling — Act 2',
+      who: 'Sybil Birling - Act 2',
       whoAr: 'Sybil Birling \u2014 \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'Sybil\u2019s stubborn self-righteousness. She refuses to accept guilt even when the evidence is overwhelming.',
@@ -289,7 +289,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"Girls of that class\u2014"',
-      who: 'Sybil Birling — Act 2',
+      who: 'Sybil Birling - Act 2',
       whoAr: 'Sybil Birling \u2014 \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'An interrupted phrase that exposes Sybil\u2019s deep-rooted class prejudice as instinctive and unexamined.',
@@ -298,7 +298,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"I didn\u2019t feel about her as she felt about me."',
-      who: 'Gerald Croft — Act 2',
+      who: 'Gerald Croft - Act 2',
       whoAr: 'Gerald Croft \u2014 \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'Gerald\u2019s admission reveals the power imbalance in his relationship with Daisy: he could leave, she could not.',
@@ -308,8 +308,8 @@ const data: TextGuideData = {
     {
       quote:
         '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
-      who: 'Arthur Birling — Act 1',
-      whoAr: 'Arthur Birling — الفصل 1',
+      who: 'Arthur Birling - Act 1',
+      whoAr: 'Arthur Birling - الفصل 1',
       analysis:
         'Birling dismisses socialism before the Inspector arrives, setting up the dramatic reversal that follows.',
       analysisAr:
@@ -318,7 +318,7 @@ const data: TextGuideData = {
     {
       quote:
         '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
-      who: 'Inspector Goole — Act 3',
+      who: 'Inspector Goole - Act 3',
       whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The tripled "millions" insists on scale: this is not exceptional suffering but structural.',
@@ -327,7 +327,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"You began to learn something. And now you\u2019ve stopped."',
-      who: 'Sheila Birling — Act 3',
+      who: 'Sheila Birling - Act 3',
       whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'Sheila accuses Gerald and her parents of moral regression, sharpening the generational divide at the play\u2019s climax.',
@@ -473,7 +473,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The name "Goole" puns on "ghoul," suggesting the Inspector may be a supernatural figure — a ghost of the future, a moral conscience, or a divine agent. His mysterious origins are never explained, making him a dramatic device for Priestley\'s socialist message.',
+      'The name "Goole" puns on "ghoul," suggesting the Inspector may be a supernatural figure - a ghost of the future, a moral conscience, or a divine agent. His mysterious origins are never explained, making him a dramatic device for Priestley\'s socialist message.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -589,7 +589,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Eva never appears because she represents every exploited worker, every abandoned woman, every person failed by the class system. Whether she is one girl or several is deliberately ambiguous — Priestley's point is that countless Evas exist and their suffering is collective.",
+      "Eva never appears because she represents every exploited worker, every abandoned woman, every person failed by the class system. Whether she is one girl or several is deliberately ambiguous - Priestley's point is that countless Evas exist and their suffering is collective.",
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -741,7 +741,7 @@ export default async function AnInspectorCallsPage() {
   return (
     <>
       <CourseJsonLd
-        name="An Inspector Calls — Complete GCSE Study Guide"
+        name="An Inspector Calls - Complete GCSE Study Guide"
         description="In-depth study guide for An Inspector Calls covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

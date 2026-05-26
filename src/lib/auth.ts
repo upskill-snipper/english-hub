@@ -182,7 +182,7 @@ export function calculateAge(year: number, month: number, day: number): number {
   const monthDiff = todayDate.getUTCMonth() - birthDate.getUTCMonth()
   // Decrement only when the birthday has NOT yet occurred this year. On the
   // user's actual birthday (today === birth day-of-month) they ARE the new
-  // age — using `<=` here was an off-by-one that briefly aged users down,
+  // age - using `<=` here was an off-by-one that briefly aged users down,
   // causing the validate-age route to reject 13-year-olds on their 13th
   // birthday with "must be at least 13 years old". British convention and
   // GDPR digital-consent age both count the birthday itself.

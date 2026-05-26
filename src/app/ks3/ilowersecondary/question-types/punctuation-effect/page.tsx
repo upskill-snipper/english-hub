@@ -8,7 +8,7 @@ const TICK_TABLE_TYPE = QUESTION_TYPES.find((q) => q.id === 'feature-tick-table'
 const RAO3 = ASSESSMENT_OBJECTIVES.RAO3
 
 export const metadata: Metadata = {
-  title: 'Effect of a punctuation mark — iLowerSecondary English question masterclass',
+  title: 'Effect of a punctuation mark - iLowerSecondary English question masterclass',
   description:
     'Master the 2-mark punctuation-effect question in the Pearson Edexcel iLowerSecondary English achievement test: an effects reference for every mark, worked extracts and split model answers.',
   alternates: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'Effect of a punctuation mark — iLowerSecondary English question masterclass — The English Hub',
+      'Effect of a punctuation mark - iLowerSecondary English question masterclass - The English Hub',
     description:
       'How to earn both marks on the punctuation-effect question: name the effect, then explain it from the text. Original worked examples and model answers.',
   },
@@ -49,9 +49,9 @@ const EFFECTS_REFERENCE: EffectEntry[] = [
   },
   {
     mark: 'Dash',
-    glyph: '—',
+    glyph: '-',
     effects: ['adds extra information', 'creates a dramatic pause'],
-    example: 'She opened the box slowly — and found it completely empty.',
+    example: 'She opened the box slowly - and found it completely empty.',
     effectNote:
       'The dash creates a dramatic pause that builds suspense before the disappointing discovery, so the empty box lands with greater impact.',
   },
@@ -125,12 +125,12 @@ const WORKED_EXAMPLES: WorkedExample[] = [
   {
     id: 'we1',
     extract:
-      'The forecast had promised a calm afternoon. Within an hour the sky had turned the colour of slate, and the first hailstones struck the tents like gravel — the storm had arrived early.',
+      'The forecast had promised a calm afternoon. Within an hour the sky had turned the colour of slate, and the first hailstones struck the tents like gravel - the storm had arrived early.',
     question: 'How does the writer use the dash in this extract to add effect? (2 marks)',
     mark1:
-      'Mark 1 — name the effect: the dash creates a dramatic pause and adds extra information that completes the idea.',
+      'Mark 1 - name the effect: the dash creates a dramatic pause and adds extra information that completes the idea.',
     mark2:
-      'Mark 2 — explain it from the text: it holds the reader back for a moment after the build-up of the darkening sky and hail, so the short statement "the storm had arrived early" lands with more impact and confirms how suddenly the weather changed.',
+      'Mark 2 - explain it from the text: it holds the reader back for a moment after the build-up of the darkening sky and hail, so the short statement "the storm had arrived early" lands with more impact and confirms how suddenly the weather changed.',
   },
   {
     id: 'we2',
@@ -138,18 +138,18 @@ const WORKED_EXAMPLES: WorkedExample[] = [
       'You have read the safety leaflet. You have packed the right boots. But when the ground gives way beneath you, will any of that be enough?',
     question: 'How does the writer use the question mark in this extract to add effect? (2 marks)',
     mark1:
-      'Mark 1 — name the effect: the question mark creates a rhetorical question that directly engages the reader.',
+      'Mark 1 - name the effect: the question mark creates a rhetorical question that directly engages the reader.',
     mark2:
-      'Mark 2 — explain it from the text: after listing the preparations the reader has made, the unanswered question forces them to imagine the danger themselves, making the warning feel personal and persuasive rather than just informative.',
+      'Mark 2 - explain it from the text: after listing the preparations the reader has made, the unanswered question forces them to imagine the danger themselves, making the warning feel personal and persuasive rather than just informative.',
   },
   {
     id: 'we3',
     extract:
       'The museum (closed to the public since the flood) still held one locked room that no curator would discuss. We were not supposed to be there at all.',
     question: 'How do the brackets add effect in this extract? (2 marks)',
-    mark1: 'Mark 1 — name the effect: the brackets add extra, aside information about the museum.',
+    mark1: 'Mark 1 - name the effect: the brackets add extra, aside information about the museum.',
     mark2:
-      'Mark 2 — explain it from the text: they quietly slip in the detail that the museum has been "closed to the public since the flood" without interrupting the main idea, which deepens the sense of mystery around the locked room.',
+      'Mark 2 - explain it from the text: they quietly slip in the detail that the museum has been "closed to the public since the flood" without interrupting the main idea, which deepens the sense of mystery around the locked room.',
   },
   {
     id: 'we4',
@@ -157,9 +157,9 @@ const WORKED_EXAMPLES: WorkedExample[] = [
       'Everything we needed was on the far bank: fresh water, dry wood, and a path that led home. Everything we feared was in the river between us and it.',
     question: 'How does the writer use the colon to add effect? (2 marks)',
     mark1:
-      'Mark 1 — name the effect: the colon introduces an explanation, setting up the list that follows it.',
+      'Mark 1 - name the effect: the colon introduces an explanation, setting up the list that follows it.',
     mark2:
-      'Mark 2 — explain it from the text: it points forward to "fresh water, dry wood, and a path that led home", emphasising exactly what the characters could see but could not safely reach, which sharpens the tension of the crossing.',
+      'Mark 2 - explain it from the text: it points forward to "fresh water, dry wood, and a path that led home", emphasising exactly what the characters could see but could not safely reach, which sharpens the tension of the crossing.',
   },
   {
     id: 'we5',
@@ -168,9 +168,9 @@ const WORKED_EXAMPLES: WorkedExample[] = [
     question:
       'How does the writer use the ellipsis at the end of this extract to add effect? (2 marks)',
     mark1:
-      'Mark 1 — name the effect: the ellipsis makes the writing trail off and creates suspense.',
+      'Mark 1 - name the effect: the ellipsis makes the writing trail off and creates suspense.',
     mark2:
-      'Mark 2 — explain it from the text: because the journal "stopped mid-sentence", the unfinished words leave the reader uncertain about what happened to the keeper, building tension and a sense of something gone wrong.',
+      'Mark 2 - explain it from the text: because the journal "stopped mid-sentence", the unfinished words leave the reader uncertain about what happened to the keeper, building tension and a sense of something gone wrong.',
   },
   {
     id: 'we6',
@@ -178,9 +178,9 @@ const WORKED_EXAMPLES: WorkedExample[] = [
       '“Stay close and don’t let go,” my brother said, though his voice shook. The crowd pushed forward; the gates were closing fast.',
     question: 'How does the writer use the semicolon in this extract to add effect? (2 marks)',
     mark1:
-      'Mark 1 — name the effect: the semicolon links two closely related ideas in a single sentence.',
+      'Mark 1 - name the effect: the semicolon links two closely related ideas in a single sentence.',
     mark2:
-      'Mark 2 — explain it from the text: it joins "The crowd pushed forward" and "the gates were closing fast" so the two pressures feel connected and simultaneous, increasing the sense of urgency around the brother’s warning.',
+      'Mark 2 - explain it from the text: it joins "The crowd pushed forward" and "the gates were closing fast" so the two pressures feel connected and simultaneous, increasing the sense of urgency around the brother’s warning.',
   },
 ]
 

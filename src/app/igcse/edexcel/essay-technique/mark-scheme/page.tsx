@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
   Target,
@@ -81,7 +81,7 @@ const AOS: AO[] = [
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
     description:
-      'Explore connections across texts, evaluating similarities and differences in writers\' methods.',
+      "Explore connections across texts, evaluating similarities and differences in writers' methods.",
     whatExaminerLooksFor: [
       'Sustained comparison throughout the essay, not just at the start or end',
       'Comparison of methods (how writers achieve effects), not just themes',
@@ -216,9 +216,7 @@ export default function MarkSchemePage() {
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                Mark Scheme Decoded
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">Mark Scheme Decoded</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 Edexcel IGCSE Literature
               </Badge>
@@ -242,14 +240,16 @@ export default function MarkSchemePage() {
           Understanding the mark scheme is half the battle
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          IGCSE Literature examiners do not mark holistically -- they read with specific
-          skills in mind and assign your response a level for each one. Knowing which skill carries the
-          most weight (it is language and structure analysis), what separates "clear" from "perceptive", and exactly what
-          moves signal a top-band response lets you write with the examiner in mind. This
-          guide translates the official mark scheme into practical advice.
+          IGCSE Literature examiners do not mark holistically -- they read with specific skills in
+          mind and assign your response a level for each one. Knowing which skill carries the most
+          weight (it is language and structure analysis), what separates "clear" from "perceptive",
+          and exactly what moves signal a top-band response lets you write with the examiner in
+          mind. This guide translates the official mark scheme into practical advice.
         </p>
         <p className="mt-3 text-body-xs text-muted-foreground/70 max-w-2xl leading-relaxed italic">
-          In official mark schemes these skills are called Assessment Objectives: AO1 = Understanding the text, AO2 = Language and structure, AO3 = Context, AO4 = Comparing texts.
+          In official mark schemes these skills are called Assessment Objectives: AO1 =
+          Understanding the text, AO2 = Language and structure, AO3 = Context, AO4 = Comparing
+          texts.
         </p>
       </section>
 
@@ -309,9 +309,9 @@ export default function MarkSchemePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          These descriptors summarise how Edexcel examiners distinguish between grades. Read
-          them carefully -- knowing the difference between "clear" (Grade 5) and "perceptive"
-          (Grade 9) is the single most actionable piece of advice in exam technique.
+          These descriptors summarise how Edexcel examiners distinguish between grades. Read them
+          carefully -- knowing the difference between "clear" (Grade 5) and "perceptive" (Grade 9)
+          is the single most actionable piece of advice in exam technique.
         </p>
 
         <div className="grid gap-4">
@@ -348,12 +348,12 @@ export default function MarkSchemePage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Edexcel grade boundaries for IGCSE Literature shift slightly each year, but recent sessions
-          suggest a rough guide of: Grade 9 around 78-82%, Grade 7 around 62-66%, Grade 5
-          around 42-46%, and Grade 4 around 32-36%. These are indicative only -- boundaries
-          are set after each exam series based on candidate performance. What is constant is
-          that the top band always rewards perceptive, comparative, word-level analysis
-          grounded in a confident personal reading.
+          Edexcel grade boundaries for IGCSE Literature shift slightly each year, but recent
+          sessions suggest a rough guide of: Grade 9 around 78-82%, Grade 7 around 62-66%, Grade 5
+          around 42-46%, and Grade 4 around 32-36%. These are indicative only -- boundaries are set
+          after each exam series based on candidate performance. What is constant is that the top
+          band always rewards perceptive, comparative, word-level analysis grounded in a confident
+          personal reading.
         </p>
       </section>
 
@@ -401,8 +401,8 @@ export default function MarkSchemePage() {
           Practice with real unseen poems
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Understanding the mark scheme is one thing -- using it is another. Head to the
-          practice poems and try writing a comparative response with these skills in mind.
+          Understanding the mark scheme is one thing -- using it is another. Head to the practice
+          poems and try writing a comparative response with these skills in mind.
         </p>
         <Button
           variant="default"

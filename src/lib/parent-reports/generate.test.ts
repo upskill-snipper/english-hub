@@ -2,7 +2,7 @@
  * Tests for the pure weekly-report generator.
  *
  * Coverage focus: eligibility gates (Children's Code §5 + §8) and the
- * constructive framing of weaknesses. No database, no network — the module
+ * constructive framing of weaknesses. No database, no network - the module
  * under test is deliberately pure.
  */
 
@@ -82,9 +82,7 @@ describe('generateWeeklyReport', () => {
 
     // Constructive framing assertion (Children's Code §5).
     expect(result.report.focusAreas.join(' ')).toMatch(/room to grow/i)
-    expect(result.report.focusAreas.join(' ').toLowerCase()).not.toMatch(
-      /struggl|weak|poor|fail/,
-    )
+    expect(result.report.focusAreas.join(' ').toLowerCase()).not.toMatch(/struggl|weak|poor|fail/)
 
     expect(result.report.strengths.length).toBeGreaterThan(0)
     expect(result.report.suggestion).toBeTruthy()
@@ -145,13 +143,9 @@ describe('generateWeeklyReport', () => {
   })
 
   it('does not emit a weakest AO when only a single AO has samples', () => {
-    // High performer — every essay scored AO1 only. We must not invent a
+    // High performer - every essay scored AO1 only. We must not invent a
     // "weakest" that is in fact the only data point.
-    const essays = [
-      essay(88, { AO1: 90 }),
-      essay(92, { AO1: 94 }),
-      essay(86, { AO1: 88 }),
-    ]
+    const essays = [essay(88, { AO1: 90 }), essay(92, { AO1: 94 }), essay(86, { AO1: 88 })]
     const highFlyerProgress: ReportProgress = {
       ...baseProgress,
       timeSpentMinutes: 180,
@@ -178,13 +172,9 @@ describe('generateWeeklyReport', () => {
     expect(result.ok).toBe(true)
     if (!result.ok) throw new Error('unreachable')
 
-    expect(
-      result.report.focusAreas.some((b) => /consistency/i.test(b)),
-    ).toBe(true)
+    expect(result.report.focusAreas.some((b) => /consistency/i.test(b))).toBe(true)
     // No deficit language.
-    expect(result.report.focusAreas.join(' ').toLowerCase()).not.toMatch(
-      /lazy|fail|struggl/,
-    )
+    expect(result.report.focusAreas.join(' ').toLowerCase()).not.toMatch(/lazy|fail|struggl/)
   })
 
   it('caps strengths and focus areas at 3 bullets each', () => {
@@ -206,7 +196,7 @@ describe('generateWeeklyReport', () => {
   })
 
   it('never leaks essay bodies or rationale into the payload', () => {
-    // Sanity check on the output shape — the generator has no way to surface
+    // Sanity check on the output shape - the generator has no way to surface
     // prose it was never given, but we lock the contract down explicitly.
     const essays = [essay(70, { AO1: 75, AO2: 70, AO3: 60, AO4: 72 })]
     const result = generateWeeklyReport(makeChild(), essays, baseProgress, options)

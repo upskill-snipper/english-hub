@@ -9,12 +9,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Things Fall Apart revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Things Fall Apart IGCSE revision — Achebe',
+    title: 'Things Fall Apart revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Things Fall Apart IGCSE revision - Achebe',
   },
-  title: 'Things Fall Apart revision guide — themes, characters, key quotes',
+  title: 'Things Fall Apart revision guide - themes, characters, key quotes',
   description:
-    "Things Fall Apart IGCSE revision — Achebe's postcolonial novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1.",
+    "Things Fall Apart IGCSE revision - Achebe's postcolonial novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/things-fall-apart',
   },
@@ -44,7 +44,7 @@ const data: TextGuideData = {
     {
       name: 'Okonkwo',
       role: 'Proud warrior and tragic hero',
-      body: "Okonkwo's strength and ambition mask a deep fear of weakness inherited from his father. Achebe uses him to show that rigidity — not colonialism alone — is what breaks a man who cannot adapt.",
+      body: "Okonkwo's strength and ambition mask a deep fear of weakness inherited from his father. Achebe uses him to show that rigidity - not colonialism alone - is what breaks a man who cannot adapt.",
     },
     {
       name: 'Unoka',
@@ -83,7 +83,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Tradition and change',
-      body: 'Igbo culture is not static in the novel — it has debates, reformers and internal dissenters. Achebe shows that change is possible from within, but that colonialism forecloses the slower, kinder alternative.',
+      body: 'Igbo culture is not static in the novel - it has debates, reformers and internal dissenters. Achebe shows that change is possible from within, but that colonialism forecloses the slower, kinder alternative.',
     },
     {
       title: 'Language and storytelling',
@@ -91,7 +91,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Fate and personal chi',
-      body: 'The Igbo concept of chi — personal spirit — runs throughout. Okonkwo believes a man can shape his chi, but Achebe repeatedly suggests that no amount of willpower can save a man fighting on two fronts.',
+      body: 'The Igbo concept of chi - personal spirit - runs throughout. Okonkwo believes a man can shape his chi, but Achebe repeatedly suggests that no amount of willpower can save a man fighting on two fronts.',
     },
   ],
   historicalContext: [
@@ -104,41 +104,41 @@ const data: TextGuideData = {
     {
       quote:
         '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
-      who: 'Narrator — Chapter 1',
+      who: 'Narrator - Chapter 1',
       analysis: 'Establishes the sophistication of Igbo culture before any colonial contact.',
     },
     {
       quote: '"Okonkwo was clearly cut out for great things."',
-      who: 'Narrator — Chapter 1',
+      who: 'Narrator - Chapter 1',
       analysis: 'The early promise that the rest of the novel systematically dismantles.',
     },
     {
       quote: '"He was afraid of being thought weak."',
-      who: 'Narrator on Okonkwo — Chapter 2',
+      who: 'Narrator on Okonkwo - Chapter 2',
       analysis: 'Identifies fear as the engine of his rigidity and eventual destruction.',
     },
     {
       quote:
         '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
-      who: 'Obierika — Chapter 20',
+      who: 'Obierika - Chapter 20',
       analysis: 'A precise diagnosis of colonial strategy: divide, convert, rule.',
     },
     {
       quote: '"Living fire begets cold, impotent ash."',
-      who: 'Narrator — Chapter 17',
-      analysis: "Okonkwo's bitter view of his son Nwoye — foreshadows his own solitary end.",
+      who: 'Narrator - Chapter 17',
+      analysis: "Okonkwo's bitter view of his son Nwoye - foreshadows his own solitary end.",
     },
     {
       quote: '"That man was one of the greatest men in Umuofia. You drove him to kill himself."',
-      who: 'Obierika — Chapter 25',
+      who: 'Obierika - Chapter 25',
       analysis:
         "Reclaims Okonkwo's death from the colonial record and lays the blame where it belongs.",
     },
     {
       quote: '"The Pacification of the Primitive Tribes of the Lower Niger."',
-      who: 'District Commissioner — Chapter 25',
+      who: 'District Commissioner - Chapter 25',
       analysis:
-        "The colonial book title that turns a human tragedy into a footnote — the novel's sharpest irony.",
+        "The colonial book title that turns a human tragedy into a footnote - the novel's sharpest irony.",
     },
   ],
 }
@@ -361,13 +361,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is a coward',
-      'Fear, not strength, is the engine of his rigidity — his terror of resembling Unoka makes him cruel',
+      'Fear, not strength, is the engine of his rigidity - his terror of resembling Unoka makes him cruel',
       'He is simply describing a fear',
       'He is strong',
     ],
     correctIndex: 1,
     explanation:
-      "This narrator's insight identifies fear as the engine of Okonkwo's entire character. His terror of being thought weak — of resembling his father — makes him cruel to his family, drives him to kill Ikemefuna, and ultimately leads to his destruction.",
+      "This narrator's insight identifies fear as the engine of Okonkwo's entire character. His terror of being thought weak - of resembling his father - makes him cruel to his family, drives him to kill Ikemefuna, and ultimately leads to his destruction.",
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -399,7 +399,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Achebe devotes the first part of the novel to the rich, complex life of Umuofia — festivals, proverbs, debates, ceremonies. By establishing this functioning society before colonialism arrives, he directly answers European novels (especially Conrad) that depicted Africa as a blank, savage backdrop.',
+      'Achebe devotes the first part of the novel to the rich, complex life of Umuofia - festivals, proverbs, debates, ceremonies. By establishing this functioning society before colonialism arrives, he directly answers European novels (especially Conrad) that depicted Africa as a blank, savage backdrop.',
     topic: 'Context',
     difficulty: 'grade-9',
   },
@@ -409,13 +409,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is just a superstition',
-      'Okonkwo believes a man can shape his chi, but the novel suggests willpower cannot overcome fighting on two fronts — internal rigidity and external colonialism',
+      'Okonkwo believes a man can shape his chi, but the novel suggests willpower cannot overcome fighting on two fronts - internal rigidity and external colonialism',
       'Chi is irrelevant to the plot',
       'It means good luck',
     ],
     correctIndex: 1,
     explanation:
-      'The Igbo concept of chi — personal spirit or destiny — runs throughout. Okonkwo believes a man can bend his chi through sheer will, but Achebe repeatedly suggests that no amount of willpower can save a man fighting both his own rigidity and the forces of colonialism.',
+      'The Igbo concept of chi - personal spirit or destiny - runs throughout. Okonkwo believes a man can bend his chi through sheer will, but Achebe repeatedly suggests that no amount of willpower can save a man fighting both his own rigidity and the forces of colonialism.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -441,13 +441,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He does not address masculinity',
-      'Okonkwo\'s rigid insistence on strength makes him unable to adapt, love openly, or accept change — his "strength" is actually his greatest weakness',
+      'Okonkwo\'s rigid insistence on strength makes him unable to adapt, love openly, or accept change - his "strength" is actually his greatest weakness',
       'Masculinity is presented positively',
       'Only women are vulnerable',
     ],
     correctIndex: 1,
     explanation:
-      "Okonkwo equates manhood with violence and dominance, but this rigidity makes him unable to adapt to change, express love, or accept his son's different path. Achebe suggests that toxic masculinity is itself a colonised consciousness — a trap that destroys from within.",
+      "Okonkwo equates manhood with violence and dominance, but this rigidity makes him unable to adapt to change, express love, or accept his son's different path. Achebe suggests that toxic masculinity is itself a colonised consciousness - a trap that destroys from within.",
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -469,7 +469,7 @@ const REVISION_TOPICS = [
     topic: 'Masculinity and Fear',
     summary: "Okonkwo's rigid definition of manhood, driven by fear, leads to his destruction.",
     keyPoints: [
-      '"He was afraid of being thought weak" — fear drives his rigidity',
+      '"He was afraid of being thought weak" - fear drives his rigidity',
       'He kills Ikemefuna to avoid appearing weak',
       'His relationship with Nwoye is destroyed by his harshness',
       'Unoka represents the tenderness Okonkwo rejects',
@@ -478,7 +478,7 @@ const REVISION_TOPICS = [
   },
   {
     topic: 'Tradition and Change',
-    summary: 'Igbo culture is not static — it has debates and internal dissenters.',
+    summary: 'Igbo culture is not static - it has debates and internal dissenters.',
     keyPoints: [
       'Obierika questions customs like abandoning twins',
       'Change is possible from within, but colonialism forecloses this',
@@ -507,7 +507,7 @@ const REVISION_TOPICS = [
       'Okonkwo believes willpower can shape destiny',
       'But he fights on two fronts: internal rigidity and external colonialism',
       'His accidental killing of the clansman seems fated',
-      'His suicide is an abomination — even in death, his culture cannot save him',
+      'His suicide is an abomination - even in death, his culture cannot save him',
     ],
   },
 ]
@@ -530,7 +530,7 @@ export default async function ThingsFallApartPage() {
   return (
     <>
       <CourseJsonLd
-        name="Things Fall Apart — Complete GCSE Study Guide"
+        name="Things Fall Apart - Complete GCSE Study Guide"
         description="In-depth study guide for Things Fall Apart covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

@@ -13,7 +13,7 @@ import {
 import { backfillGrandfatheredPrices } from './backfill-grandfathered'
 import { PRICING } from '@/constants/pricing'
 
-// Expected minor-unit conversions — avoid re-implementing `poundsToMinor`
+// Expected minor-unit conversions - avoid re-implementing `poundsToMinor`
 // in tests; compare against the constants × 100, rounded.
 const p = (pounds: number) => Math.round(pounds * 100)
 
@@ -31,9 +31,7 @@ describe('priceForTier', () => {
   })
 
   it('returns Standard teacher monthly in minor units', () => {
-    expect(priceForTier('MONTHLY', 'standard', 'teacher')).toBe(
-      p(PRICING.TEACHER_MONTHLY_STANDARD),
-    )
+    expect(priceForTier('MONTHLY', 'standard', 'teacher')).toBe(p(PRICING.TEACHER_MONTHLY_STANDARD))
   })
 
   it('returns Founding school price regardless of plan', () => {
@@ -109,23 +107,27 @@ describe('renewal preservation contract', () => {
 
 // ─── Back-fill tests ───────────────────────────────────────────────────
 
-function makePrismaMock(rows: Array<{
-  id: string
-  userId: string
-  plan: 'MONTHLY' | 'ANNUAL'
-  isTeacherPlan: boolean
-  grandfatheredPriceMinor: number | null
-}>) {
+function makePrismaMock(
+  rows: Array<{
+    id: string
+    userId: string
+    plan: 'MONTHLY' | 'ANNUAL'
+    isTeacherPlan: boolean
+    grandfatheredPriceMinor: number | null
+  }>,
+) {
   const updated: Array<{ id: string; data: Record<string, unknown> }> = []
   const mock = {
     subscription: {
       findMany: vi.fn(async () => rows.filter((r) => r.grandfatheredPriceMinor === null)),
-      update: vi.fn(async ({ where, data }: { where: { id: string }; data: Record<string, unknown> }) => {
-        updated.push({ id: where.id, data })
-        const row = rows.find((r) => r.id === where.id)
-        if (row) row.grandfatheredPriceMinor = data.grandfatheredPriceMinor as number
-        return row
-      }),
+      update: vi.fn(
+        async ({ where, data }: { where: { id: string }; data: Record<string, unknown> }) => {
+          updated.push({ id: where.id, data })
+          const row = rows.find((r) => r.id === where.id)
+          if (row) row.grandfatheredPriceMinor = data.grandfatheredPriceMinor as number
+          return row
+        },
+      ),
     },
   }
   return { mock, updated }

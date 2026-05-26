@@ -8,7 +8,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'significant-cigarettes'
 
 export const metadata: Metadata = {
-  title: 'Significant Cigarettes — Rose Tremain',
+  title: 'Significant Cigarettes - Rose Tremain',
   description:
     'Study guide stub for Significant Cigarettes by Rose Tremain. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

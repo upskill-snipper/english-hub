@@ -4,15 +4,15 @@ import { prisma } from '@/lib/prisma'
 import { rateLimit } from '@/lib/rate-limit'
 import { z } from 'zod'
 
-// POST /api/profile/dob — update the current user's Prisma User.dateOfBirth.
+// POST /api/profile/dob - update the current user's Prisma User.dateOfBirth.
 //
 // Context: the 2026-04-20 Prisma User backfill (scripts/backfill-prisma-users.mjs)
 // set dateOfBirth to 2000-01-01 for every Supabase user whose user_metadata
-// lacked a DOB — 5 users on current prod. That placeholder drives incorrect
+// lacked a DOB - 5 users on current prod. That placeholder drives incorrect
 // downstream behaviour:
 //   - Children's Code isMinor flag (currently derived in the register
 //     handler, but stale on backfilled rows).
-//   - Dormancy-check cron uses lastLoginAt now, not DOB — so safe there.
+//   - Dormancy-check cron uses lastLoginAt now, not DOB - so safe there.
 //
 // Paired with src/components/profile/DobNudge.tsx which shows a banner on
 // /dashboard for users with the placeholder and calls this endpoint.
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
   const MINOR_AGE_THRESHOLD = 16
   const isMinor = ageYears < MINOR_AGE_THRESHOLD
 
-  // Match by supabaseUserId (preferred) OR email fallback — same pattern as
+  // Match by supabaseUserId (preferred) OR email fallback - same pattern as
   // Identity PR-3. updateMany so we never throw if the Prisma row is missing.
   const result = await prisma.user.updateMany({
     where: {
@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ ok: true, rows: result.count })
 }
 
-// GET /api/profile/dob — returns { hasPlaceholderDob } for the current user.
+// GET /api/profile/dob - returns { hasPlaceholderDob } for the current user.
 // Used by DobNudge to decide whether to render the banner.
 export async function GET() {
   const supabase = createServerSupabaseClient()

@@ -121,7 +121,7 @@ const MISTAKES: {
     wrong:
       'Macbeth is a brave warrior at the start of the play. He fights in the battle and King Duncan rewards him. Lady Macbeth is ambitious and tells him to kill the king.',
     right:
-      'Shakespeare initially presents Macbeth\'s guilt as a prophylactic force -- the dagger hallucination in Act 2 Scene 1 suggests his conscience attempts to prevent the crime before it occurs. This is significant because it positions guilt not as a consequence of murder but as a pre-existing moral awareness that Macbeth wilfully overrides, deepening his culpability.',
+      "Shakespeare initially presents Macbeth's guilt as a prophylactic force -- the dagger hallucination in Act 2 Scene 1 suggests his conscience attempts to prevent the crime before it occurs. This is significant because it positions guilt not as a consequence of murder but as a pre-existing moral awareness that Macbeth wilfully overrides, deepening his culpability.",
   },
   {
     number: 10,
@@ -176,7 +176,7 @@ const MISTAKES: {
     wrong:
       'Macbeth says he is worried about killing the king. He talks about the reasons why he should not do it.',
     right:
-      'Shakespeare\'s choice of soliloquy for "If it were done when \'tis done" grants the audience unmediated access to Macbeth\'s moral reasoning, creating dramatic irony: we witness the conscience he will publicly suppress. The theatrical form -- a man alone on stage, debating with himself -- physicalises the internal division that will ultimately destroy him.',
+      "Shakespeare's choice of soliloquy for \"If it were done when 'tis done\" grants the audience unmediated access to Macbeth's moral reasoning, creating dramatic irony: we witness the conscience he will publicly suppress. The theatrical form -- a man alone on stage, debating with himself -- physicalises the internal division that will ultimately destroy him.",
   },
   {
     number: 15,
@@ -195,8 +195,7 @@ const MISTAKES: {
     category: 'Exam technique',
     description:
       'Diving straight in without a 3-5 minute plan leads to repetition, weak structure, and running out of things to say. A plan turns a ramble into an argument.',
-    wrong:
-      'Starting to write immediately and hoping the essay will find its own shape.',
+    wrong: 'Starting to write immediately and hoping the essay will find its own shape.',
     right:
       'Spend 3-5 minutes jotting: (1) your thesis in one sentence, (2) three key points that support it, (3) one quotation per point, (4) your alternative interpretation. This skeleton prevents repetition and ensures a developing argument.',
   },
@@ -217,10 +216,9 @@ const MISTAKES: {
     category: 'Writer focus',
     description:
       'In prose fiction and poetry, the narrator or speaker is not necessarily the writer. Saying "Shelley feels lonely" when discussing the Creature\'s perspective conflates author and character.',
-    wrong:
-      'Shelley is sad and alone in this chapter because nobody will talk to her.',
+    wrong: 'Shelley is sad and alone in this chapter because nobody will talk to her.',
     right:
-      'Shelley constructs the Creature\'s isolation through first-person narration, a choice that compels the reader to inhabit his perspective. The epistolary framing -- the Creature\'s story nested within Frankenstein\'s, nested within Walton\'s letters -- creates layers of mediation that destabilise any single claim to truth.',
+      "Shelley constructs the Creature's isolation through first-person narration, a choice that compels the reader to inhabit his perspective. The epistolary framing -- the Creature's story nested within Frankenstein's, nested within Walton's letters -- creates layers of mediation that destabilise any single claim to truth.",
   },
   {
     number: 19,
@@ -231,7 +229,7 @@ const MISTAKES: {
     wrong:
       'In conclusion, Shakespeare uses many techniques such as metaphors, similes, and soliloquies to show that Macbeth feels guilty throughout the play.',
     right:
-      'Ultimately, Shakespeare suggests that guilt in Macbeth is not a consequence of crime but its own form of retribution -- a psychological sentence that no earthly court could impose and no act of penance can commute. The play\'s enduring power lies in this insight: conscience is inescapable.',
+      "Ultimately, Shakespeare suggests that guilt in Macbeth is not a consequence of crime but its own form of retribution -- a psychological sentence that no earthly court could impose and no act of penance can commute. The play's enduring power lies in this insight: conscience is inescapable.",
   },
   {
     number: 20,
@@ -240,7 +238,7 @@ const MISTAKES: {
     description:
       'AO6 rewards technical accuracy in writing questions, and careless errors throughout a Literature essay undermine the authority of your analysis. Saving 2-3 minutes at the end to proofread catches the mistakes tired eyes make.',
     wrong:
-      'Writting without checking for their/there/they\'re, its/it\'s, affect/effect, and missing apostrophes.',
+      "Writting without checking for their/there/they're, its/it's, affect/effect, and missing apostrophes.",
     right:
       'Reserve the last 2-3 minutes of each answer to read your response back silently. Focus on: (1) spelling of character and place names, (2) apostrophes, (3) sentence boundaries (comma splices), (4) tense consistency. These small corrections signal care and competence.',
   },
@@ -298,7 +296,8 @@ export default function CommonMistakesPage() {
               20 Most Common GCSE English Mistakes
             </h1>
             <p className="text-body-sm text-muted-foreground">
-              What goes wrong and exactly how to fix it -- with wrong vs right examples for every mistake
+              What goes wrong and exactly how to fix it -- with wrong vs right examples for every
+              mistake
             </p>
           </div>
         </div>
@@ -315,10 +314,10 @@ export default function CommonMistakesPage() {
           Most marks are lost, not earned
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          The difference between a Grade 5 and a Grade 7 is rarely about knowing more
-          content -- it is about avoiding the habits that cap your marks. Every mistake
-          below is something examiners see hundreds of times a day. Eliminating even
-          three or four of them can push your grade up significantly.
+          The difference between a Grade 5 and a Grade 7 is rarely about knowing more content -- it
+          is about avoiding the habits that cap your marks. Every mistake below is something
+          examiners see hundreds of times a day. Eliminating even three or four of them can push
+          your grade up significantly.
         </p>
       </section>
 
@@ -326,9 +325,7 @@ export default function CommonMistakesPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Mistakes by Category
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Mistakes by Category</h2>
         </div>
         <div className="flex flex-wrap gap-2">
           {CATEGORIES.map((cat) => {
@@ -362,9 +359,7 @@ export default function CommonMistakesPage() {
                 </span>
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="text-heading-md font-heading text-foreground">
-                      {m.title}
-                    </h3>
+                    <h3 className="text-heading-md font-heading text-foreground">{m.title}</h3>
                     <Badge
                       variant="secondary"
                       className={`text-[0.6rem] uppercase tracking-wider ${col.text} ${col.bg} border-0`}
@@ -388,9 +383,7 @@ export default function CommonMistakesPage() {
                       What to avoid
                     </p>
                   </div>
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    {m.wrong}
-                  </p>
+                  <p className="text-body-sm text-muted-foreground leading-relaxed">{m.wrong}</p>
                 </div>
                 {/* Right */}
                 <div className="p-5 sm:p-6 space-y-2">
@@ -400,9 +393,7 @@ export default function CommonMistakesPage() {
                       What to do instead
                     </p>
                   </div>
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    {m.right}
-                  </p>
+                  <p className="text-body-sm text-muted-foreground leading-relaxed">{m.right}</p>
                 </div>
               </div>
             </div>
@@ -434,7 +425,10 @@ export default function CommonMistakesPage() {
             'Is my language formal and academic, not chatty?',
             'Have I proofread for spelling and punctuation?',
           ].map((item) => (
-            <div key={item} className="flex gap-3 items-start rounded-xl border border-border/40 bg-background/50 p-3">
+            <div
+              key={item}
+              className="flex gap-3 items-start rounded-xl border border-border/40 bg-background/50 p-3"
+            >
               <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
               <p className="text-xs text-muted-foreground leading-relaxed">{item}</p>
             </div>
@@ -457,7 +451,7 @@ export default function CommonMistakesPage() {
           className="flex-1"
           disabled
           aria-disabled="true"
-          title="Practice Extracts — coming soon"
+          title="Practice Extracts - coming soon"
         >
           Practice Extracts (coming soon)
           <ArrowRight className="size-4" />

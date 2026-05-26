@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Descriptive Nature Passages — Reading Practice Framework — The English Hub',
+    title: 'Descriptive Nature Passages - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Descriptive Nature Passages — Reading Practice Framework',
+  title: 'Descriptive Nature Passages - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -216,7 +216,7 @@ export default async function DescriptiveNaturePage() {
                 <strong>Sentence 2:</strong> The dominant sense the writer uses and one key image.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two details that define the mood of the place.
+                <strong>Sentences 3-4:</strong> Two details that define the mood of the place.
               </li>
               <li>
                 <strong>Sentence 5:</strong> The overall feeling the scene leaves the reader with.

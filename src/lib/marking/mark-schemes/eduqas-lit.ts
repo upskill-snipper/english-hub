@@ -1,10 +1,10 @@
 // ─── WJEC Eduqas GCSE English Literature Mark Scheme ────────────────────────
 // Component 1: Shakespeare and Poetry (2 hours, 80 marks)
-//   Section A — Shakespeare extract + essay (40 marks: AO1 15 + AO2 15 + AO3 10)
-//   Section B — Poetry comparison           (40 marks: AO1 10 + AO2 20 + AO4 10)
+//   Section A - Shakespeare extract + essay (40 marks: AO1 15 + AO2 15 + AO3 10)
+//   Section B - Poetry comparison           (40 marks: AO1 10 + AO2 20 + AO4 10)
 // Component 2: Post-1914 Prose/Drama and 19th Century Prose (2h30, 80 marks)
-//   Section A — Post-1914 extract + essay  (40 marks: AO1 15 + AO2 15 + AO3 10)
-//   Section B — 19th century prose essay   (40 marks: AO1 15 + AO2 15 + AO3 10)
+//   Section A - Post-1914 extract + essay  (40 marks: AO1 15 + AO2 15 + AO3 10)
+//   Section B - 19th century prose essay   (40 marks: AO1 15 + AO2 15 + AO3 10)
 // Based on the WJEC Eduqas C720QS specification.
 //
 // Sources:
@@ -17,7 +17,7 @@ import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
 /**
  * Scale an AO's full-range bands proportionally to a per-question maxMarks.
  *
- * The shared AO definitions below carry their full bands (e.g. AO1 0–20). When
+ * The shared AO definitions below carry their full bands (e.g. AO1 0-20). When
  * the AO is reused on a question worth fewer marks for that AO (e.g. AO1 = 15
  * within a 40-mark question), the band ranges must be scaled to match, so that
  * the top band's maxMarks equals the per-question allocation. Without this,
@@ -46,7 +46,7 @@ function scaleAO(
 
 const ao1Lit: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 — Read, understand and respond',
+  label: 'AO1 - Read, understand and respond',
   description:
     'Read, understand and respond to texts. Students should be able to: maintain a critical style and develop an informed personal response; use textual references, including quotations, to support and illustrate interpretations.',
   maxMarks: 20,
@@ -122,7 +122,7 @@ const ao1Lit: AssessmentObjective = {
 
 const ao2Lit: AssessmentObjective = {
   id: 'AO2',
-  label: 'AO2 — Analyse language, form and structure',
+  label: 'AO2 - Analyse language, form and structure',
   description:
     'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
   maxMarks: 20,
@@ -198,7 +198,7 @@ const ao2Lit: AssessmentObjective = {
 
 const ao3Lit: AssessmentObjective = {
   id: 'AO3',
-  label: 'AO3 — Context',
+  label: 'AO3 - Context',
   description:
     'Show understanding of the relationships between texts and the contexts in which they were written.',
   maxMarks: 10,
@@ -270,7 +270,7 @@ const ao3Lit: AssessmentObjective = {
 
 const ao4Lit: AssessmentObjective = {
   id: 'AO4',
-  label: 'AO4 — Compare and contrast',
+  label: 'AO4 - Compare and contrast',
   description:
     'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. (In poetry comparison questions, AO4 measures the ability to make connections and comparisons between texts.)',
   maxMarks: 10,

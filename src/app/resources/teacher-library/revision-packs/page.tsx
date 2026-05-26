@@ -7,11 +7,11 @@ import { textAvailableForBoard } from '@/lib/board/set-texts'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Revision Packs — Teacher Library',
+    title: 'Revision Packs - Teacher Library',
     description:
       'Ready-made GCSE English revision packs by set text. Quote banks, themes, characters, context, and essay plans in one place.',
   },
-  title: 'Revision Packs — Teacher Library',
+  title: 'Revision Packs - Teacher Library',
   description:
     'Ready-made GCSE English revision packs by set text. Quote banks, themes, characters, context, and essay plans in one place.',
   alternates: {
@@ -94,7 +94,7 @@ const PACK_TO_SET_TEXT_SLUG: Record<string, string> = {
 function packMatchesBoard(packId: string, board: ExamBoard | null): boolean {
   if (!board) return true
   const slug = PACK_TO_SET_TEXT_SLUG[packId]
-  if (!slug) return true // unknown — keep
+  if (!slug) return true // unknown - keep
   if (slug === '__aqa-only__') return board === 'aqa'
   return textAvailableForBoard(slug, board)
 }

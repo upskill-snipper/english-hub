@@ -572,7 +572,7 @@ function buildOptions(item: CompItem): string[] {
   if (otherForms[answer]) distractors.add(otherForms[answer])
 
   if (answer.includes(' ')) {
-    // Long adjective — common learner errors.
+    // Long adjective - common learner errors.
     distractors.add(form === 'comparative' ? `${base}er` : `${base}est`)
     distractors.add(form === 'comparative' ? `more ${base}er` : `most ${base}est`)
   } else if (answer === 'better' || answer === 'best') {
@@ -582,7 +582,7 @@ function buildOptions(item: CompItem): string[] {
   } else if (answer === 'further' || answer === 'furthest') {
     distractors.add('farer').add('farest').add('more far')
   } else {
-    // Regular short adjective — over-applied "more/most" and raw form.
+    // Regular short adjective - over-applied "more/most" and raw form.
     distractors.add(form === 'comparative' ? `more ${base}` : `most ${base}`)
     distractors.add(base)
     distractors.add(form === 'comparative' ? `${base}est` : `${base}er`)
@@ -766,7 +766,7 @@ export default function ComparativesSuperlativesPage() {
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite — the answer is{' '}
+                        <XCircle className="size-4" /> Not quite - the answer is{' '}
                         <span className="font-bold">{current.answer}</span>.
                       </>
                     )}

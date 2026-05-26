@@ -1,6 +1,6 @@
 'use client'
 
-// LEH11 readiness quiz — interactive client component.
+// LEH11 readiness quiz - interactive client component.
 //
 // This is a client component so the whole quiz can run in the browser
 // (category select → one question at a time → immediate feedback →
@@ -35,7 +35,7 @@ const BREADCRUMB = [
 
 type Selection = QuizCategory | 'mixed'
 
-/** Fisher–Yates shuffle returning a new array (does not mutate input). */
+/** Fisher-Yates shuffle returning a new array (does not mutate input). */
 function shuffle<T>(input: readonly T[]): T[] {
   const arr = [...input]
   for (let i = arr.length - 1; i > 0; i--) {
@@ -153,7 +153,7 @@ export default function QuizPage() {
                 <span className="font-mono text-xs text-primary">{QUIZ_BANK.length} questions</span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                A shuffled mix drawn from every category — the closest to real exam-readiness
+                A shuffled mix drawn from every category - the closest to real exam-readiness
                 practice.
               </p>
             </button>

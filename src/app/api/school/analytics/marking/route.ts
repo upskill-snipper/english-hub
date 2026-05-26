@@ -6,27 +6,27 @@
 // marking intelligence aggregated from the FROZEN Smart IP schema
 // (supabase/migrations/20260518_smart_ip_marking.sql):
 //
-//   • marking_submissions  — ai_score / teacher_grade / ai_ao_breakdown /
+//   • marking_submissions  - ai_score / teacher_grade / ai_ao_breakdown /
 //                             question_text / mark_scheme_id / status / source
-//   • teacher_moderations   — ao_corrections / ai_score / teacher_score /
+//   • teacher_moderations   - ao_corrections / ai_score / teacher_score /
 //                             decision  (full reviewer-action history)
 //
-// Metrics returned (all empty-table-safe — zeros, never 500):
-//   commonWeaknesses        — most-corrected AOs (student / class / school)
-//   improvementOverTime     — teacher-score trend per student (oldest→newest)
-//   averageMarkMovement     — mean ai_score vs teacher_score delta
-//   mostCommonAoGaps        — AOs most frequently downgraded by teachers
-//   mostImprovedStudents    — largest positive teacher-score trend
-//   hardestQuestions        — lowest avg teacher_score by question/scheme
-//   teacherOverridePatterns — override rate, direction, avg adjustment
-//   aiConfidenceReliability  — agreement bucketed by AI uncertainty
+// Metrics returned (all empty-table-safe - zeros, never 500):
+//   commonWeaknesses        - most-corrected AOs (student / class / school)
+//   improvementOverTime     - teacher-score trend per student (oldest→newest)
+//   averageMarkMovement     - mean ai_score vs teacher_score delta
+//   mostCommonAoGaps        - AOs most frequently downgraded by teachers
+//   mostImprovedStudents    - largest positive teacher-score trend
+//   hardestQuestions        - lowest avg teacher_score by question/scheme
+//   teacherOverridePatterns - override rate, direction, avg adjustment
+//   aiConfidenceReliability  - agreement bucketed by AI uncertainty
 //
 // Auth mirrors /api/school/marking:
 //   • admin / head_of_department  → whole school
 //   • teacher                     → only their own classes' students
 //
 // DB access: Supabase service-role client ONLY (Prisma client is NOT
-// regenerated for these extended columns — Windows EPERM). This route never
+// regenerated for these extended columns - Windows EPERM). This route never
 // touches Prisma.
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -79,7 +79,7 @@ interface HardestQuestion {
 interface MarkMovement {
   /** Mean (teacher_score − ai_score) across moderated submissions. */
   avgMovement: number
-  /** Mean |teacher_score − ai_score| — magnitude regardless of direction. */
+  /** Mean |teacher_score − ai_score| - magnitude regardless of direction. */
   avgAbsMovement: number
   upheldCount: number
   raisedCount: number
@@ -300,7 +300,7 @@ function topWeaknesses(
 }
 
 // ---------------------------------------------------------------------------
-// Row shapes (Supabase generated types don't know the extended columns yet —
+// Row shapes (Supabase generated types don't know the extended columns yet -
 // see migration note; cast through `unknown`).
 // ---------------------------------------------------------------------------
 
@@ -435,7 +435,7 @@ export async function GET(request: NextRequest) {
     const { data: subData, error: subErr } = await subQuery
     if (subErr) {
       // Most likely cause: table/columns not present yet (pre-migration).
-      // Degrade to a clean empty payload — never 500.
+      // Degrade to a clean empty payload - never 500.
       return NextResponse.json(emptyResponse(scope, period))
     }
 
@@ -579,7 +579,7 @@ export async function GET(request: NextRequest) {
     // ── Common weaknesses / AO gaps ─────────────────────────────────────────
     // Primary signal: teacher_moderations.ao_corrections (what a human
     // actually changed). Secondary: AI-self-identified weak AOs from
-    // ai_ao_breakdown — folded in so the metric is non-empty even before any
+    // ai_ao_breakdown - folded in so the metric is non-empty even before any
     // structured moderation rows exist.
     const schoolAccum = new Map<string, { occ: number; sum: number }>()
     const byStudentAccum = new Map<string, Map<string, { occ: number; sum: number }>>()
@@ -853,7 +853,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(response)
   } catch (error) {
     console.error('[school/analytics/marking] GET error:', error)
-    // Never 500 the dashboard for this additive panel — return an empty,
+    // Never 500 the dashboard for this additive panel - return an empty,
     // well-formed payload so the page degrades to "no marking data yet".
     return NextResponse.json(
       emptyResponse('school', new URL(request.url).searchParams.get('period') ?? 'month'),

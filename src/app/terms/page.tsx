@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Terms and conditions for using The English Hub platform. Rules governing access to courses, subscriptions, content usage, and user responsibilities.',
   alternates: { canonical: 'https://theenglishhub.app/terms' },
   openGraph: {
-    title: 'Terms of Service — The English Hub',
+    title: 'Terms of Service - The English Hub',
     description:
       'Terms and conditions for using The English Hub platform. Rules governing access to courses, subscriptions, content usage, and user responsibilities.',
   },

@@ -6,11 +6,11 @@ import { getBoardConfig } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Starter Activities — Teacher Library',
+    title: 'Starter Activities - Teacher Library',
     description:
       '20 quick 5-minute English lesson starters. Retrieval practice, vocabulary warm-ups, and analysis hooks.',
   },
-  title: 'Starter Activities — Teacher Library',
+  title: 'Starter Activities - Teacher Library',
   description:
     '20 quick 5-minute English lesson starters. Retrieval practice, vocabulary warm-ups, and analysis hooks.',
   alternates: {
@@ -44,7 +44,7 @@ const STARTERS = [
     id: 'silent-sentence-edit',
     title: 'Silent Sentence Edit',
     description:
-      'A weak sentence on the board — students rewrite it silently for impact and variety.',
+      'A weak sentence on the board - students rewrite it silently for impact and variety.',
     tag: 'Coming soon',
   },
   {
@@ -70,7 +70,7 @@ const STARTERS = [
     id: 'odd-one-out',
     title: 'Odd One Out',
     description:
-      'Three words, one odd one out. Students explain their reasoning — all answers can be correct.',
+      'Three words, one odd one out. Students explain their reasoning - all answers can be correct.',
     tag: 'Coming soon',
   },
   {
@@ -101,7 +101,7 @@ const STARTERS = [
   {
     id: 'three-sentence-summary',
     title: 'Three-Sentence Summary',
-    description: 'Summarise the plot so far in exactly three sentences — no more, no less.',
+    description: 'Summarise the plot so far in exactly three sentences - no more, no less.',
     tag: 'Coming soon',
   },
   {
@@ -134,7 +134,7 @@ const STARTERS = [
   {
     id: 'fact-opinion-bias',
     title: 'Fact, Opinion, or Bias?',
-    description: 'Five sentences from a news article — sort into fact, opinion, or bias.',
+    description: 'Five sentences from a news article - sort into fact, opinion, or bias.',
     tag: 'Coming soon',
   },
   {

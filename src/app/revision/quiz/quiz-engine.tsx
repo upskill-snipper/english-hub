@@ -40,7 +40,7 @@ interface RevisionLink {
 }
 
 function getTopicRevisionLinks(topic: Topic, board: ExamBoard | null): RevisionLink[] {
-  // Poetry — link to the cluster the user actually studies
+  // Poetry - link to the cluster the user actually studies
   if (topic === 'poetry') {
     if (board === 'aqa') {
       return [
@@ -276,14 +276,14 @@ function saveResult(result: QuizResult) {
 export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEngineProps) {
   const { board } = useBoard()
 
-  // Defensive runtime board filter — even if upstream passed mixed questions,
+  // Defensive runtime board filter - even if upstream passed mixed questions,
   // we strip any that are not relevant to the user's exam board.
   const questions = useMemo(
     () => rawQuestions.filter((q) => questionMatchesBoard(q, board)),
     [rawQuestions, board],
   )
 
-  // Per-session salt — fresh on every mount of the quiz engine, so each new
+  // Per-session salt - fresh on every mount of the quiz engine, so each new
   // attempt re-randomises option order. Stable for the whole quiz so a student
   // navigating between answered questions sees the same order they answered.
   const sessionSaltRef = useRef<string>(
@@ -318,7 +318,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   const [totalTime, setTotalTime] = useState(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Tracks when the current question was first shown — reset every time the
+  // Tracks when the current question was first shown - reset every time the
   // question index advances. Used to compute timeTakenSeconds for the
   // /api/quiz/response analytics write.
   const questionShownAtRef = useRef<number>(Date.now())
@@ -364,7 +364,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     setSelectedOption(optionIndex)
     setHasAnswered(true)
 
-    // Score by option VALUE, not index — options are shuffled at render time.
+    // Score by option VALUE, not index - options are shuffled at render time.
     const pickedValue = currentOptions[optionIndex]
     const isCorrect = pickedValue === correctValue
     if (isCorrect) setScore((s) => s + 1)
@@ -382,7 +382,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     // moduleId is intentionally omitted: our quiz "topic" ('poetry' etc.)
     // is not a public.modules row, and the quiz_responses.module_id column
     // is an FK to modules(id). Passing topic here would 400 on FK. Leaving
-    // it null — per-question aggregates still key on question_id, which is
+    // it null - per-question aggregates still key on question_id, which is
     // what getQuestionDifficulty / getHardestQuestions read.
     const timeTakenSeconds = Math.min(
       3600,
@@ -417,7 +417,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     if (timerRef.current) clearInterval(timerRef.current)
     setFinished(true)
 
-    // Build topic breakdown — compare answer values to the canonical correct
+    // Build topic breakdown - compare answer values to the canonical correct
     // option value, since shuffled indices are not portable.
     const topicBreakdown: Record<string, { correct: number; total: number }> = {}
     questions.forEach((q, i) => {
@@ -462,7 +462,7 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
     const percentage = Math.round((score / questions.length) * 100)
     const { grade, descriptor } = getGrade(percentage)
 
-    // Build topic breakdown for display — score by option value.
+    // Build topic breakdown for display - score by option value.
     const topicBreakdown: Record<string, { correct: number; total: number }> = {}
     questions.forEach((q, i) => {
       if (!topicBreakdown[q.topic]) topicBreakdown[q.topic] = { correct: 0, total: 0 }

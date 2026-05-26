@@ -1,5 +1,5 @@
 /**
- * Affiliate programme tier logic — flat-rate commissions.
+ * Affiliate programme tier logic - flat-rate commissions.
  *
  * 19 April 2026 rewrite:
  *   Previously: percentage-based tiers (bronze 10% / silver 15% / gold 25%)
@@ -7,11 +7,11 @@
  *   confirmed-signup count. Aligns with the new £20/year student tier.
  *
  * Tier ladder (lifetime confirmed signups):
- *   Tier 1 — Starter  ·    1–100 signups   →  £5 per signup
- *   Tier 2 — Growing  ·  101–250 signups   →  £6 per signup
- *   Tier 3 — Advanced ·  251–500 signups   →  £7 per signup
- *   Tier 4 — Scaling  ·  501–1,000 signups →  £8 per signup
- *   Tier 5 — Partner  ·  1,001+ signups    →  £10 per signup
+ *   Tier 1 - Starter  ·    1-100 signups   →  £5 per signup
+ *   Tier 2 - Growing  ·  101-250 signups   →  £6 per signup
+ *   Tier 3 - Advanced ·  251-500 signups   →  £7 per signup
+ *   Tier 4 - Scaling  ·  501-1,000 signups →  £8 per signup
+ *   Tier 5 - Partner  ·  1,001+ signups    →  £10 per signup
  *
  * Mechanics:
  *   - Tier is determined on each confirmed signup by the affiliate's
@@ -115,7 +115,7 @@ export function getTierForSignupNumber(signupNumber: number): TierInfo {
     }
   }
 
-  // Fallback (shouldn't hit — tier-5 is unbounded).
+  // Fallback (shouldn't hit - tier-5 is unbounded).
   return {
     ...TIERS['tier-5'],
     nextTier: null,
@@ -166,7 +166,7 @@ export function calculateCommissionGbp(existingConfirmedCount: number): number {
 /**
  * Public-facing tier ladder for rendering on the /affiliates page and the
  * CommissionCalculator component. Ordered ascending. Does NOT include live
- * progress data — use `getCurrentTierInfo` for that.
+ * progress data - use `getCurrentTierInfo` for that.
  */
 export const PUBLIC_TIER_LADDER = TIER_ORDER.map((key) => ({
   tier: key,
@@ -174,8 +174,8 @@ export const PUBLIC_TIER_LADDER = TIER_ORDER.map((key) => ({
   minSignup: TIERS[key].minSignup,
   maxSignup: TIERS[key].maxSignup,
   commissionGbp: TIERS[key].commissionGbp,
-  /** Human-readable signup range for display (e.g. "1–100", "1,001+"). */
+  /** Human-readable signup range for display (e.g. "1-100", "1,001+"). */
   range: TIERS[key].maxSignup
-    ? `${TIERS[key].minSignup.toLocaleString('en-GB')}–${TIERS[key].maxSignup!.toLocaleString('en-GB')}`
+    ? `${TIERS[key].minSignup.toLocaleString('en-GB')}-${TIERS[key].maxSignup!.toLocaleString('en-GB')}`
     : `${TIERS[key].minSignup.toLocaleString('en-GB')}+`,
 }))

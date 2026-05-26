@@ -6,7 +6,7 @@
  * site's interactive 'use client' AI surfaces).
  *
  * Renders the SAME wording, the SAME ai_label.* dictionary keys, and
- * links to the SAME /legal/ai-governance page — so the on-product
+ * links to the SAME /legal/ai-governance page - so the on-product
  * disclosure stays matched to the AI-governance policy. It just
  * resolves strings via the client useT() hook instead of headers().
  *

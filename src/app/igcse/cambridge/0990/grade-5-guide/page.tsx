@@ -33,7 +33,7 @@ const foundations = [
     icon: BookOpen,
     title: 'Reading: clear understanding',
     description:
-      "Grade 5 candidates show they have understood both texts accurately. You don't need dazzling analysis — you need correct comprehension and sensible comment.",
+      "Grade 5 candidates show they have understood both texts accurately. You don't need dazzling analysis - you need correct comprehension and sensible comment.",
     points: [
       'Answer what the question actually asks (underline key words)',
       'Pick clear, short quotations to support your points',
@@ -48,8 +48,8 @@ const foundations = [
     description:
       'Your writing should communicate clearly. Most sentences should be punctuated correctly, and your ideas should connect from one paragraph to the next.',
     points: [
-      'Start with a one-minute plan — three or four bullet points',
-      'Use paragraphs — one idea per paragraph',
+      'Start with a one-minute plan - three or four bullet points',
+      'Use paragraphs - one idea per paragraph',
       'Vary sentence openings (not every sentence starts with “I” or “The”)',
       'Use basic punctuation accurately: full stops, commas, apostrophes',
       'Keep tenses consistent throughout the piece',
@@ -59,13 +59,13 @@ const foundations = [
     icon: Target,
     title: "Technique: don't lose easy marks",
     description:
-      'Most Grade 5 candidates are held back by careless errors — not by lack of ability. Fixing these can push you into Grade 6 territory.',
+      'Most Grade 5 candidates are held back by careless errors - not by lack of ability. Fixing these can push you into Grade 6 territory.',
     points: [
       'Read the question twice before starting',
-      "Check the mark allocation — don't overwrite a 2-mark question",
+      "Check the mark allocation - don't overwrite a 2-mark question",
       'Leave 5 minutes at the end to proofread',
-      "Cross out mistakes with a single line — don't scribble",
-      'Attempt every question — blanks score zero',
+      "Cross out mistakes with a single line - don't scribble",
+      'Attempt every question - blanks score zero',
     ],
   },
 ]
@@ -114,7 +114,7 @@ export default async function Grade5GuidePage() {
             How to pass with Grade 5
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Grade 5 is the strong pass — roughly the old B/C boundary. It&apos;s what most sixth
+            Grade 5 is the strong pass - roughly the old B/C boundary. It&apos;s what most sixth
             forms and IB schools ask for as a minimum in English. You don&apos;t need perfect
             writing; you need dependable comprehension and clear, controlled communication.
           </p>
@@ -228,7 +228,7 @@ export default async function Grade5GuidePage() {
             </span>
             <span>
               <strong className="text-foreground">Answer the question.</strong> If the question asks
-              about feelings, write about feelings — not the setting.
+              about feelings, write about feelings - not the setting.
             </span>
           </li>
           <li className="flex gap-3">

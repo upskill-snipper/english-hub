@@ -1,14 +1,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Comprehension Challenge — Extra Passages (educational, original)
+// Comprehension Challenge - Extra Passages (educational, original)
 //
 // Ten ORIGINAL short descriptive passages written in the style of GCSE
 // "unseen extract" papers. Every passage is by The English Hub editorial
-// team — written for educational use under the platform's CC-BY-NC-SA
-// licence — so we never need to quote a copyrighted source.
+// team - written for educational use under the platform's CC-BY-NC-SA
+// licence - so we never need to quote a copyrighted source.
 //
 // The shape is a richer superset of the in-page Passage type used by
 // `page.tsx`: it adds an `id`, a `source` line, an explicit `marks` value
-// per question (matching real AQA/Edexcel/OCR mark schemes — 1, 2, 4, 8 or
+// per question (matching real AQA/Edexcel/OCR mark schemes - 1, 2, 4, 8 or
 // 20) and a teaching `explanation` that the UI can surface alongside
 // feedback. The file is exported separately so the existing PASSAGE_BANK
 // in `page.tsx` remains untouched; an integration step can fold these in
@@ -17,11 +17,11 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type ExtraQuestionType =
-  | 'list4' // AO1 — find four things
-  | 'language' // AO2 — analysis of words / phrases / techniques
-  | 'structure' // AO2 — structural features
-  | 'evaluation' // AO4 — critical evaluation
-  | 'inference' // AO1 — implicit meaning
+  | 'list4' // AO1 - find four things
+  | 'language' // AO2 - analysis of words / phrases / techniques
+  | 'structure' // AO2 - structural features
+  | 'evaluation' // AO4 - critical evaluation
+  | 'inference' // AO1 - implicit meaning
 
 export type ExtraMarks = 1 | 2 | 4 | 8 | 20
 
@@ -40,7 +40,7 @@ export interface ExtraPassage {
   /** Stable ID, prefixed `cc-extra-` so it cannot collide with the in-page bank. */
   id: string
   title: string
-  /** Genre tag — kept consistent with the existing PASSAGE_BANK shape. */
+  /** Genre tag - kept consistent with the existing PASSAGE_BANK shape. */
   genre: string
   /** Attribution line. All extras are original, CC-BY-NC-SA. */
   source: string
@@ -49,11 +49,11 @@ export interface ExtraPassage {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// The bank — 10 passages, 5 questions each.
+// The bank - 10 passages, 5 questions each.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SOURCE_LINE =
-  "Original passage by The English Hub editorial team — written for educational use under the platform's CC-BY-NC-SA licence"
+  "Original passage by The English Hub editorial team - written for educational use under the platform's CC-BY-NC-SA licence"
 
 export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
   // 1 ─── Coastal cliff at sunrise ───────────────────────────────────────────
@@ -105,7 +105,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 0,
         explanation:
-          'AO2 structure: notice the temporal sweep. The passage zooms in on stillness, expands as light arrives, then pulls back to the long, geological time of the waves — a clear shift from moment to eternity.',
+          'AO2 structure: notice the temporal sweep. The passage zooms in on stillness, expands as light arrives, then pulls back to the long, geological time of the waves - a clear shift from moment to eternity.',
       },
       {
         type: 'evaluation',
@@ -113,9 +113,9 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A student said: "The writer makes the dawn feel like a quiet event of huge importance." How far do you agree?',
         options: [
-          'Disagree — the writer makes the dawn sound trivial and rushed',
-          'Agree — through hushed adjectives ("patient", "astonished"), the slow sentence rhythm and the closing reflection that "the world begins again every day", the writer elevates an ordinary sunrise into something near-sacred',
-          'Disagree — there is no description of the dawn at all',
+          'Disagree - the writer makes the dawn sound trivial and rushed',
+          'Agree - through hushed adjectives ("patient", "astonished"), the slow sentence rhythm and the closing reflection that "the world begins again every day", the writer elevates an ordinary sunrise into something near-sacred',
+          'Disagree - there is no description of the dawn at all',
           'Agree, but only because the fisherman shouts during the sunrise',
         ],
         correctIndex: 1,
@@ -128,13 +128,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt: 'What can you infer about the fisherman from his stillness?',
         options: [
           'He is impatient and bored',
-          'He is contemplative — he has come to be alone with the dawn rather than to fish',
+          'He is contemplative - he has come to be alone with the dawn rather than to fish',
           'He is asleep on his feet',
           'He is hiding from someone on the path',
         ],
         correctIndex: 1,
         explanation:
-          "AO1 inference: he stands motionless, his collar up, and the narrator suggests he came 'to think' or 'to be reminded' — that points to quiet contemplation, not work.",
+          "AO1 inference: he stands motionless, his collar up, and the narrator suggests he came 'to think' or 'to be reminded' - that points to quiet contemplation, not work.",
       },
     ],
   },
@@ -168,7 +168,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What is the effect of comparing the clockmaker\'s hands to those of "a pianist between phrases"?',
         options: [
           'It suggests his hands are clumsy and untrained',
-          'It elevates the craft to something artistic — implying skill, restraint, and a sense of tempo and care',
+          'It elevates the craft to something artistic - implying skill, restraint, and a sense of tempo and care',
           'It implies he is also a professional musician',
           'It suggests the workshop is full of music students',
         ],
@@ -197,10 +197,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "The writer makes craftsmanship feel almost sacred." How far do you agree?',
         options: [
-          'Disagree — the workshop sounds chaotic and unpleasant',
-          'Agree — the warm lexis ("companionable", "faith"), the heartbeat metaphor of the pendulum, and the careful, hushed sentences turn ordinary repair work into something dignified and quietly devotional',
-          'Disagree — the clockmaker is presented as cruel',
-          'Agree — but only because the workshop is described as a church',
+          'Disagree - the workshop sounds chaotic and unpleasant',
+          'Agree - the warm lexis ("companionable", "faith"), the heartbeat metaphor of the pendulum, and the careful, hushed sentences turn ordinary repair work into something dignified and quietly devotional',
+          'Disagree - the clockmaker is presented as cruel',
+          'Agree - but only because the workshop is described as a church',
         ],
         correctIndex: 1,
         explanation:
@@ -219,7 +219,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 1,
         explanation:
-          'AO1 inference: the shepherd image implies attentive guardianship — the clocks are almost animate beings under his quiet watch.',
+          'AO1 inference: the shepherd image implies attentive guardianship - the clocks are almost animate beings under his quiet watch.',
       },
     ],
   },
@@ -274,7 +274,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 0,
         explanation:
-          'AO2 structure: the final sentence pans upward, contrasting the busy human-scale square with a single, distant star — a small change of scale that gives the closing image its quiet weight.',
+          'AO2 structure: the final sentence pans upward, contrasting the busy human-scale square with a single, distant star - a small change of scale that gives the closing image its quiet weight.',
       },
       {
         type: 'evaluation',
@@ -282,10 +282,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "This passage makes an ordinary winter evening feel magical." How far do you agree?',
         options: [
-          'Disagree — the writer makes the evening sound miserable and grey',
-          "Agree — through golden lighting imagery, the band's music, the moment of the woman appearing younger and the well-placed final star, the writer transforms an ordinary scene into something gently enchanted",
-          'Disagree — nothing happens in the passage',
-          'Agree — but only because there is a magician performing in the square',
+          'Disagree - the writer makes the evening sound miserable and grey',
+          "Agree - through golden lighting imagery, the band's music, the moment of the woman appearing younger and the well-placed final star, the writer transforms an ordinary scene into something gently enchanted",
+          'Disagree - nothing happens in the passage',
+          'Agree - but only because there is a magician performing in the square',
         ],
         correctIndex: 1,
         explanation:
@@ -295,7 +295,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         type: 'inference',
         marks: 2,
         prompt:
-          'What does the description of the woman\'s face — "the face of a much younger woman, surprised by music" — imply?',
+          'What does the description of the woman\'s face - "the face of a much younger woman, surprised by music" - imply?',
         options: [
           'She is angry that the band is playing',
           'Music has briefly returned her to a memory or feeling from earlier in her life',
@@ -335,7 +335,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         type: 'language',
         marks: 8,
         prompt:
-          'How does the writer use language to suggest the garden is responsive — almost alive?',
+          'How does the writer use language to suggest the garden is responsive - almost alive?',
         options: [
           'Through cold, technical horticultural vocabulary',
           'Through gentle personification (the gardens "began very quietly to shine"), comparison of dripping water to "the punctuation of a careful writer", and the orchids that "breathed out" their scent',
@@ -358,7 +358,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 0,
         explanation:
-          'AO2 structure: the patient, unfurling syntax mirrors the patient, unfurling garden — and the shorter observational sentences act like still-frames within the slow movement.',
+          'AO2 structure: the patient, unfurling syntax mirrors the patient, unfurling garden - and the shorter observational sentences act like still-frames within the slow movement.',
       },
       {
         type: 'evaluation',
@@ -366,14 +366,14 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A student said: "The writer rewards close, quiet attention more than excitement." How far do you agree?',
         options: [
-          'Disagree — the passage is dramatic and full of action',
-          'Agree — the writer celebrates small, easily missed details (the orchid scent only caught when you stop trying, the blackbird singing for itself, the gardener who knows things must be "looked at slowly")',
-          'Disagree — the writer is bored throughout',
-          'Agree — but only because the gardener is asleep',
+          'Disagree - the passage is dramatic and full of action',
+          'Agree - the writer celebrates small, easily missed details (the orchid scent only caught when you stop trying, the blackbird singing for itself, the gardener who knows things must be "looked at slowly")',
+          'Disagree - the writer is bored throughout',
+          'Agree - but only because the gardener is asleep',
         ],
         correctIndex: 1,
         explanation:
-          "AO4 evaluation: the writer repeatedly elevates quiet, slow noticing as a value — the orchid line and the gardener\'s patience are direct evidence.",
+          "AO4 evaluation: the writer repeatedly elevates quiet, slow noticing as a value - the orchid line and the gardener\'s patience are direct evidence.",
       },
       {
         type: 'inference',
@@ -382,7 +382,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What does the description of the gardener\'s footprints "filling themselves in slowly behind him" suggest?',
         options: [
           'The gravel is quicksand and dangerous',
-          'The gravel is wet and loose, gently settling — and, more figuratively, the garden absorbs and erases human passage, suggesting its quiet self-sufficiency',
+          'The gravel is wet and loose, gently settling - and, more figuratively, the garden absorbs and erases human passage, suggesting its quiet self-sufficiency',
           'The gardener is invisible',
           'It is snowing again',
         ],
@@ -399,7 +399,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
     title: 'The Shepherd Wakes',
     genre: 'Descriptive Fiction',
     source: SOURCE_LINE,
-    text: "The shepherd woke before the valley had remembered itself. The single window of his stone hut showed a pale, undecided grey, neither night nor morning, and the air on his face had the clean cold of high places. He lay still for a moment to listen. Somewhere below, a sheep coughed. Somewhere further below, a stream ran on, as it always had, repeating its one long sentence to no one in particular. He rose. He pulled on his boots, knotted the laces with the unthinking exactness of a man who had done it ten thousand times, and broke a piece of yesterday's bread for his pocket. The dog watched him from the rug with an attention so complete it amounted to a kind of love. Outside, the mountain was waiting. The sky had begun to lighten over the eastern ridge, and the first rim of pale gold lay along the rocks like a thin warm blanket someone had placed there in the dark. The shepherd crossed the yard, opened the gate, and the flock — already gathered, already murmuring — began to flow uphill ahead of him, a moving, woolly weather of its own. He did not need to count them yet. He could feel that they were all there, the way a player can feel, without looking, that every string of his instrument is in tune.",
+    text: "The shepherd woke before the valley had remembered itself. The single window of his stone hut showed a pale, undecided grey, neither night nor morning, and the air on his face had the clean cold of high places. He lay still for a moment to listen. Somewhere below, a sheep coughed. Somewhere further below, a stream ran on, as it always had, repeating its one long sentence to no one in particular. He rose. He pulled on his boots, knotted the laces with the unthinking exactness of a man who had done it ten thousand times, and broke a piece of yesterday's bread for his pocket. The dog watched him from the rug with an attention so complete it amounted to a kind of love. Outside, the mountain was waiting. The sky had begun to lighten over the eastern ridge, and the first rim of pale gold lay along the rocks like a thin warm blanket someone had placed there in the dark. The shepherd crossed the yard, opened the gate, and the flock - already gathered, already murmuring - began to flow uphill ahead of him, a moving, woolly weather of its own. He did not need to count them yet. He could feel that they were all there, the way a player can feel, without looking, that every string of his instrument is in tune.",
     questions: [
       {
         type: 'list4',
@@ -422,9 +422,9 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What is the effect of the simile "a moving, woolly weather of its own" used to describe the flock?',
         options: [
           'It suggests the sheep are dangerous and stormy',
-          'It captures both the soft visual mass of the flock and its slow, atmospheric drift across the landscape — making them feel like a natural phenomenon rather than discrete animals',
+          'It captures both the soft visual mass of the flock and its slow, atmospheric drift across the landscape - making them feel like a natural phenomenon rather than discrete animals',
           'It implies it is raining heavily',
-          'It is meant literally — clouds are made of sheep',
+          'It is meant literally - clouds are made of sheep',
         ],
         correctIndex: 1,
         explanation:
@@ -435,14 +435,14 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         marks: 4,
         prompt: 'How does the writer use a "still / moving" structural pattern in the passage?',
         options: [
-          "It opens in stillness (the shepherd lying, listening), then moves through quiet preparation, then opens out into the expansive movement of the flock — mirroring the shepherd's own gathering of energy",
+          "It opens in stillness (the shepherd lying, listening), then moves through quiet preparation, then opens out into the expansive movement of the flock - mirroring the shepherd's own gathering of energy",
           "It is structured entirely around the dog's thoughts",
           'It is a series of disconnected fragments with no order',
           'It begins at full speed and slows down to nothing',
         ],
         correctIndex: 0,
         explanation:
-          'AO2 structure: the deliberate stillness-to-motion arc mirrors waking itself — the body, the cottage, then the world widening outward.',
+          'AO2 structure: the deliberate stillness-to-motion arc mirrors waking itself - the body, the cottage, then the world widening outward.',
       },
       {
         type: 'evaluation',
@@ -450,10 +450,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "The passage makes routine work feel deeply skilled." How far do you agree?',
         options: [
-          'Disagree — the writer presents the shepherd as careless and lazy',
-          "Agree — the unthinking exactness of the laces, the player-and-instrument simile for the flock, and the dog's devoted gaze all turn ordinary chores into the marks of mastery",
-          'Disagree — the shepherd has no skills',
-          'Agree — but only because the shepherd uses dangerous machinery',
+          'Disagree - the writer presents the shepherd as careless and lazy',
+          "Agree - the unthinking exactness of the laces, the player-and-instrument simile for the flock, and the dog's devoted gaze all turn ordinary chores into the marks of mastery",
+          'Disagree - the shepherd has no skills',
+          'Agree - but only because the shepherd uses dangerous machinery',
         ],
         correctIndex: 1,
         explanation:
@@ -466,7 +466,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What does the line "the stream ran on... repeating its one long sentence to no one in particular" suggest about the mountain world?',
         options: [
           'That the mountains are noisy and crowded',
-          'That nature here continues independently of any human listener — old, patient, indifferent and yet companionable',
+          'That nature here continues independently of any human listener - old, patient, indifferent and yet companionable',
           'That the stream is broken and needs fixing',
           'That the shepherd dislikes the sound',
         ],
@@ -497,16 +497,16 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 0,
         explanation:
-          'AO1 List 4: each item is directly retrievable — engines, gulls, the oilskinned man, the child threading floats.',
+          'AO1 List 4: each item is directly retrievable - engines, gulls, the oilskinned man, the child threading floats.',
       },
       {
         type: 'language',
         marks: 8,
         prompt:
-          'What is the effect of the personification of the gulls — "had begun their argument with the day"?',
+          'What is the effect of the personification of the gulls - "had begun their argument with the day"?',
         options: [
           'It implies the gulls speak human language',
-          'It captures both their constant, argumentative noise and a sense that the day itself is a presence they are confronting — making the harbour feel charged and alive',
+          'It captures both their constant, argumentative noise and a sense that the day itself is a presence they are confronting - making the harbour feel charged and alive',
           'It suggests the gulls are silent',
           'It tells us the gulls have a leader',
         ],
@@ -535,14 +535,14 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "The writer makes the harbour feel like a place where everyone belongs to a quiet shared world." How far do you agree?',
         options: [
-          'Disagree — the writer presents the harbour as hostile and divided',
-          'Agree — the line "busyness was a kind of greeting", the boats nudging "as if reminding themselves they were not alone", and the inclusion of the unnamed working girl all build a sense of unspoken, communal belonging',
-          'Disagree — there are no people in the passage',
-          'Agree — but only because everyone is shouting at each other',
+          'Disagree - the writer presents the harbour as hostile and divided',
+          'Agree - the line "busyness was a kind of greeting", the boats nudging "as if reminding themselves they were not alone", and the inclusion of the unnamed working girl all build a sense of unspoken, communal belonging',
+          'Disagree - there are no people in the passage',
+          'Agree - but only because everyone is shouting at each other',
         ],
         correctIndex: 1,
         explanation:
-          'AO4 evaluation: the social texture is built indirectly — through gestures, shared work, and small images of mutual presence rather than dialogue.',
+          'AO4 evaluation: the social texture is built indirectly - through gestures, shared work, and small images of mutual presence rather than dialogue.',
       },
       {
         type: 'inference',
@@ -550,13 +550,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt: 'What does the description of the man\'s "slow, planted stride" suggest about him?',
         options: [
           'He is injured and struggling to walk',
-          'He is highly experienced — a person whose body has adapted to working on shifting decks and slippery stone',
+          'He is highly experienced - a person whose body has adapted to working on shifting decks and slippery stone',
           'He is in a great hurry',
           'He is a tourist who has just arrived',
         ],
         correctIndex: 1,
         explanation:
-          "AO1 inference: the phrase 'balance has been earned' is the giveaway — his walk is the result of long practice on unstable surfaces.",
+          "AO1 inference: the phrase 'balance has been earned' is the giveaway - his walk is the result of long practice on unstable surfaces.",
       },
     ],
   },
@@ -567,7 +567,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
     title: 'The Attic',
     genre: 'Descriptive Fiction',
     source: SOURCE_LINE,
-    text: 'The attic smelled, more than anything, of patient paper. Light came in through one small dormer window, and the dust hung in the slanted column of it like fine silver weather. Books were everywhere. They stood on shelves, leaned against shelves, lay in tilted stacks on the floorboards, and propped each other up with the trustfulness of old friends who have agreed not to fall. A few had slipped from the upper rows and landed face-down, their pages spread, looking like small grounded birds. The girl climbed the ladder slowly, half because the rungs creaked, half because she did not want to disturb whatever it was the room contained. At the top, she stood quite still. The silence was not empty. It was the kind of silence that a long-occupied room makes, full of the shapes of past attention — of all the readers who had sat there, turning pages, breathing slowly, drifting. She crossed to the window and put her hand on a worn green spine. The cover was cool. The lettering had almost rubbed away. She did not yet know what the book was, but she knew, with the obstinate certainty of children, that the book had been waiting to be picked up — and that this, today, was its turn.',
+    text: 'The attic smelled, more than anything, of patient paper. Light came in through one small dormer window, and the dust hung in the slanted column of it like fine silver weather. Books were everywhere. They stood on shelves, leaned against shelves, lay in tilted stacks on the floorboards, and propped each other up with the trustfulness of old friends who have agreed not to fall. A few had slipped from the upper rows and landed face-down, their pages spread, looking like small grounded birds. The girl climbed the ladder slowly, half because the rungs creaked, half because she did not want to disturb whatever it was the room contained. At the top, she stood quite still. The silence was not empty. It was the kind of silence that a long-occupied room makes, full of the shapes of past attention - of all the readers who had sat there, turning pages, breathing slowly, drifting. She crossed to the window and put her hand on a worn green spine. The cover was cool. The lettering had almost rubbed away. She did not yet know what the book was, but she knew, with the obstinate certainty of children, that the book had been waiting to be picked up - and that this, today, was its turn.',
     questions: [
       {
         type: 'list4',
@@ -590,7 +590,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'How does the writer use language to make the attic feel inhabited even though no one else is there?',
         options: [
           'Through aggressive, military vocabulary',
-          'Through metaphors of community ("the trustfulness of old friends"), the personifying detail of fallen books "like small grounded birds", and the description of a silence "full of the shapes of past attention" — collectively suggesting the room remembers its readers',
+          'Through metaphors of community ("the trustfulness of old friends"), the personifying detail of fallen books "like small grounded birds", and the description of a silence "full of the shapes of past attention" - collectively suggesting the room remembers its readers',
           'Through descriptions of crowds of visitors',
           'Through a long list of book titles',
         ],
@@ -605,13 +605,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           "What is the structural effect of ending the passage on the girl's hand on the worn green spine?",
         options: [
           'It widens out into a panoramic landscape view',
-          'It narrows the focus from the whole atmospheric room down to a single, intimate gesture, creating a sense of beginning — as if the rest of the story is about to start with that single book',
+          'It narrows the focus from the whole atmospheric room down to a single, intimate gesture, creating a sense of beginning - as if the rest of the story is about to start with that single book',
           'It closes the story conclusively, with nothing more to come',
           'It introduces a new, unrelated character',
         ],
         correctIndex: 1,
         explanation:
-          "AO2 structure: the zoom from room to dust to silence to the single book primes the reader for a personal story to begin — a classic 'inciting object' structure.",
+          "AO2 structure: the zoom from room to dust to silence to the single book primes the reader for a personal story to begin - a classic 'inciting object' structure.",
       },
       {
         type: 'evaluation',
@@ -619,10 +619,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A student said: "The writer presents books as patient, almost living companions." How far do you agree?',
         options: [
-          'Disagree — the writer presents the books as worthless rubbish',
-          'Agree — books "prop each other up", a chosen book has been "waiting to be picked up", and the silence itself is layered with the presence of past readers; the cumulative effect makes the books feel sentient and welcoming',
-          'Disagree — there are no books in the passage',
-          'Agree — but only because the books literally speak aloud',
+          'Disagree - the writer presents the books as worthless rubbish',
+          'Agree - books "prop each other up", a chosen book has been "waiting to be picked up", and the silence itself is layered with the presence of past readers; the cumulative effect makes the books feel sentient and welcoming',
+          'Disagree - there are no books in the passage',
+          'Agree - but only because the books literally speak aloud',
         ],
         correctIndex: 1,
         explanation:
@@ -635,13 +635,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           "What does the girl's slow climb up the ladder reveal about her attitude to the room?",
         options: [
           'She is bored and unwilling to be there',
-          'She feels a kind of reverence — she senses the room contains something she does not want to disturb',
+          'She feels a kind of reverence - she senses the room contains something she does not want to disturb',
           'She is afraid the ladder will collapse and is purely focused on safety',
           'She is in a great hurry',
         ],
         correctIndex: 1,
         explanation:
-          "AO1 inference: the narrator explicitly notes she climbs slowly because she does not want to disturb 'whatever it was the room contained' — a respectful, curious posture.",
+          "AO1 inference: the narrator explicitly notes she climbs slowly because she does not want to disturb 'whatever it was the room contained' - a respectful, curious posture.",
       },
     ],
   },
@@ -652,7 +652,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
     title: 'The Wood in October',
     genre: 'Descriptive Non-fiction',
     source: SOURCE_LINE,
-    text: 'The wood in October is a slow fire. The beech leaves had turned the colour of new copper, and the light that came down between them fell in long, considered shafts, as if measured out by hand. The air smelled of cold earth and crushed apples. Underfoot, the leaves had begun to compose themselves into that soft, generous layer that gives back nothing of a footstep but a small dry breath. Squirrels worked above, busy and unbothered. A wren turned its head sideways at the sound of approach, then dismissed it. Higher up, where the canopy began to thin, the sky showed in scraps of blue, like fragments of a forgotten promise. There were sudden, surprising spaces — clearings, where the ground was bright with bracken gone the colour of fox fur — and there were shut, secretive places, where the trunks crowded together and the light gave up. A walker, passing through, would feel the wood quietly inviting different speeds of attention: now slow, now still, now quick. By the time the path reached the brook, the year had already begun to put itself away, leaf by leaf, with the patient courtesy of a host clearing the table.',
+    text: 'The wood in October is a slow fire. The beech leaves had turned the colour of new copper, and the light that came down between them fell in long, considered shafts, as if measured out by hand. The air smelled of cold earth and crushed apples. Underfoot, the leaves had begun to compose themselves into that soft, generous layer that gives back nothing of a footstep but a small dry breath. Squirrels worked above, busy and unbothered. A wren turned its head sideways at the sound of approach, then dismissed it. Higher up, where the canopy began to thin, the sky showed in scraps of blue, like fragments of a forgotten promise. There were sudden, surprising spaces - clearings, where the ground was bright with bracken gone the colour of fox fur - and there were shut, secretive places, where the trunks crowded together and the light gave up. A walker, passing through, would feel the wood quietly inviting different speeds of attention: now slow, now still, now quick. By the time the path reached the brook, the year had already begun to put itself away, leaf by leaf, with the patient courtesy of a host clearing the table.',
     questions: [
       {
         type: 'list4',
@@ -674,13 +674,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt: 'What is the effect of the opening metaphor "The wood in October is a slow fire"?',
         options: [
           'It implies the wood is genuinely on fire and dangerous',
-          'It encapsulates the autumn colour as a kind of burning, and the slow drift of the season as something gradual rather than violent — setting the imaginative tone for the whole passage',
+          'It encapsulates the autumn colour as a kind of burning, and the slow drift of the season as something gradual rather than violent - setting the imaginative tone for the whole passage',
           'It suggests the wood is being cleared by foresters',
           'It implies cold weather is coming and the wood is freezing',
         ],
         correctIndex: 1,
         explanation:
-          'AO2 language: the metaphor compresses two ideas — the colour and the gradual change — into one striking image that the rest of the passage develops.',
+          'AO2 language: the metaphor compresses two ideas - the colour and the gradual change - into one striking image that the rest of the passage develops.',
       },
       {
         type: 'structure',
@@ -702,10 +702,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "The writer presents autumn as a season of graceful endings, not loss." How far do you agree?',
         options: [
-          'Disagree — the writer presents autumn as bleak, aggressive and frightening',
-          'Agree — the closing image of the year putting itself away "leaf by leaf, with the patient courtesy of a host clearing the table" frames endings as elegant and considerate, and earlier images (the "slow fire", the "considered shafts" of light) build the same sense of dignified, deliberate transition',
-          'Disagree — autumn is barely mentioned in the passage',
-          'Agree — but only because no leaves actually fall',
+          'Disagree - the writer presents autumn as bleak, aggressive and frightening',
+          'Agree - the closing image of the year putting itself away "leaf by leaf, with the patient courtesy of a host clearing the table" frames endings as elegant and considerate, and earlier images (the "slow fire", the "considered shafts" of light) build the same sense of dignified, deliberate transition',
+          'Disagree - autumn is barely mentioned in the passage',
+          'Agree - but only because no leaves actually fall',
         ],
         correctIndex: 1,
         explanation:
@@ -718,13 +718,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What does the comparison of patches of sky to "fragments of a forgotten promise" suggest about the canopy?',
         options: [
           'That the trees are entirely bare and the sky is fully visible',
-          'That the canopy almost hides the sky, and the small visible scraps of blue feel both beautiful and slightly mournful — hints of something larger and brighter, only partly remembered',
+          'That the canopy almost hides the sky, and the small visible scraps of blue feel both beautiful and slightly mournful - hints of something larger and brighter, only partly remembered',
           'That the sky is grey and overcast',
           'That the sky is illuminated by aircraft lights',
         ],
         correctIndex: 1,
         explanation:
-          'AO1 inference: the imagery couples beauty with loss — the canopy holds the sky away, leaving only suggestive glimpses.',
+          'AO1 inference: the imagery couples beauty with loss - the canopy holds the sky away, leaving only suggestive glimpses.',
       },
     ],
   },
@@ -779,7 +779,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 0,
         explanation:
-          "AO2 structure: the structural pivot — signalled by 'And then' — gives the reader the same shift the traveller feels.",
+          "AO2 structure: the structural pivot - signalled by 'And then' - gives the reader the same shift the traveller feels.",
       },
       {
         type: 'evaluation',
@@ -787,10 +787,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "The writer turns the discovery of water into something almost spiritual." How far do you agree?',
         options: [
-          'Disagree — the oasis is described as ordinary and disappointing',
-          'Agree — the closing reflection that "the world was capable of mercy" and the elevated, almost reverent register of "quietly extravagant" lift the moment beyond physical relief into something close to grace',
-          'Disagree — there is no oasis in the passage',
-          'Agree — but only because a religious ceremony takes place there',
+          'Disagree - the oasis is described as ordinary and disappointing',
+          'Agree - the closing reflection that "the world was capable of mercy" and the elevated, almost reverent register of "quietly extravagant" lift the moment beyond physical relief into something close to grace',
+          'Disagree - there is no oasis in the passage',
+          'Agree - but only because a religious ceremony takes place there',
         ],
         correctIndex: 1,
         explanation:
@@ -803,13 +803,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What does the line "the far hills appeared to float a little above the world" imply about the heat?',
         options: [
           'The hills are genuinely flying',
-          'The heat is intense enough to bend the light, creating a mirage effect — visually disorienting and quietly unsettling',
+          'The heat is intense enough to bend the light, creating a mirage effect - visually disorienting and quietly unsettling',
           'It is in fact cold and the air is clear',
           'There are no hills in the passage',
         ],
         correctIndex: 1,
         explanation:
-          "AO1 inference: the floating effect points to extreme heat-haze — a physical sign of the desert's hostility before the oasis appears.",
+          "AO1 inference: the floating effect points to extreme heat-haze - a physical sign of the desert's hostility before the oasis appears.",
       },
     ],
   },
@@ -820,7 +820,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
     title: "The Keeper's Room",
     genre: 'Descriptive Fiction',
     source: SOURCE_LINE,
-    text: 'The room was small and warm and round. The walls curved with the wall of the tower, so that no piece of furniture quite sat flat against them, and every chair had been gently pushed by the architecture into facing the fire. A kettle muttered to itself on the iron stove. A neat row of books leaned in the bookcase, their spines rubbed soft by years of handling. On the table, a half-finished letter waited beside a saucer of tea that had long since gone cold. The keeper had not abandoned the letter; he had simply stepped away to attend to the lamp, as he did every evening, and the letter had patiently kept his place. Outside, the wind argued with the windows. Inside, the small clock on the mantelpiece ticked with the modest insistence of someone trying not to interrupt. Photographs stood in a careful line above the stove: a young woman at a railing, two children laughing at a beach, a much older couple arm in arm. The order of them suggested a life rather than a story, the way a string of buoys might suggest a safe channel without exactly explaining the sea. Above all of this, somewhere up the spiral stair, the great light was beginning its slow, faithful turn — the steady heartbeat of the building, sending its calm message far out across the dark water to anyone who needed it.',
+    text: 'The room was small and warm and round. The walls curved with the wall of the tower, so that no piece of furniture quite sat flat against them, and every chair had been gently pushed by the architecture into facing the fire. A kettle muttered to itself on the iron stove. A neat row of books leaned in the bookcase, their spines rubbed soft by years of handling. On the table, a half-finished letter waited beside a saucer of tea that had long since gone cold. The keeper had not abandoned the letter; he had simply stepped away to attend to the lamp, as he did every evening, and the letter had patiently kept his place. Outside, the wind argued with the windows. Inside, the small clock on the mantelpiece ticked with the modest insistence of someone trying not to interrupt. Photographs stood in a careful line above the stove: a young woman at a railing, two children laughing at a beach, a much older couple arm in arm. The order of them suggested a life rather than a story, the way a string of buoys might suggest a safe channel without exactly explaining the sea. Above all of this, somewhere up the spiral stair, the great light was beginning its slow, faithful turn - the steady heartbeat of the building, sending its calm message far out across the dark water to anyone who needed it.',
     questions: [
       {
         type: 'list4',
@@ -849,7 +849,7 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         ],
         correctIndex: 1,
         explanation:
-          "AO2 language: the paired personifications create a deliberate contrast in register — wild outside, courteous inside — which emphasises the room's sheltering quality.",
+          "AO2 language: the paired personifications create a deliberate contrast in register - wild outside, courteous inside - which emphasises the room's sheltering quality.",
       },
       {
         type: 'structure',
@@ -872,10 +872,10 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         prompt:
           'A reader said: "The writer presents the lighthouse keeper\'s life as small, ordered and quietly heroic." How far do you agree?',
         options: [
-          'Disagree — the writer presents the keeper as careless and reckless',
-          'Agree — the orderly photographs, the steady habits implied by the half-finished letter, and the closing image of the lamp as "the steady heartbeat of the building, sending its calm message" all combine to dignify a small, repetitive life as an act of quiet service',
-          'Disagree — there is no keeper in the passage',
-          'Agree — but only because the keeper performs daring rescues',
+          'Disagree - the writer presents the keeper as careless and reckless',
+          'Agree - the orderly photographs, the steady habits implied by the half-finished letter, and the closing image of the lamp as "the steady heartbeat of the building, sending its calm message" all combine to dignify a small, repetitive life as an act of quiet service',
+          'Disagree - there is no keeper in the passage',
+          'Agree - but only because the keeper performs daring rescues',
         ],
         correctIndex: 1,
         explanation:
@@ -888,13 +888,13 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
           'What can you infer about the keeper from the line that the photographs "suggested a life rather than a story"?',
         options: [
           'That his life has been deliberately secret and dramatic',
-          'That his life has been steady and ordinary in shape — marked more by continuity than by single dramatic events',
+          'That his life has been steady and ordinary in shape - marked more by continuity than by single dramatic events',
           'That he has no family',
           'That the photographs are forgeries',
         ],
         correctIndex: 1,
         explanation:
-          "AO1 inference: the contrast between 'a life' and 'a story' implies a quietly continuous existence — patterned, not plot-driven.",
+          "AO1 inference: the contrast between 'a life' and 'a story' implies a quietly continuous existence - patterned, not plot-driven.",
       },
     ],
   },

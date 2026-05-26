@@ -30,7 +30,7 @@ export default async function ComplaintsProcedurePage() {
     <>
       <h1 className="text-3xl font-bold mb-2">{_tr(`Complaints Procedure`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>{_tr(`The English Hub`)}</strong> — operated by Upskill Energy Limited
+        <strong>{_tr(`The English Hub`)}</strong> - operated by Upskill Energy Limited
         <br />
         Effective Date: 22 March 2026 | Version 1.0
       </p>
@@ -76,7 +76,7 @@ export default async function ComplaintsProcedurePage() {
         <ul className="list-disc pl-6 space-y-1 text-sm">
           <li>{_tr(`Your name (or you can complain anonymously)`)}</li>
           <li>Your email address or username</li>
-          <li>{_tr(`What happened — describe the problem in your own words`)}</li>
+          <li>{_tr(`What happened - describe the problem in your own words`)}</li>
           <li>{_tr(`When it happened`)}</li>
           <li>What you would like us to do (apology, fix, refund, explanation)</li>
           <li>{_tr(`Any evidence (screenshots, emails, reference numbers)`)}</li>
@@ -155,7 +155,7 @@ export default async function ComplaintsProcedurePage() {
         <div className="space-y-6">
           <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold text-lg">
-              Stage 1: Initial Response — Within 3 Working Days
+              Stage 1: Initial Response - Within 3 Working Days
             </h3>
             <ul className="list-disc pl-6 space-y-1 text-sm mt-2">
               <li>
@@ -171,7 +171,7 @@ export default async function ComplaintsProcedurePage() {
 
           <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold text-lg">
-              Stage 2: Investigation — Within 10 Working Days
+              Stage 2: Investigation - Within 10 Working Days
             </h3>
             <ul className="list-disc pl-6 space-y-1 text-sm mt-2">
               <li>Thorough investigation (system logs, staff interviews, content review)</li>
@@ -184,7 +184,7 @@ export default async function ComplaintsProcedurePage() {
 
           <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold text-lg">
-              Stage 3: Final Response — Within 20 Working Days
+              Stage 3: Final Response - Within 20 Working Days
             </h3>
             <ul className="list-disc pl-6 space-y-1 text-sm mt-2">
               <li>Senior review by a manager not involved in earlier stages</li>
@@ -301,7 +301,7 @@ export default async function ComplaintsProcedurePage() {
             words
           </li>
           <li>
-            <strong>{_tr(`No pressure:`)}</strong> Every complaint matters — you will never be made
+            <strong>{_tr(`No pressure:`)}</strong> Every complaint matters - you will never be made
             to feel it is trivial
           </li>
           <li>

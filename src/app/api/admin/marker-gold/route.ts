@@ -1,20 +1,20 @@
-// ─── Platform-admin — Gold-set manager (paid-marker drive) ───────────────────
-// POST /api/admin/marker-gold   — mark batch item(s) as gold (set is_gold +
+// ─── Platform-admin - Gold-set manager (paid-marker drive) ───────────────────
+// POST /api/admin/marker-gold   - mark batch item(s) as gold (set is_gold +
 //                                  gold_expected). Single or bulk.
-// GET  /api/admin/marker-gold    — list gold items + their per-marker QA
+// GET  /api/admin/marker-gold    - list gold items + their per-marker QA
 //                                  outcome (marker mark/grade vs expert).
 //
 // Site-admin ONLY (verifyAdmin). gold_expected is the expert ground truth and
 // is admin-only by construction: it is written and read ONLY here and in
 // /api/admin/marker-qa. The marker console is a separate workspace and never
-// receives these fields — that boundary is enforced by gating every route in
+// receives these fields - that boundary is enforced by gating every route in
 // this folder behind verifyAdmin.
 //
 // EMPTY-TABLE SAFE: GET degrades to an empty list (never a 500) when the
 // marking tables are not migrated yet.
 //
 // DB access: Supabase service-role client only (these tables are RLS
-// deny-by-default; never Prisma — Windows EPERM).
+// deny-by-default; never Prisma - Windows EPERM).
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -98,7 +98,7 @@ function validateItem(
   }
 }
 
-// ─── POST — set gold on existing batch item(s) ───────────────────────────────
+// ─── POST - set gold on existing batch item(s) ───────────────────────────────
 
 export async function POST(request: NextRequest) {
   try {
@@ -179,7 +179,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// ─── GET — list gold items + per-marker QA outcome ───────────────────────────
+// ─── GET - list gold items + per-marker QA outcome ───────────────────────────
 
 interface GoldListRow {
   submissionId: string
@@ -189,7 +189,7 @@ interface GoldListRow {
   status: string
   assignedMarkerId: string | null
   markerName: string | null
-  /** Expert ground truth — admin-only payload (this route is admin-gated). */
+  /** Expert ground truth - admin-only payload (this route is admin-gated). */
   goldExpected: { mark: number | null; grade: string | null; ao?: unknown } | null
   /** Marker's decision on this gold item (latest moderation), if any. */
   markerDecision: string | null

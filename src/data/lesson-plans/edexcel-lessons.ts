@@ -35,7 +35,7 @@ export interface LessonPlan {
   targetedSkills: string[]
 }
 
-// ── Lesson 1: Edexcel Language Paper 1 — Fiction & Imaginative Writing Overview ──
+// ── Lesson 1: Edexcel Language Paper 1 - Fiction & Imaginative Writing Overview ──
 
 const lesson1: LessonPlan = {
   id: 'edexcel-01-lang-paper1-overview',
@@ -46,8 +46,8 @@ const lesson1: LessonPlan = {
   duration: '60 minutes',
   objectives: [
     'Understand the structure and timing of Edexcel Language Paper 1 (1EN0/01)',
-    'Identify the requirements for each question (Q1–Q5) and their mark allocations',
-    'Recognise how Edexcel assessment objectives AO1–AO6 map onto each question',
+    'Identify the requirements for each question (Q1-Q5) and their mark allocations',
+    'Recognise how Edexcel assessment objectives AO1-AO6 map onto each question',
     'Develop a strategic approach to reading the fiction extract and planning responses',
   ],
   successCriteria: [
@@ -156,7 +156,7 @@ const lesson1: LessonPlan = {
         "What does 'imaginative writing' mean in the context of Q5? What options might you be given?",
       lines: 4,
       modelAnswer:
-        'Imaginative writing on Edexcel Paper 1 Q5 can include descriptive writing or narrative writing. Students are typically given a choice of two prompts — one may be an image stimulus and the other a written prompt. The writing should demonstrate creative use of language, varied sentence structures, and effective organisation with a clear sense of audience and purpose.',
+        'Imaginative writing on Edexcel Paper 1 Q5 can include descriptive writing or narrative writing. Students are typically given a choice of two prompts - one may be an image stimulus and the other a written prompt. The writing should demonstrate creative use of language, varied sentence structures, and effective organisation with a clear sense of audience and purpose.',
       marks: 3,
     },
     {
@@ -172,13 +172,13 @@ const lesson1: LessonPlan = {
         'What is the difference between language and structure in the context of Q2 and Q3?',
       lines: 5,
       modelAnswer:
-        'Language (Q2) refers to the specific words, phrases, and techniques a writer uses — such as metaphor, simile, alliteration, or emotive language. Structure (Q3) refers to how the text is organised and sequenced — such as the opening, shifts in focus, paragraph length, chronological or non-chronological order, and how the ending relates to the beginning.',
+        'Language (Q2) refers to the specific words, phrases, and techniques a writer uses - such as metaphor, simile, alliteration, or emotive language. Structure (Q3) refers to how the text is organised and sequenced - such as the opening, shifts in focus, paragraph length, chronological or non-chronological order, and how the ending relates to the beginning.',
       marks: 4,
     },
   ],
   teacherNotes: [
     'Use the most recent available Edexcel specimen or past paper for authenticity. Check copyright permissions before photocopying.',
-    'Emphasise that Q5 is worth more than half the paper — students who rush this question significantly limit their grade.',
+    'Emphasise that Q5 is worth more than half the paper - students who rush this question significantly limit their grade.',
     'The AO reference card should be kept in student folders for use throughout the course.',
     'This overview lesson is best delivered early in Year 10 and revisited in Year 11 revision.',
   ],
@@ -191,7 +191,7 @@ const lesson1: LessonPlan = {
   ],
 }
 
-// ── Lesson 2: Edexcel Language Paper 2 — Non-Fiction & Transactional Writing Overview ──
+// ── Lesson 2: Edexcel Language Paper 2 - Non-Fiction & Transactional Writing Overview ──
 
 const lesson2: LessonPlan = {
   id: 'edexcel-02-lang-paper2-overview',
@@ -202,7 +202,7 @@ const lesson2: LessonPlan = {
   duration: '60 minutes',
   objectives: [
     'Understand the structure and timing of Edexcel Language Paper 2 (1EN0/02)',
-    'Identify the requirements for each question (Q1–Q7) including the two-source reading section',
+    'Identify the requirements for each question (Q1-Q7) including the two-source reading section',
     'Recognise how AO1, AO2, AO3, AO5 and AO6 are tested across the paper',
     'Develop confidence with transactional writing formats: articles, letters, speeches, reviews, and reports',
   ],
@@ -323,7 +323,7 @@ const lesson2: LessonPlan = {
         'Name three rhetorical devices you could use in a transactional writing response and give an example of each.',
       lines: 6,
       modelAnswer:
-        "1. Rhetorical question: 'How can we call ourselves a fair society when children go hungry?' — engages the reader and prompts reflection. 2. Rule of three: 'This policy is unjust, unworkable, and unnecessary' — creates a rhythmic, memorable emphasis. 3. Direct address: 'You have the power to change this' — makes the reader feel personally involved and responsible.",
+        "1. Rhetorical question: 'How can we call ourselves a fair society when children go hungry?' - engages the reader and prompts reflection. 2. Rule of three: 'This policy is unjust, unworkable, and unnecessary' - creates a rhythmic, memorable emphasis. 3. Direct address: 'You have the power to change this' - makes the reader feel personally involved and responsible.",
       marks: 4,
     },
     {
@@ -335,9 +335,9 @@ const lesson2: LessonPlan = {
     },
   ],
   teacherNotes: [
-    'Paper 2 timing is generous (2 hours 5 minutes) compared to Paper 1 — students should be encouraged to plan thoroughly, especially for the writing task.',
+    'Paper 2 timing is generous (2 hours 5 minutes) compared to Paper 1 - students should be encouraged to plan thoroughly, especially for the writing task.',
     'The 19th-century source in Section A can be challenging for weaker readers. Build in regular exposure to 19th-century non-fiction throughout the course.',
-    'Emphasise that Q6/Q7 is a choice — students should read both options carefully before deciding.',
+    'Emphasise that Q6/Q7 is a choice - students should read both options carefully before deciding.',
     'Format conventions are a common area where students lose marks unnecessarily. Display format reference posters in the classroom.',
   ],
   targetedSkills: [
@@ -351,7 +351,7 @@ const lesson2: LessonPlan = {
   ],
 }
 
-// ── Lesson 3: Macbeth for Edexcel — Extract-Based Analysis Approach ──
+// ── Lesson 3: Macbeth for Edexcel - Extract-Based Analysis Approach ──
 
 const lesson3: LessonPlan = {
   id: 'edexcel-03-macbeth-extract-analysis',
@@ -363,7 +363,7 @@ const lesson3: LessonPlan = {
   objectives: [
     'Understand how Edexcel structures the Macbeth question on Paper 1 Literature (1ET0/01)',
     'Practise the extract-to-wider-play approach required by the Edexcel mark scheme',
-    "Analyse Shakespeare's language, form, and structure in a key extract (Act 1, Scene 7 — 'If it were done')",
+    "Analyse Shakespeare's language, form, and structure in a key extract (Act 1, Scene 7 - 'If it were done')",
     'Develop the skill of linking analysis to context and the wider play as required by AO1, AO2, and AO3',
   ],
   successCriteria: [
@@ -393,7 +393,7 @@ const lesson3: LessonPlan = {
       core: 'Students write their own question independently.',
       stretch: 'Students write a question and identify which AOs it would test.',
     },
-    resources: ['Extract handout (Act 1, Scene 7, lines 1–28)', 'Mini-whiteboards'],
+    resources: ['Extract handout (Act 1, Scene 7, lines 1-28)', 'Mini-whiteboards'],
   },
   mainActivities: [
     {
@@ -446,7 +446,7 @@ const lesson3: LessonPlan = {
     },
   },
   homework:
-    "Find and annotate a second extract from Macbeth (Act 3, Scene 4 — the Banquet Scene, lines 93–107) using the same three focus questions from today's lesson. Write one analytical paragraph linking the extract to the theme of guilt.",
+    "Find and annotate a second extract from Macbeth (Act 3, Scene 4 - the Banquet Scene, lines 93-107) using the same three focus questions from today's lesson. Write one analytical paragraph linking the extract to the theme of guilt.",
   worksheetQuestions: [
     {
       question:
@@ -477,7 +477,7 @@ const lesson3: LessonPlan = {
         "How would a Jacobean audience have responded to Macbeth's contemplation of regicide? Link to context.",
       lines: 5,
       modelAnswer:
-        "A Jacobean audience would have been horrified by Macbeth's plan to kill King Duncan. They believed in the Divine Right of Kings — that monarchs were appointed by God — so killing a king was not just murder but a sin against God and the natural order. This would have resonated especially strongly given the Gunpowder Plot of 1605, a recent attempt to assassinate King James I.",
+        "A Jacobean audience would have been horrified by Macbeth's plan to kill King Duncan. They believed in the Divine Right of Kings - that monarchs were appointed by God - so killing a king was not just murder but a sin against God and the natural order. This would have resonated especially strongly given the Gunpowder Plot of 1605, a recent attempt to assassinate King James I.",
       marks: 4,
     },
     {
@@ -485,7 +485,7 @@ const lesson3: LessonPlan = {
         "Write a model paragraph analysing the metaphor 'trammel up the consequence' from the extract.",
       lines: 8,
       modelAnswer:
-        "Shakespeare uses the metaphor 'trammel up the consequence' to reveal Macbeth's desperate wish to contain the repercussions of Duncan's murder. The word 'trammel' means to catch in a net, suggesting Macbeth sees the consequences as wild and uncontrollable — something that must be trapped. This reveals his awareness that the murder will unleash chaos, yet his ambition drives him to seek a way around it. A Jacobean audience would recognise this as hubris: the belief that a mortal can control fate. This foreshadows the unravelling of Macbeth's power in Acts 3–5, where guilt and paranoia consume him.",
+        "Shakespeare uses the metaphor 'trammel up the consequence' to reveal Macbeth's desperate wish to contain the repercussions of Duncan's murder. The word 'trammel' means to catch in a net, suggesting Macbeth sees the consequences as wild and uncontrollable - something that must be trapped. This reveals his awareness that the murder will unleash chaos, yet his ambition drives him to seek a way around it. A Jacobean audience would recognise this as hubris: the belief that a mortal can control fate. This foreshadows the unravelling of Macbeth's power in Acts 3-5, where guilt and paranoia consume him.",
       marks: 6,
     },
     {
@@ -493,15 +493,15 @@ const lesson3: LessonPlan = {
         "Identify one moment later in the play that connects to Macbeth's conflict in this extract. Explain the link.",
       lines: 5,
       modelAnswer:
-        "In Act 5, Scene 1, Lady Macbeth sleepwalks and obsessively tries to wash imagined blood from her hands. This connects to Macbeth's fear in Act 1, Scene 7 that the murder cannot be cleanly 'done' — the consequences he feared have manifested as inescapable psychological torment. Shakespeare shows that the 'consequence' could not be 'trammelled up', fulfilling the prophecy of Macbeth's own anxieties.",
+        "In Act 5, Scene 1, Lady Macbeth sleepwalks and obsessively tries to wash imagined blood from her hands. This connects to Macbeth's fear in Act 1, Scene 7 that the murder cannot be cleanly 'done' - the consequences he feared have manifested as inescapable psychological torment. Shakespeare shows that the 'consequence' could not be 'trammelled up', fulfilling the prophecy of Macbeth's own anxieties.",
       marks: 4,
     },
   ],
   teacherNotes: [
     'The Edexcel Shakespeare question is in Paper 1 Section A and is worth 40 marks (with 4 marks for SPaG). Ensure students know SPaG counts here.',
-    'Practise the extract-to-wider-play skill repeatedly — it is the most common area where students underperform on Edexcel.',
-    'Act 1, Scene 7 is one of the most frequently examined extracts. Build a bank of 6–8 key extracts for exam preparation.',
-    "Encourage students to learn 10–15 key quotations from across the play to support the 'wider play' element of their responses.",
+    'Practise the extract-to-wider-play skill repeatedly - it is the most common area where students underperform on Edexcel.',
+    'Act 1, Scene 7 is one of the most frequently examined extracts. Build a bank of 6-8 key extracts for exam preparation.',
+    "Encourage students to learn 10-15 key quotations from across the play to support the 'wider play' element of their responses.",
   ],
   targetedSkills: [
     'Shakespeare',
@@ -514,7 +514,7 @@ const lesson3: LessonPlan = {
   ],
 }
 
-// ── Lesson 4: A Christmas Carol for Edexcel — Character & Theme Exploration ──
+// ── Lesson 4: A Christmas Carol for Edexcel - Character & Theme Exploration ──
 
 const lesson4: LessonPlan = {
   id: 'edexcel-04-christmas-carol-character-theme',
@@ -550,7 +550,7 @@ const lesson4: LessonPlan = {
     title: "Scrooge's Journey: Before and After",
     duration: '8 minutes',
     instructions:
-      "Display two quotations side by side — one from Stave 1 ('Are there no prisons? Are there no workhouses?') and one from Stave 5 ('I will honour Christmas in my heart'). Students write three observations about how Scrooge has changed, focusing on language, tone, and attitude. Discuss as a class, introducing the concept of transformation as Dickens's central structural device.",
+      "Display two quotations side by side - one from Stave 1 ('Are there no prisons? Are there no workhouses?') and one from Stave 5 ('I will honour Christmas in my heart'). Students write three observations about how Scrooge has changed, focusing on language, tone, and attitude. Discuss as a class, introducing the concept of transformation as Dickens's central structural device.",
     differentiation: {
       support:
         "Provide a comparison table with prompts: 'In Stave 1 Scrooge is... In Stave 5 Scrooge is...'",
@@ -625,7 +625,7 @@ const lesson4: LessonPlan = {
         "What does the phrase 'decrease the surplus population' reveal about Scrooge's attitude in Stave 1?",
       lines: 5,
       modelAnswer:
-        "This phrase reveals Scrooge's cold, inhumane attitude towards the poor. The word 'surplus' reduces human beings to excess stock, dehumanising them. It echoes the Malthusian economic theory that population growth outstrips resources, which was used to justify neglect of the poor. Dickens uses Scrooge to embody — and then reject — this callous philosophy, showing readers the moral bankruptcy of such thinking.",
+        "This phrase reveals Scrooge's cold, inhumane attitude towards the poor. The word 'surplus' reduces human beings to excess stock, dehumanising them. It echoes the Malthusian economic theory that population growth outstrips resources, which was used to justify neglect of the poor. Dickens uses Scrooge to embody - and then reject - this callous philosophy, showing readers the moral bankruptcy of such thinking.",
       marks: 4,
     },
     {
@@ -640,7 +640,7 @@ const lesson4: LessonPlan = {
         'How does Dickens use the structure of five staves to reinforce the theme of redemption?',
       lines: 5,
       modelAnswer:
-        "The five-stave structure mirrors the five acts of a play and the trajectory of a moral journey. Stave 1 establishes Scrooge's coldness; Staves 2–4 take him through past, present, and future, forcing him to confront the consequences of his behaviour; Stave 5 shows his joyful transformation. This structure creates a clear arc of redemption, showing that change is possible even for the most hardened individual. The word 'stave' also means a verse of a song, linking to the musical, celebratory title.",
+        "The five-stave structure mirrors the five acts of a play and the trajectory of a moral journey. Stave 1 establishes Scrooge's coldness; Staves 2-4 take him through past, present, and future, forcing him to confront the consequences of his behaviour; Stave 5 shows his joyful transformation. This structure creates a clear arc of redemption, showing that change is possible even for the most hardened individual. The word 'stave' also means a verse of a song, linking to the musical, celebratory title.",
       marks: 5,
     },
     {
@@ -648,7 +648,7 @@ const lesson4: LessonPlan = {
         'Why is Victorian context important when analysing A Christmas Carol for Edexcel? Give two specific examples.',
       lines: 6,
       modelAnswer:
-        "Victorian context is essential because Dickens wrote A Christmas Carol as direct social commentary. Example 1: The 1834 Poor Law Amendment Act created workhouses that punished poverty — Scrooge's reference to 'prisons' and 'workhouses' reflects the callous attitude Dickens criticised. Example 2: The novella was published in 1843, during a period of extreme inequality between the industrial rich and the urban poor — Dickens used Scrooge's wealth alongside the Cratchits' poverty to dramatise this divide and argue for compassion.",
+        "Victorian context is essential because Dickens wrote A Christmas Carol as direct social commentary. Example 1: The 1834 Poor Law Amendment Act created workhouses that punished poverty - Scrooge's reference to 'prisons' and 'workhouses' reflects the callous attitude Dickens criticised. Example 2: The novella was published in 1843, during a period of extreme inequality between the industrial rich and the urban poor - Dickens used Scrooge's wealth alongside the Cratchits' poverty to dramatise this divide and argue for compassion.",
       marks: 5,
     },
     {
@@ -656,13 +656,13 @@ const lesson4: LessonPlan = {
         'Compare how Dickens presents Scrooge and Bob Cratchit to convey ideas about wealth and generosity.',
       lines: 6,
       modelAnswer:
-        "Dickens uses contrast between Scrooge and Bob to highlight that wealth does not equal worth. Scrooge is wealthy but miserable, isolated, and morally bankrupt — described through cold imagery ('cold within him'). Bob is poor but rich in love, family, and generosity — his family's modest Christmas dinner is presented with warmth and joy. This juxtaposition argues that true richness lies in human connection, not financial wealth. Through Bob's loyalty despite Scrooge's cruelty, Dickens also critiques the power imbalance between employer and worker in Victorian society.",
+        "Dickens uses contrast between Scrooge and Bob to highlight that wealth does not equal worth. Scrooge is wealthy but miserable, isolated, and morally bankrupt - described through cold imagery ('cold within him'). Bob is poor but rich in love, family, and generosity - his family's modest Christmas dinner is presented with warmth and joy. This juxtaposition argues that true richness lies in human connection, not financial wealth. Through Bob's loyalty despite Scrooge's cruelty, Dickens also critiques the power imbalance between employer and worker in Victorian society.",
       marks: 5,
     },
   ],
   teacherNotes: [
     'Unlike the Shakespeare question, the A Christmas Carol question on Edexcel does NOT provide an extract. Students must select their own evidence from across the whole text.',
-    'Ensure students have a bank of at least 15–20 key quotations memorised, spread across all five staves.',
+    'Ensure students have a bank of at least 15-20 key quotations memorised, spread across all five staves.',
     'The question is in Paper 2, Section A and is worth 40 marks. There are no SPaG marks for this question (unlike Shakespeare).',
     "Dickens's social message is central to high-scoring responses. Students who only analyse characters without connecting to Victorian context will be capped at lower levels.",
   ],
@@ -677,7 +677,7 @@ const lesson4: LessonPlan = {
   ],
 }
 
-// ── Lesson 5: Romeo & Juliet for Edexcel — Love, Conflict & Tragedy ──
+// ── Lesson 5: Romeo & Juliet for Edexcel - Love, Conflict & Tragedy ──
 
 const lesson5: LessonPlan = {
   id: 'edexcel-05-romeo-juliet-love-conflict',
@@ -713,7 +713,7 @@ const lesson5: LessonPlan = {
     title: 'Love vs Conflict: Quotation Sort',
     duration: '8 minutes',
     instructions:
-      "Provide students with twelve quotations from across the play on cards. Students sort them into three categories: Love, Conflict, or Both. Key quotations that belong in 'Both' include 'My only love sprung from my only hate' and 'O brawling love, O loving hate'. Discuss why so many quotations fit both categories — establishing that love and conflict are inseparable in the play.",
+      "Provide students with twelve quotations from across the play on cards. Students sort them into three categories: Love, Conflict, or Both. Key quotations that belong in 'Both' include 'My only love sprung from my only hate' and 'O brawling love, O loving hate'. Discuss why so many quotations fit both categories - establishing that love and conflict are inseparable in the play.",
     differentiation: {
       support: 'Reduce to eight quotations with act/scene references and a brief gloss for each.',
       core: "Students sort twelve quotations independently and justify their 'Both' choices.",
@@ -724,10 +724,10 @@ const lesson5: LessonPlan = {
   },
   mainActivities: [
     {
-      title: 'Extract Analysis: Act 1, Scene 5 — The Shared Sonnet',
+      title: 'Extract Analysis: Act 1, Scene 5 - The Shared Sonnet',
       duration: '20 minutes',
       instructions:
-        "Read the shared sonnet between Romeo and Juliet (Act 1, Scene 5, lines 93–110) aloud with two students taking the parts. Annotate the extract as a class, focusing on: the religious imagery ('holy shrine', 'pilgrim', 'saints'), the sonnet form as a symbol of perfect love, and the dramatic irony of their meeting at a Capulet feast. Students write one paragraph analysing how Shakespeare presents love in this extract. Emphasise that Edexcel expects close language analysis (AO2) supported by context (AO3).",
+        "Read the shared sonnet between Romeo and Juliet (Act 1, Scene 5, lines 93-110) aloud with two students taking the parts. Annotate the extract as a class, focusing on: the religious imagery ('holy shrine', 'pilgrim', 'saints'), the sonnet form as a symbol of perfect love, and the dramatic irony of their meeting at a Capulet feast. Students write one paragraph analysing how Shakespeare presents love in this extract. Emphasise that Edexcel expects close language analysis (AO2) supported by context (AO3).",
       differentiation: {
         support:
           'Provide a cloze paragraph with key analytical vocabulary missing for students to complete.',
@@ -736,7 +736,7 @@ const lesson5: LessonPlan = {
           "Students compare the religious imagery to Romeo's earlier Petrarchan language about Rosaline, evaluating what the shift reveals about the nature of Romeo's love.",
       },
       resources: [
-        'Extract handout (Act 1, Scene 5, lines 93–110)',
+        'Extract handout (Act 1, Scene 5, lines 93-110)',
         'Sonnet form reference card',
         'Cloze paragraph (support tier)',
       ],
@@ -745,7 +745,7 @@ const lesson5: LessonPlan = {
       title: 'Linking Love to Conflict: Act 3, Scene 1 as Turning Point',
       duration: '22 minutes',
       instructions:
-        "Transition to Act 3, Scene 1 — the deaths of Mercutio and Tybalt. Read key extracts: Romeo's 'O, I am fortune's fool!' and his earlier attempt to keep peace ('Tybalt, the reason that I have to love thee / Doth much excuse the appertaining rage'). Discuss how Romeo's love for Juliet directly causes the conflict with Tybalt. Students create a dual-column analysis: left column analyses how love motivates Romeo's actions; right column analyses how conflict destroys them. This models the Edexcel skill of connecting extract analysis to the wider play.",
+        "Transition to Act 3, Scene 1 - the deaths of Mercutio and Tybalt. Read key extracts: Romeo's 'O, I am fortune's fool!' and his earlier attempt to keep peace ('Tybalt, the reason that I have to love thee / Doth much excuse the appertaining rage'). Discuss how Romeo's love for Juliet directly causes the conflict with Tybalt. Students create a dual-column analysis: left column analyses how love motivates Romeo's actions; right column analyses how conflict destroys them. This models the Edexcel skill of connecting extract analysis to the wider play.",
       differentiation: {
         support:
           'Pre-populate the left column; students complete the conflict column with guided prompts.',
@@ -754,7 +754,7 @@ const lesson5: LessonPlan = {
           "Students add a third column evaluating whether Romeo's tragedy is caused by fate, his own choices, or the society he lives in.",
       },
       resources: [
-        'Extract handout (Act 3, Scene 1 — key passages)',
+        'Extract handout (Act 3, Scene 1 - key passages)',
         'Dual-column analysis worksheet',
         'Fate vs free will discussion prompt',
       ],
@@ -779,7 +779,7 @@ const lesson5: LessonPlan = {
       question: 'Explain the significance of the shared sonnet form in Act 1, Scene 5.',
       lines: 5,
       modelAnswer:
-        "Shakespeare writes Romeo and Juliet's first meeting as a shared sonnet — a 14-line poem traditionally associated with love. By splitting the sonnet between them, Shakespeare shows their instant connection and mutual attraction. The form suggests their love is balanced and equal. The rhyming couplet at the end, sealed with a kiss, implies their union is perfect — yet the audience knows this perfection is doomed, creating poignant dramatic irony.",
+        "Shakespeare writes Romeo and Juliet's first meeting as a shared sonnet - a 14-line poem traditionally associated with love. By splitting the sonnet between them, Shakespeare shows their instant connection and mutual attraction. The form suggests their love is balanced and equal. The rhyming couplet at the end, sealed with a kiss, implies their union is perfect - yet the audience knows this perfection is doomed, creating poignant dramatic irony.",
       marks: 4,
     },
     {
@@ -803,7 +803,7 @@ const lesson5: LessonPlan = {
         "Analyse the oxymoron 'O brawling love, O loving hate' and explain how it encapsulates the play's themes.",
       lines: 5,
       modelAnswer:
-        "The oxymorons 'brawling love' and 'loving hate' compress the play's two central forces into single phrases. 'Brawling love' suggests that in Verona, love cannot exist without violence — it must fight to survive. 'Loving hate' implies that the families' hatred is so deeply ingrained it has become almost an affection, something they cling to. Together, these oxymorons establish that love and conflict are not opposites but are inseparably intertwined in the world of the play.",
+        "The oxymorons 'brawling love' and 'loving hate' compress the play's two central forces into single phrases. 'Brawling love' suggests that in Verona, love cannot exist without violence - it must fight to survive. 'Loving hate' implies that the families' hatred is so deeply ingrained it has become almost an affection, something they cling to. Together, these oxymorons establish that love and conflict are not opposites but are inseparably intertwined in the world of the play.",
       marks: 4,
     },
     {
@@ -811,7 +811,7 @@ const lesson5: LessonPlan = {
         'How does the concept of honour drive the conflict in Romeo and Juliet? Link to Elizabethan context.',
       lines: 5,
       modelAnswer:
-        "In Elizabethan society, family honour was paramount, and insults had to be answered with violence. Tybalt embodies this honour code — he sees Romeo's presence at the Capulet ball as a personal insult and pursues revenge. Even Romeo, who initially tries to avoid conflict, is drawn into it when Mercutio dies defending his honour. Shakespeare critiques this code by showing how it leads to senseless death and prevents reconciliation, suggesting that rigid adherence to honour is destructive.",
+        "In Elizabethan society, family honour was paramount, and insults had to be answered with violence. Tybalt embodies this honour code - he sees Romeo's presence at the Capulet ball as a personal insult and pursues revenge. Even Romeo, who initially tries to avoid conflict, is drawn into it when Mercutio dies defending his honour. Shakespeare critiques this code by showing how it leads to senseless death and prevents reconciliation, suggesting that rigid adherence to honour is destructive.",
       marks: 4,
     },
     {
@@ -819,14 +819,14 @@ const lesson5: LessonPlan = {
         "What does 'O, I am fortune's fool!' reveal about Romeo's understanding of his situation?",
       lines: 4,
       modelAnswer:
-        "Romeo's exclamation reveals his sudden realisation that fate has trapped him. 'Fortune's fool' suggests he sees himself as a plaything of destiny — 'fortune' controls him and he is merely a 'fool' (victim/puppet). This moment of self-awareness echoes the Prologue's 'star-cross'd lovers', confirming the theme of fate. However, it could also be read as Romeo deflecting responsibility for his own violent choice, raising the question of whether fate or free will drives the tragedy.",
+        "Romeo's exclamation reveals his sudden realisation that fate has trapped him. 'Fortune's fool' suggests he sees himself as a plaything of destiny - 'fortune' controls him and he is merely a 'fool' (victim/puppet). This moment of self-awareness echoes the Prologue's 'star-cross'd lovers', confirming the theme of fate. However, it could also be read as Romeo deflecting responsibility for his own violent choice, raising the question of whether fate or free will drives the tragedy.",
       marks: 4,
     },
   ],
   teacherNotes: [
     'Romeo and Juliet is an alternative Shakespeare text on Edexcel Paper 1 (alongside Macbeth, The Tempest, Twelfth Night, etc.). Check which text your school has chosen.',
     'The extract-plus-wider-play structure is identical to the Macbeth approach. Cross-reference with Lesson 3 for consistency.',
-    'Students often separate love and conflict into distinct themes — this lesson deliberately shows they are inseparable, which is key to high-level analysis.',
+    'Students often separate love and conflict into distinct themes - this lesson deliberately shows they are inseparable, which is key to high-level analysis.',
     'The shared sonnet is one of the most commonly examined extracts. Ensure all students can analyse it confidently.',
   ],
   targetedSkills: [
@@ -840,7 +840,7 @@ const lesson5: LessonPlan = {
   ],
 }
 
-// ── Lesson 6: Edexcel Poetry Anthology — Time & Place Cluster ──
+// ── Lesson 6: Edexcel Poetry Anthology - Time & Place Cluster ──
 
 const lesson6: LessonPlan = {
   id: 'edexcel-06-poetry-time-and-place',
@@ -877,7 +877,7 @@ const lesson6: LessonPlan = {
     title: 'Time and Place Word Cloud',
     duration: '7 minutes',
     instructions:
-      "Display the titles of all poems in the Time and Place cluster. Students brainstorm associations with the phrase 'time and place' on a mind map — what themes might these poems explore? (e.g. memory, home, change, loss, belonging, travel, identity). After two minutes of individual brainstorming, share ideas as a class and create a collective word cloud on the board. This establishes the thematic territory of the cluster before close analysis begins.",
+      "Display the titles of all poems in the Time and Place cluster. Students brainstorm associations with the phrase 'time and place' on a mind map - what themes might these poems explore? (e.g. memory, home, change, loss, belonging, travel, identity). After two minutes of individual brainstorming, share ideas as a class and create a collective word cloud on the board. This establishes the thematic territory of the cluster before close analysis begins.",
     differentiation: {
       support: 'Provide a starter list of six associated words to build upon.',
       core: 'Students brainstorm independently and contribute at least five ideas.',
@@ -891,7 +891,7 @@ const lesson6: LessonPlan = {
       title: 'Close Analysis: Two Key Poems from the Cluster',
       duration: '25 minutes',
       instructions:
-        "Focus on two poems that offer strong comparison potential (e.g. 'The Prelude' by Wordsworth and 'Kamikaze' by Beatrice Garland, or 'London' by Blake and 'The Émigrée' by Carol Rumens — select based on your school's chosen poems). Read both poems aloud. For each poem, students complete an analysis grid covering: subject/narrative, key quotations (3 per poem), language techniques, structural features, tone/mood, and the poet's message about time and/or place. Model the first poem's grid entries as a class, then students complete the second independently.",
+        "Focus on two poems that offer strong comparison potential (e.g. 'The Prelude' by Wordsworth and 'Kamikaze' by Beatrice Garland, or 'London' by Blake and 'The Émigrée' by Carol Rumens - select based on your school's chosen poems). Read both poems aloud. For each poem, students complete an analysis grid covering: subject/narrative, key quotations (3 per poem), language techniques, structural features, tone/mood, and the poet's message about time and/or place. Model the first poem's grid entries as a class, then students complete the second independently.",
       differentiation: {
         support:
           'Pre-fill key quotations for both poems; students focus on technique identification and effect analysis.',
@@ -909,12 +909,12 @@ const lesson6: LessonPlan = {
       title: 'Building a Comparative Paragraph',
       duration: '18 minutes',
       instructions:
-        "Introduce the Edexcel comparison paragraph structure: Similarity/Difference statement, Poem A evidence and analysis, Comparison connective, Poem B evidence and analysis, Evaluative comment on effect. Model a paragraph comparing how both poems present a sense of place (or time). Emphasise that Edexcel rewards integrated comparison — not 'Poem A then Poem B' but woven analysis. Students write one comparative paragraph. Share two examples under the visualiser for class feedback.",
+        "Introduce the Edexcel comparison paragraph structure: Similarity/Difference statement, Poem A evidence and analysis, Comparison connective, Poem B evidence and analysis, Evaluative comment on effect. Model a paragraph comparing how both poems present a sense of place (or time). Emphasise that Edexcel rewards integrated comparison - not 'Poem A then Poem B' but woven analysis. Students write one comparative paragraph. Share two examples under the visualiser for class feedback.",
       differentiation: {
         support: 'Provide a paragraph frame with connectives and sentence starters embedded.',
         core: 'Students write a full comparative paragraph independently.',
         stretch:
-          'Students write two comparative paragraphs — one on similarity, one on difference — and evaluate which is stronger.',
+          'Students write two comparative paragraphs - one on similarity, one on difference - and evaluate which is stronger.',
       },
       resources: [
         'Comparison paragraph model',
@@ -959,7 +959,7 @@ const lesson6: LessonPlan = {
         'Choose one poem from the Time and Place cluster. Identify one key quotation and analyse the language technique used.',
       lines: 6,
       modelAnswer:
-        "In 'The Prelude', Wordsworth describes the mountain as 'a huge peak, black and huge' — the repetition of 'huge' emphasises the overwhelming scale of nature, while 'black' creates a sinister, foreboding tone. The simplicity of the language mirrors the child narrator's limited ability to articulate terror, making the fear feel raw and immediate. This conveys the power of place to transform experience.",
+        "In 'The Prelude', Wordsworth describes the mountain as 'a huge peak, black and huge' - the repetition of 'huge' emphasises the overwhelming scale of nature, while 'black' creates a sinister, foreboding tone. The simplicity of the language mirrors the child narrator's limited ability to articulate terror, making the fear feel raw and immediate. This conveys the power of place to transform experience.",
       marks: 4,
     },
     {
@@ -967,7 +967,7 @@ const lesson6: LessonPlan = {
         "Explain one similarity and one difference between two poems from the cluster in terms of how they present 'place'.",
       lines: 6,
       modelAnswer:
-        "Similarity: Both 'The Prelude' and 'The Émigrée' present place as something that has a powerful emotional and psychological impact on the speaker — nature overwhelms in Wordsworth, while the homeland haunts in Rumens. Difference: In 'The Prelude', the place is physically present and experienced directly, while in 'The Émigrée', the place exists only in memory, making it idealised and potentially unreliable. This difference affects how each poet uses imagery — Wordsworth's is sensory and immediate, Rumens's is dreamlike and symbolic.",
+        "Similarity: Both 'The Prelude' and 'The Émigrée' present place as something that has a powerful emotional and psychological impact on the speaker - nature overwhelms in Wordsworth, while the homeland haunts in Rumens. Difference: In 'The Prelude', the place is physically present and experienced directly, while in 'The Émigrée', the place exists only in memory, making it idealised and potentially unreliable. This difference affects how each poet uses imagery - Wordsworth's is sensory and immediate, Rumens's is dreamlike and symbolic.",
       marks: 5,
     },
     {
@@ -975,7 +975,7 @@ const lesson6: LessonPlan = {
         'Why might a poet choose to use enjambment when writing about time or place? Give an example if possible.',
       lines: 4,
       modelAnswer:
-        "Enjambment — where a sentence runs over a line break without punctuation — can mirror the continuous, uncontrollable flow of time or the experience of moving through a place. It creates momentum and prevents the reader from pausing, reflecting how memories or journeys feel relentless. In 'The Prelude', enjambment mirrors the flowing movement of the boat on the lake and the escalating sense of awe.",
+        "Enjambment - where a sentence runs over a line break without punctuation - can mirror the continuous, uncontrollable flow of time or the experience of moving through a place. It creates momentum and prevents the reader from pausing, reflecting how memories or journeys feel relentless. In 'The Prelude', enjambment mirrors the flowing movement of the boat on the lake and the escalating sense of awe.",
       marks: 3,
     },
     {
@@ -988,7 +988,7 @@ const lesson6: LessonPlan = {
     },
   ],
   teacherNotes: [
-    "Edexcel's poetry anthology is divided into clusters. Check which cluster your school has been assigned — Time and Place is one option.",
+    "Edexcel's poetry anthology is divided into clusters. Check which cluster your school has been assigned - Time and Place is one option.",
     'The comparison question names one poem; students choose the second. Practise making strategic choices about which poem to compare.',
     'Build a comparison grid across all poems in the cluster over multiple lessons so students can see the full range of potential pairings.',
     'Students often struggle to compare rather than contrast. Explicitly teach that similarities can be just as analytically rich as differences.',
@@ -1004,7 +1004,7 @@ const lesson6: LessonPlan = {
   ],
 }
 
-// ── Lesson 7: Edexcel Poetry Anthology — Belonging Cluster ──
+// ── Lesson 7: Edexcel Poetry Anthology - Belonging Cluster ──
 
 const lesson7: LessonPlan = {
   id: 'edexcel-07-poetry-belonging',
@@ -1041,7 +1041,7 @@ const lesson7: LessonPlan = {
     title: 'Belonging Spectrum',
     duration: '8 minutes',
     instructions:
-      "Draw an imaginary spectrum across the room — one end labelled 'Total Belonging' and the other 'Total Exclusion'. Read out five brief scenarios (e.g. 'You move to a new country where you don't speak the language', 'Your family has lived in the same village for generations'). Students physically position themselves on the spectrum and explain their reasoning. Link to the idea that belonging is not binary — it exists on a spectrum, just as the poems in this cluster present varied, complex experiences of belonging.",
+      "Draw an imaginary spectrum across the room - one end labelled 'Total Belonging' and the other 'Total Exclusion'. Read out five brief scenarios (e.g. 'You move to a new country where you don't speak the language', 'Your family has lived in the same village for generations'). Students physically position themselves on the spectrum and explain their reasoning. Link to the idea that belonging is not binary - it exists on a spectrum, just as the poems in this cluster present varied, complex experiences of belonging.",
     differentiation: {
       support:
         'Provide laminated position cards (Belonging / Mostly Belonging / Somewhere Between / Mostly Excluded / Excluded) for students to hold up instead of moving.',
@@ -1056,7 +1056,7 @@ const lesson7: LessonPlan = {
       title: 'Dual-Poem Analysis: Exploring Belonging Through Language and Structure',
       duration: '25 minutes',
       instructions:
-        "Select two poems from the Belonging cluster that offer rich comparison (e.g. 'Half-caste' by John Agard and 'No Problem' by Benjamin Zephaniah, or 'What Were They Like?' by Denise Levertov and 'Poppies' by Jane Weir — adjust to your school's selection). Read both poems aloud, the first with teacher modelling of tone and emphasis. For each poem, students complete a comparative analysis table: speaker's perspective, key imagery, tone shifts, structural choices, and how belonging/exclusion is presented. Model the first row (speaker's perspective) for both poems, then students complete the remaining rows.",
+        "Select two poems from the Belonging cluster that offer rich comparison (e.g. 'Half-caste' by John Agard and 'No Problem' by Benjamin Zephaniah, or 'What Were They Like?' by Denise Levertov and 'Poppies' by Jane Weir - adjust to your school's selection). Read both poems aloud, the first with teacher modelling of tone and emphasis. For each poem, students complete a comparative analysis table: speaker's perspective, key imagery, tone shifts, structural choices, and how belonging/exclusion is presented. Model the first row (speaker's perspective) for both poems, then students complete the remaining rows.",
       differentiation: {
         support:
           'Pre-fill the table for Poem A; students complete Poem B with guided prompts alongside.',
@@ -1093,7 +1093,7 @@ const lesson7: LessonPlan = {
     title: "Poet's Voice: Reading Aloud",
     duration: '7 minutes',
     instructions:
-      'Two or three volunteers read aloud a stanza from their chosen poem with expression and emphasis that reflects their interpretation. The class listens and comments on how the reading brought out meaning — what was emphasised? What tone was created? Use this to reinforce that poetry is a spoken art form and that understanding tone and voice is essential for analysis.',
+      'Two or three volunteers read aloud a stanza from their chosen poem with expression and emphasis that reflects their interpretation. The class listens and comments on how the reading brought out meaning - what was emphasised? What tone was created? Use this to reinforce that poetry is a spoken art form and that understanding tone and voice is essential for analysis.',
     differentiation: {
       support: 'Students can read along with a partner for confidence.',
       core: 'Students volunteer individually and explain one choice they made in their reading.',
@@ -1117,7 +1117,7 @@ const lesson7: LessonPlan = {
         'Why might a poet choose to write in dialect or non-standard English when exploring belonging?',
       lines: 5,
       modelAnswer:
-        "Writing in dialect or non-standard English is an act of cultural assertion — it claims belonging to a specific community and resists the dominance of 'standard' English. It can also convey authenticity, making the speaker's voice feel genuine and rooted in a particular place or culture. For example, John Agard's use of Caribbean dialect in 'Half-caste' challenges the reader's assumptions about what 'proper' English sounds like, turning language itself into a statement about belonging and identity.",
+        "Writing in dialect or non-standard English is an act of cultural assertion - it claims belonging to a specific community and resists the dominance of 'standard' English. It can also convey authenticity, making the speaker's voice feel genuine and rooted in a particular place or culture. For example, John Agard's use of Caribbean dialect in 'Half-caste' challenges the reader's assumptions about what 'proper' English sounds like, turning language itself into a statement about belonging and identity.",
       marks: 4,
     },
     {
@@ -1125,7 +1125,7 @@ const lesson7: LessonPlan = {
         'Choose one poem from the Belonging cluster. Analyse how the poet uses imagery to convey ideas about belonging or exclusion.',
       lines: 6,
       modelAnswer:
-        "In 'The Émigrée', Carol Rumens uses light imagery — 'my city takes me dancing', 'sunlight' — to present the speaker's remembered homeland as a place of warmth and joy. This idealised imagery conveys a deep sense of belonging to a place that exists now only in memory. The contrast with the 'dark city' of the present suggests that exclusion from the homeland has not diminished its emotional significance. The imagery implies that true belonging is felt internally, not determined by physical presence.",
+        "In 'The Émigrée', Carol Rumens uses light imagery - 'my city takes me dancing', 'sunlight' - to present the speaker's remembered homeland as a place of warmth and joy. This idealised imagery conveys a deep sense of belonging to a place that exists now only in memory. The contrast with the 'dark city' of the present suggests that exclusion from the homeland has not diminished its emotional significance. The imagery implies that true belonging is felt internally, not determined by physical presence.",
       marks: 4,
     },
     {
@@ -1140,7 +1140,7 @@ const lesson7: LessonPlan = {
       question: "What is a 'persona' in poetry and how might it relate to the theme of belonging?",
       lines: 4,
       modelAnswer:
-        'A persona is a character or voice adopted by the poet — not necessarily the poet themselves. Poets use persona to explore experiences of belonging from different perspectives, including those that may not be their own. This allows them to give voice to marginalised or silenced experiences. The use of persona can also create distance, suggesting that the experience of exclusion is universal rather than purely autobiographical.',
+        'A persona is a character or voice adopted by the poet - not necessarily the poet themselves. Poets use persona to explore experiences of belonging from different perspectives, including those that may not be their own. This allows them to give voice to marginalised or silenced experiences. The use of persona can also create distance, suggesting that the experience of exclusion is universal rather than purely autobiographical.',
       marks: 3,
     },
     {
@@ -1169,7 +1169,7 @@ const lesson7: LessonPlan = {
   ],
 }
 
-// ── Lesson 8: Edexcel Unseen Poetry — Two-Poem Comparison Technique ──
+// ── Lesson 8: Edexcel Unseen Poetry - Two-Poem Comparison Technique ──
 
 const lesson8: LessonPlan = {
   id: 'edexcel-08-unseen-poetry-comparison',
@@ -1206,7 +1206,7 @@ const lesson8: LessonPlan = {
     title: '60-Second Annotation Challenge',
     duration: '8 minutes',
     instructions:
-      'Display a very short poem (4–6 lines) on the board. Students have exactly 60 seconds to annotate as many features as they can on a printed copy. After time is up, share findings as a class, tallying the types of features identified (language, structure, form, tone). Discuss the hierarchy: what should you annotate first when time is limited? Establish a priority order: (1) meaning/subject, (2) tone/mood, (3) key imagery, (4) structural features, (5) form.',
+      'Display a very short poem (4-6 lines) on the board. Students have exactly 60 seconds to annotate as many features as they can on a printed copy. After time is up, share findings as a class, tallying the types of features identified (language, structure, form, tone). Discuss the hierarchy: what should you annotate first when time is limited? Establish a priority order: (1) meaning/subject, (2) tone/mood, (3) key imagery, (4) structural features, (5) form.',
     differentiation: {
       support: 'Provide an annotation checklist to guide what to look for.',
       core: 'Students annotate freely, then compare their approach with the priority order.',
@@ -1220,7 +1220,7 @@ const lesson8: LessonPlan = {
       title: 'Reading and Analysing the First Unseen Poem',
       duration: '18 minutes',
       instructions:
-        "Distribute Unseen Poem A (select a poem on a clear theme such as nature, memory, or conflict — approximately 16–24 lines). Guide students through the systematic reading process: (1) Read the whole poem once for overall meaning (2 mins). (2) Re-read, annotating key features using the priority order (3 mins). (3) Identify the poet's message or attitude (1 min). Students then write three analytical bullet points, each identifying a technique, embedding a quotation, and explaining the effect. This mirrors the first part of the Edexcel unseen question.",
+        "Distribute Unseen Poem A (select a poem on a clear theme such as nature, memory, or conflict - approximately 16-24 lines). Guide students through the systematic reading process: (1) Read the whole poem once for overall meaning (2 mins). (2) Re-read, annotating key features using the priority order (3 mins). (3) Identify the poet's message or attitude (1 min). Students then write three analytical bullet points, each identifying a technique, embedding a quotation, and explaining the effect. This mirrors the first part of the Edexcel unseen question.",
       differentiation: {
         support:
           "Provide guided annotation prompts in the margin of the poem (e.g. 'What technique is used here?' 'What mood does this create?').",
@@ -1238,7 +1238,7 @@ const lesson8: LessonPlan = {
       title: 'The Comparison: Introducing Unseen Poem B',
       duration: '24 minutes',
       instructions:
-        "Distribute Unseen Poem B (on a similar theme to Poem A but with contrasting methods — e.g. if Poem A is reflective and uses extended metaphor, Poem B might be energetic and use direct language). Students read and annotate Poem B using the same process (5 mins). Then, introduce the comparison task: 'Compare how the poets present [theme] in Poem A and Poem B.' Model the planning stage: create a Venn diagram or comparison grid identifying similarities and differences in subject, method, tone, and effect. Students plan their comparison (5 mins) and then write two comparative paragraphs (14 mins). Emphasise that Edexcel rewards comparison of methods, not just themes.",
+        "Distribute Unseen Poem B (on a similar theme to Poem A but with contrasting methods - e.g. if Poem A is reflective and uses extended metaphor, Poem B might be energetic and use direct language). Students read and annotate Poem B using the same process (5 mins). Then, introduce the comparison task: 'Compare how the poets present [theme] in Poem A and Poem B.' Model the planning stage: create a Venn diagram or comparison grid identifying similarities and differences in subject, method, tone, and effect. Students plan their comparison (5 mins) and then write two comparative paragraphs (14 mins). Emphasise that Edexcel rewards comparison of methods, not just themes.",
       differentiation: {
         support:
           'Provide a pre-started Venn diagram with one similarity and one difference filled in. Offer a paragraph frame for the first comparative paragraph.',
@@ -1266,7 +1266,7 @@ const lesson8: LessonPlan = {
     },
   },
   homework:
-    'Complete a full unseen poetry comparison using two new poems provided on a homework sheet. Follow the systematic reading process and write at least two comparative paragraphs. Time yourself — aim for 30 minutes maximum.',
+    'Complete a full unseen poetry comparison using two new poems provided on a homework sheet. Follow the systematic reading process and write at least two comparative paragraphs. Time yourself - aim for 30 minutes maximum.',
   worksheetQuestions: [
     {
       question:
@@ -1281,7 +1281,7 @@ const lesson8: LessonPlan = {
         'Explain the five-step priority order for annotating an unseen poem. Why is this order important?',
       lines: 5,
       modelAnswer:
-        '1. Overall meaning/subject — understand what the poem is about. 2. Tone/mood — identify the emotional quality. 3. Key imagery — find the most striking language features. 4. Structural features — note stanza breaks, enjambment, shifts, and patterns. 5. Form — consider rhyme scheme, metre, and the type of poem. This order is important because meaning and tone are foundational — without understanding these, analysis of technique becomes disconnected. Working from big picture to small detail ensures responses are grounded and purposeful.',
+        '1. Overall meaning/subject - understand what the poem is about. 2. Tone/mood - identify the emotional quality. 3. Key imagery - find the most striking language features. 4. Structural features - note stanza breaks, enjambment, shifts, and patterns. 5. Form - consider rhyme scheme, metre, and the type of poem. This order is important because meaning and tone are foundational - without understanding these, analysis of technique becomes disconnected. Working from big picture to small detail ensures responses are grounded and purposeful.',
       marks: 4,
     },
     {
@@ -1289,7 +1289,7 @@ const lesson8: LessonPlan = {
         'What is the difference between comparing themes and comparing methods? Which does Edexcel prioritise?',
       lines: 4,
       modelAnswer:
-        'Comparing themes means discussing what both poems are about — the ideas, subjects, and messages. Comparing methods means discussing how the poets convey those ideas — through language techniques, structural choices, form, tone, and imagery. Edexcel prioritises methods because it tests AO2 (analyse the methods writers use). A response that only compares themes without analysing how they are presented will be limited to lower levels.',
+        'Comparing themes means discussing what both poems are about - the ideas, subjects, and messages. Comparing methods means discussing how the poets convey those ideas - through language techniques, structural choices, form, tone, and imagery. Edexcel prioritises methods because it tests AO2 (analyse the methods writers use). A response that only compares themes without analysing how they are presented will be limited to lower levels.',
       marks: 4,
     },
     {
@@ -1305,7 +1305,7 @@ const lesson8: LessonPlan = {
         'What should you do if you find an unseen poem confusing or difficult to understand?',
       lines: 5,
       modelAnswer:
-        'First, do not panic — unseen poems are meant to be unfamiliar. Re-read the poem at least twice, focusing on the title and opening/closing lines for clues about subject and tone. Look for words or images you do recognise and build outward from them. Focus on what you can analyse (specific techniques and their effects) even if you are unsure of the overall meaning. Write about the effect on the reader — even tentative analysis of language features will score marks. Avoid leaving the question blank.',
+        'First, do not panic - unseen poems are meant to be unfamiliar. Re-read the poem at least twice, focusing on the title and opening/closing lines for clues about subject and tone. Look for words or images you do recognise and build outward from them. Focus on what you can analyse (specific techniques and their effects) even if you are unsure of the overall meaning. Write about the effect on the reader - even tentative analysis of language features will score marks. Avoid leaving the question blank.',
       marks: 4,
     },
     {
@@ -1371,7 +1371,7 @@ const lesson9: LessonPlan = {
     title: 'Great Speakers: What Makes Them Effective?',
     duration: '8 minutes',
     instructions:
-      'Play a 90-second clip of an effective public speaker (e.g. a TED Talk excerpt, a speech from a film, or a student model). Students note three things the speaker does well — focusing on voice (pace, tone, emphasis), content (structure, evidence, rhetoric), and engagement (eye contact, gestures, audience interaction). Share observations as a class. Establish that effective spoken language combines what you say with how you say it.',
+      'Play a 90-second clip of an effective public speaker (e.g. a TED Talk excerpt, a speech from a film, or a student model). Students note three things the speaker does well - focusing on voice (pace, tone, emphasis), content (structure, evidence, rhetoric), and engagement (eye contact, gestures, audience interaction). Share observations as a class. Establish that effective spoken language combines what you say with how you say it.',
     differentiation: {
       support: 'Provide a three-column observation grid: Voice / Content / Engagement.',
       core: 'Students make independent notes and contribute at least one observation per category.',
@@ -1404,7 +1404,7 @@ const lesson9: LessonPlan = {
       title: 'Mini Practice: Presenting and Responding to Questions',
       duration: '20 minutes',
       instructions:
-        'In groups of four, each student delivers a 90-second mini-presentation based on their plan (introduction and one main point only — this is a practice, not the full assessment). After each presentation, the group asks two questions. The presenter must respond using Standard English, developing their ideas spontaneously. Observers use a peer feedback sheet aligned to the endorsement criteria, noting strengths and one target. Rotate until all group members have presented.',
+        'In groups of four, each student delivers a 90-second mini-presentation based on their plan (introduction and one main point only - this is a practice, not the full assessment). After each presentation, the group asks two questions. The presenter must respond using Standard English, developing their ideas spontaneously. Observers use a peer feedback sheet aligned to the endorsement criteria, noting strengths and one target. Rotate until all group members have presented.',
       differentiation: {
         support:
           'Allow students to use prompt cards during their presentation. Provide a bank of question stems for peers to use.',
@@ -1427,21 +1427,21 @@ const lesson9: LessonPlan = {
       "Display the Pass, Merit, and Distinction criteria side by side. Students re-read the criteria and honestly assess where they currently sit based on today's practice. They write: 'Currently I am working at [Pass/Merit/Distinction] because...' and 'To move up, I need to...' Collect these for teacher review and to inform individual feedback before the formal assessment.",
     differentiation: {
       support:
-        'Provide the criteria as a checklist with tick boxes — students tick what they achieved and circle what they need to work on.',
+        'Provide the criteria as a checklist with tick boxes - students tick what they achieved and circle what they need to work on.',
       core: 'Students write a full self-assessment with specific examples from their practice.',
       stretch:
         'Students set three specific, measurable targets for their formal assessment and explain how they will achieve each one.',
     },
   },
   homework:
-    'Complete your presentation plan in full. Practise delivering your presentation at home (to a mirror, a family member, or by recording yourself). Time yourself — aim for 3–5 minutes. Write down three questions someone might ask you and plan your responses.',
+    'Complete your presentation plan in full. Practise delivering your presentation at home (to a mirror, a family member, or by recording yourself). Time yourself - aim for 3-5 minutes. Write down three questions someone might ask you and plan your responses.',
   worksheetQuestions: [
     {
       question:
         'What is the Edexcel Spoken Language Endorsement and how does it relate to your GCSE grade?',
       lines: 4,
       modelAnswer:
-        "The Spoken Language Endorsement is a separate, compulsory component of the GCSE English Language qualification. It is graded Pass, Merit, or Distinction (not numerically) and is reported on the student's certificate alongside their GCSE grade but does not affect the 1–9 grade. It assesses the ability to present ideas, use Standard English, and respond to questions.",
+        "The Spoken Language Endorsement is a separate, compulsory component of the GCSE English Language qualification. It is graded Pass, Merit, or Distinction (not numerically) and is reported on the student's certificate alongside their GCSE grade but does not affect the 1-9 grade. It assesses the ability to present ideas, use Standard English, and respond to questions.",
       marks: 3,
     },
     {
@@ -1456,7 +1456,7 @@ const lesson9: LessonPlan = {
       question: 'List four techniques for engaging an audience during a spoken presentation.',
       lines: 4,
       modelAnswer:
-        "1. Rhetorical questions — make the audience think and feel involved. 2. Direct address ('you', 'we') — creates a personal connection. 3. Varied pace and tone — emphasises key points and maintains interest. 4. Anecdote or example — makes abstract arguments concrete and relatable. Other valid answers include: eye contact, pausing for effect, humour, gestures, and audience interaction.",
+        "1. Rhetorical questions - make the audience think and feel involved. 2. Direct address ('you', 'we') - creates a personal connection. 3. Varied pace and tone - emphasises key points and maintains interest. 4. Anecdote or example - makes abstract arguments concrete and relatable. Other valid answers include: eye contact, pausing for effect, humour, gestures, and audience interaction.",
       marks: 4,
     },
     {
@@ -1470,7 +1470,7 @@ const lesson9: LessonPlan = {
       question: "What does 'Standard English' mean and why is it required for the endorsement?",
       lines: 4,
       modelAnswer:
-        "Standard English is the conventionally accepted form of English used in formal contexts — it avoids slang, dialect forms, and informal grammar. It is required because the endorsement assesses students' ability to communicate formally and appropriately in a public-speaking context. This does not mean students must lose their accent or identity, but that they can adapt their register to suit a formal audience and purpose.",
+        "Standard English is the conventionally accepted form of English used in formal contexts - it avoids slang, dialect forms, and informal grammar. It is required because the endorsement assesses students' ability to communicate formally and appropriately in a public-speaking context. This does not mean students must lose their accent or identity, but that they can adapt their register to suit a formal audience and purpose.",
       marks: 3,
     },
     {
@@ -1478,15 +1478,15 @@ const lesson9: LessonPlan = {
         'How should you respond if someone asks a question you were not expecting during your presentation?',
       lines: 5,
       modelAnswer:
-        "Take a brief pause to think — this shows composure, not weakness. Acknowledge the question ('That is a really interesting point'). Relate it to something you do know or have planned. If you genuinely do not know, say so honestly but redirect: 'I have not researched that specific area, but based on what I have found, I believe...' Maintain Standard English and a confident tone throughout. The ability to handle unexpected questions is key to achieving Distinction.",
+        "Take a brief pause to think - this shows composure, not weakness. Acknowledge the question ('That is a really interesting point'). Relate it to something you do know or have planned. If you genuinely do not know, say so honestly but redirect: 'I have not researched that specific area, but based on what I have found, I believe...' Maintain Standard English and a confident tone throughout. The ability to handle unexpected questions is key to achieving Distinction.",
       marks: 4,
     },
   ],
   teacherNotes: [
-    'The Spoken Language Endorsement must be conducted under controlled conditions. This lesson is preparation — the formal assessment should follow once students have had time to practise.',
+    'The Spoken Language Endorsement must be conducted under controlled conditions. This lesson is preparation - the formal assessment should follow once students have had time to practise.',
     'Record the formal assessment for moderation purposes, as required by Edexcel.',
-    'Students with specific communication needs may require reasonable adjustments — consult the Edexcel access arrangements guidance.',
-    'Encourage students to choose topics they feel genuinely passionate about — authentic engagement is visible to assessors and aids confidence.',
+    'Students with specific communication needs may require reasonable adjustments - consult the Edexcel access arrangements guidance.',
+    'Encourage students to choose topics they feel genuinely passionate about - authentic engagement is visible to assessors and aids confidence.',
   ],
   targetedSkills: [
     'Speaking and Listening',
@@ -1498,7 +1498,7 @@ const lesson9: LessonPlan = {
   ],
 }
 
-// ── Lesson 10: Edexcel Full Exam Strategy — Paper-by-Paper Revision Plan ──
+// ── Lesson 10: Edexcel Full Exam Strategy - Paper-by-Paper Revision Plan ──
 
 const lesson10: LessonPlan = {
   id: 'edexcel-10-full-exam-strategy',
@@ -1534,7 +1534,7 @@ const lesson10: LessonPlan = {
     title: 'Exam Paper Confidence Audit',
     duration: '8 minutes',
     instructions:
-      'Distribute a confidence audit sheet listing every question across all four papers (Language P1 Q1–Q5, Language P2 Q1–Q7, Literature P1 Shakespeare and Post-1914 Literature, Literature P2 19th-century novel, poetry anthology, and unseen poetry). Students rate their confidence for each question from 1 (very worried) to 5 (very confident). This self-assessment will drive the personalised revision planning in the main activity.',
+      'Distribute a confidence audit sheet listing every question across all four papers (Language P1 Q1-Q5, Language P2 Q1-Q7, Literature P1 Shakespeare and Post-1914 Literature, Literature P2 19th-century novel, poetry anthology, and unseen poetry). Students rate their confidence for each question from 1 (very worried) to 5 (very confident). This self-assessment will drive the personalised revision planning in the main activity.',
     differentiation: {
       support:
         "Simplify the audit by grouping questions into categories (e.g. 'Reading questions', 'Writing questions', 'Literature essays') rather than listing each individually.",
@@ -1569,7 +1569,7 @@ const lesson10: LessonPlan = {
       title: 'Personalised Revision Plan Builder',
       duration: '15 minutes',
       instructions:
-        "Using their confidence audit and strategy notes, students create a personalised 4-week revision plan. Provide a blank timetable template. Teach three evidence-based revision principles: (1) Spaced repetition — spread practice over time, not cramming. (2) Interleaving — mix topics rather than blocking them. (3) Retrieval practice — test yourself rather than re-reading. Students allocate specific revision activities to each week, prioritising their lowest-confidence areas. Activities should be specific (e.g. 'Practise Language P1 Q4 evaluation using a past paper', not just 'revise English'). Teacher circulates to review plans and challenge unrealistic or vague entries.",
+        "Using their confidence audit and strategy notes, students create a personalised 4-week revision plan. Provide a blank timetable template. Teach three evidence-based revision principles: (1) Spaced repetition - spread practice over time, not cramming. (2) Interleaving - mix topics rather than blocking them. (3) Retrieval practice - test yourself rather than re-reading. Students allocate specific revision activities to each week, prioritising their lowest-confidence areas. Activities should be specific (e.g. 'Practise Language P1 Q4 evaluation using a past paper', not just 'revise English'). Teacher circulates to review plans and challenge unrealistic or vague entries.",
       differentiation: {
         support:
           'Provide a pre-structured timetable with suggested activities that students select and personalise.',
@@ -1605,7 +1605,7 @@ const lesson10: LessonPlan = {
         'List all four Edexcel English exam papers and state the duration and total marks for each.',
       lines: 6,
       modelAnswer:
-        'Language Paper 1 (1EN0/01): Fiction and Imaginative Writing — 1 hour 45 minutes, 64 marks. Language Paper 2 (1EN0/02): Non-Fiction and Transactional Writing — 2 hours 5 minutes, 96 marks. Literature Paper 1 (1ET0/01): Shakespeare and Post-1914 Literature — 1 hour 45 minutes, 80 marks (including 8 SPaG). Literature Paper 2 (1ET0/02): 19th-Century Novel, Poetry Anthology, and Unseen Poetry — 2 hours 15 minutes, 100 marks.',
+        'Language Paper 1 (1EN0/01): Fiction and Imaginative Writing - 1 hour 45 minutes, 64 marks. Language Paper 2 (1EN0/02): Non-Fiction and Transactional Writing - 2 hours 5 minutes, 96 marks. Literature Paper 1 (1ET0/01): Shakespeare and Post-1914 Literature - 1 hour 45 minutes, 80 marks (including 8 SPaG). Literature Paper 2 (1ET0/02): 19th-Century Novel, Poetry Anthology, and Unseen Poetry - 2 hours 15 minutes, 100 marks.',
       marks: 4,
     },
     {
@@ -1629,7 +1629,7 @@ const lesson10: LessonPlan = {
         'Create a timing plan for Edexcel Literature Paper 2 (2 hours 15 minutes, 100 marks). Show your working.',
       lines: 6,
       modelAnswer:
-        'Total time: 135 minutes. Total marks: 100. Rate: approximately 1.35 minutes per mark. Section A (19th-century novel, 40 marks): 54 minutes — includes 5 minutes planning and 49 minutes writing. Section B (Poetry anthology comparison, 30 marks): 40 minutes — includes 5 minutes planning and 35 minutes writing. Section C (Unseen poetry, 20 + 12 marks = 32 marks): 38 minutes — split as 22 minutes on the first poem and 16 minutes on the comparison. Checking: 3 minutes.',
+        'Total time: 135 minutes. Total marks: 100. Rate: approximately 1.35 minutes per mark. Section A (19th-century novel, 40 marks): 54 minutes - includes 5 minutes planning and 49 minutes writing. Section B (Poetry anthology comparison, 30 marks): 40 minutes - includes 5 minutes planning and 35 minutes writing. Section C (Unseen poetry, 20 + 12 marks = 32 marks): 38 minutes - split as 22 minutes on the first poem and 16 minutes on the comparison. Checking: 3 minutes.',
       marks: 5,
     },
     {
@@ -1652,7 +1652,7 @@ const lesson10: LessonPlan = {
   teacherNotes: [
     'This lesson works best in the spring term of Year 11, when students have studied all texts and attempted at least one full mock exam.',
     'If mock results are available, distribute them at the start so students can use real data for their confidence audit.',
-    'The revision timetable should be realistic — encourage students to build in rest days and manageable sessions (30–45 minutes).',
+    'The revision timetable should be realistic - encourage students to build in rest days and manageable sessions (30-45 minutes).',
     'Revisit the commitment cards in subsequent lessons to maintain accountability.',
     'Consider sharing the revision timetable template with parents/carers so they can support revision at home.',
   ],

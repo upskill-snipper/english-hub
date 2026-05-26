@@ -17,14 +17,14 @@ const WAO1 = ASSESSMENT_OBJECTIVES.WAO1
 const SECTION_B = SECTIONS.B
 
 export const metadata: Metadata = {
-  title: 'Form, audience & purpose — KS3 iLowerSecondary English writing masterclass',
+  title: 'Form, audience & purpose - KS3 iLowerSecondary English writing masterclass',
   description:
     'Decode the Section B extended writing task: identify form, audience and purpose, learn the conventions of every form, signposting language for every purpose, register choices for each audience, and an annotated worked example.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/form-audience-purpose',
   },
   openGraph: {
-    title: 'Form, audience & purpose — iLowerSecondary writing masterclass',
+    title: 'Form, audience & purpose - iLowerSecondary writing masterclass',
     description:
       'How to decode the Section B task and control form, audience and purpose for top WAO1 marks, with an original annotated worked example.',
   },
@@ -41,7 +41,7 @@ const FORM_CONVENTIONS: Record<
     conventions: [
       'First person ("I", "we") and mostly past tense for events that happened.',
       'A reflective voice: tell the reader what the experience taught you or how it changed you.',
-      'Selected, vivid moments rather than a list of everything — depth over coverage.',
+      'Selected, vivid moments rather than a list of everything - depth over coverage.',
       'Honest, personal feeling; the reader should sense a real individual behind the words.',
     ],
   },
@@ -50,7 +50,7 @@ const FORM_CONVENTIONS: Record<
     conventions: [
       'Third person ("she", "he", "they") and a clear time frame for the events you cover.',
       'Factual detail and concrete examples that show why the person matters.',
-      'A shaping focus — a theme or achievement — rather than a flat chronology.',
+      'A shaping focus - a theme or achievement - rather than a flat chronology.',
       'A measured, informative tone that still conveys interest in the subject.',
     ],
   },
@@ -68,7 +68,7 @@ const FORM_CONVENTIONS: Record<
     conventions: [
       'A date or "Dear Diary" opening and a personal, confiding voice.',
       'First person and a mixture of past tense (what happened) and present feeling.',
-      'Informal, expressive register — thoughts the writer would not say aloud.',
+      'Informal, expressive register - thoughts the writer would not say aloud.',
       'A reflective closing thought that looks back or forward.',
     ],
   },
@@ -77,7 +77,7 @@ const FORM_CONVENTIONS: Record<
     conventions: [
       'An appropriate greeting and sign-off (formal: "Dear Sir or Madam" / "Yours faithfully"; informal: a first name).',
       'A clear reason for writing stated early.',
-      'Register matched to the recipient — formal for a manufacturer, warmer for a friend.',
+      'Register matched to the recipient - formal for a manufacturer, warmer for a friend.',
       'Logical paragraphs and a courteous, purposeful close.',
     ],
   },
@@ -169,7 +169,7 @@ const AUDIENCE_REGISTERS = [
   },
   {
     audience: 'Older children',
-    examples: 'students in the years above, a school magazine read by Year 9–11',
+    examples: 'students in the years above, a school magazine read by Year 9-11',
     register:
       'Mostly standard English but warmer and more direct. You can use rhetorical questions and lively examples, while still showing structure and control.',
   },
@@ -177,7 +177,7 @@ const AUDIENCE_REGISTERS = [
     audience: 'Children of their own age',
     examples: 'classmates, peers reading a club newsletter or a class blog',
     register:
-      'Approachable and energetic. A slightly informal, inclusive voice ("we", "us", "let’s") works well, but keep grammar and spelling accurate — register is a choice, not an excuse for carelessness.',
+      'Approachable and energetic. A slightly informal, inclusive voice ("we", "us", "let’s") works well, but keep grammar and spelling accurate - register is a choice, not an excuse for carelessness.',
   },
 ]
 
@@ -386,8 +386,8 @@ export default function FormAudiencePurposePage() {
           </h2>
           <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             The audiences you may be asked to write for are:{' '}
-            <span className="italic">{WRITING_AUDIENCES}</span> Your <strong>register</strong> — how
-            formal your language is — must shift to suit them.
+            <span className="italic">{WRITING_AUDIENCES}</span> Your <strong>register</strong> - how
+            formal your language is - must shift to suit them.
           </p>
           <div className="space-y-4">
             {AUDIENCE_REGISTERS.map((a) => (
@@ -409,7 +409,7 @@ export default function FormAudiencePurposePage() {
           <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             This is the levelled grid your writing is judged against for {WAO1.code} (form,
             communication and purpose). Notice how each level rewards <em>tighter</em> control of
-            audience and form — the journey from S1 to S4 is a journey from &ldquo;some
+            audience and form - the journey from S1 to S4 is a journey from &ldquo;some
             awareness&rdquo; to &ldquo;sophisticated&rdquo; and &ldquo;adapted and
             controlled&rdquo;.
           </p>
@@ -458,25 +458,25 @@ export default function FormAudiencePurposePage() {
           </div>
 
           <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
-            Step 1 — Decode it
+            Step 1 - Decode it
           </h3>
           <ul className="mb-6 list-disc space-y-1 pl-6 text-sm leading-relaxed text-muted-foreground">
             <li>
-              <strong>Form:</strong> a letter — so it needs a formal greeting, clear paragraphs and
+              <strong>Form:</strong> a letter - so it needs a formal greeting, clear paragraphs and
               a sign-off.
             </li>
             <li>
-              <strong>Audience:</strong> the town council — specific adults in authority, so the
+              <strong>Audience:</strong> the town council - specific adults in authority, so the
               register is formal and respectful.
             </li>
             <li>
-              <strong>Purpose:</strong> to persuade — so the tone is direct and motivating, using
+              <strong>Purpose:</strong> to persuade - so the tone is direct and motivating, using
               persuasive signposting.
             </li>
           </ul>
 
           <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
-            Step 2 — A brief plan
+            Step 2 - A brief plan
           </h3>
           <ol className="mb-6 list-decimal space-y-1 pl-6 text-sm leading-relaxed text-muted-foreground">
             <li>Greeting + state the reason for writing.</li>
@@ -487,7 +487,7 @@ export default function FormAudiencePurposePage() {
           </ol>
 
           <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
-            Step 3 — An opening that nails form, audience and purpose
+            Step 3 - An opening that nails form, audience and purpose
           </h3>
           <div className="rounded-lg bg-card p-5 border border-border/60">
             <p className="mb-3 text-sm font-medium text-muted-foreground">
@@ -507,7 +507,7 @@ export default function FormAudiencePurposePage() {
 
           <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-              Why this earns marks — annotated
+              Why this earns marks - annotated
             </p>
             <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
               <li>
@@ -516,7 +516,7 @@ export default function FormAudiencePurposePage() {
               </li>
               <li>
                 <strong>Audience:</strong> the register is formal and respectful (&ldquo;I do not
-                dismiss that need lightly&rdquo;) — appropriate for adults in authority.
+                dismiss that need lightly&rdquo;) - appropriate for adults in authority.
               </li>
               <li>
                 <strong>Purpose:</strong> persuasive signposting (&ldquo;Imagine&hellip;&rdquo;,
@@ -534,7 +534,7 @@ export default function FormAudiencePurposePage() {
 
         <section aria-labelledby="checklist" className="mb-12">
           <h2 id="checklist" className="mb-4 font-heading text-2xl font-semibold text-foreground">
-            Before you write — a 30-second checklist
+            Before you write - a 30-second checklist
           </h2>
           <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
             <li>
@@ -543,7 +543,7 @@ export default function FormAudiencePurposePage() {
             </li>
             <li>My opening makes the form unmistakable within the first two sentences.</li>
             <li>
-              My register matches the reader — formal for adults, warmer for peers, accurate
+              My register matches the reader - formal for adults, warmer for peers, accurate
               throughout.
             </li>
             <li>

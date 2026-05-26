@@ -24,10 +24,10 @@ function parseParams(p: Params): { year: YearNumber; term: 1 | 2 | 3 } | null {
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const parsed = parseParams(await params)
-  if (!parsed) return { title: 'KS3 — Term not found' }
+  if (!parsed) return { title: 'KS3 - Term not found' }
   const y = getYear(KS3, parsed.year)
   const t = getTerm(KS3, parsed.year, parsed.term)
-  if (!y || !t) return { title: 'KS3 — Term not found' }
+  if (!y || !t) return { title: 'KS3 - Term not found' }
   return {
     title: `${y.name.en} · ${t.label.en}`,
     description: t.overview.en.slice(0, 160),
@@ -67,7 +67,7 @@ export default async function TermPage({ params }: { params: Promise<Params> }) 
         </Link>
         <span> · </span>
         <Link href={`/ks3/year-${yearNum}`} className="hover:text-foreground">
-          {isAr ? `${tr[1]} — ${tr[2]}` : y.name.en}
+          {isAr ? `${tr[1]} - ${tr[2]}` : y.name.en}
         </Link>
         <span> · </span>
         <span>{tr[3]}</span>

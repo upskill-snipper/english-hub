@@ -40,7 +40,7 @@ const COLLOCATION_BANK: Collocation[] = [
   v('They are going to ___ a complaint about the noisy neighbours.', 'make', 'make'),
   v('Let me ___ a suggestion before we finish the meeting.', 'make', 'make'),
   v('We should ___ a plan for the weekend trip.', 'make', 'make'),
-  v("Don't ___ a noise — the baby is sleeping.", 'make', 'make'),
+  v("Don't ___ a noise - the baby is sleeping.", 'make', 'make'),
   v('He had to ___ an appointment to see the dentist.', 'make', 'make'),
   v('I always ___ a list before I go food shopping.', 'make', 'make'),
   v('They want to ___ progress on the project this month.', 'make', 'make'),
@@ -77,7 +77,7 @@ const COLLOCATION_BANK: Collocation[] = [
   v('We should ___ a meeting to discuss the budget.', 'have', 'have'),
   v('Did you ___ a good time at the concert last night?', 'have', 'have'),
   v('She is going to ___ a baby in the spring.', 'have', 'have'),
-  v("Let's ___ a break — we've been working for hours.", 'have', 'have'),
+  v("Let's ___ a break - we've been working for hours.", 'have', 'have'),
   v('I need to ___ a holiday; I feel exhausted.', 'have', 'have'),
   v('Could we ___ a conversation about this in private?', 'have', 'have'),
 
@@ -312,7 +312,7 @@ export default function CollocationsChallengePage() {
         <GameShell
           gameId="collocations-challenge"
           title="Collocations Challenge"
-          description="Choose the verb or noun that fits the sentence. Master make, do, have and take — the trickiest English word partners."
+          description="Choose the verb or noun that fits the sentence. Master make, do, have and take - the trickiest English word partners."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}

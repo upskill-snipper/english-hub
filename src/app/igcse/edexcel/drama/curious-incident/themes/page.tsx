@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Curious Incident Themes — Edexcel IGCSE Literature',
+    title: 'Curious Incident Themes - Edexcel IGCSE Literature',
     description:
       'Themes in The Curious Incident of the Dog in the Night-Time: neurodivergence, family, truth and lies, independence, order and theatrical form.',
   },
-  title: 'Curious Incident Themes — Edexcel IGCSE Literature',
+  title: 'Curious Incident Themes - Edexcel IGCSE Literature',
   description:
     'Themes in The Curious Incident of the Dog in the Night-Time: neurodivergence, family, truth and lies, independence, order and theatrical form.',
   alternates: {
@@ -24,10 +24,10 @@ const themes = [
   {
     title: 'Neurodivergence and perception',
     intro:
-      'Christopher experiences the world with heightened sensory sensitivity, a literal interpretation of language and a preference for order. Neither Haddon nor Stephens uses a diagnostic label in official materials; both treat Christopher\u2019s way of seeing as a different, coherent worldview rather than a deficit. The play\u2019s staging — projections, ensemble, sudden noise and light — externalises his experience for a neurotypical audience.',
+      'Christopher experiences the world with heightened sensory sensitivity, a literal interpretation of language and a preference for order. Neither Haddon nor Stephens uses a diagnostic label in official materials; both treat Christopher\u2019s way of seeing as a different, coherent worldview rather than a deficit. The play\u2019s staging - projections, ensemble, sudden noise and light - externalises his experience for a neurotypical audience.',
     moments:
       'The sensory overload on the Underground; the grid of the stage floor; Christopher\u2019s lists and diagrams.',
-    quote: '“I find people confusing.” — Christopher',
+    quote: '“I find people confusing.” - Christopher',
   },
   {
     title: 'Family, love and failure',
@@ -35,32 +35,32 @@ const themes = [
       'Ed and Judy Boone both love Christopher; both fail him in different ways. Ed lies to protect him and destroys the protection. Judy cannot cope with his needs and leaves. The play refuses to make either parent a villain, presenting their exhaustion with sympathy while refusing to excuse the damage. Christopher\u2019s final, uncertain trust is the play\u2019s most hard-won moment.',
     moments:
       'Ed\u2019s bedtime scenes; Judy\u2019s hidden letters; Christopher\u2019s arrival at Judy\u2019s London flat; the final reconciliation.',
-    quote: '“I love Christopher more than anything in the whole wide world.” — Ed',
+    quote: '“I love Christopher more than anything in the whole wide world.” - Ed',
   },
   {
     title: 'Truth and lies',
     intro:
-      'Christopher\u2019s insistence that he "cannot tell lies" sets up the play\u2019s moral engine. The plot runs on lies of omission — the mother\u2019s letters, the dog\u2019s death — and Christopher\u2019s literal-truth ethic forces every hidden thing into the open. Siobhan\u2019s voice gently teaches him that social life is full of white lies, and the play takes this tension seriously rather than resolving it.',
+      'Christopher\u2019s insistence that he "cannot tell lies" sets up the play\u2019s moral engine. The plot runs on lies of omission - the mother\u2019s letters, the dog\u2019s death - and Christopher\u2019s literal-truth ethic forces every hidden thing into the open. Siobhan\u2019s voice gently teaches him that social life is full of white lies, and the play takes this tension seriously rather than resolving it.',
     moments:
       'Christopher\u2019s "I do not tell lies" list; Ed\u2019s confession; the discovered letters.',
-    quote: '”I do not tell lies.” — Christopher',
+    quote: '”I do not tell lies.” - Christopher',
   },
   {
     title: 'Independence and growing up',
     intro:
-      'The London journey is the play\u2019s coming-of-age sequence. Christopher moves through tube stations, crowds and unfamiliar noise by drawing on Siobhan\u2019s voice in his head and the rigorous maths of navigation. His success does not mean everything is now easy — the play closes on a question, not a declaration — but it does mean his future is genuinely open.',
+      'The London journey is the play\u2019s coming-of-age sequence. Christopher moves through tube stations, crowds and unfamiliar noise by drawing on Siobhan\u2019s voice in his head and the rigorous maths of navigation. His success does not mean everything is now easy - the play closes on a question, not a declaration - but it does mean his future is genuinely open.',
     moments:
       'The Swindon to London journey; the A-level maths result; the final question to Siobhan.',
-    quote: '“You have to do things even if they scare you.” — Christopher',
+    quote: '“You have to do things even if they scare you.” - Christopher',
   },
   {
     title: 'Order, mathematics and control',
     intro:
-      'Mathematics functions for Christopher as a refuge: prime numbers, geometry, logic puzzles and maps make the world predictable. Stephens stages Christopher\u2019s mathematical monologues as moments of visual clarity, contrasting them with the chaos of social interaction. The final appendix — Christopher\u2019s proof — is performed as an epilogue, making formal order the play\u2019s last word.',
+      'Mathematics functions for Christopher as a refuge: prime numbers, geometry, logic puzzles and maps make the world predictable. Stephens stages Christopher\u2019s mathematical monologues as moments of visual clarity, contrasting them with the chaos of social interaction. The final appendix - Christopher\u2019s proof - is performed as an epilogue, making formal order the play\u2019s last word.',
     moments:
       'The prime number sequence; Christopher\u2019s map of the neighbourhood; the A-level maths proof.',
     quote:
-      '“Prime numbers are what is left when you have taken all the patterns away.” — Christopher',
+      '“Prime numbers are what is left when you have taken all the patterns away.” - Christopher',
   },
   {
     title: 'Theatrical form and metatheatre',
@@ -68,7 +68,7 @@ const themes = [
       'Stephens frames the play as a rehearsal of Christopher\u2019s book by Siobhan and the class. The device allows Christopher to be simultaneously a character and a subject being read, and lets the staging slip between naturalism and stylised movement. The National Theatre\u2019s original production used a gridded LED stage, projection and ensemble work to make the inner life of an intensely private narrator visible. The form is inseparable from the themes.',
     moments:
       'The opening frame; Siobhan\u2019s narration throughout; the ensemble movement sequences; the post-bow maths proof.',
-    quote: '“I think I\u2019m going to write a book.” — Christopher, early in Act One',
+    quote: '“I think I\u2019m going to write a book.” - Christopher, early in Act One',
   },
 ]
 
@@ -117,7 +117,7 @@ export default async function CuriousIncidentThemesPage() {
             The Curious Incident: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Stephens and Haddon’s play — neurodivergence, family, truth,
+            Analytical routes through Stephens and Haddon’s play - neurodivergence, family, truth,
             independence, order and form.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default async function CuriousIncidentThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

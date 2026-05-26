@@ -9,21 +9,21 @@
 // ordered oldest-first (submitted_at ASC) so the queue drains FIFO.
 //
 // Authorisation: an ACTIVE marker only (requireMarker → 401/403). A marker
-// can ONLY ever see rows assigned to THEM — the assigned_marker_id filter is
+// can ONLY ever see rows assigned to THEM - the assigned_marker_id filter is
 // the security boundary (defence-in-depth on top of the RLS policy
 // marking_submissions_marker_select). Other markers' / pupils' work is never
 // returned.
 //
 // BLIND QA: `is_gold` is surfaced so the console can badge a gold item, but
 // `gold_expected` (the known-correct answer for gold scripts) is DELIBERATELY
-// not selected — the marker must mark gold scripts blind.
+// not selected - the marker must mark gold scripts blind.
 //
 // Empty / pre-migration safe: a missing table or zero matches returns
-// { items: [], total: 0 } (HTTP 200), never a 404/500 — the console renders
+// { items: [], total: 0 } (HTTP 200), never a 404/500 - the console renders
 // an "all caught up" state.
 //
 // Supabase generated types don't know about marking_submissions yet (Prisma
-// client not regenerated — see migration note), so rows are cast through
+// client not regenerated - see migration note), so rows are cast through
 // `unknown` to the SELECT shape.
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -39,7 +39,7 @@ const MAX_LIMIT = 50
 
 // Exactly the fields the console needs. NOTE: gold_expected is intentionally
 // excluded (blind QA). assigned_marker_id is not echoed (the marker already
-// implicitly is the assignee — every row is theirs).
+// implicitly is the assignee - every row is theirs).
 const QUEUE_COLUMNS =
   'id, source, batch_id, exam_board, qualification, paper,' +
   ' essay_title, essay_text, question_text, question_type, studied_text,' +

@@ -6,7 +6,7 @@
  * every Subscription row where the lock is currently NULL, using
  * present-day Early Access prices keyed off `plan` + `isTeacherPlan`.
  *
- * Auth: `verifyAdmin()` — 401 Unauthorized when no session, 403 Forbidden
+ * Auth: `verifyAdmin()` - 401 Unauthorized when no session, 403 Forbidden
  * when the session is not in `ADMIN_EMAILS` / site admin list.
  *
  * Response: `{ ok: true, data: { scanned, updated, skipped } }`.
@@ -37,9 +37,6 @@ export async function POST(_request: NextRequest) {
     return NextResponse.json({ ok: true, data: result })
   } catch (err) {
     console.error('[api/admin/pricing/backfill] Backfill failed:', err)
-    return NextResponse.json(
-      { ok: false, error: 'Backfill failed' },
-      { status: 500 },
-    )
+    return NextResponse.json({ ok: false, error: 'Backfill failed' }, { status: 500 })
   }
 }

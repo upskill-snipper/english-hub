@@ -1,7 +1,7 @@
 'use client'
 
-// ─── Platform-admin — Paid-marker QA scorecard ───────────────────────────────
-// Site-admin only (auth/redirect mirrors src/app/admin/affiliates/page.tsx —
+// ─── Platform-admin - Paid-marker QA scorecard ───────────────────────────────
+// Site-admin only (auth/redirect mirrors src/app/admin/affiliates/page.tsx -
 // the API routes enforce verifyAdmin; this page redirects on 401/403).
 //
 // Surfaces, from /api/admin/marker-qa + /api/admin/marker-gold:
@@ -10,7 +10,7 @@
 //   • the gold-item manager (mark an existing submission as gold)
 //   • board / paper slice filter
 //
-// i18n: useT() with inline English fallbacks via tt() — the dictionary returns
+// i18n: useT() with inline English fallbacks via tt() - the dictionary returns
 // a [[key]] sentinel for unknown keys, so tt() falls back to readable English.
 // Keys are listed in the task report for later addition to the dictionaries
 // (NOT edited here). gold_expected is admin-only and only shown on this gated
@@ -246,7 +246,7 @@ export default function AdminMarkerQaPage() {
           <div className="flex items-center gap-3">
             <Shield className="w-7 h-7 text-primary" />
             <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-              {tt('admin.mqa.title', 'Marker QA — gold calibration & inter-marker agreement')}
+              {tt('admin.mqa.title', 'Marker QA - gold calibration & inter-marker agreement')}
             </h1>
           </div>
           <button

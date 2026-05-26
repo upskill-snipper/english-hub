@@ -1,4 +1,4 @@
-// 28 Apr 2026 — wrong-board cookie redirect intentionally removed.
+// 28 Apr 2026 - wrong-board cookie redirect intentionally removed.
 // See /revision/poetry/edexcel/layout.tsx for the canonical version of
 // this fix. Bouncing stale-cookie users away from URLs they explicitly
 // clicked silently broke the homepage / cross-hub navigation flows.

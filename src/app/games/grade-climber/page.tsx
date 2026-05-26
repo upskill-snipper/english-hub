@@ -23,7 +23,7 @@ interface GradeQuestion {
 
 const QUESTION_BANK: GradeQuestion[] = [
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 3 — Identify the technique (basic)
+  // GRADE 3 - Identify the technique (basic)
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 3,
@@ -160,7 +160,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 4 — Identify technique + basic meaning
+  // GRADE 4 - Identify technique + basic meaning
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 4,
@@ -312,7 +312,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 5 — Meaning and basic analysis
+  // GRADE 5 - Meaning and basic analysis
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 5,
@@ -499,7 +499,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 6 — More sophisticated analysis
+  // GRADE 6 - More sophisticated analysis
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 6,
@@ -690,7 +690,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 7 — Sophisticated analysis with context
+  // GRADE 7 - Sophisticated analysis with context
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 7,
@@ -877,7 +877,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 8 — Perceptive, evaluative analysis
+  // GRADE 8 - Perceptive, evaluative analysis
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 8,
@@ -1073,7 +1073,7 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // GRADE 9 — Conceptualised, critical, original
+  // GRADE 9 - Conceptualised, critical, original
   // ═══════════════════════════════════════════════════════════════════════════════
   {
     grade: 9,
@@ -1285,10 +1285,10 @@ const QUESTION_BANK: GradeQuestion[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════════
-  // ADDITIONAL QUESTIONS — broader coverage
+  // ADDITIONAL QUESTIONS - broader coverage
   // ═══════════════════════════════════════════════════════════════════════════════
 
-  // Grade 3 — additional
+  // Grade 3 - additional
   {
     grade: 3,
     type: 'technique',
@@ -1354,7 +1354,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     correctIndex: 1,
   },
 
-  // Grade 4 — additional
+  // Grade 4 - additional
   {
     grade: 4,
     type: 'technique',
@@ -1425,7 +1425,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     correctIndex: 1,
   },
 
-  // Grade 5 — additional
+  // Grade 5 - additional
   {
     grade: 5,
     type: 'analysis',
@@ -1512,7 +1512,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     correctIndex: 1,
   },
 
-  // Grade 6 — additional
+  // Grade 6 - additional
   {
     grade: 6,
     type: 'analysis',
@@ -1556,7 +1556,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     prompt: 'In "The Charge of the Light Brigade", how does Tennyson use rhythm to create meaning?',
     options: [
       'The rhythm is random',
-      'The driving metre — anapaestic dimeter with a dactylic refrain — mimics the thundering hooves of the cavalry charge, creating an unstoppable momentum',
+      'The driving metre - anapaestic dimeter with a dactylic refrain - mimics the thundering hooves of the cavalry charge, creating an unstoppable momentum',
       'Tennyson used a metronome',
       'The rhythm slows throughout',
     ],
@@ -1602,7 +1602,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     correctIndex: 1,
   },
 
-  // Grade 7 — additional
+  // Grade 7 - additional
   {
     grade: 7,
     type: 'analysis',
@@ -1680,7 +1680,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     correctIndex: 1,
   },
 
-  // Grade 8 — additional
+  // Grade 8 - additional
   {
     grade: 8,
     type: 'analysis',
@@ -1745,7 +1745,7 @@ const QUESTION_BANK: GradeQuestion[] = [
     correctIndex: 1,
   },
 
-  // Grade 9 — additional
+  // Grade 9 - additional
   {
     grade: 9,
     type: 'analysis',

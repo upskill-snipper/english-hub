@@ -48,7 +48,7 @@ interface PracticeSession {
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-// courseMap is built dynamically inside the component — see useMemo below
+// courseMap is built dynamically inside the component - see useMemo below
 
 const GRADE_BOUNDARIES: Record<string, { grade: string; min: number }[]> = {
   Edexcel: [

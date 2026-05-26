@@ -10,11 +10,11 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Things Fall Apart — Edexcel IGCSE Literature Study Guide',
+    title: 'Things Fall Apart - Edexcel IGCSE Literature Study Guide',
     description:
       'Chinua Achebe\u2019s Things Fall Apart for Edexcel IGCSE Literature: Okonkwo, Umuofia, the arrival of the missionaries, key themes and quotations.',
   },
-  title: 'Things Fall Apart — Edexcel IGCSE Literature Study Guide',
+  title: 'Things Fall Apart - Edexcel IGCSE Literature Study Guide',
   description:
     'Chinua Achebe\u2019s Things Fall Apart for Edexcel IGCSE Literature: Okonkwo, Umuofia, the arrival of the missionaries, key themes and quotations.',
   alternates: {
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
 
 const plotBeats = [
   {
-    part: 'Part One — Umuofia before colonisation',
+    part: 'Part One - Umuofia before colonisation',
     summary:
       'Okonkwo, a self-made wrestler and warrior, rises to prominence in the Igbo village of Umuofia. He takes three wives, accumulates yams, and struggles with the memory of his weak, indebted father Unoka. The Oracle commands the killing of Ikemefuna, the boy Okonkwo has come to love as a son.',
   },
   {
-    part: 'Part Two — Exile in Mbanta',
+    part: 'Part Two - Exile in Mbanta',
     summary:
       'After accidentally killing a clansman\u2019s son, Okonkwo is exiled for seven years to his mother\u2019s village. During this time the first Christian missionaries arrive in Umuofia and Mbanta, converting Okonkwo\u2019s sensitive son Nwoye. Achebe traces the slow, unglamorous beginnings of colonial rule.',
   },
   {
-    part: 'Part Three — Return and collapse',
+    part: 'Part Three - Return and collapse',
     summary:
       'Okonkwo returns to find Umuofia transformed: a Christian church, a colonial district court, and a clan that will no longer act together. He kills a court messenger in protest and, facing the failure of his community to rise with him, hangs himself. A British District Commissioner plans a paragraph about him for a book on "Primitive Tribes".',
   },
@@ -43,7 +43,7 @@ const plotBeats = [
 const characters = [
   {
     name: 'Okonkwo',
-    note: 'Umuofia\u2019s warrior-hero: self-made, rigid, violent, terrified of resembling his father Unoka. His tragedy is the inability to adapt — to the killing of Ikemefuna, to exile, to colonial rule.',
+    note: 'Umuofia\u2019s warrior-hero: self-made, rigid, violent, terrified of resembling his father Unoka. His tragedy is the inability to adapt - to the killing of Ikemefuna, to exile, to colonial rule.',
   },
   {
     name: 'Unoka',
@@ -67,7 +67,7 @@ const characters = [
   },
   {
     name: 'Mr Brown',
-    note: 'The first, more conciliatory missionary. Represents a softer face of colonial evangelism — still disruptive, but willing to learn.',
+    note: 'The first, more conciliatory missionary. Represents a softer face of colonial evangelism - still disruptive, but willing to learn.',
   },
   {
     name: 'Reverend Smith',
@@ -84,7 +84,7 @@ const keyQuotations = [
     quote: 'Okonkwo was well known throughout the nine villages and even beyond.',
     speaker: 'Narrator (opening)',
     analysis:
-      'The opening sentence positions Okonkwo as a public figure of the clan — a reputation the novel will spend its remaining pages dismantling.',
+      'The opening sentence positions Okonkwo as a public figure of the clan - a reputation the novel will spend its remaining pages dismantling.',
   },
   {
     quote: 'His whole life was dominated by fear, the fear of failure and of weakness.',
@@ -96,7 +96,7 @@ const keyQuotations = [
     quote: 'He was afraid of being thought weak.',
     speaker: 'Narrator on Okonkwo killing Ikemefuna',
     analysis:
-      'The reason Okonkwo strikes the fatal blow — the line crystallises his tragedy into a single motive.',
+      'The reason Okonkwo strikes the fatal blow - the line crystallises his tragedy into a single motive.',
   },
   {
     quote: 'That boy calls you father. Do not bear a hand in his death.',
@@ -114,13 +114,13 @@ const keyQuotations = [
     quote: 'Now he has won our brothers, and our clan can no longer act like one.',
     speaker: 'Obierika',
     analysis:
-      'Obierika\u2019s diagnosis of colonialism as an internal loosening — more powerful than the external force itself.',
+      'Obierika\u2019s diagnosis of colonialism as an internal loosening - more powerful than the external force itself.',
   },
   {
     quote: 'He has put a knife on the things that held us together…',
     speaker: 'Obierika',
     analysis:
-      'The line that gives the novel its title. Note the passive "have fallen apart" — Achebe holds the clan responsible, too.',
+      'The line that gives the novel its title. Note the passive "have fallen apart" - Achebe holds the clan responsible, too.',
   },
   {
     quote: 'Living fire begets cold, impotent ash.',
@@ -132,7 +132,7 @@ const keyQuotations = [
     quote: 'If a man said yes his chi said yes also.',
     speaker: 'Narrator',
     analysis:
-      'The Igbo proverb about personal destiny (chi). Achebe complicates it later — "a man could not rise beyond the destiny of his chi" — to show the limits of Okonkwo\u2019s self-determination.',
+      'The Igbo proverb about personal destiny (chi). Achebe complicates it later - "a man could not rise beyond the destiny of his chi" - to show the limits of Okonkwo\u2019s self-determination.',
   },
   {
     quote: 'But a man could not rise beyond the destiny of his chi.',
@@ -144,7 +144,7 @@ const keyQuotations = [
     quote: 'The arrow flies, and finds its mark hundreds of miles away.',
     speaker: 'Narrator, describing the missionaries\u2019 language',
     analysis:
-      'Achebe depicts the translated word as an instrument of colonisation — language itself becomes a weapon.',
+      'Achebe depicts the translated word as an instrument of colonisation - language itself becomes a weapon.',
   },
   {
     quote: 'Does the white man understand our custom about land?',
@@ -178,7 +178,7 @@ export default async function ThingsFallApartHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="Things Fall Apart — Edexcel IGCSE Literature Study Guide"
+        name="Things Fall Apart - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Things Fall Apart for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd
@@ -227,7 +227,7 @@ export default async function ThingsFallApartHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Things Fall Apart is in copyright. This guide uses short extracts for fair-dealing
@@ -308,7 +308,7 @@ export default async function ThingsFallApartHubPage() {
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>

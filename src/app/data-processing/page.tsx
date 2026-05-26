@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'How The English Hub processes personal data for schools and institutions. UK GDPR compliant data processing agreements and transparent practices.',
   alternates: { canonical: 'https://theenglishhub.app/data-processing' },
   openGraph: {
-    title: 'Data Processing — The English Hub',
+    title: 'Data Processing - The English Hub',
     description:
       'How The English Hub processes personal data for schools and institutions. UK GDPR compliant data processing agreements and transparent practices.',
   },

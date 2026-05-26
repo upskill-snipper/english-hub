@@ -6,7 +6,7 @@
  *
  * Children's Code alignment:
  *   - §5 Detrimental use      → weaknesses re-framed constructively, never
- *                               "Ava is struggling" — always "room to grow".
+ *                               "Ava is struggling" - always "room to grow".
  *   - §8 Data minimisation    → NEVER includes essay body, AI marking rationale,
  *                               feedback narrative, or predicted-grade labels.
  *                               Only counts, averages, category labels, and one
@@ -38,17 +38,17 @@ export interface ReportChild {
 
 /**
  * Per-essay summary supplied to the generator. The body is deliberately
- * absent — if a caller needs it, it must be fetched separately and never
+ * absent - if a caller needs it, it must be fetched separately and never
  * re-enters this pipeline.
  */
 export interface ReportEssaySummary {
   readonly id: string
   readonly subject: Subject
   readonly createdAt: Date
-  /** 0–100 overall score. Null if unmarked. */
+  /** 0-100 overall score. Null if unmarked. */
   readonly overallScore: number | null
   /**
-   * Per-AO scores (0–100). Keys match the four AO buckets exposed by
+   * Per-AO scores (0-100). Keys match the four AO buckets exposed by
    * the AIFeedback row (grammar → AO1, structure → AO2, argument → AO3,
    * vocabulary → AO4). Any key may be absent if the mark did not cover it.
    */
@@ -77,10 +77,7 @@ export interface GenerateOptions {
   readonly weekEndsAt: Date
 }
 
-export type IneligibleReason =
-  | 'CHILD_UNDER_13'
-  | 'AI_OPT_OUT'
-  | 'PROFILE_PRIVATE'
+export type IneligibleReason = 'CHILD_UNDER_13' | 'AI_OPT_OUT' | 'PROFILE_PRIVATE'
 
 /** The Children's-Code-compliant report payload. Never contains prose from
  *  marking rationale, teacher notes, or essay bodies. */
@@ -109,25 +106,25 @@ export type GenerateResult =
   | { readonly ok: true; readonly report: WeeklyReportPayload }
   | { readonly ok: false; readonly reason: IneligibleReason }
 
-// ─── AO copy (constructive framing — Children's Code §5) ─────────────────
+// ─── AO copy (constructive framing - Children's Code §5) ─────────────────
 
 /**
  * Positive / constructive phrases keyed by AO. "Strong" is used when the AO
  * is the child's top-scoring objective, "Growing" when it is the lowest.
- * Every "Growing" line uses belief-forward language — never deficit language.
+ * Every "Growing" line uses belief-forward language - never deficit language.
  */
 const AO_STRENGTH_COPY: Record<AssessmentObjective, string> = {
-  AO1: 'Clear, controlled writing — technical accuracy shone this week.',
-  AO2: 'Strong structural choices — ideas flowed in a deliberate order.',
-  AO3: 'Thoughtful arguments — evidence was selected with real care.',
-  AO4: 'Rich vocabulary — language choices carried the writing.',
+  AO1: 'Clear, controlled writing - technical accuracy shone this week.',
+  AO2: 'Strong structural choices - ideas flowed in a deliberate order.',
+  AO3: 'Thoughtful arguments - evidence was selected with real care.',
+  AO4: 'Rich vocabulary - language choices carried the writing.',
 }
 
 const AO_FOCUS_COPY: Record<AssessmentObjective, string> = {
-  AO1: 'Room to grow on technical accuracy — a proof-read pass can lift marks quickly.',
-  AO2: 'Room to grow on structure — planning paragraphs before writing helps.',
-  AO3: 'Room to grow on evidence and analysis — one more quote per point goes a long way.',
-  AO4: 'Room to grow on vocabulary — noting new words while reading builds range.',
+  AO1: 'Room to grow on technical accuracy - a proof-read pass can lift marks quickly.',
+  AO2: 'Room to grow on structure - planning paragraphs before writing helps.',
+  AO3: 'Room to grow on evidence and analysis - one more quote per point goes a long way.',
+  AO4: 'Room to grow on vocabulary - noting new words while reading builds range.',
 }
 
 const AO_SUGGESTION: Record<AssessmentObjective, string> = {
@@ -142,10 +139,7 @@ const AO_SUGGESTION: Record<AssessmentObjective, string> = {
 function calculateAgeYears(dob: Date, on: Date): number {
   let age = on.getUTCFullYear() - dob.getUTCFullYear()
   const monthDelta = on.getUTCMonth() - dob.getUTCMonth()
-  if (
-    monthDelta < 0 ||
-    (monthDelta === 0 && on.getUTCDate() < dob.getUTCDate())
-  ) {
+  if (monthDelta < 0 || (monthDelta === 0 && on.getUTCDate() < dob.getUTCDate())) {
     age -= 1
   }
   return age
@@ -188,7 +182,7 @@ function rankAOs(essays: readonly ReportEssaySummary[]): {
   averaged.sort((a, b) => b.avg - a.avg)
   const strongest = averaged[0]!.ao
   const weakest = averaged[averaged.length - 1]!.ao
-  // If only one AO has data, don't surface a "weakest" — it would be the
+  // If only one AO has data, don't surface a "weakest" - it would be the
   // same as the strongest and read as contradictory to the parent.
   return {
     strongest,
@@ -203,7 +197,7 @@ function clampRound(value: number): number {
 // ─── Entry point ─────────────────────────────────────────────────────────
 
 /**
- * Generate a weekly parent report. Pure — no database, no email, no logging.
+ * Generate a weekly parent report. Pure - no database, no email, no logging.
  *
  * Eligibility (Children's Code §5 + §8):
  *   1. Child must be ≥ 13 (belt-and-braces; platform enforces this upstream).
@@ -258,9 +252,7 @@ export function generateWeeklyReport(
     strengths.push(AO_STRENGTH_COPY[strongest])
   }
   if (progress.streakDays >= 3 && !progress.streakBrokenMidWeek) {
-    strengths.push(
-      `Showed up on ${progress.streakDays} days in a row — consistency is building.`,
-    )
+    strengths.push(`Showed up on ${progress.streakDays} days in a row - consistency is building.`)
   }
   if (progress.assignmentsCompleted > 0) {
     strengths.push(
@@ -280,21 +272,19 @@ export function generateWeeklyReport(
   }
   if (progress.streakBrokenMidWeek) {
     focusAreas.push(
-      'Room to grow on consistency — a short session on most days tends to stick better than one long one.',
+      'Room to grow on consistency - a short session on most days tends to stick better than one long one.',
     )
   }
   if (essaysCompleted === 0) {
     focusAreas.push(
-      'No essays this week — a single short response next week will keep momentum going.',
+      'No essays this week - a single short response next week will keep momentum going.',
     )
   }
   if (progress.timeSpentMinutes > 0 && progress.timeSpentMinutes < 30) {
-    focusAreas.push(
-      'A little more time on the platform next week will help ideas settle.',
-    )
+    focusAreas.push('A little more time on the platform next week will help ideas settle.')
   }
 
-  // Cap at 3 bullets each — parents skim these.
+  // Cap at 3 bullets each - parents skim these.
   const strengthsCapped = strengths.slice(0, 3)
   const focusCapped = focusAreas.slice(0, 3)
 
@@ -306,10 +296,9 @@ export function generateWeeklyReport(
   } else if (strongest) {
     // High-performer / single-AO case: still offer a forward-looking nudge.
     suggestion =
-      'Keep going with the current approach — try stretching by choosing a slightly harder prompt next week.'
+      'Keep going with the current approach - try stretching by choosing a slightly harder prompt next week.'
   } else if (essaysCompleted === 0) {
-    suggestion =
-      'One short essay next week is the simplest way to get started again.'
+    suggestion = 'One short essay next week is the simplest way to get started again.'
   }
 
   return {

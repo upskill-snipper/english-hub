@@ -43,8 +43,8 @@ export default function MarkingHistoryPage() {
   const averageGrade =
     entries.length > 0
       ? (entries.reduce((sum, e) => sum + e.grade, 0) / entries.length).toFixed(1)
-      : '—'
-  const highestGrade = entries.length > 0 ? Math.max(...entries.map((e) => e.grade)) : '—'
+      : '-'
+  const highestGrade = entries.length > 0 ? Math.max(...entries.map((e) => e.grade)) : '-'
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
@@ -151,7 +151,7 @@ export default function MarkingHistoryPage() {
         )}
       </section>
 
-      {/* Note: history currently read from localStorage — migrate to /api/mark when available */}
+      {/* Note: history currently read from localStorage - migrate to /api/mark when available */}
     </div>
   )
 }

@@ -650,7 +650,7 @@ export const y8Presentations: LessonPresentation[] = [
           'Disrupted or irregular structure can suggest psychological fragmentation',
         ],
         teacherNotes:
-          "Have students tap out the rhythm of a stanza from each poem. The physical experience of Tennyson's galloping metre — anapaestic dimeter throughout — versus Owen's heavier, interrupted metre is memorable and analytically useful.",
+          "Have students tap out the rhythm of a stanza from each poem. The physical experience of Tennyson's galloping metre - anapaestic dimeter throughout - versus Owen's heavier, interrupted metre is memorable and analytically useful.",
       },
       {
         id: 'y8-t2-p2-s7',

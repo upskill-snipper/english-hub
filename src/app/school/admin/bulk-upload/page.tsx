@@ -1,16 +1,16 @@
 /**
- * School admin — bulk student CSV upload (web-only, Wave 5).
+ * School admin - bulk student CSV upload (web-only, Wave 5).
  *
  * Four-step flow:
- *   1. Upload      — drag-drop or file picker. Template download + GDPR notice.
- *   2. Preview     — parsed rows in a table with per-row error indicators and a
+ *   1. Upload      - drag-drop or file picker. Template download + GDPR notice.
+ *   2. Preview     - parsed rows in a table with per-row error indicators and a
  *                     "Download errors CSV" CTA.
- *   3. Confirm     — summary card ("32 new students, 4 existing, 2 excluded"),
+ *   3. Confirm     - summary card ("32 new students, 4 existing, 2 excluded"),
  *                     idempotency-keyed submit button.
- *   4. Done        — success summary plus a "View import log" deep-link.
+ *   4. Done        - success summary plus a "View import log" deep-link.
  *
  * Admin-gating: the API endpoints refuse non-admins with a 403. The page is
- * also listed at `/school/admin/bulk-upload` — the existing `school/layout.tsx`
+ * also listed at `/school/admin/bulk-upload` - the existing `school/layout.tsx`
  * guard runs verifySchoolMember() and redirects non-members away, which is the
  * belt-and-braces defence.
  *
@@ -21,10 +21,10 @@
  * British English copy.
  */
 
-'use client';
+'use client'
 
-import { useState, useCallback, useRef, useMemo } from 'react';
-import Link from 'next/link';
+import { useState, useCallback, useRef, useMemo } from 'react'
+import Link from 'next/link'
 import {
   Upload,
   FileSpreadsheet,
@@ -36,48 +36,35 @@ import {
   ShieldAlert,
   ArrowRight,
   ArrowLeft,
-} from 'lucide-react';
+} from 'lucide-react'
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import {
-  STUDENT_CSV_TEMPLATE_FILENAME,
-  getStudentCsvTemplate,
-} from '@/lib/school/csv-template';
-import {
-  errorsToCsv,
-  type ParseError,
-  type StudentRow,
-} from '@/lib/school/csv-parse';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { STUDENT_CSV_TEMPLATE_FILENAME, getStudentCsvTemplate } from '@/lib/school/csv-template'
+import { errorsToCsv, type ParseError, type StudentRow } from '@/lib/school/csv-parse'
 
 // ---------------------------------------------------------------------------
 // Local types
 // ---------------------------------------------------------------------------
 
-type Step = 'upload' | 'preview' | 'confirm' | 'done';
+type Step = 'upload' | 'preview' | 'confirm' | 'done'
 
 interface ValidateResponse {
-  valid: StudentRow[];
-  errors: ParseError[];
-  totalRows: number;
-  knownClassCodesChecked: boolean;
-  fileName: string;
+  valid: StudentRow[]
+  errors: ParseError[]
+  totalRows: number
+  knownClassCodesChecked: boolean
+  fileName: string
 }
 
 interface CommitResponse {
-  jobId: string;
-  created: number;
-  updated: number;
-  skipped: number;
-  errors: ParseError[];
-  idempotent?: boolean;
+  jobId: string
+  created: number
+  updated: number
+  skipped: number
+  errors: ParseError[]
+  idempotent?: boolean
 }
 
 // ---------------------------------------------------------------------------
@@ -85,24 +72,24 @@ interface CommitResponse {
 // ---------------------------------------------------------------------------
 
 function triggerDownload(filename: string, content: string, mime = 'text/csv;charset=utf-8;') {
-  const blob = new Blob([content], { type: mime });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+  const blob = new Blob([content], { type: mime })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  URL.revokeObjectURL(url)
 }
 
 function newIdempotencyKey(): string {
-  // Browser-side — use crypto.randomUUID() where available, fall back to a
+  // Browser-side - use crypto.randomUUID() where available, fall back to a
   // timestamp + random-string combo.
   if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
-    return `bulk-${crypto.randomUUID()}`;
+    return `bulk-${crypto.randomUUID()}`
   }
-  return `bulk-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+  return `bulk-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
 }
 
 // ---------------------------------------------------------------------------
@@ -110,104 +97,104 @@ function newIdempotencyKey(): string {
 // ---------------------------------------------------------------------------
 
 export default function BulkUploadPage() {
-  const [step, setStep] = useState<Step>('upload');
-  const [file, setFile] = useState<File | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [validation, setValidation] = useState<ValidateResponse | null>(null);
-  const [commit, setCommit] = useState<CommitResponse | null>(null);
-  const [gdprConfirmed, setGdprConfirmed] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [validateError, setValidateError] = useState<string | null>(null);
-  const [commitError, setCommitError] = useState<string | null>(null);
-  const idempotencyKeyRef = useRef<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [step, setStep] = useState<Step>('upload')
+  const [file, setFile] = useState<File | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [validation, setValidation] = useState<ValidateResponse | null>(null)
+  const [commit, setCommit] = useState<CommitResponse | null>(null)
+  const [gdprConfirmed, setGdprConfirmed] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [validateError, setValidateError] = useState<string | null>(null)
+  const [commitError, setCommitError] = useState<string | null>(null)
+  const idempotencyKeyRef = useRef<string | null>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   // ──────────────────────────────────────────────────────────────────────────
   // Upload step
   // ──────────────────────────────────────────────────────────────────────────
 
   const handleValidate = useCallback(async (f: File) => {
-    setValidateError(null);
-    setFile(f);
-    setSubmitting(true);
+    setValidateError(null)
+    setFile(f)
+    setSubmitting(true)
     try {
-      const fd = new FormData();
-      fd.append('file', f);
+      const fd = new FormData()
+      fd.append('file', f)
       const res = await fetch('/api/school/bulk-upload/validate', {
         method: 'POST',
         body: fd,
-      });
+      })
       if (!res.ok) {
-        const body = await res.json().catch(() => ({ error: 'Validation failed' }));
-        throw new Error(body.error || `HTTP ${res.status}`);
+        const body = await res.json().catch(() => ({ error: 'Validation failed' }))
+        throw new Error(body.error || `HTTP ${res.status}`)
       }
-      const data = (await res.json()) as ValidateResponse;
-      setValidation(data);
-      setStep('preview');
+      const data = (await res.json()) as ValidateResponse
+      setValidation(data)
+      setStep('preview')
     } catch (err) {
-      setValidateError(err instanceof Error ? err.message : String(err));
+      setValidateError(err instanceof Error ? err.message : String(err))
     } finally {
-      setSubmitting(false);
+      setSubmitting(false)
     }
-  }, []);
+  }, [])
 
   const onDragOver = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(true);
-  }, []);
+    e.preventDefault()
+    setIsDragging(true)
+  }, [])
   const onDragLeave = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-  }, []);
+    e.preventDefault()
+    setIsDragging(false)
+  }, [])
   const onDrop = useCallback(
     (e: React.DragEvent) => {
-      e.preventDefault();
-      setIsDragging(false);
-      const f = e.dataTransfer.files[0];
-      if (f) void handleValidate(f);
+      e.preventDefault()
+      setIsDragging(false)
+      const f = e.dataTransfer.files[0]
+      if (f) void handleValidate(f)
     },
     [handleValidate],
-  );
+  )
   const onFileChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const f = e.target.files?.[0];
-      if (f) void handleValidate(f);
+      const f = e.target.files?.[0]
+      if (f) void handleValidate(f)
     },
     [handleValidate],
-  );
+  )
 
   const downloadTemplate = useCallback(() => {
-    triggerDownload(STUDENT_CSV_TEMPLATE_FILENAME, getStudentCsvTemplate());
-  }, []);
+    triggerDownload(STUDENT_CSV_TEMPLATE_FILENAME, getStudentCsvTemplate())
+  }, [])
 
   const downloadErrorsCsv = useCallback(() => {
-    if (!validation || validation.errors.length === 0) return;
-    triggerDownload('bulk-upload-errors.csv', errorsToCsv(validation.errors));
-  }, [validation]);
+    if (!validation || validation.errors.length === 0) return
+    triggerDownload('bulk-upload-errors.csv', errorsToCsv(validation.errors))
+  }, [validation])
 
   const reset = useCallback(() => {
-    setStep('upload');
-    setFile(null);
-    setValidation(null);
-    setCommit(null);
-    setGdprConfirmed(false);
-    setValidateError(null);
-    setCommitError(null);
-    idempotencyKeyRef.current = null;
-    if (fileInputRef.current) fileInputRef.current.value = '';
-  }, []);
+    setStep('upload')
+    setFile(null)
+    setValidation(null)
+    setCommit(null)
+    setGdprConfirmed(false)
+    setValidateError(null)
+    setCommitError(null)
+    idempotencyKeyRef.current = null
+    if (fileInputRef.current) fileInputRef.current.value = ''
+  }, [])
 
   // ──────────────────────────────────────────────────────────────────────────
-  // Confirm step — commit
+  // Confirm step - commit
   // ──────────────────────────────────────────────────────────────────────────
 
   const handleCommit = useCallback(async () => {
-    if (!validation || !file) return;
-    setCommitError(null);
-    setSubmitting(true);
+    if (!validation || !file) return
+    setCommitError(null)
+    setSubmitting(true)
     try {
       if (!idempotencyKeyRef.current) {
-        idempotencyKeyRef.current = newIdempotencyKey();
+        idempotencyKeyRef.current = newIdempotencyKey()
       }
       const res = await fetch('/api/school/bulk-upload/commit', {
         method: 'POST',
@@ -217,32 +204,32 @@ export default function BulkUploadPage() {
           idempotencyKey: idempotencyKeyRef.current,
           rows: validation.valid,
         }),
-      });
+      })
       if (!res.ok) {
-        const body = await res.json().catch(() => ({ error: 'Commit failed' }));
-        throw new Error(body.error || `HTTP ${res.status}`);
+        const body = await res.json().catch(() => ({ error: 'Commit failed' }))
+        throw new Error(body.error || `HTTP ${res.status}`)
       }
-      const data = (await res.json()) as CommitResponse;
-      setCommit(data);
-      setStep('done');
+      const data = (await res.json()) as CommitResponse
+      setCommit(data)
+      setStep('done')
     } catch (err) {
-      setCommitError(err instanceof Error ? err.message : String(err));
+      setCommitError(err instanceof Error ? err.message : String(err))
     } finally {
-      setSubmitting(false);
+      setSubmitting(false)
     }
-  }, [validation, file]);
+  }, [validation, file])
 
   // ──────────────────────────────────────────────────────────────────────────
   // Derived
   // ──────────────────────────────────────────────────────────────────────────
 
   const errorRowSet = useMemo(() => {
-    if (!validation) return new Set<number>();
-    return new Set(validation.errors.map((e) => e.row));
-  }, [validation]);
+    if (!validation) return new Set<number>()
+    return new Set(validation.errors.map((e) => e.row))
+  }, [validation])
 
-  const uniqueErrorRowCount = errorRowSet.size;
-  const validRowCount = validation?.valid.length ?? 0;
+  const uniqueErrorRowCount = errorRowSet.size
+  const validRowCount = validation?.valid.length ?? 0
 
   // ---------------------------------------------------------------------------
   // Render
@@ -254,12 +241,9 @@ export default function BulkUploadPage() {
         {/* Header */}
         <header className="flex items-start justify-between gap-6">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">
-              Bulk upload students
-            </h1>
+            <h1 className="text-3xl font-bold tracking-tight">Bulk upload students</h1>
             <p className="mt-2 text-sm text-zinc-400">
-              Upload a CSV to create student accounts in bulk. Review, preview,
-              confirm.
+              Upload a CSV to create student accounts in bulk. Review, preview, confirm.
             </p>
           </div>
           <Link
@@ -293,13 +277,11 @@ export default function BulkUploadPage() {
                   Download student CSV template
                 </Button>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {['firstName', 'lastName', 'email', 'yearGroup', 'classCode'].map(
-                    (col) => (
-                      <Badge key={col} variant="secondary" className="font-mono">
-                        {col}
-                      </Badge>
-                    ),
-                  )}
+                  {['firstName', 'lastName', 'email', 'yearGroup', 'classCode'].map((col) => (
+                    <Badge key={col} variant="secondary" className="font-mono">
+                      {col}
+                    </Badge>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -320,7 +302,7 @@ export default function BulkUploadPage() {
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') fileInputRef.current?.click();
+                    if (e.key === 'Enter' || e.key === ' ') fileInputRef.current?.click()
                   }}
                   className={[
                     'flex cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-8 py-14 text-center transition-all',
@@ -336,10 +318,9 @@ export default function BulkUploadPage() {
                     ].join(' ')}
                   >
                     <Upload
-                      className={[
-                        'size-6',
-                        isDragging ? 'text-indigo-400' : 'text-zinc-500',
-                      ].join(' ')}
+                      className={['size-6', isDragging ? 'text-indigo-400' : 'text-zinc-500'].join(
+                        ' ',
+                      )}
                     />
                   </div>
                   <div>
@@ -409,8 +390,8 @@ export default function BulkUploadPage() {
             {!validation.knownClassCodesChecked && (
               <div className="flex items-start gap-2 rounded-lg border border-amber-900/50 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">
                 <AlertCircle className="size-4 mt-0.5 shrink-0" />
-                Class codes could not be validated against this school's class list.
-                Proceed with care.
+                Class codes could not be validated against this school's class list. Proceed with
+                care.
               </div>
             )}
 
@@ -444,27 +425,15 @@ export default function BulkUploadPage() {
               <CardHeader>
                 <CardTitle>Ready to import?</CardTitle>
                 <CardDescription>
-                  Once you confirm, accounts will be created and welcome emails
-                  sent. This cannot be undone in one click.
+                  Once you confirm, accounts will be created and welcome emails sent. This cannot be
+                  undone in one click.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-3 gap-3">
-                  <SummaryPill
-                    label="Valid rows"
-                    value={validRowCount}
-                    tone="emerald"
-                  />
-                  <SummaryPill
-                    label="Excluded (errors)"
-                    value={uniqueErrorRowCount}
-                    tone="red"
-                  />
-                  <SummaryPill
-                    label="Total in file"
-                    value={validation.totalRows}
-                    tone="zinc"
-                  />
+                  <SummaryPill label="Valid rows" value={validRowCount} tone="emerald" />
+                  <SummaryPill label="Excluded (errors)" value={uniqueErrorRowCount} tone="red" />
+                  <SummaryPill label="Total in file" value={validation.totalRows} tone="zinc" />
                 </div>
 
                 <label className="flex items-start gap-3 rounded-lg border border-zinc-800 bg-zinc-950/40 p-3 text-sm cursor-pointer">
@@ -476,10 +445,9 @@ export default function BulkUploadPage() {
                     aria-describedby="gdpr-notice"
                   />
                   <span id="gdpr-notice" className="text-zinc-300">
-                    I confirm that uploading this student data is a processing
-                    activity under GDPR, that my organisation has a lawful basis
-                    for creating these accounts, and that minors' data will be
-                    handled in line with the ICO's Age-Appropriate Design Code.
+                    I confirm that uploading this student data is a processing activity under GDPR,
+                    that my organisation has a lawful basis for creating these accounts, and that
+                    minors' data will be handled in line with the ICO's Age-Appropriate Design Code.
                   </span>
                 </label>
 
@@ -534,8 +502,7 @@ export default function BulkUploadPage() {
               </div>
               {commit.idempotent && (
                 <div className="text-xs text-zinc-500">
-                  This run matched a previous submission — no duplicate accounts
-                  were created.
+                  This run matched a previous submission - no duplicate accounts were created.
                 </div>
               )}
               <div className="flex flex-wrap gap-2">
@@ -551,7 +518,7 @@ export default function BulkUploadPage() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -564,13 +531,13 @@ function StepIndicator({ current }: { current: Step }) {
     { id: 'preview', label: '2. Preview' },
     { id: 'confirm', label: '3. Confirm' },
     { id: 'done', label: '4. Done' },
-  ];
-  const currentIdx = steps.findIndex((s) => s.id === current);
+  ]
+  const currentIdx = steps.findIndex((s) => s.id === current)
   return (
     <ol className="flex flex-wrap gap-2" aria-label="Progress">
       {steps.map((s, idx) => {
-        const done = idx < currentIdx;
-        const active = idx === currentIdx;
+        const done = idx < currentIdx
+        const active = idx === currentIdx
         return (
           <li
             key={s.id}
@@ -586,10 +553,10 @@ function StepIndicator({ current }: { current: Step }) {
           >
             {s.label}
           </li>
-        );
+        )
       })}
     </ol>
-  );
+  )
 }
 
 function DataProtectionNotice() {
@@ -601,20 +568,19 @@ function DataProtectionNotice() {
           <div className="space-y-1.5 text-sm">
             <p className="font-semibold text-amber-200">Data-protection reminder</p>
             <p className="text-zinc-300">
-              Uploading student data is a processing activity under the UK GDPR.
-              By continuing you confirm that you have a lawful basis for this
-              processing and that all students (or their parents/guardians where
-              the student is under 13) have been informed as required.
+              Uploading student data is a processing activity under the UK GDPR. By continuing you
+              confirm that you have a lawful basis for this processing and that all students (or
+              their parents/guardians where the student is under 13) have been informed as required.
             </p>
             <p className="text-zinc-400 text-xs">
-              Accounts for under-18s are handled in line with the ICO's
-              Age-Appropriate Design Code (Children's Code).
+              Accounts for under-18s are handled in line with the ICO's Age-Appropriate Design Code
+              (Children's Code).
             </p>
           </div>
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 function FileBar({
@@ -622,11 +588,11 @@ function FileBar({
   totalRows,
   onRemove,
 }: {
-  file: File | null;
-  totalRows: number;
-  onRemove: () => void;
+  file: File | null
+  totalRows: number
+  onRemove: () => void
 }) {
-  if (!file) return null;
+  if (!file) return null
   return (
     <div className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-950/50 px-4 py-3">
       <div className="flex items-center gap-3">
@@ -644,7 +610,7 @@ function FileBar({
         <X className="size-4" />
       </button>
     </div>
-  );
+  )
 }
 
 function PreviewTable({
@@ -652,22 +618,22 @@ function PreviewTable({
   errors,
   errorRowSet,
 }: {
-  rows: ReadonlyArray<StudentRow>;
-  errors: ReadonlyArray<ParseError>;
-  errorRowSet: Set<number>;
+  rows: ReadonlyArray<StudentRow>
+  errors: ReadonlyArray<ParseError>
+  errorRowSet: Set<number>
 }) {
   // Merge valid + error rows into a single display list, keyed by row number.
   type DisplayRow = {
-    row: number;
-    firstName?: string;
-    lastName?: string;
-    email?: string;
-    yearGroup?: string;
-    classCode?: string;
-    errors: ParseError[];
-  };
+    row: number
+    firstName?: string
+    lastName?: string
+    email?: string
+    yearGroup?: string
+    classCode?: string
+    errors: ParseError[]
+  }
 
-  const rowMap = new Map<number, DisplayRow>();
+  const rowMap = new Map<number, DisplayRow>()
   for (const r of rows) {
     rowMap.set(r.row, {
       row: r.row,
@@ -677,17 +643,17 @@ function PreviewTable({
       yearGroup: r.yearGroup,
       classCode: r.classCode,
       errors: [],
-    });
+    })
   }
   for (const e of errors) {
-    const existing = rowMap.get(e.row);
+    const existing = rowMap.get(e.row)
     if (existing) {
-      existing.errors.push(e);
+      existing.errors.push(e)
     } else {
-      rowMap.set(e.row, { row: e.row, errors: [e] });
+      rowMap.set(e.row, { row: e.row, errors: [e] })
     }
   }
-  const display = Array.from(rowMap.values()).sort((a, b) => a.row - b.row);
+  const display = Array.from(rowMap.values()).sort((a, b) => a.row - b.row)
 
   return (
     <div className="overflow-x-auto rounded-lg border border-zinc-800">
@@ -705,7 +671,7 @@ function PreviewTable({
         </thead>
         <tbody>
           {display.slice(0, 50).map((r) => {
-            const hasError = errorRowSet.has(r.row);
+            const hasError = errorRowSet.has(r.row)
             return (
               <tr
                 key={r.row}
@@ -715,13 +681,13 @@ function PreviewTable({
                 ].join(' ')}
               >
                 <td className="px-3 py-2 tabular-nums text-zinc-500">{r.row}</td>
-                <td className="px-3 py-2">{r.firstName ?? <em className="text-red-400">—</em>}</td>
-                <td className="px-3 py-2">{r.lastName ?? <em className="text-red-400">—</em>}</td>
+                <td className="px-3 py-2">{r.firstName ?? <em className="text-red-400">-</em>}</td>
+                <td className="px-3 py-2">{r.lastName ?? <em className="text-red-400">-</em>}</td>
                 <td className="px-3 py-2 font-mono text-xs">
-                  {r.email ?? <em className="text-red-400">—</em>}
+                  {r.email ?? <em className="text-red-400">-</em>}
                 </td>
-                <td className="px-3 py-2">{r.yearGroup ?? <em className="text-red-400">—</em>}</td>
-                <td className="px-3 py-2">{r.classCode ?? <em className="text-red-400">—</em>}</td>
+                <td className="px-3 py-2">{r.yearGroup ?? <em className="text-red-400">-</em>}</td>
+                <td className="px-3 py-2">{r.classCode ?? <em className="text-red-400">-</em>}</td>
                 <td className="px-3 py-2">
                   {hasError ? (
                     <span className="inline-flex items-center gap-1 text-red-400 text-xs">
@@ -736,7 +702,7 @@ function PreviewTable({
                   )}
                 </td>
               </tr>
-            );
+            )
           })}
         </tbody>
       </table>
@@ -746,7 +712,7 @@ function PreviewTable({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 function SummaryPill({
@@ -754,20 +720,20 @@ function SummaryPill({
   value,
   tone,
 }: {
-  label: string;
-  value: number;
-  tone: 'emerald' | 'red' | 'indigo' | 'zinc';
+  label: string
+  value: number
+  tone: 'emerald' | 'red' | 'indigo' | 'zinc'
 }) {
   const palette: Record<typeof tone, string> = {
     emerald: 'border-emerald-900/50 bg-emerald-950/30 text-emerald-200',
     red: 'border-red-900/50 bg-red-950/30 text-red-200',
     indigo: 'border-indigo-900/50 bg-indigo-950/30 text-indigo-200',
     zinc: 'border-zinc-800 bg-zinc-950/40 text-zinc-200',
-  };
+  }
   return (
     <div className={`rounded-lg border px-4 py-3 ${palette[tone]}`}>
       <div className="text-2xl font-bold tabular-nums">{value}</div>
       <div className="text-xs uppercase tracking-wider opacity-80">{label}</div>
     </div>
-  );
+  )
 }

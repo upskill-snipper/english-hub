@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Power and Conflict poetry anthology guide. Analysis of all 15 poems with themes, techniques, key quotes, and comparison strategies.',
   alternates: { canonical: 'https://theenglishhub.app/resources/poetry/power-and-conflict' },
   openGraph: {
-    title: 'Power and Conflict Poetry Anthology — The English Hub',
+    title: 'Power and Conflict Poetry Anthology - The English Hub',
     description:
       'Power and Conflict poetry anthology guide. Analysis of all 15 poems with themes, techniques, key quotes, and comparison strategies.',
   },

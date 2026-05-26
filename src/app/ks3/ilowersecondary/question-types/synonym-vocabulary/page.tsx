@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Synonyms & vocabulary-in-context — question-type masterclass',
+  title: 'Synonyms & vocabulary-in-context - question-type masterclass',
   description:
     'How to answer "circle the synonym", "underline the closest meaning" and "this word means…" questions on the Pearson Edexcel iLowerSecondary English achievement test: read in context, eliminate distractors, and weigh connotation. 20+ original graded practice items with answers and rationales.',
   alternates: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      'Synonyms & vocabulary-in-context — iLowerSecondary English question-type masterclass — The English Hub',
+      'Synonyms & vocabulary-in-context - iLowerSecondary English question-type masterclass - The English Hub',
     description:
       'Master synonym and vocabulary-in-context questions: read the word in context, eliminate distractors, weigh connotation. 20+ original graded practice items with answers.',
   },
@@ -48,7 +48,7 @@ const STRATEGY: { step: string; detail: string }[] = [
   {
     step: 'Eliminate, then commit to one',
     detail:
-      'Cross out options you can prove wrong until one remains. Mark a single answer only — selecting more than one scores nothing.',
+      'Cross out options you can prove wrong until one remains. Mark a single answer only - selecting more than one scores nothing.',
   },
 ]
 
@@ -65,28 +65,28 @@ const TRICKY: {
     target: 'fragile',
     trap: 'A reader who knows the bridge is old may pick "ancient", because old things are often ancient.',
     answer: 'delicate',
-    why: '"Ancient" describes age, but the sentence is about the bridge being easily broken — "delicate" keeps that meaning.',
+    why: '"Ancient" describes age, but the sentence is about the bridge being easily broken - "delicate" keeps that meaning.',
   },
   {
     sentence: 'She gave a modest smile and refused to talk about the prize she had won.',
     target: 'modest',
     trap: '"Modest" can mean "small" or "not boastful". The smile being small is tempting, but the second half of the sentence is the clue.',
     answer: 'humble',
-    why: 'Because she refuses to talk about her own prize, "modest" here means not boastful — "humble" — not small.',
+    why: 'Because she refuses to talk about her own prize, "modest" here means not boastful - "humble" - not small.',
   },
   {
     sentence: 'The detective gave the witness a keen look before asking the next question.',
     target: 'keen',
     trap: '"Keen" often means "very interested" or "eager", so "enthusiastic" looks right.',
     answer: 'sharp',
-    why: 'A "keen look" is a sharp, searching look, not an eager feeling — "sharp" fits the action of studying the witness.',
+    why: 'A "keen look" is a sharp, searching look, not an eager feeling - "sharp" fits the action of studying the witness.',
   },
   {
     sentence: 'After the storm the sailors were spent and could barely lift the ropes.',
     target: 'spent',
     trap: '"Spent" makes readers think of money that has been used up, so "paid" seems linked.',
     answer: 'exhausted',
-    why: 'Here "spent" describes the sailors, not money — they can barely move, so it means "exhausted".',
+    why: 'Here "spent" describes the sailors, not money - they can barely move, so it means "exhausted".',
   },
   {
     sentence: 'The teacher chose her words carefully so the news would not appear harsh.',
@@ -278,9 +278,9 @@ const HARD: Item[] = [
 ]
 
 const SECTIONS: { title: string; band: string; items: Item[] }[] = [
-  { title: 'Easy', band: 'Warm-up — concrete describing words', items: EASY },
-  { title: 'Medium', band: 'Building up — abstract and formal vocabulary', items: MEDIUM },
-  { title: 'Hard', band: 'Stretch — connotation and precise verbs', items: HARD },
+  { title: 'Easy', band: 'Warm-up - concrete describing words', items: EASY },
+  { title: 'Medium', band: 'Building up - abstract and formal vocabulary', items: MEDIUM },
+  { title: 'Hard', band: 'Stretch - connotation and precise verbs', items: HARD },
 ]
 
 const TOTAL_ITEMS = EASY.length + MEDIUM.length + HARD.length
@@ -352,7 +352,7 @@ export default function SynonymVocabularyPage() {
             the writer used it. You might be told to <em>circle the synonym</em>, to{' '}
             <em>underline the word closest in meaning</em>, or to choose, in a multiple-choice box,
             what a quoted word <em>means</em> in the passage. They look easy and quick, and they are
-            — once you train yourself to read the word in its sentence rather than guessing from
+            - once you train yourself to read the word in its sentence rather than guessing from
             memory.
           </p>
         </header>

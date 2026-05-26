@@ -5,7 +5,7 @@
  * thread a per-request nonce onto the three inline <script type="application/ld+json">
  * tags it renders. Under the nonce-based CSP in `src/middleware.ts`, a
  * browser that honours `'strict-dynamic'` ignores the `'unsafe-inline'`
- * fallback — so without an accompanying hash those scripts are blocked in
+ * fallback - so without an accompanying hash those scripts are blocked in
  * Chrome / Edge / Firefox.
  *
  * Solution: compute a SHA-256 hash of each rendered JSON-LD body and emit
@@ -19,7 +19,7 @@
  * `JSON.stringify(X)` with the SAME object graph is the right input.
  *
  * Hence we centralise the JSON-LD object builder here and the page imports
- * it — guaranteeing there's only one definition of what goes into each
+ * it - guaranteeing there's only one definition of what goes into each
  * script body.
  */
 import { ANALYSIS_PAGE_MAP, type AnalysisPageEntry } from '@/data/analysis'
@@ -73,7 +73,7 @@ export function buildAnalysisJsonLdPayloads(
     headline: pageTitle,
     author: {
       '@type': 'Organization',
-      name: 'The English Hub — GCSE Markers',
+      name: 'The English Hub - GCSE Markers',
       url: 'https://theenglishhub.app',
     },
     publisher: {
@@ -144,7 +144,7 @@ const HASH_CACHE = new Map<string, string[]>()
  * Returns the CSP `'sha256-...'` source tokens for every JSON-LD script
  * rendered by `/analysis/[...slug]/page.tsx` for the given slug.
  *
- * @param slugKey 'category/subSlug' — the same string used as ANALYSIS_PAGE_MAP key
+ * @param slugKey 'category/subSlug' - the same string used as ANALYSIS_PAGE_MAP key
  * @returns Array of `'sha256-<base64>'` tokens (2 or 3 entries) or [] if slug unknown
  */
 export async function computeJsonLdHashes(slugKey: string): Promise<string[]> {
@@ -183,7 +183,7 @@ export function extractAnalysisSlugKey(pathname: string): string | null {
   const parts = rest.split('/')
   if (parts.length !== 2) return null
   const key = `${parts[0]}/${parts[1]}`
-  // Only return a key if we actually have that page registered — avoids
+  // Only return a key if we actually have that page registered - avoids
   // wasting a hash compute on 404s and keeps CSP lean.
   return ANALYSIS_PAGE_MAP.has(key) ? key : null
 }

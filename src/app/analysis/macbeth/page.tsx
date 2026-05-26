@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/macbeth' },
   openGraph: {
-    title: 'Macbeth Analysis Hub — The English Hub',
+    title: 'Macbeth Analysis Hub - The English Hub',
     description:
       'Grade 9 Macbeth analysis: quotes, themes, characters and essay writing, written by GCSE markers.',
   },
@@ -45,15 +45,15 @@ const quotePages = [
 ]
 
 const themePages = [
-  { slug: 'ambition-theme-analysis', title: 'Ambition — Theme Analysis' },
-  { slug: 'guilt-theme-analysis', title: 'Guilt — Theme Analysis' },
-  { slug: 'supernatural-theme-analysis', title: 'The Supernatural — Theme Analysis' },
-  { slug: 'kingship-theme-analysis', title: 'Kingship — Theme Analysis' },
-  { slug: 'gender-theme-analysis', title: 'Gender — Theme Analysis' },
-  { slug: 'appearance-vs-reality-theme', title: 'Appearance vs Reality — Theme Analysis' },
-  { slug: 'lady-macbeth-character-analysis', title: 'Lady Macbeth — Character Analysis' },
-  { slug: 'macbeth-character-analysis', title: 'Macbeth — Character Analysis' },
-  { slug: 'banquo-character-analysis', title: 'Banquo — Character Analysis' },
+  { slug: 'ambition-theme-analysis', title: 'Ambition - Theme Analysis' },
+  { slug: 'guilt-theme-analysis', title: 'Guilt - Theme Analysis' },
+  { slug: 'supernatural-theme-analysis', title: 'The Supernatural - Theme Analysis' },
+  { slug: 'kingship-theme-analysis', title: 'Kingship - Theme Analysis' },
+  { slug: 'gender-theme-analysis', title: 'Gender - Theme Analysis' },
+  { slug: 'appearance-vs-reality-theme', title: 'Appearance vs Reality - Theme Analysis' },
+  { slug: 'lady-macbeth-character-analysis', title: 'Lady Macbeth - Character Analysis' },
+  { slug: 'macbeth-character-analysis', title: 'Macbeth - Character Analysis' },
+  { slug: 'banquo-character-analysis', title: 'Banquo - Character Analysis' },
   { slug: 'how-to-write-a-grade-9-macbeth-essay', title: 'How to Write a Grade 9 Macbeth Essay' },
 ]
 

@@ -1,4 +1,4 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y11IgcseExtendedLessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
@@ -48,14 +48,17 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         stretch:
           'Students add two skill cards of their own to the set and justify which category they belong in with reference to the mark scheme.',
       },
-      resources: ['Skill sorting cards (printed or digital)', 'Mark scheme summaries for Paper 1 and Paper 2'],
+      resources: [
+        'Skill sorting cards (printed or digital)',
+        'Mark scheme summaries for Paper 1 and Paper 2',
+      ],
     },
     mainActivities: [
       {
         title: 'Reading to Write: The Analytical Foundation',
         duration: '18 minutes',
         instructions:
-          'Provide a short unseen passage (approximately 300 words) of high-quality prose. Students first annotate it as they would for a Paper 1 reading question, identifying language techniques, structural choices, and the effect on the reader. Teacher then asks: "If you were writing about this topic for Paper 2, which three techniques from this passage would you borrow and why?" Students write a short paragraph (8–10 sentences) on a related topic, consciously deploying at least three of the techniques they identified. Pairs swap paragraphs and annotate each other\'s writing to confirm the techniques are present, using the same analytical vocabulary they applied to the source.',
+          'Provide a short unseen passage (approximately 300 words) of high-quality prose. Students first annotate it as they would for a Paper 1 reading question, identifying language techniques, structural choices, and the effect on the reader. Teacher then asks: "If you were writing about this topic for Paper 2, which three techniques from this passage would you borrow and why?" Students write a short paragraph (8-10 sentences) on a related topic, consciously deploying at least three of the techniques they identified. Pairs swap paragraphs and annotate each other\'s writing to confirm the techniques are present, using the same analytical vocabulary they applied to the source.',
         differentiation: {
           support:
             'Provide a pre-annotated version of the passage with techniques labelled and a writing scaffold with sentence starters that embed the required techniques.',
@@ -73,7 +76,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         title: 'Cross-Paper Gap Analysis',
         duration: '16 minutes',
         instructions:
-          'Distribute a two-column gap analysis grid listing eight key skills (e.g. selecting and synthesising evidence; crafting an introduction; varying syntax; identifying implicit meaning; writing for a specific audience; using structural techniques; evaluating a writer\'s perspective; sustaining a viewpoint). Students rate themselves on a 1–4 scale for each skill on both Paper 1 and Paper 2. Teacher then displays the exam mark scheme language for each skill and asks students to annotate their grid: where is there a direct crossover? Where does the skill feel harder to apply on one paper than the other? Students write a three-sentence action plan targeting their lowest-rated crossover skill.',
+          "Distribute a two-column gap analysis grid listing eight key skills (e.g. selecting and synthesising evidence; crafting an introduction; varying syntax; identifying implicit meaning; writing for a specific audience; using structural techniques; evaluating a writer's perspective; sustaining a viewpoint). Students rate themselves on a 1-4 scale for each skill on both Paper 1 and Paper 2. Teacher then displays the exam mark scheme language for each skill and asks students to annotate their grid: where is there a direct crossover? Where does the skill feel harder to apply on one paper than the other? Students write a three-sentence action plan targeting their lowest-rated crossover skill.",
         differentiation: {
           support:
             'Provide sentence starters for the action plan and a simplified rating scale (confident / nearly there / need to work on this).',
@@ -94,9 +97,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Students write on a sticky note or mini whiteboard: (1) the single most useful crossover skill they identified today and (2) one specific thing they will practise this week to strengthen it. Teacher collects responses and uses them to project a class "heat map" of the most commonly cited crossover skills, which becomes a reference point for future lessons. Students copy their resolution into their revision planner.',
       differentiation: {
-        support: 'Provide a sentence frame: "My most useful crossover skill is ___ because ___. I will practise it by ___."',
+        support:
+          'Provide a sentence frame: "My most useful crossover skill is ___ because ___. I will practise it by ___."',
         core: 'Students complete both points independently.',
-        stretch: 'Students write a third point predicting where this skill is likely to be tested and at what mark allocation.',
+        stretch:
+          'Students write a third point predicting where this skill is likely to be tested and at what mark allocation.',
       },
     },
     homework:
@@ -115,7 +120,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'A student scores well on Paper 1 reading questions but struggles with Paper 2 writing. Explain how their reading skills could be used to improve their writing performance.',
         lines: 6,
         modelAnswer:
-          'Strong analytical reading means the student already has a vocabulary for technique and effect. They should read their own writing as a critic — asking "what effect does this sentence create on a reader?" just as they would when annotating a source text. Their ability to identify weak or unclear moments in a passage can be redirected to spotting weak or unclear moments in their own drafts, making revision more targeted and effective.',
+          'Strong analytical reading means the student already has a vocabulary for technique and effect. They should read their own writing as a critic - asking "what effect does this sentence create on a reader?" just as they would when annotating a source text. Their ability to identify weak or unclear moments in a passage can be redirected to spotting weak or unclear moments in their own drafts, making revision more targeted and effective.',
         marks: 4,
       },
       {
@@ -146,7 +151,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
     teacherNotes: [
       'This lesson works best when students have already sat at least one mock paper for each component so they have real performance data to draw on during the gap analysis activity.',
       'The skill sorting cards can be prepared as a simple printed A5 sheet cut into strips; a digital version using a shared whiteboard tool (e.g. Jamboard, Padlet) works equally well.',
-      'When leading the cross-paper reveal in the starter, avoid framing Paper 1 as "harder" than Paper 2; instead, stress complementarity — the skills reinforce each other.',
+      'When leading the cross-paper reveal in the starter, avoid framing Paper 1 as "harder" than Paper 2; instead, stress complementarity - the skills reinforce each other.',
       'The action plans from this lesson should be collected or photographed so they can be revisited in lesson y11ext-09 (target-setting) to track progress.',
       'If time is tight, the gap analysis grid can be set as a pre-lesson task so the full 16 minutes can be used for discussion and action planning.',
     ],
@@ -195,22 +200,29 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Before distributing papers, lead students through a two-minute silent preparation routine: read through any notes or strategy cards they have prepared, close revision materials, and place only permitted equipment on the desk. Teacher reads the examination instructions aloud, including total marks, time allowed, and any rubric guidance. Remind students of the time-per-mark rule (approximately one minute per mark) and the importance of reading the source text actively before beginning questions. This brief ritual establishes the formal register of examination conditions.',
       differentiation: {
-        support: 'Allow students with access arrangements their entitled additional time and/or prompts as per their EHCP or exam access arrangement documentation.',
+        support:
+          'Allow students with access arrangements their entitled additional time and/or prompts as per their EHCP or exam access arrangement documentation.',
         core: 'All students begin under standard timed conditions.',
-        stretch: 'Encourage early finishers to review and extend their highest-mark answer rather than sitting passively.',
+        stretch:
+          'Encourage early finishers to review and extend their highest-mark answer rather than sitting passively.',
       },
-      resources: ['Past Paper 1 (full paper, printed and face down)', 'Clock or countdown timer visible to all students'],
+      resources: [
+        'Past Paper 1 (full paper, printed and face down)',
+        'Clock or countdown timer visible to all students',
+      ],
     },
     mainActivities: [
       {
         title: 'Timed Paper 1 Examination',
         duration: '45 minutes',
         instructions:
-          'Students complete the full Paper 1 under examination conditions. Teacher circulates silently and records the time at which key intervals pass (e.g. 15 minutes, 30 minutes, 40 minutes) on the board without disrupting students. At the 40-minute mark, give a quiet five-minute warning. Students must remain silent throughout. When time is called, students put down pens immediately. Collect papers or ask students to keep their own copy for the debrief, depending on whether you intend to mark centrally or use peer/self-marking. If keeping their own copy, students use a different-coloured pen to annotate their responses after time — circling questions they felt uncertain about and starring questions they felt confident with.',
+          'Students complete the full Paper 1 under examination conditions. Teacher circulates silently and records the time at which key intervals pass (e.g. 15 minutes, 30 minutes, 40 minutes) on the board without disrupting students. At the 40-minute mark, give a quiet five-minute warning. Students must remain silent throughout. When time is called, students put down pens immediately. Collect papers or ask students to keep their own copy for the debrief, depending on whether you intend to mark centrally or use peer/self-marking. If keeping their own copy, students use a different-coloured pen to annotate their responses after time - circling questions they felt uncertain about and starring questions they felt confident with.',
         differentiation: {
-          support: 'Students with access arrangements complete the paper according to their agreed accommodations.',
+          support:
+            'Students with access arrangements complete the paper according to their agreed accommodations.',
           core: 'All students work under full timed conditions.',
-          stretch: 'Students who finish early write a brief self-evaluation note at the end of the paper: which question was most challenging and what specifically made it difficult?',
+          stretch:
+            'Students who finish early write a brief self-evaluation note at the end of the paper: which question was most challenging and what specifically made it difficult?',
         },
         resources: [
           'Past Paper 1 (full paper)',
@@ -223,11 +235,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'First Impressions Self-Reflection',
       duration: '10 minutes',
       instructions:
-        'Students complete a brief structured reflection on a separate sheet (not on their exam paper): (1) Which question did you spend the most time on? Was this the right decision given the mark allocation? (2) Which question felt most uncertain and why? (3) What would you do differently if you sat this paper again tomorrow? Students share one response with a partner. Teacher takes a quick show-of-hands temperature check on each question to identify which questions most students found challenging — this directly informs the sequencing of the debrief lesson (y11ext-03).',
+        'Students complete a brief structured reflection on a separate sheet (not on their exam paper): (1) Which question did you spend the most time on? Was this the right decision given the mark allocation? (2) Which question felt most uncertain and why? (3) What would you do differently if you sat this paper again tomorrow? Students share one response with a partner. Teacher takes a quick show-of-hands temperature check on each question to identify which questions most students found challenging - this directly informs the sequencing of the debrief lesson (y11ext-03).',
       differentiation: {
-        support: 'Provide a printed reflection sheet with the three questions and lined space for responses.',
+        support:
+          'Provide a printed reflection sheet with the three questions and lined space for responses.',
         core: 'Students write their reflection independently.',
-        stretch: 'Students write a fourth reflection point estimating their own mark band for each question and justifying the estimate.',
+        stretch:
+          'Students write a fourth reflection point estimating their own mark band for each question and justifying the estimate.',
       },
     },
     homework:
@@ -238,7 +252,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'How should you divide your time when sitting Paper 1? Describe a clear time plan that accounts for reading the source and answering all questions.',
         lines: 6,
         modelAnswer:
-          'A recommended approach: spend 10 minutes reading and annotating the source text before beginning questions. Then allocate time proportional to marks — for example, a 4-mark question deserves approximately 4–5 minutes of writing time, while an 8-mark question warrants 8–10 minutes. Reserve 3–4 minutes at the end for a final read-through. The key principle is that time on each question should reflect its mark value, not its perceived difficulty.',
+          'A recommended approach: spend 10 minutes reading and annotating the source text before beginning questions. Then allocate time proportional to marks - for example, a 4-mark question deserves approximately 4-5 minutes of writing time, while an 8-mark question warrants 8-10 minutes. Reserve 3-4 minutes at the end for a final read-through. The key principle is that time on each question should reflect its mark value, not its perceived difficulty.',
         marks: 4,
       },
       {
@@ -246,7 +260,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Why is it important to read the whole source text before answering any questions, even under time pressure?',
         lines: 5,
         modelAnswer:
-          'Reading the whole text first gives a complete picture of the writer\'s argument, structure, and tone — all of which are tested across multiple questions. Without this overview, students may miss how later sections of the text recontextualise earlier ones, leading to incomplete or inaccurate answers. It also prevents the inefficiency of rereading sections multiple times during the question-answering phase.',
+          "Reading the whole text first gives a complete picture of the writer's argument, structure, and tone - all of which are tested across multiple questions. Without this overview, students may miss how later sections of the text recontextualise earlier ones, leading to incomplete or inaccurate answers. It also prevents the inefficiency of rereading sections multiple times during the question-answering phase.",
         marks: 3,
       },
       {
@@ -267,7 +281,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
       {
         question:
-          'Reflect on your performance in today\'s mock sitting. Identify one question where you feel your answer did not fully meet the mark scheme and explain what you would add or change.',
+          "Reflect on your performance in today's mock sitting. Identify one question where you feel your answer did not fully meet the mark scheme and explain what you would add or change.",
         lines: 7,
         modelAnswer:
           'Answers will vary. Examiners look for: specific identification of a question by number; an honest assessment of what the answer was missing (e.g. a named technique, a developed point about effect, a second piece of evidence); and a concrete proposal for what would have been added, ideally using mark scheme language.',
@@ -275,17 +289,17 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson is a sitting, not a teaching lesson — resist the temptation to offer guidance during the exam.',
+      'This lesson is a sitting, not a teaching lesson - resist the temptation to offer guidance during the exam.',
       'Choose a past paper that students have not previously seen to ensure authentic exam conditions.',
       'Record which question(s) the class found hardest (from the plenary show-of-hands) and use this to prioritise content in the Paper 1 debrief (y11ext-03).',
       'If centralised marking is preferred, collect papers at the end; if using peer or self-marking in the debrief, students retain their own copy.',
-      'The 5-minute starter should genuinely feel like an exam start — avoid lengthy teacher talk that erodes examination register.',
+      'The 5-minute starter should genuinely feel like an exam start - avoid lengthy teacher talk that erodes examination register.',
     ],
     targetedSkills: [
       'Time management under examination conditions',
       'Retrieval and selection from source texts',
       'Inference and language analysis',
-      'Evaluation of a writer\'s choices',
+      "Evaluation of a writer's choices",
       'Sustained analytical writing',
     ],
   },
@@ -326,22 +340,29 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Before returning marked papers, display two anonymised student responses to the highest-mark question from the mock paper (one mid-band, one top-band). Students read both silently for two minutes, then write a mark and a one-sentence justification for each response. Teacher reveals the actual marks and explains the examiner reasoning. This establishes the mark scheme criteria as a shared reference point before students examine their own responses.',
       differentiation: {
-        support: 'Provide the relevant mark scheme descriptors alongside the two responses so students can match language from the response to the criteria.',
+        support:
+          'Provide the relevant mark scheme descriptors alongside the two responses so students can match language from the response to the criteria.',
         core: 'Students mark both responses without the mark scheme, then check against it.',
-        stretch: 'Students annotate specific phrases in each response that either secure or lose marks, using the exact language of the mark scheme.',
+        stretch:
+          'Students annotate specific phrases in each response that either secure or lose marks, using the exact language of the mark scheme.',
       },
-      resources: ['Two anonymised student responses (projected or printed)', 'Mark scheme for the highest-mark question'],
+      resources: [
+        'Two anonymised student responses (projected or printed)',
+        'Mark scheme for the highest-mark question',
+      ],
     },
     mainActivities: [
       {
         title: 'Question-by-Question Mark Scheme Walkthrough',
         duration: '20 minutes',
         instructions:
-          'Return papers (or students\' own copies). Teacher leads a structured walkthrough of the full mark scheme, question by question. For each question: display three or four indicative content points, explain what distinguishes a top-band from a mid-band response, and ask students to mark their own answer using a coloured pen. Students record their estimated band for each question in a scoring grid. Teacher pauses on the two or three questions identified in the previous lesson\'s plenary as the most commonly challenging and invites students to share what they wrote, facilitating a brief whole-class discussion on the gap between their response and the mark scheme.',
+          "Return papers (or students' own copies). Teacher leads a structured walkthrough of the full mark scheme, question by question. For each question: display three or four indicative content points, explain what distinguishes a top-band from a mid-band response, and ask students to mark their own answer using a coloured pen. Students record their estimated band for each question in a scoring grid. Teacher pauses on the two or three questions identified in the previous lesson's plenary as the most commonly challenging and invites students to share what they wrote, facilitating a brief whole-class discussion on the gap between their response and the mark scheme.",
         differentiation: {
-          support: 'Provide a pre-printed scoring grid with the mark boundaries already filled in so students focus on comparing their response to the descriptors.',
+          support:
+            'Provide a pre-printed scoring grid with the mark boundaries already filled in so students focus on comparing their response to the descriptors.',
           core: 'Students complete the full self-marking process and record estimated bands independently.',
-          stretch: 'Students identify the single sentence in their response that best meets the mark scheme and explain why that sentence is effective using analytical vocabulary.',
+          stretch:
+            'Students identify the single sentence in their response that best meets the mark scheme and explain why that sentence is effective using analytical vocabulary.',
         },
         resources: [
           'Full mark scheme (printed for students)',
@@ -355,9 +376,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         instructions:
           'Students choose the one question on which the gap between their response and the top band is largest. They spend 15 minutes redrafting that answer from scratch, using the mark scheme criteria, examiner commentary, and any feedback from the walkthrough. The redraft should be written on a separate sheet and should explicitly aim for the top band. In the final three minutes, students compare their original response and their redraft side by side and annotate three specific improvements they made.',
         differentiation: {
-          support: 'Provide a sentence-by-sentence scaffold for the redraft that prompts each mark scheme criterion in sequence.',
+          support:
+            'Provide a sentence-by-sentence scaffold for the redraft that prompts each mark scheme criterion in sequence.',
           core: 'Students redraft independently and self-annotate three improvements.',
-          stretch: 'Students annotate the improvements using mark scheme band descriptor language (e.g. "Here I move from \'identifies\' to \'analyses\' because...").',
+          stretch:
+            "Students annotate the improvements using mark scheme band descriptor language (e.g. \"Here I move from 'identifies' to 'analyses' because...\").",
         },
         resources: [
           'Plain paper for redraft',
@@ -370,11 +393,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Two SMART Targets',
       duration: '8 minutes',
       instructions:
-        'Students write two SMART (Specific, Measurable, Achievable, Relevant, Time-bound) targets for Paper 1 on a target card. Target 1 should address a reading/comprehension skill; Target 2 should address an analytical writing skill. Students exchange target cards with a partner who checks them against the SMART criteria and gives one piece of feedback. Target cards are kept at the front of students\' revision folders.',
+        "Students write two SMART (Specific, Measurable, Achievable, Relevant, Time-bound) targets for Paper 1 on a target card. Target 1 should address a reading/comprehension skill; Target 2 should address an analytical writing skill. Students exchange target cards with a partner who checks them against the SMART criteria and gives one piece of feedback. Target cards are kept at the front of students' revision folders.",
       differentiation: {
-        support: 'Provide a SMART target frame: "I will improve [specific skill] by [specific action] so that by [date] I can [measurable outcome]."',
+        support:
+          'Provide a SMART target frame: "I will improve [specific skill] by [specific action] so that by [date] I can [measurable outcome]."',
         core: 'Students write both targets independently before peer review.',
-        stretch: 'Students write a third target addressing the highest-mark question specifically and include a concrete practice plan.',
+        stretch:
+          'Students write a third target addressing the highest-mark question specifically and include a concrete practice plan.',
       },
     },
     homework:
@@ -393,7 +418,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'When self-marking a language analysis answer, what three features of your response should you check first?',
         lines: 5,
         modelAnswer:
-          'First, check that you have named a specific technique (not just described the language generally). Second, check that you have quoted directly from the text to support your point. Third, check that you have explained the effect of the technique on the reader, not just what the writer has done. These three elements — technique, quotation, effect — correspond to the mark scheme\'s distinction between lower and higher band responses.',
+          "First, check that you have named a specific technique (not just described the language generally). Second, check that you have quoted directly from the text to support your point. Third, check that you have explained the effect of the technique on the reader, not just what the writer has done. These three elements - technique, quotation, effect - correspond to the mark scheme's distinction between lower and higher band responses.",
         marks: 3,
       },
       {
@@ -401,7 +426,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Rewrite the following mid-band sentence to top-band standard: "The writer uses the word \'silent\' to create a quiet atmosphere."',
         lines: 5,
         modelAnswer:
-          'A top-band redraft might read: "The adjective \'silent\' does more than evoke a quiet atmosphere — positioned at the opening of the paragraph, it creates an oppressive stillness that makes the sudden intrusion of sound in the following sentence all the more jarring, suggesting the writer\'s intention to unsettle the reader through contrast." The key improvements are: naming the word class, commenting on positioning/structure, linking to the broader text, and specifying the intended effect on the reader.',
+          "A top-band redraft might read: \"The adjective 'silent' does more than evoke a quiet atmosphere - positioned at the opening of the paragraph, it creates an oppressive stillness that makes the sudden intrusion of sound in the following sentence all the more jarring, suggesting the writer's intention to unsettle the reader through contrast.\" The key improvements are: naming the word class, commenting on positioning/structure, linking to the broader text, and specifying the intended effect on the reader.",
         marks: 4,
       },
       {
@@ -409,24 +434,24 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Why is it important to attempt every question on Paper 1, even if you are running out of time?',
         lines: 4,
         modelAnswer:
-          'Every question carries marks that cannot be recovered if left blank. A brief but focused attempt — even three or four sentences — can score partial marks and lift a grade boundary. By contrast, an unattempted question scores zero regardless of performance on other questions. Partial marks consistently earned across all questions often outperform full marks on two questions and zero on the rest.',
+          'Every question carries marks that cannot be recovered if left blank. A brief but focused attempt - even three or four sentences - can score partial marks and lift a grade boundary. By contrast, an unattempted question scores zero regardless of performance on other questions. Partial marks consistently earned across all questions often outperform full marks on two questions and zero on the rest.',
         marks: 3,
       },
       {
         question:
-          'Write a SMART target for your Paper 1 performance based on today\'s debrief. Explain why this target is both achievable and measurable.',
+          "Write a SMART target for your Paper 1 performance based on today's debrief. Explain why this target is both achievable and measurable.",
         lines: 6,
         modelAnswer:
-          'Answers will vary. A strong SMART target might read: "By the end of this week I will practise three 8-mark language analysis questions from past papers, checking each response against the mark scheme to ensure I have named the technique, provided a direct quotation, and explained the effect on the reader — aiming to reach Band 3 on all three attempts." This is measurable (three attempts, Band 3 target) and achievable within the timeframe.',
+          'Answers will vary. A strong SMART target might read: "By the end of this week I will practise three 8-mark language analysis questions from past papers, checking each response against the mark scheme to ensure I have named the technique, provided a direct quotation, and explained the effect on the reader - aiming to reach Band 3 on all three attempts." This is measurable (three attempts, Band 3 target) and achievable within the timeframe.',
         marks: 4,
       },
     ],
     teacherNotes: [
-      'Prepare the two anonymised starter responses in advance, ideally drawn from previous cohorts\' work rather than the current class to avoid identification.',
-      'The walkthrough is most effective when you read the mark scheme aloud rather than projecting it silently — pausing to explain the vocabulary of the band descriptors builds familiarity.',
+      "Prepare the two anonymised starter responses in advance, ideally drawn from previous cohorts' work rather than the current class to avoid identification.",
+      'The walkthrough is most effective when you read the mark scheme aloud rather than projecting it silently - pausing to explain the vocabulary of the band descriptors builds familiarity.',
       'Target cards should be retained by students: consider photographing them as a class record and revisiting them in lesson y11ext-09.',
-      'Where a student\'s overall performance was strong, redirect the targeted redraft to the question with the highest potential gain in marks, not necessarily the lowest-scoring question.',
-      'Allow flexibility on the redraft question — students who genuinely struggled with every question should be guided toward the one most amenable to improvement through technique rather than knowledge.',
+      "Where a student's overall performance was strong, redirect the targeted redraft to the question with the highest potential gain in marks, not necessarily the lowest-scoring question.",
+      'Allow flexibility on the redraft question - students who genuinely struggled with every question should be guided toward the one most amenable to improvement through technique rather than knowledge.',
     ],
     targetedSkills: [
       'Self-assessment against mark scheme criteria',
@@ -473,9 +498,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Before distributing papers, ask students to write down from memory: the two sections of Paper 2, the recommended time for each task, and the three things they will check before beginning to write. Teacher takes brief verbal responses and corrects any misconceptions. This activates prior knowledge without teaching new content and serves as a final mental warm-up before the formal sitting begins.',
       differentiation: {
-        support: 'Allow students to briefly consult their strategy card (produced in y11ext-01) for 30 seconds before writing from memory.',
+        support:
+          'Allow students to briefly consult their strategy card (produced in y11ext-01) for 30 seconds before writing from memory.',
         core: 'Students recall all three points independently.',
-        stretch: 'Students additionally recall two mark scheme criteria for each section of the paper.',
+        stretch:
+          'Students additionally recall two mark scheme criteria for each section of the paper.',
       },
       resources: ['Paper 2 mock (printed, face down)', 'Timer visible to students'],
     },
@@ -486,9 +513,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         instructions:
           'Distribute papers and begin the sitting under full examination conditions. Teacher circulates silently. Display time markers at 15 minutes (planning should be complete and writing underway on Task 1), 30 minutes (students should be transitioning to Task 2), and 42 minutes (final three minutes for checking). At the end of time, students put down pens. If students retain their own papers for the debrief, they immediately use a different-coloured pen to annotate: one sentence they are proud of in each task (star), one sentence they would improve (circle), and a note on whether they met the register and purpose requirements.',
         differentiation: {
-          support: 'Students with access arrangements work according to their agreed conditions. A simple prompt card reminding them of the form features for common transactional writing types (letter, speech, article, report) may be available for lower-confidence writers if permitted by the exam access arrangement.',
+          support:
+            'Students with access arrangements work according to their agreed conditions. A simple prompt card reminding them of the form features for common transactional writing types (letter, speech, article, report) may be available for lower-confidence writers if permitted by the exam access arrangement.',
           core: 'All students work under standard timed conditions.',
-          stretch: 'Students who complete both tasks early use the remaining time to redraft their opening paragraph to maximise the impression of the first sentence.',
+          stretch:
+            'Students who complete both tasks early use the remaining time to redraft their opening paragraph to maximise the impression of the first sentence.',
         },
         resources: [
           'Past Paper 2 (full paper, not previously seen)',
@@ -501,11 +530,12 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Audience Check: Did You Stay in Role?',
       duration: '10 minutes',
       instructions:
-        'Ask students to re-read their transactional writing response and identify: (1) the form they used and whether they included appropriate form features (e.g. salutation in a letter, heading in an article), (2) the audience they were writing for and whether the vocabulary and tone remained consistently appropriate throughout, and (3) the purpose of the task and whether every paragraph served that purpose. Students mark a tick, a question mark, or a cross next to each criterion. Teacher leads a brief discussion on the most commonly missed criterion — this finding directly informs the debrief lesson.',
+        'Ask students to re-read their transactional writing response and identify: (1) the form they used and whether they included appropriate form features (e.g. salutation in a letter, heading in an article), (2) the audience they were writing for and whether the vocabulary and tone remained consistently appropriate throughout, and (3) the purpose of the task and whether every paragraph served that purpose. Students mark a tick, a question mark, or a cross next to each criterion. Teacher leads a brief discussion on the most commonly missed criterion - this finding directly informs the debrief lesson.',
       differentiation: {
         support: 'Provide a checklist of form features for each transactional writing type.',
         core: 'Students self-assess using the three criteria independently.',
-        stretch: 'Students identify the single paragraph in their transactional writing where audience awareness is strongest and explain in one sentence why.',
+        stretch:
+          'Students identify the single paragraph in their transactional writing where audience awareness is strongest and explain in one sentence why.',
       },
     },
     homework:
@@ -516,7 +546,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'How should you divide your time across Paper 2? Describe a clear time plan for both tasks including planning time.',
         lines: 6,
         modelAnswer:
-          'A recommended plan: Task 1 (transactional) — 3 minutes planning, 20 minutes writing, 2 minutes checking; Task 2 (creative) — 3 minutes planning, 20 minutes writing, 2 minutes checking. This ensures both tasks receive roughly equal attention. The planning phase is non-negotiable: even a brief bullet list prevents structural drift and keeps the writing focused on purpose and audience.',
+          'A recommended plan: Task 1 (transactional) - 3 minutes planning, 20 minutes writing, 2 minutes checking; Task 2 (creative) - 3 minutes planning, 20 minutes writing, 2 minutes checking. This ensures both tasks receive roughly equal attention. The planning phase is non-negotiable: even a brief bullet list prevents structural drift and keeps the writing focused on purpose and audience.',
         marks: 4,
       },
       {
@@ -524,7 +554,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Why is "register" so important in transactional writing? What happens to your mark if register is inconsistent?',
         lines: 5,
         modelAnswer:
-          'Register refers to the level of formality and vocabulary choices appropriate to the audience and purpose. If register is inconsistent — for example, beginning a formal report in an authoritative tone and then lapsing into informal language — it signals that the writer has not sustained audience awareness, which is a key mark scheme criterion. Examiners award lower bands when register is inconsistent because it undermines the communicative effectiveness of the piece.',
+          'Register refers to the level of formality and vocabulary choices appropriate to the audience and purpose. If register is inconsistent - for example, beginning a formal report in an authoritative tone and then lapsing into informal language - it signals that the writer has not sustained audience awareness, which is a key mark scheme criterion. Examiners award lower bands when register is inconsistent because it undermines the communicative effectiveness of the piece.',
         marks: 3,
       },
       {
@@ -532,7 +562,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'What are three features you must include in a formal letter to show accurate understanding of form?',
         lines: 4,
         modelAnswer:
-          'A formal letter should include: an address (sender\'s and, where relevant, recipient\'s), a formal salutation (Dear Sir/Madam or Dear [Name]), and a formal sign-off (Yours faithfully or Yours sincerely, depending on whether the recipient is named). Omitting any of these demonstrates incomplete knowledge of form and risks dropping a mark band on the technical/accuracy criteria.',
+          "A formal letter should include: an address (sender's and, where relevant, recipient's), a formal salutation (Dear Sir/Madam or Dear [Name]), and a formal sign-off (Yours faithfully or Yours sincerely, depending on whether the recipient is named). Omitting any of these demonstrates incomplete knowledge of form and risks dropping a mark band on the technical/accuracy criteria.",
         marks: 3,
       },
       {
@@ -540,12 +570,12 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'A student writes an engaging creative piece but their opening sentence is generic. How does a strong opening sentence improve marks on Paper 2?',
         lines: 5,
         modelAnswer:
-          'The opening sentence establishes the tone, voice, and craft of the entire piece. A strong opening — using an arresting image, an unexpected perspective, a bold structural choice such as beginning in medias res — signals immediately that the student is writing with skill and intention. Examiners form an initial impression from the opening, and a strong first sentence creates a positive evaluative frame for the rest of the response. It also demonstrates the "engaging and crafted" quality that top-band descriptors reward.',
+          'The opening sentence establishes the tone, voice, and craft of the entire piece. A strong opening - using an arresting image, an unexpected perspective, a bold structural choice such as beginning in medias res - signals immediately that the student is writing with skill and intention. Examiners form an initial impression from the opening, and a strong first sentence creates a positive evaluative frame for the rest of the response. It also demonstrates the "engaging and crafted" quality that top-band descriptors reward.',
         marks: 4,
       },
       {
         question:
-          'Reflect on your Paper 2 mock performance. Which task — transactional or creative — do you feel you performed better on, and what evidence from your paper supports this?',
+          'Reflect on your Paper 2 mock performance. Which task - transactional or creative - do you feel you performed better on, and what evidence from your paper supports this?',
         lines: 6,
         modelAnswer:
           'Answers will vary. Examiners look for: a clear identification of which task the student performed better on; specific evidence from the paper (e.g. "my article included consistent formal register and three clearly argued paragraphs" rather than "I think it was good"); and an honest acknowledgement of what the weaker task was missing.',
@@ -553,11 +583,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'As with the Paper 1 sitting, this should feel like a genuine examination — avoid offering guidance or reassurance during the 45-minute writing period.',
+      'As with the Paper 1 sitting, this should feel like a genuine examination - avoid offering guidance or reassurance during the 45-minute writing period.',
       'Select a past paper that students have not previously seen.',
       'The post-time annotation is a valuable formative tool: if students annotate their own work immediately after finishing, their self-perception is more accurate than when reviewing the paper a week later.',
-      'Record the most commonly missed criterion from the plenary audience check — this directly informs the structure of the Paper 2 debrief (y11ext-05).',
-      'If the class has a particular weakness in creative writing structure (e.g. endings), consider flagging this at the end of the plenary without diminishing students\' confidence.',
+      'Record the most commonly missed criterion from the plenary audience check - this directly informs the structure of the Paper 2 debrief (y11ext-05).',
+      "If the class has a particular weakness in creative writing structure (e.g. endings), consider flagging this at the end of the plenary without diminishing students' confidence.",
     ],
     targetedSkills: [
       'Transactional writing for audience and purpose',
@@ -602,24 +632,31 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Strong Opening Ranking',
       duration: '7 minutes',
       instructions:
-        'Display five anonymous opening sentences from the class\'s mock creative writing responses (with permission, or source from previous cohorts). Students rank them from least to most effective and write one sentence justifying their top choice. Teacher reveals a consensus ranking based on mark scheme language criteria (crafted vocabulary, structural distinctiveness, immediate establishment of voice) and leads a brief discussion on what separates rank 1 from rank 5. This establishes the quality standard before students examine their own openings.',
+        "Display five anonymous opening sentences from the class's mock creative writing responses (with permission, or source from previous cohorts). Students rank them from least to most effective and write one sentence justifying their top choice. Teacher reveals a consensus ranking based on mark scheme language criteria (crafted vocabulary, structural distinctiveness, immediate establishment of voice) and leads a brief discussion on what separates rank 1 from rank 5. This establishes the quality standard before students examine their own openings.",
       differentiation: {
-        support: 'Provide the mark scheme criteria for creative writing alongside the five openings so students rank with explicit reference to the criteria.',
+        support:
+          'Provide the mark scheme criteria for creative writing alongside the five openings so students rank with explicit reference to the criteria.',
         core: 'Students rank and justify independently before the class discussion.',
-        stretch: 'Students rewrite their lowest-ranked opening to make it competitive with the top-ranked example.',
+        stretch:
+          'Students rewrite their lowest-ranked opening to make it competitive with the top-ranked example.',
       },
-      resources: ['Five anonymous opening sentences (projected or printed)', 'Creative writing mark scheme criteria'],
+      resources: [
+        'Five anonymous opening sentences (projected or printed)',
+        'Creative writing mark scheme criteria',
+      ],
     },
     mainActivities: [
       {
         title: 'Mark Scheme Walkthrough: Both Tasks',
         duration: '18 minutes',
         instructions:
-          'Return papers. Teacher leads a structured walkthrough of the mark scheme for Task 1 (transactional) and Task 2 (creative). For each task, display the band descriptors and highlight the language that distinguishes Band 3 (adequate) from Band 4 (competent) from the top band. Focus particularly on: (a) content and organisation — does the response meet all the purpose and audience requirements? (b) language and style — is the vocabulary and syntax deliberately crafted? (c) accuracy — are spelling, punctuation, and grammar consistently controlled? Students self-mark using coloured pens and record their estimated band for each task on a summary strip. Teacher addresses the two or three most common errors observed when circulating during the mock.',
+          'Return papers. Teacher leads a structured walkthrough of the mark scheme for Task 1 (transactional) and Task 2 (creative). For each task, display the band descriptors and highlight the language that distinguishes Band 3 (adequate) from Band 4 (competent) from the top band. Focus particularly on: (a) content and organisation - does the response meet all the purpose and audience requirements? (b) language and style - is the vocabulary and syntax deliberately crafted? (c) accuracy - are spelling, punctuation, and grammar consistently controlled? Students self-mark using coloured pens and record their estimated band for each task on a summary strip. Teacher addresses the two or three most common errors observed when circulating during the mock.',
         differentiation: {
-          support: 'Provide a self-marking guide with each criterion as a yes/no question (e.g. "Did I include all required form features? Yes / No / Partially?").',
+          support:
+            'Provide a self-marking guide with each criterion as a yes/no question (e.g. "Did I include all required form features? Yes / No / Partially?").',
           core: 'Students self-mark against the full band descriptors independently.',
-          stretch: 'Students identify the single criterion they are closest to moving up a band on and explain in two sentences what specific change would achieve this.',
+          stretch:
+            'Students identify the single criterion they are closest to moving up a band on and explain in two sentences what specific change would achieve this.',
         },
         resources: [
           'Full Paper 2 mark scheme (printed for students)',
@@ -633,9 +670,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         instructions:
           'Students select either their weakest paragraph from Task 1 or their weakest paragraph from Task 2 (based on self-marking). They redraft that paragraph using the following protocol: (1) identify which mark scheme criterion the original paragraph fails to meet fully; (2) rewrite the paragraph targeting that specific criterion; (3) annotate the new version to show where the criterion is now met. Teacher circulates and offers targeted formative feedback, focusing on the most common band-level gaps identified in the walkthrough. In the final three minutes, students write their redrawn paragraph on a "before and after" sheet to make the improvement visible.',
         differentiation: {
-          support: 'Teacher works with lower-confidence students as a guided group, co-constructing the redraft using a shared template.',
+          support:
+            'Teacher works with lower-confidence students as a guided group, co-constructing the redraft using a shared template.',
           core: 'Students complete the three-step protocol independently.',
-          stretch: 'Students redraft paragraphs from both tasks and compare the nature of the improvements required, noting whether different criteria dominate each task.',
+          stretch:
+            'Students redraft paragraphs from both tasks and compare the nature of the improvements required, noting whether different criteria dominate each task.',
         },
         resources: [
           '"Before and after" redraft sheet',
@@ -648,11 +687,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Two-Task Target Card',
       duration: '8 minutes',
       instructions:
-        'Students complete a two-section target card: Section A (Transactional Writing) — one specific improvement target with an action; Section B (Creative Writing) — one specific improvement target with an action. Each target must reference a named mark scheme criterion. Students share with a partner who confirms the targets are criterion-referenced and suggests one additional resource or practice strategy. Cards are filed in revision folders alongside Paper 1 target cards from y11ext-03.',
+        'Students complete a two-section target card: Section A (Transactional Writing) - one specific improvement target with an action; Section B (Creative Writing) - one specific improvement target with an action. Each target must reference a named mark scheme criterion. Students share with a partner who confirms the targets are criterion-referenced and suggests one additional resource or practice strategy. Cards are filed in revision folders alongside Paper 1 target cards from y11ext-03.',
       differentiation: {
-        support: 'Provide a target frame: "For [task], I will improve [criterion] by [specific action] so that my response reaches [band] on the next attempt."',
+        support:
+          'Provide a target frame: "For [task], I will improve [criterion] by [specific action] so that my response reaches [band] on the next attempt."',
         core: 'Students write both targets independently.',
-        stretch: 'Students write a third target addressing accuracy (spelling, punctuation, grammar) specifically and identify a proofreading strategy to implement.',
+        stretch:
+          'Students write a third target addressing accuracy (spelling, punctuation, grammar) specifically and identify a proofreading strategy to implement.',
       },
     },
     homework:
@@ -668,15 +709,14 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
       {
         question:
-          'A student\'s creative writing response receives a mid-band mark despite having some excellent sentences. What is the most likely reason for this?',
+          "A student's creative writing response receives a mid-band mark despite having some excellent sentences. What is the most likely reason for this?",
         lines: 5,
         modelAnswer:
           'The most likely reason is inconsistency: isolated strong sentences in an otherwise uneven response indicate that the student can write at a high level but has not sustained that quality throughout. Examiners award marks based on the overall standard of the whole piece. A response that has three excellent sentences and seven weak ones will be placed in the band that most accurately describes the whole response, which is typically mid-band.',
         marks: 3,
       },
       {
-        question:
-          'List four features of form that you should include in a persuasive speech.',
+        question: 'List four features of form that you should include in a persuasive speech.',
         lines: 4,
         modelAnswer:
           'A persuasive speech should include: a direct address to the audience (e.g. "Ladies and gentlemen" or "Fellow students"), rhetorical questions to engage the listener, a clear structural progression from problem to solution or argument to conclusion, and a memorable closing statement or call to action. These features signal awareness of the spoken form and secure marks for form accuracy on the mark scheme.',
@@ -692,7 +732,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
       {
         question:
-          'Which Paper 2 task do you find more challenging, and what is your specific improvement target for it based on today\'s debrief?',
+          "Which Paper 2 task do you find more challenging, and what is your specific improvement target for it based on today's debrief?",
         lines: 6,
         modelAnswer:
           'Answers will vary. Examiners look for: an honest identification of the more challenging task; a specific rather than vague explanation of the difficulty (e.g. "I struggle to maintain formal register throughout the transactional piece" rather than "I find writing hard"); and a target that references a named mark scheme criterion and includes a concrete action.',
@@ -700,7 +740,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'The starter opening-sentence ranking works best when the five examples span a visible quality range — include at least one genuinely strong example so students have a clear model to aspire to.',
+      'The starter opening-sentence ranking works best when the five examples span a visible quality range - include at least one genuinely strong example so students have a clear model to aspire to.',
       'During the mark scheme walkthrough, spend proportionally more time on the criterion most commonly missed by the class (identified from the mock plenary in y11ext-04).',
       'The "before and after" redraft sheet is a particularly useful revision tool: encourage students to keep these as a portfolio of improvements that they can review before the actual examination.',
       'If a significant proportion of the class is struggling with accuracy (SPaG), consider supplementing this lesson with a focused mini-lesson on the three most common punctuation errors observed in the mock.',
@@ -715,7 +755,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson y11ext-06: Literature Revision — All Three Set Texts Overview ───
+  // ── Lesson y11ext-06: Literature Revision - All Three Set Texts Overview ───
   {
     id: 'y11ext-06',
     title: 'Literature Revision: All Three Set Texts Overview',
@@ -724,7 +764,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
     yearGroup: 'Year 11',
     duration: '60 minutes',
     objectives: [
-      'Consolidate knowledge of all three set texts across key themes, characters, and writer\'s methods',
+      "Consolidate knowledge of all three set texts across key themes, characters, and writer's methods",
       'Identify thematic connections and contrasts between the set texts',
       'Practise the structure of a literature essay response under time pressure',
       'Prioritise revision focus by identifying knowledge gaps across the three texts',
@@ -738,7 +778,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
     keywords: [
       'theme',
       'character',
-      'writer\'s methods',
+      "writer's methods",
       'context',
       'comparative',
       'literary analysis',
@@ -749,11 +789,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Theme Web Sprint',
       duration: '8 minutes',
       instructions:
-        'Students have four minutes to create a spider diagram for each of the three set texts (working on one large sheet or three separate cards), listing every theme, key character, and writer method they can recall without notes. After four minutes, they compare with a partner and add anything they missed in a different colour. Teacher then projects a class master list and students identify their biggest gaps — this becomes the focus for the main activities.',
+        'Students have four minutes to create a spider diagram for each of the three set texts (working on one large sheet or three separate cards), listing every theme, key character, and writer method they can recall without notes. After four minutes, they compare with a partner and add anything they missed in a different colour. Teacher then projects a class master list and students identify their biggest gaps - this becomes the focus for the main activities.',
       differentiation: {
-        support: 'Provide a partially completed spider diagram for each text with major themes pre-filled so students add examples and evidence.',
+        support:
+          'Provide a partially completed spider diagram for each text with major themes pre-filled so students add examples and evidence.',
         core: 'Students produce all three spider diagrams from memory before comparing.',
-        stretch: 'Students add a contextual link (biographical, historical, or social) to at least two themes per text.',
+        stretch:
+          'Students add a contextual link (biographical, historical, or social) to at least two themes per text.',
       },
       resources: ['Large paper or A3 sheets', 'Coloured pens', 'Projected class master list'],
     },
@@ -762,11 +804,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         title: 'Thematic Connections: Cross-Text Mapping',
         duration: '18 minutes',
         instructions:
-          'Present students with a set of six broad themes (e.g. power and control, identity, loss, conflict, justice, isolation). For each theme, students write the names of the set texts that explore it, a key character or scene from each, and a short quotation. They then choose the cross-text thematic connection they find most interesting and write a brief comparative paragraph (5–6 sentences) that introduces a point, provides evidence from one text, then immediately connects it to evidence from a second text using a comparative discourse marker (e.g. "In contrast", "Similarly", "Whereas"). Pairs read each other\'s comparative paragraphs and identify whether the connection is explicit and evidenced.',
+          'Present students with a set of six broad themes (e.g. power and control, identity, loss, conflict, justice, isolation). For each theme, students write the names of the set texts that explore it, a key character or scene from each, and a short quotation. They then choose the cross-text thematic connection they find most interesting and write a brief comparative paragraph (5-6 sentences) that introduces a point, provides evidence from one text, then immediately connects it to evidence from a second text using a comparative discourse marker (e.g. "In contrast", "Similarly", "Whereas"). Pairs read each other\'s comparative paragraphs and identify whether the connection is explicit and evidenced.',
         differentiation: {
-          support: 'Provide a comparative paragraph frame: "In [Text A], [character/narrator] is shown to [theme] through [quotation], which [effect]. In contrast/Similarly, in [Text B]..."',
+          support:
+            'Provide a comparative paragraph frame: "In [Text A], [character/narrator] is shown to [theme] through [quotation], which [effect]. In contrast/Similarly, in [Text B]..."',
           core: 'Students complete the theme map and write the comparative paragraph independently.',
-          stretch: 'Students write comparative paragraphs for two different thematic connections and evaluate which comparison produces more insightful literary analysis.',
+          stretch:
+            'Students write comparative paragraphs for two different thematic connections and evaluate which comparison produces more insightful literary analysis.',
         },
         resources: [
           'Six-theme mapping grid (printed)',
@@ -778,11 +822,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         title: 'Timed Essay Paragraph Practice',
         duration: '18 minutes',
         instructions:
-          'Display four essay question prompts — at least one for each set text — and ask students to choose the one they feel least confident about (targeting a genuine knowledge gap rather than an area of comfort). Students have 14 minutes to write one well-developed essay paragraph in response. The paragraph must include: a clear topic sentence, embedded quotation, analysis of writer\'s methods, and a comment on the effect on the reader or the relevance of context. In the final four minutes, students self-annotate using the checklist: topic sentence (tick/cross), quotation (tick/cross), method analysis (tick/cross), effect/context (tick/cross).',
+          "Display four essay question prompts - at least one for each set text - and ask students to choose the one they feel least confident about (targeting a genuine knowledge gap rather than an area of comfort). Students have 14 minutes to write one well-developed essay paragraph in response. The paragraph must include: a clear topic sentence, embedded quotation, analysis of writer's methods, and a comment on the effect on the reader or the relevance of context. In the final four minutes, students self-annotate using the checklist: topic sentence (tick/cross), quotation (tick/cross), method analysis (tick/cross), effect/context (tick/cross).",
         differentiation: {
-          support: 'Allow students to have their copy of the text open and provide a paragraph structure reminder card.',
+          support:
+            'Allow students to have their copy of the text open and provide a paragraph structure reminder card.',
           core: 'Students write from memory with quotations as accurately as they can recall (close paraphrasing is accepted for timed practice).',
-          stretch: 'Students write two paragraphs that develop a single analytical point across two pieces of evidence from the same text.',
+          stretch:
+            'Students write two paragraphs that develop a single analytical point across two pieces of evidence from the same text.',
         },
         resources: [
           'Four essay question prompts (projected)',
@@ -797,13 +843,15 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Students draw a 2x2 matrix with axes labelled "How well I know this text" (low to high) and "How important this text is in the exam" (low to high). They place each set text in the relevant quadrant based on their honest self-assessment. The texts in the low-knowledge / high-importance quadrant become their priority for the following week\'s independent revision. Students write one sentence committing to a specific revision action for their highest-priority text.',
       differentiation: {
-        support: 'Provide a pre-drawn matrix and ask students to simply place the text initials in the correct quadrant.',
+        support:
+          'Provide a pre-drawn matrix and ask students to simply place the text initials in the correct quadrant.',
         core: 'Students create the matrix and write the commitment sentence independently.',
-        stretch: 'Students identify the specific chapter, act, or poem within their priority text that requires most attention and plan a 20-minute revision session for it.',
+        stretch:
+          'Students identify the specific chapter, act, or poem within their priority text that requires most attention and plan a 20-minute revision session for it.',
       },
     },
     homework:
-      'Choose your weakest set text from the priority matrix. Revise the three most important quotations for each of the text\'s two major themes (six quotations in total). Write each quotation, the technique it demonstrates, and its effect. Bring this to the next lesson.',
+      "Choose your weakest set text from the priority matrix. Revise the three most important quotations for each of the text's two major themes (six quotations in total). Write each quotation, the technique it demonstrates, and its effect. Bring this to the next lesson.",
     worksheetQuestions: [
       {
         question:
@@ -834,7 +882,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Explain why literary context (the time in which a text was written) is relevant to an examination essay. Give one specific contextual point for any of your set texts.',
         lines: 5,
         modelAnswer:
-          'Context is relevant because it explains why a writer made particular choices and what those choices would have meant to a contemporary reader. A specific contextual point should be tied to a specific moment in the text — for example, if writing about a text from the Victorian era, a reference to contemporary gender expectations should be linked to a specific character or incident in the text, not stated as general historical background.',
+          'Context is relevant because it explains why a writer made particular choices and what those choices would have meant to a contemporary reader. A specific contextual point should be tied to a specific moment in the text - for example, if writing about a text from the Victorian era, a reference to contemporary gender expectations should be linked to a specific character or incident in the text, not stated as general historical background.',
         marks: 4,
       },
       {
@@ -847,15 +895,15 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson assumes students have been taught all three set texts and are in the consolidation phase — it is not appropriate for students who have not completed the texts.',
+      'This lesson assumes students have been taught all three set texts and are in the consolidation phase - it is not appropriate for students who have not completed the texts.',
       'The specific set texts referenced in printed materials should be adapted to match the texts your class has studied. The lesson structure is text-agnostic by design.',
-      'The timed paragraph activity is most effective when students choose their weakest question — redirect any students who default to their comfort zone.',
+      'The timed paragraph activity is most effective when students choose their weakest question - redirect any students who default to their comfort zone.',
       'The cross-text comparative paragraph is a valuable differentiator: stronger students can be pushed toward comparative analysis as preparation for any cross-text question that may appear.',
       'Collect the text priority matrices or photograph them to inform the sequencing of any additional literature revision sessions.',
     ],
     targetedSkills: [
       'Thematic analysis across set texts',
-      'Embedding quotations and analysing writer\'s methods',
+      "Embedding quotations and analysing writer's methods",
       'Comparative literary analysis',
       'Timed essay paragraph writing',
       'Self-assessment of literature knowledge gaps',
@@ -874,11 +922,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       'Apply a systematic approach to reading and annotating an unseen poem under timed conditions',
       'Identify and analyse language techniques, structural choices, and tonal shifts in an unseen poem',
       'Construct a well-evidenced response to an unseen poetry question using a clear analytical framework',
-      'Evaluate the effectiveness of own and peers\' unseen responses against mark scheme criteria',
+      "Evaluate the effectiveness of own and peers' unseen responses against mark scheme criteria",
     ],
     successCriteria: [
       'I can annotate an unseen poem for language technique, structure, tone, and form within 5 minutes',
-      'I can write an opening paragraph that establishes the poem\'s central concern and my analytical approach',
+      "I can write an opening paragraph that establishes the poem's central concern and my analytical approach",
       'I can develop at least two analytical points with embedded quotations and comments on effect',
       'I can explain what separates my response from the top band using the mark scheme',
     ],
@@ -898,11 +946,12 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'First Response: Read Once, Write Fast',
       duration: '7 minutes',
       instructions:
-        'Distribute an unseen poem (a short lyric of 16–20 lines). Students read it once in silence, then write for three minutes without stopping: what is the poem about, how does it make them feel, and what single word or phrase stands out most. No annotation, no re-reading — the goal is to capture an authentic first response. Teacher takes two or three verbal responses, emphasising that first impressions are valid and often accurate starting points for analytical writing. This overcomes the paralysis many students feel when confronting an unseen poem.',
+        'Distribute an unseen poem (a short lyric of 16-20 lines). Students read it once in silence, then write for three minutes without stopping: what is the poem about, how does it make them feel, and what single word or phrase stands out most. No annotation, no re-reading - the goal is to capture an authentic first response. Teacher takes two or three verbal responses, emphasising that first impressions are valid and often accurate starting points for analytical writing. This overcomes the paralysis many students feel when confronting an unseen poem.',
       differentiation: {
         support: 'Allow a second silent read before the timed writing begins.',
         core: 'Students complete the three-minute write after a single read.',
-        stretch: 'Students also note whether their first impression might be wrong or incomplete, and what would change their reading.',
+        stretch:
+          'Students also note whether their first impression might be wrong or incomplete, and what would change their reading.',
       },
       resources: ['Unseen poem (printed, one copy initially)', 'Timer'],
     },
@@ -911,11 +960,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         title: 'Systematic Annotation Protocol',
         duration: '15 minutes',
         instructions:
-          'Distribute a second copy of the poem with wider margins. Introduce the four-step annotation protocol: (1) Circle all language techniques and name them in the margin; (2) Mark structural moments — stanza breaks, line lengths, any shift in rhyme or rhythm — and note their effect; (3) Identify the speaker, the tone, and any tonal shifts (use a triangle symbol in the margin); (4) Note the form (sonnet, free verse, ballad etc.) and its significance. Students work through the protocol independently in eight minutes. Teacher then projects a model annotation and students compare, using a coloured pen to add anything they missed. Discuss: what is the most analytically rich moment in the poem?',
+          'Distribute a second copy of the poem with wider margins. Introduce the four-step annotation protocol: (1) Circle all language techniques and name them in the margin; (2) Mark structural moments - stanza breaks, line lengths, any shift in rhyme or rhythm - and note their effect; (3) Identify the speaker, the tone, and any tonal shifts (use a triangle symbol in the margin); (4) Note the form (sonnet, free verse, ballad etc.) and its significance. Students work through the protocol independently in eight minutes. Teacher then projects a model annotation and students compare, using a coloured pen to add anything they missed. Discuss: what is the most analytically rich moment in the poem?',
         differentiation: {
-          support: 'Provide a partially annotated copy with some techniques already identified so students focus on completing and extending the analysis.',
+          support:
+            'Provide a partially annotated copy with some techniques already identified so students focus on completing and extending the analysis.',
           core: 'Students complete all four steps independently before comparing with the model.',
-          stretch: 'Students rank the three most significant features of the poem in order of analytical importance and justify their ranking.',
+          stretch:
+            'Students rank the three most significant features of the poem in order of analytical importance and justify their ranking.',
         },
         resources: [
           'Unseen poem (wide-margin copy, printed)',
@@ -930,9 +981,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         instructions:
           'Display an examination-style question about the poem (e.g. "Explore how the poet presents the theme of [X] in this poem"). Students have 16 minutes to write a response, using their annotations as a guide. They should aim for three developed analytical paragraphs: an opening that establishes the poem\'s central concern, a middle paragraph analysing language, and a third paragraph commenting on structure or form. In the final four minutes, students self-annotate: mark any paragraph where the analysis goes beyond identification to discuss effect (green tick); mark any paragraph that only identifies technique without developing it (orange circle). Teacher circulates and notes two or three responses to share in the plenary.',
         differentiation: {
-          support: 'Provide a paragraph frame for each of the three sections: opening (establish theme + overall impression), middle (technique + quotation + effect), structure paragraph (form choice + effect on reader).',
+          support:
+            'Provide a paragraph frame for each of the three sections: opening (establish theme + overall impression), middle (technique + quotation + effect), structure paragraph (form choice + effect on reader).',
           core: 'Students write all three paragraphs independently and self-annotate.',
-          stretch: 'Students write a fourth paragraph comparing the poet\'s technique to that of a named poem from the studied anthology.',
+          stretch:
+            "Students write a fourth paragraph comparing the poet's technique to that of a named poem from the studied anthology.",
         },
         resources: [
           'Examination-style question (projected)',
@@ -947,9 +1000,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Teacher selects two sentences from student responses during circulation: one that identifies a technique and one that analyses it (both anonymous). Project both and ask: "What makes the second sentence worth more marks?" Students respond verbally, arriving collectively at the principle that identification names what is there while analysis explains what it does to the reader and why the poet chose it. Students then locate one identified-only sentence in their own response and rewrite it as an analytical sentence on the bottom of the page.',
       differentiation: {
-        support: 'Provide the analytical sentence structure: "[Technique] creates an effect of [effect] because it makes the reader [reader response], reflecting the poet\'s intention to [purpose]."',
+        support:
+          'Provide the analytical sentence structure: "[Technique] creates an effect of [effect] because it makes the reader [reader response], reflecting the poet\'s intention to [purpose]."',
         core: 'Students identify and rewrite independently.',
-        stretch: 'Students rewrite two identified-only sentences and add a third that connects both points to the poem\'s overall meaning.',
+        stretch:
+          "Students rewrite two identified-only sentences and add a third that connects both points to the poem's overall meaning.",
       },
     },
     homework:
@@ -980,11 +1035,10 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         marks: 5,
       },
       {
-        question:
-          'Explain what a "volta" is in a poem and why it is analytically significant.',
+        question: 'Explain what a "volta" is in a poem and why it is analytically significant.',
         lines: 4,
         modelAnswer:
-          'A volta is a turn or shift in a poem — a moment where the tone, argument, or perspective changes direction. It is analytically significant because it reveals how the poem is structured to create meaning: the contrast between what comes before and after the volta often contains the poem\'s central insight or emotional pivot. Identifying the volta allows a student to structure an analytical response around the poem\'s development rather than simply cataloguing individual techniques.',
+          "A volta is a turn or shift in a poem - a moment where the tone, argument, or perspective changes direction. It is analytically significant because it reveals how the poem is structured to create meaning: the contrast between what comes before and after the volta often contains the poem's central insight or emotional pivot. Identifying the volta allows a student to structure an analytical response around the poem's development rather than simply cataloguing individual techniques.",
         marks: 3,
       },
       {
@@ -992,14 +1046,14 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'A student writes: "The poet uses the word \'dark\' which is a metaphor." Rewrite this as a top-band analytical sentence.',
         lines: 4,
         modelAnswer:
-          'A top-band revision might read: "The metaphorical weight of \'dark\' accumulates through its repetition across the poem, shifting from a literal description of evening in the opening stanza to a signifier of the speaker\'s psychological state by the final lines — a movement that enacts the poem\'s central argument that external landscape and internal emotion are inseparable." Key improvements: the technique is named precisely; the word is linked to a structural pattern; the effect is tied to the poem\'s overall meaning.',
+          "A top-band revision might read: \"The metaphorical weight of 'dark' accumulates through its repetition across the poem, shifting from a literal description of evening in the opening stanza to a signifier of the speaker's psychological state by the final lines - a movement that enacts the poem's central argument that external landscape and internal emotion are inseparable.\" Key improvements: the technique is named precisely; the word is linked to a structural pattern; the effect is tied to the poem's overall meaning.",
         marks: 4,
       },
     ],
     teacherNotes: [
-      'Choose an unseen poem that is genuinely unfamiliar to the class — avoid poems from the studied anthology even if not directly assessed.',
+      'Choose an unseen poem that is genuinely unfamiliar to the class - avoid poems from the studied anthology even if not directly assessed.',
       'The four-step annotation protocol should be consistent with whatever approach you have taught in earlier lessons; do not introduce a new system at this late stage.',
-      'The "identification vs analysis" distinction in the plenary is one of the most important conceptual shifts for mid-band students — return to it explicitly in the exam technique lesson (y11ext-08).',
+      'The "identification vs analysis" distinction in the plenary is one of the most important conceptual shifts for mid-band students - return to it explicitly in the exam technique lesson (y11ext-08).',
       'If the class has studied a poetry anthology, the stretch activity (comparative paragraph) is a valuable preparation for any comparative element of the examination.',
       'Homework poems brought in by students can be used as a starter activity in a subsequent lesson for additional unseen practice.',
     ],
@@ -1050,11 +1104,16 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Teacher calls out command words one at a time ("Explain", "Analyse", "Evaluate", "Describe", "Explore", "Compare", "Identify"). Students write in 10 seconds what each command word tells them to do in terms of exam technique. After all eight words have been called, teacher reveals precise definitions drawn from the mark scheme glossary and students correct any misconceptions in a different colour. The goal is to ensure command words are read accurately in the examination rather than treated as synonymous.',
       differentiation: {
-        support: 'Provide a matching exercise: command words in one column, definitions in a jumbled second column, before the rapid-fire phase.',
+        support:
+          'Provide a matching exercise: command words in one column, definitions in a jumbled second column, before the rapid-fire phase.',
         core: 'Students write definitions from memory across all eight words.',
-        stretch: 'Students write a second row of the table: what a command word does NOT require (e.g. "Identify" does not require analysis — overwriting a retrieval question is a time management error).',
+        stretch:
+          'Students write a second row of the table: what a command word does NOT require (e.g. "Identify" does not require analysis - overwriting a retrieval question is a time management error).',
       },
-      resources: ['Command word list (projected after the activity)', 'Mini whiteboards or quick-write strips'],
+      resources: [
+        'Command word list (projected after the activity)',
+        'Mini whiteboards or quick-write strips',
+      ],
     },
     mainActivities: [
       {
@@ -1063,9 +1122,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         instructions:
           'Provide students with a blank question-type technique table with rows for each key question type across all papers (e.g. Paper 1 Q1 retrieval; Paper 1 Q3 language analysis; Paper 1 Q4 evaluation; Paper 2 Task 1 transactional; Paper 2 Task 2 creative; Literature unseen; Literature set text essay). For each row, students complete four columns: (1) What does this question test? (2) What should my opening sentence do? (3) What is the most common error examiners criticise? (4) What does a top-band response include that a mid-band one does not? Students work in pairs using examiner reports, mark schemes, and their own debrief target cards from y11ext-03 and y11ext-05. After 15 minutes, pairs share their findings for two or three question types with the class.',
         differentiation: {
-          support: 'Provide a partially completed guide with the most challenging rows pre-filled so students complete only the question types most relevant to their revision needs.',
+          support:
+            'Provide a partially completed guide with the most challenging rows pre-filled so students complete only the question types most relevant to their revision needs.',
           core: 'Students complete all rows in pairs using the available resources.',
-          stretch: 'Students add a fifth column: a "top-band sentence starter" that could serve as a model response opening for each question type.',
+          stretch:
+            'Students add a fifth column: a "top-band sentence starter" that could serve as a model response opening for each question type.',
         },
         resources: [
           'Blank question-type technique table (printed)',
@@ -1078,11 +1139,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         title: 'Micro-Practice: First Lines Only',
         duration: '18 minutes',
         instructions:
-          'Display five past examination questions, one from each major question type. Students have two minutes per question to write only the opening sentence or sentences of a response — not a full answer, but a high-quality response beginning that immediately demonstrates correct technique. After each two-minute slot, teacher pauses and selects two or three opening sentences (verbally or projected) for the class to evaluate: does it answer the question directly? Does it use appropriate analytical language? Does it indicate the structure of the full response? Students annotate their own opening sentences based on the feedback received.',
+          'Display five past examination questions, one from each major question type. Students have two minutes per question to write only the opening sentence or sentences of a response - not a full answer, but a high-quality response beginning that immediately demonstrates correct technique. After each two-minute slot, teacher pauses and selects two or three opening sentences (verbally or projected) for the class to evaluate: does it answer the question directly? Does it use appropriate analytical language? Does it indicate the structure of the full response? Students annotate their own opening sentences based on the feedback received.',
         differentiation: {
-          support: 'Provide a sentence frame for each question type so students can focus on populating the frame correctly rather than constructing it from scratch.',
+          support:
+            'Provide a sentence frame for each question type so students can focus on populating the frame correctly rather than constructing it from scratch.',
           core: 'Students write all five opening sentences independently in the timed slots.',
-          stretch: 'Students write a second draft of their least effective opening sentence immediately after the class feedback discussion.',
+          stretch:
+            'Students write a second draft of their least effective opening sentence immediately after the class feedback discussion.',
         },
         resources: [
           'Five past exam questions (projected)',
@@ -1095,11 +1158,12 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Personal Technique Reference Card',
       duration: '8 minutes',
       instructions:
-        'Students condense their question-type technique guide into a personal reference card (A5 size): on the front, the three things they must do on their two highest-mark questions; on the back, the three most common errors they personally make (drawn from their debrief target cards). This card is for revision use only — it cannot be taken into the examination — but having a personalised, condensed reference maximises the usefulness of final revision time.',
+        'Students condense their question-type technique guide into a personal reference card (A5 size): on the front, the three things they must do on their two highest-mark questions; on the back, the three most common errors they personally make (drawn from their debrief target cards). This card is for revision use only - it cannot be taken into the examination - but having a personalised, condensed reference maximises the usefulness of final revision time.',
       differentiation: {
         support: 'Provide a pre-formatted reference card template with sections labelled.',
         core: 'Students create their reference card independently.',
-        stretch: 'Students write a brief exam-day action sequence on the card: the first three things they will do when they open the paper.',
+        stretch:
+          'Students write a brief exam-day action sequence on the card: the first three things they will do when they open the paper.',
       },
     },
     homework:
@@ -1110,7 +1174,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'What is the difference between what "Explain" and "Analyse" require in an examination answer?',
         lines: 5,
         modelAnswer:
-          '"Explain" asks for a clear, reasoned account of how something works or what something means — it requires clarity and logical development but does not necessarily demand evaluation of effect. "Analyse" goes further: it requires examination of how choices create meaning, considering the writer\'s intention, the effect on the reader, and the significance of specific language or structural decisions. An "Analyse" question penalises a response that only explains without evaluating the craft involved.',
+          '"Explain" asks for a clear, reasoned account of how something works or what something means - it requires clarity and logical development but does not necessarily demand evaluation of effect. "Analyse" goes further: it requires examination of how choices create meaning, considering the writer\'s intention, the effect on the reader, and the significance of specific language or structural decisions. An "Analyse" question penalises a response that only explains without evaluating the craft involved.',
         marks: 4,
       },
       {
@@ -1118,23 +1182,22 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Identify two of the most common errors students make on high-mark analytical questions, based on examiner reports.',
         lines: 5,
         modelAnswer:
-          'The two most common errors are: (1) identifying techniques without analysing their effect — students name a metaphor or simile but do not explain what it does to the reader or why the writer chose it at that specific point; and (2) retelling or summarising the text rather than analysing it — students describe what happens rather than examining how the writer creates meaning through language and structure.',
+          'The two most common errors are: (1) identifying techniques without analysing their effect - students name a metaphor or simile but do not explain what it does to the reader or why the writer chose it at that specific point; and (2) retelling or summarising the text rather than analysing it - students describe what happens rather than examining how the writer creates meaning through language and structure.',
         marks: 4,
       },
       {
         question:
-          'Write a strong opening sentence for the following question: "How does the writer use language to create tension in lines 14–28?"',
+          'Write a strong opening sentence for the following question: "How does the writer use language to create tension in lines 14-28?"',
         lines: 4,
         modelAnswer:
-          'A strong opening might read: "Throughout lines 14–28, the writer sustains tension through a combination of short, declarative sentences that mimic the protagonist\'s fractured thinking and a pattern of escalating sensory imagery that positions the reader inside the character\'s mounting panic." Key features: answers the question directly; introduces two specific analytical points; avoids narrative summary; uses precise literary vocabulary.',
+          'A strong opening might read: "Throughout lines 14-28, the writer sustains tension through a combination of short, declarative sentences that mimic the protagonist\'s fractured thinking and a pattern of escalating sensory imagery that positions the reader inside the character\'s mounting panic." Key features: answers the question directly; introduces two specific analytical points; avoids narrative summary; uses precise literary vocabulary.',
         marks: 4,
       },
       {
-        question:
-          'Why is it a mistake to overwrite a low-mark retrieval question on Paper 1?',
+        question: 'Why is it a mistake to overwrite a low-mark retrieval question on Paper 1?',
         lines: 4,
         modelAnswer:
-          'A retrieval question (typically 2–4 marks) awards marks for correctly identified information from the text. Writing extended analysis on such a question does not earn additional marks because the mark scheme only credits retrieval, not analytical development. Overwriting wastes time that should be allocated to higher-mark questions where extended analysis is required and rewarded, reducing overall performance across the paper.',
+          'A retrieval question (typically 2-4 marks) awards marks for correctly identified information from the text. Writing extended analysis on such a question does not earn additional marks because the mark scheme only credits retrieval, not analytical development. Overwriting wastes time that should be allocated to higher-mark questions where extended analysis is required and rewarded, reducing overall performance across the paper.',
         marks: 3,
       },
       {
@@ -1142,16 +1205,16 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'What are the three things a top-band evaluation response must do that a mid-band one typically does not?',
         lines: 6,
         modelAnswer:
-          'A top-band evaluation response: (1) considers the writer\'s deliberate choices and their intended effect on the reader, rather than describing what the text says; (2) sustains an evaluative stance throughout, using evaluative language such as "effectively", "convincingly", "the writer succeeds in" rather than retreating into description; and (3) offers a developed, qualified judgement — acknowledging complexity or alternative interpretations — rather than a simple binary assessment.',
+          'A top-band evaluation response: (1) considers the writer\'s deliberate choices and their intended effect on the reader, rather than describing what the text says; (2) sustains an evaluative stance throughout, using evaluative language such as "effectively", "convincingly", "the writer succeeds in" rather than retreating into description; and (3) offers a developed, qualified judgement - acknowledging complexity or alternative interpretations - rather than a simple binary assessment.',
         marks: 5,
       },
     ],
     teacherNotes: [
-      'The question-type technique guide is the centrepiece of this lesson — ensure all relevant question types for your specific exam series and tier are included in the blank table.',
+      'The question-type technique guide is the centrepiece of this lesson - ensure all relevant question types for your specific exam series and tier are included in the blank table.',
       'Examiner reports are available on the Edexcel website and should be printed or bookmarked before the lesson.',
-      'The micro-practice activity works best when teacher feedback is rapid and precise — prepare one or two exemplar opening sentences for each question type in advance to use if student examples are insufficient.',
+      'The micro-practice activity works best when teacher feedback is rapid and precise - prepare one or two exemplar opening sentences for each question type in advance to use if student examples are insufficient.',
       'Personal technique reference cards should be encouraged as a revision tool but students must understand they cannot be taken into the examination.',
-      'This lesson pairs well with y11ext-09 (time management under pressure) — the technique knowledge built here is applied under timed conditions in the following lesson.',
+      'This lesson pairs well with y11ext-09 (time management under pressure) - the technique knowledge built here is applied under timed conditions in the following lesson.',
     ],
     targetedSkills: [
       'Command word interpretation',
@@ -1171,13 +1234,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
     yearGroup: 'Year 11',
     duration: '60 minutes',
     objectives: [
-      'Apply mark scheme criteria accurately to a peer\'s response to understand the standard required for each band',
-      'Provide specific, constructive, criterion-referenced written feedback on a peer\'s work',
+      "Apply mark scheme criteria accurately to a peer's response to understand the standard required for each band",
+      "Provide specific, constructive, criterion-referenced written feedback on a peer's work",
       'Understand how professional moderation works and why consistency in marking is important',
       'Use feedback received from a peer to identify and act on a specific improvement',
     ],
     successCriteria: [
-      'I can award a justified band to a peer\'s response with reference to specific mark scheme criteria',
+      "I can award a justified band to a peer's response with reference to specific mark scheme criteria",
       'I can write feedback that identifies at least one strength and one development point using mark scheme language',
       'I can explain why two markers might award different bands and how they would resolve this in a moderation meeting',
       'I can use the feedback I receive to improve one response by at least one mark band',
@@ -1196,24 +1259,32 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Moderation Scenario: Agree or Disagree?',
       duration: '7 minutes',
       instructions:
-        'Display a short anonymous student response (8–10 sentences) alongside two different mark awards: Marker A has awarded Band 3, Marker B has awarded Band 4. Students read the response and the mark scheme for 90 seconds, then decide which marker they agree with and write a one-sentence justification. Teacher takes a show-of-hands vote and selects students from each camp to argue their case. Facilitate a brief moderation discussion, arriving at a consensus band and explaining the principle that in professional marking, markers discuss disagreements and refer to the mark scheme to reach a shared standard.',
+        'Display a short anonymous student response (8-10 sentences) alongside two different mark awards: Marker A has awarded Band 3, Marker B has awarded Band 4. Students read the response and the mark scheme for 90 seconds, then decide which marker they agree with and write a one-sentence justification. Teacher takes a show-of-hands vote and selects students from each camp to argue their case. Facilitate a brief moderation discussion, arriving at a consensus band and explaining the principle that in professional marking, markers discuss disagreements and refer to the mark scheme to reach a shared standard.',
       differentiation: {
-        support: 'Provide two or three key mark scheme phrases highlighted in the student response to give lower-confidence students an entry point into the discussion.',
+        support:
+          'Provide two or three key mark scheme phrases highlighted in the student response to give lower-confidence students an entry point into the discussion.',
         core: 'Students form a view independently before the class discussion.',
-        stretch: 'Students identify the single sentence in the response that is most responsible for the disagreement between the two markers and explain why it sits on the band boundary.',
+        stretch:
+          'Students identify the single sentence in the response that is most responsible for the disagreement between the two markers and explain why it sits on the band boundary.',
       },
-      resources: ['Anonymous student response (projected)', 'Two mark awards displayed', 'Mark scheme for relevant question type'],
+      resources: [
+        'Anonymous student response (projected)',
+        'Two mark awards displayed',
+        'Mark scheme for relevant question type',
+      ],
     },
     mainActivities: [
       {
         title: 'Structured Peer Marking',
         duration: '22 minutes',
         instructions:
-          'Students swap a timed response from this week\'s practice (or a designated piece from their folders) with a partner they have not previously exchanged with. Marker receives the response and the relevant mark scheme. They complete a structured peer marking protocol: (1) Read the full response without annotating; (2) Re-read and annotate three moments where the mark scheme criteria are either met or not met — use a green pen for strengths and a red pen for development areas; (3) Write a band award with a one-paragraph justification that references at least two mark scheme descriptors; (4) Write two pieces of targeted written feedback: one strength ("This is effective because...") and one development ("To move to the next band, you should..."). Students return marked work to the writer and have five minutes to read the feedback silently.',
+          'Students swap a timed response from this week\'s practice (or a designated piece from their folders) with a partner they have not previously exchanged with. Marker receives the response and the relevant mark scheme. They complete a structured peer marking protocol: (1) Read the full response without annotating; (2) Re-read and annotate three moments where the mark scheme criteria are either met or not met - use a green pen for strengths and a red pen for development areas; (3) Write a band award with a one-paragraph justification that references at least two mark scheme descriptors; (4) Write two pieces of targeted written feedback: one strength ("This is effective because...") and one development ("To move to the next band, you should..."). Students return marked work to the writer and have five minutes to read the feedback silently.',
         differentiation: {
-          support: 'Provide a peer marking frame with sentence starters for each stage of the protocol.',
+          support:
+            'Provide a peer marking frame with sentence starters for each stage of the protocol.',
           core: 'Students complete all four stages of the protocol independently.',
-          stretch: 'Students write a third feedback point proposing a specific rewrite: "If you were to redraft the third paragraph, I would suggest..."',
+          stretch:
+            'Students write a third feedback point proposing a specific rewrite: "If you were to redraft the third paragraph, I would suggest..."',
         },
         resources: [
           'Student responses (their own work from this week)',
@@ -1226,11 +1297,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
         title: 'Feedback-Driven Improvement Sprint',
         duration: '16 minutes',
         instructions:
-          'Having read their peer\'s feedback, students choose one development point and act on it immediately by rewriting the identified section (not the whole response) on a new sheet. The rewrite should take no more than 10 minutes. In the final six minutes, students show the original section and the rewritten section to the same peer, who confirms whether the feedback has been addressed and whether the band has moved. This creates an immediate feedback loop and demonstrates that improvement is both possible and measurable.',
+          "Having read their peer's feedback, students choose one development point and act on it immediately by rewriting the identified section (not the whole response) on a new sheet. The rewrite should take no more than 10 minutes. In the final six minutes, students show the original section and the rewritten section to the same peer, who confirms whether the feedback has been addressed and whether the band has moved. This creates an immediate feedback loop and demonstrates that improvement is both possible and measurable.",
         differentiation: {
-          support: 'Students who received vague feedback can consult the mark scheme directly and choose their own development target before rewriting.',
+          support:
+            'Students who received vague feedback can consult the mark scheme directly and choose their own development target before rewriting.',
           core: 'Students act on the peer feedback independently.',
-          stretch: 'Students write a two-sentence analytical commentary comparing the original and improved section, explaining which mark scheme criterion the improvement addresses.',
+          stretch:
+            'Students write a two-sentence analytical commentary comparing the original and improved section, explaining which mark scheme criterion the improvement addresses.',
         },
         resources: [
           'Plain paper for improvement sprint',
@@ -1245,9 +1318,11 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Teacher displays three examples of peer feedback (anonymised): one vague ("This was good but could be better"), one specific but not criterion-referenced ("I liked the vocabulary"), and one specific and criterion-referenced ("Your use of embedded quotation meets the mark scheme requirement for Band 3, but to reach Band 4 you need to develop the point about effect on the reader in two or three additional sentences"). Students rank them and explain which is most useful and why. The class derives three principles of effective feedback, which are added to the board and copied into revision folders.',
       differentiation: {
-        support: 'Provide a simple three-point checklist: Is the feedback specific? Does it reference the mark scheme? Does it tell the writer what to do next?',
+        support:
+          'Provide a simple three-point checklist: Is the feedback specific? Does it reference the mark scheme? Does it tell the writer what to do next?',
         core: 'Students rank and derive principles independently before the class discussion.',
-        stretch: 'Students evaluate the feedback they received today against the three principles and write a one-sentence assessment of its quality.',
+        stretch:
+          'Students evaluate the feedback they received today against the three principles and write a one-sentence assessment of its quality.',
       },
     },
     homework:
@@ -1258,7 +1333,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'What is the purpose of moderation in examination marking? Why does it matter that two markers agree on the same band?',
         lines: 5,
         modelAnswer:
-          'Moderation ensures that marks are awarded consistently and fairly across all students, regardless of which marker reads a response. If two markers award different bands for the same response, the mark is unreliable and the student\'s grade becomes a matter of chance rather than merit. Moderation meetings compare marks and resolve disagreements by returning to the mark scheme language, establishing a shared standard that all markers apply consistently.',
+          "Moderation ensures that marks are awarded consistently and fairly across all students, regardless of which marker reads a response. If two markers award different bands for the same response, the mark is unreliable and the student's grade becomes a matter of chance rather than merit. Moderation meetings compare marks and resolve disagreements by returning to the mark scheme language, establishing a shared standard that all markers apply consistently.",
         marks: 4,
       },
       {
@@ -1266,7 +1341,7 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Write a piece of criterion-referenced feedback on the following sentence: "The writer uses lots of adjectives to describe the weather."',
         lines: 6,
         modelAnswer:
-          'Criterion-referenced feedback might read: "This sentence identifies that adjectives are used but does not name a specific adjective, explain what it does to the reader, or relate it to the writer\'s purpose — all of which are required for Band 3 and above on the mark scheme. To improve, select the single most significant adjective, embed it in quotation marks, name its effect (e.g. it creates a sense of ominous foreboding), and link it to the poem\'s or passage\'s central concern."',
+          "Criterion-referenced feedback might read: \"This sentence identifies that adjectives are used but does not name a specific adjective, explain what it does to the reader, or relate it to the writer's purpose - all of which are required for Band 3 and above on the mark scheme. To improve, select the single most significant adjective, embed it in quotation marks, name its effect (e.g. it creates a sense of ominous foreboding), and link it to the poem's or passage's central concern.\"",
         marks: 5,
       },
       {
@@ -1274,15 +1349,14 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
           'Explain the difference between a "strength" comment and a "development" comment in peer feedback. Why are both needed?',
         lines: 5,
         modelAnswer:
-          'A strength comment identifies what the writer has done well and explains why it meets the mark scheme — this validates the writer\'s effective choices and shows them what to repeat. A development comment identifies a specific gap and provides actionable guidance for improvement — this is what allows the writer to move up a band. Both are needed because feedback without a strength leaves a writer without a model of success, while feedback without a development point offers no pathway to improvement.',
+          "A strength comment identifies what the writer has done well and explains why it meets the mark scheme - this validates the writer's effective choices and shows them what to repeat. A development comment identifies a specific gap and provides actionable guidance for improvement - this is what allows the writer to move up a band. Both are needed because feedback without a strength leaves a writer without a model of success, while feedback without a development point offers no pathway to improvement.",
         marks: 4,
       },
       {
-        question:
-          'Why is it important to read a peer\'s full response before annotating it?',
+        question: "Why is it important to read a peer's full response before annotating it?",
         lines: 4,
         modelAnswer:
-          'Reading the full response first allows the marker to assess it as a whole — to see whether it develops, whether it sustains its quality, and whether later paragraphs address weaknesses in earlier ones. Annotating during the first read risks over-rewarding or over-penalising individual sentences without seeing how they function within the complete response. Many mark scheme criteria (such as "sustained" or "consistent") can only be assessed on the whole response.',
+          'Reading the full response first allows the marker to assess it as a whole - to see whether it develops, whether it sustains its quality, and whether later paragraphs address weaknesses in earlier ones. Annotating during the first read risks over-rewarding or over-penalising individual sentences without seeing how they function within the complete response. Many mark scheme criteria (such as "sustained" or "consistent") can only be assessed on the whole response.',
         marks: 3,
       },
       {
@@ -1295,10 +1369,10 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'Prepare the moderation starter scenario in advance using genuine student work from a previous cohort — current class work risks identification and can make students defensive.',
+      'Prepare the moderation starter scenario in advance using genuine student work from a previous cohort - current class work risks identification and can make students defensive.',
       'The structured peer marking protocol sheet is key to ensuring students go beyond superficial feedback. Enforce the requirement that every piece of feedback references a specific mark scheme descriptor.',
       'Circulate during the peer marking phase and challenge any feedback that is vague ("this is good") by asking the student to name the specific mark scheme criterion that supports their comment.',
-      'The improvement sprint creates visible progress within a single lesson — it is one of the most motivating activities in this series and should be protected from time pressure.',
+      'The improvement sprint creates visible progress within a single lesson - it is one of the most motivating activities in this series and should be protected from time pressure.',
       'Collect or photograph examples of strong criterion-referenced peer feedback to use as models in future lessons or displayed in the classroom.',
     ],
     targetedSkills: [
@@ -1346,34 +1420,47 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       instructions:
         'Ask students to retrieve three pieces of work from this revision series: their original mock response (Paper 1 or Paper 2), their redrafted version from the debrief lesson, and their personal technique reference card from y11ext-08. Students lay these three items on their desk and spend four minutes in silence comparing the mock response and the redraft, noting the specific improvements made. They write one sentence beginning "Since the mock, I have improved my [specific skill] because..." and share it with a partner. Teacher facilitates brief sharing: three or four students read their sentences aloud. The goal is to establish an evidence-based sense of progress rather than abstract reassurance.',
       differentiation: {
-        support: 'Provide a prompt list of possible progress statements if students struggle to identify concrete improvements.',
+        support:
+          'Provide a prompt list of possible progress statements if students struggle to identify concrete improvements.',
         core: 'Students identify improvement independently before sharing.',
-        stretch: 'Students write three progress statements, one per assessment objective, and rank them in order of significance.',
+        stretch:
+          'Students write three progress statements, one per assessment objective, and rank them in order of significance.',
       },
-      resources: ['Students\' own mock responses and redrafts (retrieved from folders)', 'Personal technique reference cards from y11ext-08'],
+      resources: [
+        "Students' own mock responses and redrafts (retrieved from folders)",
+        'Personal technique reference cards from y11ext-08',
+      ],
     },
     mainActivities: [
       {
         title: 'My Strongest Strategy: One Sentence Per Paper',
         duration: '15 minutes',
         instructions:
-          'Students have 10 minutes to write one sentence for each paper they are sitting that captures their single strongest strategy: the thing they know they do well and will rely on in the examination. For example: "On Paper 1, my strongest strategy is annotating the source text for four minutes before writing, which means my answers are always grounded in evidence." Teacher circulates and helps any student who cannot identify a strength — redirect these students toward their target cards and technique guides to locate a skill that has measurably improved. After 10 minutes, students share their sentences in groups of three and each group selects one sentence to read to the class. Teacher builds a class "wall of strengths" on the board that is displayed for the remainder of the lesson.',
+          'Students have 10 minutes to write one sentence for each paper they are sitting that captures their single strongest strategy: the thing they know they do well and will rely on in the examination. For example: "On Paper 1, my strongest strategy is annotating the source text for four minutes before writing, which means my answers are always grounded in evidence." Teacher circulates and helps any student who cannot identify a strength - redirect these students toward their target cards and technique guides to locate a skill that has measurably improved. After 10 minutes, students share their sentences in groups of three and each group selects one sentence to read to the class. Teacher builds a class "wall of strengths" on the board that is displayed for the remainder of the lesson.',
         differentiation: {
-          support: 'Provide a sentence frame and a list of possible strategies from the revision series for students to select from if they cannot generate their own.',
+          support:
+            'Provide a sentence frame and a list of possible strategies from the revision series for students to select from if they cannot generate their own.',
           core: 'Students write all strategy sentences independently.',
-          stretch: 'Students write a second sentence per paper identifying their contingency strategy: "If I find a question difficult, I will..."',
+          stretch:
+            'Students write a second sentence per paper identifying their contingency strategy: "If I find a question difficult, I will..."',
         },
-        resources: ['Revision folders', 'Target cards from y11ext-03 and y11ext-05', 'Board space for wall of strengths'],
+        resources: [
+          'Revision folders',
+          'Target cards from y11ext-03 and y11ext-05',
+          'Board space for wall of strengths',
+        ],
       },
       {
         title: 'Exam-Day Action Plan',
         duration: '20 minutes',
         instructions:
-          'Students complete a structured exam-day action plan card covering: (1) The night before — three specific revision actions (not "revise everything") each lasting no more than 20 minutes; (2) The morning of the exam — a 15-minute routine that includes reviewing their technique reference card and eating a proper breakfast; (3) The first five minutes of each examination — a precise sequence of actions (e.g. read the instructions; note the marks per question; read the source text or question paper fully before writing; breathe, then begin with the highest-confidence question or in question order depending on strategy); (4) If panic sets in — two grounding strategies (e.g. re-read the question to refocus, return to a strength they know they have). Students write the plan on a card that fits in their school bag. Teacher leads a brief group discussion validating strategies and correcting any counterproductive ideas (e.g. "staying up all night revising").',
+          'Students complete a structured exam-day action plan card covering: (1) The night before - three specific revision actions (not "revise everything") each lasting no more than 20 minutes; (2) The morning of the exam - a 15-minute routine that includes reviewing their technique reference card and eating a proper breakfast; (3) The first five minutes of each examination - a precise sequence of actions (e.g. read the instructions; note the marks per question; read the source text or question paper fully before writing; breathe, then begin with the highest-confidence question or in question order depending on strategy); (4) If panic sets in - two grounding strategies (e.g. re-read the question to refocus, return to a strength they know they have). Students write the plan on a card that fits in their school bag. Teacher leads a brief group discussion validating strategies and correcting any counterproductive ideas (e.g. "staying up all night revising").',
         differentiation: {
-          support: 'Provide a pre-formatted action plan card with each section partially completed.',
+          support:
+            'Provide a pre-formatted action plan card with each section partially completed.',
           core: 'Students complete the full action plan independently.',
-          stretch: 'Students add a fifth section: "After the exam" — a strategy for not over-analysing performance between papers.',
+          stretch:
+            'Students add a fifth section: "After the exam" - a strategy for not over-analysing performance between papers.',
         },
         resources: [
           'Exam-day action plan card (A5, printed or blank card)',
@@ -1386,11 +1473,13 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       title: 'Final Words: What I Know, What I Can Do',
       duration: '10 minutes',
       instructions:
-        'Each student writes two sentences on a card or sticky note: "I know [one key piece of content or technique that will help me in the exam]" and "I can [one skill I have practised and improved across this revision series]". Teacher collects these and reads a selection aloud (anonymously). The lesson ends with the teacher providing a brief, genuine, forward-looking summary of the class\'s progress — drawing on the evidence collected across the series (mock scores, redraft improvements, target cards) — and a final encouragement that is specific and grounded in observed improvement rather than generic praise.',
+        'Each student writes two sentences on a card or sticky note: "I know [one key piece of content or technique that will help me in the exam]" and "I can [one skill I have practised and improved across this revision series]". Teacher collects these and reads a selection aloud (anonymously). The lesson ends with the teacher providing a brief, genuine, forward-looking summary of the class\'s progress - drawing on the evidence collected across the series (mock scores, redraft improvements, target cards) - and a final encouragement that is specific and grounded in observed improvement rather than generic praise.',
       differentiation: {
-        support: 'Allow students who struggle to identify a "can do" to look back through their revision folder for concrete evidence before writing.',
+        support:
+          'Allow students who struggle to identify a "can do" to look back through their revision folder for concrete evidence before writing.',
         core: 'Students write both sentences independently.',
-        stretch: 'Students write a third sentence: "I am prepared for [specific challenge] because [specific evidence]."',
+        stretch:
+          'Students write a third sentence: "I am prepared for [specific challenge] because [specific evidence]."',
       },
     },
     homework:
@@ -1439,10 +1528,10 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'This lesson should feel different in tone from the preceding revision lessons: more reflective, warmer, and forward-looking. Avoid introducing new content or technique expectations.',
-      'The "evidence of progress" starter is most powerful when students have genuinely retained their mock responses and redrafts across the series — check that folders are organised at the start of the previous lesson.',
+      'The "evidence of progress" starter is most powerful when students have genuinely retained their mock responses and redrafts across the series - check that folders are organised at the start of the previous lesson.',
       'The wall of strengths should be built with genuine student contributions, not teacher-generated examples. Let the class own this.',
-      'For students who have found the series difficult and are still anxious, redirect the exam-day action plan conversation toward specific, manageable controllables — what they can do, not what they cannot change.',
-      'The homework for this lesson is the most important homework in the series — frame it as the capstone of their revision rather than a routine task. Check that students physically write their night-before plan on the action card before leaving the classroom.',
+      'For students who have found the series difficult and are still anxious, redirect the exam-day action plan conversation toward specific, manageable controllables - what they can do, not what they cannot change.',
+      'The homework for this lesson is the most important homework in the series - frame it as the capstone of their revision rather than a routine task. Check that students physically write their night-before plan on the action card before leaving the classroom.',
     ],
     targetedSkills: [
       'Exam strategy consolidation',
@@ -1452,4 +1541,4 @@ export const y11IgcseExtendedLessons: LessonPlan[] = [
       'Goal-setting and self-efficacy',
     ],
   },
-];
+]

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
 
-export const metadata = { title: 'Marking Guide — Teacher Resources' }
+export const metadata = { title: 'Marking Guide - Teacher Resources' }
 
 /* ─── Example 2: AQA English Literature Marking Guide Breakdown ───── */
 
@@ -14,7 +14,7 @@ const BANDS = [
     ao1: 'Critical, exploratory, conceptualised response. Judicious use of precise references to support interpretation(s).',
     ao2: "Analysis of writer's methods with subject terminology used judiciously. Sophisticated exploration of effects of language/structure.",
     ao3: 'Exploration of ideas/perspectives/contextual factors shown across the text. Detailed, perceptive understanding of relationships between text and context.',
-    studentExample: `Priestley's stagecraft in the Inspector's final speech serves a dual function: it operates as a dramatic monologue that breaks the fourth wall, directly implicating the 1945 audience in the social failures of 1912. The tricolon "fire and blood and anguish" carries biblical resonance, positioning the Inspector as a prophetic figure whose warnings transcend the play's temporal setting. This deliberate anachronism — a character in 1912 predicting both World Wars — is Priestley's most powerful structural device, collapsing the distance between past and present to force his audience into moral reckoning.`,
+    studentExample: `Priestley's stagecraft in the Inspector's final speech serves a dual function: it operates as a dramatic monologue that breaks the fourth wall, directly implicating the 1945 audience in the social failures of 1912. The tricolon "fire and blood and anguish" carries biblical resonance, positioning the Inspector as a prophetic figure whose warnings transcend the play's temporal setting. This deliberate anachronism - a character in 1912 predicting both World Wars - is Priestley's most powerful structural device, collapsing the distance between past and present to force his audience into moral reckoning.`,
   },
   {
     level: 5,
@@ -24,7 +24,7 @@ const BANDS = [
     ao1: 'Thoughtful, developed response. Apt references integrated into interpretation(s).',
     ao2: "Examination of writer's methods with subject terminology used effectively. Thoughtful consideration of effects.",
     ao3: 'Thoughtful consideration of ideas/perspectives/contextual factors shown across the text.',
-    studentExample: `Priestley presents the Inspector as a mouthpiece for socialist ideas through his language and behaviour. The Inspector's statement that "We are members of one body" directly references socialist ideology, suggesting that society has a collective responsibility. Priestley uses the metaphor of "one body" to imply that harming one person — like Eva Smith — damages everyone. This was particularly relevant to the 1945 audience who had experienced the collective effort of WWII and were considering the creation of the welfare state.`,
+    studentExample: `Priestley presents the Inspector as a mouthpiece for socialist ideas through his language and behaviour. The Inspector's statement that "We are members of one body" directly references socialist ideology, suggesting that society has a collective responsibility. Priestley uses the metaphor of "one body" to imply that harming one person - like Eva Smith - damages everyone. This was particularly relevant to the 1945 audience who had experienced the collective effort of WWII and were considering the creation of the welfare state.`,
   },
   {
     level: 4,
@@ -202,16 +202,16 @@ export default async function MarkSchemePage() {
         <ul className="space-y-2 text-sm text-muted-foreground">
           <li className="flex gap-2">
             <span className="text-primary font-bold">1.</span>
-            Read the whole response first before marking — get an overall impression of the band.
+            Read the whole response first before marking - get an overall impression of the band.
           </li>
           <li className="flex gap-2">
             <span className="text-primary font-bold">2.</span>
-            Use a &apos;best fit&apos; approach — if a response straddles two bands, consider which
+            Use a &apos;best fit&apos; approach - if a response straddles two bands, consider which
             band best describes the majority.
           </li>
           <li className="flex gap-2">
             <span className="text-primary font-bold">3.</span>
-            Mark positively — reward what students CAN do, not penalise what they can&apos;t.
+            Mark positively - reward what students CAN do, not penalise what they can&apos;t.
           </li>
           <li className="flex gap-2">
             <span className="text-primary font-bold">4.</span>

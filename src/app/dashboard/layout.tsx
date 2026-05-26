@@ -1,5 +1,5 @@
 /**
- * Dashboard layout — server component.
+ * Dashboard layout - server component.
  *
  * The dashboard page itself is `'use client'` (it calls Supabase from the
  * browser). To server-render the trial countdown banner above the
@@ -8,7 +8,7 @@
  *
  * NOTE: nested route layouts (e.g. `dashboard/teacher/layout.tsx`,
  * `dashboard/parent/layout.tsx`) compose underneath this one, so the
- * banner appears above their content too. That is the desired behaviour —
+ * banner appears above their content too. That is the desired behaviour -
  * a teacher in trial should see the same countdown.
  */
 

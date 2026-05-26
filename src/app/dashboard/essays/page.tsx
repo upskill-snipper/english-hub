@@ -1,132 +1,131 @@
-"use client";
+'use client'
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
-import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from "@/lib/grades";
+import { useState, useMemo } from 'react'
+import Link from 'next/link'
+import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from '@/lib/grades'
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
 interface Essay {
-  id: string;
-  title: string;
-  subject: string;
-  examBoard: string;
-  score: number;
-  createdAt: string;
+  id: string
+  title: string
+  subject: string
+  examBoard: string
+  score: number
+  createdAt: string
 }
 
 /* ─── Mock data (replace with real data fetching) ────────────── */
 
 const MOCK_ESSAYS: Essay[] = [
   {
-    id: "1",
-    title: "An Inspector Calls: Responsibility Theme",
-    subject: "English Literature",
-    examBoard: "AQA",
+    id: '1',
+    title: 'An Inspector Calls: Responsibility Theme',
+    subject: 'English Literature',
+    examBoard: 'AQA',
     score: 82,
-    createdAt: "2026-03-20T14:30:00Z",
+    createdAt: '2026-03-20T14:30:00Z',
   },
   {
-    id: "2",
-    title: "Persuasive Writing: Social Media in Schools",
-    subject: "English Language",
-    examBoard: "Edexcel",
+    id: '2',
+    title: 'Persuasive Writing: Social Media in Schools',
+    subject: 'English Language',
+    examBoard: 'Edexcel',
     score: 68,
-    createdAt: "2026-03-17T10:15:00Z",
+    createdAt: '2026-03-17T10:15:00Z',
   },
   {
-    id: "3",
-    title: "Macbeth: Power and Ambition",
-    subject: "English Literature",
-    examBoard: "AQA",
+    id: '3',
+    title: 'Macbeth: Power and Ambition',
+    subject: 'English Literature',
+    examBoard: 'AQA',
     score: 77,
-    createdAt: "2026-03-14T16:45:00Z",
+    createdAt: '2026-03-14T16:45:00Z',
   },
   {
-    id: "4",
-    title: "Descriptive Writing: A Storm at Sea",
-    subject: "English Language",
-    examBoard: "CAIE",
+    id: '4',
+    title: 'Descriptive Writing: A Storm at Sea',
+    subject: 'English Language',
+    examBoard: 'CAIE',
     score: 85,
-    createdAt: "2026-03-10T09:00:00Z",
+    createdAt: '2026-03-10T09:00:00Z',
   },
   {
-    id: "5",
+    id: '5',
     title: "A Christmas Carol: Scrooge's Transformation",
-    subject: "English Literature",
-    examBoard: "AQA",
+    subject: 'English Literature',
+    examBoard: 'AQA',
     score: 72,
-    createdAt: "2026-03-06T11:30:00Z",
+    createdAt: '2026-03-06T11:30:00Z',
   },
   {
-    id: "6",
-    title: "Narrative Writing: The Journey Home",
-    subject: "English Language",
-    examBoard: "OCR",
+    id: '6',
+    title: 'Narrative Writing: The Journey Home',
+    subject: 'English Language',
+    examBoard: 'OCR',
     score: 60,
-    createdAt: "2026-03-02T14:00:00Z",
+    createdAt: '2026-03-02T14:00:00Z',
   },
-];
+]
 
 /* ─── Helpers ────────────────────────────────────────────────── */
 
-type SortField = "date" | "score";
-type SortDir = "asc" | "desc";
+type SortField = 'date' | 'score'
+type SortDir = 'asc' | 'desc'
 
 function scoreColour(score: number): string {
-  if (score >= 80) return "text-green-500";
-  if (score >= 60) return "text-amber-500";
-  return "text-red-500";
+  if (score >= 80) return 'text-green-500'
+  if (score >= 60) return 'text-amber-500'
+  return 'text-red-500'
 }
 
 function scoreBadgeBg(score: number): string {
-  if (score >= 80) return "bg-green-500/10 text-green-500";
-  if (score >= 60) return "bg-primary/10 text-amber-500";
-  return "bg-red-500/10 text-red-500";
+  if (score >= 80) return 'bg-green-500/10 text-green-500'
+  if (score >= 60) return 'bg-primary/10 text-amber-500'
+  return 'bg-red-500/10 text-red-500'
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function AllEssaysPage() {
-  const [sortField, setSortField] = useState<SortField>("date");
-  const [sortDir, setSortDir] = useState<SortDir>("desc");
-  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [sortField, setSortField] = useState<SortField>('date')
+  const [sortDir, setSortDir] = useState<SortDir>('desc')
+  const [deletingId, setDeletingId] = useState<string | null>(null)
 
   const sorted = useMemo(() => {
-    const copy = [...MOCK_ESSAYS];
+    const copy = [...MOCK_ESSAYS]
     copy.sort((a, b) => {
-      if (sortField === "date") {
-        const diff =
-          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
-        return sortDir === "asc" ? diff : -diff;
+      if (sortField === 'date') {
+        const diff = new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+        return sortDir === 'asc' ? diff : -diff
       }
-      const diff = a.score - b.score;
-      return sortDir === "asc" ? diff : -diff;
-    });
-    return copy;
-  }, [sortField, sortDir]);
+      const diff = a.score - b.score
+      return sortDir === 'asc' ? diff : -diff
+    })
+    return copy
+  }, [sortField, sortDir])
 
   function toggleSort(field: SortField) {
     if (sortField === field) {
-      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+      setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'))
     } else {
-      setSortField(field);
-      setSortDir("desc");
+      setSortField(field)
+      setSortDir('desc')
     }
   }
 
   function handleDelete(_id: string) {
-    // Stub: DELETE /api/essays/:id — no-op until API route exists
-    setDeletingId(null);
+    // Stub: DELETE /api/essays/:id - no-op until API route exists
+    setDeletingId(null)
   }
 
   function SortIndicator({ field }: { field: SortField }) {
-    if (sortField !== field) return null;
+    if (sortField !== field) return null
     return (
       <span className="ml-1" aria-hidden="true">
-        {sortDir === "asc" ? "\u2191" : "\u2193"}
+        {sortDir === 'asc' ? '\u2191' : '\u2193'}
       </span>
-    );
+    )
   }
 
   return (
@@ -147,15 +146,21 @@ export default function AllEssaysPage() {
       {/* ── Header ──────────────────────────────────────────── */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-primary sm:text-3xl">
-            Your Essays
-          </h1>
+          <h1 className="text-2xl font-bold text-primary sm:text-3xl">Your Essays</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {sorted.length} {sorted.length === 1 ? "essay" : "essays"} submitted
+            {sorted.length} {sorted.length === 1 ? 'essay' : 'essays'} submitted
           </p>
         </div>
         <Link href="/dashboard/essay/new" className="btn-primary gap-2 self-start">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            aria-hidden="true"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
           </svg>
           New Essay
@@ -167,11 +172,11 @@ export default function AllEssaysPage() {
         <span className="text-muted-foreground">Sort by:</span>
         <button
           type="button"
-          onClick={() => toggleSort("date")}
+          onClick={() => toggleSort('date')}
           className={`rounded-md px-3 py-1 font-medium transition-colors ${
-            sortField === "date"
-              ? "bg-primary text-white"
-              : "bg-muted text-muted-foreground hover:bg-muted"
+            sortField === 'date'
+              ? 'bg-primary text-white'
+              : 'bg-muted text-muted-foreground hover:bg-muted'
           }`}
         >
           Date
@@ -179,11 +184,11 @@ export default function AllEssaysPage() {
         </button>
         <button
           type="button"
-          onClick={() => toggleSort("score")}
+          onClick={() => toggleSort('score')}
           className={`rounded-md px-3 py-1 font-medium transition-colors ${
-            sortField === "score"
-              ? "bg-primary text-white"
-              : "bg-muted text-muted-foreground hover:bg-muted"
+            sortField === 'score'
+              ? 'bg-primary text-white'
+              : 'bg-muted text-muted-foreground hover:bg-muted'
           }`}
         >
           Score
@@ -207,25 +212,21 @@ export default function AllEssaysPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border bg-muted">
-                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
-                      Title
-                    </th>
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">Title</th>
                     <th className="px-4 py-3 text-left font-medium text-muted-foreground">
                       Subject
                     </th>
-                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
-                      Board
-                    </th>
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">Board</th>
                     <th
                       className="cursor-pointer px-4 py-3 text-left font-medium text-muted-foreground hover:text-foreground"
-                      onClick={() => toggleSort("score")}
+                      onClick={() => toggleSort('score')}
                     >
                       Score
                       <SortIndicator field="score" />
                     </th>
                     <th
                       className="cursor-pointer px-4 py-3 text-left font-medium text-muted-foreground hover:text-foreground"
-                      onClick={() => toggleSort("date")}
+                      onClick={() => toggleSort('date')}
                     >
                       Date
                       <SortIndicator field="date" />
@@ -237,10 +238,7 @@ export default function AllEssaysPage() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {sorted.map((essay) => (
-                    <tr
-                      key={essay.id}
-                      className="hover:bg-muted/50 transition-colors"
-                    >
+                    <tr key={essay.id} className="hover:bg-muted/50 transition-colors">
                       <td className="px-4 py-3">
                         <Link
                           href={`/dashboard/essay/${essay.id}`}
@@ -254,17 +252,17 @@ export default function AllEssaysPage() {
                       <td className="px-4 py-3">
                         <span
                           className={`inline-flex rounded-full px-2 py-0.5 text-xs font-bold ${scoreBadgeBg(
-                            essay.score
+                            essay.score,
                           )}`}
                         >
                           {percentageToGCSEGradeLabel(essay.score)}
                         </span>
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">
-                        {new Date(essay.createdAt).toLocaleDateString("en-GB", {
-                          day: "numeric",
-                          month: "short",
-                          year: "numeric",
+                        {new Date(essay.createdAt).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric',
                         })}
                       </td>
                       <td className="px-4 py-3 text-right">
@@ -315,10 +313,7 @@ export default function AllEssaysPage() {
             {sorted.map((essay) => (
               <li key={essay.id} className="card">
                 <div className="flex items-start justify-between gap-3">
-                  <Link
-                    href={`/dashboard/essay/${essay.id}`}
-                    className="min-w-0 flex-1"
-                  >
+                  <Link href={`/dashboard/essay/${essay.id}`} className="min-w-0 flex-1">
                     <p className="truncate font-medium text-foreground hover:text-accent">
                       {essay.title}
                     </p>
@@ -326,18 +321,14 @@ export default function AllEssaysPage() {
                       {essay.subject} &middot; {essay.examBoard}
                     </p>
                     <p className="mt-0.5 text-xs text-muted-foreground">
-                      {new Date(essay.createdAt).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
+                      {new Date(essay.createdAt).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
                       })}
                     </p>
                   </Link>
-                  <span
-                    className={`shrink-0 text-lg font-bold ${scoreColour(
-                      essay.score
-                    )}`}
-                  >
+                  <span className={`shrink-0 text-lg font-bold ${scoreColour(essay.score)}`}>
                     {percentageToGCSEGradeLabel(essay.score)}
                   </span>
                 </div>
@@ -382,5 +373,5 @@ export default function AllEssaysPage() {
         </>
       )}
     </div>
-  );
+  )
 }

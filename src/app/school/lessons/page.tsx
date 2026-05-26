@@ -2,7 +2,7 @@
 //
 // The heavy lesson-plan barrel (74 files, ~3.4 MB) is imported here on the
 // server via `@/data/lesson-plans/metadata`. We project each LessonPlan down
-// to an 11-field metadata shape BEFORE crossing the RSC boundary — the
+// to an 11-field metadata shape BEFORE crossing the RSC boundary - the
 // client island (`LessonsListClient`) only ever receives the projection, so
 // the content fields (`objectives`, `mainActivities`, `worksheetQuestions`,
 // `teacherNotes`, etc.) never reach the browser bundle.
@@ -83,7 +83,7 @@ async function fetchRecommendations(): Promise<{
     const uniqueAreas = Array.from(new Set(weakAreaLabels))
     const recommended = recommendLessonsMetadata(uniqueAreas, 'AQA', 6)
 
-    // Pre-resolve the templates once per request — `tSync` is just a
+    // Pre-resolve the templates once per request - `tSync` is just a
     // dictionary lookup, but pulling it out of the inner loop keeps
     // intent clear and avoids redundant work for large weak-area sets.
     const weakAreaTemplate = tSync('school.lessons.reason.weak_area', locale)

@@ -505,13 +505,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Physical chains',
-      'Psychological chains — people imprisoned by acceptance of oppression',
+      'Psychological chains - people imprisoned by acceptance of oppression',
       'Bracelets',
       'Laws',
     ],
     correctIndex: 1,
     explanation:
-      'The chains are mental — people have internalised their oppression and accepted it as normal.',
+      'The chains are mental - people have internalised their oppression and accepted it as normal.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -537,7 +537,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A wedding tradition',
-      'Love and death fused — corruption has poisoned every aspect of life',
+      'Love and death fused - corruption has poisoned every aspect of life',
       'A funeral procession',
       'A type of carriage',
     ],
@@ -553,7 +553,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Rhyming couplets',
-      'Anaphora — "In every" repeated four times',
+      'Anaphora - "In every" repeated four times',
       'A volta',
       'Lack of punctuation',
     ],
@@ -596,7 +596,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Free verse',
-      'Iambic tetrameter — steady marching rhythm',
+      'Iambic tetrameter - steady marching rhythm',
       'Iambic pentameter',
       'Anapaestic',
     ],
@@ -617,7 +617,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The poem begins with a baby's cry and ends with a new-born infant's tear — suffering passes from generation to generation.",
+      "The poem begins with a baby's cry and ends with a new-born infant's tear - suffering passes from generation to generation.",
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -633,7 +633,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem attacks every level of institutional power — commercial, religious, royal — and shows how they destroy innocence and freedom.',
+      'The poem attacks every level of institutional power - commercial, religious, royal - and shows how they destroy innocence and freedom.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -645,9 +645,9 @@ const REVISION_TOPICS = [
     summary:
       'London explores corruption of power, suffering of ordinary people, and loss of innocence in an industrialised city.',
     keyPoints: [
-      'Power corrupts — Church, monarchy, and commercial interests cause suffering',
+      'Power corrupts - Church, monarchy, and commercial interests cause suffering',
       'Oppression is both external and internal ("mind-forg\'d manacles")',
-      'Innocence destroyed — children suffer from birth',
+      'Innocence destroyed - children suffer from birth',
       'Cyclical suffering repeats across generations',
     ],
   },
@@ -656,19 +656,19 @@ const REVISION_TOPICS = [
     summary:
       'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create unrelenting suffering.',
     keyPoints: [
-      '"Mind-forg\'d manacles" — psychological chains',
-      '"Marriage hearse" — oxymoron fusing love with death',
-      '"Runs in blood down Palace walls" — monarchy blamed',
+      '"Mind-forg\'d manacles" - psychological chains',
+      '"Marriage hearse" - oxymoron fusing love with death',
+      '"Runs in blood down Palace walls" - monarchy blamed',
       'Semantic field of suffering throughout',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      "Four quatrains in ABAB rhyme with iambic tetrameter — rigid structure mirrors charter'd restrictions.",
+      "Four quatrains in ABAB rhyme with iambic tetrameter - rigid structure mirrors charter'd restrictions.",
     keyPoints: [
-      'Regular ABAB rhyme — form as constrained as the city',
-      'Anaphora in stanza 2 — overwhelming cumulative effect',
+      'Regular ABAB rhyme - form as constrained as the city',
+      'Anaphora in stanza 2 - overwhelming cumulative effect',
       '"But most" signals volta to darkest imagery',
       'First-person narrator as eyewitness',
     ],
@@ -685,7 +685,7 @@ export default function LondonEdexcelPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="London by William Blake — Analysis & Annotations"
+        name="London by William Blake - Analysis & Annotations"
         description="Line-by-line analysis of London with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

@@ -60,11 +60,11 @@ function gradeFromScore(score: number): string {
 function trajectoryLabel(trajectory: StudentAnalytics['trajectory']): string {
   switch (trajectory) {
     case 'improving':
-      return 'Improving — on an upward trend'
+      return 'Improving - on an upward trend'
     case 'stable':
-      return 'Stable — maintaining consistent performance'
+      return 'Stable - maintaining consistent performance'
     case 'declining':
-      return 'Declining — needs targeted intervention'
+      return 'Declining - needs targeted intervention'
   }
 }
 
@@ -93,7 +93,8 @@ function makeHeader(
     reportTitle: overrides.reportTitle,
     generatedDate: formatDate(new Date()),
     teacherName: overrides.teacherName ?? '',
-    academicYear: overrides.academicYear ?? `${new Date().getFullYear() - 1}/${new Date().getFullYear()}`,
+    academicYear:
+      overrides.academicYear ?? `${new Date().getFullYear() - 1}/${new Date().getFullYear()}`,
     className: overrides.className,
     studentName: overrides.studentName,
     dateRange: overrides.dateRange,
@@ -114,7 +115,7 @@ export function generateClassReport(
   const improvingStudents = students.filter((s) => s.trajectory === 'improving')
 
   const header = makeHeader({
-    reportTitle: `Class Overview Report — ${classAnalytics.class_name}`,
+    reportTitle: `Class Overview Report - ${classAnalytics.class_name}`,
     schoolName: options?.schoolName,
     teacherName: options?.teacherName,
     className: classAnalytics.class_name,
@@ -128,12 +129,36 @@ export function generateClassReport(
       content: [],
       rows: [
         { label: 'Total Students', value: classAnalytics.student_count, highlight: 'neutral' },
-        { label: 'Class Average Score', value: formatPercentageWithGrade(classAnalytics.avg_score), highlight: highlightFromScore(classAnalytics.avg_score) },
-        { label: 'Median Score', value: formatPercentageWithGrade(classAnalytics.median_score), highlight: highlightFromScore(classAnalytics.median_score) },
-        { label: 'Completion Rate', value: `${classAnalytics.completion_rate.toFixed(1)}%`, highlight: highlightFromScore(classAnalytics.completion_rate) },
-        { label: 'Avg. Time Spent', value: `${classAnalytics.avg_time_spent_minutes} mins`, highlight: 'neutral' },
-        { label: 'Certificates Earned', value: classAnalytics.certificates_count, highlight: 'neutral' },
-        { label: 'Students at Risk', value: classAnalytics.students_at_risk, highlight: classAnalytics.students_at_risk > 0 ? 'critical' : 'good' },
+        {
+          label: 'Class Average Score',
+          value: formatPercentageWithGrade(classAnalytics.avg_score),
+          highlight: highlightFromScore(classAnalytics.avg_score),
+        },
+        {
+          label: 'Median Score',
+          value: formatPercentageWithGrade(classAnalytics.median_score),
+          highlight: highlightFromScore(classAnalytics.median_score),
+        },
+        {
+          label: 'Completion Rate',
+          value: `${classAnalytics.completion_rate.toFixed(1)}%`,
+          highlight: highlightFromScore(classAnalytics.completion_rate),
+        },
+        {
+          label: 'Avg. Time Spent',
+          value: `${classAnalytics.avg_time_spent_minutes} mins`,
+          highlight: 'neutral',
+        },
+        {
+          label: 'Certificates Earned',
+          value: classAnalytics.certificates_count,
+          highlight: 'neutral',
+        },
+        {
+          label: 'Students at Risk',
+          value: classAnalytics.students_at_risk,
+          highlight: classAnalytics.students_at_risk > 0 ? 'critical' : 'good',
+        },
       ],
     },
 
@@ -154,50 +179,56 @@ export function generateClassReport(
     {
       title: 'Top Performers',
       type: 'detail',
-      content: topStudents.length > 0
-        ? topStudents.slice(0, 5).map(
-            (s) =>
-              `${s.student_name} — ${s.avg_quiz_score.toFixed(1)}% avg. score, ${s.modules_completed}/${s.total_modules} modules completed`,
-          )
-        : ['No students currently scoring above 70%.'],
+      content:
+        topStudents.length > 0
+          ? topStudents
+              .slice(0, 5)
+              .map(
+                (s) =>
+                  `${s.student_name} - ${s.avg_quiz_score.toFixed(1)}% avg. score, ${s.modules_completed}/${s.total_modules} modules completed`,
+              )
+          : ['No students currently scoring above 70%.'],
     },
 
     // Weak areas
     {
       title: 'Areas Requiring Attention',
       type: 'detail',
-      content: classAnalytics.weak_areas.length > 0
-        ? classAnalytics.weak_areas.map(
-            (wa: WeakArea) =>
-              `${wa.course_name}${wa.module_name ? ` — ${wa.module_name}` : ''}: ${wa.avg_score.toFixed(1)}% avg. (${wa.students_below_threshold} students below threshold) — ${severityLabel(wa.severity)}`,
-          )
-        : ['No significant weak areas identified.'],
+      content:
+        classAnalytics.weak_areas.length > 0
+          ? classAnalytics.weak_areas.map(
+              (wa: WeakArea) =>
+                `${wa.course_name}${wa.module_name ? ` - ${wa.module_name}` : ''}: ${wa.avg_score.toFixed(1)}% avg. (${wa.students_below_threshold} students below threshold) - ${severityLabel(wa.severity)}`,
+            )
+          : ['No significant weak areas identified.'],
     },
 
     // Students at risk
     {
       title: 'Students Requiring Intervention',
       type: 'detail',
-      content: atRiskStudents.length > 0
-        ? atRiskStudents.map(
-            (s) =>
-              `${s.student_name} — ${s.avg_quiz_score.toFixed(1)}% avg., trajectory: declining. Weaknesses: ${s.weaknesses.length > 0 ? s.weaknesses.join(', ') : 'N/A'}`,
-          )
-        : ['No students currently flagged as at risk.'],
+      content:
+        atRiskStudents.length > 0
+          ? atRiskStudents.map(
+              (s) =>
+                `${s.student_name} - ${s.avg_quiz_score.toFixed(1)}% avg., trajectory: declining. Weaknesses: ${s.weaknesses.length > 0 ? s.weaknesses.join(', ') : 'N/A'}`,
+            )
+          : ['No students currently flagged as at risk.'],
     },
 
     // Recommendations
     {
       title: 'Recommendations',
       type: 'recommendation',
-      content: classAnalytics.recommendations.length > 0
-        ? classAnalytics.recommendations
-            .sort((a: Recommendation, b: Recommendation) => a.priority - b.priority)
-            .map(
-              (r: Recommendation) =>
-                `[Priority ${r.priority}] ${r.title}: ${r.description} — Affects ${r.affected_students} student(s). Suggested action: ${r.suggested_action}`,
-            )
-        : ['Continue monitoring student progress and maintain current teaching strategies.'],
+      content:
+        classAnalytics.recommendations.length > 0
+          ? classAnalytics.recommendations
+              .sort((a: Recommendation, b: Recommendation) => a.priority - b.priority)
+              .map(
+                (r: Recommendation) =>
+                  `[Priority ${r.priority}] ${r.title}: ${r.description} - Affects ${r.affected_students} student(s). Suggested action: ${r.suggested_action}`,
+              )
+          : ['Continue monitoring student progress and maintain current teaching strategies.'],
     },
 
     // Next steps
@@ -229,7 +260,7 @@ export function generateStudentReport(
   options?: { schoolName?: string; teacherName?: string; className?: string },
 ): ReportData {
   const header = makeHeader({
-    reportTitle: `Individual Student Report — ${student.student_name}`,
+    reportTitle: `Individual Student Report - ${student.student_name}`,
     schoolName: options?.schoolName,
     teacherName: options?.teacherName,
     className: options?.className,
@@ -245,10 +276,27 @@ export function generateStudentReport(
         { label: 'Student Name', value: student.student_name, highlight: 'neutral' },
         { label: 'Year Group', value: student.year_group ?? 'Not set', highlight: 'neutral' },
         { label: 'Exam Board', value: student.exam_board ?? 'Not set', highlight: 'neutral' },
-        { label: 'Average Quiz Score', value: `${student.avg_quiz_score.toFixed(1)}%`, highlight: highlightFromScore(student.avg_quiz_score) },
-        { label: 'Current Grade (estimated)', value: gradeFromScore(student.avg_quiz_score), highlight: highlightFromScore(student.avg_quiz_score) },
+        {
+          label: 'Average Quiz Score',
+          value: `${student.avg_quiz_score.toFixed(1)}%`,
+          highlight: highlightFromScore(student.avg_quiz_score),
+        },
+        {
+          label: 'Current Grade (estimated)',
+          value: gradeFromScore(student.avg_quiz_score),
+          highlight: highlightFromScore(student.avg_quiz_score),
+        },
         { label: 'Predicted Grade', value: student.predicted_grade ?? 'N/A', highlight: 'neutral' },
-        { label: 'Trajectory', value: trajectoryLabel(student.trajectory), highlight: student.trajectory === 'improving' ? 'good' : student.trajectory === 'declining' ? 'critical' : 'neutral' },
+        {
+          label: 'Trajectory',
+          value: trajectoryLabel(student.trajectory),
+          highlight:
+            student.trajectory === 'improving'
+              ? 'good'
+              : student.trajectory === 'declining'
+                ? 'critical'
+                : 'neutral',
+        },
       ],
     },
     {
@@ -256,28 +304,61 @@ export function generateStudentReport(
       type: 'table' as const,
       content: [],
       rows: [
-        { label: 'Modules Completed', value: `${student.modules_completed} / ${student.total_modules}`, highlight: 'neutral' },
-        { label: 'Completion Rate', value: `${student.completion_rate.toFixed(1)}%`, highlight: highlightFromScore(student.completion_rate) },
-        { label: 'Total Study Time', value: formatDuration(student.total_time_spent_seconds), highlight: 'neutral' },
-        { label: 'Practice Sessions', value: student.practice_sessions_count, highlight: 'neutral' },
-        { label: 'Avg. Practice Rating', value: `${student.avg_practice_rating.toFixed(1)} / 5`, highlight: student.avg_practice_rating >= 3.5 ? 'good' : student.avg_practice_rating >= 2.5 ? 'warning' : 'critical' },
+        {
+          label: 'Modules Completed',
+          value: `${student.modules_completed} / ${student.total_modules}`,
+          highlight: 'neutral',
+        },
+        {
+          label: 'Completion Rate',
+          value: `${student.completion_rate.toFixed(1)}%`,
+          highlight: highlightFromScore(student.completion_rate),
+        },
+        {
+          label: 'Total Study Time',
+          value: formatDuration(student.total_time_spent_seconds),
+          highlight: 'neutral',
+        },
+        {
+          label: 'Practice Sessions',
+          value: student.practice_sessions_count,
+          highlight: 'neutral',
+        },
+        {
+          label: 'Avg. Practice Rating',
+          value: `${student.avg_practice_rating.toFixed(1)} / 5`,
+          highlight:
+            student.avg_practice_rating >= 3.5
+              ? 'good'
+              : student.avg_practice_rating >= 2.5
+                ? 'warning'
+                : 'critical',
+        },
         { label: 'Certificates Earned', value: student.certificates_count, highlight: 'neutral' },
-        { label: 'Last Active', value: student.last_active_at ? formatDate(student.last_active_at) : 'Never', highlight: 'neutral' },
+        {
+          label: 'Last Active',
+          value: student.last_active_at ? formatDate(student.last_active_at) : 'Never',
+          highlight: 'neutral',
+        },
       ],
     },
     {
       title: 'Strengths',
       type: 'detail',
-      content: student.strengths.length > 0
-        ? student.strengths.map((s) => s)
-        : ['No specific strengths have been identified yet. Encourage the student to complete more modules.'],
+      content:
+        student.strengths.length > 0
+          ? student.strengths.map((s) => s)
+          : [
+              'No specific strengths have been identified yet. Encourage the student to complete more modules.',
+            ],
     },
     {
       title: 'Areas for Improvement',
       type: 'detail',
-      content: student.weaknesses.length > 0
-        ? student.weaknesses.map((w) => w)
-        : ['No specific weaknesses have been identified. Continue with current study plan.'],
+      content:
+        student.weaknesses.length > 0
+          ? student.weaknesses.map((w) => w)
+          : ['No specific weaknesses have been identified. Continue with current study plan.'],
     },
     {
       title: 'Recommendations',
@@ -309,21 +390,31 @@ function generateStudentRecommendations(student: StudentAnalytics): string[] {
   const recs: string[] = []
 
   if (student.trajectory === 'declining') {
-    recs.push('Immediate intervention recommended. Consider arranging additional support sessions or peer tutoring.')
+    recs.push(
+      'Immediate intervention recommended. Consider arranging additional support sessions or peer tutoring.',
+    )
   }
 
   if (student.avg_quiz_score < 40) {
-    recs.push('Core knowledge gaps may be present. Consider diagnostic assessment to identify foundational issues.')
+    recs.push(
+      'Core knowledge gaps may be present. Consider diagnostic assessment to identify foundational issues.',
+    )
   } else if (student.avg_quiz_score < 60) {
-    recs.push('Targeted revision of weaker areas is recommended. Use the practice question bank to reinforce specific topics.')
+    recs.push(
+      'Targeted revision of weaker areas is recommended. Use the practice question bank to reinforce specific topics.',
+    )
   }
 
   if (student.completion_rate < 30) {
-    recs.push('Very low completion rate. Check for engagement barriers — is the student logging in regularly?')
+    recs.push(
+      'Very low completion rate. Check for engagement barriers - is the student logging in regularly?',
+    )
   }
 
   if (student.practice_sessions_count === 0) {
-    recs.push('The student has not completed any practice sessions. Introduce them to the practice question feature.')
+    recs.push(
+      'The student has not completed any practice sessions. Introduce them to the practice question feature.',
+    )
   }
 
   if (student.weaknesses.length > 0) {
@@ -331,11 +422,15 @@ function generateStudentRecommendations(student: StudentAnalytics): string[] {
   }
 
   if (student.trajectory === 'improving') {
-    recs.push('Positive trajectory. Consider stretch activities or extension tasks to maintain momentum.')
+    recs.push(
+      'Positive trajectory. Consider stretch activities or extension tasks to maintain momentum.',
+    )
   }
 
   if (recs.length === 0) {
-    recs.push('Student is performing well. Continue with current approach and maintain regular check-ins.')
+    recs.push(
+      'Student is performing well. Continue with current approach and maintain regular check-ins.',
+    )
   }
 
   return recs
@@ -364,32 +459,62 @@ export function generateParentReport(
       type: 'table' as const,
       content: [],
       rows: [
-        { label: 'Current Grade', value: currentGrade, highlight: highlightFromScore(student.avg_quiz_score) },
+        {
+          label: 'Current Grade',
+          value: currentGrade,
+          highlight: highlightFromScore(student.avg_quiz_score),
+        },
         { label: 'Target Grade', value: targetGrade, highlight: 'neutral' },
-        { label: 'Overall Score', value: `${student.avg_quiz_score.toFixed(0)}%`, highlight: highlightFromScore(student.avg_quiz_score) },
-        { label: 'Course Completion', value: `${student.completion_rate.toFixed(0)}%`, highlight: highlightFromScore(student.completion_rate) },
-        { label: 'Direction of Travel', value: student.trajectory === 'improving' ? 'Improving' : student.trajectory === 'stable' ? 'Stable' : 'Needs support', highlight: student.trajectory === 'improving' ? 'good' : student.trajectory === 'declining' ? 'critical' : 'neutral' },
+        {
+          label: 'Overall Score',
+          value: `${student.avg_quiz_score.toFixed(0)}%`,
+          highlight: highlightFromScore(student.avg_quiz_score),
+        },
+        {
+          label: 'Course Completion',
+          value: `${student.completion_rate.toFixed(0)}%`,
+          highlight: highlightFromScore(student.completion_rate),
+        },
+        {
+          label: 'Direction of Travel',
+          value:
+            student.trajectory === 'improving'
+              ? 'Improving'
+              : student.trajectory === 'stable'
+                ? 'Stable'
+                : 'Needs support',
+          highlight:
+            student.trajectory === 'improving'
+              ? 'good'
+              : student.trajectory === 'declining'
+                ? 'critical'
+                : 'neutral',
+        },
       ],
     },
     {
       title: 'What Your Child Is Doing Well',
       type: 'detail',
-      content: student.strengths.length > 0
-        ? [
-            `${student.student_name} has shown particular strength in the following areas:`,
-            ...student.strengths.map((s) => `- ${s}`),
-          ]
-        : [`${student.student_name} is building their skills across all areas. We look forward to identifying specific strengths as they progress further through the course.`],
+      content:
+        student.strengths.length > 0
+          ? [
+              `${student.student_name} has shown particular strength in the following areas:`,
+              ...student.strengths.map((s) => `- ${s}`),
+            ]
+          : [
+              `${student.student_name} is building their skills across all areas. We look forward to identifying specific strengths as they progress further through the course.`,
+            ],
     },
     {
       title: 'Areas to Improve',
       type: 'detail',
-      content: student.weaknesses.length > 0
-        ? [
-            `We have identified the following areas where ${student.student_name} would benefit from additional practice:`,
-            ...student.weaknesses.map((w) => `- ${w}`),
-          ]
-        : ['No significant areas of concern at this stage.'],
+      content:
+        student.weaknesses.length > 0
+          ? [
+              `We have identified the following areas where ${student.student_name} would benefit from additional practice:`,
+              ...student.weaknesses.map((w) => `- ${w}`),
+            ]
+          : ['No significant areas of concern at this stage.'],
     },
     {
       title: 'How You Can Help at Home',
@@ -398,14 +523,14 @@ export function generateParentReport(
         'Encourage regular, short study sessions (20-30 minutes) rather than infrequent long sessions.',
         student.practice_sessions_count < 5
           ? 'Your child would benefit from completing more practice questions on the platform.'
-          : 'Your child is making good use of the practice question feature — please encourage them to continue.',
+          : 'Your child is making good use of the practice question feature - please encourage them to continue.',
         student.completion_rate < 50
           ? `There are ${student.total_modules - student.modules_completed} modules still to complete. Gentle encouragement to work through these would be very helpful.`
           : 'Course completion is progressing well.',
-        'Reading widely — fiction and non-fiction — remains one of the best ways to support English language development.',
+        'Reading widely - fiction and non-fiction - remains one of the best ways to support English language development.',
         student.trajectory === 'declining'
           ? 'We have noticed a recent dip in performance. Please do get in touch if there are any factors at home that may be affecting their studies.'
-          : 'Please do not hesitate to contact us if you have any questions about your child\'s progress.',
+          : "Please do not hesitate to contact us if you have any questions about your child's progress.",
       ],
     },
     {
@@ -432,7 +557,7 @@ export function generateHoDReport(
   options?: { teacherName?: string },
 ): ReportData {
   const header = makeHeader({
-    reportTitle: `Head of Department Report — ${schoolOverview.school.name}`,
+    reportTitle: `Head of Department Report - ${schoolOverview.school.name}`,
     schoolName: schoolOverview.school.name,
     teacherName: options?.teacherName,
   })
@@ -451,10 +576,26 @@ export function generateHoDReport(
         { label: 'Total Students', value: schoolOverview.total_students, highlight: 'neutral' },
         { label: 'Total Teachers', value: schoolOverview.total_teachers, highlight: 'neutral' },
         { label: 'Total Classes', value: schoolOverview.total_classes, highlight: 'neutral' },
-        { label: 'Active Students (this week)', value: schoolOverview.active_students_this_week, highlight: 'neutral' },
-        { label: 'Department Average Score', value: `${schoolOverview.avg_score_all.toFixed(1)}%`, highlight: highlightFromScore(schoolOverview.avg_score_all) },
-        { label: 'Department Completion Rate', value: `${schoolOverview.completion_rate_all.toFixed(1)}%`, highlight: highlightFromScore(schoolOverview.completion_rate_all) },
-        { label: 'Total Students at Risk', value: totalAtRisk, highlight: totalAtRisk > 0 ? 'critical' : 'good' },
+        {
+          label: 'Active Students (this week)',
+          value: schoolOverview.active_students_this_week,
+          highlight: 'neutral',
+        },
+        {
+          label: 'Department Average Score',
+          value: `${schoolOverview.avg_score_all.toFixed(1)}%`,
+          highlight: highlightFromScore(schoolOverview.avg_score_all),
+        },
+        {
+          label: 'Department Completion Rate',
+          value: `${schoolOverview.completion_rate_all.toFixed(1)}%`,
+          highlight: highlightFromScore(schoolOverview.completion_rate_all),
+        },
+        {
+          label: 'Total Students at Risk',
+          value: totalAtRisk,
+          highlight: totalAtRisk > 0 ? 'critical' : 'good',
+        },
       ],
     },
     {
@@ -468,37 +609,40 @@ export function generateHoDReport(
     {
       title: 'Critical Areas Across Department',
       type: 'detail',
-      content: criticalAreas.length > 0
-        ? criticalAreas.map(
-            (wa) =>
-              `${wa.course_name}${wa.module_name ? ` — ${wa.module_name}` : ''}: ${wa.avg_score.toFixed(1)}% avg., ${wa.students_below_threshold} students below threshold`,
-          )
-        : ['No critical areas identified across the department.'],
+      content:
+        criticalAreas.length > 0
+          ? criticalAreas.map(
+              (wa) =>
+                `${wa.course_name}${wa.module_name ? ` - ${wa.module_name}` : ''}: ${wa.avg_score.toFixed(1)}% avg., ${wa.students_below_threshold} students below threshold`,
+            )
+          : ['No critical areas identified across the department.'],
     },
     {
       title: 'Trends',
       type: 'detail',
-      content: schoolOverview.trends.length > 0
-        ? [
-            `Data points available from ${formatDate(schoolOverview.trends[0].date)} to ${formatDate(schoolOverview.trends[schoolOverview.trends.length - 1].date)}.`,
-            `Latest average score: ${schoolOverview.trends[schoolOverview.trends.length - 1].avg_score.toFixed(1)}%`,
-            `Latest active students: ${schoolOverview.trends[schoolOverview.trends.length - 1].active_students}`,
-            `Latest modules completed: ${schoolOverview.trends[schoolOverview.trends.length - 1].modules_completed}`,
-          ]
-        : ['No trend data available yet.'],
+      content:
+        schoolOverview.trends.length > 0
+          ? [
+              `Data points available from ${formatDate(schoolOverview.trends[0].date)} to ${formatDate(schoolOverview.trends[schoolOverview.trends.length - 1].date)}.`,
+              `Latest average score: ${schoolOverview.trends[schoolOverview.trends.length - 1].avg_score.toFixed(1)}%`,
+              `Latest active students: ${schoolOverview.trends[schoolOverview.trends.length - 1].active_students}`,
+              `Latest modules completed: ${schoolOverview.trends[schoolOverview.trends.length - 1].modules_completed}`,
+            ]
+          : ['No trend data available yet.'],
     },
     {
       title: 'Key Recommendations',
       type: 'recommendation',
-      content: allRecommendations.length > 0
-        ? allRecommendations
-            .sort((a, b) => a.priority - b.priority)
-            .slice(0, 10)
-            .map(
-              (r) =>
-                `[P${r.priority}] ${r.title}: ${r.description} (${r.affected_students} students affected)`,
-            )
-        : ['No urgent recommendations. Continue monitoring department performance.'],
+      content:
+        allRecommendations.length > 0
+          ? allRecommendations
+              .sort((a, b) => a.priority - b.priority)
+              .slice(0, 10)
+              .map(
+                (r) =>
+                  `[P${r.priority}] ${r.title}: ${r.description} (${r.affected_students} students affected)`,
+              )
+          : ['No urgent recommendations. Continue monitoring department performance.'],
     },
     {
       title: 'Next Steps',
@@ -527,7 +671,7 @@ export function generateProgressReport(
   options?: { schoolName?: string; teacherName?: string; className?: string },
 ): ReportData {
   const header = makeHeader({
-    reportTitle: `Progress Report — ${student.student_name}`,
+    reportTitle: `Progress Report - ${student.student_name}`,
     schoolName: options?.schoolName,
     teacherName: options?.teacherName,
     className: options?.className,
@@ -551,10 +695,27 @@ export function generateProgressReport(
       type: 'table' as const,
       content: [],
       rows: [
-        { label: 'Average Score', value: `${student.avg_quiz_score.toFixed(1)}%`, highlight: highlightFromScore(student.avg_quiz_score) },
-        { label: 'Estimated Grade', value: gradeFromScore(student.avg_quiz_score), highlight: highlightFromScore(student.avg_quiz_score) },
+        {
+          label: 'Average Score',
+          value: `${student.avg_quiz_score.toFixed(1)}%`,
+          highlight: highlightFromScore(student.avg_quiz_score),
+        },
+        {
+          label: 'Estimated Grade',
+          value: gradeFromScore(student.avg_quiz_score),
+          highlight: highlightFromScore(student.avg_quiz_score),
+        },
         { label: 'Predicted Grade', value: student.predicted_grade ?? 'N/A', highlight: 'neutral' },
-        { label: 'Trajectory', value: trajectoryLabel(student.trajectory), highlight: student.trajectory === 'improving' ? 'good' : student.trajectory === 'declining' ? 'critical' : 'neutral' },
+        {
+          label: 'Trajectory',
+          value: trajectoryLabel(student.trajectory),
+          highlight:
+            student.trajectory === 'improving'
+              ? 'good'
+              : student.trajectory === 'declining'
+                ? 'critical'
+                : 'neutral',
+        },
       ],
     },
     {
@@ -562,27 +723,49 @@ export function generateProgressReport(
       type: 'table' as const,
       content: [],
       rows: [
-        { label: 'Modules Completed', value: `${student.modules_completed} / ${student.total_modules}`, highlight: 'neutral' },
-        { label: 'Completion Rate', value: `${student.completion_rate.toFixed(1)}%`, highlight: highlightFromScore(student.completion_rate) },
-        { label: 'Study Time', value: formatDuration(student.total_time_spent_seconds), highlight: 'neutral' },
-        { label: 'Practice Sessions', value: student.practice_sessions_count, highlight: 'neutral' },
+        {
+          label: 'Modules Completed',
+          value: `${student.modules_completed} / ${student.total_modules}`,
+          highlight: 'neutral',
+        },
+        {
+          label: 'Completion Rate',
+          value: `${student.completion_rate.toFixed(1)}%`,
+          highlight: highlightFromScore(student.completion_rate),
+        },
+        {
+          label: 'Study Time',
+          value: formatDuration(student.total_time_spent_seconds),
+          highlight: 'neutral',
+        },
+        {
+          label: 'Practice Sessions',
+          value: student.practice_sessions_count,
+          highlight: 'neutral',
+        },
         { label: 'Certificates', value: student.certificates_count, highlight: 'neutral' },
-        { label: 'Last Active', value: student.last_active_at ? formatDate(student.last_active_at) : 'Never', highlight: 'neutral' },
+        {
+          label: 'Last Active',
+          value: student.last_active_at ? formatDate(student.last_active_at) : 'Never',
+          highlight: 'neutral',
+        },
       ],
     },
     {
       title: 'Strengths Demonstrated',
       type: 'detail',
-      content: student.strengths.length > 0
-        ? student.strengths
-        : ['Strengths will be identified as the student progresses further.'],
+      content:
+        student.strengths.length > 0
+          ? student.strengths
+          : ['Strengths will be identified as the student progresses further.'],
     },
     {
       title: 'Areas for Development',
       type: 'detail',
-      content: student.weaknesses.length > 0
-        ? student.weaknesses
-        : ['No significant development areas identified during this period.'],
+      content:
+        student.weaknesses.length > 0
+          ? student.weaknesses
+          : ['No significant development areas identified during this period.'],
     },
     {
       title: 'Recommendations',
@@ -599,7 +782,7 @@ export function generateProgressReport(
           : 'Maintain current study habits and aim to improve engagement where possible.',
         student.modules_completed < student.total_modules
           ? `Focus on completing the remaining ${student.total_modules - student.modules_completed} module(s).`
-          : 'All modules completed — focus on revision and exam technique.',
+          : 'All modules completed - focus on revision and exam technique.',
         'Set specific, measurable targets for the next reporting period.',
       ],
     },

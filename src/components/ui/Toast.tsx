@@ -94,7 +94,7 @@ const TYPE_STYLES: Record<ToastType, string> = {
 
 // ─── Single toast component ────────────────────────────────────────────
 
-const EXIT_DURATION = 300 // ms — matches the CSS transition
+const EXIT_DURATION = 300 // ms - matches the CSS transition
 
 function ToastEntry({ item, onDismiss }: { item: ToastItem; onDismiss: (id: number) => void }) {
   const t = useT()
@@ -172,7 +172,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     <ToastContext.Provider value={{ toast }}>
       {children}
 
-      {/* Toast container — bottom-right, stacked upward */}
+      {/* Toast container - bottom-right, stacked upward */}
       <div
         aria-label={t('ui.toast.region_label')}
         className="fixed bottom-4 right-4 z-[9999] flex flex-col-reverse items-end gap-2 pointer-events-none"

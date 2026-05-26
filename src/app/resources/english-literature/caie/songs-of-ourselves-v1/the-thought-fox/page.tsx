@@ -8,10 +8,10 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Thought-Fox — Ted Hughes | Cambridge IGCSE 0475',
+    title: 'The Thought-Fox - Ted Hughes | Cambridge IGCSE 0475',
     description: 'Study guide for ',
   },
-  title: 'The Thought-Fox — Ted Hughes | Cambridge IGCSE 0475',
+  title: 'The Thought-Fox - Ted Hughes | Cambridge IGCSE 0475',
   description:
     "Study guide for 'The Thought-Fox' by Ted Hughes (1957). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster.",
   alternates: {
@@ -24,7 +24,7 @@ export default function TheThoughtFoxPage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
-        name="The Thought-Fox — Ted Hughes (Cambridge IGCSE 0475)"
+        name="The Thought-Fox - Ted Hughes (Cambridge IGCSE 0475)"
         description="Study guide stub for 'The Thought-Fox' by Ted Hughes (1957). Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster."
       />
       <BreadcrumbJsonLd

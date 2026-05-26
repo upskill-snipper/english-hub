@@ -42,7 +42,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
         },
         {
           type: 'Tone',
-          note: '"Finally alone" suggests relief — he is away from the war zones at last, yet isolation also implies emotional distance.',
+          note: '"Finally alone" suggests relief - he is away from the war zones at last, yet isolation also implies emotional distance.',
           color: '#8b5cf6',
         },
       ],
@@ -57,12 +57,12 @@ const WAR_PHOTOGRAPHER: PoemData = {
         },
         {
           type: 'Metaphor',
-          note: '"Spools of suffering" — the film rolls contain images of real human pain; the suffering is literally wound up inside them.',
+          note: '"Spools of suffering" - the film rolls contain images of real human pain; the suffering is literally wound up inside them.',
           color: '#f59e0b',
         },
         {
           type: 'Contrast',
-          note: '"Ordered rows" contrasts with the chaos of war — the photographer imposes order on something inherently disordered.',
+          note: '"Ordered rows" contrasts with the chaos of war - the photographer imposes order on something inherently disordered.',
           color: '#ef4444',
         },
       ],
@@ -72,7 +72,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Symbolism',
-          note: 'Red light suggests danger, blood, and war — the developing room mirrors the battlefield.',
+          note: 'Red light suggests danger, blood, and war - the developing room mirrors the battlefield.',
           color: '#ef4444',
         },
       ],
@@ -92,12 +92,12 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Religious imagery',
-          note: 'The photographer becomes a priest-figure, performing a ritual. "Intone" means to chant — suggesting solemnity and repetition.',
+          note: 'The photographer becomes a priest-figure, performing a ritual. "Intone" means to chant - suggesting solemnity and repetition.',
           color: '#3b82f6',
         },
         {
           type: 'Semantic field',
-          note: 'Part of a sustained semantic field of religion: church, priest, Mass — implying the work has a moral, almost holy duty.',
+          note: 'Part of a sustained semantic field of religion: church, priest, Mass - implying the work has a moral, almost holy duty.',
           color: '#8b5cf6',
         },
       ],
@@ -122,7 +122,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Double meaning',
-          note: '"Solutions" means both the photographic chemicals and, ironically, answers — answers that do not exist for what he has witnessed.',
+          note: '"Solutions" means both the photographic chemicals and, ironically, answers - answers that do not exist for what he has witnessed.',
           color: '#3b82f6',
         },
       ],
@@ -148,7 +148,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Contrast',
-          note: 'English fields vs. minefields — the mundane safety of home is juxtaposed against the lethal reality of conflict zones.',
+          note: 'English fields vs. minefields - the mundane safety of home is juxtaposed against the lethal reality of conflict zones.',
           color: '#ef4444',
         },
       ],
@@ -178,7 +178,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Verb choice',
-          note: '"Twist" suggests pain and distortion — the image forming on the paper echoes the suffering of the subject.',
+          note: '"Twist" suggests pain and distortion - the image forming on the paper echoes the suffering of the subject.',
           color: '#f59e0b',
         },
       ],
@@ -188,7 +188,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Metaphor',
-          note: '"Half-formed ghost" — the developing image is spectral, suggesting the subject may already be dead. The photograph is a haunting.',
+          note: '"Half-formed ghost" - the developing image is spectral, suggesting the subject may already be dead. The photograph is a haunting.',
           color: '#f59e0b',
         },
         {
@@ -216,7 +216,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
         },
         {
           type: 'Moral duty',
-          note: '"Someone must" — a sense of obligation and moral responsibility; if not him, then who will document this suffering?',
+          note: '"Someone must" - a sense of obligation and moral responsibility; if not him, then who will document this suffering?',
           color: '#3b82f6',
         },
       ],
@@ -226,7 +226,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: '"Blood stained into foreign dust" — a visceral, permanent image. The blood becomes part of the landscape, absorbed and forgotten by the wider world.',
+          note: '"Blood stained into foreign dust" - a visceral, permanent image. The blood becomes part of the landscape, absorbed and forgotten by the wider world.',
           color: '#ef4444',
         },
       ],
@@ -236,7 +236,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Hyperbole / Metonymy',
-          note: '"A hundred agonies" reduces immense human suffering to a number. "Black-and-white" refers to newspaper photographs — stripping colour strips away humanity.',
+          note: '"A hundred agonies" reduces immense human suffering to a number. "Black-and-white" refers to newspaper photographs - stripping colour strips away humanity.',
           color: '#f59e0b',
         },
       ],
@@ -246,7 +246,7 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Contrast / Criticism',
-          note: 'Of a hundred images of suffering, only five or six will be published — Duffy criticises how the media reduces and filters human pain.',
+          note: 'Of a hundred images of suffering, only five or six will be published - Duffy criticises how the media reduces and filters human pain.',
           color: '#ef4444',
         },
       ],
@@ -256,12 +256,12 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Contrast',
-          note: '"Sunday\'s supplement" is casual, leisurely reading — trivialising the suffering depicted. The alliterative "reader\'s" and "prick" is dismissive.',
+          note: '"Sunday\'s supplement" is casual, leisurely reading - trivialising the suffering depicted. The alliterative "reader\'s" and "prick" is dismissive.',
           color: '#ef4444',
         },
         {
           type: 'Verb choice',
-          note: '"Prick" suggests only a momentary, superficial emotional response — tears that barely form before they are forgotten.',
+          note: '"Prick" suggests only a momentary, superficial emotional response - tears that barely form before they are forgotten.',
           color: '#f59e0b',
         },
       ],
@@ -289,68 +289,68 @@ const WAR_PHOTOGRAPHER: PoemData = {
       annotations: [
         {
           type: 'Final couplet',
-          note: 'The closing rhyme ("where" / "care") delivers a blunt, bitter conclusion. "They" is ambiguous — it could mean the public, the editors, or both.',
+          note: 'The closing rhyme ("where" / "care") delivers a blunt, bitter conclusion. "They" is ambiguous - it could mean the public, the editors, or both.',
           color: '#f59e0b',
         },
         {
           type: 'Tone',
-          note: '"Do not care" is stark and accusatory — Duffy indicts society for its apathy towards the suffering the photographer documents.',
+          note: '"Do not care" is stark and accusatory - Duffy indicts society for its apathy towards the suffering the photographer documents.',
           color: '#8b5cf6',
         },
       ],
     },
-    // VERIFY: stanza ordering in this file was scrambled — 'Solutions slop in trays beneath his hands, / which did not tremble then though seem to now. / Rural England. Home again' originally appears in STANZA 2, not stanza 4. Lines moved to their correct location. The actual stanza 4 ends after 'where / he earns his living and they do not care.'
+    // VERIFY: stanza ordering in this file was scrambled - 'Solutions slop in trays beneath his hands, / which did not tremble then though seem to now. / Rural England. Home again' originally appears in STANZA 2, not stanza 4. Lines moved to their correct location. The actual stanza 4 ends after 'where / he earns his living and they do not care.'
   ],
 
   context: `<p><strong>Carol Ann Duffy</strong> (born 1955) served as the UK Poet Laureate from 2009 to 2019. She is known for giving voice to those on the margins and for exploring how language shapes power and identity.</p>
 <p><strong>War Photographer</strong> was inspired by Duffy's friendship with war photographers, particularly <strong>Don McCullin</strong>, who documented conflicts in Vietnam, Biafra, and Northern Ireland. McCullin spoke about the moral dilemma of photographing suffering without being able to help.</p>
 <p>The poem explores the <strong>tension between documenting suffering and the public's indifference</strong> to it. The photographer feels a moral duty to bear witness, yet knows his images will be consumed casually alongside Sunday supplements and quickly forgotten.</p>
 <p>Duffy raises questions about <strong>voyeurism and guilt</strong>: are we complicit in suffering when we look at images of war without taking action? The poem criticises the comfortable distance between <strong>Rural England</strong> and the war zones from which the photographs come.</p>
-<p>Written in the context of late twentieth-century media culture, the poem remains powerfully relevant in the age of social media, where images of conflict are even more ubiquitous — and even more quickly scrolled past.</p>`,
+<p>Written in the context of late twentieth-century media culture, the poem remains powerfully relevant in the age of social media, where images of conflict are even more ubiquitous - and even more quickly scrolled past.</p>`,
 
   contextAr: `<p><strong>Carol Ann Duffy</strong> (مواليد 1955) شغلت منصب Poet Laureate في المملكة المتحدة من 2009 إلى 2019. معروفة إنها تعطي صوت لأهل الهامش، وتستكشف كيف اللغة تشكّل السلطة والهوية.</p>
 <p>قصيدة <strong>"War Photographer"</strong> استلهمتها Duffy من صداقتها مع مصوّرين حربيين، خصوصاً <strong>Don McCullin</strong>، اللي وثّق الصراعات في Vietnam وBiafra وأيرلندا الشمالية. McCullin تكلّم عن المعضلة الأخلاقية في تصوير المعاناة وهو ما يقدر يقدّم أي مساعدة.</p>
 <p>القصيدة تستكشف <strong>التوتّر بين توثيق المعاناة ولا مبالاة الجمهور</strong> تجاهها. المصوّر يحسّ بواجب أخلاقي إنه يشهد على اللي يصير، بس يدري إن صوره راح تُستهلك بشكل عابر مع ملاحق يوم الأحد وتُنسى بسرعة.</p>
 <p>Duffy تطرح أسئلة عن <strong>التلصّص والذنب</strong>: هل إحنا شركاء في المعاناة لمّا نشوف صور الحرب وما ناخذ أي موقف؟ القصيدة تنتقد المسافة المريحة بين <strong>Rural England</strong> ومناطق الحرب اللي تجي منها الصور.</p>
-<p>كُتبت القصيدة في سياق ثقافة الإعلام في أواخر القرن العشرين، بس تظلّ ذات صلة قوية في زمن الـsocial media، حيث صور الصراع صارت أكثر انتشار — وأسرع في إنها تُتجاوز بحركة scroll.</p>`,
+<p>كُتبت القصيدة في سياق ثقافة الإعلام في أواخر القرن العشرين، بس تظلّ ذات صلة قوية في زمن الـsocial media، حيث صور الصراع صارت أكثر انتشار - وأسرع في إنها تُتجاوز بحركة scroll.</p>`,
 
   summary: `The poem follows a war photographer as he develops his film in his darkroom after returning to England from a conflict zone. The opening stanza establishes a reverential, church-like atmosphere as he processes the "spools of suffering."
 
-In stanza two, the contrast between safe English fields and deadly minefields abroad is drawn sharply. As a photograph develops, a face emerges — a "half-formed ghost" — triggering memories of the man's wife and the sounds of grief.
+In stanza two, the contrast between safe English fields and deadly minefields abroad is drawn sharply. As a photograph develops, a face emerges - a "half-formed ghost" - triggering memories of the man's wife and the sounds of grief.
 
 Stanza three reveals the editorial process: a hundred photographs of agony will be reduced to five or six for a newspaper supplement. Readers will feel a brief prick of emotion before returning to their comfortable lives.
 
-The final stanza completes the cycle. The photographer boards a plane, heading back to another war zone, staring down "impassively" at the country whose people "do not care." The poem ends with bitter resignation — his work is a loop of witnessing, recording, and being ignored.`,
+The final stanza completes the cycle. The photographer boards a plane, heading back to another war zone, staring down "impassively" at the country whose people "do not care." The poem ends with bitter resignation - his work is a loop of witnessing, recording, and being ignored.`,
 
   summaryAr: `القصيدة تتابع مصوّر حربي وهو يحمّض أفلامه في غرفته المظلمة (darkroom) بعد ما رجع لإنجلترا من منطقة صراع. المقطع الافتتاحي يثبّت جو مقدّس يشبه جو الكنيسة، وهو يعالج "spools of suffering".
 
-في المقطع الثاني، التضاد بين حقول إنجلترا الآمنة وحقول الألغام القاتلة في الخارج يصير حاد وواضح. وبينما تظهر صورة، يبان وجه — "half-formed ghost" — وهالشي يفجّر ذكريات زوجة الرجل وأصوات الحزن.
+في المقطع الثاني، التضاد بين حقول إنجلترا الآمنة وحقول الألغام القاتلة في الخارج يصير حاد وواضح. وبينما تظهر صورة، يبان وجه - "half-formed ghost" - وهالشي يفجّر ذكريات زوجة الرجل وأصوات الحزن.
 
 المقطع الثالث يكشف العملية التحريرية: من مئة صورة معاناة، راح يطلع منها خمس أو ست بس لملحق الصحيفة. القرّاء راح يحسّون بنخزة عاطفية بسيطة قبل ما يرجعون لحياتهم المريحة.
 
-المقطع الأخير يكمّل الدائرة. المصوّر يصعد الطائرة، راجع لمنطقة حرب ثانية، ينظر للأسفل "impassively" على البلد اللي شعبه "do not care". القصيدة تنتهي بتسليم مرير — شغله حلقة متواصلة من الشهادة والتسجيل والتجاهل.`,
+المقطع الأخير يكمّل الدائرة. المصوّر يصعد الطائرة، راجع لمنطقة حرب ثانية، ينظر للأسفل "impassively" على البلد اللي شعبه "do not care". القصيدة تنتهي بتسليم مرير - شغله حلقة متواصلة من الشهادة والتسجيل والتجاهل.`,
 
-  formAndStructure: `FORM: Four regular sestets (six-line stanzas). The regularity of the form mirrors the photographer's attempt to impose order on the chaos of war — just as he arranges his "spools of suffering" in "ordered rows."
+  formAndStructure: `FORM: Four regular sestets (six-line stanzas). The regularity of the form mirrors the photographer's attempt to impose order on the chaos of war - just as he arranges his "spools of suffering" in "ordered rows."
 
-RHYME SCHEME: Roughly ABBCDD with some half-rhymes (e.g. "rows"/"glows", "cries"/"eyes"). The near-rhymes suggest things are not quite right — an undercurrent of unease beneath the surface control.
+RHYME SCHEME: Roughly ABBCDD with some half-rhymes (e.g. "rows"/"glows", "cries"/"eyes"). The near-rhymes suggest things are not quite right - an undercurrent of unease beneath the surface control.
 
-METRE: The poem uses a loose iambic pentameter, giving it a measured, controlled rhythm that reflects the photographer's professional composure — even as the content is deeply emotional.
+METRE: The poem uses a loose iambic pentameter, giving it a measured, controlled rhythm that reflects the photographer's professional composure - even as the content is deeply emotional.
 
 TENSE: The poem moves between present tense (the darkroom) and past tense (memories of the war zone), blurring the boundary between the two worlds the photographer inhabits.
 
-ENJAMBMENT: Used throughout to create a flowing, continuous movement — mirroring the developing process and the photographer's stream of consciousness.
+ENJAMBMENT: Used throughout to create a flowing, continuous movement - mirroring the developing process and the photographer's stream of consciousness.
 
 CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the final stanza, creating a sense of entrapment. The photographer is caught in a never-ending cycle of travel, witness, develop, and be ignored.`,
 
-  formAndStructureAr: `الشكل (FORM): أربع sestets منتظمة (مقاطع من ستة أبيات). انتظام الشكل يعكس محاولة المصوّر إنه يفرض نظام على فوضى الحرب — تماماً مثل ما يرتّب "spools of suffering" في "ordered rows".
+  formAndStructureAr: `الشكل (FORM): أربع sestets منتظمة (مقاطع من ستة أبيات). انتظام الشكل يعكس محاولة المصوّر إنه يفرض نظام على فوضى الحرب - تماماً مثل ما يرتّب "spools of suffering" في "ordered rows".
 
-نظام القافية (RHYME SCHEME): تقريباً ABBCDD مع بعض half-rhymes (مثل "rows"/"glows" و"cries"/"eyes"). القوافي اللي تكاد تتطابق بس ما تتطابق توحي إن في شي مو على ما يرام — تيار قلق خفي تحت السيطرة الظاهرية.
+نظام القافية (RHYME SCHEME): تقريباً ABBCDD مع بعض half-rhymes (مثل "rows"/"glows" و"cries"/"eyes"). القوافي اللي تكاد تتطابق بس ما تتطابق توحي إن في شي مو على ما يرام - تيار قلق خفي تحت السيطرة الظاهرية.
 
-الوزن (METRE): القصيدة تستخدم iambic pentameter مرن، يعطيها إيقاع مدروس ومنضبط يعكس رباطة جأش المصوّر المهنية — رغم إن المحتوى عاطفي جداً.
+الوزن (METRE): القصيدة تستخدم iambic pentameter مرن، يعطيها إيقاع مدروس ومنضبط يعكس رباطة جأش المصوّر المهنية - رغم إن المحتوى عاطفي جداً.
 
 الزمن (TENSE): القصيدة تتنقّل بين زمن المضارع (الـdarkroom) والماضي (ذكريات منطقة الحرب)، وتشوّش الحد الفاصل بين العالمين اللي يعيش بينهم المصوّر.
 
-الـENJAMBMENT: مستخدم عبر القصيدة كلها عشان يخلق حركة انسيابية متواصلة — تعكس عملية التحميض وتيّار الوعي عند المصوّر.
+الـENJAMBMENT: مستخدم عبر القصيدة كلها عشان يخلق حركة انسيابية متواصلة - تعكس عملية التحميض وتيّار الوعي عند المصوّر.
 
 البنية الدائرية (CYCLICAL STRUCTURE): عبارة "Rural England" تطلع في المقطع الأول، ويتردّد صداها في المقطع الأخير، وهالشي يخلق إحساس بالحصار. المصوّر عالق في دورة ما تنتهي من السفر والشهادة والتحميض والتجاهل.`,
 
@@ -358,28 +358,28 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
     {
       quote: 'In his darkroom he is finally alone',
       analysis:
-        'The opening line establishes isolation and relief. "Finally" implies he has been surrounded by chaos and suffering — the darkroom offers solitude but also forces him to confront what he has seen.',
+        'The opening line establishes isolation and relief. "Finally" implies he has been surrounded by chaos and suffering - the darkroom offers solitude but also forces him to confront what he has seen.',
       themes: ['Isolation', 'Guilt and responsibility', 'Reality of conflict'],
       analysisAr:
-        'البيت الافتتاحي يثبّت العزلة والراحة في نفس الوقت. كلمة "Finally" توحي إنه كان محاط بالفوضى والمعاناة — والـdarkroom تعطيه خلوة، بس بنفس الوقت تجبره إنه يواجه اللي شافه.',
+        'البيت الافتتاحي يثبّت العزلة والراحة في نفس الوقت. كلمة "Finally" توحي إنه كان محاط بالفوضى والمعاناة - والـdarkroom تعطيه خلوة، بس بنفس الوقت تجبره إنه يواجه اللي شافه.',
       themesAr: ['العزلة', 'الذنب والمسؤولية', 'واقع الصراع'],
     },
     {
       quote: 'spools of suffering set out in ordered rows',
       analysis:
-        'Sibilance creates a solemn, hushed tone. The metaphor of "spools of suffering" compresses immense human pain into a small, manageable object. "Ordered rows" contrasts with the disorder of war — the photographer imposes structure on chaos.',
+        'Sibilance creates a solemn, hushed tone. The metaphor of "spools of suffering" compresses immense human pain into a small, manageable object. "Ordered rows" contrasts with the disorder of war - the photographer imposes structure on chaos.',
       themes: ['Reality of conflict', 'Power of art', 'Control vs chaos'],
       analysisAr:
-        'الـsibilance تخلق نبرة مهيبة ومكتومة. والاستعارة في "spools of suffering" تختصر ألم بشري هائل في غرض صغير يمكن التحكّم فيه. عبارة "ordered rows" تتناقض مع فوضى الحرب — المصوّر يفرض بنية على الفوضى.',
+        'الـsibilance تخلق نبرة مهيبة ومكتومة. والاستعارة في "spools of suffering" تختصر ألم بشري هائل في غرض صغير يمكن التحكّم فيه. عبارة "ordered rows" تتناقض مع فوضى الحرب - المصوّر يفرض بنية على الفوضى.',
       themesAr: ['واقع الصراع', 'قوة الفن', 'النظام مقابل الفوضى'],
     },
     {
       quote: 'a half-formed ghost',
       analysis:
-        'The developing photograph is compared to a ghost — spectral, haunting, and suggesting death. "Half-formed" implies the subject is between life and death, between visibility and invisibility, just as the public half-sees and half-ignores these images.',
+        'The developing photograph is compared to a ghost - spectral, haunting, and suggesting death. "Half-formed" implies the subject is between life and death, between visibility and invisibility, just as the public half-sees and half-ignores these images.',
       themes: ['Memory and reflection', 'Reality of conflict', 'Death'],
       analysisAr:
-        'الصورة وهي تتحمّض تُشبّه بشبح — طيفي، يلاحق صاحبه، ويوحي بالموت. عبارة "half-formed" تلمّح إن الشخص في حالة بين الحياة والموت، بين الظهور والاختفاء، تماماً مثل ما الجمهور يشوف هالصور نص شوفة ويتجاهلها نص تجاهلة.',
+        'الصورة وهي تتحمّض تُشبّه بشبح - طيفي، يلاحق صاحبه، ويوحي بالموت. عبارة "half-formed" تلمّح إن الشخص في حالة بين الحياة والموت، بين الظهور والاختفاء، تماماً مثل ما الجمهور يشوف هالصور نص شوفة ويتجاهلها نص تجاهلة.',
       themesAr: ['الذاكرة والتأمّل', 'واقع الصراع', 'الموت'],
     },
     {
@@ -394,10 +394,10 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
     {
       quote: 'A hundred agonies in black-and-white',
       analysis:
-        'Each photograph represents an individual\'s suffering, yet they are reduced to a mass — "a hundred agonies." "Black-and-white" refers to newspaper print but also to the binary simplification of complex human experiences. The media strips away nuance.',
+        'Each photograph represents an individual\'s suffering, yet they are reduced to a mass - "a hundred agonies." "Black-and-white" refers to newspaper print but also to the binary simplification of complex human experiences. The media strips away nuance.',
       themes: ['Media and indifference', 'Suffering and oppression', 'Guilt and responsibility'],
       analysisAr:
-        'كل صورة تمثّل معاناة فرد واحد، بس كلها تتلخّص في كتلة واحدة — "a hundred agonies". عبارة "black-and-white" تشير لطباعة الصحف، وكذلك للتبسيط الثنائي لتجارب إنسانية معقّدة. الإعلام يجرّد المعاناة من تفاصيلها.',
+        'كل صورة تمثّل معاناة فرد واحد، بس كلها تتلخّص في كتلة واحدة - "a hundred agonies". عبارة "black-and-white" تشير لطباعة الصحف، وكذلك للتبسيط الثنائي لتجارب إنسانية معقّدة. الإعلام يجرّد المعاناة من تفاصيلها.',
       themesAr: ['الإعلام واللامبالاة', 'المعاناة والقهر', 'الذنب والمسؤولية'],
     },
     {
@@ -421,10 +421,10 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
     {
       quote: 'he earns his living and they do not care',
       analysis:
-        'The blunt, monosyllabic final clause is devastating in its simplicity. "They" is deliberately ambiguous — it could refer to the public, the editors, or society at large. The photographer is trapped: he profits from suffering, yet his audience is apathetic.',
+        'The blunt, monosyllabic final clause is devastating in its simplicity. "They" is deliberately ambiguous - it could refer to the public, the editors, or society at large. The photographer is trapped: he profits from suffering, yet his audience is apathetic.',
       themes: ['Guilt and responsibility', 'Media and indifference', 'Isolation'],
       analysisAr:
-        'الجملة الختامية الفجّة، أحادية المقطع، مدمّرة في بساطتها. كلمة "they" غامضة بشكل مقصود — يمكن تشير للجمهور، أو للمحرّرين، أو للمجتمع كله. المصوّر عالق: هو يكسب رزقه من المعاناة، بس جمهوره غير مبالي.',
+        'الجملة الختامية الفجّة، أحادية المقطع، مدمّرة في بساطتها. كلمة "they" غامضة بشكل مقصود - يمكن تشير للجمهور، أو للمحرّرين، أو للمجتمع كله. المصوّر عالق: هو يكسب رزقه من المعاناة، بس جمهوره غير مبالي.',
       themesAr: ['الذنب والمسؤولية', 'الإعلام واللامبالاة', 'العزلة'],
     },
   ],
@@ -434,19 +434,19 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       device: 'Religious imagery (semantic field)',
       example: 'as though this were a church and he / a priest preparing to intone a Mass',
       effect:
-        'The sustained religious imagery elevates the photographer\'s work to something sacred. Developing photographs becomes a solemn ritual — a "Mass" for the dead. This sanctifies his role as a witness while highlighting the moral weight of his task.',
+        'The sustained religious imagery elevates the photographer\'s work to something sacred. Developing photographs becomes a solemn ritual - a "Mass" for the dead. This sanctifies his role as a witness while highlighting the moral weight of his task.',
       lineRef: 3,
       effectAr:
-        'الحقل الدلالي الديني المتواصل يرفع شغل المصوّر إلى مستوى المقدّس. تحميض الصور يصير طقس مهيب — "Mass" للموتى. هالشي يقدّس دوره كشاهد، ويبرز في نفس الوقت الثقل الأخلاقي اللي يحمله.',
+        'الحقل الدلالي الديني المتواصل يرفع شغل المصوّر إلى مستوى المقدّس. تحميض الصور يصير طقس مهيب - "Mass" للموتى. هالشي يقدّس دوره كشاهد، ويبرز في نفس الوقت الثقل الأخلاقي اللي يحمله.',
     },
     {
       device: 'Sibilance',
       example: 'spools of suffering set out',
       effect:
-        'The soft, repeated "s" sounds create a hushed, reverent tone — as though the photographer is whispering in his darkroom-church. It contrasts with the violence of the content, creating an uneasy tension between form and meaning.',
+        'The soft, repeated "s" sounds create a hushed, reverent tone - as though the photographer is whispering in his darkroom-church. It contrasts with the violence of the content, creating an uneasy tension between form and meaning.',
       lineRef: 1,
       effectAr:
-        'صوت "s" الناعم المتكرّر يخلق نبرة مكتومة وموقّرة — كأن المصوّر يهمس في كنيسته الـdarkroom. هالشي يتناقض مع عنف المحتوى، ويخلق توتّر مقلق بين الشكل والمعنى.',
+        'صوت "s" الناعم المتكرّر يخلق نبرة مكتومة وموقّرة - كأن المصوّر يهمس في كنيسته الـdarkroom. هالشي يتناقض مع عنف المحتوى، ويخلق توتّر مقلق بين الشكل والمعنى.',
     },
     {
       device: 'Contrast / Juxtaposition',
@@ -462,28 +462,28 @@ CYCLICAL STRUCTURE: "Rural England" appears in stanza one and is echoed in the f
       device: 'Metaphor',
       example: 'a half-formed ghost',
       effect:
-        'The developing photograph becomes a ghostly apparition — blurring the line between image and person, life and death. It suggests the subjects of war photography are spectral presences who haunt the photographer.',
+        'The developing photograph becomes a ghostly apparition - blurring the line between image and person, life and death. It suggests the subjects of war photography are spectral presences who haunt the photographer.',
       lineRef: 12,
       effectAr:
-        'الصورة وهي تتحمّض تتحوّل لطيف شبحي — وتطمس الحد بين الصورة والشخص، بين الحياة والموت. هالشي يوحي إن أشخاص الصور الحربية حضور طيفي يلاحق المصوّر.',
+        'الصورة وهي تتحمّض تتحوّل لطيف شبحي - وتطمس الحد بين الصورة والشخص، بين الحياة والموت. هالشي يوحي إن أشخاص الصور الحربية حضور طيفي يلاحق المصوّر.',
     },
     {
       device: 'Emotive language',
       example: 'blood stained into foreign dust',
       effect:
-        'The visceral image of blood seeping into soil makes the violence tangible and permanent. "Foreign" reminds us of the distance — both geographical and emotional — between the reader and the suffering.',
+        'The visceral image of blood seeping into soil makes the violence tangible and permanent. "Foreign" reminds us of the distance - both geographical and emotional - between the reader and the suffering.',
       lineRef: 16,
       effectAr:
-        'صورة الدم وهو يتسرّب في التراب صورة جسدية تخلّي العنف ملموس ودائم. وكلمة "foreign" تذكّرنا بالمسافة — الجغرافية والعاطفية — بين القارئ والمعاناة.',
+        'صورة الدم وهو يتسرّب في التراب صورة جسدية تخلّي العنف ملموس ودائم. وكلمة "foreign" تذكّرنا بالمسافة - الجغرافية والعاطفية - بين القارئ والمعاناة.',
     },
     {
       device: 'Double meaning / Ambiguity',
       example: 'Solutions slop in trays beneath his hands',
       effect:
-        '"Solutions" refers literally to the photographic chemicals but also ironically to answers or remedies for the suffering he documents — remedies that do not exist. The word carries a bitter dual weight.',
+        '"Solutions" refers literally to the photographic chemicals but also ironically to answers or remedies for the suffering he documents - remedies that do not exist. The word carries a bitter dual weight.',
       lineRef: 22,
       effectAr:
-        'كلمة "solutions" تشير حرفياً للمواد الكيميائية اللي يستخدمها في التحميض، بس بسخرية تشير كذلك لـ"حلول" أو علاجات للمعاناة اللي يوثّقها — علاجات ما لها وجود. الكلمة تحمل ثقل مزدوج مرير.',
+        'كلمة "solutions" تشير حرفياً للمواد الكيميائية اللي يستخدمها في التحميض، بس بسخرية تشير كذلك لـ"حلول" أو علاجات للمعاناة اللي يوثّقها - علاجات ما لها وجود. الكلمة تحمل ثقل مزدوج مرير.',
     },
     {
       device: 'Bathos',
@@ -543,13 +543,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A prison cell',
-      'A church — with the photographer as a priest performing a sacred duty',
+      'A church - with the photographer as a priest performing a sacred duty',
       'A battlefield',
       'A classroom',
     ],
     correctIndex: 1,
     explanation:
-      'The darkroom is compared to a church, with the photographer as "a priest preparing to intone a Mass." This elevates his work to something sacred and reverential — bearing witness to suffering is a moral duty.',
+      'The darkroom is compared to a church, with the photographer as "a priest preparing to intone a Mass." This elevates his work to something sacred and reverential - bearing witness to suffering is a moral duty.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -559,7 +559,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The photographer enjoys organising his equipment',
-      'Real human suffering has been captured on film and can be ordered and filed — a disturbing contrast',
+      'Real human suffering has been captured on film and can be ordered and filed - a disturbing contrast',
       'The film is damaged and needs repair',
       'The darkroom is messy',
     ],
@@ -607,20 +607,20 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It inspires the public to take action',
-      'The editor selects only the images that will sell, and the public\'s sympathy is fleeting — "they do not care"',
+      'The editor selects only the images that will sell, and the public\'s sympathy is fleeting - "they do not care"',
       'The photographs are exhibited in a gallery',
       'The photographer destroys them',
     ],
     correctIndex: 1,
     explanation:
-      'In the final stanza, the editor picks a few images to publish. Readers may feel a "prick" of emotion over their Sunday supplement, but their sympathy is brief and surface-level — they return to their comfortable lives.',
+      'In the final stanza, the editor picks a few images to publish. Readers may feel a "prick" of emotion over their Sunday supplement, but their sympathy is brief and surface-level - they return to their comfortable lives.',
     topic: 'Themes',
     difficulty: 'higher',
   },
   {
     id: 'wp-7',
     question:
-      'What is the effect of the regular form — four six-line stanzas with a consistent rhyme scheme?',
+      'What is the effect of the regular form - four six-line stanzas with a consistent rhyme scheme?',
     type: 'multiple-choice',
     options: [
       'It makes the poem boring',
@@ -657,13 +657,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It creates an aggressive, angry tone',
-      'The soft, repeated "s" sounds create a hushed, reverential tone — like a whispered prayer, reinforcing the church simile',
+      'The soft, repeated "s" sounds create a hushed, reverential tone - like a whispered prayer, reinforcing the church simile',
       'It imitates the sound of camera clicks',
       'It makes the line difficult to read',
     ],
     correctIndex: 1,
     explanation:
-      'The sibilant "s" sounds create a soft, solemn, almost sacred atmosphere — consistent with the comparison of the darkroom to a church. The photographer approaches his work with the quiet reverence of a priest.',
+      'The sibilant "s" sounds create a soft, solemn, almost sacred atmosphere - consistent with the comparison of the darkroom to a church. The photographer approaches his work with the quiet reverence of a priest.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -692,10 +692,10 @@ const REVISION_TOPICS = [
     summary:
       "War Photographer explores the moral burden of witnessing suffering, the contrast between war zones and comfortable England, and society's indifference to distant conflict.",
     keyPoints: [
-      'Moral duty vs public indifference — the photographer bears witness, but the public does not care',
-      'Contrast between England and war zones — "fields which don\'t explode beneath the feet"',
-      'The inadequacy of images — photographs cannot fully convey the horror',
-      'Emotional numbness — the photographer must suppress his feelings to do his job',
+      'Moral duty vs public indifference - the photographer bears witness, but the public does not care',
+      'Contrast between England and war zones - "fields which don\'t explode beneath the feet"',
+      'The inadequacy of images - photographs cannot fully convey the horror',
+      'Emotional numbness - the photographer must suppress his feelings to do his job',
     ],
   },
   {
@@ -703,18 +703,18 @@ const REVISION_TOPICS = [
     summary:
       'Duffy uses religious imagery, sibilance, contrast, and carefully controlled language to convey the tension between professional duty and emotional devastation.',
     keyPoints: [
-      'Religious imagery: darkroom as "church", photographer as "priest" — sacred duty',
-      '"Spools of suffering set out in ordered rows" — sibilance and metaphor',
-      '"Rural England" vs war zones — vast contrast in safety and comfort',
-      '"A hundred agonies in black-and-white" — suffering reduced to newspaper images',
+      'Religious imagery: darkroom as "church", photographer as "priest" - sacred duty',
+      '"Spools of suffering set out in ordered rows" - sibilance and metaphor',
+      '"Rural England" vs war zones - vast contrast in safety and comfort',
+      '"A hundred agonies in black-and-white" - suffering reduced to newspaper images',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      "Four regular six-line stanzas with a controlled rhyme scheme — the ordered form mirrors the photographer's attempt to impose structure on chaos.",
+      "Four regular six-line stanzas with a controlled rhyme scheme - the ordered form mirrors the photographer's attempt to impose structure on chaos.",
     keyPoints: [
-      'Regular stanzas — orderly form contrasts with chaotic subject matter',
+      'Regular stanzas - orderly form contrasts with chaotic subject matter',
       'Progression: darkroom (1) --> memories intrude (2-3) --> public indifference (4)',
       'Enjambment at key moments creates urgency and emotional overflow',
       'Final stanza shifts focus from photographer to apathetic public',
@@ -763,7 +763,7 @@ export default function WarPhotographerPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="War Photographer by Carol Ann Duffy — Analysis & Annotations"
+        name="War Photographer by Carol Ann Duffy - Analysis & Annotations"
         description="Line-by-line analysis of War Photographer with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

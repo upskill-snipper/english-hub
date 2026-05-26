@@ -6,7 +6,7 @@
 // norm table converts a difficulty-weighted composite score to a band,
 // combined with an adaptive "ceiling" rule (the highest level the
 // learner demonstrably masters). Per-skill sub-scores drive the
-// recommended next topics. No AI, no network — fully reproducible.
+// recommended next topics. No AI, no network - fully reproducible.
 //
 // Product bands (those with dedicated content + routes): A2, B1, B2, C1.
 // The full ladder (A1..C2) is modelled so the engine can place a learner
@@ -76,9 +76,9 @@ export interface CEFRDiagnosticResult {
   level: CEFRLevel
   /** Same placement clamped to a band that has content (A2..C1). */
   band: CEFRBand
-  /** 0–100 confidence in the placement (consistency × coverage). */
+  /** 0-100 confidence in the placement (consistency × coverage). */
   confidence: number
-  /** Difficulty-weighted composite, 0–100. */
+  /** Difficulty-weighted composite, 0-100. */
   compositePercentage: number
   /** Highest level the learner demonstrably masters (>= mastery at it and below). */
   ceilingLevel: CEFRLevel
@@ -98,38 +98,38 @@ export interface CEFRDiagnosticResult {
 
 export const CEFR_DESCRIPTORS: Record<CEFRLevel, LocalizedString> = {
   A1: {
-    en: 'Beginner — can understand and use familiar everyday expressions and very basic phrases.',
-    ar: 'مبتدئ — يفهم ويستخدم تعبيرات يومية مألوفة وعبارات أساسية جداً.',
+    en: 'Beginner - can understand and use familiar everyday expressions and very basic phrases.',
+    ar: 'مبتدئ - يفهم ويستخدم تعبيرات يومية مألوفة وعبارات أساسية جداً.',
   },
   A2: {
-    en: 'Elementary — can understand sentences and frequent expressions about immediate needs, and communicate in simple routine tasks.',
-    ar: 'مبتدئ متقدّم — يفهم الجمل والتعبيرات الشائعة المتعلقة بالاحتياجات المباشرة، ويتواصل في المهام الروتينية البسيطة.',
+    en: 'Elementary - can understand sentences and frequent expressions about immediate needs, and communicate in simple routine tasks.',
+    ar: 'مبتدئ متقدّم - يفهم الجمل والتعبيرات الشائعة المتعلقة بالاحتياجات المباشرة، ويتواصل في المهام الروتينية البسيطة.',
   },
   B1: {
-    en: 'Intermediate — can deal with most situations while travelling, and produce connected text on familiar topics.',
-    ar: 'متوسط — يتعامل مع معظم المواقف أثناء السفر، وينتج نصاً مترابطاً في مواضيع مألوفة.',
+    en: 'Intermediate - can deal with most situations while travelling, and produce connected text on familiar topics.',
+    ar: 'متوسط - يتعامل مع معظم المواقف أثناء السفر، وينتج نصاً مترابطاً في مواضيع مألوفة.',
   },
   B2: {
-    en: 'Upper-intermediate — can interact with fluency and spontaneity and produce clear, detailed text on a wide range of subjects.',
-    ar: 'فوق المتوسط — يتفاعل بطلاقة وعفوية وينتج نصاً واضحاً مفصّلاً في مواضيع متنوعة.',
+    en: 'Upper-intermediate - can interact with fluency and spontaneity and produce clear, detailed text on a wide range of subjects.',
+    ar: 'فوق المتوسط - يتفاعل بطلاقة وعفوية وينتج نصاً واضحاً مفصّلاً في مواضيع متنوعة.',
   },
   C1: {
-    en: 'Advanced — can express ideas fluently and spontaneously and use language flexibly for academic and professional purposes.',
-    ar: 'متقدّم — يعبّر عن أفكاره بطلاقة وعفوية ويستخدم اللغة بمرونة للأغراض الأكاديمية والمهنية.',
+    en: 'Advanced - can express ideas fluently and spontaneously and use language flexibly for academic and professional purposes.',
+    ar: 'متقدّم - يعبّر عن أفكاره بطلاقة وعفوية ويستخدم اللغة بمرونة للأغراض الأكاديمية والمهنية.',
   },
   C2: {
-    en: 'Proficient — can understand virtually everything heard or read and express themselves with precision in complex situations.',
-    ar: 'متمكّن — يفهم تقريباً كل ما يسمعه أو يقرأه ويعبّر عن نفسه بدقة في المواقف المعقّدة.',
+    en: 'Proficient - can understand virtually everything heard or read and express themselves with precision in complex situations.',
+    ar: 'متمكّن - يفهم تقريباً كل ما يسمعه أو يقرأه ويعبّر عن نفسه بدقة في المواقف المعقّدة.',
   },
 }
 
 export const CEFR_LABEL: Record<CEFRLevel, LocalizedString> = {
-  A1: { en: 'A1 — Beginner', ar: 'A1 — مبتدئ' },
-  A2: { en: 'A2 — Elementary', ar: 'A2 — مبتدئ متقدّم' },
-  B1: { en: 'B1 — Intermediate', ar: 'B1 — متوسط' },
-  B2: { en: 'B2 — Upper Intermediate', ar: 'B2 — فوق المتوسط' },
-  C1: { en: 'C1 — Advanced', ar: 'C1 — متقدّم' },
-  C2: { en: 'C2 — Proficient', ar: 'C2 — متمكّن' },
+  A1: { en: 'A1 - Beginner', ar: 'A1 - مبتدئ' },
+  A2: { en: 'A2 - Elementary', ar: 'A2 - مبتدئ متقدّم' },
+  B1: { en: 'B1 - Intermediate', ar: 'B1 - متوسط' },
+  B2: { en: 'B2 - Upper Intermediate', ar: 'B2 - فوق المتوسط' },
+  C1: { en: 'C1 - Advanced', ar: 'C1 - متقدّم' },
+  C2: { en: 'C2 - Proficient', ar: 'C2 - متمكّن' },
 }
 
 // ─── Norm table: composite % → CEFR level ─────────────────────────────────────
@@ -237,7 +237,7 @@ function scoreSkills(
       percentage: max > 0 ? Math.round((score / max) * 100) : 0,
     })
   }
-  // Weakest first — the UI and recommendations key off this order.
+  // Weakest first - the UI and recommendations key off this order.
   return out.sort((x, y) => x.percentage - y.percentage)
 }
 
@@ -266,8 +266,8 @@ function analyse(
       })
     } else if (s.percentage < 50) {
       focusAreas.push({
-        en: `Prioritise ${name.en} — ${s.percentage}% at this stage`,
-        ar: `ركّز على ${name.ar} — ${s.percentage}% في هذي المرحلة`,
+        en: `Prioritise ${name.en} - ${s.percentage}% at this stage`,
+        ar: `ركّز على ${name.ar} - ${s.percentage}% في هذي المرحلة`,
       })
     } else {
       focusAreas.push({
@@ -285,8 +285,8 @@ function analyse(
   }
   if (focusAreas.length === 0) {
     focusAreas.push({
-      en: 'Well-balanced across all skills — push into the next band with harder practice.',
-      ar: 'متوازن في كل المهارات — انتقل للمستوى الأعلى بتمارين أصعب.',
+      en: 'Well-balanced across all skills - push into the next band with harder practice.',
+      ar: 'متوازن في كل المهارات - انتقل للمستوى الأعلى بتمارين أصعب.',
     })
   }
   return { strengths, focusAreas }
@@ -301,7 +301,7 @@ function analyse(
  * - Norm table converts the composite to a provisional level.
  * - Adaptive ceiling caps the result at the highest mastered level so a
  *   lucky guess on a hard item can't over-place a learner.
- * - Final level = min(norm level, ceiling + 1) — at most one band above
+ * - Final level = min(norm level, ceiling + 1) - at most one band above
  *   demonstrated mastery, which is the standard placement convention.
  */
 export function calculateCEFRLevel(

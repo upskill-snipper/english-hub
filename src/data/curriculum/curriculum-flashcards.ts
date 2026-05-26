@@ -261,7 +261,7 @@ const year7KeyQuotations: FlashcardDeck = {
     {
       id: 'y7kq-6',
       front: 'Complete the line: "All animals are equal, but ___"',
-      back: 'The full line is: "All animals are equal, but some animals are more equal than others." — the altered final commandment in Animal Farm by George Orwell (Chapter 10).\n\nContext: The pigs have rewritten the Seven Commandments down to this single hypocritical sentence, showing how power corrupts ideals and how language is manipulated to justify inequality.',
+      back: 'The full line is: "All animals are equal, but some animals are more equal than others." - the altered final commandment in Animal Farm by George Orwell (Chapter 10).\n\nContext: The pigs have rewritten the Seven Commandments down to this single hypocritical sentence, showing how power corrupts ideals and how language is manipulated to justify inequality.',
     },
     {
       id: 'y7kq-7',

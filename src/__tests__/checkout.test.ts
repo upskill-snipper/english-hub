@@ -210,7 +210,7 @@ describe('POST /api/stripe/checkout', () => {
   // ---- 7. Valid payment request returns checkout URL ----
   it('returns checkout URL for valid payment request', async () => {
     const res = await POST(
-      buildRequest({ priceId: 'price_ks3_reading', mode: 'payment', courseId: 'ks3-reading' })
+      buildRequest({ priceId: 'price_ks3_reading', mode: 'payment', courseId: 'ks3-reading' }),
     )
 
     expect(res.status).toBe(200)
@@ -228,7 +228,7 @@ describe('POST /api/stripe/checkout', () => {
 
     const params = mockSessionCreate.mock.calls[0][0]
     expect(params.subscription_data).toBeDefined()
-    // PRICING.TRIAL_DAYS === 7 — the 30-day trial was replaced by a 7-day
+    // PRICING.TRIAL_DAYS === 7 - the 30-day trial was replaced by a 7-day
     // card-required trial on 2026-04-20. If this assertion changes, update
     // `src/constants/pricing.ts` (TRIAL_DAYS) first.
     expect(params.subscription_data.trial_period_days).toBe(7)
@@ -242,7 +242,7 @@ describe('POST /api/stripe/checkout', () => {
         priceId: 'price_monthly_123',
         mode: 'subscription',
         rewardful_referral: 'ref_abc123',
-      })
+      }),
     )
 
     const params = mockSessionCreate.mock.calls[0][0]

@@ -401,51 +401,51 @@ export default function TwelfthNightPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Viola / Cesario"
-                description="The play's emotional centre. Shipwrecked, bereaved (she believes), and alone in a foreign court, Viola disguises herself as the young man Cesario to serve Orsino. Her cross-dressing creates the play's comic engine but also its deepest pathos: she falls in love with Orsino while being forced to woo Olivia for him. Viola is intelligent, quick-witted, and emotionally honest in soliloquy ('Disguise, I see thou art a wickedness') even as she lies socially. Her language mixes Petrarchan flourish ('willow cabin') with practical patience ('she never told her love'). At the end she remains in male attire — Shakespeare leaves her as 'Cesario' until her clothes can be recovered, which never happens onstage."
+                description="The play's emotional centre. Shipwrecked, bereaved (she believes), and alone in a foreign court, Viola disguises herself as the young man Cesario to serve Orsino. Her cross-dressing creates the play's comic engine but also its deepest pathos: she falls in love with Orsino while being forced to woo Olivia for him. Viola is intelligent, quick-witted, and emotionally honest in soliloquy ('Disguise, I see thou art a wickedness') even as she lies socially. Her language mixes Petrarchan flourish ('willow cabin') with practical patience ('she never told her love'). At the end she remains in male attire - Shakespeare leaves her as 'Cesario' until her clothes can be recovered, which never happens onstage."
               />
               <CharacterCard
                 name="Sebastian"
-                description="Viola's twin brother, presumed drowned. Rescued by Antonio, he wanders into Illyria and is mistaken for Cesario by Feste, Sir Andrew, and Olivia. Where Viola navigates the world through wit and disguise, Sebastian moves through it accepting whatever happens — accepting Olivia's proposal almost dazedly ('Or I am mad, or else this is a dream'). His arrival is the deus ex machina that resolves the love-knot: he takes Olivia, freeing Viola for Orsino. He is the play's quietest major character — a body that completes the geometry."
+                description="Viola's twin brother, presumed drowned. Rescued by Antonio, he wanders into Illyria and is mistaken for Cesario by Feste, Sir Andrew, and Olivia. Where Viola navigates the world through wit and disguise, Sebastian moves through it accepting whatever happens - accepting Olivia's proposal almost dazedly ('Or I am mad, or else this is a dream'). His arrival is the deus ex machina that resolves the love-knot: he takes Olivia, freeing Viola for Orsino. He is the play's quietest major character - a body that completes the geometry."
               />
               <CharacterCard
                 name="Duke Orsino"
-                description="The lovesick ruler of Illyria, more in love with the idea of love than with Olivia herself. He wallows in music and melancholy in the opening scene and changes his mind constantly about love: 'Give me excess of it' / 'Enough; no more.' His attraction to Cesario is one of the play's most teasing currents — he confides in Viola in male disguise as he never could in a courtier, and his quick pivot to marrying her at the end can read as love long-prepared or alarmingly arbitrary. A figure of self-indulgent Petrarchan suffering rather than tragic depth."
+                description="The lovesick ruler of Illyria, more in love with the idea of love than with Olivia herself. He wallows in music and melancholy in the opening scene and changes his mind constantly about love: 'Give me excess of it' / 'Enough; no more.' His attraction to Cesario is one of the play's most teasing currents - he confides in Viola in male disguise as he never could in a courtier, and his quick pivot to marrying her at the end can read as love long-prepared or alarmingly arbitrary. A figure of self-indulgent Petrarchan suffering rather than tragic depth."
               />
               <CharacterCard
                 name="Olivia"
-                description="A wealthy countess in mourning for her dead brother, having sworn to veil her face for seven years. The arrival of Cesario disrupts her vow within minutes: she falls violently and openly in love. Olivia is decisive where Orsino is paralysed — when she wants Cesario, she sends a ring; when she meets Sebastian, she marries him. She is also generous, granting Malvolio rank and trust, and protecting Cesario in the duel. Her line 'love sought is good; but given unsought is better' captures her ideology of impulsive feeling."
+                description="A wealthy countess in mourning for her dead brother, having sworn to veil her face for seven years. The arrival of Cesario disrupts her vow within minutes: she falls violently and openly in love. Olivia is decisive where Orsino is paralysed - when she wants Cesario, she sends a ring; when she meets Sebastian, she marries him. She is also generous, granting Malvolio rank and trust, and protecting Cesario in the duel. Her line 'love sought is good; but given unsought is better' captures her ideology of impulsive feeling."
               />
               <CharacterCard
                 name="Malvolio"
-                description="Olivia's steward — a puritan in style, joyless, vain, and ambitious. Maria calls him 'a kind of puritan'. His fantasy of marrying Olivia and ruling the household is so intense that he believes a forged letter without question. Gulled into yellow stockings and cross-garters, locked in a dark room, exorcised by Feste as 'Sir Topas,' his torment exceeds the bounds of comic justice. His final exit — 'I'll be revenged on the whole pack of you' — refuses the comic resolution everyone else accepts. Modern criticism reads him as a class-anxiety figure: punished for ambition above his station as much as for puritanism."
+                description="Olivia's steward - a puritan in style, joyless, vain, and ambitious. Maria calls him 'a kind of puritan'. His fantasy of marrying Olivia and ruling the household is so intense that he believes a forged letter without question. Gulled into yellow stockings and cross-garters, locked in a dark room, exorcised by Feste as 'Sir Topas,' his torment exceeds the bounds of comic justice. His final exit - 'I'll be revenged on the whole pack of you' - refuses the comic resolution everyone else accepts. Modern criticism reads him as a class-anxiety figure: punished for ambition above his station as much as for puritanism."
               />
               <CharacterCard
                 name="Sir Toby Belch"
-                description="Olivia's uncle: a riotous, parasitic knight who lives off her household and exploits Sir Andrew for drinking-money. His name (Belch) marks his role as embodiment of gluttony and Carnival misrule. He drives the Malvolio sub-plot, asking Maria's iconic question 'Dost thou think because thou art virtuous there shall be no more cakes and ale?' He is at once charming and cruel — a festive lord of misrule whose festivity has a hard, exploitative edge by the end."
+                description="Olivia's uncle: a riotous, parasitic knight who lives off her household and exploits Sir Andrew for drinking-money. His name (Belch) marks his role as embodiment of gluttony and Carnival misrule. He drives the Malvolio sub-plot, asking Maria's iconic question 'Dost thou think because thou art virtuous there shall be no more cakes and ale?' He is at once charming and cruel - a festive lord of misrule whose festivity has a hard, exploitative edge by the end."
               />
               <CharacterCard
                 name="Sir Andrew Aguecheek"
-                description="A foolish, wealthy knight kept around by Sir Toby as a butt and a purse. Thin (his cheek 'agues' — shakes) and intellectually feeble, he is encouraged to woo Olivia though she has never noticed him. His challenge to Cesario, the duel, and his final beating by Sebastian show him as a comic victim throughout. Yet there is real pathos in 'I was adored once too' — a flicker of sad humanity in a character mostly used for laughs."
+                description="A foolish, wealthy knight kept around by Sir Toby as a butt and a purse. Thin (his cheek 'agues' - shakes) and intellectually feeble, he is encouraged to woo Olivia though she has never noticed him. His challenge to Cesario, the duel, and his final beating by Sebastian show him as a comic victim throughout. Yet there is real pathos in 'I was adored once too' - a flicker of sad humanity in a character mostly used for laughs."
               />
               <CharacterCard
                 name="Maria"
-                description="Olivia's gentlewoman — sharp, literate, and the architect of the Malvolio gulling. It is Maria who imitates Olivia's hand to forge the fatal letter and who proposes the dark-room imprisonment. Toby calls her 'Penthesilea' (an Amazon queen). Her marriage to Toby at the play's end is rewarded explicitly because of the letter trick — a striking instance of comedy delivering social mobility for its female schemer. She is the most genuinely intelligent character in the household."
+                description="Olivia's gentlewoman - sharp, literate, and the architect of the Malvolio gulling. It is Maria who imitates Olivia's hand to forge the fatal letter and who proposes the dark-room imprisonment. Toby calls her 'Penthesilea' (an Amazon queen). Her marriage to Toby at the play's end is rewarded explicitly because of the letter trick - a striking instance of comedy delivering social mobility for its female schemer. She is the most genuinely intelligent character in the household."
               />
               <CharacterCard
                 name="Feste"
-                description="The 'allowed fool' of Olivia's household — the only character who moves freely between Orsino's court and Olivia's, between high and low. His wit is paid wit ('Foolery, sir, does walk about the orb like the sun'); he sings the play's most beautiful and most painful songs ('Come away, come away, death'; 'When that I was and a little tiny boy'). As 'Sir Topas' he is briefly cruel; as singer he is the play's voice of melancholy wisdom. Critics often see him as the figure who knows the play is a play."
+                description="The 'allowed fool' of Olivia's household - the only character who moves freely between Orsino's court and Olivia's, between high and low. His wit is paid wit ('Foolery, sir, does walk about the orb like the sun'); he sings the play's most beautiful and most painful songs ('Come away, come away, death'; 'When that I was and a little tiny boy'). As 'Sir Topas' he is briefly cruel; as singer he is the play's voice of melancholy wisdom. Critics often see him as the figure who knows the play is a play."
               />
               <CharacterCard
                 name="Antonio"
-                description="The sea-captain who rescues Sebastian and follows him to Illyria despite the danger of arrest there. His devotion is described in unmistakably loving terms — he gives Sebastian his purse, risks his life, and is devastated by Cesario's apparent ingratitude. Modern criticism (e.g. Joseph Pequigney) reads Antonio as one of Shakespeare's clearest queer figures, a man whose love for another man is set against, and outside, the play's heterosexual marriages. He receives no partner at the end."
+                description="The sea-captain who rescues Sebastian and follows him to Illyria despite the danger of arrest there. His devotion is described in unmistakably loving terms - he gives Sebastian his purse, risks his life, and is devastated by Cesario's apparent ingratitude. Modern criticism (e.g. Joseph Pequigney) reads Antonio as one of Shakespeare's clearest queer figures, a man whose love for another man is set against, and outside, the play's heterosexual marriages. He receives no partner at the end."
               />
               <CharacterCard
                 name="Fabian"
-                description="A servant of Olivia, brought into the gulling plot at Act 2 Scene 5 as a substitute for Feste. He participates eagerly in the Malvolio trick (he has his own grudge — Malvolio reported him to Olivia about a bear-baiting). In Act 5 it is Fabian who confesses the letter trick, asking that 'no quarrel nor no brawl' mar the comedy — though Malvolio's exit shows how that wish fails."
+                description="A servant of Olivia, brought into the gulling plot at Act 2 Scene 5 as a substitute for Feste. He participates eagerly in the Malvolio trick (he has his own grudge - Malvolio reported him to Olivia about a bear-baiting). In Act 5 it is Fabian who confesses the letter trick, asking that 'no quarrel nor no brawl' mar the comedy - though Malvolio's exit shows how that wish fails."
               />
               <CharacterCard
                 name="The Sea-Captain"
-                description="The kind man who saves Viola from the wreck, tells her about Illyria, and helps her into Cesario's costume. He holds her 'maiden weeds' (women's clothes) — and at the end of the play Viola says they are still in his keeping, but he is being held by Malvolio in some legal action. His absence from the final reunion is one of the play's small unresolved threads — Viola cannot return to herself without him."
+                description="The kind man who saves Viola from the wreck, tells her about Illyria, and helps her into Cesario's costume. He holds her 'maiden weeds' (women's clothes) - and at the end of the play Viola says they are still in his keeping, but he is being held by Malvolio in some legal action. His absence from the final reunion is one of the play's small unresolved threads - Viola cannot return to herself without him."
               />
             </div>
           </Section>
@@ -457,11 +457,11 @@ export default function TwelfthNightPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Disguise and Mistaken Identity`)}
-                description="The structural engine of the play. Viola's male disguise generates the love triangle (Orsino loves Olivia, Olivia loves Cesario, Viola loves Orsino), and the twins' identical appearance allows Shakespeare to resolve it. Disguise creates both comedy (Sir Andrew's terror at the duel) and pain (Antonio's anguished sense of betrayal). Viola's own line — 'Disguise, I see thou art a wickedness' — registers Shakespeare's awareness that the trick has moral cost. The play ends with Viola still in male clothes; the disguise is never fully undone onstage."
+                description="The structural engine of the play. Viola's male disguise generates the love triangle (Orsino loves Olivia, Olivia loves Cesario, Viola loves Orsino), and the twins' identical appearance allows Shakespeare to resolve it. Disguise creates both comedy (Sir Andrew's terror at the duel) and pain (Antonio's anguished sense of betrayal). Viola's own line - 'Disguise, I see thou art a wickedness' - registers Shakespeare's awareness that the trick has moral cost. The play ends with Viola still in male clothes; the disguise is never fully undone onstage."
               />
               <ThemeCard
                 title={tr(`Love and Madness`)}
-                description="Every form of love in the play looks like madness. Orsino's Petrarchan obsession, Olivia's instant infatuation with Cesario, Malvolio's delusion that Olivia loves him, Antonio's devotion to Sebastian — all are described as 'midsummer madness' or close to it. Shakespeare uses the word 'mad' obsessively in Acts 3 and 4. The play asks whether love is ever rational, and whether the difference between true love and self-deluding fantasy is one society can reliably make."
+                description="Every form of love in the play looks like madness. Orsino's Petrarchan obsession, Olivia's instant infatuation with Cesario, Malvolio's delusion that Olivia loves him, Antonio's devotion to Sebastian - all are described as 'midsummer madness' or close to it. Shakespeare uses the word 'mad' obsessively in Acts 3 and 4. The play asks whether love is ever rational, and whether the difference between true love and self-deluding fantasy is one society can reliably make."
               />
               <ThemeCard
                 title={tr(`Gender and Performance`)}
@@ -469,15 +469,15 @@ export default function TwelfthNightPage() {
               />
               <ThemeCard
                 title={tr(`Class and Festivity`)}
-                description="The play takes its title from Twelfth Night — the festive end of Christmas, the last night of the Lord of Misrule, a time when ordinary social hierarchies were inverted. Sir Toby and Maria embody this misrule; Malvolio resists it. The Malvolio sub-plot is, in part, about a steward who tries to rise in rank by marrying his lady, and is punished for it. C. L. Barber's classic study Shakespeare's Festive Comedy reads the whole play as the dramatised release and reform of holiday energy."
+                description="The play takes its title from Twelfth Night - the festive end of Christmas, the last night of the Lord of Misrule, a time when ordinary social hierarchies were inverted. Sir Toby and Maria embody this misrule; Malvolio resists it. The Malvolio sub-plot is, in part, about a steward who tries to rise in rank by marrying his lady, and is punished for it. C. L. Barber's classic study Shakespeare's Festive Comedy reads the whole play as the dramatised release and reform of holiday energy."
               />
               <ThemeCard
                 title={tr(`Music and Melancholy`)}
-                description="Twelfth Night is the most musical of Shakespeare's comedies. It opens with music, and ends with Feste singing alone. Music is the food of love, the consolation for grief, the medium of memory. Yet most of Feste's songs are sad: 'Come away, come away, death' is a song of hopeless love; the final 'wind and the rain' song is openly melancholy. Music in the play promises festivity but delivers pensiveness — it is part of how Shakespeare keeps the comedy edged with sorrow."
+                description="Twelfth Night is the most musical of Shakespeare's comedies. It opens with music, and ends with Feste singing alone. Music is the food of love, the consolation for grief, the medium of memory. Yet most of Feste's songs are sad: 'Come away, come away, death' is a song of hopeless love; the final 'wind and the rain' song is openly melancholy. Music in the play promises festivity but delivers pensiveness - it is part of how Shakespeare keeps the comedy edged with sorrow."
               />
               <ThemeCard
                 title={tr(`Foolery and Wisdom`)}
-                description="The fool, Feste, is paradoxically the wisest character. Viola says of him, 'This fellow is wise enough to play the fool'. He is the only one who moves between the two great houses, who diagnoses Orsino's mind ('thy mind is a very opal'), and who closes the play. Through Feste, Shakespeare develops a Renaissance commonplace — that licensed folly speaks truths that ordinary speech cannot — into a structural principle. The fool's epilogue song reframes the whole comedy."
+                description="The fool, Feste, is paradoxically the wisest character. Viola says of him, 'This fellow is wise enough to play the fool'. He is the only one who moves between the two great houses, who diagnoses Orsino's mind ('thy mind is a very opal'), and who closes the play. Through Feste, Shakespeare develops a Renaissance commonplace - that licensed folly speaks truths that ordinary speech cannot - into a structural principle. The fool's epilogue song reframes the whole comedy."
               />
             </div>
           </Section>
@@ -494,82 +494,82 @@ export default function TwelfthNightPage() {
               <QuoteCard
                 quote="If music be the food of love, play on."
                 speaker="Orsino, 1.1"
-                analysis="The play's celebrated opening line. Orsino frames love as something to be fed and indulged: he wants 'excess of it,' so that the appetite may 'sicken, and so die.' The metaphor reveals Orsino's self-indulgent, almost masochistic relation to his own emotion. Music as 'food' makes love a sensory consumption rather than a relationship. Within ten lines Orsino changes his mind ('Enough; no more') — Shakespeare is signalling at once that this Duke's feelings are theatrical and unstable."
+                analysis="The play's celebrated opening line. Orsino frames love as something to be fed and indulged: he wants 'excess of it,' so that the appetite may 'sicken, and so die.' The metaphor reveals Orsino's self-indulgent, almost masochistic relation to his own emotion. Music as 'food' makes love a sensory consumption rather than a relationship. Within ten lines Orsino changes his mind ('Enough; no more') - Shakespeare is signalling at once that this Duke's feelings are theatrical and unstable."
               />
               <QuoteCard
                 quote="What country, friends, is this?"
                 speaker="Viola, 1.2"
-                analysis="Viola's first line in the play, immediately after the shipwreck. The simplicity is striking: a survivor in a strange place, asking the most basic question. Throughout the play Illyria functions as a half-magical 'where' — close to Italian comic geography but unmistakably elsewhere. By making Viola ask this aloud, Shakespeare establishes both her vulnerability and the audience's sense that this is a romance world where ordinary rules are suspended."
+                analysis="Viola's first line in the play, immediately after the shipwreck. The simplicity is striking: a survivor in a strange place, asking the most basic question. Throughout the play Illyria functions as a half-magical 'where' - close to Italian comic geography but unmistakably elsewhere. By making Viola ask this aloud, Shakespeare establishes both her vulnerability and the audience's sense that this is a romance world where ordinary rules are suspended."
               />
               <QuoteCard
                 quote="Conceal me what I am, and be my aid / For such disguise as haply shall become / The form of my intent."
                 speaker="Viola, 1.2"
-                analysis="The decision that drives the entire plot. Viola asks the Sea-Captain to hide her identity so she can take male disguise. 'Concealment' is the active first verb — disguise here is an act of self-erasure. The triple 'me what I am' / 'such disguise' / 'form of my intent' moves from being to costume to purpose, mapping how identity will be reconstructed performatively across the play."
+                analysis="The decision that drives the entire plot. Viola asks the Sea-Captain to hide her identity so she can take male disguise. 'Concealment' is the active first verb - disguise here is an act of self-erasure. The triple 'me what I am' / 'such disguise' / 'form of my intent' moves from being to costume to purpose, mapping how identity will be reconstructed performatively across the play."
               />
               <QuoteCard
                 quote="Make me a willow cabin at your gate, / And call upon my soul within the house."
                 speaker="Viola as Cesario, 1.5"
-                analysis="Viola, sent to woo Olivia for Orsino, instead delivers this stunning declaration of what she would do if she loved Olivia. The willow is the traditional emblem of unrequited love. The image of building a small shelter at the beloved's gate and calling out is unmistakably erotic-yearning, and it works precisely because it is sincere — Viola is describing the love she actually feels (for Orsino), routed through the mask of Cesario. Olivia is captured by it. The speech is the play's most intoxicating moment of cross-currented desire."
+                analysis="Viola, sent to woo Olivia for Orsino, instead delivers this stunning declaration of what she would do if she loved Olivia. The willow is the traditional emblem of unrequited love. The image of building a small shelter at the beloved's gate and calling out is unmistakably erotic-yearning, and it works precisely because it is sincere - Viola is describing the love she actually feels (for Orsino), routed through the mask of Cesario. Olivia is captured by it. The speech is the play's most intoxicating moment of cross-currented desire."
               />
               <QuoteCard
                 quote="Better a witty fool than a foolish wit."
                 speaker="Feste, 1.5"
-                analysis="Feste's defence of his profession when Olivia threatens to dismiss him. The neat antithesis turns 'wit' and 'fool' inside out: a clever fool is preferable to a stupid clever person. This is Shakespeare's compressed version of the Renaissance topos of wise folly — the idea, common in Erasmus and elsewhere, that the licensed fool sees truths the courtly wit cannot. From this scene onwards, Feste is established as the play's most reliable diagnostic intelligence."
+                analysis="Feste's defence of his profession when Olivia threatens to dismiss him. The neat antithesis turns 'wit' and 'fool' inside out: a clever fool is preferable to a stupid clever person. This is Shakespeare's compressed version of the Renaissance topos of wise folly - the idea, common in Erasmus and elsewhere, that the licensed fool sees truths the courtly wit cannot. From this scene onwards, Feste is established as the play's most reliable diagnostic intelligence."
               />
               <QuoteCard
                 quote="Disguise, I see thou art a wickedness, / Wherein the pregnant enemy does much."
                 speaker="Viola, 2.2"
-                analysis="Alone after Malvolio brings the ring, Viola realises Olivia loves Cesario. 'Wickedness' is a startlingly strong word in a comic plot — Viola sees that her disguise has caused real damage. 'Pregnant enemy' (the Devil, fertile in mischief) raises the moral stakes. This soliloquy is the play's main piece of moral self-awareness about cross-dressing: Shakespeare lets his heroine name the cost of her own trick."
+                analysis="Alone after Malvolio brings the ring, Viola realises Olivia loves Cesario. 'Wickedness' is a startlingly strong word in a comic plot - Viola sees that her disguise has caused real damage. 'Pregnant enemy' (the Devil, fertile in mischief) raises the moral stakes. This soliloquy is the play's main piece of moral self-awareness about cross-dressing: Shakespeare lets his heroine name the cost of her own trick."
               />
               <QuoteCard
                 quote="She never told her love, / But let concealment, like a worm i' the bud, / Feed on her damask cheek."
                 speaker="Viola as Cesario, 2.4"
-                analysis="Viola, talking to Orsino about an imagined sister (herself), gives one of Shakespeare's most beautiful images of repressed feeling. The worm in the rosebud — concealment as parasite — is exactly the situation Viola is in: hiding love, kept from speech. 'Damask cheek' (red-and-white roses) is a Petrarchan colour, but here drained by interior consumption. This is an A-Level set-piece for repression, female silence, and the cost of disguise."
+                analysis="Viola, talking to Orsino about an imagined sister (herself), gives one of Shakespeare's most beautiful images of repressed feeling. The worm in the rosebud - concealment as parasite - is exactly the situation Viola is in: hiding love, kept from speech. 'Damask cheek' (red-and-white roses) is a Petrarchan colour, but here drained by interior consumption. This is an A-Level set-piece for repression, female silence, and the cost of disguise."
               />
               <QuoteCard
                 quote="I am all the daughters of my father's house, / And all the brothers too."
                 speaker="Viola as Cesario, 2.4"
-                analysis="The second half of the same speech. The grammar is doubled — Viola is at once daughter and brother because she believes Sebastian dead and is now performing his role. The line is one of the most cited in the play: it makes explicit that Viola has absorbed Sebastian into herself. After Stephen Greenblatt's biographical reading (Will in the World) linking the line to Shakespeare's grief for his dead son Hamnet, twin to Judith, this passage has become inseparable from the question of how the personal can shape comedy."
+                analysis="The second half of the same speech. The grammar is doubled - Viola is at once daughter and brother because she believes Sebastian dead and is now performing his role. The line is one of the most cited in the play: it makes explicit that Viola has absorbed Sebastian into herself. After Stephen Greenblatt's biographical reading (Will in the World) linking the line to Shakespeare's grief for his dead son Hamnet, twin to Judith, this passage has become inseparable from the question of how the personal can shape comedy."
               />
               <QuoteCard
                 quote="Dost thou think, because thou art virtuous, there shall be no more cakes and ale?"
                 speaker="Sir Toby, 2.3"
-                analysis="Toby's furious reply when Malvolio interrupts the late-night drinking. The line is famously the play's slogan for anti-puritanism: festive pleasures cannot be banished by moral censure. 'Cakes and ale' became proverbial for ordinary human happiness against killjoy religion. This is the Twelfth Night ethic in one sentence — and it is what Malvolio's punishment is supposed to enforce."
+                analysis="Toby's furious reply when Malvolio interrupts the late-night drinking. The line is famously the play's slogan for anti-puritanism: festive pleasures cannot be banished by moral censure. 'Cakes and ale' became proverbial for ordinary human happiness against killjoy religion. This is the Twelfth Night ethic in one sentence - and it is what Malvolio's punishment is supposed to enforce."
               />
               <QuoteCard
                 quote="Some are born great, some achieve greatness, and some have greatness thrust upon 'em."
                 speaker="The forged letter, read aloud by Malvolio, 2.5"
-                analysis="Maria's bait — the line written into the forged letter that Malvolio finds and reads. Its rhetorical balance (born / achieve / thrust) is so seductive that Malvolio cannot resist applying it to himself. The third clause is the trap: 'thrust upon him' is exactly what Maria intends to do. The aphorism became one of Shakespeare's most quoted lines because the structure works independently of the trick. In context, it is a tool of class-aspirational self-deception."
+                analysis="Maria's bait - the line written into the forged letter that Malvolio finds and reads. Its rhetorical balance (born / achieve / thrust) is so seductive that Malvolio cannot resist applying it to himself. The third clause is the trap: 'thrust upon him' is exactly what Maria intends to do. The aphorism became one of Shakespeare's most quoted lines because the structure works independently of the trick. In context, it is a tool of class-aspirational self-deception."
               />
               <QuoteCard
                 quote="Love sought is good; but given unsought is better."
                 speaker="Olivia, 3.1"
-                analysis="Olivia's open declaration of love to Cesario. The chiasmus (sought / given unsought) inverts the conventional Petrarchan dynamic in which the male suitor seeks and the woman is reluctantly won. Olivia claims that love offered freely — by the woman, here — is the higher kind. The line is one of the play's clearest expressions of female desire as active rather than passive, and it directly contradicts Orsino's later speech about how women's love is 'too weak to hold so much.'"
+                analysis="Olivia's open declaration of love to Cesario. The chiasmus (sought / given unsought) inverts the conventional Petrarchan dynamic in which the male suitor seeks and the woman is reluctantly won. Olivia claims that love offered freely - by the woman, here - is the higher kind. The line is one of the play's clearest expressions of female desire as active rather than passive, and it directly contradicts Orsino's later speech about how women's love is 'too weak to hold so much.'"
               />
               <QuoteCard
                 quote="Why, this is very midsummer madness."
                 speaker="Olivia, 3.4"
-                analysis="Olivia's reaction to Malvolio in yellow stockings, smiling and quoting the letter. 'Midsummer madness' invokes the medieval belief that the heat of midsummer drove people mad — relevant because this is Twelfth Night, mid-winter, so the phrase is metaphorical. Within the play, 'madness' is also Olivia's own state (Cesario), Orsino's (love-sickness), and Antonio's grief — Malvolio's spectacle is, for Olivia, only the most visible form of a general derangement."
+                analysis="Olivia's reaction to Malvolio in yellow stockings, smiling and quoting the letter. 'Midsummer madness' invokes the medieval belief that the heat of midsummer drove people mad - relevant because this is Twelfth Night, mid-winter, so the phrase is metaphorical. Within the play, 'madness' is also Olivia's own state (Cesario), Orsino's (love-sickness), and Antonio's grief - Malvolio's spectacle is, for Olivia, only the most visible form of a general derangement."
               />
               <QuoteCard
                 quote="Or I am mad, or else this is a dream."
                 speaker="Sebastian, 4.1"
-                analysis="Sebastian, finding himself wooed by Olivia, can only frame his situation as either madness or dream. The disjunction is significant: in Twelfth Night, both options apply to almost everyone at some point. Sebastian's quiet acceptance — he chooses to enjoy the dream — contrasts with Malvolio's resistance. Where Malvolio is punished for trying to make a fantasy real, Sebastian walks into a real fantasy and is rewarded with marriage."
+                analysis="Sebastian, finding himself wooed by Olivia, can only frame his situation as either madness or dream. The disjunction is significant: in Twelfth Night, both options apply to almost everyone at some point. Sebastian's quiet acceptance - he chooses to enjoy the dream - contrasts with Malvolio's resistance. Where Malvolio is punished for trying to make a fantasy real, Sebastian walks into a real fantasy and is rewarded with marriage."
               />
               <QuoteCard
                 quote="I am not what I am."
                 speaker="Viola as Cesario, 3.1"
-                analysis="Viola's reply to Olivia's question of what she really is. The line is doubly resonant: the same words are used by Iago in Othello to declare deception ('I am not what I am'), but here the speaker is sincere, simply unable to identify herself within the rules of the disguise. Shakespeare reuses the formula to opposite ethical effect — Viola is honest in her dishonesty. The negative copula collapses identity into pure performance."
+                analysis="Viola's reply to Olivia's question of what she really is. The line is doubly resonant: the same words are used by Iago in Othello to declare deception ('I am not what I am'), but here the speaker is sincere, simply unable to identify herself within the rules of the disguise. Shakespeare reuses the formula to opposite ethical effect - Viola is honest in her dishonesty. The negative copula collapses identity into pure performance."
               />
               <QuoteCard
                 quote="Most wonderful!"
                 speaker="Olivia, 5.1"
-                analysis="Olivia's exclamation when she sees the twins together for the first time. Two words, but they carry the whole reunion. 'Wonderful' here means 'full of wonder' in the older Renaissance sense — astonishment at the romance-world resolution. Critics from Northrop Frye onwards have noted that Shakespearean comedy turns on this moment of impossible recognition; Twelfth Night condenses it into Olivia's small, almost involuntary cry."
+                analysis="Olivia's exclamation when she sees the twins together for the first time. Two words, but they carry the whole reunion. 'Wonderful' here means 'full of wonder' in the older Renaissance sense - astonishment at the romance-world resolution. Critics from Northrop Frye onwards have noted that Shakespearean comedy turns on this moment of impossible recognition; Twelfth Night condenses it into Olivia's small, almost involuntary cry."
               />
               <QuoteCard
                 quote="I'll be revenged on the whole pack of you."
                 speaker="Malvolio, 5.1"
-                analysis="Malvolio's exit line — and one of the most disquieting endings in Shakespearean comedy. Where every other character is moving towards reconciliation and marriage, Malvolio refuses the festive resolution and storms out vowing revenge. 'Pack' is an animal word — he reduces his tormentors to a pack of hunting dogs. The line forces the audience to recognise that the comedy has been built partly on cruelty, and the cruelty has not been forgiven."
+                analysis="Malvolio's exit line - and one of the most disquieting endings in Shakespearean comedy. Where every other character is moving towards reconciliation and marriage, Malvolio refuses the festive resolution and storms out vowing revenge. 'Pack' is an animal word - he reduces his tormentors to a pack of hunting dogs. The line forces the audience to recognise that the comedy has been built partly on cruelty, and the cruelty has not been forgiven."
               />
               <QuoteCard
                 quote="When that I was and a little tiny boy, / With hey, ho, the wind and the rain."
@@ -579,7 +579,7 @@ export default function TwelfthNightPage() {
               <QuoteCard
                 quote="And thus the whirligig of time brings in his revenges."
                 speaker="Feste, 5.1"
-                analysis="Feste's reply to Malvolio shortly before Malvolio's exit. The 'whirligig' (a child's spinning top) makes time itself a turning toy: what goes around comes around. Feste reminds Malvolio that he, Feste, was insulted by him in Act 1 — and now the wheel has turned. The line is structurally crucial: Feste interprets the play's plot as cyclical justice rather than romantic accident, complicating any reading of the Malvolio plot as casual cruelty."
+                analysis="Feste's reply to Malvolio shortly before Malvolio's exit. The 'whirligig' (a child's spinning top) makes time itself a turning toy: what goes around comes around. Feste reminds Malvolio that he, Feste, was insulted by him in Act 1 - and now the wheel has turned. The line is structurally crucial: Feste interprets the play's plot as cyclical justice rather than romantic accident, complicating any reading of the Malvolio plot as casual cruelty."
               />
             </div>
           </Section>

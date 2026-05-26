@@ -19,7 +19,7 @@ const MEANING_Q = QUESTION_TYPES.find((q) => q.id === 'meaning-impact')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Inference (RAO2): reading beyond the literal — masterclass',
+    title: 'Inference (RAO2): reading beyond the literal - masterclass',
     description:
       'A masterclass on the iLowerSecondary English inference objective: literal vs implied meaning, deduction vs inference vs interpretation, the evidence-plus-suggestion sentence frame, how 1-mark and 2-mark questions are marked, and three original practice extracts with model answers.',
   },
@@ -44,14 +44,14 @@ const THREE_LAYERS: Layer[] = [
     gloss:
       'Read a meaning the writer implies but never states. The text hints; you fill the gap with the most reasonable unstated idea.',
     example:
-      'If a character “folded the letter back along its old creases and did not look up,” you infer the news was unwelcome or already known — the writer never says she is upset.',
+      'If a character “folded the letter back along its old creases and did not look up,” you infer the news was unwelcome or already known - the writer never says she is upset.',
   },
   {
     name: 'Interpret',
     gloss:
       'Decide what a detail, image or choice means in the wider context of the text and explain its significance, not just its surface sense.',
     example:
-      'A repeated reference to a clock that has stopped can be interpreted as the writer signalling a household frozen by loss — a meaning built across the text, not from one line.',
+      'A repeated reference to a clock that has stopped can be interpreted as the writer signalling a household frozen by loss - a meaning built across the text, not from one line.',
   },
 ]
 
@@ -72,7 +72,7 @@ const EXTRACTS: Extract[] = [
   {
     id: 'tide-clock',
     kind: 'Non-fiction · recount',
-    title: 'Extract A — “The last bus”',
+    title: 'Extract A - “The last bus”',
     lines: [
       'I had walked the coast path before, but never alone, and never this late in the year. The guidebook in my pocket said the causeway to the island was “passable for roughly four hours either side of low water.” I had read that sentence three times in the café and still set off at half past two.',
       'By the time I reached the shingle the gulls had gone quiet. A man coiling a rope by the slipway looked at me, then at the water, then back at me, and said nothing at all. I checked the laces on both boots and started across the wet stones a little faster than I had meant to.',
@@ -94,14 +94,14 @@ const EXTRACTS: Extract[] = [
         model:
           'The writer suggests the local man can see the crossing is dangerous at that time but chooses not to warn the walker. His silence, after looking deliberately between the walker and the water, implies he expects trouble and perhaps disapproves, which builds a sense of unease for the reader before anything has gone wrong.',
         markNote:
-          'RAO2-style 2-mark “explain what the writer means” item. One mark for an explained inference (the man recognises the danger / the timing is wrong); a second mark for developing it (his pointed silence creates tension or hints the walker should not go). The answer must expand the idea — quoting “said nothing at all” without explaining what the silence implies would not gain the second mark.',
+          'RAO2-style 2-mark “explain what the writer means” item. One mark for an explained inference (the man recognises the danger / the timing is wrong); a second mark for developing it (his pointed silence creates tension or hints the walker should not go). The answer must expand the idea - quoting “said nothing at all” without explaining what the silence implies would not gain the second mark.',
       },
     ],
   },
   {
     id: 'classroom',
     kind: 'Non-fiction · blog',
-    title: 'Extract B — “New school, week one”',
+    title: 'Extract B - “New school, week one”',
     lines: [
       'Everyone keeps asking how I’m settling in. I say “fine, thanks” and reorganise my pencil case for the second time that lesson. The case has three pens I will never use and a rubber I keep lending to a girl whose name I have written on my hand so I do not forget it.',
       'At lunch I take the long way to the hall, the one past the music rooms, because it adds four minutes and four minutes is four minutes I do not have to spend deciding where to sit.',
@@ -123,14 +123,14 @@ const EXTRACTS: Extract[] = [
         model:
           'The writer means they are deliberately delaying arriving at lunch because they have nowhere comfortable to sit and no group to join. Stretching the walk out is a way of avoiding the difficult moment of choosing a seat alone, which shows how isolated and uncertain they feel in the new school.',
         markNote:
-          'RAO2-style 2-mark item. One mark for the inference that the detour is deliberate avoidance; one mark for explaining what this reveals (loneliness / not yet belonging). The phrase must be interpreted, not lifted — repeating “four minutes is four minutes” without explanation does not expand the meaning and earns no second mark.',
+          'RAO2-style 2-mark item. One mark for the inference that the detour is deliberate avoidance; one mark for explaining what this reveals (loneliness / not yet belonging). The phrase must be interpreted, not lifted - repeating “four minutes is four minutes” without explanation does not expand the meaning and earns no second mark.',
       },
     ],
   },
   {
     id: 'kitchen',
     kind: 'Fiction · mystery',
-    title: 'Extract C — “The kettle”',
+    title: 'Extract C - “The kettle”',
     lines: [
       'Maya let herself in with the spare key. The kitchen was warm and the kettle, when she touched it, was still hot, though her grandmother’s coat was gone from its hook and the back door stood a hand’s width open.',
       '“Gran?” she said, to the empty room. The radio was on, turned down so low it was only a murmur, the way it was never left. Maya stood very still and listened to the house instead.',
@@ -152,7 +152,7 @@ const EXTRACTS: Extract[] = [
         model:
           'The writer implies that Maya’s grandmother left suddenly and only moments before Maya arrived. The kettle is still hot and the door is not properly shut, which suggests an interrupted, hurried departure rather than a planned one, creating a sense of mystery and unease about what has happened to her.',
         markNote:
-          'RAO2-style 2-mark item. One mark for the inference of a recent, sudden departure; one mark for developing it (the clues point to haste/interruption and build mystery). The details must be drawn together and explained — simply listing “the kettle was hot and the coat was gone” without saying what it implies is a lift and gains only limited credit at best.',
+          'RAO2-style 2-mark item. One mark for the inference of a recent, sudden departure; one mark for developing it (the clues point to haste/interruption and build mystery). The details must be drawn together and explained - simply listing “the kettle was hot and the coat was gone” without saying what it implies is a lift and gains only limited credit at best.',
       },
     ],
   },
@@ -161,11 +161,11 @@ const EXTRACTS: Extract[] = [
 const PITFALLS = [
   {
     label: 'Lifting without explaining',
-    text: 'Copying the words straight out of the text and stopping there. A lift proves you found the line; it does not show what you inferred from it. Mark schemes for 2-mark “explain what the writer means” items reward the expansion, not the quotation — you must say what the words suggest.',
+    text: 'Copying the words straight out of the text and stopping there. A lift proves you found the line; it does not show what you inferred from it. Mark schemes for 2-mark “explain what the writer means” items reward the expansion, not the quotation - you must say what the words suggest.',
   },
   {
     label: 'Over-reading',
-    text: 'Inventing a meaning the text cannot support — claiming a character is grieving when the evidence only shows they are tired, or building a dramatic backstory from a single neutral detail. A good inference is the most reasonable unstated idea, not the most exciting one. Tie every inference back to the actual words on the page.',
+    text: 'Inventing a meaning the text cannot support - claiming a character is grieving when the evidence only shows they are tired, or building a dramatic backstory from a single neutral detail. A good inference is the most reasonable unstated idea, not the most exciting one. Tie every inference back to the actual words on the page.',
   },
   {
     label: 'Answering the literal question',
@@ -256,7 +256,7 @@ export default async function InferencePage() {
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
-          It carries a {RAO2.weightPct}% weighting of the qualification — see the specification page
+          It carries a {RAO2.weightPct}% weighting of the qualification - see the specification page
           for how every objective is weighted. The point is that it is large enough that you cannot
           afford to treat inference questions as quick wins to rush.
         </p>
@@ -266,14 +266,14 @@ export default async function InferencePage() {
         <h2>Literal vs implied meaning</h2>
         <p>
           Every text carries two kinds of meaning. <strong>Literal</strong> meaning is what the
-          words say on the surface — it can be pointed to directly. <strong>Implied</strong> meaning
+          words say on the surface - it can be pointed to directly. <strong>Implied</strong> meaning
           is what the words make you understand without stating it. Retrieval questions test the
           literal; inference questions test the implied.
         </p>
         <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground mb-2">
-              Literal — what it says
+              Literal - what it says
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               “She put her coat on before he had finished speaking.” The literal fact is simply that
@@ -282,11 +282,11 @@ export default async function InferencePage() {
           </div>
           <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
             <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary mb-2">
-              Implied — what it suggests
+              Implied - what it suggests
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               We <em>infer</em> she has already decided to leave, is not interested in what he is
-              saying, or wants the conversation to end — none of which the writer states.
+              saying, or wants the conversation to end - none of which the writer states.
             </p>
           </div>
         </div>
@@ -324,7 +324,7 @@ export default async function InferencePage() {
         <div className="not-prose my-6 rounded-xl border border-primary/30 bg-primary/5 p-5">
           <p className="text-sm leading-relaxed">
             <span className="font-medium text-foreground">The detail that …</span>{' '}
-            <span className="text-muted-foreground">[evidence — what the text actually says]</span>{' '}
+            <span className="text-muted-foreground">[evidence - what the text actually says]</span>{' '}
             <span className="font-medium text-foreground">suggests that …</span>{' '}
             <span className="text-muted-foreground">[the implied meaning you have worked out]</span>
             .
@@ -333,7 +333,7 @@ export default async function InferencePage() {
         <p className="text-sm text-muted-foreground">
           For a 1-mark inference you can often give just the “suggests that …” half, provided it is
           clearly anchored to the text. For a 2-mark “explain what the writer means” answer you need
-          both halves and then a step of development — why that implied meaning matters or what
+          both halves and then a step of development - why that implied meaning matters or what
           effect it has on the reader.
         </p>
       </section>
@@ -361,7 +361,7 @@ export default async function InferencePage() {
             </p>
             <p className="text-xs text-muted-foreground leading-relaxed mt-1">
               <span className="font-medium text-foreground">How it is marked: </span>
-              {INFERENCE_Q.howToAnswer} You do not need a quotation or extended explanation — but
+              {INFERENCE_Q.howToAnswer} You do not need a quotation or extended explanation - but
               the inference must genuinely go beyond the literal. A correct literal retrieval scores
               nothing here.
             </p>
@@ -389,7 +389,7 @@ export default async function InferencePage() {
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
-          Marks and formats above are typical of these question types — exact wording, order and
+          Marks and formats above are typical of these question types - exact wording, order and
           number of items vary between papers.
         </p>
       </section>
@@ -466,7 +466,7 @@ export default async function InferencePage() {
           {[
             'Have I gone beyond what the text states on the surface?',
             'Can I point to the specific detail my inference rests on?',
-            'For a 2-mark answer, have I explained the meaning and then developed it — not just quoted?',
+            'For a 2-mark answer, have I explained the meaning and then developed it - not just quoted?',
             'Is my inference the most reasonable reading, not the most dramatic one?',
             'Have I avoided over-reading details the text cannot actually support?',
           ].map((c) => (

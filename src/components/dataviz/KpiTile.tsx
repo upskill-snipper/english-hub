@@ -9,7 +9,7 @@ import { Sparkline } from './charts'
 import { SERIES } from './theme'
 
 /**
- * Hero KPI tile — animated figure, delta chip and an optional sparkline,
+ * Hero KPI tile - animated figure, delta chip and an optional sparkline,
  * on a cinematic glass surface. The headline metric primitive for the
  * school/teacher overviews.
  */

@@ -15,7 +15,7 @@ const validateAgeSchema = z.object({
 export async function POST(request: NextRequest) {
   // P1 (Cycle 2 perf audit): previously used an in-memory Map which is
   // non-functional in Vercel's serverless runtime (per-instance state).
-  // Switched to Upstash Redis via the shared rateLimit helper — same
+  // Switched to Upstash Redis via the shared rateLimit helper - same
   // pattern as every other auth-adjacent endpoint.
   const ip = getClientIp(request.headers)
   const rl = await rateLimit(`validate-age:${ip}`, {

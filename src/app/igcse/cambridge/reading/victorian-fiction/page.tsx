@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Approaching Victorian Fiction — Reading Practice Framework — The English Hub',
+    title: 'Approaching Victorian Fiction - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on Victorian fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Approaching Victorian Fiction — Reading Practice Framework',
+  title: 'Approaching Victorian Fiction - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on Victorian fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -101,7 +101,7 @@ export default async function VictorianFictionPage() {
           Approaching Victorian Fiction
         </h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Victorian fiction can feel dense at first — long sentences, formal vocabulary, leisurely
+          Victorian fiction can feel dense at first - long sentences, formal vocabulary, leisurely
           pacing. But once you understand its habits, it becomes a pleasure to read. This framework
           teaches you how to break it down.
         </p>
@@ -213,7 +213,7 @@ export default async function VictorianFictionPage() {
                 <strong>Sentence 2:</strong> The main event or observation.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two period details and what they tell you about the
+                <strong>Sentences 3-4:</strong> Two period details and what they tell you about the
                 society.
               </li>
               <li>

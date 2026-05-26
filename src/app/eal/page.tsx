@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * EAL (English as Additional Language) landing page — the hub.
+ * EAL (English as Additional Language) landing page - the hub.
  *
  * Rebuilt to match the site's standard hub pattern (mirrors
  * `/revision`): a gradient hero with stat boxes, a standout primary
@@ -10,10 +10,10 @@
  *
  * Designed for Arabic L1 learners preparing for UK GCSE/IGCSE.
  * Every user-facing string is bilingual EN + Khaleeji Arabic via the
- * existing `useLocale` hook and `loc()` helper — EAL content stays in
+ * existing `useLocale` hook and `loc()` helper - EAL content stays in
  * the EAL curriculum + inline bilingual strings (no `t()` dictionary).
  *
- * Metadata lives in `src/app/eal/layout.tsx` — do NOT duplicate here.
+ * Metadata lives in `src/app/eal/layout.tsx` - do NOT duplicate here.
  */
 
 import Link from 'next/link'
@@ -146,7 +146,7 @@ export default function EALHubPage() {
     },
     {
       icon: Layers,
-      value: 'A2–C1',
+      value: 'A2-C1',
       label: tx('mkt.eal.hero_stat.cefr_levels'),
     },
     {
@@ -584,22 +584,22 @@ export default function EALHubPage() {
         <ol className="space-y-2 text-body-sm text-muted-foreground" dir="auto">
           <li>
             <strong className="text-foreground">{tx('mkt.eal.howto.step1.bold')}</strong>
-            {' — '}
+            {' - '}
             {tx('mkt.eal.howto.step1.body')}
           </li>
           <li>
             <strong className="text-foreground">{tx('mkt.eal.howto.step2.bold')}</strong>
-            {' — '}
+            {' - '}
             {tx('mkt.eal.howto.step2.body')}
           </li>
           <li>
             <strong className="text-foreground">{tx('mkt.eal.howto.step3.bold')}</strong>
-            {' — '}
+            {' - '}
             {tx('mkt.eal.howto.step3.body')}
           </li>
           <li>
             <strong className="text-foreground">{tx('mkt.eal.howto.step4.bold')}</strong>
-            {' — '}
+            {' - '}
             {tx('mkt.eal.howto.step4.body')}
           </li>
         </ol>

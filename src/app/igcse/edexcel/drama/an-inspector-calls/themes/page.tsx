@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Themes — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Themes - Edexcel IGCSE Literature',
     description:
       'Themes in An Inspector Calls: social responsibility, class, gender, age versus youth, morality, power and dramatic form.',
   },
-  title: 'An Inspector Calls Themes — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Themes - Edexcel IGCSE Literature',
   description:
     'Themes in An Inspector Calls: social responsibility, class, gender, age versus youth, morality, power and dramatic form.',
   alternates: {
@@ -32,34 +32,34 @@ const themes = [
   {
     title: 'Class and capitalism',
     intro:
-      'The Birlings\u2019 dining room is a microcosm of Edwardian capital. Arthur\u2019s factory, Gerald\u2019s aristocratic family, Milwards, the Palace Bar, the charity board — each is a node in the system that passes Eva along until she dies. Priestley uses dramatic irony (the Titanic, Germany) to make the audience see through the Birlings\u2019 certainty.',
+      'The Birlings\u2019 dining room is a microcosm of Edwardian capital. Arthur\u2019s factory, Gerald\u2019s aristocratic family, Milwards, the Palace Bar, the charity board - each is a node in the system that passes Eva along until she dies. Priestley uses dramatic irony (the Titanic, Germany) to make the audience see through the Birlings\u2019 certainty.',
     moments: 'Birling\u2019s Act One speech; the wage strike; the charity refusal.',
     quote: '”Come down sharply on some of these people, they\u2019d soon be asking for the earth.”',
   },
   {
     title: 'Gender and power',
     intro:
-      'The play stages several versions of female experience: Sybil\u2019s complicit propriety, Sheila\u2019s dawning self-awareness, Eva\u2019s silenced absence. The Birling men each exploit women in different registers — Birling\u2019s factory discipline, Gerald\u2019s protective affair, Eric\u2019s violent drunken encounter — and Priestley insists we name each of them.',
+      'The play stages several versions of female experience: Sybil\u2019s complicit propriety, Sheila\u2019s dawning self-awareness, Eva\u2019s silenced absence. The Birling men each exploit women in different registers - Birling\u2019s factory discipline, Gerald\u2019s protective affair, Eric\u2019s violent drunken encounter - and Priestley insists we name each of them.',
     moments:
       'Sheila at Milwards; Gerald at the Palace Bar; Eric\u2019s confession; Mrs Birling\u2019s charity decision.',
-    quote: '”Girls of that class —“ — Mrs Birling',
+    quote: '”Girls of that class -“ - Mrs Birling',
   },
   {
     title: 'Age versus youth',
     intro:
-      'Priestley splits the Birling family along generational lines. The young Birlings — Sheila and Eric — can change; the older ones cannot. Gerald\u2019s regression into denial, despite his relative youth, tracks him with the parents. The play\u2019s hope rests on the assumption that generational turnover can do what argument alone cannot.',
+      'Priestley splits the Birling family along generational lines. The young Birlings - Sheila and Eric - can change; the older ones cannot. Gerald\u2019s regression into denial, despite his relative youth, tracks him with the parents. The play\u2019s hope rests on the assumption that generational turnover can do what argument alone cannot.',
     moments:
       'Sheila\u2019s "it frightens me the way you talk"; Eric\u2019s confrontation with his mother; the Act Three reversal.',
     quote:
-      '“You\u2019re just the kind of son-in-law I always wanted.” — Arthur Birling (to Gerald)',
+      '“You\u2019re just the kind of son-in-law I always wanted.” - Arthur Birling (to Gerald)',
   },
   {
     title: 'Morality, guilt and denial',
     intro:
       'The Inspector\u2019s interrogation is structured like a confessional. Each Birling receives the same moral test, and the play treats their responses as choices rather than character traits. Priestley\u2019s use of dramatic irony and the phone-call twist punishes denial and rewards (at least potentially) acceptance.',
     moments:
-      'Each confession in Acts One–Three; the family\u2019s attempt to "laugh it off"; the final phone call.',
-    quote: '“Probably a socialist or some sort of crank.” — Arthur Birling on the Inspector',
+      'Each confession in Acts One-Three; the family\u2019s attempt to "laugh it off"; the final phone call.',
+    quote: '“Probably a socialist or some sort of crank.” - Arthur Birling on the Inspector',
   },
   {
     title: 'Dramatic form and the "well-made play"',
@@ -116,7 +116,7 @@ export default async function InspectorCallsThemesPage() {
             An Inspector Calls: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Priestley’s play — social responsibility, class, gender, age
+            Analytical routes through Priestley’s play - social responsibility, class, gender, age
             versus youth, morality and dramatic form.
           </p>
         </div>
@@ -127,7 +127,7 @@ export default async function InspectorCallsThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

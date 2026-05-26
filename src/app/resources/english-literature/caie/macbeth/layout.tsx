@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'CAIE IGCSE English Literature guide for Macbeth. Act-by-act summary, character analysis, themes, key quotes, and exam preparation strategies.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/macbeth' },
   openGraph: {
-    title: 'Macbeth - CAIE IGCSE — The English Hub',
+    title: 'Macbeth - CAIE IGCSE - The English Hub',
     description:
       'CAIE IGCSE English Literature guide for Macbeth. Act-by-act summary, character analysis, themes, key quotes, and exam preparation strategies.',
   },

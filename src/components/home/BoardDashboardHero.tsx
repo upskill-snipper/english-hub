@@ -349,7 +349,7 @@ export default function BoardDashboardHero({ board }: { board: ExamBoard }) {
                 </>
               ) : (
                 <>
-                  {config.description} — jump back in where you left off or explore your
+                  {config.description} - jump back in where you left off or explore your
                   board&rsquo;s toolkit below.
                 </>
               )}
@@ -369,7 +369,7 @@ export default function BoardDashboardHero({ board }: { board: ExamBoard }) {
           </div>
         </div>
 
-        {/* ━━━ PAPER CARDS — the hero element ━━━ */}
+        {/* ━━━ PAPER CARDS - the hero element ━━━ */}
         {hasPapers && (
           <div className="mb-12">
             <div className="flex items-center justify-between mb-5">

@@ -54,7 +54,7 @@ function ResetPasswordForm() {
       // 3. Fail fast when there is genuinely nothing to wait for. Without
       //    this check, a direct visit to /auth/reset-password (no `?code=`,
       //    no recovery hash, no existing session) hung in the
-      //    onAuthStateChange listener for the full VERIFY_TIMEOUT_MS — the
+      //    onAuthStateChange listener for the full VERIFY_TIMEOUT_MS - the
       //    PASSWORD_RECOVERY event will never fire because there is no
       //    recovery token to process. Live E2E saw the spinner sit for ~15
       //    seconds, which read as "reset password is broken".
@@ -306,7 +306,7 @@ function ResetPasswordForm() {
 }
 
 export default function ResetPasswordPage() {
-  // useSearchParams() requires a Suspense boundary in Next 15 — without it
+  // useSearchParams() requires a Suspense boundary in Next 15 - without it
   // the whole route opts out of static rendering and can render blank on
   // first paint (or fail the production build with the
   // "missing-suspense-with-csr-bailout" error). Wrapping the form in a

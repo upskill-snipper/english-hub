@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Descriptive Structure — Cambridge IGCSE Composition',
+    title: 'Descriptive Structure - Cambridge IGCSE Composition',
     description:
       'Structure a Cambridge IGCSE descriptive composition using the cinematic zoom technique: wide shot, mid shot, close-up and inner monologue.',
   },
-  title: 'Descriptive Structure — Cambridge IGCSE Composition',
+  title: 'Descriptive Structure - Cambridge IGCSE Composition',
   description:
     'Structure a Cambridge IGCSE descriptive composition using the cinematic zoom technique: wide shot, mid shot, close-up and inner monologue.',
   alternates: {
@@ -39,7 +39,7 @@ const zoomStages = [
   },
   {
     stage: 'Close-up',
-    length: '~1–2 paragraphs',
+    length: '~1-2 paragraphs',
     description:
       'Pick one object, face or gesture and describe it in obsessive detail. This is where the marks are. Slow down. Use all five senses on a single subject.',
     example:
@@ -49,7 +49,7 @@ const zoomStages = [
     stage: 'Inner shot',
     length: '~1 paragraph',
     description:
-      'Pull back into the narrator — or into the felt mood of the scene. Return, subtly, to the image you opened with. This is how the piece earns the word &ldquo;crafted&rdquo;.',
+      'Pull back into the narrator - or into the felt mood of the scene. Return, subtly, to the image you opened with. This is how the piece earns the word &ldquo;crafted&rdquo;.',
     example:
       'I walked out through the far edge of the square. Behind me, the market was already folding itself up for the evening, the dropped blanket being quietly gathered in.',
   },
@@ -145,7 +145,7 @@ export default async function StructurePage() {
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                Describe the same place at two different times — dawn and dusk, summer and winter,
+                Describe the same place at two different times - dawn and dusk, summer and winter,
                 before and after a storm. The contrast does your structural work for you.
               </p>
               <p className="text-foreground">
@@ -159,7 +159,7 @@ export default async function StructurePage() {
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                Move the narrator physically through the scene — a door, a hallway, a courtyard, a
+                Move the narrator physically through the scene - a door, a hallway, a courtyard, a
                 balcony. Each paragraph is a new space. Keep the narrator silent; let the setting
                 speak.
               </p>
@@ -188,7 +188,7 @@ export default async function StructurePage() {
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                Two characters observe the same scene. Describe only through their reactions — one
+                Two characters observe the same scene. Describe only through their reactions - one
                 delighted, one bored; one remembering, one forgetting. Character becomes
                 description.
               </p>
@@ -224,7 +224,7 @@ export default async function StructurePage() {
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong className="text-foreground">Echo the opening in the final line.</strong> Not
-              the same words — the same image, changed. This single move reads as &ldquo;crafted
+              the same words - the same image, changed. This single move reads as &ldquo;crafted
               shape&rdquo; on any mark scheme.
             </span>
           </li>

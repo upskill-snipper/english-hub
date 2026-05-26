@@ -26,7 +26,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'IGCSE Language B — The English Hub',
+    title: 'IGCSE Language B - The English Hub',
     description:
       'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
   },
@@ -194,7 +194,7 @@ export default async function Cambridge0990HubPage() {
     <div className="space-y-12 pb-16">
       <CourseJsonLd
         name="Cambridge IGCSE First Language English (0990)"
-        description="Complete revision hub for Cambridge International IGCSE First Language English 0990 — Reading, Composition, exam technique. Graded 9–1."
+        description="Complete revision hub for Cambridge International IGCSE First Language English 0990 - Reading, Composition, exam technique. Graded 9-1."
         educationalLevel="IGCSE"
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/cambridge/0990"
@@ -286,7 +286,7 @@ export default async function Cambridge0990HubPage() {
                 key={p.code}
                 className="rounded-2xl border border-border/60 bg-card transition-all duration-200 hover:shadow-card-hover"
               >
-                {/* Paper header — clickable */}
+                {/* Paper header - clickable */}
                 <Link
                   href={p.href}
                   className="group/paper flex items-start justify-between gap-3 p-5 pb-3"
@@ -389,7 +389,7 @@ export default async function Cambridge0990HubPage() {
         <p className="text-body-sm text-muted-foreground leading-relaxed">
           IGCSE Language B reports results on the same numerical 9-1 scale used by reformed UK
           GCSEs, where Grade 9 is the highest and Grade 1 is the lowest pass. The content, papers
-          and assessment objectives are identical to Language A — only the reporting scale changes.
+          and assessment objectives are identical to Language A - only the reporting scale changes.
           Schools choose Language B when they want students&apos; results to align directly with UK
           GCSE grades for sixth form or university applications.
         </p>
@@ -397,19 +397,19 @@ export default async function Cambridge0990HubPage() {
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <h3 className="text-body-sm font-semibold text-foreground">Grade 9</h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Above old A*. Awarded to the top performers — roughly the top 4% of entries.
+              Above old A*. Awarded to the top performers - roughly the top 4% of entries.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <h3 className="text-body-sm font-semibold text-foreground">Grade 4</h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Standard pass — equivalent to the old C grade. Required by many sixth forms.
+              Standard pass - equivalent to the old C grade. Required by many sixth forms.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <h3 className="text-body-sm font-semibold text-foreground">Grade 1</h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Lowest pass — equivalent to the old G grade on the legacy scale.
+              Lowest pass - equivalent to the old G grade on the legacy scale.
             </p>
           </div>
         </div>

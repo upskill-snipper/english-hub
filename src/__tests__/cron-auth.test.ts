@@ -119,7 +119,7 @@ describe('Cron endpoint authentication', () => {
     const { GET } = await import('@/app/api/cron/data-retention/route')
     const res = await GET(buildCronRequest(`Bearer ${REAL_SECRET}`))
 
-    // Should not be 401 — may be 200 or 500 depending on downstream mocks,
+    // Should not be 401 - may be 200 or 500 depending on downstream mocks,
     // but the auth gate is passed.
     expect(res.status).not.toBe(401)
   })
@@ -136,7 +136,7 @@ describe('Cron endpoint authentication', () => {
   })
 })
 
-describe('Cron auth — timing-safe comparison', () => {
+describe('Cron auth - timing-safe comparison', () => {
   it('uses timing-safe comparison to prevent timing attacks', () => {
     // Verify that the crypto.timingSafeEqual function works as expected
     // (this is what the cron routes use internally).
@@ -153,7 +153,7 @@ describe('Cron auth — timing-safe comparison', () => {
     const short = Buffer.from('Bearer abc')
     const long = Buffer.from('Bearer abcdef')
 
-    // timingSafeEqual throws when lengths differ — the cron routes check
+    // timingSafeEqual throws when lengths differ - the cron routes check
     // length first to avoid this.
     expect(short.length).not.toBe(long.length)
   })

@@ -492,7 +492,7 @@ export const revisionCardSets: RevisionCardSet[] = [
       {
         id: 'ic005',
         front: "Describe Mr Birling's character and his philosophy.",
-        back: 'Birling is a wealthy industrialist who values profit and self-interest. He believes "a man has to make his own way — has to look after himself." He represents the capitalist, exploitative employer who refuses social responsibility.',
+        back: 'Birling is a wealthy industrialist who values profit and self-interest. He believes "a man has to make his own way - has to look after himself." He represents the capitalist, exploitative employer who refuses social responsibility.',
         category: 'Character Analysis',
         difficulty: 'medium',
       },
@@ -506,7 +506,7 @@ export const revisionCardSets: RevisionCardSet[] = [
       {
         id: 'ic007',
         front: "How does Mrs Birling respond to Eva Smith's request for charity?",
-        back: 'Mrs Birling refuses Eva charity. Eva had presented herself to the Brumley Women\'s Charity Organisation using the name "Mrs Birling" — Sybil Birling treated this as gross impertinence and used her influence on the committee to have the appeal denied. Her decision is driven by moral judgment, snobbery, and class prejudice, despite Eva being pregnant and destitute.',
+        back: 'Mrs Birling refuses Eva charity. Eva had presented herself to the Brumley Women\'s Charity Organisation using the name "Mrs Birling" - Sybil Birling treated this as gross impertinence and used her influence on the committee to have the appeal denied. Her decision is driven by moral judgment, snobbery, and class prejudice, despite Eva being pregnant and destitute.',
         category: 'Character Analysis',
         difficulty: 'medium',
       },
@@ -1639,7 +1639,7 @@ export const revisionCardSets: RevisionCardSet[] = [
       {
         id: 'pw013',
         front: 'Who wrote "Bayonet Charge" and what war does it depict?',
-        back: 'Ted Hughes (1930-1998) wrote "Bayonet Charge," imagining a World War I infantry charge. A soldier charges into battle and experiences terror and confusion. Hughes was born in 1930 and never fought in any war — he drew on his father William\'s WWI accounts (William survived Gallipoli, one of only seventeen of his Lancashire Fusiliers regiment to return) to imagine the soldier\'s experience. Hughes presents war as chaotic and dehumanizing.',
+        back: 'Ted Hughes (1930-1998) wrote "Bayonet Charge," imagining a World War I infantry charge. A soldier charges into battle and experiences terror and confusion. Hughes was born in 1930 and never fought in any war - he drew on his father William\'s WWI accounts (William survived Gallipoli, one of only seventeen of his Lancashire Fusiliers regiment to return) to imagine the soldier\'s experience. Hughes presents war as chaotic and dehumanizing.',
         category: 'Individual Poem',
         difficulty: 'medium',
       },

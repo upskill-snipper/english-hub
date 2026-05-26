@@ -7,7 +7,7 @@
 // audio signal in scope:
 //   • Pronunciation is a best-effort PROXY (inferred from the words only) and
 //     is explicitly caveated to the model and the learner.
-//   • Fluency & Coherence is inferred from transcript features — length,
+//   • Fluency & Coherence is inferred from transcript features - length,
 //     coherence/linking, and hesitation markers (um, uh, like, you know …).
 // Live auto-transcription (ASR) and true acoustic pronunciation scoring are
 // Phase 2.
@@ -59,16 +59,16 @@ interface SpeakingFeedbackRequest {
 
 // ─── Per-band descriptor prose (original, concise paraphrase) ───────────────
 // Learner-facing paraphrase of the public IELTS Speaking band scale for bands
-// 4–9. Written from scratch for this product (not copied from the official
+// 4-9. Written from scratch for this product (not copied from the official
 // descriptors). Embedded in the system prompt to anchor the model's scoring.
 
 const SPEAKING_BAND_PROSE: Record<number, string> = {
-  9: 'Band 9 — Speaks fluently with only very rare repetition or self-correction; any hesitation is to find ideas, not words. Develops topics fully and coherently. Uses vocabulary and idiom with full flexibility and precision. Grammar is wide-ranging and consistently accurate. Pronunciation features are used precisely and are effortless to follow.',
-  8: 'Band 8 — Speaks fluently with only occasional repetition or self-correction; hesitation is usually content-related. Develops topics coherently and appropriately. Uses a wide vocabulary resource readily and flexibly, with occasional imprecise word choice. Uses a wide range of structures flexibly; the majority of sentences are error-free. Pronunciation is easy to follow throughout, with only occasional lapses.',
-  7: 'Band 7 — Speaks at length without noticeable effort, though coherence may dip with some repetition, self-correction or hesitation; uses a range of connectives flexibly. Uses vocabulary resourcefully, including some less common items and idiom, with some inappropriate choices. Uses a range of complex structures with some flexibility; frequent error-free sentences though some errors persist. Pronunciation shows a range of features and is generally easy to follow.',
-  6: 'Band 6 — Willing to speak at length, though coherence is sometimes lost through hesitation, repetition or self-correction; uses connectives but not always appropriately. Has a wide enough vocabulary to discuss topics at length and make meaning clear despite some inappropriacies. Uses a mix of simple and complex structures with limited flexibility; errors are frequent but rarely impede understanding. Pronunciation can usually be understood, with some unclear stretches.',
-  5: 'Band 5 — Usually maintains flow but relies on repetition, self-correction and slow speech; may overuse certain connectives. Manages to talk about familiar and unfamiliar topics but uses vocabulary with limited flexibility. Produces basic sentence forms reasonably accurately but a limited range of complex structures, usually with errors. Pronunciation shows some control but mispronunciations sometimes reduce clarity and require listener effort.',
-  4: 'Band 4 — Cannot respond without noticeable pauses and may speak slowly with frequent repetition and self-correction; links only basic sentences with simple connectives, with breakdowns in coherence. Able to talk about familiar topics but conveys only basic meaning on unfamiliar ones and makes frequent errors in word choice. Produces basic sentence forms with some accuracy but a very limited range of structures and frequent errors. Pronunciation lapses are frequent and cause some difficulty for the listener.',
+  9: 'Band 9 - Speaks fluently with only very rare repetition or self-correction; any hesitation is to find ideas, not words. Develops topics fully and coherently. Uses vocabulary and idiom with full flexibility and precision. Grammar is wide-ranging and consistently accurate. Pronunciation features are used precisely and are effortless to follow.',
+  8: 'Band 8 - Speaks fluently with only occasional repetition or self-correction; hesitation is usually content-related. Develops topics coherently and appropriately. Uses a wide vocabulary resource readily and flexibly, with occasional imprecise word choice. Uses a wide range of structures flexibly; the majority of sentences are error-free. Pronunciation is easy to follow throughout, with only occasional lapses.',
+  7: 'Band 7 - Speaks at length without noticeable effort, though coherence may dip with some repetition, self-correction or hesitation; uses a range of connectives flexibly. Uses vocabulary resourcefully, including some less common items and idiom, with some inappropriate choices. Uses a range of complex structures with some flexibility; frequent error-free sentences though some errors persist. Pronunciation shows a range of features and is generally easy to follow.',
+  6: 'Band 6 - Willing to speak at length, though coherence is sometimes lost through hesitation, repetition or self-correction; uses connectives but not always appropriately. Has a wide enough vocabulary to discuss topics at length and make meaning clear despite some inappropriacies. Uses a mix of simple and complex structures with limited flexibility; errors are frequent but rarely impede understanding. Pronunciation can usually be understood, with some unclear stretches.',
+  5: 'Band 5 - Usually maintains flow but relies on repetition, self-correction and slow speech; may overuse certain connectives. Manages to talk about familiar and unfamiliar topics but uses vocabulary with limited flexibility. Produces basic sentence forms reasonably accurately but a limited range of complex structures, usually with errors. Pronunciation shows some control but mispronunciations sometimes reduce clarity and require listener effort.',
+  4: 'Band 4 - Cannot respond without noticeable pauses and may speak slowly with frequent repetition and self-correction; links only basic sentences with simple connectives, with breakdowns in coherence. Able to talk about familiar topics but conveys only basic meaning on unfamiliar ones and makes frequent errors in word choice. Produces basic sentence forms with some accuracy but a very limited range of structures and frequent errors. Pronunciation lapses are frequent and cause some difficulty for the listener.',
 }
 
 // ─── System prompt builder ───────────────────────────────────────────────────
@@ -78,7 +78,7 @@ function buildSystemPrompt(part: SpeakingPart, promptText: string, request: Next
     part === 'speaking-part-1'
       ? 'Part 1 (short interview questions on familiar topics)'
       : part === 'speaking-part-2'
-        ? 'Part 2 (the "long turn" — a 1–2 minute monologue from a cue card)'
+        ? 'Part 2 (the "long turn" - a 1-2 minute monologue from a cue card)'
         : 'Part 3 (a two-way discussion of more abstract ideas)'
 
   const criteriaList = SPEAKING_CRITERIA.map((c) => `- "${c.key}" (${c.label}): ${c.summary}`).join(
@@ -94,7 +94,7 @@ function buildSystemPrompt(part: SpeakingPart, promptText: string, request: Next
     `THE PROMPT THE CANDIDATE WAS RESPONDING TO:`,
     promptText,
     ``,
-    `CRITICAL CONTEXT — YOU ARE MARKING A TYPED TRANSCRIPT, NOT AUDIO.`,
+    `CRITICAL CONTEXT - YOU ARE MARKING A TYPED TRANSCRIPT, NOT AUDIO.`,
     `In this Wave 1 product the candidate has typed (or pasted) what they said; you do NOT have the audio.`,
     `Therefore:`,
     `- Score "pronunciation" only as a BEST-EFFORT PROXY inferred from the written words (e.g. word choices that are commonly mispronounced, evidence of clear vs. tangled phrasing). In its comment, openly state that pronunciation cannot be fully assessed from a transcript and is an estimate.`,
@@ -105,12 +105,12 @@ function buildSystemPrompt(part: SpeakingPart, promptText: string, request: Next
     `MARK AGAINST THESE FOUR IELTS SPEAKING CRITERIA (use these exact key strings):`,
     criteriaList,
     ``,
-    `BAND SCALE (paraphrased; bands run 0–9 in 0.5 steps — half bands such as 6.5 are allowed):`,
+    `BAND SCALE (paraphrased; bands run 0-9 in 0.5 steps - half bands such as 6.5 are allowed):`,
     bandProse,
     ``,
     `Set "overallBand" to the average of the four criteria bands, rounded to the nearest 0.5.`,
     ``,
-    `RESPOND WITH STRICT, MINIFIED JSON ONLY — no markdown, no code fences, no commentary before or after. Use exactly this shape:`,
+    `RESPOND WITH STRICT, MINIFIED JSON ONLY - no markdown, no code fences, no commentary before or after. Use exactly this shape:`,
     `{`,
     `  "overallBand": <number 0-9 in 0.5 steps>,`,
     `  "criteria": [`,
@@ -137,7 +137,7 @@ async function generateSpeakingFeedback(systemPrompt: string, transcript: string
     throw new Error('AI service is temporarily unavailable.')
   }
 
-  // Shared client — same privacy posture + model as every other route.
+  // Shared client - same privacy posture + model as every other route.
   const anthropic = getAnthropicClient(apiKey)
 
   const message = await anthropic.messages.create(
@@ -181,7 +181,7 @@ function isSpeakingCriterion(value: unknown): value is SpeakingCriterion {
   )
 }
 
-/** Clamp any model-supplied number into a valid 0–9 band (0.5 steps). */
+/** Clamp any model-supplied number into a valid 0-9 band (0.5 steps). */
 function toBand(value: unknown): Band {
   const n = typeof value === 'number' ? value : Number(value)
   if (!Number.isFinite(n)) return roundToBand(0)
@@ -366,7 +366,7 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse()
     }
 
-    // 1b. Subscription / paywall — AI speaking feedback is a Premium feature
+    // 1b. Subscription / paywall - AI speaking feedback is a Premium feature
     //     (same gate as essay feedback).
     const isPremium = await hasActiveSubscription(supabase, user.id)
     if (!isPremium) {
@@ -375,7 +375,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 2. Rate limit — 30 speaking submissions per day per user.
+    // 2. Rate limit - 30 speaking submissions per day per user.
     const rl = await rateLimit(`ielts-speaking-feedback:${user.id}`, {
       limit: 30,
       windowSeconds: 86_400,
@@ -413,12 +413,12 @@ export async function POST(request: NextRequest) {
 
     const { part, promptText, transcript, promptId } = validation.data
 
-    // 4b. Safeguarding / misuse pre-screen — parity with the essay route. The
+    // 4b. Safeguarding / misuse pre-screen - parity with the essay route. The
     //     transcript plays the role of "essay", the prompt the role of "topic".
     const safetyError = contentSafetyCheck({ essay: transcript, questionText: promptText })
     if (safetyError) return badRequestResponse(safetyError)
 
-    // 5. EU AI Act Art. 12/19 — bracket the model call for the audit record.
+    // 5. EU AI Act Art. 12/19 - bracket the model call for the audit record.
     //    NOTE: `feature` is typed as the closed `AiAuditFeature` union in
     //    src/lib/ai-audit-log.ts, which this module must NOT edit. That union
     //    has no IELTS member yet, so we log under the nearest existing

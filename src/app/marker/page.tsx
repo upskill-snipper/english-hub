@@ -6,14 +6,14 @@
 // A fast, keyboard-driven marking queue for contracted external markers.
 // The marker sees ONE assigned, AI-drafted script at a time: the student
 // answer + the editable AI draft (mark, AO breakdown, feedback). They set a
-// final mark, optional per-AO marks, final feedback and — REQUIRED whenever
-// they change the mark or feedback — an adjustment reason (this is the
+// final mark, optional per-AO marks, final feedback and - REQUIRED whenever
+// they change the mark or feedback - an adjustment reason (this is the
 // training signal). Submitting POSTs the EXISTING /api/marking/[id]/review
 // endpoint and the next queue item loads automatically with zero extra
 // clicks.
 //
 // Access: gated to ACTIVE markers via GET /api/marker/me. A non-marker (or
-// paused/offboarded) sees a friendly "not a marker — contact admin" screen,
+// paused/offboarded) sees a friendly "not a marker - contact admin" screen,
 // never the queue. The queue itself (GET /api/marker/queue) only ever
 // returns rows assigned to this marker (server-enforced); this UI never
 // requests or shows another marker's / pupil's work.
@@ -125,7 +125,7 @@ interface QueueItem {
 
 type ReviewDecision = 'approve' | 'correct' | 'reject'
 
-// 9-1 GCSE grades plus "U" — must match the review endpoint's ALLOWED_GRADES.
+// 9-1 GCSE grades plus "U" - must match the review endpoint's ALLOWED_GRADES.
 const GRADE_OPTIONS = ['9', '8', '7', '6', '5', '4', '3', '2', '1', 'U'] as const
 
 // ─── Helpers ───────────────────────────────────────────────────────────────
@@ -165,7 +165,7 @@ function formatSource(s: string | null): string {
     case 'platform':
       return 'Platform'
     default:
-      return s ?? '—'
+      return s ?? '-'
   }
 }
 
@@ -298,7 +298,7 @@ export default function MarkerConsolePage() {
     setCursor((c) => {
       const next = c + 1
       if (next >= queue.length) {
-        // Exhausted the loaded slice — pull the next batch.
+        // Exhausted the loaded slice - pull the next batch.
         void loadQueue()
         return 0
       }
@@ -312,7 +312,7 @@ export default function MarkerConsolePage() {
       if (!current || submitting) return
 
       // Validation: changing the mark/feedback REQUIRES an adjustment reason
-      // — this is the training signal. Always required for an explicit
+      // - this is the training signal. Always required for an explicit
       // "correct". Reject also wants a reason (why it failed QA).
       const reasonRequired = decision === 'correct' || decision === 'reject' || changedFromDraft
       if (reasonRequired && adjustmentReason.trim().length === 0) {
@@ -320,7 +320,7 @@ export default function MarkerConsolePage() {
           tt(
             t,
             'marker.review.reason_required',
-            'Add an adjustment reason — this is the training signal whenever you change the mark or feedback.',
+            'Add an adjustment reason - this is the training signal whenever you change the mark or feedback.',
           ),
         )
         return
@@ -411,7 +411,7 @@ export default function MarkerConsolePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queue.length])
 
-  // ── Skip (no write — just move past this item locally) ───────────────────
+  // ── Skip (no write - just move past this item locally) ───────────────────
   const skip = useCallback(() => {
     if (!current || submitting) return
     setQueue((prev) => {
@@ -691,7 +691,7 @@ export default function MarkerConsolePage() {
                     {tt(t, 'marker.ai.mark', 'AI mark')}:
                   </span>
                   <span className="font-semibold text-foreground">
-                    {current.ai_grade ?? '—'}
+                    {current.ai_grade ?? '-'}
                     {current.ai_score != null && current.ai_max_marks != null
                       ? ` (${current.ai_score}/${current.ai_max_marks})`
                       : ''}
@@ -856,7 +856,7 @@ export default function MarkerConsolePage() {
                       {tt(
                         t,
                         'marker.field.reason_hint',
-                        'You changed the draft — a reason is required.',
+                        'You changed the draft - a reason is required.',
                       )}
                     </p>
                   )}

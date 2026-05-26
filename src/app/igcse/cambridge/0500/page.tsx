@@ -27,7 +27,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'IGCSE Language A — The English Hub',
+    title: 'IGCSE Language A - The English Hub',
     description:
       'IGCSE Language A hub. Reading Paper, Writing Paper, assessment structure, grade boundaries and exam technique. Aligns with Cambridge syllabus 0500.',
   },
@@ -50,15 +50,15 @@ const papers = [
     href: '/igcse/cambridge/0500/paper-1',
     sections: [
       {
-        label: 'Question 1 — short comprehension responses',
+        label: 'Question 1 - short comprehension responses',
         href: '/igcse/cambridge/0500/paper-1',
       },
       {
-        label: "Question 2 — language analysis of the writer's choices",
+        label: "Question 2 - language analysis of the writer's choices",
         href: '/igcse/cambridge/0500/paper-1/language-analysis',
       },
       {
-        label: 'Question 3 — summary writing based on two passages',
+        label: 'Question 3 - summary writing based on two passages',
         href: '/igcse/cambridge/0500/paper-1/summary-writing',
       },
     ],
@@ -81,15 +81,15 @@ const papers = [
     href: '/igcse/cambridge/0500/paper-2',
     sections: [
       {
-        label: 'Section A — directed writing (40 marks)',
+        label: 'Section A - directed writing (40 marks)',
         href: '/igcse/cambridge/0500/paper-2/directed-writing',
       },
       {
-        label: 'Section B — descriptive writing (40 marks)',
+        label: 'Section B - descriptive writing (40 marks)',
         href: '/igcse/cambridge/0500/paper-2/descriptive-writing',
       },
       {
-        label: 'Section B — narrative writing (40 marks)',
+        label: 'Section B - narrative writing (40 marks)',
         href: '/igcse/cambridge/0500/paper-2/narrative-writing',
       },
     ],
@@ -177,7 +177,7 @@ export default async function Cambridge0500HubPage() {
     <div className="space-y-12 pb-16">
       <CourseJsonLd
         name="Cambridge IGCSE First Language English (0500)"
-        description="Complete revision hub for Cambridge International IGCSE First Language English 0500 — Reading, Composition, exam technique. Graded A*–G."
+        description="Complete revision hub for Cambridge International IGCSE First Language English 0500 - Reading, Composition, exam technique. Graded A*-G."
         educationalLevel="IGCSE"
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/cambridge/0500"
@@ -238,7 +238,7 @@ export default async function Cambridge0500HubPage() {
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <GraduationCap className="size-3.5" />
-              A* – G
+              A* - G
             </span>
           </div>
         </div>
@@ -261,7 +261,7 @@ export default async function Cambridge0500HubPage() {
                 key={paper.code}
                 className="rounded-2xl border border-border/60 bg-card transition-all duration-200 hover:shadow-card-hover"
               >
-                {/* Paper header — clickable */}
+                {/* Paper header - clickable */}
                 <Link
                   href={paper.href}
                   className="group/paper flex items-start justify-between gap-3 p-5 pb-3"
@@ -279,7 +279,7 @@ export default async function Cambridge0500HubPage() {
                       {paper.code}: {paper.title}
                     </h3>
                     <p className="mt-1 font-mono text-body-xs text-muted-foreground">
-                      {paper.time} — {paper.marks}
+                      {paper.time} - {paper.marks}
                     </p>
                     <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
                       {paper.description}
@@ -381,7 +381,7 @@ export default async function Cambridge0500HubPage() {
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Reading skills — 50%
+              Reading skills - 50%
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Understand and respond to texts
@@ -395,7 +395,7 @@ export default async function Cambridge0500HubPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Writing skills — 50%
+              Writing skills - 50%
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Write clearly and effectively

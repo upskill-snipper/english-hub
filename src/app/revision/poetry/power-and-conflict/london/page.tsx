@@ -468,7 +468,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Blake uses "charter\'d" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion — everything is owned by those in power.',
+      'Blake uses "charter\'d" to suggest that even the streets and the Thames have been bought, sold, and controlled. Freedom is an illusion - everything is owned by those in power.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -478,13 +478,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Physical chains used on prisoners',
-      'Psychological chains — people are imprisoned by their own acceptance of oppression',
+      'Psychological chains - people are imprisoned by their own acceptance of oppression',
       'Decorative bracelets worn by Londoners',
       'Laws written by Parliament',
     ],
     correctIndex: 1,
     explanation:
-      '"Mind-forg\'d manacles" is Blake\'s most important metaphor. The chains are not physical but mental — people have internalised their oppression and accepted it as normal.',
+      '"Mind-forg\'d manacles" is Blake\'s most important metaphor. The chains are not physical but mental - people have internalised their oppression and accepted it as normal.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -526,7 +526,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Rhyming couplets',
-      'Anaphora — the repetition of "In every"',
+      'Anaphora - the repetition of "In every"',
       'A volta or turning point',
       'Lack of punctuation',
     ],
@@ -625,9 +625,9 @@ const REVISION_TOPICS = [
     summary:
       'London explores the corruption of power, the suffering of ordinary people, and the loss of innocence in an industrialised city controlled by oppressive institutions.',
     keyPoints: [
-      'Power corrupts — the Church, monarchy, and commercial interests all cause suffering',
+      'Power corrupts - the Church, monarchy, and commercial interests all cause suffering',
       'Oppression is both external (institutions) and internal ("mind-forg\'d manacles")',
-      'Innocence is destroyed — children suffer from birth (chimney sweeps, diseased infants)',
+      'Innocence is destroyed - children suffer from birth (chimney sweeps, diseased infants)',
       'The cycle of suffering repeats endlessly from generation to generation',
     ],
   },
@@ -636,18 +636,18 @@ const REVISION_TOPICS = [
     summary:
       'Blake uses metaphor, repetition, oxymoron, and visceral imagery to create an unrelenting picture of suffering and institutional corruption.',
     keyPoints: [
-      '"Mind-forg\'d manacles" — psychological chains of internalised oppression',
-      '"Marriage hearse" — oxymoron fusing love with death',
-      '"Runs in blood down Palace walls" — visceral imagery blaming the monarchy',
+      '"Mind-forg\'d manacles" - psychological chains of internalised oppression',
+      '"Marriage hearse" - oxymoron fusing love with death',
+      '"Runs in blood down Palace walls" - visceral imagery blaming the monarchy',
       'Semantic field of suffering throughout: weakness, woe, cry, curse, plagues',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four quatrains in ABAB rhyme with iambic tetrameter — the rigid, controlled structure mirrors the "charter\'d" restrictions of the city itself.',
+      'Four quatrains in ABAB rhyme with iambic tetrameter - the rigid, controlled structure mirrors the "charter\'d" restrictions of the city itself.',
     keyPoints: [
-      "Regular ABAB rhyme scheme — the poem's form feels as constrained as the city",
+      "Regular ABAB rhyme scheme - the poem's form feels as constrained as the city",
       'Anaphora ("In every") in stanza 2 creates overwhelming cumulative effect',
       '"But most" signals the volta to the poem\'s darkest imagery in stanza 4',
       'First-person narrator gives the poem moral authority as eyewitness testimony',
@@ -696,7 +696,7 @@ export default function LondonPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="London by William Blake — Analysis & Annotations"
+        name="London by William Blake - Analysis & Annotations"
         description="Line-by-line analysis of London with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

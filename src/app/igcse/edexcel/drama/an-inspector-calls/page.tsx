@@ -20,11 +20,11 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls — Edexcel IGCSE Literature Study Guide',
+    title: 'An Inspector Calls - Edexcel IGCSE Literature Study Guide',
     description:
       'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
   },
-  title: 'An Inspector Calls — Edexcel IGCSE Literature Study Guide',
+  title: 'An Inspector Calls - Edexcel IGCSE Literature Study Guide',
   description:
     'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
   alternates: {
@@ -34,17 +34,17 @@ export const metadata: Metadata = {
 
 const plotBeats = [
   {
-    part: 'Act One — The dinner party',
+    part: 'Act One - The dinner party',
     summary:
       'The Birlings celebrate Sheila\u2019s engagement to Gerald Croft. Arthur Birling expounds on progress, "unsinkable" ships and the foolishness of talking about "community and all that nonsense". Inspector Goole arrives with news that a young woman, Eva Smith, has killed herself. He begins with Birling, who sacked Eva for leading a wage strike.',
   },
   {
-    part: 'Act Two — The investigation deepens',
+    part: 'Act Two - The investigation deepens',
     summary:
-      'Sheila is exposed as having had Eva dismissed from Milwards in a jealous tantrum. Gerald admits to a summer-long affair with "Daisy Renton", the same girl. Mrs Birling, pressed by the Inspector, denies responsibility for refusing Eva charity — unaware the father of Eva\u2019s unborn child is her own son.',
+      'Sheila is exposed as having had Eva dismissed from Milwards in a jealous tantrum. Gerald admits to a summer-long affair with "Daisy Renton", the same girl. Mrs Birling, pressed by the Inspector, denies responsibility for refusing Eva charity - unaware the father of Eva\u2019s unborn child is her own son.',
   },
   {
-    part: 'Act Three — The twist',
+    part: 'Act Three - The twist',
     summary:
       'Eric confesses to the affair, the stolen money and the refused charity. The Inspector delivers his "fire and blood and anguish" speech and leaves. Gerald and the parents reassure themselves that "Goole" may not be a real inspector, and that no girl may have died. The phone rings: a young woman has just been taken to the infirmary after drinking disinfectant, and a police inspector is on his way.',
   },
@@ -97,7 +97,7 @@ const subPages = [
 
 const keyQuotations = [
   {
-    quote: 'A man has to make his own way — has to look after himself.',
+    quote: 'A man has to make his own way - has to look after himself.',
     speaker: 'Arthur Birling',
     analysis:
       'Priestley\u2019s target capitalist creed. The line is placed just before the Inspector\u2019s arrival so the play can spend the next two acts dismantling it.',
@@ -106,7 +106,7 @@ const keyQuotations = [
     quote: 'The Titanic… unsinkable, absolutely unsinkable.',
     speaker: 'Arthur Birling',
     analysis:
-      'Dramatic irony to a 1945 audience — Priestley uses Birling\u2019s confident predictions to discredit the worldview they express.',
+      'Dramatic irony to a 1945 audience - Priestley uses Birling\u2019s confident predictions to discredit the worldview they express.',
   },
   {
     quote: 'We are members of one body. We are responsible for each other.',
@@ -121,19 +121,19 @@ const keyQuotations = [
       'Post-WW1 and WW2 resonance: the audience hears the wars as the "fire and blood" the Birling class refused to learn from in 1912.',
   },
   {
-    quote: 'But these girls aren\u2019t cheap labour — they\u2019re people.',
+    quote: 'But these girls aren\u2019t cheap labour - they\u2019re people.',
     speaker: 'Sheila Birling',
     analysis:
       'Sheila\u2019s moral shift. Priestley uses her youth and gender to open a space the older Birlings cannot occupy.',
   },
   {
-    quote: 'I know I\u2019m to blame — and I\u2019m desperately sorry.',
+    quote: 'I know I\u2019m to blame - and I\u2019m desperately sorry.',
     speaker: 'Sheila Birling',
     analysis:
-      'Genuine acceptance of responsibility — a direct contrast to her mother\u2019s deflection.',
+      'Genuine acceptance of responsibility - a direct contrast to her mother\u2019s deflection.',
   },
   {
-    quote: 'Girls of that class —',
+    quote: 'Girls of that class -',
     speaker: 'Mrs Birling',
     analysis:
       'The sentence the Inspector interrupts. The ellipsis is itself the play\u2019s point: Mrs Birling cannot see Eva as a full person.',
@@ -178,10 +178,10 @@ const keyQuotations = [
     quote: 'I made her go to Morgan Terrace because I was sorry for her.',
     speaker: 'Gerald Croft',
     analysis:
-      'Gerald\u2019s self-serving distinction — useful for discussing how Priestley characterises the upper-middle-class male.',
+      'Gerald\u2019s self-serving distinction - useful for discussing how Priestley characterises the upper-middle-class male.',
   },
   {
-    quote: 'A girl has just died — after swallowing some disinfectant.',
+    quote: 'A girl has just died - after swallowing some disinfectant.',
     speaker: 'Arthur Birling (final line)',
     analysis:
       'Priestley\u2019s final trick: the Birlings\u2019 certainty collapses at the curtain. The dashes mimic the shock on the page and in performance.',
@@ -194,7 +194,7 @@ export default async function InspectorCallsHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="An Inspector Calls — Edexcel IGCSE Literature Study Guide"
+        name="An Inspector Calls - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for An Inspector Calls for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd
@@ -246,7 +246,7 @@ export default async function InspectorCallsHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               An Inspector Calls is in copyright. This guide includes short extracts under fair
@@ -342,7 +342,7 @@ export default async function InspectorCallsHubPage() {
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>

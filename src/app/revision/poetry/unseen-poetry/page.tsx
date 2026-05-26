@@ -26,11 +26,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Unseen poetry — GCSE English Literature revision — The English Hub',
+    title: 'Unseen poetry - GCSE English Literature revision - The English Hub',
     description:
       'How to read and analyse an unseen poem in your GCSE English Literature exam. Approach, language, structure, comparison framework, practice prompts.',
   },
-  title: 'Unseen poetry — GCSE English Literature revision',
+  title: 'Unseen poetry - GCSE English Literature revision',
   description:
     'How to read and analyse an unseen poem in your GCSE English Literature exam. Approach, language, structure, comparison framework, practice prompts.',
   alternates: {

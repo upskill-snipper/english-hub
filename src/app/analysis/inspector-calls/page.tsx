@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'An Inspector Calls Analysis | The English Hub',
     description:
-      'GCSE-ready analysis of An Inspector Calls — quotes, characters, themes and context written by markers.',
+      'GCSE-ready analysis of An Inspector Calls - quotes, characters, themes and context written by markers.',
     url: 'https://theenglishhub.app/analysis/inspector-calls',
     type: 'article',
   },
@@ -38,12 +38,12 @@ type Entry = {
 const QUOTE_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/we-are-members-of-one-body-meaning',
-    title: 'We are members of one body — meaning',
+    title: 'We are members of one body - meaning',
     blurb: "Religious allusion and collective responsibility in the Inspector's closing speech.",
   },
   {
     href: '/analysis/inspector-calls/fire-and-blood-and-anguish-meaning',
-    title: 'Fire and blood and anguish — meaning',
+    title: 'Fire and blood and anguish - meaning',
     blurb: "Biblical and WWI imagery in the Inspector's prophetic warning.",
   },
   {
@@ -58,14 +58,14 @@ const QUOTE_PAGES: Entry[] = [
   },
   {
     href: '/analysis/inspector-calls/girls-of-that-class-meaning',
-    title: 'Girls of that class — meaning',
+    title: 'Girls of that class - meaning',
     blurb: "Mrs Birling's class prejudice in Act Two examined.",
   },
   {
     href: '/analysis/inspector-calls/i-wasnt-in-any-way-responsible',
     title: 'Mrs Birling and denied responsibility',
     blurb:
-      "Mrs Birling's stance is one of denied responsibility — her guilt and moral evasion analysed.",
+      "Mrs Birling's stance is one of denied responsibility - her guilt and moral evasion analysed.",
   },
   {
     href: '/analysis/inspector-calls/public-men-have-responsibilities',
@@ -75,7 +75,7 @@ const QUOTE_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/she-asked-for-the-earth',
     title: "Mrs Birling's contempt for Eva Smith",
-    blurb: "How Mrs Birling frames Eva Smith's appeal as excessive — her class contempt unpacked.",
+    blurb: "How Mrs Birling frames Eva Smith's appeal as excessive - her class contempt unpacked.",
   },
   {
     href: '/analysis/inspector-calls/its-better-to-ask-for-the-earth',
@@ -90,11 +90,11 @@ const QUOTE_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/the-inspector-stage-directions',
     title: "The Inspector's stage directions",
-    blurb: 'Massiveness, solidity and purposefulness — what they signal.',
+    blurb: 'Massiveness, solidity and purposefulness - what they signal.',
   },
   {
     href: '/analysis/inspector-calls/a-chain-of-events-meaning',
-    title: 'A chain of events — meaning',
+    title: 'A chain of events - meaning',
     blurb: 'Causality, guilt and collective responsibility in Act One.',
   },
   {
@@ -104,7 +104,7 @@ const QUOTE_PAGES: Entry[] = [
   },
   {
     href: '/analysis/inspector-calls/cranks-walking-out-meaning',
-    title: 'Cranks walking out — meaning',
+    title: 'Cranks walking out - meaning',
     blurb: "Birling's contempt for socialists and reformers.",
   },
   {
@@ -117,47 +117,47 @@ const QUOTE_PAGES: Entry[] = [
 const CHARACTER_THEME_PAGES: Entry[] = [
   {
     href: '/analysis/inspector-calls/inspector-goole-character-analysis',
-    title: 'Inspector Goole — character analysis',
+    title: 'Inspector Goole - character analysis',
     blurb: "Priestley's moral mouthpiece: name, role, authority and structure.",
   },
   {
     href: '/analysis/inspector-calls/arthur-birling-character-analysis',
-    title: 'Arthur Birling — character analysis',
+    title: 'Arthur Birling - character analysis',
     blurb: 'Dramatic irony, capitalism and the pompous patriarch of Act One.',
   },
   {
     href: '/analysis/inspector-calls/sheila-birling-character-analysis',
-    title: 'Sheila Birling — character analysis',
+    title: 'Sheila Birling - character analysis',
     blurb: 'Moral growth, gender and generational change across the play.',
   },
   {
     href: '/analysis/inspector-calls/eric-birling-character-analysis',
-    title: 'Eric Birling — character analysis',
+    title: 'Eric Birling - character analysis',
     blurb: 'Guilt, alcohol, masculinity and the capacity for change.',
   },
   {
     href: '/analysis/inspector-calls/social-responsibility-theme',
-    title: 'Social responsibility — theme',
+    title: 'Social responsibility - theme',
     blurb: "Priestley's central theme explored through structure and speech.",
   },
   {
     href: '/analysis/inspector-calls/class-theme-analysis',
-    title: 'Class — theme analysis',
+    title: 'Class - theme analysis',
     blurb: 'Edwardian hierarchy and capital vs labour on stage.',
   },
   {
     href: '/analysis/inspector-calls/age-theme-analysis',
-    title: 'Age — theme analysis',
+    title: 'Age - theme analysis',
     blurb: 'Young vs old: who changes, who refuses, and why it matters.',
   },
   {
     href: '/analysis/inspector-calls/gender-theme-analysis',
-    title: 'Gender — theme analysis',
+    title: 'Gender - theme analysis',
     blurb: 'Sheila, Eva and the double standards of Edwardian patriarchy.',
   },
   {
     href: '/analysis/inspector-calls/priestley-socialism-context',
-    title: "Priestley's socialism — context",
+    title: "Priestley's socialism - context",
     blurb: '1912 setting, 1945 audience, welfare state and WWI/WWII.',
   },
   {

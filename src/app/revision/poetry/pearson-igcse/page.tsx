@@ -10,11 +10,11 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson IGCSE Poetry Anthology (4EA1) — Section B — The English Hub',
+    title: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B - The English Hub',
     description:
       'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
   },
-  title: 'Pearson IGCSE Poetry Anthology (4EA1) — Section B',
+  title: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B',
   description:
     'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
   alternates: {
@@ -92,12 +92,12 @@ export default function PearsonIgcsePoetryHub() {
           </li>
           <li>
             the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
             anthology version when answering Edexcel questions.
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">
-          © Pearson Education — quotations on individual set-text pages are short fair-dealing
+          © Pearson Education - quotations on individual set-text pages are short fair-dealing
           extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
           school-licensed editions.
         </p>
@@ -121,7 +121,7 @@ export default function PearsonIgcsePoetryHub() {
                 </CardTitle>
                 <CardDescription className="pt-1">
                   {poem.author}
-                  {poem.year ? ` — ${poem.year}` : ''}
+                  {poem.year ? ` - ${poem.year}` : ''}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col gap-3">

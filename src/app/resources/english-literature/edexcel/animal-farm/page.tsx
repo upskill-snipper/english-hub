@@ -6,14 +6,14 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Animal Farm Study Guide — Edexcel GCSE English Literature',
+    title: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete Animal Farm revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, Russian Revolution context, allegory analysis, and Edexcel exam technique.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/animal-farm',
   },
-  title: 'Animal Farm Study Guide — Edexcel GCSE English Literature',
+  title: 'Animal Farm Study Guide - Edexcel GCSE English Literature',
   description:
     'Complete Animal Farm revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, Russian Revolution context, allegory analysis, and Edexcel exam technique.',
 }
@@ -22,34 +22,34 @@ export const metadata: Metadata = {
 
 const PLOT_SUMMARY = [
   {
-    chapter: 'Chapters 1–2',
+    chapter: 'Chapters 1-2',
     title: "Old Major's Speech and the Rebellion",
     summary:
-      "Old Major, the prize boar, delivers a speech calling on the animals to overthrow Mr Jones and establish an equal society. He teaches them the song 'Beasts of England.' Old Major dies three days later. The pigs — especially Napoleon, Snowball, and Squealer — develop his ideas into a philosophy called Animalism. When Jones forgets to feed the animals, they rebel spontaneously, driving Jones and his men off the farm. The animals rename Manor Farm as 'Animal Farm' and the pigs paint the Seven Commandments on the barn wall.",
+      "Old Major, the prize boar, delivers a speech calling on the animals to overthrow Mr Jones and establish an equal society. He teaches them the song 'Beasts of England.' Old Major dies three days later. The pigs - especially Napoleon, Snowball, and Squealer - develop his ideas into a philosophy called Animalism. When Jones forgets to feed the animals, they rebel spontaneously, driving Jones and his men off the farm. The animals rename Manor Farm as 'Animal Farm' and the pigs paint the Seven Commandments on the barn wall.",
   },
   {
-    chapter: 'Chapters 3–4',
+    chapter: 'Chapters 3-4',
     title: 'Early Success and the Battle of the Cowshed',
     summary:
       "The animals work together and the harvest is the best the farm has ever seen. The pigs take on a supervisory role, claiming they need the milk and apples for themselves because they are 'brain workers.' Snowball organises committees and teaches the animals to read. Napoleon takes no interest in committees but quietly takes nine puppies to educate privately. When Jones and neighbouring farmers attempt to recapture the farm, the animals fight them off at the Battle of the Cowshed. Snowball is hailed as a hero.",
   },
   {
-    chapter: 'Chapters 5–6',
+    chapter: 'Chapters 5-6',
     title: "Napoleon's Coup and the Windmill",
     summary:
       'Snowball proposes building a windmill to modernise the farm. Napoleon opposes it. At the crucial debate, Napoleon unleashes his privately trained dogs, who chase Snowball off the farm. Napoleon abolishes meetings and declares that all decisions will be made by a committee of pigs. He then claims the windmill was his idea all along. Squealer rewrites history to portray Snowball as a traitor. The animals begin trading with humans through a solicitor, Mr Whymper. The pigs move into the farmhouse and sleep in beds. The windmill collapses in a storm, but Napoleon blames Snowball for its destruction.',
   },
   {
-    chapter: 'Chapters 7–8',
+    chapter: 'Chapters 7-8',
     title: 'The Purges and the Battle of the Windmill',
     summary:
-      "Napoleon intensifies his reign of terror. Animals who confess to collaborating with Snowball are executed by the dogs. 'Beasts of England' is abolished. The commandments are altered — 'No animal shall kill any other animal' becomes 'No animal shall kill any other animal without cause.' Napoleon begins dealing with Frederick, a neighbouring farmer, who pays for timber with forged banknotes. Frederick then attacks the farm and destroys the windmill. The pigs discover a case of whisky and the commandment about alcohol is changed to 'No animal shall drink alcohol to excess.'",
+      "Napoleon intensifies his reign of terror. Animals who confess to collaborating with Snowball are executed by the dogs. 'Beasts of England' is abolished. The commandments are altered - 'No animal shall kill any other animal' becomes 'No animal shall kill any other animal without cause.' Napoleon begins dealing with Frederick, a neighbouring farmer, who pays for timber with forged banknotes. Frederick then attacks the farm and destroys the windmill. The pigs discover a case of whisky and the commandment about alcohol is changed to 'No animal shall drink alcohol to excess.'",
   },
   {
-    chapter: 'Chapters 9–10',
+    chapter: 'Chapters 9-10',
     title: "Boxer's Fate and the Pigs Become Human",
     summary:
-      "Boxer, the loyal workhorse, collapses from overwork. Napoleon claims to send him to a veterinary hospital, but the van that takes Boxer away is actually from the horse slaughterer — the pigs sell Boxer for whisky money. Squealer tells the animals Boxer died peacefully in hospital. Years pass. The pigs walk on two legs, wear clothes, and carry whips. Only one commandment remains: 'All animals are equal, but some animals are more equal than others.' The pigs host a dinner party with neighbouring farmers. The other animals peer through the window and can no longer tell which are pigs and which are men.",
+      "Boxer, the loyal workhorse, collapses from overwork. Napoleon claims to send him to a veterinary hospital, but the van that takes Boxer away is actually from the horse slaughterer - the pigs sell Boxer for whisky money. Squealer tells the animals Boxer died peacefully in hospital. Years pass. The pigs walk on two legs, wear clothes, and carry whips. Only one commandment remains: 'All animals are equal, but some animals are more equal than others.' The pigs host a dinner party with neighbouring farmers. The other animals peer through the window and can no longer tell which are pigs and which are men.",
   },
 ]
 
@@ -58,7 +58,7 @@ const CHARACTERS = [
     name: 'Napoleon',
     allegory: 'Joseph Stalin',
     description:
-      'A Berkshire boar who becomes the dictator of Animal Farm. He is not a great speaker or thinker but is ruthless, cunning, and power-hungry. He uses the dogs as his secret police, Squealer as his propagandist, and fear as his primary tool of control. He gradually takes on all the habits of the humans the animals originally rebelled against — living in the farmhouse, drinking whisky, walking on two legs. He represents the corruption of revolutionary ideals into totalitarian dictatorship.',
+      'A Berkshire boar who becomes the dictator of Animal Farm. He is not a great speaker or thinker but is ruthless, cunning, and power-hungry. He uses the dogs as his secret police, Squealer as his propagandist, and fear as his primary tool of control. He gradually takes on all the habits of the humans the animals originally rebelled against - living in the farmhouse, drinking whisky, walking on two legs. He represents the corruption of revolutionary ideals into totalitarian dictatorship.',
     key_quotes: [
       '"Napoleon is always right"',
       '"All animals are equal, but some animals are more equal than others"',
@@ -70,7 +70,7 @@ const CHARACTERS = [
     name: 'Snowball',
     allegory: 'Leon Trotsky',
     description:
-      'An intelligent, eloquent pig who genuinely wants to improve the animals\u0027 lives. He organises committees, teaches literacy, and designs the windmill. He is brave at the Battle of the Cowshed. After Napoleon expels him using the dogs, Snowball becomes a scapegoat — blamed for everything that goes wrong on the farm. Squealer rewrites history to make Snowball a villain and traitor. He represents the idealistic revolutionary who is betrayed and erased by the dictator.',
+      'An intelligent, eloquent pig who genuinely wants to improve the animals\u0027 lives. He organises committees, teaches literacy, and designs the windmill. He is brave at the Battle of the Cowshed. After Napoleon expels him using the dogs, Snowball becomes a scapegoat - blamed for everything that goes wrong on the farm. Squealer rewrites history to make Snowball a villain and traitor. He represents the idealistic revolutionary who is betrayed and erased by the dictator.',
     key_quotes: [
       '"Snowball had studied an old book of Julius Caesar\'s campaigns"',
       '"Snowball was a more vivacious pig than Napoleon, quicker in speech and more inventive"',
@@ -81,7 +81,7 @@ const CHARACTERS = [
     name: 'Squealer',
     allegory: 'Pravda / Soviet propaganda',
     description:
-      'A small, fat pig who serves as Napoleon\u0027s propagandist. He has a remarkable ability to twist language and manipulate truth. He convinces the animals that the pigs deserve special privileges, that Snowball was always a traitor, and that conditions are improving when they are clearly worsening. He represents the power of propaganda to control a population — when facts are distorted, the people cannot resist tyranny.',
+      'A small, fat pig who serves as Napoleon\u0027s propagandist. He has a remarkable ability to twist language and manipulate truth. He convinces the animals that the pigs deserve special privileges, that Snowball was always a traitor, and that conditions are improving when they are clearly worsening. He represents the power of propaganda to control a population - when facts are distorted, the people cannot resist tyranny.',
     key_quotes: [
       '"Surely, comrades, you do not want Jones back?"',
       '"He could turn black into white"',
@@ -93,7 +93,7 @@ const CHARACTERS = [
     name: 'Boxer',
     allegory: 'The loyal working class',
     description:
-      "An enormous, powerful cart-horse who is the most dedicated worker on the farm. His two mottos — 'I will work harder' and 'Napoleon is always right' — represent blind loyalty and unquestioning obedience. Despite his strength and devotion, he is ultimately betrayed when Napoleon sells him to the knacker for whisky money once he can no longer work. Boxer\u0027s fate is the novella\u0027s most devastating moment — it shows how totalitarian regimes exploit and discard the working class.",
+      "An enormous, powerful cart-horse who is the most dedicated worker on the farm. His two mottos - 'I will work harder' and 'Napoleon is always right' - represent blind loyalty and unquestioning obedience. Despite his strength and devotion, he is ultimately betrayed when Napoleon sells him to the knacker for whisky money once he can no longer work. Boxer\u0027s fate is the novella\u0027s most devastating moment - it shows how totalitarian regimes exploit and discard the working class.",
     key_quotes: [
       '"I will work harder"',
       '"Napoleon is always right"',
@@ -116,10 +116,10 @@ const CHARACTERS = [
     name: 'Benjamin',
     allegory: 'Cynical intellectuals / the sceptical public',
     description:
-      "An old donkey who is the wisest animal on the farm but refuses to act. He can read as well as the pigs but never shares his knowledge. He sees through the pigs\u0027 lies but says nothing — 'Donkeys live a long time. None of you has ever seen a dead donkey.' He only speaks out when Boxer is taken to the knacker, but by then it is too late. Benjamin represents those who see injustice but remain passive, showing that intelligence without action is useless.",
+      "An old donkey who is the wisest animal on the farm but refuses to act. He can read as well as the pigs but never shares his knowledge. He sees through the pigs\u0027 lies but says nothing - 'Donkeys live a long time. None of you has ever seen a dead donkey.' He only speaks out when Boxer is taken to the knacker, but by then it is too late. Benjamin represents those who see injustice but remain passive, showing that intelligence without action is useless.",
     key_quotes: [
       '"Donkeys live a long time. None of you has ever seen a dead donkey"',
-      '"Life would go on as it had always gone on — that is, badly"',
+      '"Life would go on as it had always gone on - that is, badly"',
       '"Benjamin... noticed that there was no change"',
     ],
   },
@@ -136,7 +136,7 @@ const CHARACTERS = [
     name: 'The Sheep',
     allegory: 'The easily manipulated masses',
     description:
-      "The sheep blindly repeat whatever slogans they are taught — first 'Four legs good, two legs bad,' then 'Four legs good, two legs better.' They drown out any dissent or debate with their chanting. They represent citizens who unthinkingly repeat propaganda and make it impossible for others to question authority.",
+      "The sheep blindly repeat whatever slogans they are taught - first 'Four legs good, two legs bad,' then 'Four legs good, two legs better.' They drown out any dissent or debate with their chanting. They represent citizens who unthinkingly repeat propaganda and make it impossible for others to question authority.",
     key_quotes: ['"Four legs good, two legs bad"', '"Four legs good, two legs better"'],
   },
 ]
@@ -145,7 +145,7 @@ const THEMES = [
   {
     theme: 'Power and Corruption',
     description:
-      'The central theme of the novella. Orwell shows how power corrupts absolutely. The pigs begin as liberators fighting for equality but gradually become indistinguishable from the humans they replaced. Napoleon accumulates power through violence (the dogs), propaganda (Squealer), and the rewriting of history. The Seven Commandments are steadily altered to justify the pigs\u0027 privileges. The final image — pigs and men becoming indistinguishable — is Orwell\u0027s devastating conclusion: revolutions that concentrate power in a ruling elite inevitably reproduce the tyranny they overthrew.',
+      'The central theme of the novella. Orwell shows how power corrupts absolutely. The pigs begin as liberators fighting for equality but gradually become indistinguishable from the humans they replaced. Napoleon accumulates power through violence (the dogs), propaganda (Squealer), and the rewriting of history. The Seven Commandments are steadily altered to justify the pigs\u0027 privileges. The final image - pigs and men becoming indistinguishable - is Orwell\u0027s devastating conclusion: revolutions that concentrate power in a ruling elite inevitably reproduce the tyranny they overthrew.',
     quotes: [
       '"All animals are equal, but some animals are more equal than others"',
       '"The creatures outside looked from pig to man, and from man to pig... but already it was impossible to say which was which"',
@@ -166,7 +166,7 @@ const THEMES = [
   {
     theme: 'Class and Inequality',
     description:
-      "The Rebellion is fought for equality, but a new class system quickly emerges. The pigs claim special privileges — first the milk and apples, then the farmhouse, beds, alcohol, and eventually human clothing. They justify their superiority by calling themselves 'brain workers.' The other animals work harder for less food while the pigs grow fat. Orwell shows that revolutions often replace one ruling class with another, especially when the working class (Boxer, the sheep) are too loyal, too exhausted, or too uneducated to challenge the new elite.",
+      "The Rebellion is fought for equality, but a new class system quickly emerges. The pigs claim special privileges - first the milk and apples, then the farmhouse, beds, alcohol, and eventually human clothing. They justify their superiority by calling themselves 'brain workers.' The other animals work harder for less food while the pigs grow fat. Orwell shows that revolutions often replace one ruling class with another, especially when the working class (Boxer, the sheep) are too loyal, too exhausted, or too uneducated to challenge the new elite.",
     quotes: [
       '"The milk and the windfall apples should be reserved for the pigs alone"',
       '"The pigs did not actually work, but directed and supervised the others"',
@@ -176,7 +176,7 @@ const THEMES = [
   {
     theme: 'Education and Ignorance',
     description:
-      "The pigs maintain power partly because the other animals lack education. The pigs can read and write fluently; most other animals cannot read beyond a few letters. This means they cannot detect changes to the Commandments or challenge Squealer\u0027s lies. Boxer responds to every problem with 'I will work harder' and 'Napoleon is always right' — hard work and blind faith replace critical thinking. Orwell argues that an uneducated population is vulnerable to exploitation and that education is essential to freedom.",
+      "The pigs maintain power partly because the other animals lack education. The pigs can read and write fluently; most other animals cannot read beyond a few letters. This means they cannot detect changes to the Commandments or challenge Squealer\u0027s lies. Boxer responds to every problem with 'I will work harder' and 'Napoleon is always right' - hard work and blind faith replace critical thinking. Orwell argues that an uneducated population is vulnerable to exploitation and that education is essential to freedom.",
     quotes: [
       '"The pigs could already read and write perfectly"',
       '"Benjamin could read as well as any pig, but never exercised his faculty"',
@@ -187,18 +187,18 @@ const THEMES = [
   {
     theme: 'Revolution and Betrayal',
     description:
-      'Old Major\u0027s dream of an equal, free society is systematically betrayed by the pigs. Every principle of Animalism is broken: the pigs trade with humans, sleep in beds, drink alcohol, walk on two legs, and kill other animals. The dream of revolution — noble in its conception — is corrupted by the very leaders it empowers. Orwell is not arguing against revolution itself, but warning that without safeguards, accountability, and an educated populace, revolutions inevitably betray their original ideals.',
+      'Old Major\u0027s dream of an equal, free society is systematically betrayed by the pigs. Every principle of Animalism is broken: the pigs trade with humans, sleep in beds, drink alcohol, walk on two legs, and kill other animals. The dream of revolution - noble in its conception - is corrupted by the very leaders it empowers. Orwell is not arguing against revolution itself, but warning that without safeguards, accountability, and an educated populace, revolutions inevitably betray their original ideals.',
     quotes: [
-      '"Whatever goes upon two legs is an enemy" — later broken as pigs walk upright',
-      '"No animal shall sleep in a bed — with sheets"',
-      '"No animal shall kill any other animal — without cause"',
-      '"No animal shall drink alcohol — to excess"',
+      '"Whatever goes upon two legs is an enemy" - later broken as pigs walk upright',
+      '"No animal shall sleep in a bed - with sheets"',
+      '"No animal shall kill any other animal - without cause"',
+      '"No animal shall drink alcohol - to excess"',
     ],
   },
   {
     theme: 'The Abuse of History',
     description:
-      "Napoleon and Squealer repeatedly rewrite the past to serve the present. Snowball\u0027s heroism at the Battle of the Cowshed is erased and replaced with a narrative of treachery. The windmill — Snowball\u0027s idea — is attributed to Napoleon. The animals\u0027 memories are gaslit: 'Surely, comrades, you do not want Jones back?' Orwell, who witnessed Soviet propaganda firsthand, warns that those who control the past control the present — a theme he would explore further in Nineteen Eighty-Four.",
+      "Napoleon and Squealer repeatedly rewrite the past to serve the present. Snowball\u0027s heroism at the Battle of the Cowshed is erased and replaced with a narrative of treachery. The windmill - Snowball\u0027s idea - is attributed to Napoleon. The animals\u0027 memories are gaslit: 'Surely, comrades, you do not want Jones back?' Orwell, who witnessed Soviet propaganda firsthand, warns that those who control the past control the present - a theme he would explore further in Nineteen Eighty-Four.",
     quotes: [
       '"Squealer spoke so persuasively... that they accepted his explanation without further questions"',
       '"Do you not remember how, just at the moment when Jones and his men had got inside the yard, Snowball suddenly turned and fled?"',
@@ -212,7 +212,7 @@ const KEY_QUOTES = [
     quote: '"All animals are equal, but some animals are more equal than others"',
     speaker: 'Narrator (Chapter 10)',
     significance:
-      "The final, corrupted commandment. Orwell's most famous line — it captures the entire betrayal of the revolution in a single paradox. Equality has been twisted to justify totalitarian hierarchy.",
+      "The final, corrupted commandment. Orwell's most famous line - it captures the entire betrayal of the revolution in a single paradox. Equality has been twisted to justify totalitarian hierarchy.",
   },
   {
     quote:
@@ -243,13 +243,13 @@ const KEY_QUOTES = [
     quote: '"Napoleon is always right"',
     speaker: 'Boxer (throughout)',
     significance:
-      "Boxer's second motto — blind faith in the leader replaces independent thought. This unquestioning loyalty ultimately leads to Boxer's death when Napoleon betrays him.",
+      "Boxer's second motto - blind faith in the leader replaces independent thought. This unquestioning loyalty ultimately leads to Boxer's death when Napoleon betrays him.",
   },
   {
     quote: '"Surely, comrades, you do not want Jones back?"',
     speaker: 'Squealer (Chapter 3)',
     significance:
-      "Squealer's most powerful propaganda technique — the appeal to fear. By invoking the threat of Jones's return, he silences all criticism of the pigs' privileges.",
+      "Squealer's most powerful propaganda technique - the appeal to fear. By invoking the threat of Jones's return, he silences all criticism of the pigs' privileges.",
   },
   {
     quote: '"He could turn black into white"',
@@ -261,13 +261,13 @@ const KEY_QUOTES = [
     quote: '"All men are enemies. All animals are comrades"',
     speaker: 'Old Major (Chapter 1)',
     significance:
-      "Old Major's revolutionary principle. The simplicity of this binary worldview makes it easy to adopt but also easy to exploit — the pigs later become the 'men' they opposed.",
+      "Old Major's revolutionary principle. The simplicity of this binary worldview makes it easy to adopt but also easy to exploit - the pigs later become the 'men' they opposed.",
   },
   {
     quote: '"He carried a whip in his trotter"',
     speaker: 'Narrator about Napoleon (Chapter 10)',
     significance:
-      "Napoleon adopts Jones's instrument of oppression. The whip symbolises the complete reversal of the revolution — the liberator has become the oppressor.",
+      "Napoleon adopts Jones's instrument of oppression. The whip symbolises the complete reversal of the revolution - the liberator has become the oppressor.",
   },
   {
     quote: '"The milk and the windfall apples should be reserved for the pigs alone"',
@@ -285,7 +285,7 @@ const KEY_QUOTES = [
     quote: '"The van was taking Boxer to the horse slaughterer\'s!"',
     speaker: 'Benjamin (Chapter 9)',
     significance:
-      "Benjamin finally speaks out — but too late. The most emotionally devastating moment in the novella. Boxer's loyalty is repaid with betrayal and death.",
+      "Benjamin finally speaks out - but too late. The most emotionally devastating moment in the novella. Boxer's loyalty is repaid with betrayal and death.",
   },
   {
     quote:
@@ -295,13 +295,13 @@ const KEY_QUOTES = [
       'The ideological foundation of the Rebellion. Orwell shows how a legitimate grievance can be exploited by those who replace one tyranny with another.',
   },
   {
-    quote: '"No animal shall sleep in a bed — with sheets"',
+    quote: '"No animal shall sleep in a bed - with sheets"',
     speaker: 'Altered Commandment (Chapter 6)',
     significance:
       "The first obvious alteration. The words 'with sheets' are added so the pigs can justify sleeping in the farmhouse beds. Demonstrates how the ruling class bends the rules to suit itself.",
   },
   {
-    quote: '"Life would go on as it had always gone on — that is, badly"',
+    quote: '"Life would go on as it had always gone on - that is, badly"',
     speaker: 'Benjamin (Chapter 5)',
     significance:
       "Benjamin's fatalism. He recognises that revolutions do not change the fundamental nature of power. Orwell uses him to voice scepticism about utopian promises.",
@@ -316,14 +316,14 @@ const KEY_QUOTES = [
     quote: '"Man is the only creature that consumes without producing"',
     speaker: 'Old Major (Chapter 1)',
     significance:
-      "Old Major's critique of exploitation. Ironic because the pigs eventually consume without producing — becoming the very parasites Old Major warned against.",
+      "Old Major's critique of exploitation. Ironic because the pigs eventually consume without producing - becoming the very parasites Old Major warned against.",
   },
 ]
 
 const ALLEGORY_POINTS = [
   {
     element: 'Manor Farm / Animal Farm',
-    represents: 'Russia — from Tsarist Russia to the Soviet Union',
+    represents: 'Russia - from Tsarist Russia to the Soviet Union',
     detail:
       "The farm begins under Jones (the Tsar), is liberated through revolution, renamed (as Russia became the USSR), and ultimately returns to oppression under new masters. The renaming back to 'Manor Farm' at the end symbolises the revolution's complete failure.",
   },
@@ -365,7 +365,7 @@ const ALLEGORY_POINTS = [
   },
   {
     element: 'The Battle of the Cowshed',
-    represents: 'The Russian Civil War (1918–1921)',
+    represents: 'The Russian Civil War (1918-1921)',
     detail:
       "Jones's attempt to retake the farm parallels the White Army and Western intervention against the Bolsheviks after the 1917 Revolution.",
   },
@@ -373,7 +373,7 @@ const ALLEGORY_POINTS = [
     element: 'Frederick and Pilkington',
     represents: "Hitler's Germany and the Western Allies",
     detail:
-      "Frederick (Pinchfield Farm) represents Hitler — the forged banknotes parallel the Nazi-Soviet Pact's betrayal. Pilkington (Foxwood Farm) represents Britain and the West. The final card game between Napoleon and Pilkington represents Cold War tensions.",
+      "Frederick (Pinchfield Farm) represents Hitler - the forged banknotes parallel the Nazi-Soviet Pact's betrayal. Pilkington (Foxwood Farm) represents Britain and the West. The final card game between Napoleon and Pilkington represents Cold War tensions.",
   },
   {
     element: 'The Seven Commandments',
@@ -392,27 +392,27 @@ const CONTEXT_POINTS = [
   {
     topic: "Stalin's Soviet Union",
     detail:
-      'By the 1930s, Stalin had consolidated absolute power. He conducted purges (1936–38) in which millions were executed or sent to labour camps. He used propaganda, censorship, and a cult of personality to maintain control. He rewrote Soviet history to erase rivals like Trotsky. These events are directly mirrored in Chapters 7–10 of Animal Farm.',
+      'By the 1930s, Stalin had consolidated absolute power. He conducted purges (1936-38) in which millions were executed or sent to labour camps. He used propaganda, censorship, and a cult of personality to maintain control. He rewrote Soviet history to erase rivals like Trotsky. These events are directly mirrored in Chapters 7-10 of Animal Farm.',
   },
   {
     topic: "Orwell's Political Position",
     detail:
-      "Orwell was a democratic socialist — he believed in equality and workers' rights but was fiercely opposed to totalitarianism. He fought in the Spanish Civil War (1936–39) and witnessed first-hand how the Soviet-backed communists betrayed their own allies. This experience convinced him that Stalinism was a betrayal of true socialist ideals, which became the central argument of Animal Farm.",
+      "Orwell was a democratic socialist - he believed in equality and workers' rights but was fiercely opposed to totalitarianism. He fought in the Spanish Civil War (1936-39) and witnessed first-hand how the Soviet-backed communists betrayed their own allies. This experience convinced him that Stalinism was a betrayal of true socialist ideals, which became the central argument of Animal Farm.",
   },
   {
     topic: 'Publication Difficulties (1945)',
     detail:
-      "Orwell struggled to publish Animal Farm because the USSR was Britain's ally during WWII. Publishers feared offending Stalin. The novella was rejected by multiple publishers, including by T.S. Eliot at Faber and Faber. It was finally published in August 1945, just as the war ended. The difficulty of publication itself illustrates Orwell's theme — that inconvenient truths about powerful allies are suppressed.",
+      "Orwell struggled to publish Animal Farm because the USSR was Britain's ally during WWII. Publishers feared offending Stalin. The novella was rejected by multiple publishers, including by T.S. Eliot at Faber and Faber. It was finally published in August 1945, just as the war ended. The difficulty of publication itself illustrates Orwell's theme - that inconvenient truths about powerful allies are suppressed.",
   },
   {
     topic: 'The Cold War Context',
     detail:
-      "Although written during WWII, Animal Farm became hugely influential during the Cold War. It was used as anti-Soviet propaganda by Western governments. Orwell's warning, however, was broader than anti-communism — he was warning against all forms of totalitarianism, including the potential for Western democracies to suppress truth and manipulate their populations.",
+      "Although written during WWII, Animal Farm became hugely influential during the Cold War. It was used as anti-Soviet propaganda by Western governments. Orwell's warning, however, was broader than anti-communism - he was warning against all forms of totalitarianism, including the potential for Western democracies to suppress truth and manipulate their populations.",
   },
   {
     topic: 'Orwell and Language',
     detail:
-      "Orwell believed that political language was designed 'to make lies sound truthful and murder respectable.' In his essay 'Politics and the English Language' (1946), he argued that corrupted language leads to corrupted thought. Animal Farm dramatises this idea — the pigs control the animals by controlling language itself: slogans, commandments, and Squealer's rhetoric.",
+      "Orwell believed that political language was designed 'to make lies sound truthful and murder respectable.' In his essay 'Politics and the English Language' (1946), he argued that corrupted language leads to corrupted thought. Animal Farm dramatises this idea - the pigs control the animals by controlling language itself: slogans, commandments, and Squealer's rhetoric.",
   },
 ]
 
@@ -431,7 +431,7 @@ export default function AnimalFarmPage() {
             &larr; Edexcel English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Animal Farm — Full Study Guide
+            Animal Farm - Full Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Edexcel GCSE English Literature &middot; Paper 1, Section B &middot; Post-1914 British
@@ -467,14 +467,14 @@ export default function AnimalFarmPage() {
         {/* ── Exam overview ──────────────────────────────────────── */}
         <section id="exam-overview" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">
-            Edexcel Paper 1, Section B — What You Need to Know
+            Edexcel Paper 1, Section B - What You Need to Know
           </h2>
           <div className="mt-6 rounded-xl border-2 border-primary bg-blue-500/10 p-6">
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Paper 1, Section B:</strong> Post-1914 British Play or Novel — Animal Farm
+                  <strong>Paper 1, Section B:</strong> Post-1914 British Play or Novel - Animal Farm
                   is examined here.
                 </span>
               </li>
@@ -496,8 +496,8 @@ export default function AnimalFarmPage() {
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Timing:</strong> Approximately 50–55 minutes. Spend 5 minutes planning,
-                  40–45 minutes writing, and 5 minutes checking.
+                  <strong>Timing:</strong> Approximately 50-55 minutes. Spend 5 minutes planning,
+                  40-45 minutes writing, and 5 minutes checking.
                 </span>
               </li>
               <li className="flex gap-2">
@@ -515,7 +515,7 @@ export default function AnimalFarmPage() {
         <section id="plot" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
           <p className="mt-2 text-muted-foreground">
-            Animal Farm is a novella — short, tightly structured, and allegorical. Every event maps
+            Animal Farm is a novella - short, tightly structured, and allegorical. Every event maps
             onto the history of the Russian Revolution and Stalin&apos;s Soviet Union.
           </p>
           <div className="mt-6 space-y-6">
@@ -603,7 +603,7 @@ export default function AnimalFarmPage() {
             {KEY_QUOTES.map((q, i) => (
               <div key={i} className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="text-sm font-semibold italic text-foreground">{q.quote}</p>
-                <p className="mt-1 text-xs font-medium text-primary">— {q.speaker}</p>
+                <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
@@ -613,10 +613,10 @@ export default function AnimalFarmPage() {
         {/* ── Russian Revolution Allegory ─────────────────────── */}
         <section id="allegory" className="mt-14 scroll-mt-20">
           <h2 className="text-2xl font-bold text-foreground">
-            Russian Revolution Allegory — Complete Guide
+            Russian Revolution Allegory - Complete Guide
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Animal Farm is an allegorical novella — every character, event, and setting represents a
+            Animal Farm is an allegorical novella - every character, event, and setting represents a
             real historical counterpart. Understanding the allegory is essential for context marks.
           </p>
           <div className="mt-6 space-y-4">
@@ -667,7 +667,7 @@ export default function AnimalFarmPage() {
                     Example Question 1
                   </p>
                   <p className="mt-1 text-xs italic text-muted-foreground">
-                    [Extract from Chapter 7 — the executions scene]
+                    [Extract from Chapter 7 - the executions scene]
                   </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
                     How does Orwell present the abuse of power in this extract and in the novella as
@@ -679,7 +679,7 @@ export default function AnimalFarmPage() {
                     Example Question 2
                   </p>
                   <p className="mt-1 text-xs italic text-muted-foreground">
-                    [Extract from Chapter 3 — Squealer justifying the milk and apples]
+                    [Extract from Chapter 3 - Squealer justifying the milk and apples]
                   </p>
                   <p className="mt-2 text-sm text-foreground font-medium">
                     How does Orwell present the role of propaganda in this extract and in the
@@ -699,7 +699,7 @@ export default function AnimalFarmPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction (2–3 minutes)</strong> — state Orwell&apos;s purpose and
+                    <strong>Introduction (2-3 minutes)</strong> - state Orwell&apos;s purpose and
                     how the theme/character connects to his wider political message. Briefly mention
                     the Russian Revolution context.
                   </span>
@@ -709,7 +709,7 @@ export default function AnimalFarmPage() {
                     2
                   </span>
                   <span>
-                    <strong>Analyse the extract (2–3 paragraphs)</strong> — work through the extract
+                    <strong>Analyse the extract (2-3 paragraphs)</strong> - work through the extract
                     closely. Identify key language, literary techniques, and what Orwell is
                     conveying. Use short, embedded quotations from the extract.
                   </span>
@@ -719,7 +719,7 @@ export default function AnimalFarmPage() {
                     3
                   </span>
                   <span>
-                    <strong>Explore the wider novella (2–3 paragraphs)</strong> — move beyond the
+                    <strong>Explore the wider novella (2-3 paragraphs)</strong> - move beyond the
                     extract. Discuss how the theme/character is presented elsewhere, tracking
                     development across the text. Recall your own quotations.
                   </span>
@@ -729,7 +729,7 @@ export default function AnimalFarmPage() {
                     4
                   </span>
                   <span>
-                    <strong>Integrate context throughout</strong> — link to the Russian Revolution,
+                    <strong>Integrate context throughout</strong> - link to the Russian Revolution,
                     Stalin, Orwell&apos;s own experiences, and the political message. Context should
                     be woven into analysis, not added as a separate paragraph.
                   </span>
@@ -739,7 +739,7 @@ export default function AnimalFarmPage() {
                     5
                   </span>
                   <span>
-                    <strong>Conclusion</strong> — briefly summarise Orwell&apos;s overall message.
+                    <strong>Conclusion</strong> - briefly summarise Orwell&apos;s overall message.
                     Connect to the novella&apos;s genre as a political allegory and its enduring
                     relevance.
                   </span>
@@ -752,37 +752,37 @@ export default function AnimalFarmPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Always use &quot;Orwell&quot; as the subject — &quot;Orwell
+                  Always use &quot;Orwell&quot; as the subject - &quot;Orwell
                   presents/uses/suggests/criticises...&quot; This demonstrates awareness of the
                   writer&apos;s craft (analysis of methods).
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss the novella as an <strong>allegory</strong> — show you understand that the
+                  Discuss the novella as an <strong>allegory</strong> - show you understand that the
                   characters and events represent real historical figures and events. This is
                   essential for the context skill.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Analyse <strong>language closely</strong> — pick out individual words and explain
+                  Analyse <strong>language closely</strong> - pick out individual words and explain
                   their connotations. E.g., &quot;The noun &apos;comrades&apos; initially unites the
                   animals, but is later weaponised by Squealer to manipulate them.&quot;
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss <strong>structure</strong> — the novella&apos;s cyclical structure (farm
+                  Discuss <strong>structure</strong> - the novella&apos;s cyclical structure (farm
                   returns to its original state), the gradual alteration of the Commandments, and
                   the escalating corruption across chapters.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss <strong>form</strong> — Animal Farm is a fable/allegory/satirical novella.
+                  Discuss <strong>form</strong> - Animal Farm is a fable/allegory/satirical novella.
                   The use of animals makes the political message accessible and universal. The
                   simple narrative voice contrasts with the dark subject matter.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <strong>Balance extract and wider text</strong> — top-band answers give roughly
+                  <strong>Balance extract and wider text</strong> - top-band answers give roughly
                   equal weight to both. Do not neglect the wider novella.
                 </li>
                 <li className="flex gap-2">

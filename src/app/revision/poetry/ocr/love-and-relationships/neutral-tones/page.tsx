@@ -60,7 +60,7 @@ const neutralTones: PoemData = {
       ],
     },
     {
-      text: '— They had fallen from an ash.',
+      text: '- They had fallen from an ash.',
       annotations: [
         {
           type: 'Symbolism',
@@ -69,7 +69,7 @@ const neutralTones: PoemData = {
         },
         {
           type: 'Caesura',
-          note: 'The dash ("—") at the start of the line creates a hesitation, as if the speaker has to add this detail as an afterthought.',
+          note: 'The dash ("-") at the start of the line creates a hesitation, as if the speaker has to add this detail as an afterthought.',
           color: '#a855f7',
         },
       ],
@@ -246,14 +246,14 @@ const neutralTones: PoemData = {
   `,
 
   contextAr: `
-    <h3>Thomas Hardy (1840–1928)</h3>
+    <h3>Thomas Hardy (1840-1928)</h3>
     <p>Thomas Hardy كان روائي فيكتوري كبير (<em>Tess of the d'Urbervilles</em>، <em>Jude the Obscure</em>) وفي نفس الوقت من أهم الشعراء الإنجليز في بداية القرن العشرين. تفرّغ للشعر بشكل كامل في آخر حياته. نظرته للعالم مشهورة بالتشاؤم: يكتب وايد عن قسوة القدر، وخداع الحب، ولا مبالاة الطبيعة تجاه الإنسان.</p>
 
     <h3>وقت الكتابة (1867)</h3>
-    <p>"Neutral Tones" كتبها Hardy في <strong>1867</strong> وعمره 27 سنة بس، لكن ما انتشرت إلا في 1898 ضمن ديوانه <em>Wessex Poems</em>. هي من أبكر قصائده، ومع ذلك ناضجة بشكل لافت في تشاؤمها المرّ. ما نعرف بالضبط أيّ علاقة هي اللي ألهمته — Hardy نفسه ما باح بشي.</p>
+    <p>"Neutral Tones" كتبها Hardy في <strong>1867</strong> وعمره 27 سنة بس، لكن ما انتشرت إلا في 1898 ضمن ديوانه <em>Wessex Poems</em>. هي من أبكر قصائده، ومع ذلك ناضجة بشكل لافت في تشاؤمها المرّ. ما نعرف بالضبط أيّ علاقة هي اللي ألهمته - Hardy نفسه ما باح بشي.</p>
 
     <h3>تشاؤم Hardy</h3>
-    <p>وايد ناس يسمّون Hardy متشائم، بس هو كان يفضّل يسمّي نفسه "meliorist" — يعني واحد يأمل في تحسّن الأمور بس يتوقّع الخيبة. شعره مبني على إحساس إن الكون ما يهتم بسعادة الإنسان. "Neutral Tones" مثال صريح: ما يصير فيها شي درامي؛ الحب يخبو ويذوب في مشهد بارد بلا لون.</p>
+    <p>وايد ناس يسمّون Hardy متشائم، بس هو كان يفضّل يسمّي نفسه "meliorist" - يعني واحد يأمل في تحسّن الأمور بس يتوقّع الخيبة. شعره مبني على إحساس إن الكون ما يهتم بسعادة الإنسان. "Neutral Tones" مثال صريح: ما يصير فيها شي درامي؛ الحب يخبو ويذوب في مشهد بارد بلا لون.</p>
 
     <h3>العنوان</h3>
     <p>كلمة "Neutral" توحي بغياب الإحساس والالتزام. وكلمة "Tones" تحتمل الألوان والأصوات والعواطف. العنوان يأسّس الفكرة المركزية: حب فقد كل ألوانه وأحاسيسه، وما بقى منه إلا لوحة رمادية مسطّحة.</p>
@@ -273,11 +273,11 @@ Overall meaning: The poem is a meditation on the death of love. Hardy uses cold,
 
 المقطع الثاني: يتذكّر عيونها وهي تروح وترجع، تطالعه كأنها تتأمّل ألغاز قديمة مملّة. تبادلوا كلمات، بس الحوار صار جدال حول مين منهم تأذّى أكثر بسبب هالحب. العلاقة انحدرت لمستوى الشكاوى المتبادلة.
 
-المقطع الثالث: يتذكّر ابتسامتها — ابتسامة فاضية لدرجة إنها "the deadest thing / Alive enough to have strength to die". وبعدين عبرت وجهها ابتسامة استهزاء مرّة "like an ominous bird". حتى تعابير وجهها صارت تحسّ فيها موت.
+المقطع الثالث: يتذكّر ابتسامتها - ابتسامة فاضية لدرجة إنها "the deadest thing / Alive enough to have strength to die". وبعدين عبرت وجهها ابتسامة استهزاء مرّة "like an ominous bird". حتى تعابير وجهها صارت تحسّ فيها موت.
 
-المقطع الرابع: القصيدة تنتقل للحاضر. وهو يطالع للوراء، المتكلّم يقول إن الحب علّمه "keen lessons" — إن الحب يخدع. الذكرى المرّة من ذاك اليوم صارت صورة ثابتة في ذهنه: وجهها، والشمس الملعونة، والشجرة، والبركة بأوراقها الرمادية.
+المقطع الرابع: القصيدة تنتقل للحاضر. وهو يطالع للوراء، المتكلّم يقول إن الحب علّمه "keen lessons" - إن الحب يخدع. الذكرى المرّة من ذاك اليوم صارت صورة ثابتة في ذهنه: وجهها، والشمس الملعونة، والشجرة، والبركة بأوراقها الرمادية.
 
-المعنى العام: القصيدة تأمّل في موت الحب. Hardy يستخدم صور شتوية باردة باهتة عشان يقول إن الحب — اللي كنا نحسبه عاطفي وحيّ — يقدر يذوي ويصير شي ميت ورمادي. تشاؤم المتكلّم مطلق: الحب مو بس مفقود، بل خدّاع بطبعه.`,
+المعنى العام: القصيدة تأمّل في موت الحب. Hardy يستخدم صور شتوية باردة باهتة عشان يقول إن الحب - اللي كنا نحسبه عاطفي وحيّ - يقدر يذوي ويصير شي ميت ورمادي. تشاؤم المتكلّم مطلق: الحب مو بس مفقود، بل خدّاع بطبعه.`,
 
   formAndStructure: `Form: Four stanzas of four lines each (quatrains), with a regular ABBA rhyme scheme (enclosed rhyme). The "envelope" structure of each stanza creates a sense of being trapped, with the outer rhymes wrapping around the inner ones.
 
@@ -295,13 +295,13 @@ Tone: Cold, bitter, restrained. The poem never shouts -- the emotion is "neutral
 
 Metre (الوزن): iambic بشكل عام، بس فيه انحرافات كثيرة. الإيقاع غير منتظم ومتعثّر، يعكس التواصل المتكسّر بين الحبيبين.
 
-البنية الدائرية (cyclical structure): القصيدة تبدأ وتنتهي بنفس المشهد — البركة، الأوراق، الشجرة. هالبنية الدائرية تحبس المتكلّم في ذكراه: ما يقدر يهرب من ذاك اليوم الشتوي الكئيب. المقطع الأخير يضيف تأمّله في الحاضر، بس الصور البصرية نفسها، وهذا يبيّن إن داخله ما تغيّر شي.
+البنية الدائرية (cyclical structure): القصيدة تبدأ وتنتهي بنفس المشهد - البركة، الأوراق، الشجرة. هالبنية الدائرية تحبس المتكلّم في ذكراه: ما يقدر يهرب من ذاك اليوم الشتوي الكئيب. المقطع الأخير يضيف تأمّله في الحاضر، بس الصور البصرية نفسها، وهذا يبيّن إن داخله ما تغيّر شي.
 
 Volta (نقطة التحوّل): التحوّل يصير في أول المقطع الأخير ("Since then..."). Hardy ينتقل من وصف الماضي لتأمّل الحاضر، يبيّن كيف إن هالذكرى الواحدة شكّلت نظرته للعالم كلّه من بعدها.
 
-Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: اليوم الشتوي يعكس العلاقة اللي تحتضر. المشهد والعلاقة ما تنفصل عن بعض — وعشان هذا، في المقطع الأخير، اندمجوا في صورة رمزية واحدة.
+Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: اليوم الشتوي يعكس العلاقة اللي تحتضر. المشهد والعلاقة ما تنفصل عن بعض - وعشان هذا، في المقطع الأخير، اندمجوا في صورة رمزية واحدة.
 
-النبرة (tone): باردة، مرّة، مكبوحة. القصيدة أبد ما تصرخ — الإحساس "neutral"، مستنزَف، مضبوط. هالكبح أقوى من الحزن الصريح: المتكلّم اتأذّى لدرجة إنه ما عاد يقدر يحسّ بشدّة.`,
+النبرة (tone): باردة، مرّة، مكبوحة. القصيدة أبد ما تصرخ - الإحساس "neutral"، مستنزَف، مضبوط. هالكبح أقوى من الحزن الصريح: المتكلّم اتأذّى لدرجة إنه ما عاد يقدر يحسّ بشدّة.`,
 
   keyQuotes: [
     {
@@ -310,7 +310,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'A startling image: a sun drained of colour and warmth, as though it has been told off by God. White sun is unnatural -- normally golden or yellow. Hardy uses pathetic fallacy: the dying sun reflects the dying love. The religious diction also suggests a guilty, joyless world.',
       themes: ['Pathetic fallacy', 'Loss', 'Bleakness'],
       analysisAr:
-        'صورة صادمة: شمس مسلوبة من اللون والدفا، كأن الله نهرها وعنّفها. شمس بيضاء شي غير طبيعي — العادة تكون ذهبية أو صفراء. Hardy يستخدم pathetic fallacy: الشمس اللي تموت تعكس الحب اللي يموت. واللغة الدينية تلمّح لعالم مذنب، خالي من الفرح.',
+        'صورة صادمة: شمس مسلوبة من اللون والدفا، كأن الله نهرها وعنّفها. شمس بيضاء شي غير طبيعي - العادة تكون ذهبية أو صفراء. Hardy يستخدم pathetic fallacy: الشمس اللي تموت تعكس الحب اللي يموت. واللغة الدينية تلمّح لعالم مذنب، خالي من الفرح.',
       themesAr: ['Pathetic fallacy', 'الفقد', 'الكآبة'],
     },
     {
@@ -319,7 +319,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'A devastating simile of emotional absence. Her eyes look at him but do not focus -- they wander as if she is bored. The relationship is dead because there is no real attention left between them. Eye contact, the foundation of intimacy, has failed.',
       themes: ['Emotional disconnection', 'End of love', 'Indifference'],
       analysisAr:
-        'simile مدمّر يعبّر عن الغياب العاطفي. عيونها تطالعه بس ما تتركّز عليه — تروح وترجع كأنها مللّت. العلاقة ميتة عشان ما بقى بينهم اهتمام حقيقي. التواصل بالعين، اللي هو أساس الألفة، انهار.',
+        'simile مدمّر يعبّر عن الغياب العاطفي. عيونها تطالعه بس ما تتركّز عليه - تروح وترجع كأنها مللّت. العلاقة ميتة عشان ما بقى بينهم اهتمام حقيقي. التواصل بالعين، اللي هو أساس الألفة، انهار.',
       themesAr: ['الانفصال العاطفي', 'نهاية الحب', 'اللامبالاة'],
     },
     {
@@ -328,7 +328,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'The relationship has become a "tedious riddle" -- a boring puzzle from the past. "Tedious" is brutal: love is now dull and exhausting. "Years ago" tells us this love has been dying for a long time; nothing in the present matters anymore.',
       themes: ['Boredom', 'Time', 'End of love'],
       analysisAr:
-        'العلاقة صارت "tedious riddle" — لغز ممل من الماضي. كلمة "tedious" قاسية: الحب الحين بليد ومتعب. وعبارة "years ago" تقول لنا إن هالحب يموت من زمان؛ ولا شي في الحاضر يهمّ.',
+        'العلاقة صارت "tedious riddle" - لغز ممل من الماضي. كلمة "tedious" قاسية: الحب الحين بليد ومتعب. وعبارة "years ago" تقول لنا إن هالحب يموت من زمان؛ ولا شي في الحاضر يهمّ.',
       themesAr: ['الملل', 'الوقت', 'نهاية الحب'],
     },
     {
@@ -337,7 +337,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'A devastating paradox. A smile should be alive and warm, but hers is "the deadest thing" -- as dead as anything can be. Yet it is "alive enough" to perform the act of dying, like a final gasp. The lover\'s smile becomes a corpse going through the motions.',
       themes: ['Death of love', 'Paradox', 'Decay'],
       analysisAr:
-        'paradox مدمّر. الابتسامة المفروض تكون حية ودافية، بس ابتسامتها "the deadest thing" — أموت من أي شي ممكن يكون ميت. ومع ذلك "alive enough" عشان تأدّي عملية الموت نفسها، مثل آخر نَفَس. ابتسامة الحبيبة صارت جثّة تأدّي حركات.',
+        'paradox مدمّر. الابتسامة المفروض تكون حية ودافية، بس ابتسامتها "the deadest thing" - أموت من أي شي ممكن يكون ميت. ومع ذلك "alive enough" عشان تأدّي عملية الموت نفسها، مثل آخر نَفَس. ابتسامة الحبيبة صارت جثّة تأدّي حركات.',
       themesAr: ['موت الحب', 'Paradox', 'التحلّل'],
     },
     {
@@ -346,7 +346,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'The poem\'s central thesis. "Keen" suggests sharp, painful, and well-learned. "Love deceives" reduces love to a lie -- a force that promises happiness but delivers misery. This bitter conclusion shapes the speaker\'s entire worldview from this day onwards.',
       themes: ['Bitterness', 'Disillusionment', "Hardy's pessimism"],
       analysisAr:
-        'الفكرة المحورية في القصيدة. كلمة "keen" توحي بشي حاد ومؤلم وتعلّمه عن تجربة. وعبارة "love deceives" تختصر الحب لكذبة — قوة تَعِد بالسعادة وتسلّم البؤس. هالخاتمة المرّة هي اللي شكّلت نظرة المتكلّم للعالم كلّه من ذاك اليوم.',
+        'الفكرة المحورية في القصيدة. كلمة "keen" توحي بشي حاد ومؤلم وتعلّمه عن تجربة. وعبارة "love deceives" تختصر الحب لكذبة - قوة تَعِد بالسعادة وتسلّم البؤس. هالخاتمة المرّة هي اللي شكّلت نظرة المتكلّم للعالم كلّه من ذاك اليوم.',
       themesAr: ['المرارة', 'فقدان الأوهام', 'تشاؤم Hardy'],
     },
     {
@@ -355,7 +355,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'The closing image fuses the woman with the bleak landscape. He cannot separate her from the scene -- they have merged into a single symbol of betrayal. The "God-curst sun" intensifies the earlier "chidden" sun: the curse has hardened. The grey, drained palette reflects his own deadened emotional state.',
       themes: ['Memory', 'Symbolism', 'Cyclical structure'],
       analysisAr:
-        'الصورة الختامية تدمج المرأة بالمشهد الكئيب. ما يقدر يفصلها عن المنظر — اندمجوا في رمز واحد للخيانة. كلمة "God-curst sun" تصعّد الشمس اللي قال عنها "chidden" قبل: اللعنة قست. واللوحة الرمادية المستنزَفة تعكس حالته العاطفية الميتة.',
+        'الصورة الختامية تدمج المرأة بالمشهد الكئيب. ما يقدر يفصلها عن المنظر - اندمجوا في رمز واحد للخيانة. كلمة "God-curst sun" تصعّد الشمس اللي قال عنها "chidden" قبل: اللعنة قست. واللوحة الرمادية المستنزَفة تعكس حالته العاطفية الميتة.',
       themesAr: ['الذاكرة', 'الرمزية', 'البنية الدائرية'],
     },
   ],
@@ -405,7 +405,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'The poem ends where it began. This circular structure traps the speaker in the memory -- he cannot move on. The repetition of the image shows that this moment has become permanently fixed in his mind.',
       lineRef: 15,
       effectAr:
-        'القصيدة تنتهي من حيث بدأت. هالبنية الدائرية تحبس المتكلّم في الذكرى — ما يقدر يتجاوزها. تكرار الصورة يبيّن إن هاللحظة انغرست في ذهنه بشكل دائم.',
+        'القصيدة تنتهي من حيث بدأت. هالبنية الدائرية تحبس المتكلّم في الذكرى - ما يقدر يتجاوزها. تكرار الصورة يبيّن إن هاللحظة انغرست في ذهنه بشكل دائم.',
     },
     {
       device: 'Religious imagery',
@@ -414,7 +414,7 @@ Pathetic fallacy: القصيدة كاملة تشتغل على pathetic fallacy: 
         'God appears twice -- first scolding the sun, then cursing it. Hardy is questioning whether divine love exists in a world this bleak. The religious diction makes the misery feel cosmic, not just personal.',
       lineRef: 1,
       effectAr:
-        'الله يظهر مرّتين — أول مرة ينهر الشمس، وثاني مرة يلعنها. Hardy يسأل: هل فيه حب إلهي في عالم بهالكآبة؟ اللغة الدينية تخلّي الشقاء يحسّ به كوني، مو شخصي بس.',
+        'الله يظهر مرّتين - أول مرة ينهر الشمس، وثاني مرة يلعنها. Hardy يسأل: هل فيه حب إلهي في عالم بهالكآبة؟ اللغة الدينية تخلّي الشقاء يحسّ به كوني، مو شخصي بس.',
     },
     {
       device: 'Symbolism',
@@ -472,7 +472,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Bright colours',
-      'White, grey, and ash — all warmth drained',
+      'White, grey, and ash - all warmth drained',
       'Vivid greens',
       'Random',
     ],
@@ -488,7 +488,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Beauty',
-      'The smile is false and lifeless — total death of feeling',
+      'The smile is false and lifeless - total death of feeling',
       'Shyness',
       'Sadness',
     ],
@@ -503,7 +503,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: ['Free verse', 'Four quatrains with ABBA rhyme', 'A sonnet', 'Blank verse'],
     correctIndex: 1,
-    explanation: 'ABBA (envelope) rhyme — the enclosing structure traps the speaker in the memory.',
+    explanation: 'ABBA (envelope) rhyme - the enclosing structure traps the speaker in the memory.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -519,7 +519,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The final stanza returns to the pond — the speaker is locked in inescapable memory.',
+      'The final stanza returns to the pond - the speaker is locked in inescapable memory.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -550,7 +550,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Stays personal',
-      'Becomes a universal lesson — "keen lessons that love deceives"',
+      'Becomes a universal lesson - "keen lessons that love deceives"',
       'New character',
       'Hope',
     ],
@@ -584,9 +584,9 @@ const REVISION_TOPICS = [
       'Neutral Tones explores the death of love, bleakness of memory, and how one painful experience defines all future relationships.',
     keyPoints: [
       'Love as deception',
-      'Emotional deadness — all warmth drained',
+      'Emotional deadness - all warmth drained',
       'Memory as trap',
-      'Pessimism — love is doomed',
+      'Pessimism - love is doomed',
     ],
   },
   {
@@ -594,20 +594,20 @@ const REVISION_TOPICS = [
     summary:
       'Hardy uses pathetic fallacy, drained colour palette, and death imagery to create emotional extinction.',
     keyPoints: [
-      'White, grey, ash — all warmth removed',
-      '"The deadest thing" — superlative death imagery',
-      'Pathetic fallacy — landscape mirrors deadness',
-      '"Starving sod" — even the earth is dying',
+      'White, grey, ash - all warmth removed',
+      '"The deadest thing" - superlative death imagery',
+      'Pathetic fallacy - landscape mirrors deadness',
+      '"Starving sod" - even the earth is dying',
     ],
   },
   {
     topic: 'Structure & Form',
-    summary: 'Four quatrains with ABBA rhyme — enclosed, trapped structure.',
+    summary: 'Four quatrains with ABBA rhyme - enclosed, trapped structure.',
     keyPoints: [
       'ABBA rhyme traps the speaker',
-      'Cyclical — begins and ends at the pond',
+      'Cyclical - begins and ends at the pond',
       'Regular form contrasts with disordered emotions',
-      'Past tense — memory becomes permanent',
+      'Past tense - memory becomes permanent',
     ],
   },
 ]
@@ -622,7 +622,7 @@ export default function NeutralTonesPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Neutral Tones by Thomas Hardy — Analysis & Annotations"
+        name="Neutral Tones by Thomas Hardy - Analysis & Annotations"
         description="Line-by-line analysis of Neutral Tones with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

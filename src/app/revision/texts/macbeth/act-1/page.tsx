@@ -20,12 +20,12 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   openGraph: {
-    title: 'Macbeth Act 1 — Scene-by-Scene Analysis | The English Hub',
+    title: 'Macbeth Act 1 - Scene-by-Scene Analysis | The English Hub',
     description:
       'Detailed GCSE analysis of Macbeth Act 1: scene-by-scene summary, key quotes, language techniques, character development and structural analysis.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-1' },
-  title: 'Macbeth Act 1 — Scene-by-Scene Analysis',
+  title: 'Macbeth Act 1 - Scene-by-Scene Analysis',
   description:
     'Detailed GCSE analysis of Macbeth Act 1: scene-by-scene summary, key quotes, language techniques, character development and structural analysis.',
 }
@@ -74,12 +74,12 @@ export default async function MacbethAct1Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-violet-400" />
-              {_tr(`Act 1 — Exposition &amp; Temptation`)}
+              {_tr(`Act 1 - Exposition &amp; Temptation`)}
             </Badge>
             <Badge variant="outline">7 scenes</Badge>
           </div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            {_tr(`Macbeth — Act 1: Scene-by-Scene Analysis`)}
+            {_tr(`Macbeth - Act 1: Scene-by-Scene Analysis`)}
           </h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             Act 1 establishes the world of the play, introduces the supernatural, and traces
@@ -94,7 +94,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 1 — The Witches&apos; Opening`)}
+            {_tr(`Scene 1 - The Witches&apos; Opening`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -187,7 +187,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 2 — The Battlefield Report`)}
+            {_tr(`Scene 2 - The Battlefield Report`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -294,7 +294,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 3 — The Prophecy`)}
+            {_tr(`Scene 3 - The Prophecy`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -435,7 +435,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 4 — Duncan Names His Heir`)}
+            {_tr(`Scene 4 - Duncan Names His Heir`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -550,7 +550,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 5 — Lady Macbeth&apos;s Ambition`)}
+            {_tr(`Scene 5 - Lady Macbeth&apos;s Ambition`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -695,7 +695,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 6 — Duncan Arrives at Inverness`)}
+            {_tr(`Scene 6 - Duncan Arrives at Inverness`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -782,7 +782,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-violet-400" />
-            {_tr(`Scene 7 — &ldquo;If It Were Done&rdquo; &mdash; The Decision`)}
+            {_tr(`Scene 7 - &ldquo;If It Were Done&rdquo; &mdash; The Decision`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -941,7 +941,7 @@ export default async function MacbethAct1Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MessageSquare className="size-5 text-blue-400" />
-            {_tr(`Practice Exam Questions — Act 1`)}
+            {_tr(`Practice Exam Questions - Act 1`)}
           </CardTitle>
         </CardHeader>
         <CardContent>

@@ -854,7 +854,7 @@ export default function DemoSchoolDashboardPage() {
                 </h3>
                 <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
                   Run a free pilot with English Hub for a half-term. We&rsquo;ll import your
-                  classes, students and exam targets — and you&rsquo;ll see real analytics in this
+                  classes, students and exam targets - and you&rsquo;ll see real analytics in this
                   same dashboard within a week.
                 </p>
               </div>

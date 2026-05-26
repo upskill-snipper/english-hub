@@ -277,7 +277,7 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'copyright',
   },
 
-  // ── A-Level — Shakespeare tragedies & histories ────────────────────────────
+  // ── A-Level - Shakespeare tragedies & histories ────────────────────────────
   {
     slug: 'hamlet',
     title: 'Hamlet',
@@ -303,7 +303,7 @@ export const SET_TEXTS: SetText[] = [
     copyrightStatus: 'public-domain',
   },
 
-  // ── A-Level — Modernist & 20th-century ─────────────────────────────────────
+  // ── A-Level - Modernist & 20th-century ─────────────────────────────────────
   {
     slug: 'the-waste-land',
     title: 'The Waste Land',
@@ -346,7 +346,7 @@ export const SET_TEXTS: SetText[] = [
   },
 
   // ── Pearson Edexcel IGCSE English Language A (4EA1) Anthology ──────────────
-  // Section A — Non-fiction (10 texts)
+  // Section A - Non-fiction (10 texts)
   {
     slug: 'the-danger-of-a-single-story',
     title: 'The Danger of a Single Story',
@@ -401,7 +401,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Originally published in The Guardian, 24 January 2003; adapted for the Edexcel anthology by Pearson. The article reports the rescue of two British explorers stranded in the Antarctic, and the public debate over whether their expedition was bravery or recklessness.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions — examiners will mark against the anthology text. Originally published in The Guardian, 24 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd / Pearson Education. Short fair-dealing extracts only.',
+      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Originally published in The Guardian, 24 January 2003; adapted for the Edexcel anthology by Pearson. © Guardian News & Media Ltd / Pearson Education. Short fair-dealing extracts only.',
   },
   {
     slug: 'between-a-rock-and-a-hard-place',
@@ -413,7 +413,7 @@ export const SET_TEXTS: SetText[] = [
     year: '2004',
     keyThemes: ['Survival', 'Isolation', 'Determination', 'Nature'],
     description:
-      'Ralston recounts the moment he was forced to amputate his own arm after a boulder pinned him in a remote Utah canyon — a meditation on solitude, willpower and the limits of the body.',
+      'Ralston recounts the moment he was forced to amputate his own arm after a boulder pinned him in a remote Utah canyon - a meditation on solitude, willpower and the limits of the body.',
     ukRightsNotice:
       'Rights notice: © Simon & Schuster / Pearson Education on behalf of Aron Ralston. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
@@ -427,9 +427,9 @@ export const SET_TEXTS: SetText[] = [
     year: '2015',
     keyThemes: ['Education', 'Identity', 'Disability', 'Self-belief'],
     description:
-      'Benjamin Zephaniah (1958–2023) was a British dub poet and rights campaigner; he died in January 2023 and rights to his work are now held by his estate. The text was originally a 2017 Guardian opinion piece and has been adapted for the Edexcel anthology — the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
+      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; he died in January 2023 and rights to his work are now held by his estate. The text was originally a 2017 Guardian opinion piece and has been adapted for the Edexcel anthology - the printed version differs from the freely-available online original in cuts and re-orderings. In it, Zephaniah wrote about growing up labelled as stupid because of dyslexia, and argued that creative thinking and refusal to be defined by an educational system are strengths.',
     ukRightsNotice:
-      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions — examiners will mark against the anthology text. Rights notice: Benjamin Zephaniah (1958–2023) — rights now held by his estate. © estate via Pearson Education. Quotations are short fair-dealing extracts.',
+      'Anthology version warning: This text is an adapted version printed in the Edexcel IGCSE Anthology (ISBN 978-1-446-93108-0). The freely-available Guardian original (linked from many revision sites) differs in cuts, re-orderings, and minor word choice. Always use the anthology version when answering Edexcel exam questions - examiners will mark against the anthology text. Rights notice: Benjamin Zephaniah (1958-2023) - rights now held by his estate. © estate via Pearson Education. Quotations are short fair-dealing extracts.',
   },
   {
     slug: 'a-game-of-polo-with-a-headless-goat',
@@ -441,7 +441,7 @@ export const SET_TEXTS: SetText[] = [
     year: '2000',
     keyThemes: ['Culture', 'Spectacle', 'Tradition', 'Travel writing'],
     description:
-      "Levine's account of watching buzkashi — a violent Asian sport played with the carcass of a goat — and her attempt to describe a tradition very far from her own without judging it.",
+      "Levine's account of watching buzkashi - a violent Asian sport played with the carcass of a goat - and her attempt to describe a tradition very far from her own without judging it.",
     ukRightsNotice:
       'Rights notice: © Little, Brown / Pearson Education on behalf of Emma Levine. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
@@ -469,7 +469,7 @@ export const SET_TEXTS: SetText[] = [
     year: '2014',
     keyThemes: ['Grief', 'Nature', 'Obsession', 'Identity'],
     description:
-      "Macdonald's memoir of training a goshawk in the months after her father's sudden death — a study of how wildness and grief can mirror and reshape each other.",
+      "Macdonald's memoir of training a goshawk in the months after her father's sudden death - a study of how wildness and grief can mirror and reshape each other.",
     ukRightsNotice:
       'Rights notice: © Jonathan Cape / Penguin Random House / Pearson Education on behalf of Helen Macdonald. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
@@ -488,7 +488,7 @@ export const SET_TEXTS: SetText[] = [
       'Rights notice: © Penguin / Pearson Education on behalf of Adeline Yen Mah. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
 
-  // Section B — Poetry (15 poems)
+  // Section B - Poetry (15 poems)
   {
     slug: 'disabled',
     title: 'Disabled',
@@ -503,7 +503,7 @@ export const SET_TEXTS: SetText[] = [
   },
   {
     slug: 'out-out',
-    title: "'Out, Out—'",
+    title: "'Out, Out-'",
     author: 'Robert Frost',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
@@ -515,7 +515,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A boy doing chores on a Vermont farm loses his hand to a buzz-saw and dies; the watching adults, after a brief shock, "turn[] to their affairs". Frost’s title quotes Macbeth.',
     ukRightsNotice:
-      'Rights notice (UK): Frost died 1963; UK copyright expires 31 December 2033. Quotations are short fair-dealing extracts. Frost is public domain in the United States, but not in the UK — students using overseas revision resources should be aware that those reproductions are not redistributable in the UK platform.',
+      'Rights notice (UK): Frost died 1963; UK copyright expires 31 December 2033. Quotations are short fair-dealing extracts. Frost is public domain in the United States, but not in the UK - students using overseas revision resources should be aware that those reproductions are not redistributable in the UK platform.',
   },
   {
     slug: 'an-unknown-girl',
@@ -541,14 +541,14 @@ export const SET_TEXTS: SetText[] = [
     year: '1995',
     keyThemes: ['War', 'Resilience', 'Love', 'Hope'],
     description:
-      'Harrison reports from besieged Sarajevo, where young couples flirt in the dark streets between sniper fire and shell craters — the persistence of ordinary life inside war.',
+      'Harrison reports from besieged Sarajevo, where young couples flirt in the dark streets between sniper fire and shell craters - the persistence of ordinary life inside war.',
     ukRightsNotice:
-      'Rights notice: © Bloodaxe Books on behalf of Tony Harrison. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0). Note: the anthology layout uses extra stanza breaks not in the original 1995 Guardian text or the Bloodaxe collected edition — students should revise from the anthology.',
+      'Rights notice: © Bloodaxe Books on behalf of Tony Harrison. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0). Note: the anthology layout uses extra stanza breaks not in the original 1995 Guardian text or the Bloodaxe collected edition - students should revise from the anthology.',
   },
   {
     slug: 'still-i-rise',
     title: 'Still I Rise',
-    author: 'Maya Angelou (1928–2014)',
+    author: 'Maya Angelou (1928-2014)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
     copyrightStatus: 'copyright',
@@ -557,12 +557,12 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Angelou addresses an oppressor directly and refuses to be broken by hatred, history or contempt; the refrain "I rise" enacts the unbreakable spirit she describes.',
     ukRightsNotice:
-      'Rights notice: © Random House / Penguin Random House on behalf of the Maya Angelou estate (1928–2014). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Angelou’s collection And Still I Rise (1978).',
+      'Rights notice: © Random House / Penguin Random House on behalf of the Maya Angelou estate (1928-2014). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Angelou’s collection And Still I Rise (1978).',
   },
   {
     slug: 'do-not-go-gentle-into-that-good-night',
     title: 'Do not go gentle into that good night',
-    author: 'Dylan Thomas (1914–1953)',
+    author: 'Dylan Thomas (1914-1953)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -571,12 +571,12 @@ export const SET_TEXTS: SetText[] = [
     description:
       "A son's villanelle urging his dying father to resist death with rage and fire rather than accept it quietly; the circling repetitions enact the refusal to let go.",
     ukRightsNotice:
-      'Rights notice: © David Higham Associates on behalf of the Dylan Thomas estate (1914–1953). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Thomas’s Collected Poems (Dent / Weidenfeld).',
+      'Rights notice: © David Higham Associates on behalf of the Dylan Thomas estate (1914-1953). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Thomas’s Collected Poems (Dent / Weidenfeld).',
   },
   {
     slug: 'refugee-blues',
     title: 'Refugee Blues',
-    author: 'W.H. Auden (1907–1973)',
+    author: 'W.H. Auden (1907-1973)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -585,7 +585,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'Two German-Jewish refugees walk through New York on the eve of the Second World War, finding everywhere shut to them; the blues form gives political horror a quietly mournful music.',
     ukRightsNotice:
-      'Rights notice: © Curtis Brown / Faber & Faber on behalf of the W.H. Auden estate (1907–1973; UK copyright runs to 2044). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Auden’s Collected Poems (Faber).',
+      'Rights notice: © Curtis Brown / Faber & Faber on behalf of the W.H. Auden estate (1907-1973; UK copyright runs to 2044). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or Auden’s Collected Poems (Faber).',
   },
   {
     slug: 'war-photographer',
@@ -603,7 +603,7 @@ export const SET_TEXTS: SetText[] = [
   },
   {
     slug: 'if',
-    title: 'If—',
+    title: 'If-',
     author: 'Rudyard Kipling',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang', 'edexcel-igcse'],
@@ -611,12 +611,12 @@ export const SET_TEXTS: SetText[] = [
     year: '1910',
     keyThemes: ['Stoicism', 'Identity', 'Growing up', 'Self-control'],
     description:
-      'A father addresses his son and lists the qualities — composure, integrity, persistence, humility — required to live a balanced and honourable life and finally become "a Man".',
+      'A father addresses his son and lists the qualities - composure, integrity, persistence, humility - required to live a balanced and honourable life and finally become "a Man".',
   },
   {
     slug: 'prayer-before-birth',
     title: 'Prayer Before Birth',
-    author: 'Louis MacNeice (1907–1963)',
+    author: 'Louis MacNeice (1907-1963)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -625,7 +625,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "An unborn child pleads to be protected from the violence, dehumanisation and moral corruption of the adult world; the prayer's mounting urgency reflects mid-war anxiety.",
     ukRightsNotice:
-      'Rights notice: © Faber & Faber on behalf of the Louis MacNeice estate (1907–1963). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or MacNeice’s Collected Poems (Faber).',
+      'Rights notice: © Faber & Faber on behalf of the Louis MacNeice estate (1907-1963). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or MacNeice’s Collected Poems (Faber).',
   },
   {
     slug: 'piano',
@@ -642,7 +642,7 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'hide-and-seek',
     title: 'Hide and Seek',
-    author: 'Vernon Scannell (1922–2007)',
+    author: 'Vernon Scannell (1922-2007)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -651,12 +651,12 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A child hiding in an ingenious spot waits to be found, only to discover with a jolt that his friends have already left and he is alone in the dark.',
     ukRightsNotice:
-      'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922–2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'half-past-two',
     title: 'Half-past Two',
-    author: 'U.A. Fanthorpe (1929–2009)',
+    author: 'U.A. Fanthorpe (1929-2009)',
     category: 'poetry-anthology',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -665,7 +665,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A small boy kept behind after school becomes lost in a timeless world because he cannot yet read a clock, and a careless punishment becomes an accidental gift of escape.',
     ukRightsNotice:
-      'Rights notice: © Peterloo Poets / Enitharmon on behalf of the U.A. Fanthorpe estate (1929–2009). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Peterloo Poets / Enitharmon on behalf of the U.A. Fanthorpe estate (1929-2009). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'my-last-duchess',
@@ -692,20 +692,20 @@ export const SET_TEXTS: SetText[] = [
       'A meditation on true love as an "ever-fixed mark" that cannot be altered by time, circumstance or trouble; love that changes when it finds change is, the speaker insists, not love at all.',
   },
 
-  // Section C — Prose (10 short stories)
+  // Section C - Prose (10 short stories)
   {
     slug: 'the-door',
     title: 'The Door',
-    author: 'E.M. Forster (1879–1970)',
+    author: 'E.M. Forster (1879-1970)',
     category: 'prose',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
     year: '1911',
     keyThemes: ['Imagination', 'Reality vs fantasy', 'Office life', 'Escape'],
     description:
-      'A weary office worker discovers a door in the underground that opens onto a luminous, otherworldly meadow — and must decide whether he can ever find it again.',
+      'A weary office worker discovers a door in the underground that opens onto a luminous, otherworldly meadow - and must decide whether he can ever find it again.',
     ukRightsNotice:
-      'Rights notice: © Society of Authors / King’s College, Cambridge on behalf of the E.M. Forster estate (1879–1970; UK copyright runs to 2040). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Society of Authors / King’s College, Cambridge on behalf of the E.M. Forster estate (1879-1970; UK copyright runs to 2040). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'the-necklace',
@@ -717,7 +717,7 @@ export const SET_TEXTS: SetText[] = [
     year: '1884',
     keyThemes: ['Vanity', 'Class', 'Pride', 'Ironic reversal'],
     description:
-      'A vain young Parisian woman borrows a diamond necklace for a single glittering ball, loses it, and spends ten brutalising years repaying its cost — only to learn the truth at the end.',
+      'A vain young Parisian woman borrows a diamond necklace for a single glittering ball, loses it, and spends ten brutalising years repaying its cost - only to learn the truth at the end.',
   },
   {
     slug: 'significant-cigarettes',
@@ -762,7 +762,7 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'the-pedestrian',
     title: 'The Pedestrian',
-    author: 'Ray Bradbury (1920–2012)',
+    author: 'Ray Bradbury (1920-2012)',
     category: 'prose',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -771,7 +771,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       "In a future city where everyone watches television indoors, a man's nightly walks alone become so unusual that an automated police car arrests him for being on the street.",
     ukRightsNotice:
-      'Rights notice: © HarperCollins / Don Congdon Associates / Pearson Education on behalf of the Ray Bradbury estate (1920–2012). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © HarperCollins / Don Congdon Associates / Pearson Education on behalf of the Ray Bradbury estate (1920-2012). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'the-yellow-wallpaper',
@@ -788,7 +788,7 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'when-greek-meets-greek',
     title: 'When Greek Meets Greek',
-    author: 'Sam Selvon (1923–1994)',
+    author: 'Sam Selvon (1923-1994)',
     category: 'prose',
     boards: ['edexcel-igcse-lang'],
     copyrightStatus: 'copyright',
@@ -797,7 +797,7 @@ export const SET_TEXTS: SetText[] = [
     description:
       'A comic but biting story of Caribbean migrants in 1950s London, where two friends pretend to be Indian to navigate the racism of the British housing market.',
     ukRightsNotice:
-      'Rights notice: © Longman / Pearson Education on behalf of the Sam Selvon estate (1923–1994). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
+      'Rights notice: © Longman / Pearson Education on behalf of the Sam Selvon estate (1923-1994). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0).',
   },
   {
     slug: 'the-man-who-loved-flowers',
@@ -809,7 +809,7 @@ export const SET_TEXTS: SetText[] = [
     year: '1977',
     keyThemes: ['Romance and horror', 'Obsession', 'Mental illness', 'Mistaken identity'],
     description:
-      "On a beautiful spring evening in 1960s New York, a young man in love walks the streets buying flowers — but his sweet anticipation curdles into something terrifying by the story's end.",
+      "On a beautiful spring evening in 1960s New York, a young man in love walks the streets buying flowers - but his sweet anticipation curdles into something terrifying by the story's end.",
     ukRightsNotice:
       'Rights notice: © Hodder & Stoughton / Doubleday / Pearson Education on behalf of Stephen King. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Edexcel-licensed school edition (ISBN 978-1-446-93108-0) or King’s collection Night Shift (1978).',
   },
@@ -823,7 +823,7 @@ export const SET_TEXTS: SetText[] = [
     year: '1894',
     keyThemes: ['Marriage', 'Female autonomy', 'Freedom', 'Irony'],
     description:
-      'A woman is told her husband has been killed in a train accident and, alone in her room, slowly realises she feels free — until the door opens and her hour of liberty ends.',
+      'A woman is told her husband has been killed in a train accident and, alone in her room, slowly realises she feels free - until the door opens and her hour of liberty ends.',
   },
 ]
 

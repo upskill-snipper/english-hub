@@ -1,9 +1,9 @@
-// ─── Platform-admin — Prompt version management ─────────────────────────────
+// ─── Platform-admin - Prompt version management ─────────────────────────────
 // GET  /api/admin/prompts            list prompt_versions (newest first)
 // POST /api/admin/prompts            create a new version (active by default)
 //
 // Site-admin only. Backed by src/lib/versioning/admin.ts (service-role; these
-// tables are RLS deny-by-default). Prompts are VERSIONED & STORED — improvable
+// tables are RLS deny-by-default). Prompts are VERSIONED & STORED - improvable
 // over time, never hardcoded in the app. Empty-table safe.
 // ────────────────────────────────────────────────────────────────────────────
 

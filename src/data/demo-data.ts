@@ -487,7 +487,7 @@ export const DEMO_TEACHERS: DemoTeacher[] = [
     classCount: 2,
     avgProgress: 64,
     yearsExperience: 1,
-    cpdNotes: ['ECT Year 1 — observed weekly by HoD'],
+    cpdNotes: ['ECT Year 1 - observed weekly by HoD'],
   },
   {
     id: 't21',
@@ -539,7 +539,7 @@ export const DEMO_TEACHERS: DemoTeacher[] = [
     name: 'Marcus Lindqvist',
     email: 'm.lindqvist@riverside.ac.uk',
     role: 'teacher',
-    classes: ['SENCo Link — Reading Recovery'],
+    classes: ['SENCo Link - Reading Recovery'],
     lastActive: '1 day ago',
     activeThisWeek: true,
     department: 'English',
@@ -547,7 +547,7 @@ export const DEMO_TEACHERS: DemoTeacher[] = [
     classCount: 1,
     avgProgress: 58,
     yearsExperience: 18,
-    cpdNotes: ['SENCo link teacher', 'Reading Recovery (NCETM) — qualified tutor'],
+    cpdNotes: ['SENCo link teacher', 'Reading Recovery (NCETM) - qualified tutor'],
   },
 ]
 
@@ -3942,7 +3942,7 @@ export const DEMO_STUDENTS: DemoStudent[] = (
         { action: 'Missed scheduled intervention session', date: '2026-03-24', type: 'activity' },
       ],
     },
-    // ─── Additional cohort (s51-s200) — appended to give the dashboards a more
+    // ─── Additional cohort (s51-s200) - appended to give the dashboards a more
     //     realistic synthetic depth. All entries flow through the `.map(...)`
     //     pipeline below, so grade/reading-age fields are auto-derived. ─────────
 
@@ -4379,7 +4379,7 @@ export const DEMO_STUDENTS: DemoStudent[] = (
       essay: {
         title: 'My Favourite Place - Descriptive Writing',
         score: 48,
-        feedback: 'Lots of imagination. Reading age below year — book SENCo check.',
+        feedback: 'Lots of imagination. Reading age below year - book SENCo check.',
         date: '2026-03-15',
       },
       quiz: { name: 'Grammar Basics', score: 4, maxScore: 10, date: '2026-03-14' },
@@ -6140,7 +6140,7 @@ export const DEMO_STUDENTS: DemoStudent[] = (
       attendancePct: 99,
     }),
 
-    // ── Year 10 additions (s111-s140, 30 students — GCSE concentration) ──
+    // ── Year 10 additions (s111-s140, 30 students - GCSE concentration) ──
     _buildExtraStudent({
       id: 's111',
       name: 'Eden Calloway',
@@ -7234,7 +7234,7 @@ export const DEMO_STUDENTS: DemoStudent[] = (
       attendancePct: 99,
     }),
 
-    // ── Year 11 additions (s141-s180, 40 students — peak GCSE cohort) ──
+    // ── Year 11 additions (s141-s180, 40 students - peak GCSE cohort) ──
     _buildExtraStudent({
       id: 's141',
       name: 'Joel Pendleton',
@@ -10746,7 +10746,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     averageScore: 42,
     trend: 'declining',
     reasons: [
-      'GCSE year — grades significantly below target',
+      'GCSE year - grades significantly below target',
       'Attendance 72%',
       'Homework completion 38%',
       'Mock exam grade 2',
@@ -10814,7 +10814,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     averageScore: 46,
     trend: 'declining',
     reasons: [
-      'GCSE exams imminent — scores declining',
+      'GCSE exams imminent - scores declining',
       'Mock results dropped from grade 3 to grade 2',
       'Attendance 67%',
       'Missed scheduled mock exam',
@@ -10827,7 +10827,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
       'Exam access arrangements review',
     ],
     lastTeacherNote:
-      'Dominic missed the final mock — concerning given GCSEs in weeks. Needs immediate intensive intervention to have any chance of grade 4.',
+      'Dominic missed the final mock - concerning given GCSEs in weeks. Needs immediate intensive intervention to have any chance of grade 4.',
     daysSinceActive: 9,
   },
   {
@@ -10838,7 +10838,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     averageScore: 54,
     trend: 'stagnant',
     reasons: [
-      'Recall-only AO1 — minimal AO2/AO3',
+      'Recall-only AO1 - minimal AO2/AO3',
       'Mock exam grade 3',
       'GCSE exams imminent',
       'Attendance 90%',
@@ -10861,7 +10861,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     averageScore: 44,
     trend: 'declining',
     reasons: [
-      'Attendance 64% — critical threshold',
+      'Attendance 64% - critical threshold',
       'Did not sit Final Mock',
       'Mock results declining (3 -> 2)',
       'GCSE exams imminent',
@@ -10883,7 +10883,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     className: '11G Booster',
     averageScore: 58,
     trend: 'slightly-improving',
-    reasons: ['Below target for GCSE', 'AO5 SPaG weak', 'Attendance 91% — needs sustaining'],
+    reasons: ['Below target for GCSE', 'AO5 SPaG weak', 'Attendance 91% - needs sustaining'],
     recommendedActions: [
       'Continue Y11 booster sessions',
       'AO2 PEE practice',
@@ -11010,7 +11010,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     className: '10B English',
     averageScore: 56,
     trend: 'slightly-improving',
-    reasons: ['EAL — idiom and academic register developing', 'AO2 essay structure'],
+    reasons: ['EAL - idiom and academic register developing', 'AO2 essay structure'],
     recommendedActions: ['EAL idiom pack', 'AO2 PEE practice', 'Continue EAL Y10 booster'],
     lastTeacherNote:
       'Jakub is making steady progress via EAL booster. Reading is strong; production needs polish.',
@@ -11036,7 +11036,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
     className: '11D English',
     averageScore: 54,
     trend: 'slightly-improving',
-    reasons: ['EAL — idiom and AO2 developing', 'Attendance 92%'],
+    reasons: ['EAL - idiom and AO2 developing', 'Attendance 92%'],
     recommendedActions: ['EAL idiom pack', 'AO2 PEE practice', 'EAL Y11 booster'],
     lastTeacherNote:
       'Stefan is engaging well with EAL booster. Strong reader; production catching up.',
@@ -11047,7 +11047,7 @@ export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
 // ─── Weekly Activity ──────────────────────────────────────────────────────────
 
 export const DEMO_WEEKLY_ACTIVITY: DemoWeeklyActivity[] = [
-  // Spring term begins — slow ramp post-Christmas
+  // Spring term begins - slow ramp post-Christmas
   {
     week: '6 Jan',
     lessonsAccessed: 198,
@@ -11169,7 +11169,7 @@ export const DEMO_WEEKLY_ACTIVITY: DemoWeeklyActivity[] = [
     averageSessionMinutes: 29,
     activeStudents: 330,
   },
-  // Easter holiday — sharp drop
+  // Easter holiday - sharp drop
   {
     week: '7 Apr',
     lessonsAccessed: 168,
@@ -11179,7 +11179,7 @@ export const DEMO_WEEKLY_ACTIVITY: DemoWeeklyActivity[] = [
     averageSessionMinutes: 19,
     activeStudents: 196,
   },
-  // Summer term begins — final mock window for GCSE/A-Level
+  // Summer term begins - final mock window for GCSE/A-Level
   {
     week: '14 Apr',
     lessonsAccessed: 392,
@@ -11974,7 +11974,7 @@ export const DEMO_CLASS_SKILL_BREAKDOWN: Record<string, Record<string, number>> 
     Evaluation: 80,
     SPaG: 78,
   },
-  // Weaker classes — show the gaps the dashboards need to surface
+  // Weaker classes - show the gaps the dashboards need to surface
   c3: {
     'Reading Comprehension': 62,
     'Language Analysis': 58,
@@ -12088,7 +12088,7 @@ export const DEMO_CLASS_SKILL_BREAKDOWN: Record<string, Record<string, number>> 
 }
 
 /**
- * Intervention log — actions taken for specific students. Powers an
+ * Intervention log - actions taken for specific students. Powers an
  * intervention-insights panel on the demo dashboard.
  */
 export interface DemoInterventionLog {
@@ -12134,7 +12134,7 @@ export const DEMO_INTERVENTIONS: DemoInterventionLog[] = [
     type: 'eal-support',
     startedAt: '2026-01-22',
     status: 'monitoring',
-    note: 'EAL B2 — strong reading; production lagging. Reduced sessions from 2x to 1x weekly given trend.',
+    note: 'EAL B2 - strong reading; production lagging. Reduced sessions from 2x to 1x weekly given trend.',
     ledBy: 'Helena Ng',
   },
   {
@@ -12189,7 +12189,7 @@ export const DEMO_INTERVENTIONS: DemoInterventionLog[] = [
     type: 'one-to-one',
     startedAt: '2026-03-18',
     status: 'active',
-    note: 'Daily check-ins; emergency intervention plan ahead of GCSEs. Did not attend Final Mock — urgent escalation.',
+    note: 'Daily check-ins; emergency intervention plan ahead of GCSEs. Did not attend Final Mock - urgent escalation.',
     ledBy: 'Sarah Mitchell',
   },
   {
@@ -12453,7 +12453,7 @@ export const DEMO_AT_RISK_PANEL: {
   {
     name: 'Lily F.',
     year: 'Y7',
-    issue: 'Reading Recovery — small gains',
+    issue: 'Reading Recovery - small gains',
     severity: 'low',
     class: '7F English',
   },
@@ -12480,7 +12480,7 @@ export const DEMO_AT_RISK_PANEL: {
   },
 ]
 
-/** Top-performing classes — compact view for the dashboard "leaderboard". */
+/** Top-performing classes - compact view for the dashboard "leaderboard". */
 export const DEMO_TOP_CLASSES: {
   name: string
   teacher: string

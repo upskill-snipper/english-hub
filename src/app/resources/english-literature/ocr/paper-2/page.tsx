@@ -175,7 +175,7 @@ export default async function OCRLitPaper2Page() {
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">Imagery</h4>
                   <p className="mt-2 text-sm">
-                    Shakespeare uses vivid imagery — metaphors, similes, and personification — to
+                    Shakespeare uses vivid imagery - metaphors, similes, and personification - to
                     convey complex ideas. In
                     <em> Macbeth</em>, for example, blood imagery recurs throughout the play,
                     symbolising guilt, violence, and the irreversibility of Macbeth&rsquo;s actions.

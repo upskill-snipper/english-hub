@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-love-relationships' },
   openGraph: {
-    title: 'AQA Love and Relationships Analysis Hub — The English Hub',
+    title: 'AQA Love and Relationships Analysis Hub - The English Hub',
     description:
       'Grade 9 AQA Love and Relationships analysis: poem comparisons, themes, quotes and essay writing, written by GCSE markers.',
   },
@@ -36,7 +36,7 @@ const comparisonPages = [
   {
     slug: 'mother-any-distance-vs-follower',
     title: 'Mother, Any Distance vs Follower',
-    sub: 'Parent–child love',
+    sub: 'Parent-child love',
   },
   {
     slug: 'walking-away-vs-before-you-were-mine',

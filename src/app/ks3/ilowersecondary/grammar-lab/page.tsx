@@ -21,11 +21,11 @@ const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/grammar-lab'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Grammar lab — iLowerSecondary English (LEH11)',
+    title: 'Grammar lab - iLowerSecondary English (LEH11)',
     description:
       'A complete grammar, punctuation and spelling skill-builder for LEH11: word classes, sentence types, punctuation rules, UK spelling traps and a self-test.',
   },
-  title: 'Grammar lab — iLowerSecondary English (LEH11)',
+  title: 'Grammar lab - iLowerSecondary English (LEH11)',
   description:
     'A complete grammar, punctuation and spelling skill-builder for LEH11: word classes, sentence types, punctuation rules, UK spelling traps and a self-test.',
   alternates: { canonical: PAGE_URL },
@@ -121,7 +121,7 @@ export default async function GrammarLabPage() {
             </p>
             {grammarTermCode && (
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                <span className="font-mono text-primary">{grammarTermCode.code}</span> —{' '}
+                <span className="font-mono text-primary">{grammarTermCode.code}</span> -{' '}
                 {grammarTermCode.descriptor}
               </p>
             )}
@@ -198,7 +198,7 @@ export default async function GrammarLabPage() {
       <section id="sentence-types" className="my-10 scroll-mt-24">
         <h2>Sentence types</h2>
         <p className="text-sm text-muted-foreground">
-          Varying your sentence types — and recognising them in unseen texts — is rewarded across
+          Varying your sentence types - and recognising them in unseen texts - is rewarded across
           both the reading and writing marks.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-2">

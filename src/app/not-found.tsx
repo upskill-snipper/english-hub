@@ -12,7 +12,7 @@ import { tMany } from '@/lib/i18n/t'
  * ──────────────────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: '404 — Page not found — The English Hub',
+  title: '404 - Page not found - The English Hub',
   robots: { index: false, follow: false },
 }
 
@@ -146,7 +146,7 @@ export default async function NotFound() {
 
 /* ────────────────────────────────────────────────────────────────────────────
  * Card
- * Mirrors the BoardCard pattern from /board-select — hover lifts the
+ * Mirrors the BoardCard pattern from /board-select - hover lifts the
  * border, focus ring uses the clay accent. Uses the design-system Card
  * shell to keep the rounded-2xl + border tokens consistent.
  * ──────────────────────────────────────────────────────────────────────── */

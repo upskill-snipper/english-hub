@@ -229,7 +229,7 @@ export default function AffiliateDashboard({
   const chartMax = Math.max(...MOCK_MONTHLY_EARNINGS.map((e) => e.amount), 1)
 
   /* ── Share handlers ── */
-  const shareText = `Check out The English Hub — AI-powered GCSE English revision! ${affiliateUrl}`
+  const shareText = `Check out The English Hub - AI-powered GCSE English revision! ${affiliateUrl}`
 
   const handleShareTwitter = () => {
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`, '_blank')
@@ -583,12 +583,12 @@ export default function AffiliateDashboard({
                       >
                         <td className="px-5 py-3 font-medium">{anonymiseName(i)}</td>
                         <td className="px-5 py-3 capitalize text-muted-foreground">
-                          {r.plan_type ?? '—'}
+                          {r.plan_type ?? '-'}
                         </td>
                         <td className="px-5 py-3 font-semibold">
                           {r.commission_amount_gbp != null
                             ? formatGBP(r.commission_amount_gbp)
-                            : '—'}
+                            : '-'}
                         </td>
                         <td className="px-5 py-3">{statusBadge(r.commission_status)}</td>
                         <td className="px-5 py-3 text-muted-foreground text-xs">

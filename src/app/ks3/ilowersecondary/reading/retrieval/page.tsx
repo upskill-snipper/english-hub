@@ -13,7 +13,7 @@ const SKILL_1_1 = READING_SKILLS.find((s) => s.code === '1.1')!
 const RETRIEVAL_Q = QUESTION_TYPES.find((q) => q.id === 'short-retrieval')!
 
 export const metadata: Metadata = {
-  title: 'Retrieval (RAO1) — find and quote exact information',
+  title: 'Retrieval (RAO1) - find and quote exact information',
   description:
     `A masterclass on ${RAO1.code}: ${RAO1.descriptor} Learn what retrieval means, ` +
     'how retrieval questions are worded, how to scan and pinpoint exact evidence, ' +
@@ -39,11 +39,11 @@ type Practice = {
 const PRACTICE: Practice[] = [
   {
     id: 'recycling',
-    label: 'Original practice extract 1 — Report',
+    label: 'Original practice extract 1 - Report',
     title: 'Sorting day at the recycling centre',
     text: [
       'The Hatherly recycling centre opens at seven o’clock every morning, an hour before the rest of the town is awake. The first job of the day belongs to the sorting team. They walk the long conveyor belt and remove anything that does not belong: a garden hose, a broken kettle, the occasional shoe. These items are pulled out by hand because the machines further down the line cannot read them and would simply jam.',
-      'Glass is the heaviest material the centre handles, so it is collected in low metal bins rather than the tall plastic crates used for paper. Each colour of glass is kept apart — clear, green and brown — because mixing them lowers the quality of the new bottles that are made later. By the end of a normal Tuesday the team has filled forty bins.',
+      'Glass is the heaviest material the centre handles, so it is collected in low metal bins rather than the tall plastic crates used for paper. Each colour of glass is kept apart - clear, green and brown - because mixing them lowers the quality of the new bottles that are made later. By the end of a normal Tuesday the team has filled forty bins.',
     ],
     questions: [
       {
@@ -58,7 +58,7 @@ const PRACTICE: Practice[] = [
         marks: 1,
         answer: 'Because the machines further down the line cannot read those items and would jam.',
         markNote:
-          'One mark for either idea — the machines cannot read them, or they would jam. The information is explicit; you may answer in your own words or quote the exact phrase.',
+          'One mark for either idea - the machines cannot read them, or they would jam. The information is explicit; you may answer in your own words or quote the exact phrase.',
       },
       {
         q: 'How many bins had the team filled by the end of a normal Tuesday? (1 mark)',
@@ -71,7 +71,7 @@ const PRACTICE: Practice[] = [
   },
   {
     id: 'club',
-    label: 'Original practice extract 2 — Recount',
+    label: 'Original practice extract 2 - Recount',
     title: 'My first season at the rowing club',
     text: [
       'I joined the Marlow Junior Rowing Club in the September after my twelfth birthday. I had never sat in a boat before, so for the first three weeks I was not allowed on the water at all. Instead I trained on a wooden rowing machine in the boathouse while the coach, Mrs Okafor, watched my technique and corrected my grip.',
@@ -97,7 +97,7 @@ const PRACTICE: Practice[] = [
   },
   {
     id: 'museum',
-    label: 'Original practice extract 3 — Information leaflet',
+    label: 'Original practice extract 3 - Information leaflet',
     title: 'Visiting the Coastline Museum',
     text: [
       'The Coastline Museum is free to enter, but the temporary exhibition on the second floor charges a small fee that goes towards looking after the objects on loan. Tickets for that exhibition must be booked online; they are not sold at the door because the gallery is small and can hold only thirty visitors at a time.',
@@ -109,7 +109,7 @@ const PRACTICE: Practice[] = [
         marks: 1,
         answer: 'Because the gallery is small and can hold only thirty visitors at a time.',
         markNote:
-          'One mark for the precise reason. Note the question asks about booking online, not about the fee — retrieving the wrong sentence loses the mark.',
+          'One mark for the precise reason. Note the question asks about booking online, not about the fee - retrieving the wrong sentence loses the mark.',
       },
       {
         q: 'Where is flash photography not allowed, and why? (2 marks)',
@@ -125,16 +125,16 @@ const PRACTICE: Practice[] = [
 const DO_LIST = [
   'Scan first: run your eye down the text for the key word in the question (a name, a number, a place) before reading slowly.',
   'Pinpoint the exact sentence that answers the question, then check it actually matches what is being asked.',
-  'Answer in your own words or with a short, precise quotation — either is accepted.',
+  'Answer in your own words or with a short, precise quotation - either is accepted.',
   'Match the number of points to the marks: a 2-mark retrieval question usually needs two separate pieces of information.',
   'Re-read the question word: “Why…?” wants a reason; “How many…?” wants a figure.',
 ]
 
 const DONT_LIST = [
   'Don’t give a vague gist (“because it was different”) when the text states an exact reason.',
-  'Don’t copy a whole paragraph hoping the answer is somewhere inside it — select only the relevant words.',
+  'Don’t copy a whole paragraph hoping the answer is somewhere inside it - select only the relevant words.',
   'Don’t retrieve from the wrong sentence: a nearby fact that sounds similar will not be credited.',
-  'Don’t add your own opinion or background knowledge — retrieval is about what the text actually says.',
+  'Don’t add your own opinion or background knowledge - retrieval is about what the text actually says.',
   'Don’t leave a 2-mark question with only one point.',
 ]
 
@@ -143,7 +143,7 @@ const SELF_CHECK = [
   'Have I answered the question word that was actually asked (why / how / how many / where)?',
   'Is my answer specific, not a vague summary?',
   'If the question is worth 2 marks, have I given two separate pieces of information?',
-  'Have I quoted precisely, or put it accurately in my own words — without distorting the meaning?',
+  'Have I quoted precisely, or put it accurately in my own words - without distorting the meaning?',
 ]
 
 export default function RetrievalRAO1Page() {

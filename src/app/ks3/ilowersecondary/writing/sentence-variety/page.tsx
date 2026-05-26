@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'iLowerSecondary English: a range of sentences & sentence openings (WAO2)',
     description:
-      'A masterclass on using simple, compound, complex and minor sentences for effect, varied sentence openings, short sentences for tension, the short-then-long rhythm and single-clause vs subordinate development — with original before/after rewrites, a sentence-opener bank and a drill task with a model answer.',
+      'A masterclass on using simple, compound, complex and minor sentences for effect, varied sentence openings, short sentences for tension, the short-then-long rhythm and single-clause vs subordinate development - with original before/after rewrites, a sentence-opener bank and a drill task with a model answer.',
   },
-  title: 'A range of sentences & sentence openings — a masterclass',
+  title: 'A range of sentences & sentence openings - a masterclass',
   description:
     'How to use a range of sentences and sentence openings for effect and impact in iLowerSecondary English writing: simple, compound, complex and minor sentences and when each works, varied openings, short sentences for tension, the short-then-long rhythm and single-clause precision vs subordinate development (W9.3C), with original before/after rewrites and a drill task with a model answer.',
   alternates: { canonical: PAGE_URL },
@@ -57,7 +57,7 @@ const SENTENCE_TYPES: SentenceType[] = [
     example:
       'Because the alarm kept ringing, the engineer who had been called out finally arrived.',
     whenEffective:
-      'Use it to develop an idea — adding cause, time, condition or description — and to control emphasis: whatever you put in the main clause is what the reader notices most.',
+      'Use it to develop an idea - adding cause, time, condition or description - and to control emphasis: whatever you put in the main clause is what the reader notices most.',
   },
   {
     name: 'Minor sentence',
@@ -124,7 +124,7 @@ const REWRITES: Rewrite[] = [
     before:
       'I woke up early. I got dressed. I went downstairs. I opened the front door. Then I saw that the street was completely empty. I felt scared. I walked outside. I called out but no one answered.',
     after:
-      'I woke before the alarm. Dressed in the dark, I went downstairs and opened the front door — and stopped. The street was empty. Completely empty. Although I called out twice, no one answered, and the silence pressed back at me like a hand against my chest.',
+      'I woke before the alarm. Dressed in the dark, I went downstairs and opened the front door - and stopped. The street was empty. Completely empty. Although I called out twice, no one answered, and the silence pressed back at me like a hand against my chest.',
     changes: [
       {
         label: 'Simple → -ing participle opening',
@@ -152,7 +152,7 @@ const REWRITES: Rewrite[] = [
     before:
       'The exam started. I read the first question. I did not understand it. I read it again. I still did not understand it. Then I looked at the clock. I had wasted five minutes. I started to panic. I moved on to question two.',
     after:
-      'The exam started. I read the first question — and read it again, and still it made no sense. The clock had taken five minutes from me. Panic. Forcing my eyes down the page, I moved on to question two and, for the first time, breathed.',
+      'The exam started. I read the first question - and read it again, and still it made no sense. The clock had taken five minutes from me. Panic. Forcing my eyes down the page, I moved on to question two and, for the first time, breathed.',
     changes: [
       {
         label: 'Kept one simple sentence for pace',
@@ -200,7 +200,7 @@ const DRILL_MODEL = [
   'When the bus finally arrived I climbed on and took the back seat.',
   'The man followed. Of all the empty seats, he chose the one directly behind mine, and a small unease settled in me.',
   'We pulled away through almost-empty streets, the windows misted to a soft grey.',
-  'Wiping a circle in the glass, I watched my own road slide past — and did not press the bell.',
+  'Wiping a circle in the glass, I watched my own road slide past - and did not press the bell.',
   'Then the man stood. He began to walk towards me. I kept my eyes fixed forward.',
   'He passed without a word and stepped off at the next stop. Only then did I breathe out.',
   'The bus carried on. I had missed my stop entirely. Strangely, I did not mind at all.',

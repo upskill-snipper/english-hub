@@ -10,7 +10,7 @@ import { sendViaResend, escapeHtml } from '@/lib/email/resend'
 // the API key works AND that the sending domain is verified.
 //
 // Gated by:
-//   1. verifyAdmin() — must be a logged-in admin
+//   1. verifyAdmin() - must be a logged-in admin
 //   2. Optional `x-admin-token` header that must match ADMIN_DIAGNOSTIC_TOKEN
 //      (only enforced if the env var is set, so it's opt-in extra hardening)
 //
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     if (requiredToken) {
       const provided = request.headers.get('x-admin-token')
       if (provided !== requiredToken) {
-        return NextResponse.json({ error: 'Forbidden — invalid x-admin-token' }, { status: 403 })
+        return NextResponse.json({ error: 'Forbidden - invalid x-admin-token' }, { status: 403 })
       }
     }
 

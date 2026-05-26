@@ -2,7 +2,7 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 /**
- * Cinematic glass surface — the premium container for the school/teacher
+ * Cinematic glass surface - the premium container for the school/teacher
  * dashboards. Translucent, backdrop-blurred, soft inner ring + an
  * optional accent glow blob. Uses the site's own tokens/brand accents,
  * so it reads as "future-tech / elite" while staying on-theme in light

@@ -1,5 +1,5 @@
 /**
- * EAL Topic — CEFR-banded view (server-rendered for SEO).
+ * EAL Topic - CEFR-banded view (server-rendered for SEO).
  *
  * Renders a real topic (concept, examples, Arabic-L1 common errors)
  * framed for one CEFR band, with the Council-of-Europe descriptor for
@@ -55,7 +55,7 @@ export default async function EALLevelPage({
         <Link href={`/eal/${slug}`}>EAL · {tr(topic.title)}</Link>
       </p>
       <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-        {tr(topic.title)} — {tr(CEFR_LABEL[band])}
+        {tr(topic.title)} - {tr(CEFR_LABEL[band])}
       </h1>
       <p className="text-base text-muted-foreground leading-relaxed mb-6">
         {tr(CEFR_DESCRIPTORS[band])}
@@ -172,7 +172,7 @@ export async function generateMetadata({
   const topic = findEALTopic(slug)
   const band = cefr.toUpperCase()
   if (!topic) {
-    return { title: `EAL — ${band}` }
+    return { title: `EAL - ${band}` }
   }
   const nativeBand = topic.cefr
   // Only the topic's native band carries genuinely level-specific content.
@@ -180,7 +180,7 @@ export async function generateMetadata({
   // and point canonical at the native-band URL to avoid duplicate/misleading
   // CEFR pages until level-differentiated material ships.
   const isNativeBand = nativeBand === band
-  const title = `${topic.title.en} — ${band} | EAL for Arabic speakers`
+  const title = `${topic.title.en} - ${band} | EAL for Arabic speakers`
   const description = isNativeBand
     ? `${topic.description.en} Pitched for CEFR ${band} with bilingual (English/Arabic) explanations and Arabic-L1 common errors.`
     : `${topic.description.en} Our ${nativeBand}-level treatment with bilingual (English/Arabic) explanations; level-specific ${band} material is in development.`

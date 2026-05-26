@@ -235,7 +235,7 @@ export default async function GradeTargetsPage() {
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
-              {boardConfig ? `${pageTitle} — ${boardConfig.shortName}` : pageTitle}
+              {boardConfig ? `${pageTitle} - ${boardConfig.shortName}` : pageTitle}
             </h1>
             <p className="text-body-sm text-muted-foreground">{pageSubtitle}</p>
           </div>

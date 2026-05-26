@@ -1,5 +1,5 @@
 /**
- * Grandfathering helpers — closes R-031.
+ * Grandfathering helpers - closes R-031.
  *
  * Existing Early Access subscribers keep their signup price forever, even
  * after the August 2026 Standard pricing rollover takes effect. Capture
@@ -7,7 +7,7 @@
  * that never overwrite `grandfatheredPriceMinor` on RENEWAL events.
  *
  * All amounts in this module are **minor units** (pence). `PRICING`
- * constants in `src/constants/pricing.ts` are in major units (£) — we
+ * constants in `src/constants/pricing.ts` are in major units (£) - we
  * convert once, here, so the rest of the codebase is unit-consistent.
  */
 
@@ -15,11 +15,7 @@ import { PRICING } from '@/constants/pricing'
 
 // ─── Types ─────────────────────────────────────────────────────────────
 
-export type PricingTier =
-  | 'early_access'
-  | 'standard'
-  | 'founding_school'
-  | 'founding_legacy'
+export type PricingTier = 'early_access' | 'standard' | 'founding_school' | 'founding_legacy'
 
 export type Plan = 'MONTHLY' | 'ANNUAL'
 export type Role = 'student' | 'teacher'
@@ -27,7 +23,7 @@ export type Role = 'student' | 'teacher'
 // ─── Rollover date ─────────────────────────────────────────────────────
 //
 // Canonical source of truth for when Standard pricing takes effect. The
-// copy string `PRICING.PRICE_INCREASE_DATE` is "August 2026" — we pin
+// copy string `PRICING.PRICE_INCREASE_DATE` is "August 2026" - we pin
 // the first of that month, 00:00 UTC, for comparisons.
 export const PRICE_INCREASE_DATE: Date = new Date('2026-08-01T00:00:00.000Z')
 
@@ -44,7 +40,7 @@ function poundsToMinor(amount: number): number {
 //
 // Returns the locked price in minor units for a given plan + tier + role.
 // Schools are not sold in-app (see SUBSCRIPTION_AND_ENTITLEMENTS.md §
-// "School plans — not sold in-app"); the `founding_school` /
+// "School plans - not sold in-app"); the `founding_school` /
 // `founding_legacy` tiers exist for completeness and reporting parity.
 export function priceForTier(plan: Plan, tier: PricingTier, role: Role): number {
   if (tier === 'early_access') {

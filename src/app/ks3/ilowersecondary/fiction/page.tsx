@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Fiction',
   description:
     'How to read the fiction text in Section A of the iLowerSecondary ' +
-    'English exam — the five genres, narrative perspective, and a full ' +
+    'English exam - the five genres, narrative perspective, and a full ' +
     'guided-reading method with original extracts.',
   alternates: { canonical: PAGE_URL },
 }

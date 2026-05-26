@@ -7,7 +7,7 @@
  * a base schema and extend per event type.
  *
  * ASSUMPTION(W4): payload field names follow the RevenueCat V1 webhook
- * taxonomy — `app_user_id`, `original_app_user_id`, `product_id`,
+ * taxonomy - `app_user_id`, `original_app_user_id`, `product_id`,
  * `event_timestamp_ms`, `original_purchase_date_ms`, `purchased_at_ms`,
  * `expiration_at_ms`, `is_trial_period`, `period_type`, `store`,
  * `environment`, `id` (the event id used for idempotency). If RC has
@@ -19,7 +19,7 @@ import { z } from 'zod'
 // ─── Shared primitives ─────────────────────────────────────────────────
 
 /**
- * Event types RevenueCat may emit. We keep this as a superset — events
+ * Event types RevenueCat may emit. We keep this as a superset - events
  * we do not yet act on (e.g. `TEST`, `CHARGEBACK`) still journal cleanly
  * so future rules can replay from history.
  */
@@ -57,10 +57,10 @@ export const revenuecatStoreSchema = z.enum([
 ])
 
 // Every RC event carries these fields. Anything optional is genuinely
-// optional in the upstream payload — we cannot tighten the contract
+// optional in the upstream payload - we cannot tighten the contract
 // without risking legitimate events being rejected.
 const baseEventSchema = z.object({
-  // Stable unique event id — used as our idempotency key.
+  // Stable unique event id - used as our idempotency key.
   id: z.string().min(1),
   // `app_user_id` is the identifier we set via `Purchases.logIn()`; we
   // align it with Supabase `userId` (UUID string).
@@ -79,11 +79,11 @@ const baseEventSchema = z.object({
 // Event subtypes share a product-centric core.
 const productEventBase = baseEventSchema.extend({
   product_id: z.string().min(1),
-  // Original purchase of the subscription chain — epoch ms.
+  // Original purchase of the subscription chain - epoch ms.
   original_purchase_date_ms: z.number().int().nonnegative().optional(),
-  // When this period started — epoch ms.
+  // When this period started - epoch ms.
   purchased_at_ms: z.number().int().nonnegative().optional(),
-  // When the current period expires — epoch ms. May be absent on pure
+  // When the current period expires - epoch ms. May be absent on pure
   // cancellation events.
   expiration_at_ms: z.number().int().nonnegative().optional(),
   // TRIAL, NORMAL, INTRO, PROMOTIONAL.
@@ -131,7 +131,7 @@ const nonRenewingPurchaseSchema = productEventBase.extend({
 })
 const transferSchema = baseEventSchema.extend({
   type: z.literal('TRANSFER'),
-  // List of app user ids whose entitlements transferred. Shape varies —
+  // List of app user ids whose entitlements transferred. Shape varies -
   // accept loosely and log for manual review.
   transferred_from: z.array(z.string()).optional(),
   transferred_to: z.array(z.string()).optional(),
@@ -148,7 +148,7 @@ const chargebackSchema = productEventBase.extend({
   type: z.literal('CHARGEBACK'),
 })
 
-// Discriminated union — zod drives exhaustiveness in the reconciler.
+// Discriminated union - zod drives exhaustiveness in the reconciler.
 export const revenuecatEventSchema = z.discriminatedUnion('type', [
   initialPurchaseSchema,
   renewalSchema,

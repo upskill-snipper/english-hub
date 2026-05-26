@@ -158,7 +158,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
 ]
 
 function linkMatchesBoard(link: FooterLink, board: ExamBoard | null): boolean {
-  // No board selected — show everything except explicitly-scoped links,
+  // No board selected - show everything except explicitly-scoped links,
   // so first-time visitors see the full site map.
   if (!board) {
     return !link.boards && !link.boardType
@@ -236,7 +236,7 @@ export function Footer() {
 
         {/* Main 5-column grid: brand column + 4 link columns */}
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-14 sm:grid-cols-3 lg:grid-cols-5">
-          {/* Column 1 — Brand */}
+          {/* Column 1 - Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1 lg:pr-4">
             <Link href="/" className="inline-block">
               <span
@@ -266,7 +266,7 @@ export function Footer() {
             )}
           </div>
 
-          {/* Columns 2-5 — Link groups */}
+          {/* Columns 2-5 - Link groups */}
           {columns.map((colSections, colIndex) => (
             <div key={colIndex} className="flex flex-col gap-8">
               {colSections.map((section) => (
@@ -309,7 +309,7 @@ export function Footer() {
         </div>
 
         {/* Site-wide editorial attribution + freshness (single render
-            point — see ReviewedByline JSDoc). Dark-footer colour
+            point - see ReviewedByline JSDoc). Dark-footer colour
             override since the component defaults to text-muted-foreground
             which is tuned for light surfaces. */}
         <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>

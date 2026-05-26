@@ -35,7 +35,7 @@ import {
 // Student selects topic and question count, then generates a test
 // via the API. They take it inline and see their results with GCSE grade.
 //
-// Note: there is no Foundation/Higher selector — the question bank is the
+// Note: there is no Foundation/Higher selector - the question bank is the
 // same and the student's answers determine the grade band via
 // percentageToGCSEGrade.
 // ──────────────────────────────────────────────────────────────────────────

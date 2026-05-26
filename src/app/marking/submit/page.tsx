@@ -18,7 +18,7 @@ import { DictationButton } from '@/components/speech/DictationButton'
  * mark-scheme files (e.g. "Eduqas" maps to "WJEC Eduqas" in the registry).
  *
  * Boards without any registered mark scheme are rendered as disabled options
- * with a "Coming soon" tooltip — so when a scheme lands in
+ * with a "Coming soon" tooltip - so when a scheme lands in
  * `src/lib/marking/mark-schemes/index.ts` they automatically become
  * selectable here without any change to this file.
  */
@@ -105,7 +105,7 @@ function buildPaperOptions(board: BoardOption | undefined): PaperOption[] {
     })
     .map((scheme) => ({
       value: scheme.id,
-      label: `${scheme.subject} — ${scheme.paper}${scheme.title ? `: ${scheme.title}` : ''}`,
+      label: `${scheme.subject} - ${scheme.paper}${scheme.title ? `: ${scheme.title}` : ''}`,
       scheme,
     }))
 }
@@ -119,7 +119,7 @@ function buildQuestionOptions(scheme: MarkScheme | undefined): QuestionOption[] 
   if (!scheme) return []
   return scheme.questions.map((q) => ({
     value: q.id,
-    label: `${q.id} — ${q.questionType}`,
+    label: `${q.id} - ${q.questionType}`,
   }))
 }
 
@@ -200,7 +200,7 @@ export default function SubmitEssayPage() {
    * Persist the submission to the server marking spine, then trigger the AI
    * mark, then route to the server-backed results page by submissionId.
    *
-   * Contract (built in parallel — not implemented here):
+   * Contract (built in parallel - not implemented here):
    *   POST /api/submissions { source:'b2c_self', examBoard, qualification?,
    *     paper?, questionText, questionType?, studiedText?, studentAnswer,
    *     targetGrade?, markSchemeId, questionId }  → { submissionId }
@@ -239,7 +239,7 @@ export default function SubmitEssayPage() {
           }),
         })
       } catch {
-        // Network error reaching the spine — let the caller fall back.
+        // Network error reaching the spine - let the caller fall back.
         return { unavailable: true }
       }
 
@@ -268,7 +268,7 @@ export default function SubmitEssayPage() {
       }
       if (!submissionId) return { unavailable: true }
 
-      // Fire the AI mark. A failure here is non-fatal for navigation — the
+      // Fire the AI mark. A failure here is non-fatal for navigation - the
       // results page polls status and shows an "awaiting"/"in progress"
       // state, and the human-review path is always available there.
       try {
@@ -278,7 +278,7 @@ export default function SubmitEssayPage() {
           body: JSON.stringify({ submissionId }),
         })
       } catch {
-        /* non-fatal — results page handles a not-yet-marked submission */
+        /* non-fatal - results page handles a not-yet-marked submission */
       }
 
       return { submissionId }
@@ -346,7 +346,7 @@ export default function SubmitEssayPage() {
           const prev = raw ? JSON.parse(raw) : []
           localStorage.setItem('english-hub-marking-history', JSON.stringify([histEntry, ...prev]))
         } catch {
-          /* ignore localStorage errors — server is the source of truth */
+          /* ignore localStorage errors - server is the source of truth */
         }
         router.push(`/marking/results/${spine.submissionId}`)
         return
@@ -397,7 +397,7 @@ export default function SubmitEssayPage() {
           totalMarks: result.totalMarks,
           maxMarks: result.maxMarks,
           scorePercent: Math.round((result.totalMarks / result.maxMarks) * 100),
-          // AO breakdown — map to the shape the results page expects
+          // AO breakdown - map to the shape the results page expects
           aos: (result.aoScores ?? []).map(
             (ao: {
               id: string
@@ -486,7 +486,7 @@ export default function SubmitEssayPage() {
         </Link>
       </p>
 
-      {/* AI opt-out notice (Children's Code — GAP-12B) */}
+      {/* AI opt-out notice (Children's Code - GAP-12B) */}
       {aiOptedOut && (
         <div className="mt-8 rounded-lg border border-border bg-muted/50 px-6 py-8 text-center">
           <h2 className="text-lg font-semibold text-foreground">
@@ -551,11 +551,11 @@ export default function SubmitEssayPage() {
                         title={
                           b.available
                             ? undefined
-                            : `${tx('marking.submit.coming_soon')} — mark scheme not yet available`
+                            : `${tx('marking.submit.coming_soon')} - mark scheme not yet available`
                         }
                         className={b.available ? undefined : 'text-muted-foreground'}
                       >
-                        {b.available ? b.label : `${b.label} — ${tx('marking.submit.coming_soon')}`}
+                        {b.available ? b.label : `${b.label} - ${tx('marking.submit.coming_soon')}`}
                       </option>
                     ))}
                   </select>

@@ -5,9 +5,11 @@ export const metadata: Metadata = {
   title: 'Much Ado About Nothing Revision Notes',
   description:
     'Free Much Ado About Nothing revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/revision-notes/much-ado-about-nothing' },
+  alternates: {
+    canonical: 'https://theenglishhub.app/resources/revision-notes/much-ado-about-nothing',
+  },
   openGraph: {
-    title: 'Much Ado About Nothing Revision Notes — The English Hub',
+    title: 'Much Ado About Nothing Revision Notes - The English Hub',
     description:
       'Free Much Ado About Nothing revision notes for GCSE English Literature. Character analysis, themes, key quotes with analysis, context, and exam-ready essay tips.',
   },

@@ -136,7 +136,7 @@ export default function SoftAuroraPage() {
               </div>
             </div>
 
-            {/* Weekly Focus — frosted glass */}
+            {/* Weekly Focus - frosted glass */}
             <div className="rounded-2xl bg-card/60 p-8 backdrop-blur-xl shadow-soft">
               <h2 className="mb-4 text-lg font-medium text-foreground">Weekly Focus</h2>
               <p className="mb-5 text-sm text-muted-foreground">
@@ -252,7 +252,7 @@ export default function SoftAuroraPage() {
 
         {/* Footer */}
         <div className="mt-10 text-center">
-          <p className="text-xs text-muted-foreground">Soft Aurora — Design 3 Concept</p>
+          <p className="text-xs text-muted-foreground">Soft Aurora - Design 3 Concept</p>
         </div>
       </div>
     </div>

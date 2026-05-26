@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'KS3 marking rubrics',
     description:
-      'Marking rubrics for KS3 English — three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',
+      'Marking rubrics for KS3 English - three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',
   },
   title: 'KS3 marking rubrics',
   description:
-    'Marking rubrics for KS3 English — three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',
+    'Marking rubrics for KS3 English - three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',
   alternates: { canonical: 'https://theenglishhub.app/ks3/rubrics' },
 }
 
@@ -71,7 +71,7 @@ export default async function RubricsPage() {
       {KS3.years.map((y) => (
         <section key={y.number} className="my-10">
           <h2>
-            {yearLabelTr[y.number]} — {yearNameTr[y.number]}
+            {yearLabelTr[y.number]} - {yearNameTr[y.number]}
           </h2>
           {STRANDS.map((strand) => (
             <div key={strand} className="not-prose my-6">
@@ -101,7 +101,7 @@ export default async function RubricsPage() {
                             key={level}
                             className="align-top p-3 text-muted-foreground border-e border-border/30 last:border-e-0"
                           >
-                            <p className="text-xs leading-relaxed">{cell?.descriptor.en ?? '—'}</p>
+                            <p className="text-xs leading-relaxed">{cell?.descriptor.en ?? '-'}</p>
                             {cell?.skillCodes.length ? (
                               <p className="mt-2 flex flex-wrap gap-1">
                                 {cell.skillCodes.map((code) => (

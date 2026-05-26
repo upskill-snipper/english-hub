@@ -1,5 +1,5 @@
 /**
- * fireTrustpilotInvite — client-side dispatch guarded by the fired-check API.
+ * fireTrustpilotInvite - client-side dispatch guarded by the fired-check API.
  */
 
 import { describe, it, expect, afterEach, beforeEach, vi } from 'vitest'
@@ -23,12 +23,10 @@ describe('fireTrustpilotInvite', () => {
     ;(window as unknown as { tp?: TpFn }).tp = vi.fn()
   })
 
-  it('happy path — fires tp.createInvitation after canFire:true', async () => {
+  it('happy path - fires tp.createInvitation after canFire:true', async () => {
     const fetchSpy = vi
       .spyOn(global, 'fetch')
-      .mockResolvedValue(
-        new Response(JSON.stringify({ canFire: true }), { status: 200 }),
-      )
+      .mockResolvedValue(new Response(JSON.stringify({ canFire: true }), { status: 200 }))
     const res = await fireTrustpilotInvite({
       email: 'a@b.com',
       name: 'Adult',
@@ -54,10 +52,9 @@ describe('fireTrustpilotInvite', () => {
 
   it('no-op when fired-check denies', async () => {
     vi.spyOn(global, 'fetch').mockResolvedValue(
-      new Response(
-        JSON.stringify({ canFire: false, reason: 'duplicate_trigger_12m' }),
-        { status: 200 },
-      ),
+      new Response(JSON.stringify({ canFire: false, reason: 'duplicate_trigger_12m' }), {
+        status: 200,
+      }),
     )
     const res = await fireTrustpilotInvite({
       email: 'a@b.com',

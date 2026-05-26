@@ -1,5 +1,5 @@
 /**
- * LEH11 readiness quiz bank — 80 ORIGINAL multiple-choice questions.
+ * LEH11 readiness quiz bank - 80 ORIGINAL multiple-choice questions.
  *
  * Every question, snippet and example sentence below is an original work
  * written by The English Hub. NO copyrighted Pearson source-booklet text
@@ -26,7 +26,7 @@ export interface QuizQuestion {
   question: string
   /** Exactly four answer options. */
   options: [string, string, string, string]
-  /** Index (0–3) of the correct option in `options`. */
+  /** Index (0-3) of the correct option in `options`. */
   correctIndex: number
   explanation: string
 }
@@ -73,7 +73,7 @@ export const QUIZ_CATEGORIES: {
 ]
 
 export const QUIZ_BANK: QuizQuestion[] = [
-  // ─── AO knowledge (1–14) ────────────────────────────────────────────
+  // ─── AO knowledge (1-14) ────────────────────────────────────────────
   {
     id: 'ao-1',
     category: 'ao-knowledge',
@@ -82,7 +82,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     options: ['RAO1', 'RAO2', 'RAO4', 'RAO5'],
     correctIndex: 0,
     explanation:
-      'RAO1 is about identifying and retrieving ideas and information from a range of texts — straightforward retrieval of what is explicitly stated.',
+      'RAO1 is about identifying and retrieving ideas and information from a range of texts - straightforward retrieval of what is explicitly stated.',
   },
   {
     id: 'ao-2',
@@ -92,13 +92,13 @@ export const QUIZ_BANK: QuizQuestion[] = [
     options: ['RAO1', 'RAO2', 'RAO3', 'WAO1'],
     correctIndex: 1,
     explanation:
-      'RAO2 covers deducing, inferring or interpreting information, events or ideas — reading beyond the literal and explicit meaning.',
+      'RAO2 covers deducing, inferring or interpreting information, events or ideas - reading beyond the literal and explicit meaning.',
   },
   {
     id: 'ao-3',
     category: 'ao-knowledge',
     question:
-      'Which AO is assessed when you comment on how a text is built — its paragraphing, openings and overall organisation?',
+      'Which AO is assessed when you comment on how a text is built - its paragraphing, openings and overall organisation?',
     options: ['RAO2', 'RAO3', 'RAO5', 'WAO2'],
     correctIndex: 1,
     explanation:
@@ -198,7 +198,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     options: ['RAO1', 'RAO2', 'RAO4', 'WAO2'],
     correctIndex: 1,
     explanation:
-      'RAO2 is the inference and interpretation objective — reading beyond literal and explicit meaning.',
+      'RAO2 is the inference and interpretation objective - reading beyond literal and explicit meaning.',
   },
   {
     id: 'ao-14',
@@ -211,7 +211,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
       'RAO3 is the structure and organisation objective; RAO4 is the word- and sentence-level language objective.',
   },
 
-  // ─── Grammatical terminology (15–34) ────────────────────────────────
+  // ─── Grammatical terminology (15-34) ────────────────────────────────
   {
     id: 'gram-1',
     category: 'grammatical-terminology',
@@ -248,7 +248,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     options: ['"swam" only', '"felt" only', 'Both "swam" and "felt"', 'Neither verb is irregular'],
     correctIndex: 2,
     explanation:
-      'Irregular verbs do not form the past tense with "-ed". "Swim" becomes "swam" and "feel" becomes "felt" — both are irregular.',
+      'Irregular verbs do not form the past tense with "-ed". "Swim" becomes "swam" and "feel" becomes "felt" - both are irregular.',
   },
   {
     id: 'gram-5',
@@ -382,7 +382,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     id: 'punc-2',
     category: 'punctuation-effect',
     question:
-      'What effect do the dashes create in: "The result — against every expectation — was a tie"?',
+      'What effect do the dashes create in: "The result - against every expectation - was a tie"?',
     options: [
       'They set off an interruption to add extra, dramatic information.',
       'They show ownership.',
@@ -471,7 +471,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     category: 'punctuation-effect',
     question: 'In "the dog’s lead", what does the apostrophe show?',
     options: [
-      'Possession — the lead belongs to the dog.',
+      'Possession - the lead belongs to the dog.',
       'A plural of "dog".',
       'A missing letter.',
       'A direct quotation.',
@@ -582,7 +582,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     id: 'purp-5',
     category: 'purpose-identification',
     question:
-      'Snippet: "Imagine never queuing again. Join today and unlock a faster, smarter way to travel — you deserve it." What is the main purpose?',
+      'Snippet: "Imagine never queuing again. Join today and unlock a faster, smarter way to travel - you deserve it." What is the main purpose?',
     options: ['To persuade', 'To explain', 'To inform', 'To describe'],
     correctIndex: 0,
     explanation:
@@ -632,7 +632,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     id: 'purp-10',
     category: 'purpose-identification',
     question:
-      'Snippet: "Don’t miss out — act before midnight and claim your free upgrade. Thousands have already joined; will you?" What is the main purpose?',
+      'Snippet: "Don’t miss out - act before midnight and claim your free upgrade. Thousands have already joined; will you?" What is the main purpose?',
     options: ['To persuade', 'To inform', 'To explain', 'To describe'],
     correctIndex: 0,
     explanation:
@@ -770,7 +770,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     explanation: '"Vast" means extremely large; "enormous" preserves the meaning in context.',
   },
 
-  // ─── Exam-format facts (75–80, plus extras to reach 80) ─────────────
+  // ─── Exam-format facts (75-80, plus extras to reach 80) ─────────────
   {
     id: 'fmt-1',
     category: 'exam-format',
@@ -824,7 +824,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     category: 'exam-format',
     question: 'How many texts are students given to read in Section A, and what types?',
     options: [
-      'Three texts — two non-fiction and one fiction',
+      'Three texts - two non-fiction and one fiction',
       'One non-fiction text only',
       'Two fiction texts only',
       'Four texts, all non-fiction',
@@ -953,7 +953,7 @@ export const QUIZ_BANK: QuizQuestion[] = [
     category: 'exam-format',
     question: 'Are the Section A reading texts printed in the question paper itself?',
     options: [
-      'No — they are provided in a separate Source Booklet',
+      'No - they are provided in a separate Source Booklet',
       'Yes, they appear before every question',
       'Only the fiction text is printed',
       'There are no texts in Section A',

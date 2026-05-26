@@ -18,11 +18,11 @@ import { getLocale, t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'A Game of Polo with a Headless Goat — Emma Levine — IGCSE Language A Anthology — The English Hub',
+      'A Game of Polo with a Headless Goat - Emma Levine - IGCSE Language A Anthology - The English Hub',
     description:
       'Study guide for the anthology extract from A Game of Polo with a Headless Goat by Emma Levine. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
   },
-  title: 'A Game of Polo with a Headless Goat — Emma Levine — IGCSE Language A Anthology',
+  title: 'A Game of Polo with a Headless Goat - Emma Levine - IGCSE Language A Anthology',
   description:
     'Study guide for the anthology extract from A Game of Polo with a Headless Goat by Emma Levine. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
   alternates: {
@@ -44,7 +44,7 @@ const themes = [
     label: 'Outsider perspective',
     labelAr: 'منظور الغريب',
     detail:
-      "A travel writer's gaze — at once curious, anxious and admiring — frames the entire piece. Levine is honest about her position as a visitor and does not pretend to insider authority.",
+      "A travel writer's gaze - at once curious, anxious and admiring - frames the entire piece. Levine is honest about her position as a visitor and does not pretend to insider authority.",
     detailAr:
       'تؤطّر العملَ كلَّه نظرةُ كاتبة الرحلات، وهي نظرةٌ فضوليّة قلقة معجبة في آنٍ معاً. وتكون Levine صريحةً بشأن موقعها زائرةً، ولا تدّعي سلطةَ ابن البلد.',
   },
@@ -60,9 +60,9 @@ const themes = [
     label: 'Sensory overload',
     labelAr: 'فيض الحواسّ',
     detail:
-      "Levine's prose tracks the sensory press of the event — dust, noise, horses, crowds — building a pulse of controlled chaos that the reader has to absorb in real time.",
+      "Levine's prose tracks the sensory press of the event - dust, noise, horses, crowds - building a pulse of controlled chaos that the reader has to absorb in real time.",
     detailAr:
-      'يلاحق نثرُ Levine الكثافةَ الحسيّة للحدث — الغبارُ والضجيجُ والخيلُ والجموع — فيُولّد نبضاً من فوضى منضبطة يضطرّ القارئ إلى استيعابها لحظةً بلحظة.',
+      'يلاحق نثرُ Levine الكثافةَ الحسيّة للحدث - الغبارُ والضجيجُ والخيلُ والجموع - فيُولّد نبضاً من فوضى منضبطة يضطرّ القارئ إلى استيعابها لحظةً بلحظة.',
   },
   {
     label: 'Cross-cultural understanding',
@@ -177,17 +177,17 @@ const languageFeatures = [
     technique: 'Restraint from judgement',
     techniqueAr: 'الإمساك عن الحُكم',
     explanation:
-      'The text resists the temptation to label the sport as either picturesque or barbaric. Levine describes; she does not editorialise. The restraint is itself the argument — meaning is left for the reader to construct rather than handed down.',
+      'The text resists the temptation to label the sport as either picturesque or barbaric. Levine describes; she does not editorialise. The restraint is itself the argument - meaning is left for the reader to construct rather than handed down.',
     explanationAr:
-      'يقاوم النصُّ إغراءَ وَسْم الرياضة بأنّها خلّابة أو همجيّة. تصف Levine ولا تُعلّق. والإمساكُ نفسه هو الحُجّة — يُترك للقارئ بناءُ المعنى لا تَلقّيه جاهزاً.',
+      'يقاوم النصُّ إغراءَ وَسْم الرياضة بأنّها خلّابة أو همجيّة. تصف Levine ولا تُعلّق. والإمساكُ نفسه هو الحُجّة - يُترك للقارئ بناءُ المعنى لا تَلقّيه جاهزاً.',
   },
   {
     technique: 'Embedded dialogue and voices',
     techniqueAr: 'الأصوات والحوار المتضمَّن',
     explanation:
-      "Voices from the event — players, organisers, fellow spectators — surface through the description. Their presence reminds the reader that this is a living social occasion, not a tableau staged for tourists, and complicates Levine's outsider gaze.",
+      "Voices from the event - players, organisers, fellow spectators - surface through the description. Their presence reminds the reader that this is a living social occasion, not a tableau staged for tourists, and complicates Levine's outsider gaze.",
     explanationAr:
-      'تَبرز أصواتٌ من الحدث — لاعبون ومنظّمون ومتفرّجون آخرون — خلال الوصف. وحضورُها يذكّر القارئ بأنّ هذه مناسبةٌ اجتماعيّة حيّة، لا مشهدٌ مُهيّأ للسيّاح، ويُعقّد نظرةَ Levine بصفتها غريبة.',
+      'تَبرز أصواتٌ من الحدث - لاعبون ومنظّمون ومتفرّجون آخرون - خلال الوصف. وحضورُها يذكّر القارئ بأنّ هذه مناسبةٌ اجتماعيّة حيّة، لا مشهدٌ مُهيّأ للسيّاح، ويُعقّد نظرةَ Levine بصفتها غريبة.',
   },
   {
     technique: "Movement of the writer's body",
@@ -201,9 +201,9 @@ const languageFeatures = [
 
 const structuralAnalysis = {
   opening:
-    "Levine opens by placing the reader in the location and signalling that something unusual is about to happen. The framing is a traveller's framing — the reader joins her as a fellow newcomer rather than receiving a finished explanation.",
+    "Levine opens by placing the reader in the location and signalling that something unusual is about to happen. The framing is a traveller's framing - the reader joins her as a fellow newcomer rather than receiving a finished explanation.",
   openingAr:
-    'تستهلّ Levine بوضع القارئ في المكان، وبالإشارة إلى أنّ حدثاً غير اعتياديّ على وشك الوقوع. والتأطيرُ هنا تأطيرُ مسافر — ينضمّ القارئ إليها وافداً جديداً مثلها، لا متلقّياً لشرحٍ منجَز.',
+    'تستهلّ Levine بوضع القارئ في المكان، وبالإشارة إلى أنّ حدثاً غير اعتياديّ على وشك الوقوع. والتأطيرُ هنا تأطيرُ مسافر - ينضمّ القارئ إليها وافداً جديداً مثلها، لا متلقّياً لشرحٍ منجَز.',
   development:
     "The extract moves through arrival, anticipation, the spectacle itself and the reflection afterwards. The arc is from outside observation to felt experience, with the reader's sense of the event deepening as Levine's own does.",
   developmentAr:
@@ -228,9 +228,9 @@ const writersPurpose = {
   achieveAr:
     'تهدف Levine إلى إيصال نسيج حدثٍ ثقافيّ وكثافته، ممّا لن يشهده معظمُ القرّاء الغربيين، مع مقاومة الصور النمطيّة السهلة، ورفض اختزال الممارسة إلى مجرّد فُرجةٍ أو صدمة.',
   readerFeel:
-    'The reader is meant to feel both the excitement of the spectacle and the slight unease of being a stranger inside it — a productive discomfort that opens the mind rather than closing down judgement.',
+    'The reader is meant to feel both the excitement of the spectacle and the slight unease of being a stranger inside it - a productive discomfort that opens the mind rather than closing down judgement.',
   readerFeelAr:
-    'يُراد للقارئ أن يشعر في آنٍ معاً بإثارة المشهد، وبشيءٍ من الضيق لكونه غريباً داخلَه — قلقٌ مُثمر يفتح العقلَ لا يُغلق بابَ التأمّل بالحكم.',
+    'يُراد للقارئ أن يشعر في آنٍ معاً بإثارة المشهد، وبشيءٍ من الضيق لكونه غريباً داخلَه - قلقٌ مُثمر يفتح العقلَ لا يُغلق بابَ التأمّل بالحكم.',
   message:
     'Cultural difference is presented not as a problem to be solved but as an experience to be entered. The reader is invited to suspend habitual judgement and to look before deciding.',
   messageAr:
@@ -241,23 +241,23 @@ const examPractice = {
   q1: {
     question: 'List four things you learn about the event Levine witnesses.',
     questionAr: 'اذكر أربعةَ أشياء تعرفها عن الحدث الذي تشاهده Levine.',
-    type: 'Retrieval — 4 marks',
-    typeAr: 'الاسترجاع — ٤ درجات',
+    type: 'Retrieval - 4 marks',
+    typeAr: 'الاسترجاع - ٤ درجات',
   },
   q2: {
     question: 'How does Levine use language to convey the atmosphere of the spectacle?',
     questionAr: 'كيف تستخدم Levine اللغةَ لنقل أجواء المشهد؟',
-    type: 'Language analysis — 12 marks',
-    typeAr: 'تحليل اللغة — ١٢ درجة',
+    type: 'Language analysis - 12 marks',
+    typeAr: 'تحليل اللغة - ١٢ درجة',
     modelOutline: [
       'First-person travel narration positions the reader alongside Levine as a fellow outsider, so the text reads as shared discovery rather than expert commentary.',
-      'Layered sensory description — dust, sound, the press of horses and bodies — produces immersion and shifts the reader from observer to near-participant in the spectacle.',
+      'Layered sensory description - dust, sound, the press of horses and bodies - produces immersion and shifts the reader from observer to near-participant in the spectacle.',
       'Cultural specificity, including the use of the original name of the sport and its literal translation, signals respect for the practice and asks the reader to accept it on its own terms.',
       'Restraint from explicit judgement makes the writing trustworthy: Levine describes rather than editorialises, leaving meaning for the reader to construct.',
     ],
     modelOutlineAr: [
       'السردُ الرحليّ بضمير المتكلّم يضع القارئَ إلى جانب Levine بوصفه غريباً مثلها، فيُقرأ النصّ اكتشافاً مشتركاً لا تعليقاً من خبير.',
-      'الوصفُ الحسيّ المتراكب — الغبار والصوت وضغط الخيل والأجساد — يُولّد انغماساً ويُحوّل القارئَ من مراقبٍ إلى مَن يكاد يكون مشاركاً في المشهد.',
+      'الوصفُ الحسيّ المتراكب - الغبار والصوت وضغط الخيل والأجساد - يُولّد انغماساً ويُحوّل القارئَ من مراقبٍ إلى مَن يكاد يكون مشاركاً في المشهد.',
       'الخصوصيّةُ الثقافيّة، بما فيها استعمالُ الاسم الأصليّ للرياضة وترجمتُه الحرفيّة، تُشير إلى احترام الممارسة وتطلب من القارئ قبولَها بمصطلحاتها الخاصّة.',
       'الإمساكُ عن الحكم الصريح يُكسب الكتابةَ المصداقيّة: تصف Levine ولا تُعلّق، وتترك للقارئ بناءَ المعنى.',
     ],
@@ -265,8 +265,8 @@ const examPractice = {
   q3: {
     question: 'How does Levine structure the text to take the reader through the experience?',
     questionAr: 'كيف تبني Levine النصَّ لتأخذ القارئ عبر التجربة؟',
-    type: 'Structural analysis — 12 marks',
-    typeAr: 'التحليل البنائيّ — ١٢ درجة',
+    type: 'Structural analysis - 12 marks',
+    typeAr: 'التحليل البنائيّ - ١٢ درجة',
   },
 }
 
@@ -446,7 +446,7 @@ export default async function AGameOfPoloPage() {
           {extractFocuses.map((extract) => (
             <div key={extract.id} className="rounded-xl border border-border/40 bg-card p-4">
               <span className="font-mono text-body-xs text-amber-600 dark:text-clay-600 uppercase tracking-wider">
-                {momentPrefix} {extract.id} — {ar ? extract.labelAr : extract.label}
+                {momentPrefix} {extract.id} - {ar ? extract.labelAr : extract.label}
               </span>
               <p className="mt-2 text-body-sm font-semibold text-foreground">
                 {ar ? extract.focusAr : extract.focus}

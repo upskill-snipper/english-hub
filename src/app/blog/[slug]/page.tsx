@@ -1,5 +1,5 @@
 /**
- * /blog/[slug] — individual blog article.
+ * /blog/[slug] - individual blog article.
  *
  * Server component. Looks the post up by slug at build time
  * (`generateStaticParams` enumerates every MDX file under `content/blog/`
@@ -8,8 +8,8 @@
  * with breadcrumbs, prose styles, an email-capture lead magnet at the
  * bottom and two pieces of structured data:
  *
- *   1. BreadcrumbList — Home → Blog → {Title}
- *   2. Article — headline, description, dates, author, publisher
+ *   1. BreadcrumbList - Home → Blog → {Title}
+ *   2. Article - headline, description, dates, author, publisher
  *
  * The route is kept fully statically rendered (no `headers()`, no `cookies()`)
  * so that `dynamicParams = false` actually short-circuits unknown slugs to
@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   }
 
   const url = `${BLOG_URL}/${post.slug}`
-  const title = `${post.title} — The English Hub`
+  const title = `${post.title} - The English Hub`
   const ogImage = buildOgImage(post)
 
   return {
@@ -98,7 +98,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
  * Resolve the OG image for a given post.
  *
  * If the frontmatter `cover` is already an `/api/og?…` URL we use it
- * verbatim — that's the project convention. Otherwise we synthesise a
+ * verbatim - that's the project convention. Otherwise we synthesise a
  * fresh /api/og URL from the title and category so the post still has a
  * branded social card.
  */
@@ -136,7 +136,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   // framework would stamp a 200 on the not-found page instead of a real
   // 404). The CSP no longer carries a `'nonce-…'` source (see middleware
   // notes from 02 May 2026), so passing the nonce to JSON-LD scripts is
-  // ceremonial — dropping it lets this whole route stay statically
+  // ceremonial - dropping it lets this whole route stay statically
   // pre-rendered and forces the framework to hard-404 unknown slugs.
   const url = `${BLOG_URL}/${post.slug}`
   const ogImage = buildOgImage(post)
@@ -145,8 +145,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   // render. Tailwind typography handles the default elements; the only
   // override is demoting a leading `# Heading` in the MDX body from `<h1>`
   // to `<h2>`. The article title at L194 below is the page's single,
-  // canonical `<h1>` — without this demotion every post shipped two `<h1>`s
-  // (flagged by the live SEO audit as "Multiple H1s — 2 H1s"). Mapping the
+  // canonical `<h1>` - without this demotion every post shipped two `<h1>`s
+  // (flagged by the live SEO audit as "Multiple H1s - 2 H1s"). Mapping the
   // content `h1 → h2` keeps the document outline well-formed (title is h1,
   // in-body section headings start at h2). Sibling content authors can ship
   // richer experiences by extending this `components` map (e.g. callouts).
@@ -158,7 +158,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
     },
   })
 
-  // Localised chrome — synchronous lookups using the locale we already
+  // Localised chrome - synchronous lookups using the locale we already
   // resolved above (we avoid `tMany()` because re-reading `headers()`
   // would opt the route into dynamic rendering and defeat the static
   // `dynamicParams = false` 404 gate documented above).
@@ -213,7 +213,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
             <span aria-hidden="true">·</span>
             <span>{post.educationalLevel}</span>
             <span aria-hidden="true">·</span>
-            {/* PDPPL Remediation 6 — AI involvement disclosure at the
+            {/* PDPPL Remediation 6 - AI involvement disclosure at the
                 point of consumption. Blog posts in this site are drafted
                 by the agent pipeline and human-reviewed before publish. */}
             <AIContentLabel variant="inline" />

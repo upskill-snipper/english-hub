@@ -20,11 +20,11 @@ const SHORT_RETRIEVAL = QUESTION_TYPES.find((q) => q.id === 'short-retrieval')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Developing a critical response to texts — iLowerSecondary English',
+    title: 'Developing a critical response to texts - iLowerSecondary English',
     description:
       'A masterclass on reading skill 1.2a: interpreting information, selecting the best short quotation, embedding evidence and turning a vague answer into a credited, developed response.',
   },
-  title: 'Developing a critical response to texts — iLowerSecondary English',
+  title: 'Developing a critical response to texts - iLowerSecondary English',
   description:
     'A masterclass on reading skill 1.2a: interpreting information, selecting the best short quotation, embedding evidence and turning a vague answer into a credited, developed response.',
   alternates: { canonical: PAGE_URL },
@@ -46,7 +46,7 @@ type Extract = {
 const EXTRACTS: Extract[] = [
   {
     id: 'extract-a',
-    label: 'Extract A — recount (non-fiction)',
+    label: 'Extract A - recount (non-fiction)',
     title: 'The morning the river rose',
     lines: [
       'We had been warned the night before, but warnings are easy to ignore',
@@ -69,7 +69,7 @@ const EXTRACTS: Extract[] = [
   },
   {
     id: 'extract-b',
-    label: 'Extract B — fiction',
+    label: 'Extract B - fiction',
     title: 'The new boy',
     lines: [
       'Tomas took the empty desk at the back without being told, the way you',
@@ -91,14 +91,14 @@ const EXTRACTS: Extract[] = [
   },
   {
     id: 'extract-c',
-    label: 'Extract C — magazine article (non-fiction)',
+    label: 'Extract C - magazine article (non-fiction)',
     title: 'Why we still queue',
     lines: [
       'Online, we are promised that waiting is over: a tap, a swipe, and the',
       'thing arrives. Yet on Saturday the bakery on Mill Lane had a queue out',
       'of the door, the same as it did thirty years ago. People did not seem',
       'annoyed. They talked. The wait, it turned out, was not the price of the',
-      'bread — it was part of what they had come for.',
+      'bread - it was part of what they had come for.',
     ],
     question: 'What does the writer suggest about the queue at the bakery? Explain why.',
     weak: 'The writer suggests the queue is long because the bakery is popular and lots of people want bread on a Saturday.',
@@ -114,9 +114,9 @@ const EXTRACTS: Extract[] = [
 
 const CHECKLIST = [
   'Have I answered the question that is actually asked, not a related one?',
-  'Is my quotation the shortest piece of text that proves my point — a few words, not a whole sentence?',
+  'Is my quotation the shortest piece of text that proves my point - a few words, not a whole sentence?',
   'Is the quotation copied exactly, inside quotation marks, with the spelling unchanged?',
-  'Is the evidence relevant — does it directly support the idea I just stated?',
+  'Is the evidence relevant - does it directly support the idea I just stated?',
   'Have I embedded the quotation into my own sentence rather than dropping it in on its own?',
   'Have I explained what the evidence shows, instead of leaving it to speak for itself?',
   'Have I gone beyond what the text literally says to what it implies (interpretation, not just retrieval)?',
@@ -166,7 +166,7 @@ export default async function CriticalResponsePage() {
 
       <h1>Developing a critical response to texts</h1>
       <p className="lead">
-        Reading skill {SKILL.code} — {SKILL.title}. This masterclass shows you how to interpret what
+        Reading skill {SKILL.code} - {SKILL.title}. This masterclass shows you how to interpret what
         a text means and how to choose and use the single best piece of evidence, so that a sensible
         idea in your head becomes a credited answer on the page.
       </p>
@@ -193,14 +193,14 @@ export default async function CriticalResponsePage() {
           In the achievement test this skill is rewarded mainly through two assessment objectives.{' '}
           {RAO2.code} is about reading beyond the literal: {RAO2.descriptor.toLowerCase()}{' '}
           {RAO5.code} is about the bigger picture: {RAO5.descriptor.toLowerCase()} Together they
-          mean the examiner is asking <em>what does this mean</em> and <em>how do you know</em> —
+          mean the examiner is asking <em>what does this mean</em> and <em>how do you know</em> -
           never simply <em>what does it say</em>.
         </p>
       </section>
 
       {/* ── The PEE habit ───────────────────────────────────────────── */}
       <section className="my-10">
-        <h2>The Point–Evidence–Explain habit (built for short answers)</h2>
+        <h2>The Point-Evidence-Explain habit (built for short answers)</h2>
         <p>
           At GCSE, PEE often becomes a long paragraph. In the iLowerSecondary test most reading
           answers are only one or two lines, so PEE has to be compressed into a sentence or two
@@ -221,7 +221,7 @@ export default async function CriticalResponsePage() {
               Evidence
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Embed a very short quotation that proves the point — a few words, copied exactly,
+              Embed a very short quotation that proves the point - a few words, copied exactly,
               inside quotation marks.
             </p>
           </div>
@@ -247,7 +247,7 @@ export default async function CriticalResponsePage() {
         <h2>Choosing the best short quotation</h2>
         <p>
           Weak answers quote too much and explain too little. The examiner is not impressed by the
-          length of a quotation — only by how precisely it supports the point. Aim for the smallest
+          length of a quotation - only by how precisely it supports the point. Aim for the smallest
           piece of text that does the job.
         </p>
         <div className="not-prose my-5 grid gap-3 sm:grid-cols-3">
@@ -265,7 +265,7 @@ export default async function CriticalResponsePage() {
               Relevant
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The quotation must directly prove the idea you just stated — if it only loosely
+              The quotation must directly prove the idea you just stated - if it only loosely
               relates, find a better one.
             </p>
           </div>
@@ -304,7 +304,7 @@ export default async function CriticalResponsePage() {
           </div>
         </div>
         <p>
-          The embedded version states a point, integrates the evidence and explains the effect — all
+          The embedded version states a point, integrates the evidence and explains the effect - all
           in one controlled sentence. That is the shape every short reading answer should take.
         </p>
       </section>
@@ -458,7 +458,7 @@ export default async function CriticalResponsePage() {
         <h2>From vague to credited: the one move that matters</h2>
         <p>
           If you only remember one thing, remember this: a vague answer describes; a credited answer
-          interprets and proves. The fix is almost always the same — name the exact words you are
+          interprets and proves. The fix is almost always the same - name the exact words you are
           relying on, then add the clause that begins{' '}
           <em>which suggests / which implies / which shows that …</em>. That single clause is
           usually the difference between a comment the examiner cannot credit and a developed point

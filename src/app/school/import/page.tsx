@@ -796,7 +796,7 @@ export default function ImportUsersPage() {
                           <AlertCircle className="size-3.5 mt-0.5 shrink-0 text-red-400" />
                           <span>
                             Row {err.row}
-                            {err.email ? ` (${err.email})` : ''} — {err.reason}
+                            {err.email ? ` (${err.email})` : ''} - {err.reason}
                           </span>
                         </li>
                       ))}

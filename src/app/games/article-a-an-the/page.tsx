@@ -11,7 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-type Article = 'a' | 'an' | 'the' | '—'
+type Article = 'a' | 'an' | 'the' | '-'
 
 interface ArticleItem {
   sentence: string // contains ___ for the gap
@@ -19,8 +19,8 @@ interface ArticleItem {
   why: string // one-line rule explanation shown after answering
 }
 
-// Original sentence bank — UK English grammar, CEFR A1–B1.
-// '—' means no article (zero article).
+// Original sentence bank - UK English grammar, CEFR A1-B1.
+// '-' means no article (zero article).
 const ARTICLE_BANK: ArticleItem[] = [
   // ── a vs an: consonant vs vowel SOUND ──
   {
@@ -143,7 +143,7 @@ const ARTICLE_BANK: ArticleItem[] = [
   {
     sentence: '___ sun rises in the east every morning.',
     answer: 'the',
-    why: '"the" for something unique — there is only one sun.',
+    why: '"the" for something unique - there is only one sun.',
   },
   {
     sentence: 'I read ___ book you lent me last week.',
@@ -158,7 +158,7 @@ const ARTICLE_BANK: ArticleItem[] = [
   {
     sentence: 'We watched ___ moon from the garden last night.',
     answer: 'the',
-    why: '"the" for something unique — there is only one moon.',
+    why: '"the" for something unique - there is only one moon.',
   },
   {
     sentence: 'Can you pass me ___ salt, please?',
@@ -186,7 +186,7 @@ const ARTICLE_BANK: ArticleItem[] = [
     why: '"the" before ordinal numbers like "first".',
   },
   {
-    sentence: 'Look at ___ sky — it is full of stars tonight.',
+    sentence: 'Look at ___ sky - it is full of stars tonight.',
     answer: 'the',
     why: '"the" for something unique and shared by both speakers.',
   },
@@ -196,95 +196,95 @@ const ARTICLE_BANK: ArticleItem[] = [
     why: '"the" with familiar public places like "cinema".',
   },
 
-  // ── zero article "—": plurals (general), uncountables, names, meals, languages ──
+  // ── zero article "-": plurals (general), uncountables, names, meals, languages ──
   {
     sentence: '___ children love playing in the park.',
-    answer: '—',
+    answer: '-',
     why: 'No article with plural nouns when speaking generally.',
   },
   {
     sentence: 'I really enjoy ___ music.',
-    answer: '—',
+    answer: '-',
     why: 'No article with uncountable nouns used in a general sense.',
   },
   {
     sentence: '___ Sara is coming to the party tonight.',
-    answer: '—',
+    answer: '-',
     why: 'No article before people’s names.',
   },
   {
     sentence: 'We had ___ breakfast at seven o’clock.',
-    answer: '—',
+    answer: '-',
     why: 'No article before meals like breakfast, lunch and dinner.',
   },
   {
     sentence: 'She speaks ___ Arabic and English fluently.',
-    answer: '—',
+    answer: '-',
     why: 'No article before the names of languages.',
   },
   {
     sentence: '___ water is essential for life.',
-    answer: '—',
+    answer: '-',
     why: 'No article with uncountable nouns used generally.',
   },
   {
     sentence: 'I live in ___ London with my family.',
-    answer: '—',
+    answer: '-',
     why: 'No article before most city and town names.',
   },
   {
     sentence: '___ dogs are very loyal animals.',
-    answer: '—',
+    answer: '-',
     why: 'No article with plural nouns when speaking in general.',
   },
   {
     sentence: 'He travels to ___ France every summer.',
-    answer: '—',
+    answer: '-',
     why: 'No article before most country names.',
   },
   {
     sentence: 'They study ___ mathematics at school.',
-    answer: '—',
+    answer: '-',
     why: 'No article before school subjects.',
   },
   {
     sentence: 'We play ___ football after class.',
-    answer: '—',
+    answer: '-',
     why: 'No article before the names of sports and games.',
   },
   {
     sentence: '___ honey is sweeter than sugar.',
-    answer: '—',
+    answer: '-',
     why: 'No article with uncountable nouns used generally.',
   },
   {
     sentence: 'My sister teaches ___ history at the college.',
-    answer: '—',
+    answer: '-',
     why: 'No article before academic subjects.',
   },
   {
     sentence: 'I usually go to ___ bed before midnight.',
-    answer: '—',
+    answer: '-',
     why: 'No article in fixed phrases like "go to bed".',
   },
   {
     sentence: '___ Mr Khan is our new teacher.',
-    answer: '—',
+    answer: '-',
     why: 'No article before a title with a person’s name.',
   },
   {
     sentence: '___ rice is grown in many warm countries.',
-    answer: '—',
+    answer: '-',
     why: 'No article with uncountable nouns used generally.',
   },
   {
     sentence: 'She loves ___ flowers in the spring.',
-    answer: '—',
+    answer: '-',
     why: 'No article with plural nouns when speaking generally.',
   },
   {
     sentence: 'We learn ___ English on Mondays.',
-    answer: '—',
+    answer: '-',
     why: 'No article before the names of languages.',
   },
 
@@ -297,7 +297,7 @@ const ARTICLE_BANK: ArticleItem[] = [
   {
     sentence: 'There is ___ school at the end of our road.',
     answer: 'a',
-    why: '"a" for one of many — introducing a new singular noun.',
+    why: '"a" for one of many - introducing a new singular noun.',
   },
   {
     sentence: 'He bought ___ car. ___ car is bright red.',
@@ -317,12 +317,12 @@ const ARTICLE_BANK: ArticleItem[] = [
 ]
 
 const ROUND_SIZE = 15
-const OPTIONS: Article[] = ['a', 'an', 'the', '—']
+const OPTIONS: Article[] = ['a', 'an', 'the', '-']
 const OPTION_LABELS: Record<Article, string> = {
   a: 'a',
   an: 'an',
   the: 'the',
-  '—': '— (no article)',
+  '-': '- (no article)',
 }
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -501,7 +501,7 @@ export default function ArticleAAnThePage() {
                   >
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Well done — that&apos;s right!
+                        <CheckCircle className="size-4" /> Well done - that&apos;s right!
                       </>
                     ) : (
                       <>

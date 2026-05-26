@@ -1,5 +1,5 @@
 /**
- * The 60 KS3 English skill codes — Year 7 + Year 8 + Year 9 across
+ * The 60 KS3 English skill codes - Year 7 + Year 8 + Year 9 across
  * Reading / Writing / Language / Speaking & Listening.
  *
  * Reading progression at a glance:
@@ -21,8 +21,8 @@
 import type { SkillCode } from './types'
 
 export const SKILL_CODES: SkillCode[] = [
-  // ─── YEAR 7 — Foundations ───────────────────────────────────────────
-  // Reading (7R.1 – 7R.6)
+  // ─── YEAR 7 - Foundations ───────────────────────────────────────────
+  // Reading (7R.1 - 7R.6)
   {
     id: '7R.1',
     year: 7,
@@ -84,7 +84,7 @@ export const SKILL_CODES: SkillCode[] = [
     becomes: '8R.6',
   },
 
-  // Writing (7W.1 – 7W.6)
+  // Writing (7W.1 - 7W.6)
   {
     id: '7W.1',
     year: 7,
@@ -143,7 +143,7 @@ export const SKILL_CODES: SkillCode[] = [
     becomes: '8W.1',
   },
 
-  // Language, grammar and control (7W.7 – 7W.9)
+  // Language, grammar and control (7W.7 - 7W.9)
   {
     id: '7W.7',
     year: 7,
@@ -175,7 +175,7 @@ export const SKILL_CODES: SkillCode[] = [
     becomes: '8W.10',
   },
 
-  // Speaking & Listening (7SL.1 – 7SL.3)
+  // Speaking & Listening (7SL.1 - 7SL.3)
   {
     id: '7SL.1',
     year: 7,
@@ -198,7 +198,7 @@ export const SKILL_CODES: SkillCode[] = [
     becomes: '8SL.3',
   },
 
-  // ─── YEAR 8 — Development ───────────────────────────────────────────
+  // ─── YEAR 8 - Development ───────────────────────────────────────────
   // Reading
   {
     id: '8R.1',
@@ -407,7 +407,7 @@ export const SKILL_CODES: SkillCode[] = [
     becomes: '9SL.3',
   },
 
-  // ─── YEAR 9 — Mastery ───────────────────────────────────────────────
+  // ─── YEAR 9 - Mastery ───────────────────────────────────────────────
   // Reading
   {
     id: '9R.1',

@@ -26,14 +26,11 @@ const REF_REGEX = /^[A-Za-z0-9_-]{3,64}$/
 /**
  * Inspect a request and, if it carries ?ref=<code>, persist the affiliate
  * tracking cookie on the provided response. Safe to call on every request
- * — no-ops when there is no ref param.
+ * - no-ops when there is no ref param.
  *
  * Returns the same response object (mutated) for chaining.
  */
-export function applyAffiliateTracking(
-  request: NextRequest,
-  response: NextResponse
-): NextResponse {
+export function applyAffiliateTracking(request: NextRequest, response: NextResponse): NextResponse {
   const { searchParams } = request.nextUrl
   const ref = searchParams.get(REF_PARAM)
   if (!ref) return response
@@ -50,7 +47,7 @@ export function applyAffiliateTracking(
 }
 
 /**
- * Standalone middleware entrypoint — exported so the file is self-sufficient
+ * Standalone middleware entrypoint - exported so the file is self-sufficient
  * for tests and for projects that want to run it as a dedicated middleware.
  * Not wired into Next.js directly (src/middleware.ts handles routing).
  */

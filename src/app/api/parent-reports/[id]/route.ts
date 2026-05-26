@@ -3,7 +3,7 @@
  *
  * Returns a single WeeklyReport for the authenticated parent. RLS-equivalent
  * enforcement: the parent must own the row (i.e. `report.parentId === me.id`).
- * Returns 404 rather than 403 on any mismatch — we do not confirm or deny
+ * Returns 404 rather than 403 on any mismatch - we do not confirm or deny
  * the existence of reports belonging to other parents.
  */
 
@@ -16,10 +16,7 @@ interface RouteContext {
   readonly params: Promise<{ readonly id: string }>
 }
 
-export async function GET(
-  _request: Request,
-  context: RouteContext,
-): Promise<NextResponse> {
+export async function GET(_request: Request, context: RouteContext): Promise<NextResponse> {
   const supabase = createServerSupabaseClient()
   const {
     data: { user },
@@ -65,7 +62,7 @@ export async function GET(
   })
 
   if (!report) {
-    // Deliberately a 404 — this masks whether the row exists under another
+    // Deliberately a 404 - this masks whether the row exists under another
     // parent, which aligns with our RLS posture.
     return NextResponse.json({ error: 'Not found' }, { status: 404 })
   }

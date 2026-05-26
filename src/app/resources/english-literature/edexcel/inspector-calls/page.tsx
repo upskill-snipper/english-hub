@@ -6,14 +6,14 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Study Guide — Edexcel GCSE English Literature',
+    title: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
     description:
       'Complete An Inspector Calls revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, context, and Edexcel exam technique.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/inspector-calls',
   },
-  title: 'An Inspector Calls Study Guide — Edexcel GCSE English Literature',
+  title: 'An Inspector Calls Study Guide - Edexcel GCSE English Literature',
   description:
     'Complete An Inspector Calls revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, context, and Edexcel exam technique.',
 }
@@ -31,13 +31,13 @@ const PLOT_SUMMARY = [
     act: 'Act 2',
     title: "Gerald and Mrs Birling's Involvement",
     summary:
-      "Gerald confesses to having an affair with Eva (now calling herself Daisy Renton). He kept her as his mistress before ending the relationship. Mrs Birling is confronted — as chair of the Brumley Women's Charity, she refused Eva's appeal for help when she was pregnant and destitute. Mrs Birling insists the father of Eva's child should bear full responsibility, unknowingly condemning her own son.",
+      "Gerald confesses to having an affair with Eva (now calling herself Daisy Renton). He kept her as his mistress before ending the relationship. Mrs Birling is confronted - as chair of the Brumley Women's Charity, she refused Eva's appeal for help when she was pregnant and destitute. Mrs Birling insists the father of Eva's child should bear full responsibility, unknowingly condemning her own son.",
   },
   {
     act: 'Act 3',
     title: "Eric's Confession and the Inspector's Departure",
     summary:
-      "Eric is revealed as the father of Eva's child. He had forced himself on her while drunk, got her pregnant, and stolen money from his father's firm to support her. The Inspector delivers his final speech about social responsibility — 'We are members of one body. We are responsible for each other.' After he leaves, Gerald and Birling discover that no girl has died at the Infirmary and suspect the Inspector was a hoax. The older generation are relieved, but Sheila and Eric remain changed. The phone rings: a girl has just died, and a police inspector is coming to question them.",
+      "Eric is revealed as the father of Eva's child. He had forced himself on her while drunk, got her pregnant, and stolen money from his father's firm to support her. The Inspector delivers his final speech about social responsibility - 'We are members of one body. We are responsible for each other.' After he leaves, Gerald and Birling discover that no girl has died at the Infirmary and suspect the Inspector was a hoax. The older generation are relieved, but Sheila and Eric remain changed. The phone rings: a girl has just died, and a police inspector is coming to question them.",
   },
 ]
 
@@ -45,7 +45,7 @@ const CHARACTERS = [
   {
     name: 'Inspector Goole',
     description:
-      "A mysterious figure who may be supernatural, a time-traveller, or Priestley's mouthpiece. He systematically exposes each Birling's responsibility for Eva's death. He is authoritative, moral, and unsettling. His name — 'Goole' — sounds like 'ghoul,' suggesting he may not be a real inspector at all. He represents Priestley's socialist message.",
+      "A mysterious figure who may be supernatural, a time-traveller, or Priestley's mouthpiece. He systematically exposes each Birling's responsibility for Eva's death. He is authoritative, moral, and unsettling. His name - 'Goole' - sounds like 'ghoul,' suggesting he may not be a real inspector at all. He represents Priestley's socialist message.",
     key_quotes: [
       '"We are members of one body. We are responsible for each other"',
       '"they will be taught it in fire and blood and anguish"',
@@ -68,19 +68,19 @@ const CHARACTERS = [
   {
     name: 'Sheila Birling',
     description:
-      "Birling's daughter. Initially presented as naive and materialistic, she undergoes the greatest transformation. She accepts responsibility for having Eva fired, shows genuine remorse, and becomes increasingly critical of her parents' attitudes. She represents hope — the younger generation who can learn and change. By the end, she has adopted the Inspector's moral position.",
+      "Birling's daughter. Initially presented as naive and materialistic, she undergoes the greatest transformation. She accepts responsibility for having Eva fired, shows genuine remorse, and becomes increasingly critical of her parents' attitudes. She represents hope - the younger generation who can learn and change. By the end, she has adopted the Inspector's moral position.",
     key_quotes: [
-      '"But these girls aren\'t cheap labour — they\'re people"',
-      '"I know I\'m to blame — and I\'m desperately sorry"',
+      '"But these girls aren\'t cheap labour - they\'re people"',
+      '"I know I\'m to blame - and I\'m desperately sorry"',
       '"You\'re pretending everything\'s just as it was before"',
       '"I felt rotten about it at the time and now I feel a lot worse"',
-      '"No, he\'s giving us the rope — so that we\'ll hang ourselves"',
+      '"No, he\'s giving us the rope - so that we\'ll hang ourselves"',
     ],
   },
   {
     name: 'Sybil Birling (Mrs Birling)',
     description:
-      "Arthur's wife. Cold, snobbish, and prejudiced. She is the most resistant to accepting responsibility. As chair of a charity, she refused to help Eva, judging her for using the Birling name and for being an unmarried pregnant woman. She represents the upper-class hypocrisy and moral failure that Priestley attacks. She condemns the father of Eva's child — not realising it is her own son Eric.",
+      "Arthur's wife. Cold, snobbish, and prejudiced. She is the most resistant to accepting responsibility. As chair of a charity, she refused to help Eva, judging her for using the Birling name and for being an unmarried pregnant woman. She represents the upper-class hypocrisy and moral failure that Priestley attacks. She condemns the father of Eva's child - not realising it is her own son Eric.",
     key_quotes: [
       '"a girl of that sort"',
       '"I used my influence on the committee, as I was perfectly entitled to do"',
@@ -102,9 +102,9 @@ const CHARACTERS = [
   {
     name: 'Gerald Croft',
     description:
-      "Sheila's fiance, son of Sir George Croft (a rival manufacturer). He had an affair with Eva/Daisy, rescuing her from another man at the Palace Bar, but ultimately abandoned her when it suited him. Gerald occupies a middle position — he shows some compassion but is ultimately willing to dismiss the Inspector's visit and return to normal. He represents the entitled upper-middle class.",
+      "Sheila's fiance, son of Sir George Croft (a rival manufacturer). He had an affair with Eva/Daisy, rescuing her from another man at the Palace Bar, but ultimately abandoned her when it suited him. Gerald occupies a middle position - he shows some compassion but is ultimately willing to dismiss the Inspector's visit and return to normal. He represents the entitled upper-middle class.",
     key_quotes: [
-      '"She was young and pretty and warm-hearted — and intensely grateful"',
+      '"She was young and pretty and warm-hearted - and intensely grateful"',
       '"Everything\'s all right now, Sheila. What about this ring?"',
       '"that man wasn\'t a police officer"',
     ],
@@ -112,7 +112,7 @@ const CHARACTERS = [
   {
     name: 'Eva Smith / Daisy Renton',
     description:
-      'The victim. She never appears on stage but is central to the play. She may represent one woman or many — Priestley uses her as a symbol of all exploited working-class people. She is sacked, exploited, rejected, and ultimately driven to suicide. Her invisibility on stage reflects how the working class were invisible to the upper classes.',
+      'The victim. She never appears on stage but is central to the play. She may represent one woman or many - Priestley uses her as a symbol of all exploited working-class people. She is sacked, exploited, rejected, and ultimately driven to suicide. Her invisibility on stage reflects how the working class were invisible to the upper classes.',
     key_quotes: [
       '"A nice little promising life there... and a nasty mess somebody\'s made of it" (Inspector about Eva)',
     ],
@@ -123,7 +123,7 @@ const THEMES = [
   {
     theme: 'Social Responsibility',
     description:
-      "The central message of the play. Priestley argues that we have a duty to care for one another, not just ourselves. The Inspector's final speech — 'We are members of one body. We are responsible for each other' — is Priestley's direct challenge to the audience. Each Birling's failure of responsibility contributes to Eva's death.",
+      "The central message of the play. Priestley argues that we have a duty to care for one another, not just ourselves. The Inspector's final speech - 'We are members of one body. We are responsible for each other' - is Priestley's direct challenge to the audience. Each Birling's failure of responsibility contributes to Eva's death.",
     quotes: [
       '"We are members of one body. We are responsible for each other"',
       '"they will be taught it in fire and blood and anguish"',
@@ -133,17 +133,17 @@ const THEMES = [
   {
     theme: 'Class and Social Inequality',
     description:
-      "Priestley exposes the vast gap between rich and poor in Edwardian England and how the upper classes exploit workers. Eva is treated as disposable — sacked for asking for fair wages, dismissed as 'a girl of that sort.' Mrs Birling's charity exists to help the poor but rejects Eva out of snobbery. The play argues that class divisions cause real human suffering.",
+      "Priestley exposes the vast gap between rich and poor in Edwardian England and how the upper classes exploit workers. Eva is treated as disposable - sacked for asking for fair wages, dismissed as 'a girl of that sort.' Mrs Birling's charity exists to help the poor but rejects Eva out of snobbery. The play argues that class divisions cause real human suffering.",
     quotes: [
       '"a girl of that sort"',
-      '"But these girls aren\'t cheap labour — they\'re people"',
+      '"But these girls aren\'t cheap labour - they\'re people"',
       '"If you think you can bring any pressure to bear upon me, you\'re quite mistaken"',
     ],
   },
   {
     theme: 'Generational Divide',
     description:
-      "Sheila and Eric accept responsibility and change, while Birling and Mrs Birling refuse to learn. Priestley suggests the younger generation offers hope for a fairer society. The older Birlings represent the establishment — rigid, selfish, and incapable of change. The play's ending implies that if the older generation will not learn, consequences ('fire and blood and anguish') will follow.",
+      "Sheila and Eric accept responsibility and change, while Birling and Mrs Birling refuse to learn. Priestley suggests the younger generation offers hope for a fairer society. The older Birlings represent the establishment - rigid, selfish, and incapable of change. The play's ending implies that if the older generation will not learn, consequences ('fire and blood and anguish') will follow.",
     quotes: [
       '"The famous younger generation who know it all"',
       '"You\'re pretending everything\'s just as it was before"',
@@ -153,9 +153,9 @@ const THEMES = [
   {
     theme: 'Gender Inequality',
     description:
-      "Eva is exploited by men (Eric's assault, Gerald's affair) and judged by women of higher class (Mrs Birling, Sheila). Women in 1912 had no vote and limited rights. Eva's vulnerability is directly linked to her gender and class — she has no power, no protection, and no voice. Priestley highlights how patriarchal society fails women.",
+      "Eva is exploited by men (Eric's assault, Gerald's affair) and judged by women of higher class (Mrs Birling, Sheila). Women in 1912 had no vote and limited rights. Eva's vulnerability is directly linked to her gender and class - she has no power, no protection, and no voice. Priestley highlights how patriarchal society fails women.",
     quotes: [
-      '"She was young and pretty and warm-hearted — and intensely grateful"',
+      '"She was young and pretty and warm-hearted - and intensely grateful"',
       '"I was in that state when a chap easily turns nasty"',
       '"She\'d had a lot to make her happy... a good job, friends"',
     ],
@@ -163,9 +163,9 @@ const THEMES = [
   {
     theme: 'Guilt and Responsibility',
     description:
-      'Each character responds differently to guilt. Sheila is devastated; Eric is remorseful; Gerald is practical; Birling is defensive; Mrs Birling is in denial. The play explores whether guilt leads to genuine change or is simply an inconvenience to be overcome. The ending — a real inspector is coming — suggests accountability cannot be avoided.',
+      'Each character responds differently to guilt. Sheila is devastated; Eric is remorseful; Gerald is practical; Birling is defensive; Mrs Birling is in denial. The play explores whether guilt leads to genuine change or is simply an inconvenience to be overcome. The ending - a real inspector is coming - suggests accountability cannot be avoided.',
     quotes: [
-      '"I know I\'m to blame — and I\'m desperately sorry"',
+      '"I know I\'m to blame - and I\'m desperately sorry"',
       '"I accept no blame for it at all"',
       '"We did her in all right"',
     ],
@@ -186,36 +186,36 @@ const KEY_QUOTES = [
   {
     quote: '"a man has to mind his own business and look after himself and his own"',
     speaker: 'Birling (Act 1)',
-    significance: "Birling's capitalist philosophy — rejected by the play as selfish and harmful.",
+    significance: "Birling's capitalist philosophy - rejected by the play as selfish and harmful.",
   },
   {
     quote: '"The Titanic... unsinkable, absolutely unsinkable"',
     speaker: 'Birling (Act 1)',
     significance:
-      'Dramatic irony — the Titanic sank in 1912. Undermines everything Birling says and makes the audience distrust him.',
+      'Dramatic irony - the Titanic sank in 1912. Undermines everything Birling says and makes the audience distrust him.',
   },
   {
     quote: '"We are members of one body. We are responsible for each other"',
     speaker: 'Inspector (Act 3)',
     significance:
-      "The play's central message. 'One body' alludes to the Christian idea of the body of Christ — society as a single organism.",
+      "The play's central message. 'One body' alludes to the Christian idea of the body of Christ - society as a single organism.",
   },
   {
     quote: '"They will be taught it in fire and blood and anguish"',
     speaker: 'Inspector (Act 3)',
     significance:
-      'Prophetic warning — refers to both World Wars. Written in 1945, set in 1912, the audience knows these wars happened because society failed to learn.',
+      'Prophetic warning - refers to both World Wars. Written in 1945, set in 1912, the audience knows these wars happened because society failed to learn.',
   },
   {
-    quote: '"But these girls aren\'t cheap labour — they\'re people"',
+    quote: '"But these girls aren\'t cheap labour - they\'re people"',
     speaker: 'Sheila (Act 1)',
     significance:
       'Sheila begins to see the humanity in workers. Marks the start of her transformation.',
   },
   {
-    quote: '"I know I\'m to blame — and I\'m desperately sorry"',
+    quote: '"I know I\'m to blame - and I\'m desperately sorry"',
     speaker: 'Sheila (Act 1)',
-    significance: "Genuine remorse — contrasts with her parents' refusal to accept guilt.",
+    significance: "Genuine remorse - contrasts with her parents' refusal to accept guilt.",
   },
   {
     quote: '"You\'re pretending everything\'s just as it was before"',
@@ -227,7 +227,7 @@ const KEY_QUOTES = [
     quote: '"a girl of that sort"',
     speaker: 'Mrs Birling (Act 2)',
     significance:
-      'Class snobbery — Eva is dismissed as inferior because of her social class. Dehumanising language.',
+      'Class snobbery - Eva is dismissed as inferior because of her social class. Dehumanising language.',
   },
   {
     quote: '"I accept no blame for it at all"',
@@ -239,13 +239,13 @@ const KEY_QUOTES = [
     quote: '"Go and look for the father of the child. It\'s his responsibility"',
     speaker: 'Mrs Birling (Act 2)',
     significance:
-      'Dramatic irony — she is unwittingly condemning her own son Eric. The audience realises before she does.',
+      'Dramatic irony - she is unwittingly condemning her own son Eric. The audience realises before she does.',
   },
   {
     quote: '"I was in that state when a chap easily turns nasty"',
     speaker: 'Eric (Act 3)',
     significance:
-      "Eric's euphemistic confession of assault. 'That state' refers to drunkenness — his alcoholism enabled his violence.",
+      "Eric's euphemistic confession of assault. 'That state' refers to drunkenness - his alcoholism enabled his violence.",
   },
   {
     quote: '"You\'re not the kind of father a chap could go to when he\'s in trouble"',
@@ -257,7 +257,7 @@ const KEY_QUOTES = [
     quote: '"We did her in all right"',
     speaker: 'Eric (Act 3)',
     significance:
-      "Collective guilt — 'we' acknowledges shared responsibility. Eric includes himself honestly.",
+      "Collective guilt - 'we' acknowledges shared responsibility. Eric includes himself honestly.",
   },
   {
     quote: '"I was quite justified"',
@@ -266,7 +266,7 @@ const KEY_QUOTES = [
       "Birling's refusal to accept wrongdoing. He sees sacking workers as a business decision, not a moral one.",
   },
   {
-    quote: '"She was young and pretty and warm-hearted — and intensely grateful"',
+    quote: '"She was young and pretty and warm-hearted - and intensely grateful"',
     speaker: 'Gerald (Act 2)',
     significance:
       "'Intensely grateful' suggests a power imbalance. Gerald rescued Eva but also exploited her vulnerability.",
@@ -287,7 +287,7 @@ const KEY_QUOTES = [
     quote: '"The famous younger generation who know it all"',
     speaker: 'Birling (Act 3)',
     significance:
-      "Birling dismisses Sheila and Eric's moral growth as youthful arrogance. Priestley inverts this — the young are wiser.",
+      "Birling dismisses Sheila and Eric's moral growth as youthful arrogance. Priestley inverts this - the young are wiser.",
   },
   {
     quote: '"Everything\'s all right now, Sheila. What about this ring?"',
@@ -302,10 +302,10 @@ const KEY_QUOTES = [
       "Self-aggrandising description. 'Hard-headed' suggests stubbornness rather than wisdom.",
   },
   {
-    quote: '"No, he\'s giving us the rope — so that we\'ll hang ourselves"',
+    quote: '"No, he\'s giving us the rope - so that we\'ll hang ourselves"',
     speaker: 'Sheila (Act 2)',
     significance:
-      "Sheila perceives the Inspector's strategy. She is intelligent and self-aware — more perceptive than her parents.",
+      "Sheila perceives the Inspector's strategy. She is intelligent and self-aware - more perceptive than her parents.",
   },
   {
     quote: '"You don\'t understand anything. You never did"',
@@ -318,17 +318,17 @@ const CONTEXT_POINTS = [
   {
     topic: 'Written in 1945, Set in 1912',
     detail:
-      "Priestley deliberately sets the play in 1912 — before two World Wars — but writes it in 1945 as WWII ends. The 1945 audience knows that Birling's confident predictions ('no war') were catastrophically wrong. This dramatic irony discredits Birling and the capitalist worldview he represents.",
+      "Priestley deliberately sets the play in 1912 - before two World Wars - but writes it in 1945 as WWII ends. The 1945 audience knows that Birling's confident predictions ('no war') were catastrophically wrong. This dramatic irony discredits Birling and the capitalist worldview he represents.",
   },
   {
     topic: "Priestley's Socialism",
     detail:
-      "J.B. Priestley was a committed socialist who believed in collective responsibility, the welfare state, and workers' rights. He made popular radio broadcasts during WWII advocating for social reform. An Inspector Calls is a vehicle for his political message — urging the post-war audience to build a fairer society.",
+      "J.B. Priestley was a committed socialist who believed in collective responsibility, the welfare state, and workers' rights. He made popular radio broadcasts during WWII advocating for social reform. An Inspector Calls is a vehicle for his political message - urging the post-war audience to build a fairer society.",
   },
   {
     topic: 'The 1945 Labour Victory',
     detail:
-      "The play premiered in 1945, the year the Labour Party won a landslide election, promising the NHS, welfare state, and nationalised industries. Priestley's play aligned with the national mood — a desire for social change and collective responsibility after the shared sacrifice of WWII.",
+      "The play premiered in 1945, the year the Labour Party won a landslide election, promising the NHS, welfare state, and nationalised industries. Priestley's play aligned with the national mood - a desire for social change and collective responsibility after the shared sacrifice of WWII.",
   },
   {
     topic: 'Edwardian Class System',
@@ -338,7 +338,7 @@ const CONTEXT_POINTS = [
   {
     topic: "Women's Rights in 1912",
     detail:
-      "Women in 1912 had no vote (suffragettes were actively campaigning), limited job opportunities, and were expected to be dependent on men. Eva Smith's vulnerability is a product of this inequality — she has no safety net when men exploit and abandon her.",
+      "Women in 1912 had no vote (suffragettes were actively campaigning), limited job opportunities, and were expected to be dependent on men. Eva Smith's vulnerability is a product of this inequality - she has no safety net when men exploit and abandon her.",
   },
   {
     topic: 'The Titanic and World War I',
@@ -362,7 +362,7 @@ export default function InspectorCallsPage() {
             &larr; Edexcel English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            An Inspector Calls — Full Study Guide
+            An Inspector Calls - Full Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Edexcel GCSE English Literature &middot; Paper 1, Section B
@@ -479,7 +479,7 @@ export default function InspectorCallsPage() {
             {KEY_QUOTES.map((q, i) => (
               <div key={i} className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="text-sm font-semibold italic text-foreground">{q.quote}</p>
-                <p className="mt-1 text-xs font-medium text-primary">— {q.speaker}</p>
+                <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
@@ -511,7 +511,7 @@ export default function InspectorCallsPage() {
                 What Does an Edexcel Question Look Like?
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                You will typically have a choice of two questions. There is no extract — you must
+                You will typically have a choice of two questions. There is no extract - you must
                 recall your own evidence from the play.
               </p>
               <div className="mt-4 space-y-3">
@@ -544,7 +544,7 @@ export default function InspectorCallsPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction</strong> — state Priestley&apos;s overall purpose and how
+                    <strong>Introduction</strong> - state Priestley&apos;s overall purpose and how
                     the theme/character serves his message. Mention the 1912 setting and 1945
                     context.
                   </span>
@@ -564,7 +564,7 @@ export default function InspectorCallsPage() {
                     3
                   </span>
                   <span>
-                    <strong>Embed quotations</strong> — short quotes woven into sentences work best.
+                    <strong>Embed quotations</strong> - short quotes woven into sentences work best.
                     Analyse the language within your quotes.
                   </span>
                 </li>
@@ -573,7 +573,7 @@ export default function InspectorCallsPage() {
                     4
                   </span>
                   <span>
-                    <strong>Link to context</strong> — connect to Priestley&apos;s socialism, the
+                    <strong>Link to context</strong> - connect to Priestley&apos;s socialism, the
                     1945 audience, Edwardian class system, or the dual time setting. Integrate
                     context into analysis rather than bolting it on.
                   </span>
@@ -583,7 +583,7 @@ export default function InspectorCallsPage() {
                     5
                   </span>
                   <span>
-                    <strong>Discuss dramatic techniques</strong> — stage directions, dramatic irony,
+                    <strong>Discuss dramatic techniques</strong> - stage directions, dramatic irony,
                     the unities (time, place, action), the cyclic structure, lighting changes, the
                     telephone as a dramatic device.
                   </span>
@@ -596,22 +596,22 @@ export default function InspectorCallsPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Always use &quot;Priestley&quot; as the subject — &quot;Priestley
+                  Always use &quot;Priestley&quot; as the subject - &quot;Priestley
                   presents/uses/suggests...&quot; This is an analysis of methods requirement.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss the dual time setting — &quot;Written in 1945 but set in 1912, Priestley
+                  Discuss the dual time setting - &quot;Written in 1945 but set in 1912, Priestley
                   uses dramatic irony to...&quot;
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Analyse stage directions — the lighting changes from &quot;pink and intimate&quot;
+                  Analyse stage directions - the lighting changes from &quot;pink and intimate&quot;
                   to &quot;brighter and harder&quot; when the Inspector arrives.
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  Discuss the ending — the phone call creates a cyclic structure, suggesting the
+                  Discuss the ending - the phone call creates a cyclic structure, suggesting the
                   Birlings will be forced to confront their guilt again.
                 </li>
                 <li className="flex gap-2">

@@ -14,14 +14,14 @@
  * - ICO Children's Code: protected by the DOB age-gate at signup, not by
  *   email verification. Under-16 path with parent-guardian email is
  *   unchanged.
- * - Stripe: we still require a verified email at checkout — see
+ * - Stripe: we still require a verified email at checkout - see
  *   POLICY.stripe_checkout = true. This catches typo accounts before
  *   any money moves.
  */
 
 /**
  * Action that may require a verified email under soft-verification policy.
- * Append-only enum — adding new values is safe; removing is a breaking change.
+ * Append-only enum - adding new values is safe; removing is a breaking change.
  */
 export type ProtectedAction =
   | 'stripe_checkout'
@@ -38,8 +38,8 @@ const POLICY: Readonly<Record<ProtectedAction, boolean>> = {
   stripe_checkout: true, // payment requires verified email
   change_email: true, // changing primary identifier requires verification
   delete_account: true, // destructive, must verify
-  invite_collaborator: false, // soft — fine without verification
-  send_school_invite: false, // soft — teachers should be able to invite immediately
+  invite_collaborator: false, // soft - fine without verification
+  send_school_invite: false, // soft - teachers should be able to invite immediately
 }
 
 /**

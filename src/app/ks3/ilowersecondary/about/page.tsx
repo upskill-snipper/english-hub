@@ -98,11 +98,11 @@ export default async function AboutPage() {
       </p>
       <ul>
         <li>
-          <strong>{SECTIONS.A.name}</strong> — {SECTIONS.A.marks} marks. {SECTIONS.A.description}{' '}
+          <strong>{SECTIONS.A.name}</strong> - {SECTIONS.A.marks} marks. {SECTIONS.A.description}{' '}
           Recommended time: {SECTIONS.A.recommendedLabel}.
         </li>
         <li>
-          <strong>{SECTIONS.B.name}</strong> — {SECTIONS.B.marks} marks. {SECTIONS.B.description}{' '}
+          <strong>{SECTIONS.B.name}</strong> - {SECTIONS.B.marks} marks. {SECTIONS.B.description}{' '}
           Recommended time: {SECTIONS.B.recommendedLabel}.
         </li>
       </ul>

@@ -313,7 +313,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem explores how two people maintain a deep connection through letters despite living different lives — one rural and physical, the other urban and desk-bound.',
+      'The poem explores how two people maintain a deep connection through letters despite living different lives - one rural and physical, the other urban and desk-bound.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -339,13 +339,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Business documents',
-      'A lifeline of connection — words that bridge physical distance and different ways of living',
+      'A lifeline of connection - words that bridge physical distance and different ways of living',
       'Postcards from holiday',
       'Official notices',
     ],
     correctIndex: 1,
     explanation:
-      'The letters are the thread connecting two different worlds. They represent how language and shared feeling can bridge any distance — physical or experiential.',
+      'The letters are the thread connecting two different worlds. They represent how language and shared feeling can bridge any distance - physical or experiential.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -355,7 +355,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Five tercets (three-line stanzas) — a compact, contained form',
+      'Five tercets (three-line stanzas) - a compact, contained form',
       'Free verse with no structure',
       'Rhyming couplets',
     ],
@@ -382,7 +382,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She enjoys birdwatching',
-      'The act of observing, reflecting, and sharing — not the activity itself — creates connection between them',
+      'The act of observing, reflecting, and sharing - not the activity itself - creates connection between them',
       'She prefers thinking to doing',
       'Watching TV is special',
     ],
@@ -398,7 +398,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'One is clearly better than the other',
-      'Both are presented as valid — the physical/rural and intellectual/urban lives complement each other',
+      'Both are presented as valid - the physical/rural and intellectual/urban lives complement each other',
       'Only the rural life is valued',
       'Only the urban life is valued',
     ],
@@ -414,7 +414,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It emphasises words are unreliable',
-      'It highlights the power of language — a single "word" can transmit the essence of an experience across distance',
+      'It highlights the power of language - a single "word" can transmit the essence of an experience across distance',
       'Words are unimportant',
       'It is a cliche',
     ],
@@ -430,13 +430,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They are clearly married',
-      'Dooley deliberately leaves the nature of the relationship undefined — friends, lovers, or family — making it universal',
+      'Dooley deliberately leaves the nature of the relationship undefined - friends, lovers, or family - making it universal',
       'They are strangers',
       'They are work colleagues',
     ],
     correctIndex: 1,
     explanation:
-      'The poem never defines the relationship precisely. This ambiguity makes the poem universal — it could be about any deep connection maintained across distance.',
+      'The poem never defines the relationship precisely. This ambiguity makes the poem universal - it could be about any deep connection maintained across distance.',
     topic: 'Meaning',
     difficulty: 'grade-9',
   },
@@ -459,9 +459,9 @@ const REVISION_TOPICS = [
     summary:
       'Letters from Yorkshire explores connection across distance, the value of different lifestyles, communication, and the power of shared observation.',
     keyPoints: [
-      'Connection through letters — words bridge physical distance',
-      'Two ways of living — physical/rural vs intellectual/urban',
-      'Both are valid — what matters is observation and care',
+      'Connection through letters - words bridge physical distance',
+      'Two ways of living - physical/rural vs intellectual/urban',
+      'Both are valid - what matters is observation and care',
       'Communication sustains relationships',
     ],
   },
@@ -470,21 +470,21 @@ const REVISION_TOPICS = [
     summary:
       'Dooley uses nature imagery, rhetorical questioning, and simple, precise language to explore how words carry experience across distance.',
     keyPoints: [
-      'Nature imagery — "the first lapwings" carry seasonal beauty',
-      '"Is his life more real?" — questioning the value of different lives',
-      'Letters as lifeline — "word of it" transmits experience',
+      'Nature imagery - "the first lapwings" carry seasonal beauty',
+      '"Is his life more real?" - questioning the value of different lives',
+      'Letters as lifeline - "word of it" transmits experience',
       'Simple, precise language mirrors the clarity of a good letter',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Five compact tercets with no regular rhyme — the form mirrors the concise, meaningful nature of a letter.',
+      'Five compact tercets with no regular rhyme - the form mirrors the concise, meaningful nature of a letter.',
     keyPoints: [
-      'Tercets — compact, contained stanzas like paragraphs in a letter',
-      'No regular rhyme — natural, conversational tone',
-      'Enjambment — thoughts flow across line and stanza breaks',
-      'Present tense — the connection is ongoing and alive',
+      'Tercets - compact, contained stanzas like paragraphs in a letter',
+      'No regular rhyme - natural, conversational tone',
+      'Enjambment - thoughts flow across line and stanza breaks',
+      'Present tense - the connection is ongoing and alive',
     ],
   },
 ]
@@ -528,7 +528,7 @@ export default function LettersFromYorkshirePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Letters from Yorkshire by Maura Dooley — Analysis & Annotations"
+        name="Letters from Yorkshire by Maura Dooley - Analysis & Annotations"
         description="Line-by-line analysis of Letters from Yorkshire with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * GoogleAnalytics — server-side relay client.
+ * GoogleAnalytics - server-side relay client.
  *
  * No more gtag.js. All pageviews + events post to /api/ga4/track which
- * forwards to GA4 via the Measurement Protocol — bypasses uBlock /
+ * forwards to GA4 via the Measurement Protocol - bypasses uBlock /
  * Brave Shields / AdGuard etc. that were silently swallowing every
- * event for ~30–40 % of visitors.
+ * event for ~30-40 % of visitors.
  *
  * Privacy:
  *   - Doesn't fire unless NEXT_PUBLIC_GA4_ID is set.
@@ -26,12 +26,12 @@ import { hasAnalyticsConsent } from '@/components/cookie-consent'
 // flags applied automatically.
 /**
  * Apply the Children's Code-mandated GA4 config flags:
- *   - anonymize_ip                       — truncate visitor IP
- *   - allow_google_signals               — disable cross-device / demographics
- *   - allow_ad_personalization_signals   — disable ads personalisation
+ *   - anonymize_ip                       - truncate visitor IP
+ *   - allow_google_signals               - disable cross-device / demographics
+ *   - allow_ad_personalization_signals   - disable ads personalisation
  *
  * These three flags MUST be set for any GA4 property serving under-18
- * visitors. They are idempotent — safe to call on every consent grant.
+ * visitors. They are idempotent - safe to call on every consent grant.
  */
 function applyChildSafeGA4Config(): void {
   if (typeof window === 'undefined') return
@@ -58,13 +58,13 @@ export function GoogleAnalytics() {
     function syncConsent() {
       try {
         initGA4()
-        // Re-apply child-safe flags after every consent sync — covers the
+        // Re-apply child-safe flags after every consent sync - covers the
         // case where gtag.js was attached after our first call.
         if (hasAnalyticsConsent()) {
           applyChildSafeGA4Config()
         }
       } catch {
-        // localStorage / cookie write blocked — bail silently
+        // localStorage / cookie write blocked - bail silently
       }
     }
 
@@ -73,8 +73,8 @@ export function GoogleAnalytics() {
     // the first pageview with the cookie in place.
     syncConsent()
 
-    // When the cookie banner saves a choice, mirror it and — if newly
-    // consented — manually fire a pageview for the current page since
+    // When the cookie banner saves a choice, mirror it and - if newly
+    // consented - manually fire a pageview for the current page since
     // the route useEffect won't re-run without a navigation.
     function onConsentChange() {
       syncConsent()

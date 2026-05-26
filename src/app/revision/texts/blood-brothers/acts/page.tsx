@@ -11,11 +11,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Blood Brothers — Act-by-Act Analysis | The English Hub',
+    title: 'Blood Brothers - Act-by-Act Analysis | The English Hub',
     description:
       'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
   },
-  title: 'Blood Brothers — Act-by-Act Analysis',
+  title: 'Blood Brothers - Act-by-Act Analysis',
   description:
     'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
   alternates: {
@@ -61,7 +61,7 @@ const ACT_1: SceneBlock[] = [
       'The prologue collapses time so the audience reads every event through the lens of the ending. Examiners reward discussion of how Russell uses dramatic irony to politicise the plot.',
   },
   {
-    heading: 'Childhood — Mickey and Edward meet',
+    heading: 'Childhood - Mickey and Edward meet',
     summary:
       'At seven, Mickey and Edward meet by chance and become instant friends. They share sweets, discover they share a birthday, and prick their fingers to become "blood brothers." Russell stages their innocence to expose how arbitrary class distinctions are: the boys are identical, yet the world treats them differently.',
     quotes: [
@@ -90,7 +90,7 @@ const ACT_1: SceneBlock[] = [
   {
     heading: "Mrs Lyons's superstition & the move",
     summary:
-      'Mrs Lyons fabricates a superstition — that separated twins will die if they learn the truth — to control Mrs Johnstone. As the friendship grows, the Lyons family relocates to the countryside. Russell shows how wealth provides the power to simply move away from problems that the Johnstones cannot escape.',
+      'Mrs Lyons fabricates a superstition - that separated twins will die if they learn the truth - to control Mrs Johnstone. As the friendship grows, the Lyons family relocates to the countryside. Russell shows how wealth provides the power to simply move away from problems that the Johnstones cannot escape.',
     quotes: [
       {
         text: '"You do know what they say about twins, secretly parted, don\'t you?"',
@@ -106,15 +106,15 @@ const ACT_1: SceneBlock[] = [
       },
     ],
     examFocus:
-      'The geographical move dramatises social segregation. Examiners value analysis of how Russell uses setting — Liverpool streets versus suburban countryside — as a visual metaphor for class division.',
+      'The geographical move dramatises social segregation. Examiners value analysis of how Russell uses setting - Liverpool streets versus suburban countryside - as a visual metaphor for class division.',
   },
 ]
 
 const ACT_2: SceneBlock[] = [
   {
-    heading: 'Adolescence — Linda, Mickey and Edward',
+    heading: 'Adolescence - Linda, Mickey and Edward',
     summary:
-      'The teenagers reunite after the Johnstones are rehoused near the Lyons. Mickey, Edward and Linda form a triangle. Russell uses song montages to compress time and show how the same experiences — school, first love, growing up — produce different outcomes depending on class.',
+      'The teenagers reunite after the Johnstones are rehoused near the Lyons. Mickey, Edward and Linda form a triangle. Russell uses song montages to compress time and show how the same experiences - school, first love, growing up - produce different outcomes depending on class.',
     quotes: [
       {
         text: '"If you\'d been born here, you would have been just like him."',
@@ -133,7 +133,7 @@ const ACT_2: SceneBlock[] = [
       "The adolescence section compresses years into minutes using songs and montage. Examiners reward discussion of Russell's theatrical techniques and how structure reflects the accelerating pressure of class forces.",
   },
   {
-    heading: 'Adulthood — unemployment and collapse',
+    heading: 'Adulthood - unemployment and collapse',
     summary:
       "Mickey leaves school for a factory job, then loses it in the recession. Edward goes to university. When Sammy involves Mickey in a robbery, Mickey is imprisoned. Released depressed and dependent on medication, he is unable to reconnect with Linda or himself. Russell makes the economic context explicit: this is Thatcher's Liverpool.",
     quotes: [
@@ -160,7 +160,7 @@ const ACT_2: SceneBlock[] = [
       "Mickey's decline is Russell's strongest political argument: environment, not character, determines outcomes. Examiners expect contextual links to 1980s Liverpool, deindustrialisation and Thatcherism.",
   },
   {
-    heading: 'The climax — truth and death',
+    heading: 'The climax - truth and death',
     summary:
       "Mickey, armed and desperate, confronts Edward at the town hall. Mrs Johnstone arrives and tells both sons they are twins. The revelation destroys Mickey: everything could have been different. He accidentally fires the gun, killing Edward; the police shoot Mickey. The Narrator's prophecy is fulfilled, but Russell makes clear that the real killer is a society that assigns life chances at birth.",
     quotes: [
@@ -232,7 +232,7 @@ export default async function BloodBrothersActsPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Modern Text — Play
+              Modern Text - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />

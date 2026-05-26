@@ -1,11 +1,11 @@
 // ─── Smart-IP · POST /api/marking/run ────────────────────────────────────────
 //
 // Focus (per the suite brief):
-//   • state guard — only status 'submitted' | 'pending' may be marked; any
+//   • state guard - only status 'submitted' | 'pending' may be marked; any
 //     other status ⇒ 400 and NO persist
-//   • authorisation by source — b2c_self: owning student only; b2b_class:
+//   • authorisation by source - b2c_self: owning student only; b2b_class:
 //     verified school member, same-school enforced
-//   • the AI mark is ALWAYS a DRAFT — applyAiResult is called with
+//   • the AI mark is ALWAYS a DRAFT - applyAiResult is called with
 //     'ai_marked' (b2c) or 'teacher_review_required' (b2b); NEVER 'approved'
 //
 // All heavy collaborators are mocked. We assert on the persistence mock's
@@ -163,7 +163,7 @@ beforeEach(() => {
   process.env.ANTHROPIC_API_KEY = 'test-key'
 })
 
-describe('POST /api/marking/run — preconditions', () => {
+describe('POST /api/marking/run - preconditions', () => {
   it('415 for non-JSON content type', async () => {
     const res = await POST(makeReq({ submissionId: 'sub-1' }, false))
     expect(res.status).toBe(415)
@@ -193,7 +193,7 @@ describe('POST /api/marking/run — preconditions', () => {
   })
 })
 
-describe('POST /api/marking/run — state guard', () => {
+describe('POST /api/marking/run - state guard', () => {
   it.each(['ai_marked', 'teacher_review_required', 'approved', 'rejected', 'training_ready'])(
     "rejects status '%s' with 400 and NEVER persists",
     async (status) => {
@@ -220,7 +220,7 @@ describe('POST /api/marking/run — state guard', () => {
   })
 })
 
-describe('POST /api/marking/run — authorisation by source', () => {
+describe('POST /api/marking/run - authorisation by source', () => {
   it('b2c_self: forbids a non-owning student', async () => {
     loadedRow = baseRow({ source: 'b2c_self', student_id: 'other-student' })
     const res = await POST(makeReq())
@@ -258,7 +258,7 @@ describe('POST /api/marking/run — authorisation by source', () => {
   })
 })
 
-describe('POST /api/marking/run — AI mark is always a DRAFT', () => {
+describe('POST /api/marking/run - AI mark is always a DRAFT', () => {
   it("b2c_self ⇒ applyAiResult called with status 'ai_marked' (never 'approved')", async () => {
     loadedRow = baseRow({ source: 'b2c_self', student_id: 'student-1' })
     const res = await POST(makeReq())
@@ -292,7 +292,7 @@ describe('POST /api/marking/run — AI mark is always a DRAFT', () => {
   })
 })
 
-describe('POST /api/marking/run — model-path rejections do not persist', () => {
+describe('POST /api/marking/run - model-path rejections do not persist', () => {
   it('INVALID_SUBMISSION ⇒ 400, no persist', async () => {
     feedbackResult = { ok: false, error: { type: 'INVALID_SUBMISSION' } }
     const res = await POST(makeReq())

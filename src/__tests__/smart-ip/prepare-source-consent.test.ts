@@ -1,15 +1,15 @@
-// ─── Smart-IP · prepareTrainingRecord — SOURCE-AWARE consent gate ────────────
+// ─── Smart-IP · prepareTrainingRecord - SOURCE-AWARE consent gate ────────────
 //
 // Companion to prepare-gates.test.ts. Proves the source-aware behaviour added
 // for the paid-marker drive:
 //
-//   • source 'commissioned' / 'specimen' have NO pupil data subject — the
+//   • source 'commissioned' / 'specimen' have NO pupil data subject - the
 //     consent / student-resolution / minor checks are SKIPPED entirely and the
 //     anonymised row is still INSERTED, status flipped approved→training_ready,
 //     audit written with consentExempt:true. Prisma user.findUnique &
 //     checkMinorAIConsent are NEVER called.
 //   • source 'b2c_self' / 'b2b_class' (real pupil work) are STILL blocked
-//     without the right consent posture — byte-identical to before.
+//     without the right consent posture - byte-identical to before.
 //   • The existing 8 ordered gates are unaffected for pupil sources.
 //
 // Everything external is mocked exactly like prepare-gates.test.ts (same
@@ -163,7 +163,7 @@ beforeEach(resetAll)
 
 // ── commissioned / specimen: consent BYPASSED, row still inserted ────────────
 
-describe('Source-aware consent — commissioned / specimen bypass the gate', () => {
+describe('Source-aware consent - commissioned / specimen bypass the gate', () => {
   for (const source of ['commissioned', 'specimen'] as const) {
     it(`${source}: NO consent checks, anonymises + inserts, status flipped, consentExempt audit`, async () => {
       // No pupil → student_id null (matches the migration: nullable for these
@@ -201,7 +201,7 @@ describe('Source-aware consent — commissioned / specimen bypass the gate', () 
       const res = await run()
       expect(res).toEqual({ ok: true, trainingId: `tr-${source}` })
 
-      // Consent machinery NEVER touched — no pupil data subject.
+      // Consent machinery NEVER touched - no pupil data subject.
       expect(mockUserFindUnique).not.toHaveBeenCalled()
       expect(mockCheckMinorAIConsent).not.toHaveBeenCalled()
 
@@ -242,7 +242,7 @@ describe('Source-aware consent — commissioned / specimen bypass the gate', () 
         error: null,
       },
     }
-    // Prisma would return null if asked — assert it is never asked.
+    // Prisma would return null if asked - assert it is never asked.
     mockUserFindUnique.mockResolvedValue(null)
     tables['training_data'] = {
       select: { data: null, error: null },
@@ -298,7 +298,7 @@ describe('Source-aware consent — commissioned / specimen bypass the gate', () 
 
 // ── pupil sources STILL blocked without consent (byte-identical) ─────────────
 
-describe('Source-aware consent — pupil sources still consent-gated', () => {
+describe('Source-aware consent - pupil sources still consent-gated', () => {
   it('b2c_self blocked when aiTrainingOptIn !== true (NO training_data insert)', async () => {
     tables['marking_submissions'] = {
       select: {

@@ -18,51 +18,119 @@ interface SpellingWord {
 }
 
 const SPELLING_BANK: SpellingWord[] = [
-  // Difficulty 1 — Foundation
+  // Difficulty 1 - Foundation
   { word: 'definitely', definition: 'Without doubt; certainly', difficulty: 1 },
   { word: 'separate', definition: 'To divide or keep apart', difficulty: 1 },
   { word: 'necessary', definition: 'Required; essential', difficulty: 1 },
-  { word: 'environment', definition: 'The surroundings or conditions in which something exists', difficulty: 1 },
+  {
+    word: 'environment',
+    definition: 'The surroundings or conditions in which something exists',
+    difficulty: 1,
+  },
   { word: 'beginning', definition: 'The start or first part of something', difficulty: 1 },
   { word: 'occurred', definition: 'Happened or took place', difficulty: 1 },
   { word: 'disappoint', definition: 'To fail to meet expectations', difficulty: 1 },
-  { word: 'argument', definition: 'A reason or set of reasons given in support of an idea', difficulty: 1 },
+  {
+    word: 'argument',
+    definition: 'A reason or set of reasons given in support of an idea',
+    difficulty: 1,
+  },
   { word: 'receive', definition: 'To be given or presented with something', difficulty: 1 },
   { word: 'achieve', definition: 'To successfully reach a goal', difficulty: 1 },
   { word: 'conscience', definition: 'An inner feeling of right and wrong', difficulty: 1 },
   { word: 'privilege', definition: 'A special right or advantage', difficulty: 1 },
   { word: 'accommodate', definition: 'To provide space or lodging for', difficulty: 1 },
   { word: 'embarrass', definition: 'To cause someone to feel awkward or ashamed', difficulty: 1 },
-  // Difficulty 2 — Crossover
-  { word: 'metaphor', definition: 'A figure of speech comparing two unlike things directly', difficulty: 2 },
+  // Difficulty 2 - Crossover
+  {
+    word: 'metaphor',
+    definition: 'A figure of speech comparing two unlike things directly',
+    difficulty: 2,
+  },
   { word: 'simile', definition: 'A comparison using "like" or "as"', difficulty: 2 },
-  { word: 'allegory', definition: 'A story with a hidden moral or political meaning', difficulty: 2 },
-  { word: 'soliloquy', definition: 'A speech where a character speaks thoughts aloud alone', difficulty: 2 },
-  { word: 'juxtaposition', definition: 'Placing two things side by side for contrast', difficulty: 2 },
+  {
+    word: 'allegory',
+    definition: 'A story with a hidden moral or political meaning',
+    difficulty: 2,
+  },
+  {
+    word: 'soliloquy',
+    definition: 'A speech where a character speaks thoughts aloud alone',
+    difficulty: 2,
+  },
+  {
+    word: 'juxtaposition',
+    definition: 'Placing two things side by side for contrast',
+    difficulty: 2,
+  },
   { word: 'onomatopoeia', definition: 'Words that imitate the sound they describe', difficulty: 2 },
   { word: 'alliteration', definition: 'Repetition of initial consonant sounds', difficulty: 2 },
-  { word: 'personification', definition: 'Giving human qualities to non-human things', difficulty: 2 },
+  {
+    word: 'personification',
+    definition: 'Giving human qualities to non-human things',
+    difficulty: 2,
+  },
   { word: 'denouement', definition: 'The final resolution of a story', difficulty: 2 },
   { word: 'protagonist', definition: 'The leading character in a story', difficulty: 2 },
   { word: 'antagonist', definition: 'The character who opposes the protagonist', difficulty: 2 },
-  { word: 'foreshadowing', definition: 'Hints at what will happen later in the story', difficulty: 2 },
+  {
+    word: 'foreshadowing',
+    definition: 'Hints at what will happen later in the story',
+    difficulty: 2,
+  },
   { word: 'verisimilitude', definition: 'The appearance of being true or real', difficulty: 2 },
-  { word: 'enjambment', definition: 'A sentence running over a line break in poetry', difficulty: 2 },
-  // Difficulty 3 — Higher
+  {
+    word: 'enjambment',
+    definition: 'A sentence running over a line break in poetry',
+    difficulty: 2,
+  },
+  // Difficulty 3 - Higher
   { word: 'sycophantic', definition: 'Behaving in a servile way to gain advantage', difficulty: 3 },
-  { word: 'anachronism', definition: 'Something placed in the wrong historical period', difficulty: 3 },
-  { word: 'didacticism', definition: 'The practice of conveying moral instruction in literature', difficulty: 3 },
-  { word: 'catharsis', definition: 'The release of strong emotions through art or drama', difficulty: 3 },
+  {
+    word: 'anachronism',
+    definition: 'Something placed in the wrong historical period',
+    difficulty: 3,
+  },
+  {
+    word: 'didacticism',
+    definition: 'The practice of conveying moral instruction in literature',
+    difficulty: 3,
+  },
+  {
+    word: 'catharsis',
+    definition: 'The release of strong emotions through art or drama',
+    difficulty: 3,
+  },
   { word: 'polysyllabic', definition: 'Having many syllables', difficulty: 3 },
   { word: 'ephemeral', definition: 'Lasting for only a short time', difficulty: 3 },
-  { word: 'magnanimous', definition: 'Generous or forgiving, especially towards a rival', difficulty: 3 },
+  {
+    word: 'magnanimous',
+    definition: 'Generous or forgiving, especially towards a rival',
+    difficulty: 3,
+  },
   { word: 'melancholic', definition: 'Feeling or expressing pensive sadness', difficulty: 3 },
-  { word: 'idiosyncratic', definition: 'Peculiar or individual in behaviour or style', difficulty: 3 },
+  {
+    word: 'idiosyncratic',
+    definition: 'Peculiar or individual in behaviour or style',
+    difficulty: 3,
+  },
   { word: 'perfunctory', definition: 'Carried out without real interest or care', difficulty: 3 },
-  { word: 'acquiesce', definition: 'To accept something reluctantly without protest', difficulty: 3 },
-  { word: 'bourgeoisie', definition: 'The middle class, especially regarded as materialistic', difficulty: 3 },
+  {
+    word: 'acquiesce',
+    definition: 'To accept something reluctantly without protest',
+    difficulty: 3,
+  },
+  {
+    word: 'bourgeoisie',
+    definition: 'The middle class, especially regarded as materialistic',
+    difficulty: 3,
+  },
   { word: 'dichotomy', definition: 'A division into two contrasting things', difficulty: 3 },
-  { word: 'quintessential', definition: 'Representing the most perfect example of something', difficulty: 3 },
+  {
+    word: 'quintessential',
+    definition: 'Representing the most perfect example of something',
+    difficulty: 3,
+  },
 ]
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -177,11 +245,7 @@ export default function SpellingBeePage() {
     <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            render={<Link href="/games" />}
-          >
+          <Button variant="ghost" size="sm" render={<Link href="/games" />}>
             <ArrowLeft className="size-4 mr-1" />
             Back to Games
           </Button>
@@ -219,10 +283,14 @@ export default function SpellingBeePage() {
                         ? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10'
                         : currentWord.difficulty === 2
                           ? 'text-clay-600 border-amber-500/30 bg-amber-500/10'
-                          : 'text-red-400 border-red-500/30 bg-red-500/10'
+                          : 'text-red-400 border-red-500/30 bg-red-500/10',
                     )}
                   >
-                    {currentWord.difficulty === 1 ? 'Foundation' : currentWord.difficulty === 2 ? 'Crossover' : 'Higher'}
+                    {currentWord.difficulty === 1
+                      ? 'Foundation'
+                      : currentWord.difficulty === 2
+                        ? 'Crossover'
+                        : 'Higher'}
                   </span>
                 </div>
               </div>
@@ -256,9 +324,10 @@ export default function SpellingBeePage() {
                   className={cn(
                     'w-full rounded-lg border bg-card px-4 py-3 text-center text-lg font-medium text-foreground outline-none transition-all',
                     'focus:border-primary focus:ring-2 focus:ring-primary/20',
-                    feedback === 'correct' && 'border-emerald-500 bg-emerald-500/10 text-emerald-400',
+                    feedback === 'correct' &&
+                      'border-emerald-500 bg-emerald-500/10 text-emerald-400',
                     feedback === 'wrong' && 'border-red-500 bg-red-500/10 text-red-400',
-                    !feedback && 'border-border'
+                    !feedback && 'border-border',
                   )}
                 />
 
@@ -269,7 +338,7 @@ export default function SpellingBeePage() {
                       'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
                       feedback === 'correct'
                         ? 'text-emerald-400 bg-emerald-500/10'
-                        : 'text-red-400 bg-red-500/10'
+                        : 'text-red-400 bg-red-500/10',
                     )}
                   >
                     {feedback === 'correct' ? (

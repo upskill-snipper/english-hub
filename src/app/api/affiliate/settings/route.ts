@@ -5,14 +5,14 @@
  * row in `public.affiliate_accounts`.
  *
  * Editable fields (all optional in the request body):
- *  - full_name             — display name (2–120 chars)
- *  - payout_method         — 'bank_transfer' | 'paypal' | 'stripe_connect'
- *  - payout_email          — required when payout_method = 'paypal'
- *  - bank_account_name     — name on the BACS account
- *  - bank_sort_code        — `12-34-56` (validated; stored normalised)
- *  - bank_account_number   — exactly 8 digits
+ *  - full_name             - display name (2-120 chars)
+ *  - payout_method         - 'bank_transfer' | 'paypal' | 'stripe_connect'
+ *  - payout_email          - required when payout_method = 'paypal'
+ *  - bank_account_name     - name on the BACS account
+ *  - bank_sort_code        - `12-34-56` (validated; stored normalised)
+ *  - bank_account_number   - exactly 8 digits
  *
- * Read-only here — handled out of band:
+ * Read-only here - handled out of band:
  *  - code (referral code)  → contact support
  *  - email                 → linked to the auth user
  *  - tier / status         → managed by admin / referral counter

@@ -22,11 +22,11 @@ const GENRE_PROMPTS = GUIDED_READING_PROMPTS.nonFiction.Genre
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The recount — reading and writing guide (KS3 iLowerSecondary English)',
+    title: 'The recount - reading and writing guide (KS3 iLowerSecondary English)',
     description:
       'A KS3 iLowerSecondary English guide to the recount as both a non-fiction text type and a Section B writing form: conventions, structure analysis (RAO3), worked extracts, practice questions with model answers, and a recount-writing task.',
   },
-  title: 'The recount — reading and writing guide',
+  title: 'The recount - reading and writing guide',
   description:
     'A KS3 iLowerSecondary English guide to the recount as both a non-fiction text type and a Section B writing form: conventions, structure analysis (RAO3), worked extracts, practice questions with model answers, and a recount-writing task.',
   alternates: { canonical: PAGE_URL },
@@ -76,7 +76,7 @@ const OVERLAP: { form: string; shares: string; differs: string }[] = [
   {
     form: 'Letter',
     shares:
-      'A letter often contains a recount — "Let me tell you what happened on Saturday…" — retold in order for a named reader.',
+      'A letter often contains a recount - "Let me tell you what happened on Saturday…" - retold in order for a named reader.',
     differs:
       'A letter wraps the recount in letter conventions (greeting, sign-off) and shapes it for one specific audience, so the tone and detail are chosen for that reader.',
   },
@@ -108,7 +108,7 @@ const STRUCTURE_QUESTIONS: { stage: string; askWhenReading: string }[] = [
   {
     stage: 'Reorientation',
     askWhenReading:
-      'How does the close round the recount off — an outcome, a reflection, a return to an image from the opening?',
+      'How does the close round the recount off - an outcome, a reflection, a return to an image from the opening?',
   },
 ]
 
@@ -119,7 +119,7 @@ const PERSONAL_EXTRACT: { text: string; note: string }[] = [
   },
   {
     text: 'At first I sulked at the cold; soon afterwards, as the harbour lights slid behind us, the sulking simply stopped.',
-    note: 'Time connectives "at first" and "soon afterwards" sequence the events. The shift from "sulked" to "stopped" tracks the writer’s changing feelings — a personal recount.',
+    note: 'Time connectives "at first" and "soon afterwards" sequence the events. The shift from "sulked" to "stopped" tracks the writer’s changing feelings - a personal recount.',
   },
   {
     text: 'By the time the sun cleared the cliffs, I understood why she had never once let me sleep through this.',
@@ -133,7 +133,7 @@ const EVENT_EXTRACT: { text: string; note: string }[] = [
     note: 'Orientation in the third person: who (the team), what (county final), when (14 March), where (the track). "Having qualified" uses the past perfect for an earlier event.',
   },
   {
-    text: 'The first three legs went to plan. Then, on the final changeover, the baton slipped — and for a moment the race seemed lost.',
+    text: 'The first three legs went to plan. Then, on the final changeover, the baton slipped - and for a moment the race seemed lost.',
     note: 'Chronological order with the connective "Then". The dash and short clause slow the pace at the key event, keeping a factual recount engaging.',
   },
   {
@@ -165,7 +165,7 @@ const PRACTICE: { q: string; marks: string; model: string }[] = [
     q: 'Explain how the writer of the event extract keeps a factual recount engaging.',
     marks: '3 marks (RAO5)',
     model:
-      'The writer keeps the recount accurate — a dated event, a clear result — but selects the dropped baton as the dramatic centre. The dash and the short clause "and for a moment the race seemed lost" slow the pace at the crucial point, creating tension, so the reader stays involved even though the tone stays objective.',
+      'The writer keeps the recount accurate - a dated event, a clear result - but selects the dropped baton as the dramatic centre. The dash and the short clause "and for a moment the race seemed lost" slow the pace at the crucial point, creating tension, so the reader stays involved even though the tone stays objective.',
   },
 ]
 

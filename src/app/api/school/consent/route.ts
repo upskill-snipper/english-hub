@@ -1,5 +1,5 @@
 /**
- * Parental Consent API — GDPR-compliant consent management for students aged 14-16 (UK).
+ * Parental Consent API - GDPR-compliant consent management for students aged 14-16 (UK).
  *
  * Required database migration:
  *
@@ -56,7 +56,7 @@ function isValidEmail(email: string): boolean {
 }
 
 /**
- * Partial mask of an email for log/error lines — parent_email is PII
+ * Partial mask of an email for log/error lines - parent_email is PII
  * (safeguarding sensitive) so we never log the full address on send failures.
  * Example: "p***@e***.com"
  */
@@ -75,7 +75,7 @@ function getSiteUrl(): string {
 
 /**
  * Send the parental consent-request email. Non-fatal: a Resend/SMTP outage
- * must not break the consent flow — the DB row is the source of truth.
+ * must not break the consent flow - the DB row is the source of truth.
  * Skips silently if SMTP isn't configured.
  */
 async function sendConsentRequestEmail(args: {
@@ -85,7 +85,7 @@ async function sendConsentRequestEmail(args: {
   token: string
 }): Promise<void> {
   if (!process.env.SMTP_HOST) {
-    console.warn('[consent] SMTP_HOST not configured — skipping parental consent email')
+    console.warn('[consent] SMTP_HOST not configured - skipping parental consent email')
     return
   }
   try {
@@ -119,7 +119,7 @@ async function sendConsentDecisionEmail(args: {
   decision: 'approved' | 'denied'
 }): Promise<void> {
   if (!process.env.SMTP_HOST) {
-    console.warn('[consent] SMTP_HOST not configured — skipping decision email')
+    console.warn('[consent] SMTP_HOST not configured - skipping decision email')
     return
   }
   try {
@@ -148,7 +148,7 @@ async function sendConsentDecisionEmail(args: {
 }
 
 // ---------------------------------------------------------------------------
-// GET — Check consent status for the authenticated student
+// GET - Check consent status for the authenticated student
 // ---------------------------------------------------------------------------
 
 export async function GET(request: NextRequest) {
@@ -209,7 +209,7 @@ export async function GET(request: NextRequest) {
 }
 
 // ---------------------------------------------------------------------------
-// POST — Submit a parental consent request (student sends to parent's email)
+// POST - Submit a parental consent request (student sends to parent's email)
 // ---------------------------------------------------------------------------
 
 export async function POST(request: NextRequest) {
@@ -324,7 +324,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Failed to send consent request.' }, { status: 500 })
       }
 
-      // Fire the consent-request email (non-fatal — DB write is source of truth)
+      // Fire the consent-request email (non-fatal - DB write is source of truth)
       await sendConsentRequestEmail({
         parentEmail,
         studentName: profile.full_name ?? 'your child',
@@ -353,7 +353,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to send consent request.' }, { status: 500 })
     }
 
-    // Fire the consent-request email (non-fatal — DB write is source of truth)
+    // Fire the consent-request email (non-fatal - DB write is source of truth)
     await sendConsentRequestEmail({
       parentEmail,
       studentName: profile.full_name ?? 'your child',
@@ -372,7 +372,7 @@ export async function POST(request: NextRequest) {
 }
 
 // ---------------------------------------------------------------------------
-// PUT — Parent confirms or denies consent via token (no auth required)
+// PUT - Parent confirms or denies consent via token (no auth required)
 // ---------------------------------------------------------------------------
 
 export async function PUT(request: NextRequest) {
@@ -452,7 +452,7 @@ export async function PUT(request: NextRequest) {
     }
 
     // Fetch student + school names for the confirmation email. If either
-    // lookup fails we still send with safe fallbacks — the email is
+    // lookup fails we still send with safe fallbacks - the email is
     // notification-only and must never block the happy path.
     const [{ data: studentProfile }, { data: school }] = await Promise.all([
       admin.from('profiles').select('full_name').eq('id', consent.student_user_id).single(),

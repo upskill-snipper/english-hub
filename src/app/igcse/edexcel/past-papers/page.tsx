@@ -19,7 +19,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE Literature Past Papers — The English Hub',
+    title: 'Edexcel IGCSE Literature Past Papers - The English Hub',
     description:
       'How to find, download and practise with Pearson Edexcel IGCSE English Literature past papers. Study tips, timing advice and mark scheme strategy.',
   },
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
 
 const officialSources = [
   {
-    name: 'Pearson Qualifications — Past papers and mark schemes',
+    name: 'Pearson Qualifications - Past papers and mark schemes',
     href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
       'The official Edexcel site hosts question papers, mark schemes and examiner reports for every series since the 2016 specification launch.',
   },
   {
-    name: 'Pearson Qualifications — Specification and sample assessment',
+    name: 'Pearson Qualifications - Specification and sample assessment',
     href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
       'Sample assessment materials (SAMs), the full specification document and the poetry anthology are all available as free downloads.',
@@ -140,7 +140,7 @@ export default async function EdexcelPastPapersPage() {
         <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
         <p className="text-body-sm text-muted-foreground">
           We do not host Edexcel past papers on The English Hub. Pearson publishes all question
-          papers, mark schemes and examiner reports for free on their official site — always use
+          papers, mark schemes and examiner reports for free on their official site - always use
           those to guarantee the latest, unedited versions.
         </p>
       </section>
@@ -231,7 +231,7 @@ export default async function EdexcelPastPapersPage() {
               1
             </span>
             <span>
-              <strong className="text-foreground">0–5 min:</strong> Read the question carefully.
+              <strong className="text-foreground">0-5 min:</strong> Read the question carefully.
               Annotate key command words and the focus of the task.
             </span>
           </li>
@@ -240,7 +240,7 @@ export default async function EdexcelPastPapersPage() {
               2
             </span>
             <span>
-              <strong className="text-foreground">5–10 min:</strong> Brainstorm a thesis and four or
+              <strong className="text-foreground">5-10 min:</strong> Brainstorm a thesis and four or
               five analytical paragraphs. Jot down quotations and contextual points you plan to use.
             </span>
           </li>
@@ -249,7 +249,7 @@ export default async function EdexcelPastPapersPage() {
               3
             </span>
             <span>
-              <strong className="text-foreground">10–55 min:</strong> Write the response in full
+              <strong className="text-foreground">10-55 min:</strong> Write the response in full
               exam conditions. Phone on airplane mode, no notes, no text.
             </span>
           </li>
@@ -258,7 +258,7 @@ export default async function EdexcelPastPapersPage() {
               4
             </span>
             <span>
-              <strong className="text-foreground">55–75 min:</strong> Mark against the published
+              <strong className="text-foreground">55-75 min:</strong> Mark against the published
               mark scheme and examiner report. Tag every paragraph for understanding, language
               analysis, context, and comparison.
             </span>
@@ -268,7 +268,7 @@ export default async function EdexcelPastPapersPage() {
               5
             </span>
             <span>
-              <strong className="text-foreground">75–90 min:</strong> Write a short improvement note
+              <strong className="text-foreground">75-90 min:</strong> Write a short improvement note
               listing the two changes that would have moved the response up a band.
             </span>
           </li>

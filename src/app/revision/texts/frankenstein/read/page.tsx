@@ -16,22 +16,22 @@ const frankensteinData: TextData = {
     // ── Section 1: Letters (Walton's narrative frame) ──────────────────────
     {
       id: 'letters',
-      title: 'Letters I-IV: Walton\'s Narrative Frame',
-      content: `Letter I. To Mrs. Saville, England. St. Petersburgh, Dec. 11th, 17—.
+      title: "Letters I-IV: Walton's Narrative Frame",
+      content: `Letter I. To Mrs. Saville, England. St. Petersburgh, Dec. 11th, 17-.
 
 You will rejoice to hear that no disaster has accompanied the commencement of an enterprise which you have regarded with such evil forebodings. I arrived here yesterday, and my first task is to assure my dear sister of my welfare and increasing confidence in the success of my undertaking.
 
-I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight. Do you understand this feeling? This breeze, which has travelled from the regions towards which I am advancing, gives me a foretaste of those icy climes. Inspirited by this wind of promise, my daydreams become more fervent and vivid. I try in vain to be persuaded that the pole is the seat of frost and desolation; it ever presents itself to my imagination as the region of beauty and delight. There, Margaret, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour. There—for with your leave, my sister, I will put some trust in preceding navigators—there snow and frost are banished; and, sailing over a calm sea, we may be wafted to a land surpassing in wonders and in beauty every region hitherto discovered on the habitable globe.
+I am already far north of London, and as I walk in the streets of Petersburgh, I feel a cold northern breeze play upon my cheeks, which braces my nerves and fills me with delight. Do you understand this feeling? This breeze, which has travelled from the regions towards which I am advancing, gives me a foretaste of those icy climes. Inspirited by this wind of promise, my daydreams become more fervent and vivid. I try in vain to be persuaded that the pole is the seat of frost and desolation; it ever presents itself to my imagination as the region of beauty and delight. There, Margaret, the sun is for ever visible, its broad disk just skirting the horizon and diffusing a perpetual splendour. There-for with your leave, my sister, I will put some trust in preceding navigators-there snow and frost are banished; and, sailing over a calm sea, we may be wafted to a land surpassing in wonders and in beauty every region hitherto discovered on the habitable globe.
 
 What may not be expected in a country of eternal light? I may there discover the wondrous power which attracts the needle and may regulate a thousand celestial observations that require only this voyage to render their seeming eccentricities consistent for ever. I shall satiate my ardent curiosity with the sight of a part of the world never before visited, and may tread a land never before imprinted by the foot of man. These are my enticements, and they are sufficient to conquer all fear of danger or death and to induce me to commence this laborious voyage with the joy a child feels when he embarks in a little boat, with his holiday mates, on an expedition of discovery up his native river.
 
 But supposing all these conjectures to be false, you cannot contest the inestimable benefit which I shall confer on all mankind, to the last generation, by discovering a passage near the pole to those countries, to reach which at present so many months are requisite; or by ascertaining the secret of the magnet, which, if at all possible, can only be effected by an undertaking such as mine.
 
-These reflections have dispelled the agitation with which I began my letter, and I feel my heart glow with an enthusiasm which elevates me to heaven, for nothing contributes so much to tranquillise the mind as a steady purpose—a point on which the soul may fix its intellectual eye.
+These reflections have dispelled the agitation with which I began my letter, and I feel my heart glow with an enthusiasm which elevates me to heaven, for nothing contributes so much to tranquillise the mind as a steady purpose-a point on which the soul may fix its intellectual eye.
 
 I have no friend, Margaret: when I am glowing with the enthusiasm of success, there will be none to participate my joy; if I am assailed by disappointment, no one will endeavour to sustain me in dejection. I shall commit my thoughts to paper, it is true; but that is a poor medium for the communication of feeling. I desire the company of a man who could sympathise with me, whose eyes would reply to mine. You may deem me romantic, my dear sister, but I bitterly feel the want of a friend.
 
-Letter IV. August 5th, 17—.
+Letter IV. August 5th, 17-.
 
 So strange an accident has happened to us that I cannot forbear recording it, although it is very probable that you will see me before these papers can come into your possession.
 
@@ -50,32 +50,32 @@ Upon hearing this he appeared satisfied and consented to come on board. Good God
         {
           type: 'theme',
           text: 'no disaster has accompanied the commencement of an enterprise which you have regarded with such evil forebodings',
-          note: 'Dramatic irony: Walton\'s confidence foreshadows the catastrophe to come. The reader knows this optimism is tragically misplaced.'
+          note: "Dramatic irony: Walton's confidence foreshadows the catastrophe to come. The reader knows this optimism is tragically misplaced.",
         },
         {
           type: 'character',
           text: 'I have no friend, Margaret',
-          note: 'Walton\'s loneliness mirrors both Victor\'s self-imposed isolation and the Creature\'s enforced solitude. All three narrators suffer from lack of companionship.'
+          note: "Walton's loneliness mirrors both Victor's self-imposed isolation and the Creature's enforced solitude. All three narrators suffer from lack of companionship.",
         },
         {
           type: 'language',
           text: 'the pole is the seat of frost and desolation; it ever presents itself to my imagination as the region of beauty and delight',
-          note: 'Romantic sublime: Walton reimagines danger as beauty, reflecting the Romantic fascination with extreme landscapes and the power of imagination over reality.'
+          note: 'Romantic sublime: Walton reimagines danger as beauty, reflecting the Romantic fascination with extreme landscapes and the power of imagination over reality.',
         },
         {
           type: 'context',
           text: 'discovering a passage near the pole',
-          note: 'Alludes to the real quest for the Northwest Passage that obsessed 18th- and 19th-century explorers. Shelley links scientific exploration to dangerous ambition.'
+          note: 'Alludes to the real quest for the Northwest Passage that obsessed 18th- and 19th-century explorers. Shelley links scientific exploration to dangerous ambition.',
         },
         {
           type: 'quote',
           text: 'nothing contributes so much to tranquillise the mind as a steady purpose',
-          note: 'Key quote: Walton echoes Victor\'s obsessive single-mindedness. Shelley suggests that "steady purpose" can be self-destructive when it becomes fixation.'
+          note: 'Key quote: Walton echoes Victor\'s obsessive single-mindedness. Shelley suggests that "steady purpose" can be self-destructive when it becomes fixation.',
         },
         {
           type: 'theme',
           text: 'a being which had the shape of a man, but apparently of gigantic stature',
-          note: 'The Creature is introduced before Victor, seen at a distance as a mysterious giant. Shelley builds suspense by withholding identity.'
+          note: 'The Creature is introduced before Victor, seen at a distance as a mysterious giant. Shelley builds suspense by withholding identity.',
         },
       ],
     },
@@ -106,49 +106,49 @@ How can I describe my emotions at this catastrophe, or how delineate the wretch 
 
 The different accidents of life are not so changeable as the feelings of human nature. I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body. For this I had deprived myself of rest and health. I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart. Unable to endure the aspect of the being I had created, I rushed out of the room and continued a long time traversing my bedchamber, unable to compose my mind to sleep.
 
-I slept, indeed, but I was disturbed by the wildest dreams. I thought I saw Elizabeth, in the bloom of health, walking in the streets of Ingolstadt. Delighted and surprised, I embraced her, but as I imprinted the first kiss on her lips, they became livid with the hue of death; her features appeared to change, and I thought that I held the corpse of my dead mother in my arms; a shroud enveloped her form, and I saw the grave-worms crawling in the folds of the flannel. I started from my sleep with horror; a cold dew covered my forehead, my teeth chattered, and every limb became convulsed; when, by the dim and yellow light of the moon, as it forced its way through the window shutters, I beheld the wretch—the miserable monster whom I had created. He held up the curtain of the bed; and his eyes, if eyes they may be called, were fixed on me. His jaws opened, and he muttered some inarticulate sounds, while a grin wrinkled his cheeks. He might have spoken, but I did not hear; one hand was stretched out, seemingly to detain me, but I escaped and rushed downstairs.
+I slept, indeed, but I was disturbed by the wildest dreams. I thought I saw Elizabeth, in the bloom of health, walking in the streets of Ingolstadt. Delighted and surprised, I embraced her, but as I imprinted the first kiss on her lips, they became livid with the hue of death; her features appeared to change, and I thought that I held the corpse of my dead mother in my arms; a shroud enveloped her form, and I saw the grave-worms crawling in the folds of the flannel. I started from my sleep with horror; a cold dew covered my forehead, my teeth chattered, and every limb became convulsed; when, by the dim and yellow light of the moon, as it forced its way through the window shutters, I beheld the wretch-the miserable monster whom I had created. He held up the curtain of the bed; and his eyes, if eyes they may be called, were fixed on me. His jaws opened, and he muttered some inarticulate sounds, while a grin wrinkled his cheeks. He might have spoken, but I did not hear; one hand was stretched out, seemingly to detain me, but I escaped and rushed downstairs.
 
 Oh! No mortal could support the horror of that countenance. A mummy again endued with animation could not be so hideous as that wretch. I had gazed on him while unfinished; he was ugly then, but when those muscles and joints were rendered capable of motion, it became a thing such as even Dante could not have conceived.`,
       annotations: [
         {
           type: 'quote',
           text: 'Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge',
-          note: 'Victor directly warns Walton. This makes the entire narrative a cautionary tale — the embedded narrative structure gives Victor\'s story moral weight.'
+          note: "Victor directly warns Walton. This makes the entire narrative a cautionary tale - the embedded narrative structure gives Victor's story moral weight.",
         },
         {
           type: 'language',
           text: 'my workshop of filthy creation',
-          note: '"Filthy" suggests both physical disgust and moral corruption. The phrase inverts the divine act of creation — God\'s work is holy; Victor\'s is unclean.'
+          note: '"Filthy" suggests both physical disgust and moral corruption. The phrase inverts the divine act of creation - God\'s work is holy; Victor\'s is unclean.',
         },
         {
           type: 'theme',
           text: 'I seemed to have lost all soul or sensation but for this one pursuit',
-          note: 'Victor\'s obsessive isolation from family, friends, and nature mirrors the Creature\'s later enforced isolation. Both are cut off from human connection.'
+          note: "Victor's obsessive isolation from family, friends, and nature mirrors the Creature's later enforced isolation. Both are cut off from human connection.",
         },
         {
           type: 'language',
           text: 'It was on a dreary night of November',
-          note: 'Gothic atmosphere: darkness, rain, a dying candle. Shelley uses pathetic fallacy to signal that this act of creation is unnatural and doomed.'
+          note: 'Gothic atmosphere: darkness, rain, a dying candle. Shelley uses pathetic fallacy to signal that this act of creation is unnatural and doomed.',
         },
         {
           type: 'quote',
-          text: 'I beheld the wretch—the miserable monster whom I had created',
-          note: 'Victor denies the Creature humanity instantly. "Wretch" and "monster" are labels that justify his abandonment. The Creature\'s outstretched hand suggests he wants connection, not harm.'
+          text: 'I beheld the wretch-the miserable monster whom I had created',
+          note: 'Victor denies the Creature humanity instantly. "Wretch" and "monster" are labels that justify his abandonment. The Creature\'s outstretched hand suggests he wants connection, not harm.',
         },
         {
           type: 'character',
           text: 'I thought I saw Elizabeth, in the bloom of health, walking in the streets of Ingolstadt',
-          note: 'The dream links creation with death: Elizabeth transforms into Victor\'s dead mother. Shelley foreshadows Elizabeth\'s murder and suggests Victor\'s obsession corrupts love itself.'
+          note: "The dream links creation with death: Elizabeth transforms into Victor's dead mother. Shelley foreshadows Elizabeth's murder and suggests Victor's obsession corrupts love itself.",
         },
         {
           type: 'context',
           text: 'I might infuse a spark of being into the lifeless thing',
-          note: 'Alludes to galvanism — Luigi Galvani\'s experiments making dead frogs\' legs twitch with electricity. Contemporary readers would have recognised this as cutting-edge science.'
+          note: "Alludes to galvanism - Luigi Galvani's experiments making dead frogs' legs twitch with electricity. Contemporary readers would have recognised this as cutting-edge science.",
         },
         {
           type: 'theme',
           text: 'the beauty of the dream vanished, and breathless horror and disgust filled my heart',
-          note: 'The gap between ambition and reality. Victor\'s horror is not at what the Creature does but at what it looks like — a shallow, appearance-based rejection that Shelley critiques.'
+          note: "The gap between ambition and reality. Victor's horror is not at what the Creature does but at what it looks like - a shallow, appearance-based rejection that Shelley critiques.",
         },
       ],
     },
@@ -178,32 +178,32 @@ His tale occupied the whole day, and I heard it, as may well be supposed, withou
         {
           type: 'quote',
           text: 'I ought to be thy Adam, but I am rather the fallen angel',
-          note: 'The Creature references Milton\'s Paradise Lost, comparing himself to both Adam (who deserved love) and Satan (who was cast out). This is one of the most important quotes in the novel.'
+          note: "The Creature references Milton's Paradise Lost, comparing himself to both Adam (who deserved love) and Satan (who was cast out). This is one of the most important quotes in the novel.",
         },
         {
           type: 'quote',
           text: 'I was benevolent and good; misery made me a fiend',
-          note: 'The novel\'s central nature-vs-nurture argument in one sentence. The Creature was born innocent; society\'s cruelty made him violent.'
+          note: "The novel's central nature-vs-nurture argument in one sentence. The Creature was born innocent; society's cruelty made him violent.",
         },
         {
           type: 'language',
           text: 'the solemn silence of this glorious presence-chamber of imperial nature',
-          note: 'The Romantic sublime: nature as a cathedral ("presence-chamber") that dwarfs humanity. Mont Blanc was a key Romantic landscape — Percy Shelley wrote a poem about it the same year.'
+          note: 'The Romantic sublime: nature as a cathedral ("presence-chamber") that dwarfs humanity. Mont Blanc was a key Romantic landscape - Percy Shelley wrote a poem about it the same year.',
         },
         {
           type: 'theme',
           text: 'I felt what the duties of a creator towards his creature were',
-          note: 'Victor briefly acknowledges his parental responsibility — but this insight is fleeting. He will ultimately refuse to honour it, with catastrophic consequences.'
+          note: 'Victor briefly acknowledges his parental responsibility - but this insight is fleeting. He will ultimately refuse to honour it, with catastrophic consequences.',
         },
         {
           type: 'character',
           text: 'Devil',
-          note: 'Victor calls the Creature "Devil," "vile insect," and "daemon" — all dehumanising labels. The Creature\'s eloquent, rational speech contrasts sharply with Victor\'s emotional abuse.'
+          note: 'Victor calls the Creature "Devil," "vile insect," and "daemon" - all dehumanising labels. The Creature\'s eloquent, rational speech contrasts sharply with Victor\'s emotional abuse.',
         },
         {
           type: 'context',
           text: 'The desert mountains and dreary glaciers are my refuge',
-          note: 'The Creature is exiled to extreme landscapes that mirror his exclusion from society. The Arctic frame and Alpine setting both symbolise isolation and the limits of human endurance.'
+          note: 'The Creature is exiled to extreme landscapes that mirror his exclusion from society. The Arctic frame and Alpine setting both symbolise isolation and the limits of human endurance.',
         },
       ],
     },
@@ -211,7 +211,7 @@ His tale occupied the whole day, and I heard it, as may well be supposed, withou
     // ── Section 4: Chapters 11-12 (Creature's story, De Lacey family) ────
     {
       id: 'ch11-12',
-      title: 'Chapters 11-12: The Creature\'s Story & the De Lacey Family',
+      title: "Chapters 11-12: The Creature's Story & the De Lacey Family",
       content: `Chapter 11.
 
 "It is with considerable difficulty that I remember the original era of my being; all the events of that period appear confused and indistinct. A strange multiplicity of sensations seized me, and I saw, felt, heard, and smelt at the same time; and it was, indeed, a long time before I learned to distinguish between the operations of my various senses. By degrees, I remember, a stronger light pressed upon my nerves, so that I was obliged to shut my eyes. Darkness then came over me and troubled me, but hardly had I felt this when, by opening my eyes, as I now suppose, the light poured in upon me again.
@@ -249,32 +249,32 @@ Chapter 12.
         {
           type: 'theme',
           text: 'I was a poor, helpless, miserable wretch; I knew, and could distinguish, nothing; but feeling pain invade me on all sides, I sat down and wept',
-          note: 'The Creature\'s birth parallels a newborn\'s experience — helpless, overwhelmed by sensation. Shelley draws on Locke\'s tabula rasa (blank slate) philosophy: the Creature begins with no knowledge, no language, no morality.'
+          note: "The Creature's birth parallels a newborn's experience - helpless, overwhelmed by sensation. Shelley draws on Locke's tabula rasa (blank slate) philosophy: the Creature begins with no knowledge, no language, no morality.",
         },
         {
           type: 'language',
           text: 'I thrust my hand into the live embers, but quickly drew it out again with a cry of pain. How strange, I thought, that the same cause should produce such opposite effects',
-          note: 'The fire is symbolic: knowledge (like Prometheus\'s stolen fire) can both warm and burn. This mirrors the novel\'s central argument about science and discovery.'
+          note: "The fire is symbolic: knowledge (like Prometheus's stolen fire) can both warm and burn. This mirrors the novel's central argument about science and discovery.",
         },
         {
           type: 'character',
           text: 'the gentle manners of these people',
-          note: 'The De Lacey family represents the ideal domestic harmony that both Victor and the Creature lack. Their kindness teaches the Creature virtue, making his later rejection even more devastating.'
+          note: 'The De Lacey family represents the ideal domestic harmony that both Victor and the Creature lack. Their kindness teaches the Creature virtue, making his later rejection even more devastating.',
         },
         {
           type: 'theme',
           text: 'I had been accustomed, during the night, to steal a part of their store for my own consumption, but when I found that in doing this I inflicted pain on the cottagers, I abstained',
-          note: 'The Creature develops empathy and moral reasoning through observation — a powerful demonstration of nature-versus-nurture. He chooses to sacrifice his own comfort for others.'
+          note: 'The Creature develops empathy and moral reasoning through observation - a powerful demonstration of nature-versus-nurture. He chooses to sacrifice his own comfort for others.',
         },
         {
           type: 'quote',
           text: 'a godlike science',
-          note: 'Language as divine power. The Creature\'s desire to learn language reflects his desire for human connection. Ironically, his eloquence later makes his suffering more articulate but does not prevent his rejection.'
+          note: "Language as divine power. The Creature's desire to learn language reflects his desire for human connection. Ironically, his eloquence later makes his suffering more articulate but does not prevent his rejection.",
         },
         {
           type: 'context',
           text: 'the old man, whom I soon perceived to be blind',
-          note: 'De Lacey\'s blindness is symbolically important: he is the only character who judges the Creature without seeing him. Their brief conversation is the closest the Creature comes to acceptance.'
+          note: "De Lacey's blindness is symbolically important: he is the only character who judges the Creature without seeing him. Their brief conversation is the closest the Creature comes to acceptance.",
         },
       ],
     },
@@ -313,9 +313,9 @@ Chapter 16.
 
 "'Boy, you will never see your father again; you must come with me.'
 
-"'Hideous monster! Let me go. My papa is a syndic—he is M. Frankenstein—he will punish you. You dare not keep me.'
+"'Hideous monster! Let me go. My papa is a syndic-he is M. Frankenstein-he will punish you. You dare not keep me.'
 
-"'Frankenstein! you belong then to my enemy—to him towards whom I have sworn eternal revenge; you shall be my first victim.'
+"'Frankenstein! you belong then to my enemy-to him towards whom I have sworn eternal revenge; you shall be my first victim.'
 
 "The child still struggled and loaded me with epithets which carried despair to my heart; I grasped his throat to silence him, and in a moment he lay dead at my feet.
 
@@ -327,38 +327,38 @@ Chapter 16.
       annotations: [
         {
           type: 'context',
-          text: 'Paradise Lost, a volume of Plutarch\'s Lives, and the Sorrows of Werter',
-          note: 'These three books represent foundational texts: Milton on creation and rebellion, Plutarch on heroism and civic virtue, Goethe on emotional suffering. They shape the Creature\'s intellectual and moral development.'
+          text: "Paradise Lost, a volume of Plutarch's Lives, and the Sorrows of Werter",
+          note: "These three books represent foundational texts: Milton on creation and rebellion, Plutarch on heroism and civic virtue, Goethe on emotional suffering. They shape the Creature's intellectual and moral development.",
         },
         {
           type: 'quote',
           text: 'Many times I considered Satan as the fitter emblem of my condition',
-          note: 'The Creature identifies with Milton\'s Satan — not out of evil, but out of exile. Like Satan, he was cast out by his creator and denied belonging. Shelley makes the reader question who the real villain is.'
+          note: "The Creature identifies with Milton's Satan - not out of evil, but out of exile. Like Satan, he was cast out by his creator and denied belonging. Shelley makes the reader question who the real villain is.",
         },
         {
           type: 'language',
           text: 'Hateful day when I received life!',
-          note: 'Echoes Job 3:3 ("Let the day perish wherein I was born") and Satan\'s lament in Paradise Lost. The Creature curses his own existence — the ultimate indictment of his creator\'s irresponsibility.'
+          note: 'Echoes Job 3:3 ("Let the day perish wherein I was born") and Satan\'s lament in Paradise Lost. The Creature curses his own existence - the ultimate indictment of his creator\'s irresponsibility.',
         },
         {
           type: 'theme',
           text: 'My protectors had departed and had broken the only link that held me to the world',
-          note: 'The De Lacey family\'s rejection is the turning point. The Creature was benevolent while he had hope of acceptance; their flight destroys that hope and triggers his descent into violence.'
+          note: "The De Lacey family's rejection is the turning point. The Creature was benevolent while he had hope of acceptance; their flight destroys that hope and triggers his descent into violence.",
         },
         {
           type: 'character',
           text: 'this little creature was unprejudiced and had lived too short a time to have imbibed a horror of deformity',
-          note: 'The Creature\'s naive hope that a child might accept him reveals his desperate longing for connection. William\'s immediate revulsion — learned prejudice — destroys this last hope.'
+          note: "The Creature's naive hope that a child might accept him reveals his desperate longing for connection. William's immediate revulsion - learned prejudice - destroys this last hope.",
         },
         {
           type: 'quote',
           text: 'I am malicious because I am miserable',
-          note: 'One of the novel\'s most important lines. The Creature articulates a clear causal chain: society made him suffer, suffering made him cruel. This is Shelley\'s Rousseauian argument that humanity corrupts the naturally good.'
+          note: "One of the novel's most important lines. The Creature articulates a clear causal chain: society made him suffer, suffering made him cruel. This is Shelley's Rousseauian argument that humanity corrupts the naturally good.",
         },
         {
           type: 'theme',
           text: 'I too can create desolation',
-          note: 'A dark parody of Victor\'s act of creation. Victor created life irresponsibly; the Creature creates death deliberately. Both acts stem from the same source: unchecked power without moral guidance.'
+          note: "A dark parody of Victor's act of creation. Victor created life irresponsibly; the Creature creates death deliberately. Both acts stem from the same source: unchecked power without moral guidance.",
         },
       ],
     },
@@ -391,39 +391,39 @@ Presently I heard the sound of footsteps along the passage; the door opened, and
 
 "The hour of my irresolution is past, and the period of your power is arrived. Your threats cannot move me to do an act of wickedness; but they confirm me in a determination of not creating you a companion in vice. Shall I, in cool blood, set loose upon the earth a daemon whose delight is in death and wretchedness? Begone! I am firm, and your words will only exasperate my rage."
 
-The monster saw my determination in my face and gnashed his teeth in the impotence of anger. "Shall each man," cried he, "find a wife for his bosom, and each beast have his mate, and I be alone? I had feelings of affection, and they were requited by detestation and scorn. Man! You may hate, but beware! Your hours will pass in dread and misery, and soon the bolt will fall which must ravish from you your happiness for ever. Are you to be happy while I grovel in the intensity of my wretchedness? You can blast my other passions, but revenge remains—revenge, henceforth dearer than light or food! I may die, but first you, my tyrant and tormentor, shall curse the sun that gazes on your misery. Beware, for I am fearless, and therefore powerful. I will watch with the wiliness of a snake, that I may sting with its venom. Man, you shall repent of the injuries you inflict."
+The monster saw my determination in my face and gnashed his teeth in the impotence of anger. "Shall each man," cried he, "find a wife for his bosom, and each beast have his mate, and I be alone? I had feelings of affection, and they were requited by detestation and scorn. Man! You may hate, but beware! Your hours will pass in dread and misery, and soon the bolt will fall which must ravish from you your happiness for ever. Are you to be happy while I grovel in the intensity of my wretchedness? You can blast my other passions, but revenge remains-revenge, henceforth dearer than light or food! I may die, but first you, my tyrant and tormentor, shall curse the sun that gazes on your misery. Beware, for I am fearless, and therefore powerful. I will watch with the wiliness of a snake, that I may sting with its venom. Man, you shall repent of the injuries you inflict."
 
 "I shall be with you on your wedding night."`,
       annotations: [
         {
           type: 'theme',
           text: 'a race of devils would be propagated upon the earth',
-          note: 'Victor\'s fear of reproduction reveals anxieties about female autonomy and uncontrollable creation. The female creature is destroyed because she might have independent will — a profoundly gendered act of control.'
+          note: "Victor's fear of reproduction reveals anxieties about female autonomy and uncontrollable creation. The female creature is destroyed because she might have independent will - a profoundly gendered act of control.",
         },
         {
           type: 'quote',
           text: 'Beware, for I am fearless, and therefore powerful',
-          note: 'The Creature\'s most chilling threat. Having nothing left to lose, he is beyond intimidation. Power through desperation — Shelley shows that the truly dangerous being is one stripped of all hope.'
+          note: "The Creature's most chilling threat. Having nothing left to lose, he is beyond intimidation. Power through desperation - Shelley shows that the truly dangerous being is one stripped of all hope.",
         },
         {
           type: 'quote',
           text: 'I shall be with you on your wedding night',
-          note: 'The most important piece of dramatic irony in the novel. Victor interprets this as a threat to himself; the reader suspects it means Elizabeth. Victor\'s self-absorption blinds him to the real danger.'
+          note: "The most important piece of dramatic irony in the novel. Victor interprets this as a threat to himself; the reader suspects it means Elizabeth. Victor's self-absorption blinds him to the real danger.",
         },
         {
           type: 'language',
           text: 'trembling with passion, tore to pieces the thing on which I was engaged',
-          note: 'Victor "tears to pieces" the female creature — violent, destructive language that mirrors the Creature\'s murders. Victor\'s act of destruction is as visceral as any killing in the novel.'
+          note: 'Victor "tears to pieces" the female creature - violent, destructive language that mirrors the Creature\'s murders. Victor\'s act of destruction is as visceral as any killing in the novel.',
         },
         {
           type: 'character',
           text: 'you are my creator, but I am your master; obey',
-          note: 'A complete inversion of the creator-creation hierarchy. The Creature claims authority over Victor, just as Victor once played God. The power dynamic has reversed entirely.'
+          note: 'A complete inversion of the creator-creation hierarchy. The Creature claims authority over Victor, just as Victor once played God. The power dynamic has reversed entirely.',
         },
         {
           type: 'theme',
           text: 'Shall each man find a wife for his bosom, and each beast have his mate, and I be alone',
-          note: 'The Creature\'s plea echoes the loneliness that pervades the novel. He asks only for what every living thing has — companionship — and is denied even this basic need.'
+          note: "The Creature's plea echoes the loneliness that pervades the novel. He asks only for what every living thing has - companionship - and is denied even this basic need.",
         },
       ],
     },
@@ -431,7 +431,7 @@ The monster saw my determination in my face and gnashed his teeth in the impoten
     // ── Section 7: Chapter 23 (Elizabeth's death) ─────────────────────────
     {
       id: 'ch23',
-      title: 'Chapter 23: Elizabeth\'s Death',
+      title: "Chapter 23: Elizabeth's Death",
       content: `It had been agreed that immediately after our union we should proceed to Villa Lavenza and spend our first days of happiness beside the beautiful lake near which it stood.
 
 In the mean time I took every precaution to defend my person in case the fiend should openly attack me. I carried pistols and a dagger constantly about me and was ever on the watch to prevent artifice, and by these means gained a greater degree of tranquillity. Indeed, as the period approached, the threat appeared more as a delusion, not to be regarded as worthy to disturb my peace, while the happiness I hoped for in my marriage wore a greater appearance of certainty as the day fixed for its solemnisation drew nearer and the congratulations and joy of my father and Elizabeth increased.
@@ -446,7 +446,7 @@ The wind, which had hitherto carried us along with amazing rapidity, sank at sun
 
 She left me, and I continued some time walking up and down the passages of the house and inspecting every corner that might afford a retreat to my adversary. But I discovered no trace of him and was beginning to conjecture that some fortunate chance had intervened to prevent the execution of his menaces when suddenly I heard a shrill and dreadful scream. It came from the room into which Elizabeth had retired. As I heard it, the whole truth rushed into my mind, my arms dropped, the motion of every muscle and fibre was suspended; I could feel the blood trickling in my veins and tingling in the extremities of my limbs. This state lasted but for an instant; the scream was repeated, and I rushed into the room.
 
-Great God! Why did I not then expire! Why am I here to relate the destruction of the best hope and the purest creature of earth? She was there, lifeless and inanimate, thrown across the bed, her head hanging down and her pale and distorted features half covered by her hair. Everywhere I turn I see the same figure—her bloodless arms and relaxed form flung by the murderer on its bridal bier. Could I behold this and live? Alas! Life is obstinate and clings closest where it is most hated. For a moment only did I lose my senses; I fell senseless on the ground.
+Great God! Why did I not then expire! Why am I here to relate the destruction of the best hope and the purest creature of earth? She was there, lifeless and inanimate, thrown across the bed, her head hanging down and her pale and distorted features half covered by her hair. Everywhere I turn I see the same figure-her bloodless arms and relaxed form flung by the murderer on its bridal bier. Could I behold this and live? Alas! Life is obstinate and clings closest where it is most hated. For a moment only did I lose my senses; I fell senseless on the ground.
 
 When I recovered I found myself surrounded by the people of the inn; their countenances expressed a breathless terror, but the horror of others appeared only as a mockery, a shadow of the feelings that oppressed me. I escaped from them to the room where lay the body of Elizabeth, my love, my wife, so lately living, so dear, so worthy. She had been moved from the posture in which I had first beheld her, and now, as she lay, her head upon her arm and a handkerchief thrown across her face and neck, I might have supposed her asleep. I rushed towards her and embraced her with ardour, but the deadly languor and coldness of the limbs told me that what I now held in my arms had ceased to be the Elizabeth whom I had loved and cherished. The murderous mark of the fiend's grasp was on her neck, and the breath had ceased to issue from her lips.
 
@@ -459,32 +459,32 @@ My father could not live under the horrors that were accumulated around him; the
         {
           type: 'theme',
           text: 'I carried pistols and a dagger constantly about me',
-          note: 'Victor arms himself to protect himself, not Elizabeth. His self-absorption is fatal: he interprets "I shall be with you on your wedding night" as a threat to his own life, never considering Elizabeth as the target.'
+          note: 'Victor arms himself to protect himself, not Elizabeth. His self-absorption is fatal: he interprets "I shall be with you on your wedding night" as a threat to his own life, never considering Elizabeth as the target.',
         },
         {
           type: 'language',
           text: 'the whole truth rushed into my mind, my arms dropped, the motion of every muscle and fibre was suspended',
-          note: 'Shelley renders Victor\'s horror physically: paralysis, blood tingling, sensory suspension. The body understands what the mind refused to anticipate.'
+          note: "Shelley renders Victor's horror physically: paralysis, blood tingling, sensory suspension. The body understands what the mind refused to anticipate.",
         },
         {
           type: 'quote',
           text: 'She was there, lifeless and inanimate, thrown across the bed, her head hanging down and her pale and distorted features half covered by her hair',
-          note: 'Elizabeth\'s death scene echoes Gothic art — the pale female victim, the bridal bed becoming a deathbed. Shelley critiques how women are sacrificed to male ambition and conflict.'
+          note: "Elizabeth's death scene echoes Gothic art - the pale female victim, the bridal bed becoming a deathbed. Shelley critiques how women are sacrificed to male ambition and conflict.",
         },
         {
           type: 'character',
           text: 'A grin was on the face of the monster; he seemed to jeer, as with his fiendish finger he pointed towards the corpse of my wife',
-          note: 'The Creature\'s grin mirrors the moment of his own creation, when he smiled at Victor and reached out a hand. Victor\'s rejection of that first gesture has come full circle in horrific symmetry.'
+          note: "The Creature's grin mirrors the moment of his own creation, when he smiled at Victor and reached out a hand. Victor's rejection of that first gesture has come full circle in horrific symmetry.",
         },
         {
           type: 'theme',
           text: 'the pale yellow light of the moon illuminate the chamber',
-          note: 'The "pale yellow light" echoes the "dull yellow eye" of the Creature\'s birth in Chapter 5. Moonlight links creation and death, connecting both scenes in a cycle of tragedy.'
+          note: 'The "pale yellow light" echoes the "dull yellow eye" of the Creature\'s birth in Chapter 5. Moonlight links creation and death, connecting both scenes in a cycle of tragedy.',
         },
         {
           type: 'context',
           text: 'her bloodless arms and relaxed form flung by the murderer on its bridal bier',
-          note: 'The wedding night becomes a funeral. Shelley subverts the marriage plot — the expected happy ending of a novel — into Gothic horror, reflecting the impossibility of domestic happiness when moral debts remain unpaid.'
+          note: 'The wedding night becomes a funeral. Shelley subverts the marriage plot - the expected happy ending of a novel - into Gothic horror, reflecting the impossibility of domestic happiness when moral debts remain unpaid.',
         },
       ],
     },
@@ -492,7 +492,7 @@ My father could not live under the horrors that were accumulated around him; the
     // ── Section 8: Chapter 24 + Walton conclusion ─────────────────────────
     {
       id: 'ch24-conclusion',
-      title: 'Chapter 24 & Walton\'s Conclusion',
+      title: "Chapter 24 & Walton's Conclusion",
       content: `My present situation was one in which all voluntary thought was swallowed up and lost. I was hurried away by fury; revenge alone endowed me with strength and composure; it moulded my feelings and allowed me to be calculating and calm at periods when otherwise delirium or death would have been my portion.
 
 My first resolution was to quit Geneva for ever; my country, which, when I was happy and beloved, was dear to me, now, in my adversity, became hateful. I provided myself with a sum of money, together with a few jewels which had belonged to my mother, and departed.
@@ -511,7 +511,7 @@ Amidst the wilds of Tartary and Russia, although he still evaded me, I have ever
 
 Walton, in continuation.
 
-August 26th, 17—.
+August 26th, 17-.
 
 You have read this strange and terrific story, Margaret; and do you not feel your blood congeal with horror, like that which even now curdles mine? Sometimes, seized with sudden agony, he could not continue his tale; at others, his voice broken, yet piercing, uttered with difficulty the words so replete with anguish. His fine and lovely eyes were now lighted up with indignation, now subdued to downcast sorrow and quenched in infinite wretchedness. Sometimes he commanded his countenance and tones and related the most horrible incidents with a tranquil voice, suppressing every mark of agitation; then, like a volcano bursting forth, his face would suddenly change to an expression of the wildest rage as he shrieked out imprecations on his persecutor.
 
@@ -527,7 +527,7 @@ These words were spoken in so faltering a voice that they seemed to come from a 
 
 "Do so, if you will; but I will not. You may give up your purpose, but mine is assigned to me by heaven, and I dare not."
 
-He endeavoured to spirit them up—but he sunk into languishment.
+He endeavoured to spirit them up-but he sunk into languishment.
 
 His voice became fainter as he spoke, and at length, exhausted by his effort, he sank into silence. About half an hour afterwards he attempted again to speak but was unable; he pressed my hand feebly, and his eyes closed for ever, while the irradiation of a gentle smile passed away from his lips.
 
@@ -535,13 +535,13 @@ Margaret, what comment can I make on the untimely extinction of this glorious sp
 
 Great God! what a scene has just taken place! I am yet dizzy with the remembrance of it. I hardly know whether I shall have the power to detail it; yet the tale which I have recorded would be incomplete without this final and wonderful catastrophe.
 
-I entered the cabin where lay the remains of my ill-fated and admirable friend. Over him hung a form which I cannot find words to describe—gigantic in stature, yet uncouth and distorted in its proportions. As he hung over the coffin, his face was concealed by long locks of ragged hair; but one vast hand was extended, in colour and apparent texture like that of a mummy. When he heard the sound of my approach, he ceased to utter exclamations of grief and horror and sprung towards the window. Never did I behold a vision so horrible as his face, of such loathsome yet appalling hideousness. I shut my eyes involuntarily and endeavoured to recollect what were my duties with regard to this destroyer.
+I entered the cabin where lay the remains of my ill-fated and admirable friend. Over him hung a form which I cannot find words to describe-gigantic in stature, yet uncouth and distorted in its proportions. As he hung over the coffin, his face was concealed by long locks of ragged hair; but one vast hand was extended, in colour and apparent texture like that of a mummy. When he heard the sound of my approach, he ceased to utter exclamations of grief and horror and sprung towards the window. Never did I behold a vision so horrible as his face, of such loathsome yet appalling hideousness. I shut my eyes involuntarily and endeavoured to recollect what were my duties with regard to this destroyer.
 
 "That is also my victim!" he exclaimed. "In his murder my crimes are consummated; the miserable series is wound to its close! Oh, Frankenstein! Generous and self-devoted being! What does it avail that I now ask thee to pardon me? I, who irretrievably destroyed thee by destroying all thou lovedst. Alas! He is cold, he cannot answer me."
 
 "Wretch!" I said. "It is well that you come here to whine over the desolation that you have made. You throw a torch into a pile of buildings, and when they are consumed, you sit among the ruins and lament the fall. Hypocritical fiend!"
 
-"Oh, it is not thus—not thus," interrupted the being. "Yet such must be the impression conveyed to you by what appears to be the purport of my actions. Yet I seek not a fellow feeling in my misery. No sympathy may I ever find. When I first sought it, I desired love and fellowship, and I was still spurned. Was there no injustice in this? Am I to be thought the only criminal, when all humankind sinned against me? Even now my blood boils at the recollection of this injustice.
+"Oh, it is not thus-not thus," interrupted the being. "Yet such must be the impression conveyed to you by what appears to be the purport of my actions. Yet I seek not a fellow feeling in my misery. No sympathy may I ever find. When I first sought it, I desired love and fellowship, and I was still spurned. Was there no injustice in this? Am I to be thought the only criminal, when all humankind sinned against me? Even now my blood boils at the recollection of this injustice.
 
 "But it is true that I am a wretch. I have murdered the lovely and the helpless; I have strangled the innocent as they slept and grasped to death his throat who never injured me or any other living thing. I have devoted my creator, the select specimen of all that is worthy of love and admiration among men, to misery; I have pursued him even to that irremediable ruin. There he lies, white and cold in death. You hate me, but your abhorrence cannot equal that with which I regard myself.
 
@@ -556,37 +556,37 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
         {
           type: 'theme',
           text: 'revenge alone endowed me with strength and composure',
-          note: 'Victor and the Creature become mirror images: both driven by revenge, both self-destructive, both isolated. Their pursuer-pursued dynamic has made them indistinguishable in their obsession.'
+          note: 'Victor and the Creature become mirror images: both driven by revenge, both self-destructive, both isolated. Their pursuer-pursued dynamic has made them indistinguishable in their obsession.',
         },
         {
           type: 'quote',
           text: 'I am satisfied, miserable wretch! You have determined to live, and I am satisfied',
-          note: 'The Creature wants Victor alive to suffer. This inverts the creator-creation relationship: the Creature now controls Victor\'s existence, just as Victor once controlled his.'
+          note: "The Creature wants Victor alive to suffer. This inverts the creator-creation relationship: the Creature now controls Victor's existence, just as Victor once controlled his.",
         },
         {
           type: 'character',
           text: 'one vast hand was extended, in colour and apparent texture like that of a mummy',
-          note: 'The Creature\'s outstretched hand over Victor\'s corpse mirrors Chapter 5, where he reached out to his creator at birth. The gesture that began in hope ends in grief.'
+          note: "The Creature's outstretched hand over Victor's corpse mirrors Chapter 5, where he reached out to his creator at birth. The gesture that began in hope ends in grief.",
         },
         {
           type: 'quote',
           text: 'I was benevolent; my soul glowed with love and humanity; but am I not alone, miserably alone?',
-          note: 'The Creature\'s final speech returns to his core argument: isolation destroyed his goodness. This repetition across the novel gives his words cumulative moral force.'
+          note: "The Creature's final speech returns to his core argument: isolation destroyed his goodness. This repetition across the novel gives his words cumulative moral force.",
         },
         {
           type: 'language',
           text: 'I shall ascend my funeral pile triumphantly and exult in the agony of the torturing flames',
-          note: 'Promethean imagery: fire — the element of creation and knowledge — becomes the instrument of self-destruction. The Creature\'s planned immolation closes the mythic circle opened by the subtitle.'
+          note: "Promethean imagery: fire - the element of creation and knowledge - becomes the instrument of self-destruction. The Creature's planned immolation closes the mythic circle opened by the subtitle.",
         },
         {
           type: 'theme',
           text: 'He was soon borne away by the waves and lost in darkness and distance',
-          note: 'The novel\'s final image is ambiguous: we never see the Creature die. Shelley refuses closure, leaving the questions of justice, responsibility, and humanity permanently open.'
+          note: "The novel's final image is ambiguous: we never see the Creature die. Shelley refuses closure, leaving the questions of justice, responsibility, and humanity permanently open.",
         },
         {
           type: 'context',
           text: 'I am returning to England. I have lost my hopes of utility and glory; I have lost my friend',
-          note: 'Walton heeds Victor\'s warning and turns back — the only character who learns from the story. His retreat represents the novel\'s moral resolution: some ambitions must be abandoned.'
+          note: "Walton heeds Victor's warning and turns back - the only character who learns from the story. His retreat represents the novel's moral resolution: some ambitions must be abandoned.",
         },
       ],
     },
@@ -597,17 +597,17 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Victor Frankenstein',
       description:
-        'A brilliant but fatally irresponsible scientist from Geneva. Victor\'s obsessive ambition drives him to create life, but his immediate rejection of his creation sets in motion every tragedy in the novel. He embodies the dangers of knowledge without ethics, ambition without compassion, and power without responsibility. His narrative is self-pitying and unreliable — he positions himself as victim while consistently failing to act.',
+        "A brilliant but fatally irresponsible scientist from Geneva. Victor's obsessive ambition drives him to create life, but his immediate rejection of his creation sets in motion every tragedy in the novel. He embodies the dangers of knowledge without ethics, ambition without compassion, and power without responsibility. His narrative is self-pitying and unreliable - he positions himself as victim while consistently failing to act.",
       keyQuotes: [
         '"I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body."',
         '"Learn from me... how dangerous is the acquirement of knowledge."',
-        '"I beheld the wretch — the miserable monster whom I had created."',
+        '"I beheld the wretch - the miserable monster whom I had created."',
       ],
     },
     {
       name: 'The Creature',
       description:
-        'Victor\'s creation, born innocent and driven to violence by universal rejection. The Creature is articulate, emotionally complex, and deeply human in his longing for companionship. His eloquent narrative occupies the centre of the novel, and Shelley ensures the reader sympathises with him. He learns language, morality, and empathy through observation — then learns hatred through experience.',
+        "Victor's creation, born innocent and driven to violence by universal rejection. The Creature is articulate, emotionally complex, and deeply human in his longing for companionship. His eloquent narrative occupies the centre of the novel, and Shelley ensures the reader sympathises with him. He learns language, morality, and empathy through observation - then learns hatred through experience.",
       keyQuotes: [
         '"I ought to be thy Adam, but I am rather the fallen angel."',
         '"I was benevolent and good; misery made me a fiend."',
@@ -617,7 +617,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Robert Walton',
       description:
-        'An Arctic explorer whose letters frame the entire novel. Walton mirrors Victor in his dangerous ambition and loneliness, but ultimately heeds the warning of Victor\'s story and turns his ship back. He is the only character who learns from the tragedy, making him the novel\'s moral compass and surrogate for the reader.',
+        "An Arctic explorer whose letters frame the entire novel. Walton mirrors Victor in his dangerous ambition and loneliness, but ultimately heeds the warning of Victor's story and turns his ship back. He is the only character who learns from the tragedy, making him the novel's moral compass and surrogate for the reader.",
       keyQuotes: [
         '"I have no friend, Margaret."',
         '"I am returning to England. I have lost my hopes of utility and glory."',
@@ -626,7 +626,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Elizabeth Lavenza',
       description:
-        'Victor\'s adopted sister and later his wife. Elizabeth is gentle, devoted, and ultimately sacrificed to the conflict between Victor and his creation. Her murder on their wedding night is the culmination of Victor\'s failure to confront consequences. Shelley uses her death to critique how women become collateral damage in male ambition and rivalry.',
+        "Victor's adopted sister and later his wife. Elizabeth is gentle, devoted, and ultimately sacrificed to the conflict between Victor and his creation. Her murder on their wedding night is the culmination of Victor's failure to confront consequences. Shelley uses her death to critique how women become collateral damage in male ambition and rivalry.",
       keyQuotes: [
         '"I have a pretty present for my Victor."',
         '"She was there, lifeless and inanimate, thrown across the bed."',
@@ -635,15 +635,13 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Henry Clerval',
       description:
-        'Victor\'s closest friend, representing warmth, creativity, and human connection — everything Victor sacrifices in his pursuit of forbidden knowledge. Clerval studies Oriental languages and dreams of adventure, but his ambition is social and cultural, not transgressive. His murder by the Creature strips Victor of his last meaningful friendship.',
-      keyQuotes: [
-        '"He was a being formed in the very poetry of nature."',
-      ],
+        "Victor's closest friend, representing warmth, creativity, and human connection - everything Victor sacrifices in his pursuit of forbidden knowledge. Clerval studies Oriental languages and dreams of adventure, but his ambition is social and cultural, not transgressive. His murder by the Creature strips Victor of his last meaningful friendship.",
+      keyQuotes: ['"He was a being formed in the very poetry of nature."'],
     },
     {
       name: 'Alphonse Frankenstein',
       description:
-        'Victor\'s loving and dutiful father. Alphonse represents the stable, nurturing family structure that Victor abandons in pursuit of his obsession. His death from grief after Elizabeth\'s murder completes the destruction of Victor\'s entire domestic world — the family that should have anchored him is annihilated.',
+        "Victor's loving and dutiful father. Alphonse represents the stable, nurturing family structure that Victor abandons in pursuit of his obsession. His death from grief after Elizabeth's murder completes the destruction of Victor's entire domestic world - the family that should have anchored him is annihilated.",
       keyQuotes: [
         '"The springs of existence suddenly gave way; he was unable to rise from his bed."',
       ],
@@ -651,7 +649,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Justine Moritz',
       description:
-        'A servant in the Frankenstein household, wrongly convicted and executed for William\'s murder. Justine is the novel\'s clearest example of institutional injustice — she confesses under pressure from her confessor and is executed despite Elizabeth\'s defence. Her death implicates both the legal system and Victor, who knows the truth but stays silent.',
+        "A servant in the Frankenstein household, wrongly convicted and executed for William's murder. Justine is the novel's clearest example of institutional injustice - she confesses under pressure from her confessor and is executed despite Elizabeth's defence. Her death implicates both the legal system and Victor, who knows the truth but stays silent.",
       keyQuotes: [
         '"I am the cousin of the unhappy child who was murdered."',
         '"God knows how entirely I am innocent."',
@@ -664,17 +662,17 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Dangerous Ambition & Hubris',
       description:
-        'Victor\'s relentless pursuit of forbidden knowledge leads to catastrophe. Shelley draws on the Prometheus myth (referenced in the subtitle) to warn against human overreach. The desire to rival God is presented not as heroic but as reckless and destructive. Walton\'s parallel ambition provides a contrast: he alone chooses to turn back.',
+        "Victor's relentless pursuit of forbidden knowledge leads to catastrophe. Shelley draws on the Prometheus myth (referenced in the subtitle) to warn against human overreach. The desire to rival God is presented not as heroic but as reckless and destructive. Walton's parallel ambition provides a contrast: he alone chooses to turn back.",
       evidence: [
         '"Learn from me... how dangerous is the acquirement of knowledge." (Ch. 4)',
         'Victor compares himself to an "archangel who aspired to omnipotence" (Ch. 24)',
-        'Walton abandons his polar voyage after hearing Victor\'s story — the only character who heeds the warning',
+        "Walton abandons his polar voyage after hearing Victor's story - the only character who heeds the warning",
       ],
     },
     {
       name: 'Creation & Parental Responsibility',
       description:
-        'The novel\'s central moral question: does a creator owe duties to their creation? Victor abandons the Creature at birth, and every subsequent tragedy flows from that act of irresponsibility. Shelley argues that bringing something into existence — whether child, creation, or scientific discovery — carries an absolute obligation of care.',
+        "The novel's central moral question: does a creator owe duties to their creation? Victor abandons the Creature at birth, and every subsequent tragedy flows from that act of irresponsibility. Shelley argues that bringing something into existence - whether child, creation, or scientific discovery - carries an absolute obligation of care.",
       evidence: [
         'Victor flees the moment the Creature opens its eyes (Ch. 5)',
         'The Creature\'s plea: "I ought to be thy Adam" acknowledges the creator\'s duty (Ch. 10)',
@@ -684,7 +682,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Isolation & Loneliness',
       description:
-        'All three narrators suffer from profound isolation. Victor cuts himself off from family to pursue his work. The Creature is denied any human connection. Walton laments having no friend. Shelley shows that loneliness is not merely painful but morally corrosive — it drives both Victor and the Creature toward destruction.',
+        'All three narrators suffer from profound isolation. Victor cuts himself off from family to pursue his work. The Creature is denied any human connection. Walton laments having no friend. Shelley shows that loneliness is not merely painful but morally corrosive - it drives both Victor and the Creature toward destruction.',
       evidence: [
         'Walton\'s opening letter: "I have no friend, Margaret" (Letter I)',
         'Victor: "I seemed to have lost all soul or sensation but for this one pursuit" (Ch. 4)',
@@ -694,31 +692,31 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
     {
       name: 'Nature versus Nurture',
       description:
-        'The Creature is born innocent and becomes violent only after repeated rejection. His eloquent account of learning language, empathy, and morality from the De Lacey family — then being brutalised by society — is Shelley\'s powerful Rousseauian argument that environment, not innate character, shapes moral development.',
+        "The Creature is born innocent and becomes violent only after repeated rejection. His eloquent account of learning language, empathy, and morality from the De Lacey family - then being brutalised by society - is Shelley's powerful Rousseauian argument that environment, not innate character, shapes moral development.",
       evidence: [
         'The Creature learns compassion by observing the De Laceys (Ch. 12)',
         '"I was benevolent and good; misery made me a fiend" (Ch. 10)',
-        'William\'s rejection triggers the Creature\'s first act of violence (Ch. 16)',
+        "William's rejection triggers the Creature's first act of violence (Ch. 16)",
       ],
     },
     {
       name: 'Science Without Ethics',
       description:
-        'Written in the age of galvanism and rapid scientific progress, the novel asks what happens when knowledge outstrips moral responsibility. Victor never pauses to consider the ethical implications of creating life. Shelley suggests that science without conscience is monstrous — a warning that resonates with debates about AI, genetic engineering, and biotechnology today.',
+        'Written in the age of galvanism and rapid scientific progress, the novel asks what happens when knowledge outstrips moral responsibility. Victor never pauses to consider the ethical implications of creating life. Shelley suggests that science without conscience is monstrous - a warning that resonates with debates about AI, genetic engineering, and biotechnology today.',
       evidence: [
-        '"My workshop of filthy creation" — the language of corruption, not progress (Ch. 4)',
-        'Victor\'s failure to consider what life would be like for his creation',
+        '"My workshop of filthy creation" - the language of corruption, not progress (Ch. 4)',
+        "Victor's failure to consider what life would be like for his creation",
         'The subtitle "The Modern Prometheus" frames scientific ambition as divine transgression',
       ],
     },
     {
       name: 'Prejudice & Appearance',
       description:
-        'Every character who sees the Creature rejects him based on appearance alone. The De Laceys, William, the villagers — all react with horror before the Creature can speak. Only the blind De Lacey engages with him as a person. Shelley critiques a society that judges worth by surface, arguing that true monstrosity lies in moral failure, not physical form.',
+        'Every character who sees the Creature rejects him based on appearance alone. The De Laceys, William, the villagers - all react with horror before the Creature can speak. Only the blind De Lacey engages with him as a person. Shelley critiques a society that judges worth by surface, arguing that true monstrosity lies in moral failure, not physical form.',
       evidence: [
         'Victor\'s immediate revulsion: "I beheld the wretch" despite having chosen "beautiful" features (Ch. 5)',
         'De Lacey, who is blind, is the only character to show the Creature kindness (Ch. 15)',
-        'The Creature\'s self-awareness: "I am malicious because I am miserable" — society\'s rejection created the monster (Ch. 16)',
+        'The Creature\'s self-awareness: "I am malicious because I am miserable" - society\'s rejection created the monster (Ch. 16)',
       ],
     },
   ],
@@ -729,7 +727,7 @@ He sprang from the cabin window as he said this, upon the ice raft which lay clo
 Frankenstein was written during the height of the Romantic movement (roughly 1780-1850), and its themes, settings, and concerns are deeply Romantic. Understanding this context is essential for GCSE analysis.
 
 THE ROMANTIC SUBLIME
-The novel\'s Alpine and Arctic settings reflect the Romantic fascination with sublime landscapes — vast, terrifying natural spaces that dwarf humanity and inspire both awe and terror. Mont Blanc, where the Creature confronts Victor in Chapter 10, was a key Romantic landmark. Percy Bysshe Shelley wrote his poem "Mont Blanc" during the same 1816 summer that Mary began Frankenstein. The sublime landscape serves as a backdrop for the novel\'s most important moral confrontations.
+The novel\'s Alpine and Arctic settings reflect the Romantic fascination with sublime landscapes - vast, terrifying natural spaces that dwarf humanity and inspire both awe and terror. Mont Blanc, where the Creature confronts Victor in Chapter 10, was a key Romantic landmark. Percy Bysshe Shelley wrote his poem "Mont Blanc" during the same 1816 summer that Mary began Frankenstein. The sublime landscape serves as a backdrop for the novel\'s most important moral confrontations.
 
 SCIENCE AND GALVANISM
 Luigi Galvani\'s experiments in the 1780s and 1790s demonstrated that electrical current could make dead frogs\' legs twitch, suggesting that electricity might be the "spark of life." His nephew Giovanni Aldini publicly applied electrical current to the bodies of executed criminals, causing their limbs to move. These experiments were widely discussed and raised genuine questions about whether science could reanimate the dead. Mary Shelley acknowledged this influence in her 1831 preface, describing how conversations about galvanism at the Villa Diodati inspired her story.
@@ -741,7 +739,7 @@ PROMETHEUS AND CLASSICAL MYTH
 The novel\'s subtitle, "The Modern Prometheus," connects Victor to the Greek Titan who stole fire from the gods and gave it to humanity, for which he was punished by being chained to a rock while an eagle ate his liver daily. In some versions of the myth, Prometheus also created humans from clay. Shelley uses both aspects: Victor steals the "fire" of creation and is punished by eternal suffering. The Promethean myth frames scientific ambition as simultaneously heroic and transgressive.
 
 MILTON\'S PARADISE LOST
-The Creature reads Milton\'s epic poem and identifies with both Adam (the first creation, who deserved his creator\'s love) and Satan (the fallen angel, cast out and denied belonging). The novel\'s epigraph is from Paradise Lost: "Did I request thee, Maker, from my clay / To mould me Man?" This question — whether a creation can hold its creator accountable — drives the entire narrative.
+The Creature reads Milton\'s epic poem and identifies with both Adam (the first creation, who deserved his creator\'s love) and Satan (the fallen angel, cast out and denied belonging). The novel\'s epigraph is from Paradise Lost: "Did I request thee, Maker, from my clay / To mould me Man?" This question - whether a creation can hold its creator accountable - drives the entire narrative.
 
 MARY SHELLEY\'S PERSONAL CONTEXT
 Mary Shelley\'s mother, Mary Wollstonecraft (author of A Vindication of the Rights of Woman), died eleven days after giving birth to her. This biographical fact infuses the novel\'s exploration of creation, birth, and parental responsibility with personal urgency. Mary herself lost her first child, a premature daughter, in 1815 and recorded dreams of the baby coming back to life. The novel\'s anxieties about creation, death, and the responsibilities of parenthood are deeply personal.
@@ -757,11 +755,14 @@ export default function FrankensteinReadPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Frankenstein", url: "https://theenglishhub.app/revision/texts/frankenstein" },
-          { name: "Read Full Text", url: "https://theenglishhub.app/revision/texts/frankenstein/read" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Frankenstein', url: 'https://theenglishhub.app/revision/texts/frankenstein' },
+          {
+            name: 'Read Full Text',
+            url: 'https://theenglishhub.app/revision/texts/frankenstein/read',
+          },
         ]}
       />
       {/* Breadcrumb */}
@@ -779,11 +780,10 @@ export default function FrankensteinReadPage() {
       {/* Public domain notice */}
       <div className="mb-6 rounded-xl border border-teal-500/20 bg-teal-500/5 px-4 py-3">
         <p className="text-sm text-muted-foreground">
-          <span className="font-semibold text-teal-400">Public Domain Text</span>{' '}
-          &mdash; <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary
-          Shelley is in the public domain. The text below is from the original 1818
-          first edition. Key chapters are presented with interactive annotations for
-          GCSE study.
+          <span className="font-semibold text-teal-400">Public Domain Text</span> &mdash;{' '}
+          <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
+          domain. The text below is from the original 1818 first edition. Key chapters are presented
+          with interactive annotations for GCSE study.
         </p>
       </div>
 
@@ -797,9 +797,8 @@ export default function FrankensteinReadPage() {
       {/* Footer */}
       <div className="mt-8 flex flex-col gap-4 border-t border-border/60 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted-foreground">
-          <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is
-          in the public domain. Text sourced from the 1818 first edition. Annotations
-          are original study material.
+          <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
+          domain. Text sourced from the 1818 first edition. Annotations are original study material.
         </p>
         <Link
           href="/revision/texts/frankenstein"

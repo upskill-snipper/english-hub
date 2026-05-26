@@ -58,7 +58,7 @@ export const useBoardStore = create<State & Actions>()(
       onRehydrateStorage: () => (state) => {
         if (!state) return
 
-        // 02 May 2026 — COOKIE IS AUTHORITATIVE.
+        // 02 May 2026 - COOKIE IS AUTHORITATIVE.
         //
         // The cookie is the single source of truth for the user's current
         // board. Middleware writes it on every `?setBoard=<id>` redirect
@@ -69,7 +69,7 @@ export const useBoardStore = create<State & Actions>()(
         //
         // Rule: if the cookie has a valid board, the store ALWAYS adopts it
         // (overriding any stale localStorage value). The previous
-        // `if (!state.board)` gate was a real bug — once a user had a board
+        // `if (!state.board)` gate was a real bug - once a user had a board
         // in localStorage (e.g. from earlier testing), every later cookie
         // change via setBoard was silently ignored, the header chip stayed
         // on the old board, and clicking "AQA" still rendered IGCSE
@@ -83,7 +83,7 @@ export const useBoardStore = create<State & Actions>()(
           }
         } else if (state.board && validIds.includes(state.board)) {
           // No cookie (cleared / expired / private window) but we have a
-          // valid cached board — repair the cookie so middleware + server
+          // valid cached board - repair the cookie so middleware + server
           // components see the same value as the client store.
           writeBoardCookie(state.board)
         }

@@ -1,15 +1,15 @@
 /**
- * /blog — index of every published article.
+ * /blog - index of every published article.
  *
  * Server component. Reads posts off disk via `getAllBlogPosts()` (parsed
  * once at build time when the page is statically rendered), renders a
  * card grid, and emits two pieces of structured data:
  *
- *   1. BreadcrumbList — Home → Blog
- *   2. CollectionPage @type "Blog" — describes the index itself
+ *   1. BreadcrumbList - Home → Blog
+ *   2. CollectionPage @type "Blog" - describes the index itself
  *
  * Both JSON-LD scripts carry the per-request CSP nonce from the
- * middleware. Server-only — no client islands here.
+ * middleware. Server-only - no client islands here.
  */
 
 import type { Metadata } from 'next'
@@ -24,7 +24,7 @@ import type { Locale } from '@/lib/i18n/dictionary'
 
 const SITE_URL = 'https://theenglishhub.app'
 const PAGE_URL = `${SITE_URL}/blog`
-const PAGE_TITLE = 'Blog — The English Hub'
+const PAGE_TITLE = 'Blog - The English Hub'
 const PAGE_DESCRIPTION =
   'GCSE and IGCSE English revision tips, exam-technique guides, and study advice. Calibrated to mark schemes.'
 

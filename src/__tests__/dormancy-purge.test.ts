@@ -5,7 +5,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 //   - findDormantChildAccounts() filters by 12-month inactivity AND
 //     age-at-signup < 18.
 //   - purgeDormantAccount() anonymises analytics, deletes PII + consents,
-//     soft-deletes the user, and writes an audit row — all in one
+//     soft-deletes the user, and writes an audit row - all in one
 //     transaction.
 //   - /api/cron/dormancy-purge POST returns { purged, errors } and is
 //     protected by the CRON_SECRET Bearer token.
@@ -95,7 +95,7 @@ describe('findDormantChildAccounts', () => {
   it('returns ids of child accounts inactive for 12+ months', async () => {
     const { findDormantChildAccounts } = await import('@/lib/privacy/dormancy')
 
-    // 10-year-old who signed up 13 months ago — clearly a child.
+    // 10-year-old who signed up 13 months ago - clearly a child.
     const childAtSignup = {
       id: 'child-1',
       dateOfBirth: yearsAgo(10),
@@ -181,7 +181,7 @@ describe('purgeDormantAccount', () => {
     // Single transaction wraps everything.
     expect($transaction).toHaveBeenCalledOnce()
 
-    // Analytics anonymised — userId rewritten to null.
+    // Analytics anonymised - userId rewritten to null.
     expect(analyticsUpdateMany).toHaveBeenCalled()
     const analyticsCall = analyticsUpdateMany.mock.calls[0][0]
     expect(analyticsCall.where).toEqual({ userId: 'user-xyz' })
@@ -196,7 +196,7 @@ describe('purgeDormantAccount', () => {
     expect(piiCall.data.lastName).toBe('[purged]')
     expect(piiCall.data.email).toContain('purged-user-xyz')
     expect(piiCall.data.passwordHash).toBe('')
-    // DOB is required (non-null) — must be replaced, not removed.
+    // DOB is required (non-null) - must be replaced, not removed.
     expect(piiCall.data.dateOfBirth).toBeInstanceOf(Date)
 
     const softDeleteCall = update.mock.calls[1][0]

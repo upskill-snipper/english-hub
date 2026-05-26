@@ -1,9 +1,9 @@
 /**
- * EAL Topic — Writing skill route (server-rendered shell).
+ * EAL Topic - Writing skill route (server-rendered shell).
  *
  * Phase 2: replaces the "Coming soon" stub with the AI-assisted CEFR
- * productive-skill assessor. This stays a thin server component —
- * resolve + 404 the topic, set brand-free metadata — and delegates the
+ * productive-skill assessor. This stays a thin server component -
+ * resolve + 404 the topic, set brand-free metadata - and delegates the
  * interactive assessment UI to <CEFRAssessClient>.
  *
  * Methodology framing: Cambridge English Qualifications writing-task
@@ -30,7 +30,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const topic = findEALTopic(slug)
-  const title = topic ? `${topic.title.en} — Writing Assessment` : 'EAL Writing Assessment'
+  const title = topic ? `${topic.title.en} - Writing Assessment` : 'EAL Writing Assessment'
   const description = topic
     ? `Practise and get an AI-assisted CEFR assessment of your writing on "${topic.title.en}", pitched at ${topic.cefr}. For Arabic-speaking learners preparing for GCSE/IGCSE English.`
     : 'AI-assisted CEFR writing assessment for EAL learners preparing for GCSE/IGCSE English.'

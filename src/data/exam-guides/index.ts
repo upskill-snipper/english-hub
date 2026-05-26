@@ -43,7 +43,7 @@ const BOARD_ID_TO_GUIDE_KEY: Record<string, string> = {
   'cambridge-0500': 'igcse',
   'cambridge-0990': 'igcse',
   'cambridge-0475': 'igcse',
-  // IAL / A-Level — fall back to the closest exam-board guide we have
+  // IAL / A-Level - fall back to the closest exam-board guide we have
   'ial-edexcel': 'edexcel',
   'aqa-a-level': 'aqa',
   'edexcel-a-level': 'edexcel',

@@ -10,11 +10,11 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The 6-mark extended comparison question — iLowerSecondary English',
+    title: 'The 6-mark extended comparison question - iLowerSecondary English',
     description:
       'A deep masterclass on the extended comparison question: how to climb the levelled grid from an implicit comment to a clear, developed explanation of the contrast, with two original extracts and three annotated model answers.',
   },
-  title: 'The 6-mark extended comparison question — iLowerSecondary English',
+  title: 'The 6-mark extended comparison question - iLowerSecondary English',
   description:
     'A deep masterclass on the extended comparison question: how to climb the levelled grid from an implicit comment to a clear, developed explanation of the contrast, with two original extracts and three annotated model answers.',
   alternates: {
@@ -28,7 +28,7 @@ const RAO2 = ASSESSMENT_OBJECTIVES.RAO2
 const RAO4 = ASSESSMENT_OBJECTIVES.RAO4
 const RAO5 = ASSESSMENT_OBJECTIVES.RAO5
 
-const MAX_MARKS = COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('–')[1]
+const MAX_MARKS = COMPARISON_LEVELS[COMPARISON_LEVELS.length - 1].marks.split('-')[1]
 
 export default function ExtendedComparisonPage() {
   return (
@@ -71,13 +71,13 @@ export default function ExtendedComparisonPage() {
       <h1>The {QUESTION.typicalMarks}-mark extended comparison question</h1>
       <p className="lead">
         This is the longest reading question on the paper and the one that separates a safe pass
-        from a top result. It asks you to {QUESTION.name.toLowerCase()} — and it is marked on a
+        from a top result. It asks you to {QUESTION.name.toLowerCase()} - and it is marked on a
         levelled grid, so the words you choose decide which level you land in.
       </p>
 
       {/* ── What the question assesses ───────────────────────────── */}
       <section className="my-10">
-        <h2>What it is testing — three objectives at once</h2>
+        <h2>What it is testing - three objectives at once</h2>
         <p>
           Most reading questions test one objective. This one tests three together, which is why it
           carries {QUESTION.typicalMarks} marks. To reach the top you have to do all three jobs in
@@ -107,7 +107,7 @@ export default function ExtendedComparisonPage() {
         <h2>The official levelled grid</h2>
         <p>
           The examiner reads your whole answer, then chooses the single level that fits it best
-          overall. You do not lose marks for what you leave out — you climb by showing more. Notice
+          overall. You do not lose marks for what you leave out - you climb by showing more. Notice
           how each level adds one more demand than the one below it.
         </p>
         <div className="not-prose mt-4 overflow-x-auto">
@@ -144,7 +144,7 @@ export default function ExtendedComparisonPage() {
 
       {/* ── The climb ────────────────────────────────────────────── */}
       <section className="my-10">
-        <h2>The climb — Level 1 to Level 3</h2>
+        <h2>The climb - Level 1 to Level 3</h2>
         <p>
           The grid describes a ladder. Each rung keeps everything below it and adds one new thing.
           Learn the ladder and you always know what the next mark needs.
@@ -152,17 +152,17 @@ export default function ExtendedComparisonPage() {
         <div className="not-prose grid gap-3 sm:grid-cols-3">
           <div className="rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-              {COMPARISON_LEVELS[0].level} — implicit comment
+              {COMPARISON_LEVELS[0].level} - implicit comment
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               You make a simple comment about each quotation. The contrast is <em>implied</em>{' '}
-              rather than spelled out — the reader can tell the two are different, but you have not
+              rather than spelled out - the reader can tell the two are different, but you have not
               actually said how or why. You touch one or two of the three objectives.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-              {COMPARISON_LEVELS[1].level} — explicit explanation
+              {COMPARISON_LEVELS[1].level} - explicit explanation
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               You name the contrast openly with a comparison word (<em>whereas</em>,{' '}
@@ -172,12 +172,12 @@ export default function ExtendedComparisonPage() {
           </div>
           <div className="rounded-xl border border-primary/40 bg-primary/[0.04] p-4">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-              {COMPARISON_LEVELS[2].level} — clear developed explanation
+              {COMPARISON_LEVELS[2].level} - clear developed explanation
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               You explain the contrast clearly and do all three jobs: an <strong>inference</strong>,
               a comment on <strong>language at word level</strong>, and each writer&apos;s{' '}
-              <strong>purpose, viewpoint and effect on the reader</strong> — all woven into one
+              <strong>purpose, viewpoint and effect on the reader</strong> - all woven into one
               developed comparison.
             </p>
           </div>
@@ -188,7 +188,7 @@ export default function ExtendedComparisonPage() {
       <section className="my-10">
         <h2>Practise on these two original extracts</h2>
         <p>
-          Both extracts below were written by The English Hub for this lesson — they are not taken
+          Both extracts below were written by The English Hub for this lesson - they are not taken
           from any past paper. They are short non-fiction pieces on the same theme:{' '}
           <strong>swimming in cold water</strong>. One warns; one celebrates. That difference in
           purpose is exactly what the comparison question wants you to unpick.
@@ -197,7 +197,7 @@ export default function ExtendedComparisonPage() {
         <div className="not-prose my-5 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Text 1 — a safety leaflet
+              Text 1 - a safety leaflet
             </p>
             <p className="text-sm text-foreground leading-relaxed">
               The water does not care how strong a swimmer you think you are. The moment your skin
@@ -209,10 +209,10 @@ export default function ExtendedComparisonPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              Text 2 — a magazine column
+              Text 2 - a magazine column
             </p>
             <p className="text-sm text-foreground leading-relaxed">
-              The first shock of the cold is not a punishment — it is an invitation. My breath
+              The first shock of the cold is not a punishment - it is an invitation. My breath
               races, my skin sings, and for one bright minute every dull worry of the week is rinsed
               clean away. I float on my back under an enormous sky and feel, absurdly, more alive
               than I have all day. The lake gives this gift to anyone brave enough to wade past
@@ -256,7 +256,7 @@ export default function ExtendedComparisonPage() {
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             <strong className="text-foreground">Why this is Level 1:</strong> The contrast is only{' '}
-            <em>implicit</em> — &ldquo;they are different&rdquo; states that a difference exists
+            <em>implicit</em> - &ldquo;they are different&rdquo; states that a difference exists
             without explaining it. &ldquo;Sounds dangerous&rdquo; and &ldquo;sounds nicer&rdquo; are
             simple comments that gesture at effect ({RAO5.code}) but never zoom in on a single word
             ({RAO4.code}) and never read between the lines ({RAO2.code}). It mostly re-tells the
@@ -281,14 +281,14 @@ export default function ExtendedComparisonPage() {
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             <strong className="text-foreground">Why this is Level 2:</strong> The contrast is now{' '}
-            <em>explicit</em> — the comparison connective{' '}
+            <em>explicit</em> - the comparison connective{' '}
             <span className="text-primary">&ldquo;Whereas&rdquo;</span> openly joins the two
             writers. It zooms in on the single words{' '}
             <span className="text-primary">&ldquo;ambushes&rdquo;</span> and{' '}
             <span className="text-primary">&ldquo;invitation&rdquo;</span> ({RAO4.code}) and names
             each writer&apos;s purpose, &ldquo;wants to warn&rdquo; / &ldquo;make swimming sound
             tempting&rdquo; ({RAO5.code}). Two strands are done clearly. What is missing is a true
-            <em> inference</em> ({RAO2.code}) — reading beyond the words to what is implied — and a
+            <em> inference</em> ({RAO2.code}) - reading beyond the words to what is implied - and a
             comment on the effect <em>on the reader</em>, so it cannot reach the top level.
           </p>
         </div>
@@ -302,7 +302,7 @@ export default function ExtendedComparisonPage() {
             “The writer of Text&nbsp;1 uses the verb{' '}
             <span className="text-primary">“ambushes”</span> to cast the river as a calculating
             predator that strikes from hiding. The word implies that the danger is not the
-            swimmer&apos;s fault and cannot be out-thought —{' '}
+            swimmer&apos;s fault and cannot be out-thought -{' '}
             <span className="text-primary">
               the body is overpowered “before the mind can argue”
             </span>
@@ -310,7 +310,7 @@ export default function ExtendedComparisonPage() {
             writer&apos;s purpose is to frighten the reader into caution.{' '}
             <span className="text-primary">By contrast</span>, the writer of Text&nbsp;2 chooses the
             noun <span className="text-primary">“invitation”</span>, which implies the cold is
-            generous and personal — something held out to be accepted rather than survived. This
+            generous and personal - something held out to be accepted rather than survived. This
             reflects a celebratory, persuasive purpose: where Text&nbsp;1 positions the reader as a
             potential victim, Text&nbsp;2 positions them as a guest, leaving the reader tempted
             rather than afraid.”
@@ -409,7 +409,7 @@ export default function ExtendedComparisonPage() {
               {
                 lvl: 'Level 2 → 3',
                 check:
-                  'Have I made an inference — written what each quotation implies beyond its literal words (RAO2)?',
+                  'Have I made an inference - written what each quotation implies beyond its literal words (RAO2)?',
               },
               {
                 lvl: 'Level 2 → 3',

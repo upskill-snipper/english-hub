@@ -14,7 +14,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 interface CapitalQuestion {
   /** The four sentence options shown to the learner */
   options: [string, string, string, string]
-  /** Index (0–3) of the correctly capitalised sentence */
+  /** Index (0-3) of the correctly capitalised sentence */
   answerIndex: number
   /** The capitalisation rule being tested */
   ruleTested: string
@@ -774,7 +774,7 @@ export default function CapitalLetterQuestPage() {
                   <p className="font-semibold">
                     {feedback === 'correct'
                       ? 'Brilliant! That is exactly right.'
-                      : 'Not quite — keep going, you are learning!'}
+                      : 'Not quite - keep going, you are learning!'}
                   </p>
                   <p className="mt-1 text-muted-foreground">
                     <span className="font-medium text-foreground">Rule:</span>{' '}

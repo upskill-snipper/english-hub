@@ -1,14 +1,14 @@
-import type { LessonPlan } from '@/types';
+import type { LessonPlan } from '@/types'
 
 export const y7Term3Lessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
-  // T3.1 — Shaping Meaning: Stories (Lessons 1-5)
+  // T3.1 - Shaping Meaning: Stories (Lessons 1-5)
   // ═══════════════════════════════════════════════════════════════════════════
 
-  // ── Lesson 1: Narrative Conventions — What Makes a Good Story ─────────────
+  // ── Lesson 1: Narrative Conventions - What Makes a Good Story ─────────────
   {
     id: 'y7-t3-01-narrative-conventions',
-    title: 'Narrative Conventions — What Makes a Good Story',
+    title: 'Narrative Conventions - What Makes a Good Story',
     text: 'T3.1 Shaping Meaning: Stories',
     board: 'Universal',
     yearGroup: 'Year 7',
@@ -45,7 +45,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Provide a prompt card with four headings: Who? Where? What goes wrong? How does it end?',
         core: 'Students retell the story and identify at least three common elements independently.',
         stretch:
-          'Students consider which element is most essential — could a story work without one of them? Justify your answer.',
+          'Students consider which element is most essential - could a story work without one of them? Justify your answer.',
       },
       resources: ['Story titles slide', 'Mini-whiteboards'],
     },
@@ -60,7 +60,7 @@ export const y7Term3Lessons: LessonPlan[] = [
             'Provide a partially completed annotation with two conventions already identified and labelled.',
           core: 'Students annotate the extract identifying all five conventions with colour coding.',
           stretch:
-            'Students explain how the writer manipulates conventions — for example, starting in medias res or withholding the resolution.',
+            'Students explain how the writer manipulates conventions - for example, starting in medias res or withholding the resolution.',
         },
         resources: [
           'Narrative arc diagram handout',
@@ -104,11 +104,10 @@ export const y7Term3Lessons: LessonPlan[] = [
       'Read the opening chapter of your current reading book and identify at least four narrative conventions. Write a paragraph explaining how the writer uses one convention to engage the reader.',
     worksheetQuestions: [
       {
-        question:
-          'List five narrative conventions and write a one-sentence definition for each.',
+        question: 'List five narrative conventions and write a one-sentence definition for each.',
         lines: 6,
         modelAnswer:
-          'Setting — the time and place where the story takes place. Character — the people or figures who drive the action. Conflict — the problem or challenge the character faces. Climax — the turning point or moment of highest tension. Resolution — how the conflict is resolved and the story concludes.',
+          'Setting - the time and place where the story takes place. Character - the people or figures who drive the action. Conflict - the problem or challenge the character faces. Climax - the turning point or moment of highest tension. Resolution - how the conflict is resolved and the story concludes.',
         marks: 5,
       },
       {
@@ -147,7 +146,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     teacherNotes: [
       'This lesson establishes foundational terminology that will be revisited across the entire term. Consider creating a classroom display of the narrative arc.',
       'The story openings for the ranking activity can be sourced from age-appropriate published fiction or teacher-written examples. Vary the genre to maintain engagement.',
-      'The writing task at the end serves as a useful baseline assessment of students\' narrative writing at the start of the unit.',
+      "The writing task at the end serves as a useful baseline assessment of students' narrative writing at the start of the unit.",
       'Collect the homework annotations to gauge which conventions students can identify independently and which need reinforcement.',
     ],
     targetedSkills: [
@@ -159,10 +158,10 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 2: Moral Themes in Folktales — Messages and Meanings ──────────
+  // ── Lesson 2: Moral Themes in Folktales - Messages and Meanings ──────────
   {
     id: 'y7-t3-02-moral-themes-folktales',
-    title: 'Moral Themes in Folktales — Messages and Meanings',
+    title: 'Moral Themes in Folktales - Messages and Meanings',
     text: 'T3.1 Shaping Meaning: Stories',
     board: 'Universal',
     yearGroup: 'Year 7',
@@ -175,7 +174,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
     successCriteria: [
       'I can identify the moral in at least two different folktales',
-      'I can explain how a character\'s actions reveal the story\'s message',
+      "I can explain how a character's actions reveal the story's message",
       'I can use evidence from the text to support my interpretation of the theme',
       'I can recognise that different cultures share similar moral messages',
     ],
@@ -254,7 +253,7 @@ export const y7Term3Lessons: LessonPlan[] = [
       },
     },
     homework:
-      'Read a folktale from a tradition you have not studied before (a selection is provided on the homework sheet). Write a paragraph explaining the moral and how the writer conveys it through the characters\' actions.',
+      "Read a folktale from a tradition you have not studied before (a selection is provided on the homework sheet). Write a paragraph explaining the moral and how the writer conveys it through the characters' actions.",
     worksheetQuestions: [
       {
         question:
@@ -266,18 +265,18 @@ export const y7Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          'Read the folktale extract provided. What is the main character\'s key mistake, and what consequence does it lead to?',
+          "Read the folktale extract provided. What is the main character's key mistake, and what consequence does it lead to?",
         lines: 5,
         modelAnswer:
-          'The main character\'s key mistake is their greed or pride — they take more than they need despite being warned. The consequence is that they lose everything they had, which teaches the reader that selfishness leads to ruin. The writer makes the consequence dramatic to ensure the moral is clear.',
+          "The main character's key mistake is their greed or pride - they take more than they need despite being warned. The consequence is that they lose everything they had, which teaches the reader that selfishness leads to ruin. The writer makes the consequence dramatic to ensure the moral is clear.",
         marks: 4,
       },
       {
         question:
-          'Explain how the writer uses the character\'s actions (not just the ending) to convey the moral of the story. Use evidence from the text.',
+          "Explain how the writer uses the character's actions (not just the ending) to convey the moral of the story. Use evidence from the text.",
         lines: 6,
         modelAnswer:
-          'The writer conveys the moral gradually through the character\'s repeated bad choices. Each time the character ignores advice or acts selfishly, a small negative consequence follows, building towards the final punishment. This pattern of action and consequence teaches the reader the moral lesson step by step, rather than simply stating it at the end. For example, the character\'s dismissal of the wise elder\'s warning foreshadows their downfall.',
+          "The writer conveys the moral gradually through the character's repeated bad choices. Each time the character ignores advice or acts selfishly, a small negative consequence follows, building towards the final punishment. This pattern of action and consequence teaches the reader the moral lesson step by step, rather than simply stating it at the end. For example, the character's dismissal of the wise elder's warning foreshadows their downfall.",
         marks: 5,
       },
       {
@@ -312,10 +311,10 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 3: Comparing Stories — Finding Similarities ────────────────────
+  // ── Lesson 3: Comparing Stories - Finding Similarities ────────────────────
   {
     id: 'y7-t3-03-comparing-stories',
-    title: 'Comparing Stories — Finding Similarities',
+    title: 'Comparing Stories - Finding Similarities',
     text: 'T3.1 Shaping Meaning: Stories',
     board: 'Universal',
     yearGroup: 'Year 7',
@@ -403,18 +402,17 @@ export const y7Term3Lessons: LessonPlan[] = [
         support: 'Teacher provides a menu of three connectives to choose from.',
         core: 'Students rewrite the sentence using at least one comparative connective.',
         stretch:
-          'Students rewrite the sentence and add an analytical comment about what the difference reveals about the writers\' intentions.',
+          "Students rewrite the sentence and add an analytical comment about what the difference reveals about the writers' intentions.",
       },
     },
     homework:
       'Choose two stories you have read (they can be from class or your own reading). Write five comparative sentences, each using a different connective, comparing one aspect of the stories.',
     worksheetQuestions: [
       {
-        question:
-          'List four comparative connectives and write an example sentence using each one.',
+        question: 'List four comparative connectives and write an example sentence using each one.',
         lines: 5,
         modelAnswer:
-          'Similarly — "Similarly, both writers use a young protagonist who must overcome a challenge." In contrast — "In contrast, the first story is set in a rural village, while the second takes place in a futuristic city." Whereas — "Whereas the hero in Text A succeeds through bravery, the hero in Text B relies on intelligence." Likewise — "Likewise, both stories end with the character learning an important lesson."',
+          'Similarly - "Similarly, both writers use a young protagonist who must overcome a challenge." In contrast - "In contrast, the first story is set in a rural village, while the second takes place in a futuristic city." Whereas - "Whereas the hero in Text A succeeds through bravery, the hero in Text B relies on intelligence." Likewise - "Likewise, both stories end with the character learning an important lesson."',
         marks: 4,
       },
       {
@@ -422,7 +420,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'What is the difference between describing two stories separately and comparing them? Why is comparison a higher-level skill?',
         lines: 4,
         modelAnswer:
-          'Describing two stories separately means writing about each one in turn without connecting them. Comparing means examining them side by side, identifying what is similar and different, and explaining what those similarities or differences reveal. Comparison is a higher-level skill because it requires analysis — you must think about why writers make different choices and what effect those choices have, rather than simply summarising.',
+          'Describing two stories separately means writing about each one in turn without connecting them. Comparing means examining them side by side, identifying what is similar and different, and explaining what those similarities or differences reveal. Comparison is a higher-level skill because it requires analysis - you must think about why writers make different choices and what effect those choices have, rather than simply summarising.',
         marks: 3,
       },
       {
@@ -430,7 +428,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Read the two short extracts below. Write a comparative paragraph that compares how the writers create a sense of danger.',
         lines: 8,
         modelAnswer:
-          'Both writers create a sense of danger, but they use different methods to achieve this. In Text A, the writer uses short, fragmented sentences such as "He ran. He stumbled. The shadow followed." to create a breathless pace that mirrors the character\'s panic. Similarly, Text B conveys danger, but through descriptive imagery: "the forest closed in around her like a tightening fist." Whereas Text A\'s danger feels immediate and physical, Text B\'s danger is more atmospheric and psychological. Both approaches are effective, but they engage the reader in different ways — Text A through pace and Text B through imagery.',
+          'Both writers create a sense of danger, but they use different methods to achieve this. In Text A, the writer uses short, fragmented sentences such as "He ran. He stumbled. The shadow followed." to create a breathless pace that mirrors the character\'s panic. Similarly, Text B conveys danger, but through descriptive imagery: "the forest closed in around her like a tightening fist." Whereas Text A\'s danger feels immediate and physical, Text B\'s danger is more atmospheric and psychological. Both approaches are effective, but they engage the reader in different ways - Text A through pace and Text B through imagery.',
         marks: 5,
       },
       {
@@ -438,7 +436,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Using your comparison framework, identify the most significant similarity between the two stories you studied. Explain why this similarity matters.',
         lines: 5,
         modelAnswer:
-          'The most significant similarity is that both stories explore the theme of consequences — characters who act selfishly face punishment, while those who are generous are rewarded. This matters because it reveals that both writers, despite coming from different cultures and time periods, share the belief that stories should teach moral lessons about how to treat others. The similarity suggests that this moral concern is universal.',
+          'The most significant similarity is that both stories explore the theme of consequences - characters who act selfishly face punishment, while those who are generous are rewarded. This matters because it reveals that both writers, despite coming from different cultures and time periods, share the belief that stories should teach moral lessons about how to treat others. The similarity suggests that this moral concern is universal.',
         marks: 4,
       },
       {
@@ -446,7 +444,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'A student writes: "Text A is about a king who is greedy. Text B is about a girl who is kind." Explain what is wrong with this as a comparison, and rewrite it as a proper comparative sentence.',
         lines: 5,
         modelAnswer:
-          'This is not a comparison — it is two separate descriptions. The student describes each text individually without connecting them or using comparative language. A proper comparative sentence: "Whereas Text A centres on a king whose greed leads to his downfall, Text B presents a girl whose kindness is ultimately rewarded, suggesting that the two writers use contrasting characters to explore opposite sides of the same moral — that our treatment of others determines our fate."',
+          'This is not a comparison - it is two separate descriptions. The student describes each text individually without connecting them or using comparative language. A proper comparative sentence: "Whereas Text A centres on a king whose greed leads to his downfall, Text B presents a girl whose kindness is ultimately rewarded, suggesting that the two writers use contrasting characters to explore opposite sides of the same moral - that our treatment of others determines our fate."',
         marks: 4,
       },
     ],
@@ -522,11 +520,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           stretch:
             'Students evaluate which analytical sentence is stronger and explain what makes it more effective.',
         },
-        resources: [
-          'Two model comparative paragraphs',
-          'Annotation key sheet',
-          'Highlighters',
-        ],
+        resources: ['Two model comparative paragraphs', 'Annotation key sheet', 'Highlighters'],
       },
       {
         title: 'Guided and Independent Comparative Writing',
@@ -568,7 +562,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'What is the difference between a "dropped" quotation and an "embedded" quotation? Write an example of each.',
         lines: 5,
         modelAnswer:
-          'A dropped quotation is placed into the paragraph as a standalone sentence without being woven into the writer\'s own words, e.g. "The character is scared. \'His hands trembled.\'" An embedded quotation is integrated into the sentence, e.g. "The character\'s fear is evident as \'his hands trembled\' when he approached the door." Embedded quotations are more fluent and show control of evidence.',
+          "A dropped quotation is placed into the paragraph as a standalone sentence without being woven into the writer's own words, e.g. \"The character is scared. 'His hands trembled.'\" An embedded quotation is integrated into the sentence, e.g. \"The character's fear is evident as 'his hands trembled' when he approached the door.\" Embedded quotations are more fluent and show control of evidence.",
         marks: 3,
       },
       {
@@ -576,7 +570,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Write a comparative point sentence that could begin a paragraph comparing two characters. Your sentence must include a comparative connective.',
         lines: 3,
         modelAnswer:
-          'Both writers present their protagonists as outsiders; however, whereas Text A\'s character is isolated by choice, Text B\'s character is excluded by society, which creates different reader responses to their situations.',
+          "Both writers present their protagonists as outsiders; however, whereas Text A's character is isolated by choice, Text B's character is excluded by society, which creates different reader responses to their situations.",
         marks: 3,
       },
       {
@@ -620,7 +614,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 5: Assessment — Comparative Analysis ───────────────────────────
+  // ── Lesson 5: Assessment - Comparative Analysis ───────────────────────────
   {
     id: 'y7-t3-05-assessment-comparative-analysis',
     title: 'Assessment: Comparative Analysis',
@@ -632,11 +626,11 @@ export const y7Term3Lessons: LessonPlan[] = [
       'Demonstrate the ability to compare two texts in a sustained written response (7R.6)',
       'Apply comparative paragraph structure under timed conditions (7W.2)',
       'Select and embed evidence from two texts effectively',
-      'Show understanding of theme, character, and writer\'s methods across two stories',
+      "Show understanding of theme, character, and writer's methods across two stories",
     ],
     successCriteria: [
       'I can write at least two comparative paragraphs in the time allowed',
-      'I can compare theme, character, or writer\'s methods across both texts',
+      "I can compare theme, character, or writer's methods across both texts",
       'I can embed quotations from both texts to support my analysis',
       'I can use comparative connectives to link my points clearly',
     ],
@@ -674,7 +668,7 @@ export const y7Term3Lessons: LessonPlan[] = [
         title: 'Timed Comparative Writing',
         duration: '35 minutes',
         instructions:
-          'Students write their comparative analysis response under timed conditions. The question should be displayed throughout (e.g. "Compare how the two writers present the theme of courage. You should compare: the writers\' ideas and attitudes, the writers\' use of language and structure, the overall impact on the reader."). Students write in silence. Teacher circulates to monitor engagement and offer minimal, non-directive prompts to students who are stuck (e.g. "Look at your plan — what is your next comparison point?"). At the halfway mark (17 minutes), teacher gives a quiet time reminder.',
+          'Students write their comparative analysis response under timed conditions. The question should be displayed throughout (e.g. "Compare how the two writers present the theme of courage. You should compare: the writers\' ideas and attitudes, the writers\' use of language and structure, the overall impact on the reader."). Students write in silence. Teacher circulates to monitor engagement and offer minimal, non-directive prompts to students who are stuck (e.g. "Look at your plan - what is your next comparison point?"). At the halfway mark (17 minutes), teacher gives a quiet time reminder.',
         differentiation: {
           support:
             'Provide a writing frame with the paragraph structure outlined and connectives listed at the top. Students should aim for two paragraphs.',
@@ -696,7 +690,8 @@ export const y7Term3Lessons: LessonPlan[] = [
       instructions:
         'Students put down their pens and re-read their response. Using the success criteria checklist, they tick each criterion they believe they have met and circle one area for improvement. Students write a brief reflection: "One thing I did well was... Next time I would improve..." Teacher collects responses and reflections together.',
       differentiation: {
-        support: 'Teacher reads the checklist aloud and students self-assess one criterion at a time.',
+        support:
+          'Teacher reads the checklist aloud and students self-assess one criterion at a time.',
         core: 'Students self-assess independently using the checklist and write a reflection.',
         stretch:
           'Students identify a specific sentence in their response that could be improved and rewrite it on the reflection sheet.',
@@ -707,7 +702,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     worksheetQuestions: [
       {
         question:
-          'Compare how the two writers present the theme of [specified theme]. You should compare:\n- the writers\' ideas and perspectives\n- the writers\' use of language and/or structure\n- the overall impact on the reader\n\nWrite your response as a series of comparative paragraphs.',
+          "Compare how the two writers present the theme of [specified theme]. You should compare:\n- the writers' ideas and perspectives\n- the writers' use of language and/or structure\n- the overall impact on the reader\n\nWrite your response as a series of comparative paragraphs.",
         lines: 30,
         modelAnswer:
           'A strong response will include: an opening that establishes the focus of comparison; two or more comparative paragraphs, each addressing a specific point of comparison (e.g. how both writers present the protagonist\'s response to the theme, how both writers use specific language techniques); embedded quotations from both texts; comparative connectives such as "similarly," "in contrast," "whereas," "both writers"; analytical comments that go beyond description to explain the effect on the reader; a concluding sentence that draws the comparison together. Higher-level responses will explore subtle differences in writers\' attitudes and consider how context may influence meaning.',
@@ -732,13 +727,13 @@ export const y7Term3Lessons: LessonPlan[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // T3.2 — Poetry (Lessons 6-10)
+  // T3.2 - Poetry (Lessons 6-10)
   // ═══════════════════════════════════════════════════════════════════════════
 
-  // ── Lesson 6: Introduction to Poetry — What Makes a Poem ─────────────────
+  // ── Lesson 6: Introduction to Poetry - What Makes a Poem ─────────────────
   {
     id: 'y7-t3-06-introduction-to-poetry',
-    title: 'Introduction to Poetry — What Makes a Poem',
+    title: 'Introduction to Poetry - What Makes a Poem',
     text: 'T3.2 Poetry',
     board: 'Universal',
     yearGroup: 'Year 7',
@@ -755,16 +750,7 @@ export const y7Term3Lessons: LessonPlan[] = [
       'I can explain how the layout of a poem is different from prose and why this matters',
       'I can read a poem aloud with appropriate pace and emphasis',
     ],
-    keywords: [
-      'poetry',
-      'stanza',
-      'verse',
-      'line',
-      'rhyme',
-      'rhythm',
-      'enjambment',
-      'form',
-    ],
+    keywords: ['poetry', 'stanza', 'verse', 'line', 'rhyme', 'rhythm', 'enjambment', 'form'],
     starterActivity: {
       title: 'Poem or Not?',
       duration: '7 minutes',
@@ -784,13 +770,13 @@ export const y7Term3Lessons: LessonPlan[] = [
         title: 'Annotating a Poem: Key Features',
         duration: '18 minutes',
         instructions:
-          'Students receive a printed copy of an accessible poem (e.g. a poem with clear rhyme, stanzas, and enjambment). Teacher reads the poem aloud twice: first for enjoyment, second for annotation. Teacher models annotating the first stanza, labelling: stanza, line, rhyme scheme (using letter notation ABAB etc.), an example of enjambment, and a comment on rhythm. Students then annotate the remaining stanzas in pairs. Class reconvenes to share findings — teacher adds to a whole-class annotated version on the board.',
+          'Students receive a printed copy of an accessible poem (e.g. a poem with clear rhyme, stanzas, and enjambment). Teacher reads the poem aloud twice: first for enjoyment, second for annotation. Teacher models annotating the first stanza, labelling: stanza, line, rhyme scheme (using letter notation ABAB etc.), an example of enjambment, and a comment on rhythm. Students then annotate the remaining stanzas in pairs. Class reconvenes to share findings - teacher adds to a whole-class annotated version on the board.',
         differentiation: {
           support:
             'Provide a glossary card defining each feature with an example, and pre-label the first two features on the printed poem.',
           core: 'Students annotate the poem identifying all five features independently.',
           stretch:
-            'Students explain the effect of one feature — for example, why does the poet use enjambment at that specific point?',
+            'Students explain the effect of one feature - for example, why does the poet use enjambment at that specific point?',
         },
         resources: [
           'Printed poem (one per student)',
@@ -829,14 +815,13 @@ export const y7Term3Lessons: LessonPlan[] = [
       },
     },
     homework:
-      'Find a poem you enjoy (from a book, a poetry website, or the school library). Write a paragraph explaining what makes it a poem, identifying at least three features from today\'s lesson.',
+      "Find a poem you enjoy (from a book, a poetry website, or the school library). Write a paragraph explaining what makes it a poem, identifying at least three features from today's lesson.",
     worksheetQuestions: [
       {
-        question:
-          'Define the following poetry terms: stanza, rhyme, rhythm, enjambment, form.',
+        question: 'Define the following poetry terms: stanza, rhyme, rhythm, enjambment, form.',
         lines: 6,
         modelAnswer:
-          'Stanza — a group of lines in a poem, separated by a space, similar to a paragraph in prose. Rhyme — the repetition of similar sounds, usually at the end of lines. Rhythm — the pattern of stressed and unstressed syllables that creates a beat. Enjambment — when a sentence or phrase runs over from one line to the next without punctuation. Form — the overall structure and shape of the poem, including its stanza pattern, line length, and rhyme scheme.',
+          'Stanza - a group of lines in a poem, separated by a space, similar to a paragraph in prose. Rhyme - the repetition of similar sounds, usually at the end of lines. Rhythm - the pattern of stressed and unstressed syllables that creates a beat. Enjambment - when a sentence or phrase runs over from one line to the next without punctuation. Form - the overall structure and shape of the poem, including its stanza pattern, line length, and rhyme scheme.',
         marks: 5,
       },
       {
@@ -848,11 +833,10 @@ export const y7Term3Lessons: LessonPlan[] = [
         marks: 2,
       },
       {
-        question:
-          'Explain why a poet might use enjambment. What effect can it have on the reader?',
+        question: 'Explain why a poet might use enjambment. What effect can it have on the reader?',
         lines: 4,
         modelAnswer:
-          'A poet might use enjambment to create a sense of momentum or urgency, pulling the reader quickly from one line to the next. It can also be used to create surprise by placing an unexpected word at the start of the new line, or to mirror the content of the poem — for example, enjambment might reflect a character running or a thought that cannot be contained.',
+          'A poet might use enjambment to create a sense of momentum or urgency, pulling the reader quickly from one line to the next. It can also be used to create surprise by placing an unexpected word at the start of the new line, or to mirror the content of the poem - for example, enjambment might reflect a character running or a thought that cannot be contained.',
         marks: 3,
       },
       {
@@ -873,10 +857,10 @@ export const y7Term3Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson introduces poetry as a form. Choose a poem that is accessible and engaging — humour or strong narrative works well for Year 7.',
+      'This lesson introduces poetry as a form. Choose a poem that is accessible and engaging - humour or strong narrative works well for Year 7.',
       'The reading aloud activity is important: many students read poetry as if every line end is a pause. Explicitly teach them to follow the punctuation, not the line breaks.',
       'Avoid overwhelming students with too many technical terms. Focus on the five key terms and build from there in subsequent lessons.',
-      'The starter activity is designed to surface and challenge misconceptions about what poetry is. Be prepared for debate about song lyrics — this is a productive discussion.',
+      'The starter activity is designed to surface and challenge misconceptions about what poetry is. Be prepared for debate about song lyrics - this is a productive discussion.',
     ],
     targetedSkills: [
       '7R.3',
@@ -887,7 +871,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 7: Poetic Methods — Imagery and Sound ─────────────────────────
+  // ── Lesson 7: Poetic Methods - Imagery and Sound ─────────────────────────
   {
     id: 'y7-t3-07-poetic-methods-imagery-sound',
     title: 'Poetic Methods: Imagery and Sound',
@@ -921,7 +905,7 @@ export const y7Term3Lessons: LessonPlan[] = [
       title: 'Imagery or Sound?',
       duration: '7 minutes',
       instructions:
-        'Display eight short quotations from poems on the board. Students sort them into two categories: Imagery (appeals to sight, creates a picture) and Sound (appeals to the ear, creates an auditory effect). Some quotations may belong in both categories. Students hold up I or S cards. Teacher reveals answers and explains that imagery creates mental pictures while sound devices create auditory effects — and that the best poets combine both.',
+        'Display eight short quotations from poems on the board. Students sort them into two categories: Imagery (appeals to sight, creates a picture) and Sound (appeals to the ear, creates an auditory effect). Some quotations may belong in both categories. Students hold up I or S cards. Teacher reveals answers and explains that imagery creates mental pictures while sound devices create auditory effects - and that the best poets combine both.',
       differentiation: {
         support:
           'Provide definitions of imagery and sound at the top of the worksheet with an example of each.',
@@ -960,7 +944,7 @@ export const y7Term3Lessons: LessonPlan[] = [
             'Highlight lines in the poem that contain sound devices so students can focus on identifying which device is used and its effect.',
           core: 'Students find at least two sound devices and analyse their effect.',
           stretch:
-            'Students write a PEE paragraph about one sound device, linking its effect to the poem\'s overall theme or mood.',
+            "Students write a PEE paragraph about one sound device, linking its effect to the poem's overall theme or mood.",
         },
         resources: [
           'Same poem handout',
@@ -977,8 +961,7 @@ export const y7Term3Lessons: LessonPlan[] = [
       differentiation: {
         support: 'Teacher reads all five aloud and explains the features of the winning analysis.',
         core: 'Students vote and explain their choice.',
-        stretch:
-          'Students improve the second-place analysis to make it as strong as the winner.',
+        stretch: 'Students improve the second-place analysis to make it as strong as the winner.',
       },
     },
     homework:
@@ -989,7 +972,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Define the following terms and give an example of each: simile, metaphor, personification, alliteration, onomatopoeia.',
         lines: 8,
         modelAnswer:
-          'Simile — a comparison using "like" or "as," e.g. "The moon glowed like a lantern." Metaphor — a direct comparison stating something is something else, e.g. "The classroom was a zoo." Personification — giving human qualities to non-human things, e.g. "The wind whispered through the trees." Alliteration — repetition of the same consonant sound at the start of nearby words, e.g. "The slippery snake slithered silently." Onomatopoeia — a word that imitates the sound it describes, e.g. "The fire crackled and hissed."',
+          'Simile - a comparison using "like" or "as," e.g. "The moon glowed like a lantern." Metaphor - a direct comparison stating something is something else, e.g. "The classroom was a zoo." Personification - giving human qualities to non-human things, e.g. "The wind whispered through the trees." Alliteration - repetition of the same consonant sound at the start of nearby words, e.g. "The slippery snake slithered silently." Onomatopoeia - a word that imitates the sound it describes, e.g. "The fire crackled and hissed."',
         marks: 5,
       },
       {
@@ -1013,7 +996,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Explain the difference between imagery and sound devices. Why might a poet use both together?',
         lines: 5,
         modelAnswer:
-          'Imagery creates mental pictures by appealing to the reader\'s visual imagination — it helps you see what the poet is describing. Sound devices create auditory effects — they affect how the poem sounds when read aloud. A poet might use both together to create a fully immersive experience: the imagery shows the reader the scene while the sound devices make them feel as though they are hearing it too. This combination engages multiple senses and makes the poem more powerful and memorable.',
+          "Imagery creates mental pictures by appealing to the reader's visual imagination - it helps you see what the poet is describing. Sound devices create auditory effects - they affect how the poem sounds when read aloud. A poet might use both together to create a fully immersive experience: the imagery shows the reader the scene while the sound devices make them feel as though they are hearing it too. This combination engages multiple senses and makes the poem more powerful and memorable.",
         marks: 4,
       },
       {
@@ -1028,7 +1011,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     teacherNotes: [
       'Choose a poem that is rich in both imagery and sound devices. Nature poetry or war poetry often provides strong examples.',
       'Students often confuse simile and metaphor. Use a physical sorting activity if misconceptions persist.',
-      'The "close your eyes and listen" technique during the sound activity is very effective — it forces students to focus on the auditory qualities of language.',
+      'The "close your eyes and listen" technique during the sound activity is very effective - it forces students to focus on the auditory qualities of language.',
       'This lesson builds directly towards the step-by-step analysis in Lesson 8. Ensure students retain their annotated poems and analysis tables.',
     ],
     targetedSkills: [
@@ -1051,8 +1034,8 @@ export const y7Term3Lessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Apply a structured approach to analysing an unseen poem (7R.2)',
-      'Identify and comment on the poet\'s choices of language, form, and structure (7R.5)',
-      'Write an analytical response that explores the poet\'s intentions and effects',
+      "Identify and comment on the poet's choices of language, form, and structure (7R.5)",
+      "Write an analytical response that explores the poet's intentions and effects",
       'Develop confidence in approaching unfamiliar poems independently',
     ],
     successCriteria: [
@@ -1075,7 +1058,7 @@ export const y7Term3Lessons: LessonPlan[] = [
       title: 'First Impressions',
       duration: '8 minutes',
       instructions:
-        'Display a new, unseen poem on the board (not the one used in Lessons 6-7). Teacher reads it aloud once without any discussion. Students write three words that describe their initial response to the poem (e.g. "sad", "mysterious", "angry"). Teacher collects responses on the board and explains that first impressions are the starting point for analysis — the rest of the lesson will teach them how to move from impression to evidence-based analysis.',
+        'Display a new, unseen poem on the board (not the one used in Lessons 6-7). Teacher reads it aloud once without any discussion. Students write three words that describe their initial response to the poem (e.g. "sad", "mysterious", "angry"). Teacher collects responses on the board and explains that first impressions are the starting point for analysis - the rest of the lesson will teach them how to move from impression to evidence-based analysis.',
       differentiation: {
         support:
           'Provide an emotion word bank to help students articulate their first impressions.',
@@ -1090,13 +1073,13 @@ export const y7Term3Lessons: LessonPlan[] = [
         title: 'The Five-Step Analysis Method',
         duration: '22 minutes',
         instructions:
-          'Teacher introduces a five-step method for analysing a poem: (1) Read and respond — what is the poem about? (2) Form and structure — how is it laid out? What is the effect? (3) Language — what methods does the poet use? (4) Zoom in — choose two key quotations and analyse them in detail (5) Step back — what is the poet\'s message or intention? Teacher models Steps 1-3 on the board using the unseen poem. Students receive a printed copy and annotate along with the teacher. For Steps 4 and 5, students work independently: they select two quotations, annotate them (identifying method, connotation, effect), and write a one-sentence summary of the poet\'s overall message. Teacher circulates and supports.',
+          "Teacher introduces a five-step method for analysing a poem: (1) Read and respond - what is the poem about? (2) Form and structure - how is it laid out? What is the effect? (3) Language - what methods does the poet use? (4) Zoom in - choose two key quotations and analyse them in detail (5) Step back - what is the poet's message or intention? Teacher models Steps 1-3 on the board using the unseen poem. Students receive a printed copy and annotate along with the teacher. For Steps 4 and 5, students work independently: they select two quotations, annotate them (identifying method, connotation, effect), and write a one-sentence summary of the poet's overall message. Teacher circulates and supports.",
         differentiation: {
           support:
             'Provide a five-step analysis worksheet with prompts for each step and space to write. Steps 1-3 are partially completed from the teacher modelling.',
           core: 'Students complete all five steps, with independent work on Steps 4 and 5.',
           stretch:
-            'Students complete all five steps and write a paragraph connecting their two key quotations to the poem\'s overall message.',
+            "Students complete all five steps and write a paragraph connecting their two key quotations to the poem's overall message.",
         },
         resources: [
           'Unseen poem (printed, one per student)',
@@ -1130,7 +1113,7 @@ export const y7Term3Lessons: LessonPlan[] = [
         'Students close their books. Teacher displays the five steps with one word missing from each. Students fill in the blanks on mini-whiteboards. Teacher checks understanding and reinforces: this five-step method can be applied to any poem, and it will be the approach used in the end-of-year assessment.',
       differentiation: {
         support: 'Only two words are missing; the rest are visible.',
-        core: 'Five words are missing — one from each step.',
+        core: 'Five words are missing - one from each step.',
         stretch:
           'All five step titles are blanked out, and students must recall them in the correct order.',
       },
@@ -1139,16 +1122,14 @@ export const y7Term3Lessons: LessonPlan[] = [
       'Apply the five-step analysis method to a new short poem provided on the homework sheet. Complete the analysis worksheet and write one PEE paragraph about a language choice.',
     worksheetQuestions: [
       {
-        question:
-          'List the five steps of the poetry analysis method in the correct order.',
+        question: 'List the five steps of the poetry analysis method in the correct order.',
         lines: 5,
         modelAnswer:
-          '1. Read and respond — understand what the poem is about and note initial impressions. 2. Form and structure — examine the layout, stanza pattern, rhyme scheme, and line length. 3. Language — identify the poet\'s use of imagery, sound devices, word choices, and other methods. 4. Zoom in — select two key quotations and analyse them in detail (method, connotation, effect). 5. Step back — consider the poet\'s overall message, intention, or theme.',
+          "1. Read and respond - understand what the poem is about and note initial impressions. 2. Form and structure - examine the layout, stanza pattern, rhyme scheme, and line length. 3. Language - identify the poet's use of imagery, sound devices, word choices, and other methods. 4. Zoom in - select two key quotations and analyse them in detail (method, connotation, effect). 5. Step back - consider the poet's overall message, intention, or theme.",
         marks: 5,
       },
       {
-        question:
-          'Read the poem provided. What is it about? Write a two-sentence summary.',
+        question: 'Read the poem provided. What is it about? Write a two-sentence summary.',
         lines: 3,
         modelAnswer:
           'The answer will depend on the poem used. A strong response summarises both the surface meaning (what literally happens or is described) and the deeper meaning (what theme or emotion the poet explores). For example: "On the surface, the poem describes a storm passing over a town. On a deeper level, it explores the idea that powerful emotions, like anger, eventually pass and leave calm behind."',
@@ -1159,12 +1140,12 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Choose one quotation from the poem. Identify the poetic method used and analyse its effect on the reader in detail.',
         lines: 7,
         modelAnswer:
-          'A strong response will: identify a specific quotation, name the poetic method accurately (e.g. metaphor, personification, alliteration), explore the connotations of key words, explain the effect on the reader (what it makes them think, feel, or imagine), and link the effect back to the poem\'s overall theme or mood.',
+          "A strong response will: identify a specific quotation, name the poetic method accurately (e.g. metaphor, personification, alliteration), explore the connotations of key words, explain the effect on the reader (what it makes them think, feel, or imagine), and link the effect back to the poem's overall theme or mood.",
         marks: 5,
       },
       {
         question:
-          'Comment on one structural choice the poet has made (e.g. stanza length, line breaks, enjambment, the poem\'s ending). Why might the poet have made this choice?',
+          "Comment on one structural choice the poet has made (e.g. stanza length, line breaks, enjambment, the poem's ending). Why might the poet have made this choice?",
         lines: 5,
         modelAnswer:
           'A strong response will identify a specific structural feature and explain its purpose. For example: "The poet uses short, single-line stanzas in the middle of the poem, which slows the pace and forces the reader to pause on each image individually. This mirrors the speaker\'s careful observation of the scene and creates a contemplative mood." Or: "The poet uses enjambment in lines 3-4, which creates momentum and urgency, reflecting the character\'s panic."',
@@ -1172,10 +1153,10 @@ export const y7Term3Lessons: LessonPlan[] = [
       },
       {
         question:
-          'What do you think is the poet\'s overall message or intention? Use evidence from the poem to support your answer.',
+          "What do you think is the poet's overall message or intention? Use evidence from the poem to support your answer.",
         lines: 6,
         modelAnswer:
-          'A strong response will propose a clear interpretation of the poet\'s message and support it with at least two pieces of evidence. For example: "I believe the poet\'s message is that nature is more powerful than humanity. This is supported by the personification of the storm as a \'giant\' that \'roared across the valley,\' which presents nature as an overwhelming force. Additionally, the final image of the \'tiny houses\' emphasises human smallness in comparison. Together, these choices suggest the poet wants the reader to feel humility before the natural world."',
+          "A strong response will propose a clear interpretation of the poet's message and support it with at least two pieces of evidence. For example: \"I believe the poet's message is that nature is more powerful than humanity. This is supported by the personification of the storm as a 'giant' that 'roared across the valley,' which presents nature as an overwhelming force. Additionally, the final image of the 'tiny houses' emphasises human smallness in comparison. Together, these choices suggest the poet wants the reader to feel humility before the natural world.\"",
         marks: 5,
       },
     ],
@@ -1195,10 +1176,10 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 9: Comparing Poems — Thematic Connections ─────────────────────
+  // ── Lesson 9: Comparing Poems - Thematic Connections ─────────────────────
   {
     id: 'y7-t3-09-comparing-poems',
-    title: 'Comparing Poems — Thematic Connections',
+    title: 'Comparing Poems - Thematic Connections',
     text: 'T3.2 Poetry',
     board: 'Universal',
     yearGroup: 'Year 7',
@@ -1235,7 +1216,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Provide the shared theme explicitly and ask students to predict how each poet might approach it differently.',
         core: 'Students predict the shared theme and at least one possible difference.',
         stretch:
-          'Students predict how the poets\' methods (not just ideas) might differ, based on the tone of the first lines.',
+          "Students predict how the poets' methods (not just ideas) might differ, based on the tone of the first lines.",
       },
       resources: ['Two poems slide (titles and first stanzas)', 'Mini-whiteboards'],
     },
@@ -1282,9 +1263,10 @@ export const y7Term3Lessons: LessonPlan[] = [
       title: 'Which Poem Wins?',
       duration: '5 minutes',
       instructions:
-        'Students stand. Teacher poses the question: "Which poem is more effective at conveying the theme?" Students move to one side of the room for Poem A, the other for Poem B. Two students from each side give a one-sentence justification. Teacher highlights that evaluative judgements must be supported by evidence — there is no wrong answer as long as it is justified.',
+        'Students stand. Teacher poses the question: "Which poem is more effective at conveying the theme?" Students move to one side of the room for Poem A, the other for Poem B. Two students from each side give a one-sentence justification. Teacher highlights that evaluative judgements must be supported by evidence - there is no wrong answer as long as it is justified.',
       differentiation: {
-        support: 'Teacher provides a sentence frame: "I think Poem [A/B] is more effective because...".',
+        support:
+          'Teacher provides a sentence frame: "I think Poem [A/B] is more effective because...".',
         core: 'Students justify their choice with a specific reference to a poetic method.',
         stretch:
           'Students argue for the poem they did not choose, practising considering alternative perspectives.',
@@ -1298,12 +1280,12 @@ export const y7Term3Lessons: LessonPlan[] = [
           'What does it mean to compare poems "thematically"? How is this different from comparing their language?',
         lines: 4,
         modelAnswer:
-          'Comparing poems thematically means examining the ideas, messages, or subjects they explore — for example, both poems might explore the theme of loss, but one might present it as something painful while the other presents it as something that brings growth. Comparing language means examining the specific methods the poets use (simile, metaphor, word choice) rather than the ideas themselves. A strong comparative response does both: it compares the themes and analyses how the poets\' language choices shape those themes differently.',
+          "Comparing poems thematically means examining the ideas, messages, or subjects they explore - for example, both poems might explore the theme of loss, but one might present it as something painful while the other presents it as something that brings growth. Comparing language means examining the specific methods the poets use (simile, metaphor, word choice) rather than the ideas themselves. A strong comparative response does both: it compares the themes and analyses how the poets' language choices shape those themes differently.",
         marks: 3,
       },
       {
         question:
-          'Identify the shared theme of the two poems studied in class. Write a sentence explaining each poet\'s perspective on this theme.',
+          "Identify the shared theme of the two poems studied in class. Write a sentence explaining each poet's perspective on this theme.",
         lines: 4,
         modelAnswer:
           'The answer will depend on the poems used. A strong response identifies the shared theme clearly and articulates each poet\'s distinct attitude. For example: "Both poems explore the theme of the power of nature. Poet A presents nature as beautiful and awe-inspiring, using imagery of light and colour. Poet B, in contrast, presents nature as dangerous and indifferent to humanity, using violent and threatening imagery."',
@@ -1314,7 +1296,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Choose one poetic method that both poets use (e.g. imagery, personification, rhyme). Compare how they use it differently. Use quotations from both poems.',
         lines: 8,
         modelAnswer:
-          'A strong response identifies a shared method and shows how each poet uses it to create a different effect. For example: "Both poets use personification to present nature, but to very different effect. Poet A writes that the river \'sang gently over the stones,\' personifying it as something musical and soothing, which creates a peaceful, harmonious mood. In contrast, Poet B personifies the sea as aggressive, describing how it \'snarled and spat at the harbour wall.\' The verbs \'snarled\' and \'spat\' have animalistic, hostile connotations, presenting nature as something to be feared. This contrast reveals fundamentally different attitudes: Poet A celebrates nature\'s beauty, while Poet B warns of its power."',
+          "A strong response identifies a shared method and shows how each poet uses it to create a different effect. For example: \"Both poets use personification to present nature, but to very different effect. Poet A writes that the river 'sang gently over the stones,' personifying it as something musical and soothing, which creates a peaceful, harmonious mood. In contrast, Poet B personifies the sea as aggressive, describing how it 'snarled and spat at the harbour wall.' The verbs 'snarled' and 'spat' have animalistic, hostile connotations, presenting nature as something to be feared. This contrast reveals fundamentally different attitudes: Poet A celebrates nature's beauty, while Poet B warns of its power.\"",
         marks: 6,
       },
       {
@@ -1322,7 +1304,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Which poem do you find more effective in conveying the shared theme? Write a paragraph justifying your choice with reference to specific poetic methods.',
         lines: 7,
         modelAnswer:
-          'A strong response states a clear preference and justifies it with evidence. For example: "I find Poem B more effective because the poet\'s use of violent imagery and short, punchy sentences creates an immediate emotional impact that stays with the reader. The metaphor of the sea as a \'beast\' is more memorable than Poem A\'s gentler imagery because it surprises the reader and challenges the conventional view of nature as beautiful. Additionally, Poem B\'s lack of rhyme creates an unsettling, unpredictable feeling that mirrors its content, whereas Poem A\'s regular rhyme scheme, while pleasant, feels more predictable."',
+          "A strong response states a clear preference and justifies it with evidence. For example: \"I find Poem B more effective because the poet's use of violent imagery and short, punchy sentences creates an immediate emotional impact that stays with the reader. The metaphor of the sea as a 'beast' is more memorable than Poem A's gentler imagery because it surprises the reader and challenges the conventional view of nature as beautiful. Additionally, Poem B's lack of rhyme creates an unsettling, unpredictable feeling that mirrors its content, whereas Poem A's regular rhyme scheme, while pleasant, feels more predictable.\"",
         marks: 5,
       },
       {
@@ -1330,14 +1312,14 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Write a comparative paragraph about the two poems, focusing on how the poets use structure differently. Use comparative connectives and embedded quotations.',
         lines: 8,
         modelAnswer:
-          'Both poets use structure to reinforce their themes, but they make contrasting choices. Poem A uses regular, four-line stanzas with a consistent ABAB rhyme scheme, which creates a sense of order and harmony that mirrors its celebration of nature\'s beauty. In contrast, Poem B uses irregular stanza lengths and no consistent rhyme, reflecting the chaos and unpredictability of the storm it describes. Whereas Poem A\'s enjambment is gentle, allowing images to flow smoothly between lines, Poem B uses abrupt caesura mid-line to create sudden pauses that mimic the jolting impact of thunder. These structural differences reveal how form and content work together: Poem A\'s structure embodies calm, while Poem B\'s structure embodies disruption.',
+          "Both poets use structure to reinforce their themes, but they make contrasting choices. Poem A uses regular, four-line stanzas with a consistent ABAB rhyme scheme, which creates a sense of order and harmony that mirrors its celebration of nature's beauty. In contrast, Poem B uses irregular stanza lengths and no consistent rhyme, reflecting the chaos and unpredictability of the storm it describes. Whereas Poem A's enjambment is gentle, allowing images to flow smoothly between lines, Poem B uses abrupt caesura mid-line to create sudden pauses that mimic the jolting impact of thunder. These structural differences reveal how form and content work together: Poem A's structure embodies calm, while Poem B's structure embodies disruption.",
         marks: 6,
       },
     ],
     teacherNotes: [
       'Select two poems that are similar enough in theme for meaningful comparison but different enough in method to generate discussion.',
       'This lesson draws heavily on the comparative skills from Lessons 3-4 (prose comparison) and the poetry analysis skills from Lessons 6-8. Remind students of these connections explicitly.',
-      'The physical movement in the plenary is effective for engagement and for identifying students\' evaluative positions. Insist on evidence-based justification.',
+      "The physical movement in the plenary is effective for engagement and for identifying students' evaluative positions. Insist on evidence-based justification.",
       'This lesson is the final preparation before the end-of-year assessment in Lesson 10. Ensure all students leave with a completed comparison grid and at least one comparative paragraph.',
     ],
     targetedSkills: [
@@ -1349,7 +1331,7 @@ export const y7Term3Lessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 10: End of Year Assessment — Poetry and Prose ─────────────────
+  // ── Lesson 10: End of Year Assessment - Poetry and Prose ─────────────────
   {
     id: 'y7-t3-10-end-of-year-assessment',
     title: 'End of Year Assessment: Poetry and Prose',
@@ -1361,12 +1343,12 @@ export const y7Term3Lessons: LessonPlan[] = [
       'Demonstrate reading comprehension and analytical skills across poetry and prose (7R.2-7R.6)',
       'Write sustained analytical and comparative responses under timed conditions (7W.2-7W.5)',
       'Select and embed evidence effectively to support interpretations',
-      'Show understanding of writers\' methods, themes, and effects across different forms',
+      "Show understanding of writers' methods, themes, and effects across different forms",
     ],
     successCriteria: [
       'I can write a clear analytical response about an unseen poem using PEE structure',
       'I can write a comparative response that addresses both texts with connectives',
-      'I can identify and comment on writers\' language, structure, and form choices',
+      "I can identify and comment on writers' language, structure, and form choices",
       'I can organise my response into clear, focused paragraphs',
     ],
     keywords: [
@@ -1402,18 +1384,15 @@ export const y7Term3Lessons: LessonPlan[] = [
         title: 'Section A: Poetry Analysis',
         duration: '18 minutes',
         instructions:
-          'Students respond to Section A: analysis questions on an unseen poem. Questions should progress in difficulty: a comprehension question (what is the poem about?), a language analysis question (how does the poet use [specific method]?), and an extended analysis question (how does the poet convey [theme/mood]? — write a multi-paragraph response). Students write in silence. Teacher circulates to monitor, offering only time prompts, not content support.',
+          'Students respond to Section A: analysis questions on an unseen poem. Questions should progress in difficulty: a comprehension question (what is the poem about?), a language analysis question (how does the poet use [specific method]?), and an extended analysis question (how does the poet convey [theme/mood]? - write a multi-paragraph response). Students write in silence. Teacher circulates to monitor, offering only time prompts, not content support.',
         differentiation: {
           support:
             'The comprehension question includes a short glossary of difficult vocabulary. The extended question provides bullet-point prompts of what to include.',
           core: 'Students respond to all questions independently.',
           stretch:
-            'The extended question invites students to evaluate the effectiveness of the poet\'s choices as well as analysing them.',
+            "The extended question invites students to evaluate the effectiveness of the poet's choices as well as analysing them.",
         },
-        resources: [
-          'Assessment paper (Section A)',
-          'Lined answer booklet',
-        ],
+        resources: ['Assessment paper (Section A)', 'Lined answer booklet'],
       },
       {
         title: 'Section B: Comparative Analysis',
@@ -1422,7 +1401,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Students respond to Section B: a comparative question on two texts (a poem and a prose extract that share a theme). The question should mirror the format practised: "Compare how the two writers present [theme]. Consider: the writers\' ideas, the writers\' use of language and structure, the effect on the reader." Students write in silence. Teacher gives a five-minute warning.',
         differentiation: {
           support:
-            'Provide a writing frame for the comparative response with spaces for Comparison Point 1, Evidence A, Analysis, Evidence B, Analysis, and Linking Sentence — repeated for two paragraphs.',
+            'Provide a writing frame for the comparative response with spaces for Comparison Point 1, Evidence A, Analysis, Evidence B, Analysis, and Linking Sentence - repeated for two paragraphs.',
           core: 'Students write two or more comparative paragraphs independently.',
           stretch:
             'Students write three paragraphs and include an evaluative conclusion about which text is more effective.',
@@ -1440,7 +1419,8 @@ export const y7Term3Lessons: LessonPlan[] = [
       instructions:
         'Students put down their pens. Teacher leads a brief reflection: "What did you find easiest? What was most challenging? What would you do differently?" Students write three sentences: one thing they are proud of from this term, one skill they have improved, and one target for Year 8. Teacher collects assessments and reflections. If time allows, teacher invites two or three students to share their proudest moment from the term.',
       differentiation: {
-        support: 'Provide sentence starters: "I am proud of... I have improved at... Next year I want to...".',
+        support:
+          'Provide sentence starters: "I am proud of... I have improved at... Next year I want to...".',
         core: 'Students write three reflective sentences independently.',
         stretch:
           'Students write a paragraph reflecting on their progress across the whole of Term 3, linking specific lessons to their development.',
@@ -1462,7 +1442,7 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Section A, Question 2: How does the poet use imagery in the poem? Identify two examples and analyse their effects. (Language Analysis)',
         lines: 8,
         modelAnswer:
-          'A strong response identifies two specific examples of imagery, names the technique (simile, metaphor, personification), quotes the text, and analyses the effect. Each analysis should explore connotations and the reader\'s response. For example: the student might analyse a metaphor by explaining what is being compared, what connotations the comparison carries, and how this contributes to the poem\'s theme or mood.',
+          "A strong response identifies two specific examples of imagery, names the technique (simile, metaphor, personification), quotes the text, and analyses the effect. Each analysis should explore connotations and the reader's response. For example: the student might analyse a metaphor by explaining what is being compared, what connotations the comparison carries, and how this contributes to the poem's theme or mood.",
         marks: 8,
       },
       {
@@ -1470,15 +1450,15 @@ export const y7Term3Lessons: LessonPlan[] = [
           'Section A, Question 3: How does the poet convey a sense of [specified theme/mood] in the poem? Write a multi-paragraph response considering language and structure. (Extended Analysis)',
         lines: 14,
         modelAnswer:
-          'A strong response will include: multiple PEE paragraphs addressing both language and structure; specific, embedded quotations; analysis of connotations and effects; comments on structural choices (stanza pattern, line length, enjambment, rhyme); and a sense of the poet\'s overall intention. Higher-level responses will offer personal interpretation, consider alternative readings, and evaluate the effectiveness of the poet\'s choices.',
+          "A strong response will include: multiple PEE paragraphs addressing both language and structure; specific, embedded quotations; analysis of connotations and effects; comments on structural choices (stanza pattern, line length, enjambment, rhyme); and a sense of the poet's overall intention. Higher-level responses will offer personal interpretation, consider alternative readings, and evaluate the effectiveness of the poet's choices.",
         marks: 12,
       },
       {
         question:
-          'Section B: Compare how the two writers present [specified theme]. You should consider: the writers\' ideas and perspectives, the writers\' use of language and/or structure, the effect on the reader. Write a sustained comparative response.',
+          "Section B: Compare how the two writers present [specified theme]. You should consider: the writers' ideas and perspectives, the writers' use of language and/or structure, the effect on the reader. Write a sustained comparative response.",
         lines: 20,
         modelAnswer:
-          'A strong response will include: a clear focus on the shared theme; two or more comparative paragraphs, each with a clear comparison point; embedded quotations from both texts; comparative connectives (similarly, in contrast, whereas, both writers); analytical comments on methods and effects; awareness that one text is a poem and the other is prose, with relevant comments on how form affects meaning; and a concluding sentence or paragraph that draws the comparison together. Higher-level responses will evaluate which text is more effective, consider the writers\' different contexts and purposes, and offer nuanced interpretations that go beyond surface-level comparison.',
+          "A strong response will include: a clear focus on the shared theme; two or more comparative paragraphs, each with a clear comparison point; embedded quotations from both texts; comparative connectives (similarly, in contrast, whereas, both writers); analytical comments on methods and effects; awareness that one text is a poem and the other is prose, with relevant comments on how form affects meaning; and a concluding sentence or paragraph that draws the comparison together. Higher-level responses will evaluate which text is more effective, consider the writers' different contexts and purposes, and offer nuanced interpretations that go beyond surface-level comparison.",
         marks: 16,
       },
     ],
@@ -1503,4 +1483,4 @@ export const y7Term3Lessons: LessonPlan[] = [
       'Unseen Text Response',
     ],
   },
-];
+]

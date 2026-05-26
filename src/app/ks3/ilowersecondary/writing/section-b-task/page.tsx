@@ -17,14 +17,14 @@ const S4_WAO1 = WAO1_GRID.find((g) => g.level === 'S4')!
 const S4_WAO2 = WAO2_GRID.find((g) => g.level === 'S4')!
 
 export const metadata: Metadata = {
-  title: 'The Section B writing task — method & worked example | iLowerSecondary English',
+  title: 'The Section B writing task - method & worked example | iLowerSecondary English',
   description:
     'A step-by-step walkthrough of the single extended writing task in Section B of the Pearson Edexcel iLowerSecondary English achievement test: decode, plan, draft and proofread, with an original worked example annotated against the WAO1 and WAO2 mark grids.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing/section-b-task',
   },
   openGraph: {
-    title: 'The Section B writing task — method & worked example',
+    title: 'The Section B writing task - method & worked example',
     description:
       'Decode the task, plan, draft and proofread the Section B extended writing task, with an original S4-standard model answer and examiner annotation.',
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const MODEL_PLAN = [
   {
     label: 'Form',
-    note: 'Letter to a friend — informal but shaped: greeting, sign-off, a warm and personal voice that speaks directly to one named reader.',
+    note: 'Letter to a friend - informal but shaped: greeting, sign-off, a warm and personal voice that speaks directly to one named reader.',
   },
   {
     label: 'Audience',
@@ -47,7 +47,7 @@ const MODEL_PLAN = [
   },
   {
     label: 'Three sections',
-    note: '1) Setting off, full of nerves. 2) The journey itself — the long climb and the storm. 3) Arriving, and what the trip taught me.',
+    note: '1) Setting off, full of nerves. 2) The journey itself - the long climb and the storm. 3) Arriving, and what the trip taught me.',
   },
   {
     label: 'Best bits to bank',
@@ -60,19 +60,19 @@ const MODEL_PARAGRAPHS = [
     text: 'Dear Mia,',
   },
   {
-    text: 'You will never guess where I am writing this from — a tiny mountain hut with the rain hammering on the roof like impatient fingers. I promised I would tell you about the journey, so here it is, every soggy, unforgettable minute of it.',
+    text: 'You will never guess where I am writing this from - a tiny mountain hut with the rain hammering on the roof like impatient fingers. I promised I would tell you about the journey, so here it is, every soggy, unforgettable minute of it.',
   },
   {
     text: 'We set off at dawn, and I was, honestly, terrified. The minibus rattled along a road so narrow that the wheels seemed to hang over the edge of nothing. My stomach lurched at every bend. Around me, everyone else chatted happily, but I just stared out at the valley dropping away beneath us and counted my breaths, the way you taught me before exams.',
   },
   {
-    text: 'Then the real journey began: three hours of climbing on foot. The path twisted upwards through pine trees that smelled sharp and clean, and at first it was wonderful. But the weather turned. Clouds rolled in like grey smoke, the temperature plunged, and suddenly the rain arrived — not gentle, but furious. We pulled our hoods up and pushed on, boots squelching, fingers numb. Nobody spoke. I have never felt so small or so determined at the same time.',
+    text: 'Then the real journey began: three hours of climbing on foot. The path twisted upwards through pine trees that smelled sharp and clean, and at first it was wonderful. But the weather turned. Clouds rolled in like grey smoke, the temperature plunged, and suddenly the rain arrived - not gentle, but furious. We pulled our hoods up and pushed on, boots squelching, fingers numb. Nobody spoke. I have never felt so small or so determined at the same time.',
   },
   {
     text: 'When we finally reached the hut, the relief was enormous. We crowded inside, dripping and laughing, and someone produced a flask of hot chocolate that tasted, in that moment, like the best thing I had ever drunk. I sat by the window and watched the storm fling itself against the glass, and I felt strangely proud. I had been scared at the start; I had carried on anyway.',
   },
   {
-    text: 'I think that is what the journey really taught me, Mia. The hardest part was not the climb — it was deciding, at dawn, to get on that minibus at all. I keep thinking about that. Anyway, write back soon and tell me everything. I miss you, and I cannot wait to do this with you next time.',
+    text: 'I think that is what the journey really taught me, Mia. The hardest part was not the climb - it was deciding, at dawn, to get on that minibus at all. I keep thinking about that. Anyway, write back soon and tell me everything. I miss you, and I cannot wait to do this with you next time.',
   },
   {
     text: 'With love from your slightly braver friend,\nAisha',
@@ -95,7 +95,7 @@ const ANNOTATIONS = [
   {
     feature: 'Controlled, coherent structure',
     detail:
-      'Three clear stages — setting off, the climb and the storm, arriving and reflecting — each in its own paragraph, linked by time markers ("at dawn", "Then", "When we finally"), giving complete control of sequencing.',
+      'Three clear stages - setting off, the climb and the storm, arriving and reflecting - each in its own paragraph, linked by time markers ("at dawn", "Then", "When we finally"), giving complete control of sequencing.',
     grid: 'WAO1',
   },
   {
@@ -107,7 +107,7 @@ const ANNOTATIONS = [
   {
     feature: 'Grammatically assured, varied sentences',
     detail:
-      'Long, layered sentences for the climb contrast with the blunt "Nobody spoke." at the tense moment — sentence variety used deliberately for effect throughout.',
+      'Long, layered sentences for the climb contrast with the blunt "Nobody spoke." at the tense moment - sentence variety used deliberately for effect throughout.',
     grid: 'WAO2',
   },
   {
@@ -119,21 +119,21 @@ const ANNOTATIONS = [
   {
     feature: 'Ambitious, accurate spelling',
     detail:
-      'More ambitious choices — "terrified", "furious", "determined", "enormous" — are spelled correctly and used confidently rather than for show.',
+      'More ambitious choices - "terrified", "furious", "determined", "enormous" - are spelled correctly and used confidently rather than for show.',
     grid: 'WAO2',
   },
 ]
 
 const LOSE_EASY_MARKS = [
-  'Ignoring the form: writing a story when the task asked for a letter, an article or a diary entry — the form must be established and maintained.',
+  'Ignoring the form: writing a story when the task asked for a letter, an article or a diary entry - the form must be established and maintained.',
   'No greeting or sign-off in a letter, or no headline in an article: the conventions of the form are part of WAO1.',
   'Forgetting the audience: a letter to a friend that sounds like a formal essay loses the "awareness of audience" credit.',
-  'One enormous paragraph with no breaks — organisation and paragraph control are explicitly assessed.',
+  'One enormous paragraph with no breaks - organisation and paragraph control are explicitly assessed.',
   'No plan, so the writing wanders, repeats itself or runs out of time mid-sentence.',
   'Over-writing the opening and rushing the ending, so the response has no controlled shape.',
   'Comma splices and missing full stops: sentence demarcation is a whole strand of WAO2.',
   'Apostrophe slips ("its/it’s", plurals with apostrophes) scattered through the response.',
-  'Showing off with ambitious words that are misspelled — accuracy matters more than ambition.',
+  'Showing off with ambitious words that are misspelled - accuracy matters more than ambition.',
   'Never re-reading: two minutes of proofreading recovers easy WAO2 marks for punctuation and spelling.',
 ]
 
@@ -146,7 +146,7 @@ const METHOD_STEPS = [
   {
     n: '2',
     title: 'Plan (about 3 minutes)',
-    body: 'Jot a tiny plan: form, audience, purpose, then three or four sections in order. Bank one or two "best bits" you will definitely include — a strong image, a deliberate short sentence, a piece of accurate punctuation.',
+    body: 'Jot a tiny plan: form, audience, purpose, then three or four sections in order. Bank one or two "best bits" you will definitely include - a strong image, a deliberate short sentence, a piece of accurate punctuation.',
   },
   {
     n: '3',
@@ -250,7 +250,7 @@ export default function SectionBTaskPage() {
                 WAO1 &mdash; form, audience &amp; organisation
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Worth up to {WAO1_GRID[WAO1_GRID.length - 1].marks.split('–')[1]} marks. Rewards
+                Worth up to {WAO1_GRID[WAO1_GRID.length - 1].marks.split('-')[1]} marks. Rewards
                 communicating appropriately for form, audience and purpose, and sequencing and
                 structuring your writing coherently.
               </p>
@@ -260,7 +260,7 @@ export default function SectionBTaskPage() {
                 WAO2 &mdash; grammar, punctuation &amp; spelling
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Worth up to {WAO2_GRID[WAO2_GRID.length - 1].marks.split('–')[1]} marks. Rewards
+                Worth up to {WAO2_GRID[WAO2_GRID.length - 1].marks.split('-')[1]} marks. Rewards
                 accurate grammar, well-demarcated and varied sentences, and confident punctuation
                 and spelling.
               </p>

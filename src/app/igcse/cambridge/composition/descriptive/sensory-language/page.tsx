@@ -8,13 +8,13 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Sensory Language — Cambridge IGCSE Descriptive Writing',
+    title: 'Sensory Language - Cambridge IGCSE Descriptive Writing',
     description:
-      'Cambridge IGCSE descriptive writing: how to use all five senses — sight, sound, smell, touch, taste — to build immersive description.',
+      'Cambridge IGCSE descriptive writing: how to use all five senses - sight, sound, smell, touch, taste - to build immersive description.',
   },
-  title: 'Sensory Language — Cambridge IGCSE Descriptive Writing',
+  title: 'Sensory Language - Cambridge IGCSE Descriptive Writing',
   description:
-    'Cambridge IGCSE descriptive writing: how to use all five senses — sight, sound, smell, touch, taste — to build immersive description.',
+    'Cambridge IGCSE descriptive writing: how to use all five senses - sight, sound, smell, touch, taste - to build immersive description.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/composition/descriptive/sensory-language',
   },
@@ -35,7 +35,7 @@ const senses = [
     name: 'Sound',
     icon: Ear,
     description:
-      'The fastest upgrade. Sound makes a scene feel present. Mix named sounds with absences — silence is also a sound.',
+      'The fastest upgrade. Sound makes a scene feel present. Mix named sounds with absences - silence is also a sound.',
     weak: 'It was very loud in the market.',
     strong:
       'The market ran on a thousand overlapping noises: the slap of fish on wet slate, the hiss of oil, a radio two stalls over stuttering between stations, and underneath it all the low mutter of haggling.',
@@ -49,7 +49,7 @@ const senses = [
     weak: 'It smelled bad in the alleyway.',
     strong:
       'The alley smelled of old rain and frying onions, a home-sickness I had not asked for, sharp enough to stop me in the doorway.',
-    why: 'Two named smells combined with an emotional consequence — the smell acts on the narrator, not just describes the air.',
+    why: 'Two named smells combined with an emotional consequence - the smell acts on the narrator, not just describes the air.',
   },
   {
     name: 'Touch',
@@ -65,7 +65,7 @@ const senses = [
     name: 'Taste',
     icon: Soup,
     description:
-      'The rarest sense in student writing and therefore the most distinctive when used well. Taste does not have to mean eating — air, rain, fear and blood all have taste.',
+      'The rarest sense in student writing and therefore the most distinctive when used well. Taste does not have to mean eating - air, rain, fear and blood all have taste.',
     weak: 'I was scared.',
     strong:
       'Fear had a taste I had forgotten about: tin foil and old coins, gathering at the back of my tongue.',
@@ -114,7 +114,7 @@ export default async function SensoryLanguagePage() {
         </h2>
         <p className="mt-3 text-body-sm text-muted-foreground">
           Read any paragraph you have written. If only the sense of <em>sight</em> appears, add one
-          more — ideally one of the less-used three (smell, touch, taste). You do not need every
+          more - ideally one of the less-used three (smell, touch, taste). You do not need every
           sense in every paragraph; you need at least two.
         </p>
       </section>
@@ -167,7 +167,7 @@ export default async function SensoryLanguagePage() {
         <h2 className="text-heading-md font-heading text-foreground">Synesthesia: mixing senses</h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
           Once you are comfortable using all five senses, try{' '}
-          <strong className="text-foreground">synesthesia</strong> — describing one sense in the
+          <strong className="text-foreground">synesthesia</strong> - describing one sense in the
           vocabulary of another. A <em>sharp</em> light, a <em>loud</em> colour, a <em>metallic</em>{' '}
           silence. Used sparingly, synesthesia is a clear marker of sophisticated descriptive
           writing.

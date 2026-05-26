@@ -3,11 +3,11 @@
 // Shared row-mapping / load / update helpers for the unified submission +
 // AI-marking spine. Every function here talks to the `marking_submissions`
 // Supabase table through a passed-in Supabase client (service-role or
-// RLS-scoped — the caller decides) so the DB-access rule is honoured: these
+// RLS-scoped - the caller decides) so the DB-access rule is honoured: these
 // tables are NEVER touched via the Prisma client (Prisma client is not
-// regenerated locally — the new models are absent).
+// regenerated locally - the new models are absent).
 //
-// DB column names are kept snake_case throughout — these objects are the raw
+// DB column names are kept snake_case throughout - these objects are the raw
 // shapes the Supabase table returns / accepts, NOT the Prisma camelCase model.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -18,7 +18,7 @@ import type { MarkingResult } from './mark-schemes/types'
 // Mirrors the CHECK constraint in
 // supabase/migrations/20260518_smart_ip_marking.sql. The AI-marking spine only
 // ever WRITES 'submitted', 'ai_marked' and 'teacher_review_required'. An AI
-// mark is always a DRAFT — this code never writes 'approved'.
+// mark is always a DRAFT - this code never writes 'approved'.
 
 export type SubmissionStatus =
   | 'submitted'
@@ -148,7 +148,7 @@ export interface NewSubmissionInput {
   targetGrade: string | null
   markSchemeId: string
   questionId: string
-  /** Mapped onto `essay_text` — the student's answer is the essay. */
+  /** Mapped onto `essay_text` - the student's answer is the essay. */
   studentAnswer: string
 }
 
@@ -222,13 +222,13 @@ export interface AiResultPersistInput {
   modelVersionId: string | null
   promptVersionId: string | null
   rubricVersionId: string | null
-  /** Final status to set — never 'approved' from this code path. */
+  /** Final status to set - never 'approved' from this code path. */
   status: Extract<SubmissionStatus, 'ai_marked' | 'teacher_review_required'>
 }
 
 /**
  * Persist a completed AI mark onto an existing row. `ai_confidence` is set to
- * NULL deliberately — we no longer fabricate a confidence number. The full
+ * NULL deliberately - we no longer fabricate a confidence number. The full
  * `MarkingResult` JSON is stored in `ai_result`; hot fields are denormalised.
  * Returns the updated row (re-selected) or throws on failure.
  */
@@ -246,7 +246,7 @@ export async function applyAiResult(
       ai_max_marks: r.maxMarks,
       ai_grade: r.predictedGrade,
       ai_grade_band: r.gradeBand,
-      // We no longer fake confidence — explicitly NULL.
+      // We no longer fake confidence - explicitly NULL.
       ai_confidence: null,
       ai_ao_breakdown: r.aoScores as unknown as Record<string, unknown>[],
       ai_uncertainty_flags: input.uncertaintyFlags,

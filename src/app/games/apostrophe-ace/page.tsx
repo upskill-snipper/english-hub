@@ -206,7 +206,7 @@ const QUESTION_BANK: ApostropheQuestion[] = [
     ],
     answerIndex: 1,
     ruleTested: 'its vs it’s',
-    explanation: 'The number plate belongs to the car, so use possessive "its" — no apostrophe.',
+    explanation: 'The number plate belongs to the car, so use possessive "its" - no apostrophe.',
   },
 
   // ── your vs you're ──
@@ -234,10 +234,10 @@ const QUESTION_BANK: ApostropheQuestion[] = [
   },
   {
     options: [
-      'Your right — were almost there.',
-      "You're right — we're almost there.",
-      "Youre right — we're almost there.",
-      "You're right — were almost there.",
+      'Your right - were almost there.',
+      "You're right - we're almost there.",
+      "Youre right - we're almost there.",
+      "You're right - were almost there.",
     ],
     answerIndex: 1,
     ruleTested: 'your vs you’re',
@@ -401,7 +401,7 @@ const QUESTION_BANK: ApostropheQuestion[] = [
     ],
     answerIndex: 1,
     ruleTested: 'Plural possession',
-    explanation: 'The meeting is for many teachers, so use "teachers\'" — apostrophe after the s.',
+    explanation: 'The meeting is for many teachers, so use "teachers\'" - apostrophe after the s.',
   },
   {
     options: [
@@ -827,11 +827,11 @@ export default function ApostropheAcePage() {
                   >
                     {isCorrect ? (
                       <>
-                        <CheckCircle className="size-4" /> Nicely done — that&apos;s spot on!
+                        <CheckCircle className="size-4" /> Nicely done - that&apos;s spot on!
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite — let&apos;s look at why.
+                        <XCircle className="size-4" /> Not quite - let&apos;s look at why.
                       </>
                     )}
                   </div>

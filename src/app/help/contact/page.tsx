@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'Get in touch with The English Hub support team. We are here to help with questions about your account, feedback, billing, data, or safeguarding.',
   alternates: { canonical: 'https://theenglishhub.app/help/contact' },
   openGraph: {
-    title: 'Contact Us — The English Hub',
+    title: 'Contact Us - The English Hub',
     description:
       'Get in touch with The English Hub support team. We are here to help with questions about your account, feedback, billing, data, or safeguarding.',
   },

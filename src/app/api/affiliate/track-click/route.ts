@@ -3,7 +3,7 @@
  *
  * Tracking beacon for affiliate clicks. Writes/updates the teh_aff tracking
  * cookie and records a row in `affiliate_clicks`. This endpoint exists as a
- * backup to the middleware-based cookie write — it lets client code fire an
+ * backup to the middleware-based cookie write - it lets client code fire an
  * explicit tracking call (e.g. from a landing-page hero CTA) and is the
  * canonical place where clicks are persisted to the DB.
  *
@@ -89,7 +89,7 @@ async function handle(request: NextRequest): Promise<NextResponse> {
   const admin = createServiceRoleClient()
 
   // Look up affiliate by code. If not found, we still write the cookie so
-  // we can debug bad links without leaking enumeration data — but we do NOT
+  // we can debug bad links without leaking enumeration data - but we do NOT
   // write a click row.
   const { data: account } = await admin
     .from('affiliate_accounts')
@@ -114,7 +114,7 @@ async function handle(request: NextRequest): Promise<NextResponse> {
   const newPayload = applyNewClick(existing, payload.ref, linkId ?? undefined)
   writeAffiliateCookieOnResponse(response, newPayload)
 
-  // Fire-and-forget insert — don't block the beacon response on DB writes
+  // Fire-and-forget insert - don't block the beacon response on DB writes
   if (account && account.status === 'active') {
     const insertP = admin.from('affiliate_clicks').insert({
       affiliate_id: account.id,
@@ -124,7 +124,7 @@ async function handle(request: NextRequest): Promise<NextResponse> {
       referrer: payload.referrer?.slice(0, 500) ?? null,
       landing_path: payload.landing_path?.slice(0, 500) ?? null,
     })
-    // Await but swallow errors — we never want to 500 a tracking beacon
+    // Await but swallow errors - we never want to 500 a tracking beacon
     try {
       await insertP
     } catch (err) {
@@ -138,21 +138,21 @@ async function handle(request: NextRequest): Promise<NextResponse> {
 /**
  * Hash IP addresses before storing. We only need rough uniqueness for
  * click-fraud / deduplication, never the raw IP. Uses HMAC-SHA256 truncated
- * to 16 hex chars (64 bits) — cryptographically secure and resistant to
+ * to 16 hex chars (64 bits) - cryptographically secure and resistant to
  * rainbow-table attacks across the IPv4 space (fix for Cycle 2 security
  * deep-dive P2: previous DJB2 implementation was not cryptographically
  * secure).
  *
  * The secret MUST be set via `AFFILIATE_IP_HASH_SECRET` in production.
  * In dev, an unset secret falls back to a placeholder so the feature does
- * not hard-fail — but IP deduplication is not secure until the env var is
+ * not hard-fail - but IP deduplication is not secure until the env var is
  * configured.
  */
 function hashIp(ip: string): string {
   let secret = process.env.AFFILIATE_IP_HASH_SECRET
   if (!secret) {
     console.error(
-      '[affiliate/track-click] AFFILIATE_IP_HASH_SECRET not set — using placeholder; IP deduplication is insecure until configured',
+      '[affiliate/track-click] AFFILIATE_IP_HASH_SECRET not set - using placeholder; IP deduplication is insecure until configured',
     )
     secret = 'teh-aff-dev-placeholder-configure-in-prod'
   }

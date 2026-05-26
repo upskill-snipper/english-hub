@@ -6,160 +6,159 @@
 
 // ========================== INTERFACES ==========================
 
-export type YearGroup = 'Y7' | 'Y8' | 'Y9';
-export type DiffTier = 'support' | 'core' | 'extension';
-export type AssessmentObjective = 'AO1' | 'AO2' | 'AO3' | 'AO4' | 'AO5' | 'AO6';
+export type YearGroup = 'Y7' | 'Y8' | 'Y9'
+export type DiffTier = 'support' | 'core' | 'extension'
+export type AssessmentObjective = 'AO1' | 'AO2' | 'AO3' | 'AO4' | 'AO5' | 'AO6'
 
 export interface WritingFrame {
-  yearGroup: YearGroup;
-  frameworkName: string;
-  description: string;
-  structure: FrameStep[];
-  sentenceStarters: string[];
-  transitionPhrases: string[];
-  modelParagraph: string;
+  yearGroup: YearGroup
+  frameworkName: string
+  description: string
+  structure: FrameStep[]
+  sentenceStarters: string[]
+  transitionPhrases: string[]
+  modelParagraph: string
 }
 
 export interface FrameStep {
-  label: string;
-  abbreviation: string;
-  instruction: string;
-  example: string;
+  label: string
+  abbreviation: string
+  instruction: string
+  example: string
 }
 
 export interface AOSentenceStarters {
-  ao: AssessmentObjective;
-  aoLabel: string;
-  yearGroup: YearGroup;
-  starters: string[];
+  ao: AssessmentObjective
+  aoLabel: string
+  yearGroup: YearGroup
+  starters: string[]
 }
 
 export interface UnitWordBank {
-  unitId: string;
-  unitTitle: string;
-  yearGroup: YearGroup;
-  categories: WordBankCategory[];
+  unitId: string
+  unitTitle: string
+  yearGroup: YearGroup
+  categories: WordBankCategory[]
 }
 
 export interface WordBankCategory {
-  category: string;
-  words: WordEntry[];
+  category: string
+  words: WordEntry[]
 }
 
 export interface WordEntry {
-  term: string;
-  definition: string;
-  exampleSentence?: string;
+  term: string
+  definition: string
+  exampleSentence?: string
 }
 
 export interface VisualOrganiser {
-  id: string;
-  name: string;
-  description: string;
-  bestFor: string[];
-  yearGroups: YearGroup[];
-  structure: string;
+  id: string
+  name: string
+  description: string
+  bestFor: string[]
+  yearGroups: YearGroup[]
+  structure: string
 }
 
 export interface UnitDifferentiation {
-  unitId: string;
-  unitTitle: string;
-  yearGroup: YearGroup;
-  termNumber: number;
-  support: TierStrategy;
-  core: TierStrategy;
-  extension: TierStrategy;
-  ealAdaptations: EALAdaptation[];
-  senConsiderations: SENConsideration[];
+  unitId: string
+  unitTitle: string
+  yearGroup: YearGroup
+  termNumber: number
+  support: TierStrategy
+  core: TierStrategy
+  extension: TierStrategy
+  ealAdaptations: EALAdaptation[]
+  senConsiderations: SENConsideration[]
 }
 
 export interface TierStrategy {
-  description: string;
-  scaffolding: string[];
-  expectedOutcomes: string[];
-  activities: string[];
-  resources: string[];
+  description: string
+  scaffolding: string[]
+  expectedOutcomes: string[]
+  activities: string[]
+  resources: string[]
 }
 
 export interface EALAdaptation {
-  stage: 'beginner' | 'intermediate' | 'advanced';
-  strategies: string[];
-  resources: string[];
+  stage: 'beginner' | 'intermediate' | 'advanced'
+  strategies: string[]
+  resources: string[]
 }
 
 export interface SENConsideration {
-  need: string;
-  adaptations: string[];
-  resources: string[];
+  need: string
+  adaptations: string[]
+  resources: string[]
 }
 
 export interface AssessmentModification {
-  yearGroup: YearGroup;
-  tier: DiffTier;
-  readingModifications: string[];
-  writingModifications: string[];
-  timingModifications: string[];
-  presentationModifications: string[];
+  yearGroup: YearGroup
+  tier: DiffTier
+  readingModifications: string[]
+  writingModifications: string[]
+  timingModifications: string[]
+  presentationModifications: string[]
 }
 
 export interface GradeDescriptor {
-  yearGroup: YearGroup;
-  grade: string;
-  reading: string;
-  writing: string;
-  spag: string;
+  yearGroup: YearGroup
+  grade: string
+  reading: string
+  writing: string
+  spag: string
 }
 
 export interface ProgressIndicator {
-  yearGroup: YearGroup;
-  term: number;
-  emergingDescriptors: string[];
-  developingDescriptors: string[];
-  secureDescriptors: string[];
-  masteringDescriptors: string[];
+  yearGroup: YearGroup
+  term: number
+  emergingDescriptors: string[]
+  developingDescriptors: string[]
+  secureDescriptors: string[]
+  masteringDescriptors: string[]
 }
 
 export interface MarkingTemplate {
-  yearGroup: YearGroup;
-  templateType: 'www_ebi' | 'marking_codes' | 'peer_assessment' | 'self_assessment';
-  title: string;
-  description: string;
-  content: string[];
+  yearGroup: YearGroup
+  templateType: 'www_ebi' | 'marking_codes' | 'peer_assessment' | 'self_assessment'
+  title: string
+  description: string
+  content: string[]
 }
 
 export interface MarkingCode {
-  code: string;
-  meaning: string;
-  category: 'literacy' | 'content' | 'structure' | 'praise';
+  code: string
+  meaning: string
+  category: 'literacy' | 'content' | 'structure' | 'praise'
 }
 
 export interface PeerAssessmentGuide {
-  yearGroup: YearGroup;
-  taskType: string;
-  criteria: PeerCriterion[];
-  sentenceStarters: string[];
-  rules: string[];
+  yearGroup: YearGroup
+  taskType: string
+  criteria: PeerCriterion[]
+  sentenceStarters: string[]
+  rules: string[]
 }
 
 export interface PeerCriterion {
-  label: string;
-  lookFor: string[];
-  scale: string;
+  label: string
+  lookFor: string[]
+  scale: string
 }
 
 export interface SelfAssessmentChecklist {
-  yearGroup: YearGroup;
-  taskType: string;
-  title: string;
-  items: ChecklistItem[];
+  yearGroup: YearGroup
+  taskType: string
+  title: string
+  items: ChecklistItem[]
 }
 
 export interface ChecklistItem {
-  statement: string;
-  category: string;
-  tier: DiffTier;
+  statement: string
+  category: string
+  tier: DiffTier
 }
-
 
 // ========================== 1. SCAFFOLDING FRAMEWORKS ==========================
 
@@ -170,25 +169,30 @@ export const writingFrames: WritingFrame[] = [
   {
     yearGroup: 'Y7',
     frameworkName: 'PEE (Point, Evidence, Explain)',
-    description: 'The foundational analytical paragraph structure for Year 7. Students learn to make a clear point, support it with a quotation, and explain the effect.',
+    description:
+      'The foundational analytical paragraph structure for Year 7. Students learn to make a clear point, support it with a quotation, and explain the effect.',
     structure: [
       {
         label: 'Point',
         abbreviation: 'P',
-        instruction: 'State your argument in one clear sentence. This should directly answer the question.',
+        instruction:
+          'State your argument in one clear sentence. This should directly answer the question.',
         example: 'The writer presents the character as threatening and powerful.',
       },
       {
         label: 'Evidence',
         abbreviation: 'E',
-        instruction: 'Provide a short, relevant quotation from the text. Keep it to key words or a single phrase where possible.',
+        instruction:
+          'Provide a short, relevant quotation from the text. Keep it to key words or a single phrase where possible.',
         example: 'This is shown when they are described as having "eyes like burning coals."',
       },
       {
         label: 'Explain',
         abbreviation: 'E',
-        instruction: 'Analyse what the evidence means. Discuss the technique used, the connotations of key words, and the effect on the reader.',
-        example: 'The simile "burning coals" suggests intense anger and danger, making the reader feel uneasy about this character.',
+        instruction:
+          'Analyse what the evidence means. Discuss the technique used, the connotations of key words, and the effect on the reader.',
+        example:
+          'The simile "burning coals" suggests intense anger and danger, making the reader feel uneasy about this character.',
       },
     ],
     sentenceStarters: [
@@ -205,38 +209,48 @@ export const writingFrames: WritingFrame[] = [
       'However,',
       'On the other hand,',
     ],
-    modelParagraph: 'The writer presents the forest as a dangerous and unwelcoming place. This is shown through the description of the trees having "twisted, grasping branches." The verb "grasping" personifies the trees as if they are actively trying to grab and trap the character, which creates a sense of claustrophobia and threat for the reader.',
+    modelParagraph:
+      'The writer presents the forest as a dangerous and unwelcoming place. This is shown through the description of the trees having "twisted, grasping branches." The verb "grasping" personifies the trees as if they are actively trying to grab and trap the character, which creates a sense of claustrophobia and threat for the reader.',
   },
 
   // ── Y8: PEEL Framework ──
   {
     yearGroup: 'Y8',
     frameworkName: 'PEEL (Point, Evidence, Explain, Link)',
-    description: 'Building on PEE, Year 8 students add a Link sentence to connect their analysis back to the question or to a broader theme, creating more cohesive paragraphs.',
+    description:
+      'Building on PEE, Year 8 students add a Link sentence to connect their analysis back to the question or to a broader theme, creating more cohesive paragraphs.',
     structure: [
       {
         label: 'Point',
         abbreviation: 'P',
-        instruction: 'Make a clear, arguable point that directly addresses the question. Be specific rather than vague.',
-        example: 'Shakespeare presents Lady Macbeth as manipulative in order to challenge Jacobean expectations of femininity.',
+        instruction:
+          'Make a clear, arguable point that directly addresses the question. Be specific rather than vague.',
+        example:
+          'Shakespeare presents Lady Macbeth as manipulative in order to challenge Jacobean expectations of femininity.',
       },
       {
         label: 'Evidence',
         abbreviation: 'E',
-        instruction: 'Embed a short quotation smoothly into your sentence. Aim for key words rather than long chunks of text.',
-        example: 'She commands Macbeth to "look like the innocent flower, but be the serpent under it."',
+        instruction:
+          'Embed a short quotation smoothly into your sentence. Aim for key words rather than long chunks of text.',
+        example:
+          'She commands Macbeth to "look like the innocent flower, but be the serpent under it."',
       },
       {
         label: 'Explain',
         abbreviation: 'E',
-        instruction: 'Analyse the language closely. Name the technique, explore connotations of individual words, and consider the effect on the audience.',
-        example: 'The juxtaposition of "innocent flower" and "serpent" creates a stark contrast between appearance and reality. The biblical connotation of the serpent links Lady Macbeth to Eve and original sin, implying she is a corrupting force.',
+        instruction:
+          'Analyse the language closely. Name the technique, explore connotations of individual words, and consider the effect on the audience.',
+        example:
+          'The juxtaposition of "innocent flower" and "serpent" creates a stark contrast between appearance and reality. The biblical connotation of the serpent links Lady Macbeth to Eve and original sin, implying she is a corrupting force.',
       },
       {
         label: 'Link',
         abbreviation: 'L',
-        instruction: 'Connect your analysis back to the question, to a theme, or to the writer\'s wider purpose. This demonstrates your understanding of the text as a whole.',
-        example: 'This reinforces the theme of deception that runs throughout the play, where nothing is as it seems.',
+        instruction:
+          "Connect your analysis back to the question, to a theme, or to the writer's wider purpose. This demonstrates your understanding of the text as a whole.",
+        example:
+          'This reinforces the theme of deception that runs throughout the play, where nothing is as it seems.',
       },
     ],
     sentenceStarters: [
@@ -254,47 +268,57 @@ export const writingFrames: WritingFrame[] = [
       'What is particularly significant is...',
       'This contrasts sharply with...',
     ],
-    modelParagraph: 'Dickens presents Scrooge as isolated and cold in order to critique Victorian attitudes towards the poor. He is described as "solitary as an oyster," a simile which suggests he has sealed himself away from the world, hard and impenetrable on the outside. The word "oyster" carries connotations of something that is tightly shut and unwilling to open, mirroring Scrooge\'s refusal to engage with those around him. This initial characterisation establishes the moral journey that Scrooge must undertake, reinforcing Dickens\' message that compassion and community are essential to a meaningful life.',
+    modelParagraph:
+      'Dickens presents Scrooge as isolated and cold in order to critique Victorian attitudes towards the poor. He is described as "solitary as an oyster," a simile which suggests he has sealed himself away from the world, hard and impenetrable on the outside. The word "oyster" carries connotations of something that is tightly shut and unwilling to open, mirroring Scrooge\'s refusal to engage with those around him. This initial characterisation establishes the moral journey that Scrooge must undertake, reinforcing Dickens\' message that compassion and community are essential to a meaningful life.',
   },
 
   // ── Y9: Conceptual/Thesis-Driven Framework ──
   {
     yearGroup: 'Y9',
     frameworkName: 'Conceptual Analysis (Thesis-Driven)',
-    description: 'Year 9 students move beyond formulaic structures towards thesis-driven paragraphs that foreground critical concepts, engage with writer\'s intentions, and consider context. This prepares them for GCSE-level analysis.',
+    description:
+      "Year 9 students move beyond formulaic structures towards thesis-driven paragraphs that foreground critical concepts, engage with writer's intentions, and consider context. This prepares them for GCSE-level analysis.",
     structure: [
       {
         label: 'Concept/Thesis',
         abbreviation: 'C',
-        instruction: 'Open with an analytical concept or a critical argument. This is not simply a point about the text but an interpretive claim about meaning, purpose, or effect.',
-        example: 'Shelley constructs the Creature as a vehicle for Enlightenment anxieties about the limits of scientific progress.',
+        instruction:
+          'Open with an analytical concept or a critical argument. This is not simply a point about the text but an interpretive claim about meaning, purpose, or effect.',
+        example:
+          'Shelley constructs the Creature as a vehicle for Enlightenment anxieties about the limits of scientific progress.',
       },
       {
         label: 'Textual Evidence',
         abbreviation: 'T',
-        instruction: 'Select precise textual evidence. Embed quotations fluently and choose words that are rich for analysis.',
-        example: 'The Creature\'s plea, "I ought to be thy Adam, but I am rather the fallen angel," directly invokes Milton\'s Paradise Lost.',
+        instruction:
+          'Select precise textual evidence. Embed quotations fluently and choose words that are rich for analysis.',
+        example:
+          'The Creature\'s plea, "I ought to be thy Adam, but I am rather the fallen angel," directly invokes Milton\'s Paradise Lost.',
       },
       {
         label: 'Analysis',
         abbreviation: 'A',
-        instruction: 'Provide layered analysis. Explore multiple interpretations, discuss technique and form, and consider how context shapes meaning.',
-        example: 'The allusion to Paradise Lost positions the Creature as simultaneously innocent and damned, while the shift from "Adam" to "fallen angel" traces his trajectory from hopeful creation to vengeful outcast. The Biblical framework invites the reader to question whether Frankenstein, as creator, has failed in a divine responsibility.',
+        instruction:
+          'Provide layered analysis. Explore multiple interpretations, discuss technique and form, and consider how context shapes meaning.',
+        example:
+          'The allusion to Paradise Lost positions the Creature as simultaneously innocent and damned, while the shift from "Adam" to "fallen angel" traces his trajectory from hopeful creation to vengeful outcast. The Biblical framework invites the reader to question whether Frankenstein, as creator, has failed in a divine responsibility.',
       },
       {
         label: 'Wider Significance',
         abbreviation: 'W',
-        instruction: 'Zoom out to the writer\'s purpose, contextual factors, alternative interpretations, or connections to other parts of the text.',
-        example: 'Shelley, writing in the aftermath of the French Revolution, uses this dynamic to warn against the abandonment of moral responsibility in the pursuit of knowledge, a theme that resonates with contemporary debates about technology and ethics.',
+        instruction:
+          "Zoom out to the writer's purpose, contextual factors, alternative interpretations, or connections to other parts of the text.",
+        example:
+          'Shelley, writing in the aftermath of the French Revolution, uses this dynamic to warn against the abandonment of moral responsibility in the pursuit of knowledge, a theme that resonates with contemporary debates about technology and ethics.',
       },
     ],
     sentenceStarters: [
       'Perhaps more significantly,',
       'It could be argued that...',
       'Through the lens of ___,',
-      'The writer\'s deliberate choice to...',
+      "The writer's deliberate choice to...",
       'A contemporary audience might have interpreted this as...',
-      'This destabilises the reader\'s assumption that...',
+      "This destabilises the reader's assumption that...",
       'Structurally, this moment functions as...',
     ],
     transitionPhrases: [
@@ -304,15 +328,15 @@ export const writingFrames: WritingFrame[] = [
       'An alternative interpretation might suggest...',
       'This duality is echoed in...',
     ],
-    modelParagraph: 'Stevenson uses the Gothic motif of the double to externalise Victorian anxieties about moral hypocrisy. Jekyll\'s confession that Hyde gave him "a solution of the bonds of obligation" reveals the allure of transgression: the metaphor of "bonds" frames social respectability as imprisonment, while "solution" puns on both a chemical formula and a release from constraint. This dual meaning is characteristic of a novella obsessed with surfaces and depths, where language itself becomes a site of concealment. Writing during an era of intense public moralising, Stevenson exposes the fragility of the respectable self, suggesting that the boundary between civilisation and savagery is not a wall but a membrane.',
+    modelParagraph:
+      'Stevenson uses the Gothic motif of the double to externalise Victorian anxieties about moral hypocrisy. Jekyll\'s confession that Hyde gave him "a solution of the bonds of obligation" reveals the allure of transgression: the metaphor of "bonds" frames social respectability as imprisonment, while "solution" puns on both a chemical formula and a release from constraint. This dual meaning is characteristic of a novella obsessed with surfaces and depths, where language itself becomes a site of concealment. Writing during an era of intense public moralising, Stevenson exposes the fragility of the respectable self, suggesting that the boundary between civilisation and savagery is not a wall but a membrane.',
   },
-];
-
+]
 
 // ---- 1B. Sentence Starters per Assessment Objective ----
 
 export const aoSentenceStarters: AOSentenceStarters[] = [
-  // AO1 — Identify and interpret information
+  // AO1 - Identify and interpret information
   {
     ao: 'AO1',
     aoLabel: 'Identify and interpret explicit and implicit information and ideas',
@@ -350,7 +374,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
     ],
   },
 
-  // AO2 — Explain, comment on, analyse language, form, structure
+  // AO2 - Explain, comment on, analyse language, form, structure
   {
     ao: 'AO2',
     aoLabel: 'Explain, comment on, and analyse how writers use language and structure',
@@ -383,16 +407,16 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
       'The semantic field of ___ constructs...',
       'Through the juxtaposition of ___ and ___, the writer destabilises...',
       'The fragmented syntax mirrors...',
-      'Formally, the writer\'s choice to ___ serves to...',
+      "Formally, the writer's choice to ___ serves to...",
       'The sibilance in "___" creates an auditory quality that...',
       'This structural pivot functions as...',
     ],
   },
 
-  // AO3 — Compare texts
+  // AO3 - Compare texts
   {
     ao: 'AO3',
-    aoLabel: 'Compare writers\' ideas and perspectives across texts',
+    aoLabel: "Compare writers' ideas and perspectives across texts",
     yearGroup: 'Y7',
     starters: [
       'Both writers think that...',
@@ -404,7 +428,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
   },
   {
     ao: 'AO3',
-    aoLabel: 'Compare writers\' ideas and perspectives across texts',
+    aoLabel: "Compare writers' ideas and perspectives across texts",
     yearGroup: 'Y8',
     starters: [
       'While both writers address ___, their approaches differ in...',
@@ -416,7 +440,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
   },
   {
     ao: 'AO3',
-    aoLabel: 'Compare writers\' ideas and perspectives across texts',
+    aoLabel: "Compare writers' ideas and perspectives across texts",
     yearGroup: 'Y9',
     starters: [
       'The ideological underpinnings of each text diverge significantly...',
@@ -427,7 +451,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
     ],
   },
 
-  // AO4 — Evaluate critically
+  // AO4 - Evaluate critically
   {
     ao: 'AO4',
     aoLabel: 'Evaluate texts critically and support with textual references',
@@ -447,7 +471,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
     starters: [
       'To a large extent, the writer succeeds in ___ because...',
       'While the statement has some validity, it overlooks...',
-      'The writer\'s most compelling strategy is...',
+      "The writer's most compelling strategy is...",
       'A reader might find this particularly effective because...',
       'The strength of this argument lies in...',
     ],
@@ -459,13 +483,13 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
     starters: [
       'This statement is partially valid; however, it fails to account for...',
       'A nuanced reading would suggest that the writer both ___ and ___, creating...',
-      'The efficacy of the writer\'s approach depends on the reader\'s willingness to...',
+      "The efficacy of the writer's approach depends on the reader's willingness to...",
       'While ostensibly ___, the text subtly undermines this through...',
       'The critical lens of ___ offers a more productive reading of this passage...',
     ],
   },
 
-  // AO5 — Communicate clearly, effectively, and imaginatively
+  // AO5 - Communicate clearly, effectively, and imaginatively
   {
     ao: 'AO5',
     aoLabel: 'Communicate clearly, effectively, and imaginatively',
@@ -503,7 +527,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
     ],
   },
 
-  // AO6 — Technical accuracy (SPAG)
+  // AO6 - Technical accuracy (SPAG)
   {
     ao: 'AO6',
     aoLabel: 'Technical accuracy in spelling, punctuation, and grammar',
@@ -540,8 +564,7 @@ export const aoSentenceStarters: AOSentenceStarters[] = [
       'Check: Have I deployed a range of punctuation for effect?',
     ],
   },
-];
-
+]
 
 // ---- 1C. Word Banks per Unit/Topic ----
 
@@ -555,22 +578,66 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Narrative Techniques',
         words: [
-          { term: 'narrator', definition: 'The voice telling the story', exampleSentence: 'The first-person narrator shares their personal perspective.' },
-          { term: 'protagonist', definition: 'The main character in a story', exampleSentence: 'The protagonist faces a difficult moral choice.' },
-          { term: 'antagonist', definition: 'The character who opposes the protagonist', exampleSentence: 'The antagonist creates obstacles for the hero.' },
-          { term: 'setting', definition: 'Where and when a story takes place', exampleSentence: 'The gloomy setting reflects the character\'s mood.' },
-          { term: 'atmosphere', definition: 'The mood or feeling created in a text', exampleSentence: 'The writer creates a tense atmosphere through short sentences.' },
-          { term: 'foreshadowing', definition: 'Hints about what will happen later in the story', exampleSentence: 'The dark clouds foreshadow the coming danger.' },
+          {
+            term: 'narrator',
+            definition: 'The voice telling the story',
+            exampleSentence: 'The first-person narrator shares their personal perspective.',
+          },
+          {
+            term: 'protagonist',
+            definition: 'The main character in a story',
+            exampleSentence: 'The protagonist faces a difficult moral choice.',
+          },
+          {
+            term: 'antagonist',
+            definition: 'The character who opposes the protagonist',
+            exampleSentence: 'The antagonist creates obstacles for the hero.',
+          },
+          {
+            term: 'setting',
+            definition: 'Where and when a story takes place',
+            exampleSentence: "The gloomy setting reflects the character's mood.",
+          },
+          {
+            term: 'atmosphere',
+            definition: 'The mood or feeling created in a text',
+            exampleSentence: 'The writer creates a tense atmosphere through short sentences.',
+          },
+          {
+            term: 'foreshadowing',
+            definition: 'Hints about what will happen later in the story',
+            exampleSentence: 'The dark clouds foreshadow the coming danger.',
+          },
         ],
       },
       {
         category: 'Language Techniques',
         words: [
-          { term: 'simile', definition: 'A comparison using "like" or "as"', exampleSentence: 'The moon was like a silver coin.' },
-          { term: 'metaphor', definition: 'Describing something as if it is something else', exampleSentence: 'The classroom was a zoo.' },
-          { term: 'personification', definition: 'Giving human qualities to non-human things', exampleSentence: 'The wind whispered through the trees.' },
-          { term: 'alliteration', definition: 'Repeating the same sound at the start of words close together', exampleSentence: 'The slippery snake slithered silently.' },
-          { term: 'onomatopoeia', definition: 'Words that sound like what they describe', exampleSentence: 'The door creaked open.' },
+          {
+            term: 'simile',
+            definition: 'A comparison using "like" or "as"',
+            exampleSentence: 'The moon was like a silver coin.',
+          },
+          {
+            term: 'metaphor',
+            definition: 'Describing something as if it is something else',
+            exampleSentence: 'The classroom was a zoo.',
+          },
+          {
+            term: 'personification',
+            definition: 'Giving human qualities to non-human things',
+            exampleSentence: 'The wind whispered through the trees.',
+          },
+          {
+            term: 'alliteration',
+            definition: 'Repeating the same sound at the start of words close together',
+            exampleSentence: 'The slippery snake slithered silently.',
+          },
+          {
+            term: 'onomatopoeia',
+            definition: 'Words that sound like what they describe',
+            exampleSentence: 'The door creaked open.',
+          },
         ],
       },
       {
@@ -594,20 +661,57 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Poetic Form and Structure',
         words: [
-          { term: 'stanza', definition: 'A group of lines in a poem, like a paragraph', exampleSentence: 'The poem is divided into four stanzas of equal length.' },
-          { term: 'rhyme scheme', definition: 'The pattern of rhyming words at the end of lines', exampleSentence: 'The ABAB rhyme scheme creates a regular, predictable rhythm.' },
-          { term: 'rhythm', definition: 'The pattern of stressed and unstressed syllables', exampleSentence: 'The steady rhythm mirrors a heartbeat.' },
-          { term: 'enjambment', definition: 'When a sentence runs on past the end of a line', exampleSentence: 'The enjambment creates a sense of urgency.' },
-          { term: 'caesura', definition: 'A pause in the middle of a line of poetry', exampleSentence: 'The caesura forces the reader to pause and reflect.' },
-          { term: 'free verse', definition: 'Poetry without a regular rhyme or rhythm pattern', exampleSentence: 'The poet uses free verse to reflect the chaos of war.' },
+          {
+            term: 'stanza',
+            definition: 'A group of lines in a poem, like a paragraph',
+            exampleSentence: 'The poem is divided into four stanzas of equal length.',
+          },
+          {
+            term: 'rhyme scheme',
+            definition: 'The pattern of rhyming words at the end of lines',
+            exampleSentence: 'The ABAB rhyme scheme creates a regular, predictable rhythm.',
+          },
+          {
+            term: 'rhythm',
+            definition: 'The pattern of stressed and unstressed syllables',
+            exampleSentence: 'The steady rhythm mirrors a heartbeat.',
+          },
+          {
+            term: 'enjambment',
+            definition: 'When a sentence runs on past the end of a line',
+            exampleSentence: 'The enjambment creates a sense of urgency.',
+          },
+          {
+            term: 'caesura',
+            definition: 'A pause in the middle of a line of poetry',
+            exampleSentence: 'The caesura forces the reader to pause and reflect.',
+          },
+          {
+            term: 'free verse',
+            definition: 'Poetry without a regular rhyme or rhythm pattern',
+            exampleSentence: 'The poet uses free verse to reflect the chaos of war.',
+          },
         ],
       },
       {
         category: 'Sound Devices',
         words: [
-          { term: 'sibilance', definition: 'Repetition of "s" sounds', exampleSentence: 'The sibilance in "the snake slithered silently" creates a sinister tone.' },
-          { term: 'assonance', definition: 'Repetition of vowel sounds within words', exampleSentence: 'The long "o" sounds in "moaning" and "groaning" slow the pace.' },
-          { term: 'plosive', definition: 'Harsh, explosive sounds like b, d, p, t', exampleSentence: 'The plosive sounds convey anger and force.' },
+          {
+            term: 'sibilance',
+            definition: 'Repetition of "s" sounds',
+            exampleSentence:
+              'The sibilance in "the snake slithered silently" creates a sinister tone.',
+          },
+          {
+            term: 'assonance',
+            definition: 'Repetition of vowel sounds within words',
+            exampleSentence: 'The long "o" sounds in "moaning" and "groaning" slow the pace.',
+          },
+          {
+            term: 'plosive',
+            definition: 'Harsh, explosive sounds like b, d, p, t',
+            exampleSentence: 'The plosive sounds convey anger and force.',
+          },
         ],
       },
     ],
@@ -620,12 +724,24 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Genre Vocabulary',
         words: [
-          { term: 'myth', definition: 'A traditional story that explains natural phenomena or beliefs' },
-          { term: 'legend', definition: 'A traditional story sometimes based on historical events' },
-          { term: 'archetype', definition: 'A typical character, image, or situation that recurs across stories' },
+          {
+            term: 'myth',
+            definition: 'A traditional story that explains natural phenomena or beliefs',
+          },
+          {
+            term: 'legend',
+            definition: 'A traditional story sometimes based on historical events',
+          },
+          {
+            term: 'archetype',
+            definition: 'A typical character, image, or situation that recurs across stories',
+          },
           { term: 'quest', definition: 'A long journey undertaken to achieve a goal' },
           { term: 'moral', definition: 'The lesson or message of a story' },
-          { term: 'allegory', definition: 'A story with a hidden meaning, usually a moral or political one' },
+          {
+            term: 'allegory',
+            definition: 'A story with a hidden meaning, usually a moral or political one',
+          },
         ],
       },
       {
@@ -685,10 +801,22 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Drama Techniques',
         words: [
-          { term: 'soliloquy', definition: 'A speech where a character speaks their thoughts aloud, alone on stage' },
-          { term: 'aside', definition: 'A remark spoken to the audience that other characters cannot hear' },
-          { term: 'dramatic irony', definition: 'When the audience knows something that the characters do not' },
-          { term: 'stage directions', definition: 'Instructions in a script about actions, movement, or tone' },
+          {
+            term: 'soliloquy',
+            definition: 'A speech where a character speaks their thoughts aloud, alone on stage',
+          },
+          {
+            term: 'aside',
+            definition: 'A remark spoken to the audience that other characters cannot hear',
+          },
+          {
+            term: 'dramatic irony',
+            definition: 'When the audience knows something that the characters do not',
+          },
+          {
+            term: 'stage directions',
+            definition: 'Instructions in a script about actions, movement, or tone',
+          },
           { term: 'monologue', definition: 'A long speech by one character' },
         ],
       },
@@ -708,7 +836,10 @@ export const unitWordBanks: UnitWordBank[] = [
           { term: 'uncanny', definition: 'Strangely familiar; unsettling in an inexplicable way' },
           { term: 'doppelganger', definition: 'A ghostly double of a living person' },
           { term: 'transgression', definition: 'Going beyond accepted boundaries or rules' },
-          { term: 'pathetic fallacy', definition: 'Using weather or nature to reflect mood or emotions' },
+          {
+            term: 'pathetic fallacy',
+            definition: 'Using weather or nature to reflect mood or emotions',
+          },
           { term: 'the supernatural', definition: 'Events or beings beyond natural explanation' },
           { term: 'isolation', definition: 'Being separated or cut off from others' },
         ],
@@ -717,7 +848,10 @@ export const unitWordBanks: UnitWordBank[] = [
         category: 'Atmospheric Vocabulary',
         words: [
           { term: 'foreboding', definition: 'A feeling that something bad will happen' },
-          { term: 'ominous', definition: 'Giving the impression that something bad is going to happen' },
+          {
+            term: 'ominous',
+            definition: 'Giving the impression that something bad is going to happen',
+          },
           { term: 'oppressive', definition: 'Weighing heavily on the mind; suffocating' },
           { term: 'desolate', definition: 'Empty, bleak, and lifeless' },
           { term: 'sinister', definition: 'Giving the impression of evil or harm' },
@@ -734,11 +868,21 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Rhetorical Techniques',
         words: [
-          { term: 'rhetoric', definition: 'The art of effective or persuasive speaking or writing' },
-          { term: 'anaphora', definition: 'The deliberate repetition of a word or phrase at the start of successive clauses' },
+          {
+            term: 'rhetoric',
+            definition: 'The art of effective or persuasive speaking or writing',
+          },
+          {
+            term: 'anaphora',
+            definition:
+              'The deliberate repetition of a word or phrase at the start of successive clauses',
+          },
           { term: 'tricolon', definition: 'A group of three parallel words, phrases, or clauses' },
           { term: 'hyperbole', definition: 'Deliberate exaggeration for emphasis or effect' },
-          { term: 'rhetorical question', definition: 'A question asked for effect, not expecting an answer' },
+          {
+            term: 'rhetorical question',
+            definition: 'A question asked for effect, not expecting an answer',
+          },
           { term: 'emotive language', definition: 'Words chosen to provoke an emotional response' },
           { term: 'counterargument', definition: 'An argument opposing the main position' },
         ],
@@ -763,12 +907,27 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Narrative Analysis',
         words: [
-          { term: 'omniscient narrator', definition: 'An all-knowing narrator who can see into every character\'s mind' },
-          { term: 'unreliable narrator', definition: 'A narrator whose credibility is compromised' },
+          {
+            term: 'omniscient narrator',
+            definition: "An all-knowing narrator who can see into every character's mind",
+          },
+          {
+            term: 'unreliable narrator',
+            definition: 'A narrator whose credibility is compromised',
+          },
           { term: 'motif', definition: 'A recurring element that has symbolic significance' },
-          { term: 'subtext', definition: 'The underlying meaning beneath the surface of dialogue or action' },
-          { term: 'characterisation', definition: 'The way a writer creates and develops characters' },
-          { term: 'bildungsroman', definition: 'A novel about a character\'s growth from youth to maturity' },
+          {
+            term: 'subtext',
+            definition: 'The underlying meaning beneath the surface of dialogue or action',
+          },
+          {
+            term: 'characterisation',
+            definition: 'The way a writer creates and develops characters',
+          },
+          {
+            term: 'bildungsroman',
+            definition: "A novel about a character's growth from youth to maturity",
+          },
         ],
       },
     ],
@@ -792,10 +951,16 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Thematic Vocabulary',
         words: [
-          { term: 'identity', definition: 'The qualities and beliefs that make a person who they are' },
+          {
+            term: 'identity',
+            definition: 'The qualities and beliefs that make a person who they are',
+          },
           { term: 'conflict', definition: 'A struggle between opposing forces' },
           { term: 'power', definition: 'The ability to influence or control' },
-          { term: 'nature', definition: 'The physical world; also used to mean a person\'s character' },
+          {
+            term: 'nature',
+            definition: "The physical world; also used to mean a person's character",
+          },
           { term: 'mortality', definition: 'The state of being subject to death' },
         ],
       },
@@ -809,14 +974,26 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Contextual Terms',
         words: [
-          { term: 'Elizabethan', definition: 'Relating to the reign of Queen Elizabeth I (1558-1603)' },
+          {
+            term: 'Elizabethan',
+            definition: 'Relating to the reign of Queen Elizabeth I (1558-1603)',
+          },
           { term: 'Jacobean', definition: 'Relating to the reign of King James I (1603-1625)' },
-          { term: 'patriarchy', definition: 'A system where men hold power and women are largely excluded' },
+          {
+            term: 'patriarchy',
+            definition: 'A system where men hold power and women are largely excluded',
+          },
           { term: 'divine right', definition: 'The belief that a monarch is chosen by God' },
-          { term: 'Great Chain of Being', definition: 'The medieval/Renaissance belief in a God-ordained hierarchy' },
+          {
+            term: 'Great Chain of Being',
+            definition: 'The medieval/Renaissance belief in a God-ordained hierarchy',
+          },
           { term: 'hubris', definition: 'Excessive pride that leads to downfall' },
           { term: 'hamartia', definition: 'A fatal flaw in a tragic hero' },
-          { term: 'catharsis', definition: 'The release of emotions experienced by the audience of a tragedy' },
+          {
+            term: 'catharsis',
+            definition: 'The release of emotions experienced by the audience of a tragedy',
+          },
         ],
       },
     ],
@@ -831,13 +1008,28 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Victorian Context',
         words: [
-          { term: 'industrialisation', definition: 'The transformation of society from agrarian to manufacturing-based' },
-          { term: 'social class', definition: 'A hierarchical division of society based on wealth and status' },
+          {
+            term: 'industrialisation',
+            definition: 'The transformation of society from agrarian to manufacturing-based',
+          },
+          {
+            term: 'social class',
+            definition: 'A hierarchical division of society based on wealth and status',
+          },
           { term: 'philanthropy', definition: 'Charitable acts for the benefit of others' },
-          { term: 'empire', definition: 'An extensive group of territories under a single authority' },
-          { term: 'Darwinism', definition: 'The theory of evolution by natural selection; "survival of the fittest"' },
+          {
+            term: 'empire',
+            definition: 'An extensive group of territories under a single authority',
+          },
+          {
+            term: 'Darwinism',
+            definition: 'The theory of evolution by natural selection; "survival of the fittest"',
+          },
           { term: 'didactic', definition: 'Intended to teach, particularly a moral lesson' },
-          { term: 'social mobility', definition: 'The ability to move between different social classes' },
+          {
+            term: 'social mobility',
+            definition: 'The ability to move between different social classes',
+          },
         ],
       },
       {
@@ -862,11 +1054,21 @@ export const unitWordBanks: UnitWordBank[] = [
         category: 'Media Literacy',
         words: [
           { term: 'bias', definition: 'Prejudice in favour of or against something' },
-          { term: 'propaganda', definition: 'Information used to promote a particular cause or viewpoint' },
+          {
+            term: 'propaganda',
+            definition: 'Information used to promote a particular cause or viewpoint',
+          },
           { term: 'objectivity', definition: 'Presenting facts without personal feelings or bias' },
           { term: 'subjectivity', definition: 'Based on personal feelings and opinions' },
-          { term: 'representation', definition: 'How groups, events, or ideas are depicted in media' },
-          { term: 'discourse', definition: 'Written or spoken communication; also the way a topic is discussed in society' },
+          {
+            term: 'representation',
+            definition: 'How groups, events, or ideas are depicted in media',
+          },
+          {
+            term: 'discourse',
+            definition:
+              'Written or spoken communication; also the way a topic is discussed in society',
+          },
         ],
       },
     ],
@@ -879,13 +1081,32 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Dramatic Terms',
         words: [
-          { term: 'stage directions', definition: 'Instructions about movement, tone, and setting in a play script' },
-          { term: 'subtext', definition: 'The meaning beneath what is said; what a character really means' },
-          { term: 'dramatic tension', definition: 'The feeling of suspense or anticipation created for the audience' },
+          {
+            term: 'stage directions',
+            definition: 'Instructions about movement, tone, and setting in a play script',
+          },
+          {
+            term: 'subtext',
+            definition: 'The meaning beneath what is said; what a character really means',
+          },
+          {
+            term: 'dramatic tension',
+            definition: 'The feeling of suspense or anticipation created for the audience',
+          },
           { term: 'fourth wall', definition: 'The imaginary wall between actors and audience' },
-          { term: 'naturalism', definition: 'A style of drama that aims to represent life realistically' },
-          { term: 'didactic theatre', definition: 'Theatre designed to teach the audience a lesson' },
-          { term: 'well-made play', definition: 'A play following a conventional structure of exposition, complication, and resolution' },
+          {
+            term: 'naturalism',
+            definition: 'A style of drama that aims to represent life realistically',
+          },
+          {
+            term: 'didactic theatre',
+            definition: 'Theatre designed to teach the audience a lesson',
+          },
+          {
+            term: 'well-made play',
+            definition:
+              'A play following a conventional structure of exposition, complication, and resolution',
+          },
         ],
       },
     ],
@@ -898,12 +1119,21 @@ export const unitWordBanks: UnitWordBank[] = [
       {
         category: 'Critical Perspectives',
         words: [
-          { term: 'postcolonial', definition: 'Relating to the period after colonial rule; examining its effects' },
+          {
+            term: 'postcolonial',
+            definition: 'Relating to the period after colonial rule; examining its effects',
+          },
           { term: 'diaspora', definition: 'The dispersion of a people from their homeland' },
           { term: 'othering', definition: 'Treating a person or group as fundamentally different' },
-          { term: 'cultural identity', definition: 'The sense of belonging to a particular cultural group' },
+          {
+            term: 'cultural identity',
+            definition: 'The sense of belonging to a particular cultural group',
+          },
           { term: 'hegemony', definition: 'Dominance of one group over others' },
-          { term: 'marginalisation', definition: 'The process of pushing a group to the edges of society' },
+          {
+            term: 'marginalisation',
+            definition: 'The process of pushing a group to the edges of society',
+          },
         ],
       },
     ],
@@ -926,8 +1156,7 @@ export const unitWordBanks: UnitWordBank[] = [
       },
     ],
   },
-];
-
+]
 
 // ---- 1D. Visual Organisers ----
 
@@ -935,69 +1164,84 @@ export const visualOrganisers: VisualOrganiser[] = [
   {
     id: 'vo-mind-map',
     name: 'Mind Map / Spider Diagram',
-    description: 'Central topic with branches for key ideas. Each branch can have sub-branches for evidence and analysis. Colour-code branches by theme or character.',
+    description:
+      'Central topic with branches for key ideas. Each branch can have sub-branches for evidence and analysis. Colour-code branches by theme or character.',
     bestFor: ['brainstorming', 'revision', 'character analysis', 'theme mapping'],
     yearGroups: ['Y7', 'Y8', 'Y9'],
-    structure: 'Central node (topic/question) with 4-6 main branches (key ideas). Each branch has 2-3 sub-branches (evidence/quotations). Colour-coded by theme.',
+    structure:
+      'Central node (topic/question) with 4-6 main branches (key ideas). Each branch has 2-3 sub-branches (evidence/quotations). Colour-coded by theme.',
   },
   {
     id: 'vo-venn-diagram',
     name: 'Venn Diagram',
-    description: 'Two overlapping circles for comparing texts, characters, or themes. The overlap section captures shared features.',
+    description:
+      'Two overlapping circles for comparing texts, characters, or themes. The overlap section captures shared features.',
     bestFor: ['text comparison', 'character comparison', 'AO3 tasks'],
     yearGroups: ['Y7', 'Y8', 'Y9'],
-    structure: 'Two overlapping circles. Left circle: Text/Character A unique features. Right circle: Text/Character B unique features. Overlap: shared features.',
+    structure:
+      'Two overlapping circles. Left circle: Text/Character A unique features. Right circle: Text/Character B unique features. Overlap: shared features.',
   },
   {
     id: 'vo-flow-chart',
     name: 'Plot Flow Chart',
-    description: 'Linear sequence showing the progression of events in a narrative, with space for structural features (flashbacks, shifts, climax) to be annotated.',
+    description:
+      'Linear sequence showing the progression of events in a narrative, with space for structural features (flashbacks, shifts, climax) to be annotated.',
     bestFor: ['plot tracking', 'structural analysis', 'sequencing events'],
     yearGroups: ['Y7', 'Y8'],
-    structure: 'Linear boxes connected by arrows: Opening > Rising Action > Climax > Falling Action > Resolution. Annotation boxes below for structural features.',
+    structure:
+      'Linear boxes connected by arrows: Opening > Rising Action > Climax > Falling Action > Resolution. Annotation boxes below for structural features.',
   },
   {
     id: 'vo-tracking-grid',
     name: 'Character/Theme Tracking Grid',
-    description: 'Grid with chapters/scenes across the top and characters/themes down the side. Students fill in key moments and quotations in each cell.',
+    description:
+      'Grid with chapters/scenes across the top and characters/themes down the side. Students fill in key moments and quotations in each cell.',
     bestFor: ['novel study', 'character development', 'theme tracking across a text'],
     yearGroups: ['Y8', 'Y9'],
-    structure: 'Rows: characters or themes. Columns: chapters, acts, or key scenes. Cells: key quotation + brief note on significance.',
+    structure:
+      'Rows: characters or themes. Columns: chapters, acts, or key scenes. Cells: key quotation + brief note on significance.',
   },
   {
     id: 'vo-pee-grid',
     name: 'PEE/PEEL Planning Grid',
-    description: 'A structured grid with labelled columns for Point, Evidence, Explain (and Link for Y8+). Students fill in one row per paragraph before writing.',
+    description:
+      'A structured grid with labelled columns for Point, Evidence, Explain (and Link for Y8+). Students fill in one row per paragraph before writing.',
     bestFor: ['essay planning', 'analytical writing preparation', 'structured responses'],
     yearGroups: ['Y7', 'Y8'],
-    structure: 'Columns: Point | Evidence (Quotation) | Explain (Technique + Effect) | Link (for PEEL). One row per planned paragraph.',
+    structure:
+      'Columns: Point | Evidence (Quotation) | Explain (Technique + Effect) | Link (for PEEL). One row per planned paragraph.',
   },
   {
     id: 'vo-argument-map',
     name: 'Argument/Counter-Argument Map',
-    description: 'A T-chart or diamond ranking for organising arguments and counterarguments. Useful for persuasive writing and evaluation tasks.',
+    description:
+      'A T-chart or diamond ranking for organising arguments and counterarguments. Useful for persuasive writing and evaluation tasks.',
     bestFor: ['persuasive writing', 'debate preparation', 'AO4 evaluation', 'non-fiction analysis'],
     yearGroups: ['Y8', 'Y9'],
-    structure: 'T-chart: left column for arguments (with evidence), right column for counterarguments. Or diamond ranking for prioritising points by strength.',
+    structure:
+      'T-chart: left column for arguments (with evidence), right column for counterarguments. Or diamond ranking for prioritising points by strength.',
   },
   {
     id: 'vo-context-timeline',
     name: 'Context Timeline',
-    description: 'A horizontal timeline placing the text in its historical context. Key historical events above the line, connections to the text below.',
+    description:
+      'A horizontal timeline placing the text in its historical context. Key historical events above the line, connections to the text below.',
     bestFor: ['contextual understanding', '19th-century texts', 'Shakespeare', 'AO3 context'],
     yearGroups: ['Y8', 'Y9'],
-    structure: 'Horizontal line with dates. Above: historical events. Below: how each event connects to/influences the text. Colour-coded by type (social, political, literary).',
+    structure:
+      'Horizontal line with dates. Above: historical events. Below: how each event connects to/influences the text. Colour-coded by type (social, political, literary).',
   },
   {
     id: 'vo-language-analysis-grid',
     name: 'Language Analysis Close-Reading Grid',
-    description: 'A grid for zooming into individual words and phrases. Columns for quotation, technique, word-level analysis (connotations), and effect on reader.',
+    description:
+      'A grid for zooming into individual words and phrases. Columns for quotation, technique, word-level analysis (connotations), and effect on reader.',
     bestFor: ['AO2 language analysis', 'extract-based questions', 'close reading'],
     yearGroups: ['Y7', 'Y8', 'Y9'],
-    structure: 'Columns: Quotation | Technique | Word-level analysis (connotations) | Effect on reader/audience. One row per quotation.',
+    structure:
+      'Columns: Quotation | Technique | Word-level analysis (connotations) | Effect on reader/audience. One row per quotation.',
   },
-];
-
+]
 
 // ========================== 2. DIFFERENTIATION STRATEGIES PER UNIT ==========================
 
@@ -1011,7 +1255,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y7',
     termNumber: 1,
     support: {
-      description: 'Heavily scaffolded approach with pre-structured frames, word banks, and guided reading activities.',
+      description:
+        'Heavily scaffolded approach with pre-structured frames, word banks, and guided reading activities.',
       scaffolding: [
         'Provide PEE paragraph frames with sentence starters pre-filled',
         'Pre-highlight key quotations in extracts for students to use',
@@ -1031,10 +1276,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Guided PEE paragraph writing using a writing frame',
         'Comprehension questions moving from literal to simple inference',
       ],
-      resources: ['Word bank cards', 'PEE writing frame', 'Pre-highlighted extract', 'Technique matching cards'],
+      resources: [
+        'Word bank cards',
+        'PEE writing frame',
+        'Pre-highlighted extract',
+        'Technique matching cards',
+      ],
     },
     core: {
-      description: 'Students work independently with some scaffolding available. They select their own evidence and structure their analysis.',
+      description:
+        'Students work independently with some scaffolding available. They select their own evidence and structure their analysis.',
       scaffolding: [
         'Provide sentence starters as prompts rather than full frames',
         'Model one paragraph and ask students to write a second independently',
@@ -1044,7 +1295,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Independently identify and analyse language techniques',
         'Write PEE paragraphs with embedded quotations',
         'Explain the effect of techniques on the reader',
-        'Begin to comment on writer\'s purpose',
+        "Begin to comment on writer's purpose",
       ],
       activities: [
         'Independent extract annotation for techniques and effects',
@@ -1055,7 +1306,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Sentence starter prompt sheet', 'Self-assessment checklist', 'Extract booklet'],
     },
     extension: {
-      description: 'Students work without scaffolding, developing conceptual analysis and exploring writer\'s intentions.',
+      description:
+        "Students work without scaffolding, developing conceptual analysis and exploring writer's intentions.",
       scaffolding: [
         'No sentence starters provided; students develop their own analytical voice',
         'Challenge prompts to push towards deeper analysis',
@@ -1063,16 +1315,20 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       expectedOutcomes: [
         'Analyse language with reference to connotation and multiple meanings',
         'Comment on structure and its effects on the reader',
-        'Begin to consider context and writer\'s purpose',
+        "Begin to consider context and writer's purpose",
         'Sustain a coherent argument across multiple paragraphs',
       ],
       activities: [
         'Write a multi-paragraph analytical response without scaffolding',
-        'Compare writer\'s methods across two extracts',
-        'Evaluate the effectiveness of a writer\'s technique choices',
+        "Compare writer's methods across two extracts",
+        "Evaluate the effectiveness of a writer's technique choices",
         'Creative rewriting: change the narrative perspective and analyse the effect',
       ],
-      resources: ['Challenge question cards', 'Exam-style question bank', 'Critical reading extracts'],
+      resources: [
+        'Challenge question cards',
+        'Exam-style question bank',
+        'Critical reading extracts',
+      ],
     },
     ealAdaptations: [
       {
@@ -1085,7 +1341,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Pair with a strong English speaker for collaborative tasks',
           'Provide simplified extracts alongside original texts',
         ],
-        resources: ['Bilingual word bank', 'Visual vocabulary cards', 'Simplified extract versions'],
+        resources: [
+          'Bilingual word bank',
+          'Visual vocabulary cards',
+          'Simplified extract versions',
+        ],
       },
       {
         stage: 'intermediate',
@@ -1096,7 +1356,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Use cloze activities to practise sentence construction',
           'Provide model paragraphs to deconstruct and imitate',
         ],
-        resources: ['Sentence construction frames', 'Cloze activity sheets', 'Model paragraph exemplars'],
+        resources: [
+          'Sentence construction frames',
+          'Cloze activity sheets',
+          'Model paragraph exemplars',
+        ],
       },
       {
         stage: 'advanced',
@@ -1120,7 +1384,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Use a reading ruler or coloured overlay',
           'Break written tasks into smaller, numbered steps',
         ],
-        resources: ['Audio extract recordings', 'Coloured overlay set', 'Dyslexia-friendly resource versions'],
+        resources: [
+          'Audio extract recordings',
+          'Coloured overlay set',
+          'Dyslexia-friendly resource versions',
+        ],
       },
       {
         need: 'ADHD',
@@ -1155,7 +1423,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Seat student where they can see the board clearly',
           'Provide digital versions of texts compatible with screen readers',
         ],
-        resources: ['Enlarged text resources', 'Digital text files', 'High-contrast slide templates'],
+        resources: [
+          'Enlarged text resources',
+          'Digital text files',
+          'High-contrast slide templates',
+        ],
       },
     ],
   },
@@ -1167,7 +1439,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y7',
     termNumber: 1,
     support: {
-      description: 'Guided approach with annotated model poems, structured response frames, and technique identification support.',
+      description:
+        'Guided approach with annotated model poems, structured response frames, and technique identification support.',
       scaffolding: [
         'Provide pre-annotated poems with techniques labelled',
         'Use a technique checklist for students to identify in poems',
@@ -1187,10 +1460,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Match the technique to the example card sort',
         'Draw what the poem describes (visual response before written)',
       ],
-      resources: ['Poetry toolkit card', 'Technique matching cards', 'Close-reading grid', 'Drawing template'],
+      resources: [
+        'Poetry toolkit card',
+        'Technique matching cards',
+        'Close-reading grid',
+        'Drawing template',
+      ],
     },
     core: {
-      description: 'Students independently annotate poems and write analytical paragraphs with access to prompt sheets.',
+      description:
+        'Students independently annotate poems and write analytical paragraphs with access to prompt sheets.',
       scaffolding: [
         'Provide sentence starters for analysis',
         'Supply a list of key questions to ask about any poem',
@@ -1200,7 +1479,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Annotate a poem independently for technique and effect',
         'Write PEE paragraphs about a poem with embedded quotations',
         'Comment on how structure (stanzas, line length, enjambment) creates meaning',
-        'Begin to consider the poet\'s intentions',
+        "Begin to consider the poet's intentions",
       ],
       activities: [
         'Independent poem annotation with margin notes',
@@ -1211,7 +1490,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Annotation guide', 'Key questions prompt', 'Performance planning sheet'],
     },
     extension: {
-      description: 'Students explore multiple interpretations, consider context, and develop a personal critical voice.',
+      description:
+        'Students explore multiple interpretations, consider context, and develop a personal critical voice.',
       scaffolding: [
         'Challenge cards with higher-order questions',
         'Encourage alternative/competing interpretations',
@@ -1224,7 +1504,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       ],
       activities: [
         'Write a critical comparison of two poems on a shared theme',
-        'Research the poet\'s context and explain how it shapes the poem',
+        "Research the poet's context and explain how it shapes the poem",
         'Write their own poem inspired by the studied poem, with a commentary explaining their choices',
         'Debate: "Is this poem about ___ or about ___?" with textual evidence',
       ],
@@ -1246,7 +1526,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         strategies: [
           'Teach the language of analysis explicitly (the poet uses, this suggests, the effect is)',
           'Use cloze paragraphs to build analytical sentence construction',
-          'Compare poetry from student\'s home culture with English poetry to build bridges',
+          "Compare poetry from student's home culture with English poetry to build bridges",
         ],
         resources: ['Analytical language phrase bank', 'Cloze analysis activities'],
       },
@@ -1279,7 +1559,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow extra processing time; do not cold-call for immediate responses',
           'Provide a "what to look for" checklist before annotation',
         ],
-        resources: ['Vocabulary pre-teach cards', 'Stanza analysis worksheets', 'Annotation checklist'],
+        resources: [
+          'Vocabulary pre-teach cards',
+          'Stanza analysis worksheets',
+          'Annotation checklist',
+        ],
       },
     ],
   },
@@ -1291,7 +1575,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y7',
     termNumber: 2,
     support: {
-      description: 'Story mapping, simplified retellings, and visual approaches to understanding narrative structure.',
+      description:
+        'Story mapping, simplified retellings, and visual approaches to understanding narrative structure.',
       scaffolding: [
         'Provide story maps/comic strip templates for sequencing',
         'Use simplified retellings alongside original versions',
@@ -1310,10 +1595,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Write a retelling of a myth using a writing frame',
         'Match archetypes to characters from studied myths',
       ],
-      resources: ['Story map template', 'Comic strip template', 'Character profile frame', 'Archetype matching cards'],
+      resources: [
+        'Story map template',
+        'Comic strip template',
+        'Character profile frame',
+        'Archetype matching cards',
+      ],
     },
     core: {
-      description: 'Students analyse narrative structures and character functions, writing analytical and creative responses independently.',
+      description:
+        'Students analyse narrative structures and character functions, writing analytical and creative responses independently.',
       scaffolding: [
         'Provide analytical prompt questions rather than full frames',
         'Model one analytical response and students replicate for a new myth',
@@ -1325,18 +1616,21 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Compare two myths from different cultures',
       ],
       activities: [
-        'Analyse the hero\'s journey structure in a studied myth',
+        "Analyse the hero's journey structure in a studied myth",
         'Write a PEE paragraph on how a character is presented',
         'Write an original myth incorporating studied conventions',
         'Venn diagram comparing myths from two cultures',
       ],
-      resources: ['Hero\'s journey template', 'Analytical prompt cards', 'Creative writing planning sheet'],
+      resources: [
+        "Hero's journey template",
+        'Analytical prompt cards',
+        'Creative writing planning sheet',
+      ],
     },
     extension: {
-      description: 'Critical exploration of myth as cultural expression, including comparison across traditions and modern retellings.',
-      scaffolding: [
-        'Challenge prompts encouraging critical thinking about culture and power',
-      ],
+      description:
+        'Critical exploration of myth as cultural expression, including comparison across traditions and modern retellings.',
+      scaffolding: ['Challenge prompts encouraging critical thinking about culture and power'],
       expectedOutcomes: [
         'Analyse how myths reflect the values and beliefs of their culture',
         'Compare myths across cultures to identify universal themes',
@@ -1349,13 +1643,17 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Create a modern retelling that subverts the original (e.g. villain as hero)',
         'Debate: are myths still relevant today?',
       ],
-      resources: ['Research project brief', 'Extended writing planning frame', 'Critical thinking prompts'],
+      resources: [
+        'Research project brief',
+        'Extended writing planning frame',
+        'Critical thinking prompts',
+      ],
     },
     ealAdaptations: [
       {
         stage: 'beginner',
         strategies: [
-          'Use myths from the student\'s home culture as entry points',
+          "Use myths from the student's home culture as entry points",
           'Provide heavily illustrated or graphic novel versions',
           'Allow oral retelling before written',
           'Use visual story maps with minimal text',
@@ -1412,7 +1710,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y7',
     termNumber: 2,
     support: {
-      description: 'Structured writing with image prompts, word banks, and step-by-step planning templates.',
+      description:
+        'Structured writing with image prompts, word banks, and step-by-step planning templates.',
       scaffolding: [
         'Provide image prompts with guided sensory detail questions',
         'Supply word banks organised by the five senses',
@@ -1432,10 +1731,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Write a 200-word description using a word bank',
         'Plan a narrative using a storyboard template',
       ],
-      resources: ['Image prompt pack', 'Five-senses word bank', 'Story planning template', 'Writing checklist'],
+      resources: [
+        'Image prompt pack',
+        'Five-senses word bank',
+        'Story planning template',
+        'Writing checklist',
+      ],
     },
     core: {
-      description: 'Students plan and write creative pieces independently, using a range of techniques for effect.',
+      description:
+        'Students plan and write creative pieces independently, using a range of techniques for effect.',
       scaffolding: [
         'Provide a techniques checklist as a reminder rather than a requirement',
         'Model planning process but not writing itself',
@@ -1453,10 +1758,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Edit and improve a first draft using a peer feedback sheet',
         'Experiment with narrative perspective (first vs third person)',
       ],
-      resources: ['Stimulus pack', 'Techniques reminder card', 'Peer editing guide', 'Exemplar extracts'],
+      resources: [
+        'Stimulus pack',
+        'Techniques reminder card',
+        'Peer editing guide',
+        'Exemplar extracts',
+      ],
     },
     extension: {
-      description: 'Students develop a distinctive voice, experiment with form and structure, and write with conscious craft.',
+      description:
+        'Students develop a distinctive voice, experiment with form and structure, and write with conscious craft.',
       scaffolding: [
         'Provide mentor texts from published authors for inspiration and analysis',
         'Challenge students to use specific structural devices',
@@ -1469,7 +1780,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       ],
       activities: [
         'Write a piece that uses a non-chronological structure',
-        'Analyse a published author\'s opening and write one in the same style',
+        "Analyse a published author's opening and write one in the same style",
         'Write a piece from the perspective of an unusual narrator (object, animal, etc.)',
         'Write a commentary explaining 3-5 deliberate creative choices',
       ],
@@ -1484,17 +1795,21 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Focus on descriptive writing before narrative (less complex language demands)',
           'Use images as stimuli rather than text-based prompts',
         ],
-        resources: ['Bilingual planning template', 'Visual stimulus pack', 'Example sentence word bank'],
+        resources: [
+          'Bilingual planning template',
+          'Visual stimulus pack',
+          'Example sentence word bank',
+        ],
       },
       {
         stage: 'intermediate',
         strategies: [
-          'Teach English descriptive conventions explicitly (show don\'t tell)',
+          "Teach English descriptive conventions explicitly (show don't tell)",
           'Provide model sentences demonstrating technique use',
           'Focus on building vocabulary for sensory description',
           'Offer sentence-combining activities to develop complex sentences',
         ],
-        resources: ['Show don\'t tell examples', 'Sentence combining worksheets'],
+        resources: ["Show don't tell examples", 'Sentence combining worksheets'],
       },
       {
         stage: 'advanced',
@@ -1537,7 +1852,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y7',
     termNumber: 3,
     support: {
-      description: 'Modern English translations alongside original text, drama-based approaches, and visual character guides.',
+      description:
+        'Modern English translations alongside original text, drama-based approaches, and visual character guides.',
       scaffolding: [
         'Provide side-by-side modern English translations',
         'Use animated or filmed versions before reading the text',
@@ -1548,7 +1864,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       expectedOutcomes: [
         'Understand the basic plot and characters',
         'Translate key quotations into modern English',
-        'Identify simple techniques (metaphor, simile) in Shakespeare\'s language',
+        "Identify simple techniques (metaphor, simile) in Shakespeare's language",
         'Write a basic PEE paragraph about a character',
       ],
       activities: [
@@ -1557,10 +1873,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Match Shakespearean words to modern meanings',
         'Write a PEE paragraph using a provided quotation',
       ],
-      resources: ['Modern English translation', 'Character relationship diagram', 'Vocabulary matching cards', 'Film clips'],
+      resources: [
+        'Modern English translation',
+        'Character relationship diagram',
+        'Vocabulary matching cards',
+        'Film clips',
+      ],
     },
     core: {
-      description: 'Students engage with the original text, analyse language, and write analytical responses about character and theme.',
+      description:
+        'Students engage with the original text, analyse language, and write analytical responses about character and theme.',
       scaffolding: [
         'Provide a glossary for each scene rather than full translation',
         'Model close reading of one speech, then students practise independently',
@@ -1568,8 +1890,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       expectedOutcomes: [
         'Read and understand the original text with glossary support',
         'Analyse how Shakespeare uses language to present character and theme',
-        'Write PEEL paragraphs about Shakespeare\'s use of language',
-        'Begin to consider the play\'s relevance to a modern audience',
+        "Write PEEL paragraphs about Shakespeare's use of language",
+        "Begin to consider the play's relevance to a modern audience",
       ],
       activities: [
         'Annotate a soliloquy for language techniques and effects',
@@ -1580,15 +1902,14 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Scene glossary', 'Annotation guide for Shakespeare', 'Hot-seat question cards'],
     },
     extension: {
-      description: 'Students engage with context, alternative interpretations, and sustained analytical writing about Shakespeare.',
-      scaffolding: [
-        'Challenge questions encouraging contextual analysis and directorial choices',
-      ],
+      description:
+        'Students engage with context, alternative interpretations, and sustained analytical writing about Shakespeare.',
+      scaffolding: ['Challenge questions encouraging contextual analysis and directorial choices'],
       expectedOutcomes: [
         'Analyse how context (Elizabethan/Jacobean) shapes meaning',
         'Compare different directorial interpretations of key scenes',
         'Write a sustained analytical response across multiple paragraphs',
-        'Consider how Shakespeare\'s themes resonate with modern audiences',
+        "Consider how Shakespeare's themes resonate with modern audiences",
       ],
       activities: [
         'Compare two film versions of the same scene and evaluate directorial choices',
@@ -1596,7 +1917,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Direct a scene: write notes justifying staging, tone, and delivery choices',
         'Research and present on an aspect of Elizabethan/Jacobean context',
       ],
-      resources: ['Film comparison clips', 'Director\'s notebook template', 'Context research brief'],
+      resources: [
+        'Film comparison clips',
+        "Director's notebook template",
+        'Context research brief',
+      ],
     },
     ealAdaptations: [
       {
@@ -1622,9 +1947,9 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       {
         stage: 'advanced',
         strategies: [
-          'Explore how Shakespeare\'s language creates effects that modern English cannot replicate',
+          "Explore how Shakespeare's language creates effects that modern English cannot replicate",
           'Discuss universal themes that transcend language and culture',
-          'Encourage comparison with dramatic traditions from the student\'s own culture',
+          "Encourage comparison with dramatic traditions from the student's own culture",
         ],
         resources: ['Language comparison worksheet', 'Cross-cultural drama discussion prompts'],
       },
@@ -1638,17 +1963,25 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow oral analysis and verbal responses alongside written',
           'Use graphic organisers for essay planning',
         ],
-        resources: ['Audio recordings of speeches', 'Large print extracts', 'Graphic organiser templates'],
+        resources: [
+          'Audio recordings of speeches',
+          'Large print extracts',
+          'Graphic organiser templates',
+        ],
       },
       {
         need: 'ASD (Autism Spectrum)',
         adaptations: [
-          'Explicitly teach figurative language — Shakespeare relies heavily on metaphor',
+          'Explicitly teach figurative language - Shakespeare relies heavily on metaphor',
           'Provide character emotion guides with clear explanations of motivation',
           'Use visual aids for abstract concepts like ambition, jealousy, honour',
           'Prepare students for role-play/drama with clear expectations and opt-out options',
         ],
-        resources: ['Figurative language guide', 'Character motivation cards', 'Drama participation choice board'],
+        resources: [
+          'Figurative language guide',
+          'Character motivation cards',
+          'Drama participation choice board',
+        ],
       },
     ],
   },
@@ -1662,7 +1995,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y8',
     termNumber: 1,
     support: {
-      description: 'Genre conventions taught through visual and sensory approaches with structured analytical frames.',
+      description:
+        'Genre conventions taught through visual and sensory approaches with structured analytical frames.',
       scaffolding: [
         'Provide a Gothic conventions checklist for identification in texts',
         'Supply atmospheric word banks sorted by mood (fear, isolation, decay)',
@@ -1682,10 +2016,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Guided PEEL paragraph on creating tension in a Gothic extract',
         'Create a Gothic setting description using a word bank',
       ],
-      resources: ['Gothic conventions checklist', 'Atmospheric word bank', 'PEEL frame', 'Gothic image gallery'],
+      resources: [
+        'Gothic conventions checklist',
+        'Atmospheric word bank',
+        'PEEL frame',
+        'Gothic image gallery',
+      ],
     },
     core: {
-      description: 'Students analyse Gothic texts independently, exploring how writers create atmosphere and suspense.',
+      description:
+        'Students analyse Gothic texts independently, exploring how writers create atmosphere and suspense.',
       scaffolding: [
         'Provide prompt questions for analysis rather than full frames',
         'Model one close reading, then students apply to a new extract',
@@ -1705,10 +2045,9 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Gothic extract anthology', 'Prompt question cards', 'Comparison planning grid'],
     },
     extension: {
-      description: 'Students explore the Gothic as a cultural and historical phenomenon, analysing subtext and subversion.',
-      scaffolding: [
-        'Challenge prompts linking texts to context and critical theory',
-      ],
+      description:
+        'Students explore the Gothic as a cultural and historical phenomenon, analysing subtext and subversion.',
+      scaffolding: ['Challenge prompts linking texts to context and critical theory'],
       expectedOutcomes: [
         'Analyse how Gothic fiction reflects cultural anxieties (science, gender, empire)',
         'Write sustained, multi-paragraph analytical responses',
@@ -1721,7 +2060,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Compare a classic Gothic text with a modern Gothic work',
         'Present a critical reading of a Gothic text from a specific perspective',
       ],
-      resources: ['Critical perspectives guide', 'Extended essay planning template', 'Context research booklet'],
+      resources: [
+        'Critical perspectives guide',
+        'Extended essay planning template',
+        'Context research booklet',
+      ],
     },
     ealAdaptations: [
       {
@@ -1730,9 +2073,13 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Use Gothic images and film clips to build understanding before reading',
           'Provide heavily glossed extracts with visual vocabulary support',
           'Focus on sensory and emotional vocabulary which transfers across languages',
-          'Use the student\'s own cultural horror/supernatural traditions as a bridge',
+          "Use the student's own cultural horror/supernatural traditions as a bridge",
         ],
-        resources: ['Gothic image bank', 'Glossed extracts', 'Cultural comparison discussion cards'],
+        resources: [
+          'Gothic image bank',
+          'Glossed extracts',
+          'Cultural comparison discussion cards',
+        ],
       },
       {
         stage: 'intermediate',
@@ -1741,7 +2088,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Provide model analytical sentences for imitation',
           'Use structured comparison frameworks for Gothic conventions across cultures',
         ],
-        resources: ['Gothic vocabulary drill', 'Model sentence bank', 'Cross-cultural Gothic comparison grid'],
+        resources: [
+          'Gothic vocabulary drill',
+          'Model sentence bank',
+          'Cross-cultural Gothic comparison grid',
+        ],
       },
       {
         stage: 'advanced',
@@ -1772,7 +2123,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow oral analysis alongside written tasks',
           'Print extracts in dyslexia-friendly format',
         ],
-        resources: ['Audio extracts', 'Colour-coding system guide', 'Dyslexia-friendly extract prints'],
+        resources: [
+          'Audio extracts',
+          'Colour-coding system guide',
+          'Dyslexia-friendly extract prints',
+        ],
       },
     ],
   },
@@ -1784,7 +2139,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y8',
     termNumber: 1,
     support: {
-      description: 'Technique identification supported by acronyms (AFOREST), structured writing frames, and model texts.',
+      description:
+        'Technique identification supported by acronyms (AFOREST), structured writing frames, and model texts.',
       scaffolding: [
         'Teach AFOREST (Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, Tricolon) as a memorable device',
         'Provide writing frames for speeches and letters with labelled sections',
@@ -1803,10 +2159,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Fact vs opinion sorting activity',
         'Write a short letter to the headteacher about a school issue',
       ],
-      resources: ['AFOREST poster/card', 'Speech writing frame', 'Letter writing frame', 'Fact/opinion sorting cards'],
+      resources: [
+        'AFOREST poster/card',
+        'Speech writing frame',
+        'Letter writing frame',
+        'Fact/opinion sorting cards',
+      ],
     },
     core: {
-      description: 'Students analyse and create persuasive texts independently, using a range of rhetorical strategies.',
+      description:
+        'Students analyse and create persuasive texts independently, using a range of rhetorical strategies.',
       scaffolding: [
         'Provide a rhetorical techniques reference card rather than a frame',
         'Model analysis of one text, then students apply to a new text',
@@ -1823,13 +2185,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Peer assessment of persuasive writing using success criteria',
         'Debate a topical issue using evidence and rhetorical strategies',
       ],
-      resources: ['Rhetorical techniques reference card', 'Real speech extracts', 'Debate preparation sheet'],
+      resources: [
+        'Rhetorical techniques reference card',
+        'Real speech extracts',
+        'Debate preparation sheet',
+      ],
     },
     extension: {
-      description: 'Students critically evaluate persuasion in media and politics, exploring bias, manipulation, and ethical rhetoric.',
-      scaffolding: [
-        'Provide challenging source materials from real-world contexts',
-      ],
+      description:
+        'Students critically evaluate persuasion in media and politics, exploring bias, manipulation, and ethical rhetoric.',
+      scaffolding: ['Provide challenging source materials from real-world contexts'],
       expectedOutcomes: [
         'Critically analyse how bias and ideology shape non-fiction texts',
         'Compare how different sources present the same event or issue',
@@ -1842,7 +2207,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Analyse propaganda techniques in historical or contemporary sources',
         'Create a media literacy guide for younger students',
       ],
-      resources: ['News comparison pack', 'Propaganda analysis framework', 'Extended writing planning grid'],
+      resources: [
+        'News comparison pack',
+        'Propaganda analysis framework',
+        'Extended writing planning grid',
+      ],
     },
     ealAdaptations: [
       {
@@ -1853,7 +2222,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Provide a bilingual glossary of argument connectives',
           'Allow oral persuasion tasks before written ones',
         ],
-        resources: ['Advertisement analysis pack', 'Visual persuasion examples', 'Bilingual connectives list'],
+        resources: [
+          'Advertisement analysis pack',
+          'Visual persuasion examples',
+          'Bilingual connectives list',
+        ],
       },
       {
         stage: 'intermediate',
@@ -1868,7 +2241,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         stage: 'advanced',
         strategies: [
           'Explore how cultural context affects what is considered persuasive',
-          'Discuss rhetorical traditions in the student\'s home culture',
+          "Discuss rhetorical traditions in the student's home culture",
           'Focus on idiomatic persuasive phrases and tone',
         ],
         resources: ['Cross-cultural rhetoric discussion prompts'],
@@ -1905,7 +2278,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y8',
     termNumber: 2,
     support: {
-      description: 'Chapter-by-chapter guided reading with comprehension support, character tracking grids, and structured analytical frames.',
+      description:
+        'Chapter-by-chapter guided reading with comprehension support, character tracking grids, and structured analytical frames.',
       scaffolding: [
         'Provide chapter summaries to support comprehension',
         'Supply character tracking grids to fill in as reading progresses',
@@ -1925,10 +2299,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Guided PEEL paragraph on character presentation',
         'Theme identification: match quotations to themes',
       ],
-      resources: ['Chapter summary booklet', 'Character tracking grid', 'PEEL frame', 'Theme matching cards'],
+      resources: [
+        'Chapter summary booklet',
+        'Character tracking grid',
+        'PEEL frame',
+        'Theme matching cards',
+      ],
     },
     core: {
-      description: 'Students read, analyse, and respond to the novel independently with prompt support.',
+      description:
+        'Students read, analyse, and respond to the novel independently with prompt support.',
       scaffolding: [
         'Provide discussion questions rather than guided journal prompts',
         'Model close reading of one key extract, then students do another independently',
@@ -1948,10 +2328,9 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Discussion question cards', 'Extract booklet', 'Context research guide'],
     },
     extension: {
-      description: 'Students engage in critical and comparative analysis of the novel, considering authorial intent and multiple interpretations.',
-      scaffolding: [
-        'Challenge questions encouraging critical debate and alternative readings',
-      ],
+      description:
+        'Students engage in critical and comparative analysis of the novel, considering authorial intent and multiple interpretations.',
+      scaffolding: ['Challenge questions encouraging critical debate and alternative readings'],
       expectedOutcomes: [
         'Write a sustained critical essay on the novel',
         'Offer and evaluate competing interpretations of key moments',
@@ -1964,7 +2343,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Book review for a literary magazine audience',
         'Comparative study: this novel and another text on a shared theme',
       ],
-      resources: ['Extended essay brief', 'Critical debate preparation cards', 'Comparative essay planning grid'],
+      resources: [
+        'Extended essay brief',
+        'Critical debate preparation cards',
+        'Comparative essay planning grid',
+      ],
     },
     ealAdaptations: [
       {
@@ -1991,7 +2374,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         strategies: [
           'Focus on nuanced vocabulary and sophisticated sentence structures',
           'Explore how cultural background shapes interpretation',
-          'Encourage comparison with literature from the student\'s own tradition',
+          "Encourage comparison with literature from the student's own tradition",
         ],
         resources: ['Advanced vocabulary builder', 'Cultural interpretation prompts'],
       },
@@ -2005,7 +2388,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow oral responses and recording of ideas before writing',
           'Reduce the number of quotations required but maintain analytical depth',
         ],
-        resources: ['Audiobook access', 'Dyslexia-friendly extract prints', 'Voice recording app guide'],
+        resources: [
+          'Audiobook access',
+          'Dyslexia-friendly extract prints',
+          'Voice recording app guide',
+        ],
       },
       {
         need: 'Processing difficulties',
@@ -2015,7 +2402,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow extra time for reading and written tasks',
           'Use think-pair-share before independent analysis',
         ],
-        resources: ['Visual summary templates', 'Comprehension check questions', 'Think-pair-share cards'],
+        resources: [
+          'Visual summary templates',
+          'Comprehension check questions',
+          'Think-pair-share cards',
+        ],
       },
     ],
   },
@@ -2027,7 +2418,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y8',
     termNumber: 2,
     support: {
-      description: 'Structured comparison frameworks, pre-annotated poems, and comparison sentence starters.',
+      description:
+        'Structured comparison frameworks, pre-annotated poems, and comparison sentence starters.',
       scaffolding: [
         'Provide pre-annotated poem pairs with techniques labelled',
         'Use Venn diagram templates for identifying similarities and differences',
@@ -2046,10 +2438,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Technique matching: find the same technique in both poems',
         'Complete a comparison grid for two poems',
       ],
-      resources: ['Venn diagram template', 'Comparison sentence starters', 'Comparison writing frame', 'Pre-annotated poems'],
+      resources: [
+        'Venn diagram template',
+        'Comparison sentence starters',
+        'Comparison writing frame',
+        'Pre-annotated poems',
+      ],
     },
     core: {
-      description: 'Students compare poems independently, analysing methods and effects with appropriate comparative language.',
+      description:
+        'Students compare poems independently, analysing methods and effects with appropriate comparative language.',
       scaffolding: [
         'Provide a comparison connectives reference card',
         'Model one comparative paragraph, then students write the next independently',
@@ -2058,7 +2456,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Write comparative paragraphs using topic sentences that address both poems',
         'Analyse how different poets use language to explore the same theme',
         'Maintain a comparative thread throughout their writing',
-        'Consider how context shapes each poet\'s approach',
+        "Consider how context shapes each poet's approach",
       ],
       activities: [
         'Write a comparative essay on two poems (500+ words)',
@@ -2069,10 +2467,9 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Comparison connectives card', 'Annotated model essay', 'Poem ranking activity'],
     },
     extension: {
-      description: 'Students write sustained, critical comparisons exploring themes, context, and form across multiple poems.',
-      scaffolding: [
-        'Challenge questions requiring evaluation and alternative interpretations',
-      ],
+      description:
+        'Students write sustained, critical comparisons exploring themes, context, and form across multiple poems.',
+      scaffolding: ['Challenge questions requiring evaluation and alternative interpretations'],
       expectedOutcomes: [
         'Write a sustained comparative essay engaging with both poems equally',
         'Compare form and structure as well as language',
@@ -2085,18 +2482,26 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Critical evaluation: which poem more effectively conveys its theme?',
         'Present a comparative analysis to the class',
       ],
-      resources: ['Poetry anthology for independent selection', 'Evaluation planning frame', 'Presentation rubric'],
+      resources: [
+        'Poetry anthology for independent selection',
+        'Evaluation planning frame',
+        'Presentation rubric',
+      ],
     },
     ealAdaptations: [
       {
         stage: 'beginner',
         strategies: [
           'Focus on the emotional impact of poems before technical analysis',
-          'Use poems from the student\'s own language/culture as a comparison text',
-          'Provide visual representations of each poem\'s key images',
+          "Use poems from the student's own language/culture as a comparison text",
+          "Provide visual representations of each poem's key images",
           'Allow comparative responses in mixed language initially',
         ],
-        resources: ['Emotion response chart', 'Visual imagery cards', 'Mixed-language response template'],
+        resources: [
+          'Emotion response chart',
+          'Visual imagery cards',
+          'Mixed-language response template',
+        ],
       },
       {
         stage: 'intermediate',
@@ -2136,7 +2541,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow students to annotate poems during the writing task',
           'Use graphic organisers to plan before writing',
         ],
-        resources: ['Side-by-side poem layout', 'Comparison checklist', 'Graphic organiser template'],
+        resources: [
+          'Side-by-side poem layout',
+          'Comparison checklist',
+          'Graphic organiser template',
+        ],
       },
     ],
   },
@@ -2148,7 +2557,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y8',
     termNumber: 3,
     support: {
-      description: 'Parallel text support, drama-based activities, and guided analytical writing with contextual scaffolding.',
+      description:
+        'Parallel text support, drama-based activities, and guided analytical writing with contextual scaffolding.',
       scaffolding: [
         'Provide parallel text (original and modern English)',
         'Use film clips before reading key scenes',
@@ -2168,16 +2578,22 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Guided PEEL paragraph on character or theme',
         'Role-play key scenes using simplified language where needed',
       ],
-      resources: ['Parallel text booklet', 'Character motivation chart', 'Quotation bank', 'PEEL frame'],
+      resources: [
+        'Parallel text booklet',
+        'Character motivation chart',
+        'Quotation bank',
+        'PEEL frame',
+      ],
     },
     core: {
-      description: 'Students analyse Shakespeare\'s language, structure, and context independently with targeted support.',
+      description:
+        "Students analyse Shakespeare's language, structure, and context independently with targeted support.",
       scaffolding: [
         'Provide a quotation bank but no pre-selected evidence',
         'Model close reading of one speech, then students apply independently',
       ],
       expectedOutcomes: [
-        'Analyse Shakespeare\'s language choices and their effects',
+        "Analyse Shakespeare's language choices and their effects",
         'Write sustained PEEL responses with self-selected evidence',
         'Link analysis to relevant context',
         'Compare how the same theme is explored in different scenes',
@@ -2191,10 +2607,9 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Quotation bank', 'Context information sheets', 'Comparison planning template'],
     },
     extension: {
-      description: 'Students write critical essays engaging deeply with language, context, multiple interpretations, and performance choices.',
-      scaffolding: [
-        'Challenge questions on alternative critical readings and directorial vision',
-      ],
+      description:
+        'Students write critical essays engaging deeply with language, context, multiple interpretations, and performance choices.',
+      scaffolding: ['Challenge questions on alternative critical readings and directorial vision'],
       expectedOutcomes: [
         'Write a critical essay engaging with alternative interpretations',
         'Analyse how context shapes meaning at a sophisticated level',
@@ -2207,7 +2622,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Critical comparison of two interpretations (academic or performance-based)',
         'Research and present on a contextual topic relevant to the play',
       ],
-      resources: ['Extended essay brief', 'Director\'s notebook template', 'Critical reading extracts'],
+      resources: [
+        'Extended essay brief',
+        "Director's notebook template",
+        'Critical reading extracts',
+      ],
     },
     ealAdaptations: [
       {
@@ -2218,7 +2637,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Focus on understanding character and plot before language analysis',
           'Use drama and physical activities to make language memorable',
         ],
-        resources: ['Film version with subtitles', 'Visual scene summaries', 'Drama activity cards'],
+        resources: [
+          'Film version with subtitles',
+          'Visual scene summaries',
+          'Drama activity cards',
+        ],
       },
       {
         stage: 'intermediate',
@@ -2232,7 +2655,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       {
         stage: 'advanced',
         strategies: [
-          'Explore Shakespeare\'s wordplay and ambiguity in depth',
+          "Explore Shakespeare's wordplay and ambiguity in depth",
           'Compare English Renaissance drama with dramatic traditions from other cultures',
           'Discuss how translations of Shakespeare alter meaning and effect',
         ],
@@ -2258,7 +2681,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Use visual scales for character emotions throughout the play',
           'Offer clear structures and expectations for any group or drama work',
         ],
-        resources: ['Character emotion guide', 'Social understanding notes', 'Drama expectations card'],
+        resources: [
+          'Character emotion guide',
+          'Social understanding notes',
+          'Drama expectations card',
+        ],
       },
     ],
   },
@@ -2272,7 +2699,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y9',
     termNumber: 1,
     support: {
-      description: 'Contextual pre-teaching, glossed extracts, and guided analytical frameworks for challenging 19th-century texts.',
+      description:
+        'Contextual pre-teaching, glossed extracts, and guided analytical frameworks for challenging 19th-century texts.',
       scaffolding: [
         'Pre-teach Victorian context and key concepts before reading',
         'Provide glossed extracts with archaic vocabulary explained',
@@ -2292,10 +2720,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'PEEL paragraph using provided quotation and context link',
         'Character presentation analysis using a structured grid',
       ],
-      resources: ['Context timeline', 'Glossed extract booklet', 'PEEL frame with context sentence starters', 'Character grid'],
+      resources: [
+        'Context timeline',
+        'Glossed extract booklet',
+        'PEEL frame with context sentence starters',
+        'Character grid',
+      ],
     },
     core: {
-      description: 'Students analyse 19th-century texts independently, engaging with language, structure, and context.',
+      description:
+        'Students analyse 19th-century texts independently, engaging with language, structure, and context.',
       scaffolding: [
         'Provide context information sheets for reference during writing',
         'Model one analysis then students apply to a new extract',
@@ -2310,15 +2744,14 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Independent close reading and annotation of a 19th-century extract',
         'Analytical essay on how a writer presents a theme or character',
         'Comparison of two 19th-century extracts on a shared theme',
-        'Context-rich analysis: how does context shape the writer\'s choices?',
+        "Context-rich analysis: how does context shape the writer's choices?",
       ],
       resources: ['Context reference sheets', 'Extract anthology', 'Comparison planning grid'],
     },
     extension: {
-      description: 'Students engage critically with 19th-century literature, exploring ideology, narrative form, and socio-political commentary.',
-      scaffolding: [
-        'Challenge prompts on critical perspectives and ideological readings',
-      ],
+      description:
+        'Students engage critically with 19th-century literature, exploring ideology, narrative form, and socio-political commentary.',
+      scaffolding: ['Challenge prompts on critical perspectives and ideological readings'],
       expectedOutcomes: [
         'Write critical essays engaging with multiple interpretations',
         'Analyse how 19th-century texts reflect and challenge their society',
@@ -2331,7 +2764,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Debate: was the writer radical or conservative?',
         'Creative critical writing: a modern response to a 19th-century text',
       ],
-      resources: ['Critical perspectives guide', 'Extended essay planning template', 'Research project brief'],
+      resources: [
+        'Critical perspectives guide',
+        'Extended essay planning template',
+        'Research project brief',
+      ],
     },
     ealAdaptations: [
       {
@@ -2382,7 +2819,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Provide visual summaries of plot and character',
           'Allow extended time for all reading and writing tasks',
         ],
-        resources: ['Vocabulary pre-teach cards', 'Section-by-section reading guides', 'Visual summaries'],
+        resources: [
+          'Vocabulary pre-teach cards',
+          'Section-by-section reading guides',
+          'Visual summaries',
+        ],
       },
     ],
   },
@@ -2394,7 +2835,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y9',
     termNumber: 1,
     support: {
-      description: 'Accessible real-world texts with guided analysis frameworks and media literacy scaffolding.',
+      description:
+        'Accessible real-world texts with guided analysis frameworks and media literacy scaffolding.',
       scaffolding: [
         'Provide a bias detection checklist for analysing media texts',
         'Supply a rhetorical analysis framework with labelled sections',
@@ -2414,10 +2856,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Structured comparison of two news reports on the same event',
         'Write a letter to the editor on a topical issue using a frame',
       ],
-      resources: ['Bias detection checklist', 'Advertisement analysis frame', 'News comparison pack', 'Letter frame'],
+      resources: [
+        'Bias detection checklist',
+        'Advertisement analysis frame',
+        'News comparison pack',
+        'Letter frame',
+      ],
     },
     core: {
-      description: 'Students critically analyse non-fiction and media texts independently, evaluating purpose, audience, and method.',
+      description:
+        'Students critically analyse non-fiction and media texts independently, evaluating purpose, audience, and method.',
       scaffolding: [
         'Provide analytical prompts rather than full frames',
         'Model one analysis then students apply independently',
@@ -2434,13 +2882,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Write an opinion column or blog post on a chosen topic',
         'Evaluate the reliability of different types of sources',
       ],
-      resources: ['Speech/article anthology', 'Comparison planning grid', 'Source reliability guide'],
+      resources: [
+        'Speech/article anthology',
+        'Comparison planning grid',
+        'Source reliability guide',
+      ],
     },
     extension: {
-      description: 'Students engage with complex media theory, propaganda analysis, and critical discourse analysis.',
-      scaffolding: [
-        'Provide challenging real-world texts and critical frameworks',
-      ],
+      description:
+        'Students engage with complex media theory, propaganda analysis, and critical discourse analysis.',
+      scaffolding: ['Provide challenging real-world texts and critical frameworks'],
       expectedOutcomes: [
         'Analyse how power structures shape media representation',
         'Write sustained critical analyses of complex non-fiction texts',
@@ -2453,7 +2904,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Create a media literacy resource for a younger audience',
         'Critical discourse analysis of a political speech',
       ],
-      resources: ['Critical discourse analysis guide', 'Propaganda examples pack', 'Extended essay brief'],
+      resources: [
+        'Critical discourse analysis guide',
+        'Propaganda examples pack',
+        'Extended essay brief',
+      ],
     },
     ealAdaptations: [
       {
@@ -2461,10 +2916,14 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         strategies: [
           'Use visual media (advertisements, infographics, images) as primary texts',
           'Provide simplified news articles with key vocabulary glossed',
-          'Compare media from the student\'s home country with English media',
+          "Compare media from the student's home country with English media",
           'Allow responses about purpose and audience before technique analysis',
         ],
-        resources: ['Visual media pack', 'Simplified news articles', 'Cross-cultural media comparison cards'],
+        resources: [
+          'Visual media pack',
+          'Simplified news articles',
+          'Cross-cultural media comparison cards',
+        ],
       },
       {
         stage: 'intermediate',
@@ -2494,7 +2953,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow voice-recorded responses for analysis tasks',
           'Print texts in dyslexia-friendly format',
         ],
-        resources: ['Audio/video resources', 'Visual analysis pack', 'Dyslexia-friendly text prints'],
+        resources: [
+          'Audio/video resources',
+          'Visual analysis pack',
+          'Dyslexia-friendly text prints',
+        ],
       },
       {
         need: 'ADHD',
@@ -2516,7 +2979,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y9',
     termNumber: 2,
     support: {
-      description: 'Plot and character support, guided analysis of stage directions, and scaffolded analytical writing.',
+      description:
+        'Plot and character support, guided analysis of stage directions, and scaffolded analytical writing.',
       scaffolding: [
         'Provide act/scene summaries with key events and quotations',
         'Supply character relationship diagrams updated as the play progresses',
@@ -2536,10 +3000,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Guided analysis of stage directions in a key scene',
         'PEEL paragraph on how a character is presented',
       ],
-      resources: ['Scene summary booklet', 'Character relationship diagram', 'Stage direction analysis frame', 'PEEL frame'],
+      resources: [
+        'Scene summary booklet',
+        'Character relationship diagram',
+        'Stage direction analysis frame',
+        'PEEL frame',
+      ],
     },
     core: {
-      description: 'Students analyse the play independently, exploring how the playwright uses dramatic techniques to convey meaning.',
+      description:
+        'Students analyse the play independently, exploring how the playwright uses dramatic techniques to convey meaning.',
       scaffolding: [
         'Provide discussion prompts rather than full frames',
         'Model analysis of one scene, then students apply to another',
@@ -2548,7 +3018,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Analyse how the playwright uses language, structure, and dramatic techniques',
         'Write sustained analytical responses about character, theme, and context',
         'Consider the play as a performance text (audience, staging, direction)',
-        'Link analysis to the playwright\'s purpose and context',
+        "Link analysis to the playwright's purpose and context",
       ],
       activities: [
         'Close reading and analysis of a key scene',
@@ -2559,12 +3029,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       resources: ['Discussion prompt cards', 'Extract booklet', 'Performance analysis guide'],
     },
     extension: {
-      description: 'Students critically evaluate the play, exploring alternative interpretations, political context, and dramatic form.',
-      scaffolding: [
-        'Challenge questions on political readings and dramatic theory',
-      ],
+      description:
+        'Students critically evaluate the play, exploring alternative interpretations, political context, and dramatic form.',
+      scaffolding: ['Challenge questions on political readings and dramatic theory'],
       expectedOutcomes: [
-        'Write critical essays evaluating the play\'s themes and techniques',
+        "Write critical essays evaluating the play's themes and techniques",
         'Analyse the play as a political or social text',
         'Compare different productions and evaluate their effectiveness',
         'Engage with dramatic theory (Brechtian, naturalism, Theatre of the Absurd)',
@@ -2572,10 +3041,14 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       activities: [
         'Extended critical essay on a thematic or political question',
         'Compare two productions of the same play',
-        'Research and present on the play\'s original reception and context',
-        'Write director\'s notes for a reimagined production',
+        "Research and present on the play's original reception and context",
+        "Write director's notes for a reimagined production",
       ],
-      resources: ['Critical essay brief', 'Production comparison materials', 'Dramatic theory overview'],
+      resources: [
+        'Critical essay brief',
+        'Production comparison materials',
+        'Dramatic theory overview',
+      ],
     },
     ealAdaptations: [
       {
@@ -2593,7 +3066,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         strategies: [
           'Teach the language of drama analysis explicitly',
           'Provide sentence frames for writing about dramatic techniques',
-          'Compare dramatic conventions in the student\'s home culture',
+          "Compare dramatic conventions in the student's home culture",
         ],
         resources: ['Drama analysis vocabulary builder', 'Sentence frames for drama analysis'],
       },
@@ -2626,7 +3099,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Use visual aids for abstract themes and concepts',
           'Offer clear structures for any group or performance work',
         ],
-        resources: ['Character motivation guide', 'Abstract concept visual aids', 'Group work expectations card'],
+        resources: [
+          'Character motivation guide',
+          'Abstract concept visual aids',
+          'Group work expectations card',
+        ],
       },
     ],
   },
@@ -2638,7 +3115,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y9',
     termNumber: 2,
     support: {
-      description: 'Accessible texts with cultural context support, visual resources, and guided analytical frameworks.',
+      description:
+        'Accessible texts with cultural context support, visual resources, and guided analytical frameworks.',
       scaffolding: [
         'Provide cultural context fact sheets for each text studied',
         'Supply visual maps and timelines for geographical and historical context',
@@ -2658,10 +3136,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'PEEL paragraph linking a text to its cultural context',
         'Thematic comparison using a simple frame',
       ],
-      resources: ['Cultural context fact sheets', 'Visual context resources', 'Annotated extracts', 'PEEL frame'],
+      resources: [
+        'Cultural context fact sheets',
+        'Visual context resources',
+        'Annotated extracts',
+        'PEEL frame',
+      ],
     },
     core: {
-      description: 'Students independently analyse texts from diverse traditions, exploring themes of identity, belonging, and cultural difference.',
+      description:
+        'Students independently analyse texts from diverse traditions, exploring themes of identity, belonging, and cultural difference.',
       scaffolding: [
         'Provide discussion prompts and critical thinking questions',
         'Model cultural analysis on one text, then students apply to another',
@@ -2678,13 +3162,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Reflective writing: how does my own background shape my reading?',
         'Group discussion: what do these texts teach us about different perspectives?',
       ],
-      resources: ['Discussion prompt cards', 'Comparative planning grid', 'Reflective writing guide'],
+      resources: [
+        'Discussion prompt cards',
+        'Comparative planning grid',
+        'Reflective writing guide',
+      ],
     },
     extension: {
-      description: 'Students engage critically with postcolonial and multicultural literary theory, questioning canon formation and representation.',
-      scaffolding: [
-        'Challenge questions on canon, representation, and literary value',
-      ],
+      description:
+        'Students engage critically with postcolonial and multicultural literary theory, questioning canon formation and representation.',
+      scaffolding: ['Challenge questions on canon, representation, and literary value'],
       expectedOutcomes: [
         'Write critical essays on representation and identity in literature',
         'Question why certain voices are marginalised in literary traditions',
@@ -2703,7 +3190,7 @@ export const unitDifferentiation: UnitDifferentiation[] = [
       {
         stage: 'beginner',
         strategies: [
-          'Use texts from the student\'s own cultural tradition as starting points',
+          "Use texts from the student's own cultural tradition as starting points",
           'Provide bilingual resources where possible',
           'Focus on universal themes (family, identity, belonging) as entry points',
           'Use visual and audio resources to build cultural understanding',
@@ -2760,7 +3247,8 @@ export const unitDifferentiation: UnitDifferentiation[] = [
     yearGroup: 'Y9',
     termNumber: 3,
     support: {
-      description: 'Exam-skills focused scaffolding with practice questions, model responses, and technique revision.',
+      description:
+        'Exam-skills focused scaffolding with practice questions, model responses, and technique revision.',
       scaffolding: [
         'Provide exam technique revision cards for each question type',
         'Supply model responses at different grades with annotations',
@@ -2780,10 +3268,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Grade a model response using a mark scheme checklist',
         'Timed paragraph practice (one PEEL in 8 minutes)',
       ],
-      resources: ['Exam technique cards', 'Model response booklet', 'Planning frames per question type', 'Mark scheme checklist'],
+      resources: [
+        'Exam technique cards',
+        'Model response booklet',
+        'Planning frames per question type',
+        'Mark scheme checklist',
+      ],
     },
     core: {
-      description: 'Students practise exam-style questions independently, developing time management and exam technique.',
+      description:
+        'Students practise exam-style questions independently, developing time management and exam technique.',
       scaffolding: [
         'Provide a revision checklist of skills and techniques',
         'Model timing and planning for one question, then students practise independently',
@@ -2800,10 +3294,16 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Revision planning: identify gaps and create a revision schedule',
         'Peer assessment and feedback on timed responses',
       ],
-      resources: ['Exam question bank', 'Mark scheme booklet', 'Revision planning template', 'Peer assessment guide'],
+      resources: [
+        'Exam question bank',
+        'Mark scheme booklet',
+        'Revision planning template',
+        'Peer assessment guide',
+      ],
     },
     extension: {
-      description: 'Students refine exam technique for the highest grades, focusing on sophistication, originality, and critical thinking.',
+      description:
+        'Students refine exam technique for the highest grades, focusing on sophistication, originality, and critical thinking.',
       scaffolding: [
         'Provide grade 8/9 exemplar responses for analysis',
         'Challenge students to develop personal critical voices',
@@ -2820,7 +3320,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
         'Peer-teach a skill or technique to a classmate',
         'Create revision resources (flashcards, guides) for a specific area',
       ],
-      resources: ['Grade 8/9 exemplar pack', 'Self-commentary guide', 'Peer-teaching planning sheet'],
+      resources: [
+        'Grade 8/9 exemplar pack',
+        'Self-commentary guide',
+        'Peer-teaching planning sheet',
+      ],
     },
     ealAdaptations: [
       {
@@ -2831,7 +3335,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Allow bilingual planning before writing in English',
           'Provide sentence starters tailored to exam question types',
         ],
-        resources: ['Simplified exam guide', 'Bilingual planning templates', 'Question-type sentence starters'],
+        resources: [
+          'Simplified exam guide',
+          'Bilingual planning templates',
+          'Question-type sentence starters',
+        ],
       },
       {
         stage: 'intermediate',
@@ -2840,7 +3348,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Provide model responses with annotations explaining language choices',
           'Practise timed writing with gradually decreasing support',
         ],
-        resources: ['Exam vocabulary builder', 'Annotated model responses', 'Timed writing progression plan'],
+        resources: [
+          'Exam vocabulary builder',
+          'Annotated model responses',
+          'Timed writing progression plan',
+        ],
       },
       {
         stage: 'advanced',
@@ -2861,7 +3373,11 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Focus marking on content and ideas rather than spelling',
           'Teach exam-specific strategies: planning, time allocation, checking',
         ],
-        resources: ['Access arrangements guide', 'Exam strategy cards', 'Practice papers with access arrangements'],
+        resources: [
+          'Access arrangements guide',
+          'Exam strategy cards',
+          'Practice papers with access arrangements',
+        ],
       },
       {
         need: 'Exam anxiety',
@@ -2872,12 +3388,15 @@ export const unitDifferentiation: UnitDifferentiation[] = [
           'Use mock exams as learning opportunities, not just assessments',
           'Offer practice in exam-like conditions to build familiarity',
         ],
-        resources: ['Gradual exam practice plan', 'Stress management guide', 'Progress tracking sheet'],
+        resources: [
+          'Gradual exam practice plan',
+          'Stress management guide',
+          'Progress tracking sheet',
+        ],
       },
     ],
   },
-];
-
+]
 
 // ========================== 3. ASSESSMENT MODIFICATION GUIDANCE ==========================
 
@@ -2924,12 +3443,8 @@ export const assessmentModifications: AssessmentModification[] = [
       'Provide a planning template but no sentence starters',
       'Standard word count expectations apply',
     ],
-    timingModifications: [
-      'Standard timing applies',
-    ],
-    presentationModifications: [
-      'Standard assessment paper format',
-    ],
+    timingModifications: ['Standard timing applies'],
+    presentationModifications: ['Standard assessment paper format'],
   },
   {
     yearGroup: 'Y7',
@@ -2943,9 +3458,7 @@ export const assessmentModifications: AssessmentModification[] = [
       'Set a higher word count or additional analytical paragraph',
       'Include a challenge question requiring conceptual or evaluative thinking',
     ],
-    timingModifications: [
-      'Standard timing; challenge students to plan within the first 5 minutes',
-    ],
+    timingModifications: ['Standard timing; challenge students to plan within the first 5 minutes'],
     presentationModifications: [
       'Standard assessment paper; may include a separate challenge sheet',
     ],
@@ -2979,19 +3492,13 @@ export const assessmentModifications: AssessmentModification[] = [
   {
     yearGroup: 'Y8',
     tier: 'core',
-    readingModifications: [
-      'Standard extract with brief glossary for archaic terms only',
-    ],
+    readingModifications: ['Standard extract with brief glossary for archaic terms only'],
     writingModifications: [
       'Provide a planning space but no sentence starters or frames',
       'Standard paragraph expectations (3+ analytical paragraphs)',
     ],
-    timingModifications: [
-      'Standard timing',
-    ],
-    presentationModifications: [
-      'Standard assessment paper format',
-    ],
+    timingModifications: ['Standard timing'],
+    presentationModifications: ['Standard assessment paper format'],
   },
   {
     yearGroup: 'Y8',
@@ -3002,15 +3509,11 @@ export const assessmentModifications: AssessmentModification[] = [
     ],
     writingModifications: [
       'Fully independent response expected',
-      'Expect engagement with context, alternative interpretations, and writer\'s purpose',
+      "Expect engagement with context, alternative interpretations, and writer's purpose",
       'Include an extension question requiring critical evaluation',
     ],
-    timingModifications: [
-      'Standard timing with expectation of efficient planning',
-    ],
-    presentationModifications: [
-      'Standard paper; extension question on separate sheet',
-    ],
+    timingModifications: ['Standard timing with expectation of efficient planning'],
+    presentationModifications: ['Standard paper; extension question on separate sheet'],
   },
 
   // Y9
@@ -3050,12 +3553,8 @@ export const assessmentModifications: AssessmentModification[] = [
       'Standard expectations: 3+ paragraphs with PEEL structure expected',
       'Evidence must be self-selected and embedded',
     ],
-    timingModifications: [
-      'Standard timing, aligned with GCSE exam timing where possible',
-    ],
-    presentationModifications: [
-      'Standard exam-style paper format',
-    ],
+    timingModifications: ['Standard timing, aligned with GCSE exam timing where possible'],
+    presentationModifications: ['Standard exam-style paper format'],
   },
   {
     yearGroup: 'Y9',
@@ -3070,38 +3569,128 @@ export const assessmentModifications: AssessmentModification[] = [
       'Expect conceptual analysis, alternative interpretations, and contextual engagement',
       'Challenge question requiring evaluation or synthesis',
     ],
-    timingModifications: [
-      'GCSE-aligned timing with no additional time',
-    ],
-    presentationModifications: [
-      'GCSE-style paper format for exam preparation',
-    ],
+    timingModifications: ['GCSE-aligned timing with no additional time'],
+    presentationModifications: ['GCSE-style paper format for exam preparation'],
   },
-];
-
+]
 
 // ---- Grade Descriptors ----
 
 export const gradeDescriptors: GradeDescriptor[] = [
   // Y7
-  { yearGroup: 'Y7', grade: 'Emerging', reading: 'Can identify simple, explicit information from a text. Attempts to use a quotation but may not explain its relevance. Limited awareness of techniques.', writing: 'Communicates simple ideas with basic sentence structures. Limited vocabulary range. Some awareness of audience and purpose.', spag: 'Frequent errors in spelling, punctuation, and grammar. Some sentences may be incomplete. Limited punctuation range (full stops, capital letters).' },
-  { yearGroup: 'Y7', grade: 'Developing', reading: 'Can identify and explain some implicit ideas. Uses quotations to support points with some explanation. Can name some techniques and suggest effects.', writing: 'Communicates ideas clearly with some variety in sentence structure. Uses some descriptive vocabulary. Shows awareness of audience and form.', spag: 'Generally accurate basic punctuation. Some variety in sentence structure. Spelling of common words is accurate; some errors with complex words.' },
-  { yearGroup: 'Y7', grade: 'Secure', reading: 'Makes clear inferences supported by well-chosen quotations. Identifies techniques and explains effects on the reader clearly. Comments on writer\'s purpose.', writing: 'Writing is engaging and purposeful. Uses varied vocabulary and sentence structures for effect. Clear sense of audience, purpose, and form.', spag: 'Accurate punctuation including commas, apostrophes, and speech marks. Varied sentence structures used deliberately. Spelling is generally accurate.' },
-  { yearGroup: 'Y7', grade: 'Mastering', reading: 'Explores layers of meaning with perceptive inferences. Analyses techniques with detailed attention to word-level choices and connotation. Considers writer\'s intentions.', writing: 'Writing is assured and compelling. Ambitious vocabulary used precisely. Structural choices enhance meaning. Strong control of form and register.', spag: 'Consistently accurate and varied punctuation. Confident use of complex sentences. Spelling is accurate including ambitious vocabulary.' },
+  {
+    yearGroup: 'Y7',
+    grade: 'Emerging',
+    reading:
+      'Can identify simple, explicit information from a text. Attempts to use a quotation but may not explain its relevance. Limited awareness of techniques.',
+    writing:
+      'Communicates simple ideas with basic sentence structures. Limited vocabulary range. Some awareness of audience and purpose.',
+    spag: 'Frequent errors in spelling, punctuation, and grammar. Some sentences may be incomplete. Limited punctuation range (full stops, capital letters).',
+  },
+  {
+    yearGroup: 'Y7',
+    grade: 'Developing',
+    reading:
+      'Can identify and explain some implicit ideas. Uses quotations to support points with some explanation. Can name some techniques and suggest effects.',
+    writing:
+      'Communicates ideas clearly with some variety in sentence structure. Uses some descriptive vocabulary. Shows awareness of audience and form.',
+    spag: 'Generally accurate basic punctuation. Some variety in sentence structure. Spelling of common words is accurate; some errors with complex words.',
+  },
+  {
+    yearGroup: 'Y7',
+    grade: 'Secure',
+    reading:
+      "Makes clear inferences supported by well-chosen quotations. Identifies techniques and explains effects on the reader clearly. Comments on writer's purpose.",
+    writing:
+      'Writing is engaging and purposeful. Uses varied vocabulary and sentence structures for effect. Clear sense of audience, purpose, and form.',
+    spag: 'Accurate punctuation including commas, apostrophes, and speech marks. Varied sentence structures used deliberately. Spelling is generally accurate.',
+  },
+  {
+    yearGroup: 'Y7',
+    grade: 'Mastering',
+    reading:
+      "Explores layers of meaning with perceptive inferences. Analyses techniques with detailed attention to word-level choices and connotation. Considers writer's intentions.",
+    writing:
+      'Writing is assured and compelling. Ambitious vocabulary used precisely. Structural choices enhance meaning. Strong control of form and register.',
+    spag: 'Consistently accurate and varied punctuation. Confident use of complex sentences. Spelling is accurate including ambitious vocabulary.',
+  },
 
   // Y8
-  { yearGroup: 'Y8', grade: 'Emerging', reading: 'Identifies straightforward ideas and uses quotations with some relevance. Limited analysis of language; tends to describe rather than analyse. Little reference to context.', writing: 'Communicates ideas with some clarity. Basic vocabulary and sentence structures. Some attempt at paragraphing. Limited control of tone and register.', spag: 'Errors in basic punctuation are frequent. Limited sentence variety. Spelling errors in common and subject-specific words.' },
-  { yearGroup: 'Y8', grade: 'Developing', reading: 'Makes some valid inferences with supporting evidence. Identifies techniques and attempts to explain effects. Some awareness of context but may not be integrated.', writing: 'Writing is generally clear and organised. Uses some varied vocabulary and sentence structures. Paragraphing is logical. Developing sense of register.', spag: 'Basic punctuation is mostly accurate. Some use of semicolons and colons. Spelling is mostly accurate. Some variety in sentence openings.' },
-  { yearGroup: 'Y8', grade: 'Secure', reading: 'Makes clear, supported inferences. Analyses language and structure with reference to effects on the reader. Integrates relevant context into analysis.', writing: 'Writing is controlled and engaging. Varied vocabulary used effectively. Deliberate structural choices. Secure control of register and tone.', spag: 'Accurate and varied punctuation. Confident use of semicolons, colons, and dashes. Varied and controlled sentence structures. Accurate spelling.' },
-  { yearGroup: 'Y8', grade: 'Mastering', reading: 'Explores multiple layers of meaning with perceptive analysis. Examines how language, structure, and form work together. Sophisticated integration of context. Considers alternative interpretations.', writing: 'Writing is compelling and sophisticated. Precise, ambitious vocabulary. Structural choices are innovative and purposeful. Assured control of voice and register.', spag: 'Consistently accurate and sophisticated punctuation. Confident, varied syntax used for deliberate effect. Ambitious vocabulary spelled accurately throughout.' },
+  {
+    yearGroup: 'Y8',
+    grade: 'Emerging',
+    reading:
+      'Identifies straightforward ideas and uses quotations with some relevance. Limited analysis of language; tends to describe rather than analyse. Little reference to context.',
+    writing:
+      'Communicates ideas with some clarity. Basic vocabulary and sentence structures. Some attempt at paragraphing. Limited control of tone and register.',
+    spag: 'Errors in basic punctuation are frequent. Limited sentence variety. Spelling errors in common and subject-specific words.',
+  },
+  {
+    yearGroup: 'Y8',
+    grade: 'Developing',
+    reading:
+      'Makes some valid inferences with supporting evidence. Identifies techniques and attempts to explain effects. Some awareness of context but may not be integrated.',
+    writing:
+      'Writing is generally clear and organised. Uses some varied vocabulary and sentence structures. Paragraphing is logical. Developing sense of register.',
+    spag: 'Basic punctuation is mostly accurate. Some use of semicolons and colons. Spelling is mostly accurate. Some variety in sentence openings.',
+  },
+  {
+    yearGroup: 'Y8',
+    grade: 'Secure',
+    reading:
+      'Makes clear, supported inferences. Analyses language and structure with reference to effects on the reader. Integrates relevant context into analysis.',
+    writing:
+      'Writing is controlled and engaging. Varied vocabulary used effectively. Deliberate structural choices. Secure control of register and tone.',
+    spag: 'Accurate and varied punctuation. Confident use of semicolons, colons, and dashes. Varied and controlled sentence structures. Accurate spelling.',
+  },
+  {
+    yearGroup: 'Y8',
+    grade: 'Mastering',
+    reading:
+      'Explores multiple layers of meaning with perceptive analysis. Examines how language, structure, and form work together. Sophisticated integration of context. Considers alternative interpretations.',
+    writing:
+      'Writing is compelling and sophisticated. Precise, ambitious vocabulary. Structural choices are innovative and purposeful. Assured control of voice and register.',
+    spag: 'Consistently accurate and sophisticated punctuation. Confident, varied syntax used for deliberate effect. Ambitious vocabulary spelled accurately throughout.',
+  },
 
   // Y9
-  { yearGroup: 'Y9', grade: 'Emerging', reading: 'Identifies some relevant ideas with limited textual support. Attempts analysis of language but tends towards feature-spotting. Context is mentioned but not connected to analysis.', writing: 'Communicates ideas with some clarity but limited control. Basic vocabulary and simple sentence structures predominate. Some awareness of form.', spag: 'Errors in basic punctuation. Limited sentence variety. Spelling errors in common and subject-specific vocabulary.' },
-  { yearGroup: 'Y9', grade: 'Developing', reading: 'Makes valid inferences with supporting evidence. Analysis of language shows developing understanding of effects. Context is referenced but may be bolted on.', writing: 'Writing is organised and mostly clear. Some varied vocabulary and sentence structures. Developing control of tone and register. Logical paragraphing.', spag: 'Basic punctuation is accurate. Some use of semicolons and colons. Mostly accurate spelling. Developing variety in sentence construction.' },
-  { yearGroup: 'Y9', grade: 'Secure', reading: 'Clear, sustained analysis of language and structure with well-selected evidence. Explores effects on the reader with confidence. Context is integrated effectively into analysis.', writing: 'Writing is effective and well-controlled. Varied vocabulary used for specific effects. Deliberate structural and tonal choices. Strong sense of audience and purpose.', spag: 'Accurate, varied punctuation used for effect. Controlled sentence variety. Accurate spelling including ambitious vocabulary. Secure paragraphing.' },
-  { yearGroup: 'Y9', grade: 'Mastering', reading: 'Perceptive, critical analysis exploring multiple interpretations. Sophisticated examination of how writers craft meaning through language, structure, and form. Context is woven seamlessly into analysis. Personal critical voice evident.', writing: 'Writing is compelling, original, and distinctive. Precise, sophisticated vocabulary. Innovative structural choices that enhance meaning. Assured control of voice, register, and form.', spag: 'Consistently accurate, sophisticated punctuation deployed for deliberate effect. Fluent, varied syntax. Ambitious vocabulary spelled accurately. Paragraphing enhances cohesion and coherence.' },
-];
-
+  {
+    yearGroup: 'Y9',
+    grade: 'Emerging',
+    reading:
+      'Identifies some relevant ideas with limited textual support. Attempts analysis of language but tends towards feature-spotting. Context is mentioned but not connected to analysis.',
+    writing:
+      'Communicates ideas with some clarity but limited control. Basic vocabulary and simple sentence structures predominate. Some awareness of form.',
+    spag: 'Errors in basic punctuation. Limited sentence variety. Spelling errors in common and subject-specific vocabulary.',
+  },
+  {
+    yearGroup: 'Y9',
+    grade: 'Developing',
+    reading:
+      'Makes valid inferences with supporting evidence. Analysis of language shows developing understanding of effects. Context is referenced but may be bolted on.',
+    writing:
+      'Writing is organised and mostly clear. Some varied vocabulary and sentence structures. Developing control of tone and register. Logical paragraphing.',
+    spag: 'Basic punctuation is accurate. Some use of semicolons and colons. Mostly accurate spelling. Developing variety in sentence construction.',
+  },
+  {
+    yearGroup: 'Y9',
+    grade: 'Secure',
+    reading:
+      'Clear, sustained analysis of language and structure with well-selected evidence. Explores effects on the reader with confidence. Context is integrated effectively into analysis.',
+    writing:
+      'Writing is effective and well-controlled. Varied vocabulary used for specific effects. Deliberate structural and tonal choices. Strong sense of audience and purpose.',
+    spag: 'Accurate, varied punctuation used for effect. Controlled sentence variety. Accurate spelling including ambitious vocabulary. Secure paragraphing.',
+  },
+  {
+    yearGroup: 'Y9',
+    grade: 'Mastering',
+    reading:
+      'Perceptive, critical analysis exploring multiple interpretations. Sophisticated examination of how writers craft meaning through language, structure, and form. Context is woven seamlessly into analysis. Personal critical voice evident.',
+    writing:
+      'Writing is compelling, original, and distinctive. Precise, sophisticated vocabulary. Innovative structural choices that enhance meaning. Assured control of voice, register, and form.',
+    spag: 'Consistently accurate, sophisticated punctuation deployed for deliberate effect. Fluent, varied syntax. Ambitious vocabulary spelled accurately. Paragraphing enhances cohesion and coherence.',
+  },
+]
 
 // ---- Progress Indicators ----
 
@@ -3110,81 +3699,260 @@ export const progressIndicators: ProgressIndicator[] = [
   {
     yearGroup: 'Y7',
     term: 1,
-    emergingDescriptors: ['Can identify basic information from texts', 'Attempts to use quotations', 'Writes in simple sentences', 'Knows some technique names'],
-    developingDescriptors: ['Makes simple inferences', 'Supports points with relevant quotations', 'Writes PEE paragraphs with support', 'Identifies and names techniques'],
-    secureDescriptors: ['Makes clear inferences with well-chosen evidence', 'Writes independent PEE paragraphs', 'Explains effects of techniques on the reader', 'Uses varied vocabulary in writing'],
-    masteringDescriptors: ['Explores layers of meaning', 'Analyses word-level choices and connotations', 'Writes with a clear critical voice', 'Uses ambitious language techniques in own writing'],
+    emergingDescriptors: [
+      'Can identify basic information from texts',
+      'Attempts to use quotations',
+      'Writes in simple sentences',
+      'Knows some technique names',
+    ],
+    developingDescriptors: [
+      'Makes simple inferences',
+      'Supports points with relevant quotations',
+      'Writes PEE paragraphs with support',
+      'Identifies and names techniques',
+    ],
+    secureDescriptors: [
+      'Makes clear inferences with well-chosen evidence',
+      'Writes independent PEE paragraphs',
+      'Explains effects of techniques on the reader',
+      'Uses varied vocabulary in writing',
+    ],
+    masteringDescriptors: [
+      'Explores layers of meaning',
+      'Analyses word-level choices and connotations',
+      'Writes with a clear critical voice',
+      'Uses ambitious language techniques in own writing',
+    ],
   },
   {
     yearGroup: 'Y7',
     term: 2,
-    emergingDescriptors: ['Can retell a story in sequence', 'Uses basic descriptive vocabulary', 'Identifies the moral of a story', 'Writes in paragraphs with support'],
-    developingDescriptors: ['Analyses how characters are presented', 'Uses sensory language in creative writing', 'Writes structured narratives with a clear plan', 'Identifies genre conventions'],
-    secureDescriptors: ['Analyses narrative and descriptive techniques with evidence', 'Writes engaging creative pieces with varied techniques', 'Compares texts at a basic level', 'Plans and structures writing effectively'],
-    masteringDescriptors: ['Analyses how genre conventions are used and subverted', 'Writes with a distinctive voice and conscious craft', 'Makes cross-cultural comparisons', 'Reflects on own writing choices'],
+    emergingDescriptors: [
+      'Can retell a story in sequence',
+      'Uses basic descriptive vocabulary',
+      'Identifies the moral of a story',
+      'Writes in paragraphs with support',
+    ],
+    developingDescriptors: [
+      'Analyses how characters are presented',
+      'Uses sensory language in creative writing',
+      'Writes structured narratives with a clear plan',
+      'Identifies genre conventions',
+    ],
+    secureDescriptors: [
+      'Analyses narrative and descriptive techniques with evidence',
+      'Writes engaging creative pieces with varied techniques',
+      'Compares texts at a basic level',
+      'Plans and structures writing effectively',
+    ],
+    masteringDescriptors: [
+      'Analyses how genre conventions are used and subverted',
+      'Writes with a distinctive voice and conscious craft',
+      'Makes cross-cultural comparisons',
+      'Reflects on own writing choices',
+    ],
   },
   {
     yearGroup: 'Y7',
     term: 3,
-    emergingDescriptors: ['Understands the basic plot of a Shakespeare play', 'Can translate key phrases into modern English', 'Identifies simple techniques in Shakespeare', 'Writes about Shakespeare with heavy scaffolding'],
-    developingDescriptors: ['Understands character and theme in Shakespeare', 'Analyses Shakespeare\'s language with support', 'Writes PEE paragraphs about Shakespeare', 'Shows basic awareness of Elizabethan context'],
-    secureDescriptors: ['Analyses Shakespeare\'s language choices and effects independently', 'Writes PEEL paragraphs about Shakespeare with embedded quotations', 'Links analysis to context', 'Considers the play\'s relevance to modern audiences'],
-    masteringDescriptors: ['Writes sustained analysis of Shakespeare engaging with context and interpretation', 'Considers alternative readings of key speeches', 'Evaluates directorial choices', 'Makes connections between Shakespeare and other texts'],
+    emergingDescriptors: [
+      'Understands the basic plot of a Shakespeare play',
+      'Can translate key phrases into modern English',
+      'Identifies simple techniques in Shakespeare',
+      'Writes about Shakespeare with heavy scaffolding',
+    ],
+    developingDescriptors: [
+      'Understands character and theme in Shakespeare',
+      "Analyses Shakespeare's language with support",
+      'Writes PEE paragraphs about Shakespeare',
+      'Shows basic awareness of Elizabethan context',
+    ],
+    secureDescriptors: [
+      "Analyses Shakespeare's language choices and effects independently",
+      'Writes PEEL paragraphs about Shakespeare with embedded quotations',
+      'Links analysis to context',
+      "Considers the play's relevance to modern audiences",
+    ],
+    masteringDescriptors: [
+      'Writes sustained analysis of Shakespeare engaging with context and interpretation',
+      'Considers alternative readings of key speeches',
+      'Evaluates directorial choices',
+      'Makes connections between Shakespeare and other texts',
+    ],
   },
 
   // Y8
   {
     yearGroup: 'Y8',
     term: 1,
-    emergingDescriptors: ['Identifies Gothic conventions with support', 'Recognises some persuasive techniques', 'Writes basic PEEL paragraphs with scaffolding', 'Uses some subject-specific vocabulary'],
-    developingDescriptors: ['Analyses how Gothic atmosphere is created', 'Evaluates persuasive writing with some independence', 'Writes PEEL paragraphs with appropriate evidence', 'Uses atmospheric and rhetorical vocabulary'],
-    secureDescriptors: ['Analyses language and structure in Gothic texts with depth', 'Critically evaluates persuasive strategies', 'Writes sustained PEEL responses independently', 'Integrates context into analysis'],
-    masteringDescriptors: ['Explores the Gothic as cultural commentary', 'Analyses bias and ideology in non-fiction', 'Writes with a personal critical voice', 'Considers multiple interpretations'],
+    emergingDescriptors: [
+      'Identifies Gothic conventions with support',
+      'Recognises some persuasive techniques',
+      'Writes basic PEEL paragraphs with scaffolding',
+      'Uses some subject-specific vocabulary',
+    ],
+    developingDescriptors: [
+      'Analyses how Gothic atmosphere is created',
+      'Evaluates persuasive writing with some independence',
+      'Writes PEEL paragraphs with appropriate evidence',
+      'Uses atmospheric and rhetorical vocabulary',
+    ],
+    secureDescriptors: [
+      'Analyses language and structure in Gothic texts with depth',
+      'Critically evaluates persuasive strategies',
+      'Writes sustained PEEL responses independently',
+      'Integrates context into analysis',
+    ],
+    masteringDescriptors: [
+      'Explores the Gothic as cultural commentary',
+      'Analyses bias and ideology in non-fiction',
+      'Writes with a personal critical voice',
+      'Considers multiple interpretations',
+    ],
   },
   {
     yearGroup: 'Y8',
     term: 2,
-    emergingDescriptors: ['Follows the plot of a novel with support', 'Identifies basic comparison points between poems', 'Writes about character with quotation support', 'Uses some comparison vocabulary'],
-    developingDescriptors: ['Analyses character development across a novel', 'Compares two poems with relevant evidence', 'Writes sustained PEEL paragraphs about prose and poetry', 'Uses comparative connectives effectively'],
-    secureDescriptors: ['Writes sustained analysis of a novel engaging with theme and context', 'Produces effective comparative essays on poetry', 'Selects and embeds evidence skillfully', 'Maintains a comparative thread throughout writing'],
-    masteringDescriptors: ['Offers alternative interpretations of the novel', 'Writes sophisticated comparative essays considering form, language, and context', 'Develops a personal critical voice', 'Makes intertextual connections'],
+    emergingDescriptors: [
+      'Follows the plot of a novel with support',
+      'Identifies basic comparison points between poems',
+      'Writes about character with quotation support',
+      'Uses some comparison vocabulary',
+    ],
+    developingDescriptors: [
+      'Analyses character development across a novel',
+      'Compares two poems with relevant evidence',
+      'Writes sustained PEEL paragraphs about prose and poetry',
+      'Uses comparative connectives effectively',
+    ],
+    secureDescriptors: [
+      'Writes sustained analysis of a novel engaging with theme and context',
+      'Produces effective comparative essays on poetry',
+      'Selects and embeds evidence skillfully',
+      'Maintains a comparative thread throughout writing',
+    ],
+    masteringDescriptors: [
+      'Offers alternative interpretations of the novel',
+      'Writes sophisticated comparative essays considering form, language, and context',
+      'Develops a personal critical voice',
+      'Makes intertextual connections',
+    ],
   },
   {
     yearGroup: 'Y8',
     term: 3,
-    emergingDescriptors: ['Understands plot and character in Shakespeare with parallel text', 'Identifies some techniques in Shakespeare\'s language', 'Writes about Shakespeare with heavy scaffolding', 'Has basic awareness of context'],
-    developingDescriptors: ['Analyses Shakespeare\'s language with developing independence', 'Writes PEEL paragraphs on character and theme', 'References context in analysis', 'Comments on audience response'],
-    secureDescriptors: ['Writes sustained analysis of Shakespeare engaging with language, structure, and context', 'Embeds quotations fluently', 'Links analysis to the writer\'s purpose', 'Considers the play as performance'],
-    masteringDescriptors: ['Writes critical essays on Shakespeare with alternative interpretations', 'Analyses the interplay of form, language, and context', 'Evaluates performance choices', 'Develops original critical arguments'],
+    emergingDescriptors: [
+      'Understands plot and character in Shakespeare with parallel text',
+      "Identifies some techniques in Shakespeare's language",
+      'Writes about Shakespeare with heavy scaffolding',
+      'Has basic awareness of context',
+    ],
+    developingDescriptors: [
+      "Analyses Shakespeare's language with developing independence",
+      'Writes PEEL paragraphs on character and theme',
+      'References context in analysis',
+      'Comments on audience response',
+    ],
+    secureDescriptors: [
+      'Writes sustained analysis of Shakespeare engaging with language, structure, and context',
+      'Embeds quotations fluently',
+      "Links analysis to the writer's purpose",
+      'Considers the play as performance',
+    ],
+    masteringDescriptors: [
+      'Writes critical essays on Shakespeare with alternative interpretations',
+      'Analyses the interplay of form, language, and context',
+      'Evaluates performance choices',
+      'Develops original critical arguments',
+    ],
   },
 
   // Y9
   {
     yearGroup: 'Y9',
     term: 1,
-    emergingDescriptors: ['Understands 19th-century extracts with glossary support', 'Identifies some media techniques', 'Writes basic analytical paragraphs', 'Has some awareness of historical context'],
-    developingDescriptors: ['Analyses 19th-century language and style with developing confidence', 'Critically evaluates media texts', 'Writes sustained analytical responses', 'Integrates context into analysis'],
-    secureDescriptors: ['Analyses 19th-century texts with detailed attention to language, structure, and context', 'Produces sophisticated media analysis', 'Writes sustained, well-structured essays', 'Demonstrates critical thinking about representation and bias'],
-    masteringDescriptors: ['Writes critical essays on 19th-century texts exploring ideology and form', 'Produces original critical analysis of media texts', 'Develops a distinctive critical voice', 'Engages with literary and media theory'],
+    emergingDescriptors: [
+      'Understands 19th-century extracts with glossary support',
+      'Identifies some media techniques',
+      'Writes basic analytical paragraphs',
+      'Has some awareness of historical context',
+    ],
+    developingDescriptors: [
+      'Analyses 19th-century language and style with developing confidence',
+      'Critically evaluates media texts',
+      'Writes sustained analytical responses',
+      'Integrates context into analysis',
+    ],
+    secureDescriptors: [
+      'Analyses 19th-century texts with detailed attention to language, structure, and context',
+      'Produces sophisticated media analysis',
+      'Writes sustained, well-structured essays',
+      'Demonstrates critical thinking about representation and bias',
+    ],
+    masteringDescriptors: [
+      'Writes critical essays on 19th-century texts exploring ideology and form',
+      'Produces original critical analysis of media texts',
+      'Develops a distinctive critical voice',
+      'Engages with literary and media theory',
+    ],
   },
   {
     yearGroup: 'Y9',
     term: 2,
-    emergingDescriptors: ['Understands plot and character in a play with support', 'Identifies themes in world literature with guidance', 'Writes structured paragraphs about drama', 'Shows awareness of cultural context'],
-    developingDescriptors: ['Analyses dramatic techniques and their effects', 'Explores themes of identity and belonging in world literature', 'Writes comparative responses', 'Integrates cultural context into analysis'],
-    secureDescriptors: ['Writes sustained analysis of drama engaging with staging, language, and context', 'Produces thoughtful analytical responses to diverse texts', 'Compares across cultures with sensitivity and depth', 'Develops an informed personal response'],
-    masteringDescriptors: ['Writes critical essays evaluating drama from multiple perspectives', 'Engages with postcolonial and multicultural literary theory', 'Produces sophisticated comparative analysis', 'Questions canon formation and literary value'],
+    emergingDescriptors: [
+      'Understands plot and character in a play with support',
+      'Identifies themes in world literature with guidance',
+      'Writes structured paragraphs about drama',
+      'Shows awareness of cultural context',
+    ],
+    developingDescriptors: [
+      'Analyses dramatic techniques and their effects',
+      'Explores themes of identity and belonging in world literature',
+      'Writes comparative responses',
+      'Integrates cultural context into analysis',
+    ],
+    secureDescriptors: [
+      'Writes sustained analysis of drama engaging with staging, language, and context',
+      'Produces thoughtful analytical responses to diverse texts',
+      'Compares across cultures with sensitivity and depth',
+      'Develops an informed personal response',
+    ],
+    masteringDescriptors: [
+      'Writes critical essays evaluating drama from multiple perspectives',
+      'Engages with postcolonial and multicultural literary theory',
+      'Produces sophisticated comparative analysis',
+      'Questions canon formation and literary value',
+    ],
   },
   {
     yearGroup: 'Y9',
     term: 3,
-    emergingDescriptors: ['Understands the format of GCSE/IGCSE exams', 'Practises exam questions with scaffolding', 'Writes structured responses within time limits with support', 'Self-assesses with guidance'],
-    developingDescriptors: ['Completes exam-style questions with increasing independence', 'Plans and writes responses within time limits', 'Self-assesses using mark scheme criteria', 'Identifies strengths and areas for improvement'],
-    secureDescriptors: ['Completes exam-style questions independently under timed conditions', 'Produces well-structured, well-evidenced responses', 'Self-directs revision targeting specific weaknesses', 'Achieves consistency across assessment objectives'],
-    masteringDescriptors: ['Produces sophisticated, original exam responses', 'Demonstrates conceptual understanding and personal critical voice', 'Achieves the highest grades consistently', 'Self-directs learning with independence and precision'],
+    emergingDescriptors: [
+      'Understands the format of GCSE/IGCSE exams',
+      'Practises exam questions with scaffolding',
+      'Writes structured responses within time limits with support',
+      'Self-assesses with guidance',
+    ],
+    developingDescriptors: [
+      'Completes exam-style questions with increasing independence',
+      'Plans and writes responses within time limits',
+      'Self-assesses using mark scheme criteria',
+      'Identifies strengths and areas for improvement',
+    ],
+    secureDescriptors: [
+      'Completes exam-style questions independently under timed conditions',
+      'Produces well-structured, well-evidenced responses',
+      'Self-directs revision targeting specific weaknesses',
+      'Achieves consistency across assessment objectives',
+    ],
+    masteringDescriptors: [
+      'Produces sophisticated, original exam responses',
+      'Demonstrates conceptual understanding and personal critical voice',
+      'Achieves the highest grades consistently',
+      'Self-directs learning with independence and precision',
+    ],
   },
-];
-
+]
 
 // ========================== 4. MARKING TEMPLATES ==========================
 
@@ -3208,7 +3976,7 @@ export const markingTemplates: MarkingTemplate[] = [
       'EBI (Even Better If):',
       '- You embedded your quotation more smoothly into your sentence.',
       '- You explored the connotations of individual words in your quotation.',
-      '- You explained how the technique affects the reader\'s feelings or understanding.',
+      "- You explained how the technique affects the reader's feelings or understanding.",
       '- You linked your point back to the question or to a wider theme.',
       '- You extended your explanation with a second point about the same quotation.',
       '- You varied your sentence openings to avoid repetition.',
@@ -3249,11 +4017,11 @@ export const markingTemplates: MarkingTemplate[] = [
       '- You embedded a well-chosen quotation smoothly into your writing.',
       '- You analysed the language closely, naming techniques and exploring connotations.',
       '- You used the PEEL structure to create a cohesive paragraph.',
-      '- You linked your analysis back to a theme, context, or the writer\'s purpose.',
+      "- You linked your analysis back to a theme, context, or the writer's purpose.",
       '',
       'EBI (Even Better If):',
       '- You explored the connotations of individual words more closely.',
-      '- You considered how the writer\'s context shapes the meaning of the text.',
+      "- You considered how the writer's context shapes the meaning of the text.",
       '- You commented on structural features as well as language.',
       '- You offered an alternative interpretation of your quotation.',
       '- You used more sophisticated connectives to link your ideas.',
@@ -3276,8 +4044,8 @@ export const markingTemplates: MarkingTemplate[] = [
       'EBI (Even Better If):',
       '- You compared methods as well as themes and ideas.',
       '- You used topic sentences that address both texts.',
-      '- You explored how context shapes each writer\'s perspective.',
-      '- You considered the effect on the reader of each writer\'s choices.',
+      "- You explored how context shapes each writer's perspective.",
+      "- You considered the effect on the reader of each writer's choices.",
       '- You offered an evaluation of which text is more effective and why.',
       '- You integrated comparison more fluently rather than writing about texts separately.',
     ],
@@ -3295,7 +4063,7 @@ export const markingTemplates: MarkingTemplate[] = [
       '- You selected precise, well-chosen textual evidence.',
       '- You provided layered analysis exploring multiple meanings and effects.',
       '- You integrated context seamlessly into your argument.',
-      '- You considered the writer\'s purpose and its effect on the audience.',
+      "- You considered the writer's purpose and its effect on the audience.",
       '- You developed a sustained, coherent argument across your essay.',
       '',
       'EBI (Even Better If):',
@@ -3330,8 +4098,7 @@ export const markingTemplates: MarkingTemplate[] = [
       '- You refined your proofreading to eliminate technical errors.',
     ],
   },
-];
-
+]
 
 // ---- 4B. Marking Codes ----
 
@@ -3344,8 +4111,16 @@ export const markingCodes: MarkingCode[] = [
   { code: '//', meaning: 'New paragraph needed', category: 'literacy' },
   { code: '^', meaning: 'Something is missing (a word, a punctuation mark)', category: 'literacy' },
   { code: '~~', meaning: 'This word or phrase is not needed (remove it)', category: 'literacy' },
-  { code: 'WW', meaning: 'Wrong word (homophone error or incorrect word choice)', category: 'literacy' },
-  { code: 'Rep', meaning: 'Repetition (you have used this word or phrase too often)', category: 'literacy' },
+  {
+    code: 'WW',
+    meaning: 'Wrong word (homophone error or incorrect word choice)',
+    category: 'literacy',
+  },
+  {
+    code: 'Rep',
+    meaning: 'Repetition (you have used this word or phrase too often)',
+    category: 'literacy',
+  },
   { code: 'Exp', meaning: 'Expression is unclear (rephrase this)', category: 'literacy' },
 
   // Content codes
@@ -3362,8 +4137,16 @@ export const markingCodes: MarkingCode[] = [
   // Structure codes
   { code: 'Str', meaning: 'Structure your paragraph (use PEE/PEEL)', category: 'structure' },
   { code: 'TS', meaning: 'Improve your topic sentence', category: 'structure' },
-  { code: 'Link', meaning: 'Add a link sentence (connect to the question or theme)', category: 'structure' },
-  { code: 'Org', meaning: 'Organisation (reorder your ideas for better flow)', category: 'structure' },
+  {
+    code: 'Link',
+    meaning: 'Add a link sentence (connect to the question or theme)',
+    category: 'structure',
+  },
+  {
+    code: 'Org',
+    meaning: 'Organisation (reorder your ideas for better flow)',
+    category: 'structure',
+  },
   { code: 'Trans', meaning: 'Add a transition/connective between points', category: 'structure' },
 
   // Praise codes
@@ -3372,8 +4155,7 @@ export const markingCodes: MarkingCode[] = [
   { code: 'Orig', meaning: 'Original and perceptive thinking', category: 'praise' },
   { code: 'Soph', meaning: 'Sophisticated analysis', category: 'praise' },
   { code: 'Dev', meaning: 'Well-developed point', category: 'praise' },
-];
-
+]
 
 // ---- 4C. Peer Assessment Guidance ----
 
@@ -3383,9 +4165,32 @@ export const peerAssessmentGuides: PeerAssessmentGuide[] = [
     yearGroup: 'Y7',
     taskType: 'Analytical Paragraph (PEE)',
     criteria: [
-      { label: 'Point', lookFor: ['Is there a clear point that answers the question?', 'Does the first sentence tell you the argument?'], scale: 'Yes / Partially / Not yet' },
-      { label: 'Evidence', lookFor: ['Is there a quotation from the text?', 'Is the quotation relevant to the point?', 'Is it short and well-chosen?'], scale: 'Yes / Partially / Not yet' },
-      { label: 'Explain', lookFor: ['Does the writer explain what the quotation means?', 'Is a technique named?', 'Is the effect on the reader mentioned?'], scale: 'Yes / Partially / Not yet' },
+      {
+        label: 'Point',
+        lookFor: [
+          'Is there a clear point that answers the question?',
+          'Does the first sentence tell you the argument?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
+      {
+        label: 'Evidence',
+        lookFor: [
+          'Is there a quotation from the text?',
+          'Is the quotation relevant to the point?',
+          'Is it short and well-chosen?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
+      {
+        label: 'Explain',
+        lookFor: [
+          'Does the writer explain what the quotation means?',
+          'Is a technique named?',
+          'Is the effect on the reader mentioned?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
     ],
     sentenceStarters: [
       'I think your strongest point was...',
@@ -3406,10 +4211,39 @@ export const peerAssessmentGuides: PeerAssessmentGuide[] = [
     yearGroup: 'Y7',
     taskType: 'Creative Writing',
     criteria: [
-      { label: 'Description', lookFor: ['Does the writing create a clear picture?', 'Are sensory details used (sight, sound, touch, smell, taste)?'], scale: 'Yes / Partially / Not yet' },
-      { label: 'Techniques', lookFor: ['Is at least one technique used (simile, metaphor, personification)?', 'Does the technique add to the description?'], scale: 'Yes / Partially / Not yet' },
-      { label: 'Structure', lookFor: ['Is the writing organised into paragraphs?', 'Is there a clear beginning and ending?'], scale: 'Yes / Partially / Not yet' },
-      { label: 'Accuracy', lookFor: ['Are sentences complete?', 'Is spelling mostly correct?', 'Is punctuation used accurately?'], scale: 'Yes / Partially / Not yet' },
+      {
+        label: 'Description',
+        lookFor: [
+          'Does the writing create a clear picture?',
+          'Are sensory details used (sight, sound, touch, smell, taste)?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
+      {
+        label: 'Techniques',
+        lookFor: [
+          'Is at least one technique used (simile, metaphor, personification)?',
+          'Does the technique add to the description?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
+      {
+        label: 'Structure',
+        lookFor: [
+          'Is the writing organised into paragraphs?',
+          'Is there a clear beginning and ending?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
+      {
+        label: 'Accuracy',
+        lookFor: [
+          'Are sentences complete?',
+          'Is spelling mostly correct?',
+          'Is punctuation used accurately?',
+        ],
+        scale: 'Yes / Partially / Not yet',
+      },
     ],
     sentenceStarters: [
       'The part I enjoyed most was...',
@@ -3430,10 +4264,42 @@ export const peerAssessmentGuides: PeerAssessmentGuide[] = [
     yearGroup: 'Y8',
     taskType: 'Analytical Essay (PEEL)',
     criteria: [
-      { label: 'Point', lookFor: ['Is the point clearly stated?', 'Does it directly address the question?', 'Is it arguable (not just a fact)?'], scale: 'Strong / Developing / Needs work' },
-      { label: 'Evidence', lookFor: ['Is the quotation relevant and well-chosen?', 'Is it embedded smoothly into the sentence?', 'Are key words highlighted for analysis?'], scale: 'Strong / Developing / Needs work' },
-      { label: 'Explain', lookFor: ['Is a technique named?', 'Are connotations of key words explored?', 'Is the effect on the reader explained?'], scale: 'Strong / Developing / Needs work' },
-      { label: 'Link', lookFor: ['Does the paragraph link back to the question?', 'Is there a connection to a theme or the writer\'s purpose?', 'Does it develop the argument?'], scale: 'Strong / Developing / Needs work' },
+      {
+        label: 'Point',
+        lookFor: [
+          'Is the point clearly stated?',
+          'Does it directly address the question?',
+          'Is it arguable (not just a fact)?',
+        ],
+        scale: 'Strong / Developing / Needs work',
+      },
+      {
+        label: 'Evidence',
+        lookFor: [
+          'Is the quotation relevant and well-chosen?',
+          'Is it embedded smoothly into the sentence?',
+          'Are key words highlighted for analysis?',
+        ],
+        scale: 'Strong / Developing / Needs work',
+      },
+      {
+        label: 'Explain',
+        lookFor: [
+          'Is a technique named?',
+          'Are connotations of key words explored?',
+          'Is the effect on the reader explained?',
+        ],
+        scale: 'Strong / Developing / Needs work',
+      },
+      {
+        label: 'Link',
+        lookFor: [
+          'Does the paragraph link back to the question?',
+          "Is there a connection to a theme or the writer's purpose?",
+          'Does it develop the argument?',
+        ],
+        scale: 'Strong / Developing / Needs work',
+      },
     ],
     sentenceStarters: [
       'Your argument is clear because...',
@@ -3455,10 +4321,42 @@ export const peerAssessmentGuides: PeerAssessmentGuide[] = [
     yearGroup: 'Y9',
     taskType: 'Critical Essay',
     criteria: [
-      { label: 'Thesis/Argument', lookFor: ['Is there a clear critical argument or thesis?', 'Is it sophisticated and original?', 'Does it directly engage with the question?'], scale: 'Excellent / Good / Developing / Needs revision' },
-      { label: 'Evidence and Analysis', lookFor: ['Is textual evidence precise and well-selected?', 'Is analysis layered (technique, connotation, effect)?', 'Are multiple meanings explored?'], scale: 'Excellent / Good / Developing / Needs revision' },
-      { label: 'Context', lookFor: ['Is context integrated into the analysis?', 'Does it inform rather than replace analysis?', 'Is it relevant and specific?'], scale: 'Excellent / Good / Developing / Needs revision' },
-      { label: 'Coherence and Voice', lookFor: ['Is the essay well-structured and cohesive?', 'Is there a distinctive critical voice?', 'Does the essay build a sustained argument?'], scale: 'Excellent / Good / Developing / Needs revision' },
+      {
+        label: 'Thesis/Argument',
+        lookFor: [
+          'Is there a clear critical argument or thesis?',
+          'Is it sophisticated and original?',
+          'Does it directly engage with the question?',
+        ],
+        scale: 'Excellent / Good / Developing / Needs revision',
+      },
+      {
+        label: 'Evidence and Analysis',
+        lookFor: [
+          'Is textual evidence precise and well-selected?',
+          'Is analysis layered (technique, connotation, effect)?',
+          'Are multiple meanings explored?',
+        ],
+        scale: 'Excellent / Good / Developing / Needs revision',
+      },
+      {
+        label: 'Context',
+        lookFor: [
+          'Is context integrated into the analysis?',
+          'Does it inform rather than replace analysis?',
+          'Is it relevant and specific?',
+        ],
+        scale: 'Excellent / Good / Developing / Needs revision',
+      },
+      {
+        label: 'Coherence and Voice',
+        lookFor: [
+          'Is the essay well-structured and cohesive?',
+          'Is there a distinctive critical voice?',
+          'Does the essay build a sustained argument?',
+        ],
+        scale: 'Excellent / Good / Developing / Needs revision',
+      },
     ],
     sentenceStarters: [
       'Your argument is most convincing when...',
@@ -3468,15 +4366,14 @@ export const peerAssessmentGuides: PeerAssessmentGuide[] = [
       'Your use of context is effective because... / could be strengthened by...',
     ],
     rules: [
-      'Engage seriously with the writer\'s ideas.',
+      "Engage seriously with the writer's ideas.",
       'Identify what is working well at a conceptual level, not just a technical one.',
       'Suggest one specific way to deepen the analysis.',
       'Consider whether the essay would benefit from an alternative perspective.',
       'Be critical but constructive.',
     ],
   },
-];
-
+]
 
 // ---- 4D. Self-Assessment Checklists ----
 
@@ -3487,17 +4384,57 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     taskType: 'Analytical Writing (PEE)',
     title: 'Y7 Self-Assessment: Analytical Paragraph',
     items: [
-      { statement: 'I have made a clear point that answers the question.', category: 'Content', tier: 'support' },
-      { statement: 'I have included a quotation from the text.', category: 'Content', tier: 'support' },
-      { statement: 'I have explained what the quotation shows or means.', category: 'Content', tier: 'support' },
-      { statement: 'I have named the technique the writer uses (e.g. simile, metaphor).', category: 'Content', tier: 'core' },
-      { statement: 'I have explained the effect the technique has on the reader.', category: 'Content', tier: 'core' },
-      { statement: 'I have embedded my quotation smoothly into my sentence.', category: 'Content', tier: 'core' },
-      { statement: 'I have explored the connotations of key words in my quotation.', category: 'Content', tier: 'extension' },
-      { statement: 'I have considered the writer\'s purpose or intention.', category: 'Content', tier: 'extension' },
-      { statement: 'My sentences start with a capital letter and end with a full stop.', category: 'SPAG', tier: 'support' },
+      {
+        statement: 'I have made a clear point that answers the question.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have included a quotation from the text.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have explained what the quotation shows or means.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have named the technique the writer uses (e.g. simile, metaphor).',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have explained the effect the technique has on the reader.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have embedded my quotation smoothly into my sentence.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have explored the connotations of key words in my quotation.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: "I have considered the writer's purpose or intention.",
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'My sentences start with a capital letter and end with a full stop.',
+        category: 'SPAG',
+        tier: 'support',
+      },
       { statement: 'I have checked my spelling of key words.', category: 'SPAG', tier: 'support' },
-      { statement: 'I have used commas correctly in my sentences.', category: 'SPAG', tier: 'core' },
+      {
+        statement: 'I have used commas correctly in my sentences.',
+        category: 'SPAG',
+        tier: 'core',
+      },
       { statement: 'I have varied my sentence openings.', category: 'SPAG', tier: 'core' },
     ],
   },
@@ -3508,16 +4445,48 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     taskType: 'Creative Writing',
     title: 'Y7 Self-Assessment: Creative Writing',
     items: [
-      { statement: 'My writing has a clear beginning, middle, and end.', category: 'Structure', tier: 'support' },
+      {
+        statement: 'My writing has a clear beginning, middle, and end.',
+        category: 'Structure',
+        tier: 'support',
+      },
       { statement: 'I have written in paragraphs.', category: 'Structure', tier: 'support' },
-      { statement: 'I have used at least two descriptive techniques (simile, metaphor, etc.).', category: 'Content', tier: 'support' },
-      { statement: 'I have included sensory details (what can be seen, heard, felt, etc.).', category: 'Content', tier: 'core' },
-      { statement: 'I have varied my sentence lengths for effect.', category: 'Content', tier: 'core' },
-      { statement: 'I have "shown" rather than "told" the reader about emotions.', category: 'Content', tier: 'core' },
-      { statement: 'I have created a distinctive voice or atmosphere.', category: 'Content', tier: 'extension' },
-      { statement: 'I have used a structural technique (flashback, cyclical, zoom in).', category: 'Structure', tier: 'extension' },
+      {
+        statement: 'I have used at least two descriptive techniques (simile, metaphor, etc.).',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have included sensory details (what can be seen, heard, felt, etc.).',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have varied my sentence lengths for effect.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have "shown" rather than "told" the reader about emotions.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have created a distinctive voice or atmosphere.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have used a structural technique (flashback, cyclical, zoom in).',
+        category: 'Structure',
+        tier: 'extension',
+      },
       { statement: 'My spelling and punctuation are accurate.', category: 'SPAG', tier: 'support' },
-      { statement: 'I have used a range of punctuation (commas, speech marks, exclamation marks).', category: 'SPAG', tier: 'core' },
+      {
+        statement: 'I have used a range of punctuation (commas, speech marks, exclamation marks).',
+        category: 'SPAG',
+        tier: 'core',
+      },
     ],
   },
 
@@ -3527,19 +4496,67 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     taskType: 'Analytical Essay (PEEL)',
     title: 'Y8 Self-Assessment: Analytical Essay',
     items: [
-      { statement: 'Each paragraph starts with a clear point that addresses the question.', category: 'Structure', tier: 'support' },
-      { statement: 'I have included a relevant quotation in each paragraph.', category: 'Content', tier: 'support' },
-      { statement: 'I have explained what each quotation means and its effect.', category: 'Content', tier: 'support' },
-      { statement: 'I have linked each paragraph back to the question or a theme.', category: 'Structure', tier: 'core' },
+      {
+        statement: 'Each paragraph starts with a clear point that addresses the question.',
+        category: 'Structure',
+        tier: 'support',
+      },
+      {
+        statement: 'I have included a relevant quotation in each paragraph.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have explained what each quotation means and its effect.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have linked each paragraph back to the question or a theme.',
+        category: 'Structure',
+        tier: 'core',
+      },
       { statement: 'I have embedded my quotations smoothly.', category: 'Content', tier: 'core' },
-      { statement: 'I have explored the connotations of key words.', category: 'Content', tier: 'core' },
-      { statement: 'I have named and analysed specific techniques.', category: 'Content', tier: 'core' },
-      { statement: 'I have referenced relevant context (social, historical, literary).', category: 'Content', tier: 'extension' },
-      { statement: 'I have considered the writer\'s purpose and its effect on the audience.', category: 'Content', tier: 'extension' },
-      { statement: 'I have offered an alternative interpretation of the text.', category: 'Content', tier: 'extension' },
-      { statement: 'My paragraphs flow logically with appropriate connectives.', category: 'Structure', tier: 'core' },
-      { statement: 'My spelling, punctuation, and grammar are accurate.', category: 'SPAG', tier: 'support' },
-      { statement: 'I have used semicolons, colons, or dashes effectively.', category: 'SPAG', tier: 'extension' },
+      {
+        statement: 'I have explored the connotations of key words.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have named and analysed specific techniques.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have referenced relevant context (social, historical, literary).',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: "I have considered the writer's purpose and its effect on the audience.",
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have offered an alternative interpretation of the text.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'My paragraphs flow logically with appropriate connectives.',
+        category: 'Structure',
+        tier: 'core',
+      },
+      {
+        statement: 'My spelling, punctuation, and grammar are accurate.',
+        category: 'SPAG',
+        tier: 'support',
+      },
+      {
+        statement: 'I have used semicolons, colons, or dashes effectively.',
+        category: 'SPAG',
+        tier: 'extension',
+      },
     ],
   },
 
@@ -3549,15 +4566,47 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     taskType: 'Comparative Essay',
     title: 'Y8 Self-Assessment: Comparative Writing',
     items: [
-      { statement: 'I have written about both texts/poems, not just one.', category: 'Structure', tier: 'support' },
-      { statement: 'I have used comparison words (similarly, however, whereas, in contrast).', category: 'Content', tier: 'support' },
-      { statement: 'I have included quotations from both texts.', category: 'Content', tier: 'support' },
+      {
+        statement: 'I have written about both texts/poems, not just one.',
+        category: 'Structure',
+        tier: 'support',
+      },
+      {
+        statement: 'I have used comparison words (similarly, however, whereas, in contrast).',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: 'I have included quotations from both texts.',
+        category: 'Content',
+        tier: 'support',
+      },
       { statement: 'My topic sentences address both texts.', category: 'Structure', tier: 'core' },
-      { statement: 'I have compared the methods used by both writers, not just the themes.', category: 'Content', tier: 'core' },
-      { statement: 'I have maintained a comparative thread throughout my essay.', category: 'Structure', tier: 'core' },
-      { statement: 'I have considered how context shapes each writer\'s perspective.', category: 'Content', tier: 'extension' },
-      { statement: 'I have evaluated which text is more effective and explained why.', category: 'Content', tier: 'extension' },
-      { statement: 'My spelling, punctuation, and grammar are accurate.', category: 'SPAG', tier: 'support' },
+      {
+        statement: 'I have compared the methods used by both writers, not just the themes.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have maintained a comparative thread throughout my essay.',
+        category: 'Structure',
+        tier: 'core',
+      },
+      {
+        statement: "I have considered how context shapes each writer's perspective.",
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have evaluated which text is more effective and explained why.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'My spelling, punctuation, and grammar are accurate.',
+        category: 'SPAG',
+        tier: 'support',
+      },
     ],
   },
 
@@ -3567,20 +4616,77 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     taskType: 'Critical Essay',
     title: 'Y9 Self-Assessment: Critical Essay',
     items: [
-      { statement: 'I have opened with a clear critical argument or thesis.', category: 'Structure', tier: 'support' },
-      { statement: 'I have selected precise, well-chosen textual evidence.', category: 'Content', tier: 'support' },
-      { statement: 'I have analysed language closely, including technique, connotation, and effect.', category: 'Content', tier: 'support' },
-      { statement: 'I have linked analysis to the writer\'s purpose.', category: 'Content', tier: 'core' },
-      { statement: 'I have integrated context seamlessly into my argument.', category: 'Content', tier: 'core' },
-      { statement: 'My essay builds a sustained, coherent argument.', category: 'Structure', tier: 'core' },
-      { statement: 'I have explored multiple layers of meaning.', category: 'Content', tier: 'core' },
-      { statement: 'I have considered alternative interpretations.', category: 'Content', tier: 'extension' },
-      { statement: 'I have analysed form and structure as well as language.', category: 'Content', tier: 'extension' },
-      { statement: 'I have developed a distinctive personal critical voice.', category: 'Content', tier: 'extension' },
-      { statement: 'I have made connections to other texts or critical ideas.', category: 'Content', tier: 'extension' },
-      { statement: 'My writing demonstrates sophisticated, varied syntax.', category: 'SPAG', tier: 'core' },
-      { statement: 'My punctuation is accurate and deployed for effect.', category: 'SPAG', tier: 'extension' },
-      { statement: 'I have proofread carefully and corrected any errors.', category: 'SPAG', tier: 'support' },
+      {
+        statement: 'I have opened with a clear critical argument or thesis.',
+        category: 'Structure',
+        tier: 'support',
+      },
+      {
+        statement: 'I have selected precise, well-chosen textual evidence.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement:
+          'I have analysed language closely, including technique, connotation, and effect.',
+        category: 'Content',
+        tier: 'support',
+      },
+      {
+        statement: "I have linked analysis to the writer's purpose.",
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have integrated context seamlessly into my argument.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'My essay builds a sustained, coherent argument.',
+        category: 'Structure',
+        tier: 'core',
+      },
+      {
+        statement: 'I have explored multiple layers of meaning.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I have considered alternative interpretations.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have analysed form and structure as well as language.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have developed a distinctive personal critical voice.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have made connections to other texts or critical ideas.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'My writing demonstrates sophisticated, varied syntax.',
+        category: 'SPAG',
+        tier: 'core',
+      },
+      {
+        statement: 'My punctuation is accurate and deployed for effect.',
+        category: 'SPAG',
+        tier: 'extension',
+      },
+      {
+        statement: 'I have proofread carefully and corrected any errors.',
+        category: 'SPAG',
+        tier: 'support',
+      },
     ],
   },
 
@@ -3590,17 +4696,61 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     taskType: 'Exam Practice',
     title: 'Y9 Self-Assessment: Exam Practice',
     items: [
-      { statement: 'I read the question carefully and underlined the command word.', category: 'Exam Technique', tier: 'support' },
-      { statement: 'I checked how many marks the question is worth.', category: 'Exam Technique', tier: 'support' },
-      { statement: 'I spent approximately one minute per mark.', category: 'Exam Technique', tier: 'support' },
-      { statement: 'I planned my response before writing (2-3 minutes).', category: 'Exam Technique', tier: 'core' },
-      { statement: 'I answered the specific question set, not a different one.', category: 'Exam Technique', tier: 'core' },
-      { statement: 'I used the correct structure for this question type.', category: 'Structure', tier: 'core' },
-      { statement: 'I included relevant evidence and analysis.', category: 'Content', tier: 'core' },
-      { statement: 'I left time to check my response at the end.', category: 'Exam Technique', tier: 'core' },
-      { statement: 'My response would meet the criteria for the top band of the mark scheme.', category: 'Content', tier: 'extension' },
-      { statement: 'My analysis demonstrates conceptual understanding and originality.', category: 'Content', tier: 'extension' },
-      { statement: 'My spelling, punctuation, and grammar are accurate throughout.', category: 'SPAG', tier: 'support' },
+      {
+        statement: 'I read the question carefully and underlined the command word.',
+        category: 'Exam Technique',
+        tier: 'support',
+      },
+      {
+        statement: 'I checked how many marks the question is worth.',
+        category: 'Exam Technique',
+        tier: 'support',
+      },
+      {
+        statement: 'I spent approximately one minute per mark.',
+        category: 'Exam Technique',
+        tier: 'support',
+      },
+      {
+        statement: 'I planned my response before writing (2-3 minutes).',
+        category: 'Exam Technique',
+        tier: 'core',
+      },
+      {
+        statement: 'I answered the specific question set, not a different one.',
+        category: 'Exam Technique',
+        tier: 'core',
+      },
+      {
+        statement: 'I used the correct structure for this question type.',
+        category: 'Structure',
+        tier: 'core',
+      },
+      {
+        statement: 'I included relevant evidence and analysis.',
+        category: 'Content',
+        tier: 'core',
+      },
+      {
+        statement: 'I left time to check my response at the end.',
+        category: 'Exam Technique',
+        tier: 'core',
+      },
+      {
+        statement: 'My response would meet the criteria for the top band of the mark scheme.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'My analysis demonstrates conceptual understanding and originality.',
+        category: 'Content',
+        tier: 'extension',
+      },
+      {
+        statement: 'My spelling, punctuation, and grammar are accurate throughout.',
+        category: 'SPAG',
+        tier: 'support',
+      },
     ],
   },
-];
+]

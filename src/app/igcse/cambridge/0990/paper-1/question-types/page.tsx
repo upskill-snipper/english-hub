@@ -47,7 +47,7 @@ export default async function QuestionTypesPage() {
             Paper 1 question types
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Three questions. Three different skills. Each needs a different approach — get them
+            Three questions. Three different skills. Each needs a different approach - get them
             mixed up and you lose marks on questions you&apos;d otherwise ace.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default async function QuestionTypesPage() {
               <ol className="list-decimal space-y-1.5 pl-5 text-body-sm text-muted-foreground">
                 <li>Re-read the paragraph the question points you to.</li>
                 <li>Underline any word that matches the question&apos;s focus.</li>
-                <li>Answer in short sentences or phrases — no need for full paragraphs.</li>
+                <li>Answer in short sentences or phrases - no need for full paragraphs.</li>
                 <li>
                   Use your own words where the question says so; quote where it asks for a word or
                   phrase.
@@ -97,7 +97,7 @@ export default async function QuestionTypesPage() {
                   <h4 className="text-body-sm font-semibold text-foreground">Do</h4>
                 </div>
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
-                  <li>• Check the mark allocation — 2 marks = 2 points</li>
+                  <li>• Check the mark allocation - 2 marks = 2 points</li>
                   <li>• Use your own words when asked</li>
                   <li>• Quote minimally when asked</li>
                 </ul>
@@ -109,8 +109,8 @@ export default async function QuestionTypesPage() {
                 </div>
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
                   <li>• Copy whole sentences from the text</li>
-                  <li>• Analyse language — save that for Q2</li>
-                  <li>• Overwrite — 2 marks only needs 2 points</li>
+                  <li>• Analyse language - save that for Q2</li>
+                  <li>• Overwrite - 2 marks only needs 2 points</li>
                 </ul>
               </div>
             </div>
@@ -227,21 +227,21 @@ export default async function QuestionTypesPage() {
               </div>
               <ol className="list-decimal space-y-1.5 pl-5 text-body-sm text-muted-foreground">
                 <li>
-                  Re-read both texts with the summary topic in mind. Underline any relevant point —
+                  Re-read both texts with the summary topic in mind. Underline any relevant point -
                   aim for 15+ points.
                 </li>
                 <li>
                   Group similar points together so you can combine them into single sentences.
                 </li>
                 <li>
-                  Translate each point into your own words — this is non-negotiable for top marks.
+                  Translate each point into your own words - this is non-negotiable for top marks.
                 </li>
                 <li>
                   Write in continuous prose, not bullet points. Use linking words to group related
                   ideas.
                 </li>
                 <li>
-                  Stay under the word limit (usually 250 words) — examiners stop marking beyond it.
+                  Stay under the word limit (usually 250 words) - examiners stop marking beyond it.
                 </li>
               </ol>
             </div>
@@ -266,7 +266,7 @@ export default async function QuestionTypesPage() {
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
                   <li>• Include your own opinion</li>
                   <li>• Quote directly from the texts</li>
-                  <li>• Analyse language — that&apos;s Q2 territory</li>
+                  <li>• Analyse language - that&apos;s Q2 territory</li>
                 </ul>
               </div>
             </div>

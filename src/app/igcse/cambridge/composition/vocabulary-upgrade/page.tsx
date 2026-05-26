@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Vocabulary Upgrade — Cambridge IGCSE Composition',
+    title: 'Vocabulary Upgrade - Cambridge IGCSE Composition',
     description:
       'Replace tired, overused words with precise alternatives for Cambridge IGCSE composition. Said, big, small, good, bad, walked, looked and more.',
   },
-  title: 'Vocabulary Upgrade — Cambridge IGCSE Composition',
+  title: 'Vocabulary Upgrade - Cambridge IGCSE Composition',
   description:
     'Replace tired, overused words with precise alternatives for Cambridge IGCSE composition. Said, big, small, good, bad, walked, looked and more.',
   alternates: {
@@ -237,7 +237,7 @@ export default async function VocabularyUpgradePage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Precise vocabulary is one of the quickest ways to move up a band. The goal is not longer
-            words — it is more <em>exact</em> words. Each upgrade below has a short definition so
+            words - it is more <em>exact</em> words. Each upgrade below has a short definition so
             you pick the one that fits your sentence, not just the biggest one.
           </p>
         </div>
@@ -247,7 +247,7 @@ export default async function VocabularyUpgradePage() {
         <h2 className="text-heading-md font-heading text-foreground">The rule of precision</h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
           A shorter, precise word beats a longer, vague one. <em>Trudged</em> is better than{' '}
-          <em>walked</em>. <em>Muttered</em> is better than <em>vociferated</em> — not because
+          <em>walked</em>. <em>Muttered</em> is better than <em>vociferated</em> - not because
           it\u2019s longer or fancier, but because it tells the reader exactly how the character
           spoke. Precision is what examiners reward; thesaurus-mining is what they flag.
         </p>
@@ -295,7 +295,7 @@ export default async function VocabularyUpgradePage() {
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
           Swapping every word for a longer synonym is one of the clearest markers of Band 3 writing.
           If a reader has to reach for a dictionary twice in one paragraph, something has gone
-          wrong. The aim of this page is not to sound clever — it is to sound <em>exact</em>.
+          wrong. The aim of this page is not to sound clever - it is to sound <em>exact</em>.
           Replace only the words that are doing vague work.
         </p>
       </section>

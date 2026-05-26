@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet Key Quotes — Edexcel IGCSE Literature',
+    title: 'Romeo and Juliet Key Quotes - Edexcel IGCSE Literature',
     description:
       '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/quotes',
   },
-  title: 'Romeo and Juliet Key Quotes — Edexcel IGCSE Literature',
+  title: 'Romeo and Juliet Key Quotes - Edexcel IGCSE Literature',
   description:
     '20 key Romeo and Juliet quotations with speaker, scene reference and analysis, for the Edexcel IGCSE Literature closed-book Shakespeare exam.',
 }

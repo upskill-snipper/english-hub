@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Approaching Modernist Fiction — Reading Practice Framework — The English Hub',
+    title: 'Approaching Modernist Fiction - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on modernist fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Approaching Modernist Fiction — Reading Practice Framework',
+  title: 'Approaching Modernist Fiction - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on modernist fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -55,7 +55,7 @@ const comprehension = [
   'Find a sentence that seems to interrupt itself or drift into a memory. Why does the writer use that form?',
   'Identify a sensory fragment (a smell, a sound) that triggers a shift in the narrator’s attention.',
   'Where does the writer refuse to explain something? What effect does that refusal have?',
-  'Pick out a moment of stream of consciousness — associative, not logical. Describe what holds it together.',
+  'Pick out a moment of stream of consciousness - associative, not logical. Describe what holds it together.',
   'What seems to be important to this character that would probably pass unnoticed in a more traditional novel?',
 ]
 
@@ -205,7 +205,7 @@ export default async function ModernistFictionPage() {
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
               Summarise what you understand of the passage in{' '}
-              <strong>no more than 120 words</strong>. Ambiguity is allowed — name it.
+              <strong>no more than 120 words</strong>. Ambiguity is allowed - name it.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
@@ -215,7 +215,7 @@ export default async function ModernistFictionPage() {
                 <strong>Sentence 2:</strong> Where and when the scene seems to be set.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two impressions or feelings dominating the
+                <strong>Sentences 3-4:</strong> Two impressions or feelings dominating the
                 character.
               </li>
               <li>

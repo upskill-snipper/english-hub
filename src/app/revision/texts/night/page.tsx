@@ -8,7 +8,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'night'
 
 export const metadata: Metadata = {
-  title: 'Night — Bernard MacLaverty',
+  title: 'Night - Bernard MacLaverty',
   description:
     'Study guide stub for Night by Bernard MacLaverty. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

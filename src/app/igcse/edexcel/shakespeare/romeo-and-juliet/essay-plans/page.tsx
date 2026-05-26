@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet Essay Plans — Edexcel IGCSE Literature',
+    title: 'Romeo and Juliet Essay Plans - Edexcel IGCSE Literature',
     description:
       'Five model essay plans for Romeo and Juliet with paragraph-by-paragraph structure, key quotations and context for Edexcel IGCSE English Literature.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/essay-plans',
   },
-  title: 'Romeo and Juliet Essay Plans — Edexcel IGCSE Literature',
+  title: 'Romeo and Juliet Essay Plans - Edexcel IGCSE Literature',
   description:
     'Five model essay plans for Romeo and Juliet with paragraph-by-paragraph structure, key quotations and context for Edexcel IGCSE English Literature.',
 }

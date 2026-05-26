@@ -10,11 +10,11 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge — Edexcel IGCSE Literature Study Guide',
+    title: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
     description:
       'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
   },
-  title: 'A View from the Bridge — Edexcel IGCSE Literature Study Guide',
+  title: 'A View from the Bridge - Edexcel IGCSE Literature Study Guide',
   description:
     'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
   alternates: {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
 
 const plotBeats = [
   {
-    part: 'Act One — Red Hook',
+    part: 'Act One - Red Hook',
     summary:
-      'Alfieri, an Italian-American lawyer, introduces Eddie Carbone — a longshoreman who lives with his wife Beatrice and orphaned niece Catherine. Two of Beatrice\u2019s cousins, Marco and Rodolpho, arrive illegally from Italy. Catherine and Rodolpho fall in love. Eddie\u2019s protectiveness curdles into jealousy; he visits Alfieri, who warns him that the law cannot help.',
+      'Alfieri, an Italian-American lawyer, introduces Eddie Carbone - a longshoreman who lives with his wife Beatrice and orphaned niece Catherine. Two of Beatrice\u2019s cousins, Marco and Rodolpho, arrive illegally from Italy. Catherine and Rodolpho fall in love. Eddie\u2019s protectiveness curdles into jealousy; he visits Alfieri, who warns him that the law cannot help.',
   },
   {
     part: 'Act One, climax',
@@ -34,7 +34,7 @@ const plotBeats = [
       'At home, Eddie attempts to demonstrate Rodolpho\u2019s "unmanliness" by teaching him to box and punching him. Marco silently lifts a chair over Eddie\u2019s head as a warning. The act ends on this frozen tableau of challenged masculinity.',
   },
   {
-    part: 'Act Two — Betrayal and death',
+    part: 'Act Two - Betrayal and death',
     summary:
       'Eddie returns home drunk to find Catherine and Rodolpho together and forcibly kisses first Catherine and then Rodolpho, "proving" the latter\u2019s sexuality. Eddie calls Immigration. Marco and Rodolpho are arrested; Marco publicly accuses Eddie and spits in his face. At Catherine and Rodolpho\u2019s wedding day, Marco and Eddie confront each other in the street. Eddie pulls a knife, is disarmed and stabbed with his own blade, and dies in Beatrice\u2019s arms.',
   },
@@ -55,7 +55,7 @@ const characters = [
   },
   {
     name: 'Marco',
-    note: 'The elder Italian cousin — silent, physically imposing, driven by the need to send money back to his starving family. His code of honour is absolute and, ultimately, lethal.',
+    note: 'The elder Italian cousin - silent, physically imposing, driven by the need to send money back to his starving family. His code of honour is absolute and, ultimately, lethal.',
   },
   {
     name: 'Rodolpho',
@@ -84,7 +84,7 @@ const keyQuotations = [
     quote: 'As good a man as he had to be in a life that was hard.',
     speaker: 'Alfieri on Eddie',
     analysis:
-      'An epitaph, offered early — Miller uses Alfieri to put moral weight on Eddie before we judge him.',
+      'An epitaph, offered early - Miller uses Alfieri to put moral weight on Eddie before we judge him.',
   },
   {
     quote: 'You can\u2019t marry him, Katie, you\u2019re a child, you don\u2019t understand.',
@@ -96,13 +96,13 @@ const keyQuotations = [
     quote: 'The guy ain\u2019t right.',
     speaker: 'Eddie on Rodolpho',
     analysis:
-      'Eddie\u2019s homophobic shorthand — a refusal of expression that Miller uses to show the limits of Eddie\u2019s vocabulary for emotion.',
+      'Eddie\u2019s homophobic shorthand - a refusal of expression that Miller uses to show the limits of Eddie\u2019s vocabulary for emotion.',
   },
   {
     quote: 'When am I gonna be a wife again, Eddie?',
     speaker: 'Beatrice',
     analysis:
-      'Beatrice\u2019s question about their absent intimacy is the play\u2019s most devastating domestic line — and the clearest diagnosis of Eddie\u2019s repression.',
+      'Beatrice\u2019s question about their absent intimacy is the play\u2019s most devastating domestic line - and the clearest diagnosis of Eddie\u2019s repression.',
   },
   {
     quote: 'She\u2019s the madonna type.',
@@ -144,19 +144,19 @@ const keyQuotations = [
     quote: 'You want somethin\u2019 else, Eddie, and you can never have her!',
     speaker: 'Beatrice',
     analysis:
-      'Beatrice finally speaks the unspoken. The line comes too late to save anyone — a characteristic Miller move.',
+      'Beatrice finally speaks the unspoken. The line comes too late to save anyone - a characteristic Miller move.',
   },
   {
     quote: 'To promise not to kill is not dishonourable.',
     speaker: 'Alfieri to Marco',
     analysis:
-      'Alfieri tries to smuggle legal reason into an honour economy and fails — Marco will keep his promise only in the letter, not the spirit.',
+      'Alfieri tries to smuggle legal reason into an honour economy and fails - Marco will keep his promise only in the letter, not the spirit.',
   },
   {
     quote: 'I see it once again, and I will love its memory.',
     speaker: 'Alfieri',
     analysis:
-      'The paradox of tragic recognition — love and horror held together. Classical inheritance is visible in the syntax.',
+      'The paradox of tragic recognition - love and horror held together. Classical inheritance is visible in the syntax.',
   },
 ]
 
@@ -166,7 +166,7 @@ export default async function AViewHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="A View from the Bridge — Edexcel IGCSE Literature Study Guide"
+        name="A View from the Bridge - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for A View from the Bridge for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd
@@ -217,7 +217,7 @@ export default async function AViewHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               A View from the Bridge is in copyright. This guide uses short extracts for
@@ -298,7 +298,7 @@ export default async function AViewHubPage() {
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>

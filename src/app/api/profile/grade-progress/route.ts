@@ -53,7 +53,7 @@ export async function GET() {
 
   // ── Essay sample (Prisma) ───────────────────────────────────────────
   // Match the Prisma User by supabaseUserId (preferred) or email fallback
-  // — same pattern as Identity PR-3. Tolerate the user not having a
+  // - same pattern as Identity PR-3. Tolerate the user not having a
   // Prisma row (e.g. pre-backfill edge case) without throwing.
   let essayCount = 0
   let essayAvgScore: number | null = null

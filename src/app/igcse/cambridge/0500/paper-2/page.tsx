@@ -17,11 +17,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 2 Directed Writing & Composition — IGCSE Language A',
+    title: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
     description:
       'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Paper 2 Directed Writing & Composition — IGCSE Language A',
+  title: 'Paper 2 Directed Writing & Composition - IGCSE Language A',
   description:
     'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -35,7 +35,7 @@ const sections = [
     title: 'Directed Writing',
     marks: 40,
     description:
-      'Read a short stimulus text (sometimes two) and respond in a specific form — a letter, speech, article or report — for a clear purpose and audience. 250–350 words.',
+      'Read a short stimulus text (sometimes two) and respond in a specific form - a letter, speech, article or report - for a clear purpose and audience. 250-350 words.',
     split: 'Reading 15 marks • Writing 25 marks',
     icon: FileEdit,
     href: '/igcse/cambridge/0500/paper-2/directed-writing',
@@ -46,7 +46,7 @@ const compositionOptions = [
   {
     title: 'Descriptive composition',
     description:
-      'Create a vivid setting, atmosphere or moment using sensory detail and figurative language. No plot twists required — focus on imagery.',
+      'Create a vivid setting, atmosphere or moment using sensory detail and figurative language. No plot twists required - focus on imagery.',
     marks: 40,
     icon: Feather,
     href: '/igcse/cambridge/0500/paper-2/descriptive-writing',
@@ -117,7 +117,7 @@ export default async function Paper2HubPage() {
         <div className="mb-5 flex items-center gap-3">
           <FileEdit className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Section A — Directed Writing
+            Section A - Directed Writing
           </h2>
         </div>
         {sections.map((s) => {
@@ -157,11 +157,11 @@ export default async function Paper2HubPage() {
         <div className="mb-5 flex items-center gap-3">
           <PenTool className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Section B — Composition (choose one)
+            Section B - Composition (choose one)
           </h2>
         </div>
         <p className="mb-5 text-body-sm text-muted-foreground">
-          You pick ONE of four titles — two descriptive, two narrative. 350–450 words. Marked on
+          You pick ONE of four titles - two descriptive, two narrative. 350-450 words. Marked on
           content and structure (16) plus style and accuracy (24).
         </p>
         <div className="grid gap-6 md:grid-cols-2">
@@ -213,25 +213,25 @@ export default async function Paper2HubPage() {
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">5 min — read</p>
+            <p className="text-body-xs font-semibold text-primary">5 min - read</p>
             <p className="mt-1 text-body-sm text-foreground">
               Read the Section A stimulus text and Section B titles.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">50 min — Section A</p>
+            <p className="text-body-xs font-semibold text-primary">50 min - Section A</p>
             <p className="mt-1 text-body-sm text-foreground">
               Plan (5), draft (40), proofread (5). Stay within 350 words.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">55 min — Section B</p>
+            <p className="text-body-xs font-semibold text-primary">55 min - Section B</p>
             <p className="mt-1 text-body-sm text-foreground">
               Plan (8), draft (40), proofread (7). Stay within 450 words.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">10 min — check</p>
+            <p className="text-body-xs font-semibold text-primary">10 min - check</p>
             <p className="mt-1 text-body-sm text-foreground">
               Final pass for spelling, punctuation, tense consistency.
             </p>

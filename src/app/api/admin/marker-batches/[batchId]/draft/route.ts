@@ -1,7 +1,7 @@
-// ─── Platform-admin — Batch AI-draft ────────────────────────────────────────
+// ─── Platform-admin - Batch AI-draft ────────────────────────────────────────
 // POST /api/admin/marker-batches/[batchId]/draft
 //
-// Site-admin only (verifyAdmin — RLS deny-by-default; service-role only).
+// Site-admin only (verifyAdmin - RLS deny-by-default; service-role only).
 // AI-drafts up to N (default 25, cap 50) `'submitted'` rows in the batch by
 // running the EXACT marking-engine sequence used by /api/marking/run:
 //
@@ -99,7 +99,7 @@ export async function POST(
         }
       }
     } catch {
-      // No / invalid body — fall back to the default limit.
+      // No / invalid body - fall back to the default limit.
     }
     const limit = Math.min(MAX_LIMIT, Math.max(1, requested))
 
@@ -178,7 +178,7 @@ export async function POST(
     let drafted = 0
     const errors: DraftError[] = []
 
-    // Sequential — one model call per row. Keeps within Anthropic rate limits
+    // Sequential - one model call per row. Keeps within Anthropic rate limits
     // and lets a single bad row fail without aborting the batch.
     for (const row of rows) {
       // Defensive idempotency re-check (a concurrent draft may have moved it).
@@ -264,7 +264,7 @@ export async function POST(
                 ? 'AI service timed out.'
                 : 'AI service error.',
         })
-        // A rate-limit/timeout will likely hit the next row too — stop early
+        // A rate-limit/timeout will likely hit the next row too - stop early
         // and report what we have so the caller can retry the remainder.
         if (e.status === 429 || e.error?.type === 'timeout_error') {
           break
@@ -307,7 +307,7 @@ export async function POST(
 
       const result = feedback.result
 
-      // Best-effort provenance capture (never throws — returns nulls).
+      // Best-effort provenance capture (never throws - returns nulls).
       const versions = await captureVersions(supabase, {
         promptText: `${prompt.systemPrompt}\n\n${prompt.userMessage}`,
         markSchemeId: row.mark_scheme_id,

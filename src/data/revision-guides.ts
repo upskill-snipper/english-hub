@@ -31,16 +31,16 @@ export const revisionGuides: RevisionGuide[] = [
           'You need to locate four key pieces of information from the source text',
           'Information must be in your own words, not copied directly',
           'Answers are awarded 1 mark each (4 marks total)',
-          'Look for explicit, clear statements—not inference',
+          'Look for explicit, clear statements-not inference',
           'Skim the text quickly to identify the correct paragraphs',
           'Use the question as a guide to what information to find',
         ],
         examTips: [
-          "Spend no more than 3-4 minutes on this question—it's worth only 4 marks",
+          "Spend no more than 3-4 minutes on this question-it's worth only 4 marks",
           'Underline key phrases in the question to guide your search',
           "Write in point form if needed; full sentences aren't required",
           'Check that each piece of information is different and distinct',
-          "Don't include opinions or your own analysis—stick to facts",
+          "Don't include opinions or your own analysis-stick to facts",
         ],
         practiceQuestions: [
           {
@@ -58,7 +58,7 @@ export const revisionGuides: RevisionGuide[] = [
           },
         ],
         commonMistakes: [
-          'Copying directly from the text instead of paraphrasing—loses marks',
+          'Copying directly from the text instead of paraphrasing-loses marks',
           'Including information that requires inference or interpretation',
           'Selecting overlapping or related points instead of distinct pieces of information',
           'Writing in full sentences when point form would be quicker',
@@ -77,7 +77,7 @@ export const revisionGuides: RevisionGuide[] = [
           'Write approximately 2-3 sentences per technique for full marks',
         ],
         examTips: [
-          'Choose techniques that have a clear, significant effect—avoid weak choices',
+          'Choose techniques that have a clear, significant effect-avoid weak choices',
           'Quote short, precise phrases (2-5 words) rather than full sentences',
           "Use terminology accurately: say 'metaphor' not 'like a metaphor'",
           'Explain how the technique works before explaining its effect',
@@ -107,7 +107,7 @@ export const revisionGuides: RevisionGuide[] = [
           'Naming techniques without explaining their effect',
           "Explaining the technique without linking it to the writer's purpose",
           'Choosing weak or unclear techniques that are hard to analyse',
-          'Writing too much—remember this is only worth 8 marks',
+          'Writing too much-remember this is only worth 8 marks',
           'Focusing on meaning rather than language and its effects',
           "Using vague terminology: 'this is good writing' instead of specific technique names",
         ],
@@ -169,10 +169,10 @@ export const revisionGuides: RevisionGuide[] = [
         ],
         examTips: [
           'Write 3-4 well-developed paragraphs (aim for 350-400 words)',
-          'Use detailed evidence from the text—quote and analyse',
+          'Use detailed evidence from the text-quote and analyse',
           "Use phrases: 'I find this convincing because...', 'The writer successfully...', 'However, one might argue...'",
           "Make judgements clear: 'effectively', 'powerfully', 'unconvincingly', 'poorly'",
-          "Combine language analysis with evaluation—don't separate them",
+          "Combine language analysis with evaluation-don't separate them",
           "Address both the content (what is said) and the technique (how it's said)",
         ],
         practiceQuestions: [
@@ -216,11 +216,11 @@ export const revisionGuides: RevisionGuide[] = [
         ],
         examTips: [
           'Spend a few minutes reading and annotating the text thoroughly before answering',
-          "Don't rush Q1—accuracy matters",
+          "Don't rush Q1-accuracy matters",
           'Allocate more time to Q4 as it carries the most marks',
           'Leave 5 minutes at the end to check Q4 for spelling and sentence boundaries',
           'If you get stuck on a question, move on and return if time permits',
-          "Watch the clock—don't run overtime on any one question",
+          "Watch the clock-don't run overtime on any one question",
         ],
         practiceQuestions: [
           {
@@ -241,9 +241,9 @@ export const revisionGuides: RevisionGuide[] = [
         commonMistakes: [
           'Spending too long on Q1 and Q2, leaving insufficient time for Q4',
           'Reading the text too slowly without annotation',
-          'Writing rough drafts before final answers—wasting time',
+          'Writing rough drafts before final answers-wasting time',
           'Not finishing Q4 due to poor time management',
-          "Overthinking Q1—it's straightforward selection",
+          "Overthinking Q1-it's straightforward selection",
         ],
       },
       {
@@ -258,7 +258,7 @@ export const revisionGuides: RevisionGuide[] = [
           'Accurate terminology and precise quotation throughout',
         ],
         examTips: [
-          'Practice all question types regularly—familiarity builds confidence',
+          'Practice all question types regularly-familiarity builds confidence',
           'Develop a bank of language technique terms with examples',
           'Read widely: fiction, non-fiction, journalism, memoir, speeches',
           'Annotate texts as you read: mark techniques, tone shifts, structural points',
@@ -302,15 +302,15 @@ export const revisionGuides: RevisionGuide[] = [
           'Identify the key points from two source texts',
           'Compare the viewpoints presented in each text',
           'Write a summary of similarities and differences',
-          'Use your own words—not direct copying',
+          'Use your own words-not direct copying',
           'Include only relevant information (about 200 words)',
           'Structure clearly: similarities first, then differences, or vice versa',
         ],
         examTips: [
           'Read both texts carefully, annotating similarities and differences',
-          "Don't spend time on copied sentences—rephrase",
+          "Don't spend time on copied sentences-rephrase",
           "Use signposting language: 'Similarly', 'Both', 'In contrast', 'However'",
-          'Keep summary concise—avoid repetition',
+          'Keep summary concise-avoid repetition',
           "Check you've addressed both similarities AND differences",
           'Aim for balanced coverage of both texts',
         ],
@@ -333,8 +333,8 @@ export const revisionGuides: RevisionGuide[] = [
           'Copying sentences directly from the texts',
           'Including only similarities or only differences',
           'Writing a summary of one text then the other, rather than comparing',
-          'Being too long-winded—aim for concision',
-          'Missing implicit attitudes—look beyond the obvious',
+          'Being too long-winded-aim for concision',
+          'Missing implicit attitudes-look beyond the obvious',
           'Not clearly signposting similarities and differences',
         ],
       },
@@ -374,7 +374,7 @@ export const revisionGuides: RevisionGuide[] = [
         commonMistakes: [
           'Analyzing language without linking to purpose',
           'Choosing weak techniques that are hard to discuss',
-          'Writing superficially—not developing explanations',
+          'Writing superficially-not developing explanations',
           'Confusing effect on reader with literal meaning',
           'Not using accurate terminology',
           'Including too many techniques without depth',
@@ -393,7 +393,7 @@ export const revisionGuides: RevisionGuide[] = [
         ],
         examTips: [
           "Use comparative language: 'Both', 'Similarly', 'Whereas', 'In contrast', 'However'",
-          'Avoid describing one text then the other—weave comparison throughout',
+          'Avoid describing one text then the other-weave comparison throughout',
           'Make equal references to both texts',
           'Choose 3-4 significant comparison points',
           'Explain why the differences/similarities matter',
@@ -465,7 +465,7 @@ export const revisionGuides: RevisionGuide[] = [
           'Unclear or rambling writing without clear structure',
           'Forgetting to address the specific audience',
           'Spelling and punctuation errors that undermine credibility',
-          'All short sentences or all long sentences—lack of variety',
+          'All short sentences or all long sentences-lack of variety',
           'Not allocating enough time to planning and proofreading',
           'Writing too little (under 300 words loses marks)',
         ],
@@ -486,9 +486,9 @@ export const revisionGuides: RevisionGuide[] = [
           'Plan your story or description: beginning, middle, end or key points',
           "Show, don't tell: use specific detail rather than telling the reader what to feel",
           'Use varied sentences: short for tension/impact, longer for description',
-          'Develop dialogue if appropriate—it brings narratives to life',
+          'Develop dialogue if appropriate-it brings narratives to life',
           'Use sensory detail: sights, sounds, smells, textures, tastes',
-          'Save time to proofread—avoid careless errors',
+          'Save time to proofread-avoid careless errors',
           'Aim for 500-600 words for full marks',
         ],
         practiceQuestions: [
@@ -511,12 +511,12 @@ export const revisionGuides: RevisionGuide[] = [
           'SEEL = Sight, Emotion, Experience, Language (for description)',
         ],
         commonMistakes: [
-          'Rushing the writing—planning pays off in the exam',
+          'Rushing the writing-planning pays off in the exam',
           'Using generic, vague descriptions instead of specific details',
           'Telling the reader what to feel instead of showing through detail',
           'Inconsistent tense (switching between past and present)',
-          'All similar sentence lengths—lack of rhythm and impact',
-          'Not allocating enough time—writing too little for 40 marks',
+          'All similar sentence lengths-lack of rhythm and impact',
+          'Not allocating enough time-writing too little for 40 marks',
           'Careless spelling and punctuation that distract from content',
         ],
       },
@@ -534,11 +534,11 @@ export const revisionGuides: RevisionGuide[] = [
         ],
         examTips: [
           'Read all texts quickly (2-3 minutes) before starting Q1',
-          "Spend most time on Q5—it's worth 40 marks",
+          "Spend most time on Q5-it's worth 40 marks",
           "Don't panic if your story/description feels rushed; content matters most",
           'Allocate time proportionally: more time = more marks',
           'Leave 5 minutes to proofread your writing questions (Q4 and Q5)',
-          "If you run out of time on Q5, stop mid-piece—don't leave it blank",
+          "If you run out of time on Q5, stop mid-piece-don't leave it blank",
         ],
         practiceQuestions: [
           {
@@ -558,7 +558,7 @@ export const revisionGuides: RevisionGuide[] = [
         ],
         commonMistakes: [
           'Spending too long on Q1-Q3, leaving insufficient time for Q5',
-          'Not planning writing answers—leading to rambling or disorganized text',
+          'Not planning writing answers-leading to rambling or disorganized text',
           'Rushing narrative/descriptive writing due to time pressure',
           'Running out of time and having to finish hastily or incompletely',
         ],
@@ -675,7 +675,7 @@ export const literatureRevisionGuides = [
         ],
         examTips: [
           'Plan comparison carefully: identify 3-4 key comparison points',
-          "Don't alternate between texts—weave comparison throughout",
+          "Don't alternate between texts-weave comparison throughout",
           "Use comparative phrases: 'Both texts explore...', 'While Shakespeare...', 'In contrast...'",
           'Quote from both texts in most paragraphs',
           'Explain why comparison matters: what does it reveal about each text?',
@@ -717,7 +717,7 @@ export const literatureRevisionGuides = [
           'Link language analysis to character and theme',
         ],
         examTips: [
-          'For Shakespeare: note whether characters speak in verse or prose—what does this suggest?',
+          'For Shakespeare: note whether characters speak in verse or prose-what does this suggest?',
           'Look for patterns: does a character use particular metaphors or imagery?',
           'Analyse formal vs. informal language and what it reveals',
           'Quote brief phrases (2-5 words) rather than full lines',
@@ -828,7 +828,7 @@ export const literatureRevisionGuides = [
           },
         ],
         commonMistakes: [
-          'Disconnected analysis—keeping language, character, and structure separate',
+          'Disconnected analysis-keeping language, character, and structure separate',
           'Unsupported claims without evidence',
           'Over-reliance on plot summary',
           'Not developing explanations fully',
@@ -913,7 +913,7 @@ export const LiteratureRevisionGuides1 = [
               "How does the poet use form and language to convey sadness in 'Funeral Blues' by W. H. Auden (1940 revised version)?",
             marks: 15,
             guidanceNotes:
-              'Use the 1940 revised version (four quatrains, AABB rhyme, iambic-pentameter dominant) — the version anthologised in Cambridge IGCSE 0475 Songs of Ourselves Vol 1 Part 4 and recited in Four Weddings and a Funeral (1994). Do NOT use the longer five-stanza 1936 Twelve Songs IX original. Analyse: rhyming couplets within quatrains (controlled grief), imperatives (pace and demand), compass/temporal metaphor ("my North, my South..."), tone. Explain effect. Link to emotional impact on reader. Rights note: Auden d.1973 — UK copyright expires 2044; © Faber & Faber. Treat as restricted; quote short extracts only.',
+              'Use the 1940 revised version (four quatrains, AABB rhyme, iambic-pentameter dominant) - the version anthologised in Cambridge IGCSE 0475 Songs of Ourselves Vol 1 Part 4 and recited in Four Weddings and a Funeral (1994). Do NOT use the longer five-stanza 1936 Twelve Songs IX original. Analyse: rhyming couplets within quatrains (controlled grief), imperatives (pace and demand), compass/temporal metaphor ("my North, my South..."), tone. Explain effect. Link to emotional impact on reader. Rights note: Auden d.1973 - UK copyright expires 2044; © Faber & Faber. Treat as restricted; quote short extracts only.',
           },
           {
             question:
@@ -927,7 +927,7 @@ export const LiteratureRevisionGuides1 = [
         commonMistakes: [
           'Naming devices without explaining effect',
           'Ignoring form and structure',
-          'Not reading poems aloud—missing sound effects',
+          'Not reading poems aloud-missing sound effects',
           'Treating rhyme as automatically good/bad',
           'Missing the voice and perspective',
           'Not linking form to meaning',
@@ -946,7 +946,7 @@ export const LiteratureRevisionGuides1 = [
         ],
         examTips: [
           'Spend 3-4 minutes reading and annotating before writing',
-          "Don't panic if the poem is difficult—extract what you can",
+          "Don't panic if the poem is difficult-extract what you can",
           'Identify at least 2-3 language/structural devices to discuss',
           'Read the poem aloud to hear rhythm and sound effects',
           'Make a quick note of the overall effect or meaning',
@@ -957,7 +957,7 @@ export const LiteratureRevisionGuides1 = [
             question: 'Read the unseen poem provided. Analyse how the poet creates mood.',
             marks: 15,
             guidanceNotes:
-              "Identify 3-4 techniques that create mood: word choice, imagery, rhythm, line length. Quote brief phrases. Explain effect on reader. Don't worry if you don't know the poem—careful reading is key.",
+              "Identify 3-4 techniques that create mood: word choice, imagery, rhythm, line length. Quote brief phrases. Explain effect on reader. Don't worry if you don't know the poem-careful reading is key.",
           },
           {
             question:
@@ -968,11 +968,11 @@ export const LiteratureRevisionGuides1 = [
           },
         ],
         commonMistakes: [
-          'Spending too long reading—missing time for writing',
+          'Spending too long reading-missing time for writing',
           'Making assumptions without textual support',
           'Over-explaining literal meaning instead of analysing language',
           'Naming devices without explaining effect',
-          'Not reading aloud—missing sound effects',
+          'Not reading aloud-missing sound effects',
           'Ignoring form and structure',
         ],
       },
@@ -989,7 +989,7 @@ export const LiteratureRevisionGuides1 = [
         ],
         examTips: [
           'Plan comparison: identify 3-4 key comparison points (themes, techniques, effects)',
-          "Weave comparison throughout—don't alternate between texts",
+          "Weave comparison throughout-don't alternate between texts",
           "Use comparative language: 'Both explore...', 'While the prose...', 'In contrast...'",
           'Quote from both texts in most paragraphs',
           'Explain why comparison reveals something important',
@@ -1094,14 +1094,14 @@ export const LiteratureRevisionGuides1 = [
               'Analyse the unseen poem. How does the poet use form and language to create meaning?',
             marks: 30,
             guidanceNotes:
-              "Analyse 3-4 significant techniques. Show how they work together. Explain effect on reader. Don't worry about knowing the poet—focus on close reading. Write 400+ words.",
+              "Analyse 3-4 significant techniques. Show how they work together. Explain effect on reader. Don't worry about knowing the poet-focus on close reading. Write 400+ words.",
           },
         ],
         commonMistakes: [
           'Separate analysis of form and language',
           'Over-explanation of literal meaning',
           'Naming devices without linking to effect',
-          'Not reading aloud—missing sound/rhythm',
+          'Not reading aloud-missing sound/rhythm',
           'Treating all poems equally rather than finding significant differences',
           'Essays that are too short',
         ],
@@ -1123,7 +1123,7 @@ export const LanguageRevisionGuides2 = [
         keyPoints: [
           'Two non-fiction texts on related topics or with contrasting viewpoints',
           'Question 1: Select and paraphrase information (4 marks)',
-          'Question 2: Identify purpose, audience, form—text A then B (8 marks)',
+          'Question 2: Identify purpose, audience, form-text A then B (8 marks)',
           'Question 3: Compare perspectives in both texts (8 marks)',
           'Understand how non-fiction writers argue and persuade',
           'Analyse perspective: explicit viewpoint and implicit attitudes',
@@ -1132,7 +1132,7 @@ export const LanguageRevisionGuides2 = [
           'Read both texts quickly to understand the topic and viewpoints',
           'Q1: Find 4 key points, paraphrase in your own words',
           'Q2: Identify purpose (to persuade, inform, entertain), audience (age, knowledge, interest), form (article, speech, advertisement, letter)',
-          'Q3: Compare how writers differ in their perspectives—use language and structural evidence',
+          'Q3: Compare how writers differ in their perspectives-use language and structural evidence',
           'Spend about 2 minutes on Q1, 5-7 minutes on Q2, 8-10 minutes on Q3',
         ],
         practiceQuestions: [
@@ -1140,7 +1140,7 @@ export const LanguageRevisionGuides2 = [
             question: 'Select four key facts about climate change from Text A. (4 marks)',
             marks: 4,
             guidanceNotes:
-              "Scan for explicit information. Paraphrase—don't copy. Each fact should be distinct. Check you have four separate points.",
+              "Scan for explicit information. Paraphrase-don't copy. Each fact should be distinct. Check you have four separate points.",
           },
           {
             question: 'Identify the purpose, audience, and form of Text B. (8 marks)',
@@ -1173,7 +1173,7 @@ export const LanguageRevisionGuides2 = [
           'Use clear paragraphs with topic sentences',
           'Vary sentence length for readability',
           'Include specific details and examples to inform',
-          'Check spelling and punctuation—accuracy adds credibility to informative writing',
+          'Check spelling and punctuation-accuracy adds credibility to informative writing',
         ],
         practiceQuestions: [
           {
@@ -1192,8 +1192,8 @@ export const LanguageRevisionGuides2 = [
           },
         ],
         commonMistakes: [
-          'Writing too little—aim for at least 200 words',
-          'Unclear organization—missing paragraph structure',
+          'Writing too little-aim for at least 200 words',
+          'Unclear organization-missing paragraph structure',
           'Generic writing without specific examples',
           'Careless spelling and punctuation errors',
         ],
@@ -1210,9 +1210,9 @@ export const LanguageRevisionGuides2 = [
           "Consider context and author's purpose",
         ],
         examTips: [
-          'Q1: Find key information from one or both texts—paraphrase clearly',
+          'Q1: Find key information from one or both texts-paraphrase clearly',
           'Q2: Identify language techniques (metaphor, simile, personification, rhetoric, tone) and explain their effect',
-          'Q3: Make a critical judgment about effectiveness—support with evidence',
+          'Q3: Make a critical judgment about effectiveness-support with evidence',
           'For literary text: comment on characterization, imagery, narrative style',
           'For non-fiction: analyse argumentative techniques, persuasive devices, structural choices',
         ],
@@ -1254,7 +1254,7 @@ export const LanguageRevisionGuides2 = [
           'Plan before writing: identify main points (explain) or plot points (narrate)',
           "For explanation: use connectives like 'therefore', 'as a result', 'this means'",
           'For narration: create interest through detail, dialogue, pace variation',
-          "Vary sentence structure—don't use all short or all long sentences",
+          "Vary sentence structure-don't use all short or all long sentences",
           'Proofread for spelling and punctuation',
         ],
         practiceQuestions: [
@@ -1274,7 +1274,7 @@ export const LanguageRevisionGuides2 = [
         commonMistakes: [
           'Unclear or rambling structure',
           'Not addressing the specific prompt',
-          'Insufficient development—too short',
+          'Insufficient development-too short',
           'Careless errors undermining credibility',
         ],
       },
@@ -1333,7 +1333,7 @@ export const LanguageRevisionGuides2 = [
           'Plan essays around themes, not individual texts',
           'Use comparative language: both, similarly, whereas, in contrast',
           'Quote from both texts in most paragraphs',
-          'Avoid alternating between texts—weave comparison throughout',
+          'Avoid alternating between texts-weave comparison throughout',
           'Consider why comparison is significant',
           'Address genre and contextual differences',
         ],
@@ -1355,7 +1355,7 @@ export const LanguageRevisionGuides2 = [
         commonMistakes: [
           'Treating texts separately instead of comparing',
           'Imbalanced coverage',
-          'Missing the point of comparison—why does it matter?',
+          'Missing the point of comparison-why does it matter?',
           'Not integrating quotations smoothly',
         ],
       },
@@ -1372,10 +1372,10 @@ export const LanguageRevisionGuides2 = [
         ],
         examTips: [
           'Balance time evenly across sections',
-          "Don't rush reading Section A—careful analysis is key",
+          "Don't rush reading Section A-careful analysis is key",
           'Allocate adequate time to writing questions (Section B)',
           'Leave 5 minutes to proofread writing',
-          'Track time carefully—watch the clock',
+          'Track time carefully-watch the clock',
           'If running out of time, prioritize Section B (where most marks are often awarded)',
         ],
         practiceQuestions: [
@@ -1407,7 +1407,7 @@ export const LanguageRevisionGuides2 = [
         examTips: [
           'Read widely: literary and non-fiction texts',
           'Analyze language and techniques across different genres',
-          'Write regularly—develop your natural style',
+          'Write regularly-develop your natural style',
           'Seek feedback on your writing from teachers or peers',
           'Revise using marking guides and sample answers',
           'Practice essay writing under timed conditions',
@@ -1451,13 +1451,13 @@ export const LanguageRevisionGuides3 = [
           'Listening and speaking skills: clarity, engagement, response to feedback',
         ],
         examTips: [
-          'For writing task: plan carefully—identify purpose, audience, form',
+          'For writing task: plan carefully-identify purpose, audience, form',
           'Use register appropriate to audience: formal for officials, casual for friends',
           'Structure writing clearly: introduction, development, conclusion',
           'For speaking: prepare brief notes, not full scripts',
           'Speak clearly and engage with your audience',
           'Listen actively and respond appropriately in conversations',
-          'Record spontaneous speech—not pre-learned scripts',
+          'Record spontaneous speech-not pre-learned scripts',
         ],
         practiceQuestions: [
           {
@@ -1499,7 +1499,7 @@ export const LanguageRevisionGuides3 = [
           'For persuasive texts: identify rhetorical questions, emotive language, statistics, expert opinion',
           'Writing task: plan structure before writing',
           'Aim for 400+ words in writing tasks',
-          'Proofread carefully—accuracy matters',
+          'Proofread carefully-accuracy matters',
         ],
         practiceQuestions: [
           {
@@ -1624,7 +1624,7 @@ export const LanguageRevisionGuides3 = [
           'Write in paragraphs: each with a clear focus',
           'Use topic sentences to guide readers',
           'Vary sentence length: short sentences for impact, longer for explanation',
-          'Use precise vocabulary—choose words carefully',
+          'Use precise vocabulary-choose words carefully',
           'Proofread: check for spelling, punctuation, sentence boundaries',
           'Read aloud to check flow and clarity',
         ],
@@ -1660,8 +1660,8 @@ export const LanguageRevisionGuides3 = [
           'For Component 2: Read all texts quickly before answering',
           'Allocate 5 minutes to planning each writing task',
           'Leave 10 minutes to proofread written work',
-          'For literature exam: plan essays carefully—5 minutes planning, 40-45 minutes writing',
-          "Don't rush—quality analysis is more valuable than length",
+          'For literature exam: plan essays carefully-5 minutes planning, 40-45 minutes writing',
+          "Don't rush-quality analysis is more valuable than length",
           'Check the clock regularly to avoid losing time',
         ],
         practiceQuestions: [
@@ -1704,7 +1704,7 @@ export const LanguageRevisionGuides3 = [
           'Spend first 5 minutes reading and annotating both texts',
           'Q1: Find key points from both texts, paraphrase, synthesize',
           'Q2: Identify language techniques, quote, explain effect',
-          'Q3: Make judgments about which is more effective—support with evidence',
+          'Q3: Make judgments about which is more effective-support with evidence',
           'Q4: Understand word meanings from context',
           'Q5: Deeper analysis of language choices and their cumulative effect',
           'Allocate 5-7 minutes per question based on marks',
@@ -1775,7 +1775,7 @@ export const LanguageRevisionGuides3 = [
           },
         ],
         commonMistakes: [
-          'Writing too little—especially for Q3',
+          'Writing too little-especially for Q3',
           'Not matching register to audience',
           'Unclear structure or rambling ideas',
           'Careless spelling and punctuation',
@@ -1884,7 +1884,7 @@ export const LanguageRevisionGuides3 = [
           'Prepare presentations thoroughly',
           'Speak clearly and at appropriate pace',
           'Make eye contact with audience',
-          'Listen actively to others—show engagement',
+          'Listen actively to others-show engagement',
           'Respond thoughtfully to questions or comments',
           "Develop your ideas: don't just read a script",
           'Practice speaking in front of others',
@@ -1919,7 +1919,7 @@ export const LanguageRevisionGuides3 = [
           'Component 1: 5 mins reading, then ~8-10 mins per question',
           'Component 2: 3 mins planning per question, appropriate writing time',
           'Leave 5 minutes to proofread writing tasks',
-          "Don't rush reading and annotation—careful analysis saves time later",
+          "Don't rush reading and annotation-careful analysis saves time later",
           'Watch the clock throughout the exam',
         ],
         practiceQuestions: [
@@ -1959,11 +1959,11 @@ export const LanguageRevisionGuides3 = [
         ],
         examTips: [
           'Read the passage carefully twice: once for overall understanding, once for detail',
-          'Read all questions before answering—helps guide your reading',
+          'Read all questions before answering-helps guide your reading',
           "Quote when answering factual questions to show you've found the right part",
           'For inference questions: support your answer with textual evidence',
           'Use language analysis terminology: metaphor, simile, tone, mood, effect',
-          "Explain effects thoroughly—don't just name techniques",
+          "Explain effects thoroughly-don't just name techniques",
           'Aim for 2-3 sentences per mark available',
         ],
         practiceQuestions: [
@@ -1984,7 +1984,7 @@ export const LanguageRevisionGuides3 = [
           'Quoting too much without paraphrasing',
           'Not supporting inferences with evidence',
           'Naming techniques without explaining effect',
-          'Answers too brief—not enough explanation',
+          'Answers too brief-not enough explanation',
           'Misunderstanding inference (assuming rather than deducing)',
         ],
       },
@@ -2040,14 +2040,14 @@ export const LanguageRevisionGuides3 = [
           'Synthesize points of similarity or difference',
           'Answer in full sentences, not lists',
           'Write approximately 200 words',
-          'Use your own words—avoid direct copying',
+          'Use your own words-avoid direct copying',
           'Demonstrate understanding of main ideas',
         ],
         examTips: [
           'Read both texts carefully, annotating key points',
           'Identify the focus of the question: similarities, differences, or both',
           'Select only the most important information',
-          'Paraphrase—show you understand the texts',
+          'Paraphrase-show you understand the texts',
           'Organize logically: similarities first then differences, or vice versa',
           "Use signposting: 'Similarly', 'Both', 'However', 'In contrast'",
           'Write in full sentences with clear paragraphing',
@@ -2114,7 +2114,7 @@ export const LanguageRevisionGuides3 = [
         ],
         commonMistakes: [
           'Plot summary instead of analysis',
-          'Weak textual support—few or no quotations',
+          'Weak textual support-few or no quotations',
           'Not addressing specific prompt',
           'Unclear argument or rambling discussion',
           'Essays too brief (under 300 words)',
@@ -2136,7 +2136,7 @@ export const LanguageRevisionGuides3 = [
           'Choose a topic you can speak about with confidence and enthusiasm',
           'Prepare notes (not a script) covering key points',
           'Practice speaking aloud beforehand',
-          'Speak clearly at a moderate pace—not too fast',
+          'Speak clearly at a moderate pace-not too fast',
           "Listen to marker's questions carefully",
           'Respond naturally (not from memory)',
           'Develop your ideas: explain, give examples, expand',
@@ -2154,7 +2154,7 @@ export const LanguageRevisionGuides3 = [
         commonMistakes: [
           'Reading directly from a script',
           'Speaking too quickly or unclearly',
-          'Not developing ideas—giving minimal responses',
+          'Not developing ideas-giving minimal responses',
           "Not engaging with the marker's questions",
           'Insufficient preparation leading to hesitation and silence',
         ],
@@ -2174,7 +2174,7 @@ export const LanguageRevisionGuides3 = [
           'Paper 2 Q1: 25-30 minutes for reading and summary writing',
           'Paper 2 Q2: 50-60 minutes for essay planning and writing',
           'Leave 5-10 minutes overall to proofread written work',
-          "Don't rush—quality answers are worth more than quantity",
+          "Don't rush-quality answers are worth more than quantity",
           'Watch the clock and pace yourself accordingly',
         ],
         practiceQuestions: [
@@ -2186,7 +2186,7 @@ export const LanguageRevisionGuides3 = [
           },
         ],
         commonMistakes: [
-          'Spending too long on reading—missing time for writing',
+          'Spending too long on reading-missing time for writing',
           'Not planning writing answers adequately',
           'Rushing final answers due to time pressure',
           'Not proofreading final responses',
@@ -2206,11 +2206,11 @@ export const LanguageRevisionGuides3 = [
         ],
         examTips: [
           'Read widely: develop vocabulary and understanding of different writing styles',
-          'Analyse language in everything you read—develop habit of close analysis',
-          'Write regularly—practice essay writing and other forms',
+          'Analyse language in everything you read-develop habit of close analysis',
+          'Write regularly-practice essay writing and other forms',
           'Seek feedback from teachers and peers',
           "Use past papers and marking guides to understand markers' expectations",
-          "Develop your analytical voice—don't memorize essays",
+          "Develop your analytical voice-don't memorize essays",
           'Practice all components: reading, writing, speaking',
         ],
         practiceQuestions: [

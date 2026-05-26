@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: OG,
         width: 1200,
         height: 630,
-        alt: 'The English Hub — AI-assisted English improvement and intervention for schools',
+        alt: 'The English Hub - AI-assisted English improvement and intervention for schools',
       },
     ],
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 
 /* ───────────────────── Main Page ───────────────────── */
 //
-// 02 May 2026 — homepage is now a single-purpose board picker. Marketing
+// 02 May 2026 - homepage is now a single-purpose board picker. Marketing
 // sections (TryAFeature / AnthologyPricing / FinalCTA) were removed at
 // the founder's instruction so the homepage does one job: pick exam
 // board, land in your hub. Pricing + product copy live on dedicated
@@ -150,7 +150,7 @@ export default async function Home() {
               Studying for an English exam? Choose your board
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Individual learners and families can start straight away — pick your exam board and
+              Individual learners and families can start straight away - pick your exam board and
               land in a personalised revision hub.
             </p>
           </div>
@@ -250,7 +250,7 @@ function AudienceSection() {
     {
       icon: Users2,
       title: 'Teachers',
-      body: 'AI-assisted feedback, homework setting and clearer insight into class weaknesses — without adding workload.',
+      body: 'AI-assisted feedback, homework setting and clearer insight into class weaknesses - without adding workload.',
       href: '/teachers',
       cta: 'For teachers',
     },
@@ -275,7 +275,7 @@ function AudienceSection() {
           Built for students, teachers and schools
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-          One platform that supports the whole English department — from individual practice to
+          One platform that supports the whole English department - from individual practice to
           department-wide intelligence.
         </p>
       </div>
@@ -314,7 +314,7 @@ function SchoolPlatformSection() {
           From revision support to department-wide English intelligence
         </h2>
         <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          The English Hub is designed to become embedded in how an English department works —
+          The English Hub is designed to become embedded in how an English department works -
           assessment, feedback, intervention and reporting in one place, supporting teacher
           judgement rather than replacing it.
         </p>
@@ -390,7 +390,7 @@ function CapabilitiesSection() {
             AI-assisted marking, analytics and intervention
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            Designed to support teacher judgement and surface where attention is needed — not to
+            Designed to support teacher judgement and surface where attention is needed - not to
             replace professional assessment.
           </p>
         </div>
@@ -593,7 +593,7 @@ function FinalCtaSection() {
 
 // KS3 + EAL get a top-of-page rail with full-width cards. KS3 hits via
 // `?setBoard=ks3` so the middleware writes the board cookie and the
-// landing page loads the KS3-gated hub. EAL is its own route — no board
+// landing page loads the KS3-gated hub. EAL is its own route - no board
 // cookie change, because EAL is a learning track that runs alongside
 // any board choice.
 async function FeatureRail() {
@@ -715,10 +715,10 @@ type Board = {
   discClass: string
 }
 
-// 02 May 2026 — every homepage card sends the user into their Your Hub
+// 02 May 2026 - every homepage card sends the user into their Your Hub
 // at /revision with the board cookie set. The middleware validates
 // `?setBoard=<id>` against BOARDS, writes the cookie, and 307-redirects
-// to clean /revision — which then renders the personalised hub
+// to clean /revision - which then renders the personalised hub
 // (Poetry, Set Texts, Mock Papers, Practice, Progress, etc.) keyed off
 // that cookie. See business-docs/BOARD_NAVIGATION_MODEL.md.
 const GCSE_BOARDS: Board[] = [
@@ -762,7 +762,7 @@ const GCSE_BOARDS: Board[] = [
 // rail entry alone was not discoverable enough below the fold.
 const KS3_BOARDS: Board[] = [
   {
-    name: 'KS3 English (Years 7–9)',
+    name: 'KS3 English (Years 7-9)',
     initials: 'KS3',
     href: '/revision?setBoard=ks3',
     blurbKey: 'homepage.board.ks3.blurb',
@@ -912,7 +912,7 @@ async function BoardPickerSection({
                   </h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{blurbs[i]}</p>
-                {/* EAL support indicator — every board includes it. */}
+                {/* EAL support indicator - every board includes it. */}
                 <span
                   aria-label={ealSupportedAria}
                   className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground"
@@ -953,7 +953,7 @@ async function BoardPickerSection({
 }
 
 /*
- * 02 May 2026 — TryAFeatureSection / FEATURES dataset removed.
+ * 02 May 2026 - TryAFeatureSection / FEATURES dataset removed.
  *
  * The board picker is the only thing the homepage does now. The 3 demo
  * cards (AI feedback, mock papers, study plan) live inside Your Hub

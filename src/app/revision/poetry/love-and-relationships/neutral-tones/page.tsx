@@ -181,14 +181,14 @@ const poemData: PoemData = {
 <p>Hardy is associated with <strong>pessimism and determinism</strong> -- a worldview in which humans are subject to forces beyond their control, including the inevitable failure of love. His work often challenges the <strong>Victorian idealisation of romantic love</strong>.</p>
 <p>The poem reflects Hardy's belief that love is inherently <strong>deceptive</strong> -- it promises joy but delivers suffering. This aligns with the broader <strong>late Victorian disillusionment</strong> with Romantic ideals.</p>
 <p>Hardy was also influenced by <strong>Darwin's theory of evolution</strong>, which suggested an indifferent universe with no divine plan. The "God-curst sun" reflects a world where nature is not benevolent but hostile or uncaring.</p>`,
-  contextAr: `<p><strong>Thomas Hardy (1840–1928)</strong> كتب هالقصيدة في <strong>1867</strong>، بس ما نشرها إلا في 1898 في ديوان <em>Wessex Poems</em>. هي من أوّل قصائده، وتعكس تجربة شخصية في فشل الحب.</p>
-<p>Hardy مرتبط بنظرة <strong>التشاؤم والحتميّة</strong> — رؤية للعالم البشر فيها خاضعين لقوى أكبر منهم، منها الفشل الحتمي للحب. أعماله غالباً تحدّت <strong>المثاليّة الفيكتورية للحب الرومانسي</strong>.</p>
-<p>القصيدة تعكس قناعة Hardy بإن الحب في جوهره <strong>خدّاع</strong> — يوعد بالفرح بس يوصل المعاناة. هذي القناعة تتماشى مع <strong>خيبة أمل أواخر العصر الفيكتوري</strong> من المثل الرومانسية.</p>
+  contextAr: `<p><strong>Thomas Hardy (1840-1928)</strong> كتب هالقصيدة في <strong>1867</strong>، بس ما نشرها إلا في 1898 في ديوان <em>Wessex Poems</em>. هي من أوّل قصائده، وتعكس تجربة شخصية في فشل الحب.</p>
+<p>Hardy مرتبط بنظرة <strong>التشاؤم والحتميّة</strong> - رؤية للعالم البشر فيها خاضعين لقوى أكبر منهم، منها الفشل الحتمي للحب. أعماله غالباً تحدّت <strong>المثاليّة الفيكتورية للحب الرومانسي</strong>.</p>
+<p>القصيدة تعكس قناعة Hardy بإن الحب في جوهره <strong>خدّاع</strong> - يوعد بالفرح بس يوصل المعاناة. هذي القناعة تتماشى مع <strong>خيبة أمل أواخر العصر الفيكتوري</strong> من المثل الرومانسية.</p>
 <p>Hardy كمان كان متأثّر بـ<strong>نظرية التطور لـDarwin</strong>، اللي اقترحت إن الكون غير مبالي وما فيه خطة إلهية. عبارة "God-curst sun" تعكس عالم الطبيعة فيه ما تكون رحيمة، بل عدائيّة أو غير مبالية.</p>`,
   summary: `The speaker recalls standing by a pond on a winter day with a former lover. The landscape is drained of colour -- a white sun, grey leaves, starving ground. Everything reflects the lifelessness of their dying relationship.\n\nThe lover's eyes wander with disinterest. Empty words pass between them. The lover's smile is described as "the deadest thing" -- a devastating oxymoron that captures performed affection masking genuine bitterness.\n\nIn the final stanza, the speaker reflects on what this experience taught them: that love deceives and causes pain. The poem returns to its opening images -- face, sun, tree, pond -- showing the speaker is trapped in a cycle of painful memory with no escape or resolution.`,
-  summaryAr: `المتكلّم (ذكر) يتذكّر يوم وقف يم بِركة في يوم شتوي مع حبيبته (أنثى) السابقة. المنظر مسحوب منه اللون — شمس بيضاء، أوراق رماديّة، أرض جوعى. كل شي يعكس انعدام الحياة في علاقتهم المحتضرة.\n\nعيون الحبيبة (أنثى) تطوف بدون اهتمام. كلمات فاضية تمر بينهم. ابتسامتها توصف بإنها "the deadest thing" — تناقض موجع يلتقط مظهر العاطفة المؤدّى الذي يخفي مرارة حقيقيّة.\n\nفي المقطع الأخير، المتكلّم (ذكر) يتأمّل في الدرس اللي علّمته هالتجربة: إن الحب يخدع ويسبّب الألم. القصيدة ترجع لصورها الافتتاحيّة — الوجه، الشمس، الشجرة، البِركة — وتبيّن إن المتكلّم (ذكر) محاصر في دورة من الذكرى المؤلمة بدون مفرّ ولا حلّ.`,
+  summaryAr: `المتكلّم (ذكر) يتذكّر يوم وقف يم بِركة في يوم شتوي مع حبيبته (أنثى) السابقة. المنظر مسحوب منه اللون - شمس بيضاء، أوراق رماديّة، أرض جوعى. كل شي يعكس انعدام الحياة في علاقتهم المحتضرة.\n\nعيون الحبيبة (أنثى) تطوف بدون اهتمام. كلمات فاضية تمر بينهم. ابتسامتها توصف بإنها "the deadest thing" - تناقض موجع يلتقط مظهر العاطفة المؤدّى الذي يخفي مرارة حقيقيّة.\n\nفي المقطع الأخير، المتكلّم (ذكر) يتأمّل في الدرس اللي علّمته هالتجربة: إن الحب يخدع ويسبّب الألم. القصيدة ترجع لصورها الافتتاحيّة - الوجه، الشمس، الشجرة، البِركة - وتبيّن إن المتكلّم (ذكر) محاصر في دورة من الذكرى المؤلمة بدون مفرّ ولا حلّ.`,
   formAndStructure: `Form: Four quatrains (four-line stanzas) with a regular structure that creates an appearance of order and control, belying the emotional devastation within.\n\nRhyme scheme: ABBA -- the enclosed/envelope rhyme scheme mirrors the poem's cyclical structure and the speaker's sense of entrapment. The first and last lines of each stanza rhyme, creating a closed, inescapable pattern.\n\nCyclical structure: The final stanza returns to the images of the first (pond, sun, tree, leaves), showing the speaker is trapped in a loop of painful memory. No progress or healing has occurred.\n\nColour palette: The poem is deliberately drained of colour -- white, grey, neutral. The "neutral tones" of the title refer both to the emotional flatness and the visual bleakness.\n\nTemporal structure: Stanzas 1-3 describe the past event; stanza 4 shifts to the present, showing the lasting psychological damage.\n\nEllipsis: The trailing dots after "a-wing...." create an unfinished, haunting quality, suggesting the memory refuses to end cleanly.`,
-  formAndStructureAr: `Form: أربع رباعيّات (مقاطع من أربعة أبيات) ببنية منتظمة، تخلق مظهر من النظام والسيطرة، يخفي خلفه الدمار العاطفي اللي بداخل القصيدة.\n\nRhyme scheme: ABBA — نظام القافية المغلق/الظرفي (envelope) يحاكي البنية الدوريّة للقصيدة وإحساس المتكلّم (ذكر) بالاحتجاز. البيتان الأوّل والأخير من كل مقطع يتقافيان، فيخلقان نمط مقفول ما له مفر.\n\nالبنية الدوريّة: المقطع الأخير يرجع لصور المقطع الأوّل (البِركة، الشمس، الشجرة، الأوراق)، فيبيّن إن المتكلّم (ذكر) محاصر في حلقة من الذكرى المؤلمة. ما فيه تقدّم ولا شفاء.\n\nلوحة الألوان: القصيدة مسحوب منها اللون عن قصد — أبيض، رمادي، محايد. عبارة "neutral tones" في العنوان تشير في نفس الوقت لرتابة العاطفة وقتامة المنظر.\n\nالبنية الزمنيّة: المقاطع 1–3 توصف الحدث الماضي؛ المقطع 4 ينتقل للحاضر، فيبيّن الضرر النفسي اللي يستمر.\n\nنقاط الحذف (Ellipsis): النقاط اللي تتعلّق بعد "a-wing...." تخلق إحساس بعدم اكتمال ومطاردة، وتوحي إن الذكرى ترفض إنها تنتهي بشكل نظيف.`,
+  formAndStructureAr: `Form: أربع رباعيّات (مقاطع من أربعة أبيات) ببنية منتظمة، تخلق مظهر من النظام والسيطرة، يخفي خلفه الدمار العاطفي اللي بداخل القصيدة.\n\nRhyme scheme: ABBA - نظام القافية المغلق/الظرفي (envelope) يحاكي البنية الدوريّة للقصيدة وإحساس المتكلّم (ذكر) بالاحتجاز. البيتان الأوّل والأخير من كل مقطع يتقافيان، فيخلقان نمط مقفول ما له مفر.\n\nالبنية الدوريّة: المقطع الأخير يرجع لصور المقطع الأوّل (البِركة، الشمس، الشجرة، الأوراق)، فيبيّن إن المتكلّم (ذكر) محاصر في حلقة من الذكرى المؤلمة. ما فيه تقدّم ولا شفاء.\n\nلوحة الألوان: القصيدة مسحوب منها اللون عن قصد - أبيض، رمادي، محايد. عبارة "neutral tones" في العنوان تشير في نفس الوقت لرتابة العاطفة وقتامة المنظر.\n\nالبنية الزمنيّة: المقاطع 1-3 توصف الحدث الماضي؛ المقطع 4 ينتقل للحاضر، فيبيّن الضرر النفسي اللي يستمر.\n\nنقاط الحذف (Ellipsis): النقاط اللي تتعلّق بعد "a-wing...." تخلق إحساس بعدم اكتمال ومطاردة، وتوحي إن الذكرى ترفض إنها تنتهي بشكل نظيف.`,
   keyQuotes: [
     {
       quote: 'the sun was white, as though chidden of God',
@@ -205,7 +205,7 @@ const poemData: PoemData = {
         'Personification presents the earth itself as malnourished. The ground mirrors the emotional starvation of the relationship -- both are depleted and dying.',
       themes: ['Nature', 'Depletion', 'Suffering'],
       analysisAr:
-        'التشخيص يقدّم الأرض نفسها على إنها سيّئة التغذية. الأرض تعكس المجاعة العاطفيّة في العلاقة — كلاهما منهك ويموت.',
+        'التشخيص يقدّم الأرض نفسها على إنها سيّئة التغذية. الأرض تعكس المجاعة العاطفيّة في العلاقة - كلاهما منهك ويموت.',
       themesAr: ['الطبيعة', 'النضوب', 'المعاناة'],
     },
     {
@@ -214,7 +214,7 @@ const poemData: PoemData = {
         'The ash tree pun suggests passion burned to ash. "Gray" -- the dominant colour -- represents emotional neutrality, the absence of both love and hate.',
       themes: ['Death of love', 'Neutrality', 'Wordplay'],
       analysisAr:
-        'التورية في "ash" (شجرة الدردار ورماد النار) توحي إن العاطفة احترقت ل رماد. كلمة "gray" — اللون السائد — تمثّل الحياد العاطفي، غياب الحب وغياب الكره مع بعض.',
+        'التورية في "ash" (شجرة الدردار ورماد النار) توحي إن العاطفة احترقت ل رماد. كلمة "gray" - اللون السائد - تمثّل الحياد العاطفي، غياب الحب وغياب الكره مع بعض.',
       themesAr: ['موت الحب', 'الحياد', 'التورية'],
     },
     {
@@ -223,7 +223,7 @@ const poemData: PoemData = {
         'The lover\'s wandering eyes show disengagement. The speaker has become a "tedious riddle" -- something once intriguing now boring. Love has made familiarity breed contempt.',
       themes: ['Disillusionment', 'Boredom', 'Loss'],
       analysisAr:
-        'عيون الحبيبة (أنثى) اللي تطوف تبيّن انفصال. المتكلّم (ذكر) صار "tedious riddle" — شي كان مثير وصار الحين ممل. الحب خلّى الألفة تولّد الاحتقار.',
+        'عيون الحبيبة (أنثى) اللي تطوف تبيّن انفصال. المتكلّم (ذكر) صار "tedious riddle" - شي كان مثير وصار الحين ممل. الحب خلّى الألفة تولّد الاحتقار.',
       themesAr: ['خيبة الأمل', 'الملل', 'الفقد'],
     },
     {
@@ -232,7 +232,7 @@ const poemData: PoemData = {
         'The poem\'s most devastating line. An oxymoron -- a dead smile -- captures the horror of performed emotion when genuine feeling has died. The superlative "deadest" is absolute.',
       themes: ['Death imagery', 'Performance', 'Falseness'],
       analysisAr:
-        'أكثر بيت موجع في القصيدة. تناقض — ابتسامة ميتة — يلتقط بشاعة العاطفة المؤدّاة لما يكون الإحساس الصادق مات. صيغة التفضيل "deadest" مطلقة.',
+        'أكثر بيت موجع في القصيدة. تناقض - ابتسامة ميتة - يلتقط بشاعة العاطفة المؤدّاة لما يكون الإحساس الصادق مات. صيغة التفضيل "deadest" مطلقة.',
       themesAr: ['صور الموت', 'الأداء', 'الزيف'],
     },
     {
@@ -241,7 +241,7 @@ const poemData: PoemData = {
         'A paradox that captures love in its final moments -- still technically alive but with no purpose except to complete the process of dying. Grimly ironic.',
       themes: ['Paradox', 'Death of love', 'Irony'],
       analysisAr:
-        'مفارقة تلتقط الحب في لحظاته الأخيرة — لين الحين حي شكلياً، بس بدون أي غرض غير إكمال عمليّة الاحتضار. مفارقة قاتمة.',
+        'مفارقة تلتقط الحب في لحظاته الأخيرة - لين الحين حي شكلياً، بس بدون أي غرض غير إكمال عمليّة الاحتضار. مفارقة قاتمة.',
       themesAr: ['المفارقة', 'موت الحب', 'السخريّة'],
     },
     {
@@ -250,7 +250,7 @@ const poemData: PoemData = {
         'Hardy\'s thesis: love is fundamentally deceptive. "Keen" means both sharp (painful) and eager -- the speaker has learned this lesson intensely and applies it universally.',
       themes: ['Pessimism', 'Deception', 'Disillusionment'],
       analysisAr:
-        'فرضيّة Hardy: الحب في جوهره خدّاع. كلمة "keen" تحمل معنيين: حادّ (مؤلم) ومتلهّف — المتكلّم (ذكر) تعلّم هذا الدرس بحدّة ويطبّقه على كل شي.',
+        'فرضيّة Hardy: الحب في جوهره خدّاع. كلمة "keen" تحمل معنيين: حادّ (مؤلم) ومتلهّف - المتكلّم (ذكر) تعلّم هذا الدرس بحدّة ويطبّقه على كل شي.',
       themesAr: ['التشاؤم', 'الخداع', 'خيبة الأمل'],
     },
     {
@@ -259,7 +259,7 @@ const poemData: PoemData = {
         'The return to the opening image completes the cycle. "Grayish" slightly alters the original "gray" -- memory distorts even as it repeats. The speaker is trapped.',
       themes: ['Cyclical structure', 'Memory', 'Entrapment'],
       analysisAr:
-        'الرجوع للصورة الافتتاحيّة يكمل الدورة. "Grayish" تعدّل قليلاً "gray" الأصلية — الذاكرة تشوّه حتى وهي تكرّر. المتكلّم (ذكر) محاصر.',
+        'الرجوع للصورة الافتتاحيّة يكمل الدورة. "Grayish" تعدّل قليلاً "gray" الأصلية - الذاكرة تشوّه حتى وهي تكرّر. المتكلّم (ذكر) محاصر.',
       themesAr: ['البنية الدوريّة', 'الذاكرة', 'الاحتجاز'],
     },
   ],
@@ -271,7 +271,7 @@ const poemData: PoemData = {
         'The entire landscape -- white sun, grey leaves, starving ground -- mirrors the emotional desolation. Hardy creates a world where nature itself has lost the will to live.',
       lineRef: 1,
       effectAr:
-        'المشهد كله — شمس بيضاء، أوراق رماديّة، أرض جوعى — يعكس الخراب العاطفي. Hardy يخلق عالم الطبيعة نفسها فقدت إرادة الحياة فيه.',
+        'المشهد كله - شمس بيضاء، أوراق رماديّة، أرض جوعى - يعكس الخراب العاطفي. Hardy يخلق عالم الطبيعة نفسها فقدت إرادة الحياة فيه.',
     },
     {
       device: 'Oxymoron',
@@ -384,7 +384,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hardy removes colour — the sun is "white", leaves are "grey". This drained palette matches the emotional neutrality of the failed love.',
+      'Hardy removes colour - the sun is "white", leaves are "grey". This drained palette matches the emotional neutrality of the failed love.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -394,13 +394,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A beautiful smile',
-      'The smile is false and lifeless — the relationship is beyond saving',
+      'The smile is false and lifeless - the relationship is beyond saving',
       'Shyness',
       'A genuine sad smile',
     ],
     correctIndex: 1,
     explanation:
-      'The smile is deader than dead leaves — forced, insincere, representing total death of feeling. The superlative "deadest" emphasises extinction.',
+      'The smile is deader than dead leaves - forced, insincere, representing total death of feeling. The superlative "deadest" emphasises extinction.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -427,7 +427,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The final stanza returns to the pond. The speaker is trapped in this memory — it defines all subsequent experiences of love.',
+      'The final stanza returns to the pond. The speaker is trapped in this memory - it defines all subsequent experiences of love.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -453,7 +453,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Cheerfulness',
-      'The bleak landscape mirrors emotional deadness — nature reflects human feeling',
+      'The bleak landscape mirrors emotional deadness - nature reflects human feeling',
       'Decoration',
       'Suspense',
     ],
@@ -469,13 +469,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It stays personal',
-      'The memory becomes a universal lesson — "keen lessons that love deceives"',
+      'The memory becomes a universal lesson - "keen lessons that love deceives"',
       'New character introduced',
       'Hope offered',
     ],
     correctIndex: 1,
     explanation:
-      'The pond scene becomes not just one memory but "keen lessons" about love\'s inevitable deception — it colours all future relationships.',
+      'The pond scene becomes not just one memory but "keen lessons" about love\'s inevitable deception - it colours all future relationships.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -503,10 +503,10 @@ const REVISION_TOPICS = [
     summary:
       'Neutral Tones explores the death of love, bleakness of memory, and how one painful experience defines all future relationships.',
     keyPoints: [
-      'Love as deception — "keen lessons that love deceives"',
-      'Emotional deadness — all warmth and colour drained',
-      'Memory as trap — speaker locked in cyclical loop',
-      'Pessimism — love is doomed to fail',
+      'Love as deception - "keen lessons that love deceives"',
+      'Emotional deadness - all warmth and colour drained',
+      'Memory as trap - speaker locked in cyclical loop',
+      'Pessimism - love is doomed to fail',
     ],
   },
   {
@@ -514,10 +514,10 @@ const REVISION_TOPICS = [
     summary:
       'Hardy uses pathetic fallacy, drained colour palette, and death imagery to create total emotional extinction.',
     keyPoints: [
-      '"Neutral tones" — white, grey, ash remove all warmth',
-      '"The deadest thing" — superlative death imagery',
-      'Pathetic fallacy — landscape mirrors dead relationship',
-      '"Starving sod" — even the earth is dying',
+      '"Neutral tones" - white, grey, ash remove all warmth',
+      '"The deadest thing" - superlative death imagery',
+      'Pathetic fallacy - landscape mirrors dead relationship',
+      '"Starving sod" - even the earth is dying',
     ],
   },
   {
@@ -525,10 +525,10 @@ const REVISION_TOPICS = [
     summary:
       'Four quatrains with ABBA rhyme creating an enclosed, trapped structure mirroring inescapable memory.',
     keyPoints: [
-      'ABBA rhyme — enclosing structure traps the speaker',
-      'Cyclical — begins and ends at the pond',
+      'ABBA rhyme - enclosing structure traps the speaker',
+      'Cyclical - begins and ends at the pond',
       'Regular form contrasts with disordered emotions',
-      'Past tense throughout — memory becomes permanent',
+      'Past tense throughout - memory becomes permanent',
     ],
   },
 ]
@@ -563,7 +563,7 @@ export default function NeutralTonesPage() {
   return (
     <div className="space-y-6">
       <CourseJsonLd
-        name="Neutral Tones by Thomas Hardy — Analysis & Annotations"
+        name="Neutral Tones by Thomas Hardy - Analysis & Annotations"
         description="Line-by-line analysis of Neutral Tones with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

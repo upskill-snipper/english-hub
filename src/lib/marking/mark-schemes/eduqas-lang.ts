@@ -1,8 +1,8 @@
 // ─── WJEC Eduqas GCSE English Language Mark Scheme ──────────────────────────
 // Component 1: 20th Century Literature Reading and Creative Prose Writing
-//   (1 hour 45 minutes, 80 marks — Reading 40 + Writing 40)
+//   (1 hour 45 minutes, 80 marks - Reading 40 + Writing 40)
 // Component 2: 19th and 21st Century Non-fiction Reading and Transactional/
-//   Persuasive Writing (2 hours, 80 marks — Reading 40 + Writing 40)
+//   Persuasive Writing (2 hours, 80 marks - Reading 40 + Writing 40)
 // Based on the WJEC Eduqas C700QS specification.
 //
 // Sources:
@@ -15,8 +15,8 @@ import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
 /**
  * Scale an AO's full-range bands proportionally to a per-question maxMarks.
  *
- * The shared AO definitions below carry their full bands (e.g. AO1 0–10, AO6
- * 0–16). When the AO is reused on a question worth fewer marks (e.g. A1's AO1
+ * The shared AO definitions below carry their full bands (e.g. AO1 0-10, AO6
+ * 0-16). When the AO is reused on a question worth fewer marks (e.g. A1's AO1
  * is only 5 marks, A5's AO6 is only 5 marks), the band ranges must be scaled
  * to match, otherwise the mark-scheme coverage test sums the original
  * (unscaled) top-band marks across questions and over-counts the paper total.
@@ -42,7 +42,7 @@ function scaleAO(
 
 const ao1Reading: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 — Identify and interpret',
+  label: 'AO1 - Identify and interpret',
   description:
     'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
   maxMarks: 10,
@@ -109,7 +109,7 @@ const ao1Reading: AssessmentObjective = {
 
 const ao2Language: AssessmentObjective = {
   id: 'AO2',
-  label: 'AO2 — Analyse language',
+  label: 'AO2 - Analyse language',
   description:
     'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.',
   maxMarks: 10,
@@ -180,7 +180,7 @@ const ao2Language: AssessmentObjective = {
 
 const ao3LangReading: AssessmentObjective = {
   id: 'AO3',
-  label: "AO3 — Compare writers' ideas and perspectives",
+  label: "AO3 - Compare writers' ideas and perspectives",
   description:
     "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
   maxMarks: 10,
@@ -251,7 +251,7 @@ const ao3LangReading: AssessmentObjective = {
 
 const ao4Evaluation: AssessmentObjective = {
   id: 'AO4',
-  label: 'AO4 — Evaluate critically',
+  label: 'AO4 - Evaluate critically',
   description: 'Evaluate texts critically and support this with appropriate textual references.',
   maxMarks: 10,
   weighting: 0.125,
@@ -322,7 +322,7 @@ const ao4Evaluation: AssessmentObjective = {
 
 const ao5Writing: AssessmentObjective = {
   id: 'AO5',
-  label: 'AO5 — Content and organisation',
+  label: 'AO5 - Content and organisation',
   description:
     'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
   maxMarks: 24,
@@ -398,7 +398,7 @@ const ao5Writing: AssessmentObjective = {
 
 const ao6TechnicalAccuracy: AssessmentObjective = {
   id: 'AO6',
-  label: 'AO6 — Technical accuracy',
+  label: 'AO6 - Technical accuracy',
   description:
     'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
   maxMarks: 16,

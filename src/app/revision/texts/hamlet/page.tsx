@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Hamlet — Study Guide | The English Hub',
+    title: 'Hamlet - Study Guide | The English Hub',
     description:
       'In-depth study guide for Hamlet by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Hamlet — Study Guide',
+  title: 'Hamlet - Study Guide',
   description:
     'In-depth study guide for Hamlet by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -610,7 +610,7 @@ export default async function HamletPage() {
   return (
     <>
       <CourseJsonLd
-        name="Hamlet — Complete A-Level Study Guide"
+        name="Hamlet - Complete A-Level Study Guide"
         description="In-depth study guide for Hamlet covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
       />
       <BreadcrumbJsonLd

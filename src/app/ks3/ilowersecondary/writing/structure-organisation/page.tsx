@@ -18,11 +18,11 @@ const W92C = YEAR9_CODES.find((c) => c.code === 'W9.2C')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: `Structure & organisation — writing skill ${SKILL.code} masterclass`,
+    title: `Structure & organisation - writing skill ${SKILL.code} masterclass`,
     description:
       'A KS3 iLowerSecondary English masterclass on structuring and organising writing: whole-text shape, topic sentences, paragraph construction, and linking paragraphs with a range of methods.',
   },
-  title: `Structure & organisation — writing skill ${SKILL.code}`,
+  title: `Structure & organisation - writing skill ${SKILL.code}`,
   description:
     'A KS3 iLowerSecondary English masterclass on structuring and organising writing: whole-text shape, topic sentences, paragraph construction, and linking paragraphs with a range of methods.',
   alternates: { canonical: PAGE_URL },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const LINKING_TOOLBOX: { method: string; how: string; example: string }[] = [
   {
     method: 'Connectives & conjunctive adverbs',
-    how: 'Signal the logical relationship between one paragraph and the next — addition, contrast, cause, sequence or conclusion.',
+    how: 'Signal the logical relationship between one paragraph and the next - addition, contrast, cause, sequence or conclusion.',
     example: 'Consequently, the closure of the bus route does not only affect commuters.',
   },
   {
@@ -44,7 +44,7 @@ const LINKING_TOOLBOX: { method: string; how: string; example: string }[] = [
   {
     method: 'A repeated motif',
     how: 'Carry an image, object or phrase from paragraph to paragraph so the reader feels a deliberate, controlled return.',
-    example: 'The empty chair appeared again — this time at the head of the table.',
+    example: 'The empty chair appeared again - this time at the head of the table.',
   },
   {
     method: 'Time and place shifts',
@@ -77,7 +77,7 @@ const PLANNING_SKELETON: { stage: string; purpose: string }[] = [
   {
     stage: 'Development paragraph 3',
     purpose:
-      'Counter-view or a widening of scope, then a return to your line — this shows control rather than a list of unconnected ideas.',
+      'Counter-view or a widening of scope, then a return to your line - this shows control rather than a list of unconnected ideas.',
   },
   {
     stage: 'Closing (1 short paragraph)',
@@ -127,7 +127,7 @@ export default async function StructureOrganisationPage() {
         <span>Structure &amp; organisation</span>
       </p>
 
-      <h1>Structure &amp; organisation — writing skill {SKILL.code}</h1>
+      <h1>Structure &amp; organisation - writing skill {SKILL.code}</h1>
       <p className="lead">
         {SKILL.title}. This masterclass shows you how to shape a whole text to achieve your
         intention and purpose, how to build a paragraph that does its job, and how to stitch
@@ -139,7 +139,7 @@ export default async function StructureOrganisationPage() {
         <h2>What skill {SKILL.code} actually asks for</h2>
         <p className="text-sm text-muted-foreground">
           In Section B, organisation is rewarded under {WAO1.code}: <em>{WAO1.descriptor}</em> The
-          three sub-skills below are the whole of {SKILL.code} — every paragraph you write should be
+          three sub-skills below are the whole of {SKILL.code} - every paragraph you write should be
           serving one of them.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-3">
@@ -198,14 +198,14 @@ export default async function StructureOrganisationPage() {
         <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
           The vocabulary climbs from <em>some sequencing with awkward transitions</em>, to{' '}
           <em>clear control</em>, to <em>coherence throughout</em>, and finally to{' '}
-          <em>complete control</em>. To climb a band you do not need more ideas — you need cleaner
+          <em>complete control</em>. To climb a band you do not need more ideas - you need cleaner
           topic sentences and stronger links between paragraphs.
         </p>
       </section>
 
       {/* ── Organising the whole text ───────────────────────────────── */}
       <section className="my-10">
-        <h2>Step 1 — Organise the whole text for your purpose</h2>
+        <h2>Step 1 - Organise the whole text for your purpose</h2>
         <p className="text-sm text-muted-foreground">
           The shape of the piece should be chosen by its purpose, not decided as you go. Pick the
           spine before you write a sentence.
@@ -216,7 +216,7 @@ export default async function StructureOrganisationPage() {
               To argue or persuade
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              A <strong>point–evidence–explanation</strong> (P-E-E) spine: each paragraph makes one
+              A <strong>point-evidence-explanation</strong> (P-E-E) spine: each paragraph makes one
               claim, supports it, then explains its effect on the reader, building to your strongest
               point.
             </p>
@@ -244,17 +244,17 @@ export default async function StructureOrganisationPage() {
 
       {/* ── Topic sentences & paragraph construction ────────────────── */}
       <section className="my-10">
-        <h2>Step 2 — Build the paragraph: the topic sentence</h2>
+        <h2>Step 2 - Build the paragraph: the topic sentence</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           A topic sentence announces what the paragraph is about and how it connects to your overall
           line. If a reader could cover the paragraph and still know its job from the first sentence
           alone, it is doing its work. Everything after the topic sentence should develop, prove or
-          illustrate it — nothing should wander off it.
+          illustrate it - nothing should wander off it.
         </p>
         <div className="not-prose mt-4 grid gap-3 lg:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              Before — disorganised
+              Before - disorganised
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               The library shuts at four now. I used to do my homework there and it was quiet. My
@@ -265,7 +265,7 @@ export default async function StructureOrganisationPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              After — reorganised
+              After - reorganised
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               <strong>
@@ -274,7 +274,7 @@ export default async function StructureOrganisationPage() {
               </strong>{' '}
               Until this year, its reading room filled every afternoon with pupils who had nowhere
               quieter at home. Now the doors close at four, those same students are left with an
-              expensive café or the street. For many of us, the library was not a luxury — it was
+              expensive café or the street. For many of us, the library was not a luxury - it was
               the only option.
             </p>
           </div>
@@ -289,7 +289,7 @@ export default async function StructureOrganisationPage() {
 
       {/* ── Linking toolbox ─────────────────────────────────────────── */}
       <section className="my-10">
-        <h2>Step 3 — Link paragraphs with a range of methods</h2>
+        <h2>Step 3 - Link paragraphs with a range of methods</h2>
         <p className="text-sm text-muted-foreground">
           The top bands reward a <em>range</em> of linking methods, not the same connective every
           time. Reaching for &ldquo;Firstly… Secondly… Finally&rdquo; on its own keeps you low;
@@ -318,7 +318,7 @@ export default async function StructureOrganisationPage() {
         <h2>A planning skeleton for a Section B form</h2>
         <p className="text-sm text-muted-foreground">
           Use this five-part skeleton for a typical letter, recount or article task. Spend two or
-          three minutes filling it in before you write — a planned shape is the difference between{' '}
+          three minutes filling it in before you write - a planned shape is the difference between{' '}
           <em>clear control</em> and a piece that drifts.
         </p>
         <div className="not-prose mt-4 grid gap-3">

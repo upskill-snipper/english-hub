@@ -516,7 +516,7 @@ function assertBalancedOptions(word: VocabWord): void {
       // eslint-disable-next-line no-console
       console.warn(
         `[vocab-builder] Distractor for "${word.word}" is ${d.length} chars; ` +
-          `correct definition is ${correctLen} chars (allowed ${Math.round(min)}–${Math.round(max)}). ` +
+          `correct definition is ${correctLen} chars (allowed ${Math.round(min)}-${Math.round(max)}). ` +
           `Distractor: "${d}"`,
       )
     }

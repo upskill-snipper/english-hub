@@ -113,7 +113,7 @@ export async function requireAdmin(): Promise<{
     where: { supabaseUserId: authUser.id },
     select: { id: true, email: true, role: true },
   })
-  // Fallback for pre-backfill or mismatched rows — logged as a warning.
+  // Fallback for pre-backfill or mismatched rows - logged as a warning.
   const user =
     prismaUser ??
     (await prisma.user.findUnique({

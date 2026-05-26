@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -11,11 +11,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'The Great Gatsby — Study Guide | The English Hub',
+    title: 'The Great Gatsby - Study Guide | The English Hub',
     description:
       'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
   },
-  title: 'The Great Gatsby — Study Guide',
+  title: 'The Great Gatsby - Study Guide',
   description:
     'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -299,7 +299,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The green light represents Gatsby's hope of reuniting with Daisy, and by extension the American Dream — always just out of reach across the water.",
+      "The green light represents Gatsby's hope of reuniting with Daisy, and by extension the American Dream - always just out of reach across the water.",
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -422,7 +422,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is joking',
-      "He genuinely believes he can restart his 1917 romance with Daisy exactly where it left off — the novel's defining delusion",
+      "He genuinely believes he can restart his 1917 romance with Daisy exactly where it left off - the novel's defining delusion",
       'He is talking about history books',
       'He is quoting someone else',
     ],
@@ -444,7 +444,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Nick\'s retrospective verdict — "They were careless people, Tom and Daisy" — is the novel\'s most damning moral statement and frames the Buchanans as the true villains of the story.',
+      'Nick\'s retrospective verdict - "They were careless people, Tom and Daisy" - is the novel\'s most damning moral statement and frames the Buchanans as the true villains of the story.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -454,7 +454,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Hundreds of party guests',
-      "Almost no one — Nick, Gatsby's father Henry Gatz, Owl Eyes and a few servants",
+      "Almost no one - Nick, Gatsby's father Henry Gatz, Owl Eyes and a few servants",
       'Daisy and Tom',
       'Meyer Wolfshiem',
     ],
@@ -470,7 +470,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He inherited it',
-      'Bootlegging and organised crime, connected through Meyer Wolfshiem — the supposedly meritocratic dream is built on lawbreaking',
+      'Bootlegging and organised crime, connected through Meyer Wolfshiem - the supposedly meritocratic dream is built on lawbreaking',
       'He earned it honestly',
       'It is never addressed',
     ],
@@ -557,7 +557,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Fitzgerald's own experience of being an outsider pursuing a wealthy woman informs Gatsby's story, and his ambivalent position — enchanted by the rich but clear-eyed about them — gives the novel its characteristic tone.",
+      "Fitzgerald's own experience of being an outsider pursuing a wealthy woman informs Gatsby's story, and his ambivalent position - enchanted by the rich but clear-eyed about them - gives the novel its characteristic tone.",
     topic: 'Context',
     difficulty: 'grade-9',
   },
@@ -593,7 +593,7 @@ const REVISION_TOPICS = [
       'Gatsby loves an idea of Daisy he has cultivated for five years, and the real woman cannot match the fantasy.',
     keyPoints: [
       'The reunion scene: Gatsby throws shirts onto the bed',
-      '"Her voice is full of money" — love and wealth are inseparable',
+      '"Her voice is full of money" - love and wealth are inseparable',
       'Daisy cannot say she never loved Tom',
       "Gatsby takes the blame for Myrtle's death",
       'His dream "must have seemed so close he could hardly fail to grasp it"',
@@ -614,9 +614,9 @@ const REVISION_TOPICS = [
     topic: 'Illusion vs Reality and Symbols',
     summary: 'Fitzgerald uses recurring symbols to expose the gap between appearance and truth.',
     keyPoints: [
-      'The green light — unreachable hope',
-      'The eyes of Doctor T. J. Eckleburg — absent moral witness',
-      'The Valley of Ashes — industrial poverty behind the glamour',
+      'The green light - unreachable hope',
+      'The eyes of Doctor T. J. Eckleburg - absent moral witness',
+      'The Valley of Ashes - industrial poverty behind the glamour',
       "Gatsby's invented name, accent and Oxford story",
       'Nick\'s dual position "within and without"',
     ],
@@ -642,7 +642,7 @@ export default async function TheGreatGatsbyPage() {
   return (
     <>
       <CourseJsonLd
-        name="The Great Gatsby — Complete A-Level Study Guide"
+        name="The Great Gatsby - Complete A-Level Study Guide"
         description="In-depth study guide for The Great Gatsby covering plot, characters, themes, key quotations, historical context and exam essay plans for A-Level English Literature."
       />
       <BreadcrumbJsonLd

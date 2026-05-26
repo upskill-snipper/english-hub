@@ -28,13 +28,13 @@ const keyQuotations = [
       'Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner!',
     speaker: 'Narrator (Stave 1)',
     analysis:
-      "Dickens uses a list of aggressive, monosyllabic adjectives to establish Scrooge's miserly nature. The exclamatory 'Oh!' creates an intimate, storytelling tone, as if the narrator is sharing gossip. Each adjective intensifies the previous one, building a picture of relentless greed. The word 'sinner' introduces a moral and religious dimension — Scrooge's avarice is not just a personality flaw but a spiritual failing.",
+      "Dickens uses a list of aggressive, monosyllabic adjectives to establish Scrooge's miserly nature. The exclamatory 'Oh!' creates an intimate, storytelling tone, as if the narrator is sharing gossip. Each adjective intensifies the previous one, building a picture of relentless greed. The word 'sinner' introduces a moral and religious dimension - Scrooge's avarice is not just a personality flaw but a spiritual failing.",
   },
   {
     quote: 'Are there no prisons? Are there no workhouses?',
     speaker: 'Scrooge (Stave 1)',
     analysis:
-      "Scrooge's rhetorical questions reveal his callous attitude to poverty. He believes the poor are the responsibility of institutions, not individuals. The repetition of 'Are there no' is dismissive and contemptuous. Dickens uses these lines to criticise the Victorian attitude that the Poor Law and workhouses were adequate responses to poverty — institutions that Dickens himself had experienced and despised.",
+      "Scrooge's rhetorical questions reveal his callous attitude to poverty. He believes the poor are the responsibility of institutions, not individuals. The repetition of 'Are there no' is dismissive and contemptuous. Dickens uses these lines to criticise the Victorian attitude that the Poor Law and workhouses were adequate responses to poverty - institutions that Dickens himself had experienced and despised.",
   },
   {
     quote: 'If they would rather die, they had better do it, and decrease the surplus population',
@@ -46,19 +46,19 @@ const keyQuotations = [
     quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard',
     speaker: "Marley's Ghost (Stave 1)",
     analysis:
-      "Marley's chain is a powerful symbol of the consequences of selfishness. The metaphor of forging a chain 'link by link' suggests that sin is cumulative — each selfish act adds to the burden. The repetition creates a sense of relentless accumulation. Marley serves as a warning to Scrooge (and the reader): failure to help others in life leads to punishment after death.",
+      "Marley's chain is a powerful symbol of the consequences of selfishness. The metaphor of forging a chain 'link by link' suggests that sin is cumulative - each selfish act adds to the burden. The repetition creates a sense of relentless accumulation. Marley serves as a warning to Scrooge (and the reader): failure to help others in life leads to punishment after death.",
   },
   {
     quote: 'a solitary child, neglected by his friends',
     speaker: 'Narrator (Stave 2)',
     analysis:
-      "The Ghost of Christmas Past shows Scrooge his lonely childhood. The adjective 'solitary' and the past participle 'neglected' evoke sympathy for the young Scrooge and begin to explain his defensive, isolated adult personality. Dickens suggests that Scrooge's miserliness is partly a response to childhood trauma — a wall built to prevent further emotional pain. This humanises Scrooge and makes his redemption believable.",
+      "The Ghost of Christmas Past shows Scrooge his lonely childhood. The adjective 'solitary' and the past participle 'neglected' evoke sympathy for the young Scrooge and begin to explain his defensive, isolated adult personality. Dickens suggests that Scrooge's miserliness is partly a response to childhood trauma - a wall built to prevent further emotional pain. This humanises Scrooge and makes his redemption believable.",
   },
   {
     quote: 'Another idol has displaced me... a golden one',
     speaker: 'Belle (Stave 2)',
     analysis:
-      "Belle's metaphor compares money to an idol — a false god that Scrooge worships instead of love. The word 'displaced' suggests that Scrooge has actively replaced human connection with the pursuit of wealth. The 'golden idol' alludes to the Biblical golden calf, associating Scrooge's greed with idolatry and sin. This moment represents the turning point where Scrooge chose money over love.",
+      "Belle's metaphor compares money to an idol - a false god that Scrooge worships instead of love. The word 'displaced' suggests that Scrooge has actively replaced human connection with the pursuit of wealth. The 'golden idol' alludes to the Biblical golden calf, associating Scrooge's greed with idolatry and sin. This moment represents the turning point where Scrooge chose money over love.",
   },
   {
     quote: 'God bless us, every one!',
@@ -70,38 +70,38 @@ const keyQuotations = [
     quote: 'If these shadows remain unaltered by the Future, the child will die',
     speaker: 'The Ghost of Christmas Present (Stave 3)',
     analysis:
-      "This conditional statement about Tiny Tim's fate creates urgency and emotional pressure. The word 'shadows' suggests that the future is not fixed — it can be changed. Dickens uses Tiny Tim's potential death to give Scrooge (and the reader) a personal, emotional stake in social reform. The Ghost also throws Scrooge's earlier words about 'surplus population' back at him, forcing him to confront his own cruelty.",
+      "This conditional statement about Tiny Tim's fate creates urgency and emotional pressure. The word 'shadows' suggests that the future is not fixed - it can be changed. Dickens uses Tiny Tim's potential death to give Scrooge (and the reader) a personal, emotional stake in social reform. The Ghost also throws Scrooge's earlier words about 'surplus population' back at him, forcing him to confront his own cruelty.",
   },
   {
     quote:
       'This boy is Ignorance. This girl is Want. Beware them both... but most of all beware this boy',
     speaker: 'The Ghost of Christmas Present (Stave 3)',
     analysis:
-      "The allegorical children represent society's greatest failings. 'Ignorance' and 'Want' are capitalised as abstract nouns, giving them the weight of universal truths. The Ghost's warning to 'most of all beware this boy' suggests that ignorance is more dangerous than poverty — it is ignorance of suffering that allows it to continue. This is Dickens's direct address to his middle-class readers.",
+      "The allegorical children represent society's greatest failings. 'Ignorance' and 'Want' are capitalised as abstract nouns, giving them the weight of universal truths. The Ghost's warning to 'most of all beware this boy' suggests that ignorance is more dangerous than poverty - it is ignorance of suffering that allows it to continue. This is Dickens's direct address to his middle-class readers.",
   },
   {
     quote: 'I will honour Christmas in my heart, and try to keep it all the year',
     speaker: 'Scrooge (Stave 4)',
     analysis:
-      "Scrooge's pledge marks his transformation. The verb 'honour' elevates Christmas from a mere holiday to a moral principle. The phrase 'all the year' shows that Scrooge understands the lesson: generosity and compassion must not be seasonal but permanent. The word 'try' adds humility — Scrooge does not claim perfection but commits to effort. This encapsulates Dickens's message that redemption is always possible.",
+      "Scrooge's pledge marks his transformation. The verb 'honour' elevates Christmas from a mere holiday to a moral principle. The phrase 'all the year' shows that Scrooge understands the lesson: generosity and compassion must not be seasonal but permanent. The word 'try' adds humility - Scrooge does not claim perfection but commits to effort. This encapsulates Dickens's message that redemption is always possible.",
   },
   {
     quote: "He had been Tim's blood horse all the way from church, and had come home rampant",
     speaker: 'Narrator (Stave 3)',
     analysis:
-      "Bob Cratchit carrying Tiny Tim on his shoulders reveals the warmth and physical closeness of the Cratchit family, which stands in sharp contrast to Scrooge's isolation. The word 'rampant' suggests joyful energy despite their poverty. Dickens shows that the Cratchits are rich in love and generosity — the qualities Scrooge lacks despite his financial wealth.",
+      "Bob Cratchit carrying Tiny Tim on his shoulders reveals the warmth and physical closeness of the Cratchit family, which stands in sharp contrast to Scrooge's isolation. The word 'rampant' suggests joyful energy despite their poverty. Dickens shows that the Cratchits are rich in love and generosity - the qualities Scrooge lacks despite his financial wealth.",
   },
   {
     quote: 'Hard and sharp as flint, from which no steel had ever struck out generous fire',
     speaker: 'Narrator (Stave 1)',
     analysis:
-      "The simile compares Scrooge to flint — cold, hard, and ungenerous. The extended metaphor of fire is significant: fire represents warmth, generosity, and human connection, all of which Scrooge lacks. The word 'generous' personifies the fire, contrasting it with Scrooge's miserliness. The negative construction ('no steel had ever') suggests Scrooge's coldness is absolute and longstanding.",
+      "The simile compares Scrooge to flint - cold, hard, and ungenerous. The extended metaphor of fire is significant: fire represents warmth, generosity, and human connection, all of which Scrooge lacks. The word 'generous' personifies the fire, contrasting it with Scrooge's miserliness. The negative construction ('no steel had ever') suggests Scrooge's coldness is absolute and longstanding.",
   },
   {
     quote: 'Darkness is cheap, and Scrooge liked it',
     speaker: 'Narrator (Stave 1)',
     analysis:
-      "This short, blunt sentence reveals Scrooge's priorities. He prefers darkness because it costs nothing. The darkness also symbolises his moral and spiritual state — he is blind to the suffering around him. Dickens uses light and dark imagery throughout the novella: the ghosts bring light (literally and figuratively), while Scrooge inhabits darkness until his transformation.",
+      "This short, blunt sentence reveals Scrooge's priorities. He prefers darkness because it costs nothing. The darkness also symbolises his moral and spiritual state - he is blind to the suffering around him. Dickens uses light and dark imagery throughout the novella: the ghosts bring light (literally and figuratively), while Scrooge inhabits darkness until his transformation.",
   },
   {
     quote: 'I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy',
@@ -120,14 +120,14 @@ const keyQuotations = [
     quote: 'Scrooge was better than his word. He did it all, and infinitely more',
     speaker: 'Narrator (Stave 5)',
     analysis:
-      "The narrator's summary of Scrooge's transformation emphasises that his change is genuine, permanent, and exceeds expectations. The phrase 'infinitely more' suggests boundless generosity — the opposite of his earlier miserliness. Dickens's message is optimistic: people can change completely if they choose to. The narrator directly tells us Scrooge kept his promise, ensuring the reader leaves with hope.",
+      "The narrator's summary of Scrooge's transformation emphasises that his change is genuine, permanent, and exceeds expectations. The phrase 'infinitely more' suggests boundless generosity - the opposite of his earlier miserliness. Dickens's message is optimistic: people can change completely if they choose to. The narrator directly tells us Scrooge kept his promise, ensuring the reader leaves with hope.",
   },
   {
     quote:
       'No fog, no mist; clear, bright, jovial, stirring, cold; cold, piping for the blood to dance to',
     speaker: 'Narrator (Stave 5)',
     analysis:
-      "The weather on Christmas morning mirrors Scrooge's transformation. The negatives ('no fog, no mist') clear away the earlier darkness. The list of positive adjectives creates energy and optimism. The cold is now invigorating rather than threatening — even the physical world has been transformed by Scrooge's moral renewal. Dickens uses pathetic fallacy to reinforce the message of redemption.",
+      "The weather on Christmas morning mirrors Scrooge's transformation. The negatives ('no fog, no mist') clear away the earlier darkness. The list of positive adjectives creates energy and optimism. The cold is now invigorating rather than threatening - even the physical world has been transformed by Scrooge's moral renewal. Dickens uses pathetic fallacy to reinforce the message of redemption.",
   },
 ]
 

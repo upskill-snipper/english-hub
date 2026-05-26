@@ -35,7 +35,7 @@ export default async function ExamTechniquePage() {
     <>
       <ArticleJsonLd
         headline="Exam Technique Revision"
-        description="Interactive exam technique revision for GCSE English — essay structure, time management, and question types tailored to your exam board."
+        description="Interactive exam technique revision for GCSE English - essay structure, time management, and question types tailored to your exam board."
         datePublished="2026-04-01"
         url="https://theenglishhub.app/revision/exam-technique"
       />

@@ -82,7 +82,7 @@ describe('Mark scheme coverage audit', () => {
 
   describe.each(schemeEntries)('scheme: %s', (id, scheme) => {
     it('has a non-empty name (title)', () => {
-      // The production interface uses `title` for the human-readable name —
+      // The production interface uses `title` for the human-readable name -
       // there is no `name` field. Assert the equivalent.
       expect(typeof scheme.title).toBe('string')
       expect(scheme.title.trim().length).toBeGreaterThan(0)
@@ -146,7 +146,7 @@ describe('Mark scheme coverage audit', () => {
             offenders.map((o) => o.band).join(', '),
         )
       }
-      // Always pass — this test is informational.
+      // Always pass - this test is informational.
       expect(true).toBe(true)
     })
   })
@@ -165,7 +165,7 @@ describe('ExamBoard registry coverage', () => {
     const count = coverage.get(board) ?? 0
     expect(
       count,
-      `ExamBoard.${board} has zero registered mark schemes — every Prisma enum value must be backed by at least one scheme so the marking engine can resolve essays persisted with that board.`,
+      `ExamBoard.${board} has zero registered mark schemes - every Prisma enum value must be backed by at least one scheme so the marking engine can resolve essays persisted with that board.`,
     ).toBeGreaterThan(0)
   })
 

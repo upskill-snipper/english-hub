@@ -3,7 +3,7 @@
 // authenticated student. Responses are intentionally short-lived because
 // they reflect the user's most recent progress.
 //
-// Auth required — anonymous callers receive 401. The Children's Code
+// Auth required - anonymous callers receive 401. The Children's Code
 // gate (see `getFocusRecommendations`) further restricts output: when
 // `profiles.personalised_recommendations` is not explicitly true, an
 // empty array is returned.

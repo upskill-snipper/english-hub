@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare, Lock, ScrollText, Quote, Layers, Tag } from 'lucide-react'
@@ -27,7 +27,7 @@ const jsonLd = {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
     educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry — Paper 1 Section B',
+    targetName: 'Anthology Poetry - Paper 1 Section B',
   },
 }
 
@@ -107,7 +107,7 @@ const comparisons = [
     themes: ['Race', 'Identity', 'Defiance'],
   },
   {
-    title: 'If—',
+    title: 'If-',
     poet: 'Rudyard Kipling',
     href: '/igcse/edexcel/poetry/if',
     reason:

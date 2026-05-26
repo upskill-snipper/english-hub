@@ -354,7 +354,7 @@ const EXAM_CARDS: ExamCardData[] = [
   // BOARD_ID_TO_LEGACY mapping for 'ial-edexcel' matches them.
   {
     id: 'ial-wet01-full',
-    paperName: 'IAL Unit 1 — Poetry and Drama (WET01)',
+    paperName: 'IAL Unit 1 - Poetry and Drama (WET01)',
     paperType: 'literature',
     paperNumber: 1,
     examBoard: 'IAL',
@@ -378,7 +378,7 @@ const EXAM_CARDS: ExamCardData[] = [
   },
   {
     id: 'ial-wet02-full',
-    paperName: 'IAL Unit 2 — Prose (WET02)',
+    paperName: 'IAL Unit 2 - Prose (WET02)',
     paperType: 'literature',
     paperNumber: 2,
     examBoard: 'IAL',
@@ -391,7 +391,7 @@ const EXAM_CARDS: ExamCardData[] = [
     questions: [
       {
         number: 1,
-        label: 'Comparative prose essay — pre-1900 + post-1900 (AO1/2/3/4)',
+        label: 'Comparative prose essay - pre-1900 + post-1900 (AO1/2/3/4)',
         marks: 40,
         type: 'Comparative Analysis',
       },
@@ -401,7 +401,7 @@ const EXAM_CARDS: ExamCardData[] = [
   },
   {
     id: 'ial-wet03-full',
-    paperName: 'IAL Unit 3 — Poetry and Prose, A2 (WET03)',
+    paperName: 'IAL Unit 3 - Poetry and Prose, A2 (WET03)',
     paperType: 'literature',
     paperNumber: 1,
     examBoard: 'IAL',
@@ -430,7 +430,7 @@ const EXAM_CARDS: ExamCardData[] = [
   },
   {
     id: 'ial-wet04-full',
-    paperName: 'IAL Unit 4 — Shakespeare + Pre-1900 Drama (WET04)',
+    paperName: 'IAL Unit 4 - Shakespeare + Pre-1900 Drama (WET04)',
     paperType: 'literature',
     paperNumber: 2,
     examBoard: 'IAL',
@@ -812,7 +812,7 @@ const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
   'cambridge-0990': ['CAIE', 'Cambridge', 'Cambridge 0990'],
   'cambridge-0475': ['CAIE', 'Cambridge', 'Cambridge 0475'],
   'ial-edexcel': ['Edexcel', 'IAL'],
-  // UK A-Level boards — no mock exams authored yet; keep both generic tags
+  // UK A-Level boards - no mock exams authored yet; keep both generic tags
   'aqa-a-level': ['AQA', 'A-Level'],
   'edexcel-a-level': ['Edexcel', 'A-Level'],
   'ocr-a-level': ['OCR', 'A-Level'],
@@ -848,7 +848,7 @@ export default function MockExamsPage() {
     )
   }, [effectiveBoard, userBoard, isBoardHydrated, boardParam])
 
-  // Additional unit-level filter — matches paper codes like "WET01" or
+  // Additional unit-level filter - matches paper codes like "WET01" or
   // exam ids containing "WET04-full". Only applies when `?unit=...` is
   // explicitly passed; otherwise every board-scoped paper is shown.
   const unitScopedExams = useMemo(() => {
@@ -922,7 +922,7 @@ export default function MockExamsPage() {
             <Button size="lg" className="shadow-lg shadow-primary/20" render={<a href="#exams" />}>
               {t('mock.view_papers')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            {/* Sample-paper PDF coming soon — see public/sample-papers/ */}
+            {/* Sample-paper PDF coming soon - see public/sample-papers/ */}
             <Button
               variant="outline"
               size="lg"

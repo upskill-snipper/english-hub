@@ -14,7 +14,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description:
-    'Frequently asked questions about The English Hub — courses, mock exams, practice, accounts and billing. Redirects to our full FAQ page.',
+    'Frequently asked questions about The English Hub - courses, mock exams, practice, accounts and billing. Redirects to our full FAQ page.',
   alternates: { canonical: 'https://theenglishhub.app/faqs' },
 }
 

@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     // ── Find candidates ──────────────────────────────────────────────
     // Users whose account is ~90 days old AND whose subscription has at
     // least one successful payment (paymentCount >= 1). User.createdAt is
-    // the only stable "customer lifecycle start" we have — Subscription
+    // the only stable "customer lifecycle start" we have - Subscription
     // has no createdAt, and currentPeriodStart rolls forward each renewal.
     //
     // Limitations:
@@ -110,8 +110,8 @@ export async function POST(request: NextRequest) {
         modules_completed: 0,
         essays_submitted_count: essaysCount,
         mock_exams_taken: 0,
-        grade_start: '—',
-        grade_current: '—',
+        grade_start: '-',
+        grade_current: '-',
       })
 
       if (result.ok) {

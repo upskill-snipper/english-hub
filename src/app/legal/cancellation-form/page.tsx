@@ -2,12 +2,12 @@ import { permanentRedirect } from 'next/navigation'
 
 export const metadata = {
   alternates: { canonical: 'https://theenglishhub.app/legal/cancellation-form' },
-  // Hide from search index — old SEO traffic is preserved via the 308.
+  // Hide from search index - old SEO traffic is preserved via the 308.
   robots: { index: false, follow: false },
 }
 
 /**
- * Legacy cancellation form — superseded by the Stripe Customer Portal.
+ * Legacy cancellation form - superseded by the Stripe Customer Portal.
  *
  * Subscription cancellations are now self-served via the hosted Stripe
  * portal (opened from `/account/billing` → "Manage Subscription"), which

@@ -12,7 +12,7 @@
  *
  * The client-side `fireTrustpilotInvite` only calls `tp('createInvitation')`
  * when `canFire:true`, so the reservation row represents an actual invite
- * dispatch from the user's browser — same dedup semantics as a sent BCC row.
+ * dispatch from the user's browser - same dedup semantics as a sent BCC row.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ canFire: false, reason: eligibility.reason })
   }
 
-  // Atomic reserve — uses Supabase service role + partial unique index.
+  // Atomic reserve - uses Supabase service role + partial unique index.
   const reservation = await reserveInvite({
     userId: prismaUser.id,
     trigger,

@@ -89,7 +89,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The second apparition (a bloody child) tells Macbeth that "none of woman born shall harm Macbeth" — a prophecy Macduff later overturns.',
+      'The second apparition (a bloody child) tells Macbeth that "none of woman born shall harm Macbeth" - a prophecy Macduff later overturns.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -100,7 +100,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Soliloquy with hyperbole', 'Dramatic irony', 'Pathetic fallacy', 'Stichomythia'],
     correctIndex: 0,
     explanation:
-      "Macbeth's line is hyperbolic — exaggerating that not even an ocean could cleanse his guilt — spoken in private reflection after Duncan's murder.",
+      "Macbeth's line is hyperbolic - exaggerating that not even an ocean could cleanse his guilt - spoken in private reflection after Duncan's murder.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -141,7 +141,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Ambition', 'Nihilism / futility of life', 'Loyalty', 'Supernatural'],
     correctIndex: 1,
     explanation:
-      'Macbeth\'s "Tomorrow" soliloquy reflects nihilistic despair after Lady Macbeth\'s death — life is meaningless, brief and signifying nothing.',
+      'Macbeth\'s "Tomorrow" soliloquy reflects nihilistic despair after Lady Macbeth\'s death - life is meaningless, brief and signifying nothing.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -181,7 +181,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Macduff reveals he was delivered by Caesarean section — therefore not "of woman born" in the natural sense the prophecy implied.',
+      'Macduff reveals he was delivered by Caesarean section - therefore not "of woman born" in the natural sense the prophecy implied.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -206,7 +206,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The ghost — visible only to Macbeth — externalises his guilt and paranoia, fracturing the banquet's symbolic order of kingship.",
+      "The ghost - visible only to Macbeth - externalises his guilt and paranoia, fracturing the banquet's symbolic order of kingship.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -217,14 +217,14 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Lady Macbeth', 'Macbeth', 'Banquo', 'Duncan'],
     correctIndex: 1,
     explanation:
-      'Macbeth, weighing whether to kill Duncan in Act 1 Scene 7, recognises that ambition alone — not justice — drives him.',
+      'Macbeth, weighing whether to kill Duncan in Act 1 Scene 7, recognises that ambition alone - not justice - drives him.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'text-extra-018',
     topic: 'set-texts',
     question:
-      'What technique is used in "So foul and fair a day I have not seen" — Macbeth\'s first line?',
+      'What technique is used in "So foul and fair a day I have not seen" - Macbeth\'s first line?',
     options: ['Pathetic fallacy', 'Paradox / oxymoron', 'Iambic trimeter', 'Caesura'],
     correctIndex: 1,
     explanation:
@@ -253,7 +253,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "James I traced his lineage to Banquo, so Banquo's noble portrayal — and Fleance's survival — flattered the new Stuart king.",
+      "James I traced his lineage to Banquo, so Banquo's noble portrayal - and Fleance's survival - flattered the new Stuart king.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
@@ -275,7 +275,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['1912', '1914', '1945', '1946'],
     correctIndex: 0,
     explanation:
-      'The play is set in spring 1912 — before WWI and the Titanic — but was written in 1945, generating heavy dramatic irony.',
+      'The play is set in spring 1912 - before WWI and the Titanic - but was written in 1945, generating heavy dramatic irony.',
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -290,7 +290,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Birling boasts the Titanic is "absolutely unsinkable" — heavy dramatic irony for a 1945 audience who knew it sank weeks later.',
+      'Birling boasts the Titanic is "absolutely unsinkable" - heavy dramatic irony for a 1945 audience who knew it sank weeks later.',
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -335,7 +335,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Sheila', 'Mrs Birling', 'Mr Birling', 'Gerald'],
     correctIndex: 1,
     explanation:
-      'Mrs Birling, chairing the charity committee, denies Eva help and blames "the father of the child" — unaware it is her son Eric.',
+      'Mrs Birling, chairing the charity committee, denies Eva help and blames "the father of the child" - unaware it is her son Eric.',
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -350,7 +350,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "A 1945 audience would have read the Inspector's prophecy as a warning about WWI and WWII — the consequences of social irresponsibility.",
+      "A 1945 audience would have read the Inspector's prophecy as a warning about WWI and WWII - the consequences of social irresponsibility.",
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -360,7 +360,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Gerald Croft', 'Sheila Birling', 'Mrs Birling', 'Edna'],
     correctIndex: 1,
     explanation:
-      'Sheila accepts responsibility and changes morally — Priestley uses her (and Eric) to show younger people are "more impressionable".',
+      'Sheila accepts responsibility and changes morally - Priestley uses her (and Eric) to show younger people are "more impressionable".',
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -376,7 +376,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
   {
     id: 'text-extra-031',
     topic: 'set-texts',
-    question: 'Who says "But these girls aren\'t cheap labour — they\'re people"?',
+    question: 'Who says "But these girls aren\'t cheap labour - they\'re people"?',
     options: ['Sheila', 'Eric', 'Inspector Goole', 'Gerald'],
     correctIndex: 0,
     explanation:
@@ -395,7 +395,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Eric's alcoholism — and Mrs Birling's denial of it — exposes the gap between the family's outward respectability and inward failures.",
+      "Eric's alcoholism - and Mrs Birling's denial of it - exposes the gap between the family's outward respectability and inward failures.",
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -440,7 +440,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Birling\'s speech celebrates self-interest and rejects "community and all that nonsense" — the capitalist ethic Priestley critiques.',
+      'Birling\'s speech celebrates self-interest and rejects "community and all that nonsense" - the capitalist ethic Priestley critiques.',
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
 
@@ -499,7 +499,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
       '"It was the best of times, it was the worst of times."',
       '"Marley was dead: to begin with."',
       '"Bah! Humbug!"',
-      '"Once upon a time — of all the good days in the year, on Christmas Eve."',
+      '"Once upon a time - of all the good days in the year, on Christmas Eve."',
     ],
     correctIndex: 1,
     explanation:
@@ -523,7 +523,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Fred', 'Edward', 'Peter', 'Joe'],
     correctIndex: 0,
     explanation:
-      "Fred — son of Scrooge's sister Fan — embodies Christmas generosity and warmth, refusing to give up on his uncle.",
+      "Fred - son of Scrooge's sister Fan - embodies Christmas generosity and warmth, refusing to give up on his uncle.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -532,13 +532,13 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     question: "Why is Mr Fezziwig included in Scrooge's memories?",
     options: [
       'He cheated young Scrooge out of money',
-      'He is a foil — a generous employer Scrooge once admired',
+      'He is a foil - a generous employer Scrooge once admired',
       "He is Belle's father",
       "He is Marley's relative",
     ],
     correctIndex: 1,
     explanation:
-      "Fezziwig's warm Christmas party shows Scrooge that an employer's kindness costs little but means everything — a moral foil to himself.",
+      "Fezziwig's warm Christmas party shows Scrooge that an employer's kindness costs little but means everything - a moral foil to himself.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -547,13 +547,13 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     question: 'Why does Belle leave the young Scrooge?',
     options: [
       'He has been unfaithful',
-      'A "golden idol" — money — has displaced her in his heart',
+      'A "golden idol" - money - has displaced her in his heart',
       'Her family disapproves',
       'He moves abroad',
     ],
     correctIndex: 1,
     explanation:
-      'Belle releases Scrooge from their engagement because his love of gold has replaced his love for her — a key moment of moral loss.',
+      'Belle releases Scrooge from their engagement because his love of gold has replaced his love for her - a key moment of moral loss.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -563,7 +563,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ["Tiny Tim's", "Bob Cratchit's", 'His own', "Marley's"],
     correctIndex: 2,
     explanation:
-      "The Ghost of Christmas Yet to Come shows Scrooge his own neglected corpse, stripped by Old Joe's scavengers — a chilling self-confrontation.",
+      "The Ghost of Christmas Yet to Come shows Scrooge his own neglected corpse, stripped by Old Joe's scavengers - a chilling self-confrontation.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -588,7 +588,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Dickens's asyndetic list of present participles characterises Scrooge as relentlessly grasping — every verb piling on his greed.",
+      "Dickens's asyndetic list of present participles characterises Scrooge as relentlessly grasping - every verb piling on his greed.",
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -670,7 +670,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Dr Lanyon', 'Mr Utterson', 'Sir Danvers Carew', 'Poole'],
     correctIndex: 2,
     explanation:
-      'Hyde clubs the elderly MP Sir Danvers Carew to death with a cane — witnessed by a maid in moonlight.',
+      'Hyde clubs the elderly MP Sir Danvers Carew to death with a cane - witnessed by a maid in moonlight.',
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -680,7 +680,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Jekyll', 'Utterson', 'Enfield', 'Lanyon'],
     correctIndex: 1,
     explanation:
-      "Utterson's pun marks his decision to investigate Hyde's identity — a typically restrained legal joke from a curious lawyer.",
+      "Utterson's pun marks his decision to investigate Hyde's identity - a typically restrained legal joke from a curious lawyer.",
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -695,7 +695,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Late-Victorian fears of degeneration — humans "regressing" to ape-like ancestors — shape Hyde\'s simian, "troglodytic" descriptions.',
+      'Late-Victorian fears of degeneration - humans "regressing" to ape-like ancestors - shape Hyde\'s simian, "troglodytic" descriptions.',
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -730,7 +730,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Edinburgh', 'Foggy, gas-lit London', 'Paris', 'Bath'],
     correctIndex: 1,
     explanation:
-      "Stevenson's fog-shrouded London — its respectable façades hiding back-alleys — mirrors the duality of Jekyll's respectable surface and Hyde's underworld.",
+      "Stevenson's fog-shrouded London - its respectable façades hiding back-alleys - mirrors the duality of Jekyll's respectable surface and Hyde's underworld.",
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -755,7 +755,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Stevenson layers Enfield's tale, Lanyon's letter and Jekyll's statement around Utterson's investigation — a fragmented structure that builds suspense.",
+      "Stevenson layers Enfield's tale, Lanyon's letter and Jekyll's statement around Utterson's investigation - a fragmented structure that builds suspense.",
     boards: ['aqa', 'eduqas'],
   },
 
@@ -787,7 +787,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Romeo', 'The Chorus', 'Friar Lawrence', 'Prince Escalus'],
     correctIndex: 1,
     explanation:
-      'The Chorus speaks the sonnet-form Prologue, telling the audience the lovers are doomed — establishing fate as a controlling force.',
+      'The Chorus speaks the sonnet-form Prologue, telling the audience the lovers are doomed - establishing fate as a controlling force.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -797,7 +797,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['12', 'Not yet 14', '15', '16'],
     correctIndex: 1,
     explanation:
-      'Lady Capulet says Juliet "is not fourteen", and the Nurse remembers her exact age in Act 1 Scene 3 — she will turn 14 at Lammas-tide.',
+      'Lady Capulet says Juliet "is not fourteen", and the Nurse remembers her exact age in Act 1 Scene 3 - she will turn 14 at Lammas-tide.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -872,7 +872,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Friar John is shut up in a plague-quarantined house and cannot deliver the letter — fate, not malice, dooms the plan.',
+      'Friar John is shut up in a plague-quarantined house and cannot deliver the letter - fate, not malice, dooms the plan.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
@@ -889,7 +889,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The final corrupted commandment exposes the pigs' totalitarian betrayal — Orwell's satire of the Stalinist USSR.",
+      "The final corrupted commandment exposes the pigs' totalitarian betrayal - Orwell's satire of the Stalinist USSR.",
     boards: ['edexcel-igcse', 'aqa'],
   },
   {
@@ -899,7 +899,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Snowball', 'Napoleon', 'Old Major', 'Boxer'],
     correctIndex: 1,
     explanation:
-      'Napoleon — the Berkshire boar who drives Snowball (Trotsky) into exile and consolidates dictatorial power — represents Stalin.',
+      'Napoleon - the Berkshire boar who drives Snowball (Trotsky) into exile and consolidates dictatorial power - represents Stalin.',
     boards: ['edexcel-igcse', 'aqa'],
   },
   {
@@ -924,7 +924,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Piggy', 'Simon', 'Ralph', 'Sam'],
     correctIndex: 1,
     explanation:
-      "Simon is killed in a frenzied tribal dance just as he tries to share the truth about the dead parachutist — Golding's key turning point.",
+      "Simon is killed in a frenzied tribal dance just as he tries to share the truth about the dead parachutist - Golding's key turning point.",
     boards: ['edexcel-igcse', 'aqa', 'eduqas'],
   },
   {
@@ -934,7 +934,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['The signal fire', 'The conch shell', "Piggy's glasses", "The pig's head"],
     correctIndex: 1,
     explanation:
-      'The conch — symbol of democratic speech — explodes "into a thousand white fragments" as Piggy is killed by Roger\'s boulder.',
+      'The conch - symbol of democratic speech - explodes "into a thousand white fragments" as Piggy is killed by Roger\'s boulder.',
     boards: ['edexcel-igcse', 'aqa', 'eduqas'],
   },
   {
@@ -959,7 +959,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ["Slim's", "Curley's", "Crooks's", "Candy's"],
     correctIndex: 1,
     explanation:
-      "Lennie breaks Curley's wife's neck while stroking her hair, panicking when she struggles — the act forces George's final decision.",
+      "Lennie breaks Curley's wife's neck while stroking her hair, panicking when she struggles - the act forces George's final decision.",
     boards: ['edexcel-igcse', 'aqa'],
   },
   {
@@ -969,7 +969,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Candy', 'Crooks', 'Carlson', 'Whit'],
     correctIndex: 1,
     explanation:
-      'Crooks, the stable buck, lives apart in the harness room — Steinbeck uses him to expose the racism of 1930s ranch life.',
+      'Crooks, the stable buck, lives apart in the harness room - Steinbeck uses him to expose the racism of 1930s ranch life.',
     boards: ['edexcel-igcse', 'aqa'],
   },
   {
@@ -984,7 +984,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "George kills Lennie mercifully — echoing Carlson's shooting of Candy's dog — to prevent Curley's violent revenge.",
+      "George kills Lennie mercifully - echoing Carlson's shooting of Candy's dog - to prevent Curley's violent revenge.",
     boards: ['edexcel-igcse', 'aqa'],
   },
   {
@@ -994,7 +994,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Boxer', 'Squealer', 'Mollie', 'Benjamin'],
     correctIndex: 0,
     explanation:
-      'Boxer the cart-horse — "I will work harder" — embodies the loyal proletariat ultimately betrayed and sold to the knacker by the pigs.',
+      'Boxer the cart-horse - "I will work harder" - embodies the loyal proletariat ultimately betrayed and sold to the knacker by the pigs.',
     boards: ['edexcel-igcse', 'aqa'],
   },
 
@@ -1021,7 +1021,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Mrs Lyons', 'Mrs Johnstone', 'Linda', 'The Narrator'],
     correctIndex: 1,
     explanation:
-      "Mrs Johnstone, struggling with seven children, gives one twin (Edward) to Mrs Lyons — Russell's critique of class-determined fates.",
+      "Mrs Johnstone, struggling with seven children, gives one twin (Edward) to Mrs Lyons - Russell's critique of class-determined fates.",
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -1031,7 +1031,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Sammy', 'Edward', 'Mr Lyons', 'The Narrator'],
     correctIndex: 1,
     explanation:
-      'Mickey, broken by unemployment and prison, shoots Edward in the council chamber — and is in turn shot by the police.',
+      'Mickey, broken by unemployment and prison, shoots Edward in the council chamber - and is in turn shot by the police.',
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -1041,7 +1041,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Marilyn Monroe', 'Audrey Hepburn', 'Marlene Dietrich', 'Doris Day'],
     correctIndex: 0,
     explanation:
-      'Mrs Johnstone compares herself to Marilyn Monroe throughout — a motif tracking her decline from hopeful youth to despair.',
+      'Mrs Johnstone compares herself to Marilyn Monroe throughout - a motif tracking her decline from hopeful youth to despair.',
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -1091,7 +1091,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Eddie phones Immigration to report the cousins as illegal immigrants — the ultimate community betrayal in Red Hook's Italian-American world.",
+      "Eddie phones Immigration to report the cousins as illegal immigrants - the ultimate community betrayal in Red Hook's Italian-American world.",
     boards: ['aqa', 'eduqas'],
   },
   {
@@ -1139,7 +1139,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Walton's Arctic letters frame Victor's account, which itself frames the Creature's — a Russian-doll structure raising questions of reliability.",
+      "Walton's Arctic letters frame Victor's account, which itself frames the Creature's - a Russian-doll structure raising questions of reliability.",
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
@@ -1164,7 +1164,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Adèle', 'Bertha Mason', 'Grace Poole', 'Blanche Ingram'],
     correctIndex: 1,
     explanation:
-      "Bertha Mason — Rochester's first wife, brought from Jamaica — is confined upstairs and watched by Grace Poole.",
+      "Bertha Mason - Rochester's first wife, brought from Jamaica - is confined upstairs and watched by Grace Poole.",
     boards: ['aqa', 'edexcel', 'eduqas', 'edexcel-igcse'],
   },
   {
@@ -1189,7 +1189,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ["Mr Bingley's", "Mr Darcy's", "Mr Wickham's", "Mr Collins's"],
     correctIndex: 3,
     explanation:
-      "Elizabeth refuses the pompous clergyman Mr Collins (and later Darcy's first proposal) — both refusals scandalise her mother.",
+      "Elizabeth refuses the pompous clergyman Mr Collins (and later Darcy's first proposal) - both refusals scandalise her mother.",
     boards: ['aqa', 'edexcel', 'eduqas', 'edexcel-igcse'],
   },
 
@@ -1216,7 +1216,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Achebe takes the title from Yeats: "Things fall apart; the centre cannot hold" — framing the collapse of Igbo society under colonialism.',
+      'Achebe takes the title from Yeats: "Things fall apart; the centre cannot hold" - framing the collapse of Igbo society under colonialism.',
     boards: ['edexcel-igcse', 'cambridge-0475'],
   },
   {
@@ -1226,7 +1226,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Tom Robinson', 'Boo Radley', "Calpurnia's son", 'Walter Cunningham'],
     correctIndex: 0,
     explanation:
-      "Atticus defends Tom Robinson, falsely accused of raping Mayella Ewell — Lee's portrait of racial injustice in 1930s Alabama.",
+      "Atticus defends Tom Robinson, falsely accused of raping Mayella Ewell - Lee's portrait of racial injustice in 1930s Alabama.",
     boards: ['edexcel-igcse', 'cambridge-0475'],
   },
   {
@@ -1236,7 +1236,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     options: ['Mr Cunningham', 'Boo (Arthur) Radley', 'Mr Avery', 'Dolphus Raymond'],
     correctIndex: 1,
     explanation:
-      'Boo Radley — initially feared as a "malevolent phantom" — ultimately saves the children, embodying the "mockingbird" the title warns not to harm.',
+      'Boo Radley - initially feared as a "malevolent phantom" - ultimately saves the children, embodying the "mockingbird" the title warns not to harm.',
     boards: ['edexcel-igcse', 'cambridge-0475'],
   },
   {
@@ -1252,7 +1252,7 @@ export const setTextExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Christopher Boone's literal, pattern-loving voice — and his use of diagrams, prime-numbered chapters and lists — defines Haddon's narrative style.",
+      "Christopher Boone's literal, pattern-loving voice - and his use of diagrams, prime-numbered chapters and lists - defines Haddon's narrative style.",
     boards: ['edexcel-igcse', 'cambridge-0475'],
   },
 ]

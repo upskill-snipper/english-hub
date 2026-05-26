@@ -32,7 +32,7 @@ import { t } from '@/lib/i18n/t'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE Literature — The English Hub',
+    title: 'Edexcel IGCSE Literature - The English Hub',
     description:
       'Complete revision hub for Pearson Edexcel IGCSE English Literature. Paper 1 and Paper 2 breakdowns, set text guides, anthology poetry and exam technique.',
   },
@@ -53,7 +53,7 @@ interface TextEntry {
 
 const paper1Sections = [
   {
-    heading: 'Section A — Unseen Poetry',
+    heading: 'Section A - Unseen Poetry',
     label: 'Paper 1 Section A',
     detail: 'One question on a single unseen poem. Comment on language, structure and meaning.',
     href: '/igcse/edexcel/unseen-poetry',
@@ -66,12 +66,12 @@ const paper1Sections = [
     ],
   },
   {
-    heading: 'Section B — Anthology Poetry',
+    heading: 'Section B - Anthology Poetry',
     label: 'Paper 1 Section B',
     detail: 'One question comparing two poems from the Pearson Edexcel Poetry Anthology.',
     href: '/igcse/edexcel/poetry',
     subLinks: [
-      { label: 'If—', href: '/igcse/edexcel/poetry/if' },
+      { label: 'If-', href: '/igcse/edexcel/poetry/if' },
       { label: 'Remember', href: '/igcse/edexcel/poetry/remember' },
       { label: 'Sonnet 116', href: '/igcse/edexcel/poetry/sonnet-116' },
       { label: 'The Tyger', href: '/igcse/edexcel/poetry/the-tyger' },
@@ -79,7 +79,7 @@ const paper1Sections = [
     ],
   },
   {
-    heading: 'Section C — Modern Prose',
+    heading: 'Section C - Modern Prose',
     label: 'Paper 1 Section C',
     detail: 'One essay question on a studied modern prose text. Closed book.',
     href: '/igcse/edexcel/prose',
@@ -112,7 +112,7 @@ const paper1Sections = [
 
 const paper2Sections = [
   {
-    heading: 'Section A — Modern Drama',
+    heading: 'Section A - Modern Drama',
     label: 'Paper 2 Section A',
     detail: 'One extract-based question on a studied modern drama text.',
     href: '/igcse/edexcel/drama',
@@ -142,7 +142,7 @@ const paper2Sections = [
     ] as TextEntry[],
   },
   {
-    heading: 'Section B — Literary Heritage',
+    heading: 'Section B - Literary Heritage',
     label: 'Paper 2 Section B',
     detail: 'One essay question on a studied Shakespeare play. Closed book.',
     href: '/igcse/edexcel/shakespeare',
@@ -290,7 +290,7 @@ function SectionCard({
 }) {
   return (
     <div className="rounded-2xl border border-border/60 bg-card transition-all duration-200">
-      {/* Section header — clickable */}
+      {/* Section header - clickable */}
       <Link
         href={section.href}
         className="group/section flex items-center justify-between gap-3 p-5 pb-3"
@@ -341,7 +341,7 @@ function SectionCard({
 export default async function EdexcelIgcseHubPage() {
   const mismatch = await getBoardMismatchState(['edexcel-igcse'])
 
-  // All Literature set texts prescribed for Pearson Edexcel IGCSE — pulled
+  // All Literature set texts prescribed for Pearson Edexcel IGCSE - pulled
   // straight from the canonical set-texts data so this list stays in sync
   // with the rest of the site (no hard-coded counts).
   const setTexts = getSetTextsForBoard('edexcel-igcse')
@@ -361,7 +361,7 @@ export default async function EdexcelIgcseHubPage() {
     <>
       <CourseJsonLd
         name="Pearson Edexcel IGCSE English Literature (4ET1)"
-        description="Complete revision hub for Pearson Edexcel International GCSE English Literature 4ET1 — drama, prose, Shakespeare, anthology poetry, unseen poetry, and exam technique."
+        description="Complete revision hub for Pearson Edexcel International GCSE English Literature 4ET1 - drama, prose, Shakespeare, anthology poetry, unseen poetry, and exam technique."
         educationalLevel="IGCSE"
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/edexcel"
@@ -450,12 +450,12 @@ export default async function EdexcelIgcseHubPage() {
             </li>
             <li>
               the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-              &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+              &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
               anthology version when answering Edexcel questions.
             </li>
           </ol>
           <p className="text-body-xs text-muted-foreground">
-            © Pearson Education — quotations on individual set-text pages are short fair-dealing
+            © Pearson Education - quotations on individual set-text pages are short fair-dealing
             extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
             school-licensed editions.
           </p>

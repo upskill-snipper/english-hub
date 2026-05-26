@@ -12,12 +12,12 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   openGraph: {
-    title: 'Macbeth Act 2 — Scene-by-Scene Analysis | The English Hub',
+    title: 'Macbeth Act 2 - Scene-by-Scene Analysis | The English Hub',
     description:
       'Detailed GCSE analysis of Macbeth Act 2: the murder of Duncan, guilt and its aftermath, key quotes and language techniques.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-2' },
-  title: 'Macbeth Act 2 — Scene-by-Scene Analysis',
+  title: 'Macbeth Act 2 - Scene-by-Scene Analysis',
   description:
     'Detailed GCSE analysis of Macbeth Act 2: the murder of Duncan, guilt and its aftermath, key quotes and language techniques.',
 }
@@ -66,12 +66,12 @@ export default async function MacbethAct2Page() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <BookOpen className="mr-1 size-3 text-red-400" />
-              {_tr(`Act 2 — The Murder`)}
+              {_tr(`Act 2 - The Murder`)}
             </Badge>
             <Badge variant="outline">4 scenes</Badge>
           </div>
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            {_tr(`Macbeth — Act 2: Scene-by-Scene Analysis`)}
+            {_tr(`Macbeth - Act 2: Scene-by-Scene Analysis`)}
           </h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             Act 2 is the act of action and immediate consequence. Macbeth murders Duncan, is
@@ -87,7 +87,7 @@ export default async function MacbethAct2Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-red-400" />
-            {_tr(`Scene 1 — The Dagger Soliloquy`)}
+            {_tr(`Scene 1 - The Dagger Soliloquy`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -237,7 +237,7 @@ export default async function MacbethAct2Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-red-400" />
-            {_tr(`Scene 2 — The Murder and Its Aftermath`)}
+            {_tr(`Scene 2 - The Murder and Its Aftermath`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -393,7 +393,7 @@ export default async function MacbethAct2Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-red-400" />
-            {_tr(`Scene 3 — The Porter and the Discovery`)}
+            {_tr(`Scene 3 - The Porter and the Discovery`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -530,7 +530,7 @@ export default async function MacbethAct2Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="size-5 text-red-400" />
-            {_tr(`Scene 4 — Unnatural Events and Macbeth&apos;s Coronation`)}
+            {_tr(`Scene 4 - Unnatural Events and Macbeth&apos;s Coronation`)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -641,7 +641,7 @@ export default async function MacbethAct2Page() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <MessageSquare className="size-5 text-blue-400" />
-            {_tr(`Practice Exam Questions — Act 2`)}
+            {_tr(`Practice Exam Questions - Act 2`)}
           </CardTitle>
         </CardHeader>
         <CardContent>

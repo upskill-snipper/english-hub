@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: DESCRIPTION,
     alternates: { canonical: 'https://theenglishhub.app/assessment/reading/test' },
     openGraph: {
-      title: `${TITLE} — The English Hub`,
+      title: `${TITLE} - The English Hub`,
       description: DESCRIPTION,
     },
   }

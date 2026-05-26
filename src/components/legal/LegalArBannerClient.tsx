@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { lookup, type Locale } from '@/lib/i18n/dictionary'
 
 /**
- * Client-side mirror of LegalArBanner — for pages that are already
+ * Client-side mirror of LegalArBanner - for pages that are already
  * `'use client'` and can't await a server component. Reads the
  * `eh-lang` cookie via document.cookie (same path as `useT`) and
  * renders the same Khaleeji banner block when locale is AR.

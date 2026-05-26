@@ -12,7 +12,7 @@ const WAO2 = ASSESSMENT_OBJECTIVES.WAO2
 const SKILL_2_3 = WRITING_SKILLS.find((s) => s.code === '2.3')!
 
 export const metadata: Metadata = {
-  title: 'Grammar, punctuation & spelling (WAO2) — convey meaning accurately',
+  title: 'Grammar, punctuation & spelling (WAO2) - convey meaning accurately',
   description:
     `A masterclass on ${WAO2.code}: ${WAO2.descriptor} Learn sentence ` +
     'demarcation, the five punctuation marks the spec names, complex ' +
@@ -35,7 +35,7 @@ const BAND_TRANSLATIONS: BandTranslation[] = [
     marks: WAO2_GRID[0].marks,
     mustDo: [
       'Get the basics of grammar right in at least some sentences, and try a few complex connectives such as “although” or “because”.',
-      'Put a capital letter and a full stop on at least some sentences — examiners must be able to see where most sentences begin and end.',
+      'Put a capital letter and a full stop on at least some sentences - examiners must be able to see where most sentences begin and end.',
       'Spell ordinary, everyday words (the, was, they, said) correctly even if longer words slip.',
     ],
   },
@@ -53,7 +53,7 @@ const BAND_TRANSLATIONS: BandTranslation[] = [
     marks: WAO2_GRID[2].marks,
     mustDo: [
       'Write grammatically secure sentences and use complex connectives deliberately to develop a point across the sentence.',
-      'Demarcate every sentence correctly and choose punctuation that suits the meaning — a colon to introduce, a dash for an aside.',
+      'Demarcate every sentence correctly and choose punctuation that suits the meaning - a colon to introduce, a dash for an aside.',
       'Spell accurately, including ambitious vocabulary chosen because it is the right word, not to show off.',
     ],
   },
@@ -61,7 +61,7 @@ const BAND_TRANSLATIONS: BandTranslation[] = [
     level: 'S4',
     marks: WAO2_GRID[3].marks,
     mustDo: [
-      'Control grammar so fully that sentence shape becomes a tool — short for impact, long and layered for build-up.',
+      'Control grammar so fully that sentence shape becomes a tool - short for impact, long and layered for build-up.',
       'Demarcate flawlessly and use punctuation with sophistication: the semicolon, colon, dash and bracket all earn their place.',
       'Spell accurately and confidently, with ambitious choices that land precisely and never feel forced.',
     ],
@@ -90,7 +90,7 @@ const FAULTY_PARAGRAPH =
 const CORRECTED_PARAGRAPH =
   'The storm arrived without warning. The fishermen had not expected it, ' +
   'so they ran for the harbour wall. Captain Morrow shouted, “Hold the ' +
-  'ropes — she will not last!” The boats were tossed against the stones, ' +
+  'ropes - she will not last!” The boats were tossed against the stones, ' +
   'and their hulls began to crack. It was the worst night anyone could ' +
   'have remembered. The village’s oldest woman watched from her window; ' +
   'she knew the sea would take something before dawn. By morning, two ' +
@@ -99,7 +99,7 @@ const CORRECTED_PARAGRAPH =
 const FIXES: Fix[] = [
   {
     n: 1,
-    label: 'Capital letter — sentence start & proper noun',
+    label: 'Capital letter - sentence start & proper noun',
     was: 'the storm … captain morrow',
     now: 'The storm … Captain Morrow',
     why: 'Every sentence must open with a capital letter, and names of people (Morrow) are proper nouns that always take one.',
@@ -113,7 +113,7 @@ const FIXES: Fix[] = [
   },
   {
     n: 3,
-    label: 'Sentence demarcation — missing full stop',
+    label: 'Sentence demarcation - missing full stop',
     was: 'without warning, the fishermen',
     now: 'without warning. The fishermen',
     why: 'These were two separate ideas. A full stop ends the first sentence so the reader knows where it stops.',
@@ -122,19 +122,19 @@ const FIXES: Fix[] = [
     n: 4,
     label: 'Speech marks & punctuation of speech',
     was: 'shouted "hold the ropes she will not last."',
-    now: 'shouted, “Hold the ropes — she will not last!”',
+    now: 'shouted, “Hold the ropes - she will not last!”',
     why: 'Spoken words need a comma before the opening speech mark, a capital letter to start, and the end punctuation kept inside the closing speech mark.',
   },
   {
     n: 5,
-    label: 'Homophone — there / their',
+    label: 'Homophone - there / their',
     was: 'there hulls',
     now: 'their hulls',
     why: '“Their” shows possession (the hulls belonging to the boats). “There” refers to a place.',
   },
   {
     n: 6,
-    label: 'Grammar — “could of” → “could have”',
+    label: 'Grammar - “could of” → “could have”',
     was: 'could of remembered',
     now: 'could have remembered',
     why: '“Could of” is never correct; the modal verb “could” is followed by “have”. It only sounds like “of” when spoken.',
@@ -148,14 +148,14 @@ const FIXES: Fix[] = [
   },
   {
     n: 8,
-    label: 'Homophone — knew / new',
+    label: 'Homophone - knew / new',
     was: 'she new the sea',
     now: 'she knew the sea',
     why: '“Knew” is the past tense of “to know”. “New” means recently made.',
   },
   {
     n: 9,
-    label: 'Spelling — definately → definitely',
+    label: 'Spelling - definately → definitely',
     was: 'definately gone',
     now: 'definitely gone',
     why: 'A classic spelling trap. The word is built on “finite”: de-fin-ite-ly.',
@@ -182,7 +182,7 @@ const EFFECT_BANK: EffectEntry[] = [
     mark: 'Full stop (short sentence)',
     use: 'Cuts the rhythm for emphasis or shock after a longer build-up.',
     example:
-      'The crowd surged, the gates strained, the chant rose to a roar — and then the lights went out. Silence.',
+      'The crowd surged, the gates strained, the chant rose to a roar - and then the lights went out. Silence.',
   },
   {
     mark: 'Capital letters',
@@ -191,7 +191,7 @@ const EFFECT_BANK: EffectEntry[] = [
   },
   {
     mark: 'Exclamation mark (used sparingly)',
-    use: 'Conveys sudden alarm, command or strong feeling — one is powerful, several lose impact.',
+    use: 'Conveys sudden alarm, command or strong feeling - one is powerful, several lose impact.',
     example: '“Get back from the edge!” the guide called, her voice splitting the calm.',
   },
   {
@@ -227,7 +227,7 @@ const EFFECT_BANK: EffectEntry[] = [
   {
     mark: 'Dash (interruption / aside)',
     use: 'Creates a sharp break for an afterthought, a surprise or a sudden change of direction.',
-    example: 'He reached for the handle — and froze, because the door was already open.',
+    example: 'He reached for the handle - and froze, because the door was already open.',
   },
 ]
 
@@ -267,10 +267,10 @@ const SPELLING_TRAPS: { wrong: string; right: string; tip: string }[] = [
   { wrong: 'rythm', right: 'rhythm', tip: 'Rhythm Helps Your Two Hips Move.' },
   { wrong: 'arguement', right: 'argument', tip: 'Drop the e from “argue”: argu-ment.' },
   { wrong: 'enviroment', right: 'environment', tip: 'There is “iron” in the env-iron-ment.' },
-  { wrong: 'goverment', right: 'government', tip: 'Govern + ment — keep the hidden n.' },
+  { wrong: 'goverment', right: 'government', tip: 'Govern + ment - keep the hidden n.' },
   { wrong: 'beleive', right: 'believe', tip: 'Never beLIEve a LIE: i before e.' },
   { wrong: 'recieve', right: 'receive', tip: 'i before e, except after c: receive.' },
-  { wrong: 'wierd', right: 'weird', tip: 'Weird breaks the rule — e before i.' },
+  { wrong: 'wierd', right: 'weird', tip: 'Weird breaks the rule - e before i.' },
   { wrong: 'untill', right: 'until', tip: 'Only one l at the end of “until”.' },
   { wrong: 'tommorow', right: 'tomorrow', tip: 'One m, two r’s: to-morrow.' },
   { wrong: 'begining', right: 'beginning', tip: 'Double the n: begin-ning.' },

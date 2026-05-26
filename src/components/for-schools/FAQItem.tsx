@@ -2,7 +2,7 @@
 
 // Client island extracted from src/app/for-schools/page.tsx so the main
 // page can be a server component (Cycle 4 bundle shrink). This file is
-// the ONLY interactive piece — a simple open/close toggle on one FAQ.
+// the ONLY interactive piece - a simple open/close toggle on one FAQ.
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'

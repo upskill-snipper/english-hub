@@ -67,7 +67,7 @@ export default function ParentSettingsPage() {
   const [passwordMessage, setPasswordMessage] = useState<string | null>(null)
   const [passwordError, setPasswordError] = useState<string | null>(null)
 
-  // AI opt-out (Children's Code — GAP-12B)
+  // AI opt-out (Children's Code - GAP-12B)
   const [aiEnabled, setAiEnabled] = useState(true)
 
   // Save-state for notifications
@@ -87,7 +87,7 @@ export default function ParentSettingsPage() {
   }, [])
 
   function saveNotifications() {
-    // [P2:data] Supabase — update parent_profile.notifications
+    // [P2:data] Supabase - update parent_profile.notifications
     const next: ParentAccount = {
       ...(account ?? {}),
       notifications: {
@@ -123,7 +123,7 @@ export default function ParentSettingsPage() {
 
     setPasswordLoading(true)
     try {
-      // [P2:auth] Supabase — replace with supabase.auth.updateUser({ password })
+      // [P2:auth] Supabase - replace with supabase.auth.updateUser({ password })
       await new Promise((resolve) => setTimeout(resolve, 400))
       setPasswordMessage(t('parent.password_updated'))
       setCurrentPassword('')
@@ -164,7 +164,7 @@ export default function ParentSettingsPage() {
                 type="text"
                 value={mounted ? (account?.name ?? '') : ''}
                 readOnly
-                placeholder="—"
+                placeholder="-"
               />
             </div>
             <div className="space-y-1.5">
@@ -174,7 +174,7 @@ export default function ParentSettingsPage() {
                 type="email"
                 value={mounted ? (account?.email ?? '') : ''}
                 readOnly
-                placeholder="—"
+                placeholder="-"
               />
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function ParentSettingsPage() {
                 type="text"
                 value={mounted ? (account?.childName ?? '') : ''}
                 readOnly
-                placeholder="—"
+                placeholder="-"
               />
             </div>
             <div className="space-y-1.5">
@@ -196,7 +196,7 @@ export default function ParentSettingsPage() {
                 type="text"
                 value={mounted ? (account?.linkCode ?? '') : ''}
                 readOnly
-                placeholder="—"
+                placeholder="-"
                 className="uppercase tracking-wider"
               />
             </div>
@@ -289,7 +289,7 @@ export default function ParentSettingsPage() {
         </CardContent>
       </Card>
 
-      {/* AI Features — Children's Code compliance (GAP-12B) */}
+      {/* AI Features - Children's Code compliance (GAP-12B) */}
       <Card>
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
@@ -309,7 +309,7 @@ export default function ParentSettingsPage() {
               onCheckedChange={(checked: boolean) => {
                 setAiEnabled(checked)
                 setAiOptedOut(!checked)
-                // Sync to server for server-side enforcement (Children's Code — GAP-12B)
+                // Sync to server for server-side enforcement (Children's Code - GAP-12B)
                 fetch('/api/privacy/settings', {
                   method: 'PUT',
                   headers: { 'Content-Type': 'application/json' },

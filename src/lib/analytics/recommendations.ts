@@ -45,7 +45,7 @@ const HIGH_WEIGHT_TOPICS: Record<string, string[]> = {
 export function generateRecommendations(
   weakAreas: WeakArea[],
   classData: ClassAnalytics,
-  examBoard?: string
+  examBoard?: string,
 ): Recommendation[] {
   const recommendations: Recommendation[] = []
 
@@ -54,9 +54,7 @@ export function generateRecommendations(
   for (const area of criticalAreas) {
     // Find which students are struggling in this module
     const affectedStudents = classData.students.filter((s) =>
-      s.quizScores.some(
-        (q) => q.moduleId === area.moduleId && q.score < 50
-      )
+      s.quizScores.some((q) => q.moduleId === area.moduleId && q.score < 50),
     )
 
     recommendations.push({
@@ -75,14 +73,12 @@ export function generateRecommendations(
     (w) =>
       w.severity !== 'critical' &&
       w.totalStudentsAttempted > 0 &&
-      w.studentsBelowThreshold / w.totalStudentsAttempted > 0.5
+      w.studentsBelowThreshold / w.totalStudentsAttempted > 0.5,
   )
 
   for (const area of widespreadAreas) {
     const affectedStudents = classData.students.filter((s) =>
-      s.quizScores.some(
-        (q) => q.moduleId === area.moduleId && q.score < 50
-      )
+      s.quizScores.some((q) => q.moduleId === area.moduleId && q.score < 50),
     )
 
     recommendations.push({
@@ -105,14 +101,14 @@ export function generateRecommendations(
         highWeightTopics.some(
           (topic) =>
             w.moduleId.toLowerCase().includes(topic) ||
-            w.moduleName.toLowerCase().includes(topic.replace(/-/g, ' '))
-        )
+            w.moduleName.toLowerCase().includes(topic.replace(/-/g, ' ')),
+        ),
     )
 
     for (const area of highWeightWeakAreas) {
       // Avoid duplicating a P2 recommendation
       const alreadyRecommended = recommendations.some(
-        (r) => r.courseIds.includes(area.courseId) && r.title.includes(area.moduleName)
+        (r) => r.courseIds.includes(area.courseId) && r.title.includes(area.moduleName),
       )
       if (alreadyRecommended) continue
 
@@ -122,9 +118,7 @@ export function generateRecommendations(
         description: `"${area.moduleName}" is heavily weighted on the ${examBoard} exam and students averaged ${area.avgScore}% in "${area.courseName}".`,
         affectedStudentCount: area.totalStudentsAttempted,
         affectedStudentIds: classData.students
-          .filter((s) =>
-            s.quizScores.some((q) => q.moduleId === area.moduleId)
-          )
+          .filter((s) => s.quizScores.some((q) => q.moduleId === area.moduleId))
           .map((s) => s.studentId),
         suggestedAction: `Prioritise this topic in upcoming lessons. Assign the "${area.courseName}" modules as homework and revisit before mocks.`,
         courseIds: [area.courseId],
@@ -148,7 +142,7 @@ export function generateRecommendations(
 export function generateStudentRecommendations(
   studentAnalytics: StudentAnalytics,
   weakAreas: WeakArea[],
-  classAvgQuizScore?: number
+  classAvgQuizScore?: number,
 ): string[] {
   const recs: string[] = []
 
@@ -157,11 +151,11 @@ export function generateStudentRecommendations(
     const classWeak = weakAreas.find((w) => w.courseId === weakness.courseId)
     if (classWeak) {
       recs.push(
-        `Focus on "${weakness.courseName}" — your average is ${percentageToGCSEGradeLabel(weakness.avgScore)} vs the class average of ${percentageToGCSEGradeLabel(classWeak.avgScore)}.`
+        `Focus on "${weakness.courseName}" - your average is ${percentageToGCSEGradeLabel(weakness.avgScore)} vs the class average of ${percentageToGCSEGradeLabel(classWeak.avgScore)}.`,
       )
     } else {
       recs.push(
-        `Focus on "${weakness.courseName}" — your average is ${percentageToGCSEGradeLabel(weakness.avgScore)}. Try revisiting the course modules.`
+        `Focus on "${weakness.courseName}" - your average is ${percentageToGCSEGradeLabel(weakness.avgScore)}. Try revisiting the course modules.`,
       )
     }
   }
@@ -170,7 +164,7 @@ export function generateStudentRecommendations(
   for (const strength of studentAnalytics.strengths.slice(0, 2)) {
     if (classAvgQuizScore && strength.avgScore > classAvgQuizScore * 1.2) {
       recs.push(
-        `Great work on "${strength.courseName}" — you're performing above the class average!`
+        `Great work on "${strength.courseName}" - you're performing above the class average!`,
       )
     }
   }
@@ -178,29 +172,29 @@ export function generateStudentRecommendations(
   // ── Completion rate recommendations ───────────────────────────────────
   if (studentAnalytics.completionRate < 30) {
     recs.push(
-      `You've completed ${studentAnalytics.completionRate}% of your modules. Try to work through at least one module per week to stay on track.`
+      `You've completed ${studentAnalytics.completionRate}% of your modules. Try to work through at least one module per week to stay on track.`,
     )
   } else if (studentAnalytics.completionRate < 60) {
     recs.push(
-      `Good progress — ${studentAnalytics.completionRate}% of modules completed. Keep up the momentum to improve your predicted grade.`
+      `Good progress - ${studentAnalytics.completionRate}% of modules completed. Keep up the momentum to improve your predicted grade.`,
     )
   }
 
   // ── Trajectory-based advice ───────────────────────────────────────────
   if (studentAnalytics.trajectory === 'declining') {
     recs.push(
-      'Your scores have been declining recently. Consider revisiting earlier modules or asking your teacher for help.'
+      'Your scores have been declining recently. Consider revisiting earlier modules or asking your teacher for help.',
     )
   } else if (studentAnalytics.trajectory === 'improving') {
     recs.push(
-      'Your scores are improving — great effort! Keep going to push your predicted grade higher.'
+      'Your scores are improving - great effort! Keep going to push your predicted grade higher.',
     )
   }
 
   // ── Practice encouragement ────────────────────────────────────────────
   if (studentAnalytics.practiceSessions < 5) {
     recs.push(
-      'Try using the practice question tool more regularly — it helps reinforce what you learn in courses.'
+      'Try using the practice question tool more regularly - it helps reinforce what you learn in courses.',
     )
   }
 

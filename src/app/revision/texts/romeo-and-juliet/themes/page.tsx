@@ -303,7 +303,7 @@ export default function RomeoAndJulietThemesPage() {
             </div>
 
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Themes — Deep Study
+              Themes - Deep Study
             </h1>
             <p className="mt-2 text-body-lg text-muted-foreground">
               Romeo and Juliet by William Shakespeare

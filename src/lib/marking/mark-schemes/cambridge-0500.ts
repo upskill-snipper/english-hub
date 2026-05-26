@@ -1,6 +1,6 @@
 // ─── Cambridge IGCSE First Language English (0500) Mark Scheme ──────────────
-// Paper 1: Reading — 2 hours, 40 marks
-// Paper 2: Directed Writing & Composition — 2 hours, 40 marks (Q1 = 25, Q2 = 40)
+// Paper 1: Reading - 2 hours, 40 marks
+// Paper 2: Directed Writing & Composition - 2 hours, 40 marks (Q1 = 25, Q2 = 40)
 // Based on the Cambridge IGCSE 0500 specification (for examination from 2024).
 // Reading objectives are R1-R5; Writing objectives are W1-W5.
 //
@@ -27,7 +27,7 @@ import type { MarkScheme, AssessmentObjective } from './types'
 
 const p1Q1ShortAnswer: AssessmentObjective = {
   id: 'R1',
-  label: 'R1/R2/R5 — Reading short answers',
+  label: 'R1/R2/R5 - Reading short answers',
   description:
     'Demonstrate understanding of explicit and implicit meanings, and select information for the purpose of the question.',
   maxMarks: 15,
@@ -74,7 +74,7 @@ const p1Q1ShortAnswer: AssessmentObjective = {
 
 const p1Q1fLanguage: AssessmentObjective = {
   id: 'R4',
-  label: "R4 — Analysis of writers' use of language",
+  label: "R4 - Analysis of writers' use of language",
   description:
     'Demonstrate understanding of how writers achieve effects and influence readers through their choice of language.',
   maxMarks: 15,
@@ -142,7 +142,7 @@ const p1Q1fLanguage: AssessmentObjective = {
 
 const p1Q2Reading: AssessmentObjective = {
   id: 'R3',
-  label: 'R1/R2/R3/R5 — Reading and analysis',
+  label: 'R1/R2/R3/R5 - Reading and analysis',
   description:
     'Demonstrate understanding of explicit and implicit meanings; analyse, evaluate and develop facts, ideas and opinions; select and use information for the purpose of the task.',
   maxMarks: 15,
@@ -207,7 +207,7 @@ const p1Q2Reading: AssessmentObjective = {
 
 const p1Q2Writing: AssessmentObjective = {
   id: 'W1',
-  label: 'W1/W2 — Writing for an audience',
+  label: 'W1/W2 - Writing for an audience',
   description:
     'Articulate experience and express what is thought, felt and imagined; organise and structure ideas to suit the audience and purpose of the task.',
   maxMarks: 5,
@@ -276,7 +276,7 @@ const p1Q2Writing: AssessmentObjective = {
 
 const p2Q1Reading: AssessmentObjective = {
   id: 'R3',
-  label: 'R1/R2/R3/R5 — Reading (Directed Writing)',
+  label: 'R1/R2/R3/R5 - Reading (Directed Writing)',
   description:
     'Demonstrate understanding of explicit and implicit meanings; analyse, evaluate and develop facts, ideas and opinions from the reading texts to support the directed task.',
   maxMarks: 15,
@@ -341,7 +341,7 @@ const p2Q1Reading: AssessmentObjective = {
 
 const p2Q1Writing: AssessmentObjective = {
   id: 'W1',
-  label: 'W1-W5 — Writing (Directed Writing)',
+  label: 'W1-W5 - Writing (Directed Writing)',
   description:
     'Articulate experience and express ideas; organise and structure for deliberate effect; use a range of vocabulary and sentence structures appropriate to context; use appropriate register; spell, punctuate and use grammar accurately.',
   maxMarks: 10,
@@ -403,7 +403,7 @@ const p2Q1Writing: AssessmentObjective = {
 
 const p2Q2ContentStructure: AssessmentObjective = {
   id: 'W1',
-  label: 'W1/W2 — Content and structure',
+  label: 'W1/W2 - Content and structure',
   description:
     'Articulate experience and express what is thought, felt and imagined; organise and structure ideas and opinions for deliberate effect.',
   maxMarks: 16,
@@ -470,7 +470,7 @@ const p2Q2ContentStructure: AssessmentObjective = {
 
 const p2Q2StyleAccuracy: AssessmentObjective = {
   id: 'W3',
-  label: 'W3/W4/W5 — Style and accuracy',
+  label: 'W3/W4/W5 - Style and accuracy',
   description:
     'Use a range of vocabulary and sentence structures appropriate to context; use register appropriate to context; make accurate use of spelling, punctuation and grammar.',
   maxMarks: 24,
@@ -531,7 +531,7 @@ const p2Q2StyleAccuracy: AssessmentObjective = {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PAPER 1 — Reading (2 hours, 40 marks)
+// PAPER 1 - Reading (2 hours, 40 marks)
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const cambridge0500Paper1: MarkScheme = {
@@ -580,7 +580,7 @@ export const cambridge0500Paper1: MarkScheme = {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PAPER 2 — Directed Writing and Composition (2 hours, 40 marks)
+// PAPER 2 - Directed Writing and Composition (2 hours, 40 marks)
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const cambridge0500Paper2: MarkScheme = {
@@ -620,7 +620,7 @@ export const cambridge0500Paper2: MarkScheme = {
 
 /**
  * Aggregated export of all Cambridge IGCSE 0500 (First Language English)
- * mark schemes — Paper 1 (Reading) and Paper 2 (Directed Writing & Composition).
+ * mark schemes - Paper 1 (Reading) and Paper 2 (Directed Writing & Composition).
  */
 export const cambridge0500MarkSchemes: readonly MarkScheme[] = [
   cambridge0500Paper1,

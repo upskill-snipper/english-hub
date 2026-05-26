@@ -15,7 +15,7 @@ type Props = {
  *
  * `family`, `role`, and `sample` should already be locale-resolved by the
  * caller (typically via `await t('brand.typography.*')`). The CSS `stack`
- * stays Latin in every locale — it's a font-family CSS value, not prose.
+ * stays Latin in every locale - it's a font-family CSS value, not prose.
  * This component owns the screen-reader label for the card.
  */
 export async function TypographySpecimen({ family, role, stack, sample, className }: Props) {

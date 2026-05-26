@@ -4,7 +4,7 @@
  * Source copy: business-docs/content/trustpilot-review-email-sequence.md
  *
  * Each template is paired with a trigger in `TRUSTPILOT_TRIGGERS` below. The
- * actual send path is gated behind `TRUSTPILOT_ENABLED` — until a Trustpilot
+ * actual send path is gated behind `TRUSTPILOT_ENABLED` - until a Trustpilot
  * Business account + API key + SendGrid `reviews@` mailbox are configured,
  * `sendTrustpilotInvite` no-ops and logs.
  *
@@ -54,14 +54,14 @@ export const TRUSTPILOT_TEMPLATES: Record<TrustpilotTrigger, EmailTemplate> = {
   /** Sent 24 hours after first successful AI essay mark (≥ 200 words submitted). */
   student_first_mark: {
     subject: 'How did your first feedback feel?',
-    preview: 'Quick thought on what you just tried — takes 60 seconds to share.',
+    preview: 'Quick thought on what you just tried - takes 60 seconds to share.',
     body: (v) => `Hi ${v.first_name},
 
-Yesterday you submitted your first essay to our AI feedback tool and got your AO-by-AO breakdown back. Nice one — that's the hardest first step done.
+Yesterday you submitted your first essay to our AI feedback tool and got your AO-by-AO breakdown back. Nice one - that's the hardest first step done.
 
 We're genuinely curious: did the feedback land the way you expected? Was the AO1 score fair? Did the suggested improvements make sense?
 
-If you've got 60 seconds, we'd really appreciate a quick Trustpilot review. Honest feedback — good or bad — helps us improve the tool for every student behind you.
+If you've got 60 seconds, we'd really appreciate a quick Trustpilot review. Honest feedback - good or bad - helps us improve the tool for every student behind you.
 
 Leave a quick review: ${v.trustpilot_invite_link}
 
@@ -76,17 +76,17 @@ P.S. Your review will appear publicly on Trustpilot with your first name and the
 
   /** Sent 7 days after first mark if no review left AND at least one more mark submitted. */
   student_first_mark_followup_7d: {
-    subject: 'A week in — quick nudge',
+    subject: 'A week in - quick nudge',
     preview: 'Only if you\u2019ve got a minute. Your perspective helps the next student.',
     body: (v) => `Hi ${v.first_name},
 
 A week on from your first essay mark and you've submitted ${v.essays_submitted_count ?? 'more'} more. That's the kind of repeat use that genuinely changes grades.
 
-If the AI feedback has been useful — or if anything's been frustrating — a short Trustpilot review would mean a lot. The next Year 11 looking at us before their mocks will read what you wrote.
+If the AI feedback has been useful - or if anything's been frustrating - a short Trustpilot review would mean a lot. The next Year 11 looking at us before their mocks will read what you wrote.
 
 Share your experience: ${v.trustpilot_invite_link}
 
-It takes about two minutes, and you can stay anonymous beyond your first name. No incentive offered for good reviews — we just want honest ones.
+It takes about two minutes, and you can stay anonymous beyond your first name. No incentive offered for good reviews - we just want honest ones.
 
 Thanks for being here,
 The English Hub Team`,
@@ -99,11 +99,11 @@ The English Hub Team`,
     preview: 'You\u2019ve just done a real thing. Tell the next student about it.',
     body: (v) => `Hi ${v.first_name},
 
-You just sat a timed ${v.mock_board ?? ''} ${v.mock_paper ?? 'mock'} exam — ${v.mock_duration_minutes ?? 'a full'} minutes of real exam-condition writing. That takes actual effort.
+You just sat a timed ${v.mock_board ?? ''} ${v.mock_paper ?? 'mock'} exam - ${v.mock_duration_minutes ?? 'a full'} minutes of real exam-condition writing. That takes actual effort.
 
 We'd love to know: did the mock feel like the real thing? Was the timing right? Did the feedback afterwards help you see where your grade came from?
 
-If yes — or even if no — a 2-minute Trustpilot review would genuinely help other students deciding whether to trust us with their revision time.
+If yes - or even if no - a 2-minute Trustpilot review would genuinely help other students deciding whether to trust us with their revision time.
 
 Share your honest take: ${v.trustpilot_invite_link}
 
@@ -116,7 +116,7 @@ The English Hub Team`,
 
   /** Sent 90 days after first payment (retention milestone). */
   student_90d_retention: {
-    subject: '3 months in — worth a review?',
+    subject: '3 months in - worth a review?',
     preview: 'You\u2019re part of a smaller group than you might think.',
     body: (v) => `Hi ${v.first_name},
 
@@ -128,7 +128,7 @@ In that time you've:
 - Sat ${v.mock_exams_taken ?? '_'} mock exams
 - Your predicted grade has moved from ${v.grade_start ?? '_'} to ${v.grade_current ?? '_'}
 
-If that progress has felt real — or if any bit of the platform hasn't earned its place — a 3-month review on Trustpilot would be genuinely valuable. You've got more context than any student leaving a review after one lesson.
+If that progress has felt real - or if any bit of the platform hasn't earned its place - a 3-month review on Trustpilot would be genuinely valuable. You've got more context than any student leaving a review after one lesson.
 
 Leave a 3-month review: ${v.trustpilot_invite_link}
 
@@ -141,19 +141,19 @@ The English Hub Team`,
 
   /** Sent 48 hours after first teacher bulk mark (\u2265 5 essays in one session). */
   teacher_first_bulk_mark: {
-    subject: 'Your first batch — how was the marking?',
+    subject: 'Your first batch - how was the marking?',
     preview: 'Teachers who share take-home time feedback help other HoDs.',
     body: (v) => `Hi ${v.first_name},
 
-You've just bulk-marked a class set of essays through The English Hub — 5 or more in one session. If the AO breakdown and the PowerPoint export saved you the usual evening at the kitchen table, we'd love to hear it.
+You've just bulk-marked a class set of essays through The English Hub - 5 or more in one session. If the AO breakdown and the PowerPoint export saved you the usual evening at the kitchen table, we'd love to hear it.
 
-More importantly, if anything about the marking felt off — a specific essay where the AO judgement was wrong, or a formatting issue in the export — we want to know before the next Head of English reads a review.
+More importantly, if anything about the marking felt off - a specific essay where the AO judgement was wrong, or a formatting issue in the export - we want to know before the next Head of English reads a review.
 
 Share your teacher perspective: ${v.trustpilot_invite_link}
 
 Mentioning your role and school phase (secondary independent / state comprehensive / international school) in the review is what helps other teachers most.
 
-No incentive — honest only.
+No incentive - honest only.
 
 Cheers,
 The English Hub Team`,

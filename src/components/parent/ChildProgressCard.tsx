@@ -126,7 +126,7 @@ export function ChildProgressCard({
             <div className="min-w-0">
               <p className="truncate text-xs text-muted-foreground">{t('parent.avg_score')}</p>
               <p className="text-sm font-bold text-foreground">
-                {recentScoreAverage != null ? `${recentScoreAverage}%` : '—'}
+                {recentScoreAverage != null ? `${recentScoreAverage}%` : '-'}
               </p>
             </div>
           </div>

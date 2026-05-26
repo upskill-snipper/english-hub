@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'My Progress — Track Your GCSE English Revision',
+  title: 'My Progress - Track Your GCSE English Revision',
   description:
-    'Track your GCSE English revision progress — scores over time, mastered topics and the assessment objectives that still need work.',
+    'Track your GCSE English revision progress - scores over time, mastered topics and the assessment objectives that still need work.',
   alternates: { canonical: 'https://theenglishhub.app/toolkit/progress' },
 }
 

@@ -1,4 +1,4 @@
-// Force dynamic rendering for Shakespeare pages — they call requireIgcseBoard
+// Force dynamic rendering for Shakespeare pages - they call requireIgcseBoard
 // which reads cookies(), incompatible with static prerendering.
 export const dynamic = 'force-dynamic'
 

@@ -134,7 +134,7 @@ export function generateFeedback(input: FeedbackGeneratorInput): FeedbackGenerat
     improvements,
     nextStepsToNextGrade: nextSteps.length ? nextSteps : buildFallbackNextSteps(prediction),
     summary: summary || buildFallbackSummary(prediction, question, aoScores),
-    // Boundary provenance — additive, optional. Lets the API/UI label the
+    // Boundary provenance - additive, optional. Lets the API/UI label the
     // grade as indicative when the board has no verified boundary table.
     boundarySource: prediction.boundarySource,
     gradeIsIndicativeOnly: prediction.indicativeOnly === true,

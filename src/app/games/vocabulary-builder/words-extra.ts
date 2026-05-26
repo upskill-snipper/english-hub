@@ -2,7 +2,7 @@
  * Extended vocabulary bank for the Vocabulary Builder game.
  *
  * These 200 entries are tuned for GCSE English Literature and Language essay
- * writing — they emphasise sophisticated verbs, literary technique nouns,
+ * writing - they emphasise sophisticated verbs, literary technique nouns,
  * thematic adjectives, critical-theory concepts and formal connectives that
  * graders reward at Grade 8/9.
  *
@@ -204,7 +204,7 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
   },
   {
     // VERIFIED: OED entry "romanticize, v.", accessed 2026. Antonyms tightened
-    // to single-word verbs ('demystifies', 'debunks') — original 'realisticly portrays'
+    // to single-word verbs ('demystifies', 'debunks') - original 'realisticly portrays'
     // was both a misspelling and not a true antonymic lexeme.
     id: 'vb-extra-019',
     word: 'romanticises',
@@ -596,7 +596,7 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
   },
   {
     // VERIFIED: OED entry "revalorise, v.", accessed 2026.
-    // Replaced 'recapitalises' (a financial term meaning 'to restructure capital' — not
+    // Replaced 'recapitalises' (a financial term meaning 'to restructure capital' - not
     // the symbolic-revaluation sense the gloss claimed) with the genuine critical-theory
     // verb 'revalorises', which OED defines as 'to attribute fresh value to'.
     id: 'vb-extra-058',
@@ -1026,7 +1026,7 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
   },
   {
     // VERIFIED: OED entry "aside, n.2 (Theatre)", accessed 2026.
-    // Removed bogus synonym 'apartheid speech' (wrong word entirely — confused with
+    // Removed bogus synonym 'apartheid speech' (wrong word entirely - confused with
     // the theatre term 'à part'). Replaced with 'stage whisper' / 'à part'.
     id: 'vb-extra-101',
     word: 'aside',
@@ -1982,7 +1982,7 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     partOfSpeech: 'adverb',
     definition: 'immediately; without delay',
     example:
-      'Once the dagger appears, Macbeth resolves forthwith to “proceed no further in this business” – then does.',
+      'Once the dagger appears, Macbeth resolves forthwith to “proceed no further in this business” - then does.',
     synonyms: ['immediately', 'at once'],
     antonyms: ['eventually', 'tardily'],
   },

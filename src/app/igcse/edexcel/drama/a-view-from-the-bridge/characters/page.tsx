@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge Characters — Edexcel IGCSE Literature',
+    title: 'A View from the Bridge Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for A View from the Bridge: Eddie Carbone, Catherine, Beatrice, Marco, Rodolpho and Alfieri.',
   },
-  title: 'A View from the Bridge Characters — Edexcel IGCSE Literature',
+  title: 'A View from the Bridge Characters - Edexcel IGCSE Literature',
   description:
     'Character analysis for A View from the Bridge: Eddie Carbone, Catherine, Beatrice, Marco, Rodolpho and Alfieri.',
   alternates: {

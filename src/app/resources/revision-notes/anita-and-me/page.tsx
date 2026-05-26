@@ -312,7 +312,7 @@ export default function AnitaAndMePage() {
         <div id="characters">
           <Section title="Characters" icon="👥">
             <CharacterCard
-              name="Meena Kumar — Narrator and Protagonist"
+              name="Meena Kumar - Narrator and Protagonist"
               description="Nine years old at the novel's opening. Punjabi-British, the only Indian child in Tollington. Imaginative, rebellious, and a self-confessed compulsive liar. Her voice mixes child-like immediacy with adult retrospection. Over the course of the novel she moves from wanting to be Anita Rutter to recognising the value of her own family and heritage. Syal uses Meena's first-person narration to dramatise the internal negotiation of British-Indian dual identity, and to examine how a child processes (and sometimes mis-processes) racism, class, and family."
             />
             <CharacterCard
@@ -329,7 +329,7 @@ export default function AnitaAndMePage() {
             />
             <CharacterCard
               name="Sunil"
-              description="Meena's baby brother, born during the novel. His arrival initially provokes jealousy in Meena but eventually softens her, as she learns to share affection and responsibility. Sunil also represents the family's continuing rootedness in Britain — a second-generation child who will know Tollington only through Meena's stories."
+              description="Meena's baby brother, born during the novel. His arrival initially provokes jealousy in Meena but eventually softens her, as she learns to share affection and responsibility. Sunil also represents the family's continuing rootedness in Britain - a second-generation child who will know Tollington only through Meena's stories."
             />
             <CharacterCard
               name="Nanima"
@@ -337,11 +337,11 @@ export default function AnitaAndMePage() {
             />
             <CharacterCard
               name="Mr Ormerod"
-              description="The village shopkeeper and chapel collector for missions to 'darkest Africa.' Outwardly friendly and charitable, he embodies a particular kind of paternalistic, faintly colonial English Christianity. His charity tin — which Meena steals — symbolises the contradictions of a community that 'helps' distant black children while struggling to accept the brown family in its own street."
+              description="The village shopkeeper and chapel collector for missions to 'darkest Africa.' Outwardly friendly and charitable, he embodies a particular kind of paternalistic, faintly colonial English Christianity. His charity tin - which Meena steals - symbolises the contradictions of a community that 'helps' distant black children while struggling to accept the brown family in its own street."
             />
             <CharacterCard
               name="Sam Lowbridge"
-              description="Local teenage skinhead, briefly Anita's boyfriend. Initially an ambiguous figure — a damaged village boy whom Meena pities — he becomes the novel's clearest face of British racism when he makes a public racist outburst at the fête. Syal uses Sam to dramatise how 1970s far-right rhetoric (post-Powell, pre-National Front rallies) seeped into ordinary working-class boys with no obvious ideology of their own."
+              description="Local teenage skinhead, briefly Anita's boyfriend. Initially an ambiguous figure - a damaged village boy whom Meena pities - he becomes the novel's clearest face of British racism when he makes a public racist outburst at the fête. Syal uses Sam to dramatise how 1970s far-right rhetoric (post-Powell, pre-National Front rallies) seeped into ordinary working-class boys with no obvious ideology of their own."
             />
             <CharacterCard
               name="Tracey Rutter"
@@ -358,24 +358,24 @@ export default function AnitaAndMePage() {
         <div id="themes">
           <Section title="Themes" icon="🎭">
             <ThemeCard
-              title={tr(`Identity and Belonging — British-Indian Dual Identity`)}
-              description="The novel's central concern. Meena lives between two cultures: the Punjabi household of cooked dahl, Hindi films, and family gatherings, and the English village of chip-shop visits, sweets, and pop songs. Syal refuses to present these as a simple either/or. Meena is not 'half' anything — she is fully both, even when the two halves contradict each other. The eleven-plus and the move out of Tollington at the end suggest that integration on white English terms requires loss as well as gain. Syal's deeper argument is that 'Britishness' itself must be expanded to include Meena, not the other way around."
+              title={tr(`Identity and Belonging - British-Indian Dual Identity`)}
+              description="The novel's central concern. Meena lives between two cultures: the Punjabi household of cooked dahl, Hindi films, and family gatherings, and the English village of chip-shop visits, sweets, and pop songs. Syal refuses to present these as a simple either/or. Meena is not 'half' anything - she is fully both, even when the two halves contradict each other. The eleven-plus and the move out of Tollington at the end suggest that integration on white English terms requires loss as well as gain. Syal's deeper argument is that 'Britishness' itself must be expanded to include Meena, not the other way around."
             />
             <ThemeCard
               title="Coming of Age"
-              description="Anita and Me is a Bildungsroman. Over roughly two years, Meena moves from credulous childhood (lies, theft, hero-worship of Anita) to a more grounded adolescence (passing the eleven-plus, choosing family over Anita, beginning to ask harder questions). The narrative voice itself dramatises this: an adult Meena looks back on her younger self with both affection and ironic distance. Syal's coming-of-age is not a triumph but a necessary loss — the child Meena cannot survive intact what she sees and hears."
+              description="Anita and Me is a Bildungsroman. Over roughly two years, Meena moves from credulous childhood (lies, theft, hero-worship of Anita) to a more grounded adolescence (passing the eleven-plus, choosing family over Anita, beginning to ask harder questions). The narrative voice itself dramatises this: an adult Meena looks back on her younger self with both affection and ironic distance. Syal's coming-of-age is not a triumph but a necessary loss - the child Meena cannot survive intact what she sees and hears."
             />
             <ThemeCard
               title={tr(`Race and Racism in 1970s Britain`)}
-              description="The novel is set in the immediate aftermath of Enoch Powell's 'Rivers of Blood' speech (1968) and during the rise of the National Front. Racism in Tollington is rarely organised — it leaks out as everyday casual remarks, the shopkeeper's charitable condescension, Sam Lowbridge's fête outburst. Syal shows that the most damaging racism may be the kind that the perpetrators do not consider racism at all. She also resists letting the village off the hook by suggesting that 'good' white characters are passively complicit when they fall silent at the crucial moment."
+              description="The novel is set in the immediate aftermath of Enoch Powell's 'Rivers of Blood' speech (1968) and during the rise of the National Front. Racism in Tollington is rarely organised - it leaks out as everyday casual remarks, the shopkeeper's charitable condescension, Sam Lowbridge's fête outburst. Syal shows that the most damaging racism may be the kind that the perpetrators do not consider racism at all. She also resists letting the village off the hook by suggesting that 'good' white characters are passively complicit when they fall silent at the crucial moment."
             />
             <ThemeCard
-              title="Class — Working-Class West Midlands"
+              title="Class - Working-Class West Midlands"
               description="Tollington is a post-industrial ex-mining village whose pit has closed. Its families are working-class, often financially strained, sometimes violent. Syal does not romanticise this community: the Rutters' household is dysfunctional, drink-soaked, and emotionally cold. But she also refuses the easy sneer. Mama and Papa, as middle-class educated immigrants, occupy an awkward position: ethnically marked as outsiders yet socially 'above' their neighbours. Class and race intersect in painful, specific ways throughout the novel."
             />
             <ThemeCard
               title={tr(`Family and Cultural Heritage`)}
-              description="The Kumar household, with its rotating cast of 'Aunties' and 'Uncles,' is the moral and emotional centre of the novel. Family meals, Punjabi songs, religious observance, and Nanima's stories transmit a heritage that Meena initially resists and eventually treasures. Syal uses the family to argue that cultural identity is not abstract — it is carried in food, language, music, and the small daily rituals of a household. When Nanima returns to India, the loss for Meena is not just personal but cultural."
+              description="The Kumar household, with its rotating cast of 'Aunties' and 'Uncles,' is the moral and emotional centre of the novel. Family meals, Punjabi songs, religious observance, and Nanima's stories transmit a heritage that Meena initially resists and eventually treasures. Syal uses the family to argue that cultural identity is not abstract - it is carried in food, language, music, and the small daily rituals of a household. When Nanima returns to India, the loss for Meena is not just personal but cultural."
             />
             <ThemeCard
               title={tr(`Friendship and Loss of Innocence`)}
@@ -402,14 +402,14 @@ export default function AnitaAndMePage() {
             <h4 className="font-bold text-foreground mt-4 mb-2">{tr(`On Identity and Lying`)}</h4>
             <QuoteCard
               paraphrase
-              quote="Meena, the narrator, opens by insisting she is not really a liar — explaining that people deprived of an inherited history sometimes turn to mythology in order to feel complete and to belong."
-              speaker="Meena (narrator, opening) — paraphrased reference"
-              analysis="The novel's opening salvo. Meena reframes her childhood lies as a survival strategy — the daughter of immigrants without an inherited British history must invent stories to feel she belongs. Syal collapses the line between lying and mythology, suggesting that all communities tell themselves stories. The idea of being deprived of history is politically loaded: it implicates the British host culture for not making space for Punjabi history within the national story."
+              quote="Meena, the narrator, opens by insisting she is not really a liar - explaining that people deprived of an inherited history sometimes turn to mythology in order to feel complete and to belong."
+              speaker="Meena (narrator, opening) - paraphrased reference"
+              analysis="The novel's opening salvo. Meena reframes her childhood lies as a survival strategy - the daughter of immigrants without an inherited British history must invent stories to feel she belongs. Syal collapses the line between lying and mythology, suggesting that all communities tell themselves stories. The idea of being deprived of history is politically loaded: it implicates the British host culture for not making space for Punjabi history within the national story."
             />
             <QuoteCard
               paraphrase
               quote="In the opening pages Meena leaves it to the reader's discretion whether she is really a liar."
-              speaker="Meena (narrator, opening pages) — paraphrased reference"
+              speaker="Meena (narrator, opening pages) - paraphrased reference"
               analysis="The narrator immediately destabilises her own authority, inviting the reader to read her cautiously. This is a self-aware coming-of-age narrator who knows that childhood memory is unreliable. The ironic adult voice frames the entire novel: Meena's lies are also Syal's storytelling craft."
             />
 
@@ -417,23 +417,23 @@ export default function AnitaAndMePage() {
             <QuoteCard
               paraphrase
               quote="Meena admits she enjoyed being the only dark-skinned child in Tollington, even though she did not always welcome the attention it drew."
-              speaker="Meena (narrator) — paraphrased reference"
-              analysis="The doubled feeling — pleasure in distinctiveness, pain in scrutiny — is at the heart of the novel's identity politics. Syal refuses easy victimhood: Meena enjoys her uniqueness even as it isolates her. The careful adult phrasing, with its qualifying clause, shows the older narrator weighing the contradictions of childhood feeling honestly."
+              speaker="Meena (narrator) - paraphrased reference"
+              analysis="The doubled feeling - pleasure in distinctiveness, pain in scrutiny - is at the heart of the novel's identity politics. Syal refuses easy victimhood: Meena enjoys her uniqueness even as it isolates her. The careful adult phrasing, with its qualifying clause, shows the older narrator weighing the contradictions of childhood feeling honestly."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">On Anita</h4>
             <QuoteCard
               paraphrase
-              quote="When Meena first describes Anita Rutter, she presents her as the dominant figure — the leader — of their yard."
-              speaker="Meena (narrator, on first meeting Anita) — paraphrased reference"
-              analysis="The Black Country slang for a dominant leader places the narrator inside the local working-class lexicon. Meena absorbs Anita's language even as she observes her power. The image positions Anita as masculine, predatory, in charge — and Meena, by extension, as dazzled subordinate. Syal shows the friendship as a hierarchy from the outset."
+              quote="When Meena first describes Anita Rutter, she presents her as the dominant figure - the leader - of their yard."
+              speaker="Meena (narrator, on first meeting Anita) - paraphrased reference"
+              analysis="The Black Country slang for a dominant leader places the narrator inside the local working-class lexicon. Meena absorbs Anita's language even as she observes her power. The image positions Anita as masculine, predatory, in charge - and Meena, by extension, as dazzled subordinate. Syal shows the friendship as a hierarchy from the outset."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Race and Belonging`)}</h4>
             <QuoteCard
               paraphrase
-              quote="Mama tells Meena that failing to respect what the family believes in means failing to respect them — and that without respect there can be no love."
-              speaker="Mama, to Meena — paraphrased reference"
+              quote="Mama tells Meena that failing to respect what the family believes in means failing to respect them - and that without respect there can be no love."
+              speaker="Mama, to Meena - paraphrased reference"
               analysis="Mama articulates the moral logic of cultural identity: respect for heritage is not optional or decorative but a precondition of love. Syal uses Mama as the family's ethical voice. The cumulative if-then logic has the rhythm of an argument she has already had with herself, and which Meena will eventually understand."
             />
 
@@ -441,7 +441,7 @@ export default function AnitaAndMePage() {
             <QuoteCard
               paraphrase
               quote="At the fête, Sam Lowbridge declares that the village does not want immigrants any more and accuses them of sponging off the community."
-              speaker="Sam Lowbridge, at the fête — paraphrased reference"
+              speaker="Sam Lowbridge, at the fête - paraphrased reference"
               analysis="Sam's outburst echoes the language of post-Powell anti-immigrant politics: the rhetoric of them, the accusation of sponging, the implied national us. Syal places this language in the mouth of a damaged village boy to show how far-right rhetoric travels through ordinary people who cannot articulate where their resentment comes from. The community's embarrassed silence after Sam speaks is, for Meena, almost as devastating as the words themselves."
             />
 
@@ -451,8 +451,8 @@ export default function AnitaAndMePage() {
             <QuoteCard
               paraphrase
               quote="The chapel charity collection in Mr Ormerod's shop is associated with old colonial missionary language about saving children in distant Africa."
-              speaker="The chapel collection in Mr Ormerod's shop — paraphrased reference"
-              analysis="That kind of colonial-era missionary phrasing survives into 1972. Syal weaponises the cliché: a community that congratulates itself on saving distant black children proves unwilling to welcome the brown family living down the street. The charity tin sits on the counter as a visible monument to the village's moral self-image — an image the novel takes apart."
+              speaker="The chapel collection in Mr Ormerod's shop - paraphrased reference"
+              analysis="That kind of colonial-era missionary phrasing survives into 1972. Syal weaponises the cliché: a community that congratulates itself on saving distant black children proves unwilling to welcome the brown family living down the street. The charity tin sits on the counter as a visible monument to the village's moral self-image - an image the novel takes apart."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">
@@ -470,23 +470,23 @@ export default function AnitaAndMePage() {
             <QuoteCard
               quote="Nanima"
               speaker="Meena's name for her grandmother (Punjabi: maternal grandmother)"
-              analysis="The word itself is a small but loaded act of cultural transmission. Meena does not call her 'Granny' — she uses the Punjabi term, importing the language of her heritage into her English-language narration. Throughout the novel, Punjabi words (Nanima, dhal, ghazal, names of foods and rituals) sit untranslated inside English sentences, dramatising the bilingual mind of the second-generation child."
+              analysis="The word itself is a small but loaded act of cultural transmission. Meena does not call her 'Granny' - she uses the Punjabi term, importing the language of her heritage into her English-language narration. Throughout the novel, Punjabi words (Nanima, dhal, ghazal, names of foods and rituals) sit untranslated inside English sentences, dramatising the bilingual mind of the second-generation child."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">On Storytelling</h4>
             <QuoteCard
               paraphrase
               quote="The opening passage links mythology to the child's need to feel complete and to belong."
-              speaker="Meena (narrator) — paraphrased reference"
-              analysis="A key idea from the opening passage. Syal links storytelling to the deepest psychic needs of the immigrant child: completeness, belonging. The argument runs through the novel — Papa's ghazals, Nanima's tales and Meena's own lies all function as mythology in this expanded sense. The novel itself, as adult Meena's act of narration, is the most complete of these myths."
+              speaker="Meena (narrator) - paraphrased reference"
+              analysis="A key idea from the opening passage. Syal links storytelling to the deepest psychic needs of the immigrant child: completeness, belonging. The argument runs through the novel - Papa's ghazals, Nanima's tales and Meena's own lies all function as mythology in this expanded sense. The novel itself, as adult Meena's act of narration, is the most complete of these myths."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Dual Identity`)}</h4>
             <QuoteCard
               paraphrase
               quote="Meena describes herself as too mouthy, clumsy and scabby to count as a real Indian girl, yet too Indian to count as a real Tollington girl."
-              speaker="Meena (narrator) — paraphrased reference"
-              analysis="The double exclusion — too much for one community, too Indian for the other — is Syal's most concise statement of the dual-identity predicament. The vocabulary itself is split: the Indian half uses standard English, while the Tollington half reaches for Black Country dialect. The phrasing performs the bilingual splitting it describes. The harsh self-description captures childhood self-loathing without indulging it: the adult narrator sees the cruelty of the binary that produced these feelings."
+              speaker="Meena (narrator) - paraphrased reference"
+              analysis="The double exclusion - too much for one community, too Indian for the other - is Syal's most concise statement of the dual-identity predicament. The vocabulary itself is split: the Indian half uses standard English, while the Tollington half reaches for Black Country dialect. The phrasing performs the bilingual splitting it describes. The harsh self-description captures childhood self-loathing without indulging it: the adult narrator sees the cruelty of the binary that produced these feelings."
             />
 
             <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Tollington as Place`)}</h4>

@@ -42,7 +42,8 @@ const GRADE_ORDER = ['9', '8', '7', '6', '5', '4', '3', '2', '1', 'U']
 function gradeColor(grade: string | null): string {
   if (!grade) return 'bg-muted text-muted-foreground'
   const g = grade.replace(/[^0-9A-U*]/gi, '').toUpperCase()
-  if (['9', '8', 'A*', 'A'].includes(g)) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40'
+  if (['9', '8', 'A*', 'A'].includes(g))
+    return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/40'
   if (['7', '6', 'B', 'C'].includes(g)) return 'bg-blue-500/20 text-blue-400 border-blue-500/40'
   if (['5', '4', 'D'].includes(g)) return 'bg-amber-500/20 text-clay-600 border-amber-500/40'
   return 'bg-red-500/20 text-red-400 border-red-500/40'
@@ -105,7 +106,7 @@ export function SeatingPlan({
       if (!seat?.studentId) return undefined
       return studentMap.get(seat.studentId)
     },
-    [seats, studentMap]
+    [seats, studentMap],
   )
 
   const assignedIds = new Set(seats.filter((s) => s.studentId).map((s) => s.studentId!))
@@ -144,7 +145,7 @@ export function SeatingPlan({
     // If dragged from another seat, clear that seat
     if (dragSource) {
       const sourceIdx = newSeats.findIndex(
-        (s) => s.row === dragSource.row && s.col === dragSource.col
+        (s) => s.row === dragSource.row && s.col === dragSource.col,
       )
       if (sourceIdx >= 0) newSeats[sourceIdx] = { ...newSeats[sourceIdx], studentId: null }
     }
@@ -161,9 +162,7 @@ export function SeatingPlan({
 
     // If swapping from a seat, put the displaced student back in the source seat
     if (dragSource && existingStudentId && existingStudentId !== studentId) {
-      const srcIdx = newSeats.findIndex(
-        (s) => s.row === dragSource.row && s.col === dragSource.col
-      )
+      const srcIdx = newSeats.findIndex((s) => s.row === dragSource.row && s.col === dragSource.col)
       if (srcIdx >= 0) {
         newSeats[srcIdx] = { ...newSeats[srcIdx], studentId: existingStudentId }
       }
@@ -178,9 +177,7 @@ export function SeatingPlan({
     e.preventDefault()
     if (!dragSource) return
     const newSeats = seats.map((s) => ({ ...s }))
-    const idx = newSeats.findIndex(
-      (s) => s.row === dragSource.row && s.col === dragSource.col
-    )
+    const idx = newSeats.findIndex((s) => s.row === dragSource.row && s.col === dragSource.col)
     if (idx >= 0) newSeats[idx] = { ...newSeats[idx], studentId: null }
     onSeatsChange(newSeats)
     setDraggedStudentId(null)
@@ -246,8 +243,7 @@ export function SeatingPlan({
                 onDrop={(e) => handleDropOnSeat(e, row, col)}
                 onDragEnter={() => setHoveredSeat({ row, col })}
                 onDragLeave={() => {
-                  if (hoveredSeat?.row === row && hoveredSeat?.col === col)
-                    setHoveredSeat(null)
+                  if (hoveredSeat?.row === row && hoveredSeat?.col === col) setHoveredSeat(null)
                 }}
                 onDragEnd={handleDragEnd}
                 onMouseEnter={(e) => handleSeatMouseEnter(e, row, col)}
@@ -257,18 +253,21 @@ export function SeatingPlan({
                   colorClass,
                   isDragOver && 'ring-2 ring-primary scale-105',
                   !student && 'cursor-default',
-                  student && 'hover:scale-[1.02] hover:shadow-md'
+                  student && 'hover:scale-[1.02] hover:shadow-md',
                 )}
               >
                 {student ? (
                   <>
                     <span className="text-[0.65rem] font-semibold leading-tight sm:text-xs print:text-[9px]">
                       {student.name.length > 14
-                        ? student.name.split(' ').map((n) => n[0]).join('. ') + '.'
+                        ? student.name
+                            .split(' ')
+                            .map((n) => n[0])
+                            .join('. ') + '.'
                         : student.name}
                     </span>
                     <span className="mt-0.5 text-[0.55rem] opacity-70 sm:text-[0.65rem] print:text-[8px]">
-                      {student.grade ?? '—'} {trajectoryArrow(student.trajectory)}
+                      {student.grade ?? '-'} {trajectoryArrow(student.trajectory)}
                     </span>
                   </>
                 ) : (
@@ -276,7 +275,7 @@ export function SeatingPlan({
                 )}
               </div>
             )
-          })
+          }),
         )}
       </div>
 
@@ -288,8 +287,7 @@ export function SeatingPlan({
         >
           <p className="font-semibold">{tooltipStudent.name}</p>
           <p className="text-muted-foreground">
-            Grade: {tooltipStudent.grade ?? 'N/A'} | Target:{' '}
-            {tooltipStudent.target ?? 'N/A'}
+            Grade: {tooltipStudent.grade ?? 'N/A'} | Target: {tooltipStudent.target ?? 'N/A'}
           </p>
           <p className="text-muted-foreground capitalize">
             Trajectory: {tooltipStudent.trajectory}
@@ -316,7 +314,7 @@ export function SeatingPlan({
                 onDragEnd={handleDragEnd}
                 className={cn(
                   'cursor-grab rounded-md border px-2.5 py-1.5 text-xs font-medium transition-all hover:scale-105 hover:shadow-sm',
-                  getSeatColor(s, colorMode)
+                  getSeatColor(s, colorMode),
                 )}
               >
                 {s.name}

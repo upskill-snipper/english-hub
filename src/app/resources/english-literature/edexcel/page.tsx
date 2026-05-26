@@ -7,7 +7,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Literature resources — The English Hub',
+    title: 'Pearson Edexcel GCSE English Literature resources - The English Hub',
     description:
       'Pearson Edexcel 1ET0 GCSE English Literature set-text guides, anthology poetry, exam technique and Grade 9 essay plans for Paper 1 and Paper 2.',
   },
@@ -25,14 +25,14 @@ const PAPERS = [
     title: 'Paper 1: Shakespeare and Post-1914 Literature',
     description:
       'Shakespeare plays including Macbeth, Romeo and Juliet, and more. Post-1914 texts such as An Inspector Calls, Lord of the Flies, and Animal Farm.',
-    marks: '80 marks — 50% of GCSE',
+    marks: '80 marks - 50% of GCSE',
   },
   {
     href: '/resources/english-literature/edexcel/paper-2',
     title: 'Paper 2: 19th-Century Novel and Poetry since 1789',
     description:
       '19th-century novels including A Christmas Carol, Jekyll and Hyde, and Jane Eyre. Poetry anthology (Relationships and Conflict clusters) plus unseen poetry.',
-    marks: '80 marks — 50% of GCSE',
+    marks: '80 marks - 50% of GCSE',
   },
 ]
 
@@ -132,7 +132,7 @@ export default function EdexcelEnglishLiteraturePage() {
         <p className="mt-2 text-muted-foreground">
           The Edexcel GCSE English Literature qualification (1ET0) is assessed through two
           externally examined papers, each worth 50% of the final grade. Both papers are closed-book
-          — no texts are allowed in the exam room.
+          - no texts are allowed in the exam room.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -171,7 +171,7 @@ export default function EdexcelEnglishLiteraturePage() {
                 className="group rounded-lg border border-border bg-card p-5 shadow-md transition hover:shadow-md"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                  {guide.paper} — {guide.type}
+                  {guide.paper} - {guide.type}
                 </p>
                 <h3 className="mt-2 text-lg font-bold text-foreground group-hover:text-foreground">
                   {guide.title}
@@ -190,7 +190,7 @@ export default function EdexcelEnglishLiteraturePage() {
             <h3 className="font-semibold text-foreground">Fully closed-book</h3>
             <p className="mt-1 text-sm">
               Both Edexcel papers are fully closed-book. You must memorise quotations for every text
-              — no extracts are provided for Shakespeare or prose sections.
+              - no extracts are provided for Shakespeare or prose sections.
             </p>
           </div>
           <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">

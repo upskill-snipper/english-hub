@@ -4,7 +4,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  * Drop-in wrapper for AQA Language Paper analysis pages.
  *
  * Every guide in this folder targets the AQA English Language
- * specification (8700) — Paper 1 and Paper 2. Students on a different
+ * specification (8700) - Paper 1 and Paper 2. Students on a different
  * board (Edexcel, OCR, Eduqas, IGCSE, etc.) who land here from a Google
  * search are looking at the wrong content for their exam.
  *

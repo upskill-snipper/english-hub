@@ -5,7 +5,7 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
-// PATCH /api/school/join-codes/[code] — disable a join code
+// PATCH /api/school/join-codes/[code] - disable a join code
 export async function PATCH(request: NextRequest, props: { params: Promise<{ code: string }> }) {
   const params = await props.params
   try {
@@ -69,7 +69,7 @@ export async function PATCH(request: NextRequest, props: { params: Promise<{ cod
   }
 }
 
-// DELETE /api/school/join-codes/[code] — permanently delete a join code
+// DELETE /api/school/join-codes/[code] - permanently delete a join code
 export async function DELETE(request: NextRequest, props: { params: Promise<{ code: string }> }) {
   const params = await props.params
   try {

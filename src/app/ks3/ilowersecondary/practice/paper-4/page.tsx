@@ -19,11 +19,11 @@ import {
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Practice Paper 4: Courage — iLowerSecondary English',
+    title: 'Practice Paper 4: Courage - iLowerSecondary English',
     description:
       'A complete original practice achievement test modelled on LEH11/01, theme “Courage”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
   },
-  title: 'Practice Paper 4: Courage — iLowerSecondary English',
+  title: 'Practice Paper 4: Courage - iLowerSecondary English',
   description:
     'A complete original practice achievement test modelled on LEH11/01, theme “Courage”: three original source texts, 22 Section A reading questions (40 marks), a 30-mark Section B writing task and a full Pearson-style mark scheme.',
   alternates: {
@@ -81,7 +81,7 @@ export default function PracticePaper4Page() {
       <p className="lead">
         A complete original achievement test modelled exactly on the format of{' '}
         {QUALIFICATION.paperCode}. Theme: <strong>courage</strong>. All three source texts are
-        original works written by The English Hub — they are not taken from any past paper. Work
+        original works written by The English Hub - they are not taken from any past paper. Work
         through the paper first, then open the mark scheme to check your answers.
       </p>
 
@@ -126,7 +126,7 @@ export default function PracticePaper4Page() {
 
       {/* ── Source Booklet ───────────────────────────────────────── */}
       <section className="my-10">
-        <h2>Source Booklet — three texts on the theme of courage</h2>
+        <h2>Source Booklet - three texts on the theme of courage</h2>
         <p>
           Read all three texts before you begin Section A. Paragraphs are numbered so you can refer
           to them in your answers.
@@ -138,7 +138,7 @@ export default function PracticePaper4Page() {
             className="not-prose my-6 rounded-xl border border-border/60 bg-card p-5 sm:p-6"
           >
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-1">
-              {t.label} — {t.kind} ({t.textType})
+              {t.label} - {t.kind} ({t.textType})
             </p>
             <h3 className="text-lg font-semibold text-foreground mb-1">{t.title}</h3>
             {t.byline ? (
@@ -341,11 +341,11 @@ export default function PracticePaper4Page() {
 
             {[
               {
-                title: 'WAO1 — Form, communication and purpose (18 marks)',
+                title: 'WAO1 - Form, communication and purpose (18 marks)',
                 grid: WAO1_GRID,
               },
               {
-                title: 'WAO2 — Grammar, punctuation and spelling (12 marks)',
+                title: 'WAO2 - Grammar, punctuation and spelling (12 marks)',
                 grid: WAO2_GRID,
               },
             ].map((g) => (

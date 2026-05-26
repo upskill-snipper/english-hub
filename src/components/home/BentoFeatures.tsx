@@ -2,7 +2,7 @@
 
 import { useT } from '@/lib/i18n/use-t'
 
-/* ───────────────────── 01 — Contents : Playful Bento Grid ───────────────────── */
+/* ───────────────────── 01 - Contents : Playful Bento Grid ───────────────────── */
 
 export default function BentoFeatures() {
   const t = useT()

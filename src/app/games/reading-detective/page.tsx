@@ -62,7 +62,7 @@ const PASSAGES: Passage[] = [
         options: ['Bored', 'Relieved and eager', 'Angry', 'Sleepy'],
         answer: 1,
         type: 'inference',
-        evidence: 'She "stood up so quickly" after a long, anxious wait — showing eager relief.',
+        evidence: 'She "stood up so quickly" after a long, anxious wait - showing eager relief.',
       },
     ],
   },
@@ -217,7 +217,7 @@ const PASSAGES: Passage[] = [
   {
     kind: 'Fact box',
     title: 'Volcanoes',
-    text: 'A volcano is an opening in the Earth’s surface through which melted rock, ash and gases can escape. Melted rock below the ground is called magma; once it reaches the surface it is called lava. Not all volcanoes erupt violently — some release lava slowly and steadily for years. Scientists who study volcanoes are known as volcanologists, and they monitor warning signs to help keep nearby towns safe.',
+    text: 'A volcano is an opening in the Earth’s surface through which melted rock, ash and gases can escape. Melted rock below the ground is called magma; once it reaches the surface it is called lava. Not all volcanoes erupt violently - some release lava slowly and steadily for years. Scientists who study volcanoes are known as volcanologists, and they monitor warning signs to help keep nearby towns safe.',
     questions: [
       {
         prompt: 'What is melted rock called once it reaches the surface?',
@@ -288,7 +288,7 @@ const PASSAGES: Passage[] = [
   {
     kind: 'Blog post',
     title: 'Why I Switched Off Notifications',
-    text: 'For months my phone buzzed every few minutes, and I felt I had to reply at once. Last weekend I turned every notification off and left the phone in another room while I read. At first I kept reaching for a phone that was not there. By Sunday evening I had finished an entire book and felt strangely calm — something I had not felt in a long time.',
+    text: 'For months my phone buzzed every few minutes, and I felt I had to reply at once. Last weekend I turned every notification off and left the phone in another room while I read. At first I kept reaching for a phone that was not there. By Sunday evening I had finished an entire book and felt strangely calm - something I had not felt in a long time.',
     questions: [
       {
         prompt: 'Where did the writer leave their phone while reading?',
@@ -480,14 +480,14 @@ function shuffle<T>(arr: T[]): T[] {
 
 const ENCOURAGE = [
   'Great detective work!',
-  'Sharp eyes — well spotted!',
+  'Sharp eyes - well spotted!',
   'Excellent reading!',
   'You cracked it!',
 ]
 
 const TRY_AGAIN = [
-  'Not quite — look closely at the clue.',
-  'Good effort — the text holds the answer.',
+  'Not quite - look closely at the clue.',
+  'Good effort - the text holds the answer.',
   'Almost! Re-read and you’ll see it.',
 ]
 

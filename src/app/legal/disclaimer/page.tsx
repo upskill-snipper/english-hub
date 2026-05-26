@@ -59,7 +59,7 @@ export default function DisclaimerPage() {
     <>
       <h1>Full Disclaimer</h1>
       <p className="text-sm text-muted-foreground">
-        <strong>The English Hub</strong> — operated by Upskill Energy Limited
+        <strong>The English Hub</strong> - operated by Upskill Energy Limited
         <br />
         Last updated: 22 March 2026
       </p>

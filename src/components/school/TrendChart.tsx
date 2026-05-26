@@ -102,7 +102,7 @@ function annotationColor(type?: string): string {
 /* ── Line/Area Chart ───────────────────────────────────────────────────────── */
 // Re-skinned onto the premium "cinematic glass" Recharts layer. The public
 // API (props, types, exports, defaults) is byte-identical to the previous
-// hand-rolled SVG implementation — only the internals changed.
+// hand-rolled SVG implementation - only the internals changed.
 
 export function TrendChart({
   data,

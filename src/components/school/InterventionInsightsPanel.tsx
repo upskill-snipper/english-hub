@@ -4,7 +4,7 @@
 // leading it, and how long it has been running. Designed to live alongside the
 // other glass panels on the school demo page.
 //
-// Server component — no client hooks. Reads from DEMO_AT_RISK_STUDENTS and
+// Server component - no client hooks. Reads from DEMO_AT_RISK_STUDENTS and
 // DEMO_STUDENTS only (extra structure is hardcoded inline). All figures are
 // synthetic and clearly labelled as demo data.
 // ──────────────────────────────────────────────────────────────────────────────
@@ -13,7 +13,7 @@ import { AlertTriangle, HeartHandshake, Users, Globe2, Calendar, UserSquare2 } f
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz/GlassPanel'
 import { DEMO_AT_RISK_STUDENTS, DEMO_STUDENTS } from '@/data/demo-data'
 
-// ─── Intervention taxonomy (hardcoded — no new exports assumed) ─────────────
+// ─── Intervention taxonomy (hardcoded - no new exports assumed) ─────────────
 
 interface InterventionType {
   key: string
@@ -84,7 +84,7 @@ export function InterventionInsightsPanel() {
   const ealCohortSize = Math.round(342 * 0.14)
   const total = totalActiveInterventions
 
-  // Monitored students — blend real at-risk students with synthetic structure
+  // Monitored students - blend real at-risk students with synthetic structure
   const baseStudents: MonitoredStudent[] = DEMO_AT_RISK_STUDENTS.slice(0, 5).map((s, i) => {
     const types = [
       'One-to-one tutoring',
@@ -237,7 +237,7 @@ export function InterventionInsightsPanel() {
 
         {/* ── 4. Synthetic-data footnote ──────────────────────────────────── */}
         <p className="text-center text-[11px] italic text-muted-foreground/70">
-          Synthetic data — demo only. Intervention figures are illustrative and do not represent a
+          Synthetic data - demo only. Intervention figures are illustrative and do not represent a
           real cohort.
         </p>
       </div>

@@ -11,13 +11,13 @@
 //
 // Data is sourced from `public.quiz_responses` via the helper at
 // `src/lib/analytics/learner.ts`. The query runs under the authenticated
-// user's session, so RLS already scopes rows to the current user — we
+// user's session, so RLS already scopes rows to the current user - we
 // still pass `user_id` explicitly for clarity and to keep the helper
 // composable with service-role callers.
 //
 // Auth gate: anon users are redirected to /auth/login?redirect=<self>.
 // The rest of /revision/* stays public (see src/app/revision/layout.tsx
-// — no auth check there).
+// - no auth check there).
 // ────────────────────────────────────────────────────────────────────────────
 
 import Link from 'next/link'
@@ -47,7 +47,7 @@ export const metadata = {
     'See your own quiz performance, weakest topics, and a suggested next-step study plan based on real answers.',
 }
 
-// Never cached — always reflect the user's latest responses.
+// Never cached - always reflect the user's latest responses.
 export const dynamic = 'force-dynamic'
 
 // ─── Page ───────────────────────────────────────────────────────────────────

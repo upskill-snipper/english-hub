@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Travel Writing — Reading Practice Framework — The English Hub',
+    title: 'Travel Writing - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on travel writing. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Travel Writing — Reading Practice Framework',
+  title: 'Travel Writing - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on travel writing. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -55,7 +55,7 @@ const comprehension = [
   'Find one observation that only someone new to the place could make. Why is it effective?',
   'Identify a moment where the writer compares the place to something familiar. What does the comparison reveal about the writer?',
   'Does the writer sound admiring, critical, amused or surprised? Quote one phrase as evidence.',
-  'Where does the writer include a small human detail — a face, a gesture, a voice? Why is it included?',
+  'Where does the writer include a small human detail - a face, a gesture, a voice? Why is it included?',
   'Is the writer visible in the passage, or hidden behind the description? Quote one sentence as evidence.',
 ]
 
@@ -212,7 +212,7 @@ export default async function TravelWritingPage() {
                 <strong>Sentence 2:</strong> Their first impression.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two specific observations of place or people.
+                <strong>Sentences 3-4:</strong> Two specific observations of place or people.
               </li>
               <li>
                 <strong>Sentence 5:</strong> The writer&rsquo;s overall attitude by the end.

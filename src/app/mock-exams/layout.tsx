@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'Practice papers for GCSE & IGCSE English Language and Literature, with mark-scheme breakdowns.',
   alternates: { canonical: 'https://theenglishhub.app/mock-exams' },
   openGraph: {
-    title: 'Mock exams — The English Hub',
+    title: 'Mock exams - The English Hub',
     description:
       'Practice papers for GCSE & IGCSE English Language and Literature, with mark-scheme breakdowns.',
     url: 'https://theenglishhub.app/mock-exams',

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 // ---------------------------------------------------------------------------
-// Cookie consent logging — placeholder tests.
+// Cookie consent logging - placeholder tests.
 //
 // The cookie-consent-log API route has not been created yet. These tests
 // document the expected behaviour so they can be connected to the real
@@ -39,7 +39,7 @@ describe('Cookie Consent Log API (spec)', () => {
     it('should validate that analytics and marketing are booleans', () => {
       const invalidPayload = {
         analytics: 'yes', // should be boolean
-        marketing: 'no',  // should be boolean
+        marketing: 'no', // should be boolean
       }
       expect(typeof invalidPayload.analytics).toBe('string') // would fail validation
       expect(typeof invalidPayload.analytics).not.toBe('boolean')
@@ -86,9 +86,9 @@ describe('Cookie Consent Log API (spec)', () => {
       // Under PECR, analytics and marketing cookies require explicit opt-in.
       // Default state should be false (not consented).
       const defaultConsent = {
-        essential: true,   // always allowed
-        analytics: false,  // requires opt-in
-        marketing: false,  // requires opt-in
+        essential: true, // always allowed
+        analytics: false, // requires opt-in
+        marketing: false, // requires opt-in
       }
       expect(defaultConsent.essential).toBe(true)
       expect(defaultConsent.analytics).toBe(false)

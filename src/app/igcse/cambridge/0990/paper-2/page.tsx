@@ -34,9 +34,9 @@ const sections = [
     code: 'Section A',
     title: 'Directed Writing',
     marks: '40 marks (25 writing + 15 reading)',
-    wordCount: '250–350 words',
+    wordCount: '250-350 words',
     description:
-      'Respond to a short text by writing in a specified form — e.g. a speech, letter, article or report — for a defined audience and purpose.',
+      'Respond to a short text by writing in a specified form - e.g. a speech, letter, article or report - for a defined audience and purpose.',
     forms: ['Speech', 'Letter', 'Journal entry', 'Article', 'Report', 'Interview'],
     icon: FileText,
   },
@@ -44,9 +44,9 @@ const sections = [
     code: 'Section B',
     title: 'Composition',
     marks: '40 marks (24 content + 16 style)',
-    wordCount: '350–450 words',
+    wordCount: '350-450 words',
     description:
-      'Choose one task from four options — two narrative and two descriptive — and write an extended composition. Plan carefully before you begin.',
+      'Choose one task from four options - two narrative and two descriptive - and write an extended composition. Plan carefully before you begin.',
     forms: ['Narrative (x2)', 'Descriptive (x2)'],
     icon: Feather,
   },
@@ -97,7 +97,7 @@ export default async function Paper2Page() {
             Paper 2: Directed Writing & Composition
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Two hours. Two pieces of writing — one directed response and one extended composition.
+            Two hours. Two pieces of writing - one directed response and one extended composition.
             80 marks, worth 50% of the IGCSE Language B qualification.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
@@ -250,7 +250,7 @@ export default async function Paper2Page() {
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">A clear voice.</strong> Match register to the form
-              — a speech sounds different from a journal entry. Don&apos;t write both in the same
+              - a speech sounds different from a journal entry. Don&apos;t write both in the same
               voice.
             </span>
           </li>
@@ -273,7 +273,7 @@ export default async function Paper2Page() {
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">Structural control.</strong> Openings that hook,
-              paragraphs that build, endings that land. Use a plan — don&apos;t draft as you write.
+              paragraphs that build, endings that land. Use a plan - don&apos;t draft as you write.
             </span>
           </li>
           <li className="flex items-start gap-3">

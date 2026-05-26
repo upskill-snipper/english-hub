@@ -435,7 +435,7 @@ export default function MacbethEssayPlansPage() {
               <Badge variant="outline">8 plans</Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth — Essay Plans
+              Macbeth - Essay Plans
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Eight exam-style essay plans covering character, theme, and writer&apos;s methods

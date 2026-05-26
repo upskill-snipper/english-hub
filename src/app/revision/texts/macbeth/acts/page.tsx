@@ -10,12 +10,12 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
   openGraph: {
-    title: 'Macbeth — Act-by-Act Study Guide | The English Hub',
+    title: 'Macbeth - Act-by-Act Study Guide | The English Hub',
     description:
       'Scene-by-scene breakdown of all five acts of Macbeth with full Shakespeare quotations and language technique analysis for GCSE revision.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/acts' },
-  title: 'Macbeth — Act-by-Act Study Guide',
+  title: 'Macbeth - Act-by-Act Study Guide',
   description:
     'Scene-by-scene breakdown of all five acts of Macbeth with full Shakespeare quotations and language technique analysis for GCSE revision.',
 }
@@ -52,7 +52,7 @@ const ACTS: Act[] = [
       "Act 1 establishes the play's supernatural atmosphere, introduces Macbeth as a war hero, and charts his rapid corruption as ambition takes root. Shakespeare moves from the witches' desolate heath to Duncan's court to the Macbeths' castle, tightening the dramatic tension with every scene until the decision to commit regicide is made.",
     scenes: [
       {
-        title: 'Act 1, Scene 1 — The Witches on the Heath',
+        title: 'Act 1, Scene 1 - The Witches on the Heath',
         summary:
           'Three witches meet on a desolate heath amid thunder and lightning. They agree to reconvene after the battle to meet Macbeth. They chant their paradoxical motto and vanish into the fog.',
         techniques: [
@@ -89,7 +89,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 1, Scene 2 — The Bleeding Captain',
+        title: 'Act 1, Scene 2 - The Bleeding Captain',
         summary:
           "A wounded captain reports to King Duncan that Macbeth has fought heroically against the rebel Macdonwald and the invading Norwegians. Duncan praises Macbeth's valour and orders that the traitorous Thane of Cawdor be executed, with his title given to Macbeth.",
         techniques: [
@@ -127,7 +127,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 1, Scene 3 — The Prophecy',
+        title: 'Act 1, Scene 3 - The Prophecy',
         summary:
           'Macbeth and Banquo encounter the witches on the heath. The witches hail Macbeth as Thane of Glamis, Thane of Cawdor, and future king, and tell Banquo he will father kings though he will not be one himself. Ross arrives to confirm that Macbeth has been named Thane of Cawdor. Macbeth is shaken and begins to contemplate murder.',
         techniques: [
@@ -167,7 +167,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 1, Scene 4 — Duncan Names Malcolm Heir',
+        title: 'Act 1, Scene 4 - Duncan Names Malcolm Heir',
         summary:
           'Duncan formally thanks Macbeth and Banquo for their service. He then names his son Malcolm as heir to the throne, the Prince of Cumberland. Macbeth recognises this as a barrier to his ambition and, in an aside, reveals his darkening thoughts.',
         techniques: [
@@ -205,7 +205,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: "Act 1, Scene 5 — Lady Macbeth's Soliloquy",
+        title: "Act 1, Scene 5 - Lady Macbeth's Soliloquy",
         summary:
           "Lady Macbeth reads Macbeth's letter describing the witches' prophecy. She fears her husband is too kind to seize the throne by force. She calls on dark spirits to strip her of femininity and fill her with cruelty. When Macbeth arrives, she tells him to leave the planning to her.",
         techniques: [
@@ -244,7 +244,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 1, Scene 6 — Duncan Arrives at Inverness',
+        title: 'Act 1, Scene 6 - Duncan Arrives at Inverness',
         summary:
           "Duncan and his entourage arrive at the Macbeths' castle. He praises the pleasant air and is warmly welcomed by Lady Macbeth, who plays the perfect hostess.",
         techniques: [
@@ -283,7 +283,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 1, Scene 7 — "If It Were Done When \'Tis Done"',
+        title: 'Act 1, Scene 7 - "If It Were Done When \'Tis Done"',
         summary:
           'Macbeth wavers, listing reasons not to kill Duncan. Lady Macbeth enters and attacks his manhood, describing her own willingness to dash out the brains of a nursing infant. She outlines her plan to drug the guards. Macbeth agrees to proceed.',
         techniques: [
@@ -333,7 +333,7 @@ const ACTS: Act[] = [
       "Act 2 is the play's darkest act in both the literal and metaphorical sense. It covers the murder of Duncan, the immediate psychological consequences for both Macbeths, and the discovery of the crime. Shakespeare keeps the actual killing offstage, focusing instead on the agonising mental state of the murderer, making Act 2 a sustained exploration of guilt, horror, and moral collapse.",
     scenes: [
       {
-        title: 'Act 2, Scene 1 — The Dagger Soliloquy',
+        title: 'Act 2, Scene 1 - The Dagger Soliloquy',
         summary:
           "After midnight, Banquo and his son Fleance walk through the castle. Banquo confesses to Macbeth that he has been dreaming about the witches. Left alone, Macbeth hallucinates a dagger floating before him, leading him towards Duncan's chamber. A bell rings and he goes to commit the murder.",
         techniques: [
@@ -374,7 +374,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 2, Scene 2 — The Murder',
+        title: 'Act 2, Scene 2 - The Murder',
         summary:
           'Macbeth returns from Duncan\'s chamber, blood-soaked and terrified. He has brought the daggers with him by mistake and reports hearing a voice cry "Sleep no more!" Lady Macbeth takes charge, returning the daggers and smearing the sleeping grooms with blood. A knocking begins at the gate.',
         techniques: [
@@ -414,7 +414,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 2, Scene 3 — The Porter and the Discovery',
+        title: 'Act 2, Scene 3 - The Porter and the Discovery',
         summary:
           "A drunken porter imagines himself as the gatekeeper of hell, admitting various sinners. He opens the gate for Macduff and Lennox, who have come to wake the king. Macduff discovers Duncan's body and raises the alarm. Macbeth kills the grooms, claiming fury. Malcolm and Donalbain decide to flee.",
         techniques: [
@@ -453,7 +453,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 2, Scene 4 — The Old Man',
+        title: 'Act 2, Scene 4 - The Old Man',
         summary:
           "Ross and an old man discuss the unnatural events following Duncan's murder: darkness at noon, a falcon killed by an owl, and Duncan's horses eating each other. Macduff reports that Macbeth has been named king and will be crowned at Scone.",
         techniques: [
@@ -503,7 +503,7 @@ const ACTS: Act[] = [
       "Act 3 charts Macbeth's transformation from reluctant murderer to calculating tyrant. Having secured the throne, he cannot enjoy it because the witches' prophecy about Banquo's descendants torments him. He orders Banquo's murder, but Fleance escapes. The act climaxes with the banquet scene, where Banquo's ghost exposes Macbeth's guilt before the Scottish nobility.",
     scenes: [
       {
-        title: "Act 3, Scene 1 — Macbeth Plans Banquo's Murder",
+        title: "Act 3, Scene 1 - Macbeth Plans Banquo's Murder",
         summary:
           'Banquo reflects on the witches\' prophecy and suspects Macbeth played "most foully" for the crown. Macbeth, now king, questions Banquo about his travel plans and then meets with two murderers, persuading them to kill Banquo and his son Fleance.',
         techniques: [
@@ -544,7 +544,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 3, Scene 2 — "Nought\'s Had, All\'s Spent"',
+        title: 'Act 3, Scene 2 - "Nought\'s Had, All\'s Spent"',
         summary:
           'Lady Macbeth expresses her dissatisfaction privately. When Macbeth enters, he reveals his anxiety about Banquo but does not tell her about the murder he has planned. Their conversation reveals a marriage deteriorating under the weight of shared guilt.',
         techniques: [
@@ -582,7 +582,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: "Act 3, Scene 3 — Banquo's Murder",
+        title: "Act 3, Scene 3 - Banquo's Murder",
         summary:
           "Three murderers ambush Banquo and Fleance as they approach the castle. They kill Banquo, but Fleance escapes into the darkness, preserving the witches' prophecy that Banquo's line will inherit the throne.",
         techniques: [
@@ -619,7 +619,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 3, Scene 4 — The Banquet Scene',
+        title: 'Act 3, Scene 4 - The Banquet Scene',
         summary:
           "Macbeth hosts a royal banquet. The first murderer reports Banquo's death and Fleance's escape. As Macbeth takes his seat, he sees Banquo's ghost occupying his chair. He reacts with visible terror, alarming the guests. Lady Macbeth tries to cover for him but the feast dissolves in chaos.",
         techniques: [
@@ -657,7 +657,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 3, Scene 5 — Hecate and the Witches',
+        title: 'Act 3, Scene 5 - Hecate and the Witches',
         summary:
           'Hecate, goddess of witchcraft, berates the three witches for dealing with Macbeth without her permission. She instructs them to prepare more powerful spells to give Macbeth a false sense of security.',
         techniques: [
@@ -697,7 +697,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 3, Scene 6 — Lennox and the Lord',
+        title: 'Act 3, Scene 6 - Lennox and the Lord',
         summary:
           'Lennox speaks with heavy irony about the convenient deaths surrounding Macbeth. A lord reports that Macduff has fled to England to join Malcolm and raise an army against Macbeth, with the support of the English king Edward.',
         techniques: [
@@ -747,7 +747,7 @@ const ACTS: Act[] = [
       "Act 4 deepens Macbeth's tyranny while building the forces that will destroy him. He visits the witches for reassurance and receives three apparitions that seem to promise invincibility. Emboldened, he orders the massacre of Macduff's family. In England, Macduff learns of his family's murder and joins Malcolm's army. The act contains some of the play's most emotionally devastating scenes.",
     scenes: [
       {
-        title: 'Act 4, Scene 1 — The Apparitions',
+        title: 'Act 4, Scene 1 - The Apparitions',
         summary:
           "Macbeth seeks out the witches, who conjure three apparitions. An armed head warns him to beware Macduff. A bloody child tells him no man born of woman can harm him. A crowned child holding a tree says he will not be defeated until Birnam Wood moves to Dunsinane. Macbeth demands to know if Banquo's descendants will reign and is shown a line of eight kings. He resolves to kill Macduff's family.",
         techniques: [
@@ -786,7 +786,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 4, Scene 2 — The Murder of Lady Macduff',
+        title: 'Act 4, Scene 2 - The Murder of Lady Macduff',
         summary:
           'Lady Macduff, abandoned by her husband, talks with her young son. Ross visits briefly. A messenger warns them to flee, but it is too late. Murderers arrive and kill the son, and Lady Macduff flees offstage to her death.',
         techniques: [
@@ -827,7 +827,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 4, Scene 3 — Malcolm Tests Macduff',
+        title: 'Act 4, Scene 3 - Malcolm Tests Macduff',
         summary:
           "In England, Malcolm tests Macduff's loyalty by pretending to be riddled with vices, including lust, greed, and a love of chaos. When Macduff despairs for Scotland, Malcolm reveals the test and confirms he is virtuous. Ross arrives with news of the Macduff family's slaughter. The scene ends with Macduff vowing revenge.",
         techniques: [
@@ -877,7 +877,7 @@ const ACTS: Act[] = [
       "Act 5 brings the play to its devastating conclusion. Lady Macbeth's psychological collapse is dramatised in her sleepwalking scene. Macbeth, increasingly isolated, clings to the witches' prophecies as his remaining support crumbles. The prophecies are fulfilled through unexpected means, and Macbeth meets his end at Macduff's hands. Malcolm is crowned, restoring legitimate order to Scotland.",
     scenes: [
       {
-        title: 'Act 5, Scene 1 — The Sleepwalking Scene',
+        title: 'Act 5, Scene 1 - The Sleepwalking Scene',
         summary:
           "A doctor and gentlewoman observe Lady Macbeth sleepwalking. She compulsively rubs her hands as if washing them, reliving the murders in fragmented speech. She refers to Duncan's blood, Banquo's death, and Lady Macduff's murder. The doctor recognises that her illness is beyond medicine.",
         techniques: [
@@ -917,7 +917,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 5, Scene 2 — The Scottish Nobles March',
+        title: 'Act 5, Scene 2 - The Scottish Nobles March',
         summary:
           "Scottish nobles including Menteith, Angus, Caithness, and Lennox march to join Malcolm's English forces near Birnam Wood. They discuss Macbeth's deteriorating mental state and the hollowness of his rule.",
         techniques: [
@@ -957,7 +957,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: "Act 5, Scene 3 — Macbeth's Defiance",
+        title: "Act 5, Scene 3 - Macbeth's Defiance",
         summary:
           "In Dunsinane castle, Macbeth clings to the witches' prophecies while receiving reports of deserting thanes. He asks the doctor about Lady Macbeth's condition and reflects on the emptiness of his life.",
         techniques: [
@@ -997,7 +997,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 5, Scene 4 — Birnam Wood Moves',
+        title: 'Act 5, Scene 4 - Birnam Wood Moves',
         summary:
           'Malcolm orders his soldiers to cut branches from Birnam Wood to use as camouflage, concealing their numbers as they march on Dunsinane. The prophecy begins to be fulfilled.',
         techniques: [
@@ -1035,7 +1035,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 5, Scene 5 — "Tomorrow, and Tomorrow, and Tomorrow"',
+        title: 'Act 5, Scene 5 - "Tomorrow, and Tomorrow, and Tomorrow"',
         summary:
           'Macbeth declares the castle can withstand a siege, then receives news that Lady Macbeth is dead. He delivers his famous nihilistic soliloquy. A messenger then reports that Birnam Wood appears to be moving towards Dunsinane.',
         techniques: [
@@ -1077,7 +1077,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 5, Scene 6 — The Battle Begins',
+        title: 'Act 5, Scene 6 - The Battle Begins',
         summary:
           'Malcolm orders the soldiers to throw down their leafy camouflage and prepare for battle. Macduff focuses on finding Macbeth.',
         techniques: [
@@ -1116,7 +1116,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: 'Act 5, Scene 7 — Young Siward Falls',
+        title: 'Act 5, Scene 7 - Young Siward Falls',
         summary:
           'Macbeth fights and kills young Siward, reassuring himself that no man born of woman can harm him. Macduff searches the battlefield for Macbeth. Malcolm and old Siward enter Dunsinane castle.',
         techniques: [
@@ -1155,7 +1155,7 @@ const ACTS: Act[] = [
         ],
       },
       {
-        title: "Act 5, Scene 8 — Macbeth's Death and Malcolm's Coronation",
+        title: "Act 5, Scene 8 - Macbeth's Death and Malcolm's Coronation",
         summary:
           'Macbeth and Macduff face each other. Macbeth boasts that no man born of woman can harm him. Macduff reveals he was delivered by caesarean section. Macbeth briefly despairs but refuses to yield. They fight; Macduff kills Macbeth. Malcolm is hailed as King of Scotland.',
         techniques: [
@@ -1240,7 +1240,7 @@ export default async function MacbethActsPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Shakespeare — Play
+              Shakespeare - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -1249,7 +1249,7 @@ export default async function MacbethActsPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Macbeth — Act-by-Act Study Guide
+            Macbeth - Act-by-Act Study Guide
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
             Every scene with full public-domain quotations and language technique analysis
@@ -1289,7 +1289,7 @@ export default async function MacbethActsPage() {
           <div className="mb-5 flex items-center gap-3">
             <BookOpen className="size-5 text-emerald-400" />
             <h2 className="text-heading-lg font-heading text-foreground">
-              Act {act.act} — {act.title}
+              Act {act.act} - {act.title}
             </h2>
           </div>
 

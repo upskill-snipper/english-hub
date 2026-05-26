@@ -1,5 +1,5 @@
 /**
- * ICO Children's Code (Age Appropriate Design Code) — privacy defaults
+ * ICO Children's Code (Age Appropriate Design Code) - privacy defaults
  * for under-18 users.
  *
  * Default privacy settings for child / minor accounts. All behavioural
@@ -36,54 +36,54 @@
 export const CHILD_DEFAULT_SETTINGS = {
   /**
    * Personalised content / revision recommendations.
-   * OFF — Standard 6: profiling under-18s for personalisation is
+   * OFF - Standard 6: profiling under-18s for personalisation is
    * disabled by default per the Children's Code.
    */
   personalisedRecommendations: false,
   /**
    * Daily-streak gamification (streak counters, fire emojis, "don't
    * lose your streak" prompts).
-   * OFF — Standard 6: streak mechanics are an established compulsive-
+   * OFF - Standard 6: streak mechanics are an established compulsive-
    * use pattern and are disabled by default for minors.
    */
   streakNotifications: false,
   /**
    * "Come back" / engagement nudge notifications (push + email).
-   * OFF — Standard 6: behavioural nudges that exploit FOMO are
+   * OFF - Standard 6: behavioural nudges that exploit FOMO are
    * disabled by default for minors.
    */
   nudgeNotifications: false,
   /**
    * Analytics beyond what is strictly necessary to deliver the
-   * service. Essential / security telemetry remains enabled — only
+   * service. Essential / security telemetry remains enabled - only
    * non-essential analytics (engagement, funnels, A/B tests) are
    * gated by this flag.
-   * OFF — Standard 8: high-privacy default for non-essential
+   * OFF - Standard 8: high-privacy default for non-essential
    * tracking. Equivalent to "minimal / essential-only" analytics.
    */
   analyticsOptIn: false,
   /**
    * Marketing emails and promotional messages.
-   * OFF — Standard 8: marketing to children requires explicit opt-in;
+   * OFF - Standard 8: marketing to children requires explicit opt-in;
    * it is never the default.
    */
   marketingOptIn: false,
   /**
    * Social-share nudges (e.g. after practice sets / quiz completion).
-   * OFF — Standard 6: sharing prompts encourage data disclosure and
+   * OFF - Standard 6: sharing prompts encourage data disclosure and
    * are not age-appropriate for minors.
    */
   socialShareNudge: false,
   /**
    * Public leaderboards (rank visible to other users).
-   * OFF — Standard 6 + Standard 8: public ranking exposes a child's
+   * OFF - Standard 6 + Standard 8: public ranking exposes a child's
    * activity / performance to other users, drives comparison harms,
    * and is therefore disabled by default.
    */
   publicLeaderboards: false,
   /**
    * Precise / approximate geolocation collection and use.
-   * OFF — Standard 10 ("Geolocation") in tandem with Standard 8:
+   * OFF - Standard 10 ("Geolocation") in tandem with Standard 8:
    * geolocation options that track children must be off by default.
    */
   geolocation: false,
@@ -148,7 +148,7 @@ export function isChildAge(age: number | null | undefined): boolean {
  * high-privacy defaults exported from this module.
  *
  * Per Standard 8, defaults must be "high privacy" for every user the
- * Code applies to, which is everyone under 18 — not just the under-13
+ * Code applies to, which is everyone under 18 - not just the under-13
  * UK GDPR Art. 8 digital-consent threshold.
  */
 export function isMinorAge(age: number | null | undefined): boolean {

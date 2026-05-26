@@ -1,11 +1,11 @@
-// ─── Platform-admin — Marker batch management ───────────────────────────────
+// ─── Platform-admin - Marker batch management ───────────────────────────────
 // GET  /api/admin/marker-batches    list batches (newest first) + live counts
 // POST /api/admin/marker-batches    create a batch
 //
-// Site-admin only (verifyAdmin — RLS deny-by-default; service-role only).
+// Site-admin only (verifyAdmin - RLS deny-by-default; service-role only).
 // Mirrors src/app/api/admin/prompts/route.ts house style.
 //
-// `marker_batches` columns (snake_case — see 20260519_marker_drive.sql):
+// `marker_batches` columns (snake_case - see 20260519_marker_drive.sql):
 //   id, label, board, paper, source_type ∈ commissioned|platform|specimen,
 //   target_count, status ∈ open|closed, created_by, created_at
 //

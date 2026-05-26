@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'Find answers to common questions about The English Hub. Get help with courses, mock exams, practice questions, your account, billing, and more.',
   openGraph: {
-    title: 'Help Centre — The English Hub',
+    title: 'Help Centre - The English Hub',
     description:
       'Find answers to common questions about The English Hub. Get help with courses, mock exams, practice questions, your account, billing, and more.',
     url: 'https://theenglishhub.app/help',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Help Centre — The English Hub',
+    title: 'Help Centre - The English Hub',
     description:
       'Find answers to common questions about The English Hub. Get help with courses, mock exams, practice questions, your account, billing, and more.',
   },
@@ -24,10 +24,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function HelpLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function HelpLayout({ children }: { children: React.ReactNode }) {
   return children
 }

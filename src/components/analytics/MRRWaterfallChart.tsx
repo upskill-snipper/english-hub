@@ -18,8 +18,8 @@ interface Bar {
   key: string
   label: string
   amount: number // actual MRR value of the bar (+/-)
-  barStart: number // GBP — base of the bar
-  barTop: number // GBP — top of the bar
+  barStart: number // GBP - base of the bar
+  barTop: number // GBP - top of the bar
   colour: string
   isTotal?: boolean
 }
@@ -77,7 +77,7 @@ function WaterfallTooltip({
  * MRR Waterfall for a single month. Shows how we went from starting MRR
  * to ending MRR via new/expansion/upgrade/contraction/downgrade/churn bars.
  *
- * Re-skinned onto the premium "cinematic glass" Recharts layer — the public
+ * Re-skinned onto the premium "cinematic glass" Recharts layer - the public
  * API ({ month, className }) and every metric/label is preserved exactly;
  * only the rendering changed from CSS divs to a themed Recharts waterfall.
  */

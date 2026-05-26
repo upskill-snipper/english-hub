@@ -473,11 +473,11 @@ export default function JekyllAndHydePage() {
               />
               <CharacterCard
                 name="Mr Gabriel John Utterson"
-                description="Jekyll's lawyer and the novella's primary narrator/investigator. Utterson is rational, loyal, and discreet — the ideal Victorian gentleman. He actively suppresses curiosity and avoids scandal, representing the Victorian value of respectability above truth. His dogged investigation drives the plot but he consistently fails to uncover the truth, suggesting the limits of rationality when confronted with the supernatural. He is 'the last good influence' in Jekyll's life. His restraint contrasts with Hyde's excess."
+                description="Jekyll's lawyer and the novella's primary narrator/investigator. Utterson is rational, loyal, and discreet - the ideal Victorian gentleman. He actively suppresses curiosity and avoids scandal, representing the Victorian value of respectability above truth. His dogged investigation drives the plot but he consistently fails to uncover the truth, suggesting the limits of rationality when confronted with the supernatural. He is 'the last good influence' in Jekyll's life. His restraint contrasts with Hyde's excess."
               />
               <CharacterCard
                 name="Dr Hastie Lanyon"
-                description="A conventional, mainstream doctor and former friend of Jekyll. Lanyon represents orthodox science and rationality. He dismissed Jekyll's experiments as 'unscientific balderdash,' yet when he witnesses Hyde's transformation, the shock literally kills him. His death demonstrates that confronting the truth of human duality — seeing evil made manifest — can destroy a person. He serves as a warning about the dangers of both ignorance and knowledge."
+                description="A conventional, mainstream doctor and former friend of Jekyll. Lanyon represents orthodox science and rationality. He dismissed Jekyll's experiments as 'unscientific balderdash,' yet when he witnesses Hyde's transformation, the shock literally kills him. His death demonstrates that confronting the truth of human duality - seeing evil made manifest - can destroy a person. He serves as a warning about the dangers of both ignorance and knowledge."
               />
               <CharacterCard
                 name="Poole"
@@ -485,7 +485,7 @@ export default function JekyllAndHydePage() {
               />
               <CharacterCard
                 name="Sir Danvers Carew"
-                description="An elderly, distinguished Member of Parliament whose brutal murder by Hyde marks the turning point of the novella. Carew is described as having 'an aged and beautiful' gentleness, making Hyde's unprovoked attack especially horrifying. His murder symbolises Hyde's assault on the very pillars of respectable Victorian society — law, government, and civility."
+                description="An elderly, distinguished Member of Parliament whose brutal murder by Hyde marks the turning point of the novella. Carew is described as having 'an aged and beautiful' gentleness, making Hyde's unprovoked attack especially horrifying. His murder symbolises Hyde's assault on the very pillars of respectable Victorian society - law, government, and civility."
               />
               <CharacterCard
                 name="Mr Richard Enfield"
@@ -501,7 +501,7 @@ export default function JekyllAndHydePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Duality of Human Nature`)}
-                description="The central theme of the novella. Stevenson argues that every person contains both good and evil. Jekyll's experiment does not create evil — it releases what was already there. Rather than integrating these two sides, Victorian society forces individuals to suppress their darker impulses, which only makes them more dangerous. Jekyll's fatal error is believing the two can be permanently separated. The novella suggests that denying one's darker nature, rather than acknowledging and controlling it, leads to destruction."
+                description="The central theme of the novella. Stevenson argues that every person contains both good and evil. Jekyll's experiment does not create evil - it releases what was already there. Rather than integrating these two sides, Victorian society forces individuals to suppress their darker impulses, which only makes them more dangerous. Jekyll's fatal error is believing the two can be permanently separated. The novella suggests that denying one's darker nature, rather than acknowledging and controlling it, leads to destruction."
               />
               <ThemeCard
                 title={tr(`Reputation and Respectability`)}
@@ -509,7 +509,7 @@ export default function JekyllAndHydePage() {
               />
               <ThemeCard
                 title={tr(`Science vs Religion`)}
-                description="Jekyll's experiment represents the tension between Victorian scientific ambition and religious morality. His attempt to separate good from evil echoes contemporary debates about Darwin's theory of evolution and whether science was trespassing into God's domain. Lanyon's rejection of Jekyll's work as 'unscientific' reflects the conservative establishment's fear of radical experimentation. Stevenson presents science without moral restraint as dangerous — a Promethean overreach."
+                description="Jekyll's experiment represents the tension between Victorian scientific ambition and religious morality. His attempt to separate good from evil echoes contemporary debates about Darwin's theory of evolution and whether science was trespassing into God's domain. Lanyon's rejection of Jekyll's work as 'unscientific' reflects the conservative establishment's fear of radical experimentation. Stevenson presents science without moral restraint as dangerous - a Promethean overreach."
               />
               <ThemeCard
                 title="Secrecy and Silence"
@@ -517,15 +517,15 @@ export default function JekyllAndHydePage() {
               />
               <ThemeCard
                 title={tr(`Victorian Hypocrisy`)}
-                description="Stevenson exposes the gap between Victorian moral ideals and private behaviour. Jekyll is not unusual — he is a typical gentleman with 'irregularities' he feels compelled to hide. The entire social circle of respectable men protects each other's secrets. Stevenson suggests that Victorian morality, rather than making people good, simply drives vice underground. Hyde's Soho dwelling — a 'dismal quarter' hidden within respectable London — physically represents this hidden underworld."
+                description="Stevenson exposes the gap between Victorian moral ideals and private behaviour. Jekyll is not unusual - he is a typical gentleman with 'irregularities' he feels compelled to hide. The entire social circle of respectable men protects each other's secrets. Stevenson suggests that Victorian morality, rather than making people good, simply drives vice underground. Hyde's Soho dwelling - a 'dismal quarter' hidden within respectable London - physically represents this hidden underworld."
               />
               <ThemeCard
                 title={tr(`Good vs Evil`)}
-                description="While the novella appears to present a simple battle between good and evil, Stevenson complicates this. Jekyll acknowledges that Hyde gave him pleasure. Evil is not external but internal. The potion does not create a monster — it removes the restraints that society imposes. Moreover, Jekyll without Hyde is not purely good; he is merely respectable. The novella questions whether absolute goodness is even possible, suggesting that humanity exists on a spectrum between virtue and vice."
+                description="While the novella appears to present a simple battle between good and evil, Stevenson complicates this. Jekyll acknowledges that Hyde gave him pleasure. Evil is not external but internal. The potion does not create a monster - it removes the restraints that society imposes. Moreover, Jekyll without Hyde is not purely good; he is merely respectable. The novella questions whether absolute goodness is even possible, suggesting that humanity exists on a spectrum between virtue and vice."
               />
               <ThemeCard
                 title="Repression"
-                description="Stevenson presents Victorian repression as the root cause of Jekyll's tragedy. Jekyll's 'Full Statement' reveals that he was not inherently wicked but felt forced to hide ordinary human desires behind a facade of total virtue. The longer these desires were suppressed, the more violently they erupted through Hyde. 'My devil had been long caged, he came out roaring' — the caging metaphor directly critiques a society that demands impossible moral purity. Stevenson anticipates Freud's later theories: repression does not destroy dangerous impulses but intensifies them."
+                description="Stevenson presents Victorian repression as the root cause of Jekyll's tragedy. Jekyll's 'Full Statement' reveals that he was not inherently wicked but felt forced to hide ordinary human desires behind a facade of total virtue. The longer these desires were suppressed, the more violently they erupted through Hyde. 'My devil had been long caged, he came out roaring' - the caging metaphor directly critiques a society that demands impossible moral purity. Stevenson anticipates Freud's later theories: repression does not destroy dangerous impulses but intensifies them."
               />
             </div>
           </Section>
@@ -541,7 +541,7 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="If he be Mr Hyde, I shall be Mr Seek."
                 speaker="Utterson"
-                analysis="A pun on 'hide and seek' that establishes Utterson's role as detective-figure. It also hints at the theme of concealment — Hyde hides within Jekyll, and behind the respectable facade of Victorian society. The playfulness of the pun contrasts with the darkness of what Utterson will uncover."
+                analysis="A pun on 'hide and seek' that establishes Utterson's role as detective-figure. It also hints at the theme of concealment - Hyde hides within Jekyll, and behind the respectable facade of Victorian society. The playfulness of the pun contrasts with the darkness of what Utterson will uncover."
               />
               <QuoteCard
                 quote="He is not easy to describe. There is something wrong with his appearance; something displeasing, something downright detestable."
@@ -551,7 +551,7 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="I learned to recognise the thorough and primitive duality of man."
                 speaker="Jekyll"
-                analysis="Jekyll's key realisation from his 'Full Statement.' The word 'primitive' links duality to humanity's evolutionary past, connecting to Darwin's theories. 'Thorough' suggests this duality is complete and inescapable — not a flaw but a fundamental aspect of human nature."
+                analysis="Jekyll's key realisation from his 'Full Statement.' The word 'primitive' links duality to humanity's evolutionary past, connecting to Darwin's theories. 'Thorough' suggests this duality is complete and inescapable - not a flaw but a fundamental aspect of human nature."
               />
               <QuoteCard
                 quote="Man is not truly one, but truly two."
@@ -561,12 +561,12 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="All human beings, as we meet them, are commingled out of good and evil."
                 speaker="Jekyll"
-                analysis="'Commingled' suggests good and evil are inseparably mixed — like chemicals in a solution. This undercuts Jekyll's own experiment, which attempts to separate them. The phrase 'as we meet them' implies that the public self is always a blend, while the attempt at purity (either purely good or purely evil) is unnatural and destructive."
+                analysis="'Commingled' suggests good and evil are inseparably mixed - like chemicals in a solution. This undercuts Jekyll's own experiment, which attempts to separate them. The phrase 'as we meet them' implies that the public self is always a blend, while the attempt at purity (either purely good or purely evil) is unnatural and destructive."
               />
               <QuoteCard
                 quote="I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse."
                 speaker="Jekyll"
-                analysis="The chiastic structure (original/better, second/worse) mirrors the crossing-over between identities. 'Slowly' repeated twice shows the gradual loss of control. 'Incorporated' literally means 'made into a body' — Hyde is physically consuming Jekyll. This tracks the novella's arc of escalation."
+                analysis="The chiastic structure (original/better, second/worse) mirrors the crossing-over between identities. 'Slowly' repeated twice shows the gradual loss of control. 'Incorporated' literally means 'made into a body' - Hyde is physically consuming Jekyll. This tracks the novella's arc of escalation."
               />
               <QuoteCard
                 quote="The last I think; for O my poor old Harry Jekyll, if ever I read Satan's signature upon a face, it is on that of your new friend."
@@ -586,22 +586,22 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="The fog still slept on the wing above the drowned city."
                 speaker="Narrator"
-                analysis="Stevenson personifies the London fog, making it a sinister, oppressive presence. 'Drowned' suggests the city is submerged — hidden beneath layers of concealment. The fog is a pathetic fallacy for the secrecy and moral murkiness that pervades the novella. It also evokes the real industrial smog of Victorian London."
+                analysis="Stevenson personifies the London fog, making it a sinister, oppressive presence. 'Drowned' suggests the city is submerged - hidden beneath layers of concealment. The fog is a pathetic fallacy for the secrecy and moral murkiness that pervades the novella. It also evokes the real industrial smog of Victorian London."
               />
               <QuoteCard
                 quote="He had in his hand a heavy cane, with which he was trifling; but he answered never a word."
                 speaker="Narrator, describing Hyde before the murder"
-                analysis="The casual 'trifling' with the murder weapon creates menacing understatement. Hyde's silence is more threatening than speech. The cane — a gentleman's accessory — becomes a weapon, symbolising how respectability conceals violence. The weapon belongs to Jekyll's world, not Hyde's."
+                analysis="The casual 'trifling' with the murder weapon creates menacing understatement. Hyde's silence is more threatening than speech. The cane - a gentleman's accessory - becomes a weapon, symbolising how respectability conceals violence. The weapon belongs to Jekyll's world, not Hyde's."
               />
               <QuoteCard
                 quote="It was Hyde, after all, and Hyde alone, that was guilty."
                 speaker="Jekyll"
-                analysis="Jekyll's attempt to absolve himself of responsibility by blaming Hyde. The self-justification is deeply ironic — Jekyll created Hyde and chose to become him. Stevenson critiques the Victorian tendency to displace guilt onto others. 'After all' reveals Jekyll's need to convince himself."
+                analysis="Jekyll's attempt to absolve himself of responsibility by blaming Hyde. The self-justification is deeply ironic - Jekyll created Hyde and chose to become him. Stevenson critiques the Victorian tendency to displace guilt onto others. 'After all' reveals Jekyll's need to convince himself."
               />
               <QuoteCard
                 quote="I was the chief of sinners, I was the chief of sufferers also."
                 speaker="Jekyll"
-                analysis="Biblical language (echoing St Paul: 'Christ Jesus came into the world to save sinners, of whom I am chief'). The parallel structure equates sin with suffering — Jekyll is both perpetrator and victim. This duality within a single sentence encapsulates the novella's central theme."
+                analysis="Biblical language (echoing St Paul: 'Christ Jesus came into the world to save sinners, of whom I am chief'). The parallel structure equates sin with suffering - Jekyll is both perpetrator and victim. This duality within a single sentence encapsulates the novella's central theme."
               />
               <QuoteCard
                 quote="Something troglodytic... the man seems hardly human."
@@ -611,27 +611,27 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="He gave an impression of deformity without any nameable malformation."
                 speaker="Narrator"
-                analysis="The paradox — deformed yet physically whole — suggests Hyde's evil is metaphysical, not physical. His wrongness is felt instinctively. This connects to physiognomy (the Victorian pseudo-science of reading character from appearance) while simultaneously undermining it: Hyde's evil cannot be pinned to specific features."
+                analysis="The paradox - deformed yet physically whole - suggests Hyde's evil is metaphysical, not physical. His wrongness is felt instinctively. This connects to physiognomy (the Victorian pseudo-science of reading character from appearance) while simultaneously undermining it: Hyde's evil cannot be pinned to specific features."
               />
               <QuoteCard
                 quote="My devil had been long caged, he came out roaring."
                 speaker="Jekyll"
-                analysis="Animal imagery ('caged,' 'roaring') presents Hyde as a beast. 'My devil' acknowledges ownership — Hyde is part of Jekyll, not an external force. 'Long caged' directly critiques Victorian repression: suppressing desires does not eliminate them but intensifies them. The longer the cage, the more violent the release."
+                analysis="Animal imagery ('caged,' 'roaring') presents Hyde as a beast. 'My devil' acknowledges ownership - Hyde is part of Jekyll, not an external force. 'Long caged' directly critiques Victorian repression: suppressing desires does not eliminate them but intensifies them. The longer the cage, the more violent the release."
               />
               <QuoteCard
                 quote="I felt younger, lighter, happier in body."
                 speaker="Jekyll"
-                analysis="Jekyll's first transformation into Hyde is described with liberation and pleasure. The tricolon of positive adjectives suggests that releasing one's darker side feels like freedom. This complicates the moral framework — evil is not experienced as evil by the person committing it, which is precisely what makes it dangerous."
+                analysis="Jekyll's first transformation into Hyde is described with liberation and pleasure. The tricolon of positive adjectives suggests that releasing one's darker side feels like freedom. This complicates the moral framework - evil is not experienced as evil by the person committing it, which is precisely what makes it dangerous."
               />
               <QuoteCard
                 quote="Between these two, I now felt I had to choose."
                 speaker="Jekyll"
-                analysis="Jekyll frames his dilemma as a binary choice, but Stevenson shows this is a false dichotomy. The impossibility of choosing demonstrates that human nature cannot be divided into neat categories. Jekyll's tragedy is his refusal to accept his whole self — both the respectable doctor and the pleasure-seeker."
+                analysis="Jekyll frames his dilemma as a binary choice, but Stevenson shows this is a false dichotomy. The impossibility of choosing demonstrates that human nature cannot be divided into neat categories. Jekyll's tragedy is his refusal to accept his whole self - both the respectable doctor and the pleasure-seeker."
               />
               <QuoteCard
                 quote="The large handsome face of Dr Jekyll grew pale to the very lips, and there came a blackness about his eyes."
                 speaker="Narrator"
-                analysis="Physical description foreshadows the transformation. 'Pale to the lips' and 'blackness about his eyes' suggest Hyde bleeding through Jekyll's appearance. The visual contrast of white and black mirrors the novella's central duality. The face — the public self — is literally being darkened."
+                analysis="Physical description foreshadows the transformation. 'Pale to the lips' and 'blackness about his eyes' suggest Hyde bleeding through Jekyll's appearance. The visual contrast of white and black mirrors the novella's central duality. The face - the public self - is literally being darkened."
               />
               <QuoteCard
                 quote="This was the shocking thing; that the slime of the pit seemed to utter cries and voices."
@@ -641,7 +641,7 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="If I am the chief of sinners, I am the chief of sufferers also. I could not think that this earth contained a place for sufferings and terrors so unmanning."
                 speaker="Jekyll"
-                analysis="'Unmanning' is significant — Hyde strips Jekyll of his masculine Victorian identity. The superlative 'chief' elevates Jekyll's experience to the extreme. This passage reveals that Jekyll's punishment is not external (the law never catches him) but internal — psychological torment and loss of self."
+                analysis="'Unmanning' is significant - Hyde strips Jekyll of his masculine Victorian identity. The superlative 'chief' elevates Jekyll's experience to the extreme. This passage reveals that Jekyll's punishment is not external (the law never catches him) but internal - psychological torment and loss of self."
               />
               <QuoteCard
                 quote="That child of Hell had nothing human; nothing lived in him but fear and hatred."
@@ -651,27 +651,27 @@ export default function JekyllAndHydePage() {
               <QuoteCard
                 quote="God bless me, the man seems hardly human!"
                 speaker="Utterson"
-                analysis="Utterson's shocked exclamation after meeting Hyde. The involuntary religious oath ('God bless me') suggests an instinctive spiritual recoil. 'Hardly human' connects to evolutionary fears — Hyde represents regression. Even the rational, restrained Utterson cannot maintain composure when confronted with Hyde."
+                analysis="Utterson's shocked exclamation after meeting Hyde. The involuntary religious oath ('God bless me') suggests an instinctive spiritual recoil. 'Hardly human' connects to evolutionary fears - Hyde represents regression. Even the rational, restrained Utterson cannot maintain composure when confronted with Hyde."
               />
               <QuoteCard
                 quote="The door, which was equipped with neither bell nor knocker, was blistered and distained."
                 speaker="Narrator"
-                analysis="The laboratory door symbolises the hidden, shameful side of Jekyll's life. 'Neither bell nor knocker' means it does not welcome visitors — it exists to conceal. 'Blistered and distained' (stained/discoloured) suggests decay and neglect. The door contrasts sharply with Jekyll's grand front entrance, physically representing the public/private divide."
+                analysis="The laboratory door symbolises the hidden, shameful side of Jekyll's life. 'Neither bell nor knocker' means it does not welcome visitors - it exists to conceal. 'Blistered and distained' (stained/discoloured) suggests decay and neglect. The door contrasts sharply with Jekyll's grand front entrance, physically representing the public/private divide."
               />
               <QuoteCard
                 quote="The doctor gave one of his pleasant dinners to some five or six old cronies, all intelligent reputable men, and all judges of good wine."
                 speaker="Narrator"
-                analysis="The emphasis on respectability, intelligence, and social ritual establishes the world Jekyll has to lose. 'Pleasant' and 'old cronies' create warmth and comfort. Every detail — the dinner party, the wine, the gentlemen — represents the Victorian establishment that Jekyll will destroy. The surface calm makes the underlying horror more effective."
+                analysis="The emphasis on respectability, intelligence, and social ritual establishes the world Jekyll has to lose. 'Pleasant' and 'old cronies' create warmth and comfort. Every detail - the dinner party, the wine, the gentlemen - represents the Victorian establishment that Jekyll will destroy. The surface calm makes the underlying horror more effective."
               />
               <QuoteCard
                 quote="I began to be aware of a change in the temper of my thoughts, a greater boldness, a contempt of danger, a solution of the bonds of obligation."
                 speaker="Jekyll"
-                analysis="Jekyll describes the psychological shift as Hyde begins to dominate. The list structure shows escalation: from changed thoughts to boldness to contempt to the complete dissolution of moral duty. 'Solution of the bonds' is a chemistry metaphor — obligation dissolves like a substance in liquid, connecting to Jekyll's scientific framework."
+                analysis="Jekyll describes the psychological shift as Hyde begins to dominate. The list structure shows escalation: from changed thoughts to boldness to contempt to the complete dissolution of moral duty. 'Solution of the bonds' is a chemistry metaphor - obligation dissolves like a substance in liquid, connecting to Jekyll's scientific framework."
               />
               <QuoteCard
-                quote="He, I say — I cannot say, I."
+                quote="He, I say - I cannot say, I."
                 speaker="Jekyll"
-                analysis="A moment of profound identity crisis. Jekyll cannot decide whether to refer to Hyde as 'he' (separate) or 'I' (the same person). The grammatical confusion — the dash, the self-correction — mirrors the fragmentation of identity. This single sentence encapsulates the novella's central psychological horror: the inability to distinguish self from other."
+                analysis="A moment of profound identity crisis. Jekyll cannot decide whether to refer to Hyde as 'he' (separate) or 'I' (the same person). The grammatical confusion - the dash, the self-correction - mirrors the fragmentation of identity. This single sentence encapsulates the novella's central psychological horror: the inability to distinguish self from other."
               />
             </div>
           </Section>

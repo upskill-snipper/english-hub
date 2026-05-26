@@ -3,27 +3,27 @@
  *
  * Cycle 6 fix (Agent-SIGNUP): creates the Prisma `User` projection row that
  * mirrors a freshly-created Supabase Auth user. Closes the P0 architectural
- * gap identified in Cycle 5 — before this handler existed, Supabase signups
+ * gap identified in Cycle 5 - before this handler existed, Supabase signups
  * never produced a corresponding Prisma row, so every Prisma-backed feature
  * (dormancy-check cron, data-retention, DSAR/privacy endpoints, weekly
  * reports, subscription linkage, `/api/auth/record-login`'s `updateMany`
  * on email, etc.) silently no-opped for the majority of real users.
  *
- * Design decision (option B — documented in Cycle 5 plan):
+ * Design decision (option B - documented in Cycle 5 plan):
  * The client-side `/auth/register` page continues to call
  * `supabase.auth.signUp()` directly in the browser. This preserves the
  * verification-email flow that Supabase sends automatically and avoids a
  * major rewrite of the existing registration UX. After a successful signUp
  * the page is expected to POST to this endpoint to create the Prisma row.
  *
- * The Prisma `User` row is a projection — credentials (password, MFA
+ * The Prisma `User` row is a projection - credentials (password, MFA
  * factors, email verification state) are owned entirely by Supabase. We
  * store a sentinel value in `passwordHash` because the schema is NOT NULL
  * (see PR-1 convergence notes); there is no real password hash to persist.
  *
  * Key properties:
  *   - Requires an authenticated Supabase session (403 if missing). We do
- *     NOT accept an arbitrary `supabaseUserId` from the caller — we read
+ *     NOT accept an arbitrary `supabaseUserId` from the caller - we read
  *     it from the verified session, so this handler cannot be used to
  *     impersonate another user.
  *   - Idempotent: if a Prisma row already exists for the session's
@@ -39,7 +39,7 @@
  *   `fetch('/api/auth/register', { method: 'POST', body: JSON.stringify({
  *     firstName, lastName, dateOfBirth, country, role }) })` after
  *   `supabase.auth.signUp()` returns successfully. Failures should be
- *   logged client-side but must not block the signup flow — the
+ *   logged client-side but must not block the signup flow - the
  *   verification-email UX is the user's next step regardless.
  *
  * TODO (related, also out of scope):
@@ -86,7 +86,7 @@ const registerBodySchema = z.object({
   // Country: ISO-3166 alpha-2 (2 chars) OR a common name up to 56 chars
   // (longest UN-recognised country name is "United Kingdom of Great
   // Britain and Northern Ireland" at 56 chars). We don't enforce a
-  // whitelist here — the profiles table has the canonical value; the
+  // whitelist here - the profiles table has the canonical value; the
   // Prisma projection only needs to be non-empty.
   country: z.string().trim().min(2, 'Country is required').max(56, 'Country name is too long'),
   role: z.enum(ROLE_VALUES).optional(),
@@ -94,16 +94,16 @@ const registerBodySchema = z.object({
 
 // Sentinel for the NOT-NULL passwordHash column. Real credentials live
 // in Supabase (auth.users.encrypted_password). If this value ever leaks
-// into a bcrypt.compare() call, it will fail safely — it's not a valid
+// into a bcrypt.compare() call, it will fail safely - it's not a valid
 // bcrypt hash format (no `$2a$`/`$2b$` prefix).
 const SUPABASE_MANAGED_SENTINEL = 'SUPABASE_MANAGED'
 
-// Minor threshold — ICO Children's Code defines a child as under 18.
-// Anyone aged 13–17 is tagged `isMinor: true` so downstream features
+// Minor threshold - ICO Children's Code defines a child as under 18.
+// Anyone aged 13-17 is tagged `isMinor: true` so downstream features
 // (analytics, marketing, recommender, parental-consent UX) can apply
 // child-safe defaults. Note: the high-privacy defaults in
 // `src/lib/privacy/child-defaults.ts` are scoped to under-16; the
-// `isMinor` flag is the broader 13–17 marker.
+// `isMinor` flag is the broader 13-17 marker.
 const MINOR_AGE_THRESHOLD = 18
 const MIN_AGE = 13
 
@@ -162,7 +162,7 @@ export async function POST(request: NextRequest) {
     // Note: we check BEFORE parsing the body. If the caller retries (e.g.
     // after a network blip) with a different/malformed body but the row
     // is already present, returning the existing row is the correct
-    // behaviour — the Prisma row is already consistent with Supabase.
+    // behaviour - the Prisma row is already consistent with Supabase.
     const existing = await prisma.user.findUnique({
       where: { supabaseUserId: authUser.id },
       select: { id: true, supabaseUserId: true, role: true, isMinor: true },
@@ -228,7 +228,7 @@ export async function POST(request: NextRequest) {
           supabaseUserId: authUser.id,
           email,
           // Sentinel: this Prisma row is a projection of the Supabase
-          // auth user. Credentials are owned by Supabase — there is no
+          // auth user. Credentials are owned by Supabase - there is no
           // real password hash to store here. The column is NOT NULL in
           // the schema, so we persist a non-empty sentinel.
           passwordHash: SUPABASE_MANAGED_SENTINEL,
@@ -237,7 +237,7 @@ export async function POST(request: NextRequest) {
           dateOfBirth: dob,
           country: data.country,
           role,
-          // isMinor flags users aged 13–17 (per Children's Code). Required
+          // isMinor flags users aged 13-17 (per Children's Code). Required
           // for downstream gating; if the Prisma `isMinor` column is
           // missing, run a migration to add `Boolean @default(false)`.
           isMinor,
@@ -254,7 +254,7 @@ export async function POST(request: NextRequest) {
       // user row exists, invoke `applyChildDefaults(created.id)` from
       // `src/lib/privacy/child-defaults.ts` to materialise high-privacy
       // settings for child accounts (under-16). The helper does not yet
-      // exist in that module — only `getChildDefaults()` /
+      // exist in that module - only `getChildDefaults()` /
       // `getChildProfileDefaults()` are exported. A follow-up PR should
       // add `applyChildDefaults(userId: string): Promise<void>` that
       // upserts the defaults into the relevant settings tables, then
@@ -279,7 +279,7 @@ export async function POST(request: NextRequest) {
         if (raced) {
           return NextResponse.json(raced, { status: 200 })
         }
-        // Unique violation but not our supabaseUserId — must be the email
+        // Unique violation but not our supabaseUserId - must be the email
         // column (a different Prisma row owns this email). That's a
         // genuine conflict worth reporting.
         console.error(
@@ -296,7 +296,7 @@ export async function POST(request: NextRequest) {
         )
       }
 
-      // Any other Prisma error — log, Sentry, generic 500.
+      // Any other Prisma error - log, Sentry, generic 500.
       console.error('[Register] Prisma create failed:', dbError)
       Sentry.captureException(dbError, {
         tags: { route: 'auth/register', reason: 'prisma_create' },

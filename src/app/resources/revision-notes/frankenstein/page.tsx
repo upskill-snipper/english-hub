@@ -320,19 +320,19 @@ export default function FrankensteinPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <CharacterCard
             name="Victor Frankenstein"
-            description="A brilliant but fatally flawed scientist whose ambition leads to catastrophe. Victor's desire to 'penetrate the secrets of nature' drives him to create life, but he takes no responsibility for his creation. He abandons the Creature at birth, refuses to acknowledge his role in the ensuing tragedies, and repeatedly prioritises his own suffering over others'. Shelley presents him as a modern Prometheus — stealing the power of creation from God/nature and suffering eternal punishment. His self-pity and passivity make him an increasingly unsympathetic narrator. He warns Walton against ambition yet simultaneously urges the crew to press on into the ice."
+            description="A brilliant but fatally flawed scientist whose ambition leads to catastrophe. Victor's desire to 'penetrate the secrets of nature' drives him to create life, but he takes no responsibility for his creation. He abandons the Creature at birth, refuses to acknowledge his role in the ensuing tragedies, and repeatedly prioritises his own suffering over others'. Shelley presents him as a modern Prometheus - stealing the power of creation from God/nature and suffering eternal punishment. His self-pity and passivity make him an increasingly unsympathetic narrator. He warns Walton against ambition yet simultaneously urges the crew to press on into the ice."
           />
           <CharacterCard
             name="The Creature"
-            description="Created from dead body parts and brought to life through science, the Creature is the novel's most complex and sympathetic character. Born innocent, he is driven to violence by universal rejection. He is eloquent, sensitive, and desperate for companionship. He teaches himself to read, appreciates beauty, and performs acts of kindness before being brutalised by humanity's prejudice. Shelley forces the reader to question who the real 'monster' is — the Creature who kills in despair, or the creator who abandons his child. He identifies with both Adam (wanting a creator's love) and Satan (cast out and vengeful)."
+            description="Created from dead body parts and brought to life through science, the Creature is the novel's most complex and sympathetic character. Born innocent, he is driven to violence by universal rejection. He is eloquent, sensitive, and desperate for companionship. He teaches himself to read, appreciates beauty, and performs acts of kindness before being brutalised by humanity's prejudice. Shelley forces the reader to question who the real 'monster' is - the Creature who kills in despair, or the creator who abandons his child. He identifies with both Adam (wanting a creator's love) and Satan (cast out and vengeful)."
           />
           <CharacterCard
             name="Robert Walton"
-            description="An Arctic explorer whose letters frame the narrative. Walton mirrors Victor in his dangerous ambition and desire for glory. He is lonely, craving 'the company of a man who could sympathise with me.' His friendship with Victor is intense but brief. Crucially, Walton makes the choice Victor could not — he listens to his crew and turns back, rejecting the destructive path of obsession. He is the novel's moral compass, the character who learns from Victor's tragedy."
+            description="An Arctic explorer whose letters frame the narrative. Walton mirrors Victor in his dangerous ambition and desire for glory. He is lonely, craving 'the company of a man who could sympathise with me.' His friendship with Victor is intense but brief. Crucially, Walton makes the choice Victor could not - he listens to his crew and turns back, rejecting the destructive path of obsession. He is the novel's moral compass, the character who learns from Victor's tragedy."
           />
           <CharacterCard
             name="Elizabeth Lavenza"
-            description="Victor's adopted sister and later wife. Elizabeth is presented as idealised feminine virtue — patient, loving, and devoted. She waits faithfully for Victor despite his long absences and strange behaviour. Her murder on her wedding night is the Creature's most devastating revenge. Shelley uses Elizabeth to critique the passive role assigned to women in Romantic fiction — she has no agency and exists primarily in relation to Victor. Her death is the consequence of Victor's choices, not her own."
+            description="Victor's adopted sister and later wife. Elizabeth is presented as idealised feminine virtue - patient, loving, and devoted. She waits faithfully for Victor despite his long absences and strange behaviour. Her murder on her wedding night is the Creature's most devastating revenge. Shelley uses Elizabeth to critique the passive role assigned to women in Romantic fiction - she has no agency and exists primarily in relation to Victor. Her death is the consequence of Victor's choices, not her own."
           />
           <CharacterCard
             name="Henry Clerval"
@@ -340,15 +340,15 @@ export default function FrankensteinPage() {
           />
           <CharacterCard
             name="Justine Moritz"
-            description="A servant in the Frankenstein household, wrongly accused and executed for William's murder. Justine confesses under pressure from her confessor, highlighting the corruption of institutional religion. Her death is the first innocent life destroyed by Victor's silence — he knows the Creature is responsible but says nothing for fear of being thought mad. Justine represents the vulnerable members of society who suffer for the crimes of the powerful."
+            description="A servant in the Frankenstein household, wrongly accused and executed for William's murder. Justine confesses under pressure from her confessor, highlighting the corruption of institutional religion. Her death is the first innocent life destroyed by Victor's silence - he knows the Creature is responsible but says nothing for fear of being thought mad. Justine represents the vulnerable members of society who suffer for the crimes of the powerful."
           />
           <CharacterCard
             name="William Frankenstein"
-            description="Victor's youngest brother, murdered by the Creature. William is only a child, making his death especially shocking. When confronted by the Creature, William calls him an 'ogre' and boasts of his father's power — 'M. Frankenstein — he will punish you.' The Creature kills him partly in rage and partly because William is a Frankenstein. William's innocence and his casual cruelty towards the Creature encapsulate the novel's ambiguity about who is truly monstrous."
+            description="Victor's youngest brother, murdered by the Creature. William is only a child, making his death especially shocking. When confronted by the Creature, William calls him an 'ogre' and boasts of his father's power - 'M. Frankenstein - he will punish you.' The Creature kills him partly in rage and partly because William is a Frankenstein. William's innocence and his casual cruelty towards the Creature encapsulate the novel's ambiguity about who is truly monstrous."
           />
           <CharacterCard
             name="The De Lacey Family"
-            description="Felix, Agatha, and their blind father, along with Safie. The De Laceys unknowingly educate the Creature through their daily life. The blind father's kindness — he cannot see the Creature's appearance — contrasts with Felix's violent rejection. They represent a microcosm of humanity: capable of both compassion and prejudice. Their story of exile (helping Safie's father, a Turkish merchant) parallels the Creature's experience of injustice. Their abandonment of their cottage after the Creature's discovery is the turning point of the novel."
+            description="Felix, Agatha, and their blind father, along with Safie. The De Laceys unknowingly educate the Creature through their daily life. The blind father's kindness - he cannot see the Creature's appearance - contrasts with Felix's violent rejection. They represent a microcosm of humanity: capable of both compassion and prejudice. Their story of exile (helping Safie's father, a Turkish merchant) parallels the Creature's experience of injustice. Their abandonment of their cottage after the Creature's discovery is the turning point of the novel."
           />
         </div>
       </Section>
@@ -362,27 +362,27 @@ export default function FrankensteinPage() {
           />
           <ThemeCard
             title={tr(`Nature vs Nurture`)}
-            description="Is the Creature born evil or made evil by society? Shelley strongly implies the latter. The Creature is born innocent — his first experiences are wonder at nature, and he instinctively performs acts of kindness. It is rejection, violence, and isolation that transform him into a killer. This connects to Rousseau's philosophy that humanity is naturally good but corrupted by society. The novel asks whether any being, denied love and companionship, would not eventually become 'monstrous.'"
+            description="Is the Creature born evil or made evil by society? Shelley strongly implies the latter. The Creature is born innocent - his first experiences are wonder at nature, and he instinctively performs acts of kindness. It is rejection, violence, and isolation that transform him into a killer. This connects to Rousseau's philosophy that humanity is naturally good but corrupted by society. The novel asks whether any being, denied love and companionship, would not eventually become 'monstrous.'"
           />
           <ThemeCard
             title={tr(`Isolation and Loneliness`)}
-            description="Nearly every character suffers from isolation. Victor isolates himself during creation, cutting off from family and society. The Creature is isolated by his appearance — 'everywhere I see bliss, from which I alone am irrevocably excluded.' Walton is lonely at sea. Elizabeth waits alone. Shelley presents isolation as both a cause and consequence of obsession. The Creature's loneliness is the most poignant: he desires nothing more than companionship yet is denied it by every human he encounters."
+            description="Nearly every character suffers from isolation. Victor isolates himself during creation, cutting off from family and society. The Creature is isolated by his appearance - 'everywhere I see bliss, from which I alone am irrevocably excluded.' Walton is lonely at sea. Elizabeth waits alone. Shelley presents isolation as both a cause and consequence of obsession. The Creature's loneliness is the most poignant: he desires nothing more than companionship yet is denied it by every human he encounters."
           />
           <ThemeCard
             title={tr(`Ambition and Hubris`)}
-            description="Victor's 'fervent longing to penetrate the secrets of nature' drives him to play God. His ambition is Promethean — he steals creative power from nature and is punished for it. The novel's subtitle, 'The Modern Prometheus,' explicitly links Victor to the Titan who stole fire from the gods. Shelley warns that ambition without moral consideration leads to destruction. Victor never truly repents — even on his deathbed, he is ambivalent about whether his ambition was wrong or merely unlucky."
+            description="Victor's 'fervent longing to penetrate the secrets of nature' drives him to play God. His ambition is Promethean - he steals creative power from nature and is punished for it. The novel's subtitle, 'The Modern Prometheus,' explicitly links Victor to the Titan who stole fire from the gods. Shelley warns that ambition without moral consideration leads to destruction. Victor never truly repents - even on his deathbed, he is ambivalent about whether his ambition was wrong or merely unlucky."
           />
           <ThemeCard
             title={tr(`Prejudice and Appearance`)}
-            description="The Creature is judged entirely by his appearance. Despite his intelligence, eloquence, and capacity for kindness, he is attacked, shot, and rejected by every sighted person he meets. Only the blind De Lacey responds to him with compassion. Shelley forces the reader to confront their own prejudices — the Creature's narrative is deliberately more sympathetic than Victor's. The novel argues that monstrosity is a social construct: it is society that creates monsters by refusing to look beyond the surface."
+            description="The Creature is judged entirely by his appearance. Despite his intelligence, eloquence, and capacity for kindness, he is attacked, shot, and rejected by every sighted person he meets. Only the blind De Lacey responds to him with compassion. Shelley forces the reader to confront their own prejudices - the Creature's narrative is deliberately more sympathetic than Victor's. The novel argues that monstrosity is a social construct: it is society that creates monsters by refusing to look beyond the surface."
           />
           <ThemeCard
             title={tr(`Knowledge and Discovery`)}
-            description="Knowledge is presented as both liberating and dangerous. Victor's pursuit of scientific knowledge destroys him. The Creature's education — reading Paradise Lost, learning about human society — gives him self-awareness but also the capacity for suffering. Walton seeks geographical knowledge at the risk of his crew's lives. Shelley draws on the Romantic ambivalence towards knowledge: the Enlightenment promised progress through reason, but the novel asks whether some knowledge is too dangerous to pursue."
+            description="Knowledge is presented as both liberating and dangerous. Victor's pursuit of scientific knowledge destroys him. The Creature's education - reading Paradise Lost, learning about human society - gives him self-awareness but also the capacity for suffering. Walton seeks geographical knowledge at the risk of his crew's lives. Shelley draws on the Romantic ambivalence towards knowledge: the Enlightenment promised progress through reason, but the novel asks whether some knowledge is too dangerous to pursue."
           />
           <ThemeCard
             title="Monstrosity"
-            description="The novel constantly questions what 'monster' means. Victor calls the Creature a 'daemon,' 'wretch,' and 'fiend,' yet Victor himself is arguably more monstrous — he creates and abandons life, allows an innocent woman to be executed, and destroys the female creature out of selfish fear. The Creature becomes violent only after being denied basic humanity. Shelley suggests that the true monsters are those who refuse compassion, not those who look different."
+            description="The novel constantly questions what 'monster' means. Victor calls the Creature a 'daemon,' 'wretch,' and 'fiend,' yet Victor himself is arguably more monstrous - he creates and abandons life, allows an innocent woman to be executed, and destroys the female creature out of selfish fear. The Creature becomes violent only after being denied basic humanity. Shelley suggests that the true monsters are those who refuse compassion, not those who look different."
           />
         </div>
       </Section>
@@ -398,12 +398,12 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="Beware; for I am fearless, and therefore powerful."
             speaker="The Creature"
-            analysis="The Creature's threat to Victor before departing for the Arctic. Having lost everything — hope, companionship, the possibility of love — he has nothing left to fear. Shelley presents a terrifying insight: a being with nothing to lose is the most dangerous force of all. The sentence structure is chillingly logical, almost philosophical."
+            analysis="The Creature's threat to Victor before departing for the Arctic. Having lost everything - hope, companionship, the possibility of love - he has nothing left to fear. Shelley presents a terrifying insight: a being with nothing to lose is the most dangerous force of all. The sentence structure is chillingly logical, almost philosophical."
           />
           <QuoteCard
             quote="I ought to be thy Adam, but I am rather the fallen angel, whom thou drivest from joy for no misdeed."
             speaker="The Creature"
-            analysis="A direct allusion to Milton's Paradise Lost. The Creature identifies with both Adam (created by God, deserving of love) and Satan (rejected and cast out). 'For no misdeed' emphasises his innocence at the time of his rejection. The biblical register elevates the Creature's speech, making him eloquent and sympathetic — he argues with more moral clarity than his creator."
+            analysis="A direct allusion to Milton's Paradise Lost. The Creature identifies with both Adam (created by God, deserving of love) and Satan (rejected and cast out). 'For no misdeed' emphasises his innocence at the time of his rejection. The biblical register elevates the Creature's speech, making him eloquent and sympathetic - he argues with more moral clarity than his creator."
           />
           <QuoteCard
             quote="Did I request thee, Maker, from my clay / To mould me Man?"
@@ -413,27 +413,27 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="I, the miserable and the abandoned, am an abortion, to be spurned at, and kicked, and trampled on."
             speaker="The Creature"
-            analysis="'Abortion' means something incomplete, a failed creation. The Creature sees himself as fundamentally unfinished — made but not cared for. The passive voice ('to be spurned at, kicked, trampled') emphasises his powerlessness. The tricolon of verbs escalates in violence, reflecting how society treats those it deems different. This is among the novel's most emotionally devastating lines."
+            analysis="'Abortion' means something incomplete, a failed creation. The Creature sees himself as fundamentally unfinished - made but not cared for. The passive voice ('to be spurned at, kicked, trampled') emphasises his powerlessness. The tricolon of verbs escalates in violence, reflecting how society treats those it deems different. This is among the novel's most emotionally devastating lines."
           />
           <QuoteCard
             quote="Learn from me, if not by my precepts, at least by my example, how dangerous is the acquirement of knowledge."
             speaker="Victor"
-            analysis="Victor's warning to Walton frames the entire narrative as a cautionary tale. Yet the irony is that Victor never fully learns his own lesson — he remains ambivalent about his experiment to the end. 'Dangerous' knowledge echoes the Tree of Knowledge in Genesis and Prometheus's stolen fire. Shelley positions Victor as an unreliable moral authority."
+            analysis="Victor's warning to Walton frames the entire narrative as a cautionary tale. Yet the irony is that Victor never fully learns his own lesson - he remains ambivalent about his experiment to the end. 'Dangerous' knowledge echoes the Tree of Knowledge in Genesis and Prometheus's stolen fire. Shelley positions Victor as an unreliable moral authority."
           />
           <QuoteCard
             quote="Everywhere I see bliss, from which I alone am irrevocably excluded."
             speaker="The Creature"
-            analysis="Encapsulates the Creature's existential loneliness. 'Everywhere' and 'alone' create a painful contrast between the universal and the singular. 'Irrevocably' means permanently — there is no hope. This is not self-pity but an accurate assessment: the Creature is the only one of his kind and can never be accepted by human society."
+            analysis="Encapsulates the Creature's existential loneliness. 'Everywhere' and 'alone' create a painful contrast between the universal and the singular. 'Irrevocably' means permanently - there is no hope. This is not self-pity but an accurate assessment: the Creature is the only one of his kind and can never be accepted by human society."
           />
           <QuoteCard
             quote="I was benevolent and good; misery made me a fiend."
             speaker="The Creature"
-            analysis="A direct statement of the nature vs nurture argument. The Creature was not born evil — suffering and rejection corrupted him. 'Benevolent' contrasts sharply with 'fiend,' showing the extremity of his transformation. Shelley places responsibility not on the Creature's nature but on society's treatment of him. This echoes Rousseau's philosophy that humans are naturally good."
+            analysis="A direct statement of the nature vs nurture argument. The Creature was not born evil - suffering and rejection corrupted him. 'Benevolent' contrasts sharply with 'fiend,' showing the extremity of his transformation. Shelley places responsibility not on the Creature's nature but on society's treatment of him. This echoes Rousseau's philosophy that humans are naturally good."
           />
           <QuoteCard
             quote="A new species would bless me as its creator and source."
             speaker="Victor"
-            analysis="Reveals Victor's God complex — he wants to be worshipped, not merely to advance science. 'Bless' is religious language, positioning Victor as a divine figure. His motivation is glory, not altruism. The irony is devastating: his creation does not bless him but curses him. Shelley critiques the masculine desire for power disguised as scientific progress."
+            analysis="Reveals Victor's God complex - he wants to be worshipped, not merely to advance science. 'Bless' is religious language, positioning Victor as a divine figure. His motivation is glory, not altruism. The irony is devastating: his creation does not bless him but curses him. Shelley critiques the masculine desire for power disguised as scientific progress."
           />
           <QuoteCard
             quote="How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form?"
@@ -443,12 +443,12 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="If I cannot inspire love, I will cause fear!"
             speaker="The Creature"
-            analysis="The Creature's declaration of war on humanity. The conditional structure ('if... I will') shows this is a rational decision, not blind rage. Love and fear are presented as the only two ways to matter — if denied one, the Creature will claim the other. This connects to Machiavelli's principle that it is better to be feared than loved, subverted by the Creature's clear preference for the latter."
+            analysis="The Creature's declaration of war on humanity. The conditional structure ('if... I will') shows this is a rational decision, not blind rage. Love and fear are presented as the only two ways to matter - if denied one, the Creature will claim the other. This connects to Machiavelli's principle that it is better to be feared than loved, subverted by the Creature's clear preference for the latter."
           />
           <QuoteCard
             quote="I shall be with you on your wedding-night."
             speaker="The Creature"
-            analysis="The Creature's most famous threat. Victor interprets it as a threat against himself, but the Creature means Elizabeth. This misunderstanding is typical of Victor's self-absorption — he assumes he is the target, unable to imagine the Creature targeting those he loves. The sentence is chillingly calm and measured, the more terrifying for its restraint."
+            analysis="The Creature's most famous threat. Victor interprets it as a threat against himself, but the Creature means Elizabeth. This misunderstanding is typical of Victor's self-absorption - he assumes he is the target, unable to imagine the Creature targeting those he loves. The sentence is chillingly calm and measured, the more terrifying for its restraint."
           />
           <QuoteCard
             quote="Life, although it may only be an accumulation of anguish, is dear to me, and I will defend it."
@@ -458,7 +458,7 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="The fallen angel becomes a malignant devil. Yet even that enemy of God and man had friends and associates in his desolation; I am alone."
             speaker="The Creature"
-            analysis="The Creature claims his suffering exceeds even Satan's — at least Satan had fellow fallen angels. The allusion to Paradise Lost positions the Creature as the most isolated being in literature. 'I am alone' is devastating in its simplicity. Shelley argues that total isolation is the ultimate suffering, worse even than damnation."
+            analysis="The Creature claims his suffering exceeds even Satan's - at least Satan had fellow fallen angels. The allusion to Paradise Lost positions the Creature as the most isolated being in literature. 'I am alone' is devastating in its simplicity. Shelley argues that total isolation is the ultimate suffering, worse even than damnation."
           />
           <QuoteCard
             quote="Nothing is so painful to the human mind as a great and sudden change."
@@ -473,32 +473,32 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body. For this I had deprived myself of rest and health."
             speaker="Victor"
-            analysis="Victor describes his obsessive creation process. 'Sole purpose' reveals the dangerous narrowness of his focus. 'Deprived myself of rest and health' shows the physical cost, yet Victor presents himself as martyr rather than acknowledging his hubris. 'Inanimate body' — he never thinks of the Creature as a future person, only as an experiment."
+            analysis="Victor describes his obsessive creation process. 'Sole purpose' reveals the dangerous narrowness of his focus. 'Deprived myself of rest and health' shows the physical cost, yet Victor presents himself as martyr rather than acknowledging his hubris. 'Inanimate body' - he never thinks of the Creature as a future person, only as an experiment."
           />
           <QuoteCard
             quote="Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature."
             speaker="Walton, describing Victor"
-            analysis="Walton's observation connects Victor to the Romantic tradition of finding solace in nature. The Alps and Arctic landscapes serve as sublime settings that dwarf human concerns. Yet 'broken in spirit' acknowledges that nature cannot heal Victor's guilt. Shelley both celebrates and critiques the Romantic ideal — nature inspires but cannot undo human wrongs."
+            analysis="Walton's observation connects Victor to the Romantic tradition of finding solace in nature. The Alps and Arctic landscapes serve as sublime settings that dwarf human concerns. Yet 'broken in spirit' acknowledges that nature cannot heal Victor's guilt. Shelley both celebrates and critiques the Romantic ideal - nature inspires but cannot undo human wrongs."
           />
           <QuoteCard
             quote="The world was to me a secret which I desired to divine."
             speaker="Victor"
-            analysis="'Divine' carries a double meaning: to discover and to play God. Victor's desire to unlock nature's secrets is presented as inherently transgressive — he seeks knowledge reserved for the divine. The world as 'secret' connects to the Prometheus myth (stealing fire) and the Garden of Eden (eating the forbidden fruit). Shelley warns against the assumption that all secrets should be revealed."
+            analysis="'Divine' carries a double meaning: to discover and to play God. Victor's desire to unlock nature's secrets is presented as inherently transgressive - he seeks knowledge reserved for the divine. The world as 'secret' connects to the Prometheus myth (stealing fire) and the Garden of Eden (eating the forbidden fruit). Shelley warns against the assumption that all secrets should be revealed."
           />
           <QuoteCard
             quote="I compassionated him and sometimes felt a wish to console him, but when I looked upon him, when I saw the filthy mass that moved and talked, my heart sickened and my feelings were altered to those of horror and hatred."
             speaker="Victor"
-            analysis="Victor's internal conflict encapsulated in a single sentence. He experiences compassion, but it is immediately overridden by disgust at the Creature's appearance. 'Filthy mass' reduces the Creature to formless matter. The sequence — compassion, sight, revulsion — demonstrates how prejudice based on appearance destroys moral instincts. Victor knows he should care but cannot overcome his visual revulsion."
+            analysis="Victor's internal conflict encapsulated in a single sentence. He experiences compassion, but it is immediately overridden by disgust at the Creature's appearance. 'Filthy mass' reduces the Creature to formless matter. The sequence - compassion, sight, revulsion - demonstrates how prejudice based on appearance destroys moral instincts. Victor knows he should care but cannot overcome his visual revulsion."
           />
           <QuoteCard
             quote="There is something at work in my soul which I do not understand."
             speaker="Walton"
-            analysis="Walton's self-awareness contrasts with Victor's self-deception. He recognises that his ambition operates below the level of rational thought — it is instinctive, compulsive, dangerous. This line could apply to Victor, the Creature, or any human being driven by forces they cannot fully comprehend. Shelley suggests that the most dangerous drives are those we do not understand in ourselves."
+            analysis="Walton's self-awareness contrasts with Victor's self-deception. He recognises that his ambition operates below the level of rational thought - it is instinctive, compulsive, dangerous. This line could apply to Victor, the Creature, or any human being driven by forces they cannot fully comprehend. Shelley suggests that the most dangerous drives are those we do not understand in ourselves."
           />
           <QuoteCard
             quote="My heart was fashioned to be susceptible of love and sympathy, and when wrenched by misery to vice and hatred, it did not endure the violence of the change without torture."
             speaker="The Creature"
-            analysis="The Creature explains that becoming violent was itself a form of suffering. 'Fashioned' implies design — he was made for love, not hatred. 'Wrenched' conveys violent force — he was torn from his natural state. This complicates any simple reading of the Creature as villain. His violence tortures him as much as his victims, making him a truly tragic figure."
+            analysis="The Creature explains that becoming violent was itself a form of suffering. 'Fashioned' implies design - he was made for love, not hatred. 'Wrenched' conveys violent force - he was torn from his natural state. This complicates any simple reading of the Creature as villain. His violence tortures him as much as his victims, making him a truly tragic figure."
           />
           <QuoteCard
             quote="How mutable are our feelings, and how strange is that clinging love we have of life even in the excess of misery!"
@@ -508,17 +508,17 @@ export default function FrankensteinPage() {
           <QuoteCard
             quote="All men hate the wretched; how, then, must I be hated, who am miserable beyond all living things!"
             speaker="The Creature"
-            analysis="A devastating generalisation about human nature. The Creature argues that society despises suffering rather than alleviating it. The rhetorical question ('how, then, must I be hated') uses logic to demonstrate the impossibility of his acceptance. 'Beyond all living things' is precise — he is not just the most hated but the most 'wretched,' a superlative that defies comparison because he is unique."
+            analysis="A devastating generalisation about human nature. The Creature argues that society despises suffering rather than alleviating it. The rhetorical question ('how, then, must I be hated') uses logic to demonstrate the impossibility of his acceptance. 'Beyond all living things' is precise - he is not just the most hated but the most 'wretched,' a superlative that defies comparison because he is unique."
           />
           <QuoteCard
-            quote="You are my creator, but I am your master; — obey!"
+            quote="You are my creator, but I am your master; - obey!"
             speaker="The Creature"
-            analysis="A chilling inversion of the creator-creation hierarchy. The Creature asserts dominance over Victor, reversing the expected power dynamic. The dash and exclamation mark give the line a commanding, almost regal authority. 'Creator' and 'master' are deliberately contrasted — creation does not guarantee control. Shelley suggests that those who create without responsibility ultimately lose all power over their creations."
+            analysis="A chilling inversion of the creator-creation hierarchy. The Creature asserts dominance over Victor, reversing the expected power dynamic. The dash and exclamation mark give the line a commanding, almost regal authority. 'Creator' and 'master' are deliberately contrasted - creation does not guarantee control. Shelley suggests that those who create without responsibility ultimately lose all power over their creations."
           />
           <QuoteCard
             quote="I, who irretrievably destroyed thee by destroying all thou lovedst."
             speaker="The Creature, mourning over Victor"
-            analysis="The Creature's final recognition of what he has done. 'Irretrievably' echoes his earlier 'irrevocably excluded' — permanence is the defining quality of his tragedy. He understands that he destroyed Victor not by killing him directly but by killing everyone Victor loved. The reflexive structure — destroying by destroying — captures the cyclical, self-perpetuating nature of revenge."
+            analysis="The Creature's final recognition of what he has done. 'Irretrievably' echoes his earlier 'irrevocably excluded' - permanence is the defining quality of his tragedy. He understands that he destroyed Victor not by killing him directly but by killing everyone Victor loved. The reflexive structure - destroying by destroying - captures the cyclical, self-perpetuating nature of revenge."
           />
         </div>
       </Section>

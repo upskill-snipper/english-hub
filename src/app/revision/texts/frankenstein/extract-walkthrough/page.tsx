@@ -18,7 +18,7 @@ type WalkthroughCard = {
   devices: string[]
 }
 
-const EXTRACT_TITLE = "The Creature's Awakening — Volume I, Chapter 5"
+const EXTRACT_TITLE = "The Creature's Awakening - Volume I, Chapter 5"
 
 const EXTRACT_OPENER =
   '"It was on a dreary night of November, that I beheld the accomplishment of my toils..."'
@@ -29,7 +29,7 @@ const EXTRACT_CLOSER = '"...breathless horror and disgust filled my heart."'
 // and Pennsylvania Electronic Edition of the 1818 text. Comma after "November" present in 1818; absent in 1831 (PG #84).
 const EXTRACT_PARAGRAPHS: string[] = [
   'It was on a dreary night of November, that I beheld the accomplishment of my toils. With an anxiety that almost amounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless thing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs.',
-  'How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! — Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips.',
+  'How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! - Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips.',
   'The different accidents of life are not so changeable as the feelings of human nature. I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body. For this I had deprived myself of rest and health. I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart.',
 ]
 
@@ -38,50 +38,50 @@ const CARDS: WalkthroughCard[] = [
     id: 'pathetic-fallacy',
     focus: 'Gothic pathetic fallacy: "dreary night of November"',
     notice:
-      'The opening clause front-loads weather. Shelley delays the main verb ("I beheld") so the reader is steeped in atmosphere before any action begins. "Dreary," "November," "rain pattered dismally," "candle was nearly burnt out" — every detail is grey, dying or about to be extinguished.',
-    say: 'Shelley deploys archetypal Gothic pathetic fallacy to frame creation as a funeral rite. The triadic gloom — month, weather, dying candle — externalises Victor\'s psychological collapse and forecloses any possibility of joy at the moment of birth. The "half-extinguished light" is a near-pun on extinction, suggesting that the act of giving life is bound to a dying flame: creation and death are syntactically yoked.',
+      'The opening clause front-loads weather. Shelley delays the main verb ("I beheld") so the reader is steeped in atmosphere before any action begins. "Dreary," "November," "rain pattered dismally," "candle was nearly burnt out" - every detail is grey, dying or about to be extinguished.',
+    say: 'Shelley deploys archetypal Gothic pathetic fallacy to frame creation as a funeral rite. The triadic gloom - month, weather, dying candle - externalises Victor\'s psychological collapse and forecloses any possibility of joy at the moment of birth. The "half-extinguished light" is a near-pun on extinction, suggesting that the act of giving life is bound to a dying flame: creation and death are syntactically yoked.',
     zoomOut:
-      'Romantic-era Gothic uses landscape as moral commentary. Where Wordsworth\'s nature heals, Shelley\'s nature accuses. Writing in the wake of the "Year Without a Summer" (1816), when volcanic ash darkened European skies during the Villa Diodati ghost-story competition, Shelley fuses meteorological dread with theological warning — the heavens themselves protest the transgression below.',
+      'Romantic-era Gothic uses landscape as moral commentary. Where Wordsworth\'s nature heals, Shelley\'s nature accuses. Writing in the wake of the "Year Without a Summer" (1816), when volcanic ash darkened European skies during the Villa Diodati ghost-story competition, Shelley fuses meteorological dread with theological warning - the heavens themselves protest the transgression below.',
     devices: ['Pathetic fallacy', 'Gothic atmosphere', 'Delayed verb', 'Symbolism of light'],
   },
   {
     id: 'revulsion',
     focus: 'Victor\'s revulsion: "breathless horror and disgust filled my heart"',
     notice:
-      'Victor\'s vocabulary collapses into monosyllables of recoil — "horror," "disgust," "wretch," "catastrophe." The exclamatory rupture "Beautiful! — Great God!" fractures his syntax mid-sentence. Notice the passive verb "filled": horror is a substance entering him, not a response he chooses.',
+      'Victor\'s vocabulary collapses into monosyllables of recoil - "horror," "disgust," "wretch," "catastrophe." The exclamatory rupture "Beautiful! - Great God!" fractures his syntax mid-sentence. Notice the passive verb "filled": horror is a substance entering him, not a response he chooses.',
     say: 'Shelley locates monstrosity not in the Creature\'s body but in Victor\'s rhetoric. The em-dash that severs "Beautiful!" from "Great God!" enacts the cognitive break in real time on the page; punctuation becomes psychology. By labelling his creation a "catastrophe" before it has taken a single action, Victor performs a moral diagnosis that says more about his own aesthetic prejudice than about any quality the Creature possesses.',
     zoomOut:
-      "Shelley anticipates a critique of Enlightenment aesthetics: Victor judges by surface, mistaking ugliness for evil. This pre-figures Burke's sublime/beautiful binary turned tragic — what should provoke awe provokes nausea, because Victor lacks the moral imagination to meet what he has made. The reader is invited to indict the looker, not the looked-at.",
+      "Shelley anticipates a critique of Enlightenment aesthetics: Victor judges by surface, mistaking ugliness for evil. This pre-figures Burke's sublime/beautiful binary turned tragic - what should provoke awe provokes nausea, because Victor lacks the moral imagination to meet what he has made. The reader is invited to indict the looker, not the looked-at.",
     devices: ['Caesura', 'Em-dash rupture', 'Monosyllabic diction', 'Free indirect horror'],
   },
   {
     id: 'catalogue',
     focus: 'Catalogue of physical detail: yellow skin, lustrous hair, watery eyes',
     notice:
-      'Shelley constructs a blazon — the Petrarchan inventory of a beloved\'s features — but inverts it. Each item is paired: "yellow skin" / "muscles and arteries," "lustrous black" hair / "watery eyes," "pearly whiteness" teeth / "straight black lips." The grammar of admiration carries the content of revulsion.',
-    say: 'The catalogue performs Victor\'s aesthetic confusion. He has "selected his features as beautiful" yet the assembled whole horrifies him: the body parts are individually exquisite, collectively monstrous. Shelley exposes the ethical bankruptcy of treating a person as a sum of selected features — the same logic that drives Victor\'s science also dehumanises his creation. The Creature is presented to us in fragments because Victor has only ever seen him as fragments.',
+      'Shelley constructs a blazon - the Petrarchan inventory of a beloved\'s features - but inverts it. Each item is paired: "yellow skin" / "muscles and arteries," "lustrous black" hair / "watery eyes," "pearly whiteness" teeth / "straight black lips." The grammar of admiration carries the content of revulsion.',
+    say: 'The catalogue performs Victor\'s aesthetic confusion. He has "selected his features as beautiful" yet the assembled whole horrifies him: the body parts are individually exquisite, collectively monstrous. Shelley exposes the ethical bankruptcy of treating a person as a sum of selected features - the same logic that drives Victor\'s science also dehumanises his creation. The Creature is presented to us in fragments because Victor has only ever seen him as fragments.',
     zoomOut:
-      "In an age of grave-robbing for anatomical study (the Murder Act of 1752, the Anatomy Act would follow in 1832), Shelley's catalogue is uncomfortably close to a dissection report. The novel asks whether the reductive gaze of science — the body as inventory — can ever produce a being that science is willing to call human.",
+      "In an age of grave-robbing for anatomical study (the Murder Act of 1752, the Anatomy Act would follow in 1832), Shelley's catalogue is uncomfortably close to a dissection report. The novel asks whether the reductive gaze of science - the body as inventory - can ever produce a being that science is willing to call human.",
     devices: ['Inverted blazon', 'Catalogue', 'Antithesis', 'Bodily synecdoche'],
   },
   {
     id: 'abandonment',
     focus: "Foreshadowed abandonment: Victor's flight as moral verdict",
     notice:
-      'The extract closes on stillness — but Victor will flee within a paragraph of the chapter\'s continuation. The seeds are already planted: "I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished." The verb "finished" is telling — Victor regards a living being as a completed project.',
-    say: 'Shelley uses past-perfect verbs to convert birth into termination: "I had worked," "I had deprived," "I had desired," "I had finished." The Creature is grammatically over before he has begun. The flight Victor will perform on the next page is already encoded here in syntax — a creator who construes his creation as a finished artefact has already abandoned the duty of care that should follow.',
+      'The extract closes on stillness - but Victor will flee within a paragraph of the chapter\'s continuation. The seeds are already planted: "I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished." The verb "finished" is telling - Victor regards a living being as a completed project.',
+    say: 'Shelley uses past-perfect verbs to convert birth into termination: "I had worked," "I had deprived," "I had desired," "I had finished." The Creature is grammatically over before he has begun. The flight Victor will perform on the next page is already encoded here in syntax - a creator who construes his creation as a finished artefact has already abandoned the duty of care that should follow.',
     zoomOut:
-      "This is the novel's ethical hinge. Every subsequent death — William, Justine, Clerval, Elizabeth, Victor's father — flows from this moment of refusal. Shelley diagnoses a particular Romantic-era pathology: the artist or scientist who loves the dream of the work but cannot bear the responsibility of its existence in the world.",
+      "This is the novel's ethical hinge. Every subsequent death - William, Justine, Clerval, Elizabeth, Victor's father - flows from this moment of refusal. Shelley diagnoses a particular Romantic-era pathology: the artist or scientist who loves the dream of the work but cannot bear the responsibility of its existence in the world.",
     devices: ['Past perfect tense', 'Foreshadowing', 'Project metaphor', 'Moral irony'],
   },
 ]
 
-const MODEL_PARAGRAPH = `Shelley\'s most radical move in this passage is to relocate monstrosity from the Creature\'s body into Victor\'s response. The Creature does nothing in the extract: he opens an eye, he breathes, his limbs twitch — the actions of any newborn. The horror belongs entirely to his creator, whose language fractures under the weight of his own aesthetic prejudice ("Beautiful! — Great God!"). Shelley uses past-perfect verbs ("I had worked," "I had deprived," "I had desired," "I had finished") to expose Victor\'s catastrophic misconception that creation is a project one can complete and walk away from; the Creature is grammatically over before he has begun. This dovetails with Shelley\'s wider critique of Romantic-era hubris. Victor embodies the solitary genius of Wordsworthian myth — the man who, in pursuit of sublime knowledge, isolates himself from family, community and ethical guidance — and Shelley shows that this isolation produces moral blindness, not moral elevation. The blazon of the Creature\'s features ("yellow skin," "lustrous black hair," "watery eyes") inverts the Petrarchan tradition of loving inventory, exposing the reductive gaze of a science that treats a being as a sum of selected parts. Crucially, the chapter\'s final image — "breathless horror and disgust filled my heart" — uses a passive construction that absolves Victor of agency at precisely the moment he should be claiming it. The true monstrosity, Shelley insists, is not what Victor has made but what he refuses to do next: stay.`
+const MODEL_PARAGRAPH = `Shelley\'s most radical move in this passage is to relocate monstrosity from the Creature\'s body into Victor\'s response. The Creature does nothing in the extract: he opens an eye, he breathes, his limbs twitch - the actions of any newborn. The horror belongs entirely to his creator, whose language fractures under the weight of his own aesthetic prejudice ("Beautiful! - Great God!"). Shelley uses past-perfect verbs ("I had worked," "I had deprived," "I had desired," "I had finished") to expose Victor\'s catastrophic misconception that creation is a project one can complete and walk away from; the Creature is grammatically over before he has begun. This dovetails with Shelley\'s wider critique of Romantic-era hubris. Victor embodies the solitary genius of Wordsworthian myth - the man who, in pursuit of sublime knowledge, isolates himself from family, community and ethical guidance - and Shelley shows that this isolation produces moral blindness, not moral elevation. The blazon of the Creature\'s features ("yellow skin," "lustrous black hair," "watery eyes") inverts the Petrarchan tradition of loving inventory, exposing the reductive gaze of a science that treats a being as a sum of selected parts. Crucially, the chapter\'s final image - "breathless horror and disgust filled my heart" - uses a passive construction that absolves Victor of agency at precisely the moment he should be claiming it. The true monstrosity, Shelley insists, is not what Victor has made but what he refuses to do next: stay.`
 
 const MODEL_PARAGRAPH_NOTES = [
   {
     quote: '"Shelley\'s most radical move..."',
-    note: 'Opens with thesis — argument-led, not narrative-led.',
+    note: 'Opens with thesis - argument-led, not narrative-led.',
   },
   {
     quote: '"The Creature does nothing in the extract..."',
@@ -89,15 +89,15 @@ const MODEL_PARAGRAPH_NOTES = [
   },
   {
     quote: '"Shelley uses past-perfect verbs..."',
-    note: 'Grammatical analysis — the highest-tariff form of close reading at GCSE.',
+    note: 'Grammatical analysis - the highest-tariff form of close reading at GCSE.',
   },
   {
     quote: '"This dovetails with Shelley\'s wider critique..."',
-    note: 'Pivot to context (AO3) — Romantic-era hubris, solitary genius.',
+    note: 'Pivot to context (AO3) - Romantic-era hubris, solitary genius.',
   },
   {
     quote: '"inverts the Petrarchan tradition..."',
-    note: 'Literary tradition — places the writer in dialogue with predecessors.',
+    note: 'Literary tradition - places the writer in dialogue with predecessors.',
   },
   {
     quote: '"the true monstrosity... is what he refuses to do next: stay."',
@@ -233,7 +233,7 @@ export default function FrankensteinExtractWalkthroughPage() {
                 Model Paragraph (250 words)
               </CardTitle>
               <p className="text-sm text-muted-foreground mt-1">
-                How Victor&apos;s response — not the Creature&apos;s appearance — is the true
+                How Victor&apos;s response - not the Creature&apos;s appearance - is the true
                 monstrosity, and how this fits Shelley&apos;s critique of Romantic-era hubris and
                 rejection of responsibility.
               </p>
@@ -255,7 +255,7 @@ export default function FrankensteinExtractWalkthroughPage() {
                   className="rounded-md border border-border/60 bg-card/50 p-4 text-sm"
                 >
                   <span className="italic text-muted-foreground">{n.quote}</span>
-                  <span className="mx-2 text-muted-foreground">—</span>
+                  <span className="mx-2 text-muted-foreground">-</span>
                   <span>{n.note}</span>
                 </li>
               ))}

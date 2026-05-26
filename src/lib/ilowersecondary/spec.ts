@@ -1,16 +1,16 @@
 /**
- * CANONICAL SPECIFICATION DATA — Pearson Edexcel International Award in
+ * CANONICAL SPECIFICATION DATA - Pearson Edexcel International Award in
  * Lower Secondary English (LEH11).
  *
  * SINGLE SOURCE OF TRUTH. Every fact in this file is transcribed
  * verbatim or faithfully summarised from the official Pearson documents:
  *
- *   1. iLowerSecondary English Specification — Issue 2, November 2024
+ *   1. iLowerSecondary English Specification - Issue 2, November 2024
  *      (ISBN 978 1 446 95667 0) © Pearson Education Limited 2024
  *   2. Pearson Edexcel International Lower Secondary Curriculum in English
- *      Year 9 (LEH11) Paper 01 — Mark Scheme (Results) October 2025
+ *      Year 9 (LEH11) Paper 01 - Mark Scheme (Results) October 2025
  *      (Publication Code LEH11_01_2510_MS) © Pearson Education Ltd
- *   3. LEH11/01 Achievement test, October 2025 (P79975A) — structure only
+ *   3. LEH11/01 Achievement test, October 2025 (P79975A) - structure only
  *   4. iLowerSecondary English Teacher's Guide (SAMPLE) © Pearson
  *   5. Text: Building Skills in English Mapping, Year 9 (SAMPLE) © Pearson
  *
@@ -18,7 +18,7 @@
  * paper (e.g. the smallpox/Jenner, Leprosy Mission, or "The Island at the
  * End of Everything" extracts). Only the qualification facts, assessment
  * objectives, mark grids and question-type structures below are
- * reproduced — these are published openly by Pearson for centres and are
+ * reproduced - these are published openly by Pearson for centres and are
  * used here for educational guidance (criticism / instruction).
  *
  * All consumer pages MUST import from this module rather than restating
@@ -38,7 +38,7 @@ export const QUALIFICATION = {
   availability: ['June', 'October'] as const,
   firstTeaching: 'September 2018',
   firstAssessment: 'June 2019',
-  specIssue: 'Issue 2 — November 2024',
+  specIssue: 'Issue 2 - November 2024',
   dictionariesAllowed: false,
   /** Four-level scale; S4 highest, S1 lowest; U = unclassified. */
   grades: ['S1', 'S2', 'S3', 'S4'] as const,
@@ -48,8 +48,8 @@ export const QUALIFICATION = {
     'Skills are drawn from Year 9 of the Pearson Edexcel iLowerSecondary English Curriculum. The content amplification also includes aspects of learning from Years 7, 8 and 9.',
   priorLearning: 'There are no prior learning or other requirements for this qualification.',
   progression: [
-    'Pearson Edexcel International GCSE in English Language (Specification A) (9–1)',
-    'Pearson Edexcel International GCSE in English Language (Specification B) (9–1)',
+    'Pearson Edexcel International GCSE in English Language (Specification A) (9-1)',
+    'Pearson Edexcel International GCSE in English Language (Specification B) (9-1)',
   ],
 } as const
 
@@ -64,7 +64,7 @@ export const SECTIONS = {
     recommendedMinutes: 70, // 1 hour 10 minutes
     recommendedLabel: '1 hour 10 minutes',
     description:
-      'Students answer questions on three unseen texts — two non-fiction and one fiction — linked by a common theme. Texts are provided in a separate Source Booklet. Students must complete all questions. This section consists of closed and short open-response questions.',
+      'Students answer questions on three unseen texts - two non-fiction and one fiction - linked by a common theme. Texts are provided in a separate Source Booklet. Students must complete all questions. This section consists of closed and short open-response questions.',
   },
   B: {
     id: 'B' as const,
@@ -134,7 +134,7 @@ export const ASSESSMENT_OBJECTIVES: Record<
   },
 }
 
-// ─── Reading content skills (1.1–1.5) ─────────────────────────────────
+// ─── Reading content skills (1.1-1.5) ─────────────────────────────────
 
 export const READING_SKILLS = [
   {
@@ -142,7 +142,7 @@ export const READING_SKILLS = [
     title: 'Reading accurately with understanding',
     bullets: [
       'Identifying and retrieving key ideas and information from texts.',
-      'Deducing and inferring meaning – reading beyond literal and explicit meaning.',
+      'Deducing and inferring meaning - reading beyond literal and explicit meaning.',
     ],
   },
   {
@@ -215,7 +215,7 @@ export const FICTION_GENRES = [
 
 export const NARRATIVE_PERSPECTIVES = ['first person', 'third person', 'omniscient'] as const
 
-// ─── Writing content skills (2.1–2.3) ─────────────────────────────────
+// ─── Writing content skills (2.1-2.3) ─────────────────────────────────
 
 export const WRITING_SKILLS = [
   {
@@ -277,11 +277,11 @@ export const WRITING_AUDIENCES =
 
 export type WritingLevel = 'S1' | 'S2' | 'S3' | 'S4'
 
-/** WAO1 — Form, communication and purpose (out of 18 marks). */
+/** WAO1 - Form, communication and purpose (out of 18 marks). */
 export const WAO1_GRID: { level: WritingLevel; marks: string; descriptors: string[] }[] = [
   {
     level: 'S1',
-    marks: '1–4',
+    marks: '1-4',
     descriptors: [
       'Some content linked to task with an awareness of audience. Form is sometimes maintained.',
       'Some paragraphs or sections logically sequenced, although transitions may be awkward.',
@@ -290,7 +290,7 @@ export const WAO1_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
   {
     level: 'S2',
-    marks: '5–9',
+    marks: '5-9',
     descriptors: [
       'Mostly appropriate to task with clear awareness of audience. Form mostly established and maintained.',
       'Organised with clear control of paragraphs or sections that supports coherence.',
@@ -299,7 +299,7 @@ export const WAO1_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
   {
     level: 'S3',
-    marks: '10–14',
+    marks: '10-14',
     descriptors: [
       'Appropriate to task with secure awareness of audience. Form established and maintained throughout.',
       'Organised with clear control of paragraphs or sections that supports coherence throughout.',
@@ -308,7 +308,7 @@ export const WAO1_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
   {
     level: 'S4',
-    marks: '15–18',
+    marks: '15-18',
     descriptors: [
       'Sophisticated awareness of audience. Form adapted and controlled for purpose.',
       'Organised with complete control of paragraphs or sections with coherence throughout.',
@@ -317,11 +317,11 @@ export const WAO1_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
 ]
 
-/** WAO2 — Grammar, punctuation and spelling (out of 12 marks). */
+/** WAO2 - Grammar, punctuation and spelling (out of 12 marks). */
 export const WAO2_GRID: { level: WritingLevel; marks: string; descriptors: string[] }[] = [
   {
     level: 'S1',
-    marks: '1–3',
+    marks: '1-3',
     descriptors: [
       'Some sentences grammatically sound with some complex connectives used.',
       'Some sentences correctly demarcated, with mostly correct use of internal punctuation.',
@@ -330,7 +330,7 @@ export const WAO2_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
   {
     level: 'S2',
-    marks: '4–6',
+    marks: '4-6',
     descriptors: [
       'Sentences mostly grammatically sound with an emerging range of complex connectives used to develop sentences.',
       'Most sentences correctly demarcated, with mostly correct use of internal punctuation.',
@@ -339,7 +339,7 @@ export const WAO2_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
   {
     level: 'S3',
-    marks: '7–9',
+    marks: '7-9',
     descriptors: [
       'Sentences are grammatically secure with complex connectives used to develop sentences.',
       'Sentences are correctly demarcated with appropriate use of punctuation.',
@@ -348,7 +348,7 @@ export const WAO2_GRID: { level: WritingLevel; marks: string; descriptors: strin
   },
   {
     level: 'S4',
-    marks: '10–12',
+    marks: '10-12',
     descriptors: [
       'Sentences are grammatically assured and used effectively throughout.',
       'Sentences are demarcated correctly and with sophisticated use of punctuation.',
@@ -364,19 +364,19 @@ export const WAO2_GRID: { level: WritingLevel; marks: string; descriptors: strin
 export const COMPARISON_LEVELS = [
   {
     level: 'Level 1',
-    marks: '1–2',
+    marks: '1-2',
     descriptor:
       'Response is a simple comment with implicit contrast, referring to either one or two of: deducing, inferring or interpreting information, events or ideas; the use of language at word level; writers’ purpose and viewpoint / overall effect on the reader.',
   },
   {
     level: 'Level 2',
-    marks: '3–4',
+    marks: '3-4',
     descriptor:
       'Response is an explanation with explicit reference to the contrast, focused on two of: deducing, inferring or interpreting information, events or ideas; the use of language at word level; writers’ purpose and viewpoint / overall effect on the reader.',
   },
   {
     level: 'Level 3',
-    marks: '5–6',
+    marks: '5-6',
     descriptor:
       'Response is a clear explanation of the contrast, focusing on: deducing, inferring or interpreting information, events or ideas; the use of language at word level; writers’ purpose and viewpoint / overall effect on the reader.',
   },
@@ -384,7 +384,7 @@ export const COMPARISON_LEVELS = [
 
 // ─── Question-type structures (from real LEH11/01 papers) ─────────────
 //
-// Structure only — NO copyrighted source-text content is reproduced.
+// Structure only - NO copyrighted source-text content is reproduced.
 
 export const QUESTION_TYPES = [
   {
@@ -392,7 +392,7 @@ export const QUESTION_TYPES = [
     name: 'Circle / select the synonym',
     ao: 'RAO4',
     typicalMarks: 1,
-    format: 'Closed — circle one word from four options.',
+    format: 'Closed - circle one word from four options.',
     howToAnswer:
       'Read the word in context. Choose the option that could replace it without changing the meaning. Only one answer; do not circle more than one.',
   },
@@ -401,7 +401,7 @@ export const QUESTION_TYPES = [
     name: 'Short retrieval / "Why…?"',
     ao: 'RAO1',
     typicalMarks: 1,
-    format: 'Short open response — one or two lines.',
+    format: 'Short open response - one or two lines.',
     howToAnswer:
       'Locate the exact place in the text. Answer in your own words or with a precise short quotation. Mark schemes reward a clear, specific reference, not a vague gist.',
   },
@@ -410,7 +410,7 @@ export const QUESTION_TYPES = [
     name: 'Multiple choice (A/B/C/D)',
     ao: 'RAO2/RAO4',
     typicalMarks: 1,
-    format: 'Closed — cross one box.',
+    format: 'Closed - cross one box.',
     howToAnswer:
       'Re-read the quoted phrase, then test each option against the meaning in context. If you change your mind, put a line through the box and mark the new answer with a cross.',
   },
@@ -430,14 +430,14 @@ export const QUESTION_TYPES = [
     typicalMarks: 2,
     format: 'Short open response.',
     howToAnswer:
-      'Explain the deeper meaning and the effect on the reader. Avoid lifting the words directly from the text without explanation — the mark scheme does not credit unexplained lifts.',
+      'Explain the deeper meaning and the effect on the reader. Avoid lifting the words directly from the text without explanation - the mark scheme does not credit unexplained lifts.',
   },
   {
     id: 'underline-word-class',
     name: 'Underline the word / verb class',
     ao: 'RAO3/RAO4',
     typicalMarks: 1,
-    format: 'Closed — underline one option.',
+    format: 'Closed - underline one option.',
     howToAnswer:
       'Apply grammatical terminology precisely (e.g. imperative, modal, auxiliary, irregular). Any clear positive indication is accepted.',
   },
@@ -446,7 +446,7 @@ export const QUESTION_TYPES = [
     name: 'Tick which text uses a feature',
     ao: 'RAO3',
     typicalMarks: 2,
-    format: 'Closed — tick Text 1 / Text 2 / Both texts.',
+    format: 'Closed - tick Text 1 / Text 2 / Both texts.',
     howToAnswer:
       'Scan each text for the named features (e.g. question marks, apostrophes for possession, dashes, brackets). Partial credit is usually available for most rows correct.',
   },
@@ -455,13 +455,13 @@ export const QUESTION_TYPES = [
     name: 'Compare how two quotations reflect each writer’s purpose',
     ao: 'RAO2 + RAO4 + RAO5',
     typicalMarks: 6,
-    format: 'Extended open response — levelled (see COMPARISON_LEVELS).',
+    format: 'Extended open response - levelled (see COMPARISON_LEVELS).',
     howToAnswer:
       'Make an explicit, developed comparison. Move beyond an implicit comment: explain the contrast, comment on language at word level, and state each writer’s purpose and the effect on the reader.',
   },
   {
     id: 'which-text-appealing',
-    name: 'Which text is more appealing — with evidence',
+    name: 'Which text is more appealing - with evidence',
     ao: 'RAO4 + RAO5',
     typicalMarks: 2,
     format: 'Short open response.',
@@ -482,7 +482,7 @@ export const QUESTION_TYPES = [
     name: 'How does the writer show…? (language / structure)',
     ao: 'RAO4 + RAO5',
     typicalMarks: 4,
-    format: 'Open response — points + evidence.',
+    format: 'Open response - points + evidence.',
     howToAnswer:
       'Make two developed points, each with appropriate evidence from the text and an explanation of the effect. Two marks per developed point with evidence.',
   },

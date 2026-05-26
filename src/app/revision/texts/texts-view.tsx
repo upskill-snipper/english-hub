@@ -174,7 +174,7 @@ export default function TextsRevisionView({ boardId, boardName, texts }: Props) 
     )
   }, [search, texts])
 
-  // Texts the student has pinned as "currently studying" — only those that are
+  // Texts the student has pinned as "currently studying" - only those that are
   // still in the board's prescribed list are shown (defensive in case the
   // board changes after pinning).
   const studyingTexts = useMemo(

@@ -11,12 +11,12 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'To Kill a Mockingbird revision guide — themes, characters, key quotes — The English Hub',
-    description: 'To Kill a Mockingbird IGCSE revision — Harper Lee',
+      'To Kill a Mockingbird revision guide - themes, characters, key quotes - The English Hub',
+    description: 'To Kill a Mockingbird IGCSE revision - Harper Lee',
   },
-  title: 'To Kill a Mockingbird revision guide — themes, characters, key quotes',
+  title: 'To Kill a Mockingbird revision guide - themes, characters, key quotes',
   description:
-    "To Kill a Mockingbird IGCSE revision — Harper Lee's novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1 spec.",
+    "To Kill a Mockingbird IGCSE revision - Harper Lee's novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1 spec.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird',
   },
@@ -61,7 +61,7 @@ const data: TextGuideData = {
     {
       name: 'Tom Robinson',
       role: 'The accused',
-      body: "A decent, gentle, physically disabled field hand. Lee uses him as the novel's literal 'mockingbird' — a harmless soul destroyed by prejudice despite his innocence.",
+      body: "A decent, gentle, physically disabled field hand. Lee uses him as the novel's literal 'mockingbird' - a harmless soul destroyed by prejudice despite his innocence.",
     },
     {
       name: 'Boo (Arthur) Radley',
@@ -100,44 +100,44 @@ const data: TextGuideData = {
     'The novel is set in the early 1930s but published in 1960, at the height of the American Civil Rights movement. Harper Lee wrote it as the Montgomery bus boycott and the desegregation of Little Rock were fresh in public memory. The book spoke directly to a country confronting its own history.',
     'The Jim Crow laws that governed the South from the 1870s onward mandated segregation in schools, courts, churches and public spaces. Black defendants faced all-white juries, often all-male, and convictions for alleged crimes against white women were almost automatic. The Scottsboro Boys trial of 1931 is frequently cited as an inspiration for Tom\u2019s case.',
     'The Great Depression shapes the economic backdrop. Farmers lose land, the Cunninghams pay debts in hickory nuts and the Ewells live on relief cheques. Poverty feeds resentment and makes racial hierarchy more, not less, rigid.',
-    'Lee drew heavily on her own Alabama childhood. Her father was a lawyer, her childhood friend Truman Capote inspired Dill, and the small-town details — heat, porches, church suppers, gossip — give the novel its authority and enduring warmth.',
+    'Lee drew heavily on her own Alabama childhood. Her father was a lawyer, her childhood friend Truman Capote inspired Dill, and the small-town details - heat, porches, church suppers, gossip - give the novel its authority and enduring warmth.',
   ],
   quotations: [
     {
       quote:
         '"You never really understand a person until you consider things from his point of view."',
-      who: 'Atticus — Chapter 3',
+      who: 'Atticus - Chapter 3',
       analysis: "The novel's moral compass. Empathy is the lesson Scout has to learn.",
     },
     {
       quote: '"It\'s a sin to kill a mockingbird."',
-      who: 'Miss Maudie — Chapter 10',
+      who: 'Miss Maudie - Chapter 10',
       analysis: 'The central symbol. Defines the innocence that Tom and Boo share.',
     },
     {
       quote:
         '"Simply because we were licked a hundred years before we started is no reason not to try."',
-      who: 'Atticus — Chapter 9',
+      who: 'Atticus - Chapter 9',
       analysis: "Atticus's definition of courage and his justification for defending Tom.",
     },
     {
       quote: '"The one thing that doesn\'t abide by majority rule is a person\'s conscience."',
-      who: 'Atticus — Chapter 11',
+      who: 'Atticus - Chapter 11',
       analysis: 'Places private morality above social pressure.',
     },
     {
       quote: '"People generally see what they look for, and hear what they listen for."',
-      who: 'Atticus — Chapter 17',
+      who: 'Atticus - Chapter 17',
       analysis: 'Sums up the prejudice that will decide the verdict before evidence is heard.',
     },
     {
       quote: '"Atticus, he was real nice."',
-      who: 'Scout — Chapter 31',
-      analysis: "Scout's final line about Boo Radley — innocence recovered through empathy.",
+      who: 'Scout - Chapter 31',
+      analysis: "Scout's final line about Boo Radley - innocence recovered through empathy.",
     },
     {
       quote: '"I do my best to love everybody."',
-      who: 'Atticus — Chapter 11',
+      who: 'Atticus - Chapter 11',
       analysis: 'A deceptively simple statement of the ethical code Atticus lives by.',
     },
   ],
@@ -205,7 +205,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The mockingbird symbolises innocence. Miss Maudie explains that mockingbirds "don\'t do one thing but sing their hearts out for us." Tom Robinson and Boo Radley are both mockingbirds — harmless souls destroyed or threatened by cruelty.',
+      'The mockingbird symbolises innocence. Miss Maudie explains that mockingbirds "don\'t do one thing but sing their hearts out for us." Tom Robinson and Boo Radley are both mockingbirds - harmless souls destroyed or threatened by cruelty.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -259,13 +259,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is just good advice',
-      "It is the novel's moral compass — empathy is the lesson Scout must learn throughout the book",
+      "It is the novel's moral compass - empathy is the lesson Scout must learn throughout the book",
       'It applies only to the trial',
       'It is ironic because Atticus is prejudiced',
     ],
     correctIndex: 1,
     explanation:
-      "This line is the novel's core moral philosophy. Scout's entire journey is learning to see the world through others' eyes — from Boo Radley to Tom Robinson to even Mrs Dubose. Empathy is presented as the antidote to prejudice.",
+      "This line is the novel's core moral philosophy. Scout's entire journey is learning to see the world through others' eyes - from Boo Radley to Tom Robinson to even Mrs Dubose. Empathy is presented as the antidote to prejudice.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -281,7 +281,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Scout\'s simple line shows she has completed her moral education. She now sees Boo Radley as a human being rather than a boogeyman. Atticus responds: "Most people are, Scout, when you finally see them" — the novel\'s quiet conclusion.',
+      'Scout\'s simple line shows she has completed her moral education. She now sees Boo Radley as a human being rather than a boogeyman. Atticus responds: "Most people are, Scout, when you finally see them" - the novel\'s quiet conclusion.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -345,7 +345,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Scout's dual perspective — child experiencing events and adult Jean Louise reflecting — allows Lee to critique Maycomb's racism without sermonising. The child's innocent questions expose what adults take for granted, while the retrospective voice provides understanding.",
+      "Scout's dual perspective - child experiencing events and adult Jean Louise reflecting - allows Lee to critique Maycomb's racism without sermonising. The child's innocent questions expose what adults take for granted, while the retrospective voice provides understanding.",
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -426,7 +426,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Atticus is not a revolutionary — he works within Maycomb's institutions, socialises with its citizens, and holds office. His courage lies in doing right within a system he knows is unjust. This makes him both admirable and limited, reflecting the complexity of moral action within oppressive structures.",
+      "Atticus is not a revolutionary - he works within Maycomb's institutions, socialises with its citizens, and holds office. His courage lies in doing right within a system he knows is unjust. This makes him both admirable and limited, reflecting the complexity of moral action within oppressive structures.",
     topic: 'Characters',
     difficulty: 'grade-9',
   },
@@ -456,7 +456,7 @@ const REVISION_TOPICS = [
       "The verdict is never in doubt despite Atticus proving Tom's innocence",
       'All-white juries under Jim Crow laws made fair trials impossible',
       'The Scottsboro Boys case (1931) is a likely inspiration',
-      'Tom is killed trying to escape — the system destroys him either way',
+      'Tom is killed trying to escape - the system destroys him either way',
       'Lee connects the 1930s South to the 1960s Civil Rights movement',
     ],
   },
@@ -475,7 +475,7 @@ const REVISION_TOPICS = [
     topic: 'The Mockingbird Symbol',
     summary: 'Mockingbirds represent innocent beings destroyed by cruelty.',
     keyPoints: [
-      '"It\'s a sin to kill a mockingbird" — they do nothing but sing',
+      '"It\'s a sin to kill a mockingbird" - they do nothing but sing',
       'Tom Robinson is the clearest mockingbird: innocent, destroyed',
       'Boo Radley is the other mockingbird: shielded by the sheriff',
       'The symbol binds Tom and Boo together across the race divide',
@@ -498,7 +498,7 @@ const REVISION_TOPICS = [
     topic: 'Class and Social Hierarchy',
     summary: "Maycomb's rigid social ranks feed racism and prejudice.",
     keyPoints: [
-      'Old families, working farmers, the Ewells, Black community — a strict order',
+      'Old families, working farmers, the Ewells, Black community - a strict order',
       'The Ewells are poor but feel superior to Black people',
       'Poverty feeds resentment and makes racial hierarchy more rigid',
       "The Cunninghams represent honest poverty vs the Ewells' dysfunction",
@@ -528,7 +528,7 @@ export default async function ToKillAMockingbirdPage() {
   return (
     <>
       <CourseJsonLd
-        name="To Kill a Mockingbird — Complete GCSE Study Guide"
+        name="To Kill a Mockingbird - Complete GCSE Study Guide"
         description="In-depth study guide for To Kill a Mockingbird covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

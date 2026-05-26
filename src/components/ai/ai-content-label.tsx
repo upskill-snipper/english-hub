@@ -1,5 +1,5 @@
 /**
- * AI content label — PDPPL Remediation 6.
+ * AI content label - PDPPL Remediation 6.
  *
  * Discloses AI involvement at the point of consumption. Renders a
  * small, persistent badge near the top of any page that displays
@@ -7,16 +7,16 @@
  * AI feedback panels, model answers, vocabulary explainers).
  *
  * Three variants:
- *   inline   — bottom-of-author-byline chip (used on blog headers)
- *   panel    — boxed disclosure with explanatory text (used above
+ *   inline   - bottom-of-author-byline chip (used on blog headers)
+ *   panel    - boxed disclosure with explanatory text (used above
  *              AI feedback components like EssayFeedbackInline)
- *   footer   — slim site-wide footnote (used on auto-generated lists)
+ *   footer   - slim site-wide footnote (used on auto-generated lists)
  *
- * The label is intentionally low-key, not alarmist — the goal is
+ * The label is intentionally low-key, not alarmist - the goal is
  * informed consent, not stigma. Wording matches the /legal/ai-governance
  * page so reviewers can match the on-product disclosure to the policy.
  *
- * Localised — the `lang` prop falls back to the request's eh-lang
+ * Localised - the `lang` prop falls back to the request's eh-lang
  * header when missing.
  */
 

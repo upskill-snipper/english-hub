@@ -221,7 +221,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'Elision is evident in "gonna" (going to) and "gotta" (got to), where unstressed syllables are dropped, reflecting informal register typical of casual peer-to-peer conversation. ' +
-      'The use of "comin" shows g-dropping — the omission of the final /g/ in the present participle — a well-documented sociolinguistic variable associated with informal speech. ' +
+      'The use of "comin" shows g-dropping - the omission of the final /g/ in the present participle - a well-documented sociolinguistic variable associated with informal speech. ' +
       'The tag "innit" functions as an invariant tag question replacing standard forms, strongly associated with Multicultural London English (MLE). ' +
       'These phonological choices collectively construct an identity rooted in youth culture and informality, signalling in-group membership with peers rather than conformity to prestige norms.',
     marks: 20,
@@ -253,7 +253,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'The teacher\'s micropauses (.) between clauses create deliberate, measured delivery conveying scepticism. The longer pause (1.0) before "ate your homework" adds dramatic emphasis implying disbelief. ' +
-      'The student\'s emphatic stress on "DID" (capitalisation) is a prosodic strategy asserting truthfulness — a positive polarity marker countering implied doubt. The address term "miss" acknowledges institutional power asymmetry as a politeness strategy. ' +
+      'The student\'s emphatic stress on "DID" (capitalisation) is a prosodic strategy asserting truthfulness - a positive polarity marker countering implied doubt. The address term "miss" acknowledges institutional power asymmetry as a politeness strategy. ' +
       'The exchange demonstrates how prosodic features encode power: the teacher\'s controlled, paused delivery asserts authority, while the student\'s emphatic stress attempts to resist the subordinate position. The micropause before "honestly" may paradoxically undermine the claim of honesty.',
     marks: 20,
     difficulty: 'secure',
@@ -284,7 +284,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'Two dominant semantic fields: warfare/conflict ("courage", "sacrifice", "resolve", "shield", "guards") and weather/nature ("weathered storms", "tempest", "shores", "crossroads", "path"). ' +
-      'The warfare lexis frames the political situation as a battle requiring military virtues. The weather lexis naturalises the crisis — storms are inevitable but temporary — while dramatising threat. ' +
+      'The warfare lexis frames the political situation as a battle requiring military virtues. The weather lexis naturalises the crisis - storms are inevitable but temporary - while dramatising threat. ' +
       'The interaction is rhetorically powerful: warfare demands active participation while weather implies external, natural force rather than political failure. The pronoun "we" (five occurrences) and possessive "our" create synthetic personalisation, constructing unified national identity. ' +
       'The speech uses semantic fields to create pathos that bypasses rational analysis of the actual political situation.',
     marks: 20,
@@ -318,7 +318,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       'The main clause is "The ancient, crumbling wall...had slowly surrendered to the persistent ivy." The defining relative clause "that surrounded the forgotten garden" post-modifies the noun phrase, identifying which wall. ' +
       'The absolute clause "its grey stones now entirely hidden beneath a thick blanket of dark green leaves" provides supplementary description as a non-finite clause. ' +
       'Pre-modifying adjectives ("ancient", "crumbling", "forgotten") front-load noun phrases with deterioration. "Surrendered" personifies the wall while "slowly" stretches the action temporally. ' +
-      "The absolute clause mirrors the ivy's coverage — syntax buries the stones beneath layers of modification, just as ivy buries them physically. Form enacts meaning.",
+      "The absolute clause mirrors the ivy's coverage - syntax buries the stones beneath layers of modification, just as ivy buries them physically. Form enacts meaning.",
     marks: 20,
     difficulty: 'secure',
     keywords: [
@@ -374,7 +374,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     type: 'language-analysis',
     instructions:
       '<p>Study the following doctor-patient conversation:</p>' +
-      '<p><em>D: "Right (.) so what seems to be the problem today"<br/>P: "Well I\'ve been having these headaches and (.) um (.) they\'re getting quite—"<br/>D: "How long has this been going on"<br/>P: "About three weeks I think maybe—"<br/>D: "Any other symptoms (.) nausea (.) vision problems"<br/>P: "No I don\'t think (.) well actually my eyes have been a bit—"<br/>D: "Right let\'s have a look then"</em></p>' +
+      '<p><em>D: "Right (.) so what seems to be the problem today"<br/>P: "Well I\'ve been having these headaches and (.) um (.) they\'re getting quite-"<br/>D: "How long has this been going on"<br/>P: "About three weeks I think maybe-"<br/>D: "Any other symptoms (.) nausea (.) vision problems"<br/>P: "No I don\'t think (.) well actually my eyes have been a bit-"<br/>D: "Right let\'s have a look then"</em></p>' +
       '<ol>' +
       '<li>Identify examples of adjacency pairs, topic management, and interruptions. (6 marks)</li>' +
       '<li>Using Fairclough\'s concept of "power in discourse" or Zimmerman and West\'s research, analyse the power dynamics. (8 marks)</li>' +
@@ -383,7 +383,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'The doctor controls turn allocation, using "Right" as a discourse marker to signal transitions and functioning as gatekeeper. Question-answer adjacency pairs are initiated exclusively by the doctor. ' +
       'The patient\'s utterances are consistently interrupted (indicated by dashes). Patient fillers ("well", "um") and hedges ("I think", "maybe") reflect deference, while the doctor\'s utterances are direct and unhedged. ' +
-      'Zimmerman and West (1975) found power asymmetry predicts interruption patterns: the powerful participant (doctor) interrupts the less powerful (patient). Fairclough would identify "power in discourse" — power exercised through linguistic choices within the interaction. ' +
+      'Zimmerman and West (1975) found power asymmetry predicts interruption patterns: the powerful participant (doctor) interrupts the less powerful (patient). Fairclough would identify "power in discourse" - power exercised through linguistic choices within the interaction. ' +
       'The institutional context of medicine legitimises this asymmetric discourse, though research suggests patient outcomes improve with more collaborative strategies.',
     marks: 20,
     difficulty: 'mastery',
@@ -414,9 +414,9 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '<li>Evaluate the assumption that one variety is linguistically "superior." (4 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'Text A uses Latinate, polysyllabic lexis ("culminated", "scintillating", "orchestrated"), complex subordination, and conventionalised metaphor. Text B uses monosyllabic Anglo-Saxon lexis ("smashed", "banged"), graphological stretching ("innnnnn"), no capitalisation, and paratactic coordination — conventions of CMC. ' +
+      'Text A uses Latinate, polysyllabic lexis ("culminated", "scintillating", "orchestrated"), complex subordination, and conventionalised metaphor. Text B uses monosyllabic Anglo-Saxon lexis ("smashed", "banged"), graphological stretching ("innnnnn"), no capitalisation, and paratactic coordination - conventions of CMC. ' +
       'Bernstein would classify A as "elaborated code" and B as "restricted code." However, Labov (1969) argued non-standard varieties are equally logical; what Bernstein interpreted as deficit was linguistic difference. ' +
-      'Text B is highly effective within context: "absolute scenes" is concise and evocative; orthographic stretching iconically represents celebration intensity. Trudgill notes "covert prestige" — speakers may choose vernacular to signal authenticity and solidarity. Neither variety is linguistically superior; each is maximally effective for its context.',
+      'Text B is highly effective within context: "absolute scenes" is concise and evocative; orthographic stretching iconically represents celebration intensity. Trudgill notes "covert prestige" - speakers may choose vernacular to signal authenticity and solidarity. Neither variety is linguistically superior; each is maximally effective for its context.',
     marks: 20,
     difficulty: 'secure',
     keywords: [
@@ -447,7 +447,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
       '</ol>',
     modelAnswer:
       'CMC features: hashtags (#SaveOurLibrary) as topic markers and political slogans; at-mentions for direct public address; emojis (📖💀) as paralinguistic cues; "lol" as discourse marker; "ratio + L + nobody asked" as formulaic platform-specific face-threatening act. ' +
-      'User A constructs politically engaged identity through hashtag activism and collective "Our." User B deploys "snowflake" — a pejorative neologism performing confrontational identity through deliberate impoliteness (Culpeper, 2011). User A\'s "Imagine thinking..." uses the imperative to position User B\'s view as absurd. ' +
+      'User A constructs politically engaged identity through hashtag activism and collective "Our." User B deploys "snowflake" - a pejorative neologism performing confrontational identity through deliberate impoliteness (Culpeper, 2011). User A\'s "Imagine thinking..." uses the imperative to position User B\'s view as absurd. ' +
       'Social media challenges traditional power by bypassing institutional gatekeepers. However, new hierarchies emerge: algorithmic amplification, follower counts, and "ratio" create new forms of social capital. The medium changes but the struggle for discursive power remains.',
     marks: 20,
     difficulty: 'secure',
@@ -480,7 +480,7 @@ export const ialWorkbookExercises: WorkbookExercise[] = [
     modelAnswer:
       'Semantic fields of care ("nurtures", "safe", "supportive") and excellence ("outstanding", "highly qualified", "state-of-the-art") construct the school as both warm and rigorous. Pre-modification is heavy: the tricolon "safe, supportive, and stimulating" (alliterative) creates polished promotional discourse. ' +
       'First-person plural pronouns ("we believe", "our team") create synthetic personalisation while asserting authority. Declaratives present claims as facts. Nominalisation ("excellence") converts qualitative judgement into abstract noun, seeming objective. ' +
-      'The final sentence performs subtle gatekeeping: "families who share our values" implies some families do not. The defining relative clause sets conditions disguised as welcome. This is Fairclough\'s "technologisation of discourse" — market-driven language applied to public service, naturalising ideological choices as common sense.',
+      'The final sentence performs subtle gatekeeping: "families who share our values" implies some families do not. The defining relative clause sets conditions disguised as welcome. This is Fairclough\'s "technologisation of discourse" - market-driven language applied to public service, naturalising ideological choices as common sense.',
     marks: 20,
     difficulty: 'mastery',
     keywords: [

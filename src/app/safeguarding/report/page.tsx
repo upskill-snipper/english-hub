@@ -413,7 +413,7 @@ export default function SafeguardingReportPage() {
           </div>
         )}
 
-        {/* Emergency & SLA notice — shown directly at the point of reporting */}
+        {/* Emergency & SLA notice - shown directly at the point of reporting */}
         <div
           role="note"
           className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-sm text-muted-foreground"

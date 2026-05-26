@@ -31,7 +31,7 @@ export function useRewardful() {
     // Check immediately
     checkRewardful()
 
-    // Rewardful script loads async — retry after delays
+    // Rewardful script loads async - retry after delays
     const t1 = setTimeout(checkRewardful, 500)
     const t2 = setTimeout(checkRewardful, 1500)
     const t3 = setTimeout(checkRewardful, 3000)

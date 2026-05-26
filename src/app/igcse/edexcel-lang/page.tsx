@@ -26,7 +26,7 @@ import { t } from '@/lib/i18n/t'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE English Language A (4EA1) — The English Hub',
+    title: 'Edexcel IGCSE English Language A (4EA1) - The English Hub',
     description:
       'Complete revision hub for Pearson Edexcel IGCSE English Language A. Paper 1 non-fiction anthology, Paper 2 transactional writing, exam technique and study tools.',
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const paper1Sections = [
   {
-    heading: 'Section A — Non-Fiction Anthology',
+    heading: 'Section A - Non-Fiction Anthology',
     label: 'Paper 1 Section A',
     detail:
       'Questions on the 10 prescribed non-fiction texts from the Pearson Edexcel anthology. Retrieval, language analysis, and structural analysis.',
@@ -63,7 +63,7 @@ const paper1Sections = [
     ],
   },
   {
-    heading: 'Section A — Anthology (continued)',
+    heading: 'Section A - Anthology (continued)',
     label: 'Paper 1 Section A',
     detail: 'The remaining five prescribed non-fiction texts for the anthology study.',
     href: '/igcse/edexcel-lang/anthology',
@@ -82,7 +82,7 @@ const paper1Sections = [
     ],
   },
   {
-    heading: 'Section B — Unseen Non-Fiction',
+    heading: 'Section B - Unseen Non-Fiction',
     label: 'Paper 1 Section B',
     detail:
       'One unseen non-fiction extract with comprehension, language and comparison questions. Skills transfer from Section A anthology study.',
@@ -92,14 +92,14 @@ const paper1Sections = [
 
 const paper2Sections = [
   {
-    heading: 'Section A — Reading (Fiction/Literary Non-Fiction)',
+    heading: 'Section A - Reading (Fiction/Literary Non-Fiction)',
     label: 'Paper 2 Section A',
     detail:
       'One unseen fiction or literary non-fiction extract with comprehension and analytical response questions.',
     href: '/igcse/edexcel-lang',
   },
   {
-    heading: 'Section B — Transactional Writing',
+    heading: 'Section B - Transactional Writing',
     label: 'Paper 2 Section B',
     detail:
       'Two transactional writing tasks from a choice. Text types include articles, letters, reports, reviews, speeches and essays.',
@@ -116,7 +116,7 @@ export default async function EdexcelIgcseLangHubPage() {
     <>
       <CourseJsonLd
         name="Pearson Edexcel IGCSE English Language A (4EA1)"
-        description="Complete revision hub for Pearson Edexcel International GCSE English Language A 4EA1 — non-fiction anthology, transactional writing, exam technique."
+        description="Complete revision hub for Pearson Edexcel International GCSE English Language A 4EA1 - non-fiction anthology, transactional writing, exam technique."
         educationalLevel="IGCSE"
         provider="The English Hub"
         url="https://theenglishhub.app/igcse/edexcel-lang"
@@ -236,12 +236,12 @@ export default async function EdexcelIgcseLangHubPage() {
             </li>
             <li>
               the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-              &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+              &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
               anthology version when answering Edexcel questions.
             </li>
           </ol>
           <p className="text-body-xs text-muted-foreground">
-            © Pearson Education — quotations on individual set-text pages are short fair-dealing
+            © Pearson Education - quotations on individual set-text pages are short fair-dealing
             extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
             school-licensed editions.
           </p>

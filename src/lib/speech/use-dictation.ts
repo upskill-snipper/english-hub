@@ -1,8 +1,8 @@
 'use client'
 
-// ─── useDictation — free, browser-native speech-to-text (dictation) ─────────
+// ─── useDictation - free, browser-native speech-to-text (dictation) ─────────
 // Wraps the Web Speech API (SpeechRecognition / webkitSpeechRecognition), which
-// ships free in Chrome, Edge and Safari — no API key, no per-use cost, real-time.
+// ships free in Chrome, Edge and Safari - no API key, no per-use cost, real-time.
 // `supported` is false where the API is absent (e.g. Firefox); callers should
 // hide the mic and fall back to typing. An optional Azure STT backend can be
 // layered behind the same hook later (premium accuracy / unsupported browsers)
@@ -11,7 +11,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-// Minimal typings — the Web Speech API is not in the standard TS DOM lib.
+// Minimal typings - the Web Speech API is not in the standard TS DOM lib.
 interface SpeechRecognitionAlternativeLike {
   transcript: string
 }

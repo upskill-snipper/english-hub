@@ -10,11 +10,11 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'IGCSE Edexcel prose — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart — The English Hub',
+      'IGCSE Edexcel prose - Of Mice and Men, To Kill a Mockingbird, Things Fall Apart - The English Hub',
     description:
       'Pearson Edexcel IGCSE Literature 4ET1 modern prose. Three texts: Of Mice and Men, To Kill a Mockingbird, Things Fall Apart. Full study guides.',
   },
-  title: 'IGCSE Edexcel prose — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart',
+  title: 'IGCSE Edexcel prose - Of Mice and Men, To Kill a Mockingbird, Things Fall Apart',
   description:
     'Pearson Edexcel IGCSE Literature 4ET1 modern prose. Three texts: Of Mice and Men, To Kill a Mockingbird, Things Fall Apart. Full study guides.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/prose' },
@@ -108,7 +108,7 @@ export default async function ProseHubPage() {
       />
       <LearningResourceJsonLd
         name="Edexcel IGCSE Literature prose section"
-        description="Three modern prose texts — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart — for Pearson Edexcel IGCSE Literature 4ET1."
+        description="Three modern prose texts - Of Mice and Men, To Kill a Mockingbird, Things Fall Apart - for Pearson Edexcel IGCSE Literature 4ET1."
         educationalLevel="IGCSE"
         learningResourceType="Study guide"
         inLanguage="en-GB"
@@ -151,7 +151,7 @@ export default async function ProseHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               These texts are all in copyright. Our guides include short extracts for fair-dealing

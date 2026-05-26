@@ -40,7 +40,7 @@ export default function VerifyPage() {
     // RPC returns only { id, course_id, grade, issued_at, student_name }.
     //
     // The migration `20260419_certificate_public_rpc.sql` adds the RPC.
-    // It is additive — deploying the client change before the migration
+    // It is additive - deploying the client change before the migration
     // has been applied would break verification, so coordinate deploys:
     // apply the SQL migration first, then merge this client change.
     const { data: rows, error } = await supabase.rpc('verify_certificate', {

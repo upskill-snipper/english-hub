@@ -66,11 +66,11 @@ function saveDismissedId(id: string): void {
   try {
     const current = getDismissedIds()
     current.add(id)
-    // Keep list manageable — only store last 100 dismissed IDs
+    // Keep list manageable - only store last 100 dismissed IDs
     const arr = [...current].slice(-100)
     localStorage.setItem(DISMISSED_KEY, JSON.stringify(arr))
   } catch {
-    // localStorage might be full — fail silently
+    // localStorage might be full - fail silently
   }
 }
 

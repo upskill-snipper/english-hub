@@ -14,7 +14,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 type ErrorType =
   | 'Articles'
   | 'Verb "to be"'
-  | 'Subject–verb agreement'
+  | 'Subject-verb agreement'
   | 'Prepositions'
   | 'Double negative'
   | 'Word order'
@@ -29,7 +29,7 @@ interface ErrorItem {
   explanation: string
 }
 
-// Original bank — 50+ typical EAL errors (A2–B2), with extra care for
+// Original bank - 50+ typical EAL errors (A2-B2), with extra care for
 // patterns common among Arabic-L1 learners (articles, the verb "to be",
 // he/she gender agreement, plural "s", word order).
 const ERROR_BANK: ErrorItem[] = [
@@ -205,7 +205,7 @@ const ERROR_BANK: ErrorItem[] = [
     explanation: '"Parents" is plural, so use "are".',
   },
 
-  // ── Subject–verb agreement ───────────────────────────────────────────────
+  // ── Subject-verb agreement ───────────────────────────────────────────────
   {
     wrong: 'He go to the gym every morning.',
     options: [
@@ -215,7 +215,7 @@ const ERROR_BANK: ErrorItem[] = [
       'He gone to the gym every morning.',
     ],
     answerIndex: 1,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: 'With "he/she/it" add -s: "He goes".',
   },
   {
@@ -227,7 +227,7 @@ const ERROR_BANK: ErrorItem[] = [
       'My sister lived in London now.',
     ],
     answerIndex: 2,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: 'A singular subject takes the -s form: "lives".',
   },
   {
@@ -239,7 +239,7 @@ const ERROR_BANK: ErrorItem[] = [
       'The student work very hard.',
     ],
     answerIndex: 0,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: 'A plural subject ("students") takes "work", not "works".',
   },
   {
@@ -251,7 +251,7 @@ const ERROR_BANK: ErrorItem[] = [
       'She haves two brothers.',
     ],
     answerIndex: 1,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: 'With "she" the verb "have" becomes "has".',
   },
   {
@@ -263,7 +263,7 @@ const ERROR_BANK: ErrorItem[] = [
       'It are cost ten pounds.',
     ],
     answerIndex: 2,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: 'With "it" in the present, add -s: "It costs".',
   },
   {
@@ -275,7 +275,7 @@ const ERROR_BANK: ErrorItem[] = [
       'My friend doing not like coffee.',
     ],
     answerIndex: 1,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: 'With a singular subject use "does not".',
   },
   {
@@ -287,7 +287,7 @@ const ERROR_BANK: ErrorItem[] = [
       'Everyone in the class are want to pass.',
     ],
     answerIndex: 2,
-    errorType: 'Subject–verb agreement',
+    errorType: 'Subject-verb agreement',
     explanation: '"Everyone" is singular, so use "wants".',
   },
 
@@ -770,7 +770,7 @@ export default function CommonErrorFixerPage() {
         <GameShell
           gameId="common-error-fixer"
           title="Fix the Common Mistake"
-          description="Each sentence has one typical English mistake. Choose the corrected version. Everyone makes these — spotting them is how we improve."
+          description="Each sentence has one typical English mistake. Choose the corrected version. Everyone makes these - spotting them is how we improve."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -852,7 +852,7 @@ export default function CommonErrorFixerPage() {
                       </>
                     ) : (
                       <>
-                        <Lightbulb className="size-4" /> Good try — here&rsquo;s the rule:
+                        <Lightbulb className="size-4" /> Good try - here&rsquo;s the rule:
                       </>
                     )}
                   </p>

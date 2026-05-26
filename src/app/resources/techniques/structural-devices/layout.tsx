@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Master structural devices for GCSE English. Learn to identify and analyse narrative structure, paragraph organisation, and pacing techniques.',
   alternates: { canonical: 'https://theenglishhub.app/resources/techniques/structural-devices' },
   openGraph: {
-    title: 'Structural Devices — The English Hub',
+    title: 'Structural Devices - The English Hub',
     description:
       'Master structural devices for GCSE English. Learn to identify and analyse narrative structure, paragraph organisation, and pacing techniques.',
   },

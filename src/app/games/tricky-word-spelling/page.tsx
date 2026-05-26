@@ -12,15 +12,15 @@ import { getBoardConfig } from '@/lib/board/board-store'
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
 interface TrickyWord {
-  /** Four candidate spellings — one correct, three plausible everyday errors */
+  /** Four candidate spellings - one correct, three plausible everyday errors */
   options: [string, string, string, string]
-  /** Index (0–3) of the correct UK spelling */
+  /** Index (0-3) of the correct UK spelling */
   answerIndex: number
   /** One-line memory hook revealed after answering */
   tip: string
 }
 
-// 60+ high-frequency, everyday/functional words EAL (A2–B2) & KS3 learners
+// 60+ high-frequency, everyday/functional words EAL (A2-B2) & KS3 learners
 // commonly misspell. UK spelling. Distractors mirror real learner errors.
 const WORD_BANK: TrickyWord[] = [
   {
@@ -51,12 +51,12 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['surprise', 'suprise', 'surprize', 'surprize'],
     answerIndex: 0,
-    tip: 'A double-R surprise: sur-PR-ise — say both Rs.',
+    tip: 'A double-R surprise: sur-PR-ise - say both Rs.',
   },
   {
     options: ['adress', 'addres', 'address', 'adresse'],
     answerIndex: 2,
-    tip: 'Two Ds and two Ss — add your address.',
+    tip: 'Two Ds and two Ss - add your address.',
   },
   {
     options: ['calender', 'calandar', 'calendar', 'calandar'],
@@ -111,12 +111,12 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['untill', 'untl', 'until', 'untile'],
     answerIndex: 2,
-    tip: 'One L only — "until" the very end.',
+    tip: 'One L only - "until" the very end.',
   },
   {
     options: ['wich', 'whitch', 'which', 'whish'],
     answerIndex: 2,
-    tip: 'WH + ICH — like "wh-itch" without the T.',
+    tip: 'WH + ICH - like "wh-itch" without the T.',
   },
   {
     options: ['recieve', 'receive', 'receeve', 'receve'],
@@ -136,7 +136,7 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['tommorow', 'tomorow', 'tomorrow', 'tommorrow'],
     answerIndex: 2,
-    tip: 'One M, two Rs — to-mor-row.',
+    tip: 'One M, two Rs - to-mor-row.',
   },
   {
     options: ['favourate', 'favorite', 'favourite', 'faverite'],
@@ -156,12 +156,12 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['accross', 'acros', 'across', 'akross'],
     answerIndex: 2,
-    tip: 'One C, one S — walk "a-cross".',
+    tip: 'One C, one S - walk "a-cross".',
   },
   {
     options: ['allways', 'always', 'alwais', 'olways'],
     answerIndex: 1,
-    tip: 'AL + WAYS — only one L.',
+    tip: 'AL + WAYS - only one L.',
   },
   {
     options: ['arguement', 'argument', 'argumant', 'arguemnt'],
@@ -176,7 +176,7 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['occassion', 'occasion', 'ocasion', 'occassion'],
     answerIndex: 1,
-    tip: 'Two Cs, one S — a big occasion.',
+    tip: 'Two Cs, one S - a big occasion.',
   },
   {
     options: ['posession', 'possesion', 'possession', 'posesion'],
@@ -231,7 +231,7 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['wierd', 'weird', 'weard', 'weirde'],
     answerIndex: 1,
-    tip: 'Weird is weird — E before I here.',
+    tip: 'Weird is weird - E before I here.',
   },
   {
     options: ['piece', 'peice', 'peace', 'peese'],
@@ -241,7 +241,7 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['thier', 'there', 'their', 'theyr'],
     answerIndex: 2,
-    tip: 'THEIR shows owning — HEIR is inside it.',
+    tip: 'THEIR shows owning - HEIR is inside it.',
   },
   {
     options: ['wont', 'won’t', 'woun’t', 'wo’nt'],
@@ -256,12 +256,12 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['wether', 'whether', 'whather', 'whither'],
     answerIndex: 1,
-    tip: 'Whether or not — WH like a question.',
+    tip: 'Whether or not - WH like a question.',
   },
   {
     options: ['accomodation', 'acommodation', 'accommodation', 'accomadation'],
     answerIndex: 2,
-    tip: 'Two Cs, two Ms — room for everyone.',
+    tip: 'Two Cs, two Ms - room for everyone.',
   },
   {
     options: ['oppertunity', 'opportunity', 'oportunity', 'opportunaty'],
@@ -296,12 +296,12 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['goverment', 'government', 'govenment', 'governmant'],
     answerIndex: 1,
-    tip: 'Govern + ment — don’t drop the N.',
+    tip: 'Govern + ment - don’t drop the N.',
   },
   {
     options: ['knowlege', 'knowledge', 'knowladge', 'knoledge'],
     answerIndex: 1,
-    tip: 'Know + ledge — like a window ledge.',
+    tip: 'Know + ledge - like a window ledge.',
   },
   {
     options: ['succesful', 'successful', 'sucessful', 'successfull'],
@@ -311,7 +311,7 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['immediatly', 'immediately', 'imediately', 'immediatley'],
     answerIndex: 1,
-    tip: 'Immediate + ly — keep both Ms.',
+    tip: 'Immediate + ly - keep both Ms.',
   },
   {
     options: ['oppinion', 'opinion', 'opinon', 'openion'],
@@ -331,7 +331,7 @@ const WORD_BANK: TrickyWord[] = [
   {
     options: ['recomend', 'reccommend', 'recommend', 'reccomend'],
     answerIndex: 2,
-    tip: 'One C, two Ms — recommend.',
+    tip: 'One C, two Ms - recommend.',
   },
   {
     options: ['responsable', 'responsible', 'responsibel', 'responseble'],
@@ -456,7 +456,7 @@ export default function TrickyWordSpellingPage() {
         <GameShell
           gameId="tricky-word-spelling"
           title="Tricky Word Sprint"
-          description="Spot the correct spelling of everyday words that trip people up. Tap fast — you have 90 seconds!"
+          description="Spot the correct spelling of everyday words that trip people up. Tap fast - you have 90 seconds!"
           difficulty="Foundation"
           score={score}
           maxScore={answered || round.length || ROUND_SIZE}
@@ -529,7 +529,7 @@ export default function TrickyWordSpellingPage() {
                   >
                     {isCorrect ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on — nice work!
+                        <CheckCircle className="size-4" /> Spot on - nice work!
                       </>
                     ) : (
                       <>

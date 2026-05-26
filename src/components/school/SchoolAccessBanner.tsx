@@ -185,7 +185,7 @@ function TrialActiveBanner({
 // ---------------------------------------------------------------------------
 
 export function SchoolAccessBanner({ accessType, accessUntil, schoolId }: SchoolAccessBannerProps) {
-  // Expired — always show full red banner regardless of original access type
+  // Expired - always show full red banner regardless of original access type
   if (accessType === 'expired') {
     return <ExpiredBanner schoolId={schoolId} />
   }
@@ -200,7 +200,7 @@ export function SchoolAccessBanner({ accessType, accessUntil, schoolId }: School
     return <TrialActiveBanner accessUntil={accessUntil} schoolId={schoolId} />
   }
 
-  // Founder — tiered by days remaining
+  // Founder - tiered by days remaining
   if (accessType === 'founder') {
     // Use explicit access_until if set; otherwise fall back to canonical expiry
     const effectiveUntil = accessUntil ?? '2026-08-31'
@@ -217,6 +217,6 @@ export function SchoolAccessBanner({ accessType, accessUntil, schoolId }: School
     return <FounderActiveBanner accessUntil={effectiveUntil} />
   }
 
-  // Fallback — should not be reached with correct prop types
+  // Fallback - should not be reached with correct prop types
   return null
 }

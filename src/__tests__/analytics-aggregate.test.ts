@@ -13,7 +13,7 @@ import {
 const mockSupabase = {} as any
 
 // ────────────────────────────────────────────────────────────────────────
-// STALE TEST SUITE — skipped pending rehab.
+// STALE TEST SUITE - skipped pending rehab.
 //
 // This suite was written when the aggregate engine returned hardcoded mock
 // data. Commit 89f6cf9 ("replace aggregate mocks with real queries") moved

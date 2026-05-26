@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Help your child succeed in English with guided courses, progress reports and expert revision tools tailored to GCSE, IGCSE and KS3 exams.',
   alternates: { canonical: 'https://theenglishhub.app/for-parents' },
   openGraph: {
-    title: 'For Parents — The English Hub',
+    title: 'For Parents - The English Hub',
     description:
       'Help your child succeed in English with guided courses, progress reports and expert revision tools tailored to GCSE, IGCSE and KS3 exams.',
   },

@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
@@ -12,7 +12,7 @@ import StudyTools from '@/components/study/StudyTools'
 /* ── Poem data ────────────────────────────────────────────────────── */
 
 const poem: PoemData = {
-  title: 'If—',
+  title: 'If-',
   poet: 'Rudyard Kipling',
   lines: [
     {
@@ -20,7 +20,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Opening conditional',
-          note: 'The poem opens with the famous conditional "If" that gives the poem its title. Every virtue that follows is framed as a test — a series of challenges a young man must pass to become "a Man".',
+          note: 'The poem opens with the famous conditional "If" that gives the poem its title. Every virtue that follows is framed as a test - a series of challenges a young man must pass to become "a Man".',
           color: '#a855f7',
         },
         {
@@ -35,7 +35,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Contrast',
-          note: 'The son must remain steady while those around him panic. The image of others "losing" their heads sets up the ideal as standing firm against the crowd — stoic individualism.',
+          note: 'The son must remain steady while those around him panic. The image of others "losing" their heads sets up the ideal as standing firm against the crowd - stoic individualism.',
           color: '#10b981',
         },
       ],
@@ -45,7 +45,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Self-reliance',
-          note: 'Kipling places self-trust above social validation. The word "all" is an extreme — even if everyone doubts you, you must keep faith in yourself. This is a core Victorian / Edwardian ideal of masculine resolve.',
+          note: 'Kipling places self-trust above social validation. The word "all" is an extreme - even if everyone doubts you, you must keep faith in yourself. This is a core Victorian / Edwardian ideal of masculine resolve.',
           color: '#ef4444',
         },
       ],
@@ -55,7 +55,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Qualification',
-          note: 'Kipling immediately qualifies his advice: self-trust must not become arrogance. The virtue is balance — confidence with humility. This balancing pattern ("do X, but not Y") runs through the whole poem.',
+          note: 'Kipling immediately qualifies his advice: self-trust must not become arrogance. The virtue is balance - confidence with humility. This balancing pattern ("do X, but not Y") runs through the whole poem.',
           color: '#3b82f6',
         },
       ],
@@ -75,7 +75,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Moral integrity',
-          note: "Even when treated unfairly, the speaker must refuse to respond in kind. Kipling's vision of manhood is not passive — it is an active refusal to lower oneself.",
+          note: "Even when treated unfairly, the speaker must refuse to respond in kind. Kipling's vision of manhood is not passive - it is an active refusal to lower oneself.",
           color: '#ef4444',
         },
       ],
@@ -95,14 +95,14 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Warning against pride',
-          note: 'Kipling warns against the danger of appearing morally superior. Virtue must be lived quietly — the moment you display it, you lose it.',
+          note: 'Kipling warns against the danger of appearing morally superior. Virtue must be lived quietly - the moment you display it, you lose it.',
           color: '#ef4444',
         },
       ],
     },
     { text: '' },
     {
-      text: 'If you can dream—and not make dreams your master;',
+      text: 'If you can dream-and not make dreams your master;',
       annotations: [
         {
           type: 'Key quote',
@@ -117,11 +117,11 @@ const poem: PoemData = {
       ],
     },
     {
-      text: '    If you can think—and not make thoughts your aim;',
+      text: '    If you can think-and not make thoughts your aim;',
       annotations: [
         {
           type: 'Parallelism',
-          note: 'The previous line\'s structure ("If you can X—and not make X your Y") is repeated exactly. This gives the stanza a balanced, almost proverbial feel. Thoughts must lead to action, not replace it.',
+          note: 'The previous line\'s structure ("If you can X-and not make X your Y") is repeated exactly. This gives the stanza a balanced, almost proverbial feel. Thoughts must lead to action, not replace it.',
           color: '#a855f7',
         },
       ],
@@ -146,12 +146,12 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: 'Calling triumph and disaster "impostors" is the moral heart of the poem. Both are fakes — neither should be trusted with how you feel about yourself. This is the Stoic backbone of the poem.',
+          note: 'Calling triumph and disaster "impostors" is the moral heart of the poem. Both are fakes - neither should be trusted with how you feel about yourself. This is the Stoic backbone of the poem.',
           color: '#f59e0b',
         },
         {
           type: 'Metaphor',
-          note: 'The word "impostors" is striking — it frames success and failure as disguises rather than truths. Real character lies underneath both.',
+          note: 'The word "impostors" is striking - it frames success and failure as disguises rather than truths. Real character lies underneath both.',
           color: '#10b981',
         },
       ],
@@ -161,7 +161,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Test of resilience',
-          note: 'The next example is oratorical: having your own honest words twisted against you. Kipling knew this world well — he was a famous public figure.',
+          note: 'The next example is oratorical: having your own honest words twisted against you. Kipling knew this world well - he was a famous public figure.',
           color: '#3b82f6',
         },
       ],
@@ -171,7 +171,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Archaic diction',
-          note: '"Knaves" and "fools" are deliberately old-fashioned, giving the poem a proverbial, almost biblical tone — a father reaching for words that feel permanent.',
+          note: '"Knaves" and "fools" are deliberately old-fashioned, giving the poem a proverbial, almost biblical tone - a father reaching for words that feel permanent.',
           color: '#a855f7',
         },
       ],
@@ -191,7 +191,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Image of resilience',
-          note: '"Stoop" is physical and humble — the man bends to pick up the pieces. "Worn-out tools" suggests long labour. This is the most tender image in the poem: quiet endurance rather than heroism.',
+          note: '"Stoop" is physical and humble - the man bends to pick up the pieces. "Worn-out tools" suggests long labour. This is the most tender image in the poem: quiet endurance rather than heroism.',
           color: '#10b981',
         },
       ],
@@ -202,7 +202,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Gambling metaphor',
-          note: 'Kipling turns life into a game of chance. A "heap" of winnings becomes the stake for one enormous bet. The image is vivid and masculine — the card table as metaphor for courage.',
+          note: 'Kipling turns life into a game of chance. A "heap" of winnings becomes the stake for one enormous bet. The image is vivid and masculine - the card table as metaphor for courage.',
           color: '#10b981',
         },
       ],
@@ -212,7 +212,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Allusion',
-          note: '"Pitch-and-toss" is a simple coin-tossing game — the lowest form of gambling. The ideal man is willing to risk everything on a game the outcome of which he cannot control.',
+          note: '"Pitch-and-toss" is a simple coin-tossing game - the lowest form of gambling. The ideal man is willing to risk everything on a game the outcome of which he cannot control.',
           color: '#a855f7',
         },
       ],
@@ -232,7 +232,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Stoic silence',
-          note: 'The man must not even talk about it. Stoicism here borders on repression — a very Edwardian ideal of masculine self-control. Modern readers often find this line troubling.',
+          note: 'The man must not even talk about it. Stoicism here borders on repression - a very Edwardian ideal of masculine self-control. Modern readers often find this line troubling.',
           color: '#ef4444',
         },
       ],
@@ -242,7 +242,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Triadic structure',
-          note: '"Heart and nerve and sinew" — emotion, courage and physical strength in a three-part list. The word "force" shows that this is an act of will, not natural ability.',
+          note: '"Heart and nerve and sinew" - emotion, courage and physical strength in a three-part list. The word "force" shows that this is an act of will, not natural ability.',
           color: '#a855f7',
         },
       ],
@@ -262,7 +262,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: "The climactic moment. The man must hold on when he has nothing left — when every natural resource is exhausted. This is the poem's hardest and most admired idea.",
+          note: "The climactic moment. The man must hold on when he has nothing left - when every natural resource is exhausted. This is the poem's hardest and most admired idea.",
           color: '#f59e0b',
         },
       ],
@@ -272,12 +272,12 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Personification',
-          note: '"Will" is capitalised and personified as an inner voice. It becomes a second self — the voice that commands the exhausted body to keep going.',
+          note: '"Will" is capitalised and personified as an inner voice. It becomes a second self - the voice that commands the exhausted body to keep going.',
           color: '#10b981',
         },
         {
           type: 'Direct speech',
-          note: 'The only piece of direct speech in the poem is the command "Hold on!" — the whole poem\'s message condensed into two words.',
+          note: 'The only piece of direct speech in the poem is the command "Hold on!" - the whole poem\'s message condensed into two words.',
           color: '#f59e0b',
         },
       ],
@@ -288,17 +288,17 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Social test',
-          note: 'The final stanza moves from private struggle to public life. The man must be able to move in all social worlds — with the common crowd and with kings — without losing his moral centre.',
+          note: 'The final stanza moves from private struggle to public life. The man must be able to move in all social worlds - with the common crowd and with kings - without losing his moral centre.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: '    Or walk with Kings—nor lose the common touch,',
+      text: '    Or walk with Kings-nor lose the common touch,',
       annotations: [
         {
           type: 'Key quote',
-          note: 'One of the poem\'s most quoted lines. The ideal man is neither snob nor rabble-rouser — he keeps the "common touch" even when mixing with royalty. This is Kipling\'s version of egalitarian grace.',
+          note: 'One of the poem\'s most quoted lines. The ideal man is neither snob nor rabble-rouser - he keeps the "common touch" even when mixing with royalty. This is Kipling\'s version of egalitarian grace.',
           color: '#f59e0b',
         },
       ],
@@ -308,7 +308,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Emotional resilience',
-          note: 'Enemies cannot wound him; friends cannot flatter him off course. He is unshakable in either direction — a Stoic ideal of equanimity.',
+          note: 'Enemies cannot wound him; friends cannot flatter him off course. He is unshakable in either direction - a Stoic ideal of equanimity.',
           color: '#ef4444',
         },
       ],
@@ -318,7 +318,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Balance',
-          note: 'Kipling repeats his qualifying pattern one last time. Value people — but not so much that you lose yourself. A man who lets anyone dictate him is no longer his own.',
+          note: 'Kipling repeats his qualifying pattern one last time. Value people - but not so much that you lose yourself. A man who lets anyone dictate him is no longer his own.',
           color: '#3b82f6',
         },
       ],
@@ -348,7 +348,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Climax',
-          note: 'After 30 lines of conditions, the reward finally arrives: the entire Earth. The grand claim is almost biblical (cf. "the meek shall inherit the earth") — the dutiful son inherits the world.',
+          note: 'After 30 lines of conditions, the reward finally arrives: the entire Earth. The grand claim is almost biblical (cf. "the meek shall inherit the earth") - the dutiful son inherits the world.',
           color: '#a855f7',
         },
         {
@@ -359,7 +359,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: "    And—which is more—you'll be a Man, my son!",
+      text: "    And-which is more-you'll be a Man, my son!",
       annotations: [
         {
           type: 'Key quote',
@@ -368,7 +368,7 @@ const poem: PoemData = {
         },
         {
           type: 'Resolution',
-          note: 'The poem is one enormous sentence finally resolving after 32 lines. All the "If" clauses have been leading here — to the moment of becoming. The punctuation has been holding its breath for the whole poem.',
+          note: 'The poem is one enormous sentence finally resolving after 32 lines. All the "If" clauses have been leading here - to the moment of becoming. The punctuation has been holding its breath for the whole poem.',
           color: '#a855f7',
         },
       ],
@@ -376,122 +376,122 @@ const poem: PoemData = {
   ],
 
   context: `
-    <h3>Rudyard Kipling (1865–1936)</h3>
-    <p>Kipling was a British writer, poet and Nobel laureate, best known for <em>The Jungle Book</em>, <em>Kim</em> and his poems about India and the British Empire. Born in Bombay (Mumbai), he grew up between India and England and became one of the most popular — and most controversial — writers of the Edwardian era.</p>
+    <h3>Rudyard Kipling (1865-1936)</h3>
+    <p>Kipling was a British writer, poet and Nobel laureate, best known for <em>The Jungle Book</em>, <em>Kim</em> and his poems about India and the British Empire. Born in Bombay (Mumbai), he grew up between India and England and became one of the most popular - and most controversial - writers of the Edwardian era.</p>
 
     <h3>The poem and its dedication</h3>
-    <p>"If—" was written in 1895 and published in 1910 in Kipling's collection <em>Rewards and Fairies</em>. Kipling said the poem was inspired by <strong>Leander Starr Jameson</strong>, the leader of the failed "Jameson Raid" in South Africa, whom Kipling admired as a man of quiet courage. But the poem is framed as fatherly advice to Kipling's own son, John.</p>
+    <p>"If-" was written in 1895 and published in 1910 in Kipling's collection <em>Rewards and Fairies</em>. Kipling said the poem was inspired by <strong>Leander Starr Jameson</strong>, the leader of the failed "Jameson Raid" in South Africa, whom Kipling admired as a man of quiet courage. But the poem is framed as fatherly advice to Kipling's own son, John.</p>
 
     <h3>Personal tragedy</h3>
     <p>The poem takes on a devastating second meaning when you know that <strong>John Kipling was killed in 1915</strong>, aged 18, at the Battle of Loos in the First World War. Kipling had used his influence to get his short-sighted son into the army. He was haunted by guilt for the rest of his life, writing the line "If any question why we died, / Tell them, because our fathers lied."</p>
 
     <h3>Victorian and Edwardian values</h3>
-    <p>The poem expresses the ideal of the <strong>Stoic Englishman</strong>: calm, self-reliant, emotionally disciplined and dutiful. These values were central to the British public-school system and to the running of the Empire. Kipling is often seen as the great poet of this ideal — both its defender and, after 1915, its mourner.</p>
+    <p>The poem expresses the ideal of the <strong>Stoic Englishman</strong>: calm, self-reliant, emotionally disciplined and dutiful. These values were central to the British public-school system and to the running of the Empire. Kipling is often seen as the great poet of this ideal - both its defender and, after 1915, its mourner.</p>
 
     <h3>Reception</h3>
-    <p>"If—" was voted Britain's favourite poem in a 1995 BBC poll and its lines are inscribed above the players' entrance at Wimbledon's Centre Court ("meet with Triumph and Disaster / And treat those two impostors just the same"). Modern readers sometimes find its emotional repression troubling, but its influence is enormous.</p>
+    <p>"If-" was voted Britain's favourite poem in a 1995 BBC poll and its lines are inscribed above the players' entrance at Wimbledon's Centre Court ("meet with Triumph and Disaster / And treat those two impostors just the same"). Modern readers sometimes find its emotional repression troubling, but its influence is enormous.</p>
   `,
 
-  summary: `Stanza 1 (lines 1–8): The father begins a long list of conditions. The son must stay calm when others panic, trust himself even when nobody else does, be patient under provocation, refuse to repay lies with lies or hate with hate — and all while avoiding the trap of looking or sounding morally superior.
+  summary: `Stanza 1 (lines 1-8): The father begins a long list of conditions. The son must stay calm when others panic, trust himself even when nobody else does, be patient under provocation, refuse to repay lies with lies or hate with hate - and all while avoiding the trap of looking or sounding morally superior.
 
-Stanza 2 (lines 9–16): The son must dream and think without being ruled by either. He must face triumph and disaster with the same steady expression — Kipling calls them both "impostors". He must endure having his honest words twisted and having everything he built destroyed, then quietly rebuild it with "worn-out tools".
+Stanza 2 (lines 9-16): The son must dream and think without being ruled by either. He must face triumph and disaster with the same steady expression - Kipling calls them both "impostors". He must endure having his honest words twisted and having everything he built destroyed, then quietly rebuild it with "worn-out tools".
 
-Stanza 3 (lines 17–24): The son must be willing to risk everything he owns on a single game, lose it, and start over without complaint. He must force his body and mind to keep going when they have nothing left — held upright only by the pure Will that commands "Hold on!"
+Stanza 3 (lines 17-24): The son must be willing to risk everything he owns on a single game, lose it, and start over without complaint. He must force his body and mind to keep going when they have nothing left - held upright only by the pure Will that commands "Hold on!"
 
-Stanza 4 (lines 25–32): The son must move between social worlds — the common crowd and kings — without losing his moral centre. He must be wounded by neither enemies nor loving friends, and must fill every minute of every day with effort. Only then, Kipling promises, will he inherit the Earth — and, more importantly, become "a Man".
+Stanza 4 (lines 25-32): The son must move between social worlds - the common crowd and kings - without losing his moral centre. He must be wounded by neither enemies nor loving friends, and must fill every minute of every day with effort. Only then, Kipling promises, will he inherit the Earth - and, more importantly, become "a Man".
 
 Overall meaning: The poem is a 32-line conditional sentence. It lists all the impossible virtues a son would need in order to become fully a man, then delivers its reward at the very end. It is both a hymn to Stoic self-control and, to modern ears, a picture of the impossible emotional demands placed on Edwardian masculinity.`,
 
-  formAndStructure: `Form: "If—" is four stanzas of eight lines each (quatrains joined into octaves), totalling 32 lines. It is sometimes described as a "verse essay" or "sermon in verse".
+  formAndStructure: `Form: "If-" is four stanzas of eight lines each (quatrains joined into octaves), totalling 32 lines. It is sometimes described as a "verse essay" or "sermon in verse".
 
-One long sentence: Remarkably, the whole poem is a single sentence held together by a long list of conditional "If" clauses. Every clause sets up a test. The main verb — "Yours is the Earth" — is delayed until the penultimate line, so the reader, like the son, must wait patiently for the reward. The form enacts the poem's theme of endurance.
+One long sentence: Remarkably, the whole poem is a single sentence held together by a long list of conditional "If" clauses. Every clause sets up a test. The main verb - "Yours is the Earth" - is delayed until the penultimate line, so the reader, like the son, must wait patiently for the reward. The form enacts the poem's theme of endurance.
 
-Rhyme scheme: The stanzas rhyme ABABCDCD, a steady, balanced pattern. The regularity mirrors the emotional control the poem is recommending — predictable, patient, never losing its rhythm.
+Rhyme scheme: The stanzas rhyme ABABCDCD, a steady, balanced pattern. The regularity mirrors the emotional control the poem is recommending - predictable, patient, never losing its rhythm.
 
-Metre: Iambic pentameter, with an occasional feminine (unstressed) ending ("you" / "too" / "waiting"). The regular iambic beat gives the poem the feel of a ticking clock or a marching soldier — a sound of measured, disciplined time.
+Metre: Iambic pentameter, with an occasional feminine (unstressed) ending ("you" / "too" / "waiting"). The regular iambic beat gives the poem the feel of a ticking clock or a marching soldier - a sound of measured, disciplined time.
 
 Anaphora: The repeated "If you can…" opens line after line. This pounding repetition is the poem's most distinctive structural device. It piles condition upon condition, making the son's task seem almost impossible, until the final reward feels all the greater.
 
-Parallelism: Within stanzas, Kipling uses balanced pairs ("lied about / don\'t deal in lies", "hated / don\'t give way to hating"). This parallelism reinforces the idea of balance itself — the man must hold the middle between opposing pressures.
+Parallelism: Within stanzas, Kipling uses balanced pairs ("lied about / don\'t deal in lies", "hated / don\'t give way to hating"). This parallelism reinforces the idea of balance itself - the man must hold the middle between opposing pressures.
 
 Volta: There is no traditional volta. Instead, the turn comes in the last two lines, where the conditions stop and the reward finally arrives. The whole poem has been leading to the word "Man" in the last line.
 
-Direct address: The poem is spoken to "my son" — the only direct address in the whole poem appears in the last word. This reveal places the whole weight of the poem on a private, tender relationship: a father to his child.`,
+Direct address: The poem is spoken to "my son" - the only direct address in the whole poem appears in the last word. This reveal places the whole weight of the poem on a private, tender relationship: a father to his child.`,
 
   keyQuotes: [
     {
       quote: 'If you can keep your head when all about you / Are losing theirs',
       analysis:
-        'The famous opening sets the poem\'s stoic tone. "Keep your head" is an everyday idiom — Kipling is deliberately avoiding grand language. The image of others "losing" their heads (with its faint echo of panic or even guillotine) makes calmness itself a kind of moral victory. Crucially, the son is to remain steady even when others blame him for their own failures.',
+        'The famous opening sets the poem\'s stoic tone. "Keep your head" is an everyday idiom - Kipling is deliberately avoiding grand language. The image of others "losing" their heads (with its faint echo of panic or even guillotine) makes calmness itself a kind of moral victory. Crucially, the son is to remain steady even when others blame him for their own failures.',
       themes: ['Stoicism', 'Self-control', 'Integrity'],
       analysisAr:
         'المفتتح الشهير الذي يضبط نبرةَ القصيدة الرواقيّة. عبارةُ "keep your head" تعبيرٌ يوميّ مألوف، وقد تعمّد Kipling تجنّبَ اللغة الفخمة. وصورةُ الآخرين الذين "يفقدون" رؤوسَهم (مع صدًى خفيٍّ للذعر أو ربّما للمقصلة) تجعل الهدوءَ نفسَه نصراً أخلاقيّاً. والأهمّ أنّ على الابن أن يثبت حتى حين يُحمَّل لومَ إخفاقات غيره.',
       themesAr: ['الرواقيّة', 'ضبط النفس', 'النزاهة'],
     },
     {
-      quote: 'If you can dream—and not make dreams your master',
+      quote: 'If you can dream-and not make dreams your master',
       analysis:
-        'Kipling values ambition but distrusts obsession. The em-dash acts as a trap-door — it gives you the permission to dream and then immediately snatches the warning. Dreams are fine as servants but dangerous as masters. This is a classic Kipling balance: he gives with one hand and restrains with the other.',
+        'Kipling values ambition but distrusts obsession. The em-dash acts as a trap-door - it gives you the permission to dream and then immediately snatches the warning. Dreams are fine as servants but dangerous as masters. This is a classic Kipling balance: he gives with one hand and restrains with the other.',
       themes: ['Ambition', 'Self-control', 'Balance'],
       analysisAr:
-        'يُجلّ Kipling الطموحَ لكنّه يرتاب من الهَوس. الشرطةُ الطويلة هنا بمنزلة بابٍ سرّيّ — تمنحك إذناً بأن تحلم، ثمّ تختطف الإذنَ بالتحذير. الأحلام خادمٌ صالح لكنّها سيّدٌ خطر. وهذه موازنةٌ كيبلنغيّة مألوفة: يُعطي بيدٍ ويُمسك باليد الأخرى.',
+        'يُجلّ Kipling الطموحَ لكنّه يرتاب من الهَوس. الشرطةُ الطويلة هنا بمنزلة بابٍ سرّيّ - تمنحك إذناً بأن تحلم، ثمّ تختطف الإذنَ بالتحذير. الأحلام خادمٌ صالح لكنّها سيّدٌ خطر. وهذه موازنةٌ كيبلنغيّة مألوفة: يُعطي بيدٍ ويُمسك باليد الأخرى.',
       themesAr: ['الطموح', 'ضبط النفس', 'التوازن'],
     },
     {
       quote:
         'If you can meet with Triumph and Disaster / And treat those two impostors just the same',
       analysis:
-        'The moral heart of the poem. "Triumph" and "Disaster" are capitalised and personified as two figures that arrive at the door. Calling them "impostors" — fakes — is a brilliant stroke: both success and failure are disguises that should not be trusted to define you. The lines are inscribed above the players\' entrance at Wimbledon\'s Centre Court.',
+        'The moral heart of the poem. "Triumph" and "Disaster" are capitalised and personified as two figures that arrive at the door. Calling them "impostors" - fakes - is a brilliant stroke: both success and failure are disguises that should not be trusted to define you. The lines are inscribed above the players\' entrance at Wimbledon\'s Centre Court.',
       themes: ['Stoicism', 'Equanimity', 'Identity'],
       analysisAr:
-        'القلبُ الأخلاقيّ للقصيدة. "Triumph" و"Disaster" بالحرف الكبير، مُشخَّصتان ضيفَين يطرقان الباب. ووصفُهما بـ"impostors" — أي محتالَين — لمسةٌ ذكيّة: فالنجاحُ والفشلُ كلاهما قِناع لا يجوز أن يُعرَّف بهما المرء. ومن شدّة شُهرة هذين السطرين كُتبا فوق مدخل اللاعبين في Centre Court بـWimbledon.',
+        'القلبُ الأخلاقيّ للقصيدة. "Triumph" و"Disaster" بالحرف الكبير، مُشخَّصتان ضيفَين يطرقان الباب. ووصفُهما بـ"impostors" - أي محتالَين - لمسةٌ ذكيّة: فالنجاحُ والفشلُ كلاهما قِناع لا يجوز أن يُعرَّف بهما المرء. ومن شدّة شُهرة هذين السطرين كُتبا فوق مدخل اللاعبين في Centre Court بـWimbledon.',
       themesAr: ['الرواقيّة', 'الاتّزان', 'الهويّة'],
     },
     {
       quote:
         "And so hold on when there is nothing in you / Except the Will which says to them: 'Hold on!'",
       analysis:
-        'The climax of the third stanza. Kipling personifies "the Will" as an inner voice capable of commanding the body to continue when every natural resource is gone. The repetition of "Hold on" — once in description, once in direct speech — makes it feel like the phrase is being shouted at the reader as well as at the exhausted body.',
+        'The climax of the third stanza. Kipling personifies "the Will" as an inner voice capable of commanding the body to continue when every natural resource is gone. The repetition of "Hold on" - once in description, once in direct speech - makes it feel like the phrase is being shouted at the reader as well as at the exhausted body.',
       themes: ['Endurance', 'Will-power', 'Resilience'],
       analysisAr:
-        'ذروةُ المقطع الثالث. يُشخّص Kipling "the Will" صوتاً داخليّاً قادراً على أن يأمر الجسدَ بالاستمرار حين يَنفد كلّ مَنبَعٍ طبيعيّ. وتكرارُ "Hold on" — مرّةً في الوصف ومرّةً في الكلام المباشر — يجعل العبارةَ كأنّها تُصاح في وجه القارئ كما تُصاح في وجه الجسد المنهَك.',
+        'ذروةُ المقطع الثالث. يُشخّص Kipling "the Will" صوتاً داخليّاً قادراً على أن يأمر الجسدَ بالاستمرار حين يَنفد كلّ مَنبَعٍ طبيعيّ. وتكرارُ "Hold on" - مرّةً في الوصف ومرّةً في الكلام المباشر - يجعل العبارةَ كأنّها تُصاح في وجه القارئ كما تُصاح في وجه الجسد المنهَك.',
       themesAr: ['الصمود', 'قوّة الإرادة', 'الجَلَد'],
     },
     {
       quote:
-        'If you can talk with crowds and keep your virtue, / Or walk with Kings—nor lose the common touch',
+        'If you can talk with crowds and keep your virtue, / Or walk with Kings-nor lose the common touch',
       analysis:
-        'Kipling\'s vision of social grace: moving between worlds without losing yourself. "Crowds" and "Kings" are the two social extremes. The man who can be himself in both is, for Kipling, the ideal Englishman — neither snob nor demagogue. The phrase "common touch" has entered everyday English as a compliment to someone who wears status lightly.',
+        'Kipling\'s vision of social grace: moving between worlds without losing yourself. "Crowds" and "Kings" are the two social extremes. The man who can be himself in both is, for Kipling, the ideal Englishman - neither snob nor demagogue. The phrase "common touch" has entered everyday English as a compliment to someone who wears status lightly.',
       themes: ['Integrity', 'Humility', 'Public life'],
       analysisAr:
-        'رؤيةُ Kipling للذوق الاجتماعيّ: التنقّلُ بين العوالم دون فقدان الذات. "Crowds" و"Kings" هما طرفا السلّم الاجتماعيّ. والرجلُ الذي يبقى على سجيّته فيهما معاً هو في نظر Kipling الإنجليزيّ المثاليّ — لا متكبّرٌ ولا متملّقٌ للغوغاء. وعبارة "common touch" دخلت الاستعمال اليوميّ مديحاً لمن يحمل مكانتَه بخفّة.',
+        'رؤيةُ Kipling للذوق الاجتماعيّ: التنقّلُ بين العوالم دون فقدان الذات. "Crowds" و"Kings" هما طرفا السلّم الاجتماعيّ. والرجلُ الذي يبقى على سجيّته فيهما معاً هو في نظر Kipling الإنجليزيّ المثاليّ - لا متكبّرٌ ولا متملّقٌ للغوغاء. وعبارة "common touch" دخلت الاستعمال اليوميّ مديحاً لمن يحمل مكانتَه بخفّة.',
       themesAr: ['النزاهة', 'التواضع', 'الحياة العامّة'],
     },
     {
       quote: "If you can fill the unforgiving minute / With sixty seconds' worth of distance run",
       analysis:
-        'Time itself becomes a stern judge. "Unforgiving" is striking — time keeps score and does not grant mercy. The metaphor of "distance run" frames life as a race where every minute must be used productively. This is Kipling\'s Protestant work ethic in verse: there is no spare time, only minutes well or badly spent.',
+        'Time itself becomes a stern judge. "Unforgiving" is striking - time keeps score and does not grant mercy. The metaphor of "distance run" frames life as a race where every minute must be used productively. This is Kipling\'s Protestant work ethic in verse: there is no spare time, only minutes well or badly spent.',
       themes: ['Work ethic', 'Time', 'Effort'],
       analysisAr:
-        'يصير الزمنُ نفسُه قاضياً صارماً. وصفة "unforgiving" لافتة — فالزمن يُحصي ولا يرحم. واستعارةُ "distance run" تجعل الحياة سباقاً، يجب أن تُستثمر فيه كلُّ دقيقة. وهذه أخلاقُ العمل البروتستانتيّة عند Kipling في صورةٍ شعريّة: لا وقت فراغ، إنّما دقائق أُحسن استثمارها أو أُسيء.',
+        'يصير الزمنُ نفسُه قاضياً صارماً. وصفة "unforgiving" لافتة - فالزمن يُحصي ولا يرحم. واستعارةُ "distance run" تجعل الحياة سباقاً، يجب أن تُستثمر فيه كلُّ دقيقة. وهذه أخلاقُ العمل البروتستانتيّة عند Kipling في صورةٍ شعريّة: لا وقت فراغ، إنّما دقائق أُحسن استثمارها أو أُسيء.',
       themesAr: ['أخلاق العمل', 'الزمن', 'الجهد'],
     },
     {
       quote: "Yours is the Earth and everything that's in it",
       analysis:
-        'The reward is deliberately enormous and slightly biblical. The inverted grammar ("Yours is…" rather than "You will have…") echoes the Beatitudes and gives the line the weight of scripture. The son inherits not part of the world but all of it — the full scale of the promise matching the full scale of what he has been asked to endure.',
+        'The reward is deliberately enormous and slightly biblical. The inverted grammar ("Yours is…" rather than "You will have…") echoes the Beatitudes and gives the line the weight of scripture. The son inherits not part of the world but all of it - the full scale of the promise matching the full scale of what he has been asked to endure.',
       themes: ['Reward', 'Inheritance', 'Ambition'],
       analysisAr:
-        'الجزاء هائلٌ بقصد، وفيه نَبرٌ كتابيّ. والقلب النحويّ ("Yours is…" بدل "You will have…") يُذكِّر بـBeatitudes فيُكسب السطرَ هيبةَ النصّ المقدّس. لا يرث الابنُ بعضَ الأرض بل جميعَها — اتّساعُ الوعد على قدر ما طُلب منه أن يصبر.',
+        'الجزاء هائلٌ بقصد، وفيه نَبرٌ كتابيّ. والقلب النحويّ ("Yours is…" بدل "You will have…") يُذكِّر بـBeatitudes فيُكسب السطرَ هيبةَ النصّ المقدّس. لا يرث الابنُ بعضَ الأرض بل جميعَها - اتّساعُ الوعد على قدر ما طُلب منه أن يصبر.',
       themesAr: ['الجزاء', 'الإرث', 'الطموح'],
     },
     {
-      quote: "And—which is more—you'll be a Man, my son!",
+      quote: "And-which is more-you'll be a Man, my son!",
       analysis:
-        'The poem\'s single sentence finally finds its period. The em-dashes ("And—which is more—") slow the line down, making sure the reader does not miss what the real reward is. Owning the Earth is less important than becoming "a Man" (capitalised). The sudden switch to "my son" at the very end turns the whole poem from public oratory into private, tender instruction. Modern readers often note how much emotional pressure is folded into that single phrase.',
-      themes: ['Masculinity', 'Growing up', 'Father–son relationships'],
+        'The poem\'s single sentence finally finds its period. The em-dashes ("And-which is more-") slow the line down, making sure the reader does not miss what the real reward is. Owning the Earth is less important than becoming "a Man" (capitalised). The sudden switch to "my son" at the very end turns the whole poem from public oratory into private, tender instruction. Modern readers often note how much emotional pressure is folded into that single phrase.',
+      themes: ['Masculinity', 'Growing up', 'Father-son relationships'],
       analysisAr:
-        'جملةُ القصيدة الواحدةُ تجد نقطتَها أخيراً. والشَّرَطَتان الطويلتان ("And—which is more—") تُبطئان السطر، فلا يفوت القارئ ما هو الجزاء الحقيقيّ. امتلاكُ الأرض دون أن يكون المرء "a Man" (بالحرف الكبير) أقلّ شأناً. والانتقالُ المفاجئ إلى "my son" في خاتمة السطر يُحوّل القصيدةَ من خطابةٍ علنيّة إلى توجيهٍ خاصّ حنون. ويلحظ كثيرٌ من القرّاء المعاصرين كثافةَ الضغط العاطفيّ المُضمَّن في هذه العبارة الوجيزة.',
+        'جملةُ القصيدة الواحدةُ تجد نقطتَها أخيراً. والشَّرَطَتان الطويلتان ("And-which is more-") تُبطئان السطر، فلا يفوت القارئ ما هو الجزاء الحقيقيّ. امتلاكُ الأرض دون أن يكون المرء "a Man" (بالحرف الكبير) أقلّ شأناً. والانتقالُ المفاجئ إلى "my son" في خاتمة السطر يُحوّل القصيدةَ من خطابةٍ علنيّة إلى توجيهٍ خاصّ حنون. ويلحظ كثيرٌ من القرّاء المعاصرين كثافةَ الضغط العاطفيّ المُضمَّن في هذه العبارة الوجيزة.',
       themesAr: ['الذكورة', 'البلوغ', 'علاقة الأب بالابن'],
     },
   ],
@@ -501,34 +501,34 @@ Direct address: The poem is spoken to "my son" — the only direct address in th
       device: 'Anaphora',
       example: 'If you can keep your head… / If you can trust yourself… / If you can wait…',
       effect:
-        'The repetition of "If you can…" hammers the conditions home. Its relentlessness mirrors the difficulty of the task — the son must prove himself over and over again. It also builds enormous grammatical tension, because the sentence cannot finish until all the conditions are met.',
+        'The repetition of "If you can…" hammers the conditions home. Its relentlessness mirrors the difficulty of the task - the son must prove himself over and over again. It also builds enormous grammatical tension, because the sentence cannot finish until all the conditions are met.',
       lineRef: 2,
       effectAr:
-        'تكرارُ "If you can…" يُرسّخ الشروطَ ترسيخاً. وإلحاحُه يحاكي صعوبةَ المهمّة — على الابن أن يُثبت نفسَه مراراً وتكراراً. كما يُولّد توتّراً نحويّاً ضخماً، إذ لا تنتهي الجملةُ قبل استيفاء جميع الشروط.',
+        'تكرارُ "If you can…" يُرسّخ الشروطَ ترسيخاً. وإلحاحُه يحاكي صعوبةَ المهمّة - على الابن أن يُثبت نفسَه مراراً وتكراراً. كما يُولّد توتّراً نحويّاً ضخماً، إذ لا تنتهي الجملةُ قبل استيفاء جميع الشروط.',
     },
     {
       device: 'Personification',
       example: 'treat those two impostors just the same',
       effect:
-        'Triumph and Disaster are turned into characters — "impostors" in disguise. Personifying abstract ideas lets Kipling give them a moral charge: they are not just experiences but deceivers. The reader is taught to distrust both.',
+        'Triumph and Disaster are turned into characters - "impostors" in disguise. Personifying abstract ideas lets Kipling give them a moral charge: they are not just experiences but deceivers. The reader is taught to distrust both.',
       lineRef: 12,
       effectAr:
-        'يُحوَّل Triumph وDisaster إلى شخصيتين — "impostors" متنكّرَين. تشخيصُ المعاني المجرّدة يُتيح لـKipling أن يُكسبها شُحنةً أخلاقيّة: ليسا تجربتين فحسب بل خادعَين. ويتعلّم القارئ أن يرتاب منهما معاً.',
+        'يُحوَّل Triumph وDisaster إلى شخصيتين - "impostors" متنكّرَين. تشخيصُ المعاني المجرّدة يُتيح لـKipling أن يُكسبها شُحنةً أخلاقيّة: ليسا تجربتين فحسب بل خادعَين. ويتعلّم القارئ أن يرتاب منهما معاً.',
     },
     {
       device: 'Antithesis / Balance',
-      example: 'If you can dream—and not make dreams your master',
+      example: 'If you can dream-and not make dreams your master',
       effect:
-        "Kipling constantly pairs an action with its restraint. Dream but control your dreaming; trust but allow doubt; value people but not too much. The poem's whole ethical system is built on these balanced pairs — the ideal man walks a narrow line.",
+        "Kipling constantly pairs an action with its restraint. Dream but control your dreaming; trust but allow doubt; value people but not too much. The poem's whole ethical system is built on these balanced pairs - the ideal man walks a narrow line.",
       lineRef: 9,
       effectAr:
-        'يُقرن Kipling باستمرارٍ كلَّ فعلٍ بضابطه. احلم لكنِ اضبط أحلامك؛ ثِق لكن أَفسِح للشكّ مكاناً؛ أَقدِر الناسَ ولكن لا تُغالِ. وتقوم منظومةُ القصيدة الأخلاقيّة على هذه الأزواج المتّزنة — والرجل المثاليّ يسير على حدٍّ ضيّق.',
+        'يُقرن Kipling باستمرارٍ كلَّ فعلٍ بضابطه. احلم لكنِ اضبط أحلامك؛ ثِق لكن أَفسِح للشكّ مكاناً؛ أَقدِر الناسَ ولكن لا تُغالِ. وتقوم منظومةُ القصيدة الأخلاقيّة على هذه الأزواج المتّزنة - والرجل المثاليّ يسير على حدٍّ ضيّق.',
     },
     {
       device: 'Triadic lists',
       example: 'your heart and nerve and sinew',
       effect:
-        'Kipling uses three-part lists to give his moral claims the force of proverb. "Heart and nerve and sinew" covers emotion, courage and body — a total picture of the self. The rhythm of three is memorable and chant-like.',
+        'Kipling uses three-part lists to give his moral claims the force of proverb. "Heart and nerve and sinew" covers emotion, courage and body - a total picture of the self. The rhythm of three is memorable and chant-like.',
       lineRef: 21,
       effectAr:
         'يستعمل Kipling قوائمَ ثلاثيّة ليُكسب ادّعاءاتِه الأخلاقيّة قوّةَ المثل. "Heart and nerve and sinew" تجمع العاطفةَ والشجاعةَ والجسد في صورةٍ كاملة للذات. وإيقاعُ الثلاث يُيسّر الحفظ ويُكسب العبارةَ نغمةً إنشاديّة.',
@@ -546,51 +546,51 @@ Direct address: The poem is spoken to "my son" — the only direct address in th
       device: 'Direct address',
       example: "you'll be a Man, my son!",
       effect:
-        'The poem holds back its direct address until the very last word. "My son" collapses the whole poem into a private conversation between father and child. It turns public moral code into intimate love — and gives the poem its emotional punch.',
+        'The poem holds back its direct address until the very last word. "My son" collapses the whole poem into a private conversation between father and child. It turns public moral code into intimate love - and gives the poem its emotional punch.',
       lineRef: 32,
       effectAr:
-        'تُؤخّر القصيدةُ النداءَ المباشر إلى آخر كلمة. عبارة "my son" تختزل القصيدةَ كلّها في حوارٍ خاصّ بين أبٍ وابنه. تُحوّل المدوّنةَ الأخلاقيّة العامّة إلى محبّةٍ حميمة — وتمنح القصيدةَ ضربتَها الأخيرة العاطفيّة.',
+        'تُؤخّر القصيدةُ النداءَ المباشر إلى آخر كلمة. عبارة "my son" تختزل القصيدةَ كلّها في حوارٍ خاصّ بين أبٍ وابنه. تُحوّل المدوّنةَ الأخلاقيّة العامّة إلى محبّةٍ حميمة - وتمنح القصيدةَ ضربتَها الأخيرة العاطفيّة.',
     },
   ],
 
   contextAr: `
-    <h3>Rudyard Kipling (1865–1936)</h3>
+    <h3>Rudyard Kipling (1865-1936)</h3>
     <p>Kipling كاتب وشاعر بريطانيّ حائزٌ على Nobel، اشتُهر بـ<em>The Jungle Book</em> و<em>Kim</em>، وبأشعاره عن الهند والإمبراطوريّة البريطانيّة. وُلد في Bombay (Mumbai)، ونشأ بين الهند وإنكلترا، فصار من أكثر كتّاب العصر الإدوارديّ شعبيّةً وإثارةً للجدل.</p>
 
     <h3>القصيدة وإهداؤها</h3>
-    <p>كُتبت "If—" سنة 1895 ونُشرت سنة 1910 ضمن مجموعة Kipling <em>Rewards and Fairies</em>. ذكر Kipling أنّ مَن ألهمَه القصيدة هو <strong>Leander Starr Jameson</strong>، قائدُ "Jameson Raid" الفاشلة في جنوب أفريقيا، الذي كان Kipling يُجلّه شجاعةً صامتة. لكنّ القصيدة مصاغةٌ بوصفها نصيحةَ أبٍ لابنه John.</p>
+    <p>كُتبت "If-" سنة 1895 ونُشرت سنة 1910 ضمن مجموعة Kipling <em>Rewards and Fairies</em>. ذكر Kipling أنّ مَن ألهمَه القصيدة هو <strong>Leander Starr Jameson</strong>، قائدُ "Jameson Raid" الفاشلة في جنوب أفريقيا، الذي كان Kipling يُجلّه شجاعةً صامتة. لكنّ القصيدة مصاغةٌ بوصفها نصيحةَ أبٍ لابنه John.</p>
 
     <h3>مأساةٌ شخصيّة</h3>
     <p>تكتسب القصيدة بُعداً موجعاً ثانياً متى عرف القارئ أنّ <strong>John Kipling قُتل سنة 1915</strong>، في الثامنة عشرة من عمره، في معركة Loos إبّان الحرب العالميّة الأولى. كان Kipling قد وظّف نفوذَه ليُلحق ابنَه القصير النظر بالجيش. وظلّ يطارده شعور الذنب ما تبقّى من حياته، فكتب: "If any question why we died, / Tell them, because our fathers lied."</p>
 
     <h3>القيم الفيكتوريّة والإدوارديّة</h3>
-    <p>تُعبّر القصيدة عن مثال <strong>الإنجليزيّ الرواقيّ</strong>: هادئٌ، مكتفٍ بنفسه، منضبط عاطفيّاً، أمين على واجبه. وهذه القيم كانت في صميم منظومة المدارس البريطانيّة العامّة (public schools) وإدارة الإمبراطوريّة. ويُعدّ Kipling شاعرَ هذا المثال الأكبر — بوصفه مدافعاً عنه، وبعد 1915 راثياً له.</p>
+    <p>تُعبّر القصيدة عن مثال <strong>الإنجليزيّ الرواقيّ</strong>: هادئٌ، مكتفٍ بنفسه، منضبط عاطفيّاً، أمين على واجبه. وهذه القيم كانت في صميم منظومة المدارس البريطانيّة العامّة (public schools) وإدارة الإمبراطوريّة. ويُعدّ Kipling شاعرَ هذا المثال الأكبر - بوصفه مدافعاً عنه، وبعد 1915 راثياً له.</p>
 
     <h3>الاستقبال</h3>
-    <p>صُوّت لـ"If—" قصيدةً بريطانيّةً مفضّلة في استفتاء BBC سنة 1995، وسطراها مكتوبان فوق مدخل اللاعبين في Centre Court بـWimbledon ("meet with Triumph and Disaster / And treat those two impostors just the same"). ويجد القارئ المعاصر أحياناً في الكبت العاطفيّ ما يُقلق، غير أنّ تأثيرَ القصيدة هائل.</p>
+    <p>صُوّت لـ"If-" قصيدةً بريطانيّةً مفضّلة في استفتاء BBC سنة 1995، وسطراها مكتوبان فوق مدخل اللاعبين في Centre Court بـWimbledon ("meet with Triumph and Disaster / And treat those two impostors just the same"). ويجد القارئ المعاصر أحياناً في الكبت العاطفيّ ما يُقلق، غير أنّ تأثيرَ القصيدة هائل.</p>
   `,
 
-  summaryAr: `المقطع الأوّل (السطور 1–8): يبدأ الأبُ قائمةً طويلة من الشروط. على الابن أن يظلّ هادئاً حين يفقد غيرُه السيطرة، وأن يثق بنفسه حين يخذله الجميع، وأن يصبر تحت الاستفزاز، وأن يأبى ردَّ الكذب بالكذب والكراهية بالكراهية — كلّ ذلك مع تفادي مأزق التعالي الأخلاقيّ في المظهر أو اللهجة.
+  summaryAr: `المقطع الأوّل (السطور 1-8): يبدأ الأبُ قائمةً طويلة من الشروط. على الابن أن يظلّ هادئاً حين يفقد غيرُه السيطرة، وأن يثق بنفسه حين يخذله الجميع، وأن يصبر تحت الاستفزاز، وأن يأبى ردَّ الكذب بالكذب والكراهية بالكراهية - كلّ ذلك مع تفادي مأزق التعالي الأخلاقيّ في المظهر أو اللهجة.
 
-المقطع الثاني (السطور 9–16): على الابن أن يحلم ويُفكّر دون أن يحكمه واحدٌ منهما. أن يُواجه Triumph وDisaster بالملامح نفسها — ويُسمّيهما Kipling "impostors". أن يحتمل تحريفَ كلماته الصادقة، ودمارَ ما بناه، ثمّ يعيد البناءَ بهدوءٍ بـ"worn-out tools".
+المقطع الثاني (السطور 9-16): على الابن أن يحلم ويُفكّر دون أن يحكمه واحدٌ منهما. أن يُواجه Triumph وDisaster بالملامح نفسها - ويُسمّيهما Kipling "impostors". أن يحتمل تحريفَ كلماته الصادقة، ودمارَ ما بناه، ثمّ يعيد البناءَ بهدوءٍ بـ"worn-out tools".
 
-المقطع الثالث (السطور 17–24): على الابن أن يكون مستعدّاً للمراهنة بكلّ ما يملك على لعبةٍ واحدة، ثمّ يخسر، ثمّ يبدأ من جديدٍ دون شكوى. وأن يُكره بدنَه وعقلَه على المضيّ حين لا يبقى فيهما شيء — مرتفعاً فقط بقوّة "the Will" التي تأمر "Hold on!"
+المقطع الثالث (السطور 17-24): على الابن أن يكون مستعدّاً للمراهنة بكلّ ما يملك على لعبةٍ واحدة، ثمّ يخسر، ثمّ يبدأ من جديدٍ دون شكوى. وأن يُكره بدنَه وعقلَه على المضيّ حين لا يبقى فيهما شيء - مرتفعاً فقط بقوّة "the Will" التي تأمر "Hold on!"
 
-المقطع الرابع (السطور 25–32): على الابن أن يتنقّل بين العوالم الاجتماعيّة — بين العامّة والملوك — دون أن يفقد مركزَه الأخلاقيّ. ألّا يجرحه الأعداء ولا الأصدقاء المحبّون، وأن يملأ كلّ دقيقة من كلّ يومٍ بالجهد. عندئذٍ فقط، يَعِد Kipling، يرث الأرض — والأهمّ، يصير "a Man".
+المقطع الرابع (السطور 25-32): على الابن أن يتنقّل بين العوالم الاجتماعيّة - بين العامّة والملوك - دون أن يفقد مركزَه الأخلاقيّ. ألّا يجرحه الأعداء ولا الأصدقاء المحبّون، وأن يملأ كلّ دقيقة من كلّ يومٍ بالجهد. عندئذٍ فقط، يَعِد Kipling، يرث الأرض - والأهمّ، يصير "a Man".
 
-المعنى الإجماليّ: القصيدة جملةٌ شرطيّةٌ من اثنين وثلاثين سطراً. تُعدّد كلّ الفضائل شبه المستحيلة التي يحتاج إليها الابن ليكتمل رجلاً، ثمّ تمنحه الجزاء في الختام. وهي ترنيمةٌ لضبط النفس الرواقيّ، وفي الوقت ذاته — لأذنٍ معاصرة — صورةٌ للضغوط العاطفيّة المستحيلة التي وُضعت على الذكورة الإدوارديّة.`,
+المعنى الإجماليّ: القصيدة جملةٌ شرطيّةٌ من اثنين وثلاثين سطراً. تُعدّد كلّ الفضائل شبه المستحيلة التي يحتاج إليها الابن ليكتمل رجلاً، ثمّ تمنحه الجزاء في الختام. وهي ترنيمةٌ لضبط النفس الرواقيّ، وفي الوقت ذاته - لأذنٍ معاصرة - صورةٌ للضغوط العاطفيّة المستحيلة التي وُضعت على الذكورة الإدوارديّة.`,
 
-  formAndStructureAr: `الشكل: "If—" من أربعة مقاطع كلٌّ منها من ثمانية أسطر (رباعيّتان مدموجتان في octave)، فيكون مجموعها 32 سطراً. وتُوصف أحياناً بأنّها "verse essay" أو "sermon in verse".
+  formAndStructureAr: `الشكل: "If-" من أربعة مقاطع كلٌّ منها من ثمانية أسطر (رباعيّتان مدموجتان في octave)، فيكون مجموعها 32 سطراً. وتُوصف أحياناً بأنّها "verse essay" أو "sermon in verse".
 
-جملةٌ واحدةٌ طويلة: من اللافت أنّ القصيدةَ بأسرها جملةٌ واحدة تُمسكها قائمةٌ مطوّلة من جُمل "If" الشرطيّة. كلّ جملةٍ تُقيم اختباراً. أمّا الفعل الرئيس — "Yours is the Earth" — فيتأخّر إلى السطر قبل الأخير، فيظلّ القارئُ، كالابن، منتظراً الجزاءَ بصبرٍ. والشكل يُجسّد موضوعَ القصيدة في الصبر والصمود.
+جملةٌ واحدةٌ طويلة: من اللافت أنّ القصيدةَ بأسرها جملةٌ واحدة تُمسكها قائمةٌ مطوّلة من جُمل "If" الشرطيّة. كلّ جملةٍ تُقيم اختباراً. أمّا الفعل الرئيس - "Yours is the Earth" - فيتأخّر إلى السطر قبل الأخير، فيظلّ القارئُ، كالابن، منتظراً الجزاءَ بصبرٍ. والشكل يُجسّد موضوعَ القصيدة في الصبر والصمود.
 
-نظام القافية: تتبع المقاطع نمطَ ABABCDCD، وهو نمطٌ ثابتٌ متّزن. الانتظامُ يحاكي ضبطَ النفس الذي تنادي به القصيدة — متوقّعٌ، صبور، لا يفقد إيقاعه قطّ.
+نظام القافية: تتبع المقاطع نمطَ ABABCDCD، وهو نمطٌ ثابتٌ متّزن. الانتظامُ يحاكي ضبطَ النفس الذي تنادي به القصيدة - متوقّعٌ، صبور، لا يفقد إيقاعه قطّ.
 
 الوزن: iambic pentameter، مع تذييلٍ مؤنّث غير مُشدّد بين الحين والآخر ("you" / "too" / "waiting"). إيقاعُ الـ iamb المنتظم يكسب القصيدة وقعَ ساعةٍ تدقّ أو جنديٍّ يخطو خطوةً منضبطة.
 
 الـ anaphora: تكرارُ "If you can…" في مفتتح السطر تلو الآخر هو الأداةُ البنائيّة الأبرز. تكدِّس شرطاً فوق شرط، فتجعل مهمّةَ الابن شِبهَ مستحيلة، إلى أن يبدو الجزاءُ الختاميّ أعظم.
 
-التوازي: داخل المقاطع، يستعمل Kipling أزواجاً متّزنة ("lied about / don\'t deal in lies"، "hated / don\'t give way to hating"). وهذا التوازي يُؤكّد فكرةَ الاتّزان نفسِها — على الرجل أن يُمسك بالوسط بين الضغوط المتعارضة.
+التوازي: داخل المقاطع، يستعمل Kipling أزواجاً متّزنة ("lied about / don\'t deal in lies"، "hated / don\'t give way to hating"). وهذا التوازي يُؤكّد فكرةَ الاتّزان نفسِها - على الرجل أن يُمسك بالوسط بين الضغوط المتعارضة.
 
 الـ volta: لا انعطافةَ تقليديّة. وإنّما تأتي الانعطافةُ في السطرين الأخيرين، حيث تتوقّف الشروط ويصل الجزاء. القصيدة كلّها تقود إلى كلمة "Man" في السطر الأخير.
 
@@ -614,14 +614,14 @@ const comparisons = [
     href: '/igcse/edexcel/poetry',
     reason:
       "Both poems look at what a parent hands down. Walker reflects on the gifts of a loving father from the adult child's perspective; Kipling speaks as the father in the moment of advice. Compare how each writer understands the inheritance of values.",
-    themes: ['Parent–child relationships', 'Legacy', 'Identity'],
+    themes: ['Parent-child relationships', 'Legacy', 'Identity'],
   },
   {
     title: 'Piano',
     poet: 'D.H. Lawrence',
     href: '/igcse/edexcel/poetry/piano',
     reason:
-      'Piano is the emotional opposite of If—. Where Kipling insists on stoic control, Lawrence collapses into nostalgia, "weeping like a child". Compare how each poem treats masculine emotion — Kipling disciplines it, Lawrence surrenders to it.',
+      'Piano is the emotional opposite of If-. Where Kipling insists on stoic control, Lawrence collapses into nostalgia, "weeping like a child". Compare how each poem treats masculine emotion - Kipling disciplines it, Lawrence surrenders to it.',
     themes: ['Masculinity', 'Emotion', 'Childhood'],
   },
 ]
@@ -647,7 +647,7 @@ export default function IfPage() {
             <BookOpen className="size-5 text-rose-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">If—</h1>
+            <h1 className="text-heading-lg font-heading text-foreground">If-</h1>
             <p className="text-body-sm text-muted-foreground">
               Rudyard Kipling &middot; Edexcel IGCSE Anthology
             </p>
@@ -660,7 +660,7 @@ export default function IfPage() {
 
       <InteractivePoemViewer poem={poem} />
 
-      <StudyTools textName="If—" textType="poem" examBoard="Edexcel" variant="compact" />
+      <StudyTools textName="If-" textType="poem" examBoard="Edexcel" variant="compact" />
 
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
@@ -669,7 +669,7 @@ export default function IfPage() {
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
           The Edexcel exam asks you to compare the named poem with another from the anthology. These
-          are strong pairings for If—.
+          are strong pairings for If-.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

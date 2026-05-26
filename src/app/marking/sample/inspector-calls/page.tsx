@@ -13,12 +13,12 @@ import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls — Model Essay Bank',
+    title: 'An Inspector Calls - Model Essay Bank',
     description:
       'Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and marker commentary.',
   },
   alternates: { canonical: 'https://theenglishhub.app/marking/sample/inspector-calls' },
-  title: 'An Inspector Calls — Model Essay Bank',
+  title: 'An Inspector Calls - Model Essay Bank',
   description:
     'Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and marker commentary.',
 }
@@ -44,15 +44,15 @@ interface ModelEssay {
 
 const ESSAYS: ModelEssay[] = [
   /* ============================================================
-   * Essay 1 — Grade 5: Responsibility
+   * Essay 1 - Grade 5: Responsibility
    * ============================================================ */
   {
     id: 'responsibility-g5',
     grade: 5,
-    title: 'Grade 5 — Responsibility',
+    title: 'Grade 5 - Responsibility',
     question: 'How does Priestley present ideas about responsibility?',
     board: 'AQA',
-    paper: 'English Literature — Paper 2',
+    paper: 'English Literature - Paper 2',
     scorePercent: 84,
     gradeJustification:
       'Meets Grade 5 descriptors: clear understanding of the theme with relevant textual references. Quotations are used to support points but analysis tends toward identification of meaning rather than exploration of method. Context is present but attached to the end rather than woven into the argument. Spelling, punctuation and grammar are generally accurate.',
@@ -79,7 +79,7 @@ const ESSAYS: ModelEssay[] = [
         quote: "'a man has to mind his own business and look after himself and his own'",
         kind: 'technique',
         comment:
-          "Relevant quotation, accurately attributed to Mr Birling. Analyse the repetition of 'his own' — this possessive insistence reveals Birling's narrow individualism. This would lift AO2.",
+          "Relevant quotation, accurately attributed to Mr Birling. Analyse the repetition of 'his own' - this possessive insistence reveals Birling's narrow individualism. This would lift AO2.",
       },
       {
         id: 'r5-a3',
@@ -107,25 +107,25 @@ const ESSAYS: ModelEssay[] = [
   },
 
   /* ============================================================
-   * Essay 2 — Grade 7: Responsibility
+   * Essay 2 - Grade 7: Responsibility
    * ============================================================ */
   {
     id: 'responsibility-g7',
     grade: 7,
-    title: 'Grade 7 — Responsibility',
+    title: 'Grade 7 - Responsibility',
     question: 'How does Priestley present ideas about responsibility?',
     board: 'AQA',
-    paper: 'English Literature — Paper 2',
+    paper: 'English Literature - Paper 2',
     scorePercent: 89,
     gradeJustification:
       'Meets Grade 7 descriptors: a thoughtful, developed response with sustained focus on the question. Methods are identified and analysed, and context is integrated into the argument rather than bolted on. The response handles multiple characters and structural choices with a clear thesis. To reach Grade 8/9, the student needs more precise word-level analysis and a fully conceptualised argument.',
     commentary:
       "A confident response that moves beyond identification into explanation and, at points, exploration. The structural awareness (opening versus ending) is particularly effective. To push higher, the student should allow individual word choices to drive extended analysis and develop a more original overarching thesis about Priestley's purpose.",
     paragraphs: [
-      "Priestley uses An Inspector Calls as a vehicle to interrogate the concept of collective responsibility, contrasting characters who embrace it with those who violently reject it. The play's dramatic structure — set in 1912 but performed in 1945 — allows Priestley to weaponise dramatic irony, ensuring his post-war audience recognises the catastrophic consequences of the Birlings' individualism.",
+      "Priestley uses An Inspector Calls as a vehicle to interrogate the concept of collective responsibility, contrasting characters who embrace it with those who violently reject it. The play's dramatic structure - set in 1912 but performed in 1945 - allows Priestley to weaponise dramatic irony, ensuring his post-war audience recognises the catastrophic consequences of the Birlings' individualism.",
       "Mr Birling is presented as the embodiment of irresponsibility. His assertion that 'a man has to mind his own business and look after himself and his own' directly contradicts the Inspector's collectivist message. The blunt monosyllables and first-person focus reveal a worldview that is stubbornly self-centred. Priestley positions Birling's speeches at the play's opening so that the Inspector's arrival structurally demolishes them, brick by brick.",
-      "By contrast, Sheila's arc traces a movement from complicity to conscience. Her admission that she had the girl 'turned out' of her job is delivered with increasing anguish as the Inspector forces her to confront the human cost of her privilege. Priestley's use of the progressive tense in the stage directions — Sheila 'miserably' acknowledging her guilt — externalises an internal moral reckoning that the older Birlings never undergo.",
-      "The Inspector's parting speech functions as Priestley's thesis statement. The declarative 'we are responsible for each other' leaves no ambiguity; the plural pronoun 'we' implicates not only the Birlings but the audience themselves. Writing in 1945, Priestley knew his audience had lived through two world wars triggered, in part, by the selfishness the Birlings represent. The Inspector thus becomes Priestley's mouthpiece for a new social contract — one grounded in empathy and accountability rather than profit and status.",
+      "By contrast, Sheila's arc traces a movement from complicity to conscience. Her admission that she had the girl 'turned out' of her job is delivered with increasing anguish as the Inspector forces her to confront the human cost of her privilege. Priestley's use of the progressive tense in the stage directions - Sheila 'miserably' acknowledging her guilt - externalises an internal moral reckoning that the older Birlings never undergo.",
+      "The Inspector's parting speech functions as Priestley's thesis statement. The declarative 'we are responsible for each other' leaves no ambiguity; the plural pronoun 'we' implicates not only the Birlings but the audience themselves. Writing in 1945, Priestley knew his audience had lived through two world wars triggered, in part, by the selfishness the Birlings represent. The Inspector thus becomes Priestley's mouthpiece for a new social contract - one grounded in empathy and accountability rather than profit and status.",
     ],
     annotations: [
       {
@@ -170,26 +170,26 @@ const ESSAYS: ModelEssay[] = [
   },
 
   /* ============================================================
-   * Essay 3 — Grade 9: Responsibility (conceptualised)
+   * Essay 3 - Grade 9: Responsibility (conceptualised)
    * ============================================================ */
   {
     id: 'responsibility-g9',
     grade: 9,
-    title: 'Grade 9 — Responsibility',
+    title: 'Grade 9 - Responsibility',
     question: 'How does Priestley present ideas about responsibility?',
     board: 'AQA',
-    paper: 'English Literature — Paper 2',
+    paper: 'English Literature - Paper 2',
     scorePercent: 95,
     gradeJustification:
       'Meets Grade 9 descriptors: a perceptive, conceptualised response in which every paragraph advances an original, sustained thesis. Language, form and structure are analysed at word level, with terminology serving interpretation rather than display. Context is woven into the fabric of the argument. The conclusion synthesises ideas rather than restating them.',
     commentary:
-      'A fully conceptualised response that treats the play as a political mechanism rather than simply a story about a family. Word-level analysis drives interpretation, structural choices are explored for their dramatic effect, and context is integral to every point. The argument is original, sustained and — crucially — debatable, which is what Grade 9 demands.',
+      'A fully conceptualised response that treats the play as a political mechanism rather than simply a story about a family. Word-level analysis drives interpretation, structural choices are explored for their dramatic effect, and context is integral to every point. The argument is original, sustained and - crucially - debatable, which is what Grade 9 demands.',
     paragraphs: [
-      "Priestley does not merely present responsibility in An Inspector Calls; he engineers a dramatic machine designed to manufacture it. The play's architecture — a sealed dining room, a single evening, an inescapable interrogator — strips away every escape route the Birlings attempt, forcing both characters and audience to confront a discomforting truth: that privilege is not neutral but actively destructive. Responsibility, in Priestley's schema, is not a moral option but a social obligation whose refusal carries existential consequences.",
-      "The Birlings' evasion of responsibility is dramatised through language that reveals rather than conceals. Mrs Birling's dismissal of Eva as one of the 'Girls of that class' exposes the ideological scaffolding of class: the demonstrative 'that' performs an act of distancing, converting a human being into a category. Mr Birling complements this linguistic erasure with the doctrine of self-interest — 'a man has to mind his own business and look after himself and his own' — a creed that severs the social bond Eva might have invoked for help. Priestley's distribution of these dismissive registers across the parental couple is structural rather than accidental: it reveals that their irresponsibility is not personal failure but systemic ideology, reproduced within the family unit as naturally as table manners.",
-      "Sheila's trajectory offers the counter-argument. Her initial complicity — having Eva dismissed from a shop — is framed as casual cruelty born of unchecked power. Yet Priestley grants Sheila a capacity the older Birlings lack: the ability to be remade by knowledge. Her declaration that she will 'never, never do it again' deploys repetition not as rhetoric but as vow. The adverbial intensification registers the psychological violence of self-recognition — Sheila does not simply regret; she repudiates the version of herself that was capable of such harm. Priestley structures her awakening before the interval, ensuring the audience carries her transformation into the second half as a moral benchmark against which the parents' continued denial is measured.",
-      "The Inspector's final speech crystallises Priestley's thesis, but its power derives from what it withholds as much as what it states. The warning of 'fire and blood and anguish' invokes both biblical prophecy and the lived reality of 1945 audiences who had survived the Blitz. Priestley leaves the trinitarian structure unresolved — there is no redemption clause, no offered salvation. Responsibility, in this formulation, is not transactional but unconditional: it demands action regardless of reward. The telephone call that closes the play — another inspector is coming — refuses closure entirely, denying the Birlings and the audience the comfort of finality. Priestley thus transforms the well-made play into something closer to a political act: responsibility is not a lesson to be learned once but a condition to be inhabited permanently.",
-      'Ultimately, Priestley presents responsibility as the defining moral test of a society. Those who pass it — Sheila, Eric — are reborn; those who fail — Birling, Sybil — are condemned to repeat history. Writing between the ruins of one war and the memory of another, Priestley understood that responsibility is not sentiment but infrastructure: the invisible architecture upon which any just society must be built. The Inspector, who may not be a real police officer at all, embodies this structural metaphor — he is less a character than a conscience, an apparatus of accountability that a civilised society must construct if it is to survive.',
+      "Priestley does not merely present responsibility in An Inspector Calls; he engineers a dramatic machine designed to manufacture it. The play's architecture - a sealed dining room, a single evening, an inescapable interrogator - strips away every escape route the Birlings attempt, forcing both characters and audience to confront a discomforting truth: that privilege is not neutral but actively destructive. Responsibility, in Priestley's schema, is not a moral option but a social obligation whose refusal carries existential consequences.",
+      "The Birlings' evasion of responsibility is dramatised through language that reveals rather than conceals. Mrs Birling's dismissal of Eva as one of the 'Girls of that class' exposes the ideological scaffolding of class: the demonstrative 'that' performs an act of distancing, converting a human being into a category. Mr Birling complements this linguistic erasure with the doctrine of self-interest - 'a man has to mind his own business and look after himself and his own' - a creed that severs the social bond Eva might have invoked for help. Priestley's distribution of these dismissive registers across the parental couple is structural rather than accidental: it reveals that their irresponsibility is not personal failure but systemic ideology, reproduced within the family unit as naturally as table manners.",
+      "Sheila's trajectory offers the counter-argument. Her initial complicity - having Eva dismissed from a shop - is framed as casual cruelty born of unchecked power. Yet Priestley grants Sheila a capacity the older Birlings lack: the ability to be remade by knowledge. Her declaration that she will 'never, never do it again' deploys repetition not as rhetoric but as vow. The adverbial intensification registers the psychological violence of self-recognition - Sheila does not simply regret; she repudiates the version of herself that was capable of such harm. Priestley structures her awakening before the interval, ensuring the audience carries her transformation into the second half as a moral benchmark against which the parents' continued denial is measured.",
+      "The Inspector's final speech crystallises Priestley's thesis, but its power derives from what it withholds as much as what it states. The warning of 'fire and blood and anguish' invokes both biblical prophecy and the lived reality of 1945 audiences who had survived the Blitz. Priestley leaves the trinitarian structure unresolved - there is no redemption clause, no offered salvation. Responsibility, in this formulation, is not transactional but unconditional: it demands action regardless of reward. The telephone call that closes the play - another inspector is coming - refuses closure entirely, denying the Birlings and the audience the comfort of finality. Priestley thus transforms the well-made play into something closer to a political act: responsibility is not a lesson to be learned once but a condition to be inhabited permanently.",
+      'Ultimately, Priestley presents responsibility as the defining moral test of a society. Those who pass it - Sheila, Eric - are reborn; those who fail - Birling, Sybil - are condemned to repeat history. Writing between the ruins of one war and the memory of another, Priestley understood that responsibility is not sentiment but infrastructure: the invisible architecture upon which any just society must be built. The Inspector, who may not be a real police officer at all, embodies this structural metaphor - he is less a character than a conscience, an apparatus of accountability that a civilised society must construct if it is to survive.',
     ],
     annotations: [
       {
@@ -198,7 +198,7 @@ const ESSAYS: ModelEssay[] = [
         quote: 'engineers a dramatic machine designed to manufacture it',
         kind: 'strength',
         comment:
-          'Conceptualised thesis from the opening line. The mechanical metaphor frames the entire play as a deliberate political apparatus — this is Grade 9 thinking.',
+          'Conceptualised thesis from the opening line. The mechanical metaphor frames the entire play as a deliberate political apparatus - this is Grade 9 thinking.',
       },
       {
         id: 'r9-a2',
@@ -242,15 +242,15 @@ const ESSAYS: ModelEssay[] = [
   },
 
   /* ============================================================
-   * Essay 4 — Grade 5: Sheila
+   * Essay 4 - Grade 5: Sheila
    * ============================================================ */
   {
     id: 'sheila-g5',
     grade: 5,
-    title: 'Grade 5 — Sheila',
+    title: 'Grade 5 - Sheila',
     question: 'How does Priestley use the character of Sheila to convey his message?',
     board: 'AQA',
-    paper: 'English Literature — Paper 2',
+    paper: 'English Literature - Paper 2',
     scorePercent: 83,
     gradeJustification:
       "Meets Grade 5 descriptors: clear understanding of Sheila's role with appropriate textual references. Some method identification (stage directions, repetition) but effects are stated rather than explored. Context is present but not integrated. Accurate SPaG throughout.",
@@ -276,7 +276,7 @@ const ESSAYS: ModelEssay[] = [
         quote: "The repetition of 'never' shows how strongly she feels",
         kind: 'improve',
         comment:
-          "Identifies method but does not explore its effect. Try: the emphatic repetition dramatises Sheila's horror at her own capacity for casual cruelty — it registers self-recognition, not just regret.",
+          "Identifies method but does not explore its effect. Try: the emphatic repetition dramatises Sheila's horror at her own capacity for casual cruelty - it registers self-recognition, not just regret.",
       },
       {
         id: 's5-a3',
@@ -296,26 +296,26 @@ const ESSAYS: ModelEssay[] = [
   },
 
   /* ============================================================
-   * Essay 5 — Grade 9: Sheila (conceptualised)
+   * Essay 5 - Grade 9: Sheila (conceptualised)
    * ============================================================ */
   {
     id: 'sheila-g9',
     grade: 9,
-    title: 'Grade 9 — Sheila',
+    title: 'Grade 9 - Sheila',
     question: 'How does Priestley use the character of Sheila to convey his message?',
     board: 'AQA',
-    paper: 'English Literature — Paper 2',
+    paper: 'English Literature - Paper 2',
     scorePercent: 94,
     gradeJustification:
       'Meets Grade 9 descriptors: a perceptive, fully conceptualised response that reads Sheila as a structural device as well as a character. Language and form are analysed at word level, with context integrated throughout. The thesis is original and sustained across every paragraph, and the conclusion offers synthesis rather than summary.',
     commentary:
-      'A sophisticated response that treats Sheila not merely as a character who changes but as the mechanism through which Priestley converts his audience. Word-level analysis of stage directions, dialogue and structural positioning demonstrates complete command of AO2. Context is never added as decoration — it drives interpretation. The argument is genuinely debatable, which is the hallmark of Grade 9.',
+      'A sophisticated response that treats Sheila not merely as a character who changes but as the mechanism through which Priestley converts his audience. Word-level analysis of stage directions, dialogue and structural positioning demonstrates complete command of AO2. Context is never added as decoration - it drives interpretation. The argument is genuinely debatable, which is the hallmark of Grade 9.',
     paragraphs: [
       'Sheila Birling is not simply a character who learns a lesson; she is the instrument through which Priestley converts his audience. Her trajectory from complacent bourgeoise to anguished moral agent enacts the very transformation Priestley demands of post-war Britain: a movement from wilful ignorance to inescapable accountability. By making Sheila the first Birling to break, Priestley ensures her awakening becomes the lens through which every subsequent revelation is filtered.',
-      "At the play's opening, Sheila is confined within the dramatic shorthand of the stage directions: 'very pleased with life'. The adverbial intensifier 'very' is telling — it signals not depth of feeling but superficiality, a contentment that has never been tested. Priestley positions this description before the Inspector's entrance so that it functions retrospectively as an indictment: Sheila's pleasure is only possible because she has never been forced to see beyond the walls of the dining room. Her happiness is not innocence but anaesthesia.",
-      "The pivotal moment in Sheila's arc is not her confession but her recognition. When she admits to having Eva 'turned out' of employment, the phrasal verb is significant: it externalises guilt as a physical act of expulsion, mirroring the capitalist system's ability to dispose of individuals. Yet Sheila's response — 'I felt rotten about it at the time' — reveals that conscience was always present, merely suppressed by the social permission her class afforded. Priestley suggests that responsibility is not acquired but uncovered: it lies beneath privilege like a nerve beneath skin, waiting for the Inspector's probing to expose it.",
-      "Structurally, Priestley positions Sheila's transformation before the interval, a decision of considerable dramatic intelligence. The audience enters the break having witnessed the possibility of change, which reframes the second half: every parental evasion is now measured against the benchmark Sheila has established. Her increasingly confrontational stance toward her parents — adopting the Inspector's interrogative methods — dramatises Priestley's belief that social conscience, once awakened, is not merely personal but contagious. Sheila becomes, in effect, a secondary Inspector, proving that the apparatus of accountability can be internalised and reproduced.",
-      "Priestley's final stroke is to deny Sheila a conventional resolution. Unlike her parents, who retreat into the relief of discovering the Inspector may be a fraud, Sheila insists that the reality of their actions remains unchanged. Her refusal to accept the comfortable explanation represents Priestley's most radical proposition: that moral responsibility does not depend on external verification. For a 1945 audience rebuilding a society from rubble, Sheila embodies the conviction that conscience must be self-sustaining — not imposed by inspectors or enforced by institutions, but held as an act of permanent, voluntary vigilance.",
+      "At the play's opening, Sheila is confined within the dramatic shorthand of the stage directions: 'very pleased with life'. The adverbial intensifier 'very' is telling - it signals not depth of feeling but superficiality, a contentment that has never been tested. Priestley positions this description before the Inspector's entrance so that it functions retrospectively as an indictment: Sheila's pleasure is only possible because she has never been forced to see beyond the walls of the dining room. Her happiness is not innocence but anaesthesia.",
+      "The pivotal moment in Sheila's arc is not her confession but her recognition. When she admits to having Eva 'turned out' of employment, the phrasal verb is significant: it externalises guilt as a physical act of expulsion, mirroring the capitalist system's ability to dispose of individuals. Yet Sheila's response - 'I felt rotten about it at the time' - reveals that conscience was always present, merely suppressed by the social permission her class afforded. Priestley suggests that responsibility is not acquired but uncovered: it lies beneath privilege like a nerve beneath skin, waiting for the Inspector's probing to expose it.",
+      "Structurally, Priestley positions Sheila's transformation before the interval, a decision of considerable dramatic intelligence. The audience enters the break having witnessed the possibility of change, which reframes the second half: every parental evasion is now measured against the benchmark Sheila has established. Her increasingly confrontational stance toward her parents - adopting the Inspector's interrogative methods - dramatises Priestley's belief that social conscience, once awakened, is not merely personal but contagious. Sheila becomes, in effect, a secondary Inspector, proving that the apparatus of accountability can be internalised and reproduced.",
+      "Priestley's final stroke is to deny Sheila a conventional resolution. Unlike her parents, who retreat into the relief of discovering the Inspector may be a fraud, Sheila insists that the reality of their actions remains unchanged. Her refusal to accept the comfortable explanation represents Priestley's most radical proposition: that moral responsibility does not depend on external verification. For a 1945 audience rebuilding a society from rubble, Sheila embodies the conviction that conscience must be self-sustaining - not imposed by inspectors or enforced by institutions, but held as an act of permanent, voluntary vigilance.",
     ],
     annotations: [
       {
@@ -324,7 +324,7 @@ const ESSAYS: ModelEssay[] = [
         quote: 'instrument through which Priestley converts his audience',
         kind: 'strength',
         comment:
-          'Conceptualised thesis that reads character as dramatic function. This immediately signals Grade 9 thinking — Sheila is not just a person in a story but a mechanism of persuasion.',
+          'Conceptualised thesis that reads character as dramatic function. This immediately signals Grade 9 thinking - Sheila is not just a person in a story but a mechanism of persuasion.',
       },
       {
         id: 's9-a2',
@@ -384,7 +384,7 @@ function gradeColour(grade: 5 | 7 | 9) {
 /* ─── Page (server component) ──────────────────────────────── */
 
 export default async function InspectorCallsSamplePage() {
-  /* Board guard — these model essays use the AQA mark scheme (AO1=12, AO2=12,
+  /* Board guard - these model essays use the AQA mark scheme (AO1=12, AO2=12,
      AO3=6, AO4=4). An Inspector Calls is also set on Edexcel, OCR and Eduqas,
      but those boards have different AO weightings, so this page is restricted
      to AQA students to avoid misleading mark allocations. */

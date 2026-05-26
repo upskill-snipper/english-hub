@@ -160,7 +160,7 @@ const PRINT_STYLES = `
 }
 `
 
-// ── Difficulty badge colours (screen only — prints as outline) ───────────────
+// ── Difficulty badge colours (screen only - prints as outline) ───────────────
 
 const DIFFICULTY_STYLES: Record<DifficultyBadge, string> = {
   foundation:
@@ -199,8 +199,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
     const computedTotalMarks =
       totalMarks ??
       sections.reduce(
-        (sum, s) =>
-          sum + s.questions.reduce((qSum, q) => qSum + (q.marks ?? 0), 0),
+        (sum, s) => sum + s.questions.reduce((qSum, q) => qSum + (q.marks ?? 0), 0),
         0,
       )
 
@@ -222,9 +221,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
                   </p>
                 )}
                 <h1 className="text-xl font-bold text-foreground">{title}</h1>
-                {subtitle && (
-                  <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
-                )}
+                {subtitle && <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>}
                 {difficulty && (
                   <span
                     className={cn(
@@ -240,9 +237,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
                 {className && <p>Class: {className}</p>}
                 {date && <p>Date: {date}</p>}
                 {computedTotalMarks > 0 && (
-                  <p className="font-medium">
-                    Total: {computedTotalMarks} marks
-                  </p>
+                  <p className="font-medium">Total: {computedTotalMarks} marks</p>
                 )}
                 <p className="mt-2">Name: _____________________</p>
               </div>
@@ -262,13 +257,9 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
           {/* ── Sections ──────────────────────────────────────── */}
           {sections.map((section, sIdx) => (
             <div key={sIdx} className="worksheet-section mb-8">
-              <h2 className="text-base font-bold text-foreground mb-1">
-                {section.title}
-              </h2>
+              <h2 className="text-base font-bold text-foreground mb-1">{section.title}</h2>
               {section.instructions && (
-                <p className="text-sm text-muted-foreground mb-4 italic">
-                  {section.instructions}
-                </p>
+                <p className="text-sm text-muted-foreground mb-4 italic">{section.instructions}</p>
               )}
 
               {/* Extract / passage block */}
@@ -350,9 +341,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
             {schoolName && <span>{schoolName}</span>}
             {schoolName && title && <span> &mdash; </span>}
             <span>{title}</span>
-            {computedTotalMarks > 0 && (
-              <span> &mdash; Total: {computedTotalMarks} marks</span>
-            )}
+            {computedTotalMarks > 0 && <span> &mdash; Total: {computedTotalMarks} marks</span>}
           </div>
         </div>
       </>

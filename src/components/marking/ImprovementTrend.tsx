@@ -20,7 +20,7 @@ export interface ImprovementTrendProps {
 
 /**
  * Inline SVG line chart showing grade over time.
- * Pure theme tokens — uses currentColor with text-primary, etc.
+ * Pure theme tokens - uses currentColor with text-primary, etc.
  */
 export function ImprovementTrend({ points, className }: ImprovementTrendProps) {
   const t = useT()

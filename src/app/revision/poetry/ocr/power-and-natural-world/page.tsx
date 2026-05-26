@@ -88,11 +88,11 @@ const POEMS: Poem[] = [
     hook: 'Wordsworth, a country poet, is silenced by the early-morning beauty of London.',
   },
   {
-    title: 'The Prelude (extract) — 1799 two-part Prelude (Part First, lines 81–129)',
+    title: 'The Prelude (extract) - 1799 two-part Prelude (Part First, lines 81-129)',
     poet: 'William Wordsworth',
     slug: 'the-prelude',
     publicDomain: true,
-    hook: 'A stolen boat ride becomes a terrifying encounter with the power of nature. OCR prescribes the 1799 two-part Prelude (Part First, lines 81–129) — not the 1850 posthumous Prelude used by AQA. The wording is materially different.',
+    hook: 'A stolen boat ride becomes a terrifying encounter with the power of nature. OCR prescribes the 1799 two-part Prelude (Part First, lines 81-129) - not the 1850 posthumous Prelude used by AQA. The wording is materially different.',
   },
   {
     title: 'From a Mother in a Refugee Camp',

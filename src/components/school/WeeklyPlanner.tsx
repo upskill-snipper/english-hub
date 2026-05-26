@@ -43,11 +43,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -565,9 +561,7 @@ function SlotCell({ slot, slotKey, lesson, colorMode, onDrop, onClick, onClear }
               <X className="h-3 w-3 text-muted-foreground hover:text-destructive" />
             </button>
           </div>
-          <p className="text-[10px] text-muted-foreground mb-1.5 truncate">
-            {slot!.className}
-          </p>
+          <p className="text-[10px] text-muted-foreground mb-1.5 truncate">{slot!.className}</p>
           <div className="flex items-center gap-1.5 flex-wrap">
             <Badge
               variant="outline"
@@ -670,7 +664,10 @@ function SlotEditDialog({ open, onClose, slotKey, slot, onSave, onDelete }: Slot
         <div className="space-y-4 pt-2">
           <div>
             <label className="text-sm font-medium text-foreground mb-1.5 block">Lesson Plan</label>
-            <Select value={lessonId || 'none'} onValueChange={(v) => setLessonId(v === 'none' ? '' : v)}>
+            <Select
+              value={lessonId || 'none'}
+              onValueChange={(v) => setLessonId(v === 'none' ? '' : v)}
+            >
               <SelectTrigger>
                 <SelectValue placeholder="Select a lesson..." />
               </SelectTrigger>
@@ -892,26 +889,23 @@ export function WeeklyPlanner() {
   }, [jumpDate])
 
   // Slot operations
-  const handleDrop = useCallback(
-    (slotKey: string, lessonId: string) => {
-      setPlan((prev) => {
-        const existing = prev.slots[slotKey]
-        const updated: WeekPlan = {
-          ...prev,
-          slots: {
-            ...prev.slots,
-            [slotKey]: {
-              lessonId,
-              className: existing?.className || CLASS_NAMES[0],
-              notes: existing?.notes || '',
-            },
+  const handleDrop = useCallback((slotKey: string, lessonId: string) => {
+    setPlan((prev) => {
+      const existing = prev.slots[slotKey]
+      const updated: WeekPlan = {
+        ...prev,
+        slots: {
+          ...prev.slots,
+          [slotKey]: {
+            lessonId,
+            className: existing?.className || CLASS_NAMES[0],
+            notes: existing?.notes || '',
           },
-        }
-        return updated
-      })
-    },
-    [],
-  )
+        },
+      }
+      return updated
+    })
+  }, [])
 
   const handleSlotClick = useCallback((slotKey: string) => {
     setEditingSlot(slotKey)
@@ -1004,9 +998,7 @@ export function WeeklyPlanner() {
               <h1 className="text-xl font-bold tracking-tight sm:text-2xl text-foreground">
                 Weekly Planner
               </h1>
-              <p className="text-sm text-muted-foreground">
-                {formatDateRange(currentMonday)}
-              </p>
+              <p className="text-sm text-muted-foreground">{formatDateRange(currentMonday)}</p>
             </div>
           </div>
 
@@ -1014,10 +1006,7 @@ export function WeeklyPlanner() {
             <Badge variant="outline" className="text-xs">
               {filledSlots}/{totalSlots} slots filled
             </Badge>
-            <Select
-              value={colorMode}
-              onValueChange={(v) => setColorMode(v as 'topic' | 'class')}
-            >
+            <Select value={colorMode} onValueChange={(v) => setColorMode(v as 'topic' | 'class')}>
               <SelectTrigger className="w-[130px] h-8 text-xs">
                 <SelectValue />
               </SelectTrigger>
@@ -1032,10 +1021,20 @@ export function WeeklyPlanner() {
         {/* Week Navigation */}
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <div className="flex items-center rounded-lg border border-border bg-card">
-            <Button variant="ghost" size="sm" onClick={goToPreviousWeek} className="rounded-r-none h-8">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={goToPreviousWeek}
+              className="rounded-r-none h-8"
+            >
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="sm" onClick={goToToday} className="rounded-none h-8 text-xs px-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={goToToday}
+              className="rounded-none h-8 text-xs px-3"
+            >
               Today
             </Button>
             <Button variant="ghost" size="sm" onClick={goToNextWeek} className="rounded-l-none h-8">
@@ -1077,7 +1076,8 @@ export function WeeklyPlanner() {
               </TooltipTrigger>
               <TooltipContent>
                 <p className="text-xs max-w-[220px]">
-                  Uses analytics to generate a recommended week of lessons, prioritising weak areas for each class
+                  Uses analytics to generate a recommended week of lessons, prioritising weak areas
+                  for each class
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -1101,7 +1101,12 @@ export function WeeklyPlanner() {
 
             <Tooltip>
               <TooltipTrigger>
-                <Button variant="outline" size="sm" onClick={handlePrint} className="h-8 text-xs gap-1.5">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handlePrint}
+                  className="h-8 text-xs gap-1.5"
+                >
                   <Printer className="h-3.5 w-3.5" />
                   Print
                 </Button>
@@ -1150,10 +1155,7 @@ export function WeeklyPlanner() {
             <div className="grid grid-cols-[70px_repeat(5,1fr)] gap-1.5 mb-1.5">
               <div />
               {DAYS.map((day, i) => (
-                <div
-                  key={day}
-                  className="text-center rounded-lg bg-muted/50 py-2 px-1"
-                >
+                <div key={day} className="text-center rounded-lg bg-muted/50 py-2 px-1">
                   <div className="text-xs font-semibold text-foreground">{day}</div>
                   <div className="text-[10px] text-muted-foreground">
                     {formatDayHeader(currentMonday, i)}
@@ -1288,7 +1290,8 @@ export function WeeklyPlanner() {
             ) : (
               <>
                 <p className="text-[10px] text-muted-foreground mb-1">
-                  {filteredLessons.length} lesson{filteredLessons.length !== 1 ? 's' : ''} — drag to grid
+                  {filteredLessons.length} lesson{filteredLessons.length !== 1 ? 's' : ''} - drag to
+                  grid
                 </p>
                 {filteredLessons.map((lesson) => (
                   <SidebarLessonCard key={lesson.id} lesson={lesson} />

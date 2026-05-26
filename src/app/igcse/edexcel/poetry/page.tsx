@@ -17,7 +17,7 @@ import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE Literature Anthology Poetry — The English Hub',
+    title: 'Edexcel IGCSE Literature Anthology Poetry - The English Hub',
     description:
       'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',
   },
@@ -42,13 +42,13 @@ type AnthologyPoem = {
   summary: string
 }
 
-// Verified against TEXT_MASTER_LIST.csv — the Pearson Edexcel International GCSE
+// Verified against TEXT_MASTER_LIST.csv - the Pearson Edexcel International GCSE
 // English Literature (4ET1) Anthology Issue 2 prescribes these 13 poems for the
 // Paper 1 Section B Anthology Poetry section. (Poetry-list audited April 2026.)
 const anthology: AnthologyPoem[] = [
   {
     number: 1,
-    title: 'If—',
+    title: 'If-',
     poet: 'Rudyard Kipling',
     year: '1910',
     href: '/igcse/edexcel/poetry/if',
@@ -88,7 +88,7 @@ const anthology: AnthologyPoem[] = [
     themes: ['Creation', 'Evil', 'Awe'],
     publicDomain: true,
     summary:
-      'The speaker asks what kind of creator could have made the terrifying, beautiful tiger — and the lamb too.',
+      'The speaker asks what kind of creator could have made the terrifying, beautiful tiger - and the lamb too.',
   },
   {
     number: 5,
@@ -99,7 +99,7 @@ const anthology: AnthologyPoem[] = [
     themes: ['Power', 'Hubris', 'Time and decay'],
     publicDomain: true,
     summary:
-      'A traveller describes the shattered remains of a once-mighty statue in the desert — a meditation on the impermanence of power and empire.',
+      'A traveller describes the shattered remains of a once-mighty statue in the desert - a meditation on the impermanence of power and empire.',
   },
   {
     number: 6,
@@ -110,7 +110,7 @@ const anthology: AnthologyPoem[] = [
     themes: ['Death', 'Memory', 'Love'],
     publicDomain: true,
     summary:
-      'A speaker asks her beloved to remember her after death — then, selflessly, prefers he forget and be happy.',
+      'A speaker asks her beloved to remember her after death - then, selflessly, prefers he forget and be happy.',
   },
   {
     number: 7,
@@ -125,7 +125,7 @@ const anthology: AnthologyPoem[] = [
   },
   {
     number: 8,
-    title: 'Out, Out—',
+    title: 'Out, Out-',
     poet: 'Robert Frost',
     year: '1916',
     href: '/igcse/edexcel/poetry/out-out',
@@ -165,7 +165,7 @@ const anthology: AnthologyPoem[] = [
     themes: ['War', 'Resilience', 'Hope'],
     publicDomain: false,
     summary:
-      'During the siege of Sarajevo, young couples meet in candlelit cafés and walk under starlight — life persisting amid devastation. Anthology Issue 2 prints additional stanza breaks.',
+      'During the siege of Sarajevo, young couples meet in candlelit cafés and walk under starlight - life persisting amid devastation. Anthology Issue 2 prints additional stanza breaks.',
   },
   {
     number: 12,
@@ -200,9 +200,9 @@ const comparisonPairings = [
     bg: 'bg-rose-500/10',
     border: 'border-rose-500/20',
     pairs: [
-      'Sonnet 116 & Remember — enduring love and the test of time',
-      'La Belle Dame sans Merci & Remember — love, loss and the spectre of death',
-      'If— & War Photographer — moral codes and the burden of conscience',
+      'Sonnet 116 & Remember - enduring love and the test of time',
+      'La Belle Dame sans Merci & Remember - love, loss and the spectre of death',
+      'If- & War Photographer - moral codes and the burden of conscience',
     ],
   },
   {
@@ -211,9 +211,9 @@ const comparisonPairings = [
     bg: 'bg-amber-500/10',
     border: 'border-amber-500/20',
     pairs: [
-      'Ozymandias & The Tyger — earthly versus divine power',
-      'War Photographer & Disabled — the human cost of war',
-      'The Bright Lights of Sarajevo & Out, Out— — life and indifference in the face of death',
+      'Ozymandias & The Tyger - earthly versus divine power',
+      'War Photographer & Disabled - the human cost of war',
+      'The Bright Lights of Sarajevo & Out, Out- - life and indifference in the face of death',
     ],
   },
   {
@@ -222,9 +222,9 @@ const comparisonPairings = [
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/20',
     pairs: [
-      'An Unknown Girl & Half-Caste — cultural identity and self-definition',
-      'Still I Rise & Half-Caste — resilience against prejudice',
-      'If— & Still I Rise — strength of character under pressure',
+      'An Unknown Girl & Half-Caste - cultural identity and self-definition',
+      'Still I Rise & Half-Caste - resilience against prejudice',
+      'If- & Still I Rise - strength of character under pressure',
     ],
   },
   {
@@ -233,9 +233,9 @@ const comparisonPairings = [
     bg: 'bg-purple-500/10',
     border: 'border-purple-500/20',
     pairs: [
-      'Remember & Out, Out— — confronting sudden death',
-      'Disabled & War Photographer — bearing witness to war',
-      'Ozymandias & Sonnet 116 — what endures and what fades',
+      'Remember & Out, Out- - confronting sudden death',
+      'Disabled & War Photographer - bearing witness to war',
+      'Ozymandias & Sonnet 116 - what endures and what fades',
     ],
   },
 ]
@@ -244,22 +244,22 @@ const comparisonPairings = [
 
 const studyPlan = [
   {
-    week: 'Weeks 1–2',
+    week: 'Weeks 1-2',
     title: 'Read the whole anthology',
-    task: "Read all of the prescribed poems aloud twice. Don't analyse yet — just mark the lines that strike you and note your first reaction to each poem.",
+    task: "Read all of the prescribed poems aloud twice. Don't analyse yet - just mark the lines that strike you and note your first reaction to each poem.",
   },
   {
-    week: 'Weeks 3–6',
+    week: 'Weeks 3-6',
     title: 'Deep-dive one poem per session',
     task: 'Work through each poem in turn using the line-by-line interactive viewer. Memorise at least three short quotes per poem and note the key language devices.',
   },
   {
-    week: 'Weeks 7–8',
+    week: 'Weeks 7-8',
     title: 'Build comparison clusters',
     task: 'Group the poems by theme (love, power, childhood, identity, death). For every theme, know two pairings well enough to write about under timed conditions.',
   },
   {
-    week: 'Weeks 9–10',
+    week: 'Weeks 9-10',
     title: 'Practise the anthology question',
     task: 'Write timed responses to past-paper questions. Always link back to the named poem in the question and pick your comparison poem for a clear angle.',
   },
@@ -294,12 +294,12 @@ export default async function EdexcelPoetryAnthologyPage() {
                 Edexcel IGCSE Literature
               </Badge>
               <Badge variant="outline" className="text-[0.65rem]">
-                Paper 1 — Anthology Poetry
+                Paper 1 - Anthology Poetry
               </Badge>
             </div>
             <h1 className="text-heading-lg font-heading text-foreground">Anthology Poetry</h1>
             <p className="text-body-sm text-muted-foreground mt-1 max-w-2xl">
-              The prescribed poems of the Pearson Edexcel IGCSE Literature (4ET1) Anthology — full
+              The prescribed poems of the Pearson Edexcel IGCSE Literature (4ET1) Anthology - full
               line-by-line study guides for the public-domain poems and concise notes for the rest.
             </p>
           </div>
@@ -335,12 +335,12 @@ export default async function EdexcelPoetryAnthologyPage() {
           </li>
           <li>
             the adapted non-fiction texts (&lsquo;Explorers or boys messing about?&rsquo; and
-            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals — always use the
+            &lsquo;Young and dyslexic?&rsquo;) differ from their online originals - always use the
             anthology version when answering Edexcel questions.
           </li>
         </ol>
         <p className="text-body-xs text-muted-foreground">
-          © Pearson Education — quotations on individual set-text pages are short fair-dealing
+          © Pearson Education - quotations on individual set-text pages are short fair-dealing
           extracts under CDPA s.30. The full anthology is available only through Pearson&rsquo;s
           school-licensed editions.
         </p>
@@ -355,7 +355,7 @@ export default async function EdexcelPoetryAnthologyPage() {
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
             13 prescribed poems spanning four centuries, from Shakespeare and Blake to Duffy and
-            Agard. You must know every poem — the exam names one and asks you to compare it with
+            Agard. You must know every poem - the exam names one and asks you to compare it with
             another of your choice.
           </p>
         </div>
@@ -366,7 +366,7 @@ export default async function EdexcelPoetryAnthologyPage() {
             <h2 className="text-sm font-semibold text-foreground">The exam</h2>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Paper 1 — Anthology Poetry (30 marks). You have roughly 45 minutes to compare the named
+            Paper 1 - Anthology Poetry (30 marks). You have roughly 45 minutes to compare the named
             poem with another from the anthology, focusing on language, structure and ideas.
           </p>
         </div>
@@ -445,7 +445,7 @@ export default async function EdexcelPoetryAnthologyPage() {
                     </Badge>
                   ) : (
                     <Badge variant="outline" className="text-[10px] text-muted-foreground">
-                      Study notes only — see textbook for full text
+                      Study notes only - see textbook for full text
                     </Badge>
                   )}
                 </Link>
@@ -498,7 +498,7 @@ export default async function EdexcelPoetryAnthologyPage() {
                   </Badge>
                 ) : (
                   <Badge variant="outline" className="text-[10px] text-muted-foreground">
-                    Study notes only — see textbook for full text
+                    Study notes only - see textbook for full text
                   </Badge>
                 )}
               </div>
@@ -531,7 +531,7 @@ export default async function EdexcelPoetryAnthologyPage() {
               <ul className="space-y-2">
                 {cluster.pairs.map((p) => (
                   <li key={p} className="text-xs text-card-foreground leading-relaxed flex gap-2">
-                    <span className="text-muted-foreground/60 mt-0.5">—</span>
+                    <span className="text-muted-foreground/60 mt-0.5">-</span>
                     <span>{p}</span>
                   </li>
                 ))}

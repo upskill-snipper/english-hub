@@ -111,9 +111,9 @@ const SPECIFIC_SECTIONS: Record<string, string[]> = {
     'Eva Smith / Daisy Renton',
   ],
   Macbeth: [
-    'Act 1 Scene 1–3',
-    'Act 1 Scene 5–7',
-    'Act 2 Scene 1–2 (The Murder)',
+    'Act 1 Scene 1-3',
+    'Act 1 Scene 5-7',
+    'Act 2 Scene 1-2 (The Murder)',
     'Act 3 Scene 4 (Banquet)',
     'Act 5 Scene 1 (Sleepwalking)',
     'Act 5 Scene 5 (Tomorrow Speech)',
@@ -185,10 +185,10 @@ const SPECIFIC_SECTIONS: Record<string, string[]> = {
   ],
   Frankenstein: [
     "Walton's Letters",
-    'Chapters 1–5 (Creation)',
-    "Chapters 11–16 (Creature's Narrative)",
-    'Chapters 17–21 (Pursuit)',
-    'Chapters 22–24 (The Ending)',
+    'Chapters 1-5 (Creation)',
+    "Chapters 11-16 (Creature's Narrative)",
+    'Chapters 17-21 (Pursuit)',
+    'Chapters 22-24 (The Ending)',
     'Victor Frankenstein',
     'The Creature',
     'Playing God',
@@ -2051,7 +2051,7 @@ export default function LessonBuilderDemo() {
       showToast('Lesson plan opened for printing/saving as PDF')
     } catch (err) {
       console.error('PDF generation failed:', err)
-      showToast('Download failed — please try again')
+      showToast('Download failed - please try again')
     }
   }, [generatedPlan])
 
@@ -2080,7 +2080,7 @@ export default function LessonBuilderDemo() {
       showToast('Worksheet opened for printing/saving as PDF')
     } catch (err) {
       console.error('Worksheet generation failed:', err)
-      showToast('Download failed — please try again')
+      showToast('Download failed - please try again')
     }
   }, [generatedPlan])
 
@@ -2120,7 +2120,7 @@ export default function LessonBuilderDemo() {
       showToast('Lesson plan downloaded as Word document')
     } catch (err) {
       console.error('Word lesson generation failed:', err)
-      showToast('Download failed — please try again')
+      showToast('Download failed - please try again')
     }
   }, [generatedPlan])
 
@@ -2149,7 +2149,7 @@ export default function LessonBuilderDemo() {
       showToast('Worksheet downloaded as Word document')
     } catch (err) {
       console.error('Word worksheet generation failed:', err)
-      showToast('Download failed — please try again')
+      showToast('Download failed - please try again')
     }
   }, [generatedPlan])
 

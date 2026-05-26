@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Dialogue — Cambridge IGCSE Narrative Writing',
+    title: 'Dialogue - Cambridge IGCSE Narrative Writing',
     description:
       'Punctuation rules, subtext, the four jobs of dialogue and how to write believable speech for a Cambridge IGCSE short story.',
   },
-  title: 'Dialogue — Cambridge IGCSE Narrative Writing',
+  title: 'Dialogue - Cambridge IGCSE Narrative Writing',
   description:
     'Punctuation rules, subtext, the four jobs of dialogue and how to write believable speech for a Cambridge IGCSE short story.',
   alternates: {
@@ -34,7 +34,7 @@ const punctuationRules = [
     example: '“I’m leaving,” she said. / NOT: “I’m leaving.” She said.',
   },
   {
-    rule: 'If a question or exclamation ends the speech, use ? or ! — then lowercase for the tag.',
+    rule: 'If a question or exclamation ends the speech, use ? or ! - then lowercase for the tag.',
     example: '“Where are you going?” he asked.',
   },
   {
@@ -51,16 +51,16 @@ const fourJobs = [
   {
     job: '1. Reveal character',
     description:
-      'The way a person speaks — vocabulary, rhythm, what they avoid — should be as distinctive as the way they walk.',
+      'The way a person speaks - vocabulary, rhythm, what they avoid - should be as distinctive as the way they walk.',
     example: '“I’d prefer, if it’s all the same, not to sit at the window.”',
     what: 'Formal register, qualifying clause, revealed anxiety about being seen.',
   },
   {
     job: '2. Advance the plot',
     description:
-      'A line of dialogue should move the story forward — a decision made, a secret dropped, a plan changed.',
+      'A line of dialogue should move the story forward - a decision made, a secret dropped, a plan changed.',
     example: '“Fine. I’ll come. But only as far as the bridge.”',
-    what: 'Decision + limit — the compromise pushes the story into its next scene.',
+    what: 'Decision + limit - the compromise pushes the story into its next scene.',
   },
   {
     job: '3. Carry subtext',
@@ -184,7 +184,7 @@ export default async function DialoguePage() {
             <em>exclaimed, uttered, ejaculated, interrogated</em>. Examiners find this exhausting.{' '}
             <em>Said</em> is the correct word 90% of the time. The reader\u2019s eye slides over it.
             Save stronger verbs for moments when the tone needs to shift:{' '}
-            <em>whispered, snapped, muttered</em> — and even then, sparingly.
+            <em>whispered, snapped, muttered</em> - and even then, sparingly.
           </p>
           <p>
             Better still, use an <strong className="text-foreground">action beat</strong> instead of

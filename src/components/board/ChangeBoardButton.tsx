@@ -33,22 +33,22 @@ type ChangeBoardButtonProps = {
  *   the user to /board-select?change=1.
  *
  * Variants:
- *   inline      — compact button suitable for inline placement (default).
- *   menu-item   — full-width row designed for dropdowns / menus.
- *   card        — large card-style block for settings pages.
+ *   inline      - compact button suitable for inline placement (default).
+ *   menu-item   - full-width row designed for dropdowns / menus.
+ *   card        - large card-style block for settings pages.
  */
 export function ChangeBoardButton({ variant = 'inline', className }: ChangeBoardButtonProps) {
   const { board, isHydrated } = useBoard()
   const config = getBoardConfig(board)
   const t = useT()
 
-  // Avoid hydration mismatch — wait for the persisted store to hydrate
+  // Avoid hydration mismatch - wait for the persisted store to hydrate
   // before rendering board-dependent labels.
   if (!isHydrated) {
     return null
   }
 
-  // No board chosen yet — link straight to /board-select.
+  // No board chosen yet - link straight to /board-select.
   if (!config) {
     if (variant === 'card') {
       return (

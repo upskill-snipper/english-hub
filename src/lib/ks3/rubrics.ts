@@ -1,5 +1,5 @@
 /**
- * KS3 marking rubrics — Y7, Y8, Y9 × 4 strands × 4 levels = 48 cells.
+ * KS3 marking rubrics - Y7, Y8, Y9 × 4 strands × 4 levels = 48 cells.
  *
  * Used by:
  *   • /ks3/rubrics (interactive table)
@@ -7,7 +7,7 @@
  *   • EssayFeedbackInline (when marking against a KS3 task)
  *
  * Levels are deliberately neutral / non-punitive: "Below target" not
- * "Failing", "Working towards" not "Weak", etc. — translated phrasings
+ * "Failing", "Working towards" not "Weak", etc. - translated phrasings
  * follow Gulf school-report conventions where "دون المستوى المطلوب"
  * is the standard polite term.
  *

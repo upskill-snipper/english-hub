@@ -75,7 +75,7 @@ function formatWeekRange(startIso: string): string {
   const end = new Date(start)
   end.setDate(end.getDate() + 6)
   const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
-  return `${fmt(start)} – ${fmt(end)}`
+  return `${fmt(start)} - ${fmt(end)}`
 }
 
 function buildReports(): WeeklyReport[] {
@@ -275,7 +275,7 @@ export default function ParentReportsPage() {
                         {t('parent.avg_quiz_score')}
                       </div>
                       <p className="mt-1 text-xl font-bold text-foreground">
-                        {selected.averageScore != null ? `${selected.averageScore}%` : '—'}
+                        {selected.averageScore != null ? `${selected.averageScore}%` : '-'}
                       </p>
                     </div>
                     <div className="rounded-lg border border-border p-3">

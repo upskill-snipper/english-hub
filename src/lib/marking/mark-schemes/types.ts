@@ -31,7 +31,7 @@ export interface BandDescriptor {
 export interface AssessmentObjective {
   /** Canonical AO code, e.g. "AO1". */
   id: string
-  /** Short label, e.g. "AO1 — Read, understand and respond". */
+  /** Short label, e.g. "AO1 - Read, understand and respond". */
   label: string
   /** Long description of what this AO measures. */
   description: string
@@ -63,7 +63,7 @@ export interface QuestionScheme {
 }
 
 /**
- * A full paper mark scheme — e.g. "AQA English Literature Paper 1".
+ * A full paper mark scheme - e.g. "AQA English Literature Paper 1".
  */
 export interface MarkScheme {
   /** Canonical identifier, e.g. "aqa-lit-paper1". */
@@ -140,7 +140,7 @@ export interface MarkingResult {
   aoScores: readonly AOScore[]
   /** What the student did well. */
   strengths: readonly FeedbackItem[]
-  /** Targeted improvements — must be guidance, not rewrites. */
+  /** Targeted improvements - must be guidance, not rewrites. */
   improvements: readonly FeedbackItem[]
   /** 2-3 concrete next-step actions to move up a grade. */
   nextStepsToNextGrade: readonly string[]
@@ -148,7 +148,7 @@ export interface MarkingResult {
   summary: string
   /**
    * Provenance of the grade-boundary model behind {@link predictedGrade}.
-   * Additive/optional — existing consumers may ignore it. Mirrors
+   * Additive/optional - existing consumers may ignore it. Mirrors
    * `GradePrediction.boundarySource` from the grade predictor.
    */
   boundarySource?: string

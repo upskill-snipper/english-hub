@@ -1,5 +1,5 @@
 /**
- * Dynamic course data loader — loads full course data on demand.
+ * Dynamic course data loader - loads full course data on demand.
  * Use `getCourseIndex()` for listing/cards, and `loadCourseById()` for full content.
  */
 
@@ -74,7 +74,7 @@ function getBoardForCourse(courseId: string): string {
   if (courseId.startsWith('edexcel-lit-') || courseId.startsWith('edexcel-lit'))
     return 'edexcel-lit'
 
-  // Edexcel IGCSE Language (Specifications A & B) — must come BEFORE the
+  // Edexcel IGCSE Language (Specifications A & B) - must come BEFORE the
   // generic `edexcel-` rule below, otherwise these IDs route to the wrong
   // board loader and the course player 404s.
   if (courseId.startsWith('edexcel-igcse-')) return 'igcse'

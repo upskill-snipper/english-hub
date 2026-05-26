@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   }
 
   const canonical = buildCanonical(printable.slug)
-  const title = `${printable.title} — Free ${printable.educationalLevel} English printable`
+  const title = `${printable.title} - Free ${printable.educationalLevel} English printable`
   const description = printable.description
   const ogImage = `${SITE_URL}/api/og?title=${encodeURIComponent(printable.title)}`
 

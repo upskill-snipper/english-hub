@@ -19,7 +19,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Conditional mood',
-          note: '"Had he and I but met" — the poem opens with a hypothetical. The speaker imagines a different world in which he and the enemy soldier met in peaceful circumstances. The conditional "had...but" immediately establishes regret.',
+          note: '"Had he and I but met" - the poem opens with a hypothetical. The speaker imagines a different world in which he and the enemy soldier met in peaceful circumstances. The conditional "had...but" immediately establishes regret.',
           color: '#3b82f6',
         },
       ],
@@ -29,7 +29,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Setting',
-          note: 'An "old ancient inn" is a place of fellowship, warmth and community. It is the exact opposite of a battlefield. The redundancy of "old ancient" gives the inn a timeless, folksy quality — a place where ordinary men belong.',
+          note: 'An "old ancient inn" is a place of fellowship, warmth and community. It is the exact opposite of a battlefield. The redundancy of "old ancient" gives the inn a timeless, folksy quality - a place where ordinary men belong.',
           color: '#10b981',
         },
       ],
@@ -39,7 +39,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Colloquial language',
-          note: '"Sat us down to wet" — colloquial for sitting down to have a drink. Hardy writes in the voice of a common soldier, using the plain, unpoetic language of a working man. This is not a general or politician speaking — it is an ordinary person.',
+          note: '"Sat us down to wet" - colloquial for sitting down to have a drink. Hardy writes in the voice of a common soldier, using the plain, unpoetic language of a working man. This is not a general or politician speaking - it is an ordinary person.',
           color: '#10b981',
         },
       ],
@@ -49,7 +49,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Dialect',
-          note: '"Right many a nipperkin" — a nipperkin is a small cup of liquor. The dialect word grounds the speaker in rural, working-class England. The exclamation mark suggests friendliness and warmth — these are men who would have enjoyed each other\'s company.',
+          note: '"Right many a nipperkin" - a nipperkin is a small cup of liquor. The dialect word grounds the speaker in rural, working-class England. The exclamation mark suggests friendliness and warmth - these are men who would have enjoyed each other\'s company.',
           color: '#10b981',
         },
       ],
@@ -60,7 +60,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"But ranged as infantry" — the single word "But" is the poem\'s pivotal turn. Everything before was warm and hypothetical; now reality intrudes. "Ranged as infantry" is military language — impersonal, mechanical. The men are no longer individuals but soldiers arranged in lines.',
+          note: '"But ranged as infantry" - the single word "But" is the poem\'s pivotal turn. Everything before was warm and hypothetical; now reality intrudes. "Ranged as infantry" is military language - impersonal, mechanical. The men are no longer individuals but soldiers arranged in lines.',
           color: '#f59e0b',
         },
       ],
@@ -70,7 +70,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: '"Staring face to face" — the two men look directly at each other. This is crucial: the speaker sees the enemy as a human being with a face, not an abstract threat. The intimacy of the encounter makes the killing personal and deeply troubling.',
+          note: '"Staring face to face" - the two men look directly at each other. This is crucial: the speaker sees the enemy as a human being with a face, not an abstract threat. The intimacy of the encounter makes the killing personal and deeply troubling.',
           color: '#10b981',
         },
       ],
@@ -80,7 +80,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"I shot at him as he at me" — the chiasmus (I/him, he/me) shows perfect symmetry between the two men. They are mirror images of each other. The line\'s matter-of-fact simplicity is devastating — no heroism, no glory, just two men shooting at each other.',
+          note: '"I shot at him as he at me" - the chiasmus (I/him, he/me) shows perfect symmetry between the two men. They are mirror images of each other. The line\'s matter-of-fact simplicity is devastating - no heroism, no glory, just two men shooting at each other.',
           color: '#f59e0b',
         },
       ],
@@ -90,18 +90,18 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Bluntness',
-          note: '"And killed him in his place" — shockingly plain. No euphemism, no poetic dressing. "In his place" means both "where he stood" and suggests that the enemy died in a position that could equally have been the speaker\'s. The simplicity of the killing contrasts horribly with the warmth of stanza 1.',
+          note: '"And killed him in his place" - shockingly plain. No euphemism, no poetic dressing. "In his place" means both "where he stood" and suggests that the enemy died in a position that could equally have been the speaker\'s. The simplicity of the killing contrasts horribly with the warmth of stanza 1.',
           color: '#3b82f6',
         },
       ],
     },
     { text: '' },
     {
-      text: '"I shot him dead because —',
+      text: '"I shot him dead because -',
       annotations: [
         {
           type: 'Key quote',
-          note: '"I shot him dead because —" the dash is the most important piece of punctuation in the poem. The speaker tries to explain why he killed the man and cannot. The dash represents a gap in understanding — a moment of moral confusion that the rest of the stanza tries to fill.',
+          note: '"I shot him dead because -" the dash is the most important piece of punctuation in the poem. The speaker tries to explain why he killed the man and cannot. The dash represents a gap in understanding - a moment of moral confusion that the rest of the stanza tries to fill.',
           color: '#f59e0b',
         },
       ],
@@ -111,7 +111,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Repetition',
-          note: '"Because" is repeated — the speaker is trying to convince himself. "He was my foe" is the official answer, the one the army would give. But the hesitation before it, and the unconvincing elaboration that follows, shows the speaker does not really believe it.',
+          note: '"Because" is repeated - the speaker is trying to convince himself. "He was my foe" is the official answer, the one the army would give. But the hesitation before it, and the unconvincing elaboration that follows, shows the speaker does not really believe it.',
           color: '#a855f7',
         },
       ],
@@ -121,7 +121,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"Just so: my foe of course he was" — the speaker is trying too hard. "Just so", "of course" — these are phrases of self-persuasion, not conviction. The inverted syntax ("my foe of course he was") sounds awkward and forced, as if the words don\'t quite fit. The speaker is reciting a reason he doesn\'t fully believe.',
+          note: '"Just so: my foe of course he was" - the speaker is trying too hard. "Just so", "of course" - these are phrases of self-persuasion, not conviction. The inverted syntax ("my foe of course he was") sounds awkward and forced, as if the words don\'t quite fit. The speaker is reciting a reason he doesn\'t fully believe.',
           color: '#f59e0b',
         },
       ],
@@ -131,7 +131,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Irony',
-          note: '"That\'s clear enough" — but it is not clear at all. The semicolon and "although" immediately undermine the assertion. Nothing about this killing is clear to the speaker. Hardy uses dramatic irony: the reader can see what the speaker is trying to hide from himself.',
+          note: '"That\'s clear enough" - but it is not clear at all. The semicolon and "although" immediately undermine the assertion. Nothing about this killing is clear to the speaker. Hardy uses dramatic irony: the reader can see what the speaker is trying to hide from himself.',
           color: '#a855f7',
         },
       ],
@@ -142,27 +142,27 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Empathy',
-          note: '"He thought he\'d \'list, perhaps" — the speaker imagines the dead man\'s motivations. "\'list" is dialect for "enlist". "Perhaps" shows uncertainty — the speaker is guessing, humanising the enemy by imagining him as a man who made choices, not a faceless threat.',
+          note: '"He thought he\'d \'list, perhaps" - the speaker imagines the dead man\'s motivations. "\'list" is dialect for "enlist". "Perhaps" shows uncertainty - the speaker is guessing, humanising the enemy by imagining him as a man who made choices, not a faceless threat.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'Off-hand like — just as I —',
+      text: 'Off-hand like - just as I -',
       annotations: [
         {
           type: 'Key quote',
-          note: '"Off-hand like — just as I —" is the poem\'s most devastating moment. The dashes surround the terrible recognition: the dead man enlisted for the same casual, unconsidered reasons as the speaker. "Just as I" — they are the same person. The enemy is a mirror.',
+          note: '"Off-hand like - just as I -" is the poem\'s most devastating moment. The dashes surround the terrible recognition: the dead man enlisted for the same casual, unconsidered reasons as the speaker. "Just as I" - they are the same person. The enemy is a mirror.',
           color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'Was out of work — had sold his traps —',
+      text: 'Was out of work - had sold his traps -',
       annotations: [
         {
           type: 'Social commentary',
-          note: '"Out of work — had sold his traps" — "traps" means belongings. The dead man was unemployed and had sold everything he owned. He joined the army not from patriotism but from poverty. Hardy exposes the economic reality behind soldiering: these men kill each other because they are poor.',
+          note: '"Out of work - had sold his traps" - "traps" means belongings. The dead man was unemployed and had sold everything he owned. He joined the army not from patriotism but from poverty. Hardy exposes the economic reality behind soldiering: these men kill each other because they are poor.',
           color: '#3b82f6',
         },
       ],
@@ -172,7 +172,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Anti-war statement',
-          note: '"No other reason why" — no ideology, no hatred, no patriotism. The man died, and the speaker killed, for no meaningful reason at all. The flat, declarative sentence is Hardy\'s quiet indictment of war: men kill strangers because poverty left them no other choice.',
+          note: '"No other reason why" - no ideology, no hatred, no patriotism. The man died, and the speaker killed, for no meaningful reason at all. The flat, declarative sentence is Hardy\'s quiet indictment of war: men kill strangers because poverty left them no other choice.',
           color: '#3b82f6',
         },
       ],
@@ -183,7 +183,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Key quote',
-          note: '"Quaint and curious" is a massive understatement. War is not "quaint" — it is horrific. The speaker uses these mild, almost absurd words because he has no language adequate to describe what he has done. The understatement is more powerful than any outrage could be.',
+          note: '"Quaint and curious" is a massive understatement. War is not "quaint" - it is horrific. The speaker uses these mild, almost absurd words because he has no language adequate to describe what he has done. The understatement is more powerful than any outrage could be.',
           color: '#f59e0b',
         },
       ],
@@ -193,7 +193,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Language',
-          note: '"Fellow" — not "enemy", not "foe", but "fellow". A fellow is an equal, a companion. The word choice reveals what the speaker really thinks: he killed a fellow human being, not an enemy. The colloquial language strips away all military justification.',
+          note: '"Fellow" - not "enemy", not "foe", but "fellow". A fellow is an equal, a companion. The word choice reveals what the speaker really thinks: he killed a fellow human being, not an enemy. The colloquial language strips away all military justification.',
           color: '#10b981',
         },
       ],
@@ -213,7 +213,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Final image',
-          note: '"Half-a-crown" — a small sum of money. The speaker would have given the dead man a coin to help him out, one poor man helping another. Instead, he killed him. The modest, human generosity of "half-a-crown" contrasts devastatingly with the act of killing. The poem ends with this quiet, unbearable irony.',
+          note: '"Half-a-crown" - a small sum of money. The speaker would have given the dead man a coin to help him out, one poor man helping another. Instead, he killed him. The modest, human generosity of "half-a-crown" contrasts devastatingly with the act of killing. The poem ends with this quiet, unbearable irony.',
           color: '#f59e0b',
         },
       ],
@@ -225,122 +225,122 @@ const poem: PoemData = {
     <p>Hardy was an English novelist and poet, best known for novels like <em>Tess of the d'Urbervilles</em> and <em>Far from the Madding Crowd</em>. In later life he turned primarily to poetry. His work is characterised by <strong>pessimism</strong>, sympathy for ordinary people, and a sharp awareness of how <strong>fate</strong> and <strong>circumstance</strong> shape human lives. He was deeply sceptical of institutions, including the military and the church.</p>
 
     <h3>The Boer War (1899-1902)</h3>
-    <p>"The Man He Killed" was written in <strong>1902</strong>, during the Second Boer War in South Africa. Britain fought against Dutch-descended settlers (Boers) for control of territory rich in gold and diamonds. The war was controversial — many in Britain questioned whether it was justified. Hardy was among the sceptics, and this poem reflects his view that ordinary soldiers on both sides were victims of forces they did not understand or control.</p>
+    <p>"The Man He Killed" was written in <strong>1902</strong>, during the Second Boer War in South Africa. Britain fought against Dutch-descended settlers (Boers) for control of territory rich in gold and diamonds. The war was controversial - many in Britain questioned whether it was justified. Hardy was among the sceptics, and this poem reflects his view that ordinary soldiers on both sides were victims of forces they did not understand or control.</p>
 
     <h3>The dramatic monologue</h3>
-    <p>The poem is a <strong>dramatic monologue</strong> — Hardy creates a character distinct from himself. The speaker is an ordinary working-class soldier, not an educated poet. Hardy uses dialect, colloquial language and simple vocabulary to create a convincing voice. The effect is that the anti-war message comes not from an intellectual but from a man who has actually experienced killing — and is struggling to make sense of it.</p>
+    <p>The poem is a <strong>dramatic monologue</strong> - Hardy creates a character distinct from himself. The speaker is an ordinary working-class soldier, not an educated poet. Hardy uses dialect, colloquial language and simple vocabulary to create a convincing voice. The effect is that the anti-war message comes not from an intellectual but from a man who has actually experienced killing - and is struggling to make sense of it.</p>
 
     <h3>Class and poverty</h3>
     <p>Hardy emphasises that both the speaker and the dead man are <strong>poor</strong>. They enlisted because they were unemployed, not from patriotic fervour. This is Hardy's social critique: wars are fought by the working class, who kill each other while the powerful profit. The speaker and his "foe" have more in common with each other than with the people who sent them to fight.</p>
 
     <h3>Hardy and war poetry</h3>
-    <p>This poem predates the First World War by over a decade, but it anticipates the disillusionment of later war poets like <strong>Wilfred Owen</strong> and <strong>Siegfried Sassoon</strong>. Like them, Hardy strips war of its glory and reveals the human cost. Unlike the later poets, Hardy never experienced combat himself — he writes from imaginative sympathy, not personal trauma.</p>
+    <p>This poem predates the First World War by over a decade, but it anticipates the disillusionment of later war poets like <strong>Wilfred Owen</strong> and <strong>Siegfried Sassoon</strong>. Like them, Hardy strips war of its glory and reveals the human cost. Unlike the later poets, Hardy never experienced combat himself - he writes from imaginative sympathy, not personal trauma.</p>
   `,
 
   summary: `Stanza 1 (lines 1-4): The speaker imagines a different world. If he and the dead man had met in an inn instead of on a battlefield, they would have sat down together and shared drinks like friends. The tone is warm, colloquial and folksy.
 
-Stanza 2 (lines 5-8): But in reality they met as enemy soldiers. "Ranged as infantry" — lined up against each other — they stared face to face and shot at each other. The speaker killed his man. The language becomes blunt and matter-of-fact: "I shot at him as he at me, / And killed him in his place."
+Stanza 2 (lines 5-8): But in reality they met as enemy soldiers. "Ranged as infantry" - lined up against each other - they stared face to face and shot at each other. The speaker killed his man. The language becomes blunt and matter-of-fact: "I shot at him as he at me, / And killed him in his place."
 
-Stanza 3 (lines 9-12): The speaker tries to explain why he killed the man. "I shot him dead because — / Because he was my foe." The hesitation (the dash, the repeated "because") reveals that the speaker does not really understand his own action. He tries to convince himself with "Just so: my foe of course he was" but the forced phrasing betrays doubt.
+Stanza 3 (lines 9-12): The speaker tries to explain why he killed the man. "I shot him dead because - / Because he was my foe." The hesitation (the dash, the repeated "because") reveals that the speaker does not really understand his own action. He tries to convince himself with "Just so: my foe of course he was" but the forced phrasing betrays doubt.
 
-Stanza 4 (lines 13-16): The speaker imagines the dead man's life. He probably enlisted "off-hand like — just as I" — casually, without thinking. He was out of work and had sold his belongings. He joined the army because he had no money, not because of patriotism. "No other reason why" — the killing was pointless.
+Stanza 4 (lines 13-16): The speaker imagines the dead man's life. He probably enlisted "off-hand like - just as I" - casually, without thinking. He was out of work and had sold his belongings. He joined the army because he had no money, not because of patriotism. "No other reason why" - the killing was pointless.
 
-Stanza 5 (lines 17-20): The speaker reflects on the absurdity of war. "Yes; quaint and curious war is!" — a devastating understatement. You kill a "fellow" you would have bought a drink, or lent money to. The poem returns to the inn of stanza 1, completing a painful circle.
+Stanza 5 (lines 17-20): The speaker reflects on the absurdity of war. "Yes; quaint and curious war is!" - a devastating understatement. You kill a "fellow" you would have bought a drink, or lent money to. The poem returns to the inn of stanza 1, completing a painful circle.
 
-Overall meaning: The poem is a quiet, devastating anti-war statement. Hardy shows that enemy soldiers are ordinary men, identical in their poverty and circumstances. The speaker cannot justify the killing because there is no justification — war forces men to kill their equals for no reason they can understand.`,
+Overall meaning: The poem is a quiet, devastating anti-war statement. Hardy shows that enemy soldiers are ordinary men, identical in their poverty and circumstances. The speaker cannot justify the killing because there is no justification - war forces men to kill their equals for no reason they can understand.`,
 
-  formAndStructure: `Form: Dramatic monologue in five quatrains with a regular ABAB rhyme scheme. The poem is enclosed in quotation marks throughout — the speaker is literally being "quoted", as if giving testimony or telling his story to someone in a pub.
+  formAndStructure: `Form: Dramatic monologue in five quatrains with a regular ABAB rhyme scheme. The poem is enclosed in quotation marks throughout - the speaker is literally being "quoted", as if giving testimony or telling his story to someone in a pub.
 
-Rhyme scheme: ABAB in each stanza — simple, regular, predictable. The neatness of the rhyme contrasts with the moral confusion of the content. The form is orderly; the speaker's thoughts are not.
+Rhyme scheme: ABAB in each stanza - simple, regular, predictable. The neatness of the rhyme contrasts with the moral confusion of the content. The form is orderly; the speaker's thoughts are not.
 
-Metre: Roughly iambic, alternating tetrameter and trimeter (8 and 6 syllables per line). This is ballad metre — the same form used for folk songs and storytelling. Hardy deliberately uses the simplest possible verse form for the most complex possible moral question.
+Metre: Roughly iambic, alternating tetrameter and trimeter (8 and 6 syllables per line). This is ballad metre - the same form used for folk songs and storytelling. Hardy deliberately uses the simplest possible verse form for the most complex possible moral question.
 
-Colloquial voice: The poem is written in dialect and colloquial language — "nipperkin", "'list", "off-hand like", "traps", "half-a-crown". This creates the illusion of a real person speaking. The unpoetic language makes the anti-war message more powerful because it comes from experience, not theory.
+Colloquial voice: The poem is written in dialect and colloquial language - "nipperkin", "'list", "off-hand like", "traps", "half-a-crown". This creates the illusion of a real person speaking. The unpoetic language makes the anti-war message more powerful because it comes from experience, not theory.
 
-Structure — five movements:
-• Stanza 1: The hypothetical — what might have been (the inn).
-• Stanza 2: The reality — what happened (the killing).
-• Stanza 3: The attempted justification — "because he was my foe".
-• Stanza 4: The identification — he was just like me.
-• Stanza 5: The conclusion — war is "quaint and curious".
+Structure - five movements:
+• Stanza 1: The hypothetical - what might have been (the inn).
+• Stanza 2: The reality - what happened (the killing).
+• Stanza 3: The attempted justification - "because he was my foe".
+• Stanza 4: The identification - he was just like me.
+• Stanza 5: The conclusion - war is "quaint and curious".
 
-Dashes: The poem's most important punctuation marks are dashes, especially in stanza 3 ("I shot him dead because —") and stanza 4 ("Off-hand like — just as I —"). These represent the speaker's difficulty in articulating what he feels. The dashes are gaps in understanding — places where language fails.
+Dashes: The poem's most important punctuation marks are dashes, especially in stanza 3 ("I shot him dead because -") and stanza 4 ("Off-hand like - just as I -"). These represent the speaker's difficulty in articulating what he feels. The dashes are gaps in understanding - places where language fails.
 
 Circular structure: The poem begins and ends with the image of meeting at an inn/bar. This circularity traps the speaker in his dilemma: he cannot escape the fact that he killed a man who should have been his friend.
 
-Tone: Conversational, confused, regretful, understated. The speaker is not angry — he is bewildered. His quietness is more affecting than any outrage.`,
+Tone: Conversational, confused, regretful, understated. The speaker is not angry - he is bewildered. His quietness is more affecting than any outrage.`,
 
   keyQuotes: [
     {
       quote: 'Had he and I but met / By some old ancient inn',
       analysis:
-        'The conditional mood ("Had...but") establishes a world that might have been. The "old ancient inn" is a place of community and fellowship — the opposite of a battlefield. Hardy uses the warmth of this imagined meeting to make the reality of the killing more devastating. The redundancy of "old ancient" gives the inn a timeless quality, as if friendship between such men is the natural state and war the aberration.',
+        'The conditional mood ("Had...but") establishes a world that might have been. The "old ancient inn" is a place of community and fellowship - the opposite of a battlefield. Hardy uses the warmth of this imagined meeting to make the reality of the killing more devastating. The redundancy of "old ancient" gives the inn a timeless quality, as if friendship between such men is the natural state and war the aberration.',
       themes: ['Fellowship', 'War vs peace', 'Hypothetical'],
       analysisAr:
-        'صيغةُ الشرط ("Had…but") تُؤسّس عالماً كان يمكن أن يكون. و"old ancient inn" مكانُ تجمّعٍ وأُلفة — نقيضُ ميدان القتال. يستعمل Hardy دفءَ هذا اللقاء المُتخيَّل ليجعل واقعَ القتل أشدّ فجاعة. والإطناب في "old ancient" يكسب الـ inn طابعاً متجاوزاً للزمن، كأنّ صداقةَ مثل هذين الرجلين هي الأصل وأنّ الحرب طارئٌ غريب.',
+        'صيغةُ الشرط ("Had…but") تُؤسّس عالماً كان يمكن أن يكون. و"old ancient inn" مكانُ تجمّعٍ وأُلفة - نقيضُ ميدان القتال. يستعمل Hardy دفءَ هذا اللقاء المُتخيَّل ليجعل واقعَ القتل أشدّ فجاعة. والإطناب في "old ancient" يكسب الـ inn طابعاً متجاوزاً للزمن، كأنّ صداقةَ مثل هذين الرجلين هي الأصل وأنّ الحرب طارئٌ غريب.',
       themesAr: ['الأُخوّة', 'الحرب في مقابل السلم', 'الافتراض'],
     },
     {
       quote: 'I shot at him as he at me, / And killed him in his place',
       analysis:
-        'The chiasmus ("I...him" / "he...me") creates perfect symmetry — the two men are interchangeable. "Killed him in his place" is chillingly blunt. The matter-of-fact tone is more powerful than any emotional outburst would be. Hardy lets the act speak for itself.',
+        'The chiasmus ("I...him" / "he...me") creates perfect symmetry - the two men are interchangeable. "Killed him in his place" is chillingly blunt. The matter-of-fact tone is more powerful than any emotional outburst would be. Hardy lets the act speak for itself.',
       themes: ['Symmetry', 'Bluntness', 'Killing'],
       analysisAr:
-        'الـ chiasmus ("I…him" / "he…me") يُولّد تناظراً تامّاً — الرجلان قابلان للتبادل. وعبارة "killed him in his place" مباشرةٌ بقسوة. النبرةُ التقريريّة أشدّ وقعاً من أيّ انفعالٍ عاطفيّ. يدع Hardy الفعلَ يتكلّم عن نفسه.',
+        'الـ chiasmus ("I…him" / "he…me") يُولّد تناظراً تامّاً - الرجلان قابلان للتبادل. وعبارة "killed him in his place" مباشرةٌ بقسوة. النبرةُ التقريريّة أشدّ وقعاً من أيّ انفعالٍ عاطفيّ. يدع Hardy الفعلَ يتكلّم عن نفسه.',
       themesAr: ['التناظر', 'المباشرة', 'القتل'],
     },
     {
-      quote: 'I shot him dead because — / Because he was my foe',
+      quote: 'I shot him dead because - / Because he was my foe',
       analysis:
-        'The dash after "because" is the poem\'s moral crisis. The speaker reaches for a reason and finds... a pause. When the reason comes — "Because he was my foe" — it sounds hollow. The repetition of "because" reveals a man trying to convince himself. The official justification ("foe") feels like borrowed language, not personal conviction.',
+        'The dash after "because" is the poem\'s moral crisis. The speaker reaches for a reason and finds... a pause. When the reason comes - "Because he was my foe" - it sounds hollow. The repetition of "because" reveals a man trying to convince himself. The official justification ("foe") feels like borrowed language, not personal conviction.',
       themes: ['Justification', 'Doubt', 'Language'],
       analysisAr:
-        'الشَّرَطةُ بعد "because" هي الأزمةُ الأخلاقيّة للقصيدة. يمدّ المتكلّمُ يدَه باحثاً عن سبب فيجد… توقّفاً. وحين يأتي السبب — "Because he was my foe" — يبدو أجوف. وتكرارُ "because" يكشف رجلاً يحاول إقناع نفسه. والمبرّر الرسميّ ("foe") يبدو لغةً مُستعارة لا قناعةً شخصيّة.',
+        'الشَّرَطةُ بعد "because" هي الأزمةُ الأخلاقيّة للقصيدة. يمدّ المتكلّمُ يدَه باحثاً عن سبب فيجد… توقّفاً. وحين يأتي السبب - "Because he was my foe" - يبدو أجوف. وتكرارُ "because" يكشف رجلاً يحاول إقناع نفسه. والمبرّر الرسميّ ("foe") يبدو لغةً مُستعارة لا قناعةً شخصيّة.',
       themesAr: ['التبرير', 'الشكّ', 'اللغة'],
     },
     {
       quote: "Just so: my foe of course he was; / That's clear enough; although",
       analysis:
-        'Every phrase here undermines itself. "Just so" and "of course" are phrases of over-insistence — the speaker protests too much. "That\'s clear enough" is immediately contradicted by "although". Hardy builds the stanza from a series of self-corrections, showing a mind that cannot settle on what it believes.',
+        'Every phrase here undermines itself. "Just so" and "of course" are phrases of over-insistence - the speaker protests too much. "That\'s clear enough" is immediately contradicted by "although". Hardy builds the stanza from a series of self-corrections, showing a mind that cannot settle on what it believes.',
       themes: ['Self-persuasion', 'Irony', 'Confusion'],
       analysisAr:
-        'كلُّ عبارةٍ هنا تنقض نفسها. "Just so" و"of course" عباراتُ توكيدٍ مفرط — يحتجّ المتكلّمُ أكثر ممّا ينبغي. و"That\'s clear enough" تنقضها فوراً "although". يبني Hardy المقطعَ من سلسلةٍ من التصحيحات الذاتيّة، فيُظهر ذهناً لا يستقرّ على ما يعتقده.',
+        'كلُّ عبارةٍ هنا تنقض نفسها. "Just so" و"of course" عباراتُ توكيدٍ مفرط - يحتجّ المتكلّمُ أكثر ممّا ينبغي. و"That\'s clear enough" تنقضها فوراً "although". يبني Hardy المقطعَ من سلسلةٍ من التصحيحات الذاتيّة، فيُظهر ذهناً لا يستقرّ على ما يعتقده.',
       themesAr: ['إقناع الذات', 'المفارقة', 'الحيرة'],
     },
     {
-      quote: 'Off-hand like — just as I —',
+      quote: 'Off-hand like - just as I -',
       analysis:
-        'The most devastating recognition in the poem. "Just as I" — the dead man joined the army for exactly the same reasons as the speaker. They are the same person. The dashes surrounding this recognition mark it as a moment of painful clarity. The casual "off-hand like" makes it worse: neither man thought carefully about enlisting, and now one is dead.',
+        'The most devastating recognition in the poem. "Just as I" - the dead man joined the army for exactly the same reasons as the speaker. They are the same person. The dashes surrounding this recognition mark it as a moment of painful clarity. The casual "off-hand like" makes it worse: neither man thought carefully about enlisting, and now one is dead.',
       themes: ['Mirror image', 'Chance', 'Identification'],
       analysisAr:
-        'أشدّ لحظات الاعتراف وقعاً في القصيدة. "Just as I" — التحق القتيلُ بالجيش للأسباب نفسها بالضبط التي التحق بها المتكلّم. هما الرجل نفسه. والشَّرَطتان حول هذا الاعتراف تُؤشّران لحظةَ صفاءٍ موجع. وعبارة "off-hand like" العفويّة تزيد الأمرَ سوءاً: لم يُفكّر أيٌّ منهما مَلِيّاً قبل التطوّع، وها أحدهما قتيل.',
+        'أشدّ لحظات الاعتراف وقعاً في القصيدة. "Just as I" - التحق القتيلُ بالجيش للأسباب نفسها بالضبط التي التحق بها المتكلّم. هما الرجل نفسه. والشَّرَطتان حول هذا الاعتراف تُؤشّران لحظةَ صفاءٍ موجع. وعبارة "off-hand like" العفويّة تزيد الأمرَ سوءاً: لم يُفكّر أيٌّ منهما مَلِيّاً قبل التطوّع، وها أحدهما قتيل.',
       themesAr: ['الصورة المرآويّة', 'الصُّدفة', 'التماثل'],
     },
     {
-      quote: 'Was out of work — had sold his traps — / No other reason why',
+      quote: 'Was out of work - had sold his traps - / No other reason why',
       analysis:
-        'The dead man\'s motivation is revealed: poverty. "Sold his traps" (belongings) means he had nothing left. "No other reason why" is Hardy\'s social critique — men enlist not from patriotism but from economic desperation. The killing is therefore doubly meaningless: not even ideology drove it, just poverty.',
+        'The dead man\'s motivation is revealed: poverty. "Sold his traps" (belongings) means he had nothing left. "No other reason why" is Hardy\'s social critique - men enlist not from patriotism but from economic desperation. The killing is therefore doubly meaningless: not even ideology drove it, just poverty.',
       themes: ['Poverty', 'Social critique', 'Meaninglessness'],
       analysisAr:
-        'تنكشف دوافعُ القتيل: الفقر. "Sold his traps" (متاعَه) تعني أنّه لم يبقَ في يده شيء. و"No other reason why" هي رسالةُ Hardy الاجتماعيّة — يتطوّع الرجالُ لا من وطنيّة بل من يأسٍ اقتصاديّ. فالقتلُ إذن مُضاعَفُ العبث: ليست عقيدةٌ هي التي دفعت إليه، إنّما الفقر فحسب.',
+        'تنكشف دوافعُ القتيل: الفقر. "Sold his traps" (متاعَه) تعني أنّه لم يبقَ في يده شيء. و"No other reason why" هي رسالةُ Hardy الاجتماعيّة - يتطوّع الرجالُ لا من وطنيّة بل من يأسٍ اقتصاديّ. فالقتلُ إذن مُضاعَفُ العبث: ليست عقيدةٌ هي التي دفعت إليه، إنّما الفقر فحسب.',
       themesAr: ['الفقر', 'النقد الاجتماعيّ', 'العبث'],
     },
     {
       quote: 'Yes; quaint and curious war is!',
       analysis:
-        'A masterpiece of understatement. "Quaint and curious" are the mildest possible adjectives for the horror of war. The speaker has no adequate language for what he has experienced. The understatement contains enormous suppressed emotion — the gap between what he says and what he feels is the poem\'s tragedy.',
+        'A masterpiece of understatement. "Quaint and curious" are the mildest possible adjectives for the horror of war. The speaker has no adequate language for what he has experienced. The understatement contains enormous suppressed emotion - the gap between what he says and what he feels is the poem\'s tragedy.',
       themes: ['Understatement', 'Inadequacy of language', 'War'],
       analysisAr:
-        'تحفةٌ في التهوين. "Quaint and curious" أخفّ ما يمكن من النعوت لهَول الحرب. لا يجد المتكلّمُ لغةً كافية لما عاشه. والتهوينُ يحتوي عاطفةً مكبوتةً هائلة — والمسافةُ بين ما يقوله وما يشعر به هي مأساةُ القصيدة.',
+        'تحفةٌ في التهوين. "Quaint and curious" أخفّ ما يمكن من النعوت لهَول الحرب. لا يجد المتكلّمُ لغةً كافية لما عاشه. والتهوينُ يحتوي عاطفةً مكبوتةً هائلة - والمسافةُ بين ما يقوله وما يشعر به هي مأساةُ القصيدة.',
       themesAr: ['التهوين', 'قصور اللغة', 'الحرب'],
     },
     {
       quote: "You shoot a fellow down / You'd treat if met where any bar is",
       analysis:
-        'The word "fellow" is crucial — not "enemy" or "foe" but "fellow", meaning an equal, a companion. The speaker reveals his true view: the man he killed was not a foe but a fellow. The return to the bar/inn of stanza 1 completes the poem\'s circle and makes the waste of the killing inescapable.',
+        'The word "fellow" is crucial - not "enemy" or "foe" but "fellow", meaning an equal, a companion. The speaker reveals his true view: the man he killed was not a foe but a fellow. The return to the bar/inn of stanza 1 completes the poem\'s circle and makes the waste of the killing inescapable.',
       themes: ['Fellowship', 'Circular structure', 'Waste'],
       analysisAr:
-        'كلمة "fellow" محوريّة — لا "enemy" ولا "foe"، بل "fellow" بمعنى الندّ والرفيق. يكشف المتكلّمُ رأيَه الحقيقيّ: الرجل الذي قتله لم يكن عدوّاً بل رفيقاً. والعودةُ إلى الحانة/الـ inn من المقطع الأوّل تُغلق دائرةَ القصيدة وتجعل هدرَ القتل لا مفرّ منه.',
+        'كلمة "fellow" محوريّة - لا "enemy" ولا "foe"، بل "fellow" بمعنى الندّ والرفيق. يكشف المتكلّمُ رأيَه الحقيقيّ: الرجل الذي قتله لم يكن عدوّاً بل رفيقاً. والعودةُ إلى الحانة/الـ inn من المقطع الأوّل تُغلق دائرةَ القصيدة وتجعل هدرَ القتل لا مفرّ منه.',
       themesAr: ['الأُخوّة', 'البنية الدائريّة', 'الهدر'],
     },
   ],
@@ -348,12 +348,12 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
   languageDevices: [
     {
       device: 'Dramatic monologue',
-      example: 'The entire poem in quotation marks — "Had he and I but met..."',
+      example: 'The entire poem in quotation marks - "Had he and I but met..."',
       effect:
-        'Hardy creates a character distinct from himself — an ordinary, uneducated soldier. The quotation marks frame the poem as testimony, as if the speaker is telling his story aloud (perhaps in the very pub he mentions). This makes the anti-war message more credible: it comes from direct experience, not intellectual argument.',
+        'Hardy creates a character distinct from himself - an ordinary, uneducated soldier. The quotation marks frame the poem as testimony, as if the speaker is telling his story aloud (perhaps in the very pub he mentions). This makes the anti-war message more credible: it comes from direct experience, not intellectual argument.',
       lineRef: 0,
       effectAr:
-        'يخلق Hardy شخصيّةً مغايرة لنفسه — جنديّاً عاديّاً غير مثقّف. وعلامتا الاقتباس تُؤطّران القصيدةَ شهادةً، كأنّ المتكلّمَ يروي قصّته بصوتٍ مسموع (ربّما في الحانة التي يذكرها). وهذا يكسب رسالةَ القصيدة المعادية للحرب مصداقيّةً أكبر: تأتي من تجربةٍ مباشرة لا من حُجّةٍ فكريّة.',
+        'يخلق Hardy شخصيّةً مغايرة لنفسه - جنديّاً عاديّاً غير مثقّف. وعلامتا الاقتباس تُؤطّران القصيدةَ شهادةً، كأنّ المتكلّمَ يروي قصّته بصوتٍ مسموع (ربّما في الحانة التي يذكرها). وهذا يكسب رسالةَ القصيدة المعادية للحرب مصداقيّةً أكبر: تأتي من تجربةٍ مباشرة لا من حُجّةٍ فكريّة.',
     },
     {
       device: 'Colloquial diction',
@@ -366,12 +366,12 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
     },
     {
       device: 'Dashes (caesura)',
-      example: 'I shot him dead because — / Off-hand like — just as I —',
+      example: 'I shot him dead because - / Off-hand like - just as I -',
       effect:
-        'The dashes represent gaps in the speaker\'s understanding. They are moments where thought breaks down, where the speaker cannot complete his sentence or his reasoning. The dash after "because —" is the poem\'s central moral crisis: the speaker reaches for a reason and finds silence.',
+        'The dashes represent gaps in the speaker\'s understanding. They are moments where thought breaks down, where the speaker cannot complete his sentence or his reasoning. The dash after "because -" is the poem\'s central moral crisis: the speaker reaches for a reason and finds silence.',
       lineRef: 10,
       effectAr:
-        'الشَّرَطاتُ تُمثّل ثغراتٍ في فهم المتكلّم. لحظاتٌ ينهار فيها التفكير، حيث يعجز المتكلّمُ عن إكمال جملته أو منطقه. والشَّرَطةُ بعد "because —" هي الأزمةُ الأخلاقيّة المحوريّة للقصيدة: يمدّ المتكلّمُ يدَه باحثاً عن سببٍ فيجد صمتاً.',
+        'الشَّرَطاتُ تُمثّل ثغراتٍ في فهم المتكلّم. لحظاتٌ ينهار فيها التفكير، حيث يعجز المتكلّمُ عن إكمال جملته أو منطقه. والشَّرَطةُ بعد "because -" هي الأزمةُ الأخلاقيّة المحوريّة للقصيدة: يمدّ المتكلّمُ يدَه باحثاً عن سببٍ فيجد صمتاً.',
     },
     {
       device: 'Chiasmus / Symmetry',
@@ -386,71 +386,71 @@ Tone: Conversational, confused, regretful, understated. The speaker is not angry
       device: 'Understatement / Litotes',
       example: 'Yes; quaint and curious war is!',
       effect:
-        'Calling war "quaint and curious" is a radical understatement. The gap between the mild words and the terrible reality creates an irony that is more devastating than outrage. The speaker\'s inability to find adequate words IS the point — the experience has exceeded his language.',
+        'Calling war "quaint and curious" is a radical understatement. The gap between the mild words and the terrible reality creates an irony that is more devastating than outrage. The speaker\'s inability to find adequate words IS the point - the experience has exceeded his language.',
       lineRef: 19,
       effectAr:
-        'وصفُ الحرب بـ"quaint and curious" تهوينٌ راديكاليّ. والمسافةُ بين الكلمات اللطيفة والواقع المرعب تُولّد مفارقةً أشدّ وقعاً من أيّ غضب. وعجزُ المتكلّم عن إيجاد الكلمات الكافية هو المقصد — التجربةُ تجاوزت لغتَه.',
+        'وصفُ الحرب بـ"quaint and curious" تهوينٌ راديكاليّ. والمسافةُ بين الكلمات اللطيفة والواقع المرعب تُولّد مفارقةً أشدّ وقعاً من أيّ غضب. وعجزُ المتكلّم عن إيجاد الكلمات الكافية هو المقصد - التجربةُ تجاوزت لغتَه.',
     },
     {
       device: 'Circular structure',
       example: 'inn (stanza 1) → bar (stanza 5)',
       effect:
-        'The poem begins and ends with the image of sharing a drink. The circularity traps the speaker and the reader in the central paradox: war makes enemies of men who should be friends. The return to the bar is not comforting — it is a reminder of what has been destroyed.',
+        'The poem begins and ends with the image of sharing a drink. The circularity traps the speaker and the reader in the central paradox: war makes enemies of men who should be friends. The return to the bar is not comforting - it is a reminder of what has been destroyed.',
       lineRef: 21,
       effectAr:
-        'تبدأ القصيدة وتنتهي بصورة احتساء الشراب معاً. والبنيةُ الدائريّة تحبس المتكلّمَ والقارئ في المفارقة المحوريّة: تجعل الحربُ أعداءً من رجالٍ كان ينبغي أن يكونوا أصدقاء. والعودةُ إلى الحانة ليست مواسيةً — بل تذكيرٌ بما قد دُمِّر.',
+        'تبدأ القصيدة وتنتهي بصورة احتساء الشراب معاً. والبنيةُ الدائريّة تحبس المتكلّمَ والقارئ في المفارقة المحوريّة: تجعل الحربُ أعداءً من رجالٍ كان ينبغي أن يكونوا أصدقاء. والعودةُ إلى الحانة ليست مواسيةً - بل تذكيرٌ بما قد دُمِّر.',
     },
   ],
 
   contextAr: `
-    <h3>Thomas Hardy (1840–1928)</h3>
+    <h3>Thomas Hardy (1840-1928)</h3>
     <p>روائيّ وشاعر إنجليزيّ، اشتُهر بروايات مثل <em>Tess of the d\'Urbervilles</em> و<em>Far from the Madding Crowd</em>. وفي أواخر حياته انصرف بالأكثر إلى الشعر. ويتميّز عمله بـ<strong>التشاؤم</strong> والتعاطف مع عامّة الناس والوعي الحادّ بكيفيّة تشكيل <strong>القَدَر</strong> و<strong>الظروف</strong> لحيوات البشر. كان شديد الارتياب من المؤسّسات، بما فيها الجيشُ والكنيسة.</p>
 
-    <h3>حرب البوير (1899–1902)</h3>
-    <p>كُتبت "The Man He Killed" سنة <strong>1902</strong>، في غمار حرب البوير الثانية في جنوب أفريقيا. حاربت بريطانيا مستوطنين من أصلٍ هولنديّ (Boers) للسيطرة على أراضٍ غنيّةٍ بالذهب والماس. كانت الحربُ مثارَ جدل — تساءل كثيرٌ من البريطانيّين عن شرعيّتها. وكان Hardy من المرتابين، وتعكس هذه القصيدة قناعته بأنّ الجنود العاديّين على الجانبين كانوا ضحايا لقوى لا يفهمونها ولا يسيطرون عليها.</p>
+    <h3>حرب البوير (1899-1902)</h3>
+    <p>كُتبت "The Man He Killed" سنة <strong>1902</strong>، في غمار حرب البوير الثانية في جنوب أفريقيا. حاربت بريطانيا مستوطنين من أصلٍ هولنديّ (Boers) للسيطرة على أراضٍ غنيّةٍ بالذهب والماس. كانت الحربُ مثارَ جدل - تساءل كثيرٌ من البريطانيّين عن شرعيّتها. وكان Hardy من المرتابين، وتعكس هذه القصيدة قناعته بأنّ الجنود العاديّين على الجانبين كانوا ضحايا لقوى لا يفهمونها ولا يسيطرون عليها.</p>
 
     <h3>المونولوغ الدراميّ</h3>
-    <p>القصيدة <strong>مونولوغٌ دراميّ</strong> — يخلق Hardy شخصيّةً مغايرة لنفسه. المتكلّم جنديٌّ عاديّ من الطبقة العاملة، لا شاعرٌ مثقّف. يستعمل Hardy اللهجةَ والعاميّة والمفردات البسيطة ليصنع صوتاً مُقنعاً. والأثر: تأتي الرسالةُ المعادية للحرب لا من مثقّفٍ بل من رجلٍ خَبِر القتلَ فعلاً — ويُكافح ليفهم ما حدث.</p>
+    <p>القصيدة <strong>مونولوغٌ دراميّ</strong> - يخلق Hardy شخصيّةً مغايرة لنفسه. المتكلّم جنديٌّ عاديّ من الطبقة العاملة، لا شاعرٌ مثقّف. يستعمل Hardy اللهجةَ والعاميّة والمفردات البسيطة ليصنع صوتاً مُقنعاً. والأثر: تأتي الرسالةُ المعادية للحرب لا من مثقّفٍ بل من رجلٍ خَبِر القتلَ فعلاً - ويُكافح ليفهم ما حدث.</p>
 
     <h3>الطبقة والفقر</h3>
     <p>يُؤكّد Hardy أنّ المتكلّم والقتيل كليهما <strong>فقيران</strong>. تطوّعا لأنّهما كانا بلا عمل، لا من حماسٍ وطنيّ. وهذا نقدُ Hardy الاجتماعيّ: تُخاض الحروب من قِبل الطبقة العاملة، التي يقتل أبناؤها بعضُهم بعضاً فيما يربح الأقوياء. للمتكلّم و"foe"-ه قاسمٌ مشترك أعظم ممّا يجمعهما بمن أرسلهما إلى القتال.</p>
 
     <h3>Hardy وشعر الحرب</h3>
-    <p>تسبق هذه القصيدةُ الحربَ العالميّة الأولى بأكثر من عَقد، لكنّها تستبق خيبةَ شعراء الحرب المتأخّرين مثل <strong>Wilfred Owen</strong> و<strong>Siegfried Sassoon</strong>. مثلهم يجرّد Hardy الحربَ من بريقها ويكشف كلفتها الإنسانيّة. لكنّه على خلافهم لم يخض القتالَ بنفسه — يكتب من تعاطفٍ خياليّ لا من صدمةٍ شخصيّة.</p>
+    <p>تسبق هذه القصيدةُ الحربَ العالميّة الأولى بأكثر من عَقد، لكنّها تستبق خيبةَ شعراء الحرب المتأخّرين مثل <strong>Wilfred Owen</strong> و<strong>Siegfried Sassoon</strong>. مثلهم يجرّد Hardy الحربَ من بريقها ويكشف كلفتها الإنسانيّة. لكنّه على خلافهم لم يخض القتالَ بنفسه - يكتب من تعاطفٍ خياليّ لا من صدمةٍ شخصيّة.</p>
   `,
 
-  summaryAr: `المقطع الأوّل (السطور 1–4): يتخيّل المتكلّمُ عالماً مختلفاً. لو كان قد لقي القتيلَ في حانةٍ بدل ميدانٍ، لجلسا معاً يحتسيان الشرابَ صديقَين. النبرةُ دافئة، عاميّة، شعبيّة.
+  summaryAr: `المقطع الأوّل (السطور 1-4): يتخيّل المتكلّمُ عالماً مختلفاً. لو كان قد لقي القتيلَ في حانةٍ بدل ميدانٍ، لجلسا معاً يحتسيان الشرابَ صديقَين. النبرةُ دافئة، عاميّة، شعبيّة.
 
-المقطع الثاني (السطور 5–8): لكنّهما في الواقع التقيا جنديَّين عدوّين. "Ranged as infantry" — اصطفّا واحداً في وجه الآخر — ثمّ تبادلا النظراتِ وتبادلا الرصاص. قَتل المتكلّمُ خصمَه. تصير اللغةُ مباشرةً تقريريّة: "I shot at him as he at me, / And killed him in his place."
+المقطع الثاني (السطور 5-8): لكنّهما في الواقع التقيا جنديَّين عدوّين. "Ranged as infantry" - اصطفّا واحداً في وجه الآخر - ثمّ تبادلا النظراتِ وتبادلا الرصاص. قَتل المتكلّمُ خصمَه. تصير اللغةُ مباشرةً تقريريّة: "I shot at him as he at me, / And killed him in his place."
 
-المقطع الثالث (السطور 9–12): يحاول المتكلّمُ أن يُفسّر لماذا قتل الرجل. "I shot him dead because — / Because he was my foe." التردّد (الشَّرَطةُ، تكرار "because") يكشف أنّ المتكلّمَ لا يفهم فعلَه حقّاً. يحاول إقناع نفسه بـ"Just so: my foe of course he was" لكنّ القهر في الصياغة يخون الشكّ.
+المقطع الثالث (السطور 9-12): يحاول المتكلّمُ أن يُفسّر لماذا قتل الرجل. "I shot him dead because - / Because he was my foe." التردّد (الشَّرَطةُ، تكرار "because") يكشف أنّ المتكلّمَ لا يفهم فعلَه حقّاً. يحاول إقناع نفسه بـ"Just so: my foe of course he was" لكنّ القهر في الصياغة يخون الشكّ.
 
-المقطع الرابع (السطور 13–16): يتخيّل المتكلّمُ حياةَ القتيل. الأرجح أنّه تطوّع "off-hand like — just as I" — على عجلٍ بلا تفكير. كان عاطلاً وقد باع متاعه. التحق بالجيش لأنّه بلا مال، لا من وطنيّة. "No other reason why" — القتلُ بلا معنى.
+المقطع الرابع (السطور 13-16): يتخيّل المتكلّمُ حياةَ القتيل. الأرجح أنّه تطوّع "off-hand like - just as I" - على عجلٍ بلا تفكير. كان عاطلاً وقد باع متاعه. التحق بالجيش لأنّه بلا مال، لا من وطنيّة. "No other reason why" - القتلُ بلا معنى.
 
-المقطع الخامس (السطور 17–20): يتأمّل المتكلّمُ عبثيّة الحرب. "Yes; quaint and curious war is!" — تهوينٌ موجع. تقتل "fellow" كنتَ ستشتري له شراباً أو تُسلفه قطعةَ نقد. وتعود القصيدةُ إلى الـ inn من المقطع الأوّل، فتُكمل دائرةً موجعة.
+المقطع الخامس (السطور 17-20): يتأمّل المتكلّمُ عبثيّة الحرب. "Yes; quaint and curious war is!" - تهوينٌ موجع. تقتل "fellow" كنتَ ستشتري له شراباً أو تُسلفه قطعةَ نقد. وتعود القصيدةُ إلى الـ inn من المقطع الأوّل، فتُكمل دائرةً موجعة.
 
-المعنى الإجماليّ: القصيدة بيانٌ هادئٌ موجع ضدّ الحرب. يُري Hardy أنّ الجنود الأعداء رجالٌ عاديّون، متطابقون في فقرهم وظروفهم. ولا يقدر المتكلّمُ على تبرير القتل لأنّه لا تبريرَ — تُجبر الحربُ الرجالَ على قتل أمثالهم بلا سببٍ يفهمونه.`,
+المعنى الإجماليّ: القصيدة بيانٌ هادئٌ موجع ضدّ الحرب. يُري Hardy أنّ الجنود الأعداء رجالٌ عاديّون، متطابقون في فقرهم وظروفهم. ولا يقدر المتكلّمُ على تبرير القتل لأنّه لا تبريرَ - تُجبر الحربُ الرجالَ على قتل أمثالهم بلا سببٍ يفهمونه.`,
 
-  formAndStructureAr: `الشكل: مونولوغٌ دراميّ في خمس رباعيّاتٍ بقافية ABAB منتظمة. القصيدةُ كلُّها بين علامتَي اقتباس — يُقتبَس المتكلّمُ حرفيّاً، كأنّه يُدلي بشهادةٍ أو يروي قصّته لأحدهم في حانة.
+  formAndStructureAr: `الشكل: مونولوغٌ دراميّ في خمس رباعيّاتٍ بقافية ABAB منتظمة. القصيدةُ كلُّها بين علامتَي اقتباس - يُقتبَس المتكلّمُ حرفيّاً، كأنّه يُدلي بشهادةٍ أو يروي قصّته لأحدهم في حانة.
 
-نظام القافية: ABAB في كلّ مقطع — بسيط، منتظم، متوقّع. وأناقةُ القافية تتقابل مع الفوضى الأخلاقيّة في المضمون. الشكلُ مُحكَم؛ وأفكارُ المتكلّم ليست كذلك.
+نظام القافية: ABAB في كلّ مقطع - بسيط، منتظم، متوقّع. وأناقةُ القافية تتقابل مع الفوضى الأخلاقيّة في المضمون. الشكلُ مُحكَم؛ وأفكارُ المتكلّم ليست كذلك.
 
-الوزن: iambic إجمالاً، يتناوب tetrameter وtrimeter (ثمانية مقاطع ثمّ ستّة). هذا وزنُ الـ ballad — وهو الشكل نفسُه المستعمل في الأغاني الشعبيّة والسرد. يستعمل Hardy أبسطَ صورةٍ شعريّة ممكنة لأعقد سؤالٍ أخلاقيّ ممكن.
+الوزن: iambic إجمالاً، يتناوب tetrameter وtrimeter (ثمانية مقاطع ثمّ ستّة). هذا وزنُ الـ ballad - وهو الشكل نفسُه المستعمل في الأغاني الشعبيّة والسرد. يستعمل Hardy أبسطَ صورةٍ شعريّة ممكنة لأعقد سؤالٍ أخلاقيّ ممكن.
 
-الصوتُ العامّيّ: كُتبت القصيدةُ باللهجة والعاميّة — "nipperkin"، "\'list"، "off-hand like"، "traps"، "half-a-crown". وهذا يُولّد وَهْمَ شخصٍ حقيقيٍّ يتحدّث. واللغةُ غير الشعريّة تجعل رسالةَ مناهضة الحرب أقوى لأنّها تأتي من تجربةٍ لا من نظريّة.
+الصوتُ العامّيّ: كُتبت القصيدةُ باللهجة والعاميّة - "nipperkin"، "\'list"، "off-hand like"، "traps"، "half-a-crown". وهذا يُولّد وَهْمَ شخصٍ حقيقيٍّ يتحدّث. واللغةُ غير الشعريّة تجعل رسالةَ مناهضة الحرب أقوى لأنّها تأتي من تجربةٍ لا من نظريّة.
 
 البنية في خمس حركات:
-• المقطع الأوّل: الافتراض — ما كان يمكن أن يكون (الحانة).
-• المقطع الثاني: الواقع — ما حدث (القتل).
-• المقطع الثالث: محاولةُ التبرير — "because he was my foe".
-• المقطع الرابع: التماهي — كان مثلي تماماً.
-• المقطع الخامس: الخلاصة — الحرب "quaint and curious".
+• المقطع الأوّل: الافتراض - ما كان يمكن أن يكون (الحانة).
+• المقطع الثاني: الواقع - ما حدث (القتل).
+• المقطع الثالث: محاولةُ التبرير - "because he was my foe".
+• المقطع الرابع: التماهي - كان مثلي تماماً.
+• المقطع الخامس: الخلاصة - الحرب "quaint and curious".
 
-الشَّرَطات: أهمّ علامات الترقيم في القصيدة هي الشَّرَطات، خاصّةً في المقطع الثالث ("I shot him dead because —") والمقطع الرابع ("Off-hand like — just as I —"). تُمثّل صعوبةَ المتكلّم في التعبير عمّا يشعر به. الشَّرَطاتُ ثغراتُ فهمٍ — مواضع تعجز فيها اللغةُ.
+الشَّرَطات: أهمّ علامات الترقيم في القصيدة هي الشَّرَطات، خاصّةً في المقطع الثالث ("I shot him dead because -") والمقطع الرابع ("Off-hand like - just as I -"). تُمثّل صعوبةَ المتكلّم في التعبير عمّا يشعر به. الشَّرَطاتُ ثغراتُ فهمٍ - مواضع تعجز فيها اللغةُ.
 
 البنيةُ الدائريّة: تبدأ القصيدة وتنتهي بصورة اللقاء في حانة. وهذه الدائريّة تحبس المتكلّمَ في مأزقه: لا يستطيع أن يهرب من حقيقة أنّه قتل رجلاً كان ينبغي أن يكون صديقه.
 
-النبرة: محادَثة، مشوّش، نادم، مُهوِّن. ليس المتكلّمُ غاضباً — إنّما مذهول. وهدوءه أشدّ وقعاً من أيّ غضب.`,
+النبرة: محادَثة، مشوّش، نادم، مُهوِّن. ليس المتكلّمُ غاضباً - إنّما مذهول. وهدوءه أشدّ وقعاً من أيّ غضب.`,
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */

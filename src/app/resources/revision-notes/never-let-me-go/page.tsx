@@ -373,9 +373,9 @@ const keyQuotes = [
       "The juxtaposition of extraordinary and mundane ambitions ('film stars' and 'working in supermarkets') makes this passage particularly devastating. The students are denied not only glamorous futures but ordinary ones. 'None of you' is repeated three times, hammering home the totality of their exclusion. Miss Lucy's directness contrasts with the guardians' usual evasiveness, and her dismissal from Hailsham shows how the system punishes honesty.",
   },
   {
-    // VERIFY: direct quotation withheld — the previous text contained an unverifiable corruption. The passage referenced is Kathy's closing reflection in Chapter 23 (Norfolk shoreline imagery: rubbish, flapping plastic). Restore the exact wording only from a verified Faber edition.
+    // VERIFY: direct quotation withheld - the previous text contained an unverifiable corruption. The passage referenced is Kathy's closing reflection in Chapter 23 (Norfolk shoreline imagery: rubbish, flapping plastic). Restore the exact wording only from a verified Faber edition.
     quote:
-      '[Closing imagery from Chapter 23 — Kathy at the Norfolk shoreline reflecting on the wind-blown rubbish caught in the branches and on the fence. Quotation withheld pending source verification.]',
+      '[Closing imagery from Chapter 23 - Kathy at the Norfolk shoreline reflecting on the wind-blown rubbish caught in the branches and on the fence. Quotation withheld pending source verification.]',
     chapter: 'Chapter 23',
     speaker: 'Kathy',
     analysis:
@@ -608,7 +608,7 @@ export default function NeverLetMeGoStudyGuide() {
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
               <p className="mt-1 text-xs font-semibold text-primary">
-                {q.speaker ? `${q.speaker} — ` : ''}
+                {q.speaker ? `${q.speaker} - ` : ''}
                 {q.chapter}
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>

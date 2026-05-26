@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'The Explorer',
     description: 'Study guide for The Explorer',
   },
-  title: "The Explorer's Daughter — Kari Herbert — IGCSE Language A Anthology",
+  title: "The Explorer's Daughter - Kari Herbert - IGCSE Language A Anthology",
   description:
     "Study guide for The Explorer's Daughter by Kari Herbert. Structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
   alternates: {
@@ -35,81 +35,81 @@ const languageFeatures = [
     technique: 'Imagery (visual)',
     techniqueAr: 'الصورة البصريّة',
     guidance:
-      'Look for visual imagery examples in the anthology extract — Herbert uses imagery to render the Arctic landscape as both beautiful and forbidding, conveying scale and atmosphere.',
+      'Look for visual imagery examples in the anthology extract - Herbert uses imagery to render the Arctic landscape as both beautiful and forbidding, conveying scale and atmosphere.',
     guidanceAr:
-      'ابحث عن أمثلة على الصورة البصريّة في مقتطف المختارات — تستعمل Herbert الصورةَ لتقدّم منظر القطب الشماليّ جميلاً منيعاً في آنٍ معاً، فتنقل الحجم والمناخ.',
+      'ابحث عن أمثلة على الصورة البصريّة في مقتطف المختارات - تستعمل Herbert الصورةَ لتقدّم منظر القطب الشماليّ جميلاً منيعاً في آنٍ معاً، فتنقل الحجم والمناخ.',
   },
   {
     technique: 'Personification',
     techniqueAr: 'التشخيص',
     guidance:
-      "Look for personification examples in the anthology extract — Herbert uses personification to give the natural world (sea, ice, wind) agency, reinforcing nature's dominance over human life.",
+      "Look for personification examples in the anthology extract - Herbert uses personification to give the natural world (sea, ice, wind) agency, reinforcing nature's dominance over human life.",
     guidanceAr:
-      'ابحث عن أمثلة على التشخيص في مقتطف المختارات — تستعمل Herbert التشخيصَ لتمنح الطبيعةَ (البحرَ والجليدَ والريحَ) إرادةً، فيتعزّز تسلّطُها على حياة الإنسان.',
+      'ابحث عن أمثلة على التشخيص في مقتطف المختارات - تستعمل Herbert التشخيصَ لتمنح الطبيعةَ (البحرَ والجليدَ والريحَ) إرادةً، فيتعزّز تسلّطُها على حياة الإنسان.',
   },
   {
     technique: 'Contrast',
     techniqueAr: 'التضادّ',
     guidance:
-      'Look for contrast examples in the anthology extract — Herbert uses contrast to juxtapose beauty and danger, admiration and unease, mirroring her own conflicted response to the hunt.',
+      'Look for contrast examples in the anthology extract - Herbert uses contrast to juxtapose beauty and danger, admiration and unease, mirroring her own conflicted response to the hunt.',
     guidanceAr:
-      'ابحث عن أمثلة على التضادّ في المقتطف — تستعمل Herbert التضادَّ لتضع الجمال إلى جانب الخطر، والإعجاب إلى جانب القلق، عاكسةً استجابتها المتناقضة هي ذاتها لمشهد الصيد.',
+      'ابحث عن أمثلة على التضادّ في المقتطف - تستعمل Herbert التضادَّ لتضع الجمال إلى جانب الخطر، والإعجاب إلى جانب القلق، عاكسةً استجابتها المتناقضة هي ذاتها لمشهد الصيد.',
   },
   {
     technique: 'Emotive language',
     techniqueAr: 'اللغة الانفعاليّة',
     guidance:
-      'Look for emotive language examples in the anthology extract — Herbert uses emotive language to reveal her instinctive sympathy for the narwhal and to draw the reader into her internal conflict.',
+      'Look for emotive language examples in the anthology extract - Herbert uses emotive language to reveal her instinctive sympathy for the narwhal and to draw the reader into her internal conflict.',
     guidanceAr:
-      'ابحث عن أمثلة على اللغة الانفعاليّة في المقتطف — تستعمل Herbert اللغةَ الانفعاليّة لتكشف عن تعاطفها الغريزيّ مع الـ narwhal، ولتُدخل القارئ في صراعها الداخليّ.',
+      'ابحث عن أمثلة على اللغة الانفعاليّة في المقتطف - تستعمل Herbert اللغةَ الانفعاليّة لتكشف عن تعاطفها الغريزيّ مع الـ narwhal، ولتُدخل القارئ في صراعها الداخليّ.',
   },
   {
     technique: 'Sensory language',
     techniqueAr: 'اللغة الحسّيّة',
     guidance:
-      'Look for sensory language examples in the anthology extract — Herbert uses sensory language to immerse the reader in the physical reality of the Arctic, making the scene feel immediate and lived.',
+      'Look for sensory language examples in the anthology extract - Herbert uses sensory language to immerse the reader in the physical reality of the Arctic, making the scene feel immediate and lived.',
     guidanceAr:
-      'ابحث عن أمثلة على اللغة الحسّيّة في المقتطف — تستعمل Herbert اللغةَ الحسّيّة لتغمر القارئ في الواقع الجسديّ للقطب الشماليّ، فيغدو المشهدُ حاضراً معيشاً.',
+      'ابحث عن أمثلة على اللغة الحسّيّة في المقتطف - تستعمل Herbert اللغةَ الحسّيّة لتغمر القارئ في الواقع الجسديّ للقطب الشماليّ، فيغدو المشهدُ حاضراً معيشاً.',
   },
   {
     technique: 'Simile',
     techniqueAr: 'التشبيه',
     guidance:
-      'Look for simile examples in the anthology extract — Herbert uses similes to convey the alien, extreme quality of the Arctic landscape and to translate unfamiliar scenes into images the reader can picture.',
+      'Look for simile examples in the anthology extract - Herbert uses similes to convey the alien, extreme quality of the Arctic landscape and to translate unfamiliar scenes into images the reader can picture.',
     guidanceAr:
-      'ابحث عن أمثلة على التشبيه في المقتطف — تستعمل Herbert التشبيهَ لتنقل الطابعَ الغريبَ المتطرّفَ لمنظر القطب الشماليّ، ولتترجم مشاهدَ مجهولةً إلى صورٍ يستطيع القارئ تخيُّلها.',
+      'ابحث عن أمثلة على التشبيه في المقتطف - تستعمل Herbert التشبيهَ لتنقل الطابعَ الغريبَ المتطرّفَ لمنظر القطب الشماليّ، ولتترجم مشاهدَ مجهولةً إلى صورٍ يستطيع القارئ تخيُّلها.',
   },
   {
     technique: 'Semantic field',
     techniqueAr: 'الحقل الدلاليّ',
     guidance:
-      'Look for semantic-field examples in the anthology extract — Herbert draws on a coherent vocabulary set (cold, hunt, survival) to build the world of the text and dignify the practice she observes.',
+      'Look for semantic-field examples in the anthology extract - Herbert draws on a coherent vocabulary set (cold, hunt, survival) to build the world of the text and dignify the practice she observes.',
     guidanceAr:
-      'ابحث عن أمثلة على الحقل الدلاليّ في المقتطف — تستثمر Herbert مجموعةً مفرداتيّةً متماسكة (البرد، الصيد، النجاة) لتبني عالم النصّ ولتُكرم الممارسةَ التي تشاهدها.',
+      'ابحث عن أمثلة على الحقل الدلاليّ في المقتطف - تستثمر Herbert مجموعةً مفرداتيّةً متماسكة (البرد، الصيد، النجاة) لتبني عالم النصّ ولتُكرم الممارسةَ التي تشاهدها.',
   },
   {
     technique: 'Tone shift',
     techniqueAr: 'تبدّل النبرة',
     guidance:
-      'Look for tone-shift examples in the anthology extract — Herbert uses tone shifts to track her movement from observation to admiration to moral conflict to acceptance.',
+      'Look for tone-shift examples in the anthology extract - Herbert uses tone shifts to track her movement from observation to admiration to moral conflict to acceptance.',
     guidanceAr:
-      'ابحث عن أمثلة على تبدّل النبرة في المقتطف — تستعمل Herbert تبدّلَ النبرة لتتبّع انتقالها من المراقبة إلى الإعجاب إلى الصراع الأخلاقيّ إلى القبول.',
+      'ابحث عن أمثلة على تبدّل النبرة في المقتطف - تستعمل Herbert تبدّلَ النبرة لتتبّع انتقالها من المراقبة إلى الإعجاب إلى الصراع الأخلاقيّ إلى القبول.',
   },
   {
     technique: 'Short sentence for emphasis',
     techniqueAr: 'الجملة القصيرة للتوكيد',
     guidance:
-      'Look for short-sentence examples in the anthology extract — Herbert uses short sentences to mark moments of realisation, standing out against longer descriptive passages.',
+      'Look for short-sentence examples in the anthology extract - Herbert uses short sentences to mark moments of realisation, standing out against longer descriptive passages.',
     guidanceAr:
-      'ابحث عن أمثلة على الجملة القصيرة في المقتطف — تستعمل Herbert الجملةَ القصيرة لتسِم لحظات الإدراك، فتبرز قبالةَ المقاطع الوصفيّة الأطول.',
+      'ابحث عن أمثلة على الجملة القصيرة في المقتطف - تستعمل Herbert الجملةَ القصيرة لتسِم لحظات الإدراك، فتبرز قبالةَ المقاطع الوصفيّة الأطول.',
   },
   {
     technique: 'Listing',
     techniqueAr: 'التَّعداد',
     guidance:
-      'Look for listing examples in the anthology extract — Herbert uses lists to ground the argument in practical necessity, shifting from emotional response to rational acceptance of the hunt.',
+      'Look for listing examples in the anthology extract - Herbert uses lists to ground the argument in practical necessity, shifting from emotional response to rational acceptance of the hunt.',
     guidanceAr:
-      'ابحث عن أمثلة على التَّعداد في المقتطف — تستعمل Herbert التَّعدادَ لتُرسي الحُجّة على ضرورةٍ عمليّة، منتقلةً من الاستجابة العاطفيّة إلى القبول العقلانيّ بالصيد.',
+      'ابحث عن أمثلة على التَّعداد في المقتطف - تستعمل Herbert التَّعدادَ لتُرسي الحُجّة على ضرورةٍ عمليّة، منتقلةً من الاستجابة العاطفيّة إلى القبول العقلانيّ بالصيد.',
   },
 ]
 
@@ -153,9 +153,9 @@ const writersPurpose = {
   achieveAr:
     'تريد Herbert أن تُقدّم صيدَ الـ narwhal قضيّةً أخلاقيّةً مُركّبة، لا مسألةَ حقٍّ وباطلٍ ساذجة. وهي تحترم الحيوانَ والصيّادين معاً، رافضةً تبنّي موقفٍ مُبسَّط.',
   readerFeel:
-    'She wants the reader to share her conflicted feelings — to feel the pull of both compassion for the narwhal and respect for the Inuit way of life. She does not want the reader to judge too quickly.',
+    'She wants the reader to share her conflicted feelings - to feel the pull of both compassion for the narwhal and respect for the Inuit way of life. She does not want the reader to judge too quickly.',
   readerFeelAr:
-    'تريد للقارئ أن يشاركها مشاعرها المتنازعة — أن يشعر بجاذبيّة الشفقة على الـ narwhal، وباحترام نمط حياة الإنويت في الوقت نفسه. ولا تريد أن يتسرّع القارئُ في الحكم.',
+    'تريد للقارئ أن يشاركها مشاعرها المتنازعة - أن يشعر بجاذبيّة الشفقة على الـ narwhal، وباحترام نمط حياة الإنويت في الوقت نفسه. ولا تريد أن يتسرّع القارئُ في الحكم.',
   message:
     'Her central argument is that cultural practices must be understood in context. The narwhal hunt, which might seem cruel to Western eyes, is a vital, sustainable tradition that has sustained a people for millennia.',
   messageAr:
@@ -229,15 +229,15 @@ const examPractice = {
   q1: {
     question: 'List four things you learn about the narwhal hunt from the text.',
     questionAr: 'اذكر أربعةَ أشياء تعرفها عن صيد الـ narwhal من النصّ.',
-    type: 'Retrieval — 4 marks',
-    typeAr: 'الاسترجاع — ٤ درجات',
+    type: 'Retrieval - 4 marks',
+    typeAr: 'الاسترجاع - ٤ درجات',
   },
   q2: {
     question:
       'How does Herbert use language to present her conflicted feelings about the narwhal hunt?',
     questionAr: 'كيف تستعمل Herbert اللغةَ لتُقدّم مشاعرها المتنازعة تجاه صيد الـ narwhal؟',
-    type: 'Language analysis — 12 marks',
-    typeAr: 'تحليل اللغة — ١٢ درجة',
+    type: 'Language analysis - 12 marks',
+    typeAr: 'تحليل اللغة - ١٢ درجة',
     modelOutline: [
       "Identify Herbert's use of emotive verbs and first-person interjections that reveal her instinctive sympathy for the narwhal, and explain how these draw the reader into her internal conflict.",
       "Analyse contrasting pairs (beauty / danger, admiration / unease) that mirror Herbert's own dual response to the Arctic and the hunt.",
@@ -255,8 +255,8 @@ const examPractice = {
     question:
       'How does Herbert structure the text to move from observation to personal reflection?',
     questionAr: 'كيف تبني Herbert النصَّ للانتقال من المراقبة إلى التأمّل الشخصيّ؟',
-    type: 'Structural analysis — 12 marks',
-    typeAr: 'التحليل البنائيّ — ١٢ درجة',
+    type: 'Structural analysis - 12 marks',
+    typeAr: 'التحليل البنائيّ - ١٢ درجة',
   },
 }
 

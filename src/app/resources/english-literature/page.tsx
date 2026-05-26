@@ -6,14 +6,14 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'English Literature Revision — GCSE & IGCSE',
+  title: 'English Literature Revision - GCSE & IGCSE',
   description:
     'Complete GCSE and IGCSE English Literature revision hub. Study guides for Shakespeare, prose, drama, and poetry. Character analysis, themes, quotations, essay techniques, and exam preparation for all boards.',
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature',
   },
   openGraph: {
-    title: 'English Literature Revision — The English Hub',
+    title: 'English Literature Revision - The English Hub',
     description:
       'Complete GCSE and IGCSE English Literature revision hub. Study guides, essay techniques, and exam preparation.',
   },
@@ -222,7 +222,7 @@ const ESSAY_TIPS = [
 
 const EXAMPLE_PARAGRAPH = {
   question: 'How does Shakespeare present the theme of ambition in Macbeth?',
-  paragraph: `Shakespeare presents ambition as a destructive force that corrupts moral judgement. In Act 1, Macbeth's aside — "Stars, hide your fires; / Let not light see my black and deep desires" — reveals that murderous ambition already exists within him before Lady Macbeth's influence. The imperative "hide" suggests Macbeth recognises the immorality of his thoughts; he needs darkness to conceal them from both society and God. The modifier "black and deep" creates a semantic field of darkness and concealment, associating his ambition with something hidden, shameful, and bottomless. Shakespeare's use of celestial imagery ("Stars") implies Macbeth is attempting to subvert the natural order — the Great Chain of Being — which a Jacobean audience would have found deeply transgressive. This foreshadows the play's wider pattern: Macbeth's ambition does not simply lead to Duncan's murder, but unravels the entire fabric of nature, as evidenced by the "unnatural" events reported after the regicide.`,
+  paragraph: `Shakespeare presents ambition as a destructive force that corrupts moral judgement. In Act 1, Macbeth's aside - "Stars, hide your fires; / Let not light see my black and deep desires" - reveals that murderous ambition already exists within him before Lady Macbeth's influence. The imperative "hide" suggests Macbeth recognises the immorality of his thoughts; he needs darkness to conceal them from both society and God. The modifier "black and deep" creates a semantic field of darkness and concealment, associating his ambition with something hidden, shameful, and bottomless. Shakespeare's use of celestial imagery ("Stars") implies Macbeth is attempting to subvert the natural order - the Great Chain of Being - which a Jacobean audience would have found deeply transgressive. This foreshadows the play's wider pattern: Macbeth's ambition does not simply lead to Duncan's murder, but unravels the entire fabric of nature, as evidenced by the "unnatural" events reported after the regicide.`,
 }
 
 const REVISION_RESOURCES = [
@@ -672,7 +672,7 @@ export default async function EnglishLiteraturePage() {
                 'Spend 5 minutes planning each essay. Jot down 3-4 points with supporting quotations before writing.',
                 'Always embed short, precise quotations within your sentences rather than block-quoting long passages.',
                 'In comparison questions, integrate both texts throughout each paragraph rather than writing about them separately.',
-                'Leave 5 minutes at the end to proofread for expression, spelling, and punctuation — SPaG marks add up.',
+                'Leave 5 minutes at the end to proofread for expression, spelling, and punctuation - SPaG marks add up.',
               ].map((tip, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">

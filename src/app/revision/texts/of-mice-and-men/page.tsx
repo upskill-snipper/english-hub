@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Of Mice and Men IGCSE revision — Steinbeck',
+    title: 'Of Mice and Men revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Of Mice and Men IGCSE revision - Steinbeck',
   },
-  title: 'Of Mice and Men revision guide — themes, characters, key quotes',
+  title: 'Of Mice and Men revision guide - themes, characters, key quotes',
   description:
-    "Of Mice and Men IGCSE revision — Steinbeck's novella with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
+    "Of Mice and Men IGCSE revision - Steinbeck's novella with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/of-mice-and-men',
   },
@@ -104,48 +104,48 @@ const data: TextGuideData = {
   quotations: [
     {
       quote: '"Guys like us, that work on ranches, are the loneliest guys in the world."',
-      who: 'George — Chapter 1',
+      who: 'George - Chapter 1',
       analysis:
         'Introduces the theme of isolation and immediately sets George and Lennie apart because they have each other.',
     },
     {
       quote: '"I got you to look after me, and you got me to look after you."',
-      who: 'Lennie — Chapter 1',
+      who: 'Lennie - Chapter 1',
       analysis:
         'Captures the childlike clarity of their bond. The mutual dependence is the emotional core of the book.',
     },
     {
-      quote: '"A guy needs somebody — to be near him."',
-      who: 'Crooks — Chapter 4',
+      quote: '"A guy needs somebody - to be near him."',
+      who: 'Crooks - Chapter 4',
       analysis:
         'Reveals the devastating loneliness of segregation and universalises it to all workers under capitalism.',
     },
     {
       quote: '"I could get along so easy if I didn\'t have you on my tail."',
-      who: 'George — Chapter 1',
+      who: 'George - Chapter 1',
       analysis:
         'Shows the strain of caring for Lennie. Makes the final act even more heartbreaking because it is freely chosen.',
     },
     {
       quote: '"I get lonely. You can talk to people, but I can\'t talk to nobody."',
-      who: "Curley's wife — Chapter 5",
+      who: "Curley's wife - Chapter 5",
       analysis:
         'Humanises her just before her death and reframes her as a victim rather than a threat.',
     },
     {
       quote: '"I ought to of shot that dog myself, George."',
-      who: 'Candy — Chapter 3',
+      who: 'Candy - Chapter 3',
       analysis: 'Foreshadows the ending and teaches George the lesson he will act on at the pool.',
     },
     {
       quote: '"Tell about the rabbits, George."',
-      who: 'Lennie — Chapter 6',
+      who: 'Lennie - Chapter 6',
       analysis:
         "The repeated refrain of the dream. Its last appearance, seconds before Lennie's death, is the book's most devastating line.",
     },
     {
       quote: '"You hadda, George. I swear you hadda."',
-      who: 'Slim — Chapter 6',
+      who: 'Slim - Chapter 6',
       analysis:
         "The respected moral voice of the ranch validates George's impossible choice and closes the novella with painful compassion.",
     },
@@ -197,7 +197,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Lennie is huge and physically powerful but has the mental age of a child. His compulsion to stroke soft things foreshadows every tragedy in the book — from the mouse to the puppy to Curley's wife's hair.",
+      "Lennie is huge and physically powerful but has the mental age of a child. His compulsion to stroke soft things foreshadows every tragedy in the book - from the mouse to the puppy to Curley's wife's hair.",
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -213,7 +213,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Candy's old, sick dog is shot by Carlson because it is no longer useful. This mirrors Candy's own fear of becoming disposable and foreshadows George's final act with Lennie — it is better to be killed by a friend than by a stranger.",
+      "Candy's old, sick dog is shot by Carlson because it is no longer useful. This mirrors Candy's own fear of becoming disposable and foreshadows George's final act with Lennie - it is better to be killed by a friend than by a stranger.",
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -223,7 +223,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He prefers to be alone',
-      'Because of his race — he is Black and segregation was enforced',
+      'Because of his race - he is Black and segregation was enforced',
       'He has a contagious illness',
       'He is a troublemaker',
     ],
@@ -284,7 +284,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The circular structure creates a sense of inevitability. Nature is indifferent: a heron kills a water snake in both the opening and closing chapters, foreshadowing and then sealing Lennie's fate. The dream returns to where it started — nowhere.",
+      "The circular structure creates a sense of inevitability. Nature is indifferent: a heron kills a water snake in both the opening and closing chapters, foreshadowing and then sealing Lennie's fate. The dream returns to where it started - nowhere.",
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -316,7 +316,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The only significant female character is never given a name, reducing her to "Curley\'s wife" — his property. This reflects the sexism of 1930s America. Steinbeck later reveals her as a lost young woman whose own dreams have been crushed.',
+      'The only significant female character is never given a name, reducing her to "Curley\'s wife" - his property. This reflects the sexism of 1930s America. Steinbeck later reveals her as a lost young woman whose own dreams have been crushed.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -332,7 +332,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Slim is described with almost religious authority — the "prince of the ranch." His approval matters, and his final compassion ("You hadda, George. I swear you hadda.") validates George\'s impossible choice and gives the reader somewhere to rest.',
+      'Slim is described with almost religious authority - the "prince of the ranch." His approval matters, and his final compassion ("You hadda, George. I swear you hadda.") validates George\'s impossible choice and gives the reader somewhere to rest.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -387,7 +387,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 'omm-16',
     question:
-      'What does "A guy needs somebody — to be near him" reveal about the novella\'s world?',
+      'What does "A guy needs somebody - to be near him" reveal about the novella\'s world?',
     type: 'multiple-choice',
     options: [
       'Crooks is clingy',
@@ -397,7 +397,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Crooks's desperate statement reveals the devastating loneliness of racial segregation and extends it to all workers under capitalism. Nearly every character in the novella is alone — Steinbeck shows loneliness as a systemic condition, not a personal failing.",
+      "Crooks's desperate statement reveals the devastating loneliness of racial segregation and extends it to all workers under capitalism. Nearly every character in the novella is alone - Steinbeck shows loneliness as a systemic condition, not a personal failing.",
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -407,7 +407,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Nature is always beautiful',
-      'Nature is indifferent to human suffering — herons eat snakes, the cycle continues regardless',
+      'Nature is indifferent to human suffering - herons eat snakes, the cycle continues regardless',
       'Nature helps the characters',
       'Nature is not mentioned',
     ],
@@ -489,7 +489,7 @@ const REVISION_TOPICS = [
       'Crooks: segregated by race',
       "Curley's wife: isolated by gender and marriage",
       'Candy: clinging to his dog, then to the dream',
-      'Soledad means "solitude" — the landscape itself is lonely',
+      'Soledad means "solitude" - the landscape itself is lonely',
     ],
   },
   {
@@ -549,7 +549,7 @@ export default async function OfMiceAndMenPage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="Of Mice and Men — Complete GCSE Study Guide"
+        name="Of Mice and Men - Complete GCSE Study Guide"
         description="In-depth study guide for Of Mice and Men covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
         educationalLevel="IGCSE"
         learningResourceType="Study guide"
@@ -557,7 +557,7 @@ export default async function OfMiceAndMenPage() {
         url="https://theenglishhub.app/revision/texts/of-mice-and-men"
       />
       <CourseJsonLd
-        name="Of Mice and Men — Complete GCSE Study Guide"
+        name="Of Mice and Men - Complete GCSE Study Guide"
         description="In-depth study guide for Of Mice and Men covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

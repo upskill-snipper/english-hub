@@ -13,7 +13,7 @@ import { useT } from '@/lib/i18n/use-t'
  * are hidden to avoid double navigation bars and to let the school layout
  * occupy the full viewport.
  *
- * 2026-05-20: bug fix — the previous `startsWith('/school')` check also
+ * 2026-05-20: bug fix - the previous `startsWith('/school')` check also
  * matched the public marketing routes `/schools` and `/school-pilot`,
  * which hid the root Header (and its theme + language toggles) on those
  * pages. We now match either the EXACT prefix (`/school`, `/demo/school`)

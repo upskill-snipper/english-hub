@@ -22,14 +22,7 @@ const VALID_ROLES = [
   'other',
 ]
 
-const VALID_STUDENT_RANGES = [
-  '1-30',
-  '31-50',
-  '51-100',
-  '101-200',
-  '201-500',
-  '500+',
-]
+const VALID_STUDENT_RANGES = ['1-30', '31-50', '51-100', '101-200', '201-500', '500+']
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,7 +32,10 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
@@ -47,21 +43,18 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json()
     } catch {
-      return NextResponse.json(
-        { error: 'Invalid request body' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
     // ── Validation ──────────────────────────────────────────
     const errors: string[] = []
 
     if (!body.school_name || body.school_name.length < 2 || body.school_name.length > 200) {
-      errors.push('School name must be 2–200 characters')
+      errors.push('School name must be 2-200 characters')
     }
 
     if (!body.teacher_name || body.teacher_name.length < 2 || body.teacher_name.length > 100) {
-      errors.push('Your name must be 2–100 characters')
+      errors.push('Your name must be 2-100 characters')
     }
 
     if (!body.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
@@ -104,22 +97,22 @@ export async function POST(request: NextRequest) {
       if (insertError.code === '42P01') {
         console.error(
           'school_inquiries table does not exist. Create it with:\n' +
-          'CREATE TABLE school_inquiries (\n' +
-          '  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,\n' +
-          '  school_name TEXT NOT NULL,\n' +
-          '  teacher_name TEXT NOT NULL,\n' +
-          '  email TEXT NOT NULL,\n' +
-          '  role TEXT NOT NULL,\n' +
-          '  num_students TEXT NOT NULL,\n' +
-          '  message TEXT,\n' +
-          '  status TEXT DEFAULT \'new\',\n' +
-          '  created_at TIMESTAMPTZ DEFAULT now()\n' +
-          ');'
+            'CREATE TABLE school_inquiries (\n' +
+            '  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,\n' +
+            '  school_name TEXT NOT NULL,\n' +
+            '  teacher_name TEXT NOT NULL,\n' +
+            '  email TEXT NOT NULL,\n' +
+            '  role TEXT NOT NULL,\n' +
+            '  num_students TEXT NOT NULL,\n' +
+            '  message TEXT,\n' +
+            "  status TEXT DEFAULT 'new',\n" +
+            '  created_at TIMESTAMPTZ DEFAULT now()\n' +
+            ');',
         )
       }
       return NextResponse.json(
         { error: 'Failed to submit inquiry. Please try again.' },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -128,9 +121,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('School inquiry error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

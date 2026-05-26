@@ -1,7 +1,7 @@
 /**
  * Strict Children's Code defaults coverage.
  *
- * Asserts that, for every age in the 13–17 cohort (the under-18 group
+ * Asserts that, for every age in the 13-17 cohort (the under-18 group
  * the ICO Children's Code applies to), every privacy / engagement
  * setting that the Code requires to be "high privacy by default" is
  * OFF unless explicitly opted in.
@@ -33,7 +33,7 @@ const TEEN_AGES = [13, 14, 15, 16, 17] as const
  * Every flag the Children's Code requires to default to high-privacy
  * for under-18 users. Keeping this list explicit (rather than just
  * iterating `Object.keys`) makes it impossible for a future PR to
- * silently weaken the contract by renaming a key — the test will fail
+ * silently weaken the contract by renaming a key - the test will fail
  * loudly if the constant no longer exposes one of these names.
  */
 const REQUIRED_OFF_BY_DEFAULT: ReadonlyArray<keyof ChildPrivacySettings> = [
@@ -47,7 +47,7 @@ const REQUIRED_OFF_BY_DEFAULT: ReadonlyArray<keyof ChildPrivacySettings> = [
   'geolocation',
 ]
 
-describe("ICO Children's Code — strict under-18 defaults", () => {
+describe("ICO Children's Code - strict under-18 defaults", () => {
   describe('isMinorAge() covers the full 13-17 cohort', () => {
     it.each(TEEN_AGES)('treats age %i as a minor', (age) => {
       expect(isMinorAge(age)).toBe(true)
@@ -80,7 +80,7 @@ describe("ICO Children's Code — strict under-18 defaults", () => {
         expect(
           defaults[key],
           `Setting "${String(key)}" must default to false for age ${age} ` +
-            "(ICO Children's Code Standard 8 — high privacy by default)",
+            "(ICO Children's Code Standard 8 - high privacy by default)",
         ).toBe(false)
       }
     })
@@ -98,7 +98,7 @@ describe("ICO Children's Code — strict under-18 defaults", () => {
       }
     })
 
-    it('analytics defaults to minimal (essential-only) — opt-in is false', () => {
+    it('analytics defaults to minimal (essential-only) - opt-in is false', () => {
       // Standard 6 / Standard 8: only essential analytics may be on by
       // default; the user-facing opt-in flag must be false until the
       // child (or a verified parent) explicitly turns it on.
@@ -187,7 +187,7 @@ describe("ICO Children's Code — strict under-18 defaults", () => {
   describe('isChildAge() retains its under-16 semantics', () => {
     // Sanity check that the stricter helper used by parental-consent
     // flows is unchanged. The under-18 default contract lives on
-    // isMinorAge() — see above.
+    // isMinorAge() - see above.
     it('treats 13-15 as children', () => {
       expect(isChildAge(13)).toBe(true)
       expect(isChildAge(14)).toBe(true)

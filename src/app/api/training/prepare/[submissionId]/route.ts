@@ -3,7 +3,7 @@
 // Platform-admin-only. Promotes ONE teacher-approved marking submission into
 // the anonymised, consent-gated training_data corpus via prepareTrainingRecord.
 //
-// Auth: must be a SITE admin (isSiteAdmin on the Supabase session email) — this
+// Auth: must be a SITE admin (isSiteAdmin on the Supabase session email) - this
 // is the platform-wide training pipeline, not a school-scoped action, so the
 // school-member roles do NOT grant access. All anonymisation, consent gating
 // and audit logging happen inside prepareTrainingRecord; this handler only
@@ -30,7 +30,7 @@ export async function POST(
   { params }: { params: Promise<{ submissionId: string }> },
 ) {
   try {
-    // 1. Auth — Supabase session.
+    // 1. Auth - Supabase session.
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
@@ -53,7 +53,7 @@ export async function POST(
     })
     if (!rl.success) return rateLimitResponse(rl.resetAt)
 
-    // 4. Resolve the dynamic param (Next 15 — params is a Promise).
+    // 4. Resolve the dynamic param (Next 15 - params is a Promise).
     const { submissionId } = await params
     if (!submissionId || submissionId.trim().length === 0) {
       return NextResponse.json({ error: 'submissionId is required' }, { status: 400 })
@@ -63,7 +63,7 @@ export async function POST(
     const result = await prepareTrainingRecord(submissionId.trim())
 
     if (!result.ok) {
-      // 422 — the submission is real but fails a gate (not approved /
+      // 422 - the submission is real but fails a gate (not approved /
       // consent / eligibility). The reason is non-PII (see prepare.ts).
       return NextResponse.json({ ok: false, reason: result.reason }, { status: 422 })
     }

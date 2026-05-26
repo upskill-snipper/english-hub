@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
         firstName: true,
       },
     })
-    // Fallback for pre-backfill or mismatched rows — logged as a warning.
+    // Fallback for pre-backfill or mismatched rows - logged as a warning.
     const dbUser =
       dbUserBySupabaseId ??
       (await prisma.user.findUnique({
@@ -116,7 +116,7 @@ export async function GET(request: NextRequest) {
         accountStatus: true,
       },
     })
-    // Fallback for pre-backfill or mismatched rows — logged as a warning.
+    // Fallback for pre-backfill or mismatched rows - logged as a warning.
     const dbUser =
       dbUserBySupabaseId ??
       (await prisma.user.findUnique({

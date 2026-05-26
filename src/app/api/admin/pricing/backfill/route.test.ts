@@ -1,5 +1,5 @@
 /**
- * POST /api/admin/pricing/backfill — auth + happy-path tests.
+ * POST /api/admin/pricing/backfill - auth + happy-path tests.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'

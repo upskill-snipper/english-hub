@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare, Lock, ScrollText, Quote, Layers, Tag } from 'lucide-react'
@@ -26,7 +26,7 @@ const jsonLd = {
     '@type': 'AlignmentObject',
     alignmentType: 'educationalSubject',
     educationalFramework: 'Pearson Edexcel IGCSE English Literature 4ET1',
-    targetName: 'Anthology Poetry — Paper 1 Section B',
+    targetName: 'Anthology Poetry - Paper 1 Section B',
   },
 }
 
@@ -46,22 +46,22 @@ const stanzaSummaries = [
   {
     n: 'Stanza 1',
     label: 'In the darkroom',
-    body: 'Duffy opens with the photographer alone in his darkroom developing the day\'s film. The image of the lit-up tray of chemicals is described in religious terms — the room becomes a kind of chapel, and the photographer a priest performing a careful ritual. The opening line is widely quoted: "In his darkroom he is finally alone." A short list of conflict cities — including "Belfast. Beirut. Phnom Penh." — establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
+    body: 'Duffy opens with the photographer alone in his darkroom developing the day\'s film. The image of the lit-up tray of chemicals is described in religious terms - the room becomes a kind of chapel, and the photographer a priest performing a careful ritual. The opening line is widely quoted: "In his darkroom he is finally alone." A short list of conflict cities - including "Belfast. Beirut. Phnom Penh." - establishes the geographic range of his recent work and roots the poem in the wars of the late 1970s and early 1980s.',
   },
   {
     n: 'Stanza 2',
     label: 'Hands and trembling',
-    body: "The photographer's hands, which did not tremble in the war zone, now shake at home. The professional calm of the journalist breaks down in the safety of England. Duffy contrasts the phlegmatic working face he wore abroad with the private grief he allows himself in his own kitchen. Rural England is described as ordered, peaceful — a place where suffering only arrives as a photograph.",
+    body: "The photographer's hands, which did not tremble in the war zone, now shake at home. The professional calm of the journalist breaks down in the safety of England. Duffy contrasts the phlegmatic working face he wore abroad with the private grief he allows himself in his own kitchen. Rural England is described as ordered, peaceful - a place where suffering only arrives as a photograph.",
   },
   {
     n: 'Stanza 3',
     label: 'A face emerging',
-    body: 'A specific image surfaces in the chemicals: the face of a dying or grieving man. Duffy paraphrases the moment when the photographer remembers the man\'s wife "approving" his decision to take the picture. The memory of the photograph\'s subject becoming visible in the developing tray is rendered with painful slowness — the violence is replayed, frame by frame.',
+    body: 'A specific image surfaces in the chemicals: the face of a dying or grieving man. Duffy paraphrases the moment when the photographer remembers the man\'s wife "approving" his decision to take the picture. The memory of the photograph\'s subject becoming visible in the developing tray is rendered with painful slowness - the violence is replayed, frame by frame.',
   },
   {
     n: 'Stanza 4',
     label: 'Sunday-supplement readers',
-    body: 'The closing stanza pulls back to the editor\'s desk and to the readers of the Sunday paper. Out of "a hundred agonies" the editor will choose just five or six. Readers will glance at the images "between the bath and pre-lunch beers" — a brutal image of comfortable England flicking past suffering. The poem ends with the photographer flying out again, looking down impassively at the country that does not really see what he brings home.',
+    body: 'The closing stanza pulls back to the editor\'s desk and to the readers of the Sunday paper. Out of "a hundred agonies" the editor will choose just five or six. Readers will glance at the images "between the bath and pre-lunch beers" - a brutal image of comfortable England flicking past suffering. The poem ends with the photographer flying out again, looking down impassively at the country that does not really see what he brings home.',
   },
 ]
 
@@ -70,7 +70,7 @@ const stanzaSummaries = [
 const formAndStructure = [
   {
     label: 'Form',
-    body: 'Four regular stanzas of six lines each (sextets), totalling 24 lines. The strict, repeating shape mirrors the orderly, methodical work of developing photographs in a darkroom — and contrasts with the chaos of the scenes the photographer has just left.',
+    body: 'Four regular stanzas of six lines each (sextets), totalling 24 lines. The strict, repeating shape mirrors the orderly, methodical work of developing photographs in a darkroom - and contrasts with the chaos of the scenes the photographer has just left.',
   },
   {
     label: 'Rhyme',
@@ -78,7 +78,7 @@ const formAndStructure = [
   },
   {
     label: 'Religious imagery',
-    body: 'Duffy turns the darkroom into a religious space. The red light glows like a sanctuary lamp; the chemicals are arranged in "ordered rows" like communion vessels; the photographer works in a hush, like a priest. By framing the journalism as a sacrament, Duffy elevates the photographer\'s work — and indicts the readers who consume the images casually.',
+    body: 'Duffy turns the darkroom into a religious space. The red light glows like a sanctuary lamp; the chemicals are arranged in "ordered rows" like communion vessels; the photographer works in a hush, like a priest. By framing the journalism as a sacrament, Duffy elevates the photographer\'s work - and indicts the readers who consume the images casually.',
   },
   {
     label: 'Contrast and juxtaposition',
@@ -86,11 +86,11 @@ const formAndStructure = [
   },
   {
     label: 'Pace and detachment',
-    body: 'Duffy mostly uses an impersonal third-person voice — "he", not "I". The tone is restrained, almost clinical. This detachment lets the brutality of the images do the work; the speaker refuses to dramatise. The third-person voice also keeps the photographer at a distance, as if he is being observed working alone.',
+    body: 'Duffy mostly uses an impersonal third-person voice - "he", not "I". The tone is restrained, almost clinical. This detachment lets the brutality of the images do the work; the speaker refuses to dramatise. The third-person voice also keeps the photographer at a distance, as if he is being observed working alone.',
   },
   {
     label: 'Closing volta',
-    body: 'The poem turns at the last stanza when it widens out from the photographer to the editor and the reader. The volta makes the moral point explicit: the photographer is no longer the sole subject — the indifferent public is. The final image of him in the aeroplane "stares impassively" at the England below, a country he can no longer fully belong to.',
+    body: 'The poem turns at the last stanza when it widens out from the photographer to the editor and the reader. The volta makes the moral point explicit: the photographer is no longer the sole subject - the indifferent public is. The final image of him in the aeroplane "stares impassively" at the England below, a country he can no longer fully belong to.',
   },
 ]
 
@@ -114,7 +114,7 @@ const comparisons = [
     themes: ['War', 'Witness', 'Reportage'],
   },
   {
-    title: 'If—',
+    title: 'If-',
     poet: 'Rudyard Kipling',
     href: '/igcse/edexcel/poetry/if',
     reason:

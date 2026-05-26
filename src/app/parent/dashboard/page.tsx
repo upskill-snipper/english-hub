@@ -202,7 +202,7 @@ export default function ParentDashboardPage() {
 
   useEffect(() => {
     setMounted(true)
-    // [P2:data] Supabase — fetch aggregates via server components/RPC
+    // [P2:data] Supabase - fetch aggregates via server components/RPC
     setAccount(safeParse<ParentAccountLike>(localStorage.getItem(PARENT_ACCOUNT_KEY)))
     setState(buildDashboardState())
   }, [])
@@ -270,7 +270,7 @@ export default function ParentDashboardPage() {
                 <p className="text-2xl font-bold text-foreground">
                   {state
                     ? `${Math.floor(state.totalMinutesThisWeek / 60)}h ${state.totalMinutesThisWeek % 60}m`
-                    : '—'}
+                    : '-'}
                 </p>
                 <p className="text-xs text-muted-foreground">{t('parent.time_spent')}</p>
               </div>
@@ -296,7 +296,7 @@ export default function ParentDashboardPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold text-foreground">
-                  {state?.averageQuizScore != null ? `${state.averageQuizScore}%` : '—'}
+                  {state?.averageQuizScore != null ? `${state.averageQuizScore}%` : '-'}
                 </p>
                 <p className="text-xs text-muted-foreground">{t('parent.avg_quiz_score')}</p>
               </div>
@@ -334,7 +334,7 @@ export default function ParentDashboardPage() {
                 <span className="text-sm text-muted-foreground">{t('parent.average_score')}</span>
               </div>
               <span className="text-sm font-bold text-foreground">
-                {state?.averageQuizScore != null ? `${state.averageQuizScore}%` : '—'}
+                {state?.averageQuizScore != null ? `${state.averageQuizScore}%` : '-'}
               </span>
             </div>
             <Separator />

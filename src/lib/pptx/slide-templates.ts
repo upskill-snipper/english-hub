@@ -1,4 +1,4 @@
-// ─── Anthology Deck – Slide Templates ───────────────────────────────────────
+// ─── Anthology Deck - Slide Templates ───────────────────────────────────────
 // PptxGenJS slide builders for the Anthology editorial theme.
 // Every builder takes an optional `skin` parameter (defaults to 'cream').
 // No emoji. No gradients. No shadows. Clean, literary journal aesthetic.
@@ -35,41 +35,79 @@ function addRegistrationMarks(slide: Slide, p: SkinPalette) {
     // top-left
     { hx: inset, hy: inset, hw: markLen, hh: thick, vx: inset, vy: inset, vw: thick, vh: markLen },
     // top-right
-    { hx: w - inset - markLen, hy: inset, hw: markLen, hh: thick, vx: w - inset - thick, vy: inset, vw: thick, vh: markLen },
+    {
+      hx: w - inset - markLen,
+      hy: inset,
+      hw: markLen,
+      hh: thick,
+      vx: w - inset - thick,
+      vy: inset,
+      vw: thick,
+      vh: markLen,
+    },
     // bottom-left
-    { hx: inset, hy: h - inset - thick, hw: markLen, hh: thick, vx: inset, vy: h - inset - markLen, vw: thick, vh: markLen },
+    {
+      hx: inset,
+      hy: h - inset - thick,
+      hw: markLen,
+      hh: thick,
+      vx: inset,
+      vy: h - inset - markLen,
+      vw: thick,
+      vh: markLen,
+    },
     // bottom-right
-    { hx: w - inset - markLen, hy: h - inset - thick, hw: markLen, hh: thick, vx: w - inset - thick, vy: h - inset - markLen, vw: thick, vh: markLen },
+    {
+      hx: w - inset - markLen,
+      hy: h - inset - thick,
+      hw: markLen,
+      hh: thick,
+      vx: w - inset - thick,
+      vy: h - inset - markLen,
+      vw: thick,
+      vh: markLen,
+    },
   ]
 
   corners.forEach((c) => {
     slide.addShape('rect', {
-      x: c.hx, y: c.hy, w: c.hw, h: c.hh,
+      x: c.hx,
+      y: c.hy,
+      w: c.hw,
+      h: c.hh,
       fill: { color: p.slideMuted, transparency: 40 },
     })
     slide.addShape('rect', {
-      x: c.vx, y: c.vy, w: c.vw, h: c.vh,
+      x: c.vx,
+      y: c.vy,
+      w: c.vw,
+      h: c.vh,
       fill: { color: p.slideMuted, transparency: 40 },
     })
   })
 }
 
 /** Masthead: three-column layout at top with brand, edition, code */
-function addMasthead(
-  slide: Slide,
-  p: SkinPalette,
-  opts: { edition?: string; code?: string },
-) {
+function addMasthead(slide: Slide, p: SkinPalette, opts: { edition?: string; code?: string }) {
   const y = 0.35
   const lineH = 0.35
   const mx = D.marginX
 
-  // Left: "The English Hub" — accent on "English"
+  // Left: "The English Hub" - accent on "English"
   slide.addText(
     [
-      { text: 'The ', options: { fontSize: D.sizeMastheadBrand, fontFace: D.fontSerif, color: p.slideFg } },
-      { text: 'English', options: { fontSize: D.sizeMastheadBrand, fontFace: D.fontSerif, color: p.slideAccent } },
-      { text: ' Hub', options: { fontSize: D.sizeMastheadBrand, fontFace: D.fontSerif, color: p.slideFg } },
+      {
+        text: 'The ',
+        options: { fontSize: D.sizeMastheadBrand, fontFace: D.fontSerif, color: p.slideFg },
+      },
+      {
+        text: 'English',
+        options: { fontSize: D.sizeMastheadBrand, fontFace: D.fontSerif, color: p.slideAccent },
+      },
+      {
+        text: ' Hub',
+        options: { fontSize: D.sizeMastheadBrand, fontFace: D.fontSerif, color: p.slideFg },
+      },
     ],
     { x: mx, y, w: 4, h: lineH, valign: 'middle' },
   )
@@ -77,25 +115,41 @@ function addMasthead(
   // Centre: edition (italic serif)
   if (opts.edition) {
     slide.addText(opts.edition, {
-      x: 4, y, w: D.slideWidth - 8, h: lineH,
-      fontSize: D.sizeMastheadEdition, fontFace: D.fontSerif, italic: true,
-      color: p.slideSub, align: 'center', valign: 'middle',
+      x: 4,
+      y,
+      w: D.slideWidth - 8,
+      h: lineH,
+      fontSize: D.sizeMastheadEdition,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideSub,
+      align: 'center',
+      valign: 'middle',
     })
   }
 
   // Right: code (mono uppercase)
   if (opts.code) {
     slide.addText(opts.code.toUpperCase(), {
-      x: D.slideWidth - mx - 3, y, w: 3, h: lineH,
-      fontSize: D.sizeMastheadCode, fontFace: D.fontMono,
-      color: p.slideMuted, align: 'right', valign: 'middle',
+      x: D.slideWidth - mx - 3,
+      y,
+      w: 3,
+      h: lineH,
+      fontSize: D.sizeMastheadCode,
+      fontFace: D.fontMono,
+      color: p.slideMuted,
+      align: 'right',
+      valign: 'middle',
     })
   }
 
   // 3px rule below masthead
   const ruleY = y + lineH + 0.12
   slide.addShape('rect', {
-    x: mx, y: ruleY, w: D.contentWidth, h: 0.03,
+    x: mx,
+    y: ruleY,
+    w: D.contentWidth,
+    h: 0.03,
     fill: { color: p.slideRuleStrong },
   })
 
@@ -115,34 +169,55 @@ function addFooter(
 
   // 1px rule above footer
   slide.addShape('rect', {
-    x: mx, y: ruleY, w: D.contentWidth, h: 0.01,
+    x: mx,
+    y: ruleY,
+    w: D.contentWidth,
+    h: 0.01,
     fill: { color: p.slideRule },
   })
 
   // Left text (mono)
   if (opts.left) {
     slide.addText(opts.left, {
-      x: mx, y: textY, w: 4, h: textH,
-      fontSize: D.sizeFooter, fontFace: D.fontMono,
-      color: p.slideMuted, valign: 'middle',
+      x: mx,
+      y: textY,
+      w: 4,
+      h: textH,
+      fontSize: D.sizeFooter,
+      fontFace: D.fontMono,
+      color: p.slideMuted,
+      valign: 'middle',
     })
   }
 
-  // Centre — italic accent
+  // Centre - italic accent
   if (opts.center) {
     slide.addText(opts.center, {
-      x: 4, y: textY, w: D.slideWidth - 8, h: textH,
-      fontSize: D.sizeFooter, fontFace: D.fontSerif, italic: true,
-      color: p.slideAccent, align: 'center', valign: 'middle',
+      x: 4,
+      y: textY,
+      w: D.slideWidth - 8,
+      h: textH,
+      fontSize: D.sizeFooter,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideAccent,
+      align: 'center',
+      valign: 'middle',
     })
   }
 
   // Right text (mono)
   if (opts.right) {
     slide.addText(opts.right, {
-      x: D.slideWidth - mx - 4, y: textY, w: 4, h: textH,
-      fontSize: D.sizeFooter, fontFace: D.fontMono,
-      color: p.slideMuted, align: 'right', valign: 'middle',
+      x: D.slideWidth - mx - 4,
+      y: textY,
+      w: 4,
+      h: textH,
+      fontSize: D.sizeFooter,
+      fontFace: D.fontMono,
+      color: p.slideMuted,
+      align: 'right',
+      valign: 'middle',
     })
   }
 }
@@ -188,15 +263,18 @@ function addSectionHeading(
     parts.push({
       text: `${opts.numeral}  `,
       options: {
-        fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
-        italic: true, color: p.slideAccent,
+        fontSize: D.sizeSectionHeading,
+        fontFace: D.fontSerif,
+        italic: true,
+        color: p.slideAccent,
       },
     })
   }
   parts.push({
     text,
     options: {
-      fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
+      fontSize: D.sizeSectionHeading,
+      fontFace: D.fontSerif,
       color: p.slideFg,
     },
   })
@@ -216,26 +294,36 @@ function addDashedList(
   w: number,
   maxH: number,
 ) {
-  const parts = items.map((item) => ([
-    {
-      text: '\u2014  ',
-      options: {
-        fontSize: D.sizeDashedList, fontFace: D.fontSerif,
-        color: p.slideAccent, breakType: 'none' as const,
+  const parts = items
+    .map((item) => [
+      {
+        text: '\u2014  ',
+        options: {
+          fontSize: D.sizeDashedList,
+          fontFace: D.fontSerif,
+          color: p.slideAccent,
+          breakType: 'none' as const,
+        },
       },
-    },
-    {
-      text: item,
-      options: {
-        fontSize: D.sizeDashedList, fontFace: D.fontSerif,
-        color: p.slideFg, paraSpaceAfter: 8,
+      {
+        text: item,
+        options: {
+          fontSize: D.sizeDashedList,
+          fontFace: D.fontSerif,
+          color: p.slideFg,
+          paraSpaceAfter: 8,
+        },
       },
-    },
-  ])).flat()
+    ])
+    .flat()
 
   slide.addText(parts, {
-    x, y, w, h: maxH,
-    valign: 'top', lineSpacingMultiple: 1.25,
+    x,
+    y,
+    w,
+    h: maxH,
+    valign: 'top',
+    lineSpacingMultiple: 1.25,
   })
 }
 
@@ -269,40 +357,76 @@ export function titleSlide(
   const cw = D.contentWidth
   // Centre the title block vertically in the available space
   // Available height: contentTop (~1.0) to footer (6.85) = ~5.85"
-  // Title block is ~3" tall — start it ~1.5" below contentTop
+  // Title block is ~3" tall - start it ~1.5" below contentTop
   let cy = contentTop + 1.2
 
-  // Kicker (mono, accent, uppercase) — exam metadata
-  const kickerText = data.kicker || [data.yearGroup, data.examBoard, data.duration, data.text]
-    .filter(Boolean).join('  ·  ')
+  // Kicker (mono, accent, uppercase) - exam metadata
+  const kickerText =
+    data.kicker ||
+    [data.yearGroup, data.examBoard, data.duration, data.text].filter(Boolean).join('  ·  ')
   if (kickerText) {
     slide.addText(kickerText.toUpperCase(), {
-      x: mx, y: cy, w: cw, h: 0.3,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 3, valign: 'middle',
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.3,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 3,
+      valign: 'middle',
     })
     cy += 0.5
   }
 
-  // Display title — auto-shrinks if too long
+  // Display title - auto-shrinks if too long
   const accentWord = data.accentWord
-  const titleH = 2.0  // Generous height, shrinkText keeps it within bounds
+  const titleH = 2.0 // Generous height, shrinkText keeps it within bounds
   if (accentWord && data.title.includes(accentWord)) {
     const before = data.title.substring(0, data.title.indexOf(accentWord))
     const after = data.title.substring(data.title.indexOf(accentWord) + accentWord.length)
     slide.addText(
       [
-        ...(before ? [{ text: before, options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideFg } }] : []),
-        { text: accentWord, options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideAccent, italic: true } },
-        ...(after ? [{ text: after, options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideFg } }] : []),
+        ...(before
+          ? [
+              {
+                text: before,
+                options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
+        {
+          text: accentWord,
+          options: {
+            fontSize: D.sizeDisplayH1,
+            fontFace: D.fontSerif,
+            color: p.slideAccent,
+            italic: true,
+          },
+        },
+        ...(after
+          ? [
+              {
+                text: after,
+                options: { fontSize: D.sizeDisplayH1, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
       ],
       { x: mx, y: cy, w: cw, h: titleH, valign: 'middle', fit: 'shrink' as const, wrap: true },
     )
   } else {
     slide.addText(data.title, {
-      x: mx, y: cy, w: cw, h: titleH,
-      fontSize: D.sizeDisplayH1, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'middle', fit: 'shrink' as const, wrap: true,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: titleH,
+      fontSize: D.sizeDisplayH1,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'middle',
+      fit: 'shrink' as const,
+      wrap: true,
     })
   }
   cy += titleH + 0.2
@@ -310,9 +434,16 @@ export function titleSlide(
   // Standfirst (italic serif, sub colour)
   if (data.subtitle) {
     slide.addText(data.subtitle, {
-      x: mx, y: cy, w: cw, h: 0.55,
-      fontSize: D.sizeStandfirst, fontFace: D.fontSerif, italic: true,
-      color: p.slideSub, valign: 'top', wrap: true,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.55,
+      fontSize: D.sizeStandfirst,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideSub,
+      valign: 'top',
+      wrap: true,
     })
     cy += 0.65
   }
@@ -320,9 +451,14 @@ export function titleSlide(
   // Byline (mono, muted)
   const byline = data.byline || 'theenglishhub.app'
   slide.addText(byline, {
-    x: mx, y: cy, w: cw, h: 0.3,
-    fontSize: D.sizeFooter, fontFace: D.fontMono,
-    color: p.slideMuted, valign: 'top',
+    x: mx,
+    y: cy,
+    w: cw,
+    h: 0.3,
+    fontSize: D.sizeFooter,
+    fontFace: D.fontMono,
+    color: p.slideMuted,
+    valign: 'top',
   })
 }
 
@@ -359,7 +495,10 @@ export function agendaSlide(
     // 1px rule above each item (except first, which uses section heading rule)
     if (i > 0) {
       slide.addShape('rect', {
-        x: mx, y: cy, w: cw, h: 0.008,
+        x: mx,
+        y: cy,
+        w: cw,
+        h: 0.008,
         fill: { color: p.slideRule },
       })
       cy += 0.02
@@ -371,24 +510,41 @@ export function agendaSlide(
 
     // Italic accent numeral
     slide.addText(numStr, {
-      x: mx, y: cy, w: numW, h: itemH,
-      fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
-      italic: true, color: p.slideAccent, valign: 'middle',
+      x: mx,
+      y: cy,
+      w: numW,
+      h: itemH,
+      fontSize: D.sizeSectionHeading,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideAccent,
+      valign: 'middle',
     })
 
     // Serif label
     slide.addText(item.label, {
-      x: mx + numW, y: cy, w: labelW, h: itemH,
-      fontSize: D.sizeBody, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'middle',
+      x: mx + numW,
+      y: cy,
+      w: labelW,
+      h: itemH,
+      fontSize: D.sizeBody,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'middle',
     })
 
     // Mono time ref (right-aligned)
     if (item.time) {
       slide.addText(item.time, {
-        x: mx + cw - 2.5, y: cy, w: 2.5, h: itemH,
-        fontSize: D.sizeMastheadCode, fontFace: D.fontMono,
-        color: p.slideMuted, align: 'right', valign: 'middle',
+        x: mx + cw - 2.5,
+        y: cy,
+        w: 2.5,
+        h: itemH,
+        fontSize: D.sizeMastheadCode,
+        fontFace: D.fontMono,
+        color: p.slideMuted,
+        align: 'right',
+        valign: 'middle',
       })
     }
 
@@ -424,9 +580,15 @@ export function dividerSlide(
   // .chap-n (italic serif 30pt, accent)
   if (data.chapterNumber) {
     slide.addText(data.chapterNumber, {
-      x: mx, y: cy, w: cw, h: 0.55,
-      fontSize: 30, fontFace: D.fontSerif, italic: true,
-      color: p.slideAccent, valign: 'bottom',
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.55,
+      fontSize: 30,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideAccent,
+      valign: 'bottom',
     })
     cy += 0.7
   }
@@ -438,17 +600,45 @@ export function dividerSlide(
     const after = data.title.substring(data.title.indexOf(data.accentWord) + data.accentWord.length)
     slide.addText(
       [
-        ...(before ? [{ text: before, options: { fontSize: titleSize, fontFace: D.fontSerif, color: p.slideFg } }] : []),
-        { text: data.accentWord, options: { fontSize: titleSize, fontFace: D.fontSerif, color: p.slideAccent, italic: true } },
-        ...(after ? [{ text: after, options: { fontSize: titleSize, fontFace: D.fontSerif, color: p.slideFg } }] : []),
+        ...(before
+          ? [
+              {
+                text: before,
+                options: { fontSize: titleSize, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
+        {
+          text: data.accentWord,
+          options: {
+            fontSize: titleSize,
+            fontFace: D.fontSerif,
+            color: p.slideAccent,
+            italic: true,
+          },
+        },
+        ...(after
+          ? [
+              {
+                text: after,
+                options: { fontSize: titleSize, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
       ],
       { x: mx, y: cy, w: cw, h: 2.6, valign: 'bottom', shrinkText: true },
     )
   } else {
     slide.addText(data.title, {
-      x: mx, y: cy, w: cw, h: 2.6,
-      fontSize: titleSize, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom', shrinkText: true,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 2.6,
+      fontSize: titleSize,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
+      shrinkText: true,
     })
   }
   cy += 2.8
@@ -456,9 +646,15 @@ export function dividerSlide(
   // .chap-lede (italic serif 24pt, sub colour)
   if (data.lede) {
     slide.addText(data.lede, {
-      x: mx, y: cy, w: cw, h: 0.6,
-      fontSize: 24, fontFace: D.fontSerif, italic: true,
-      color: p.slideSub, valign: 'top',
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.6,
+      fontSize: 24,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideSub,
+      valign: 'top',
     })
   }
 }
@@ -467,22 +663,22 @@ export function dividerSlide(
 
 export function objectivesSlide(
   pptx: Pres,
-  data: {
-    objectivesKicker?: string
-    objectivesHeading?: string
-    objectives: string[]
-    criteriaKicker?: string
-    criteriaHeading?: string
-    criteria?: string[]
-    edition?: string
-    code?: string
-  } | string[],
+  data:
+    | {
+        objectivesKicker?: string
+        objectivesHeading?: string
+        objectives: string[]
+        criteriaKicker?: string
+        criteriaHeading?: string
+        criteria?: string[]
+        edition?: string
+        code?: string
+      }
+    | string[],
   skin: SlideSkin = 'cream',
 ): void {
   // Backward compat: accept bare string array
-  const d = Array.isArray(data)
-    ? { objectives: data, criteria: undefined }
-    : data
+  const d = Array.isArray(data) ? { objectives: data, criteria: undefined } : data
 
   const p = getSkinPalette(skin)
   const slide = pptx.addSlide()
@@ -503,18 +699,28 @@ export function objectivesSlide(
   // Mono kicker
   const objKicker = (!Array.isArray(data) && d.objectivesKicker) || 'LEARNING OBJECTIVES'
   slide.addText(objKicker.toUpperCase(), {
-    x: mx, y: ly, w: hasCriteria ? colW : cw, h: 0.3,
-    fontSize: D.sizeKicker, fontFace: D.fontMono,
-    color: p.slideAccent, charSpacing: 2,
+    x: mx,
+    y: ly,
+    w: hasCriteria ? colW : cw,
+    h: 0.3,
+    fontSize: D.sizeKicker,
+    fontFace: D.fontMono,
+    color: p.slideAccent,
+    charSpacing: 2,
   })
   ly += 0.4
 
   // Serif heading
   const objHead = (!Array.isArray(data) && d.objectivesHeading) || 'Objectives'
   slide.addText(objHead, {
-    x: mx, y: ly, w: hasCriteria ? colW : cw, h: 0.5,
-    fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
-    color: p.slideFg, valign: 'bottom',
+    x: mx,
+    y: ly,
+    w: hasCriteria ? colW : cw,
+    h: 0.5,
+    fontSize: D.sizeSectionHeading,
+    fontFace: D.fontSerif,
+    color: p.slideFg,
+    valign: 'bottom',
   })
   ly += 0.65
 
@@ -528,17 +734,27 @@ export function objectivesSlide(
 
     const critKicker = (!Array.isArray(data) && d.criteriaKicker) || 'SUCCESS CRITERIA'
     slide.addText(critKicker.toUpperCase(), {
-      x: rx, y: ry, w: colW, h: 0.3,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: rx,
+      y: ry,
+      w: colW,
+      h: 0.3,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     ry += 0.4
 
     const critHead = (!Array.isArray(data) && d.criteriaHeading) || 'Criteria'
     slide.addText(critHead, {
-      x: rx, y: ry, w: colW, h: 0.5,
-      fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom',
+      x: rx,
+      y: ry,
+      w: colW,
+      h: 0.5,
+      fontSize: D.sizeSectionHeading,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
     })
     ry += 0.65
 
@@ -576,9 +792,14 @@ export function contentSlide(
   // .super kicker
   if (data.kicker) {
     slide.addText(data.kicker.toUpperCase(), {
-      x: mx, y: cy, w: cw, h: 0.3,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.3,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     cy += 0.4
   }
@@ -586,20 +807,50 @@ export function contentSlide(
   // h1.xl heading
   if (data.accentWord && data.heading.includes(data.accentWord)) {
     const before = data.heading.substring(0, data.heading.indexOf(data.accentWord))
-    const after = data.heading.substring(data.heading.indexOf(data.accentWord) + data.accentWord.length)
+    const after = data.heading.substring(
+      data.heading.indexOf(data.accentWord) + data.accentWord.length,
+    )
     slide.addText(
       [
-        ...(before ? [{ text: before, options: { fontSize: D.sizeXlH1, fontFace: D.fontSerif, color: p.slideFg } }] : []),
-        { text: data.accentWord, options: { fontSize: D.sizeXlH1, fontFace: D.fontSerif, color: p.slideAccent, italic: true } },
-        ...(after ? [{ text: after, options: { fontSize: D.sizeXlH1, fontFace: D.fontSerif, color: p.slideFg } }] : []),
+        ...(before
+          ? [
+              {
+                text: before,
+                options: { fontSize: D.sizeXlH1, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
+        {
+          text: data.accentWord,
+          options: {
+            fontSize: D.sizeXlH1,
+            fontFace: D.fontSerif,
+            color: p.slideAccent,
+            italic: true,
+          },
+        },
+        ...(after
+          ? [
+              {
+                text: after,
+                options: { fontSize: D.sizeXlH1, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
       ],
       { x: mx, y: cy, w: cw, h: 1.5, valign: 'bottom', shrinkText: true },
     )
   } else {
     slide.addText(data.heading, {
-      x: mx, y: cy, w: cw, h: 1.5,
-      fontSize: D.sizeXlH1, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom', shrinkText: true,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 1.5,
+      fontSize: D.sizeXlH1,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
+      shrinkText: true,
     })
   }
   cy += 1.65
@@ -607,9 +858,15 @@ export function contentSlide(
   // Standfirst
   if (data.standfirst) {
     slide.addText(data.standfirst, {
-      x: mx, y: cy, w: cw, h: 0.55,
-      fontSize: D.sizeStandfirst, fontFace: D.fontSerif, italic: true,
-      color: p.slideSub, valign: 'top',
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.55,
+      fontSize: D.sizeStandfirst,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideSub,
+      valign: 'top',
     })
     cy += 0.7
   }
@@ -617,9 +874,15 @@ export function contentSlide(
   // Body text
   if (data.body) {
     slide.addText(data.body, {
-      x: mx, y: cy, w: cw, h: 2.5,
-      fontSize: D.sizeBody, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'top', wrap: true,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 2.5,
+      fontSize: D.sizeBody,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'top',
+      wrap: true,
       lineSpacingMultiple: 1.3,
     })
     cy += 2.6
@@ -681,25 +944,42 @@ export function twoColumnSlide(
   let ly = colTop
   if (data.leftKicker) {
     slide.addText(data.leftKicker.toUpperCase(), {
-      x: mx, y: ly, w: leftW, h: 0.25,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: mx,
+      y: ly,
+      w: leftW,
+      h: 0.25,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     ly += 0.35
   }
   if (data.leftHeading) {
     slide.addText(data.leftHeading, {
-      x: mx, y: ly, w: leftW, h: 0.55,
-      fontSize: D.sizeLgH1, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom', shrinkText: true,
+      x: mx,
+      y: ly,
+      w: leftW,
+      h: 0.55,
+      fontSize: D.sizeLgH1,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
+      shrinkText: true,
     })
     ly += 0.7
   }
   if (data.leftBody) {
     slide.addText(data.leftBody, {
-      x: mx, y: ly, w: leftW, h: 2.5,
-      fontSize: D.sizeBody, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'top', wrap: true,
+      x: mx,
+      y: ly,
+      w: leftW,
+      h: 2.5,
+      fontSize: D.sizeBody,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'top',
+      wrap: true,
       lineSpacingMultiple: 1.3,
     })
     ly += 2.6
@@ -712,25 +992,42 @@ export function twoColumnSlide(
   let ry = colTop
   if (data.rightKicker) {
     slide.addText(data.rightKicker.toUpperCase(), {
-      x: rx, y: ry, w: rightW, h: 0.25,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: rx,
+      y: ry,
+      w: rightW,
+      h: 0.25,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     ry += 0.35
   }
   if (data.rightHeading) {
     slide.addText(data.rightHeading, {
-      x: rx, y: ry, w: rightW, h: 0.55,
-      fontSize: D.sizeLgH1, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom', shrinkText: true,
+      x: rx,
+      y: ry,
+      w: rightW,
+      h: 0.55,
+      fontSize: D.sizeLgH1,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
+      shrinkText: true,
     })
     ry += 0.7
   }
   if (data.rightBody) {
     slide.addText(data.rightBody, {
-      x: rx, y: ry, w: rightW, h: 2.5,
-      fontSize: D.sizeBody, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'top', wrap: true,
+      x: rx,
+      y: ry,
+      w: rightW,
+      h: 2.5,
+      fontSize: D.sizeBody,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'top',
+      wrap: true,
       lineSpacingMultiple: 1.3,
     })
     ry += 2.6
@@ -768,32 +1065,51 @@ export function pullQuoteSlide(
   // Rule above
   const ruleAboveY = 2.0
   slide.addShape('rect', {
-    x: (D.slideWidth - ruleW) / 2, y: ruleAboveY, w: ruleW, h: 0.02,
+    x: (D.slideWidth - ruleW) / 2,
+    y: ruleAboveY,
+    w: ruleW,
+    h: 0.02,
     fill: { color: p.slideRuleStrong },
   })
 
   // Quote text (italic serif 61pt, centred)
   slide.addText(data.quote, {
-    x: centreX, y: ruleAboveY + 0.25, w: centreW, h: 2.8,
-    fontSize: D.sizePullQuote, fontFace: D.fontSerif,
-    italic: true, color: p.slideFg,
-    align: 'center', valign: 'middle',
-    lineSpacingMultiple: 1.15, shrinkText: true,
+    x: centreX,
+    y: ruleAboveY + 0.25,
+    w: centreW,
+    h: 2.8,
+    fontSize: D.sizePullQuote,
+    fontFace: D.fontSerif,
+    italic: true,
+    color: p.slideFg,
+    align: 'center',
+    valign: 'middle',
+    lineSpacingMultiple: 1.15,
+    shrinkText: true,
   })
 
   // Rule below
   const ruleBelowY = ruleAboveY + 3.15
   slide.addShape('rect', {
-    x: (D.slideWidth - ruleW) / 2, y: ruleBelowY, w: ruleW, h: 0.02,
+    x: (D.slideWidth - ruleW) / 2,
+    y: ruleBelowY,
+    w: ruleW,
+    h: 0.02,
     fill: { color: p.slideRuleStrong },
   })
 
   // Citation (mono 11pt uppercase, muted)
   if (data.citation) {
     slide.addText(data.citation.toUpperCase(), {
-      x: centreX, y: ruleBelowY + 0.2, w: centreW, h: 0.35,
-      fontSize: D.sizeMastheadCode, fontFace: D.fontMono,
-      color: p.slideMuted, align: 'center', valign: 'top',
+      x: centreX,
+      y: ruleBelowY + 0.2,
+      w: centreW,
+      h: 0.35,
+      fontSize: D.sizeMastheadCode,
+      fontFace: D.fontMono,
+      color: p.slideMuted,
+      align: 'center',
+      valign: 'top',
     })
   }
 }
@@ -844,7 +1160,10 @@ export function comparisonSlide(
 
   // Vertical rule between columns
   slide.addShape('rect', {
-    x: mx + colW + (gap - ruleW) / 2, y: colTop, w: ruleW, h: 4.0,
+    x: mx + colW + (gap - ruleW) / 2,
+    y: colTop,
+    w: ruleW,
+    h: 4.0,
     fill: { color: p.slideRule },
   })
 
@@ -853,25 +1172,41 @@ export function comparisonSlide(
   const leftKicker = data.leftKicker || data.leftLabel || ''
   if (leftKicker) {
     slide.addText(leftKicker.toUpperCase(), {
-      x: mx, y: ly, w: colW, h: 0.25,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: mx,
+      y: ly,
+      w: colW,
+      h: 0.25,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     ly += 0.35
   }
   const leftHead = data.leftHeading || ''
   if (leftHead) {
     slide.addText(leftHead, {
-      x: mx, y: ly, w: colW, h: 0.5,
-      fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom',
+      x: mx,
+      y: ly,
+      w: colW,
+      h: 0.5,
+      fontSize: D.sizeSectionHeading,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
     })
     ly += 0.65
   }
   slide.addText(data.leftContent, {
-    x: mx, y: ly, w: colW, h: 3.2,
-    fontSize: D.sizeBody, fontFace: D.fontSerif,
-    color: p.slideFg, valign: 'top', wrap: true,
+    x: mx,
+    y: ly,
+    w: colW,
+    h: 3.2,
+    fontSize: D.sizeBody,
+    fontFace: D.fontSerif,
+    color: p.slideFg,
+    valign: 'top',
+    wrap: true,
     lineSpacingMultiple: 1.3,
   })
 
@@ -880,25 +1215,41 @@ export function comparisonSlide(
   const rightKicker = data.rightKicker || data.rightLabel || ''
   if (rightKicker) {
     slide.addText(rightKicker.toUpperCase(), {
-      x: rightX, y: ry, w: colW, h: 0.25,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: rightX,
+      y: ry,
+      w: colW,
+      h: 0.25,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     ry += 0.35
   }
   const rightHead = data.rightHeading || ''
   if (rightHead) {
     slide.addText(rightHead, {
-      x: rightX, y: ry, w: colW, h: 0.5,
-      fontSize: D.sizeSectionHeading, fontFace: D.fontSerif,
-      color: p.slideFg, valign: 'bottom',
+      x: rightX,
+      y: ry,
+      w: colW,
+      h: 0.5,
+      fontSize: D.sizeSectionHeading,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      valign: 'bottom',
     })
     ry += 0.65
   }
   slide.addText(data.rightContent, {
-    x: rightX, y: ry, w: colW, h: 3.2,
-    fontSize: D.sizeBody, fontFace: D.fontSerif,
-    color: p.slideFg, valign: 'top', wrap: true,
+    x: rightX,
+    y: ry,
+    w: colW,
+    h: 3.2,
+    fontSize: D.sizeBody,
+    fontFace: D.fontSerif,
+    color: p.slideFg,
+    valign: 'top',
+    wrap: true,
     lineSpacingMultiple: 1.3,
   })
 }
@@ -945,8 +1296,10 @@ export function timelineSlide(
 
   // Connecting horizontal line
   slide.addShape('rect', {
-    x: mx + stepW * 0.15, y: lineY - 0.008,
-    w: cw - stepW * 0.3, h: 0.016,
+    x: mx + stepW * 0.15,
+    y: lineY - 0.008,
+    w: cw - stepW * 0.3,
+    h: 0.016,
     fill: { color: p.slideRule },
   })
 
@@ -955,33 +1308,52 @@ export function timelineSlide(
 
     // Dot
     slide.addShape('ellipse', {
-      x: cx - dotSize / 2, y: dotY, w: dotSize, h: dotSize,
+      x: cx - dotSize / 2,
+      y: dotY,
+      w: dotSize,
+      h: dotSize,
       fill: { color: p.slideAccent },
     })
 
     // Step number
     slide.addText(String(i + 1), {
-      x: cx - dotSize / 2, y: dotY, w: dotSize, h: dotSize,
-      fontSize: 8, fontFace: D.fontMono, color: p.slideBg,
-      align: 'center', valign: 'middle',
+      x: cx - dotSize / 2,
+      y: dotY,
+      w: dotSize,
+      h: dotSize,
+      fontSize: 8,
+      fontFace: D.fontMono,
+      color: p.slideBg,
+      align: 'center',
+      valign: 'middle',
     })
 
     // Label (serif, below line)
     slide.addText(step.label, {
-      x: mx + i * stepW + 0.15, y: lineY + 0.3,
-      w: stepW - 0.3, h: 0.55,
-      fontSize: D.sizeBody, fontFace: D.fontSerif,
-      color: p.slideFg, align: 'center', valign: 'top',
+      x: mx + i * stepW + 0.15,
+      y: lineY + 0.3,
+      w: stepW - 0.3,
+      h: 0.55,
+      fontSize: D.sizeBody,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      align: 'center',
+      valign: 'top',
       wrap: true,
     })
 
     // Detail (mono small, below label)
     if (step.detail) {
       slide.addText(step.detail, {
-        x: mx + i * stepW + 0.15, y: lineY + 0.9,
-        w: stepW - 0.3, h: 1.2,
-        fontSize: D.sizeMastheadCode, fontFace: D.fontMono,
-        color: p.slideMuted, align: 'center', valign: 'top',
+        x: mx + i * stepW + 0.15,
+        y: lineY + 0.9,
+        w: stepW - 0.3,
+        h: 1.2,
+        fontSize: D.sizeMastheadCode,
+        fontFace: D.fontMono,
+        color: p.slideMuted,
+        align: 'center',
+        valign: 'top',
         wrap: true,
       })
     }
@@ -1032,7 +1404,10 @@ export function dataSlide(
 
     // Card panel bg
     slide.addShape('roundRect', {
-      x: cx, y: cy, w: cardW, h: cardH,
+      x: cx,
+      y: cy,
+      w: cardW,
+      h: cardH,
       fill: { color: p.slidePanel },
       line: { color: p.slidePanelBorder, width: 0.75 },
       rectRadius: 0.03,
@@ -1040,24 +1415,41 @@ export function dataSlide(
 
     // Mono kicker
     slide.addText(card.kicker.toUpperCase(), {
-      x: cx + 0.3, y: cy + 0.3, w: cardW - 0.6, h: 0.3,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 1.5,
+      x: cx + 0.3,
+      y: cy + 0.3,
+      w: cardW - 0.6,
+      h: 0.3,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 1.5,
     })
 
     // Huge italic accent numeral (97pt)
     slide.addText(card.value, {
-      x: cx + 0.3, y: cy + 0.65, w: cardW - 0.6, h: 1.7,
-      fontSize: D.sizeDataCardNum, fontFace: D.fontSerif,
-      italic: true, color: p.slideAccent,
-      valign: 'middle', shrinkText: true,
+      x: cx + 0.3,
+      y: cy + 0.65,
+      w: cardW - 0.6,
+      h: 1.7,
+      fontSize: D.sizeDataCardNum,
+      fontFace: D.fontSerif,
+      italic: true,
+      color: p.slideAccent,
+      valign: 'middle',
+      shrinkText: true,
     })
 
     // Serif sub text
     slide.addText(card.sub, {
-      x: cx + 0.3, y: cy + cardH - 0.8, w: cardW - 0.6, h: 0.5,
-      fontSize: D.sizeBody, fontFace: D.fontSerif,
-      color: p.slideSub, valign: 'top', wrap: true,
+      x: cx + 0.3,
+      y: cy + cardH - 0.8,
+      w: cardW - 0.6,
+      h: 0.5,
+      fontSize: D.sizeBody,
+      fontFace: D.fontSerif,
+      color: p.slideSub,
+      valign: 'top',
+      wrap: true,
     })
   })
 }
@@ -1147,7 +1539,9 @@ export function tableSlide(
   const rowH = Math.min(0.45, (D.slideHeight - cy - 1.0) / allRows.length)
 
   slide.addTable(allRows, {
-    x: mx, y: cy, w: cw,
+    x: mx,
+    y: cy,
+    w: cw,
     rowH,
     colW: Array(colCount).fill(colW),
   })
@@ -1180,18 +1574,29 @@ export function calloutSlide(
   // Super kicker
   if (data.kicker) {
     slide.addText(data.kicker.toUpperCase(), {
-      x: mx, y: cy, w: cw, h: 0.3,
-      fontSize: D.sizeKicker, fontFace: D.fontMono,
-      color: p.slideAccent, charSpacing: 2,
+      x: mx,
+      y: cy,
+      w: cw,
+      h: 0.3,
+      fontSize: D.sizeKicker,
+      fontFace: D.fontMono,
+      color: p.slideAccent,
+      charSpacing: 2,
     })
     cy += 0.4
   }
 
   // Large heading
   slide.addText(data.heading, {
-    x: mx, y: cy, w: cw, h: 1.0,
-    fontSize: D.sizeLgH1, fontFace: D.fontSerif,
-    color: p.slideFg, valign: 'bottom', shrinkText: true,
+    x: mx,
+    y: cy,
+    w: cw,
+    h: 1.0,
+    fontSize: D.sizeLgH1,
+    fontFace: D.fontSerif,
+    color: p.slideFg,
+    valign: 'bottom',
+    shrinkText: true,
   })
   cy += 1.2
 
@@ -1203,21 +1608,33 @@ export function calloutSlide(
 
   // Panel background
   slide.addShape('rect', {
-    x: boxX, y: cy, w: boxW, h: boxH,
+    x: boxX,
+    y: cy,
+    w: boxW,
+    h: boxH,
     fill: { color: p.slidePanel },
   })
 
   // Accent left border
   slide.addShape('rect', {
-    x: boxX, y: cy, w: borderW, h: boxH,
+    x: boxX,
+    y: cy,
+    w: borderW,
+    h: boxH,
     fill: { color: p.slideAccent },
   })
 
   // Body text inside callout
   slide.addText(data.body, {
-    x: boxX + borderW + 0.3, y: cy + 0.25, w: boxW - borderW - 0.6, h: boxH - 0.5,
-    fontSize: D.sizeBody, fontFace: D.fontSerif,
-    color: p.slideFg, valign: 'top', wrap: true,
+    x: boxX + borderW + 0.3,
+    y: cy + 0.25,
+    w: boxW - borderW - 0.6,
+    h: boxH - 0.5,
+    fontSize: D.sizeBody,
+    fontFace: D.fontSerif,
+    color: p.slideFg,
+    valign: 'top',
+    wrap: true,
     lineSpacingMultiple: 1.35,
   })
 }
@@ -1248,9 +1665,14 @@ export function questionSlide(
   // Mono kicker (centred)
   const kickerText = data.kicker || 'DISCUSSION'
   slide.addText(kickerText.toUpperCase(), {
-    x: mx, y: 1.8, w: cw, h: 0.3,
-    fontSize: D.sizeKicker, fontFace: D.fontMono,
-    color: p.slideAccent, charSpacing: 2,
+    x: mx,
+    y: 1.8,
+    w: cw,
+    h: 0.3,
+    fontSize: D.sizeKicker,
+    fontFace: D.fontMono,
+    color: p.slideAccent,
+    charSpacing: 2,
     align: 'center',
   })
 
@@ -1258,25 +1680,51 @@ export function questionSlide(
   const qSize = 76
   if (data.accentWord && data.question.includes(data.accentWord)) {
     const before = data.question.substring(0, data.question.indexOf(data.accentWord))
-    const after = data.question.substring(data.question.indexOf(data.accentWord) + data.accentWord.length)
+    const after = data.question.substring(
+      data.question.indexOf(data.accentWord) + data.accentWord.length,
+    )
     slide.addText(
       [
-        ...(before ? [{ text: before, options: { fontSize: qSize, fontFace: D.fontSerif, color: p.slideFg } }] : []),
-        { text: data.accentWord, options: { fontSize: qSize, fontFace: D.fontSerif, color: p.slideAccent, italic: true } },
-        ...(after ? [{ text: after, options: { fontSize: qSize, fontFace: D.fontSerif, color: p.slideFg } }] : []),
+        ...(before
+          ? [
+              {
+                text: before,
+                options: { fontSize: qSize, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
+        {
+          text: data.accentWord,
+          options: { fontSize: qSize, fontFace: D.fontSerif, color: p.slideAccent, italic: true },
+        },
+        ...(after
+          ? [{ text: after, options: { fontSize: qSize, fontFace: D.fontSerif, color: p.slideFg } }]
+          : []),
       ],
       {
-        x: mx, y: 2.3, w: cw, h: 3.0,
-        align: 'center', valign: 'middle',
-        lineSpacingMultiple: 1.1, shrinkText: true,
+        x: mx,
+        y: 2.3,
+        w: cw,
+        h: 3.0,
+        align: 'center',
+        valign: 'middle',
+        lineSpacingMultiple: 1.1,
+        shrinkText: true,
       },
     )
   } else {
     slide.addText(data.question, {
-      x: mx, y: 2.3, w: cw, h: 3.0,
-      fontSize: qSize, fontFace: D.fontSerif,
-      color: p.slideFg, align: 'center', valign: 'middle',
-      lineSpacingMultiple: 1.1, shrinkText: true,
+      x: mx,
+      y: 2.3,
+      w: cw,
+      h: 3.0,
+      fontSize: qSize,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      align: 'center',
+      valign: 'middle',
+      lineSpacingMultiple: 1.1,
+      shrinkText: true,
     })
   }
 }
@@ -1309,9 +1757,14 @@ export function closingSlide(
   // Mono kicker (centred)
   const kickerText = data.kicker || 'END'
   slide.addText(kickerText.toUpperCase(), {
-    x: mx, y: 1.6, w: cw, h: 0.3,
-    fontSize: D.sizeKicker, fontFace: D.fontMono,
-    color: p.slideAccent, charSpacing: 2,
+    x: mx,
+    y: 1.6,
+    w: cw,
+    h: 0.3,
+    fontSize: D.sizeKicker,
+    fontFace: D.fontMono,
+    color: p.slideAccent,
+    charSpacing: 2,
     align: 'center',
   })
 
@@ -1320,23 +1773,58 @@ export function closingSlide(
   const closingSize = 150
   if (data.accentWord && closingText.includes(data.accentWord)) {
     const before = closingText.substring(0, closingText.indexOf(data.accentWord))
-    const after = closingText.substring(closingText.indexOf(data.accentWord) + data.accentWord.length)
+    const after = closingText.substring(
+      closingText.indexOf(data.accentWord) + data.accentWord.length,
+    )
     slide.addText(
       [
-        ...(before ? [{ text: before, options: { fontSize: closingSize, fontFace: D.fontSerif, color: p.slideFg } }] : []),
-        { text: data.accentWord, options: { fontSize: closingSize, fontFace: D.fontSerif, color: p.slideAccent, italic: true } },
-        ...(after ? [{ text: after, options: { fontSize: closingSize, fontFace: D.fontSerif, color: p.slideFg } }] : []),
+        ...(before
+          ? [
+              {
+                text: before,
+                options: { fontSize: closingSize, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
+        {
+          text: data.accentWord,
+          options: {
+            fontSize: closingSize,
+            fontFace: D.fontSerif,
+            color: p.slideAccent,
+            italic: true,
+          },
+        },
+        ...(after
+          ? [
+              {
+                text: after,
+                options: { fontSize: closingSize, fontFace: D.fontSerif, color: p.slideFg },
+              },
+            ]
+          : []),
       ],
       {
-        x: mx, y: 2.1, w: cw, h: 2.8,
-        align: 'center', valign: 'middle', shrinkText: true,
+        x: mx,
+        y: 2.1,
+        w: cw,
+        h: 2.8,
+        align: 'center',
+        valign: 'middle',
+        shrinkText: true,
       },
     )
   } else {
     slide.addText(closingText, {
-      x: mx, y: 2.1, w: cw, h: 2.8,
-      fontSize: closingSize, fontFace: D.fontSerif,
-      color: p.slideFg, align: 'center', valign: 'middle',
+      x: mx,
+      y: 2.1,
+      w: cw,
+      h: 2.8,
+      fontSize: closingSize,
+      fontFace: D.fontSerif,
+      color: p.slideFg,
+      align: 'center',
+      valign: 'middle',
       shrinkText: true,
     })
   }
@@ -1344,10 +1832,16 @@ export function closingSlide(
   // Italic sub signature
   const sig = data.signature || data.nextLessonTeaser || 'theenglishhub.app'
   slide.addText(sig, {
-    x: mx, y: 5.0, w: cw, h: 0.45,
-    fontSize: D.sizeStandfirst, fontFace: D.fontSerif,
-    italic: true, color: p.slideSub,
-    align: 'center', valign: 'middle',
+    x: mx,
+    y: 5.0,
+    w: cw,
+    h: 0.45,
+    fontSize: D.sizeStandfirst,
+    fontFace: D.fontSerif,
+    italic: true,
+    color: p.slideSub,
+    align: 'center',
+    valign: 'middle',
   })
 }
 
@@ -1369,10 +1863,14 @@ export function phaseDividerSlide(
     homework: 'Homework',
     general: 'Lesson',
   }
-  dividerSlide(pptx, {
-    chapterNumber: phase !== 'general' ? phase.toUpperCase() : undefined,
-    title: subtitle || phaseLabels[phase],
-  }, skin)
+  dividerSlide(
+    pptx,
+    {
+      chapterNumber: phase !== 'general' ? phase.toUpperCase() : undefined,
+      title: subtitle || phaseLabels[phase],
+    },
+    skin,
+  )
 }
 
 /** @deprecated Use `contentSlide` instead */
@@ -1396,12 +1894,16 @@ export function activitySlide(
   if (data.keyQuestion) items.push(data.keyQuestion)
   if (data.expectedOutcomes) data.expectedOutcomes.forEach((o) => items.push(o))
 
-  contentSlide(pptx, {
-    kicker: `${data.slideTitle}  /  ${data.duration}`,
-    heading: data.activityTitle,
-    standfirst: data.teacherTip,
-    items,
-  }, skin)
+  contentSlide(
+    pptx,
+    {
+      kicker: `${data.slideTitle}  /  ${data.duration}`,
+      heading: data.activityTitle,
+      standfirst: data.teacherTip,
+      items,
+    },
+    skin,
+  )
 }
 
 /** @deprecated Use `comparisonSlide` instead */
@@ -1412,39 +1914,47 @@ export function differentiationSlide(
   diff: { support: string; core: string; stretch: string },
   skin: SlideSkin = 'cream',
 ): void {
-  comparisonSlide(pptx, {
-    title,
-    leftKicker: 'SUPPORT',
-    leftHeading: 'Support',
-    leftContent: diff.support,
-    rightKicker: 'STRETCH',
-    rightHeading: 'Stretch',
-    rightContent: diff.stretch,
-  }, skin)
+  comparisonSlide(
+    pptx,
+    {
+      title,
+      leftKicker: 'SUPPORT',
+      leftHeading: 'Support',
+      leftContent: diff.support,
+      rightKicker: 'STRETCH',
+      rightHeading: 'Stretch',
+      rightContent: diff.stretch,
+    },
+    skin,
+  )
   // Core goes into a second content slide
-  contentSlide(pptx, {
-    kicker: 'CORE',
-    heading: 'Core',
-    body: diff.core,
-  }, skin)
+  contentSlide(
+    pptx,
+    {
+      kicker: 'CORE',
+      heading: 'Core',
+      body: diff.core,
+    },
+    skin,
+  )
 }
 
 /** @deprecated Use `tableSlide` instead */
-export function vocabularySlide(
-  pptx: Pres,
-  vocabulary: string[],
-  skin: SlideSkin = 'cream',
-): void {
+export function vocabularySlide(pptx: Pres, vocabulary: string[], skin: SlideSkin = 'cream'): void {
   const headers = ['Term', 'Definition']
   const rows = vocabulary.map((entry) => {
     const sep = entry.match(/^([^:\-\u2013\u2014]+?)\s*[:\-\u2013\u2014]\s*(.+)$/)
     return sep ? [sep[1].trim(), sep[2].trim()] : [entry, '']
   })
-  tableSlide(pptx, {
-    sectionHeading: 'Key Vocabulary',
-    headers,
-    rows,
-  }, skin)
+  tableSlide(
+    pptx,
+    {
+      sectionHeading: 'Key Vocabulary',
+      headers,
+      rows,
+    },
+    skin,
+  )
 }
 
 /** @deprecated Use `contentSlide` instead */
@@ -1458,12 +1968,16 @@ export function plenarySlide(
   skin: SlideSkin = 'cream',
 ): void {
   const items = data.reflectionQuestions || []
-  contentSlide(pptx, {
-    kicker: 'PLENARY',
-    heading: data.title,
-    standfirst: data.instructions,
-    items,
-  }, skin)
+  contentSlide(
+    pptx,
+    {
+      kicker: 'PLENARY',
+      heading: data.title,
+      standfirst: data.instructions,
+      items,
+    },
+    skin,
+  )
 }
 
 /** @deprecated Use `contentSlide` instead */
@@ -1477,20 +1991,20 @@ export function homeworkSlide(
   skin: SlideSkin = 'cream',
 ): void {
   const items = data.resources ? [...data.resources] : []
-  contentSlide(pptx, {
-    kicker: data.dueDate ? `HOMEWORK  /  Due ${data.dueDate}` : 'HOMEWORK',
-    heading: 'Homework',
-    body: data.task,
-    items,
-  }, skin)
+  contentSlide(
+    pptx,
+    {
+      kicker: data.dueDate ? `HOMEWORK  /  Due ${data.dueDate}` : 'HOMEWORK',
+      heading: 'Homework',
+      body: data.task,
+      items,
+    },
+    skin,
+  )
 }
 
 /** @deprecated Use `closingSlide` instead */
-export function endSlide(
-  pptx: Pres,
-  nextLessonTeaser?: string,
-  skin: SlideSkin = 'cream',
-): void {
+export function endSlide(pptx: Pres, nextLessonTeaser?: string, skin: SlideSkin = 'cream'): void {
   closingSlide(pptx, { nextLessonTeaser }, skin)
 }
 

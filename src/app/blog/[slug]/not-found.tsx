@@ -1,5 +1,5 @@
 /**
- * /blog/[slug]/not-found — graceful 404 when a post slug is missing.
+ * /blog/[slug]/not-found - graceful 404 when a post slug is missing.
  *
  * Triggered by `notFound()` inside the article page when a slug arrives
  * that doesn't exist in `content/blog/`. We surface a short message and
@@ -11,7 +11,7 @@ import Link from 'next/link'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Article not found — The English Hub',
+  title: 'Article not found - The English Hub',
   robots: { index: false, follow: false },
 }
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'Our refund and cancellation policy for The English Hub subscriptions and course purchases. Clear terms for students, parents, and institutions.',
   alternates: { canonical: 'https://theenglishhub.app/refund-policy' },
   openGraph: {
-    title: 'Refund Policy — The English Hub',
+    title: 'Refund Policy - The English Hub',
     description:
       'Our refund and cancellation policy for The English Hub subscriptions and course purchases. Clear terms for students, parents, and institutions.',
   },

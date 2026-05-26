@@ -66,7 +66,9 @@ export function contentSafetyCheck(body: ContentSafetyInput): string | null {
   }
 
   // Detect single repeated word/phrase (e.g. "test test test test...")
-  const uniqueWords = new Set(words.map((w) => w.toLowerCase().replace(/[^a-z]/g, '')).filter(Boolean))
+  const uniqueWords = new Set(
+    words.map((w) => w.toLowerCase().replace(/[^a-z]/g, '')).filter(Boolean),
+  )
   if (wordCount >= 20 && uniqueWords.size < Math.max(5, wordCount * 0.1)) {
     return 'Your submission does not appear to be an essay. Please submit original continuous writing.'
   }
@@ -89,7 +91,7 @@ export function contentSafetyCheck(body: ContentSafetyInput): string | null {
     }
   }
 
-  // 4b. Detect self-harm / suicide keywords — return safeguarding signposting
+  // 4b. Detect self-harm / suicide keywords - return safeguarding signposting
   // This is a child safeguarding requirement (DD-07). The response must be
   // supportive, non-judgmental, and provide UK helpline numbers.
   const safeguardingPatterns = [/\b(self[- ]?harm)/i, /\bsuicid/i]

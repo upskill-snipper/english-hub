@@ -40,7 +40,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     id: 1,
     question:
       'Compare how poets present desire in "Sonnet 29" and one other poem from the anthology.',
-    poemA: 'Sonnet 29 — "I think of thee!"',
+    poemA: 'Sonnet 29 - "I think of thee!"',
     poemB: "Love's Philosophy",
     thesis:
       'Both Barrett Browning and Shelley present speakers consumed by desire, yet where Barrett Browning ultimately rejects fantasy in favour of physical presence, Shelley remains trapped in a rhetorical plea that the beloved never answers -- suggesting that desire fulfilled and desire frustrated require fundamentally different poetic forms.',
@@ -299,7 +299,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     question:
       'Compare how poets present the power dynamics of love in "The Farmer\'s Bride" and one other poem.',
     poemA: "The Farmer's Bride",
-    poemB: 'Sonnet 29 — "I think of thee!"',
+    poemB: 'Sonnet 29 - "I think of thee!"',
     thesis:
       "Both Mew and Barrett Browning present speakers negotiating desire within relationships shaped by power, but where the farmer's desire becomes a form of entrapment from which neither partner can escape, Barrett Browning's speaker actively dismantles the power of her own fantasies in favour of mutual, embodied love -- revealing how desire can either imprison or liberate depending on whether it recognises the beloved's autonomy.",
     paragraphs: [
@@ -384,7 +384,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     id: 9,
     question: 'Compare how poets present love as joyful in "Singh Song!" and one other poem.',
     poemA: 'Singh Song!',
-    poemB: 'Sonnet 29 — "I think of thee!"',
+    poemB: 'Sonnet 29 - "I think of thee!"',
     thesis:
       'Both Nagra and Barrett Browning present love as a force that overwhelms all other concerns, but where Nagra uses humour, dialect, and cultural specificity to celebrate the everyday joy of married love, Barrett Browning uses the Petrarchan sonnet to dramatise the moment when desire for the beloved surpasses every other thought -- revealing that joy in love can be either playful and communal or intense and private.',
     paragraphs: [

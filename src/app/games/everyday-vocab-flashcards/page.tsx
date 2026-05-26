@@ -696,11 +696,11 @@ export default function EverydayVocabFlashcardsPage() {
                 >
                   {feedback === 'known' ? (
                     <>
-                      <CheckCircle className="size-4" /> Brilliant — that one is yours!
+                      <CheckCircle className="size-4" /> Brilliant - that one is yours!
                     </>
                   ) : (
                     <>
-                      <XCircle className="size-4" /> No worries — we&rsquo;ll show it again soon.
+                      <XCircle className="size-4" /> No worries - we&rsquo;ll show it again soon.
                     </>
                   )}
                 </div>

@@ -1,4 +1,4 @@
-// ─── IELTS Centre dashboard — linked-student roster (read-only) ─────────────
+// ─── IELTS Centre dashboard - linked-student roster (read-only) ─────────────
 // B2B surface for IELTS centres / tutors / schools. Returns the teacher's
 // linked students with their LATEST IELTS band per skill + an overall band.
 //
@@ -8,13 +8,13 @@
 //   • gate on the TEACHER Role (site admins also pass, matching the rest of
 //     the B2B surface);
 //   • students are the User rows whose `linkedTeacherId` points at the
-//     teacher — the Prisma-native teacher↔student link (User.linkedTeacherId,
+//     teacher - the Prisma-native teacher↔student link (User.linkedTeacherId,
 //     indexed in schema.prisma).
 //
 // Everything is GRACEFUL: any auth failure → 401/403 JSON; the `ielts_attempts`
 // table may not be migrated in every environment yet, so EVERY DB read of it is
 // wrapped in try/catch and degrades to an empty band set (never throws). A
-// student with no attempts simply shows "—" bands.
+// student with no attempts simply shows "-" bands.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextResponse } from 'next/server'
@@ -48,7 +48,7 @@ export interface CentreStudentsResponse {
   attemptsUnavailable: boolean
 }
 
-// A band coming off the DB is a Float; narrow it to the 0–9 / 0.5-step union.
+// A band coming off the DB is a Float; narrow it to the 0-9 / 0.5-step union.
 const VALID_BANDS: ReadonlySet<number> = new Set([
   0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9,
 ])
@@ -105,7 +105,7 @@ async function resolveTeacher(): Promise<
 
 export async function GET() {
   // 1) Auth + role. DB user/role reads are wrapped so an unmigrated/over-loaded
-  //    DB never 500s the dashboard — it degrades to "not authorised → empty".
+  //    DB never 500s the dashboard - it degrades to "not authorised → empty".
   let teacherId: string
   try {
     const auth = await resolveTeacher()
@@ -168,7 +168,7 @@ export async function GET() {
       }
     }
   } catch {
-    // Table not migrated yet / transient DB error — non-fatal by design.
+    // Table not migrated yet / transient DB error - non-fatal by design.
     attemptsUnavailable = true
   }
 

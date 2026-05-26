@@ -105,7 +105,7 @@ interface MarkingSubmission {
   status: SubmissionStatus
   submitted_at: string
   reviewed_at: string | null
-  // ── Smart-IP additive fields (optional — older rows may omit them) ────────
+  // ── Smart-IP additive fields (optional - older rows may omit them) ────────
   source?: string | null
   ai_score?: number | null
   ai_max_marks?: number | null
@@ -194,7 +194,7 @@ function statusBadge(status: SubmissionStatus) {
 }
 
 function confidenceLabel(c: number | null): string {
-  if (c === null || c === undefined) return '—'
+  if (c === null || c === undefined) return '-'
   const pct = Math.round(c * 100)
   return `${pct}%`
 }
@@ -389,7 +389,7 @@ export default function SchoolMarkingPage() {
       setSubmissions((prev) =>
         prev.map((s) => (s.id === updated.submission.id ? updated.submission : s)),
       )
-      // Approve / reject are terminal — close the drawer. Correct / send-back
+      // Approve / reject are terminal - close the drawer. Correct / send-back
       // stay in the queue, so keep the drawer open for further edits.
       if (decision === 'approve' || decision === 'reject') {
         setActiveId(null)
@@ -567,7 +567,7 @@ export default function SchoolMarkingPage() {
                           <span className="truncate">{truncate(s.essay_text, 80)}</span>
                         </div>
                       </td>
-                      <td className="px-3 py-2.5 text-muted-foreground">{s.exam_board ?? '—'}</td>
+                      <td className="px-3 py-2.5 text-muted-foreground">{s.exam_board ?? '-'}</td>
                       <td className="px-3 py-2.5 font-semibold text-foreground tabular-nums">
                         {s.teacher_grade ? (
                           <span className="text-primary">
@@ -577,7 +577,7 @@ export default function SchoolMarkingPage() {
                             </span>
                           </span>
                         ) : (
-                          (s.ai_grade ?? '—')
+                          (s.ai_grade ?? '-')
                         )}
                       </td>
                       <td
@@ -672,7 +672,7 @@ export default function SchoolMarkingPage() {
                   )}
                   <div className="mt-3 flex items-center gap-3 text-sm">
                     <span className="text-muted-foreground">Overall:</span>
-                    <span className="font-semibold text-foreground">{active.ai_grade ?? '—'}</span>
+                    <span className="font-semibold text-foreground">{active.ai_grade ?? '-'}</span>
                     <span
                       className={cn(
                         'text-xs font-medium tabular-nums',
@@ -697,7 +697,7 @@ export default function SchoolMarkingPage() {
                   </div>
                 </section>
 
-                {/* Teacher decision — the editable final mark + moderation.
+                {/* Teacher decision - the editable final mark + moderation.
                     The AI mark above is only a draft; approving here is what
                     sets the submission to 'approved'. Kept compact for speed. */}
                 <section>

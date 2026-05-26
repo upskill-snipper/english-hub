@@ -5,7 +5,7 @@
  * (A-Z 0-9, excluding 0/O/1/I/L) so codes are easy to read
  * aloud, type on mobile, and scan from a printed slip.
  *
- * NOTE: Link codes are short by design for UX — they MUST be
+ * NOTE: Link codes are short by design for UX - they MUST be
  * rate-limited, single-use, and scoped to a short TTL at the
  * API layer. They do NOT provide entropy for long-lived tokens.
  */
@@ -51,20 +51,22 @@ export function generateLinkCode(): string {
  * if the user typed an ambiguous char.
  */
 export function normalizeLinkCode(input: string): string {
-  return input
-    .toUpperCase()
-    .replace(/[\s-]/g, '')
-    // Common confusions: user types O or 0 — we accept both
-    // by canonicalizing to the one we actually use.
-    .replace(/O/g, '0') // then 0 will be rejected below as invalid
-    .replace(/I/g, '1')
-    .replace(/L/g, '1')
+  return (
+    input
+      .toUpperCase()
+      .replace(/[\s-]/g, '')
+      // Common confusions: user types O or 0 - we accept both
+      // by canonicalizing to the one we actually use.
+      .replace(/O/g, '0') // then 0 will be rejected below as invalid
+      .replace(/I/g, '1')
+      .replace(/L/g, '1')
+  )
 }
 
 // ── isValidLinkCode ───────────────────────────────────────────────────────────
 
 /**
- * Strict validator — returns true only if the code is exactly
+ * Strict validator - returns true only if the code is exactly
  * LINK_CODE_LENGTH characters long and every character is from
  * LINK_CODE_ALPHABET.
  */

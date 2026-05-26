@@ -6,11 +6,11 @@ import { getBoardConfig } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Worksheets — Teacher Library',
+    title: 'Worksheets - Teacher Library',
     description:
       '25 free printable worksheets for GCSE English: comprehension, analysis, writing scaffolds, and exam skills practice.',
   },
-  title: 'Worksheets — Teacher Library',
+  title: 'Worksheets - Teacher Library',
   description:
     '25 free printable worksheets for GCSE English: comprehension, analysis, writing scaffolds, and exam skills practice.',
   alternates: {
@@ -24,21 +24,21 @@ const WORKSHEETS = [
     title: 'PEE Paragraph Builder',
     description:
       'A scaffolded worksheet that walks students through Point, Evidence, Explain with sentence starters and a worked example.',
-    yearGroup: 'KS3–KS4',
+    yearGroup: 'KS3-KS4',
   },
   {
     id: 'poetry-annotation-guide',
     title: 'Poetry Annotation Framework',
     description:
       'A reusable poem annotation worksheet that teaches students to mark up any poem using the SMILE framework.',
-    yearGroup: 'Year 10–11',
+    yearGroup: 'Year 10-11',
   },
   {
     id: 'language-devices-bingo',
     title: 'Language Devices Bingo',
     description:
       '24 language device cards for a bingo-style starter or recap activity. Print and play in 5 minutes.',
-    yearGroup: 'KS3–KS4',
+    yearGroup: 'KS3-KS4',
   },
   {
     id: 'quote-memorisation-grid',
@@ -59,7 +59,7 @@ const WORKSHEETS = [
     title: 'Analytical Connective Bank',
     description:
       'A printable reference sheet of 50+ analytical connectives organised by function: adding, contrasting, emphasising, concluding.',
-    yearGroup: 'Year 10–11',
+    yearGroup: 'Year 10-11',
   },
   {
     id: 'vocab-builder',
@@ -80,7 +80,7 @@ const WORKSHEETS = [
     title: 'Theme Tracker Grid',
     description:
       'Track how a theme develops across a text with chapter-by-chapter evidence and analysis.',
-    yearGroup: 'Year 10–11',
+    yearGroup: 'Year 10-11',
   },
   {
     id: 'sentence-variety',
@@ -121,7 +121,7 @@ const WORKSHEETS = [
     id: 'spag-audit',
     title: 'SPaG Self-Audit',
     description: 'A student-facing SPaG checklist and error log for tracking common mistakes.',
-    yearGroup: 'KS3–KS4',
+    yearGroup: 'KS3-KS4',
   },
   {
     id: 'essay-plan-scaffold',
@@ -156,7 +156,7 @@ const WORKSHEETS = [
   },
   {
     id: 'what-how-why',
-    title: 'What–How–Why Grid',
+    title: 'What-How-Why Grid',
     description: 'A three-column analysis grid to structure paragraphs on language and method.',
     yearGroup: 'Year 10',
   },
@@ -165,7 +165,7 @@ const WORKSHEETS = [
     title: 'Punctuation Review',
     description:
       'Target colons, semicolons, dashes, and brackets with a model text and correction tasks.',
-    yearGroup: 'KS3–KS4',
+    yearGroup: 'KS3-KS4',
   },
   {
     id: 'speech-writing',

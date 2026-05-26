@@ -11,9 +11,9 @@ export interface Annotation {
   id: string
   /** Index into the paragraph array that this annotation belongs to */
   paragraphIndex: number
-  /** Substring of the paragraph to highlight — must appear verbatim */
+  /** Substring of the paragraph to highlight - must appear verbatim */
   quote: string
-  /** Kind of comment — drives colour token */
+  /** Kind of comment - drives colour token */
   kind: AnnotationKind
   /** Marker-style comment */
   comment: string

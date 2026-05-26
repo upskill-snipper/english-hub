@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
       return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
     }
 
-    // 4b. AI opt-out enforcement (Children's Code — GAP-12B)
+    // 4b. AI opt-out enforcement (Children's Code - GAP-12B)
     const aiOptedOut = await isAiOptedOutServer(user.id)
     if (aiOptedOut) {
       return forbiddenResponse(
@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 11. Call Claude (shared client — privacy posture documented in
+    // 11. Call Claude (shared client - privacy posture documented in
     // src/lib/anthropic-client.ts; behaviour identical to new Anthropic()).
     const anthropic = getAnthropicClient(apiKey)
     // EU AI Act Art. 12/19: bracket the model call so the audit record can
@@ -259,7 +259,7 @@ export async function POST(request: NextRequest) {
       return serverErrorResponse('Failed to process the AI response. Please try again.')
     }
 
-    // EU AI Act Art. 12/19 — record the successful AI marking decision.
+    // EU AI Act Art. 12/19 - record the successful AI marking decision.
     void logAiDecision({
       ...auditBase,
       requestStartedAt: aiRequestStartedAt,
@@ -282,7 +282,7 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    // Trustpilot review solicitation — fire-and-forget on first successful
+    // Trustpilot review solicitation - fire-and-forget on first successful
     // mark. Dedup in the trigger orchestrator ensures only the first invocation
     // per user actually sends an invite; subsequent marks no-op cheaply. If
     // TRUSTPILOT_ENABLED is unset, the trigger logs only.

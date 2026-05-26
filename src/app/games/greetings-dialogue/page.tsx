@@ -268,7 +268,7 @@ const EXCHANGE_BANK: Exchange[] = [
   },
   {
     situation: 'You leave a shop after buying something.',
-    prompt: '"Thanks, goodbye!" (shop assistant) — you reply.',
+    prompt: '"Thanks, goodbye!" (shop assistant) - you reply.',
     options: ['Goodbye, have a nice day!', 'Good morning!', "Sorry I'm late!", 'How do you do?'],
     answerIndex: 0,
     note: '"Have a nice day!" is a friendly thing to say when leaving.',
@@ -584,7 +584,7 @@ export default function GreetingsDialoguePage() {
                     ) : (
                       <>
                         <XCircle className="size-4" />
-                        Not quite — keep going, you&apos;re learning!
+                        Not quite - keep going, you&apos;re learning!
                       </>
                     )}
                   </div>

@@ -21,7 +21,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Possessive pronoun',
-          note: '"my" — the Duke treats his wife as a possession, an object to be owned and displayed. Even in death she belongs to him.',
+          note: '"my" - the Duke treats his wife as a possession, an object to be owned and displayed. Even in death she belongs to him.',
           color: '#f59e0b',
         },
         {
@@ -46,7 +46,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Objectification',
-          note: '"That piece" — the Duke reduces the portrait (and by extension the Duchess) to an art object, a "wonder" in his collection.',
+          note: '"That piece" - the Duke reduces the portrait (and by extension the Duchess) to an art object, a "wonder" in his collection.',
           color: '#f59e0b',
         },
       ],
@@ -59,7 +59,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Controlling language',
-          note: 'Disguised as a polite request, this is really a command. The Duke controls who sees the painting — and, by extension, who saw his wife.',
+          note: 'Disguised as a polite request, this is really a command. The Duke controls who sees the painting - and, by extension, who saw his wife.',
           color: '#ef4444',
         },
       ],
@@ -88,7 +88,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Power & control',
-          note: "The curtain is a symbol of the Duke's absolute control. Only he decides who sees her now — the possessiveness he could not enforce in life is total in death.",
+          note: "The curtain is a symbol of the Duke's absolute control. Only he decides who sees her now - the possessiveness he could not enforce in life is total in death.",
           color: '#ef4444',
         },
       ],
@@ -104,7 +104,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Form',
-          note: '"Sir" — a reminder of the social context. The Duke addresses the envoy directly, blending casual revelation with political negotiation.',
+          note: '"Sir" - a reminder of the social context. The Duke addresses the envoy directly, blending casual revelation with political negotiation.',
           color: '#a855f7',
         },
       ],
@@ -117,7 +117,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Jealousy',
-          note: 'The Duke is enraged that his presence alone did not cause her blush — her joy came from many sources, which he found intolerable.',
+          note: 'The Duke is enraged that his presence alone did not cause her blush - her joy came from many sources, which he found intolerable.',
           color: '#ef4444',
         },
       ],
@@ -136,7 +136,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Dismissive language',
-          note: '"such stuff" — the Duke dismisses ordinary human warmth and compliments as trivial, revealing his contempt for anything he cannot control.',
+          note: '"such stuff" - the Duke dismisses ordinary human warmth and compliments as trivial, revealing his contempt for anything he cannot control.',
           color: '#f59e0b',
         },
       ],
@@ -148,16 +148,16 @@ const poemData: PoemData = {
       text: 'For calling up that spot of joy. She had',
     },
     {
-      text: 'A heart — how shall I say? — too soon made glad,',
+      text: 'A heart - how shall I say? - too soon made glad,',
       annotations: [
         {
           type: 'Parenthetical aside',
-          note: '"how shall I say?" — false modesty. The Duke feigns hesitation while delivering a calculated criticism. The parenthetical mimics natural speech but is carefully rehearsed.',
+          note: '"how shall I say?" - false modesty. The Duke feigns hesitation while delivering a calculated criticism. The parenthetical mimics natural speech but is carefully rehearsed.',
           color: '#a855f7',
         },
         {
           type: 'Characterisation',
-          note: '"too soon made glad" — the Duchess\'s openness and warmth are presented as character flaws by the Duke, revealing his narcissism and need for exclusive devotion.',
+          note: '"too soon made glad" - the Duchess\'s openness and warmth are presented as character flaws by the Duke, revealing his narcissism and need for exclusive devotion.',
           color: '#3b82f6',
         },
       ],
@@ -170,7 +170,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Rhyming couplet',
-          note: 'The rhyme of "whate\'er" and "everywhere" emphasises the Duke\'s grievance — that her attention and affection were not exclusively his.',
+          note: 'The rhyme of "whate\'er" and "everywhere" emphasises the Duke\'s grievance - that her attention and affection were not exclusively his.',
           color: '#a855f7',
         },
       ],
@@ -180,7 +180,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Indignation',
-          note: '"all one" — the Duke is outraged that his aristocratic favour was valued no more than a sunset or a cherry bough. His status means everything to him.',
+          note: '"all one" - the Duke is outraged that his aristocratic favour was valued no more than a sunset or a cherry bough. His status means everything to him.',
           color: '#ef4444',
         },
       ],
@@ -193,7 +193,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Contempt',
-          note: '"officious fool" — the Duke\'s disdain for those below his station. Anyone who brought the Duchess happiness threatens his monopoly on her emotions.',
+          note: '"officious fool" - the Duke\'s disdain for those below his station. Anyone who brought the Duchess happiness threatens his monopoly on her emotions.',
           color: '#ef4444',
         },
       ],
@@ -202,27 +202,27 @@ const poemData: PoemData = {
       text: 'Broke in the orchard for her, the white mule',
     },
     {
-      text: 'She rode with round the terrace — all and each',
+      text: 'She rode with round the terrace - all and each',
     },
     {
       text: 'Would draw from her alike the approving speech,',
     },
     {
-      text: 'Or blush, at least. She thanked men — good! but thanked',
+      text: 'Or blush, at least. She thanked men - good! but thanked',
       annotations: [
         {
           type: 'Enjambment',
-          note: '"thanked / Somehow" — the enjambment across the line break enacts the Duke\'s inability to contain his frustration; his anger spills over.',
+          note: '"thanked / Somehow" - the enjambment across the line break enacts the Duke\'s inability to contain his frustration; his anger spills over.',
           color: '#a855f7',
         },
       ],
     },
     {
-      text: 'Somehow — I know not how — as if she ranked',
+      text: 'Somehow - I know not how - as if she ranked',
       annotations: [
         {
           type: 'False uncertainty',
-          note: '"I know not how" — another performance of uncertainty. The Duke knows exactly what bothered him but maintains a veneer of aristocratic restraint.',
+          note: '"I know not how" - another performance of uncertainty. The Duke knows exactly what bothered him but maintains a veneer of aristocratic restraint.',
           color: '#3b82f6',
         },
       ],
@@ -232,7 +232,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Pride / Status',
-          note: '"nine-hundred-years-old name" — the Duke defines his worth entirely through aristocratic lineage. The compound modifier emphasises the weight he places on heritage and rank.',
+          note: '"nine-hundred-years-old name" - the Duke defines his worth entirely through aristocratic lineage. The compound modifier emphasises the weight he places on heritage and rank.',
           color: '#f59e0b',
         },
       ],
@@ -242,7 +242,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Key word: "stoop"',
-          note: '"stoop" is central to the Duke\'s psychology. He refuses to lower himself to communicate his displeasure — he considers it beneath him to negotiate with his wife.',
+          note: '"stoop" is central to the Duke\'s psychology. He refuses to lower himself to communicate his displeasure - he considers it beneath him to negotiate with his wife.',
           color: '#ef4444',
         },
       ],
@@ -251,11 +251,11 @@ const poemData: PoemData = {
       text: 'This sort of trifling? Even had you skill',
     },
     {
-      text: 'In speech — (which I have not) — to make your will',
+      text: 'In speech - (which I have not) - to make your will',
       annotations: [
         {
           type: 'Irony',
-          note: 'The Duke claims he lacks skill in speech, yet the entire poem demonstrates his masterful, manipulative rhetoric — a deeply ironic self-assessment.',
+          note: 'The Duke claims he lacks skill in speech, yet the entire poem demonstrates his masterful, manipulative rhetoric - a deeply ironic self-assessment.',
           color: '#3b82f6',
         },
       ],
@@ -267,20 +267,20 @@ const poemData: PoemData = {
       text: 'Or that in you disgusts me; here you miss,',
     },
     {
-      text: 'Or there exceed the mark" — and if she let',
+      text: 'Or there exceed the mark" - and if she let',
     },
     {
       text: 'Herself be lessoned so, nor plainly set',
     },
     {
-      text: 'Her wits to yours, forsooth, and made excuse —',
+      text: 'Her wits to yours, forsooth, and made excuse -',
     },
     {
       text: "E'en then would be some stooping; and I choose",
       annotations: [
         {
           type: 'Key word: "choose"',
-          note: '"I choose" — chilling in its finality. The Duke frames murder as an act of personal preference, a rational decision rather than a crime.',
+          note: '"I choose" - chilling in its finality. The Duke frames murder as an act of personal preference, a rational decision rather than a crime.',
           color: '#ef4444',
         },
       ],
@@ -290,7 +290,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Volta / turning point',
-          note: '"Never to stoop" — the poem\'s emotional climax. Rather than communicate, the Duke chose to eliminate his wife. The casual "Oh, sir" immediately deflects from the horror.',
+          note: '"Never to stoop" - the poem\'s emotional climax. Rather than communicate, the Duke chose to eliminate his wife. The casual "Oh, sir" immediately deflects from the horror.',
           color: '#a855f7',
         },
       ],
@@ -303,7 +303,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Euphemism',
-          note: '"I gave commands" — the most chilling line in the poem. Browning never states directly what happened; the euphemism implicates the Duke while preserving his aristocratic composure.',
+          note: '"I gave commands" - the most chilling line in the poem. Browning never states directly what happened; the euphemism implicates the Duke while preserving his aristocratic composure.',
           color: '#ef4444',
         },
         {
@@ -318,7 +318,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Sinister resolution',
-          note: '"all smiles stopped" — the Duchess\'s death is reduced to the silencing of her joy. "There she stands" echoes line 4, framing the poem as a cycle of possession.',
+          note: '"all smiles stopped" - the Duchess\'s death is reduced to the silencing of her joy. "There she stands" echoes line 4, framing the poem as a cycle of possession.',
           color: '#ef4444',
         },
       ],
@@ -328,7 +328,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Repetition',
-          note: '"As if alive" echoes line 2 — the painting has replaced the living woman. The Duke\'s satisfaction is complete: she is now a perfect, controllable object.',
+          note: '"As if alive" echoes line 2 - the painting has replaced the living woman. The Duke\'s satisfaction is complete: she is now a perfect, controllable object.',
           color: '#f59e0b',
         },
       ],
@@ -360,7 +360,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Double meaning',
-          note: '"object" — ostensibly means \'objective\' but also suggests the next wife will be another possession, another object in his collection.',
+          note: '"object" - ostensibly means \'objective\' but also suggests the next wife will be another possession, another object in his collection.',
           color: '#f59e0b',
         },
       ],
@@ -373,7 +373,7 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Metaphor / Symbol',
-          note: 'Neptune taming a sea-horse parallels the Duke taming his Duchess. The sculpture glorifies domination — the Duke identifies with a god who subdues wild creatures.',
+          note: 'Neptune taming a sea-horse parallels the Duke taming his Duchess. The sculpture glorifies domination - the Duke identifies with a god who subdues wild creatures.',
           color: '#10b981',
         },
       ],
@@ -383,92 +383,92 @@ const poemData: PoemData = {
       annotations: [
         {
           type: 'Final word: "me"',
-          note: 'The poem ends on "me" — the Duke\'s entire worldview is self-centred. Art, wives, and status all exist to serve and reflect him.',
+          note: 'The poem ends on "me" - the Duke\'s entire worldview is self-centred. Art, wives, and status all exist to serve and reflect him.',
           color: '#f59e0b',
         },
       ],
     },
   ],
-  context: `<p><strong>Robert Browning</strong> published <em>My Last Duchess</em> in 1842 as part of his collection <em>Dramatic Lyrics</em>. The poem is a <strong>dramatic monologue</strong> — a form Browning perfected — in which a single speaker inadvertently reveals their true character to the reader.</p>
+  context: `<p><strong>Robert Browning</strong> published <em>My Last Duchess</em> in 1842 as part of his collection <em>Dramatic Lyrics</em>. The poem is a <strong>dramatic monologue</strong> - a form Browning perfected - in which a single speaker inadvertently reveals their true character to the reader.</p>
 
-<p>The speaker is based on <strong>Alfonso II, Duke of Ferrara</strong> (1533–1598), a real Italian Renaissance nobleman. His first wife, <strong>Lucrezia de' Medici</strong>, died in suspicious circumstances aged just 17, after only three years of marriage. Alfonso then negotiated to marry Barbara of Austria, niece of Ferdinand II, Count of Tyrol.</p>
+<p>The speaker is based on <strong>Alfonso II, Duke of Ferrara</strong> (1533-1598), a real Italian Renaissance nobleman. His first wife, <strong>Lucrezia de' Medici</strong>, died in suspicious circumstances aged just 17, after only three years of marriage. Alfonso then negotiated to marry Barbara of Austria, niece of Ferdinand II, Count of Tyrol.</p>
 
-<p><strong>Historical context:</strong> Renaissance Italian courts were centres of art patronage but also ruthless political power. Marriages among the aristocracy were transactional alliances — women were exchanged as property between powerful families. The poem explores how <strong>patriarchal power</strong> operated in this world: the Duke treats his wife as an extension of his status and property.</p>
+<p><strong>Historical context:</strong> Renaissance Italian courts were centres of art patronage but also ruthless political power. Marriages among the aristocracy were transactional alliances - women were exchanged as property between powerful families. The poem explores how <strong>patriarchal power</strong> operated in this world: the Duke treats his wife as an extension of his status and property.</p>
 
-<p><strong>Victorian context:</strong> Although set in Renaissance Italy, the poem was written for a Victorian audience who would recognise the critique of male authority. During the 1840s, married women had almost no legal rights — the <em>Married Women's Property Act</em> was not passed until 1882. Browning uses the historical distance to comment on contemporary gender politics.</p>
+<p><strong>Victorian context:</strong> Although set in Renaissance Italy, the poem was written for a Victorian audience who would recognise the critique of male authority. During the 1840s, married women had almost no legal rights - the <em>Married Women's Property Act</em> was not passed until 1882. Browning uses the historical distance to comment on contemporary gender politics.</p>
 
-<p><strong>Form:</strong> The dramatic monologue allows Browning to create dramatic irony — the Duke intends to present himself as a cultured aristocrat, but the reader sees a jealous, controlling murderer. We hear only his voice, yet we sympathise entirely with the silent Duchess.</p>`,
+<p><strong>Form:</strong> The dramatic monologue allows Browning to create dramatic irony - the Duke intends to present himself as a cultured aristocrat, but the reader sees a jealous, controlling murderer. We hear only his voice, yet we sympathise entirely with the silent Duchess.</p>`,
 
-  contextAr: `<p><strong>Robert Browning</strong> نشر قصيدة <em>My Last Duchess</em> سنة 1842 ضمن ديوانه <em>Dramatic Lyrics</em>. القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) — وهو شكل أتقنه Browning، فيه متكلّم واحد بدون قصد منه يكشف للقارئ حقيقة شخصيته.</p>
+  contextAr: `<p><strong>Robert Browning</strong> نشر قصيدة <em>My Last Duchess</em> سنة 1842 ضمن ديوانه <em>Dramatic Lyrics</em>. القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) - وهو شكل أتقنه Browning، فيه متكلّم واحد بدون قصد منه يكشف للقارئ حقيقة شخصيته.</p>
 
-<p>المتكلّم في القصيدة مستوحى من <strong>Alfonso II, Duke of Ferrara</strong> (1533–1598)، نبيل إيطالي حقيقي من عصر النهضة. زوجته الأولى، <strong>Lucrezia de' Medici</strong>، توفّت في ظروف مريبة وعمرها 17 سنة بس، بعد ثلاث سنوات من الزواج. بعدها، Alfonso بدأ مفاوضات للزواج من Barbara of Austria، بنت أخ Ferdinand II, Count of Tyrol.</p>
+<p>المتكلّم في القصيدة مستوحى من <strong>Alfonso II, Duke of Ferrara</strong> (1533-1598)، نبيل إيطالي حقيقي من عصر النهضة. زوجته الأولى، <strong>Lucrezia de' Medici</strong>، توفّت في ظروف مريبة وعمرها 17 سنة بس، بعد ثلاث سنوات من الزواج. بعدها، Alfonso بدأ مفاوضات للزواج من Barbara of Austria، بنت أخ Ferdinand II, Count of Tyrol.</p>
 
-<p><strong>السياق التاريخي:</strong> القصور الإيطالية في عصر النهضة كانت مراكز لرعاية الفنون، بس في نفس الوقت كانت مراكز سلطة سياسية قاسية. زيجات الأرستقراطية كانت تحالفات سياسية — النساء يتبادلون كأنهم ممتلكات بين العائلات النافذة. والقصيدة تستعرض كيف كانت <strong>السلطة الذكورية</strong> تشتغل في هذا العالم: الـDuke يعامل زوجته كامتداد لمكانته وممتلكاته.</p>
+<p><strong>السياق التاريخي:</strong> القصور الإيطالية في عصر النهضة كانت مراكز لرعاية الفنون، بس في نفس الوقت كانت مراكز سلطة سياسية قاسية. زيجات الأرستقراطية كانت تحالفات سياسية - النساء يتبادلون كأنهم ممتلكات بين العائلات النافذة. والقصيدة تستعرض كيف كانت <strong>السلطة الذكورية</strong> تشتغل في هذا العالم: الـDuke يعامل زوجته كامتداد لمكانته وممتلكاته.</p>
 
-<p><strong>السياق الفيكتوري:</strong> رغم إن الأحداث في إيطاليا عصر النهضة، Browning كتب القصيدة لجمهور فيكتوري كان بيستوعب النقد للسلطة الذكورية. في أربعينات القرن التاسع عشر، النساء المتزوجات في بريطانيا ما كان عندهم تقريباً أي حقوق قانونية — قانون <em>Married Women's Property Act</em> ما طلع إلا سنة 1882. Browning يستخدم البعد التاريخي عشان يعلّق على سياسات النوع الاجتماعي في زمنه.</p>
+<p><strong>السياق الفيكتوري:</strong> رغم إن الأحداث في إيطاليا عصر النهضة، Browning كتب القصيدة لجمهور فيكتوري كان بيستوعب النقد للسلطة الذكورية. في أربعينات القرن التاسع عشر، النساء المتزوجات في بريطانيا ما كان عندهم تقريباً أي حقوق قانونية - قانون <em>Married Women's Property Act</em> ما طلع إلا سنة 1882. Browning يستخدم البعد التاريخي عشان يعلّق على سياسات النوع الاجتماعي في زمنه.</p>
 
-<p><strong>الشكل:</strong> الـdramatic monologue يخلّي Browning يخلق dramatic irony — الـDuke يقصد إنه يقدّم نفسه كأرستقراطي مثقّف، بس القارئ يشوف فيه قاتل غيور ومسيطر. ما نسمع غير صوته هو، ومع ذلك نتعاطف بالكامل مع الـDuchess الصامتة.</p>`,
+<p><strong>الشكل:</strong> الـdramatic monologue يخلّي Browning يخلق dramatic irony - الـDuke يقصد إنه يقدّم نفسه كأرستقراطي مثقّف، بس القارئ يشوف فيه قاتل غيور ومسيطر. ما نسمع غير صوته هو، ومع ذلك نتعاطف بالكامل مع الـDuchess الصامتة.</p>`,
 
-  summary: `The Duke of Ferrara shows a visiting envoy a portrait of his former wife — his "last Duchess." As he describes the painting, he reveals his obsessive jealousy: the Duchess smiled too freely, appreciated simple pleasures, and treated everyone with equal warmth, which the Duke found intolerable.
+  summary: `The Duke of Ferrara shows a visiting envoy a portrait of his former wife - his "last Duchess." As he describes the painting, he reveals his obsessive jealousy: the Duchess smiled too freely, appreciated simple pleasures, and treated everyone with equal warmth, which the Duke found intolerable.
 
-Rather than communicate his displeasure (which he considers "stooping"), the Duke "gave commands" — a chilling euphemism for having her killed. The Duchess's smiles "stopped together," and now she exists only as a painting behind a curtain that he alone controls.
+Rather than communicate his displeasure (which he considers "stooping"), the Duke "gave commands" - a chilling euphemism for having her killed. The Duchess's smiles "stopped together," and now she exists only as a painting behind a curtain that he alone controls.
 
 The poem ends with a shocking reveal: the Duke is in the middle of negotiating his next marriage. The entire monologue has been a veiled warning to the envoy (and, through him, to the next wife's family) about what happens to women who do not submit to his absolute authority.
 
-As they leave, the Duke pauses to admire a bronze sculpture of Neptune taming a sea-horse — a final metaphor for his desire to dominate and possess.`,
+As they leave, the Duke pauses to admire a bronze sculpture of Neptune taming a sea-horse - a final metaphor for his desire to dominate and possess.`,
 
-  summaryAr: `Duke of Ferrara يعرض على مبعوث زائر لوحة لزوجته السابقة — "last Duchess" مالته. ولمّا يوصف اللوحة، يكشف غيرته المرضية: الـDuchess كانت تبتسم بسهولة، وتقدّر المتع البسيطة، وتعامل الكل بنفس الدفء، وهذا شي ما طاقه الـDuke أبداً.
+  summaryAr: `Duke of Ferrara يعرض على مبعوث زائر لوحة لزوجته السابقة - "last Duchess" مالته. ولمّا يوصف اللوحة، يكشف غيرته المرضية: الـDuchess كانت تبتسم بسهولة، وتقدّر المتع البسيطة، وتعامل الكل بنفس الدفء، وهذا شي ما طاقه الـDuke أبداً.
 
-بدل ما يبلّغها بانزعاجه (لأنه يعتبر هذا "stooping"، أي تنازل)، الـDuke "gave commands" — كناية مرعبة عن إنه أمر بقتلها. ابتسامات الـDuchess "stopped together"، والحين هي موجودة فقط كلوحة وراء ستارة هو وحده يتحكّم فيها.
+بدل ما يبلّغها بانزعاجه (لأنه يعتبر هذا "stooping"، أي تنازل)، الـDuke "gave commands" - كناية مرعبة عن إنه أمر بقتلها. ابتسامات الـDuchess "stopped together"، والحين هي موجودة فقط كلوحة وراء ستارة هو وحده يتحكّم فيها.
 
 القصيدة تنتهي بكشف صادم: الـDuke في الحين في وسط مفاوضات لزواجه التالي. كل المونولوج كان تحذير مبطّن للمبعوث (وعن طريقه، لعائلة الزوجة المقبلة) عن مصير النساء اللي ما يخضعون لسلطته المطلقة.
 
-ولمّا يطلعون، الـDuke يوقف عشان يتأمّل تمثال برونزي يصوّر Neptune وهو "يروّض" حصان البحر — استعارة ختامية لرغبته في الهيمنة والتملّك.`,
+ولمّا يطلعون، الـDuke يوقف عشان يتأمّل تمثال برونزي يصوّر Neptune وهو "يروّض" حصان البحر - استعارة ختامية لرغبته في الهيمنة والتملّك.`,
 
   formAndStructure: `DRAMATIC MONOLOGUE
-The entire poem is spoken by a single character — the Duke — to a silent listener (the envoy). Browning's genius is in what the Duke inadvertently reveals: he intends to appear cultured and reasonable, but the reader recognises a murderer. This creates dramatic irony throughout.
+The entire poem is spoken by a single character - the Duke - to a silent listener (the envoy). Browning's genius is in what the Duke inadvertently reveals: he intends to appear cultured and reasonable, but the reader recognises a murderer. This creates dramatic irony throughout.
 
 RHYMING COUPLETS (HEROIC COUPLETS)
 The poem uses rhyming couplets (AABB) in iambic pentameter, but the heavy use of enjambment disguises the rhyme scheme. This mirrors the Duke's speech: he appears to speak naturally and spontaneously, but the tight structure beneath reveals his calculated control.
 
 ENJAMBMENT
-Lines frequently run on without pause ("she thanked / Men — good! but thanked / Somehow"), creating a sense of conversational flow. But the enjambment also enacts the Duke's inability to contain his anger — his grievances spill across line boundaries despite his attempt at composure.
+Lines frequently run on without pause ("she thanked / Men - good! but thanked / Somehow"), creating a sense of conversational flow. But the enjambment also enacts the Duke's inability to contain his anger - his grievances spill across line boundaries despite his attempt at composure.
 
 IAMBIC PENTAMETER
-The regular metre reflects the Duke's desire for order and control. When the rhythm breaks — as in the staccato "This grew; I gave commands;" — it signals moments of emotional intensity beneath his controlled exterior.
+The regular metre reflects the Duke's desire for order and control. When the rhythm breaks - as in the staccato "This grew; I gave commands;" - it signals moments of emotional intensity beneath his controlled exterior.
 
 CAESURA
 Strategic mid-line pauses ("Looking as if she were alive. I call") create moments of dramatic tension. The caesura after "alive" forces the reader to confront the reality of the Duchess's death before the Duke smoothly continues.
 
 SINGLE STANZA
-The poem is one continuous block — no stanza breaks, no pauses, no escape. This mirrors the Duke's monologue: once he starts talking, neither the envoy nor the reader can interrupt. The relentless flow reflects his absolute authority over the conversation and, metaphorically, over the women in his life.`,
+The poem is one continuous block - no stanza breaks, no pauses, no escape. This mirrors the Duke's monologue: once he starts talking, neither the envoy nor the reader can interrupt. The relentless flow reflects his absolute authority over the conversation and, metaphorically, over the women in his life.`,
 
   formAndStructureAr: `DRAMATIC MONOLOGUE (مونولوج درامي)
-القصيدة كلها يتكلّم بها شخص واحد — الـDuke — لمستمع صامت (المبعوث). عبقرية Browning هي في الأشياء اللي يكشفها الـDuke بدون قصد: هو يقصد إنه يبيّن نفسه مثقّف ومنطقي، بس القارئ يلتقط فوراً إنه قاتل. هالشي يخلق dramatic irony مستمرّة في كل القصيدة.
+القصيدة كلها يتكلّم بها شخص واحد - الـDuke - لمستمع صامت (المبعوث). عبقرية Browning هي في الأشياء اللي يكشفها الـDuke بدون قصد: هو يقصد إنه يبيّن نفسه مثقّف ومنطقي، بس القارئ يلتقط فوراً إنه قاتل. هالشي يخلق dramatic irony مستمرّة في كل القصيدة.
 
 RHYMING COUPLETS (HEROIC COUPLETS)
 القصيدة تستخدم rhyming couplets (AABB) في iambic pentameter، بس الاستخدام المكثّف للـenjambment يخفي نمط القافية. هذا يعكس طريقة كلام الـDuke: يبدو إنه يحكي بشكل طبيعي وعفوي، بس البنية المحكمة تحت السطح تكشف سيطرته المحسوبة.
 
 ENJAMBMENT
-الأبيات تتسلسل بدون توقّف كثير ("she thanked / Men — good! but thanked / Somehow")، وهذا يعطي إحساس بالتدفّق الحواري. بس الـenjambment أيضاً يجسّد عجز الـDuke عن كبح غضبه — شكاويه تطفح عبر حدود الأبيات رغم محاولته يبيّن نفسه رزين.
+الأبيات تتسلسل بدون توقّف كثير ("she thanked / Men - good! but thanked / Somehow")، وهذا يعطي إحساس بالتدفّق الحواري. بس الـenjambment أيضاً يجسّد عجز الـDuke عن كبح غضبه - شكاويه تطفح عبر حدود الأبيات رغم محاولته يبيّن نفسه رزين.
 
 IAMBIC PENTAMETER
-الوزن المنتظم يعكس رغبة الـDuke في النظام والسيطرة. ولمّا يكسر الإيقاع — مثلاً في الجملة المتقطّعة "This grew; I gave commands;" — يكون هذا إشارة للحظات شدّة عاطفية تحت قشرته المتحكّمة.
+الوزن المنتظم يعكس رغبة الـDuke في النظام والسيطرة. ولمّا يكسر الإيقاع - مثلاً في الجملة المتقطّعة "This grew; I gave commands;" - يكون هذا إشارة للحظات شدّة عاطفية تحت قشرته المتحكّمة.
 
 CAESURA
 التوقّفات الاستراتيجية في نص الأبيات ("Looking as if she were alive. I call") تخلق لحظات توتّر درامي. الـcaesura بعد "alive" تجبر القارئ يواجه حقيقة موت الـDuchess قبل ما الـDuke يكمّل كلامه بسلاسة.
 
 SINGLE STANZA (مقطوعة واحدة)
-القصيدة كتلة واحدة متّصلة — ولا فاصل بين المقاطع، ولا توقّف، ولا مهرب. هذا يعكس مونولوج الـDuke: لمّا يبدأ يحكي، لا المبعوث ولا القارئ يقدر يقاطعه. التدفّق المتواصل يعكس سلطته المطلقة على الحوار، وبشكل رمزي على النساء في حياته.`,
+القصيدة كتلة واحدة متّصلة - ولا فاصل بين المقاطع، ولا توقّف، ولا مهرب. هذا يعكس مونولوج الـDuke: لمّا يبدأ يحكي، لا المبعوث ولا القارئ يقدر يقاطعه. التدفّق المتواصل يعكس سلطته المطلقة على الحوار، وبشكل رمزي على النساء في حياته.`,
 
   keyQuotes: [
     {
       quote: "That's my last Duchess painted on the wall",
       analysis:
-        'The possessive pronoun "my" establishes ownership from the very first line. "Last" is ambiguous — it could mean previous or final, hinting that there have been (or will be) others. The Duchess is reduced to a painting, an object on display.',
+        'The possessive pronoun "my" establishes ownership from the very first line. "Last" is ambiguous - it could mean previous or final, hinting that there have been (or will be) others. The Duchess is reduced to a painting, an object on display.',
       themes: ['Power', 'Possession', 'Objectification'],
       analysisAr:
-        'الضمير الملكي "my" من أول بيت يثبّت فكرة التملّك. وكلمة "last" غامضة — يحتمل إنها بمعنى السابقة، ويحتمل بمعنى الأخيرة، وهذا يلمّح إنه فيه دوقات قبلها وفيه أكيد دوقة بعدها. الـDuchess تختزل إلى لوحة، مجرّد قطعة معروضة.',
+        'الضمير الملكي "my" من أول بيت يثبّت فكرة التملّك. وكلمة "last" غامضة - يحتمل إنها بمعنى السابقة، ويحتمل بمعنى الأخيرة، وهذا يلمّح إنه فيه دوقات قبلها وفيه أكيد دوقة بعدها. الـDuchess تختزل إلى لوحة، مجرّد قطعة معروضة.',
       themesAr: ['السلطة', 'التملّك', 'تشييء المرأة'],
     },
     {
@@ -481,49 +481,49 @@ SINGLE STANZA (مقطوعة واحدة)
       themesAr: ['السلطة', 'السيطرة', 'الغيرة'],
     },
     {
-      quote: 'She had / A heart — how shall I say? — too soon made glad',
+      quote: 'She had / A heart - how shall I say? - too soon made glad',
       analysis:
-        'The parenthetical "how shall I say?" is performed hesitation — the Duke feigns delicacy while delivering a devastating criticism. The Duchess\'s warmth and generosity are reframed as moral failings. "Too soon" suggests she should have been harder to please.',
+        'The parenthetical "how shall I say?" is performed hesitation - the Duke feigns delicacy while delivering a devastating criticism. The Duchess\'s warmth and generosity are reframed as moral failings. "Too soon" suggests she should have been harder to please.',
       themes: ['Jealousy', 'Patriarchy', 'Pride'],
       analysisAr:
-        'العبارة الاعتراضية "how shall I say?" تردّد متكلّف — الـDuke يتظاهر باللباقة وهو يوجّه نقد قاتل. دفء الـDuchess وكرمها يعيد تأطيرهم كأنهم عيوب أخلاقية. وكلمة "too soon" تلمّح إنه كان يبي يصير إرضاؤها أصعب.',
+        'العبارة الاعتراضية "how shall I say?" تردّد متكلّف - الـDuke يتظاهر باللباقة وهو يوجّه نقد قاتل. دفء الـDuchess وكرمها يعيد تأطيرهم كأنهم عيوب أخلاقية. وكلمة "too soon" تلمّح إنه كان يبي يصير إرضاؤها أصعب.',
       themesAr: ['الغيرة', 'السلطة الذكورية', 'الكبرياء'],
     },
     {
       quote:
-        "She thanked men — good! but thanked / Somehow — I know not how — as if she ranked / My gift of a nine-hundred-years-old name / With anybody's gift",
+        "She thanked men - good! but thanked / Somehow - I know not how - as if she ranked / My gift of a nine-hundred-years-old name / With anybody's gift",
       analysis:
-        'The Duke\'s fury is that his aristocratic lineage — his entire identity — was not valued above all else. The compound modifier "nine-hundred-years-old" emphasises the weight he places on status. The Duchess\'s egalitarian spirit is, to him, an insult.',
+        'The Duke\'s fury is that his aristocratic lineage - his entire identity - was not valued above all else. The compound modifier "nine-hundred-years-old" emphasises the weight he places on status. The Duchess\'s egalitarian spirit is, to him, an insult.',
       themes: ['Pride', 'Status', 'Patriarchy'],
       analysisAr:
-        'غضب الـDuke سببه إن نسبه الأرستقراطي — اللي هو هويته كلها — ما اتحط فوق كل شي. الصفة المركّبة "nine-hundred-years-old" تأكّد على الوزن الكبير اللي يعطيه للمكانة الاجتماعية. روح الـDuchess المساواتية، عنده، إهانة شخصية.',
+        'غضب الـDuke سببه إن نسبه الأرستقراطي - اللي هو هويته كلها - ما اتحط فوق كل شي. الصفة المركّبة "nine-hundred-years-old" تأكّد على الوزن الكبير اللي يعطيه للمكانة الاجتماعية. روح الـDuchess المساواتية، عنده، إهانة شخصية.',
       themesAr: ['الكبرياء', 'المكانة', 'السلطة الذكورية'],
     },
     {
       quote: "Who'd stoop to blame / This sort of trifling?",
       analysis:
-        '"Stoop" is the key word in the poem. The Duke refuses to lower himself to communicate his feelings to his wife — he considers conversation with her beneath his dignity. This refusal to "stoop" leads directly to her death.',
+        '"Stoop" is the key word in the poem. The Duke refuses to lower himself to communicate his feelings to his wife - he considers conversation with her beneath his dignity. This refusal to "stoop" leads directly to her death.',
       themes: ['Pride', 'Power', 'Control'],
       analysisAr:
-        'كلمة "stoop" مفتاح القصيدة. الـDuke يرفض إنه ينزل من قدره عشان يبلّغ زوجته بمشاعره — يعتبر إن مجرّد الحوار معاها أقل من كرامته. هذا الرفض هو السبب المباشر في موتها.',
+        'كلمة "stoop" مفتاح القصيدة. الـDuke يرفض إنه ينزل من قدره عشان يبلّغ زوجته بمشاعره - يعتبر إن مجرّد الحوار معاها أقل من كرامته. هذا الرفض هو السبب المباشر في موتها.',
       themesAr: ['الكبرياء', 'السلطة', 'السيطرة'],
     },
     {
       quote: 'I gave commands; / Then all smiles stopped together.',
       analysis:
-        'The most chilling euphemism in GCSE literature. "Gave commands" distances the Duke from the act of murder — he did not kill her himself but ordered it done. "All smiles stopped" reduces her death to the silencing of her joy. The semicolons create a cold, staccato rhythm.',
+        'The most chilling euphemism in GCSE literature. "Gave commands" distances the Duke from the act of murder - he did not kill her himself but ordered it done. "All smiles stopped" reduces her death to the silencing of her joy. The semicolons create a cold, staccato rhythm.',
       themes: ['Power', 'Violence', 'Control'],
       analysisAr:
-        'أبشع كناية في منهج GCSE. عبارة "gave commands" تباعد الـDuke عن فعل القتل — هو ما قتلها بيده، أمر بقتلها. وعبارة "all smiles stopped" تختزل موتها إلى إسكات فرحها. الـsemicolons يخلقون إيقاع متقطّع بارد.',
+        'أبشع كناية في منهج GCSE. عبارة "gave commands" تباعد الـDuke عن فعل القتل - هو ما قتلها بيده، أمر بقتلها. وعبارة "all smiles stopped" تختزل موتها إلى إسكات فرحها. الـsemicolons يخلقون إيقاع متقطّع بارد.',
       themesAr: ['السلطة', 'العنف', 'السيطرة'],
     },
     {
       quote: 'Notice Neptune, though, / Taming a sea-horse',
       analysis:
-        'The final image is a metaphor for the Duke himself: like Neptune (god of the sea), he tames and subdues those beneath him. The sea-horse represents the Duchess — a beautiful, wild creature broken by a more powerful force. That the sculpture was "cast in bronze for me" shows art serving his ego.',
+        'The final image is a metaphor for the Duke himself: like Neptune (god of the sea), he tames and subdues those beneath him. The sea-horse represents the Duchess - a beautiful, wild creature broken by a more powerful force. That the sculpture was "cast in bronze for me" shows art serving his ego.',
       themes: ['Power', 'Dominance', 'Possession'],
       analysisAr:
-        'الصورة الأخيرة استعارة عن الـDuke نفسه: مثل Neptune (إله البحر)، هو يروّض ويُخضع كل من هم تحته. وحصان البحر يرمز للـDuchess — مخلوق جميل وحر تحطّمه قوة أكبر منه. وحقيقة إن التمثال "cast in bronze for me" تبيّن إن الفن نفسه يخدم غرور الـDuke.',
+        'الصورة الأخيرة استعارة عن الـDuke نفسه: مثل Neptune (إله البحر)، هو يروّض ويُخضع كل من هم تحته. وحصان البحر يرمز للـDuchess - مخلوق جميل وحر تحطّمه قوة أكبر منه. وحقيقة إن التمثال "cast in bronze for me" تبيّن إن الفن نفسه يخدم غرور الـDuke.',
       themesAr: ['السلطة', 'الهيمنة', 'التملّك'],
     },
     {
@@ -577,14 +577,14 @@ SINGLE STANZA (مقطوعة واحدة)
       device: 'Possessive language',
       example: "That's my last Duchess... my object... for me",
       effect:
-        'The poem is saturated with first-person possessive pronouns. The Duke defines everything in relation to himself — his wife, his art, his name. This linguistic pattern reveals a worldview in which people are property.',
+        'The poem is saturated with first-person possessive pronouns. The Duke defines everything in relation to himself - his wife, his art, his name. This linguistic pattern reveals a worldview in which people are property.',
       lineRef: 0,
       effectAr:
-        'القصيدة مشبّعة بضمائر التملّك للمتكلّم. الـDuke يعرّف كل شي بالنسبة لنفسه — زوجته، فنّه، اسمه. هالنمط اللغوي يكشف نظرة للعالم تعتبر الناس فيها ممتلكات.',
+        'القصيدة مشبّعة بضمائر التملّك للمتكلّم. الـDuke يعرّف كل شي بالنسبة لنفسه - زوجته، فنّه، اسمه. هالنمط اللغوي يكشف نظرة للعالم تعتبر الناس فيها ممتلكات.',
     },
     {
       device: 'Enjambment',
-      example: 'she thanked / Men — good! but thanked / Somehow',
+      example: 'she thanked / Men - good! but thanked / Somehow',
       effect:
         "The enjambment across line breaks enacts the Duke's loss of composure. His anger overflows the neat couplet form, just as the Duchess's behaviour overflowed the boundaries he tried to impose. The tension between form and content mirrors his internal conflict.",
       lineRef: 30,
@@ -595,10 +595,10 @@ SINGLE STANZA (مقطوعة واحدة)
       device: 'Caesura',
       example: 'Looking as if she were alive. I call',
       effect:
-        'The mid-line full stop forces a pause that confronts the reader with the Duchess\'s death. The Duke\'s smooth continuation — "I call / That piece a wonder" — shows his chilling indifference. The caesura creates dramatic shock within his casual tone.',
+        'The mid-line full stop forces a pause that confronts the reader with the Duchess\'s death. The Duke\'s smooth continuation - "I call / That piece a wonder" - shows his chilling indifference. The caesura creates dramatic shock within his casual tone.',
       lineRef: 1,
       effectAr:
-        'النقطة في نص البيت تفرض توقّف يواجه فيه القارئ حقيقة موت الـDuchess. واستمرار الـDuke بسلاسة — "I call / That piece a wonder" — يبيّن لامبالاته المرعبة. الـcaesura تخلق صدمة درامية داخل نبرته العادية.',
+        'النقطة في نص البيت تفرض توقّف يواجه فيه القارئ حقيقة موت الـDuchess. واستمرار الـDuke بسلاسة - "I call / That piece a wonder" - يبيّن لامبالاته المرعبة. الـcaesura تخلق صدمة درامية داخل نبرته العادية.',
     },
     {
       device: 'Repetition ("stoop")',
@@ -622,7 +622,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['A sonnet', 'A dramatic monologue in rhyming couplets', 'Free verse', 'A ballad'],
     correctIndex: 1,
     explanation:
-      'My Last Duchess is a dramatic monologue — a single speaker (the Duke) reveals his character to a silent listener. It uses rhyming couplets in iambic pentameter.',
+      'My Last Duchess is a dramatic monologue - a single speaker (the Duke) reveals his character to a silent listener. It uses rhyming couplets in iambic pentameter.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -648,13 +648,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       "The Duke's grief over his wife's death",
-      "The Duke's absolute control — only he decides who sees her now",
+      "The Duke's absolute control - only he decides who sees her now",
       'The painting is damaged and needs protection',
       "The Duke's modesty about art",
     ],
     correctIndex: 1,
     explanation:
-      "The curtain represents the Duke's possessive control. In life, he could not control who the Duchess smiled at. In death, he controls everything — only he draws the curtain and decides who sees her.",
+      "The curtain represents the Duke's possessive control. In life, he could not control who the Duchess smiled at. In death, he controls everything - only he draws the curtain and decides who sees her.",
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -680,7 +680,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The Duke asked her politely to stop smiling',
-      'The Duke coldly ordered her death — the euphemism makes him more chilling',
+      'The Duke coldly ordered her death - the euphemism makes him more chilling',
       'The Duchess agreed to be more serious',
       'The painting was completed',
     ],
@@ -719,7 +719,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The Duke values his aristocratic heritage above all else. The fact that the Duchess treated everyone equally — regardless of rank — was an intolerable insult to his sense of superiority.',
+      'The Duke values his aristocratic heritage above all else. The fact that the Duchess treated everyone equally - regardless of rank - was an intolerable insult to his sense of superiority.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -728,10 +728,10 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'When was My Last Duchess written, and what context is relevant?',
     type: 'multiple-choice',
     options: [
-      '1842 — based loosely on the real Duke of Ferrara, Alfonso II, whose young wife died suspiciously',
-      '1818 — during the Romantic period',
-      '1914 — at the start of WWI',
-      '1794 — during the French Revolution',
+      '1842 - based loosely on the real Duke of Ferrara, Alfonso II, whose young wife died suspiciously',
+      '1818 - during the Romantic period',
+      '1914 - at the start of WWI',
+      '1794 - during the French Revolution',
     ],
     correctIndex: 0,
     explanation:
@@ -745,7 +745,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is an irrelevant detail about art',
-      "It symbolises the Duke's desire to dominate and control, even nature — paralleling his treatment of the Duchess",
+      "It symbolises the Duke's desire to dominate and control, even nature - paralleling his treatment of the Duchess",
       'It shows the Duke is a generous art collector',
       "It represents the envoy's gift to the Duke",
     ],
@@ -780,10 +780,10 @@ const REVISION_TOPICS = [
     summary:
       'My Last Duchess explores the abuse of power, male possessiveness, objectification of women, jealousy, and the relationship between art and control.',
     keyPoints: [
-      'Power and control — the Duke treats his wife as a possession to be owned and displayed',
-      'Jealousy — her friendliness to others enrages him because it diminishes his status',
-      'Objectification — the Duchess is reduced to a "piece" of art behind a curtain',
-      'Art as control — the painting gives the Duke the dominance he lacked in life',
+      'Power and control - the Duke treats his wife as a possession to be owned and displayed',
+      'Jealousy - her friendliness to others enrages him because it diminishes his status',
+      'Objectification - the Duchess is reduced to a "piece" of art behind a curtain',
+      'Art as control - the painting gives the Duke the dominance he lacked in life',
     ],
   },
   {
@@ -791,10 +791,10 @@ const REVISION_TOPICS = [
     summary:
       "Browning uses possessive pronouns, euphemism, dramatic irony, and carefully chosen verbs to reveal the Duke's controlling, violent nature through his own words.",
     keyPoints: [
-      '"My last Duchess" — possessive pronoun treats her as property',
-      '"I gave commands" — chilling euphemism for ordering her death',
-      '"Who\'d stoop to blame... I choose / Never to stoop" — pride and refusal to communicate',
-      "Neptune taming a sea-horse — symbolises the Duke's desire to dominate",
+      '"My last Duchess" - possessive pronoun treats her as property',
+      '"I gave commands" - chilling euphemism for ordering her death',
+      '"Who\'d stoop to blame... I choose / Never to stoop" - pride and refusal to communicate',
+      "Neptune taming a sea-horse - symbolises the Duke's desire to dominate",
     ],
   },
   {
@@ -802,10 +802,10 @@ const REVISION_TOPICS = [
     summary:
       "A dramatic monologue in rhyming couplets with iambic pentameter. The Duke's controlled verse form masks his violent psychology.",
     keyPoints: [
-      'Dramatic monologue — the Duke unwittingly reveals his true nature to the listener',
-      "Rhyming couplets — controlled form mirrors the Duke's controlled exterior",
-      'Enjambment — conversational flow suggests the Duke is casual about horrifying things',
-      'Caesura — disruptive pauses hint at what lurks beneath the polished surface',
+      'Dramatic monologue - the Duke unwittingly reveals his true nature to the listener',
+      "Rhyming couplets - controlled form mirrors the Duke's controlled exterior",
+      'Enjambment - conversational flow suggests the Duke is casual about horrifying things',
+      'Caesura - disruptive pauses hint at what lurks beneath the polished surface',
     ],
   },
 ]
@@ -829,7 +829,7 @@ const comparisons: Comparison[] = [
     poem: 'Ozymandias',
     link: '/revision/poetry/power-and-conflict/ozymandias',
     points: [
-      'Both explore how powerful men use art to assert dominance — the Duke through his portrait collection, Ozymandias through his statue.',
+      'Both explore how powerful men use art to assert dominance - the Duke through his portrait collection, Ozymandias through his statue.',
       "Ozymandias shows power destroyed by time; the Duke's power remains intact, making his poem arguably more disturbing.",
       "Both use irony: Ozymandias's inscription is undercut by the desert; the Duke's self-presentation is undercut by what he reveals.",
       'Shelley critiques tyranny from the outside; Browning lets the tyrant speak, exposing him through his own words.',
@@ -841,7 +841,7 @@ const comparisons: Comparison[] = [
     points: [
       'Both are Browning dramatic monologues in which a male speaker kills a woman he claims to love.',
       'The Duke kills through social power ("I gave commands"); Porphyria\'s lover kills with his own hands, making the violence more visceral.',
-      'Both speakers are motivated by a desire to possess and freeze a moment of devotion — the Duke through a painting, the lover through murder.',
+      'Both speakers are motivated by a desire to possess and freeze a moment of devotion - the Duke through a painting, the lover through murder.',
       "Porphyria's lover shows visible madness; the Duke's chilling rationality makes him arguably more frightening.",
     ],
   },
@@ -849,9 +849,9 @@ const comparisons: Comparison[] = [
     poem: 'The Charge of the Light Brigade',
     link: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     points: [
-      'Both explore the consequences of unchecked authority — the Duke\'s commands kill his wife; the military "blunder" kills six hundred soldiers.',
+      'Both explore the consequences of unchecked authority - the Duke\'s commands kill his wife; the military "blunder" kills six hundred soldiers.',
       "Tennyson critiques those who give orders from a distance; Browning's Duke is himself the one giving lethal commands.",
-      "The Light Brigade's soldiers are celebrated; the Duchess is silenced and forgotten — both poems question who holds power and who suffers.",
+      "The Light Brigade's soldiers are celebrated; the Duchess is silenced and forgotten - both poems question who holds power and who suffers.",
       'Both use euphemism to distance the powerful from violence: "someone had blundered" and "I gave commands."',
     ],
   },
@@ -863,7 +863,7 @@ export default function MyLastDuchessPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="My Last Duchess by Robert Browning — Analysis & Annotations"
+        name="My Last Duchess by Robert Browning - Analysis & Annotations"
         description="Line-by-line analysis of My Last Duchess with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

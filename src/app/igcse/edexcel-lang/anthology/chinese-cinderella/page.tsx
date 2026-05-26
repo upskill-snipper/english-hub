@@ -16,10 +16,10 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Chinese Cinderella — Adeline Yen Mah — IGCSE Language A Anthology — The English Hub',
+    title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
   },
-  title: 'Chinese Cinderella — Adeline Yen Mah — IGCSE Language A Anthology',
+  title: 'Chinese Cinderella - Adeline Yen Mah - IGCSE Language A Anthology',
   description:
     'Study guide for "Chinese Cinderella" by Adeline Yen Mah. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
   alternates: {
@@ -46,31 +46,31 @@ const themes = [
   {
     label: 'Recognition and validation',
     detail:
-      'A key turning point comes when an external achievement (school success) is finally acknowledged — even briefly — by family. The text shows what such recognition costs and means.',
+      'A key turning point comes when an external achievement (school success) is finally acknowledged - even briefly - by family. The text shows what such recognition costs and means.',
   },
   {
     label: 'Childhood memory',
     detail:
-      'Written from adult perspective, the memoir reconstructs a child’s experience with adult understanding — without losing the child’s original feelings.',
+      'Written from adult perspective, the memoir reconstructs a child’s experience with adult understanding - without losing the child’s original feelings.',
   },
 ]
 
 const structuralAnalysis = {
   opening:
-    'Yen Mah opens with a small, specific moment that immediately situates the reader inside the young Adeline’s emotional world — concrete detail rather than abstract framing.',
+    'Yen Mah opens with a small, specific moment that immediately situates the reader inside the young Adeline’s emotional world - concrete detail rather than abstract framing.',
   development:
-    'The text builds through accumulated incidents — small slights, exclusions, unequal treatment — that establish a pattern rather than a single dramatic event.',
+    'The text builds through accumulated incidents - small slights, exclusions, unequal treatment - that establish a pattern rather than a single dramatic event.',
   climax:
     'A moment of unexpected recognition or success becomes the structural climax, all the more powerful for being set against the long preceding pattern of neglect.',
   resolution:
-    'The resolution is bittersweet — recognition is granted but feels precarious. The text resists tidy redemption.',
+    'The resolution is bittersweet - recognition is granted but feels precarious. The text resists tidy redemption.',
   perspective:
-    'First-person memoir written by adult Yen Mah recounting her childhood. The two voices — child experiencing, adult understanding — work together throughout.',
+    'First-person memoir written by adult Yen Mah recounting her childhood. The two voices - child experiencing, adult understanding - work together throughout.',
 }
 
 const writersPurpose = {
   achieve:
-    'Yen Mah wants to give voice to a childhood experience of being unwanted within one’s own family — an experience that is often invisible from the outside.',
+    'Yen Mah wants to give voice to a childhood experience of being unwanted within one’s own family - an experience that is often invisible from the outside.',
   readerFeel:
     'She wants the reader to feel both the loneliness of the unloved child and the quiet hope of the child who is starting to find proof of her own worth elsewhere.',
   message:
@@ -80,24 +80,24 @@ const writersPurpose = {
 const examPractice = {
   q1: {
     question: 'List four things you learn about Yen Mah’s family situation.',
-    type: 'Retrieval — 4 marks',
+    type: 'Retrieval - 4 marks',
   },
   q2: {
     question:
       'How does Yen Mah use language to convey her emotions during the events she describes?',
-    type: 'Language analysis — 12 marks',
+    type: 'Language analysis - 12 marks',
   },
   q3: {
     question:
       'How does Yen Mah structure the text to lead the reader towards the moment of recognition?',
-    type: 'Structural analysis — 12 marks',
+    type: 'Structural analysis - 12 marks',
   },
 }
 
 const comparisonLinks = [
   {
     title: 'A Passage to Africa',
-    author: 'George Alagiah (1955–2023)',
+    author: 'George Alagiah (1955-2023)',
     href: '/igcse/edexcel-lang/anthology/a-passage-to-africa',
     reason:
       'Both writers reflect on early life events that shaped their adult selves. Compare the personal-childhood focus of Yen Mah with the witnessed-stranger focus of Alagiah.',
@@ -105,7 +105,7 @@ const comparisonLinks = [
   },
   {
     title: 'Young and Dyslexic? You’ve Got It Going On',
-    author: 'Benjamin Zephaniah (1958–2023)',
+    author: 'Benjamin Zephaniah (1958-2023)',
     href: '/igcse/edexcel-lang/anthology/young-and-dyslexic',
     reason:
       'Both texts describe being misjudged by authority figures (family / school) and finding self-worth elsewhere. Compare the two narratives of overlooked young people who refused to accept others’ verdicts on them.',
@@ -173,7 +173,7 @@ export default async function ChineseCinderellaPage() {
           </p>
           <p>
             The anthology extract focuses on a moment in her school life that becomes a turning
-            point — a small but consequential instance of recognition that contrasts sharply with
+            point - a small but consequential instance of recognition that contrasts sharply with
             the emotional neglect of her home.
           </p>
           <p>Published by Penguin.</p>

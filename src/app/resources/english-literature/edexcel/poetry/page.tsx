@@ -8,14 +8,14 @@ import { STRINGS as _EAL_STRINGS } from './content'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel Poetry Anthology — Relationships and Conflict Clusters',
+    title: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
     description:
       'Full analysis of all 30 poems in the Edexcel GCSE English Literature poetry anthology. Relationships and Conflict clusters with themes, language analysis, structure, and comparison ideas.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/poetry',
   },
-  title: 'Edexcel Poetry Anthology — Relationships and Conflict Clusters',
+  title: 'Edexcel Poetry Anthology - Relationships and Conflict Clusters',
   description:
     'Full analysis of all 30 poems in the Edexcel GCSE English Literature poetry anthology. Relationships and Conflict clusters with themes, language analysis, structure, and comparison ideas.',
 }
@@ -58,7 +58,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     title: "Love's Philosophy",
     poet: 'Percy Bysshe Shelley',
     summary:
-      "The speaker uses examples from nature (rivers meeting the sea, winds mingling) to argue that everything in nature is united — so why won't the beloved kiss him? A persuasive, playful love poem.",
+      "The speaker uses examples from nature (rivers meeting the sea, winds mingling) to argue that everything in nature is united - so why won't the beloved kiss him? A persuasive, playful love poem.",
     themes: 'Desire, persuasion, nature and love, rejection',
     language:
       "Personification of nature ('the fountains mingle,' 'the winds of heaven mix') suggests love is natural and inevitable. Rhetorical question ('What are all these kissings worth, if thou kiss not me?') is both charming and slightly manipulative.",
@@ -70,7 +70,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"What are all these kissings worth, if thou kiss not me?"',
     ],
     comparisonLinks:
-      "Compare with 'Sonnet 43' (requited vs unrequited love), 'La Belle Dame sans Merci' (the power dynamics of love), or '1st Date — She / 1st Date — He' (anticipation and desire).",
+      "Compare with 'Sonnet 43' (requited vs unrequited love), 'La Belle Dame sans Merci' (the power dynamics of love), or '1st Date - She / 1st Date - He' (anticipation and desire).",
   },
   {
     title: 'Sonnet 29',
@@ -79,9 +79,9 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       'The speaker reflects on a past love, acknowledging that the memory of love fades over time. She uses imagery of seasons and nature to show that even intense emotions diminish. A bittersweet, mature meditation on lost love.',
     themes: 'Memory, loss, the transience of love, acceptance',
     language:
-      "Seasonal imagery ('summer,' 'autumn') represents the cycle of love — its peak and decline. 'I only know that summer sang in me a little while, that in me sings no more' uses synaesthesia (singing/summer) to convey joy that has become silent.",
+      "Seasonal imagery ('summer,' 'autumn') represents the cycle of love - its peak and decline. 'I only know that summer sang in me a little while, that in me sings no more' uses synaesthesia (singing/summer) to convey joy that has become silent.",
     structure:
-      "Shakespearean sonnet. The final couplet offers a resigned but dignified acceptance rather than the traditional resolution. The sonnet form creates irony — a love poem about love's ending.",
+      "Shakespearean sonnet. The final couplet offers a resigned but dignified acceptance rather than the traditional resolution. The sonnet form creates irony - a love poem about love's ending.",
     keyQuotes: [
       '"I only know that summer sang in me a little while, that in me sings no more"',
       '"What lips my lips have kissed, and where, and why, I have forgotten"',
@@ -99,15 +99,15 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     language:
       "The Duke speaks in controlled, sophisticated language, but his monstrous nature is revealed through hints: 'I gave commands; then all smiles stopped together.' Possessive language ('My Last Duchess,' 'my gift of a nine-hundred-years-old name') shows he treats his wife as property.",
     structure:
-      "Dramatic monologue in rhyming couplets. The couplets impose order — reflecting the Duke's desire for control. Enjambment creates a conversational flow that masks the horror of his revelations. The single stanza suggests the Duke's unbroken power.",
+      "Dramatic monologue in rhyming couplets. The couplets impose order - reflecting the Duke's desire for control. Enjambment creates a conversational flow that masks the horror of his revelations. The single stanza suggests the Duke's unbroken power.",
     keyQuotes: [
       '"That\'s my last Duchess painted on the wall, looking as if she were alive"',
       '"I gave commands; then all smiles stopped together"',
-      '"She had a heart — how shall I say? — too soon made glad"',
+      '"She had a heart - how shall I say? - too soon made glad"',
       '"as if she ranked my gift of a nine-hundred-years-old name with anybody\'s gift"',
     ],
     comparisonLinks:
-      "Compare with 'Cousin Kate' (Conflict cluster — men controlling women), 'Singh Song!' (contrasting loving relationships), or 'Valentine' (love and possession).",
+      "Compare with 'Cousin Kate' (Conflict cluster - men controlling women), 'Singh Song!' (contrasting loving relationships), or 'Valentine' (love and possession).",
   },
   {
     title: 'La Belle Dame sans Merci',
@@ -118,9 +118,9 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     language:
       "Archaic language ('thee,' 'hath') creates a timeless, mythical atmosphere. Nature imagery shifts from beauty ('fragrant zone,' 'honey wild') to desolation ('the sedge has withered,' 'no birds sing'). The contrast mirrors the knight's experience of love.",
     structure:
-      'Ballad form with quatrains and an ABCB rhyme scheme. The final stanza echoes the opening, creating a circular, trapped structure — the knight is stuck in his suffering. Short final lines in each stanza create a haunting, incomplete effect.',
+      'Ballad form with quatrains and an ABCB rhyme scheme. The final stanza echoes the opening, creating a circular, trapped structure - the knight is stuck in his suffering. Short final lines in each stanza create a haunting, incomplete effect.',
     keyQuotes: [
-      '"I met a lady in the meads, full beautiful — a faery\'s child"',
+      '"I met a lady in the meads, full beautiful - a faery\'s child"',
       '"She looked at me as she did love, and made sweet moan"',
       '"I saw pale kings and princes too, pale warriors, death-pale were they all"',
       '"And no birds sing"',
@@ -135,7 +135,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "The speaker admires a woman's beauty, which combines darkness and light in perfect harmony. Her external beauty reflects inner goodness and purity. A poem of idealised, reverential admiration rather than passionate desire.",
     themes: 'Beauty, harmony, idealisation, inner vs outer beauty',
     language:
-      "Antithesis ('dark and bright') creates balance and harmony. Light imagery ('starry skies,' 'tender light') suggests ethereal, almost divine beauty. The woman is compared to night rather than day — unconventional but emphasising her unique quality.",
+      "Antithesis ('dark and bright') creates balance and harmony. Light imagery ('starry skies,' 'tender light') suggests ethereal, almost divine beauty. The woman is compared to night rather than day - unconventional but emphasising her unique quality.",
     structure:
       'Three sestets with an ABABAB rhyme scheme. The regular rhythm and rhyme mirror the harmony the speaker finds in the woman. The poem moves from external appearance to inner character, suggesting true beauty encompasses both.',
     keyQuotes: [
@@ -155,7 +155,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     language:
       "Simple, childlike diction reflects the speaker's youth and innocence. Questions ('Grand-dad, they say you\'re old and frail') show the child's attempt to understand. Tender promises ('I\'ll bring my chair') create pathos through the gap between what the child offers and what the grandfather faces.",
     structure:
-      "Regular stanzas with a simple rhyme scheme suitable for a child's voice. The steady rhythm creates a gentle, soothing tone — as if the child is comforting the grandfather.",
+      "Regular stanzas with a simple rhyme scheme suitable for a child's voice. The steady rhythm creates a gentle, soothing tone - as if the child is comforting the grandfather.",
     keyQuotes: [
       '"Grand-dad, they say you\'re old and frail"',
       '"I\'ll bring my chair and sit beside you"',
@@ -165,7 +165,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       "Compare with 'Climbing My Grandfather' (grandparent relationships), 'Nettles' (parent-child bonds), or 'One Flesh' (ageing and love).",
   },
   {
-    title: '1st Date — She / 1st Date — He',
+    title: '1st Date - She / 1st Date - He',
     poet: 'Wendy Cope',
     summary:
       "Two companion poems presenting a first date from both perspectives. Both speakers are nervous and self-conscious. The humour and warmth come from recognising their shared anxiety. The dual perspective shows love's vulnerability and universality.",
@@ -186,7 +186,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     title: 'Valentine',
     poet: 'Carol Ann Duffy',
     summary:
-      "Instead of traditional Valentine's gifts, the speaker gives an onion as a symbol of love — it has layers, makes you cry, and its scent clings persistently. An anti-romantic poem that argues real love is complex, honest, and sometimes painful.",
+      "Instead of traditional Valentine's gifts, the speaker gives an onion as a symbol of love - it has layers, makes you cry, and its scent clings persistently. An anti-romantic poem that argues real love is complex, honest, and sometimes painful.",
     themes: 'Unconventional love, honesty, possession, the inadequacy of cliches',
     language:
       "Extended metaphor of the onion works on multiple levels: layers (complexity), tears (pain), light (hope), clinging scent (lasting impact). The imperative 'Take it' becomes increasingly aggressive, hinting at love's possessive dark side. Rejection of cliches ('Not a red rose or a satin heart') asserts authenticity.",
@@ -208,12 +208,12 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     title: 'One Flesh',
     poet: 'Elizabeth Jennings',
     summary:
-      "The speaker observes her elderly parents lying apart in bed, their passion long faded. They are physically close but emotionally distant — 'one flesh' in name only. A melancholic reflection on how time erodes even deep love.",
+      "The speaker observes her elderly parents lying apart in bed, their passion long faded. They are physically close but emotionally distant - 'one flesh' in name only. A melancholic reflection on how time erodes even deep love.",
     themes: 'Ageing, fading love, loneliness within marriage, time, memory',
     language:
-      "Religious allusion ('one flesh' from Genesis) creates irony — they are legally united but emotionally separated. Simile ('like a survey') suggests clinical detachment. Gentle, quiet language ('Tossing up,' 'light') creates a hushed, sad atmosphere.",
+      "Religious allusion ('one flesh' from Genesis) creates irony - they are legally united but emotionally separated. Simile ('like a survey') suggests clinical detachment. Gentle, quiet language ('Tossing up,' 'light') creates a hushed, sad atmosphere.",
     structure:
-      "Three regular sestets with a measured rhythm reflecting the calm but sad tone. The regularity suggests routine and monotony. The final line — 'Whose fire from which I came has now grown cold' — is a quiet devastation.",
+      "Three regular sestets with a measured rhythm reflecting the calm but sad tone. The regularity suggests routine and monotony. The final line - 'Whose fire from which I came has now grown cold' - is a quiet devastation.",
     keyQuotes: [
       '"Lying apart now, each in a separate bed"',
       '"Do they know they\'re old, these two who are my father and my mother?"',
@@ -222,13 +222,13 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     comparisonLinks:
       "Compare with 'Sonnet 29' (love fading), 'Sonnet 43' (enduring love as contrast), or 'A Child to His Sick Grandfather' (family and ageing).",
     rightsNotice:
-      "Rights notice: © Carcanet Press / David Higham Associates on behalf of the Elizabeth Jennings estate (1926–2001). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Jennings's New Collected Poems (Carcanet).",
+      "Rights notice: © Carcanet Press / David Higham Associates on behalf of the Elizabeth Jennings estate (1926-2001). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Jennings's New Collected Poems (Carcanet).",
   },
   {
     title: 'i wanna be yours',
     poet: 'John Cooper Clarke',
     summary:
-      'A modern, playful love poem in which the speaker offers to be everyday objects for their beloved — a vacuum cleaner, a Ford Cortina, a raincoat. Beneath the humour is genuine devotion and vulnerability.',
+      'A modern, playful love poem in which the speaker offers to be everyday objects for their beloved - a vacuum cleaner, a Ford Cortina, a raincoat. Beneath the humour is genuine devotion and vulnerability.',
     themes: 'Devotion, desire, vulnerability, everyday love',
     language:
       "Domestic, ordinary imagery (vacuum cleaner, electric heater) rejects romantic cliches. Repetition of 'I wanna be yours' creates an insistent, almost desperate tone. Simple, accessible language reflects the universality of the desire to belong to someone.",
@@ -249,12 +249,12 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     title: "Love's Dog",
     poet: 'Jen Hadfield',
     summary:
-      'A poem that presents love as a contradictory experience — both joyful and painful. Each stanza pairs a positive with a negative, showing that love encompasses the full range of human emotion.',
+      'A poem that presents love as a contradictory experience - both joyful and painful. Each stanza pairs a positive with a negative, showing that love encompasses the full range of human emotion.',
     themes: 'The contradictions of love, joy and pain, honesty about relationships',
     language:
       "Contrasting pairs ('the spoor of badgers / the sniff of divorce') juxtapose beauty and ugliness. Animal and nature imagery ground love in the physical, instinctive world. The dog metaphor suggests love is loyal but unpredictable.",
     structure:
-      "Short couplets create a rhythmic back-and-forth between positive and negative — structurally enacting love's contradictions. No resolution is offered; the poem simply presents love's complexity.",
+      "Short couplets create a rhythmic back-and-forth between positive and negative - structurally enacting love's contradictions. No resolution is offered; the poem simply presents love's complexity.",
     keyQuotes: [
       '"What I love about love is its diamond absolutes"',
       '"What I hate about love is its dog, its stink, its whine"',
@@ -269,7 +269,7 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     title: 'Nettles',
     poet: 'Vernon Scannell',
     summary:
-      "A father describes his son falling into a bed of nettles and being stung. He comforts the boy, then attacks the nettles with military fury — but they grow back. An extended metaphor for a parent's inability to protect a child from life's pain.",
+      "A father describes his son falling into a bed of nettles and being stung. He comforts the boy, then attacks the nettles with military fury - but they grow back. An extended metaphor for a parent's inability to protect a child from life's pain.",
     themes: 'Parental love, protection, pain, the futility of trying to shield children from harm',
     language:
       "Military metaphor throughout: 'regiment of spite,' 'fallen dead,' 'tall recruits.' The father's response to nettles mirrors a soldier fighting an enemy. This connects to Scannell's own experience as a WWII soldier and suggests the world is a hostile, dangerous place for children.",
@@ -281,20 +281,20 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
       '"tall recruits... called up... stood sharp beneath the window"',
     ],
     comparisonLinks:
-      "Compare with 'Climbing My Grandfather' (family bonds), 'A Child to His Sick Grandfather' (intergenerational love), or 'Catrin' (Conflict — parent-child tension).",
+      "Compare with 'Climbing My Grandfather' (family bonds), 'A Child to His Sick Grandfather' (intergenerational love), or 'Catrin' (Conflict - parent-child tension).",
     rightsNotice:
-      'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922–2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology.',
+      'Rights notice: © Robson Books on behalf of the Vernon Scannell estate (1922-2007). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology.',
   },
   {
     title: 'Climbing My Grandfather',
     poet: 'Andrew Waterhouse',
     summary:
-      "The speaker imagines climbing their grandfather like a mountain — from his shoes up to his head. The extended metaphor allows an intimate exploration of the grandfather's physical features and the love they represent.",
+      "The speaker imagines climbing their grandfather like a mountain - from his shoes up to his head. The extended metaphor allows an intimate exploration of the grandfather's physical features and the love they represent.",
     themes: 'Family love, memory, admiration, physical intimacy, exploration',
     language:
-      "Extended mountaineering metaphor transforms the grandfather into a landscape. Sensory detail ('the skin of his finger is smooth and thick,' 'his dusty, bald head') creates an intimate, tactile portrait. The grandfather becomes monumental — literally larger than life.",
+      "Extended mountaineering metaphor transforms the grandfather into a landscape. Sensory detail ('the skin of his finger is smooth and thick,' 'his dusty, bald head') creates an intimate, tactile portrait. The grandfather becomes monumental - literally larger than life.",
     structure:
-      'Free verse with no stanza breaks — one continuous climb, reflecting the unbroken connection between speaker and grandfather. Enjambment creates a sense of continuous movement upwards.',
+      'Free verse with no stanza breaks - one continuous climb, reflecting the unbroken connection between speaker and grandfather. Enjambment creates a sense of continuous movement upwards.',
     keyQuotes: [
       '"I decide to do it free, without a rope or net"',
       '"his thick fingers... old and smooth"',
@@ -303,13 +303,13 @@ const RELATIONSHIPS_POEMS: PoemAnalysis[] = [
     comparisonLinks:
       "Compare with 'A Child to His Sick Grandfather' (grandparent love), 'Nettles' (family bonds), or 'One Flesh' (physical observation of family members).",
     rightsNotice:
-      "Rights notice: © Faber & Faber on behalf of the Andrew Waterhouse estate (1958–2001). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Waterhouse's collection In (Rialto, 2000).",
+      "Rights notice: © Faber & Faber on behalf of the Andrew Waterhouse estate (1958-2001). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Waterhouse's collection In (Rialto, 2000).",
   },
   {
     title: 'Singh Song!',
     poet: 'Daljit Nagra',
     summary:
-      "A Punjabi shopkeeper describes his love for his new bride while his father's shop falls into disrepair. He abandons his duties to be with her — their love is vibrant, humorous, and culturally rich. The poem celebrates multicultural Britain and joyful, irreverent love.",
+      "A Punjabi shopkeeper describes his love for his new bride while his father's shop falls into disrepair. He abandons his duties to be with her - their love is vibrant, humorous, and culturally rich. The poem celebrates multicultural Britain and joyful, irreverent love.",
     themes: 'Love and marriage, cultural identity, duty vs desire, joy, multicultural Britain',
     language:
       "Phonetic spelling of Punjabi-accented English ('di,' 'vee') celebrates the speaker's cultural identity. Humour and irreverence ('She's made of honey... she's a Sikh') create warmth. Vivid, sensory language makes their love tangible and alive.",
@@ -352,12 +352,12 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'Exposure',
     poet: 'Wilfred Owen',
     summary:
-      "Soldiers in WWI trenches endure extreme cold, waiting for an attack that never comes. The real enemy is not the opposing army but the weather — 'the merciless iced east winds that knive us.' Owen shows war as monotonous suffering rather than heroic action.",
+      "Soldiers in WWI trenches endure extreme cold, waiting for an attack that never comes. The real enemy is not the opposing army but the weather - 'the merciless iced east winds that knive us.' Owen shows war as monotonous suffering rather than heroic action.",
     themes: 'The reality of war, suffering, nature as enemy, futility, the forgotten soldier',
     language:
       "Personification of weather ('winds that knive us,' 'dawn massing in the east her melancholy army') makes nature a hostile force. Half-rhyme (knife/knive, silent/salient) creates unease and incompleteness. The refrain 'But nothing happens' emphasises futility and monotony.",
     structure:
-      "Eight stanzas of five lines, each ending with a shortened final line. The truncated lines enact the soldiers' diminishment. The regular structure contrasts with the chaos of their experience. Circular structure — the poem ends as it begins.",
+      "Eight stanzas of five lines, each ending with a shortened final line. The truncated lines enact the soldiers' diminishment. The regular structure contrasts with the chaos of their experience. Circular structure - the poem ends as it begins.",
     keyQuotes: [
       '"Our brains ache, in the merciless iced east winds that knive us"',
       '"But nothing happens"',
@@ -371,19 +371,19 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'Catrin',
     poet: 'Gillian Clarke',
     summary:
-      "A mother addresses her daughter, recalling the intense physical connection of childbirth and the conflict that defined their relationship from the very beginning. The umbilical cord becomes a 'rope' — a bond that is both loving and combative.",
+      "A mother addresses her daughter, recalling the intense physical connection of childbirth and the conflict that defined their relationship from the very beginning. The umbilical cord becomes a 'rope' - a bond that is both loving and combative.",
     themes: 'Parent-child conflict, love and separation, independence, the bond of motherhood',
     language:
       "The metaphor of the 'red rope of love' simultaneously represents connection (umbilical cord) and conflict (a tug-of-war). Military language ('confrontation,' 'fought') frames the mother-child relationship as a battle. 'Tight red rope' suggests intensity and inescapability.",
     structure:
-      'Two stanzas: the first describes the birth, the second a present-day conflict over skating. The gap between stanzas represents the passage of time, but the conflict remains the same — love expressed through opposition.',
+      'Two stanzas: the first describes the birth, the second a present-day conflict over skating. The gap between stanzas represents the passage of time, but the conflict remains the same - love expressed through opposition.',
     keyQuotes: [
       '"I can remember you, child, as I stood in a hot, white room"',
       '"the tight red rope of love which we both fought over"',
       '"Neither won nor lost the struggle"',
     ],
     comparisonLinks:
-      "Compare with 'Nettles' (Relationships — parental love), 'Poppies' (mother and child), or 'Half-caste' (identity and conflict).",
+      "Compare with 'Nettles' (Relationships - parental love), 'Poppies' (mother and child), or 'Half-caste' (identity and conflict).",
     rightsNotice:
       "Rights notice: © Carcanet Press on behalf of Gillian Clarke (b. 1937). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Clarke's Collected Poems (Carcanet).",
   },
@@ -402,18 +402,18 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     comparisonLinks:
       "Compare with 'Exposure' (suffering in war), 'What Were They Like?' (the impact of war on civilians), or 'Poppies' (personal response to war).",
     rightsNotice:
-      "Rights notice: © Bloodaxe Books on behalf of the Carole Satyamurti estate (1939–2019). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology. NB: Edexcel UK GCSE 1ET0 uses Satyamurti's 'War Photographer', distinct from Carol Ann Duffy's poem of the same title used elsewhere.",
+      "Rights notice: © Bloodaxe Books on behalf of the Carole Satyamurti estate (1939-2019). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology. NB: Edexcel UK GCSE 1ET0 uses Satyamurti's 'War Photographer', distinct from Carol Ann Duffy's poem of the same title used elsewhere.",
   },
   {
     title: 'Belfast Confetti',
     poet: 'Ciaran Carson',
     summary:
-      'The speaker is caught in a bomb explosion during the Troubles in Belfast. Punctuation marks become shrapnel — the poem enacts the confusion and terror of a sudden bombing. Language itself breaks down under the pressure of violence.',
+      'The speaker is caught in a bomb explosion during the Troubles in Belfast. Punctuation marks become shrapnel - the poem enacts the confusion and terror of a sudden bombing. Language itself breaks down under the pressure of violence.',
     themes: 'Political conflict, terrorism, confusion, language and violence, identity',
     language:
-      "Punctuation marks as weapons ('Nuts, bolts, nails, car-keys. A fount of broken type. And the explosion itself — an asterisk on the map') brilliantly conflates the writer's tools with instruments of destruction. Questions pile up ('What is my name? Where am I?') showing loss of identity in chaos.",
+      "Punctuation marks as weapons ('Nuts, bolts, nails, car-keys. A fount of broken type. And the explosion itself - an asterisk on the map') brilliantly conflates the writer's tools with instruments of destruction. Questions pile up ('What is my name? Where am I?') showing loss of identity in chaos.",
     structure:
-      "Two stanzas of increasing fragmentation. Sentences break apart, mimicking the explosion's impact. Enjambment and caesura create a stuttering, disrupted rhythm — the reader experiences the speaker's disorientation.",
+      "Two stanzas of increasing fragmentation. Sentences break apart, mimicking the explosion's impact. Enjambment and caesura create a stuttering, disrupted rhythm - the reader experiences the speaker's disorientation.",
     keyQuotes: [
       '"Suddenly as the riot squad moved in it was raining exclamation marks"',
       '"a fount of broken type"',
@@ -423,7 +423,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     comparisonLinks:
       "Compare with 'The Charge of the Light Brigade' (being trapped in conflict), 'Exposure' (soldiers' experiences), or 'Half-caste' (identity and cultural conflict).",
     rightsNotice:
-      "Rights notice: © The Gallery Press / Wake Forest University Press on behalf of the Ciaran Carson estate (1948–2019). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Carson's collection The Irish for No (1987).",
+      "Rights notice: © The Gallery Press / Wake Forest University Press on behalf of the Ciaran Carson estate (1948-2019). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Carson's collection The Irish for No (1987).",
   },
   {
     title: 'The Destruction of Sennacherib',
@@ -434,7 +434,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     language:
       "Vivid simile ('The Assyrian came down like the wolf on the fold') creates a menacing, predatory image. Colour imagery shifts from gold and purple (power) to pale and cold (death). The contrast dramatises the swiftness of destruction.",
     structure:
-      'Four-line stanzas with anapestic tetrameter — a galloping rhythm that mirrors the approaching army, then abruptly shifts when God intervenes. The regular form contains the violence within a controlled structure.',
+      'Four-line stanzas with anapestic tetrameter - a galloping rhythm that mirrors the approaching army, then abruptly shifts when God intervenes. The regular form contains the violence within a controlled structure.',
     keyQuotes: [
       '"The Assyrian came down like the wolf on the fold, and his cohorts were gleaming in purple and gold"',
       '"And the sheen of their spears was like stars on the sea"',
@@ -468,7 +468,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'A Poison Tree',
     poet: 'William Blake',
     summary:
-      'The speaker describes how unexpressed anger grows into something deadly. When angry with a friend, he talks it out and the anger ends. When angry with a foe, he suppresses it — the anger grows into a poisonous tree that kills the enemy. An allegory about the dangers of repression.',
+      'The speaker describes how unexpressed anger grows into something deadly. When angry with a friend, he talks it out and the anger ends. When angry with a foe, he suppresses it - the anger grows into a poisonous tree that kills the enemy. An allegory about the dangers of repression.',
     themes: 'Anger, repression, deception, revenge, the corruption of innocence',
     language:
       "Extended metaphor of a tree transforms anger into something organic that grows when 'watered' with fears and tears. Biblical allusion to the Garden of Eden (the apple, the tree) suggests that repressed anger is a form of original sin. Simple, nursery-rhyme language creates a deceptively innocent surface.",
@@ -487,15 +487,15 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'The Man He Killed',
     poet: 'Thomas Hardy',
     summary:
-      'A soldier reflects on killing an enemy in battle. He realises that in other circumstances, they might have been friends sharing a drink at an inn. The poem exposes the arbitrary nature of warfare — the enemy is simply a man who enlisted for the same reasons you did.',
+      'A soldier reflects on killing an enemy in battle. He realises that in other circumstances, they might have been friends sharing a drink at an inn. The poem exposes the arbitrary nature of warfare - the enemy is simply a man who enlisted for the same reasons you did.',
     themes: 'The futility of war, shared humanity, chance, guilt',
     language:
-      "Colloquial, conversational language ('Yes; quaint and curious war is!') creates an ordinary, everyman voice. The hesitation and repetition ('because — because') show the speaker struggling to justify the killing. Understatement ('quaint and curious') reveals inadequacy of language to process trauma.",
+      "Colloquial, conversational language ('Yes; quaint and curious war is!') creates an ordinary, everyman voice. The hesitation and repetition ('because - because') show the speaker struggling to justify the killing. Understatement ('quaint and curious') reveals inadequacy of language to process trauma.",
     structure:
       "Five quatrains with a regular ABAB rhyme scheme and ballad-like rhythm. The simple form contrasts with the complex moral questions. The third stanza's hesitations disrupt the rhythm, reflecting the speaker's moral uncertainty.",
     keyQuotes: [
       '"Had he and I but met by some old ancient inn, we should have sat us down to wet right many a nipperkin!"',
-      '"I shot him dead because — because — he was my foe"',
+      '"I shot him dead because - because - he was my foe"',
       '"Yes; quaint and curious war is!"',
     ],
     comparisonLinks:
@@ -505,25 +505,25 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     title: 'Cousin Kate',
     poet: 'Christina Rossetti',
     summary:
-      'A fallen woman addresses her cousin Kate, who married the lord who seduced and abandoned the speaker. Despite her shame, the speaker has something Kate does not — a son and heir. The poem critiques Victorian sexual double standards and male power over women.',
+      'A fallen woman addresses her cousin Kate, who married the lord who seduced and abandoned the speaker. Despite her shame, the speaker has something Kate does not - a son and heir. The poem critiques Victorian sexual double standards and male power over women.',
     themes: 'Betrayal, gender inequality, sexual double standards, power, motherhood',
     language:
-      "Natural imagery ('dove' vs 'unclean thing') reflects the speaker's fall from innocence. Bitter, accusatory tone ('You grew more fair than I') reveals jealousy and hurt. The lord is compared to a hunter who 'lured' the speaker — she is prey, not a willing participant.",
+      "Natural imagery ('dove' vs 'unclean thing') reflects the speaker's fall from innocence. Bitter, accusatory tone ('You grew more fair than I') reveals jealousy and hurt. The lord is compared to a hunter who 'lured' the speaker - she is prey, not a willing participant.",
     structure:
-      "Six octave stanzas with a regular rhyme scheme. The ballad form suits the storytelling nature. The final stanza's triumphant tone ('my fair-haired son') offers a twist — the rejected woman holds the ultimate power.",
+      "Six octave stanzas with a regular rhyme scheme. The ballad form suits the storytelling nature. The final stanza's triumphant tone ('my fair-haired son') offers a twist - the rejected woman holds the ultimate power.",
     keyQuotes: [
       '"He lured me to his palace home... he wore me like a silken knot, he changed me like a glove"',
       '"So now I moan, an unclean thing, who might have been a dove"',
       '"Yet I\'ve a gift you have not got, and seem not like to get"',
     ],
     comparisonLinks:
-      "Compare with 'My Last Duchess' (Relationships — male power), 'Half-caste' (prejudice and identity), or 'The Class Game' (social inequality).",
+      "Compare with 'My Last Duchess' (Relationships - male power), 'Half-caste' (prejudice and identity), or 'The Class Game' (social inequality).",
   },
   {
     title: 'No Problem',
-    poet: 'Benjamin Zephaniah (1958–2023)',
+    poet: 'Benjamin Zephaniah (1958-2023)',
     summary:
-      'Benjamin Zephaniah (1958–2023) was a British dub poet and rights campaigner; rights to his work are now managed by his estate. In this poem the speaker responds to racism with defiance and confidence, asserting their identity and worth despite being stereotyped and excluded. The poem challenges racist assumptions while celebrating black British identity.',
+      'Benjamin Zephaniah (1958-2023) was a British dub poet and rights campaigner; rights to his work are now managed by his estate. In this poem the speaker responds to racism with defiance and confidence, asserting their identity and worth despite being stereotyped and excluded. The poem challenges racist assumptions while celebrating black British identity.',
     themes: 'Racism, identity, resilience, cultural pride, defiance',
     language:
       "Caribbean dialect ('I am not de problem') asserts cultural identity. Repetition of 'I am not de problem' is both a refutation and a declaration of self-worth. Direct address ('you') confronts the racist directly.",
@@ -546,7 +546,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       'A question-and-answer poem about the Vietnamese people after their culture has been destroyed by war. The questions ask about customs, art, and daily life; the answers reveal that everything has been obliterated. A devastating anti-war poem.',
     themes: 'War and cultural destruction, loss, memory, the dehumanisation of war',
     language:
-      "The past tense ('their light hearts turned to stone') emphasises irreversible loss. Poetic imagery in the questions ('Did they use bone and ivory, jade and silver, for ornament?') contrasts with the blunt, devastating answers ('Sir, their light hearts turned to stone'). 'Sir' is bitterly ironic — addressing the powerful who caused the destruction.",
+      "The past tense ('their light hearts turned to stone') emphasises irreversible loss. Poetic imagery in the questions ('Did they use bone and ivory, jade and silver, for ornament?') contrasts with the blunt, devastating answers ('Sir, their light hearts turned to stone'). 'Sir' is bitterly ironic - addressing the powerful who caused the destruction.",
     structure:
       'Two stanzas: six numbered questions, then six numbered answers. The formal, bureaucratic structure (like a government report) creates cold detachment that makes the human loss more shocking.',
     keyQuotes: [
@@ -557,13 +557,13 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     comparisonLinks:
       "Compare with 'War Photographer' (the impact of war on people), 'Exposure' (suffering), or 'Poppies' (loss and remembrance).",
     rightsNotice:
-      "Rights notice: © New Directions Publishing on behalf of the Denise Levertov estate (1923–1997). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Levertov's collection The Sorrow Dance (New Directions, 1967).",
+      "Rights notice: © New Directions Publishing on behalf of the Denise Levertov estate (1923-1997). Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the board-licensed Edexcel anthology or Levertov's collection The Sorrow Dance (New Directions, 1967).",
   },
   {
     title: 'The Class Game',
     poet: 'Mary Casey',
     summary:
-      "The speaker challenges class prejudice by asking how the reader judges class — by accent, vocabulary, address, or clothing. She proudly asserts her working-class identity and challenges the assumption that middle-class is 'better.'",
+      "The speaker challenges class prejudice by asking how the reader judges class - by accent, vocabulary, address, or clothing. She proudly asserts her working-class identity and challenges the assumption that middle-class is 'better.'",
     themes: 'Class prejudice, identity, language and power, pride, social inequality',
     language:
       "Juxtaposition of working-class and middle-class language ('dinner' vs 'luncheon,' 'serviette' vs 'napkin') exposes how language is used to judge people. Direct, confrontational tone ('How can you tell what class I\'m from?') challenges the reader. Working-class dialect is presented with pride, not shame.",
@@ -704,12 +704,12 @@ export default async function PoetryPage() {
             &larr; Edexcel English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Poetry Anthology — Full Analysis
+            Poetry Anthology - Full Analysis
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Edexcel GCSE English Literature &middot; Paper 2, Section B
             <br />
-            Relationships &amp; Conflict Clusters — All 30 Poems
+            Relationships &amp; Conflict Clusters - All 30 Poems
           </p>
         </div>
       </section>
@@ -730,7 +730,7 @@ export default async function PoetryPage() {
                       href={`#rel-${p.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       className="text-primary hover:underline"
                     >
-                      {p.title} — {p.poet}
+                      {p.title} - {p.poet}
                     </a>
                   </li>
                 ))}
@@ -745,7 +745,7 @@ export default async function PoetryPage() {
                       href={`#con-${p.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
                       className="text-primary hover:underline"
                     >
-                      {p.title} — {p.poet}
+                      {p.title} - {p.poet}
                     </a>
                   </li>
                 ))}
@@ -761,7 +761,7 @@ export default async function PoetryPage() {
           </h2>
           <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
-              Your school will have studied <strong>one cluster</strong> — either Relationships or
+              Your school will have studied <strong>one cluster</strong> - either Relationships or
               Conflict. In the exam, one poem from your cluster will be{' '}
               <strong>printed on the paper</strong>, and you will be asked to compare it with{' '}
               <strong>another poem of your choice</strong> from the same cluster (from memory).
@@ -782,7 +782,7 @@ export default async function PoetryPage() {
         {/* ── Relationships cluster ─────────────────────────────── */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
-            Relationships Cluster — Full Analysis
+            Relationships Cluster - Full Analysis
           </h2>
           <p className="mt-2 text-muted-foreground">
             15 poems exploring different types of relationships: romantic love, family bonds,
@@ -805,7 +805,7 @@ export default async function PoetryPage() {
         {/* ── Conflict cluster ──────────────────────────────────── */}
         <section className="mt-14">
           <h2 className="text-2xl font-bold text-foreground">
-            {_tr(`Conflict Cluster — Full Analysis`)}
+            {_tr(`Conflict Cluster - Full Analysis`)}
           </h2>
           <p className="mt-2 text-muted-foreground">
             15 poems exploring different types of conflict: war, political violence, personal
@@ -840,7 +840,7 @@ export default async function PoetryPage() {
                     1
                   </span>
                   <span>
-                    <strong>Introduction</strong> — briefly state how both poems present the named
+                    <strong>Introduction</strong> - briefly state how both poems present the named
                     theme. Identify a key similarity or difference.
                   </span>
                 </li>
@@ -849,7 +849,7 @@ export default async function PoetryPage() {
                     2
                   </span>
                   <span>
-                    <strong>{_tr(`Comparative paragraphs (3-4)`)}</strong> — each paragraph should
+                    <strong>{_tr(`Comparative paragraphs (3-4)`)}</strong> - each paragraph should
                     discuss both poems. Compare a specific technique or idea, using comparative
                     connectives (&quot;Similarly,&quot; &quot;In contrast,&quot;
                     &quot;Whereas,&quot; &quot;Both poets&quot;).
@@ -860,7 +860,7 @@ export default async function PoetryPage() {
                     3
                   </span>
                   <span>
-                    <strong>{_tr(`Analyse methods`)}</strong> — don&apos;t just compare what the
+                    <strong>{_tr(`Analyse methods`)}</strong> - don&apos;t just compare what the
                     poems say, but how they say it. Compare language choices, structural techniques,
                     form, tone, and imagery.
                   </span>
@@ -870,7 +870,7 @@ export default async function PoetryPage() {
                     4
                   </span>
                   <span>
-                    <strong>{_tr(`Include context where relevant`)}</strong> — when and why was the
+                    <strong>{_tr(`Include context where relevant`)}</strong> - when and why was the
                     poem written? How does the poet&apos;s background inform the poem? (context)
                   </span>
                 </li>
@@ -879,7 +879,7 @@ export default async function PoetryPage() {
                     5
                   </span>
                   <span>
-                    <strong>{_tr(`Brief conclusion`)}</strong> — which poem is more effective? Or
+                    <strong>{_tr(`Brief conclusion`)}</strong> - which poem is more effective? Or
                     how do they complement each other?
                   </span>
                 </li>

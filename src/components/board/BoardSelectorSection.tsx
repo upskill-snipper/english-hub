@@ -28,7 +28,7 @@ import { useT } from '@/lib/i18n/use-t'
 type Props = {
   /** Where to redirect after a selection (defaults to `/revision`). */
   redirectTo?: string
-  /** When true, do not redirect on selection — used by the modal gate. */
+  /** When true, do not redirect on selection - used by the modal gate. */
   disableRedirect?: boolean
   /** Callback fired after a successful selection. */
   onSelected?: (board: ExamBoard) => void
@@ -84,7 +84,7 @@ export function BoardSelectorSection({
         // navigate (e.g. the highlighted "current board" tick on Step 3).
         setBoard(board)
 
-        // Fire analytics synchronously — `events.boardSelected` is a sync
+        // Fire analytics synchronously - `events.boardSelected` is a sync
         // push to GA4's dataLayer, so it completes before the page tears
         // down on the location change below.
         try {
@@ -102,7 +102,7 @@ export function BoardSelectorSection({
         // Canonical "explicit board choice" navigation: full reload to
         // `<redirectTo>?setBoard=<board>`. The middleware validates the id,
         // writes the cookie authoritatively (server-side `Set-Cookie`), then
-        // redirects to the clean URL — so the server-rendered chrome
+        // redirects to the clean URL - so the server-rendered chrome
         // (sidebar, badge, getServerBoard) re-renders against the new
         // cookie even if Zustand never hydrated. We use `window.location`
         // (not `router.push` + `router.refresh`) because Next.js's client
@@ -160,13 +160,13 @@ export function BoardSelectorSection({
         return
       }
 
-      // IAL has only one awarding body — done immediately
+      // IAL has only one awarding body - done immediately
       if (body === 'pearson-ial') {
         handleSelect('ial-edexcel')
         return
       }
 
-      // UK A-Level boards — each maps 1:1 to an ExamBoard
+      // UK A-Level boards - each maps 1:1 to an ExamBoard
       if (body === 'aqa-a-level') {
         handleSelect('aqa-a-level')
         return
@@ -272,12 +272,12 @@ export function BoardSelectorSection({
     )
   }
 
-  // Fallback — should not happen, but reset just in case
+  // Fallback - should not happen, but reset just in case
   return <LevelStep onPick={handleLevelPick} loadingKs3={false} compact={compact} />
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * STEP 1 — Study level
+ * STEP 1 - Study level
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 function LevelStep({
@@ -455,7 +455,7 @@ function LevelCard({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * STEP 2 — Awarding body
+ * STEP 2 - Awarding body
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 type AwardingBodyOption = {
@@ -721,7 +721,7 @@ function AwardingBodyStep({
               isLoading={isLoading}
               disabled={isDisabled}
               compact={compact}
-              // IGCSE bodies go to step 3 — show a "next step" arrow instead of "choose"
+              // IGCSE bodies go to step 3 - show a "next step" arrow instead of "choose"
               showNextArrow={level === 'igcse'}
               onClick={() => onPick(body.id)}
             />
@@ -737,7 +737,7 @@ function AwardingBodyStep({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * STEP 3 — Paper / specification (IGCSE only)
+ * STEP 3 - Paper / specification (IGCSE only)
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 type PaperOption = {
@@ -912,7 +912,7 @@ function PaperStep({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * Shared — OptionCard (used by Steps 2 & 3)
+ * Shared - OptionCard (used by Steps 2 & 3)
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 function OptionCard({
@@ -1059,7 +1059,7 @@ function OptionCard({
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * Shared — Breadcrumb
+ * Shared - Breadcrumb
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 function Breadcrumb({ parts }: { parts: string[] }) {

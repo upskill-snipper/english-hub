@@ -5,7 +5,7 @@ import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-h
 import { BOARDS } from '@/lib/board/board-config'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
-// (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead —
+// (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead -
 // available in both Node 20+ and the Vercel edge runtime.
 
 const BOARD_COOKIE = 'english-hub-board'
@@ -16,7 +16,7 @@ const BOARD_COOKIE = 'english-hub-board'
 //   en  → English only (default; SEO-indexable content)
 //   ar  → Arabic only (RTL layout, Khaleeji)
 //
-// Bilingual mode ('bi') was removed in May 2026 — the stacked EN+AR
+// Bilingual mode ('bi') was removed in May 2026 - the stacked EN+AR
 // layout didn't render reliably on dense pages and Arabic-speaking users
 // asked for a simpler toggle. Legacy `bi` cookie values are coerced to
 // 'en' so old sessions upgrade cleanly on next request.
@@ -51,7 +51,7 @@ const BOARD_ALLOWLIST_EXACT = new Set<string>([
   '/for-parents',
   // 2026-05-20: new canonical marketing routes (institutional repositioning).
   // The /for-* routes 308-redirect to these in next.config.js. All five
-  // MUST be guest-accessible — they are the primary public conversion
+  // MUST be guest-accessible - they are the primary public conversion
   // surface, and gating them behind a board cookie or auth wall sends
   // school leaders to /board-select before they can read a single line.
   '/schools',
@@ -81,7 +81,7 @@ const BOARD_ALLOWLIST_EXACT = new Set<string>([
   '/consent',
   '/certificate',
 
-  // Content-hub ROOTS (no trailing slash — subpages covered by prefix list).
+  // Content-hub ROOTS (no trailing slash - subpages covered by prefix list).
   // Without these, visiting `/games` (no trailing slash) fails the prefix
   // match for `/games/` and redirects to /board-select.
   '/analysis',
@@ -96,7 +96,7 @@ const BOARD_ALLOWLIST_EXACT = new Set<string>([
   '/learn',
   '/marking',
   '/toolkit',
-  // KS3 root — the full KS3 English curriculum (Y7/Y8/Y9 tree).
+  // KS3 root - the full KS3 English curriculum (Y7/Y8/Y9 tree).
   // The trailing-slash prefix is already in BOARD_ALLOWLIST_PREFIX
   // below; we add the exact `/ks3` here so the landing page doesn't
   // hit the BoardGate without a cookie. KS3 sits BEFORE students
@@ -131,7 +131,7 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   // Compliance sub-pages
   '/legal/',
 
-  // Public cert + consent + verify flows — these can be landed on by
+  // Public cert + consent + verify flows - these can be landed on by
   // external visitors (Ofqual moderators, parents checking a student's
   // certificate) who have no board cookie. Must not bounce to /board-select.
   '/verify/',
@@ -144,15 +144,15 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   '/ks3/',
   '/ial/',
 
-  // Long-tail SEO content hub — board-agnostic analysis pages
+  // Long-tail SEO content hub - board-agnostic analysis pages
   '/analysis/',
 
-  // Revision content hub — must be crawlable by Googlebot even without a
+  // Revision content hub - must be crawlable by Googlebot even without a
   // board cookie. Board-specific UI filtering happens client-side once the
   // cookie is set; non-logged-in visitors see the generic rendered version.
   '/revision/',
 
-  // Practice, games, assessment, mock exams — content surfaces that must
+  // Practice, games, assessment, mock exams - content surfaces that must
   // be crawlable. Each page handles the no-board case with a friendly
   // fallback (see e.g. QuoteMatchGame's empty-board branch).
   '/practice/',
@@ -171,7 +171,7 @@ const BOARD_ALLOWLIST_PREFIX: string[] = [
   '/_next/',
 ]
 
-// ── Paths that REQUIRE a board cookie (item #30 — soft-404 fix) ─────────
+// ── Paths that REQUIRE a board cookie (item #30 - soft-404 fix) ─────────
 //
 // Previously the middleware redirected ANY non-allowlisted path to
 // /board-select, which converted genuinely unknown URLs into 307→200
@@ -255,12 +255,12 @@ const ALLOWED_ORIGINS = new Set([
 //
 // `extraScriptHashes` lets callers append content-addressed `'sha256-...'`
 // sources for scripts that can't carry a per-request nonce. The canonical
-// use case is `/analysis/[...slug]` — that route is `force-static` + 24 h
+// use case is `/analysis/[...slug]` - that route is `force-static` + 24 h
 // ISR, so `headers()` (and hence the nonce) is unavailable at render time.
 // Instead the middleware computes the SHA-256 of each JSON-LD body and
 // adds the hash here.
 //
-// NB — `'strict-dynamic'` was evaluated and dropped: older iOS Safari
+// NB - `'strict-dynamic'` was evaluated and dropped: older iOS Safari
 // (≤ 15.6) has known bugs where a script-src containing 'strict-dynamic'
 // is treated as malformed, causing every script on the page to be
 // blocked. Without strict-dynamic, modern browsers enforce the
@@ -274,7 +274,7 @@ const ALLOWED_ORIGINS = new Set([
 // below the support floor.
 function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   const extraSrc = extraScriptHashes.length ? ' ' + extraScriptHashes.join(' ') : ''
-  // 02 May 2026 — dropped the `'nonce-${nonce}'` source from script-src.
+  // 02 May 2026 - dropped the `'nonce-${nonce}'` source from script-src.
   //
   // Modern browsers (Chrome, Firefox, Safari ≥15.4) ignore `'unsafe-inline'`
   // whenever a `'nonce-...'` source is present on the same directive. That
@@ -285,7 +285,7 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   // Bundle inspection on the rolled-back broken production deployment
   // (dpl_3PuGJe6549aZjLN7kwMBwnWvqpSL, commit 09204b8) showed 0 nonce
   // attributes on the rendered scripts versus 96 on the green
-  // dpl_7hjsyaxXuMHm5E5T592CUe9J5gnA (commit 07e89e3) — same code path,
+  // dpl_7hjsyaxXuMHm5E5T592CUe9J5gnA (commit 07e89e3) - same code path,
   // same middleware, but Next 15.5 + React 19 stopped reading `x-nonce`
   // off the request headers and stamping it onto the framework scripts.
   // (Open question: caused by an upstream Next change, the Sentry config
@@ -293,17 +293,17 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   // racing the page bootstrap. Won't be debugged in this hot-fix.)
   //
   // Scripts now run under `'self' 'unsafe-inline' + explicit host
-  // allowlist (Stripe / Rewardful / GTM)` — same security envelope as
+  // allowlist (Stripe / Rewardful / GTM)` - same security envelope as
   // before nonce-CSP, with the JSON-LD content-hash channel preserved
   // for the `/analysis/[slug]` static route via `extraSrc`.
   //
   // The unused `nonce` parameter is retained because callers still pass
-  // it — re-introduce it once Next 15+ gives us reliable nonce stamping
+  // it - re-introduce it once Next 15+ gives us reliable nonce stamping
   // on framework chunks.
   void nonce
   return [
     `default-src 'self'`,
-    // script-src — third-party JS we load:
+    // script-src - third-party JS we load:
     //   googletagmanager.com → GA4 gtag.js bundle
     //   *.i.posthog.com      → PostHog SDK config + asset CDN
     //                          (eu-assets.i.posthog.com / us-assets.i.posthog.com)
@@ -313,7 +313,7 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
-    // connect-src — third-party endpoints we POST/fetch from at runtime:
+    // connect-src - third-party endpoints we POST/fetch from at runtime:
     //   *.supabase.co               → auth + db
     //   api.stripe.com              → checkout sessions, customer portal
     //   r.wdfl.co                   → Rewardful conversion attribution
@@ -332,7 +332,7 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   ].join('; ')
 }
 
-// `/toolkit` is retired — every toolkit feature is surfaced from the
+// `/toolkit` is retired - every toolkit feature is surfaced from the
 // unified Your Hub at `/revision`. Landing on any toolkit URL sends the
 // user to the hub so the nav + analytics render consistently. Deep-link
 // sub-routes under `/toolkit/*` still work (the individual tools live
@@ -356,14 +356,14 @@ export async function middleware(request: NextRequest) {
   // the internal deployment host; the real requested host is in
   // `x-forwarded-host`. The 2026-05-16 exact `host === 'www…'` check
   // therefore never matched in prod, so this 308 block was dead code.
-  // Scoped to the production www host only — preview/branch deployments
+  // Scoped to the production www host only - preview/branch deployments
   // (*.vercel.app) must NEVER be redirected (would loop).
   //
   // CAVEAT (verified 2026-05-18 via live probe): a Vercel *platform*
   // domain redirect currently intercepts www at the edge BEFORE this
   // middleware runs and serves a 307 (Temporary). No app code (this
   // middleware, nor a next.config `has:host` rule) can override a
-  // platform-level domain redirect — making it PERMANENT (308) is a
+  // platform-level domain redirect - making it PERMANENT (308) is a
   // Vercel Domains dashboard setting. This block is the correct fallback
   // and will emit 308 the moment that platform redirect is removed.
   const fwdHost = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? '')
@@ -379,13 +379,13 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(target, 308)
   }
 
-  // Web Crypto `randomUUID()` + `btoa` — edge-runtime safe, avoids the
+  // Web Crypto `randomUUID()` + `btoa` - edge-runtime safe, avoids the
   // node:crypto / Buffer imports which the edge runtime flags.
   const nonce = btoa(globalThis.crypto.randomUUID())
 
   // ── Explicit board choice via `?setBoard=<id>` ─────────────────────
   //
-  // 02 May 2026 — see business-docs/BOARD_NAVIGATION_MODEL.md.
+  // 02 May 2026 - see business-docs/BOARD_NAVIGATION_MODEL.md.
   //
   // The cookie now reflects the user's currently-selected board, and is
   // ONLY written on explicit board choices (homepage cards, board-select
@@ -422,7 +422,7 @@ export async function middleware(request: NextRequest) {
       })
       return response
     }
-    // Invalid board id — strip the param and continue without setting
+    // Invalid board id - strip the param and continue without setting
     // the cookie. Avoids leaking a bogus value into the user's storage
     // while still cleaning the URL so it doesn't sit in their address
     // bar / share links.
@@ -431,10 +431,10 @@ export async function middleware(request: NextRequest) {
 
   // ── Reset board via `?resetBoard=1` ────────────────────────────────
   //
-  // 2026-05-20 — the header BoardSwitcher's "Reset" item now points at
+  // 2026-05-20 - the header BoardSwitcher's "Reset" item now points at
   // `/board-select?resetBoard=1`. Previously Reset and Change both linked
   // to the same `?change=1` URL, so Reset did nothing different from
-  // Change and the cookie was never actually cleared — users complained
+  // Change and the cookie was never actually cleared - users complained
   // the header dropdown "got stuck" because the same board kept showing
   // after they thought they had cleared it. This handler honours the
   // intent: it expires the board cookie, strips the param, and returns a
@@ -462,7 +462,7 @@ export async function middleware(request: NextRequest) {
 
   // ── CSRF: Origin header validation for API mutations ─────────────
   if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
-    // Stripe + RevenueCat webhooks come from third-party servers — skip origin check.
+    // Stripe + RevenueCat webhooks come from third-party servers - skip origin check.
     // Both webhooks authenticate via their own bearer-token / signature mechanism
     // (Stripe-Signature header, Authorization: Bearer for RC), so the same-origin
     // attestation below would (correctly) reject them. Vercel cron jobs are also
@@ -477,8 +477,8 @@ export async function middleware(request: NextRequest) {
 
       // P2-SEC-3: require a same-origin attestation for API mutations.
       //
-      // Case 1 — Origin header present: it MUST be in the allow-list.
-      // Case 2 — Origin header absent: accept only if Sec-Fetch-Site
+      // Case 1 - Origin header present: it MUST be in the allow-list.
+      // Case 2 - Origin header absent: accept only if Sec-Fetch-Site
       //   signals same-origin (set by all modern browsers on SPA fetches
       //   and form submissions). Values 'same-origin' and 'none' are
       //   safe; 'cross-site' / 'same-site' / missing are not.
@@ -531,14 +531,14 @@ export async function middleware(request: NextRequest) {
   // on first paint (no flicker).
   //
   // Resolution order:
-  //   1. URL prefix `/ar/...` — explicit Arabic locale (indexable by Google).
-  //   2. `eh-lang` cookie — user's persisted toggle choice (en | bi | ar).
-  //   3. Default 'en' — cold visitors land in English.
+  //   1. URL prefix `/ar/...` - explicit Arabic locale (indexable by Google).
+  //   2. `eh-lang` cookie - user's persisted toggle choice (en | bi | ar).
+  //   3. Default 'en' - cold visitors land in English.
   //
   // The URL prefix takes precedence over the cookie because a `/ar/...`
   // URL is the canonical, shareable Arabic surface. The middleware also
   // rewrites `/ar/foo` to `/foo` internally so we don't have to
-  // duplicate every route — the page renders the same component, just
+  // duplicate every route - the page renders the same component, just
   // with `x-lang=ar` stamped on the request headers so localised copy
   // renders in Arabic and `<html dir="rtl">` is applied.
   let lang: string
@@ -569,7 +569,7 @@ export async function middleware(request: NextRequest) {
   // For the `/analysis/[category]/[slug]` catch-all route we can't use the
   // nonce (the page is `force-static`), so we append content hashes of the
   // three JSON-LD scripts to the CSP instead. The helper memoises after the
-  // first hit per slug, so the crypto work runs at most 2–3 SHA-256 digests
+  // first hit per slug, so the crypto work runs at most 2-3 SHA-256 digests
   // per cold slug and zero on warm paths.
   let scriptHashes: string[] = []
   const analysisSlug = extractAnalysisSlugKey(pathname)
@@ -594,7 +594,7 @@ export async function middleware(request: NextRequest) {
   // securityheaders.com grade A and harden against MIME sniffing,
   // referrer leakage, and unwanted device-API access.
   //
-  // X-Frame-Options is intentionally omitted — the CSP above already sets
+  // X-Frame-Options is intentionally omitted - the CSP above already sets
   // `frame-ancestors 'self'`, which supersedes XFO in modern browsers.
   // Adding XFO would be redundant (and can cause edge-case conflicts).
   //

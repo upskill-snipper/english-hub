@@ -71,7 +71,7 @@ const THEME_GROUPS: ThemeGroup[] = [
     bgColour: 'bg-rose-500/10',
     poems: [
       {
-        title: 'Sonnet 29 — \u2018I think of thee!\u2019',
+        title: 'Sonnet 29 - \u2018I think of thee!\u2019',
         poet: 'Elizabeth Barrett Browning',
         slug: 'sonnet-29',
         hook: 'A speaker overwhelmed by thoughts of her beloved compares them to vines around a tree.',
@@ -416,7 +416,7 @@ export default function LoveAndRelationshipsPage() {
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               The exam asks you to compare two poems. Choose poems that share a theme but differ in
-              tone — for example, the obsessive love of Porphyria&apos;s Lover against the tender
+              tone - for example, the obsessive love of Porphyria&apos;s Lover against the tender
               longing of Sonnet 29.
             </p>
           </div>
@@ -426,8 +426,8 @@ export default function LoveAndRelationshipsPage() {
               Examine the speaker, not the poet
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Each poem has a constructed speaker. Analyse how that voice presents love —
-              possessive, nostalgic, joyful or grieving — and what techniques the poet uses to shape
+              Each poem has a constructed speaker. Analyse how that voice presents love -
+              possessive, nostalgic, joyful or grieving - and what techniques the poet uses to shape
               it.
             </p>
           </div>
@@ -445,7 +445,7 @@ export default function LoveAndRelationshipsPage() {
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-4">
             <h3 className="mb-2 text-sm font-semibold text-foreground">
-              Learn 2–3 key quotes per poem
+              Learn 2-3 key quotes per poem
             </h3>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               You don&apos;t need to memorise entire poems. Focus on short, technique-rich

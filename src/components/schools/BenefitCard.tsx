@@ -1,4 +1,4 @@
-// Institutional benefit card — server component. Used across /schools,
+// Institutional benefit card - server component. Used across /schools,
 // /teachers, /eal and the homepage to present a single value proposition
 // in a calm, leadership-focused style (icon + title + supporting line).
 

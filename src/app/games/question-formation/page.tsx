@@ -143,7 +143,7 @@ const QUESTION_BANK: QuestionItem[] = [
   { correct: 'Who broke the window?', note: 'When "who" is the subject, no auxiliary is needed.' },
   {
     correct: 'What happened at the end?',
-    note: 'Subject question with "what" — no "did" required.',
+    note: 'Subject question with "what" - no "did" required.',
   },
   { correct: 'Who is knocking at the door?', note: 'Subject "who" with continuous "is knocking".' },
   {
@@ -420,7 +420,7 @@ export default function QuestionFormationPage() {
                 <div className="flex flex-wrap gap-2">
                   {pool.length === 0 && !feedback ? (
                     <p className="py-2 text-sm text-muted-foreground">
-                      All words used — check your answer!
+                      All words used - check your answer!
                     </p>
                   ) : (
                     pool.map((token) => (
@@ -454,7 +454,7 @@ export default function QuestionFormationPage() {
                   <div className="flex items-center gap-2 font-medium">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Brilliant — that&apos;s spot on!
+                        <CheckCircle className="size-4" /> Brilliant - that&apos;s spot on!
                       </>
                     ) : (
                       <>

@@ -4,18 +4,18 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /**
  * /eal section metadata + breadcrumb. The landing page itself is a
  * client component (it uses the locale hook) so it cannot export
- * metadata — this server layout supplies it for /eal and acts as the
+ * metadata - this server layout supplies it for /eal and acts as the
  * default for child routes that don't set their own. Child pages
  * (diagnostic, banded practice, level views) override title/description
  * /canonical via their own metadata exports.
  *
- * Title is brand-free: the root layout applies the "%s — The English
+ * Title is brand-free: the root layout applies the "%s - The English
  * Hub" template, so adding the brand here would double it.
  */
 export const metadata: Metadata = {
   title: 'Structured English support for EAL learners',
   description:
-    'Structured English support for EAL learners — vocabulary, reading fluency, comprehension, grammar and writing confidence — with teacher visibility, differentiated support and progress reporting. Built for international and GCC schools and includes a bilingual CEFR placement test for Arabic L1 learners.',
+    'Structured English support for EAL learners - vocabulary, reading fluency, comprehension, grammar and writing confidence - with teacher visibility, differentiated support and progress reporting. Built for international and GCC schools and includes a bilingual CEFR placement test for Arabic L1 learners.',
   keywords: [
     'EAL support platform',
     'EAL learners English support',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://theenglishhub.app/eal' },
   openGraph: {
-    title: 'Structured English support for EAL learners — The English Hub',
+    title: 'Structured English support for EAL learners - The English Hub',
     description:
       'Vocabulary, reading fluency, comprehension, grammar and writing confidence for EAL learners, with teacher visibility and progress reporting. Includes a bilingual CEFR placement test.',
     url: 'https://theenglishhub.app/eal',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Structured English support for EAL learners — The English Hub',
+    title: 'Structured English support for EAL learners - The English Hub',
     description:
       'Structured EAL support with teacher visibility and progress reporting, plus a bilingual CEFR placement test.',
   },
@@ -50,7 +50,7 @@ export default function EALLayout({ children }: { children: React.ReactNode }) {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'EAL — English for Arabic Speakers', url: 'https://theenglishhub.app/eal' },
+          { name: 'EAL - English for Arabic Speakers', url: 'https://theenglishhub.app/eal' },
         ]}
       />
       {children}

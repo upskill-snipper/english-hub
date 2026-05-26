@@ -181,7 +181,7 @@ function ForgotPasswordForm() {
 }
 
 export default function ForgotPasswordPage() {
-  // useSearchParams() needs a Suspense boundary in Next 15 — without it
+  // useSearchParams() needs a Suspense boundary in Next 15 - without it
   // the production build fails with "missing-suspense-with-csr-bailout"
   // and the page renders blank on the client until hydration. Matches the
   // pattern used by /auth/login and /auth/register.

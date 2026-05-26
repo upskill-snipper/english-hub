@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
         )
       }
 
-      // Atomic increment — P1-DATA-8 fix. Replaces the previous
+      // Atomic increment - P1-DATA-8 fix. Replaces the previous
       // read-then-write pattern that could drift uses/max_uses under
       // concurrent joins. Returns null if the cap was hit between the
       // earlier check and now.
@@ -251,7 +251,7 @@ export async function POST(request: NextRequest) {
         .eq('id', classId)
     }
 
-    // Atomic increment — P1-DATA-8. Replaces the previous read-then-write
+    // Atomic increment - P1-DATA-8. Replaces the previous read-then-write
     // which could drift uses past max_uses under concurrent joins.
     const { data: newUses, error: incErr } = await admin.rpc('increment_join_code_uses', {
       code_id: joinCode.id,
@@ -292,7 +292,7 @@ export async function POST(request: NextRequest) {
         .single()
 
       if (seatError || !updatedSchool) {
-        // Race condition: seat limit hit between our check and now — roll back.
+        // Race condition: seat limit hit between our check and now - roll back.
         if (classId) {
           await admin
             .from('class_students')
@@ -320,7 +320,7 @@ export async function POST(request: NextRequest) {
           .eq('student_id', user.id)
 
         // Roll back join code usage increment via the inverse RPC-style
-        // decrement (best effort — the counter can drift by 1 under
+        // decrement (best effort - the counter can drift by 1 under
         // pathological races, which is acceptable given the seat-limit
         // already prevented over-provisioning).
         await admin

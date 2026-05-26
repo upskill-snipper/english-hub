@@ -10,13 +10,13 @@ import type { NextRequest } from 'next/server'
 // Called by the client immediately after a successful Supabase sign-in
 // to record the `lastLoginAt` timestamp on the Prisma User row. The
 // dormancy-check cron (`/api/cron/dormancy-check`) queries this column
-// to identify genuinely-inactive accounts for deletion — previously
+// to identify genuinely-inactive accounts for deletion - previously
 // it used `updatedAt` which any profile write could reset, leading to
 // wrongful deletion of active accounts and false reprieve for
 // actually-dormant ones.
 //
 // The caller MUST be authenticated (we read the Supabase session and
-// match by email into Prisma — both identity systems link by email
+// match by email into Prisma - both identity systems link by email
 // until the larger identity convergence is shipped).
 export async function POST(_request: NextRequest) {
   const supabase = createServerSupabaseClient()
@@ -42,7 +42,7 @@ export async function POST(_request: NextRequest) {
   try {
     // updateMany avoids a throw when the Prisma User row doesn't exist
     // for this email (e.g. a Supabase-only account that never hit Prisma
-    // for whatever reason). Best-effort — dormancy is a lagging signal.
+    // for whatever reason). Best-effort - dormancy is a lagging signal.
     // Match by supabaseUserId OR email so pre-backfill rows are still hit.
     const result = await prisma.user.updateMany({
       where: {
@@ -53,7 +53,7 @@ export async function POST(_request: NextRequest) {
     return NextResponse.json({ ok: true, rows: result.count })
   } catch (err) {
     console.error('[record-login] failed:', err)
-    // Non-fatal — do not block the user's login flow. The client calls
+    // Non-fatal - do not block the user's login flow. The client calls
     // this fire-and-forget after a successful Supabase sign-in (see
     // `src/app/auth/login/page.tsx`), so a 200 with `{ ok: false }`
     // keeps the failure observable in server logs without surfacing a

@@ -7,7 +7,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'WJEC GCSE English Literature resources — The English Hub',
+    title: 'WJEC GCSE English Literature resources - The English Hub',
     description:
       'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
   },
@@ -23,15 +23,15 @@ const COMPONENTS = [
   {
     title: 'Paper 1: Shakespeare and Poetry',
     description:
-      'Section A: Shakespeare — one play studied in depth with an extract-based essay question. Section B: Poetry — two poems from the WJEC anthology compared in a single essay.',
-    marks: '80 marks — 40% of GCSE',
+      'Section A: Shakespeare - one play studied in depth with an extract-based essay question. Section B: Poetry - two poems from the WJEC anthology compared in a single essay.',
+    marks: '80 marks - 40% of GCSE',
     duration: '2 hours',
   },
   {
     title: 'Paper 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry',
     description:
-      'Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry — one analysis and one comparison.',
-    marks: '80 marks — 60% of GCSE',
+      'Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry - one analysis and one comparison.',
+    marks: '80 marks - 60% of GCSE',
     duration: '2 hours 30 minutes',
   },
 ]
@@ -47,25 +47,25 @@ const SET_TEXTS = {
     'The Tempest',
   ],
   post1914: [
-    'An Inspector Calls — J.B. Priestley',
-    'Blood Brothers — Willy Russell',
-    'A Taste of Honey — Shelagh Delaney',
-    'The History Boys — Alan Bennett',
-    'Lord of the Flies — William Golding',
-    'Animal Farm — George Orwell',
-    'Anita and Me — Meera Syal',
-    'Never Let Me Go — Kazuo Ishiguro',
-    'About a Boy — Nick Hornby',
+    'An Inspector Calls - J.B. Priestley',
+    'Blood Brothers - Willy Russell',
+    'A Taste of Honey - Shelagh Delaney',
+    'The History Boys - Alan Bennett',
+    'Lord of the Flies - William Golding',
+    'Animal Farm - George Orwell',
+    'Anita and Me - Meera Syal',
+    'Never Let Me Go - Kazuo Ishiguro',
+    'About a Boy - Nick Hornby',
   ],
   nineteenth: [
-    'A Christmas Carol — Charles Dickens',
-    'Great Expectations — Charles Dickens',
-    'The Strange Case of Dr Jekyll and Mr Hyde — R.L. Stevenson',
-    'Jane Eyre — Charlotte Bronte',
-    'Pride and Prejudice — Jane Austen',
-    'The Sign of Four — Arthur Conan Doyle',
-    'Silas Marner — George Eliot',
-    'The War of the Worlds — H.G. Wells',
+    'A Christmas Carol - Charles Dickens',
+    'Great Expectations - Charles Dickens',
+    'The Strange Case of Dr Jekyll and Mr Hyde - R.L. Stevenson',
+    'Jane Eyre - Charlotte Bronte',
+    'Pride and Prejudice - Jane Austen',
+    'The Sign of Four - Arthur Conan Doyle',
+    'Silas Marner - George Eliot',
+    'The War of the Worlds - H.G. Wells',
   ],
 }
 

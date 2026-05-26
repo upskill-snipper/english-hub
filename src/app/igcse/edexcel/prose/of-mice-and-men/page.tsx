@@ -10,11 +10,11 @@ import StudyTools from '@/components/study/StudyTools'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Of Mice and Men — Edexcel IGCSE Literature Study Guide',
+    title: 'Of Mice and Men - Edexcel IGCSE Literature Study Guide',
     description:
       'Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: plot, characters, themes, Great Depression context and key quotations.',
   },
-  title: 'Of Mice and Men — Edexcel IGCSE Literature Study Guide',
+  title: 'Of Mice and Men - Edexcel IGCSE Literature Study Guide',
   description:
     'Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: plot, characters, themes, Great Depression context and key quotations.',
   alternates: {
@@ -24,19 +24,19 @@ export const metadata: Metadata = {
 
 const plotBeats = [
   {
-    part: 'Section 1 — The pool by the Salinas River',
+    part: 'Section 1 - The pool by the Salinas River',
     summary:
       'George Milton and Lennie Small camp overnight before starting work at a Californian ranch. George rehearses Lennie on what to say to the boss, rescues a dead mouse from Lennie\u2019s pocket and tells the shared dream of owning "a little place" with rabbits.',
   },
   {
-    part: 'Sections 2–4 — The bunkhouse',
+    part: 'Sections 2-4 - The bunkhouse',
     summary:
       'On the ranch, George and Lennie meet Candy, the aggressive Curley, his flirtatious wife, the Black stable hand Crooks, and Slim. Candy buys into the dream with his life savings. Lennie crushes Curley\u2019s hand. Crooks is briefly drawn into the dream before Curley\u2019s wife shatters his fragile hope.',
   },
   {
-    part: 'Sections 5–6 — The barn and the river',
+    part: 'Sections 5-6 - The barn and the river',
     summary:
-      'Lennie accidentally kills his puppy, then Curley\u2019s wife when she lets him stroke her hair. The men form a lynch mob. George finds Lennie at the original camping spot, retells the dream one last time, and shoots him in the back of the head — an act of mercy echoing Candy\u2019s earlier loss of his dog.',
+      'Lennie accidentally kills his puppy, then Curley\u2019s wife when she lets him stroke her hair. The men form a lynch mob. George finds Lennie at the original camping spot, retells the dream one last time, and shoots him in the back of the head - an act of mercy echoing Candy\u2019s earlier loss of his dog.',
   },
 ]
 
@@ -51,7 +51,7 @@ const characters = [
   },
   {
     name: 'Candy',
-    note: 'An aging, one-handed swamper whose dog is shot early in the book — a direct structural parallel to Lennie\u2019s death. Candy\u2019s savings briefly make the dream feel reachable.',
+    note: 'An aging, one-handed swamper whose dog is shot early in the book - a direct structural parallel to Lennie\u2019s death. Candy\u2019s savings briefly make the dream feel reachable.',
   },
   {
     name: 'Curley',
@@ -59,7 +59,7 @@ const characters = [
   },
   {
     name: 'Curley\u2019s wife',
-    note: 'Unnamed throughout — Steinbeck\u2019s deliberate choice, making her a symbol as much as a person. Lonely, performative, and ultimately a victim of the same isolation the men suffer.',
+    note: 'Unnamed throughout - Steinbeck\u2019s deliberate choice, making her a symbol as much as a person. Lonely, performative, and ultimately a victim of the same isolation the men suffer.',
   },
   {
     name: 'Crooks',
@@ -94,7 +94,7 @@ const keyQuotations = [
     quote: 'Le\u2019s get that place now.',
     speaker: 'Candy',
     analysis:
-      'The moment the dream becomes financially concrete — and therefore, in Steinbeck\u2019s pessimistic logic, the moment it begins to die.',
+      'The moment the dream becomes financially concrete - and therefore, in Steinbeck\u2019s pessimistic logic, the moment it begins to die.',
   },
   {
     quote: 'A guy needs somebody… a guy gets too lonely an\u2019 he gets sick.',
@@ -106,7 +106,7 @@ const keyQuotations = [
     quote: 'You got no rights comin\u2019 in a colored man\u2019s room…',
     speaker: 'Crooks',
     analysis:
-      'Crooks both asserts and explains the segregation imposed on him — a micro-history of Jim Crow inside a Californian bunkhouse.',
+      'Crooks both asserts and explains the segregation imposed on him - a micro-history of Jim Crow inside a Californian bunkhouse.',
   },
   {
     quote: 'I coulda made somethin\u2019 of myself… maybe I will yet.',
@@ -124,7 +124,7 @@ const keyQuotations = [
     quote: 'I ought to of shot that dog myself, George.',
     speaker: 'Candy',
     analysis:
-      'The line Steinbeck uses to prepare George\u2019s final decision — it frames killing Lennie as the most honourable option available.',
+      'The line Steinbeck uses to prepare George\u2019s final decision - it frames killing Lennie as the most honourable option available.',
   },
   {
     quote: 'I ain\u2019t mad. I never been mad, an\u2019 I ain\u2019t now.',
@@ -154,7 +154,7 @@ const keyQuotations = [
     quote: 'She was very pretty and simple, and her face was sweet and young.',
     speaker: 'Narrator (after Curley\u2019s wife\u2019s death)',
     analysis:
-      'In death she briefly becomes a person rather than a threat — a small act of authorial mercy with significant critical weight.',
+      'In death she briefly becomes a person rather than a threat - a small act of authorial mercy with significant critical weight.',
   },
   {
     quote: 'Now, what the hell ya suppose is eatin\u2019 them two guys?',
@@ -170,7 +170,7 @@ export default async function OmamHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="Of Mice and Men — Edexcel IGCSE Literature Study Guide"
+        name="Of Mice and Men - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for Of Mice and Men for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd
@@ -220,7 +220,7 @@ export default async function OmamHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Of Mice and Men is in copyright. This guide uses short extracts for fair-dealing study
@@ -301,7 +301,7 @@ export default async function OmamHubPage() {
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>

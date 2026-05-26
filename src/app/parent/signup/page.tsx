@@ -73,7 +73,7 @@ export default function ParentSignupPage() {
     setLoading(true)
 
     try {
-      // [P2:auth] Supabase — create auth user, insert parent_profile, verify link code server-side
+      // [P2:auth] Supabase - create auth user, insert parent_profile, verify link code server-side
       await new Promise((resolve) => setTimeout(resolve, 500))
 
       const account = {
@@ -117,7 +117,7 @@ export default function ParentSignupPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
-          {/* Left — form */}
+          {/* Left - form */}
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
@@ -265,7 +265,7 @@ export default function ParentSignupPage() {
             </Card>
           </div>
 
-          {/* Right — benefits */}
+          {/* Right - benefits */}
           <div className="lg:col-span-2">
             <div className="sticky top-8 space-y-4">
               <Card>

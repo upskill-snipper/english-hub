@@ -24,11 +24,11 @@ import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Animal Farm Chapter Analysis — All 10 Chapters | The English Hub',
+    title: 'Animal Farm Chapter Analysis - All 10 Chapters | The English Hub',
     description:
       'Chapter-by-chapter analysis of Animal Farm by George Orwell. Key events, character development, allegory, and short quotations for GCSE revision.',
   },
-  title: 'Animal Farm Chapter Analysis — All 10 Chapters',
+  title: 'Animal Farm Chapter Analysis - All 10 Chapters',
   description:
     'Chapter-by-chapter analysis of Animal Farm by George Orwell. Key events, character development, allegory, and short quotations for GCSE revision.',
   alternates: {

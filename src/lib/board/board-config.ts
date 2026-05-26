@@ -99,9 +99,9 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'igcse',
     examCode: '4ET1',
     category: 'igcse-literature',
-    description: 'International GCSE — Pearson Edexcel Literature',
+    description: 'International GCSE - Pearson Edexcel Literature',
   },
-  // TODO: edexcel-igcse-lang — content not yet built; currently falls back to edexcel-igcse filtering
+  // TODO: edexcel-igcse-lang - content not yet built; currently falls back to edexcel-igcse filtering
   {
     id: 'edexcel-igcse-lang',
     name: 'Edexcel IGCSE Language (4EA1)',
@@ -110,7 +110,7 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'igcse',
     examCode: '4EA1',
     category: 'igcse-language',
-    description: 'International GCSE — Pearson Edexcel Language',
+    description: 'International GCSE - Pearson Edexcel Language',
   },
   {
     id: 'cambridge-0500',
@@ -120,7 +120,7 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'igcse',
     examCode: '0500',
     category: 'igcse-language-a',
-    description: 'Cambridge First Language English — A*-G grading',
+    description: 'Cambridge First Language English - A*-G grading',
   },
   {
     id: 'cambridge-0990',
@@ -130,9 +130,9 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'igcse',
     examCode: '0990',
     category: 'igcse-language-b',
-    description: 'Cambridge First Language English — 9-1 grading',
+    description: 'Cambridge First Language English - 9-1 grading',
   },
-  // TODO: cambridge-0475 — content not yet built; Literature in Other Languages paper
+  // TODO: cambridge-0475 - content not yet built; Literature in Other Languages paper
   {
     id: 'cambridge-0475',
     name: 'Cambridge Literature (0475)',
@@ -151,9 +151,9 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'ial',
     examCode: 'IAL',
     category: 'ial',
-    description: 'International Advanced Level English — Pearson Edexcel',
+    description: 'International Advanced Level English - Pearson Edexcel',
   },
-  // UK A-Level boards — scaffold only; full content on roadmap.
+  // UK A-Level boards - scaffold only; full content on roadmap.
   {
     id: 'aqa-a-level',
     name: 'AQA A-Level',
@@ -162,7 +162,7 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'a-level',
     examCode: '7712 / 7702',
     category: 'a-level',
-    description: 'AQA A-Level English — Literature (7712) and Language (7702)',
+    description: 'AQA A-Level English - Literature (7712) and Language (7702)',
   },
   {
     id: 'edexcel-a-level',
@@ -172,7 +172,7 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'a-level',
     examCode: '9ET0 / 9EN0',
     category: 'a-level',
-    description: 'Pearson Edexcel A-Level English — Literature (9ET0) and Language (9EN0)',
+    description: 'Pearson Edexcel A-Level English - Literature (9ET0) and Language (9EN0)',
   },
   {
     id: 'ocr-a-level',
@@ -182,7 +182,7 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'a-level',
     examCode: 'H472 / H470',
     category: 'a-level',
-    description: 'OCR A-Level English — Literature (H472) and Language (H470)',
+    description: 'OCR A-Level English - Literature (H472) and Language (H470)',
   },
   {
     id: 'eduqas-a-level',
@@ -192,7 +192,7 @@ export const BOARDS: readonly BoardConfig[] = [
     type: 'a-level',
     examCode: 'Eduqas A-Level',
     category: 'a-level',
-    description: 'WJEC Eduqas A-Level English — Literature and Language',
+    description: 'WJEC Eduqas A-Level English - Literature and Language',
   },
 ]
 

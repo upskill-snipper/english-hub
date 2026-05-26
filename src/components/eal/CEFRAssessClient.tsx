@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * CEFR productive-skill assessor — client UI.
+ * CEFR productive-skill assessor - client UI.
  *
  * Replaces the "Coming soon" writing/speaking stubs with a real,
  * AI-assisted CEFR assessment. The learner reads the task framing for
@@ -149,7 +149,7 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
         <Link href={`/eal/${slug}`}>EAL · {t(topic.title)}</Link>
       </p>
       <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-        {skillLabel} — {t(CEFR_LABEL[topic.cefr])}
+        {skillLabel} - {t(CEFR_LABEL[topic.cefr])}
       </h1>
       <p className="text-base text-muted-foreground leading-relaxed mb-6">{taskIntro}</p>
 
@@ -206,8 +206,8 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
           <div className="mt-4 flex items-center justify-between gap-3">
             <p className="text-xs text-muted-foreground">
               {isAr
-                ? 'تقييم بمساعدة الذكاء الاصطناعي — إرشادي وليس درجة رسمية.'
-                : 'AI-assisted estimate — guidance, not an official grade.'}
+                ? 'تقييم بمساعدة الذكاء الاصطناعي - إرشادي وليس درجة رسمية.'
+                : 'AI-assisted estimate - guidance, not an official grade.'}
             </p>
             <button
               type="button"

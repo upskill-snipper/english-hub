@@ -347,7 +347,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She wants adventure',
-      'She is terrified of the farmer and of physical intimacy — afraid of all human contact',
+      'She is terrified of the farmer and of physical intimacy - afraid of all human contact',
       'She is homesick',
       'She found another lover',
     ],
@@ -363,13 +363,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'As strong and confident',
-      'As an animal or fairy — compared to a hare, a mouse, a leveret — more creature than person',
+      'As an animal or fairy - compared to a hare, a mouse, a leveret - more creature than person',
       'As angry and defiant',
       'As elderly and wise',
     ],
     correctIndex: 1,
     explanation:
-      'The bride is consistently compared to wild animals — a hare, a mouse, a leveret (young hare). She is associated with nature rather than human society, suggesting she is trapped in a role she cannot inhabit.',
+      'The bride is consistently compared to wild animals - a hare, a mouse, a leveret (young hare). She is associated with nature rather than human society, suggesting she is trapped in a role she cannot inhabit.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -379,7 +379,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is content with the situation',
-      'His desire becomes increasingly possessive and disturbing — a repeated, exclamatory fixation on her appearance suggests barely contained obsession',
+      'His desire becomes increasingly possessive and disturbing - a repeated, exclamatory fixation on her appearance suggests barely contained obsession',
       'He decides to let her go',
       'He is angry at her',
     ],
@@ -395,13 +395,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Marriage was always happy',
-      'Women had little agency — the bride is essentially property, caught and returned like a runaway animal',
+      'Women had little agency - the bride is essentially property, caught and returned like a runaway animal',
       'Women could easily divorce',
       'Marriage was optional',
     ],
     correctIndex: 1,
     explanation:
-      'The poem critiques Victorian/Edwardian marriage where women had little legal right to refuse their husbands. The bride is captured and returned like escaped livestock — she has no autonomy.',
+      'The poem critiques Victorian/Edwardian marriage where women had little legal right to refuse their husbands. The bride is captured and returned like escaped livestock - she has no autonomy.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -442,14 +442,14 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What does the changing of seasons represent?',
     type: 'multiple-choice',
     options: [
-      'Nothing — it is just setting',
-      'Time passing without resolution — each season brings new frustration as the marriage remains unconsummated',
+      'Nothing - it is just setting',
+      'Time passing without resolution - each season brings new frustration as the marriage remains unconsummated',
       'The farmer enjoys gardening',
       'Hope for improvement',
     ],
     correctIndex: 1,
     explanation:
-      'The poem moves through seasons — "three Summers" have passed. Time moves but nothing changes — the bride remains fearful, the farmer grows more frustrated, and the situation becomes increasingly tense.',
+      'The poem moves through seasons - "three Summers" have passed. Time moves but nothing changes - the bride remains fearful, the farmer grows more frustrated, and the situation becomes increasingly tense.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -458,8 +458,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'How does Mew create sympathy for both characters?',
     type: 'multiple-choice',
     options: [
-      "She doesn't — only the bride gets sympathy",
-      "The farmer is presented as genuinely confused and frustrated, not purely villainous — while the bride's fear is painfully real",
+      "She doesn't - only the bride gets sympathy",
+      "The farmer is presented as genuinely confused and frustrated, not purely villainous - while the bride's fear is painfully real",
       'Only the farmer gets sympathy',
       'Neither character is sympathetic',
     ],
@@ -488,10 +488,10 @@ const REVISION_TOPICS = [
     summary:
       "The Farmer's Bride explores trapped marriage, female oppression, male desire, the nature vs culture divide, and the loss of agency.",
     keyPoints: [
-      'Trapped marriage — the bride has no freedom or choice',
-      'Female oppression — caught and returned like property',
-      'Male desire — increasingly possessive and threatening',
-      'Nature vs culture — the bride belongs to nature, not human society',
+      'Trapped marriage - the bride has no freedom or choice',
+      'Female oppression - caught and returned like property',
+      'Male desire - increasingly possessive and threatening',
+      'Nature vs culture - the bride belongs to nature, not human society',
     ],
   },
   {
@@ -499,10 +499,10 @@ const REVISION_TOPICS = [
     summary:
       "Mew uses animal comparisons, seasonal imagery, and an increasingly agitated voice to reveal the farmer's desire and the bride's fear.",
     keyPoints: [
-      'Animal imagery — hare, mouse, leveret — the bride as wild creature',
-      'The closing fixation on her eyes and hair — obsessive repetition',
-      'Seasonal change — time passes but nothing resolves',
-      'The bride compared to nature — she belongs outside, not in marriage',
+      'Animal imagery - hare, mouse, leveret - the bride as wild creature',
+      'The closing fixation on her eyes and hair - obsessive repetition',
+      'Seasonal change - time passes but nothing resolves',
+      'The bride compared to nature - she belongs outside, not in marriage',
     ],
   },
   {
@@ -510,10 +510,10 @@ const REVISION_TOPICS = [
     summary:
       "A dramatic monologue with irregular line lengths and rhyme, mirroring the farmer's unstable emotional state.",
     keyPoints: [
-      'Dramatic monologue — the farmer reveals more than he intends',
-      'Irregular form — reflects agitation and instability',
-      'Changing stanza lengths — tension builds toward the disturbing finale',
-      'Seasonal structure — time frames the growing frustration',
+      'Dramatic monologue - the farmer reveals more than he intends',
+      'Irregular form - reflects agitation and instability',
+      'Changing stanza lengths - tension builds toward the disturbing finale',
+      'Seasonal structure - time frames the growing frustration',
     ],
   },
 ]
@@ -557,7 +557,7 @@ export default function TheFarmersBridePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="The Farmer's Bride by Charlotte Mew — Analysis & Annotations"
+        name="The Farmer's Bride by Charlotte Mew - Analysis & Annotations"
         description="Line-by-line analysis of The Farmer's Bride with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

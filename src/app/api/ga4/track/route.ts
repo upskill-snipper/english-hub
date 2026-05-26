@@ -2,8 +2,8 @@
  * Server-side GA4 Measurement Protocol relay.
  *
  * Why this exists:
- *   - Roughly 30–40 % of UK browsers run uBlock Origin, Brave Shields,
- *     AdGuard or Privacy Badger — all of which block requests to
+ *   - Roughly 30-40 % of UK browsers run uBlock Origin, Brave Shields,
+ *     AdGuard or Privacy Badger - all of which block requests to
  *     googletagmanager.com and google-analytics.com by default.
  *     Result: gtag.js never loads, /g/collect never fires, GA4 stays
  *     empty even with perfect client config.
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   const measurementId = process.env.NEXT_PUBLIC_GA4_ID || ''
   if (!measurementId) return new NextResponse(null, { status: 204 })
 
-  // Consent gate — silent 204 if visitor hasn't opted in
+  // Consent gate - silent 204 if visitor hasn't opted in
   const consent = req.cookies.get(CONSENT_COOKIE)?.value
   if (consent !== 'all') return new NextResponse(null, { status: 204 })
 
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       ? (body.params as Record<string, unknown>)
       : {}
 
-  // cid — stable per-visitor identifier
+  // cid - stable per-visitor identifier
   let cid = req.cookies.get(CID_COOKIE)?.value
   let cidIsNew = false
   if (!cid || !/^[0-9]+\.[0-9]+$/.test(cid)) {
@@ -155,7 +155,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     // 5-second cap so a slow Google never times out the visitor's request
     signal: AbortSignal.timeout(5000),
   }).catch(() => {
-    // Swallow — analytics failures must not surface to the user
+    // Swallow - analytics failures must not surface to the user
   })
 
   // Build response, set cid cookie if new
@@ -176,7 +176,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
 /**
  * Beacon API uses POST without preflight thanks to the
- * 'application/json' content-type — but some browsers send a quick
+ * 'application/json' content-type - but some browsers send a quick
  * OPTIONS first. Respond 204 so the relay never blocks on CORS.
  */
 export async function OPTIONS(): Promise<NextResponse> {

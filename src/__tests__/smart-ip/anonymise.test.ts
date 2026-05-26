@@ -1,7 +1,7 @@
 // ─── Smart-IP · Training-Data Anonymiser ─────────────────────────────────────
 //
 // Pure, offline unit tests for `anonymiseRecord` (src/lib/training/anonymise.ts).
-// No I/O, no network, no DB — the function is total and deterministic and the
+// No I/O, no network, no DB - the function is total and deterministic and the
 // hash function is injected, so we inject a deterministic stub.
 //
 // Contract under test (the data-protection guarantees):
@@ -56,7 +56,7 @@ function baseBundle(over: Partial<RawSubmissionBundle> = {}): RawSubmissionBundl
     aiAoBreakdown: [{ id: 'AO1', marks: 10, maxMarks: 12 }],
     aiConfidence: 0.7,
     teacherFinalMark: 25,
-    teacherFinalFeedback: 'Strong — top of band 5.',
+    teacherFinalFeedback: 'Strong - top of band 5.',
     teacherCorrectionReason: 'AO2 underrated by AI.',
     aoCorrections: [{ ao: 'AO2', score: 11, maxScore: 12 }],
     approvedAt: '2026-05-10T10:00:00.000Z',
@@ -94,7 +94,7 @@ const EXPECTED_KEYS = [
   'source',
 ].sort()
 
-describe('anonymiseRecord — output shape', () => {
+describe('anonymiseRecord - output shape', () => {
   it('emits exactly the snake_case migration columns (no extra keys)', () => {
     const row = anonymiseRecord(baseBundle(), fakeHash)
     expect(Object.keys(row).sort()).toEqual(EXPECTED_KEYS)
@@ -131,7 +131,7 @@ describe('anonymiseRecord — output shape', () => {
   })
 })
 
-describe('anonymiseRecord — no PII keys', () => {
+describe('anonymiseRecord - no PII keys', () => {
   it('none of FORBIDDEN_EXPORT_KEYS (except the audited FK) appear as output keys', () => {
     const row = anonymiseRecord(baseBundle(), fakeHash)
     const keys = new Set(Object.keys(row))
@@ -161,7 +161,7 @@ describe('anonymiseRecord — no PII keys', () => {
   })
 })
 
-describe('anonymiseRecord — derivations & coercions', () => {
+describe('anonymiseRecord - derivations & coercions', () => {
   it('derives mark_delta = teacher − ai (rounded ints)', () => {
     const row = anonymiseRecord(
       baseBundle({ aiPredictedMark: 22.4, teacherFinalMark: 25 }),
@@ -228,7 +228,7 @@ describe('anonymiseRecord — derivations & coercions', () => {
   })
 })
 
-describe('anonymiseRecord — idempotency & determinism', () => {
+describe('anonymiseRecord - idempotency & determinism', () => {
   it('same input ⇒ deeply-equal output across repeated calls', () => {
     const b = baseBundle()
     const a1 = anonymiseRecord(b, fakeHash)
@@ -245,8 +245,8 @@ describe('anonymiseRecord — idempotency & determinism', () => {
   })
 })
 
-describe('anonymiseRecord — adversarial PII input', () => {
-  it('does NOT read any name/email/DOB field — they are absent from the input type', () => {
+describe('anonymiseRecord - adversarial PII input', () => {
+  it('does NOT read any name/email/DOB field - they are absent from the input type', () => {
     // Shove identifiers into a bundle as *extra* properties. The function must
     // never copy them because it only reads the declared fields.
     const poisoned = {

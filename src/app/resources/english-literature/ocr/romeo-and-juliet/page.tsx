@@ -28,115 +28,115 @@ const keyQuotations = [
       'Two households, both alike in dignity, / In fair Verona, where we lay our scene, / From ancient grudge break to new mutiny, / Where civil blood makes civil hands unclean',
     speaker: 'Prologue',
     analysis:
-      "The Prologue establishes the play's central conflict and its tragic inevitability. The oxymoron 'civil blood makes civil hands unclean' highlights the paradox of civilised citizens committing violent acts. The sonnet form of the Prologue is significant — sonnets are traditionally associated with love poetry, yet here Shakespeare uses the form to describe hatred and death, foreshadowing the intertwining of love and violence throughout the play. By revealing the ending at the start, Shakespeare shifts the audience's focus from what happens to why it happens.",
+      "The Prologue establishes the play's central conflict and its tragic inevitability. The oxymoron 'civil blood makes civil hands unclean' highlights the paradox of civilised citizens committing violent acts. The sonnet form of the Prologue is significant - sonnets are traditionally associated with love poetry, yet here Shakespeare uses the form to describe hatred and death, foreshadowing the intertwining of love and violence throughout the play. By revealing the ending at the start, Shakespeare shifts the audience's focus from what happens to why it happens.",
   },
   {
     quote:
       "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiope's ear",
     speaker: 'Romeo (Act 1, Scene 5)',
     analysis:
-      "Romeo's first sight of Juliet is expressed through light and dark imagery. The hyperbole 'teach the torches to burn bright' elevates Juliet above the natural world — she is brighter than fire itself. The simile 'like a rich jewel in an Ethiope's ear' presents Juliet as something precious and radiant against darkness, establishing the play's recurring motif of light versus dark. This imagery also foreshadows the doomed nature of their love — beauty that shines brightest in darkness suggests something that cannot survive in the ordinary light of day.",
+      "Romeo's first sight of Juliet is expressed through light and dark imagery. The hyperbole 'teach the torches to burn bright' elevates Juliet above the natural world - she is brighter than fire itself. The simile 'like a rich jewel in an Ethiope's ear' presents Juliet as something precious and radiant against darkness, establishing the play's recurring motif of light versus dark. This imagery also foreshadows the doomed nature of their love - beauty that shines brightest in darkness suggests something that cannot survive in the ordinary light of day.",
   },
   {
     quote: 'My only love sprung from my only hate! / Too early seen unknown, and known too late!',
     speaker: 'Juliet (Act 1, Scene 5)',
     analysis:
-      "Juliet's reaction upon learning Romeo is a Montague uses antithesis ('love' / 'hate') to capture the central paradox of the play. The exclamatory tone conveys shock and despair. 'Too early seen unknown, and known too late' suggests the cruelty of fate — she fell in love before she knew his identity, and now the knowledge comes too late to undo her feelings. The rhyming couplet gives the line a sense of finality, as though their fate is already sealed.",
+      "Juliet's reaction upon learning Romeo is a Montague uses antithesis ('love' / 'hate') to capture the central paradox of the play. The exclamatory tone conveys shock and despair. 'Too early seen unknown, and known too late' suggests the cruelty of fate - she fell in love before she knew his identity, and now the knowledge comes too late to undo her feelings. The rhyming couplet gives the line a sense of finality, as though their fate is already sealed.",
   },
   {
     quote:
       'But soft, what light through yonder window breaks? / It is the East, and Juliet is the sun',
     speaker: 'Romeo (Act 2, Scene 2)',
     analysis:
-      "The balcony scene opens with Romeo's metaphor comparing Juliet to the sun — the source of all light and life. This is more than romantic hyperbole; it positions Juliet as the centre of Romeo's universe, replacing everything else. The verb 'breaks' suggests sudden illumination, as though Juliet's appearance shatters the darkness. The East is where the sun rises, associating Juliet with new beginnings and hope. Yet the audience, knowing the Prologue, understands this 'sun' is destined to set.",
+      "The balcony scene opens with Romeo's metaphor comparing Juliet to the sun - the source of all light and life. This is more than romantic hyperbole; it positions Juliet as the centre of Romeo's universe, replacing everything else. The verb 'breaks' suggests sudden illumination, as though Juliet's appearance shatters the darkness. The East is where the sun rises, associating Juliet with new beginnings and hope. Yet the audience, knowing the Prologue, understands this 'sun' is destined to set.",
   },
   {
     quote: "What's in a name? That which we call a rose / By any other name would smell as sweet",
     speaker: 'Juliet (Act 2, Scene 2)',
     analysis:
-      "Juliet's philosophical reflection challenges the power of names and, by extension, the feud itself. She argues that identity is not determined by labels — a 'rose' is defined by its essence, not its name. This is a radical idea in a society governed by family honour and patriarchal authority. Juliet is essentially arguing that the feud is arbitrary and meaningless. However, the play ultimately proves her wrong — names and family allegiances do have the power to destroy, no matter how irrational they may be.",
+      "Juliet's philosophical reflection challenges the power of names and, by extension, the feud itself. She argues that identity is not determined by labels - a 'rose' is defined by its essence, not its name. This is a radical idea in a society governed by family honour and patriarchal authority. Juliet is essentially arguing that the feud is arbitrary and meaningless. However, the play ultimately proves her wrong - names and family allegiances do have the power to destroy, no matter how irrational they may be.",
   },
   {
     quote:
       'These violent delights have violent ends / And in their triumph die, like fire and powder, / Which, as they kiss, consume',
     speaker: 'Friar Lawrence (Act 2, Scene 6)',
     analysis:
-      "The Friar's warning is one of the play's most important pieces of foreshadowing. The oxymoron 'violent delights' captures the destructive potential within passionate love. The simile 'like fire and powder' compares their love to an explosion — beautiful but devastating, instant and all-consuming. The verb 'consume' suggests total destruction. The Friar functions as a choric voice here, articulating the play's central warning: that extremes of passion — whether love or hate — lead to destruction.",
+      "The Friar's warning is one of the play's most important pieces of foreshadowing. The oxymoron 'violent delights' captures the destructive potential within passionate love. The simile 'like fire and powder' compares their love to an explosion - beautiful but devastating, instant and all-consuming. The verb 'consume' suggests total destruction. The Friar functions as a choric voice here, articulating the play's central warning: that extremes of passion - whether love or hate - lead to destruction.",
   },
   {
     quote: "A plague o' both your houses!",
     speaker: 'Mercutio (Act 3, Scene 1)',
     analysis:
-      "Mercutio's dying curse is the play's turning point. Repeated three times, it condemns both the Montagues and Capulets equally, refusing to take sides in the feud that has cost him his life. The word 'plague' invokes disease and divine punishment — Mercutio sees the feud as a sickness infecting all of Verona. His death transforms the play from comedy to tragedy, and his curse proves prophetic: the 'plague' of the feud will indeed claim Romeo and Juliet. Shakespeare uses Mercutio to voice the audience's frustration at the senseless violence.",
+      "Mercutio's dying curse is the play's turning point. Repeated three times, it condemns both the Montagues and Capulets equally, refusing to take sides in the feud that has cost him his life. The word 'plague' invokes disease and divine punishment - Mercutio sees the feud as a sickness infecting all of Verona. His death transforms the play from comedy to tragedy, and his curse proves prophetic: the 'plague' of the feud will indeed claim Romeo and Juliet. Shakespeare uses Mercutio to voice the audience's frustration at the senseless violence.",
   },
   {
     quote: "O, I am fortune's fool!",
     speaker: 'Romeo (Act 3, Scene 1)',
     analysis:
-      "Romeo's cry after killing Tybalt acknowledges the role of fate in his downfall. The metaphor 'fortune's fool' presents Romeo as a plaything of destiny — the word 'fool' suggests both a victim and a jester, someone manipulated for entertainment. This links to the Prologue's description of 'star-cross'd lovers' and reinforces the theme of fate versus free will. However, Romeo's exclamation also deflects personal responsibility — is he truly fate's victim, or has his own impulsive nature led him here?",
+      "Romeo's cry after killing Tybalt acknowledges the role of fate in his downfall. The metaphor 'fortune's fool' presents Romeo as a plaything of destiny - the word 'fool' suggests both a victim and a jester, someone manipulated for entertainment. This links to the Prologue's description of 'star-cross'd lovers' and reinforces the theme of fate versus free will. However, Romeo's exclamation also deflects personal responsibility - is he truly fate's victim, or has his own impulsive nature led him here?",
   },
   {
     quote:
       'Give me my Romeo; and, when I shall die, / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night',
     speaker: 'Juliet (Act 3, Scene 2)',
     analysis:
-      "Juliet's epithalamium (wedding-night speech) transforms Romeo into celestial imagery. The idea of cutting Romeo 'in little stars' is both beautiful and violent — the verb 'cut' foreshadows death while creating an image of eternal beauty. The conceit that Romeo would make 'all the world' fall 'in love with night' inverts the normal association of love with daylight. This speech exemplifies how Romeo and Juliet's love exists in darkness, hidden from the feuding world. The imagery also prefigures their deaths — they will indeed become immortal through their story.",
+      "Juliet's epithalamium (wedding-night speech) transforms Romeo into celestial imagery. The idea of cutting Romeo 'in little stars' is both beautiful and violent - the verb 'cut' foreshadows death while creating an image of eternal beauty. The conceit that Romeo would make 'all the world' fall 'in love with night' inverts the normal association of love with daylight. This speech exemplifies how Romeo and Juliet's love exists in darkness, hidden from the feuding world. The imagery also prefigures their deaths - they will indeed become immortal through their story.",
   },
   {
     quote: 'Wisely and slow. They stumble that run fast',
     speaker: 'Friar Lawrence (Act 2, Scene 3)',
     analysis:
-      "The Friar's proverbial warning about haste proves tragically prophetic. The antithesis between 'wisely and slow' and 'run fast' captures the play's central tension between caution and impulsiveness. Romeo and Juliet's love moves at breakneck speed — they meet, marry, and die within four days. The verb 'stumble' is a gentle understatement for the catastrophe to come. The Friar's own advice, ironically, is something he himself fails to follow when he devises the sleeping potion plan.",
+      "The Friar's proverbial warning about haste proves tragically prophetic. The antithesis between 'wisely and slow' and 'run fast' captures the play's central tension between caution and impulsiveness. Romeo and Juliet's love moves at breakneck speed - they meet, marry, and die within four days. The verb 'stumble' is a gentle understatement for the catastrophe to come. The Friar's own advice, ironically, is something he himself fails to follow when he devises the sleeping potion plan.",
   },
   {
     quote: "O serpent heart hid with a flow'ring face! / Did ever dragon keep so fair a cave?",
     speaker: 'Juliet (Act 3, Scene 2)',
     analysis:
-      "Juliet's reaction to Romeo killing Tybalt is expressed through a series of oxymorons and antithetical images. The 'serpent heart' with a 'flow'ring face' echoes Lady Macbeth's 'look like the innocent flower / But be the serpent under't,' connecting deception with the Biblical Fall. Yet Juliet's anger is short-lived — she quickly defends Romeo, showing that her love transcends even the murder of her cousin. The passage reveals the impossible position the feud places her in: torn between family loyalty and romantic love.",
+      "Juliet's reaction to Romeo killing Tybalt is expressed through a series of oxymorons and antithetical images. The 'serpent heart' with a 'flow'ring face' echoes Lady Macbeth's 'look like the innocent flower / But be the serpent under't,' connecting deception with the Biblical Fall. Yet Juliet's anger is short-lived - she quickly defends Romeo, showing that her love transcends even the murder of her cousin. The passage reveals the impossible position the feud places her in: torn between family loyalty and romantic love.",
   },
   {
     quote:
       "Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty",
     speaker: 'Romeo (Act 5, Scene 3)',
     analysis:
-      "Romeo's words over Juliet's apparently dead body are charged with dramatic irony — she is not dead but drugged. The personification of Death as a creature that 'suck'd the honey' of her breath is both tender and grotesque. The fact that Juliet still looks beautiful is taken by Romeo as evidence of death's gentleness, when it is actually evidence that she lives. Shakespeare forces the audience to watch Romeo make a fatal mistake based on incomplete knowledge, heightening the tragedy unbearably.",
+      "Romeo's words over Juliet's apparently dead body are charged with dramatic irony - she is not dead but drugged. The personification of Death as a creature that 'suck'd the honey' of her breath is both tender and grotesque. The fact that Juliet still looks beautiful is taken by Romeo as evidence of death's gentleness, when it is actually evidence that she lives. Shakespeare forces the audience to watch Romeo make a fatal mistake based on incomplete knowledge, heightening the tragedy unbearably.",
   },
   {
     quote: 'Then I defy you, stars!',
     speaker: 'Romeo (Act 5, Scene 1)',
     analysis:
-      "Romeo's declaration upon hearing of Juliet's death is a moment of tragic defiance. By defying the 'stars' (fate), Romeo ironically fulfils the destiny foretold in the Prologue — his attempt to overcome fate through suicide is itself the completion of fate's plan. The exclamatory brevity of the line conveys desperate, impulsive energy. This moment encapsulates the play's exploration of free will versus destiny: Romeo believes he is taking control, but he is actually sealing his doom.",
+      "Romeo's declaration upon hearing of Juliet's death is a moment of tragic defiance. By defying the 'stars' (fate), Romeo ironically fulfils the destiny foretold in the Prologue - his attempt to overcome fate through suicide is itself the completion of fate's plan. The exclamatory brevity of the line conveys desperate, impulsive energy. This moment encapsulates the play's exploration of free will versus destiny: Romeo believes he is taking control, but he is actually sealing his doom.",
   },
   {
     quote: 'For never was a story of more woe / Than this of Juliet and her Romeo',
     speaker: 'Prince Escalus (Act 5, Scene 3)',
     analysis:
-      "The Prince's closing couplet frames the tragedy as a cautionary tale for Verona and the audience. The rhyming couplet gives a sense of formal closure, like the ending of a sonnet. The possessive 'her Romeo' is significant — in death, Romeo belongs to Juliet rather than to either family. The superlative 'never' and 'more woe' insist on the unique intensity of this tragedy. The Prince's words are also an indictment — the 'woe' was preventable, caused by the adults' hatred rather than the lovers' passion.",
+      "The Prince's closing couplet frames the tragedy as a cautionary tale for Verona and the audience. The rhyming couplet gives a sense of formal closure, like the ending of a sonnet. The possessive 'her Romeo' is significant - in death, Romeo belongs to Juliet rather than to either family. The superlative 'never' and 'more woe' insist on the unique intensity of this tragedy. The Prince's words are also an indictment - the 'woe' was preventable, caused by the adults' hatred rather than the lovers' passion.",
   },
   {
     quote:
       'My bounty is as boundless as the sea, / My love as deep; the more I give to thee, / The more I have, for both are infinite',
     speaker: 'Juliet (Act 2, Scene 2)',
     analysis:
-      "Juliet's declaration of love uses the sea as a metaphor for limitless generosity. The simile 'boundless as the sea' and the paradox that giving increases rather than diminishes her love present an idealised vision of love as infinitely renewable. The iambic regularity and flowing enjambment mirror the boundless quality she describes. This is one of the most mature expressions of love in the play — Juliet articulates a love that is selfless and abundant, contrasting with the possessive, destructive love that the feud imposes.",
+      "Juliet's declaration of love uses the sea as a metaphor for limitless generosity. The simile 'boundless as the sea' and the paradox that giving increases rather than diminishes her love present an idealised vision of love as infinitely renewable. The iambic regularity and flowing enjambment mirror the boundless quality she describes. This is one of the most mature expressions of love in the play - Juliet articulates a love that is selfless and abundant, contrasting with the possessive, destructive love that the feud imposes.",
   },
   {
     quote: 'Do you bite your thumb at us, sir?',
     speaker: 'Abraham (Act 1, Scene 1)',
     analysis:
-      "The play opens with a petty, almost comical confrontation between servants. Thumb-biting was an Elizabethan insult, and Shakespeare uses this trivial provocation to show how easily the feud escalates into violence. The legalistic quibbling ('Do you bite your thumb at us?') exposes the absurdity of the conflict — men are ready to kill over a gesture. This opening scene establishes that the feud is sustained not by genuine grievance but by performative masculinity and blind loyalty to family honour.",
+      "The play opens with a petty, almost comical confrontation between servants. Thumb-biting was an Elizabethan insult, and Shakespeare uses this trivial provocation to show how easily the feud escalates into violence. The legalistic quibbling ('Do you bite your thumb at us?') exposes the absurdity of the conflict - men are ready to kill over a gesture. This opening scene establishes that the feud is sustained not by genuine grievance but by performative masculinity and blind loyalty to family honour.",
   },
   {
     quote: 'It is the East, and Juliet is the sun. / Arise, fair sun, and kill the envious moon',
     speaker: 'Romeo (Act 2, Scene 2)',
     analysis:
-      "Romeo's extended metaphor positions Juliet as the sun that eclipses Diana, the moon goddess associated with chastity and virginity. The imperative 'arise' and 'kill' inject urgency and violence into a love declaration, foreshadowing the entwining of love and death throughout the play. By asking Juliet to 'kill the envious moon,' Romeo is symbolically asking her to abandon chastity — a subversive request in Elizabethan society where female virginity was paramount. The celestial imagery elevates their love above the earthly feud.",
+      "Romeo's extended metaphor positions Juliet as the sun that eclipses Diana, the moon goddess associated with chastity and virginity. The imperative 'arise' and 'kill' inject urgency and violence into a love declaration, foreshadowing the entwining of love and death throughout the play. By asking Juliet to 'kill the envious moon,' Romeo is symbolically asking her to abandon chastity - a subversive request in Elizabethan society where female virginity was paramount. The celestial imagery elevates their love above the earthly feud.",
   },
   {
     quote: 'O happy dagger, / This is thy sheath. There rust, and let me die',
     speaker: 'Juliet (Act 5, Scene 3)',
     analysis:
-      "Juliet's final words are devastatingly brief compared to Romeo's lengthy final speech, reflecting her decisive nature. The oxymoron 'happy dagger' redefines death as a joyful reunion with Romeo. The sexual connotation of 'sheath' connects death and consummation — the Elizabethan pun on 'die' (meaning both death and orgasm) makes their final union both tragic and intimate. Juliet's agency in choosing death is significant — throughout the play she has been controlled by her father, but in death she makes her own choice.",
+      "Juliet's final words are devastatingly brief compared to Romeo's lengthy final speech, reflecting her decisive nature. The oxymoron 'happy dagger' redefines death as a joyful reunion with Romeo. The sexual connotation of 'sheath' connects death and consummation - the Elizabethan pun on 'die' (meaning both death and orgasm) makes their final union both tragic and intimate. Juliet's agency in choosing death is significant - throughout the play she has been controlled by her father, but in death she makes her own choice.",
   },
 ]
 

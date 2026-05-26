@@ -47,7 +47,7 @@ interface Template {
 const twitterTemplates: Template[] = [
   {
     id: 'tw-thread',
-    body: `#ad — Here's how my GCSE English students prep with The English Hub. \u{1F9F5}
+    body: `#ad - Here's how my GCSE English students prep with The English Hub. \u{1F9F5}
 
 It's a UK-built revision app with AI essay marking, a structured course library, and instant feedback. Annual subscription works out under £2/month with my code {CODE}.
 
@@ -61,7 +61,7 @@ It's a UK-built revision app with AI essay marking, a structured course library,
   },
   {
     id: 'tw-reply',
-    body: `Quick tip — affiliate code {CODE} drops the annual plan to £20 (saves £9.99). Trial it free for 7 days first. Annual subscription only. #ad [link]`,
+    body: `Quick tip - affiliate code {CODE} drops the annual plan to £20 (saves £9.99). Trial it free for 7 days first. Annual subscription only. #ad [link]`,
   },
 ]
 
@@ -70,7 +70,7 @@ const instagramTemplates: Template[] = [
     id: 'ig-caption',
     body: `#ad
 
-Revising for GCSE English without losing your mind — this is what's actually working for my students this year.
+Revising for GCSE English without losing your mind - this is what's actually working for my students this year.
 
 The English Hub is a UK-built revision app and I genuinely rate it:
 
@@ -102,13 +102,13 @@ const emailTemplates: Template[] = [
     id: 'em-newsletter',
     body: `Subject: The revision tool I've been recommending to every GCSE English parent
 
-———
+---
 
 Affiliate disclosure: this email contains affiliate links. If you buy a subscription through them, I earn a small commission at no extra cost to you. I only recommend tools I'd use myself.
 
 Hi {first_name},
 
-Quick one this week — if you've got a child revising for GCSE English (or you're revising yourself), I want to flag a tool I've been using with my students: The English Hub.
+Quick one this week - if you've got a child revising for GCSE English (or you're revising yourself), I want to flag a tool I've been using with my students: The English Hub.
 
 It's a UK-built revision platform with three things going for it:
 
@@ -116,7 +116,7 @@ It's a UK-built revision platform with three things going for it:
 2. Full courses for GCSE English Language and Literature, mapped to the AQA and Edexcel specs.
 3. Practice papers with model answers so students can see what a Grade 7, 8 or 9 response actually looks like.
 
-You can trial it free for 7 days. After that, the Student Annual plan is normally £29.99 — with my code {CODE} it drops to £20 for the year (saves £9.99). Annual subscription only; the discount doesn't apply to monthly.
+You can trial it free for 7 days. After that, the Student Annual plan is normally £29.99 - with my code {CODE} it drops to £20 for the year (saves £9.99). Annual subscription only; the discount doesn't apply to monthly.
 
 Trial it here: [link]
 
@@ -130,13 +130,13 @@ const blogTemplates: Template[] = [
     id: 'bg-review',
     body: `> Affiliate disclosure: this post contains affiliate links. If you sign up through them, I earn a small commission at no extra cost to you. The opinions below are my own and I only recommend tools I'd actually use. (FTC / ASA compliance.)
 
-———
+---
 
 The English Hub is a UK-built revision app aimed squarely at GCSE English students and their teachers. I've spent the last few months testing it and recommending it to revision groups, and it's one of the few tools I've come across that earns its place on the shortlist.
 
 The headline feature is the AI essay marker. You paste in a response, it grades it against the AQA / Edexcel mark scheme, and it gives paragraph-by-paragraph feedback within seconds. For students who can't get a tutor in front of them, it's the closest thing to instant, structured marking. It's paired with a full course library covering Language Paper 1 and 2 and the major Literature texts, plus a practice-paper bank with model answers so students can calibrate what a Grade 7, 8 or 9 response actually looks like.
 
-You can trial it free for 7 days. After that, the Student Annual plan is £29.99 — with my code {CODE} it drops to £20 for the year, which saves £9.99. The discount applies to the annual subscription only; monthly is unaffected.
+You can trial it free for 7 days. After that, the Student Annual plan is £29.99 - with my code {CODE} it drops to £20 for the year, which saves £9.99. The discount applies to the annual subscription only; monthly is unaffected.
 
 Try The English Hub here: [link]`,
   },
@@ -205,7 +205,7 @@ export default function AffiliateResources({
       setCopiedId(id)
       setTimeout(() => setCopiedId(null), 2000)
     } catch {
-      // clipboard unavailable (insecure context, permissions) — silently noop
+      // clipboard unavailable (insecure context, permissions) - silently noop
     }
   }
 
@@ -226,7 +226,7 @@ export default function AffiliateResources({
           <h1 className="text-3xl font-bold text-foreground">{t('aff_comp.resources.heading')}</h1>
         </div>
         <p className="text-muted-foreground mb-8">
-          {t('aff_comp.resources.intro_prefix')} {affiliateName.split(' ')[0]} —{' '}
+          {t('aff_comp.resources.intro_prefix')} {affiliateName.split(' ')[0]} -{' '}
           {t('aff_comp.resources.intro_body')}{' '}
           <span className="font-mono font-semibold text-foreground">{affiliateCode}</span>{' '}
           {t('aff_comp.resources.intro_suffix')}
@@ -317,7 +317,7 @@ export default function AffiliateResources({
           </p>
         </div>
 
-        {/* ─── Sections B–F: Platform templates ────────────────────────── */}
+        {/* ─── Sections B-F: Platform templates ────────────────────────── */}
         {platformGroups.map((group) => (
           <section key={group.id} className="mb-12">
             <SectionHeading icon={group.icon} title={t(group.i18nKey)} />
@@ -408,7 +408,7 @@ function TemplateCard({
   const isCopied = copiedId === id
   // Preview is the first ~30 chars of the BODY (after disclosure prefix if any),
   // stripped of leading punctuation/whitespace, for a quick at-a-glance summary.
-  const stripped = body.replace(/^[\s>—\-]+/, '')
+  const stripped = body.replace(/^[\s>-]+/, '')
   const preview = stripped.length > 32 ? stripped.slice(0, 30).trim() + '…' : stripped
 
   return (
@@ -447,7 +447,7 @@ function TemplateCard({
         {previewPrefix} <span className="text-foreground/80">{preview}</span>
       </p>
 
-      {/* Full text — readonly textarea so it can be selected/copied manually too */}
+      {/* Full text - readonly textarea so it can be selected/copied manually too */}
       <textarea
         readOnly
         value={body}

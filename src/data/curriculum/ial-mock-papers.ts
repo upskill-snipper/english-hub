@@ -1,40 +1,40 @@
-// Edexcel IAL English Language — Mock Exam Papers and Coursework Briefs
+// Edexcel IAL English Language - Mock Exam Papers and Coursework Briefs
 // Units 1 and 2 (YEN01 / YEN02) and Units 3 and 4 (WEN03 / WEN04)
 
 export interface IalMockQuestion {
-  id: string;
-  questionNumber: string;
-  questionText: string;
-  dataText?: string;
-  marks: number;
-  assessmentObjectives: string[];
-  timeAllocation: string;
-  markDescriptors: { band: number; marks: string; descriptor: string }[];
-  examinerAdvice: string;
+  id: string
+  questionNumber: string
+  questionText: string
+  dataText?: string
+  marks: number
+  assessmentObjectives: string[]
+  timeAllocation: string
+  markDescriptors: { band: number; marks: string; descriptor: string }[]
+  examinerAdvice: string
 }
 
 export interface IalMockPaper {
-  id: string;
-  unit: string;
-  specCode: string;
-  duration: string;
-  totalMarks: number;
+  id: string
+  unit: string
+  specCode: string
+  duration: string
+  totalMarks: number
   sections: {
-    sectionTitle: string;
-    instructions: string;
-    questions: IalMockQuestion[];
-  }[];
+    sectionTitle: string
+    instructions: string
+    questions: IalMockQuestion[]
+  }[]
 }
 
 export interface CourseWorkBrief {
-  id: string;
-  unit: string;
-  title: string;
-  wordCount: string;
-  assessment: string;
-  tasks: string[];
-  assessmentCriteria: { criterion: string; marks: number; description: string }[];
-  deadlineGuidance: string;
+  id: string
+  unit: string
+  title: string
+  wordCount: string
+  assessment: string
+  tasks: string[]
+  assessmentCriteria: { criterion: string; marks: number; description: string }[]
+  deadlineGuidance: string
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -59,9 +59,9 @@ export const ialMockPapers: IalMockPaper[] = [
             id: 'ial-mock-u1-a-q1',
             questionNumber: 'Question 1',
             questionText:
-              'Analyse the linguistic methods used in Text A to construct the speaker\'s regional and social identity. In your answer you should:\n- comment on significant features of language at different levels of analysis\n- explore how these features position the speaker within a particular social and regional context\n- use appropriate linguistic terminology throughout.',
+              "Analyse the linguistic methods used in Text A to construct the speaker's regional and social identity. In your answer you should:\n- comment on significant features of language at different levels of analysis\n- explore how these features position the speaker within a particular social and regional context\n- use appropriate linguistic terminology throughout.",
             dataText:
-              'Text A: Transcript of a sociolinguistic interview. The speaker, Dean (male, aged 28, from Leeds), is talking about his experience of starting university in London.\n\n[Dean speaks]: Right so (.) when I first got there like (.) it were proper strange yeah (1.0) because everyone just (.) they looked at you different when you opened yer mouth (.) like I\'d say summat and people\'d just (.) you know (.) do that face (.) like what did he just say (0.5) and I thought (.) I\'m not gonna change the way I talk just cos they can\'t be bothered to listen properly (.) know what I mean (.) I\'m from Leeds and I\'m proud of it (1.0) but then again (.) towards the end of first year I noticed I were (.) I were dropping some of it when I was in lectures and seminars (.) not changing everything like (.) just (.) softening it a bit I s\'pose\n\nKey: (.) = micropause, (1.0) = one second pause, underlining = stressed syllable',
+              "Text A: Transcript of a sociolinguistic interview. The speaker, Dean (male, aged 28, from Leeds), is talking about his experience of starting university in London.\n\n[Dean speaks]: Right so (.) when I first got there like (.) it were proper strange yeah (1.0) because everyone just (.) they looked at you different when you opened yer mouth (.) like I'd say summat and people'd just (.) you know (.) do that face (.) like what did he just say (0.5) and I thought (.) I'm not gonna change the way I talk just cos they can't be bothered to listen properly (.) know what I mean (.) I'm from Leeds and I'm proud of it (1.0) but then again (.) towards the end of first year I noticed I were (.) I were dropping some of it when I was in lectures and seminars (.) not changing everything like (.) just (.) softening it a bit I s'pose\n\nKey: (.) = micropause, (1.0) = one second pause, underlining = stressed syllable",
             marks: 20,
             assessmentObjectives: ['AO1', 'AO2'],
             timeAllocation: '30 minutes',
@@ -92,7 +92,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'The strongest responses integrate phonological observations (vowel patterns, glottal stops, elision) with lexical choices (dialect vocabulary such as "summat", "proper"), grammatical features (non-standard past tense "it were"), and discourse-level observations (hedging, fillers, self-correction). Link your analysis explicitly to sociolinguistic frameworks: accommodation theory explains the code-switching at the end, while covert prestige explains the initial resistance to change. Avoid listing features in isolation — always connect each feature to the construction of identity.',
+              'The strongest responses integrate phonological observations (vowel patterns, glottal stops, elision) with lexical choices (dialect vocabulary such as "summat", "proper"), grammatical features (non-standard past tense "it were"), and discourse-level observations (hedging, fillers, self-correction). Link your analysis explicitly to sociolinguistic frameworks: accommodation theory explains the code-switching at the end, while covert prestige explains the initial resistance to change. Avoid listing features in isolation - always connect each feature to the construction of identity.',
           },
           {
             id: 'ial-mock-u1-a-q2',
@@ -100,7 +100,7 @@ export const ialMockPapers: IalMockPaper[] = [
             questionText:
               'Compare how language is used in Text A and Text B to construct aspects of identity. In your answer you should:\n- analyse significant linguistic features in both texts\n- compare the methods and effects in each text\n- consider the contexts of production and reception for each text\n- use appropriate linguistic terminology throughout.',
             dataText:
-              'Text B: An extract from a personal essay published in a literary magazine. The writer, Priya, reflects on her experience of code-switching between English and Gujarati.\n\n"There is a word in Gujarati — aapnu — which means ours, belonging to us, something held in common. My grandmother uses it constantly: aapnu ghar, our home; aapna lok, our people. When I am in her kitchen, I am aapnu. I belong to something. I have a place in a network of obligation and love that extends back through generations I never knew. But when I step outside and become Priya-the-professional — the Priya who presents at conferences and writes reports and speaks in the measured cadences of educated British English — the word loses its purchase. It floats. I am fluent in both languages and truly at home in neither. This is not loss, exactly. It is a particular kind of multiplicity. A self assembled from fragments, code-switched into coherence."',
+              'Text B: An extract from a personal essay published in a literary magazine. The writer, Priya, reflects on her experience of code-switching between English and Gujarati.\n\n"There is a word in Gujarati - aapnu - which means ours, belonging to us, something held in common. My grandmother uses it constantly: aapnu ghar, our home; aapna lok, our people. When I am in her kitchen, I am aapnu. I belong to something. I have a place in a network of obligation and love that extends back through generations I never knew. But when I step outside and become Priya-the-professional - the Priya who presents at conferences and writes reports and speaks in the measured cadences of educated British English - the word loses its purchase. It floats. I am fluent in both languages and truly at home in neither. This is not loss, exactly. It is a particular kind of multiplicity. A self assembled from fragments, code-switched into coherence."',
             marks: 20,
             assessmentObjectives: ['AO1', 'AO2', 'AO3'],
             timeAllocation: '30 minutes',
@@ -131,7 +131,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'This question rewards candidates who treat comparison as a genuine analytical tool rather than a structural checklist. Note the contrast in mode: Text A is spontaneous spoken language while Text B is a crafted written reflection. The phonological and grammatical features of spontaneous speech (pauses, fillers, non-standard forms) contrast sharply with the literary techniques of Text B (metaphor — "loses its purchase", "floats"; rhetorical triplet in the professional Priya list; sentence fragments for effect). Both texts foreground code-switching, but through entirely different linguistic means. Bring in relevant theory: Giles\' accommodation theory for Text A, Bhabha\'s concept of the third space or Canagarajah\'s code-meshing for Text B.',
+              'This question rewards candidates who treat comparison as a genuine analytical tool rather than a structural checklist. Note the contrast in mode: Text A is spontaneous spoken language while Text B is a crafted written reflection. The phonological and grammatical features of spontaneous speech (pauses, fillers, non-standard forms) contrast sharply with the literary techniques of Text B (metaphor - "loses its purchase", "floats"; rhetorical triplet in the professional Priya list; sentence fragments for effect). Both texts foreground code-switching, but through entirely different linguistic means. Bring in relevant theory: Giles\' accommodation theory for Text A, Bhabha\'s concept of the third space or Canagarajah\'s code-meshing for Text B.',
           },
         ],
       },
@@ -175,7 +175,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'This essay question expects you to engage critically rather than simply agree or list theories. A strong response will consider: (1) evidence in favour — Labov\'s work on in-group markers in African American Vernacular English, Trudgill\'s research on dialect and identity, communities of practice theory (Eckert and McConnell-Ginet); (2) complications and counterarguments — multilingual speakers who hold multiple identities simultaneously, sign languages as identity markers, the role of non-linguistic factors (clothing, ritual, shared history) in group identity. The strongest essays will engage with linguistic relativity (does language shape identity or merely reflect it?) and consider whether language is necessary or sufficient for group identity. Aim for a clear thesis that you sustain and develop throughout.',
+              "This essay question expects you to engage critically rather than simply agree or list theories. A strong response will consider: (1) evidence in favour - Labov's work on in-group markers in African American Vernacular English, Trudgill's research on dialect and identity, communities of practice theory (Eckert and McConnell-Ginet); (2) complications and counterarguments - multilingual speakers who hold multiple identities simultaneously, sign languages as identity markers, the role of non-linguistic factors (clothing, ritual, shared history) in group identity. The strongest essays will engage with linguistic relativity (does language shape identity or merely reflect it?) and consider whether language is necessary or sufficient for group identity. Aim for a clear thesis that you sustain and develop throughout.",
           },
           {
             id: 'ial-mock-u1-a-q4',
@@ -190,7 +190,7 @@ export const ialMockPapers: IalMockPaper[] = [
                 band: 4,
                 marks: '16-20',
                 descriptor:
-                  'Perceptive and balanced critical evaluation. Engages with both the pragmatic case for Standard English and the sociolinguistic critique. Accurate and confident use of relevant theories (Bourdieu\'s linguistic capital, Milroy\'s standardisation ideology, Labov\'s work on covert prestige). Examples are linguistically analysed. Argument is sustained, nuanced, and clearly structured.',
+                  "Perceptive and balanced critical evaluation. Engages with both the pragmatic case for Standard English and the sociolinguistic critique. Accurate and confident use of relevant theories (Bourdieu's linguistic capital, Milroy's standardisation ideology, Labov's work on covert prestige). Examples are linguistically analysed. Argument is sustained, nuanced, and clearly structured.",
               },
               {
                 band: 3,
@@ -212,7 +212,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'Avoid presenting this as a simple debate where "both sides have a point." The strongest responses interrogate the claim\'s key assumptions: Is Standard English truly "neutral"? (No — it is the dialect of the economically powerful, codified through historical accident.) Does teaching Standard English guarantee opportunity? (Research suggests accent and dialect discrimination persist regardless of written Standard English competence.) Draw on Bourdieu\'s concepts of linguistic capital and the linguistic market, Milroy and Milroy\'s standardisation ideology, and Lippi-Green\'s work on language ideology. You might also consider the distinction between Standard English as a written code (relatively uncontroversial) and as a spoken accent (deeply contested).',
+              'Avoid presenting this as a simple debate where "both sides have a point." The strongest responses interrogate the claim\'s key assumptions: Is Standard English truly "neutral"? (No - it is the dialect of the economically powerful, codified through historical accident.) Does teaching Standard English guarantee opportunity? (Research suggests accent and dialect discrimination persist regardless of written Standard English competence.) Draw on Bourdieu\'s concepts of linguistic capital and the linguistic market, Milroy and Milroy\'s standardisation ideology, and Lippi-Green\'s work on language ideology. You might also consider the distinction between Standard English as a written code (relatively uncontroversial) and as a spoken accent (deeply contested).',
           },
         ],
       },
@@ -269,7 +269,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'Key features to analyse include: (1) Graphology — capitalisation of nouns ("Mistress", "Family", "Account"), archaic spelling ("Oeconomy", "spoil\'d", "thro\'", "Monies"), use of the long s; (2) Lexis — Latinate vocabulary reflecting the prestige of classical learning ("Propriety", "Diligence", "Prosperity"), archaic vocabulary ("Oeconomy" = economy, "Reckoning" = account); (3) Grammar — third-person singular present tense with "-eth" ending ("doth"), subjunctive mood ("that nothing be spoil\'d"), complex-compound sentences with multiple subordinate clauses, use of modal "ought to" and "must"; (4) Semantics — semantic shift in "Oeconomy" (originally household management, now referring to financial systems); (5) Pragmatics and ideology — prescriptive construction of femininity and domestic duty. Contextualise in terms of the standardisation movement, the role of grammars and dictionaries in codifying English, and the social history of the period.',
+              'Key features to analyse include: (1) Graphology - capitalisation of nouns ("Mistress", "Family", "Account"), archaic spelling ("Oeconomy", "spoil\'d", "thro\'", "Monies"), use of the long s; (2) Lexis - Latinate vocabulary reflecting the prestige of classical learning ("Propriety", "Diligence", "Prosperity"), archaic vocabulary ("Oeconomy" = economy, "Reckoning" = account); (3) Grammar - third-person singular present tense with "-eth" ending ("doth"), subjunctive mood ("that nothing be spoil\'d"), complex-compound sentences with multiple subordinate clauses, use of modal "ought to" and "must"; (4) Semantics - semantic shift in "Oeconomy" (originally household management, now referring to financial systems); (5) Pragmatics and ideology - prescriptive construction of femininity and domestic duty. Contextualise in terms of the standardisation movement, the role of grammars and dictionaries in codifying English, and the social history of the period.',
           },
           {
             id: 'ial-mock-u2-a-q2',
@@ -277,7 +277,7 @@ export const ialMockPapers: IalMockPaper[] = [
             questionText:
               'Compare the linguistic features of Text C and Text D, explaining what the differences between them reveal about how English has changed over time. In your answer you should:\n- analyse significant linguistic features in both texts\n- compare and contrast the features and effects in each text\n- relate your analysis to relevant theories and models of language change\n- use appropriate linguistic terminology throughout.',
             dataText:
-              'Text D: An extract from a food and lifestyle blog post published online in 2024.\n\n"OK so real talk — I have been absolutely WINGING household admin for literally the past three years and honestly? I\'m not even ashamed lmao. Like, I buy whatever looks good at the supermarket, I rotate the same five dinners, and my budgeting strategy is basically vibes. But then I went down an absolute rabbit hole of \'homesteading\' content on TikTok and suddenly I\'m making sourdough at midnight and googling \'is it bad that I\'ve never cleaned my oven\'. No shade to the people who genuinely have their life together tho. Aspirational content is aspirational. Anyway — here are some actual practical tips I\'ve picked up that even chaotic girlies like me can manage without losing their mind."',
+              "Text D: An extract from a food and lifestyle blog post published online in 2024.\n\n\"OK so real talk - I have been absolutely WINGING household admin for literally the past three years and honestly? I'm not even ashamed lmao. Like, I buy whatever looks good at the supermarket, I rotate the same five dinners, and my budgeting strategy is basically vibes. But then I went down an absolute rabbit hole of 'homesteading' content on TikTok and suddenly I'm making sourdough at midnight and googling 'is it bad that I've never cleaned my oven'. No shade to the people who genuinely have their life together tho. Aspirational content is aspirational. Anyway - here are some actual practical tips I've picked up that even chaotic girlies like me can manage without losing their mind.\"",
             marks: 20,
             assessmentObjectives: ['AO1', 'AO2', 'AO3'],
             timeAllocation: '30 minutes',
@@ -286,7 +286,7 @@ export const ialMockPapers: IalMockPaper[] = [
                 band: 4,
                 marks: '16-20',
                 descriptor:
-                  'Perceptive, analytically integrated comparison. Texts treated as windows onto different historical and sociolinguistic moments rather than simply different styles. Wide range of features compared across multiple levels with precise terminology. Strong theoretical engagement (e.g. Aitchison\'s models of language change, Netspeak features, technological influence on language, prescriptivism vs descriptivism, digital discourse). Comparison is woven throughout rather than sequential. Contextual factors (audience, mode, genre, platform) fully integrated into analysis.',
+                  "Perceptive, analytically integrated comparison. Texts treated as windows onto different historical and sociolinguistic moments rather than simply different styles. Wide range of features compared across multiple levels with precise terminology. Strong theoretical engagement (e.g. Aitchison's models of language change, Netspeak features, technological influence on language, prescriptivism vs descriptivism, digital discourse). Comparison is woven throughout rather than sequential. Contextual factors (audience, mode, genre, platform) fully integrated into analysis.",
               },
               {
                 band: 3,
@@ -308,7 +308,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'The contrast between these texts spans approximately 260 years and two radically different communicative contexts. Key comparisons include: Lexis — Latinate prestige vocabulary (Text C) vs digital-native slang and neologisms ("WINGING", "vibes", "lmao", "no shade", "chaotic girlies") in Text D; the semantic field of household management is present in both but expressed through entirely different registers. Grammar — complex subordination and formal syntax (Text C) vs short sentences, sentence fragments, parenthetical asides, and rhetorical questions (Text D). Graphology — archaic capitalisation and spelling conventions (Text C) vs deliberate capitalisation for emphasis ("WINGING"), emoji-adjacent expressions, internet orthography ("lol", "tho"). Discourse — prescriptive, authoritative tone (Text C) vs self-deprecating, confessional mode with parasocial intimacy (Text D). Theoretical frameworks: Aitchison\'s "damp spoon", "crumbling castle", and "infectious disease" metaphors for attitudes to change; Crystal\'s defence of Netspeak; the concept of digital discourse communities.',
+              'The contrast between these texts spans approximately 260 years and two radically different communicative contexts. Key comparisons include: Lexis - Latinate prestige vocabulary (Text C) vs digital-native slang and neologisms ("WINGING", "vibes", "lmao", "no shade", "chaotic girlies") in Text D; the semantic field of household management is present in both but expressed through entirely different registers. Grammar - complex subordination and formal syntax (Text C) vs short sentences, sentence fragments, parenthetical asides, and rhetorical questions (Text D). Graphology - archaic capitalisation and spelling conventions (Text C) vs deliberate capitalisation for emphasis ("WINGING"), emoji-adjacent expressions, internet orthography ("lol", "tho"). Discourse - prescriptive, authoritative tone (Text C) vs self-deprecating, confessional mode with parasocial intimacy (Text D). Theoretical frameworks: Aitchison\'s "damp spoon", "crumbling castle", and "infectious disease" metaphors for attitudes to change; Crystal\'s defence of Netspeak; the concept of digital discourse communities.',
           },
         ],
       },
@@ -330,7 +330,7 @@ export const ialMockPapers: IalMockPaper[] = [
                 band: 4,
                 marks: '16-20',
                 descriptor:
-                  'Sophisticated evaluation that interrogates the value-laden language of the claim ("damaging") before assessing its empirical basis. Broad historical perspective brought to bear — other periods of major language change (Norman Conquest, Renaissance, printing press, industrialisation) contextualised accurately. Crystal, Aitchison, and prescriptivist voices engaged critically. Argument is nuanced, original, and sustained. Excellent command of terminology and theoretical frameworks.',
+                  'Sophisticated evaluation that interrogates the value-laden language of the claim ("damaging") before assessing its empirical basis. Broad historical perspective brought to bear - other periods of major language change (Norman Conquest, Renaissance, printing press, industrialisation) contextualised accurately. Crystal, Aitchison, and prescriptivist voices engaged critically. Argument is nuanced, original, and sustained. Excellent command of terminology and theoretical frameworks.',
               },
               {
                 band: 3,
@@ -352,7 +352,7 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'The word "damaging" is doing ideological work in this claim — begin by interrogating it. What counts as damage? Who decides? Is change the same as deterioration? Strong responses will: (1) acknowledge that digital communication has produced genuine changes in language — new orthographic conventions, new vocabulary, new genre norms; (2) challenge the "damage" framing using Crystal\'s argument that digital literacy requires new skills rather than destroying old ones; (3) place digital change in historical perspective — the Norman Conquest caused far more structural disruption to English than any app; the printing press altered spelling and grammar permanently; the loss of the T-V distinction (thou/you) was mourned for centuries; (4) consider descriptivism vs prescriptivism as meta-level frameworks for evaluating such claims. Avoid simply listing features of internet language — every feature you mention must be analytically deployed in service of your argument.',
+              'The word "damaging" is doing ideological work in this claim - begin by interrogating it. What counts as damage? Who decides? Is change the same as deterioration? Strong responses will: (1) acknowledge that digital communication has produced genuine changes in language - new orthographic conventions, new vocabulary, new genre norms; (2) challenge the "damage" framing using Crystal\'s argument that digital literacy requires new skills rather than destroying old ones; (3) place digital change in historical perspective - the Norman Conquest caused far more structural disruption to English than any app; the printing press altered spelling and grammar permanently; the loss of the T-V distinction (thou/you) was mourned for centuries; (4) consider descriptivism vs prescriptivism as meta-level frameworks for evaluating such claims. Avoid simply listing features of internet language - every feature you mention must be analytically deployed in service of your argument.',
           },
           {
             id: 'ial-mock-u2-a-q4',
@@ -367,7 +367,7 @@ export const ialMockPapers: IalMockPaper[] = [
                 band: 4,
                 marks: '16-20',
                 descriptor:
-                  'Perceptive, critically engaged evaluation. Sophisticated handling of the "inevitability" claim — acknowledges the descriptive truth while exploring cases where intervention has had some effect (language academies, corpus planning, revivals). Theoretically rich: Aitchison, Crystal, Trudgill on language change mechanisms; language planning and policy literature; case studies of corpus planning (Icelandic, French Academie). Nuanced and original argument with excellent terminology.',
+                  'Perceptive, critically engaged evaluation. Sophisticated handling of the "inevitability" claim - acknowledges the descriptive truth while exploring cases where intervention has had some effect (language academies, corpus planning, revivals). Theoretically rich: Aitchison, Crystal, Trudgill on language change mechanisms; language planning and policy literature; case studies of corpus planning (Icelandic, French Academie). Nuanced and original argument with excellent terminology.',
               },
               {
                 band: 3,
@@ -389,13 +389,13 @@ export const ialMockPapers: IalMockPaper[] = [
               },
             ],
             examinerAdvice:
-              'This question invites you to test the "inevitability" thesis against historical and contemporary evidence. Arguments supporting the claim: Trudgill\'s social determinism (dialect levelling is driven by contact patterns beyond individual control); historical examples show all attempts to freeze language have failed (Johnson\'s dictionary aimed to fix English, but change continued); natural language change processes (drift, analogy, contact-induced change) operate below conscious awareness. Complicating the claim: language planning has demonstrably slowed certain changes in French and preserved features of Icelandic; Hebrew was revived from a liturgical language to a spoken vernacular; Welsh has gained speakers through policy intervention. The distinction between phonological/grammatical change (largely unstoppable) and lexical/status change (more amenable to planning) is analytically powerful. Use Aitchison\'s models of language change as a theoretical backbone.',
+              "This question invites you to test the \"inevitability\" thesis against historical and contemporary evidence. Arguments supporting the claim: Trudgill's social determinism (dialect levelling is driven by contact patterns beyond individual control); historical examples show all attempts to freeze language have failed (Johnson's dictionary aimed to fix English, but change continued); natural language change processes (drift, analogy, contact-induced change) operate below conscious awareness. Complicating the claim: language planning has demonstrably slowed certain changes in French and preserved features of Icelandic; Hebrew was revived from a liturgical language to a spoken vernacular; Welsh has gained speakers through policy intervention. The distinction between phonological/grammatical change (largely unstoppable) and lexical/status change (more amenable to planning) is analytically powerful. Use Aitchison's models of language change as a theoretical backbone.",
           },
         ],
       },
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // COURSEWORK BRIEFS
@@ -419,13 +419,13 @@ export const ialCourseworkBriefs: CourseWorkBrief[] = [
     ],
     assessmentCriteria: [
       {
-        criterion: 'AO2: Writing Skills — Craft and Technical Control',
+        criterion: 'AO2: Writing Skills - Craft and Technical Control',
         marks: 20,
         description:
           'Marks are awarded for the quality and range of your writing. Band 4 (17-20 marks): Fluent, assured, and purposeful writing that demonstrates sophisticated control of language at all levels. Vocabulary is precise and carefully chosen; sentences are varied in length, type, and structure for deliberate effect; genre conventions are handled with confidence and originality. Both pieces are fully sustained and cohesive. Band 3 (13-16 marks): Competent, controlled writing with good range. Language choices are mostly effective; some variation in sentence structure; genre conventions observed with some originality. Minor lapses in control. Band 2 (8-12 marks): Some effective writing with reasonable control. Language choices show awareness of audience and purpose but may be uneven. Limited range. Band 1 (1-7 marks): Basic writing with limited control. Vocabulary restricted; sentence structures repetitive; limited genre awareness.',
       },
       {
-        criterion: 'AO5: Commentary — Linguistic Reflection and Meta-awareness',
+        criterion: 'AO5: Commentary - Linguistic Reflection and Meta-awareness',
         marks: 20,
         description:
           'Marks are awarded for the quality of your linguistic reflection in the commentary. Band 4 (17-20 marks): Perceptive and detailed commentary that engages analytically with specific language choices using accurate linguistic terminology. Demonstrates sophisticated awareness of genre, audience, and purpose. Choices explained in terms of intended effects with reference to specific textual examples. Evaluation of alternatives shows genuine reflective thinking. Band 3 (13-16 marks): Competent commentary with good analytical engagement. Linguistic terminology used accurately. Clear discussion of genre, audience, and purpose. Specific examples used. Band 2 (8-12 marks): Some analytical discussion with basic terminology. Commentary may describe rather than analyse choices. Limited range of features discussed. Band 1 (1-7 marks): Mostly descriptive. Limited terminology. Little genuine linguistic reflection.',
@@ -445,8 +445,8 @@ export const ialCourseworkBriefs: CourseWorkBrief[] = [
     assessment:
       'Centre-assessed and externally moderated by Pearson. This unit is worth 20% of the total IAL qualification. Total marks: 40.',
     tasks: [
-      'Task 1: Identify and refine your investigation question. The question must be genuinely linguistic — focused on language features, patterns, or variation — rather than on content, theme, or personal opinion. Good investigation questions are specific, testable using real language data, and connected to established linguistic concepts or frameworks. Discuss your question with your teacher before collecting data.',
-      'Task 2: Collect primary language data. Your data may be spoken (transcribed according to a consistent transcription system), written (scanned or printed), or digital (screenshots or printouts). You must collect a sufficient quantity of data for meaningful analysis — typically a minimum of 500-800 words of written data or equivalent. All data must be included in an appendix. If your data involves human participants, you must obtain informed consent.',
+      'Task 1: Identify and refine your investigation question. The question must be genuinely linguistic - focused on language features, patterns, or variation - rather than on content, theme, or personal opinion. Good investigation questions are specific, testable using real language data, and connected to established linguistic concepts or frameworks. Discuss your question with your teacher before collecting data.',
+      'Task 2: Collect primary language data. Your data may be spoken (transcribed according to a consistent transcription system), written (scanned or printed), or digital (screenshots or printouts). You must collect a sufficient quantity of data for meaningful analysis - typically a minimum of 500-800 words of written data or equivalent. All data must be included in an appendix. If your data involves human participants, you must obtain informed consent.',
       'Task 3: Analyse your data systematically using appropriate linguistic frameworks (phonology, lexis, grammar, semantics, pragmatics, discourse). Apply relevant linguistic theory and research to your analysis. Where appropriate, use quantitative methods (frequency counts, percentages) alongside qualitative analysis. Present your findings clearly and logically.',
       'Task 4: Evaluate your methodology critically. Discuss the limitations of your data collection and analysis. Consider what alternative approaches might have yielded different findings. Suggest directions for further research.',
       'Task 5: Write the Introduction to Language in the World (500-750 words). In this separate piece, choose a recent development, controversy, or phenomenon in language use (e.g. language and AI, the rise of a new variety, a public debate about language standards, language endangerment) and write an informed, analytical overview aimed at a general educated audience. This piece demonstrates the breadth of your linguistic knowledge beyond your specific investigation topic.',
@@ -466,6 +466,6 @@ export const ialCourseworkBriefs: CourseWorkBrief[] = [
       },
     ],
     deadlineGuidance:
-      'The investigation is a substantial independent project requiring sustained work over the coursework period. Suggested timeline: Weeks 1-2 — finalise your research question and receive teacher approval; Weeks 3-5 — collect data and transcribe or organise it; Weeks 6-8 — conduct your linguistic analysis, applying frameworks systematically; Weeks 9-10 — write up your investigation, including methodology, findings, and evaluation; Week 11 — draft your Introduction to Language in the World; Week 12 — proofread, finalise, and prepare appendices. Do not leave data collection until the last few weeks — transcription of spoken data in particular is time-consuming. Your centre will advise on the final submission deadline for Pearson moderation.',
+      'The investigation is a substantial independent project requiring sustained work over the coursework period. Suggested timeline: Weeks 1-2 - finalise your research question and receive teacher approval; Weeks 3-5 - collect data and transcribe or organise it; Weeks 6-8 - conduct your linguistic analysis, applying frameworks systematically; Weeks 9-10 - write up your investigation, including methodology, findings, and evaluation; Week 11 - draft your Introduction to Language in the World; Week 12 - proofread, finalise, and prepare appendices. Do not leave data collection until the last few weeks - transcription of spoken data in particular is time-consuming. Your centre will advise on the final submission deadline for Pearson moderation.',
   },
-];
+]

@@ -11,12 +11,12 @@ import { tMany } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+  title: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
   description:
     'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
   alternates: { canonical: 'https://theenglishhub.app/igcse' },
   openGraph: {
-    title: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+    title: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
     description:
       'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
     images: [
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
         url: '/api/og?title=IGCSE+English+revision&subtitle=Pearson+Edexcel+and+Cambridge+specs+covered&level=igcse',
         width: 1200,
         height: 630,
-        alt: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+        alt: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+    title: 'IGCSE English revision - Pearson Edexcel and Cambridge specs covered',
     description:
       'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
     images: [
@@ -99,7 +99,7 @@ export default async function IgcseHubPage() {
       redirect('/revision?notice=igcse-not-in-spec')
     }
   }
-  // No board set — show the course selector hub below.
+  // No board set - show the course selector hub below.
   const courseKeys = COURSE_DEFS.flatMap((c) => [c.nameKey, c.descKey])
   const t = await tMany([
     'igcse.crumb.home',

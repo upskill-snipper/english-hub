@@ -1,5 +1,5 @@
 /**
- * Unit tests for shouldBccTrustpilot — the pure eligibility gate.
+ * Unit tests for shouldBccTrustpilot - the pure eligibility gate.
  *
  * The Prisma + Supabase deps are fully stubbed. Tests cover the 10 cases
  * called out in the BCC rollout brief.
@@ -47,9 +47,10 @@ function chain(which: 'perTrigger' | 'globalWindow') {
 
 // ── Prisma mock ────────────────────────────────────────────────────────────
 
-const makePrisma = (user: unknown) => ({
-  user: { findUnique: vi.fn().mockResolvedValue(user) },
-}) as unknown as import('@prisma/client').PrismaClient
+const makePrisma = (user: unknown) =>
+  ({
+    user: { findUnique: vi.fn().mockResolvedValue(user) },
+  }) as unknown as import('@prisma/client').PrismaClient
 
 const NOW = new Date('2026-04-23T12:00:00.000Z')
 const adultDob = new Date('2000-01-01T00:00:00.000Z')
@@ -76,7 +77,7 @@ afterEach(() => {
 })
 
 describe('shouldBccTrustpilot', () => {
-  it('happy path — student_first_mark', async () => {
+  it('happy path - student_first_mark', async () => {
     const r = await shouldBccTrustpilot({
       userId: 'u1',
       trigger: 'student_first_mark',
@@ -86,7 +87,7 @@ describe('shouldBccTrustpilot', () => {
     expect(r.ok).toBe(true)
   })
 
-  it('happy path — student_90d_retention', async () => {
+  it('happy path - student_90d_retention', async () => {
     const r = await shouldBccTrustpilot({
       userId: 'u1',
       trigger: 'student_90d_retention',
@@ -96,7 +97,7 @@ describe('shouldBccTrustpilot', () => {
     expect(r.ok).toBe(true)
   })
 
-  it('happy path — teacher_first_bulk_mark', async () => {
+  it('happy path - teacher_first_bulk_mark', async () => {
     const r = await shouldBccTrustpilot({
       userId: 'u1',
       trigger: 'teacher_first_bulk_mark',
@@ -106,7 +107,7 @@ describe('shouldBccTrustpilot', () => {
     expect(r.ok).toBe(true)
   })
 
-  it('happy path — teacher_month_3_streak', async () => {
+  it('happy path - teacher_month_3_streak', async () => {
     const r = await shouldBccTrustpilot({
       userId: 'u1',
       trigger: 'teacher_month_3_streak',
@@ -116,7 +117,7 @@ describe('shouldBccTrustpilot', () => {
     expect(r.ok).toBe(true)
   })
 
-  it('minor — under_18', async () => {
+  it('minor - under_18', async () => {
     const r = await shouldBccTrustpilot({
       userId: 'u1',
       trigger: 'student_first_mark',
@@ -152,7 +153,7 @@ describe('shouldBccTrustpilot', () => {
     expect(r).toEqual({ ok: false, reason: 'ai_opt_out' })
   })
 
-  it('dedup — 12 months per trigger', async () => {
+  it('dedup - 12 months per trigger', async () => {
     dedupState.perTrigger = [{ id: 'prev' }]
     const r = await shouldBccTrustpilot({
       userId: 'u1',
@@ -163,7 +164,7 @@ describe('shouldBccTrustpilot', () => {
     expect(r).toEqual({ ok: false, reason: 'duplicate_trigger_12m' })
   })
 
-  it('dedup — 90 day global window', async () => {
+  it('dedup - 90 day global window', async () => {
     dedupState.globalWindow = [{ id: 'prev-other' }]
     const r = await shouldBccTrustpilot({
       userId: 'u1',

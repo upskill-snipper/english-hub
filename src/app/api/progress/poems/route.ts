@@ -160,7 +160,7 @@ export async function PATCH(request: NextRequest) {
 
 // ─── DELETE /api/progress/poems?slug=ozymandias ───────────────────────
 // Removes the row for this user + slug. Idempotent (200 even if the row
-// did not exist — Supabase returns success for a no-op delete).
+// did not exist - Supabase returns success for a no-op delete).
 
 export async function DELETE(request: NextRequest) {
   try {

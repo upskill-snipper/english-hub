@@ -1,5 +1,5 @@
 /**
- * renderers.ts — Document-Type Renderers
+ * renderers.ts - Document-Type Renderers
  *
  * Each function takes a typed content object and returns the body HTML
  * (the content between header/cover and footer). The shell wraps it.
@@ -93,11 +93,7 @@ export function renderEssayFeedbackBody(content: EssayFeedbackContent): string {
       dashedList(content.nextSteps.items)
     : ''
 
-  return (
-    essayLayout(essayHtml, commentsHtml) +
-    scoreHtml +
-    nextStepsHtml
-  )
+  return essayLayout(essayHtml, commentsHtml) + scoreHtml + nextStepsHtml
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -115,10 +111,7 @@ export function renderRevisionBookletBody(content: RevisionBookletContent): stri
         case 'task-with-callout':
           return (
             secTitle(sec.title, sec.numPrefix) +
-            asymSplit(
-              dashedList(sec.items),
-              callout(sec.callout.kicker, sec.callout.body),
-            )
+            asymSplit(dashedList(sec.items), callout(sec.callout.kicker, sec.callout.body))
           )
         case 'pullquote':
           return pullQuote(sec.body, sec.cite)
@@ -197,10 +190,7 @@ export function renderLessonPlanBody(content: LessonPlanContent): string {
 
   // Teacher notes
   if (content.teacherNotes && content.teacherNotes.length > 0) {
-    html += callout(
-      'Teacher Notes',
-      content.teacherNotes.map((n) => paragraph(n)).join(''),
-    )
+    html += callout('Teacher Notes', content.teacherNotes.map((n) => paragraph(n)).join(''))
   }
 
   return html
@@ -240,7 +230,8 @@ export function renderWorksheetBody(content: WorksheetContent): string {
       if (q.type === 'multiple-choice' && q.options) {
         questionContent += `<div style="margin:8px 0 4px 14px;">${q.options.map((opt, oi) => `<p style="margin:4px 0;font-size:10.5px;"><span style="font-family:var(--font-mono);font-size:9px;color:var(--clay-600);margin-right:8px;">${String.fromCharCode(65 + oi)}.</span> ${escHtml(opt)}</p>`).join('')}</div>`
       } else {
-        const lines = q.lines || (q.type === 'extended-writing' ? 14 : q.type === 'quote-analysis' ? 10 : 5)
+        const lines =
+          q.lines || (q.type === 'extended-writing' ? 14 : q.type === 'quote-analysis' ? 10 : 5)
         questionContent += answerLines(lines)
       }
 
@@ -286,7 +277,7 @@ export function renderMarkSchemeBody(content: MarkSchemeContent): string {
 
       return `
         <div style="margin-bottom:22px;page-break-inside:avoid;">
-          ${secTitle(`Question ${a.questionNumber}`, '—')}
+          ${secTitle(`Question ${a.questionNumber}`, '-')}
           <p style="font-style:italic;color:var(--ink-700);margin-bottom:8px;">${escHtml(a.question)}</p>
           <p style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-600);margin-bottom:4px;">
             ${escHtml(a.ao)} · ${a.marks} mark${a.marks !== 1 ? 's' : ''}

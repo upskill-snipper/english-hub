@@ -161,7 +161,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemADetail:
           'Owen uses half-rhyme and a refrain-like repetition of "But nothing happens" to create a sense of stagnation and futility. The form itself enacts the monotony of trench warfare.',
         poemBDetail:
-          'Tennyson uses a galloping rhythm — predominantly anapaestic dimeter (da-da-DUM) with a dactylic refrain ("Rode the six hundred") — and insistent repetition to recreate the momentum of a cavalry charge. The sound of the poem is designed to inspire awe and admiration.',
+          'Tennyson uses a galloping rhythm - predominantly anapaestic dimeter (da-da-DUM) with a dactylic refrain ("Rode the six hundred") - and insistent repetition to recreate the momentum of a cavalry charge. The sound of the poem is designed to inspire awe and admiration.',
       },
       {
         topic: "The poets' relationship to the conflict",

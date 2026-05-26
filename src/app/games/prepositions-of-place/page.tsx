@@ -532,7 +532,7 @@ export default function PrepositionsOfPlacePage() {
                   <div className="flex items-center gap-2 font-semibold">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Well done — that&apos;s right!
+                        <CheckCircle className="size-4" /> Well done - that&apos;s right!
                       </>
                     ) : (
                       <>

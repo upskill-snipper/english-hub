@@ -142,7 +142,7 @@ export function RevisionHubLenses({
         <ul className="mt-4 space-y-2">
           {mounted && inProgress.length === 0 && (
             <li className="rounded-lg border border-dashed border-border/50 px-3 py-3 text-xs text-muted-foreground">
-              Nothing in progress yet — pick a board topic below.
+              Nothing in progress yet - pick a board topic below.
             </li>
           )}
           {!mounted && (
@@ -277,7 +277,7 @@ export function RevisionHubLenses({
         </ul>
 
         <p className="mt-4 text-[0.7rem] text-muted-foreground">
-          Tip: every card below has a star button — click it to pin.
+          Tip: every card below has a star button - click it to pin.
         </p>
       </GlassPanel>
     </section>

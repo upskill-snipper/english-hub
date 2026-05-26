@@ -35,7 +35,7 @@ function isAllowlisted(pathname: string | null): boolean {
   return false
 }
 
-describe('BoardGate — isAllowlisted logic', () => {
+describe('BoardGate - isAllowlisted logic', () => {
   // ── Null / empty ──────────────────────────────────────────────────────
 
   it('treats null pathname as allowlisted (pre-hydration safety)', () => {
@@ -44,16 +44,12 @@ describe('BoardGate — isAllowlisted logic', () => {
 
   // ── Exact-match paths ─────────────────────────────────────────────────
 
-  it.each([
-    '/',
-    '/board-select',
-    '/pricing',
-    '/about',
-    '/terms',
-    '/privacy',
-  ])('allowlists exact path "%s"', (path) => {
-    expect(isAllowlisted(path)).toBe(true)
-  })
+  it.each(['/', '/board-select', '/pricing', '/about', '/terms', '/privacy'])(
+    'allowlists exact path "%s"',
+    (path) => {
+      expect(isAllowlisted(path)).toBe(true)
+    },
+  )
 
   // ── Wildcard paths ────────────────────────────────────────────────────
 
@@ -102,7 +98,7 @@ describe('BoardGate — isAllowlisted logic', () => {
   })
 })
 
-describe('BoardGate — gate condition', () => {
+describe('BoardGate - gate condition', () => {
   /**
    * The gate shows when:
    *   !resolvedBoard && !onAllowlist && isHydrated && !dismissed

@@ -3,7 +3,7 @@
 // WHY THIS FILE EXISTS
 // Six API routes call Anthropic's Claude. Until now each route did its own
 // `new Anthropic({ apiKey })`. That scattered (a) API-key handling, (b) the
-// timeout, and — most importantly for compliance — (c) the *documented*
+// timeout, and - most importantly for compliance - (c) the *documented*
 // data-protection posture across six files, so a reviewer auditing "what is
 // our no-training / zero-retention configuration?" had no single answer.
 //
@@ -15,7 +15,7 @@
 // Researched against the installed SDK `@anthropic-ai/sdk@0.90.0`:
 //
 //   • The SDK `ClientOptions` interface (node_modules/@anthropic-ai/sdk/
-//     client.d.ts L20–102) exposes: apiKey, authToken, baseURL, timeout,
+//     client.d.ts L20-102) exposes: apiKey, authToken, baseURL, timeout,
 //     fetchOptions, fetch, maxRetries, defaultHeaders, defaultQuery,
 //     dangerouslyAllowBrowser, logLevel, logger. **There is NO data-retention,
 //     no-training, "privacy", "zero-data-retention" or `anthropic-*` privacy
@@ -28,11 +28,11 @@
 //
 // Therefore: **no-training and zero-/limited-retention are governed by
 // Anthropic's COMMERCIAL CONTRACT, not by any request flag.** It is technically
-// dishonest to claim a header enforces this — none exists. What this codebase
+// dishonest to claim a header enforces this - none exists. What this codebase
 // *can* and *does* enforce in code is narrower and is enumerated in
 // `ANTHROPIC_DATA_POLICY.enforcedInCode` below:
 //   1. Data minimisation BEFORE the call (no name/email/DOB/school is ever put
-//      in the prompt — done in the prompt builders, not here).
+//      in the prompt - done in the prompt builders, not here).
 //   2. We never enrol these API calls in any optional Anthropic training/feed-
 //      back programme (we send no such flag and use the standard commercial
 //      Messages API only).
@@ -42,7 +42,7 @@
 //      assert the *posture* without re-deriving it.
 //
 // The residual (counter-signed Anthropic DPA + written ZDR/no-training
-// confirmation for the child-data path) is a CONTRACTUAL act for counsel — see
+// confirmation for the child-data path) is a CONTRACTUAL act for counsel - see
 // `business-docs/compliance/eu-ai-act/17-anthropic-dpa-zdr-pack.md` and
 // `human-action-checklist.md` item 4. Do not paper over it with a fake flag.
 // ────────────────────────────────────────────────────────────────────────────
@@ -74,21 +74,21 @@ export const ANTHROPIC_CLIENT_TIMEOUT_MS = 50_000 as const
  * Plain-English statement of the contractual data-protection position, with
  * the exact sources researched on 2026-05-17. This is the text counsel and the
  * DPIA (doc 15 C5) reconcile against. It is a CONSTANT, not behaviour: nothing
- * here is a request flag (the SDK has none — see file header).
+ * here is a request flag (the SDK has none - see file header).
  *
  * Citations (verify at sign-off; URLs as of 2026-05-17):
- *   • Anthropic Commercial Terms of Service — "We will not train our models
+ *   • Anthropic Commercial Terms of Service - "We will not train our models
  *     on any Customer Content (Inputs or Outputs) from our Commercial
- *     Services" — https://www.anthropic.com/legal/commercial-terms
- *   • Anthropic Usage Policy — https://www.anthropic.com/legal/aup
- *   • Anthropic Data Processing Addendum (DPA) — processor terms, sub-
- *     processors, SCCs for US transfer —
+ *     Services" - https://www.anthropic.com/legal/commercial-terms
+ *   • Anthropic Usage Policy - https://www.anthropic.com/legal/aup
+ *   • Anthropic Data Processing Addendum (DPA) - processor terms, sub-
+ *     processors, SCCs for US transfer -
  *     https://www.anthropic.com/legal/commercial-terms (DPA incorporated /
  *     available on request) ; trust centre: https://trust.anthropic.com
- *   • Anthropic Privacy Center — commercial/API inputs & outputs are NOT
+ *   • Anthropic Privacy Center - commercial/API inputs & outputs are NOT
  *     used to train models by default; default API retention for
  *     non-flagged traffic is limited (and Zero Data Retention is available
- *     contractually on request) — https://privacy.anthropic.com
+ *     contractually on request) - https://privacy.anthropic.com
  *
  * NOTE: the bullet wording is a faithful summary; the *operative* text is
  * whatever the counter-signed agreement says. Treat `dpaCountersigned` /
@@ -105,7 +105,7 @@ export const ANTHROPIC_DATA_POLICY = {
   researchedOn: '2026-05-17',
 
   /**
-   * Governed by the COMMERCIAL CONTRACT (not a request flag). Summary only —
+   * Governed by the COMMERCIAL CONTRACT (not a request flag). Summary only -
    * operative text is the counter-signed agreement.
    */
   contractual: {
@@ -125,7 +125,7 @@ export const ANTHROPIC_DATA_POLICY = {
   /**
    * The honest "is the paperwork done?" flags. These start FALSE and are the
    * counsel residual (checklist item 4 / doc 17). Code MUST NOT flip these to
-   * true on its own — they represent a signed document, not a runtime state.
+   * true on its own - they represent a signed document, not a runtime state.
    */
   dpaCountersigned: false as boolean,
   writtenZdrConfirmation: false as boolean,
@@ -156,7 +156,7 @@ export const ANTHROPIC_DATA_POLICY = {
  * True when the privacy posture is fully papered (DPA counter-signed AND
  * written ZDR + no-training confirmations obtained). This is deliberately a
  * function of the contractual flags above (which are hard-coded FALSE until
- * counsel acts), NOT of any SDK capability — because the SDK has no retention
+ * counsel acts), NOT of any SDK capability - because the SDK has no retention
  * control to introspect. Other code/tests/docs can import this to assert the
  * posture without re-deriving the reasoning.
  */
@@ -175,7 +175,7 @@ export interface AnthropicClientIntrospection {
   sdkVersionResearched: string
   /**
    * Fully papered (DPA + written ZDR + written no-training). FALSE until
-   * counsel completes human-action-checklist.md item 4. NOT a request flag —
+   * counsel completes human-action-checklist.md item 4. NOT a request flag -
    * the SDK exposes no retention/no-training option (researched 2026-05-17).
    */
   zeroRetentionConfigured: boolean
@@ -207,7 +207,7 @@ export class AnthropicNotConfiguredError extends Error {
  * Construct the shared, privacy-posture-documented Anthropic client.
  *
  * Behaviour is intentionally identical to the previous inline
- * `new Anthropic({ apiKey })` plus a documented client-level timeout — so the
+ * `new Anthropic({ apiKey })` plus a documented client-level timeout - so the
  * six-route refactor is mechanical and request/response/branch logic is
  * unchanged. The privacy posture is DOCUMENTED here (ANTHROPIC_DATA_POLICY);
  * it is NOT a header, because the SDK has none (see file header).

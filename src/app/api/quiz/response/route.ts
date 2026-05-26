@@ -10,7 +10,7 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 // supabase/migrations/20260420_quiz_responses.sql). That table is the
 // source of truth for the Cycle 6 ANALYTICS engine's
 // `getQuestionDifficulty` / `getHardestQuestions` functions in
-// src/lib/analytics/questions.ts — both return empty `[]` today because
+// src/lib/analytics/questions.ts - both return empty `[]` today because
 // no write path exists to populate the table. This handler closes that
 // loop.
 //
@@ -22,13 +22,13 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 // server context even if the user's cookie session is tricky (e.g. the
 // client fires this as background `keepalive: true`). Because the service
 // role bypasses RLS, we MUST set `user_id = user.id` ourselves on every
-// insert — the DB will not enforce the user==self invariant for us on
+// insert - the DB will not enforce the user==self invariant for us on
 // this code path. Do NOT accept `user_id` from the request body.
 //
 // Posture
 // -------
 // Fire-and-forget from the client's perspective. This is a background
-// log, not a user-facing action — if it fails, the student still saw
+// log, not a user-facing action - if it fails, the student still saw
 // the right answer and moved on. We surface errors via Sentry so the
 // analytics data loss doesn't go silent, but the HTTP response is
 // compact and never gates the UX.
@@ -44,7 +44,7 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 //     headers: { 'Content-Type': 'application/json' },
 //     body: JSON.stringify({ questionId, moduleId, isCorrect, timeTakenSeconds }),
 //     keepalive: true,  // survive page nav / reload
-//   }).catch(() => { /* silent — background log */ })
+//   }).catch(() => { /* silent - background log */ })
 //
 // This handler does NOT touch any client page; that wiring is a separate
 // PR. Until it lands, the table stays empty and analytics continues to
@@ -52,7 +52,7 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 // ──────────────────────────────────────────────────────────────────────────
 
 const QuizResponseSchema = z.object({
-  // Bounded free-form key — question banks live in TypeScript data files,
+  // Bounded free-form key - question banks live in TypeScript data files,
   // not the DB (see migration header). Regex keeps the alphabet sane so
   // the table can't be polluted with log-spam keys that break analytics
   // aggregation or blow up the question_id index.
@@ -140,7 +140,7 @@ export async function POST(request: NextRequest) {
     // than a 500, so the caller knows to drop/correct the field.
     if ((insertErr as { code?: string }).code === '23503') {
       return NextResponse.json(
-        { error: 'Unknown moduleId — the referenced module does not exist.' },
+        { error: 'Unknown moduleId - the referenced module does not exist.' },
         { status: 400 },
       )
     }

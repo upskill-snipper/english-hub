@@ -49,12 +49,12 @@ export type TriggerTrustpilotInviteResult = {
  * Dispatch a Trustpilot invite for the given trigger.
  *
  * Does in order:
- *   1. Look up the user (Prisma) — if not found or soft-deleted, skip.
+ *   1. Look up the user (Prisma) - if not found or soft-deleted, skip.
  *   2. If user is a minor (Children's Code), skip.
  *   3. Check opt-out preference (placeholder until the privacy toggle ships;
- *      currently always proceeds — see TODO inline).
- *   4. Dedup via `trustpilot_invite` table — if (user_id, trigger) exists, skip.
- *   5. Call sendTrustpilotInvite — which no-ops if TRUSTPILOT_ENABLED is off.
+ *      currently always proceeds - see TODO inline).
+ *   4. Dedup via `trustpilot_invite` table - if (user_id, trigger) exists, skip.
+ *   5. Call sendTrustpilotInvite - which no-ops if TRUSTPILOT_ENABLED is off.
  *   6. Record the outcome in `trustpilot_invite`.
  */
 export async function triggerTrustpilotInvite(
@@ -103,7 +103,7 @@ export async function triggerTrustpilotInvite(
     // ── 3. Opt-out skip ──────────────────────────────────────────────
     // TODO: once the account-settings "review invitations" toggle ships,
     // read from privacy_settings / user preferences and honour it here.
-    // For now we proceed — the scaffold is feature-flagged off anyway.
+    // For now we proceed - the scaffold is feature-flagged off anyway.
     const optedOut = false
     if (optedOut) {
       return { ok: true, skipped: 'opted_out' }
@@ -120,7 +120,7 @@ export async function triggerTrustpilotInvite(
     if (existingErr && existingErr.code !== 'PGRST116') {
       // PGRST116 = "no rows" in PostgREST; anything else is a real error.
       console.warn('[trustpilot] dedup lookup failed', existingErr.message)
-      // Proceed with send — the unique constraint on (user_id, trigger) in
+      // Proceed with send - the unique constraint on (user_id, trigger) in
       // the table will catch any actual duplicate on INSERT below.
     }
     if (existing) {
@@ -153,7 +153,7 @@ export async function triggerTrustpilotInvite(
     // ── 6. Record outcome (idempotent insert) ────────────────────────
     // If the feature flag is off, result.sent will be false with
     // skipped === 'disabled'. We still insert a row so a later audit can
-    // see that the trigger fired correctly — just didn't actually send.
+    // see that the trigger fired correctly - just didn't actually send.
     const status: 'sent' | 'skipped' | 'failed' = result.sent
       ? 'sent'
       : result.skipped

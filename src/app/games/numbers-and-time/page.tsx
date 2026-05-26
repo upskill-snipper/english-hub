@@ -20,12 +20,12 @@ interface NumberItem {
   task: string
   /** The correct answer (must also appear in options) */
   answer: string
-  /** Distractor answers — must be plausible and the same shape as the answer */
+  /** Distractor answers - must be plausible and the same shape as the answer */
   distractors: string[]
   type: ItemType
 }
 
-// Original bank — 56 items. UK English throughout.
+// Original bank - 56 items. UK English throughout.
 const ITEM_BANK: NumberItem[] = [
   // ── Cardinal numbers: digits → words ──────────────────────────────────────
   {
@@ -660,7 +660,7 @@ export default function NumbersAndTimePage() {
                 >
                   {feedback === 'correct' ? (
                     <>
-                      <CheckCircle className="size-4" /> Well done — that&apos;s right!
+                      <CheckCircle className="size-4" /> Well done - that&apos;s right!
                     </>
                   ) : (
                     <>

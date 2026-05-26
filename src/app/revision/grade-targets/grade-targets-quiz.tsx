@@ -1,13 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import {
-  ArrowRight,
-  Star,
-  AlertCircle,
-  Sparkles,
-  ChevronRight,
-} from 'lucide-react'
+import { ArrowRight, Star, AlertCircle, Sparkles, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -44,10 +38,10 @@ function buildQuizQuestions(paperLiterature: string, paperLanguage: string): Qui
     {
       question: `My vocabulary in ${paperLanguage} answers is...`,
       options: [
-        'Basic and conversational — I write how I speak',
+        'Basic and conversational - I write how I speak',
         'Clear and correct but not very ambitious',
         'Varied with subject terminology like "sibilance" and "pathetic fallacy"',
-        'Sophisticated and precise — I choose words to shape my argument',
+        'Sophisticated and precise - I choose words to shape my argument',
       ],
     },
     {
@@ -56,7 +50,7 @@ function buildQuizQuestions(paperLiterature: string, paperLanguage: string): Qui
         'Jump straight in and write what comes to mind',
         'Make a rough plan with a few points',
         'Plan with clear paragraphs, each with a focus and quotes',
-        'Plan a conceptual arc — my argument develops and shifts across paragraphs',
+        'Plan a conceptual arc - my argument develops and shifts across paragraphs',
       ],
     },
     {
@@ -114,7 +108,7 @@ function getGradeResult(
   return {
     grade: isLetter ? 'Grade D / E' : 'Grade 3-4',
     description:
-      'You are building your skills. Focus on moving from retelling to explaining — use quotes and say what the writer is trying to do.',
+      'You are building your skills. Focus on moving from retelling to explaining - use quotes and say what the writer is trying to do.',
     colour: 'text-cyan-400',
     recommended: isLetter ? 'How to Get a C' : 'How to Get a Grade 5',
     href: '/revision/grade-targets/grade-5',
@@ -164,10 +158,13 @@ export function GradeTargetsQuiz({
         <div className="flex size-9 items-center justify-center rounded-lg bg-primary/10">
           <Sparkles className="size-4.5 text-primary" />
         </div>
-        <h2 className="text-heading-md font-heading text-foreground">What Grade Am I Working At?</h2>
+        <h2 className="text-heading-md font-heading text-foreground">
+          What Grade Am I Working At?
+        </h2>
       </div>
       <p className="text-body-sm text-muted-foreground mb-6 max-w-2xl">
-        Answer five quick questions about how you currently write and analyse texts for {paperLiterature}. This is not a test — it helps you identify which guide to start with.
+        Answer five quick questions about how you currently write and analyse texts for{' '}
+        {paperLiterature}. This is not a test - it helps you identify which guide to start with.
       </p>
 
       {!quizStarted && !showResult && (
@@ -237,7 +234,9 @@ export function GradeTargetsQuiz({
           <div className="flex items-start gap-2.5 rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
             <AlertCircle className="size-4 shrink-0 text-clay-600 mt-0.5" />
             <p className="text-xs text-muted-foreground leading-relaxed">
-              This is a rough self-assessment, not a prediction. Your actual grade depends on exam performance, timing, and how well you apply techniques on the day. Use this as a starting point to focus your revision.
+              This is a rough self-assessment, not a prediction. Your actual grade depends on exam
+              performance, timing, and how well you apply techniques on the day. Use this as a
+              starting point to focus your revision.
             </p>
           </div>
         </div>

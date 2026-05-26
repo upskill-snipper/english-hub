@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Free printable English worksheets and resources for the classroom. Revision mats, quote cards, technique lists, and display materials for teachers.',
   alternates: { canonical: 'https://theenglishhub.app/resources/teaching/printables' },
   openGraph: {
-    title: 'Printable English Resources — The English Hub',
+    title: 'Printable English Resources - The English Hub',
     description:
       'Free printable English worksheets and resources for the classroom. Revision mats, quote cards, technique lists, and display materials for teachers.',
   },

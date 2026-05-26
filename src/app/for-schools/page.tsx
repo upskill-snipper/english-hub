@@ -67,7 +67,7 @@ export const metadata = {
     'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
   alternates: { canonical: 'https://theenglishhub.app/for-schools' },
   openGraph: {
-    title: 'Whole-department English platform for UK schools — The English Hub',
+    title: 'Whole-department English platform for UK schools - The English Hub',
     description:
       'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
     images: [
@@ -75,13 +75,13 @@ export const metadata = {
         url: '/api/og?title=English+platform+for+UK+schools&subtitle=Whole+department,+one+place',
         width: 1200,
         height: 630,
-        alt: 'English platform for UK schools — whole department, one place',
+        alt: 'English platform for UK schools - whole department, one place',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Whole-department English platform for UK schools — The English Hub',
+    title: 'Whole-department English platform for UK schools - The English Hub',
     description:
       'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
     images: ['/api/og?title=English+platform+for+UK+schools&subtitle=Whole+department,+one+place'],
@@ -107,7 +107,7 @@ const PLATFORM_FEATURES = [
     color: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
     title: 'Department Analytics Dashboard',
     // TODO(founder): verify the Ofsted-aligned report templates are live before this claim ships to a school. Soften if not.
-    desc: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate department reports aligned to common Ofsted English subject deep-dive criteria — ready to share at your next inspection.',
+    desc: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate department reports aligned to common Ofsted English subject deep-dive criteria - ready to share at your next inspection.',
   },
   {
     icon: BookOpen,
@@ -1188,7 +1188,7 @@ export default async function ForSchoolsPage() {
                 <Quote className="w-8 h-8 text-primary/20 mx-auto mb-4" />
                 <p className="text-sm text-muted-foreground italic">
                   We are at launch and we say so plainly. As Founding Schools come on board, their
-                  teachers' words will sit here — verified, attributable, and used only with
+                  teachers' words will sit here - verified, attributable, and used only with
                   explicit consent.
                 </p>
               </Card>
@@ -1275,7 +1275,7 @@ export default async function ForSchoolsPage() {
           {/* Compliance documents will be published here once finalised. Currently available on request. */}
           <div className="border border-border rounded-xl p-6 bg-card">
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Compliance pack — available on request
+              Compliance pack - available on request
             </h3>
             <p className="text-muted-foreground mb-4">
               For DPOs and bursars. Email{' '}
@@ -1291,31 +1291,31 @@ export default async function ForSchoolsPage() {
               <li>
                 Data Processing Agreement (Word){' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — available to schools on request during procurement
+                  - available to schools on request during procurement
                 </span>
               </li>
               <li>
                 Data Protection Impact Assessment (PDF){' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — in preparation; not yet available for inspection
+                  - in preparation; not yet available for inspection
                 </span>
               </li>
               <li>
                 Safeguarding Policy (PDF){' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — available to schools on request during procurement
+                  - available to schools on request during procurement
                 </span>
               </li>
               <li>
                 Cyber Essentials certificate{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — not currently held
+                  - not currently held
                 </span>
               </li>
               <li>
                 VPAT / accessibility conformance{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  — not currently held
+                  - not currently held
                 </span>
               </li>
             </ul>

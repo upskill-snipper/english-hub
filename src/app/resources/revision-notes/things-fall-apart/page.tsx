@@ -565,8 +565,8 @@ export default function ThingsFallApartPage() {
         <div id="context">
           <Section title={tr(`Historical &amp; Literary Context`)} icon="📜">
             <CharacterCard
-              name="Chinua Achebe (1930–2013)"
-              description="Born Albert Chinualumogu Achebe in Ogidi, eastern Nigeria. His father was an early Igbo Christian convert; his grandfather kept traditional Igbo beliefs. Educated at the Government College Umuahia and University College Ibadan; first worked at the Nigerian Broadcasting Service. Things Fall Apart (1958) was his first novel. Later novels include Arrow of God (1964) and A Man of the People (1966). Survived the Biafran War (1967–1970) as a propagandist for the secessionist state; afterwards taught at universities in Nigeria and the United States. Died in Boston in 2013."
+              name="Chinua Achebe (1930-2013)"
+              description="Born Albert Chinualumogu Achebe in Ogidi, eastern Nigeria. His father was an early Igbo Christian convert; his grandfather kept traditional Igbo beliefs. Educated at the Government College Umuahia and University College Ibadan; first worked at the Nigerian Broadcasting Service. Things Fall Apart (1958) was his first novel. Later novels include Arrow of God (1964) and A Man of the People (1966). Survived the Biafran War (1967-1970) as a propagandist for the secessionist state; afterwards taught at universities in Nigeria and the United States. Died in Boston in 2013."
             />
             <CharacterCard
               name="Setting (late 1890s, eastern Nigeria)"
@@ -604,7 +604,7 @@ export default function ThingsFallApartPage() {
           <Section title={tr(`Structure &amp; Narrative Technique`)} icon="🏛️">
             <CharacterCard
               name="Three-part architecture"
-              description="Part One (chapters 1–13) is the longest and slowest: the novel takes nearly two-thirds of its length to present Igbo life in Umuofia before any white man appears. Part Two (chapters 14–19) is the exile, where the missionaries enter the frame. Part Three (chapters 20–25) is the return and rapid collapse. The asymmetry is deliberate: the culture takes a long time to build and almost no time to fall."
+              description="Part One (chapters 1-13) is the longest and slowest: the novel takes nearly two-thirds of its length to present Igbo life in Umuofia before any white man appears. Part Two (chapters 14-19) is the exile, where the missionaries enter the frame. Part Three (chapters 20-25) is the return and rapid collapse. The asymmetry is deliberate: the culture takes a long time to build and almost no time to fall."
             />
             <CharacterCard
               name="Free indirect style"
@@ -675,12 +675,12 @@ export default function ThingsFallApartPage() {
                 the pattern is broken only by Nwoye walking out of the compound altogether.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                <strong>{tr(`Para 1 (AO1/AO2).`)}</strong> Unoka–Okonkwo: shame as inheritance. The
+                <strong>{tr(`Para 1 (AO1/AO2).`)}</strong> Unoka-Okonkwo: shame as inheritance. The
                 opening chapters set Unoka&rsquo;s debts and effeminacy and Okonkwo&rsquo;s reactive
                 masculinity.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>{tr(`Para 2 (AO2).`)}</strong> Okonkwo–Nwoye: violence transmitted as
+                <strong>{tr(`Para 2 (AO2).`)}</strong> Okonkwo-Nwoye: violence transmitted as
                 scolding and beating. Ikemefuna&rsquo;s death is the breaking point; Nwoye becomes
                 the listener Okonkwo cannot.
               </p>

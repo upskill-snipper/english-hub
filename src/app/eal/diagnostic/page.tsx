@@ -1,15 +1,15 @@
 'use client'
 
 /**
- * EAL CEFR placement test — interactive diagnostic.
+ * EAL CEFR placement test - interactive diagnostic.
  *
  * Phase machine: intro → testing → result. Answers are collected
- * (no per-question feedback — it's a placement test, not practice),
+ * (no per-question feedback - it's a placement test, not practice),
  * then scored deterministically by src/lib/eal/cefr.ts. The result
  * (CEFR band, per-skill breakdown, routed next topics) is persisted to
  * sessionStorage so the mock-practice and topic pages can pick it up.
  *
- * Persistence to Supabase (progress_cefr) is a Phase-3 follow-up — the
+ * Persistence to Supabase (progress_cefr) is a Phase-3 follow-up - the
  * seam is the `persistResult` call below.
  */
 
@@ -36,7 +36,7 @@ const SKILL_LABEL: Record<string, { en: string; ar: string }> = {
   common_errors: { en: 'Common errors', ar: 'الأخطاء الشائعة' },
 }
 
-/** Fisher–Yates — deterministic per mount via useState initializer. */
+/** Fisher-Yates - deterministic per mount via useState initializer. */
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
@@ -80,17 +80,17 @@ export default function EALDiagnosticPage() {
     try {
       sessionStorage.setItem('eal-cefr-result', JSON.stringify({ ...res, takenAt }))
     } catch {
-      /* sessionStorage unavailable — non-fatal */
+      /* sessionStorage unavailable - non-fatal */
     }
     // Phase-3: durably persist for signed-in learners (append-only
     // progress_cefr, mirroring reading-assessment). Best-effort and
-    // non-blocking — anonymous users and any failure fall back silently
+    // non-blocking - anonymous users and any failure fall back silently
     // to the sessionStorage write above; the result UI never waits on it.
     void (async () => {
       try {
         await saveCEFRDiagnostic(createClient(), res, takenAt)
       } catch {
-        /* signed out or network/RLS error — non-fatal */
+        /* signed out or network/RLS error - non-fatal */
       }
     })()
   }
@@ -115,12 +115,12 @@ export default function EALDiagnosticPage() {
         <p className="text-base text-muted-foreground leading-relaxed mb-6">
           {isAr
             ? `${questions.length} سؤال اختيار من متعدد عبر القواعد وبناء الجملة والمفردات والنطق والأخطاء الشائعة. النتيجة تحدّد مستواك من A2 إلى C1 وتوجّهك للمواضيع المناسبة. ما فيه ضغط وقت.`
-            : `${questions.length} multiple-choice questions across grammar, sentence structure, vocabulary, pronunciation and common errors. You'll get a CEFR level (A2–C1), a per-skill breakdown, and the topics to study next. No time limit.`}
+            : `${questions.length} multiple-choice questions across grammar, sentence structure, vocabulary, pronunciation and common errors. You'll get a CEFR level (A2-C1), a per-skill breakdown, and the topics to study next. No time limit.`}
         </p>
         <div className="rounded-xl border border-teal-300/30 bg-teal-500/[0.04] p-5 mb-8 text-sm leading-relaxed">
           {isAr
-            ? 'صحّح إجابتك بصدق — الهدف وضعك في المستوى الصح، مو الدرجة.'
-            : 'Answer honestly — the goal is the right level for you, not a high score.'}
+            ? 'صحّح إجابتك بصدق - الهدف وضعك في المستوى الصح، مو الدرجة.'
+            : 'Answer honestly - the goal is the right level for you, not a high score.'}
         </div>
         <button
           type="button"

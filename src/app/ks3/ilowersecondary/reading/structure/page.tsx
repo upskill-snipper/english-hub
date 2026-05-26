@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'iLowerSecondary English: structure & organisation of texts (RAO3)',
     description:
-      'A masterclass on identifying and commenting on how non-fiction texts are structured — openings, topic sentences, headings, connectives, endings, the punctuation-effect question and the feature-tick-table — with original practice extracts and model answers.',
+      'A masterclass on identifying and commenting on how non-fiction texts are structured - openings, topic sentences, headings, connectives, endings, the punctuation-effect question and the feature-tick-table - with original practice extracts and model answers.',
   },
-  title: 'Structure & organisation of texts (RAO3) — a masterclass',
+  title: 'Structure & organisation of texts (RAO3) - a masterclass',
   description:
     'How to identify and comment on the structure and organisation of texts for iLowerSecondary English RAO3: text-level structure, organisational choices and their effect on the reader, the punctuation-effect question and the feature-tick-table, with original practice extracts and model answers in Pearson mark style.',
   alternates: { canonical: PAGE_URL },
@@ -38,13 +38,13 @@ type StructureFeature = {
 const STRUCTURE_FEATURES: StructureFeature[] = [
   {
     name: 'The opening',
-    what: 'The very first sentence or paragraph — sometimes a hook, a question, a startling fact, or a scene set in time and place.',
+    what: 'The very first sentence or paragraph - sometimes a hook, a question, a startling fact, or a scene set in time and place.',
     effect:
       'A strong opening orients the reader and decides whether they read on. A question or a surprising claim makes the reader curious; a calm, factual opening signals a serious, informative purpose.',
   },
   {
     name: 'Paragraph order',
-    what: 'The sequence the writer puts ideas in — chronological, problem-then-solution, general-to-specific, or least-to-most important.',
+    what: 'The sequence the writer puts ideas in - chronological, problem-then-solution, general-to-specific, or least-to-most important.',
     effect:
       'Order controls how an argument builds. Saving the strongest point for last leaves the reader with it ringing in their ears; opening with the problem makes the later solution feel earned.',
   },
@@ -58,7 +58,7 @@ const STRUCTURE_FEATURES: StructureFeature[] = [
     name: 'Headings & sub-headings',
     what: 'Short titles that label whole sections of a text.',
     effect:
-      'They let a reader navigate and find what they need without reading every word — useful in guides, reports and leaflets where readers scan.',
+      'They let a reader navigate and find what they need without reading every word - useful in guides, reports and leaflets where readers scan.',
   },
   {
     name: 'Captions',
@@ -74,7 +74,7 @@ const STRUCTURE_FEATURES: StructureFeature[] = [
   },
   {
     name: 'Connectives',
-    what: 'Linking words and phrases — however, as a result, in addition, finally — that join sentences and paragraphs.',
+    what: 'Linking words and phrases - however, as a result, in addition, finally - that join sentences and paragraphs.',
     effect:
       'Connectives signpost the relationship between ideas (contrast, cause, addition, sequence) so the reader is steered through the argument rather than left to guess.',
   },
@@ -86,7 +86,7 @@ const STRUCTURE_FEATURES: StructureFeature[] = [
   },
   {
     name: 'The ending',
-    what: 'The final sentence or paragraph — a summary, a call to action, a return to the opening idea, or a memorable last line.',
+    what: 'The final sentence or paragraph - a summary, a call to action, a return to the opening idea, or a memorable last line.',
     effect:
       'An ending that circles back to the opening gives a sense of completeness; a call to action turns the reader from a reader into a doer.',
   },
@@ -119,7 +119,7 @@ const EXTRACTS: Extract[] = [
       '',
       'Why does it matter? A healthy pond is a whole world in miniature. Lose it, and we lose the only place on this site where some of these creatures can breed.',
       '',
-      'The good news is that ponds recover quickly — but only if people act. Here is what we are asking you to do:',
+      'The good news is that ponds recover quickly - but only if people act. Here is what we are asking you to do:',
       '',
       '• give one lunchtime a term to clearing weed;',
       '• never tip anything into the water;',
@@ -132,7 +132,7 @@ const EXTRACTS: Extract[] = [
         q: 'Identify and comment on how the writer has organised this notice. (3)',
         marks: 3,
         answer:
-          'The notice opens with a short, blunt statement — "The wildlife pond behind the science block is dying" — which shocks the reader into paying attention. It is then organised as a problem-then-solution: the first two paragraphs explain what is wrong and why it matters, the sub-question "Why does it matter?" acting as a heading that signposts a change of focus. The middle moves to a bulleted list of three actions, which lifts the requests out of prose so the reader can see exactly what is being asked. The writer ends by circling back to the pond outlasting the readers, which gives the notice a sense of completeness and turns information into a call to action.',
+          'The notice opens with a short, blunt statement - "The wildlife pond behind the science block is dying" - which shocks the reader into paying attention. It is then organised as a problem-then-solution: the first two paragraphs explain what is wrong and why it matters, the sub-question "Why does it matter?" acting as a heading that signposts a change of focus. The middle moves to a bulleted list of three actions, which lifts the requests out of prose so the reader can see exactly what is being asked. The writer ends by circling back to the pond outlasting the readers, which gives the notice a sense of completeness and turns information into a call to action.',
         markNote:
           'Pearson style: up to 3 marks for identifying organisational choices (blunt opening, problem-then-solution order, the question used as a sub-heading, the list, the circular ending) AND commenting on the effect on the reader. A bare list of features with no comment on effect would be capped.',
       },
@@ -153,7 +153,7 @@ const EXTRACTS: Extract[] = [
     lines: [
       'I had been warned about the bridge.',
       '',
-      'Everyone in the village mentioned it — the teacher, the bus driver, the woman who sold me bread. "The bridge," they said, and then they would stop, as if the word explained itself.',
+      'Everyone in the village mentioned it - the teacher, the bus driver, the woman who sold me bread. "The bridge," they said, and then they would stop, as if the word explained itself.',
       '',
       'It did not explain itself. Not until I was standing on it: two ropes, a handful of planks, and a drop so deep the river below was only a sound.',
       '',
@@ -164,7 +164,7 @@ const EXTRACTS: Extract[] = [
         q: 'Comment on how the writer has used the opening of this text. (3)',
         marks: 3,
         answer:
-          'The writer opens with a single short sentence — "I had been warned about the bridge" — which is a hook: it withholds information and makes the reader want to know what is dangerous about the bridge. The next paragraph builds suspense by repeating the villagers’ warnings without explaining them, so tension grows. The writer then deliberately delays the description of the bridge until the third paragraph, where the build-up pays off with the stark detail of "two ropes, a handful of planks". This ordering controls the reader’s curiosity and makes the eventual description feel earned.',
+          'The writer opens with a single short sentence - "I had been warned about the bridge" - which is a hook: it withholds information and makes the reader want to know what is dangerous about the bridge. The next paragraph builds suspense by repeating the villagers’ warnings without explaining them, so tension grows. The writer then deliberately delays the description of the bridge until the third paragraph, where the build-up pays off with the stark detail of "two ropes, a handful of planks". This ordering controls the reader’s curiosity and makes the eventual description feel earned.',
         markNote:
           'Up to 3 marks for identifying the structural choices (short hook sentence, delayed information, build-up through the paragraph order) and commenting on their effect on the reader.',
       },
@@ -172,7 +172,7 @@ const EXTRACTS: Extract[] = [
         q: 'What is the effect of the dashes in the second paragraph? (2)',
         marks: 2,
         answer:
-          'The dashes set off the list of villagers — "the teacher, the bus driver, the woman who sold me bread" — as an aside, drawing the reader’s eye to how many different people gave the same warning (1). This added detail makes the danger feel widely known and so increases the reader’s sense of dread before the bridge is even described (1).',
+          'The dashes set off the list of villagers - "the teacher, the bus driver, the woman who sold me bread" - as an aside, drawing the reader’s eye to how many different people gave the same warning (1). This added detail makes the danger feel widely known and so increases the reader’s sense of dread before the bridge is even described (1).',
         markNote:
           'One mark for naming the effect of the punctuation mark (the dashes mark off / emphasise the inserted detail); one mark for explaining the effect using the text.',
       },
@@ -185,7 +185,7 @@ const EXTRACTS: Extract[] = [
     lines: [
       'Why the library moved upstairs',
       '',
-      'For years the library sat by the main entrance. It was convenient — but it was also the noisiest room in the building.',
+      'For years the library sat by the main entrance. It was convenient - but it was also the noisiest room in the building.',
       '',
       'The problem',
       '',
@@ -205,7 +205,7 @@ const EXTRACTS: Extract[] = [
           'Up to 3 marks for identifying the organisational choices (the sub-headings, the problem-then-solution division, the contrast they frame, the concluding generalisation) and commenting on the effect on the reader.',
       },
       {
-        q: 'Tick one box. The dash in the second sentence ("It was convenient — but…") mainly: (2)',
+        q: 'Tick one box. The dash in the second sentence ("It was convenient - but…") mainly: (2)',
         marks: 2,
         answer:
           'The correct tick is "creates a pause that sets up a contrast". The dash holds the sentence for a beat and then introduces "but it was also the noisiest room" (1). This makes the reader feel the turn from an advantage to a drawback, which is the point the whole report is built around (1).',
@@ -467,7 +467,7 @@ export default async function StructurePage() {
             {
               label: 'Read the whole text first',
               detail:
-                'You cannot comment on structure from one paragraph. Read it right through so you can see the shape — where it begins, turns and ends.',
+                'You cannot comment on structure from one paragraph. Read it right through so you can see the shape - where it begins, turns and ends.',
             },
             {
               label: 'Name the choice precisely',

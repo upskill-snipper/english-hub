@@ -1,6 +1,6 @@
 'use client'
 
-// ─── Platform-admin — Paid Marker Drive ─────────────────────────────────────
+// ─── Platform-admin - Paid Marker Drive ─────────────────────────────────────
 // Site-admin only. The server API routes enforce verifyAdmin; this page
 // redirects on 401/403 exactly like src/app/admin/affiliates/page.tsx and
 // src/app/admin/ai-marking/page.tsx (auth gate + layout match).
@@ -72,7 +72,7 @@ export default function AdminMarkerDrivePage() {
   const router = useRouter()
   const { user, profile } = useAuthStore()
   const t = useT()
-  // Dictionary lookup() returns "[[key]]" when a key is missing — fall back
+  // Dictionary lookup() returns "[[key]]" when a key is missing - fall back
   // to the supplied English copy in that case.
   const tf = useCallback(
     (key: string, english: string) => {
@@ -658,16 +658,16 @@ export default function AdminMarkerDrivePage() {
                   {markers.map((m) => (
                     <tr key={m.id} className="text-foreground">
                       <td className="py-3 pr-4">{m.display_name}</td>
-                      <td className="py-3 pr-4 text-muted-foreground">{m.email ?? '—'}</td>
+                      <td className="py-3 pr-4 text-muted-foreground">{m.email ?? '-'}</td>
                       <td className="py-3 pr-4">
-                        {m.boards.length > 0 ? m.boards.join(', ') : '—'}
+                        {m.boards.length > 0 ? m.boards.join(', ') : '-'}
                       </td>
                       <td className="py-3 pr-4">
                         <span className="text-xs px-2 py-0.5 rounded-full bg-background border border-border">
                           {tf(`admin.md.mstatus.${m.status}`, m.status)}
                         </span>
                       </td>
-                      <td className="py-3 pr-4">{m.pay_rate_pence ?? '—'}</td>
+                      <td className="py-3 pr-4">{m.pay_rate_pence ?? '-'}</td>
                       <td className="py-3 text-xs text-muted-foreground">
                         {m.contract_signed_at
                           ? tf('admin.md.marker.contract_ok', 'Contract ✓')

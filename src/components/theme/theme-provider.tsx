@@ -6,7 +6,7 @@ import type { ThemeProviderProps } from 'next-themes'
 /**
  * Site-wide light/dark theme provider (next-themes).
  *
- * The theme system is CSS-variable based — globals.css defines the
+ * The theme system is CSS-variable based - globals.css defines the
  * `:root` (light) and `.dark` (dark) custom-property blocks, and
  * tailwind.config maps every semantic token (bg-background,
  * text-foreground, bg-card …) to `hsl(var(--…))`. next-themes toggles

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/resources/english-language/aqa/writing-skills',
   },
   openGraph: {
-    title: 'AQA GCSE English Language writing skills — The English Hub',
+    title: 'AQA GCSE English Language writing skills - The English Hub',
     description:
       'Writing skills for AQA GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
   },

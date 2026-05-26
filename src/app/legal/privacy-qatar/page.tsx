@@ -24,13 +24,13 @@ export default async function QatarPrivacyNoticePage() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2">{tr(`Privacy Notice — State of Qatar`)}</h1>
+      <h1 className="text-3xl font-bold mb-2">{tr(`Privacy Notice - State of Qatar`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
         Effective Date: 22 March 2026 · Last reviewed: 20 May 2026
         <br />
-        Applicable Law: Qatar Personal Data Privacy Protection Law (Law No. 13 of 2016 — PDPPL)
+        Applicable Law: Qatar Personal Data Privacy Protection Law (Law No. 13 of 2016 - PDPPL)
         <br />
-        Version 2.0 — supersedes v1.0 (22 March 2026) and the corrected Qatar Privacy Notice
+        Version 2.0 - supersedes v1.0 (22 March 2026) and the corrected Qatar Privacy Notice
         Supplement v1.0 (12 May 2026), both of which are merged into this notice.
       </p>
 
@@ -203,7 +203,7 @@ export default async function QatarPrivacyNoticePage() {
         </div>
       </section>
 
-      {/* Section 6 — corrected data-flow narrative.
+      {/* Section 6 - corrected data-flow narrative.
           Earlier versions of this page described data as flowing into the
           United Kingdom under a UK International Data Transfer Agreement
           (IDTA). That description was inaccurate; the actual subprocessor
@@ -217,7 +217,7 @@ export default async function QatarPrivacyNoticePage() {
           <strong>the European Union (Frankfurt), the United Kingdom, and the United States</strong>
           , depending on the activity. The controller seat is the United Kingdom, but the United
           Kingdom is
-          <strong> not the operational data store</strong> for your account data — that sits in
+          <strong> not the operational data store</strong> for your account data - that sits in
           Supabase in the European Union.
         </p>
         <p className="my-3 font-mono text-xs bg-muted p-3 rounded overflow-x-auto">
@@ -230,7 +230,7 @@ export default async function QatarPrivacyNoticePage() {
           <strong>explicit, separate consent</strong> for cross‑border transfer at the moment it is
           needed, naming the destination jurisdictions. Qatar‑resident users see a Qatar‑specific
           consent panel at sign‑up and again in the dashboard at <em>Settings → Privacy & Data</em>.
-          You may withhold or withdraw this consent at any time — withdrawing it stops the
+          You may withhold or withdraw this consent at any time - withdrawing it stops the
           corresponding feature.
         </p>
 
@@ -238,7 +238,7 @@ export default async function QatarPrivacyNoticePage() {
         <ul className="list-disc pl-6 space-y-2 text-sm">
           <li>
             <strong>European Union (Frankfurt, Germany).</strong> Supabase (Postgres + object
-            storage — primary store for your account, essay submissions, marking results, consent
+            storage - primary store for your account, essay submissions, marking results, consent
             ledger), PostHog (analytics when consented), Sentry (error monitoring). The bulk of your
             data sits here at rest, encrypted with AES‑256.
           </li>
@@ -277,7 +277,7 @@ export default async function QatarPrivacyNoticePage() {
           </li>
           <li>Encryption in transit (TLS 1.3) and at rest (AES-256)</li>
           <li>
-            <strong>Opaque identifiers</strong> at the AI inference boundary (Anthropic) — essay
+            <strong>Opaque identifiers</strong> at the AI inference boundary (Anthropic) - essay
             text is sent with no directly identifying account fields
           </li>
           <li>
@@ -423,14 +423,14 @@ export default async function QatarPrivacyNoticePage() {
           Under PDPPL Article 16, personal data of individuals under 18 is treated as{' '}
           <strong>personal data of a special nature</strong> and attracts heightened protection. The
           English Hub's primary user base is GCSE/IGCSE students, the majority of whom are under 18
-          — this section is therefore the most important on this page.
+          - this section is therefore the most important on this page.
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>{tr(`Users under 18 are considered minors under Qatari law`)}</li>
           <li>
             Our minimum age is <strong>11</strong> (lowered from 13 in May 2026 to accept Year 7 /
             KS3 students). UK GDPR Article 8 sets the digital age of consent at 13, so for users
-            aged 11–12 we rely on
+            aged 11-12 we rely on
             <strong> verifiable parental or guardian consent</strong> captured via the parent‑link
             email at sign‑up, not the child's own consent.
           </li>
@@ -452,7 +452,7 @@ export default async function QatarPrivacyNoticePage() {
           <li>{tr(`For users aged 13-17, we require explicit parental or guardian consent`)}</li>
           <li>
             Parents and guardians can access, review, and request deletion of their child&apos;s
-            data at any time. Under‑18 accounts <strong>cannot enter payment details</strong> — the
+            data at any time. Under‑18 accounts <strong>cannot enter payment details</strong> - the
             paying party is always an adult.
           </li>
           <li>{tr(`No targeted advertising served to minors`)}</li>
@@ -470,12 +470,12 @@ export default async function QatarPrivacyNoticePage() {
         </ul>
       </section>
 
-      {/* Section 10A — NCGAA registration posture.
+      {/* Section 10A - NCGAA registration posture.
           Added 2026-05-20 as part of the PDPPL gap-analysis remediation.
           Honest statement: PDPPL does not require general controller
           registration with NCGAA (DLA Piper country guide confirms). The
           one formal NCGAA interaction we owe is the Article 16 permit
-          application for processing children's data — see Section 10. */}
+          application for processing children's data - see Section 10. */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">10A. NCGAA Registration and Notifications</h2>
         <p className="mb-3">
@@ -487,7 +487,7 @@ export default async function QatarPrivacyNoticePage() {
         <ul className="list-disc pl-6 space-y-2 text-sm">
           <li>
             <strong>Article 16 permit application</strong> for processing personal data of minors
-            (in preparation — see Section 10).
+            (in preparation - see Section 10).
           </li>
           <li>
             <strong>72‑hour breach notification</strong> to NCGAA for any personal‑data breach
@@ -495,7 +495,7 @@ export default async function QatarPrivacyNoticePage() {
             subjects where the risk warrants (see Section 9).
           </li>
           <li>
-            <strong>Personal Data Management System (PDMS)</strong> — internal documentation
+            <strong>Personal Data Management System (PDMS)</strong> - internal documentation
             (Records of Processing Activities, Data Protection Impact Assessments, breach response
             plan, consent ledger) that NCGAA may inspect on notice and that we provide to school
             DPOs during procurement on request.

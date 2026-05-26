@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Paper 2 Model Answers — IGCSE Language A 0500',
+    title: 'Paper 2 Model Answers - IGCSE Language A 0500',
     description:
       'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
   },
-  title: 'Paper 2 Model Answers — IGCSE Language A 0500',
+  title: 'Paper 2 Model Answers - IGCSE Language A 0500',
   description:
     'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
   alternates: {
@@ -207,7 +207,7 @@ export default async function Paper2ModelAnswersPage() {
         <div className="flex items-center gap-3">
           <FileText className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Section A — Directed writing
+            Section A - Directed writing
           </h2>
         </div>
 
@@ -273,7 +273,7 @@ export default async function Paper2ModelAnswersPage() {
         <div className="flex items-center gap-3">
           <Feather className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Section B — Descriptive writing
+            Section B - Descriptive writing
           </h2>
         </div>
 
@@ -325,7 +325,7 @@ export default async function Paper2ModelAnswersPage() {
         <div className="flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Section B — Narrative writing
+            Section B - Narrative writing
           </h2>
         </div>
 

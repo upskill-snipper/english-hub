@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jekyll and Hyde Revision Pack — Teacher Library',
+    title: 'Jekyll and Hyde Revision Pack - Teacher Library',
     description:
       'Full Jekyll and Hyde revision pack: quote bank, themes, characters, Victorian context, and graded essay plans.',
   },
-  title: 'Jekyll and Hyde Revision Pack — Teacher Library',
+  title: 'Jekyll and Hyde Revision Pack - Teacher Library',
   description:
     'Full Jekyll and Hyde revision pack: quote bank, themes, characters, Victorian context, and graded essay plans.',
   alternates: {
@@ -55,7 +55,7 @@ export default function JekyllAndHydePack() {
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Year Group
               </div>
-              <div className="mt-1 text-sm font-semibold text-foreground">Year 10–11</div>
+              <div className="mt-1 text-sm font-semibold text-foreground">Year 10-11</div>
             </div>
             <div className="rounded-lg border border-border bg-background p-3">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -90,7 +90,7 @@ export default function JekyllAndHydePack() {
               <h3 className="font-semibold text-foreground">Duality of Human Nature</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 The central idea that every human contains both good and evil. Stevenson presents
-                Jekyll and Hyde as two sides of one man — not a split, but the revealing of
+                Jekyll and Hyde as two sides of one man - not a split, but the revealing of
                 something that was always there.
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function JekyllAndHydePack() {
               <h3 className="font-semibold text-foreground">Mr Utterson</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 The lawyer through whose investigation we experience the story. Reserved, loyal,
-                rational — a model Victorian gentleman. Our guide into the mystery.
+                rational - a model Victorian gentleman. Our guide into the mystery.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card p-5">
@@ -167,15 +167,15 @@ export default function JekyllAndHydePack() {
             {[
               {
                 q: 'Man is not truly one, but truly two.',
-                n: "Jekyll's thesis — dual nature is universal, not exceptional.",
+                n: "Jekyll's thesis - dual nature is universal, not exceptional.",
               },
               {
                 q: 'Something troglodytic.',
-                n: 'Hyde described in pre-human, animalistic terms — Victorian fears of degeneration.',
+                n: 'Hyde described in pre-human, animalistic terms - Victorian fears of degeneration.',
               },
               {
                 q: 'The very pink of the proprieties.',
-                n: "Jekyll's public reputation — the mask of respectability.",
+                n: "Jekyll's public reputation - the mask of respectability.",
               },
               {
                 q: 'With ape-like fury.',
@@ -183,27 +183,27 @@ export default function JekyllAndHydePack() {
               },
               {
                 q: 'I was thinking of my own character.',
-                n: 'Utterson — reputation matters above all in Victorian London.',
+                n: 'Utterson - reputation matters above all in Victorian London.',
               },
               {
                 q: 'A certain sinister block of building.',
-                n: 'Setting mirrors character — pathetic fallacy, the Gothic.',
+                n: 'Setting mirrors character - pathetic fallacy, the Gothic.',
               },
               {
                 q: 'The fog rolled over the city.',
-                n: 'London itself is dual — clean streets and dark alleys side by side.',
+                n: 'London itself is dual - clean streets and dark alleys side by side.',
               },
               {
                 q: 'I had gone to bed Henry Jekyll, I had awakened Edward Hyde.',
-                n: 'Jekyll loses control — Hyde becomes involuntary, then permanent.',
+                n: 'Jekyll loses control - Hyde becomes involuntary, then permanent.',
               },
               {
                 q: 'A being inherently malign and villainous.',
-                n: 'Hyde is evil incarnate — not a man gone bad but evil made flesh.',
+                n: 'Hyde is evil incarnate - not a man gone bad but evil made flesh.',
               },
               {
                 q: 'My devil had been long caged, he came out roaring.',
-                n: 'Repression does not destroy desire — it amplifies it.',
+                n: 'Repression does not destroy desire - it amplifies it.',
               },
             ].map((item, i) => (
               <div key={i} className="rounded-xl border border-border bg-card p-4">
@@ -232,14 +232,14 @@ export default function JekyllAndHydePack() {
             </li>
             <li>
               <strong>Freud &amp; the unconscious:</strong> Though Freud came later, Stevenson is
-              working the same territory — the self as layered, desires as hidden.
+              working the same territory - the self as layered, desires as hidden.
             </li>
             <li>
               <strong>Gothic tradition:</strong> Doubles, doppelgängers, locked doors,
-              transformation — Stevenson draws on a long Gothic lineage (Frankenstein, Poe, Hogg).
+              transformation - Stevenson draws on a long Gothic lineage (Frankenstein, Poe, Hogg).
             </li>
             <li>
-              <strong>Victorian London:</strong> A city of sharp contrasts — genteel Bloomsbury next
+              <strong>Victorian London:</strong> A city of sharp contrasts - genteel Bloomsbury next
               to Soho&apos;s squalor. The dual city mirrors the dual man.
             </li>
           </ul>
@@ -255,14 +255,14 @@ export default function JekyllAndHydePack() {
               </h3>
               <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
                 <li>
-                  Thesis: Stevenson presents duality as universal, not exceptional — a condition of
+                  Thesis: Stevenson presents duality as universal, not exceptional - a condition of
                   being human.
                 </li>
                 <li>
-                  Para 1: &quot;Man is not truly one, but truly two&quot; — Jekyll as spokesman.
+                  Para 1: &quot;Man is not truly one, but truly two&quot; - Jekyll as spokesman.
                 </li>
-                <li>Para 2: Setting — the dual city mirrors the dual man.</li>
-                <li>Para 3: Hyde&apos;s physicality — duality visible on the body.</li>
+                <li>Para 2: Setting - the dual city mirrors the dual man.</li>
+                <li>Para 3: Hyde&apos;s physicality - duality visible on the body.</li>
                 <li>Conclusion: Stevenson warns that repression creates monsters.</li>
               </ol>
             </div>
@@ -273,14 +273,14 @@ export default function JekyllAndHydePack() {
               </h3>
               <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
                 <li>
-                  Thesis: Hyde is presented as pre-civilised evil — primal, animalistic, and
+                  Thesis: Hyde is presented as pre-civilised evil - primal, animalistic, and
                   uncontrollable.
                 </li>
                 <li>
                   Para 1: Animal imagery (&quot;ape-like fury&quot;, &quot;troglodytic&quot;).
                 </li>
-                <li>Para 2: Reactions of others — even Enfield feels instinctive revulsion.</li>
-                <li>Para 3: Violence without motive — Carew murder.</li>
+                <li>Para 2: Reactions of others - even Enfield feels instinctive revulsion.</li>
+                <li>Para 3: Violence without motive - Carew murder.</li>
                 <li>Conclusion: Hyde reflects Victorian fears of Darwinism and degeneration.</li>
               </ol>
             </div>
@@ -291,7 +291,7 @@ export default function JekyllAndHydePack() {
               </h3>
               <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-muted-foreground">
                 <li>
-                  Thesis: Reputation drives every major character&apos;s actions — and becomes a
+                  Thesis: Reputation drives every major character&apos;s actions - and becomes a
                   force for destruction.
                 </li>
                 <li>Para 1: Jekyll creates Hyde to preserve his name.</li>
@@ -307,7 +307,7 @@ export default function JekyllAndHydePack() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Stagger it:</strong> Don&apos;t give the whole pack at once. Release a section

@@ -4,13 +4,13 @@
  * The complete Anthology printable template CSS, exported as a string constant.
  * This is embedded directly into generated HTML documents (PDF/Word).
  *
- * Source: design_handoff_anthology_template — high-fidelity, all values are final.
+ * Source: design_handoff_anthology_template - high-fidelity, all values are final.
  * Do NOT modify without design review.
  */
 
 export const ANTHOLOGY_CSS = `
 /* ===========================================================
-   ANTHOLOGY — Printable Template System
+   ANTHOLOGY - Printable Template System
    The English Hub · All printable resources use this template.
    =========================================================== */
 

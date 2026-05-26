@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'Complete AQA Power and Conflict poetry analysis hub. 25 Grade 9 pages covering comparisons, themes, key quotes and exam technique. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-power-conflict' },
   openGraph: {
-    title: 'AQA Power and Conflict Analysis Hub — The English Hub',
+    title: 'AQA Power and Conflict Analysis Hub - The English Hub',
     description:
       'Grade 9 AQA Power and Conflict analysis: poem comparisons, theme essays, key quotes and exam technique.',
   },
@@ -39,23 +39,23 @@ const comparisonPages = [
 const themePages = [
   {
     slug: 'power-of-nature-theme-across-anthology',
-    title: 'Power of Nature — Theme Across the Anthology',
+    title: 'Power of Nature - Theme Across the Anthology',
   },
   {
     slug: 'power-of-humans-theme-across-anthology',
-    title: 'Power of Humans — Theme Across the Anthology',
+    title: 'Power of Humans - Theme Across the Anthology',
   },
   {
     slug: 'reality-of-conflict-theme-across-anthology',
-    title: 'Reality of Conflict — Theme Across the Anthology',
+    title: 'Reality of Conflict - Theme Across the Anthology',
   },
-  { slug: 'memory-theme-across-anthology', title: 'Memory — Theme Across the Anthology' },
-  { slug: 'identity-theme-across-anthology', title: 'Identity — Theme Across the Anthology' },
-  { slug: 'loss-theme-across-anthology', title: 'Loss — Theme Across the Anthology' },
-  { slug: 'suffering-theme-across-anthology', title: 'Suffering — Theme Across the Anthology' },
+  { slug: 'memory-theme-across-anthology', title: 'Memory - Theme Across the Anthology' },
+  { slug: 'identity-theme-across-anthology', title: 'Identity - Theme Across the Anthology' },
+  { slug: 'loss-theme-across-anthology', title: 'Loss - Theme Across the Anthology' },
+  { slug: 'suffering-theme-across-anthology', title: 'Suffering - Theme Across the Anthology' },
   {
     slug: 'corruption-of-power-theme-across-anthology',
-    title: 'Corruption of Power — Theme Across the Anthology',
+    title: 'Corruption of Power - Theme Across the Anthology',
   },
 ]
 

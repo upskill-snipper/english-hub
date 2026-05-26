@@ -189,7 +189,7 @@ export function FeedbackWidget() {
         resetForms()
       }
     } catch {
-      // Silently fail — could add error toast here
+      // Silently fail - could add error toast here
     } finally {
       setSubmitting(false)
     }

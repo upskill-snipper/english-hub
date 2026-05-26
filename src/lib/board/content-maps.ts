@@ -1,6 +1,6 @@
 import type { ExamBoard } from './board-store'
 
-// Set texts by board — each board prescribes different novels/plays/poetry
+// Set texts by board - each board prescribes different novels/plays/poetry
 export const SET_TEXTS_BY_BOARD: Record<
   ExamBoard,
   { shakespeare: string[]; nineteenthCentury: string[]; modern: string[]; poetry: string[] }
@@ -129,15 +129,15 @@ export const SET_TEXTS_BY_BOARD: Record<
     ],
     poetry: ['edexcel-igcse-anthology'],
   },
-  // TODO: edexcel-igcse-lang — add set texts when Language content is built
+  // TODO: edexcel-igcse-lang - add set texts when Language content is built
   'edexcel-igcse-lang': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'cambridge-0500': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'cambridge-0990': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
-  // TODO: cambridge-0475 — add Literature in English set texts
+  // TODO: cambridge-0475 - add Literature in English set texts
   'cambridge-0475': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
-  // TODO: ial-edexcel — add IAL English set texts
+  // TODO: ial-edexcel - add IAL English set texts
   'ial-edexcel': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
-  // TODO: UK A-Level boards — populate when content is authored
+  // TODO: UK A-Level boards - populate when content is authored
   'aqa-a-level': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'edexcel-a-level': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },
   'ocr-a-level': { shakespeare: [], nineteenthCentury: [], modern: [], poetry: [] },

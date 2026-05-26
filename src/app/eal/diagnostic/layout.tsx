@@ -7,14 +7,14 @@ import { getDiagnosticQuestions } from '@/lib/eal/diagnostic-bank'
  * a client component, so this server layout carries the SEO/GEO schema.
  */
 export const metadata: Metadata = {
-  title: 'CEFR Placement Test — English for Arabic Speakers (free)',
+  title: 'CEFR Placement Test - English for Arabic Speakers (free)',
   description:
-    'Free CEFR placement test for Arabic L1 learners. Answer bilingual multiple-choice questions across grammar, sentence structure, vocabulary, pronunciation and common errors to get your CEFR level (A2–C1), a per-skill breakdown and the topics to study next.',
+    'Free CEFR placement test for Arabic L1 learners. Answer bilingual multiple-choice questions across grammar, sentence structure, vocabulary, pronunciation and common errors to get your CEFR level (A2-C1), a per-skill breakdown and the topics to study next.',
   alternates: { canonical: 'https://theenglishhub.app/eal/diagnostic' },
   openGraph: {
-    title: 'Free CEFR Placement Test for Arabic Speakers — The English Hub',
+    title: 'Free CEFR Placement Test for Arabic Speakers - The English Hub',
     description:
-      'Get your CEFR level (A2–C1), a per-skill breakdown and a personalised study path. Bilingual English/Arabic.',
+      'Get your CEFR level (A2-C1), a per-skill breakdown and a personalised study path. Bilingual English/Arabic.',
     url: 'https://theenglishhub.app/eal/diagnostic',
     siteName: 'The English Hub',
     type: 'website',
@@ -28,9 +28,9 @@ export default function EALDiagnosticLayout({ children }: { children: React.Reac
     <>
       <QuizJsonLd
         name="CEFR Placement Test for Arabic Speakers"
-        description="A free, bilingual CEFR placement test that estimates an Arabic L1 learner's English level (A2–C1) across grammar, sentence structure, vocabulary, pronunciation and common errors."
+        description="A free, bilingual CEFR placement test that estimates an Arabic L1 learner's English level (A2-C1) across grammar, sentence structure, vocabulary, pronunciation and common errors."
         about="English as an Additional Language (EAL)"
-        educationalLevel="CEFR A2–C1"
+        educationalLevel="CEFR A2-C1"
         url="https://theenglishhub.app/eal/diagnostic"
         totalQuestions={total}
         inLanguage="en-GB"

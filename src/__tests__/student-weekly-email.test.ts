@@ -63,7 +63,7 @@ describe('Student Weekly Email Template', () => {
 
   it('lists studied poems when present', () => {
     const { html } = buildStudentWeeklyEmail(
-      baseData({ poemsStudied: ['Ozymandias', 'London', 'Exposure'] })
+      baseData({ poemsStudied: ['Ozymandias', 'London', 'Exposure'] }),
     )
     expect(html).toContain('Ozymandias')
     expect(html).toContain('London')
@@ -75,7 +75,7 @@ describe('Student Weekly Email Template', () => {
 
   it('lists studied texts when present', () => {
     const { html } = buildStudentWeeklyEmail(
-      baseData({ textsStudied: ['Macbeth Act 1', 'An Inspector Calls'] })
+      baseData({ textsStudied: ['Macbeth Act 1', 'An Inspector Calls'] }),
     )
     expect(html).toContain('Macbeth Act 1')
     expect(html).toContain('An Inspector Calls')
@@ -97,7 +97,7 @@ describe('Student Weekly Email Template', () => {
 
   it('uses singular for exactly 1 game', () => {
     const { html } = buildStudentWeeklyEmail(baseData({ gamesPlayed: 1 }))
-    // Should not contain "games" (plural) — only "game"
+    // Should not contain "games" (plural) - only "game"
     expect(html).toMatch(/1<\/strong> revision game[^s]/)
   })
 
@@ -149,7 +149,7 @@ describe('Student Weekly Email Template', () => {
 
   it('shows suggested focus areas when provided', () => {
     const { html } = buildStudentWeeklyEmail(
-      baseData({ suggestedFocus: ['Practice poetry comparison', 'Revise Macbeth themes'] })
+      baseData({ suggestedFocus: ['Practice poetry comparison', 'Revise Macbeth themes'] }),
     )
     expect(html).toContain('Suggested focus')
     expect(html).toContain('Practice poetry comparison')
@@ -177,7 +177,7 @@ describe('Student Weekly Email Template', () => {
 
   it('escapes HTML in student name', () => {
     const { html } = buildStudentWeeklyEmail(
-      baseData({ studentName: '<script>alert("xss")</script>' })
+      baseData({ studentName: '<script>alert("xss")</script>' }),
     )
     expect(html).not.toContain('<script>')
     expect(html).toContain('&lt;script&gt;')
@@ -185,7 +185,7 @@ describe('Student Weekly Email Template', () => {
 
   it('escapes HTML in poem names', () => {
     const { html } = buildStudentWeeklyEmail(
-      baseData({ poemsStudied: ['<img src=x onerror=alert(1)>'] })
+      baseData({ poemsStudied: ['<img src=x onerror=alert(1)>'] }),
     )
     expect(html).not.toContain('<img')
     expect(html).toContain('&lt;img')

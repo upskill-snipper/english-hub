@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Complete guide to language devices for GCSE English. Definitions, examples, and analysis of metaphor, simile, personification, and more.',
   alternates: { canonical: 'https://theenglishhub.app/resources/techniques/language-devices' },
   openGraph: {
-    title: 'Language Devices — The English Hub',
+    title: 'Language Devices - The English Hub',
     description:
       'Complete guide to language devices for GCSE English. Definitions, examples, and analysis of metaphor, simile, personification, and more.',
   },

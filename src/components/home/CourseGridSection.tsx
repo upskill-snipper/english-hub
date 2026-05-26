@@ -34,7 +34,7 @@ const courses: readonly Course[] = [
     level: 'KS3',
     levelColor: 'bg-blue-500/20 text-blue-400',
     duration: '6 weeks',
-    desc: 'Core reading skills — inference, analysis, and comparison for Years 7-9.',
+    desc: 'Core reading skills - inference, analysis, and comparison for Years 7-9.',
     boards: ['all'],
   },
   {
@@ -58,7 +58,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-primary/20 text-primary',
     duration: '8 weeks',
-    desc: 'Explorations in creative reading and writing — fiction extracts and descriptive/narrative tasks.',
+    desc: 'Explorations in creative reading and writing - fiction extracts and descriptive/narrative tasks.',
     boards: ['AQA'],
   },
   {
@@ -66,7 +66,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-primary/20 text-primary',
     duration: '8 weeks',
-    desc: 'Writers\u2019 viewpoints and perspectives — non-fiction reading and writing for real purposes for AQA.',
+    desc: 'Writers\u2019 viewpoints and perspectives - non-fiction reading and writing for real purposes for AQA.',
     boards: ['AQA'],
   },
   {
@@ -98,7 +98,7 @@ const courses: readonly Course[] = [
     level: 'IGCSE',
     levelColor: 'bg-emerald-500/20 text-emerald-400',
     duration: '10 weeks',
-    desc: 'Edexcel IGCSE English Language Spec A (4EA1) — non-fiction and writing for real purposes.',
+    desc: 'Edexcel IGCSE English Language Spec A (4EA1) - non-fiction and writing for real purposes.',
     boards: ['Edexcel IGCSE'],
   },
   {
@@ -130,7 +130,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-orange-500/20 text-clay-600',
     duration: '8 weeks',
-    desc: 'Component 01 & 02 practice — non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
+    desc: 'Component 01 & 02 practice - non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
     boards: ['OCR'],
   },
   {
@@ -138,7 +138,7 @@ const courses: readonly Course[] = [
     level: 'GCSE',
     levelColor: 'bg-red-500/20 text-red-400',
     duration: '8 weeks',
-    desc: 'Component 1 & 2 practice — 20th-century fiction, non-fiction reading, and writing tasks for WJEC Eduqas.',
+    desc: 'Component 1 & 2 practice - 20th-century fiction, non-fiction reading, and writing tasks for WJEC Eduqas.',
     boards: ['WJEC'],
   },
   {
@@ -163,7 +163,7 @@ const BOARD_TO_LABEL: Record<ExamBoard, CourseBoard> = {
   'cambridge-0990': 'Cambridge First Language (9-1)',
   'cambridge-0475': 'Cambridge First Language',
   'ial-edexcel': 'Edexcel',
-  // A-Level scaffolds — no bespoke A-Level courses yet; fall back to board labels
+  // A-Level scaffolds - no bespoke A-Level courses yet; fall back to board labels
   'aqa-a-level': 'AQA',
   'edexcel-a-level': 'Edexcel',
   'ocr-a-level': 'OCR',

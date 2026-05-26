@@ -35,7 +35,7 @@ const pillars = [
     points: [
       'Spot implicit meanings as well as explicit points',
       'Identify techniques accurately and explain their effect',
-      'Use short embedded quotations — one phrase per point',
+      'Use short embedded quotations - one phrase per point',
       'Cover the whole text, not just the first paragraph',
       'Stay focused on what the question is actually asking',
     ],
@@ -44,7 +44,7 @@ const pillars = [
     icon: PenTool,
     title: 'Writing: clear and accurate',
     points: [
-      'Plan before you start — know your ending before you begin',
+      'Plan before you start - know your ending before you begin',
       'Vary sentence openings and structures',
       'Use a range of vocabulary, including some ambitious choices',
       'Punctuate accurately, including apostrophes and commas',
@@ -103,7 +103,7 @@ export default async function Grade7GuidePage() {
             How to hit Grade 7
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Grade 7 is the new A. It shows a confident grasp of both reading and writing — you
+            Grade 7 is the new A. It shows a confident grasp of both reading and writing - you
             understand what the question wants, you analyse clearly, and you write accurately. This
             guide gives you the habits, checks and common mistakes that separate 7s from 5s.
           </p>
@@ -154,7 +154,7 @@ export default async function Grade7GuidePage() {
         <Card>
           <CardHeader className="pb-3">
             <Badge variant="secondary" className="w-fit">
-              Language analysis — Q2
+              Language analysis - Q2
             </Badge>
             <CardTitle className="mt-2 text-body font-semibold">
               Exploring imagery in a travel extract

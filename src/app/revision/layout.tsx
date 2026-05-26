@@ -25,7 +25,7 @@ export default async function RevisionLayout({ children }: { children: React.Rea
   const geoFaqHeading = await t('revision.layout.geo_faq_heading')
   return (
     <>
-      {/* educationalLevel intentionally omitted — this tree spans KS3,
+      {/* educationalLevel intentionally omitted - this tree spans KS3,
           GCSE, IGCSE and IAL, so a single level value would be wrong. */}
       <LearningResourceJsonLd
         name="English Revision Hub"

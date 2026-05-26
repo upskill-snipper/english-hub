@@ -5,7 +5,7 @@
  * frontmatter with `gray-matter`, and exposes a typed list/lookup API for
  * the public landing pages under /resources/teaching/printables.
  *
- * The MDX body is returned as a raw string — pages compile it on demand
+ * The MDX body is returned as a raw string - pages compile it on demand
  * via `next-mdx-remote/rsc#compileMDX` so we don't pay the MDX runtime
  * cost on the index page.
  *
@@ -55,7 +55,7 @@ export type Printable = {
   status: PrintableStatus
   /** Null/undefined when status === 'coming-soon'. */
   pdfUrl?: string
-  /** Raw MDX body — compile on the page that needs it. */
+  /** Raw MDX body - compile on the page that needs it. */
   content: string
 }
 
@@ -194,7 +194,7 @@ async function readDirSafe(dir: string): Promise<string[]> {
   try {
     return await fs.readdir(dir)
   } catch (err) {
-    // Directory doesn't exist yet — sibling content agents may not have
+    // Directory doesn't exist yet - sibling content agents may not have
     // populated it. Return empty list so the index page still renders.
     if ((err as NodeJS.ErrnoException).code === 'ENOENT') return []
     throw err

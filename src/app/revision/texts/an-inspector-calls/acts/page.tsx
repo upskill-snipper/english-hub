@@ -75,8 +75,8 @@ type ActData = {
 const acts: ActData[] = [
   {
     number: 1,
-    title: 'Act One — Celebration and Exposure',
-    titleAr: 'الفصل الأول — الاحتفال والانكشاف',
+    title: 'Act One - Celebration and Exposure',
+    titleAr: 'الفصل الأول - الاحتفال والانكشاف',
     summary: [
       'The play opens on the Birling family celebrating the engagement of Sheila to Gerald Croft. Arthur Birling dominates the evening with after-dinner speeches about progress, self-reliance and the impossibility of war. His confidence is undercut by dramatic irony: the audience knows that the Titanic will sink and that two world wars are coming. Priestley deliberately makes Birling wrong about everything to discredit the capitalist philosophy he represents.',
       'Inspector Goole arrives to investigate the suicide of a young woman called Eva Smith. He reveals that Birling sacked Eva from his factory after she helped lead a strike for higher wages. Birling defends himself by insisting he paid standard rates and that cheap labour is essential to business. His language reduces Eva to an economic unit rather than a person.',
@@ -176,8 +176,8 @@ const acts: ActData[] = [
   },
   {
     number: 2,
-    title: 'Act Two — Complicity and Denial',
-    titleAr: 'الفصل الثاني — التواطؤ والإنكار',
+    title: 'Act Two - Complicity and Denial',
+    titleAr: 'الفصل الثاني - التواطؤ والإنكار',
     summary: [
       'Act Two opens with the continuation of Gerald\u2019s confession. He admits that he kept Eva \u2014 now calling herself Daisy Renton \u2014 as his mistress, installing her in a friend\u2019s flat before ending the affair when it suited him. Gerald claims genuine affection, but the power imbalance is clear: he rescued her from Alderman Meggarty\u2019s predatory attention only to make her dependent on himself.',
       'Sheila recognises that Gerald\u2019s story confirms a pattern of exploitation by wealthy men. She returns the engagement ring, demonstrating that her moral awakening extends to her personal life. Priestley uses this moment to show that accepting responsibility has real consequences.',
@@ -277,8 +277,8 @@ const acts: ActData[] = [
   },
   {
     number: 3,
-    title: 'Act Three — Reckoning and Repetition',
-    titleAr: 'الفصل الثالث — الحساب والتكرار',
+    title: 'Act Three - Reckoning and Repetition',
+    titleAr: 'الفصل الثالث - الحساب والتكرار',
     summary: [
       'Eric returns and the full chain of responsibility is laid bare. He confesses that he met Eva at a bar, forced himself on her when drunk, and got her pregnant. He stole money from his father\u2019s firm to support her, but she refused to accept stolen money \u2014 showing more moral integrity than any of the Birlings. Eric\u2019s confession is the most violent in the play, and Priestley does not soften it.',
       'The Inspector delivers his final speech before leaving. He warns the Birlings that if people do not learn to share responsibility for one another, they will be taught it in "fire and blood and anguish." The speech is both a political manifesto and a prophecy: the audience knows that two world wars fulfilled the warning. Priestley uses the Inspector as a mouthpiece for the democratic socialist argument that society must take collective responsibility for its weakest members.',
@@ -443,10 +443,10 @@ export default async function ActsPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            {isAr ? 'An Inspector Calls — تحليل الفصول' : 'An Inspector Calls — Acts Analysis'}
+            {isAr ? 'An Inspector Calls - تحليل الفصول' : 'An Inspector Calls - Acts Analysis'}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            {isAr ? 'تأليف J.B. Priestley — 1945' : 'by J.B. Priestley — 1945'}
+            {isAr ? 'تأليف J.B. Priestley - 1945' : 'by J.B. Priestley - 1945'}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             {isAr

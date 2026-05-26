@@ -63,9 +63,21 @@ const AQA_PAPERS: Paper[] = [
         description: 'One question on your studied Shakespeare play with an extract and essay.',
         links: [
           { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
-          { label: 'Romeo & Juliet Study Guide', href: '/revision/texts/romeo-and-juliet', type: 'text' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Romeo & Juliet Study Guide',
+            href: '/revision/texts/romeo-and-juliet',
+            type: 'text',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
           { label: 'Lit Paper 1 Mock Exams', href: '/mock-exams?paper=aqa-lit-p1', type: 'mock' },
         ],
       },
@@ -75,8 +87,12 @@ const AQA_PAPERS: Paper[] = [
         links: [
           { label: 'A Christmas Carol', href: '/revision/texts/a-christmas-carol', type: 'text' },
           { label: 'Jekyll & Hyde', href: '/revision/texts/jekyll-and-hyde', type: 'text' },
-          { label: 'Frankenstein', href: '/revision/texts/frankenstein', type: 'text' },  // TODO: page not yet built
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          { label: 'Frankenstein', href: '/revision/texts/frankenstein', type: 'text' }, // TODO: page not yet built
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -100,7 +116,11 @@ const AQA_PAPERS: Paper[] = [
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies', type: 'text' },
           { label: 'Blood Brothers', href: '/revision/texts/blood-brothers', type: 'text' },
           { label: 'Never Let Me Go', href: '/revision/texts/never-let-me-go', type: 'text' },
-          { label: 'A View from the Bridge', href: '/revision/texts/a-view-from-the-bridge', type: 'text' },
+          {
+            label: 'A View from the Bridge',
+            href: '/revision/texts/a-view-from-the-bridge',
+            type: 'text',
+          },
           { label: 'Pigeon English', href: '/revision/texts/pigeon-english', type: 'text' },
           { label: 'Anita and Me', href: '/revision/texts/anita-and-me', type: 'text' },
           { label: 'Curious Incident', href: '/revision/texts/curious-incident', type: 'text' },
@@ -108,18 +128,36 @@ const AQA_PAPERS: Paper[] = [
       },
       {
         title: 'Section B: Poetry Anthology',
-        description: 'One comparison question on a named poem and one of your choice from the cluster.',
+        description:
+          'One comparison question on a named poem and one of your choice from the cluster.',
         links: [
-          { label: 'Power & Conflict Poems', href: '/revision/poetry/power-and-conflict', type: 'poetry' },
-          { label: 'Love & Relationships Poems', href: '/revision/poetry/love-and-relationships', type: 'poetry' },
-          { label: 'Poetry Comparison Technique', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Power & Conflict Poems',
+            href: '/revision/poetry/power-and-conflict',
+            type: 'poetry',
+          },
+          {
+            label: 'Love & Relationships Poems',
+            href: '/revision/poetry/love-and-relationships',
+            type: 'poetry',
+          },
+          {
+            label: 'Poetry Comparison Technique',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
         title: 'Section C: Unseen Poetry',
-        description: 'Two questions: one analysis of an unseen poem, one comparison of two unseen poems.',
+        description:
+          'Two questions: one analysis of an unseen poem, one comparison of two unseen poems.',
         links: [
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
           { label: 'Lit Paper 2 Mock Exams', href: '/mock-exams?paper=aqa-lit-p2', type: 'mock' },
         ],
       },
@@ -139,7 +177,11 @@ const AQA_PAPERS: Paper[] = [
         description: 'Four reading questions on one unseen fiction extract.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types Breakdown', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types Breakdown',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
           { label: 'Lang Paper 1 Mock Exams', href: '/mock-exams?paper=aqa-lang-p1', type: 'mock' },
         ],
       },
@@ -147,8 +189,16 @@ const AQA_PAPERS: Paper[] = [
         title: 'Section B: Writing (Q5)',
         description: 'One creative writing task: descriptive or narrative writing.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -168,7 +218,11 @@ const AQA_PAPERS: Paper[] = [
         description: 'Four reading questions on two linked non-fiction sources.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Comparison Technique', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Comparison Technique',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'Lang Paper 2 Mock Exams', href: '/mock-exams?paper=aqa-lang-p2', type: 'mock' },
         ],
       },
@@ -176,8 +230,16 @@ const AQA_PAPERS: Paper[] = [
         title: 'Section B: Writing (Q5)',
         description: 'One transactional writing task: article, letter, speech, or essay.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -202,8 +264,16 @@ const EDEXCEL_PAPERS: Paper[] = [
         description: 'One extract-based question on your studied Shakespeare play.',
         links: [
           { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
-          { label: 'Romeo & Juliet Study Guide', href: '/revision/texts/romeo-and-juliet', type: 'text' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Romeo & Juliet Study Guide',
+            href: '/revision/texts/romeo-and-juliet',
+            type: 'text',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'Edexcel Lit Mock Exams', href: '/mock-exams?paper=edexcel-lit', type: 'mock' },
         ],
       },
@@ -215,7 +285,11 @@ const EDEXCEL_PAPERS: Paper[] = [
           { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies', type: 'text' },
           { label: 'Blood Brothers', href: '/revision/texts/blood-brothers', type: 'text' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -235,7 +309,11 @@ const EDEXCEL_PAPERS: Paper[] = [
         links: [
           { label: 'A Christmas Carol', href: '/revision/texts/a-christmas-carol', type: 'text' },
           { label: 'Jekyll & Hyde', href: '/revision/texts/jekyll-and-hyde', type: 'text' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
         ],
       },
       {
@@ -244,14 +322,22 @@ const EDEXCEL_PAPERS: Paper[] = [
         links: [
           { label: 'Edexcel Poetry Anthology', href: '/revision/poetry/edexcel', type: 'poetry' },
           { label: 'Conflict Cluster', href: '/revision/poetry/edexcel/conflict', type: 'poetry' },
-          { label: 'Time and Place Cluster', href: '/revision/poetry/edexcel/time-and-place', type: 'poetry' },
+          {
+            label: 'Time and Place Cluster',
+            href: '/revision/poetry/edexcel/time-and-place',
+            type: 'poetry',
+          },
         ],
       },
       {
         title: 'Section C: Unseen Poetry',
         description: 'Two questions on unseen poems: one analysis, one comparison.',
         links: [
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
           { label: 'Edexcel Lit Mock Exams', href: '/mock-exams?paper=edexcel-lit', type: 'mock' },
         ],
       },
@@ -271,16 +357,32 @@ const EDEXCEL_PAPERS: Paper[] = [
         description: 'Questions on one unseen 19th-century fiction extract.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
-          { label: 'Edexcel Lang P1 Mock Exams', href: '/mock-exams?paper=edexcel-lang-p1', type: 'mock' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
+          {
+            label: 'Edexcel Lang P1 Mock Exams',
+            href: '/mock-exams?paper=edexcel-lang-p1',
+            type: 'mock',
+          },
         ],
       },
       {
         title: 'Section B: Imaginative Writing',
         description: 'One imaginative writing task from a choice of two.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -299,16 +401,32 @@ const EDEXCEL_PAPERS: Paper[] = [
         description: 'Questions on two thematically linked non-fiction sources.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Comparison Technique', href: '/revision/exam-technique/essay-structure', type: 'technique' },
-          { label: 'Edexcel Lang P2 Mock Exams', href: '/mock-exams?paper=edexcel-lang-p2', type: 'mock' },
+          {
+            label: 'Comparison Technique',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Edexcel Lang P2 Mock Exams',
+            href: '/mock-exams?paper=edexcel-lang-p2',
+            type: 'mock',
+          },
         ],
       },
       {
         title: 'Section B: Transactional Writing',
         description: 'Two transactional/discursive writing tasks.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -336,7 +454,11 @@ const OCR_PAPERS: Paper[] = [
           { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies', type: 'text' },
           { label: 'Never Let Me Go', href: '/revision/texts/never-let-me-go', type: 'text' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
@@ -365,9 +487,17 @@ const OCR_PAPERS: Paper[] = [
         links: [
           { label: 'OCR Poetry Anthology', href: '/revision/poetry/ocr', type: 'poetry' },
           { label: 'Conflict Cluster', href: '/revision/poetry/ocr/conflict', type: 'poetry' },
-          { label: 'Love & Relationships', href: '/revision/poetry/ocr/love-and-relationships', type: 'poetry' },
+          {
+            label: 'Love & Relationships',
+            href: '/revision/poetry/ocr/love-and-relationships',
+            type: 'poetry',
+          },
           { label: 'Youth & Age', href: '/revision/poetry/ocr/youth-and-age', type: 'poetry' },
-          { label: 'Power & Natural World', href: '/revision/poetry/ocr/power-and-natural-world', type: 'poetry' },
+          {
+            label: 'Power & Natural World',
+            href: '/revision/poetry/ocr/power-and-natural-world',
+            type: 'poetry',
+          },
         ],
       },
       {
@@ -375,15 +505,27 @@ const OCR_PAPERS: Paper[] = [
         description: 'One extract-based question on your studied Shakespeare play.',
         links: [
           { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
-          { label: 'Romeo & Juliet Study Guide', href: '/revision/texts/romeo-and-juliet', type: 'text' },
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          {
+            label: 'Romeo & Juliet Study Guide',
+            href: '/revision/texts/romeo-and-juliet',
+            type: 'text',
+          },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
         ],
       },
       {
         title: 'Section C: Unseen Poetry',
         description: 'One analysis question on an unseen poem.',
         links: [
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
           { label: 'OCR Lit Mock Exams', href: '/mock-exams?paper=ocr-lit', type: 'mock' },
         ],
       },
@@ -403,7 +545,11 @@ const OCR_PAPERS: Paper[] = [
         description: 'Questions on unseen non-fiction and literary non-fiction texts.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
           { label: 'OCR Lang Mock Exams', href: '/mock-exams?paper=ocr-lang', type: 'mock' },
         ],
       },
@@ -431,7 +577,11 @@ const OCR_PAPERS: Paper[] = [
         description: 'Questions on one unseen 19th-century literary fiction text.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Comparison Technique', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Comparison Technique',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'OCR Lang Mock Exams', href: '/mock-exams?paper=ocr-lang', type: 'mock' },
         ],
       },
@@ -439,8 +589,16 @@ const OCR_PAPERS: Paper[] = [
         title: 'Section B: Writing',
         description: 'Two writing tasks: one short and one extended piece of fiction writing.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -465,8 +623,16 @@ const EDUQAS_PAPERS: Paper[] = [
         description: 'Two-part extract-based question on your studied Shakespeare play.',
         links: [
           { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
-          { label: 'Romeo & Juliet Study Guide', href: '/revision/texts/romeo-and-juliet', type: 'text' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Romeo & Juliet Study Guide',
+            href: '/revision/texts/romeo-and-juliet',
+            type: 'text',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
@@ -474,7 +640,11 @@ const EDUQAS_PAPERS: Paper[] = [
         description: 'Two poetry questions: one comparison from the anthology, one unseen.',
         links: [
           { label: 'Eduqas Poetry Anthology', href: '/revision/poetry/eduqas', type: 'poetry' },
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
           { label: 'Eduqas Lit Mock Exams', href: '/mock-exams?paper=eduqas-lit', type: 'mock' },
         ],
       },
@@ -497,7 +667,11 @@ const EDUQAS_PAPERS: Paper[] = [
           { label: 'Blood Brothers', href: '/revision/texts/blood-brothers', type: 'text' },
           { label: 'Lord of the Flies', href: '/revision/texts/lord-of-the-flies', type: 'text' },
           { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
-          { label: 'A View from the Bridge', href: '/revision/texts/a-view-from-the-bridge', type: 'text' },
+          {
+            label: 'A View from the Bridge',
+            href: '/revision/texts/a-view-from-the-bridge',
+            type: 'text',
+          },
         ],
       },
       {
@@ -525,7 +699,11 @@ const EDUQAS_PAPERS: Paper[] = [
         description: 'Structured questions on one unseen 20th-century literature extract.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
           { label: 'Eduqas Lang Mock Exams', href: '/mock-exams?paper=eduqas-lang', type: 'mock' },
         ],
       },
@@ -533,8 +711,16 @@ const EDUQAS_PAPERS: Paper[] = [
         title: 'Section B: Creative Prose Writing',
         description: 'One piece of creative prose writing from a choice of four titles.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -550,10 +736,15 @@ const EDUQAS_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Section A: Reading',
-        description: 'Structured questions on two linked non-fiction texts from different centuries.',
+        description:
+          'Structured questions on two linked non-fiction texts from different centuries.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Comparison Technique', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Comparison Technique',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'Eduqas Lang Mock Exams', href: '/mock-exams?paper=eduqas-lang', type: 'mock' },
         ],
       },
@@ -561,8 +752,16 @@ const EDUQAS_PAPERS: Paper[] = [
         title: 'Section B: Transactional/Persuasive Writing',
         description: 'Two compulsory transactional writing tasks.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -588,7 +787,11 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
         links: [
           { label: 'IGCSE Poetry Anthology', href: '/revision/poetry/edexcel', type: 'poetry' },
           { label: 'Conflict Cluster', href: '/revision/poetry/edexcel/conflict', type: 'poetry' },
-          { label: 'Time and Place Cluster', href: '/revision/poetry/edexcel/time-and-place', type: 'poetry' },
+          {
+            label: 'Time and Place Cluster',
+            href: '/revision/poetry/edexcel/time-and-place',
+            type: 'poetry',
+          },
           { label: 'IGCSE Lit Mock Exams', href: '/mock-exams?paper=igcse-lit', type: 'mock' },
         ],
       },
@@ -597,10 +800,18 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
         description: 'One extract-based question on your studied modern prose text.',
         links: [
           { label: 'Of Mice and Men', href: '/revision/texts/of-mice-and-men', type: 'text' },
-          { label: 'To Kill a Mockingbird', href: '/revision/texts/to-kill-a-mockingbird', type: 'text' },
+          {
+            label: 'To Kill a Mockingbird',
+            href: '/revision/texts/to-kill-a-mockingbird',
+            type: 'text',
+          },
           { label: 'Animal Farm', href: '/revision/texts/animal-farm', type: 'text' },
           { label: 'Things Fall Apart', href: '/revision/texts/things-fall-apart', type: 'text' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -621,7 +832,11 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
           { label: 'An Inspector Calls', href: '/revision/texts/an-inspector-calls', type: 'text' },
           { label: 'Romeo & Juliet', href: '/revision/texts/romeo-and-juliet', type: 'text' },
           { label: 'Macbeth', href: '/revision/texts/macbeth', type: 'text' },
-          { label: 'A View from the Bridge', href: '/revision/texts/a-view-from-the-bridge', type: 'text' },
+          {
+            label: 'A View from the Bridge',
+            href: '/revision/texts/a-view-from-the-bridge',
+            type: 'text',
+          },
         ],
       },
       {
@@ -630,7 +845,11 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
         links: [
           { label: 'A Christmas Carol', href: '/revision/texts/a-christmas-carol', type: 'text' },
           { label: 'Jekyll & Hyde', href: '/revision/texts/jekyll-and-hyde', type: 'text' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
           { label: 'IGCSE Lit Mock Exams', href: '/mock-exams?paper=igcse-lit', type: 'mock' },
         ],
       },
@@ -652,7 +871,8 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Question 1: Directed Writing',
-        description: 'Read a passage and respond to it in a directed writing task (e.g. letter, report).',
+        description:
+          'Read a passage and respond to it in a directed writing task (e.g. letter, report).',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           { label: 'Cambridge Reading Hub', href: '/igcse/cambridge/reading', type: 'technique' },
@@ -660,18 +880,30 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
         ],
       },
       {
-        title: 'Question 2: Writer\'s Effect',
+        title: "Question 2: Writer's Effect",
         description: 'Analyse how language is used for effect in a passage.',
         links: [
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
         title: 'Question 3: Summary',
         description: 'Write a summary using information from two passages.',
         links: [
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -690,15 +922,27 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
         title: 'Section A: Argumentative/Discursive',
         description: 'One argumentative, discursive, or persuasive writing task.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
         title: 'Section B: Descriptive/Narrative',
         description: 'One descriptive or narrative composition task.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
           { label: 'SPAG Guide', href: '/revision/language/spag', type: 'technique' },
           { label: 'Cambridge Mock Exams', href: '/mock-exams?paper=cambridge', type: 'mock' },
         ],
@@ -729,18 +973,30 @@ const CAMBRIDGE_0990_PAPERS: Paper[] = [
         ],
       },
       {
-        title: 'Question 2: Writer\'s Effect',
+        title: "Question 2: Writer's Effect",
         description: 'Analyse how language is used for effect in a passage.',
         links: [
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
         title: 'Question 3: Summary',
         description: 'Write a summary comparing information from two passages.',
         links: [
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -759,15 +1015,27 @@ const CAMBRIDGE_0990_PAPERS: Paper[] = [
         title: 'Section A: Argumentative/Discursive',
         description: 'One argumentative, discursive, or persuasive writing task.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
       {
         title: 'Section B: Descriptive/Narrative',
         description: 'One descriptive or narrative composition task.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
           { label: 'SPAG Guide', href: '/revision/language/spag', type: 'technique' },
           { label: 'Cambridge Mock Exams', href: '/mock-exams?paper=cambridge', type: 'mock' },
         ],
@@ -790,19 +1058,33 @@ const EDEXCEL_IGCSE_LANG_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Section A: Reading Non-fiction',
-        description: 'Questions on two non-fiction passages — comprehension, language analysis, comparison.',
+        description:
+          'Questions on two non-fiction passages - comprehension, language analysis, comparison.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
           { label: 'IGCSE Lang Mock Exams', href: '/mock-exams?paper=igcse-lang', type: 'mock' },
         ],
       },
       {
         title: 'Section B: Transactional Writing',
-        description: 'One transactional writing task (letter, article, report, or speech) based on the reading material.',
+        description:
+          'One transactional writing task (letter, article, report, or speech) based on the reading material.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },
@@ -819,9 +1101,14 @@ const EDEXCEL_IGCSE_LANG_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Section A: Reading Poetry and Prose',
-        description: 'Questions on an unseen poem and an unseen prose extract — language, structure and meaning.',
+        description:
+          'Questions on an unseen poem and an unseen prose extract - language, structure and meaning.',
         links: [
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           { label: 'IGCSE Lang Mock Exams', href: '/mock-exams?paper=igcse-lang', type: 'mock' },
         ],
@@ -830,8 +1117,16 @@ const EDEXCEL_IGCSE_LANG_PAPERS: Paper[] = [
         title: 'Section B: Imaginative Writing',
         description: 'One imaginative/creative writing task from a choice of titles.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -854,9 +1149,21 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
         title: 'Section A: Poetry',
         description: 'One essay question on a studied poetry text or poems from the set anthology.',
         links: [
-          { label: 'Poetry Analysis Guide', href: '/revision/poetry/unseen-poetry', type: 'poetry' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
-          { label: 'Cambridge Lit Mock Exams', href: '/mock-exams?paper=cambridge-lit', type: 'mock' },
+          {
+            label: 'Poetry Analysis Guide',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'poetry',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Cambridge Lit Mock Exams',
+            href: '/mock-exams?paper=cambridge-lit',
+            type: 'mock',
+          },
         ],
       },
       {
@@ -864,7 +1171,11 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
         description: 'One essay question on a studied prose text. Extract-based or essay format.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -882,9 +1193,21 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
         title: 'Drama',
         description: 'One essay question on a studied drama text. Passage-based or discursive.',
         links: [
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
-          { label: 'Time Management', href: '/revision/exam-technique/time-management', type: 'technique' },
-          { label: 'Cambridge Lit Mock Exams', href: '/mock-exams?paper=cambridge-lit', type: 'mock' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
+          {
+            label: 'Cambridge Lit Mock Exams',
+            href: '/mock-exams?paper=cambridge-lit',
+            type: 'mock',
+          },
         ],
       },
     ],
@@ -900,10 +1223,19 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Coursework Portfolio',
-        description: 'Two assignments on two texts from two different genres. Internally assessed, externally moderated.',
+        description:
+          'Two assignments on two texts from two different genres. Internally assessed, externally moderated.',
         links: [
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -926,17 +1258,30 @@ const IAL_EDEXCEL_PAPERS: Paper[] = [
         title: 'Section A: Post-2000 Poetry',
         description: 'One comparative essay question on an unseen poem and a studied collection.',
         links: [
-          { label: 'Unseen Poetry Practice', href: '/revision/poetry/unseen-poetry', type: 'practice' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'IAL Mock Exams', href: '/mock-exams?paper=ial', type: 'mock' },
         ],
       },
       {
         title: 'Section B: Post-2000 Prose',
-        description: 'One essay question on a studied prose text — close reading and wider textual knowledge.',
+        description:
+          'One essay question on a studied prose text - close reading and wider textual knowledge.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -952,10 +1297,15 @@ const IAL_EDEXCEL_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Drama',
-        description: 'One essay question on a studied drama text. Extract-based or discursive question.',
+        description:
+          'One essay question on a studied drama text. Extract-based or discursive question.',
         links: [
           { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'IAL Mock Exams', href: '/mock-exams?paper=ial', type: 'mock' },
         ],
       },
@@ -972,10 +1322,19 @@ const IAL_EDEXCEL_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Coursework Portfolio',
-        description: 'Two essays: one re-creative piece with commentary and one comparative essay across two texts.',
+        description:
+          'Two essays: one re-creative piece with commentary and one comparative essay across two texts.',
         links: [
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -996,18 +1355,26 @@ const KS3_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Fiction Reading',
-        description: 'Analyse fiction extracts — character, setting, language and structure.',
+        description: 'Analyse fiction extracts - character, setting, language and structure.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Question Types', href: '/revision/exam-technique/question-types', type: 'technique' },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
         ],
       },
       {
         title: 'Non-fiction Reading',
-        description: 'Understand and compare non-fiction texts — articles, speeches, letters.',
+        description: 'Understand and compare non-fiction texts - articles, speeches, letters.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -1023,18 +1390,31 @@ const KS3_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Creative Writing',
-        description: 'Develop narrative and descriptive writing with vocabulary and structural variety.',
+        description:
+          'Develop narrative and descriptive writing with vocabulary and structural variety.',
         links: [
-          { label: 'Creative Writing Guide', href: '/revision/language/writing', type: 'technique' },
+          {
+            label: 'Creative Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
           { label: 'SPAG Guide', href: '/revision/language/spag', type: 'technique' },
         ],
       },
       {
         title: 'Transactional Writing',
-        description: 'Write for purpose and audience — letters, articles, speeches and reviews.',
+        description: 'Write for purpose and audience - letters, articles, speeches and reviews.',
         links: [
-          { label: 'Transactional Writing Guide', href: '/revision/language/writing', type: 'technique' },
-          { label: 'Essay Structure', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
+            type: 'technique',
+          },
+          {
+            label: 'Essay Structure',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
         ],
       },
     ],
@@ -1050,9 +1430,14 @@ const KS3_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Speaking & Listening',
-        description: 'Practise presentations, debates and discussion skills for classroom assessment.',
+        description:
+          'Practise presentations, debates and discussion skills for classroom assessment.',
         links: [
-          { label: 'Essay Structure Guide', href: '/revision/exam-technique/essay-structure', type: 'technique' },
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
           { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
         ],
       },

@@ -19,12 +19,12 @@ import { getLocale, t } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology — The English Hub',
+      'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology - The English Hub',
     description: 'Study guide for ',
   },
-  title: 'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology',
+  title: 'Explorers or Boys Messing About? - Steven Morris - IGCSE Language A Anthology',
   description:
-    'Study guide for "Explorers or boys messing about?" by Steven Morris (Guardian, 2003 — adapted in the Edexcel IGCSE Anthology). Language analysis, structural analysis, themes and exam practice for Paper 1 Section A.',
+    'Study guide for "Explorers or boys messing about?" by Steven Morris (Guardian, 2003 - adapted in the Edexcel IGCSE Anthology). Language analysis, structural analysis, themes and exam practice for Paper 1 Section A.',
   alternates: {
     canonical:
       'https://theenglishhub.app/igcse/edexcel-lang/anthology/explorers-or-boys-messing-about',
@@ -60,9 +60,9 @@ const themes = [
     label: 'Exploration vs. recreation',
     labelAr: 'الاستكشاف في مقابل التسلية',
     detail:
-      'Morris draws a contested line between serious exploration and amateur thrill-seeking — the title itself poses the dilemma.',
+      'Morris draws a contested line between serious exploration and amateur thrill-seeking - the title itself poses the dilemma.',
     detailAr:
-      'يرسم Morris خطّاً متنازَعاً عليه بين الاستكشاف الجادّ والسعي الهاوي خلف الإثارة — والعنوان نفسه يطرح المعضلة.',
+      'يرسم Morris خطّاً متنازَعاً عليه بين الاستكشاف الجادّ والسعي الهاوي خلف الإثارة - والعنوان نفسه يطرح المعضلة.',
   },
   {
     label: 'Cost and responsibility',
@@ -76,9 +76,9 @@ const themes = [
 
 const structuralAnalysis = {
   opening:
-    'The headline poses a binary question — “Explorers or boys messing about?” — that immediately frames the article as a judgement rather than a neutral report. The reader is invited to take a side from the first line.',
+    'The headline poses a binary question - “Explorers or boys messing about?” - that immediately frames the article as a judgement rather than a neutral report. The reader is invited to take a side from the first line.',
   openingAr:
-    'يطرح العنوانُ سؤالاً ثنائيّاً — “Explorers or boys messing about?” — يؤطّر المقالَ فوراً بوصفه حُكماً لا تقريراً محايداً. ويُدعى القارئ إلى اختيار موقفٍ من السطر الأوّل.',
+    'يطرح العنوانُ سؤالاً ثنائيّاً - “Explorers or boys messing about?” - يؤطّر المقالَ فوراً بوصفه حُكماً لا تقريراً محايداً. ويُدعى القارئ إلى اختيار موقفٍ من السطر الأوّل.',
   development:
     'Morris alternates the bare facts of the incident (the crash, the Iridium phone call, the rescue) with critical voices from polar experts, building an evidence-based case that leans toward the “messing about” verdict.',
   developmentAr:
@@ -88,9 +88,9 @@ const structuralAnalysis = {
   climaxAr:
     'تتجمّع أقوى الاقتباسات الناقدة من مستكشفين مُكرَّسين في وسط المقال، حيث يبلغ ثقل الاستنكار من الخبراء أعلى تركيزه البلاغيّ.',
   resolution:
-    'The piece closes without resolving the question outright, leaving readers to weigh the evidence — but the cumulative framing has already nudged them toward scepticism of the men’s judgement.',
+    'The piece closes without resolving the question outright, leaving readers to weigh the evidence - but the cumulative framing has already nudged them toward scepticism of the men’s judgement.',
   resolutionAr:
-    'يُختم المقالُ دون حسمٍ صريحٍ للسؤال، تاركاً للقرّاء وزنَ الأدلّة — غير أنّ التأطيرَ التراكميَّ يكون قد دفعهم سلفاً نحو الارتياب من حُكم الرجلَين.',
+    'يُختم المقالُ دون حسمٍ صريحٍ للسؤال، تاركاً للقرّاء وزنَ الأدلّة - غير أنّ التأطيرَ التراكميَّ يكون قد دفعهم سلفاً نحو الارتياب من حُكم الرجلَين.',
   perspective:
     'Third-person reportage with an embedded editorial slant. Morris quotes critics far more than he quotes the men themselves, allowing voices of authority to dominate the moral verdict.',
   perspectiveAr:
@@ -99,38 +99,38 @@ const structuralAnalysis = {
 
 const writersPurpose = {
   achieve:
-    'Morris reports the rescue while simultaneously interrogating its meaning — was this a heroic mishap or a foreseeable consequence of inadequate preparation?',
+    'Morris reports the rescue while simultaneously interrogating its meaning - was this a heroic mishap or a foreseeable consequence of inadequate preparation?',
   achieveAr:
-    'يُغطّي Morris عمليّةَ الإنقاذ مُستجوِباً معناها في الوقت نفسه — هل هو تعثّرٌ بطوليّ، أم نتيجةٌ متوقَّعةٌ لقصور الاستعداد؟',
+    'يُغطّي Morris عمليّةَ الإنقاذ مُستجوِباً معناها في الوقت نفسه - هل هو تعثّرٌ بطوليّ، أم نتيجةٌ متوقَّعةٌ لقصور الاستعداد؟',
   readerFeel:
     'He wants the reader to feel uneasy about the celebration of risk-taking, and to consider the cost (human and financial) of rescue operations triggered by amateur adventuring.',
   readerFeelAr:
     'يريد للقارئ أن يشعر بضيقٍ من تمجيد المخاطرة، وأن يتأمّل الكلفة الإنسانيّة والماليّة لعمليّات الإنقاذ التي تستدعيها مغامرةُ الهواة.',
   message:
-    'The implicit argument is that being privileged enough to attempt a polar adventure does not absolve one of the responsibility to be properly prepared — and that media celebrations of such mishaps deserve scrutiny.',
+    'The implicit argument is that being privileged enough to attempt a polar adventure does not absolve one of the responsibility to be properly prepared - and that media celebrations of such mishaps deserve scrutiny.',
   messageAr:
-    'الحُجّة الضمنيّة أنّ الحظوة بإمكانيّة خوض مغامرةٍ قطبيّة لا تُعفي المرءَ من مسؤوليّة الاستعداد الجادّ — وأنّ احتفاءَ الإعلام بمثل هذه الإخفاقات يستحقّ التدقيق.',
+    'الحُجّة الضمنيّة أنّ الحظوة بإمكانيّة خوض مغامرةٍ قطبيّة لا تُعفي المرءَ من مسؤوليّة الاستعداد الجادّ - وأنّ احتفاءَ الإعلام بمثل هذه الإخفاقات يستحقّ التدقيق.',
 }
 
 const examPractice = {
   q1: {
     question: 'List four things you learn about the explorers’ expedition from the article.',
     questionAr: 'اذكر أربعةَ أشياء تعرفها عن رحلة المستكشفَين من المقال.',
-    type: 'Retrieval — 4 marks',
-    typeAr: 'الاسترجاع — ٤ درجات',
+    type: 'Retrieval - 4 marks',
+    typeAr: 'الاسترجاع - ٤ درجات',
   },
   q2: {
     question: 'How does Morris use language to convey his attitude towards the explorers’ conduct?',
     questionAr: 'كيف يستعمل Morris اللغةَ لينقل موقفه من سلوك المستكشفَين؟',
-    type: 'Language analysis — 12 marks',
-    typeAr: 'تحليل اللغة — ١٢ درجة',
+    type: 'Language analysis - 12 marks',
+    typeAr: 'تحليل اللغة - ١٢ درجة',
   },
   q3: {
     question:
       'How does Morris structure the article to lead the reader towards a particular judgement?',
     questionAr: 'كيف يبني Morris المقالَ ليقود القارئ نحو حُكمٍ بعينه؟',
-    type: 'Structural analysis — 12 marks',
-    typeAr: 'التحليل البنائيّ — ١٢ درجة',
+    type: 'Structural analysis - 12 marks',
+    typeAr: 'التحليل البنائيّ - ١٢ درجة',
   },
 }
 
@@ -140,9 +140,9 @@ const comparisonLinks = [
     author: 'Aron Ralston',
     href: '/igcse/edexcel-lang/anthology/127-hours',
     reason:
-      'Both texts concern adventurers in serious danger. Compare Morris’s critical outsider report with Ralston’s first-person survival narrative — judgement from outside vs. determination from within.',
+      'Both texts concern adventurers in serious danger. Compare Morris’s critical outsider report with Ralston’s first-person survival narrative - judgement from outside vs. determination from within.',
     reasonAr:
-      'يتناول النصّان مغامرين في خطرٍ جسيم. قارن تقريرَ Morris الناقدَ من الخارج بسرد Ralston الناجي بضمير المتكلّم — حُكمٌ من الخارج في مقابل عزيمةٍ من الداخل.',
+      'يتناول النصّان مغامرين في خطرٍ جسيم. قارن تقريرَ Morris الناقدَ من الخارج بسرد Ralston الناجي بضمير المتكلّم - حُكمٌ من الخارج في مقابل عزيمةٍ من الداخل.',
     themes: ['Adventure', 'Risk', 'Different perspectives'],
     themesAr: ['المغامرة', 'المخاطرة', 'منظورات مختلفة'],
   },
@@ -151,9 +151,9 @@ const comparisonLinks = [
     author: 'Jamie Zeppa',
     href: '/igcse/edexcel-lang/anthology/beyond-the-sky-and-the-earth',
     reason:
-      'Both texts deal with travel into challenging environments. Compare Morris’s critical reporting with Zeppa’s reflective travel memoir — the same idea of “going somewhere remote” treated very differently.',
+      'Both texts deal with travel into challenging environments. Compare Morris’s critical reporting with Zeppa’s reflective travel memoir - the same idea of “going somewhere remote” treated very differently.',
     reasonAr:
-      'يتناول النصّان السفرَ إلى بيئاتٍ عَسِرة. قارن تقريرَ Morris الناقدَ بسيرة Zeppa الرحليّة المتأمّلة — فكرةُ “الذهاب إلى مكانٍ ناءٍ” نفسُها تُعالَج بطريقتَين مختلفتَين وايد.',
+      'يتناول النصّان السفرَ إلى بيئاتٍ عَسِرة. قارن تقريرَ Morris الناقدَ بسيرة Zeppa الرحليّة المتأمّلة - فكرةُ “الذهاب إلى مكانٍ ناءٍ” نفسُها تُعالَج بطريقتَين مختلفتَين وايد.',
     themes: ['Travel', 'Risk', 'Genre contrast'],
     themesAr: ['السفر', 'المخاطرة', 'تباين الأجناس الأدبيّة'],
   },
@@ -199,11 +199,11 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               Steven Morris &middot;{' '}
               {ar ? (
                 <>
-                  مقال صحفيّ (<em>The Guardian</em>، 24 يناير 2003 — مُكيَّف للمختارات)
+                  مقال صحفيّ (<em>The Guardian</em>، 24 يناير 2003 - مُكيَّف للمختارات)
                 </>
               ) : (
                 <>
-                  Newspaper article (<em>The Guardian</em>, 24 January 2003 — adapted for the
+                  Newspaper article (<em>The Guardian</em>, 24 January 2003 - adapted for the
                   anthology)
                 </>
               )}
@@ -234,7 +234,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                   النسخة <strong className="text-foreground">المُكيَّفة</strong> المطبوعة في مختارات
                   Edexcel IGCSE Issue 2 (ISBN 978-1-446-93108-0). نسخةُ <em>Guardian</em> الأصليّة
                   المتاحة مجّاناً تختلف في الحذف والترتيب وتفاصيل المفردات. استعمل دائماً نسخةَ
-                  المختارات حين تجيب على أسئلة Edexcel — يُصحّح الممتحنون قبالةَ نصّ المختارات، لا
+                  المختارات حين تجيب على أسئلة Edexcel - يُصحّح الممتحنون قبالةَ نصّ المختارات، لا
                   قبالةَ النسخ المنشورة على الإنترنت.
                 </>
               ) : (
@@ -243,7 +243,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
                   is the <strong className="text-foreground">adapted</strong> version printed in the
                   Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0). The freely-available{' '}
                   <em>Guardian</em> original differs in cuts, re-orderings, and minor word choice.
-                  Always use the anthology version when answering Edexcel questions — examiners mark
+                  Always use the anthology version when answering Edexcel questions - examiners mark
                   against the anthology text, not online reproductions.
                 </>
               )}
@@ -263,8 +263,8 @@ export default async function ExplorersOrBoysMessingAboutPage() {
           {ar ? (
             <>
               <p>
-                في يناير 2003، حاول مغامران بريطانيّان عبور أنتاركتيكا — &ldquo;the Frozen
-                Continent&rdquo; — واضطُرّا إلى إجراء مكالمة طارئة من هاتف Iridium الفضائيّ بعد أن
+                في يناير 2003، حاول مغامران بريطانيّان عبور أنتاركتيكا - &ldquo;the Frozen
+                Continent&rdquo; - واضطُرّا إلى إجراء مكالمة طارئة من هاتف Iridium الفضائيّ بعد أن
                 وقعت رحلتهما في ورطةٍ خطيرة. وتلت ذلك عمليّةُ إنقاذ.
               </p>
               <p>
@@ -276,15 +276,15 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               <p>
                 النصّ دراسةٌ نافعة في{' '}
                 <strong className="text-foreground">كيف يُشكّل المقالُ الصحفيّ الرأيَ</strong> بينما
-                يبدو وكأنّه ينقل وقائع محايدة — عبر اختيار الاقتباسات، وترتيب الأدلّة، ومفرداتٍ
+                يبدو وكأنّه ينقل وقائع محايدة - عبر اختيار الاقتباسات، وترتيب الأدلّة، ومفرداتٍ
                 مُحمَّلة.
               </p>
             </>
           ) : (
             <>
               <p>
-                In January 2003, two British adventurers attempted a journey across Antarctica —
-                &ldquo;the Frozen Continent&rdquo; — and were forced to make an emergency call from
+                In January 2003, two British adventurers attempted a journey across Antarctica -
+                &ldquo;the Frozen Continent&rdquo; - and were forced to make an emergency call from
                 an Iridium satellite phone after their expedition ran into serious trouble. A rescue
                 operation followed.
               </p>
@@ -297,7 +297,7 @@ export default async function ExplorersOrBoysMessingAboutPage() {
               <p>
                 The text is a useful study of{' '}
                 <strong className="text-foreground">how a newspaper article shapes opinion</strong>{' '}
-                while appearing to report neutral facts — through choice of quotations, ordering of
+                while appearing to report neutral facts - through choice of quotations, ordering of
                 evidence, and loaded vocabulary.
               </p>
             </>

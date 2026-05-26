@@ -189,7 +189,7 @@ export default function DopamineDashboard() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-accent mt-3 text-center">🏅 Best day: Friday — 600 XP</p>
+            <p className="text-xs text-accent mt-3 text-center">🏅 Best day: Friday - 600 XP</p>
           </div>
         </div>
 
@@ -278,7 +278,7 @@ export default function DopamineDashboard() {
                 {mockData.user.level}
               </div>
               <div>
-                <p className="font-bold">Level {mockData.user.level} — Essay Explorer</p>
+                <p className="font-bold">Level {mockData.user.level} - Essay Explorer</p>
                 <p className="text-sm text-white/80">820 XP to Level {mockData.user.level + 1}</p>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function DopamineDashboard() {
 
         {/* Footer */}
         <div className="text-center text-muted-foreground text-xs pb-4">
-          <p>English Hub — GCSE & IGCSE English Platform</p>
+          <p>English Hub - GCSE & IGCSE English Platform</p>
         </div>
       </div>
     </div>

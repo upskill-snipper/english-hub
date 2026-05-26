@@ -73,7 +73,7 @@ export default function AffiliatePayoutsClient({
       return `${monthName} ${year}`
     }
     // Otherwise show full range
-    return `${formatDate(start)} — ${formatDate(end)}`
+    return `${formatDate(start)} - ${formatDate(end)}`
   }
 
   const nextPayoutFormatted = new Date(nextPayoutDate).toLocaleDateString('en-GB', {
@@ -246,10 +246,10 @@ export default function AffiliatePayoutsClient({
                       </td>
                       <td className="py-3 pr-4">{statusBadge(p.status)}</td>
                       <td className="py-3 pr-4 text-xs text-muted-foreground font-mono">
-                        {p.payment_reference ?? '—'}
+                        {p.payment_reference ?? '-'}
                       </td>
                       <td className="py-3 text-xs text-muted-foreground">
-                        {p.paid_at ? formatDate(p.paid_at) : '—'}
+                        {p.paid_at ? formatDate(p.paid_at) : '-'}
                       </td>
                     </tr>
                   ))}

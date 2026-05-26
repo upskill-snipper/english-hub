@@ -50,7 +50,7 @@ export async function GET(request: NextRequest, props: { params: Promise<{ jobId
       return NextResponse.json({ error: 'Invalid job ID format' }, { status: 422 })
     }
 
-    // 4. Try in-memory cache first (fast path — same serverless instance)
+    // 4. Try in-memory cache first (fast path - same serverless instance)
     const cached = getJobFromCache(jobId)
 
     if (cached) {
@@ -121,7 +121,7 @@ export async function GET(request: NextRequest, props: { params: Promise<{ jobId
       class_name?: string
     }> = Array.isArray(dbJob.users) ? dbJob.users : []
 
-    // Count duplicates — errors whose message contains "already" or "duplicate"
+    // Count duplicates - errors whose message contains "already" or "duplicate"
     const duplicates = dbErrors.filter(
       (e) =>
         e.error.toLowerCase().includes('already') ||

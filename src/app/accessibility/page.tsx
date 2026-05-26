@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Our commitment to making The English Hub accessible to all learners: a WCAG 2.2 AA target, assistive-technology support, honest known limitations, and inclusive design.',
   alternates: { canonical: 'https://theenglishhub.app/accessibility' },
   openGraph: {
-    title: 'Accessibility Statement — The English Hub',
+    title: 'Accessibility Statement - The English Hub',
     description:
       'Our commitment to making The English Hub accessible to all learners: a WCAG 2.2 AA target, assistive-technology support, honest known limitations, and inclusive design.',
   },
@@ -155,28 +155,28 @@ export default async function AccessibilityPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">{whatLead}</p>
           <ul className="mt-3 list-disc list-inside space-y-1 text-muted-foreground">
             <li>
-              <strong>{whatKeyboardName}</strong> — {whatKeyboardDesc}
+              <strong>{whatKeyboardName}</strong> - {whatKeyboardDesc}
             </li>
             <li>
-              <strong>{whatSkipName}</strong> — {whatSkipDesc}
+              <strong>{whatSkipName}</strong> - {whatSkipDesc}
             </li>
             <li>
-              <strong>{whatSemanticName}</strong> — {whatSemanticDesc}
+              <strong>{whatSemanticName}</strong> - {whatSemanticDesc}
             </li>
             <li>
-              <strong>{whatAriaName}</strong> — {whatAriaDesc}
+              <strong>{whatAriaName}</strong> - {whatAriaDesc}
             </li>
             <li>
-              <strong>{whatContrastName}</strong> — {whatContrastDesc}
+              <strong>{whatContrastName}</strong> - {whatContrastDesc}
             </li>
             <li>
-              <strong>{whatResponsiveName}</strong> — {whatResponsiveDesc}
+              <strong>{whatResponsiveName}</strong> - {whatResponsiveDesc}
             </li>
             <li>
-              <strong>{whatScreenName}</strong> — {whatScreenDesc}
+              <strong>{whatScreenName}</strong> - {whatScreenDesc}
             </li>
             <li>
-              <strong>{whatMotionName}</strong> — {whatMotionDesc}{' '}
+              <strong>{whatMotionName}</strong> - {whatMotionDesc}{' '}
               <code>prefers-reduced-motion</code>.
             </li>
           </ul>
@@ -188,13 +188,13 @@ export default async function AccessibilityPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">{limitsLead}</p>
           <ul className="mt-3 list-disc list-inside space-y-1 text-muted-foreground">
             <li>
-              <strong>{limitsInteractiveName}</strong> — {limitsInteractiveDesc}
+              <strong>{limitsInteractiveName}</strong> - {limitsInteractiveDesc}
             </li>
             <li>
-              <strong>{limitsThirdPartyName}</strong> — {limitsThirdPartyDesc}
+              <strong>{limitsThirdPartyName}</strong> - {limitsThirdPartyDesc}
             </li>
             <li>
-              <strong>{limitsPdfName}</strong> — {limitsPdfDesc}
+              <strong>{limitsPdfName}</strong> - {limitsPdfDesc}
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">{limitsAiNote}</p>
@@ -219,10 +219,10 @@ export default async function AccessibilityPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">{assessmentLead}</p>
           <ul className="mt-3 list-disc list-inside space-y-1 text-muted-foreground">
             <li>
-              <strong>{assessmentSelfName}</strong> — {assessmentSelfDesc}
+              <strong>{assessmentSelfName}</strong> - {assessmentSelfDesc}
             </li>
             <li>
-              <strong>{assessmentFeedbackName}</strong> — {assessmentFeedbackDesc}
+              <strong>{assessmentFeedbackName}</strong> - {assessmentFeedbackDesc}
             </li>
           </ul>
         </section>

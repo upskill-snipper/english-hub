@@ -129,7 +129,7 @@ const drummerHodge: PoemData = {
 
   contextAr: `<p><strong>Thomas Hardy</strong> (1840-1928) من أهم الروائيين والشعراء الإنجليز في أواخر العصر الفيكتوري وبدايات الحداثة، مولود في Dorset (الـ"Wessex" حقّه). بعد الاستقبال القاسي لرواية <em>Jude the Obscure</em> سنة 1895، تحوّل بشكل شبه كامل للشعر، وكتب حوالي ألف قصيدة قبل وفاته.</p>
 <p>قصيدة <strong>"Drummer Hodge"</strong> كتبها في نوفمبر 1899 رداً على <strong>حرب البوير الثانية</strong> (1899-1902)، اللي صارت بين الإمبراطورية البريطانية وجمهورية جنوب أفريقيا ودولة أورانج الحرة. <strong>هاي مو قصيدة من قصائد الحرب العالمية الأولى.</strong> Hardy كتبها قبل ست عشرة سنة من بداية الحرب العالمية الأولى وقبل عشرين سنة من <em>Exposure</em> أو <em>Dulce et Decorum Est</em>.</p>
-<p>القصيدة مبنية على تقرير صحفي عن طفل طبّال إنجليزي انقتل في معركة Magersfontein. Hardy يستخدم الاسم العام Wessex "Hodge" — وهو لقب عامي للفلّاح الإنجليزي — عشان يخلّيه ممثّلاً عن كل ولد ريفي إنجليزي أُرسل ليموت في حرب ما يفهمها.</p>
+<p>القصيدة مبنية على تقرير صحفي عن طفل طبّال إنجليزي انقتل في معركة Magersfontein. Hardy يستخدم الاسم العام Wessex "Hodge" - وهو لقب عامي للفلّاح الإنجليزي - عشان يخلّيه ممثّلاً عن كل ولد ريفي إنجليزي أُرسل ليموت في حرب ما يفهمها.</p>
 <p>Hardy كان معارض بشدة للحرب. القصيدة تواجه القرّاء برعب <strong>الدفن المجهول في أرض غريبة</strong>: بدون تابوت، بدون مراسم، بدون وطن. وهي من أوائل القصائد الإنجليزية اللي شكّكت في كلفة الصراع الإمبريالي.</p>
 <p><strong>قاموس المصطلحات:</strong> <em>kopje</em> = تلّ صغير؛ <em>veldt</em> = سهل عشبي مفتوح في جنوب أفريقيا؛ <em>Karoo</em> = هضبة شبه صحراوية؛ <em>gloam</em> = الغسق.</p>`,
 
@@ -141,7 +141,7 @@ STANZA 3: Yet now Hodge will be a "portion" of that "unknown plain" forever. His
 
   summaryAr: `المقطع 1: ضمير مجهول "they" يرمون جثة Drummer Hodge في الأرض بدون تابوت، "just as found". قبره ما عليه إلا kopje (تلّ صغير) على الـveldt الأفريقي. والكواكب الأجنبية تمرّ فوق رابيته كل ليلة.
 
-المقطع 2: Hodge، "fresh from his Wessex home"، أبداً ما فهم معنى المشهد الجنوب-أفريقي — الـKaroo، الـBush، الـ"dusty loam" — ولا ليش "strange stars" تطلع لعينه عند الغسق. كان ولد فوق طاقته في حرب ما يفهمها.
+المقطع 2: Hodge، "fresh from his Wessex home"، أبداً ما فهم معنى المشهد الجنوب-أفريقي - الـKaroo، الـBush، الـ"dusty loam" - ولا ليش "strange stars" تطلع لعينه عند الغسق. كان ولد فوق طاقته في حرب ما يفهمها.
 
 المقطع 3: ومع ذلك، الحين Hodge راح يصير "portion" من ذاك "unknown plain" للأبد. جسده "homely Northern" حرفياً راح ينبت في "Southern tree". والـ"strange-eyed constellations" اللي محيّرته بالأول راح يصيرون نجومه "eternally". القصيدة تنتهي بعزاء مرير: في الموت، الأرض الغريبة تحتوي عليه.`,
 
@@ -157,11 +157,11 @@ EM-DASHES AND PUNCTUATION: "Uncoffined -- just as found:" The em-dash and colon 
 
 NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath (stanza 3). The poem traces Hodge from death into the slow, strange consolation of becoming part of the foreign land.`,
 
-  formAndStructureAr: `الشكل: ثلاث مقاطع، كل مقطع ستة أبيات (sestets). مدمج، مضبوط، يشبه البالاد — شكل صغير عمداً للحياة الصغيرة اللي يحييها.
+  formAndStructureAr: `الشكل: ثلاث مقاطع، كل مقطع ستة أبيات (sestets). مدمج، مضبوط، يشبه البالاد - شكل صغير عمداً للحياة الصغيرة اللي يحييها.
 
-الوزن: تناوب بين tetrameter وtrimeter، مثل البالاد الإنجليزية. الوزن الشعبي مفجع في عدم ملاءمته للمشهد الغريب — Hardy يعطي لحناً ريفياً إنجليزياً لميتة في الـveldt الأفريقي.
+الوزن: تناوب بين tetrameter وtrimeter، مثل البالاد الإنجليزية. الوزن الشعبي مفجع في عدم ملاءمته للمشهد الغريب - Hardy يعطي لحناً ريفياً إنجليزياً لميتة في الـveldt الأفريقي.
 
-نظام القافية: ABABAB في كل مقطع — نمط بالاد محبوك بإحكام. النظام المغلق يخلق عالم صغير ومحتوى، مثل التلّ الصغير اللي يحتوي Hodge.
+نظام القافية: ABABAB في كل مقطع - نمط بالاد محبوك بإحكام. النظام المغلق يخلق عالم صغير ومحتوى، مثل التلّ الصغير اللي يحتوي Hodge.
 
 تضاد المشهد واللغة: Hardy يضع شكل البالاد الإنجليزية ومفردات Wessex ("homely"، "Northern"، "gloam") جنباً إلى جنب مع مفردات جنوب أفريقية ("kopje"، "veldt"، "Karoo"). والتصادم يجسّد اقتلاع Hodge من بيئته.
 
@@ -176,7 +176,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         '"Throw in" is the brutal verb of disposal. The em-dash before "just as found" isolates the absence of ceremony. Hardy denies Hodge every Victorian ritual of mourning -- no coffin, no preparation, no service. The colon then opens onto the description of the makeshift grave.',
       themes: ['Anonymous death', 'War', 'Imperial cost'],
       analysisAr:
-        'الفعل "throw in" فعل قاسي يدلّ على التخلّص من الشي. والشَّرَط قبل "just as found" يعزل غياب المراسم. Hardy يحرم Hodge من كل طقوس الحداد الفيكتورية — لا تابوت، لا تجهيز، لا قدّاس. ثم النقطتان تفتحان المشهد على وصف القبر الارتجالي.',
+        'الفعل "throw in" فعل قاسي يدلّ على التخلّص من الشي. والشَّرَط قبل "just as found" يعزل غياب المراسم. Hardy يحرم Hodge من كل طقوس الحداد الفيكتورية - لا تابوت، لا تجهيز، لا قدّاس. ثم النقطتان تفتحان المشهد على وصف القبر الارتجالي.',
       themesAr: ['موت مجهول', 'الحرب', 'كلفة الإمبراطورية'],
     },
     {
@@ -185,7 +185,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         '"Kopje" and "veldt" are South African words that the Wessex boy could not have known. His "landmark" -- the only sign of his existence -- is named in a language he did not speak. The geography itself is foreign to him.',
       themes: ['Displacement', 'Exile', 'Landscape'],
       analysisAr:
-        'كلمتا "kopje" و"veldt" كلمات جنوب-أفريقية ما كان يقدر ولد Wessex يعرفها. علامة قبره — الإشارة الوحيدة على وجوده — مسمّاة بلغة ما كان يحكيها. الجغرافيا نفسها غريبة عنه.',
+        'كلمتا "kopje" و"veldt" كلمات جنوب-أفريقية ما كان يقدر ولد Wessex يعرفها. علامة قبره - الإشارة الوحيدة على وجوده - مسمّاة بلغة ما كان يحكيها. الجغرافيا نفسها غريبة عنه.',
       themesAr: ['الاقتلاع', 'المنفى', 'المشهد الطبيعي'],
     },
     {
@@ -194,7 +194,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         '"Fresh" suggests both youth and naivety -- he has barely left his rural English home before being killed in a foreign war. "Wessex" is Hardy’s name for the West Country; using it makes Hodge a specific English type rather than an abstract soldier.',
       themes: ['Youth', 'Rural England', 'Innocence'],
       analysisAr:
-        'كلمة "fresh" توحي بالصغر والسذاجة مع بعض — هو بالكاد طلع من بيته الريفي الإنجليزي قبل ما ينقتل في حرب أجنبية. وكلمة "Wessex" هي اسم Hardy للجنوب الغربي الإنجليزي؛ واستخدامها يخلّي Hodge نموذج إنجليزي محدّد، مو جندي مجرّد.',
+        'كلمة "fresh" توحي بالصغر والسذاجة مع بعض - هو بالكاد طلع من بيته الريفي الإنجليزي قبل ما ينقتل في حرب أجنبية. وكلمة "Wessex" هي اسم Hardy للجنوب الغربي الإنجليزي؛ واستخدامها يخلّي Hodge نموذج إنجليزي محدّد، مو جندي مجرّد.',
       themesAr: ['الصغر', 'الريف الإنجليزي', 'البراءة'],
     },
     {
@@ -212,7 +212,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         '"Yet" pivots the poem. There is a strange consolation: Hodge becomes part of the African landscape forever. But "unknown" insists on his alienation -- even in death he does not know the place he now belongs to.',
       themes: ['Death', 'Belonging', 'Transformation'],
       analysisAr:
-        'كلمة "yet" تشكّل مفصل القصيدة. في عزاء غريب: Hodge يصير جزء من المشهد الأفريقي للأبد. بس كلمة "unknown" تُصرّ على غربته — حتى في الموت ما يعرف المكان اللي يخصّه الحين.',
+        'كلمة "yet" تشكّل مفصل القصيدة. في عزاء غريب: Hodge يصير جزء من المشهد الأفريقي للأبد. بس كلمة "unknown" تُصرّ على غربته - حتى في الموت ما يعرف المكان اللي يخصّه الحين.',
       themesAr: ['الموت', 'الانتماء', 'التحوّل'],
     },
     {
@@ -221,7 +221,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         'A literal, almost grotesque image: Hodge’s body decomposes and feeds an African tree. "Homely" and "Northern" mark his English origin; "Southern" marks his fate. The contrast captures total transformation -- the rural Wessex boy becomes vegetation in a foreign hemisphere.',
       themes: ['Transformation', 'Death', 'Nature'],
       analysisAr:
-        'صورة حرفية، شبه مرعبة: جسد Hodge يتحلّل ويغذّي شجرة أفريقية. كلمتا "homely" و"Northern" يعلّمن أصله الإنجليزي؛ وكلمة "Southern" تعلّم مصيره. والتضاد يجسّد تحوّل كامل — ولد Wessex الريفي يصير نباتاً في نصف كرة غريب.',
+        'صورة حرفية، شبه مرعبة: جسد Hodge يتحلّل ويغذّي شجرة أفريقية. كلمتا "homely" و"Northern" يعلّمن أصله الإنجليزي؛ وكلمة "Southern" تعلّم مصيره. والتضاد يجسّد تحوّل كامل - ولد Wessex الريفي يصير نباتاً في نصف كرة غريب.',
       themesAr: ['التحوّل', 'الموت', 'الطبيعة'],
     },
     {
@@ -230,7 +230,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         'The foreign stars become "his" in the closing line -- but only because he is dead. The verb "reign" gives the constellations imperial authority. There is bitter irony in "eternally": the boy who never understood these stars now lies under them forever.',
       themes: ['Time', 'Cosmic imagery', 'Final transformation'],
       analysisAr:
-        'النجوم الأجنبية تصير "حقّه" في البيت الختامي — بس فقط لأنه ميت. والفعل "reign" يعطي الكواكب سلطة إمبريالية. وفي كلمة "eternally" مفارقة مريرة: الولد اللي ما فهم هاي النجوم أبداً، راح يرقد تحتها للأبد.',
+        'النجوم الأجنبية تصير "حقّه" في البيت الختامي - بس فقط لأنه ميت. والفعل "reign" يعطي الكواكب سلطة إمبريالية. وفي كلمة "eternally" مفارقة مريرة: الولد اللي ما فهم هاي النجوم أبداً، راح يرقد تحتها للأبد.',
       themesAr: ['الزمن', 'الصور الكونية', 'التحوّل النهائي'],
     },
   ],
@@ -243,7 +243,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         'Hardy embeds Afrikaans and South African English in an otherwise English ballad. The vocabulary marks Hodge as displaced -- the very words for the landscape are foreign to him. The reader, too, must look them up, mirroring Hodge’s alienation.',
       lineRef: 2,
       effectAr:
-        'Hardy يضمّن مفردات Afrikaans والإنجليزية الجنوب-أفريقية داخل بالاد إنجليزي. والمفردات تعلّم Hodge كمقتلَع — حتى الكلمات اللي توصف المشهد غريبة عنه. والقارئ، هو الثاني، لازم يبحث عن معانيها، وهذا يحاكي اقتلاع Hodge.',
+        'Hardy يضمّن مفردات Afrikaans والإنجليزية الجنوب-أفريقية داخل بالاد إنجليزي. والمفردات تعلّم Hodge كمقتلَع - حتى الكلمات اللي توصف المشهد غريبة عنه. والقارئ، هو الثاني، لازم يبحث عن معانيها، وهذا يحاكي اقتلاع Hodge.',
     },
     {
       device: 'Anonymous "they"',
@@ -252,7 +252,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         'The unnamed "they" denies anyone responsibility for the burial. There is no individual mourner -- the burial is impersonal, mechanical, imperial. The pronoun captures the dehumanising scale of the war machine.',
       lineRef: 0,
       effectAr:
-        'الضمير "they" المجهول يحرم أي شخص من مسؤولية الدفن. ما في حدّاد فردي — الدفن غير شخصي، آلي، إمبريالي. والضمير يجسّد حجم آلة الحرب اللي تنزع الإنسانية.',
+        'الضمير "they" المجهول يحرم أي شخص من مسؤولية الدفن. ما في حدّاد فردي - الدفن غير شخصي، آلي، إمبريالي. والضمير يجسّد حجم آلة الحرب اللي تنزع الإنسانية.',
     },
     {
       device: 'Em-dash and colon',
@@ -288,7 +288,7 @@ NARRATIVE ARC: Burial (stanza 1) → background (stanza 2) → eternal aftermath
         'The English ballad form belongs at home in Wessex. Hardy applies it to a death in South Africa -- the form itself enacts the displacement, an English tune for a foreign grave.',
       lineRef: 0,
       effectAr:
-        'شكل البالاد الإنجليزي مكانه الأصلي في Wessex. Hardy يطبّقه على ميتة في جنوب أفريقيا — الشكل بنفسه يجسّد الاقتلاع، لحن إنجليزي لقبر غريب.',
+        'شكل البالاد الإنجليزي مكانه الأصلي في Wessex. Hardy يطبّقه على ميتة في جنوب أفريقيا - الشكل بنفسه يجسّد الاقتلاع، لحن إنجليزي لقبر غريب.',
     },
   ],
 }
@@ -297,7 +297,7 @@ export default function DrummerHodgeEduqasPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Drummer Hodge by Thomas Hardy — Analysis & Annotations"
+        name="Drummer Hodge by Thomas Hardy - Analysis & Annotations"
         description="Verified public-domain text of Drummer Hodge by Thomas Hardy (Second Boer War, 1899), with line-by-line study notes and themes for Eduqas GCSE English Literature."
       />
       <BreadcrumbJsonLd

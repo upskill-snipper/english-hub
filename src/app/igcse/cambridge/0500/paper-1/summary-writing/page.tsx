@@ -16,11 +16,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Summary Writing — IGCSE Language A Paper 1 Q3',
+    title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
     description:
       'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Summary Writing — IGCSE Language A Paper 1 Q3',
+  title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
   description:
     'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -61,7 +61,7 @@ const dos = [
   'Write in formal, neutral prose',
   'Connect points with: also, in addition, furthermore, similarly, equally',
   'Write a single long paragraph',
-  'Stay within 240–260 words',
+  'Stay within 240-260 words',
   'Cover points from BOTH texts',
 ]
 
@@ -99,7 +99,7 @@ export default async function SummaryWritingPage() {
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">Summary writing (Q3)</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Question 3 is worth 25 marks — the biggest single mark chunk in Paper 1. Fifteen marks are
+          Question 3 is worth 25 marks - the biggest single mark chunk in Paper 1. Fifteen marks are
           for reading (the points you find) and ten are for writing (how concisely and clearly you
           express them).
         </p>
@@ -114,7 +114,7 @@ export default async function SummaryWritingPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Reading skills — 15 marks
+              Reading skills - 15 marks
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">Content points</h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
@@ -124,13 +124,13 @@ export default async function SummaryWritingPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Writing skills — 10 marks
+              Writing skills - 10 marks
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Style, structure, own words
             </h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              Level 5 (9–10 marks): concise, fluent, cohesive, consistently in your own words. No
+              Level 5 (9-10 marks): concise, fluent, cohesive, consistently in your own words. No
               lifting.
             </p>
           </div>
@@ -183,7 +183,7 @@ export default async function SummaryWritingPage() {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-heading-sm font-heading">Don&apos;t</CardTitle>
-              <CardDescription>These habits cap you in Level 2–3.</CardDescription>
+              <CardDescription>These habits cap you in Level 2-3.</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-body-sm text-muted-foreground">
@@ -204,7 +204,7 @@ export default async function SummaryWritingPage() {
         <div className="mb-4 flex items-center gap-3">
           <Lightbulb className="size-5 text-primary" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Worked opening — dangers of urban cycling
+            Worked opening - dangers of urban cycling
           </h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">

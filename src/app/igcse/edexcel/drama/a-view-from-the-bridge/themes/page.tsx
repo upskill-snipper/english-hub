@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge Themes — Edexcel IGCSE Literature',
+    title: 'A View from the Bridge Themes - Edexcel IGCSE Literature',
     description:
       'Themes in A View from the Bridge: honour and reputation, masculinity and sexuality, law versus justice, family, immigration and tragic form.',
   },
-  title: 'A View from the Bridge Themes — Edexcel IGCSE Literature',
+  title: 'A View from the Bridge Themes - Edexcel IGCSE Literature',
   description:
     'Themes in A View from the Bridge: honour and reputation, masculinity and sexuality, law versus justice, family, immigration and tragic form.',
   alternates: {
@@ -24,50 +24,50 @@ const themes = [
   {
     title: 'Honour, reputation and name',
     intro:
-      'Eddie\u2019s deepest value is his "name" — his public standing in the close-knit Red Hook community. His final cry, "I want my name!", makes the theme explicit. Marco\u2019s honour code is starker still: an insult to his brother must be answered with physical retribution. Miller builds the play around the collision of two forms of the same value, each of which demands Eddie\u2019s destruction.',
+      'Eddie\u2019s deepest value is his "name" - his public standing in the close-knit Red Hook community. His final cry, "I want my name!", makes the theme explicit. Marco\u2019s honour code is starker still: an insult to his brother must be answered with physical retribution. Miller builds the play around the collision of two forms of the same value, each of which demands Eddie\u2019s destruction.',
     moments:
       'Eddie\u2019s conversation with Alfieri; Marco spitting in Eddie\u2019s face; the final street confrontation.',
-    quote: '”I want my name!\u2026 Marco\u2019s got my name.” — Eddie',
+    quote: '”I want my name!\u2026 Marco\u2019s got my name.” - Eddie',
   },
   {
     title: 'Masculinity and sexuality',
     intro:
-      'Eddie polices masculinity with a combination of aggression and anxious language ("the guy ain\u2019t right"). Miller stages three tests: the boxing lesson, the forced kiss of Rodolpho, and the final knife fight. Each time, the attempt to assert masculinity exposes it as fragile and, finally, self-destructive. Rodolpho\u2019s un-American male practices — singing, cooking, tailoring — are offered as a less defensive alternative.',
+      'Eddie polices masculinity with a combination of aggression and anxious language ("the guy ain\u2019t right"). Miller stages three tests: the boxing lesson, the forced kiss of Rodolpho, and the final knife fight. Each time, the attempt to assert masculinity exposes it as fragile and, finally, self-destructive. Rodolpho\u2019s un-American male practices - singing, cooking, tailoring - are offered as a less defensive alternative.',
     moments: 'The boxing scene; the Act Two kiss; Beatrice\u2019s accusation; the final fight.',
-    quote: '“He give me the look… it comes out queer, like, that\u2019s what I mean.” — Eddie',
+    quote: '“He give me the look… it comes out queer, like, that\u2019s what I mean.” - Eddie',
   },
   {
     title: 'Law versus justice',
     intro:
-      'Alfieri is the play\u2019s legal conscience. He repeatedly tells Eddie that, legally, there is nothing to be done, and that the only solution is patience — to "settle for half". Eddie\u2019s decision to use the law (calling Immigration) is, in the community\u2019s moral economy, a form of lawlessness — a betrayal of solidarity graver than any crime the cousins have committed.',
+      'Alfieri is the play\u2019s legal conscience. He repeatedly tells Eddie that, legally, there is nothing to be done, and that the only solution is patience - to "settle for half". Eddie\u2019s decision to use the law (calling Immigration) is, in the community\u2019s moral economy, a form of lawlessness - a betrayal of solidarity graver than any crime the cousins have committed.',
     moments:
       'Alfieri\u2019s Act One scene with Eddie; Eddie\u2019s phone call to Immigration; Marco\u2019s arrest and accusation.',
-    quote: '“The law is very specific. The law does not… even recognise this.” — Alfieri',
+    quote: '“The law is very specific. The law does not… even recognise this.” - Alfieri',
   },
   {
     title: 'Family and kinship',
     intro:
-      'The Carbone household is a web of kin obligations — niece, wife, cousins-by-marriage — that the play stretches until it breaks. Eddie\u2019s refusal to let Catherine grow up is framed as paternal concern; Beatrice is the first to see it as desire. Marco\u2019s responsibility to his own starving children gives his migration its moral weight and makes the betrayal sting all the more.',
+      'The Carbone household is a web of kin obligations - niece, wife, cousins-by-marriage - that the play stretches until it breaks. Eddie\u2019s refusal to let Catherine grow up is framed as paternal concern; Beatrice is the first to see it as desire. Marco\u2019s responsibility to his own starving children gives his migration its moral weight and makes the betrayal sting all the more.',
     moments:
       'The early domestic scenes; Beatrice\u2019s private conversations with Catherine; Marco\u2019s confession of family obligations.',
-    quote: '“My wife is dying of starvation… they\u2019re hungry.” — Marco',
+    quote: '“My wife is dying of starvation… they\u2019re hungry.” - Marco',
   },
   {
     title: 'Immigration and community',
     intro:
-      'Red Hook in 1950s Brooklyn was an Italian longshoremen\u2019s district with widespread informal harbouring of "submarines" — undocumented cousins. Miller lived and worked in the community while writing the play. Immigration is not a backdrop but a structural condition: the entire plot depends on Marco and Rodolpho\u2019s illegal status, which means Eddie\u2019s betrayal has legal teeth it would not otherwise have.',
+      'Red Hook in 1950s Brooklyn was an Italian longshoremen\u2019s district with widespread informal harbouring of "submarines" - undocumented cousins. Miller lived and worked in the community while writing the play. Immigration is not a backdrop but a structural condition: the entire plot depends on Marco and Rodolpho\u2019s illegal status, which means Eddie\u2019s betrayal has legal teeth it would not otherwise have.',
     moments:
       'The opening dock scenes; Vinny Bolzano\u2019s cautionary story; Marco and Rodolpho\u2019s arrest.',
     quote:
-      '“You don\u2019t know, Baltimore. This is the United States government you\u2019re playing with now.” — Eddie (before becoming exactly what he fears)',
+      '“You don\u2019t know, Baltimore. This is the United States government you\u2019re playing with now.” - Eddie (before becoming exactly what he fears)',
   },
   {
     title: 'Tragic form and Alfieri as chorus',
     intro:
-      'Miller adapts the Greek tragic template — prologue, chorus, catastrophe, recognition — to Italian-American Brooklyn. Alfieri\u2019s interjections address the audience directly, framing each scene as something already ended. The play\u2019s structure denies suspense in order to emphasise inevitability: the question is not what Eddie will do but whether he can become conscious of himself in time.',
+      'Miller adapts the Greek tragic template - prologue, chorus, catastrophe, recognition - to Italian-American Brooklyn. Alfieri\u2019s interjections address the audience directly, framing each scene as something already ended. The play\u2019s structure denies suspense in order to emphasise inevitability: the question is not what Eddie will do but whether he can become conscious of himself in time.',
     moments:
       'Alfieri\u2019s prologue and epilogue; his warnings to Eddie; the final recognition speech.',
-    quote: '“We settle for half, and I like it better.” — Alfieri',
+    quote: '“We settle for half, and I like it better.” - Alfieri',
   },
 ]
 
@@ -116,7 +116,7 @@ export default async function AViewThemesPage() {
             A View from the Bridge: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Miller’s play — honour, masculinity, law vs justice, family,
+            Analytical routes through Miller’s play - honour, masculinity, law vs justice, family,
             immigration and tragic form.
           </p>
         </div>
@@ -127,7 +127,7 @@ export default async function AViewThemesPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism.

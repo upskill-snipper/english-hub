@@ -119,7 +119,7 @@ const characters = [
   {
     name: 'Jo (Josephine)',
     description:
-      "The play's protagonist, a restless, intelligent seventeen-year-old who craves independence but is emotionally starved by her mother's neglect. Jo is sharp-tongued, creative (she draws and writes), and fiercely self-reliant, yet deeply vulnerable. Her brief relationship with Jimmy leaves her pregnant and alone, forcing her to confront the prospect of single motherhood in a society hostile to unmarried mothers. Jo resists being defined by her gender, class, or her mother's failures, but Delaney shows that personal resilience alone cannot overcome structural inequality. Jo's character arc — from defiant teenager to anxious expectant mother — embodies the play's central tension between individual agency and social constraint. She is one of the first working-class female protagonists in British drama, and her voice broke new ground in 1958.",
+      "The play's protagonist, a restless, intelligent seventeen-year-old who craves independence but is emotionally starved by her mother's neglect. Jo is sharp-tongued, creative (she draws and writes), and fiercely self-reliant, yet deeply vulnerable. Her brief relationship with Jimmy leaves her pregnant and alone, forcing her to confront the prospect of single motherhood in a society hostile to unmarried mothers. Jo resists being defined by her gender, class, or her mother's failures, but Delaney shows that personal resilience alone cannot overcome structural inequality. Jo's character arc - from defiant teenager to anxious expectant mother - embodies the play's central tension between individual agency and social constraint. She is one of the first working-class female protagonists in British drama, and her voice broke new ground in 1958.",
   },
   {
     name: 'Helen',
@@ -134,12 +134,12 @@ const characters = [
   {
     name: 'Jimmy (The Boy)',
     description:
-      "A Black sailor who has a brief, tender relationship with Jo before returning to sea. Jimmy is affectionate and romantic, proposing marriage and giving Jo a ring, but he is ultimately transient: he leaves and never returns. His racial identity is significant because Jo's mixed-race child will face prejudice in 1950s Britain. Delaney treats Jimmy with warmth and without racial caricature, presenting the interracial relationship as natural and uncontroversial in itself — the prejudice comes from society, not from the characters. Jimmy's departure leaves Jo to face the consequences of their relationship alone, underscoring the gendered inequality of sexual relationships.",
+      "A Black sailor who has a brief, tender relationship with Jo before returning to sea. Jimmy is affectionate and romantic, proposing marriage and giving Jo a ring, but he is ultimately transient: he leaves and never returns. His racial identity is significant because Jo's mixed-race child will face prejudice in 1950s Britain. Delaney treats Jimmy with warmth and without racial caricature, presenting the interracial relationship as natural and uncontroversial in itself - the prejudice comes from society, not from the characters. Jimmy's departure leaves Jo to face the consequences of their relationship alone, underscoring the gendered inequality of sexual relationships.",
   },
   {
     name: 'Geof (Geoffrey Ingham)',
     description:
-      "A quiet, caring art student who moves in with Jo after Helen's departure. Geof is implied to be gay — he has been thrown out of his lodgings, and Jo questions his sexuality directly. Despite this, he offers Jo the most stable, nurturing relationship in the play: he cooks, cleans, prepares for the baby, and proposes marriage to give her respectability. Geof challenges 1950s gender norms by performing the domestic, caring role traditionally assigned to women. His eventual expulsion by Helen's return is one of the play's most poignant moments, as Jo loses the only person who has offered her unconditional support. Delaney uses Geof to present an alternative model of family based on mutual care rather than sexual convention.",
+      "A quiet, caring art student who moves in with Jo after Helen's departure. Geof is implied to be gay - he has been thrown out of his lodgings, and Jo questions his sexuality directly. Despite this, he offers Jo the most stable, nurturing relationship in the play: he cooks, cleans, prepares for the baby, and proposes marriage to give her respectability. Geof challenges 1950s gender norms by performing the domestic, caring role traditionally assigned to women. His eventual expulsion by Helen's return is one of the play's most poignant moments, as Jo loses the only person who has offered her unconditional support. Delaney uses Geof to present an alternative model of family based on mutual care rather than sexual convention.",
   },
 ]
 
@@ -147,12 +147,12 @@ const themes = [
   {
     name: 'Class and Poverty',
     detail:
-      "The play is rooted in the material deprivation of working-class Salford. Jo and Helen's comfortless flat, their insecurity, and their dependence on men for financial survival are not incidental details but the structural conditions that shape every relationship in the play. Delaney shows that poverty limits choices: Helen marries Peter for money, Jo cannot afford proper antenatal care, and Geof's marginalisation is compounded by his lack of resources. The kitchen sink realism of the staging — bare rooms, cold flats, urban grime — insists that the audience confront the reality of working-class life rather than the comfortable middle-class drawing rooms of conventional theatre.",
+      "The play is rooted in the material deprivation of working-class Salford. Jo and Helen's comfortless flat, their insecurity, and their dependence on men for financial survival are not incidental details but the structural conditions that shape every relationship in the play. Delaney shows that poverty limits choices: Helen marries Peter for money, Jo cannot afford proper antenatal care, and Geof's marginalisation is compounded by his lack of resources. The kitchen sink realism of the staging - bare rooms, cold flats, urban grime - insists that the audience confront the reality of working-class life rather than the comfortable middle-class drawing rooms of conventional theatre.",
   },
   {
     name: 'Motherhood and Family',
     detail:
-      "The play interrogates the idealised notion of the nuclear family by presenting a household in which no conventional family structure works. Helen is a negligent mother who prioritises men over her daughter. Jo dreads repeating Helen's failures but faces single motherhood without support. Geof, the most maternal figure in the play, is not a biological parent at all. Delaney suggests that love and care matter more than biological ties or social convention, but she also shows that the absence of a supportive family structure has devastating consequences for those — especially women and children — who fall outside it.",
+      "The play interrogates the idealised notion of the nuclear family by presenting a household in which no conventional family structure works. Helen is a negligent mother who prioritises men over her daughter. Jo dreads repeating Helen's failures but faces single motherhood without support. Geof, the most maternal figure in the play, is not a biological parent at all. Delaney suggests that love and care matter more than biological ties or social convention, but she also shows that the absence of a supportive family structure has devastating consequences for those - especially women and children - who fall outside it.",
   },
   {
     name: 'Race and Prejudice',
@@ -162,12 +162,12 @@ const themes = [
   {
     name: 'Gender and Independence',
     detail:
-      "Jo's desire for independence — from her mother, from men, from the role society prescribes for her — drives the play's action. Yet Delaney shows that true independence is almost impossible for a working-class woman in 1950s Britain: Jo's pregnancy traps her in precisely the domestic situation she wanted to escape. Helen's dependence on men for financial security, and her inability to sustain an independent identity, serves as a cautionary parallel. Geof's disruption of gender roles (a man performing domestic care) highlights how rigidly 1950s society policed the boundary between male and female behaviour.",
+      "Jo's desire for independence - from her mother, from men, from the role society prescribes for her - drives the play's action. Yet Delaney shows that true independence is almost impossible for a working-class woman in 1950s Britain: Jo's pregnancy traps her in precisely the domestic situation she wanted to escape. Helen's dependence on men for financial security, and her inability to sustain an independent identity, serves as a cautionary parallel. Geof's disruption of gender roles (a man performing domestic care) highlights how rigidly 1950s society policed the boundary between male and female behaviour.",
   },
   {
     name: 'Loneliness and Belonging',
     detail:
-      "Every character in the play is, in some fundamental sense, alone. Jo is abandoned by her mother, her lover, and ultimately by Geof. Helen cannot sustain intimacy with anyone. Geof is marginalised by his sexuality. Jimmy is a transient figure with no permanent home. The play's emotional power comes from its characters' desperate, often thwarted attempts to connect with one another. Delaney suggests that belonging is not guaranteed by family, marriage, or community, but must be actively created — and that social structures in 1950s Britain make this creation extraordinarily difficult for the poor and the marginalised.",
+      "Every character in the play is, in some fundamental sense, alone. Jo is abandoned by her mother, her lover, and ultimately by Geof. Helen cannot sustain intimacy with anyone. Geof is marginalised by his sexuality. Jimmy is a transient figure with no permanent home. The play's emotional power comes from its characters' desperate, often thwarted attempts to connect with one another. Delaney suggests that belonging is not guaranteed by family, marriage, or community, but must be actively created - and that social structures in 1950s Britain make this creation extraordinarily difficult for the poor and the marginalised.",
   },
 ]
 
@@ -185,7 +185,7 @@ const dramaticTechniques = [
   {
     name: 'Staging and Set Design',
     detail:
-      "Joan Littlewood's original Theatre Workshop production used a jazz trio on stage to provide musical interludes between scenes, creating a Brechtian distancing effect that prevented the audience from becoming passively absorbed in the narrative. The sparse, functional set — a bed, a table, a gas stove — reinforces the poverty of Jo and Helen's world. The single-room setting concentrates the drama and forces characters into uncomfortable proximity. Delaney's stage directions emphasise the flat's coldness, darkness, and lack of comfort, making the physical environment an expression of emotional deprivation.",
+      "Joan Littlewood's original Theatre Workshop production used a jazz trio on stage to provide musical interludes between scenes, creating a Brechtian distancing effect that prevented the audience from becoming passively absorbed in the narrative. The sparse, functional set - a bed, a table, a gas stove - reinforces the poverty of Jo and Helen's world. The single-room setting concentrates the drama and forces characters into uncomfortable proximity. Delaney's stage directions emphasise the flat's coldness, darkness, and lack of comfort, making the physical environment an expression of emotional deprivation.",
   },
   {
     name: 'Social Commentary',
@@ -195,7 +195,7 @@ const dramaticTechniques = [
   {
     name: 'Structure and Pacing',
     detail:
-      "The two-act structure mirrors Jo's transition from dependent teenager (Act 1) to expectant mother (Act 2). Act 1 establishes the cycle of neglect and romantic illusion; Act 2 confronts the consequences. The pacing is episodic rather than tightly plotted, reflecting the shapelessness of working-class life where events happen to characters rather than being controlled by them. Key moments — Jimmy's departure, Helen's marriage, Geof's arrival — are presented without melodrama, as part of the ordinary rhythm of life.",
+      "The two-act structure mirrors Jo's transition from dependent teenager (Act 1) to expectant mother (Act 2). Act 1 establishes the cycle of neglect and romantic illusion; Act 2 confronts the consequences. The pacing is episodic rather than tightly plotted, reflecting the shapelessness of working-class life where events happen to characters rather than being controlled by them. Key moments - Jimmy's departure, Helen's marriage, Geof's arrival - are presented without melodrama, as part of the ordinary rhythm of life.",
   },
   {
     name: 'Music and Jazz',
@@ -248,7 +248,7 @@ const plotSummary = [
   {
     act: 'Act 2',
     summary:
-      "Several months later. Jo is now visibly pregnant and living alone. Geof, a quiet art student who has been evicted from his lodgings (implied to be because of his homosexuality), moves in with her. Geof cares for Jo domestically — cooking, cleaning, and preparing for the baby — and proposes marriage, which Jo gently refuses. Helen returns, having separated from Peter, and is horrified to learn that the baby's father is Black. She tries to reassert control over Jo's life, driving Geof away. The play ends with Jo alone, about to give birth, having lost the one person who genuinely cared for her. Helen has gone to the pub.",
+      "Several months later. Jo is now visibly pregnant and living alone. Geof, a quiet art student who has been evicted from his lodgings (implied to be because of his homosexuality), moves in with her. Geof cares for Jo domestically - cooking, cleaning, and preparing for the baby - and proposes marriage, which Jo gently refuses. Helen returns, having separated from Peter, and is horrified to learn that the baby's father is Black. She tries to reassert control over Jo's life, driving Geof away. The play ends with Jo alone, about to give birth, having lost the one person who genuinely cared for her. Helen has gone to the pub.",
     keyQuotations: [
       { quote: "I don't want to be a mother. I don't want to be a woman.", speaker: 'Jo' },
       { quote: 'Would you like to marry me?', speaker: 'Geof' },
@@ -448,7 +448,7 @@ export default function ATasteOfHoneyStudyGuide() {
                   Shelagh Delaney grew up in Salford, a working-class industrial city near
                   Manchester. In the 1950s, Salford was characterised by terraced housing, factory
                   work, poverty, and close-knit but economically deprived communities. The
-                  play&rsquo;s setting — a cold, comfortless flat — reflects the real living
+                  play&rsquo;s setting - a cold, comfortless flat - reflects the real living
                   conditions Delaney knew. Housing was often damp, overcrowded, and lacking basic
                   amenities. Delaney draws directly on this environment to ground her drama in
                   material reality.
@@ -464,7 +464,7 @@ export default function ATasteOfHoneyStudyGuide() {
                   A Taste of Honey belongs to the wave of &lsquo;kitchen sink realism&rsquo; that
                   transformed British theatre and cinema in the late 1950s. John Osborne&rsquo;s
                   Look Back in Anger (1956) is often cited as the movement&rsquo;s starting point,
-                  but Delaney&rsquo;s play — written when she was just eighteen — brought a
+                  but Delaney&rsquo;s play - written when she was just eighteen - brought a
                   distinctively female, northern, working-class voice to the stage. The movement
                   rejected the polished drawing-room conventions of the theatrical establishment,
                   insisting that ordinary lives deserved serious dramatic treatment.
@@ -513,8 +513,8 @@ export default function ATasteOfHoneyStudyGuide() {
                   Theatre Royal, Stratford East, in May 1958. Littlewood was a pioneering director
                   committed to working-class theatre. Her collaborative approach shaped the final
                   production significantly: she added the jazz trio, encouraged improvisation, and
-                  enhanced the play&rsquo;s Brechtian elements. The Theatre Workshop&rsquo;s ethos —
-                  accessible, politically engaged, formally experimental — was integral to the
+                  enhanced the play&rsquo;s Brechtian elements. The Theatre Workshop&rsquo;s ethos -
+                  accessible, politically engaged, formally experimental - was integral to the
                   play&rsquo;s impact.
                 </p>
               </CardContent>
@@ -598,7 +598,7 @@ export default function ATasteOfHoneyStudyGuide() {
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>
                       &bull; Analyse Geof&rsquo;s gentle, tentative language: &lsquo;Would you like
-                      to marry me?&rsquo; — contrast with Jimmy&rsquo;s romantic declarations
+                      to marry me?&rsquo; - contrast with Jimmy&rsquo;s romantic declarations
                     </li>
                     <li>
                       &bull; Discuss Geof&rsquo;s domestic actions (cooking, cleaning, preparing
@@ -779,12 +779,12 @@ export default function ATasteOfHoneyStudyGuide() {
                     <span className="font-semibold text-primary">[Interpretation]</span>. Delaney
                     uses the juxtaposition between Helen&rsquo;s biological motherhood and
                     Geof&rsquo;s nurturing care to argue that genuine parenting is defined by
-                    action, not biology — a radical proposition on the 1958 stage, where the nuclear
+                    action, not biology - a radical proposition on the 1958 stage, where the nuclear
                     family was rarely questioned{' '}
                     <span className="font-semibold text-primary">[Interpretation]</span>. By
                     structuring the play so that Jo&rsquo;s own pregnancy mirrors Helen&rsquo;s
                     earlier experience, Delaney implies that without structural change, the cycle of
-                    neglect will simply repeat — a deeply pessimistic but honest conclusion that
+                    neglect will simply repeat - a deeply pessimistic but honest conclusion that
                     refuses the comfort of a sentimental resolution{' '}
                     <span className="font-semibold text-primary">[Personal Response]</span>.
                   </p>
@@ -844,7 +844,7 @@ export default function ATasteOfHoneyStudyGuide() {
                 <li>
                   <strong className="text-foreground">Connect to context purposefully:</strong>{' '}
                   Reference 1950s Salford, attitudes to race and sexuality, the kitchen sink
-                  movement, and gender expectations — but always link context to the specific point
+                  movement, and gender expectations - but always link context to the specific point
                   you are making. Avoid generic context paragraphs.
                 </li>
                 <li>

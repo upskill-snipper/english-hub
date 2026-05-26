@@ -241,7 +241,7 @@ Stanza 4: At night, the foe sneaks into the speaker\u2019s garden to steal the a
 
 Overall meaning: Blake warns that hidden anger is far more destructive than open anger. The poem is a parable about honesty, repression and the moral damage we do to ourselves when we hide what we feel. The speaker may have killed his enemy, but he has also corrupted himself.`,
 
-  summaryAr: `Stanza 1: المتكلّم يقارن بين ردّتين على الغضب. مع صديقه، يتكلّم بصراحة عن مشاعره — والغضب يخمد. مع عدوّه، يخفي غضبه — والغضب يزيد ويكبر.
+  summaryAr: `Stanza 1: المتكلّم يقارن بين ردّتين على الغضب. مع صديقه، يتكلّم بصراحة عن مشاعره - والغضب يخمد. مع عدوّه، يخفي غضبه - والغضب يزيد ويكبر.
 
 Stanza 2: المتكلّم يربّي غضبه كأنه نبتة. يسقيه بالخوف والدموع، ويغذّيه بابتسامات كاذبة وحيل ماكرة. الاستعارة تخلّي الغضب يطلع شي يزرعه المتكلّم بإرادته، مو شي يصير له بدون قصد.
 
@@ -265,15 +265,15 @@ Repetition and parallelism: The repetition of "I" at the start of so many lines 
 
 Punctuation: Blake uses semicolons and full stops to slow the poem down, making each step in the moral collapse feel deliberate.`,
 
-  formAndStructureAr: `Form: أربعة quatrains على شكل أبيات مزدوجة القافية (AABB)، يعطي القصيدة جو بسيط شبيه بالأغنية. الشكل يذكّرنا بأناشيد الأطفال (nursery rhyme) أو بقصّة أخلاقيّة للصغار — وهذا يخلّي المضمون المظلم أكثر إزعاجاً بالتباين.
+  formAndStructureAr: `Form: أربعة quatrains على شكل أبيات مزدوجة القافية (AABB)، يعطي القصيدة جو بسيط شبيه بالأغنية. الشكل يذكّرنا بأناشيد الأطفال (nursery rhyme) أو بقصّة أخلاقيّة للصغار - وهذا يخلّي المضمون المظلم أكثر إزعاجاً بالتباين.
 
 Metre (الوزن): القصيدة في معظمها على trochaic tetrameter (أربع تفعيلات، إيقاع نازل من مشدّد لغير مشدّد). الـtrochee نادر في الشعر الإنجليزي ويخلق نبض إلحاحي تقريباً كأنه تعويذة أو ترتيل.
 
-Rhyme scheme: الـcouplets المنتظمة على AABB تعطي إحساس بالحتميّة. كل زوج من القوافي يحسّسك إنه يغلق فخّ — وهذا يعكس كيف إن المتكلّم بهدوء يغلق الفخّ على عدوّه.
+Rhyme scheme: الـcouplets المنتظمة على AABB تعطي إحساس بالحتميّة. كل زوج من القوافي يحسّسك إنه يغلق فخّ - وهذا يعكس كيف إن المتكلّم بهدوء يغلق الفخّ على عدوّه.
 
 التماثل البنائي: الـStanza 1 يبني التوازي بين الصديق والعدوّ. الـStanzas 2 و3 يطوّرون استعارة الشجرة اللي تكبر. والـStanza 4 يوصل النتيجة المظلمة. القصيدة تشتغل كحجّة سبب-ونتيجة محكمة.
 
-Volta: نقطة التحوّل في البيت الرابع، "I told it not, my wrath did grow." من هنا، القصيدة تبطّل توصف وضعين، وتركّز على وضع واحد بس — الكبت — لين توصل لنهايته الفظيعة.
+Volta: نقطة التحوّل في البيت الرابع، "I told it not, my wrath did grow." من هنا، القصيدة تبطّل توصف وضعين، وتركّز على وضع واحد بس - الكبت - لين توصل لنهايته الفظيعة.
 
 Repetition و parallelism: تكرار "I" في بداية أبيات كثيرة يخلّي المتكلّم هو مركز المساءلة الأخلاقية. والبنية المتوازية "I waterd it... I sunned it..." تأكّد إنه هو اللي يزرع الشر بإيده.
 
@@ -494,13 +494,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Healthy eating',
-      'Temptation and the deadly fruit of suppressed anger — echoing the forbidden fruit in Eden',
+      'Temptation and the deadly fruit of suppressed anger - echoing the forbidden fruit in Eden',
       'A gift',
       'Autumn harvest',
     ],
     correctIndex: 1,
     explanation:
-      "The apple alludes to the forbidden fruit in the Garden of Eden. The speaker's anger has grown into something tempting but deadly — the foe eats it and dies.",
+      "The apple alludes to the forbidden fruit in the Garden of Eden. The speaker's anger has grown into something tempting but deadly - the foe eats it and dies.",
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -526,13 +526,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Four quatrains with AABB rhyme — simple, nursery-rhyme-like form',
+      'Four quatrains with AABB rhyme - simple, nursery-rhyme-like form',
       'Free verse',
       'Blank verse',
     ],
     correctIndex: 1,
     explanation:
-      'Four quatrains with simple AABB rhyme. The nursery-rhyme quality is deliberate — Blake wrote it for Songs of Experience, using childlike form for dark adult content.',
+      'Four quatrains with simple AABB rhyme. The nursery-rhyme quality is deliberate - Blake wrote it for Songs of Experience, using childlike form for dark adult content.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -548,7 +548,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The extended metaphor presents anger as a plant that the speaker deliberately nurtures with negative emotions — fears, tears, sunning it with "deceitful wiles".',
+      'The extended metaphor presents anger as a plant that the speaker deliberately nurtures with negative emotions - fears, tears, sunning it with "deceitful wiles".',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -558,13 +558,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Wordsworth in 1800',
-      'William Blake, published in Songs of Experience (1794) — exploring how innocence is corrupted',
+      'William Blake, published in Songs of Experience (1794) - exploring how innocence is corrupted',
       'Byron in 1816',
       'Keats in 1819',
     ],
     correctIndex: 1,
     explanation:
-      'Blake published it in Songs of Experience (1794). The collection explores how the adult world corrupts innocence — in this case, how social convention (hiding anger) creates deadly outcomes.',
+      'Blake published it in Songs of Experience (1794). The collection explores how the adult world corrupts innocence - in this case, how social convention (hiding anger) creates deadly outcomes.',
     topic: 'Context',
     difficulty: 'higher',
   },
@@ -573,14 +573,14 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What is disturbing about the final stanza?',
     type: 'multiple-choice',
     options: [
-      'Nothing — it is happy',
-      'The speaker is "glad" the foe is dead — they feel no guilt, showing how suppressed anger has corrupted them entirely',
+      'Nothing - it is happy',
+      'The speaker is "glad" the foe is dead - they feel no guilt, showing how suppressed anger has corrupted them entirely',
       'The foe survives',
       'The tree is cut down',
     ],
     correctIndex: 1,
     explanation:
-      'The speaker sees the foe "outstretched beneath the tree" and is glad. The lack of guilt shows how nurturing anger has morally corrupted the speaker — they have become the poison.',
+      'The speaker sees the foe "outstretched beneath the tree" and is glad. The lack of guilt shows how nurturing anger has morally corrupted the speaker - they have become the poison.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -590,13 +590,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'To celebrate nature',
-      'The poisonous apple echoes the forbidden fruit — anger creates its own tempting, deadly Eden',
+      'The poisonous apple echoes the forbidden fruit - anger creates its own tempting, deadly Eden',
       'To describe a real garden',
       'It is coincidental',
     ],
     correctIndex: 1,
     explanation:
-      "The apple, the tree, and the garden echo Genesis. But Blake's Eden is inverted — the speaker is both serpent (tempter) and God (cultivator), and the fruit is anger, not knowledge.",
+      "The apple, the tree, and the garden echo Genesis. But Blake's Eden is inverted - the speaker is both serpent (tempter) and God (cultivator), and the fruit is anger, not knowledge.",
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -606,13 +606,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       "Nature's beauty",
-      'Anger as a living thing that grows when nurtured — suppressed wrath is organic, deliberate, and ultimately lethal',
+      'Anger as a living thing that grows when nurtured - suppressed wrath is organic, deliberate, and ultimately lethal',
       'A family tree',
       'Environmental concerns',
     ],
     correctIndex: 1,
     explanation:
-      'The tree is anger itself — planted by suppression, watered by tears and fears, sunned by deceit. It grows from emotion into a physical, deadly force. Blake shows anger as something cultivated, not spontaneous.',
+      'The tree is anger itself - planted by suppression, watered by tears and fears, sunned by deceit. It grows from emotion into a physical, deadly force. Blake shows anger as something cultivated, not spontaneous.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -642,8 +642,8 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Suppressed anger grows and kills; expressed anger resolves',
       'The speaker deliberately nurtures their anger',
-      'Biblical allusion — the poisonous apple echoes Eden',
-      'Moral corruption — the speaker feels glad, not guilty',
+      'Biblical allusion - the poisonous apple echoes Eden',
+      'Moral corruption - the speaker feels glad, not guilty',
     ],
   },
   {
@@ -651,21 +651,21 @@ const REVISION_TOPICS = [
     summary:
       'Blake uses an extended tree/plant metaphor, biblical allusion, and deceptively simple language to explore the deadly growth of anger.',
     keyPoints: [
-      'Extended metaphor — anger as a tree that grows when nurtured',
-      'Eden allusion — the apple as temptation and death',
-      '"Watered it in fears" — anger fed by negative emotions',
-      '"Glad" — the speaker\'s lack of guilt shows moral corruption',
+      'Extended metaphor - anger as a tree that grows when nurtured',
+      'Eden allusion - the apple as temptation and death',
+      '"Watered it in fears" - anger fed by negative emotions',
+      '"Glad" - the speaker\'s lack of guilt shows moral corruption',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four quatrains with AABB rhyme — the childlike nursery-rhyme form masks dark, adult content about anger and death.',
+      'Four quatrains with AABB rhyme - the childlike nursery-rhyme form masks dark, adult content about anger and death.',
     keyPoints: [
-      'AABB rhyme — simple form for complex moral content',
-      'Songs of Experience — paired with Songs of Innocence',
-      'Contrast in opening — expressed vs suppressed anger',
-      'Narrative progression — planting to harvesting death',
+      'AABB rhyme - simple form for complex moral content',
+      'Songs of Experience - paired with Songs of Innocence',
+      'Contrast in opening - expressed vs suppressed anger',
+      'Narrative progression - planting to harvesting death',
     ],
   },
 ]
@@ -680,7 +680,7 @@ export default function APoisonTreePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="A Poison Tree by William Blake — Analysis & Annotations"
+        name="A Poison Tree by William Blake - Analysis & Annotations"
         description="Line-by-line analysis of A Poison Tree with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

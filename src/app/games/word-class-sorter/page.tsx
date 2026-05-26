@@ -50,13 +50,13 @@ const CLASS_LABEL: Record<WordClass, string> = {
   determiner: 'Determiner',
 }
 
-// 64 original sentences — context decides the class (many words shift class with use)
+// 64 original sentences - context decides the class (many words shift class with use)
 const QUESTION_BANK: Question[] = [
   {
     sentence: 'The fox slipped quietly past the sleeping hounds.',
     targetWord: 'fox',
     wordClass: 'noun',
-    why: '"Fox" names an animal — it is the subject of the sentence, so it is a noun.',
+    why: '"Fox" names an animal - it is the subject of the sentence, so it is a noun.',
   },
   {
     sentence: 'They watched the ship slowly sink beneath the waves.',
@@ -74,7 +74,7 @@ const QUESTION_BANK: Question[] = [
     sentence: 'She answered the question remarkably calmly.',
     targetWord: 'calmly',
     wordClass: 'adverb',
-    why: '"Calmly" tells us how she answered — it modifies the verb, so it is an adverb.',
+    why: '"Calmly" tells us how she answered - it modifies the verb, so it is an adverb.',
   },
   {
     sentence: 'Nobody believed the strange story he told.',
@@ -122,7 +122,7 @@ const QUESTION_BANK: Question[] = [
     sentence: 'We ran fast to catch the departing bus.',
     targetWord: 'fast',
     wordClass: 'adverb',
-    why: '"Fast" tells us how we ran — it modifies the verb, so it is an adverb here.',
+    why: '"Fast" tells us how we ran - it modifies the verb, so it is an adverb here.',
   },
   {
     sentence: 'The horse set a fast pace across the moor.',
@@ -158,7 +158,7 @@ const QUESTION_BANK: Question[] = [
     sentence: 'They will champion the rights of every worker.',
     targetWord: 'champion',
     wordClass: 'verb',
-    why: 'Here "champion" means to support strongly — an action, so it is a verb.',
+    why: 'Here "champion" means to support strongly - an action, so it is a verb.',
   },
   {
     sentence: 'He spoke to her quietly behind the curtain.',
@@ -188,7 +188,7 @@ const QUESTION_BANK: Question[] = [
     sentence: 'Memories of that summer kept haunting him for years.',
     targetWord: 'haunting',
     wordClass: 'verb',
-    why: 'Here "haunting" is part of the verb (kept haunting) — an ongoing action.',
+    why: 'Here "haunting" is part of the verb (kept haunting) - an ongoing action.',
   },
   {
     sentence: 'She carefully wrapped the fragile vase in newspaper.',
@@ -451,7 +451,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 const ROUND_LENGTH = 15
 
-// Build 4–6 options: always include the correct class plus plausible distractors
+// Build 4-6 options: always include the correct class plus plausible distractors
 function buildOptions(correct: WordClass): WordClass[] {
   const optionCount = 4 + Math.floor(Math.random() * 3) // 4, 5 or 6
   const distractors = shuffle(ALL_CLASSES.filter((c) => c !== correct)).slice(0, optionCount - 1)
@@ -558,7 +558,7 @@ export default function WordClassSorterPage() {
         <GameShell
           gameId="word-class-sorter"
           title="Word Class Sorter"
-          description="Read the sentence and decide the word class of the highlighted word. Remember — context changes the answer!"
+          description="Read the sentence and decide the word class of the highlighted word. Remember - context changes the answer!"
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_LENGTH}
@@ -633,7 +633,7 @@ export default function WordClassSorterPage() {
                   <div className="flex items-center gap-2 font-semibold">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on — nicely done!
+                        <CheckCircle className="size-4" /> Spot on - nicely done!
                       </>
                     ) : (
                       <>

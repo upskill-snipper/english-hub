@@ -41,7 +41,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
       setConsentRequired(data.consent_required)
       setConsents(data.consents ?? [])
     } catch {
-      // Silently fail — banner just won't show
+      // Silently fail - banner just won't show
     } finally {
       setLoading(false)
     }

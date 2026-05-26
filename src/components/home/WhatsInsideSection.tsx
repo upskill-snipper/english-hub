@@ -39,7 +39,7 @@ const items: FeatureItem[] = [
     icon: BookOpen,
     color: 'text-primary bg-primary/10',
     title: 'Structured Courses',
-    desc: 'From KS3 foundations to GCSE and IGCSE mastery — 470+ expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
+    desc: 'From KS3 foundations to GCSE and IGCSE mastery - 470+ expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
     preview:
       'Sample topics: Inference & Deduction, Narrative Writing, Poetry Analysis, Writing for Real Purposes, Shakespeare...',
     tags: ['both'],
@@ -48,7 +48,7 @@ const items: FeatureItem[] = [
     icon: Feather,
     color: 'text-rose-400 bg-rose-500/10',
     title: '30 Interactive Poem Study Pages',
-    desc: 'Line-by-line analysis of every poem in the AQA, Edexcel & Eduqas anthologies — Power & Conflict, Love & Relationships and more.',
+    desc: 'Line-by-line analysis of every poem in the AQA, Edexcel & Eduqas anthologies - Power & Conflict, Love & Relationships and more.',
     preview:
       'Includes: Annotated text, context, structure, themes, key quotes and exam-ready interpretations...',
     tags: ['gcse'],
@@ -57,7 +57,7 @@ const items: FeatureItem[] = [
     icon: Gamepad2,
     color: 'text-fuchsia-400 bg-fuchsia-500/10',
     title: '7 GCSE-Grade Games',
-    desc: 'Fun, fast-paced games that convert your scores directly into GCSE grades 1–9 so you can see your level instantly.',
+    desc: 'Fun, fast-paced games that convert your scores directly into GCSE grades 1-9 so you can see your level instantly.',
     preview:
       'Games: Comprehension Challenge, Grade Climber, Quote Detective, Speed Analysis, Spelling Bee, Theme Matcher, Vocabulary Builder...',
     tags: ['both'],
@@ -66,7 +66,7 @@ const items: FeatureItem[] = [
     icon: TrendingUp,
     color: 'text-lime-400 bg-lime-500/10',
     title: 'Comprehensive Revision Hub',
-    desc: 'Grade-specific revision guides for Grade 5, Grade 7 and Grade 9 — plus poetry, language, set texts, exam technique and a quick quiz.',
+    desc: 'Grade-specific revision guides for Grade 5, Grade 7 and Grade 9 - plus poetry, language, set texts, exam technique and a quick quiz.',
     preview: 'Sections: Poetry, Language, Texts, Exam Technique, Grade Targets (5/7/9), Quiz...',
     tags: ['both'],
   },
@@ -74,8 +74,7 @@ const items: FeatureItem[] = [
     icon: ClipboardCheck,
     color: 'text-sky-400 bg-sky-500/10',
     title: 'Reading Assessment & Fluency Test',
-    desc:
-      'Diagnose reading age, fluency and comprehension in minutes — then get a personalised diagnostic report telling you exactly what to work on next.',
+    desc: 'Diagnose reading age, fluency and comprehension in minutes - then get a personalised diagnostic report telling you exactly what to work on next.',
     preview:
       'Includes: Timed fluency test, comprehension questions, reading-age estimate, parent-friendly report...',
     tags: ['both'],
@@ -85,7 +84,8 @@ const items: FeatureItem[] = [
     color: 'text-blue-400 bg-blue-500/10',
     title: 'Exam-Style Practice Questions',
     desc: '40+ questions modelled on real exam papers, complete with mark schemes and model answers.',
-    preview: 'Question types: Extract analysis, comparison, creative writing, essay response, unseen poetry...',
+    preview:
+      'Question types: Extract analysis, comparison, creative writing, essay response, unseen poetry...',
     tags: ['both'],
   },
   {
@@ -93,15 +93,17 @@ const items: FeatureItem[] = [
     color: 'text-purple-400 bg-purple-500/10',
     title: '2,000+ Flashcards',
     desc: 'Revise key quotes, terminology, and techniques with smart-review flashcards.',
-    preview: 'Topics: Literary devices, key quotations, grammar rules, essay vocabulary, exam command words...',
+    preview:
+      'Topics: Literary devices, key quotations, grammar rules, essay vocabulary, exam command words...',
     tags: ['both'],
   },
   {
     icon: GraduationCap,
     color: 'text-clay-600 bg-amber-500/10',
     title: 'Comprehensive Exam Guides',
-    desc: 'Detailed breakdowns for AQA, Edexcel, OCR & WJEC — paper structure, mark schemes, and expert tips.',
-    preview: 'Covers: Paper timings, assessment objectives, grade boundaries, common pitfalls to avoid...',
+    desc: 'Detailed breakdowns for AQA, Edexcel, OCR & WJEC - paper structure, mark schemes, and expert tips.',
+    preview:
+      'Covers: Paper timings, assessment objectives, grade boundaries, common pitfalls to avoid...',
     tags: ['gcse'],
   },
   {
@@ -109,7 +111,8 @@ const items: FeatureItem[] = [
     color: 'text-emerald-400 bg-emerald-500/10',
     title: 'IGCSE Exam Guides',
     desc: 'Paper structure, expert tips and band descriptors for Edexcel IGCSE and Cambridge First Language English.',
-    preview: 'Covers: Paper timings, assessment objectives, command words, unseen passages, writing for real purposes...',
+    preview:
+      'Covers: Paper timings, assessment objectives, command words, unseen passages, writing for real purposes...',
     tags: ['igcse'],
   },
   {
@@ -117,7 +120,8 @@ const items: FeatureItem[] = [
     color: 'text-emerald-400 bg-emerald-500/10',
     title: '52 Terminology Entries',
     desc: 'A searchable glossary of every literary and linguistic term you need for GCSE English.',
-    preview: 'Includes: Metaphor, Sibilance, Pathetic Fallacy, Semantic Field, Volta, Enjambment...',
+    preview:
+      'Includes: Metaphor, Sibilance, Pathetic Fallacy, Semantic Field, Volta, Enjambment...',
     tags: ['both'],
   },
   {
@@ -125,15 +129,15 @@ const items: FeatureItem[] = [
     color: 'text-red-400 bg-red-500/10',
     title: 'Certificates & Progress',
     desc: 'Track your progress through every course and earn verifiable digital certificates on completion.',
-    preview: 'Features: Progress bars, completion badges, shareable certificates, revision streaks...',
+    preview:
+      'Features: Progress bars, completion badges, shareable certificates, revision streaks...',
     tags: ['both'],
   },
   {
     icon: Timer,
     color: 'text-clay-600 bg-orange-500/10',
     title: '130+ Mock Exam Papers',
-    desc:
-      'Full-length timed mock exams for AQA, Edexcel, OCR, WJEC, IGCSE & KS3. Real exam format with model answers at every grade band.',
+    desc: 'Full-length timed mock exams for AQA, Edexcel, OCR, WJEC, IGCSE & KS3. Real exam format with model answers at every grade band.',
     preview:
       'Includes: Timed exam mode, section navigation, Grade 4-5 / 6-7 / 8-9 model answers, mark schemes...',
     tags: ['both'],
@@ -142,17 +146,16 @@ const items: FeatureItem[] = [
     icon: Sparkles,
     color: 'text-cyan-400 bg-cyan-500/10',
     title: 'AI Essay Feedback',
-    desc:
-      'Submit your essay and get instant, detailed feedback from our AI marker. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
-    preview: 'Powered by AI trained on GCSE mark schemes. Supports AQA, Edexcel, OCR & WJEC papers...',
+    desc: 'Submit your essay and get instant, detailed feedback from our AI marker. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
+    preview:
+      'Powered by AI trained on GCSE mark schemes. Supports AQA, Edexcel, OCR & WJEC papers...',
     tags: ['both'],
   },
   {
     icon: Brain,
     color: 'text-pink-400 bg-pink-500/10',
     title: 'Board-Specific Content',
-    desc:
-      'Every course, question, and resource is matched to your exam board. No wasted time on irrelevant content.',
+    desc: 'Every course, question, and resource is matched to your exam board. No wasted time on irrelevant content.',
     preview: 'Supported boards: AQA, Edexcel, Edexcel IGCSE, OCR, WJEC/Eduqas, Cambridge IGCSE...',
     tags: ['both'],
   },
@@ -161,7 +164,8 @@ const items: FeatureItem[] = [
     color: 'text-indigo-400 bg-indigo-500/10',
     title: 'Teacher Lesson Builder',
     desc: 'Teachers get access to 300+ lesson templates, class management tools, and AI marking for whole classes.',
-    preview: 'Features: Drag-and-drop builder, homework setting, printable resources, analytics dashboard...',
+    preview:
+      'Features: Drag-and-drop builder, homework setting, printable resources, analytics dashboard...',
     tags: ['teacher'],
   },
   {
@@ -169,14 +173,15 @@ const items: FeatureItem[] = [
     color: 'text-teal-400 bg-teal-500/10',
     title: 'Model Answers at Every Grade',
     desc: 'See what a Grade 4-5, 6-7, and 8-9 answer looks like for every question. Learn what gets top marks.',
-    preview: 'Annotated model answers with expert commentary showing exactly where marks are gained...',
+    preview:
+      'Annotated model answers with expert commentary showing exactly where marks are gained...',
     tags: ['both'],
   },
   {
     icon: FolderOpen,
     color: 'text-violet-400 bg-violet-500/10',
     title: 'Revision Toolkit',
-    desc: 'Flashcards, terminology glossaries, quote banks, and exam command word guides — all in one revision hub.',
+    desc: 'Flashcards, terminology glossaries, quote banks, and exam command word guides - all in one revision hub.',
     preview: 'Includes: Smart review, bookmarking, search, and filter by topic or exam board...',
     tags: ['both'],
   },
@@ -191,26 +196,22 @@ function getPoemCardOverride(board: ExamBoard): Partial<FeatureItem> | null {
     case 'aqa':
       return {
         title: '15 Power & Conflict poems (+ 15 Love & Relationships)',
-        desc:
-          'Line-by-line analysis of every poem in the AQA Power & Conflict and Love & Relationships clusters — context, structure, themes and exam-ready interpretations.',
+        desc: 'Line-by-line analysis of every poem in the AQA Power & Conflict and Love & Relationships clusters - context, structure, themes and exam-ready interpretations.',
       }
     case 'edexcel':
       return {
         title: '15 Edexcel anthology poems',
-        desc:
-          'Line-by-line analysis of every poem in the Edexcel Conflict, Relationships and Time & Place clusters — context, structure and themes.',
+        desc: 'Line-by-line analysis of every poem in the Edexcel Conflict, Relationships and Time & Place clusters - context, structure and themes.',
       }
     case 'ocr':
       return {
         title: '15 OCR anthology poems',
-        desc:
-          'Line-by-line analysis of the OCR Towards a World Unknown / Conflict / Love & Relationships clusters — context, structure and themes.',
+        desc: 'Line-by-line analysis of the OCR Towards a World Unknown / Conflict / Love & Relationships clusters - context, structure and themes.',
       }
     case 'eduqas':
       return {
         title: '18 Eduqas anthology poems',
-        desc:
-          'Line-by-line analysis of every poem in the WJEC Eduqas single anthology — context, structure, themes and exam-ready interpretations.',
+        desc: 'Line-by-line analysis of every poem in the WJEC Eduqas single anthology - context, structure, themes and exam-ready interpretations.',
       }
     default:
       return null
@@ -243,9 +244,11 @@ export default function WhatsInsideSection({ board }: { board?: ExamBoard | null
   const config = board ? getBoardConfig(board) : null
   const filtered = filterForBoard(items, board ?? null)
 
-  const heading = config ? `Your ${config.shortName} ${config.type.toUpperCase()} English toolkit` : "What\u2019s Inside"
+  const heading = config
+    ? `Your ${config.shortName} ${config.type.toUpperCase()} English toolkit`
+    : 'What\u2019s Inside'
   const sub = config
-    ? `Every tool below is mapped to ${config.fullName} — no wasted time on irrelevant content.`
+    ? `Every tool below is mapped to ${config.fullName} - no wasted time on irrelevant content.`
     : 'A comprehensive look at the tools and content waiting for you.'
 
   return (
@@ -262,12 +265,21 @@ export default function WhatsInsideSection({ board }: { board?: ExamBoard | null
               key={item.title}
               className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300"
             >
-              <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', item.color)}>
+              <div
+                className={cn(
+                  'w-11 h-11 rounded-xl flex items-center justify-center mb-5',
+                  item.color,
+                )}
+              >
                 <item.icon className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{item.title}</h3>
+              <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
+                {item.title}
+              </h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.desc}</p>
-              <p className="text-xs text-primary/60 italic leading-relaxed mt-auto">{item.preview}</p>
+              <p className="text-xs text-primary/60 italic leading-relaxed mt-auto">
+                {item.preview}
+              </p>
             </Card>
           ))}
         </div>

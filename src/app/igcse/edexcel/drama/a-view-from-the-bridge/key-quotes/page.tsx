@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge Key Quotes — Edexcel IGCSE Literature',
+    title: 'A View from the Bridge Key Quotes - Edexcel IGCSE Literature',
     description:
       'Fifteen key quotations from A View from the Bridge with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
   },
-  title: 'A View from the Bridge Key Quotes — Edexcel IGCSE Literature',
+  title: 'A View from the Bridge Key Quotes - Edexcel IGCSE Literature',
   description:
     'Fifteen key quotations from A View from the Bridge with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
   alternates: {

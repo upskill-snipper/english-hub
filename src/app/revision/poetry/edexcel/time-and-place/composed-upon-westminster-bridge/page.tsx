@@ -464,7 +464,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A busy London afternoon',
-      'The beauty of London at dawn seen from Westminster Bridge — the city in rare, peaceful stillness',
+      'The beauty of London at dawn seen from Westminster Bridge - the city in rare, peaceful stillness',
       'Building Westminster Bridge',
       'A political speech',
     ],
@@ -479,14 +479,14 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What is surprising about Wordsworth praising a city?',
     type: 'multiple-choice',
     options: [
-      'Nothing — he always wrote about cities',
-      'As a Romantic nature poet, he typically celebrated rural landscapes — praising London is unexpected',
+      'Nothing - he always wrote about cities',
+      'As a Romantic nature poet, he typically celebrated rural landscapes - praising London is unexpected',
       'He lived in London',
       'Cities were popular subjects',
     ],
     correctIndex: 1,
     explanation:
-      'Wordsworth was famous for celebrating nature and the Lake District. Praising London — an industrial, urban space — is surprising and shows the city at dawn resembles the natural sublime.',
+      'Wordsworth was famous for celebrating nature and the Lake District. Praising London - an industrial, urban space - is surprising and shows the city at dawn resembles the natural sublime.',
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -508,13 +508,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The city is ugly',
-      'The city is personified as wearing morning beauty like clothing — but this beauty is temporary, not inherent',
+      'The city is personified as wearing morning beauty like clothing - but this beauty is temporary, not inherent',
       'The city has new buildings',
       'Londoners dress well',
     ],
     correctIndex: 1,
     explanation:
-      'The simile suggests the beauty is worn like a garment — it can be taken off. The city is beautiful because it is silent and empty, not because of its nature.',
+      'The simile suggests the beauty is worn like a garment - it can be taken off. The city is beautiful because it is silent and empty, not because of its nature.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -524,7 +524,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Houses are alive',
-      'Personification creates a sense of peacefulness — the whole city is at rest, allowing its beauty to emerge',
+      'Personification creates a sense of peacefulness - the whole city is at rest, allowing its beauty to emerge',
       'People are sleeping normally',
       'It describes night',
     ],
@@ -556,13 +556,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'London is average',
-      'The view from the bridge is the most beautiful sight on Earth — an extraordinarily bold claim',
+      'The view from the bridge is the most beautiful sight on Earth - an extraordinarily bold claim',
       'The bridge is new',
       'Other places are better',
     ],
     correctIndex: 1,
     explanation:
-      "The opening is a bold superlative — nothing on Earth is more beautiful than this sight. This sets up the poem's surprising argument that a city can rival nature.",
+      "The opening is a bold superlative - nothing on Earth is more beautiful than this sight. This sets up the poem's surprising argument that a city can rival nature.",
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -572,7 +572,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They agree completely',
-      'Wordsworth sees London as beautiful and peaceful; Blake sees it as corrupt and oppressive — same city, opposite visions',
+      'Wordsworth sees London as beautiful and peaceful; Blake sees it as corrupt and oppressive - same city, opposite visions',
       "Blake's London is also beautiful",
       'They were written at the same time',
     ],
@@ -588,13 +588,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Sunrise is always beautiful',
-      'The city is beautiful because human activity has stopped — industry, commerce, and people are absent',
+      'The city is beautiful because human activity has stopped - industry, commerce, and people are absent',
       'More people are awake',
       'The buildings look different',
     ],
     correctIndex: 1,
     explanation:
-      "The city's beauty depends on human absence. Wordsworth loves London precisely when it is empty, silent, and resembles nature — not when it is a working, industrial city.",
+      "The city's beauty depends on human absence. Wordsworth loves London precisely when it is empty, silent, and resembles nature - not when it is a working, industrial city.",
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -604,13 +604,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Prayer',
-      'An exclamation of overwhelmed awe — the speaker is so moved he involuntarily cries out',
+      'An exclamation of overwhelmed awe - the speaker is so moved he involuntarily cries out',
       'Anger',
       'A greeting',
     ],
     correctIndex: 1,
     explanation:
-      'The exclamation is spontaneous and uncontrolled — a burst of genuine awe. It connects to the Romantic idea that beauty produces spiritual, almost religious experience.',
+      'The exclamation is spontaneous and uncontrolled - a burst of genuine awe. It connects to the Romantic idea that beauty produces spiritual, almost religious experience.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -622,10 +622,10 @@ const REVISION_TOPICS = [
     summary:
       "The poem celebrates London's dawn beauty, the surprising sublimity of urban landscape, and the peace of a city at rest.",
     keyPoints: [
-      'City as nature — London at dawn rivals any natural landscape',
-      'Silence and stillness — beauty depends on human absence',
-      'The Romantic sublime — even a city can produce awe',
-      'Contrast with Blake — same city, opposite visions',
+      'City as nature - London at dawn rivals any natural landscape',
+      'Silence and stillness - beauty depends on human absence',
+      'The Romantic sublime - even a city can produce awe',
+      'Contrast with Blake - same city, opposite visions',
     ],
   },
   {
@@ -633,21 +633,21 @@ const REVISION_TOPICS = [
     summary:
       'Wordsworth uses personification, simile, superlative claims, and light imagery to present London as unexpectedly beautiful.',
     keyPoints: [
-      '"Earth has not anything to show more fair" — bold superlative',
-      '"Like a garment wear" — beauty is temporary, worn clothing',
-      '"The very houses seem asleep" — peaceful personification',
-      '"Dear God!" — involuntary exclamation of awe',
+      '"Earth has not anything to show more fair" - bold superlative',
+      '"Like a garment wear" - beauty is temporary, worn clothing',
+      '"The very houses seem asleep" - peaceful personification',
+      '"Dear God!" - involuntary exclamation of awe',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'A Petrarchan sonnet — the octave describes the scene, the sestet reflects on its emotional and spiritual impact.',
+      'A Petrarchan sonnet - the octave describes the scene, the sestet reflects on its emotional and spiritual impact.',
     keyPoints: [
-      'Petrarchan sonnet — classical form for elevated subject',
+      'Petrarchan sonnet - classical form for elevated subject',
       'Octave: description of the dawn cityscape',
       'Sestet: emotional/spiritual response',
-      'Volta — shift from observation to feeling',
+      'Volta - shift from observation to feeling',
     ],
   },
 ]
@@ -662,7 +662,7 @@ export default function WestminsterBridgePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Composed Upon Westminster Bridge by William Wordsworth — Analysis & Annotations"
+        name="Composed Upon Westminster Bridge by William Wordsworth - Analysis & Annotations"
         description="Line-by-line analysis of Composed Upon Westminster Bridge with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

@@ -10,7 +10,7 @@
  * RevenueCat's REST API for the caller and run the existing
  * `reconcileEvent` helper with a synthetic event built from the current
  * state. The reconciliation code-path is therefore identical to the
- * live webhook — the only difference is the trigger.
+ * live webhook - the only difference is the trigger.
  *
  * Flow:
  *   1. Authenticate the caller via Supabase session (cookie).
@@ -21,10 +21,10 @@
  *      read any existing `Subscription` row.
  *   4. Fetch `https://api.revenuecat.com/v1/subscribers/{appUserId}`
  *      using `REVENUECAT_SECRET_API_KEY`. The appUserId is the Supabase
- *      UUID — mobile calls `Purchases.logIn(supabaseUserId)` at sign-in
+ *      UUID - mobile calls `Purchases.logIn(supabaseUserId)` at sign-in
  *      so this is the canonical identifier.
  *   5. Translate the returned `CustomerInfo` into the `RevenueCatEvent`
- *      shape the existing reconciler understands — most live mobile
+ *      shape the existing reconciler understands - most live mobile
  *      users will map to a synthetic `INITIAL_PURCHASE` (if there is
  *      an active entitlement) or to an `EXPIRATION` (if the most
  *      recent entitlement has lapsed).
@@ -49,7 +49,7 @@ import { rateLimit } from '@/lib/rate-limit'
 import { reconcileEvent } from '@/lib/revenuecat/reconcile'
 import type { RevenueCatEvent } from '@/lib/revenuecat/events'
 
-// Node runtime — `reconcileEvent` uses Prisma + crypto; never edge.
+// Node runtime - `reconcileEvent` uses Prisma + crypto; never edge.
 export const runtime = 'nodejs'
 // POST mutates Subscription state; never cache.
 export const dynamic = 'force-dynamic'
@@ -140,7 +140,7 @@ function isoToMs(value: string | null | undefined): number | undefined {
 }
 
 /**
- * Pick the "best" active entitlement from a subscriber payload — the one
+ * Pick the "best" active entitlement from a subscriber payload - the one
  * with the latest `expires_date`. Returns `null` if every entitlement has
  * already expired (or if none exist). We trust the RC field naming; the
  * reconciler is the authority on how a given product maps to plan/role.
@@ -153,7 +153,7 @@ function pickActiveEntitlement(
   const now = Date.now()
   for (const entry of Object.values(entitlements)) {
     const expiresMs = isoToMs(entry.expires_date ?? null)
-    // `expires_date === null` means lifetime entitlement — treat as
+    // `expires_date === null` means lifetime entitlement - treat as
     // infinitely active.
     const effective = expiresMs ?? Number.POSITIVE_INFINITY
     if (effective <= now) continue
@@ -171,13 +171,10 @@ function pickActiveEntitlement(
  * RevenueCat had just delivered it over the webhook.
  *
  * Returns `null` when there is no active entitlement AND no
- * subscription history to reason about — the caller short-circuits in
+ * subscription history to reason about - the caller short-circuits in
  * that case rather than fabricating an event.
  */
-function synthesiseEvent(
-  appUserId: string,
-  payload: RCSubscriberPayload,
-): RevenueCatEvent | null {
+function synthesiseEvent(appUserId: string, payload: RCSubscriberPayload): RevenueCatEvent | null {
   const active = pickActiveEntitlement(payload)
   const subscriptions = payload.subscriber.subscriptions ?? {}
 
@@ -202,7 +199,7 @@ function synthesiseEvent(
     }
   }
 
-  // No active entitlement — find the most recently expired subscription
+  // No active entitlement - find the most recently expired subscription
   // so the reconciler can stamp `cancelledAt` / `currentPeriodEnd` on
   // the row. If there is no history at all we bail out to a no-op.
   const historical = Object.entries(subscriptions)
@@ -232,10 +229,16 @@ function synthesiseEvent(
   }
 }
 
-type AllowedStore = 'APP_STORE' | 'MAC_APP_STORE' | 'PLAY_STORE' | 'AMAZON' | 'STRIPE' | 'PROMOTIONAL'
+type AllowedStore =
+  | 'APP_STORE'
+  | 'MAC_APP_STORE'
+  | 'PLAY_STORE'
+  | 'AMAZON'
+  | 'STRIPE'
+  | 'PROMOTIONAL'
 
 function normaliseStore(store: string | undefined): AllowedStore | undefined {
-  // Defensive cast — the schema enum lists the six allowed stores.
+  // Defensive cast - the schema enum lists the six allowed stores.
   // Anything else drops to `undefined` so the reconciler falls back to
   // its safe default.
   const allowed: readonly AllowedStore[] = [
@@ -266,7 +269,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       return fail('AUTH_EXPIRED', 'Your session has expired. Please sign in again.', 401)
     }
 
-    // ── 2. Rate limit — 5/min per user (Upstash) ───────────────────────
+    // ── 2. Rate limit - 5/min per user (Upstash) ───────────────────────
     const rl = await rateLimit(`revenuecat-reconcile-self:${sessionUser.id}`, {
       limit: 5,
       windowSeconds: 60,
@@ -288,7 +291,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     // ── 4. Resolve caller's Prisma id ─────────────────────────────────
     const userId = await resolveCallerPrismaId(sessionUser.id, sessionUser.email ?? null)
     if (!userId) {
-      // No Prisma row yet — the mobile client should register via
+      // No Prisma row yet - the mobile client should register via
       // /auth/register first. Surfacing 404 mirrors /mobile/devices.
       return fail('NOT_FOUND', 'User profile not initialised. Complete onboarding first.', 404)
     }
@@ -310,7 +313,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             // RevenueCat requires explicit platform, but the secret
             // key is platform-agnostic. Omit per docs § Subscribers.
           },
-          // Bounded — RC's P95 is < 500ms; timing out at 8s leaves
+          // Bounded - RC's P95 is < 500ms; timing out at 8s leaves
           // plenty of headroom for Vercel's 10s budget.
           signal: AbortSignal.timeout(8_000),
         },
@@ -328,7 +331,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     }
 
     if (rcResponse.status === 404) {
-      // RC returns 404 for an unknown app_user_id — that means the
+      // RC returns 404 for an unknown app_user_id - that means the
       // user has never authenticated with the SDK on any device. No
       // reconciliation to perform. Return the current Subscription
       // row (if any) as-is so the client sees a stable response.
@@ -352,17 +355,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       payload = (await rcResponse.json()) as RCSubscriberPayload
     } catch (err) {
       console.error('[revenuecat/reconcile-self] RC payload parse failed', err)
-      return fail(
-        'UPSTREAM_UNAVAILABLE',
-        'Subscription service returned an invalid response.',
-        502,
-      )
+      return fail('UPSTREAM_UNAVAILABLE', 'Subscription service returned an invalid response.', 502)
     }
 
     // ── 6. Synthesise an event & reconcile ─────────────────────────────
     const event = synthesiseEvent(appUserId, payload)
     if (!event) {
-      // No active entitlement, no history — nothing to reconcile. Return
+      // No active entitlement, no history - nothing to reconcile. Return
       // the existing Subscription row (likely null / free) unchanged so
       // the client can update its cache.
       const existing = await prisma.subscription.findUnique({ where: { userId } })

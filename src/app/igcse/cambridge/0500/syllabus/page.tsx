@@ -17,7 +17,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'IGCSE Language A Course Overview — The English Hub',
+    title: 'IGCSE Language A Course Overview - The English Hub',
     description:
       'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
   },
@@ -62,17 +62,17 @@ const paperContent = [
         desc: 'Short-answer comprehension questions on Text A (including word meanings and inference).',
       },
       {
-        q: 'Question 1(f) — Directed Response',
+        q: 'Question 1(f) - Directed Response',
         marks: 25,
         desc: 'A longer task based on Text A, usually a letter, interview or speech in response to the ideas in the passage. Tests reading (15) and writing (10).',
       },
       {
-        q: 'Question 2 — Language Analysis',
+        q: 'Question 2 - Language Analysis',
         marks: 15,
         desc: 'Analyse how the writer of Text B uses language to create effects. Focus on word choice, imagery and phrase selection.',
       },
       {
-        q: 'Question 3 — Summary',
+        q: 'Question 3 - Summary',
         marks: 25,
         desc: 'Summarise information from Texts A and C in about 250 words. Tests reading (15) and writing (10).',
       },
@@ -86,14 +86,14 @@ const paperContent = [
     aoSplit: 'Writing skills 50 marks • Reading skills 30 marks',
     questions: [
       {
-        q: 'Section A — Directed Writing',
+        q: 'Section A - Directed Writing',
         marks: 40,
-        desc: 'Read one or two short texts and respond in a specific form: a letter, speech, article or report. 250–350 words. Marked on reading (15) and writing (25).',
+        desc: 'Read one or two short texts and respond in a specific form: a letter, speech, article or report. 250-350 words. Marked on reading (15) and writing (25).',
       },
       {
-        q: 'Section B — Composition (choose one)',
+        q: 'Section B - Composition (choose one)',
         marks: 40,
-        desc: 'Either a descriptive composition (creating vivid setting and atmosphere) or a narrative composition (telling a focused, well-structured story). 350–450 words. Marked on content and structure (16) and style and accuracy (24).',
+        desc: 'Either a descriptive composition (creating vivid setting and atmosphere) or a narrative composition (telling a focused, well-structured story). 350-450 words. Marked on content and structure (16) and style and accuracy (24).',
       },
     ],
   },
@@ -227,7 +227,7 @@ export default async function SyllabusPage() {
                       {paper.paper}: {paper.title}
                     </CardTitle>
                     <CardDescription>
-                      {paper.duration} — {paper.marks} marks — {paper.aoSplit}
+                      {paper.duration} - {paper.marks} marks - {paper.aoSplit}
                     </CardDescription>
                   </div>
                   <Badge className="bg-primary/10 text-primary border-primary/20">

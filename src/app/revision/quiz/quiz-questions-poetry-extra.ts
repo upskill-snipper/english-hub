@@ -69,7 +69,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     options: ['The soldier', 'The harlot', 'The chimney-sweeper', 'The king'],
     correctIndex: 2,
     explanation:
-      'The "Chimney-sweepers cry" appalls "every blackning Church"—Blake suggests the Church is morally blackened by its complicity in the exploitation of child labour, while the soot of industry literally blackens its walls. This double meaning attacks institutional hypocrisy (AO2/AO3).',
+      'The "Chimney-sweepers cry" appalls "every blackning Church"-Blake suggests the Church is morally blackened by its complicity in the exploitation of child labour, while the soot of industry literally blackens its walls. This double meaning attacks institutional hypocrisy (AO2/AO3).',
     boards: ['aqa'],
   },
   {
@@ -96,7 +96,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     options: ['Hyperbole only', 'Oxymoron / paradox', 'Personification', 'Rhetorical question'],
     correctIndex: 1,
     explanation:
-      'The phrase "huge nothing" is paradoxical/oxymoronic: nothing cannot be huge. Heaney captures the way that an invisible, intangible force—wind, fear, perhaps political violence—can dominate human experience. The line\'s simplicity makes the paradox land with force (AO2).',
+      'The phrase "huge nothing" is paradoxical/oxymoronic: nothing cannot be huge. Heaney captures the way that an invisible, intangible force-wind, fear, perhaps political violence-can dominate human experience. The line\'s simplicity makes the paradox land with force (AO2).',
     boards: ['aqa'],
   },
   {
@@ -112,7 +112,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hughes drops the reader in medias res. The present-participle "running" denies any establishing context, mirroring the soldier\'s loss of orientation. The poem\'s frantic structure—broken sentences, dashes, enjambment—dramatises the collapse of patriotic ideals into instinctive terror (AO2).',
+      'Hughes drops the reader in medias res. The present-participle "running" denies any establishing context, mirroring the soldier\'s loss of orientation. The poem\'s frantic structure-broken sentences, dashes, enjambment-dramatises the collapse of patriotic ideals into instinctive terror (AO2).',
     boards: ['aqa'],
   },
   {
@@ -128,7 +128,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The simile reframes "King, honour, human dignity, etcetera" as "luxuries"—items shed when survival is the only goal. Hughes attacks the propaganda that lured young men into the trenches, showing how abstract values evaporate in the face of bodily fear (AO2/AO3).',
+      'The simile reframes "King, honour, human dignity, etcetera" as "luxuries"-items shed when survival is the only goal. Hughes attacks the propaganda that lured young men into the trenches, showing how abstract values evaporate in the face of bodily fear (AO2/AO3).',
     boards: ['aqa'],
   },
   {
@@ -261,7 +261,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Paper—maps, holy books, receipts, "tissue" itself—stands for the fragile structures we build to govern and remember our lives. Dharker contrasts paper\'s vulnerability with its enduring power, asking what would happen if humans were as transparent as the things they create (AO2).',
+      'Paper-maps, holy books, receipts, "tissue" itself-stands for the fragile structures we build to govern and remember our lives. Dharker contrasts paper\'s vulnerability with its enduring power, asking what would happen if humans were as transparent as the things they create (AO2).',
     boards: ['aqa'],
   },
   {
@@ -355,7 +355,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The Duke is enraged that the Duchess responded warmly to everyone—not just to his "gift of a nine-hundred-years-old name". Browning uses the Duke\'s self-incriminating speech to expose aristocratic, patriarchal power that demands ownership of female attention (AO2/AO3).',
+      'The Duke is enraged that the Duchess responded warmly to everyone-not just to his "gift of a nine-hundred-years-old name". Browning uses the Duke\'s self-incriminating speech to expose aristocratic, patriarchal power that demands ownership of female attention (AO2/AO3).',
     boards: ['aqa'],
   },
   {
@@ -390,7 +390,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     id: 'poetry-extra-026',
     topic: 'poetry',
     question:
-      'Shelley\'s "Love\'s Philosophy" argues that natural elements all combine — to what end?',
+      'Shelley\'s "Love\'s Philosophy" argues that natural elements all combine - to what end?',
     options: [
       'To prove that love is impossible',
       'To persuade the addressee that she should kiss the speaker',
@@ -445,7 +445,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The ABABB pattern looks orderly but the repeated final B is subtly off-balance—an apt aural emblem for a speaker whose calm tone hides homicidal obsession. Browning matches form to a deranged psychology (AO2).',
+      'The ABABB pattern looks orderly but the repeated final B is subtly off-balance-an apt aural emblem for a speaker whose calm tone hides homicidal obsession. Browning matches form to a deranged psychology (AO2).',
     boards: ['aqa'],
   },
   {
@@ -508,7 +508,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The single-word sentence "Lethal." stops the poem dead. Duffy warns that love\'s ring/possession can be deadly, alluding both to wedding rings and to a knife\'s blade. The minor sentence creates emphatic finality—form mirrors danger (AO2).',
+      'The single-word sentence "Lethal." stops the poem dead. Duffy warns that love\'s ring/possession can be deadly, alluding both to wedding rings and to a knife\'s blade. The minor sentence creates emphatic finality-form mirrors danger (AO2).',
     boards: ['aqa'],
   },
   {
@@ -523,7 +523,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem mourns a secret relationship: the speaker hears the lover\'s name "in silence and tears" because he cannot acknowledge her publicly. Cold imagery ("colder thy kiss") and the closing stanza\'s prediction—"with silence and tears"—frame the affair as a private, enduring wound (AO2/AO3).',
+      'The poem mourns a secret relationship: the speaker hears the lover\'s name "in silence and tears" because he cannot acknowledge her publicly. Cold imagery ("colder thy kiss") and the closing stanza\'s prediction-"with silence and tears"-frame the affair as a private, enduring wound (AO2/AO3).',
     boards: ['aqa'],
   },
   {
@@ -538,7 +538,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hardy sets the scene by a pond on a winter day with "the sun was white, as though chidden of God". The greyscale palette ("starving sod", "grayish leaves") embodies the emotional deadness of a love at its end—pathetic fallacy as moral landscape (AO2).',
+      'Hardy sets the scene by a pond on a winter day with "the sun was white, as though chidden of God". The greyscale palette ("starving sod", "grayish leaves") embodies the emotional deadness of a love at its end-pathetic fallacy as moral landscape (AO2).',
     boards: ['aqa'],
   },
   {
@@ -553,7 +553,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The poem cycles back to the opening scene, but now distilled into a "lesson". The bleak pond and "tree, / And a pond edged with grayish leaves" become a fixed image of betrayal—Hardy uses circular structure to suggest the experience has shaped his whole worldview (AO2).',
+      'The poem cycles back to the opening scene, but now distilled into a "lesson". The bleak pond and "tree, / And a pond edged with grayish leaves" become a fixed image of betrayal-Hardy uses circular structure to suggest the experience has shaped his whole worldview (AO2).',
     boards: ['aqa'],
   },
   {
@@ -568,7 +568,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'After "two days of rain", a couple walk in silence; the swans paired on the water mirror what the couple might recover. By the end the speakers\' hands "[swim] the distance between us" and "folded, one over the other"—the swan imagery transfers to them (AO2).',
+      'After "two days of rain", a couple walk in silence; the swans paired on the water mirror what the couple might recover. By the end the speakers\' hands "[swim] the distance between us" and "folded, one over the other"-the swan imagery transfers to them (AO2).',
     boards: ['aqa'],
   },
   {
@@ -584,7 +584,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The mother holds the "zero-end" of the tape measure while the son climbs into the loft. The tape becomes an "unreeling / years between us"—an umbilical bond that must extend or break. Form (uneven sonnet-like 15 lines) signals love that cannot quite stay neatly contained (AO2).',
+      'The mother holds the "zero-end" of the tape measure while the son climbs into the loft. The tape becomes an "unreeling / years between us"-an umbilical bond that must extend or break. Form (uneven sonnet-like 15 lines) signals love that cannot quite stay neatly contained (AO2).',
     boards: ['aqa'],
   },
   {
@@ -599,7 +599,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The closing image of the speaker on a stepladder, anchor or kite, ready "to fall or fly", refuses neat resolution. Armitage uses the open ending to capture the fragile balance of growing up—autonomy is risk as well as freedom (AO2).',
+      'The closing image of the speaker on a stepladder, anchor or kite, ready "to fall or fly", refuses neat resolution. Armitage uses the open ending to capture the fragile balance of growing up-autonomy is risk as well as freedom (AO2).',
     boards: ['aqa'],
   },
   {
@@ -646,7 +646,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The newlywed shopkeeper neglects the till to be with his wife upstairs. Nagra blends Punjabi-English ("Punglish"), pop culture and traditional ghazal motifs to celebrate ordinary, modern, multicultural love—form and voice are the politics (AO2/AO3).',
+      'The newlywed shopkeeper neglects the till to be with his wife upstairs. Nagra blends Punjabi-English ("Punglish"), pop culture and traditional ghazal motifs to celebrate ordinary, modern, multicultural love-form and voice are the politics (AO2/AO3).',
     boards: ['aqa'],
   },
   {
@@ -708,7 +708,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker pictures her mother as a glamorous teenager "ten years away" from her birth. The reversal of possession in the title—"Before You Were Mine"—asks who owns whom in mother–daughter love. Sensory detail (the "Marilyn" pose) animates the imagined past (AO2/AO3).',
+      'The speaker pictures her mother as a glamorous teenager "ten years away" from her birth. The reversal of possession in the title-"Before You Were Mine"-asks who owns whom in mother-daughter love. Sensory detail (the "Marilyn" pose) animates the imagined past (AO2/AO3).',
     boards: ['aqa'],
   },
   {
@@ -739,7 +739,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Modifying the sonnet (length, rhyme, voice) lets contemporary poets honour the form's romantic heritage while critiquing its assumptions—e.g. patriarchal idealisation of women. Awareness of form versus tradition is a strong AO2/AO3 move in essays.",
+      "Modifying the sonnet (length, rhyme, voice) lets contemporary poets honour the form's romantic heritage while critiquing its assumptions-e.g. patriarchal idealisation of women. Awareness of form versus tradition is a strong AO2/AO3 move in essays.",
     boards: ['aqa'],
   },
   {
@@ -755,7 +755,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Both dramatic monologues feature speakers who silence their partner—Porphyria literally strangled, the Duchess reduced to a painting "behind a curtain". Browning critiques 19th-century patriarchal ideologies by allowing the speakers to incriminate themselves through their own voices (AO2/AO3).',
+      'Both dramatic monologues feature speakers who silence their partner-Porphyria literally strangled, the Duchess reduced to a painting "behind a curtain". Browning critiques 19th-century patriarchal ideologies by allowing the speakers to incriminate themselves through their own voices (AO2/AO3).',
     boards: ['aqa'],
   },
 
@@ -768,7 +768,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     options: ['Anaphora', 'Oxymoron', 'Apostrophe', 'Litotes'],
     correctIndex: 0,
     explanation:
-      'Anaphora—"You may…you may…you may"—gives the poem a defiant, sermonic rhythm. The repeated structure both anticipates oppressors\' attacks and overrides them; the speaker\'s "I rise" refrain, also anaphoric, asserts collective, historical resilience (AO2/AO3).',
+      'Anaphora-"You may…you may…you may"-gives the poem a defiant, sermonic rhythm. The repeated structure both anticipates oppressors\' attacks and overrides them; the speaker\'s "I rise" refrain, also anaphoric, asserts collective, historical resilience (AO2/AO3).',
     boards: ['edexcel'],
   },
   {
@@ -829,7 +829,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Dharker collapses water and wealth—"fortune"—to make the reader recognise what is taken for granted in richer countries. Enjambment ("rush / of fortune") mimics the gushing flow, while diction conveys both scarcity and ecstatic joy (AO2).',
+      'Dharker collapses water and wealth-"fortune"-to make the reader recognise what is taken for granted in richer countries. Enjambment ("rush / of fortune") mimics the gushing flow, while diction conveys both scarcity and ecstatic joy (AO2).',
     boards: ['edexcel'],
   },
   {
@@ -844,7 +844,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker imagines her "mother tongue" as a physical organ that "rots" in the mouth that must speak the "foreign tongue". Inserted Gujarati script and transliteration enact the language\'s persistent return in dreams—form embodies linguistic identity (AO2/AO3).',
+      'The speaker imagines her "mother tongue" as a physical organ that "rots" in the mouth that must speak the "foreign tongue". Inserted Gujarati script and transliteration enact the language\'s persistent return in dreams-form embodies linguistic identity (AO2/AO3).',
     boards: ['edexcel'],
   },
   {
@@ -891,7 +891,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      // VERIFIED: gillianclarke.co.uk — "rosy in the heat" is not in the poem; the actual phrase is "rosy, / Defiant glare". The "tight / Red rope of love" is from stanza one.
+      // VERIFIED: gillianclarke.co.uk - "rosy in the heat" is not in the poem; the actual phrase is "rosy, / Defiant glare". The "tight / Red rope of love" is from stanza one.
       'Gillian Clarke\'s "Catrin" centres on the bond between mother and daughter, both at birth and during a teenage standoff (her "rosy, / Defiant glare"), where the "tight / Red rope of love" still ties them. Form uses irregular line lengths to dramatise tension (AO2).',
     boards: ['edexcel'],
   },
@@ -933,7 +933,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     options: ['The Somme, 1916', 'Waterloo, 1815', 'Agincourt, 1415', 'Ypres, 1914'],
     correctIndex: 0,
     explanation:
-      'Sheers commemorates the Welsh dead at Mametz Wood during the Battle of the Somme. Farmers turning the soil decades later "find them", their bones surfacing like "a chit of bone, the china plate of a shoulder blade"—imagery of fragile crockery dignifies the dead (AO2/AO3).',
+      'Sheers commemorates the Welsh dead at Mametz Wood during the Battle of the Somme. Farmers turning the soil decades later "find them", their bones surfacing like "a chit of bone, the china plate of a shoulder blade"-imagery of fragile crockery dignifies the dead (AO2/AO3).',
     boards: ['edexcel'],
   },
   {
@@ -964,7 +964,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      // VERIFIED: WFU Press / LitCharts — "car-keys" is hyphenated in Carson's text.
+      // VERIFIED: WFU Press / LitCharts - "car-keys" is hyphenated in Carson's text.
       'Question marks, full stops, exclamation marks become flying nails and shrapnel. Carson literalises punctuation as violence: "It was raining exclamation marks, / Nuts, bolts, nails, car-keys". The form falters into broken lines, mirroring the speaker\'s panicked stutter (AO2/AO3).',
     boards: ['edexcel'],
   },
@@ -996,7 +996,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The child observes that "the same chain of mountains encompassed all of us"—the soil, mud, weather are identical on both sides. Adult patriotism is gently undermined by the child\'s plain observation; the poem becomes a meditation on how nationhood is constructed (AO2/AO3).',
+      'The child observes that "the same chain of mountains encompassed all of us"-the soil, mud, weather are identical on both sides. Adult patriotism is gently undermined by the child\'s plain observation; the poem becomes a meditation on how nationhood is constructed (AO2/AO3).',
     boards: ['edexcel'],
   },
   {
@@ -1057,7 +1057,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'The poem\'s catechism—"What\'s that…?"—invites the reader to recognise that a flag is "just a piece of cloth" yet inspires people to kill and die. Agard\'s tightly patterned tercets and refrain structure expose how nationalism manipulates symbol (AO2/AO3).',
+      'The poem\'s catechism-"What\'s that…?"-invites the reader to recognise that a flag is "just a piece of cloth" yet inspires people to kill and die. Agard\'s tightly patterned tercets and refrain structure expose how nationalism manipulates symbol (AO2/AO3).',
     boards: ['edexcel'],
   },
 
@@ -1080,7 +1080,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
   {
     id: 'poetry-extra-072',
     topic: 'poetry',
-    // VERIFIED: Poetry Foundation/LitCharts — "Hawk Roosting" is by Ted Hughes alone (no Sheers attribution).
+    // VERIFIED: Poetry Foundation/LitCharts - "Hawk Roosting" is by Ted Hughes alone (no Sheers attribution).
     question: 'Ted Hughes\'s "Hawk Roosting" (Eduqas anthology) is voiced by whom?',
     options: [
       'A naturalist observer',
@@ -1117,7 +1117,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Owen\'s simile "His hanging face, like a devil\'s sick of sin" makes the soldier\'s suffering monstrous yet pathetic—even devils would be sickened. The image fuels Owen\'s closing attack on the "old Lie" of patriotic glory (AO2/AO3).',
+      'Owen\'s simile "His hanging face, like a devil\'s sick of sin" makes the soldier\'s suffering monstrous yet pathetic-even devils would be sickened. The image fuels Owen\'s closing attack on the "old Lie" of patriotic glory (AO2/AO3).',
     boards: ['eduqas', 'ocr'],
   },
   {
@@ -1203,7 +1203,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     options: ['"The Soldier"', '"Futility"', '"MCMXIV"', '"Disabled"'],
     correctIndex: 0,
     explanation:
-      '"The Soldier" (1914) frames death in war as a patriotic gift: any "corner of a foreign field…is for ever England". The Petrarchan sonnet form lends the speaker\'s idealism dignity—Brooke\'s position is often contrasted with Owen\'s critique (AO2/AO3).',
+      '"The Soldier" (1914) frames death in war as a patriotic gift: any "corner of a foreign field…is for ever England". The Petrarchan sonnet form lends the speaker\'s idealism dignity-Brooke\'s position is often contrasted with Owen\'s critique (AO2/AO3).',
     boards: ['ocr', 'eduqas'],
   },
   {
@@ -1224,7 +1224,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
   {
     id: 'poetry-extra-082',
     topic: 'poetry',
-    question: 'Robert Frost\'s "Out, Out—" tells the story of which event?',
+    question: 'Robert Frost\'s "Out, Out-" tells the story of which event?',
     options: [
       'A boy losing his hand in a buzz-saw accident on a New England farm, and then dying',
       'A soldier returning home from war',
@@ -1233,7 +1233,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'The blank-verse narrative title alludes to Macbeth ("Out, out, brief candle!"). The boy\'s death is reported with brutal economy: "And then—the watcher at his pulse took fright. / No one believed". The poem\'s flat, witnessing tone amplifies horror (AO2/AO3).',
+      'The blank-verse narrative title alludes to Macbeth ("Out, out, brief candle!"). The boy\'s death is reported with brutal economy: "And then-the watcher at his pulse took fright. / No one believed". The poem\'s flat, witnessing tone amplifies horror (AO2/AO3).',
     boards: ['ocr', 'eduqas'],
   },
   {
@@ -1242,13 +1242,13 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     question: 'In Edward Thomas\'s "Adlestrop", why is the train\'s stop significant?',
     options: [
       'It marks an outbreak of war',
-      'It is "unwontedly" — an ordinary halt that becomes a transcendent moment of stillness',
+      'It is "unwontedly" - an ordinary halt that becomes a transcendent moment of stillness',
       'It marks a derailment',
       'A famous person boards the train',
     ],
     correctIndex: 1,
     explanation:
-      'Thomas memorialises a brief stop in June 1914—blackbird song, "willow-herb, and grass", the empty platform—just before world war shattered such peace. The poem\'s significance comes from its quietness; deceptively simple form preserves a vanished pastoral (AO2/AO3).',
+      'Thomas memorialises a brief stop in June 1914-blackbird song, "willow-herb, and grass", the empty platform-just before world war shattered such peace. The poem\'s significance comes from its quietness; deceptively simple form preserves a vanished pastoral (AO2/AO3).',
     boards: ['ocr', 'eduqas'],
   },
   {
@@ -1278,7 +1278,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Duffy uses Shakespeare's own sonnet form to give Anne the last word. The closing couplet—\"I hold him in the casket of my widow's head / as he held me upon that next best bed\"—seals the lovers' equality with the form's most marital convention (AO2).",
+      "Duffy uses Shakespeare's own sonnet form to give Anne the last word. The closing couplet-\"I hold him in the casket of my widow's head / as he held me upon that next best bed\"-seals the lovers' equality with the form's most marital convention (AO2).",
     boards: ['eduqas'],
   },
 
@@ -1295,7 +1295,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Anaphora ("Mad world! Mad kings! Mad composition!" — Shakespeare, King John) creates rhythm, urgency or emphasis. In unseen analysis, identify where the repetition falls and explain the cumulative emotional or rhetorical effect (AO2).',
+      'Anaphora ("Mad world! Mad kings! Mad composition!" - Shakespeare, King John) creates rhythm, urgency or emphasis. In unseen analysis, identify where the repetition falls and explain the cumulative emotional or rhetorical effect (AO2).',
   },
   {
     id: 'poetry-extra-087',
@@ -1373,13 +1373,13 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     question: 'Iambic pentameter consists of:',
     options: [
       'Five stressed syllables per line',
-      'Five iambs (unstressed–stressed feet) giving ten syllables per line',
+      'Five iambs (unstressed-stressed feet) giving ten syllables per line',
       'Five lines per stanza',
       'Four iambs and a final spondee',
     ],
     correctIndex: 1,
     explanation:
-      "The iamb (da-DUM) approximates natural English speech. Five feet creates a flexible, civilised rhythm—Shakespeare's, Wordsworth's and Browning's default. Departures from it (substitutions, missing syllables) often carry meaning and should be flagged in analysis (AO2).",
+      "The iamb (da-DUM) approximates natural English speech. Five feet creates a flexible, civilised rhythm-Shakespeare's, Wordsworth's and Browning's default. Departures from it (substitutions, missing syllables) often carry meaning and should be flagged in analysis (AO2).",
   },
   {
     id: 'poetry-extra-093',
@@ -1431,7 +1431,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Free verse abandons regular metre and rhyme, yet skilled poets shape rhythm through line breaks, caesurae, repetition and sound. Saying a poem is "in free verse" is only the start—you must comment on what the freedom is being used to achieve (AO2).',
+      'Free verse abandons regular metre and rhyme, yet skilled poets shape rhythm through line breaks, caesurae, repetition and sound. Saying a poem is "in free verse" is only the start-you must comment on what the freedom is being used to achieve (AO2).',
   },
   {
     id: 'poetry-extra-097',
@@ -1459,7 +1459,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Examples include Dharker\'s "Tissue" (paper as life), Duffy\'s "Valentine" (onion as love), Armitage\'s "Mother, any distance" (tape measure as bond). In analysis, trace how the metaphor evolves and where it strains—those moments often carry the poem\'s argument (AO2).',
+      'Examples include Dharker\'s "Tissue" (paper as life), Duffy\'s "Valentine" (onion as love), Armitage\'s "Mother, any distance" (tape measure as bond). In analysis, trace how the metaphor evolves and where it strains-those moments often carry the poem\'s argument (AO2).',
   },
   {
     id: 'poetry-extra-099',

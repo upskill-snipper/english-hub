@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const READING_AOS: AOKey[] = ['RAO1', 'RAO2', 'RAO3', 'RAO4', 'RAO5']
 const WRITING_AOS: AOKey[] = ['WAO1', 'WAO2']
 
-// AOs ordered by weighting, heaviest first — drives prioritisation copy.
+// AOs ordered by weighting, heaviest first - drives prioritisation copy.
 const AOS_BY_WEIGHT: AOKey[] = [...READING_AOS, ...WRITING_AOS].sort(
   (a, b) => ASSESSMENT_OBJECTIVES[b].weightPct - ASSESSMENT_OBJECTIVES[a].weightPct,
 )
@@ -118,7 +118,7 @@ const SIX_WEEK_PLAN: WeekPlan[] = [
     week: 'Week 2',
     headline: 'Writing accuracy, plus structure and inference',
     focusAOs: ['WAO2', 'RAO3', 'RAO2'],
-    why: `${aoLabel('WAO2')} rewards accurate grammar, punctuation and spelling — fixable with focused proofreading. Pair it with ${aoLabel('RAO3')} and ${aoLabel('RAO2')} reading practice.`,
+    why: `${aoLabel('WAO2')} rewards accurate grammar, punctuation and spelling - fixable with focused proofreading. Pair it with ${aoLabel('RAO3')} and ${aoLabel('RAO2')} reading practice.`,
     drills: [
       {
         label: 'Grammar, punctuation & spelling',
@@ -162,27 +162,27 @@ const SIX_WEEK_PLAN: WeekPlan[] = [
 const ONE_WEEK_PLAN: { day: string; task: string; href: string }[] = [
   {
     day: 'Day 1',
-    task: `RAO4 — language at word and sentence level (the biggest reading objective, ${ASSESSMENT_OBJECTIVES.RAO4.weightPct}%).`,
+    task: `RAO4 - language at word and sentence level (the biggest reading objective, ${ASSESSMENT_OBJECTIVES.RAO4.weightPct}%).`,
     href: '/ks3/ilowersecondary/reading/language',
   },
   {
     day: 'Day 2',
-    task: `WAO1 — form, audience, purpose and paragraph structure (the biggest objective overall, ${ASSESSMENT_OBJECTIVES.WAO1.weightPct}%).`,
+    task: `WAO1 - form, audience, purpose and paragraph structure (the biggest objective overall, ${ASSESSMENT_OBJECTIVES.WAO1.weightPct}%).`,
     href: '/ks3/ilowersecondary/writing/section-b-task',
   },
   {
     day: 'Day 3',
-    task: `RAO5 — purpose, viewpoint and effect on the reader (${ASSESSMENT_OBJECTIVES.RAO5.weightPct}%).`,
+    task: `RAO5 - purpose, viewpoint and effect on the reader (${ASSESSMENT_OBJECTIVES.RAO5.weightPct}%).`,
     href: '/ks3/ilowersecondary/reading/purpose-viewpoint',
   },
   {
     day: 'Day 4',
-    task: `WAO2 — accurate grammar, punctuation and spelling (${ASSESSMENT_OBJECTIVES.WAO2.weightPct}%); build a proofreading checklist.`,
+    task: `WAO2 - accurate grammar, punctuation and spelling (${ASSESSMENT_OBJECTIVES.WAO2.weightPct}%); build a proofreading checklist.`,
     href: '/ks3/ilowersecondary/writing/grammar-punctuation-spelling',
   },
   {
     day: 'Day 5',
-    task: 'The 6-mark extended comparison question — high value, assesses RAO2, RAO4 and RAO5 together.',
+    task: 'The 6-mark extended comparison question - high value, assesses RAO2, RAO4 and RAO5 together.',
     href: '/ks3/ilowersecondary/question-types/extended-comparison',
   },
   {
@@ -192,7 +192,7 @@ const ONE_WEEK_PLAN: { day: string; task: string; href: string }[] = [
   },
   {
     day: 'Day 7',
-    task: 'Targeted fixes only — re-study the one or two pages where you lost the most marks. Light review; rest before the exam.',
+    task: 'Targeted fixes only - re-study the one or two pages where you lost the most marks. Light review; rest before the exam.',
     href: '/ks3/ilowersecondary/mark-scheme',
   },
 ]
@@ -216,7 +216,7 @@ const SELF_TEST_ROUTINE: { step: string; detail: string }[] = [
   {
     step: 'Re-drill the weakest objective',
     detail:
-      'Spend the rest of the week on the single objective costing you the most marks — use the diagnostic table below to find the right page.',
+      'Spend the rest of the week on the single objective costing you the most marks - use the diagnostic table below to find the right page.',
   },
   {
     step: 'Re-test the same skill',
@@ -339,7 +339,7 @@ const EXAM_WEEK: string[] = [
   'Sit one final full timed Practice Paper 1, then mark it strictly against the mark scheme.',
   'Re-read only the pages for the one or two objectives where you still drop the most marks.',
   'Rehearse your timing plan out loud: which section gets how long, and when you switch.',
-  'Memorise your Section B routine — plan, match form and audience, link paragraphs, proofread.',
+  'Memorise your Section B routine - plan, match form and audience, link paragraphs, proofread.',
   'Prepare equipment the night before. No dictionary is allowed in the assessment.',
   'Sleep normally; a rested mind retrieves more than a crammed one.',
 ]
@@ -349,7 +349,7 @@ const EXAM_DAY: string[] = [
   'Read the instructions and check how many texts and questions there are before you write.',
   `Follow your timing plan: most of the paper is reading, the rest is the writing task. The test lasts ${QUALIFICATION.durationLabel}.`,
   'Reading: locate the exact place in the text; answer precisely; never leave a closed question blank.',
-  'For levelled questions, explain the effect — do not lift words from the text without explaining them.',
+  'For levelled questions, explain the effect - do not lift words from the text without explaining them.',
   'Writing: spend the first few minutes on a brief plan, then keep paragraphs controlled and linked.',
   'Save the last few minutes to proofread for grammar, punctuation and spelling slips.',
   'If you change a multiple-choice answer, clearly cancel the old box and mark the new one.',
@@ -402,7 +402,7 @@ export default async function StudyPlanPage() {
           The test is worth {QUALIFICATION.totalMarks} marks across {SECTIONS.A.name} (
           {SECTIONS.A.marks} marks) and {SECTIONS.B.name} ({SECTIONS.B.marks} marks). Not every
           objective is worth the same. Revise them in order of weight so your effort tracks the
-          marks — the two biggest are {AOS_BY_WEIGHT[0]} and {AOS_BY_WEIGHT[1]}.
+          marks - the two biggest are {AOS_BY_WEIGHT[0]} and {AOS_BY_WEIGHT[1]}.
         </p>
         <div className="not-prose mt-4 overflow-x-auto rounded-xl border border-border/60">
           <table className="w-full border-collapse text-sm">
@@ -453,7 +453,7 @@ export default async function StudyPlanPage() {
             <div key={wk.week} className="rounded-xl border border-border/60 bg-card p-5">
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h3 className="text-base font-semibold text-foreground">
-                  <span className="font-mono text-xs text-primary">{wk.week}</span> — {wk.headline}
+                  <span className="font-mono text-xs text-primary">{wk.week}</span> - {wk.headline}
                 </h3>
                 <div className="flex flex-wrap gap-1.5">
                   {wk.focusAOs.map((ao) => (
@@ -495,7 +495,7 @@ export default async function StudyPlanPage() {
         <h2>If you only have one week</h2>
         <p className="text-sm text-muted-foreground">
           No time for the full countdown? Spend each day on the next highest-value target. Skip
-          nothing on Days 1–4 — those are the four heaviest-weighted objectives.
+          nothing on Days 1-4 - those are the four heaviest-weighted objectives.
         </p>
         <div className="not-prose mt-4 overflow-x-auto rounded-xl border border-border/60">
           <table className="w-full border-collapse text-sm">

@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
     return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
   }
 
-  // 4b. AI opt-out enforcement (Children's Code — GAP-12B)
+  // 4b. AI opt-out enforcement (Children's Code - GAP-12B)
   const aiOptedOut = await isAiOptedOutServer(user.id)
   if (aiOptedOut) {
     return forbiddenResponse(
@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // 5. Rate limit — streaming endpoints share the daily budget.
+  // 5. Rate limit - streaming endpoints share the daily budget.
   const rl = await rateLimit(`mark:${user.id}`, {
     limit: 10,
     windowSeconds: 86_400,
@@ -134,14 +134,14 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // 9. Spin up the stream (shared client — privacy posture documented in
+  // 9. Spin up the stream (shared client - privacy posture documented in
   // src/lib/anthropic-client.ts; behaviour identical to new Anthropic()).
   const anthropic = getAnthropicClient(apiKey)
   const encoder = new TextEncoder()
 
   // EU AI Act Art. 12/19: capture the decision context once, then emit an
   // audit record from each terminal branch of the stream (done / rejected /
-  // error). Best-effort — never blocks or breaks the SSE response.
+  // error). Best-effort - never blocks or breaks the SSE response.
   const auditBase = {
     feature: 'mark/stream' as const,
     userId: user.id,

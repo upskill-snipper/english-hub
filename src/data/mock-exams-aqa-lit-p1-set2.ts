@@ -216,7 +216,7 @@ const MUCH_ADO_EXTRACT_02 = `BENEDICK
 I did never think to marry: I must not seem proud:
 Happy are they that hear their detractions and can put them to mending.
 They say the lady is fair; 'tis a truth, I can bear them.
-If her hair were but a little fairer than Helen's—well, I should not care so.
+If her hair were but a little fairer than Helen's-well, I should not care so.
 But I must confess to myself that I am Love's labour: I will not be sworn but love may transform me to an oyster;
 but I'll take my oath on it, till he have made an oyster of me, he shall never make me such a fool.
 One woman is fair, yet I am well; another is wise, yet I am well;
@@ -260,7 +260,7 @@ BEATRICE
 O God, sir, here's a dish I love not: I cannot endure my Lord Tongueless;
 nor him that hath twice or thrice cut a great panel in his new coat;
 I here take the full stream of my fondness,
-And, unravel all my sweetness up into one small knot of all the unkindness?—
+And, unravel all my sweetness up into one small knot of all the unkindness?-
 Come, come: you talk greasily; your lips grow moist: come off.
 
 CLAUDIO
@@ -359,13 +359,13 @@ When I looked upon him, I could not consider him as my creator, but as an enemy,
 
 'Thus I relieve thee, my creator,' he said, and placed his hated hands before my eyes, which I flung from me with violence; 'thus I take from thee a sight which you abhor. Still thou canst listen to me, and grant me thy compassion. By the virtues that I bear, I swear to quit your lands, but only on one condition.
 
-The hateful words were spoken; I paused, listening; the words were these—
+The hateful words were spoken; I paused, listening; the words were these-
 
 'Swear that you will never create another being such as yourself, equal in deformity and wretchedness. You shall promise that you will have no communications with the female sex in enmity with mankind. Swear! or the horrors of my vengeance will descend upon you and your loved ones with all the magnitude of which I am capable.'`
 
 const FRANKENSTEIN_EXTRACT_02_SOURCE = 'Mary Shelley, Frankenstein (1818)'
 
-const FRANKENSTEIN_EXTRACT_03 = `The beauty of the dreams vanished, and nightmares began with fearful visions—or, to be more correctly, a sense of utter despair seized my mind. I felt as if some controlling power was urging me onwards, and I must resign my own will to the impulse which governed me. I was compelled to obey; and I well remember that I heard a voice calling upon me, urging me to fulfil the fatal obligation. It was not the voice of the creature I had formed; it was that of another, more potent than even my omnipotent conqueror.
+const FRANKENSTEIN_EXTRACT_03 = `The beauty of the dreams vanished, and nightmares began with fearful visions-or, to be more correctly, a sense of utter despair seized my mind. I felt as if some controlling power was urging me onwards, and I must resign my own will to the impulse which governed me. I was compelled to obey; and I well remember that I heard a voice calling upon me, urging me to fulfil the fatal obligation. It was not the voice of the creature I had formed; it was that of another, more potent than even my omnipotent conqueror.
 
 I will not dwell upon the horrors of the night that followed. Let it suffice that I awoke in a state of utter despair. I felt that I had been the instrument of mischief; that I had created a fiend whose subsequent actions might stamp my very nature with the appearance of guilt. All thought of myself, of my own happiness, was swallowed up in the anxiety of that period. My father was growing old, and required my care. My brother was married and occupied with his children and the cares of a family.`
 
@@ -383,7 +383,7 @@ const PRIDE_AND_PREJUDICE_EXTRACT_01 = `It is a truth universally acknowledged, 
 
 "You want to tell me, and I have no objection to hearing it."
 
-This was invitation enough. "Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it that he fell in with Mr. Morris immediately—his name is Bingley, and he is to take possession before Michaelmas, and some of the servants are to be in the house already."
+This was invitation enough. "Why, my dear, you must know, Mrs. Long says that Netherfield is taken by a young man of large fortune from the north of England; that he came down on Monday in a chaise and four to see the place, and was so much delighted with it that he fell in with Mr. Morris immediately-his name is Bingley, and he is to take possession before Michaelmas, and some of the servants are to be in the house already."
 
 "What is his name?" "Bingley."
 
@@ -453,7 +453,7 @@ const SIGN_OF_FOUR_EXTRACT_02 = `"I have already explained to you that what at f
 
 "I should very much like to hear them," said I, settling myself in my chair.
 
-"It is fortunate," continued Holmes, "that we have something to work upon. Had the criminal been a more ordinary man, he would have been at a loss to know what to do. But this one—he was no ordinary criminal. His methods, though simple when analyzed, had shown considerable ingenuity. That is to say, we had a case which presented some very singular features."
+"It is fortunate," continued Holmes, "that we have something to work upon. Had the criminal been a more ordinary man, he would have been at a loss to know what to do. But this one-he was no ordinary criminal. His methods, though simple when analyzed, had shown considerable ingenuity. That is to say, we had a case which presented some very singular features."
 
 "But what was the motive?" I asked.
 
@@ -461,7 +461,7 @@ const SIGN_OF_FOUR_EXTRACT_02 = `"I have already explained to you that what at f
 
 const SIGN_OF_FOUR_EXTRACT_02_SOURCE = 'Sir Arthur Conan Doyle, The Sign of Four (1890)'
 
-const SIGN_OF_FOUR_EXTRACT_03 = `"Consider," said he, "how the practical points might bear upon the case. The story of the Agra Treasure, the death of Bartholomew Sholto, the singular weapon employed, the cryptic message—all these had a direct bearing. And yet, when I came to consider the matter, I could not but feel that we were still far from a complete understanding. There were elements which did not fit into the scheme which I had formed. The case was becoming, day by day, more complex and more obscure.
+const SIGN_OF_FOUR_EXTRACT_03 = `"Consider," said he, "how the practical points might bear upon the case. The story of the Agra Treasure, the death of Bartholomew Sholto, the singular weapon employed, the cryptic message-all these had a direct bearing. And yet, when I came to consider the matter, I could not but feel that we were still far from a complete understanding. There were elements which did not fit into the scheme which I had formed. The case was becoming, day by day, more complex and more obscure.
 
 "You look tired, Watson," said Holmes, observing me with those keen, analytical eyes. "Why do you not take a rest? I assure you that I shall be content to work upon this matter alone for a while. There are one or two little problems which still require my attention, and I shall be much obliged if you will permit me to pursue my investigations without further interruption."
 
@@ -492,48 +492,56 @@ export const aqaLitP1MocksSet2: MockExamPaper[] = [
           {
             id: 'tempest-q1',
             questionNumber: 1,
-            questionText: 'Read the extract from The Tempest (Act 4, Scene 1) below. How does Shakespeare present Prospero\'s power and control in this extract and elsewhere in the play?',
+            questionText:
+              "Read the extract from The Tempest (Act 4, Scene 1) below. How does Shakespeare present Prospero's power and control in this extract and elsewhere in the play?",
             marks: 48,
             suggestedTimeMinutes: 55,
             questionType: 'analysis',
             extract: TEMPEST_EXTRACT_01,
             extractSource: TEMPEST_EXTRACT_01_SOURCE,
             modelAnswers: {
-              'Grade 7-9': 'This extract reveals Prospero as a figure of absolute dominion, wielding power through both magical control and paternal authority. His command to Ariel—"Come with a thought"—demonstrates the supernatural servitude he has established, where spirits respond instantaneously to his will. The phrase "spirit" emphasizes the subjugation of non-human forces. Prospero\'s treatment of Caliban further illustrates his hierarchical worldview; his threat to torture him into obedience ("I will rend an oak / And peg thee in his knotty entrails") reveals the brutality underlying his civilized veneer. Yet Shakespeare complicates this power. Prospero\'s admission that "Nurture can never stick" on Caliban\'s "nature" suggests the limits of control and dominion over others. The phrase "A devil, a born devil" exposes Prospero\'s prejudicial thinking—he can subjugate bodies but not transform souls. His power is simultaneously absolute and fragile, particularly when dependent on maintaining the loyalty of Ariel, who recognizes his own servitude and anticipates freedom. In the broader play, Prospero\'s power extends to orchestrating the entire plot: the shipwreck, the island\'s enchantments, and his daughter\'s romance. Yet his final act involves renouncing magic, suggesting that true power—or at least wisdom—lies in relinquishing control. This paradox of power permeates the play: dominion proves hollow without genuine authority rooted in respect rather than coercion.',
-              '5-6': 'Shakespeare portrays Prospero as a powerful figure who controls both spirits and other inhabitants of the island. In this extract, his authority over Ariel is clear—the spirit obeys instantly when summoned. His threat to torture Caliban shows he uses fear to maintain dominance. The language Shakespeare uses, such as "A devil, a born devil," reveals Prospero\'s contempt for those he considers inferior. Prospero\'s power extends throughout the play as he engineers the shipwreck and controls events on the island. However, at the end of the play he chooses to give up his magical powers, which might suggest that Shakespeare questions whether this kind of power is worthwhile. The extract shows that while Prospero can command spirits and control other people, his power has limitations and comes at a psychological cost.',
-              '3-4': 'Prospero is shown as a powerful character in this extract. He has control over Ariel and threatens Caliban with violence. In the extract, he says "Come with a thought" which shows Ariel obeys him. He also threatens to harm Caliban by putting him in a tree. Prospero\'s power is important throughout the play because he controls the magic on the island. At the end of the play he gives up his power. Shakespeare shows that Prospero is a leader on the island and other characters have to do what he says.'
+              'Grade 7-9':
+                'This extract reveals Prospero as a figure of absolute dominion, wielding power through both magical control and paternal authority. His command to Ariel-"Come with a thought"-demonstrates the supernatural servitude he has established, where spirits respond instantaneously to his will. The phrase "spirit" emphasizes the subjugation of non-human forces. Prospero\'s treatment of Caliban further illustrates his hierarchical worldview; his threat to torture him into obedience ("I will rend an oak / And peg thee in his knotty entrails") reveals the brutality underlying his civilized veneer. Yet Shakespeare complicates this power. Prospero\'s admission that "Nurture can never stick" on Caliban\'s "nature" suggests the limits of control and dominion over others. The phrase "A devil, a born devil" exposes Prospero\'s prejudicial thinking-he can subjugate bodies but not transform souls. His power is simultaneously absolute and fragile, particularly when dependent on maintaining the loyalty of Ariel, who recognizes his own servitude and anticipates freedom. In the broader play, Prospero\'s power extends to orchestrating the entire plot: the shipwreck, the island\'s enchantments, and his daughter\'s romance. Yet his final act involves renouncing magic, suggesting that true power-or at least wisdom-lies in relinquishing control. This paradox of power permeates the play: dominion proves hollow without genuine authority rooted in respect rather than coercion.',
+              '5-6':
+                'Shakespeare portrays Prospero as a powerful figure who controls both spirits and other inhabitants of the island. In this extract, his authority over Ariel is clear-the spirit obeys instantly when summoned. His threat to torture Caliban shows he uses fear to maintain dominance. The language Shakespeare uses, such as "A devil, a born devil," reveals Prospero\'s contempt for those he considers inferior. Prospero\'s power extends throughout the play as he engineers the shipwreck and controls events on the island. However, at the end of the play he chooses to give up his magical powers, which might suggest that Shakespeare questions whether this kind of power is worthwhile. The extract shows that while Prospero can command spirits and control other people, his power has limitations and comes at a psychological cost.',
+              '3-4':
+                'Prospero is shown as a powerful character in this extract. He has control over Ariel and threatens Caliban with violence. In the extract, he says "Come with a thought" which shows Ariel obeys him. He also threatens to harm Caliban by putting him in a tree. Prospero\'s power is important throughout the play because he controls the magic on the island. At the end of the play he gives up his power. Shakespeare shows that Prospero is a leader on the island and other characters have to do what he says.',
             },
             markScheme: [
               'Analyse the methods Shakespeare uses to present power and control, including language, dramatic structure, and symbolism',
-              'Interpret the extract with specific reference to context, considering Prospero\'s position as a colonial figure and his use of supernatural authority',
-              'Make sustained comparison with other moments in the play where Prospero\'s power is established, challenged, or relinquished',
-              'Evaluate the extent to which Shakespeare endorses or criticizes Prospero\'s exercise of power over others',
-              'Use precise quotations woven seamlessly into analytical points'
-            ]
+              "Interpret the extract with specific reference to context, considering Prospero's position as a colonial figure and his use of supernatural authority",
+              "Make sustained comparison with other moments in the play where Prospero's power is established, challenged, or relinquished",
+              "Evaluate the extent to which Shakespeare endorses or criticizes Prospero's exercise of power over others",
+              'Use precise quotations woven seamlessly into analytical points',
+            ],
           },
           {
             id: 'tempest-q2',
             questionNumber: 2,
-            questionText: 'Examine Shakespeare\'s portrayal of Caliban in The Tempest. How far do you agree that Caliban is presented as a tragic figure?',
+            questionText:
+              "Examine Shakespeare's portrayal of Caliban in The Tempest. How far do you agree that Caliban is presented as a tragic figure?",
             marks: 48,
             suggestedTimeMinutes: 55,
             questionType: 'evaluation',
             extract: TEMPEST_EXTRACT_03,
             extractSource: TEMPEST_EXTRACT_03_SOURCE,
             modelAnswers: {
-              'Grade 7-9': 'Caliban can certainly be interpreted as a tragic figure, though with important qualifications. The extract presents him in submission, begging forgiveness and offering servile obedience to Prospero. This degradation is tragic in itself—a human reduced to abject supplication. His offers to provide for Prospero—gathering crabs, scamels, and filberts—suggest both knowledge of the island and a capacity for generosity; yet these offerings are made under duress, not freely. This loss of agency constitutes a kind of tragedy. The broader play supports this reading. Caliban is dispossessed of his island, enslaved, and subjected to magical torment. He has legitimate claims to the land ("This island\'s mine, by Sycorax my mother, / Which thou takest from me"), yet his perspective is consistently denigrated. His attempts at rebellion with Stephano and Trinculo are comic failures, rendering his resistance pathetic rather than heroic. However, the tragic reading is complicated by Shakespeare\'s own representation. Caliban is frequently depicted as monstrous, licentious, and resistant to civilization—views that largely align with Prospero\'s prejudices and those of the play\'s original audiences. Whether Shakespeare intends sympathy or endorses Prospero\'s characterization remains ambiguous. His final line—"I\'ll be wise hereafter"—could be seen as growth or tragic resignation. Contemporary audiences may recognize tragic elements Shakespeare did not intend; modern readings emphasizing colonialism view Caliban as a tragic victim of oppression, while Renaissance readings might have stressed his moral inferiority. Thus Caliban embodies tragedy, though of a kind that depends entirely on the interpreter\'s perspective.',
-              '5-6': 'Caliban does appear to be tragic in several ways. He is enslaved and forced to obey Prospero against his will. In the extract provided, Caliban accepts his punishment and promises obedience, showing how he has been defeated by Prospero\'s power. He loves the island and has lived there longer than Prospero, but he is denied ownership of it. His rebellion with Stephano and Trinculo fails, which makes his situation even more tragic. However, the play also shows Caliban behaving badly, such as his attempt to rape Miranda, which makes it harder to fully sympathize with him. Shakespeare may be presenting him as a character who deserves his fate. There are tragic elements to his character—he is powerless and oppressed—but it is not entirely clear that Shakespeare wants us to see him as entirely tragic or sympathetic.',
-              '3-4': 'Caliban is tragic because he is enslaved and forced to work for Prospero. In the extract, he begs for forgiveness and promises to obey. This shows he has no power. He also tried to rebel with Stephano but this failed. Caliban lived on the island first but Prospero took it from him. This is tragic because he loses his home. However, Caliban also tries to hurt Miranda so maybe he is not a sympathetic character. He says he will be wise but this might just be because he is afraid of Prospero.'
+              'Grade 7-9':
+                "Caliban can certainly be interpreted as a tragic figure, though with important qualifications. The extract presents him in submission, begging forgiveness and offering servile obedience to Prospero. This degradation is tragic in itself-a human reduced to abject supplication. His offers to provide for Prospero-gathering crabs, scamels, and filberts-suggest both knowledge of the island and a capacity for generosity; yet these offerings are made under duress, not freely. This loss of agency constitutes a kind of tragedy. The broader play supports this reading. Caliban is dispossessed of his island, enslaved, and subjected to magical torment. He has legitimate claims to the land (\"This island's mine, by Sycorax my mother, / Which thou takest from me\"), yet his perspective is consistently denigrated. His attempts at rebellion with Stephano and Trinculo are comic failures, rendering his resistance pathetic rather than heroic. However, the tragic reading is complicated by Shakespeare's own representation. Caliban is frequently depicted as monstrous, licentious, and resistant to civilization-views that largely align with Prospero's prejudices and those of the play's original audiences. Whether Shakespeare intends sympathy or endorses Prospero's characterization remains ambiguous. His final line-\"I'll be wise hereafter\"-could be seen as growth or tragic resignation. Contemporary audiences may recognize tragic elements Shakespeare did not intend; modern readings emphasizing colonialism view Caliban as a tragic victim of oppression, while Renaissance readings might have stressed his moral inferiority. Thus Caliban embodies tragedy, though of a kind that depends entirely on the interpreter's perspective.",
+              '5-6':
+                "Caliban does appear to be tragic in several ways. He is enslaved and forced to obey Prospero against his will. In the extract provided, Caliban accepts his punishment and promises obedience, showing how he has been defeated by Prospero's power. He loves the island and has lived there longer than Prospero, but he is denied ownership of it. His rebellion with Stephano and Trinculo fails, which makes his situation even more tragic. However, the play also shows Caliban behaving badly, such as his attempt to rape Miranda, which makes it harder to fully sympathize with him. Shakespeare may be presenting him as a character who deserves his fate. There are tragic elements to his character-he is powerless and oppressed-but it is not entirely clear that Shakespeare wants us to see him as entirely tragic or sympathetic.",
+              '3-4':
+                'Caliban is tragic because he is enslaved and forced to work for Prospero. In the extract, he begs for forgiveness and promises to obey. This shows he has no power. He also tried to rebel with Stephano but this failed. Caliban lived on the island first but Prospero took it from him. This is tragic because he loses his home. However, Caliban also tries to hurt Miranda so maybe he is not a sympathetic character. He says he will be wise but this might just be because he is afraid of Prospero.',
             },
             markScheme: [
               'Analyse methods used to present Caliban, including language, dramatic positioning, and interaction with other characters',
-              'Develop an argument about whether the tragic reading is supported by the text or the play\'s ambiguities',
-              'Consider historical and contemporary interpretations of Caliban\'s character',
+              "Develop an argument about whether the tragic reading is supported by the text or the play's ambiguities",
+              "Consider historical and contemporary interpretations of Caliban's character",
               'Reference both the extract and broader evidence from the play',
-              'Evaluate the complexity of the characterization without resorting to simplistic judgments'
-            ]
-          }
-        ]
+              'Evaluate the complexity of the characterization without resorting to simplistic judgments',
+            ],
+          },
+        ],
       },
       {
         id: 'section-2-19th-century',
@@ -545,71 +553,83 @@ export const aqaLitP1MocksSet2: MockExamPaper[] = [
           {
             id: 'frankenstein-q1',
             questionNumber: 3,
-            questionText: 'Read the extract from Frankenstein below. Explore how Shelley presents the theme of isolation and its destructive effects on the creature and Victor Frankenstein.',
+            questionText:
+              'Read the extract from Frankenstein below. Explore how Shelley presents the theme of isolation and its destructive effects on the creature and Victor Frankenstein.',
             marks: 48,
             suggestedTimeMinutes: 50,
             questionType: 'analysis',
             extract: FRANKENSTEIN_EXTRACT_02,
             extractSource: FRANKENSTEIN_EXTRACT_02_SOURCE,
             modelAnswers: {
-              'Grade 7-9': 'Shelley uses the extract to demonstrate how isolation breeds profound anguish and corrupts virtue into vengeance. The creature\'s assertion—"I cannot describe to you the agony that these reflections inflicted upon me"—reveals isolation\'s psychological devastation. His lack of social connection, combined with his "figure hideously deformed," renders him literally incapable of joining human society. Yet Shelley complicates the narrative by showing the creature\'s superior endowments—"I possessed a far greater degree of sensibility than man"—which paradoxically intensifies his suffering. He is not merely inferior but tragically superior in capacities that isolation prevents him from expressing. The creature\'s transformation of his creator into "an enemy, against whom I pledged myself to wage unrelenting war" illustrates how isolation corrodes morality. He enters the narrative with capacity for love and learning, but society\'s rejection forces him into vengeance. Shelley suggests that the creature\'s violence is not inherent but produced by isolation. Victor\'s isolation is equally destructive though differently expressed. His secretive creation of the creature stems from isolation—he conducts his experiments alone, burdened by knowledge he cannot share. This isolation leads to madness and death. Throughout the novel, Shelley positions isolation as the true antagonist. Neither creature nor Victor is evil by nature; rather, isolation from community transforms both into instruments of mutual destruction. The creature\'s final words to Walton emphasize this: his greatest suffering is solitude. Shelley thus critiques a society that isolates those deemed different or undesirable, suggesting that connection—not rejection—might have redeemed both her protagonists.',
-              '5-6': 'In this extract, Shelley shows how isolation causes the creature to suffer deeply. He says he cannot describe his pain and that he feels completely powerless. The creature realizes he is different from humans and this isolation makes him angry. He becomes violent and wants revenge against Victor because Victor created him and then abandoned him. Shelley suggests that isolation drives the creature toward evil. Victor is also isolated because he keeps his creation secret, and this makes him suffer and go mad. Throughout the novel, isolation appears to be very destructive. The creature and Victor are both isolated in different ways, and both suffer as a result. Shelley seems to be arguing that people need connection and society to be happy and moral.',
-              '3-4': 'Shelley shows that isolation makes the creature suffer. In the extract, he says he feels anguish and has no power. He is isolated because he is ugly and people reject him. This makes him angry and want to hurt Victor. The creature says Victor is his enemy because he made him and then left him alone. Victor is also isolated because he keeps his work secret. Isolation is bad for both of them and makes them unhappy.'
+              'Grade 7-9':
+                'Shelley uses the extract to demonstrate how isolation breeds profound anguish and corrupts virtue into vengeance. The creature\'s assertion-"I cannot describe to you the agony that these reflections inflicted upon me"-reveals isolation\'s psychological devastation. His lack of social connection, combined with his "figure hideously deformed," renders him literally incapable of joining human society. Yet Shelley complicates the narrative by showing the creature\'s superior endowments-"I possessed a far greater degree of sensibility than man"-which paradoxically intensifies his suffering. He is not merely inferior but tragically superior in capacities that isolation prevents him from expressing. The creature\'s transformation of his creator into "an enemy, against whom I pledged myself to wage unrelenting war" illustrates how isolation corrodes morality. He enters the narrative with capacity for love and learning, but society\'s rejection forces him into vengeance. Shelley suggests that the creature\'s violence is not inherent but produced by isolation. Victor\'s isolation is equally destructive though differently expressed. His secretive creation of the creature stems from isolation-he conducts his experiments alone, burdened by knowledge he cannot share. This isolation leads to madness and death. Throughout the novel, Shelley positions isolation as the true antagonist. Neither creature nor Victor is evil by nature; rather, isolation from community transforms both into instruments of mutual destruction. The creature\'s final words to Walton emphasize this: his greatest suffering is solitude. Shelley thus critiques a society that isolates those deemed different or undesirable, suggesting that connection-not rejection-might have redeemed both her protagonists.',
+              '5-6':
+                'In this extract, Shelley shows how isolation causes the creature to suffer deeply. He says he cannot describe his pain and that he feels completely powerless. The creature realizes he is different from humans and this isolation makes him angry. He becomes violent and wants revenge against Victor because Victor created him and then abandoned him. Shelley suggests that isolation drives the creature toward evil. Victor is also isolated because he keeps his creation secret, and this makes him suffer and go mad. Throughout the novel, isolation appears to be very destructive. The creature and Victor are both isolated in different ways, and both suffer as a result. Shelley seems to be arguing that people need connection and society to be happy and moral.',
+              '3-4':
+                'Shelley shows that isolation makes the creature suffer. In the extract, he says he feels anguish and has no power. He is isolated because he is ugly and people reject him. This makes him angry and want to hurt Victor. The creature says Victor is his enemy because he made him and then left him alone. Victor is also isolated because he keeps his work secret. Isolation is bad for both of them and makes them unhappy.',
             },
             markScheme: [
-              'Analyse Shelley\'s language and techniques to convey isolation and psychological suffering',
+              "Analyse Shelley's language and techniques to convey isolation and psychological suffering",
               'Explore the relationship between isolation and moral degeneration for both Victor and the creature',
               'Consider how Shelley presents isolation as a social or individual problem',
               'Reference specific quotations to support analysis of the theme',
-              'Evaluate the extent to which isolation determines the characters\' actions and fates'
-            ]
+              "Evaluate the extent to which isolation determines the characters' actions and fates",
+            ],
           },
           {
             id: 'pride-prejudice-q1',
             questionNumber: 4,
-            questionText: 'Read the extract from Pride and Prejudice below. How does Austen present Elizabeth Bennet\'s character in this extract and what does it reveal about her views on marriage?',
+            questionText:
+              "Read the extract from Pride and Prejudice below. How does Austen present Elizabeth Bennet's character in this extract and what does it reveal about her views on marriage?",
             marks: 48,
             suggestedTimeMinutes: 50,
             questionType: 'analysis',
             extract: PRIDE_AND_PREJUDICE_EXTRACT_02,
             extractSource: PRIDE_AND_PREJUDICE_EXTRACT_02_SOURCE,
             modelAnswers: {
-              'Grade 7-9': 'This extract exemplifies Elizabeth\'s exceptional agency and self-awareness within a society that constrains women\'s choices. Her directness—demanding whether Darcy came with intent to propose—subverts feminine conventions of passivity. She refuses the role of demure respondent, instead seizing narrative control through interrogation. Her bluntness is radical for a young woman whose social position is precarious; most women in her situation would conceal offense to secure a proposal from a man of Darcy\'s wealth and status. Yet Elizabeth prioritizes integrity over security. Her rejection, articulated with "candour," reflects her conviction that marriage without mutual respect and genuine regard is worse than spinsterhood. Darcy\'s declaration—"You must allow me to tell you how ardently I admire and love you"—attempts to override her judgment through passion. But Elizabeth rebuffs this appeal, insisting on her own standards for a husband. Her reference to his letter and previous behavior reveals her assessment of his character; she will not be seduced by words but judges him by actions and principles. Austen\'s characterization suggests marriage should be built on compatibility, intellectual equality, and mutual respect rather than economic security or social obligation. Elizabeth\'s refusal of Mr. Collins earlier in the novel reinforces this philosophy: she cannot stomach vapidity or subservience in a partner. Ultimately, she accepts Darcy only after his character reform and after he has genuinely understood and valued her perspective. Thus Elizabeth\'s views revolutionize marriage from a transaction into a partnership of equals. She demands a man who can recognize her worth, challenge her thinking, and respect her autonomy. This extract crystallizes Austen\'s critique of contemporary marriage practices and her vision of a more egalitarian union.',
-              '5-6': 'Elizabeth appears as a strong, independent character in this extract. She is not afraid to speak her mind and directly asks Darcy if he came to propose. When he declares his love, she immediately rejects him. She explains that she finds him disgusting and references his letter as evidence of his bad character. This shows Elizabeth values character and kindness over wealth and status. She will not marry someone just because they are rich or respectable. She wants someone she can respect and who respects her. The extract shows that Elizabeth believes marriage should be based on mutual affection and respect, not social or economic necessity. She would rather remain single than marry without these foundations. This was quite radical for a woman of her time.',
-              '3-4': 'Elizabeth is shown as bold because she rejects Darcy\'s proposal. She speaks her mind clearly and tells him he is disgusting. She mentions his letter and says his behavior was bad. Elizabeth doesn\'t want to marry Darcy because she doesn\'t like his character. She thinks marriage should be based on love and respect, not on money. Elizabeth is brave because most women would accept a proposal from a rich man, but she refuses.'
+              'Grade 7-9':
+                "This extract exemplifies Elizabeth's exceptional agency and self-awareness within a society that constrains women's choices. Her directness-demanding whether Darcy came with intent to propose-subverts feminine conventions of passivity. She refuses the role of demure respondent, instead seizing narrative control through interrogation. Her bluntness is radical for a young woman whose social position is precarious; most women in her situation would conceal offense to secure a proposal from a man of Darcy's wealth and status. Yet Elizabeth prioritizes integrity over security. Her rejection, articulated with \"candour,\" reflects her conviction that marriage without mutual respect and genuine regard is worse than spinsterhood. Darcy's declaration-\"You must allow me to tell you how ardently I admire and love you\"-attempts to override her judgment through passion. But Elizabeth rebuffs this appeal, insisting on her own standards for a husband. Her reference to his letter and previous behavior reveals her assessment of his character; she will not be seduced by words but judges him by actions and principles. Austen's characterization suggests marriage should be built on compatibility, intellectual equality, and mutual respect rather than economic security or social obligation. Elizabeth's refusal of Mr. Collins earlier in the novel reinforces this philosophy: she cannot stomach vapidity or subservience in a partner. Ultimately, she accepts Darcy only after his character reform and after he has genuinely understood and valued her perspective. Thus Elizabeth's views revolutionize marriage from a transaction into a partnership of equals. She demands a man who can recognize her worth, challenge her thinking, and respect her autonomy. This extract crystallizes Austen's critique of contemporary marriage practices and her vision of a more egalitarian union.",
+              '5-6':
+                'Elizabeth appears as a strong, independent character in this extract. She is not afraid to speak her mind and directly asks Darcy if he came to propose. When he declares his love, she immediately rejects him. She explains that she finds him disgusting and references his letter as evidence of his bad character. This shows Elizabeth values character and kindness over wealth and status. She will not marry someone just because they are rich or respectable. She wants someone she can respect and who respects her. The extract shows that Elizabeth believes marriage should be based on mutual affection and respect, not social or economic necessity. She would rather remain single than marry without these foundations. This was quite radical for a woman of her time.',
+              '3-4':
+                "Elizabeth is shown as bold because she rejects Darcy's proposal. She speaks her mind clearly and tells him he is disgusting. She mentions his letter and says his behavior was bad. Elizabeth doesn't want to marry Darcy because she doesn't like his character. She thinks marriage should be based on love and respect, not on money. Elizabeth is brave because most women would accept a proposal from a rich man, but she refuses.",
             },
             markScheme: [
-              'Analyse Austen\'s presentation of Elizabeth through dialogue, diction, and dramatic action',
-              'Explore how the extract reflects Elizabeth\'s values and her agency as a female character',
-              'Consider Austen\'s critique of contemporary marriage practices and social expectations',
-              'Reference specific quotations that reveal Elizabeth\'s character and philosophy',
-              'Evaluate the significance of Elizabeth\'s rejection in the context of the novel\'s broader themes'
-            ]
+              "Analyse Austen's presentation of Elizabeth through dialogue, diction, and dramatic action",
+              "Explore how the extract reflects Elizabeth's values and her agency as a female character",
+              "Consider Austen's critique of contemporary marriage practices and social expectations",
+              "Reference specific quotations that reveal Elizabeth's character and philosophy",
+              "Evaluate the significance of Elizabeth's rejection in the context of the novel's broader themes",
+            ],
           },
           {
             id: 'sign-of-four-q1',
             questionNumber: 5,
-            questionText: 'Examine how Conan Doyle portrays the relationship between Sherlock Holmes and Dr Watson in The Sign of Four. To what extent does their dynamic enhance the narrative?',
+            questionText:
+              'Examine how Conan Doyle portrays the relationship between Sherlock Holmes and Dr Watson in The Sign of Four. To what extent does their dynamic enhance the narrative?',
             marks: 48,
             suggestedTimeMinutes: 50,
             questionType: 'evaluation',
             extract: SIGN_OF_FOUR_EXTRACT_01,
             extractSource: SIGN_OF_FOUR_EXTRACT_01_SOURCE,
             modelAnswers: {
-              'Grade 7-9': 'The relationship between Holmes and Watson constitutes the narrative\'s emotional and structural foundation. In this extract, Holmes establishes intellectual dominance through his condescension toward Watson\'s observational failings. His famous distinction between seeing and observing positions him as mentor to Watson\'s willing pupil. Yet this hierarchy is complicated by what Conan Doyle achieves through Watson as narrator. Watson\'s admiration—"You know that I am always ready to help you"—provides emotional access to Holmes\'s otherwise austere character. Watson humanizes the detective through his perspective, offering readers a sympathetic entry point into Holmes\'s brilliant but emotionally distant world. The extract exemplifies their dynamic: Holmes displays superior intellect while Watson accepts his subordinate position without resentment. This acceptance paradoxically elevates Watson, who possesses self-awareness sufficient to recognize Holmes\'s superiority. Their relationship mirrors the detective fiction convention of the brilliant investigator paired with a more ordinary consciousness through which readers experience investigation. Holmes\'s cold smile and dismissive remarks about "trifles" might render him insufferable without Watson\'s affectionate tolerance and occasional reproach. Watson\'s military background and medical training provide credibility; he is no fool, merely outmatched intellectually. Conan Doyle uses their complementary natures to maintain reader interest across narratives that could otherwise devolve into Holmes displaying ingenuity without opposition or genuine stakes. Watson\'s occasional skepticism and his honest recording of Holmes\'s failures create tension and suspense. Furthermore, Watson\'s present-tense narration of past events creates intimacy; readers feel they are learning mysteries alongside Watson rather than observing Holmes display solutions. The relationship enhances narrative efficiency, allowing Conan Doyle to withhold information from readers (as Watson is withheld it) before Holmes\'s revelations. Thus the dynamic is integral to the narrative\'s success: it generates emotional investment, controls information flow, and provides structural coherence.',
-              '5-6': 'Holmes and Watson\'s relationship is important to how the story works. In the extract, Holmes is clearly the more intelligent character and he seems to enjoy pointing out how Watson lacks observational skills. Watson respects Holmes and is willing to help him, even when Holmes is somewhat rude to him. Their relationship provides a way for readers to learn about the case alongside Watson, rather than having Holmes explain everything directly. Holmes is cold and distant, but Watson\'s admiration and loyalty make him more sympathetic. The partnership works well because Watson is reliable and trustworthy, while Holmes is brilliant but somewhat arrogant. Their different personalities create interest in the narrative. Watson\'s presence means the reader is not just watching a clever person solve a puzzle, but following an investigation with some uncertainty and emotional investment.',
-              '3-4': 'Holmes and Watson have a good relationship in The Sign of Four. Holmes is smarter than Watson and sometimes makes fun of him, like when he talks about observing versus seeing. Watson is loyal and wants to help Holmes even though Holmes is sometimes mean to him. Their relationship is important because Watson tells the story, so readers follow what Watson knows. Watson is like the reader\'s friend in the story. Holmes would be less interesting without Watson because Watson makes Holmes seem more human. They work well together as a team.'
+              'Grade 7-9':
+                "The relationship between Holmes and Watson constitutes the narrative's emotional and structural foundation. In this extract, Holmes establishes intellectual dominance through his condescension toward Watson's observational failings. His famous distinction between seeing and observing positions him as mentor to Watson's willing pupil. Yet this hierarchy is complicated by what Conan Doyle achieves through Watson as narrator. Watson's admiration-\"You know that I am always ready to help you\"-provides emotional access to Holmes's otherwise austere character. Watson humanizes the detective through his perspective, offering readers a sympathetic entry point into Holmes's brilliant but emotionally distant world. The extract exemplifies their dynamic: Holmes displays superior intellect while Watson accepts his subordinate position without resentment. This acceptance paradoxically elevates Watson, who possesses self-awareness sufficient to recognize Holmes's superiority. Their relationship mirrors the detective fiction convention of the brilliant investigator paired with a more ordinary consciousness through which readers experience investigation. Holmes's cold smile and dismissive remarks about \"trifles\" might render him insufferable without Watson's affectionate tolerance and occasional reproach. Watson's military background and medical training provide credibility; he is no fool, merely outmatched intellectually. Conan Doyle uses their complementary natures to maintain reader interest across narratives that could otherwise devolve into Holmes displaying ingenuity without opposition or genuine stakes. Watson's occasional skepticism and his honest recording of Holmes's failures create tension and suspense. Furthermore, Watson's present-tense narration of past events creates intimacy; readers feel they are learning mysteries alongside Watson rather than observing Holmes display solutions. The relationship enhances narrative efficiency, allowing Conan Doyle to withhold information from readers (as Watson is withheld it) before Holmes's revelations. Thus the dynamic is integral to the narrative's success: it generates emotional investment, controls information flow, and provides structural coherence.",
+              '5-6':
+                "Holmes and Watson's relationship is important to how the story works. In the extract, Holmes is clearly the more intelligent character and he seems to enjoy pointing out how Watson lacks observational skills. Watson respects Holmes and is willing to help him, even when Holmes is somewhat rude to him. Their relationship provides a way for readers to learn about the case alongside Watson, rather than having Holmes explain everything directly. Holmes is cold and distant, but Watson's admiration and loyalty make him more sympathetic. The partnership works well because Watson is reliable and trustworthy, while Holmes is brilliant but somewhat arrogant. Their different personalities create interest in the narrative. Watson's presence means the reader is not just watching a clever person solve a puzzle, but following an investigation with some uncertainty and emotional investment.",
+              '3-4':
+                "Holmes and Watson have a good relationship in The Sign of Four. Holmes is smarter than Watson and sometimes makes fun of him, like when he talks about observing versus seeing. Watson is loyal and wants to help Holmes even though Holmes is sometimes mean to him. Their relationship is important because Watson tells the story, so readers follow what Watson knows. Watson is like the reader's friend in the story. Holmes would be less interesting without Watson because Watson makes Holmes seem more human. They work well together as a team.",
             },
             markScheme: [
               'Analyse how Conan Doyle develops the Holmes-Watson dynamic through dialogue and interaction',
               'Explore the narrative functions of their relationship, including perspective, emotional engagement, and information control',
               'Consider how Watson serves as narrator and how this affects characterization of both men',
               'Evaluate whether their dynamic is primarily dependent or complementary',
-              'Reference specific textual evidence to support claims about their relationship\'s impact on the narrative'
-            ]
-          }
-        ]
-      }
-    ]
-  }
+              "Reference specific textual evidence to support claims about their relationship's impact on the narrative",
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]

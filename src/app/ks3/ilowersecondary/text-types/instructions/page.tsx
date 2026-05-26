@@ -17,11 +17,11 @@ const PURPOSE_EXPLAIN = NON_FICTION_PURPOSES.find((p) => p === 'explain')!
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'iLowerSecondary English: instructional texts — reading & writing guide',
+    title: 'iLowerSecondary English: instructional texts - reading & writing guide',
     description:
-      'How instructional texts work for LEH11: sequential steps, imperative verbs, time and sequence connectives, lists, second person and precise vocabulary — how they are tested in RAO3 and RAO4, with original annotated extracts, practice questions and a write-instructions task with model.',
+      'How instructional texts work for LEH11: sequential steps, imperative verbs, time and sequence connectives, lists, second person and precise vocabulary - how they are tested in RAO3 and RAO4, with original annotated extracts, practice questions and a write-instructions task with model.',
   },
-  title: 'Instructional texts — a reading & writing guide',
+  title: 'Instructional texts - a reading & writing guide',
   description:
     'A complete guide to instructional texts for iLowerSecondary English: conventions (sequential steps, imperative verbs, sequence connectives, lists, second person, concrete vocabulary, materials lists, labelled diagrams), how the imperative-verb and sequencing language is tested in RAO3 and RAO4, with original annotated extracts, practice questions, model answers and a Section B writing task.',
   alternates: { canonical: PAGE_URL },
@@ -42,13 +42,13 @@ const CONVENTIONS: Convention[] = [
   },
   {
     name: 'Imperative (command) verbs',
-    what: 'Each step usually begins with a bossy "do this" verb — cut, fold, press, wait, check — with no subject before it.',
+    what: 'Each step usually begins with a bossy "do this" verb - cut, fold, press, wait, check - with no subject before it.',
     effect:
       'The imperative speaks straight to the reader and tells them exactly what to do, which makes the text feel direct, brisk and easy to act on.',
   },
   {
     name: 'Time and sequence connectives',
-    what: 'Linking words and phrases that order the steps — first, next, then, after that, once, while, finally.',
+    what: 'Linking words and phrases that order the steps - first, next, then, after that, once, while, finally.',
     effect:
       'These signpost the order so the reader knows what comes before what, and never has to guess whether a step can wait or must happen now.',
   },
@@ -66,7 +66,7 @@ const CONVENTIONS: Convention[] = [
   },
   {
     name: 'Precise, concrete vocabulary',
-    what: 'Exact nouns, numbers and measurements — "the small screw", "for thirty seconds", "two centimetres" — rather than vague words.',
+    what: 'Exact nouns, numbers and measurements - "the small screw", "for thirty seconds", "two centimetres" - rather than vague words.',
     effect:
       'Precision removes guesswork. The reader can carry out the step correctly the first time because nothing is left open to interpretation.',
   },
@@ -125,11 +125,11 @@ const EXTRACTS: Extract[] = [
     annotations: [
       {
         feature: 'Imperative verbs',
-        note: 'Every step opens with a command verb: "tear", "Lay", "place", "roll", "fold", "slide", "press", "pour". None has a subject in front of it — the reader is the implied "you", which keeps the text direct.',
+        note: 'Every step opens with a command verb: "tear", "Lay", "place", "roll", "fold", "slide", "press", "pour". None has a subject in front of it - the reader is the implied "you", which keeps the text direct.',
       },
       {
         feature: 'Sequence markers',
-        note: '"First", "Next", "Once… ", "Then" and "Finally" order the steps, and the list is numbered 1–6, so the reader always knows which action comes next.',
+        note: '"First", "Next", "Once… ", "Then" and "Finally" order the steps, and the list is numbered 1-6, so the reader always knows which action comes next.',
       },
       {
         feature: 'Other conventions',
@@ -141,9 +141,9 @@ const EXTRACTS: Extract[] = [
         q: 'Underline the imperative verb in step 3. (1)',
         marks: 1,
         answer:
-          'The imperative verb is "roll" — "Next, roll the paper tightly around the jar". (The word "Next" is a sequence connective, not the command verb; "roll" is the action the reader is ordered to perform.)',
+          'The imperative verb is "roll" - "Next, roll the paper tightly around the jar". (The word "Next" is a sequence connective, not the command verb; "roll" is the action the reader is ordered to perform.)',
         markNote:
-          'Pearson style: a closed underline / identify-the-word-class item. Any clear positive indication of "roll" is accepted. Selecting "Next" or "paper" would not earn the mark — the question targets the command verb specifically.',
+          'Pearson style: a closed underline / identify-the-word-class item. Any clear positive indication of "roll" is accepted. Selecting "Next" or "paper" would not earn the mark - the question targets the command verb specifically.',
       },
       {
         q: 'How does the writer make the order of the steps clear to the reader? (2)',
@@ -173,11 +173,11 @@ const EXTRACTS: Extract[] = [
     annotations: [
       {
         feature: 'Imperative verbs',
-        note: '"Begin", "Fold", "press", "fold", "open", "Bring", "fold", "Turn", "hold", "pull", "reshape" — each step is built on a command verb that tells the reader the precise action.',
+        note: '"Begin", "Fold", "press", "fold", "open", "Bring", "fold", "Turn", "hold", "pull", "reshape" - each step is built on a command verb that tells the reader the precise action.',
       },
       {
         feature: 'Sequence markers',
-        note: 'The numbered steps 1–7 are reinforced by connectives of time: "After that", "While holding", and "Lastly". "While" shows two actions happen at the same time, not one after the other.',
+        note: 'The numbered steps 1-7 are reinforced by connectives of time: "After that", "While holding", and "Lastly". "While" shows two actions happen at the same time, not one after the other.',
       },
       {
         feature: 'Other conventions',
@@ -189,7 +189,7 @@ const EXTRACTS: Extract[] = [
         q: 'Identify two different sequence connectives the writer uses, and say what each one tells the reader. (2)',
         marks: 2,
         answer:
-          '"After that" (step 3) tells the reader the fold must happen once the previous fold is complete — the actions are in order (1). "While holding" (step 5) tells the reader two things happen at the same moment: they must keep holding the triangle as they make the next fold (1).',
+          '"After that" (step 3) tells the reader the fold must happen once the previous fold is complete - the actions are in order (1). "While holding" (step 5) tells the reader two things happen at the same moment: they must keep holding the triangle as they make the next fold (1).',
         markNote:
           'One mark for each correctly identified connective with an accurate explanation of the relationship it signals (sequence vs simultaneous action). A bare list of words with no comment would be capped at one mark.',
       },
@@ -485,7 +485,7 @@ export default async function InstructionsPage() {
             {
               label: 'Be precise and concrete',
               detail:
-                'Give exact amounts, times and parts — "for thirty seconds", "the small screw" — so the reader cannot misread the step.',
+                'Give exact amounts, times and parts - "for thirty seconds", "the small screw" - so the reader cannot misread the step.',
             },
             {
               label: 'Keep the second person and check the order',

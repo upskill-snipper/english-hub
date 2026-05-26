@@ -355,7 +355,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
 
   const hasAnyActive = activeTabs.size > 0
 
-  /* Which panel to show on the right — the most recently toggled, or first active */
+  /* Which panel to show on the right - the most recently toggled, or first active */
   const activePanelTab = (() => {
     const ordered: AnalysisTab[] = ['context', 'summary', 'form', 'quotes', 'language']
     return ordered.find((t) => activeTabs.has(t)) ?? null

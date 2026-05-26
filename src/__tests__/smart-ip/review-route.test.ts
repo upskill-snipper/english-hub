@@ -11,7 +11,7 @@
 //   • API verb → past-tense teacher_moderations.decision:
 //       approve→approved, reject→rejected, correct→corrected, send_back→sent_back
 //   • the immutable teacher_moderations row is INSERTed BEFORE the spine UPDATE
-//   • teacherGrade validation — only {9..1, U}
+//   • teacherGrade validation - only {9..1, U}
 //   • only an explicit approve sets approved_by / approved_at
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -153,7 +153,7 @@ vi.mock('@/lib/site-admin', () => ({
 vi.mock('@/lib/school-auth', () => ({
   verifySchoolMember: async () => null,
 }))
-// These cases exercise the TEACHER/ADMIN decision contract — the caller is
+// These cases exercise the TEACHER/ADMIN decision contract - the caller is
 // not a paid marker, so getCurrentMarker() resolves to null (the real
 // behaviour for an admin/teacher), keeping handledByMarker=false and the
 // original path under test byte-for-byte. The marker branch is covered
@@ -205,7 +205,7 @@ beforeEach(() => {
   spineUpdateResult = { data: null, error: null }
 })
 
-describe('review — preconditions', () => {
+describe('review - preconditions', () => {
   it('415 when not application/json', async () => {
     const res = await handleReview(makeReq({ decision: 'approve' }, false))
     expect(res.status).toBe(415)
@@ -237,7 +237,7 @@ describe('review — preconditions', () => {
   })
 })
 
-describe('review — teacherGrade validation {9..1,U}', () => {
+describe('review - teacherGrade validation {9..1,U}', () => {
   it('rejects an out-of-range grade', async () => {
     const res = await handleReview(makeReq({ decision: 'correct', teacherGrade: '10' }))
     expect(res.status).toBe(400)
@@ -255,7 +255,7 @@ describe('review — teacherGrade validation {9..1,U}', () => {
   })
 })
 
-describe('review — moderation row inserted BEFORE the spine update', () => {
+describe('review - moderation row inserted BEFORE the spine update', () => {
   it('ordered: submission.select → moderation.insert → spine.update', async () => {
     const res = await handleReview(makeReq({ decision: 'approve', teacherGrade: '7' }))
     expect(res.status).toBe(200)
@@ -271,7 +271,7 @@ describe('review — moderation row inserted BEFORE the spine update', () => {
   })
 })
 
-describe('review — decision → status transition table', () => {
+describe('review - decision → status transition table', () => {
   it.each([
     ['approve', 'approved', 'approved'],
     ['reject', 'rejected', 'rejected'],
@@ -305,7 +305,7 @@ describe('review — decision → status transition table', () => {
   })
 })
 
-describe('review — forced decision wrappers (approve/reject)', () => {
+describe('review - forced decision wrappers (approve/reject)', () => {
   it('forcedDecision overrides the body decision', async () => {
     // Body says "reject" but the approve wrapper forces approve.
     const res = await handleReview(
@@ -325,7 +325,7 @@ describe('review — forced decision wrappers (approve/reject)', () => {
   })
 })
 
-describe('review — moderation label snapshot', () => {
+describe('review - moderation label snapshot', () => {
   it('records ai vs teacher grade + before/after feedback on the moderation row', async () => {
     await handleReview(
       makeReq({
@@ -353,7 +353,7 @@ describe('review — moderation label snapshot', () => {
   })
 })
 
-describe('review — spine update failure after moderation persisted', () => {
+describe('review - spine update failure after moderation persisted', () => {
   it('returns 500 but the moderation row is already saved (audit preserved)', async () => {
     spineUpdateResult = { data: null, error: { message: 'spine boom' } }
     const res = await handleReview(makeReq({ decision: 'approve' }))

@@ -1,4 +1,4 @@
-import type { LessonPlan } from '../../types';
+import type { LessonPlan } from '../../types'
 
 export const y9Term1Lessons: LessonPlan[] = [
   // ── Lesson 1: Victorian England and Dickens's Social Message ─────────────
@@ -34,7 +34,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       'didactic',
     ],
     starterActivity: {
-      title: 'Victorian Britain — What Do You Already Know?',
+      title: 'Victorian Britain - What Do You Already Know?',
       duration: '8 minutes',
       instructions:
         'Display five images around the room or on the board: a Victorian workhouse, a child chimney sweep, a wealthy Victorian family at Christmas, a street scene of urban poverty, and a portrait of Charles Dickens. Students circulate or observe and write one word or phrase for each image. Teacher collects responses and builds a shared mind map, drawing out key terms such as poverty, inequality, and charity. Introduce the phrase "Victorian England" and ask: what problems might a novelist want to write about in this society?',
@@ -53,7 +53,7 @@ export const y9Term1Lessons: LessonPlan[] = [
     },
     mainActivities: [
       {
-        title: "Context Reading — Dickens's World and His Purpose",
+        title: "Context Reading - Dickens's World and His Purpose",
         duration: '22 minutes',
         instructions:
           "Distribute the Context Information Sheet covering: the Poor Law Amendment Act of 1834 (which forced the destitute into workhouses), child labour in Victorian factories and mines, the vast gap between wealthy and working-class Victorians, and Dickens's own childhood poverty and time in a blacking factory. Students read in pairs, highlighting what they consider the three most important facts and annotating with 'This matters because...' for each. Teacher leads a 5-minute whole-class discussion drawing out the idea that Dickens wrote A Christmas Carol as a deliberate act of social protest. Students then complete a two-column chart: historical fact on the left, connection to the novella on the right.",
@@ -90,10 +90,10 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: 'Three Facts, One Connection — Exit Ticket',
+      title: 'Three Facts, One Connection - Exit Ticket',
       duration: '7 minutes',
       instructions:
-        "Students write on a slip of paper: three key contextual facts learned today, and one specific connection between a contextual fact and a character or moment in the novella. Teacher collects slips and uses them to identify misconceptions and strong examples to share at the start of the next lesson.",
+        'Students write on a slip of paper: three key contextual facts learned today, and one specific connection between a contextual fact and a character or moment in the novella. Teacher collects slips and uses them to identify misconceptions and strong examples to share at the start of the next lesson.',
       differentiation: {
         support:
           "Provide sentence frames: 'One fact I have learned is... This connects to the novella because...'",
@@ -103,7 +103,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
     },
     homework:
-      "Research one aspect of Victorian society not covered in class (e.g. the Ten Hours Act, ragged schools, or the role of the Church in charity). Write a paragraph explaining what you found and how it might connect to A Christmas Carol.",
+      'Research one aspect of Victorian society not covered in class (e.g. the Ten Hours Act, ragged schools, or the role of the Church in charity). Write a paragraph explaining what you found and how it might connect to A Christmas Carol.',
     worksheetQuestions: [
       {
         question:
@@ -118,7 +118,7 @@ export const y9Term1Lessons: LessonPlan[] = [
           "Describe two features of Dickens's own life that shaped the social message of A Christmas Carol.",
         lines: 4,
         modelAnswer:
-          "Dickens spent part of his childhood working in a blacking factory after his father was imprisoned for debt. This experience of poverty and social humiliation gave him first-hand knowledge of the suffering of the working poor. He also visited ragged schools in London and was shocked by the conditions of child poverty. These experiences made him a passionate advocate for the poor and drove him to write A Christmas Carol as a deliberate act of social protest, using fiction to reach audiences that political pamphlets could not.",
+          'Dickens spent part of his childhood working in a blacking factory after his father was imprisoned for debt. This experience of poverty and social humiliation gave him first-hand knowledge of the suffering of the working poor. He also visited ragged schools in London and was shocked by the conditions of child poverty. These experiences made him a passionate advocate for the poor and drove him to write A Christmas Carol as a deliberate act of social protest, using fiction to reach audiences that political pamphlets could not.',
         marks: 4,
       },
       {
@@ -142,12 +142,12 @@ export const y9Term1Lessons: LessonPlan[] = [
           "Why is it important to integrate context into analytical writing about A Christmas Carol rather than writing a separate 'context paragraph'?",
         lines: 4,
         modelAnswer:
-          "Integrated context demonstrates that a student understands how historical and social forces directly shape the meaning of the text. A standalone context paragraph merely lists facts and does not show analytical skill. Examiners reward students who connect context to specific quotations, characters, and authorial choices -- showing that Victorian history is not background decoration but the very reason Dickens made each specific narrative and linguistic decision.",
+          'Integrated context demonstrates that a student understands how historical and social forces directly shape the meaning of the text. A standalone context paragraph merely lists facts and does not show analytical skill. Examiners reward students who connect context to specific quotations, characters, and authorial choices -- showing that Victorian history is not background decoration but the very reason Dickens made each specific narrative and linguistic decision.',
         marks: 4,
       },
     ],
     teacherNotes: [
-      "Some students may arrive with very limited knowledge of Victorian England. The image activity is designed to activate curiosity rather than assumed knowledge -- treat it as discovery, not recall.",
+      'Some students may arrive with very limited knowledge of Victorian England. The image activity is designed to activate curiosity rather than assumed knowledge -- treat it as discovery, not recall.',
       "Dickens's biography is a powerful hook. Many students are surprised that a famous author grew up in poverty. Use this to challenge assumptions about who gets to tell stories about inequality.",
       "The 'integrated context' vs 'context dumped' distinction is the single most important writing habit to establish in this unit. Introduce it clearly here and reinforce it in every subsequent lesson.",
       "If time allows, read aloud the opening paragraph of the novella -- 'Marley was dead, to begin with' -- to give students an immediate sense of Dickens's distinctive narrative voice before the next lesson.",
@@ -239,7 +239,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             "Provide a PEEC paragraph scaffold with sentence starters: 'Dickens presents Scrooge as... The word/phrase [x] suggests... This is significant because... In the context of Victorian England...'",
           core: 'Students write independently and complete peer assessment.',
           stretch:
-            "Students write two linked paragraphs that develop an argument about whether Scrooge is a straightforward villain or a more complex figure even at this early stage -- consider the moment Dickens hints Scrooge was once different.",
+            'Students write two linked paragraphs that develop an argument about whether Scrooge is a straightforward villain or a more complex figure even at this early stage -- consider the moment Dickens hints Scrooge was once different.',
         },
         resources: [
           'PEEC scaffold for support students',
@@ -297,8 +297,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         marks: 4,
       },
       {
-        question:
-          'Is Scrooge entirely unsympathetic in Stave 1? Give evidence for your view.',
+        question: 'Is Scrooge entirely unsympathetic in Stave 1? Give evidence for your view.',
         lines: 5,
         modelAnswer:
           "While Scrooge is overwhelmingly presented as a villain in Stave 1, there are early hints that he was not always so. The Ghost of Christmas Past later reveals a warmer, younger Scrooge, and even in Stave 1 the narrator notes that Scrooge was once apprenticed to the jovial Fezziwig. However, within Stave 1 itself, Scrooge's refusal to donate to charity and his contempt for the poor ('Are there no prisons? Are there no workhouses?') make it difficult to feel sympathy. Dickens deliberately withholds the backstory to ensure the reader condemns Scrooge before being invited to understand him.",
@@ -335,7 +334,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       'Write analytically about how Dickens uses the supernatural to deliver a moral message (9W.4)',
     ],
     successCriteria: [
-      "I can describe what the Ghost of Christmas Past looks like and explain what its appearance symbolises",
+      'I can describe what the Ghost of Christmas Past looks like and explain what its appearance symbolises',
       'I can explain the significance of at least two scenes Scrooge witnesses in Stave 2',
       "I can analyse how Dickens presents Scrooge's emotional response to his past",
       "I can write a paragraph connecting memory to Dickens's moral argument",
@@ -380,7 +379,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             'Provide a guided reading frame for each scene: Who is in this scene? What does Scrooge do or say? What does Scrooge feel? What does Dickens want us to think?',
           core: 'Students read and prepare their summary independently within the group.',
           stretch:
-            "Students consider how all three scenes work together to build a picture of what Scrooge has sacrificed, and write a sentence arguing which scene is most important to his eventual transformation.",
+            'Students consider how all three scenes work together to build a picture of what Scrooge has sacrificed, and write a sentence arguing which scene is most important to his eventual transformation.',
         },
         resources: [
           'Printed extracts: Fezziwig scene, Fan scene, Belle scene',
@@ -398,7 +397,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             "Provide a sentence starter: 'In Stave 2, Dickens uses the scene with [Fezziwig/Fan/Belle] to reveal that Scrooge was once... The word/phrase [x] suggests... This is significant because Dickens is arguing that...'",
           core: 'Students write independently and complete peer review.',
           stretch:
-            "Students write two linked paragraphs arguing that the Ghost of Christmas Past is the most important of the three spirits in terms of explaining why Scrooge is the way he is, using evidence from at least two scenes.",
+            'Students write two linked paragraphs arguing that the Ghost of Christmas Past is the most important of the three spirits in terms of explaining why Scrooge is the way he is, using evidence from at least two scenes.',
         },
         resources: [
           'PEEC scaffold for support students',
@@ -413,8 +412,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       instructions:
         "Students draw a simple horizontal timeline labelled 'Start of Stave 2' to 'End of Stave 2'. They mark at least four points on the timeline where Scrooge's emotion clearly changes, noting the emotion and the cause. Teacher gathers two or three examples and asks: what does this emotional journey tell us about Dickens's purpose? Draw out the idea that the reader needs to feel Scrooge's pain in order to believe in his eventual change.",
       differentiation: {
-        support:
-          'Provide a pre-drawn timeline with four blank boxes to complete.',
+        support: 'Provide a pre-drawn timeline with four blank boxes to complete.',
         core: 'Students create their own timeline independently.',
         stretch:
           "Students annotate their timeline with a comment on Dickens's technique at each point -- what specific device creates the emotional shift?",
@@ -432,8 +430,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         marks: 4,
       },
       {
-        question:
-          "How does the Fezziwig scene develop the reader's understanding of Scrooge?",
+        question: "How does the Fezziwig scene develop the reader's understanding of Scrooge?",
         lines: 5,
         modelAnswer:
           "The Fezziwig scene shows Scrooge as a happy, laughing young apprentice at a generous Christmas party -- a sharp contrast to the cold, isolated figure of Stave 1. Dickens uses this scene to show that Scrooge was not always miserly and that the warmth of human generosity once brought him joy. When Scrooge defends Fezziwig's happiness against the Ghost's observation that the party cost little money, the reader sees the seeds of moral insight in Scrooge -- he understands that Fezziwig's gift was his spirit, not his money. This plants the first hint that Scrooge is capable of change.",
@@ -456,8 +453,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         marks: 5,
       },
       {
-        question:
-          'Why does Dickens include the character of Fan in Stave 2?',
+        question: 'Why does Dickens include the character of Fan in Stave 2?',
         lines: 4,
         modelAnswer:
           "Fan is Scrooge's beloved younger sister, who arrives joyfully to take him home from a lonely school. Her warmth and love for Scrooge show that he was once capable of deep human connection. Her inclusion also adds poignancy because the reader knows Fan has died before the events of the novella, and that her son Fred -- who has repeatedly invited Scrooge to Christmas dinner -- is all that remains of her. Dickens uses Fan to suggest that Scrooge's rejection of Fred is a rejection of his last living link to the love of his past.",
@@ -466,13 +462,13 @@ export const y9Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'The Belle scene is the most emotionally complex in Stave 2 and repays close reading. Students who understand it well will have strong analytical material for both character and theme essays.',
-      "Students sometimes struggle with the idea that Fezziwig is significant because his generosity costs relatively little -- the point is that his gift is one of spirit and warmth rather than money. Make this distinction explicit.",
+      'Students sometimes struggle with the idea that Fezziwig is significant because his generosity costs relatively little -- the point is that his gift is one of spirit and warmth rather than money. Make this distinction explicit.',
       "The connection between Fan and Fred is often missed by students. Drawing attention to it enriches their understanding of why Scrooge's rejection of Fred is so pointed.",
       "The ghost's appearance (young/old, light emanating from its head) is richly symbolic. Encourage students to consider whether the light represents conscience, memory, or truth -- all interpretations can be supported.",
     ],
     targetedSkills: [
       '9R.2 -- Retrieval and identification of key details',
-      "9R.3 -- Identifying and interpreting language techniques",
+      '9R.3 -- Identifying and interpreting language techniques',
       "9R.4 -- Analysing effects of writers' choices",
       '9W.4 -- Writing analytical paragraphs with embedded quotations',
       '9R.6 -- Evaluating authorial intent and moral purpose',
@@ -491,12 +487,12 @@ export const y9Term1Lessons: LessonPlan[] = [
       'Analyse how Dickens uses the Ghost of Christmas Present to broaden the social scope of the novella (9R.4)',
       'Interpret the symbolic significance of the children Ignorance and Want (9R.3)',
       "Explore how the Cratchit family scenes develop Dickens's argument about poverty and dignity (9R.2)",
-      "Write analytically about how Dickens presents poverty as a social rather than individual failing (9W.3)",
+      'Write analytically about how Dickens presents poverty as a social rather than individual failing (9W.3)',
     ],
     successCriteria: [
       'I can describe the Ghost of Christmas Present and explain what its appearance represents',
       'I can explain the symbolic meaning of Ignorance and Want',
-      "I can analyse how Dickens presents the Cratchit family to challenge attitudes to the poor",
+      'I can analyse how Dickens presents the Cratchit family to challenge attitudes to the poor',
       'I can write a paragraph integrating context into analysis of the Ghost of Christmas Present',
     ],
     keywords: [
@@ -557,7 +553,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             "Provide the allegory definition and a sentence frame: 'The child Ignorance represents... Dickens chooses to present this as a child because...'",
           core: 'Students write three analytical sentences independently.',
           stretch:
-            "Students consider why Dickens has the Ghost -- a figure of abundance and generosity -- carry children of deprivation. What does this juxtaposition imply about the relationship between wealth and poverty in Victorian society?",
+            'Students consider why Dickens has the Ghost -- a figure of abundance and generosity -- carry children of deprivation. What does this juxtaposition imply about the relationship between wealth and poverty in Victorian society?',
         },
         resources: [
           'Printed Ignorance and Want passage',
@@ -600,7 +596,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
       {
         question:
-          "How does Dickens use the Cratchit family to challenge the Victorian idea that the poor are poor because of their own moral failings?",
+          'How does Dickens use the Cratchit family to challenge the Victorian idea that the poor are poor because of their own moral failings?',
         lines: 5,
         modelAnswer:
           "The Cratchit family is presented as warm, loving, generous, and morally admirable despite their poverty. Bob earns barely enough to survive on, yet the family celebrates Christmas with joy and gratitude. By making the Cratchits so clearly virtuous, Dickens demolishes the Malthusian idea that poverty reflects character flaws. The family's poverty is explicitly linked to Scrooge's meanness -- Bob is underpaid by a wealthy employer. Dickens argues that poverty is a systemic, social condition, not a moral one, and that those who have wealth are responsible for those who do not.",
@@ -625,7 +621,7 @@ export const y9Term1Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       "The Malthusian context is essential for understanding the 'surplus population' exchange. Spend time on this -- it recurs in essay questions and students who understand it will score higher on AO3.",
-      "The Cratchit family can tip into sentimentality if not handled carefully. Encourage students to notice the hints of hardship Dickens includes (the small goose, the pudding anxiety) alongside the warmth.",
+      'The Cratchit family can tip into sentimentality if not handled carefully. Encourage students to notice the hints of hardship Dickens includes (the small goose, the pudding anxiety) alongside the warmth.',
       "The children Ignorance and Want are sometimes mistaken for Scrooge's own children or random street children. Be explicit: they emerge from beneath the Ghost's robe, meaning they are hidden by the very abundance the wealthy enjoy.",
       'The structural movement from joy to horror in Stave 3 is a good teaching point about how structure itself creates argument. Students who can write about structure as a technique will access higher marks.',
     ],
@@ -673,13 +669,12 @@ export const y9Term1Lessons: LessonPlan[] = [
       title: 'Gothic Conventions -- Quick Identification',
       duration: '7 minutes',
       instructions:
-        "Display a list of ten features sometimes associated with Gothic fiction (darkness, silence, graves, supernatural figures, fear, decay, isolation, mystery, the uncanny, death). Ask students to tick the ones they expect to find in Stave 4 based on prior knowledge. Then read the opening description of the Ghost of Christmas Yet to Come aloud. Students check off which features they identify. Teacher introduces the idea that Dickens deliberately uses Gothic conventions in this Stave to create maximum psychological impact on Scrooge -- and on the reader.",
+        'Display a list of ten features sometimes associated with Gothic fiction (darkness, silence, graves, supernatural figures, fear, decay, isolation, mystery, the uncanny, death). Ask students to tick the ones they expect to find in Stave 4 based on prior knowledge. Then read the opening description of the Ghost of Christmas Yet to Come aloud. Students check off which features they identify. Teacher introduces the idea that Dickens deliberately uses Gothic conventions in this Stave to create maximum psychological impact on Scrooge -- and on the reader.',
       differentiation: {
-        support:
-          'Provide definitions of the ten Gothic features on a card.',
+        support: 'Provide definitions of the ten Gothic features on a card.',
         core: 'Students identify features independently before the class check.',
         stretch:
-          "Students write a sentence predicting why Dickens shifts to Gothic conventions for the final spirit rather than the warmer, more festive register of Stave 3.",
+          'Students write a sentence predicting why Dickens shifts to Gothic conventions for the final spirit rather than the warmer, more festive register of Stave 3.',
       },
       resources: [
         'List of ten Gothic features displayed on board',
@@ -698,7 +693,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             'Provide a guided annotation frame: What do the characters do/say? What does this reveal about their relationship with the dead person? What is Dickens saying about how we treat others?',
           core: 'Students annotate all three scenes independently.',
           stretch:
-            "Students consider the structural effect of Dickens withholding the identity of the dead man until Scrooge sees his own gravestone -- what does this delayed revelation achieve narratively and morally?",
+            'Students consider the structural effect of Dickens withholding the identity of the dead man until Scrooge sees his own gravestone -- what does this delayed revelation achieve narratively and morally?',
         },
         resources: [
           'Printed extracts: three reaction scenes from Stave 4',
@@ -716,7 +711,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             "Provide a sentence frame: 'In Stave 4, Dickens uses [Gothic feature] to create a sense of [effect]. The word/phrase [x] suggests... This is significant because fear forces Scrooge to...'",
           core: 'Students write independently and complete peer assessment.',
           stretch:
-            "Students consider whether a transformation driven by fear is as morally authentic as one driven by compassion -- does it matter why Scrooge changes, only that he does? Argue a position using evidence.",
+            'Students consider whether a transformation driven by fear is as morally authentic as one driven by compassion -- does it matter why Scrooge changes, only that he does? Argue a position using evidence.',
         },
         resources: [
           "Scrooge's promise quotation displayed on board",
@@ -731,19 +726,17 @@ export const y9Term1Lessons: LessonPlan[] = [
       instructions:
         "Students hold a brief structured debate: which of the three spirits is most important to Scrooge's transformation -- Past, Present, or Yet to Come? Each student must argue for one spirit and give one piece of evidence. Class votes at the end. Teacher draws out that while students often choose the final spirit because it is most dramatic, there is a strong case that the past spirit is most important because it reveals why Scrooge became who he is. Emphasise that exam answers should acknowledge complexity rather than offering a single 'correct' answer.",
       differentiation: {
-        support:
-          'Provide a card listing one argument for each spirit to scaffold the debate.',
+        support: 'Provide a card listing one argument for each spirit to scaffold the debate.',
         core: 'Students argue and vote independently.',
         stretch:
-          "Students argue that the three spirits only work as a complete sequence -- that none alone would have been sufficient -- and explain why Dickens structures the novella as three progressive visions.",
+          'Students argue that the three spirits only work as a complete sequence -- that none alone would have been sufficient -- and explain why Dickens structures the novella as three progressive visions.',
       },
     },
     homework:
       "Write a full analytical paragraph arguing which of the three spirits is most important to Scrooge's transformation. Use at least one quotation from each spirit's Stave and integrate one piece of contextual knowledge.",
     worksheetQuestions: [
       {
-        question:
-          'What does the silence of the Ghost of Christmas Yet to Come symbolise?',
+        question: 'What does the silence of the Ghost of Christmas Yet to Come symbolise?',
         lines: 4,
         modelAnswer:
           "The Ghost of Christmas Yet to Come does not speak -- it only points. Its silence is deeply unsettling and suggests several things: the future is unknowable and cannot be argued with; death itself is silent and indifferent; and Scrooge's fate will be determined not by words but by actions. The ghost's silence also forces Scrooge -- and the reader -- to sit with the horror of each vision without comfort or explanation. Dickens uses this silence as a Gothic device to create maximum dread.",
@@ -758,11 +751,10 @@ export const y9Term1Lessons: LessonPlan[] = [
         marks: 4,
       },
       {
-        question:
-          'What is dramatic irony? How does Dickens use it in Stave 4?',
+        question: 'What is dramatic irony? How does Dickens use it in Stave 4?',
         lines: 5,
         modelAnswer:
-          "Dramatic irony occurs when the audience understands something that a character does not. In Stave 4, Dickens builds dramatic irony by showing Scrooge various reactions to a mysterious death before Scrooge realises the dead man is himself. The reader quickly suspects the truth, which makes watching Scrooge witness the theft of his belongings and the indifference of his acquaintances more painful -- we know what he does not yet know. When Scrooge finally sees his own name on the gravestone, the horror is intensified because we have been dreading it alongside him.",
+          'Dramatic irony occurs when the audience understands something that a character does not. In Stave 4, Dickens builds dramatic irony by showing Scrooge various reactions to a mysterious death before Scrooge realises the dead man is himself. The reader quickly suspects the truth, which makes watching Scrooge witness the theft of his belongings and the indifference of his acquaintances more painful -- we know what he does not yet know. When Scrooge finally sees his own name on the gravestone, the horror is intensified because we have been dreading it alongside him.',
         marks: 5,
       },
       {
@@ -838,7 +830,7 @@ export const y9Term1Lessons: LessonPlan[] = [
           'Provide a list of five quotations (one per Stave) to help students decide where to plot Scrooge.',
         core: 'Students plot and annotate independently.',
         stretch:
-          "Students write two sentences arguing whether the transformation is a smooth progression or arrives in a sudden final leap -- and what that choice implies about how Dickens views change.",
+          'Students write two sentences arguing whether the transformation is a smooth progression or arrives in a sudden final leap -- and what that choice implies about how Dickens views change.',
       },
       resources: [
         'Pre-drawn emotion graph (one per student)',
@@ -857,7 +849,7 @@ export const y9Term1Lessons: LessonPlan[] = [
             'Provide a printed extract from Stave 5 with six quotations highlighted and two annotations completed as models.',
           core: 'Students annotate independently and identify three contrasts with Stave 1.',
           stretch:
-            "Students trace a specific image or motif (e.g. cold/warmth, laughter/silence, isolation/connection) across Stave 1 and Stave 5, writing a sentence about what this structural echo achieves.",
+            'Students trace a specific image or motif (e.g. cold/warmth, laughter/silence, isolation/connection) across Stave 1 and Stave 5, writing a sentence about what this structural echo achieves.',
         },
         resources: [
           'Printed Stave 5 extract for annotation',
@@ -866,7 +858,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         ],
       },
       {
-        title: "Essay Preparation -- Arguing About Transformation",
+        title: 'Essay Preparation -- Arguing About Transformation',
         duration: '18 minutes',
         instructions:
           "Students plan and begin a response to: 'How does Dickens present Scrooge\\'s transformation in A Christmas Carol?' Teacher models how to structure an argument that moves beyond retelling the plot: the opening sentence must make a clear claim; each paragraph must develop a point about how (technique) and why (authorial purpose); evidence must be drawn from multiple Staves. Students complete a four-point plan (one claim per paragraph) and write the opening paragraph in full. Peer assessment: partner identifies whether the opening makes a clear argument or simply describes what happens.",
@@ -890,8 +882,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       instructions:
         "Each student writes one word that captures the essence of Scrooge's transformation (e.g. redemption, awakening, repentance, recovery, rebirth). They then write one sentence explaining why they chose that word using evidence from the text. Teacher collects and reads out five or six responses, comparing the word choices. Discussion: does the word 'redemption' (a religious term) capture what Dickens intended, or is a secular word like 'awakening' more appropriate? Connect to the question of whether Dickens had a specifically Christian moral argument in mind.",
       differentiation: {
-        support:
-          'Provide a list of six possible words to choose from.',
+        support: 'Provide a list of six possible words to choose from.',
         core: 'Students choose their own word and write the sentence independently.',
         stretch:
           "Students write two sentences: one arguing for a religious interpretation of Scrooge's change, one arguing for a secular social interpretation, and a final sentence indicating which they find more convincing.",
@@ -913,7 +904,7 @@ export const y9Term1Lessons: LessonPlan[] = [
           'Identify and explain two moments in Stave 5 that directly echo or reverse scenes from Stave 1.',
         lines: 5,
         modelAnswer:
-          "In Stave 1, Scrooge dismisses the charity collectors with contempt; in Stave 5, he approaches them with generosity and delight, donating a large sum. This reversal demonstrates that his change is not simply emotional but translates into concrete social action. In Stave 1, Bob Cratchit quietly warms himself at the dying coal fire, afraid to ask for more; in Stave 5, Scrooge promises Bob a raise and more coal. Dickens uses these deliberate echoes to show that Scrooge has internalised the lessons of each spirit rather than simply experiencing a mood change.",
+          'In Stave 1, Scrooge dismisses the charity collectors with contempt; in Stave 5, he approaches them with generosity and delight, donating a large sum. This reversal demonstrates that his change is not simply emotional but translates into concrete social action. In Stave 1, Bob Cratchit quietly warms himself at the dying coal fire, afraid to ask for more; in Stave 5, Scrooge promises Bob a raise and more coal. Dickens uses these deliberate echoes to show that Scrooge has internalised the lessons of each spirit rather than simply experiencing a mood change.',
         marks: 5,
       },
       {
@@ -926,7 +917,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
       {
         question:
-          "Why does Dickens give the novella a happy ending? What is the risk of this choice?",
+          'Why does Dickens give the novella a happy ending? What is the risk of this choice?',
         lines: 4,
         modelAnswer:
           "Dickens gives the novella a joyful ending because his purpose is didactic -- he wants to argue that change is possible and that generosity leads to human happiness. A tragic ending would undermine this message. However, the risk is that the happy ending can seem too easy, too rapid, or too complete to be psychologically convincing. Dickens manages this risk by grounding Stave 5 in specific, concrete acts of generosity rather than abstract goodwill, and by maintaining a comic, celebratory tone that signals the novella's genre as a moral fable rather than a realist novel.",
@@ -942,9 +933,9 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      "The emotion graph starter is an excellent formative assessment tool. Students who plot a smooth line from cold to warm have understood the arc; those who plot a sudden leap at Stave 4 may be undervaluing the emotional work of Staves 2 and 3.",
-      "The fear vs compassion debate (worksheet question 3) is the kind of nuanced question that appears at the top of GCSE mark schemes. Prepare students to argue a position while acknowledging the counter-argument.",
-      "Stave 5 is shorter than the others and is sometimes neglected in teaching. It repays close reading -- the specific actions Dickens describes (the turkey, the charity donation, the raise for Bob) are carefully chosen to reverse each of the failures depicted in Stave 1.",
+      'The emotion graph starter is an excellent formative assessment tool. Students who plot a smooth line from cold to warm have understood the arc; those who plot a sudden leap at Stave 4 may be undervaluing the emotional work of Staves 2 and 3.',
+      'The fear vs compassion debate (worksheet question 3) is the kind of nuanced question that appears at the top of GCSE mark schemes. Prepare students to argue a position while acknowledging the counter-argument.',
+      'Stave 5 is shorter than the others and is sometimes neglected in teaching. It repays close reading -- the specific actions Dickens describes (the turkey, the charity donation, the raise for Bob) are carefully chosen to reverse each of the failures depicted in Stave 1.',
       "The question of whether the happy ending is 'earned' or too convenient is worth exploring. Students who can engage with this critically -- arguing that Dickens prioritises moral message over realism -- are demonstrating higher-order thinking.",
     ],
     targetedSkills: [
@@ -965,7 +956,7 @@ export const y9Term1Lessons: LessonPlan[] = [
     yearGroup: 'Year 9',
     duration: '60 minutes',
     objectives: [
-      "Analyse how Dickens uses Fred, Bob Cratchit, and Tiny Tim to develop theme and argument (9R.4)",
+      'Analyse how Dickens uses Fred, Bob Cratchit, and Tiny Tim to develop theme and argument (9R.4)',
       "Explain the function of secondary characters in relation to Scrooge's transformation (9R.2)",
       'Identify the specific techniques Dickens uses to present each character (9R.3)',
       "Write analytically about how a secondary character contributes to the novella's moral message (9W.4)",
@@ -1044,7 +1035,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
     ],
     plenaryActivity: {
-      title: "Which Secondary Character Matters Most? -- Vote and Justify",
+      title: 'Which Secondary Character Matters Most? -- Vote and Justify',
       duration: '8 minutes',
       instructions:
         "Students vote by show of hands: which secondary character is most important to the novella's moral argument -- Fred, Bob, or Tiny Tim? Teacher records votes. Ask three students (one for each character) to give their best single argument. Class evaluates: which argument was most convincingly supported by evidence? Teacher draws out the key exam skill: the 'best' answer is not the one that picks the right character but the one that makes the strongest argument with the best evidence.",
@@ -1060,8 +1051,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       "Write a full analytical paragraph about the character of Tiny Tim. Your paragraph must: explain what Tiny Tim symbolises, use at least one embedded quotation, and make an explicit connection to Dickens's argument about the treatment of the poor in Victorian England.",
     worksheetQuestions: [
       {
-        question:
-          'How does Dickens use Fred as a foil to Scrooge in A Christmas Carol?',
+        question: 'How does Dickens use Fred as a foil to Scrooge in A Christmas Carol?',
         lines: 5,
         modelAnswer:
           "Fred functions as a direct foil to Scrooge -- a character whose qualities highlight Scrooge's failings by contrast. Where Scrooge is cold, isolated, and contemptuous of Christmas, Fred is warm, sociable, and passionately committed to its spirit. Fred's famous speech in Stave 1 -- that Christmas is 'the only time I know of, in the long calendar of the year, when men and women seem by one consent to open their shut-up hearts freely' -- articulates the novella's central moral argument. Dickens uses Fred to show that generosity is not a matter of wealth but of character, undercutting Scrooge's claim that he cannot afford to be generous.",
@@ -1093,16 +1083,16 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
       {
         question:
-          "How does Dickens use the secondary characters to show what Scrooge has been missing?",
+          'How does Dickens use the secondary characters to show what Scrooge has been missing?',
         lines: 4,
         modelAnswer:
-          "Each secondary character embodies something Scrooge has sacrificed: Fred represents the family warmth he rejected when he turned away his nephew; Bob represents the human loyalty and dignity he ignores in his employee; Tiny Tim represents the innocence and generosity of spirit that Scrooge has suppressed in himself. Dickens uses these characters as mirrors, showing Scrooge -- and the reader -- not just what poverty looks like from the outside, but what Scrooge himself has lost by choosing isolation and avarice over human connection.",
+          'Each secondary character embodies something Scrooge has sacrificed: Fred represents the family warmth he rejected when he turned away his nephew; Bob represents the human loyalty and dignity he ignores in his employee; Tiny Tim represents the innocence and generosity of spirit that Scrooge has suppressed in himself. Dickens uses these characters as mirrors, showing Scrooge -- and the reader -- not just what poverty looks like from the outside, but what Scrooge himself has lost by choosing isolation and avarice over human connection.',
         marks: 4,
       },
     ],
     teacherNotes: [
       'The character carousel works well when each group has roughly equal numbers. If the class is small, run it as a whole-class rotation with one character per portion of the lesson rather than simultaneous group work.',
-      'Bob Cratchit is often underrated as a character by students who focus entirely on Tiny Tim. Emphasise that Bob\'s relationship with Scrooge is the economic heart of the novella\'s argument.',
+      "Bob Cratchit is often underrated as a character by students who focus entirely on Tiny Tim. Emphasise that Bob's relationship with Scrooge is the economic heart of the novella's argument.",
       'The accusation of sentimentality (worksheet question 4) is a sophisticated point worth raising with higher-attaining students. Dickens was criticised in his own time for excessive sentimentality around child poverty -- engaging with this gives students a more complex view of the text.',
       "Fred's speech about Christmas in Stave 1 is one of the most quotable passages in the novella for essay purposes. Ensure all students can locate it and understand its function as a thesis statement for the novella's moral argument.",
     ],
@@ -1150,7 +1140,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       title: 'Technique Sorting Activity',
       duration: '8 minutes',
       instructions:
-        "Provide students with twelve quotation cards from A Christmas Carol and twelve technique label cards (metaphor, simile, personification, accumulation, hyperbole, direct address, sibilance, listing, exclamation, rhetorical question, irony, juxtaposition). Students work in pairs to match each quotation to its technique. Teacher reveals answers and discusses any contested matches -- some quotations use more than one technique, and this ambiguity is productive. Introduce the key point: naming a technique is only the first step; explaining why Dickens chose it is the analytical task.",
+        'Provide students with twelve quotation cards from A Christmas Carol and twelve technique label cards (metaphor, simile, personification, accumulation, hyperbole, direct address, sibilance, listing, exclamation, rhetorical question, irony, juxtaposition). Students work in pairs to match each quotation to its technique. Teacher reveals answers and discusses any contested matches -- some quotations use more than one technique, and this ambiguity is productive. Introduce the key point: naming a technique is only the first step; explaining why Dickens chose it is the analytical task.',
       differentiation: {
         support:
           'Reduce the matching task to eight cards and provide definitions on the back of each technique card.',
@@ -1216,7 +1206,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       },
     },
     homework:
-      'Choose three quotations from A Christmas Carol that you have not analysed in class. For each quotation, write three sentences: name the technique, explain its immediate effect, and connect it to Dickens\'s wider purpose or the Victorian context.',
+      "Choose three quotations from A Christmas Carol that you have not analysed in class. For each quotation, write three sentences: name the technique, explain its immediate effect, and connect it to Dickens's wider purpose or the Victorian context.",
     worksheetQuestions: [
       {
         question:
@@ -1315,7 +1305,7 @@ export const y9Term1Lessons: LessonPlan[] = [
           'Provide the AO definitions on a card and pre-colour-code the stronger response (AO1 in one colour, AO2 in another, AO3 in a third).',
         core: 'Students identify AOs in both responses independently.',
         stretch:
-          "Students write one sentence explaining what specifically makes the stronger response more effective -- what does it do that the weaker response does not?",
+          'Students write one sentence explaining what specifically makes the stronger response more effective -- what does it do that the weaker response does not?',
       },
       resources: [
         'AO1, AO2, AO3 definitions displayed on board',
@@ -1371,11 +1361,11 @@ export const y9Term1Lessons: LessonPlan[] = [
           'Provide three example thesis statements (one weak, one acceptable, one strong) as a benchmark for evaluating the gallery examples.',
         core: 'Students evaluate independently and justify their choices.',
         stretch:
-          "Students write a second thesis statement that takes the opposite position and argue which is easier to sustain with evidence from the novella -- and why.",
+          'Students write a second thesis statement that takes the opposite position and argue which is easier to sustain with evidence from the novella -- and why.',
       },
     },
     homework:
-      "Complete the full essay plan begun in class. Write two more analytical paragraphs (Paragraphs 2 and 3 from your plan), each integrating AO1, AO2, and AO3. Bring your full plan and two paragraphs to the next lesson for peer review before the timed assessment.",
+      'Complete the full essay plan begun in class. Write two more analytical paragraphs (Paragraphs 2 and 3 from your plan), each integrating AO1, AO2, and AO3. Bring your full plan and two paragraphs to the next lesson for peer review before the timed assessment.',
     worksheetQuestions: [
       {
         question:
@@ -1468,7 +1458,7 @@ export const y9Term1Lessons: LessonPlan[] = [
       title: 'Pre-Assessment Warm-Up -- Three Key Quotations',
       duration: '8 minutes',
       instructions:
-        "Before assessment conditions begin, give students 8 minutes to write down three quotations they plan to use in their essay -- one about character, one about language or technique, one connecting to context. They also write one sentence reminding themselves of their thesis. This pre-writing warm-up activates memory and reduces blank-page anxiety. Teacher collects no work from this stage -- it is purely a private warm-up. After 8 minutes, ask students to put their notes face down and begin the timed essay. Reassure students that the warm-up notes are for their eyes only and will not be assessed.",
+        'Before assessment conditions begin, give students 8 minutes to write down three quotations they plan to use in their essay -- one about character, one about language or technique, one connecting to context. They also write one sentence reminding themselves of their thesis. This pre-writing warm-up activates memory and reduces blank-page anxiety. Teacher collects no work from this stage -- it is purely a private warm-up. After 8 minutes, ask students to put their notes face down and begin the timed essay. Reassure students that the warm-up notes are for their eyes only and will not be assessed.',
       differentiation: {
         support:
           'Allow support students to use their essay plan from Lesson 9 and a vocabulary/quotation reference card agreed in advance.',
@@ -1505,7 +1495,7 @@ export const y9Term1Lessons: LessonPlan[] = [
         title: 'Timed Essay -- Part 2: Development and Conclusion',
         duration: '27 minutes',
         instructions:
-          "Students continue writing their essay in silence for a further 27 minutes. They should aim to complete two or three more analytical paragraphs and a conclusion. At the 15-minute mark within this block (42 minutes total), give a quiet reminder that students should be working towards their conclusion. At the 25-minute mark (52 minutes total), give a final warning to complete the essay. Students should use the final 3 minutes to re-read and make any corrections. Teacher continues to circulate silently.",
+          'Students continue writing their essay in silence for a further 27 minutes. They should aim to complete two or three more analytical paragraphs and a conclusion. At the 15-minute mark within this block (42 minutes total), give a quiet reminder that students should be working towards their conclusion. At the 25-minute mark (52 minutes total), give a final warning to complete the essay. Students should use the final 3 minutes to re-read and make any corrections. Teacher continues to circulate silently.',
         differentiation: {
           support:
             'At the 15-minute mark, teacher may quietly direct support students to move to their conclusion if they have not yet done so, to ensure all students complete a full response.',
@@ -1513,27 +1503,23 @@ export const y9Term1Lessons: LessonPlan[] = [
           stretch:
             'Stretch students should aim to include a counter-argument paragraph that acknowledges a complexity in the novella before returning to their overall thesis.',
         },
-        resources: [
-          'Timer with visible countdown',
-          'Essay question displayed throughout',
-        ],
+        resources: ['Timer with visible countdown', 'Essay question displayed throughout'],
       },
     ],
     plenaryActivity: {
       title: 'Post-Assessment Reflection',
       duration: '5 minutes',
       instructions:
-        "Students complete a brief self-assessment slip: (1) What is your thesis? Write it in one sentence. (2) Which paragraph do you feel strongest about? Why? (3) What one thing would you do differently if you had more time? Teacher collects essays and self-assessment slips together. The self-assessment is used when returning marked work to prompt students to engage with their own reflection before receiving teacher feedback. Do not share or discuss essay content as a class at this stage -- this avoids disadvantaging students who have written less.",
+        'Students complete a brief self-assessment slip: (1) What is your thesis? Write it in one sentence. (2) Which paragraph do you feel strongest about? Why? (3) What one thing would you do differently if you had more time? Teacher collects essays and self-assessment slips together. The self-assessment is used when returning marked work to prompt students to engage with their own reflection before receiving teacher feedback. Do not share or discuss essay content as a class at this stage -- this avoids disadvantaging students who have written less.',
       differentiation: {
-        support:
-          'Provide sentence frames for the self-assessment slip.',
+        support: 'Provide sentence frames for the self-assessment slip.',
         core: 'Students complete independently.',
         stretch:
           'Students write a fourth reflection: what counter-argument did they include, and how effectively did they address it?',
       },
     },
     homework:
-      "No written homework this week. Before the next lesson, re-read your essay and annotate it with three observations: one thing you did well, one place where you could have pushed your analysis further, and one quotation you wish you had included. Bring these annotations to the feedback lesson.",
+      'No written homework this week. Before the next lesson, re-read your essay and annotate it with three observations: one thing you did well, one place where you could have pushed your analysis further, and one quotation you wish you had included. Bring these annotations to the feedback lesson.',
     worksheetQuestions: [
       {
         question:
@@ -1572,22 +1558,22 @@ export const y9Term1Lessons: LessonPlan[] = [
           'How can you manage your time effectively in a 45-minute timed essay? Give three specific strategies.',
         lines: 4,
         modelAnswer:
-          "Three effective time-management strategies are: (1) Spend the first 3 to 5 minutes planning -- a brief five-point plan prevents the essay from losing direction mid-response and is more efficient than writing without a plan. (2) Divide the remaining time into roughly equal portions for each paragraph, with a reminder to yourself at the midpoint to assess whether you are on track to complete. (3) Prioritise finishing over perfection -- a complete essay with three solid paragraphs and a conclusion will score more highly than an excellent two-paragraph response that stops mid-argument. Always leave 2 minutes at the end to re-read and correct.",
+          'Three effective time-management strategies are: (1) Spend the first 3 to 5 minutes planning -- a brief five-point plan prevents the essay from losing direction mid-response and is more efficient than writing without a plan. (2) Divide the remaining time into roughly equal portions for each paragraph, with a reminder to yourself at the midpoint to assess whether you are on track to complete. (3) Prioritise finishing over perfection -- a complete essay with three solid paragraphs and a conclusion will score more highly than an excellent two-paragraph response that stops mid-argument. Always leave 2 minutes at the end to re-read and correct.',
         marks: 4,
       },
     ],
     teacherNotes: [
       "Set up the room in exam conditions before students arrive: desks separated if possible, question hidden until the warm-up ends, timer displayed. The physical environment matters for building students' confidence in formal assessment settings.",
       'The 8-minute warm-up significantly reduces blank-page paralysis and improves output quality. It is not cheating -- it is good metacognitive preparation. Allow it even in formal mock conditions.',
-      'Circulate during the assessment but do not read over students\' shoulders -- this creates anxiety. Position yourself at the front or back of the room and make yourself available without being intrusive.',
-      'When marking, use the self-assessment slips to personalise feedback: respond directly to the student\'s own reflection before adding your own observations. This makes written feedback far more likely to be read and acted upon.',
+      "Circulate during the assessment but do not read over students' shoulders -- this creates anxiety. Position yourself at the front or back of the room and make yourself available without being intrusive.",
+      "When marking, use the self-assessment slips to personalise feedback: respond directly to the student's own reflection before adding your own observations. This makes written feedback far more likely to be read and acted upon.",
     ],
     targetedSkills: [
       '9W.4 -- Writing structured analytical paragraphs',
       '9W.5 -- Producing an extended, structured written argument',
-      "9W.6 -- Evaluating and improving written responses",
+      '9W.6 -- Evaluating and improving written responses',
       '9R.6 -- Synthesising analysis of character, theme, language, and context',
       '9S.2 -- Using subject terminology accurately under timed conditions',
     ],
   },
-];
+]

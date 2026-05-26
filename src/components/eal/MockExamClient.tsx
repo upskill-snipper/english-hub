@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * Banded EAL practice runner — replaces the "coming soon" mock-exam
+ * Banded EAL practice runner - replaces the "coming soon" mock-exam
  * stubs with real, scored, bilingual practice drawn from the calibrated
  * diagnostic bank (src/lib/eal/diagnostic-bank.ts) filtered to one CEFR
  * band. Immediate per-question feedback (this is practice, not the
@@ -34,7 +34,7 @@ export function MockExamClient({ level }: { level: CEFRBand }) {
         <Link href="/eal">EAL · {isAr ? 'تدريب' : 'Practice'}</Link>
       </p>
       <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-        {level} {isAr ? 'تدريب' : 'Practice'} — {t(CEFR_LABEL[level])}
+        {level} {isAr ? 'تدريب' : 'Practice'} - {t(CEFR_LABEL[level])}
       </h1>
       <p className="text-base text-muted-foreground leading-relaxed mb-4">
         {t(CEFR_DESCRIPTORS[level])}
@@ -119,8 +119,8 @@ export function MockExamClient({ level }: { level: CEFRBand }) {
           <p className="mt-1 text-sm text-muted-foreground">
             {score / questions.length >= 0.7
               ? isAr
-                ? `أداء قوي عند ${level} — جرّب المستوى الأعلى.`
-                : `Strong at ${level} — try the next band up.`
+                ? `أداء قوي عند ${level} - جرّب المستوى الأعلى.`
+                : `Strong at ${level} - try the next band up.`
               : isAr
                 ? `راجع مواضيع ${level} ثم أعد المحاولة.`
                 : `Review the ${level} topics, then try again.`}

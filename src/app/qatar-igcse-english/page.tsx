@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: 'IGCSE English revision for Qatar — The English Hub',
+    title: 'IGCSE English revision for Qatar - The English Hub',
     description:
       'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
     url: PAGE_URL,
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: 'IGCSE English revision for Qatar — Pearson Edexcel and Cambridge covered',
+        alt: 'IGCSE English revision for Qatar - Pearson Edexcel and Cambridge covered',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IGCSE English revision for Qatar — The English Hub',
+    title: 'IGCSE English revision for Qatar - The English Hub',
     description:
       'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
     images: [OG_IMAGE],
@@ -233,7 +233,7 @@ export default async function QatarIgcseEnglishPage() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 1 — WHICH SPECS ════════════════ */}
+      {/* ════════════════ SECTION 1 - WHICH SPECS ════════════════ */}
       <section id="specs" className="py-16 sm:py-20 border-t border-border/40 scroll-mt-16">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-6">
@@ -268,7 +268,7 @@ export default async function QatarIgcseEnglishPage() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 2 — HOW WE HELP ════════════════ */}
+      {/* ════════════════ SECTION 2 - HOW WE HELP ════════════════ */}
       <section className="py-16 sm:py-20 border-t border-border/40 bg-card/20">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-6">
@@ -339,7 +339,7 @@ export default async function QatarIgcseEnglishPage() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 3 — TIMEZONE ════════════════ */}
+      {/* ════════════════ SECTION 3 - TIMEZONE ════════════════ */}
       <section className="py-16 sm:py-20 border-t border-border/40">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-6">
@@ -355,7 +355,7 @@ export default async function QatarIgcseEnglishPage() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 4 — EDEXCEL ANTHOLOGY ════════════════ */}
+      {/* ════════════════ SECTION 4 - EDEXCEL ANTHOLOGY ════════════════ */}
       <section className="py-16 sm:py-20 border-t border-border/40 bg-card/20">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-6">
@@ -383,7 +383,7 @@ export default async function QatarIgcseEnglishPage() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 5 — 0500 vs 0990 ════════════════ */}
+      {/* ════════════════ SECTION 5 - 0500 vs 0990 ════════════════ */}
       <section className="py-16 sm:py-20 border-t border-border/40">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-6">
@@ -411,7 +411,7 @@ export default async function QatarIgcseEnglishPage() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 6 — FAQ ════════════════ */}
+      {/* ════════════════ SECTION 6 - FAQ ════════════════ */}
       <section className="py-16 sm:py-20 border-t border-border/40 bg-card/20">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-8">

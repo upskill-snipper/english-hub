@@ -4,11 +4,11 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'PEE Paragraph Builder — Worksheet',
+    title: 'PEE Paragraph Builder - Worksheet',
     description:
       'A scaffolded PEE (Point, Evidence, Explain) worksheet with sentence starters, a worked example, and differentiation.',
   },
-  title: 'PEE Paragraph Builder — Worksheet',
+  title: 'PEE Paragraph Builder - Worksheet',
   description:
     'A scaffolded PEE (Point, Evidence, Explain) worksheet with sentence starters, a worked example, and differentiation.',
   alternates: {
@@ -55,7 +55,7 @@ export default function PeeParagraphBuilderWorksheet() {
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Year Group
               </div>
-              <div className="mt-1 text-sm font-semibold text-foreground">KS3–KS4</div>
+              <div className="mt-1 text-sm font-semibold text-foreground">KS3-KS4</div>
             </div>
             <div className="rounded-lg border border-border bg-background p-3">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -117,7 +117,7 @@ export default function PeeParagraphBuilderWorksheet() {
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-foreground">Step 2: Evidence</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Choose a short quotation from the extract that proves your point. Keep it short — a
+            Choose a short quotation from the extract that proves your point. Keep it short - a
             phrase or single sentence is enough. Embed it inside your own sentence.
           </p>
           <div className="mt-4 rounded-2xl border border-border bg-card p-5">
@@ -181,7 +181,7 @@ export default function PeeParagraphBuilderWorksheet() {
               <strong>Explain:</strong> The simile suggests that Scrooge is hard on the outside and
               almost impossible to open, just like an oyster. The adjective &quot;solitary&quot;
               reinforces his isolation, making the reader feel a mix of pity and dislike. Perhaps
-              Dickens wants us to question whether anyone could ever reach Scrooge — a question the
+              Dickens wants us to question whether anyone could ever reach Scrooge - a question the
               rest of the novella sets out to answer.
             </p>
           </div>
@@ -212,7 +212,7 @@ export default function PeeParagraphBuilderWorksheet() {
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-foreground">Use in Classroom — Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground">Use in Classroom - Tips</h2>
           <ul className="mt-4 space-y-2 text-foreground">
             <li>
               <strong>Read the example first:</strong> Walk through the worked example together

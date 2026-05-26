@@ -77,7 +77,7 @@ const INPUT = {
 
 beforeEach(() => vi.clearAllMocks())
 
-describe('captureVersions — select-existing then insert', () => {
+describe('captureVersions - select-existing then insert', () => {
   it('returns existing ids WITHOUT inserting when rows already exist', async () => {
     const { client, inserts } = buildClient({
       model_versions: { selectResult: { data: { id: 'mv-1' }, error: null } },
@@ -188,7 +188,7 @@ describe('captureVersions — select-existing then insert', () => {
   })
 })
 
-describe('captureVersions — never throws, returns nulls on failure', () => {
+describe('captureVersions - never throws, returns nulls on failure', () => {
   it('select that throws ⇒ that id is null (no exception bubbles)', async () => {
     const { client } = buildClient({
       model_versions: { throwOnSelect: true },
@@ -244,7 +244,7 @@ describe('captureVersions — never throws, returns nulls on failure', () => {
   })
 })
 
-describe('captureVersions — unique-violation race', () => {
+describe('captureVersions - unique-violation race', () => {
   it('23505 on insert ⇒ re-selects and converges on the existing row', async () => {
     // selectResult is consulted twice: first (absent) → insert → 23505 →
     // re-select returns the row. Our stub returns the SAME selectResult each

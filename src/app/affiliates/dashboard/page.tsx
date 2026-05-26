@@ -7,7 +7,7 @@ import { t } from '@/lib/i18n/t'
 // ─── /affiliates/dashboard ──────────────────────────────────────────────────
 //
 // Reads from the NEW affiliate_accounts system (commit 20260420_affiliates_v2).
-// The legacy affiliates table path has been retired from the dashboard — every
+// The legacy affiliates table path has been retired from the dashboard - every
 // self-serve enrolment via /api/affiliates/enrol writes to affiliate_accounts,
 // and the few legacy rows that still exist are handled by the soft banner on
 // /affiliates (commit 157b5a4 updated that path).
@@ -16,7 +16,7 @@ import { t } from '@/lib/i18n/t'
 // /affiliates/apply when no legacy row existed, which bounced via
 // /affiliates/page.tsx back to /affiliates/dashboard → infinite loop.
 //
-// 2026-05-13: metadata wired to i18n — the document title comes from the
+// 2026-05-13: metadata wired to i18n - the document title comes from the
 // `affiliates.dashboard.meta.title` key so the AR locale serves Khaleeji copy.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -43,7 +43,7 @@ export default async function AffiliateDashboardPage() {
     .eq('user_id', user.id)
     .maybeSingle()
 
-  // No row — user needs to enrol. Send them to the enrolment form,
+  // No row - user needs to enrol. Send them to the enrolment form,
   // NOT /affiliates/apply (which redirects and causes the historical loop).
   if (!account) {
     redirect('/affiliates#apply')

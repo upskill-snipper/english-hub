@@ -9,7 +9,7 @@ import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson Edexcel GCSE English Language writing skills — The English Hub',
+    title: 'Pearson Edexcel GCSE English Language writing skills - The English Hub',
     description:
       'Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
   },

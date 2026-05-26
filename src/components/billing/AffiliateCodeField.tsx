@@ -1,13 +1,13 @@
 'use client'
 
 /**
- * Affiliate / promo code entry field — shown above any pricing CTA so the
+ * Affiliate / promo code entry field - shown above any pricing CTA so the
  * code is in plain sight at the moment of decision.
  *
  * Why this exists: previously the Stripe Checkout page exposed its own
  * promo field via `allow_promotion_codes: true`. Customers tried to enter
  * our app-level codes (`2026ENGLISH`, affiliate codes) there and got a
- * cryptic "This code is invalid" from Stripe — which reads as "the
+ * cryptic "This code is invalid" from Stripe - which reads as "the
  * site is broken". We now disable Stripe's promo field on standard
  * checkouts and collect codes here instead, on the pricing surface
  * itself. Codes are routed through `/api/promo/redeem` (which bakes
@@ -24,7 +24,7 @@
  *      // through /api/promo/redeem when set.
  *
  * 2. Compact "redirect to /pricing?code=X" prompt (on link-to-pricing
- *    surfaces — homepage, for-teachers, modals, lockout cards):
+ *    surfaces - homepage, for-teachers, modals, lockout cards):
  *      <PromoCodePrompt />
  *    User types code → clicks Apply → navigates to
  *    /pricing?code=<NORMALIZED> where pattern (1) auto-applies it.
@@ -84,7 +84,7 @@ export function useAffiliateCodeField(opts?: {
     try {
       const res = await fetch(`/api/promo/validate?code=${encodeURIComponent(trimmed)}`)
       // /api/promo/validate uses successResponse(data, status) which puts
-      // the payload at the TOP LEVEL of the response body — there's no
+      // the payload at the TOP LEVEL of the response body - there's no
       // `{ data: ... }` envelope. An earlier draft of this code expected
       // an envelope and silently treated every valid code as invalid.
       const result = (await res.json().catch(() => null)) as ValidationResult | null
@@ -139,7 +139,7 @@ export function useAffiliateCodeField(opts?: {
 }
 
 /**
- * Compact prompt for surfaces that don't own checkout state — homepage
+ * Compact prompt for surfaces that don't own checkout state - homepage
  * pricing tiles, modals, in-page lockouts, /for-teachers. The user
  * types a code → clicks Apply → we navigate to
  * `/pricing?code=NORMALIZED_CODE` where the full <AffiliateCodeField>
@@ -239,7 +239,7 @@ export function PromoCodePrompt({
 }
 
 interface AffiliateCodeFieldProps extends AffiliateCodeFieldState {
-  /** Heading text — overridable in case the surface needs different copy. */
+  /** Heading text - overridable in case the surface needs different copy. */
   heading?: string
   /** Subheading shown below the heading. */
   subheading?: string

@@ -132,7 +132,7 @@ function saveToStorage(key: string, value: unknown): void {
   try {
     localStorage.setItem(key, JSON.stringify(value))
   } catch {
-    // Storage full or blocked — silently fail
+    // Storage full or blocked - silently fail
   }
 }
 
@@ -720,7 +720,7 @@ function InteractiveTextViewer({ data, storageKey, className = '' }: Interactive
       else result.add('quote') // always show quotes in analytical
       return result
     }
-    // Close reading — respect user toggles
+    // Close reading - respect user toggles
     return activeOverlays
   }, [readingMode, activeOverlays])
 

@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
   GitCompare,
@@ -22,7 +22,7 @@ const LINKING_PHRASES = {
     'In the same way, [Poet B] also presents...',
     'Like [Poet A], [Poet B] uses...',
     'Both poets employ... to suggest...',
-    'Echoing [Poet A]\'s use of..., [Poet B]...',
+    "Echoing [Poet A]'s use of..., [Poet B]...",
     'This mirrors the way [Poet B] constructs...',
   ],
   difference: [
@@ -110,11 +110,11 @@ export default function UnseenPoetryComparisonPage() {
           Strong comparison is the single biggest differentiator at the top end
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          Every IGCSE candidate can write about one poem. What separates a Grade 6 from a Grade
-          8 is the ability to weave two poems together in sustained comparative paragraphs. The
-          examiner is not looking for "and now here is the other poem" -- they want you to read
-          both poems through the same analytical lens. That requires planning, linking vocabulary
-          and a thesis that could only come from reading both poems together.
+          Every IGCSE candidate can write about one poem. What separates a Grade 6 from a Grade 8 is
+          the ability to weave two poems together in sustained comparative paragraphs. The examiner
+          is not looking for "and now here is the other poem" -- they want you to read both poems
+          through the same analytical lens. That requires planning, linking vocabulary and a thesis
+          that could only come from reading both poems together.
         </p>
       </section>
 
@@ -127,9 +127,9 @@ export default function UnseenPoetryComparisonPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 leading-relaxed">
-          Draw two columns on your answer booklet, one for each poem. In each column, write:
-          theme, tone, key image, form, effect. Then circle the three most interesting points
-          of connection -- these become your three paragraphs.
+          Draw two columns on your answer booklet, one for each poem. In each column, write: theme,
+          tone, key image, form, effect. Then circle the three most interesting points of connection
+          -- these become your three paragraphs.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -171,10 +171,7 @@ export default function UnseenPoetryComparisonPage() {
 
         <div className="grid gap-4">
           {STRUCTURES.map((s) => (
-            <div
-              key={s.name}
-              className={`rounded-2xl border p-5 sm:p-6 ${s.colour}`}
-            >
+            <div key={s.name} className={`rounded-2xl border p-5 sm:p-6 ${s.colour}`}>
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <h3 className="text-heading-md font-heading text-foreground">{s.name}</h3>
                 <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
@@ -211,8 +208,8 @@ export default function UnseenPoetryComparisonPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          These phrases signal to the examiner that you are comparing, not just listing. Aim
-          to use at least one linking phrase per paragraph, and vary them across your essay.
+          These phrases signal to the examiner that you are comparing, not just listing. Aim to use
+          at least one linking phrase per paragraph, and vary them across your essay.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-3">
@@ -274,9 +271,9 @@ export default function UnseenPoetryComparisonPage() {
           <Lightbulb className="mt-0.5 size-4 shrink-0 text-emerald-400" />
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             <span className="font-semibold text-foreground">Notice: </span>
-            Every sentence holds both poems in mind. The comparative linking ("while",
-            "whereas", "similarly", "in this way") is relentless. And the thesis is something
-            that could only come from reading both poems together -- that is comparing texts at its best.
+            Every sentence holds both poems in mind. The comparative linking ("while", "whereas",
+            "similarly", "in this way") is relentless. And the thesis is something that could only
+            come from reading both poems together -- that is comparing texts at its best.
           </p>
         </div>
       </section>
@@ -310,8 +307,8 @@ export default function UnseenPoetryComparisonPage() {
           Now sharpen your language analysis
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Comparison is only as good as the analysis underneath it. Learn the What-How-Why
-          framework and turn observation into insight.
+          Comparison is only as good as the analysis underneath it. Learn the What-How-Why framework
+          and turn observation into insight.
         </p>
         <Button
           variant="default"

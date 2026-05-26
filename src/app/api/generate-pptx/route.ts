@@ -91,7 +91,7 @@ function buildReflectionQuestions(instructions: string): string[] {
 
   // Provide intelligent defaults
   return [
-    questions[0] || 'What concept from today\'s lesson do I need more help understanding?',
+    questions[0] || "What concept from today's lesson do I need more help understanding?",
     questions[1] || 'Which skill am I still developing and need to practise?',
     questions[2] || 'What is one thing I can confidently explain to someone else?',
   ]
@@ -107,7 +107,11 @@ function pickTeacherTip(notes?: string[]): string | undefined {
 
 type SlideSkin = 'cream' | 'dark' | 'whiteboard'
 
-function buildLessonPlanPptx(topic: string, data: LessonPlanData, skin: SlideSkin = 'cream'): PptxGenJS {
+function buildLessonPlanPptx(
+  topic: string,
+  data: LessonPlanData,
+  skin: SlideSkin = 'cream',
+): PptxGenJS {
   const pptx = new PptxGenJS()
   pptx.author = 'The English Hub'
   pptx.company = 'The English Hub'
@@ -154,9 +158,7 @@ function buildLessonPlanPptx(topic: string, data: LessonPlanData, skin: SlideSki
 
   // ── Main Activities ─────────────────────────────────────────────────
   data.mainActivities.forEach((act, i) => {
-    const label = data.mainActivities.length > 1
-      ? `MAIN ACTIVITY ${i + 1}`
-      : 'MAIN ACTIVITY'
+    const label = data.mainActivities.length > 1 ? `MAIN ACTIVITY ${i + 1}` : 'MAIN ACTIVITY'
 
     // Phase divider
     phaseDividerSlide(pptx, 'main', act.title)
@@ -169,22 +171,16 @@ function buildLessonPlanPptx(topic: string, data: LessonPlanData, skin: SlideSki
       duration: act.duration,
       instructions: mainSteps.join('\n'),
       keyQuestion: extractKeyQuestion(act.instructions),
-      expectedOutcomes: mainSteps.length > 2
-        ? [mainSteps[mainSteps.length - 1]]
-        : undefined,
-      teacherTip: data.teacherNotes && data.teacherNotes.length > 1
-        ? data.teacherNotes[Math.min(i + 1, data.teacherNotes.length - 1)]
-        : undefined,
+      expectedOutcomes: mainSteps.length > 2 ? [mainSteps[mainSteps.length - 1]] : undefined,
+      teacherTip:
+        data.teacherNotes && data.teacherNotes.length > 1
+          ? data.teacherNotes[Math.min(i + 1, data.teacherNotes.length - 1)]
+          : undefined,
     })
 
     // Differentiation slide
     if (act.differentiation) {
-      differentiationSlide(
-        pptx,
-        'main',
-        `${label} \u2014 Differentiation`,
-        act.differentiation,
-      )
+      differentiationSlide(pptx, 'main', `${label} \u2014 Differentiation`, act.differentiation)
     }
   })
 
@@ -255,7 +251,7 @@ function buildResourcePptx(data: ResourcePptxData, skin: SlideSkin = 'cream'): P
   // Objectives
   objectivesSlide(pptx, data.objectives)
 
-  // First Activity — use the activity slide template
+  // First Activity - use the activity slide template
   const steps = extractSteps(data.firstActivity)
   activitySlide(pptx, 'main', {
     slideTitle: 'First Activity',
@@ -277,7 +273,10 @@ export async function POST(request: NextRequest) {
   try {
     // ── 1. Authenticate ────────────────────────────────────────────────
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json(
         { error: 'You must be signed in to generate lesson materials.' },
@@ -285,11 +284,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ── 2. Subscription check — Premium / Teacher feature ─────────────
+    // ── 2. Subscription check - Premium / Teacher feature ─────────────
     const isPremium = await hasActiveSubscription(supabase, user.id)
     if (!isPremium) {
       return NextResponse.json(
-        { error: 'Lesson material generation is a Premium feature. Please upgrade your subscription to continue.' },
+        {
+          error:
+            'Lesson material generation is a Premium feature. Please upgrade your subscription to continue.',
+        },
         { status: 403 },
       )
     }
@@ -299,12 +301,20 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } },
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const body = await request.json()
-    const { variant, topic, data, skin = 'cream' } = body as {
+    const {
+      variant,
+      topic,
+      data,
+      skin = 'cream',
+    } = body as {
       variant: 'lesson-plan' | 'resource'
       topic?: string
       data: LessonPlanData | ResourcePptxData
@@ -330,17 +340,13 @@ export async function POST(request: NextRequest) {
     return new NextResponse(new Uint8Array(buffer), {
       status: 200,
       headers: {
-        'Content-Type':
-          'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        'Content-Type': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
         'Content-Disposition': `attachment; filename="${fileName}"`,
         'Content-Length': String(buffer.length),
       },
     })
   } catch (err) {
     console.error('[API/generate-pptx] Error:', err)
-    return NextResponse.json(
-      { error: 'Failed to generate PowerPoint file' },
-      { status: 500 },
-    )
+    return NextResponse.json({ error: 'Failed to generate PowerPoint file' }, { status: 500 })
   }
 }

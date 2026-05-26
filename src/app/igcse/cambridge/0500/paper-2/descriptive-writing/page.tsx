@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Descriptive Writing — IGCSE Language A Paper 2 Section B',
+    title: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
     description:
       'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Descriptive Writing — IGCSE Language A Paper 2 Section B',
+  title: 'Descriptive Writing - IGCSE Language A Paper 2 Section B',
   description:
     'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
   alternates: {
@@ -50,7 +50,7 @@ const senses = [
   },
   {
     sense: 'Taste',
-    advice: 'Use sparingly — even air has a taste. Try it only when it fits the scene.',
+    advice: 'Use sparingly - even air has a taste. Try it only when it fits the scene.',
     example: 'The cold air had a metallic taste, like biting on a coin.',
   },
 ]
@@ -59,7 +59,7 @@ const structure = [
   {
     stage: '1. Establish',
     detail:
-      'Open with a wide angle — set the time of day, weather and mood in two or three sentences. Do not over-explain.',
+      'Open with a wide angle - set the time of day, weather and mood in two or three sentences. Do not over-explain.',
   },
   {
     stage: '2. Zoom in',
@@ -69,12 +69,12 @@ const structure = [
   {
     stage: '3. Shift',
     detail:
-      'Introduce a slight change — a sound, a movement, a change in light. This stops the description feeling static.',
+      'Introduce a slight change - a sound, a movement, a change in light. This stops the description feeling static.',
   },
   {
     stage: '4. Reframe',
     detail:
-      'Pull back slightly to reveal something unexpected — a new figure, a missing detail, a reversal of mood.',
+      'Pull back slightly to reveal something unexpected - a new figure, a missing detail, a reversal of mood.',
   },
   {
     stage: '5. Linger',
@@ -84,9 +84,9 @@ const structure = [
 ]
 
 const mistakes = [
-  'Telling a story instead of describing — plot is the enemy here',
-  'Listing every sense in every paragraph — feels mechanical',
-  'Using every literary device at once — pick two or three per paragraph',
+  'Telling a story instead of describing - plot is the enemy here',
+  'Listing every sense in every paragraph - feels mechanical',
+  'Using every literary device at once - pick two or three per paragraph',
   'Ending with a sudden twist or action scene',
   'Writing in the past tense when present tense would feel more immediate',
 ]
@@ -116,7 +116,7 @@ export default async function DescriptiveWritingPage() {
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">Descriptive writing</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Descriptive writing is not about lots of adjectives — it is about selecting the right
+          Descriptive writing is not about lots of adjectives - it is about selecting the right
           details and layering them so the reader can step into the scene. Worth 40 marks in Section
           B.
         </p>
@@ -131,7 +131,7 @@ export default async function DescriptiveWritingPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Content & structure — 16
+              Content & structure - 16
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Originality of content, progression of ideas, sense of atmosphere and shape of the
@@ -140,7 +140,7 @@ export default async function DescriptiveWritingPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Style & accuracy — 24
+              Style & accuracy - 24
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Range of vocabulary, precision of word choice, varied sentence structure, grammar,
@@ -201,7 +201,7 @@ export default async function DescriptiveWritingPage() {
         <div className="mb-4 flex items-center gap-3">
           <Feather className="size-5 text-primary" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Worked opening — &quot;Describe a busy marketplace&quot;
+            Worked opening - &quot;Describe a busy marketplace&quot;
           </h2>
         </div>
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">

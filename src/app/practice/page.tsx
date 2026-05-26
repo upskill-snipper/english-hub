@@ -353,7 +353,7 @@ export default function PracticePage() {
               </div>
             )}
 
-            {/* Meta badges — prefer the user's selected board name over the
+            {/* Meta badges - prefer the user's selected board name over the
                 question's raw legacy tag so a Pearson IGCSE student never sees
                 "OCR" or "AQA" splashed across a generic practice question. */}
             <div className="flex flex-wrap items-center gap-2">
@@ -392,7 +392,7 @@ export default function PracticePage() {
                   </div>
                   {currentQuestion.extractSource && (
                     <p className="mt-4 text-sm font-medium text-muted-foreground">
-                      — {currentQuestion.extractSource}
+                      - {currentQuestion.extractSource}
                     </p>
                   )}
                 </CardContent>
@@ -452,7 +452,7 @@ export default function PracticePage() {
               )}
             </div>
 
-            {/* Submit Answer button — only before submission */}
+            {/* Submit Answer button - only before submission */}
             {!submitted && (
               <Button
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
@@ -467,7 +467,7 @@ export default function PracticePage() {
             {/* ── Post-submission: AI Feedback + Model Answers ──────── */}
             {submitted && (
               <div className="space-y-6">
-                {/* AI Feedback — auto-submits on render */}
+                {/* AI Feedback - auto-submits on render */}
                 {user && currentQuestion && (
                   <EssayFeedbackInline
                     board={currentQuestion.board}
@@ -481,7 +481,7 @@ export default function PracticePage() {
                   />
                 )}
 
-                {/* Model Answers — Grade tabs */}
+                {/* Model Answers - Grade tabs */}
                 <Card>
                   <Tabs value={activeGradeTab} onValueChange={setActiveGradeTab}>
                     <CardHeader className="border-b pb-0">

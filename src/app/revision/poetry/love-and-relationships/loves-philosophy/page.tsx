@@ -179,14 +179,14 @@ const poemData: PoemData = {
 <p>The poem functions as a <strong>persuasion poem</strong> (or "seduction poem") -- Shelley builds an elaborate argument from nature to convince his beloved to return his affection. This tradition dates back to the <strong>carpe diem</strong> poetry of the Renaissance.</p>
 <p>Shelley was known for his radical views on love and marriage. He believed love should be <strong>free and unconstrained</strong> by social conventions. The poem reflects his philosophical belief that love is a <strong>natural force</strong> that humans should not resist.</p>
 <p>The poem also engages with Romantic ideas about the <strong>interconnectedness of all nature</strong> -- a philosophy that saw humans as part of the natural world rather than separate from it.</p>`,
-  contextAr: `<p><strong>Percy Bysshe Shelley (1792–1822)</strong> شخصية محورية في <strong>الحركة الرومانسية</strong>، اللي احتفت بالطبيعة والعاطفة والتعبير الفردي. القصيدة كتبت على الأرجح حوالين <strong>1819</strong>.</p>
-<p>القصيدة تشتغل كـ<strong>قصيدة إقناع</strong> (أو "قصيدة إغواء") — Shelley يبني حجّة مفصّلة من الطبيعة عشان يقنع محبوبته (أنثى) ترد محبّته. هالتقليد يرجع لشعر <strong>carpe diem</strong> اللي كان رايج في عصر النهضة.</p>
+  contextAr: `<p><strong>Percy Bysshe Shelley (1792-1822)</strong> شخصية محورية في <strong>الحركة الرومانسية</strong>، اللي احتفت بالطبيعة والعاطفة والتعبير الفردي. القصيدة كتبت على الأرجح حوالين <strong>1819</strong>.</p>
+<p>القصيدة تشتغل كـ<strong>قصيدة إقناع</strong> (أو "قصيدة إغواء") - Shelley يبني حجّة مفصّلة من الطبيعة عشان يقنع محبوبته (أنثى) ترد محبّته. هالتقليد يرجع لشعر <strong>carpe diem</strong> اللي كان رايج في عصر النهضة.</p>
 <p>Shelley كان معروف بآرائه الراديكالية في الحب والزواج. كان يؤمن إن الحب لازم يكون <strong>حر وغير مقيّد</strong> بالقيود الاجتماعية. القصيدة تعكس قناعته الفلسفية بإن الحب <strong>قوّة طبيعية</strong> ما ينفع البشر يقاومونها.</p>
-<p>القصيدة تتفاعل كمان مع أفكار الرومانسية حول <strong>ترابط الطبيعة كلّها</strong> — فلسفة شافت البشر جزء من العالم الطبيعي، مو منفصلين عنه.</p>`,
+<p>القصيدة تتفاعل كمان مع أفكار الرومانسية حول <strong>ترابط الطبيعة كلّها</strong> - فلسفة شافت البشر جزء من العالم الطبيعي، مو منفصلين عنه.</p>`,
   summary: `The speaker uses examples from nature to argue that everything in the world exists in union -- rivers merge with oceans, winds blend together, mountains touch the sky. He claims this is "a law divine", making union a spiritual imperative.\n\nHaving built his case, he asks a simple rhetorical question: if everything in nature comes together, why should the beloved refuse him?\n\nThe second stanza escalates the argument with grander imagery -- sunlight clasping the earth, moonbeams kissing the sea -- before ending with a direct, almost pleading question: what is the point of all this natural beauty if the beloved will not love him?\n\nThe poem is essentially an elaborate argument for love, using nature as evidence. Whether it is charming or manipulative depends on interpretation.`,
-  summaryAr: `المتكلّم (ذكر) يستخدم أمثلة من الطبيعة عشان يستدل إن كل شي في الدنيا موجود في اتحاد — الأنهار تنصب في المحيطات، الرياح تختلط ببعض، الجبال تلامس السماء. ويدّعي إن هذا "law divine"، فيخلّي الاتحاد ضرورة روحانية.\n\nبعد ما يبني حجّته، يسأل سؤال بلاغي بسيط: إذا كل شي في الطبيعة يجي مع بعضه، ليش المحبوبة (أنثى) ترفضه؟\n\nالمقطع الثاني يصعّد الحجّة بصور أعظم — الشمس تحضن الأرض، أشعّة القمر تبوس البحر — قبل ما يختم بسؤال مباشر وقريب من التوسّل: ايش فايدة كل هالجمال الطبيعي إذا المحبوبة (أنثى) ما تحبّه؟\n\nالقصيدة في جوهرها حجّة مفصّلة من أجل الحب، تستخدم الطبيعة كدليل. تكون ساحرة أو تكون متلاعبة — هذا يعتمد على تفسير القارئ.`,
+  summaryAr: `المتكلّم (ذكر) يستخدم أمثلة من الطبيعة عشان يستدل إن كل شي في الدنيا موجود في اتحاد - الأنهار تنصب في المحيطات، الرياح تختلط ببعض، الجبال تلامس السماء. ويدّعي إن هذا "law divine"، فيخلّي الاتحاد ضرورة روحانية.\n\nبعد ما يبني حجّته، يسأل سؤال بلاغي بسيط: إذا كل شي في الطبيعة يجي مع بعضه، ليش المحبوبة (أنثى) ترفضه؟\n\nالمقطع الثاني يصعّد الحجّة بصور أعظم - الشمس تحضن الأرض، أشعّة القمر تبوس البحر - قبل ما يختم بسؤال مباشر وقريب من التوسّل: ايش فايدة كل هالجمال الطبيعي إذا المحبوبة (أنثى) ما تحبّه؟\n\nالقصيدة في جوهرها حجّة مفصّلة من أجل الحب، تستخدم الطبيعة كدليل. تكون ساحرة أو تكون متلاعبة - هذا يعتمد على تفسير القارئ.`,
   formAndStructure: `Form: Two stanzas of eight lines each, creating a balanced, symmetrical structure that mirrors the poem's argument about natural pairing.\n\nRhyme scheme: ABABCDCD in both stanzas -- the regular, predictable pattern creates a sense of natural order and inevitability that supports Shelley's argument.\n\nRhetorical questions: Each stanza builds to a climactic rhetorical question (lines 8 and 16-17). The structure is persuasive -- evidence followed by conclusion.\n\nEscalation: The imagery grows in scale from fountains to rivers to ocean, then from mountains to sunlight to moonbeams, building persuasive momentum.\n\nList structure: The accumulation of natural examples creates a sense of overwhelming evidence, making the argument feel irresistible.\n\nEnding: The final line is notably shorter and simpler than the rest, creating bathos -- the grand natural argument resolves into a simple, human plea.`,
-  formAndStructureAr: `Form: مقطعين كل واحد منهم ثمانية أبيات، فيخلق بنية متوازنة ومتناسقة، تحاكي حجّة القصيدة عن التزاوج الطبيعي.\n\nRhyme scheme: ABABCDCD في كلا المقطعين — النمط المنتظم اللي تقدر تتوقّعه يخلق إحساس بالنظام الطبيعي والحتمية، اللي يدعم حجّة Shelley.\n\nالأسئلة البلاغية: كل مقطع يبني وصولاً إلى سؤال بلاغي على ذروة (البيت 8 والبيتين 16–17). البنية إقناعية — أدلّة ثم استنتاج.\n\nالتصاعد: الصور تكبر في الحجم: من النوافير إلى الأنهار إلى المحيط، ثم من الجبال إلى ضوء الشمس إلى أشعّة القمر، وهذا يبني زخم إقناعي.\n\nبنية القائمة: تراكم الأمثلة الطبيعية يخلق إحساس بأدلّة كاسحة، فتطلع الحجّة كأنها ما يقدر يقاومها أحد.\n\nالخاتمة: البيت الأخير أقصر وأبسط من البقيّة، وهذا يخلق bathos — الحجّة الطبيعية الفخمة تنحل إلى توسّل إنساني بسيط.`,
+  formAndStructureAr: `Form: مقطعين كل واحد منهم ثمانية أبيات، فيخلق بنية متوازنة ومتناسقة، تحاكي حجّة القصيدة عن التزاوج الطبيعي.\n\nRhyme scheme: ABABCDCD في كلا المقطعين - النمط المنتظم اللي تقدر تتوقّعه يخلق إحساس بالنظام الطبيعي والحتمية، اللي يدعم حجّة Shelley.\n\nالأسئلة البلاغية: كل مقطع يبني وصولاً إلى سؤال بلاغي على ذروة (البيت 8 والبيتين 16-17). البنية إقناعية - أدلّة ثم استنتاج.\n\nالتصاعد: الصور تكبر في الحجم: من النوافير إلى الأنهار إلى المحيط، ثم من الجبال إلى ضوء الشمس إلى أشعّة القمر، وهذا يبني زخم إقناعي.\n\nبنية القائمة: تراكم الأمثلة الطبيعية يخلق إحساس بأدلّة كاسحة، فتطلع الحجّة كأنها ما يقدر يقاومها أحد.\n\nالخاتمة: البيت الأخير أقصر وأبسط من البقيّة، وهذا يخلق bathos - الحجّة الطبيعية الفخمة تنحل إلى توسّل إنساني بسيط.`,
   keyQuotes: [
     {
       quote: 'The fountains mingle with the river',
@@ -194,7 +194,7 @@ const poemData: PoemData = {
         'Opens the poem with natural imagery of union. "Mingle" suggests a gentle, willing merging -- not forced but natural and inevitable.',
       themes: ['Nature', 'Union', 'Harmony'],
       analysisAr:
-        'يفتتح القصيدة بصورة طبيعية من صور الاتحاد. كلمة "mingle" توحي بدمج لطيف وراضي — مو إجبار، بل شي طبيعي وحتمي.',
+        'يفتتح القصيدة بصورة طبيعية من صور الاتحاد. كلمة "mingle" توحي بدمج لطيف وراضي - مو إجبار، بل شي طبيعي وحتمي.',
       themesAr: ['الطبيعة', 'الاتحاد', 'الانسجام'],
     },
     {
@@ -239,7 +239,7 @@ const poemData: PoemData = {
         'Shelley frames the rejection of love as morally wrong -- even sinful. The familial language ("sister", "brother") creates obligation.',
       themes: ['Morality', 'Guilt', 'Persuasion'],
       analysisAr:
-        'Shelley يقدّم رفض الحب على إنه خطأ أخلاقي — بل إثم. اللغة العائليّة ("sister", "brother") تخلق التزام بين الطرفين.',
+        'Shelley يقدّم رفض الحب على إنه خطأ أخلاقي - بل إثم. اللغة العائليّة ("sister", "brother") تخلق التزام بين الطرفين.',
       themesAr: ['الأخلاق', 'الذنب', 'الإقناع'],
     },
     {
@@ -248,7 +248,7 @@ const poemData: PoemData = {
         'The grandest image -- light itself embracing the planet. "Clasps" implies a firm, warm hold, suggesting love is all-encompassing and unavoidable.',
       themes: ['Nature', 'Scale', 'Union'],
       analysisAr:
-        'الصورة الأعظم — النور نفسه يحضن الكوكب. كلمة "clasps" توحي بقبضة دافئة قويّة، فتشير إن الحب يشمل كل شي وما ينفع تتجنّبه.',
+        'الصورة الأعظم - النور نفسه يحضن الكوكب. كلمة "clasps" توحي بقبضة دافئة قويّة، فتشير إن الحب يشمل كل شي وما ينفع تتجنّبه.',
       themesAr: ['الطبيعة', 'السعة', 'الاتحاد'],
     },
     {
@@ -350,7 +350,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Shelley uses examples from nature (rivers, winds, mountains) to argue that everything naturally joins together — so why won't his beloved do the same? It is a persuasive love poem.",
+      "Shelley uses examples from nature (rivers, winds, mountains) to argue that everything naturally joins together - so why won't his beloved do the same? It is a persuasive love poem.",
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -366,7 +366,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Shelley personifies nature throughout — rivers "mingle", mountains "clasp", the moon "kisses" the sea. Each example serves as evidence in his argument that love is natural.',
+      'Shelley personifies nature throughout - rivers "mingle", mountains "clasp", the moon "kisses" the sea. Each example serves as evidence in his argument that love is natural.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -376,13 +376,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The sun is too hot',
-      'Even cosmic forces embrace each other — making human love seem natural and universal',
+      'Even cosmic forces embrace each other - making human love seem natural and universal',
       'The earth is cold',
       'It describes a sunset',
     ],
     correctIndex: 1,
     explanation:
-      '"Clasps" personifies sunlight as embracing the earth. Shelley elevates his argument to a cosmic scale — if the sun and earth unite, human love should follow.',
+      '"Clasps" personifies sunlight as embracing the earth. Shelley elevates his argument to a cosmic scale - if the sun and earth unite, human love should follow.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -392,13 +392,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They show the speaker is confused',
-      'They challenge the beloved — if nature is united, why are they apart?',
+      'They challenge the beloved - if nature is united, why are they apart?',
       'They are philosophical digressions',
       'They show the speaker has given up',
     ],
     correctIndex: 1,
     explanation:
-      "The rhetorical questions function as the climax of each stanza — after presenting evidence from nature, the speaker challenges the beloved directly: why won't you yield?",
+      "The rhetorical questions function as the climax of each stanza - after presenting evidence from nature, the speaker challenges the beloved directly: why won't you yield?",
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -440,13 +440,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It summarises the stanza',
-      "It undercuts nature imagery with personal frustration — revealing the argument's failure",
+      "It undercuts nature imagery with personal frustration - revealing the argument's failure",
       'It celebrates success in love',
       'It describes more nature',
     ],
     correctIndex: 1,
     explanation:
-      'Each stanza ends with a direct appeal. After grand natural imagery, the final lines reveal frustration — nature may be united, but the beloved is not persuaded.',
+      'Each stanza ends with a direct appeal. After grand natural imagery, the final lines reveal frustration - nature may be united, but the beloved is not persuaded.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -456,7 +456,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Love is artificial',
-      'Love is a natural, universal force — as inevitable as rivers flowing to the sea',
+      'Love is a natural, universal force - as inevitable as rivers flowing to the sea',
       'Love is only for poets',
       'Love is dangerous',
     ],
@@ -471,8 +471,8 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: "Is the speaker's argument ultimately successful?",
     type: 'multiple-choice',
     options: [
-      'Yes — the beloved agrees',
-      'No — despite all his evidence, the final lines reveal frustrated, unrequited desire',
+      'Yes - the beloved agrees',
+      'No - despite all his evidence, the final lines reveal frustrated, unrequited desire',
       'The poem is purely descriptive',
       'Partially successful',
     ],
@@ -494,7 +494,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Neutral Tones offers a polar opposite — Hardy's bleak proof of love's failure vs Shelley's optimistic argument for love. Both use nature imagery but to opposite effects.",
+      "Neutral Tones offers a polar opposite - Hardy's bleak proof of love's failure vs Shelley's optimistic argument for love. Both use nature imagery but to opposite effects.",
     topic: 'Comparison',
     difficulty: 'grade-9',
   },
@@ -506,10 +506,10 @@ const REVISION_TOPICS = [
     summary:
       "Love's Philosophy explores desire, natural imagery as evidence for love, persuasion, and the frustration of unrequited love.",
     keyPoints: [
-      'Love is natural and universal — everything in nature is united',
-      'Persuasion — the speaker builds a logical argument from nature',
-      'Frustration — despite his argument, the beloved is not persuaded',
-      'Romanticism — nature, emotion, and passion are celebrated',
+      'Love is natural and universal - everything in nature is united',
+      'Persuasion - the speaker builds a logical argument from nature',
+      'Frustration - despite his argument, the beloved is not persuaded',
+      'Romanticism - nature, emotion, and passion are celebrated',
     ],
   },
   {
@@ -517,8 +517,8 @@ const REVISION_TOPICS = [
     summary:
       'Shelley uses personification of nature, rhetorical questions, and cumulative listing to build his persuasive argument.',
     keyPoints: [
-      '"The fountains mingle with the river" — natural union as evidence',
-      '"The sunlight clasps the earth" — cosmic personification',
+      '"The fountains mingle with the river" - natural union as evidence',
+      '"The sunlight clasps the earth" - cosmic personification',
       'Rhetorical questions challenge the beloved directly',
       'Listing of natural pairs builds overwhelming evidence',
     ],
@@ -529,7 +529,7 @@ const REVISION_TOPICS = [
       'Two regular stanzas with ABAB rhyme. The controlled form mirrors the argument, while frustrated final lines reveal its failure.',
     keyPoints: [
       'Two parallel stanzas build the argument',
-      'ABAB rhyme scheme — orderly, persuasive form',
+      'ABAB rhyme scheme - orderly, persuasive form',
       'Final lines shift from nature to personal appeal',
       'Regular metre creates a song-like, persuasive quality',
     ],
@@ -567,7 +567,7 @@ export default function LovesPhilosophyPage() {
   return (
     <div className="space-y-6">
       <CourseJsonLd
-        name="Love's Philosophy by Percy Bysshe Shelley — Analysis & Annotations"
+        name="Love's Philosophy by Percy Bysshe Shelley - Analysis & Annotations"
         description="Line-by-line analysis of Love's Philosophy with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

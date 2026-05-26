@@ -313,7 +313,7 @@ export function SkillRadar({
   )
 }
 
-/* ─── Heatmap (CSS grid — no recharts) ─────────────────────────────── */
+/* ─── Heatmap (CSS grid - no recharts) ─────────────────────────────── */
 
 export function Heatmap({
   rows,
@@ -323,7 +323,7 @@ export function Heatmap({
 }: {
   rows: string[]
   cols: string[]
-  /** 0–100 intensity for cell (rowIndex, colIndex). */
+  /** 0-100 intensity for cell (rowIndex, colIndex). */
   getValue: (r: number, c: number) => number
   getLabel?: (r: number, c: number) => string
 }) {

@@ -1,12 +1,20 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Brain, BookOpen, FileText, Monitor, ClipboardList, Sparkles, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from 'react'
+import {
+  Brain,
+  BookOpen,
+  FileText,
+  Monitor,
+  ClipboardList,
+  Sparkles,
+  ChevronRight,
+} from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type TabId = "lessons" | "worksheets" | "presentations" | "homework"
+type TabId = 'lessons' | 'worksheets' | 'presentations' | 'homework'
 
 interface Tab {
   id: TabId
@@ -17,141 +25,274 @@ interface Tab {
 // ─── Static data ─────────────────────────────────────────────────────────────
 
 const TABS: Tab[] = [
-  { id: "lessons", label: "Lesson Plans", icon: BookOpen },
-  { id: "worksheets", label: "Worksheets", icon: FileText },
-  { id: "presentations", label: "Presentations", icon: Monitor },
-  { id: "homework", label: "Homework Tasks", icon: ClipboardList },
+  { id: 'lessons', label: 'Lesson Plans', icon: BookOpen },
+  { id: 'worksheets', label: 'Worksheets', icon: FileText },
+  { id: 'presentations', label: 'Presentations', icon: Monitor },
+  { id: 'homework', label: 'Homework Tasks', icon: ClipboardList },
 ]
 
 // Each tab has multiple example indices that cycle on button click
 const LESSON_EXAMPLES = [
   {
-    title: "Macbeth Act 1 — Introduction to Ambition",
-    meta: ["Year 10", "AQA", "60 min", "Literature"],
+    title: 'Macbeth Act 1 - Introduction to Ambition',
+    meta: ['Year 10', 'AQA', '60 min', 'Literature'],
     objectives: [
       "Analyse Shakespeare's presentation of ambition in Act 1",
-      "Explore the relationship between Macbeth and Lady Macbeth",
-      "Identify key language techniques used by Shakespeare",
+      'Explore the relationship between Macbeth and Lady Macbeth',
+      'Identify key language techniques used by Shakespeare',
     ],
     activities: [
-      { phase: "Starter (10 min)", detail: "Close reading of Act 1 Scene 5 — Lady Macbeth's soliloquy. Students annotate for imperative verbs." },
-      { phase: "Main 1 (20 min)", detail: "Structured group discussion: how does Shakespeare use the supernatural to drive ambition? Textual evidence required." },
-      { phase: "Main 2 (20 min)", detail: "Model paragraph construction using PEEL framework. Focus on the metaphor 'vaulting ambition'." },
-      { phase: "Plenary (10 min)", detail: "Exit ticket: write two analytical sentences about Lady Macbeth's influence on Macbeth." },
+      {
+        phase: 'Starter (10 min)',
+        detail:
+          "Close reading of Act 1 Scene 5 - Lady Macbeth's soliloquy. Students annotate for imperative verbs.",
+      },
+      {
+        phase: 'Main 1 (20 min)',
+        detail:
+          'Structured group discussion: how does Shakespeare use the supernatural to drive ambition? Textual evidence required.',
+      },
+      {
+        phase: 'Main 2 (20 min)',
+        detail:
+          "Model paragraph construction using PEEL framework. Focus on the metaphor 'vaulting ambition'.",
+      },
+      {
+        phase: 'Plenary (10 min)',
+        detail:
+          "Exit ticket: write two analytical sentences about Lady Macbeth's influence on Macbeth.",
+      },
     ],
-    homework: "Write a 250-word analytical paragraph comparing how ambition is presented in Act 1 Scene 3 and Act 1 Scene 7. Use at least two embedded quotations.",
-    differentiations: ["Foundation: sentence starters provided", "Extension: compare to Jacobean context"],
+    homework:
+      'Write a 250-word analytical paragraph comparing how ambition is presented in Act 1 Scene 3 and Act 1 Scene 7. Use at least two embedded quotations.',
+    differentiations: [
+      'Foundation: sentence starters provided',
+      'Extension: compare to Jacobean context',
+    ],
   },
   {
-    title: "An Inspector Calls — Class & Responsibility",
-    meta: ["Year 11", "AQA", "60 min", "Literature"],
+    title: 'An Inspector Calls - Class & Responsibility',
+    meta: ['Year 11', 'AQA', '60 min', 'Literature'],
     objectives: [
       "Understand Priestley's social message in An Inspector Calls",
-      "Analyse the Inspector as a dramatic device",
-      "Compare attitudes of older and younger Birlings",
+      'Analyse the Inspector as a dramatic device',
+      'Compare attitudes of older and younger Birlings',
     ],
     activities: [
-      { phase: "Starter (10 min)", detail: "Hot-seating activity: students take on character roles and answer questions from the Inspector." },
-      { phase: "Main 1 (20 min)", detail: "Text analysis — track how Sheila's attitude shifts across the play. Group annotated timeline task." },
-      { phase: "Main 2 (20 min)", detail: "Essay planning frame: 'How does Priestley use the Inspector to convey his socialist message?' " },
-      { phase: "Plenary (10 min)", detail: "Peer feedback on introductions — mark against AQA mark scheme level descriptors." },
+      {
+        phase: 'Starter (10 min)',
+        detail:
+          'Hot-seating activity: students take on character roles and answer questions from the Inspector.',
+      },
+      {
+        phase: 'Main 1 (20 min)',
+        detail:
+          "Text analysis - track how Sheila's attitude shifts across the play. Group annotated timeline task.",
+      },
+      {
+        phase: 'Main 2 (20 min)',
+        detail:
+          "Essay planning frame: 'How does Priestley use the Inspector to convey his socialist message?' ",
+      },
+      {
+        phase: 'Plenary (10 min)',
+        detail: 'Peer feedback on introductions - mark against AQA mark scheme level descriptors.',
+      },
     ],
-    homework: "Read the final scene again and write a director's note explaining how you would stage the Inspector's exit for maximum dramatic impact.",
-    differentiations: ["Foundation: character profile scaffold", "Extension: consider post-WW2 context"],
+    homework:
+      "Read the final scene again and write a director's note explaining how you would stage the Inspector's exit for maximum dramatic impact.",
+    differentiations: [
+      'Foundation: character profile scaffold',
+      'Extension: consider post-WW2 context',
+    ],
   },
 ]
 
 const WORKSHEET_EXAMPLES = [
   {
-    title: "Language Analysis Worksheet — Macbeth Act 2",
-    subtitle: "Year 10 | AQA Literature | Reading & Analysis",
-    intro: "Read the extract from Act 2 Scene 2 carefully. Macbeth has just returned from murdering King Duncan.",
-    extract: '"Will all great Neptune\'s ocean wash this blood / Clean from my hand? No, this my hand will rather / The multitudinous seas incarnadine, / Making the green one red."',
+    title: 'Language Analysis Worksheet - Macbeth Act 2',
+    subtitle: 'Year 10 | AQA Literature | Reading & Analysis',
+    intro:
+      'Read the extract from Act 2 Scene 2 carefully. Macbeth has just returned from murdering King Duncan.',
+    extract:
+      '"Will all great Neptune\'s ocean wash this blood / Clean from my hand? No, this my hand will rather / The multitudinous seas incarnadine, / Making the green one red."',
     questions: [
-      { num: "1", marks: 2, q: "What does Macbeth fear in this extract? Use one quotation to support your answer." },
-      { num: "2", marks: 4, q: "How does Shakespeare use the imagery of water and blood in this extract? Explore the effect on the audience." },
-      { num: "3", marks: 6, q: "How does Shakespeare present Macbeth's guilt at this point in the play? Use the extract and your wider knowledge of the play." },
-      { num: "4", marks: 8, q: "\"Macbeth is ultimately a play about the destructive power of guilt.\" How far do you agree? Write a full essay response." },
+      {
+        num: '1',
+        marks: 2,
+        q: 'What does Macbeth fear in this extract? Use one quotation to support your answer.',
+      },
+      {
+        num: '2',
+        marks: 4,
+        q: 'How does Shakespeare use the imagery of water and blood in this extract? Explore the effect on the audience.',
+      },
+      {
+        num: '3',
+        marks: 6,
+        q: "How does Shakespeare present Macbeth's guilt at this point in the play? Use the extract and your wider knowledge of the play.",
+      },
+      {
+        num: '4',
+        marks: 8,
+        q: '"Macbeth is ultimately a play about the destructive power of guilt." How far do you agree? Write a full essay response.',
+      },
     ],
   },
   {
-    title: "Creative Writing Stimulus — Descriptive Writing",
-    subtitle: "Year 9 | English Language | Writing",
-    intro: "Look at this image of an abandoned library. Write a descriptive piece inspired by what you see.",
-    extract: "Shelves buckled under the weight of forgotten stories. Dust motes hung in the amber light, slow as secrets. The clock on the wall had stopped — but at what hour, and why, no one had thought to ask.",
+    title: 'Creative Writing Stimulus - Descriptive Writing',
+    subtitle: 'Year 9 | English Language | Writing',
+    intro:
+      'Look at this image of an abandoned library. Write a descriptive piece inspired by what you see.',
+    extract:
+      'Shelves buckled under the weight of forgotten stories. Dust motes hung in the amber light, slow as secrets. The clock on the wall had stopped - but at what hour, and why, no one had thought to ask.',
     questions: [
-      { num: "1", marks: 2, q: "List four things you notice in the image above. Use precise nouns." },
-      { num: "2", marks: 4, q: "Write a sentence using personification to describe the library. Annotate your technique." },
-      { num: "3", marks: 6, q: "Write a paragraph describing the library from the perspective of someone entering it for the first time." },
-      { num: "4", marks: 24, q: "Write a description or narrative suggested by the image. (24 marks + 4 SPaG)" },
+      {
+        num: '1',
+        marks: 2,
+        q: 'List four things you notice in the image above. Use precise nouns.',
+      },
+      {
+        num: '2',
+        marks: 4,
+        q: 'Write a sentence using personification to describe the library. Annotate your technique.',
+      },
+      {
+        num: '3',
+        marks: 6,
+        q: 'Write a paragraph describing the library from the perspective of someone entering it for the first time.',
+      },
+      {
+        num: '4',
+        marks: 24,
+        q: 'Write a description or narrative suggested by the image. (24 marks + 4 SPaG)',
+      },
     ],
   },
 ]
 
 const PRESENTATION_EXAMPLES = [
   {
-    title: "Macbeth — Themes & Context",
-    subtitle: "Year 10 AQA Literature | 14 slides",
+    title: 'Macbeth - Themes & Context',
+    subtitle: 'Year 10 AQA Literature | 14 slides',
     slides: [
-      { n: "01", label: "Title Slide", note: "Macbeth: Ambition, Power, and Fate — Learning objectives + agenda" },
-      { n: "02", label: "Historical Context", note: "Jacobean England, divine right of kings, the Gunpowder Plot (1605)" },
-      { n: "03", label: "The Witches", note: "Macabre imagery, fate vs. free will — 'Fair is foul, and foul is fair'" },
-      { n: "04", label: "Ambition — Close Read", note: "Act 1 Scene 7 — 'vaulting ambition' — annotated extract + discussion questions" },
-      { n: "05", label: "Lady Macbeth", note: "Gender & power — 'unsex me here' — character analysis task" },
-      { n: "06", label: "Guilt & Consequence", note: "Act 2 Scene 2 — visual timeline of Macbeth's psychological collapse" },
-      { n: "07", label: "Exam Technique", note: "AQA mark scheme levels — model paragraph + success criteria" },
+      {
+        n: '01',
+        label: 'Title Slide',
+        note: 'Macbeth: Ambition, Power, and Fate - Learning objectives + agenda',
+      },
+      {
+        n: '02',
+        label: 'Historical Context',
+        note: 'Jacobean England, divine right of kings, the Gunpowder Plot (1605)',
+      },
+      {
+        n: '03',
+        label: 'The Witches',
+        note: "Macabre imagery, fate vs. free will - 'Fair is foul, and foul is fair'",
+      },
+      {
+        n: '04',
+        label: 'Ambition - Close Read',
+        note: "Act 1 Scene 7 - 'vaulting ambition' - annotated extract + discussion questions",
+      },
+      {
+        n: '05',
+        label: 'Lady Macbeth',
+        note: "Gender & power - 'unsex me here' - character analysis task",
+      },
+      {
+        n: '06',
+        label: 'Guilt & Consequence',
+        note: "Act 2 Scene 2 - visual timeline of Macbeth's psychological collapse",
+      },
+      {
+        n: '07',
+        label: 'Exam Technique',
+        note: 'AQA mark scheme levels - model paragraph + success criteria',
+      },
     ],
   },
   {
-    title: "An Inspector Calls — Priestley's Message",
-    subtitle: "Year 11 AQA Literature | 12 slides",
+    title: "An Inspector Calls - Priestley's Message",
+    subtitle: 'Year 11 AQA Literature | 12 slides',
     slides: [
-      { n: "01", label: "Starter: Who Is Responsible?", note: "Opinion line activity — who bears most responsibility for Eva Smith's death?" },
-      { n: "02", label: "Context: 1912 vs. 1945", note: "Edwardian class system, post-WW2 attitudes, Priestley's socialism" },
-      { n: "03", label: "The Inspector", note: "Dramatic device or real police officer? Symbolism of Goole/ghoul" },
-      { n: "04", label: "The Birling Family", note: "Character map — attitudes to responsibility tracked across the play" },
-      { n: "05", label: "Sheila's Arc", note: "Before and after — close reading of Act 1 vs. Act 3 dialogue" },
-      { n: "06", label: "Essay Planning Frame", note: "Question scaffold + paragraph structure + model introduction" },
+      {
+        n: '01',
+        label: 'Starter: Who Is Responsible?',
+        note: "Opinion line activity - who bears most responsibility for Eva Smith's death?",
+      },
+      {
+        n: '02',
+        label: 'Context: 1912 vs. 1945',
+        note: "Edwardian class system, post-WW2 attitudes, Priestley's socialism",
+      },
+      {
+        n: '03',
+        label: 'The Inspector',
+        note: 'Dramatic device or real police officer? Symbolism of Goole/ghoul',
+      },
+      {
+        n: '04',
+        label: 'The Birling Family',
+        note: 'Character map - attitudes to responsibility tracked across the play',
+      },
+      {
+        n: '05',
+        label: "Sheila's Arc",
+        note: 'Before and after - close reading of Act 1 vs. Act 3 dialogue',
+      },
+      {
+        n: '06',
+        label: 'Essay Planning Frame',
+        note: 'Question scaffold + paragraph structure + model introduction',
+      },
     ],
   },
 ]
 
 const HOMEWORK_EXAMPLES = [
   {
-    title: "Analytical Essay — Macbeth",
-    meta: ["Year 10", "Due: Next Tuesday", "Estimated: 45 min", "AQA Literature"],
-    task: "\"Shakespeare presents Macbeth as a tragic hero destroyed by his own ambition.\" How far do you agree with this view?",
+    title: 'Analytical Essay - Macbeth',
+    meta: ['Year 10', 'Due: Next Tuesday', 'Estimated: 45 min', 'AQA Literature'],
+    task: '"Shakespeare presents Macbeth as a tragic hero destroyed by his own ambition." How far do you agree with this view?',
     requirements: [
-      "Write a full essay response of 400-600 words",
-      "Include at least 4 embedded quotations with analysis",
-      "Address both sides of the argument",
-      "Use correct literary terminology throughout",
+      'Write a full essay response of 400-600 words',
+      'Include at least 4 embedded quotations with analysis',
+      'Address both sides of the argument',
+      'Use correct literary terminology throughout',
     ],
     guidance: [
-      "Plan your essay before you write — 5 minutes of planning saves 10 minutes of rewriting",
-      "Use the PEEL paragraph structure: Point, Evidence, Explain, Link",
-      "Remember to consider context: Jacobean attitudes to ambition and kingship",
+      'Plan your essay before you write - 5 minutes of planning saves 10 minutes of rewriting',
+      'Use the PEEL paragraph structure: Point, Evidence, Explain, Link',
+      'Remember to consider context: Jacobean attitudes to ambition and kingship',
     ],
-    markingFocus: ["AO1: Understanding & response", "AO2: Language & structure analysis", "AO3: Context"],
-    extension: "Research the real Macbeth — how does history compare to Shakespeare's portrayal? Write a 100-word comparison.",
+    markingFocus: [
+      'AO1: Understanding & response',
+      'AO2: Language & structure analysis',
+      'AO3: Context',
+    ],
+    extension:
+      "Research the real Macbeth - how does history compare to Shakespeare's portrayal? Write a 100-word comparison.",
   },
   {
-    title: "Creative Writing Practice — Narrative",
-    meta: ["Year 9", "Due: Thursday", "Estimated: 30 min", "English Language"],
-    task: "Write the opening of a story set in an unusual or unexpected place. Your aim is to engage and intrigue your reader from the very first line.",
+    title: 'Creative Writing Practice - Narrative',
+    meta: ['Year 9', 'Due: Thursday', 'Estimated: 30 min', 'English Language'],
+    task: 'Write the opening of a story set in an unusual or unexpected place. Your aim is to engage and intrigue your reader from the very first line.',
     requirements: [
-      "Write 300-400 words",
-      "Begin in medias res — start in the middle of the action",
-      "Use at least three different sentence structures for effect",
-      "Include a character whose motivations are unclear",
+      'Write 300-400 words',
+      'Begin in medias res - start in the middle of the action',
+      'Use at least three different sentence structures for effect',
+      'Include a character whose motivations are unclear',
     ],
     guidance: [
-      "Avoid starting with 'I woke up' — begin with something unexpected",
-      "Read your writing aloud — if it sounds odd, it probably reads odd",
+      "Avoid starting with 'I woke up' - begin with something unexpected",
+      'Read your writing aloud - if it sounds odd, it probably reads odd',
       "Show, don't tell: 'Her hands shook' not 'She was nervous'",
     ],
-    markingFocus: ["AO5: Communication & organisation", "AO6: Technical accuracy (SPaG)"],
-    extension: "Swap your opening with a classmate and write a second paragraph continuing their story.",
+    markingFocus: ['AO5: Communication & organisation', 'AO6: Technical accuracy (SPaG)'],
+    extension:
+      'Swap your opening with a classmate and write a second paragraph continuing their story.',
   },
 ]
 
@@ -391,7 +532,10 @@ function HomeworkCard({ idx }: { idx: number }) {
           Tips & Guidance
         </p>
         {ex.guidance.map((g, i) => (
-          <p key={i} className="text-xs text-white/50 leading-relaxed pl-3 border-l border-white/10">
+          <p
+            key={i}
+            className="text-xs text-white/50 leading-relaxed pl-3 border-l border-white/10"
+          >
             {g}
           </p>
         ))}
@@ -424,7 +568,7 @@ function HomeworkCard({ idx }: { idx: number }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export function ContentCreationDemo() {
-  const [activeTab, setActiveTab] = useState<TabId>("lessons")
+  const [activeTab, setActiveTab] = useState<TabId>('lessons')
   const [exampleIndex, setExampleIndex] = useState(0)
   const [isGenerating, setIsGenerating] = useState(false)
 
@@ -445,7 +589,9 @@ export function ContentCreationDemo() {
         <span className="h-3 w-3 rounded-full bg-green-500/80" />
         <div className="ml-4 flex items-center gap-1.5 rounded-md bg-white/5 px-3 py-1">
           <Brain className="h-3 w-3 text-white/30" />
-          <span className="text-[11px] text-white/30 font-mono">englishhub.ai / content-creator</span>
+          <span className="text-[11px] text-white/30 font-mono">
+            englishhub.ai / content-creator
+          </span>
         </div>
       </div>
 
@@ -460,10 +606,10 @@ export function ContentCreationDemo() {
               type="button"
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                "flex items-center gap-2 px-4 py-3 text-xs font-medium transition-colors border-b-2",
+                'flex items-center gap-2 px-4 py-3 text-xs font-medium transition-colors border-b-2',
                 active
-                  ? "border-blue-500 text-white bg-white/5"
-                  : "border-transparent text-white/40 hover:text-white/60 hover:bg-white/[0.03]"
+                  ? 'border-blue-500 text-white bg-white/5'
+                  : 'border-transparent text-white/40 hover:text-white/60 hover:bg-white/[0.03]',
               )}
             >
               <Icon className="h-3.5 w-3.5" />
@@ -479,14 +625,14 @@ export function ContentCreationDemo() {
             onClick={handleGenerate}
             disabled={isGenerating}
             className={cn(
-              "flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all",
+              'flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
               isGenerating
-                ? "bg-blue-600/40 text-white/50 cursor-wait"
-                : "bg-blue-600 text-white hover:bg-blue-500 active:scale-95"
+                ? 'bg-blue-600/40 text-white/50 cursor-wait'
+                : 'bg-blue-600 text-white hover:bg-blue-500 active:scale-95',
             )}
           >
-            <Sparkles className={cn("h-3.5 w-3.5", isGenerating && "animate-spin")} />
-            {isGenerating ? "Generating..." : "Generate with AI"}
+            <Sparkles className={cn('h-3.5 w-3.5', isGenerating && 'animate-spin')} />
+            {isGenerating ? 'Generating...' : 'Generate with AI'}
           </button>
         </div>
       </div>
@@ -507,10 +653,10 @@ export function ContentCreationDemo() {
           </div>
         ) : (
           <>
-            {activeTab === "lessons" && <LessonPlanCard idx={exampleIndex} />}
-            {activeTab === "worksheets" && <WorksheetCard idx={exampleIndex} />}
-            {activeTab === "presentations" && <PresentationCard idx={exampleIndex} />}
-            {activeTab === "homework" && <HomeworkCard idx={exampleIndex} />}
+            {activeTab === 'lessons' && <LessonPlanCard idx={exampleIndex} />}
+            {activeTab === 'worksheets' && <WorksheetCard idx={exampleIndex} />}
+            {activeTab === 'presentations' && <PresentationCard idx={exampleIndex} />}
+            {activeTab === 'homework' && <HomeworkCard idx={exampleIndex} />}
           </>
         )}
       </div>

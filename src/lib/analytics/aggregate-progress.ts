@@ -4,7 +4,7 @@
  *
  * Design rules
  * ────────────
- * 1. The functions take a Supabase **server (SSR) client** — i.e. the
+ * 1. The functions take a Supabase **server (SSR) client** - i.e. the
  *    one returned by `createServerSupabaseClient()`. RLS therefore
  *    applies to whatever the calling user can see. We never reach for
  *    the service-role key here: the `/api/analytics/leaderboards`
@@ -13,8 +13,8 @@
  *
  * 2. **Zero PII in outputs.** Returns are limited to counts, averages,
  *    and small distributions keyed by content IDs (poem_id, quiz_id,
- *    question_id, board, game). User IDs, emails, names — anything
- *    that could identify a learner — are stripped before the row
+ *    question_id, board, game). User IDs, emails, names - anything
+ *    that could identify a learner - are stripped before the row
  *    leaves the function. A defensive `redactPII` pass on the API
  *    boundary catches anything we miss.
  *
@@ -93,7 +93,7 @@ const PII_KEYS = new Set<string>([
 
 /**
  * Recursively walk a JSON-shaped value and strip any keys that match
- * the PII blacklist. Defensive — the aggregations above already exclude
+ * the PII blacklist. Defensive - the aggregations above already exclude
  * these columns from their `select(...)` calls, but a future schema
  * change or a typo'd column rename could let one slip through. Cheap
  * to run, cheap to reason about.
@@ -125,7 +125,7 @@ interface PoemProgressRow {
  * Top 20 poems by `progress_poems` row count.
  *
  * Optionally filtered to a single exam board. Counts are derived from
- * the raw rows the calling user can see under RLS — for the public
+ * the raw rows the calling user can see under RLS - for the public
  * leaderboards endpoint this is everything that policy exposes to
  * `anon`. We fetch up to 10k rows and tally in-process; the pg_count
  * route requires a stored function that doesn't exist in this schema.
@@ -172,7 +172,7 @@ interface QuizRow {
  * Questions whose **average best_score is below 50%**.
  *
  * Ranked by ascending average (hardest first), capped at 50 entries.
- * `best_score` is treated as a percentage (0–100); rows missing the
+ * `best_score` is treated as a percentage (0-100); rows missing the
  * field are skipped rather than silently coerced.
  */
 export async function hardestQuestions(
@@ -267,7 +267,7 @@ interface GameRow {
 
 /**
  * Per-game total play count and average duration in seconds. `game` is
- * a short slug (e.g. `word-storm`, `verb-vortex`) — never a row PK.
+ * a short slug (e.g. `word-storm`, `verb-vortex`) - never a row PK.
  */
 export async function engagementByGame(supabase: SupabaseClient): Promise<GameEngagement[]> {
   const { data, error } = await supabase
@@ -303,7 +303,7 @@ export async function engagementByGame(supabase: SupabaseClient): Promise<GameEn
 /**
  * Fan out all four aggregations in parallel and return the combined
  * payload. The route handler still calls `redactPII` on the result as a
- * defensive second pass — keep it that way.
+ * defensive second pass - keep it that way.
  */
 export async function buildLeaderboardAggregations(
   supabase: SupabaseClient,

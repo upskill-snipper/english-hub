@@ -7,7 +7,7 @@
 // `worksheetQuestions`, `teacherNotes`, etc. to the client.
 //
 // DO NOT import this module from a `'use client'` file for the listing page
-// expecting a bundle win — importing from a client module will still pull in
+// expecting a bundle win - importing from a client module will still pull in
 // the entire barrel. The trick is that the server component resolves the
 // projection, then only the serialisable result crosses to the client.
 //
@@ -38,7 +38,7 @@ export interface LessonPlanMetadata {
   duration: string
   targetedSkills: string[]
   keywords: string[]
-  // Computed (server-side) — saves the client re-running the helpers and
+  // Computed (server-side) - saves the client re-running the helpers and
   // more importantly avoids it needing to import them (which would drag in
   // the full barrel).
   category: string

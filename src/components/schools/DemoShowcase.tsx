@@ -1,4 +1,4 @@
-// Demo showcase — server component. Surfaces the 3 main demos as a
+// Demo showcase - server component. Surfaces the 3 main demos as a
 // prominent visual block so school leaders can sample the platform
 // without sign-up. Used on the homepage, pricing page, and anywhere
 // else we want to convert curiosity into a click.
@@ -60,7 +60,7 @@ export function DemoShowcase({ className }: { className?: string }) {
             id="demo-showcase-heading"
             className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            Browse the demos — no sign-up
+            Browse the demos - no sign-up
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
             See exactly what school leaders, teachers and students experience inside The English

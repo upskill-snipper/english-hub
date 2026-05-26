@@ -160,12 +160,12 @@ const poemData: PoemData = {
 <p>The title "Sonnets from the Portuguese" was a private joke -- Robert called Elizabeth "my little Portuguese" because of her dark complexion, and the title disguised the poems as translations rather than personal confessions.</p>`,
   contextAr: `<p><strong>Elizabeth Barrett Browning (1806-1861)</strong> كتبت هالـsonnet ضمن مجموعتها <em>Sonnets from the Portuguese</em> (1850)، وهي سلسلة فيها 44 سونيتة حب موجّهة لزوجها <strong>Robert Browning</strong>.</p>
 <p>الـsonnets توثّق <strong>خطوبتهم السرّية</strong>. أبو Elizabeth كان متسلّط ومانع كل أولاده من الزواج، فالثنين كانوا يتراسلون ويتقابلون بالسرّ. وفي النهاية، هربوا مع بعض إلى إيطاليا سنة 1846.</p>
-<p>بصفتها امرأة تكتب شعر حب عاطفي في <strong>العصر الفيكتوري</strong>، EBB كانت تكسر أعراف كبيرة. النساء كان مفروض إنهم يكونون كائنات حب خاملة، مو ذوات راغبة فاعلة. هالسونيتة مميّزة بسبب <strong>الفاعلية الجنسية الأنثوية</strong> فيها — هي تطالب بحضور حبيبها الجسدي وتستخدم صور فيها إيحاءات حسّية.</p>
-<p>عنوان "Sonnets from the Portuguese" كان مزحة خاصّة — Robert كان ينادي Elizabeth "my little Portuguese" بسبب بشرتها الداكنة، والعنوان موّه القصائد على إنها ترجمات بدل من اعترافات شخصية.</p>`,
+<p>بصفتها امرأة تكتب شعر حب عاطفي في <strong>العصر الفيكتوري</strong>، EBB كانت تكسر أعراف كبيرة. النساء كان مفروض إنهم يكونون كائنات حب خاملة، مو ذوات راغبة فاعلة. هالسونيتة مميّزة بسبب <strong>الفاعلية الجنسية الأنثوية</strong> فيها - هي تطالب بحضور حبيبها الجسدي وتستخدم صور فيها إيحاءات حسّية.</p>
+<p>عنوان "Sonnets from the Portuguese" كان مزحة خاصّة - Robert كان ينادي Elizabeth "my little Portuguese" بسبب بشرتها الداكنة، والعنوان موّه القصائد على إنها ترجمات بدل من اعترافات شخصية.</p>`,
   summary: `The speaker confesses that she thinks obsessively about her lover. Using an extended metaphor, she compares her thoughts to wild vines growing around a tree -- they have become so thick that they hide the real person beneath.\n\nAt the volta, she rejects this fantasy. She does not want her imagined version of her lover -- she wants the real, physical person, who is "dearer, better" than any thought. She commands him to assert his physical presence and shatter her fantasies like breaking vines.\n\nThe poem ends with a paradox: when he is physically present, she does not need to think of him at all, because reality transcends imagination. The poem moves from obsessive thought to joyful presence, from fantasy to reality.`,
-  summaryAr: `المتكلّمة تعترف إنها تفكّر في حبيبها بشكل هوسي. تستخدم استعارة ممتدّة، تشبّه أفكارها بكروم برّية تلتفّ حول شجرة — وكبرت لدرجة إنها صارت تخفي الشخص الحقيقي تحتها.\n\nعند الـvolta، ترفض هالخيال. هي ما تبي النسخة المتخيّلة من حبيبها — تبي الشخص الحقيقي بجسده، اللي هو "dearer, better" من أي فكرة. تأمره إنه يفرض حضوره الجسدي ويحطّم خيالاتها مثل ما الكروم تنكسر.\n\nالقصيدة تنتهي بمفارقة: لمّا هو يكون حاضر جسدياً، هي ما تحتاج تفكّر فيه أصلاً، لأن الواقع يتجاوز الخيال. القصيدة تتحرّك من التفكير الهوسي إلى الحضور الفرح، من الخيال إلى الواقع.`,
+  summaryAr: `المتكلّمة تعترف إنها تفكّر في حبيبها بشكل هوسي. تستخدم استعارة ممتدّة، تشبّه أفكارها بكروم برّية تلتفّ حول شجرة - وكبرت لدرجة إنها صارت تخفي الشخص الحقيقي تحتها.\n\nعند الـvolta، ترفض هالخيال. هي ما تبي النسخة المتخيّلة من حبيبها - تبي الشخص الحقيقي بجسده، اللي هو "dearer, better" من أي فكرة. تأمره إنه يفرض حضوره الجسدي ويحطّم خيالاتها مثل ما الكروم تنكسر.\n\nالقصيدة تنتهي بمفارقة: لمّا هو يكون حاضر جسدياً، هي ما تحتاج تفكّر فيه أصلاً، لأن الواقع يتجاوز الخيال. القصيدة تتحرّك من التفكير الهوسي إلى الحضور الفرح، من الخيال إلى الواقع.`,
   formAndStructure: `Form: Petrarchan (Italian) sonnet -- 14 lines with an octave (8 lines) and sestet (6 lines), though EBB loosens the traditional structure.\n\nVolta: The turn occurs at line 6 ("I will not have my thoughts instead of thee"), where the poem shifts from describing the problem (obsessive fantasy) to asserting the solution (demanding reality).\n\nRhyme scheme: Loosely ABBA ABBA CDC DCD, but EBB varies the Petrarchan form, reflecting her desire to break free from constraining forms -- mirroring the poem's thematic rejection of constraining thoughts.\n\nEnjambment: Heavy enjambment, especially in the octave, creates a sense of thoughts spilling over and growing uncontrollably, like the vine imagery.\n\nCaesura: Dramatic caesura in "Drop heavily down, -- burst, shattered, everywhere!" creates a violent breaking rhythm that enacts the shattering of fantasy.\n\nParadox: The final line reverses the opening -- from "I think of thee!" to "I do not think of thee", creating a complete structural arc from absence to presence.`,
-  formAndStructureAr: `الشكل: PETRARCHAN SONNET (سونيتة بيتراركية إيطالية) — 14 بيت مع octave (ثمانية أبيات) وsestet (ستّة أبيات)، رغم إن EBB ترخي البنية التقليدية شوي.\n\nVOLTA (انعطاف)\nالانعطاف يحصل في البيت السادس ("I will not have my thoughts instead of thee")، حيث القصيدة تتحوّل من وصف المشكلة (الخيال الهوسي) إلى تأكيد الحل (المطالبة بالواقع).\n\nنمط القافية\nبشكل فضفاض ABBA ABBA CDC DCD، بس EBB تنوّع في الشكل البيتراركي. هالشي يعكس رغبتها تتحرّر من القوالب المقيّدة — ويعكس بنيوياً رفض القصيدة الموضوعي للأفكار المقيّدة.\n\nENJAMBMENT\nالاستخدام المكثّف للـenjambment، خصوصاً في الـoctave، يعطي إحساس إن الأفكار تطفح وتنمو بدون سيطرة، مثل صورة الكروم.\n\nCAESURA\nالـcaesura الدرامية في "Drop heavily down, -- burst, shattered, everywhere!" تخلق إيقاع كسر عنيف يجسّد لحظة تحطّم الخيال.\n\nPARADOX (مفارقة)\nالبيت الأخير يعكس الافتتاحية — من "I think of thee!" إلى "I do not think of thee"، ويخلق قوس بنيوي كامل من الغياب إلى الحضور.`,
+  formAndStructureAr: `الشكل: PETRARCHAN SONNET (سونيتة بيتراركية إيطالية) - 14 بيت مع octave (ثمانية أبيات) وsestet (ستّة أبيات)، رغم إن EBB ترخي البنية التقليدية شوي.\n\nVOLTA (انعطاف)\nالانعطاف يحصل في البيت السادس ("I will not have my thoughts instead of thee")، حيث القصيدة تتحوّل من وصف المشكلة (الخيال الهوسي) إلى تأكيد الحل (المطالبة بالواقع).\n\nنمط القافية\nبشكل فضفاض ABBA ABBA CDC DCD، بس EBB تنوّع في الشكل البيتراركي. هالشي يعكس رغبتها تتحرّر من القوالب المقيّدة - ويعكس بنيوياً رفض القصيدة الموضوعي للأفكار المقيّدة.\n\nENJAMBMENT\nالاستخدام المكثّف للـenjambment، خصوصاً في الـoctave، يعطي إحساس إن الأفكار تطفح وتنمو بدون سيطرة، مثل صورة الكروم.\n\nCAESURA\nالـcaesura الدرامية في "Drop heavily down, -- burst, shattered, everywhere!" تخلق إيقاع كسر عنيف يجسّد لحظة تحطّم الخيال.\n\nPARADOX (مفارقة)\nالبيت الأخير يعكس الافتتاحية - من "I think of thee!" إلى "I do not think of thee"، ويخلق قوس بنيوي كامل من الغياب إلى الحضور.`,
   keyQuotes: [
     {
       quote: 'my thoughts do twine and bud',
@@ -173,7 +173,7 @@ const poemData: PoemData = {
         'The vine metaphor presents her thoughts as organic and alive -- they grow naturally and uncontrollably. "Twine" suggests both affection and entanglement.',
       themes: ['Obsession', 'Nature', 'Growth'],
       analysisAr:
-        'استعارة الكروم تقدّم أفكارها على إنها عضوية وحيّة — تنمو بشكل طبيعي وبدون سيطرة. كلمة "twine" تلمّح للعاطفة والتشابك في نفس الوقت.',
+        'استعارة الكروم تقدّم أفكارها على إنها عضوية وحيّة - تنمو بشكل طبيعي وبدون سيطرة. كلمة "twine" تلمّح للعاطفة والتشابك في نفس الوقت.',
       themesAr: ['الهوس', 'الطبيعة', 'النموّ'],
     },
     {
@@ -182,7 +182,7 @@ const poemData: PoemData = {
         'Her fantasies ("green") have obscured the real person ("wood"). EBB recognises the danger of idealisation -- loving an idea rather than a person.',
       themes: ['Fantasy vs. reality', 'Idealisation'],
       analysisAr:
-        'خيالاتها ("green") غطّت على الشخص الحقيقي ("wood"). EBB تعترف بخطر المثالية — إنها تحب فكرة بدل ما تحب شخص.',
+        'خيالاتها ("green") غطّت على الشخص الحقيقي ("wood"). EBB تعترف بخطر المثالية - إنها تحب فكرة بدل ما تحب شخص.',
       themesAr: ['الخيال مقابل الواقع', 'المثالية'],
     },
     {
@@ -209,7 +209,7 @@ const poemData: PoemData = {
         'Sensual imagery with clear physical and sexual undertones. EBB desires to see her lover as he truly is -- stripped of her projections and physically present.',
       themes: ['Desire', 'Physicality', 'Honesty'],
       analysisAr:
-        'صورة حسّية فيها إيحاءات جسدية وجنسية واضحة. EBB تشتهي تشوف حبيبها على حقيقته — متجرّد من إسقاطاتها وحاضر جسدياً.',
+        'صورة حسّية فيها إيحاءات جسدية وجنسية واضحة. EBB تشتهي تشوف حبيبها على حقيقته - متجرّد من إسقاطاتها وحاضر جسدياً.',
       themesAr: ['الرغبة', 'الجسدية', 'الصدق'],
     },
     {
@@ -227,7 +227,7 @@ const poemData: PoemData = {
         'Physical closeness -- sharing breath and space. His presence transforms her world ("new air"), suggesting renewal and the life-giving quality of genuine love.',
       themes: ['Intimacy', 'Renewal', 'Presence'],
       analysisAr:
-        'قرب جسدي — مشاركة النفس والفضاء. حضوره يحوّل عالمها ("new air")، ويوحي بالتجديد وبأن الحب الحقيقي يعطي الحياة.',
+        'قرب جسدي - مشاركة النفس والفضاء. حضوره يحوّل عالمها ("new air")، ويوحي بالتجديد وبأن الحب الحقيقي يعطي الحياة.',
       themesAr: ['الحميمية', 'التجديد', 'الحضور'],
     },
     {
@@ -257,7 +257,7 @@ const poemData: PoemData = {
         'The Petrarchan turn marks the shift from problem to resolution. EBB moves from describing passive obsession to actively demanding reality -- a structural enactment of female agency.',
       lineRef: 5,
       effectAr:
-        'الـvolta البيتراركية تأشّر التحوّل من المشكلة إلى الحل. EBB تنتقل من وصف هوس خامل إلى مطالبة فاعلة بالواقع — تجسيد بنيوي للفاعلية الأنثوية.',
+        'الـvolta البيتراركية تأشّر التحوّل من المشكلة إلى الحل. EBB تنتقل من وصف هوس خامل إلى مطالبة فاعلة بالواقع - تجسيد بنيوي للفاعلية الأنثوية.',
     },
     {
       device: 'Imperative verbs',
@@ -284,7 +284,7 @@ const poemData: PoemData = {
         'The final line reverses the opening, creating a complete emotional arc. Presence makes thought unnecessary -- a profound statement about authentic love transcending intellectual idealisation.',
       lineRef: 13,
       effectAr:
-        'البيت الأخير يقلب الافتتاحية، ويخلق قوس عاطفي كامل. الحضور يخلّي التفكير غير ضروري — تصريح عميق عن إن الحب الأصيل يتجاوز المثالية العقلية.',
+        'البيت الأخير يقلب الافتتاحية، ويخلق قوس عاطفي كامل. الحضور يخلّي التفكير غير ضروري - تصريح عميق عن إن الحب الأصيل يتجاوز المثالية العقلية.',
     },
     {
       device: 'Sensual imagery',
@@ -302,7 +302,7 @@ const poemData: PoemData = {
         'Exclamation marks throughout convey passionate intensity. The poem is not a calm reflection but an urgent, emotionally charged declaration of desire and love.',
       lineRef: 0,
       effectAr:
-        'علامات التعجّب على طول القصيدة توصل شدّة عاطفية. هي مو تأمّل هادي — هي إعلان ملحّ ومشحون عاطفياً عن الرغبة والحب.',
+        'علامات التعجّب على طول القصيدة توصل شدّة عاطفية. هي مو تأمّل هادي - هي إعلان ملحّ ومشحون عاطفياً عن الرغبة والحب.',
     },
   ],
 }
@@ -336,7 +336,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'At the volta, EBB rejects her own fantasies. She wants the real person who is "dearer, better" than any thought — physical presence beats imagination.',
+      'At the volta, EBB rejects her own fantasies. She wants the real person who is "dearer, better" than any thought - physical presence beats imagination.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -357,13 +357,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A polite request',
-      'An imperative command — the speaker demands her lover appear and destroy her fantasies',
+      'An imperative command - the speaker demands her lover appear and destroy her fantasies',
       'A prayer',
       'A whisper',
     ],
     correctIndex: 1,
     explanation:
-      'The imperative "Renew thy presence" is a direct command. EBB is not passive — she actively demands her lover\'s physical presence to replace the inadequate substitute of thought.',
+      'The imperative "Renew thy presence" is a direct command. EBB is not passive - she actively demands her lover\'s physical presence to replace the inadequate substitute of thought.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -389,13 +389,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Thinking is always healthy',
-      'Obsessive thoughts can smother the real person — fantasy is suffocating',
+      'Obsessive thoughts can smother the real person - fantasy is suffocating',
       'Vines are decorative',
       'The lover enjoys being thought about',
     ],
     correctIndex: 1,
     explanation:
-      'The vines have grown so thick they hide the tree. EBB recognises that obsessive thinking can replace and smother reality — her fantasies are hiding the real person she loves.',
+      'The vines have grown so thick they hide the tree. EBB recognises that obsessive thinking can replace and smother reality - her fantasies are hiding the real person she loves.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -411,7 +411,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The volta marks a dramatic shift — EBB stops describing her vine-like thoughts and actively rejects them. She wants reality, not fantasy: "I do not think of thee — I am too near thee."',
+      'The volta marks a dramatic shift - EBB stops describing her vine-like thoughts and actively rejects them. She wants reality, not fantasy: "I do not think of thee - I am too near thee."',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -420,14 +420,14 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What is paradoxical about the final line?',
     type: 'multiple-choice',
     options: [
-      'Nothing — it is straightforward',
-      'When her lover is present, she does not need to think of him — reality transcends imagination',
+      'Nothing - it is straightforward',
+      'When her lover is present, she does not need to think of him - reality transcends imagination',
       'She forgets her lover',
       'She prefers being alone',
     ],
     correctIndex: 1,
     explanation:
-      'The paradox is that when her lover is physically present, she stops thinking about him — because reality is "dearer, better" than any fantasy. Presence makes thought unnecessary.',
+      'The paradox is that when her lover is physically present, she stops thinking about him - because reality is "dearer, better" than any fantasy. Presence makes thought unnecessary.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -437,13 +437,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She is passive and submissive',
-      'She is actively desiring, commanding, and rejecting inadequacy — unusually assertive for a Victorian woman poet',
+      'She is actively desiring, commanding, and rejecting inadequacy - unusually assertive for a Victorian woman poet',
       'She avoids the topic entirely',
       'She follows conventions exactly',
     ],
     correctIndex: 1,
     explanation:
-      'EBB is boldly assertive — she commands her lover to appear, rejects her own fantasies as insufficient, and openly expresses physical desire. This was unusually direct for a Victorian woman.',
+      'EBB is boldly assertive - she commands her lover to appear, rejects her own fantasies as insufficient, and openly expresses physical desire. This was unusually direct for a Victorian woman.',
     topic: 'Context',
     difficulty: 'grade-9',
   },
@@ -469,7 +469,7 @@ const REVISION_TOPICS = [
       'Physical presence is "dearer, better" than imagination',
       'Obsessive thought can smother the real person',
       'Female desire is expressed assertively and directly',
-      'Reality transcends fantasy — "I do not think of thee"',
+      'Reality transcends fantasy - "I do not think of thee"',
     ],
   },
   {
@@ -477,10 +477,10 @@ const REVISION_TOPICS = [
     summary:
       'EBB uses an extended vine/tree metaphor, imperative commands, and a paradoxical final line to express desire for physical reality.',
     keyPoints: [
-      'Vine metaphor — thoughts "twine and bud" around the lover',
-      '"Renew thy presence" — imperative command for physical presence',
-      '"Dearer, better" — reality surpasses all fantasy',
-      'Paradox — when present, she does not need to think',
+      'Vine metaphor - thoughts "twine and bud" around the lover',
+      '"Renew thy presence" - imperative command for physical presence',
+      '"Dearer, better" - reality surpasses all fantasy',
+      'Paradox - when present, she does not need to think',
     ],
   },
   {
@@ -488,10 +488,10 @@ const REVISION_TOPICS = [
     summary:
       'A Petrarchan sonnet with a clear volta shifting from obsessive thought to assertive demand for reality.',
     keyPoints: [
-      'Petrarchan form — octave (thought) and sestet (reality)',
-      'Volta — dramatic shift from fantasy to physical desire',
-      'Exclamation marks — urgency and passion',
-      'Enjambment — thoughts overflow, mirroring the vine metaphor',
+      'Petrarchan form - octave (thought) and sestet (reality)',
+      'Volta - dramatic shift from fantasy to physical desire',
+      'Exclamation marks - urgency and passion',
+      'Enjambment - thoughts overflow, mirroring the vine metaphor',
     ],
   },
 ]
@@ -525,7 +525,7 @@ export default function Sonnet29Page() {
   return (
     <div className="space-y-6">
       <CourseJsonLd
-        name="Sonnet 29 by Elizabeth Barrett Browning — Analysis & Annotations"
+        name="Sonnet 29 by Elizabeth Barrett Browning - Analysis & Annotations"
         description="Line-by-line analysis of Sonnet 29 with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

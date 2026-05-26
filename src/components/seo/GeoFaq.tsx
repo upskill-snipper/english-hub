@@ -5,9 +5,9 @@ export type GeoFaqItem = { question: string; answer: string }
 
 /**
  * GEO/SEO FAQ block. Renders BOTH:
- *  (a) visible question-shaped <h2>/<h3> headings + answers — feeds the
+ *  (a) visible question-shaped <h2>/<h3> headings + answers - feeds the
  *      "question-shaped headings" GEO signal, and
- *  (b) FAQPage JSON-LD — feeds the structured-data signal.
+ *  (b) FAQPage JSON-LD - feeds the structured-data signal.
  *
  * Server component (async, reads the CSP nonce itself so callers stay
  * one-liners). Pass plain already-resolved strings.
@@ -15,7 +15,7 @@ export type GeoFaqItem = { question: string; answer: string }
  * IMPORTANT: do NOT add this to a page/route that already emits
  * <FAQPageJsonLd> (e.g. /for-teachers, /for-schools, /pricing,
  * /faqs/*, /for-parents, /for-students, the gcc/qatar/international
- * IGCSE landing pages) — two FAQPage blocks on one URL is duplicate
+ * IGCSE landing pages) - two FAQPage blocks on one URL is duplicate
  * structured data and the GEO scorer may discount it.
  */
 export async function GeoFaq({
@@ -43,7 +43,7 @@ export async function GeoFaq({
             key={faq.question}
             className="border-b border-border/40 pb-6 last:border-0 last:pb-0"
           >
-            {/* Question as a heading ending in "?" — the GEO scorer
+            {/* Question as a heading ending in "?" - the GEO scorer
                 matches h2/h3 that are phrased as questions. */}
             <h3 className="text-heading-md font-heading text-foreground">{faq.question}</h3>
             <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
@@ -66,7 +66,7 @@ export const GCSE_BOARD_FAQS: GeoFaqItem[] = [
   {
     question: 'How do I structure an AQA Power and Conflict comparison answer?',
     answer:
-      'Open with a thesis comparing how both poets present the theme, then alternate between the poems in linked paragraphs — point, method, effect, then the comparative link. Spend roughly equal time on each poem, embed short quotations, analyse language and structure for AO2, and weave in context (AO3) only where it sharpens meaning. Aim for three or four developed comparative paragraphs in 45 minutes.',
+      'Open with a thesis comparing how both poets present the theme, then alternate between the poems in linked paragraphs - point, method, effect, then the comparative link. Spend roughly equal time on each poem, embed short quotations, analyse language and structure for AO2, and weave in context (AO3) only where it sharpens meaning. Aim for three or four developed comparative paragraphs in 45 minutes.',
   },
   {
     question: 'What is the difference between AQA English Language Paper 1 and Paper 2?',
@@ -81,7 +81,7 @@ export const GCSE_BOARD_FAQS: GeoFaqItem[] = [
   {
     question: 'How long should a GCSE English Literature essay be?',
     answer:
-      'There is no word count — examiners reward quality of analysis, not length. In practice a strong response is roughly four to six well-developed paragraphs written in about 45 minutes, with embedded quotations and sustained focus on the question.',
+      'There is no word count - examiners reward quality of analysis, not length. In practice a strong response is roughly four to six well-developed paragraphs written in about 45 minutes, with embedded quotations and sustained focus on the question.',
   },
   {
     question: 'How do I move an English essay from a grade 5 to a grade 7?',
@@ -91,7 +91,7 @@ export const GCSE_BOARD_FAQS: GeoFaqItem[] = [
   {
     question: 'What are the AO1, AO2 and AO3 assessment objectives in GCSE English Literature?',
     answer:
-      'AO1 is your informed personal response with embedded textual references. AO2 is analysis of the writer’s methods — language, form and structure — and their effects. AO3 is the relationship between the text and the contexts in which it was written and received. Weightings differ by board, so check your specification, but AO1 and AO2 carry the most marks on most papers.',
+      'AO1 is your informed personal response with embedded textual references. AO2 is analysis of the writer’s methods - language, form and structure - and their effects. AO3 is the relationship between the text and the contexts in which it was written and received. Weightings differ by board, so check your specification, but AO1 and AO2 carry the most marks on most papers.',
   },
   {
     question: 'Is The English Hub endorsed by AQA, Edexcel or OCR?',
@@ -110,15 +110,15 @@ export const IGCSE_FAQS: GeoFaqItem[] = [
     question:
       'What is the difference between Pearson Edexcel IGCSE English (4ET1) and Cambridge IGCSE (0500)?',
     answer:
-      'Edexcel 4ET1 is English Literature with set texts, an anthology and a Shakespeare/poetry component. Cambridge 0500 is First Language English — reading and directed writing on unseen non-fiction, with no set literary texts. They are different qualifications, so revise to the specification your school enters you for.',
+      'Edexcel 4ET1 is English Literature with set texts, an anthology and a Shakespeare/poetry component. Cambridge 0500 is First Language English - reading and directed writing on unseen non-fiction, with no set literary texts. They are different qualifications, so revise to the specification your school enters you for.',
   },
   {
     question: 'Is Cambridge IGCSE English 0500 the same as 0990?',
     answer:
-      'They share the same syllabus content and assessment; 0990 is the 9–1 graded version and 0500 is A*–G. Skills, papers and mark schemes are equivalent — revise identically and check which grading scale your school uses.',
+      'They share the same syllabus content and assessment; 0990 is the 9-1 graded version and 0500 is A*-G. Skills, papers and mark schemes are equivalent - revise identically and check which grading scale your school uses.',
   },
   {
-    question: 'How is IGCSE English assessed — coursework or exam?',
+    question: 'How is IGCSE English assessed - coursework or exam?',
     answer:
       'It depends on the route. Cambridge 0500/0990 offers an exam-only route and a coursework route; Edexcel 4ET1 is assessed by written examination. Ask your teacher which option your centre has chosen, as it changes how you prepare.',
   },
@@ -135,12 +135,12 @@ export const IGCSE_FAQS: GeoFaqItem[] = [
   {
     question: 'What is the Cambridge IGCSE 0500 directed writing question?',
     answer:
-      'In Paper 1 (Reading) and Paper 2 (Directed Writing and Composition) you respond to one or two texts in a specified form — a letter, speech, report or article — for a stated audience and purpose. Marks are split between reading (understanding and using the texts) and writing (style, structure and accuracy), so address both deliberately.',
+      'In Paper 1 (Reading) and Paper 2 (Directed Writing and Composition) you respond to one or two texts in a specified form - a letter, speech, report or article - for a stated audience and purpose. Marks are split between reading (understanding and using the texts) and writing (style, structure and accuracy), so address both deliberately.',
   },
   {
-    question: 'How is IGCSE English graded — A*–G or 9–1?',
+    question: 'How is IGCSE English graded - A*-G or 9-1?',
     answer:
-      'It depends on the syllabus your centre enters. Cambridge 0500 and Edexcel 4EA1/4ET1 are typically graded A*–G, while Cambridge 0990/0992 use the 9–1 scale. The teaching content and skills are equivalent across the paired syllabuses — check which code your school uses for grade boundaries.',
+      'It depends on the syllabus your centre enters. Cambridge 0500 and Edexcel 4EA1/4ET1 are typically graded A*-G, while Cambridge 0990/0992 use the 9-1 scale. The teaching content and skills are equivalent across the paired syllabuses - check which code your school uses for grade boundaries.',
   },
   {
     question: 'Does The English Hub mark IGCSE essays to the specification?',
@@ -150,7 +150,7 @@ export const IGCSE_FAQS: GeoFaqItem[] = [
   {
     question: 'How do I revise IGCSE English when there are no past papers for my route?',
     answer:
-      'Use the published specimen and assessment materials from the board, practise the exact question types under timed conditions, and self-assess against the mark scheme. Skill drills — directed writing structures, summary technique and analytical paragraphs — transfer across papers even when past-paper supply is limited.',
+      'Use the published specimen and assessment materials from the board, practise the exact question types under timed conditions, and self-assess against the mark scheme. Skill drills - directed writing structures, summary technique and analytical paragraphs - transfer across papers even when past-paper supply is limited.',
   },
 ]
 
@@ -158,7 +158,7 @@ export const REVISION_FAQS: GeoFaqItem[] = [
   {
     question: 'How do I write a top-band GCSE English Literature introduction?',
     answer:
-      'State a clear, arguable thesis that directly answers the question and signals the writer’s overarching method or purpose. Avoid retelling the plot or listing devices — one or two focused sentences that set up a line of argument is enough.',
+      'State a clear, arguable thesis that directly answers the question and signals the writer’s overarching method or purpose. Avoid retelling the plot or listing devices - one or two focused sentences that set up a line of argument is enough.',
   },
   {
     question: 'How should I split my time in AQA English Language Paper 1?',
@@ -173,17 +173,17 @@ export const REVISION_FAQS: GeoFaqItem[] = [
   {
     question: 'How many quotations should I memorise for a set text?',
     answer:
-      'Around 10–15 short, flexible quotations that each cover multiple themes or characters is more useful than dozens of long ones. Examiners reward precise, well-analysed references, not quantity.',
+      'Around 10-15 short, flexible quotations that each cover multiple themes or characters is more useful than dozens of long ones. Examiners reward precise, well-analysed references, not quantity.',
   },
   {
     question: 'Does The English Hub create a personalised revision plan?',
     answer:
-      'Yes — the toolkit builds board-specific revision and study plans, and analytics highlight weaker areas so you can focus your time where it raises your grade most.',
+      'Yes - the toolkit builds board-specific revision and study plans, and analytics highlight weaker areas so you can focus your time where it raises your grade most.',
   },
   {
     question: 'How far in advance should I start GCSE English revision?',
     answer:
-      'Begin light, regular review around six months out — quotation banks and technique recall benefit most from spacing. Step up timed essay practice in the final two to three months. Cramming works poorly for English because the marks come from practised analytical skill, not memorised facts.',
+      'Begin light, regular review around six months out - quotation banks and technique recall benefit most from spacing. Step up timed essay practice in the final two to three months. Cramming works poorly for English because the marks come from practised analytical skill, not memorised facts.',
   },
   {
     question: 'What is the difference between AO1, AO2 and AO3 in practice?',
@@ -216,12 +216,12 @@ export const RESOURCES_FAQS: GeoFaqItem[] = [
   {
     question: 'What is the difference between model answers and revision notes?',
     answer:
-      'Revision notes summarise plot, theme, context and method so you understand the text. Model answers show how to convert that understanding into an exam response that hits the assessment objectives — read them for structure and technique, not to memorise.',
+      'Revision notes summarise plot, theme, context and method so you understand the text. Model answers show how to convert that understanding into an exam response that hits the assessment objectives - read them for structure and technique, not to memorise.',
   },
   {
     question: 'Does The English Hub check its content for accuracy?',
     answer:
-      'Yes. Content follows a published verification methodology — quotations are checked against reliable sources, high-stakes material is human-reviewed, and reader-reported errors are corrected. The platform is independent and exam-board aligned, not endorsed.',
+      'Yes. Content follows a published verification methodology - quotations are checked against reliable sources, high-stakes material is human-reviewed, and reader-reported errors are corrected. The platform is independent and exam-board aligned, not endorsed.',
   },
   {
     question: 'Which English resources help most for AQA Paper 1 and Paper 2?',
@@ -231,7 +231,7 @@ export const RESOURCES_FAQS: GeoFaqItem[] = [
   {
     question: 'Are there free model answers for GCSE English Literature?',
     answer:
-      'Yes — the model-answers section includes grade-7-to-9 exemplar essays with marker commentary explaining the band judgement. Read them for structure and how analysis is built, not to memorise, then apply the same moves to your own practice essays.',
+      'Yes - the model-answers section includes grade-7-to-9 exemplar essays with marker commentary explaining the band judgement. Read them for structure and how analysis is built, not to memorise, then apply the same moves to your own practice essays.',
   },
   {
     question: 'How do I use the vocabulary and technique resources effectively?',

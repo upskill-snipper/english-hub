@@ -103,7 +103,7 @@ export default async function SpecificationPage() {
 
       <h1>{QUALIFICATION.title}</h1>
       <p className="lead">
-        The complete, authoritative reference for the {QUALIFICATION.subjectCode} qualification —
+        The complete, authoritative reference for the {QUALIFICATION.subjectCode} qualification -
         every fact, section, assessment objective and content skill, transcribed faithfully from the
         official Pearson specification.
       </p>
@@ -222,9 +222,9 @@ export default async function SpecificationPage() {
       <section className="my-10">
         <h2>Assessment objectives</h2>
         <p className="text-sm text-muted-foreground">
-          Reading is assessed across RAO1–RAO5 in{' '}
-          {SECTIONS.A.name.replace('Section A: ', 'Section A (')} — {SECTIONS.A.marks} marks).
-          Writing is assessed across WAO1–WAO2 in Section B ({SECTIONS.B.marks} marks). Percentage
+          Reading is assessed across RAO1-RAO5 in{' '}
+          {SECTIONS.A.name.replace('Section A: ', 'Section A (')} - {SECTIONS.A.marks} marks).
+          Writing is assessed across WAO1-WAO2 in Section B ({SECTIONS.B.marks} marks). Percentage
           weightings are of the overall qualification.
         </p>
         <div className="not-prose mt-4 overflow-x-auto rounded-xl border border-border/60">
@@ -266,7 +266,7 @@ export default async function SpecificationPage() {
 
       {/* ── Section A content skills ────────────────────────────────── */}
       <section className="my-10">
-        <h2>Section A: Reading — content skills (1.1–1.5)</h2>
+        <h2>Section A: Reading - content skills (1.1-1.5)</h2>
         <p className="text-sm text-muted-foreground">
           The reading skills assessed in {SECTIONS.A.name.toLowerCase()}, worth {SECTIONS.A.marks}{' '}
           marks.
@@ -310,7 +310,7 @@ export default async function SpecificationPage() {
 
       {/* ── Section B content skills ────────────────────────────────── */}
       <section className="my-10">
-        <h2>Section B: Writing — content skills (2.1–2.3)</h2>
+        <h2>Section B: Writing - content skills (2.1-2.3)</h2>
         <p className="text-sm text-muted-foreground">
           The writing skills assessed in {SECTIONS.B.name.toLowerCase()}, worth {SECTIONS.B.marks}{' '}
           marks.

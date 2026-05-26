@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { NextRequest } from 'next/server'
 
 // ---------------------------------------------------------------------------
-// Mocks — Supabase clients & rate limiting
+// Mocks - Supabase clients & rate limiting
 // ---------------------------------------------------------------------------
 
 const mockSingle = vi.fn()
@@ -29,7 +29,9 @@ vi.mock('@/lib/supabase/server', () => ({
 }))
 
 vi.mock('@/lib/rate-limit', () => ({
-  rateLimit: vi.fn().mockResolvedValue({ success: true, remaining: 10, resetAt: Date.now() + 60_000 }),
+  rateLimit: vi
+    .fn()
+    .mockResolvedValue({ success: true, remaining: 10, resetAt: Date.now() + 60_000 }),
   getClientIp: vi.fn().mockReturnValue('127.0.0.1'),
 }))
 
@@ -50,7 +52,9 @@ function buildRequest(
   }
   return new NextRequest(url, {
     method,
-    ...(body ? { body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } } : {}),
+    ...(body
+      ? { body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } }
+      : {}),
   })
 }
 
@@ -87,14 +91,19 @@ describe('Parental Consent System', () => {
     resetMocks()
   })
 
-  // ── POST /api/school/consent — Submit consent request ───────────────────
+  // ── POST /api/school/consent - Submit consent request ───────────────────
 
-  describe('POST — consent request', () => {
+  describe('POST - consent request', () => {
     it('requires authentication', async () => {
-      mockGetUser.mockResolvedValue({ data: { user: null }, error: { message: 'Not authenticated' } })
+      mockGetUser.mockResolvedValue({
+        data: { user: null },
+        error: { message: 'Not authenticated' },
+      })
 
       const { POST } = await import('@/app/api/school/consent/route')
-      const res = await POST(buildRequest('POST', { parent_email: 'parent@example.com', school_id: 'abc' }))
+      const res = await POST(
+        buildRequest('POST', { parent_email: 'parent@example.com', school_id: 'abc' }),
+      )
 
       expect(res.status).toBe(401)
       const json = await res.json()
@@ -102,7 +111,10 @@ describe('Parental Consent System', () => {
     })
 
     it('rejects missing parent_email', async () => {
-      mockGetUser.mockResolvedValue({ data: { user: { id: 'u1', email: 'student@example.com' } }, error: null })
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: 'u1', email: 'student@example.com' } },
+        error: null,
+      })
 
       const { POST } = await import('@/app/api/school/consent/route')
       const res = await POST(buildRequest('POST', { school_id: 'abc' }))
@@ -113,7 +125,10 @@ describe('Parental Consent System', () => {
     })
 
     it('rejects missing school_id', async () => {
-      mockGetUser.mockResolvedValue({ data: { user: { id: 'u1', email: 'student@example.com' } }, error: null })
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: 'u1', email: 'student@example.com' } },
+        error: null,
+      })
 
       const { POST } = await import('@/app/api/school/consent/route')
       const res = await POST(buildRequest('POST', { parent_email: 'parent@example.com' }))
@@ -124,10 +139,15 @@ describe('Parental Consent System', () => {
     })
 
     it('validates email format', async () => {
-      mockGetUser.mockResolvedValue({ data: { user: { id: 'u1', email: 'student@example.com' } }, error: null })
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: 'u1', email: 'student@example.com' } },
+        error: null,
+      })
 
       const { POST } = await import('@/app/api/school/consent/route')
-      const res = await POST(buildRequest('POST', { parent_email: 'not-an-email', school_id: 'abc' }))
+      const res = await POST(
+        buildRequest('POST', { parent_email: 'not-an-email', school_id: 'abc' }),
+      )
 
       expect(res.status).toBe(422)
       const json = await res.json()
@@ -141,10 +161,12 @@ describe('Parental Consent System', () => {
       })
 
       const { POST } = await import('@/app/api/school/consent/route')
-      const res = await POST(buildRequest('POST', {
-        parent_email: 'student@example.com',
-        school_id: 'school-1',
-      }))
+      const res = await POST(
+        buildRequest('POST', {
+          parent_email: 'student@example.com',
+          school_id: 'school-1',
+        }),
+      )
 
       expect(res.status).toBe(422)
       const json = await res.json()
@@ -157,7 +179,7 @@ describe('Parental Consent System', () => {
         error: null,
       })
 
-      // Profile lookup — student is under 16
+      // Profile lookup - student is under 16
       const profileSingle = vi.fn().mockResolvedValue({
         data: { date_of_birth: '2012-06-15', full_name: 'Test Student' },
         error: null,
@@ -167,7 +189,7 @@ describe('Parental Consent System', () => {
         data: { id: 'school-1', name: 'Test School' },
         error: null,
       })
-      // Existing consent check — none found
+      // Existing consent check - none found
       const existingSingle = vi.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } })
 
       let fromCallCount = 0
@@ -182,18 +204,20 @@ describe('Parental Consent System', () => {
           return { select: () => ({ eq: () => ({ single: schoolSingle }) }) }
         }
         if (fromCallCount === 3) {
-          // parental_consents — existing check
+          // parental_consents - existing check
           return { select: () => ({ eq: () => ({ eq: () => ({ single: existingSingle }) }) }) }
         }
-        // parental_consents — insert
+        // parental_consents - insert
         return { insert: vi.fn().mockReturnValue({ error: null }) }
       }) as any)
 
       const { POST } = await import('@/app/api/school/consent/route')
-      const res = await POST(buildRequest('POST', {
-        parent_email: 'parent@example.com',
-        school_id: 'school-1',
-      }))
+      const res = await POST(
+        buildRequest('POST', {
+          parent_email: 'parent@example.com',
+          school_id: 'school-1',
+        }),
+      )
 
       expect(res.status).toBe(200)
       const json = await res.json()
@@ -202,11 +226,14 @@ describe('Parental Consent System', () => {
     })
   })
 
-  // ── GET /api/school/consent — Check consent status ──────────────────────
+  // ── GET /api/school/consent - Check consent status ──────────────────────
 
-  describe('GET — consent status check', () => {
+  describe('GET - consent status check', () => {
     it('requires authentication', async () => {
-      mockGetUser.mockResolvedValue({ data: { user: null }, error: { message: 'Not authenticated' } })
+      mockGetUser.mockResolvedValue({
+        data: { user: null },
+        error: { message: 'Not authenticated' },
+      })
 
       const { GET } = await import('@/app/api/school/consent/route')
       const res = await GET(buildRequest('GET'))
@@ -233,7 +260,16 @@ describe('Parental Consent System', () => {
       mockSingle.mockResolvedValue({ data: { date_of_birth: '2012-06-15' }, error: null })
       // Consent records query (order, not single)
       mockOrder.mockReturnValue({
-        data: [{ id: 'c1', school_id: 's1', parent_email: 'p@e.com', status: 'pending', consented_at: null, created_at: '2026-03-22' }] as any,
+        data: [
+          {
+            id: 'c1',
+            school_id: 's1',
+            parent_email: 'p@e.com',
+            status: 'pending',
+            consented_at: null,
+            created_at: '2026-03-22',
+          },
+        ] as any,
         error: null,
       })
 
@@ -248,9 +284,9 @@ describe('Parental Consent System', () => {
     })
   })
 
-  // ── PUT /api/school/consent — Confirm / deny consent ────────────────────
+  // ── PUT /api/school/consent - Confirm / deny consent ────────────────────
 
-  describe('PUT — consent confirmation', () => {
+  describe('PUT - consent confirmation', () => {
     it('rejects missing token', async () => {
       const { PUT } = await import('@/app/api/school/consent/route')
       const res = await PUT(buildRequest('PUT', { action: 'approve' }))
@@ -285,7 +321,12 @@ describe('Parental Consent System', () => {
         data: { id: 'c1', status: 'pending', student_user_id: 'u1', school_id: 's1' },
         error: null,
       })
-      mockEq.mockImplementation(() => ({ single: mockSingle, eq: mockEq, order: mockOrder, error: null }))
+      mockEq.mockImplementation(() => ({
+        single: mockSingle,
+        eq: mockEq,
+        order: mockOrder,
+        error: null,
+      }))
 
       const { PUT } = await import('@/app/api/school/consent/route')
       const res = await PUT(buildRequest('PUT', { token: 'valid-token', action: 'approve' }))
@@ -301,7 +342,12 @@ describe('Parental Consent System', () => {
         data: { id: 'c1', status: 'pending', student_user_id: 'u1', school_id: 's1' },
         error: null,
       })
-      mockEq.mockImplementation(() => ({ single: mockSingle, eq: mockEq, order: mockOrder, error: null }))
+      mockEq.mockImplementation(() => ({
+        single: mockSingle,
+        eq: mockEq,
+        order: mockOrder,
+        error: null,
+      }))
 
       const { PUT } = await import('@/app/api/school/consent/route')
       const res = await PUT(buildRequest('PUT', { token: 'valid-token', action: 'deny' }))

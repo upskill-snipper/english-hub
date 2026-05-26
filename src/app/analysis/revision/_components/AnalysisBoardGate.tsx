@@ -6,7 +6,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  *
  * Most pages in `/analysis/revision/*` are generic (revision technique,
  * memorisation tips, exam-day advice) and apply to every GCSE student
- * regardless of exam board — those pages should NOT use this wrapper.
+ * regardless of exam board - those pages should NOT use this wrapper.
  *
  * A handful of pages are board-specific (e.g. grade boundaries with
  * AQA spec codes, English Language vs Literature explained around

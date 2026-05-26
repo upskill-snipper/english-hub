@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'Quick recall games for GCSE & IGCSE English: quote drills, technique spotting, character matching.',
   alternates: { canonical: 'https://theenglishhub.app/games' },
   openGraph: {
-    title: 'Revision games — The English Hub',
+    title: 'Revision games - The English Hub',
     description:
       'Quick recall games for GCSE & IGCSE English: quote drills, technique spotting, character matching.',
     url: 'https://theenglishhub.app/games',

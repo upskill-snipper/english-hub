@@ -16,28 +16,28 @@ type TopQuote = {
 const TOP_FIVE_QUOTES: TopQuote[] = [
   {
     quote: '"Vaulting ambition, which o\'erleaps itself / And falls on the other."',
-    character: 'Macbeth — Act 1, Scene 7',
+    character: 'Macbeth - Act 1, Scene 7',
     ao2: 'The equestrian metaphor of "vaulting" suggests ambition is a horse Macbeth tries to mount; it leaps too far and throws him. Shakespeare names the play\'s tragic engine in Macbeth\'s own voice, making him conscious of the flaw that will destroy him. The enjambment between "itself" and "And falls" enacts the fall.',
   },
   {
     quote: '"Look like th\' innocent flower, / But be the serpent under\'t."',
-    character: 'Lady Macbeth — Act 1, Scene 5',
+    character: 'Lady Macbeth - Act 1, Scene 5',
     ao2: 'The biblical allusion to the Genesis serpent aligns the Macbeths\' regicide with original sin and casts Duncan as an Eden-like innocent. The antithesis of "flower" and "serpent" crystallises the appearance-vs-reality theme into a single image, and the imperative verbs frame Lady Macbeth as the play\'s strategist of deception.',
   },
   {
     quote: '"Will all great Neptune\'s ocean wash this blood / Clean from my hand?"',
-    character: 'Macbeth — Act 2, Scene 2',
+    character: 'Macbeth - Act 2, Scene 2',
     ao2: 'The classical allusion to Neptune and the hyperbole of "all great Neptune\'s ocean" convey the cosmic enormity of regicide; not even a god of the sea can cleanse him. The rhetorical question signals psychological collapse moments after the murder, and the blood image becomes a leitmotif that returns in Lady Macbeth\'s sleepwalking scene.',
   },
   {
     quote: '"Out, damned spot! out, I say!"',
-    character: 'Lady Macbeth — Act 5, Scene 1',
+    character: 'Lady Macbeth - Act 5, Scene 1',
     ao2: 'The fragmented exclamatives and shift from blank verse to broken prose dramatise Lady Macbeth\'s mental disintegration. "Damned" carries religious weight, suggesting she recognises her soul as condemned. The compulsive imperative inverts her earlier confidence that "a little water clears us of this deed," proving guilt cannot be washed away.',
   },
   {
     quote:
       '"Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."',
-    character: 'Macbeth — Act 5, Scene 5',
+    character: 'Macbeth - Act 5, Scene 5',
     ao2: 'The theatrical metaphor reduces existence to a brief, futile performance and is meta-theatrically self-aware: Macbeth is himself a player on Shakespeare\'s stage. The verbs "struts" and "frets" diminish human action to vanity and anxiety. The soliloquy marks the nihilistic endpoint of ambition, where Macbeth has murdered his way to a throne that signifies nothing.',
   },
 ]
@@ -59,25 +59,25 @@ const COMPARISON_CARDS: ComparisonCard[] = [
     href: '/revision/texts/jekyll-and-hyde',
     title: 'Jekyll and Hyde',
     reason:
-      "Compare on: duality and the divided self — Macbeth's public honour vs private murderousness mirrors Jekyll's respectable doctor vs unleashed Hyde, and both texts treat ambition as self-destructive.",
+      "Compare on: duality and the divided self - Macbeth's public honour vs private murderousness mirrors Jekyll's respectable doctor vs unleashed Hyde, and both texts treat ambition as self-destructive.",
   },
   {
     href: '/revision/texts/an-inspector-calls',
     title: 'An Inspector Calls',
     reason:
-      "Compare on: power, guilt and collective responsibility — the Macbeths' private guilt mirrors the Birlings' communal denial, and both works dramatise how those who wield power refuse to face its consequences.",
+      "Compare on: power, guilt and collective responsibility - the Macbeths' private guilt mirrors the Birlings' communal denial, and both works dramatise how those who wield power refuse to face its consequences.",
   },
 ]
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
+    title: 'Macbeth revision guide - themes, characters, key quotes - The English Hub',
     description:
-      'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
+      'Macbeth GCSE revision - act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
   },
-  title: 'Macbeth revision guide — themes, characters, key quotes',
+  title: 'Macbeth revision guide - themes, characters, key quotes',
   description:
-    'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
+    'Macbeth GCSE revision - act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth' },
 }
 
@@ -120,7 +120,7 @@ const data: TextGuideData = {
     {
       name: 'Banquo',
       role: "Macbeth's fellow general and friend; father of Fleance",
-      body: "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation, despite being promised that his descendants will be kings. After Duncan's murder, Banquo suspects Macbeth: \"Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.\" His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt. Shakespeare presents him as a virtuous ancestor of James I, whose Stuart line claimed descent from Banquo through his son Fleance — a genealogy popularised by Hector Boece in the sixteenth century that modern historians treat as legendary rather than verifiable.",
+      body: "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation, despite being promised that his descendants will be kings. After Duncan's murder, Banquo suspects Macbeth: \"Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.\" His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt. Shakespeare presents him as a virtuous ancestor of James I, whose Stuart line claimed descent from Banquo through his son Fleance - a genealogy popularised by Hector Boece in the sixteenth century that modern historians treat as legendary rather than verifiable.",
     },
     {
       name: 'King Duncan',
@@ -172,7 +172,7 @@ const data: TextGuideData = {
   ],
 
   historicalContext: [
-    'Macbeth was written around 1606, shortly after James VI of Scotland became James I of England in 1603, uniting the two crowns. Shakespeare crafted the play as a deliberate compliment to his new patron. The Stuarts claimed descent from Banquo through his son Fleance — a lineage popularised by Hector Boece\'s sixteenth-century Scottish history and absorbed into Holinshed\'s Chronicles, though most modern historians treat Banquo himself as a literary invention rather than a verifiable ancestor. Believing this lineage, Shakespeare transformed Banquo from a co-conspirator in Holinshed into a noble, innocent victim. The "show of eight kings" that the witches conjure for Macbeth in Act 4 depicts the Stuart line descending from Banquo, with the last king holding a mirror that would have symbolically reflected James himself in the audience.',
+    'Macbeth was written around 1606, shortly after James VI of Scotland became James I of England in 1603, uniting the two crowns. Shakespeare crafted the play as a deliberate compliment to his new patron. The Stuarts claimed descent from Banquo through his son Fleance - a lineage popularised by Hector Boece\'s sixteenth-century Scottish history and absorbed into Holinshed\'s Chronicles, though most modern historians treat Banquo himself as a literary invention rather than a verifiable ancestor. Believing this lineage, Shakespeare transformed Banquo from a co-conspirator in Holinshed into a noble, innocent victim. The "show of eight kings" that the witches conjure for Macbeth in Act 4 depicts the Stuart line descending from Banquo, with the last king holding a mirror that would have symbolically reflected James himself in the audience.',
 
     'The play was written in the immediate aftermath of the Gunpowder Plot of November 1605, when Catholic conspirators attempted to blow up Parliament and assassinate James I. The themes of treason, regicide, equivocation, and the violation of the sacred bond between subject and sovereign would have carried intense topical resonance. The Porter\'s reference to "an equivocator, that could swear in both the scales against either scale" directly alludes to the trial of the Jesuit Henry Garnet, who defended the doctrine of equivocation during his prosecution for involvement in the plot. The play\'s unambiguous condemnation of regicide served both as political commentary and as reassurance to a king who had narrowly escaped assassination.',
 
@@ -184,140 +184,140 @@ const data: TextGuideData = {
   quotations: [
     {
       quote: '"Fair is foul, and foul is fair."',
-      who: 'The Witches — Act 1, Scene 1',
+      who: 'The Witches - Act 1, Scene 1',
       analysis:
         "The play's opening paradox establishes the central theme of moral inversion. What appears good may be evil and vice versa. This chiasmus (a reversed grammatical structure) mirrors the topsy-turvy world the witches inhabit and foreshadows the deception and equivocation that will drive the plot. It also introduces the motif of doubles and reversals that pervades the play.",
     },
     {
       quote: '"Yet do I fear thy nature; / It is too full o\' th\' milk of human kindness."',
-      who: 'Lady Macbeth — Act 1, Scene 5',
+      who: 'Lady Macbeth - Act 1, Scene 5',
       analysis:
         'Lady Macbeth assesses her husband\'s weakness: he has ambition but lacks the ruthlessness to act on it. The metaphor of "milk" associates kindness with femininity and nurturing, qualities she intends to override. Ironically, her complaint that Macbeth is too kind reveals that she understands his fundamental decency, which she must actively corrupt.',
     },
     {
       quote: '"Look like th\' innocent flower, / But be the serpent under\'t."',
-      who: 'Lady Macbeth — Act 1, Scene 5',
+      who: 'Lady Macbeth - Act 1, Scene 5',
       analysis:
         'Lady Macbeth instructs Macbeth to conceal his murderous intentions behind a welcoming exterior. The biblical allusion to the serpent in the Garden of Eden aligns their planned regicide with the original sin, casting Duncan as an innocent Adam and the Macbeths as agents of the devil. This encapsulates the appearance versus reality theme.',
     },
     {
       quote: '"Is this a dagger which I see before me, / The handle toward my hand?"',
-      who: 'Macbeth — Act 2, Scene 1',
+      who: 'Macbeth - Act 2, Scene 1',
       analysis:
         "Macbeth's hallucination of a floating dagger before Duncan's murder dramatises his psychological conflict. The dagger leads him towards the murder, but its unreality raises questions about agency: is Macbeth being supernaturally guided or is his own guilt-ridden mind projecting his intentions? The fact that the handle points towards him suggests temptation offering itself willingly.",
     },
     {
       quote: '"Will all great Neptune\'s ocean wash this blood / Clean from my hand?"',
-      who: 'Macbeth — Act 2, Scene 2',
+      who: 'Macbeth - Act 2, Scene 2',
       analysis:
         'Immediately after killing Duncan, Macbeth recognises the permanence of his guilt. The hyperbole of an entire ocean being insufficient to cleanse his hands conveys the enormity of regicide. This contrasts sharply with Lady Macbeth\'s dismissive response, "A little water clears us of this deed," a confidence that will be devastatingly reversed in her sleepwalking scene.',
     },
     {
       quote: '"Nought\'s had, all\'s spent, / Where our desire is got without content."',
-      who: 'Lady Macbeth — Act 3, Scene 2',
+      who: 'Lady Macbeth - Act 3, Scene 2',
       analysis:
         "This couplet captures the tragic irony of the Macbeths' situation: they have achieved everything they desired yet gained nothing of value. The rhyming couplet (spent/content) gives the observation a proverbial quality, making it sound like a universal truth about the emptiness of ill-gotten gains. It marks the beginning of Lady Macbeth's disillusionment.",
     },
     {
       quote:
         '"I am in blood / Stepp\'d in so far that, should I wade no more, / Returning were as tedious as go o\'er."',
-      who: 'Macbeth — Act 3, Scene 4',
+      who: 'Macbeth - Act 3, Scene 4',
       analysis:
         'This extended metaphor imagines guilt as a river of blood that Macbeth has waded halfway across. The word "tedious" is chillingly understated: returning to virtue has become merely inconvenient rather than morally desirable. The metaphor suggests that once a certain threshold of evil is crossed, the moral cost of repentance feels equal to the cost of continuing, trapping the sinner in a cycle of violence.',
     },
     {
       quote: '"Double, double toil and trouble; / Fire burn and cauldron bubble."',
-      who: 'The Witches — Act 4, Scene 1',
+      who: 'The Witches - Act 4, Scene 1',
       analysis:
         "The witches' famous incantation uses trochaic tetrameter (stressed-unstressed rhythm) in contrast to the play's standard iambic pentameter, marking the witches as beings outside the natural order. The chanting, repetitive quality mimics a ritual spell. The word \"double\" reinforces the play's motif of duplicity and equivocation, while the grotesque ingredients of their cauldron symbolise the moral corruption they represent.",
     },
     {
       quote: '"By the pricking of my thumbs, / Something wicked this way comes."',
-      who: 'Second Witch — Act 4, Scene 1',
+      who: 'Second Witch - Act 4, Scene 1',
       analysis:
         'The witch senses Macbeth\'s approach through a physical sensation, suggesting a supernatural attunement to evil. Crucially, the witch calls Macbeth "something wicked" rather than "someone," stripping him of his humanity. By this point in the play, Macbeth has become so corrupted that even the witches, themselves agents of evil, recognise him as wicked.',
     },
     {
       quote: '"Out, damned spot! Out, I say!"',
-      who: 'Lady Macbeth — Act 5, Scene 1',
+      who: 'Lady Macbeth - Act 5, Scene 1',
       analysis:
         'Lady Macbeth\'s most famous line occurs during her sleepwalking scene, where she compulsively tries to wash imaginary blood from her hands. The blood that she once dismissed as easily washed away has become a permanent psychological stain. The word "damned" carries religious weight, suggesting she recognises that her soul is condemned. Her fragmented prose in this scene contrasts with her earlier commanding verse, reflecting her mental disintegration.',
     },
     {
       quote:
         '"Here\'s the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand."',
-      who: 'Lady Macbeth — Act 5, Scene 1',
+      who: 'Lady Macbeth - Act 5, Scene 1',
       analysis:
         'This line directly inverts Macbeth\'s earlier "Neptune\'s ocean" image, showing that Lady Macbeth has arrived at the same recognition of ineradicable guilt. The sensory shift from sight to smell suggests the guilt has become even more pervasive and inescapable. The word "little" is poignant: she is suddenly diminished, no longer the towering figure who summoned evil spirits but a small, fragile woman destroyed by remorse.',
     },
     {
       quote:
         '"Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty."',
-      who: 'Lady Macbeth — Act 1, Scene 5',
+      who: 'Lady Macbeth - Act 1, Scene 5',
       analysis:
         'Lady Macbeth calls on dark spirits to strip away her femininity so she can participate in murder. The verb "unsex" is a violent demand to remove the compassion and nurturing associated with womanhood. The request to be filled "from the crown to the toe" with cruelty suggests she wants evil to saturate her completely. The invocation parallels a demonic possession, aligning her ambition with the supernatural forces that drive the play.',
     },
     {
       quote:
         '"When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man."',
-      who: 'Lady Macbeth — Act 1, Scene 7',
+      who: 'Lady Macbeth - Act 1, Scene 7',
       analysis:
         'Lady Macbeth manipulates her husband by equating manhood with the willingness to murder. She redefines masculinity as the capacity for violence, shaming Macbeth into acting against his conscience. This is a key quotation for the theme of gender, as it shows how toxic definitions of masculinity can be weaponised to drive destructive behaviour.',
     },
     {
       quote: '"I dare do all that may become a man; / Who dares do more is none."',
-      who: 'Macbeth — Act 1, Scene 7',
+      who: 'Macbeth - Act 1, Scene 7',
       analysis:
         "Macbeth's initial response to Lady Macbeth offers a more nuanced definition of manhood: true manliness has moral limits, and exceeding them makes one less than human, not more. This line is tragically ironic, as Macbeth will soon abandon this principled position under his wife's pressure. It reveals that Macbeth understands the moral truth but lacks the strength to hold to it.",
     },
     {
       quote: '"I shall do so; / But I must also feel it as a man."',
-      who: 'Macduff — Act 4, Scene 3',
+      who: 'Macduff - Act 4, Scene 3',
       analysis:
         "When Malcolm tells him to \"dispute it like a man\" after learning of his family's murder, Macduff insists that genuine masculinity includes emotional depth and grief. This directly challenges Lady Macbeth's definition of manhood as violent action. Macduff proves that strength and sensitivity are compatible, offering the play's most positive model of masculinity.",
     },
     {
       quote: '"There\'s no art / To find the mind\'s construction in the face."',
-      who: 'King Duncan — Act 1, Scene 4',
+      who: 'King Duncan - Act 1, Scene 4',
       analysis:
         "Duncan reflects on the treachery of the former Thane of Cawdor, observing that one cannot read someone's true thoughts from their appearance. The dramatic irony is devastating: he speaks this line just as he is about to place his trust in the new Thane of Cawdor, Macbeth, who is already contemplating his murder. The quotation encapsulates the appearance versus reality theme.",
     },
     {
       quote: '"Stars, hide your fires; / Let not light see my black and deep desires."',
-      who: 'Macbeth — Act 1, Scene 4',
+      who: 'Macbeth - Act 1, Scene 4',
       analysis:
         "Macbeth's aside reveals his first conscious embrace of dark ambition. The opposition of light and darkness is a central motif: light represents goodness, truth, and divine order, while darkness conceals evil. By asking the stars to hide, Macbeth is symbolically asking heaven to look away while he pursues his murderous intentions, aligning himself with the forces of darkness.",
     },
     {
       quote:
         '"The instruments of darkness tell us truths, / Win us with honest trifles, to betray\'s / In deepest consequence."',
-      who: 'Banquo — Act 1, Scene 3',
+      who: 'Banquo - Act 1, Scene 3',
       analysis:
         "Banquo recognises the witches' strategy: they offer small, verifiable truths to build trust before delivering the truly destructive prophecy. This line demonstrates Banquo's moral clarity and serves as a warning that Macbeth ignores. It also articulates the play's view of the supernatural as fundamentally deceptive, using truth itself as a weapon.",
     },
     {
       quote:
         '"Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."',
-      who: 'Macbeth — Act 5, Scene 5',
+      who: 'Macbeth - Act 5, Scene 5',
       analysis:
         "Macbeth's nihilistic soliloquy, delivered upon hearing of Lady Macbeth's death, reduces all of human existence to a meaningless performance. The theatrical metaphor (a \"poor player\" on a stage) is deeply self-aware, as Macbeth is himself a character on Shakespeare's stage. The passage represents Macbeth's final psychological state: not remorse, but a terrifying emptiness where ambition has burned away all meaning, leaving only despair.",
     },
     {
       quote: '"It is a tale / Told by an idiot, full of sound and fury, / Signifying nothing."',
-      who: 'Macbeth — Act 5, Scene 5',
+      who: 'Macbeth - Act 5, Scene 5',
       analysis:
         'The conclusion of the "Tomorrow" soliloquy dismisses life as a meaningless story. "Sound and fury" suggests that all of Macbeth\'s violence and ambition have amounted to nothing. This is the ultimate consequence of his actions: not punishment from an external force, but the realisation that he has emptied his own life of all purpose, love, and connection. The phrase "signifying nothing" is devastating in its finality.',
     },
     {
       quote:
         '"Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time."',
-      who: 'Macbeth — Act 5, Scene 5',
+      who: 'Macbeth - Act 5, Scene 5',
       analysis:
         'The opening of Macbeth\'s most famous soliloquy uses repetition and monosyllabic diction to create a sense of unbearable monotony and weariness. The word "creeps" suggests time moving with painful slowness, and "petty pace" diminishes it further. Having murdered his way to the throne, Macbeth finds that the future holds nothing worth living for. The speech is the tragic culmination of his journey from ambitious warrior to hollowed-out nihilist.',
     },
     {
       quote: '"What, will these hands ne\'er be clean?"',
-      who: 'Lady Macbeth — Act 5, Scene 1',
+      who: 'Lady Macbeth - Act 5, Scene 1',
       analysis:
         "This question during the sleepwalking scene reveals Lady Macbeth's unconscious recognition that her guilt is permanent. The hands that once seemed easy to wash now represent indelible moral contamination. The line connects to the blood imagery that runs through the entire play, from Duncan's murder to Macbeth's \"river of blood\" metaphor, showing how guilt accumulates and ultimately overwhelms those who try to suppress it.",
     },
@@ -712,7 +712,7 @@ export default async function MacbethPage() {
   return (
     <>
       <CourseJsonLd
-        name="Macbeth — Complete GCSE Study Guide"
+        name="Macbeth - Complete GCSE Study Guide"
         description="In-depth study guide for Macbeth covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

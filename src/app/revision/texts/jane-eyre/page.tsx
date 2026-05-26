@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Jane Eyre GCSE revision — Charlotte Brontë',
+    title: 'Jane Eyre revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Jane Eyre GCSE revision - Charlotte Brontë',
   },
-  title: 'Jane Eyre revision guide — themes, characters, key quotes',
+  title: 'Jane Eyre revision guide - themes, characters, key quotes',
   description:
-    "Jane Eyre GCSE revision — Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. Aligned to AQA, OCR and Edexcel International A Level.",
+    "Jane Eyre GCSE revision - Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. Aligned to AQA, OCR and Edexcel International A Level.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jane-eyre',
   },
@@ -106,46 +106,46 @@ const data: TextGuideData = {
     {
       quote:
         '"I am no bird; and no net ensnares me: I am a free human being with an independent will."',
-      who: 'Jane — Chapter 23',
+      who: 'Jane - Chapter 23',
       analysis:
         "Jane's most famous declaration of independence. She asserts her freedom and equality at the moment Rochester first proposes.",
     },
     {
       quote: '"Reader, I married him."',
-      who: 'Jane — Chapter 38',
+      who: 'Jane - Chapter 38',
       analysis:
         "The novel's iconic closing line. Jane addresses the reader directly, asserting her agency: she married him, not the other way around.",
     },
     {
       quote:
         '"Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless?"',
-      who: 'Jane — Chapter 23',
+      who: 'Jane - Chapter 23',
       analysis:
         'Jane challenges Rochester and the class system in a single breath, insisting that inner worth has nothing to do with outward appearance or social rank.',
     },
     {
       quote:
         '"Women feel just as men feel; they need exercise for their faculties, and a field for their efforts."',
-      who: 'Jane — Chapter 12',
+      who: 'Jane - Chapter 12',
       analysis:
         'A direct challenge to Victorian gender ideology. Bront\u00eb insists that women have the same intellectual and emotional needs as men.',
     },
     {
       quote:
         '"I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself."',
-      who: 'Jane — Chapter 27',
+      who: 'Jane - Chapter 27',
       analysis:
         "Jane's resolution when she leaves Rochester. Self-respect trumps love, comfort and security.",
     },
     {
       quote: '"Laws and principles are not for the times when there is no temptation."',
-      who: 'Jane — Chapter 27',
+      who: 'Jane - Chapter 27',
       analysis:
         "Jane recognises that morality is only meaningful when it costs something. This is her answer to Rochester's plea that she stay.",
     },
     {
       quote: '"I would always rather be happy than dignified."',
-      who: 'Jane — Chapter 24',
+      who: 'Jane - Chapter 24',
       analysis:
         "A quieter declaration of Jane's values. She prizes genuine feeling over social propriety.",
     },
@@ -176,7 +176,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Housekeeper', 'Governess', 'Cook', "Lady's maid"],
     correctIndex: 1,
     explanation:
-      'Jane is hired as governess to Adele Varens at Thornfield Hall. This position places her in an ambiguous social class — educated but dependent, genteel but a servant.',
+      'Jane is hired as governess to Adele Varens at Thornfield Hall. This position places her in an ambiguous social class - educated but dependent, genteel but a servant.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -246,7 +246,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Mr Brocklehurst', 'St John Rivers', 'Mr Rochester again', 'John Reed'],
     correctIndex: 1,
     explanation:
-      "St John Rivers, a clergyman and Jane's cousin, proposes a loveless marriage to take her to India as a missionary. He represents principle without passion — the opposite of Rochester's offer of passion without principle.",
+      "St John Rivers, a clergyman and Jane's cousin, proposes a loveless marriage to take her to India as a missionary. He represents principle without passion - the opposite of Rochester's offer of passion without principle.",
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -262,7 +262,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The novel\'s iconic closing line has Jane addressing the reader directly and placing herself as the active agent: "I married him" — not "he married me." This asserts her agency and independence to the very last line.',
+      'The novel\'s iconic closing line has Jane addressing the reader directly and placing herself as the active agent: "I married him" - not "he married me." This asserts her agency and independence to the very last line.',
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -335,7 +335,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What was radical about Jane\'s declaration that "women feel just as men feel"?',
     type: 'multiple-choice',
     options: [
-      'Nothing — it was common',
+      'Nothing - it was common',
       'It directly challenged Victorian gender ideology that expected women to be passive and submissive',
       'It was about medicine',
       'It was sarcastic',
@@ -388,7 +388,7 @@ const REVISION_TOPICS = [
       '"I am no bird; and no net ensnares me"',
       'She leaves Rochester rather than become his mistress',
       'She refuses St John rather than enter a loveless marriage',
-      '"I care for myself" — self-respect trumps everything',
+      '"I care for myself" - self-respect trumps everything',
       'Bronte insists moral independence is more important than happiness',
     ],
   },
@@ -409,7 +409,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       '"Women feel just as men feel; they need exercise for their faculties"',
       "Jane's anger and desire are presented as legitimate",
-      '"Reader, I married him" — Jane as active agent',
+      '"Reader, I married him" - Jane as active agent',
       'The Red Room represents patriarchal entrapment',
       "St John's proposal would suppress Jane's identity in service to duty",
     ],
@@ -458,7 +458,7 @@ export default async function JaneEyrePage() {
   return (
     <>
       <LearningResourceJsonLd
-        name="Jane Eyre — Complete GCSE Study Guide"
+        name="Jane Eyre - Complete GCSE Study Guide"
         description="In-depth study guide for Jane Eyre covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
         educationalLevel="GCSE"
         learningResourceType="Study guide"
@@ -466,7 +466,7 @@ export default async function JaneEyrePage() {
         url="https://theenglishhub.app/revision/texts/jane-eyre"
       />
       <CourseJsonLd
-        name="Jane Eyre — Complete GCSE Study Guide"
+        name="Jane Eyre - Complete GCSE Study Guide"
         description="In-depth study guide for Jane Eyre covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

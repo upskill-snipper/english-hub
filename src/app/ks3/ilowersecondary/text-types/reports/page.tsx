@@ -9,14 +9,14 @@ import {
 } from '@/lib/ilowersecondary/spec'
 
 export const metadata: Metadata = {
-  title: 'Report texts — reading and writing guide (KS3 iLowerSecondary English)',
+  title: 'Report texts - reading and writing guide (KS3 iLowerSecondary English)',
   description:
     'How to read and write report texts for Pearson Edexcel iLowerSecondary English (LEH11): conventions, impersonal language, structure analysis, two annotated original report extracts, practice questions with model answers and a writing task.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/text-types/reports',
   },
   openGraph: {
-    title: 'Report texts — reading and writing guide — The English Hub',
+    title: 'Report texts - reading and writing guide - The English Hub',
     description:
       'Conventions of report writing, distinguishing reports from recounts and articles, annotated original extracts, and exam-style practice for KS3 iLowerSecondary English.',
   },
@@ -38,7 +38,7 @@ const INFORMATION_REPORT: { lines: string[]; annotations: Annotation[] } = {
   annotations: [
     {
       feature: 'Title and sub-headings ("Habitat", "Diet and behaviour")',
-      note: 'The information is classified into topics rather than told as a story. Sub-headings let a reader find a section quickly — a structural choice you can comment on for RAO3.',
+      note: 'The information is classified into topics rather than told as a story. Sub-headings let a reader find a section quickly - a structural choice you can comment on for RAO3.',
     },
     {
       feature: 'Third person, no named writer ("It is found", "The marmot feeds")',
@@ -68,7 +68,7 @@ const FINDINGS_REPORT: { lines: string[]; annotations: Annotation[] } = {
   annotations: [
     {
       feature: 'Clearly invented data ("the invented sample, 68%")',
-      note: 'Real reports use evidence and figures. Here the figure is openly labelled as invented so it is never mistaken for genuine research — but it shows how a finding is supported by data.',
+      note: 'Real reports use evidence and figures. Here the figure is openly labelled as invented so it is never mistaken for genuine research - but it shows how a finding is supported by data.',
     },
     {
       feature:
@@ -99,7 +99,7 @@ const PRACTICE: Practice[] = [
     q: 'How does the writer of the survey report organise the information? (Comment on structure.)',
     ao: 'RAO3',
     model:
-      'The report is organised by function under sub-headings. The "Introduction" explains how the data was gathered, the "Findings" section presents the evidence, and the "Conclusion and recommendations" section draws a measured judgement from that evidence. This logical, classified order — rather than a time order — helps the reader locate information and shows the writer reasoning from evidence to a recommendation.',
+      'The report is organised by function under sub-headings. The "Introduction" explains how the data was gathered, the "Findings" section presents the evidence, and the "Conclusion and recommendations" section draws a measured judgement from that evidence. This logical, classified order - rather than a time order - helps the reader locate information and shows the writer reasoning from evidence to a recommendation.',
   },
   {
     q: 'Explain the effect of the passive construction "It is therefore recommended that the library expands its range of digital texts."',
@@ -139,7 +139,7 @@ export default function ReportsTextTypePage() {
         ]}
       />
       <LearningResourceJsonLd
-        name="Report texts — reading and writing guide"
+        name="Report texts - reading and writing guide"
         description="A KS3 iLowerSecondary English guide to report texts: conventions, impersonal language, structure analysis, annotated original extracts and exam-style practice for LEH11."
         educationalLevel="KS3"
         learningResourceType="Study guide"

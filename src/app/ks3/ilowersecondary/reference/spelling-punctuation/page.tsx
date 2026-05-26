@@ -26,7 +26,7 @@ const PUNCTUATION: { mark: string; rule: string; example: string; error: string 
   },
   {
     mark: 'End punctuation',
-    rule: 'Close every sentence with a full stop, question mark or exclamation mark — one idea, one demarcated sentence.',
+    rule: 'Close every sentence with a full stop, question mark or exclamation mark - one idea, one demarcated sentence.',
     example: 'Why did she stop? The path had vanished. Run!',
     error: 'The comma splice: joining two sentences with only a comma.',
   },
@@ -62,9 +62,9 @@ const EXTRA_MARKS: { mark: string; rule: string; example: string }[] = [
     example: 'The rain stopped; the silence felt louder than the storm.',
   },
   {
-    mark: 'Dash ( – )',
+    mark: 'Dash ( - )',
     rule: 'Adds a dramatic pause or an aside; a pair works like brackets.',
-    example: 'There was only one route left – the one nobody used.',
+    example: 'There was only one route left - the one nobody used.',
   },
   {
     mark: 'Brackets ( ( ) )',
@@ -157,7 +157,7 @@ export default async function SpellingPunctuationReference() {
       <h1>Spelling &amp; punctuation reference</h1>
       <p className="lead">
         {WRITING_SKILLS[2].title}. This is the quick reference for the marks that most often cost
-        easy WAO2 credit. The specification names five punctuation marks explicitly — get these
+        easy WAO2 credit. The specification names five punctuation marks explicitly - get these
         right and demarcate every sentence cleanly.
       </p>
 
@@ -185,7 +185,7 @@ export default async function SpellingPunctuationReference() {
 
       <h2>Marks that lift you to the top bands</h2>
       <p>
-        Used accurately and for effect, these signal a confident, ambitious writer (WAO2 S3–S4).
+        Used accurately and for effect, these signal a confident, ambitious writer (WAO2 S3-S4).
       </p>
       <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
         {EXTRA_MARKS.map((p) => (

@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet Themes — Edexcel IGCSE Literature',
+    title: 'Romeo and Juliet Themes - Edexcel IGCSE Literature',
     description:
       'Detailed themes guide for Romeo and Juliet for Edexcel IGCSE Literature: love, fate, conflict, youth vs age and honour, with key quotations and analysis.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/themes',
   },
-  title: 'Romeo and Juliet Themes — Edexcel IGCSE Literature',
+  title: 'Romeo and Juliet Themes - Edexcel IGCSE Literature',
   description:
     'Detailed themes guide for Romeo and Juliet for Edexcel IGCSE Literature: love, fate, conflict, youth vs age and honour, with key quotations and analysis.',
 }

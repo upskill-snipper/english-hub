@@ -16,7 +16,7 @@ export type ALevelBoardHubProps = {
   boardName: string
   examCode: string
   hubSlug: 'aqa' | 'edexcel' | 'ocr' | 'eduqas'
-  // Roughly what students will find here once content lands — used as a teaser
+  // Roughly what students will find here once content lands - used as a teaser
   summary: string
 }
 
@@ -37,7 +37,7 @@ const revisionLinks = [
   {
     title: 'Language Study',
     description:
-      'Language study for A-Level English Language — frameworks, analysis, and written transformation.',
+      'Language study for A-Level English Language - frameworks, analysis, and written transformation.',
     href: '/revision/language',
     icon: PenTool,
   },
@@ -104,7 +104,7 @@ export function ALevelBoardHub({ boardName, examCode, hubSlug, summary }: ALevel
             </h2>
             <p className="mt-1 text-body-sm text-muted-foreground">
               We&apos;re building board-specific A-Level guides for{' '}
-              <strong className="text-foreground">{boardName}</strong> — set texts, comparative
+              <strong className="text-foreground">{boardName}</strong> - set texts, comparative
               essays, anthology breakdowns and past-paper walkthroughs. In the meantime, use the
               cross-board revision tools below; each one already covers the core A-Level skills.
             </p>
@@ -147,7 +147,7 @@ export function ALevelBoardHub({ boardName, examCode, hubSlug, summary }: ALevel
       </section>
 
       {/* GeoFaq lives in a-level/layout.tsx (covers every board page
-          including this one) — not here, to avoid a duplicate FAQPage. */}
+          including this one) - not here, to avoid a duplicate FAQPage. */}
 
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">

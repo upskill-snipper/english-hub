@@ -105,7 +105,7 @@ const COMMON_THEMES = [
   {
     theme: 'Time and change',
     detail:
-      'Seasons, ageing, memory, nostalgia. Tenses matter here: present-tense immediacy vs past-tense reflection often signals the speaker\'s emotional stance.',
+      "Seasons, ageing, memory, nostalgia. Tenses matter here: present-tense immediacy vs past-tense reflection often signals the speaker's emotional stance.",
   },
 ]
 
@@ -183,17 +183,17 @@ export default function UnseenPoetryHubPage() {
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          Paper 2 — Unseen Poetry
+          Paper 2 - Unseen Poetry
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
           Unseen poetry is the section students fear most -- and rewards most
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          In Paper 2 of the Edexcel IGCSE Literature exam you will be asked to compare two poems you have
-          never read before. There is no way to "revise" the poems themselves -- but there is
+          In Paper 2 of the Edexcel IGCSE Literature exam you will be asked to compare two poems you
+          have never read before. There is no way to "revise" the poems themselves -- but there is
           absolutely a way to revise the skills. With a reliable reading approach, a toolkit of
-          analytical vocabulary, and a clear comparative structure, unseen poetry becomes the
-          most strategic section on the paper. This hub walks you through every step.
+          analytical vocabulary, and a clear comparative structure, unseen poetry becomes the most
+          strategic section on the paper. This hub walks you through every step.
         </p>
       </section>
 
@@ -251,8 +251,8 @@ export default function UnseenPoetryHubPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Common Themes</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          The unseen poems are often chosen from a narrow range of themes. Knowing the
-          territory helps you orient quickly under pressure.
+          The unseen poems are often chosen from a narrow range of themes. Knowing the territory
+          helps you orient quickly under pressure.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {COMMON_THEMES.map((item) => (
@@ -276,10 +276,7 @@ export default function UnseenPoetryHubPage() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {PRACTICE_TIPS.map((tip) => (
-            <div
-              key={tip.title}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
+            <div key={tip.title} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="mb-2 flex items-center gap-2">
                 <tip.icon className="size-4 text-emerald-400" />
                 <h3 className="text-sm font-semibold text-foreground">{tip.title}</h3>
@@ -299,8 +296,8 @@ export default function UnseenPoetryHubPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          The unseen poetry comparison question rewards four assessment objectives. Every
-          paragraph you write should push at one of these.
+          The unseen poetry comparison question rewards four assessment objectives. Every paragraph
+          you write should push at one of these.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
@@ -326,7 +323,7 @@ export default function UnseenPoetryHubPage() {
               ao: 'Comparing texts',
               label: 'Comparison',
               detail:
-                'Explore connections across texts, evaluating similarities and differences in writers\' methods and effects.',
+                "Explore connections across texts, evaluating similarities and differences in writers' methods and effects.",
             },
           ].map((item) => (
             <div
@@ -354,8 +351,8 @@ export default function UnseenPoetryHubPage() {
           Start with the 5-step approach
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Before you tackle comparison or analysis, you need a reading process you can trust.
-          The 5-step approach gives you a reliable way in to any unseen poem.
+          Before you tackle comparison or analysis, you need a reading process you can trust. The
+          5-step approach gives you a reliable way in to any unseen poem.
         </p>
         <Button
           variant="default"

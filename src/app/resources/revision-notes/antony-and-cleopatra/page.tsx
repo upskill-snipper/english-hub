@@ -379,15 +379,15 @@ export default function AntonyAndCleopatraPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Mark Antony"
-                description="The Roman triumvir torn between Egypt and Rome, between Cleopatra and Caesar's sister Octavia, between the soldier he was and the lover he is becoming. Shakespeare draws on Plutarch's portrait of Antony as a man of immense capacity and equally immense weakness. Roman characters describe him through the language of erosion and dissolution: he 'reels' the world about, his 'goodly eyes' once 'glow'd like plated Mars'. His tragedy is that the very magnanimity which makes him heroic — generosity, sensual openness, refusal of cold calculation — is what unfits him for the new Augustan world. His botched suicide is one of Shakespeare's most painful ironies: the soldier cannot even die a soldier's death."
+                description="The Roman triumvir torn between Egypt and Rome, between Cleopatra and Caesar's sister Octavia, between the soldier he was and the lover he is becoming. Shakespeare draws on Plutarch's portrait of Antony as a man of immense capacity and equally immense weakness. Roman characters describe him through the language of erosion and dissolution: he 'reels' the world about, his 'goodly eyes' once 'glow'd like plated Mars'. His tragedy is that the very magnanimity which makes him heroic - generosity, sensual openness, refusal of cold calculation - is what unfits him for the new Augustan world. His botched suicide is one of Shakespeare's most painful ironies: the soldier cannot even die a soldier's death."
               />
               <CharacterCard
                 name="Cleopatra"
-                description="Queen of Egypt, the play's most paradoxical character. She is by turns regal, jealous, theatrical, cowardly, sublime, and cruel. Enobarbus's 'infinite variety' is the critical descriptor: she contains contradictions other characters can only choose between. Shakespeare gives her some of the play's most baroque verse — the dream of Antony as a colossus, the 'immortal longings' speech — alongside violent prose when she beats the messenger. Critics divide on whether Cleopatra is a serious tragic heroine or a self-dramatising figure who finally rises to her own legend; the play deliberately leaves the question open. Her death scene is one of the most extended and symbolically loaded suicide sequences in Shakespeare."
+                description="Queen of Egypt, the play's most paradoxical character. She is by turns regal, jealous, theatrical, cowardly, sublime, and cruel. Enobarbus's 'infinite variety' is the critical descriptor: she contains contradictions other characters can only choose between. Shakespeare gives her some of the play's most baroque verse - the dream of Antony as a colossus, the 'immortal longings' speech - alongside violent prose when she beats the messenger. Critics divide on whether Cleopatra is a serious tragic heroine or a self-dramatising figure who finally rises to her own legend; the play deliberately leaves the question open. Her death scene is one of the most extended and symbolically loaded suicide sequences in Shakespeare."
               />
               <CharacterCard
                 name="Octavius Caesar"
-                description="The young triumvir who will become the Emperor Augustus. Cold, controlled, and politically gifted, Caesar represents the new Roman order in which calculation replaces magnanimity. He is the antithesis of Antony in every register: where Antony is generous, Caesar is meticulous; where Antony is voluble, Caesar is strategically silent. He is not a villain but a successful politician — a darker figure than the heroic Octavius of 'Julius Caesar'. His love for his sister Octavia is the only emotional opening in his character, and even that is instrumentalised politically. He triumphs militarily but loses the symbolic battle when Cleopatra evades his planned triumph."
+                description="The young triumvir who will become the Emperor Augustus. Cold, controlled, and politically gifted, Caesar represents the new Roman order in which calculation replaces magnanimity. He is the antithesis of Antony in every register: where Antony is generous, Caesar is meticulous; where Antony is voluble, Caesar is strategically silent. He is not a villain but a successful politician - a darker figure than the heroic Octavius of 'Julius Caesar'. His love for his sister Octavia is the only emotional opening in his character, and even that is instrumentalised politically. He triumphs militarily but loses the symbolic battle when Cleopatra evades his planned triumph."
               />
               <CharacterCard
                 name="Enobarbus"
@@ -395,7 +395,7 @@ export default function AntonyAndCleopatraPage() {
               />
               <CharacterCard
                 name="Charmian"
-                description="Cleopatra's chief lady-in-waiting and closest companion. She shares the queen's wit and theatricality; her exchanges with the soothsayer in Act 1 reveal the comic-erotic atmosphere of Cleopatra's court. Charmian's role becomes profoundly serious in the death scene, where she stays beside her queen, adjusts Cleopatra's crown after death — 'Your crown's awry; / I'll mend it' — and dies last of the three women. She represents the loyalty within Cleopatra's domestic sphere, paralleling Eros's loyalty to Antony."
+                description="Cleopatra's chief lady-in-waiting and closest companion. She shares the queen's wit and theatricality; her exchanges with the soothsayer in Act 1 reveal the comic-erotic atmosphere of Cleopatra's court. Charmian's role becomes profoundly serious in the death scene, where she stays beside her queen, adjusts Cleopatra's crown after death - 'Your crown's awry; / I'll mend it' - and dies last of the three women. She represents the loyalty within Cleopatra's domestic sphere, paralleling Eros's loyalty to Antony."
               />
               <CharacterCard
                 name="Iras"
@@ -403,11 +403,11 @@ export default function AntonyAndCleopatraPage() {
               />
               <CharacterCard
                 name="Octavia"
-                description="Caesar's sister, given in marriage to Antony to cement the Roman alliance. Plutarch describes her as a model Roman matron, and Shakespeare follows this — she is patient, virtuous, and politically obedient. She is structurally the antithesis of Cleopatra: silent where Cleopatra is voluble, modest where Cleopatra is theatrical, dutiful where Cleopatra is desiring. Antony's rejection of Octavia is also a rejection of the marriage-alliance world of Roman politics. Octavia is treated by the play with sympathy but also with a clear sense that her virtues belong to a smaller emotional scale than Cleopatra's."
+                description="Caesar's sister, given in marriage to Antony to cement the Roman alliance. Plutarch describes her as a model Roman matron, and Shakespeare follows this - she is patient, virtuous, and politically obedient. She is structurally the antithesis of Cleopatra: silent where Cleopatra is voluble, modest where Cleopatra is theatrical, dutiful where Cleopatra is desiring. Antony's rejection of Octavia is also a rejection of the marriage-alliance world of Roman politics. Octavia is treated by the play with sympathy but also with a clear sense that her virtues belong to a smaller emotional scale than Cleopatra's."
               />
               <CharacterCard
                 name="Pompey (Sextus Pompeius)"
-                description="The son of Pompey the Great, leading a rebellion against the triumvirate at the start of the play. Pompey represents the residue of the older republican Rome that Caesar's eventual empire will erase. He negotiates peace with the triumvirs aboard his galley, refuses Menas's offer to murder them all because honour forbids it, and is reported killed offstage in Act 3. His brief presence reminds the audience that the Roman world contains more than the duel between Antony and Caesar — and that honourable scruple, in this political universe, is a fatal weakness."
+                description="The son of Pompey the Great, leading a rebellion against the triumvirate at the start of the play. Pompey represents the residue of the older republican Rome that Caesar's eventual empire will erase. He negotiates peace with the triumvirs aboard his galley, refuses Menas's offer to murder them all because honour forbids it, and is reported killed offstage in Act 3. His brief presence reminds the audience that the Roman world contains more than the duel between Antony and Caesar - and that honourable scruple, in this political universe, is a fatal weakness."
               />
               <CharacterCard
                 name="Lepidus"
@@ -423,7 +423,7 @@ export default function AntonyAndCleopatraPage() {
               />
               <CharacterCard
                 name="Philo, Demetrius, Scarus, Canidius, Ventidius"
-                description="The Roman soldiers and lieutenants who frame and comment on the action. Philo and Demetrius open the play with the Roman judgement on Antony's degeneration. Scarus delivers furious commentary on the cowardice at Actium. Ventidius wins a victory in Parthia but is afraid to gain too much glory because greatness in subordinates is dangerous in this regime. Together they show that Roman military culture is hierarchical, competitive, and watchful — incompatible with the open generosity Antony brings from Egypt."
+                description="The Roman soldiers and lieutenants who frame and comment on the action. Philo and Demetrius open the play with the Roman judgement on Antony's degeneration. Scarus delivers furious commentary on the cowardice at Actium. Ventidius wins a victory in Parthia but is afraid to gain too much glory because greatness in subordinates is dangerous in this regime. Together they show that Roman military culture is hierarchical, competitive, and watchful - incompatible with the open generosity Antony brings from Egypt."
               />
             </div>
           </Section>
@@ -435,7 +435,7 @@ export default function AntonyAndCleopatraPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Love vs Duty`)}
-                description="The play's central conflict is the irreconcilability of erotic devotion and political obligation. Antony cannot serve both Cleopatra and Rome; the choice that will allow him to live with himself is the choice that destroys him as a triumvir. Shakespeare refuses easy resolution: love is not simply ennobling, nor is duty simply correct. The play offers Antony's repeated attempts at compromise — marriage to Octavia, fighting at sea to please Cleopatra — and shows each compromise hastening his ruin. The lovers achieve dignity only by abandoning compromise altogether and choosing death together."
+                description="The play's central conflict is the irreconcilability of erotic devotion and political obligation. Antony cannot serve both Cleopatra and Rome; the choice that will allow him to live with himself is the choice that destroys him as a triumvir. Shakespeare refuses easy resolution: love is not simply ennobling, nor is duty simply correct. The play offers Antony's repeated attempts at compromise - marriage to Octavia, fighting at sea to please Cleopatra - and shows each compromise hastening his ruin. The lovers achieve dignity only by abandoning compromise altogether and choosing death together."
               />
               <ThemeCard
                 title={tr(`Roman Stoicism vs Egyptian Sensuality`)}
@@ -443,11 +443,11 @@ export default function AntonyAndCleopatraPage() {
               />
               <ThemeCard
                 title={tr(`Power and Empire`)}
-                description="The play stages the foundational moment of the Roman empire — the transition from triumvirate to Augustan principate. Power in this universe is not declamatory but shrewd; Caesar wins because he calculates, waits, and instrumentalises kinship. Shakespeare juxtaposes Antony's heroic style with Caesar's bureaucratic style and shows the latter triumphing. The play asks whether the new world that Caesar's victory inaugurates is worth what is lost in the process — whether magnanimity, sensual generosity, and personal greatness can survive the politics of empire."
+                description="The play stages the foundational moment of the Roman empire - the transition from triumvirate to Augustan principate. Power in this universe is not declamatory but shrewd; Caesar wins because he calculates, waits, and instrumentalises kinship. Shakespeare juxtaposes Antony's heroic style with Caesar's bureaucratic style and shows the latter triumphing. The play asks whether the new world that Caesar's victory inaugurates is worth what is lost in the process - whether magnanimity, sensual generosity, and personal greatness can survive the politics of empire."
               />
               <ThemeCard
                 title={tr(`Theatricality and Performance`)}
-                description="The play is suffused with self-conscious theatricality. Cleopatra dresses for her death as an actor dresses for a role; she fears that Roman boys will 'boy' her greatness on stage, and Shakespeare's audience watched a boy actor speak that line. Antony understands his life through public performance. Enobarbus narrates Cleopatra at Cydnus as a staged tableau. The asp scene is the most elaborately stage-managed suicide in Shakespeare. The play's interest is not just in what happens but in how characters dramatise what happens — and in whether tragedy can survive its own theatricality."
+                description="The play is suffused with self-conscious theatricality. Cleopatra dresses for her death as an actor dresses for a role; she fears that Roman boys will 'boy' her greatness on stage, and Shakespeare's audience watched a boy actor speak that line. Antony understands his life through public performance. Enobarbus narrates Cleopatra at Cydnus as a staged tableau. The asp scene is the most elaborately stage-managed suicide in Shakespeare. The play's interest is not just in what happens but in how characters dramatise what happens - and in whether tragedy can survive its own theatricality."
               />
               <ThemeCard
                 title={tr(`Honour and Reputation`)}
@@ -463,7 +463,7 @@ export default function AntonyAndCleopatraPage() {
               />
               <ThemeCard
                 title={tr(`Gender and Political Identity`)}
-                description="Antony complains that he is 'unqualitied' by emotion, that Cleopatra has 'unmanned' him; Cleopatra dresses Antony in her 'tires and mantles' while she wears his sword; the play repeatedly stages the porousness of gender categories. Roman discourse polices manhood through restraint and continence, and its own anxieties about Antony are framed as anxieties about gender. Cleopatra in her final scene calls herself 'fire and air', surrendering her 'baser' elements — even her gendered embodiment is reconstructed in death. A-Level candidates often profitably read the play through gender criticism."
+                description="Antony complains that he is 'unqualitied' by emotion, that Cleopatra has 'unmanned' him; Cleopatra dresses Antony in her 'tires and mantles' while she wears his sword; the play repeatedly stages the porousness of gender categories. Roman discourse polices manhood through restraint and continence, and its own anxieties about Antony are framed as anxieties about gender. Cleopatra in her final scene calls herself 'fire and air', surrendering her 'baser' elements - even her gendered embodiment is reconstructed in death. A-Level candidates often profitably read the play through gender criticism."
               />
             </div>
           </Section>
@@ -485,7 +485,7 @@ export default function AntonyAndCleopatraPage() {
               <QuoteCard
                 quote="There's beggary in the love that can be reckoned."
                 speaker="Antony, Act 1 Scene 1"
-                analysis="The play's opening scene refusal of measurement. 'Reckoned' is a Roman bookkeeper's verb; Antony's love refuses Caesar's accounting world. The gnomic, self-contained line establishes the Egyptian aesthetic of excess — love that can be quantified is impoverished. The language anticipates the later Roman accusation that Antony has lost the ability to measure correctly: empires, fleets, his own honour."
+                analysis="The play's opening scene refusal of measurement. 'Reckoned' is a Roman bookkeeper's verb; Antony's love refuses Caesar's accounting world. The gnomic, self-contained line establishes the Egyptian aesthetic of excess - love that can be quantified is impoverished. The language anticipates the later Roman accusation that Antony has lost the ability to measure correctly: empires, fleets, his own honour."
               />
               <QuoteCard
                 quote="The nobleness of life / Is to do thus."
@@ -500,12 +500,12 @@ export default function AntonyAndCleopatraPage() {
               <QuoteCard
                 quote="The barge she sat in, like a burnish'd throne, / Burn'd on the water."
                 speaker="Enobarbus, Act 2 Scene 2"
-                analysis="The opening of the Cydnus speech. The simile 'like a burnish'd throne' converts a vessel into royalty; the verb 'burn'd' literalises the gleam into combustion. Cleopatra is presented before she is described — Shakespeare delays her appearance with a stage of objects (barge, sails, oars) all heightened by metaphor. Enobarbus, the play's choric realist, is the speaker, which authenticates the spectacle: even the Roman cynic cannot escape the rhetorical pull of Egyptian display."
+                analysis="The opening of the Cydnus speech. The simile 'like a burnish'd throne' converts a vessel into royalty; the verb 'burn'd' literalises the gleam into combustion. Cleopatra is presented before she is described - Shakespeare delays her appearance with a stage of objects (barge, sails, oars) all heightened by metaphor. Enobarbus, the play's choric realist, is the speaker, which authenticates the spectacle: even the Roman cynic cannot escape the rhetorical pull of Egyptian display."
               />
               <QuoteCard
                 quote="Age cannot wither her, nor custom stale / Her infinite variety."
                 speaker="Enobarbus, Act 2 Scene 2"
-                analysis="Perhaps the play's most quoted line. The two negations ('cannot... nor') are then countered with the superlative 'infinite variety'. 'Wither' applies to plants and skin alike; 'stale' applies to bread and to repetition. Cleopatra resists both biological and cultural laws of decay. 'Infinite variety' is an oxymoron — variety implies plurality, infinity implies completeness — and that paradox is Cleopatra. Critics including A. C. Bradley regard this line as the play's central interpretive crux."
+                analysis="Perhaps the play's most quoted line. The two negations ('cannot... nor') are then countered with the superlative 'infinite variety'. 'Wither' applies to plants and skin alike; 'stale' applies to bread and to repetition. Cleopatra resists both biological and cultural laws of decay. 'Infinite variety' is an oxymoron - variety implies plurality, infinity implies completeness - and that paradox is Cleopatra. Critics including A. C. Bradley regard this line as the play's central interpretive crux."
               />
               <QuoteCard
                 quote="I have / Immortal longings in me."
@@ -520,7 +520,7 @@ export default function AntonyAndCleopatraPage() {
               <QuoteCard
                 quote="O, see, my women, / The crown o' the earth doth melt."
                 speaker="Cleopatra on Antony's death, Act 4 Scene 15"
-                analysis="Cleopatra's grief uses the play's signature dissolution-imagery. 'The crown o' the earth' makes Antony cosmic; 'doth melt' returns to Antony's own first-act verb. Antony's death is not an event within the world but a partial collapse of the world. The imperative 'see' invites her women — and the audience — to witness a metaphysical not just political loss. This line completes a circuit begun with 'Let Rome in Tiber melt'."
+                analysis="Cleopatra's grief uses the play's signature dissolution-imagery. 'The crown o' the earth' makes Antony cosmic; 'doth melt' returns to Antony's own first-act verb. Antony's death is not an event within the world but a partial collapse of the world. The imperative 'see' invites her women - and the audience - to witness a metaphysical not just political loss. This line completes a circuit begun with 'Let Rome in Tiber melt'."
               />
               <QuoteCard
                 quote="Husband, I come."
@@ -540,17 +540,17 @@ export default function AntonyAndCleopatraPage() {
               <QuoteCard
                 quote="O Antony!"
                 speaker="Enobarbus, Act 4 Scene 9"
-                analysis="Enobarbus's dying cry, the only words he speaks before death. The exclamation is reduced to two words and a vocative. After the long speeches of the 'barge' description, Enobarbus's death is verbally minimal — a contraction that mirrors the moral collapse of the speaker. Loyalty, having been severed by reason, returns as inarticulate grief. The sentry who hears him notes 'his face is downward'; even his physical posture obeys the gravity of repentance."
+                analysis="Enobarbus's dying cry, the only words he speaks before death. The exclamation is reduced to two words and a vocative. After the long speeches of the 'barge' description, Enobarbus's death is verbally minimal - a contraction that mirrors the moral collapse of the speaker. Loyalty, having been severed by reason, returns as inarticulate grief. The sentry who hears him notes 'his face is downward'; even his physical posture obeys the gravity of repentance."
               />
               <QuoteCard
                 quote="No grave upon the earth shall clip in it / A pair so famous."
                 speaker="Caesar, Act 5 Scene 2"
-                analysis="Caesar's closing tribute. Even the victorious Roman cannot deny the lovers' fame. 'Clip' (embrace, encircle) is a tender verb for what a grave does — Caesar lapses, momentarily, into the play's Egyptian register. The line acknowledges that Caesar has won the political war but lost the symbolic one: Antony and Cleopatra will be remembered, not as Augustus's defeated enemies, but as 'a pair so famous'. The play closes by burying them together, undoing the geopolitical separation it began with."
+                analysis="Caesar's closing tribute. Even the victorious Roman cannot deny the lovers' fame. 'Clip' (embrace, encircle) is a tender verb for what a grave does - Caesar lapses, momentarily, into the play's Egyptian register. The line acknowledges that Caesar has won the political war but lost the symbolic one: Antony and Cleopatra will be remembered, not as Augustus's defeated enemies, but as 'a pair so famous'. The play closes by burying them together, undoing the geopolitical separation it began with."
               />
               <QuoteCard
                 quote="The triple pillar of the world transform'd / Into a strumpet's fool."
                 speaker="Philo, Act 1 Scene 1"
-                analysis="The opening Roman judgement. 'Triple pillar' is Antony as one-third of the triumvirate; the architectural metaphor casts him as load-bearing. 'Transform'd' is the verb of degeneration. 'Strumpet's fool' is brutally reductive — Cleopatra a whore, Antony her clown. The play opens by giving the audience the Roman frame, which it will then complicate; we hear about Antony before we see him, and what we hear is contempt."
+                analysis="The opening Roman judgement. 'Triple pillar' is Antony as one-third of the triumvirate; the architectural metaphor casts him as load-bearing. 'Transform'd' is the verb of degeneration. 'Strumpet's fool' is brutally reductive - Cleopatra a whore, Antony her clown. The play opens by giving the audience the Roman frame, which it will then complicate; we hear about Antony before we see him, and what we hear is contempt."
               />
             </div>
           </Section>

@@ -7,14 +7,14 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Macbeth Characters — Edexcel IGCSE Literature',
+    title: 'Macbeth Characters - Edexcel IGCSE Literature',
     description:
       'Character analysis for Macbeth, Lady Macbeth, Banquo, Duncan, Macduff and the Witches for Edexcel IGCSE English Literature.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/characters',
   },
-  title: 'Macbeth Characters — Edexcel IGCSE Literature',
+  title: 'Macbeth Characters - Edexcel IGCSE Literature',
   description:
     'Character analysis for Macbeth, Lady Macbeth, Banquo, Duncan, Macduff and the Witches for Edexcel IGCSE English Literature.',
 }
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 const CHARACTERS = [
   {
     name: 'Macbeth',
-    role: 'Tragic protagonist — Scottish general, then king, then tyrant',
+    role: 'Tragic protagonist - Scottish general, then king, then tyrant',
     description:
-      "Macbeth begins the play as a 'brave' and 'noble' war hero, praised by Duncan as 'valiant cousin, worthy gentleman'. But his 'vaulting ambition' — activated by the witches' prophecy and weaponised by his wife — drives him to regicide. As king he becomes paranoid and tyrannical, ordering the murder of Banquo, Fleance and Macduff's family. By Act 5 he is emotionally hollow, clinging to the witches' equivocations. Shakespeare frames him as a classical tragic hero: a noble figure destroyed by a single fatal flaw (hamartia).",
+      "Macbeth begins the play as a 'brave' and 'noble' war hero, praised by Duncan as 'valiant cousin, worthy gentleman'. But his 'vaulting ambition' - activated by the witches' prophecy and weaponised by his wife - drives him to regicide. As king he becomes paranoid and tyrannical, ordering the murder of Banquo, Fleance and Macduff's family. By Act 5 he is emotionally hollow, clinging to the witches' equivocations. Shakespeare frames him as a classical tragic hero: a noble figure destroyed by a single fatal flaw (hamartia).",
     arc: 'Loyal warrior \u2192 reluctant murderer \u2192 tyrant \u2192 nihilist \u2192 dead',
     key_quotes: [
       '"I have no spur to prick the sides of my intent, but only vaulting ambition, which o\'erleaps itself" (1.7)',
@@ -36,9 +36,9 @@ const CHARACTERS = [
   },
   {
     name: 'Lady Macbeth',
-    role: "Macbeth's wife — the architect of Duncan's murder",
+    role: "Macbeth's wife - the architect of Duncan's murder",
     description:
-      "In her first scene Lady Macbeth calls on 'spirits that tend on mortal thoughts' to 'unsex' her and fill her 'from the crown to the toe top-full of direst cruelty'. She is initially the stronger partner, shaming Macbeth into committing regicide by questioning his manhood. But the partnership reverses. As Macbeth hardens, she is excluded from his plans — 'be innocent of the knowledge, dearest chuck' — and her suppressed guilt erupts in the sleepwalking scene: 'Out, damned spot!' Her implied suicide is a dark mirror of Macbeth's soldierly death.",
+      "In her first scene Lady Macbeth calls on 'spirits that tend on mortal thoughts' to 'unsex' her and fill her 'from the crown to the toe top-full of direst cruelty'. She is initially the stronger partner, shaming Macbeth into committing regicide by questioning his manhood. But the partnership reverses. As Macbeth hardens, she is excluded from his plans - 'be innocent of the knowledge, dearest chuck' - and her suppressed guilt erupts in the sleepwalking scene: 'Out, damned spot!' Her implied suicide is a dark mirror of Macbeth's soldierly death.",
     arc: 'Ruthless plotter \u2192 sidelined accomplice \u2192 sleepwalking ghost \u2192 suicide',
     key_quotes: [
       '"Come, you spirits that tend on mortal thoughts, unsex me here" (1.5)',
@@ -50,9 +50,9 @@ const CHARACTERS = [
   },
   {
     name: 'Banquo',
-    role: "Macbeth's fellow general — a moral foil",
+    role: "Macbeth's fellow general - a moral foil",
     description:
-      "Banquo hears the same prophecy as Macbeth — that his descendants will be kings — but resists temptation. He is cautious: he warns that 'instruments of darkness' can tell 'truths' only to betray us. After Duncan's murder he suspects Macbeth of foul play but does nothing. Macbeth has him murdered, but Banquo's ghost returns to haunt the banquet — a symbol of Macbeth's inescapable guilt. Banquo was also believed to be an ancestor of James I, which is why Shakespeare flatters him.",
+      "Banquo hears the same prophecy as Macbeth - that his descendants will be kings - but resists temptation. He is cautious: he warns that 'instruments of darkness' can tell 'truths' only to betray us. After Duncan's murder he suspects Macbeth of foul play but does nothing. Macbeth has him murdered, but Banquo's ghost returns to haunt the banquet - a symbol of Macbeth's inescapable guilt. Banquo was also believed to be an ancestor of James I, which is why Shakespeare flatters him.",
     arc: 'Loyal companion \u2192 silent suspicion \u2192 victim \u2192 ghost',
     key_quotes: [
       '"\u2019Tis strange; and oftentimes to win us to our harm, the instruments of darkness tell us truths" (1.3)',
@@ -62,21 +62,21 @@ const CHARACTERS = [
   },
   {
     name: 'Duncan',
-    role: 'King of Scotland — the victim',
+    role: 'King of Scotland - the victim',
     description:
-      "Duncan is the ideal Jacobean monarch: trusting, grateful, generous. He showers Macbeth with rewards and praises his wife's 'great love'. Shakespeare deliberately makes him gentle so that his murder feels monstrous. To a Jacobean audience, killing a king was not just a political crime but a sin against God — regicide disturbs the natural order, which is why the play is flooded with omens.",
+      "Duncan is the ideal Jacobean monarch: trusting, grateful, generous. He showers Macbeth with rewards and praises his wife's 'great love'. Shakespeare deliberately makes him gentle so that his murder feels monstrous. To a Jacobean audience, killing a king was not just a political crime but a sin against God - regicide disturbs the natural order, which is why the play is flooded with omens.",
     arc: 'Gracious king \u2192 trusting guest \u2192 murdered',
     key_quotes: [
       '"This castle hath a pleasant seat" (1.6)',
-      '"He was a gentleman on whom I built an absolute trust" (1.4, of the previous Thane of Cawdor — dramatic irony)',
+      '"He was a gentleman on whom I built an absolute trust" (1.4, of the previous Thane of Cawdor - dramatic irony)',
       '"More is thy due than more than all can pay" (1.4, to Macbeth)',
     ],
   },
   {
     name: 'Macduff',
-    role: "Thane of Fife — Macbeth's avenger",
+    role: "Thane of Fife - Macbeth's avenger",
     description:
-      "Macduff is the moral counterweight to Macbeth. He refuses to attend Macbeth's coronation at Scone, flees to England, and joins Malcolm. His grief at the slaughter of his wife and children — 'all my pretty chickens and their dam at one fell swoop' — is one of the play's rawest moments, and Shakespeare uses it to model healthy masculine grief against the toxic version Lady Macbeth demanded of her husband. Being 'from his mother's womb untimely ripped', he fulfils the prophecy and kills Macbeth.",
+      "Macduff is the moral counterweight to Macbeth. He refuses to attend Macbeth's coronation at Scone, flees to England, and joins Malcolm. His grief at the slaughter of his wife and children - 'all my pretty chickens and their dam at one fell swoop' - is one of the play's rawest moments, and Shakespeare uses it to model healthy masculine grief against the toxic version Lady Macbeth demanded of her husband. Being 'from his mother's womb untimely ripped', he fulfils the prophecy and kills Macbeth.",
     arc: 'Suspicious nobleman \u2192 exile \u2192 grieving father \u2192 avenger',
     key_quotes: [
       '"O horror, horror, horror!" (2.3)',
@@ -88,7 +88,7 @@ const CHARACTERS = [
   },
   {
     name: 'The Witches',
-    role: 'Supernatural agents — the catalysts',
+    role: 'Supernatural agents - the catalysts',
     description:
       "The three weird sisters open the play and set its tragedy in motion. They are ambiguous figures: do they <em>control</em> Macbeth, or merely see and name what he already desires? They speak in riddles and rhyming trochees, separating them linguistically from everyone else. For a Jacobean audience steeped in James I's <em>Daemonologie</em>, they would have been genuinely terrifying agents of the devil. Shakespeare uses them to probe the question of fate versus free will.",
     arc: 'Prophecy \u2192 temptation \u2192 equivocation \u2192 destruction',

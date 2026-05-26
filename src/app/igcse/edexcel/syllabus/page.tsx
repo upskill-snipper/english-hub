@@ -20,7 +20,7 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Edexcel IGCSE Literature Syllabus — The English Hub',
+    title: 'Edexcel IGCSE Literature Syllabus - The English Hub',
     description:
       'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
   },
@@ -64,21 +64,21 @@ const aos = [
 
 const paper1Questions = [
   {
-    section: 'Section A — Unseen Poetry',
+    section: 'Section A - Unseen Poetry',
     task: 'One question on a previously unseen poem',
     marks: 20,
     aos: ['Reading & Responding', 'Language & Structure'],
     guide: '35 mins',
   },
   {
-    section: 'Section B — Anthology Poetry',
+    section: 'Section B - Anthology Poetry',
     task: 'Comparison of two anthology poems',
     marks: 20,
     aos: ['Reading & Responding', 'Language & Structure', 'Comparison'],
     guide: '35 mins',
   },
   {
-    section: 'Section C — Modern Prose',
+    section: 'Section C - Modern Prose',
     task: 'One essay on a studied modern prose text (closed book)',
     marks: 20,
     aos: ['Reading & Responding', 'Language & Structure', 'Context'],
@@ -88,14 +88,14 @@ const paper1Questions = [
 
 const paper2Questions = [
   {
-    section: 'Section A — Modern Drama',
+    section: 'Section A - Modern Drama',
     task: 'Extract-based question on a studied modern drama text',
     marks: 20,
     aos: ['Reading & Responding', 'Language & Structure'],
     guide: '40 mins',
   },
   {
-    section: 'Section B — Literary Heritage',
+    section: 'Section B - Literary Heritage',
     task: 'One essay on a studied Shakespeare play (closed book)',
     marks: 20,
     aos: ['Reading & Responding', 'Language & Structure', 'Context'],
@@ -156,7 +156,7 @@ export default async function EdexcelSyllabusPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Everything you need to know about the Pearson Edexcel IGCSE English Literature
-            specification — assessment objectives, mark allocations, timings and the full structure
+            specification - assessment objectives, mark allocations, timings and the full structure
             of each paper.
           </p>
         </div>
@@ -255,7 +255,7 @@ export default async function EdexcelSyllabusPage() {
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Paper 1 — Poetry and Modern Prose
+            Paper 1 - Poetry and Modern Prose
           </h2>
         </div>
 
@@ -308,7 +308,7 @@ export default async function EdexcelSyllabusPage() {
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Paper 2 — Modern Drama and Literary Heritage
+            Paper 2 - Modern Drama and Literary Heritage
           </h2>
         </div>
 
@@ -367,7 +367,7 @@ export default async function EdexcelSyllabusPage() {
             <span>
               <strong className="text-foreground">Reading & Responding</strong> and{' '}
               <strong className="text-foreground">Language & Structure</strong> are tested in every
-              section. These are the backbone of every answer you write — show you understand the
+              section. These are the backbone of every answer you write - show you understand the
               text and can explain how the writer creates effects.
             </span>
           </li>
@@ -390,7 +390,7 @@ export default async function EdexcelSyllabusPage() {
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              Always check the mark scheme for the specific question you are answering — some tasks
+              Always check the mark scheme for the specific question you are answering - some tasks
               lean more on your personal response while others focus on close language analysis.
             </span>
           </li>

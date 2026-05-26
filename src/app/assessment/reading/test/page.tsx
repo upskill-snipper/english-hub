@@ -49,7 +49,7 @@ interface TestState {
   comprehensionAnswers: ComprehensionAnswer[]
   decodingAnswers: DecodingAnswer[]
   fluencyTimings: FluencyTiming[]
-  // Timing — cumulative to prevent gaming
+  // Timing - cumulative to prevent gaming
   passageStartTime: number | null
   passageElapsedBeforePause: number // accumulated seconds from previous reading periods
   // Decoding state
@@ -562,7 +562,7 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
 
 // ─── Main Test Component ─────────────────────────────────────────────────────
 
-// Fisher-Yates shuffle — returns a new array, does not mutate the input
+// Fisher-Yates shuffle - returns a new array, does not mutate the input
 function shuffle<T>(items: readonly T[]): T[] {
   const result = [...items]
   for (let i = result.length - 1; i > 0; i--) {
@@ -587,7 +587,7 @@ export default function ReadingTestPage() {
     })),
   ).current
 
-  // Randomize decoding words on each test start — pick 24 words across all levels
+  // Randomize decoding words on each test start - pick 24 words across all levels
   const decodingWordSet = useRef(shuffle(DECODING_WORDS).slice(0, 24)).current
 
   const [state, setState] = useState<TestState>({
@@ -651,7 +651,7 @@ export default function ReadingTestPage() {
       phase: 'questions',
       currentQuestionIndex: 0,
       currentAnswer: '',
-      // Keep passageStartTime null during questions — timer paused
+      // Keep passageStartTime null during questions - timer paused
       passageStartTime: null,
     }))
   }, [state.currentPassageIndex, state.passageStartTime, state.passageElapsedBeforePause, passages])
@@ -722,7 +722,7 @@ export default function ReadingTestPage() {
     }
 
     if (shouldTriggerCeiling) {
-      // End comprehension early — show ceiling message
+      // End comprehension early - show ceiling message
       setState((prev) => ({
         ...prev,
         comprehensionAnswers: newAnswers,
@@ -749,7 +749,7 @@ export default function ReadingTestPage() {
           currentAnswer: '',
         }))
       } else {
-        // Move to next passage — fresh timer for new passage
+        // Move to next passage - fresh timer for new passage
         setState((prev) => ({
           ...prev,
           comprehensionAnswers: newAnswers,
@@ -784,7 +784,7 @@ export default function ReadingTestPage() {
     passages,
   ])
 
-  // Back to passage removed — students must answer from memory for accurate assessment
+  // Back to passage removed - students must answer from memory for accurate assessment
 
   const handleCeilingContinue = useCallback(() => {
     setState((prev) => ({

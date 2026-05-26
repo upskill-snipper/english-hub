@@ -99,7 +99,7 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    // VERIFY: lines following 'who was born to whom,' previously read 'the marriage lines, / the prayers, the rules, / the proof, the perforations, / that might fly off any day.' — phrasing 'the prayers, the rules, the proof, the perforations' is NOT in any verified Dharker primary source and appears to be a fabrication. Conservatively removed pending verification against Dharker's The terrorist at my table (Bloodaxe, 2006) / AQA anthology. Do not restore without cross-check against primary source.
+    // VERIFY: lines following 'who was born to whom,' previously read 'the marriage lines, / the prayers, the rules, / the proof, the perforations, / that might fly off any day.' - phrasing 'the prayers, the rules, the proof, the perforations' is NOT in any verified Dharker primary source and appears to be a fabrication. Conservatively removed pending verification against Dharker's The terrorist at my table (Bloodaxe, 2006) / AQA anthology. Do not restore without cross-check against primary source.
     { text: '' },
     // Stanza 4
     { text: 'Paper smoothed and stroked and torn' },
@@ -218,8 +218,8 @@ const TISSUE: PoemData = {
 <p>Dharker was appointed <strong>Chancellor of Edinburgh University</strong> and has won the Queen's Gold Medal for Poetry (2014), reflecting her significance in contemporary British literature.</p>`,
 
   contextAr: `<p><strong>Imtiaz Dharker</strong> (مواليد 1954) شاعرة وفنّانة ومخرجة، باكستانية-اسكتلندية. ولدت في لاهور في باكستان، وكبرت في Glasgow في اسكتلندا، وعاشت كذلك في الهند. خلفيتها متعدّدة الثقافات تأثّر فيها شعرها بشكل عميق، وهي وايد تستكشف مواضيع <strong>الهوية والحدود والانتماء والحرية</strong>.</p>
-<p>قصيدة <em>Tissue</em> نُشرت في ديوان <strong><em>The terrorist at my table</em></strong> (2006). الديوان يدرس أفكار الخوف والسيطرة وكيف نصنع المعنى. وفي <em>Tissue</em>، Dharker تستخدم استعارة ممتدّة من <strong>الورق</strong> عشان تستكشف كيف إن البشر يبنون هياكل — نصوص دينية وخرائط ووثائق حدود وفواتير — هذي الهياكل تسجّل حياتنا وتسيطر عليها في نفس الوقت.</p>
-<p>Dharker مهتمّة بـ<strong>هشاشة هذي الهياكل</strong>. الورق رفيع وشفاف ويتمزّق بسهولة — بس المعلومات اللي تنكتب عليه (شهادات الميلاد، الجوازات، الفلوس) تحمل قوّة هائلة. القصيدة تسأل: ممكن نعيد تخيّل العالم لو اعترفنا إن كل ما يبنيه البشر هو هشّ مثل الـtissue؟</p>
+<p>قصيدة <em>Tissue</em> نُشرت في ديوان <strong><em>The terrorist at my table</em></strong> (2006). الديوان يدرس أفكار الخوف والسيطرة وكيف نصنع المعنى. وفي <em>Tissue</em>، Dharker تستخدم استعارة ممتدّة من <strong>الورق</strong> عشان تستكشف كيف إن البشر يبنون هياكل - نصوص دينية وخرائط ووثائق حدود وفواتير - هذي الهياكل تسجّل حياتنا وتسيطر عليها في نفس الوقت.</p>
+<p>Dharker مهتمّة بـ<strong>هشاشة هذي الهياكل</strong>. الورق رفيع وشفاف ويتمزّق بسهولة - بس المعلومات اللي تنكتب عليه (شهادات الميلاد، الجوازات، الفلوس) تحمل قوّة هائلة. القصيدة تسأل: ممكن نعيد تخيّل العالم لو اعترفنا إن كل ما يبنيه البشر هو هشّ مثل الـtissue؟</p>
 <p>Dharker تعيّنت <strong>Chancellor في Edinburgh University</strong>، ونالت Queen's Gold Medal for Poetry سنة 2014، وهذا يعكس مكانتها في الأدب البريطاني المعاصر.</p>`,
 
   summary: `Tissue explores the power and fragility of paper as an extended metaphor for the structures that control human life.
@@ -234,11 +234,11 @@ Throughout, Dharker questions human power and permanence, suggesting that acknow
 
   summaryAr: `قصيدة Tissue تستكشف قوة الورق وهشاشته كاستعارة ممتدّة عن الهياكل اللي تسيطر على حياة البشر.
 
-القصيدة تفتتح بوصف ورق رهف من كثر الاستخدام — صفحات قرآن مقروء وايد، فيه أسماء عائلات وتواريخهم. Dharker تعدّد الأشكال الكثيرة اللي ياخذها الورق: نصوص دينية، سجلات ميلاد، خرائط، فواتير، ومخطّطات معمارية.
+القصيدة تفتتح بوصف ورق رهف من كثر الاستخدام - صفحات قرآن مقروء وايد، فيه أسماء عائلات وتواريخهم. Dharker تعدّد الأشكال الكثيرة اللي ياخذها الورق: نصوص دينية، سجلات ميلاد، خرائط، فواتير، ومخطّطات معمارية.
 
 في المقاطع الوسطى، المتكلّم يتخيّل مباني مصنوعة من ورق، ويلمّح إن الهياكل الكبيرة للسلطة (العواصم، الـmonoliths، الحدود) ممكن يُعاد تخيّلها كأشياء شفافة وهشّة. القصيدة تتنقّل بين العادي (فواتير البقالة) والضخم (الحدود الوطنية)، وتبيّن كيف إن كل ما يبنيه البشر يعتمد على سجلات ورقية.
 
-القصيدة توصل ذروتها في فكرة إن الورق ممكن يصمّم كيف نعيش — والبيت الأخير المنعزل ("turned into your skin.") يساوي بين الورق وجسم الإنسان نفسه، ويلمّح إن هويّاتنا مبنيّة وهشّة مثل الوثائق اللي تعرّفنا.
+القصيدة توصل ذروتها في فكرة إن الورق ممكن يصمّم كيف نعيش - والبيت الأخير المنعزل ("turned into your skin.") يساوي بين الورق وجسم الإنسان نفسه، ويلمّح إن هويّاتنا مبنيّة وهشّة مثل الوثائق اللي تعرّفنا.
 
 في كل القصيدة، Dharker تشكّك في قوة البشر ودوامهم، وتلمّح إن الاعتراف بالهشاشة ممكن "alter things" للأحسن.`,
 
@@ -256,9 +256,9 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
 
   formAndStructureAr: `FORM: شعر حرّ (free verse) بدون نظام قافية ثابت. غياب النمط الثابت يعكس حجّة القصيدة إن الهياكل الصارمة لازم يتشكّك فيها.
 
-بنية المقاطع (STANZA STRUCTURE): عشر quatrains، يلحقها بيت واحد منعزل في مقطع مستقل ("turned into your skin."). ثبات الـquatrains يخلق توقّع، والبيت الأخير المعزول يكسر هذا التوقّع بقصد — يجسّد فكرة القصيدة إن الهياكل ممكن وينبغي إنها تنكسر. البيت الأخير المعزول مهم بنيوياً — Dharker تكسر انتظام الـquatrains عشان تأكّد على الـvolta من الورق للجسد.
+بنية المقاطع (STANZA STRUCTURE): عشر quatrains، يلحقها بيت واحد منعزل في مقطع مستقل ("turned into your skin."). ثبات الـquatrains يخلق توقّع، والبيت الأخير المعزول يكسر هذا التوقّع بقصد - يجسّد فكرة القصيدة إن الهياكل ممكن وينبغي إنها تنكسر. البيت الأخير المعزول مهم بنيوياً - Dharker تكسر انتظام الـquatrains عشان تأكّد على الـvolta من الورق للجسد.
 
-ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل تجري عبر فواصل الأبيات والمقاطع طول القصيدة. هذا يخلق إحساس بالتدفّق والاستمرارية، وكأن المعنى (مثل الورق) ما يقدر يُحتوى داخل حدود ضيّقة. وكذلك يعكس شفافية الـtissue — الأفكار تنفذ عبر الحدود.
+ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل تجري عبر فواصل الأبيات والمقاطع طول القصيدة. هذا يخلق إحساس بالتدفّق والاستمرارية، وكأن المعنى (مثل الورق) ما يقدر يُحتوى داخل حدود ضيّقة. وكذلك يعكس شفافية الـtissue - الأفكار تنفذ عبر الحدود.
 
 البيت الأخير المعزول: "turned into your skin." يقف لحاله كمقطع من بيت واحد، منفصل بنيوياً عن الـquatrains العشرة اللي قبله. هذا العزل يأكّد على التحوّل من الورق للجلد، ويجبر القارئ يتوقّف عند أهم فكرة في القصيدة: إن الهوية الإنسانية مبنيّة وهشّة.
 
@@ -273,7 +273,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'The opening image establishes paper as something transparent and illuminating. Light symbolises truth, understanding, and clarity. Dharker values what is translucent over what is opaque -- suggesting that openness and fragility are strengths, not weaknesses.',
       themes: ['Power of nature', 'Identity', 'Fragility'],
       analysisAr:
-        'الصورة الافتتاحية تثبّت الورق كشي شفّاف وينير. الضوء يرمز للحقيقة والفهم والوضوح. Dharker تقدّر الشي الشفاف على الشي المعتم — وتلمّح إن الانفتاح والهشاشة قوّة، مو ضعف.',
+        'الصورة الافتتاحية تثبّت الورق كشي شفّاف وينير. الضوء يرمز للحقيقة والفهم والوضوح. Dharker تقدّر الشي الشفاف على الشي المعتم - وتلمّح إن الانفتاح والهشاشة قوّة، مو ضعف.',
       themesAr: ['قوة الطبيعة', 'الهوية', 'الهشاشة'],
     },
     {
@@ -282,7 +282,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'A bold, quiet assertion of paper\'s transformative power. The modal verb "could" is deliberately tentative -- Dharker suggests possibility rather than certainty, reflecting her preference for openness over rigid authority.',
       themes: ['Power', 'Change', 'Human constructs'],
       analysisAr:
-        'تأكيد جريء وهادئ على قدرة الورق التحويلية. الـmodal verb "could" متردّد بقصد — Dharker تلمّح بالإمكانية مو باليقين، وهذا يعكس تفضيلها للانفتاح على السلطة الصارمة.',
+        'تأكيد جريء وهادئ على قدرة الورق التحويلية. الـmodal verb "could" متردّد بقصد - Dharker تلمّح بالإمكانية مو باليقين، وهذا يعكس تفضيلها للانفتاح على السلطة الصارمة.',
       themesAr: ['القوة', 'التغيير', 'هياكل البشر'],
     },
     {
@@ -291,7 +291,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         "Connects paper to religious and family records. The specificity of the Koran reflects Dharker's Pakistani-Muslim heritage. Family records inscribed in holy books show how paper documents identity -- birth, marriage, lineage -- binding personal history to sacred text.",
       themes: ['Identity', 'Religion', 'Heritage'],
       analysisAr:
-        'يربط الورق بالسجلات الدينية والعائلية. خصوصية ذكر القرآن تعكس خلفية Dharker الباكستانية-المسلمة. سجلات العائلة اللي تتنكتب في الكتب المقدّسة تبيّن كيف إن الورق يوثّق الهوية — الميلاد، الزواج، النسب — ويربط التاريخ الشخصي بالنصّ المقدّس.',
+        'يربط الورق بالسجلات الدينية والعائلية. خصوصية ذكر القرآن تعكس خلفية Dharker الباكستانية-المسلمة. سجلات العائلة اللي تتنكتب في الكتب المقدّسة تبيّن كيف إن الورق يوثّق الهوية - الميلاد، الزواج، النسب - ويربط التاريخ الشخصي بالنصّ المقدّس.',
       themesAr: ['الهوية', 'الدين', 'التراث'],
     },
     {
@@ -300,7 +300,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'The central metaphor of the poem. "Living tissue" conflates paper with human skin/flesh, suggesting our identities are as thin and fragile as the documents that define us. "Raise it to the light" echoes the opening and implies scrutiny -- if we examine our structures, we see through them.',
       themes: ['Identity', 'Fragility', 'Power of nature'],
       analysisAr:
-        'الاستعارة المحورية في القصيدة. "Living tissue" تخلط بين الورق وجلد الإنسان أو لحمه، وتلمّح إن هويّاتنا رفيعة وهشّة مثل الوثائق اللي تعرّفنا. وعبارة "raise it to the light" ترجع لصدى الافتتاحية، وتعني التدقيق — لو فحصنا هياكلنا، نشوف من خلالها.',
+        'الاستعارة المحورية في القصيدة. "Living tissue" تخلط بين الورق وجلد الإنسان أو لحمه، وتلمّح إن هويّاتنا رفيعة وهشّة مثل الوثائق اللي تعرّفنا. وعبارة "raise it to the light" ترجع لصدى الافتتاحية، وتعني التدقيق - لو فحصنا هياكلنا، نشوف من خلالها.',
       themesAr: ['الهوية', 'الهشاشة', 'قوة الطبيعة'],
     },
     {
@@ -336,7 +336,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'The final isolated single-line stanza completes the transformation from paper to body. "Your skin" uses direct address to make the theme personal: our identities are constructed, layered, and fragile -- as thin as tissue. The line\'s structural isolation (a deliberate break from the ten preceding quatrains) enacts the volta from paper to flesh that it describes.',
       themes: ['Identity', 'Fragility', 'Power of nature'],
       analysisAr:
-        'البيت الأخير المعزول يكمّل التحوّل من الورق للجسد. عبارة "your skin" تستخدم المخاطبة المباشرة عشان تخلّي الفكرة شخصية: هويّاتنا مبنيّة وطبقات وهشّة — رفيعة مثل الـtissue. العزل البنيوي للبيت (كسرة مقصودة من الـquatrains العشرة اللي قبله) يجسّد الـvolta من الورق للحم اللي يصفه.',
+        'البيت الأخير المعزول يكمّل التحوّل من الورق للجسد. عبارة "your skin" تستخدم المخاطبة المباشرة عشان تخلّي الفكرة شخصية: هويّاتنا مبنيّة وطبقات وهشّة - رفيعة مثل الـtissue. العزل البنيوي للبيت (كسرة مقصودة من الـquatrains العشرة اللي قبله) يجسّد الـvolta من الورق للحم اللي يصفه.',
       themesAr: ['الهوية', 'الهشاشة', 'قوة الطبيعة'],
     },
   ],
@@ -349,7 +349,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'Paper functions as a sustained metaphor throughout the entire poem, representing all human structures -- religious texts, borders, buildings, receipts, skin. By filtering everything through this single image, Dharker argues that all human constructs are fundamentally fragile and interconnected.',
       lineRef: 0,
       effectAr:
-        'الورق يشتغل كاستعارة ممتدّة عبر القصيدة كلها، ويمثّل كل هياكل البشر — النصوص الدينية، الحدود، المباني، الفواتير، الجلد. عبر تصفية كل شي من خلال هذي الصورة الواحدة، Dharker تجادل إن كل ما يبنيه البشر هو في الأساس هشّ ومترابط.',
+        'الورق يشتغل كاستعارة ممتدّة عبر القصيدة كلها، ويمثّل كل هياكل البشر - النصوص الدينية، الحدود، المباني، الفواتير، الجلد. عبر تصفية كل شي من خلال هذي الصورة الواحدة، Dharker تجادل إن كل ما يبنيه البشر هو في الأساس هشّ ومترابط.',
     },
     {
       device: 'Light imagery',
@@ -403,7 +403,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'Modal verbs ("could," "might") and conditional "if" create a tentative, speculative tone. Rather than demanding change, Dharker imagines alternatives -- reflecting a belief that questioning and possibility are more powerful than rigid certainty.',
       lineRef: 19,
       effectAr:
-        'الـmodal verbs ("could"، "might") والشرطية "if" تخلق نبرة مترّددة وتأمّلية. بدل ما تطالب بتغيير، Dharker تتخيّل بدائل — وهذا يعكس قناعتها إن التساؤل والإمكانية أقوى من اليقين الصارم.',
+        'الـmodal verbs ("could"، "might") والشرطية "if" تخلق نبرة مترّددة وتأمّلية. بدل ما تطالب بتغيير، Dharker تتخيّل بدائل - وهذا يعكس قناعتها إن التساؤل والإمكانية أقوى من اليقين الصارم.',
     },
     {
       device: 'Semantic field of fragility',
@@ -412,7 +412,7 @@ ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل 
         'Words associated with thinness and delicacy accumulate throughout, reinforcing the idea that all human structures -- from grand buildings to personal identity -- are fundamentally impermanent and vulnerable.',
       lineRef: 3,
       effectAr:
-        'الكلمات اللي ترتبط بالرفعة والحساسية تتكدّس عبر القصيدة كلها، وتقوّي فكرة إن كل هياكل البشر — من المباني الكبيرة لين الهوية الشخصية — هي في الأساس عابرة وهشّة.',
+        'الكلمات اللي ترتبط بالرفعة والحساسية تتكدّس عبر القصيدة كلها، وتقوّي فكرة إن كل هياكل البشر - من المباني الكبيرة لين الهوية الشخصية - هي في الأساس عابرة وهشّة.',
     },
   ],
 }
@@ -432,7 +432,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Paper runs through the entire poem as a metaphor for the fragile structures humans create — from birth certificates to maps to buildings. Dharker argues these are all as temporary and delicate as tissue paper.',
+      'Paper runs through the entire poem as a metaphor for the fragile structures humans create - from birth certificates to maps to buildings. Dharker argues these are all as temporary and delicate as tissue paper.',
     topic: 'Themes',
     difficulty: 'foundation',
   },
@@ -442,13 +442,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Paper is useful for windows',
-      'Transparency and truth are valued — light symbolises understanding and honesty',
+      'Transparency and truth are valued - light symbolises understanding and honesty',
       'The paper is damaged and torn',
       'It describes a lantern',
     ],
     correctIndex: 1,
     explanation:
-      'Light symbolises truth, clarity, and understanding throughout the poem. Paper that "lets the light shine through" represents openness and transparency — the opposite of rigid, opaque power structures.',
+      'Light symbolises truth, clarity, and understanding throughout the poem. Paper that "lets the light shine through" represents openness and transparency - the opposite of rigid, opaque power structures.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -458,13 +458,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Only religious books matter',
-      'Paper records and preserves human identity, culture, and belief — it controls who we are',
+      'Paper records and preserves human identity, culture, and belief - it controls who we are',
       'Dharker only writes about religion',
       'The Koran is made of special paper',
     ],
     correctIndex: 1,
     explanation:
-      "The Koran reference connects to Dharker's heritage and shows how paper records family histories, births, and identities. Paper documents define who we are — yet they are fragile and temporary.",
+      "The Koran reference connects to Dharker's heritage and shows how paper records family histories, births, and identities. Paper documents define who we are - yet they are fragile and temporary.",
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -474,7 +474,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It describes a medical procedure',
-      'It blurs the boundary between paper and human skin — paper becomes flesh and flesh becomes paper',
+      'It blurs the boundary between paper and human skin - paper becomes flesh and flesh becomes paper',
       'It describes reading in sunlight',
       'It is about recycling',
     ],
@@ -506,7 +506,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Garden fences',
-      'National borders, identity, and belonging — drawn on paper (maps) yet controlling real lives',
+      'National borders, identity, and belonging - drawn on paper (maps) yet controlling real lives',
       'Railway lines',
       'Lines in a poem',
     ],
@@ -522,7 +522,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is a question',
-      "It stands alone and shifts to the personal — connecting the poem's philosophical ideas to the human body",
+      "It stands alone and shifts to the personal - connecting the poem's philosophical ideas to the human body",
       'It is the longest line',
       'It has no particular significance',
     ],
@@ -538,7 +538,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A British war poet',
-      'A poet born in Pakistan, raised in Glasgow, living in India — she explores identity, borders, belonging, and the structures that control human life',
+      'A poet born in Pakistan, raised in Glasgow, living in India - she explores identity, borders, belonging, and the structures that control human life',
       'A Victorian novelist',
       'An American nature poet',
     ],
@@ -555,13 +555,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It makes the poem look neat',
-      "The shifting stanza lengths enact the poem's argument — structures appear solid but are ultimately fragile and breakable",
+      "The shifting stanza lengths enact the poem's argument - structures appear solid but are ultimately fragile and breakable",
       'It follows a traditional sonnet form',
       'It has no thematic connection',
     ],
     correctIndex: 1,
     explanation:
-      "The poem mostly uses quatrains but these break into shorter units, culminating in a single-line final stanza. This structural disintegration mirrors the poem's argument that all structures — even poetic ones — are ultimately fragile.",
+      "The poem mostly uses quatrains but these break into shorter units, culminating in a single-line final stanza. This structural disintegration mirrors the poem's argument that all structures - even poetic ones - are ultimately fragile.",
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -588,12 +588,12 @@ const REVISION_TOPICS = [
   {
     topic: 'Key Themes',
     summary:
-      'Tissue explores the fragility of human structures — identity, borders, buildings, power — using paper as a central metaphor for impermanence.',
+      'Tissue explores the fragility of human structures - identity, borders, buildings, power - using paper as a central metaphor for impermanence.',
     keyPoints: [
-      'Fragility of power — human structures (buildings, borders, identities) are as fragile as paper',
-      'Light and transparency — valued over opacity and rigidity',
-      'Identity — paper records (birth certificates, religious texts) define who we are',
-      'Nature vs human constructs — natural light outlasts all paper records',
+      'Fragility of power - human structures (buildings, borders, identities) are as fragile as paper',
+      'Light and transparency - valued over opacity and rigidity',
+      'Identity - paper records (birth certificates, religious texts) define who we are',
+      'Nature vs human constructs - natural light outlasts all paper records',
     ],
   },
   {
@@ -601,21 +601,21 @@ const REVISION_TOPICS = [
     summary:
       'Dharker uses an extended metaphor of paper, light imagery, conditional language, and listing to build a philosophical argument about impermanence.',
     keyPoints: [
-      '"Paper that lets the light shine through" — light as truth and understanding',
-      '"Living tissue" — blurs boundary between paper and human skin',
-      '"Borderlines" — paper maps controlling real human lives',
-      'Conditional language ("If buildings were paper") — imagining a fragile world',
+      '"Paper that lets the light shine through" - light as truth and understanding',
+      '"Living tissue" - blurs boundary between paper and human skin',
+      '"Borderlines" - paper maps controlling real human lives',
+      'Conditional language ("If buildings were paper") - imagining a fragile world',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      "Mostly quatrains that gradually fragment into shorter stanzas, culminating in a single-line final stanza — enacting the poem's theme of structural disintegration.",
+      "Mostly quatrains that gradually fragment into shorter stanzas, culminating in a single-line final stanza - enacting the poem's theme of structural disintegration.",
     keyPoints: [
-      'Quatrains that break apart — structure mirrors the fragility theme',
-      'Enjambment across stanza breaks — ideas flow across boundaries like paper',
-      'Single-line final stanza — isolation emphasises the personal, intimate conclusion',
-      "No regular rhyme scheme — reflects the poem's questioning of fixed structures",
+      'Quatrains that break apart - structure mirrors the fragility theme',
+      'Enjambment across stanza breaks - ideas flow across boundaries like paper',
+      'Single-line final stanza - isolation emphasises the personal, intimate conclusion',
+      "No regular rhyme scheme - reflects the poem's questioning of fixed structures",
     ],
   },
 ]
@@ -670,7 +670,7 @@ export default function TissuePage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Tissue by Imtiaz Dharker — Analysis & Annotations"
+        name="Tissue by Imtiaz Dharker - Analysis & Annotations"
         description="Line-by-line analysis of Tissue with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

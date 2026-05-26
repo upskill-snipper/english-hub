@@ -18,14 +18,14 @@ const WAO1 = ASSESSMENT_OBJECTIVES.WAO1
 const SECTION_B = SECTIONS.B
 
 export const metadata: Metadata = {
-  title: 'Letter & diary — KS3 iLowerSecondary English writing-form guide',
+  title: 'Letter & diary - KS3 iLowerSecondary English writing-form guide',
   description:
     'Master the letter and diary forms for Section B: formal vs informal letter openings and sign-offs, dated reflective diary entries, register, purposes and audiences, two original annotated models and a form-conventions checklist.',
   alternates: {
     canonical: 'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/letter-diary',
   },
   openGraph: {
-    title: 'Letter & diary — iLowerSecondary writing-form guide',
+    title: 'Letter & diary - iLowerSecondary writing-form guide',
     description:
       'Conventions, register, purposes and audiences for the letter and diary forms, with two original examiner-annotated models and a checklist.',
   },
@@ -45,7 +45,7 @@ type FormProfile = {
 const LETTER_PROFILE: FormProfile = {
   form: LETTER,
   summary:
-    'A written message addressed to a defined reader. The single biggest decision is whether the situation is formal or informal — everything else follows from that.',
+    'A written message addressed to a defined reader. The single biggest decision is whether the situation is formal or informal - everything else follows from that.',
   structure: [
     {
       label: 'Informal opening',
@@ -74,10 +74,10 @@ const LETTER_PROFILE: FormProfile = {
     },
   ],
   register:
-    'The register is chosen, not fixed. To a friend it is relaxed and may use contractions and direct address. To an adult in authority it is formal: standard English, full forms instead of contractions, precise vocabulary and a controlled, polite tone — even when the purpose is to complain.',
+    'The register is chosen, not fixed. To a friend it is relaxed and may use contractions and direct address. To an adult in authority it is formal: standard English, full forms instead of contractions, precise vocabulary and a controlled, polite tone - even when the purpose is to complain.',
   purposes: ['argue', 'persuade', 'inform', 'explain', 'express an opinion'],
   audiences: [
-    'Specific or generic adults — a head teacher, a manufacturer, an editor, a local council.',
+    'Specific or generic adults - a head teacher, a manufacturer, an editor, a local council.',
     'A friend or relative of the writer’s own age or older (an informal letter).',
   ],
 }
@@ -90,7 +90,7 @@ const DIARY_PROFILE: FormProfile = {
     {
       label: 'Date line',
       detail:
-        'Begin with a date (and sometimes a day or time): "Tuesday 14 March — late". This signals the diary form instantly and frames the entry as one moment in time.',
+        'Begin with a date (and sometimes a day or time): "Tuesday 14 March - late". This signals the diary form instantly and frames the entry as one moment in time.',
     },
     {
       label: 'Optional address',
@@ -105,7 +105,7 @@ const DIARY_PROFILE: FormProfile = {
     {
       label: 'Reflection',
       detail:
-        'A shift into present feeling and thought — the worries, hopes and second-guessing the writer would not say aloud. This is the heart of the form.',
+        'A shift into present feeling and thought - the worries, hopes and second-guessing the writer would not say aloud. This is the heart of the form.',
     },
     {
       label: 'Forward or backward look',
@@ -114,10 +114,10 @@ const DIARY_PROFILE: FormProfile = {
     },
   ],
   register:
-    'Informal and expressive but still controlled. The voice is intimate — fragments, dashes, rhetorical questions to the self and emotive vocabulary are all natural here — yet spelling and punctuation must stay accurate, because register is a deliberate choice rather than an excuse for carelessness.',
+    'Informal and expressive but still controlled. The voice is intimate - fragments, dashes, rhetorical questions to the self and emotive vocabulary are all natural here - yet spelling and punctuation must stay accurate, because register is a deliberate choice rather than an excuse for carelessness.',
   purposes: ['express an opinion', 'describe', 'entertain', 'explain'],
   audiences: [
-    'The writer themselves — there is no external reader, which licenses the confiding, unguarded tone.',
+    'The writer themselves - there is no external reader, which licenses the confiding, unguarded tone.',
     'In an exam, an examiner reading over the writer’s shoulder, so clarity must survive the informal voice.',
   ],
 }
@@ -134,7 +134,7 @@ const LETTER_MODEL = {
   greeting: 'Dear Mrs Hartley,',
   body: [
     'I am writing to share my concern about the proposal to close all after-school clubs at the end of this term. I understand that the school must manage its budget carefully, and I do not pretend that this is an easy decision; however, I believe the clubs give back far more than they cost.',
-    'For many students, the hour after the final bell is the most valuable of the day. The debating club taught me to plan an argument before I spoke, and the gardening club gave a quieter group of pupils a place where they clearly belonged. These are not luxuries — they are where confidence is built.',
+    'For many students, the hour after the final bell is the most valuable of the day. The debating club taught me to plan an argument before I spoke, and the gardening club gave a quieter group of pupils a place where they clearly belonged. These are not luxuries - they are where confidence is built.',
     'It could be argued that lessons alone should be enough. Yet a school is more than its timetable, and the skills clubs teach rarely fit inside one. If the cost is the obstacle, might a small voluntary contribution, or a parent-run rota, keep the most popular clubs open?',
     'I hope you will consider these points before a final decision is made. Thank you for taking the time to read my letter.',
   ],
@@ -143,7 +143,7 @@ const LETTER_MODEL = {
   annotations: [
     {
       point:
-        'The named greeting and "Yours sincerely" are correctly paired, and the reason for writing is stated in the first sentence — the form is established and maintained throughout.',
+        'The named greeting and "Yours sincerely" are correctly paired, and the reason for writing is stated in the first sentence - the form is established and maintained throughout.',
       band: 'WAO1 S3: "Form established and maintained throughout."',
     },
     {
@@ -158,7 +158,7 @@ const LETTER_MODEL = {
     },
     {
       point:
-        'The concession ("It could be argued that…") followed by a practical alternative adapts the letter for its persuasive purpose rather than just listing reasons — the move that reaches for the top band.',
+        'The concession ("It could be argued that…") followed by a practical alternative adapts the letter for its persuasive purpose rather than just listing reasons - the move that reaches for the top band.',
       band: 'WAO1 S4: "Form adapted and controlled for purpose."',
     },
   ] satisfies Annotation[],
@@ -167,9 +167,9 @@ const LETTER_MODEL = {
 const DIARY_MODEL = {
   scenario:
     'An invented, neutral task: "Write a diary entry about a day when something did not go as you had planned." Purpose: to express an opinion and entertain through an honest, reflective voice.',
-  dateLine: 'Thursday 9 October — almost midnight',
+  dateLine: 'Thursday 9 October - almost midnight',
   body: [
-    'Well, that is not how I imagined today would go. I had rehearsed my science presentation in front of the mirror for a week — every slide, every pause, even the joke I was sure would land.',
+    'Well, that is not how I imagined today would go. I had rehearsed my science presentation in front of the mirror for a week - every slide, every pause, even the joke I was sure would land.',
     'And then the projector died. Just like that, halfway through, the screen went black and forty faces turned to me instead of the diagram I was hiding behind. For about three seconds I genuinely considered pretending to faint.',
     'But I did not. I do not really know where it came from, but I closed the laptop, walked to the front, and just explained the experiment with my hands and a whiteboard pen. It was messier. It was also, I think, better. People actually asked questions afterwards, which never happens when I read from slides.',
     'So the thing I had planned for collapsed, and the thing I had not planned for is the part I am proud of. That is annoying and strangely comforting at the same time. Maybe tomorrow I will leave a slide out on purpose. Maybe not. Either way, I am going to sleep before I overthink this any further.',
@@ -192,7 +192,7 @@ const DIARY_MODEL = {
     },
     {
       point:
-        'The closing turn — "the thing I had not planned for is the part I am proud of" — uses the reflective convention of the form confidently to land the purpose, reaching for the top band.',
+        'The closing turn - "the thing I had not planned for is the part I am proud of" - uses the reflective convention of the form confidently to land the purpose, reaching for the top band.',
       band: 'WAO1 S4: "Stylistic features used confidently fully supporting purpose."',
     },
   ] satisfies Annotation[],
@@ -203,7 +203,7 @@ const DIARY_MODEL = {
 const CHECKLIST = [
   'Letter: my greeting and sign-off are paired correctly (Dear Sir or Madam → Yours faithfully; a name → Yours sincerely; a friend → first name only).',
   'Letter: my reason for writing is clear within the first two sentences.',
-  'Letter: my register matches the reader — formal and controlled for an adult in authority, relaxed for a friend — and stays consistent to the end.',
+  'Letter: my register matches the reader - formal and controlled for an adult in authority, relaxed for a friend - and stays consistent to the end.',
   'Diary: I have opened with a date (and the entry reads as one moment in time).',
   'Diary: I have written mostly in the first person and past tense, then shifted into present reflection.',
   'Diary: my voice is confiding and honest, but my spelling and punctuation are still accurate.',
@@ -407,7 +407,7 @@ export default function LetterDiaryPage() {
             id="model-letter"
             className="mb-2 font-heading text-2xl font-semibold text-foreground"
           >
-            Model — a formal letter
+            Model - a formal letter
           </h2>
           <p className="mb-6 text-sm text-muted-foreground">{LETTER_MODEL.scenario}</p>
 
@@ -426,7 +426,7 @@ export default function LetterDiaryPage() {
 
           <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-              Why this earns marks — examiner annotations
+              Why this earns marks - examiner annotations
             </p>
             <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
               {LETTER_MODEL.annotations.map((a) => (
@@ -444,7 +444,7 @@ export default function LetterDiaryPage() {
           className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
           <h2 id="model-diary" className="mb-2 font-heading text-2xl font-semibold text-foreground">
-            Model — a diary entry
+            Model - a diary entry
           </h2>
           <p className="mb-6 text-sm text-muted-foreground">{DIARY_MODEL.scenario}</p>
 
@@ -459,7 +459,7 @@ export default function LetterDiaryPage() {
 
           <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
             <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-              Why this earns marks — examiner annotations
+              Why this earns marks - examiner annotations
             </p>
             <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
               {DIARY_MODEL.annotations.map((a) => (
@@ -492,7 +492,7 @@ export default function LetterDiaryPage() {
             Practice prompts
           </h2>
           <p className="mb-6 text-base leading-relaxed text-muted-foreground">
-            Two original prompts — one for each form. Plan briefly, then write to time, applying the
+            Two original prompts - one for each form. Plan briefly, then write to time, applying the
             conventions and checklist above.
           </p>
           <div className="space-y-4">

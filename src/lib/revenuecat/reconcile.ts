@@ -8,7 +8,7 @@
  *
  * Schema contract (post `20260420_02_stripe_columns_nullable.sql`):
  *   1. `Subscription.stripeSubscriptionId` and `stripeCustomerId` are
- *      NULLABLE. Mobile rows write `null` for both — the earlier
+ *      NULLABLE. Mobile rows write `null` for both - the earlier
  *      sentinel workaround (`rc_<appUserId>_<productId>`) is retired.
  *   2. `SubscriptionStatus` includes `PAUSED`. Google Play's
  *      `SUBSCRIPTION_PAUSED` maps here directly rather than overloading
@@ -49,7 +49,7 @@ export interface ReconcileOutcome {
 
 // ─── Product ID → Plan / Teacher mapping ───────────────────────────────
 //
-// SUBSCRIPTION_AND_ENTITLEMENTS.md § Plans and SKUs — four iOS and four
+// SUBSCRIPTION_AND_ENTITLEMENTS.md § Plans and SKUs - four iOS and four
 // Play SKUs. Anything else falls back to MONTHLY, isTeacherPlan=false
 // and logs a warning.
 interface ProductMeta {
@@ -84,7 +84,7 @@ const PRODUCT_CATALOGUE: Record<string, ProductMeta> = {
 
 function resolveProductMeta(productId: string | undefined): ProductMeta {
   if (productId && PRODUCT_CATALOGUE[productId]) return PRODUCT_CATALOGUE[productId]
-  // Unknown SKU — default to a safe Student Monthly. Logged by caller.
+  // Unknown SKU - default to a safe Student Monthly. Logged by caller.
   return { plan: SubscriptionPlan.MONTHLY, isTeacherPlan: false }
 }
 
@@ -98,7 +98,7 @@ function msToDate(ms: number | undefined | null): Date | null {
 function storeToPlatform(store: string | undefined): SubscriptionPlatformValue {
   if (store === 'APP_STORE' || store === 'MAC_APP_STORE') return SubscriptionPlatform.IOS
   if (store === 'PLAY_STORE') return SubscriptionPlatform.ANDROID
-  // STRIPE / AMAZON / PROMOTIONAL / undefined — fall back to IOS as the
+  // STRIPE / AMAZON / PROMOTIONAL / undefined - fall back to IOS as the
   // most common mobile path. Callers receive this in logs.
   return SubscriptionPlatform.IOS
 }
@@ -110,10 +110,7 @@ function storeToPlatform(store: string | undefined): SubscriptionPlatformValue {
  * Prisma cuid `id` for any legacy client that set app_user_id to a
  * Prisma id.
  */
-async function resolveUserId(
-  prisma: PrismaClient,
-  appUserId: string,
-): Promise<string | null> {
+async function resolveUserId(prisma: PrismaClient, appUserId: string): Promise<string | null> {
   // Supabase user ids are RFC 4122 UUIDs. If this doesn't look like one
   // we skip the first lookup entirely to avoid a Postgres cast error.
   const looksLikeUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
@@ -128,7 +125,7 @@ async function resolveUserId(
     if (bySupabase) return bySupabase.id
   }
 
-  // Legacy fallback — the cuid path.
+  // Legacy fallback - the cuid path.
   const byId = await prisma.user.findUnique({
     where: { id: appUserId },
     select: { id: true },
@@ -143,7 +140,7 @@ export async function reconcileEvent(
   event: RevenueCatEvent,
 ): Promise<ReconcileOutcome> {
   // Bookkeeping-only event types short-circuit before we even touch the
-  // user lookup — they do not mutate `Subscription`.
+  // user lookup - they do not mutate `Subscription`.
   if (event.type === 'TEST') {
     return { skipped: true, reason: 'test_event' }
   }
@@ -155,7 +152,7 @@ export async function reconcileEvent(
     return { skipped: true, reason: 'non_renewing_not_supported' }
   }
   if (event.type === 'TRANSFER') {
-    // Manual review — the entitlement has moved to a different store
+    // Manual review - the entitlement has moved to a different store
     // account. We do not automate the remediation.
     return { skipped: true, reason: 'transfer_manual_review' }
   }
@@ -163,7 +160,7 @@ export async function reconcileEvent(
   const appUserId = event.app_user_id
   const userId = await resolveUserId(prisma, appUserId)
   if (!userId) {
-    // Per the spec we MUST NOT 4xx here — we 200 so RevenueCat stops
+    // Per the spec we MUST NOT 4xx here - we 200 so RevenueCat stops
     // retrying. Caller (route) decides the HTTP code.
     return { skipped: true, reason: 'user_not_found' }
   }
@@ -201,16 +198,18 @@ export async function reconcileEvent(
         role,
       )
       // On re-purchase after expiry we keep the ORIGINAL locked price
-      // where one already exists — the user earned that price by being
+      // where one already exists - the user earned that price by being
       // an Early Access subscriber before the rollover.
-      const preservedGrandfatherPrice = existing?.grandfatheredPriceMinor ?? grandfather.grandfatheredPriceMinor
-      const preservedGrandfatherCurrency = existing?.grandfatheredCurrency ?? grandfather.grandfatheredCurrency
+      const preservedGrandfatherPrice =
+        existing?.grandfatheredPriceMinor ?? grandfather.grandfatheredPriceMinor
+      const preservedGrandfatherCurrency =
+        existing?.grandfatheredCurrency ?? grandfather.grandfatheredCurrency
       const preservedPricingTier = existing?.pricingTier ?? grandfather.pricingTier
       const sub = await prisma.subscription.upsert({
         where: { userId },
         update: {
           // Preserve any pre-existing Stripe identity (cross-platform
-          // subscriber). Otherwise null — this row is RevenueCat-owned.
+          // subscriber). Otherwise null - this row is RevenueCat-owned.
           stripeCustomerId: existing?.stripeCustomerId ?? null,
           stripeSubscriptionId: existing?.stripeSubscriptionId ?? null,
           plan: meta.plan,
@@ -252,7 +251,7 @@ export async function reconcileEvent(
     case 'RENEWAL': {
       if (!existing) {
         // Defensive: RENEWAL before INITIAL_PURCHASE (out-of-order
-        // delivery). Treat as a late-arriving initial purchase — and
+        // delivery). Treat as a late-arriving initial purchase - and
         // capture grandfather fields at the original-purchase date if
         // known, else now.
         const role: 'student' | 'teacher' = meta.isTeacherPlan ? 'teacher' : 'student'
@@ -319,7 +318,7 @@ export async function reconcileEvent(
     }
 
     case 'CANCELLATION': {
-      // Auto-renew off but still in paid period — status stays ACTIVE,
+      // Auto-renew off but still in paid period - status stays ACTIVE,
       // we just stamp `cancelledAt`.
       if (!existing) return { skipped: true, reason: 'cancellation_without_existing' }
       const sub = await prisma.subscription.update({
@@ -387,7 +386,7 @@ export async function reconcileEvent(
     }
 
     case 'CHARGEBACK': {
-      // Treat identically to REFUND — a chargeback is a bank-initiated
+      // Treat identically to REFUND - a chargeback is a bank-initiated
       // refund and lands in the same terminal, revoked state.
       if (!existing) return { skipped: true, reason: 'chargeback_without_existing' }
       const sub = await prisma.subscription.update({
@@ -401,7 +400,7 @@ export async function reconcileEvent(
     }
 
     default: {
-      // Exhaustiveness guard — type-system tells us this branch is
+      // Exhaustiveness guard - type-system tells us this branch is
       // unreachable for a well-typed event. Runtime fallback stays safe.
       const _exhaustive: never = event
       void _exhaustive

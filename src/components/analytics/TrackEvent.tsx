@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * TrackEvent — fire-and-forget funnel event helper for the product
+ * TrackEvent - fire-and-forget funnel event helper for the product
  * analytics (PostHog EU) pipeline. Mount it somewhere inside a page to
  * record a single event on mount.
  *
@@ -16,16 +16,10 @@
 import { useEffect } from 'react'
 import { capture, type CaptureProps } from '@/lib/posthog'
 
-export function TrackEvent({
-  event,
-  props,
-}: {
-  event: string
-  props?: CaptureProps
-}) {
+export function TrackEvent({ event, props }: { event: string; props?: CaptureProps }) {
   useEffect(() => {
     capture(event, props)
-    // We intentionally fire once per mount — re-firing on prop changes would
+    // We intentionally fire once per mount - re-firing on prop changes would
     // distort funnel counts.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

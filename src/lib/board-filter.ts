@@ -42,7 +42,7 @@ function legacyDisplayNamesForBoard(board: ExamBoard): string[] {
 }
 
 /**
- * Generic board match — returns true when the user has not yet picked a
+ * Generic board match - returns true when the user has not yet picked a
  * board (server-render fallback) or when the content is untagged.
  *
  * NOTE: kept lenient by default so legacy callers that pass arbitrary
@@ -70,7 +70,7 @@ export function matchesDeckBoard(deckBoard: string, selectedBoard: ExamBoard | n
  * Strict practice-question filter. Practice questions are authored against
  * one board's spec (`'AQA'`, `'Edexcel'`, `'OCR'`, `'WJEC'`, `'CAIE'`) and
  * leaking another board's question into the user's pool is a syllabus
- * mismatch — e.g. an OCR Q3 structure question is meaningless on a
+ * mismatch - e.g. an OCR Q3 structure question is meaningless on a
  * Cambridge IGCSE paper. Untagged questions still pass.
  */
 export function matchesPracticeBoard(

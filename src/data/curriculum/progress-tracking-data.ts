@@ -1,36 +1,36 @@
 export interface SkillProgression {
-  skillId: string;
-  skillName: string;
-  strand: 'reading' | 'writing' | 'speaking-listening' | 'language' | 'literature';
-  yearGroup: string;
-  emerging: string;
-  developing: string;
-  secure: string;
-  mastery: string;
-  assessmentEvidence: string[];
+  skillId: string
+  skillName: string
+  strand: 'reading' | 'writing' | 'speaking-listening' | 'language' | 'literature'
+  yearGroup: string
+  emerging: string
+  developing: string
+  secure: string
+  mastery: string
+  assessmentEvidence: string[]
 }
 
 export interface CheckpointAssessment {
-  id: string;
-  title: string;
-  yearGroup: string;
-  term: number;
-  type: 'diagnostic' | 'formative' | 'summative';
-  skills: string[];
-  taskDescription: string;
-  markingCriteria: { criterion: string; weight: number; descriptors: string[] }[];
-  nextStepsGuidance: string[];
+  id: string
+  title: string
+  yearGroup: string
+  term: number
+  type: 'diagnostic' | 'formative' | 'summative'
+  skills: string[]
+  taskDescription: string
+  markingCriteria: { criterion: string; weight: number; descriptors: string[] }[]
+  nextStepsGuidance: string[]
 }
 
 export interface InterventionStrategy {
-  id: string;
-  targetSkill: string;
-  yearGroups: string[];
-  issue: string;
-  strategy: string;
-  resources: string[];
-  expectedImpact: string;
-  reviewPeriod: string;
+  id: string
+  targetSkill: string
+  yearGroups: string[]
+  issue: string
+  strategy: string
+  resources: string[]
+  expectedImpact: string
+  reviewPeriod: string
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -38,7 +38,6 @@ export interface InterventionStrategy {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const skillProgressions: SkillProgression[] = [
-
   // ── READING (6) ──────────────────────────────────────────────────────────
 
   {
@@ -49,7 +48,8 @@ export const skillProgressions: SkillProgression[] = [
     emerging: 'Locates single pieces of explicitly stated information with support.',
     developing: 'Retrieves multiple details and begins to group related points.',
     secure: 'Accurately summarises key information using own words and selects relevant evidence.',
-    mastery: 'Synthesises information across a text to produce a concise, precise summary that prioritises significance.',
+    mastery:
+      'Synthesises information across a text to produce a concise, precise summary that prioritises significance.',
     assessmentEvidence: [
       'Short-answer retrieval task on an unseen non-fiction passage',
       'Annotated summary paragraph with teacher feedback',
@@ -61,9 +61,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'reading',
     yearGroup: 'Y8',
     emerging: 'Makes simple, text-supported inferences with prompting.',
-    developing: 'Draws inferences independently and begins to explain reasoning using textual evidence.',
-    secure: 'Consistently supports inferences with well-chosen evidence and explains the connection clearly.',
-    mastery: 'Develops layered inferences, considering alternative interpretations and the limits of evidence.',
+    developing:
+      'Draws inferences independently and begins to explain reasoning using textual evidence.',
+    secure:
+      'Consistently supports inferences with well-chosen evidence and explains the connection clearly.',
+    mastery:
+      'Develops layered inferences, considering alternative interpretations and the limits of evidence.',
     assessmentEvidence: [
       'Inference question responses in a timed reading task',
       'Annotated extract showing inference chains',
@@ -71,13 +74,15 @@ export const skillProgressions: SkillProgression[] = [
   },
   {
     skillId: 'read-03',
-    skillName: 'Analysing writers\' language choices',
+    skillName: "Analysing writers' language choices",
     strand: 'reading',
     yearGroup: 'Y9',
     emerging: 'Identifies language features by name with limited comment on effect.',
     developing: 'Comments on effect of language choices using some subject terminology accurately.',
-    secure: 'Analyses specific language choices with detailed explanation of intended effect on the reader.',
-    mastery: 'Explores nuanced effects of language, considering connotation, context and authorial intention with sophistication.',
+    secure:
+      'Analyses specific language choices with detailed explanation of intended effect on the reader.',
+    mastery:
+      'Explores nuanced effects of language, considering connotation, context and authorial intention with sophistication.',
     assessmentEvidence: [
       'Language analysis paragraph on a stimulus extract',
       'Peer-assessed annotation task',
@@ -85,13 +90,15 @@ export const skillProgressions: SkillProgression[] = [
   },
   {
     skillId: 'read-04',
-    skillName: 'Evaluating writers\' methods and intentions',
+    skillName: "Evaluating writers' methods and intentions",
     strand: 'reading',
     yearGroup: 'Y10',
     emerging: 'Identifies some methods and offers a basic reason for their use.',
     developing: 'Explains how methods create effects, with some critical vocabulary.',
-    secure: 'Evaluates how writers use methods to achieve purposes, sustaining a critical stance across a response.',
-    mastery: 'Constructs a convincing critical argument about authorial craft, integrating close reading with wider context.',
+    secure:
+      'Evaluates how writers use methods to achieve purposes, sustaining a critical stance across a response.',
+    mastery:
+      'Constructs a convincing critical argument about authorial craft, integrating close reading with wider context.',
     assessmentEvidence: [
       'IGCSE-style evaluation question (Q4 format)',
       'Essay plan and drafted response with annotations',
@@ -103,9 +110,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'reading',
     yearGroup: 'Y12',
     emerging: 'Identifies surface similarities and differences between texts.',
-    developing: 'Begins to explore how context shapes meaning; comparisons are juxtaposed rather than integrated.',
-    secure: 'Integrates comparison throughout, analysing how context, form and language interact across texts.',
-    mastery: 'Constructs a sophisticated, thesis-driven comparative argument that weighs the significance of contextual factors.',
+    developing:
+      'Begins to explore how context shapes meaning; comparisons are juxtaposed rather than integrated.',
+    secure:
+      'Integrates comparison throughout, analysing how context, form and language interact across texts.',
+    mastery:
+      'Constructs a sophisticated, thesis-driven comparative argument that weighs the significance of contextual factors.',
     assessmentEvidence: [
       'A Level comparative essay on two unseen or set texts',
       'Seminar contribution log',
@@ -117,9 +127,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'reading',
     yearGroup: 'Y13',
     emerging: 'Engages with critical sources but struggles to evaluate their relevance.',
-    developing: 'Selects relevant critical viewpoints and begins to position own argument in relation to them.',
-    secure: 'Integrates critical perspectives purposefully, challenging or supporting them with textual evidence.',
-    mastery: 'Demonstrates scholarly independence, synthesising a range of critical viewpoints to build an original argument.',
+    developing:
+      'Selects relevant critical viewpoints and begins to position own argument in relation to them.',
+    secure:
+      'Integrates critical perspectives purposefully, challenging or supporting them with textual evidence.',
+    mastery:
+      'Demonstrates scholarly independence, synthesising a range of critical viewpoints to build an original argument.',
     assessmentEvidence: [
       'Annotated bibliography with evaluative commentary',
       'Extended essay or coursework draft incorporating secondary reading',
@@ -134,9 +147,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'writing',
     yearGroup: 'Y7',
     emerging: 'Attempts to sequence ideas but paragraphing is inconsistent.',
-    developing: 'Uses paragraphs to organise ideas; topic sentences are present but underdeveloped.',
-    secure: 'Structures writing logically with effective paragraphing, topic sentences and signposting.',
-    mastery: 'Manipulates structure for effect, varying pace, emphasis and order to serve purpose and engage the reader.',
+    developing:
+      'Uses paragraphs to organise ideas; topic sentences are present but underdeveloped.',
+    secure:
+      'Structures writing logically with effective paragraphing, topic sentences and signposting.',
+    mastery:
+      'Manipulates structure for effect, varying pace, emphasis and order to serve purpose and engage the reader.',
     assessmentEvidence: [
       'Extended writing piece with structural annotations',
       'Redraft showing improvement to organisation',
@@ -148,9 +164,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'writing',
     yearGroup: 'Y8',
     emerging: 'Shows awareness of audience and purpose but tone is inconsistent.',
-    developing: 'Adapts register and content to purpose; audience awareness evident in most of the response.',
-    secure: 'Sustains appropriate register throughout; form features are used purposefully to engage target audience.',
-    mastery: 'Crafts writing that is precisely calibrated to audience and purpose, using form, tone and content with flair.',
+    developing:
+      'Adapts register and content to purpose; audience awareness evident in most of the response.',
+    secure:
+      'Sustains appropriate register throughout; form features are used purposefully to engage target audience.',
+    mastery:
+      'Crafts writing that is precisely calibrated to audience and purpose, using form, tone and content with flair.',
     assessmentEvidence: [
       'Two contrasting writing tasks (e.g. formal letter vs. personal narrative)',
       'Self-evaluation checklist against success criteria',
@@ -161,10 +180,13 @@ export const skillProgressions: SkillProgression[] = [
     skillName: 'Using descriptive and figurative language',
     strand: 'writing',
     yearGroup: 'Y9',
-    emerging: 'Uses some descriptive language; figurative devices are attempted but may be clichéd.',
-    developing: 'Employs a range of figurative devices with growing originality; description creates some atmosphere.',
+    emerging:
+      'Uses some descriptive language; figurative devices are attempted but may be clichéd.',
+    developing:
+      'Employs a range of figurative devices with growing originality; description creates some atmosphere.',
     secure: 'Selects precise vocabulary and original imagery to create vivid, controlled effects.',
-    mastery: 'Writing demonstrates a distinctive voice; linguistic choices are consistently purposeful and create layered meaning.',
+    mastery:
+      'Writing demonstrates a distinctive voice; linguistic choices are consistently purposeful and create layered meaning.',
     assessmentEvidence: [
       'Descriptive or narrative writing task',
       'Vocabulary enrichment log reviewed by teacher',
@@ -175,10 +197,14 @@ export const skillProgressions: SkillProgression[] = [
     skillName: 'Constructing and sustaining an argument',
     strand: 'writing',
     yearGroup: 'Y10',
-    emerging: 'Presents a viewpoint with some supporting points; counter-argument is absent or undeveloped.',
-    developing: 'Develops points with evidence; some counter-argument present but not fully addressed.',
-    secure: 'Constructs a coherent argument with well-supported points and effective handling of counter-argument.',
-    mastery: 'Produces a persuasive, logically rigorous argument that anticipates objections and uses rhetoric with precision.',
+    emerging:
+      'Presents a viewpoint with some supporting points; counter-argument is absent or undeveloped.',
+    developing:
+      'Develops points with evidence; some counter-argument present but not fully addressed.',
+    secure:
+      'Constructs a coherent argument with well-supported points and effective handling of counter-argument.',
+    mastery:
+      'Produces a persuasive, logically rigorous argument that anticipates objections and uses rhetoric with precision.',
     assessmentEvidence: [
       'IGCSE-style persuasive or argumentative writing task',
       'Peer-debate feedback form',
@@ -190,9 +216,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'writing',
     yearGroup: 'Y12',
     emerging: 'Attempts analytical register but reverts to descriptive or narrative approaches.',
-    developing: 'Sustains analytical writing in most of the response; vocabulary is developing but not always precise.',
-    secure: 'Writes with a clear critical voice, using disciplinary vocabulary accurately and developing a line of argument.',
-    mastery: 'Produces sophisticated analytical prose that advances an original thesis with intellectual confidence.',
+    developing:
+      'Sustains analytical writing in most of the response; vocabulary is developing but not always precise.',
+    secure:
+      'Writes with a clear critical voice, using disciplinary vocabulary accurately and developing a line of argument.',
+    mastery:
+      'Produces sophisticated analytical prose that advances an original thesis with intellectual confidence.',
     assessmentEvidence: [
       'Timed essay with examiner-style marking',
       'Personal statement or extended writing sample',
@@ -203,10 +232,14 @@ export const skillProgressions: SkillProgression[] = [
     skillName: 'Editing, proofreading and redrafting',
     strand: 'writing',
     yearGroup: 'Y13',
-    emerging: 'Makes surface corrections when prompted; deeper structural issues remain unaddressed.',
-    developing: 'Identifies and corrects most SPaG errors; makes some purposeful revisions to improve clarity.',
-    secure: 'Proofreads systematically; revisions address both surface accuracy and the quality of argument or expression.',
-    mastery: 'Demonstrates mature editorial judgement, transforming drafts through purposeful revision of content, structure and style.',
+    emerging:
+      'Makes surface corrections when prompted; deeper structural issues remain unaddressed.',
+    developing:
+      'Identifies and corrects most SPaG errors; makes some purposeful revisions to improve clarity.',
+    secure:
+      'Proofreads systematically; revisions address both surface accuracy and the quality of argument or expression.',
+    mastery:
+      'Demonstrates mature editorial judgement, transforming drafts through purposeful revision of content, structure and style.',
     assessmentEvidence: [
       'Annotated first and final draft showing revision decisions',
       'Coursework portfolio with process documentation',
@@ -221,13 +254,13 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'speaking-listening',
     yearGroup: 'Y7',
     emerging: 'Speaks audibly in small groups; lacks confidence in whole-class contexts.',
-    developing: 'Contributes to class discussions with growing confidence; pace and clarity are developing.',
-    secure: 'Speaks clearly and confidently in a range of contexts, modulating pace and volume effectively.',
-    mastery: 'Commands the attention of an audience through deliberate use of pace, pause, tone and non-verbal communication.',
-    assessmentEvidence: [
-      'Short prepared talk or show-and-tell',
-      'Teacher observation checklist',
-    ],
+    developing:
+      'Contributes to class discussions with growing confidence; pace and clarity are developing.',
+    secure:
+      'Speaks clearly and confidently in a range of contexts, modulating pace and volume effectively.',
+    mastery:
+      'Commands the attention of an audience through deliberate use of pace, pause, tone and non-verbal communication.',
+    assessmentEvidence: ['Short prepared talk or show-and-tell', 'Teacher observation checklist'],
   },
   {
     skillId: 'sl-02',
@@ -236,8 +269,10 @@ export const skillProgressions: SkillProgression[] = [
     yearGroup: 'Y8',
     emerging: 'Listens but responses do not consistently build on what has been said.',
     developing: 'Responds to the contributions of others, beginning to develop or challenge ideas.',
-    secure: 'Actively listens and builds constructively on others\' points, using reference-back and extension strategies.',
-    mastery: 'Synthesises contributions from others and steers discussion towards greater clarity or depth.',
+    secure:
+      "Actively listens and builds constructively on others' points, using reference-back and extension strategies.",
+    mastery:
+      'Synthesises contributions from others and steers discussion towards greater clarity or depth.',
     assessmentEvidence: [
       'Group discussion observation with self-assessment',
       'Video-recorded discussion with reflection task',
@@ -249,9 +284,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'speaking-listening',
     yearGroup: 'Y9',
     emerging: 'Presents rehearsed information but relies heavily on notes.',
-    developing: 'Structures a presentation clearly; eye contact and engagement with the audience are developing.',
-    secure: 'Delivers a well-structured, engaging presentation that uses spoken language purposefully.',
-    mastery: 'Adapts delivery in response to audience; uses rhetorical and presentational techniques with sophistication.',
+    developing:
+      'Structures a presentation clearly; eye contact and engagement with the audience are developing.',
+    secure:
+      'Delivers a well-structured, engaging presentation that uses spoken language purposefully.',
+    mastery:
+      'Adapts delivery in response to audience; uses rhetorical and presentational techniques with sophistication.',
     assessmentEvidence: [
       'Formal individual presentation with Q&A',
       'Peer feedback form using agreed criteria',
@@ -264,8 +302,10 @@ export const skillProgressions: SkillProgression[] = [
     yearGroup: 'Y10',
     emerging: 'States a position and offers some reasons; lacks counter-argument.',
     developing: 'Presents an argument with evidence and begins to rebut opposing views.',
-    secure: 'Constructs and defends a well-reasoned argument, rebutting opposition points with precision.',
-    mastery: 'Leads debate with authority, using rhetoric strategically and handling challenges with confidence.',
+    secure:
+      'Constructs and defends a well-reasoned argument, rebutting opposition points with precision.',
+    mastery:
+      'Leads debate with authority, using rhetoric strategically and handling challenges with confidence.',
     assessmentEvidence: [
       'Formal class or inter-group debate',
       'Examiner-style mark sheet for spoken language',
@@ -277,9 +317,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'speaking-listening',
     yearGroup: 'Y11',
     emerging: 'Communicates a clear viewpoint with some development; delivery is uneven.',
-    developing: 'Sustains a viewpoint with evidence and some rhetorical awareness; delivery is generally controlled.',
-    secure: 'Delivers a polished individual talk that demonstrates linguistic control and audience awareness.',
-    mastery: 'Gives an authoritative performance that integrates content and delivery seamlessly, meriting distinction-level marks.',
+    developing:
+      'Sustains a viewpoint with evidence and some rhetorical awareness; delivery is generally controlled.',
+    secure:
+      'Delivers a polished individual talk that demonstrates linguistic control and audience awareness.',
+    mastery:
+      'Gives an authoritative performance that integrates content and delivery seamlessly, meriting distinction-level marks.',
     assessmentEvidence: [
       'IGCSE-style individual spoken language assessment',
       'Video recording with teacher commentary',
@@ -291,9 +334,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'speaking-listening',
     yearGroup: 'Y12',
     emerging: 'Contributes to seminars when invited; responses are relevant but undeveloped.',
-    developing: 'Offers extended contributions; begins to use academic register and cite textual support.',
-    secure: 'Participates proactively, developing arguments with textual evidence and engaging critically with peers.',
-    mastery: 'Drives seminar discussion, synthesising diverse viewpoints and advancing scholarly debate.',
+    developing:
+      'Offers extended contributions; begins to use academic register and cite textual support.',
+    secure:
+      'Participates proactively, developing arguments with textual evidence and engaging critically with peers.',
+    mastery:
+      'Drives seminar discussion, synthesising diverse viewpoints and advancing scholarly debate.',
     assessmentEvidence: [
       'Tutor-assessed seminar participation log',
       'Reflective seminar journal entry',
@@ -307,10 +353,14 @@ export const skillProgressions: SkillProgression[] = [
     skillName: 'Sentence-level accuracy: punctuation',
     strand: 'language',
     yearGroup: 'Y7',
-    emerging: 'Uses full stops and capital letters mostly correctly; other punctuation is inconsistent.',
-    developing: 'Uses commas, question marks and exclamation marks; beginning to attempt more complex punctuation.',
-    secure: 'Uses a range of punctuation accurately, including colons, semi-colons and dashes for effect.',
-    mastery: 'Deploys the full range of punctuation with confidence, using it as a deliberate stylistic tool.',
+    emerging:
+      'Uses full stops and capital letters mostly correctly; other punctuation is inconsistent.',
+    developing:
+      'Uses commas, question marks and exclamation marks; beginning to attempt more complex punctuation.',
+    secure:
+      'Uses a range of punctuation accurately, including colons, semi-colons and dashes for effect.',
+    mastery:
+      'Deploys the full range of punctuation with confidence, using it as a deliberate stylistic tool.',
     assessmentEvidence: [
       'Punctuation audit exercise on own writing',
       'Corrected redraft with annotated improvements',
@@ -322,9 +372,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'language',
     yearGroup: 'Y8',
     emerging: 'Constructs simple and some compound sentences; tense errors are frequent.',
-    developing: 'Attempts complex sentences; grammatical errors are reducing but agreement errors persist.',
-    secure: 'Writes with grammatical accuracy across a range of sentence structures; errors are rare.',
-    mastery: 'Varies syntax with deliberate effect; grammatical control enhances rather than merely supports meaning.',
+    developing:
+      'Attempts complex sentences; grammatical errors are reducing but agreement errors persist.',
+    secure:
+      'Writes with grammatical accuracy across a range of sentence structures; errors are rare.',
+    mastery:
+      'Varies syntax with deliberate effect; grammatical control enhances rather than merely supports meaning.',
     assessmentEvidence: [
       'Grammar diagnostic test',
       'Writing portfolio with tracked grammatical progress',
@@ -335,10 +388,14 @@ export const skillProgressions: SkillProgression[] = [
     skillName: 'Vocabulary range and precision',
     strand: 'language',
     yearGroup: 'Y9',
-    emerging: 'Uses familiar, high-frequency vocabulary; attempts more ambitious words with some inaccuracy.',
-    developing: 'Employs Tier 2 vocabulary with growing confidence; word choices are mostly appropriate.',
-    secure: 'Selects precise and varied vocabulary, including subject-specific Tier 3 terms where appropriate.',
-    mastery: 'Demonstrates a rich, wide-ranging vocabulary deployed with nuance; word choice is always purposeful.',
+    emerging:
+      'Uses familiar, high-frequency vocabulary; attempts more ambitious words with some inaccuracy.',
+    developing:
+      'Employs Tier 2 vocabulary with growing confidence; word choices are mostly appropriate.',
+    secure:
+      'Selects precise and varied vocabulary, including subject-specific Tier 3 terms where appropriate.',
+    mastery:
+      'Demonstrates a rich, wide-ranging vocabulary deployed with nuance; word choice is always purposeful.',
     assessmentEvidence: [
       'Vocabulary in context exercise (replace simple word with precise alternative)',
       'Reading journal word-collection entries',
@@ -349,10 +406,13 @@ export const skillProgressions: SkillProgression[] = [
     skillName: 'Spelling accuracy (including morphology)',
     strand: 'language',
     yearGroup: 'Y10',
-    emerging: 'Spells high-frequency words correctly; errors on polysyllabic or subject-specific words.',
+    emerging:
+      'Spells high-frequency words correctly; errors on polysyllabic or subject-specific words.',
     developing: 'Applies common spelling rules; morphological patterns are developing.',
-    secure: 'Spells accurately across a wide vocabulary, including subject-specific terms; errors are rare and minor.',
-    mastery: 'Demonstrates secure spelling across all registers; applies morphological knowledge to new words with confidence.',
+    secure:
+      'Spells accurately across a wide vocabulary, including subject-specific terms; errors are rare and minor.',
+    mastery:
+      'Demonstrates secure spelling across all registers; applies morphological knowledge to new words with confidence.',
     assessmentEvidence: [
       'Personalised spelling list mastery check',
       'Blind-marked written response for spelling accuracy',
@@ -364,9 +424,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'language',
     yearGroup: 'Y12',
     emerging: 'Identifies basic grammatical categories; explanations of function are limited.',
-    developing: 'Explains how grammatical choices create effects; metalinguistic vocabulary is developing.',
-    secure: 'Analyses grammatical structures with accuracy, linking form to meaning and effect in extended discussion.',
-    mastery: 'Applies advanced grammatical knowledge (e.g. deixis, modality, nominalisation) to illuminate literary and non-literary texts.',
+    developing:
+      'Explains how grammatical choices create effects; metalinguistic vocabulary is developing.',
+    secure:
+      'Analyses grammatical structures with accuracy, linking form to meaning and effect in extended discussion.',
+    mastery:
+      'Applies advanced grammatical knowledge (e.g. deixis, modality, nominalisation) to illuminate literary and non-literary texts.',
     assessmentEvidence: [
       'Language analysis task applying grammatical frameworks',
       'Annotated passage with metalinguistic commentary',
@@ -378,9 +441,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'language',
     yearGroup: 'Y13',
     emerging: 'Identifies some examples of language change or regional/social variation.',
-    developing: 'Explains causes and effects of language change or variation with some use of linguistic theory.',
-    secure: 'Analyses language change and variation using appropriate theoretical frameworks and supporting examples.',
-    mastery: 'Constructs a nuanced academic argument about language in society, engaging critically with linguistic theory.',
+    developing:
+      'Explains causes and effects of language change or variation with some use of linguistic theory.',
+    secure:
+      'Analyses language change and variation using appropriate theoretical frameworks and supporting examples.',
+    mastery:
+      'Constructs a nuanced academic argument about language in society, engaging critically with linguistic theory.',
     assessmentEvidence: [
       'A Level language investigation data analysis',
       'Essay on a language change or variation topic',
@@ -395,9 +461,12 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'literature',
     yearGroup: 'Y7',
     emerging: 'Identifies basic story elements (plot, character, setting) with support.',
-    developing: 'Describes how narrative elements work together; begins to comment on their effect.',
-    secure: 'Analyses how narrative choices (e.g. narrative voice, structure, setting) shape meaning and reader response.',
-    mastery: 'Evaluates the craft of narrative with insight, exploring how structural and stylistic choices serve thematic purposes.',
+    developing:
+      'Describes how narrative elements work together; begins to comment on their effect.',
+    secure:
+      'Analyses how narrative choices (e.g. narrative voice, structure, setting) shape meaning and reader response.',
+    mastery:
+      'Evaluates the craft of narrative with insight, exploring how structural and stylistic choices serve thematic purposes.',
     assessmentEvidence: [
       'Character or setting analysis paragraph',
       'Narrative choices comparison task',
@@ -410,22 +479,25 @@ export const skillProgressions: SkillProgression[] = [
     yearGroup: 'Y8',
     emerging: 'Responds personally to poems; comments on obvious features such as rhyme.',
     developing: 'Identifies poetic techniques and explains their effect with growing confidence.',
-    secure: 'Analyses how form, structure and language create meaning; responses are well-evidenced and sustained.',
-    mastery: 'Explores the relationship between form and meaning with sophistication, considering multiple interpretive possibilities.',
-    assessmentEvidence: [
-      'Single poem analysis essay',
-      'Comparative poem response',
-    ],
+    secure:
+      'Analyses how form, structure and language create meaning; responses are well-evidenced and sustained.',
+    mastery:
+      'Explores the relationship between form and meaning with sophistication, considering multiple interpretive possibilities.',
+    assessmentEvidence: ['Single poem analysis essay', 'Comparative poem response'],
   },
   {
     skillId: 'lit-03',
     skillName: 'Understanding dramatic texts: stagecraft and performance',
     strand: 'literature',
     yearGroup: 'Y9',
-    emerging: 'Reads dialogue and stage directions; comments on character with basic support from text.',
-    developing: 'Explores how dramatic techniques (tension, dramatic irony, aside) create effects for an audience.',
-    secure: 'Analyses how playwrights use stagecraft and language to convey theme and character; considers audience impact.',
-    mastery: 'Interprets the play as both text and performance, exploring how staging choices enrich or complicate meaning.',
+    emerging:
+      'Reads dialogue and stage directions; comments on character with basic support from text.',
+    developing:
+      'Explores how dramatic techniques (tension, dramatic irony, aside) create effects for an audience.',
+    secure:
+      'Analyses how playwrights use stagecraft and language to convey theme and character; considers audience impact.',
+    mastery:
+      'Interprets the play as both text and performance, exploring how staging choices enrich or complicate meaning.',
     assessmentEvidence: [
       'Extract-based drama analysis essay',
       'Directorial notes creative task with analytical commentary',
@@ -437,12 +509,15 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'literature',
     yearGroup: 'Y10',
     emerging: 'Identifies the period or context of a text but struggles to link it to meaning.',
-    developing: 'Explains how context influences meaning; context is used to support rather than replace textual analysis.',
-    secure: 'Integrates contextual knowledge purposefully, showing how it illuminates authorial choices and reader interpretation.',
-    mastery: 'Explores the complex interplay between text and context, considering how readers in different times have interpreted the same work.',
+    developing:
+      'Explains how context influences meaning; context is used to support rather than replace textual analysis.',
+    secure:
+      'Integrates contextual knowledge purposefully, showing how it illuminates authorial choices and reader interpretation.',
+    mastery:
+      'Explores the complex interplay between text and context, considering how readers in different times have interpreted the same work.',
     assessmentEvidence: [
       'IGCSE literature context question or extended essay',
-      'Research task on an author\'s biography and historical moment',
+      "Research task on an author's biography and historical moment",
     ],
   },
   {
@@ -451,9 +526,11 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'literature',
     yearGroup: 'Y12',
     emerging: 'Constructs an argument but relies heavily on plot summary or paraphrase.',
-    developing: 'Develops an analytical argument with evidence; interpretation is emerging but not yet sustained.',
+    developing:
+      'Develops an analytical argument with evidence; interpretation is emerging but not yet sustained.',
     secure: 'Sustains an independent, well-evidenced literary argument across an extended essay.',
-    mastery: 'Constructs a sophisticated, original literary argument that engages with competing interpretations.',
+    mastery:
+      'Constructs a sophisticated, original literary argument that engages with competing interpretations.',
     assessmentEvidence: [
       'Timed A Level literature essay',
       'Coursework first draft with teacher commentary',
@@ -465,15 +542,18 @@ export const skillProgressions: SkillProgression[] = [
     strand: 'literature',
     yearGroup: 'Y13',
     emerging: 'Mentions a critical viewpoint but does not fully integrate or evaluate it.',
-    developing: 'Applies a critical lens (e.g. feminist, Marxist, post-colonial) with some accuracy.',
-    secure: 'Uses literary theory purposefully to extend and challenge own readings; engages critically with named critics.',
-    mastery: 'Demonstrates scholarly agility, selecting, applying and critiquing theoretical frameworks to generate original insight.',
+    developing:
+      'Applies a critical lens (e.g. feminist, Marxist, post-colonial) with some accuracy.',
+    secure:
+      'Uses literary theory purposefully to extend and challenge own readings; engages critically with named critics.',
+    mastery:
+      'Demonstrates scholarly agility, selecting, applying and critiquing theoretical frameworks to generate original insight.',
     assessmentEvidence: [
       'Coursework essay with footnoted critical sources',
       'Seminar presentation on a theoretical approach',
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CHECKPOINT ASSESSMENTS  (15 total)
@@ -482,7 +562,6 @@ export const skillProgressions: SkillProgression[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const checkpointAssessments: CheckpointAssessment[] = [
-
   // ── Y7 ───────────────────────────────────────────────────────────────────
 
   {
@@ -869,7 +948,17 @@ export const checkpointAssessments: CheckpointAssessment[] = [
     yearGroup: 'Y9',
     term: 3,
     type: 'summative',
-    skills: ['read-01', 'read-02', 'read-03', 'write-02', 'write-03', 'write-04', 'lang-01', 'lang-02', 'lang-03'],
+    skills: [
+      'read-01',
+      'read-02',
+      'read-03',
+      'write-02',
+      'write-03',
+      'write-04',
+      'lang-01',
+      'lang-02',
+      'lang-03',
+    ],
     taskDescription:
       'Full mock IGCSE Paper 1: Section A (35 marks) on a non-fiction passage with four graduated questions; Section B (25 marks) writing for purpose and audience. 1 hour 45 minutes.',
     markingCriteria: [
@@ -961,7 +1050,16 @@ export const checkpointAssessments: CheckpointAssessment[] = [
     yearGroup: 'Y10',
     term: 3,
     type: 'summative',
-    skills: ['read-03', 'read-04', 'write-04', 'write-05', 'lit-04', 'lang-02', 'lang-03', 'lang-04'],
+    skills: [
+      'read-03',
+      'read-04',
+      'write-04',
+      'write-05',
+      'lit-04',
+      'lang-02',
+      'lang-03',
+      'lang-04',
+    ],
     taskDescription:
       'Full mock for IGCSE Language Paper 1 (1 hour 45 min) and a literature essay on a studied text (45 min). Marked against IGCSE mark schemes.',
     markingCriteria: [
@@ -1052,7 +1150,21 @@ export const checkpointAssessments: CheckpointAssessment[] = [
     yearGroup: 'Y11',
     term: 3,
     type: 'summative',
-    skills: ['read-01', 'read-02', 'read-03', 'read-04', 'write-02', 'write-04', 'write-05', 'lit-03', 'lit-04', 'lang-02', 'lang-03', 'lang-04', 'sl-05'],
+    skills: [
+      'read-01',
+      'read-02',
+      'read-03',
+      'read-04',
+      'write-02',
+      'write-04',
+      'write-05',
+      'lit-03',
+      'lit-04',
+      'lang-02',
+      'lang-03',
+      'lang-04',
+      'sl-05',
+    ],
     taskDescription:
       'Full IGCSE mock examination series under exam conditions: Language Paper 1, Language Paper 2 and Literature Paper. Results used to confirm teacher-assessed grades and identify final intervention priorities.',
     markingCriteria: [
@@ -1146,7 +1258,16 @@ export const checkpointAssessments: CheckpointAssessment[] = [
     yearGroup: 'Y13',
     term: 1,
     type: 'summative',
-    skills: ['read-05', 'read-06', 'write-05', 'write-06', 'lit-05', 'lit-06', 'lang-05', 'lang-06'],
+    skills: [
+      'read-05',
+      'read-06',
+      'write-05',
+      'write-06',
+      'lit-05',
+      'lit-06',
+      'lang-05',
+      'lang-06',
+    ],
     taskDescription:
       'Full A Level mock paper under exam conditions. For English Literature students: two essay questions on set texts plus a comparative unseen question. For English Language students: language investigation analysis and production with commentary.',
     markingCriteria: [
@@ -1193,19 +1314,19 @@ export const checkpointAssessments: CheckpointAssessment[] = [
       'Run final examination technique clinics: time management, question selection, planning.',
     ],
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // INTERVENTION STRATEGIES  (15 total)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const interventionStrategies: InterventionStrategy[] = [
-
   {
     id: 'int-01',
     targetSkill: 'read-01',
     yearGroups: ['Y7', 'Y8'],
-    issue: 'Student cannot locate or paraphrase information from a text without significant scaffolding.',
+    issue:
+      'Student cannot locate or paraphrase information from a text without significant scaffolding.',
     strategy:
       'Implement a structured retrieval programme using PEEL (Point, Evidence, Explain, Link) frames. Begin with single-sentence retrieval and build to paragraph-length summary over four weeks. Use colour-coded annotation (yellow for facts, blue for opinions) to make retrieval visible.',
     resources: [
@@ -1213,7 +1334,8 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Colour annotation guides',
       'Short non-fiction passages at reading-age-appropriate level',
     ],
-    expectedImpact: 'Student can accurately retrieve and paraphrase three or more points from an unseen text independently within six weeks.',
+    expectedImpact:
+      'Student can accurately retrieve and paraphrase three or more points from an unseen text independently within six weeks.',
     reviewPeriod: '6 weeks',
   },
   {
@@ -1228,14 +1350,16 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Inference ladder graphic organiser',
       'Paired inference discussion protocols',
     ],
-    expectedImpact: 'Student produces a fully evidenced inference paragraph independently within four weeks.',
+    expectedImpact:
+      'Student produces a fully evidenced inference paragraph independently within four weeks.',
     reviewPeriod: '4 weeks',
   },
   {
     id: 'int-03',
     targetSkill: 'read-03',
     yearGroups: ['Y8', 'Y9', 'Y10'],
-    issue: 'Student identifies language features by name but cannot explain the effect on the reader.',
+    issue:
+      'Student identifies language features by name but cannot explain the effect on the reader.',
     strategy:
       'Introduce the "Zoom In" method: students select a single word or phrase, consider multiple possible effects using "this could suggest... or perhaps...", then commit to the most convincing interpretation with reasoning. Use worked examples comparing shallow and deep analysis.',
     resources: [
@@ -1243,7 +1367,8 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Exemplar annotations showing shallow vs. deep analysis',
       'Extract bank for paired practice',
     ],
-    expectedImpact: 'Student can explain the effect of at least two language choices with developed reasoning within three weeks.',
+    expectedImpact:
+      'Student can explain the effect of at least two language choices with developed reasoning within three weeks.',
     reviewPeriod: '3 weeks',
   },
   {
@@ -1258,7 +1383,8 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Colour-coded exemplar paragraphs',
       'Sentence starter bank',
     ],
-    expectedImpact: 'Student consistently uses paragraphs with topic sentences and developed points within five weeks.',
+    expectedImpact:
+      'Student consistently uses paragraphs with topic sentences and developed points within five weeks.',
     reviewPeriod: '5 weeks',
   },
   {
@@ -1274,7 +1400,8 @@ export const interventionStrategies: InterventionStrategy[] = [
       '"Show Don\'t Tell" rewriting tasks',
       'Curated word lists by theme (nature, emotion, conflict)',
     ],
-    expectedImpact: 'Student\'s writing demonstrates a noticeably wider and more precise vocabulary range within three weeks.',
+    expectedImpact:
+      "Student's writing demonstrates a noticeably wider and more precise vocabulary range within three weeks.",
     reviewPeriod: '3 weeks',
   },
   {
@@ -1289,14 +1416,16 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Counter-argument sentence frames ("While some argue... this view overlooks...")',
       'Sample A-grade argumentative paragraphs with annotations',
     ],
-    expectedImpact: 'Student includes effective counter-argument and rebuttal in argumentative writing within four weeks.',
+    expectedImpact:
+      'Student includes effective counter-argument and rebuttal in argumentative writing within four weeks.',
     reviewPeriod: '4 weeks',
   },
   {
     id: 'int-07',
     targetSkill: 'lang-01',
     yearGroups: ['Y7', 'Y8'],
-    issue: 'Student makes persistent punctuation errors (comma splices, missing full stops, inconsistent capitalisation).',
+    issue:
+      'Student makes persistent punctuation errors (comma splices, missing full stops, inconsistent capitalisation).',
     strategy:
       'Implement a "Fix It" daily editing routine: student is given three sentences per lesson with deliberate errors to correct and explain. Errors are drawn from the student\'s own recent writing. Weekly error-free paragraph challenge with positive recognition.',
     resources: [
@@ -1304,14 +1433,16 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Punctuation reference mat',
       'Error-free paragraph challenge tracker',
     ],
-    expectedImpact: 'Comma splices and full stop errors are eliminated within six weeks; other punctuation errors reduce by at least 75%.',
+    expectedImpact:
+      'Comma splices and full stop errors are eliminated within six weeks; other punctuation errors reduce by at least 75%.',
     reviewPeriod: '6 weeks',
   },
   {
     id: 'int-08',
     targetSkill: 'lang-02',
     yearGroups: ['Y8', 'Y9'],
-    issue: 'Student overuses simple sentences and cannot construct complex or compound-complex sentences accurately.',
+    issue:
+      'Student overuses simple sentences and cannot construct complex or compound-complex sentences accurately.',
     strategy:
       'Sentence expansion workshop: start with a simple sentence kernel and practise adding one grammatical element per lesson (subordinate clause, relative clause, adverbial, appositive). Use sentence-combining exercises drawn from literary texts to show the craft of complex syntax.',
     resources: [
@@ -1319,22 +1450,25 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Sentence combining exercise pack',
       'Annotated literary extracts showing varied syntax',
     ],
-    expectedImpact: 'Student uses a range of sentence structures including complex sentences accurately within four weeks.',
+    expectedImpact:
+      'Student uses a range of sentence structures including complex sentences accurately within four weeks.',
     reviewPeriod: '4 weeks',
   },
   {
     id: 'int-09',
     targetSkill: 'lang-04',
     yearGroups: ['Y9', 'Y10', 'Y11'],
-    issue: 'Student has a high frequency of spelling errors including common homophones and polysyllabic words.',
+    issue:
+      'Student has a high frequency of spelling errors including common homophones and polysyllabic words.',
     strategy:
-      'Introduce a personalised Look-Cover-Write-Check (LCWC) programme using words identified from the student\'s own writing. Focus on morphological pattern groupings (prefixes, suffixes, roots) rather than isolated word lists. Test mastery weekly using contextualised sentences.',
+      "Introduce a personalised Look-Cover-Write-Check (LCWC) programme using words identified from the student's own writing. Focus on morphological pattern groupings (prefixes, suffixes, roots) rather than isolated word lists. Test mastery weekly using contextualised sentences.",
     resources: [
       'Personal spelling error log (drawn from marked work)',
       'Morphological pattern word sort cards',
       'LCWC weekly test proforma',
     ],
-    expectedImpact: 'Frequency of spelling errors in free writing reduces by 60% within eight weeks.',
+    expectedImpact:
+      'Frequency of spelling errors in free writing reduces by 60% within eight weeks.',
     reviewPeriod: '8 weeks',
   },
   {
@@ -1349,14 +1483,16 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Author intention sentence starters',
       'Before-and-after exemplar responses',
     ],
-    expectedImpact: 'Student consistently uses analytical language ("the writer suggests... in order to...") rather than narrative retelling within three weeks.',
+    expectedImpact:
+      'Student consistently uses analytical language ("the writer suggests... in order to...") rather than narrative retelling within three weeks.',
     reviewPeriod: '3 weeks',
   },
   {
     id: 'int-11',
     targetSkill: 'lit-04',
     yearGroups: ['Y10', 'Y11'],
-    issue: 'Student includes contextual knowledge as a separate block rather than integrating it into literary analysis.',
+    issue:
+      'Student includes contextual knowledge as a separate block rather than integrating it into literary analysis.',
     strategy:
       'Practice the "Lens" model: context is always introduced as a lens through which to view the text, not a fact to be stated. Use the stem "Viewed through the lens of [context], this suggests..." Students rewrite their own paragraphs replacing bolted-on context with integrated contextual analysis.',
     resources: [
@@ -1364,14 +1500,16 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Context integration before-and-after examples',
       'Historical and biographical context fact sheets for set texts',
     ],
-    expectedImpact: 'Student integrates context into analysis in at least three of five paragraphs within four weeks.',
+    expectedImpact:
+      'Student integrates context into analysis in at least three of five paragraphs within four weeks.',
     reviewPeriod: '4 weeks',
   },
   {
     id: 'int-12',
     targetSkill: 'lit-05',
     yearGroups: ['Y12', 'Y13'],
-    issue: 'Student cannot sustain an independent argument across a full essay; paragraphs feel disconnected.',
+    issue:
+      'Student cannot sustain an independent argument across a full essay; paragraphs feel disconnected.',
     strategy:
       'Introduce the "Golden Thread" essay planning technique: before writing, student writes a one-sentence thesis and checks every planned paragraph against it, removing or redirecting any that do not serve the thesis. Post-writing, student highlights the words or phrases in each paragraph that explicitly connect back to the thesis.',
     resources: [
@@ -1379,29 +1517,33 @@ export const interventionStrategies: InterventionStrategy[] = [
       '"Golden Thread" planning scaffold',
       'Annotated A-grade essays demonstrating argument continuity',
     ],
-    expectedImpact: 'Student\'s essays demonstrate a coherent, sustained argument across all paragraphs within five weeks.',
+    expectedImpact:
+      "Student's essays demonstrate a coherent, sustained argument across all paragraphs within five weeks.",
     reviewPeriod: '5 weeks',
   },
   {
     id: 'int-13',
     targetSkill: 'sl-01',
     yearGroups: ['Y7', 'Y8'],
-    issue: 'Student is reluctant to speak in front of the class; contributions are inaudible or monosyllabic.',
+    issue:
+      'Student is reluctant to speak in front of the class; contributions are inaudible or monosyllabic.',
     strategy:
-      'Graduated exposure programme: start with paired talk, then small group (3-4), then report back on behalf of the group, then solo contribution. Use "Talk Tokens" to gamify participation — each student has three tokens per lesson to spend on contributions. Celebrate all attempts.',
+      'Graduated exposure programme: start with paired talk, then small group (3-4), then report back on behalf of the group, then solo contribution. Use "Talk Tokens" to gamify participation - each student has three tokens per lesson to spend on contributions. Celebrate all attempts.',
     resources: [
       'Paired talk prompt cards',
       'Talk Tokens tracker',
       'Sentence starter display for class contributions',
     ],
-    expectedImpact: 'Student makes at least one voluntary whole-class contribution per lesson within six weeks.',
+    expectedImpact:
+      'Student makes at least one voluntary whole-class contribution per lesson within six weeks.',
     reviewPeriod: '6 weeks',
   },
   {
     id: 'int-14',
     targetSkill: 'write-05',
     yearGroups: ['Y12', 'Y13'],
-    issue: 'Student\'s analytical writing remains descriptive; lacks a critical voice and evaluative stance.',
+    issue:
+      "Student's analytical writing remains descriptive; lacks a critical voice and evaluative stance.",
     strategy:
       'Run a "So What?" revision drill: after every analytical sentence, student must ask "So what does this reveal about the writer\'s broader purpose or meaning?" and write one more sentence in response. Supplement with reading of short critical extracts to model academic register. Practice converting a descriptive paragraph into an analytical one daily for two weeks.',
     resources: [
@@ -1409,23 +1551,26 @@ export const interventionStrategies: InterventionStrategy[] = [
       'Short critical extracts for modelling',
       'Analytical vs. descriptive paragraph comparison handout',
     ],
-    expectedImpact: 'Student sustains an analytical, evaluative register throughout at least 80% of a timed essay within four weeks.',
+    expectedImpact:
+      'Student sustains an analytical, evaluative register throughout at least 80% of a timed essay within four weeks.',
     reviewPeriod: '4 weeks',
   },
   {
     id: 'int-15',
     targetSkill: 'lang-06',
     yearGroups: ['Y13'],
-    issue: 'Student references linguistic theory superficially without applying it to data or text analysis.',
+    issue:
+      'Student references linguistic theory superficially without applying it to data or text analysis.',
     strategy:
-      'Use a Theory Application Matrix: student maps each theoretical framework (e.g. Labov\'s narrative theory, Grice\'s maxims, Trudgill\'s dialect levelling) to specific data examples. Each application must include a description of the evidence, the theoretical concept used and a qualification of the theory\'s limitations. Weekly seminar discussions on a theory-data pairing.',
+      "Use a Theory Application Matrix: student maps each theoretical framework (e.g. Labov's narrative theory, Grice's maxims, Trudgill's dialect levelling) to specific data examples. Each application must include a description of the evidence, the theoretical concept used and a qualification of the theory's limitations. Weekly seminar discussions on a theory-data pairing.",
     resources: [
       'Theory Application Matrix template',
       'Summary cards for key linguistic theories',
       'Data transcripts and language samples for analysis',
       'Academic journal article excerpts (accessible level)',
     ],
-    expectedImpact: 'Student applies at least three distinct theoretical frameworks accurately in a language essay within six weeks.',
+    expectedImpact:
+      'Student applies at least three distinct theoretical frameworks accurately in a language essay within six weeks.',
     reviewPeriod: '6 weeks',
   },
-];
+]

@@ -151,7 +151,7 @@ export default function TeacherRegisterPage() {
 
         if (profileError) {
           console.error('Profile upsert error:', profileError)
-          // Don't block signup — profile can be updated later
+          // Don't block signup - profile can be updated later
         }
 
         // Fire-and-forget: create the Prisma User projection row. Lagging
@@ -266,7 +266,7 @@ export default function TeacherRegisterPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Left — form */}
+          {/* Left - form */}
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
@@ -275,7 +275,7 @@ export default function TeacherRegisterPage() {
               </CardHeader>
 
               <CardContent>
-                {/* Google OAuth — Google sign-up users skip the school name
+                {/* Google OAuth - Google sign-up users skip the school name
                     field; we collect that later in /dashboard/teacher/profile.
                     Gated by NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED so we don't
                     surface the button (or its divider) until Google is
@@ -402,7 +402,7 @@ export default function TeacherRegisterPage() {
                     </p>
                   </div>
 
-                  {/* Exam board (optional) — whitelist matches Prisma ExamBoard enum
+                  {/* Exam board (optional) - whitelist matches Prisma ExamBoard enum
                       in /api/auth/teacher-signup. Empty string is intentionally
                       excluded from the fetch body below (handler treats absence
                       as "not specified"). */}
@@ -501,7 +501,7 @@ export default function TeacherRegisterPage() {
                     )}
                   </div>
 
-                  {/* Date of birth — required for Prisma User projection (schema NOT NULL) */}
+                  {/* Date of birth - required for Prisma User projection (schema NOT NULL) */}
                   <fieldset
                     className="space-y-1.5"
                     aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
@@ -694,7 +694,7 @@ export default function TeacherRegisterPage() {
             </Card>
           </div>
 
-          {/* Right — benefits */}
+          {/* Right - benefits */}
           <div className="lg:col-span-2">
             <div className="sticky top-8 space-y-4">
               <Card className="border-primary/20 bg-primary/5">

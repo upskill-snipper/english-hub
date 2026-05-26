@@ -8,14 +8,14 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'IGCSE Edexcel Shakespeare — Macbeth, Romeo and Juliet, Much Ado — The English Hub',
+    title: 'IGCSE Edexcel Shakespeare - Macbeth, Romeo and Juliet, Much Ado - The English Hub',
     description:
       'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
   },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare',
   },
-  title: 'IGCSE Edexcel Shakespeare — Macbeth, Romeo and Juliet, Much Ado',
+  title: 'IGCSE Edexcel Shakespeare - Macbeth, Romeo and Juliet, Much Ado',
   description:
     'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
 }
@@ -27,11 +27,11 @@ const PLAYS = [
     tagline: 'Ambition, guilt and the supernatural',
     period: 'First performed c. 1606',
     summary:
-      "A brave Scottish general hears a prophecy that he will become king. Goaded by his wife, he murders King Duncan and seizes the throne — but is destroyed by guilt, paranoia and the relentless logic of fate. Shakespeare's shortest tragedy is a study of how ambition corrupts.",
+      "A brave Scottish general hears a prophecy that he will become king. Goaded by his wife, he murders King Duncan and seizes the throne - but is destroyed by guilt, paranoia and the relentless logic of fate. Shakespeare's shortest tragedy is a study of how ambition corrupts.",
     highlights: [
       'Full plot, character, theme and context guides',
       '20 key quotes with detailed analysis',
-      'Jacobean context — witchcraft, kingship, the Gunpowder Plot',
+      'Jacobean context - witchcraft, kingship, the Gunpowder Plot',
     ],
     cta: 'Start the Macbeth guide',
   },
@@ -41,7 +41,7 @@ const PLAYS = [
     tagline: 'Love, fate and the violence of feuding families',
     period: 'First performed c. 1595',
     summary:
-      "The son and daughter of two warring Verona households fall in love at first sight. Their whirlwind romance is built on stolen moments, secret vows and desperate plans — and it ends in a tomb. Shakespeare's most famous tragedy asks whether love can ever survive the world it is born into.",
+      "The son and daughter of two warring Verona households fall in love at first sight. Their whirlwind romance is built on stolen moments, secret vows and desperate plans - and it ends in a tomb. Shakespeare's most famous tragedy asks whether love can ever survive the world it is born into.",
     highlights: [
       'Plot, characters and theme overview on a single hub',
       '20 key quotes with context and analysis',
@@ -55,7 +55,7 @@ const PLAYS = [
     tagline: 'Love, deception and the games people play',
     period: 'First performed c. 1598',
     summary:
-      "Two couples — the witty Beatrice and Benedick, and the earnest Claudio and Hero — are pushed together and torn apart by a tangle of eavesdropping, pranks and slander. Shakespeare's sharpest romantic comedy also asks hard questions about honour, reputation and how women are judged.",
+      "Two couples - the witty Beatrice and Benedick, and the earnest Claudio and Hero - are pushed together and torn apart by a tangle of eavesdropping, pranks and slander. Shakespeare's sharpest romantic comedy also asks hard questions about honour, reputation and how women are judged.",
     highlights: [
       'Hub page summarising plot, characters and themes',
       '15 key quotes with analysis',
@@ -80,7 +80,7 @@ export default async function ShakespeareHubPage() {
       />
       <LearningResourceJsonLd
         name="Edexcel IGCSE Literature Shakespeare section"
-        description="Three Shakespeare set texts — Macbeth, Romeo and Juliet, Much Ado About Nothing — for Pearson Edexcel IGCSE Literature 4ET1."
+        description="Three Shakespeare set texts - Macbeth, Romeo and Juliet, Much Ado About Nothing - for Pearson Edexcel IGCSE Literature 4ET1."
         educationalLevel="IGCSE"
         learningResourceType="Study guide"
         inLanguage="en-GB"
@@ -103,7 +103,7 @@ export default async function ShakespeareHubPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Edexcel IGCSE English Literature offers three Shakespeare set texts. You only study{' '}
-            <strong>one</strong> — use the guides below to revise the play your school is teaching.
+            <strong>one</strong> - use the guides below to revise the play your school is teaching.
           </p>
         </div>
       </section>
@@ -123,7 +123,7 @@ export default async function ShakespeareHubPage() {
             <strong>two linked questions</strong> on your chosen play: a part (a) question focused
             on a printed extract, and a part (b) question that asks you to explore the same idea,
             theme or character across the play as a whole. The exam is <strong>closed book</strong>{' '}
-            — you must memorise your own quotes for part (b).
+            - you must memorise your own quotes for part (b).
           </p>
           <ul className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
             <li className="flex gap-2">
@@ -141,7 +141,7 @@ export default async function ShakespeareHubPage() {
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Closed book — embed short, memorised quotations
+              Closed book - embed short, memorised quotations
             </li>
           </ul>
         </section>

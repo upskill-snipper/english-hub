@@ -1,5 +1,5 @@
 /**
- * Trial state resolver — server-side.
+ * Trial state resolver - server-side.
  *
  * Reads the signed-in user's `Subscription` row from Prisma and projects
  * it onto the minimal shape the `TrialCountdownBanner` needs:
@@ -14,7 +14,7 @@
  *
  *   - `isPremium`    True when the row grants Pro access through any
  *     non-trial path (ACTIVE, PAUSED, or CANCELLED-still-in-paid-period).
- *     A user inside their trial is NOT premium yet — that's the whole
+ *     A user inside their trial is NOT premium yet - that's the whole
  *     point of the banner. Once they convert, isPremium=true and the
  *     banner self-hides.
  *
@@ -48,7 +48,7 @@ const EMPTY: TrialState = { trialEndsAt: null, isPremium: false }
  * Identity convergence note (Cycle 7 / Identity PR-3): `supabase.auth.getUser()`
  * returns a Supabase UUID, but `Subscription.userId` references the Prisma
  * `User.id` (cuid). We resolve the Prisma user via `supabaseUserId` with an
- * email fallback for pre-backfill rows — same pattern as `/api/me/entitlements`.
+ * email fallback for pre-backfill rows - same pattern as `/api/me/entitlements`.
  * Querying `Subscription` directly with the Supabase UUID would silently miss
  * every row.
  */
@@ -93,7 +93,7 @@ export async function getTrialState(): Promise<TrialState> {
     const periodEnd = sub.currentPeriodEnd.getTime()
     const stillInPeriod = periodEnd > now
 
-    // Trial state — only surfaced while the row is genuinely TRIALING and
+    // Trial state - only surfaced while the row is genuinely TRIALING and
     // the trial end is still in the future. An expired trial reverts to
     // EMPTY so the banner hides and we don't taunt the user.
     const trialEndsAt = sub.status === 'TRIALING' && stillInPeriod ? sub.currentPeriodEnd : null

@@ -48,13 +48,13 @@ interface ClassPerformanceResponse {
   trends: TrendDataPoint[]
   /**
    * Difference (class avg − school-wide avg) in percentage points.
-   * Baseline is scoped to THIS school only — NOT the whole platform —
+   * Baseline is scoped to THIS school only - NOT the whole platform -
    * to avoid cross-tenant data exposure. Previously this was named
    * `comparison_to_school_avg` but the baseline was actually platform-wide;
    * the value is now correctly school-scoped so the old name is accurate.
    */
   comparison_to_school_avg: number | null
-  /** Alias of comparison_to_school_avg — clarifies the baseline semantic. */
+  /** Alias of comparison_to_school_avg - clarifies the baseline semantic. */
   this_school_baseline_avg: number | null
   generated_at: string
 }
@@ -170,7 +170,7 @@ export async function GET(request: NextRequest) {
     // TODO(platform-avg): If product wants a TRUE platform-wide comparison
     // alongside the school baseline, expose it as a dedicated Postgres RPC
     // that returns ONLY the aggregate number (not raw rows). Do NOT select
-    // untagged rows from module_progress in an API handler — it leaks shape
+    // untagged rows from module_progress in an API handler - it leaks shape
     // and scales poorly. For now, the baseline is school-scoped only.
 
     // Fetch module progress for these students + the school-wide progress

@@ -52,7 +52,7 @@ export default async function ExamDayPage() {
     <>
       <HowToJsonLd
         name="Exam Day Advice"
-        description="Practical, step-by-step advice for the day of a GCSE or IGCSE English exam — what to bring, how to read the paper, how to plan your answers, how to stay calm, and what to do in the last 5 minutes."
+        description="Practical, step-by-step advice for the day of a GCSE or IGCSE English exam - what to bring, how to read the paper, how to plan your answers, how to stay calm, and what to do in the last 5 minutes."
         totalTime="PT15M"
         url="https://theenglishhub.app/resources/exam-technique/exam-day"
         steps={[
@@ -70,7 +70,7 @@ export default async function ExamDayPage() {
           },
           {
             name: 'Manage your nerves during the exam',
-            text: 'If you feel overwhelmed, put your pen down and take three slow breaths. Focus only on the question in front of you. If you get stuck, move on and come back. Do not watch other students — their speed is irrelevant.',
+            text: 'If you feel overwhelmed, put your pen down and take three slow breaths. Focus only on the question in front of you. If you get stuck, move on and come back. Do not watch other students - their speed is irrelevant.',
           },
           {
             name: 'Use the last 5 minutes wisely',

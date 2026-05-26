@@ -7,8 +7,8 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  * Literature specifications. It is NOT studied on OCR, Cambridge IGCSE
  * (0500 / 0990) or Edexcel IGCSE 4ET1, so readers on those boards see an
  * amber banner pointing them back to their own revision hub. The article
- * itself still renders underneath in full — Dickens analysis is useful
- * regardless of board — but the warning prevents anyone from revising the
+ * itself still renders underneath in full - Dickens analysis is useful
+ * regardless of board - but the warning prevents anyone from revising the
  * wrong text for their actual paper.
  *
  * The banner is a client component that only renders after Zustand

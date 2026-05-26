@@ -7,14 +7,10 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
  * underneath it in <AnalysisBoardGate>, which surfaces the WrongBoardBanner
  * to readers whose chosen exam board does not study Jekyll and Hyde.
  *
- * Using a layout means we never have to edit individual page.tsx files —
+ * Using a layout means we never have to edit individual page.tsx files -
  * every route gets the banner automatically while preserving its existing
  * schema.org markup, canonical URLs and metadata.
  */
-export default function JekyllHydeLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function JekyllHydeLayout({ children }: { children: React.ReactNode }) {
   return <AnalysisBoardGate>{children}</AnalysisBoardGate>
 }

@@ -489,13 +489,13 @@ const poemData: PoemData = {
 <p>The <strong>Victorian era</strong> was fascinated by psychology, criminality, and the darker aspects of human nature. Browning explores <strong>obsessive love, power, and control</strong> through a speaker who sees murder as a rational solution to an emotional problem.</p>
 <p>The poem also reflects Victorian anxieties about <strong>class and sexuality</strong>. Porphyria crosses class boundaries to visit the speaker, and her sexual agency -- freely visiting a lover -- may be part of what the speaker seeks to control and punish.</p>`,
   contextAr: `<p><strong>Robert Browning (1812-1889)</strong> نشر هالقصيدة سنة 1836 ضمن ثنائي شعري عنوانه <em>Madhouse Cells</em> (زنازين المجانين)، وهذا العنوان يوضّح من البداية إن المتكلّم المفروض يُفهم على إنه <strong>مختلّ نفسياً</strong>.</p>
-<p>القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) — وهو شكل أتقنه Browning. المتكلّم مو Browning نفسه، إنما شخصية متخيّلة منظورها مو موثوق، والقارئ لازم يقرأ ما بين السطور. Browning يكشف الشخصية من خلال اللي يقوله المتكلّم، والأهم من ذلك، من خلال اللي يعجز هو نفسه عن إدراكه عن نفسه.</p>
+<p>القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) - وهو شكل أتقنه Browning. المتكلّم مو Browning نفسه، إنما شخصية متخيّلة منظورها مو موثوق، والقارئ لازم يقرأ ما بين السطور. Browning يكشف الشخصية من خلال اللي يقوله المتكلّم، والأهم من ذلك، من خلال اللي يعجز هو نفسه عن إدراكه عن نفسه.</p>
 <p><strong>العصر الفيكتوري</strong> كان مفتون بعلم النفس وبالإجرام وبالجوانب المظلمة من الطبيعة البشرية. Browning يستكشف <strong>الحب الهوسي والسلطة والسيطرة</strong> من خلال متكلّم يشوف القتل حلّ منطقي لمشكلة عاطفية.</p>
-<p>القصيدة كمان تعكس قلق العصر الفيكتوري من <strong>الطبقة الاجتماعية والجنسانية</strong>. Porphyria تعبر حدود الطبقة عشان تزور المتكلّم، وحريّتها الجنسية — إنها تزور حبيب بإرادتها — يحتمل إنها جزء من اللي يبي المتكلّم يسيطر عليه ويعاقبها عليه.</p>`,
+<p>القصيدة كمان تعكس قلق العصر الفيكتوري من <strong>الطبقة الاجتماعية والجنسانية</strong>. Porphyria تعبر حدود الطبقة عشان تزور المتكلّم، وحريّتها الجنسية - إنها تزور حبيب بإرادتها - يحتمل إنها جزء من اللي يبي المتكلّم يسيطر عليه ويعاقبها عليه.</p>`,
   summary: `The speaker sits alone in a cottage while a storm rages outside. Porphyria arrives, tends to the fire, removes her wet clothes, and sits beside him. She arranges his body against hers and murmurs her love, but the speaker knows she is "too weak" to fully leave her privileged life for him.\n\nIn a moment of realisation that Porphyria truly loves him, the speaker decides to preserve this perfect moment forever. He winds her hair around her throat three times and strangles her. He then opens her eyes, kisses her, and sits with the corpse all night.\n\nThe poem ends with the speaker's observation that God has not intervened or punished him, which he interprets as divine approval. The dramatic monologue reveals a deeply disturbed mind that rationalises murder as an act of love and preservation.`,
-  summaryAr: `المتكلّم قاعد لحاله في كوخ، وبراً عاصفة هايجة. Porphyria تجي، تشعل النار، تشلح ثيابها المبلولة، وتقعد جنبه. هي بنفسها ترتّب جسمه على جسمها، وتهمس له بحبّها، بس المتكلّم يدري إنها "too weak" — أضعف من إنها تتخلّى عن حياتها المرفّهة عشانه.\n\nفي لحظة يكتشف فيها إن Porphyria صدق تحبه، يقرّر إنه يخلّد هاللحظة الكاملة للأبد. يلفّ شعرها حول حلقها ثلاث مرّات ويخنقها. بعدها يفتح عيونها، يبوسها، ويقعد جنب جثّتها طول الليل.\n\nالقصيدة تنتهي بملاحظة المتكلّم إن الله ما تدخّل ولا عاقبه، وهو يفسّر هالشي على إنه موافقة إلهية. الـdramatic monologue يكشف عقل مضطرب جداً يبرّر القتل ويعتبره فعل محبة وحفظ.`,
+  summaryAr: `المتكلّم قاعد لحاله في كوخ، وبراً عاصفة هايجة. Porphyria تجي، تشعل النار، تشلح ثيابها المبلولة، وتقعد جنبه. هي بنفسها ترتّب جسمه على جسمها، وتهمس له بحبّها، بس المتكلّم يدري إنها "too weak" - أضعف من إنها تتخلّى عن حياتها المرفّهة عشانه.\n\nفي لحظة يكتشف فيها إن Porphyria صدق تحبه، يقرّر إنه يخلّد هاللحظة الكاملة للأبد. يلفّ شعرها حول حلقها ثلاث مرّات ويخنقها. بعدها يفتح عيونها، يبوسها، ويقعد جنب جثّتها طول الليل.\n\nالقصيدة تنتهي بملاحظة المتكلّم إن الله ما تدخّل ولا عاقبه، وهو يفسّر هالشي على إنه موافقة إلهية. الـdramatic monologue يكشف عقل مضطرب جداً يبرّر القتل ويعتبره فعل محبة وحفظ.`,
   formAndStructure: `Form: A dramatic monologue -- the entire poem is spoken by a single, unreliable narrator whose true nature is gradually revealed through his own words.\n\nSingle stanza: The poem is one continuous block of text with no stanza breaks, creating a relentless, claustrophobic narrative that mirrors the speaker's obsessive, unbroken thought process.\n\nRhyme scheme: ABABB -- the interlocking rhyme creates a sense of entrapment and obsession. The extra rhyme in each group creates an unsettling asymmetry.\n\nEnjambment: Heavy use of enjambment creates a breathless, flowing narrative that mimics natural speech, drawing the reader into the speaker's warped perspective.\n\nPower reversal: The poem's structure mirrors the shift in power -- Porphyria is active and the speaker passive in the first half; this reverses completely after the murder.\n\nPresent tense ending: The shift to present tense ("And thus we sit together now") creates a disturbing immediacy, revealing the speaker is narrating while sitting beside the corpse.`,
-  formAndStructureAr: `DRAMATIC MONOLOGUE (مونولوج درامي)\nالقصيدة كلها يحكيها متكلّم واحد غير موثوق، وحقيقة شخصيته تنكشف تدريجياً من خلال كلامه نفسه.\n\nSINGLE STANZA (مقطوعة واحدة)\nالقصيدة كتلة نص واحدة متّصلة، بدون أي فاصل بين المقاطع، وهذا يخلق سرد متلاحق وخانق يعكس تيّار التفكير الهوسي المتواصل عند المتكلّم.\n\nRHYME SCHEME (نمط القافية)\nABABB — القافية المتشابكة تعطي إحساس بالحصار والهوس. القافية الزايدة في كل مجموعة تخلق عدم تماثل مقلق.\n\nENJAMBMENT\nالاستخدام المكثّف للـenjambment يخلق سرد متدفّق وشبه لاهث يحاكي الكلام الطبيعي، ويسحب القارئ داخل منظور المتكلّم المعوجّ.\n\nانعكاس السلطة\nبنية القصيدة تعكس تحوّل السلطة — Porphyria هي الفاعلة والمتكلّم خامل في النصف الأول؛ وهالشي ينقلب بالكامل بعد جريمة القتل.\n\nنهاية بزمن المضارع\nالتحوّل إلى زمن المضارع ("And thus we sit together now") يخلق إحساس مرعب بالحضور الآني، ويكشف إن المتكلّم يحكي وهو قاعد جنب الجثّة.`,
+  formAndStructureAr: `DRAMATIC MONOLOGUE (مونولوج درامي)\nالقصيدة كلها يحكيها متكلّم واحد غير موثوق، وحقيقة شخصيته تنكشف تدريجياً من خلال كلامه نفسه.\n\nSINGLE STANZA (مقطوعة واحدة)\nالقصيدة كتلة نص واحدة متّصلة، بدون أي فاصل بين المقاطع، وهذا يخلق سرد متلاحق وخانق يعكس تيّار التفكير الهوسي المتواصل عند المتكلّم.\n\nRHYME SCHEME (نمط القافية)\nABABB - القافية المتشابكة تعطي إحساس بالحصار والهوس. القافية الزايدة في كل مجموعة تخلق عدم تماثل مقلق.\n\nENJAMBMENT\nالاستخدام المكثّف للـenjambment يخلق سرد متدفّق وشبه لاهث يحاكي الكلام الطبيعي، ويسحب القارئ داخل منظور المتكلّم المعوجّ.\n\nانعكاس السلطة\nبنية القصيدة تعكس تحوّل السلطة - Porphyria هي الفاعلة والمتكلّم خامل في النصف الأول؛ وهالشي ينقلب بالكامل بعد جريمة القتل.\n\nنهاية بزمن المضارع\nالتحوّل إلى زمن المضارع ("And thus we sit together now") يخلق إحساس مرعب بالحضور الآني، ويكشف إن المتكلّم يحكي وهو قاعد جنب الجثّة.`,
   keyQuotes: [
     {
       quote: 'I listened with heart fit to break',
@@ -512,7 +512,7 @@ const poemData: PoemData = {
         'Porphyria has agency and power -- she controls the environment. This positions her as the dominant force in the relationship, which the speaker will violently reverse.',
       themes: ['Power', 'Control', 'Gender roles'],
       analysisAr:
-        'Porphyria عندها فاعلية وسلطة — هي اللي تتحكّم في البيئة. هالشي يجعلها القوّة المهيمنة في العلاقة، وهالوضع المتكلّم بيقلبه بعنف لاحقاً.',
+        'Porphyria عندها فاعلية وسلطة - هي اللي تتحكّم في البيئة. هالشي يجعلها القوّة المهيمنة في العلاقة، وهالوضع المتكلّم بيقلبه بعنف لاحقاً.',
       themesAr: ['السلطة', 'السيطرة', 'الأدوار الجندرية'],
     },
     {
@@ -675,7 +675,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Like My Last Duchess, Porphyria's Lover is a dramatic monologue — a single speaker reveals his disturbed psychology to the reader through his own words. It is written as one continuous 60-line stanza in iambic tetrameter with an ABABB rhyme scheme.",
+      "Like My Last Duchess, Porphyria's Lover is a dramatic monologue - a single speaker reveals his disturbed psychology to the reader through his own words. It is written as one continuous 60-line stanza in iambic tetrameter with an ABABB rhyme scheme.",
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -707,7 +707,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The speaker believes Porphyria cannot always be his due to social barriers. By killing her at the moment she "worshipped" him, he freezes her love in time — the ultimate act of possession.',
+      'The speaker believes Porphyria cannot always be his due to social barriers. By killing her at the moment she "worshipped" him, he freezes her love in time - the ultimate act of possession.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -717,7 +717,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is filled with remorse',
-      'He is calm and matter-of-fact, showing no guilt — suggesting psychopathy',
+      'He is calm and matter-of-fact, showing no guilt - suggesting psychopathy',
       'He calls for help',
       'He is angry',
     ],
@@ -739,7 +739,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The final line is chilling — the speaker interprets God's silence as approval. His warped logic shows complete moral blindness, believing divine inaction equals divine endorsement.",
+      "The final line is chilling - the speaker interprets God's silence as approval. His warped logic shows complete moral blindness, believing divine inaction equals divine endorsement.",
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -760,13 +760,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Porphyria controls the speaker',
-      'The speaker seizes control by killing Porphyria — transforming a living woman into a possessed object',
+      'The speaker seizes control by killing Porphyria - transforming a living woman into a possessed object',
       'Power is shared equally',
       'Neither character has power',
     ],
     correctIndex: 1,
     explanation:
-      'Initially Porphyria has power — she enters, tends the fire, arranges herself. The murder reverses this completely. The speaker transforms a living, autonomous woman into a lifeless possession he can control.',
+      'Initially Porphyria has power - she enters, tends the fire, arranges herself. The murder reverses this completely. The speaker transforms a living, autonomous woman into a lifeless possession he can control.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -782,7 +782,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The enjambment creates a relentless, flowing monologue that mirrors the speaker's obsessive train of thought. There are no breaks — his disturbed logic rolls forward without pause for reflection.",
+      "The enjambment creates a relentless, flowing monologue that mirrors the speaker's obsessive train of thought. There are no breaks - his disturbed logic rolls forward without pause for reflection.",
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -810,9 +810,9 @@ const REVISION_TOPICS = [
     summary:
       "Porphyria's Lover explores obsessive love, possession, power, control, and the psychology of a disturbed mind.",
     keyPoints: [
-      'Obsessive love — the speaker kills to possess Porphyria forever',
-      'Power reversal — Porphyria initially has power; the murder gives it to the speaker',
-      'Moral blindness — the speaker feels no guilt and believes God approves',
+      'Obsessive love - the speaker kills to possess Porphyria forever',
+      'Power reversal - Porphyria initially has power; the murder gives it to the speaker',
+      'Moral blindness - the speaker feels no guilt and believes God approves',
       'The dramatic monologue reveals psychology the speaker cannot see himself',
     ],
   },
@@ -821,10 +821,10 @@ const REVISION_TOPICS = [
     summary:
       "Browning uses pathetic fallacy, disturbing calm after violence, and the final shocking reference to God to reveal the speaker's psychopathy.",
     keyPoints: [
-      "Pathetic fallacy — the storm mirrors the speaker's inner turmoil",
-      'Calm, matter-of-fact tone after the murder — no guilt or horror',
-      '"And yet God has not said a word!" — chilling final line',
-      'Hair as murder weapon — intimacy twisted into violence',
+      "Pathetic fallacy - the storm mirrors the speaker's inner turmoil",
+      'Calm, matter-of-fact tone after the murder - no guilt or horror',
+      '"And yet God has not said a word!" - chilling final line',
+      'Hair as murder weapon - intimacy twisted into violence',
     ],
   },
   {
@@ -832,10 +832,10 @@ const REVISION_TOPICS = [
     summary:
       'A dramatic monologue of 60 lines in one continuous stanza, written in iambic tetrameter with an ABABB rhyme scheme and relentless enjambment, creating an unbroken flow of obsessive thought.',
     keyPoints: [
-      'Dramatic monologue — the speaker unwittingly reveals his madness',
-      'ABABB rhyme scheme — the extra B rhyme creates an unsettling asymmetry',
-      'Iambic tetrameter — controlled metre masks violent content',
-      "Single 60-line stanza — no breaks, no escape from the speaker's logic",
+      'Dramatic monologue - the speaker unwittingly reveals his madness',
+      'ABABB rhyme scheme - the extra B rhyme creates an unsettling asymmetry',
+      'Iambic tetrameter - controlled metre masks violent content',
+      "Single 60-line stanza - no breaks, no escape from the speaker's logic",
     ],
   },
 ]
@@ -871,7 +871,7 @@ export default function PorphyriasLoverPage() {
   return (
     <div className="space-y-6">
       <CourseJsonLd
-        name="Porphyria's Lover by Robert Browning — Analysis & Annotations"
+        name="Porphyria's Lover by Robert Browning - Analysis & Annotations"
         description="Line-by-line analysis of Porphyria's Lover with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd

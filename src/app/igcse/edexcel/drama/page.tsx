@@ -10,11 +10,11 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident — The English Hub',
+      'IGCSE Edexcel drama - An Inspector Calls, View from the Bridge, Curious Incident - The English Hub',
     description:
       'Pearson Edexcel IGCSE Literature 4ET1 modern drama. Three plays: An Inspector Calls, A View from the Bridge, The Curious Incident. Full study guides.',
   },
-  title: 'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident',
+  title: 'IGCSE Edexcel drama - An Inspector Calls, View from the Bridge, Curious Incident',
   description:
     'Pearson Edexcel IGCSE Literature 4ET1 modern drama. Three plays: An Inspector Calls, A View from the Bridge, The Curious Incident. Full study guides.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/drama' },
@@ -78,7 +78,7 @@ export default async function DramaHubPage() {
       />
       <LearningResourceJsonLd
         name="Edexcel IGCSE Literature drama section"
-        description="Three modern drama texts — An Inspector Calls, A View from the Bridge, The Curious Incident — for Pearson Edexcel IGCSE Literature 4ET1."
+        description="Three modern drama texts - An Inspector Calls, A View from the Bridge, The Curious Incident - for Pearson Edexcel IGCSE Literature 4ET1."
         educationalLevel="IGCSE"
         learningResourceType="Study guide"
         inLanguage="en-GB"
@@ -119,7 +119,7 @@ export default async function DramaHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               These plays are all in copyright. Our guides include short extracts for fair-dealing

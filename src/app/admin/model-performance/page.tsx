@@ -1,6 +1,6 @@
 'use client'
 
-// ─── Platform-admin — Model Performance + Eval Scorecard ────────────────────
+// ─── Platform-admin - Model Performance + Eval Scorecard ────────────────────
 // Site-admin only (server routes enforce; redirect on 401/403 mirrors
 // src/app/admin/affiliates/page.tsx). Renders /api/admin/model-performance
 // and, anchored at #evals, /api/admin/evals (always non-certified).
@@ -344,7 +344,7 @@ export default function AdminModelPerformancePage() {
                 </p>
                 <p className="mb-1">
                   <strong className="text-foreground">certifiable:</strong>{' '}
-                  {String(evals.certifiable)} — {evals.certifiableReason}
+                  {String(evals.certifiable)} - {evals.certifiableReason}
                 </p>
                 <p>{evals.thresholds.rationale}</p>
               </div>

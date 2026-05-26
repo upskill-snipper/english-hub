@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
  *
  * The report page is a Client Component (interactive form) and cannot
  * export `metadata`, so without this layout it would inherit the shared
- * `title: 'Help Centre'` from src/app/help/layout.tsx — colliding with
+ * `title: 'Help Centre'` from src/app/help/layout.tsx - colliding with
  * the other /help routes. This gives the route its own unique title and
  * meta description.
  */

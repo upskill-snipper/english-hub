@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * InlineStudyEngine — AI-powered self-study directly on any text/poem page.
+ * InlineStudyEngine - AI-powered self-study directly on any text/poem page.
  *
  * No navigation away. Everything happens inline:
  * 1. Quiz Mode: Multiple choice + short answer with instant feedback
@@ -10,7 +10,7 @@
  * 4. Understanding Tracker: Shows mastery across topics for this text
  *
  * Data is pre-loaded from the text's quotations/characters/themes.
- * No API calls needed for the quiz — everything runs client-side.
+ * No API calls needed for the quiz - everything runs client-side.
  */
 
 import { useState, useMemo, useCallback, useEffect } from 'react'

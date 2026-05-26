@@ -7,14 +7,14 @@ import { verifyAdmin } from '@/lib/admin-auth'
 // Diagnostic endpoint that calls Resend's /domains API and returns the
 // verification status of every domain on the account. The founder uses
 // this to confirm whether `theenglishhub.app` is VERIFIED (DNS records
-// in place) or PENDING (DNS records missing — emails will be rejected).
+// in place) or PENDING (DNS records missing - emails will be rejected).
 //
 // Resend domain status values (from their docs):
-//   - "verified"      — all DNS records present, sending works
-//   - "pending"       — added but not yet verified
-//   - "not_started"   — created but never checked
-//   - "failed"        — DNS records missing/wrong; sending rejected
-//   - "temporary_failure" — transient
+//   - "verified"      - all DNS records present, sending works
+//   - "pending"       - added but not yet verified
+//   - "not_started"   - created but never checked
+//   - "failed"        - DNS records missing/wrong; sending rejected
+//   - "temporary_failure" - transient
 //
 // Gated by verifyAdmin().
 // ────────────────────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ interface ResendDomain {
 
 interface ResendDomainsResponse {
   data?: ResendDomain[]
-  // older shape — defensive parse
+  // older shape - defensive parse
   domains?: ResendDomain[]
 }
 
@@ -90,7 +90,7 @@ export async function GET(request: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
-      // never cache — we want a live read
+      // never cache - we want a live read
       cache: 'no-store',
     })
 
@@ -118,11 +118,11 @@ export async function GET(request: NextRequest) {
     const target = domains.find((d) => d.name?.toLowerCase() === TARGET_DOMAIN)
     let summary: string
     if (!target) {
-      summary = `${TARGET_DOMAIN}: NOT ADDED — go to https://resend.com/domains and add it.`
+      summary = `${TARGET_DOMAIN}: NOT ADDED - go to https://resend.com/domains and add it.`
     } else if (target.status === 'verified') {
-      summary = `${TARGET_DOMAIN}: VERIFIED — sending should work.`
+      summary = `${TARGET_DOMAIN}: VERIFIED - sending should work.`
     } else {
-      summary = `${TARGET_DOMAIN}: ${target.status?.toUpperCase() ?? 'UNKNOWN'} — DNS records missing or not yet propagated. Verification emails will be rejected until this clears.`
+      summary = `${TARGET_DOMAIN}: ${target.status?.toUpperCase() ?? 'UNKNOWN'} - DNS records missing or not yet propagated. Verification emails will be rejected until this clears.`
     }
 
     return NextResponse.json({

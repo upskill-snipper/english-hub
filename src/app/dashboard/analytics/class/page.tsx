@@ -53,7 +53,7 @@ interface ClassStats {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-// courseMap is built dynamically inside the component — see useMemo below
+// courseMap is built dynamically inside the component - see useMemo below
 
 function formatStudyTime(seconds: number): string {
   if (seconds < 60) return '<1m'
@@ -77,7 +77,7 @@ export default function ClassAnalyticsPage() {
 
   const courseMap = useMemo(
     () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
-    [allCourses]
+    [allCourses],
   )
 
   // Load course data dynamically
@@ -126,14 +126,8 @@ export default function ClassAnalyticsPage() {
 
         // Fetch all enrolments, progress for these students
         const [enrolRes, progressRes] = await Promise.all([
-          supabase
-            .from('enrolments')
-            .select('*')
-            .in('user_id', studentIds),
-          supabase
-            .from('module_progress')
-            .select('*')
-            .in('user_id', studentIds),
+          supabase.from('enrolments').select('*').in('user_id', studentIds),
+          supabase.from('module_progress').select('*').in('user_id', studentIds),
         ])
 
         const enrolments = enrolRes.data ?? []
@@ -155,21 +149,16 @@ export default function ClassAnalyticsPage() {
           const scores = studentProgress
             .filter((mp) => mp.quiz_score !== null)
             .map((mp) => mp.quiz_score as number)
-          const avgScore = scores.length > 0
-            ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-            : 0
+          const avgScore =
+            scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
 
-          const totalStudy = studentProgress.reduce(
-            (s, mp) => s + (mp.time_spent_seconds || 0),
-            0
-          )
+          const totalStudy = studentProgress.reduce((s, mp) => s + (mp.time_spent_seconds || 0), 0)
 
           const lastCompletedAt = studentProgress
             .filter((mp) => mp.completed_at)
             .map((mp) => new Date(mp.completed_at!).getTime())
-          const lastActive = lastCompletedAt.length > 0
-            ? new Date(Math.max(...lastCompletedAt)).toISOString()
-            : null
+          const lastActive =
+            lastCompletedAt.length > 0 ? new Date(Math.max(...lastCompletedAt)).toISOString() : null
 
           return {
             userId: p.id,
@@ -204,9 +193,7 @@ export default function ClassAnalyticsPage() {
     if (searchQuery) {
       const q = searchQuery.toLowerCase()
       result = result.filter(
-        (s) =>
-          s.fullName.toLowerCase().includes(q) ||
-          s.email.toLowerCase().includes(q)
+        (s) => s.fullName.toLowerCase().includes(q) || s.email.toLowerCase().includes(q),
       )
     }
 
@@ -248,13 +235,11 @@ export default function ClassAnalyticsPage() {
     return {
       totalStudents: students.length,
       avgModulesCompleted: Math.round(
-        students.reduce((s, st) => s + st.modulesCompleted, 0) / students.length
+        students.reduce((s, st) => s + st.modulesCompleted, 0) / students.length,
       ),
-      avgScore: Math.round(
-        students.reduce((s, st) => s + st.averageScore, 0) / students.length
-      ),
+      avgScore: Math.round(students.reduce((s, st) => s + st.averageScore, 0) / students.length),
       avgStudyTimeSeconds: Math.round(
-        students.reduce((s, st) => s + st.totalStudySeconds, 0) / students.length
+        students.reduce((s, st) => s + st.totalStudySeconds, 0) / students.length,
       ),
     }
   }, [students])
@@ -286,10 +271,7 @@ export default function ClassAnalyticsPage() {
       s.lastActive ? formatDate(s.lastActive) : 'N/A',
     ])
 
-    const csv = [
-      headers.join(','),
-      ...rows.map((r) => r.map((v) => `"${v}"`).join(',')),
-    ].join('\n')
+    const csv = [headers.join(','), ...rows.map((r) => r.map((v) => `"${v}"`).join(','))].join('\n')
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
     const url = URL.createObjectURL(blob)
@@ -339,7 +321,6 @@ export default function ClassAnalyticsPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-
         {/* ── Header ──────────────────────────────────────────────── */}
         <div className="mb-6 flex items-center justify-between animate-fade-in">
           <div className="flex items-center gap-3">
@@ -349,9 +330,7 @@ export default function ClassAnalyticsPage() {
             </Button>
             <Separator orientation="vertical" className="h-6" />
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-foreground">
-                Class Overview
-              </h1>
+              <h1 className="text-2xl font-bold tracking-tight text-foreground">Class Overview</h1>
               <p className="text-sm text-muted-foreground">
                 Student progress summaries and class performance
               </p>
@@ -510,9 +489,7 @@ export default function ClassAnalyticsPage() {
               <div className="py-12 text-center text-muted-foreground">
                 <Users className="mx-auto mb-2 h-8 w-8 opacity-50" />
                 <p className="text-sm">
-                  {searchQuery
-                    ? 'No students match your search.'
-                    : 'No student data available.'}
+                  {searchQuery ? 'No students match your search.' : 'No student data available.'}
                 </p>
               </div>
             ) : (
@@ -558,9 +535,7 @@ export default function ClassAnalyticsPage() {
                     {filteredStudents.map((student) => {
                       const completionPct =
                         student.totalModules > 0
-                          ? Math.round(
-                              (student.modulesCompleted / student.totalModules) * 100
-                            )
+                          ? Math.round((student.modulesCompleted / student.totalModules) * 100)
                           : 0
 
                       return (
@@ -587,7 +562,8 @@ export default function ClassAnalyticsPage() {
                               size="sm"
                             />
                             <p className="mt-0.5 text-[11px] text-muted-foreground">
-                              {student.modulesCompleted}/{student.totalModules} modules ({completionPct}%)
+                              {student.modulesCompleted}/{student.totalModules} modules (
+                              {completionPct}%)
                             </p>
                           </div>
 
@@ -603,7 +579,7 @@ export default function ClassAnalyticsPage() {
                                   'bg-amber-500/10 text-clay-600',
                                 student.averageScore > 0 &&
                                   student.averageScore < 50 &&
-                                  'bg-red-500/10 text-red-400'
+                                  'bg-red-500/10 text-red-400',
                               )}
                             >
                               {student.averageScore > 0 ? `${student.averageScore}%` : '--'}
@@ -617,9 +593,7 @@ export default function ClassAnalyticsPage() {
 
                           {/* Last Active */}
                           <div className="w-24 text-right text-xs text-muted-foreground">
-                            {student.lastActive
-                              ? formatDate(student.lastActive)
-                              : 'Never'}
+                            {student.lastActive ? formatDate(student.lastActive) : 'Never'}
                           </div>
                         </div>
                       )
@@ -642,8 +616,7 @@ export default function ClassAnalyticsPage() {
                       max={
                         students.length > 0
                           ? Math.round(
-                              students.reduce((s, st) => s + st.totalModules, 0) /
-                                students.length
+                              students.reduce((s, st) => s + st.totalModules, 0) / students.length,
                             )
                           : 1
                       }

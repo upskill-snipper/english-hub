@@ -49,9 +49,9 @@ interface StoredResult {
 
 const FALLBACK: StoredResult = {
   id: 'sample',
-  title: 'Sample — Macbeth ambition',
+  title: 'Sample - Macbeth ambition',
   board: 'AQA',
-  paper: 'English Literature — Paper 1',
+  paper: 'English Literature - Paper 1',
   question: 'How does Shakespeare present ambition in Macbeth?',
   wordCount: 612,
   grade: 7,
@@ -84,7 +84,7 @@ const FALLBACK: StoredResult = {
     },
   ],
   essay:
-    "Shakespeare presents ambition in Macbeth as a destructive and corrupting force that ultimately leads to the downfall of those who pursue it without moral restraint. From the outset, Macbeth is described as 'brave Macbeth', a loyal soldier whose reputation is built on heroism. However, once the witches plant the seed of prophecy, his 'vaulting ambition' quickly overwhelms his better judgement.\n\nShakespeare uses the metaphor of 'vaulting ambition, which o'erleaps itself' to suggest that ambition, when unchecked, becomes self-defeating. The equestrian imagery implies a rider attempting to mount a horse with too much force, only to fall on the other side. This foreshadows Macbeth's eventual downfall and positions ambition as inherently dangerous when divorced from virtue.\n\nContextually, a Jacobean audience would have read Macbeth's ambition through the lens of the divine right of kings. Regicide was not just treason but a sin against God's order. Shakespeare, writing during the reign of James I—himself the target of the Gunpowder Plot—deliberately uses Macbeth to reinforce the idea that usurping a divinely-appointed monarch leads to chaos and damnation.\n\nBy the end of the play, Macbeth's ambition has hollowed him out. His famous 'tomorrow and tomorrow and tomorrow' soliloquy reveals a man whose pursuit of power has robbed life of meaning. The repetition mirrors the monotony of a life devoid of purpose, and the metaphor of the 'walking shadow' reduces his existence to something insubstantial. Shakespeare thus uses Macbeth's tragic arc to warn that unrestrained ambition does not elevate—it erodes.",
+    "Shakespeare presents ambition in Macbeth as a destructive and corrupting force that ultimately leads to the downfall of those who pursue it without moral restraint. From the outset, Macbeth is described as 'brave Macbeth', a loyal soldier whose reputation is built on heroism. However, once the witches plant the seed of prophecy, his 'vaulting ambition' quickly overwhelms his better judgement.\n\nShakespeare uses the metaphor of 'vaulting ambition, which o'erleaps itself' to suggest that ambition, when unchecked, becomes self-defeating. The equestrian imagery implies a rider attempting to mount a horse with too much force, only to fall on the other side. This foreshadows Macbeth's eventual downfall and positions ambition as inherently dangerous when divorced from virtue.\n\nContextually, a Jacobean audience would have read Macbeth's ambition through the lens of the divine right of kings. Regicide was not just treason but a sin against God's order. Shakespeare, writing during the reign of James I-himself the target of the Gunpowder Plot-deliberately uses Macbeth to reinforce the idea that usurping a divinely-appointed monarch leads to chaos and damnation.\n\nBy the end of the play, Macbeth's ambition has hollowed him out. His famous 'tomorrow and tomorrow and tomorrow' soliloquy reveals a man whose pursuit of power has robbed life of meaning. The repetition mirrors the monotony of a life devoid of purpose, and the metaphor of the 'walking shadow' reduces his existence to something insubstantial. Shakespeare thus uses Macbeth's tragic arc to warn that unrestrained ambition does not elevate-it erodes.",
 }
 
 // Fallback feedback for legacy entries that don't have AI feedback stored
@@ -99,7 +99,7 @@ const FALLBACK_IMPROVEMENTS = [
   'Maintain consistent formality in phrasing',
 ]
 const FALLBACK_NEXT_STEPS = [
-  'Develop conceptualised arguments — show the marker what the writer is DOING',
+  'Develop conceptualised arguments - show the marker what the writer is DOING',
   'Integrate methods analysis at word/phrase level, not just metaphor-level',
   "Link context to the writer's intention, not just background facts",
 ]
@@ -330,7 +330,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
           const list: StoredResult[] = JSON.parse(raw)
           const found = list.find((e) => e.id === id)
           // A server-backed stub (no AI fields yet) must NOT short-circuit to
-          // a localStorage render — the server is the source of truth there.
+          // a localStorage render - the server is the source of truth there.
           if (found && !(found as { serverBacked?: boolean }).serverBacked) {
             setResult(found)
             setLoaded(true)
@@ -385,7 +385,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
           }
         }
       } catch {
-        /* network/parse error — fall back to the legacy path below */
+        /* network/parse error - fall back to the legacy path below */
       }
       resolveFromLocalStorage()
     }
@@ -485,11 +485,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         </p>
       </header>
 
-      {/* Accurate AI-result disclosure (EU AI Act Art 13/50) — this is a
+      {/* Accurate AI-result disclosure (EU AI Act Art 13/50) - this is a
           predicted, AI-generated, non-human-reviewed grade. */}
       <AiMarkingNotice className="mb-6" />
 
-      {/* Listen to feedback — free browser read-aloud (helpful for EAL learners). */}
+      {/* Listen to feedback - free browser read-aloud (helpful for EAL learners). */}
       <div className="mb-6 flex justify-end">
         <ReadAloudButton text={feedbackToRead} label="Listen to feedback" lang="en-GB" />
       </div>

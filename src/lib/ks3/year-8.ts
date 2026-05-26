@@ -1,5 +1,5 @@
 /**
- * Year 8 — Development.
+ * Year 8 - Development.
  *
  * Set text in T1: *A Monster Calls* by Patrick Ness. Builds on Y7's
  * "This shows…" toward Y8's "This suggests… because…", and from
@@ -15,7 +15,7 @@ import type { Year } from './types'
 // Helper: build a compact lesson given focus + skills + brief description.
 // Cuts repetition; the page renders all five fields, but for compact
 // data we share boilerplate via a builder. Optional `_ar` siblings carry
-// the Arabic variant — when absent the renderer falls back to `en`.
+// the Arabic variant - when absent the renderer falls back to `en`.
 type Quick = {
   focus: import('./types').LessonFocus
   skills: string[]
@@ -36,9 +36,9 @@ const lesson = (q: Quick): import('./types').Lesson => ({
 
 const Y8_T1: Year['terms'][number] = {
   number: 1,
-  label: { en: 'Term 1 — Autumn', ar: 'الفصل الدراسي الأول — الخريف' },
+  label: { en: 'Term 1 - Autumn', ar: 'الفصل الدراسي الأول - الخريف' },
   overview: {
-    en: "Year 8 opens with Patrick Ness's *A Monster Calls*. The yew-tree monster tells three nested stories where surface meaning and true meaning diverge, forcing readers to hold multiple inferences simultaneously. The novel structurally builds comparison (between Conor's waking life and the monster's tales, between what Conor says and what he means, between the three tales themselves) — making comparison a feature of the text rather than an add-on. Thematically (grief, anger, guilt, isolation) it matches Y8 emotional maturity while remaining age-appropriate.",
+    en: "Year 8 opens with Patrick Ness's *A Monster Calls*. The yew-tree monster tells three nested stories where surface meaning and true meaning diverge, forcing readers to hold multiple inferences simultaneously. The novel structurally builds comparison (between Conor's waking life and the monster's tales, between what Conor says and what he means, between the three tales themselves) - making comparison a feature of the text rather than an add-on. Thematically (grief, anger, guilt, isolation) it matches Y8 emotional maturity while remaining age-appropriate.",
     ar: 'تبدأ السنة الثامنة برواية *A Monster Calls* لباتريك نيس. يروي الوحش الذي يأتي من شجرة الطقسوس ثلاث قصص متداخلة يفترق فيها المعنى الظاهر عن المعنى الحقيقي، ممّا يدفع القرّاء إلى التمسّك باستنتاجات متعدّدة في الوقت ذاته.',
   },
   setText: { en: 'A Monster Calls by Patrick Ness', ar: 'A Monster Calls لباتريك نيس' },
@@ -52,14 +52,14 @@ const Y8_T1: Year['terms'][number] = {
   halfTerms: [
     {
       id: '1.1',
-      label: { en: 'Term 1.1 — First half', ar: 'الفصل 1.1 — النصف الأول' },
+      label: { en: 'Term 1.1 - First half', ar: 'الفصل 1.1 - النصف الأول' },
       assessment: {
-        en: 'Google-Form reading quiz (Chapters 1–20) + two-paragraph comparative response: "How does Ness present Conor at the start and end of the novel?" (240–300 words, 25 mins + 5-minute edit).',
+        en: 'Google-Form reading quiz (Chapters 1-20) + two-paragraph comparative response: "How does Ness present Conor at the start and end of the novel?" (240-300 words, 25 mins + 5-minute edit).',
       },
       weeks: [
         {
           number: 2,
-          pages: 'Ch. 1, pp. 1–14',
+          pages: 'Ch. 1, pp. 1-14',
           keyVocabulary: [
             { en: 'nightmare', ar: 'كابوس' },
             { en: 'yew', ar: 'شجرة الطقسوس' },
@@ -68,8 +68,8 @@ const Y8_T1: Year['terms'][number] = {
             { en: 'summoned', ar: 'مُستدعى' },
           ],
           contextNote: {
-            en: 'The monster arrives — Ness withholds information.',
-            ar: 'الوحش يصل — ونيس يُخفي عن القارئ بعض المعلومات.',
+            en: 'The monster arrives - Ness withholds information.',
+            ar: 'الوحش يصل - ونيس يُخفي عن القارئ بعض المعلومات.',
           },
           lessons: [
             lesson({
@@ -77,7 +77,7 @@ const Y8_T1: Year['terms'][number] = {
               skills: ['8R.1', '8R.7'],
               do: 'Teacher reads pp. 1-8; class echo-reads "The monster showed up just after midnight. As they do." Annotate three places where Ness withholds information.',
               do_ar:
-                'يقرأ المعلّم الصفحات 1–8، ويُردِّد الطلاب جملة "The monster showed up just after midnight. As they do." ثم يُؤشِّر الطلاب على ثلاثة مواضع يُخفي فيها نيس معلومات.',
+                'يقرأ المعلّم الصفحات 1-8، ويُردِّد الطلاب جملة "The monster showed up just after midnight. As they do." ثم يُؤشِّر الطلاب على ثلاثة مواضع يُخفي فيها نيس معلومات.',
               task: 'Highlight one explicit detail and one implicit detail on a printed extract.',
               task_ar: 'ظلِّل تفصيلًا صريحًا واحدًا وتفصيلًا ضمنيًا واحدًا على مقتطف مطبوع.',
               success:
@@ -90,7 +90,7 @@ const Y8_T1: Year['terms'][number] = {
               skills: ['8R.2', '8R.3', '8SL.1'],
               do: 'Read pp. 9-14. Discuss in pairs using stems: "I think Conor feels… because…" / "Building on that, I\'d add…"',
               do_ar:
-                'اقرأ الصفحات 9–14، ثم ناقش مع زميلك مستخدِمًا الصِّيغتين: «أعتقد أنّ كونور يشعر بـ… لأنّ…» و«بناءً على ذلك، أُضيف…».',
+                'اقرأ الصفحات 9-14، ثم ناقش مع زميلك مستخدِمًا الصِّيغتين: «أعتقد أنّ كونور يشعر بـ… لأنّ…» و«بناءً على ذلك، أُضيف…».',
               task: "Select two embedded quotations (max 5 words) about Conor's nightmare; one inference each.",
               task_ar:
                 'اختر اقتباسَين مُدمجَين (بحدٍّ أقصى 5 كلمات لكلّ اقتباس) حول كابوس كونور، مع استنتاج واحد لكلّ منهما.',
@@ -118,7 +118,7 @@ const Y8_T1: Year['terms'][number] = {
               do_ar: 'اكتب فقرة مُسنَدة بإطار بدايات الجمل حول وصول الوحش.',
               task: 'Paragraph (80-100 words) with one embedded quotation and "This suggests… because…".',
               task_ar:
-                'فقرة (80–100 كلمة) تتضمّن اقتباسًا مُدمجًا واحدًا وعبارة «يدلّ هذا على… لأنّ…».',
+                'فقرة (80-100 كلمة) تتضمّن اقتباسًا مُدمجًا واحدًا وعبارة «يدلّ هذا على… لأنّ…».',
               success:
                 'Quote embedded; one inference developed with "because"; subject terminology used once.',
               success_ar:
@@ -128,9 +128,9 @@ const Y8_T1: Year['terms'][number] = {
               focus: 'independent-outcome',
               skills: ['8R.3', '8W.2', '8W.3'],
               do: 'Independent paragraph (100-120 words, no scaffold).',
-              do_ar: 'فقرة مستقلّة (100–120 كلمة) دون أيّ دعم.',
+              do_ar: 'فقرة مستقلّة (100-120 كلمة) دون أيّ دعم.',
               task: 'How does Ness make the monster seem frightening on pp. 1-14?',
-              task_ar: 'كيف يجعل نيس الوحشَ مخيفًا في الصفحات 1–14؟',
+              task_ar: 'كيف يجعل نيس الوحشَ مخيفًا في الصفحات 1-14؟',
               success:
                 'Embedded quote; "This suggests… because…" used accurately; full stops and capitals correct.',
               success_ar:
@@ -140,7 +140,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 3,
-          pages: 'Ch. 2–3, pp. 15–32',
+          pages: 'Ch. 2-3, pp. 15-32',
           keyVocabulary: [
             { en: 'treatment', ar: 'علاج' },
             { en: 'fragile', ar: 'هشّ' },
@@ -149,8 +149,8 @@ const Y8_T1: Year['terms'][number] = {
             { en: 'exhausted', ar: 'مُنهَك' },
           ],
           contextNote: {
-            en: "Conor's mum — short sentences signal exhaustion.",
-            ar: 'والدة كونور — الجمل القصيرة تُشير إلى الإنهاك.',
+            en: "Conor's mum - short sentences signal exhaustion.",
+            ar: 'والدة كونور - الجمل القصيرة تُشير إلى الإنهاك.',
           },
           lessons: [
             lesson({
@@ -211,7 +211,7 @@ const Y8_T1: Year['terms'][number] = {
         // Lesson detail expandable by the lesson_planner agent.
         {
           number: 4,
-          pages: 'Ch. 4–6, pp. 33–58',
+          pages: 'Ch. 4-6, pp. 33-58',
           keyVocabulary: [
             { en: 'prince', ar: 'أمير' },
             { en: 'queen', ar: 'ملكة' },
@@ -220,8 +220,8 @@ const Y8_T1: Year['terms'][number] = {
             { en: 'justice', ar: 'عدالة' },
           ],
           contextNote: {
-            en: 'First tale begins — story-within-story; ambiguous endings.',
-            ar: 'تبدأ القصّة الأولى — حكاية داخل الحكاية، ونهايات غامضة.',
+            en: 'First tale begins - story-within-story; ambiguous endings.',
+            ar: 'تبدأ القصّة الأولى - حكاية داخل الحكاية، ونهايات غامضة.',
           },
           lessons: [
             lesson({
@@ -283,7 +283,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 5,
-          pages: 'Ch. 7–9, pp. 59–82',
+          pages: 'Ch. 7-9, pp. 59-82',
           keyVocabulary: [
             { en: 'invisible', ar: 'غير مرئي' },
             { en: 'bully', ar: 'متنمِّر' },
@@ -292,8 +292,8 @@ const Y8_T1: Year['terms'][number] = {
             { en: 'isolation', ar: 'عزلة' },
           ],
           contextNote: {
-            en: 'Harry as bully — what is said vs what is meant.',
-            ar: 'هاري بوصفه متنمِّرًا — ما يُقال مقابل ما يُقصَد.',
+            en: 'Harry as bully - what is said vs what is meant.',
+            ar: 'هاري بوصفه متنمِّرًا - ما يُقال مقابل ما يُقصَد.',
           },
           lessons: [
             lesson({
@@ -344,7 +344,7 @@ const Y8_T1: Year['terms'][number] = {
               do: 'Independent 140-word paragraph.',
               do_ar: 'فقرة مستقلّة من 140 كلمة.',
               task: 'How does Ness present Harry as a threat in Ch. 7-9?',
-              task_ar: 'كيف يُقدِّم نيس شخصية هاري بوصفها تهديدًا في الفصول 7–9؟',
+              task_ar: 'كيف يُقدِّم نيس شخصية هاري بوصفها تهديدًا في الفصول 7-9؟',
               success: 'Embedded quote; three inferences; terminology used accurately.',
               success_ar: 'اقتباس مُدمج؛ ثلاثة استنتاجات؛ مصطلحات أدبية مستخدَمة بدقّة.',
             }),
@@ -352,7 +352,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 6,
-          pages: 'Ch. 10–12, pp. 83–108',
+          pages: 'Ch. 10-12, pp. 83-108',
           keyVocabulary: [
             { en: 'stern', ar: 'صارم' },
             { en: 'brittle', ar: 'هشّ' },
@@ -361,8 +361,8 @@ const Y8_T1: Year['terms'][number] = {
             { en: 'control', ar: 'سيطرة' },
           ],
           contextNote: {
-            en: 'Grandma — cold or grieving? Holding two readings.',
-            ar: 'الجدّة — هل هي باردة المشاعر أم في حالة حزن؟ التمسُّك بقراءتَين.',
+            en: 'Grandma - cold or grieving? Holding two readings.',
+            ar: 'الجدّة - هل هي باردة المشاعر أم في حالة حزن؟ التمسُّك بقراءتَين.',
           },
           lessons: [
             lesson({
@@ -421,7 +421,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 7,
-          pages: 'Ch. 13–14, pp. 109–126',
+          pages: 'Ch. 13-14, pp. 109-126',
           keyVocabulary: [
             { en: 'contrast', ar: 'تباين' },
             { en: 'parallel', ar: 'تقابُل' },
@@ -494,15 +494,15 @@ const Y8_T1: Year['terms'][number] = {
     },
     {
       id: '1.2',
-      label: { en: 'Term 1.2 — Second half', ar: 'الفصل 1.2 — النصف الثاني' },
+      label: { en: 'Term 1.2 - Second half', ar: 'الفصل 1.2 - النصف الثاني' },
       assessment: {
-        en: "Term 1.2 formal assessment — analytical essay on Conor's arc across the novel.",
+        en: "Term 1.2 formal assessment - analytical essay on Conor's arc across the novel.",
       },
       weeks: [
         // Compact: weeks 8-13 scaffold for the lesson_planner agent to expand
         {
           number: 8,
-          pages: 'Ch. 15–17, pp. 127–150',
+          pages: 'Ch. 15-17, pp. 127-150',
           keyVocabulary: [
             { en: 'apothecary', ar: 'صيدلانيّ تقليديّ' },
             { en: 'parson', ar: 'كاهن' },
@@ -568,7 +568,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 9,
-          pages: 'Ch. 18–20, pp. 151–176',
+          pages: 'Ch. 18-20, pp. 151-176',
           keyVocabulary: [
             { en: 'abyss', ar: 'هاوية' },
             { en: 'grip', ar: 'قبضة' },
@@ -631,7 +631,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 10,
-          pages: 'Ch. 21–23, pp. 177–200',
+          pages: 'Ch. 21-23, pp. 177-200',
           keyVocabulary: [
             { en: 'estranged', ar: 'مُتباعِد' },
             { en: 'perspective', ar: 'منظور' },
@@ -676,7 +676,7 @@ const Y8_T1: Year['terms'][number] = {
               do: 'Write Lily diary entry (150 words).',
               do_ar: 'اكتب مدخلًا من يوميات ليلي (150 كلمة).',
               task: 'First-person diary referencing two events from Ch. 21-23.',
-              task_ar: 'يوميات بضمير المتكلِّم تُشير إلى حدثَين من الفصول 21–23.',
+              task_ar: 'يوميات بضمير المتكلِّم تُشير إلى حدثَين من الفصول 21-23.',
               success: 'Voice consistent; two textual references; tone matches Lily.',
               success_ar: 'اتِّساق الصوت؛ إشارتان نصِّيتان؛ نبرة تُطابِق ليلي.',
             }),
@@ -694,7 +694,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 11,
-          pages: 'Ch. 24–26, pp. 201–224',
+          pages: 'Ch. 24-26, pp. 201-224',
           keyVocabulary: [
             { en: 'invisibility', ar: 'الاحتجاب' },
             { en: 'presence', ar: 'الحضور' },
@@ -759,7 +759,7 @@ const Y8_T1: Year['terms'][number] = {
         },
         {
           number: 12,
-          pages: 'Ch. 27–29, pp. 225–248',
+          pages: 'Ch. 27-29, pp. 225-248',
           keyVocabulary: [
             { en: 'truth' },
             { en: 'release' },
@@ -843,7 +843,7 @@ const Y8_T1: Year['terms'][number] = {
               focus: 'assessment',
               skills: ['8R.1', '8R.3', '8R.7'],
               do: 'Google-Form reading quiz (20 questions, 25 mins).',
-              task: 'T1.2 Reading Quiz — auto-marked.',
+              task: 'T1.2 Reading Quiz - auto-marked.',
               success: 'Target 14/20; stretch 17/20.',
             }),
             lesson({
@@ -863,7 +863,7 @@ const Y8_T1: Year['terms'][number] = {
 
 const Y8_T2: Year['terms'][number] = {
   number: 2,
-  label: { en: 'Term 2 — Power and Protest', ar: 'الفصل الدراسي الثاني — السلطة والاحتجاج' },
+  label: { en: 'Term 2 - Power and Protest', ar: 'الفصل الدراسي الثاني - السلطة والاحتجاج' },
   overview: {
     en: 'Speeches and rhetoric unit (Sojourner Truth, Churchill, MLK, Malala, Thunberg) + protest poetry (Blake "London", Shelley "Ozymandias", Agard "Checking Out Me History", Maya Angelou "Still I Rise"). Students learn rhetorical methods (tricolon, anaphora, ethos/pathos/logos) and USE them in their own writing.',
     ar: 'وحدة الخطابة والبلاغة (سوجورنر تروث، تشرشل، مارتن لوثر كنغ، ملالا، ثونبرغ) إلى جانب شعر الاحتجاج (بليك «London»، شيلي «Ozymandias»، أغارد «Checking Out Me History»، مايا أنجلو «Still I Rise»). يتعلّم الطلاب الأساليب البلاغية (الثلاثيّ، التكرار الاستهلالي، الإيتوس/الباثوس/اللوغوس)، ويُوظِّفونها فعليًا في كتابتهم.',
@@ -912,9 +912,9 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.1', '8R.7'],
               do: 'Read speech aloud; mark every rhetorical question.',
               do_ar: 'اقرأ الخطبة بصوت مسموع، وأشِّر على كلّ سؤال بلاغي فيها.',
-              task: 'Annotate the refrain "Ain\'t I a woman?" — count uses, label effect.',
+              task: 'Annotate the refrain "Ain\'t I a woman?" - count uses, label effect.',
               task_ar:
-                "دوِّن ملاحظاتك على اللازمة «Ain't I a woman?» — أحصِ مرّات ورودها وبيِّن أثرها.",
+                "دوِّن ملاحظاتك على اللازمة «Ain't I a woman?» - أحصِ مرّات ورودها وبيِّن أثرها.",
               success: 'Identifies 4 uses of the refrain and names the technique.',
               success_ar: 'أن يحدِّد الطالب 4 مرّات لورود اللازمة وأن يُسمِّي الأسلوب.',
             }),
@@ -942,8 +942,8 @@ const Y8_T2: Year['terms'][number] = {
             lesson({
               focus: 'application',
               skills: ['8R.4', '8R.7', '8W.7'],
-              do: 'Compare rhetorical Q with statement — what changes?',
-              do_ar: 'قارِن بين السؤال البلاغي والجملة الخبرية — ما الذي يتغيّر؟',
+              do: 'Compare rhetorical Q with statement - what changes?',
+              do_ar: 'قارِن بين السؤال البلاغي والجملة الخبرية - ما الذي يتغيّر؟',
               task: "Rewrite one of Truth's questions as a statement; analyse loss of impact.",
               task_ar: 'أعِد كتابة أحد أسئلة تروث بصيغة جملة خبرية، ثم حلِّل ما يفقده من أثر.',
               success: 'Explains why questions force the audience to answer mentally.',
@@ -1058,7 +1058,7 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.3', '8R.4', '8SL.2'],
               do: 'Discuss: why "dream" not "plan"?',
               do_ar: 'ناقش: لِمَ «حُلم» وليس «خطّة»؟',
-              task: 'Talk in threes — what does the metaphor offer the audience?',
+              task: 'Talk in threes - what does the metaphor offer the audience?',
               task_ar: 'نقاش ثلاثيّ: ما الذي تُقدِّمه الاستعارة للجمهور؟',
               success: 'Articulates that "dream" frames change as inevitable/hopeful.',
               success_ar:
@@ -1126,7 +1126,7 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.3', '8R.4', '8SL.1'],
               do: 'Discuss: why open with personal anecdote?',
               do_ar: 'ناقش: لِمَ تستهلّ بحكاية شخصية؟',
-              task: 'Pair talk — does shared experience build trust?',
+              task: 'Pair talk - does shared experience build trust?',
               task_ar: 'نقاش ثنائي: هل تبني التجربة المشتركة الثقة؟',
               success: 'Connects anecdote to ethos and authority.',
               success_ar: 'أن يربط الطالب الحكاية الشخصية بالإيتوس والمصداقية.',
@@ -1146,7 +1146,7 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.4', '8W.7', '8SL.2'],
               do: 'Examine her closing call to action.',
               do_ar: 'تأمّل دعوتها إلى الفعل في الخاتمة.',
-              task: 'Identify imperatives; rewrite one as a question — compare.',
+              task: 'Identify imperatives; rewrite one as a question - compare.',
               task_ar: 'حدِّد صيغ الأمر، وأعِد كتابة واحدة منها سؤالًا، ثم قارِن.',
               success: 'Explains why imperatives feel urgent.',
               success_ar: 'أن يُوضِّح الطالب لِمَ توحي صِيَغ الأمر بالإلحاح.',
@@ -1203,7 +1203,7 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.2', '8R.4', '8W.2'],
               do: 'Model paragraph: anger as a deliberate rhetorical device.',
               do_ar: 'قدِّم نموذجَ فقرة: الغضب بوصفه أداةً بلاغية متعمَّدة.',
-              task: 'Analyse "How dare you" — repetition and tone.',
+              task: 'Analyse "How dare you" - repetition and tone.',
               task_ar: 'حلِّل عبارة «How dare you» من حيث التكرار والنبرة.',
               success: 'Tone named; effect on listener explained.',
               success_ar: 'تسمية النبرة، وتوضيح الأثر في المستمع.',
@@ -1211,8 +1211,8 @@ const Y8_T2: Year['terms'][number] = {
             lesson({
               focus: 'application',
               skills: ['8R.4', '8R.7', '8W.7'],
-              do: 'Examine fact stacking — why list data?',
-              do_ar: 'تأمّل تكديس الحقائق — لِمَ تُعدَّد البيانات؟',
+              do: 'Examine fact stacking - why list data?',
+              do_ar: 'تأمّل تكديس الحقائق - لِمَ تُعدَّد البيانات؟',
               task: 'Two sentences on cumulative effect of statistics.',
               task_ar: 'جملتان عن الأثر التراكمي للإحصاءات.',
               success: 'Connects facts to credibility/urgency.',
@@ -1232,7 +1232,7 @@ const Y8_T2: Year['terms'][number] = {
         },
         {
           number: 7,
-          pages: 'HT1 Assessment — comparative analytical response',
+          pages: 'HT1 Assessment - comparative analytical response',
           keyVocabulary: [
             { en: 'compare', ar: 'يُقارن' },
             { en: 'contrast', ar: 'يُغايِر' },
@@ -1327,7 +1327,7 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.1', '8R.7'],
               do: 'Read aloud; mark every repeated word.',
               do_ar: 'اقرأ بصوت مسموع، وأشِّر على كلّ كلمة مكرَّرة.',
-              task: 'Highlight "every" — count uses; annotate "chartered".',
+              task: 'Highlight "every" - count uses; annotate "chartered".',
               task_ar: 'ظلِّل كلمة «every» وأحصِ مرّات ورودها، ودوِّن ملاحظات على «chartered».',
               success: 'Lists 4 uses of "every"; defines "chartered".',
               success_ar: 'سرد 4 مرّات لورود «every»، وتعريف «chartered».',
@@ -1404,7 +1404,7 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.3', '8R.4', '8SL.1'],
               do: 'Discuss: why hide Ozymandias behind two narrators?',
               do_ar: 'ناقش: لِمَ يُخفي شيلي أوزيمانديوس خلف راويَين؟',
-              task: 'Pair-talk — what does distance do to his authority?',
+              task: 'Pair-talk - what does distance do to his authority?',
               task_ar: 'نقاش ثنائي: ماذا يفعل البُعد بسلطته؟',
               success: 'Frame undermines his claim to power.',
               success_ar: 'أن يُدرِك الطالب أنّ الإطار السرديّ يُقوِّض ادّعاءه للسلطة.',
@@ -1481,8 +1481,8 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.2', '8R.4', '8W.2'],
               do: "Model paragraph: Agard's use of direct address.",
               do_ar: 'قدِّم نموذجَ فقرة حول توظيف أغارد للخطاب المباشر.',
-              task: 'Analyse "Dem tell me" — who is "dem"?',
-              task_ar: 'حلِّل عبارة «Dem tell me» — مَن هم «dem»؟',
+              task: 'Analyse "Dem tell me" - who is "dem"?',
+              task_ar: 'حلِّل عبارة «Dem tell me» - مَن هم «dem»؟',
               success: 'Pronoun analysed for accusation and division.',
               success_ar: 'تحليل الضمير من حيث الاتّهام وإحداث الانقسام.',
             }),
@@ -1558,8 +1558,8 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8R.6', '8R.7', '8W.7'],
               do: "Compare Angelou's defiance with Truth's (Week 2).",
               do_ar: 'قارِن بين تحدّي أنجلو وتحدّي تروث (الأسبوع 2).',
-              task: '"Both speakers…" — write 2 comparative sentences.',
-              task_ar: '«كِلتا المتحدّثتَين…» — اكتب جملتَي مقارنة.',
+              task: '"Both speakers…" - write 2 comparative sentences.',
+              task_ar: '«كِلتا المتحدّثتَين…» - اكتب جملتَي مقارنة.',
               success: 'One similarity and one difference noted.',
               success_ar: 'رصد وجه شَبَه واحد ووجه اختلاف واحد.',
             }),
@@ -1593,7 +1593,7 @@ const Y8_T2: Year['terms'][number] = {
             lesson({
               focus: 'consolidation-reading',
               skills: ['8R.6', '8R.7'],
-              do: 'Re-skim techniques bank from Weeks 2–11.',
+              do: 'Re-skim techniques bank from Weeks 2-11.',
               do_ar: 'تصفَّح من جديد مجموعةَ الأساليب من الأسبوع 2 إلى 11.',
               task: 'Pick 4 techniques to use; note model speeches for each.',
               task_ar: 'اختر 4 أساليب لاستخدامها، ودوِّن خطبة نموذجية لكلّ منها.',
@@ -1615,8 +1615,8 @@ const Y8_T2: Year['terms'][number] = {
               skills: ['8W.1', '8W.2', '8W.7'],
               do: 'Model speech structure: hook, problem, solution, call.',
               do_ar: 'قدِّم نموذجَ بناء الخطبة: استهلال، مشكلة، حلّ، دعوة.',
-              task: 'Draft opening hook and thesis (50–80 words).',
-              task_ar: 'اكتب مسوّدة الاستهلال والفكرة الرئيسة (50–80 كلمة).',
+              task: 'Draft opening hook and thesis (50-80 words).',
+              task_ar: 'اكتب مسوّدة الاستهلال والفكرة الرئيسة (50-80 كلمة).',
               success: 'Hook grabs attention; thesis is one clear sentence.',
               success_ar: 'استهلال يجذب الانتباه، وفكرة رئيسة في جملة واحدة واضحة.',
             }),
@@ -1644,7 +1644,7 @@ const Y8_T2: Year['terms'][number] = {
         },
         {
           number: 13,
-          pages: 'HT2 Assessment — deliver your speech',
+          pages: 'HT2 Assessment - deliver your speech',
           keyVocabulary: [
             { en: 'pace', ar: 'وتيرة الإلقاء' },
             { en: 'volume', ar: 'قوّة الصوت' },
@@ -1660,7 +1660,7 @@ const Y8_T2: Year['terms'][number] = {
             lesson({
               focus: 'consolidation-reading',
               skills: ['8SL.2', '8SL.3'],
-              do: 'Model strong delivery — pace, pause, emphasis.',
+              do: 'Model strong delivery - pace, pause, emphasis.',
               do_ar: 'قدِّم نموذجًا لإلقاء قويّ من حيث الوتيرة والوقفات والتشديد.',
               task: 'Mark up your script for pauses and emphasis.',
               task_ar: 'دوِّن على نصّك مواضع الوقفات والتشديد.',
@@ -1716,14 +1716,14 @@ const Y8_T2: Year['terms'][number] = {
 
 const Y8_T3: Year['terms'][number] = {
   number: 3,
-  label: { en: 'Term 3 — Gothic and the Uncanny', ar: 'الفصل الدراسي الثالث — القوطية والغرابة' },
+  label: { en: 'Term 3 - Gothic and the Uncanny', ar: 'الفصل الدراسي الثالث - القوطية والغرابة' },
   overview: {
-    en: 'Gothic anthology — extracts from *Frankenstein*, *Jekyll and Hyde*, *Dracula*, Poe\'s "Tell-Tale Heart", modern Gothic (Susan Hill, Gaiman). Anchors: convention, setting as character, the doppelganger, pre-1914 prose stamina. Direct GCSE feeder.',
-    ar: 'مختارات قوطية — مقتطفات من *Frankenstein* و*Jekyll and Hyde* و*Dracula*، وقصة "Tell-Tale Heart" لبو، إضافة إلى أدب قوطي حديث (سوزان هيل، غايمن). المحاور الأساسية: التقاليد الأدبية، والمكان بوصفه شخصية، والقرين، والقدرة على قراءة نثر ما قبل 1914. تمهيد مباشر لمرحلة GCSE.',
+    en: 'Gothic anthology - extracts from *Frankenstein*, *Jekyll and Hyde*, *Dracula*, Poe\'s "Tell-Tale Heart", modern Gothic (Susan Hill, Gaiman). Anchors: convention, setting as character, the doppelganger, pre-1914 prose stamina. Direct GCSE feeder.',
+    ar: 'مختارات قوطية - مقتطفات من *Frankenstein* و*Jekyll and Hyde* و*Dracula*، وقصة "Tell-Tale Heart" لبو، إضافة إلى أدب قوطي حديث (سوزان هيل، غايمن). المحاور الأساسية: التقاليد الأدبية، والمكان بوصفه شخصية، والقرين، والقدرة على قراءة نثر ما قبل 1914. تمهيد مباشر لمرحلة GCSE.',
   },
   setText: {
-    en: 'Gothic anthology — extracts from Shelley, Stevenson, Stoker, Poe + modern Gothic',
-    ar: 'مختارات قوطية — مقتطفات من شيلي وستيفنسون وستوكر وبو، مع نصوص قوطية حديثة',
+    en: 'Gothic anthology - extracts from Shelley, Stevenson, Stoker, Poe + modern Gothic',
+    ar: 'مختارات قوطية - مقتطفات من شيلي وستيفنسون وستوكر وبو، مع نصوص قوطية حديثة',
   },
   vocabularyThemes: [
     { en: 'sublime, uncanny, transgression, hubris', ar: 'السامي، الغريب، التجاوز، الكبرياء' },
@@ -1814,7 +1814,7 @@ const Y8_T3: Year['terms'][number] = {
         },
         {
           number: 3,
-          pages: 'Frankenstein Chapter 5 — creation scene',
+          pages: 'Frankenstein Chapter 5 - creation scene',
           keyVocabulary: [
             { en: 'hubris', ar: 'الكبرياء / الغرور' },
             { en: 'horror', ar: 'الرعب' },
@@ -1840,7 +1840,7 @@ const Y8_T3: Year['terms'][number] = {
             lesson({
               focus: 'reading-discussion',
               skills: ['8R.3', '8R.4', '8SL.1'],
-              do: 'Discuss: hubris — why is reaching too far Gothic?',
+              do: 'Discuss: hubris - why is reaching too far Gothic?',
               do_ar: 'ناقشوا: لماذا يُعدّ تجاوز الحدود من سمات الأدب القوطي؟',
               task: "Pair-talk on Victor's ambition vs his reaction.",
               task_ar: 'حوار ثنائي يقارن طموح فيكتور بردّ فعله الفعلي.',
@@ -1881,7 +1881,7 @@ const Y8_T3: Year['terms'][number] = {
         },
         {
           number: 4,
-          pages: 'Stevenson, Jekyll and Hyde — the door scene',
+          pages: 'Stevenson, Jekyll and Hyde - the door scene',
           keyVocabulary: [
             { en: 'doppelganger', ar: 'القرين' },
             { en: 'duality', ar: 'الازدواجية' },
@@ -1948,7 +1948,7 @@ const Y8_T3: Year['terms'][number] = {
         },
         {
           number: 5,
-          pages: "Stoker, Dracula — Harker's journey to the castle",
+          pages: "Stoker, Dracula - Harker's journey to the castle",
           keyVocabulary: [
             { en: 'atmosphere', ar: 'الجو العام' },
             { en: 'foreigner', ar: 'الغريب / الأجنبيّ' },
@@ -2082,7 +2082,7 @@ const Y8_T3: Year['terms'][number] = {
         },
         {
           number: 7,
-          pages: 'HT1 Assessment — analytical essay on a Gothic extract',
+          pages: 'HT1 Assessment - analytical essay on a Gothic extract',
           keyVocabulary: [
             { en: 'analyse', ar: 'يحلِّل' },
             { en: 'convention', ar: 'تقليد أدبيّ' },
@@ -2159,7 +2159,7 @@ const Y8_T3: Year['terms'][number] = {
       weeks: [
         {
           number: 8,
-          pages: 'Building atmosphere — pathetic fallacy (modelling)',
+          pages: 'Building atmosphere - pathetic fallacy (modelling)',
           keyVocabulary: [
             { en: 'pathetic fallacy', ar: 'المغالطة العاطفية' },
             { en: 'mood', ar: 'الحالة المزاجية' },
@@ -2197,7 +2197,7 @@ const Y8_T3: Year['terms'][number] = {
               skills: ['8W.4', '8W.5', '8W.7'],
               do: 'Model a 50-word opening using pathetic fallacy.',
               do_ar: 'افتتاحية نموذجية من 50 كلمة تستخدم المغالطة العاطفية.',
-              task: 'Draft an opening — weather-led setting.',
+              task: 'Draft an opening - weather-led setting.',
               task_ar: 'اكتب مسوّدة افتتاحية يقودها وصفُ الطقس.',
               success: 'Three sensory details + named mood.',
               success_ar: 'ثلاث تفاصيل حسّية مع تسمية الحالة المزاجية.',
@@ -2293,7 +2293,7 @@ const Y8_T3: Year['terms'][number] = {
         },
         {
           number: 10,
-          pages: 'Structuring tension — pacing and withholding',
+          pages: 'Structuring tension - pacing and withholding',
           keyVocabulary: [
             { en: 'pacing', ar: 'ضبط الإيقاع' },
             { en: 'foreshadowing', ar: 'التمهيد / الإرهاص' },
@@ -2339,8 +2339,8 @@ const Y8_T3: Year['terms'][number] = {
             lesson({
               focus: 'application',
               skills: ['8W.4', '8W.7', '8W.10'],
-              do: 'Workshop foreshadowing — plant a clue.',
-              do_ar: 'ورشة عمل على التمهيد (الإرهاص) — ازرَع دليلًا مبكِّرًا.',
+              do: 'Workshop foreshadowing - plant a clue.',
+              do_ar: 'ورشة عمل على التمهيد (الإرهاص) - ازرَع دليلًا مبكِّرًا.',
               task: 'Add one foreshadowing detail to your draft.',
               task_ar: 'أضِف تفصيلًا تمهيديًا واحدًا إلى مسوّدتك.',
               success: 'Clue planted; pays off later.',
@@ -2473,8 +2473,8 @@ const Y8_T3: Year['terms'][number] = {
             lesson({
               focus: 'application',
               skills: ['8W.3', '8W.5', '8W.9'],
-              do: 'Workshop SPaG — punctuation for tension.',
-              do_ar: 'ورشة عمل على SPaG — توظيف الترقيم لخلق التوتّر.',
+              do: 'Workshop SPaG - punctuation for tension.',
+              do_ar: 'ورشة عمل على SPaG - توظيف الترقيم لخلق التوتّر.',
               task: 'Proofread story; correct 5+ SPaG errors.',
               task_ar: 'دقِّق القصّة وصحِّح 5 أخطاء فأكثر من أخطاء SPaG.',
               success: 'Errors logged; punctuation deliberate.',
@@ -2494,7 +2494,7 @@ const Y8_T3: Year['terms'][number] = {
         },
         {
           number: 13,
-          pages: 'HT2 Assessment — final Gothic short story (1500 words)',
+          pages: 'HT2 Assessment - final Gothic short story (1500 words)',
           keyVocabulary: [
             { en: 'final draft', ar: 'المسوّدة النهائية' },
             { en: 'assessment', ar: 'التقييم' },
@@ -2567,38 +2567,38 @@ const Y8_T3: Year['terms'][number] = {
 
 export const YEAR_8: Year = {
   number: 8,
-  name: { en: 'Year 8 — Development', ar: 'السنة الثامنة — التطوير' },
+  name: { en: 'Year 8 - Development', ar: 'السنة الثامنة - التطوير' },
   overview: {
     en: 'Year 8 deepens the analytical bar. Students move from Y7\'s "This shows…" to "This suggests… because…", from single inferences to multiple inferences per quote, from parallel character work to genuine comparative analysis. The year covers a contemporary novel (T1), rhetorical speeches + protest poetry (T2), and Gothic literature (T3).',
   },
   yearlyExpectations: {
     reading: [
-      { en: '8R.1 — Understand explicit and implicit meanings in increasingly challenging texts.' },
-      { en: '8R.2 — Select and embed relevant quotations.' },
-      { en: '8R.3 — Make clear, developed inferences using evidence.' },
-      { en: '8R.4 — Explain how writers use language and structure to shape meaning.' },
-      { en: '8R.5 — Explain effects using "This suggests… because…".' },
-      { en: '8R.6 — Explain similarities and differences across texts.' },
-      { en: '8R.7 — Use subject terminology with growing accuracy.' },
+      { en: '8R.1 - Understand explicit and implicit meanings in increasingly challenging texts.' },
+      { en: '8R.2 - Select and embed relevant quotations.' },
+      { en: '8R.3 - Make clear, developed inferences using evidence.' },
+      { en: '8R.4 - Explain how writers use language and structure to shape meaning.' },
+      { en: '8R.5 - Explain effects using "This suggests… because…".' },
+      { en: '8R.6 - Explain similarities and differences across texts.' },
+      { en: '8R.7 - Use subject terminology with growing accuracy.' },
     ],
     writing: [
-      { en: '8W.1 — Write for a range of purposes (argue, describe, narrate, explain).' },
-      { en: '8W.2 — Logically organised, coherent paragraphs.' },
-      { en: '8W.3 — Accurate punctuation and spelling.' },
-      { en: '8W.4 — Develop ideas with clear explanation and supporting detail.' },
-      { en: '8W.5 — Range of sentence structures deliberately for effect.' },
-      { en: '8W.6 — Write from different perspectives.' },
-      { en: '8W.7 — Use structure, imagery and tone deliberately.' },
+      { en: '8W.1 - Write for a range of purposes (argue, describe, narrate, explain).' },
+      { en: '8W.2 - Logically organised, coherent paragraphs.' },
+      { en: '8W.3 - Accurate punctuation and spelling.' },
+      { en: '8W.4 - Develop ideas with clear explanation and supporting detail.' },
+      { en: '8W.5 - Range of sentence structures deliberately for effect.' },
+      { en: '8W.6 - Write from different perspectives.' },
+      { en: '8W.7 - Use structure, imagery and tone deliberately.' },
     ],
     language: [
-      { en: '8W.8 — Standard English / formal vs informal register.' },
-      { en: '8W.9 — Edit and improve writing.' },
-      { en: '8W.10 — Adapt vocabulary and sentence structures for purpose and audience.' },
+      { en: '8W.8 - Standard English / formal vs informal register.' },
+      { en: '8W.9 - Edit and improve writing.' },
+      { en: '8W.10 - Adapt vocabulary and sentence structures for purpose and audience.' },
     ],
     speaking: [
-      { en: "8SL.1 — Build on others' ideas." },
-      { en: '8SL.2 — Speak clearly and confidently in range of contexts.' },
-      { en: '8SL.3 — Present ideas in a structured, organised way.' },
+      { en: "8SL.1 - Build on others' ideas." },
+      { en: '8SL.2 - Speak clearly and confidently in range of contexts.' },
+      { en: '8SL.3 - Present ideas in a structured, organised way.' },
     ],
   },
   rubric: [],

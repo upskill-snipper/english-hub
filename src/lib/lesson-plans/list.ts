@@ -206,7 +206,7 @@ export function getLessonPlan(slug: string): LessonPlan | null {
 }
 
 /**
- * Returns every available slug — used by `generateStaticParams`.
+ * Returns every available slug - used by `generateStaticParams`.
  */
 export function getLessonPlanSlugs(): string[] {
   return getAllLessonPlans().map((plan) => plan.slug)

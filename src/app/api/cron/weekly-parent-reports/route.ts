@@ -4,13 +4,13 @@
  * Runs every Sunday at 16:00 UTC (`0 16 * * 0`). For every active
  * parent-child link, it:
  *
- *   1. Skips the child if they are under 13 (belt-and-braces — the platform
+ *   1. Skips the child if they are under 13 (belt-and-braces - the platform
  *      already enforces ≥13 at registration).
  *   2. Skips if the child has `aiOptOut` or `profileVisibility = PRIVATE`
  *      (Children's Code §5 + §8).
  *   3. Pulls the child's essays and progress signals for the last 7 days.
  *   4. Calls the pure generator in `src/lib/parent-reports/generate.ts`.
- *   5. Persists the result to `WeeklyReport` — idempotent on
+ *   5. Persists the result to `WeeklyReport` - idempotent on
  *      `(studentId, weekStartsAt)` via a pre-check + unique-enough composite
  *      index (see prisma/schema.prisma `@@index([parentId, weekStarting])`).
  *   6. Sends a transactional email to the parent.
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     // ── Enumerate active parent-child links ─────────────────────────
     //
-    // We read from the canonical Prisma projection — `User.parentId` is the
+    // We read from the canonical Prisma projection - `User.parentId` is the
     // authoritative pointer; the Supabase `parent_child_links` row is the
     // operational mirror (see `src/app/api/parent/README.md`).
     const parentChildPairs = await prisma.user.findMany({
@@ -121,10 +121,8 @@ export async function POST(request: NextRequest): Promise<Response> {
         privacy: {
           aiOptOut: child.privacySettings?.aiOptOut ?? false,
           profileVisibility:
-            (child.privacySettings?.profileVisibility as
-              | 'PRIVATE'
-              | 'SCHOOL_ONLY'
-              | 'PUBLIC') ?? 'PRIVATE',
+            (child.privacySettings?.profileVisibility as 'PRIVATE' | 'SCHOOL_ONLY' | 'PUBLIC') ??
+            'PRIVATE',
         },
       }
 
@@ -194,7 +192,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       })
 
       // Derive streak + time-spent from essay timestamps. This is a
-      // conservative proxy — a dedicated Progress table is deferred
+      // conservative proxy - a dedicated Progress table is deferred
       // (see SHARED-CONTEXT.md; no `Progress` model exists yet).
       const progress: ReportProgress = computeProgress(
         essayRows.map((e) => e.createdAt),
@@ -227,7 +225,7 @@ export async function POST(request: NextRequest): Promise<Response> {
             essaysCompleted: payload.essaysCompleted,
             totalTimeSpent: payload.timeSpentMinutes,
             averageScore: payload.averageScore,
-            // `projectedGrade` is intentionally null — §8 minimisation.
+            // `projectedGrade` is intentionally null - §8 minimisation.
             projectedGrade: null,
             strengths: payload.strengths as unknown as object,
             weaknesses: payload.focusAreas as unknown as object,
@@ -238,7 +236,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         })
         generated++
       } catch (err) {
-        // Another cron replica may have just inserted the same row — treat
+        // Another cron replica may have just inserted the same row - treat
         // as benign idempotency and move on.
         console.warn('[weekly-parent-reports] persist failed (likely duplicate)', {
           studentId: child.id,
@@ -287,7 +285,7 @@ export async function POST(request: NextRequest): Promise<Response> {
 
 /**
  * Derive coarse progress signals from essay timestamps. Returns conservative
- * values — a dedicated progress table would be stronger, but this keeps the
+ * values - a dedicated progress table would be stronger, but this keeps the
  * report truthful without over-collecting.
  */
 function computeProgress(
@@ -338,15 +336,14 @@ function computeProgress(
 
 /**
  * Fire-and-forget push notification via the internal `/api/push/send` route.
- * Failures are swallowed (logged) — email remains the canonical channel.
+ * Failures are swallowed (logged) - email remains the canonical channel.
  */
 async function sendPushToParent(
   parentId: string,
   report: WeeklyReportPayload,
   cronSecret: string,
 ): Promise<boolean> {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://theenglishhub.app'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://theenglishhub.app'
   try {
     const res = await fetch(`${baseUrl}/api/push/send`, {
       method: 'POST',

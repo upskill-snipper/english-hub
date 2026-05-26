@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'A View from the Bridge Context — Edexcel IGCSE Literature',
+    title: 'A View from the Bridge Context - Edexcel IGCSE Literature',
     description:
       'Context for A View from the Bridge: 1950s Red Hook Brooklyn, Italian-American immigration, McCarthyism, Arthur Miller\u2019s background and Greek tragic form.',
   },
-  title: 'A View from the Bridge Context — Edexcel IGCSE Literature',
+  title: 'A View from the Bridge Context - Edexcel IGCSE Literature',
   description:
     'Context for A View from the Bridge: 1950s Red Hook Brooklyn, Italian-American immigration, McCarthyism, Arthur Miller\u2019s background and Greek tragic form.',
   alternates: {

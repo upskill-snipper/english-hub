@@ -25,7 +25,7 @@ interface Question {
 // Winter: Dec, Jan, Feb · Spring: Mar, Apr, May · Summer: Jun, Jul, Aug · Autumn: Sep, Oct, Nov
 
 const QUESTION_BANK: Question[] = [
-  // ── Subtype: order — put days/months in the right place ──────────────────────
+  // ── Subtype: order - put days/months in the right place ──────────────────────
   {
     subtype: 'order',
     prompt: 'Which day comes FIRST in the week (UK calendars often start here)?',
@@ -99,7 +99,7 @@ const QUESTION_BANK: Question[] = [
     answer: 'April',
   },
 
-  // ── Subtype: next-before — what comes after/before ───────────────────────────
+  // ── Subtype: next-before - what comes after/before ───────────────────────────
   {
     subtype: 'next-before',
     prompt: 'What day comes AFTER Wednesday?',
@@ -179,7 +179,7 @@ const QUESTION_BANK: Question[] = [
     answer: 'May',
   },
 
-  // ── Subtype: month-season — match a month to its season or number ─────────────
+  // ── Subtype: month-season - match a month to its season or number ─────────────
   {
     subtype: 'month-season',
     prompt: 'Which season is December in?',
@@ -279,7 +279,7 @@ const QUESTION_BANK: Question[] = [
     note: 'Northern-hemisphere seasons (UK) are assumed.',
   },
 
-  // ── Subtype: spelling-choice — choose the correctly spelt word ───────────────
+  // ── Subtype: spelling-choice - choose the correctly spelt word ───────────────
   {
     subtype: 'spelling-choice',
     prompt: 'Which is the correct spelling?',

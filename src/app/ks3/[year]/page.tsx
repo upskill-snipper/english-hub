@@ -27,9 +27,9 @@ function parseYear(yearParam: string): YearNumber | null {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { year } = await params
   const n = parseYear(year)
-  if (!n) return { title: 'KS3 — Year not found' }
+  if (!n) return { title: 'KS3 - Year not found' }
   const y = getYear(KS3, n)
-  if (!y) return { title: 'KS3 — Year not found' }
+  if (!y) return { title: 'KS3 - Year not found' }
   return {
     title: y.name.en,
     description: y.overview.en.slice(0, 160),
@@ -46,8 +46,8 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
 
   const tr = await Promise.all([
     t('ks3.key_stage_3'), // 0
-    t(`ks3.year_${n}`), // 1  — Year N label
-    t(`ks3.year_${n}_name`), // 2  — Year N name (Foundations/...)
+    t(`ks3.year_${n}`), // 1  - Year N label
+    t(`ks3.year_${n}_name`), // 2  - Year N name (Foundations/...)
     t('ks3.yearly_expectations'), // 3
     t('ks3.year.expected_intro'), // 4
     t('ks3.strand.reading'), // 5
@@ -92,7 +92,7 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
         <span>{tr[1]}</span>
       </p>
       <h1>
-        {tr[1]} — {tr[2]}
+        {tr[1]} - {tr[2]}
       </h1>
       <p className="lead">{y.overview.en}</p>
 
@@ -142,7 +142,7 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
       </div>
 
       <h2>
-        {tr[14]} — {tr[1]}
+        {tr[14]} - {tr[1]}
       </h2>
       <p>{tr[15]}</p>
       <div className="not-prose overflow-x-auto my-6">
@@ -167,7 +167,7 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
                   const cell = y.rubric.find((r) => r.strand === strand && r.level === level)
                   return (
                     <td key={level} className="text-muted-foreground text-xs">
-                      {cell?.descriptor.en ?? '—'}
+                      {cell?.descriptor.en ?? '-'}
                     </td>
                   )
                 })}

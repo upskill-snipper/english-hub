@@ -1,5 +1,5 @@
 /**
- * ORIGINAL PRACTICE PAPER 3 — theme: "The Natural World"
+ * ORIGINAL PRACTICE PAPER 3 - theme: "The Natural World"
  *
  * Modelled exactly on the Pearson Edexcel International Award in Lower
  * Secondary English achievement test LEH11/01 (structure only). EVERY
@@ -10,7 +10,7 @@
  * well-known, verifiable biology (Text 1) or a clearly fictional,
  * invented conservation scenario (Text 2). Text 3 is original fiction.
  *
- * Qualification facts, AO codes and mark grids are NOT restated here —
+ * Qualification facts, AO codes and mark grids are NOT restated here -
  * the consumer page imports them from '@/lib/ilowersecondary/spec'.
  */
 
@@ -106,13 +106,13 @@ export const PRACTICE_PAPER_3: PracticePaper = {
   instructions: [
     'Use black ink or black ball-point pen.',
     'Answer ALL questions in Section A and the ONE question in Section B.',
-    'Answer the questions in the spaces provided — there may be more space than you need.',
+    'Answer the questions in the spaces provided - there may be more space than you need.',
     'Dictionaries may NOT be used in this examination.',
     'The total mark for this paper is 70. The marks for each question are shown in brackets.',
     'Read each question carefully before you start to answer it. Check your answers if you have time at the end.',
   ],
 
-  // ─── Source Booklet — three original texts ────────────────────────
+  // ─── Source Booklet - three original texts ────────────────────────
   texts: [
     {
       id: 1,
@@ -124,10 +124,10 @@ export const PRACTICE_PAPER_3: PracticePaper = {
       byline: 'An explanatory article written for The English Hub',
       paragraphs: [
         'From the surface a coral reef looks like a single, brightly coloured ridge of rock. It is nothing of the kind. A reef is a vast, living city, built and maintained by millions of tiny animals working together, and almost everything about how it survives depends on a partnership so small it cannot be seen with the naked eye.',
-        'The builders of the reef are coral polyps — soft creatures, each no larger than a grain of rice, related to jellyfish and sea anemones. A polyp draws minerals from the seawater around it and uses them to grow a hard cup of limestone beneath its body. As generation after generation grows on top of the skeletons of the dead, the reef slowly rises. A reef the size of a town can take many thousands of years to form.',
+        'The builders of the reef are coral polyps - soft creatures, each no larger than a grain of rice, related to jellyfish and sea anemones. A polyp draws minerals from the seawater around it and uses them to grow a hard cup of limestone beneath its body. As generation after generation grows on top of the skeletons of the dead, the reef slowly rises. A reef the size of a town can take many thousands of years to form.',
         'A polyp could not build for long on its own, because it cannot make enough food. Its secret partner is a microscopic plant-like organism called zooxanthellae, which lives inside the polyp’s own tissues. The tiny plant captures sunlight and turns it into sugars, sharing most of them with its host; in return the polyp gives the plant a safe home and the chemicals it needs. Neither could thrive without the other. This is why reefs grow only in clear, shallow water where sunlight can reach.',
         'The reef the polyps build is then shared by an astonishing crowd of other animals. Parrotfish scrape algae from the coral with beaks like tools, and in doing so they keep the reef from being smothered. Cleaner shrimp set up stations where larger fish queue to have parasites picked from their skin. Each creature has a job, and the reef works because the jobs fit together.',
-        'The whole system, however, balances on a knife-edge of temperature. If the sea grows only a little too warm for too long, the stressed polyps expel the very plant partner that feeds them. Stripped of colour and of food, the coral turns a ghostly white — an event known as bleaching. A bleached reef is not yet dead, but it is starving, and without cooler water it will not recover.',
+        'The whole system, however, balances on a knife-edge of temperature. If the sea grows only a little too warm for too long, the stressed polyps expel the very plant partner that feeds them. Stripped of colour and of food, the coral turns a ghostly white - an event known as bleaching. A bleached reef is not yet dead, but it is starving, and without cooler water it will not recover.',
         'A coral reef, then, is not a rock at all. It is a fragile agreement, signed millions of years ago between an animal and a plant, and renewed every single day that the water stays clear, clean and cool.',
       ],
     },
@@ -158,9 +158,9 @@ export const PRACTICE_PAPER_3: PracticePaper = {
       paragraphs: [
         'The tide had gone out further than Nadia had ever seen it. Where the sea usually rolled there was now a glistening plain of rock and weed, steaming faintly in the early light, and she went out onto it the way a person walks into a room they are not sure they are allowed to enter.',
         'She found the pool by accident, in the shadow of a boulder the size of a car. It was no wider than a kitchen table, but it was perfectly still, and looking down into it was like looking through a window into another country. Anemones opened their soft red fingers to the water. A green crab considered her from beneath a ledge and decided she was not worth the trouble of moving.',
-        'Nadia knelt on the cold rock and held her breath so as not to disturb anything. Nothing in the pool hurried. A tiny fish hung in the water without seeming to move at all, balanced as exactly as a held note. For a long moment she had the dizzying feeling that the pool was not small and she was not large — that she was the visitor here, and a clumsy one, and that everything in the water had been managing perfectly well for a very long time without her.',
+        'Nadia knelt on the cold rock and held her breath so as not to disturb anything. Nothing in the pool hurried. A tiny fish hung in the water without seeming to move at all, balanced as exactly as a held note. For a long moment she had the dizzying feeling that the pool was not small and she was not large - that she was the visitor here, and a clumsy one, and that everything in the water had been managing perfectly well for a very long time without her.',
         'Then the wind changed, and far out the sea made a low sound like something turning over in its sleep. Nadia looked up. The bright plain of rock had narrowed while she was not watching it. The first thin line of water was already feeling its way back across the sand towards her, unhurried and certain, the way a thing returns to a place it has always owned.',
-        'She stood, her knees aching, and walked back the way she had come — quickly now, but not afraid. Behind her the pool waited, exactly as it had been, for the sea to come and close the window again. She did not look back, but for the rest of that summer she carried the strange, settled knowledge that the wild had not needed her there at all, and had let her stay anyway.',
+        'She stood, her knees aching, and walked back the way she had come - quickly now, but not afraid. Behind her the pool waited, exactly as it had been, for the sea to come and close the window again. She did not look back, but for the rest of that summer she carried the strange, settled knowledge that the wild had not needed her there at all, and had let her stay anyway.',
       ],
     },
   ],
@@ -215,13 +215,13 @@ export const PRACTICE_PAPER_3: PracticePaper = {
       prompt:
         'In Text 1 the writer says a reef “balances on a knife-edge of temperature”. Put a cross in ONE box to show what this phrase suggests.',
       options: [
-        'A — the reef is sharp and dangerous to touch',
-        'B — the reef is only safe within a very narrow range of temperature',
-        'C — the reef is always getting colder',
-        'D — the reef can survive any temperature',
+        'A - the reef is sharp and dangerous to touch',
+        'B - the reef is only safe within a very narrow range of temperature',
+        'C - the reef is always getting colder',
+        'D - the reef can survive any temperature',
       ],
       markScheme: {
-        answer: 'B — the reef is only safe within a very narrow range of temperature',
+        answer: 'B - the reef is only safe within a very narrow range of temperature',
         notes: '1 mark for B only.',
       },
     },
@@ -234,7 +234,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
         'In Text 1, why does the writer describe the partnership between the polyp and the zooxanthellae as something “neither could thrive without”?',
       markScheme: {
         answer:
-          'Because each one depends on the other to live well — the plant feeds the polyp with sugars from sunlight and the polyp gives the plant a safe home and chemicals — so the reef itself depends on both surviving together.',
+          'Because each one depends on the other to live well - the plant feeds the polyp with sugars from sunlight and the polyp gives the plant a safe home and chemicals - so the reef itself depends on both surviving together.',
         notes: '1 mark for a clear inference about mutual dependence.',
       },
     },
@@ -354,7 +354,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
         },
       ],
       markScheme: {
-        answer: 'Row 1 — Text 1; Row 2 — Text 2; Row 3 — Text 2; Row 4 — Neither.',
+        answer: 'Row 1 - Text 1; Row 2 - Text 2; Row 3 - Text 2; Row 4 - Neither.',
         notes:
           '2 marks for all four rows correct; 1 mark for two or three rows correct; 0 marks for one or none correct.',
       },
@@ -368,7 +368,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
         'How does the writer of Text 2 use language to persuade the reader to support the woodland? Make TWO developed points, each supported with evidence from the text.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the dismissive phrase placed in the council’s mouth — “only a few hundred trees” — is repeated and then attacked, making the council’s view seem careless and the reader sympathetic to the wood; (2) the contrast of “four minutes of a car journey” against “two centuries to grow” uses precise figures to make the trade-off seem absurd and unfair; (3) personification of the trees that “cannot write that letter” or “speak at the meeting” makes them seem helpless and dependent on the reader; (4) the inclusive “we”/“us” positions the writer and reader as one community defending a shared place.',
+          'Indicative content (any two developed points): (1) the dismissive phrase placed in the council’s mouth - “only a few hundred trees” - is repeated and then attacked, making the council’s view seem careless and the reader sympathetic to the wood; (2) the contrast of “four minutes of a car journey” against “two centuries to grow” uses precise figures to make the trade-off seem absurd and unfair; (3) personification of the trees that “cannot write that letter” or “speak at the meeting” makes them seem helpless and dependent on the reader; (4) the inclusive “we”/“us” positions the writer and reader as one community defending a shared place.',
         notes:
           'Up to 2 marks per developed point: 1 mark for an appropriate point with evidence, 1 mark for explaining the effect on the reader. Maximum 4 marks.',
       },
@@ -383,7 +383,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
       markScheme: {
         levelled: 'comparison',
         answer:
-          'Indicative comparison: Text 1’s writer uses the noun “agreement” and the verb “renewed” to present the reef as a delicate, ongoing balance that depends on conditions staying right — language that reflects an explanatory purpose and leaves the reader respecting how easily nature can be lost. Text 2’s writer uses the patient, almost human image of trees that have “stood … asking nothing of us” to imply a moral debt the reader now owes; this reflects a persuasive purpose designed to make the reader feel personally obliged to act. Where Text 1 positions the reader as a thoughtful observer of a fragile system, Text 2 positions them as someone whose silence would be an injustice.',
+          'Indicative comparison: Text 1’s writer uses the noun “agreement” and the verb “renewed” to present the reef as a delicate, ongoing balance that depends on conditions staying right - language that reflects an explanatory purpose and leaves the reader respecting how easily nature can be lost. Text 2’s writer uses the patient, almost human image of trees that have “stood … asking nothing of us” to imply a moral debt the reader now owes; this reflects a persuasive purpose designed to make the reader feel personally obliged to act. Where Text 1 positions the reader as a thoughtful observer of a fragile system, Text 2 positions them as someone whose silence would be an injustice.',
         notes:
           'Mark using the levelled comparison grid (COMPARISON_LEVELS). Top level: a clear explanation of the contrast that infers beyond the literal words, comments on language at word level, and identifies each writer’s purpose and effect on the reader.',
       },
@@ -462,7 +462,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
         'How does the writer of Text 3 use language and structure to show that nature is calm and self-sufficient while Nadia is only a guest? Make TWO developed points, each supported with evidence.',
       markScheme: {
         answer:
-          'Indicative content (any two developed points): (1) the stillness imagery — the fish “hung in the water … balanced as exactly as a held note” — gives the pool a calm, ordered perfection that needs no help; (2) the simile of the sea “like something turning over in its sleep” makes nature seem powerful yet untroubled by her; (3) the structural shift when “the bright plain of rock had narrowed while she was not watching” shows nature continuing on its own regardless of her attention; (4) the closing idea that the wild “had let her stay anyway” places Nadia as a permitted guest, reinforcing nature’s self-sufficiency.',
+          'Indicative content (any two developed points): (1) the stillness imagery - the fish “hung in the water … balanced as exactly as a held note” - gives the pool a calm, ordered perfection that needs no help; (2) the simile of the sea “like something turning over in its sleep” makes nature seem powerful yet untroubled by her; (3) the structural shift when “the bright plain of rock had narrowed while she was not watching” shows nature continuing on its own regardless of her attention; (4) the closing idea that the wild “had let her stay anyway” places Nadia as a permitted guest, reinforcing nature’s self-sufficiency.',
         notes:
           'Up to 2 marks per developed point: 1 mark for a point with appropriate evidence, 1 mark for explaining the effect. Maximum 4 marks.',
       },
@@ -476,7 +476,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
         'In Text 3, what does the writer suggest about the natural world through Nadia’s “strange, settled knowledge that the wild had not needed her there at all”?',
       markScheme: {
         answer:
-          'That the natural world is complete and capable on its own and does not depend on people — humans are visitors to it rather than its centre.',
+          'That the natural world is complete and capable on its own and does not depend on people - humans are visitors to it rather than its centre.',
         notes:
           '1 mark for a clear inference about nature being independent of / not needing humans.',
       },
@@ -490,7 +490,7 @@ export const PRACTICE_PAPER_3: PracticePaper = {
     ao: 'WAO1 + WAO2',
     marks: 30,
     context:
-      'The texts in Section A all explore the natural world — how a reef survives, a campaign to save a wood, and one person’s quiet encounter with a tide pool.',
+      'The texts in Section A all explore the natural world - how a reef survives, a campaign to save a wood, and one person’s quiet encounter with a tide pool.',
     task: 'Write a description of a place in the natural world that made a strong impression on you (real or imagined), and the moment you noticed it most clearly.',
     bullets: [
       'Write to entertain a reader of your own age.',

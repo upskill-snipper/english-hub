@@ -1,18 +1,18 @@
-// ─── Platform-admin — Paid marker management ────────────────────────────────
+// ─── Platform-admin - Paid marker management ────────────────────────────────
 // GET  /api/admin/markers     list markers (newest first)
 // POST /api/admin/markers     create OR update (upsert) a marker
 //
-// Site-admin only (verifyAdmin — these tables are RLS deny-by-default; the
+// Site-admin only (verifyAdmin - these tables are RLS deny-by-default; the
 // service-role client is the only writer). Mirrors the house style of
 // src/app/api/admin/prompts/route.ts and src/app/api/admin/model-performance.
 //
-// `markers` columns (snake_case — see 20260519_marker_drive.sql):
+// `markers` columns (snake_case - see 20260519_marker_drive.sql):
 //   id, user_id, display_name, email, boards[], qualification,
 //   status ∈ active|paused|offboarded, contract_signed_at, nda_signed_at,
 //   pay_rate_pence, notes, created_at
 //
 // EMPTY-TABLE SAFE: a missing table / query error degrades to an empty list
-// with a `note` (never a 500) so the admin page renders an empty state —
+// with a `note` (never a 500) so the admin page renders an empty state -
 // these tables are expected to be empty until the marker drive is live.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
       .limit(1000)
 
     if (error) {
-      // Table almost certainly not migrated on this DB yet — empty state.
+      // Table almost certainly not migrated on this DB yet - empty state.
       console.error('[api/admin/markers GET] query failed', error)
       return NextResponse.json({
         markers: [],
@@ -208,7 +208,7 @@ export async function POST(request: NextRequest) {
     const supabase = createServiceRoleClient()
 
     if (id) {
-      // ── Update an existing marker — only set provided fields. ───────────
+      // ── Update an existing marker - only set provided fields. ───────────
       const patch: Record<string, unknown> = {}
       if (displayName.length > 0) patch.display_name = displayName
       if (body.email !== undefined) {

@@ -48,7 +48,7 @@ type ChapterData = {
   languageAnalysis: LanguageTechnique[]
   structuralSignificance: string
   // Khaleeji-AR variants. Chapter `title` (e.g. "Story of the Door")
-  // stays in EN — these are exam-canonical headings.
+  // stays in EN - these are exam-canonical headings.
   summaryAr?: string
   keyEventsAr?: string[]
   characterDevelopmentAr?: string
@@ -195,7 +195,7 @@ const chapters: ChapterData[] = [
       },
       {
         technique: 'Euphemism',
-        quote: '"my position is a very strange one — a very strange one"',
+        quote: '"my position is a very strange one - a very strange one"',
         effect:
           'Jekyll uses vague, evasive language to avoid naming his predicament. The repetition of "very strange" signals emotional distress beneath the surface. Stevenson demonstrates how Victorian propriety forces characters to speak around the truth rather than confronting it.',
       },
@@ -520,7 +520,7 @@ const chapters: ChapterData[] = [
       {
         technique: 'Visual transformation',
         quote:
-          '"he put the glass to his lips and drank at one gulp... there before my eyes — pale and shaken, and half fainting — there stood Henry Jekyll!"',
+          '"he put the glass to his lips and drank at one gulp... there before my eyes - pale and shaken, and half fainting - there stood Henry Jekyll!"',
         effect:
           'The dashes create breathless, interrupted syntax that mimics Lanyon\'s shock. The detail "at one gulp" shows Hyde\'s desperate haste. The repetition of "there" emphasises the impossibility of what Lanyon is seeing: the familiar Jekyll standing where the monstrous Hyde was moments before.',
       },
@@ -545,14 +545,14 @@ const chapters: ChapterData[] = [
     number: 10,
     title: "Henry Jekyll's Full Statement of the Case",
     summary:
-      'The final chapter is Jekyll\'s own written confession, composed as his last act before Hyde takes over permanently. Jekyll explains that he had long been fascinated by the duality of human nature and felt burdened by the need to conceal his pleasures behind a facade of respectability. He discovered a chemical compound that could separate his dual nature, allowing him to transform into the purely evil Edward Hyde. At first, Jekyll relished the freedom: as Hyde, he could indulge every vice without consequence, then return to his respectable life by drinking the potion again. However, the transformations gradually became involuntary. One morning Jekyll woke as Hyde without taking the potion. Hyde grew stronger and more dominant with each transformation. Jekyll tried to stop but found he could not resist the temptation. After Hyde murdered Carew, Jekyll resolved never to transform again, but he eventually succumbed. The crucial salt needed for the potion began to run out, and new batches did not work — Jekyll suspects the original salt contained an unknown impurity that was the true catalyst. Trapped in his laboratory, transforming involuntarily and running out of the potion, Jekyll writes his confession knowing that by the time Utterson reads it, Hyde will have taken over completely. He ends: "I bring the life of that unhappy Henry Jekyll to an end."',
+      'The final chapter is Jekyll\'s own written confession, composed as his last act before Hyde takes over permanently. Jekyll explains that he had long been fascinated by the duality of human nature and felt burdened by the need to conceal his pleasures behind a facade of respectability. He discovered a chemical compound that could separate his dual nature, allowing him to transform into the purely evil Edward Hyde. At first, Jekyll relished the freedom: as Hyde, he could indulge every vice without consequence, then return to his respectable life by drinking the potion again. However, the transformations gradually became involuntary. One morning Jekyll woke as Hyde without taking the potion. Hyde grew stronger and more dominant with each transformation. Jekyll tried to stop but found he could not resist the temptation. After Hyde murdered Carew, Jekyll resolved never to transform again, but he eventually succumbed. The crucial salt needed for the potion began to run out, and new batches did not work - Jekyll suspects the original salt contained an unknown impurity that was the true catalyst. Trapped in his laboratory, transforming involuntarily and running out of the potion, Jekyll writes his confession knowing that by the time Utterson reads it, Hyde will have taken over completely. He ends: "I bring the life of that unhappy Henry Jekyll to an end."',
     summaryAr:
-      'الفصل الأخير هو اعتراف Jekyll نفسه المكتوب، يخطّه كآخر شي يسوّيه قبل ما يستولي Hyde بشكل دائم. Jekyll يشرح إنه كان من زمان مفتون بازدواجية النفس البشرية، وكان يحس بثقل الحاجة لإخفاء ملذّاته وراء واجهة الاحترام. اكتشف مركّب كيميائي يقدر يفصل بين جانبيه، يخلّيه يتحوّل إلى Edward Hyde الشرير الصرف. في البداية، Jekyll استمتع بالحرّية: كـ Hyde، يقدر ينغمس بأي رذيلة بلا عواقب، ثم يرجع لحياته المحترمة بشرب الجرعة مرة ثانية. لكن، التحوّلات شيئاً فشيئاً صارت بلا إرادة. صبح واحد، Jekyll قام كـ Hyde بدون ما يشرب الجرعة. Hyde يقوى ويسيطر مع كل تحوّل. Jekyll حاول يوقف، لكن ما قدر يقاوم الإغراء. بعد ما قتل Hyde Sir Danvers Carew، Jekyll تعهّد إنه ما يتحوّل ثاني، لكنه استسلم في الآخر. الملح الجوهري اللي يحتاجه للجرعة بدأ يخلّص، والدفعات الجديدة ما تشتغل — Jekyll يشك إن الملح الأصلي كان فيه شائبة مجهولة هي المحفّز الحقيقي. محاصر داخل مختبره، يتحوّل بلا إرادة والجرعة تخلّص، Jekyll يكتب اعترافه وهو يعرف إنه لمن يقرأه Utterson، Hyde يكون استولى بشكل كامل. يختم بـ: "I bring the life of that unhappy Henry Jekyll to an end."',
+      'الفصل الأخير هو اعتراف Jekyll نفسه المكتوب، يخطّه كآخر شي يسوّيه قبل ما يستولي Hyde بشكل دائم. Jekyll يشرح إنه كان من زمان مفتون بازدواجية النفس البشرية، وكان يحس بثقل الحاجة لإخفاء ملذّاته وراء واجهة الاحترام. اكتشف مركّب كيميائي يقدر يفصل بين جانبيه، يخلّيه يتحوّل إلى Edward Hyde الشرير الصرف. في البداية، Jekyll استمتع بالحرّية: كـ Hyde، يقدر ينغمس بأي رذيلة بلا عواقب، ثم يرجع لحياته المحترمة بشرب الجرعة مرة ثانية. لكن، التحوّلات شيئاً فشيئاً صارت بلا إرادة. صبح واحد، Jekyll قام كـ Hyde بدون ما يشرب الجرعة. Hyde يقوى ويسيطر مع كل تحوّل. Jekyll حاول يوقف، لكن ما قدر يقاوم الإغراء. بعد ما قتل Hyde Sir Danvers Carew، Jekyll تعهّد إنه ما يتحوّل ثاني، لكنه استسلم في الآخر. الملح الجوهري اللي يحتاجه للجرعة بدأ يخلّص، والدفعات الجديدة ما تشتغل - Jekyll يشك إن الملح الأصلي كان فيه شائبة مجهولة هي المحفّز الحقيقي. محاصر داخل مختبره، يتحوّل بلا إرادة والجرعة تخلّص، Jekyll يكتب اعترافه وهو يعرف إنه لمن يقرأه Utterson، Hyde يكون استولى بشكل كامل. يختم بـ: "I bring the life of that unhappy Henry Jekyll to an end."',
     keyEvents: [
       'Jekyll confesses his lifelong struggle with duality and concealed desires',
       'He describes creating the potion to separate his good and evil natures',
       'Jekyll initially enjoys the freedom of living as Hyde without moral consequence',
-      'The transformations become involuntary — Jekyll wakes as Hyde without the potion',
+      'The transformations become involuntary - Jekyll wakes as Hyde without the potion',
       'After the Carew murder, Jekyll tries and fails to stop transforming',
       'The crucial salt runs out and cannot be replaced',
       'Jekyll writes his final confession knowing Hyde will take over permanently',
@@ -667,7 +667,7 @@ export default async function JekyllChaptersPage() {
             Chapter-by-Chapter Analysis
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            Strange Case of Dr Jekyll and Mr Hyde — Robert Louis Stevenson (1886)
+            Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson (1886)
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             All 10 chapters analysed in depth: summaries, key events, character development, five

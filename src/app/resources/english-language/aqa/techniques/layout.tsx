@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/resources/english-language/aqa/techniques',
   },
   openGraph: {
-    title: 'AQA GCSE English Language techniques — The English Hub',
+    title: 'AQA GCSE English Language techniques - The English Hub',
     description:
       'Language and structural techniques for AQA GCSE English: identification, analysis, and how to write about them.',
     url: 'https://theenglishhub.app/resources/english-language/aqa/techniques',

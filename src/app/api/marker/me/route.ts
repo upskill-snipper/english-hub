@@ -4,23 +4,23 @@
 // Returns the signed-in marker's own profile and three live counts used by
 // the console header:
 //
-//   • assigned       — rows assigned to this marker still awaiting their
+//   • assigned       - rows assigned to this marker still awaiting their
 //                       review (status = 'teacher_review_required').
-//   • doneToday       — rows assigned to this marker that they have approved
+//   • doneToday       - rows assigned to this marker that they have approved
 //                       since 00:00 UTC today (approved_at >= start of day).
-//   • runningTotal    — rows assigned to this marker that they have approved,
+//   • runningTotal    - rows assigned to this marker that they have approved,
 //                       all-time.
 //
 // Authorisation: an ACTIVE marker only (requireMarker → 401/403). A marker
-// can only ever see counts for rows assigned to THEM — every count is scoped
+// can only ever see counts for rows assigned to THEM - every count is scoped
 // by assigned_marker_id = the resolved marker's id.
 //
 // Counts use head:true exact-count queries (no rows transferred). Any count
-// error degrades that figure to 0 rather than failing the whole request —
+// error degrades that figure to 0 rather than failing the whole request -
 // the console prefers a slightly stale number to a broken header.
 //
 // Supabase generated types don't know about marking_submissions / markers
-// yet (Prisma client not regenerated — see migration note); the count
+// yet (Prisma client not regenerated - see migration note); the count
 // queries don't need row typing.
 
 import { NextRequest, NextResponse } from 'next/server'

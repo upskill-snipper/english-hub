@@ -10,12 +10,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Animal Farm GCSE revision — Orwell',
+    title: 'Animal Farm revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Animal Farm GCSE revision - Orwell',
   },
-  title: 'Animal Farm revision guide — themes, characters, key quotes',
+  title: 'Animal Farm revision guide - themes, characters, key quotes',
   description:
-    "Animal Farm GCSE revision — Orwell's allegorical novella by chapter with characters, themes, context, key quotes and essay plans. AQA, Edexcel and OCR.",
+    "Animal Farm GCSE revision - Orwell's allegorical novella by chapter with characters, themes, context, key quotes and essay plans. AQA, Edexcel and OCR.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/animal-farm',
   },
@@ -36,7 +36,7 @@ const data: TextGuideData = {
     published: '1945',
   },
   plotSummary: [
-    "Old Major, the prize boar, gathers the animals of Manor Farm and teaches them a song, 'Beasts of England', that dreams of a world without human masters. Three nights later he dies, and three younger pigs — the idealistic Snowball, the cunning Napoleon and the smooth-talking propagandist Squealer — turn his vision into a practical doctrine they call Animalism.",
+    "Old Major, the prize boar, gathers the animals of Manor Farm and teaches them a song, 'Beasts of England', that dreams of a world without human masters. Three nights later he dies, and three younger pigs - the idealistic Snowball, the cunning Napoleon and the smooth-talking propagandist Squealer - turn his vision into a practical doctrine they call Animalism.",
     "When the drunken farmer Mr Jones forgets to feed the animals one night, they rise up, drive him out, and rename the farm Animal Farm. They paint Seven Commandments on the barn wall, most importantly: 'All animals are equal.' The pigs assume leadership and the first harvest is a triumph. The cart-horse Boxer becomes the revolution\u2019s muscle, vowing 'I will work harder' and 'Napoleon is always right'.",
     "Tension grows between Snowball, who wants to build a windmill to modernise the farm, and Napoleon, who secretly raises a litter of puppies as his enforcers. Napoleon uses these dogs to drive Snowball from the farm and then claims the windmill plan as his own. He begins executing 'traitors', rewriting history with Squealer's help, and trading with neighbouring farmers.",
     "Over the years the pigs move into the farmhouse, walk on two legs and dress in human clothes. The commandments disappear one by one, until only a single amended line remains: 'All animals are equal, but some animals are more equal than others.' In the final scene the other animals peer through the window and cannot tell the pigs from the humans they once overthrew.",
@@ -50,7 +50,7 @@ const data: TextGuideData = {
     {
       name: 'Napoleon',
       role: 'Berkshire boar, dictator',
-      body: "Napoleon represents Stalin: patient, brutal, allergic to debate. Orwell dislikes him too much to give him charisma, which is part of the point — tyrants don't have to be glamorous to win.",
+      body: "Napoleon represents Stalin: patient, brutal, allergic to debate. Orwell dislikes him too much to give him charisma, which is part of the point - tyrants don't have to be glamorous to win.",
     },
     {
       name: 'Snowball',
@@ -65,7 +65,7 @@ const data: TextGuideData = {
     {
       name: 'Boxer',
       role: 'Devoted cart-horse',
-      body: 'Strong, loyal and heart-breakingly uncritical, Boxer is Orwell\u2019s portrait of the exploited working class. His end — sold to the knacker to pay for a case of whisky — is the book\u2019s most ruthless moment.',
+      body: 'Strong, loyal and heart-breakingly uncritical, Boxer is Orwell\u2019s portrait of the exploited working class. His end - sold to the knacker to pay for a case of whisky - is the book\u2019s most ruthless moment.',
     },
     {
       name: 'Benjamin',
@@ -80,7 +80,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Language as a tool of control',
-      body: "Squealer's work — rewriting commandments, inventing enemies, 'adjusting' statistics — is the novel's deepest warning. Orwell saw clearly that dictatorships live and die by their grip on language.",
+      body: "Squealer's work - rewriting commandments, inventing enemies, 'adjusting' statistics - is the novel's deepest warning. Orwell saw clearly that dictatorships live and die by their grip on language.",
     },
     {
       title: 'Betrayal of revolution',
@@ -104,43 +104,43 @@ const data: TextGuideData = {
   quotations: [
     {
       quote: '"All animals are equal."',
-      who: 'Seven Commandments — Chapter 2',
+      who: 'Seven Commandments - Chapter 2',
       analysis:
         'The founding principle of the revolution. The novel\u2019s entire tragic movement is the betrayal of this line.',
     },
     {
       quote: '"All animals are equal, but some animals are more equal than others."',
-      who: 'Final commandment — Chapter 10',
+      who: 'Final commandment - Chapter 10',
       analysis: 'The book\u2019s most famous line. The revolution has devoured itself.',
     },
     {
       quote: '"I will work harder."',
-      who: 'Boxer — repeated',
+      who: 'Boxer - repeated',
       analysis:
         'The working class\u2019s unshakeable faith, used against itself until Boxer is worked literally to death.',
     },
     {
       quote: '"Napoleon is always right."',
-      who: 'Boxer — Chapter 5',
+      who: 'Boxer - Chapter 5',
       analysis:
         'The dangerous loyalty that allows a dictator to consolidate power without challenge.',
     },
     {
       quote: '"Four legs good, two legs bad."',
-      who: 'The sheep — Chapter 3',
+      who: 'The sheep - Chapter 3',
       analysis:
         'The simplified slogan that replaces debate. Orwell\u2019s warning about the death of nuance.',
     },
     {
       quote:
         '"The creatures outside looked from pig to man, and from man to pig, and from pig to man again."',
-      who: 'Narrator — final chapter',
+      who: 'Narrator - final chapter',
       analysis:
         'The shattering closing image. Revolution has produced a mirror of the regime it replaced.',
     },
     {
       quote: '"Comrade Napoleon... is a terrible and magnificent boar."',
-      who: "Minimus's poem — Chapter 8",
+      who: "Minimus's poem - Chapter 8",
       analysis:
         'Satirises the personality cults that real dictatorships build around their leaders.',
     },
@@ -343,7 +343,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'af-14',
-    question: 'What does the closing scene — pigs indistinguishable from humans — represent?',
+    question: 'What does the closing scene - pigs indistinguishable from humans - represent?',
     type: 'multiple-choice',
     options: [
       'The animals need glasses',
@@ -406,7 +406,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Language is neutral',
-      'Control of language is the deepest form of totalitarian power — whoever controls words controls reality',
+      'Control of language is the deepest form of totalitarian power - whoever controls words controls reality',
       'Language does not affect politics',
       'Only physical force matters',
     ],
@@ -445,7 +445,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Orwell was a committed democratic socialist who had fought against Franco in Spain. His first-hand experience of Communist betrayal convinced him Stalin's Soviet Union was a grotesque parody of socialist ideals. Animal Farm attacks Stalinism, not socialism — it mourns the revolution's betrayal, not its original aims.",
+      "Orwell was a committed democratic socialist who had fought against Franco in Spain. His first-hand experience of Communist betrayal convinced him Stalin's Soviet Union was a grotesque parody of socialist ideals. Animal Farm attacks Stalinism, not socialism - it mourns the revolution's betrayal, not its original aims.",
     topic: 'Context',
     difficulty: 'grade-9',
   },
@@ -460,7 +460,7 @@ const REVISION_TOPICS = [
       'Napoleon gradually accumulates all power',
       'The dogs represent the secret police',
       "The commandments are rewritten to justify the pigs' privilege",
-      'Power corrupts gradually — the pigs move into the farmhouse by degrees',
+      'Power corrupts gradually - the pigs move into the farmhouse by degrees',
       '"All animals are equal, but some animals are more equal than others"',
     ],
   },
@@ -502,7 +502,7 @@ const REVISION_TOPICS = [
     summary: 'The animals do the work; the pigs take the reward.',
     keyPoints: [
       'Boxer represents the exploited working class',
-      "His death — sold to the knacker — is the book's most ruthless moment",
+      "His death - sold to the knacker - is the book's most ruthless moment",
       "The hens' rebellion is crushed (representing resistance to collectivisation)",
       "Benjamin's apathy represents intellectual passivity",
       'Orwell insists loyalty cannot survive unlimited exploitation',
@@ -529,7 +529,7 @@ export default async function AnimalFarmPage() {
   return (
     <>
       <CourseJsonLd
-        name="Animal Farm — Complete GCSE Study Guide"
+        name="Animal Farm - Complete GCSE Study Guide"
         description="In-depth study guide for Animal Farm covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <LearningResourceJsonLd

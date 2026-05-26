@@ -38,7 +38,7 @@ function createSupabaseMock() {
   const upsertFn = vi.fn(() => ({ error: null }))
   const insertFn = vi.fn(() => ({ error: null }))
 
-  // webhook_events table — idempotency check must return null (no duplicate)
+  // webhook_events table - idempotency check must return null (no duplicate)
   const webhookEventsChain = {
     select: vi.fn(() => ({
       eq: vi.fn(() => ({

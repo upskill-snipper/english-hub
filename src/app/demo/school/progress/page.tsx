@@ -866,7 +866,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-red-700 dark:text-red-300 flex items-center gap-2">
                 <ShieldAlert className="h-4 w-4" />
-                {t('demo.b15.school_progress.intervention_recs')} — {activeYearData.label}
+                {t('demo.b15.school_progress.intervention_recs')} - {activeYearData.label}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -916,7 +916,7 @@ export default function SchoolProgressPage() {
                     {t('demo.b15.school_progress.report_title_pre')} {activeYearData.label}
                   </h2>
                   <p className="text-sm text-muted-foreground">
-                    Westfield Academy — {t('demo.b15.school_progress.report_generated')}{' '}
+                    Westfield Academy - {t('demo.b15.school_progress.report_generated')}{' '}
                     {new Date().toLocaleDateString('en-GB')}
                   </p>
                 </div>

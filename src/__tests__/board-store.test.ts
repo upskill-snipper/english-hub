@@ -129,7 +129,7 @@ describe('Board configuration', () => {
     })
 
     it('returns null for an unknown board ID', () => {
-      // @ts-expect-error — testing runtime safety with an invalid value
+      // @ts-expect-error - testing runtime safety with an invalid value
       expect(getBoardConfig('unknown-board')).toBeNull()
     })
 

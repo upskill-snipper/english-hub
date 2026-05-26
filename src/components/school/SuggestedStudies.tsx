@@ -167,14 +167,11 @@ export function SuggestedStudies({
   const [viewMode, setViewMode] = useState<'path' | 'all'>('path')
   const printRef = useRef<HTMLDivElement>(null)
 
-  const resources = useMemo(
-    () => mapWeakAreasToResources(weakAreas, board),
-    [weakAreas, board]
-  )
+  const resources = useMemo(() => mapWeakAreasToResources(weakAreas, board), [weakAreas, board])
 
   const studyPath = useMemo(
     () => generateStudyPath(weakAreas, board, weeks),
-    [weakAreas, board, weeks]
+    [weakAreas, board, weeks],
   )
 
   const handlePrint = useCallback(() => {
@@ -212,9 +209,7 @@ export function SuggestedStudies({
                     {schoolName}
                   </p>
                 )}
-                <h1 className="text-xl font-bold text-foreground">
-                  Suggested Study Path
-                </h1>
+                <h1 className="text-xl font-bold text-foreground">Suggested Study Path</h1>
                 {className && (
                   <p className="text-sm text-muted-foreground mt-1">Class: {className}</p>
                 )}
@@ -232,7 +227,8 @@ export function SuggestedStudies({
             <div>
               <h2 className="text-lg font-bold text-foreground">Suggested Studies</h2>
               <p className="text-sm text-muted-foreground">
-                {resources.length} resources across {weakAreas.length} weak area{weakAreas.length !== 1 ? 's' : ''} — {weeks}-week study path
+                {resources.length} resources across {weakAreas.length} weak area
+                {weakAreas.length !== 1 ? 's' : ''} - {weeks}-week study path
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -242,7 +238,7 @@ export function SuggestedStudies({
                     'px-3 py-1.5 text-xs font-medium transition-colors',
                     viewMode === 'path'
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-background text-muted-foreground hover:text-foreground'
+                      : 'bg-background text-muted-foreground hover:text-foreground',
                   )}
                   onClick={() => setViewMode('path')}
                 >
@@ -253,7 +249,7 @@ export function SuggestedStudies({
                     'px-3 py-1.5 text-xs font-medium transition-colors',
                     viewMode === 'all'
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-background text-muted-foreground hover:text-foreground'
+                      : 'bg-background text-muted-foreground hover:text-foreground',
                   )}
                   onClick={() => setViewMode('all')}
                 >
@@ -285,7 +281,9 @@ export function SuggestedStudies({
                           <div className="text-left">
                             <CardTitle className="text-sm">{week.theme}</CardTitle>
                             <CardDescription className="text-xs mt-0.5">
-                              {week.resources.length} resource{week.resources.length !== 1 ? 's' : ''} — {week.focus_areas.join(', ')}
+                              {week.resources.length} resource
+                              {week.resources.length !== 1 ? 's' : ''} -{' '}
+                              {week.focus_areas.join(', ')}
                             </CardDescription>
                           </div>
                         </div>
@@ -299,10 +297,7 @@ export function SuggestedStudies({
                   </button>
 
                   {/* Always visible in print, toggled on screen */}
-                  <div className={cn(
-                    'print:block',
-                    expandedWeek === wi ? 'block' : 'hidden'
-                  )}>
+                  <div className={cn('print:block', expandedWeek === wi ? 'block' : 'hidden')}>
                     <CardContent className="pt-0">
                       {/* Target outcome */}
                       <div className="mb-4 rounded-lg border border-primary/20 bg-primary/5 p-3">
@@ -345,7 +340,8 @@ export function SuggestedStudies({
                     <CardHeader>
                       <CardTitle className="text-sm">{area}</CardTitle>
                       <CardDescription className="text-xs">
-                        {areaResources.length} recommended resource{areaResources.length !== 1 ? 's' : ''}
+                        {areaResources.length} recommended resource
+                        {areaResources.length !== 1 ? 's' : ''}
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -364,8 +360,8 @@ export function SuggestedStudies({
           {/* Print-only footer */}
           <div className="print-footer hidden print:block">
             {schoolName && <span>{schoolName}</span>}
-            {schoolName && <span> — </span>}
-            <span>Suggested Study Path — Generated {new Date().toLocaleDateString('en-GB')}</span>
+            {schoolName && <span> - </span>}
+            <span>Suggested Study Path - Generated {new Date().toLocaleDateString('en-GB')}</span>
           </div>
         </div>
       </div>
@@ -389,7 +385,12 @@ function ResourceCard({
     <div className="print-resource rounded-lg border border-border bg-card p-4 transition-colors hover:bg-muted/30">
       <div className="flex items-start gap-3">
         {/* Type icon */}
-        <div className={cn('flex h-10 w-10 items-center justify-center rounded-lg shrink-0', config.bgColor)}>
+        <div
+          className={cn(
+            'flex h-10 w-10 items-center justify-center rounded-lg shrink-0',
+            config.bgColor,
+          )}
+        >
           <Icon className={cn('h-5 w-5', config.color)} />
         </div>
 
@@ -401,10 +402,7 @@ function ResourceCard({
                 {resource.title}
               </h4>
               <div className="mt-1 flex flex-wrap items-center gap-2">
-                <Badge
-                  variant="outline"
-                  className={cn('text-[10px] print-badge', config.color)}
-                >
+                <Badge variant="outline" className={cn('text-[10px] print-badge', config.color)}>
                   {config.label}
                 </Badge>
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">

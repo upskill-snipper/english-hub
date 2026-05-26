@@ -542,7 +542,7 @@ export default function PowerAndConflictPage() {
             <p className="text-sm text-muted-foreground">
               Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15
               poems
-              {matchCount === 0 && ' — try broadening your search.'}
+              {matchCount === 0 && ' - try broadening your search.'}
             </p>
           )}
         </div>
@@ -917,7 +917,7 @@ export default function PowerAndConflictPage() {
                     analysis="The possessive 'my' immediately establishes the Duke's sense of ownership. The phrase 'as if she were alive' is chillingly ironic, hinting at her fate before the reader fully understands it. The painting gives the Duke the control he could not exert over the living woman."
                   />
                   <Quote
-                    text="She had / A heart — how shall I say? — too soon made glad"
+                    text="She had / A heart - how shall I say? - too soon made glad"
                     technique="Caesura / euphemism"
                     analysis="The mid-line pause ('how shall I say?') is a calculated performance of restraint, yet the Duke's criticism is clear: he resented her capacity for joy. He presents her warmth as a flaw, revealing his possessiveness and inability to tolerate anything beyond his control."
                   />
@@ -1250,7 +1250,7 @@ export default function PowerAndConflictPage() {
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The poem imagines a single soldier&apos;s experience during a WWI-style bayonet
-                  charge. (Ted Hughes, 1930–1998, was born in 1930 and never fought in any war — he
+                  charge. (Ted Hughes, 1930-1998, was born in 1930 and never fought in any war - he
                   drew on his father William&apos;s WWI accounts, and William survived Gallipoli as
                   one of only seventeen survivors of his Lancashire Fusiliers regiment.) It begins
                   in medias res (in the middle of action) with the soldier already running. He is
@@ -1278,7 +1278,7 @@ export default function PowerAndConflictPage() {
               <SubSection title="Key Quotes">
                 <div className="space-y-3">
                   <Quote
-                    text="Suddenly he awoke and was running — raw"
+                    text="Suddenly he awoke and was running - raw"
                     technique="In medias res / adjective"
                     analysis="The poem opens mid-action, disorientating the reader just as the soldier is disorientated. 'Awoke' suggests the soldier has been jolted from safety into terrifying reality. 'Raw' is placed at the end of the line for emphasis, suggesting vulnerability, exposure, and pain."
                   />
@@ -1290,7 +1290,7 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="King, honour, human dignity, etcetera / Dropped like luxuries"
                     technique="Bathos / simile"
-                    analysis="Hughes writes 'etcetera' once — cite exactly as printed; do not abbreviate to 'etc.', and don't double the word. The single, dismissive 'etcetera' reduces patriotic ideals to throwaway filler, stripping them of meaning. These abstract concepts are compared to 'luxuries' — pleasant but non-essential things that are abandoned when survival is at stake. Hughes devastatingly critiques the ideals used to justify war."
+                    analysis="Hughes writes 'etcetera' once - cite exactly as printed; do not abbreviate to 'etc.', and don't double the word. The single, dismissive 'etcetera' reduces patriotic ideals to throwaway filler, stripping them of meaning. These abstract concepts are compared to 'luxuries' - pleasant but non-essential things that are abandoned when survival is at stake. Hughes devastatingly critiques the ideals used to justify war."
                   />
                   <Quote
                     text="a yellow hare that rolled like a flame"
@@ -1561,7 +1561,7 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="Rural England"
                     technique="Proper noun / contrast"
-                    analysis="The capitalisation of 'Rural England' makes it a specific, named place, set against the unnamed war zones. The phrase evokes comfort, safety, and green countryside — everything that the war zones are not. Duffy uses this contrast to critique British complacency."
+                    analysis="The capitalisation of 'Rural England' makes it a specific, named place, set against the unnamed war zones. The phrase evokes comfort, safety, and green countryside - everything that the war zones are not. Duffy uses this contrast to critique British complacency."
                   />
                   <Quote
                     text="The reader's eyeballs prick / with tears between the bath and pre-lunch beers"
@@ -1742,11 +1742,11 @@ export default function PowerAndConflictPage() {
                     technique="Ambiguity / irony"
                     analysis="'Dark' is ambiguous: it could refer to skin colour (racial prejudice), secretiveness, or being 'unenlightened.' The irony of 'free city' is sharp: a place that claims to be free yet discriminates against outsiders. The pronoun 'they' creates a faceless, threatening force."
                   />
-                  {/* VERIFY: previous quote "my city takes me dancing through the city / of walls" was FABRICATED — actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée. */}
+                  {/* VERIFY: previous quote "my city takes me dancing through the city / of walls" was FABRICATED - actual Rumens line is just "My city takes me dancing through the streets". The phrase "city of walls" does not appear in The Émigrée. */}
                   <Quote
                     text="My city takes me dancing through the streets"
                     technique="Personification"
-                    analysis="The speaker's remembered city is personified as a joyful companion that actively 'takes me dancing,' creating an image of intimate, embodied belonging. The personification gives memory the agency political force has stripped away — the homeland reaches back for her. Memory becomes an act of resistance."
+                    analysis="The speaker's remembered city is personified as a joyful companion that actively 'takes me dancing,' creating an image of intimate, embodied belonging. The personification gives memory the agency political force has stripped away - the homeland reaches back for her. Memory becomes an act of resistance."
                   />
                 </div>
               </SubSection>
@@ -1824,7 +1824,7 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="Bandage up me eye with me own history"
                     technique="Metaphor / violent imagery"
-                    analysis="The metaphor of blindfolding suggests that the colonial education system deliberately prevents the speaker from seeing his own heritage. 'Bandage' implies injury: his identity has been wounded by the erasure of his history. Using 'me own history' as the blindfold is deeply ironic — his history is used against him."
+                    analysis="The metaphor of blindfolding suggests that the colonial education system deliberately prevents the speaker from seeing his own heritage. 'Bandage' implies injury: his identity has been wounded by the erasure of his history. Using 'me own history' as the blindfold is deeply ironic - his history is used against him."
                   />
                   <Quote
                     text="From Jamaica / she travel far / to de Crimean War / she volunteer to go"
@@ -1914,7 +1914,7 @@ export default function PowerAndConflictPage() {
                   <Quote
                     text="a shaven head / full of powerful incantations"
                     technique="Imagery / cultural context"
-                    analysis="The 'shaven head' marks the ritual preparation for death, and 'powerful incantations' refers to the prayers and ideology that were meant to sustain his resolve. The phrase 'full of' suggests these were forced into him, filling his mind and leaving no room for doubt — until nature intervenes."
+                    analysis="The 'shaven head' marks the ritual preparation for death, and 'powerful incantations' refers to the prayers and ideology that were meant to sustain his resolve. The phrase 'full of' suggests these were forced into him, filling his mind and leaving no room for doubt - until nature intervenes."
                   />
                   <Quote
                     text="the dark shoals of fishes / flashing silver as their bellies / swivelled towards the sun"
@@ -2131,7 +2131,7 @@ export default function PowerAndConflictPage() {
             {[
               {
                 title: 'Choose Your Comparison Wisely',
-                text: "You'll be given one poem and asked to compare it to another of your choice. Pick a poem with clear thematic or structural links — not just the one you know best. If given 'Exposure,' choosing 'Storm on the Island' (both explore nature's power) is stronger than a loosely connected choice.",
+                text: "You'll be given one poem and asked to compare it to another of your choice. Pick a poem with clear thematic or structural links - not just the one you know best. If given 'Exposure,' choosing 'Storm on the Island' (both explore nature's power) is stronger than a loosely connected choice.",
               },
               {
                 title: "Weave, Don't Split",
@@ -2151,7 +2151,7 @@ export default function PowerAndConflictPage() {
               },
               {
                 title: 'Use Subject Terminology',
-                text: 'Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue, pararhyme. But always explain the effect — feature-spotting without analysis scores poorly. Say what the technique does, not just what it is.',
+                text: 'Name techniques accurately: enjambment, caesura, sibilance, volta, dramatic monologue, pararhyme. But always explain the effect - feature-spotting without analysis scores poorly. Say what the technique does, not just what it is.',
               },
             ].map((tip) => (
               <div

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.',
   alternates: { canonical: 'https://theenglishhub.app/resources' },
   openGraph: {
-    title: 'Free English Resources — The English Hub',
+    title: 'Free English Resources - The English Hub',
     description:
       'Free GCSE and IGCSE English resources: revision notes, poetry guides, writing skills, exam techniques, vocabulary builders, and study tools for all boards.',
   },

@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -8,12 +8,12 @@ import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Never Let Me Go revision guide — themes, characters, key quotes — The English Hub',
-    description: 'Never Let Me Go GCSE revision — Kazuo Ishiguro',
+    title: 'Never Let Me Go revision guide - themes, characters, key quotes - The English Hub',
+    description: 'Never Let Me Go GCSE revision - Kazuo Ishiguro',
   },
-  title: 'Never Let Me Go revision guide — themes, characters, key quotes',
+  title: 'Never Let Me Go revision guide - themes, characters, key quotes',
   description:
-    "Never Let Me Go GCSE revision — Kazuo Ishiguro's 2005 dystopian novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE spec.",
+    "Never Let Me Go GCSE revision - Kazuo Ishiguro's 2005 dystopian novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE spec.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/never-let-me-go',
   },

@@ -1,9 +1,9 @@
-// ─── Platform-admin — AI marking model performance ──────────────────────────
+// ─── Platform-admin - AI marking model performance ──────────────────────────
 // GET /api/admin/model-performance
 //
 // Site-admin only. Computes live model-vs-teacher agreement metrics directly
 // from the frozen Smart-IP schema using the service-role Supabase client
-// (these tables are RLS deny-by-default — see the migration).
+// (these tables are RLS deny-by-default - see the migration).
 //
 // For every `marking_submissions` row joined to its LATEST
 // `teacher_moderations` row we compute:
@@ -17,7 +17,7 @@
 //   • AI-confidence reliability   mean |error| bucketed by ai_confidence
 //
 // EMPTY-TABLE SAFE: a missing table / query error degrades to a zeroed
-// payload (never a 500) so the dashboard renders an empty state — these
+// payload (never a 500) so the dashboard renders an empty state - these
 // tables are expected to be empty until the marking pipeline is live.
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -113,7 +113,7 @@ function sliceAccuracy(rows: { key: string; absErr: number }[]): SliceAccuracy[]
       within2Pct: r3(w2 / n),
     })
   }
-  // Largest slices first — most statistically meaningful at the top.
+  // Largest slices first - most statistically meaningful at the top.
   return out.sort((a, b) => b.n - a.n)
 }
 
@@ -148,7 +148,7 @@ export async function GET(request: NextRequest) {
       .limit(20000)
 
     if (subErr) {
-      // Table almost certainly not migrated on this DB yet — empty state.
+      // Table almost certainly not migrated on this DB yet - empty state.
       console.error('[admin/model-performance] submissions query failed', subErr)
       return NextResponse.json(emptyPayload('Marking store unavailable'))
     }
@@ -170,7 +170,7 @@ export async function GET(request: NextRequest) {
       .limit(50000)
 
     if (modErr) {
-      // Submissions exist but no moderation history table — still useful:
+      // Submissions exist but no moderation history table - still useful:
       // report submission totals, zero agreement.
       console.error('[admin/model-performance] moderations query failed', modErr)
       const payload = emptyPayload('Moderation history unavailable')
@@ -222,7 +222,7 @@ export async function GET(request: NextRequest) {
         adjustmentReasonCounts.set(reason, (adjustmentReasonCounts.get(reason) ?? 0) + 1)
       }
 
-      // Score agreement — prefer the moderation's own ai_score, fall back to
+      // Score agreement - prefer the moderation's own ai_score, fall back to
       // the submission's denormalised ai_score.
       const aiScore =
         typeof mod.ai_score === 'number'
@@ -260,10 +260,10 @@ export async function GET(request: NextRequest) {
 
     // ── AI-confidence reliability: fixed buckets on the 0..1 scale ────────
     const buckets: { label: string; lo: number; hi: number }[] = [
-      { label: '0.0–0.5', lo: 0, hi: 0.5 },
-      { label: '0.5–0.7', lo: 0.5, hi: 0.7 },
-      { label: '0.7–0.85', lo: 0.7, hi: 0.85 },
-      { label: '0.85–1.0', lo: 0.85, hi: 1.0001 },
+      { label: '0.0-0.5', lo: 0, hi: 0.5 },
+      { label: '0.5-0.7', lo: 0.5, hi: 0.7 },
+      { label: '0.7-0.85', lo: 0.7, hi: 0.85 },
+      { label: '0.85-1.0', lo: 0.85, hi: 1.0001 },
     ]
     const confidenceReliability = buckets
       .map((b) => {

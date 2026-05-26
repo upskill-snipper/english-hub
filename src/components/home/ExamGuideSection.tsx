@@ -9,7 +9,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { useT } from '@/lib/i18n/use-t'
 import { GraduationCap } from 'lucide-react'
 
-// Board names stay in Latin (per i18n policy) — translate only the
+// Board names stay in Latin (per i18n policy) - translate only the
 // surrounding labels (h2, lead, "Your board" badge, descriptions).
 const boards = [
   {

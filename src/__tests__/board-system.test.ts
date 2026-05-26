@@ -2,8 +2,20 @@ import { describe, it, expect } from 'vitest'
 import { BOARDS, getBoardConfig } from '@/lib/board/board-config'
 import type { ExamBoard } from '@/lib/board/board-config'
 import { isForBoard, filterByBoard, isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
-import { getSetTextsForBoard, textAvailableForBoard, SET_TEXTS, getSetText } from '@/lib/board/set-texts'
-import { getGradeSystemForBoard, GRADE_SYSTEMS, GRADE_BOUNDARIES, gradeNineToLetterEquivalent, gradeLetterToNineOneEquivalent, getBoundaryForGrade } from '@/lib/board/grade-boundaries'
+import {
+  getSetTextsForBoard,
+  textAvailableForBoard,
+  SET_TEXTS,
+  getSetText,
+} from '@/lib/board/set-texts'
+import {
+  getGradeSystemForBoard,
+  GRADE_SYSTEMS,
+  GRADE_BOUNDARIES,
+  gradeNineToLetterEquivalent,
+  gradeLetterToNineOneEquivalent,
+  getBoundaryForGrade,
+} from '@/lib/board/grade-boundaries'
 
 // ── board-config.ts ─────────────────────────────────────────────────────────
 
@@ -120,7 +132,7 @@ describe('board-filter', () => {
       { name: 'A', boards: ['aqa'] as ExamBoard[] },
       { name: 'B', boards: ['edexcel'] as ExamBoard[] },
       { name: 'C', boards: ['aqa', 'edexcel'] as ExamBoard[] },
-      { name: 'D' }, // no boards field — should always pass
+      { name: 'D' }, // no boards field - should always pass
     ]
 
     it('filters items to only those matching the user board', () => {

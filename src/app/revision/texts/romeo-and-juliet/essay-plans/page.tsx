@@ -11,11 +11,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Romeo and Juliet — GCSE Essay Plans | The English Hub',
+    title: 'Romeo and Juliet - GCSE Essay Plans | The English Hub',
     description:
       'Five GCSE-ready essay plans for Romeo and Juliet by William Shakespeare, with thesis statements, paragraph plans, key quotations and examiner tips.',
   },
-  title: 'Romeo and Juliet — GCSE Essay Plans',
+  title: 'Romeo and Juliet - GCSE Essay Plans',
   description:
     'Five GCSE-ready essay plans for Romeo and Juliet by William Shakespeare, with thesis statements, paragraph plans, key quotations and examiner tips.',
   alternates: {
@@ -48,7 +48,7 @@ const essayPlans: EssayPlan[] = [
     id: 1,
     question: 'How does Shakespeare present the theme of love in Romeo and Juliet?',
     thesis:
-      'Shakespeare presents love as a powerful, transformative force that exists in constant tension with the social world of Verona. Through contrasting types of love — Petrarchan convention, mutual passion, and familial duty — he suggests that genuine love is simultaneously the most beautiful and the most destructive force in the play.',
+      'Shakespeare presents love as a powerful, transformative force that exists in constant tension with the social world of Verona. Through contrasting types of love - Petrarchan convention, mutual passion, and familial duty - he suggests that genuine love is simultaneously the most beautiful and the most destructive force in the play.',
     paragraphs: [
       {
         point:
@@ -63,7 +63,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"If I profane with my unworthiest hand / This holy shrine, the gentle sin is this: / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss."',
         analysis:
-          'The pilgrim-and-saint conceit elevates physical attraction into a religious experience. By structuring their first exchange as a shared sonnet — Romeo speaks the first quatrain, Juliet responds with the second, they share the third and the couplet — Shakespeare shows them completing each other\'s thoughts. The religious language ("shrine," "pilgrims," "saints") sanctifies their love, setting it apart from Mercutio\'s bawdy reductions and the Nurse\'s pragmatism.',
+          'The pilgrim-and-saint conceit elevates physical attraction into a religious experience. By structuring their first exchange as a shared sonnet - Romeo speaks the first quatrain, Juliet responds with the second, they share the third and the couplet - Shakespeare shows them completing each other\'s thoughts. The religious language ("shrine," "pilgrims," "saints") sanctifies their love, setting it apart from Mercutio\'s bawdy reductions and the Nurse\'s pragmatism.',
       },
       {
         point:
@@ -71,7 +71,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
         analysis:
-          "Juliet's philosophical questioning of names challenges the entire social structure that sustains the feud. Her argument — that identity is inherent, not imposed by family labels — is logically rigorous and radical for a thirteen-year-old girl in a patriarchal society. Shakespeare uses love as the catalyst for intellectual awakening, showing that genuine passion stimulates thought rather than silencing it.",
+          "Juliet's philosophical questioning of names challenges the entire social structure that sustains the feud. Her argument - that identity is inherent, not imposed by family labels - is logically rigorous and radical for a thirteen-year-old girl in a patriarchal society. Shakespeare uses love as the catalyst for intellectual awakening, showing that genuine passion stimulates thought rather than silencing it.",
       },
       {
         point:
@@ -79,7 +79,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume."',
         analysis:
-          'The Friar\'s simile of "fire and powder" presents love as a chemical reaction: beautiful in its intensity but inherently self-destructive. The verb "consume" means both to fulfil and to destroy. Shakespeare foreshadows the lovers\' deaths while also arguing that the speed and intensity of their love is inseparable from its tragedy — you cannot have one without the other.',
+          'The Friar\'s simile of "fire and powder" presents love as a chemical reaction: beautiful in its intensity but inherently self-destructive. The verb "consume" means both to fulfil and to destroy. Shakespeare foreshadows the lovers\' deaths while also arguing that the speed and intensity of their love is inseparable from its tragedy - you cannot have one without the other.',
       },
     ],
     conclusion:
@@ -101,7 +101,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"Two households, both alike in dignity, / In fair Verona, where we lay our scene, / From ancient grudge break to new mutiny, / Where civil blood makes civil hands unclean."',
         analysis:
-          'The Prologue\'s phrase "ancient grudge" suggests the feud\'s origins are so old they have been forgotten — the violence is now purposeless habit. The pun on "civil" (civilised and civic) argues that the conflict corrupts both individual morality and public order. "Both alike in dignity" emphasises the symmetry of blame: neither family is justified.',
+          'The Prologue\'s phrase "ancient grudge" suggests the feud\'s origins are so old they have been forgotten - the violence is now purposeless habit. The pun on "civil" (civilised and civic) argues that the conflict corrupts both individual morality and public order. "Both alike in dignity" emphasises the symmetry of blame: neither family is justified.',
       },
       {
         point:
@@ -117,7 +117,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"Hang thee, young baggage! Disobedient wretch! / I tell thee what: get thee to church o\' Thursday, / Or never after look me in the face."',
         analysis:
-          'Capulet\'s shift from indulgent father to domestic tyrant is abrupt and shocking. The insults "baggage" and "wretch" dehumanise Juliet, reducing her to an object that has failed to fulfil its function. His ultimatum — marry or be disowned — weaponises economic dependence. Shakespeare draws a direct parallel between the public violence of the feud and the private violence of patriarchal authority.',
+          'Capulet\'s shift from indulgent father to domestic tyrant is abrupt and shocking. The insults "baggage" and "wretch" dehumanise Juliet, reducing her to an object that has failed to fulfil its function. His ultimatum - marry or be disowned - weaponises economic dependence. Shakespeare draws a direct parallel between the public violence of the feud and the private violence of patriarchal authority.',
       },
       {
         point:
@@ -129,7 +129,7 @@ const essayPlans: EssayPlan[] = [
       },
     ],
     conclusion:
-      "Shakespeare presents conflict not as a single dramatic event but as a pervasive social disease that operates at every level — street, court, and household. The play's structure, in which every moment of love is shadowed by the threat of violence, argues that conflict and love are locked in a cycle that only death can break.",
+      "Shakespeare presents conflict not as a single dramatic event but as a pervasive social disease that operates at every level - street, court, and household. The play's structure, in which every moment of love is shadowed by the threat of violence, argues that conflict and love are locked in a cycle that only death can break.",
     examinerTip:
       'Strong responses connect public conflict (the feud, the street fights) to private conflict (Capulet vs Juliet, Romeo vs himself). Show you understand that Shakespeare is examining how social structures create and sustain violence, not just depicting exciting sword fights.',
   },
@@ -156,7 +156,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"What\'s in a name? That which we call a rose / By any other word would smell as sweet."',
         analysis:
-          "The balcony speech marks Juliet's philosophical awakening. She challenges the idea that identity is determined by a family name — an argument that strikes at the root of the patriarchal system, which assigns women to families and transfers them like property through marriage. Her reasoning is logical, systematic, and far more intellectually mature than Romeo's romantic effusions in the same scene.",
+          "The balcony speech marks Juliet's philosophical awakening. She challenges the idea that identity is determined by a family name - an argument that strikes at the root of the patriarchal system, which assigns women to families and transfers them like property through marriage. Her reasoning is logical, systematic, and far more intellectually mature than Romeo's romantic effusions in the same scene.",
       },
       {
         point:
@@ -164,14 +164,14 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"Is there no pity sitting in the clouds / That sees into the bottom of my grief?"',
         analysis:
-          'After being abandoned by both parents and the Nurse, Juliet appeals directly to heaven, bypassing all human authority. The phrase "bottom of my grief" suggests a depth of suffering that no one around her can reach. Shakespeare isolates Juliet completely at this moment: the patriarchal world offers her no support because she has defied its central demand — obedience.',
+          'After being abandoned by both parents and the Nurse, Juliet appeals directly to heaven, bypassing all human authority. The phrase "bottom of my grief" suggests a depth of suffering that no one around her can reach. Shakespeare isolates Juliet completely at this moment: the patriarchal world offers her no support because she has defied its central demand - obedience.',
       },
       {
         point:
           "Juliet's decision to take the potion represents the ultimate act of female agency in the play, as she takes control of her own body in a society that treats it as male property.",
         quotation: '"My dismal scene I needs must act alone. / Come, vial."',
         analysis:
-          'The theatrical language ("scene," "act") shows Juliet aware that she is performing a role — but a role she has chosen for herself, not one assigned by her father. The soliloquy before she drinks, with its terrifying catalogue of fears, demonstrates extraordinary courage. Shakespeare gives her the most psychologically complex solo scene in the play, elevating her far above the passive female ideal of Elizabethan convention.',
+          'The theatrical language ("scene," "act") shows Juliet aware that she is performing a role - but a role she has chosen for herself, not one assigned by her father. The soliloquy before she drinks, with its terrifying catalogue of fears, demonstrates extraordinary courage. Shakespeare gives her the most psychologically complex solo scene in the play, elevating her far above the passive female ideal of Elizabethan convention.',
       },
     ],
     conclusion:
@@ -193,7 +193,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           "\"A pair of star-cross'd lovers take their life; / Whose misadventur'd piteous overthrows / Doth with their death bury their parents' strife.\"",
         analysis:
-          'The term "star-cross\'d" draws on the Elizabethan belief that the stars governed human destiny, presenting the lovers as cosmically doomed. The double meaning of "take their life" — both born and killed — compresses their entire existence into a single phrase. By revealing the ending at the start, Shakespeare transforms the audience into witnesses of fate in action: we know what is coming but are powerless to prevent it.',
+          'The term "star-cross\'d" draws on the Elizabethan belief that the stars governed human destiny, presenting the lovers as cosmically doomed. The double meaning of "take their life" - both born and killed - compresses their entire existence into a single phrase. By revealing the ending at the start, Shakespeare transforms the audience into witnesses of fate in action: we know what is coming but are powerless to prevent it.',
       },
       {
         point:
@@ -205,22 +205,22 @@ const essayPlans: EssayPlan[] = [
       },
       {
         point:
-          "The play's catastrophe depends on a sequence of unlucky coincidences — the undelivered letter, Romeo's timing — that can be read as either fate or sheer bad luck.",
+          "The play's catastrophe depends on a sequence of unlucky coincidences - the undelivered letter, Romeo's timing - that can be read as either fate or sheer bad luck.",
         quotation:
           '"Unhappy fortune! The letter was not nice but full of charge, / Of dear import."',
         analysis:
-          'Friar Lawrence\'s exclamation when he learns the letter failed uses the word "fortune," connecting the plot mechanism to the play\'s larger fate motif. The cause — a plague quarantine — is utterly arbitrary, raising the question of whether fate is a deliberate force or simply random chance. Shakespeare refuses to answer definitively, leaving the audience to weigh cosmic design against human error.',
+          'Friar Lawrence\'s exclamation when he learns the letter failed uses the word "fortune," connecting the plot mechanism to the play\'s larger fate motif. The cause - a plague quarantine - is utterly arbitrary, raising the question of whether fate is a deliberate force or simply random chance. Shakespeare refuses to answer definitively, leaving the audience to weigh cosmic design against human error.',
       },
       {
         point:
-          'Romeo\'s final act of defiance — "Then I defy you, stars!" — asserts free will at the moment fate seems most powerful, but his defiance only accelerates the very outcome fate has decreed.',
+          'Romeo\'s final act of defiance - "Then I defy you, stars!" - asserts free will at the moment fate seems most powerful, but his defiance only accelerates the very outcome fate has decreed.',
         quotation: '"Is it e\'en so? Then I defy you, stars!"',
         analysis:
-          'The monosyllabic force of "Then I defy you, stars!" is the play\'s most dramatic assertion of human agency. Romeo chooses to act rather than accept what fate has apparently dictated. But the tragic irony is devastating: his act of defiance — racing to the tomb to die beside Juliet — is exactly what fate requires for the prophecy to be fulfilled. Shakespeare suggests that free will and fate may not be opposites but collaborators in the tragic outcome.',
+          'The monosyllabic force of "Then I defy you, stars!" is the play\'s most dramatic assertion of human agency. Romeo chooses to act rather than accept what fate has apparently dictated. But the tragic irony is devastating: his act of defiance - racing to the tomb to die beside Juliet - is exactly what fate requires for the prophecy to be fulfilled. Shakespeare suggests that free will and fate may not be opposites but collaborators in the tragic outcome.',
       },
     ],
     conclusion:
-      'Shakespeare uses fate as both a dramatic structure and a philosophical question. The Prologue, the premonitions, and the chain of coincidences all suggest a universe governed by forces beyond human control. But the play also shows characters making choices — to fight, to marry in secret, to trust a dangerous plan — that contribute to their destruction. The genius of the play is that it sustains both readings simultaneously.',
+      'Shakespeare uses fate as both a dramatic structure and a philosophical question. The Prologue, the premonitions, and the chain of coincidences all suggest a universe governed by forces beyond human control. But the play also shows characters making choices - to fight, to marry in secret, to trust a dangerous plan - that contribute to their destruction. The genius of the play is that it sustains both readings simultaneously.',
     examinerTip:
       "Top-band answers avoid treating fate as a simple force that controls everything. Show that Shakespeare creates ambiguity: the audience can never be sure whether the tragedy is caused by the stars, the feud, or the characters' own choices. Discussing this uncertainty is what elevates an answer from competent to excellent.",
   },
@@ -239,7 +239,7 @@ const essayPlans: EssayPlan[] = [
         quotation:
           '"But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun."',
         analysis:
-          "Romeo's cosmic metaphor — Juliet as the sun — expresses a devotion that is total and immediate. The imagery is excessive by any adult standard, but Shakespeare presents it without irony: this is what first love feels like. The scene takes place at night, in the Capulet orchard, literally trespassing on adult territory. The young lovers create their own sacred space within a landscape owned and controlled by the older generation.",
+          "Romeo's cosmic metaphor - Juliet as the sun - expresses a devotion that is total and immediate. The imagery is excessive by any adult standard, but Shakespeare presents it without irony: this is what first love feels like. The scene takes place at night, in the Capulet orchard, literally trespassing on adult territory. The young lovers create their own sacred space within a landscape owned and controlled by the older generation.",
       },
       {
         point:
@@ -258,7 +258,7 @@ const essayPlans: EssayPlan[] = [
       },
       {
         point:
-          "The Nurse's betrayal — advising Juliet to forget Romeo and marry Paris — shows even the most sympathetic adult prioritising safety and convention over youthful passion.",
+          "The Nurse's betrayal - advising Juliet to forget Romeo and marry Paris - shows even the most sympathetic adult prioritising safety and convention over youthful passion.",
         quotation:
           '"I think it best you married with the County. / O, he\'s a lovely gentleman! / Romeo\'s a dishclout to him."',
         analysis:
@@ -318,7 +318,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Shakespeare — Play
+              Shakespeare - Play
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -327,7 +327,7 @@ export default async function RomeoAndJulietEssayPlansPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Romeo and Juliet — GCSE Essay Plans
+            Romeo and Juliet - GCSE Essay Plans
           </h1>
           <p className="mt-2 max-w-2xl text-body-lg text-muted-foreground">
             Five model essay plans with thesis statements, paragraph structures, key quotations and

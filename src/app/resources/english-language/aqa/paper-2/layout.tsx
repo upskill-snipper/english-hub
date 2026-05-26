@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'AQA GCSE English Language Paper 2 guide. Writers Viewpoints and Perspectives: question breakdowns, timing advice, marking guide, and top-grade tips.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/aqa/paper-2' },
   openGraph: {
-    title: 'AQA English Language Paper 2 — The English Hub',
+    title: 'AQA English Language Paper 2 - The English Hub',
     description:
       'AQA GCSE English Language Paper 2 guide. Writers Viewpoints and Perspectives: question breakdowns, timing advice, marking guide, and top-grade tips.',
   },

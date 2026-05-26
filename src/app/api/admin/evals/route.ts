@@ -1,4 +1,4 @@
-// ─── Platform-admin — Marking eval scorecard ────────────────────────────────
+// ─── Platform-admin - Marking eval scorecard ────────────────────────────────
 // GET /api/admin/evals
 //
 // Site-admin only. Surfaces the OFFLINE Art. 15 eval harness's ratchet
@@ -13,7 +13,7 @@
 // harness's own "MECHANICS CHECK ONLY / NOT A CERTIFIED ACCURACY RESULT"
 // behaviour in evals/run.ts.)
 //
-// Does NOT execute the harness or import its server-heavy code — it only
+// Does NOT execute the harness or import its server-heavy code - it only
 // reads the JSON thresholds file and recomputes light metrics from the DB.
 // EMPTY-TABLE SAFE: zeroed metrics, never a 500.
 // ────────────────────────────────────────────────────────────────────────────
@@ -41,12 +41,12 @@ interface Thresholds {
   maxGradeInstabilityRate: number
 }
 
-// Conservative fallback if the file cannot be read in the runtime sandbox —
+// Conservative fallback if the file cannot be read in the runtime sandbox -
 // keeps the endpoint up; matches the committed evals/thresholds.json values.
 const FALLBACK_THRESHOLDS: Thresholds = {
   version: 1,
   rationale:
-    'Fallback copy of evals/thresholds.json — the on-disk file could not be read in this runtime. Values mirror the committed ratchet thresholds.',
+    'Fallback copy of evals/thresholds.json - the on-disk file could not be read in this runtime. Values mirror the committed ratchet thresholds.',
   minExactAgreement: 0.6,
   minAdjacentAgreement: 0.95,
   minQwk: 0.7,
@@ -165,7 +165,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Scorecard: the field metric we *can* compute today vs the offline bars.
-    // `pass: null` everywhere — a production proxy cannot pass→certify an
+    // `pass: null` everywhere - a production proxy cannot pass→certify an
     // Art. 15 gate; only the licensed-data harness run can.
     const scorecard = [
       {
@@ -199,7 +199,7 @@ export async function GET(request: NextRequest) {
       {
         metric: 'maxGradeInstabilityRate',
         threshold: thresholds.maxGradeInstabilityRate,
-        fieldProxy: 'test–retest only measurable in the offline LLM harness',
+        fieldProxy: 'test-retest only measurable in the offline LLM harness',
         fieldValue: null as number | null,
         pass: null as boolean | null,
       },
@@ -215,7 +215,7 @@ export async function GET(request: NextRequest) {
       certifiableReason: NOT_CERTIFIABLE_REASON,
       realDataProtocol: REAL_DATA_PROTOCOL,
       banner:
-        'NOT A CERTIFIED ACCURACY RESULT — these are in-field production deltas, ' +
+        'NOT A CERTIFIED ACCURACY RESULT - these are in-field production deltas, ' +
         'not the licensed, dual-marked, senior-adjudicated gold set the EU AI ' +
         'Act Art. 15 harness requires. Certification requires running the ' +
         'offline LLM eval on real examiner data (see ' +

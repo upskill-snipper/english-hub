@@ -1,4 +1,4 @@
-// School pricing cards — server component. Renders the indicative
+// School pricing cards - server component. Renders the indicative
 // Founder School Pilot tiers and the Annual Deployment tiers. Every
 // figure is "from" framed and the indicative-pricing caveat is always
 // shown. Values come from the single source of truth in
@@ -26,7 +26,7 @@ const PILOT_TIERS: Tier[] = [
   {
     name: 'English department',
     price: PRICING_DISPLAY.pilotDepartmentFrom,
-    blurb: 'A whole-department pilot across KS3–KS4 English Language and Literature.',
+    blurb: 'A whole-department pilot across KS3-KS4 English Language and Literature.',
     highlight: true,
   },
   {

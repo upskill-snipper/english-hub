@@ -11,11 +11,11 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
     title:
-      'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE Literature Study Guide',
+      'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
     description:
       'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',
   },
-  title: 'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE Literature Study Guide',
+  title: 'The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide',
   description:
     'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',
   alternates: {
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 
 const plotBeats = [
   {
-    part: 'Act One — The dog and the book',
+    part: 'Act One - The dog and the book',
     summary:
       'Christopher Boone, a fifteen-year-old in Swindon, finds his neighbour Mrs Shears\u2019s dog Wellington killed with a garden fork. He decides to investigate, and his teacher Siobhan encourages him to write the investigation as a book. The play\u2019s metatheatrical frame is established: we are watching Siobhan\u2019s class dramatise Christopher\u2019s book.',
   },
   {
     part: 'Act One, second half',
     summary:
-      'Christopher\u2019s investigation leads him to discover the letters from his mother — letters his father Ed had told him were impossible because his mother was dead. Ed confesses to hiding the letters and to killing Wellington himself. The Act One curtain falls on an enormous breach of trust.',
+      'Christopher\u2019s investigation leads him to discover the letters from his mother - letters his father Ed had told him were impossible because his mother was dead. Ed confesses to hiding the letters and to killing Wellington himself. The Act One curtain falls on an enormous breach of trust.',
   },
   {
-    part: 'Act Two — The journey to London',
+    part: 'Act Two - The journey to London',
     summary:
       'Christopher sets out alone to find his mother in London, navigating train stations and the Tube with Siobhan\u2019s words as his guide. He finds his mother living with her lover Mr Shears, returns to Swindon, and prepares for his A-level maths. The play ends with the maths question he promised Siobhan he would appear in the appendix to solve, and the tentative question: "Does that mean I can do anything?"',
   },
@@ -52,7 +52,7 @@ const characters = [
   },
   {
     name: 'Judy Boone',
-    note: 'Christopher\u2019s mother, who left the family for Mr Shears. Her letters — first hidden, then discovered — are the play\u2019s emotional hinge.',
+    note: 'Christopher\u2019s mother, who left the family for Mr Shears. Her letters - first hidden, then discovered - are the play\u2019s emotional hinge.',
   },
   {
     name: 'Siobhan',
@@ -77,7 +77,7 @@ const keyQuotations = [
     quote: 'My name is Christopher John Francis Boone. I know all the countries\u2026',
     speaker: 'Christopher',
     analysis:
-      'The opening establishes Christopher\u2019s voice — precise, taxonomic, proud. Stephens preserves the novel\u2019s first-person idiom through Siobhan\u2019s reading aloud.',
+      'The opening establishes Christopher\u2019s voice - precise, taxonomic, proud. Stephens preserves the novel\u2019s first-person idiom through Siobhan\u2019s reading aloud.',
   },
   {
     quote: 'Prime numbers are what is left when you have taken all the patterns away.',
@@ -131,7 +131,7 @@ const keyQuotations = [
     quote: 'You have to do things even if they scare you.',
     speaker: 'Christopher',
     analysis:
-      'Christopher\u2019s lesson from the London journey. The line is earned by two acts of mounting dread — the single most theatrically demanding sequence in the play.',
+      'Christopher\u2019s lesson from the London journey. The line is earned by two acts of mounting dread - the single most theatrically demanding sequence in the play.',
   },
   {
     quote: 'I am going to prove that I can do anything.',
@@ -149,7 +149,7 @@ const keyQuotations = [
     quote: 'The dog was dead… it had a large garden fork sticking out of it.',
     speaker: 'Christopher',
     analysis:
-      'Christopher\u2019s forensic calm is simultaneously comic and disturbing — Stephens keeps the novel\u2019s tonal tightrope intact.',
+      'Christopher\u2019s forensic calm is simultaneously comic and disturbing - Stephens keeps the novel\u2019s tonal tightrope intact.',
   },
   {
     quote: 'I love Christopher more than anything in the whole wide world.',
@@ -161,7 +161,7 @@ const keyQuotations = [
     quote: 'I\u2019m sorry, Christopher. I promise, I will not tell you any more lies. Ever.',
     speaker: 'Ed Boone',
     analysis:
-      'The play ends with a fragile, provisional trust. Christopher does not yet accept the apology — the audience sees him weighing it on his own scales.',
+      'The play ends with a fragile, provisional trust. Christopher does not yet accept the apology - the audience sees him weighing it on his own scales.',
   },
 ]
 
@@ -171,7 +171,7 @@ export default async function CuriousIncidentHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <CourseJsonLd
-        name="The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE Literature Study Guide"
+        name="The Curious Incident of the Dog in the Night-Time - Edexcel IGCSE Literature Study Guide"
         description="In-depth study guide for The Curious Incident of the Dog in the Night-Time for Edexcel IGCSE English Literature, covering plot, characters, themes, key quotations, context and exam essay plans."
       />
       <BreadcrumbJsonLd
@@ -227,7 +227,7 @@ export default async function CuriousIncidentHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
             <h2 className="text-body-sm font-semibold text-foreground">
-              Key quotations only — read the full text
+              Key quotations only - read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Both the play and Haddon’s source novel are in copyright. This guide uses short
@@ -308,7 +308,7 @@ export default async function CuriousIncidentHubPage() {
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>

@@ -902,7 +902,7 @@ export default function PrefixSuffixLabPage() {
                 </div>
 
                 <p className="text-sm text-muted-foreground">
-                  Goal — <span className="font-medium text-foreground">{current.target}</span>
+                  Goal - <span className="font-medium text-foreground">{current.target}</span>
                 </p>
               </div>
 
@@ -958,7 +958,7 @@ export default function PrefixSuffixLabPage() {
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite — the word is{' '}
+                        <XCircle className="size-4" /> Not quite - the word is{' '}
                         <span className="font-bold">{current.resultingWord}</span> ({current.answer}{' '}
                         {current.mode === 'prefix' ? '+' : 'on'} {current.root})
                       </>

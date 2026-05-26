@@ -81,10 +81,10 @@ const PASSAGE_BANK: Passage[] = [
         type: 'evaluation',
         prompt: 'How effectively does the writer create a sense of isolation?',
         options: [
-          'Not effectively — the storm provides company',
-          'Very effectively — details like "three days alone" and "silence between storms" build a vivid sense of loneliness',
-          'Somewhat — but Eleanor seems comfortable',
-          'Poorly — the house sounds welcoming',
+          'Not effectively - the storm provides company',
+          'Very effectively - details like "three days alone" and "silence between storms" build a vivid sense of loneliness',
+          'Somewhat - but Eleanor seems comfortable',
+          'Poorly - the house sounds welcoming',
         ],
         correctIndex: 1,
       },
@@ -105,7 +105,7 @@ const PASSAGE_BANK: Passage[] = [
   {
     title: 'The Market',
     genre: 'Descriptive Non-fiction',
-    text: 'Borough Market at dawn is a symphony of preparation. Stallholders arrive in the blue half-light, their breath visible in the cold air, hauling crates of produce that gleam with morning dew. The fishmonger arranges his silver catch in neat rows, each mackerel a small mirror reflecting the strip lights above. Somewhere a radio plays, half-drowned by the clatter of metal shutters being rolled up. By seven, the first customers appear: chefs in checked trousers, moving with purpose, squeezing avocados and sniffing bunches of coriander with the concentration of surgeons. The air thickens with the smell of fresh bread, roasting coffee, and something sweet — perhaps the doughnuts from the stall on the corner, already drawing a small, patient queue.',
+    text: 'Borough Market at dawn is a symphony of preparation. Stallholders arrive in the blue half-light, their breath visible in the cold air, hauling crates of produce that gleam with morning dew. The fishmonger arranges his silver catch in neat rows, each mackerel a small mirror reflecting the strip lights above. Somewhere a radio plays, half-drowned by the clatter of metal shutters being rolled up. By seven, the first customers appear: chefs in checked trousers, moving with purpose, squeezing avocados and sniffing bunches of coriander with the concentration of surgeons. The air thickens with the smell of fresh bread, roasting coffee, and something sweet - perhaps the doughnuts from the stall on the corner, already drawing a small, patient queue.',
     questions: [
       {
         type: 'language',
@@ -156,7 +156,7 @@ const PASSAGE_BANK: Passage[] = [
         prompt: 'How does the writer appeal to the senses throughout the passage?',
         options: [
           'Only through visual description',
-          'Through sight, sound, smell, and touch — creating an immersive, multi-sensory experience',
+          'Through sight, sound, smell, and touch - creating an immersive, multi-sensory experience',
           'Mainly through taste',
           'The passage lacks sensory detail',
         ],
@@ -167,7 +167,7 @@ const PASSAGE_BANK: Passage[] = [
   {
     title: 'The Letter',
     genre: 'Historical Fiction',
-    text: 'Thomas folded the letter carefully, pressing the creases with his thumbnail until the paper was a perfect square. He had read it four times, and each reading had drained a little more colour from his face. His sister was not coming home. The regiment had moved north, she had written, and the field hospital moved with it. She would not leave the wounded. Thomas understood this — he had always known Mary was braver than him — but understanding did not lessen the hollow ache in his chest. He placed the letter in the tin box under his bed, alongside the others, each one a small monument to absence. Outside, the factory whistle blew, summoning him back to the looms, back to the noise that was almost loud enough to drown out thought.',
+    text: 'Thomas folded the letter carefully, pressing the creases with his thumbnail until the paper was a perfect square. He had read it four times, and each reading had drained a little more colour from his face. His sister was not coming home. The regiment had moved north, she had written, and the field hospital moved with it. She would not leave the wounded. Thomas understood this - he had always known Mary was braver than him - but understanding did not lessen the hollow ache in his chest. He placed the letter in the tin box under his bed, alongside the others, each one a small monument to absence. Outside, the factory whistle blew, summoning him back to the looms, back to the noise that was almost loud enough to drown out thought.',
     questions: [
       {
         type: 'inference',
@@ -217,10 +217,10 @@ const PASSAGE_BANK: Passage[] = [
         type: 'evaluation',
         prompt: 'How effectively does the writer convey the theme of loss?',
         options: [
-          'Poorly — Thomas seems happy',
-          'Very effectively — through physical details like draining colour, the hollow ache, and the accumulating letters',
-          'Somewhat — but the passage is too short',
-          'Not at all — there is no loss in the passage',
+          'Poorly - Thomas seems happy',
+          'Very effectively - through physical details like draining colour, the hollow ache, and the accumulating letters',
+          'Somewhat - but the passage is too short',
+          'Not at all - there is no loss in the passage',
         ],
         correctIndex: 1,
       },
@@ -229,7 +229,7 @@ const PASSAGE_BANK: Passage[] = [
   {
     title: 'Screen Time',
     genre: 'Persuasive Article',
-    text: "We are raising a generation of children who cannot look up from their screens. Walk through any restaurant, any waiting room, any playground, and you will see the same haunting scene: small faces illuminated by the blue glow of tablets, thumbs scrolling with the mechanical rhythm of factory workers on an assembly line. These children are not playing. They are not imagining. They are consuming — endlessly, passively, silently. Some will argue that technology is a tool, and that is true. A hammer is also a tool, but we do not hand one to a toddler and walk away. The question is not whether screens have value, but whether we have the courage to set boundaries. Every hour spent watching someone else's life on a screen is an hour not spent living your own.",
+    text: "We are raising a generation of children who cannot look up from their screens. Walk through any restaurant, any waiting room, any playground, and you will see the same haunting scene: small faces illuminated by the blue glow of tablets, thumbs scrolling with the mechanical rhythm of factory workers on an assembly line. These children are not playing. They are not imagining. They are consuming - endlessly, passively, silently. Some will argue that technology is a tool, and that is true. A hammer is also a tool, but we do not hand one to a toddler and walk away. The question is not whether screens have value, but whether we have the courage to set boundaries. Every hour spent watching someone else's life on a screen is an hour not spent living your own.",
     questions: [
       {
         type: 'language',
@@ -272,7 +272,7 @@ const PASSAGE_BANK: Passage[] = [
         prompt: "What is the writer's attitude towards parents?",
         options: [
           'Admiration',
-          'Critical — implying parents are failing to set boundaries',
+          'Critical - implying parents are failing to set boundaries',
           'Neutral',
           'Supportive and encouraging',
         ],
@@ -282,8 +282,8 @@ const PASSAGE_BANK: Passage[] = [
         type: 'evaluation',
         prompt: 'How effectively does the writer use rhetorical devices to persuade?',
         options: [
-          'Poorly — the argument is weak',
-          'Very effectively — combining emotive imagery, analogy, rhetorical questions and direct address to create a compelling case',
+          'Poorly - the argument is weak',
+          'Very effectively - combining emotive imagery, analogy, rhetorical questions and direct address to create a compelling case',
           'The passage does not try to persuade',
           'Only through statistics',
         ],
@@ -313,7 +313,7 @@ const PASSAGE_BANK: Passage[] = [
         prompt: 'How does the writer present the robin?',
         options: [
           'As a threat to the garden',
-          'As a small, vivid contrast to the winter landscape — a symbol of life persisting',
+          'As a small, vivid contrast to the winter landscape - a symbol of life persisting',
           'As a nuisance',
           'As part of the frost',
         ],
@@ -346,9 +346,9 @@ const PASSAGE_BANK: Passage[] = [
         prompt: 'How effectively does the writer use extended metaphor throughout the passage?',
         options: [
           'There are no metaphors',
-          'Very effectively — the garden is consistently personified as a living, patient being, creating a cohesive allegorical reading',
-          'Somewhat — but the metaphors are confusing',
-          'Poorly — the metaphors are mixed',
+          'Very effectively - the garden is consistently personified as a living, patient being, creating a cohesive allegorical reading',
+          'Somewhat - but the metaphors are confusing',
+          'Poorly - the metaphors are mixed',
         ],
         correctIndex: 1,
       },
@@ -399,7 +399,7 @@ const PASSAGE_BANK: Passage[] = [
         prompt: 'Why is "Her palm was dry" described as "a small victory"?',
         options: [
           'Because she dislikes water',
-          'Because a sweaty handshake would betray her nerves — maintaining dry hands means her anxiety remains hidden',
+          'Because a sweaty handshake would betray her nerves - maintaining dry hands means her anxiety remains hidden',
           'Because the office is hot',
           'Because she washed her hands',
         ],
@@ -409,10 +409,10 @@ const PASSAGE_BANK: Passage[] = [
         type: 'evaluation',
         prompt: 'How effectively does the writer make Priya a relatable character?',
         options: [
-          'Not at all — she is too confident',
-          'Very effectively — the gap between outward composure and inner turmoil captures a universally relatable experience of performing competence',
-          'Somewhat — but we learn nothing about her',
-          'Poorly — the passage is too short',
+          'Not at all - she is too confident',
+          'Very effectively - the gap between outward composure and inner turmoil captures a universally relatable experience of performing competence',
+          'Somewhat - but we learn nothing about her',
+          'Poorly - the passage is too short',
         ],
         correctIndex: 1,
       },
@@ -450,7 +450,7 @@ export default function ComprehensionChallengePage() {
   const currentQuestion = currentPassage?.questions[questionIndex] ?? null
   const overallQuestionNum = passageIndex * 5 + questionIndex + 1
 
-  // Per-session salt — fresh on every page mount, so each new game shuffles
+  // Per-session salt - fresh on every page mount, so each new game shuffles
   // option order differently. Stable for the whole session so feedback timing
   // and visible state stay consistent within a single round.
   const sessionSaltRef = useRef<string>(
@@ -492,7 +492,7 @@ export default function ComprehensionChallengePage() {
       if (showFeedback || !currentQuestion) return
       setSelected(index)
       setShowFeedback(true)
-      // Score by VALUE, not index — options are shuffled at render time.
+      // Score by VALUE, not index - options are shuffled at render time.
       const pickedValue = displayedOptions[index]
       const correctForQ = currentQuestion.options[currentQuestion.correctIndex]
       if (pickedValue === correctForQ) {

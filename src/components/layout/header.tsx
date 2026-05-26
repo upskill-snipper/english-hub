@@ -29,7 +29,7 @@ import { useT } from '@/lib/i18n/use-t'
 
 type NavLink = {
   href: string
-  /** Dictionary key — resolved by useT() at render time. */
+  /** Dictionary key - resolved by useT() at render time. */
   labelKey: string
 }
 
@@ -40,7 +40,7 @@ function getNavForBoardType(
   if (type) {
     void board
     // KS3 and EAL are full hubs in their own right, reached from the
-    // homepage and in-context links — they are deliberately NOT
+    // homepage and in-context links - they are deliberately NOT
     // top-level nav headings.
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
@@ -55,7 +55,7 @@ function getNavForBoardType(
   // Teachers, Students, EAL, Demo, School Pilot, Pricing) overflowed
   // the centre grid column at common laptop widths (1280-1440px) once
   // the right-hand auth section + theme/lang toggles + brand +
-  // BoardSwitcher were all rendered after hydration — caused the
+  // BoardSwitcher were all rendered after hydration - caused the
   // "flashes ok then reverts to overlapping" header bug. EAL is still
   // discoverable as a tile on every board card + on /schools + in the
   // footer "Try it" section; School Pilot is the primary CTA on
@@ -71,7 +71,7 @@ function getNavForBoardType(
 
 // Routes where the board context actually drives the rendered content
 // (revision hub, board-filtered practice etc.). The BoardSwitcher only
-// renders on these — on marketing/legal/demo/general routes it just
+// renders on these - on marketing/legal/demo/general routes it just
 // adds clutter and contributes to the header-overflow bug.
 const BOARD_CONTEXT_ROUTES = [
   '/revision',
@@ -130,7 +130,7 @@ export function Header() {
           setIsSchoolMember(true)
         }
       } catch {
-        // Not a school member or network error — ignore
+        // Not a school member or network error - ignore
       }
     }
 
@@ -166,7 +166,7 @@ export function Header() {
               The <em className="italic text-[#E8A382]">English</em> Hub
             </span>
           </Link>
-          {/* Board switcher — desktop only, AND only on routes whose
+          {/* Board switcher - desktop only, AND only on routes whose
               content is filtered by the board context. On marketing /
               legal / demo / general pages the switcher just adds
               clutter (and contributes to the header-overflow bug). */}
@@ -202,7 +202,7 @@ export function Header() {
 
         {/* Desktop auth / CTA */}
         <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
-          {/* Theme + language toggles — always visible for ANY auth state
+          {/* Theme + language toggles - always visible for ANY auth state
               so dark/light AND English/Arabic are reachable everywhere on
               desktop. The language toggle was previously rendered only in
               the signed-out branch, leaving logged-in desktop users with
@@ -259,7 +259,7 @@ export function Header() {
             </>
           ) : (
             // 2026-05-20: trimmed inline "Try demo" + "Affiliates" links
-            // from the desktop signed-out auth section — Demo is now in
+            // from the desktop signed-out auth section - Demo is now in
             // the main nav and Affiliates lives in the footer. Removing
             // them stops the right-hand cluster from ballooning after
             // hydration and squeezing the centre nav.
@@ -460,7 +460,7 @@ export function Header() {
                 </>
               )}
 
-              {/* Language toggle inside the mobile sheet — previously only
+              {/* Language toggle inside the mobile sheet - previously only
                   the desktop nav rendered it, so mobile users had no way
                   to switch between EN and AR once they were on a small
                   screen. Render it last and centered for both EN + AR. */}
@@ -483,7 +483,7 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
   const router = useRouter()
   const { clearBoard } = useBoard()
 
-  // Avoid hydration mismatch — render a placeholder until the persisted
+  // Avoid hydration mismatch - render a placeholder until the persisted
   // store is ready. Width tuned to the typical loaded width so the
   // hydration swap does not visibly shift the surrounding layout.
   if (!isHydrated) {
@@ -517,7 +517,7 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
   // 2026-05-20: Change vs Reset previously both linked to the same
   // `/board-select?change=1` URL, so Reset never actually cleared
   // anything. Reset now calls clearBoard() (which clears BOTH the
-  // cookie AND the persisted localStorage value — required because
+  // cookie AND the persisted localStorage value - required because
   // the board store's onRehydrateStorage repairs the cookie from
   // localStorage if only the cookie were cleared) before navigating.
   // Both items use onClick handlers instead of render={<Link>} so the

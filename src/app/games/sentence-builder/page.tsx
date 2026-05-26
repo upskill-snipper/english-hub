@@ -121,7 +121,7 @@ const SENTENCE_BANK: SentenceItem[] = [
     note: 'Use "an" before a vowel sound: "an interesting".',
   },
 
-  // ── Compound sentences (A2–B1) ─────────────────────────────────────────────
+  // ── Compound sentences (A2-B1) ─────────────────────────────────────────────
   {
     tiles: ['I', 'wanted', 'to', 'go', 'out', 'but', 'it', 'was', 'raining'],
     correct: 'I wanted to go out but it was raining',
@@ -568,7 +568,7 @@ export default function SentenceBuilderPage() {
                 >
                   {feedback === 'correct' ? (
                     <span className="flex items-center gap-2">
-                      <CheckCircle className="size-4" /> Brilliant — that&apos;s exactly right!
+                      <CheckCircle className="size-4" /> Brilliant - that&apos;s exactly right!
                     </span>
                   ) : (
                     <>

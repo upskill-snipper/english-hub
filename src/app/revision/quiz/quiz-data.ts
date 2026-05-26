@@ -383,7 +383,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['World War II', 'The Crimean War', 'World War I', 'The Korean War'],
     correctIndex: 2,
     explanation:
-      '"Bayonet Charge" depicts a World War I infantry charge, capturing the raw terror of going over the top. Hughes was born in 1930 and never fought in any war — he drew on his father William\'s WWI accounts (William survived Gallipoli, one of only seventeen of his Lancashire Fusiliers regiment to return) to imagine the soldier\'s experience.',
+      '"Bayonet Charge" depicts a World War I infantry charge, capturing the raw terror of going over the top. Hughes was born in 1930 and never fought in any war - he drew on his father William\'s WWI accounts (William survived Gallipoli, one of only seventeen of his Lancashire Fusiliers regiment to return) to imagine the soldier\'s experience.',
     boards: ['aqa'],
   },
   {
@@ -1965,7 +1965,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
-  // ─── Macbeth (20 questions: st101–st120) ──────────────────────────────────
+  // ─── Macbeth (20 questions: st101-st120) ──────────────────────────────────
   {
     id: 'st101',
     topic: 'set-texts',
@@ -2243,7 +2243,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
-  // ─── An Inspector Calls (15 questions: st121–st135) ──────────────────────
+  // ─── An Inspector Calls (15 questions: st121-st135) ──────────────────────
   {
     id: 'st121',
     topic: 'set-texts',
@@ -2463,7 +2463,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
-  // ─── A Christmas Carol (15 questions: st136–st150) ────────────────────────
+  // ─── A Christmas Carol (15 questions: st136-st150) ────────────────────────
   {
     id: 'st136',
     topic: 'set-texts',
@@ -2676,7 +2676,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'eduqas'],
   },
 
-  // ─── Jekyll and Hyde (15 questions: st151–st165) ──────────────────────────
+  // ─── Jekyll and Hyde (15 questions: st151-st165) ──────────────────────────
   {
     id: 'st151',
     topic: 'set-texts',
@@ -2894,7 +2894,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
 
-  // ─── Romeo and Juliet (10 questions: st166–st175) ─────────────────────────
+  // ─── Romeo and Juliet (10 questions: st166-st175) ─────────────────────────
   {
     id: 'st166',
     topic: 'set-texts',
@@ -3041,7 +3041,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 
-  // ─── Animal Farm (10 questions: st176–st185) ──────────────────────────────
+  // ─── Animal Farm (10 questions: st176-st185) ──────────────────────────────
   {
     id: 'st176',
     topic: 'set-texts',
@@ -3189,7 +3189,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'edexcel', 'ocr'],
   },
 
-  // ─── Lord of the Flies (10 questions: st186–st195) ────────────────────────
+  // ─── Lord of the Flies (10 questions: st186-st195) ────────────────────────
   {
     id: 'st186',
     topic: 'set-texts',
@@ -3337,7 +3337,7 @@ const setTextQuestions: QuizQuestion[] = [
     boards: ['aqa', 'ocr', 'eduqas'],
   },
 
-  // ─── Of Mice and Men (5 questions: st196–st200) ───────────────────────────
+  // ─── Of Mice and Men (5 questions: st196-st200) ───────────────────────────
   {
     id: 'st196',
     topic: 'set-texts',
@@ -3678,7 +3678,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
       'A motif is a recurring image, idea, or symbol throughout a text that develops or reinforces the themes.',
   },
 
-  // ── Identify the technique (30 questions: lt101–lt130) ────────────────────
+  // ── Identify the technique (30 questions: lt101-lt130) ────────────────────
 
   {
     id: 'lt101',
@@ -3696,7 +3696,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Assonance', 'Onomatopoeia', 'Alliteration', 'Consonance'],
     correctIndex: 2,
     explanation:
-      'Alliteration is the repetition of the same consonant sound at the beginning of closely connected words — here the "s" sound.',
+      'Alliteration is the repetition of the same consonant sound at the beginning of closely connected words - here the "s" sound.',
   },
   {
     id: 'lt103',
@@ -3722,7 +3722,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Alliteration', 'Onomatopoeia', 'Sibilance', 'Juxtaposition'],
     correctIndex: 1,
     explanation:
-      'Onomatopoeia is when words imitate the sounds they describe — "bang" and "crash" sound like the noises they represent.',
+      'Onomatopoeia is when words imitate the sounds they describe - "bang" and "crash" sound like the noises they represent.',
   },
   {
     id: 'lt106',
@@ -3731,7 +3731,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Paradox', 'Oxymoron', 'Irony', 'Antithesis'],
     correctIndex: 1,
     explanation:
-      'An oxymoron places two contradictory words together — "bitter" and "sweet" are opposites combined into one term.',
+      'An oxymoron places two contradictory words together - "bitter" and "sweet" are opposites combined into one term.',
   },
   {
     id: 'lt107',
@@ -3758,7 +3758,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Hyperbole', 'Euphemism', 'Litotes', 'Sarcasm'],
     correctIndex: 2,
     explanation:
-      'Litotes is a form of understatement that uses a negative to express a positive — "not bad" means "good" or "great".',
+      'Litotes is a form of understatement that uses a negative to express a positive - "not bad" means "good" or "great".',
   },
   {
     id: 'lt110',
@@ -3767,7 +3767,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Antithesis', 'Paradox', 'Rhetorical question', 'Oxymoron'],
     correctIndex: 0,
     explanation:
-      'Antithesis places two opposing ideas in a balanced phrase — "to be" is directly contrasted with "not to be".',
+      'Antithesis places two opposing ideas in a balanced phrase - "to be" is directly contrasted with "not to be".',
   },
   {
     id: 'lt111',
@@ -3803,7 +3803,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Dramatic irony', 'Situational irony', 'Verbal irony', 'Paradox'],
     correctIndex: 1,
     explanation:
-      'Situational irony occurs when the outcome is the opposite of what is expected — a fire station is supposed to prevent fires, not burn.',
+      'Situational irony occurs when the outcome is the opposite of what is expected - a fire station is supposed to prevent fires, not burn.',
   },
   {
     id: 'lt115',
@@ -3830,7 +3830,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Euphemism', 'Litotes', 'Understatement', 'Idiom'],
     correctIndex: 0,
     explanation:
-      'A euphemism is a polite or mild expression used in place of one that might be harsh or blunt — "passed away" softens "died".',
+      'A euphemism is a polite or mild expression used in place of one that might be harsh or blunt - "passed away" softens "died".',
   },
   {
     id: 'lt118',
@@ -3840,7 +3840,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Epistrophe', 'Anaphora', 'Epiphora', 'Parallelism'],
     correctIndex: 1,
     explanation:
-      'Anaphora is the repetition of a word or phrase at the beginning of successive clauses — here "we shall fight" is repeated.',
+      'Anaphora is the repetition of a word or phrase at the beginning of successive clauses - here "we shall fight" is repeated.',
   },
   {
     id: 'lt119',
@@ -3882,7 +3882,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Consonance', 'Assonance', 'Alliteration', 'Sibilance'],
     correctIndex: 1,
     explanation:
-      'Assonance is the repetition of vowel sounds within nearby words — the "e" sound repeats in "hear", "mellow", "wedding", "bells".',
+      'Assonance is the repetition of vowel sounds within nearby words - the "e" sound repeats in "hear", "mellow", "wedding", "bells".',
   },
   {
     id: 'lt123',
@@ -3891,7 +3891,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Metaphor', 'Synecdoche', 'Metonymy', 'Symbolism'],
     correctIndex: 2,
     explanation:
-      'Metonymy replaces the name of something with an attribute closely associated with it — the crown is associated with the monarchy but is not the same thing.',
+      'Metonymy replaces the name of something with an attribute closely associated with it - the crown is associated with the monarchy but is not the same thing.',
   },
   {
     id: 'lt124',
@@ -3900,7 +3900,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Simile', 'Extended metaphor', 'Personification', 'Allegory'],
     correctIndex: 1,
     explanation:
-      'An extended metaphor develops a comparison across multiple phrases or sentences — fog is compared to a cat throughout.',
+      'An extended metaphor develops a comparison across multiple phrases or sentences - fog is compared to a cat throughout.',
   },
   {
     id: 'lt125',
@@ -3919,7 +3919,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Hyperbole', 'Synecdoche', 'Metonymy', 'Idiom'],
     correctIndex: 1,
     explanation:
-      'Synecdoche uses a part to represent the whole — "ears" stands for the whole person\'s attention.',
+      'Synecdoche uses a part to represent the whole - "ears" stands for the whole person\'s attention.',
   },
   {
     id: 'lt127',
@@ -3928,7 +3928,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Simile', 'Metaphor', 'Personification', 'Hyperbole'],
     correctIndex: 1,
     explanation:
-      'This is a metaphor — the child is directly described AS a whirlwind rather than being compared using "like" or "as".',
+      'This is a metaphor - the child is directly described AS a whirlwind rather than being compared using "like" or "as".',
   },
   {
     id: 'lt128',
@@ -3937,7 +3937,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Litotes', 'Verbal irony', 'Paradox', 'Euphemism'],
     correctIndex: 1,
     explanation:
-      'Verbal irony is when someone says the opposite of what they mean — calling a storm "nice weather" is deliberately ironic.',
+      'Verbal irony is when someone says the opposite of what they mean - calling a storm "nice weather" is deliberately ironic.',
   },
   {
     id: 'lt129',
@@ -3958,7 +3958,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
       'A minor sentence (or sentence fragment) is a word or short phrase used as a sentence for dramatic emphasis.',
   },
 
-  // ── Effect of technique (20 questions: lt131–lt150) ───────────────────────
+  // ── Effect of technique (20 questions: lt131-lt150) ───────────────────────
 
   {
     id: 'lt131',
@@ -4014,7 +4014,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Alliteration creates a rhythmic, musical quality, draws attention to key words, and can reinforce meaning — harsh sounds for aggression, soft sounds for calm.',
+      'Alliteration creates a rhythmic, musical quality, draws attention to key words, and can reinforce meaning - harsh sounds for aggression, soft sounds for calm.',
   },
   {
     id: 'lt135',
@@ -4084,7 +4084,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'An ellipsis creates a sense of incompleteness, suspense, or uncertainty — suggesting there is more to be said or inviting the reader to imagine what follows.',
+      'An ellipsis creates a sense of incompleteness, suspense, or uncertainty - suggesting there is more to be said or inviting the reader to imagine what follows.',
   },
   {
     id: 'lt140',
@@ -4126,7 +4126,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Emotive language deliberately triggers emotional responses — anger, sympathy, outrage — to influence the reader's opinion.",
+      "Emotive language deliberately triggers emotional responses - anger, sympathy, outrage - to influence the reader's opinion.",
   },
   {
     id: 'lt143',
@@ -4201,7 +4201,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
   {
     id: 'lt148',
     topic: 'language-techniques',
-    question: 'What is the effect of using a dash (—) in the middle of a sentence?',
+    question: 'What is the effect of using a dash (-) in the middle of a sentence?',
     options: [
       'It is a grammatical error',
       'It creates a sudden interruption, afterthought, or dramatic pause',
@@ -4241,7 +4241,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
       "An unanswered question at the end lingers in the reader's mind, encouraging reflection and making the text memorable.",
   },
 
-  // ── SPaG – spelling, punctuation, grammar (20 questions: lt151–lt170) ─────
+  // ── SPaG - spelling, punctuation, grammar (20 questions: lt151-lt170) ─────
 
   {
     id: 'lt151',
@@ -4250,7 +4250,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: ['Omission', 'Possession (the bone belongs to the dog)', 'Plural', 'Contraction'],
     correctIndex: 1,
     explanation:
-      'The apostrophe shows possession — the bone belonging to the dog. This is different from omission (e.g., "don\'t").',
+      'The apostrophe shows possession - the bone belonging to the dog. This is different from omission (e.g., "don\'t").',
   },
   {
     id: 'lt152',
@@ -4301,12 +4301,12 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     options: [
       'When showing "it is"',
       'When showing possession (belonging to it)',
-      'Never — it is always wrong',
+      'Never - it is always wrong',
       'When starting a sentence',
     ],
     correctIndex: 1,
     explanation:
-      '"Its" (no apostrophe) is the possessive form — "the cat licked its paw". "It\'s" with an apostrophe means "it is" or "it has".',
+      '"Its" (no apostrophe) is the possessive form - "the cat licked its paw". "It\'s" with an apostrophe means "it is" or "it has".',
   },
   {
     id: 'lt156',
@@ -4320,7 +4320,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A subordinate (dependent) clause adds information but cannot stand alone as a sentence — e.g., "Although it was raining" needs a main clause.',
+      'A subordinate (dependent) clause adds information but cannot stand alone as a sentence - e.g., "Although it was raining" needs a main clause.',
   },
   {
     id: 'lt157',
@@ -4343,7 +4343,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A colon introduces what follows — a list, an explanation, or an expansion of the point made before the colon.',
+      'A colon introduces what follows - a list, an explanation, or an expansion of the point made before the colon.',
   },
   {
     id: 'lt159',
@@ -4385,7 +4385,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A relative clause gives extra information about a noun, introduced by relative pronouns — who, which, that, whose, or where.',
+      'A relative clause gives extra information about a noun, introduced by relative pronouns - who, which, that, whose, or where.',
   },
   {
     id: 'lt162',
@@ -4413,7 +4413,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Parenthetical commas enclose additional, non-essential information — like brackets — that can be removed and the sentence still makes sense.',
+      'Parenthetical commas enclose additional, non-essential information - like brackets - that can be removed and the sentence still makes sense.',
   },
   {
     id: 'lt164',
@@ -4464,7 +4464,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A dangling modifier is misplaced so it seems to modify the wrong word — e.g., "Running quickly, the bus was caught" implies the bus was running.',
+      'A dangling modifier is misplaced so it seems to modify the wrong word - e.g., "Running quickly, the bus was caught" implies the bus was running.',
   },
   {
     id: 'lt168',
@@ -4505,7 +4505,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
       'A split infinitive occurs when a word (usually an adverb) is placed between "to" and its verb: "to boldly go" instead of "to go boldly".',
   },
 
-  // ── Sentence types and structure (15 questions: lt171–lt185) ──────────────
+  // ── Sentence types and structure (15 questions: lt171-lt185) ──────────────
 
   {
     id: 'lt171',
@@ -4561,7 +4561,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      'An exclamatory sentence expresses strong feeling — surprise, anger, joy — and ends with an exclamation mark. Example: "What a wonderful day!"',
+      'An exclamatory sentence expresses strong feeling - surprise, anger, joy - and ends with an exclamation mark. Example: "What a wonderful day!"',
   },
   {
     id: 'lt175',
@@ -4631,7 +4631,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A fronted adverbial is a word or phrase placed at the beginning of a sentence to modify the verb — e.g., "Cautiously, she opened the door."',
+      'A fronted adverbial is a word or phrase placed at the beginning of a sentence to modify the verb - e.g., "Cautiously, she opened the door."',
   },
   {
     id: 'lt180',
@@ -4645,7 +4645,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'An embedded clause is inserted into the middle of a sentence, usually between commas or dashes — e.g., "The teacher, who was very strict, gave a test."',
+      'An embedded clause is inserted into the middle of a sentence, usually between commas or dashes - e.g., "The teacher, who was very strict, gave a test."',
   },
   {
     id: 'lt181',
@@ -4674,7 +4674,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A periodic sentence delays the main clause until the end, building suspense — e.g., "Despite the rain, the cold, and the darkness, she kept running."',
+      'A periodic sentence delays the main clause until the end, building suspense - e.g., "Despite the rain, the cold, and the darkness, she kept running."',
   },
   {
     id: 'lt183',
@@ -4688,7 +4688,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A loose sentence puts the main clause first and adds modifying phrases after — e.g., "She kept running, despite the rain, the cold, and the darkness."',
+      'A loose sentence puts the main clause first and adds modifying phrases after - e.g., "She kept running, despite the rain, the cold, and the darkness."',
   },
   {
     id: 'lt184',
@@ -4716,10 +4716,10 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A syndetic list includes conjunctions — e.g., "blood and sweat and tears". This slows the pace and gives equal weight to each item.',
+      'A syndetic list includes conjunctions - e.g., "blood and sweat and tears". This slows the pace and gives equal weight to each item.',
   },
 
-  // ── Vocabulary / define literary terms (15 questions: lt186–lt200) ────────
+  // ── Vocabulary / define literary terms (15 questions: lt186-lt200) ────────
 
   {
     id: 'lt186',
@@ -4733,7 +4733,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Connotation refers to the feelings, associations, and ideas a word evokes beyond its literal (denotative) meaning — e.g., "home" connotes warmth and safety.',
+      'Connotation refers to the feelings, associations, and ideas a word evokes beyond its literal (denotative) meaning - e.g., "home" connotes warmth and safety.',
   },
   {
     id: 'lt187',
@@ -4747,7 +4747,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Denotation is the literal, dictionary definition of a word — as opposed to its connotations (associated meanings).',
+      'Denotation is the literal, dictionary definition of a word - as opposed to its connotations (associated meanings).',
   },
   {
     id: 'lt188',
@@ -4761,7 +4761,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A semantic field is a set of words grouped by meaning relating to the same subject — e.g., a semantic field of death: "grave", "tomb", "decay", "ghost".',
+      'A semantic field is a set of words grouped by meaning relating to the same subject - e.g., a semantic field of death: "grave", "tomb", "decay", "ghost".',
   },
   {
     id: 'lt189',
@@ -4789,7 +4789,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Tone is the writer's attitude conveyed through word choice, style, and content — e.g., sarcastic, melancholic, optimistic, hostile.",
+      "Tone is the writer's attitude conveyed through word choice, style, and content - e.g., sarcastic, melancholic, optimistic, hostile.",
   },
   {
     id: 'lt191',
@@ -4845,7 +4845,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Didactic writing aims to teach or instruct the reader, often conveying a moral or lesson — e.g., fables and parables are didactic.',
+      'Didactic writing aims to teach or instruct the reader, often conveying a moral or lesson - e.g., fables and parables are didactic.',
   },
   {
     id: 'lt195',
@@ -4859,7 +4859,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Colloquial language is informal, conversational language used in everyday speech — e.g., "gonna", "loads of", "kids" instead of "children".',
+      'Colloquial language is informal, conversational language used in everyday speech - e.g., "gonna", "loads of", "kids" instead of "children".',
   },
   {
     id: 'lt196',
@@ -4873,7 +4873,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Imagery is descriptive language that appeals to the senses — sight (visual), sound (auditory), touch (tactile), taste (gustatory), and smell (olfactory).',
+      'Imagery is descriptive language that appeals to the senses - sight (visual), sound (auditory), touch (tactile), taste (gustatory), and smell (olfactory).',
   },
   {
     id: 'lt197',
@@ -4887,7 +4887,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A polemic is a strong verbal or written attack — a forceful argument against a particular opinion, doctrine, or position.',
+      'A polemic is a strong verbal or written attack - a forceful argument against a particular opinion, doctrine, or position.',
   },
   {
     id: 'lt198',
@@ -4901,7 +4901,7 @@ const languageTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'An allegory is a narrative where characters, events, and settings symbolise deeper moral, political, or spiritual meanings — e.g., "Animal Farm" by Orwell.',
+      'An allegory is a narrative where characters, events, and settings symbolise deeper moral, political, or spiritual meanings - e.g., "Animal Farm" by Orwell.',
   },
   {
     id: 'lt199',
@@ -5215,7 +5215,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'If time is short, write remaining points in concise bullet form. Markers can still award marks for relevant ideas even in note form.',
   },
 
-  // ─── Essay structure (PEEL, introductions, conclusions) — et101–et125 ────
+  // ─── Essay structure (PEEL, introductions, conclusions) - et101-et125 ────
   {
     id: 'et101',
     topic: 'exam-technique',
@@ -5318,7 +5318,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     id: 'et108',
     topic: 'exam-technique',
     question: 'How many PEEL paragraphs should a typical 30-mark essay contain?',
-    options: ['1–2', '3–5', '8–10', 'As many as possible'],
+    options: ['1-2', '3-5', '8-10', 'As many as possible'],
     correctIndex: 1,
     explanation:
       'Three to five well-developed PEEL paragraphs allow depth of analysis within the time limit, rather than many superficial points.',
@@ -5342,7 +5342,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'What is "feature-spotting" and why should you avoid it?',
     options: [
-      'Identifying techniques without explaining their effect — it limits analysis',
+      'Identifying techniques without explaining their effect - it limits analysis',
       'Using too many quotations in one paragraph',
       'Writing about features of the exam paper',
       'Planning your essay before writing',
@@ -5484,7 +5484,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Exploring alternative meanings shows sophisticated, perceptive reading — a key discriminator for the highest mark bands.',
+      'Exploring alternative meanings shows sophisticated, perceptive reading - a key discriminator for the highest mark bands.',
   },
   {
     id: 'et121',
@@ -5512,7 +5512,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Analytical depth means extracting several layers of meaning from one quotation — word choice, connotations, effect, context — rather than skimming many quotes superficially.',
+      'Analytical depth means extracting several layers of meaning from one quotation - word choice, connotations, effect, context - rather than skimming many quotes superficially.',
   },
   {
     id: 'et123',
@@ -5533,7 +5533,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'When is it acceptable to use the first person ("I think") in a GCSE English essay?',
     options: [
-      'Never — it is always wrong',
+      'Never - it is always wrong',
       'It is fine in evaluation questions where you give a personal response, but avoid overuse',
       'Only in creative writing',
       'In every sentence to show personal engagement',
@@ -5558,7 +5558,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'Discourse markers create cohesion, signal how ideas relate to each other, and make your argument easier for the marker to follow.',
   },
 
-  // ─── Time management (marks per minute, paper timings) — et126–et145 ─────
+  // ─── Time management (marks per minute, paper timings) - et126-et145 ─────
   {
     id: 'et126',
     topic: 'exam-technique',
@@ -5579,10 +5579,10 @@ const examTechniqueQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question:
       'If a question is worth 8 marks on a 1-hour 45-minute paper, roughly how long should you spend on it?',
-    options: ['About 4 minutes', 'About 8–10 minutes', 'About 20 minutes', 'About 30 minutes'],
+    options: ['About 4 minutes', 'About 8-10 minutes', 'About 20 minutes', 'About 30 minutes'],
     correctIndex: 1,
     explanation:
-      'At roughly one minute per mark, an 8-mark question deserves about 8–10 minutes, leaving adequate time for higher-tariff questions.',
+      'At roughly one minute per mark, an 8-mark question deserves about 8-10 minutes, leaving adequate time for higher-tariff questions.',
   },
   {
     id: 'et128',
@@ -5592,7 +5592,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'To waste time',
       'To plan your time allocation, identify question demands, and avoid repeating material',
       'Because the marker checks if you read it all',
-      'It is not necessary — start immediately',
+      'It is not necessary - start immediately',
     ],
     correctIndex: 1,
     explanation:
@@ -5610,7 +5610,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Over-spending on early questions is one of the most common exam errors — it leaves you rushing or skipping higher-tariff questions where more marks are available.',
+      'Over-spending on early questions is one of the most common exam errors - it leaves you rushing or skipping higher-tariff questions where more marks are available.',
   },
   {
     id: 'et130',
@@ -5624,7 +5624,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'About 5 minutes of planning for a major essay question is optimal — enough to organise ideas and select evidence without eating into writing time.',
+      'About 5 minutes of planning for a major essay question is optimal - enough to organise ideas and select evidence without eating into writing time.',
   },
   {
     id: 'et131',
@@ -5653,7 +5653,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Use the final minutes to proofread — correcting errors in SPaG, checking quotations, and ensuring your answers make sense can pick up easy marks.',
+      'Use the final minutes to proofread - correcting errors in SPaG, checking quotations, and ensuring your answers make sense can pick up easy marks.',
   },
   {
     id: 'et133',
@@ -5661,7 +5661,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'If you finish early, what is the most productive use of remaining time?',
     options: [
       'Sit quietly',
-      'Re-read and improve your answers — add missing analysis, fix errors, strengthen conclusions',
+      'Re-read and improve your answers - add missing analysis, fix errors, strengthen conclusions',
       'Start doodling',
       'Hand in your paper immediately',
     ],
@@ -5689,10 +5689,10 @@ const examTechniqueQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question:
       'On a paper with Section A (reading, 40 marks) and Section B (creative writing, 40 marks) in 1 hour 45 minutes, roughly how long should Section A take?',
-    options: ['30 minutes', 'About 50–55 minutes', 'About 70 minutes', 'The entire exam time'],
+    options: ['30 minutes', 'About 50-55 minutes', 'About 70 minutes', 'The entire exam time'],
     correctIndex: 1,
     explanation:
-      'With equal marks, Section A should take roughly 50–55 minutes (slightly over half), leaving 45–50 minutes for creative writing plus planning.',
+      'With equal marks, Section A should take roughly 50-55 minutes (slightly over half), leaving 45-50 minutes for creative writing plus planning.',
   },
   {
     id: 'et136',
@@ -5728,7 +5728,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'Why is it harder to gain the last few marks on a question than the first few?',
     options: [
       'Because pens run out of ink',
-      'Because of diminishing returns — the first marks reward basic competence, while top marks require perceptive, sustained analysis',
+      'Because of diminishing returns - the first marks reward basic competence, while top marks require perceptive, sustained analysis',
       'Because markers get tired',
       'It is equally easy throughout',
     ],
@@ -5757,20 +5757,20 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'Approximately how long should a creative writing piece take if it is worth 40 marks on a 1 hour 45 minute paper with 80 total marks?',
     options: [
       'About 20 minutes',
-      'About 45–50 minutes including planning',
+      'About 45-50 minutes including planning',
       'About 70 minutes',
       'About 10 minutes',
     ],
     correctIndex: 1,
     explanation:
-      '40 marks out of 80 is half the paper, so roughly 50 minutes (half of 105 minutes) should be allocated, including 5–10 minutes for planning.',
+      '40 marks out of 80 is half the paper, so roughly 50 minutes (half of 105 minutes) should be allocated, including 5-10 minutes for planning.',
   },
   {
     id: 'et141',
     topic: 'exam-technique',
     question: 'What is the risk of not planning a creative writing response?',
     options: [
-      'No risk — spontaneity is rewarded',
+      'No risk - spontaneity is rewarded',
       'You may lose control of structure, narrative arc, and pacing, resulting in a weaker piece',
       'Planning is only for essays',
       'You save time by not planning',
@@ -5815,7 +5815,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Comparing marks attempted to time elapsed gives a quick sense of pace — if half the time has gone, you should have attempted roughly half the marks.',
+      'Comparing marks attempted to time elapsed gives a quick sense of pace - if half the time has gone, you should have attempted roughly half the marks.',
   },
   {
     id: 'et145',
@@ -5832,7 +5832,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'Front-loading means over-investing time in the first questions, which is a common pitfall that leaves insufficient time for later, often higher-value, questions.',
   },
 
-  // ─── Question types (extract, comparison, creative, evaluation) — et146–et170 ─
+  // ─── Question types (extract, comparison, creative, evaluation) - et146-et170 ─
   {
     id: 'et146',
     topic: 'exam-technique',
@@ -5883,7 +5883,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Picture prompts call for descriptive writing rich in sensory language, figurative devices, and atmosphere — not a literal account or a full narrative.',
+      'Picture prompts call for descriptive writing rich in sensory language, figurative devices, and atmosphere - not a literal account or a full narrative.',
   },
   {
     id: 'et150',
@@ -5897,7 +5897,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Evaluation questions ask you to judge effectiveness — how well does the writer achieve their stated aim? — supporting your judgement with evidence.',
+      'Evaluation questions ask you to judge effectiveness - how well does the writer achieve their stated aim? - supporting your judgement with evidence.',
   },
   {
     id: 'et151',
@@ -5906,7 +5906,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'When answering a "How does the writer present..." question, what should you focus on?',
     options: [
       'Only the plot',
-      "The writer's methods — language, structure, and form — and their effects",
+      "The writer's methods - language, structure, and form - and their effects",
       'Your personal life experiences',
       'The historical period only',
     ],
@@ -5941,7 +5941,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Retrieval questions test comprehension — can you locate and select relevant information from the text quickly and accurately?',
+      'Retrieval questions test comprehension - can you locate and select relevant information from the text quickly and accurately?',
   },
   {
     id: 'et154',
@@ -5984,7 +5984,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Refer to the whole source" means select evidence from across the extract — beginning, middle, and end — to show you can analyse the full text.',
+      '"Refer to the whole source" means select evidence from across the extract - beginning, middle, and end - to show you can analyse the full text.',
   },
   {
     id: 'et157',
@@ -6054,7 +6054,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'You should engage critically with the statement — consider how far you agree, support your view with evidence, and acknowledge counter-arguments.',
+      'You should engage critically with the statement - consider how far you agree, support your view with evidence, and acknowledge counter-arguments.',
   },
   {
     id: 'et162',
@@ -6076,7 +6076,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'In a "how does the writer use structure" question, what should you analyse?',
     options: [
       'Only sentence structure',
-      'The organisation of ideas across the whole text — openings, shifts in focus, narrative perspective, and endings',
+      'The organisation of ideas across the whole text - openings, shifts in focus, narrative perspective, and endings',
       'The physical layout of the page',
       'Only paragraph lengths',
     ],
@@ -6154,7 +6154,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Commenting on reader effect means explaining how a technique makes the reader feel, think, or respond — e.g. tension, sympathy, unease, curiosity.',
+      'Commenting on reader effect means explaining how a technique makes the reader feel, think, or respond - e.g. tension, sympathy, unease, curiosity.',
   },
   {
     id: 'et169',
@@ -6182,10 +6182,10 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Explore" is a high-demand command word that requires you to investigate in depth — how the theme is introduced, developed, and what its significance is.',
+      '"Explore" is a high-demand command word that requires you to investigate in depth - how the theme is introduced, developed, and what its significance is.',
   },
 
-  // ─── Marking guide knowledge (AO1–AO4, what each grade looks like) — et171–et190 ─────
+  // ─── Marking guide knowledge (AO1-AO4, what each grade looks like) - et171-et190 ─────
   {
     id: 'et171',
     topic: 'exam-technique',
@@ -6206,7 +6206,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'What does AO2 typically assess?',
     options: [
       'Handwriting quality',
-      "Analysis of the writer's methods — language, form, and structure — and their effects",
+      "Analysis of the writer's methods - language, form, and structure - and their effects",
       'Knowledge of exam board regulations',
       'Ability to memorise quotations',
     ],
@@ -6234,7 +6234,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'What does AO4 assess in GCSE English Language?',
     options: [
       'Knowledge of Shakespeare',
-      'Technical accuracy — spelling, punctuation, and grammar (SPaG)',
+      'Technical accuracy - spelling, punctuation, and grammar (SPaG)',
       'Understanding of context',
       'Use of quotations',
     ],
@@ -6273,7 +6273,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     options: ['Perceptive', 'Detailed', 'Simple or limited', 'Convincing'],
     correctIndex: 2,
     explanation:
-      'Band 1 descriptors typically use "simple", "limited", or "basic" — indicating the response shows little understanding or analytical skill.',
+      'Band 1 descriptors typically use "simple", "limited", or "basic" - indicating the response shows little understanding or analytical skill.',
   },
   {
     id: 'et178',
@@ -6282,7 +6282,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     options: ['2', '3', '4', '5'],
     correctIndex: 2,
     explanation:
-      'GCSE English Literature has four areas markers look for (AO1–AO4), though the weighting varies by question and exam board.',
+      'GCSE English Literature has four areas markers look for (AO1-AO4), though the weighting varies by question and exam board.',
   },
   {
     id: 'et179',
@@ -6310,7 +6310,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Judicious" means carefully chosen — every quotation should earn its place by being relevant, concise, and leading to meaningful analysis.',
+      '"Judicious" means carefully chosen - every quotation should earn its place by being relevant, concise, and leading to meaningful analysis.',
   },
   {
     id: 'et181',
@@ -6353,7 +6353,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      '"Critical style" means adopting an analytical tone — discussing techniques and effects rather than retelling the story, and showing evaluative engagement.',
+      '"Critical style" means adopting an analytical tone - discussing techniques and effects rather than retelling the story, and showing evaluative engagement.',
   },
   {
     id: 'et184',
@@ -6375,7 +6375,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question:
       'If SPaG marks are awarded separately (e.g. 4 marks for AO4 on a literature question), what must you ensure?',
     options: [
-      'It does not matter — focus only on content',
+      'It does not matter - focus only on content',
       'Your spelling, punctuation, and grammar are accurate and your expression is clear',
       'You write in capital letters throughout',
       'You underline every sentence',
@@ -6425,7 +6425,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      'AO4 in Literature assesses the quality of your written expression — clarity, coherence, varied vocabulary and sentence structures, and technical accuracy.',
+      'AO4 in Literature assesses the quality of your written expression - clarity, coherence, varied vocabulary and sentence structures, and technical accuracy.',
   },
   {
     id: 'et189',
@@ -6447,7 +6447,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'What is an "indicative content" section in a marking guide?',
     options: [
       'The required content every student must include',
-      'Examples of valid points students might make — it is not a checklist and other valid points are rewarded',
+      'Examples of valid points students might make - it is not a checklist and other valid points are rewarded',
       'A list of incorrect answers',
       'The marking criteria',
     ],
@@ -6456,14 +6456,14 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'Indicative content provides examples of possible valid responses but is not exhaustive. Markers reward any relevant, well-supported point.',
   },
 
-  // ─── Common mistakes to avoid — et191–et200 ─────────────────────────────
+  // ─── Common mistakes to avoid - et191-et200 ─────────────────────────────
   {
     id: 'et191',
     topic: 'exam-technique',
     question: 'What is "technique-spotting" and why is it a common mistake?',
     options: [
       'It is a good exam strategy',
-      'Naming techniques without analysing their effect — it does not earn analysis marks',
+      'Naming techniques without analysing their effect - it does not earn analysis marks',
       'It means highlighting techniques in the text',
       'It is another name for close reading',
     ],
@@ -6506,13 +6506,13 @@ const examTechniqueQuestions: QuizQuestion[] = [
       'Why should you avoid writing "the writer uses [technique] to create tension" without further explanation?',
     options: [
       'Because it is grammatically wrong',
-      'Because it is a generic, surface-level comment — you need to explain how and why the technique creates that effect',
+      'Because it is a generic, surface-level comment - you need to explain how and why the technique creates that effect',
       'Because tension is not a real literary effect',
       'It is perfectly fine',
     ],
     correctIndex: 1,
     explanation:
-      'Saying a technique "creates tension" without explaining how it does so is vague. Explain the specific mechanism — what about this word/image/sound produces unease?',
+      'Saying a technique "creates tension" without explaining how it does so is vague. Explain the specific mechanism - what about this word/image/sound produces unease?',
   },
   {
     id: 'et195',
@@ -6540,15 +6540,15 @@ const examTechniqueQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Focusing only on the start suggests superficial engagement. Use evidence from across the text — beginning, middle, and end — to show thorough analysis.',
+      'Focusing only on the start suggests superficial engagement. Use evidence from across the text - beginning, middle, and end - to show thorough analysis.',
   },
   {
     id: 'et197',
     topic: 'exam-technique',
     question: 'What is wrong with writing "the reader feels sad" as analysis?',
     options: [
-      'Nothing — it is good analysis',
-      'It is too vague — you should specify what emotion and explain precisely how the writer creates it',
+      'Nothing - it is good analysis',
+      'It is too vague - you should specify what emotion and explain precisely how the writer creates it',
       '"Sad" is not a real emotion',
       'It is only wrong in poetry essays',
     ],
@@ -6591,7 +6591,7 @@ const examTechniqueQuestions: QuizQuestion[] = [
     question: 'Why is it a mistake to ignore the mark allocation when writing your answer?',
     options: [
       'Mark allocation is never shown on exam papers',
-      'Because the marks indicate how much depth and time a question requires — ignoring them leads to poor time management',
+      'Because the marks indicate how much depth and time a question requires - ignoring them leads to poor time management',
       'Because higher-mark questions are easier',
       'Mark allocation is irrelevant to your answer',
     ],
@@ -6912,7 +6912,7 @@ function hashString(input: string): number {
   return h >>> 0
 }
 
-/** Mulberry32 PRNG — small, fast, deterministic from a 32-bit seed. */
+/** Mulberry32 PRNG - small, fast, deterministic from a 32-bit seed. */
 function mulberry32(seed: number): () => number {
   let t = seed >>> 0
   return () => {
@@ -6926,7 +6926,7 @@ function mulberry32(seed: number): () => number {
 
 /**
  * Shuffle an option list deterministically, using a seed derived from the
- * question id and an opaque session salt. Pure — does not mutate input.
+ * question id and an opaque session salt. Pure - does not mutate input.
  */
 export function shuffleOptionsDeterministic<T>(options: readonly T[], seed: string): T[] {
   const rng = mulberry32(hashString(seed))

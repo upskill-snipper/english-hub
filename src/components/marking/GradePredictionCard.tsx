@@ -7,7 +7,7 @@ import { useT } from '@/lib/i18n/use-t'
 export interface GradePredictionCardProps {
   /** GCSE grade 1-9 */
   grade: number
-  /** 0–100 score percentage (totalMarks/maxMarks) — NOT model confidence */
+  /** 0-100 score percentage (totalMarks/maxMarks) - NOT model confidence */
   scorePercent: number
   /** e.g. "AQA English Literature Paper 1" */
   paperLabel?: string
@@ -16,7 +16,7 @@ export interface GradePredictionCardProps {
 
 /**
  * Big prominent grade display with the score percentage.
- * Uses theme tokens only — no hardcoded colours.
+ * Uses theme tokens only - no hardcoded colours.
  */
 export function GradePredictionCard({
   grade,

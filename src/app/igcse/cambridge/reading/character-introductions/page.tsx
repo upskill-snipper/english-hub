@@ -20,11 +20,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Character Introductions — Reading Practice Framework — The English Hub',
+    title: 'Character Introductions - Reading Practice Framework - The English Hub',
     description:
       'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Character Introductions — Reading Practice Framework',
+  title: 'Character Introductions - Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
@@ -100,7 +100,7 @@ export default async function CharacterIntroductionsPage() {
         <h1 className="text-display-sm font-heading text-foreground">Character Introductions</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
           The first time a writer introduces a character is your richest source of inference. Every
-          detail — their hands, their silence, their first word — is a deliberate choice. This
+          detail - their hands, their silence, their first word - is a deliberate choice. This
           framework trains you to read those choices closely and explain their effect.
         </p>
       </header>
@@ -119,7 +119,7 @@ export default async function CharacterIntroductionsPage() {
         <CardContent>
           <p className="text-body-sm text-foreground">
             Character introductions test inference: reading between the lines to build an opinion of
-            a person from small clues. They also train you to comment on the writer’s craft — word
+            a person from small clues. They also train you to comment on the writer’s craft - word
             choice, sentence structure and perspective. These are the central skills Paper 1
             rewards.
           </p>
@@ -214,7 +214,7 @@ export default async function CharacterIntroductionsPage() {
                 <strong>Sentence 2:</strong> A key physical or behavioural detail.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two personality traits you can infer from the
+                <strong>Sentences 3-4:</strong> Two personality traits you can infer from the
                 passage.
               </li>
               <li>

@@ -26,7 +26,7 @@ export default function LearningProfilePage() {
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
         Built from the time you spend and the accuracy you reach in every game. We weight your most
         recent rounds most heavily, track whether each skill is improving or slipping, and recommend
-        the next best practice — so revision goes where it counts.
+        the next best practice - so revision goes where it counts.
       </p>
 
       <div className="mt-8">

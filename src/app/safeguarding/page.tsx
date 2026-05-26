@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: { canonical: 'https://theenglishhub.app/safeguarding' },
     openGraph: {
-      title: `${title} — The English Hub`,
+      title: `${title} - The English Hub`,
       description,
     },
   }
@@ -41,7 +41,7 @@ function PolicySection({
 
 // ─── Table of contents ──────────────────────────────────────────────────
 
-// Section entries declared as `key | title` — most rows use a translation key,
+// Section entries declared as `key | title` - most rows use a translation key,
 // the two new audit-remediation rows ship as `title` only because they have
 // no en/ar dictionary entries yet (sourced verbatim from the underlying policy
 // docs; translations can be added in a follow-up without touching layout).
@@ -362,7 +362,7 @@ export default async function SafeguardingPolicyPage() {
             Sections below ported from data-room/03-privacy/safeguarding-policy.md
             §6.1 (disclosure handling), §6.3 (Prevent / external escalation),
             §6.4 (severity timeframes), and §9 (information sharing). Substantive
-            policy content already approved internally — surfaced here so the
+            policy content already approved internally - surfaced here so the
             canonical user-facing page reflects the underlying policy.
           */}
           <h3 className="mt-6 text-sm font-semibold text-primary">
@@ -479,7 +479,7 @@ export default async function SafeguardingPolicyPage() {
           </ul>
 
           {/*
-            Recording and retention — data-room policy §7. Retention to age 25
+            Recording and retention - data-room policy §7. Retention to age 25
             follows KCSIE guidance and is already the stated practice in the
             underlying policy document.
           */}
@@ -511,7 +511,7 @@ export default async function SafeguardingPolicyPage() {
           <p>{await t('safeguard.s8.records')}</p>
 
           {/*
-            Safer recruitment — data-room policy §11. We deliberately do NOT
+            Safer recruitment - data-room policy §11. We deliberately do NOT
             claim that every staff member holds an enhanced DBS check: the
             underlying policy says "Enhanced DBS checks where required by role",
             which is the wording we mirror here. Promoting "all staff DBS-checked"
@@ -560,7 +560,7 @@ export default async function SafeguardingPolicyPage() {
         </PolicySection>
 
         {/*
-          10. Whistleblowing — data-room policy §10. Substantive content
+          10. Whistleblowing - data-room policy §10. Substantive content
           ported verbatim. The NSPCC whistleblowing helpline is a published
           public number, and the CEO / board / ICO escalation routes are
           consistent with the underlying policy.
@@ -596,7 +596,7 @@ export default async function SafeguardingPolicyPage() {
         </PolicySection>
 
         {/*
-          11. Legal and statutory framework — derived from the opening
+          11. Legal and statutory framework - derived from the opening
           paragraph of data-room/03-privacy/safeguarding-policy.md and from
           the existing references inside §8 (Working Together to Safeguard
           Children, Keeping Children Safe in Education). Listing the
@@ -705,8 +705,8 @@ export default async function SafeguardingPolicyPage() {
             </div>
 
             {/*
-              Samaritans + YoungMinds — sourced from data-room policy §14
-              "External — support for children". Added here so the canonical
+              Samaritans + YoungMinds - sourced from data-room policy §14
+              "External - support for children". Added here so the canonical
               page surfaces the same support routes the underlying policy
               already commits us to signposting.
             */}

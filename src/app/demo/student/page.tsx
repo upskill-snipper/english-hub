@@ -47,7 +47,7 @@ import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz'
 
 // ---------------------------------------------------------------------------
-// Synthetic demo data — Aisha Khan, Year 11, Riverside Academy
+// Synthetic demo data - Aisha Khan, Year 11, Riverside Academy
 // Today: Wednesday 20 May 2026.  Mocks in 4 weeks · GCSEs in 8 weeks.
 // ---------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ const TODAYS_CLASSES = [
     time: '09:00',
     duration: '60 min',
     subject: 'English Literature',
-    topic: 'AIC — Final revision of Sheila Birling',
+    topic: 'AIC - Final revision of Sheila Birling',
     room: 'E12',
     teacher: { name: 'Ms Patel', initials: 'PA', tint: 'bg-primary/10 text-primary' },
     homework: 'Eva Gerald paragraph due before lesson',
@@ -88,7 +88,7 @@ const TODAYS_CLASSES = [
     time: '11:30',
     duration: '60 min',
     subject: 'English Language',
-    topic: 'Paper 1 Q3 — Structure walkthrough',
+    topic: 'Paper 1 Q3 - Structure walkthrough',
     room: 'E08',
     teacher: { name: 'Mr Lawson', initials: 'LA', tint: 'bg-teal-500/10 text-teal-500' },
     homework: null,
@@ -98,7 +98,7 @@ const TODAYS_CLASSES = [
     time: '14:00',
     duration: '50 min',
     subject: 'Independent revision',
-    topic: 'Library — Unseen Poetry pack 3',
+    topic: 'Library - Unseen Poetry pack 3',
     room: 'LIB-3',
     teacher: { name: 'Ms Beale (drop-in)', initials: 'BE', tint: 'bg-amber-500/10 text-amber-600' },
     homework: 'Quizlet AIC quotes set due Friday',
@@ -111,7 +111,7 @@ const WEEK_DAYS = [
     label: 'Mon',
     date: '18 May',
     subject: 'Literature',
-    topic: 'AIC — Inspector character',
+    topic: 'AIC - Inspector character',
     icon: BookOpen,
     tint: 'border-primary/15 bg-primary/[0.04]',
   },
@@ -120,7 +120,7 @@ const WEEK_DAYS = [
     label: 'Tue',
     date: '19 May',
     subject: 'Language',
-    topic: 'Paper 1 Q4 — Evaluation',
+    topic: 'Paper 1 Q4 - Evaluation',
     icon: PenLine,
     tint: 'border-teal-500/15 bg-teal-500/[0.04]',
   },
@@ -147,7 +147,7 @@ const WEEK_DAYS = [
     label: 'Fri',
     date: '22 May',
     subject: 'Language',
-    topic: 'Paper 2 Q5 — Speech writing',
+    topic: 'Paper 2 Q5 - Speech writing',
     icon: Languages,
     tint: 'border-ochre-500/15 bg-ochre-500/[0.04]',
   },
@@ -159,7 +159,7 @@ const LANG_ACCENT = 'bg-teal-500/10 text-teal-500 border-teal-500/20'
 const ASSIGNMENTS = [
   {
     id: 'a1',
-    title: 'AIC essay — How does Priestley present responsibility?',
+    title: 'AIC essay - How does Priestley present responsibility?',
     subject: 'Literature',
     subjectAccent: LIT_ACCENT,
     dueLabel: 'Fri 22 May',
@@ -172,7 +172,7 @@ const ASSIGNMENTS = [
   },
   {
     id: 'a2',
-    title: 'Paper 1 mock — full hour under timed conditions',
+    title: 'Paper 1 mock - full hour under timed conditions',
     subject: 'Language',
     subjectAccent: LANG_ACCENT,
     dueLabel: 'Tue 26 May',
@@ -198,7 +198,7 @@ const ASSIGNMENTS = [
   },
   {
     id: 'a4',
-    title: 'Unseen poetry — annotate "Storm on the Island"',
+    title: 'Unseen poetry - annotate "Storm on the Island"',
     subject: 'Literature',
     subjectAccent: LIT_ACCENT,
     dueLabel: 'Fri 29 May',
@@ -211,7 +211,7 @@ const ASSIGNMENTS = [
   },
   {
     id: 'a5',
-    title: 'Paper 2 Q5 — Write a speech on social media',
+    title: 'Paper 2 Q5 - Write a speech on social media',
     subject: 'Language',
     subjectAccent: LANG_ACCENT,
     dueLabel: 'Mon 1 Jun',
@@ -238,7 +238,7 @@ const FLIGHT_PATH = [
     label: 'Working at',
     sub: '20 May 2026',
     grade: 6,
-    note: 'Today — based on the last 6 assessments',
+    note: 'Today - based on the last 6 assessments',
     x: 44,
   },
   {
@@ -254,7 +254,7 @@ const FLIGHT_PATH = [
     label: 'Target',
     sub: 'Summer 2026',
     grade: 7,
-    note: 'Your school target — reachable with focus',
+    note: 'Your school target - reachable with focus',
     x: 95,
   },
 ]
@@ -266,7 +266,7 @@ const FLIGHT_CONTEXT = [
     accent: 'sage' as const,
     bullets: [
       'Climbed from grade 4 baseline to a consistent grade 6 across 6 assessments.',
-      'Strongest at Q1/Q2 retrieval — 26/30 average across the last three mocks.',
+      'Strongest at Q1/Q2 retrieval - 26/30 average across the last three mocks.',
       'Six weeks of targeted intervention with Ms Patel on AIC and Macbeth.',
     ],
   },
@@ -276,7 +276,7 @@ const FLIGHT_CONTEXT = [
     accent: 'clay' as const,
     bullets: [
       'Finish Paper 1 Q5 in 40 minutes (you currently average 47).',
-      'Push AO2 — name techniques, then explain the deliberate effect on the reader.',
+      'Push AO2 - name techniques, then explain the deliberate effect on the reader.',
       'Two more full comparison essays before the mock window opens.',
     ],
   },
@@ -285,8 +285,8 @@ const FLIGHT_CONTEXT = [
     icon: Sparkles,
     accent: 'ochre' as const,
     bullets: [
-      'Unseen Poetry mastery — current weak spot but worth a full grade swing.',
-      'Evaluative writing — "to what extent" responses, not just description.',
+      'Unseen Poetry mastery - current weak spot but worth a full grade swing.',
+      'Evaluative writing - "to what extent" responses, not just description.',
       'Wider critical reading on Priestley + Shakespeare for the perceptive grade.',
     ],
   },
@@ -305,7 +305,7 @@ const AI_INSIGHTS = [
   {
     id: 'in2',
     priority: 'HIGH' as const,
-    title: 'Paper 1 Q5 — timing is costing you marks',
+    title: 'Paper 1 Q5 - timing is costing you marks',
     body: 'You scored 27/40 on the last full Q5 but you wrote for 47 minutes (target: 40). Practising 5-minute planning + 35-minute writing cycles will protect those final paragraph marks.',
     minutes: 60,
     href: '/revision/exam-technique',
@@ -314,7 +314,7 @@ const AI_INSIGHTS = [
   {
     id: 'in3',
     priority: 'MEDIUM' as const,
-    title: 'Comparison essays — wire in the connectives',
+    title: 'Comparison essays - wire in the connectives',
     body: 'Your poetry comparison essay last week was strong on ideas but flat on structure. Five comparative connectives ("whereas", "in contrast", "conversely") would reframe four paragraphs and earn the AO3 link marks.',
     minutes: 30,
     href: '/revision/exam-technique',
@@ -336,7 +336,7 @@ const REVISION_OPTIONS: Record<
   15: [
     {
       id: 'r15-1',
-      title: 'AIC quote sprint — 20 flashcards',
+      title: 'AIC quote sprint - 20 flashcards',
       subject: 'Literature',
       why: 'Lock in 5 fresh Sheila / Eric quotes before tomorrow morning.',
       minutes: 12,
@@ -344,7 +344,7 @@ const REVISION_OPTIONS: Record<
     },
     {
       id: 'r15-2',
-      title: 'SPaG drill — semicolons + apostrophes',
+      title: 'SPaG drill - semicolons + apostrophes',
       subject: 'Language',
       why: 'You dropped 3 marks on SPaG last mock. Quick fix.',
       minutes: 10,
@@ -354,7 +354,7 @@ const REVISION_OPTIONS: Record<
   30: [
     {
       id: 'r30-1',
-      title: 'Unseen poem walk-through — "Storm on the Island"',
+      title: 'Unseen poem walk-through - "Storm on the Island"',
       subject: 'Literature',
       why: 'AO2 annotation frame, exactly the format on Friday’s lesson.',
       minutes: 25,
@@ -362,7 +362,7 @@ const REVISION_OPTIONS: Record<
     },
     {
       id: 'r30-2',
-      title: 'Paper 1 Q3 — structure under 8 minutes',
+      title: 'Paper 1 Q3 - structure under 8 minutes',
       subject: 'Language',
       why: 'Your timing is fine on Q1/Q2; Q3 is where the clock slips.',
       minutes: 20,
@@ -370,9 +370,9 @@ const REVISION_OPTIONS: Record<
     },
     {
       id: 'r30-3',
-      title: 'Macbeth Act 3 retrieval — 30 questions',
+      title: 'Macbeth Act 3 retrieval - 30 questions',
       subject: 'Literature',
-      why: 'Quiz due next Wednesday — get the marks while it is fresh.',
+      why: 'Quiz due next Wednesday - get the marks while it is fresh.',
       minutes: 25,
       icon: ClipboardList,
     },
@@ -380,15 +380,15 @@ const REVISION_OPTIONS: Record<
   60: [
     {
       id: 'r60-1',
-      title: 'Full AIC paragraph — Sheila as a mouthpiece for Priestley',
+      title: 'Full AIC paragraph - Sheila as a mouthpiece for Priestley',
       subject: 'Literature',
-      why: 'Plan + write + mark with the rubric — a sub-grade lift in one hour.',
+      why: 'Plan + write + mark with the rubric - a sub-grade lift in one hour.',
       minutes: 55,
       icon: PenLine,
     },
     {
       id: 'r60-2',
-      title: 'Paper 1 Q4 — evaluation with two viewpoints',
+      title: 'Paper 1 Q4 - evaluation with two viewpoints',
       subject: 'Language',
       why: 'You scored 12/20 here last time. The frame fixes most of it.',
       minutes: 45,
@@ -406,7 +406,7 @@ const REVISION_OPTIONS: Record<
   90: [
     {
       id: 'r90-1',
-      title: 'Full Paper 1 — Q1 to Q5, timed, no notes',
+      title: 'Full Paper 1 - Q1 to Q5, timed, no notes',
       subject: 'Language',
       why: 'Mocks open in 4 weeks. One full sit-down trumps four half-hour drills.',
       minutes: 75,
@@ -414,9 +414,9 @@ const REVISION_OPTIONS: Record<
     },
     {
       id: 'r90-2',
-      title: 'Comparison essay — "Storm" vs "Exposure"',
+      title: 'Comparison essay - "Storm" vs "Exposure"',
       subject: 'Literature',
-      why: 'Targets AO2 + AO3 — the two AOs holding you under grade 7.',
+      why: 'Targets AO2 + AO3 - the two AOs holding you under grade 7.',
       minutes: 80,
       icon: Quote,
     },
@@ -426,7 +426,7 @@ const REVISION_OPTIONS: Record<
 const RECENT_RESULTS = [
   {
     id: 'res1',
-    title: 'AIC — Sheila Birling essay',
+    title: 'AIC - Sheila Birling essay',
     subject: 'Literature',
     subjectAccent: LIT_ACCENT,
     date: 'Wed 14 May 2026',
@@ -436,11 +436,11 @@ const RECENT_RESULTS = [
     deltaTone: 'good' as const,
     teacher: 'Ms Patel',
     comment:
-      'Genuinely strong on Sheila’s arc — you handled "These girls are not cheap labour" with confidence and the conclusion landed on a sharp point about Priestley’s socialism. Push the AO2 in para three: name the technique, then explain the deliberate effect. You are within touching distance of a grade 7.',
+      'Genuinely strong on Sheila’s arc - you handled "These girls are not cheap labour" with confidence and the conclusion landed on a sharp point about Priestley’s socialism. Push the AO2 in para three: name the technique, then explain the deliberate effect. You are within touching distance of a grade 7.',
   },
   {
     id: 'res2',
-    title: 'Paper 1 mock — full hour',
+    title: 'Paper 1 mock - full hour',
     subject: 'Language',
     subjectAccent: LANG_ACCENT,
     date: 'Tue 6 May 2026',
@@ -450,7 +450,7 @@ const RECENT_RESULTS = [
     deltaTone: 'good' as const,
     teacher: 'Mr Lawson',
     comment:
-      'Solid Q1 and Q2 (almost full marks) — the time you spend reading the source is paying off. Q4 evaluation slipped to 11/20 because you only used one viewpoint. Q5 is where the timing went: 47 minutes is 7 over budget and you lost the last paragraph.',
+      'Solid Q1 and Q2 (almost full marks) - the time you spend reading the source is paying off. Q4 evaluation slipped to 11/20 because you only used one viewpoint. Q5 is where the timing went: 47 minutes is 7 over budget and you lost the last paragraph.',
   },
   {
     id: 'res3',
@@ -464,7 +464,7 @@ const RECENT_RESULTS = [
     deltaTone: 'neutral' as const,
     teacher: 'Ms Patel',
     comment:
-      'You know the plot. What is missing now is the deeper layer — the symbolism in the dagger soliloquy, the dramatic irony of Lady Macbeth’s fainting. Aim for 18/20 next time by adding "what does it mean" to every answer.',
+      'You know the plot. What is missing now is the deeper layer - the symbolism in the dagger soliloquy, the dramatic irony of Lady Macbeth’s fainting. Aim for 18/20 next time by adding "what does it mean" to every answer.',
   },
   {
     id: 'res4',
@@ -478,11 +478,11 @@ const RECENT_RESULTS = [
     deltaTone: 'warn' as const,
     teacher: 'Ms Beale',
     comment:
-      'I can see you understood the poem — the second annotation is excellent. But the response stayed at AO1 (what it says) and never moved to AO2 (how the writer made you feel it). Use the annotation frame I gave you in Friday’s drop-in.',
+      'I can see you understood the poem - the second annotation is excellent. But the response stayed at AO1 (what it says) and never moved to AO2 (how the writer made you feel it). Use the annotation frame I gave you in Friday’s drop-in.',
   },
   {
     id: 'res5',
-    title: 'Paper 2 Q3 — language analysis',
+    title: 'Paper 2 Q3 - language analysis',
     subject: 'Language',
     subjectAccent: LANG_ACCENT,
     date: 'Thu 17 Apr 2026',
@@ -492,7 +492,7 @@ const RECENT_RESULTS = [
     deltaTone: 'good' as const,
     teacher: 'Mr Lawson',
     comment:
-      'The structural overview at the start is the best you have written. Your three points were all valid; what stopped you reaching the top band was the depth on the second point — one short sentence about "diction" rather than a developed reading.',
+      'The structural overview at the start is the best you have written. Your three points were all valid; what stopped you reaching the top band was the depth on the second point - one short sentence about "diction" rather than a developed reading.',
   },
 ]
 
@@ -515,7 +515,7 @@ const TEACHER_COMMENTS = [
     tint: 'bg-teal-500/10 text-teal-500',
     date: 'Mon 18 May, 16:10',
     context: 'on the Paper 1 mock (56/80)',
-    body: 'The Q1–Q3 work is strong, well done. We have to fix the Q5 timing before mock week — when you go over by seven minutes you give away the conclusion every single time. Bring the practice plans you wrote on Friday.',
+    body: 'The Q1-Q3 work is strong, well done. We have to fix the Q5 timing before mock week - when you go over by seven minutes you give away the conclusion every single time. Bring the practice plans you wrote on Friday.',
   },
   {
     id: 't3',
@@ -525,7 +525,7 @@ const TEACHER_COMMENTS = [
     tint: 'bg-amber-500/10 text-amber-600',
     date: 'Fri 15 May, 14:30',
     context: 'on the "Storm on the Island" annotation',
-    body: 'Your annotations are getting noticeably sharper. Promise me one thing — for every technique you spot, write the effect on the reader underneath it. That is the AO2 stretch that gets you from grade 5 into grade 6 on unseen.',
+    body: 'Your annotations are getting noticeably sharper. Promise me one thing - for every technique you spot, write the effect on the reader underneath it. That is the AO2 stretch that gets you from grade 5 into grade 6 on unseen.',
   },
   {
     id: 't4',
@@ -542,7 +542,7 @@ const TEACHER_COMMENTS = [
 const AO_SKILLS = [
   {
     id: 'ao1',
-    label: 'AO1 — Understanding & ideas',
+    label: 'AO1 - Understanding & ideas',
     score: 73,
     target: 78,
     status: 'on-track' as const,
@@ -550,7 +550,7 @@ const AO_SKILLS = [
   },
   {
     id: 'ao2',
-    label: 'AO2 — Language, form & structure',
+    label: 'AO2 - Language, form & structure',
     score: 65,
     target: 78,
     status: 'gap' as const,
@@ -558,7 +558,7 @@ const AO_SKILLS = [
   },
   {
     id: 'ao3',
-    label: 'AO3 — Context',
+    label: 'AO3 - Context',
     score: 71,
     target: 78,
     status: 'on-track' as const,
@@ -566,27 +566,27 @@ const AO_SKILLS = [
   },
   {
     id: 'ao4',
-    label: 'AO4 — Evaluation',
+    label: 'AO4 - Evaluation',
     score: 58,
     target: 78,
     status: 'gap' as const,
-    tip: 'Use two viewpoints in Paper 1 Q4. Agree with the statement, then disagree, then judge — that is the top-band move.',
+    tip: 'Use two viewpoints in Paper 1 Q4. Agree with the statement, then disagree, then judge - that is the top-band move.',
   },
   {
     id: 'ao5',
-    label: 'AO5 — Writing for purpose',
+    label: 'AO5 - Writing for purpose',
     score: 79,
     target: 78,
     status: 'strong' as const,
-    tip: 'Your speech writing in Paper 2 is already at the top band. Hold this — do not over-engineer it.',
+    tip: 'Your speech writing in Paper 2 is already at the top band. Hold this - do not over-engineer it.',
   },
   {
     id: 'ao6',
-    label: 'AO6 — SPaG',
+    label: 'AO6 - SPaG',
     score: 82,
     target: 78,
     status: 'strong' as const,
-    tip: 'Solid technical accuracy. Keep an eye on semicolons in your essays — that is the only consistent slip.',
+    tip: 'Solid technical accuracy. Keep an eye on semicolons in your essays - that is the only consistent slip.',
   },
 ]
 
@@ -598,7 +598,7 @@ const STRENGTHS = [
     icon: Trophy,
   },
   {
-    topic: 'Creative writing — narrative',
+    topic: 'Creative writing - narrative',
     score: 82,
     detail: 'Strong voice and a real sense of perspective',
     icon: PenLine,
@@ -606,7 +606,7 @@ const STRENGTHS = [
   {
     topic: 'Reading comprehension (Q1/Q2)',
     score: 86,
-    detail: '6/8 last mock — almost no time wasted on the source',
+    detail: '6/8 last mock - almost no time wasted on the source',
     icon: Eye,
   },
   {
@@ -644,7 +644,7 @@ const COURSES = [
     title: 'AQA English Literature',
     board: 'AQA · GCSE',
     progress: 68,
-    nextLesson: 'Macbeth Act 3 — close reading workshop',
+    nextLesson: 'Macbeth Act 3 - close reading workshop',
     teacher: 'Ms Patel',
     icon: BookOpen,
     accent: LIT_ACCENT,
@@ -655,7 +655,7 @@ const COURSES = [
     title: 'AQA English Language',
     board: 'AQA · GCSE',
     progress: 54,
-    nextLesson: 'Paper 1 Q5 — narrative under 40 minutes',
+    nextLesson: 'Paper 1 Q5 - narrative under 40 minutes',
     teacher: 'Mr Lawson',
     icon: PenLine,
     accent: LANG_ACCENT,
@@ -698,7 +698,7 @@ const FLASHCARDS = [
 ]
 
 // ---------------------------------------------------------------------------
-// FlashcardWidget — preserved from the previous version of this file
+// FlashcardWidget - preserved from the previous version of this file
 // ---------------------------------------------------------------------------
 
 function FlashcardWidget() {
@@ -844,7 +844,7 @@ export default function StudentDemoPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-2.5 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
-              <Info className="h-3 w-3" /> Synthetic data — demo only
+              <Info className="h-3 w-3" /> Synthetic data - demo only
             </span>
             <span className="text-xs text-muted-foreground">
               No real student, school, or teacher.
@@ -1007,7 +1007,7 @@ export default function StudentDemoPage() {
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-5">
-            {/* LEFT — Today */}
+            {/* LEFT - Today */}
             <div className="lg:col-span-3">
               <div className="rounded-2xl border border-border/50 bg-card p-6">
                 <div className="mb-4 flex items-center justify-between">
@@ -1065,7 +1065,7 @@ export default function StudentDemoPage() {
               </div>
             </div>
 
-            {/* RIGHT — This week */}
+            {/* RIGHT - This week */}
             <div className="lg:col-span-2">
               <div className="rounded-2xl border border-border/50 bg-card p-6">
                 <div className="mb-4 flex items-center justify-between">
@@ -1075,7 +1075,7 @@ export default function StudentDemoPage() {
                       This week
                     </h3>
                   </div>
-                  <span className="text-[11px] text-muted-foreground">18–22 May</span>
+                  <span className="text-[11px] text-muted-foreground">18-22 May</span>
                 </div>
                 <ul className="space-y-2">
                   {WEEK_DAYS.map((d) => {
@@ -1131,7 +1131,7 @@ export default function StudentDemoPage() {
               </Badge>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
-              Sorted by due date — the first two will land in mock week if you do not start them
+              Sorted by due date - the first two will land in mock week if you do not start them
               this weekend.
             </p>
 
@@ -1214,7 +1214,7 @@ export default function StudentDemoPage() {
             <span className="mx-1 font-medium text-foreground">predicted</span>
             and
             <span className="mx-1 font-medium text-primary">target</span>
-            is small — one grade, eight weeks, two AO levers.
+            is small - one grade, eight weeks, two AO levers.
           </p>
 
           {/* Flight path SVG */}
@@ -1457,14 +1457,14 @@ export default function StudentDemoPage() {
 
             <p className="mt-6 flex items-start gap-2 rounded-lg bg-foreground/[0.04] px-4 py-3 text-[11px] text-muted-foreground">
               <Info className="mt-0.5 h-3 w-3 shrink-0 text-muted-foreground" />
-              These priorities are generated from your recent work — your teacher reviews and
-              adjusts them before they are final. Synthetic data — demo only.
+              These priorities are generated from your recent work - your teacher reviews and
+              adjusts them before they are final. Synthetic data - demo only.
             </p>
           </GlassPanel>
         </div>
       </section>
 
-      {/* ── REVISION PLANNER — "I HAVE __ MINUTES" ──────────────────────── */}
+      {/* ── REVISION PLANNER - "I HAVE __ MINUTES" ──────────────────────── */}
       <section aria-labelledby="planner-h" className="border-b border-border/40 bg-muted/30">
         <div className="mx-auto max-w-7xl px-6 py-12">
           <GlassPanel accent="teal" className="p-7 md:p-9">
@@ -1472,7 +1472,7 @@ export default function StudentDemoPage() {
             <div className="mt-2 flex flex-wrap items-end justify-between gap-3">
               <SectionHeading id="planner-h">I have ____ minutes</SectionHeading>
               <span className="text-[11px] text-muted-foreground">
-                Pick a time bucket — we will pick the work.
+                Pick a time bucket - we will pick the work.
               </span>
             </div>
 
@@ -1542,14 +1542,14 @@ export default function StudentDemoPage() {
 
             <p className="mt-6 flex items-start gap-2 rounded-lg bg-foreground/[0.04] px-4 py-3 text-[11px] text-muted-foreground">
               <Info className="mt-0.5 h-3 w-3 shrink-0 text-muted-foreground" />
-              Suggestions adapt to your recent marks and your assignments calendar. Synthetic data —
+              Suggestions adapt to your recent marks and your assignments calendar. Synthetic data -
               demo only.
             </p>
           </GlassPanel>
         </div>
       </section>
 
-      {/* ── RECENT RESULTS — CLICKABLE TO EXPAND ────────────────────────── */}
+      {/* ── RECENT RESULTS - CLICKABLE TO EXPAND ────────────────────────── */}
       <section aria-labelledby="results-h" className="border-b border-border/40 bg-background">
         <div className="mx-auto max-w-7xl px-6 py-12">
           <SoftEyebrow>Marks</SoftEyebrow>
@@ -1626,7 +1626,7 @@ export default function StudentDemoPage() {
                             &ldquo;{r.comment}&rdquo;
                           </p>
                           <p className="mt-2 text-[11px] text-muted-foreground">
-                            — {r.teacher} · {r.date}
+                            - {r.teacher} · {r.date}
                           </p>
                         </div>
                       </div>
@@ -1656,7 +1656,7 @@ export default function StudentDemoPage() {
           <SectionEyebrow>From your teachers</SectionEyebrow>
           <SectionHeading id="comments-h">Their words on your work</SectionHeading>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Four recent notes — Ms Patel and Mr Lawson are your daily pair, Ms Beale runs the
+            Four recent notes - Ms Patel and Mr Lawson are your daily pair, Ms Beale runs the
             library drop-in.
           </p>
 
@@ -1783,7 +1783,7 @@ export default function StudentDemoPage() {
 
             <p className="mt-5 flex items-start gap-2 text-[11px] text-muted-foreground">
               <Info className="mt-0.5 h-3 w-3 shrink-0" /> AO scores normalised against the AQA GCSE
-              mark schemes. Synthetic data — demo only.
+              mark schemes. Synthetic data - demo only.
             </p>
           </GlassPanel>
         </div>
@@ -1997,7 +1997,7 @@ export default function StudentDemoPage() {
                 </div>
                 <p className="mt-4 flex items-start gap-2 text-[11px] text-muted-foreground">
                   <Info className="mt-0.5 h-3 w-3 shrink-0" /> Cards auto-generated from your
-                  Macbeth and AIC retrieval gaps. Synthetic data — demo only.
+                  Macbeth and AIC retrieval gaps. Synthetic data - demo only.
                 </p>
               </div>
               <div className="lg:col-span-3">
@@ -2016,11 +2016,11 @@ export default function StudentDemoPage() {
               <div className="max-w-2xl">
                 <SectionEyebrow>One more thing</SectionEyebrow>
                 <SectionHeading id="cta-h">
-                  This is a demo dashboard — your school&apos;s data would live here.
+                  This is a demo dashboard - your school&apos;s data would live here.
                 </SectionHeading>
                 <p className="mt-3 text-sm text-muted-foreground">
                   Pilot the platform with your Year 11 cohort. Every chart on this page works the
-                  same way for every student — and the teacher view rolls it up class by class.
+                  same way for every student - and the teacher view rolls it up class by class.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -2039,7 +2039,7 @@ export default function StudentDemoPage() {
             </div>
           </div>
           <p className="mt-6 text-center text-[11px] text-muted-foreground">
-            Synthetic data — demo only. No real student, school, or teacher is represented.
+            Synthetic data - demo only. No real student, school, or teacher is represented.
           </p>
         </div>
       </section>

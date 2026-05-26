@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: 'https://theenglishhub.app/resources/teacher-library',
   },
   openGraph: {
-    title: 'Teacher Resources Library — The English Hub',
+    title: 'Teacher Resources Library - The English Hub',
     description:
       'Free, downloadable teaching resources for GCSE English teachers. Lesson plans, worksheets, mark schemes, and more.',
   },

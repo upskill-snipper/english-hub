@@ -5,32 +5,32 @@
 // ---------------------------------------------------------------------------
 
 export interface ImportedUser {
-  email: string;
-  temporaryPassword: string;
-  firstName: string;
-  lastName: string;
-  role: string;
-  yearGroup: string;
-  className: string;
+  email: string
+  temporaryPassword: string
+  firstName: string
+  lastName: string
+  role: string
+  yearGroup: string
+  className: string
 }
 
 export interface ImportJob {
-  jobId: string;
-  schoolId: string;
-  createdAt: number;
-  total: number;
-  success: number;
-  errors: Array<{ row: number; email: string; error: string }>;
-  users: ImportedUser[];
+  jobId: string
+  schoolId: string
+  createdAt: number
+  total: number
+  success: number
+  errors: Array<{ row: number; email: string; error: string }>
+  users: ImportedUser[]
 }
 
-// Module-level cache (fast path — same serverless instance only)
-const jobCache = new Map<string, ImportJob>();
+// Module-level cache (fast path - same serverless instance only)
+const jobCache = new Map<string, ImportJob>()
 
 export function getJobFromCache(jobId: string): ImportJob | undefined {
-  return jobCache.get(jobId);
+  return jobCache.get(jobId)
 }
 
 export function setJobInCache(jobId: string, job: ImportJob): void {
-  jobCache.set(jobId, job);
+  jobCache.set(jobId, job)
 }

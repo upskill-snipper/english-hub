@@ -26,7 +26,7 @@ const CONTEXT_TOPICS: ContextTopic[] = [
     overview:
       'Shakespeare wrote Macbeth shortly after James VI of Scotland became James I of England in 1603, uniting the two crowns for the first time.',
     detail:
-      "The accession of James I transformed the political landscape of Britain and had a direct impact on Shakespeare's career. James became patron of Shakespeare's company, which was renamed the King's Men in 1603, making Shakespeare effectively a royal servant. Macbeth was crafted as a deliberate compliment to the new king. The Stuart dynasty traced its line to Banquo and his son Fleance — a genealogy that originated in Hector Boece's sixteenth-century Scotorum Historiae and was inherited by Holinshed's Chronicles, though modern historians regard Banquo himself as legendary rather than a documented ancestor. James and his court accepted the lineage as genuine, which explains why Shakespeare transformed Banquo from a co-conspirator in his source material into a noble, innocent victim. The \"show of eight kings\" that the witches conjure for Macbeth in Act 4 depicts the Stuart line descending from Banquo, with the last king holding a mirror that would have symbolically reflected James himself in the audience. The play's Scottish setting, its exploration of legitimate succession, and its condemnation of regicide all served to flatter a king who was still establishing his authority in England.",
+      "The accession of James I transformed the political landscape of Britain and had a direct impact on Shakespeare's career. James became patron of Shakespeare's company, which was renamed the King's Men in 1603, making Shakespeare effectively a royal servant. Macbeth was crafted as a deliberate compliment to the new king. The Stuart dynasty traced its line to Banquo and his son Fleance - a genealogy that originated in Hector Boece's sixteenth-century Scotorum Historiae and was inherited by Holinshed's Chronicles, though modern historians regard Banquo himself as legendary rather than a documented ancestor. James and his court accepted the lineage as genuine, which explains why Shakespeare transformed Banquo from a co-conspirator in his source material into a noble, innocent victim. The \"show of eight kings\" that the witches conjure for Macbeth in Act 4 depicts the Stuart line descending from Banquo, with the last king holding a mirror that would have symbolically reflected James himself in the audience. The play's Scottish setting, its exploration of legitimate succession, and its condemnation of regicide all served to flatter a king who was still establishing his authority in England.",
     linksToPlay:
       "Banquo's portrayal as virtuous and innocent (rather than complicit in Duncan's murder, as in Holinshed) directly flatters James I. The \"show of kings\" in Act 4, Scene 1 celebrates the Stuart dynasty. The play's Scottish setting honours James's heritage, and the theme of legitimate succession affirms his right to the English throne.",
     relevantQuote: {
@@ -251,7 +251,7 @@ export default function MacbethContextPage() {
               <Badge variant="outline">8 topics</Badge>
             </div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Macbeth — Historical Context
+              Macbeth - Historical Context
             </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Essential Jacobean context for Macbeth: James I, witchcraft, the Gunpowder Plot, the
@@ -407,7 +407,7 @@ export default function MacbethContextPage() {
                   mistake:
                     "Confusing the historical Macbeth (an 11th-century Scottish king) with Shakespeare's character",
                   correction:
-                    "Shakespeare's Macbeth is based on Holinshed's Chronicles, not on historical fact. The real Macbeth (Mac Bethad mac Findlaích) ruled Scotland from 1040 to 1057, killed Duncan I in battle (not by stabbing him in his sleep), and was secure enough by 1050 to make a pilgrimage to Rome. Shakespeare condensed, blackened, and dramatised the historical record for theatrical effect — and to flatter James I.",
+                    "Shakespeare's Macbeth is based on Holinshed's Chronicles, not on historical fact. The real Macbeth (Mac Bethad mac Findlaích) ruled Scotland from 1040 to 1057, killed Duncan I in battle (not by stabbing him in his sleep), and was secure enough by 1050 to make a pilgrimage to Rome. Shakespeare condensed, blackened, and dramatised the historical record for theatrical effect - and to flatter James I.",
                 },
                 {
                   mistake:

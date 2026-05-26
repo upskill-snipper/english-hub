@@ -1,5 +1,5 @@
 /**
- * html-shell.ts — The Anthology page wrapper
+ * html-shell.ts - The Anthology page wrapper
  *
  * Every Anthology document uses this shell: registration marks, header, body, footer.
  * The shell is rendered as a complete HTML string for PDF/Word export.
@@ -142,12 +142,12 @@ export function anthologyPageHtml(opts: {
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>${escHtml(title)} — The English Hub</title>
+<title>${escHtml(title)} - The English Hub</title>
 ${ANTHOLOGY_FONTS_LINK}
 <style>${ANTHOLOGY_CSS}</style>
 </head>
 <body${preview ? ' class="anth-preview"' : ''}>
-${preview ? `<div class="print-bar" onclick="window.print()">&#9113; PRINT / SAVE AS PDF — Use Ctrl+P / Cmd+P</div>` : ''}
+${preview ? `<div class="print-bar" onclick="window.print()">&#9113; PRINT / SAVE AS PDF - Use Ctrl+P / Cmd+P</div>` : ''}
 <div class="anth-page">
   ${regMarks()}
   ${renderHeader(brand)}
@@ -188,7 +188,7 @@ export function anthologyWordHtml(opts: {
       xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 <meta charset="utf-8">
-<title>${escHtml(title)} — The English Hub</title>
+<title>${escHtml(title)} - The English Hub</title>
 <!--[if gte mso 9]>
 <xml><o:OfficeDocumentSettings><o:AllowPNG/></o:OfficeDocumentSettings></xml>
 <![endif]-->

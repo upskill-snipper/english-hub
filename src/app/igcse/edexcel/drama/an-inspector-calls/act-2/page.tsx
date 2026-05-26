@@ -8,11 +8,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'An Inspector Calls Act 2 Analysis — Edexcel IGCSE Literature',
+    title: 'An Inspector Calls Act 2 Analysis - Edexcel IGCSE Literature',
     description:
       'Detailed Act 2 analysis of An Inspector Calls: Gerald\u2019s affair with Daisy Renton, Mrs Birling\u2019s charity refusal, and the trap that closes on Eric.',
   },
-  title: 'An Inspector Calls Act 2 Analysis — Edexcel IGCSE Literature',
+  title: 'An Inspector Calls Act 2 Analysis - Edexcel IGCSE Literature',
   description:
     'Detailed Act 2 analysis of An Inspector Calls: Gerald\u2019s affair with Daisy Renton, Mrs Birling\u2019s charity refusal, and the trap that closes on Eric.',
   alternates: {

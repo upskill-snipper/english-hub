@@ -4,7 +4,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  * Drop-in wrapper for AQA Love and Relationships analysis pages.
  *
  * The whole cluster is specific to the AQA anthology, so any reader
- * studying a different board has arrived at the wrong place — usually via
+ * studying a different board has arrived at the wrong place - usually via
  * a direct Google search result.
  *
  * Usage inside a page.tsx (server component):
@@ -22,7 +22,7 @@ import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
  *
  * The banner is a client component that only renders after hydration, so
  * crawlers and first-time visitors with no board selected still see the
- * full article — preserving SEO — while students on the wrong board get
+ * full article - preserving SEO - while students on the wrong board get
  * a prominent warning and an escape hatch to their own revision hub.
  */
 export function AnalysisBoardGate({ children }: { children: React.ReactNode }) {

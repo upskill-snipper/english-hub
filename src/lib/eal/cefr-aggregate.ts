@@ -1,11 +1,11 @@
 // ─── CEFR cohort aggregation (server-side) ────────────────────────────────────
 // Shared read/aggregate layer over the append-only `progress_cefr` table
 // (migration 20260516_progress_cefr.sql) for the teacher and parent
-// dashboards. Pure aggregation — callers (the /api/school/cefr and
+// dashboards. Pure aggregation - callers (the /api/school/cefr and
 // /api/parent/cefr routes) own auth, role checks and which user ids are
 // in scope; this module only turns rows into dashboard-ready summaries.
 //
-// CRITICAL — DEGRADES GRACEFULLY BEFORE THE MIGRATION IS APPLIED.
+// CRITICAL - DEGRADES GRACEFULLY BEFORE THE MIGRATION IS APPLIED.
 // progress_cefr is a REVIEWABLE migration that a maintainer applies to
 // Supabase manually. Until then the table does not exist. Every read
 // here detects the "relation does not exist" / missing-from-schema-cache
@@ -125,7 +125,7 @@ function bandRank(band: CEFRBand): number {
 
 /**
  * Summarise CEFR placements for a set of learner ids (already scoped &
- * authorised by the caller). Pass a SERVICE-ROLE client — the caller is
+ * authorised by the caller). Pass a SERVICE-ROLE client - the caller is
  * reading across other users' rows, which RLS only permits for
  * service_role (mirrors how /api/school/analytics reads module_progress).
  *
@@ -150,7 +150,7 @@ export async function summariseCEFRCohort(
     if (isMissingTableError(error)) {
       return emptySummary(false)
     }
-    // Real, unexpected error — surface as empty-but-available so the
+    // Real, unexpected error - surface as empty-but-available so the
     // dashboard stays up; the caller logs the error.
     throw new Error(`progress_cefr read failed: ${error.message}`)
   }

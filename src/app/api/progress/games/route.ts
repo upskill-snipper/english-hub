@@ -20,7 +20,7 @@ const postSchema = z.object({
   // Some games score in tens-of-thousands (typing speed × accuracy bonuses);
   // cap generously but block obvious garbage / overflow attempts.
   score: z.number().int().min(0).max(1_000_000),
-  // A single session shouldn't exceed an hour — anything larger is almost
+  // A single session shouldn't exceed an hour - anything larger is almost
   // certainly a bug or a tab left open. Round to integer seconds.
   timeSeconds: z.number().int().min(0).max(3600),
 })
@@ -66,7 +66,7 @@ export async function GET() {
 // time; updates best_score only if it beats the existing record.
 //
 // Rate limit strategy:
-//   • 60 POSTs per hour per user — covers heavy practice sessions.
+//   • 60 POSTs per hour per user - covers heavy practice sessions.
 //   • If the SAME slug is hit >10 times in 1 minute, throttle that
 //     specific (user, slug) pair. This catches runaway clients
 //     (broken loops, accidental double-submits) without punishing the
@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
   // don't want to require a migration as part of this route. The race
   // window between SELECT and UPSERT is tolerable: in the worst case a
   // concurrent submission's best_score could be overwritten by a slightly
-  // lower value — game progress is not a financial system, and the
+  // lower value - game progress is not a financial system, and the
   // per-user-per-slug burst cap above bounds how often this can happen.
   const { data: existing, error: readError } = await supabase
     .from('progress_games')

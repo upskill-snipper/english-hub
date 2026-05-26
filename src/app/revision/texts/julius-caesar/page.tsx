@@ -1,4 +1,4 @@
-// DRAFT — AWAITING ENGLISH-TEACHER REVIEW
+// DRAFT - AWAITING ENGLISH-TEACHER REVIEW
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
@@ -10,11 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Julius Caesar — Study Guide | The English Hub',
+    title: 'Julius Caesar - Study Guide | The English Hub',
     description:
       'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Julius Caesar — Study Guide',
+  title: 'Julius Caesar - Study Guide',
   description:
     'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {
@@ -114,118 +114,118 @@ const data: TextGuideData = {
   quotations: [
     {
       quote: '"Beware the ides of March."',
-      who: 'Soothsayer — Act 1, Scene 2',
+      who: 'Soothsayer - Act 1, Scene 2',
       analysis:
         'The play\u2019s most famous warning, compressed into a single metrical line. Caesar dismisses the speaker as "a dreamer," establishing the pattern of ignored omens.',
     },
     {
       quote:
         '"The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings."',
-      who: 'Cassius — Act 1, Scene 2',
+      who: 'Cassius - Act 1, Scene 2',
       analysis:
         'Cassius\u2019s republican manifesto: men make their own political fate. The line cuts directly against the play\u2019s imagery of omens and stars.',
     },
     {
       quote: '"Men at some time are masters of their fates."',
-      who: 'Cassius — Act 1, Scene 2',
+      who: 'Cassius - Act 1, Scene 2',
       analysis:
         'Part of the same speech, extending the argument that submission to Caesar is a choice, not a destiny. Cassius uses rhetoric to goad Brutus into action.',
     },
     {
       quote:
         '"Let me have men about me that are fat, / Sleek-headed men and such as sleep a-nights. / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."',
-      who: 'Caesar — Act 1, Scene 2',
+      who: 'Caesar - Act 1, Scene 2',
       analysis:
         'Caesar\u2019s private assessment of Cassius, combining shrewd political instinct with the self-confident claim that he fears no one.',
     },
     {
       quote:
         '"It must be by his death: and for my part, / I know no personal cause to spurn at him, / But for the general."',
-      who: 'Brutus — Act 2, Scene 1',
+      who: 'Brutus - Act 2, Scene 1',
       analysis:
         'Brutus\u2019s orchard soliloquy. He admits he has no personal grievance and constructs a hypothetical justification \u2014 Caesar must die not for what he is but for what he might become.',
     },
     {
       quote:
         '"Cowards die many times before their deaths; / The valiant never taste of death but once."',
-      who: 'Caesar — Act 2, Scene 2',
+      who: 'Caesar - Act 2, Scene 2',
       analysis:
         'Caesar\u2019s response to Calpurnia\u2019s warnings. The line embodies his stoical public persona but is delivered just before he walks into the assassination.',
     },
     {
       quote:
         '"When beggars die, there are no comets seen; / The heavens themselves blaze forth the death of princes."',
-      who: 'Calpurnia — Act 2, Scene 2',
+      who: 'Calpurnia - Act 2, Scene 2',
       analysis:
         'Calpurnia reads the storm as a sign that Caesar is uniquely endangered. Her imagery links political rank to cosmic order, a hierarchy the play will shatter.',
     },
     {
       quote: '"Et tu, Brute? Then fall, Caesar."',
-      who: 'Caesar — Act 3, Scene 1',
+      who: 'Caesar - Act 3, Scene 1',
       analysis:
         'Shakespeare\u2019s own wording, not historical Latin. The shock is that betrayal by Brutus ends Caesar\u2019s will to resist; the public man accepts the verdict of his friend.',
     },
     {
       quote: '"Cry \'Havoc!\' and let slip the dogs of war."',
-      who: 'Antony — Act 3, Scene 1',
+      who: 'Antony - Act 3, Scene 1',
       analysis:
         'Antony\u2019s soliloquy over Caesar\u2019s body announces that civil war is now inevitable. "Havoc" was a military order permitting unrestricted killing and plunder.',
     },
     {
       quote: '"Not that I loved Caesar less, but that I loved Rome more."',
-      who: 'Brutus — Act 3, Scene 2',
+      who: 'Brutus - Act 3, Scene 2',
       analysis:
         'The core of Brutus\u2019s funeral speech, delivered in balanced prose. It persuades the crowd \u2014 briefly \u2014 that personal affection has been sacrificed to public duty.',
     },
     {
       quote:
         '"Friends, Romans, countrymen, lend me your ears; / I come to bury Caesar, not to praise him."',
-      who: 'Antony — Act 3, Scene 2',
+      who: 'Antony - Act 3, Scene 2',
       analysis:
         'The opening of the funeral oration. The tricolon address flatters the crowd into listening, and the apparent disclaimer sets up a speech that will do the opposite.',
     },
     {
       quote: '"For Brutus is an honourable man; / So are they all, all honourable men."',
-      who: 'Antony — Act 3, Scene 2',
+      who: 'Antony - Act 3, Scene 2',
       analysis:
         'The refrain that Antony repeats until it turns into accusation. Shakespeare makes verbal irony into political weapon, eroding the crowd\u2019s trust in the conspirators line by line.',
     },
     {
       quote: '"This was the most unkindest cut of all."',
-      who: 'Antony — Act 3, Scene 2',
+      who: 'Antony - Act 3, Scene 2',
       analysis:
         'Antony points to the wound he attributes to Brutus, using physical spectacle to make Caesar\u2019s blood the argument. The double superlative is ungrammatical and deliberately emotive.',
     },
     {
       quote: '"O judgement, thou art fled to brutish beasts, / And men have lost their reason."',
-      who: 'Antony — Act 3, Scene 2',
+      who: 'Antony - Act 3, Scene 2',
       analysis:
         'A pause in the oration staged as grief. Antony accuses the crowd of losing reason while actively inciting them to do so, one of the play\u2019s sharpest rhetorical ironies.',
     },
     {
       quote:
         '"There is a tide in the affairs of men, / Which, taken at the flood, leads on to fortune."',
-      who: 'Brutus — Act 4, Scene 3',
+      who: 'Brutus - Act 4, Scene 3',
       analysis:
         'Brutus insists on engaging at Philippi immediately. The metaphor is eloquent, but he is overruling Cassius\u2019s better military judgement, and the decision leads to defeat.',
     },
     {
       quote:
         '"O Julius Caesar, thou art mighty yet! / Thy spirit walks abroad, and turns our swords / In our own proper entrails."',
-      who: 'Brutus — Act 5, Scene 3',
+      who: 'Brutus - Act 5, Scene 3',
       analysis:
         'Over Cassius\u2019s body, Brutus acknowledges that Caesar\u2019s power has outlived his death. The image of swords turning inward captures the self-destruction of the conspiracy.',
     },
     {
       quote: '"This was the noblest Roman of them all."',
-      who: 'Antony — Act 5, Scene 5',
+      who: 'Antony - Act 5, Scene 5',
       analysis:
         'Antony\u2019s tribute to the dead Brutus distinguishes him from the other conspirators, who acted from envy. The play ends with a grudging moral verdict on its tragic hero.',
     },
     {
       quote:
         "\"His life was gentle, and the elements / So mix'd in him that Nature might stand up / And say to all the world, 'This was a man!'\"",
-      who: 'Antony — Act 5, Scene 5',
+      who: 'Antony - Act 5, Scene 5',
       analysis:
         'The closing lines elevate Brutus to a model of balanced Stoic virtue. Shakespeare gives the last word on his protagonist to his political enemy, a final example of the play\u2019s layered sympathies.',
     },
@@ -633,7 +633,7 @@ export default async function JuliusCaesarPage() {
   return (
     <>
       <CourseJsonLd
-        name="Julius Caesar — Complete GCSE Study Guide"
+        name="Julius Caesar - Complete GCSE Study Guide"
         description="In-depth study guide for Julius Caesar covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
       <BreadcrumbJsonLd

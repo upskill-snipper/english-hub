@@ -38,10 +38,10 @@ const ALL_TEXTS = [
 ] as const
 
 // Map theme-matcher's display labels to canonical set-text slugs.
-// Poetry titles (e.g. Ozymandias, London) are not individual set texts — they belong
-// to anthologies — so we treat them as universally available.
+// Poetry titles (e.g. Ozymandias, London) are not individual set texts - they belong
+// to anthologies - so we treat them as universally available.
 const TEXT_TO_SLUG: Record<string, string | null> = {
-  'Macbeth': 'macbeth',
+  Macbeth: 'macbeth',
   'A Christmas Carol': 'a-christmas-carol',
   'An Inspector Calls': 'an-inspector-calls',
   'Jekyll and Hyde': 'jekyll-and-hyde',
@@ -50,20 +50,25 @@ const TEXT_TO_SLUG: Record<string, string | null> = {
   'Animal Farm': 'animal-farm',
   'Great Expectations': 'great-expectations',
   'Jane Eyre': 'jane-eyre',
-  'Frankenstein': 'frankenstein',
+  Frankenstein: 'frankenstein',
   'The Tempest': 'the-tempest',
   'Much Ado About Nothing': 'much-ado-about-nothing',
-  // Poetry — keep visible for all boards
-  'Ozymandias': null,
+  // Poetry - keep visible for all boards
+  Ozymandias: null,
   'London (Blake)': null,
   'War Photographer': null,
-  'Tissue': null,
+  Tissue: null,
 }
 
 const THEME_DATA: ThemeRound[] = [
   {
     theme: 'Social inequality',
-    correctTexts: ['A Christmas Carol', 'An Inspector Calls', 'Great Expectations', 'London (Blake)'],
+    correctTexts: [
+      'A Christmas Carol',
+      'An Inspector Calls',
+      'Great Expectations',
+      'London (Blake)',
+    ],
   },
   {
     theme: 'Ambition',
@@ -91,7 +96,13 @@ const THEME_DATA: ThemeRound[] = [
   },
   {
     theme: 'The supernatural',
-    correctTexts: ['Macbeth', 'Jekyll and Hyde', 'A Christmas Carol', 'Frankenstein', 'The Tempest'],
+    correctTexts: [
+      'Macbeth',
+      'Jekyll and Hyde',
+      'A Christmas Carol',
+      'Frankenstein',
+      'The Tempest',
+    ],
   },
   {
     theme: 'Isolation and loneliness',
@@ -99,15 +110,32 @@ const THEME_DATA: ThemeRound[] = [
   },
   {
     theme: 'Conflict and violence',
-    correctTexts: ['Romeo and Juliet', 'Macbeth', 'Lord of the Flies', 'Animal Farm', 'War Photographer'],
+    correctTexts: [
+      'Romeo and Juliet',
+      'Macbeth',
+      'Lord of the Flies',
+      'Animal Farm',
+      'War Photographer',
+    ],
   },
   {
     theme: 'Appearance vs Reality',
-    correctTexts: ['Macbeth', 'Jekyll and Hyde', 'Much Ado About Nothing', 'An Inspector Calls', 'Great Expectations'],
+    correctTexts: [
+      'Macbeth',
+      'Jekyll and Hyde',
+      'Much Ado About Nothing',
+      'An Inspector Calls',
+      'Great Expectations',
+    ],
   },
   {
     theme: 'Family and duty',
-    correctTexts: ['Romeo and Juliet', 'An Inspector Calls', 'A Christmas Carol', 'Great Expectations'],
+    correctTexts: [
+      'Romeo and Juliet',
+      'An Inspector Calls',
+      'A Christmas Carol',
+      'Great Expectations',
+    ],
   },
   {
     theme: 'Justice and morality',
@@ -119,7 +147,13 @@ const THEME_DATA: ThemeRound[] = [
   },
   {
     theme: 'Nature and the environment',
-    correctTexts: ['Frankenstein', 'Lord of the Flies', 'The Tempest', 'London (Blake)', 'Ozymandias'],
+    correctTexts: [
+      'Frankenstein',
+      'Lord of the Flies',
+      'The Tempest',
+      'London (Blake)',
+      'Ozymandias',
+    ],
   },
   {
     theme: 'Corruption of innocence',
@@ -135,7 +169,13 @@ const THEME_DATA: ThemeRound[] = [
   },
   {
     theme: 'Memory and the past',
-    correctTexts: ['A Christmas Carol', 'War Photographer', 'Ozymandias', 'Great Expectations', 'Tissue'],
+    correctTexts: [
+      'A Christmas Carol',
+      'War Photographer',
+      'Ozymandias',
+      'Great Expectations',
+      'Tissue',
+    ],
   },
   {
     theme: 'Science and responsibility',
@@ -168,7 +208,7 @@ export default function ThemeMatcherPage() {
     const boardSlugs = new Set(getSetTextsForBoard(board).map((t) => t.slug))
     const filtered = ALL_TEXTS.filter((label) => {
       const slug = TEXT_TO_SLUG[label]
-      // null = poetry / universal — always include
+      // null = poetry / universal - always include
       if (slug === null) return true
       return slug ? boardSlugs.has(slug) : false
     })
@@ -179,12 +219,10 @@ export default function ThemeMatcherPage() {
   // Filter THEME_DATA: only include themes with at least 2 correct texts present in allowedTexts
   const filteredThemeData = useMemo(() => {
     const allowedSet = new Set(allowedTexts)
-    return THEME_DATA
-      .map((round) => ({
-        ...round,
-        correctTexts: round.correctTexts.filter((t) => allowedSet.has(t)),
-      }))
-      .filter((round) => round.correctTexts.length >= 2)
+    return THEME_DATA.map((round) => ({
+      ...round,
+      correctTexts: round.correctTexts.filter((t) => allowedSet.has(t)),
+    })).filter((round) => round.correctTexts.length >= 2)
   }, [allowedTexts])
 
   const [gameState, setGameState] = useState<GameState>('idle')
@@ -256,11 +294,7 @@ export default function ThemeMatcherPage() {
     <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-6 flex items-center justify-between gap-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            render={<Link href="/games" />}
-          >
+          <Button variant="ghost" size="sm" render={<Link href="/games" />}>
             <ArrowLeft className="size-4 mr-1" />
             Back to Games
           </Button>
@@ -297,9 +331,7 @@ export default function ThemeMatcherPage() {
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
                   Which texts feature this theme?
                 </p>
-                <h3 className="text-xl font-bold text-foreground">
-                  {currentRound.theme}
-                </h3>
+                <h3 className="text-xl font-bold text-foreground">{currentRound.theme}</h3>
               </div>
 
               {/* Text grid */}
@@ -328,7 +360,7 @@ export default function ThemeMatcherPage() {
                       className={cn(
                         'relative rounded-lg border border-border px-3 py-2.5 text-xs font-medium transition-all duration-150 text-center',
                         !submitted && !isSelected && 'hover:border-primary/50 hover:bg-primary/5',
-                        stateClass
+                        stateClass,
                       )}
                     >
                       {text}

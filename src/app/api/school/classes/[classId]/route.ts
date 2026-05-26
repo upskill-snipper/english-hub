@@ -386,5 +386,5 @@ export async function DELETE(
   }
 }
 
-// PUT is an alias for PATCH — the spec exposes PUT /api/school/classes/[id]
+// PUT is an alias for PATCH - the spec exposes PUT /api/school/classes/[id]
 export const PUT = PATCH

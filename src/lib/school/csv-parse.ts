@@ -14,7 +14,7 @@
  * Validation is deliberately row-by-row so one bad row does not poison the
  * batch. Each error carries `row` (1-based, header = 1) and an optional
  * `field` so the UI can highlight the offending cell. Class membership is
- * validated against the optional `knownClassCodes` Set — callers that already
+ * validated against the optional `knownClassCodes` Set - callers that already
  * loaded the school's classes pass it in; callers that do not get "unknown
  * class" errors elided at the parse stage and resolved server-side instead.
  *
@@ -28,13 +28,13 @@
 /** A parsed, validated student row ready for the commit endpoint. */
 export interface StudentRow {
   /** 1-based row number in the original file (header = 1, first data = 2). */
-  readonly row: number;
-  readonly firstName: string;
-  readonly lastName: string;
+  readonly row: number
+  readonly firstName: string
+  readonly lastName: string
   /** Normalised: lowercased, trimmed. */
-  readonly email: string;
-  readonly yearGroup: string;
-  readonly classCode: string;
+  readonly email: string
+  readonly yearGroup: string
+  readonly classCode: string
 }
 
 /** Error classes surfaced to the admin in the preview table. */
@@ -45,20 +45,20 @@ export type ParseErrorCode =
   | 'UNKNOWN_CLASS'
   | 'DUPLICATE_EMAIL_IN_FILE'
   | 'INVALID_ROLE'
-  | 'EMPTY_FILE';
+  | 'EMPTY_FILE'
 
 export interface ParseError {
-  readonly row: number;
-  readonly field?: string;
-  readonly code: ParseErrorCode;
-  readonly message: string;
+  readonly row: number
+  readonly field?: string
+  readonly code: ParseErrorCode
+  readonly message: string
 }
 
 export interface ParseResult {
-  readonly valid: StudentRow[];
-  readonly errors: ParseError[];
+  readonly valid: StudentRow[]
+  readonly errors: ParseError[]
   /** Total non-blank data rows encountered (valid + rows with errors). */
-  readonly totalRows: number;
+  readonly totalRows: number
 }
 
 export interface ParseOptions {
@@ -67,13 +67,13 @@ export interface ParseOptions {
    * provided, the parser emits UNKNOWN_CLASS errors for rows whose classCode
    * is not in the set. Matching is case-insensitive.
    */
-  readonly knownClassCodes?: ReadonlySet<string>;
+  readonly knownClassCodes?: ReadonlySet<string>
   /**
    * Optional role column value the caller wishes to enforce. Defaults to
    * 'STUDENT'. Any other value on a row yields INVALID_ROLE so admins cannot
    * accidentally create teacher rows via the student template.
    */
-  readonly expectedRole?: 'STUDENT';
+  readonly expectedRole?: 'STUDENT'
 }
 
 // ---------------------------------------------------------------------------
@@ -91,9 +91,9 @@ export const STUDENT_COLUMNS = [
   'yearGroup',
   'classCode',
   'role',
-] as const;
+] as const
 
-type StudentColumn = (typeof STUDENT_COLUMNS)[number];
+type StudentColumn = (typeof STUDENT_COLUMNS)[number]
 
 const REQUIRED_FIELDS: ReadonlyArray<StudentColumn> = [
   'firstName',
@@ -101,7 +101,7 @@ const REQUIRED_FIELDS: ReadonlyArray<StudentColumn> = [
   'email',
   'yearGroup',
   'classCode',
-];
+]
 
 /**
  * Header synonyms accepted on import. Keys are lowercased normalised header
@@ -135,14 +135,14 @@ const HEADER_ALIASES: Readonly<Record<string, StudentColumn>> = {
   classname: 'classCode',
   class_name: 'classCode',
   role: 'role',
-};
+}
 
 // Hard-coded cap mirrored in the API route. Keeps the preview table cheap.
-export const MAX_ROWS = 500;
+export const MAX_ROWS = 500
 
-// Email regex: deliberately narrow — we want to catch "bob@" and "bob@foo"
+// Email regex: deliberately narrow - we want to catch "bob@" and "bob@foo"
 // (no TLD) as invalid so admins notice typos at preview time.
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 // ---------------------------------------------------------------------------
 // Tokeniser
@@ -155,70 +155,70 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  */
 function tokeniseCsv(raw: string): string[][] {
   // Strip UTF-8 BOM if present.
-  const stripped = raw.charCodeAt(0) === 0xfeff ? raw.slice(1) : raw;
-  if (stripped.length === 0) return [];
+  const stripped = raw.charCodeAt(0) === 0xfeff ? raw.slice(1) : raw
+  if (stripped.length === 0) return []
 
-  const rows: string[][] = [];
-  let cell = '';
-  let row: string[] = [];
-  let inQuotes = false;
+  const rows: string[][] = []
+  let cell = ''
+  let row: string[] = []
+  let inQuotes = false
 
   for (let i = 0; i < stripped.length; i++) {
-    const ch = stripped[i];
-    const next = stripped[i + 1];
+    const ch = stripped[i]
+    const next = stripped[i + 1]
 
     if (inQuotes) {
       if (ch === '"' && next === '"') {
         // Escaped quote: append a literal " and skip the pair.
-        cell += '"';
-        i++;
+        cell += '"'
+        i++
       } else if (ch === '"') {
-        inQuotes = false;
+        inQuotes = false
       } else {
-        cell += ch;
+        cell += ch
       }
-      continue;
+      continue
     }
 
     if (ch === '"') {
-      inQuotes = true;
-      continue;
+      inQuotes = true
+      continue
     }
 
     if (ch === ',') {
-      row.push(cell);
-      cell = '';
-      continue;
+      row.push(cell)
+      cell = ''
+      continue
     }
 
     if (ch === '\n') {
-      row.push(cell);
-      rows.push(row);
-      cell = '';
-      row = [];
-      continue;
+      row.push(cell)
+      rows.push(row)
+      cell = ''
+      row = []
+      continue
     }
 
     if (ch === '\r') {
       // Treat CRLF, bare CR identically. If the next char is LF, skip it.
-      row.push(cell);
-      rows.push(row);
-      cell = '';
-      row = [];
-      if (next === '\n') i++;
-      continue;
+      row.push(cell)
+      rows.push(row)
+      cell = ''
+      row = []
+      if (next === '\n') i++
+      continue
     }
 
-    cell += ch;
+    cell += ch
   }
 
   // Flush the trailing cell / row if the file does not end in a newline.
   if (cell.length > 0 || row.length > 0) {
-    row.push(cell);
-    rows.push(row);
+    row.push(cell)
+    rows.push(row)
   }
 
-  return rows;
+  return rows
 }
 
 // ---------------------------------------------------------------------------
@@ -227,26 +227,24 @@ function tokeniseCsv(raw: string): string[][] {
 
 interface HeaderMap {
   /** Index in the row array for each canonical column (undefined = missing). */
-  readonly [column: string]: number | undefined;
+  readonly [column: string]: number | undefined
 }
 
 function resolveHeaders(headerRow: ReadonlyArray<string>): {
-  map: HeaderMap;
-  missing: StudentColumn[];
+  map: HeaderMap
+  missing: StudentColumn[]
 } {
-  const map: Record<string, number | undefined> = {};
+  const map: Record<string, number | undefined> = {}
   headerRow.forEach((cell, idx) => {
-    const key = cell.trim().toLowerCase();
-    const canonical = HEADER_ALIASES[key];
+    const key = cell.trim().toLowerCase()
+    const canonical = HEADER_ALIASES[key]
     if (canonical && map[canonical] === undefined) {
-      map[canonical] = idx;
+      map[canonical] = idx
     }
-  });
+  })
 
-  const missing: StudentColumn[] = REQUIRED_FIELDS.filter(
-    (col) => map[col] === undefined,
-  );
-  return { map, missing };
+  const missing: StudentColumn[] = REQUIRED_FIELDS.filter((col) => map[col] === undefined)
+  return { map, missing }
 }
 
 // ---------------------------------------------------------------------------
@@ -254,7 +252,7 @@ function resolveHeaders(headerRow: ReadonlyArray<string>): {
 // ---------------------------------------------------------------------------
 
 function isBlankRow(cells: ReadonlyArray<string>): boolean {
-  return cells.every((c) => c.trim() === '');
+  return cells.every((c) => c.trim() === '')
 }
 
 // ---------------------------------------------------------------------------
@@ -263,14 +261,11 @@ function isBlankRow(cells: ReadonlyArray<string>): boolean {
 
 /**
  * Parse and validate a CSV string of students. Never throws on malformed
- * content — every defect is returned as a ParseError so the UI can render
+ * content - every defect is returned as a ParseError so the UI can render
  * per-row indicators and the commit endpoint can refuse the file atomically.
  */
-export function parseStudentsCsv(
-  content: string,
-  options: ParseOptions = {},
-): ParseResult {
-  const expectedRole = options.expectedRole ?? 'STUDENT';
+export function parseStudentsCsv(content: string, options: ParseOptions = {}): ParseResult {
+  const expectedRole = options.expectedRole ?? 'STUDENT'
 
   if (!content || content.trim().length === 0) {
     return {
@@ -283,43 +278,39 @@ export function parseStudentsCsv(
         },
       ],
       totalRows: 0,
-    };
+    }
   }
 
-  const rows = tokeniseCsv(content);
+  const rows = tokeniseCsv(content)
   if (rows.length === 0) {
     return {
       valid: [],
-      errors: [
-        { row: 1, code: 'EMPTY_FILE', message: 'The file is empty.' },
-      ],
+      errors: [{ row: 1, code: 'EMPTY_FILE', message: 'The file is empty.' }],
       totalRows: 0,
-    };
+    }
   }
 
   // Skip any comment-only rows at the top of the file. The template writes
   // "# …" explanations before the header; admins who leave those in should
   // not get a parser error.
-  let headerIdx = 0;
+  let headerIdx = 0
   while (
     headerIdx < rows.length &&
     (isBlankRow(rows[headerIdx]) || rows[headerIdx][0]?.trim().startsWith('#'))
   ) {
-    headerIdx++;
+    headerIdx++
   }
 
   if (headerIdx >= rows.length) {
     return {
       valid: [],
-      errors: [
-        { row: 1, code: 'EMPTY_FILE', message: 'No header row found.' },
-      ],
+      errors: [{ row: 1, code: 'EMPTY_FILE', message: 'No header row found.' }],
       totalRows: 0,
-    };
+    }
   }
 
-  const headerRow = rows[headerIdx];
-  const { map, missing } = resolveHeaders(headerRow);
+  const headerRow = rows[headerIdx]
+  const { map, missing } = resolveHeaders(headerRow)
 
   if (missing.length > 0) {
     return {
@@ -331,43 +322,40 @@ export function parseStudentsCsv(
         message: `Missing required header column: ${field}`,
       })),
       totalRows: 0,
-    };
+    }
   }
 
   // Lowercase the known class codes once for O(1) membership checks.
   const knownClasses = options.knownClassCodes
-    ? new Set(
-        Array.from(options.knownClassCodes).map((c) => c.trim().toLowerCase()),
-      )
-    : null;
+    ? new Set(Array.from(options.knownClassCodes).map((c) => c.trim().toLowerCase()))
+    : null
 
-  const valid: StudentRow[] = [];
-  const errors: ParseError[] = [];
-  const seenEmails = new Map<string, number>();
-  let totalRows = 0;
+  const valid: StudentRow[] = []
+  const errors: ParseError[] = []
+  const seenEmails = new Map<string, number>()
+  let totalRows = 0
 
   for (let i = headerIdx + 1; i < rows.length; i++) {
-    const cells = rows[i];
+    const cells = rows[i]
 
-    // Trailing blank row (Excel artefact) — skip silently.
-    if (isBlankRow(cells)) continue;
+    // Trailing blank row (Excel artefact) - skip silently.
+    if (isBlankRow(cells)) continue
 
-    totalRows++;
+    totalRows++
 
-    const oneIndexedRow = i + 1;
+    const oneIndexedRow = i + 1
 
-    const firstName = (cells[map.firstName as number] ?? '').trim();
-    const lastName = (cells[map.lastName as number] ?? '').trim();
-    const emailRaw = (cells[map.email as number] ?? '').trim();
-    const yearGroup = (cells[map.yearGroup as number] ?? '').trim();
-    const classCode = (cells[map.classCode as number] ?? '').trim();
-    const roleIdx = map.role;
-    const roleRaw =
-      roleIdx !== undefined ? (cells[roleIdx] ?? '').trim() : expectedRole;
+    const firstName = (cells[map.firstName as number] ?? '').trim()
+    const lastName = (cells[map.lastName as number] ?? '').trim()
+    const emailRaw = (cells[map.email as number] ?? '').trim()
+    const yearGroup = (cells[map.yearGroup as number] ?? '').trim()
+    const classCode = (cells[map.classCode as number] ?? '').trim()
+    const roleIdx = map.role
+    const roleRaw = roleIdx !== undefined ? (cells[roleIdx] ?? '').trim() : expectedRole
 
-    const email = emailRaw.toLowerCase();
+    const email = emailRaw.toLowerCase()
 
-    let rowHasError = false;
+    let rowHasError = false
 
     if (!firstName) {
       errors.push({
@@ -375,8 +363,8 @@ export function parseStudentsCsv(
         field: 'firstName',
         code: 'MISSING_REQUIRED',
         message: 'First name is required.',
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     }
     if (!lastName) {
       errors.push({
@@ -384,8 +372,8 @@ export function parseStudentsCsv(
         field: 'lastName',
         code: 'MISSING_REQUIRED',
         message: 'Last name is required.',
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     }
     if (!email) {
       errors.push({
@@ -393,28 +381,28 @@ export function parseStudentsCsv(
         field: 'email',
         code: 'MISSING_REQUIRED',
         message: 'Email is required.',
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     } else if (!EMAIL_REGEX.test(email)) {
       errors.push({
         row: oneIndexedRow,
         field: 'email',
         code: 'INVALID_EMAIL',
         message: `"${emailRaw}" is not a valid email address.`,
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     } else {
-      const existingRow = seenEmails.get(email);
+      const existingRow = seenEmails.get(email)
       if (existingRow !== undefined) {
         errors.push({
           row: oneIndexedRow,
           field: 'email',
           code: 'DUPLICATE_EMAIL_IN_FILE',
           message: `Email "${emailRaw}" also appears on row ${existingRow}.`,
-        });
-        rowHasError = true;
+        })
+        rowHasError = true
       } else {
-        seenEmails.set(email, oneIndexedRow);
+        seenEmails.set(email, oneIndexedRow)
       }
     }
     if (!yearGroup) {
@@ -423,8 +411,8 @@ export function parseStudentsCsv(
         field: 'yearGroup',
         code: 'MISSING_REQUIRED',
         message: 'Year group is required.',
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     }
     if (!classCode) {
       errors.push({
@@ -432,16 +420,16 @@ export function parseStudentsCsv(
         field: 'classCode',
         code: 'MISSING_REQUIRED',
         message: 'Class code is required.',
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     } else if (knownClasses && !knownClasses.has(classCode.toLowerCase())) {
       errors.push({
         row: oneIndexedRow,
         field: 'classCode',
         code: 'UNKNOWN_CLASS',
         message: `Class "${classCode}" does not exist at this school.`,
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     }
 
     if (roleRaw && roleRaw.toUpperCase() !== expectedRole) {
@@ -450,8 +438,8 @@ export function parseStudentsCsv(
         field: 'role',
         code: 'INVALID_ROLE',
         message: `Role must be ${expectedRole}; got "${roleRaw}".`,
-      });
-      rowHasError = true;
+      })
+      rowHasError = true
     }
 
     if (!rowHasError) {
@@ -462,11 +450,11 @@ export function parseStudentsCsv(
         email,
         yearGroup,
         classCode,
-      });
+      })
     }
   }
 
-  return { valid, errors, totalRows };
+  return { valid, errors, totalRows }
 }
 
 /**
@@ -475,13 +463,13 @@ export function parseStudentsCsv(
  * the offending line in their spreadsheet.
  */
 export function errorsToCsv(errors: ReadonlyArray<ParseError>): string {
-  const header = 'row,field,code,message\n';
+  const header = 'row,field,code,message\n'
   const body = errors
     .map((e) => {
-      const field = e.field ?? '';
-      const msg = e.message.replace(/"/g, '""');
-      return `${e.row},${field},${e.code},"${msg}"`;
+      const field = e.field ?? ''
+      const msg = e.message.replace(/"/g, '""')
+      return `${e.row},${field},${e.code},"${msg}"`
     })
-    .join('\n');
-  return `${header}${body}\n`;
+    .join('\n')
+  return `${header}${body}\n`
 }

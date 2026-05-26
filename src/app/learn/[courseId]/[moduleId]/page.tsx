@@ -16,7 +16,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const moduleIndex = course.moduleList.findIndex((m) => m.id === params.moduleId)
   const boardLabel = course.board ? ` (${course.board})` : ''
-  const title = `${mod.title} — ${course.title} | The English Hub`
+  const title = `${mod.title} - ${course.title} | The English Hub`
   const description = `Module ${moduleIndex + 1} of ${course.moduleList.length}: ${mod.title}. ${course.subtitle}${boardLabel}. Interactive lesson with knowledge check quiz.`
 
   return {

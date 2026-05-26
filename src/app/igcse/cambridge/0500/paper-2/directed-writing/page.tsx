@@ -8,13 +8,13 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Directed Writing — IGCSE Language A Paper 2 Section A',
+    title: 'Directed Writing - IGCSE Language A Paper 2 Section A',
     description:
-      'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports — style, structure and tone. Aligns with Cambridge syllabus 0500.',
+      'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports - style, structure and tone. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'Directed Writing — IGCSE Language A Paper 2 Section A',
+  title: 'Directed Writing - IGCSE Language A Paper 2 Section A',
   description:
-    'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports — style, structure and tone. Aligns with Cambridge syllabus 0500.',
+    'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports - style, structure and tone. Aligns with Cambridge syllabus 0500.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/directed-writing',
   },
@@ -24,11 +24,11 @@ const forms = [
   {
     form: 'Letter',
     icon: Mail,
-    audience: 'A single known reader — often a head teacher, editor, authority figure, or friend.',
+    audience: 'A single known reader - often a head teacher, editor, authority figure, or friend.',
     openingClose:
       'Formal: "Dear Sir/Madam" + "Yours faithfully". Semi-formal: "Dear Mr Alvarez" + "Yours sincerely". Informal: "Dear Maria" + "Best wishes".',
     register:
-      'Match the relationship — a letter to an MP is formal; to a friend is chatty but still literate.',
+      'Match the relationship - a letter to an MP is formal; to a friend is chatty but still literate.',
     features: [
       'Clear opening stating purpose',
       'Paragraphs for each main point',
@@ -39,11 +39,11 @@ const forms = [
   {
     form: 'Speech',
     icon: Mic,
-    audience: 'A live audience — students at assembly, a conference room, a debate chamber.',
+    audience: 'A live audience - students at assembly, a conference room, a debate chamber.',
     openingClose:
       'Greet the audience directly ("Good morning, ladies and gentlemen"). Close with a memorable call to action or rhetorical question.',
     register:
-      'Spoken-feeling but composed. Use rhetorical devices sparingly — one or two per paragraph.',
+      'Spoken-feeling but composed. Use rhetorical devices sparingly - one or two per paragraph.',
     features: [
       'Rhetorical questions to involve the listener',
       'Lists of three for emphasis',
@@ -55,7 +55,7 @@ const forms = [
     form: 'Article',
     icon: Newspaper,
     audience:
-      'Readers of a publication — a school magazine, a website, a newspaper. Imagine them skimming.',
+      'Readers of a publication - a school magazine, a website, a newspaper. Imagine them skimming.',
     openingClose:
       'Hook the reader with a surprising fact, anecdote or question. End with a reflective or forward-looking statement.',
     register:
@@ -71,7 +71,7 @@ const forms = [
     form: 'Report',
     icon: ClipboardList,
     audience:
-      'An official reader — a principal, a committee, a local council. They want facts, not rhetoric.',
+      'An official reader - a principal, a committee, a local council. They want facts, not rhetoric.',
     openingClose: 'State the topic and purpose in sentence one. End with clear recommendations.',
     register: 'Formal, neutral, third-person. Avoid humour and exclamation marks.',
     features: [
@@ -84,12 +84,12 @@ const forms = [
 ]
 
 const process = [
-  'Identify the TASK VERB — are you persuading, informing, advising, reporting?',
-  'Identify the FORM — letter, speech, article, report — and who the reader is.',
+  'Identify the TASK VERB - are you persuading, informing, advising, reporting?',
+  'Identify the FORM - letter, speech, article, report - and who the reader is.',
   'Annotate the stimulus text for every usable idea you can reshape.',
   'Plan three to four paragraphs, each with a clear function.',
   'Open with the right salutation/greeting and state your purpose up front.',
-  'Develop ideas from the stimulus in your OWN words — do not lift whole phrases.',
+  'Develop ideas from the stimulus in your OWN words - do not lift whole phrases.',
   'Close with a line that matches the form and purpose.',
 ]
 
@@ -133,7 +133,7 @@ export default async function DirectedWritingPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Reading — 15 marks
+              Reading - 15 marks
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Select and develop relevant ideas from the stimulus text. Show that you understand
@@ -142,7 +142,7 @@ export default async function DirectedWritingPage() {
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Writing — 25 marks
+              Writing - 25 marks
             </Badge>
             <p className="text-body-sm text-muted-foreground">
               Content and structure, style and accuracy. Register, form, tone, organisation,

@@ -1,5 +1,5 @@
 'use client'
-// [P2:auth] board guard deferred — client page, no server-side requireIgcseBoard
+// [P2:auth] board guard deferred - client page, no server-side requireIgcseBoard
 
 import {
   GitCompare,
@@ -21,8 +21,7 @@ import { Badge } from '@/components/ui/badge'
 const FRAMES = [
   {
     name: 'Shared territory frame',
-    structure:
-      'Both poets... / However, whereas Poet A..., Poet B... / This reveals that...',
+    structure: 'Both poets... / However, whereas Poet A..., Poet B... / This reveals that...',
     useFor: 'Opening a comparative paragraph when the similarity is the stronger starting point.',
     example:
       'Both Dickinson and Wordsworth use natural imagery to externalise interior states. However, whereas Dickinson internalises the image (the bird "perches in the soul"), Wordsworth preserves the distance between self and scene. This reveals a fundamental difference in how each poet understands consolation.',
@@ -31,7 +30,8 @@ const FRAMES = [
     name: 'Divergent frame',
     structure:
       'While Poet A..., Poet B takes a markedly different approach... / This contrast foregrounds...',
-    useFor: 'When the difference is the more striking feature and you want to build the comparison around it.',
+    useFor:
+      'When the difference is the more striking feature and you want to build the comparison around it.',
     example:
       'While Dickinson reduces hope to the smallest possible image -- a single bird perching -- Wordsworth takes a markedly different approach, multiplying his subject into "ten thousand" dancing flowers. This contrast foregrounds the opposing scales at which each poet finds meaning.',
   },
@@ -39,7 +39,8 @@ const FRAMES = [
     name: 'Development frame',
     structure:
       'Poet A establishes... / Poet B pushes this further by... / Together they suggest...',
-    useFor: 'When Poem B intensifies or complicates an idea that Poem A introduces. High-level move.',
+    useFor:
+      'When Poem B intensifies or complicates an idea that Poem A introduces. High-level move.',
     example:
       'Dickinson establishes hope as a presence that asks nothing of the self. Wordsworth pushes this further by showing how such presences become self-sustaining in memory. Together they suggest that the most enduring emotional resources are precisely those we neither earn nor tend.',
   },
@@ -90,9 +91,7 @@ export default function ComparisonEssaysPage() {
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                Comparison Essays
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">Comparison Essays</h1>
               <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                 Edexcel IGCSE Literature
               </Badge>
@@ -116,11 +115,11 @@ export default function ComparisonEssaysPage() {
           Comparison is where Grade 6 becomes Grade 9
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          At the middle grades, candidates write decent analysis of each poem in turn. At the
-          top grades, candidates hold both poems in mind in every sentence. This guide shows
-          you exactly how to do that: the structures that work, the thesis statements that
-          unlock top marks, the paragraph frames that keep your comparison tight, and the
-          common pitfalls that cap otherwise strong essays at Grade 6.
+          At the middle grades, candidates write decent analysis of each poem in turn. At the top
+          grades, candidates hold both poems in mind in every sentence. This guide shows you exactly
+          how to do that: the structures that work, the thesis statements that unlock top marks, the
+          paragraph frames that keep your comparison tight, and the common pitfalls that cap
+          otherwise strong essays at Grade 6.
         </p>
       </section>
 
@@ -165,8 +164,8 @@ export default function ComparisonEssaysPage() {
               </Badge>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed mb-3">
-              Write about Poem A in full, then Poem B in full with links back. Caps around
-              Grade 6 for comparison.
+              Write about Poem A in full, then Poem B in full with links back. Caps around Grade 6
+              for comparison.
             </p>
             <div className="rounded-xl border border-border/40 bg-background/50 p-3">
               <p className="text-xs font-mono text-foreground/80 leading-relaxed">
@@ -187,14 +186,12 @@ export default function ComparisonEssaysPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Three Levels of Thesis
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Three Levels of Thesis</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Your thesis is the single most important sentence in the essay. Here are three
-          versions of the same basic idea, pitched at Grade 5, 7, and 9. Notice how the top
-          version reads both poems through a single analytical lens.
+          Your thesis is the single most important sentence in the essay. Here are three versions of
+          the same basic idea, pitched at Grade 5, 7, and 9. Notice how the top version reads both
+          poems through a single analytical lens.
         </p>
 
         <div className="grid gap-4">
@@ -219,13 +216,11 @@ export default function ComparisonEssaysPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Three Paragraph Frames
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Three Paragraph Frames</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          These frames give you a reliable structure for every comparative paragraph. Pick the
-          frame that fits the point you are making, and vary them across the essay.
+          These frames give you a reliable structure for every comparative paragraph. Pick the frame
+          that fits the point you are making, and vary them across the essay.
         </p>
 
         <div className="space-y-4">
@@ -314,8 +309,8 @@ export default function ComparisonEssaysPage() {
           Now see how examiners actually mark you
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Understanding the band descriptors -- what counts as "analytical" vs "perceptive" --
-          is the final piece. Learn exactly what each grade level looks like.
+          Understanding the band descriptors -- what counts as "analytical" vs "perceptive" -- is
+          the final piece. Learn exactly what each grade level looks like.
         </p>
         <Button
           variant="default"

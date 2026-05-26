@@ -15,15 +15,15 @@ const AUTOBIOGRAPHICAL = WRITING_FORMS.find((f) => f === 'autobiographical')!
 const BIOGRAPHICAL = WRITING_FORMS.find((f) => f === 'biographical')!
 
 export const metadata: Metadata = {
-  title: 'Recount, newsletter & biography — KS3 iLowerSecondary English writing forms',
+  title: 'Recount, newsletter & biography - KS3 iLowerSecondary English writing forms',
   description:
-    'Structure, register, purpose and audience for three Section B writing forms — recount, newsletter and autobiographical/biographical writing — with original annotated models mapped to the WAO1 bands, a decision box and practice prompts.',
+    'Structure, register, purpose and audience for three Section B writing forms - recount, newsletter and autobiographical/biographical writing - with original annotated models mapped to the WAO1 bands, a decision box and practice prompts.',
   alternates: {
     canonical:
       'https://theenglishhub.app/ks3/ilowersecondary/writing-forms/recount-newsletter-biography',
   },
   openGraph: {
-    title: 'Recount, newsletter & biography — iLowerSecondary writing forms',
+    title: 'Recount, newsletter & biography - iLowerSecondary writing forms',
     description:
       'How to control recount chronology, the newsletter community voice and reflective auto/biographical writing for top WAO1 marks, with original annotated models.',
   },
@@ -49,7 +49,7 @@ const FORM_GUIDES: FormGuide[] = [
     structure: [
       'Orientation first: in one or two sentences set out who, what, where and when so the reader is grounded before events begin.',
       'Strict chronological order, signalled by time connectives ("first", "soon after", "by midday", "finally") so the sequence is never in doubt.',
-      'Selected, relevant detail — the moments that mattered — rather than a minute-by-minute list of everything.',
+      'Selected, relevant detail - the moments that mattered - rather than a minute-by-minute list of everything.',
       'A reorientation to close: a short comment that rounds the account off, often a reflection on the outcome or what it meant.',
     ],
     register:
@@ -66,13 +66,13 @@ const FORM_GUIDES: FormGuide[] = [
       'A title or masthead, then a clear headline for each item so a reader can scan and find what matters to them.',
       'Separate, focused sections (each with its own sub-heading) rather than one unbroken block of text.',
       'The most important news first; each section is topic-led with a clear opening sentence.',
-      'Practical detail the reader can act on — dates, names, places and what to do next — and a warm closing note to the community.',
+      'Practical detail the reader can act on - dates, names, places and what to do next - and a warm closing note to the community.',
     ],
     register:
-      'A friendly, inclusive "community voice" that speaks to the group as members ("our club", "we", "thank you to everyone who…"). It is informative and positive, but still organised and accurate — the warmth never excuses careless writing.',
+      'A friendly, inclusive "community voice" that speaks to the group as members ("our club", "we", "thank you to everyone who…"). It is informative and positive, but still organised and accurate - the warmth never excuses careless writing.',
     purposes: 'inform',
     audiences:
-      'The specific group the newsletter serves — a club, year group or local community. The voice assumes shared membership and shared interest.',
+      'The specific group the newsletter serves - a club, year group or local community. The voice assumes shared membership and shared interest.',
   },
   {
     key: AUTOBIOGRAPHICAL,
@@ -80,7 +80,7 @@ const FORM_GUIDES: FormGuide[] = [
     summary:
       'Reflective life-writing: your own life (autobiographical) or someone else’s (biographical).',
     structure: [
-      'A reflective selection of significant moments, not a cradle-to-now list — choose the few events that carry meaning and explore them.',
+      'A reflective selection of significant moments, not a cradle-to-now list - choose the few events that carry meaning and explore them.',
       'A shaping focus or theme (a turning point, an achievement, a lesson) that gives the writing a point and links the chosen moments.',
       'Autobiographical: first person and a reflective voice that tells the reader what the experience taught or changed. Biographical: third person, a clear time frame and concrete factual detail showing why the person matters.',
       'An ending that looks back on the significance of what was selected, rather than simply stopping at the last event.',
@@ -113,21 +113,21 @@ const MODELS: Model[] = [
     formLabel: 'Recount',
     taskLabel: 'Sample task (invented)',
     task: 'Write a recount for the school report describing the day Year 9 spent restoring the river path.',
-    heading: 'A recount — “The Day We Cleared the River Path”',
+    heading: 'A recount - “The Day We Cleared the River Path”',
     body: 'On a damp Friday in March, the whole of Year 9 set out from Brackenfield School to restore the overgrown path along the River Mell. We arrived at half past nine, splitting into teams before anyone had even pulled on their gloves. First, the digging team cut back the brambles that had swallowed the old footbridge, while a second group hauled three sacks of litter from the reeds. By midday, the path was visible for the first time in years, and Mr Oduya marked the route with new wooden posts. Soon after lunch the rain stopped, and a heron we had not noticed all morning lifted from the far bank, as if inspecting our work. We finished at three o’clock, mud to the elbows and quietly proud. Looking back, the path was only a short stretch of riverbank, yet leaving it better than we found it taught us that small, shared effort changes a place more than any of us expected.',
     annotations: [
       {
-        band: 'S3 / S4 — WAO1',
+        band: 'S3 / S4 - WAO1',
         point:
-          'Form established and maintained: a one-sentence orientation (who, what, where, when) before events, then strict chronology — “First… By midday… Soon after lunch… We finished at three o’clock.”',
+          'Form established and maintained: a one-sentence orientation (who, what, where, when) before events, then strict chronology - “First… By midday… Soon after lunch… We finished at three o’clock.”',
       },
       {
-        band: 'S4 — WAO1',
+        band: 'S4 - WAO1',
         point:
           'A controlled reorientation to close (“Looking back… taught us that…”) adapts the recount for purpose rather than simply stopping at the last event.',
       },
       {
-        band: 'S3 / S4 — WAO1',
+        band: 'S3 / S4 - WAO1',
         point:
           'Stylistic features support purpose: the heron lifting “as if inspecting our work” adds interest without breaking the informative, factual register.',
       },
@@ -137,21 +137,21 @@ const MODELS: Model[] = [
     formLabel: 'Newsletter',
     taskLabel: 'Sample task (invented)',
     task: 'Write a newsletter for the members of the Greenfield Allotment Society about the past month.',
-    heading: 'GREENFIELD GROWERS — The Allotment Newsletter, Spring Edition',
-    body: 'A warm welcome back to every plot-holder after the long winter. Our biggest news first: the new water butts are finally in. Thanks to a grant from Greenfield Parish, four 200-litre butts now stand at the top of each row, so no one has to lug cans from the gate again. Plot of the Month goes to Mrs Anwen Pryce, whose early broad beans are already knee-high — drop by Plot 14 if you want her secret. Looking ahead, our spring Seed Swap takes place on Saturday 11 April from ten until noon by the tool shed; bring any spare seed and a labelled jar, and we will sort the rest. A small reminder, too: please latch the main gate behind you, as the rabbits have discovered Row C. Whatever the weather brings, thank you for keeping our patch of Greenfield growing. See you among the rows.',
+    heading: 'GREENFIELD GROWERS - The Allotment Newsletter, Spring Edition',
+    body: 'A warm welcome back to every plot-holder after the long winter. Our biggest news first: the new water butts are finally in. Thanks to a grant from Greenfield Parish, four 200-litre butts now stand at the top of each row, so no one has to lug cans from the gate again. Plot of the Month goes to Mrs Anwen Pryce, whose early broad beans are already knee-high - drop by Plot 14 if you want her secret. Looking ahead, our spring Seed Swap takes place on Saturday 11 April from ten until noon by the tool shed; bring any spare seed and a labelled jar, and we will sort the rest. A small reminder, too: please latch the main gate behind you, as the rabbits have discovered Row C. Whatever the weather brings, thank you for keeping our patch of Greenfield growing. See you among the rows.',
     annotations: [
       {
-        band: 'S3 / S4 — WAO1',
+        band: 'S3 / S4 - WAO1',
         point:
           'Form established and maintained: a masthead title, the most important news first, and clearly separated topic-led items (water butts, Plot of the Month, Seed Swap, a reminder).',
       },
       {
-        band: 'S4 — WAO1',
+        band: 'S4 - WAO1',
         point:
           'Sophisticated audience awareness: a sustained inclusive “community voice” (“our patch”, “see you among the rows”) speaks to members as a group.',
       },
       {
-        band: 'S3 — WAO1',
+        band: 'S3 - WAO1',
         point:
           'Stylistic features support the informative purpose: concrete, actionable detail (date, time, place, what to bring) the reader can act on.',
       },
@@ -161,21 +161,21 @@ const MODELS: Model[] = [
     formLabel: 'Autobiographical / biographical',
     taskLabel: 'Sample task (invented)',
     task: 'Write a biographical piece about a person whose work changed your local area.',
-    heading: 'A biographical piece — “The Woman Who Mapped Our Marsh”',
-    body: 'Few people in Tilbury Reach remember that the nature reserve they walk through each weekend began with one retired teacher and a notebook. For thirty years, Esther Calloway taught geography at the village school; when she retired in 1994, she did not stop walking the marsh — she started recording it. Every Sunday, in the same green raincoat, she counted birds, sketched the shifting channels and pressed the plants she could not name. By 2001 her notebooks ran to forty volumes, and it was that patient, unglamorous evidence that persuaded the council the marsh was worth protecting. She rarely spoke about the campaign itself; what she remembered, near the end, was the morning a bittern returned after a decade away. Esther died in 2010, but the reserve carries her name on a single modest sign. Her life is worth telling not because it was dramatic, but because it shows how steady, careful attention to one place can outlast the person who paid it.',
+    heading: 'A biographical piece - “The Woman Who Mapped Our Marsh”',
+    body: 'Few people in Tilbury Reach remember that the nature reserve they walk through each weekend began with one retired teacher and a notebook. For thirty years, Esther Calloway taught geography at the village school; when she retired in 1994, she did not stop walking the marsh - she started recording it. Every Sunday, in the same green raincoat, she counted birds, sketched the shifting channels and pressed the plants she could not name. By 2001 her notebooks ran to forty volumes, and it was that patient, unglamorous evidence that persuaded the council the marsh was worth protecting. She rarely spoke about the campaign itself; what she remembered, near the end, was the morning a bittern returned after a decade away. Esther died in 2010, but the reserve carries her name on a single modest sign. Her life is worth telling not because it was dramatic, but because it shows how steady, careful attention to one place can outlast the person who paid it.',
     annotations: [
       {
-        band: 'S3 / S4 — WAO1',
+        band: 'S3 / S4 - WAO1',
         point:
           'Form established and maintained: third person, a clear time frame (1994, 2001, 2010) and a reflective selection of significant moments rather than a flat life-list.',
       },
       {
-        band: 'S4 — WAO1',
+        band: 'S4 - WAO1',
         point:
-          'Form adapted and controlled for purpose: a shaping theme — patient attention outlasting a person — links the chosen moments and gives the piece a point.',
+          'Form adapted and controlled for purpose: a shaping theme - patient attention outlasting a person - links the chosen moments and gives the piece a point.',
       },
       {
-        band: 'S3 / S4 — WAO1',
+        band: 'S3 / S4 - WAO1',
         point:
           'Stylistic features support purpose: the recurring “green raincoat” and the closing reflection convey genuine interest while keeping a measured, informative tone.',
       },
@@ -194,7 +194,7 @@ const DECISION_ROWS = [
   {
     cue: 'The task names a group, club or community and asks you to update them.',
     form: 'Newsletter',
-    why: 'It needs headlined, separated sections and an inclusive community voice — features a plain recount does not have.',
+    why: 'It needs headlined, separated sections and an inclusive community voice - features a plain recount does not have.',
   },
   {
     cue: 'The task is about your own life and what an experience meant to you.',
@@ -204,7 +204,7 @@ const DECISION_ROWS = [
   {
     cue: 'The task asks you to write about another person’s life and importance.',
     form: 'Biographical',
-    why: 'Third person, a time frame and a shaping theme show why the person matters — more than a list of dates.',
+    why: 'Third person, a time frame and a shaping theme show why the person matters - more than a list of dates.',
   },
 ]
 
@@ -310,7 +310,7 @@ export default function RecountNewsletterBiographyPage() {
           <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             For each form, match the structure and register below; that is how the form is
             &ldquo;established and maintained&rdquo; in the WAO1 grid further down. Their dominant
-            purpose is to <strong>{INFORM}</strong> — a recount or biography may also{' '}
+            purpose is to <strong>{INFORM}</strong> - a recount or biography may also{' '}
             <strong>{ENTERTAIN}</strong>, but it should never abandon its informative backbone.
           </p>
           <div className="space-y-5">
@@ -403,7 +403,7 @@ export default function RecountNewsletterBiographyPage() {
                 </div>
                 <div className="mt-4 rounded-lg border-l-4 border-primary/40 bg-card p-4">
                   <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
-                    Why this earns marks — annotated to WAO1 bands
+                    Why this earns marks - annotated to WAO1 bands
                   </p>
                   <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
                     {m.annotations.map((a) => (
@@ -426,7 +426,7 @@ export default function RecountNewsletterBiographyPage() {
           className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
           <h2 id="which-form" className="mb-2 font-heading text-2xl font-semibold text-foreground">
-            Which form when? — a decision box
+            Which form when? - a decision box
           </h2>
           <p className="mb-6 text-sm text-muted-foreground">
             The task wording names the form. If it is unclear, match the cue to the form before you

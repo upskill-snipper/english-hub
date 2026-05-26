@@ -181,7 +181,7 @@ export default function TeacherClassDetailPage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">{t('demo.b15.teacher_cls.demo_label')}</span> —{' '}
+            <span className="font-semibold">{t('demo.b15.teacher_cls.demo_label')}</span> -{' '}
             {t('demo.b15.teacher_cls.demo_viewing')} {cls.name}
           </p>
         </div>

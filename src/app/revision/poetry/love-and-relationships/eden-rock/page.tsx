@@ -145,10 +145,10 @@ const edenRockPoem: PoemData = {
     {
       quote: 'They are waiting for me somewhere beyond Eden Rock:',
       analysis:
-        '"Beyond" places the parents past a threshold the speaker has not yet crossed. "Eden" evokes paradise and innocence, suggesting death is a return to a perfect state. "Eden Rock" is an invented threshold place — Causley confirmed: "I have no idea, I mean I made it up!"',
+        '"Beyond" places the parents past a threshold the speaker has not yet crossed. "Eden" evokes paradise and innocence, suggesting death is a return to a perfect state. "Eden Rock" is an invented threshold place - Causley confirmed: "I have no idea, I mean I made it up!"',
       themes: ['Death', 'Paradise', 'Reunion'],
       analysisAr:
-        'كلمة "beyond" تحط الوالدين بعد عتبة المتكلّم لين الحين ما عبرها. وكلمة "Eden" تستدعي الفردوس والبراءة، وتلمّح إن الموت رجوع لحال كامل. واسم "Eden Rock" مكان عتبة اخترعه Causley — هو نفسه أكّد: "I have no idea, I mean I made it up!"',
+        'كلمة "beyond" تحط الوالدين بعد عتبة المتكلّم لين الحين ما عبرها. وكلمة "Eden" تستدعي الفردوس والبراءة، وتلمّح إن الموت رجوع لحال كامل. واسم "Eden Rock" مكان عتبة اخترعه Causley - هو نفسه أكّد: "I have no idea, I mean I made it up!"',
       themesAr: ['الموت', 'الفردوس', 'اللقاء بعد الفراق'],
     },
     {
@@ -309,7 +309,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Causley describes his parents at a picnic by a stream, waiting for him. The stream represents the boundary between life and death — his parents beckon him to cross over to join them.',
+      'Causley describes his parents at a picnic by a stream, waiting for him. The stream represents the boundary between life and death - his parents beckon him to cross over to join them.',
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -319,13 +319,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A swimming pool',
-      'The boundary between life and death — crossing it means joining his dead parents',
+      'The boundary between life and death - crossing it means joining his dead parents',
       'A river in Cornwall',
       'Tears of sadness',
     ],
     correctIndex: 1,
     explanation:
-      'The stream is a powerful symbol of the divide between the living and the dead. The parents are on the other side, beckoning the speaker to "cross" — a metaphor for death.',
+      'The stream is a powerful symbol of the divide between the living and the dead. The parents are on the other side, beckoning the speaker to "cross" - a metaphor for death.',
     topic: 'Language',
     difficulty: 'foundation',
   },
@@ -341,7 +341,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The precise details — the "H.P. Sauce bottle", the mother\'s dress, the father\'s tweed suit — make the memory intensely vivid. The scene feels more real than a dream, suggesting it may be a vision of the afterlife.',
+      'The precise details - the "H.P. Sauce bottle", the mother\'s dress, the father\'s tweed suit - make the memory intensely vivid. The scene feels more real than a dream, suggesting it may be a vision of the afterlife.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -351,13 +351,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Disappointment',
-      'Death (or the approach of death) is gentler and more natural than expected — a calm acceptance',
+      'Death (or the approach of death) is gentler and more natural than expected - a calm acceptance',
       'Surprise at a holiday destination',
       'Confusion about the picnic',
     ],
     correctIndex: 1,
     explanation:
-      'The final line is deliberately ambiguous but suggests the speaker is approaching death. It is not frightening but peaceful — "like this" implies something gentle, natural, and welcoming.',
+      'The final line is deliberately ambiguous but suggests the speaker is approaching death. It is not frightening but peaceful - "like this" implies something gentle, natural, and welcoming.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -367,7 +367,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A war poet from WWI',
-      'A Cornish poet whose father died when he was young — this poem reflects on that loss and the hope of reunion',
+      'A Cornish poet whose father died when he was young - this poem reflects on that loss and the hope of reunion',
       'A Romantic poet',
       'A London playwright',
     ],
@@ -383,7 +383,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      'Four quatrains followed by a single final line — the isolation of the last line is significant',
+      'Four quatrains followed by a single final line - the isolation of the last line is significant',
       'Free verse',
       'Rhyming couplets',
     ],
@@ -399,13 +399,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'They are hiding',
-      'The parents exist in a place beyond earthly experience — possibly heaven or the afterlife',
+      'The parents exist in a place beyond earthly experience - possibly heaven or the afterlife',
       'They are lost',
       'Eden Rock is a real place only',
     ],
     correctIndex: 1,
     explanation:
-      '"Beyond Eden Rock" suggests a place beyond the physical world. "Eden" echoes the Garden of Eden — a paradise. The parents wait in a realm beyond ordinary reality.',
+      '"Beyond Eden Rock" suggests a place beyond the physical world. "Eden" echoes the Garden of Eden - a paradise. The parents wait in a realm beyond ordinary reality.',
     topic: 'Language',
     difficulty: 'grade-9',
   },
@@ -415,7 +415,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'As terrifying and violent',
-      'As a gentle, natural crossing — a reunion with loved ones rather than an ending',
+      'As a gentle, natural crossing - a reunion with loved ones rather than an ending',
       'As meaningless',
       'As punishment',
     ],
@@ -431,13 +431,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is a mistake',
-      'Present tense makes the memory feel immediately alive — as if the vision is happening now, not in the past',
+      'Present tense makes the memory feel immediately alive - as if the vision is happening now, not in the past',
       'It makes the poem confusing',
       'It shows the speaker is forgetful',
     ],
     correctIndex: 1,
     explanation:
-      'Using present tense for a memory/vision makes it feel vivid and current. The parents are not remembered — they are present, waiting now. This blurs the line between memory and vision.',
+      'Using present tense for a memory/vision makes it feel vivid and current. The parents are not remembered - they are present, waiting now. This blurs the line between memory and vision.',
     topic: 'Structure',
     difficulty: 'grade-9',
   },
@@ -465,10 +465,10 @@ const REVISION_TOPICS = [
     summary:
       'Eden Rock explores death as reunion, the power of memory, the parent-child bond, and a peaceful acceptance of mortality.',
     keyPoints: [
-      'Death as reunion — crossing the stream to join loved ones',
-      'Memory as vision — the scene is too vivid to be mere memory',
-      'The enduring parent-child bond — love persists beyond death',
-      'Acceptance — "I had not thought that it would be like this"',
+      'Death as reunion - crossing the stream to join loved ones',
+      'Memory as vision - the scene is too vivid to be mere memory',
+      'The enduring parent-child bond - love persists beyond death',
+      'Acceptance - "I had not thought that it would be like this"',
     ],
   },
   {
@@ -478,19 +478,19 @@ const REVISION_TOPICS = [
     keyPoints: [
       'Stream as boundary between life and death',
       'Precise details (H.P. Sauce, dress colour) make the vision vivid',
-      '"Beyond Eden Rock" — paradise beyond the physical world',
-      'Light and whiteness — the scene is illuminated, heavenly',
+      '"Beyond Eden Rock" - paradise beyond the physical world',
+      'Light and whiteness - the scene is illuminated, heavenly',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Four quatrains followed by a standalone final line — the isolated last line enacts the moment of crossing or decision.',
+      'Four quatrains followed by a standalone final line - the isolated last line enacts the moment of crossing or decision.',
     keyPoints: [
-      'Isolated final line — stands alone like the speaker at the boundary',
-      'Present tense — the vision is happening now, not in the past',
-      'No regular rhyme — natural, conversational tone',
-      'Progression toward the stream — the poem moves toward crossing',
+      'Isolated final line - stands alone like the speaker at the boundary',
+      'Present tense - the vision is happening now, not in the past',
+      'No regular rhyme - natural, conversational tone',
+      'Progression toward the stream - the poem moves toward crossing',
     ],
   },
 ]
@@ -534,7 +534,7 @@ export default function EdenRockPage() {
   return (
     <div className="space-y-8">
       <CourseJsonLd
-        name="Eden Rock by Charles Causley — Analysis & Annotations"
+        name="Eden Rock by Charles Causley - Analysis & Annotations"
         description="Line-by-line analysis of Eden Rock with interactive annotations, themes, language techniques, and comparison guidance for GCSE English Literature."
       />
       <BreadcrumbJsonLd
@@ -596,7 +596,7 @@ export default function EdenRockPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
-      {/* Fair-dealing extract notice — Eden Rock is in copyright (David Higham Associates).
+      {/* Fair-dealing extract notice - Eden Rock is in copyright (David Higham Associates).
           Only the verified opening line, the verified final line, and a few short
           representative phrases are reproduced; bracketed prose summarises the rest. */}
       <aside

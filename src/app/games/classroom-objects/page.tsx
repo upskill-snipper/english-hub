@@ -19,7 +19,7 @@ interface ClassroomItem {
   prepositionPrompt?: string
 }
 
-// Original bank of UK-English classroom & school vocabulary (A1–A2).
+// Original bank of UK-English classroom & school vocabulary (A1-A2).
 const ITEM_BANK: ClassroomItem[] = [
   {
     emoji: '✏️',
@@ -294,7 +294,7 @@ export default function ClassroomObjectsPage() {
         <GameShell
           gameId="classroom-objects"
           title="In the Classroom"
-          description="Look at the picture and choose the correct English word. Some rounds ask where things are — on, in, under or next to!"
+          description="Look at the picture and choose the correct English word. Some rounds ask where things are - on, in, under or next to!"
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || questions.length || QUESTIONS_PER_ROUND}
@@ -387,7 +387,7 @@ export default function ClassroomObjectsPage() {
                     </>
                   ) : (
                     <>
-                      <XCircle className="size-4" /> Not quite — the answer is{' '}
+                      <XCircle className="size-4" /> Not quite - the answer is{' '}
                       <span className="font-bold">{currentQ.answer}</span>. Keep going!
                     </>
                   )}

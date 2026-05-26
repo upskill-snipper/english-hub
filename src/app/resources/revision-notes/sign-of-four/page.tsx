@@ -314,27 +314,27 @@ export default function SignOfFourPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <CharacterCard
               name="Sherlock Holmes"
-              description="The novel's protagonist, Holmes is a consulting detective whose extraordinary powers of observation and logical deduction set him apart from ordinary people. He is a complex figure: intellectually brilliant but emotionally detached, dismissive of sentiment and romantic feeling. His cocaine use reveals that his great mind is both a gift and a burden — without intellectual stimulation, he turns to drugs. Holmes embodies the Victorian ideal of rational, scientific progress, yet Conan Doyle also critiques this by showing the cost of suppressing emotion. Holmes views crime-solving as an intellectual puzzle rather than a moral crusade, and his treatment of people as data points raises questions about the limits of pure reason."
+              description="The novel's protagonist, Holmes is a consulting detective whose extraordinary powers of observation and logical deduction set him apart from ordinary people. He is a complex figure: intellectually brilliant but emotionally detached, dismissive of sentiment and romantic feeling. His cocaine use reveals that his great mind is both a gift and a burden - without intellectual stimulation, he turns to drugs. Holmes embodies the Victorian ideal of rational, scientific progress, yet Conan Doyle also critiques this by showing the cost of suppressing emotion. Holmes views crime-solving as an intellectual puzzle rather than a moral crusade, and his treatment of people as data points raises questions about the limits of pure reason."
             />
             <CharacterCard
               name="Dr John Watson"
-              description="Watson serves as narrator and Holmes's loyal companion. A former army doctor wounded in Afghanistan, Watson represents the Victorian everyman — brave, honourable, and emotionally engaged with the world. His growing love for Mary Morstan provides the novel's emotional centre and stands in deliberate contrast to Holmes's cold rationality. Watson admires Holmes but also challenges him, particularly over his drug use. As narrator, Watson mediates between Holmes's genius and the reader, making the detective's methods accessible. His military background connects him to the imperial theme, while his capacity for love demonstrates what Holmes lacks."
+              description="Watson serves as narrator and Holmes's loyal companion. A former army doctor wounded in Afghanistan, Watson represents the Victorian everyman - brave, honourable, and emotionally engaged with the world. His growing love for Mary Morstan provides the novel's emotional centre and stands in deliberate contrast to Holmes's cold rationality. Watson admires Holmes but also challenges him, particularly over his drug use. As narrator, Watson mediates between Holmes's genius and the reader, making the detective's methods accessible. His military background connects him to the imperial theme, while his capacity for love demonstrates what Holmes lacks."
             />
             <CharacterCard
               name="Mary Morstan"
-              description="Mary is presented as an intelligent, composed, and courageous young woman — she attends the mysterious meeting despite not knowing what she will face. Conan Doyle gives her more agency than many Victorian heroines: she brings the case to Holmes, provides key evidence (the pearls, the letter), and maintains her composure throughout dangerous events. However, she also functions within the Victorian marriage plot — her value is partly defined by her relationship to Watson. The loss of the treasure removes the wealth barrier, allowing Watson to propose as her social equal. She represents emotional warmth and human connection in contrast to Holmes's detachment."
+              description="Mary is presented as an intelligent, composed, and courageous young woman - she attends the mysterious meeting despite not knowing what she will face. Conan Doyle gives her more agency than many Victorian heroines: she brings the case to Holmes, provides key evidence (the pearls, the letter), and maintains her composure throughout dangerous events. However, she also functions within the Victorian marriage plot - her value is partly defined by her relationship to Watson. The loss of the treasure removes the wealth barrier, allowing Watson to propose as her social equal. She represents emotional warmth and human connection in contrast to Holmes's detachment."
             />
             <CharacterCard
               name="Thaddeus Sholto"
-              description="The nervous, eccentric son of Major Sholto, Thaddeus acts as a conscience figure. Horrified by his father's betrayal of Captain Morstan, he sends Mary the annual pearls as partial restitution. He is physically weak, hypochondriac, and surrounded by Eastern luxuries — hookah, rich fabrics — that reflect the spoils of empire brought into an English domestic setting. Thaddeus represents a guilty colonial inheritor: he benefits from stolen wealth but is consumed by anxiety about its moral cost. His arrest by Athelney Jones highlights the theme of flawed justice."
+              description="The nervous, eccentric son of Major Sholto, Thaddeus acts as a conscience figure. Horrified by his father's betrayal of Captain Morstan, he sends Mary the annual pearls as partial restitution. He is physically weak, hypochondriac, and surrounded by Eastern luxuries - hookah, rich fabrics - that reflect the spoils of empire brought into an English domestic setting. Thaddeus represents a guilty colonial inheritor: he benefits from stolen wealth but is consumed by anxiety about its moral cost. His arrest by Athelney Jones highlights the theme of flawed justice."
             />
             <CharacterCard
               name="Jonathan Small"
-              description="The novel's antagonist is also its most complex character. A former soldier who lost his leg to a crocodile in India, Small is a product of empire — a working-class man drawn into colonial violence and exploitation. His involvement in the murder of Achmet and theft of the treasure makes him a criminal, yet his narrative in Chapter 12 generates sympathy. He was betrayed by Major Sholto, imprisoned for decades, and lost everything. His decision to throw the treasure into the Thames rather than let others benefit from it reflects a warped sense of justice. Conan Doyle uses Small to show how the colonial system creates criminals and victims simultaneously."
+              description="The novel's antagonist is also its most complex character. A former soldier who lost his leg to a crocodile in India, Small is a product of empire - a working-class man drawn into colonial violence and exploitation. His involvement in the murder of Achmet and theft of the treasure makes him a criminal, yet his narrative in Chapter 12 generates sympathy. He was betrayed by Major Sholto, imprisoned for decades, and lost everything. His decision to throw the treasure into the Thames rather than let others benefit from it reflects a warped sense of justice. Conan Doyle uses Small to show how the colonial system creates criminals and victims simultaneously."
             />
             <CharacterCard
               name="Tonga"
-              description="An Andaman Islander whom Small befriended during his imprisonment, Tonga is the most problematic character in the novel. Conan Doyle describes him using deeply racist Victorian language — 'savage,' 'unhallowed dwarf,' with 'venomous' qualities. He is dehumanised, compared to animals, and his death is treated with little moral weight. Tonga functions as a weapon rather than a person — he kills Bartholomew Sholto with a poisoned dart and is shot dead during the Thames chase. Modern readers must recognise how Conan Doyle reflects and reinforces Victorian racial prejudice and colonial attitudes toward indigenous peoples."
+              description="An Andaman Islander whom Small befriended during his imprisonment, Tonga is the most problematic character in the novel. Conan Doyle describes him using deeply racist Victorian language - 'savage,' 'unhallowed dwarf,' with 'venomous' qualities. He is dehumanised, compared to animals, and his death is treated with little moral weight. Tonga functions as a weapon rather than a person - he kills Bartholomew Sholto with a poisoned dart and is shot dead during the Thames chase. Modern readers must recognise how Conan Doyle reflects and reinforces Victorian racial prejudice and colonial attitudes toward indigenous peoples."
             />
             <CharacterCard
               name="Captain Arthur Morstan"
@@ -352,27 +352,27 @@ export default function SignOfFourPage() {
           <div className="grid gap-4 sm:grid-cols-2" id="themes">
             <ThemeCard
               title={tr(`Justice and Injustice`)}
-              description="The novel presents justice as deeply flawed. The official justice system is represented by the incompetent Athelney Jones, who arrests the innocent Thaddeus Sholto while the real criminals escape. Jonathan Small's story reveals layers of injustice: he was cheated by Major Sholto, imprisoned for decades, and sees the British legal system as serving the powerful rather than the wronged. Small's decision to throw the treasure into the Thames is his own act of 'justice' — if he cannot have what is rightfully his (by his reckoning), no one will. Conan Doyle invites readers to question whether legal justice and moral justice are the same thing."
+              description="The novel presents justice as deeply flawed. The official justice system is represented by the incompetent Athelney Jones, who arrests the innocent Thaddeus Sholto while the real criminals escape. Jonathan Small's story reveals layers of injustice: he was cheated by Major Sholto, imprisoned for decades, and sees the British legal system as serving the powerful rather than the wronged. Small's decision to throw the treasure into the Thames is his own act of 'justice' - if he cannot have what is rightfully his (by his reckoning), no one will. Conan Doyle invites readers to question whether legal justice and moral justice are the same thing."
             />
             <ThemeCard
               title="Empire and Colonialism"
-              description="The Agra treasure symbolises the wealth extracted from India by the British Empire. Every major event in the novel stems from colonial exploitation: the treasure was originally stolen during the Indian Rebellion of 1857, British officers (Sholto and Morstan) profited from Indian violence, and Tonga — an indigenous islander — is used as a weapon and then killed without moral consequence. Pondicherry Lodge, named after an Indian colonial territory, brings the Empire into suburban London. Conan Doyle does not explicitly critique empire, but the trail of death and betrayal connected to the treasure implicitly questions the morality of colonial wealth."
+              description="The Agra treasure symbolises the wealth extracted from India by the British Empire. Every major event in the novel stems from colonial exploitation: the treasure was originally stolen during the Indian Rebellion of 1857, British officers (Sholto and Morstan) profited from Indian violence, and Tonga - an indigenous islander - is used as a weapon and then killed without moral consequence. Pondicherry Lodge, named after an Indian colonial territory, brings the Empire into suburban London. Conan Doyle does not explicitly critique empire, but the trail of death and betrayal connected to the treasure implicitly questions the morality of colonial wealth."
             />
             <ThemeCard
               title={tr(`Wealth and Greed`)}
-              description="The Agra treasure corrupts everyone it touches. Major Sholto betrays his friend and fellow officer for it; Jonathan Small commits murder for it; Bartholomew Sholto is killed because of it. The treasure's disappearance into the Thames is symbolically significant — ill-gotten wealth ultimately benefits no one. Watson's proposal to Mary is only possible because the treasure is lost, suggesting that wealth is an obstacle to genuine human connection. Conan Doyle presents a moral framework in which greed destroys relationships, honour, and life itself."
+              description="The Agra treasure corrupts everyone it touches. Major Sholto betrays his friend and fellow officer for it; Jonathan Small commits murder for it; Bartholomew Sholto is killed because of it. The treasure's disappearance into the Thames is symbolically significant - ill-gotten wealth ultimately benefits no one. Watson's proposal to Mary is only possible because the treasure is lost, suggesting that wealth is an obstacle to genuine human connection. Conan Doyle presents a moral framework in which greed destroys relationships, honour, and life itself."
             />
             <ThemeCard
               title={tr(`Reason vs Emotion`)}
-              description="The central duality of the novel is embodied in Holmes and Watson. Holmes prizes pure logic and dismisses emotion as a weakness: 'the emotional qualities are antagonistic to clear reasoning.' Watson, by contrast, falls in love with Mary and acts from compassion and empathy. The novel does not simply favour one over the other — Holmes's reason solves the case, but Watson's emotion gives the story its meaning and humanity. Holmes's return to cocaine at the end, while Watson finds happiness in love, suggests that reason without emotion leads to emptiness."
+              description="The central duality of the novel is embodied in Holmes and Watson. Holmes prizes pure logic and dismisses emotion as a weakness: 'the emotional qualities are antagonistic to clear reasoning.' Watson, by contrast, falls in love with Mary and acts from compassion and empathy. The novel does not simply favour one over the other - Holmes's reason solves the case, but Watson's emotion gives the story its meaning and humanity. Holmes's return to cocaine at the end, while Watson finds happiness in love, suggests that reason without emotion leads to emptiness."
             />
             <ThemeCard
               title={tr(`Duality and the Double Life`)}
-              description="Duality pervades the novel. Holmes is both genius and addict. Watson is both soldier and romantic. Thaddeus and Bartholomew Sholto are twins with opposite moral characters. Jonathan Small is both criminal and victim. Victorian London itself is dual — respectable streets conceal poverty and crime. Even the treasure has a double nature: it represents both fabulous wealth and the violence required to obtain it. Conan Doyle uses these doublings to suggest that Victorian society's neat moral categories cannot contain the complexity of human experience."
+              description="Duality pervades the novel. Holmes is both genius and addict. Watson is both soldier and romantic. Thaddeus and Bartholomew Sholto are twins with opposite moral characters. Jonathan Small is both criminal and victim. Victorian London itself is dual - respectable streets conceal poverty and crime. Even the treasure has a double nature: it represents both fabulous wealth and the violence required to obtain it. Conan Doyle uses these doublings to suggest that Victorian society's neat moral categories cannot contain the complexity of human experience."
             />
             <ThemeCard
               title={tr(`Friendship and Loyalty`)}
-              description="The novel explores different forms of loyalty. Holmes and Watson's friendship is the novel's emotional anchor — Watson tolerates Holmes's eccentricities and Holmes trusts Watson with his life. Jonathan Small's loyalty to the 'sign of the four' pact endures decades of imprisonment. Small's bond with Tonga, though described in patronising terms, is one of genuine mutual dependence. Thaddeus Sholto's loyalty to the memory of Captain Morstan drives him to send Mary the pearls. Set against these bonds of loyalty are acts of betrayal — Major Sholto's treachery being the most destructive."
+              description="The novel explores different forms of loyalty. Holmes and Watson's friendship is the novel's emotional anchor - Watson tolerates Holmes's eccentricities and Holmes trusts Watson with his life. Jonathan Small's loyalty to the 'sign of the four' pact endures decades of imprisonment. Small's bond with Tonga, though described in patronising terms, is one of genuine mutual dependence. Thaddeus Sholto's loyalty to the memory of Captain Morstan drives him to send Mary the pearls. Set against these bonds of loyalty are acts of betrayal - Major Sholto's treachery being the most destructive."
             />
           </div>
         </Section>
@@ -383,17 +383,17 @@ export default function SignOfFourPage() {
             <QuoteCard
               quote="I abhor the dull routine of existence. I crave for mental exaltation."
               speaker="Holmes"
-              analysis="Establishes Holmes's central conflict — his extraordinary intellect makes ordinary life unbearable. 'Abhor' and 'crave' are extreme verbs that reveal the intensity of his need. This drives his cocaine use and frames the entire novel as Holmes's search for stimulation. Conan Doyle suggests that genius comes at a psychological cost."
+              analysis="Establishes Holmes's central conflict - his extraordinary intellect makes ordinary life unbearable. 'Abhor' and 'crave' are extreme verbs that reveal the intensity of his need. This drives his cocaine use and frames the entire novel as Holmes's search for stimulation. Conan Doyle suggests that genius comes at a psychological cost."
             />
             <QuoteCard
               quote="My mind rebels at stagnation. Give me problems, give me work."
               speaker="Holmes"
-              analysis="The imperative 'give me' and the repetition create urgency and desperation. 'Rebels at stagnation' personifies Holmes's mind as a force that cannot be controlled. This connects to the theme of reason — Holmes's rationality is not a calm trait but a compulsive, almost destructive drive."
+              analysis="The imperative 'give me' and the repetition create urgency and desperation. 'Rebels at stagnation' personifies Holmes's mind as a force that cannot be controlled. This connects to the theme of reason - Holmes's rationality is not a calm trait but a compulsive, almost destructive drive."
             />
             <QuoteCard
-              quote="You really are an automaton — a calculating machine. There is something positively inhuman in you at times."
+              quote="You really are an automaton - a calculating machine. There is something positively inhuman in you at times."
               speaker="Watson"
-              analysis="Watson's criticism of Holmes uses mechanistic language: 'automaton' and 'calculating machine' reduce him to a device without feeling. 'Inhuman' is the key word — Watson recognises that Holmes's rejection of emotion diminishes his humanity. This establishes the novel's central debate about whether reason without emotion is admirable or monstrous."
+              analysis="Watson's criticism of Holmes uses mechanistic language: 'automaton' and 'calculating machine' reduce him to a device without feeling. 'Inhuman' is the key word - Watson recognises that Holmes's rejection of emotion diminishes his humanity. This establishes the novel's central debate about whether reason without emotion is admirable or monstrous."
             />
             <QuoteCard
               quote="Detection is, or ought to be, an exact science."
@@ -403,27 +403,27 @@ export default function SignOfFourPage() {
             <QuoteCard
               quote="The emotional qualities are antagonistic to clear reasoning."
               speaker="Holmes"
-              analysis="Holmes states his philosophy bluntly — emotion is the enemy of logic. 'Antagonistic' frames the relationship as a war between two incompatible forces. However, the novel complicates this: Watson's emotional engagement with Mary leads to happiness, while Holmes's suppression of emotion leads him back to cocaine. Conan Doyle suggests Holmes is wrong."
+              analysis="Holmes states his philosophy bluntly - emotion is the enemy of logic. 'Antagonistic' frames the relationship as a war between two incompatible forces. However, the novel complicates this: Watson's emotional engagement with Mary leads to happiness, while Holmes's suppression of emotion leads him back to cocaine. Conan Doyle suggests Holmes is wrong."
             />
             <QuoteCard
               quote="How small we feel with our petty ambitions and strivings in the presence of the great elemental forces of Nature!"
               speaker="Watson"
-              analysis="Watson's reflection during the Thames chase reveals his capacity for wonder and emotional depth — qualities Holmes entirely lacks. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature, love) suggests that Watson grasps a deeper truth about human insignificance that Holmes's rational framework cannot access."
+              analysis="Watson's reflection during the Thames chase reveals his capacity for wonder and emotional depth - qualities Holmes entirely lacks. The contrast between 'petty ambitions' (the treasure hunt) and 'elemental forces' (nature, love) suggests that Watson grasps a deeper truth about human insignificance that Holmes's rational framework cannot access."
             />
             <QuoteCard
               quote="It is of the first importance not to allow your judgement to be biased by personal qualities."
               speaker="Holmes"
-              analysis="Holmes warns against letting personal feelings influence deduction. This is ironic because his own personality — his arrogance, his need for stimulation — constantly shapes his approach to cases. Conan Doyle uses Holmes's failure to live up to his own principles to show that complete objectivity is impossible, even for the most rational mind."
+              analysis="Holmes warns against letting personal feelings influence deduction. This is ironic because his own personality - his arrogance, his need for stimulation - constantly shapes his approach to cases. Conan Doyle uses Holmes's failure to live up to his own principles to show that complete objectivity is impossible, even for the most rational mind."
             />
             <QuoteCard
               quote="Eliminate all other factors, and the one which remains must be the truth."
               speaker="Holmes"
-              analysis="One of Holmes's most famous deductive principles. The logic is elegant but deceptively simple — it assumes one can identify and eliminate all other factors, which in complex human situations is rarely possible. This maxim reflects Victorian confidence in scientific method while the novel's messy human realities quietly undermine it."
+              analysis="One of Holmes's most famous deductive principles. The logic is elegant but deceptively simple - it assumes one can identify and eliminate all other factors, which in complex human situations is rarely possible. This maxim reflects Victorian confidence in scientific method while the novel's messy human realities quietly undermine it."
             />
             <QuoteCard
-              quote="I would not tell them too much. Women are never to be entirely trusted — not the best of them."
+              quote="I would not tell them too much. Women are never to be entirely trusted - not the best of them."
               speaker="Holmes"
-              analysis="A deeply sexist remark that reveals Holmes's misogyny and fear of emotional entanglement. The absolute 'never' and 'not the best of them' extend distrust to all women without exception. Conan Doyle uses this to characterise Holmes rather than to endorse the view — Watson's trust in Mary and their successful relationship implicitly rebuts Holmes's prejudice."
+              analysis="A deeply sexist remark that reveals Holmes's misogyny and fear of emotional entanglement. The absolute 'never' and 'not the best of them' extend distrust to all women without exception. Conan Doyle uses this to characterise Holmes rather than to endorse the view - Watson's trust in Mary and their successful relationship implicitly rebuts Holmes's prejudice."
             />
             <QuoteCard
               quote="What a very attractive woman!"
@@ -433,7 +433,7 @@ export default function SignOfFourPage() {
             <QuoteCard
               quote="Miss Morstan had entered the room with a firm step and an outward composure of manner."
               speaker="Watson (narrating)"
-              analysis="Mary is introduced through language of strength and self-control: 'firm step' and 'composure.' She is not the helpless damsel of typical Victorian fiction but a woman who faces danger with courage. 'Outward composure' subtly suggests inner anxiety she controls — strength through self-discipline rather than absence of fear."
+              analysis="Mary is introduced through language of strength and self-control: 'firm step' and 'composure.' She is not the helpless damsel of typical Victorian fiction but a woman who faces danger with courage. 'Outward composure' subtly suggests inner anxiety she controls - strength through self-discipline rather than absence of fear."
             />
             <QuoteCard
               quote="It was a September evening and not yet seven o'clock, but the day had been a dreary one, and a dense drizzly fog lay low upon the great city."
@@ -443,17 +443,17 @@ export default function SignOfFourPage() {
             <QuoteCard
               quote="An agony of greed and expectation."
               speaker="Small (describing Major Sholto's reaction to the treasure)"
-              analysis="The noun 'agony' transforms greed from a vice into a physical suffering, suggesting that the desire for wealth is itself a form of torture. 'Expectation' connects to Great Expectations and the Victorian preoccupation with wealth as a pathway to status. Major Sholto's greed literally destroys him — it causes fear, paranoia, and ultimately death."
+              analysis="The noun 'agony' transforms greed from a vice into a physical suffering, suggesting that the desire for wealth is itself a form of torture. 'Expectation' connects to Great Expectations and the Victorian preoccupation with wealth as a pathway to status. Major Sholto's greed literally destroys him - it causes fear, paranoia, and ultimately death."
             />
             <QuoteCard
               quote="A model of propriety."
               speaker="Watson (describing Thaddeus Sholto's home)"
-              analysis="Used ironically — Sholto's home is filled with Eastern luxuries (hookahs, rich tapestries) that represent the spoils of empire, yet he presents himself as 'proper.' The irony highlights the gap between Victorian respectability and the colonial exploitation that funds it. 'Propriety' becomes a mask for ill-gotten wealth."
+              analysis="Used ironically - Sholto's home is filled with Eastern luxuries (hookahs, rich tapestries) that represent the spoils of empire, yet he presents himself as 'proper.' The irony highlights the gap between Victorian respectability and the colonial exploitation that funds it. 'Propriety' becomes a mask for ill-gotten wealth."
             />
             <QuoteCard
               quote="It is my treasure; and if I can't have the loot I'll take darned good care that no one else does."
               speaker="Jonathan Small"
-              analysis="Small's declaration as he throws the treasure into the Thames. The possessive 'my treasure' reveals his sense of entitlement — though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice."
+              analysis="Small's declaration as he throws the treasure into the Thames. The possessive 'my treasure' reveals his sense of entitlement - though the treasure was itself stolen. The colloquial 'loot' and 'darned' contrast with the formal language of other characters, marking Small's working-class status. His act is simultaneously petty revenge and a kind of rough justice."
             />
             <QuoteCard
               quote="Whoever had lost a treasure, I knew that night that I had gained one."
@@ -463,32 +463,32 @@ export default function SignOfFourPage() {
             <QuoteCard
               quote="The sign of four."
               speaker="Written on the paper found beside Bartholomew Sholto's body"
-              analysis="The novel's title and central motif. The 'four' refers to Jonathan Small and the three Sikh conspirators who swore a pact over the Agra treasure. The sign represents a bond of loyalty forged through crime — a dark parody of friendship. It recurs throughout the novel as a mark of colonial violence that cannot be erased, linking past crimes in India to present murders in London."
+              analysis="The novel's title and central motif. The 'four' refers to Jonathan Small and the three Sikh conspirators who swore a pact over the Agra treasure. The sign represents a bond of loyalty forged through crime - a dark parody of friendship. It recurs throughout the novel as a mark of colonial violence that cannot be erased, linking past crimes in India to present murders in London."
             />
             <QuoteCard
               quote="I never saw a more savage, distorted face."
               speaker="Watson (describing Bartholomew Sholto's death)"
-              analysis="The word 'savage' is loaded — throughout the novel it is applied to Tonga and colonial subjects, yet here it describes a white Englishman's death mask. The reversal unsettles the racial hierarchy the novel elsewhere maintains. 'Distorted' suggests the treasure's corrupting influence extends even beyond death, twisting the body as greed twisted the soul."
+              analysis="The word 'savage' is loaded - throughout the novel it is applied to Tonga and colonial subjects, yet here it describes a white Englishman's death mask. The reversal unsettles the racial hierarchy the novel elsewhere maintains. 'Distorted' suggests the treasure's corrupting influence extends even beyond death, twisting the body as greed twisted the soul."
             />
             <QuoteCard
               quote="He is an ugly devil."
               speaker="Small (describing Tonga)"
-              analysis="Even Small, Tonga's only friend, uses dehumanising language. 'Devil' strips Tonga of humanity and places him in a moral category below human. That even Tonga's ally describes him this way reveals how deeply Victorian racial prejudice is embedded — not as individual cruelty but as a shared cultural assumption. Modern readers should recognise this as reflecting the racism of the period."
+              analysis="Even Small, Tonga's only friend, uses dehumanising language. 'Devil' strips Tonga of humanity and places him in a moral category below human. That even Tonga's ally describes him this way reveals how deeply Victorian racial prejudice is embedded - not as individual cruelty but as a shared cultural assumption. Modern readers should recognise this as reflecting the racism of the period."
             />
             <QuoteCard
               quote="You have done all the work in this business. I get a wife out of it, Jones gets the credit, pray what remains for you?"
               speaker="Watson"
-              analysis="Watson's question to Holmes at the novel's end. Holmes's answer — reaching for the cocaine bottle — is devastating. The three outcomes neatly summarise the characters: Watson gains love (emotion), Jones gains reputation (social status), and Holmes gains nothing that matters to a human being, only the satisfaction of a solved puzzle. The implication is that Holmes's dedication to reason has cost him the ability to find meaning in life."
+              analysis="Watson's question to Holmes at the novel's end. Holmes's answer - reaching for the cocaine bottle - is devastating. The three outcomes neatly summarise the characters: Watson gains love (emotion), Jones gains reputation (social status), and Holmes gains nothing that matters to a human being, only the satisfaction of a solved puzzle. The implication is that Holmes's dedication to reason has cost him the ability to find meaning in life."
             />
             <QuoteCard
               quote="For me there still remains the cocaine-bottle."
               speaker="Holmes"
-              analysis="The novel's final line. Holmes returns to drugs because the case is over and intellectual stimulation has ceased. The cocaine bottle replaces the treasure chest as the novel's closing image — both represent false solutions to deeper needs. Conan Doyle ends on a note of melancholy rather than triumph, suggesting that Holmes's genius is inseparable from his self-destruction."
+              analysis="The novel's final line. Holmes returns to drugs because the case is over and intellectual stimulation has ceased. The cocaine bottle replaces the treasure chest as the novel's closing image - both represent false solutions to deeper needs. Conan Doyle ends on a note of melancholy rather than triumph, suggesting that Holmes's genius is inseparable from his self-destruction."
             />
             <QuoteCard
               quote="I then put the sign of the four upon the paper and put it upon the table."
               speaker="Small"
-              analysis="Small describes leaving his calling card at the murder scene. The deliberate, ritualistic quality — 'put... upon... put... upon' — transforms murder into a statement. The sign is both a confession and a claim of ownership: Small marks the scene as his, connecting Bartholomew's death directly to the original colonial theft. Crime becomes a chain that links India to England across decades."
+              analysis="Small describes leaving his calling card at the murder scene. The deliberate, ritualistic quality - 'put... upon... put... upon' - transforms murder into a statement. The sign is both a confession and a claim of ownership: Small marks the scene as his, connecting Bartholomew's death directly to the original colonial theft. Crime becomes a chain that links India to England across decades."
             />
           </div>
         </Section>
