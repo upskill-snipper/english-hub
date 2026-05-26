@@ -70,7 +70,7 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'mkt.eal.benefit.intl.desc': {
     en: 'Built with Qatar, the wider GCC and IGCSE/GCSE classrooms in mind - content addresses the specific language gaps Arabic-L1 learners face when working through a UK-aligned curriculum.',
-    ar: 'مبني وقطر ودول الـ GCC وصفوف الـ IGCSE/GCSE في البال - المحتوى يعالج بالضبط الفجوات اللغوية اللي يواجهها متحدّث العربي وقت يدرس منهج بريطاني.',
+    ar: 'مبني وفي البال قطر ودول الـ GCC وصفوف الـ IGCSE/GCSE - المحتوى يعالج بالضبط الفجوات اللغوية اللي يواجهها متحدّث العربي وقت يدرس منهج بريطاني.',
   },
   'mkt.eal.benefit.teacher.title': {
     en: 'Teacher visibility and progress reporting',
@@ -234,7 +234,7 @@ export const MKT_EAL_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'mkt.eal.games.heading': {
     en: 'English games for beginners',
-    ar: 'العاب الإنجليزية للمبتدئين',
+    ar: 'ألعاب الإنجليزية للمبتدئين',
   },
   'mkt.eal.games.lead': {
     en: '18+ friendly games: picture-word match, articles, the verb “to be”, tenses, prepositions, numbers & time, phrasal verbs and more - with instant feedback and scores.',

@@ -27,7 +27,7 @@ export const B1_KS3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'ks3.hub.reference.explore': { en: 'Explore', ar: 'استكشف' },
   'ks3.hub.reference.skills.desc': {
     en: 'The KS3 skill progression mapped code-by-code across Reading, Writing, Language and Speaking & Listening - each code shows what it becomes the following year.',
-    ar: 'تطور مهارات KS3 مُرتَّب برمز رمز عبر القراءة والكتابة واللغة والتحدث والاستماع - كل رمز يوضح ما يصبح عليه في السنة التالية.',
+    ar: 'تطور مهارات KS3 مُرتَّب رمزاً برمز عبر القراءة والكتابة واللغة والتحدث والاستماع - كل رمز يوضح ما يصبح عليه في السنة التالية.',
   },
   'ks3.hub.reference.rubrics.desc': {
     en: 'Year-by-year marking rubrics with level descriptors, so every independent outcome is assessed against a consistent, transparent standard.',
@@ -79,7 +79,7 @@ export const B1_KS3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'ks3.ils.overview.who_heading': { en: 'Who it is for', ar: 'لمن هذا الامتحان؟' },
   'ks3.ils.overview.who_body': {
     en: 'This qualification is sat by Year 9 students following the Pearson Edexcel iLowerSecondary English Curriculum.',
-    ar: 'هذه المؤهلة يأخذها طلاب Year 9 الملتحقون بمنهج Pearson Edexcel iLowerSecondary English.',
+    ar: 'هذا المؤهل يأخذه طلاب Year 9 الملتحقون بمنهج Pearson Edexcel iLowerSecondary English.',
   },
   'ks3.ils.overview.progression_heading': {
     en: 'Strong performance progresses naturally to:',
@@ -102,7 +102,7 @@ export const B1_KS3_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'ks3.ils.overview.ao_intro': {
     en: 'Every question targets one of these objectives. The percentages are the weighting each carries across the qualification.',
-    ar: 'كل سؤال يستهدف واحداً من هذه الأهداف. النسب المئوية توضح وزن كل هدف في المؤهلة الكاملة.',
+    ar: 'كل سؤال يستهدف واحداً من هذه الأهداف. النسب المئوية توضح وزن كل هدف في المؤهل الكامل.',
   },
   'ks3.ils.overview.start_here_heading': { en: 'Start here', ar: 'ابدأ من هنا' },
 

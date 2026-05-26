@@ -280,7 +280,7 @@ export const MKT_STUDENTS_DICTIONARY: Record<string, { en: string; ar: string }>
   },
   'mkt.students.demo.title': {
     en: 'Want to look around first?',
-    ar: 'تبغى تطّلع جوّه الأول؟',
+    ar: 'تبغى تتطلّع شوي الأول؟',
   },
   'mkt.students.demo.subtitle': {
     en: 'Open the student demo to see how revision, feedback and progress tracking work - no sign-up needed.',

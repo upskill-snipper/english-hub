@@ -235,11 +235,11 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
   },
   'demo_teacher.students.at_risk_flagged_single': {
     en: 'student flagged as at risk',
-    ar: 'طالب اتنبّه إنه في خطر',
+    ar: 'طالب متأشّر عليه إنه في خطر',
   },
   'demo_teacher.students.at_risk_flagged_plural': {
     en: 'students flagged as at risk',
-    ar: 'طلاب اتنبّه إنهم في خطر',
+    ar: 'طلاب متأشّر عليهم إنهم في خطر',
   },
   'demo_teacher.students.filter.all_classes': { en: 'All Classes', ar: 'كل الفصول' },
   'demo_teacher.students.report_btn_prefix': { en: 'View Class Report:', ar: 'شوف تقرير الفصل:' },
@@ -428,7 +428,7 @@ export const DEMO_PAGES_DICTIONARY: Dictionary = {
   'demo_teacher.homework.field.adjusted_grade': { en: 'Adjusted Grade', ar: 'الدرجة المعدّلة' },
   'demo_teacher.homework.option.agree': {
     en: 'Grade 6 (agree with AI)',
-    ar: 'درجة ٦ (اتفق مع AI)',
+    ar: 'درجة ٦ (متّفق مع AI)',
   },
   'demo_teacher.homework.option.g7': { en: 'Grade 7', ar: 'درجة ٧' },
   'demo_teacher.homework.option.g5': { en: 'Grade 5', ar: 'درجة ٥' },

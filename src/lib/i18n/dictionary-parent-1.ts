@@ -197,7 +197,7 @@ export const PARENT_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ── Dashboard: relative dates ─────────────────────────────────────────────
-  'parent.days_ago': { en: 'days ago', ar: 'قبل أيام' },
+  'parent.days_ago': { en: 'days ago', ar: 'أيام مضت' },
 
   // ── Delete-data: deleted categories ───────────────────────────────────────
   'parent.del_account_desc': {
@@ -212,7 +212,7 @@ export const PARENT_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'parent.del_ai_feedback_label': { en: 'AI feedback', ar: 'ملاحظات الذكاء الاصطناعي' },
   'parent.del_essays_desc': {
     en: 'Every essay and written answer your child has submitted.',
-    ar: 'كل مقال وإجابة مكتوبة رسلها طفلك.',
+    ar: 'كل مقال وإجابة مكتوبة رسّلها طفلك.',
   },
   'parent.del_essays_label': { en: 'Essays & written work', ar: 'المقالات والكتابات' },
   'parent.del_privacy_desc': {

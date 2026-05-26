@@ -200,7 +200,7 @@ export const AFF_COMP_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'aff_comp.dash.links.rates_part3': { en: `per monthly signup`, ar: `لكل اشتراك شهري` },
   'aff_comp.dash.links.rates_part4': {
     en: `paid for the lifetime of the subscription.`,
-    ar: `تتدفع طول مدّة الاشتراك.`,
+    ar: `تنصرف لك طول مدّة الاشتراك.`,
   },
   'aff_comp.dash.links.qr_code': { en: `QR code`, ar: `رمز QR` },
   'aff_comp.dash.links.qr_blurb': {

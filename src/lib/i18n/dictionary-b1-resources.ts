@@ -77,7 +77,7 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
   },
   'resources.rev_notes.meta.desc': {
     en: 'Free GCSE English Literature revision notes for every set text. Character analysis, themes, key quotes, and exam tips for Macbeth, An Inspector Calls, and more.',
-    ar: 'ملاحظات مراجعة مجانية لـ GCSE في الأدب الإنجليزي لكل النصوص المقررة. تحليل الشخصيات والثيمات والاقتباسات الرئيسية ونصائح الامتحان لماكبث وتفتيش وغيرها.',
+    ar: 'ملاحظات مراجعة مجانية لـ GCSE في الأدب الإنجليزي لكل النصوص المقررة. تحليل الشخصيات والثيمات والاقتباسات الرئيسية ونصائح الامتحان لماكبث و"An Inspector Calls" وغيرها.',
   },
   'resources.rev_notes.meta.og_title': {
     en: 'Revision Notes - The English Hub',
@@ -91,7 +91,7 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
   },
   'resources.techniques.meta.desc': {
     en: 'Master language and structural techniques for GCSE English. Learn to identify and analyse literary devices, rhetorical techniques, and structural features.',
-    ar: 'أتقن تقنيات اللغة والبنية لـ GCSE في الإنجليزي. تعلّم كيف تتعرّف على الأجهزة الأدبية والتقنيات البلاغية والسمات البنيوية وتحلّلها.',
+    ar: 'أتقن تقنيات اللغة والبنية لـ GCSE في الإنجليزي. تعلّم كيف تتعرّف على الأساليب الأدبية والتقنيات البلاغية والسمات البنيوية وتحلّلها.',
   },
   'resources.techniques.meta.og_title': {
     en: 'English Techniques - The English Hub',
@@ -169,7 +169,7 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
     en: "You're viewing resources for your chosen exam board only.",
     ar: 'أنت الحين تشوف المصادر الخاصة ببورد امتحانك بس.',
   },
-  'resources.eng_lang.marks_total': { en: 'marks total', ar: 'درجة مجموع' },
+  'resources.eng_lang.marks_total': { en: 'marks total', ar: 'درجة إجمالاً' },
   'resources.eng_lang.view_resources': { en: 'View resources', ar: 'شوف المصادر' },
   // Board finder
   'resources.eng_lang.which_board': { en: 'Which board am I studying?', ar: 'أنا من أي بورد؟' },
@@ -201,7 +201,7 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
   },
   'resources.eng_lang.core_skills.sub': {
     en: 'Regardless of which exam board you study, these six key skill areas form the backbone of every GCSE English Language course.',
-    ar: 'بصرف النظر عن البورد الذي تدرس فيه، هذي الست مجالات المهارية الرئيسية تشكّل عمود فقرات كل مساق GCSE في اللغة الإنجليزية.',
+    ar: 'بصرف النظر عن البورد الذي تدرس فيه، هذي المجالات المهارية الست الرئيسية تشكّل العمود الفقري لكل مساق GCSE في اللغة الإنجليزية.',
   },
   // What does EL cover
   'resources.eng_lang.what_covers.h2': {
@@ -327,19 +327,19 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar: string }>
   'resources.techniques.hub.h1': { en: 'Master Every Technique', ar: 'أتقن كل تقنية' },
   'resources.techniques.hub.subtitle': {
     en: 'The definitive guide to 60+ language and structural techniques for GCSE English. Definitions, examples, effects, and exam-ready sentence starters - everything you need in one place.',
-    ar: 'الدليل الشامل لأكثر من 60 تقنية لغوية وبنيوية لـ GCSE في الإنجليزي. تعريفات وأمثلة وتأثيرات ومبدئيات جمل جاهزة للامتحان - كل اللي تحتاجه في مكان واحد.',
+    ar: 'الدليل الشامل لأكثر من 60 تقنية لغوية وبنيوية لـ GCSE في الإنجليزي. تعريفات وأمثلة وتأثيرات وبدايات جمل جاهزة للامتحان - كل اللي تحتاجه في مكان واحد.',
   },
   'resources.techniques.hub.search_placeholder': {
     en: 'Search techniques... e.g. metaphor, sibilance',
     ar: 'دوّر على التقنيات... مثلاً الاستعارة، التكرار الصفيري',
   },
-  'resources.techniques.hub.cta_lang': { en: 'Language Devices', ar: 'أجهزة اللغة' },
-  'resources.techniques.hub.cta_struct': { en: 'Structural Devices', ar: 'أجهزة البنية' },
+  'resources.techniques.hub.cta_lang': { en: 'Language Devices', ar: 'الأساليب اللغوية' },
+  'resources.techniques.hub.cta_struct': { en: 'Structural Devices', ar: 'الأساليب البنيوية' },
   // Browse by category
   'resources.techniques.hub.browse_h2': { en: 'Browse by Category', ar: 'تصفّح حسب التصنيف' },
   'resources.techniques.hub.browse_sub': {
     en: 'All techniques are organised into two main categories. Each entry includes a definition, example, effect analysis, and a sentence starter you can use in your exam.',
-    ar: 'كل التقنيات مرتّبة في تصنيفين رئيسيين. كل مدخل يتضمّن تعريفاً ومثالاً وتحليل تأثير ومبدئية جملة تقدر تستخدمها في امتحانك.',
+    ar: 'كل التقنيات مرتّبة في تصنيفين رئيسيين. كل مدخل يتضمّن تعريفاً ومثالاً وتحليل تأثير وبداية جملة تقدر تستخدمها في امتحانك.',
   },
   'resources.techniques.hub.techniques_count_suffix': { en: 'techniques', ar: 'تقنية' },
   // WHW method

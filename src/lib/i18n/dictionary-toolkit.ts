@@ -107,7 +107,7 @@ export const TOOLKIT_DICTIONARY: Dictionary = {
   'tools.my_materials.action.retake': { en: 'Re-take', ar: 'أعد المحاولة' },
   'tools.my_materials.confirm_delete': {
     en: 'Are you sure you want to delete this material?',
-    ar: 'متأكّد إنك أبغى تحذف هذه المادة؟',
+    ar: 'متأكّد إنك تبي تحذف هذه المادة؟',
   },
   'tools.my_materials.empty.h3': {
     en: 'No materials saved yet',

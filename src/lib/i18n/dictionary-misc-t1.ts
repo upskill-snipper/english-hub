@@ -33,28 +33,28 @@
 
 export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─── A-Level board cards (/a-level) - verbatim from may15 ───────────────────
-  'alevel.board.aqa.name': { en: 'AQA A-level English', ar: 'AQA A-level English' },
+  'alevel.board.aqa.name': { en: 'AQA A-level English', ar: 'AQA A-level إنجليزي' },
   'alevel.board.aqa.description': {
     en: 'AS and A-level English Literature and Language - paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
-    ar: 'AS and A-level English Literature and Language - paper-specific revision, set-text breakdowns, and full past-paper walkthroughs.',
+    ar: 'AS و A-level English Literature and Language - مراجعة خاصة بكل ورقة، وتفصيل للنصوص المقررة، وشرح كامل للأوراق السابقة.',
   },
   'alevel.board.edexcel.name': {
     en: 'Pearson Edexcel A-level English',
-    ar: 'Pearson Edexcel A-level English',
+    ar: 'Pearson Edexcel A-level إنجليزي',
   },
   'alevel.board.edexcel.description': {
     en: 'Pearson Edexcel A-level English Literature and Language - focused revision against the specification and exemplar A* answers.',
-    ar: 'Pearson Edexcel A-level English Literature and Language - focused revision against the specification and exemplar A* answers.',
+    ar: 'Pearson Edexcel A-level English Literature and Language - مراجعة مركّزة على المنهج المقرر مع إجابات نموذجية بمستوى A*.',
   },
-  'alevel.board.ocr.name': { en: 'OCR A-level English', ar: 'OCR A-level English' },
+  'alevel.board.ocr.name': { en: 'OCR A-level English', ar: 'OCR A-level إنجليزي' },
   'alevel.board.ocr.description': {
     en: 'OCR A-level English Literature and Language - examiner-aligned analysis and structure for the closed-book papers.',
-    ar: 'OCR A-level English Literature and Language - examiner-aligned analysis and structure for the closed-book papers.',
+    ar: 'OCR A-level English Literature and Language - تحليل وهيكلة متوافقة مع المصحّح للأوراق المغلقة (closed-book).',
   },
-  'alevel.board.eduqas.name': { en: 'Eduqas A-level English', ar: 'Eduqas A-level English' },
+  'alevel.board.eduqas.name': { en: 'Eduqas A-level English', ar: 'Eduqas A-level إنجليزي' },
   'alevel.board.eduqas.description': {
     en: 'WJEC Eduqas A-level English Literature and Language - coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
-    ar: 'WJEC Eduqas A-level English Literature and Language - coverage of the prescribed pre-1900 and post-1900 texts plus unseen practice.',
+    ar: 'WJEC Eduqas A-level English Literature and Language - تغطية للنصوص المقررة قبل ١٩٠٠ وبعد ١٩٠٠ مع تمارين على النصوص غير المرئية.',
   },
 
   // ─── A-Level hub badge - verbatim from screenshot-fixes (ar === en) ─────────
@@ -81,23 +81,23 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ─── /affiliates breadcrumbs - verbatim from report-fix-may16b ──────────────
-  'affiliates.breadcrumb.home': { en: 'Home', ar: 'Home' },
-  'affiliates.breadcrumb.self': { en: 'Affiliates', ar: 'Affiliates' },
+  'affiliates.breadcrumb.home': { en: 'Home', ar: 'الرئيسية' },
+  'affiliates.breadcrumb.self': { en: 'Affiliates', ar: 'الشركاء' },
 
   // ─── /affiliates public landing metadata - verbatim from report-fix-may16b ──
   // NOTE: title is fed through the root metadata title.template
   // ('%s - The English Hub'), so it must NOT contain the brand itself.
   'affiliates.public.meta.title': {
     en: 'Affiliate Programme - Earn Recurring Commission for Partners',
-    ar: 'Affiliate Programme - Earn Recurring Commission for Partners',
+    ar: 'برنامج الشركاء - اكسب عمولة متكررة للشركاء',
   },
   'affiliates.public.meta.description': {
     en: 'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',
-    ar: 'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',
+    ar: 'انضمّ لبرنامج شركاء The English Hub واكسب عمولة متكررة على كل اشتراك سنوي تحيله. تعلّم إنجليزي مستقل ومتوافق مع بوردات الامتحانات لـ GCSE و IGCSE و KS3 و EAL. تتبّع لمدة ٩٠ يوم، ومدفوعات شهرية، وبدون حد أدنى للزيارات.',
   },
   'affiliates.public.meta.og_image_alt': {
     en: 'The English Hub affiliate programme',
-    ar: 'The English Hub affiliate programme',
+    ar: 'برنامج شركاء The English Hub',
   },
 
   // ─── /affiliates authed portal metadata - fresh EN ─────────────────────────
@@ -153,7 +153,7 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'resources.study_tools.checklists.tip.confident.label': {
     en: 'Be honest:',
-    ar: 'كن صادق:',
+    ar: 'خلّك صادق:',
   },
   'resources.study_tools.checklists.tip.confident.body': {
     en: 'only tick a skill once you could explain it or do it in an exam without notes.',

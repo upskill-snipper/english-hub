@@ -61,7 +61,7 @@ export const SCHOOL_COMP_DICTIONARY: Dictionary = {
   'school_comp.common.teacher_comment': { en: 'Teacher Comment', ar: 'تعليق المعلم' },
   'school_comp.common.actions': { en: 'Actions', ar: 'الإجراءات' },
   'school_comp.common.minutes': { en: 'min', ar: 'دقيقة' },
-  'school_comp.common.days': { en: 'days', ar: 'يوم' },
+  'school_comp.common.days': { en: 'days', ar: 'أيام' },
   'school_comp.common.day': { en: 'day', ar: 'يوم' },
   'school_comp.common.weeks': { en: 'weeks', ar: 'أسابيع' },
   'school_comp.common.suggested': { en: 'Suggested', ar: 'مقترح' },
@@ -80,7 +80,7 @@ export const SCHOOL_COMP_DICTIONARY: Dictionary = {
   'school_comp.activity.min_ago_other': { en: 'mins ago', ar: 'دقائق' },
   'school_comp.activity.hour_ago_one': { en: 'hour ago', ar: 'ساعة' },
   'school_comp.activity.hour_ago_other': { en: 'hours ago', ar: 'ساعات' },
-  'school_comp.activity.days_ago': { en: 'days ago', ar: 'يوم' },
+  'school_comp.activity.days_ago': { en: 'days ago', ar: 'أيام' },
   'school_comp.activity.week_ago_one': { en: 'week ago', ar: 'أسبوع' },
   'school_comp.activity.week_ago_other': { en: 'weeks ago', ar: 'أسابيع' },
   'school_comp.activity.month_ago_one': { en: 'month ago', ar: 'شهر' },
@@ -418,7 +418,7 @@ export const SCHOOL_COMP_DICTIONARY: Dictionary = {
   'school_comp.teacher_comp.heading': { en: 'Class Comparison', ar: 'مقارنة الصفوف' },
   'school_comp.teacher_comp.subheading': {
     en: 'Side-by-side comparison normalised for year group.',
-    ar: 'مقارنة جنباً إلى جنب مُطبَّعة لمستوى السنة.',
+    ar: 'مقارنة جنب لجنب معدّلة حسب مستوى السنة.',
   },
   'school_comp.teacher_comp.select_classes': {
     en: 'Select classes to compare (or view all)',

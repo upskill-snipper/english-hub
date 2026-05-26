@@ -177,11 +177,11 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.grade_targets.board_context_board_label': {
     en: 'Showing {board} guidance.',
-    ar: 'يعرض إرشادات {board}.',
+    ar: 'نعرض إرشادات {board}.',
   },
   'revision.grade_targets.letter_grade_note': {
     en: 'Cambridge IGCSE uses the traditional A*-G grading system, not the 9-1 system used by most GCSE boards. Throughout these guides you will also see 9-1 conversions so you can compare with other students.',
-    ar: 'Cambridge IGCSE يستخدم نظام التقييم التقليدي A*-G، مو نظام 9-1 اللي تستخدمه معظم بورودات GCSE. في هالأدلة بتشوف كمان تحويلات 9-1 عشان تقدر تقارن مع الطلاب الثانيين.',
+    ar: 'Cambridge IGCSE يستخدم نظام التقييم التقليدي A*-G، مو نظام 9-1 اللي تستخدمه معظم بوردات GCSE. في هالأدلة بتشوف كمان تحويلات 9-1 عشان تقدر تقارن مع الطلاب الثانيين.',
   },
   'revision.grade_targets.nine_one_note': {
     en: '{board} uses the 9-1 grading system. Mark boundaries and paper references below are specific to your board.',
@@ -301,7 +301,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.grade_targets.gradeC.equivalent': {
     en: 'equivalent to 9-1 Grade 4-5',
-    ar: 'معادل الدرجة 4-5 في نظام 9-1',
+    ar: 'يعادل الدرجة 4-5 في نظام 9-1',
   },
   'revision.grade_targets.gradeA.title': {
     en: 'How to Get an A',
@@ -313,7 +313,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.grade_targets.gradeA.equivalent': {
     en: 'equivalent to 9-1 Grade 7',
-    ar: 'معادل الدرجة 7 في نظام 9-1',
+    ar: 'يعادل الدرجة 7 في نظام 9-1',
   },
   'revision.grade_targets.gradeAstar.title': {
     en: 'How to Get an A*',
@@ -325,7 +325,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.grade_targets.gradeAstar.equivalent': {
     en: 'equivalent to 9-1 Grade 8-9',
-    ar: 'معادل الدرجة 8-9 في نظام 9-1',
+    ar: 'يعادل الدرجة 8-9 في نظام 9-1',
   },
 
   // Grade card skills (shared)
@@ -462,7 +462,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.exam_technique.tip.plan.body': {
     en: 'A rough plan prevents waffle and keeps your argument focused. Jot down 3 points, the quotes you will use, and your thesis before writing.',
-    ar: 'خطة خشنة تمنع الكلام الفارغ وتخلي حجّتك مركّزة. دوّن 3 نقاط والاقتباسات اللي ستستخدمها وأطروحتك قبل الكتابة.',
+    ar: 'الخطة السريعة تمنع الكلام الفارغ وتخلي حجّتك مركّزة. دوّن 3 نقاط والاقتباسات اللي بتستخدمها وأطروحتك قبل الكتابة.',
   },
   'revision.exam_technique.tip.embed_quotes.title': {
     en: 'Embed your quotes',
@@ -470,7 +470,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.exam_technique.tip.embed_quotes.body': {
     en: 'Never drop a quote into a sentence on its own. Weave it into your analysis: "Shelley uses the adjective \'vast\' to convey..." is far stronger than a standalone quote.',
-    ar: 'لا تحطّ اقتباسًا في الجملة وحده. اندمجه في تحليلك: "يستخدم شيلي الصفة \'vast\' للتعبير عن..." أقوى بكثير من اقتباس منفصل.',
+    ar: 'لا تحطّ اقتباس في جملة لحاله. ادمجه في تحليلك: "يستخدم شيلي الصفة \'vast\' للتعبير عن..." أقوى بكثير من اقتباس منفصل.',
   },
   'revision.exam_technique.tip.link_ideas.title': {
     en: 'Link to the big ideas',
@@ -494,7 +494,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.exam_technique.tip.terminology.body': {
     en: 'Words like "metaphor", "sibilance", "iambic pentameter", and "semantic field" show the marker you understand craft. Use them precisely, not just to drop them in.',
-    ar: 'كلمات مثل "استعارة" و"صفير" و"iambic pentameter" و"حقل دلالي" تُظهر للمصحّح إنك تفهم الحِرفة. استخدمها بدقة، مو بس للإشارة.',
+    ar: 'كلمات مثل "استعارة" و"صفير" و"iambic pentameter" و"حقل دلالي" تُظهر للمصحّح إنك تفهم الحِرفة. استخدمها بدقة، مو بس عشان تحشرها حشر.',
   },
 
   // Assessment objectives table
@@ -750,7 +750,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.common_errors.badge_updated': {
     en: 'Updated for current anthologies',
-    ar: 'محدَّث لأحدث المقتطفات',
+    ar: 'محدَّث لأحدث المختارات الشعرية',
   },
   'revision.common_errors.why_different_heading': {
     en: 'Why these errors are different',
@@ -830,7 +830,7 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'revision.common_errors.crosslink.poetry.body': {
     en: 'Verified analysis of every anthology poem - including the misquoted lines and version flags listed above.',
-    ar: 'تحليل موثّق لكل قصيدة في المقتطف - بما فيها الأسطر المقتبسة خطأً وتنبيهات الإصدار المذكورة أعلاه.',
+    ar: 'تحليل موثّق لكل قصيدة في المختارات الشعرية - بما فيها الأسطر المقتبسة خطأً وتنبيهات الإصدار المذكورة أعلاه.',
   },
   'revision.common_errors.crosslink.poetry.cta': {
     en: 'Open hub',

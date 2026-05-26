@@ -260,7 +260,7 @@ export const DASH_INTERNAL_DICTIONARY: Dictionary = {
   'dashboard.mock.results.not_ans': { en: 'Not answered', ar: 'ما انجاوب' },
   'dashboard.mock.results.your_answer': { en: 'Your Answer', ar: 'إجابتك' },
   'dashboard.mock.results.show_model': { en: 'Show', ar: 'اعرض' },
-  'dashboard.mock.results.hide_model': { en: 'Hide', ar: 'إخفي' },
+  'dashboard.mock.results.hide_model': { en: 'Hide', ar: 'أخفِ' },
   'dashboard.mock.results.model_suffix': { en: 'model answer', ar: 'نموذج الإجابة' },
   'dashboard.mock.results.model_title': { en: 'Model Answer', ar: 'نموذج الإجابة' },
   'dashboard.mock.results.no_model': {

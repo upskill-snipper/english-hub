@@ -51,7 +51,7 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
   },
   'aff_comp.public.hero.title_part1': {
     en: 'Earn recurring commission with',
-    ar: 'اكسب عمولة متكرّرة وياك',
+    ar: 'اكسب عمولة متكرّرة مع',
   },
   'aff_comp.public.hero.title_brand': {
     en: 'The English Hub',
@@ -99,7 +99,7 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string }> =
   /* ─── Why partner ──────────────────────────────────────────── */
   'aff_comp.public.why.heading': {
     en: 'Why partner with us',
-    ar: 'ليش تصير شريك وياّنا',
+    ar: 'ليش تصير شريك معانا',
   },
   'aff_comp.public.why.subheading': {
     en: 'A genuinely useful product for your audience, fair recurring rewards for you, and transparent tracking throughout.',

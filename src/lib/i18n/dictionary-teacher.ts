@@ -143,7 +143,7 @@ export const TEACHER_DICTIONARY: Dictionary = {
   'teacher.analytics.at_risk_title': { en: `Students needing support`, ar: `طلاب يحتاجون دعم` },
   'teacher.analytics.all_ok': {
     en: `No students flagged - everyone's on track.`,
-    ar: `ما في طلاب مرفوعين - الكل ماشي زين.`,
+    ar: `ما في طلاب محتاجين انتباه - الكل ماشي زين.`,
   },
   'teacher.analytics.trend.declining': { en: `Declining`, ar: `ينزل` },
   'teacher.analytics.trend.stagnant': { en: `Stalled`, ar: `واقف` },

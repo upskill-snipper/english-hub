@@ -327,7 +327,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // Notifications - email alerts for the school admin.
   'school.settings.notif.at_risk_desc': {
     en: 'Be alerted when a student is flagged as at risk of underperforming.',
-    ar: 'ييك تنبيه لما طالب ينحدّد إنه معرّض لخطر ضعف الأداء.',
+    ar: 'يوصلك تنبيه لما طالب ينحدّد إنه معرّض لخطر ضعف الأداء.',
   },
   'school.settings.notif.at_risk_label': {
     en: 'At-risk student alerts',
@@ -339,7 +339,7 @@ export const SCHOOL_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'school.settings.notif.new_student_desc': {
     en: 'Get an email each time a new student joins with your school code.',
-    ar: 'ييك إيميل كل ما طالب جديد ينضم بكود مدرستك.',
+    ar: 'يوصلك إيميل كل ما طالب جديد ينضم بكود مدرستك.',
   },
   'school.settings.notif.new_student_label': {
     en: 'New student joins',

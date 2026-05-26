@@ -2914,7 +2914,7 @@ export const DICTIONARY: Dictionary = {
   },
   'account.billing.verify_email_prefix': {
     en: 'We’ve sent a fresh link to',
-    ar: 'أبغى أقولّك إنّا رسّلنا رابط جديد لـ',
+    ar: 'رسّلنا رابط جديد لـ',
   },
   'account.billing.verify_email_suffix': {
     en: 'Confirm it and come back to finish checkout.',
@@ -2925,17 +2925,17 @@ export const DICTIONARY: Dictionary = {
   'account.billing.past_due_title': { en: 'Payment failed', ar: 'الدفعة ما مشت' },
   'account.billing.past_due_body': {
     en: 'We were unable to process your last payment. Please update your payment method to keep your Premium access.',
-    ar: 'ما قدرنا نمشّي آخر دفعة. حدّث طريقة الدفع عشان تحتفظ بدخولك الپريميوم.',
+    ar: 'ما قدرنا نمشّي آخر دفعة. حدّث طريقة الدفع عشان تحتفظ بدخولك البريميوم.',
   },
   'account.billing.update_payment_method': {
     en: 'Update payment method',
     ar: 'حدّث طريقة الدفع',
   },
   'account.billing.current_plan': { en: 'Current Plan', ar: 'خطتك الحالية' },
-  'account.billing.plan_premium': { en: 'Premium', ar: 'پريميوم' },
+  'account.billing.plan_premium': { en: 'Premium', ar: 'بريميوم' },
   'account.billing.plan_premium_cancelled': {
     en: 'Premium (Cancelled)',
-    ar: 'پريميوم (ملغية)',
+    ar: 'بريميوم (ملغية)',
   },
   'account.billing.plan_free': { en: 'Free', ar: 'مجاني' },
   'account.billing.renews': { en: 'Renews', ar: 'يتجدّد' },
@@ -2947,7 +2947,7 @@ export const DICTIONARY: Dictionary = {
   },
   'account.billing.upgrade_blurb': {
     en: 'Upgrade to Premium for unlimited access to all courses, practice papers, and premium features.',
-    ar: 'رقّي لپريميوم وادخل بلا حدود على كل الكورسات وأوراق التدريب ومزايا الپريميوم.',
+    ar: 'رقّي للبريميوم وادخل بلا حدود على كل الكورسات وأوراق التدريب ومزايا البريميوم.',
   },
   'account.billing.early_access': { en: 'Early Access', ar: 'دخول مبكّر' },
   'account.billing.student': { en: 'Student', ar: 'طالب' },
@@ -4412,10 +4412,10 @@ export const DICTIONARY: Dictionary = {
     ar: 'دير وراقب صفوف الإنجليزي مالتك.',
   },
   'school.classes.create': { en: 'Create Class', ar: 'سوِّ صف' },
-  'school.classes.create_modal.title': { en: 'Create New Class', ar: 'سوِّ صف يديد' },
+  'school.classes.create_modal.title': { en: 'Create New Class', ar: 'سوِّ صف جديد' },
   'school.classes.create_modal.body': {
     en: 'Set up a new class for your students.',
-    ar: 'جهّز صف يديد لطلابك.',
+    ar: 'جهّز صف جديد لطلابك.',
   },
   'school.classes.create_modal.submit': { en: 'Create Class', ar: 'سوِّ الصف' },
   'school.classes.edit_modal.title': { en: 'Edit Class', ar: 'عدّل الصف' },
@@ -4497,11 +4497,11 @@ export const DICTIONARY: Dictionary = {
   'school.classes.detail.create_assignment': { en: 'Create Assignment', ar: 'سوِّ واجب' },
   'school.classes.detail.coming_soon_homework': {
     en: 'Set Homework - coming soon!',
-    ar: 'عطِ واجب بيت - يي قريب!',
+    ar: 'عطِ واجب بيت - قريباً!',
   },
   'school.classes.detail.coming_soon_assignment': {
     en: 'Create Assignment - coming soon!',
-    ar: 'سوِّ واجب - يي قريب!',
+    ar: 'سوِّ واجب - قريباً!',
   },
   'school.classes.detail.tab.students': { en: 'Students', ar: 'الطلاب' },
   'school.classes.detail.tab.analytics': { en: 'Analytics', ar: 'التحليلات' },
@@ -5341,7 +5341,7 @@ export const DICTIONARY: Dictionary = {
   // ─── Wave H additions: analysis / parent / teacher / demo_school / legal_banner ──
   'analysis.breadcrumb.home': { en: 'Home', ar: 'الرئيسية' },
   'analysis.breadcrumb.analysis': { en: 'Analysis', ar: 'التحليل' },
-  'analysis.byline.markers': { en: 'Calibrated to GCSE markers', ar: 'معاير على معايير GCSE' },
+  'analysis.byline.markers': { en: 'Calibrated to GCSE markers', ar: 'مُعاير على مصححي GCSE' },
   'analysis.byline.markers_short': { en: 'GCSE markers', ar: 'مصححي GCSE' },
   'analysis.byline.markers_updated': { en: 'Updated for 2026', ar: 'محدّث لـ ٢٠٢٦' },
   'analysis.byline.written_by': { en: 'Written by', ar: 'كتبه' },

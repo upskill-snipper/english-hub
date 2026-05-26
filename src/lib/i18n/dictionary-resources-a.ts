@@ -54,7 +54,7 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string }> 
   'resources.hub.quick.model_answers.title': { en: 'Model answers', ar: 'إجابات نموذجية' },
   'resources.hub.quick.model_answers.desc': {
     en: 'Grade-7-to-9 exemplar essays with marker commentary explaining the band judgement.',
-    ar: 'مقالات نموذجية من درجة 7 إلى 9 مع تعليق المصحّح اللي يشرح ليش انحطّت في هالنطاق.',
+    ar: 'مقالات نموذجية من درجة 7 إلى 9 مع تعليق المصحّح اللي يشرح ليش استحقّت هالنطاق من الدرجات.',
   },
   'resources.hub.quick.study_tools.title': { en: 'Study tools', ar: 'أدوات المراجعة' },
   'resources.hub.quick.study_tools.desc': {

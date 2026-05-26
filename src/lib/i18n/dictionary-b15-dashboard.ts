@@ -234,7 +234,7 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }
   'dashboard.privacy.title': { en: 'Privacy & Data', ar: 'الخصوصية والبيانات' },
   'dashboard.privacy.subtitle': {
     en: "You're in control. Manage how your data is used, download it, or delete it anytime.",
-    ar: 'أنت في السيطرة. أدِر طريقة استخدام بياناتك، وحمّلها أو احذفها في أي وقت.',
+    ar: 'الأمر بيدك. تحكّم في طريقة استخدام بياناتك، وحمّلها أو احذفها في أي وقت.',
   },
   'dashboard.privacy.loading': {
     en: 'Loading your privacy settings...',
@@ -890,8 +890,8 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }
   },
   'toolkit.progress.overall_stats': { en: 'Overall Stats', ar: 'الإحصاءات الكلية' },
   'toolkit.progress.label_poems': { en: 'Poems Studied', ar: 'القصائد المدروسة' },
-  'toolkit.progress.label_quizzes': { en: 'Quizzes Taken', ar: 'الاختبارات المأخوذة' },
-  'toolkit.progress.label_games': { en: 'Games Played', ar: 'الألعاب المُلعوبة' },
+  'toolkit.progress.label_quizzes': { en: 'Quizzes Taken', ar: 'الاختبارات المنجزة' },
+  'toolkit.progress.label_games': { en: 'Games Played', ar: 'الألعاب التي لعبتها' },
   'toolkit.progress.label_essays': { en: 'Essays Marked', ar: 'المقالات المصحَّحة' },
   'toolkit.progress.label_streak': { en: 'Day Streak', ar: 'أيام الاستمرارية' },
   'toolkit.progress.grade_predictor': { en: 'Grade Predictor', ar: 'متنبئ الدرجة' },
@@ -911,11 +911,11 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }
   'toolkit.progress.streak_days': { en: 'days', ar: 'أيام' },
   'toolkit.progress.streak_amazing': {
     en: 'Amazing streak! Keep it going!',
-    ar: 'رائع! استمرار مذهل! تابع!',
+    ar: 'سلسلة مذهلة! واصل عليها!',
   },
   'toolkit.progress.streak_good': {
     en: 'Good consistency! Push for a week!',
-    ar: 'انتظام ممتاز! اهدف لأسبوع كامل!',
+    ar: 'انتظام جيد! اهدف لأسبوع كامل!',
   },
   'toolkit.progress.streak_building': {
     en: 'You are building a habit. Come back tomorrow!',
@@ -982,7 +982,7 @@ export const B15_DASHBOARD_DICTIONARY: Record<string, { en: string; ar: string }
   'dashboard.data_requests.dashboard_btn': { en: 'Go to Dashboard', ar: 'اذهب للوحة التحكم' },
   'dashboard.data_requests.erase_confirm_body': {
     en: 'This will permanently delete all your personal data, essays, and feedback. This action cannot be undone.',
-    ar: 'سيُحذف وايد من بياناتك الشخصية ومقالاتك وتقاريرك نهائياً. لا يمكن التراجع عن هذا الإجراء.',
+    ar: 'سيُحذف جميع بياناتك الشخصية ومقالاتك وتقييماتك نهائياً. لا يمكن التراجع عن هذا الإجراء.',
   },
   'dashboard.data_requests.erase_confirm_btn': { en: 'Confirm Erasure', ar: 'تأكيد الحذف' },
   'dashboard.data_requests.erase_confirm_heading': { en: 'Are you sure?', ar: 'هل أنت متأكد؟' },

@@ -72,7 +72,7 @@ export const SCREENSHOT_FIX_DICTIONARY: Dictionary = {
 
   // ─── Parent dashboard heavily-called keys (12 from audit) ────────
   'parent.read_only_view': { en: 'Read-only view', ar: 'عرض للقراءة فقط' },
-  'parent.this_week': { en: 'This week', ar: 'هذا الأسبوع' },
+  'parent.this_week': { en: 'This week', ar: 'هالأسبوع' },
   'parent.time_spent': { en: 'Time spent', ar: 'الوقت المستهلك' },
   'parent.poems_studied': { en: 'Poems studied', ar: 'القصائد المدروسة' },
   'parent.avg_quiz_score': { en: 'Average quiz score', ar: 'متوسط درجة الاختبار' },

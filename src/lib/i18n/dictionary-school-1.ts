@@ -156,7 +156,7 @@ export const SCHOOL_1_DICTIONARY: Record<string, { en: string; ar: string }> = {
     en: 'Cancelled subscriptions',
     ar: 'الاشتراكات الملغاة',
   },
-  'school.analytics.nrr.churned_mrr': { en: 'Churned MRR', ar: 'الإيراد الشهري المفقود' },
+  'school.analytics.nrr.churned_mrr': { en: 'Churned MRR', ar: 'MRR المفقود' },
   'school.analytics.nrr.cohort_retention': {
     en: 'Cohort retention',
     ar: 'الاحتفاظ حسب المجموعة',

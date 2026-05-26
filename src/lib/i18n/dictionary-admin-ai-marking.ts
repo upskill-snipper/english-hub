@@ -23,7 +23,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   },
 
   // ─── /admin/ai-marking (overview) ─────────────────────────────────────────
-  'admin.aim.ov.title': { en: 'AI Marking', ar: 'تصحيح الذكاء الاصطناعي' },
+  'admin.aim.ov.title': { en: 'AI Marking', ar: 'تصحيح AI' },
   'admin.aim.ov.subtitle': {
     en: 'Teacher-in-the-loop marking - submissions, model performance and versioning.',
     ar: 'تصحيح بإشراف المعلّم - التسليمات وأداء النموذج وإدارة الإصدارات.',
@@ -38,7 +38,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.aim.ov.col.board': { en: 'Board', ar: 'البورد' },
   'admin.aim.ov.col.type': { en: 'Question type', ar: 'نوع السؤال' },
   'admin.aim.ov.col.status': { en: 'Status', ar: 'الحالة' },
-  'admin.aim.ov.col.ai_score': { en: 'AI score', ar: 'درجة الذكاء' },
+  'admin.aim.ov.col.ai_score': { en: 'AI score', ar: 'درجة AI' },
   'admin.aim.ov.col.submitted': { en: 'Submitted', ar: 'تاريخ التسليم' },
   'admin.aim.ov.links': { en: 'Manage', ar: 'الإدارة' },
   'admin.aim.ov.link.performance': { en: 'Model performance', ar: 'أداء النموذج' },
@@ -50,7 +50,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.aim.mp.title': { en: 'Model Performance', ar: 'أداء النموذج' },
   'admin.aim.mp.subtitle': {
     en: 'Live AI-vs-teacher agreement, computed from reviewed submissions.',
-    ar: 'توافق الذكاء مع المعلّم، محسوب من التسليمات المراجَعة.',
+    ar: 'توافق AI مع المعلّم، محسوب من التسليمات المراجَعة.',
   },
   'admin.aim.mp.stat.submissions': { en: 'Submissions', ar: 'التسليمات' },
   'admin.aim.mp.stat.reviewed': { en: 'Reviewed', ar: 'مراجَعة' },
@@ -67,7 +67,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.aim.mp.by_band': { en: 'Accuracy by grade band', ar: 'الدقّة حسب فئة الدرجة' },
   'admin.aim.mp.decisions': { en: 'Moderation decisions', ar: 'قرارات المراجعة' },
   'admin.aim.mp.top_reasons': { en: 'Top adjustment reasons', ar: 'أبرز أسباب التعديل' },
-  'admin.aim.mp.confidence': { en: 'AI-confidence reliability', ar: 'موثوقية ثقة الذكاء' },
+  'admin.aim.mp.confidence': { en: 'AI-confidence reliability', ar: 'موثوقية ثقة AI' },
   'admin.aim.mp.col.slice': { en: 'Slice', ar: 'الشريحة' },
   'admin.aim.mp.col.n': { en: 'n', ar: 'العدد' },
   'admin.aim.mp.col.bucket': { en: 'Confidence', ar: 'الثقة' },
@@ -75,7 +75,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.aim.mp.col.reason': { en: 'Reason', ar: 'السبب' },
   'admin.aim.mp.empty': {
     en: 'No reviewed submissions yet - metrics will populate once teachers moderate AI marks.',
-    ar: 'ما في تسليمات مراجَعة للحين - المقاييس بتظهر أول ما يراجع المعلّمون درجات الذكاء.',
+    ar: 'ما في تسليمات مراجَعة للحين - المقاييس بتظهر أول ما يراجع المعلّمون درجات AI.',
   },
 
   // ─── /admin (eval scorecard, surfaced on model-performance) ───────────────
@@ -86,7 +86,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   },
   'admin.aim.ev.not_certified': {
     en: 'NOT a certified accuracy result',
-    ar: 'ليست نتيجة دقّة معتمَدة',
+    ar: 'مو نتيجة دقّة معتمَدة',
   },
   'admin.aim.ev.col.metric': { en: 'Threshold', ar: 'الحدّ' },
   'admin.aim.ev.col.bar': { en: 'Required', ar: 'المطلوب' },
@@ -175,7 +175,7 @@ export const ADMIN_AI_MARKING_DICTIONARY: Record<string, { en: string; ar: strin
   'admin.training.col.paper': { en: 'Paper', ar: 'الورقة' },
   'admin.training.col.qtype': { en: 'Question type', ar: 'نوع السؤال' },
   'admin.training.col.source': { en: 'Source', ar: 'المصدر' },
-  'admin.training.col.ai': { en: 'AI mark', ar: 'درجة الذكاء' },
+  'admin.training.col.ai': { en: 'AI mark', ar: 'درجة AI' },
   'admin.training.col.teacher': { en: 'Teacher mark', ar: 'درجة المعلّم' },
   'admin.training.col.delta': { en: 'Delta', ar: 'الفرق' },
   'admin.training.col.created': { en: 'Created', ar: 'أُنشئ' },

@@ -119,7 +119,7 @@ export const MKT_SCHOOLS_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'mkt.schools.problem.card.late_identification': {
     en: 'Students who need support are often identified too late.',
-    ar: 'الطلاب اللي يحتاجون دعم يتمّ تحديدهم متأخّر وايد.',
+    ar: 'غالبًا ما يتأخّر اكتشاف الطلاب اللي يحتاجون دعم.',
   },
   'mkt.schools.problem.card.eal_support': {
     en: 'EAL learners need structured support that is hard to resource at scale.',

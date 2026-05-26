@@ -188,6 +188,6 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'homepage.board.edexcel_igcse_lang.blurb': {
     en: 'Anthology, non-fiction, transactional writing.',
-    ar: 'المختارات، الكتابة الواقعية، الكتابة الوظيفية.',
+    ar: 'المختارات، النصوص غير الأدبية، الكتابة الوظيفية.',
   },
 }

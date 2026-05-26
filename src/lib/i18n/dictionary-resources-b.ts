@@ -52,7 +52,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     en: `One last revision before the big day`,
     ar: `مراجعة أخيرة قبل اليوم الكبير`,
   },
-  'resources.exam_tech.day.got_this': { en: `You have got this`, ar: `أنت قادر على هذا` },
+  'resources.exam_tech.day.got_this': { en: `You have got this`, ar: `أنت تقدر عليها` },
   'resources.exam_tech.day.how_plan': { en: `How to plan your answers`, ar: `كيف تخطّط لإجاباتك` },
   'resources.exam_tech.day.how_read': { en: `How to read the paper`, ar: `كيف تقرأ ورقة الامتحان` },
   'resources.exam_tech.day.last_5': { en: `The last 5 minutes`, ar: `آخر ٥ دقايق` },
@@ -65,7 +65,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
     ar: `كل اللي تحتاجه عشان تدخل امتحان الإنجليزي GCSE أو IGCSE وأنت مستعد وهادئ وجاهز تعطي أحسن ما عندك.`,
   },
   'resources.exam_tech.day.title': { en: `Exam day advice`, ar: `نصائح يوم الامتحان` },
-  'resources.exam_tech.day.what_bring': { en: `What to bring`, ar: `شو تجيب معاك` },
+  'resources.exam_tech.day.what_bring': { en: `What to bring`, ar: `وش تجيب معاك` },
 
   /* ─── Essay structure page ─────────────────────────────────────── */
   'resources.exam_tech.es.bc_this': { en: `Essay structure`, ar: `بنية المقال` },
@@ -140,7 +140,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.exam_tech.qt.subtitle': {
     en: `Decode what every question is really asking - how to structure your answer, common mistakes to avoid, and example responses.`,
-    ar: `افهم شو يطلبه كل سؤال فعلاً - كيف تركّب إجابتك، والأخطاء الشائعة اللي تتجنّبها، ونماذج إجابات.`,
+    ar: `افهم وش يطلبه كل سؤال فعلاً - كيف تركّب إجابتك، والأخطاء الشائعة اللي تتجنّبها، ونماذج إجابات.`,
   },
   'resources.exam_tech.qt.title': {
     en: `How to approach different question types`,
@@ -191,10 +191,10 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   'resources.exam_tech.revcta.title': { en: `Ready to practise?`, ar: `جاهز تتمرّن؟` },
 
   /* ─── Exam technique hub - section cards ───────────────────────── */
-  'resources.exam_tech.sec.day.badge': { en: `Be ready`, ar: `كن جاهزاً` },
+  'resources.exam_tech.sec.day.badge': { en: `Be ready`, ar: `جهّز نفسك` },
   'resources.exam_tech.sec.day.desc': {
     en: `What to bring, how to read the paper, how to stay calm, and what to do in the last five minutes.`,
-    ar: `شو تجيب معاك، وكيف تقرأ الورقة، وكيف تبقى هادئ، وشو تسوّي في آخر خمس دقايق.`,
+    ar: `وش تجيب معاك، وكيف تقرأ الورقة، وكيف تبقى هادئ، ووش تسوّي في آخر خمس دقايق.`,
   },
   'resources.exam_tech.sec.day.title': { en: `Exam day advice`, ar: `نصائح يوم الامتحان` },
   'resources.exam_tech.sec.essay.badge': { en: `Structure`, ar: `البنية` },
@@ -234,11 +234,11 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.exam_tech.tm.run_out': {
     en: `What to do if you run out of time`,
-    ar: `شو تسوّي إذا خلص وقتك`,
+    ar: `وش تسوّي إذا خلص وقتك`,
   },
   'resources.exam_tech.tm.subtitle': {
     en: `Paper-by-paper timing breakdowns for AQA, Edexcel, Cambridge IGCSE and OCR - plus what to do if you run out of time.`,
-    ar: `تقسيم التوقيت ورقة ورقة لـ AQA وEdexcel وCambridge IGCSE وOCR - بالإضافة لشو تسوّي إذا خلص وقتك.`,
+    ar: `تقسيم التوقيت ورقة ورقة لـ AQA وEdexcel وCambridge IGCSE وOCR - بالإضافة لوش تسوّي إذا خلص وقتك.`,
   },
   'resources.exam_tech.tm.title': {
     en: `Time management in English exams`,
@@ -262,7 +262,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   /* ─── Poetry hub - assessment objectives ───────────────────────── */
   'resources.poetry.ao.subtitle': {
     en: `Every poetry answer is marked against these assessment objectives. Knowing them tells you exactly what examiners reward.`,
-    ar: `كل إجابة شعر تتصحّح حسب أهداف التقييم هذي. معرفتها تقول لك بالضبط شو يكافئ عليه المصحّحون.`,
+    ar: `كل إجابة شعر تتصحّح حسب أهداف التقييم هذي. معرفتها تقول لك بالضبط وش يكافئ عليه المصحّحون.`,
   },
   'resources.poetry.ao.tip_prefix': { en: `Tip:`, ar: `نصيحة:` },
   'resources.poetry.ao.title': { en: `How poetry is assessed`, ar: `كيف يُقيَّم الشعر` },
@@ -371,7 +371,7 @@ export const RESOURCES_B_DICTIONARY: Record<string, { en: string; ar: string }> 
   },
   'resources.study_tools.checklists.tip.confident.label': {
     en: `Be honest:`,
-    ar: `كن صادقاً:`,
+    ar: `كن صريح مع نفسك:`,
   },
   'resources.study_tools.checklists.tip.prioritise.body': {
     en: `Focus your revision on the unticked items first - they are where the marks are.`,

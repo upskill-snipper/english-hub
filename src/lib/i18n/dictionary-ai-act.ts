@@ -55,7 +55,7 @@ export const AI_ACT_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'ai_oversight.default_detail_cefr': {
     en: 'Please have a person review this AI CEFR assessment.',
-    ar: 'الرجاء مراجعة تقييم CEFR المعمول بالذكاء الاصطناعي من قبل شخص بشري.',
+    ar: 'الرجاء مراجعة تقييم CEFR المُجرى بالذكاء الاصطناعي من قبل شخص بشري.',
   },
 
   // ─── Art 13/50 - accurate AI marking-result disclosure ──────────────

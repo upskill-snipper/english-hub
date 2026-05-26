@@ -59,7 +59,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_gov.intro': {
     en: 'This page is an honest assessment of where The English Hub sits against the regulatory and voluntary frameworks that govern AI systems and personal data when they touch users in Qatar. We have written it for school Data Protection Officers, parents, and diligence reviewers. It is not marketing copy. Where we fall short, we say so, and we list the work we still owe you.',
-    ar: 'تُمثّل هذه الصفحة تقييماً صادقاً لموقع The English Hub بالنسبة إلى الأطر التنظيمية والطوعية التي تحكم أنظمة الذكاء الاصطناعي والبيانات الشخصية حين تمس مستخدمين في دولة قطر. وقد كُتبت لمسؤولي حماية البيانات في المدارس، ولأولياء الأمور، ومراجعي العناية الواجبة. وهي ليست مادة تسويقية. وحيثما يوجد قصور، نُفصح عنه بوضوح، ونُدرج الأعمال المتبقية المستحقّة عليكم.',
+    ar: 'تُمثّل هذه الصفحة تقييماً صادقاً لموقع The English Hub بالنسبة إلى الأطر التنظيمية والطوعية التي تحكم أنظمة الذكاء الاصطناعي والبيانات الشخصية حين تمس مستخدمين في دولة قطر. وقد كُتبت لمسؤولي حماية البيانات في المدارس، ولأولياء الأمور، ومراجعي العناية الواجبة. وهي ليست مادة تسويقية. وحيثما يوجد قصور، نُفصح عنه بوضوح، ونُدرج الأعمال التي لا تزال مستحقّة علينا تجاهكم.',
   },
 
   // Section 1
@@ -354,7 +354,7 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   'legal_long.ai_gov.s5.li6_strong': { en: 'Transparency. ', ar: 'الشفافية. ' },
   'legal_long.ai_gov.s5.li6_text': {
     en: 'AI essay-feedback panels, marking results, AI-generated revision material and AI-authored blog posts now carry a consistent visible "Made with AI - review before relying on it" label that links to this page. Remaining gap: a small number of statically pre-authored AI-assisted study pages may not yet display the label, and a pre-publication content classifier is still in progress (see Remediation 3).',
-    ar: 'تحمل الآن لوحات تقييم المقالات بالذكاء الاصطناعي ونتائج التصحيح والمواد المراجعة المُولَّدة والمقالات المُؤلَّفة بالذكاء الاصطناعي علامة ظاهرة ومتّسقة بنصّ "صُنع بمساعدة الذكاء الاصطناعي - يُرجى المراجعة قبل الاعتماد عليه" مرتبطة بهذه الصفحة. ثغرة متبقّية: قد لا تعرض بعض صفحات الدراسة المُعدّة مسبقاً العلامة بعد، ولا يزال مُصنِّف المحتوى قبل النشر قيد التنفيذ (يُراجَع الإجراء التصحيحي 3).',
+    ar: 'تحمل الآن لوحات تقييم المقالات بالذكاء الاصطناعي، ونتائج التصحيح، ومواد المراجعة المُولَّدة بالذكاء الاصطناعي، والمقالات المُؤلَّفة بالذكاء الاصطناعي علامةً ظاهرة ومتّسقة بنصّ "صُنع بمساعدة الذكاء الاصطناعي - يُرجى المراجعة قبل الاعتماد عليه" مرتبطة بهذه الصفحة. ثغرة متبقّية: قد لا يظهر هذا الوسم بعدُ على عدد قليل من صفحات الدراسة المُعدّة مسبقاً بمساعدة الذكاء الاصطناعي، ولا يزال مُصنِّف المحتوى قبل النشر قيد التنفيذ (يُراجَع الإجراء التصحيحي 3).',
   },
   'legal_long.ai_gov.s5.rem6_strong': { en: 'Remediation (6): ', ar: 'الإجراء التصحيحي (6): ' },
   'legal_long.ai_gov.s5.rem6_text': {

@@ -46,7 +46,7 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
   },
   'poetry_hub.ocr.which_cluster_body': {
     en: 'Check with your teacher to find out which of the 4 clusters your class is studying. Most schools choose one cluster at the start of Year 10 and stick with it through to the exam. You will be assessed on poems from that cluster only.',
-    ar: 'إسأل المعلم بتعرف أي مجموعة من الأربعة فصلك يذاكرها. أغلب المدارس تختار مجموعة وحدة بداية Year 10 وتكمّل عليها للامتحان. الامتحان بيكون من قصائد المجموعة هاي بس.',
+    ar: 'اسأل المعلم عشان تعرف أي مجموعة من الأربعة فصلك يذاكرها. أغلب المدارس تختار مجموعة وحدة بداية Year 10 وتكمّل عليها للامتحان. الامتحان بيكون من قصائد المجموعة هاي بس.',
   },
   'poetry_hub.ocr.four_clusters': { en: 'The Four Clusters', ar: 'المجموعات الأربعة' },
   'poetry_hub.ocr.poems_count': { en: 'poems', ar: 'قصائد' },
@@ -65,7 +65,7 @@ export const POETRY_HUB_DICTIONARY: Dictionary = {
   },
   'poetry_hub.ocr.different_board_body': {
     en: 'Head back to the Poetry hub to switch boards or explore unseen poetry techniques and general poetry skills that apply to every exam board.',
-    ar: 'ارجع لـ Hub الشعر تغيّر البورد أو تستكشف أساليب الشعر غير المرئي ومهارات الشعر العامة اللي تنطبق على كل البوردات.',
+    ar: 'ارجع لـ Hub الشعر عشان تغيّر البورد أو تستكشف أساليب الشعر غير المرئي ومهارات الشعر العامة اللي تنطبق على كل البوردات.',
   },
   'poetry_hub.ocr.back_to_hub': { en: 'Back to Poetry Hub', ar: 'رجوع لـ Hub الشعر' },
   'poetry_hub.ocr.cluster.lr.title': {

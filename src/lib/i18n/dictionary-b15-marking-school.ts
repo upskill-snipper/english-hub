@@ -677,7 +677,7 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'school.b15.import.title': { en: 'Import Users', ar: 'استيراد المستخدمين' },
   'school.b15.import.subtitle': {
     en: 'Upload a spreadsheet to create accounts for all your students or teachers instantly.',
-    ar: 'ارفع جدول بيانات لإنشاء حسابات كل طلابك أو معلمّيك فوراً.',
+    ar: 'ارفع جدول بيانات لإنشاء حسابات كل طلابك أو معلّميك فوراً.',
   },
   'school.b15.import.tab_students': { en: 'Import Students', ar: 'استيراد الطلاب' },
   'school.b15.import.tab_teachers': { en: 'Import Teachers', ar: 'استيراد المعلمين' },
@@ -687,11 +687,11 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   },
   'school.b15.import.step1_desc_students': {
     en: 'Fill in the spreadsheet with your student data, then upload it below.',
-    ar: 'أملأ الجدول ببيانات طلابك ثم ارفعه أدناه.',
+    ar: 'املأ الجدول ببيانات طلابك ثم ارفعه أدناه.',
   },
   'school.b15.import.step1_desc_teachers': {
     en: 'Fill in the spreadsheet with your teacher data, then upload it below.',
-    ar: 'أملأ الجدول ببيانات معلّميك ثم ارفعه أدناه.',
+    ar: 'املأ الجدول ببيانات معلّميك ثم ارفعه أدناه.',
   },
   'school.b15.import.btn_student_template': {
     en: 'Download Student Template',

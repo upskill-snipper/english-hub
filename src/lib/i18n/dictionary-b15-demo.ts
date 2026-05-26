@@ -384,7 +384,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'demo.b15.bench.title': { en: 'Performance Benchmarks', ar: 'معايير الأداء' },
   'demo.b15.bench.subtitle': {
     en: 'How Riverside Academy compares to national and platform averages',
-    ar: 'كيف تقارن أكاديمية ريفرسايد مع المعدلات الوطنية',
+    ar: 'كيف تقارن أكاديمية ريفرسايد مع المعدلات الوطنية ومتوسطات المنصة',
   },
   'demo.b15.bench.download_btn': { en: 'Download Benchmark Report', ar: 'حمّل تقرير المعايير' },
   'demo.b15.bench.downloading': { en: 'Downloading...', ar: 'جارٍ التحميل...' },
@@ -491,7 +491,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'demo.b15.interventions.banner': {
     en: 'You are viewing an interactive demo with sample intervention data.',
-    ar: 'إنت تشوف ديمو تفاعلي ببيانات تدخّل تجريبية.',
+    ar: 'أنت تشوف ديمو تفاعلي ببيانات تدخّل نموذجية.',
   },
   'demo.b15.interventions.title': { en: 'Intervention Planning', ar: 'تخطيط التدخّل' },
   'demo.b15.interventions.subtitle': {
@@ -674,10 +674,10 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'هذا الطالب مو في فصولك.',
   },
   'demo.b15.teacher_student.back': { en: 'Back to My Classes', ar: 'رجوع لفصولي' },
-  'demo.b15.teacher_student.demo_label': { en: 'Teacher Demo', ar: 'تجريبة المعلم' },
+  'demo.b15.teacher_student.demo_label': { en: 'Teacher Demo', ar: 'ديمو المعلم' },
   'demo.b15.teacher_student.demo_desc': {
     en: 'Viewing sample student profile',
-    ar: 'تعرض ملف طالب تجريبي',
+    ar: 'تشوف ملف طالب تجريبي',
   },
   'demo.b15.teacher_student.prev': { en: 'Previous', ar: 'السابق' },
   'demo.b15.teacher_student.next': { en: 'Next', ar: 'التالي' },
@@ -911,7 +911,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'demo.b15.student_course.retake_quiz': { en: 'Retake Quiz', ar: 'أعد الاختبار' },
   'demo.b15.student_course.back_modules': { en: 'Back to Modules', ar: 'رجوع للوحدات' },
   'demo.b15.student_course.revision_tip': { en: 'Revision Tip', ar: 'نصيحة مراجعة' },
-  'demo.b15.student_course.demo_label': { en: 'Student Demo', ar: 'تجريبة الطالب' },
+  'demo.b15.student_course.demo_label': { en: 'Student Demo', ar: 'ديمو الطالب' },
   'demo.b15.student_course.demo_explore': {
     en: 'Exploring a course as a student',
     ar: 'تصفّح مقرر كطالب',
@@ -1132,7 +1132,7 @@ export const B15_DEMO_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'demo.b15.school_students.stat_excelling': { en: 'Excelling', ar: 'متميّز' },
   'demo.b15.school_students.subtitle': {
     en: 'Manage and monitor all students across your school.',
-    ar: 'أدِر ورابِع جميع الطلاب في مدرستك.',
+    ar: 'أدِر وراقِب جميع الطلاب في مدرستك.',
   },
   'demo.b15.school_students.stat_active': { en: 'Active This Week', ar: 'نشطوا هذا الأسبوع' },
   'demo.b15.school_students.stat_needs_support': { en: 'Needs Support', ar: 'يحتاجون دعماً' },

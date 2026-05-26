@@ -122,7 +122,7 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   // ─── Password change ─────────────────────────────────────────────
   'parent.password_current_required': {
     en: 'Please enter your current password.',
-    ar: 'الرجاء إدخال كلمة المرور الحالية.',
+    ar: 'دخّل كلمة المرور الحالية من فضلك.',
   },
   'parent.password_hint': {
     en: 'Use at least 8 characters for a strong password.',
@@ -130,11 +130,11 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'parent.password_mismatch': {
     en: "The new passwords don't match.",
-    ar: 'كلمتا المرور الجديدتان ما تتطابقان.',
+    ar: 'كلمتي المرور الجديدتين مو نفس الشي.',
   },
   'parent.password_placeholder': {
     en: 'Enter your password',
-    ar: 'أدخل كلمة المرور',
+    ar: 'دخّل كلمة المرور',
   },
   'parent.password_update_failed': {
     en: "We couldn't update your password. Please try again.",
@@ -366,7 +366,7 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'parent.where_get_code_step3': {
     en: 'Enter that code above to link your accounts.',
-    ar: 'أدخل الرمز فوق عشان تربط حسابيكم.',
+    ar: 'دخّل الرمز فوق عشان تربط حسابيكم.',
   },
 
   // ─── Progress: reading-age unit ──────────────────────────────────
@@ -380,6 +380,6 @@ export const PARENT_2_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
   'parent.your_password_placeholder': {
     en: 'Enter your password',
-    ar: 'أدخل كلمة المرور',
+    ar: 'دخّل كلمة المرور',
   },
 }

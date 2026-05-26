@@ -110,7 +110,7 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'analytics.nrr.previous_month': { en: 'Previous month', ar: 'الشهر اللي راح' },
   // "{momChange} {t('analytics.nrr.pts_mom')}" - points month-on-month
   'analytics.nrr.pts_mom': { en: 'pts MoM', ar: 'نقطة عن الشهر اللي راح' },
-  'analytics.nrr.trailing_12mo': { en: 'Trailing 12 mo', ar: 'آخر ١٢ شهر' },
+  'analytics.nrr.trailing_12mo': { en: 'Trailing 12 mo', ar: 'آخر 12 شهر' },
 
   // ─── Skill radar (SkillRadar.tsx) ────────────────────────────────
   // "{t('analytics.skill.based_on')} {n} {responses}"
@@ -158,9 +158,9 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   },
 
   // ─── Demo-school grade bands (copied verbatim EN ← may15) ─────────
-  'analytics.grade_band.top': { en: 'Top grades (7-9)', ar: 'أعلى الدرجات (٧-٩)' },
-  'analytics.grade_band.pass': { en: 'Pass grades (4-6)', ar: 'درجات النجاح (٤-٦)' },
-  'analytics.grade_band.below': { en: 'Below pass (1-3)', ar: 'تحت النجاح (١-٣)' },
+  'analytics.grade_band.top': { en: 'Top grades (7-9)', ar: 'أعلى الدرجات (7-9)' },
+  'analytics.grade_band.pass': { en: 'Pass grades (4-6)', ar: 'درجات النجاح (4-6)' },
+  'analytics.grade_band.below': { en: 'Below pass (1-3)', ar: 'تحت النجاح (1-3)' },
 
   // ════════════════════════════════════════════════════════════════
   //  MARKING  (/marking, /mock-exams, /practice, AITextArea.tsx)
@@ -204,10 +204,10 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string }> = {
   'marking.library.coming_soon': { en: 'Coming soon', ar: 'قريباً' },
 
   // ─── Mark-scheme picker (copied verbatim EN ← may15) ─────────────
-  'marking.scheme.lit_p1': { en: 'Literature Paper 1', ar: 'الأدب - الورقة ١' },
-  'marking.scheme.lit_p2': { en: 'Literature Paper 2', ar: 'الأدب - الورقة ٢' },
-  'marking.scheme.lang_p1': { en: 'Language Paper 1', ar: 'اللغة - الورقة ١' },
-  'marking.scheme.lang_p2': { en: 'Language Paper 2', ar: 'اللغة - الورقة ٢' },
+  'marking.scheme.lit_p1': { en: 'Literature Paper 1', ar: 'الأدب - الورقة 1' },
+  'marking.scheme.lit_p2': { en: 'Literature Paper 2', ar: 'الأدب - الورقة 2' },
+  'marking.scheme.lang_p1': { en: 'Language Paper 1', ar: 'اللغة - الورقة 1' },
+  'marking.scheme.lang_p2': { en: 'Language Paper 2', ar: 'اللغة - الورقة 2' },
 
   // ════════════════════════════════════════════════════════════════
   //  GAMES  (src/components/games/GameCard.tsx, GameShell.tsx)
