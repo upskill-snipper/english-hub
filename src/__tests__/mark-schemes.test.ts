@@ -1,16 +1,12 @@
 import { describe, it, expect } from 'vitest'
-import {
-  MARK_SCHEMES,
-  getMarkScheme,
-  listMarkSchemeIds,
-} from '@/lib/marking/mark-schemes/index'
+import { MARK_SCHEMES, getMarkScheme, listMarkSchemeIds } from '@/lib/marking/mark-schemes/index'
 
 describe('Mark Scheme Registry', () => {
   // ── Registry contents ───────────────────────────────────────────────
 
-  it('contains 15 mark schemes', () => {
+  it('contains 20 mark schemes', () => {
     const ids = listMarkSchemeIds()
-    expect(ids).toHaveLength(15)
+    expect(ids).toHaveLength(20)
   })
 
   it('has unique ids for every scheme', () => {
@@ -100,7 +96,7 @@ describe('Mark Scheme Registry', () => {
         for (const question of scheme.questions) {
           expect(question.assessmentObjectives.length).toBeGreaterThan(0)
           for (const ao of question.assessmentObjectives) {
-            expect(ao.id).toMatch(/^AO\d+/)
+            expect(ao.id).toMatch(/^(AO|R|W)\d+/)
             expect(ao.maxMarks).toBeGreaterThan(0)
             expect(ao.bands.length).toBeGreaterThan(0)
           }

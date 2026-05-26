@@ -1,5 +1,5 @@
 // ─── Cambridge IGCSE (9-1) First Language English (0990) Mark Scheme ────────
-// Paper 1: Reading - 2 hours, 40 marks
+// Paper 1: Reading - 2 hours, 50 marks
 // Paper 2: Directed Writing & Composition - 2 hours, 65 marks
 //
 // 0990 is the "(9-1)" graded variant of 0500 First Language English. The
@@ -19,6 +19,9 @@ export const cambridge0990Paper1: MarkScheme = {
   ...cambridge0500Paper1,
   id: 'cambridge-0990-paper1',
   board: 'Cambridge (9-1)',
+  // Reading paper totals 50 marks (Q1a-e 15 + Q1f 15 + Q2 20); inherited from
+  // 0500 Paper 1 but stated explicitly so the paper total cannot silently drift.
+  totalMarks: 50,
   version: '0990/1',
   sourceUrl:
     'https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-9-1-first-language-english-0990/',

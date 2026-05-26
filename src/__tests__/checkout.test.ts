@@ -7,6 +7,7 @@ import { NextRequest } from 'next/server'
 
 const mockSessionCreate = vi.fn()
 const mockCustomerCreate = vi.fn()
+const mockCustomerRetrieve = vi.fn()
 
 const MOCK_PRICE_IDS = {
   PRO_MONTHLY: 'price_monthly_123',
@@ -29,7 +30,14 @@ const MOCK_COURSE_PRICE_MAP: Record<string, string> = {
 vi.mock('@/lib/stripe', () => ({
   stripe: {
     checkout: { sessions: { create: (...args: unknown[]) => mockSessionCreate(...args) } },
-    customers: { create: (...args: unknown[]) => mockCustomerCreate(...args) },
+    customers: {
+      create: (...args: unknown[]) => mockCustomerCreate(...args),
+      // Route runs a test→live migration safety net: when a profile already
+      // has a stripe_customer_id it calls customers.retrieve() to confirm the
+      // customer still exists (route.ts ~L189). The default mock resolves to a
+      // live customer; an unmocked retrieve threw a TypeError → 500.
+      retrieve: (...args: unknown[]) => mockCustomerRetrieve(...args),
+    },
   },
   PRICE_IDS: MOCK_PRICE_IDS,
   COURSE_PRICE_MAP: MOCK_COURSE_PRICE_MAP,
@@ -61,7 +69,18 @@ function createSupabaseMock() {
   }))
 
   const getUserFn = vi.fn(() => ({
-    data: { user: { id: 'user-abc', email: 'test@example.com' } },
+    // `email_confirmed_at` must be present: POST /api/stripe/checkout gates
+    // on a verified email (assertEmailVerifiedFor('stripe_checkout', ...) in
+    // src/lib/auth/email-verification-policy.ts → 403 when this is falsy). A
+    // real same-origin client reaching checkout is always a verified user, so
+    // the mock reflects that. The dedicated 401 test overrides getUserFn.
+    data: {
+      user: {
+        id: 'user-abc',
+        email: 'test@example.com',
+        email_confirmed_at: '2026-01-01T00:00:00Z',
+      },
+    },
     error: null,
   }))
 
@@ -118,6 +137,10 @@ describe('POST /api/stripe/checkout', () => {
 
     // Default session create response
     mockSessionCreate.mockResolvedValue({ url: 'https://checkout.stripe.com/session_123' })
+
+    // Existing customer (cus_existing_123 from the supabase profile mock) is
+    // valid in live mode, so the retrieve() safety-net check succeeds.
+    mockCustomerRetrieve.mockResolvedValue({ id: 'cus_existing_123', deleted: false })
 
     // Env vars used by route
     process.env.NEXT_PUBLIC_APP_URL = 'http://localhost:3000'
@@ -232,7 +255,11 @@ describe('POST /api/stripe/checkout', () => {
     // card-required trial on 2026-04-20. If this assertion changes, update
     // `src/constants/pricing.ts` (TRIAL_DAYS) first.
     expect(params.subscription_data.trial_period_days).toBe(7)
-    expect(params.allow_promotion_codes).toBe(true)
+    // Stripe's hosted promo field is intentionally disabled: app-level codes
+    // (2026ENGLISH, affiliate codes) are collected on the pricing page and
+    // routed via /api/promo/redeem, so the route sets allow_promotion_codes
+    // to false (see route.ts ~L292-302). Was previously asserted as true.
+    expect(params.allow_promotion_codes).toBe(false)
   })
 
   // ---- 9. Affiliate referral metadata ----

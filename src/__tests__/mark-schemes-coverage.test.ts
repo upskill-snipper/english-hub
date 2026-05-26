@@ -99,7 +99,7 @@ describe('Mark scheme coverage audit', () => {
         ...q.assessmentObjectives,
       ])
       for (const ao of allAOs) {
-        expect(ao.id, `AO id missing on ${id}`).toMatch(/^AO\d+/i)
+        expect(ao.id, `AO id missing on ${id}`).toMatch(/^(AO|R|W)\d+/i)
         expect(typeof ao.description).toBe('string')
         expect(ao.description.trim().length).toBeGreaterThan(0)
         expect(typeof ao.weighting).toBe('number')

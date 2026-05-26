@@ -1,6 +1,6 @@
 // ─── Cambridge IGCSE First Language English (0500) Mark Scheme ──────────────
-// Paper 1: Reading - 2 hours, 40 marks
-// Paper 2: Directed Writing & Composition - 2 hours, 40 marks (Q1 = 25, Q2 = 40)
+// Paper 1: Reading - 2 hours, 50 marks (Q1a-e = 15, Q1f = 15, Q2 = 20)
+// Paper 2: Directed Writing & Composition - 2 hours, 65 marks (Q1 = 25, Q2 = 40)
 // Based on the Cambridge IGCSE 0500 specification (for examination from 2024).
 // Reading objectives are R1-R5; Writing objectives are W1-W5.
 //
@@ -531,7 +531,7 @@ const p2Q2StyleAccuracy: AssessmentObjective = {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PAPER 1 - Reading (2 hours, 40 marks)
+// PAPER 1 - Reading (2 hours, 50 marks)
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const cambridge0500Paper1: MarkScheme = {
@@ -540,7 +540,7 @@ export const cambridge0500Paper1: MarkScheme = {
   subject: 'English Language',
   paper: 'Paper 1',
   title: 'Reading',
-  totalMarks: 40,
+  totalMarks: 50,
   durationMinutes: 120,
   version: '0500/1',
   sourceUrl:

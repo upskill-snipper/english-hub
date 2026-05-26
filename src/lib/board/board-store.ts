@@ -55,25 +55,29 @@ export const useBoardStore = create<State & Actions>()(
     }),
     {
       name: 'english-hub-board',
+      // 02 May 2026 - COOKIE IS AUTHORITATIVE.
+      //
+      // The cookie is the single source of truth for the user's current
+      // board. Middleware writes it on every `?setBoard=<id>` redirect
+      // (the homepage cards, BoardSwitcher, BoardSelectorSection); the
+      // server reader `getServerBoard()` reads it for SSR. localStorage
+      // is purely a client-side cache for fast first paint and survives
+      // the cookie expiring.
+      //
+      // Rule: if the cookie has a valid board, the store ALWAYS adopts it
+      // (overriding any stale localStorage value). The previous
+      // `if (!state.board)` gate was a real bug - once a user had a board
+      // in localStorage (e.g. from earlier testing), every later cookie
+      // change via setBoard was silently ignored, the header chip stayed
+      // on the old board, and clicking "AQA" still rendered IGCSE
+      // content. Reported in the wild on 2026-05-02 ship day.
+      //
+      // onRehydrateStorage is the cookie<->store bridge: it assigns
+      // state.board from readBoardCookie() when the cookie wins, or calls
+      // writeBoardCookie(state.board) to repair a missing cookie.
       onRehydrateStorage: () => (state) => {
         if (!state) return
 
-        // 02 May 2026 - COOKIE IS AUTHORITATIVE.
-        //
-        // The cookie is the single source of truth for the user's current
-        // board. Middleware writes it on every `?setBoard=<id>` redirect
-        // (the homepage cards, BoardSwitcher, BoardSelectorSection); the
-        // server reader `getServerBoard()` reads it for SSR. localStorage
-        // is purely a client-side cache for fast first paint and survives
-        // the cookie expiring.
-        //
-        // Rule: if the cookie has a valid board, the store ALWAYS adopts it
-        // (overriding any stale localStorage value). The previous
-        // `if (!state.board)` gate was a real bug - once a user had a board
-        // in localStorage (e.g. from earlier testing), every later cookie
-        // change via setBoard was silently ignored, the header chip stayed
-        // on the old board, and clicking "AQA" still rendered IGCSE
-        // content. Reported in the wild on 2026-05-02 ship day.
         const validIds = BOARDS.map((b) => b.id) as readonly string[]
         const cookieValue = readBoardCookie()
         if (cookieValue && validIds.includes(cookieValue)) {
