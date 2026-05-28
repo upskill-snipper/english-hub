@@ -61,9 +61,9 @@ function getNavForBoardType(
   // footer "Try it" section; School Pilot is the primary CTA on
   // /schools and reachable from the footer.
   return [
+    { href: '/revision', labelKey: 'header.nav.revision' },
+    { href: '/blog', labelKey: 'header.nav.blog' },
     { href: '/schools', labelKey: 'header.nav.schools' },
-    { href: '/teachers', labelKey: 'header.nav.teachers' },
-    { href: '/students', labelKey: 'header.nav.students' },
     { href: '/ielts', labelKey: 'ielts.nav' },
     { href: '/pricing', labelKey: 'header.nav.pricing' },
   ]

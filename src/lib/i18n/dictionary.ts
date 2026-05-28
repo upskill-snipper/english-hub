@@ -107,6 +107,8 @@ export const DICTIONARY: Dictionary = {
   'header.nav.parents': { en: 'For Parents', ar: 'لأولياء الأمور' },
   'header.nav.teachers': { en: 'Teachers', ar: 'المعلمون' },
   'header.nav.schools': { en: 'Schools', ar: 'المدارس' },
+  'header.nav.revision': { en: 'Revision', ar: 'المراجعة' },
+  'header.nav.blog': { en: 'Blog', ar: 'المدونة' },
   'header.nav.eal': { en: 'EAL', ar: 'EAL' },
   'header.nav.school_pilot': { en: 'School Pilot', ar: 'برنامج تجريبي للمدارس' },
   'header.nav.contact': { en: 'Contact', ar: 'تواصل معنا' },

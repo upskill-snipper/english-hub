@@ -27,33 +27,36 @@ import { PRICING_DISPLAY } from '@/constants/pricing'
 import { t } from '@/lib/i18n/t'
 
 const OG =
-  '/api/og?title=AI-assisted+English+improvement+for+schools&subtitle=Assessment,+intervention+and+reporting+for+modern+English+departments'
+  '/api/og?title=GCSE+%26+IGCSE+English+Revision,+AI-marked&subtitle=Practice+papers,+model+answers+and+instant+AI+feedback+for+students,+parents+and+schools'
 
 export const metadata: Metadata = {
-  title: 'AI-assisted English improvement and intervention platform for schools',
+  title: 'GCSE & IGCSE English Revision, AI-marked',
   description:
-    'The English Hub helps English departments reduce workload, support targeted intervention and give leaders clearer visibility of progress across English Language, Literature and EAL.',
+    'Revise GCSE and IGCSE English with practice papers, model answers and instant AI marking against the real exam mark scheme, across AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE. Built for students and parents, trusted by schools.',
   alternates: { canonical: 'https://theenglishhub.app' },
   keywords: [
-    'AI English platform for schools',
-    'English intervention platform',
-    'AI marking for English teachers',
-    'English department analytics',
-    'EAL support platform',
-    'IGCSE English support',
-    'school English assessment platform',
+    'GCSE English revision',
+    'IGCSE English revision',
+    'GCSE English Language revision',
+    'GCSE English Literature revision',
+    'AI English marking',
+    'AQA English revision',
+    'Edexcel English revision',
+    'OCR English revision',
+    'EAL English support',
+    'English platform for schools',
   ],
   openGraph: {
-    title: 'AI-assisted English improvement and intervention for schools',
+    title: 'GCSE & IGCSE English Revision, AI-marked - The English Hub',
     description:
-      'Assessment, intervention and reporting for modern English departments. Built for students, teachers and schools.',
+      'Practice papers, model answers and instant AI marking against the real exam mark scheme. For students and parents, trusted by schools.',
     url: 'https://theenglishhub.app',
     images: [
       {
         url: OG,
         width: 1200,
         height: 630,
-        alt: 'The English Hub - AI-assisted English improvement and intervention for schools',
+        alt: 'The English Hub - GCSE & IGCSE English revision, AI-marked',
       },
     ],
   },
@@ -92,46 +95,6 @@ export default async function Home() {
 
       {/* 1. Institutional hero */}
       <HomeHero />
-
-      {/* 2. Built for students, teachers and schools */}
-      <AudienceSection />
-
-      {/* 3. School platform section */}
-      <SchoolPlatformSection />
-
-      {/* 4. Key benefits */}
-      <KeyBenefitsSection />
-
-      {/* 5 + 6. AI-assisted marking + analytics/intervention */}
-      <CapabilitiesSection />
-
-      {/* 7. EAL support */}
-      <EalSection />
-
-      {/* 7.5 Demo showcase */}
-      <DemoShowcase />
-
-      {/* 8. Founder school pilot CTA */}
-      <PilotCtaSection />
-
-      {/* 9. Pricing preview */}
-      <PricingPreviewSection />
-
-      {/* 10. FAQ */}
-      <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
-        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2
-            id="home-faq-heading"
-            className="mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground"
-          >
-            Questions from school leaders
-          </h2>
-          <SchoolFAQ />
-        </div>
-      </section>
-
-      {/* 11. Final CTA */}
-      <FinalCtaSection />
 
       {/* ───── Students: choose your exam board (existing funnel preserved) ───── */}
       <section
@@ -191,6 +154,46 @@ export default async function Home() {
       <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
         <GeoFaq faqs={GCSE_BOARD_FAQS} heading={copy.faqHeading} />
       </div>
+
+      {/* 2. Built for students, teachers and schools */}
+      <AudienceSection />
+
+      {/* 3. School platform section */}
+      <SchoolPlatformSection />
+
+      {/* 4. Key benefits */}
+      <KeyBenefitsSection />
+
+      {/* 5 + 6. AI-assisted marking + analytics/intervention */}
+      <CapabilitiesSection />
+
+      {/* 7. EAL support */}
+      <EalSection />
+
+      {/* 7.5 Demo showcase */}
+      <DemoShowcase />
+
+      {/* 8. Founder school pilot CTA */}
+      <PilotCtaSection />
+
+      {/* 9. Pricing preview */}
+      <PricingPreviewSection />
+
+      {/* 10. FAQ */}
+      <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
+          <h2
+            id="home-faq-heading"
+            className="mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground"
+          >
+            Questions from school leaders
+          </h2>
+          <SchoolFAQ />
+        </div>
+      </section>
+
+      {/* 11. Final CTA */}
+      <FinalCtaSection />
     </main>
   )
 }
@@ -206,19 +209,19 @@ function HomeHero() {
       />
       <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-          The English Hub for Schools
+          GCSE, IGCSE &amp; KS3 English revision
         </p>
         <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          AI-assisted English improvement and intervention for schools
+          Revise GCSE and IGCSE English, marked by AI against the real mark scheme
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          The English Hub helps English departments reduce workload, support targeted intervention
-          and give leaders clearer visibility of student progress across English Language,
-          Literature and EAL.
+          Practice papers, model answers and instant feedback on your essays, aligned to your exam
+          board: AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE. Free to start, built for students
+          and parents, and trusted by schools.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/school-pilot" />}>
-            Book a School Pilot
+          <Button size="lg" className="h-12 px-7 text-base" render={<Link href="#gcse-boards" />}>
+            Choose your exam board
           </Button>
           <Button
             variant="outline"
@@ -226,12 +229,11 @@ function HomeHero() {
             className="h-12 px-7 text-base"
             render={<Link href="/schools" />}
           >
-            Explore the Platform
+            For schools and teachers
           </Button>
         </div>
         <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
-          Built for students, teachers and schools. Designed for assessment, feedback, reporting and
-          intervention.
+          English Language, Literature and EAL. KS3 to A-Level, aligned to your specification.
         </p>
       </div>
     </section>
