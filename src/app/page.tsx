@@ -591,23 +591,23 @@ function FinalCtaSection() {
   )
 }
 
-/* ───────────────────── Foundation / bilingual rail ───────────────────── */
+/* ───────────────────── Additional tracks rail (IELTS + EAL) ───────────────────── */
 
-// KS3 + EAL get a top-of-page rail with full-width cards. KS3 hits via
-// `?setBoard=ks3` so the middleware writes the board cookie and the
-// landing page loads the KS3-gated hub. EAL is its own route - no board
-// cookie change, because EAL is a learning track that runs alongside
-// any board choice.
+// IELTS + EAL get a top-of-page rail with full-width cards. Both are
+// their own routes (/ielts, /eal) and run alongside any GCSE / IGCSE
+// board choice - they do not set a board cookie. KS3 lives in the
+// level/board picker grids below (KS3 / GCSE / IGCSE), not here, so the
+// KS3 choice is not duplicated.
 async function FeatureRail() {
   const c = {
     kicker: await t('homepage.rail.kicker'),
     heading: await t('homepage.rail.heading'),
     intro: await t('homepage.rail.intro'),
-    ks3Badge: await t('homepage.rail.ks3.badge'),
-    ks3Title: await t('homepage.rail.ks3.title'),
-    ks3Subtitle: await t('homepage.rail.ks3.subtitle'),
-    ks3Body: await t('homepage.rail.ks3.body'),
-    ks3Cta: await t('homepage.rail.ks3.cta'),
+    ieltsBadge: await t('homepage.rail.ielts.badge'),
+    ieltsTitle: await t('homepage.rail.ielts.title'),
+    ieltsSubtitle: await t('homepage.rail.ielts.subtitle'),
+    ieltsBody: await t('homepage.rail.ielts.body'),
+    ieltsCta: await t('homepage.rail.ielts.cta'),
     ealBadge: await t('homepage.rail.eal.badge'),
     ealTitle: await t('homepage.rail.eal.title'),
     ealSubtitle: await t('homepage.rail.eal.subtitle'),
@@ -634,34 +634,34 @@ async function FeatureRail() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           <Link
-            href="/revision?setBoard=ks3"
-            className="group relative flex flex-col gap-4 rounded-2xl border border-violet-500/30 bg-violet-500/[0.06] p-6 sm:p-7 transition-all hover:border-violet-500/60 hover:bg-violet-500/[0.10] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            href="/ielts"
+            className="group relative flex flex-col gap-4 rounded-2xl border border-sky-500/30 bg-sky-500/[0.06] p-6 sm:p-7 transition-all hover:border-sky-500/60 hover:bg-sky-500/[0.10] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <span
               aria-hidden="true"
-              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-violet-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-violet-600 dark:text-violet-300"
+              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-sky-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-sky-600 dark:text-sky-300"
             >
-              {c.ks3Badge}
+              {c.ieltsBadge}
             </span>
             <div className="flex items-center gap-4 pr-20">
               <span
                 aria-hidden="true"
-                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-violet-500/15 text-violet-600 dark:text-violet-300 ring-violet-500/30 font-mono text-sm font-bold tracking-wide"
+                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-sky-500/15 text-sky-600 dark:text-sky-300 ring-sky-500/30 font-mono text-[11px] font-bold tracking-wide"
               >
-                KS3
+                IELTS
               </span>
               <div>
                 <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight">
-                  {c.ks3Title}
+                  {c.ieltsTitle}
                 </h3>
-                <p className="text-xs uppercase tracking-wider text-violet-600/80 dark:text-violet-300/80 mt-1">
-                  {c.ks3Subtitle}
+                <p className="text-xs uppercase tracking-wider text-sky-600/80 dark:text-sky-300/80 mt-1">
+                  {c.ieltsSubtitle}
                 </p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">{c.ks3Body}</p>
-            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 dark:text-violet-300 group-hover:text-violet-700 dark:group-hover:text-violet-200 transition-colors">
-              {c.ks3Cta} <span aria-hidden="true">&rarr;</span>
+            <p className="text-sm text-muted-foreground leading-relaxed">{c.ieltsBody}</p>
+            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-sky-600 dark:text-sky-300 group-hover:text-sky-700 dark:group-hover:text-sky-200 transition-colors">
+              {c.ieltsCta} <span aria-hidden="true">&rarr;</span>
             </span>
           </Link>
 

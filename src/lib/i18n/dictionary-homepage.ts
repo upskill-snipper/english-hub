@@ -74,34 +74,34 @@ export const HOMEPAGE_DICTIONARY: Record<string, { en: string; ar: string }> = {
     ar: 'مساران يمشون جنب بوردات الامتحان',
   },
   'homepage.rail.heading': {
-    en: 'Build foundations early, or learn English alongside Arabic.',
-    ar: 'ابنِ الأساس من بدري، أو تعلّم الإنجليزي جنب العربي.',
+    en: 'Prepare for IELTS, or learn English alongside Arabic.',
+    ar: 'جهّز لـ IELTS، أو تعلّم الإنجليزي جنب العربي.',
   },
   'homepage.rail.intro': {
-    en: 'KS3 covers Years 7-9, the curriculum before GCSE. EAL is the bilingual track for Arabic-speaking students preparing for UK exams. Both run independently of (and alongside) any GCSE / IGCSE board you pick below.',
-    ar: 'الـ KS3 يغطّي السنوات 7-9، وهو المنهج اللي قبل الـ GCSE. والـ EAL هو المسار ثنائي اللغة للطلاب الناطقين بالعربي اللي يجهّزون لامتحانات بريطانيا. الاثنين يشتغلون بشكل مستقل عن أي بورد GCSE أو IGCSE تختاره تحت - ويمشون جنبه.',
+    en: 'IELTS gives you Academic and General Training practice across all four skills with instant band-score feedback. EAL is the bilingual track for Arabic-speaking students preparing for UK exams. Both run independently of (and alongside) any GCSE / IGCSE board you pick below.',
+    ar: 'IELTS يعطيك تدريب Academic و General Training لكل المهارات الأربع مع تقدير Band فوري. والـ EAL هو المسار ثنائي اللغة للطلاب الناطقين بالعربي اللي يجهّزون لامتحانات بريطانيا. الاثنين يشتغلون بشكل مستقل عن أي بورد GCSE أو IGCSE تختاره تحت - ويمشون جنبه.',
   },
 
-  /* KS3 card */
-  'homepage.rail.ks3.badge': {
-    en: 'Foundation',
-    ar: 'تأسيس',
+  /* IELTS card */
+  'homepage.rail.ielts.badge': {
+    en: 'Exam prep',
+    ar: 'تحضير امتحان',
   },
-  'homepage.rail.ks3.title': {
-    en: 'KS3 English - Years 7-9',
-    ar: 'إنجليزي KS3 - السنوات 7-9',
+  'homepage.rail.ielts.title': {
+    en: 'IELTS preparation',
+    ar: 'تحضير IELTS',
   },
-  'homepage.rail.ks3.subtitle': {
-    en: 'Ages 11-14 · The curriculum before GCSE',
-    ar: 'أعمار 11-14 · المنهج اللي قبل الـ GCSE',
+  'homepage.rail.ielts.subtitle': {
+    en: 'Academic & General Training · all four skills',
+    ar: 'Academic و General Training · كل المهارات الأربع',
   },
-  'homepage.rail.ks3.body': {
-    en: 'Reading comprehension, creative writing, grammar foundations, and the year-by-year curriculum that primes students for GCSE English. Full Year 7, Year 8 and Year 9 schemes of work with weekly lessons, set texts, and assessments.',
-    ar: 'فهم المقروء، الكتابة الإبداعية، أساسيات القواعد، والمنهج سنة بسنة اللي يجهّز الطالب لإنجليزي الـ GCSE. خطط دراسية كاملة للسنة 7 والسنة 8 والسنة 9، مع دروس أسبوعية ونصوص مقرّرة وتقييمات.',
+  'homepage.rail.ielts.body': {
+    en: 'Reading, Listening, Writing and Speaking practice with full mock tests, model answers and instant AI band-score feedback. Aligned to the real IELTS Academic and General Training papers.',
+    ar: 'تدريب على القراءة والاستماع والكتابة والمحادثة مع اختبارات تجريبية كاملة وإجابات نموذجية وتقدير Band فوري بالذكاء الاصطناعي. متوافق مع ورق IELTS Academic و General Training الحقيقي.',
   },
-  'homepage.rail.ks3.cta': {
-    en: 'Open KS3 hub',
-    ar: 'افتح قسم KS3',
+  'homepage.rail.ielts.cta': {
+    en: 'Open IELTS hub',
+    ar: 'افتح قسم IELTS',
   },
 
   /* EAL card */
