@@ -1,0 +1,246 @@
+[
+  {
+    "targetQuery": "how to revise GCSE English",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": ["/revision", "/revision/quiz", "/resources/exam-technique/time-management"],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "how to analyse a poem GCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": [
+      "/revision/poetry/unseen-poetry",
+      "/resources/techniques/language-devices",
+      "/revision/poetry/power-and-conflict"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "A Christmas Carol themes GCSE revision",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "AQA",
+    "internalLinks": [
+      "/revision/texts/a-christmas-carol/themes",
+      "/revision/texts/a-christmas-carol/key-quotes",
+      "/revision/texts/a-christmas-carol"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "Jekyll and Hyde key quotes and analysis GCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "AQA",
+    "internalLinks": [
+      "/revision/texts/jekyll-and-hyde/key-quotes",
+      "/revision/texts/jekyll-and-hyde/themes",
+      "/revision/texts/jekyll-and-hyde"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "how to revise Romeo and Juliet in a week",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": [
+      "/revision/texts/romeo-and-juliet",
+      "/revision/texts/romeo-and-juliet/key-quotes",
+      "/revision/texts/romeo-and-juliet/themes"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "Animal Farm themes and allegory GCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": [
+      "/revision/texts/animal-farm/themes",
+      "/revision/texts/animal-farm/key-quotes",
+      "/revision/texts/animal-farm"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "Of Mice and Men themes revision GCSE IGCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": [
+      "/revision/texts/of-mice-and-men/themes",
+      "/revision/texts/of-mice-and-men/key-quotes",
+      "/revision/texts/of-mice-and-men"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "Lord of the Flies symbolism and themes GCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": [
+      "/revision/texts/lord-of-the-flies/themes",
+      "/revision/texts/lord-of-the-flies/characters",
+      "/revision/texts/lord-of-the-flies"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "AQA Power and Conflict best poem comparison pairings",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "AQA",
+    "internalLinks": [
+      "/revision/poetry/power-and-conflict",
+      "/revision/poetry/power-and-conflict/essay-plans",
+      "/resources/exam-technique/essay-structure"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "AQA Love and Relationships poem comparison pairings",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "AQA",
+    "internalLinks": [
+      "/revision/poetry/love-and-relationships",
+      "/revision/poetry/love-and-relationships/comparison-guide",
+      "/revision/poetry/love-and-relationships/essay-plans"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "is GCSE English hard",
+    "intent": "informational",
+    "audience": "parent",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": ["/revision", "/resources/grade-targets/grade-7", "/practice"],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "GCSE English vs IGCSE English which is harder",
+    "intent": "comparison",
+    "audience": "parent",
+    "educationalLevel": "IGCSE",
+    "examBoard": "All boards",
+    "internalLinks": ["/igcse", "/igcse/edexcel", "/igcse/cambridge"],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "AQA vs Edexcel GCSE English Literature",
+    "intent": "comparison",
+    "audience": "parent",
+    "educationalLevel": "GCSE",
+    "examBoard": "AQA",
+    "internalLinks": [
+      "/exam-boards",
+      "/resources/english-literature/aqa",
+      "/resources/english-literature/edexcel"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "AQA vs OCR GCSE English Literature differences",
+    "intent": "comparison",
+    "audience": "parent",
+    "educationalLevel": "GCSE",
+    "examBoard": "OCR",
+    "internalLinks": [
+      "/exam-boards",
+      "/resources/english-literature/aqa",
+      "/resources/english-literature/ocr"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "Edexcel IGCSE vs Cambridge IGCSE English",
+    "intent": "comparison",
+    "audience": "parent",
+    "educationalLevel": "IGCSE",
+    "examBoard": "Cambridge",
+    "internalLinks": ["/igcse", "/igcse/edexcel", "/igcse/cambridge"],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "how to analyse unseen prose for IGCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "IGCSE",
+    "examBoard": "Cambridge",
+    "internalLinks": [
+      "/igcse/cambridge/0500/paper-1",
+      "/igcse/cambridge/0500/paper-1/reading-techniques",
+      "/resources/techniques/language-devices"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "how to write a descriptive writing piece IGCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "IGCSE",
+    "examBoard": "Cambridge",
+    "internalLinks": [
+      "/igcse/cambridge/composition/descriptive",
+      "/igcse/cambridge/0500/paper-2/descriptive-writing",
+      "/resources/writing-skills/creative-writing"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "how to revise English Language Paper 2 GCSE",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "AQA",
+    "internalLinks": [
+      "/resources/english-language/aqa/paper-2",
+      "/resources/writing-skills/persuasive-writing",
+      "/resources/exam-technique/question-types"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "how to write a conclusion in a GCSE English essay",
+    "intent": "informational",
+    "audience": "student",
+    "educationalLevel": "GCSE",
+    "examBoard": "All boards",
+    "internalLinks": [
+      "/resources/exam-technique/essay-structure",
+      "/resources/model-answers/literature-essay",
+      "/revision/exam-technique"
+    ],
+    "status": "pending"
+  },
+  {
+    "targetQuery": "Cambridge IGCSE 0500 vs 0990 grading explained for parents",
+    "intent": "comparison",
+    "audience": "parent",
+    "educationalLevel": "IGCSE",
+    "examBoard": "Cambridge",
+    "internalLinks": [
+      "/igcse/cambridge/0990/grade-conversion",
+      "/igcse/cambridge/0500",
+      "/igcse/cambridge/0990"
+    ],
+    "status": "pending"
+  }
+]

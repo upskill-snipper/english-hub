@@ -28,7 +28,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 
 import { AIContentLabel } from '@/components/ai/ai-content-label'
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
-import { getBlogPost, getBlogSlugs, type BlogPost } from '@/lib/blog/posts'
+import { getAllBlogPosts, getBlogPost, getBlogSlugs, type BlogPost } from '@/lib/blog/posts'
 import { tSync } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -119,6 +119,33 @@ function formatDisplayDate(iso: string): string {
   }).format(d)
 }
 
+/**
+ * Pick up to `limit` related posts that share a tag or the category with the
+ * current post (excluding the post itself). Posts are scored by the number of
+ * shared tags (a shared category counts as one point), then newest-first as a
+ * tie-breaker, so the most topically-relevant articles surface first.
+ *
+ * This closes the internal-linking "island": individual articles previously
+ * had no outbound links to sibling posts, so crawlers (and readers) hit a
+ * dead end at the bottom of every article. Server-rendered, so the links are
+ * in the static HTML and discoverable without JS.
+ */
+function getRelatedPosts(current: BlogPost, limit = 3): BlogPost[] {
+  const currentTags = new Set(current.tags.map((t) => t.toLowerCase()))
+  return getAllBlogPosts()
+    .filter((p) => p.slug !== current.slug)
+    .map((p) => {
+      let score = 0
+      for (const tag of p.tags) if (currentTags.has(tag.toLowerCase())) score++
+      if (current.category && p.category === current.category) score++
+      return { post: p, score }
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => (b.score !== a.score ? b.score - a.score : a.post.date < b.post.date ? 1 : -1))
+    .slice(0, limit)
+    .map((entry) => entry.post)
+}
+
 export default async function BlogArticlePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
   // Read the locale stamped by middleware (x-lang). When the visitor
@@ -167,6 +194,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
     '{n}',
     String(post.readingTime),
   )
+
+  // Related articles - up to 3 posts sharing a tag/category with this one.
+  // Resolved at build time (static render) so the outbound links ship in HTML.
+  const relatedPosts = getRelatedPosts(post, 3)
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-16 lg:max-w-3xl lg:px-8">
@@ -235,6 +266,37 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
           </div>
         ) : null}
       </article>
+
+      {relatedPosts.length > 0 ? (
+        <section
+          aria-labelledby="related-articles-heading"
+          className="mt-16 border-t border-border/60 pt-8"
+        >
+          <h2
+            id="related-articles-heading"
+            className="font-heading text-lg font-semibold tracking-tight text-foreground"
+          >
+            {tSync('blog.related.heading', locale)}
+          </h2>
+          <ul className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {relatedPosts.map((related) => (
+              <li key={related.slug}>
+                <Link
+                  href={`/blog/${related.slug}`}
+                  className="group block h-full rounded-xl border border-border/60 p-4 transition-colors hover:border-primary/40"
+                >
+                  <span className="block font-medium text-foreground transition-colors group-hover:text-primary">
+                    {related.title}
+                  </span>
+                  <span className="mt-1 block text-sm text-muted-foreground leading-relaxed">
+                    {related.excerpt}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <aside className="mt-12 flex justify-center"></aside>
     </main>

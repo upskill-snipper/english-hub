@@ -2725,6 +2725,7 @@ export const DICTIONARY: Dictionary = {
   'blog.empty.in_meantime': { en: 'in the meantime.', ar: 'لين هالوقت.' },
   'blog.breadcrumb_label': { en: 'Blog', ar: 'المدوّنة' },
   'blog.reading_time': { en: '{n} min read', ar: 'قراءة {n} دقايق' },
+  'blog.related.heading': { en: 'Related articles', ar: 'مقالات ذات صلة' },
   'blog.share': { en: 'Share', ar: 'شارك' },
   'blog.share_label': { en: 'Share:', ar: 'شارك:' },
   'blog.share_on_x': { en: 'Share on Twitter / X', ar: 'شارك على Twitter / X' },

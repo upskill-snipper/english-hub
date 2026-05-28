@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "placeholder:check": "node scripts/check-placeholders.mjs",
+    "blog:quality-check": "node scripts/check-blog-quality.mjs",
     "eal:dupe-check": "node scripts/check-eal-level-dupes.mjs",
-    "prebuild": "node scripts/check-placeholders.mjs",
+    "prebuild": "node scripts/check-placeholders.mjs && node scripts/check-blog-quality.mjs",
     "build": "prisma generate && NODE_OPTIONS='--max-old-space-size=14336' next build",
     "postinstall": "prisma generate",
     "start": "next start",

@@ -139,6 +139,33 @@ const nextConfig = {
         destination: '/blog/ao5-gcse-english-literature',
         permanent: true,
       },
+      // Blog dedupe (2026-05-28): three near-identical "OCR Writing to Argue"
+      // posts and three "An Inspector Calls AQA" posts were consolidated to
+      // the single best/longest version of each (Google scaled-content-abuse
+      // defence). Blog slugs are file-derived and `dynamicParams = false`
+      // hard-404s any slug without a backing .mdx, so the removed slugs are
+      // 308-redirected to the kept canonical post to preserve any indexed or
+      // inbound links. Sitemap regenerates from the surviving files.
+      {
+        source: '/blog/ocr-writing-to-argue-gcse',
+        destination: '/blog/writing-to-argue-gcse-ocr-tips',
+        permanent: true,
+      },
+      {
+        source: '/blog/writing-to-argue-ocr-gcse-tips',
+        destination: '/blog/writing-to-argue-gcse-ocr-tips',
+        permanent: true,
+      },
+      {
+        source: '/blog/an-inspector-calls-aqa-character-analysis',
+        destination: '/blog/an-inspector-calls-gcse-aqa-analysis',
+        permanent: true,
+      },
+      {
+        source: '/blog/an-inspector-calls-gcse-aqa',
+        destination: '/blog/an-inspector-calls-gcse-aqa-analysis',
+        permanent: true,
+      },
       // H1 H7: consolidate safeguarding onto the single authoritative
       // policy at /safeguarding.
       {
