@@ -7,7 +7,7 @@
     "placeholder:check": "node scripts/check-placeholders.mjs",
     "eal:dupe-check": "node scripts/check-eal-level-dupes.mjs",
     "prebuild": "node scripts/check-placeholders.mjs",
-    "build": "prisma generate && NODE_OPTIONS='--max-old-space-size=8192' next build",
+    "build": "prisma generate && NODE_OPTIONS='--max-old-space-size=14336' next build",
     "postinstall": "prisma generate",
     "start": "next start",
     "test": "vitest run",

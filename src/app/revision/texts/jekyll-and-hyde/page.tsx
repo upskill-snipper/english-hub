@@ -8,6 +8,41 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+
+const JH_FAQS: GeoFaqItem[] = [
+  {
+    question: 'What is Dr Jekyll and Mr Hyde about?',
+    answer:
+      'Strange Case of Dr Jekyll and Mr Hyde is an 1886 Gothic novella by Robert Louis Stevenson. The respectable Dr Henry Jekyll creates a potion that lets him transform into his violent alter ego, Mr Edward Hyde, so he can indulge his darker desires without consequence. The lawyer Utterson investigates the sinister bond between the two men, and the truth, that Jekyll and Hyde are one person, is revealed only at the end.',
+  },
+  {
+    question: 'What are the main themes in Jekyll and Hyde?',
+    answer:
+      'The central themes are the duality of human nature, good versus evil, reputation and repression, and the dangers of unchecked science. Stevenson’s core idea is that "man is not truly one, but truly two": everyone contains both good and evil, and Jekyll’s attempt to separate them only makes his evil side, Hyde, more dangerous.',
+  },
+  {
+    question: 'What is the most important quotation in Jekyll and Hyde?',
+    answer:
+      'Jekyll’s reflection that "man is not truly one, but truly two" is the novella’s thesis. It states the theme of duality directly: every person holds a divided self, and the horror of the story comes not from Hyde’s existence but from Jekyll’s arrogant belief that the two halves can be cleanly separated, when in reality they are inseparable.',
+  },
+  {
+    question: 'Why is Mr Hyde described as repulsive and what does he represent?',
+    answer:
+      'Every character who meets Hyde feels an instinctive revulsion they cannot explain; Enfield calls him "something downright detestable" and Utterson senses "Satan’s signature" on his face. Hyde represents the primal, amoral self freed from conscience and social restraint. He grows larger and stronger as the novella progresses, suggesting that evil, once indulged, becomes increasingly dominant.',
+  },
+  {
+    question: 'How does the context of Victorian society shape Jekyll and Hyde?',
+    answer:
+      'Stevenson wrote in 1886, when middle-class Victorian London prized outward respectability above all. That pressure to appear virtuous in public drove people to hide their desires, and Jekyll’s double life dramatises this repression. The novella also reflects anxieties about science overreaching, echoing debates around Darwin and degeneration, and the duality is mirrored in the contrast between respectable and disreputable parts of the city.',
+  },
+  {
+    question: 'How do I write a grade 9 Jekyll and Hyde essay?',
+    answer:
+      'Argue a clear thesis about Stevenson’s purpose, then analyse his methods (AO2): the mystery structure and delayed revelation, the Gothic setting and pathetic fallacy, Utterson as a rational narrator, and the bestial imagery used for Hyde. Embed short quotations, link each to the theme of duality, and weave in Victorian context (AO3) only where it deepens your interpretation.',
+  },
+]
+
 export const metadata: Metadata = {
   openGraph: {
     title: 'Jekyll and Hyde revision guide - themes, characters, key quotes - The English Hub',
@@ -814,6 +849,20 @@ export default async function JekyllAndHydePage() {
           },
         ]}
       />
+      <section aria-labelledby="jh-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
+        <h2 id="jh-direct-answer" className="sr-only">
+          Dr Jekyll and Mr Hyde: quick summary
+        </h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Strange Case of Dr Jekyll and Mr Hyde</strong> is an
+          1886 Gothic novella by Robert Louis Stevenson. The respectable Dr Henry Jekyll creates a
+          potion that transforms him into his violent alter ego, Mr Edward Hyde, allowing him to
+          indulge his darker desires without consequence, until the change becomes uncontrollable.
+          Told as a mystery through the lawyer Utterson, it explores the duality of human nature and
+          the cost of Victorian repression, and is studied across the AQA, Edexcel, OCR and Eduqas
+          GCSE specifications.
+        </p>
+      </section>
       <TextStudyHub
         textName="Dr Jekyll and Mr Hyde"
         textType="novella"
@@ -895,6 +944,9 @@ export default async function JekyllAndHydePage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <section className="mx-auto mt-12 max-w-3xl px-4">
+        <GeoFaq faqs={JH_FAQS} heading="Dr Jekyll and Mr Hyde: frequently asked questions" />
+      </section>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
         public domain. Quotations are reproduced freely.

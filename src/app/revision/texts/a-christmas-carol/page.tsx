@@ -8,6 +8,41 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+
+const ACC_FAQS: GeoFaqItem[] = [
+  {
+    question: 'What is A Christmas Carol about?',
+    answer:
+      'A Christmas Carol is an 1843 novella by Charles Dickens. On Christmas Eve the miserly Ebenezer Scrooge is visited by the ghost of his dead partner Jacob Marley and then by three spirits, of Christmas Past, Present and Yet to Come, who force him to confront his past, the suffering around him and his lonely death. Scrooge wakes transformed, becoming generous and kind. It is a moral fable about redemption and social responsibility.',
+  },
+  {
+    question: 'What are the main themes in A Christmas Carol?',
+    answer:
+      'The key themes are redemption and transformation, poverty and social injustice, family and togetherness, and greed versus generosity. Dickens argues that no one is beyond change and that everyone owes a duty to others, dramatised through Scrooge’s journey from isolation to charity and through the contrast between his wealth and the Cratchits’ loving poverty.',
+  },
+  {
+    question: 'What is the most important quotation in A Christmas Carol?',
+    answer:
+      'Marley’s cry that "Mankind was my business. The common welfare was my business" is the novella’s thesis. Marley redefines "business" from commerce to compassion, warning Scrooge that every person’s true duty is the welfare of others. The chain he "forged in life" makes that neglected duty a literal, crushing weight, the central image of the book.',
+  },
+  {
+    question: 'How does Dickens use the character of Scrooge?',
+    answer:
+      'Scrooge is the protagonist and Dickens’s vehicle for the argument that anyone can change. He begins as "a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner", defined entirely by greed, and ends as "as good a friend, as good a master, and as good a man, as the good old city knew". His complete transformation models the generosity Dickens wanted wealthy Victorian readers to adopt.',
+  },
+  {
+    question: 'Why did Dickens write A Christmas Carol, and what is its context?',
+    answer:
+      'Dickens wrote A Christmas Carol in 1843 in response to the extreme poverty of industrial Britain and the harsh 1834 Poor Law, which forced the destitute into workhouses. Having worked in a blacking factory as a child when his father was imprisoned for debt, he felt a lifelong fury at the neglect of the poor. The allegorical children Ignorance and Want carry this social message most directly.',
+  },
+  {
+    question: 'How do I write a grade 9 essay on A Christmas Carol?',
+    answer:
+      'Argue a clear thesis about Dickens’s purpose, then analyse his methods (AO2): the accumulation of adjectives describing Scrooge, the chain as an extended metaphor, pathetic fallacy in the cold imagery, and the structure of the five staves as a moral education. Embed short quotations, link each to Dickens’s social message, and weave in 1840s context (AO3) only where it deepens meaning.',
+  },
+]
+
 export const metadata: Metadata = {
   openGraph: {
     title: 'A Christmas Carol revision guide - themes, characters, key quotes - The English Hub',
@@ -661,6 +696,20 @@ export default async function AChristmasCarolPage() {
           },
         ]}
       />
+      <section aria-labelledby="acc-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
+        <h2 id="acc-direct-answer" className="sr-only">
+          A Christmas Carol: quick summary
+        </h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">A Christmas Carol</strong> is an 1843 novella by
+          Charles Dickens in which the miserly Ebenezer Scrooge is visited on Christmas Eve by the
+          ghost of Jacob Marley and three spirits, of Christmas Past, Present and Yet to Come.
+          Forced to confront his cold past, the suffering around him and his lonely death, Scrooge
+          wakes transformed into a generous man. It is a moral fable about redemption, social
+          responsibility and the possibility of change, structured in five staves and aligned to the
+          AQA, Edexcel and Eduqas GCSE specifications.
+        </p>
+      </section>
       <TextStudyHub
         textName="A Christmas Carol"
         textType="novella"
@@ -742,6 +791,9 @@ export default async function AChristmasCarolPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <section className="mx-auto mt-12 max-w-3xl px-4">
+        <GeoFaq faqs={ACC_FAQS} heading="A Christmas Carol: frequently asked questions" />
+      </section>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         A Christmas Carol by Charles Dickens (1843) is in the public domain. Quotations are
         reproduced freely as the text is no longer subject to copyright.

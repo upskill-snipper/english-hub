@@ -140,7 +140,9 @@ const FOOTER_SECTIONS: FooterSection[] = [
     titleKey: 'footer.section.legal',
     generic: true,
     links: [
-      { href: '/privacy-policy', labelKey: 'legal.privacy_policy' },
+      // /privacy-policy 308-redirects to /legal/privacy (next.config.js);
+      // link straight to the destination to avoid an internal redirect hop.
+      { href: '/legal/privacy', labelKey: 'legal.privacy_policy' },
       { href: '/terms', labelKey: 'footer.link.terms_of_service' },
       { href: '/cookie-policy', labelKey: 'legal.cookie_policy' },
       { href: '/refund-policy', labelKey: 'footer.link.refund_policy' },
@@ -339,7 +341,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-4 text-[11px] font-mono tracking-wide">
             <Link
-              href="/privacy-policy"
+              href="/legal/privacy"
               className="text-[#B5B8B3]/60 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.privacy')}

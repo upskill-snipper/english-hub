@@ -1277,37 +1277,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ============================================================
     // Toolkit
     // ============================================================
-    { url: `${base}/toolkit`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    {
-      url: `${base}/toolkit/test-builder`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/toolkit/revision-builder`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/toolkit/personalised-revision`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/toolkit/my-materials`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${base}/toolkit/progress`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+    // `/toolkit` 308-redirects to `/revision` (src/middleware.ts), so the
+    // index and its sub-routes are intentionally EXCLUDED from the sitemap
+    // (listing a 3xx URL is an SEO anti-pattern). The individual tools are
+    // surfaced from the unified hub at `/revision`.
 
     // Note: /demo/*, /dashboard/*, and /auth/* are disallowed in robots.ts and
     // intentionally excluded from the sitemap to avoid "Indexed though blocked"
@@ -1377,7 +1350,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.4,
     },
-    { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    // /privacy-policy 308-redirects to /legal/privacy (next.config.js), so
+    // the sitemap lists the real destination, not the redirecting URL.
+    { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/terms`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/cookie-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/accessibility`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },

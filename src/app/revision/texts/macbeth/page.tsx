@@ -7,6 +7,7 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
 type TopQuote = {
   quote: string
   character: string
@@ -937,6 +938,43 @@ export default async function MacbethPage() {
           ))}
         </div>
       </section>
+
+      <section className="mx-auto my-12 max-w-3xl px-4">
+        <GeoFaq faqs={MACBETH_FAQS} heading="Macbeth: frequently asked questions" />
+      </section>
     </>
   )
 }
+
+const MACBETH_FAQS: GeoFaqItem[] = [
+  {
+    question: 'What is Macbeth about?',
+    answer:
+      'Macbeth is Shakespeare’s shortest tragedy, written around 1606. A brave Scottish general, told by three witches that he will be king, is goaded by his wife into murdering King Duncan and seizing the throne. Each killing breeds another until Macbeth becomes a paranoid tyrant, and both he and Lady Macbeth are destroyed by the ambition that promised them everything.',
+  },
+  {
+    question: 'What are the main themes in Macbeth?',
+    answer:
+      'The central themes are ambition, guilt and conscience, the supernatural, kingship and power, appearance versus reality, and gender. Ambition is the engine of the tragedy, but Shakespeare shows it needs a willing agent: Banquo hears the same prophecy and does not act. Guilt then destroys both protagonists, while the recurring "Fair is foul, and foul is fair" inversion drives the appearance-versus-reality strand.',
+  },
+  {
+    question: 'What is the most important quotation in Macbeth?',
+    answer:
+      'Macbeth’s admission that he has "no spur / To prick the sides of my intent, but only / Vaulting ambition, which o’erleaps itself" is the play’s thesis: he names ambition as his sole motive. The equestrian metaphor imagines ambition as a horse that leaps too far and throws its rider, foreshadowing his fall and locating the tragedy in his own choices rather than fate alone.',
+  },
+  {
+    question: 'Is Lady Macbeth or Macbeth more to blame for Duncan’s murder?',
+    answer:
+      'Both share responsibility. Lady Macbeth supplies the ruthlessness Macbeth lacks, calling on spirits to "unsex me here" and shaming his manhood until he acts. Yet Macbeth holds the dagger, entertains the murder before she persuades him, and goes on to order later killings alone. Shakespeare gives them a shared guilt that ultimately consumes them both: she breaks down sleepwalking, he ends in nihilistic despair.',
+  },
+  {
+    question: 'Why did Shakespeare write Macbeth, and what is its context?',
+    answer:
+      'Shakespeare wrote Macbeth around 1606 for the new king, James I, who claimed descent from Banquo and had a documented fascination with witchcraft, publishing Daemonologie in 1597. The play followed the 1605 Gunpowder Plot, so its themes of regicide, treason and equivocation carried sharp topical force, and it endorses the Divine Right of Kings by punishing the usurper and restoring the rightful line.',
+  },
+  {
+    question: 'How do I write a grade 9 Macbeth essay?',
+    answer:
+      'Build a single conceptual argument that answers the question, then analyse Shakespeare’s methods (AO2) rather than spotting devices: link the trochaic tetrameter of the witches, the blood and sleep motifs, or the light-and-dark imagery to meaning. Embed short, precise quotations, weave in Jacobean context (AO3) only where it sharpens interpretation, and move from method to meaning to context within each paragraph.',
+  },
+]

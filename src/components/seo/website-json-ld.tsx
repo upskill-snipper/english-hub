@@ -26,9 +26,12 @@ export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
       'seo.offer.teacher_annual',
     ])
 
-  const jsonLd = {
+  const ORG_ID = 'https://theenglishhub.app/#organisation'
+
+  const orgJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
+    '@id': ORG_ID,
     name: 'The English Hub',
     url: 'https://theenglishhub.app',
     description: siteDescription,
@@ -75,11 +78,38 @@ export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
     ],
   }
 
+  // WebSite node for GEO / AI answer engines. `publisher` references the
+  // organisation node above by @id so the two form one connected graph.
+  //
+  // No `potentialAction`/SearchAction is emitted: the site has no
+  // site-search route (no /search page and no ?q= search param exists),
+  // and Google requires the SearchAction target to resolve to a real
+  // results URL. No `sameAs` is emitted either: there are no verified
+  // brand social-profile URLs in the codebase, and fabricated links risk
+  // a structured-data manual action. Add both here once real URLs exist.
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://theenglishhub.app/#website',
+    name: 'The English Hub',
+    url: 'https://theenglishhub.app',
+    description: siteDescription,
+    inLanguage: 'en-GB',
+    publisher: { '@id': ORG_ID },
+  }
+
   return (
-    <script
-      type="application/ld+json"
-      nonce={nonce}
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+    </>
   )
 }

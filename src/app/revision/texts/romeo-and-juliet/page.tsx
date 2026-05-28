@@ -8,6 +8,41 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+
+const RJ_FAQS: GeoFaqItem[] = [
+  {
+    question: 'What is Romeo and Juliet about?',
+    answer:
+      'Romeo and Juliet is a tragedy written by William Shakespeare around 1594 to 1596. Two teenagers from the feuding Montague and Capulet families of Verona fall in love and marry in secret. After Romeo is banished for killing Juliet’s cousin Tybalt, a plan to reunite them goes wrong: believing Juliet dead, Romeo takes poison, and she stabs herself on waking. Their deaths finally end their families’ feud.',
+  },
+  {
+    question: 'What are the main themes in Romeo and Juliet?',
+    answer:
+      'The central themes are love, fate and destiny, conflict and violence, youth versus age, and honour. Shakespeare presents the lovers as "star-cross’d", suggesting fate governs them, while also showing that the inherited feud, parental tyranny and impulsive choices are human causes of the tragedy, leaving the audience to weigh fate against free will.',
+  },
+  {
+    question: 'What is the most important quotation in Romeo and Juliet?',
+    answer:
+      'The Prologue’s description of "A pair of star-cross’d lovers" who "take their life" is the play’s defining line. It establishes fate as the force hanging over the tragedy and puns on "take their life", meaning both born from their parents and ending their own lives, framing the whole play as a story whose doomed ending is already known.',
+  },
+  {
+    question: 'Who is to blame for the deaths of Romeo and Juliet?',
+    answer:
+      'Blame is shared rather than singular. The ancient feud creates the danger; Lord Capulet’s tyranny in forcing the Paris match isolates Juliet; Friar Lawrence’s risky potion plan collapses through unlucky timing; and Romeo’s and Juliet’s own impulsiveness drives them to act before they think. Shakespeare distributes responsibility so the tragedy feels both fated and humanly caused.',
+  },
+  {
+    question: 'When did Shakespeare write Romeo and Juliet and what is its context?',
+    answer:
+      'Shakespeare wrote Romeo and Juliet in the mid-1590s during the reign of Elizabeth I, drawing on Arthur Brooke’s 1562 poem. In this patriarchal society marriage was a financial arrangement and daughters were expected to obey their fathers, so Juliet’s defiance of Lord Capulet would have been shocking. The Italian setting let Shakespeare explore passion, vendetta and honour at a slight remove from English life.',
+  },
+  {
+    question: 'How do I write a grade 9 Romeo and Juliet essay?',
+    answer:
+      'Argue a clear thesis about Shakespeare’s purpose, then analyse his methods (AO2): the sonnet form the lovers share at their first meeting, the inverted light-and-dark imagery, oxymorons, and the foreshadowing of fate. Embed short quotations, link each to meaning, and weave in Elizabethan context (AO3) only where it sharpens your interpretation rather than as bolt-on facts.',
+  },
+]
+
 export const metadata: Metadata = {
   openGraph: {
     title: 'Romeo and Juliet revision guide - themes, characters, key quotes - The English Hub',
@@ -660,6 +695,20 @@ export default async function RomeoAndJulietPage() {
           },
         ]}
       />
+      <section aria-labelledby="rj-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
+        <h2 id="rj-direct-answer" className="sr-only">
+          Romeo and Juliet: quick summary
+        </h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Romeo and Juliet</strong> is a tragedy written by
+          William Shakespeare around 1594 to 1596. Two teenagers from the feuding Montague and
+          Capulet families of Verona fall in love and marry in secret, but after Romeo is banished
+          for killing Tybalt, a plan to reunite them fails: believing Juliet dead, Romeo takes
+          poison, and she stabs herself on waking. Their deaths end the feud. A study of love, fate
+          and conflict, it appears on the AQA, Edexcel, OCR, Eduqas and Edexcel IGCSE
+          specifications.
+        </p>
+      </section>
       <TextStudyHub
         textName="Romeo and Juliet"
         textType="play"
@@ -741,6 +790,9 @@ export default async function RomeoAndJulietPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <section className="mx-auto mt-12 max-w-3xl px-4">
+        <GeoFaq faqs={RJ_FAQS} heading="Romeo and Juliet: frequently asked questions" />
+      </section>
     </>
   )
 }

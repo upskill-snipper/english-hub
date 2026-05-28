@@ -8,6 +8,41 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, type GeoFaqItem } from '@/components/seo/GeoFaq'
+
+const AIC_FAQS: GeoFaqItem[] = [
+  {
+    question: 'What is An Inspector Calls about?',
+    answer:
+      'An Inspector Calls is a 1945 play by J.B. Priestley, set in 1912. As the wealthy Birling family celebrate an engagement, the mysterious Inspector Goole arrives to investigate the suicide of a young working-class woman, Eva Smith. One by one he reveals that every family member helped drive her to her death. It is a morality play arguing for collective social responsibility.',
+  },
+  {
+    question: 'What are the main themes in An Inspector Calls?',
+    answer:
+      'The central themes are social responsibility, class, gender, age versus youth, and guilt. Priestley’s core argument, voiced by the Inspector, is that "we are members of one body" and responsible for one another. He contrasts the older Birlings, who refuse to change, with Sheila and Eric, who accept their guilt, to urge his 1945 audience towards a fairer society.',
+  },
+  {
+    question: 'What is the most important quotation in An Inspector Calls?',
+    answer:
+      'The Inspector’s warning that "We don’t live alone. We are members of one body. We are responsible for each other" is the play’s thesis. It rejects Arthur Birling’s capitalist individualism and echoes the communal spirit of the 1945 welfare-state moment, making the line Priestley’s clearest statement of his socialist message.',
+  },
+  {
+    question: 'Who is responsible for Eva Smith’s death in An Inspector Calls?',
+    answer:
+      'Priestley’s point is that responsibility is collective: every Birling plays a part. Arthur sacks Eva for striking; Sheila has her dismissed from a shop out of jealousy; Gerald keeps her as a mistress; Eric assaults her and steals to support her; and Sybil refuses her charity when she is pregnant. The chain of cause and effect means no single character can disown the blame.',
+  },
+  {
+    question: 'Why did Priestley set the play in 1912 but write it in 1945?',
+    answer:
+      'Priestley set the play in 1912 so the audience’s hindsight would expose Arthur Birling’s confident predictions, that the Titanic is unsinkable and war impossible, as catastrophically wrong. Writing in 1945, as the Labour government built the welfare state, Priestley used the gap between the two dates to argue that Britain must not return to the selfish inequality of the Edwardian era.',
+  },
+  {
+    question: 'How do I write a grade 9 An Inspector Calls essay?',
+    answer:
+      'Argue a clear thesis about Priestley’s purpose, then analyse his methods (AO2): dramatic irony in Birling’s speeches, the Inspector as a structural device, the cyclical ending, and the way each character’s reaction tests the audience. Embed short quotations, link them to the socialist message, and weave in 1912 and 1945 context (AO3) only where it sharpens your interpretation.',
+  },
+]
+
 export const metadata: Metadata = {
   openGraph: {
     title: 'An Inspector Calls revision guide - themes, characters, key quotes - The English Hub',
@@ -766,6 +801,19 @@ export default async function AnInspectorCallsPage() {
           },
         ]}
       />
+      <section aria-labelledby="aic-direct-answer" className="mx-auto mt-8 max-w-3xl px-4">
+        <h2 id="aic-direct-answer" className="sr-only">
+          An Inspector Calls: quick summary
+        </h2>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">An Inspector Calls</strong> is a 1945 play by J.B.
+          Priestley, set in 1912. As the wealthy Birling family celebrate an engagement, the
+          mysterious Inspector Goole arrives to investigate the suicide of a young working-class
+          woman, Eva Smith, and reveals that every family member helped drive her to her death. It
+          is a morality play arguing that "we are members of one body" and responsible for one
+          another, studied across the AQA, Edexcel, OCR, Eduqas and Edexcel IGCSE specifications.
+        </p>
+      </section>
       <TextStudyHub
         textName="An Inspector Calls"
         textType="play"
@@ -840,6 +888,9 @@ export default async function AnInspectorCallsPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <section className="mx-auto mt-12 max-w-3xl px-4">
+        <GeoFaq faqs={AIC_FAQS} heading="An Inspector Calls: frequently asked questions" />
+      </section>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
         Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
