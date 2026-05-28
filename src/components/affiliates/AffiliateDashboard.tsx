@@ -306,10 +306,10 @@ export default function AffiliateDashboard({
         {/* ── Disclosure Reminder ── */}
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-8 flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-clay-600 mt-0.5 shrink-0" />
-          <div className="text-sm text-yellow-800/90">
+          <div className="text-sm text-yellow-400">
             <strong>{t('aff_comp.dash.disclosure_required_prefix')}</strong>{' '}
             {t('aff_comp.dash.disclosure_required_prefix') ? ' ' : ''}
-            <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-700 font-mono text-xs">
+            <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-300 font-mono text-xs">
               #ad
             </code>{' '}
             {t('aff_comp.dash.disclosure_required_middle')}{' '}
@@ -317,7 +317,7 @@ export default function AffiliateDashboard({
               href="https://www.asa.org.uk/advice-online/recognising-ads-social-media.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-yellow-100 inline-flex items-center gap-1"
+              className="underline hover:text-yellow-200 inline-flex items-center gap-1"
             >
               {t('aff_comp.dash.disclosure_asa_link_text')}{' '}
               <ExternalLink className="inline w-3 h-3" />

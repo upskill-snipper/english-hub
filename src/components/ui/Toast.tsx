@@ -88,8 +88,8 @@ function ToastIcon({ type }: { type: ToastType }) {
 
 const TYPE_STYLES: Record<ToastType, string> = {
   success: 'border-success-200 bg-success-50 text-success-800',
-  error: 'border-red-200 bg-red-50 text-red-800',
-  info: 'border-blue-200 bg-blue-50 text-blue-800',
+  error: 'border-red-500/20 bg-red-500/10 text-red-400',
+  info: 'border-blue-500/20 bg-blue-500/10 text-blue-400',
 }
 
 // ─── Single toast component ────────────────────────────────────────────
