@@ -222,11 +222,11 @@ model User {
 // Writing/Speaking tasks — so the client store can write through to the DB for
 // cross-device continuity and B2B teacher analytics.
 model IELTSAttempt {
-  id           String   @id @default(cuid())
-  userId       String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  skill        String // 'listening' | 'reading' | 'writing' | 'speaking'
-  band         Float // 0–9 in 0.5 steps
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill  String // 'listening' | 'reading' | 'writing' | 'speaking'
+  band   Float // 0–9 in 0.5 steps
 
   // Objective (Listening / Reading)
   testId   String?
@@ -742,61 +742,92 @@ model BulkUploadJob {
 //     in Prisma. The FK constraints exist in the SQL migration but cannot
 //     be expressed in Prisma here.
 model MarkingSubmission {
-  id                  String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  schoolId            String?   @map("school_id") @db.Uuid
-  studentId           String?   @map("student_id") @db.Uuid
-  classId             String?   @map("class_id") @db.Uuid
-  source              String    @default("b2b_class")
-  examBoard           String    @map("exam_board")
-  qualification       String?
-  paper               String?
-  questionText        String?   @map("question_text") @db.Text
-  questionType        String?   @map("question_type")
-  studiedText         String?   @map("studied_text") @db.Text
-  targetGrade         String?   @map("target_grade")
-  markSchemeId        String?   @map("mark_scheme_id")
-  rubricRef           String?   @map("rubric_ref")
-  essayTitle          String?   @map("essay_title")
-  essayText           String    @map("essay_text") @db.Text
-  aiGrade             String?   @map("ai_grade")
-  aiConfidence        Float?    @map("ai_confidence")
-  aiFeedback          String?   @map("ai_feedback") @db.Text
-  aiBandMarks         Json      @default("[]") @map("ai_band_marks")
-  aiResult            Json?     @map("ai_result")
-  aiScore             Int?      @map("ai_score")
-  aiMaxMarks          Int?      @map("ai_max_marks")
-  aiGradeBand         String?   @map("ai_grade_band")
-  aiAoBreakdown       Json?     @map("ai_ao_breakdown")
-  aiUncertaintyFlags  Json?     @map("ai_uncertainty_flags")
-  modelVersionId      String?   @map("model_version_id") @db.Uuid
-  promptVersionId     String?   @map("prompt_version_id") @db.Uuid
-  rubricVersionId     String?   @map("rubric_version_id") @db.Uuid
-  status              String    @default("pending")
-  submittedAt         DateTime  @default(now()) @map("submitted_at") @db.Timestamptz(6)
-  teacherGrade        String?   @map("teacher_grade")
-  teacherComment      String?   @map("teacher_comment") @db.Text
-  teacherReviewedById String?   @map("teacher_reviewed_by") @db.Uuid
-  teacherReviewedAt   DateTime? @map("teacher_reviewed_at") @db.Timestamptz(6)
-  finalTeacherMark    String?   @map("final_teacher_mark")
-  finalTeacherFeedback String?  @map("final_teacher_feedback") @db.Text
-  teacherAdjustmentReason String? @map("teacher_adjustment_reason") @db.Text
-  approvedBy          String?   @map("approved_by") @db.Uuid
-  approvedAt          DateTime? @map("approved_at") @db.Timestamptz(6)
-  trainingEligible    Boolean?  @map("training_eligible")
-  moderationNotes     String?   @map("moderation_notes") @db.Text
-  assignedMarkerId    String?   @map("assigned_marker_id") @db.Uuid
-  batchId             String?   @map("batch_id") @db.Uuid
-  isGold              Boolean   @default(false) @map("is_gold")
-  goldExpected        Json?     @map("gold_expected")
+  id                      String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  schoolId                String?   @map("school_id") @db.Uuid
+  studentId               String?   @map("student_id") @db.Uuid
+  classId                 String?   @map("class_id") @db.Uuid
+  source                  String    @default("b2b_class")
+  examBoard               String    @map("exam_board")
+  qualification           String?
+  paper                   String?
+  questionText            String?   @map("question_text") @db.Text
+  questionType            String?   @map("question_type")
+  studiedText             String?   @map("studied_text") @db.Text
+  targetGrade             String?   @map("target_grade")
+  markSchemeId            String?   @map("mark_scheme_id")
+  rubricRef               String?   @map("rubric_ref")
+  essayTitle              String?   @map("essay_title")
+  essayText               String    @map("essay_text") @db.Text
+  aiGrade                 String?   @map("ai_grade")
+  aiConfidence            Float?    @map("ai_confidence")
+  aiFeedback              String?   @map("ai_feedback") @db.Text
+  aiBandMarks             Json      @default("[]") @map("ai_band_marks")
+  aiResult                Json?     @map("ai_result")
+  aiScore                 Int?      @map("ai_score")
+  aiMaxMarks              Int?      @map("ai_max_marks")
+  aiGradeBand             String?   @map("ai_grade_band")
+  aiAoBreakdown           Json?     @map("ai_ao_breakdown")
+  aiUncertaintyFlags      Json?     @map("ai_uncertainty_flags")
+  // ─── Marking Engine V2 (P5.1) — structured-result provenance ──────────────
+  // WHY: the engine persists MarkingResultV2 on this SAME spine (plan R-PERSIST —
+  // no parallel table). The full result still lives in `aiResult` (Json) and the
+  // code-owned overall confidence still goes to `aiConfidence`; these columns are
+  // the new *queryable* projections the V2 result needs that did not already
+  // exist. ALL nullable/defaulted so the migration is additive and the live GCSE
+  // write path (which never sets them) keeps working byte-identically.
+  resultSchemaVersion     Int?      @map("result_schema_version")
+  // The single FK back to the exact immutable Knowledge Pack (manifest.fullId),
+  // e.g. "ielts_writing_v2025.1". The new provenance bit P5.1 introduces; lets a
+  // mark be re-resolved to the precise rubric/descriptors/exemplars that produced
+  // it (EU AI Act Art.12/15 traceability). Nullable: legacy/GCSE rows have none.
+  packVersion             String?   @map("pack_version")
+  // Code-owned §5.4 human-review gate outcome. Conceptually correlated with
+  // `status='teacher_review_required'`, but persisted as a first-class boolean so
+  // analytics/QA can query the gate decision independently of workflow status.
+  // Nullable: not derivable for legacy rows that predate the gate.
+  needsHumanReview        Boolean?  @map("needs_human_review")
+  // The model's PROPOSED overall band, retained ONLY for the §5.1 disagreement
+  // check + audit. The authoritative band is always code-recomputed and lives in
+  // `aiResult.overall.overallBand`; this column never feeds display.
+  proposedOverallBand     Float?    @map("proposed_overall_band")
+  // OQ-4 surfaced self-consistency range [min, max] when borderline marks diverge
+  // across runs (plan P4.5/P5.2 / G-LIVE box 12). Json (a 2-tuple) so the learner
+  // UI can render a range instead of a false-precision single band. Null when not
+  // borderline / single-run.
+  bandRange               Json?     @map("band_range")
+  // Taxonomy-tagged errors projected out of `aiResult.errors` for the §4 analytics
+  // aggregation (must aggregate on the engine taxonomy). Defaulted to [] so the
+  // column is always present and additive; legacy rows simply carry the default.
+  markingErrors           Json      @default("[]") @map("marking_errors")
+  modelVersionId          String?   @map("model_version_id") @db.Uuid
+  promptVersionId         String?   @map("prompt_version_id") @db.Uuid
+  rubricVersionId         String?   @map("rubric_version_id") @db.Uuid
+  status                  String    @default("pending")
+  submittedAt             DateTime  @default(now()) @map("submitted_at") @db.Timestamptz(6)
+  teacherGrade            String?   @map("teacher_grade")
+  teacherComment          String?   @map("teacher_comment") @db.Text
+  teacherReviewedById     String?   @map("teacher_reviewed_by") @db.Uuid
+  teacherReviewedAt       DateTime? @map("teacher_reviewed_at") @db.Timestamptz(6)
+  finalTeacherMark        String?   @map("final_teacher_mark")
+  finalTeacherFeedback    String?   @map("final_teacher_feedback") @db.Text
+  teacherAdjustmentReason String?   @map("teacher_adjustment_reason") @db.Text
+  approvedBy              String?   @map("approved_by") @db.Uuid
+  approvedAt              DateTime? @map("approved_at") @db.Timestamptz(6)
+  trainingEligible        Boolean?  @map("training_eligible")
+  moderationNotes         String?   @map("moderation_notes") @db.Text
+  assignedMarkerId        String?   @map("assigned_marker_id") @db.Uuid
+  batchId                 String?   @map("batch_id") @db.Uuid
+  isGold                  Boolean   @default(false) @map("is_gold")
+  goldExpected            Json?     @map("gold_expected")
 
-  student      User?              @relation("MarkingSubmissionStudent", fields: [studentId], references: [supabaseUserId], onDelete: NoAction, onUpdate: NoAction)
-  modelVersion ModelVersion?      @relation(fields: [modelVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
-  promptVersion PromptVersion?    @relation(fields: [promptVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
-  rubricVersion RubricVersion?    @relation(fields: [rubricVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
-  marker       Marker?            @relation(fields: [assignedMarkerId], references: [id], onDelete: SetNull, onUpdate: NoAction)
-  batch        MarkerBatch?       @relation(fields: [batchId], references: [id], onDelete: SetNull, onUpdate: NoAction)
-  moderations  TeacherModeration[]
-  trainingData TrainingData[]
+  student       User?               @relation("MarkingSubmissionStudent", fields: [studentId], references: [supabaseUserId], onDelete: NoAction, onUpdate: NoAction)
+  modelVersion  ModelVersion?       @relation(fields: [modelVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  promptVersion PromptVersion?      @relation(fields: [promptVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  rubricVersion RubricVersion?      @relation(fields: [rubricVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  marker        Marker?             @relation(fields: [assignedMarkerId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  batch         MarkerBatch?        @relation(fields: [batchId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  moderations   TeacherModeration[]
+  trainingData  TrainingData[]
 
   @@index([schoolId, submittedAt(sort: Desc)])
   @@index([studentId])
@@ -805,6 +836,8 @@ model MarkingSubmission {
   @@index([source])
   @@index([assignedMarkerId, status])
   @@index([batchId])
+  // Re-resolve marks to their exact pack version + slice analytics by it (P5.1).
+  @@index([packVersion])
   @@map("marking_submissions")
 }
 
@@ -834,15 +867,15 @@ model Marker {
 }
 
 model MarkerBatch {
-  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   label       String
   board       String
   paper       String?
-  sourceType  String    @map("source_type")
-  targetCount Int       @default(0) @map("target_count")
-  status      String    @default("open")
-  createdBy   String?   @map("created_by") @db.Uuid
-  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  sourceType  String   @map("source_type")
+  targetCount Int      @default(0) @map("target_count")
+  status      String   @default("open")
+  createdBy   String?  @map("created_by") @db.Uuid
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   submissions MarkingSubmission[]
 
@@ -910,22 +943,22 @@ model PromptVersion {
 }
 
 model TeacherModeration {
-  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  submissionId      String   @map("submission_id") @db.Uuid
-  reviewerUserId    String?  @map("reviewer_user_id") @db.Uuid
-  reviewerMemberId  String?  @map("reviewer_member_id") @db.Uuid
-  decision          String
-  aiGrade           String?  @map("ai_grade")
-  teacherGrade      String?  @map("teacher_grade")
-  aiScore           Int?     @map("ai_score")
-  teacherScore      Int?     @map("teacher_score")
-  aoCorrections     Json?    @map("ao_corrections")
-  feedbackBefore    String?  @map("feedback_before") @db.Text
-  feedbackAfter     String?  @map("feedback_after") @db.Text
-  adjustmentReason  String?  @map("adjustment_reason") @db.Text
-  moderationNotes   String?  @map("moderation_notes") @db.Text
-  trainingEligible  Boolean? @map("training_eligible")
-  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  submissionId     String   @map("submission_id") @db.Uuid
+  reviewerUserId   String?  @map("reviewer_user_id") @db.Uuid
+  reviewerMemberId String?  @map("reviewer_member_id") @db.Uuid
+  decision         String
+  aiGrade          String?  @map("ai_grade")
+  teacherGrade     String?  @map("teacher_grade")
+  aiScore          Int?     @map("ai_score")
+  teacherScore     Int?     @map("teacher_score")
+  aoCorrections    Json?    @map("ao_corrections")
+  feedbackBefore   String?  @map("feedback_before") @db.Text
+  feedbackAfter    String?  @map("feedback_after") @db.Text
+  adjustmentReason String?  @map("adjustment_reason") @db.Text
+  moderationNotes  String?  @map("moderation_notes") @db.Text
+  trainingEligible Boolean? @map("training_eligible")
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   submission MarkingSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
