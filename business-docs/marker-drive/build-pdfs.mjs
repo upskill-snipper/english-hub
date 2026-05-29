@@ -22,7 +22,7 @@ const CHROME = [
 
 const MAP = [
   { md: 'IELTS-calibration-executive-overview.md', pdf: 'The English Hub - IELTS Calibration (Executive Overview).pdf', title: 'IELTS Calibration — Executive Overview' },
-  { md: 'IELTS-marker-brief.md', pdf: 'The English Hub - IELTS Marker Brief.pdf', title: 'IELTS Writing Examiner — Marking Opportunity' },
+  { md: 'marker-brief.md', pdf: 'The English Hub - Marker & Examiner Brief.pdf', title: 'Marker & Examiner Brief — Marking Opportunity' },
 ]
 
 function findChrome() { for (const p of CHROME) { try { if (existsSync(p)) return p } catch {} } throw new Error('Chrome not found') }

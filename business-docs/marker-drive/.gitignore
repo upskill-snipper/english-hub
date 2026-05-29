@@ -1,4 +1,3 @@
-!dist/
+# Allow the rendered PDFs in dist/ — they are deliverables, copied to the desktop.
+# Normally build output is gitignored, but these are the shareable artefacts.
 !dist/*.pdf
-!*.pdf
-__build_*
