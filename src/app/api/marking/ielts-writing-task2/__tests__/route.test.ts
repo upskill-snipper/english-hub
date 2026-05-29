@@ -73,8 +73,11 @@ vi.mock('@/lib/marking/engine/calibration/gate', () => {
   }
 })
 
-// Import the route + the mocked deps AFTER the mocks are registered.
-import { POST, IELTS_WT2_FLAG_ENV, __setCalibrationBaselineLoader } from '../route'
+// Import the route + the mocked deps AFTER the mocks are registered. The route
+// handler (POST) comes from ../route; the G-LIVE flag/seam helpers now live in
+// ../glive (a Next.js route.ts may only export handlers + segment config).
+import { POST } from '../route'
+import { IELTS_WT2_FLAG_ENV, __setCalibrationBaselineLoader } from '../glive'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
