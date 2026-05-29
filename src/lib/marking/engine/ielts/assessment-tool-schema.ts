@@ -58,7 +58,7 @@ import {
   type MarkingErrorType,
   type MarkingErrorSeverity,
 } from '../error-taxonomy'
-import type { GroundedMarkingResult, IntegrityFlags } from '../result-schema'
+import type { MarkingResultV2, IntegrityFlags } from '../result-schema'
 
 /**
  * The four IELTS Writing Task 2 criterion names, EXACTLY as the model returns
@@ -268,31 +268,32 @@ export interface IeltsAssessmentToolInput {
 export type IeltsToolPayload = IeltsAssessmentToolInput
 
 /**
- * Reconciliation anchor with the canonical result (`GroundedMarkingResult`).
+ * Reconciliation anchor with the canonical result (`MarkingResultV2`, doc 13 §2.8).
  *
- * The forced-tool payload is the model's UNTRUSTED input; `GroundedMarkingResult`
- * is the canonical, validator-produced output. They are deliberately NOT the
- * same shape — the result adds code-owned fields (a recomputed overall band,
- * verified evidence, validation flags, needs-human-review) and demotes the
- * model's advisory `proposed_overall_band` to an audit-only slot. The
- * validator/mapper (doc 13 §3.3) performs the transform; this module owns only
- * the wire shape.
+ * The forced-tool payload is the model's UNTRUSTED input; `MarkingResultV2` is the
+ * canonical, validator-produced output. They are deliberately NOT the same shape —
+ * the result adds code-owned fields (a recomputed `overall` discriminated union,
+ * `verified` evidence spans, `validationFlags`, `needsHumanReview`, provenance) and
+ * demotes the model's advisory `proposed_overall_band` to
+ * `BandOverall.proposedOverallBand` (audit-only). The validator/mapper (doc 13
+ * §3.3) performs the transform; this module owns only the wire shape.
  *
- * Field flow (payload → canonical), for the mapper to implement:
+ * Field flow (payload → canonical `MarkingResultV2`), for the mapper to implement:
  *   criteria[].name            → criteria[].code   (TR/CC/LR/GRA, via mapper)
- *   criteria[].band            → criteria[].band   (assert integer 0-9)
+ *   criteria[].band            → criteria[].band   (scale:'band', maxBand:9; assert int 0-9)
  *   criteria[].descriptor_matched → criteria[].descriptorMatched
- *   criteria[].evidence[]      → criteria[].evidence[] (verify verbatim)
+ *   criteria[].evidence[]      → criteria[].evidence[] (verify verbatim → `verified`)
  *   criteria[].confidence      → criteria[].confidence
- *   errors[]                   → errors[]          (verify quote; drop unverified)
+ *   errors[]                   → errors[]          (verify quote → `verified`; drop unverified)
  *   integrity_flags            → integrityFlags    (unchanged)
  *   borderline_flags           → borderlineFlags
  *   proposed_overall_band      → overall.proposedOverallBand (audit only)
+ *   (computed)                 → overall.overallBand (ielts/bands.overallBand)
  *   overall_confidence         → overallConfidence (gate input)
  *   holistic_note              → holisticNote
  *
  * Re-exporting the canonical type here is a deliberate compile-time anchor: this
- * file fails to build if `GroundedMarkingResult` is removed or renamed, forcing
- * the wire↔result reconciliation to be revisited as part of that change.
+ * file fails to build if `MarkingResultV2` is removed or renamed, forcing the
+ * wire↔result reconciliation to be revisited as part of that change.
  */
-export type ReconciledResult = GroundedMarkingResult
+export type ReconciledResult = MarkingResultV2

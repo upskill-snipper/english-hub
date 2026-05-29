@@ -47,15 +47,19 @@
  *
  * RELATIONSHIP TO THE DESIGN DOC's `MarkingResultV2` (13 §2.8)
  * -----------------------------------------------------------
- * Design doc 13 §2.8 sketches a richer, discriminated-union `MarkingResultV2`
+ * Design doc 13 §2.8 names a richer, discriminated-union `MarkingResultV2`
  * (BandCriterionScore | MarksCriterionScore, an `Overall` union, `ValidationFlags`,
- * provenance, etc.). This file deliberately implements the simpler "workable result
- * schema" from architecture 00 §2 — a flat board-agnostic shape — as the Phase 1
- * canonical type. It is a compatible precursor/subset: the discriminated richer shape
- * can be layered on later without contradicting these field names.
+ * provenance, etc.) as THE canonical result. That full type system is now defined
+ * in this same file, BELOW the flat `GroundedMarkingResult` (see the
+ * "§2 — Canonical MarkingResultV2" section). The two coexist:
+ *   • `GroundedMarkingResult` — the flat architecture-00 §2 precursor (kept so its
+ *     existing importers do not break; it is the single home of {@link IntegrityFlags}).
+ *   • `MarkingResultV2`        — the doc-13 §2.8 canonical, discriminated result.
+ * `result-schema-v2.ts` is retained as a THIN re-export shim of the V2 members
+ * below so prior imports of `@/lib/marking/engine/result-schema-v2` keep working.
  */
 
-import type { ErrorType } from './error-taxonomy'
+import type { ErrorType, MarkingErrorType, MarkingErrorSeverity } from './error-taxonomy'
 
 /**
  * A verbatim, grounded reference into the candidate's submission.
@@ -218,3 +222,320 @@ export interface GroundedMarkingResult {
   /** A short holistic, prose summary of the submission's performance. */
   readonly holistic_note: string
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// §2 — Canonical MarkingResultV2 (doc 13 §2.1–§2.8)
+// ═══════════════════════════════════════════════════════════════════════════════
+//
+// Design doc 13 §2.8 names `MarkingResultV2` as THE canonical, persisted marking
+// result, with the richer discriminated-union shapes in §2.1–§2.7. It supersedes
+// the flat `GroundedMarkingResult` above (which is retained as a compatible
+// precursor so its existing importers keep compiling).
+//
+// SOURCES OF TRUTH (change all together or not at all):
+//   • 13-design-result-schema-and-taxonomy.md §2.2 (EvidenceSpanV2), §2.3
+//     (MarkingError), §2.4 (CriterionScore union), §2.5 (IntegrityFlags +
+//     ValidationFlags), §2.6 (Overall union), §2.7 (FeedbackPoint/FeedbackBlock),
+//     §2.8 (MarkingResultV2 + provenance). Field names/casing are doc-13-verbatim:
+//     camelCase on the result, snake_case ONLY inside {@link IntegrityFlags}.
+//   • The error taxonomy is REUSED from `./error-taxonomy` — never re-declared.
+//
+// `result-schema-v2.ts` re-exports every member below, so prior imports of
+// `@/lib/marking/engine/result-schema-v2` keep working.
+
+// ─── §2.2 Evidence spans (V2 — adds validator-owned `verified` + offsets) ─────
+
+/**
+ * A verbatim quote from the candidate's answer that grounds a band or an error
+ * (doc 13 §2.2). The richer V2 sibling of {@link EvidenceSpan}: it adds the
+ * validator-owned `verified` flag (the model never sets it) and optional char
+ * offsets into the normalised answer. The canonical result persists only verified
+ * spans; misses are counted into {@link ValidationFlags.unverifiedEvidenceCount}.
+ */
+export interface EvidenceSpanV2 {
+  /** Quote that MUST appear verbatim (whitespace-normalised) in the answer. */
+  readonly quote: string
+  /** Why this quote supports the band / illustrates the error. */
+  readonly explanation: string
+  /** Validator-owned: true once the quote is confirmed verbatim in the answer. */
+  readonly verified: boolean
+  /** Optional start char offset into the normalised answer (validator-set). */
+  readonly startOffset?: number
+  /** Optional end char offset into the normalised answer (validator-set). */
+  readonly endOffset?: number
+}
+
+// ─── §2.3 A tagged error (V2 — required `severity` + validator `verified`) ────
+
+/**
+ * A single tagged, grounded error (doc 13 §2.3). `type` is drawn from the shared
+ * closed taxonomy so errors aggregate into the §4 learner model. Unlike the
+ * legacy {@link MarkedError} (optional severity, no verified flag), here
+ * `severity` is REQUIRED and `verified` is validator-owned (same rule as
+ * {@link EvidenceSpanV2.verified}).
+ */
+export interface MarkingError {
+  /** Category of the error, from the canonical closed taxonomy. */
+  readonly type: MarkingErrorType
+  /** Verbatim offending text copied from the answer. */
+  readonly quote: string
+  /** A corrected version of the quote. */
+  readonly correction: string
+  /** Optional teaching note explaining the error and the fix. */
+  readonly explanation?: string
+  /** Relative seriousness — required on the canonical result (doc 13 §2.3). */
+  readonly severity: MarkingErrorSeverity
+  /** Validator-owned: true once the quote is confirmed verbatim in the answer. */
+  readonly verified: boolean
+}
+
+// ─── §2.4 Per-criterion score (discriminated on `scale`) ─────────────────────
+
+/**
+ * Stable criterion code (doc 13 §2.4). IELTS: `'TR' | 'CC' | 'LR' | 'GRA'`.
+ * GCSE: `'AO1'..'AO6'` / `'R1'..'W5'`. Open string so the engine is board-agnostic.
+ */
+export type CriterionCode = string
+
+/** Fields shared by both criterion scales (doc 13 §2.4 `CriterionScoreBase`). */
+export interface CriterionScoreBase {
+  /** Stable, board-specific criterion code. */
+  readonly code: CriterionCode
+  /** Human-readable criterion label. */
+  readonly label: string
+  /** The pack band-descriptor text the answer was matched to (grounding). */
+  readonly descriptorMatched: string
+  /** 1–3 verified evidence spans supporting this criterion's band/mark. */
+  readonly evidence: readonly EvidenceSpanV2[]
+  /** Model-reported per-criterion confidence in [0, 1]; input to the gate. */
+  readonly confidence: number
+  /** Short rationale tying the score to the descriptor. */
+  readonly rationale: string
+}
+
+/** IELTS / band-scale criterion, integer band 0–9 (doc 13 §2.4). */
+export interface BandCriterionScore extends CriterionScoreBase {
+  readonly scale: 'band'
+  /** Integer band 0–9. */
+  readonly band: number
+  /** Maximum band (9 for IELTS). */
+  readonly maxBand: number
+}
+
+/** GCSE / marks-based criterion (doc 13 §2.4). */
+export interface MarksCriterionScore extends CriterionScoreBase {
+  readonly scale: 'marks'
+  /** Marks awarded. */
+  readonly awardedMarks: number
+  /** Maximum marks available. */
+  readonly maxMarks: number
+  /** Descriptor band label, e.g. "Level 4". */
+  readonly band: string
+}
+
+/**
+ * A per-criterion score (doc 13 §2.4). Discriminated on `scale`: callers narrow
+ * on `'band'` (IELTS) vs `'marks'` (GCSE) before reading scale-specific fields.
+ */
+export type CriterionScoreV2 = BandCriterionScore | MarksCriterionScore
+
+// ─── §2.5 Validator-derived flags ────────────────────────────────────────────
+
+/**
+ * Flags derived by the Validator, NOT the model (doc 13 §2.5). These power the
+ * confidence gate and the audit trail. `gradeIndicativeOnly` is GCSE-only and
+ * optional (the grade came from the AQA proxy curve, not a verified board table).
+ */
+export interface ValidationFlags {
+  /** Count of evidence/error quotes the validator could not verify verbatim. */
+  readonly unverifiedEvidenceCount: number
+  /** |proposed_overall − recomputed_overall| > 0.5 (spec §5.1). */
+  readonly overallDisagreement: boolean
+  /** Self-consistency was triggered for this mark (spec §6). */
+  readonly selfConsistencyRun: boolean
+  /** Bands diverged > 1 across self-consistency runs (spec §6). */
+  readonly selfConsistencyDiverged: boolean
+  /** GCSE-only: grade is from the AQA proxy curve, not a verified board table. */
+  readonly gradeIndicativeOnly?: boolean
+}
+
+// ─── §2.6 Overall score (discriminated on `kind`, always code-computed) ───────
+
+/**
+ * IELTS / band overall (doc 13 §2.6). `overallBand` is ALWAYS recomputed in code
+ * (`src/lib/ielts/bands.ts:overallBand` — never trusted from the model);
+ * `proposedOverallBand` retains the model's figure for the §5.1 disagreement
+ * check and audit only. `bandRange` is surfaced when self-consistency diverges.
+ */
+export interface BandOverall {
+  readonly kind: 'band'
+  /** Code-recomputed mean-of-criteria, half-band rounded. */
+  readonly overallBand: number
+  /** What the model proposed — retained for audit/disagreement only. */
+  readonly proposedOverallBand: number
+  /** Optional [min, max] band range when self-consistency diverges. */
+  readonly bandRange?: readonly [number, number]
+}
+
+/**
+ * GCSE / grade overall (doc 13 §2.6). `predictedGrade`/`totalMarks` are always
+ * code-computed (`grade-predictor`); the boundary provenance fields satisfy the
+ * EU AI Act Art.12/15 traceability the legacy `MarkingResult` already carries.
+ */
+export interface GradeOverall {
+  readonly kind: 'grade'
+  /** Total marks awarded across criteria. */
+  readonly totalMarks: number
+  /** Maximum marks available. */
+  readonly maxMarks: number
+  /** Predicted GCSE grade, "1".."9". */
+  readonly predictedGrade: string
+  /** Grade band category, e.g. "Grade 8-9". */
+  readonly gradeBand: string
+  /** Provenance of the boundary model behind `predictedGrade`. */
+  readonly boundarySource?: string
+  /** Human-readable boundary provenance (EU AI Act Art.12/15). */
+  readonly boundaryDetail?: string
+}
+
+/**
+ * The overall score (doc 13 §2.6). Discriminated on `kind`: `'band'` (IELTS) vs
+ * `'grade'` (GCSE). Always computed in code, never trusted from the model.
+ */
+export type Overall = BandOverall | GradeOverall
+
+// ─── §2.7 Feedback block ─────────────────────────────────────────────────────
+
+/**
+ * A single student-facing feedback point (doc 13 §2.7). `upgradeRewrite` is
+ * optional and POLICY-GATED per module by the Feedback Generator (adult IELTS
+ * candidates may receive rewrites; school-age GCSE minors deliberately do not).
+ * `microLessonErrorType` keys a micro-lesson link to the shared taxonomy.
+ */
+export interface FeedbackPoint {
+  /** The feedback point itself. */
+  readonly point: string
+  /** Optional upgrade rewrite (spec §3/§7); policy-gated per module. */
+  readonly upgradeRewrite?: string
+  /** Optional micro-lesson link keyed by error type (spec §7). */
+  readonly microLessonErrorType?: MarkingErrorType
+  /** Optional supporting verbatim quote. */
+  readonly quote?: string
+}
+
+/**
+ * The student-facing feedback block (doc 13 §2.7), generated FROM the validated
+ * mark (the Feedback Generator reads the result read-only and never mutates
+ * marks). `nextAction` is the single prioritised next action; the GCSE legacy
+ * `nextStepsToNextGrade` list is optional so IELTS can omit it.
+ */
+export interface FeedbackBlock {
+  /** What the candidate did well. */
+  readonly strengths: readonly FeedbackPoint[]
+  /** Targeted improvements (guidance, not rewrites unless policy allows). */
+  readonly improvements: readonly FeedbackPoint[]
+  /** A single prioritised next action (spec §3 "one clear next action"). */
+  readonly nextAction: string
+  /** GCSE legacy multi-step list; optional so IELTS can omit it. */
+  readonly nextStepsToNextGrade?: readonly string[]
+  /** Holistic summary paragraph. */
+  readonly summary: string
+}
+
+// ─── §2.8 Provenance ─────────────────────────────────────────────────────────
+
+/**
+ * Provenance for EU AI Act Art.12/15 traceability (doc 13 §2.8). The model/
+ * prompt/rubric version ids are free-form strings resolved at call time (do NOT
+ * bake specific model ids or effort tiers into the type — doc 13 R5). `runCount`
+ * is 1 normally, or 3 when self-consistency ran.
+ */
+export interface ResultProvenance {
+  /** Id of the model version that produced the mark (resolved at call time). */
+  readonly modelVersionId?: string
+  /** Id of the prompt version used. */
+  readonly promptVersionId?: string
+  /** Id of the rubric/pack version used. */
+  readonly rubricVersionId?: string
+  /** ISO-8601 timestamp the mark was produced. */
+  readonly markedAt: string
+  /** 1, or 3 when self-consistency ran. */
+  readonly runCount: number
+}
+
+// ─── §2.8 The canonical result — `MarkingResultV2` ───────────────────────────
+
+/**
+ * The canonical, persisted marking result (doc 13 §2.8).
+ *
+ * `schemaVersion: 2` is the discriminator that lets readers of `ai_result`
+ * distinguish this from the legacy `schemaVersion`-less `MarkingResult` during
+ * migration. Every scored claim is traceable: criteria carry verified evidence,
+ * errors carry verified quotes + taxonomy type, the overall is code-computed,
+ * confidence and `needsHumanReview` are code-owned. The model's free-text
+ * `holisticNote` / `borderlineFlags` are retained for the UI and the gate.
+ */
+export interface MarkingResultV2 {
+  /** Schema discriminator for safe migration alongside legacy MarkingResult. */
+  readonly schemaVersion: 2
+  /** Single FK back to the exact ruleset (doc 12). e.g. "ielts_writing_v2025.1". */
+  readonly packVersion: string
+  /** Module discriminator: 'ielts_writing' | 'gcse_english' | 'eal_cefr' | ... */
+  readonly module: string
+
+  /** Routing context echoed from the Router for audit. */
+  readonly board: string
+  /** Optional subject (GCSE). */
+  readonly subject?: string
+  /** Optional qualification. */
+  readonly qualification?: string
+  /** The task type marked, e.g. "IELTS_Writing_Task2". */
+  readonly taskType: string
+  /** Optional question id within the scheme. */
+  readonly questionId?: string
+
+  /** Per-criterion marks (4 for IELTS; the AO set for GCSE). */
+  readonly criteria: readonly CriterionScoreV2[]
+
+  /** Code-computed overall (discriminated on `kind`). */
+  readonly overall: Overall
+
+  /** Tagged, verified errors — the taxonomy backbone for §4 analytics. */
+  readonly errors: readonly MarkingError[]
+
+  /** Structured integrity signals from the model (re-asserted by the validator). */
+  readonly integrityFlags: IntegrityFlags
+  /** Validator-derived flags. */
+  readonly validationFlags: ValidationFlags
+
+  /** Code-owned overall confidence in [0, 1]. */
+  readonly overallConfidence: number
+  /** True if the §5.4 gate fired (low confidence, any integrity flag, etc.). */
+  readonly needsHumanReview: boolean
+
+  /** Student-facing teaching, generated FROM the validated mark. */
+  readonly feedback: FeedbackBlock
+
+  /** Short overall comment from the model. */
+  readonly holisticNote?: string
+  /** Free-text borderline notes from the model (spec §4 `borderline_flags`). */
+  readonly borderlineFlags?: readonly string[]
+
+  /** Provenance for EU AI Act Art.12/15 traceability. */
+  readonly provenance: ResultProvenance
+}
+
+// ─── Canonical IELTS criterion codes (doc 13 §2.4 / §3.2) ────────────────────
+
+/**
+ * The four canonical IELTS short codes, in the order doc 13 §3.3 requires the
+ * validator to reorder criteria to: [TR, CC, LR, GRA]. Exported so the
+ * mapper/validator and the guard test share ONE ordered tuple.
+ */
+export const IELTS_CRITERION_CODES = ['TR', 'CC', 'LR', 'GRA'] as const
+
+/** A canonical IELTS criterion short code. */
+export type IeltsCriterionCode = (typeof IELTS_CRITERION_CODES)[number]
+
+/** Schema-version discriminator value for {@link MarkingResultV2}. */
+export const MARKING_RESULT_SCHEMA_VERSION = 2 as const

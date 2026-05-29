@@ -12,7 +12,10 @@
 // position is written down ONCE here (the `ANTHROPIC_DATA_POLICY` block).
 //
 // ── HONEST SCOPE OF WHAT CODE CAN vs CANNOT ENFORCE (read before editing) ────
-// Researched against the installed SDK `@anthropic-ai/sdk@0.90.0`:
+// Researched against the installed SDK `@anthropic-ai/sdk@0.100.1` (re-checked
+// on the bump from 0.90.0 → 0.100.1: a fresh search of client.d.ts / src/
+// client.ts for `retention|no-train|zero-data|zdr` still returns zero matches,
+// so every statement below remains true at 0.100.1):
 //
 //   • The SDK `ClientOptions` interface (node_modules/@anthropic-ai/sdk/
 //     client.d.ts L20-102) exposes: apiKey, authToken, baseURL, timeout,
@@ -101,8 +104,15 @@ export const ANTHROPIC_DATA_POLICY = {
   api: 'Messages API (commercial)',
   /** Researched against this SDK version. */
   sdkPackage: '@anthropic-ai/sdk',
-  sdkVersionResearched: '0.90.0',
+  sdkVersionResearched: '0.100.1',
   researchedOn: '2026-05-17',
+  /**
+   * The SDK-capability claims above were RE-VERIFIED on the 0.90.0 → 0.100.1
+   * bump (Decision B): client.d.ts / src/client.ts still expose no
+   * retention/no-training/ZDR option, so the posture statements remain true.
+   * The contractual flags are unchanged (still a counsel residual).
+   */
+  sdkCapabilityRecheckedOn: '2026-05-29',
 
   /**
    * Governed by the COMMERCIAL CONTRACT (not a request flag). Summary only -
