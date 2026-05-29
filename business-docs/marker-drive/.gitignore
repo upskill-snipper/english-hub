@@ -1,3 +1,6 @@
-# Allow the rendered PDFs in dist/ — they are deliverables, copied to the desktop.
-# Normally build output is gitignored, but these are the shareable artefacts.
+# The rendered PDFs in dist/ are deliverables (also copied to the desktop), so we
+# DO track them — even though the repo-root .gitignore excludes `dist/` globally.
+# Re-include this dist dir and the PDFs inside it; ignore only the scratch HTML.
+!dist/
 !dist/*.pdf
+__build_*
