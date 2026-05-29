@@ -20,7 +20,7 @@ export async function generateMetadata({
 
   if (!lesson) {
     return {
-      title: 'Lesson not found - Learn IELTS - The English Hub',
+      title: 'Lesson not found - Learn IELTS',
       alternates: { canonical },
       robots: { index: false, follow: true },
     }
@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   const level = levelMeta(lesson.level)
   return {
-    title: `${lesson.title} - Learn IELTS - The English Hub`,
+    title: `${lesson.title} - Learn IELTS`,
     description: `${lesson.summary} A ${lesson.estMinutes}-minute IELTS lesson (${level.label} level).`,
     alternates: { canonical },
   }

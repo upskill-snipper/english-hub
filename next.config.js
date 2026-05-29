@@ -166,6 +166,15 @@ const nextConfig = {
         destination: '/blog/an-inspector-calls-gcse-aqa-analysis',
         permanent: true,
       },
+      // Orphaned 404 fix: the "IGCSE English Language exam strategies" post
+      // was retired with no redirect. Its topic is fully covered by the live
+      // igcse-english-language-exam-tips post (same scope; that page's H1 even
+      // reads "...Exam Strategies"). 308 to preserve any indexed/inbound links.
+      {
+        source: '/blog/igcse-english-language-exam-strategies',
+        destination: '/blog/igcse-english-language-exam-tips',
+        permanent: true,
+      },
       // H1 H7: consolidate safeguarding onto the single authoritative
       // policy at /safeguarding.
       {

@@ -24,12 +24,14 @@ import type { Locale } from '@/lib/i18n/dictionary'
 
 const SITE_URL = 'https://theenglishhub.app'
 const PAGE_URL = `${SITE_URL}/blog`
+// Brandless document title: the root layout template appends ' - The English
+// Hub'. OG/Twitter titles are not templated, so they use the branded form.
 const PAGE_TITLE = 'Blog - The English Hub'
 const PAGE_DESCRIPTION =
   'GCSE and IGCSE English revision tips, exam-technique guides, and study advice. Calibrated to mark schemes.'
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  title: 'Blog',
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {

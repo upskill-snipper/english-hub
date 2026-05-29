@@ -61,15 +61,20 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   }
 
   const url = `${BLOG_URL}/${post.slug}`
-  const title = `${post.title} - The English Hub`
+  // Document <title> must be brandless: the root layout's title template
+  // (`%s - The English Hub`) appends the brand. Baking it in here too produced
+  // a DOUBLED suffix ("Post - The English Hub - The English Hub") in SERPs on
+  // every blog post. OG/Twitter titles are NOT templated, so they keep the
+  // brand explicitly for social cards.
+  const brandedTitle = `${post.title} - The English Hub`
   const ogImage = buildOgImage(post)
 
   return {
-    title,
+    title: post.title,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: brandedTitle,
       description: post.description,
       url,
       type: 'article',
@@ -87,7 +92,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: brandedTitle,
       description: post.description,
       images: [ogImage],
     },

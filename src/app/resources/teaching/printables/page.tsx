@@ -10,7 +10,7 @@ const SITE_URL = 'https://theenglishhub.app'
 const INDEX_PATH = '/resources/teaching/printables'
 const INDEX_URL = `${SITE_URL}${INDEX_PATH}`
 
-const PAGE_TITLE = 'GCSE & IGCSE English printables - The English Hub'
+const PAGE_TITLE = 'GCSE & IGCSE English printables'
 const PAGE_DESCRIPTION =
   'Free GCSE and IGCSE English printables for teachers and students - quote banks, essay plans, comparison grids, mark-scheme decoders, and more. Drop your email to be notified when each one lands.'
 

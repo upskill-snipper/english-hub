@@ -8,7 +8,7 @@ import { getAllLessonPlans, type LessonPlan } from '@/lib/lesson-plans/list'
 import { tMany } from '@/lib/i18n/t'
 
 const PAGE_URL = 'https://theenglishhub.app/resources/teaching/lesson-plans'
-const PAGE_TITLE = 'Free GCSE & IGCSE English lesson plans - The English Hub'
+const PAGE_TITLE = 'Free GCSE & IGCSE English lesson plans'
 const PAGE_DESCRIPTION =
   'Free, classroom-ready lesson plans for GCSE and IGCSE English. Learning objectives, activities, and timings teachers can pick up and teach.'
 

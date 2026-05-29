@@ -153,7 +153,7 @@ export async function generateMetadata({
   const textLabel = TEXT_LABELS[text]
   if (!essay) {
     return {
-      title: `${textLabel} model essay - The English Hub`,
+      title: `${textLabel} model essay`,
       alternates: { canonical: `https://theenglishhub.app/revision/model-essays/${text}/${slug}` },
     }
   }

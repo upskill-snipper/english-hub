@@ -13,7 +13,7 @@ import { redirect } from 'next/navigation'
 // fails to fire.
 export const metadata: Metadata = {
   title: 'Safeguarding Policy',
-  description: 'The English Hub Safeguarding Policy has moved to /safeguarding.',
+  description: 'The Safeguarding Policy has moved to /safeguarding.',
   robots: { index: false, follow: true },
   alternates: { canonical: 'https://theenglishhub.app/safeguarding' },
 }
