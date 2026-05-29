@@ -53,11 +53,41 @@ updated to match; this is the quick index.
 
 ---
 
-## Still open (will resurface at the relevant phase — not blocking now)
+## 2026-05-29 — OQ-2/3/4/5/6/8 → **"yes to all recommendations"**
 
-- **OQ-2** Academic-only vs +General Training at go-live.
-- **OQ-3** schema-fatal rerun policy (before P4.4).
-- **OQ-4** "high-stakes" definition for N=3 self-consistency + per-tier cost cap.
-- **OQ-5** may IELTS B2C marks show as `ai_marked` (≥0.7, no flags) vs always teacher-drafted.
-- **OQ-6** is IELTS WT2 audience guaranteed adult; server-authoritative age signal for rewrites.
-- **OQ-8** obtain the written DPA/ZDR/no-training confirmations before go-live, or launch on contractual-only + honest pending UI copy.
+Founder accepted all six recommended defaults. These are now binding on the
+build (Phase 4 marker/validator + later phases). Each is implemented as stated;
+any that proves wrong in build resurfaces with evidence rather than silently
+drifting.
+
+- **OQ-3 (schema-fatal rerun) → ONE shared retry, then human review.** A
+  structurally-broken model output (wrong criterion count, schema-fatal) shares
+  the single rerun budget with fabricated-evidence reruns: retry once; if still
+  invalid → `needsHumanReview=true`, never show a guessed mark. *Applies P4.4.*
+- **OQ-5 (AI-marked vs always-drafted) → IELTS MAY show as labelled AI practice
+  feedback at confidence ≥0.7 AND no flags.** This is the intended, documented
+  divergence from the GCSE always-teacher-drafted posture. Below 0.7, any
+  criterion <0.6, any integrity/borderline flag, or any disagreement →
+  human-review route. Every shown mark is labelled "AI practice feedback —
+  distinct from an official IELTS score" (architecture §9). *Applies P4.4/P7/P9.*
+- **OQ-6 (rewrites adults-only) → IELTS WT2 treated as adults-only; rewrites
+  default OFF for any non-adult.** The "upgrade rewrites" feedback feature is
+  gated on a server-authoritative adult age signal; if a minor can reach the
+  route, `allowRewrites=false` there. *Applies P7 (feedback).*
+- **OQ-8 (data posture at go-live) → LAUNCH on the honest contractual posture
+  with accurate "pending" UI copy; chase written DPA/ZDR/no-training
+  confirmations in parallel.** The `data-posture.ts` object already prevents
+  over-claiming while `isZeroRetentionConfigured()` is false, so launch is not
+  blocked by paperwork, and copy never overstates. *Applies P7.5/P9.5.*
+- **OQ-2 (Academic vs General) → MVP = Academic Task 2 ONLY; General Training as
+  a fast-follow** (a second knowledge pack + its own exemplars/calibration, not
+  new engineering). *Shapes P3 pack scope + P9.4 calibration coverage.*
+- **OQ-4 (high-stakes for N=3 self-consistency) → 3× on BORDERLINE (auto-detected)
+  + any PAID MOCK; single-run on free practice.** Per-tier hard cost cap
+  deferred until real cost data exists from the first calibration runs (revisit
+  at P9.4). *Applies P4.5.*
+
+## All open questions now resolved
+
+OQ-1 (A), OQ-1B (B), OQ-7 (D), and OQ-2/3/4/5/6/8 (above) are all decided.
+No open founder questions remain for the marking-engine build.
