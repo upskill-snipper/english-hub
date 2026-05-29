@@ -621,6 +621,7 @@ export const DICTIONARY: Dictionary = {
   'footer.link.cambridge_0990': { en: 'Cambridge 0990', ar: 'Cambridge 0990' },
   'footer.link.igcse_hub': { en: 'IGCSE Hub', ar: 'مركز IGCSE' },
   'footer.link.resources_hub': { en: 'Resources Hub', ar: 'مركز المصادر' },
+  'footer.link.blog': { en: 'Blog', ar: 'المدونة' },
   'footer.link.study_guides': { en: 'Study Guides', ar: 'أدلة الدراسة' },
   'footer.link.writing_skills': { en: 'Writing Skills', ar: 'مهارات الكتابة' },
   'footer.link.techniques': { en: 'Techniques', ar: 'أساليب وتقنيات' },

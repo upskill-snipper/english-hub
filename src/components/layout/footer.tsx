@@ -100,6 +100,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
     generic: true,
     links: [
       { href: '/resources', labelKey: 'footer.link.resources_hub' },
+      { href: '/blog', labelKey: 'footer.link.blog' },
       { href: '/resources/revision-notes', labelKey: 'footer.link.study_guides' },
       { href: '/resources/writing-skills', labelKey: 'footer.link.writing_skills' },
       { href: '/resources/techniques', labelKey: 'footer.link.techniques' },
