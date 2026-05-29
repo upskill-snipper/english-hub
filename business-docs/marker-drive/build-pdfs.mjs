@@ -21,7 +21,7 @@ const CHROME = [
 ].filter(Boolean)
 
 const MAP = [
-  { md: 'IELTS-calibration-executive-overview.md', pdf: 'The English Hub - IELTS Calibration (Executive Overview).pdf', title: 'IELTS Calibration — Executive Overview' },
+  { md: 'calibration-executive-overview.md', pdf: 'The English Hub - Marking Calibration (Executive Overview).pdf', title: 'Marking Calibration — Executive Overview & Rollout Plan' },
   { md: 'marker-brief.md', pdf: 'The English Hub - Marker & Examiner Brief.pdf', title: 'Marker & Examiner Brief — Marking Opportunity' },
 ]
 
