@@ -188,7 +188,12 @@ export default async function Home() {
           >
             Questions from school leaders
           </h2>
-          <SchoolFAQ />
+          {/* emitJsonLd=false: the homepage's single FAQPage block is the
+              consumer GeoFaq above (GCSE_BOARD_FAQS). Two FAQPage entities on
+              one URL is invalid/duplicate structured data (was Google's "2
+              invalid items" on the homepage), so this B2B block renders
+              visibly but does not emit a second FAQPage. */}
+          <SchoolFAQ emitJsonLd={false} />
         </div>
       </section>
 
