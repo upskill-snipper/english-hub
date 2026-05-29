@@ -16,8 +16,18 @@ import {
   MinimisationViolationError,
   redactForLog,
   DEFAULT_FORBIDDEN_KEYS,
+  MIN_VERBATIM_SPAN_CHARS,
   type MinimisableBody,
 } from '../outbound-minimisation'
+
+/**
+ * A long, clean essay span (>= MIN_VERBATIM_SPAN_CHARS) safe to pass as
+ * allowVerbatim in tests that need a valid carve-out. Padded so callers can
+ * embed PII inside it and still clear the length floor.
+ */
+const LONG_CLEAN_ESSAY =
+  'This is a sufficiently long candidate essay body that comfortably exceeds the ' +
+  'minimum verbatim span length required by the guard so it is treated as a real essay.'
 
 /** A realistic, clean marking payload: examiner persona + question + essay. */
 function cleanBody(essay: string, question = 'Discuss the causes of WW1.'): MinimisableBody {
@@ -221,6 +231,253 @@ describe('assertMinimisedPayload', () => {
     // No carve-out passed → the essay email is now flagged.
     expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
   })
+
+  // ── FIX 1: carve-out trust boundary ────────────────────────────────────────
+
+  it('(FIX1) still detects a name/email/DOB in the SYSTEM prompt even when allowVerbatim is supplied', () => {
+    // The essay is the legitimate carve-out span; it is a long, clean message body.
+    const essay = LONG_CLEAN_ESSAY
+    const body = cleanBody(essay)
+    body.system =
+      `${body.system as string} Student name: Jane Doe. ` +
+      `Email teacher.jones@school.org. Candidate DOB 2009-03-14.`
+    // A caller even over-supplies the carve-out — it must NOT blind the system scan.
+    expect(() => assertMinimisedPayload(body, { allowVerbatim: [essay] })).toThrow(
+      MinimisationViolationError,
+    )
+    try {
+      assertMinimisedPayload(body, { allowVerbatim: [essay] })
+    } catch (e) {
+      const kinds = new Set((e as MinimisationViolationError).violations.map((v) => v.kind))
+      expect(kinds.has('email')).toBe(true)
+      expect(kinds.has('likely-name')).toBe(true)
+      expect(kinds.has('date-of-birth')).toBe(true)
+      const locations = (e as MinimisationViolationError).violations.map((v) => v.location)
+      expect(locations.every((l) => l.includes('system'))).toBe(true)
+    }
+  })
+
+  it('(FIX1) does NOT apply the carve-out to the system prompt: an essay span echoed into system is still scanned', () => {
+    // The essay legitimately contains an email (allowed inside message content)...
+    const essay = `${LONG_CLEAN_ESSAY} Contact in the story was sherlock@bakerstreet.co.uk for the clue.`
+    const body = cleanBody(essay)
+    // ...but the SAME email also leaks into the system prompt. Even though it sits
+    // inside an allowVerbatim span, the system surface ignores the carve-out.
+    body.system = `${body.system as string} Send the report to sherlock@bakerstreet.co.uk`
+    expect(() => assertMinimisedPayload(body, { allowVerbatim: [essay] })).toThrow(
+      MinimisationViolationError,
+    )
+    try {
+      assertMinimisedPayload(body, { allowVerbatim: [essay] })
+    } catch (e) {
+      const emailHits = (e as MinimisationViolationError).violations.filter(
+        (v) => v.kind === 'email',
+      )
+      // Exactly the system occurrence; the message-content one was excised.
+      expect(emailHits.length).toBe(1)
+      expect(emailHits[0].location).toContain('system')
+    }
+  })
+
+  it('(FIX1) rejects an allowVerbatim span that also appears in the system prompt (misuse)', () => {
+    const sharedSpan =
+      'You are a GCSE History examiner applying the AQA mark scheme to this response.'
+    const body = cleanBody(LONG_CLEAN_ESSAY)
+    body.system = `${body.system as string} ${sharedSpan}`
+    expect(() => assertMinimisedPayload(body, { allowVerbatim: [sharedSpan] })).toThrow(
+      MinimisationViolationError,
+    )
+    try {
+      assertMinimisedPayload(body, { allowVerbatim: [sharedSpan] })
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'verbatim-misuse'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX1) rejects a too-short allowVerbatim span', () => {
+    const shortSpan = 'short essay' // < MIN_VERBATIM_SPAN_CHARS
+    expect(shortSpan.length).toBeLessThan(MIN_VERBATIM_SPAN_CHARS)
+    const body = cleanBody('A clean essay body about photosynthesis and respiration.')
+    expect(() => assertMinimisedPayload(body, { allowVerbatim: [shortSpan] })).toThrow(
+      MinimisationViolationError,
+    )
+    try {
+      assertMinimisedPayload(body, { allowVerbatim: [shortSpan] })
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'verbatim-misuse'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX1) a too-short span does NOT excise content (cannot blind the guard)', () => {
+    // The short span "@" would, if it excised, mangle every email in the payload.
+    const body = cleanBody('Reply to the marker once done about your essay structure today.')
+    body.system = `${body.system as string} contact admin@school.org`
+    // Even though we pass a short span, the email in system is still caught (the
+    // span is rejected, not used to excise).
+    expect(() => assertMinimisedPayload(body, { allowVerbatim: ['@'] })).toThrow(
+      MinimisationViolationError,
+    )
+    try {
+      assertMinimisedPayload(body, { allowVerbatim: ['@'] })
+    } catch (e) {
+      const kinds = new Set((e as MinimisationViolationError).violations.map((v) => v.kind))
+      expect(kinds.has('email')).toBe(true)
+      expect(kinds.has('verbatim-misuse')).toBe(true)
+    }
+  })
+
+  // ── FIX 2: additional DOB formats ──────────────────────────────────────────
+
+  it('(FIX2) throws on dash day-first DOB (DD-MM-YYYY)', () => {
+    const body = cleanBody('A clean essay body about WW1.')
+    body.system = `${body.system as string} Born 14-03-2009.`
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'date-of-birth'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX2) throws on 2-digit-year DOB (DD/MM/YY and DD-MM-YY)', () => {
+    for (const dob of ['14/03/09', '14-03-09']) {
+      const body = cleanBody('A clean essay body about WW1.')
+      body.system = `${body.system as string} DOB ${dob}.`
+      expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    }
+  })
+
+  it('(FIX2) throws on month-name DOB, day-first (3rd March 2009 / 03 Mar 2009)', () => {
+    for (const dob of ['3rd March 2009', '03 Mar 2009']) {
+      const body = cleanBody('A clean essay body about WW1.')
+      body.system = `${body.system as string} Date of birth: ${dob}.`
+      expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+      try {
+        assertMinimisedPayload(body)
+      } catch (e) {
+        expect(
+          (e as MinimisationViolationError).violations.some((v) => v.kind === 'date-of-birth'),
+        ).toBe(true)
+      }
+    }
+  })
+
+  it('(FIX2) throws on month-name DOB, month-first (March 3, 2009)', () => {
+    const body = cleanBody('A clean essay body about WW1.')
+    body.system = `${body.system as string} Born March 3, 2009.`
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'date-of-birth'),
+      ).toBe(true)
+    }
+  })
+
+  // ── FIX 3: identifier detection + numeric coercion ─────────────────────────
+
+  it('(FIX3) scans a NUMERIC id under a plain (non-forbidden) key', () => {
+    const body: MinimisableBody = {
+      ...cleanBody('A clean essay body about WW1.'),
+      // `ref` is not a forbidden key, and the value is a number — previously skipped.
+      ref: 88213771,
+    }
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      const v = (e as MinimisationViolationError).violations.find((x) => x.kind === 'identifier')
+      expect(v).toBeDefined()
+      expect(v?.location).toContain('ref')
+    }
+  })
+
+  it('(FIX3) detects a >=6 digit run in prose', () => {
+    const body = cleanBody('A clean essay body about WW1.')
+    body.system = `${body.system as string} Reference 5567421 attached.`
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'identifier'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX3) detects a Mongo ObjectId (24 hex)', () => {
+    const body = cleanBody('A clean essay body about WW1.')
+    body.system = `${body.system as string} doc 507f1f77bcf86cd799439011`
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'identifier'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX3) detects a ULID (Crockford base32, 26 chars)', () => {
+    const body = cleanBody('A clean essay body about WW1.')
+    body.system = `${body.system as string} id 01ARZ3NDEKTSV4RRFFQ69G5FAV`
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'identifier'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX3) detects a JWT-shaped token', () => {
+    const body = cleanBody('A clean essay body about WW1.')
+    const jwt =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N'
+    body.system = `${body.system as string} token ${jwt}`
+    expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+    try {
+      assertMinimisedPayload(body)
+    } catch (e) {
+      expect(
+        (e as MinimisationViolationError).violations.some((v) => v.kind === 'identifier'),
+      ).toBe(true)
+    }
+  })
+
+  it('(FIX3) identifier detectors do NOT fire on a long digit run INSIDE the essay (carve-out)', () => {
+    const essay = `${LONG_CLEAN_ESSAY} In maths I computed the value 1234567 during my working.`
+    const body = cleanBody(essay)
+    // The digit run is inside the verbatim essay span → excised → no violation.
+    expect(() => assertMinimisedPayload(body, { allowVerbatim: [essay] })).not.toThrow()
+  })
+
+  // ── FIX 4: forbidden-key gaps ──────────────────────────────────────────────
+
+  it('(FIX4) flags new UK-education identifier keys', () => {
+    for (const key of ['centreNumber', 'uln', 'candidateNumber', 'username']) {
+      const body: MinimisableBody = {
+        ...cleanBody('A clean essay body about WW1.'),
+        [key]: 'X',
+      }
+      expect(() => assertMinimisedPayload(body)).toThrow(MinimisationViolationError)
+      try {
+        assertMinimisedPayload(body)
+      } catch (e) {
+        expect(
+          (e as MinimisationViolationError).violations.some((v) => v.kind === 'forbidden-key'),
+        ).toBe(true)
+      }
+    }
+  })
 })
 
 describe('DEFAULT_FORBIDDEN_KEYS', () => {
@@ -228,6 +485,29 @@ describe('DEFAULT_FORBIDDEN_KEYS', () => {
     for (const k of ['name', 'email', 'dob', 'school', 'userid', 'studentid', 'uuid']) {
       expect(DEFAULT_FORBIDDEN_KEYS).toContain(k)
     }
+  })
+
+  it('(FIX4) covers UK-education / exam-administration identifier keys', () => {
+    for (const k of [
+      'centre',
+      'centrenumber',
+      'uln',
+      'candidatenumber',
+      'examnumber',
+      'seatnumber',
+      'username',
+      'initials',
+      'nhsnumber',
+    ]) {
+      expect(DEFAULT_FORBIDDEN_KEYS).toContain(k)
+    }
+  })
+
+  it("(FIX4) the 'school' entry uses plain ASCII (no stray non-breaking space leaked into the value)", () => {
+    // Regression for the line-~132 nit: the entry must be exactly 'school' with no
+    // non-ASCII whitespace fused into the string literal.
+    expect(DEFAULT_FORBIDDEN_KEYS).toContain('school')
+    expect(DEFAULT_FORBIDDEN_KEYS.some((k) => / /.test(k))).toBe(false)
   })
 })
 

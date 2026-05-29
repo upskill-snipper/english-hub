@@ -36,6 +36,26 @@
 // allowed; PII *outside* the essay is not. The carve-out is applied by exact
 // substring excision only — it never weakens detection elsewhere.
 //
+// ── SCOPING THE CARVE-OUT (the trust boundary — read before editing) ─────────
+// The carve-out is DANGEROUS if applied too broadly: any byte excised by
+// `allowVerbatim` is, by construction, invisible to every detector wherever it
+// appears. So a caller that over-supplies `allowVerbatim` (passes the whole
+// user-message, or accidentally the system prompt, or a span that happens to also
+// appear in `system`) would silently blind the guard for that text everywhere —
+// letting real PII outside the essay ride through. To contain that blast radius,
+// the carve-out is SCOPED:
+//   1. It applies ONLY to message-content strings (paths under `messages`) — the
+//      surfaces that structurally ARE the candidate essay/question. It is NEVER
+//      applied to the `system` prompt or to any other top-level/metadata field;
+//      those are always scanned on their FULL text.
+//   2. A `MIN_VERBATIM_SPAN_CHARS` (40) floor rejects spans too short to be a real
+//      essay/question — a short span would over-match across the payload and is a
+//      sign of misuse, so it throws.
+//   3. Any `allowVerbatim` span that ALSO occurs in the `system` prompt is treated
+//      as misuse (the essay is never the examiner persona) and throws.
+// These three rules mean a name/email/DOB in the system prompt is ALWAYS detected
+// even when `allowVerbatim` is supplied.
+//
 // This module is pure and does NO network I/O. It does not import the Anthropic
 // SDK; it inspects a structural, SDK-shaped plain object so it can be unit-tested
 // in isolation and reused by any caller that assembles a request body.
@@ -70,7 +90,14 @@ export interface MinimisableBody {
 /** What the guard found, surfaced on the thrown error for triage + logging. */
 export interface MinimisationViolation {
   /** The class of identifier detected. */
-  kind: 'email' | 'date-of-birth' | 'uuid' | 'likely-name' | 'forbidden-key'
+  kind:
+    | 'email'
+    | 'date-of-birth'
+    | 'uuid'
+    | 'likely-name'
+    | 'forbidden-key'
+    | 'identifier'
+    | 'verbatim-misuse'
   /** Where it was found (e.g. `system`, `messages[0].content`, key path). */
   location: string
   /**
@@ -89,6 +116,14 @@ export interface AssertMinimisedOptions {
    * an email inside the essay does not trip the guard, but the same email in the
    * system prompt does. Pass every span you are sending verbatim; an empty or
    * missing value means "scan everything" (strictest mode).
+   *
+   * SCOPING (see file header "SCOPING THE CARVE-OUT"): the excision applies ONLY
+   * to message-content strings (paths under `messages`). The `system` prompt and
+   * any other top-level/metadata field are ALWAYS scanned on their full text, so
+   * over-supplying `allowVerbatim` cannot blind the guard on those surfaces.
+   * Each span must be at least {@link MIN_VERBATIM_SPAN_CHARS} characters, and a
+   * span that also appears in the `system` prompt is rejected as misuse — both
+   * throw {@link MinimisationViolationError}.
    */
   allowVerbatim?: string | readonly string[]
   /**
@@ -139,9 +174,30 @@ export const DEFAULT_FORBIDDEN_KEYS: readonly string[] = [
   'zip',
   'nino', // UK National Insurance number
   'upn', // UK Unique Pupil Number
+  // UK-education / exam-administration identifiers (substring-matched, lower-cased).
+  'centre', // also matches 'centrenumber', 'centrename', UK spelling of exam centre
+  'center', // US spelling, defensive
+  'centrenumber',
+  'centrename',
+  'uln', // UK Unique Learner Number
+  'candidatenumber',
+  'candidateref',
+  'examnumber',
+  'seatnumber',
+  'username',
+  'initials',
+  'nhsnumber',
   'ip',
   'ipaddress',
 ] as const
+
+/**
+ * Minimum length (characters) for an `allowVerbatim` span to be accepted. A
+ * shorter span is almost never a real essay/question and, because excision is a
+ * plain substring removal, a short span would over-match across the whole payload
+ * and silently blind the detectors. Spans below this floor are rejected (FIX 1).
+ */
+export const MIN_VERBATIM_SPAN_CHARS = 40
 
 // ── Detectors (conservative, well-commented) ─────────────────────────────────
 //
@@ -166,21 +222,75 @@ const EMAIL_PATTERN = String.raw`[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}`
  * date forms rather than every number:
  *   • ISO 8601:            1998-07-21   (YYYY-MM-DD)
  *   • slashes / dots:      21/07/1998, 21.07.1998, 07/21/1998
- * Years are constrained to 1900–2099 so we don't flag every "12/34". This is a
- * structural DOB-shaped detector, not a semantic one — appropriate for the
- * non-essay surfaces (system prompt / metadata) we scan after the carve-out.
+ *   • dashes, day-first:   21-07-1998   (DD-MM-YYYY)
+ *   • 2-digit-year forms:  21/07/98, 21-07-98, 07/21/98
+ *   • month-name forms:    3rd March 2009, March 3, 2009, 03 Mar 2009
+ * Numeric years are constrained to 1900–2099 (4-digit) so we don't flag every
+ * "12/34". These are structural DOB-shaped detectors, not semantic ones —
+ * appropriate for the non-essay surfaces (system prompt / metadata) we scan, and
+ * (per FIX 1) the essay is excised from message-content before these run, so
+ * essay false-positive risk is low.
  */
 const ISO_DOB_PATTERN = String.raw`\b(?:19|20)\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])\b`
+
+// Day-first / month-first separated by '/', '.', or '-', with a 4-digit year.
 const SLASH_DOB_PATTERN =
-  String.raw`\b(?:0?[1-9]|[12]\d|3[01])[\/.](?:0?[1-9]|1[0-2])[\/.](?:19|20)\d{2}\b` +
+  String.raw`\b(?:0?[1-9]|[12]\d|3[01])[\/.\-](?:0?[1-9]|1[0-2])[\/.\-](?:19|20)\d{2}\b` +
   '|' +
-  String.raw`\b(?:0?[1-9]|1[0-2])[\/.](?:0?[1-9]|[12]\d|3[01])[\/.](?:19|20)\d{2}\b`
+  String.raw`\b(?:0?[1-9]|1[0-2])[\/.\-](?:0?[1-9]|[12]\d|3[01])[\/.\-](?:19|20)\d{2}\b`
+
+// 2-digit-year variants (DD-MM-YY, DD/MM/YY, MM/DD/YY). Anchored to two leading
+// day/month components followed by a 2-digit year that is NOT followed by more
+// digits, so we do not clip the first two digits off a 4-digit year.
+const SHORT_YEAR_DOB_PATTERN =
+  String.raw`\b(?:0?[1-9]|[12]\d|3[01])[\/.\-](?:0?[1-9]|1[0-2])[\/.\-]\d{2}\b(?!\d)` +
+  '|' +
+  String.raw`\b(?:0?[1-9]|1[0-2])[\/.\-](?:0?[1-9]|[12]\d|3[01])[\/.\-]\d{2}\b(?!\d)`
+
+// Month-name forms. `MONTH` covers full and 3-letter abbreviations.
+const MONTH = String.raw`(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)`
+const ORDINAL_DAY = String.raw`(?:0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?`
+// "3rd March 2009", "03 Mar 2009"  (day month year)
+const MONTHNAME_DMY_PATTERN = String.raw`\b${ORDINAL_DAY}\s+${MONTH}\.?\s+(?:19|20)\d{2}\b`
+// "March 3, 2009", "Mar 03 2009"  (month day year)
+const MONTHNAME_MDY_PATTERN = String.raw`\b${MONTH}\.?\s+${ORDINAL_DAY},?\s+(?:19|20)\d{2}\b`
 
 /**
  * UUID / GUID — a strong signal of an internal record identifier (userId, etc.)
  * that has leaked into the prompt text. Canonical 8-4-4-4-12 hex form.
  */
 const UUID_PATTERN = String.raw`\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b`
+
+// ── Identifier detectors (FIX 3) ──────────────────────────────────────────────
+// These are gated to run ONLY on the post-carve-out (essay-excised) text, because
+// long digit runs and base32/hex blobs can legitimately appear in an essay (a
+// quoted ISBN, a maths working, a hex colour). After the essay is excised from
+// message-content, a residual long identifier on a non-essay surface is a strong
+// leak signal.
+
+/**
+ * A run of >=6 consecutive digits, as a prose identifier signal (student
+ * reference, candidate number, ID printed into the prompt). Word-boundaried so a
+ * year (4 digits) or a short page number does not trip it. The 4-digit DOB years
+ * the date detectors rely on stay below the 6-digit floor.
+ */
+const LONG_DIGIT_RUN_PATTERN = String.raw`\b\d{6,}\b`
+
+/** 24-character hexadecimal Mongo ObjectId. */
+const MONGO_OBJECTID_PATTERN = String.raw`\b[0-9a-fA-F]{24}\b`
+
+/**
+ * ULID — 26-char Crockford base32 (excludes I, L, O, U). Anchored to exactly 26
+ * such chars to avoid matching ordinary 26-letter words (which would contain the
+ * excluded letters and/or be lowercase).
+ */
+const ULID_PATTERN = String.raw`\b[0-7][0-9A-HJKMNP-TV-Z]{25}\b`
+
+/**
+ * JWT-shaped token: three base64url segments separated by dots, the first two of
+ * meaningful length. A bearer/JWT in a prompt is always a leak.
+ */
+const JWT_PATTERN = String.raw`\beyJ[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]+\b`
 
 /**
  * A "labelled name" — a colon/equation that explicitly attributes a person's
@@ -200,14 +310,53 @@ const UUID_PATTERN = String.raw`\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[
 const LABELLED_NAME_PATTERN = String.raw`\b(?:[Ss]tudent|[Cc]andidate|[Pp]upil|[Ll]earner|[Nn]ame|[Cc]hild)(?:'s)?\s*(?:[Ff]ull\s*)?[Nn]ame\s*[:=]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+`
 const LABELLED_PERSON_PATTERN = String.raw`\b(?:[Ss]tudent|[Cc]andidate|[Pp]upil|[Ll]earner|[Cc]hild)\s*[:=]\s*[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+`
 
-/** Each detector: a label and the source pattern (compiled fresh per use). */
-const DETECTORS: ReadonlyArray<{ kind: MinimisationViolation['kind']; pattern: string }> = [
-  { kind: 'email', pattern: EMAIL_PATTERN },
-  { kind: 'date-of-birth', pattern: ISO_DOB_PATTERN },
-  { kind: 'date-of-birth', pattern: SLASH_DOB_PATTERN },
-  { kind: 'uuid', pattern: UUID_PATTERN },
-  { kind: 'likely-name', pattern: LABELLED_NAME_PATTERN },
-  { kind: 'likely-name', pattern: LABELLED_PERSON_PATTERN },
+/**
+ * Detector tiers control WHICH surfaces a detector runs on:
+ *
+ *  • `'always'` — the high-precision PII detectors (email, DOB, UUID, labelled
+ *    name). These run on EVERY collected string, including structural metadata,
+ *    because their shapes essentially never occur by accident in benign fields.
+ *
+ *  • `'identifier'` — the broader identifier detectors (JWT, ULID, Mongo
+ *    ObjectId, long digit-run). These are deliberately aggressive and WOULD
+ *    false-positive on benign structural metadata (e.g. a model id like
+ *    `claude-sonnet-4-20250514` contains an 8-digit run). They therefore run
+ *    ONLY on identifier-eligible surfaces: the `system` prompt, message content
+ *    (after the essay carve-out), and coerced numeric scalars (the `{ ref: 88213 }`
+ *    case from FIX 3a). They do NOT run on arbitrary string metadata such as the
+ *    `model` field — a residual long digit run there is request plumbing, not a
+ *    learner identifier, and flagging it is exactly the kind of false positive
+ *    that gets the guard disabled (doc 19 §5).
+ */
+type DetectorTier = 'always' | 'identifier'
+
+/**
+ * Each detector: a label, a source pattern (compiled fresh per use), and a tier.
+ * The `'always'` tier runs on every collected string; the `'identifier'` tier
+ * runs only on identifier-eligible surfaces (see {@link DetectorTier}). The
+ * carve-out has already excised the essay from message-content before any of
+ * these run, so essay false positives are avoided (FIX 1 + FIX 3).
+ */
+const DETECTORS: ReadonlyArray<{
+  kind: MinimisationViolation['kind']
+  pattern: string
+  tier: DetectorTier
+}> = [
+  { kind: 'email', pattern: EMAIL_PATTERN, tier: 'always' },
+  { kind: 'date-of-birth', pattern: ISO_DOB_PATTERN, tier: 'always' },
+  { kind: 'date-of-birth', pattern: SLASH_DOB_PATTERN, tier: 'always' },
+  { kind: 'date-of-birth', pattern: SHORT_YEAR_DOB_PATTERN, tier: 'always' },
+  { kind: 'date-of-birth', pattern: MONTHNAME_DMY_PATTERN, tier: 'always' },
+  { kind: 'date-of-birth', pattern: MONTHNAME_MDY_PATTERN, tier: 'always' },
+  { kind: 'uuid', pattern: UUID_PATTERN, tier: 'always' },
+  { kind: 'likely-name', pattern: LABELLED_NAME_PATTERN, tier: 'always' },
+  { kind: 'likely-name', pattern: LABELLED_PERSON_PATTERN, tier: 'always' },
+  // Identifier detectors — order matters only for which kind is reported first;
+  // JWT/ULID/ObjectId are checked before the generic long-digit run.
+  { kind: 'identifier', pattern: JWT_PATTERN, tier: 'identifier' },
+  { kind: 'identifier', pattern: ULID_PATTERN, tier: 'identifier' },
+  { kind: 'identifier', pattern: MONGO_OBJECTID_PATTERN, tier: 'identifier' },
+  { kind: 'identifier', pattern: LONG_DIGIT_RUN_PATTERN, tier: 'identifier' },
 ]
 
 /**
@@ -273,12 +422,23 @@ function collectStrings(
   value: unknown,
   path: string,
   forbiddenKeys: readonly string[],
-  out: { path: string; text: string }[],
+  out: { path: string; text: string; numeric?: boolean }[],
   keyViolations: MinimisationViolation[],
   seen: Set<object>,
 ): void {
   if (typeof value === 'string') {
     out.push({ path, text: value })
+    return
+  }
+  // FIX 3a: coerce numeric scalars to strings so a numeric id / packed DOB under
+  // a non-forbidden key (e.g. `{ ref: 88213 }`, `{ ts: 19980721 }`) is still
+  // scanned by the detectors rather than skipped entirely. A coerced number is
+  // always an identifier-eligible surface (a bare number is never benign prose),
+  // so it is flagged `numeric` to enable the identifier-tier detectors on it.
+  if (typeof value === 'number' || typeof value === 'bigint') {
+    if (typeof value === 'bigint' || Number.isFinite(value)) {
+      out.push({ path, text: String(value), numeric: true })
+    }
     return
   }
   if (value === null || typeof value !== 'object') return
@@ -313,8 +473,17 @@ function collectStrings(
  * global `RegExp` is compiled per detector per call so there is no shared
  * `lastIndex` state across calls (see the DETECTORS note above).
  */
-function detectInText(text: string, location: string, out: MinimisationViolation[]): void {
-  for (const { kind, pattern } of DETECTORS) {
+function detectInText(
+  text: string,
+  location: string,
+  out: MinimisationViolation[],
+  runIdentifierTier: boolean,
+): void {
+  for (const { kind, pattern, tier } of DETECTORS) {
+    // The aggressive identifier tier runs only on identifier-eligible surfaces
+    // (system prompt, message content, numeric scalars) — never on arbitrary
+    // string metadata such as the model id (see DetectorTier docs).
+    if (tier === 'identifier' && !runIdentifierTier) continue
     const re = new RegExp(pattern, 'g')
     for (const m of text.matchAll(re)) {
       out.push({ kind, location, redactedSample: redactSample(m[0]) })
@@ -334,10 +503,17 @@ function detectInText(text: string, location: string, out: MinimisationViolation
  * Call it immediately before dispatching the request, so the guarantee holds for
  * the exact bytes that go to Anthropic.
  *
+ * The verbatim carve-out is SCOPED (FIX 1): it is applied ONLY to message-content
+ * strings (paths under `messages`), never to the `system` prompt or any other
+ * field, which are always scanned on their full text. Spans shorter than
+ * {@link MIN_VERBATIM_SPAN_CHARS}, or spans that also appear in the `system`
+ * prompt, are rejected as misuse and throw.
+ *
  * @param body The assembled request body (`{ system?, messages? , ... }`).
  * @param opts Carve-out + tightening options. Pass the essay via `allowVerbatim`.
  * @throws {MinimisationViolationError} when any identifier is detected outside
- *         the allowed verbatim spans.
+ *         the allowed verbatim spans, or when an `allowVerbatim` span is misused
+ *         (too short, or also present in the `system` prompt).
  */
 export function assertMinimisedPayload(
   body: MinimisableBody,
@@ -349,21 +525,72 @@ export function assertMinimisedPayload(
   ]
   const verbatim = normaliseVerbatim(opts.allowVerbatim)
 
-  const strings: { path: string; text: string }[] = []
+  const strings: { path: string; text: string; numeric?: boolean }[] = []
   const keyViolations: MinimisationViolation[] = []
   collectStrings(body, '', forbiddenKeys, strings, keyViolations, new Set<object>())
 
+  // FIX 1: validate the carve-out spans BEFORE using them. A too-short span (which
+  // would over-match across the payload) or a span that also appears in the
+  // `system` prompt (a sign the caller has mis-supplied the essay) is misuse and
+  // fails closed. Collect the system text once for the cross-check.
+  const verbatimViolations: MinimisationViolation[] = []
+  const systemText = strings
+    .filter(({ path }) => isSystemPath(path))
+    .map(({ text }) => text)
+    .join('\n')
+  for (const span of verbatim) {
+    if (span.length < MIN_VERBATIM_SPAN_CHARS) {
+      verbatimViolations.push({
+        kind: 'verbatim-misuse',
+        location: 'allowVerbatim',
+        redactedSample: `span too short (len ${span.length} < ${MIN_VERBATIM_SPAN_CHARS})`,
+      })
+      continue
+    }
+    if (systemText.includes(span)) {
+      verbatimViolations.push({
+        kind: 'verbatim-misuse',
+        location: 'allowVerbatim',
+        redactedSample: 'span also present in system prompt',
+      })
+    }
+  }
+  // Only spans that passed validation are allowed to excise content. A rejected
+  // short span MUST NOT excise (it would blind detection), so drop it here too.
+  const usableVerbatim = verbatim.filter((s) => s.length >= MIN_VERBATIM_SPAN_CHARS)
+
   const textViolations: MinimisationViolation[] = []
-  for (const { path, text } of strings) {
-    // Apply the carve-out: remove verbatim essay/question spans, THEN detect.
-    const scannable = stripVerbatim(text, verbatim)
-    detectInText(scannable, path || '(root)', textViolations)
+  for (const { path, text, numeric } of strings) {
+    // FIX 1: the carve-out applies ONLY to message-content strings. The `system`
+    // prompt and any other top-level/metadata field are scanned on FULL text, so
+    // an over-broad allowVerbatim cannot blind the guard on those surfaces.
+    const onMessage = isMessagePath(path)
+    const scannable = onMessage ? stripVerbatim(text, usableVerbatim) : text
+    // Identifier-tier detectors (long digit runs, ObjectId, ULID, JWT) run only
+    // on prose/identifier surfaces: the system prompt, message content, or a
+    // coerced numeric scalar. They do NOT run on arbitrary string metadata such
+    // as the `model` id, which would otherwise false-positive (see DetectorTier).
+    const runIdentifierTier = onMessage || isSystemPath(path) || numeric === true
+    detectInText(scannable, path || '(root)', textViolations, runIdentifierTier)
   }
 
-  const all = [...keyViolations, ...textViolations]
+  const all = [...keyViolations, ...verbatimViolations, ...textViolations]
   if (all.length > 0) {
     throw new MinimisationViolationError(all)
   }
+}
+
+/** True when a collected-string path is (under) the `system` prompt. */
+function isSystemPath(path: string): boolean {
+  return path === 'system' || path.startsWith('system[') || path.startsWith('system.')
+}
+
+/**
+ * True when a collected-string path is message content — the only surface the
+ * verbatim carve-out is allowed to touch (FIX 1). Matches `messages[i]...`.
+ */
+function isMessagePath(path: string): boolean {
+  return path.startsWith('messages[') || path.startsWith('messages.') || path === 'messages'
 }
 
 /**
