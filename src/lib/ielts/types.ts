@@ -333,10 +333,23 @@ export type IeltsAttempt = ObjectiveAttempt | TaskAttempt
 
 // ─── Profile (drives diagnostic, plan, progress, prediction) ───────────────
 
+/**
+ * How a band was arrived at:
+ *   • 'assessed'  - auto-marked (Listening/Reading) or AI-assessed (Writing/
+ *                   Speaking) from a real response
+ *   • 'estimated' - a self-estimate / fallback (e.g. the user skipped the
+ *                   Writing or Speaking task in the diagnostic)
+ * Used by the diagnostic so a four-skill band can mix real assessment with a
+ * graceful fallback without the UI breaking.
+ */
+export type BandSource = 'assessed' | 'estimated'
+
 export interface SkillBand {
   skill: IeltsSkill
   band: Band | null
   attempts: number
+  /** Provenance of `band`, when known (diagnostic surfaces this). */
+  source?: BandSource
 }
 
 export interface IeltsProfile {

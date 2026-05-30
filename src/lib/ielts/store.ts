@@ -13,6 +13,7 @@ import type { IeltsLevel } from './curriculum'
 import {
   IELTS_SKILLS,
   type Band,
+  type BandSource,
   type IeltsAttempt,
   type IeltsProfile,
   type IeltsSkill,
@@ -115,6 +116,16 @@ export interface DiagnosticResult {
   date: string
   estimatedBands: Partial<Record<IeltsSkill, Band>>
   overall: Band | null
+  /**
+   * Per-skill provenance of each band in `estimatedBands`:
+   *   • Reading/Listening are always 'assessed' (auto-marked).
+   *   • Writing/Speaking are 'assessed' when the learner submitted the AI-marked
+   *     diagnostic task, or 'estimated' when they skipped it and fell back to a
+   *     self-estimate.
+   * Optional + backward-compatible: older saved diagnostics omit it, and the
+   * plan page only reads `estimatedBands`/`overall`.
+   */
+  sources?: Partial<Record<IeltsSkill, BandSource>>
 }
 
 export function getDiagnostic(): DiagnosticResult | null {

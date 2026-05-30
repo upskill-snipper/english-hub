@@ -14,11 +14,14 @@ import {
   CheckCircle2,
   Info,
   RotateCcw,
+  Loader2,
+  AlertTriangle,
   type LucideIcon,
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Textarea } from '@/components/ui/textarea'
 
 import {
   objectiveToBand,
@@ -28,10 +31,11 @@ import {
   bandColour,
   bandBgColour,
 } from '@/lib/ielts/bands'
-import { saveDiagnostic } from '@/lib/ielts/store'
+import { genId, saveAttempt, saveDiagnostic } from '@/lib/ielts/store'
 import {
   SKILL_META,
   type Band,
+  type BandSource,
   type IeltsSkill,
   type ListeningSection,
   type ObjectiveQuestion,
@@ -40,6 +44,8 @@ import {
 import { useT } from '@/lib/i18n/use-t'
 import { useLocale } from '@/lib/i18n/use-locale'
 import { IELTS_DIAGNOSTIC_DICTIONARY } from '@/lib/i18n/dictionary-ielts-diagnostic'
+import { DictationButton } from '@/components/speech/DictationButton'
+import { Recorder } from '../speaking/_components/Recorder'
 
 import {
   DIAGNOSTIC_READING_PASSAGES,
@@ -47,8 +53,8 @@ import {
   DIAGNOSTIC_READING_QUESTIONS,
   DIAGNOSTIC_LISTENING_QUESTIONS,
   DIAGNOSTIC_ESTIMATED_MINUTES,
-  SELF_ASSESS,
-  selfAssessBand,
+  DIAGNOSTIC_WRITING_TASK,
+  DIAGNOSTIC_SPEAKING_TASK,
 } from './diagnostic-items'
 
 // ─── Local i18n helper ────────────────────────────────────────────────────────
@@ -80,24 +86,41 @@ function useDiagT(): (key: string, vars?: Vars) => string {
 }
 
 // ─── IELTS Placement Diagnostic ──────────────────────────────────────────────
-// A ~10-minute placement test that estimates a band per skill:
+// A ~12-minute placement test that estimates a band per skill:
 //   • Reading + Listening - short auto-marked objective sets (objectiveToBand)
-//   • Writing + Speaking - an honest self-estimate (4-point confidence scale)
-// Results are saved via saveDiagnostic() and the learner is sent to /ielts/plan.
-// Every band shown is framed as an estimate, never an official result.
+//   • Writing + Speaking  - ONE short productive task each, AI-ASSESSED via the
+//     free, rate-limited /api/ielts/diagnostic-assess endpoint (band + one-line
+//     justification). If a learner skips a productive task we fall back to a
+//     conservative self-estimate band so the four-skill overall still works.
+// Results are saved via saveDiagnostic() (which write-throughs to the server) and
+// the learner is sent to /ielts/plan. Every band shown is framed as an estimate.
 // ──────────────────────────────────────────────────────────────────────────────
 
 type Phase = 'intro' | 'questions' | 'result'
 
-// Local answer state: objective answers keyed by question id; self-ratings 1-4.
+// Local answer state: objective answers keyed by question id.
 type ObjectiveAnswers = Record<string, string>
-type SelfRatings = Partial<Record<'writing' | 'speaking', 1 | 2 | 3 | 4>>
+
+// AI-assessed productive result for Writing/Speaking within the diagnostic.
+interface AssessState {
+  status: 'idle' | 'assessing' | 'done' | 'skipped' | 'error'
+  band?: Band
+  justification?: string
+  error?: string
+}
+
+// Band used as a graceful fallback when a productive task is skipped. Deliberately
+// conservative (mid-scale) so a skip never inflates the overall band.
+const SKIP_FALLBACK_BAND: Band = 5
 
 interface ComputedResult {
   estimatedBands: Partial<Record<IeltsSkill, Band>>
+  sources: Partial<Record<IeltsSkill, BandSource>>
   overall: Band | null
   readingCorrect: number
   listeningCorrect: number
+  writingJustification?: string
+  speakingJustification?: string
 }
 
 // ─── Auto-marking helpers ─────────────────────────────────────────────────────
@@ -123,12 +146,22 @@ function isAnswered(raw: string | undefined): boolean {
   return raw !== undefined && raw.trim() !== ''
 }
 
+function countWords(text: string): number {
+  const t = text.trim()
+  return t ? t.split(/\s+/).length : 0
+}
+
 export default function IeltsDiagnosticPage() {
   const t = useDiagT()
   const [phase, setPhase] = useState<Phase>('intro')
   const [answers, setAnswers] = useState<ObjectiveAnswers>({})
-  const [ratings, setRatings] = useState<SelfRatings>({})
   const [result, setResult] = useState<ComputedResult | null>(null)
+
+  // Productive (AI-assessed) task state.
+  const [writingText, setWritingText] = useState('')
+  const [speakingText, setSpeakingText] = useState('')
+  const [writing, setWriting] = useState<AssessState>({ status: 'idle' })
+  const [speaking, setSpeaking] = useState<AssessState>({ status: 'idle' })
 
   const readingQs = DIAGNOSTIC_READING_QUESTIONS
   const listeningQs = DIAGNOSTIC_LISTENING_QUESTIONS
@@ -138,15 +171,59 @@ export default function IeltsDiagnosticPage() {
     () => [...readingQs, ...listeningQs].filter((q) => isAnswered(answers[q.id])).length,
     [answers, readingQs, listeningQs],
   )
-  const allSelfRated = ratings.writing !== undefined && ratings.speaking !== undefined
-  const allAnswered = answeredObjective === totalObjective && allSelfRated
+
+  // A productive task is "resolved" once it has been assessed OR explicitly skipped.
+  const writingResolved = writing.status === 'done' || writing.status === 'skipped'
+  const speakingResolved = speaking.status === 'done' || speaking.status === 'skipped'
+  const allAnswered = answeredObjective === totalObjective && writingResolved && speakingResolved
 
   function setObjective(id: string, value: string) {
     setAnswers((prev) => ({ ...prev, [id]: value }))
   }
 
-  function setRating(skill: 'writing' | 'speaking', value: 1 | 2 | 3 | 4) {
-    setRatings((prev) => ({ ...prev, [skill]: value }))
+  // ── AI assessment for a productive skill ────────────────────────────────────
+  async function assess(skill: 'writing' | 'speaking') {
+    const isWriting = skill === 'writing'
+    const text = (isWriting ? writingText : speakingText).trim()
+    const promptText = isWriting ? DIAGNOSTIC_WRITING_TASK.prompt : DIAGNOSTIC_SPEAKING_TASK.prompt
+    const setState = isWriting ? setWriting : setSpeaking
+
+    setState({ status: 'assessing' })
+    try {
+      const res = await fetch('/api/ielts/diagnostic-assess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ skill, promptText, response: text }),
+      })
+      const data: unknown = await res.json().catch(() => null)
+
+      if (!res.ok) {
+        const message =
+          data && typeof data === 'object' && 'error' in data && typeof data.error === 'string'
+            ? data.error
+            : t('ielts.diagnostic.assess.error')
+        setState({ status: 'error', error: message })
+        return
+      }
+
+      if (
+        !data ||
+        typeof data !== 'object' ||
+        typeof (data as { band?: unknown }).band !== 'number'
+      ) {
+        setState({ status: 'error', error: t('ielts.diagnostic.assess.error') })
+        return
+      }
+
+      const d = data as { band: Band; justification?: string }
+      setState({ status: 'done', band: d.band, justification: d.justification })
+    } catch {
+      setState({ status: 'error', error: t('ielts.diagnostic.assess.error') })
+    }
+  }
+
+  function skip(skill: 'writing' | 'speaking') {
+    ;(skill === 'writing' ? setWriting : setSpeaking)({ status: 'skipped' })
   }
 
   function handleSubmit() {
@@ -155,32 +232,109 @@ export default function IeltsDiagnosticPage() {
 
     const readingBand = objectiveToBand('reading', readingCorrect, readingQs.length)
     const listeningBand = objectiveToBand('listening', listeningCorrect, listeningQs.length)
-    const writingBand = ratings.writing ? selfAssessBand('writing', ratings.writing) : undefined
-    const speakingBand = ratings.speaking ? selfAssessBand('speaking', ratings.speaking) : undefined
+
+    // Writing/Speaking: prefer the AI-assessed band; fall back to a conservative
+    // estimate band when skipped, recording provenance in `sources`.
+    const writingAssessed = writing.status === 'done' && writing.band !== undefined
+    const speakingAssessed = speaking.status === 'done' && speaking.band !== undefined
+    const writingBand: Band = writingAssessed ? (writing.band as Band) : SKIP_FALLBACK_BAND
+    const speakingBand: Band = speakingAssessed ? (speaking.band as Band) : SKIP_FALLBACK_BAND
 
     const estimatedBands: Partial<Record<IeltsSkill, Band>> = {
       reading: readingBand,
       listening: listeningBand,
-      ...(writingBand !== undefined ? { writing: writingBand } : {}),
-      ...(speakingBand !== undefined ? { speaking: speakingBand } : {}),
+      writing: writingBand,
+      speaking: speakingBand,
     }
 
-    const overall = overallBand([
-      listeningBand,
-      readingBand,
-      writingBand ?? null,
-      speakingBand ?? null,
-    ])
+    const sources: Partial<Record<IeltsSkill, BandSource>> = {
+      reading: 'assessed',
+      listening: 'assessed',
+      writing: writingAssessed ? 'assessed' : 'estimated',
+      speaking: speakingAssessed ? 'assessed' : 'estimated',
+    }
 
-    saveDiagnostic({ date: new Date().toISOString(), estimatedBands, overall })
-    setResult({ estimatedBands, overall, readingCorrect, listeningCorrect })
+    const overall = overallBand([listeningBand, readingBand, writingBand, speakingBand])
+
+    const now = new Date().toISOString()
+    saveDiagnostic({
+      date: now,
+      estimatedBands,
+      overall,
+      sources,
+    })
+
+    // Persist the four-skill diagnostic result as IELTS attempts too, so the
+    // band feeds the profile / progress / future Readiness Report and (via the
+    // store's fire-and-forget POST) the /api/ielts/attempts server write-through
+    // - exactly like a real Listening/Reading set or a Writing/Speaking task.
+    // Objective skills are always assessed; productive skills are only persisted
+    // when AI-assessed (a skipped estimate is a UI fallback, not a real attempt).
+    try {
+      saveAttempt({
+        id: genId('diag-r'),
+        skill: 'reading',
+        testId: 'diagnostic',
+        rawScore: readingCorrect,
+        total: readingQs.length,
+        band: readingBand,
+        date: now,
+      })
+      saveAttempt({
+        id: genId('diag-l'),
+        skill: 'listening',
+        testId: 'diagnostic',
+        rawScore: listeningCorrect,
+        total: listeningQs.length,
+        band: listeningBand,
+        date: now,
+      })
+      if (writingAssessed) {
+        saveAttempt({
+          id: genId('diag-w'),
+          skill: 'writing',
+          taskType: 'writing-task-2',
+          promptId: DIAGNOSTIC_WRITING_TASK.id,
+          responseText: writingText.trim(),
+          band: writingBand,
+          criteria: [],
+          date: now,
+        })
+      }
+      if (speakingAssessed) {
+        saveAttempt({
+          id: genId('diag-s'),
+          skill: 'speaking',
+          taskType: 'speaking-part-1',
+          promptId: DIAGNOSTIC_SPEAKING_TASK.id,
+          responseText: speakingText.trim(),
+          band: speakingBand,
+          criteria: [],
+          date: now,
+        })
+      }
+    } catch {
+      // Persistence is best-effort; never block the result on it.
+    }
+    setResult({
+      estimatedBands,
+      sources,
+      overall,
+      readingCorrect,
+      listeningCorrect,
+      writingJustification: writingAssessed ? writing.justification : undefined,
+      speakingJustification: speakingAssessed ? speaking.justification : undefined,
+    })
     setPhase('result')
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   function handleRetake() {
     setAnswers({})
-    setRatings({})
+    setWritingText('')
+    setSpeakingText('')
+    setWriting({ status: 'idle' })
+    setSpeaking({ status: 'idle' })
     setResult(null)
     setPhase('intro')
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -223,14 +377,19 @@ export default function IeltsDiagnosticPage() {
             readingPassages={DIAGNOSTIC_READING_PASSAGES}
             listeningSections={DIAGNOSTIC_LISTENING_SECTIONS}
             answers={answers}
-            ratings={ratings}
             onObjective={setObjective}
-            onRating={setRating}
             onSubmit={handleSubmit}
             allAnswered={allAnswered}
             answeredObjective={answeredObjective}
             totalObjective={totalObjective}
-            allSelfRated={allSelfRated}
+            writingText={writingText}
+            speakingText={speakingText}
+            onWritingText={setWritingText}
+            onSpeakingText={setSpeakingText}
+            writing={writing}
+            speaking={speaking}
+            onAssess={assess}
+            onSkip={skip}
           />
         )}
 
@@ -249,27 +408,37 @@ type TFn = (key: string, vars?: Vars) => string
 
 function IntroPanel({ t, onStart }: { t: TFn; onStart: () => void }) {
   // Skill titles stay Latin (skill names used as labels); body + marking tag
-  // are translated. `auto` flags which Badge variant + tag to use.
-  const steps: { icon: LucideIcon; title: string; bodyKey: string; auto: boolean }[] = [
+  // are translated. `marking` flags which Badge variant + tag to use.
+  const steps: {
+    icon: LucideIcon
+    title: string
+    bodyKey: string
+    marking: 'auto' | 'ai'
+  }[] = [
     {
       icon: BookOpen,
       title: 'Reading',
       bodyKey: 'ielts.diagnostic.intro.reading.body',
-      auto: true,
+      marking: 'auto',
     },
     {
       icon: Headphones,
       title: 'Listening',
       bodyKey: 'ielts.diagnostic.intro.listening.body',
-      auto: true,
+      marking: 'auto',
     },
     {
       icon: PenLine,
       title: 'Writing',
       bodyKey: 'ielts.diagnostic.intro.writing.body',
-      auto: false,
+      marking: 'ai',
     },
-    { icon: Mic, title: 'Speaking', bodyKey: 'ielts.diagnostic.intro.speaking.body', auto: false },
+    {
+      icon: Mic,
+      title: 'Speaking',
+      bodyKey: 'ielts.diagnostic.intro.speaking.body',
+      marking: 'ai',
+    },
   ]
 
   return (
@@ -286,11 +455,11 @@ function IntroPanel({ t, onStart }: { t: TFn; onStart: () => void }) {
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <h3 className="font-serif text-lg font-medium">{s.title}</h3>
-                <Badge variant={s.auto ? 'secondary' : 'outline'} className="text-xs">
+                <Badge variant={s.marking === 'auto' ? 'secondary' : 'outline'} className="text-xs">
                   {t(
-                    s.auto
+                    s.marking === 'auto'
                       ? 'ielts.diagnostic.tag.auto_marked'
-                      : 'ielts.diagnostic.tag.self_estimate',
+                      : 'ielts.diagnostic.tag.ai_assessed',
                   )}
                 </Badge>
               </div>
@@ -317,43 +486,39 @@ function QuestionsPanel({
   readingPassages,
   listeningSections,
   answers,
-  ratings,
   onObjective,
-  onRating,
   onSubmit,
   allAnswered,
   answeredObjective,
   totalObjective,
-  allSelfRated,
+  writingText,
+  speakingText,
+  onWritingText,
+  onSpeakingText,
+  writing,
+  speaking,
+  onAssess,
+  onSkip,
 }: {
   t: TFn
   readingPassages: ReadingPassage[]
   listeningSections: ListeningSection[]
   answers: ObjectiveAnswers
-  ratings: SelfRatings
   onObjective: (id: string, value: string) => void
-  onRating: (skill: 'writing' | 'speaking', value: 1 | 2 | 3 | 4) => void
   onSubmit: () => void
   allAnswered: boolean
   answeredObjective: number
   totalObjective: number
-  allSelfRated: boolean
+  writingText: string
+  speakingText: string
+  onWritingText: (v: string) => void
+  onSpeakingText: (v: string) => void
+  writing: AssessState
+  speaking: AssessState
+  onAssess: (skill: 'writing' | 'speaking') => void
+  onSkip: (skill: 'writing' | 'speaking') => void
 }) {
-  // Rebuild the submit-gate sentence from translatable fragments, preserving the
-  // original conditional structure (count clause / "and" / rate clause / tail).
   const objectiveIncomplete = answeredObjective < totalObjective
-  const gateParts: string[] = []
-  if (objectiveIncomplete) {
-    gateParts.push(
-      t('ielts.diagnostic.gate.answer_count', {
-        total: totalObjective,
-        answered: answeredObjective,
-      }),
-    )
-  }
-  if (objectiveIncomplete && !allSelfRated) gateParts.push(t('ielts.diagnostic.gate.and'))
-  if (!allSelfRated) gateParts.push(t('ielts.diagnostic.gate.rate_both'))
-  const gateText = gateParts.join('') + t('ielts.diagnostic.gate.to_see')
 
   // Continuous question numbering within each skill (reading 1..R, listening 1..L),
   // computed from the per-passage/section question counts so numbers run on across
@@ -427,31 +592,54 @@ function QuestionsPanel({
         </div>
       </SkillSection>
 
-      {/* ── Self-assessment ── */}
+      {/* ── Writing (AI-assessed) ── */}
       <SkillSection
         icon={PenLine}
-        title={t('ielts.diagnostic.section.selfassess.title')}
-        subtitle={t('ielts.diagnostic.section.selfassess.subtitle')}
+        title={t('ielts.diagnostic.section.writing.title')}
+        subtitle={t('ielts.diagnostic.section.writing.subtitle', {
+          words: DIAGNOSTIC_WRITING_TASK.targetWords,
+        })}
       >
-        <div className="space-y-8">
-          {SELF_ASSESS.map((s) => (
-            <SelfAssessBlock
-              key={s.skill}
-              t={t}
-              skill={s.skill}
-              levels={s.levels}
-              value={ratings[s.skill]}
-              onChange={(v) => onRating(s.skill, v)}
-            />
-          ))}
-        </div>
+        <WritingTaskBlock
+          t={t}
+          value={writingText}
+          onChange={onWritingText}
+          state={writing}
+          onAssess={() => onAssess('writing')}
+          onSkip={() => onSkip('writing')}
+        />
+      </SkillSection>
+
+      {/* ── Speaking (AI-assessed from transcript) ── */}
+      <SkillSection
+        icon={Mic}
+        title={t('ielts.diagnostic.section.speaking.title')}
+        subtitle={t('ielts.diagnostic.section.speaking.subtitle')}
+      >
+        <SpeakingTaskBlock
+          t={t}
+          value={speakingText}
+          onChange={onSpeakingText}
+          state={speaking}
+          onAssess={() => onAssess('speaking')}
+          onSkip={() => onSkip('speaking')}
+        />
       </SkillSection>
 
       <EstimateCaveat t={t} />
 
       {/* ── Submit ── */}
       <div className="space-y-3">
-        {!allAnswered && <p className="text-sm text-muted-foreground">{gateText}</p>}
+        {!allAnswered && (
+          <p className="text-sm text-muted-foreground">
+            {objectiveIncomplete
+              ? t('ielts.diagnostic.gate.answer_count', {
+                  total: totalObjective,
+                  answered: answeredObjective,
+                }) + t('ielts.diagnostic.gate.to_see')
+              : t('ielts.diagnostic.gate.rate_both') + t('ielts.diagnostic.gate.to_see')}
+          </p>
+        )}
         <Button size="lg" className="w-full sm:w-auto" onClick={onSubmit} disabled={!allAnswered}>
           <Sparkles className="mr-2 h-4 w-4" />
           {t('ielts.diagnostic.cta.see_bands')}
@@ -628,25 +816,31 @@ function OptionButton({
   )
 }
 
-// ─── Self-assessment block (4-point scale) ─────────────────────────────────────
+// ─── Writing task (AI-assessed) ────────────────────────────────────────────────
 
-function SelfAssessBlock({
+function WritingTaskBlock({
   t,
-  skill,
-  levels,
   value,
   onChange,
+  state,
+  onAssess,
+  onSkip,
 }: {
   t: TFn
-  skill: 'writing' | 'speaking'
-  levels: { value: 1 | 2 | 3 | 4; label: string; description: string }[]
-  value: 1 | 2 | 3 | 4 | undefined
-  onChange: (value: 1 | 2 | 3 | 4) => void
+  value: string
+  onChange: (v: string) => void
+  state: AssessState
+  onAssess: () => void
+  onSkip: () => void
 }) {
-  const meta = SKILL_META[skill]
-  // Translated copy is keyed by skill + level value; scoring still uses lvl.value
-  // (and lvl.band via the source data) so behaviour is unchanged. The 4-point
-  // ladder labels are shared across both skills.
+  const meta = SKILL_META.writing
+  const words = countWords(value)
+  const assessing = state.status === 'assessing'
+  const done = state.status === 'done'
+  const skipped = state.status === 'skipped'
+  // Mirror the endpoint's minimum so the button only enables on a real attempt.
+  const canSubmit = value.trim().length >= 50 && !assessing && !done
+
   return (
     <div className="rounded-xl border border-border bg-card p-5 shadow-soft sm:p-6">
       <div className="mb-3 flex items-center gap-2">
@@ -657,43 +851,204 @@ function SelfAssessBlock({
         </span>
         <h3 className="font-serif text-lg font-medium">{meta.label}</h3>
       </div>
-      <p className="mb-4 text-sm font-medium leading-relaxed">
-        {t(`ielts.diagnostic.selfassess.${skill}.question`)}
-      </p>
-      <div className="space-y-2">
-        {levels.map((lvl) => (
-          <button
-            key={lvl.value}
-            type="button"
-            onClick={() => onChange(lvl.value)}
-            className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition-colors ${
-              value === lvl.value
-                ? 'border-primary bg-primary/10'
-                : 'border-border bg-background hover:border-primary/40 hover:bg-accent'
-            }`}
-          >
-            <span
-              className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border ${
-                value === lvl.value ? 'border-primary' : 'border-muted-foreground/40'
-              }`}
-            >
-              {value === lvl.value && <span className="h-2 w-2 rounded-full bg-primary" />}
-            </span>
-            <span>
-              <span
-                className={`block text-sm font-semibold ${value === lvl.value ? 'text-primary' : ''}`}
-              >
-                {t(`ielts.diagnostic.selfassess.level${lvl.value}.label`)}
-              </span>
-              <span className="block text-xs leading-relaxed text-muted-foreground">
-                {t(`ielts.diagnostic.selfassess.${skill}.level${lvl.value}.desc`)}
-              </span>
-            </span>
-          </button>
-        ))}
+
+      <p className="mb-4 text-sm font-medium leading-relaxed">{DIAGNOSTIC_WRITING_TASK.prompt}</p>
+
+      <Textarea
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={t('ielts.diagnostic.writing.placeholder')}
+        rows={10}
+        disabled={done}
+        className="min-h-[180px] resize-y"
+      />
+      <div className="mt-1 text-right text-xs tabular-nums text-muted-foreground">
+        {t('ielts.diagnostic.writing.words', { count: words })}
+      </div>
+
+      <AssessControls
+        t={t}
+        state={state}
+        assessLabelKey="ielts.diagnostic.writing.assess"
+        assessingLabelKey="ielts.diagnostic.writing.assessing"
+        assessedLabelKey="ielts.diagnostic.writing.assessed"
+        skipLabelKey="ielts.diagnostic.writing.skip"
+        canSubmit={canSubmit}
+        onAssess={onAssess}
+        onSkip={onSkip}
+      />
+
+      {done && <AssessedNote t={t} state={state} />}
+      {skipped && (
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+          {t('ielts.diagnostic.assess.skipped_note')}
+        </p>
+      )}
+    </div>
+  )
+}
+
+// ─── Speaking task (AI-assessed from transcript) ───────────────────────────────
+
+function SpeakingTaskBlock({
+  t,
+  value,
+  onChange,
+  state,
+  onAssess,
+  onSkip,
+}: {
+  t: TFn
+  value: string
+  onChange: (v: string) => void
+  state: AssessState
+  onAssess: () => void
+  onSkip: () => void
+}) {
+  const meta = SKILL_META.speaking
+  const assessing = state.status === 'assessing'
+  const done = state.status === 'done'
+  const skipped = state.status === 'skipped'
+  const canSubmit = value.trim().length >= 20 && !assessing && !done
+
+  return (
+    <div className="rounded-xl border border-border bg-card p-5 shadow-soft sm:p-6">
+      <div className="mb-3 flex items-center gap-2">
+        <span
+          className={`flex h-7 w-7 items-center justify-center rounded-lg text-xs font-bold ${meta.bgColour} ${meta.colour}`}
+        >
+          {meta.short}
+        </span>
+        <h3 className="font-serif text-lg font-medium">{meta.label}</h3>
+      </div>
+
+      <p className="mb-4 text-sm font-medium leading-relaxed">{DIAGNOSTIC_SPEAKING_TASK.prompt}</p>
+
+      {/* Reuse the speaking page's MediaRecorder (self-review; audio never uploaded). */}
+      <div className="mb-4 space-y-1.5">
+        <p className="text-xs font-medium text-muted-foreground">
+          {t('ielts.diagnostic.speaking.recorder_label')}
+        </p>
+        <Recorder />
+      </div>
+
+      <div className="mb-1.5 flex items-center justify-between gap-2">
+        <p className="text-xs font-medium text-muted-foreground">
+          {t('ielts.diagnostic.speaking.transcript_label')}
+        </p>
+        {!done && (
+          <DictationButton
+            label={t('ielts.diagnostic.speaking.dictate')}
+            onText={(chunk) => onChange((value ? value.trimEnd() + ' ' : '') + chunk)}
+          />
+        )}
+      </div>
+      <Textarea
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={t('ielts.diagnostic.speaking.placeholder')}
+        rows={6}
+        disabled={done}
+        className="min-h-[120px] resize-y"
+      />
+
+      <AssessControls
+        t={t}
+        state={state}
+        assessLabelKey="ielts.diagnostic.speaking.assess"
+        assessingLabelKey="ielts.diagnostic.speaking.assessing"
+        assessedLabelKey="ielts.diagnostic.speaking.assessed"
+        skipLabelKey="ielts.diagnostic.speaking.skip"
+        canSubmit={canSubmit}
+        onAssess={onAssess}
+        onSkip={onSkip}
+      />
+
+      {done && <AssessedNote t={t} state={state} />}
+      {skipped && (
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+          {t('ielts.diagnostic.assess.skipped_note')}
+        </p>
+      )}
+    </div>
+  )
+}
+
+// ─── Shared productive-task controls + assessed note ───────────────────────────
+
+function AssessControls({
+  t,
+  state,
+  assessLabelKey,
+  assessingLabelKey,
+  assessedLabelKey,
+  skipLabelKey,
+  canSubmit,
+  onAssess,
+  onSkip,
+}: {
+  t: TFn
+  state: AssessState
+  assessLabelKey: string
+  assessingLabelKey: string
+  assessedLabelKey: string
+  skipLabelKey: string
+  canSubmit: boolean
+  onAssess: () => void
+  onSkip: () => void
+}) {
+  const assessing = state.status === 'assessing'
+  const done = state.status === 'done'
+
+  if (done) {
+    return (
+      <div className="mt-4 flex items-center gap-2 rounded-lg border border-emerald-500/25 bg-emerald-500/10 p-3 text-sm">
+        <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
+        <span className="font-medium">
+          {t(assessedLabelKey, { band: bandLabel(state.band ?? null) })}
+        </span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="mt-4 space-y-3">
+      {state.status === 'error' && state.error && (
+        <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{state.error}</span>
+        </div>
+      )}
+      <div className="flex flex-wrap items-center gap-3">
+        <Button onClick={onAssess} disabled={!canSubmit}>
+          {assessing ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              {t(assessingLabelKey)}
+            </>
+          ) : (
+            <>
+              <Sparkles className="mr-2 h-4 w-4" />
+              {t(assessLabelKey)}
+            </>
+          )}
+        </Button>
+        <Button
+          variant="ghost"
+          className="text-muted-foreground"
+          onClick={onSkip}
+          disabled={assessing}
+        >
+          {t(skipLabelKey)}
+        </Button>
       </div>
     </div>
   )
+}
+
+function AssessedNote({ t: _t, state }: { t: TFn; state: AssessState }) {
+  if (!state.justification) return null
+  return <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{state.justification}</p>
 }
 
 // ─── Result ─────────────────────────────────────────────────────────────────
@@ -709,7 +1064,7 @@ function ResultPanel({
   result: ComputedResult
   onRetake: () => void
 }) {
-  const { estimatedBands, overall, readingCorrect, listeningCorrect } = result
+  const { estimatedBands, sources, overall, readingCorrect, listeningCorrect } = result
 
   return (
     <div className="space-y-8">
@@ -731,7 +1086,15 @@ function ResultPanel({
         {RESULT_SKILL_ORDER.map((skill) => {
           const band = estimatedBands[skill] ?? null
           const meta = SKILL_META[skill]
-          const isSelf = skill === 'writing' || skill === 'speaking'
+          const isProductive = skill === 'writing' || skill === 'speaking'
+          const source = sources[skill]
+          // Tag: Reading/Listening auto-marked; Writing/Speaking AI-assessed or
+          // (if skipped) labelled as a skipped/self-estimate fallback.
+          const tagKey = !isProductive
+            ? 'ielts.diagnostic.tag.auto_marked'
+            : source === 'assessed'
+              ? 'ielts.diagnostic.tag.ai_assessed'
+              : 'ielts.diagnostic.tag.skipped'
           return (
             <div key={skill} className={`rounded-xl border p-4 ${bandBgColour(band)}`}>
               <div className="mb-1 flex items-center gap-1.5">
@@ -745,17 +1108,29 @@ function ResultPanel({
                 </span>
               </div>
               <p className={`text-2xl font-bold ${bandColour(band)}`}>{bandLabel(band)}</p>
-              <p className="mt-0.5 text-[11px] text-muted-foreground">
-                {t(
-                  isSelf
-                    ? 'ielts.diagnostic.tag.self_estimate'
-                    : 'ielts.diagnostic.tag.auto_marked',
-                )}
-              </p>
+              <p className="mt-0.5 text-[11px] text-muted-foreground">{t(tagKey)}</p>
             </div>
           )
         })}
       </div>
+
+      {/* AI justifications for the productive skills (when assessed) */}
+      {(result.writingJustification || result.speakingJustification) && (
+        <div className="space-y-2">
+          {result.writingJustification && (
+            <div className="flex items-start gap-2 rounded-xl border border-border bg-card p-4 shadow-soft">
+              <PenLine className="mt-0.5 h-4 w-4 shrink-0 text-violet-400" />
+              <p className="text-sm text-muted-foreground">{result.writingJustification}</p>
+            </div>
+          )}
+          {result.speakingJustification && (
+            <div className="flex items-start gap-2 rounded-xl border border-border bg-card p-4 shadow-soft">
+              <Mic className="mt-0.5 h-4 w-4 shrink-0 text-rose-400" />
+              <p className="text-sm text-muted-foreground">{result.speakingJustification}</p>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Auto-marked detail */}
       <div className="rounded-xl border border-border bg-card p-5 shadow-soft">

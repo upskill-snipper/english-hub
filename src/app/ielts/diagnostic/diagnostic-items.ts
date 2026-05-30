@@ -230,4 +230,36 @@ export function selfAssessBand(
   return level ? level.band : 4
 }
 
-export const DIAGNOSTIC_ESTIMATED_MINUTES = 10
+// ─── AI-assessed productive tasks (Writing + Speaking) ──────────────────────
+// One short prompt each, sent to /api/ielts/diagnostic-assess for a real AI band
+// estimate. These replace the self-estimate as the PRIMARY signal; the 4-point
+// self-estimate above is kept only as a graceful fallback when a learner skips
+// the task. Content is original, written for this placement test.
+
+export interface DiagnosticWritingTask {
+  id: string
+  /** Task-2-style opinion prompt. */
+  prompt: string
+  targetWords: number
+}
+
+export interface DiagnosticSpeakingTask {
+  id: string
+  /** Part-1-style question. */
+  prompt: string
+}
+
+export const DIAGNOSTIC_WRITING_TASK: DiagnosticWritingTask = {
+  id: 'diag-writing-technology',
+  prompt:
+    'Some people believe that technology has made our lives more complicated rather than simpler. To what extent do you agree or disagree? Give reasons for your answer and include relevant examples from your own knowledge or experience.',
+  targetWords: 250,
+}
+
+export const DIAGNOSTIC_SPEAKING_TASK: DiagnosticSpeakingTask = {
+  id: 'diag-speaking-hometown',
+  prompt:
+    'Tell me about your hometown. What is it like, what do you like or dislike about it, and would you recommend it to a visitor? Speak for about a minute.',
+}
+
+export const DIAGNOSTIC_ESTIMATED_MINUTES = 12

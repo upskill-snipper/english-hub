@@ -46,17 +46,75 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'اقرأ نص محادثة قصيرة وجاوب على 4 أسئلة.',
   },
   'ielts.diagnostic.intro.writing.body': {
-    en: 'Rate your own confidence - no essay needed yet.',
-    ar: 'قيّم ثقتك بنفسك - ما يحتاج مقال الحين.',
+    en: 'Write one short essay and get an AI band estimate.',
+    ar: 'اكتب مقال قصير واحد وخذ تقدير Band بالذكاء الاصطناعي.',
   },
   'ielts.diagnostic.intro.speaking.body': {
-    en: 'Rate your own confidence - no recording needed yet.',
-    ar: 'قيّم ثقتك بنفسك - ما يحتاج تسجيل الحين.',
+    en: 'Answer one spoken question and get an AI band estimate.',
+    ar: 'جاوب على سؤال محكي واحد وخذ تقدير Band بالذكاء الاصطناعي.',
   },
 
   // Marking tags
   'ielts.diagnostic.tag.auto_marked': { en: 'Auto-marked', ar: 'تصحيح تلقائي' },
   'ielts.diagnostic.tag.self_estimate': { en: 'Self-estimate', ar: 'تقدير ذاتي' },
+  'ielts.diagnostic.tag.ai_assessed': { en: 'AI-assessed', ar: 'تقييم بالذكاء الاصطناعي' },
+  'ielts.diagnostic.tag.skipped': { en: 'Skipped', ar: 'تم تخطّيه' },
+
+  // ─── Diagnostic: AI Writing task ────────────────────────────────────
+  'ielts.diagnostic.section.writing.title': { en: 'Part 3 - Writing', ar: 'الجزء 3 - Writing' },
+  'ielts.diagnostic.section.writing.subtitle': {
+    en: 'Write a short response (aim for about {words} words). We will estimate your Writing band with AI.',
+    ar: 'اكتب رد قصير (حاول توصل حوالي {words} كلمة). بنقدّر Band الكتابة مالك بالذكاء الاصطناعي.',
+  },
+  'ielts.diagnostic.writing.placeholder': {
+    en: 'Type your essay here…',
+    ar: 'اكتب مقالك هنا…',
+  },
+  'ielts.diagnostic.writing.words': { en: '{count} words', ar: '{count} كلمة' },
+  'ielts.diagnostic.writing.assess': { en: 'Assess my Writing', ar: 'قيّم Writing مالي' },
+  'ielts.diagnostic.writing.assessing': { en: 'Assessing…', ar: 'يجري التقييم…' },
+  'ielts.diagnostic.writing.assessed': {
+    en: 'Writing assessed: Band {band}',
+    ar: 'تم تقييم Writing: Band {band}',
+  },
+  'ielts.diagnostic.writing.skip': { en: 'Skip this task', ar: 'تخطّ هذي المهمة' },
+
+  // ─── Diagnostic: AI Speaking task ───────────────────────────────────
+  'ielts.diagnostic.section.speaking.title': { en: 'Part 4 - Speaking', ar: 'الجزء 4 - Speaking' },
+  'ielts.diagnostic.section.speaking.subtitle': {
+    en: 'Record your answer for your own review, then type what you said. We will estimate your Speaking band with AI from the transcript.',
+    ar: 'سجّل جوابك لمراجعتك الخاصة، وبعدها اكتب اللي قلته. بنقدّر Band المحادثة مالك بالذكاء الاصطناعي من النص.',
+  },
+  'ielts.diagnostic.speaking.recorder_label': {
+    en: 'Record your answer (for your own review - not uploaded)',
+    ar: 'سجّل جوابك (لمراجعتك الخاصة - ما يترفع)',
+  },
+  'ielts.diagnostic.speaking.transcript_label': {
+    en: 'Type what you said',
+    ar: 'اكتب اللي قلته',
+  },
+  'ielts.diagnostic.speaking.placeholder': {
+    en: 'Type or dictate your answer here…',
+    ar: 'اكتب أو أملِ جوابك هنا…',
+  },
+  'ielts.diagnostic.speaking.dictate': { en: 'Speak to transcribe', ar: 'تكلّم للتفريغ النصي' },
+  'ielts.diagnostic.speaking.assess': { en: 'Assess my Speaking', ar: 'قيّم Speaking مالي' },
+  'ielts.diagnostic.speaking.assessing': { en: 'Assessing…', ar: 'يجري التقييم…' },
+  'ielts.diagnostic.speaking.assessed': {
+    en: 'Speaking assessed: Band {band}',
+    ar: 'تم تقييم Speaking: Band {band}',
+  },
+  'ielts.diagnostic.speaking.skip': { en: 'Skip this task', ar: 'تخطّ هذي المهمة' },
+
+  // Shared: assessment error + skipped-note
+  'ielts.diagnostic.assess.error': {
+    en: 'We could not assess that. Please check your answer and try again.',
+    ar: 'ما قدرنا نقيّم هذا. راجع جوابك وحاول مرة ثانية.',
+  },
+  'ielts.diagnostic.assess.skipped_note': {
+    en: 'Skipped - we will show a rough self-estimate instead. Do the full task in the module for a real band.',
+    ar: 'تم التخطّي - بنوريك تقدير ذاتي تقريبي بداله. سوِّ المهمة الكاملة في الوحدة عشان Band حقيقي.',
+  },
 
   // Intro CTA
   'ielts.diagnostic.intro.start': {
@@ -191,8 +249,8 @@ export const IELTS_DIAGNOSTIC_DICTIONARY: Record<string, { en: string; ar?: stri
     ar: 'هذي تقديرات، مو نتائج رسمية.',
   },
   'ielts.diagnostic.caveat.body': {
-    en: 'This placement test gives an indicative starting point. Writing and Speaking bands are self-estimates - refine them with full practice and AI feedback in the Writing and Speaking modules. Official IELTS bands can only come from a real exam.',
-    ar: 'اختبار تحديد المستوى هذا يعطيك نقطة بداية تقريبية. Band الكتابة والمحادثة تقديرات ذاتية - ظبّطها بالتدريب الكامل وتقييم الذكاء الاصطناعي في وحدات Writing و Speaking. Band الـ IELTS الرسمي ما يجي إلا من امتحان حقيقي.',
+    en: 'This placement test gives an indicative starting point. Writing and Speaking bands are AI estimates from a single short task - refine them with full practice and detailed AI feedback in the Writing and Speaking modules. Official IELTS bands can only come from a real exam.',
+    ar: 'اختبار تحديد المستوى هذا يعطيك نقطة بداية تقريبية. Band الكتابة والمحادثة تقديرات بالذكاء الاصطناعي من مهمة قصيرة وحدة - ظبّطها بالتدريب الكامل وتقييم مفصّل بالذكاء الاصطناعي في وحدات Writing و Speaking. Band الـ IELTS الرسمي ما يجي إلا من امتحان حقيقي.',
   },
 
   // ─── Plan: page header ──────────────────────────────────────────────

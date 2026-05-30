@@ -68,6 +68,7 @@ export type AiAuditFeature =
   | 'marking/run'
   | 'ielts/writing-feedback'
   | 'ielts/speaking-feedback'
+  | 'ielts/diagnostic-assess'
   | 'ielts/statement-feedback'
 
 /** Token usage, when the SDK surfaces it (streaming/raw-fetch paths may not). */
