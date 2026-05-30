@@ -30,7 +30,7 @@ export interface CourseAccessResult {
 export async function checkCourseAccess(
   supabase: SupabaseClient,
   userId: string,
-  courseId: string
+  courseId: string,
 ): Promise<CourseAccessResult> {
   // 1. Check subscription status on the user's profile
   const { data: profile, error: profileError } = await supabase
@@ -82,7 +82,7 @@ export async function checkCourseAccess(
  */
 export async function hasActiveSubscription(
   supabase: SupabaseClient,
-  userId: string
+  userId: string,
 ): Promise<boolean> {
   const { data: profile, error } = await supabase
     .from('profiles')
@@ -96,4 +96,38 @@ export async function hasActiveSubscription(
   }
 
   return profile?.subscription_status === 'pro'
+}
+
+/**
+ * Whether the user may use premium IELTS features (AI Writing/Speaking band
+ * feedback). IELTS is a SEPARATE paid entitlement from the global 'pro' flag, so
+ * it has its own column `profiles.ielts_status` ('free' | 'active').
+ *
+ * Access is granted when EITHER:
+ *   • `ielts_status === 'active'` — a dedicated IELTS subscription (the new SKU), OR
+ *   • `subscription_status === 'pro'` — the legacy all-access plan, which is
+ *     grandfathered into IELTS so no existing subscriber loses a feature.
+ *
+ * A NEW IELTS-only subscriber gets `ielts_status='active'` WITHOUT
+ * `subscription_status='pro'`, so they get IELTS but not GCSE marking — that
+ * separation is the whole point of the distinct entitlement.
+ *
+ * @param supabase - An authenticated Supabase client
+ * @param userId   - The user's ID
+ * @returns        - Whether the user has IELTS premium access
+ */
+export async function hasIeltsAccess(supabase: SupabaseClient, userId: string): Promise<boolean> {
+  const { data: profile, error } = await supabase
+    .from('profiles')
+    .select('subscription_status, ielts_status')
+    .eq('id', userId)
+    .single()
+
+  if (error) {
+    console.error('[course-access] Failed to check IELTS access:', error)
+    return false
+  }
+
+  const p = profile as { subscription_status?: string; ielts_status?: string } | null
+  return p?.ielts_status === 'active' || p?.subscription_status === 'pro'
 }

@@ -35,7 +35,7 @@ import {
   serverErrorResponse,
 } from '@/lib/api-response'
 import { checkMinorAIConsent } from '@/lib/consent-check'
-import { hasActiveSubscription } from '@/lib/course-access'
+import { hasIeltsAccess } from '@/lib/course-access'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { contentSafetyCheck } from '@/lib/content-safety'
 import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
@@ -366,12 +366,12 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse()
     }
 
-    // 1b. Subscription / paywall - AI speaking feedback is a Premium feature
-    //     (same gate as essay feedback).
-    const isPremium = await hasActiveSubscription(supabase, user.id)
+    // 1b. IELTS entitlement gate - AI speaking feedback needs the IELTS plan
+    //     (or a grandfathered all-access 'pro' plan). See hasIeltsAccess.
+    const isPremium = await hasIeltsAccess(supabase, user.id)
     if (!isPremium) {
       return forbiddenResponse(
-        'AI Speaking feedback is a Premium feature. Please upgrade your subscription to get IELTS band feedback on your spoken answers.',
+        'AI Speaking feedback is a Premium feature. Subscribe to the IELTS plan to get IELTS band feedback on your spoken answers.',
       )
     }
 
