@@ -889,6 +889,42 @@ model MarkerBatch {
   @@map("marker_batches")
 }
 
+// ─── Calibration Baselines (Stage 5) ──────────────────────────────────────────
+// Persists a measured/promoted ML calibration run per marking AREA so the
+// train-the-ML loop can record AI-vs-human agreement and promote a green
+// baseline that flips the G-LIVE gate live. Stores the CalibrationBaseline shape
+// from src/lib/marking/engine/calibration/gate.ts (until now it had no storage,
+// which is why loadCurrentCalibrationBaseline returned null and the gate stayed
+// fail-closed). New table; additive.
+model CalibrationBaseline {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  // Stable area identifier, e.g. "ielts:academic:writing-task-2".
+  areaKey         String   @map("area_key")
+  examBoard       String?  @map("exam_board")
+  qualification   String?
+  paper           String?
+  n               Int
+  withinHalfBand  Float    @map("within_half_band")
+  exactBand       Float?   @map("exact_band")
+  perBandCoverage Json     @default("{}") @map("per_band_coverage")
+  report          Json     @default("{}")
+  // Regression link to the prior promoted baseline for this area (self-FK).
+  priorBaselineId String?  @map("prior_baseline_id") @db.Uuid
+  // 'measured' (recorded, not live) | 'promoted' (the live baseline for its area).
+  status          String   @default("measured")
+  gatePassed      Boolean  @default(false) @map("gate_passed")
+  gateDetail      Json?    @map("gate_detail")
+  createdBy       String?  @map("created_by") @db.Uuid
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  priorBaseline CalibrationBaseline?  @relation("CalibrationBaselinePrior", fields: [priorBaselineId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  successors    CalibrationBaseline[] @relation("CalibrationBaselinePrior")
+
+  @@index([areaKey, createdAt(sort: Desc)])
+  @@index([areaKey, status, createdAt(sort: Desc)])
+  @@map("calibration_baselines")
+}
+
 // ─── Smart IP — versioning + moderation + training corpus ─────────────────
 // Mirrors supabase/migrations/20260518_smart_ip_marking.sql. FKs to
 // Supabase-only tables (auth.users, school_members) are plain Uuid columns
