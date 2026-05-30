@@ -1,0 +1,69 @@
+/* ─── Candidate Readiness Report - print / "Save as PDF" stylesheet ──────────
+ * Zero-dependency PDF export: the report renders on-screen, the user clicks
+ * "Save as PDF" which calls window.print(), and these rules make the printed /
+ * exported document clean and page-friendly. Imported by the readiness page.
+ *
+ * Anything that should NOT appear in the PDF carries the `.print-hide` class
+ * (site nav/footer is hidden via the data-attribute on <body> set while the
+ * report is mounted). The report container carries `.readiness-print-root`.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+@media print {
+  /* Hide the app chrome (header/nav/footer) and any in-report controls. */
+  header,
+  footer,
+  nav,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Reset page to white, full-width, no shadows/borders bleeding ink. */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .readiness-print-root {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force light, ink-friendly surfaces regardless of the user's theme. */
+  .readiness-print-root,
+  .readiness-print-root * {
+    color: #111111 !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep coloured traffic-light fills (browsers honour this for backgrounds). */
+  .readiness-print-root {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Don't split a domain card / red-flag block / action group across pages. */
+  .readiness-card,
+  .readiness-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* A4-friendly margins on the printed page. */
+  @page {
+    margin: 16mm 14mm;
+  }
+
+  /* Show the print-only header (title + date) that is hidden on screen. */
+  .readiness-print-only {
+    display: block !important;
+  }
+}
+
+/* The print-only block is hidden on screen. */
+.readiness-print-only {
+  display: none;
+}

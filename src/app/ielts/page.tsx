@@ -18,6 +18,8 @@ import {
   GraduationCap,
   Users,
   Building2,
+  Plane,
+  Compass,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { t } from '@/lib/i18n/t'
@@ -283,6 +285,88 @@ export default async function IeltsHubPage() {
               See IELTS plans
               <ArrowRight className="h-4 w-4" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 1a-ii. Headline feature - UK Candidate Readiness Report */}
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <Link
+            href="/ielts/readiness"
+            className="group flex flex-col items-start gap-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-8 transition-colors hover:border-emerald-500/50 sm:flex-row sm:items-center"
+          >
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10">
+              <GraduationCap
+                className="h-7 w-7 text-emerald-600 dark:text-emerald-400"
+                aria-hidden
+              />
+            </span>
+            <div className="flex-1">
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-emerald-600 dark:text-emerald-400">
+                IELTS plan · headline feature
+              </p>
+              <h2 className="mt-1.5 font-serif text-2xl font-semibold tracking-tight text-foreground">
+                Get your UK Readiness Report
+              </h2>
+              <p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">
+                One traffic-light score across your English, your UCAS application, visa &amp;
+                finance, and the move itself — with red flags and a 7/30/60-day action plan you can
+                export to PDF.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-emerald-700">
+              Build my report
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* 1a-iii. Readiness tools that feed the report (IELTS-10 / IELTS-11) */}
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <Link
+              href="/ielts/readiness/visa-finance"
+              className="group flex flex-col rounded-2xl border border-border/60 bg-card p-6 shadow-soft transition-colors hover:border-emerald-500/40"
+            >
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                <Plane className="h-5 w-5" aria-hidden />
+              </span>
+              <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">
+                Visa &amp; finance checklist
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Work through the UK Student-route money and document rules — maintenance funds, the
+                28-day rule, CAS, TB test and ATAS — for a clear can-apply status that feeds your
+                Readiness Report.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                Open checklist{' '}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+            <Link
+              href="/ielts/readiness/transition"
+              className="group flex flex-col rounded-2xl border border-border/60 bg-card p-6 shadow-soft transition-colors hover:border-violet-500/40"
+            >
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400">
+                <Compass className="h-5 w-5" aria-hidden />
+              </span>
+              <h3 className="mt-4 font-serif text-lg font-semibold text-foreground">
+                Academic-transition modules
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                Short, self-guided modules on academic writing, lectures &amp; independent study,
+                budgeting and accommodation — each with a self-check that feeds your Readiness
+                Report.
+              </p>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-violet-600 dark:text-violet-400">
+                Start modules{' '}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
