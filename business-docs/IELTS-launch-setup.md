@@ -63,6 +63,43 @@ The button is built and hidden until the flag is on.
 5. **Test:** on `/auth/login` the "Continue with Google" button now appears and
    completes a sign-in.
 
+### Track 2b — make the Google consent screen say "The English Hub" (not the supabase.co URL)
+
+By default Google's sign-in screen shows the raw Supabase callback host
+(`<project-ref>.supabase.co`) because that's where the OAuth callback lives and
+the OAuth consent screen has no branding. Two fixes:
+
+**Quick fix (free, ~5 min) — set the consent-screen branding.** This changes the
+app name Google shows ("…to continue to The English Hub") and adds your logo:
+1. Google Cloud Console → **APIs & Services → OAuth consent screen → Branding**.
+2. **App name:** `The English Hub`. **User support email:** info@upskillenergy.com.
+3. **App logo:** upload the logo. **App home page:** `https://theenglishhub.app`.
+   **Privacy policy:** `https://theenglishhub.app/legal/privacy`. **Terms:**
+   `https://theenglishhub.app/terms`.
+4. **Authorised domains:** add `theenglishhub.app`. Save. (If the app is in
+   "Testing", publish it to "In production" so all users see the branding.)
+   - Note: the third-party data lines ("…will allow … to access") and the
+     "Review …'s privacy policy" link still reference the *callback host* —
+     which stays `supabase.co` until you do the complete fix below.
+
+**Complete fix (removes supabase.co entirely) — Supabase custom auth domain.**
+This makes the callback `https://auth.theenglishhub.app/auth/v1/callback`, so
+Google shows *your* domain everywhere on the consent screen:
+1. Supabase Dashboard → **Project Settings → Custom Domains** → enable the
+   **Custom Domain add-on** (paid, ~$10/mo) and set e.g. `auth.theenglishhub.app`.
+2. Add the **CNAME** record it gives you at your DNS provider; wait for verify.
+3. Google Cloud Console → Credentials → your OAuth client → **Authorised redirect
+   URIs:** add `https://auth.theenglishhub.app/auth/v1/callback` (keep the old
+   one until cutover). Update the same in Supabase → Auth → Providers → Google if
+   prompted.
+4. (Apple too) Update the Apple **Services ID Return URL** to the custom-domain
+   callback.
+5. Redeploy / re-test. The consent screen now reads "Sign in to
+   theenglishhub.app".
+
+No code change is needed for either fix — the app already redirects to
+`theenglishhub.app/auth/callback`; this is purely Google Cloud + Supabase config.
+
 ---
 
 ## Track 3 — Apple sign-in (needs an Apple Developer account: ~1–2 hrs + $99/yr)
