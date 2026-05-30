@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
-import { stripe } from '@/lib/stripe'
+import { stripe, isIeltsPriceId } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { attributeAffiliateReferral } from '@/lib/affiliate/attribution'
 import { calculateCommissionPence, getCurrentTierInfo } from '@/lib/affiliate/tiers'
@@ -52,6 +52,47 @@ function mapStripeToPrismaStatus(
  * subscriptions; without this call the row only existed for mobile
  * (RevenueCat) users.
  */
+/**
+ * Sync the IELTS-specific entitlement (profiles.ielts_status) from a Stripe
+ * subscription. IELTS is a STANDALONE product gated separately from the global
+ * 'pro' flag (see course-access.hasIeltsAccess), so its entitlement is driven
+ * off whether the subscription's price is an IELTS price — NOT off
+ * subscription_status.
+ *
+ *  • subscription contains an IELTS price AND is active/trialing → 'active'
+ *  • subscription contains an IELTS price AND is ended/cancelled/unpaid → 'free'
+ *  • subscription contains NO IELTS price → leave ielts_status untouched
+ *    (a GCSE/Student subscription must never clear or grant IELTS access).
+ *
+ * Best-effort: never throws into the webhook (an IELTS-sync failure must not
+ * fail the whole event and trigger a Stripe retry storm); logs and returns.
+ */
+async function syncIeltsEntitlement(
+  userId: string,
+  subscription: Stripe.Subscription,
+  supabase: ReturnType<typeof createServiceRoleClient>,
+): Promise<void> {
+  try {
+    const hasIeltsPrice = (subscription.items?.data ?? []).some((item) =>
+      isIeltsPriceId(item.price?.id),
+    )
+    if (!hasIeltsPrice) return // not an IELTS subscription — don't touch ielts_status
+
+    const liveStatuses = ['active', 'trialing']
+    const nextStatus = liveStatuses.includes(subscription.status) ? 'active' : 'free'
+
+    const { error } = await supabase
+      .from('profiles')
+      .update({ ielts_status: nextStatus })
+      .eq('id', userId)
+    if (error) {
+      console.error('[stripe/webhook] Failed to set ielts_status:', error)
+    }
+  } catch (err) {
+    console.error('[stripe/webhook] syncIeltsEntitlement threw (ignored):', err)
+  }
+}
+
 async function upsertStripeSubscriptionRow(
   userId: string,
   subscription: Stripe.Subscription,
@@ -691,6 +732,10 @@ async function handleCheckoutCompleted(
       throw error
     }
 
+    // IELTS standalone entitlement: if this checkout was for an IELTS price,
+    // set profiles.ielts_status. Does nothing for GCSE/Student checkouts.
+    await syncIeltsEntitlement(userId, subscription, supabase)
+
     // Ensure the Prisma `Subscription` row exists at checkout time. This
     // is the first event in the subscription lifecycle, so the rest of
     // the app sees the new subscription immediately rather than waiting
@@ -840,6 +885,9 @@ async function handleSubscriptionUpdated(
     throw error
   }
 
+  // IELTS standalone entitlement: track active/cancelled for IELTS prices.
+  await syncIeltsEntitlement(userId, subscription, supabase)
+
   // Keep the Prisma `Subscription` row in lock-step with the profile.
   await upsertStripeSubscriptionRow(userId, subscription)
 }
@@ -884,6 +932,10 @@ async function handleSubscriptionDeleted(
     console.error('Failed to set subscription_status to cancelled:', error)
     throw error
   }
+
+  // IELTS standalone entitlement: clear ielts_status on cancellation of an
+  // IELTS subscription (no-op for non-IELTS subscriptions).
+  await syncIeltsEntitlement(userId, subscription, supabase)
 
   // Mirror cancellation onto the Prisma `Subscription` row.
   await upsertStripeSubscriptionRow(userId, subscription)

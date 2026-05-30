@@ -39,6 +39,19 @@ export const PRICING = {
   /** Discount amount in £ when an affiliate / house code is used. */
   STUDENT_ANNUAL_SAVINGS: 9.99,
 
+  // ── IELTS tier - standalone premium offering ──────────────────────
+  // IELTS is sold separately from the Student/Teacher (GCSE) plans at a
+  // premium price: it's an adult, motivated, often employer/migration-funded
+  // market, and the test itself costs ~£200. Unlimited examiner-calibrated AI
+  // band feedback on Writing + Speaking. Distinct entitlement (profiles.
+  // ielts_status) — an IELTS plan does NOT unlock GCSE and vice-versa.
+  /** IELTS monthly (what a new subscriber pays). */
+  IELTS_MONTHLY: 39,
+  /** IELTS annual — ~6.4 months for the year (strong vs paying monthly). */
+  IELTS_ANNUAL: 249,
+  /** Annual framed as an effective monthly rate for the comparison line. */
+  IELTS_ANNUAL_EFFECTIVE_MONTHLY: 20.75,
+
   // ── Teacher tier - early access + standard anchor ─────────────────
   TEACHER_MONTHLY: 6.99,
   TEACHER_ANNUAL: 67.99,

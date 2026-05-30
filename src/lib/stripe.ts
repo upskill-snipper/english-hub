@@ -18,11 +18,35 @@ export const PRICE_IDS = {
   GCSE_LIT_PROSE: requireEnv('STRIPE_PRICE_GCSE_LIT_PROSE'),
   GCSE_REVISION: requireEnv('STRIPE_PRICE_GCSE_REVISION'),
   BUNDLE: requireEnv('STRIPE_PRICE_BUNDLE'),
+  // IELTS standalone subscription (distinct entitlement: profiles.ielts_status).
+  // Soft env (|| '') so the app doesn't crash before the Stripe product is
+  // created — the checkout resolver returns a clear error if unset, rather than
+  // requireEnv blowing up the whole module at import time. Set these once the
+  // IELTS Product + Prices exist (see business-docs/IELTS-launch-setup.md).
+  IELTS_MONTHLY: process.env.STRIPE_PRICE_IELTS_MONTHLY || '',
+  IELTS_ANNUAL: process.env.STRIPE_PRICE_IELTS_ANNUAL || '',
   // Parent tier - env var not yet wired; safe-fallback to placeholder so
   // `requireEnv` doesn't crash prior to Stripe dashboard setup. See
   // src/app/api/parent/README.md for the launch checklist.
   PARENT_MONTHLY: process.env.STRIPE_PRICE_PARENT || 'price_TBD_parent',
 } as const
+
+/**
+ * IELTS Stripe price IDs that are actually configured (unset env → filtered
+ * out). The webhook uses this to recognise an IELTS subscription (and set
+ * profiles.ielts_status), and the checkout route uses it to validate the
+ * incoming priceId. IELTS is a STANDALONE product — it never falls back to the
+ * PRO/Student price, so an empty list simply means IELTS isn't sold yet.
+ */
+export const IELTS_PRICE_IDS: readonly string[] = [
+  process.env.STRIPE_PRICE_IELTS_MONTHLY || '',
+  process.env.STRIPE_PRICE_IELTS_ANNUAL || '',
+].filter((id) => id.length > 0)
+
+/** True when a Stripe price ID belongs to the IELTS product. */
+export function isIeltsPriceId(priceId: string | null | undefined): boolean {
+  return !!priceId && IELTS_PRICE_IDS.includes(priceId)
+}
 
 // ── Parent tier plan metadata ──────────────────────────────────────────────
 // Kept alongside PRICE_IDS so all Stripe-facing config lives in one file.

@@ -28,6 +28,8 @@ type PlanKey =
   | 'student_annual'
   | 'teacher_monthly'
   | 'teacher_annual'
+  | 'ielts_monthly'
+  | 'ielts_annual'
 
 interface CheckoutRequestBody {
   priceId?: string
@@ -57,6 +59,14 @@ function resolvePlanPriceId(plan: PlanKey): string | undefined {
       return process.env.STRIPE_PRICE_TEACHER_MONTHLY || process.env.STRIPE_PRICE_PRO_MONTHLY
     case 'teacher_annual':
       return process.env.STRIPE_PRICE_TEACHER_ANNUAL || process.env.STRIPE_PRICE_PRO_ANNUAL
+    // IELTS is a STANDALONE product — NO fall back to the PRO/Student price
+    // (that would charge the wrong amount and, via the webhook, grant the wrong
+    // entitlement). If the IELTS price env var is unset, return undefined so the
+    // route answers a clean 400 "Invalid price ID" until the product is created.
+    case 'ielts_monthly':
+      return process.env.STRIPE_PRICE_IELTS_MONTHLY || undefined
+    case 'ielts_annual':
+      return process.env.STRIPE_PRICE_IELTS_ANNUAL || undefined
     default:
       return undefined
   }
@@ -124,6 +134,8 @@ export async function POST(request: NextRequest) {
       process.env.STRIPE_PRICE_STUDENT_ANNUAL,
       process.env.STRIPE_PRICE_TEACHER_MONTHLY,
       process.env.STRIPE_PRICE_TEACHER_ANNUAL,
+      process.env.STRIPE_PRICE_IELTS_MONTHLY,
+      process.env.STRIPE_PRICE_IELTS_ANNUAL,
     ]
     const validPriceIds = new Set(
       [...Object.values(PRICE_IDS), ...Object.values(COURSE_PRICE_MAP), ...tierEnvPriceIds].filter(
