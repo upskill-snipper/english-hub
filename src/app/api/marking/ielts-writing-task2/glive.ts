@@ -25,6 +25,14 @@ import {
   CalibrationGateError,
   type CalibrationBaseline,
 } from '@/lib/marking/engine/calibration/gate'
+import { loadPromotedBaseline } from '@/lib/marking/engine/calibration/baseline-store'
+
+/**
+ * The calibration area key for this route. IELTS Academic Writing Task 2 is the
+ * pilot area; the train-the-ML loop promotes a baseline under exactly this key,
+ * and this route reads it. One constant so the run route and this gate agree.
+ */
+export const IELTS_WT2_AREA_KEY = 'ielts:academic:writing-task-2'
 
 // ─── Feature flag (env, default OFF) ──────────────────────────────────────────
 
@@ -48,20 +56,27 @@ function isFeatureFlagEnabled(): boolean {
 // ─── Calibration baseline lookup (the G-LIVE gate's input) ────────────────────
 
 /**
- * Load the currently-promoted green calibration baseline, or `null` when none has
- * been promoted yet.
+ * Load the currently-promoted green calibration baseline for IELTS WT2, or
+ * `null` when none has been promoted yet.
  *
- * WHY this returns `null` today: baseline storage (`calibration_runs`) is a later
- * migration-lane concern (doc 17 §schema) — no baseline has been promoted, so this
- * is the honest pre-G-LIVE state. A `null` baseline means {@link assertGLive}
- * cannot prove the build is safe, so the route answers 503. When the calibration
- * pipeline promotes a baseline, this function is the single seam that begins
- * returning it; the request-path gate logic here does not change.
+ * Stage 6 wired this to real storage: it reads the latest PROMOTED row from
+ * calibration_baselines (Stage 5) for {@link IELTS_WT2_AREA_KEY} via the
+ * baseline store. Until the train-the-ML loop promotes a green baseline, there
+ * is no promoted row and this returns `null` — the honest pre-G-LIVE state that
+ * keeps {@link assertGLive} fail-closed (503 "not yet calibrated"). The
+ * request-path gate logic here does not change; only the source of the baseline
+ * did (null → DB-backed).
+ *
+ * Read-safe: a missing table or any read error degrades to `null` (fail-closed),
+ * never throws into the request path.
  */
 export async function loadCurrentCalibrationBaseline(): Promise<CalibrationBaseline | null> {
-  // No promoted baseline exists pre-G-LIVE (doc 17 §schema). Fail-closed: the
-  // absence of a baseline is treated as "not calibrated", not as "allow".
-  return null
+  try {
+    return await loadPromotedBaseline(IELTS_WT2_AREA_KEY)
+  } catch {
+    // Fail-closed: an unreadable baseline is treated as "not calibrated".
+    return null
+  }
 }
 
 /**
