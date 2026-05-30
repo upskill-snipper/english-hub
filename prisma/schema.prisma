@@ -866,10 +866,36 @@ model Marker {
   createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
 
   submissions MarkingSubmission[]
+  boardAccess MarkerBoardAccess[]
 
   @@index([userId])
   @@index([status])
   @@map("markers")
+}
+
+// ─── Marker Board Access (per-board request/approval) ─────────────────────────
+// One row per (marker, board) carrying its own lifecycle: requested → approved |
+// rejected | revoked. The authoritative answer to "may this marker work this
+// board"; markers.boards[] is retained only for legacy reads. A self-registered
+// marker can mark nothing on a board until its row here is 'approved'.
+model MarkerBoardAccess {
+  id                String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  markerId          String    @map("marker_id") @db.Uuid
+  board             String
+  qualificationNote String?   @map("qualification_note") @db.Text
+  status            String    @default("requested")
+  requestedAt       DateTime  @default(now()) @map("requested_at") @db.Timestamptz(6)
+  decidedAt         DateTime? @map("decided_at") @db.Timestamptz(6)
+  decidedBy         String?   @map("decided_by") @db.Uuid
+  createdAt         DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  marker Marker @relation(fields: [markerId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([markerId, board])
+  @@index([markerId])
+  @@index([status])
+  @@index([markerId, status])
+  @@map("marker_board_access")
 }
 
 model MarkerBatch {
