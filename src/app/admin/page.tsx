@@ -6,7 +6,21 @@ import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
 import { getCourseName } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
-import { Shield, Users, Crown, BookOpen, Award, Loader2, ArrowLeft, RefreshCw } from 'lucide-react'
+import {
+  Shield,
+  Users,
+  Crown,
+  BookOpen,
+  Award,
+  Loader2,
+  ArrowLeft,
+  RefreshCw,
+  PencilLine,
+  ClipboardCheck,
+  Sparkles,
+  Banknote,
+  Inbox,
+} from 'lucide-react'
 
 interface AdminStats {
   totalUsers: number
@@ -263,6 +277,31 @@ export default function AdminPage() {
         )}
       </div>
     </div>
+  )
+}
+
+function AdminToolCard({
+  href,
+  icon,
+  title,
+  desc,
+}: {
+  href: string
+  icon: React.ReactNode
+  title: string
+  desc: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex flex-col gap-2 rounded-lg border border-border p-4 transition-colors hover:border-primary/50 hover:bg-muted/40"
+    >
+      <div className="flex items-center gap-2">
+        {icon}
+        <span className="font-semibold text-foreground group-hover:text-primary">{title}</span>
+      </div>
+      <span className="text-sm text-muted-foreground">{desc}</span>
+    </Link>
   )
 }
 
