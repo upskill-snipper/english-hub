@@ -67,6 +67,21 @@ function mapStripeToPrismaStatus(
  * Best-effort: never throws into the webhook (an IELTS-sync failure must not
  * fail the whole event and trigger a Stripe retry storm); logs and returns.
  */
+/**
+ * True when EVERY recurring price on the subscription is an IELTS price — i.e.
+ * this is an IELTS-ONLY subscription. IELTS is a standalone product (gated by
+ * profiles.ielts_status, set by syncIeltsEntitlement), so an IELTS-only sub must
+ * NOT grant the global 'pro' flag (which unlocks GCSE/Student/Teacher). A mixed
+ * sub (IELTS + a non-IELTS price) or a non-IELTS sub returns false and keeps the
+ * normal 'pro' behaviour. A sub with no recurring prices returns false.
+ */
+function isIeltsOnlySubscription(subscription: Stripe.Subscription): boolean {
+  const items = subscription.items?.data ?? []
+  const recurring = items.filter((i) => i.price?.recurring)
+  if (recurring.length === 0) return false
+  return recurring.every((i) => isIeltsPriceId(i.price?.id))
+}
+
 async function syncIeltsEntitlement(
   userId: string,
   subscription: Stripe.Subscription,
@@ -496,6 +511,12 @@ export async function POST(request: NextRequest) {
           ? 'pro'
           : 'incomplete'
 
+        // IELTS-only subscriptions must not grant the global 'pro' flag; their
+        // entitlement is ielts_status (set by syncIeltsEntitlement, called from
+        // the related checkout/updated handlers). Skip only the
+        // subscription_status write here for IELTS-only subs.
+        const ieltsOnly = isIeltsOnlySubscription(subscription)
+
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const periodEnd = (subscription as any).current_period_end as number | undefined
         const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
@@ -503,7 +524,7 @@ export async function POST(request: NextRequest) {
         const { error } = await supabase
           .from('profiles')
           .update({
-            subscription_status: subscriptionStatus,
+            ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
             ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
           })
           .eq('id', userId)
@@ -715,6 +736,13 @@ async function handleCheckoutCompleted(
     const activeStatuses = ['active', 'trialing']
     const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
 
+    // IELTS is a standalone product — an IELTS-only checkout must set
+    // ielts_status (below, via syncIeltsEntitlement) but must NOT touch the
+    // global subscription_status='pro' (which would wrongly unlock GCSE/Student).
+    // For a brand-new IELTS-only buyer subscription_status simply stays its
+    // existing value (default 'free').
+    const ieltsOnly = isIeltsOnlySubscription(subscription)
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const cpEnd = (subscription as any).current_period_end as number | undefined
     const subscriptionEndDate = cpEnd ? new Date(cpEnd * 1000).toISOString() : null
@@ -722,7 +750,7 @@ async function handleCheckoutCompleted(
     const { error } = await supabase
       .from('profiles')
       .update({
-        subscription_status: subscriptionStatus,
+        ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
         ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
       })
       .eq('id', userId)
@@ -872,10 +900,15 @@ async function handleSubscriptionUpdated(
     }
   }
 
+  // IELTS-only subscriptions must not touch the global subscription_status
+  // (that would wrongly grant/clobber GCSE 'pro'); their entitlement is
+  // ielts_status, synced below via syncIeltsEntitlement.
+  const ieltsOnly = isIeltsOnlySubscription(subscription)
+
   const { error } = await supabase
     .from('profiles')
     .update({
-      subscription_status: subscriptionStatus,
+      ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
       subscription_end_date: subscriptionEndDate,
     })
     .eq('id', userId)
@@ -920,10 +953,15 @@ async function handleSubscriptionDeleted(
     ? new Date(endTimestamp * 1000).toISOString()
     : new Date().toISOString()
 
+  // IELTS-only cancellation must NOT set subscription_status='cancelled' — doing
+  // so would clobber a separately-held GCSE 'pro'. We only clear ielts_status
+  // (via syncIeltsEntitlement below). Non-IELTS deletions still cancel globally.
+  const ieltsOnly = isIeltsOnlySubscription(subscription)
+
   const { error } = await supabase
     .from('profiles')
     .update({
-      subscription_status: 'cancelled',
+      ...(ieltsOnly ? {} : { subscription_status: 'cancelled' }),
       subscription_end_date: subscriptionEndDate,
     })
     .eq('id', userId)

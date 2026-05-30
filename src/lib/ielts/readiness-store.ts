@@ -14,6 +14,7 @@ import { lsGet, lsSet } from '@/components/toolkit/toolkit-types'
 import {
   defaultReadinessInputs,
   type AcademicTransitionReadinessInput,
+  type ApplicationReadinessInput,
   type ReadinessInputs,
   type VisaFinanceReadinessInput,
 } from './readiness'
@@ -65,6 +66,31 @@ export function setVisaSlice(visa: VisaFinanceReadinessInput): ReadinessInputs {
 export function setTransitionSlice(academic: AcademicTransitionReadinessInput): ReadinessInputs {
   const current = getReadinessInputs()
   const next: ReadinessInputs = { ...current, academic }
+  saveReadinessInputs(next)
+  return next
+}
+
+/**
+ * Additive helper: merge the UCAS coach's per-question scores (0-5 each) into
+ * the saved Application slice's `psScores`, leaving every other application
+ * answer (course clarity, shortlist, referee, transcript, drafted flags) and
+ * the other domains untouched. This is what the UCAS Personal-Statement Coach
+ * calls after feedback returns so the Readiness Report's Application domain
+ * becomes coach-driven (readiness.scoreApplication PREFERS psScores when
+ * present, falling back to the self-report otherwise). Same back-compatible
+ * load-merge-save pattern as setVisaSlice / setTransitionSlice.
+ */
+export function setApplicationPsScores(psScores: {
+  q1?: number
+  q2?: number
+  q3?: number
+}): ReadinessInputs {
+  const current = getReadinessInputs()
+  const application: ApplicationReadinessInput = {
+    ...current.application,
+    psScores: { ...current.application.psScores, ...psScores },
+  }
+  const next: ReadinessInputs = { ...current, application }
   saveReadinessInputs(next)
   return next
 }

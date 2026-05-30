@@ -33,6 +33,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { isAiOptedOut } from '@/lib/ai-preferences'
+import { setApplicationPsScores } from '@/lib/ielts/readiness-store'
 import { useT } from '@/lib/i18n/use-t'
 
 // ─── Public response contract (kept in sync with the API route) ──────────────
@@ -133,6 +134,17 @@ function isQuestionFeedback(value: unknown): value is QuestionFeedback {
   )
 }
 
+/**
+ * Average one question's 0-5 section ratings into a single 0-5 question score
+ * for the Readiness Report's Application domain. Returns 0 when a question has
+ * no sections (degraded/blank answer), which the readiness store treats as
+ * "not yet evidenced".
+ */
+function averageQuestionScore(qf: QuestionFeedback): number {
+  if (qf.sections.length === 0) return 0
+  return qf.sections.reduce((sum, s) => sum + s.rating, 0) / qf.sections.length
+}
+
 /** Validate that an unknown API payload is a usable StatementFeedback. */
 function isStatementFeedback(value: unknown): value is StatementFeedback {
   if (!value || typeof value !== 'object') return false
@@ -219,6 +231,25 @@ export default function PersonalStatementCoachPage() {
       }
 
       setFeedback(data.feedback)
+
+      // Persist the coach's per-question scores (averaged 0-5 section ratings)
+      // so the Candidate Readiness Report's Application domain is driven by the
+      // real UCAS coach output rather than the self-report. Best-effort: a
+      // localStorage failure must never break the coach UI.
+      try {
+        const fb = data.feedback
+        setApplicationPsScores({
+          q1: averageQuestionScore(fb.perQuestion.q1),
+          q2: averageQuestionScore(fb.perQuestion.q2),
+          q3: averageQuestionScore(fb.perQuestion.q3),
+        })
+      } catch (persistErr) {
+        console.error(
+          '[ielts/admissions/personal-statement] failed to persist psScores',
+          persistErr,
+        )
+      }
+
       setDisclaimer(
         typeof data.disclaimer === 'string'
           ? data.disclaimer
