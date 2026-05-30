@@ -35,7 +35,6 @@ import {
   PencilLine,
   SkipForward,
   Sparkles,
-  ShieldQuestion,
   Inbox,
   AlertTriangle,
   KeyboardIcon,
@@ -131,6 +130,20 @@ type ReviewDecision = 'approve' | 'correct' | 'reject'
 // 9-1 GCSE grades plus "U" - must match the review endpoint's ALLOWED_GRADES.
 const GRADE_OPTIONS = ['9', '8', '7', '6', '5', '4', '3', '2', '1', 'U'] as const
 
+// Boards an applicant can request (mirrors REQUESTABLE_BOARDS server-side).
+const APPLY_BOARDS = [
+  'AQA',
+  'EDEXCEL',
+  'OCR',
+  'EDUQAS',
+  'EDEXCEL_IGCSE',
+  'CAMBRIDGE_0500',
+  'CAMBRIDGE_0990',
+  'IELTS',
+  'KS3',
+  'EAL',
+] as const
+
 // ─── Helpers ───────────────────────────────────────────────────────────────
 
 /**
@@ -205,6 +218,15 @@ export default function MarkerConsolePage() {
     runningTotal: 0,
   })
   const [notMarker, setNotMarker] = useState(false)
+
+  // Self-service application (Stage C): shown when a signed-in user is not yet a
+  // marker. They submit credentials + tick the boards they're qualified for.
+  const [applyName, setApplyName] = useState('')
+  const [applyQual, setApplyQual] = useState('')
+  const [applyBoards, setApplyBoards] = useState<string[]>([])
+  const [applying, setApplying] = useState(false)
+  const [applyError, setApplyError] = useState<string | null>(null)
+  const [applied, setApplied] = useState(false)
 
   // Queue
   const [queue, setQueue] = useState<QueueItem[]>([])
@@ -574,6 +596,47 @@ export default function MarkerConsolePage() {
     return () => window.removeEventListener('keydown', onKey)
   }, [current, submitting, submitDecision, skip])
 
+  // ── Self-service application submit ──────────────────────────────────────
+  const submitApplication = useCallback(async () => {
+    if (applying) return
+    if (applyName.trim().length === 0) {
+      setApplyError(tt(t, 'marker.apply.name_required', 'Enter your name.'))
+      return
+    }
+    if (applyBoards.length === 0) {
+      setApplyError(tt(t, 'marker.apply.boards_required', 'Select at least one board.'))
+      return
+    }
+    setApplying(true)
+    setApplyError(null)
+    try {
+      const res = await fetch('/api/marker/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          displayName: applyName.trim(),
+          qualification: applyQual.trim() || undefined,
+          boards: applyBoards,
+        }),
+      })
+      if (!res.ok) {
+        const b = (await res.json().catch(() => ({}))) as { error?: string }
+        throw new Error(
+          b.error ?? tt(t, 'marker.apply.failed', 'Could not submit your application.'),
+        )
+      }
+      setApplied(true)
+    } catch (err) {
+      setApplyError(
+        err instanceof Error
+          ? err.message
+          : tt(t, 'marker.apply.failed', 'Could not submit your application.'),
+      )
+    } finally {
+      setApplying(false)
+    }
+  }, [applying, applyName, applyQual, applyBoards, t])
+
   // ── Render: gate states ──────────────────────────────────────────────────
 
   if (gateLoading) {
@@ -585,23 +648,139 @@ export default function MarkerConsolePage() {
   }
 
   if (notMarker) {
+    // Self-service application (Stage C). A signed-in non-marker can apply here:
+    // submit credentials + tick the boards they're qualified for. Creating an
+    // account grants NOTHING — they can mark a board only once an admin approves
+    // it (enforced server-side). If they're not signed in, the apply POST 401s
+    // and we surface a "sign in" message.
+    if (applied) {
+      return (
+        <div className="flex min-h-screen items-center justify-center bg-background px-4">
+          <Card className="max-w-md">
+            <CardContent className="flex flex-col items-center justify-center py-14 text-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/10">
+                <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
+              </div>
+              <h1 className="mb-1 text-lg font-semibold text-foreground">
+                {tt(t, 'marker.apply.done_title', 'Application received')}
+              </h1>
+              <p className="max-w-sm text-sm text-muted-foreground">
+                {tt(
+                  t,
+                  'marker.apply.done_body',
+                  'Thank you. You can start marking a board as soon as an administrator approves your access to it. You can close this page.',
+                )}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      )
+    }
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background px-4">
-        <Card className="max-w-md border-dashed">
-          <CardContent className="flex flex-col items-center justify-center py-14 text-center">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-              <ShieldQuestion className="h-8 w-8 text-primary" />
+      <div className="flex min-h-screen items-center justify-center bg-background px-4 py-10">
+        <Card className="w-full max-w-lg">
+          <CardContent className="py-8">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                <PencilLine className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h1 className="text-lg font-semibold text-foreground">
+                  {tt(t, 'marker.apply.title', 'Apply to mark')}
+                </h1>
+                <p className="text-sm text-muted-foreground">
+                  {tt(
+                    t,
+                    'marker.apply.subtitle',
+                    'Tell us your credentials and the boards you are qualified for. Marking unlocks per board once an administrator approves you.',
+                  )}
+                </p>
+              </div>
             </div>
-            <h1 className="mb-1 text-lg font-semibold text-foreground">
-              {tt(t, 'marker.gate.title', 'Marker access only')}
-            </h1>
-            <p className="max-w-sm text-sm text-muted-foreground">
-              {tt(
-                t,
-                'marker.gate.body',
-                'This console is for contracted markers. Your account is not an active marker. If you believe this is a mistake, please contact an administrator.',
-              )}
-            </p>
+
+            <div className="space-y-4">
+              <div className="space-y-1.5">
+                <Label htmlFor="apply-name">{tt(t, 'marker.apply.name', 'Your name')}</Label>
+                <input
+                  id="apply-name"
+                  type="text"
+                  value={applyName}
+                  onChange={(e) => setApplyName(e.target.value)}
+                  className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm"
+                  placeholder={tt(t, 'marker.apply.name_ph', 'Full name')}
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="apply-qual">
+                  {tt(t, 'marker.apply.qual', 'Credentials / examiner experience')}
+                </Label>
+                <Textarea
+                  id="apply-qual"
+                  value={applyQual}
+                  onChange={(e) => setApplyQual(e.target.value)}
+                  rows={3}
+                  placeholder={tt(
+                    t,
+                    'marker.apply.qual_ph',
+                    'e.g. AQA GCSE English examiner (8 years); IELTS Writing examiner, current.',
+                  )}
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label>{tt(t, 'marker.apply.boards', 'Boards you are qualified for')}</Label>
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {APPLY_BOARDS.map((b) => {
+                    const checked = applyBoards.includes(b)
+                    return (
+                      <label
+                        key={b}
+                        className={cn(
+                          'flex cursor-pointer items-center gap-2 rounded-md border px-2.5 py-2 text-xs',
+                          checked
+                            ? 'border-primary/50 bg-primary/5 text-foreground'
+                            : 'border-border text-muted-foreground',
+                        )}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={(e) =>
+                            setApplyBoards((prev) =>
+                              e.target.checked ? [...prev, b] : prev.filter((x) => x !== b),
+                            )
+                          }
+                        />
+                        {b}
+                      </label>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {applyError && <p className="text-sm text-destructive">{applyError}</p>}
+
+              <Button
+                type="button"
+                className="w-full"
+                disabled={applying}
+                onClick={() => void submitApplication()}
+              >
+                {applying ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  tt(t, 'marker.apply.submit', 'Submit application')
+                )}
+              </Button>
+              <p className="text-center text-[11px] text-muted-foreground">
+                {tt(
+                  t,
+                  'marker.apply.note',
+                  'You must be signed in to apply. Approval is per board and at our discretion.',
+                )}
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>

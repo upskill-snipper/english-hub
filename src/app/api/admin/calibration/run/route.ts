@@ -11,8 +11,17 @@
 //   5. returns the report + per-check breakdown so the admin sees exactly why
 //      an area is/ isn't live.
 //
-// SCOPE: IELTS only (the agreement maths is band/criteria-specific — see
-// run.ts). Non-IELTS areas return 400 rather than a misleading "green".
+// SCOPE: ALL boards (Stage E). The agreement metric is chosen by the board's
+// marking SHAPE: IELTS (band) → within-half-band (run.ts); GCSE grades and
+// KS3/EAL levels (ordinal) → within-one-step (ordinal-metrics.ts). The human
+// mark source differs too: band/level read teacher_band_marks, GCSE grades read
+// final_teacher_mark. A pair is only formed when BOTH an AI and a human mark
+// exist; otherwise the script is honestly skipped (counted), never guessed.
+//
+// NOTE on "go live": only the IELTS route is behind a fail-closed calibration
+// gate, so promoting an IELTS baseline literally flips that route live. GCSE is
+// already live; a promoted GCSE/KS3/EAL baseline is the CERTIFICATION RECORD of
+// agreement for that board (audit + drift tracking), not a switch.
 //
 // Auth: site-admin only (verifyAdmin), like every other /api/admin/marker-*
 // route. Uses the service-role client for the data + baseline writes.
@@ -32,11 +41,17 @@ import {
   type CalibrationScript,
 } from '@/lib/marking/engine/calibration/run'
 import {
+  summariseOrdinal,
+  assessOrdinalGate,
+  type OrdinalPair,
+} from '@/lib/marking/engine/calibration/ordinal-metrics'
+import {
   persistBaseline,
   getPromotedBaselineId,
 } from '@/lib/marking/engine/calibration/baseline-store'
 import { IELTS_CRITERIA } from '@/lib/marking/engine/calibration/metrics'
-import { resolveMarkingShape } from '@/lib/marking/marking-shapes'
+import { resolveMarkingShape, type MarkingShape } from '@/lib/marking/marking-shapes'
+import { normaliseBoard, isRequestableBoard } from '@/lib/marker-board-access'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -45,8 +60,23 @@ export const maxDuration = 60
 // route's glive.ts (kept in sync; this route promotes under this exact key).
 const IELTS_WT2_AREA_KEY = 'ielts:academic:writing-task-2'
 
+/**
+ * Map a board token to its calibration area key. IELTS keeps the pilot key the
+ * live route reads; every other board gets a stable per-board key. One place so
+ * the run route and any live gate agree.
+ */
+function boardToAreaKey(board: string): string {
+  const b = normaliseBoard(board)
+  if (b === 'IELTS') return IELTS_WT2_AREA_KEY
+  if (b === 'KS3') return 'ks3:english'
+  if (b === 'EAL') return 'eal:english'
+  return `${b.toLowerCase()}:gcse`
+}
+
 interface RunBody {
-  /** Area to calibrate. Defaults to the IELTS WT2 pilot. */
+  /** Board to calibrate (preferred), e.g. 'AQA', 'IELTS', 'KS3'. */
+  board?: string
+  /** Area to calibrate (legacy/explicit). Defaults to the IELTS WT2 pilot. */
   areaKey?: string
   /** Restrict to a specific batch (optional). */
   batchId?: string
@@ -54,10 +84,10 @@ interface RunBody {
   promote?: boolean
 }
 
-// Rows we need to build pairs: the AI structured result + the human band mark.
+// Rows we need to build pairs: the AI mark (band/grade) + the human mark.
 const ROW_COLUMNS =
-  'id, exam_board, qualification, paper, status, ai_result, ai_grade_band,' +
-  ' teacher_band_marks, batch_id'
+  'id, exam_board, qualification, paper, status, ai_result, ai_grade, ai_grade_band,' +
+  ' teacher_band_marks, final_teacher_mark, batch_id'
 
 interface CalibRow {
   id: string
@@ -66,8 +96,10 @@ interface CalibRow {
   paper: string | null
   status: string | null
   ai_result: unknown
+  ai_grade: string | null
   ai_grade_band: string | null
   teacher_band_marks: unknown
+  final_teacher_mark: string | null
   batch_id: string | null
 }
 
