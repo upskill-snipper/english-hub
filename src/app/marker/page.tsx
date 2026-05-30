@@ -42,6 +42,9 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
+// Board-aware marking (Stage 4): the form the marker sees adapts to the
+// qualification (GCSE grade, IELTS bands, KS3/EAL level).
+import { resolveMarkingShape, type MarkingShape } from '@/lib/marking/marking-shapes'
 
 import { DictationButton } from '@/components/speech/DictationButton'
 import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
@@ -130,6 +133,25 @@ const GRADE_OPTIONS = ['9', '8', '7', '6', '5', '4', '3', '2', '1', 'U'] as cons
 
 // ─── Helpers ───────────────────────────────────────────────────────────────
 
+/**
+ * Build the ordered list of band values for a 'band' shape (e.g. IELTS
+ * 0,0.5,…,9). Returned as strings for use as Select values. Pure.
+ */
+function bandOptions(shape: MarkingShape): string[] {
+  const min = shape.bandMin ?? 0
+  const max = shape.bandMax ?? 9
+  const step = shape.bandStep ?? 0.5
+  const out: string[] = []
+  // Iterate on an integer counter to avoid float drift, then format.
+  const steps = Math.round((max - min) / step)
+  for (let i = 0; i <= steps; i += 1) {
+    const v = min + i * step
+    // Show 0.5 steps without trailing ".0" noise: "6" and "6.5".
+    out.push(Number.isInteger(v) ? String(v) : String(v))
+  }
+  return out
+}
+
 function normaliseAoBreakdown(raw: unknown): AoCorrectionState[] {
   if (!Array.isArray(raw)) return []
   return raw
@@ -198,10 +220,34 @@ export default function MarkerConsolePage() {
   const [submitting, setSubmitting] = useState<ReviewDecision | null>(null)
   const [formError, setFormError] = useState<string | null>(null)
 
+  // Board-aware marks (Stage 4): the overall band/level and per-criterion bands
+  // for non-GCSE shapes. `bandOverall` holds an IELTS overall band OR a KS3/EAL
+  // level (both are single Select values); `bandCriteria` holds the four IELTS
+  // criterion bands keyed by code. Empty for GCSE rows.
+  const [bandOverall, setBandOverall] = useState<string>('')
+  const [bandCriteria, setBandCriteria] = useState<Record<string, string>>({})
+
+  // Blind calibration (Stage 4): on a GOLD/calibration script the AI draft is
+  // HIDDEN until the marker reveals it, so their mark is unbiased (an honest
+  // agreement number for the gate). `revealedAi` is per-item; reset on advance.
+  const [revealedAi, setRevealedAi] = useState(false)
+
   // Session progress (this browser session)
   const [sessionDone, setSessionDone] = useState(0)
 
   const current = queue[cursor] ?? null
+
+  // The marking shape for the current item (GCSE grade / IELTS band / KS3-EAL
+  // level), resolved from its board + qualification. Drives which form renders.
+  const shape: MarkingShape = useMemo(
+    () => resolveMarkingShape(current?.exam_board ?? null, current?.qualification ?? null),
+    [current],
+  )
+
+  // On a gold script we mark BLIND: the AI draft stays hidden until revealed.
+  // Non-gold scripts show the draft immediately (production moderation flow).
+  const blind = current?.is_gold === true
+  const aiHidden = blind && !revealedAi
 
   // ── Initial gate + counts ────────────────────────────────────────────────
   const loadMe = useCallback(async () => {
@@ -275,23 +321,40 @@ export default function MarkerConsolePage() {
       setFinalFeedback('')
       setAdjustmentReason('')
       setAoCorrections([])
+      setBandOverall('')
+      setBandCriteria({})
+      setRevealedAi(false)
       setFormError(null)
       return
     }
-    setFinalGrade(current.ai_grade ?? '')
-    setFinalFeedback(current.ai_feedback ?? '')
-    setAdjustmentReason('')
-    setAoCorrections(normaliseAoBreakdown(current.ai_ao_breakdown))
+    // Reset the blind-reveal for every new item (gold scripts start hidden).
+    setRevealedAi(false)
     setFormError(null)
+    setAdjustmentReason('')
+
+    // BLIND gold scripts: start from a CLEAN form so the marker is not anchored
+    // to the AI draft. Non-gold scripts pre-fill the editable AI draft as before.
+    const seedFromAi = current.is_gold !== true
+    setFinalGrade(seedFromAi ? (current.ai_grade ?? '') : '')
+    setFinalFeedback(seedFromAi ? (current.ai_feedback ?? '') : '')
+    setAoCorrections(seedFromAi ? normaliseAoBreakdown(current.ai_ao_breakdown) : [])
+    // Band/level state always starts empty (there is no AI band draft surfaced
+    // here yet, and blind scripts must not be seeded regardless).
+    setBandOverall('')
+    setBandCriteria({})
   }, [current])
 
   // Did the marker change the AI draft? (drives the required-reason rule)
+  // Only meaningful for GCSE rows that seed from the AI draft. For band/level
+  // shapes there is no surfaced AI draft to diverge from, so it is always false
+  // (a reason is still required on an explicit "correct").
   const changedFromDraft = useMemo(() => {
     if (!current) return false
+    if (shape.kind !== 'gcse_grade') return false
     const gradeChanged = (current.ai_grade ?? '') !== finalGrade
     const feedbackChanged = (current.ai_feedback ?? '') !== finalFeedback
     return gradeChanged || feedbackChanged
-  }, [current, finalGrade, finalFeedback])
+  }, [current, finalGrade, finalFeedback, shape])
 
   // ── Advance to the next item; refill the queue when we run dry ───────────
   const advance = useCallback(async () => {
@@ -325,9 +388,34 @@ export default function MarkerConsolePage() {
         )
         return
       }
-      if (decision !== 'reject' && !finalGrade) {
-        setFormError(tt(t, 'marker.review.grade_required', 'Choose a final mark.'))
-        return
+      // A final mark is required for every decision except reject. Which control
+      // supplies it depends on the shape: GCSE → finalGrade; band/level →
+      // bandOverall (+ all four criterion bands for an IELTS band shape).
+      if (decision !== 'reject') {
+        if (shape.kind === 'gcse_grade') {
+          if (!finalGrade) {
+            setFormError(tt(t, 'marker.review.grade_required', 'Choose a final mark.'))
+            return
+          }
+        } else {
+          if (!bandOverall) {
+            setFormError(tt(t, 'marker.review.overall_required', 'Choose an overall band/level.'))
+            return
+          }
+          if (shape.kind === 'band') {
+            const missing = (shape.criteria ?? []).filter((c) => !bandCriteria[c.code])
+            if (missing.length > 0) {
+              setFormError(
+                tt(
+                  t,
+                  'marker.review.criteria_required',
+                  'Set a band for every criterion before approving.',
+                ),
+              )
+              return
+            }
+          }
+        }
       }
 
       setSubmitting(decision)
@@ -342,17 +430,41 @@ export default function MarkerConsolePage() {
           comment: a.comment.trim() || null,
         }))
 
+      // Board-aware mark payload. GCSE rows send teacherGrade (unchanged);
+      // band/level rows send teacherBandMarks and NO teacherGrade (the review
+      // API validates it against the row's shape).
+      const isGcse = shape.kind === 'gcse_grade'
+      let teacherBandMarks: {
+        kind: 'band' | 'level'
+        overall: number | string
+        criteria?: Record<string, number>
+      } | null = null
+      if (!isGcse && decision !== 'reject' && bandOverall) {
+        if (shape.kind === 'band') {
+          const criteria: Record<string, number> = {}
+          for (const c of shape.criteria ?? []) {
+            const v = bandCriteria[c.code]
+            if (v) criteria[c.code] = Number(v)
+          }
+          teacherBandMarks = { kind: 'band', overall: Number(bandOverall), criteria }
+        } else {
+          teacherBandMarks = { kind: 'level', overall: bandOverall }
+        }
+      }
+
       try {
         const res = await fetch(`/api/marking/${current.id}/review`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             decision,
-            teacherGrade: decision === 'reject' ? null : finalGrade || null,
+            // GCSE grade only on GCSE rows; band/level rows leave it null.
+            teacherGrade: decision === 'reject' || !isGcse ? null : finalGrade || null,
             teacherFeedback: finalFeedback.trim() || null,
             aoCorrections: aoPayload.length > 0 ? aoPayload : null,
             adjustmentReason: adjustmentReason.trim() || null,
             moderationNotes: null,
+            teacherBandMarks,
             // Marker approval is corpus-eligible; the server also enforces
             // this server-side regardless of the body.
             trainingEligible: decision === 'approve' ? true : null,
@@ -398,6 +510,9 @@ export default function MarkerConsolePage() {
       finalGrade,
       finalFeedback,
       aoCorrections,
+      shape,
+      bandOverall,
+      bandCriteria,
       t,
     ],
   )
@@ -681,50 +796,148 @@ export default function MarkerConsolePage() {
             {/* RIGHT: AI draft (editable) + decision */}
             <section className="space-y-4">
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
-                <div className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  {tt(t, 'marker.ai.label', 'AI draft (review & edit)')}
-                </div>
-
-                <div className="mb-3 flex items-center gap-3 text-sm">
-                  <span className="text-muted-foreground">
-                    {tt(t, 'marker.ai.mark', 'AI mark')}:
+                <div className="mb-2 flex items-center justify-between gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    {blind
+                      ? tt(t, 'marker.ai.label_blind', 'Your mark (blind QA)')
+                      : tt(t, 'marker.ai.label', 'AI draft (review & edit)')}
                   </span>
-                  <span className="font-semibold text-foreground">
-                    {current.ai_grade ?? '-'}
-                    {current.ai_score != null && current.ai_max_marks != null
-                      ? ` (${current.ai_score}/${current.ai_max_marks})`
-                      : ''}
-                  </span>
-                  {current.ai_confidence != null && (
-                    <span className="text-xs text-muted-foreground tabular-nums">
-                      {Math.round(current.ai_confidence * 100)}%{' '}
-                      {tt(t, 'marker.ai.confidence', 'confidence')}
+                  {blind && (
+                    <span className="rounded border border-amber-500/30 bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium normal-case text-amber-600 dark:text-amber-400">
+                      {tt(t, 'marker.blind.note', 'Mark blind, then reveal')}
                     </span>
                   )}
                 </div>
 
-                {/* Final mark */}
-                <div className="space-y-1.5">
-                  <Label htmlFor="final-grade">
-                    {tt(t, 'marker.field.final_mark', 'Final mark')}
-                  </Label>
-                  <Select value={finalGrade} onValueChange={setFinalGrade}>
-                    <SelectTrigger id="final-grade" className="w-32">
-                      <SelectValue placeholder={tt(t, 'marker.field.mark_ph', 'Mark')} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {GRADE_OPTIONS.map((g) => (
-                        <SelectItem key={g} value={g}>
-                          {g}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+                {/* AI mark line — HIDDEN on a blind gold script until revealed, so the
+                    marker is not anchored. Revealing is logged as the marker's own
+                    choice; their mark is captured independently regardless. */}
+                {aiHidden ? (
+                  <div className="mb-3 flex items-center justify-between gap-3 rounded-md border border-dashed border-border bg-muted/30 px-3 py-2 text-sm">
+                    <span className="text-muted-foreground">
+                      {tt(
+                        t,
+                        'marker.blind.hidden',
+                        'AI draft hidden — set your mark first, then reveal to compare.',
+                      )}
+                    </span>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setRevealedAi(true)}
+                    >
+                      {tt(t, 'marker.blind.reveal', 'Reveal AI')}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="mb-3 flex items-center gap-3 text-sm">
+                    <span className="text-muted-foreground">
+                      {tt(t, 'marker.ai.mark', 'AI mark')}:
+                    </span>
+                    <span className="font-semibold text-foreground">
+                      {current.ai_grade ?? '-'}
+                      {current.ai_score != null && current.ai_max_marks != null
+                        ? ` (${current.ai_score}/${current.ai_max_marks})`
+                        : ''}
+                    </span>
+                    {current.ai_confidence != null && (
+                      <span className="text-xs text-muted-foreground tabular-nums">
+                        {Math.round(current.ai_confidence * 100)}%{' '}
+                        {tt(t, 'marker.ai.confidence', 'confidence')}
+                      </span>
+                    )}
+                  </div>
+                )}
 
-                {/* Per-AO marks */}
-                {aoCorrections.length > 0 && (
+                {/* Final mark — shape-aware. GCSE → 9-1 grade select; IELTS → an
+                    overall band select + four criterion band selects; KS3/EAL →
+                    a single level select. */}
+                {shape.kind === 'gcse_grade' ? (
+                  <div className="space-y-1.5">
+                    <Label htmlFor="final-grade">
+                      {tt(t, 'marker.field.final_mark', 'Final mark')}
+                    </Label>
+                    <Select value={finalGrade} onValueChange={setFinalGrade}>
+                      <SelectTrigger id="final-grade" className="w-32">
+                        <SelectValue placeholder={tt(t, 'marker.field.mark_ph', 'Mark')} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {GRADE_OPTIONS.map((g) => (
+                          <SelectItem key={g} value={g}>
+                            {g}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {/* Overall band / level */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="band-overall">
+                        {shape.kind === 'band'
+                          ? tt(t, 'marker.field.overall_band', 'Overall band')
+                          : tt(t, 'marker.field.level', 'Level')}
+                      </Label>
+                      <Select value={bandOverall} onValueChange={setBandOverall}>
+                        <SelectTrigger id="band-overall" className="w-40">
+                          <SelectValue
+                            placeholder={
+                              shape.kind === 'band'
+                                ? tt(t, 'marker.field.band_ph', 'Band')
+                                : tt(t, 'marker.field.level_ph', 'Level')
+                            }
+                          />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {(shape.kind === 'band' ? bandOptions(shape) : (shape.levels ?? [])).map(
+                            (opt) => (
+                              <SelectItem key={opt} value={opt}>
+                                {opt}
+                              </SelectItem>
+                            ),
+                          )}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Per-criterion bands (IELTS TR/CC/LR/GRA) */}
+                    {shape.kind === 'band' && (shape.criteria ?? []).length > 0 && (
+                      <div className="space-y-2">
+                        <Label>{tt(t, 'marker.field.criteria', 'Criterion bands')}</Label>
+                        {(shape.criteria ?? []).map((c) => (
+                          <div key={c.code} className="flex items-center gap-2">
+                            <span className="w-40 shrink-0 text-xs font-medium text-muted-foreground">
+                              {c.code} · {c.label}
+                            </span>
+                            <Select
+                              value={bandCriteria[c.code] ?? ''}
+                              onValueChange={(v) =>
+                                setBandCriteria((prev) => ({ ...prev, [c.code]: v }))
+                              }
+                            >
+                              <SelectTrigger className="w-28">
+                                <SelectValue placeholder={tt(t, 'marker.field.band_ph', 'Band')} />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {bandOptions(shape).map((opt) => (
+                                  <SelectItem key={opt} value={opt}>
+                                    {opt}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Per-AO marks (GCSE only) */}
+                {shape.kind === 'gcse_grade' && aoCorrections.length > 0 && (
                   <div className="mt-3 space-y-2">
                     <Label>{tt(t, 'marker.field.ao', 'Per-AO marks')}</Label>
                     {aoCorrections.map((ao, idx) => (
@@ -789,7 +1002,9 @@ export default function MarkerConsolePage() {
                       {tt(t, 'marker.field.feedback', 'Final feedback')}
                     </Label>
                     <div className="flex items-center gap-1.5">
-                      {current.ai_feedback && (
+                      {/* Don't read the AI feedback aloud while blind (it would
+                          leak the draft the marker is meant to mark without). */}
+                      {!aiHidden && current.ai_feedback && (
                         <ReadAloudButton
                           text={current.ai_feedback}
                           iconOnly
