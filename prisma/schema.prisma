@@ -811,6 +811,12 @@ model MarkingSubmission {
   finalTeacherMark        String?   @map("final_teacher_mark")
   finalTeacherFeedback    String?   @map("final_teacher_feedback") @db.Text
   teacherAdjustmentReason String?   @map("teacher_adjustment_reason") @db.Text
+  // Board-aware human mark for NON-GCSE shapes (IELTS criterion+overall bands,
+  // KS3/EAL level). GCSE rows keep using `finalTeacherMark` (a TEXT 9-1 grade);
+  // this column is null for them. Additive/nullable so the live GCSE path is
+  // byte-identical. Shape: { kind:'band'|'level', overall, criteria? } — see
+  // src/lib/marking/marking-shapes.ts.
+  teacherBandMarks        Json?     @map("teacher_band_marks")
   approvedBy              String?   @map("approved_by") @db.Uuid
   approvedAt              DateTime? @map("approved_at") @db.Timestamptz(6)
   trainingEligible        Boolean?  @map("training_eligible")
