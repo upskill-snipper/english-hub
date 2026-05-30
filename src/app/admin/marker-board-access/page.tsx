@@ -16,12 +16,21 @@ import { useCallback, useEffect, useState } from 'react'
 
 interface PendingRow {
   id: string
+  markerId: string
   board: string
   markerName: string | null
   markerEmail: string | null
   markerQualification: string | null
   qualificationNote: string | null
   requestedAt: string
+}
+
+// Result of GET /api/admin/marker-cv?markerId=… — the applicant's credentials.
+interface MarkerCredentials {
+  found: boolean
+  url?: string
+  linkedinUrl: string | null
+  marketingConsent: boolean
 }
 
 interface GateCheck {
@@ -62,6 +71,12 @@ export default function MarkerBoardAccessAdminPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [busyId, setBusyId] = useState<string | null>(null)
+
+  // Per-marker credentials (CV signed URL + LinkedIn + consent), loaded on
+  // demand when an admin clicks "View credentials". Keyed by markerId.
+  const [creds, setCreds] = useState<Record<string, MarkerCredentials>>({})
+  const [credsBusy, setCredsBusy] = useState<string | null>(null)
+  const [credsError, setCredsError] = useState<Record<string, string>>({})
 
   // Calibration panel
   const [calBoard, setCalBoard] = useState('IELTS')
@@ -112,6 +127,51 @@ export default function MarkerBoardAccessAdminPage() {
       setBusyId(null)
     }
   }, [])
+
+  // Load (or refresh) a marker's credentials. The CV signed URL it returns is
+  // short-lived (10 min), so we fetch on demand and open it immediately.
+  const loadCredentials = useCallback(
+    async (markerId: string): Promise<MarkerCredentials | null> => {
+      setCredsBusy(markerId)
+      setCredsError((prev) => {
+        const next = { ...prev }
+        delete next[markerId]
+        return next
+      })
+      try {
+        const res = await fetch(`/api/admin/marker-cv?markerId=${encodeURIComponent(markerId)}`, {
+          cache: 'no-store',
+        })
+        if (!res.ok) {
+          const b = (await res.json().catch(() => ({}))) as { error?: string }
+          throw new Error(b.error ?? 'Could not load credentials.')
+        }
+        const data = (await res.json()) as MarkerCredentials
+        setCreds((prev) => ({ ...prev, [markerId]: data }))
+        return data
+      } catch (err) {
+        setCredsError((prev) => ({
+          ...prev,
+          [markerId]: err instanceof Error ? err.message : 'Could not load credentials.',
+        }))
+        return null
+      } finally {
+        setCredsBusy(null)
+      }
+    },
+    [],
+  )
+
+  // Fetch a fresh signed URL and open the CV in a new tab.
+  const openCv = useCallback(
+    async (markerId: string) => {
+      const data = await loadCredentials(markerId)
+      if (data?.found && data.url) {
+        window.open(data.url, '_blank', 'noopener,noreferrer')
+      }
+    },
+    [loadCredentials],
+  )
 
   const runCalibration = useCallback(async () => {
     setCalRunning(true)
@@ -181,6 +241,55 @@ export default function MarkerBoardAccessAdminPage() {
                     {p.qualificationNote ?? p.markerQualification}
                   </p>
                 )}
+
+                {/* Credentials: CV (signed URL on demand), LinkedIn, consent. */}
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                  <button
+                    type="button"
+                    disabled={credsBusy === p.markerId}
+                    onClick={() => void openCv(p.markerId)}
+                    className="rounded-md border border-border px-2 py-1 font-medium hover:bg-muted disabled:opacity-50"
+                  >
+                    {credsBusy === p.markerId ? 'Loading…' : 'View CV'}
+                  </button>
+
+                  {(() => {
+                    const c = creds[p.markerId]
+                    if (!c) return null
+                    return (
+                      <>
+                        {c.found === false && (
+                          <span className="text-muted-foreground">No CV uploaded</span>
+                        )}
+                        {c.linkedinUrl ? (
+                          <a
+                            href={c.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-md border border-border px-2 py-1 font-medium text-primary hover:bg-muted"
+                          >
+                            LinkedIn ↗
+                          </a>
+                        ) : (
+                          <span className="text-muted-foreground">No LinkedIn</span>
+                        )}
+                        <span
+                          className={
+                            c.marketingConsent
+                              ? 'rounded-md bg-green-600/10 px-2 py-1 font-medium text-green-700'
+                              : 'rounded-md bg-muted px-2 py-1 font-medium text-muted-foreground'
+                          }
+                        >
+                          {c.marketingConsent ? 'Marketing consent ✓' : 'No marketing consent'}
+                        </span>
+                      </>
+                    )
+                  })()}
+
+                  {credsError[p.markerId] && (
+                    <span className="text-destructive">{credsError[p.markerId]}</span>
+                  )}
+                </div>
               </div>
               <div className="flex shrink-0 gap-2">
                 <button
