@@ -1,34 +1,27 @@
 // ─── Admin · Run Calibration & Promote ─────────────────────────────────────
 // POST /api/admin/calibration/run
 //
-// The train-the-ML loop, wired end to end (Stage 6). For a marking AREA it:
+// The train-the-ML loop. For a marking BOARD it:
 //   1. fetches APPROVED scripts that carry BOTH an AI mark and a human mark,
-//   2. maps each to an {AI overall+criteria, human overall+criteria} pair,
-//   3. runs runCalibration() → agreement metrics + the G-LIVE gate per check,
-//   4. persists the result to calibration_baselines (Stage 5) — as 'promoted'
-//      (the live baseline that flips the gate) when green AND ?promote=1, else
-//      'measured' (recorded for history),
-//   5. returns the report + per-check breakdown so the admin sees exactly why
-//      an area is/ isn't live.
+//   2. builds agreement pairs using the metric for that board's SHAPE,
+//   3. runs the gate (per-check),
+//   4. persists the result to calibration_baselines — 'promoted' (live) when
+//      green AND ?promote, else 'measured' (recorded for history),
+//   5. returns the report + per-check breakdown.
 //
-// SCOPE: ALL boards (Stage E). The agreement metric is chosen by the board's
-// marking SHAPE: IELTS (band) → within-half-band (run.ts); GCSE grades and
-// KS3/EAL levels (ordinal) → within-one-step (ordinal-metrics.ts). The human
-// mark source differs too: band/level read teacher_band_marks, GCSE grades read
-// final_teacher_mark. A pair is only formed when BOTH an AI and a human mark
-// exist; otherwise the script is honestly skipped (counted), never guessed.
+// SCOPE: ALL boards. The metric is chosen by the board's marking shape:
+//   • IELTS (band)         → within-half-BAND (run.ts / metrics.ts)
+//   • GCSE grades, KS3/EAL → within-ONE-STEP ordinal (ordinal-metrics.ts)
+// Human-mark SOURCE is shape-aware: GCSE reads final_teacher_mark; IELTS/KS3/EAL
+// read teacher_band_marks. A pair forms only when BOTH an AI and a human mark
+// exist; otherwise the script is honestly skipped + counted, never guessed.
 //
 // NOTE on "go live": only the IELTS route is behind a fail-closed calibration
-// gate, so promoting an IELTS baseline literally flips that route live. GCSE is
-// already live; a promoted GCSE/KS3/EAL baseline is the CERTIFICATION RECORD of
-// agreement for that board (audit + drift tracking), not a switch.
+// gate, so promoting an IELTS baseline flips that route live. GCSE is already
+// live, so a promoted GCSE/KS3/EAL baseline is the agreement CERTIFICATION
+// record (audit + drift tracking), not a switch.
 //
-// Auth: site-admin only (verifyAdmin), like every other /api/admin/marker-*
-// route. Uses the service-role client for the data + baseline writes.
-//
-// Supabase generated types don't know about marking_submissions /
-// calibration_baselines yet (Prisma client not regenerated), so rows are cast
-// through `unknown` to the SELECT shapes the migrations guarantee.
+// Auth: site-admin only (verifyAdmin). Service-role client for data + writes.
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
@@ -56,15 +49,10 @@ import { normaliseBoard, isRequestableBoard } from '@/lib/marker-board-access'
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
 
-// The pilot area the IELTS WT2 route reads. Mirrors IELTS_WT2_AREA_KEY in the
-// route's glive.ts (kept in sync; this route promotes under this exact key).
+// The pilot area the IELTS WT2 route reads (mirrors IELTS_WT2_AREA_KEY in glive.ts).
 const IELTS_WT2_AREA_KEY = 'ielts:academic:writing-task-2'
 
-/**
- * Map a board token to its calibration area key. IELTS keeps the pilot key the
- * live route reads; every other board gets a stable per-board key. One place so
- * the run route and any live gate agree.
- */
+/** Map a board token to its stable calibration area key. */
 function boardToAreaKey(board: string): string {
   const b = normaliseBoard(board)
   if (b === 'IELTS') return IELTS_WT2_AREA_KEY
@@ -76,7 +64,7 @@ function boardToAreaKey(board: string): string {
 interface RunBody {
   /** Board to calibrate (preferred), e.g. 'AQA', 'IELTS', 'KS3'. */
   board?: string
-  /** Area to calibrate (legacy/explicit). Defaults to the IELTS WT2 pilot. */
+  /** Area key (legacy/explicit); defaults to the IELTS pilot. */
   areaKey?: string
   /** Restrict to a specific batch (optional). */
   batchId?: string
@@ -84,7 +72,8 @@ interface RunBody {
   promote?: boolean
 }
 
-// Rows we need to build pairs: the AI mark (band/grade) + the human mark.
+// Rows we need: AI mark (band via ai_result / grade via ai_grade) + the human
+// mark (band/level via teacher_band_marks / grade via final_teacher_mark).
 const ROW_COLUMNS =
   'id, exam_board, qualification, paper, status, ai_result, ai_grade, ai_grade_band,' +
   ' teacher_band_marks, final_teacher_mark, batch_id'
@@ -103,12 +92,10 @@ interface CalibRow {
   batch_id: string | null
 }
 
-/**
- * Extract the AI overall band + per-criterion bands from a persisted
- * MarkingResultV2 (ai_result). Tolerant of shape drift: returns null when the
- * row has no usable AI band (it's then excluded from the pairs).
- */
-function extractAi(
+// ─── Band extraction (IELTS) ─────────────────────────────────────────────────
+
+/** AI overall band + per-criterion bands from a persisted MarkingResultV2. */
+function extractAiBand(
   aiResult: unknown,
 ): { overall: number; criteria: Record<string, number> } | null {
   if (!aiResult || typeof aiResult !== 'object') return null
@@ -121,7 +108,6 @@ function extractAi(
         ? (r.overallBand as number)
         : null
   if (overall === null || !Number.isFinite(overall)) return null
-
   const criteria: Record<string, number> = {}
   const critArr = Array.isArray(r.criteria) ? (r.criteria as Record<string, unknown>[]) : []
   for (const c of critArr) {
@@ -134,11 +120,10 @@ function extractAi(
   return { overall, criteria }
 }
 
-/**
- * Extract the human overall band + criteria from teacher_band_marks (Stage 3).
- * Only 'band' marks are usable for IELTS calibration; returns null otherwise.
- */
-function extractHuman(tbm: unknown): { overall: number; criteria: Record<string, number> } | null {
+/** Human overall band + criteria from teacher_band_marks (kind:'band'). */
+function extractHumanBand(
+  tbm: unknown,
+): { overall: number; criteria: Record<string, number> } | null {
   if (!tbm || typeof tbm !== 'object') return null
   const m = tbm as Record<string, unknown>
   if (m.kind !== 'band') return null
@@ -154,10 +139,47 @@ function extractHuman(tbm: unknown): { overall: number; criteria: Record<string,
   return { overall, criteria }
 }
 
+// ─── Ordinal extraction (GCSE grades / KS3-EAL levels) ───────────────────────
+
+/** Human label: GCSE grade from final_teacher_mark; KS3/EAL level from teacher_band_marks.overall. */
+function extractHumanLabel(row: CalibRow, shape: MarkingShape): string | null {
+  if (shape.kind === 'gcse_grade') {
+    const g = row.final_teacher_mark
+    return typeof g === 'string' && g.trim().length > 0 ? g.trim() : null
+  }
+  const tbm = row.teacher_band_marks
+  if (tbm && typeof tbm === 'object') {
+    const m = tbm as Record<string, unknown>
+    if (m.kind === 'level' && typeof m.overall === 'string' && m.overall.trim().length > 0) {
+      return m.overall.trim()
+    }
+  }
+  return null
+}
+
+/** AI label: GCSE grade from ai_grade; KS3/EAL level from ai_grade_band / ai_result.overall.level. */
+function extractAiLabel(row: CalibRow, shape: MarkingShape): string | null {
+  if (shape.kind === 'gcse_grade') {
+    const g = row.ai_grade
+    return typeof g === 'string' && g.trim().length > 0 ? g.trim() : null
+  }
+  if (typeof row.ai_grade_band === 'string' && row.ai_grade_band.trim().length > 0) {
+    return row.ai_grade_band.trim()
+  }
+  const r = row.ai_result
+  if (r && typeof r === 'object') {
+    const overall = (r as Record<string, unknown>).overall
+    if (overall && typeof overall === 'object') {
+      const lvl = (overall as Record<string, unknown>).level
+      if (typeof lvl === 'string' && lvl.trim().length > 0) return lvl.trim()
+    }
+  }
+  return null
+}
+
 export async function POST(request: NextRequest) {
   try {
     const contentType = request.headers.get('content-type')
-    // Tolerate an empty body (defaults to the IELTS pilot, measure-only).
     let body: RunBody = {}
     if (contentType?.includes('application/json')) {
       try {
@@ -172,33 +194,38 @@ export async function POST(request: NextRequest) {
     if (!rl.success) return rateLimitResponse(rl.resetAt)
 
     const { error: authError } = await verifyAdmin()
-    if (authError === 'Unauthorized') {
+    if (authError === 'Unauthorized')
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-    if (authError === 'Forbidden') {
-      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
-    }
+    if (authError === 'Forbidden') return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
 
-    const areaKey = (body.areaKey ?? IELTS_WT2_AREA_KEY).trim()
     const promote = body.promote === true
 
-    // SCOPE GUARD: the agreement maths is IELTS band-specific. Refuse non-IELTS
-    // areas rather than produce a misleading result.
-    if (!areaKey.startsWith('ielts:')) {
-      return badRequestResponse(
-        'Calibration is currently supported for IELTS areas only (band agreement metric).',
-      )
+    // Resolve the target board → areaKey → shape. `board` preferred; an explicit
+    // areaKey (legacy) still works and defaults to the IELTS pilot.
+    let board: string
+    let areaKey: string
+    if (typeof body.board === 'string' && body.board.trim().length > 0) {
+      board = normaliseBoard(body.board)
+      if (!isRequestableBoard(board)) return badRequestResponse(`Unknown board: ${body.board}`)
+      areaKey = boardToAreaKey(board)
+    } else {
+      areaKey = (body.areaKey ?? IELTS_WT2_AREA_KEY).trim()
+      board = (areaKey.split(':')[0] ?? 'IELTS').toUpperCase()
     }
+    // The shape drives the metric. resolveMarkingShape takes (board, qualification);
+    // passing the board token as both is enough for shape resolution.
+    const shape: MarkingShape = resolveMarkingShape(board, board)
+    const isBand = shape.kind === 'band'
 
     const admin = createServiceRoleClient()
 
-    // Fetch APPROVED rows for the area that have a human band mark. We match on
-    // qualification/board loosely (IELTS), optionally narrowed to a batch.
+    // Fetch APPROVED rows, optionally narrowed to a batch. We DON'T filter on a
+    // human-mark column here (GCSE uses final_teacher_mark, others use
+    // teacher_band_marks) — we filter precisely in code by shape.
     let query = admin
       .from('marking_submissions')
       .select(ROW_COLUMNS)
       .eq('status', 'approved')
-      .not('teacher_band_marks', 'is', null)
       .limit(5000)
     if (body.batchId) query = query.eq('batch_id', body.batchId)
 
@@ -209,81 +236,130 @@ export async function POST(request: NextRequest) {
     }
     const rows = (rowsRaw ?? []) as unknown as CalibRow[]
 
-    // Build pairs: keep only IELTS-band rows with BOTH an AI and a human band.
-    const scripts: CalibrationScript[] = []
-    let skippedNoAi = 0
-    let skippedNoHuman = 0
-    let skippedNotIelts = 0
-    for (const row of rows) {
-      const shape = resolveMarkingShape(row.exam_board, row.qualification)
-      if (shape.kind !== 'band') {
-        skippedNotIelts += 1
-        continue
+    const targetBoard = board
+    // A row belongs to this run when its shape matches AND (for GCSE) its exact
+    // board matches; for IELTS/KS3/EAL the shape is the identity (one offering).
+    const matchesArea = (r: CalibRow): boolean => {
+      const rShape = resolveMarkingShape(r.exam_board, r.qualification)
+      if (rShape.kind !== shape.kind) return false
+      if (shape.kind === 'gcse_grade') {
+        return r.exam_board ? normaliseBoard(r.exam_board) === targetBoard : false
       }
-      const human = extractHuman(row.teacher_band_marks)
-      if (!human) {
-        skippedNoHuman += 1
-        continue
-      }
-      const ai = extractAi(row.ai_result)
-      if (!ai) {
-        skippedNoAi += 1
-        continue
-      }
-      scripts.push({
-        id: row.id,
-        aiOverall: ai.overall,
-        humanOverall: human.overall,
-        aiCriteria: toCriterionBands(ai.criteria, ai.overall),
-        humanCriteria: toCriterionBands(human.criteria, human.overall),
-      })
+      return true
     }
 
-    // Resolve the prior promoted baseline (for the regression check + linkage).
-    const priorId = await getPromotedBaselineId(areaKey)
-    const priorRef = priorId
-      ? await (async () => {
-          const { data } = await admin
-            .from('calibration_baselines')
-            .select('id, within_half_band')
-            .eq('id', priorId)
-            .maybeSingle()
-          const p = data as unknown as { id: string; within_half_band: number } | null
-          return p ? { id: p.id, withinHalfBand: p.within_half_band } : null
-        })()
-      : null
+    let skippedNoAi = 0
+    let skippedNoHuman = 0
+    let skippedNotArea = 0
+    let firstRow: CalibRow | undefined
 
-    // Run the calibration (pure). The baseline id is provisional; the persisted
-    // row gets its own DB id.
-    const result = runCalibration({
-      id: `run-${areaKey}`,
-      scripts,
-      priorBaseline: priorRef,
-    })
+    let n: number
+    let headlineAgreement: number
+    let secondaryAgreement: number | null
+    let coverage: Record<number | string, number>
+    let green: boolean
+    let checks: unknown
+    let report: unknown
+
+    if (isBand) {
+      const scripts: CalibrationScript[] = []
+      for (const row of rows) {
+        if (!matchesArea(row)) {
+          skippedNotArea += 1
+          continue
+        }
+        const human = extractHumanBand(row.teacher_band_marks)
+        if (!human) {
+          skippedNoHuman += 1
+          continue
+        }
+        const ai = extractAiBand(row.ai_result)
+        if (!ai) {
+          skippedNoAi += 1
+          continue
+        }
+        if (!firstRow) firstRow = row
+        scripts.push({
+          id: row.id,
+          aiOverall: ai.overall,
+          humanOverall: human.overall,
+          aiCriteria: toCriterionBands(ai.criteria, ai.overall),
+          humanCriteria: toCriterionBands(human.criteria, human.overall),
+        })
+      }
+      const priorId = await getPromotedBaselineId(areaKey)
+      const priorRef = priorId
+        ? await (async () => {
+            const { data } = await admin
+              .from('calibration_baselines')
+              .select('id, within_half_band')
+              .eq('id', priorId)
+              .maybeSingle()
+            const p = data as unknown as { id: string; within_half_band: number } | null
+            return p ? { id: p.id, withinHalfBand: p.within_half_band } : null
+          })()
+        : null
+      const result = runCalibration({ id: `run-${areaKey}`, scripts, priorBaseline: priorRef })
+      n = result.n
+      headlineAgreement = result.withinHalfBand
+      secondaryAgreement = result.exactBand
+      coverage = result.perBandCoverage
+      green = result.green
+      checks = result.checks
+      report = result.report
+    } else {
+      // ORDINAL: GCSE grades, KS3/EAL levels.
+      const pairs: OrdinalPair[] = []
+      for (const row of rows) {
+        if (!matchesArea(row)) {
+          skippedNotArea += 1
+          continue
+        }
+        const human = extractHumanLabel(row, shape)
+        if (!human) {
+          skippedNoHuman += 1
+          continue
+        }
+        const ai = extractAiLabel(row, shape)
+        if (!ai) {
+          skippedNoAi += 1
+          continue
+        }
+        if (!firstRow) firstRow = row
+        pairs.push({ ai, human })
+      }
+      const ordReport = summariseOrdinal(shape, pairs)
+      const gate = assessOrdinalGate(ordReport)
+      n = ordReport.count
+      headlineAgreement = ordReport.withinOneStep
+      secondaryAgreement = ordReport.exactAgreement
+      coverage = ordReport.perLabelCoverage
+      green = gate.green
+      checks = gate.checks
+      report = ordReport
+    }
 
     // Persist: promote only when green AND the caller asked to promote.
-    const willPromote = promote && result.green
+    const priorId = await getPromotedBaselineId(areaKey)
+    const willPromote = promote && green
     let persistedId: string | null = null
     let persistedStatus: 'measured' | 'promoted' | null = null
-    if (scripts.length > 0) {
+    if (n > 0) {
       try {
-        const firstRow = rows.find(
-          (r) => resolveMarkingShape(r.exam_board, r.qualification).kind === 'band',
-        )
         const persisted = await persistBaseline({
           areaKey,
-          examBoard: firstRow?.exam_board ?? null,
+          examBoard: firstRow?.exam_board ?? board,
           qualification: firstRow?.qualification ?? null,
           paper: firstRow?.paper ?? null,
-          n: result.n,
-          withinHalfBand: result.withinHalfBand,
-          exactBand: result.exactBand,
-          perBandCoverage: result.perBandCoverage,
-          report: result.report,
+          n,
+          withinHalfBand: headlineAgreement,
+          exactBand: secondaryAgreement,
+          perBandCoverage: coverage as Record<number, number>,
+          report: report as Record<string, unknown>,
           priorBaselineId: priorId,
           promote: willPromote,
-          gatePassed: result.green,
-          gateDetail: result.checks,
+          gatePassed: green,
+          gateDetail: checks,
           createdBy: null,
         })
         persistedId = persisted.id
@@ -296,22 +372,24 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       areaKey,
+      board,
+      metric: isBand ? 'within-half-band' : 'within-one-step',
       scriptsConsidered: rows.length,
-      pairsUsed: result.n,
-      skipped: { noAi: skippedNoAi, noHuman: skippedNoHuman, notIelts: skippedNotIelts },
-      withinHalfBand: result.withinHalfBand,
-      exactBand: result.exactBand,
-      perBandCoverage: result.perBandCoverage,
-      green: result.green,
-      checks: result.checks,
+      pairsUsed: n,
+      skipped: { noAi: skippedNoAi, noHuman: skippedNoHuman, notArea: skippedNotArea },
+      headlineAgreement,
+      exactAgreement: secondaryAgreement,
+      coverage,
+      green,
+      checks,
       promoted: persistedStatus === 'promoted',
       requestedPromote: promote,
       baselineId: persistedId,
       baselineStatus: persistedStatus,
-      report: result.report,
+      report,
     })
   } catch (err) {
     console.error('[admin/calibration/run] unexpected error', err)
-    return serverErrorResponse('An unexpected error occurred during calibration.')
+    return serverErrorResponse('An unexpected error occurred.')
   }
 }

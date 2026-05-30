@@ -132,8 +132,12 @@ export interface PersistBaselineInput {
   readonly n: number
   readonly withinHalfBand: number
   readonly exactBand: number | null
-  readonly perBandCoverage: Readonly<Record<number, number>>
-  readonly report: CalibrationReport
+  // Coverage map keyed by band (IELTS, numeric) OR label (GCSE grade / KS3-EAL
+  // level, string). Stored verbatim as jsonb, so both key kinds are accepted.
+  readonly perBandCoverage: Readonly<Record<number, number>> | Readonly<Record<string, number>>
+  // Full metric report — a band CalibrationReport (IELTS) or an OrdinalReport
+  // (GCSE/KS3/EAL). Stored verbatim as jsonb (audit only), so accept either shape.
+  readonly report: CalibrationReport | Record<string, unknown>
   readonly priorBaselineId: string | null
   /** True to write as the live baseline (demotes the prior promoted row). */
   readonly promote: boolean

@@ -246,7 +246,7 @@ function ErrorPanel({ err, isAr }: { err: ErrState; isAr: boolean }) {
       <p className="text-amber-800 dark:text-amber-300">{err.message}</p>
       {err.kind === 'auth' && (
         <Link
-          href="/login"
+          href="/auth/login"
           className="mt-3 inline-block rounded-lg bg-teal-600 px-4 py-2 text-xs font-semibold text-white hover:bg-teal-700"
         >
           {isAr ? 'تسجيل الدخول' : 'Sign in'}

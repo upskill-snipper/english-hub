@@ -20,6 +20,14 @@ import {
   Sparkles,
   Banknote,
   Inbox,
+  Database,
+  BarChart3,
+  FileText,
+  ScrollText,
+  Mail,
+  UserCheck,
+  Settings,
+  Wrench,
 } from 'lucide-react'
 
 interface AdminStats {
@@ -271,6 +279,98 @@ export default function AdminPage() {
                     {t('admin.root.empty_enrolments')}
                   </p>
                 )}
+              </div>
+            </section>
+
+            {/* ── Marking & ML training ────────────────────────────────────── */}
+            <section className="mb-6">
+              <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-foreground">
+                <Sparkles className="h-5 w-5 text-primary" />
+                Marking &amp; ML training
+              </h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <AdminToolCard
+                  href="/admin/marker-board-access"
+                  icon={<ClipboardCheck className="h-5 w-5 text-primary" />}
+                  title="Examiner approvals & calibration"
+                  desc="Approve examiners per board, then run each board's ML calibration and promote a green baseline."
+                />
+                <AdminToolCard
+                  href="/admin/marker-drive"
+                  icon={<Inbox className="h-5 w-5 text-primary" />}
+                  title="Marker drive"
+                  desc="Create batches, ingest scripts, and assign work to approved markers."
+                />
+                <AdminToolCard
+                  href="/admin/marker-qa"
+                  icon={<Shield className="h-5 w-5 text-primary" />}
+                  title="Marker QA"
+                  desc="Gold-set accuracy, inter-marker agreement and drift per marker."
+                />
+                <AdminToolCard
+                  href="/admin/marker-pay"
+                  icon={<Banknote className="h-5 w-5 text-primary" />}
+                  title="Marker pay"
+                  desc="Compute per-marker payment for approved scripts in a date window."
+                />
+                <AdminToolCard
+                  href="/marker"
+                  icon={<PencilLine className="h-5 w-5 text-primary" />}
+                  title="Marker console"
+                  desc="The examiner marking workbench (the screen markers themselves use)."
+                />
+              </div>
+            </section>
+
+            {/* ── Platform tools ───────────────────────────────────────────── */}
+            <section className="mb-6">
+              <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-foreground">
+                <Wrench className="h-5 w-5 text-primary" />
+                Platform tools
+              </h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <AdminToolCard
+                  href="/admin/training-data"
+                  icon={<Database className="h-5 w-5 text-primary" />}
+                  title="Training data"
+                  desc="The labelled corpus from human marks, used to train/tune the marking models."
+                />
+                <AdminToolCard
+                  href="/admin/model-performance"
+                  icon={<BarChart3 className="h-5 w-5 text-primary" />}
+                  title="Model performance"
+                  desc="Marking model accuracy and behaviour over time."
+                />
+                <AdminToolCard
+                  href="/admin/prompt-management"
+                  icon={<FileText className="h-5 w-5 text-primary" />}
+                  title="Prompt management"
+                  desc="Versioned marking prompts."
+                />
+                <AdminToolCard
+                  href="/admin/rubric-management"
+                  icon={<ScrollText className="h-5 w-5 text-primary" />}
+                  title="Rubric management"
+                  desc="Versioned mark schemes / rubrics per board."
+                />
+                <AdminToolCard
+                  href="/admin/ai-marking"
+                  icon={<Settings className="h-5 w-5 text-primary" />}
+                  title="AI marking config"
+                  desc="Configuration for the AI marking pipeline."
+                />
+                <AdminToolCard
+                  href="/admin/verify-user"
+                  icon={<UserCheck className="h-5 w-5 text-primary" />}
+                  title="Verify user"
+                  desc="Look up and verify a user account."
+                />
+                <AdminToolCard
+                  href="/admin/email-diagnostics"
+                  icon={<Mail className="h-5 w-5 text-primary" />}
+                  title="Email diagnostics"
+                  desc="Inspect and troubleshoot transactional email."
+                />
               </div>
             </section>
           </>
