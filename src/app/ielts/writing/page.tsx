@@ -17,6 +17,8 @@ import Link from 'next/link'
 import {
   AlertTriangle,
   ArrowLeft,
+  ArrowRight,
+  BookOpenCheck,
   CheckCircle2,
   Clock,
   Lightbulb,
@@ -316,7 +318,15 @@ export default function IeltsWritingPage() {
       {/* ── Task tabs + prompt picker ─────────────────────────────── */}
       {!feedback && (
         <section className="space-y-5">
-          <div className="flex flex-wrap items-center justify-end gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <Link
+              href="/ielts/model-answers"
+              className="group inline-flex items-center gap-2 rounded-lg border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-violet-500/40 hover:text-foreground"
+            >
+              <BookOpenCheck className="size-3.5 text-violet-400" />
+              See band 6.5 &amp; band 8 model answers
+              <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
+            </Link>
             <TrackToggle value={track} onChange={setTrack} />
           </div>
 

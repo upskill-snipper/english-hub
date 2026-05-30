@@ -19,6 +19,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
   ArrowLeft,
+  ArrowRight,
+  BookOpenCheck,
   Mic,
   Loader2,
   Send,
@@ -327,13 +329,23 @@ export default function IeltsSpeakingPage() {
 
       {/* ── Cue picker ────────────────────────────────────────────────── */}
       <section className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="flex size-9 items-center justify-center rounded-lg bg-rose-500/10">
-            <MessageSquareText className="size-4.5 text-rose-400" />
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="flex size-9 items-center justify-center rounded-lg bg-rose-500/10">
+              <MessageSquareText className="size-4.5 text-rose-400" />
+            </div>
+            <h2 className="text-heading-md font-heading text-foreground">
+              {t('ielts.speaking.picker.title')}
+            </h2>
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">
-            {t('ielts.speaking.picker.title')}
-          </h2>
+          <Link
+            href="/ielts/model-answers"
+            className="group inline-flex items-center gap-2 rounded-lg border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-rose-500/40 hover:text-foreground"
+          >
+            <BookOpenCheck className="size-3.5 text-rose-400" />
+            See band 6.5 &amp; band 8 model answers
+            <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {SPEAKING_CUES.map((c) => {

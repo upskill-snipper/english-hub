@@ -3,6 +3,7 @@ import {
   Stethoscope,
   BookOpen,
   BookMarked,
+  BookOpenCheck,
   CalendarDays,
   Map,
   Dumbbell,
@@ -122,6 +123,12 @@ export default async function IeltsHubPage() {
   // "Beyond practice" cards - links resolved up front (server component can't
   // await inside the JSX .map()).
   const moreCards = [
+    {
+      href: '/ielts/model-answers',
+      icon: BookOpenCheck,
+      title: 'Model answers',
+      body: 'Band-6.5 and band-8 sample answers for Writing and Speaking, with notes on what lifts each one up the scale.',
+    },
     {
       href: '/ielts/admissions',
       icon: GraduationCap,
@@ -323,9 +330,31 @@ export default async function IeltsHubPage() {
         </div>
       </section>
 
-      {/* 1a-iii. Readiness tools that feed the report (IELTS-10 / IELTS-11) */}
+      {/* 1a-iii. Readiness tools that feed the report (IELTS-9 / 10 / 11) */}
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <Link
+            href="/ielts/uk-readiness"
+            className="group mb-5 flex flex-col items-start gap-4 rounded-2xl border border-border/60 bg-card p-6 shadow-soft transition-colors hover:border-emerald-500/40 sm:flex-row sm:items-center"
+          >
+            <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+              <Compass className="h-5 w-5" aria-hidden />
+            </span>
+            <div className="flex-1">
+              <h3 className="font-serif text-lg font-semibold text-foreground">
+                The UK Readiness programme — overview
+              </h3>
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                One page that ties the four domains together — English, application, visa &amp;
+                finance, and the move itself — with what &quot;ready&quot; looks like for each and
+                where to start.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+              See the programme{' '}
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          </Link>
           <div className="grid gap-5 sm:grid-cols-2">
             <Link
               href="/ielts/readiness/visa-finance"
