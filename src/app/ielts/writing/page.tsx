@@ -476,7 +476,10 @@ export default function IeltsWritingPage() {
               <p>{error}</p>
               {paywalled && (
                 <p className="mt-2">
-                  <Link href="/pricing" className="font-semibold underline underline-offset-2">
+                  <Link
+                    href="/pricing#ielts"
+                    className="font-semibold underline underline-offset-2"
+                  >
                     {t('ielts.writing.paywall.view_plans')}
                   </Link>
                 </p>

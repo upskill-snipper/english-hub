@@ -553,9 +553,17 @@ export default function IeltsSpeakingPage() {
             </div>
 
             {error && (
-              <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
-                <AlertTriangle className="mt-0.5 size-4 shrink-0" />
-                <span>{error}</span>
+              <div className="flex flex-col gap-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
+                <div className="flex items-start gap-2">
+                  <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+                  <span>{error}</span>
+                </div>
+                <Link
+                  href="/pricing#ielts"
+                  className="self-start font-semibold underline underline-offset-2"
+                >
+                  View IELTS plans
+                </Link>
               </div>
             )}
 

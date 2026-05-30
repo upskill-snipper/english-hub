@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { t } from '@/lib/i18n/t'
+import { PRICING } from '@/constants/pricing'
 import { IELTS_SKILLS, SKILL_META } from '@/lib/ielts/types'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { SkillCard } from './_components/SkillCard'
@@ -256,6 +257,32 @@ export default async function IeltsHubPage() {
                 {l}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 1a. Subscription CTA banner - drives to the purchasable IELTS plan */}
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+          <div className="flex flex-col items-center gap-6 rounded-2xl border border-sky-500/30 bg-sky-500/[0.06] p-8 text-center sm:flex-row sm:text-left">
+            <div className="flex-1">
+              <h2 className="text-2xl font-semibold tracking-tight text-sky-600 dark:text-sky-300">
+                Unlimited AI band feedback — {PRICING.CURRENCY}
+                {PRICING.IELTS_MONTHLY}/month
+              </h2>
+              <p className="mt-2 leading-relaxed text-muted-foreground">
+                Unlimited examiner-calibrated feedback on every Writing and Speaking answer. Start
+                with a {PRICING.TRIAL_DAYS}-day free trial — cancel anytime.
+              </p>
+            </div>
+            <Button
+              size="lg"
+              className="h-12 shrink-0 gap-2 bg-sky-600 px-7 text-base text-white hover:bg-sky-700"
+              render={<Link href="/pricing#ielts" />}
+            >
+              See IELTS plans
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </div>
         </div>
       </section>

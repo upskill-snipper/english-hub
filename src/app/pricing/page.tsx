@@ -249,7 +249,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /*  PAGE                                                               */
 /* ------------------------------------------------------------------ */
 
-type CheckoutPlan = 'student_monthly' | 'student_annual' | 'teacher_monthly' | 'teacher_annual'
+type CheckoutPlan =
+  | 'student_monthly'
+  | 'student_annual'
+  | 'teacher_monthly'
+  | 'teacher_annual'
+  | 'ielts_monthly'
+  | 'ielts_annual'
 
 // Wrapper page: useSearchParams() requires a Suspense boundary in Next 15.
 // The actual content lives in <PricingContent /> below.
@@ -453,6 +459,10 @@ function PricingContent() {
   const teacherError =
     checkoutError &&
     (checkoutErrorPlan === 'teacher_monthly' || checkoutErrorPlan === 'teacher_annual')
+      ? checkoutError
+      : null
+  const ieltsError =
+    checkoutError && (checkoutErrorPlan === 'ielts_monthly' || checkoutErrorPlan === 'ielts_annual')
       ? checkoutError
       : null
 
@@ -717,7 +727,7 @@ function PricingContent() {
               affiliate codes there). */}
           <AffiliateCodeField {...codeField} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {/* Student Card */}
             <Card className="relative flex flex-col p-0 border-primary/30 overflow-visible">
               {/* Gradient top edge */}
@@ -1000,6 +1010,111 @@ function PricingContent() {
                 </button>
                 {teacherError && (
                   <p className="mt-3 text-center text-xs text-red-600">{teacherError}</p>
+                )}
+              </div>
+            </Card>
+
+            {/* IELTS Card - standalone premium entitlement (sold separately
+                from the GCSE Student/Teacher plans). Inline English copy here
+                rather than t() keys, which would render the "[[key]]" sentinel
+                for keys not present in the locale dictionary. */}
+            <Card
+              id="ielts"
+              className="relative flex flex-col p-0 border-2 border-sky-500/30 bg-sky-500/[0.04] overflow-visible scroll-mt-24"
+            >
+              {/* Gradient top edge */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-500/60 to-transparent" />
+
+              <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-sky-600 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-sky-500/25 whitespace-nowrap">
+                <Target className="w-3.5 h-3.5 mr-1" />
+                IELTS
+              </Badge>
+
+              <div className="p-8 pb-0">
+                <h3 className="text-lg font-bold tracking-tight text-foreground mt-2">
+                  IELTS Band Booster
+                </h3>
+                <p className="text-sm text-muted-foreground mt-1 mb-3">
+                  Adult exam prep with unlimited examiner-calibrated AI band feedback
+                </p>
+
+                {/* Price - monthly headline */}
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="text-5xl font-extrabold tracking-tight text-foreground">
+                    {PRICING.CURRENCY}
+                    {PRICING.IELTS_MONTHLY}
+                  </span>
+                  <span className="text-muted-foreground text-base">{t('pricing.per_month')}</span>
+                </div>
+
+                {/* Annual value line */}
+                <p className="text-sm text-muted-foreground mb-3">
+                  {t('pricing.or_prefix')}{' '}
+                  <span className="font-semibold text-foreground">
+                    {PRICING.CURRENCY}
+                    {PRICING.IELTS_ANNUAL}
+                    {t('pricing.per_year_long')}
+                  </span>{' '}
+                  <span className="text-muted-foreground/80">
+                    (~{PRICING.CURRENCY}
+                    {PRICING.IELTS_ANNUAL_EFFECTIVE_MONTHLY}/mo)
+                  </span>
+                </p>
+
+                {/* Trial line */}
+                <p className="text-sm text-emerald-600 font-semibold mb-3">
+                  {PRICING.TRIAL_DAYS}-day free trial · cancel anytime
+                </p>
+
+                {/* Features */}
+                <div className="mb-6">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                    What&apos;s included
+                  </p>
+                  <ul className="space-y-2.5">
+                    {[
+                      'Unlimited AI Writing band feedback',
+                      'Unlimited AI Speaking band feedback',
+                      'Examiner-calibrated to IELTS band descriptors',
+                      'Model answers & improvement tips',
+                      `${PRICING.TRIAL_DAYS}-day free trial, cancel anytime`,
+                    ].map((label) => (
+                      <li key={label} className="flex items-start gap-2.5 text-sm">
+                        <CheckCircle className="w-4 h-4 text-sky-600 dark:text-sky-300 flex-shrink-0 mt-0.5" />
+                        <span>{label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-auto p-8 pt-0">
+                <Button
+                  variant="default"
+                  className="w-full bg-sky-600 hover:bg-sky-700 shadow-lg shadow-sky-500/20 text-white"
+                  size="lg"
+                  onClick={() => handleCheckout('ielts_monthly')}
+                  disabled={checkoutLoading !== null}
+                >
+                  {checkoutLoading === 'ielts_monthly'
+                    ? t('pricing.starting_checkout')
+                    : `Start free trial — ${PRICING.CURRENCY}${PRICING.IELTS_MONTHLY}/mo`}
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
+                <button
+                  onClick={() => handleCheckout('ielts_annual')}
+                  disabled={checkoutLoading !== null}
+                  className="mt-2 w-full text-center text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline disabled:opacity-50"
+                >
+                  {checkoutLoading === 'ielts_annual'
+                    ? t('pricing.starting_checkout')
+                    : `Or pay annually — ${PRICING.CURRENCY}${PRICING.IELTS_ANNUAL}/year`}
+                </button>
+                <p className="mt-3 text-center text-[11px] text-muted-foreground/80">
+                  Separate from Student &amp; Teacher plans · adult IELTS exam prep
+                </p>
+                {ieltsError && (
+                  <p className="mt-3 text-center text-xs text-red-600">{ieltsError}</p>
                 )}
               </div>
             </Card>
