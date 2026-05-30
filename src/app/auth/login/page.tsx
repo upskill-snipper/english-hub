@@ -20,6 +20,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
+import AppleSignInButton from '@/components/auth/AppleSignInButton'
 
 function LoginForm() {
   const router = useRouter()
@@ -132,9 +133,13 @@ function LoginForm() {
           </CardHeader>
 
           <CardContent>
-            {process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' && (
+            {(process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' ||
+              process.env.NEXT_PUBLIC_APPLE_OAUTH_ENABLED === 'true') && (
               <>
-                <GoogleSignInButton redirectTo={redirectTo} className="w-full mb-4" />
+                <div className="mb-4 space-y-3">
+                  <GoogleSignInButton redirectTo={redirectTo} className="w-full" />
+                  <AppleSignInButton redirectTo={redirectTo} className="w-full" />
+                </div>
 
                 <div className="relative mb-6">
                   <div className="absolute inset-0 flex items-center">

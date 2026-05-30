@@ -36,6 +36,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
+import AppleSignInButton from '@/components/auth/AppleSignInButton'
 
 const BENEFIT_KEYS = [
   { icon: BookOpen, key: 'auth.teacher.benefit.lesson_plans' as const },
@@ -280,9 +281,11 @@ export default function TeacherRegisterPage() {
                     Gated by NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED so we don't
                     surface the button (or its divider) until Google is
                     actually enabled in Supabase. */}
-                {process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' && (
+                {(process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' ||
+                  process.env.NEXT_PUBLIC_APPLE_OAUTH_ENABLED === 'true') && (
                   <>
                     <GoogleSignInButton redirectTo="/dashboard/teacher" className="w-full" />
+                    <AppleSignInButton redirectTo="/dashboard/teacher" className="w-full" />
                     <div className="my-6 flex items-center gap-3">
                       <div className="h-px flex-1 bg-border" />
                       <span className="text-xs uppercase tracking-wide text-muted-foreground">

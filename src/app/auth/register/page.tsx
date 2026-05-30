@@ -63,6 +63,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
+import AppleSignInButton from '@/components/auth/AppleSignInButton'
 
 function RegisterForm() {
   const searchParams = useSearchParams()
@@ -485,9 +486,11 @@ function RegisterForm() {
           </div>
 
           <CardContent>
-            {process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' && (
+            {(process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' ||
+              process.env.NEXT_PUBLIC_APPLE_OAUTH_ENABLED === 'true') && (
               <div className="mb-5 space-y-4">
                 <GoogleSignInButton redirectTo="/dashboard" className="w-full" />
+                <AppleSignInButton redirectTo="/dashboard" className="w-full" />
                 <div className="relative">
                   <div className="absolute inset-0 flex items-center">
                     <span className="w-full border-t border-border" />
