@@ -35,6 +35,15 @@ import { isSiteAdmin } from '@/lib/site-admin'
 // review commissioned/specimen/platform rows. Does not affect the existing
 // teacher/school/site-admin paths - see the marker branch in step 5.
 import { getCurrentMarker } from '@/lib/marker-auth'
+// Board-aware human marks (Stage 1/3): resolve the marking shape for a script
+// and validate non-GCSE marks (IELTS criterion+overall bands, KS3/EAL level).
+// GCSE rows never touch this path - their 9-1 grade stays on ALLOWED_GRADES.
+import {
+  resolveMarkingShape,
+  validateOverallMark,
+  validateCriterionBand,
+  type MarkingShape,
+} from '@/lib/marking/marking-shapes'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import {
   badRequestResponse,
@@ -88,6 +97,20 @@ interface AoCorrection {
   comment?: string | null
 }
 
+/**
+ * Board-aware human mark for NON-GCSE shapes (Stage 3). Holds the structured
+ * mark a band/level qualification produces, persisted verbatim to the additive
+ * marking_submissions.teacher_band_marks JSONB column:
+ *   • band  (IELTS): { kind:'band',  overall:6.5, criteria:{TR,CC,LR,GRA} }
+ *   • level (KS3/EAL): { kind:'level', overall:'Secure' }
+ * GCSE rows never send this - their grade stays on teacherGrade/final_teacher_mark.
+ */
+interface TeacherBandMarks {
+  kind: 'band' | 'level'
+  overall: number | string
+  criteria?: Record<string, number> | null
+}
+
 interface ReviewBody {
   decision: ReviewDecision
   teacherGrade: string | null
@@ -96,6 +119,9 @@ interface ReviewBody {
   adjustmentReason: string | null
   moderationNotes: string | null
   trainingEligible: boolean | null
+  /** Non-GCSE structured mark; null/absent for GCSE rows. Validated against the
+   *  row's resolved MarkingShape AFTER the submission is loaded (see step 5b). */
+  teacherBandMarks: TeacherBandMarks | null
 }
 
 function asTrimmedStringOrNull(
@@ -129,6 +155,7 @@ function validateBody(
     adjustmentReason,
     moderationNotes,
     trainingEligible,
+    teacherBandMarks,
   } = body as Record<string, unknown>
 
   if (typeof decision !== 'string' || !DECISIONS.includes(decision as ReviewDecision)) {
@@ -180,6 +207,41 @@ function validateBody(
     training = trainingEligible
   }
 
+  // Board-aware mark (Stage 3) — STRUCTURAL validation only here. The
+  // scale-specific validation (in-range band, known level, valid criteria) needs
+  // the row's resolved MarkingShape, so it runs in step 5b after the submission
+  // is loaded. Here we only confirm the envelope is well-formed.
+  let bandMarks: TeacherBandMarks | null = null
+  if (teacherBandMarks !== undefined && teacherBandMarks !== null) {
+    if (typeof teacherBandMarks !== 'object') {
+      return { ok: false, error: 'teacherBandMarks must be an object or null' }
+    }
+    const tbm = teacherBandMarks as Record<string, unknown>
+    if (tbm.kind !== 'band' && tbm.kind !== 'level') {
+      return { ok: false, error: "teacherBandMarks.kind must be 'band' or 'level'" }
+    }
+    if (tbm.overall === undefined || tbm.overall === null) {
+      return { ok: false, error: 'teacherBandMarks.overall is required' }
+    }
+    if (typeof tbm.overall !== 'number' && typeof tbm.overall !== 'string') {
+      return { ok: false, error: 'teacherBandMarks.overall must be a number or string' }
+    }
+    let crit: Record<string, number> | null = null
+    if (tbm.criteria !== undefined && tbm.criteria !== null) {
+      if (typeof tbm.criteria !== 'object' || Array.isArray(tbm.criteria)) {
+        return { ok: false, error: 'teacherBandMarks.criteria must be an object' }
+      }
+      crit = {}
+      for (const [k, v] of Object.entries(tbm.criteria as Record<string, unknown>)) {
+        if (typeof v !== 'number') {
+          return { ok: false, error: `teacherBandMarks.criteria.${k} must be a number` }
+        }
+        crit[k] = v
+      }
+    }
+    bandMarks = { kind: tbm.kind, overall: tbm.overall, criteria: crit }
+  }
+
   return {
     ok: true,
     data: {
@@ -190,6 +252,7 @@ function validateBody(
       adjustmentReason: reason.value,
       moderationNotes: notes.value,
       trainingEligible: training,
+      teacherBandMarks: bandMarks,
     },
   }
 }
@@ -226,6 +289,11 @@ interface SubmissionRow {
   // any. Used only by the new marker authz branch in step 5; the existing
   // teacher/school/site-admin paths never read it.
   assigned_marker_id: string | null
+  // Board-aware marks (Stage 3): used to resolve the row's MarkingShape so
+  // non-GCSE band/level marks can be validated. Null on legacy rows → the
+  // shape resolver falls back to GCSE, exactly as today.
+  exam_board: string | null
+  qualification: string | null
 }
 
 // Full hydrated SELECT shared by the success response (mirrors the GET /
@@ -305,6 +373,7 @@ export async function handleReview(
       adjustmentReason,
       moderationNotes,
       trainingEligible,
+      teacherBandMarks,
     } = validation.data
 
     // 4. Look up the submission (service role - RLS-independent, authz below).
@@ -313,7 +382,7 @@ export async function handleReview(
       .from('marking_submissions')
       .select(
         'id, student_id, school_id, class_id, source, status, ai_grade, ai_score, ai_feedback,' +
-          ' assigned_marker_id',
+          ' assigned_marker_id, exam_board, qualification',
       )
       .eq('id', subId)
       .single()
@@ -437,6 +506,45 @@ export async function handleReview(
       }
     } // end if (!handledByMarker) - ADDITIVE wrapper for the marker branch
 
+    // 5b. Board-aware mark validation (Stage 3). Resolve THIS row's marking
+    //     shape from its board/qualification, then validate any supplied
+    //     teacherBandMarks against it. This runs AFTER authz so we never leak
+    //     shape details to an unauthorised caller, and only when a band/level
+    //     mark was actually sent. GCSE rows (gcse_grade shape) ignore this
+    //     entirely - their grade is validated by ALLOWED_GRADES as before, so
+    //     the GCSE path is byte-identical.
+    const shape: MarkingShape = resolveMarkingShape(submission.exam_board, submission.qualification)
+    if (teacherBandMarks !== null) {
+      // A band/level mark only makes sense on a band/level shape.
+      if (shape.kind === 'gcse_grade') {
+        return badRequestResponse(
+          'teacherBandMarks is not valid for a GCSE-graded script (use teacherGrade).',
+        )
+      }
+      // Validate the kind matches the shape and the overall value is in range.
+      const expectedKind = shape.kind === 'band' ? 'band' : 'level'
+      if (teacherBandMarks.kind !== expectedKind) {
+        return badRequestResponse(
+          `teacherBandMarks.kind must be '${expectedKind}' for this qualification.`,
+        )
+      }
+      const overallErr = validateOverallMark(shape, teacherBandMarks.overall)
+      if (overallErr) return badRequestResponse(`teacherBandMarks.overall: ${overallErr}`)
+
+      // For band shapes, validate each supplied criterion band against the same
+      // scale and confirm the codes belong to the shape's criteria.
+      if (shape.kind === 'band' && teacherBandMarks.criteria) {
+        const allowed = new Set((shape.criteria ?? []).map((c) => c.code))
+        for (const [code, value] of Object.entries(teacherBandMarks.criteria)) {
+          if (!allowed.has(code)) {
+            return badRequestResponse(`teacherBandMarks.criteria: unknown criterion '${code}'.`)
+          }
+          const critErr = validateCriterionBand(shape, value)
+          if (critErr) return badRequestResponse(`teacherBandMarks.criteria.${code}: ${critErr}`)
+        }
+      }
+    }
+
     // 6. Persist - sequential best-effort "transaction".
     //
     //    6a. INSERT the immutable teacher_moderations history/label row FIRST.
@@ -485,6 +593,12 @@ export async function handleReview(
       moderation_notes: moderationNotes,
       training_eligible: trainingEligible,
       status: STATUS_AFTER[decision],
+    }
+    // Board-aware mark (Stage 3): persist the non-GCSE structured mark to its
+    // additive column ONLY when one was supplied (validated in 5b). GCSE rows
+    // never set it, so their spine write is byte-identical to before.
+    if (teacherBandMarks !== null) {
+      update.teacher_band_marks = teacherBandMarks
     }
     if (decision === 'approve') {
       update.approved_by = user.id

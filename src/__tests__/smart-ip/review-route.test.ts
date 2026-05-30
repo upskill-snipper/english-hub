@@ -362,3 +362,110 @@ describe('review - spine update failure after moderation persisted', () => {
     expect((await res.json()).error).toMatch(/failed to update the submission/i)
   })
 })
+
+// ─── Stage 3: board-aware band/level marks (non-GCSE) ────────────────────────
+describe('review - board-aware teacherBandMarks (IELTS / KS3 / EAL)', () => {
+  it('accepts a valid IELTS band mark and persists it to teacher_band_marks', async () => {
+    submissionFixture = {
+      ...(submissionFixture as Record<string, unknown>),
+      exam_board: 'IELTS',
+      qualification: 'IELTS Academic Writing',
+    }
+    const res = await handleReview(
+      makeReq({
+        decision: 'approve',
+        teacherBandMarks: {
+          kind: 'band',
+          overall: 6.5,
+          criteria: { TR: 6, CC: 7, LR: 6.5, GRA: 6 },
+        },
+      }),
+    )
+    expect(res.status).toBe(200)
+    expect(spineUpdates[0].teacher_band_marks).toEqual({
+      kind: 'band',
+      overall: 6.5,
+      criteria: { TR: 6, CC: 7, LR: 6.5, GRA: 6 },
+    })
+  })
+
+  it('rejects a band mark on a GCSE-graded row (wrong shape)', async () => {
+    submissionFixture = {
+      ...(submissionFixture as Record<string, unknown>),
+      exam_board: 'AQA',
+      qualification: null,
+    }
+    const res = await handleReview(
+      makeReq({ decision: 'approve', teacherBandMarks: { kind: 'band', overall: 6.5 } }),
+    )
+    expect(res.status).toBe(400)
+    expect((await res.json()).error).toMatch(/not valid for a GCSE/i)
+  })
+
+  it('rejects an off-grid IELTS band (not a 0.5 step)', async () => {
+    submissionFixture = {
+      ...(submissionFixture as Record<string, unknown>),
+      exam_board: 'IELTS',
+      qualification: 'IELTS',
+    }
+    const res = await handleReview(
+      makeReq({ decision: 'approve', teacherBandMarks: { kind: 'band', overall: 6.25 } }),
+    )
+    expect(res.status).toBe(400)
+    expect((await res.json()).error).toMatch(/overall/i)
+  })
+
+  it('rejects an unknown IELTS criterion code', async () => {
+    submissionFixture = {
+      ...(submissionFixture as Record<string, unknown>),
+      exam_board: 'IELTS',
+      qualification: 'IELTS',
+    }
+    const res = await handleReview(
+      makeReq({
+        decision: 'approve',
+        teacherBandMarks: { kind: 'band', overall: 6, criteria: { XX: 6 } },
+      }),
+    )
+    expect(res.status).toBe(400)
+    expect((await res.json()).error).toMatch(/unknown criterion/i)
+  })
+
+  it('accepts a valid KS3 level mark', async () => {
+    submissionFixture = {
+      ...(submissionFixture as Record<string, unknown>),
+      exam_board: 'KS3',
+      qualification: 'KS3 English',
+    }
+    const res = await handleReview(
+      makeReq({ decision: 'approve', teacherBandMarks: { kind: 'level', overall: 'Secure' } }),
+    )
+    expect(res.status).toBe(200)
+    expect(spineUpdates[0].teacher_band_marks).toEqual({
+      kind: 'level',
+      overall: 'Secure',
+      criteria: null,
+    })
+  })
+
+  it('rejects an unknown KS3 level', async () => {
+    submissionFixture = {
+      ...(submissionFixture as Record<string, unknown>),
+      exam_board: 'KS3',
+      qualification: 'KS3 English',
+    }
+    const res = await handleReview(
+      makeReq({ decision: 'approve', teacherBandMarks: { kind: 'level', overall: 'Wizard' } }),
+    )
+    expect(res.status).toBe(400)
+    expect((await res.json()).error).toMatch(/overall/i)
+  })
+
+  it('a GCSE row with no band marks is byte-identical (teacher_band_marks unset)', async () => {
+    // The original fixture has no exam_board → resolves to GCSE → band column
+    // is never written.
+    const res = await handleReview(makeReq({ decision: 'approve', teacherGrade: '7' }))
+    expect(res.status).toBe(200)
+    expect(spineUpdates[0].teacher_band_marks).toBeUndefined()
+  })
+})
