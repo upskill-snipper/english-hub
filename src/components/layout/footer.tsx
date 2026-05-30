@@ -133,6 +133,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { href: '/eal', labelKey: 'header.nav.eal' },
       { href: '/for-parents', labelKey: 'header.nav.parents' },
       { href: '/contact', labelKey: 'footer.link.contact' },
+      { href: '/examiners', labelKey: 'footer.link.examiners' },
       { href: '/press', labelKey: 'footer.link.press' },
       { href: '/affiliates', labelKey: 'footer.link.affiliate_programme' },
     ],

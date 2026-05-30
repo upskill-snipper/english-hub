@@ -4,7 +4,16 @@ import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
-import { Menu, LogOut, School, Sparkles, BookOpen, ChevronDown, RefreshCw } from 'lucide-react'
+import {
+  Menu,
+  LogOut,
+  School,
+  Sparkles,
+  BookOpen,
+  ChevronDown,
+  RefreshCw,
+  PencilLine,
+} from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -441,6 +450,18 @@ export function Header() {
                   >
                     <Sparkles className="mr-1.5 h-4 w-4" />
                     {t('header.nav.try_demo')}
+                  </Link>
+                  {/* Examiner/marker recruitment entry point. Kept in the
+                      mobile sheet (and the footer) rather than the trimmed
+                      desktop primary nav, which overflows at 1280-1440px if
+                      a 6th item is added (see getNavForBoardType comment). */}
+                  <Link
+                    href="/examiners"
+                    onClick={() => setMobileOpen(false)}
+                    className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
+                  >
+                    <PencilLine className="mr-1.5 h-4 w-4" />
+                    {t('header.nav.examiners')}
                   </Link>
                   <Link
                     href="/auth/login"
