@@ -31,6 +31,10 @@ import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { rateLimitResponse, serverErrorResponse } from '@/lib/api-response'
 import { requireMarker } from '@/lib/marker-auth'
+// Per-board access (Stage B): scope the queue to boards the marker is APPROVED
+// for, so a self-registered marker with no approval sees nothing.
+import { approvedBoards, normaliseBoard } from '@/lib/marker-board-access'
+import { resolveMarkingShape } from '@/lib/marking/marking-shapes'
 
 export const dynamic = 'force-dynamic'
 
@@ -94,6 +98,26 @@ export async function GET(req: NextRequest) {
       if (Number.isFinite(n) && n > 0) limit = Math.min(n, MAX_LIMIT)
     }
 
+    // Optional ?board= filter (the board picker passes the chosen board). When
+    // present, only rows for that board are returned — AND the marker must be
+    // approved for it (checked below). When absent, the queue spans all the
+    // marker's approved boards.
+    const boardFilter = req.nextUrl.searchParams.get('board')
+    const wantedBoard = boardFilter ? normaliseBoard(boardFilter) : null
+
+    // Per-board access (Stage B guardrail): the set of boards this marker may
+    // work. A self-registered marker with no approval has an EMPTY set → empty
+    // queue, regardless of any assignment. This is the hard gate that makes open
+    // self-service safe.
+    const approved = await approvedBoards(marker.id)
+    if (approved.size === 0) {
+      return NextResponse.json({ items: [], total: 0, approvedBoards: [] })
+    }
+    if (wantedBoard && !approved.has(wantedBoard)) {
+      // Asked for a board they're not approved for → nothing.
+      return NextResponse.json({ items: [], total: 0, approvedBoards: Array.from(approved) })
+    }
+
     const admin = createServiceRoleClient()
 
     // The two filters below ARE the access-control boundary: a marker only
@@ -112,7 +136,29 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ items: [], total: 0 })
     }
 
-    const rows = (rowsRaw ?? []) as unknown as QueueRowRaw[]
+    const allRows = (rowsRaw ?? []) as unknown as QueueRowRaw[]
+
+    // Keep only rows whose board the marker is APPROVED for (and, if a board
+    // filter was given, only that board). A row's board is its exam_board, with
+    // a marking-shape fallback for non-GCSE offerings tagged via qualification.
+    function rowBoard(r: QueueRowRaw): string | null {
+      if (r.exam_board && approved.has(normaliseBoard(r.exam_board))) {
+        return normaliseBoard(r.exam_board)
+      }
+      const shape = resolveMarkingShape(r.exam_board ?? null, r.qualification ?? null)
+      if (shape.id === 'ielts-writing' && approved.has('IELTS')) return 'IELTS'
+      if (shape.id === 'ks3-level' && approved.has('KS3')) return 'KS3'
+      if (shape.id === 'eal-stage' && approved.has('EAL')) return 'EAL'
+      return null
+    }
+    const rows = allRows
+      .filter((r) => {
+        const b = rowBoard(r)
+        if (b === null) return false // not an approved board for this marker
+        if (wantedBoard && b !== wantedBoard) return false
+        return true
+      })
+      .slice(0, limit)
 
     const items = rows.map((r) => ({
       id: r.id,
@@ -143,7 +189,11 @@ export async function GET(req: NextRequest) {
       ai_band_marks: Array.isArray(r.ai_band_marks) ? r.ai_band_marks : [],
     }))
 
-    return NextResponse.json({ items, total: items.length })
+    return NextResponse.json({
+      items,
+      total: items.length,
+      approvedBoards: Array.from(approved),
+    })
   } catch (err) {
     console.error('[marker/queue GET] unexpected error', err)
     return serverErrorResponse('Failed to load the marking queue')

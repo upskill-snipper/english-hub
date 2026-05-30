@@ -35,6 +35,9 @@ import { isSiteAdmin } from '@/lib/site-admin'
 // review commissioned/specimen/platform rows. Does not affect the existing
 // teacher/school/site-admin paths - see the marker branch in step 5.
 import { getCurrentMarker } from '@/lib/marker-auth'
+// Per-board access (Stage B): a marker may only review a row whose board they
+// are APPROVED for — not merely assigned. Closes the open-self-service hole.
+import { canMarkSubmission } from '@/lib/marker-board-access'
 // Board-aware human marks (Stage 1/3): resolve the marking shape for a script
 // and validate non-GCSE marks (IELTS criterion+overall bands, KS3/EAL level).
 // GCSE rows never touch this path - their 9-1 grade stays on ALLOWED_GRADES.
@@ -420,6 +423,18 @@ export async function handleReview(
         if (isMarkerDriveRow) {
           if (submission.assigned_marker_id !== marker.id) {
             return forbiddenResponse('This script is not assigned to you.')
+          }
+          // Stage B guardrail: assignment is NOT enough — the marker must be
+          // APPROVED for this row's board. A self-registered marker with no
+          // approval (or approval for a different board) is denied here even if
+          // a row was somehow assigned to them.
+          const boardOk = await canMarkSubmission(
+            marker.id,
+            submission.exam_board,
+            submission.qualification,
+          )
+          if (!boardOk) {
+            return forbiddenResponse('You are not approved to mark this board.')
           }
           handledByMarker = true
         }
