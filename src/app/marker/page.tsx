@@ -228,6 +228,14 @@ export default function MarkerConsolePage() {
   const [applyError, setApplyError] = useState<string | null>(null)
   const [applied, setApplied] = useState(false)
 
+  // New application extras: LinkedIn URL, CV upload, optional marketing consent.
+  const [applyLinkedin, setApplyLinkedin] = useState('')
+  const [applyConsent, setApplyConsent] = useState(false)
+  const [applyCvPath, setApplyCvPath] = useState<string | null>(null)
+  const [applyCvName, setApplyCvName] = useState<string | null>(null)
+  const [cvUploading, setCvUploading] = useState(false)
+  const [cvError, setCvError] = useState<string | null>(null)
+
   // Queue
   const [queue, setQueue] = useState<QueueItem[]>([])
   const [queueLoading, setQueueLoading] = useState(false)
@@ -596,6 +604,41 @@ export default function MarkerConsolePage() {
     return () => window.removeEventListener('keydown', onKey)
   }, [current, submitting, submitDecision, skip])
 
+  // ── CV upload (optional) ─────────────────────────────────────────────────
+  // Uploads the selected file to /api/marker/cv-upload and stores the returned
+  // path. Errors are surfaced inline and never block the rest of the form.
+  const uploadCv = useCallback(
+    async (file: File) => {
+      setCvError(null)
+      setApplyCvPath(null)
+      setApplyCvName(file.name)
+      setCvUploading(true)
+      try {
+        const fd = new FormData()
+        fd.append('file', file)
+        const res = await fetch('/api/marker/cv-upload', { method: 'POST', body: fd })
+        if (!res.ok) {
+          const b = (await res.json().catch(() => ({}))) as { error?: string }
+          throw new Error(b.error ?? tt(t, 'marker.apply.cv_failed', 'Could not upload your CV.'))
+        }
+        const data = (await res.json()) as { path?: string }
+        if (!data.path)
+          throw new Error(tt(t, 'marker.apply.cv_failed', 'Could not upload your CV.'))
+        setApplyCvPath(data.path)
+      } catch (err) {
+        setApplyCvName(null)
+        setCvError(
+          err instanceof Error
+            ? err.message
+            : tt(t, 'marker.apply.cv_failed', 'Could not upload your CV.'),
+        )
+      } finally {
+        setCvUploading(false)
+      }
+    },
+    [t],
+  )
+
   // ── Self-service application submit ──────────────────────────────────────
   const submitApplication = useCallback(async () => {
     if (applying) return
@@ -617,6 +660,9 @@ export default function MarkerConsolePage() {
           displayName: applyName.trim(),
           qualification: applyQual.trim() || undefined,
           boards: applyBoards,
+          linkedinUrl: applyLinkedin.trim() || undefined,
+          cvPath: applyCvPath || undefined,
+          marketingConsent: applyConsent,
         }),
       })
       if (!res.ok) {
@@ -635,7 +681,7 @@ export default function MarkerConsolePage() {
     } finally {
       setApplying(false)
     }
-  }, [applying, applyName, applyQual, applyBoards, t])
+  }, [applying, applyName, applyQual, applyBoards, applyLinkedin, applyCvPath, applyConsent, t])
 
   // ── Render: gate states ──────────────────────────────────────────────────
 
@@ -759,12 +805,77 @@ export default function MarkerConsolePage() {
                 </div>
               </div>
 
+              <div className="space-y-1.5">
+                <Label htmlFor="apply-linkedin">
+                  {tt(t, 'marker.apply.linkedin', 'LinkedIn profile (optional)')}
+                </Label>
+                <input
+                  id="apply-linkedin"
+                  type="url"
+                  value={applyLinkedin}
+                  onChange={(e) => setApplyLinkedin(e.target.value)}
+                  className="h-10 w-full rounded-md border border-border bg-background px-3 text-sm"
+                  placeholder="https://www.linkedin.com/in/your-profile"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="apply-cv">
+                  {tt(
+                    t,
+                    'marker.apply.cv',
+                    'Upload your CV (PDF or Word, optional but recommended)',
+                  )}
+                </Label>
+                <input
+                  id="apply-cv"
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  disabled={cvUploading}
+                  onChange={(e) => {
+                    const f = e.target.files?.[0]
+                    if (f) void uploadCv(f)
+                  }}
+                  className="block w-full text-sm text-muted-foreground file:mr-3 file:rounded-md file:border file:border-border file:bg-muted file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-foreground hover:file:bg-muted/70"
+                />
+                {cvUploading && (
+                  <p className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <Loader2 className="h-3 w-3 animate-spin" />
+                    {tt(t, 'marker.apply.cv_uploading', 'Uploading CV…')}
+                  </p>
+                )}
+                {!cvUploading && applyCvPath && (
+                  <p className="flex items-center gap-1.5 text-[11px] text-green-600 dark:text-green-400">
+                    <CheckCircle2 className="h-3 w-3" />
+                    {tt(t, 'marker.apply.cv_uploaded', 'CV uploaded')}
+                    {applyCvName ? ` · ${applyCvName}` : ''}
+                  </p>
+                )}
+                {cvError && <p className="text-[11px] text-destructive">{cvError}</p>}
+              </div>
+
+              <label className="flex cursor-pointer items-start gap-2 rounded-md border border-border p-3 text-xs leading-relaxed text-muted-foreground">
+                <input
+                  type="checkbox"
+                  className="mt-0.5"
+                  checked={applyConsent}
+                  onChange={(e) => setApplyConsent(e.target.checked)}
+                />
+                <span>
+                  {tt(
+                    t,
+                    'marker.apply.consent',
+                    'I consent to The English Hub using my anonymised marking performance and feedback to improve quality and for marketing / proof-of-quality purposes. (Optional — you can apply without ticking this.)',
+                  )}
+                </span>
+              </label>
+
               {applyError && <p className="text-sm text-destructive">{applyError}</p>}
 
               <Button
                 type="button"
                 className="w-full"
-                disabled={applying}
+                disabled={applying || cvUploading}
                 onClick={() => void submitApplication()}
               >
                 {applying ? (

@@ -36,6 +36,12 @@ interface ApplyBody {
   qualification?: string
   /** Boards the applicant is qualified for (each becomes a 'requested' row). */
   boards?: string[]
+  /** Optional LinkedIn profile URL. */
+  linkedinUrl?: string
+  /** Optional storage key of an already-uploaded CV (marker-cvs bucket). */
+  cvPath?: string
+  /** OPTIONAL opt-in marketing/quality consent. Never required to apply. */
+  marketingConsent?: boolean
 }
 
 export async function POST(request: NextRequest) {
@@ -82,6 +88,39 @@ export async function POST(request: NextRequest) {
       return badRequestResponse('Select at least one board you are qualified for.')
     }
 
+    // ── Optional fields ──────────────────────────────────────────────────────
+    // LinkedIn URL: must look like a LinkedIn URL if present; else null.
+    let linkedinUrl: string | null = null
+    if (typeof body.linkedinUrl === 'string' && body.linkedinUrl.trim().length > 0) {
+      const raw = body.linkedinUrl.trim()
+      if (raw.length > 500) return badRequestResponse('LinkedIn URL is too long.')
+      let host = ''
+      try {
+        host = new URL(raw).host.toLowerCase()
+      } catch {
+        return badRequestResponse('Enter a valid LinkedIn URL.')
+      }
+      if (!raw.toLowerCase().startsWith('https://') || !host.includes('linkedin.com')) {
+        return badRequestResponse('Enter a valid LinkedIn URL (https://www.linkedin.com/...).')
+      }
+      linkedinUrl = raw
+    }
+
+    // CV path: must be a string the caller actually owns (starts with their id).
+    let cvPath: string | null = null
+    if (typeof body.cvPath === 'string' && body.cvPath.trim().length > 0) {
+      const raw = body.cvPath.trim()
+      if (raw.length > 500) return badRequestResponse('CV path is too long.')
+      if (!raw.startsWith(`${user.id}/`)) {
+        return badRequestResponse('Invalid CV reference.')
+      }
+      cvPath = raw
+    }
+
+    // Marketing consent is OPTIONAL — coerce to boolean. Never reject for it.
+    const marketingConsent = body.marketingConsent === true
+    const marketingConsentAt = marketingConsent ? new Date().toISOString() : null
+
     const admin = createServiceRoleClient()
 
     // Already a marker? Don't create a second record — direct them to request
@@ -92,9 +131,35 @@ export async function POST(request: NextRequest) {
       .eq('user_id', user.id)
       .maybeSingle()
 
+    // The three new application fields. Generated types don't know these
+    // columns yet, so the insert/update payloads are cast through `unknown`.
+    const extraFields = {
+      linkedin_url: linkedinUrl,
+      cv_path: cvPath,
+      marketing_consent: marketingConsent,
+      marketing_consent_at: marketingConsentAt,
+    }
+
     let markerId: string
     if (existing) {
       markerId = (existing as unknown as { id: string }).id
+      // Re-applying / updating: refresh the optional fields on the existing row.
+      // Only overwrite linkedin_url / cv_path when a new value was supplied so a
+      // resubmission without re-uploading doesn't wipe a previously stored CV.
+      const updatePayload: Record<string, unknown> = {
+        marketing_consent: marketingConsent,
+        marketing_consent_at: marketingConsentAt,
+      }
+      if (linkedinUrl !== null) updatePayload.linkedin_url = linkedinUrl
+      if (cvPath !== null) updatePayload.cv_path = cvPath
+      const { error: updateErr } = await admin
+        .from('markers')
+        .update(updatePayload as unknown as never)
+        .eq('id', markerId)
+      if (updateErr) {
+        console.error('[marker/apply] update marker extras failed', updateErr)
+        // Non-fatal: the board request below is the primary action.
+      }
     } else {
       // Create the marker record. status='active' = "a real applicant"; it does
       // NOT grant marking — that needs an approved board (enforced downstream).
@@ -107,7 +172,8 @@ export async function POST(request: NextRequest) {
           qualification,
           status: 'active',
           boards: [], // legacy array stays empty; access lives in marker_board_access
-        })
+          ...extraFields,
+        } as unknown as never)
         .select('id')
         .single()
       if (createErr || !created) {
