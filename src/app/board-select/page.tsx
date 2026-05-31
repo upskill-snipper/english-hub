@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Languages } from 'lucide-react'
+import { Languages, Star, ArrowRight } from 'lucide-react'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
+import { isMuslimMajorityVisitor } from '@/lib/geo/gcc'
 
 export const metadata: Metadata = {
   title: 'Choose your level or exam board',
@@ -189,6 +190,16 @@ export default async function BoardSelectPage() {
             {tIntro}
           </p>
         </header>
+
+        {/* GCC / Muslim-majority recommendation banner — appears only for
+            visitors whose resolved IP country is in the wider
+            Muslim-majority list (see src/lib/geo/gcc.ts). Cambridge IGCSE
+            English Language (0500 / 0990) is a language-only spec with
+            no literature requirement, which avoids the cultural review
+            that comes with the literature anthologies. The banner is
+            purely advisory; every board remains selectable below. See
+            /legal/school-content-policy for the full reasoning. */}
+        {await GccRecommendationBanner()}
 
         {/* KS3 section - Years 7-9, the curriculum before GCSE. */}
         <BoardSection
@@ -383,5 +394,68 @@ function BoardCard({
         {openBoardLabel} <span aria-hidden="true">&rarr;</span>
       </span>
     </Link>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * GCC / Muslim-majority Cambridge recommendation banner
+ *
+ * Rendered for visitors whose resolved Vercel edge country code is in the
+ * Muslim-majority list (see src/lib/geo/gcc.ts). The banner advises that
+ * Cambridge IGCSE English Language 0500 / 0990 is the natural starting
+ * point — it is the language-only spec with no literature requirement, so
+ * the cultural review that comes with the literature anthologies does not
+ * apply. The banner is purely informational; every board below remains
+ * fully selectable. Hidden entirely for any other visitor so the UK GCSE
+ * audience sees the default experience untouched.
+ * ──────────────────────────────────────────────────────────────────────────── */
+async function GccRecommendationBanner() {
+  const showBanner = await isMuslimMajorityVisitor()
+  if (!showBanner) return null
+  return (
+    <section
+      aria-label="Recommended for international schools"
+      className="mb-12 sm:mb-14 rounded-2xl border border-clay-500/30 bg-gradient-to-br from-clay-500/[0.07] via-card to-card p-5 sm:p-6"
+    >
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-start gap-3">
+          <span
+            aria-hidden="true"
+            className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl bg-clay-500/15 text-clay-700 ring-1 ring-clay-500/30 dark:text-clay-300"
+          >
+            <Star className="size-4" />
+          </span>
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-clay-700 dark:text-clay-300">
+              Recommended for your region
+            </p>
+            <h2 className="mt-1 font-serif text-lg font-semibold text-foreground sm:text-xl">
+              Cambridge IGCSE English Language (0500 / 0990)
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              The language-only Cambridge IGCSE is the most widely sat English specification at
+              international schools in the region. It has no set-text literature requirement, which
+              avoids the cultural review that comes with literature anthologies — while still
+              preparing students for the same university entry standards. Other boards remain fully
+              available below.
+            </p>
+          </div>
+        </div>
+        <div className="flex shrink-0 flex-col items-stretch gap-2 sm:items-end">
+          <Link
+            href="/revision?setBoard=cambridge-0500"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full bg-clay-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-clay-600/85"
+          >
+            Open Cambridge 0500 <ArrowRight aria-hidden="true" className="size-3.5" />
+          </Link>
+          <Link
+            href="/legal/school-content-policy"
+            className="text-center text-[11px] text-muted-foreground underline underline-offset-2 hover:text-foreground sm:text-right"
+          >
+            School content policy
+          </Link>
+        </div>
+      </div>
+    </section>
   )
 }

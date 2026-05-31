@@ -1,5 +1,6 @@
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { ContentAdvisory, type AdvisoryTheme } from '@/components/content/ContentAdvisory'
 import {
   ArrowLeft,
   ArrowRight,
@@ -64,6 +65,16 @@ export type TextGuideData = {
   themes: Theme[]
   historicalContext: string[]
   quotations: Quotation[]
+  /**
+   * Content-guidance block themes (cultural-sensitivity audit
+   * 2026-05-20). When omitted, TextGuide still renders a generic
+   * content-guidance block so every set-text page carries an
+   * advisory — populate this list with the specific themes
+   * present in the text to give school leaders a sharper signal.
+   */
+  contentGuidance?: AdvisoryTheme[]
+  /** Optional per-text note that replaces the default guidance copy. */
+  contentGuidanceNote?: string
   // Khaleeji-AR variants. Title, author, badge stay in Latin per
   // brand convention. yearAr can switch to Arabic-Indic digits.
   yearAr?: string
@@ -157,6 +168,18 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
           </p>
         </div>
       </section>
+
+      {/* Content guidance — surfaces themes present in the published set
+          text so school leaders, parents and teachers can review before
+          assigning. Always renders (with a generic note when the data
+          file has not yet populated the per-text theme list) so every
+          set-text page carries an advisory. See ContentAdvisory + the
+          /legal/school-content-policy page for the full policy. */}
+      <ContentAdvisory
+        themes={data.contentGuidance}
+        note={data.contentGuidanceNote}
+        boards={data.badge}
+      />
 
       {/* Quick Info */}
       <section>
