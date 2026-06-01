@@ -74,34 +74,40 @@ const COLOUR_CLASS: Record<
     bg: 'bg-emerald-500/10 border-emerald-500/30',
     ring: 'border-emerald-500/40',
     dot: 'bg-emerald-500',
-    label: 'On track',
+    // i18n key resolved at render via t(); en fallback = 'On track'
+    label: 'ielts.readinessui.colour.green',
   },
   amber: {
     text: 'text-amber-600 dark:text-amber-400',
     bg: 'bg-amber-500/10 border-amber-500/30',
     ring: 'border-amber-500/40',
     dot: 'bg-amber-500',
-    label: 'Some gaps',
+    // i18n key resolved at render via t(); en fallback = 'Some gaps'
+    label: 'ielts.readinessui.colour.amber',
   },
   red: {
     text: 'text-rose-600 dark:text-rose-400',
     bg: 'bg-rose-500/10 border-rose-500/30',
     ring: 'border-rose-500/40',
     dot: 'bg-rose-500',
-    label: 'Needs work',
+    // i18n key resolved at render via t(); en fallback = 'Needs work'
+    label: 'ielts.readinessui.colour.red',
   },
 }
 
+// i18n keys resolved at render via t(); en fallbacks: Student / Parent / Counsellor
 const OWNER_LABEL: Record<ActionOwner, string> = {
-  student: 'Student',
-  parent: 'Parent',
-  counsellor: 'Counsellor',
+  student: 'ielts.readinessui.owner.student',
+  parent: 'ielts.readinessui.owner.parent',
+  counsellor: 'ielts.readinessui.owner.counsellor',
 }
 
+// `label` holds an i18n key resolved at render via t(); en fallbacks:
+// 'Next 7 days' / 'Next 30 days' / 'Next 60 days'.
 const HORIZONS: { id: ActionHorizon; label: string }[] = [
-  { id: '7-day', label: 'Next 7 days' },
-  { id: '30-day', label: 'Next 30 days' },
-  { id: '60-day', label: 'Next 60 days' },
+  { id: '7-day', label: 'ielts.readinessui.horizon.7day' },
+  { id: '30-day', label: 'ielts.readinessui.horizon.30day' },
+  { id: '60-day', label: 'ielts.readinessui.horizon.60day' },
 ]
 
 // ─── Resolve current band per skill (practice wins over diagnostic) ─────────
@@ -205,11 +211,13 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
         {/* Print-only document header (title + date). Hidden on screen. */}
         <div className="readiness-print-only">
           <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 4 }}>
-            UK Candidate Readiness Report
+            {t('ielts.readiness.header.title') || 'UK Candidate Readiness Report'}
           </h1>
           <p style={{ fontSize: 12, color: '#444' }}>
-            Generated {new Date(report.generatedAt).toLocaleDateString('en-GB')} · The English Hub ·
-            IELTS / UK-study preparation
+            {(
+              t('ielts.readiness.print.meta') ||
+              'Generated {date} · The English Hub · IELTS / UK-study preparation'
+            ).replace('{date}', new Date(report.generatedAt).toLocaleDateString('en-GB'))}
           </p>
         </div>
 
@@ -239,7 +247,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
           <div className="mt-4 flex items-center justify-center gap-2">
             <span className={cn('h-3 w-3 rounded-full', overallColour.dot)} aria-hidden />
             <span className={cn('text-sm font-semibold', overallColour.text)}>
-              {hasAccess ? overallColour.label : t('ielts.readiness.locked.badge') || 'Locked'}
+              {hasAccess ? t(overallColour.label) : t('ielts.readiness.locked.badge') || 'Locked'}
             </span>
           </div>
           <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
@@ -311,7 +319,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
                       )}
                     >
                       <span className={cn('h-2 w-2 rounded-full', c.dot)} aria-hidden />
-                      {locked ? t('ielts.readiness.locked.badge') || 'Locked' : c.label}
+                      {locked ? t('ielts.readiness.locked.badge') || 'Locked' : t(c.label)}
                     </span>
                   </div>
                 </div>
@@ -507,7 +515,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
                       className="readiness-card rounded-2xl border border-border bg-card p-5 shadow-soft"
                     >
                       <p className="font-mono text-xs uppercase tracking-wide text-muted-foreground">
-                        {t(`ielts.readiness.actions.${h.id}`) || h.label}
+                        {t(`ielts.readiness.actions.${h.id}`) || t(h.label)}
                       </p>
                       {items.length === 0 ? (
                         <p className="mt-3 text-xs text-muted-foreground">
@@ -518,7 +526,7 @@ export function ReadinessReportClient({ hasAccess }: { hasAccess: boolean }) {
                           {items.map((a, i) => (
                             <li key={i} className="text-sm">
                               <Badge variant="secondary" className="mb-1 text-[10px]">
-                                {OWNER_LABEL[a.owner]}
+                                {t(OWNER_LABEL[a.owner])}
                               </Badge>
                               <p className="leading-relaxed text-foreground">{a.text}</p>
                             </li>
@@ -717,9 +725,15 @@ function SelfReportEditor({
             patch({ application: { ...app, courseClarity: v as typeof app.courseClarity } })
           }
           options={[
-            { value: 'decided', label: 'Decided' },
-            { value: 'shortlisted', label: 'Shortlisted' },
-            { value: 'undecided', label: 'Undecided' },
+            { value: 'decided', label: t('ielts.readinessui.opt.course.decided') || 'Decided' },
+            {
+              value: 'shortlisted',
+              label: t('ielts.readinessui.opt.course.shortlisted') || 'Shortlisted',
+            },
+            {
+              value: 'undecided',
+              label: t('ielts.readinessui.opt.course.undecided') || 'Undecided',
+            },
           ]}
         />
         <Field
@@ -729,9 +743,12 @@ function SelfReportEditor({
             patch({ application: { ...app, refereeStatus: v as typeof app.refereeStatus } })
           }
           options={[
-            { value: 'secured', label: 'Secured' },
-            { value: 'asked', label: 'Asked, awaiting' },
-            { value: 'none', label: 'Not arranged' },
+            { value: 'secured', label: t('ielts.readinessui.opt.referee.secured') || 'Secured' },
+            {
+              value: 'asked',
+              label: t('ielts.readinessui.opt.referee.asked') || 'Asked, awaiting',
+            },
+            { value: 'none', label: t('ielts.readinessui.opt.referee.none') || 'Not arranged' },
           ]}
         />
         <Field
@@ -741,9 +758,15 @@ function SelfReportEditor({
             patch({ application: { ...app, transcriptStatus: v as typeof app.transcriptStatus } })
           }
           options={[
-            { value: 'ready', label: 'Ready' },
-            { value: 'in_progress', label: 'Requested' },
-            { value: 'none', label: 'Not started' },
+            { value: 'ready', label: t('ielts.readinessui.opt.transcript.ready') || 'Ready' },
+            {
+              value: 'in_progress',
+              label: t('ielts.readinessui.opt.transcript.requested') || 'Requested',
+            },
+            {
+              value: 'none',
+              label: t('ielts.readinessui.opt.transcript.none') || 'Not started',
+            },
           ]}
         />
         <div className="flex items-end">
@@ -785,9 +808,15 @@ function SelfReportEditor({
             patch({ visa: { ...visa, passportValid: v as typeof visa.passportValid } })
           }
           options={[
-            { value: 'yes', label: 'Valid' },
-            { value: 'expiring', label: 'Expiring / renewing' },
-            { value: 'no', label: 'Not valid yet' },
+            { value: 'yes', label: t('ielts.readinessui.opt.passport.valid') || 'Valid' },
+            {
+              value: 'expiring',
+              label: t('ielts.readinessui.opt.passport.expiring') || 'Expiring / renewing',
+            },
+            {
+              value: 'no',
+              label: t('ielts.readinessui.opt.passport.no') || 'Not valid yet',
+            },
           ]}
         />
         <Field
@@ -797,9 +826,15 @@ function SelfReportEditor({
             patch({ visa: { ...visa, fundsEvidence: v as typeof visa.fundsEvidence } })
           }
           options={[
-            { value: 'ready', label: 'Ready (28-day rule met)' },
-            { value: 'gathering', label: 'Gathering' },
-            { value: 'none', label: 'Not started' },
+            {
+              value: 'ready',
+              label: t('ielts.readinessui.opt.funds.ready') || 'Ready (28-day rule met)',
+            },
+            {
+              value: 'gathering',
+              label: t('ielts.readinessui.opt.funds.gathering') || 'Gathering',
+            },
+            { value: 'none', label: t('ielts.readinessui.opt.funds.none') || 'Not started' },
           ]}
         />
         <Field
@@ -811,10 +846,16 @@ function SelfReportEditor({
             })
           }
           options={[
-            { value: 'self_funded', label: 'Self-funded' },
-            { value: 'sponsor_confirmed', label: 'Sponsor confirmed' },
-            { value: 'applying', label: 'Applying' },
-            { value: 'unknown', label: 'Unknown' },
+            {
+              value: 'self_funded',
+              label: t('ielts.readinessui.opt.sponsor.self') || 'Self-funded',
+            },
+            {
+              value: 'sponsor_confirmed',
+              label: t('ielts.readinessui.opt.sponsor.confirmed') || 'Sponsor confirmed',
+            },
+            { value: 'applying', label: t('ielts.readinessui.opt.sponsor.applying') || 'Applying' },
+            { value: 'unknown', label: t('ielts.readinessui.opt.sponsor.unknown') || 'Unknown' },
           ]}
         />
         <Field
@@ -822,10 +863,16 @@ function SelfReportEditor({
           value={visa.casStage}
           onChange={(v) => patch({ visa: { ...visa, casStage: v as typeof visa.casStage } })}
           options={[
-            { value: 'received', label: 'CAS received' },
-            { value: 'offer_holder', label: 'Offer holder' },
-            { value: 'applying', label: 'Applying' },
-            { value: 'not_started', label: 'Not started' },
+            { value: 'received', label: t('ielts.readinessui.opt.cas.received') || 'CAS received' },
+            {
+              value: 'offer_holder',
+              label: t('ielts.readinessui.opt.cas.offer') || 'Offer holder',
+            },
+            { value: 'applying', label: t('ielts.readinessui.opt.cas.applying') || 'Applying' },
+            {
+              value: 'not_started',
+              label: t('ielts.readinessui.opt.cas.notstarted') || 'Not started',
+            },
           ]}
         />
         <Field
@@ -833,9 +880,9 @@ function SelfReportEditor({
           value={visa.tbTest}
           onChange={(v) => patch({ visa: { ...visa, tbTest: v as typeof visa.tbTest } })}
           options={[
-            { value: 'na', label: 'Not applicable' },
-            { value: 'yes', label: 'Done' },
-            { value: 'no', label: 'Outstanding' },
+            { value: 'na', label: t('ielts.readinessui.opt.na') || 'Not applicable' },
+            { value: 'yes', label: t('ielts.readinessui.opt.tb.done') || 'Done' },
+            { value: 'no', label: t('ielts.readinessui.opt.tb.outstanding') || 'Outstanding' },
           ]}
         />
         <Field
@@ -843,9 +890,9 @@ function SelfReportEditor({
           value={visa.atas}
           onChange={(v) => patch({ visa: { ...visa, atas: v as typeof visa.atas } })}
           options={[
-            { value: 'na', label: 'Not applicable' },
-            { value: 'yes', label: 'Granted' },
-            { value: 'no', label: 'Outstanding' },
+            { value: 'na', label: t('ielts.readinessui.opt.na') || 'Not applicable' },
+            { value: 'yes', label: t('ielts.readinessui.opt.atas.granted') || 'Granted' },
+            { value: 'no', label: t('ielts.readinessui.opt.atas.outstanding') || 'Outstanding' },
           ]}
         />
       </GroupCard>
@@ -859,9 +906,12 @@ function SelfReportEditor({
             patch({ academic: { ...acad, academicWriting: v as typeof acad.academicWriting } })
           }
           options={[
-            { value: 'confident', label: 'Confident' },
-            { value: 'some', label: 'Some' },
-            { value: 'low', label: 'Low' },
+            {
+              value: 'confident',
+              label: t('ielts.readinessui.opt.confidence.confident') || 'Confident',
+            },
+            { value: 'some', label: t('ielts.readinessui.opt.confidence.some') || 'Some' },
+            { value: 'low', label: t('ielts.readinessui.opt.confidence.low') || 'Low' },
           ]}
         />
         <Field
@@ -869,9 +919,12 @@ function SelfReportEditor({
           value={acad.budgeting}
           onChange={(v) => patch({ academic: { ...acad, budgeting: v as typeof acad.budgeting } })}
           options={[
-            { value: 'confident', label: 'Confident' },
-            { value: 'some', label: 'Some' },
-            { value: 'low', label: 'Low' },
+            {
+              value: 'confident',
+              label: t('ielts.readinessui.opt.confidence.confident') || 'Confident',
+            },
+            { value: 'some', label: t('ielts.readinessui.opt.confidence.some') || 'Some' },
+            { value: 'low', label: t('ielts.readinessui.opt.confidence.low') || 'Low' },
           ]}
         />
         <Field
@@ -881,9 +934,15 @@ function SelfReportEditor({
             patch({ academic: { ...acad, accommodation: v as typeof acad.accommodation } })
           }
           options={[
-            { value: 'sorted', label: 'Sorted' },
-            { value: 'searching', label: 'Searching' },
-            { value: 'not_started', label: 'Not started' },
+            { value: 'sorted', label: t('ielts.readinessui.opt.accom.sorted') || 'Sorted' },
+            {
+              value: 'searching',
+              label: t('ielts.readinessui.opt.accom.searching') || 'Searching',
+            },
+            {
+              value: 'not_started',
+              label: t('ielts.readinessui.opt.accom.notstarted') || 'Not started',
+            },
           ]}
         />
         <Field
@@ -893,8 +952,11 @@ function SelfReportEditor({
             patch({ academic: { ...acad, contactHours: v as typeof acad.contactHours } })
           }
           options={[
-            { value: 'understand', label: 'Yes, I understand' },
-            { value: 'unsure', label: 'Unsure' },
+            {
+              value: 'understand',
+              label: t('ielts.readinessui.opt.contact.understand') || 'Yes, I understand',
+            },
+            { value: 'unsure', label: t('ielts.readinessui.opt.contact.unsure') || 'Unsure' },
           ]}
         />
       </GroupCard>

@@ -10,6 +10,13 @@
 // domain (weight 15) from self-report to module-driven. The mapping is declared
 // per-module via `field` + `optionValue`, so the client can write the slice
 // without any bespoke glue.
+//
+// i18n: every USER-FACING string below (title, summary, body[], keyPoints[],
+// question, options[].label) is a DICTIONARY KEY, not literal copy. The English
+// + Khaleeji translations live in src/lib/i18n/dictionary-ielts-transition.ts
+// (IELTS_TRANSITION_DICTIONARY). UI consumers resolve these via t()/useT().
+// NON-UI fields stay literal: id, icon, field, options[].value (the last two
+// are consumed by the readiness engine).
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { AcademicTransitionReadinessInput } from './readiness'
@@ -20,21 +27,22 @@ export type TransitionField = keyof AcademicTransitionReadinessInput
 export interface TransitionRatingOption {
   /** The literal value written into the readiness slice for this field. */
   value: string
-  /** Learner-facing label. */
+  /** Learner-facing label — a dictionary KEY resolved via t()/useT(). */
   label: string
 }
 
 export interface TransitionModule {
   id: 'writing' | 'lectures' | 'budgeting' | 'accommodation'
   icon: 'PenLine' | 'NotebookPen' | 'Wallet' | 'Home'
+  /** Dictionary KEY resolved via t()/useT(). */
   title: string
-  /** One-line summary shown on the card before expanding. */
+  /** One-line summary shown on the card before expanding — dictionary KEY. */
   summary: string
-  /** Short self-authored read, as paragraphs. */
+  /** Short self-authored read, as paragraphs — each a dictionary KEY. */
   body: string[]
-  /** Quick "key points" chips. */
+  /** Quick "key points" chips — each a dictionary KEY. */
   keyPoints: string[]
-  /** The single self-rating question for this module. */
+  /** The single self-rating question for this module — dictionary KEY. */
   question: string
   /** Which readiness field this rating sets. */
   field: TransitionField
@@ -46,96 +54,96 @@ export const TRANSITION_MODULES: TransitionModule[] = [
   {
     id: 'writing',
     icon: 'PenLine',
-    title: 'Academic writing for university',
-    summary: 'Referencing, academic integrity, and how essays differ from IELTS Task 2.',
+    title: 'ielts.transition.writing.title',
+    summary: 'ielts.transition.writing.summary',
     body: [
-      'University writing is judged very differently from IELTS Task 2. In IELTS you write a short, self-contained opinion essay from memory in 40 minutes. At university you write longer, researched assignments over days or weeks, and your argument must be supported by evidence from sources you read, not just your own opinion.',
-      'Referencing is the backbone of that evidence. Every idea, figure or quotation you take from a source must be credited using your department’s referencing style (commonly Harvard, APA or a numbered style). Get into the habit early of noting the author, year and page for everything you read — chasing references later wastes hours.',
-      'Academic integrity matters more than many new students expect. Copying text without crediting it, reusing your own previous work, or paying someone to write for you are all forms of plagiarism, and UK universities use detection software and apply real penalties — from losing marks to failing a module. Paraphrasing properly (re-expressing an idea in your own words AND citing it) is a skill worth practising before you arrive.',
-      'Finally, structure: a university essay builds one clear argument across paragraphs that each make a point, support it with evidence, and link back to the question. That is closer to a long, evidenced version of Task 2 than to anything else — so the writing habits you build for IELTS are a genuine head start.',
+      'ielts.transition.writing.body.0',
+      'ielts.transition.writing.body.1',
+      'ielts.transition.writing.body.2',
+      'ielts.transition.writing.body.3',
     ],
     keyPoints: [
-      'Cite every source — track author, year, page as you read',
-      'Paraphrase + cite; never copy or self-plagiarise',
-      'One argument, evidenced across linked paragraphs',
+      'ielts.transition.writing.kp.0',
+      'ielts.transition.writing.kp.1',
+      'ielts.transition.writing.kp.2',
     ],
-    question: 'How confident are you writing referenced, plagiarism-safe academic work?',
+    question: 'ielts.transition.writing.question',
     field: 'academicWriting',
     options: [
-      { value: 'confident', label: 'Confident — I can reference and paraphrase well' },
-      { value: 'some', label: 'Some — I know the basics but need practice' },
-      { value: 'low', label: 'Low — this is new to me' },
+      { value: 'confident', label: 'ielts.transition.writing.opt.confident' },
+      { value: 'some', label: 'ielts.transition.writing.opt.some' },
+      { value: 'low', label: 'ielts.transition.writing.opt.low' },
     ],
   },
   {
     id: 'lectures',
     icon: 'NotebookPen',
-    title: 'Note-taking, lectures & independent study',
-    summary: 'Contact hours vs independent study, and getting value from lectures.',
+    title: 'ielts.transition.lectures.title',
+    summary: 'ielts.transition.lectures.summary',
     body: [
-      'A common shock for new international students is how few timetabled hours a UK degree has. You might have only 12–18 “contact hours” a week (lectures, seminars and labs). The rest is independent study — reading, preparing, writing and revising on your own. The expectation is that a full-time degree is genuinely full-time: many universities suggest around 35–40 hours of total study per week.',
-      'That means the timetable is not the workload. If you treat the gaps between lectures as free time rather than study time, you will fall behind quickly, because assessment deadlines assume you have done the reading independently.',
-      'Lectures introduce ideas; they rarely contain everything you need. Take selective notes — capture the structure, key terms and anything the lecturer stresses, rather than transcribing every word. Many courses post slides or recordings, so during the lecture focus on understanding, then consolidate your notes afterwards while it is fresh.',
-      'Seminars and tutorials are where you are expected to contribute. Coming prepared with the set reading and a question or two is normal and expected — it is not showing off. Building these habits in your first weeks is the single biggest predictor of a smooth transition.',
+      'ielts.transition.lectures.body.0',
+      'ielts.transition.lectures.body.1',
+      'ielts.transition.lectures.body.2',
+      'ielts.transition.lectures.body.3',
     ],
     keyPoints: [
-      'Contact hours are a fraction of the real workload',
-      'Plan ~35–40 hrs/week including independent study',
-      'Consolidate lecture notes the same day; prep for seminars',
+      'ielts.transition.lectures.kp.0',
+      'ielts.transition.lectures.kp.1',
+      'ielts.transition.lectures.kp.2',
     ],
-    question: 'Do you understand contact hours vs independent-study expectations?',
+    question: 'ielts.transition.lectures.question',
     field: 'contactHours',
     options: [
-      { value: 'understand', label: 'Yes — I understand and can plan for it' },
-      { value: 'unsure', label: 'Unsure — I need to read my course handbook' },
+      { value: 'understand', label: 'ielts.transition.lectures.opt.understand' },
+      { value: 'unsure', label: 'ielts.transition.lectures.opt.unsure' },
     ],
   },
   {
     id: 'budgeting',
     icon: 'Wallet',
-    title: 'Budgeting & opening a UK bank account',
-    summary: 'Rough monthly costs and getting set up financially when you arrive.',
+    title: 'ielts.transition.budgeting.title',
+    summary: 'ielts.transition.budgeting.summary',
     body: [
-      'Beyond tuition, you need a realistic monthly budget so your maintenance funds last the year. Outside London a common range is roughly £900–£1,300 a month once you include rent, food, transport, phone and some social spending; in London it is higher. These are planning estimates only — your real costs depend on your city, your accommodation and your lifestyle.',
-      'Build your budget around the fixed costs first: rent (often your biggest single cost), bills if not included, a phone/SIM plan, and travel. Then set sensible amounts for food and personal spending, and keep a small buffer for one-off costs like course materials or a deposit.',
-      'Opening a UK bank account makes day-to-day life much easier and is usually needed to receive any stipend or pay rent. Most banks ask for your passport, your visa/BRP or eVisa share code, and proof of your UK address and university enrolment (your university can issue a bank letter). Some banks and app-based accounts let you start the process before you arrive — check what your university recommends.',
-      'Set up your account and a budgeting habit in your first couple of weeks. Knowing exactly what comes in and goes out removes a huge amount of stress and protects the funds you worked hard to evidence for your visa.',
+      'ielts.transition.budgeting.body.0',
+      'ielts.transition.budgeting.body.1',
+      'ielts.transition.budgeting.body.2',
+      'ielts.transition.budgeting.body.3',
     ],
     keyPoints: [
-      'Plan ~£900–£1,300/month outside London (more in London)',
-      'Fix rent, bills, phone, transport first; keep a buffer',
-      'Bank account needs passport, visa/share code & uni letter',
+      'ielts.transition.budgeting.kp.0',
+      'ielts.transition.budgeting.kp.1',
+      'ielts.transition.budgeting.kp.2',
     ],
-    question: 'How confident are you budgeting and setting up money in the UK?',
+    question: 'ielts.transition.budgeting.question',
     field: 'budgeting',
     options: [
-      { value: 'confident', label: 'Confident — I have a budget and a bank plan' },
-      { value: 'some', label: 'Some — I have a rough idea' },
-      { value: 'low', label: 'Low — I haven’t thought about it yet' },
+      { value: 'confident', label: 'ielts.transition.budgeting.opt.confident' },
+      { value: 'some', label: 'ielts.transition.budgeting.opt.some' },
+      { value: 'low', label: 'ielts.transition.budgeting.opt.low' },
     ],
   },
   {
     id: 'accommodation',
     icon: 'Home',
-    title: 'Accommodation: halls vs private',
-    summary: 'Choosing where to live, deposits, and the timelines that catch people out.',
+    title: 'ielts.transition.accommodation.title',
+    summary: 'ielts.transition.accommodation.summary',
     body: [
-      'Most first-year international students choose university-managed halls of residence. Halls are convenient (often all-inclusive of bills, furnished, with contracts that match the academic year) and they are the easiest way to meet people in your first weeks. Demand is high, so apply as early as your offer allows — popular halls fill up months before term.',
-      'Private renting (a room in a shared house or a studio) can be cheaper or give more independence, but it comes with more responsibility: you usually pay bills separately, sign a longer fixed-term contract, and arrange your own contents insurance. Never pay a deposit or “holding fee” for a property you have not been able to verify, and be alert to rental scams targeting overseas students.',
-      'Understand deposits before you commit. For private tenancies in England, your deposit must by law be protected in a government-approved tenancy deposit scheme, and there are caps on how much can be charged. University halls have their own deposit and payment rules — read them carefully.',
-      'The timelines are what catch people out: hall applications often open right after you accept an offer, while private viewings usually happen close to arrival. Plan early, keep copies of every contract, and don’t feel pressured to sign anything before you understand the costs and the cancellation terms.',
+      'ielts.transition.accommodation.body.0',
+      'ielts.transition.accommodation.body.1',
+      'ielts.transition.accommodation.body.2',
+      'ielts.transition.accommodation.body.3',
     ],
     keyPoints: [
-      'Apply for halls as early as your offer allows',
-      'Private lets: protected deposits, watch for scams',
-      'Timelines vary — plan early, read every contract',
+      'ielts.transition.accommodation.kp.0',
+      'ielts.transition.accommodation.kp.1',
+      'ielts.transition.accommodation.kp.2',
     ],
-    question: 'Where are you with sorting your UK accommodation?',
+    question: 'ielts.transition.accommodation.question',
     field: 'accommodation',
     options: [
-      { value: 'sorted', label: 'Sorted — I have somewhere confirmed' },
-      { value: 'searching', label: 'Searching — actively looking' },
-      { value: 'not_started', label: 'Not started yet' },
+      { value: 'sorted', label: 'ielts.transition.accommodation.opt.sorted' },
+      { value: 'searching', label: 'ielts.transition.accommodation.opt.searching' },
+      { value: 'not_started', label: 'ielts.transition.accommodation.opt.not_started' },
     ],
   },
 ]

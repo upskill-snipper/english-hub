@@ -63,30 +63,29 @@ type Location = 'london' | 'outsideLondon'
 // ─── Overall status traffic light ───────────────────────────────────────────
 type ApplyStatus = 'ready' | 'not_yet' | 'blocked'
 
+// `label` / `blurb` hold i18n KEY strings, resolved at render via t().
+// en fallbacks documented inline next to each key.
 const STATUS_META: Record<
   ApplyStatus,
   { label: string; blurb: string; text: string; bg: string; dot: string }
 > = {
   ready: {
-    label: 'Ready to apply',
-    blurb:
-      'Your core visa and finance items are in place. Confirm your CAS dates, then book your visa appointment.',
+    label: 'ielts.visa.status.ready.label', // 'Ready to apply'
+    blurb: 'ielts.visa.status.ready.blurb',
     text: 'text-emerald-600 dark:text-emerald-400',
     bg: 'bg-emerald-500/10 border-emerald-500/30',
     dot: 'bg-emerald-500',
   },
   not_yet: {
-    label: 'Not yet — items outstanding',
-    blurb:
-      'You are on track but a few items still need finishing before you can submit a strong visa application.',
+    label: 'ielts.visa.status.notyet.label', // 'Not yet — items outstanding'
+    blurb: 'ielts.visa.status.notyet.blurb',
     text: 'text-amber-600 dark:text-amber-400',
     bg: 'bg-amber-500/10 border-amber-500/30',
     dot: 'bg-amber-500',
   },
   blocked: {
-    label: 'Blocked — must resolve first',
-    blurb:
-      'One or more items would block a visa application right now. Resolve the blocking items below before applying.',
+    label: 'ielts.visa.status.blocked.label', // 'Blocked — must resolve first'
+    blurb: 'ielts.visa.status.blocked.blurb',
     text: 'text-rose-600 dark:text-rose-400',
     bg: 'bg-rose-500/10 border-rose-500/30',
     dot: 'bg-rose-500',
@@ -101,6 +100,9 @@ interface ChecklistState extends VisaFinanceReadinessInput {
   statementFresh: TriState
 }
 
+// Returns i18n KEY strings (not English) in `blocking` / `outstanding`; the
+// render site resolves each via t(). Keys are defined in
+// dictionary-ielts-readiness-ui.ts under ielts.visa.msg.* with EN + Khaleeji AR.
 function computeStatus(s: ChecklistState): {
   status: ApplyStatus
   blocking: string[]
@@ -110,70 +112,36 @@ function computeStatus(s: ChecklistState): {
   const outstanding: string[] = []
 
   // Passport
-  if (s.passportValid === 'no')
-    blocking.push('Passport is not valid — you cannot apply without one.')
-  else if (s.passportValid === 'expiring')
-    outstanding.push(
-      'Passport is expiring / being renewed — make sure it covers your whole course.',
-    )
+  if (s.passportValid === 'no') blocking.push('ielts.visa.msg.passport.invalid')
+  else if (s.passportValid === 'expiring') outstanding.push('ielts.visa.msg.passport.expiring')
 
   // Funds evidence (the single most common refusal cause)
-  if (s.fundsEvidence === 'none')
-    blocking.push('No maintenance-funds evidence yet — this is the top visa-refusal cause.')
-  else if (s.fundsEvidence === 'gathering')
-    outstanding.push(
-      'Still gathering funds evidence — finish before the 28-day clock can be relied on.',
-    )
+  if (s.fundsEvidence === 'none') blocking.push('ielts.visa.msg.funds.none')
+  else if (s.fundsEvidence === 'gathering') outstanding.push('ielts.visa.msg.funds.gathering')
 
   // 28-day hold + statement freshness only matter once funds exist
   if (s.fundsEvidence !== 'none') {
-    if (s.fundsHeld28Days === 'no')
-      blocking.push(
-        'Funds have not been held for 28 consecutive days — the balance must not dip below the required amount.',
-      )
-    else if (s.fundsHeld28Days === 'na')
-      outstanding.push('Confirm your funds will be held for 28 consecutive days before you apply.')
-    if (s.statementFresh === 'no')
-      blocking.push(
-        'Your closing statement is older than 31 days — get a fresh statement dated within 31 days of applying.',
-      )
-    else if (s.statementFresh === 'na')
-      outstanding.push(
-        'Make sure your bank statement is dated no more than 31 days before you apply.',
-      )
+    if (s.fundsHeld28Days === 'no') blocking.push('ielts.visa.msg.held.no')
+    else if (s.fundsHeld28Days === 'na') outstanding.push('ielts.visa.msg.held.na')
+    if (s.statementFresh === 'no') blocking.push('ielts.visa.msg.statement.stale')
+    else if (s.statementFresh === 'na') outstanding.push('ielts.visa.msg.statement.na')
   }
 
   // CAS
-  if (s.casStage === 'not_started')
-    blocking.push(
-      'No university application started — you need an offer and a CAS before you can apply for the visa.',
-    )
+  if (s.casStage === 'not_started') blocking.push('ielts.visa.msg.cas.notstarted')
   else if (s.casStage === 'applying' || s.casStage === 'offer_holder')
-    outstanding.push(
-      'CAS not yet received — you cannot submit the visa application until your university issues it.',
-    )
+    outstanding.push('ielts.visa.msg.cas.pending')
 
   // Sponsor / scholarship
-  if (s.sponsorOrScholarship === 'unknown')
-    outstanding.push(
-      'Funding source unconfirmed — confirm whether you are self-funded, sponsored or applying for a scholarship.',
-    )
+  if (s.sponsorOrScholarship === 'unknown') outstanding.push('ielts.visa.msg.sponsor.unknown')
   else if (s.sponsorOrScholarship === 'applying')
-    outstanding.push(
-      'Scholarship / sponsor application pending — have a self-funded backup ready in case it is unsuccessful.',
-    )
+    outstanding.push('ielts.visa.msg.sponsor.applying')
 
   // TB test (mandatory only for certain countries; "no" = outstanding required test)
-  if (s.tbTest === 'no')
-    blocking.push(
-      'TB test outstanding — if required for your country it must be done before you apply.',
-    )
+  if (s.tbTest === 'no') blocking.push('ielts.visa.msg.tb.outstanding')
 
   // ATAS (mandatory only for certain courses; "no" = outstanding required clearance)
-  if (s.atas === 'no')
-    blocking.push(
-      'ATAS clearance outstanding — if required for your course it must be granted before your CAS is used.',
-    )
+  if (s.atas === 'no') blocking.push('ielts.visa.msg.atas.outstanding')
 
   const status: ApplyStatus =
     blocking.length > 0 ? 'blocked' : outstanding.length > 0 ? 'not_yet' : 'ready'
@@ -303,11 +271,11 @@ export function VisaFinanceChecklistClient({ hasAccess }: { hasAccess: boolean }
               <div className="mt-3 flex items-center gap-3">
                 <span className={cn('h-3.5 w-3.5 rounded-full', sm.dot)} aria-hidden />
                 <h2 className={cn('font-serif text-2xl font-semibold sm:text-3xl', sm.text)}>
-                  {sm.label}
+                  {t(sm.label)}
                 </h2>
               </div>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                {sm.blurb}
+                {t(sm.blurb)}
               </p>
 
               {(blocking.length > 0 || outstanding.length > 0) && (
@@ -321,7 +289,7 @@ export function VisaFinanceChecklistClient({ hasAccess }: { hasAccess: boolean }
                       <ul className="space-y-1.5">
                         {blocking.map((b, i) => (
                           <li key={i} className="text-xs leading-relaxed text-foreground">
-                            • {b}
+                            • {t(b)}
                           </li>
                         ))}
                       </ul>
@@ -336,7 +304,7 @@ export function VisaFinanceChecklistClient({ hasAccess }: { hasAccess: boolean }
                       <ul className="space-y-1.5">
                         {outstanding.map((o, i) => (
                           <li key={i} className="text-xs leading-relaxed text-foreground">
-                            • {o}
+                            • {t(o)}
                           </li>
                         ))}
                       </ul>
@@ -399,7 +367,11 @@ export function VisaFinanceChecklistClient({ hasAccess }: { hasAccess: boolean }
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((m) => (
                       <option key={m} value={m}>
-                        {m} {m === 1 ? 'month' : 'months'}
+                        {(
+                          (m === 1
+                            ? t('ielts.visa.funds.month_one')
+                            : t('ielts.visa.funds.month_other')) || '{n} months'
+                        ).replace('{n}', String(m))}
                       </option>
                     ))}
                   </select>

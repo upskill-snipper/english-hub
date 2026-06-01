@@ -183,9 +183,9 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
                       </span>
                       <div className="min-w-0 flex-1">
                         <h2 className="font-serif text-base font-semibold text-foreground">
-                          {m.title}
+                          {t(m.title)}
                         </h2>
-                        <p className="truncate text-xs text-muted-foreground">{m.summary}</p>
+                        <p className="truncate text-xs text-muted-foreground">{t(m.summary)}</p>
                       </div>
                       {answered && (
                         <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" aria-hidden />
@@ -208,7 +208,7 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
                               key={kp}
                               className="rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-[11px] text-muted-foreground"
                             >
-                              {kp}
+                              {t(kp)}
                             </span>
                           ))}
                         </div>
@@ -217,14 +217,16 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
                         <div className="space-y-3">
                           {m.body.map((para, i) => (
                             <p key={i} className="text-sm leading-relaxed text-foreground">
-                              {para}
+                              {t(para)}
                             </p>
                           ))}
                         </div>
 
                         {/* Self-rating */}
                         <div className="mt-5 rounded-xl border border-primary/20 bg-primary/[0.04] p-4">
-                          <p className="mb-3 text-sm font-semibold text-foreground">{m.question}</p>
+                          <p className="mb-3 text-sm font-semibold text-foreground">
+                            {t(m.question)}
+                          </p>
                           <div className="grid gap-2">
                             {m.options.map((o) => {
                               const selected = value === o.value
@@ -253,7 +255,7 @@ export function TransitionModulesClient({ hasAccess }: { hasAccess: boolean }) {
                                       <span className="h-1.5 w-1.5 rounded-full bg-white" />
                                     )}
                                   </span>
-                                  {o.label}
+                                  {t(o.label)}
                                 </button>
                               )
                             })}
@@ -345,7 +347,7 @@ function LockedTeaser({ t }: { t: (key: string) => string }) {
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
                 <Icon className="h-4 w-4" aria-hidden />
               </span>
-              <span className="min-w-0 flex-1 text-sm text-foreground">{m.title}</span>
+              <span className="min-w-0 flex-1 text-sm text-foreground">{t(m.title)}</span>
               <Lock className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
             </div>
           )

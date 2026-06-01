@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 // ─── UK Readiness Programme - overview / landing (Server Component) ──────────
 // A single coherent overview that ties the four-domain UK Readiness programme
@@ -26,10 +27,13 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // Title + canonical live in layout.tsx. Inline English copy (allowed).
 // ────────────────────────────────────────────────────────────────────────────
 
-interface DomainGuide {
-  ready: string[]
-  gaps: string[]
-  next: string
+// Structural metadata only. Every piece of user-facing copy is referenced by
+// an i18n key (resolved server-side via `await t(...)` in the async page) and
+// passed down to DomainSection pre-resolved. Counts in *ReadyCount / *GapsCount
+// drive how many `ready.N` / `gaps.N` keys to resolve.
+interface DomainGuideKeys {
+  readyCount: number
+  gapsCount: number
 }
 
 interface Domain {
@@ -38,12 +42,9 @@ interface Domain {
   icon: typeof Languages
   accent: string
   bg: string
-  title: string
-  summary: string
   href: string
-  cta: string
   /** Present only for the two self-authored guidance domains. */
-  guide?: DomainGuide
+  guide?: DomainGuideKeys
 }
 
 const DOMAINS: Domain[] = [
@@ -53,24 +54,8 @@ const DOMAINS: Domain[] = [
     icon: Languages,
     accent: 'text-sky-600 dark:text-sky-400',
     bg: 'bg-sky-500/10',
-    title: 'English readiness',
-    summary:
-      'Can your English meet the band your course and visa require — across all four skills, not just on average?',
     href: '/ielts/diagnostic',
-    cta: 'Take the diagnostic',
-    guide: {
-      ready: [
-        'You hit (or exceed) the overall band your offer asks for, AND no single skill falls below the per-skill minimum the university or UKVI sets.',
-        'Your bands are consistent across attempts, not a lucky one-off — Writing and Speaking are usually the deciding skills.',
-        'You can handle the test format under time pressure, not just the language in isolation.',
-      ],
-      gaps: [
-        'A strong average that hides one weak skill (often Writing) below the required floor.',
-        'Relying on a score that is close but not yet repeatable.',
-        'Practising language without practising the exam conditions and timing.',
-      ],
-      next: 'Start with the diagnostic to see your current band per skill, then use the targeted practice and AI feedback in Writing and Speaking to close the weakest gap first.',
-    },
+    guide: { readyCount: 3, gapsCount: 3 },
   },
   {
     key: 'application',
@@ -78,26 +63,8 @@ const DOMAINS: Domain[] = [
     icon: FileText,
     accent: 'text-amber-600 dark:text-amber-400',
     bg: 'bg-amber-500/10',
-    title: 'Application readiness',
-    summary:
-      'Is your UCAS application — personal statement, references and choices — strong enough to convert offers?',
     href: '/ielts/admissions/personal-statement',
-    cta: 'Open the UCAS coach',
-    guide: {
-      ready: [
-        'Your personal statement leads with a specific, evidenced motivation for the subject, not generic enthusiasm.',
-        'Every claim is backed by something concrete — a project, a book, work experience, a result.',
-        'Your course and university choices are realistic against your predicted/achieved grades, with a sensible spread.',
-        'Deadlines, references and supporting documents are tracked and submitted on time.',
-      ],
-      gaps: [
-        'A statement full of clichés ("I have always been passionate…") with no evidence.',
-        'Writing about the country or city rather than the course and your fit for it.',
-        'All five choices clustered at the same competitiveness, leaving no safety net.',
-        'Leaving the statement to the last minute, so there is no time to redraft.',
-      ],
-      next: 'Use the UCAS personal-statement coach to structure and sharpen your statement, then sense-check your five choices against your predicted grades.',
-    },
+    guide: { readyCount: 4, gapsCount: 4 },
   },
   {
     key: 'visa',
@@ -105,11 +72,7 @@ const DOMAINS: Domain[] = [
     icon: Plane,
     accent: 'text-emerald-600 dark:text-emerald-400',
     bg: 'bg-emerald-500/10',
-    title: 'Visa & finance readiness',
-    summary:
-      'Can you actually apply for the Student visa — maintenance funds, the 28-day rule, CAS, TB test and ATAS?',
     href: '/ielts/readiness/visa-finance',
-    cta: 'Open the checklist',
   },
   {
     key: 'transition',
@@ -117,15 +80,79 @@ const DOMAINS: Domain[] = [
     icon: Compass,
     accent: 'text-violet-600 dark:text-violet-400',
     bg: 'bg-violet-500/10',
-    title: 'Academic transition readiness',
-    summary:
-      'Are you ready for how UK study actually works — academic writing, lectures, independent study, budgeting and living away?',
     href: '/ielts/readiness/transition',
-    cta: 'Start the modules',
   },
 ]
 
-export default function UkReadinessOverviewPage() {
+// Pre-resolved copy for a single domain, handed to <DomainSection />.
+interface ResolvedGuide {
+  ready: string[]
+  gaps: string[]
+  next: string
+}
+interface ResolvedDomain {
+  key: string
+  step: number
+  icon: typeof Languages
+  accent: string
+  bg: string
+  href: string
+  title: string
+  summary: string
+  cta: string
+  guide?: ResolvedGuide
+}
+
+export default async function UkReadinessOverviewPage() {
+  // Resolve every domain's copy up front (server component can't await inside
+  // the JSX .map()). Each domain references keys under ielts.ukread.<key>.*.
+  const resolvedDomains: ResolvedDomain[] = await Promise.all(
+    DOMAINS.map(async (d): Promise<ResolvedDomain> => {
+      const base = `ielts.ukread.${d.key}`
+      const guide = d.guide
+        ? {
+            ready: await Promise.all(
+              Array.from({ length: d.guide.readyCount }, (_, i) => t(`${base}.ready.${i}`)),
+            ),
+            gaps: await Promise.all(
+              Array.from({ length: d.guide.gapsCount }, (_, i) => t(`${base}.gaps.${i}`)),
+            ),
+            next: await t(`${base}.next`),
+          }
+        : undefined
+      return {
+        key: d.key,
+        step: d.step,
+        icon: d.icon,
+        accent: d.accent,
+        bg: d.bg,
+        href: d.href,
+        title: await t(`${base}.title`),
+        summary: await t(`${base}.summary`),
+        cta: await t(`${base}.cta`),
+        guide,
+      }
+    }),
+  )
+
+  // Standalone page chrome + section copy.
+  const backLabel = await t('ielts.ukread.back')
+  const eyebrow = await t('ielts.ukread.eyebrow')
+  const h1 = await t('ielts.ukread.h1')
+  const intro = await t('ielts.ukread.intro')
+  const stepTemplate = await t('ielts.ukread.step')
+  const readyLabel = await t('ielts.ukread.ready_label')
+  const gapsLabel = await t('ielts.ukread.gaps_label')
+  const nextLabel = await t('ielts.ukread.next_label')
+  const fallbackBody = await t('ielts.ukread.fallback')
+  const reportEyebrow = await t('ielts.ukread.report.eyebrow')
+  const reportHeading = await t('ielts.ukread.report.heading')
+  const reportBody = await t('ielts.ukread.report.body')
+  const reportCta = await t('ielts.ukread.report.cta')
+  const crossHeading = await t('ielts.ukread.cross.heading')
+  const crossBody = await t('ielts.ukread.cross.body')
+  const crossCta = await t('ielts.ukread.cross.cta')
+
   return (
     <main id="main-content" className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -144,7 +171,7 @@ export default function UkReadinessOverviewPage() {
             className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to IELTS
+            {backLabel}
           </Link>
           <div className="flex items-start gap-3">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -155,16 +182,13 @@ export default function UkReadinessOverviewPage() {
             </span>
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-clay-500">
-                IELTS plan · UK Readiness programme
+                {eyebrow}
               </p>
               <h1 className="mt-1 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-                Your route to studying in the UK, in four parts
+                {h1}
               </h1>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                Getting to a UK university is more than an IELTS score. This programme breaks
-                readiness into four domains — your English, your application, your visa &amp;
-                finance, and the move itself — and gives you a tool for each. Work through them in
-                order, then pull everything together into one Readiness Report.
+                {intro}
               </p>
             </div>
           </div>
@@ -177,8 +201,16 @@ export default function UkReadinessOverviewPage() {
           <h2 id="domains-heading" className="sr-only">
             The four readiness domains
           </h2>
-          {DOMAINS.map((d) => (
-            <DomainSection key={d.key} domain={d} />
+          {resolvedDomains.map((d) => (
+            <DomainSection
+              key={d.key}
+              domain={d}
+              stepTemplate={stepTemplate}
+              readyLabel={readyLabel}
+              gapsLabel={gapsLabel}
+              nextLabel={nextLabel}
+              fallbackBody={fallbackBody}
+            />
           ))}
         </section>
 
@@ -193,18 +225,16 @@ export default function UkReadinessOverviewPage() {
             </span>
             <div className="flex-1">
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-emerald-600 dark:text-emerald-400">
-                Pull it together
+                {reportEyebrow}
               </p>
               <h2
                 id="report-heading"
                 className="mt-1 font-serif text-xl font-semibold tracking-tight text-foreground"
               >
-                Your UK Candidate Readiness Report
+                {reportHeading}
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                The report rolls all four domains into one traffic-light view, flags the red flags
-                that could stop you, and gives you a 7/30/60-day action plan you can export to PDF.
-                Each tool above feeds straight into it.
+                {reportBody}
               </p>
             </div>
             <Button
@@ -212,7 +242,7 @@ export default function UkReadinessOverviewPage() {
               className="shrink-0 gap-2 bg-emerald-600 text-white hover:bg-emerald-700"
               render={<Link href="/ielts/readiness" />}
             >
-              Build my report
+              {reportCta}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
@@ -226,12 +256,9 @@ export default function UkReadinessOverviewPage() {
                 <BookOpenCheck className="h-5 w-5 text-sky-600 dark:text-sky-400" aria-hidden />
               </span>
               <div>
-                <h2 className="font-serif text-lg font-semibold text-foreground">
-                  Want to see what each band looks like?
-                </h2>
+                <h2 className="font-serif text-lg font-semibold text-foreground">{crossHeading}</h2>
                 <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                  Compare band-6.5 and band-8 model answers for Writing and Speaking, with notes on
-                  what lifts each one up the scale.
+                  {crossBody}
                 </p>
               </div>
             </div>
@@ -240,7 +267,7 @@ export default function UkReadinessOverviewPage() {
               className="shrink-0 gap-2"
               render={<Link href="/ielts/model-answers" />}
             >
-              View model answers
+              {crossCta}
               <ArrowRight className="h-3.5 w-3.5" />
             </Button>
           </div>
@@ -252,7 +279,21 @@ export default function UkReadinessOverviewPage() {
 
 // ─── One readiness domain ───────────────────────────────────────────────────
 
-function DomainSection({ domain }: { domain: Domain }) {
+function DomainSection({
+  domain,
+  stepTemplate,
+  readyLabel,
+  gapsLabel,
+  nextLabel,
+  fallbackBody,
+}: {
+  domain: ResolvedDomain
+  stepTemplate: string
+  readyLabel: string
+  gapsLabel: string
+  nextLabel: string
+  fallbackBody: string
+}) {
   const Icon = domain.icon
   return (
     <article className="overflow-hidden rounded-2xl border border-border/60 bg-card shadow-soft">
@@ -264,7 +305,7 @@ function DomainSection({ domain }: { domain: Domain }) {
         </span>
         <div className="flex-1">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Step {domain.step} of 4
+            {stepTemplate.replace('{n}', String(domain.step))}
           </p>
           <h3 className="mt-0.5 font-serif text-lg font-semibold text-foreground">
             {domain.title}
@@ -288,7 +329,7 @@ function DomainSection({ domain }: { domain: Domain }) {
           <div>
             <p className="flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
               <CheckCircle2 className="h-4 w-4" />
-              What &quot;ready&quot; looks like
+              {readyLabel}
             </p>
             <ul className="mt-2 space-y-1.5">
               {domain.guide.ready.map((line, i) => (
@@ -302,7 +343,7 @@ function DomainSection({ domain }: { domain: Domain }) {
           <div>
             <p className="flex items-center gap-2 text-sm font-semibold text-amber-600 dark:text-amber-400">
               <Target className="h-4 w-4" />
-              Common gaps
+              {gapsLabel}
             </p>
             <ul className="mt-2 space-y-1.5">
               {domain.guide.gaps.map((line, i) => (
@@ -314,16 +355,13 @@ function DomainSection({ domain }: { domain: Domain }) {
             </ul>
           </div>
           <p className="rounded-lg border border-border/60 bg-background/50 p-3 text-xs leading-relaxed text-muted-foreground sm:col-span-2">
-            <span className="font-semibold text-foreground">Your next step: </span>
+            <span className="font-semibold text-foreground">{nextLabel}</span>
             {domain.guide.next}
           </p>
         </div>
       ) : (
         <div className="p-5 sm:p-6">
-          <p className="text-xs leading-relaxed text-muted-foreground">
-            This domain has its own guided tool — open it above to work through the checks step by
-            step. Your progress there feeds straight into your Readiness Report.
-          </p>
+          <p className="text-xs leading-relaxed text-muted-foreground">{fallbackBody}</p>
         </div>
       )}
     </article>

@@ -93,6 +93,14 @@ import { IELTS_GUIDE_DICTIONARY } from './dictionary-ielts-guide'
 import { IELTS_ADMISSIONS_DICTIONARY } from './dictionary-ielts-admissions'
 import { IELTS_PARTNERS_DICTIONARY } from './dictionary-ielts-partners'
 import { IELTS_CENTRE_DICTIONARY } from './dictionary-ielts-centre'
+// 2026-06-01: IELTS UK-Readiness sweep - close Arabic leaks on the new
+// readiness surfaces (transition modules, model answers, readiness report,
+// visa/finance, UCAS coach, UK-readiness overview, IELTS pricing card).
+// Curated EN + Khaleeji Gulf Arabic.
+import { IELTS_TRANSITION_DICTIONARY } from './dictionary-ielts-transition'
+import { IELTS_MODELANSWERS_DICTIONARY } from './dictionary-ielts-modelanswers'
+import { IELTS_READINESS_UI_DICTIONARY } from './dictionary-ielts-readiness-ui'
+import { IELTS_UKREADINESS_DICTIONARY } from './dictionary-ielts-ukreadiness'
 // 2026-05-25: site-wide speech kit (dictation / read-aloud) labels.
 import { SPEECH_DICTIONARY } from './dictionary-speech'
 
@@ -14904,6 +14912,11 @@ export function lookup(key: string, locale: Locale): string {
     IELTS_ADMISSIONS_DICTIONARY[key] ??
     IELTS_PARTNERS_DICTIONARY[key] ??
     IELTS_CENTRE_DICTIONARY[key] ??
+    // 2026-06-01: IELTS UK-Readiness sweep (curated EN + Khaleeji).
+    IELTS_TRANSITION_DICTIONARY[key] ??
+    IELTS_MODELANSWERS_DICTIONARY[key] ??
+    IELTS_READINESS_UI_DICTIONARY[key] ??
+    IELTS_UKREADINESS_DICTIONARY[key] ??
     SPEECH_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??

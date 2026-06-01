@@ -126,8 +126,8 @@ export default async function IeltsHubPage() {
     {
       href: '/ielts/model-answers',
       icon: BookOpenCheck,
-      title: 'Model answers',
-      body: 'Band-6.5 and band-8 sample answers for Writing and Speaking, with notes on what lifts each one up the scale.',
+      title: await t('ielts.hub.more.modelanswers.title'),
+      body: await t('ielts.hub.more.modelanswers.body'),
     },
     {
       href: '/ielts/admissions',

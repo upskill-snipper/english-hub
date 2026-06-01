@@ -1032,10 +1032,10 @@ function PricingContent() {
 
               <div className="p-8 pb-0">
                 <h3 className="text-lg font-bold tracking-tight text-foreground mt-2">
-                  IELTS Band Booster
+                  {t('pricing.ielts.title')}
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1 mb-3">
-                  Adult exam prep with unlimited examiner-calibrated AI band feedback
+                  {t('pricing.ielts.subtitle')}
                 </p>
 
                 {/* Price - monthly headline */}
@@ -1063,21 +1063,21 @@ function PricingContent() {
 
                 {/* Trial line */}
                 <p className="text-sm text-emerald-600 font-semibold mb-3">
-                  {PRICING.TRIAL_DAYS}-day free trial · cancel anytime
+                  {t('pricing.ielts.trial_line').replace('{days}', String(PRICING.TRIAL_DAYS))}
                 </p>
 
                 {/* Features */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                    What&apos;s included
+                    {t('pricing.ielts.included')}
                   </p>
                   <ul className="space-y-2.5">
                     {[
-                      'Unlimited AI Writing band feedback',
-                      'Unlimited AI Speaking band feedback',
-                      'Examiner-calibrated to IELTS band descriptors',
-                      'Model answers & improvement tips',
-                      `${PRICING.TRIAL_DAYS}-day free trial, cancel anytime`,
+                      t('pricing.ielts.feat.writing'),
+                      t('pricing.ielts.feat.speaking'),
+                      t('pricing.ielts.feat.calibrated'),
+                      t('pricing.ielts.feat.models'),
+                      t('pricing.ielts.feat.trial').replace('{days}', String(PRICING.TRIAL_DAYS)),
                     ].map((label) => (
                       <li key={label} className="flex items-start gap-2.5 text-sm">
                         <CheckCircle className="w-4 h-4 text-sky-600 dark:text-sky-300 flex-shrink-0 mt-0.5" />
@@ -1098,7 +1098,9 @@ function PricingContent() {
                 >
                   {checkoutLoading === 'ielts_monthly'
                     ? t('pricing.starting_checkout')
-                    : `Start free trial — ${PRICING.CURRENCY}${PRICING.IELTS_MONTHLY}/mo`}
+                    : t('pricing.ielts.cta.monthly')
+                        .replace('{currency}', PRICING.CURRENCY)
+                        .replace('{price}', String(PRICING.IELTS_MONTHLY))}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
                 <button
@@ -1108,10 +1110,12 @@ function PricingContent() {
                 >
                   {checkoutLoading === 'ielts_annual'
                     ? t('pricing.starting_checkout')
-                    : `Or pay annually — ${PRICING.CURRENCY}${PRICING.IELTS_ANNUAL}/year`}
+                    : t('pricing.ielts.cta.annual')
+                        .replace('{currency}', PRICING.CURRENCY)
+                        .replace('{price}', String(PRICING.IELTS_ANNUAL))}
                 </button>
                 <p className="mt-3 text-center text-[11px] text-muted-foreground/80">
-                  Separate from Student &amp; Teacher plans · adult IELTS exam prep
+                  {t('pricing.ielts.footer')}
                 </p>
                 {ieltsError && (
                   <p className="mt-3 text-center text-xs text-red-600">{ieltsError}</p>
