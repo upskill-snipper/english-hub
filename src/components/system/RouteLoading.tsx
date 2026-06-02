@@ -1,15 +1,20 @@
+'use client'
+
 import { Skeleton } from '@/components/ui/skeleton'
+import { useT } from '@/lib/i18n/use-t'
 
 /**
  * Shared branded route fallback. Re-exported by every scaffolded
  * loading.tsx so the whole site shares one on-brand skeleton.
  * Token-based (bg-card / border-border) so it tracks the theme.
+ * The sr-only status text is i18n'd (EN + Khaleeji) via useT().
  */
 export function RouteLoading() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <p className="sr-only" role="status" aria-live="polite">
-        Loading…
+        {t('action.loading')}
       </p>
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
         <div className="relative space-y-4">

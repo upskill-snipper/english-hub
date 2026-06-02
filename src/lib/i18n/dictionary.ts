@@ -5007,6 +5007,11 @@ export const DICTIONARY: Dictionary = {
     en: 'We encountered an unexpected error. Please try again.',
     ar: 'صار في خطأ غير متوقّع. جرّب مرة ثانية لو سمحت.',
   },
+  // Route-level error boundary body (RouteError / scaffolded error.tsx).
+  'error.route_body': {
+    en: 'We hit an unexpected error loading this page. Try again, or head back home.',
+    ar: 'صار خطأ مو متوقّع وإحنا نفتح الصفحة. جرّب مرة ثانية، أو ارجع للرئيسية.',
+  },
   'error.global_body': {
     en: 'We encountered an unexpected error. Please try again or return to the homepage.',
     ar: 'صار في خطأ غير متوقّع. جرّب مرة ثانية أو روح للرئيسية.',
