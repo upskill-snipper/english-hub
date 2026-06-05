@@ -308,6 +308,12 @@ export default function AdminPage() {
                   desc="Gold-set accuracy, inter-marker agreement and drift per marker."
                 />
                 <AdminToolCard
+                  href="/admin/board-agreement"
+                  icon={<Shield className="h-5 w-5 text-primary" />}
+                  title="Board agreement"
+                  desc="AI vs examiner agreement per board (exact %, within-1, mean error)."
+                />
+                <AdminToolCard
                   href="/admin/marker-pay"
                   icon={<Banknote className="h-5 w-5 text-primary" />}
                   title="Marker pay"

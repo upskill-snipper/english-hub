@@ -28,6 +28,7 @@
 // translator to add later).
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import Link from 'next/link'
 import {
   Loader2,
   CheckCircle2,
@@ -950,6 +951,12 @@ export default function MarkerConsolePage() {
             </div>
           </div>
           <div className="flex items-center gap-4 text-xs">
+            <Link
+              href="/marker/practice"
+              className="rounded-md border border-border px-2.5 py-1 font-medium text-foreground transition-colors hover:bg-muted"
+            >
+              {tt(t, 'marker.nav.practice', 'Practice')}
+            </Link>
             <div className="text-center">
               <div className="font-semibold tabular-nums text-foreground">{counts.assigned}</div>
               <div className="text-muted-foreground">
