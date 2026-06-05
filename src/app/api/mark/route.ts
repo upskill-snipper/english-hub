@@ -31,6 +31,7 @@ import {
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
+import { getExaminerExemplars } from '@/lib/marking/calibration/examiner-anchors'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { fireStudentFirstMark } from '@/lib/trustpilot/trigger-invite'
 import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
@@ -123,6 +124,29 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(`Unknown mark scheme "${body.markSchemeId}".`)
     }
 
+    // 8b. LIVE examiner calibration — a mark-range-spread sample of THIS
+    //     platform's own approved examiner marks for this board+question, so the
+    //     AI calibrates to how the human examiners mark. Fail-open: any problem
+    //     yields [] and marking proceeds exactly as before.
+    let examinerExemplars: { ref: string; summary: string }[] = []
+    try {
+      const q = scheme.questions.find(
+        (qq) =>
+          qq.id.toLowerCase() === body.questionId.trim().toLowerCase() ||
+          qq.questionType.toLowerCase() === body.questionId.trim().toLowerCase(),
+      )
+      examinerExemplars = await getExaminerExemplars({
+        board: scheme.board,
+        markSchemeId: scheme.id,
+        questionId: body.questionId,
+        questionType: q?.questionType,
+        paper: scheme.paper,
+        maxMarks: q?.totalMarks,
+      })
+    } catch {
+      examinerExemplars = []
+    }
+
     // 9. Build prompt
     let prompt
     try {
@@ -132,6 +156,7 @@ export async function POST(request: NextRequest) {
         questionText: body.questionText,
         essay: body.essay,
         studiedText: body.studiedText,
+        examinerExemplars,
       })
     } catch (err) {
       console.error('[api/mark] prompt build failed', err)

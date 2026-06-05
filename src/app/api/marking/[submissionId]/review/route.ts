@@ -35,6 +35,10 @@ import { isSiteAdmin } from '@/lib/site-admin'
 // review commissioned/specimen/platform rows. Does not affect the existing
 // teacher/school/site-admin paths - see the marker branch in step 5.
 import { getCurrentMarker } from '@/lib/marker-auth'
+// Close the calibration loop: a marker's approval is auto-promoted into the
+// anonymised training_data corpus (fire-and-forget below), which then feeds
+// live per-board calibration back into AI marking.
+import { prepareTrainingRecord } from '@/lib/training/prepare'
 // Per-board access (Stage B): a marker may only review a row whose board they
 // are APPROVED for — not merely assigned. Closes the open-self-service hole.
 import { canMarkSubmission } from '@/lib/marker-board-access'
@@ -642,6 +646,19 @@ export async function handleReview(
       // The moderation row is already persisted (audit preserved); surface
       // the failure so the client can retry the spine write.
       return serverErrorResponse('Decision recorded but failed to update the submission.')
+    }
+
+    // 6c. Close the calibration loop (ADDITIVE, marker-drive only). A marker
+    //     approval flags the row training-eligible (step 6b); promote it into
+    //     the anonymised training_data corpus now so it feeds live per-board
+    //     calibration. Fire-and-forget: prepareTrainingRecord self-gates
+    //     (consent for pupil sources; commissioned/specimen exempt) and NEVER
+    //     affects this response. Teacher/school/site-admin approvals are
+    //     unchanged (handledByMarker is false for them).
+    if (handledByMarker && decision === 'approve') {
+      void prepareTrainingRecord(subId).catch((err) =>
+        console.warn('[marking/review] auto-prepare training record failed', err),
+      )
     }
 
     // 7. Hydrate display fields (student_name, class_name) so the row can
