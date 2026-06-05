@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { RevisionShell } from '@/app/revision/_components/revision-shell'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, IGCSE_FAQS } from '@/components/seo/GeoFaq'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'IGCSE English',
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
 // Wrap every IGCSE board route in the same RevisionShell used at /revision
 // so the "Your Hub" sidebar + header render consistently regardless of
 // which board tree the student entered through.
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  const faqHeading = await t('revision.igcse.faq_heading')
   return (
     <>
       <LearningResourceJsonLd
@@ -33,7 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <RevisionShell>
         {children}
         <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">
-          <GeoFaq faqs={IGCSE_FAQS} heading="IGCSE English: common questions" />
+          <GeoFaq faqs={IGCSE_FAQS} heading={faqHeading} />
         </div>
       </RevisionShell>
     </>

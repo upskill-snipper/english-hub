@@ -126,15 +126,14 @@ function getNavItemsForBoard(board: ExamBoard | null): NavItem[] {
 }
 
 // Ordered list of collapsible group sections shown beneath the top-tier nav.
-// English-literal labels - intentionally bypass useT() to avoid expanding the
-// dictionary surface for a pure UI re-organisation; can be promoted to keys
-// later if i18n needs them.
+// `label` is an i18n key (resolved via t() at render) so the section titles
+// translate (EN + Khaleeji) like the rest of the shell.
 const GROUPS: { key: Exclude<NavGroup, 'top'>; label: string }[] = [
-  { key: 'content', label: 'Content & texts' },
-  { key: 'practice', label: 'Practice & assess' },
-  { key: 'skills', label: 'Skills & technique' },
-  { key: 'resources', label: 'Resources' },
-  { key: 'board', label: 'Your board' },
+  { key: 'content', label: 'revision.shell.group.content' },
+  { key: 'practice', label: 'revision.shell.group.practice' },
+  { key: 'skills', label: 'revision.shell.group.skills' },
+  { key: 'resources', label: 'revision.shell.group.resources' },
+  { key: 'board', label: 'revision.shell.group.board' },
 ]
 
 // ─── Progress from localStorage ─────────────────────────────────────────────
@@ -472,7 +471,7 @@ function SidebarNav({
                 aria-hidden="true"
                 className="group-chevron size-3 shrink-0 transition-transform duration-150"
               />
-              <span className="flex-1">{label}</span>
+              <span className="flex-1">{t(label)}</span>
               <span
                 aria-hidden="true"
                 className="rounded-full bg-muted/50 px-1.5 py-px font-sans text-[10px] font-medium tracking-normal text-muted-foreground/80"

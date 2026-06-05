@@ -34,6 +34,17 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string }> 
     en: 'Exam board',
     ar: 'بورد الامتحان',
   },
+  // Collapsible sidebar group sections (revision-shell GROUPS).
+  'revision.shell.group.content': { en: 'Content & texts', ar: 'المحتوى والنصوص' },
+  'revision.shell.group.practice': { en: 'Practice & assess', ar: 'تمرّن وقيّم' },
+  'revision.shell.group.skills': { en: 'Skills & technique', ar: 'المهارات والأسلوب' },
+  'revision.shell.group.resources': { en: 'Resources', ar: 'المصادر' },
+  'revision.shell.group.board': { en: 'Your board', ar: 'البورد مالك' },
+  // IGCSE hub FAQ heading (igcse/layout.tsx).
+  'revision.igcse.faq_heading': {
+    en: 'IGCSE English: common questions',
+    ar: 'IGCSE English: أسئلة شائعة',
+  },
   'revision.shell.target_grade_label': {
     en: 'Target grade',
     ar: 'الدرجة المستهدفة',
