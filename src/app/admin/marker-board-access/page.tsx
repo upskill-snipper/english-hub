@@ -31,6 +31,7 @@ interface MarkerCredentials {
   url?: string
   linkedinUrl: string | null
   marketingConsent: boolean
+  marketingAnonymous?: boolean
 }
 
 interface GateCheck {
@@ -282,6 +283,11 @@ export default function MarkerBoardAccessAdminPage() {
                         >
                           {c.marketingConsent ? 'Marketing consent ✓' : 'No marketing consent'}
                         </span>
+                        {c.marketingConsent && c.marketingAnonymous && (
+                          <span className="rounded-md bg-amber-600/10 px-2 py-1 font-medium text-amber-700">
+                            Anonymous only
+                          </span>
+                        )}
                       </>
                     )
                   })()}

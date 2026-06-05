@@ -231,6 +231,7 @@ export default function MarkerConsolePage() {
   // New application extras: LinkedIn URL, CV upload, optional marketing consent.
   const [applyLinkedin, setApplyLinkedin] = useState('')
   const [applyConsent, setApplyConsent] = useState(false)
+  const [applyAnon, setApplyAnon] = useState(false)
   const [applyCvPath, setApplyCvPath] = useState<string | null>(null)
   const [applyCvName, setApplyCvName] = useState<string | null>(null)
   const [cvUploading, setCvUploading] = useState(false)
@@ -663,6 +664,7 @@ export default function MarkerConsolePage() {
           linkedinUrl: applyLinkedin.trim() || undefined,
           cvPath: applyCvPath || undefined,
           marketingConsent: applyConsent,
+          marketingAnonymous: applyConsent ? applyAnon : false,
         }),
       })
       if (!res.ok) {
@@ -681,7 +683,17 @@ export default function MarkerConsolePage() {
     } finally {
       setApplying(false)
     }
-  }, [applying, applyName, applyQual, applyBoards, applyLinkedin, applyCvPath, applyConsent, t])
+  }, [
+    applying,
+    applyName,
+    applyQual,
+    applyBoards,
+    applyLinkedin,
+    applyCvPath,
+    applyConsent,
+    applyAnon,
+    t,
+  ])
 
   // ── Render: gate states ──────────────────────────────────────────────────
 
@@ -865,10 +877,28 @@ export default function MarkerConsolePage() {
                   {tt(
                     t,
                     'marker.apply.consent',
-                    'I consent to The English Hub using my anonymised marking performance and feedback to improve quality and for marketing / proof-of-quality purposes. (Optional — you can apply without ticking this.)',
+                    'I consent to The English Hub using my marking performance, feedback and qualifications to improve quality and for marketing / proof-of-quality purposes. (Optional — you can apply without ticking this.)',
                   )}
                 </span>
               </label>
+
+              {applyConsent && (
+                <label className="ml-6 flex cursor-pointer items-start gap-2 rounded-md border border-border p-3 text-xs leading-relaxed text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    className="mt-0.5"
+                    checked={applyAnon}
+                    onChange={(e) => setApplyAnon(e.target.checked)}
+                  />
+                  <span>
+                    {tt(
+                      t,
+                      'marker.apply.anonymous',
+                      'Keep me anonymous: show my qualifications and experience for marketing / proof-of-quality, but do not show my name or identifying details.',
+                    )}
+                  </span>
+                </label>
+              )}
 
               {applyError && <p className="text-sm text-destructive">{applyError}</p>}
 

@@ -42,6 +42,9 @@ interface ApplyBody {
   cvPath?: string
   /** OPTIONAL opt-in marketing/quality consent. Never required to apply. */
   marketingConsent?: boolean
+  /** OPTIONAL: when consenting, keep the marker anonymous in marketing (use
+   *  qualifications/experience but not their name). Ignored unless consent. */
+  marketingAnonymous?: boolean
 }
 
 export async function POST(request: NextRequest) {
@@ -120,6 +123,8 @@ export async function POST(request: NextRequest) {
     // Marketing consent is OPTIONAL — coerce to boolean. Never reject for it.
     const marketingConsent = body.marketingConsent === true
     const marketingConsentAt = marketingConsent ? new Date().toISOString() : null
+    // Anonymity only applies when consent is given; otherwise force false.
+    const marketingAnonymous = marketingConsent && body.marketingAnonymous === true
 
     const admin = createServiceRoleClient()
 
@@ -138,6 +143,7 @@ export async function POST(request: NextRequest) {
       cv_path: cvPath,
       marketing_consent: marketingConsent,
       marketing_consent_at: marketingConsentAt,
+      marketing_anonymous: marketingAnonymous,
     }
 
     let markerId: string
@@ -149,6 +155,7 @@ export async function POST(request: NextRequest) {
       const updatePayload: Record<string, unknown> = {
         marketing_consent: marketingConsent,
         marketing_consent_at: marketingConsentAt,
+        marketing_anonymous: marketingAnonymous,
       }
       if (linkedinUrl !== null) updatePayload.linkedin_url = linkedinUrl
       if (cvPath !== null) updatePayload.cv_path = cvPath

@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
     const admin = createServiceRoleClient()
     const { data, error } = await admin
       .from('markers')
-      .select('cv_path, linkedin_url, marketing_consent')
+      .select('cv_path, linkedin_url, marketing_consent, marketing_anonymous')
       .eq('id', markerId)
       .maybeSingle()
 
@@ -49,15 +49,20 @@ export async function GET(request: NextRequest) {
       cv_path: string | null
       linkedin_url: string | null
       marketing_consent: boolean | null
+      marketing_anonymous: boolean | null
     } | null
 
     if (!row) return badRequestResponse('Marker not found.')
 
     const linkedinUrl = row.linkedin_url ?? null
     const marketingConsent = row.marketing_consent === true
+    const marketingAnonymous = row.marketing_anonymous === true
 
     if (!row.cv_path) {
-      return Response.json({ found: false, linkedinUrl, marketingConsent }, { status: 200 })
+      return Response.json(
+        { found: false, linkedinUrl, marketingConsent, marketingAnonymous },
+        { status: 200 },
+      )
     }
 
     // 10-minute signed URL into the private bucket.
@@ -71,7 +76,7 @@ export async function GET(request: NextRequest) {
     }
 
     return Response.json(
-      { found: true, url: signed.signedUrl, linkedinUrl, marketingConsent },
+      { found: true, url: signed.signedUrl, linkedinUrl, marketingConsent, marketingAnonymous },
       { status: 200 },
     )
   } catch (err) {
