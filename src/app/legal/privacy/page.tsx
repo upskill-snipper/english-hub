@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { tMany } from '@/lib/i18n/t'
 
 // Contact addresses - using cj@upskillenergy.com pending dedicated mailbox
@@ -858,9 +859,9 @@ export default async function PrivacyPolicyPage() {
 
         <p className="mt-4">
           {s5MOutPre}
-          <a href="/legal/safeguarding" className="underline">
+          <Link href="/legal/safeguarding" className="underline">
             {s5MOutLink}
-          </a>
+          </Link>
           {s5MOutPost}
         </p>
       </section>
@@ -903,16 +904,16 @@ export default async function PrivacyPolicyPage() {
         <ul className="list-disc pl-6 space-y-2 mb-3">
           <li>
             <strong>{s7L1S}</strong>
-            <a href="/account/data-export" className="underline">
+            <Link href="/account/data-export" className="underline">
               {s7L1Path}
-            </a>
+            </Link>
             {s7L1Post}
           </li>
           <li>
             <strong>{s7L2S}</strong>
-            <a href="/account/delete" className="underline">
+            <Link href="/account/delete" className="underline">
               {s7L2Path}
-            </a>
+            </Link>
             {s7L2Post}
           </li>
           <li>

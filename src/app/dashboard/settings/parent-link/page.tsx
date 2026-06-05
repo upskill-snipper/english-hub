@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useT } from '@/lib/i18n/use-t'
 import { Input } from '@/components/ui/input'
@@ -565,9 +566,9 @@ function ParentLinkContent() {
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-6">
         <nav className="text-sm text-muted-foreground mb-2" aria-label="Breadcrumb">
-          <a href="/dashboard/settings" className="hover:text-primary transition-colors">
+          <Link href="/dashboard/settings" className="hover:text-primary transition-colors">
             {t('dashboard.parent_link.breadcrumb_settings')}
-          </a>
+          </Link>
           <span className="mx-2">/</span>
           <span className="text-foreground">{t('dashboard.parent_link.breadcrumb_current')}</span>
         </nav>

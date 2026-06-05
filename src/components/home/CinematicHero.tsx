@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useT } from '@/lib/i18n/use-t'
 
 import { STRINGS as _MC_STRINGS } from './content'
@@ -341,12 +342,12 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
           <h2 className="scene-title">{t('home.cin.schools.title')}</h2>
           <p className="scene-desc">{t('home.cin.schools.desc')}</p>
           <div className="scene-actions">
-            <a href="/for-schools" className="scene-cta">
+            <Link href="/for-schools" className="scene-cta">
               {t('home.cin.schools.cta_call')} &rarr;
-            </a>
-            <a href="/demo/school" className="scene-btn-ghost">
+            </Link>
+            <Link href="/demo/school" className="scene-btn-ghost">
               {t('home.cin.schools.cta_demo')}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -774,12 +775,12 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           <h2 className="scene-title">{t('home.cin.teachers.title')}</h2>
           <p className="scene-desc">{t('home.cin.teachers.desc')}</p>
           <div className="scene-actions">
-            <a href="/for-teachers/free-resources" className="scene-cta">
+            <Link href="/for-teachers/free-resources" className="scene-cta">
               {t('home.cin.teachers.cta_demo')} &rarr;
-            </a>
-            <a href="/pricing" className="scene-btn-ghost">
+            </Link>
+            <Link href="/pricing" className="scene-btn-ghost">
               {t('home.cin.teachers.cta_pricing')}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -922,12 +923,12 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           <h2 className="scene-title">{t('home.cin.students.title')}</h2>
           <p className="scene-desc">{t('home.cin.students.desc')}</p>
           <div className="scene-actions">
-            <a href="/board-select" className="scene-cta">
+            <Link href="/board-select" className="scene-cta">
               {t('home.cin.students.cta_start')} &rarr;
-            </a>
-            <a href="/board-select" className="scene-btn-ghost">
+            </Link>
+            <Link href="/board-select" className="scene-btn-ghost">
               {t('home.cin.students.cta_browse')}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -1418,12 +1419,12 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
           <h2 className="scene-title">{t('home.cin.parents.title')}</h2>
           <p className="scene-desc">{t('home.cin.parents.desc')}</p>
           <div className="scene-actions">
-            <a href="/board-select" className="scene-cta">
+            <Link href="/board-select" className="scene-cta">
               {t('home.cin.parents.cta_trial')} &rarr;
-            </a>
-            <a href="/for-parents" className="scene-btn-ghost">
+            </Link>
+            <Link href="/for-parents" className="scene-btn-ghost">
               {t('home.cin.parents.cta_guide')}
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { openPrintableDocument } from '@/lib/generate-download'
 import { Sparkles, Download, CheckCircle, XCircle, Loader2, Users, FileText } from 'lucide-react'
 
@@ -412,9 +413,9 @@ export default function QuizBuilderDemoPage() {
           <div className="rounded-lg border border-border/60 bg-muted px-5 py-3 shadow-xl">
             <p className="text-sm text-foreground">
               Available with full account --{' '}
-              <a href="/auth/teacher-register" className="text-primary hover:underline">
+              <Link href="/auth/teacher-register" className="text-primary hover:underline">
                 Start free trial
-              </a>
+              </Link>
             </p>
           </div>
         </div>

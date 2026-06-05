@@ -849,9 +849,9 @@ function EnrolForm() {
                 {t('aff_comp.enrol.disclosure_check_part1')}{' '}
                 <strong className="text-foreground">#ad</strong>{' '}
                 {t('aff_comp.enrol.disclosure_check_part2')}{' '}
-                <a href="/affiliates/resources" className="underline">
+                <Link href="/affiliates/resources" className="underline">
                   {t('aff_comp.enrol.disclosure_check_link')}
-                </a>
+                </Link>
                 . *
               </span>
             </label>
