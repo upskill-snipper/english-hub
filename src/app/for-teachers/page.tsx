@@ -45,81 +45,66 @@ import {
 /*  DATA                                                                */
 /* ------------------------------------------------------------------ */
 
+// i18n-keyed copy. Titles/descriptions/questions resolve at render via
+// useT() so AR/EN flips with the rest of the site. Icons/colors are not
+// user-facing and stay inline.
 const features = [
   {
     icon: Layers,
     color: 'text-primary bg-primary/10',
-    title: 'Lesson Builder',
-    desc: 'Build structured, specification-aligned lessons in minutes. Add starter activities, main tasks, and plenaries with drag-and-drop ease, then share instantly with any class.',
+    titleKey: 'mkt.teachers.ft.feat.lesson_builder.title',
+    descKey: 'mkt.teachers.ft.feat.lesson_builder.desc',
   },
   {
     icon: PenTool,
     color: 'text-teal-700 bg-emerald-500/10',
-    title: 'AI Essay Marking',
-    desc: "Students submit essays and get instant, detailed feedback aligned to your school's chosen exam board mark scheme. Review and adjust before it reaches them.",
+    titleKey: 'mkt.teachers.ft.feat.ai_marking.title',
+    descKey: 'mkt.teachers.ft.feat.ai_marking.desc',
   },
   {
     icon: BarChart3,
     color: 'text-blue-600 bg-blue-500/10',
-    title: 'Student Progress Analytics',
-    desc: 'Track every student in real time. Spot who is falling behind, who is excelling, and where the whole class needs extra support -- all in one dashboard.',
+    titleKey: 'mkt.teachers.ft.feat.analytics.title',
+    descKey: 'mkt.teachers.ft.feat.analytics.desc',
   },
   {
     icon: ClipboardList,
     color: 'text-purple-600 bg-purple-500/10',
-    title: 'Homework & Assignment Manager',
-    desc: 'Set assignments, track submissions, chase overdue work, and monitor completion rates across all your classes without juggling spreadsheets.',
+    titleKey: 'mkt.teachers.ft.feat.homework.title',
+    descKey: 'mkt.teachers.ft.feat.homework.desc',
   },
   {
     icon: Library,
     color: 'text-amber-600 bg-amber-500/10',
-    title: 'Ready Resources Library',
-    desc: 'A growing library of worksheets, revision materials, model answers, and starter activities - all ready to print or share digitally.',
+    titleKey: 'mkt.teachers.ft.feat.library.title',
+    descKey: 'mkt.teachers.ft.feat.library.desc',
   },
   {
     icon: Award,
     color: 'text-red-600 bg-red-500/10',
-    title: 'Your Exam Board, Your Content',
-    desc: 'We support AQA, Edexcel, OCR, WJEC, and IGCSE/CAIE. Your school selects one board during setup and every lesson, resource, and mark scheme is tailored to that specification -- so nothing is wasted.',
+    titleKey: 'mkt.teachers.ft.feat.board.title',
+    descKey: 'mkt.teachers.ft.feat.board.desc',
   },
 ]
 
-const timeSavers = [
-  'Spend less time on routine planning and marking - the AI shoulders the repetitive work.',
-  'Auto-mark homework essays in seconds',
-  'Generate worksheets and starter activities instantly',
-  'Get at-a-glance class progress without manual tracking',
-  'Predict student grades before exam season',
-  'Share resources across all your classes in one click',
-  'Eliminate paper-based marking admin',
-  'Access the ready-made resource library any time',
+const timeSaverKeys = [
+  'mkt.teachers.ft.timesaver.1',
+  'mkt.teachers.ft.timesaver.2',
+  'mkt.teachers.ft.timesaver.3',
+  'mkt.teachers.ft.timesaver.4',
+  'mkt.teachers.ft.timesaver.5',
+  'mkt.teachers.ft.timesaver.6',
+  'mkt.teachers.ft.timesaver.7',
+  'mkt.teachers.ft.timesaver.8',
 ]
 
-const faqs = [
-  {
-    q: 'How much does it cost?',
-    a: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £6.99/month or £67.99/year at the Early Access / Founding rate (locked until August 2026; Standard pricing from August 2026 is £11.99/month or £99/year). Every paid plan starts with a 7-day free trial (card required, cancel before day 7). School plans are available through our Founding Schools Programme -- £4,000/year for the first 10 schools, anchored against projected Standard Pricing of £8,000/year. Book a call to discuss.',
-  },
-  {
-    q: 'What features are included?',
-    a: 'Every feature is available on the free tier with 3 uses per tool -- AI Lesson Plans, AI Marking, Worksheet Builder, Student Progress Analytics, and more. The Premium plan removes all limits and gives you full access to the ready resources library, predicted grades, and complete exam board coverage. There are no add-on charges.',
-  },
-  {
-    q: 'Which exam boards do you cover?',
-    a: "We support all major boards: AQA, Edexcel, OCR, WJEC Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification. You only ever see what is relevant to your students' exams.",
-  },
-  {
-    q: 'How does AI Essay Marking work?',
-    a: 'Students submit essays through the platform. Our AI analyses the response against the mark scheme criteria for their exam board, provides detailed written feedback, and generates a predicted grade. You review and adjust everything before the student sees it.',
-  },
-  {
-    q: 'Can I upgrade to a school plan later?',
-    a: 'Absolutely. If you want to roll The English Hub out to your department or whole school, visit our School Plans page or email us at info@Upskillenergy.com. We can migrate your existing data and give your colleagues instant access.',
-  },
-  {
-    q: 'What happens when I use my free tries?',
-    a: 'You get 3 free uses per tool -- AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. Every paid plan starts with a 7-day free trial (card required). Cancel any time from your account settings -- no hidden fees, no awkward cancellation calls.',
-  },
+const faqKeys = [
+  { q: 'mkt.teachers.ft.faq.cost.q', a: 'mkt.teachers.ft.faq.cost.a' },
+  { q: 'mkt.teachers.ft.faq.features.q', a: 'mkt.teachers.ft.faq.features.a' },
+  { q: 'mkt.teachers.ft.faq.boards.q', a: 'mkt.teachers.ft.faq.boards.a' },
+  { q: 'mkt.teachers.ft.faq.marking.q', a: 'mkt.teachers.ft.faq.marking.a' },
+  { q: 'mkt.teachers.ft.faq.upgrade.q', a: 'mkt.teachers.ft.faq.upgrade.a' },
+  { q: 'mkt.teachers.ft.faq.free_tries.q', a: 'mkt.teachers.ft.faq.free_tries.a' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -189,6 +174,8 @@ function ProgressBar({ label, value, color }: { label: string; value: number; co
 
 export default function ForTeachersPage() {
   const t = useT()
+  // Resolve FAQ copy at render so it flips AR/EN; also feeds JSON-LD.
+  const resolvedFaqs = faqKeys.map((f) => ({ q: t(f.q), a: t(f.a) }))
   return (
     <main className="min-h-screen bg-background">
       {/* ================================================================
@@ -269,32 +256,32 @@ export default function ForTeachersPage() {
               {
                 icon: Clock,
                 color: 'text-primary bg-primary/10',
-                value: 'Faster',
-                label: 'Lesson Planning',
+                value: t('mkt.teachers.ft.stat.planning.value'),
+                label: t('mkt.teachers.ft.stat.planning.label'),
               },
               {
                 icon: PenTool,
                 color: 'text-teal-700 bg-emerald-500/10',
-                value: 'AI',
-                label: 'Essay Marking',
+                value: t('mkt.teachers.ft.stat.marking.value'),
+                label: t('mkt.teachers.ft.stat.marking.label'),
               },
               {
                 icon: BookOpen,
                 color: 'text-purple-600 bg-purple-500/10',
-                value: 'Growing',
-                label: 'Resource Library',
+                value: t('mkt.teachers.ft.stat.library.value'),
+                label: t('mkt.teachers.ft.stat.library.label'),
               },
               {
                 icon: Award,
                 color: 'text-amber-600 bg-amber-500/10',
                 value: '5',
-                label: 'Exam Boards',
+                label: t('mkt.teachers.ft.stat.boards.label'),
               },
               {
                 icon: Users,
                 color: 'text-blue-600 bg-blue-500/10',
-                value: 'New',
-                label: 'Founding Teachers',
+                value: t('mkt.teachers.ft.stat.founding.value'),
+                label: t('mkt.teachers.ft.stat.founding.label'),
               },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-14">
@@ -330,12 +317,11 @@ export default function ForTeachersPage() {
               className="border-emerald-500/20 bg-emerald-500/[0.06] text-teal-700 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Start Free
+              {t('mkt.teachers.ft.startfree.badge')}
             </Badge>
-            <h2 className="text-foreground">Every Feature Available to Try</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.startfree.title')}</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
-              No credit card. No time limit. Try each premium tool 3 times free and see the results
-              for yourself before you pay a penny.
+              {t('mkt.teachers.ft.startfree.body')}
             </p>
           </div>
 
@@ -344,23 +330,23 @@ export default function ForTeachersPage() {
               {
                 icon: Layers,
                 color: 'text-primary bg-primary/10',
-                title: 'AI Lesson Plans',
-                desc: 'Generate complete, exam-board-aligned lessons in seconds. Starter, main tasks, plenary -- all done.',
-                uses: '3 free uses',
+                title: t('mkt.teachers.ft.tool.lesson_plans.title'),
+                desc: t('mkt.teachers.ft.tool.lesson_plans.desc'),
+                uses: t('mkt.teachers.ft.tool.free_uses'),
               },
               {
                 icon: PenTool,
                 color: 'text-teal-700 bg-emerald-500/10',
-                title: 'AI Marking',
-                desc: 'Students submit essays and get instant, detailed feedback aligned to your mark scheme. You review before they see it.',
-                uses: '3 free uses',
+                title: t('mkt.teachers.ft.tool.marking.title'),
+                desc: t('mkt.teachers.ft.tool.marking.desc'),
+                uses: t('mkt.teachers.ft.tool.free_uses'),
               },
               {
                 icon: FileText,
                 color: 'text-purple-600 bg-purple-500/10',
-                title: 'Worksheet Builder',
-                desc: 'Create differentiated worksheets with model answers at multiple levels -- ready to print or share digitally.',
-                uses: '3 free uses',
+                title: t('mkt.teachers.ft.tool.worksheet.title'),
+                desc: t('mkt.teachers.ft.tool.worksheet.desc'),
+                uses: t('mkt.teachers.ft.tool.free_uses'),
               },
             ].map((tool) => (
               <Card
@@ -392,10 +378,7 @@ export default function ForTeachersPage() {
           </div>
 
           <div className="text-center space-y-4">
-            <p className="text-muted-foreground text-lg">
-              Upgrade when you are ready. Every paid plan starts with a 7-day free trial (card
-              required, cancel before day 7).
-            </p>
+            <p className="text-muted-foreground text-lg">{t('mkt.teachers.ft.upgrade_note')}</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 variant="default"
@@ -403,7 +386,7 @@ export default function ForTeachersPage() {
                 className="text-base px-8 h-12 shadow-lg shadow-primary/20"
                 render={<Link href="/auth/teacher-register" />}
               >
-                Start Free
+                {t('mkt.teachers.ft.cta.start_free')}
               </Button>
               <Button
                 variant="outline"
@@ -411,7 +394,7 @@ export default function ForTeachersPage() {
                 className="text-base px-8 h-12"
                 render={<Link href="/pricing" />}
               >
-                View Pricing
+                {t('mkt.teachers.ft.cta.view_pricing')}
               </Button>
             </div>
             {/* Promo code: routes to /pricing?code=X where the full
@@ -436,12 +419,11 @@ export default function ForTeachersPage() {
               className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Play className="w-3.5 h-3.5" />
-              Interactive Demo
+              {t('mkt.teachers.ft.demo.badge')}
             </Badge>
-            <h2 className="text-foreground">Try the Platform -- No Signup Required</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.demo.title')}</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Explore a fully working demo with sample data. See exactly how The English Hub will
-              save you time before you create an account.
+              {t('mkt.teachers.ft.demo.body')}
             </p>
           </div>
 
@@ -450,22 +432,22 @@ export default function ForTeachersPage() {
               {
                 icon: Monitor,
                 color: 'text-primary bg-primary/10',
-                title: 'My Dashboard',
-                desc: 'See your classes, upcoming lessons, and student alerts at a glance.',
+                title: t('mkt.teachers.ft.demo.dashboard.title'),
+                desc: t('mkt.teachers.ft.demo.dashboard.desc'),
                 href: '/demo/teacher',
               },
               {
                 icon: Layers,
                 color: 'text-teal-700 bg-emerald-500/10',
-                title: 'Lesson Builder',
-                desc: 'Build a full lesson plan aligned to your exam board in minutes.',
+                title: t('mkt.teachers.ft.demo.lessons.title'),
+                desc: t('mkt.teachers.ft.demo.lessons.desc'),
                 href: '/demo/teacher/lessons',
               },
               {
                 icon: BarChart3,
                 color: 'text-blue-600 bg-blue-500/10',
-                title: 'Student Analytics',
-                desc: 'Track progress, spot at-risk students, and view predicted grades.',
+                title: t('mkt.teachers.ft.demo.analytics.title'),
+                desc: t('mkt.teachers.ft.demo.analytics.desc'),
                 href: '/demo/teacher/students/s1',
               },
             ].map((card) => (
@@ -496,7 +478,7 @@ export default function ForTeachersPage() {
               render={<Link href="/demo/teacher" />}
             >
               <Play className="w-4 h-4 mr-2" />
-              Launch Teacher Demo
+              {t('mkt.teachers.ft.demo.launch')}
             </Button>
           </div>
         </div>
@@ -510,16 +492,16 @@ export default function ForTeachersPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">Everything You Need to Teach Smarter</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.features.title')}</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Premium tools built specifically for English teachers - less admin, more impact.
+              {t('mkt.teachers.ft.features.body')}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((item) => (
               <Card
-                key={item.title}
+                key={item.titleKey}
                 className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300"
               >
                 <div
@@ -531,9 +513,9 @@ export default function ForTeachersPage() {
                   <item.icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
-                  {item.title}
+                  {t(item.titleKey)}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t(item.descKey)}</p>
               </Card>
             ))}
           </div>
@@ -554,26 +536,23 @@ export default function ForTeachersPage() {
                 className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
               >
                 <Zap className="w-3.5 h-3.5" />
-                Content Creation
+                {t('mkt.teachers.ft.content.badge')}
               </Badge>
-              <h2 className="text-foreground mb-5">Full Lesson Plans in Seconds, Not Hours</h2>
+              <h2 className="text-foreground mb-5">{t('mkt.teachers.ft.content.title')}</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Tell the Lesson Builder what you are teaching and it generates a complete,
-                structured lesson aligned to your exam board specification -- including starter
-                activities, main tasks, differentiation suggestions, and a plenary. You review,
-                adjust if needed, and share.
+                {t('mkt.teachers.ft.content.body')}
               </p>
               <ul className="space-y-3">
                 {[
-                  'Full lesson plans with learning objectives',
-                  'Differentiated worksheets at multiple levels',
-                  'Starter and plenary activities',
-                  'Exam-style practice questions with mark schemes',
-                  'Ready to share or print in one click',
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-3">
+                  'mkt.teachers.ft.content.point.1',
+                  'mkt.teachers.ft.content.point.2',
+                  'mkt.teachers.ft.content.point.3',
+                  'mkt.teachers.ft.content.point.4',
+                  'mkt.teachers.ft.content.point.5',
+                ].map((pointKey) => (
+                  <li key={pointKey} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{point}</span>
+                    <span className="text-sm text-foreground">{t(pointKey)}</span>
                   </li>
                 ))}
               </ul>
@@ -585,7 +564,7 @@ export default function ForTeachersPage() {
                   render={<Link href="/demo/teacher/lessons" />}
                 >
                   <Play className="w-4 h-4 mr-2" />
-                  Try Lesson Builder Demo
+                  {t('mkt.teachers.ft.content.cta')}
                 </Button>
               </div>
             </div>
@@ -598,36 +577,36 @@ export default function ForTeachersPage() {
                     <Sparkles className="w-4 h-4 text-primary" />
                   </div>
                   <span className="text-xs font-semibold text-primary uppercase tracking-wide">
-                    Lesson Generated
+                    {t('mkt.teachers.ft.content.mock.generated')}
                   </span>
                   <Badge className="ml-auto text-xs bg-emerald-500/10 text-teal-700 border-emerald-500/20">
                     AQA
                   </Badge>
                 </div>
                 <h4 className="font-bold text-foreground mb-1">
-                  An Inspector Calls -- Act 1: Birling's Monologue
+                  {t('mkt.teachers.ft.content.mock.lesson_title')}
                 </h4>
                 <p className="text-xs text-muted-foreground mb-4">
-                  Year 11 -- 60 min lesson -- AQA English Literature
+                  {t('mkt.teachers.ft.content.mock.lesson_meta')}
                 </p>
 
                 <div className="space-y-2.5">
                   {[
                     {
-                      label: 'Starter',
-                      desc: 'Class display: five quotes from Birling. Students rank from most to least capitalist. 5 min.',
+                      label: t('mkt.teachers.ft.content.mock.starter.label'),
+                      desc: t('mkt.teachers.ft.content.mock.starter.desc'),
                     },
                     {
-                      label: 'Main Task 1',
-                      desc: "Close reading of Birling's monologue. Annotate for dramatic irony, context, and Priestley's message. 20 min.",
+                      label: t('mkt.teachers.ft.content.mock.main1.label'),
+                      desc: t('mkt.teachers.ft.content.mock.main1.desc'),
                     },
                     {
-                      label: 'Main Task 2',
-                      desc: 'Structured paragraph practice: how does Priestley present Birling as a symbol of capitalism? 20 min.',
+                      label: t('mkt.teachers.ft.content.mock.main2.label'),
+                      desc: t('mkt.teachers.ft.content.mock.main2.desc'),
                     },
                     {
-                      label: 'Plenary',
-                      desc: 'Exit ticket: one A01 point, one A02 quotation, one A03 context link. 5 min.',
+                      label: t('mkt.teachers.ft.content.mock.plenary.label'),
+                      desc: t('mkt.teachers.ft.content.mock.plenary.desc'),
                     },
                   ].map((step) => (
                     <div key={step.label} className="flex gap-3 text-sm">
@@ -639,10 +618,10 @@ export default function ForTeachersPage() {
 
                 <div className="mt-4 flex gap-2">
                   <Badge variant="outline" className="text-xs border-border/40">
-                    Worksheet included
+                    {t('mkt.teachers.ft.content.mock.worksheet_included')}
                   </Badge>
                   <Badge variant="outline" className="text-xs border-border/40">
-                    Mark scheme included
+                    {t('mkt.teachers.ft.content.mock.markscheme_included')}
                   </Badge>
                 </div>
               </Card>
@@ -651,18 +630,22 @@ export default function ForTeachersPage() {
                 <div className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-amber-600" />
                   <span className="text-sm font-medium text-foreground">
-                    Differentiated worksheet
+                    {t('mkt.teachers.ft.content.mock.diff_worksheet')}
                   </span>
-                  <span className="ml-auto text-xs text-muted-foreground">3 levels</span>
+                  <span className="ml-auto text-xs text-muted-foreground">
+                    {t('mkt.teachers.ft.content.mock.levels')}
+                  </span>
                 </div>
               </Card>
               <Card className="p-4 border-border/40 bg-card/40">
                 <div className="flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-blue-600" />
                   <span className="text-sm font-medium text-foreground">
-                    Model answer + mark scheme
+                    {t('mkt.teachers.ft.content.mock.model_answer')}
                   </span>
-                  <span className="ml-auto text-xs text-muted-foreground">AQA aligned</span>
+                  <span className="ml-auto text-xs text-muted-foreground">
+                    {t('mkt.teachers.ft.content.mock.aqa_aligned')}
+                  </span>
                 </div>
               </Card>
             </div>
@@ -683,14 +666,36 @@ export default function ForTeachersPage() {
               <Card className="p-6 border-border/40 bg-card/60">
                 <div className="flex items-center gap-2 mb-5">
                   <BarChart3 className="w-5 h-5 text-blue-600" />
-                  <h4 className="font-semibold text-foreground">Class Progress -- Year 11 Set 1</h4>
+                  <h4 className="font-semibold text-foreground">
+                    {t('mkt.teachers.ft.analytics.class_progress')}
+                  </h4>
                 </div>
                 <div className="space-y-4">
-                  <ProgressBar label="Reading & Comprehension" value={78} color="bg-blue-400" />
-                  <ProgressBar label="Essay Writing (A01)" value={62} color="bg-primary" />
-                  <ProgressBar label="Language Analysis (A02)" value={54} color="bg-purple-400" />
-                  <ProgressBar label="Context & Evaluation (A03)" value={41} color="bg-amber-400" />
-                  <ProgressBar label="Homework Completion" value={88} color="bg-emerald-400" />
+                  <ProgressBar
+                    label={t('mkt.teachers.ft.analytics.bar.reading')}
+                    value={78}
+                    color="bg-blue-400"
+                  />
+                  <ProgressBar
+                    label={t('mkt.teachers.ft.analytics.bar.essay')}
+                    value={62}
+                    color="bg-primary"
+                  />
+                  <ProgressBar
+                    label={t('mkt.teachers.ft.analytics.bar.language')}
+                    value={54}
+                    color="bg-purple-400"
+                  />
+                  <ProgressBar
+                    label={t('mkt.teachers.ft.analytics.bar.context')}
+                    value={41}
+                    color="bg-amber-400"
+                  />
+                  <ProgressBar
+                    label={t('mkt.teachers.ft.analytics.bar.homework')}
+                    value={88}
+                    color="bg-emerald-400"
+                  />
                 </div>
               </Card>
 
@@ -698,7 +703,9 @@ export default function ForTeachersPage() {
                 <Card className="p-4 border-red-500/20 bg-red-500/[0.04]">
                   <div className="flex items-center gap-2 mb-3">
                     <AlertTriangle className="w-4 h-4 text-red-600" />
-                    <span className="text-sm font-semibold text-red-600">At Risk</span>
+                    <span className="text-sm font-semibold text-red-600">
+                      {t('mkt.teachers.ft.analytics.at_risk')}
+                    </span>
                   </div>
                   <div className="space-y-1.5">
                     {['Liam B.', 'Amara J.', 'Tyler R.'].map((name) => (
@@ -713,7 +720,9 @@ export default function ForTeachersPage() {
                 <Card className="p-4 border-emerald-500/20 bg-emerald-500/[0.04]">
                   <div className="flex items-center gap-2 mb-3">
                     <TrendingUp className="w-4 h-4 text-teal-700" />
-                    <span className="text-sm font-semibold text-teal-700">Most Improved</span>
+                    <span className="text-sm font-semibold text-teal-700">
+                      {t('mkt.teachers.ft.analytics.most_improved')}
+                    </span>
                   </div>
                   <div className="space-y-1.5">
                     {['Priya M.', 'Daniel H.', 'Sofia C.'].map((name) => (
@@ -731,7 +740,7 @@ export default function ForTeachersPage() {
                   <div className="flex items-center gap-2">
                     <ClipboardList className="w-4 h-4 text-purple-600" />
                     <span className="text-sm font-semibold text-foreground">
-                      Assignment Completion
+                      {t('mkt.teachers.ft.analytics.assignment_completion')}
                     </span>
                   </div>
                   <span className="text-sm font-bold text-teal-700">87%</span>
@@ -740,7 +749,7 @@ export default function ForTeachersPage() {
                   <div className="h-full w-[87%] bg-emerald-400 rounded-full" />
                 </div>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  26 of 30 students submitted on time
+                  {t('mkt.teachers.ft.analytics.submitted_on_time')}
                 </p>
               </Card>
             </div>
@@ -751,26 +760,23 @@ export default function ForTeachersPage() {
                 className="border-blue-500/20 bg-blue-500/[0.06] text-blue-600 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
               >
                 <BarChart3 className="w-3.5 h-3.5" />
-                Analytics Dashboard
+                {t('mkt.teachers.ft.analytics.badge')}
               </Badge>
-              <h2 className="text-foreground mb-5">Know Every Student's Progress at a Glance</h2>
+              <h2 className="text-foreground mb-5">{t('mkt.teachers.ft.analytics.title')}</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Stop waiting for the end-of-term report. The analytics dashboard gives you a live
-                view of class and individual student performance -- so you can intervene early,
-                celebrate progress, and direct your energy where it will make the biggest
-                difference.
+                {t('mkt.teachers.ft.analytics.body')}
               </p>
               <ul className="space-y-3">
                 {[
-                  'Real-time progress tracking across all classes',
-                  'At-risk students flagged automatically',
-                  'Assignment completion rates per student',
-                  'Skill-by-skill breakdown (A01, A02, A03)',
-                  'Predicted grade trajectories',
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-3">
+                  'mkt.teachers.ft.analytics.point.1',
+                  'mkt.teachers.ft.analytics.point.2',
+                  'mkt.teachers.ft.analytics.point.3',
+                  'mkt.teachers.ft.analytics.point.4',
+                  'mkt.teachers.ft.analytics.point.5',
+                ].map((pointKey) => (
+                  <li key={pointKey} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{point}</span>
+                    <span className="text-sm text-foreground">{t(pointKey)}</span>
                   </li>
                 ))}
               </ul>
@@ -787,19 +793,19 @@ export default function ForTeachersPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-foreground">How The English Hub Saves You Time</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.savetime.title')}</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Built around the real pain points English teachers face every week.
+              {t('mkt.teachers.ft.savetime.body')}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            {timeSavers.map((item) => (
-              <div key={item} className="flex items-start gap-3">
+            {timeSaverKeys.map((itemKey) => (
+              <div key={itemKey} className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                   <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-foreground">{item}</span>
+                <span className="text-foreground">{t(itemKey)}</span>
               </div>
             ))}
           </div>
@@ -814,17 +820,17 @@ export default function ForTeachersPage() {
       <section className="py-24 sm:py-32 bg-card/20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-foreground">Be a Founding Teacher</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.founding.title')}</h2>
           </div>
 
           <Card className="p-6 bg-muted/30 border-dashed">
             <p className="text-muted-foreground text-center">
-              Founding teachers' first responses coming soon. Want to be one of them?{' '}
+              {t('mkt.teachers.ft.founding.body_pre')}{' '}
               <Link
                 href="/auth/teacher-register"
                 className="font-medium text-primary underline underline-offset-2"
               >
-                Start your free teacher account
+                {t('mkt.teachers.ft.founding.link')}
               </Link>
               .
             </p>
@@ -845,12 +851,11 @@ export default function ForTeachersPage() {
               className="border-amber-500/20 bg-amber-500/[0.06] text-amber-600 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Download className="w-3.5 h-3.5" />
-              Free Resources
+              {t('mkt.teachers.ft.free.badge')}
             </Badge>
-            <h2 className="text-foreground">Download Free Teaching Materials</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.free.title')}</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
-              Get a complete lesson pack for An Inspector Calls -- free, no signup required. See the
-              quality of our resources.
+              {t('mkt.teachers.ft.free.body')}
             </p>
           </div>
 
@@ -861,24 +866,24 @@ export default function ForTeachersPage() {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">
-                  An Inspector Calls -- Free Lesson Pack
+                  {t('mkt.teachers.ft.free.pack_title')}
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  Everything you need for a 60-minute lesson
+                  {t('mkt.teachers.ft.free.pack_sub')}
                 </p>
               </div>
             </div>
 
             <div className="space-y-3 mb-8">
               {[
-                'Complete 60-minute lesson plan',
-                '8-question worksheet with model answers',
-                'Teaching guide with context, themes, key quotes',
-                'Differentiated activities (support/core/stretch)',
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
+                'mkt.teachers.ft.free.item.1',
+                'mkt.teachers.ft.free.item.2',
+                'mkt.teachers.ft.free.item.3',
+                'mkt.teachers.ft.free.item.4',
+              ].map((itemKey) => (
+                <div key={itemKey} className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground">{item}</span>
+                  <span className="text-sm text-foreground">{t(itemKey)}</span>
                 </div>
               ))}
             </div>
@@ -891,7 +896,7 @@ export default function ForTeachersPage() {
                 render={<Link href="/for-teachers/free-resources" />}
               >
                 <Download className="w-4 h-4 mr-2" />
-                Download Free Pack
+                {t('mkt.teachers.ft.free.cta_download')}
               </Button>
               <Button
                 variant="secondary"
@@ -900,7 +905,7 @@ export default function ForTeachersPage() {
                 render={<Link href="/auth/teacher-register" />}
               >
                 <Eye className="w-4 h-4 mr-2" />
-                See All Lessons
+                {t('mkt.teachers.ft.free.cta_all')}
               </Button>
             </div>
           </Card>
@@ -915,10 +920,9 @@ export default function ForTeachersPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-foreground">Simple, Transparent Pricing</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.pricing.title')}</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Start free, upgrade when you are ready. Premium academic infrastructure for English
-              teachers.
+              {t('mkt.teachers.ft.pricing.body')}
             </p>
           </div>
 
@@ -927,29 +931,33 @@ export default function ForTeachersPage() {
             <Card className="p-8 border-border/40 bg-card/60 flex flex-col">
               <div className="mb-2">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">
-                  Free
+                  {t('mkt.teachers.ft.pricing.free.label')}
                 </p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-foreground tracking-tight">£0</span>
-                  <span className="text-muted-foreground">/forever</span>
+                  <span className="text-muted-foreground">
+                    {t('mkt.teachers.ft.pricing.free.forever')}
+                  </span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-1.5">3 free uses per tool</p>
+                <p className="text-sm text-muted-foreground mt-1.5">
+                  {t('mkt.teachers.ft.pricing.free.sub')}
+                </p>
               </div>
 
               <Separator className="my-6 opacity-40" />
 
               <div className="space-y-3 mb-8 flex-1">
                 {[
-                  'AI Lesson Plans -- 3 uses',
-                  'AI Marking -- 3 uses',
-                  'Worksheet Builder -- 3 uses',
-                  'Student Progress Analytics',
-                  'All exam boards supported',
-                  'No credit card required',
-                ].map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
+                  'mkt.teachers.ft.pricing.free.feat.1',
+                  'mkt.teachers.ft.pricing.free.feat.2',
+                  'mkt.teachers.ft.pricing.free.feat.3',
+                  'mkt.teachers.ft.pricing.free.feat.4',
+                  'mkt.teachers.ft.pricing.free.feat.5',
+                  'mkt.teachers.ft.pricing.free.feat.6',
+                ].map((featureKey) => (
+                  <div key={featureKey} className="flex items-start gap-3">
                     <CheckCircle className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{feature}</span>
+                    <span className="text-sm text-foreground">{t(featureKey)}</span>
                   </div>
                 ))}
               </div>
@@ -960,40 +968,46 @@ export default function ForTeachersPage() {
                 className="w-full text-base h-12"
                 render={<Link href="/auth/teacher-register" />}
               >
-                Start Free
+                {t('mkt.teachers.ft.cta.start_free')}
               </Button>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                No card needed. Try every feature.
+                {t('mkt.teachers.ft.pricing.free.note')}
               </p>
             </Card>
 
             {/* Teacher Premium plan */}
             <Card className="p-8 border-primary/30 bg-primary/[0.03] relative overflow-hidden flex flex-col">
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-lg">
-                7-day FREE trial
+                {t('mkt.teachers.ft.pricing.premium.trial_tag')}
               </div>
 
               <div className="mb-2">
                 <div className="flex items-center gap-2 mb-3">
                   <p className="text-xs font-semibold text-primary uppercase tracking-widest">
-                    Teacher Premium
+                    {t('mkt.teachers.ft.pricing.premium.label')}
                   </p>
                   <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
-                    Early Access
+                    {t('mkt.teachers.ft.pricing.premium.early_access')}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-foreground tracking-tight">£6.99</span>
-                  <span className="text-muted-foreground">/month</span>
+                  <span className="text-muted-foreground">
+                    {t('mkt.teachers.ft.pricing.premium.month')}
+                  </span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Standard <span className="line-through">£11.99/month</span> from August 2026
+                  {t('mkt.teachers.ft.pricing.premium.standard_pre')}{' '}
+                  <span className="line-through">£11.99/month</span>{' '}
+                  {t('mkt.teachers.ft.pricing.premium.standard_post')}
                 </p>
                 <p className="text-sm text-teal-700 font-semibold mt-1.5">
-                  or £67.99/year (Standard <span className="line-through">£99</span> from Aug 2026)
+                  {t('mkt.teachers.ft.pricing.premium.year_pre')}{' '}
+                  <span className="line-through">£99</span>{' '}
+                  {t('mkt.teachers.ft.pricing.premium.year_post')}
                 </p>
                 <p className="mt-2 text-[11px] font-medium text-amber-700">
-                  ⚡ Prices increasing August 2026
+                  {t('mkt.teachers.ft.pricing.premium.increase')}
                 </p>
               </div>
 
@@ -1001,19 +1015,19 @@ export default function ForTeachersPage() {
 
               <div className="space-y-3 mb-8 flex-1">
                 {[
-                  'Unlimited AI Lesson Plans',
-                  'Unlimited AI Marking',
-                  'Unlimited Worksheet Builder',
-                  'Student Progress Analytics',
-                  'Homework & Assignment Manager',
-                  'Full ready resources library',
-                  'Predicted grades & interventions',
-                  'All boards -- content tailored to yours',
-                  'Cancel any time',
-                ].map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
+                  'mkt.teachers.ft.pricing.premium.feat.1',
+                  'mkt.teachers.ft.pricing.premium.feat.2',
+                  'mkt.teachers.ft.pricing.premium.feat.3',
+                  'mkt.teachers.ft.pricing.premium.feat.4',
+                  'mkt.teachers.ft.pricing.premium.feat.5',
+                  'mkt.teachers.ft.pricing.premium.feat.6',
+                  'mkt.teachers.ft.pricing.premium.feat.7',
+                  'mkt.teachers.ft.pricing.premium.feat.8',
+                  'mkt.teachers.ft.pricing.premium.feat.9',
+                ].map((featureKey) => (
+                  <div key={featureKey} className="flex items-start gap-3">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{feature}</span>
+                    <span className="text-sm text-foreground">{t(featureKey)}</span>
                   </div>
                 ))}
               </div>
@@ -1024,11 +1038,10 @@ export default function ForTeachersPage() {
                 className="w-full text-base h-12 shadow-lg shadow-primary/20"
                 render={<Link href="/auth/teacher-register" />}
               >
-                Start Free
+                {t('mkt.teachers.ft.cta.start_free')}
               </Button>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                Demo 3 free uses without a card. Paid plans start with a 7-day free trial (card
-                required, cancel before day 7).
+                {t('mkt.teachers.ft.pricing.premium.note')}
               </p>
             </Card>
 
@@ -1037,21 +1050,25 @@ export default function ForTeachersPage() {
               <div className="mb-2">
                 <div className="flex items-center gap-2 mb-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
-                    School / Department
+                    {t('mkt.teachers.ft.pricing.school.label')}
                   </p>
                   <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
-                    Founding · 10 only
+                    {t('mkt.teachers.ft.pricing.school.founding_tag')}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold text-foreground tracking-tight">£4,000</span>
-                  <span className="text-muted-foreground">/year</span>
+                  <span className="text-muted-foreground">
+                    {t('mkt.teachers.ft.pricing.school.year')}
+                  </span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Standard <span className="line-through">£8,000/year</span> from August 2026
+                  {t('mkt.teachers.ft.pricing.school.standard_pre')}{' '}
+                  <span className="line-through">£8,000/year</span>{' '}
+                  {t('mkt.teachers.ft.pricing.school.standard_post')}
                 </p>
                 <p className="text-sm text-muted-foreground mt-1.5">
-                  Founding Schools Programme -- first 10 schools only
+                  {t('mkt.teachers.ft.pricing.school.sub')}
                 </p>
               </div>
 
@@ -1059,17 +1076,17 @@ export default function ForTeachersPage() {
 
               <div className="space-y-3 mb-8 flex-1">
                 {[
-                  'All Teacher Premium features',
-                  'Unlimited teacher accounts',
-                  'Department-level analytics',
-                  'Centralised resource library',
-                  'Priority support',
-                  'Onboarding & training session',
-                  'Single invoice for finance',
-                ].map((feature) => (
-                  <div key={feature} className="flex items-start gap-3">
+                  'mkt.teachers.ft.pricing.school.feat.1',
+                  'mkt.teachers.ft.pricing.school.feat.2',
+                  'mkt.teachers.ft.pricing.school.feat.3',
+                  'mkt.teachers.ft.pricing.school.feat.4',
+                  'mkt.teachers.ft.pricing.school.feat.5',
+                  'mkt.teachers.ft.pricing.school.feat.6',
+                  'mkt.teachers.ft.pricing.school.feat.7',
+                ].map((featureKey) => (
+                  <div key={featureKey} className="flex items-start gap-3">
                     <CheckCircle className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{feature}</span>
+                    <span className="text-sm text-foreground">{t(featureKey)}</span>
                   </div>
                 ))}
               </div>
@@ -1081,10 +1098,10 @@ export default function ForTeachersPage() {
                 render={<Link href="/for-schools" />}
               >
                 <Building2 className="w-4 h-4 mr-2" />
-                See School Plans
+                {t('mkt.teachers.ft.pricing.school.cta')}
               </Button>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                Custom pricing available for large schools.
+                {t('mkt.teachers.ft.pricing.school.note')}
               </p>
             </Card>
           </div>
@@ -1108,27 +1125,29 @@ export default function ForTeachersPage() {
               className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Start Free
+              {t('mkt.teachers.ft.signup.badge')}
             </Badge>
-            <h2 className="text-foreground">Get Started in 30 Seconds</h2>
-            <p className="mt-4 text-muted-foreground text-lg">
-              Create your free account and try every feature -- 3 free uses per tool, no card
-              required.
-            </p>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.signup.title')}</h2>
+            <p className="mt-4 text-muted-foreground text-lg">{t('mkt.teachers.ft.signup.body')}</p>
           </div>
 
           <Card className="p-8 border-border/40">
             <div className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="signup-name" className="text-sm font-medium">
-                  Full Name
+                  {t('mkt.teachers.ft.signup.name_label')}
                 </Label>
-                <Input id="signup-name" type="text" placeholder="Your name" className="h-11" />
+                <Input
+                  id="signup-name"
+                  type="text"
+                  placeholder={t('mkt.teachers.ft.signup.name_ph')}
+                  className="h-11"
+                />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="signup-email" className="text-sm font-medium">
-                  Email Address
+                  {t('mkt.teachers.ft.signup.email_label')}
                 </Label>
                 <Input
                   id="signup-email"
@@ -1140,12 +1159,15 @@ export default function ForTeachersPage() {
 
               <div className="space-y-2">
                 <Label htmlFor="signup-school" className="text-sm font-medium">
-                  School <span className="text-muted-foreground font-normal">(optional)</span>
+                  {t('mkt.teachers.ft.signup.school_label')}{' '}
+                  <span className="text-muted-foreground font-normal">
+                    {t('mkt.teachers.ft.signup.school_optional')}
+                  </span>
                 </Label>
                 <Input
                   id="signup-school"
                   type="text"
-                  placeholder="Your school name"
+                  placeholder={t('mkt.teachers.ft.signup.school_ph')}
                   className="h-11"
                 />
               </div>
@@ -1156,14 +1178,12 @@ export default function ForTeachersPage() {
                 className="w-full text-base h-12 shadow-lg shadow-primary/20 mt-2"
                 render={<Link href="/auth/teacher-register" />}
               >
-                Start Free
+                {t('mkt.teachers.ft.signup.submit')}
                 <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
-                By signing up you agree to our Terms of Service and Privacy Policy. Free tier
-                includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access -
-                Standard £11.99/£99 from August 2026). 7-day free trial, card required.
+                {t('mkt.teachers.ft.signup.terms')}
               </p>
             </div>
           </Card>
@@ -1178,19 +1198,19 @@ export default function ForTeachersPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">Frequently Asked Questions</h2>
+            <h2 className="text-foreground">{t('mkt.teachers.ft.faq.heading')}</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Everything you need to know about The English Hub for teachers.
+              {t('mkt.teachers.ft.faq.sub')}
             </p>
           </div>
 
           <div className="space-y-3">
-            {faqs.map((faq) => (
+            {resolvedFaqs.map((faq) => (
               <FAQItem key={faq.q} q={faq.q} a={faq.a} />
             ))}
           </div>
 
-          <FAQPageJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
+          <FAQPageJsonLd faqs={resolvedFaqs.map((f) => ({ question: f.q, answer: f.a }))} />
         </div>
       </section>
 
@@ -1207,14 +1227,13 @@ export default function ForTeachersPage() {
               className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold gap-1.5 px-3 py-1 hover:bg-primary/[0.1] transition-colors"
             >
               <Users className="w-3.5 h-3.5" />
-              Founding teachers welcome
+              {t('mkt.teachers.ft.final.badge')}
             </Badge>
           </Link>
 
-          <h2 className="text-foreground mb-6">Ready to Reclaim Your Evenings?</h2>
+          <h2 className="text-foreground mb-6">{t('mkt.teachers.ft.final.title')}</h2>
           <p className="text-muted-foreground text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            Join the founding teachers using The English Hub to spend less time on routine planning
-            and marking. Try every feature free -- upgrade when you are ready.
+            {t('mkt.teachers.ft.final.body')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1224,7 +1243,7 @@ export default function ForTeachersPage() {
               className="text-base px-10 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/teacher-register" />}
             >
-              Start Free
+              {t('mkt.teachers.ft.cta.start_free')}
             </Button>
             <Button
               variant="secondary"
@@ -1232,7 +1251,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12"
               render={<Link href="/pricing" />}
             >
-              View Pricing
+              {t('mkt.teachers.ft.cta.view_pricing')}
             </Button>
             <Button
               variant="outline"
@@ -1241,20 +1260,24 @@ export default function ForTeachersPage() {
               render={<Link href="/demo/teacher" />}
             >
               <Play className="w-4 h-4 mr-2" />
-              Try the Demo
+              {t('mkt.teachers.ft.final.try_demo')}
             </Button>
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            3 free uses per tool. Early Access Premium from{' '}
-            <span className="font-semibold text-foreground">£6.99/month or £67.99/year</span>{' '}
-            <span className="text-muted-foreground/80">
-              (Standard <span className="line-through">£11.99/month</span> from August 2026)
+            {t('mkt.teachers.ft.final.price.pre')}{' '}
+            <span className="font-semibold text-foreground">
+              {t('mkt.teachers.ft.final.price.amount')}
             </span>{' '}
-            - 7-day free trial, card required.
+            <span className="text-muted-foreground/80">
+              {t('mkt.teachers.ft.final.price.standard_pre')}{' '}
+              <span className="line-through">£11.99/month</span>{' '}
+              {t('mkt.teachers.ft.final.price.standard_post')}
+            </span>{' '}
+            {t('mkt.teachers.ft.final.price.trial')}
           </p>
           <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-medium text-amber-700">
-            ⚡ Prices increasing August 2026 - lock in Early Access today.
+            {t('mkt.teachers.ft.final.price.increase')}
           </p>
           <p className="mt-3 text-xs text-muted-foreground/80 max-w-2xl mx-auto">{VAT_LABEL}</p>
         </div>

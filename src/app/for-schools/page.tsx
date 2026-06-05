@@ -17,7 +17,7 @@ import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
-import { tMany } from '@/lib/i18n/t'
+import { t, tMany } from '@/lib/i18n/t'
 import {
   BookOpen,
   GraduationCap,
@@ -90,13 +90,15 @@ export const metadata = {
 
 /* ─────────────── Founding Schools Programme Benefits ─────────────── */
 
-const FOUNDING_BENEFITS = [
-  'Full platform access for ALL students and ALL teachers',
-  'Early access to new features before general release',
-  'Direct product input -- help shape the platform',
-  'Priority onboarding and dedicated support',
-  'Locked preferential pricing for 2-3 years',
-  'Founding partner recognition on the platform',
+// i18n keys; resolved at render via t() so AR/EN flips. The list order
+// is load-bearing (display order); icons/colors stay inline where used.
+const FOUNDING_BENEFIT_KEYS = [
+  'mkt.schools.fs.founding.benefit.1',
+  'mkt.schools.fs.founding.benefit.2',
+  'mkt.schools.fs.founding.benefit.3',
+  'mkt.schools.fs.founding.benefit.4',
+  'mkt.schools.fs.founding.benefit.5',
+  'mkt.schools.fs.founding.benefit.6',
 ]
 
 /* ─────────────── Feature Cards ─────────────── */
@@ -105,39 +107,39 @@ const PLATFORM_FEATURES = [
   {
     icon: BarChart3,
     color: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
-    title: 'Department Analytics Dashboard',
+    titleKey: 'mkt.schools.fs.feat.analytics.title',
     // TODO(founder): verify the Ofsted-aligned report templates are live before this claim ships to a school. Soften if not.
-    desc: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate department reports aligned to common Ofsted English subject deep-dive criteria - ready to share at your next inspection.',
+    descKey: 'mkt.schools.fs.feat.analytics.desc',
   },
   {
     icon: BookOpen,
     color: 'text-primary bg-primary/10 border-primary/20',
-    title: 'Lesson Builder & Resource Library',
-    desc: 'Instantly generate lesson plans, worksheets, and presentations from the platform. A growing library of resources mapped to AQA, Edexcel, OCR, WJEC and Cambridge IGCSE specifications.',
+    titleKey: 'mkt.schools.fs.feat.lesson.title',
+    descKey: 'mkt.schools.fs.feat.lesson.desc',
   },
   {
     icon: Brain,
     color: 'text-purple-600 bg-purple-500/10 border-purple-500/20',
-    title: 'AI Essay Feedback',
-    desc: 'Students get instant, detailed feedback on their essays based on exam board mark schemes. Frees up teacher time while keeping every student on track.',
+    titleKey: 'mkt.schools.fs.feat.feedback.title',
+    descKey: 'mkt.schools.fs.feat.feedback.desc',
   },
   {
     icon: ClipboardList,
     color: 'text-teal-700 bg-emerald-500/10 border-emerald-500/20',
-    title: 'Homework Management',
-    desc: 'Set assignments in seconds, track completion automatically, and let the platform handle routine marking. Teachers reclaim hours every week.',
+    titleKey: 'mkt.schools.fs.feat.homework.title',
+    descKey: 'mkt.schools.fs.feat.homework.desc',
   },
   {
     icon: FileText,
     color: 'text-amber-600 bg-amber-500/10 border-amber-500/20',
-    title: 'Progress Reports',
-    desc: 'Auto-generated progress reports for parents, heads of year, and senior leadership. Always up to date, always audit-ready.',
+    titleKey: 'mkt.schools.fs.feat.reports.title',
+    descKey: 'mkt.schools.fs.feat.reports.desc',
   },
   {
     icon: GraduationCap,
     color: 'text-red-600 bg-red-500/10 border-red-500/20',
-    title: 'Teacher CPD & Onboarding',
-    desc: 'Built-in CPD materials and guided onboarding walkthroughs so every member of your department is confident and productive from day one.',
+    titleKey: 'mkt.schools.fs.feat.cpd.title',
+    descKey: 'mkt.schools.fs.feat.cpd.desc',
   },
 ]
 
@@ -147,46 +149,56 @@ const CONTENT_CREATION_ITEMS = [
   {
     icon: FileText,
     color: 'text-primary bg-primary/10',
-    label: 'Lesson Plans',
-    desc: 'Full lesson plans mapped to your exam board specification, generated in under 30 seconds.',
+    labelKey: 'mkt.schools.fs.content.lesson_plans.label',
+    descKey: 'mkt.schools.fs.content.lesson_plans.desc',
   },
   {
     icon: Layout,
     color: 'text-blue-600 bg-blue-500/10',
-    label: 'Worksheets',
-    desc: 'Printable, editable worksheets aligned to any topic or text your class is studying.',
+    labelKey: 'mkt.schools.fs.content.worksheets.label',
+    descKey: 'mkt.schools.fs.content.worksheets.desc',
   },
   {
     icon: Presentation,
     color: 'text-purple-600 bg-purple-500/10',
-    label: 'Presentations',
-    desc: 'Classroom-ready slide decks with teacher notes, discussion prompts, and learning objectives.',
+    labelKey: 'mkt.schools.fs.content.presentations.label',
+    descKey: 'mkt.schools.fs.content.presentations.desc',
   },
   {
     icon: ClipboardList,
     color: 'text-teal-700 bg-emerald-500/10',
-    label: 'Assessments',
-    desc: 'Practice papers and formative assessments with auto-marking for multiple choice and short answer.',
+    labelKey: 'mkt.schools.fs.content.assessments.label',
+    descKey: 'mkt.schools.fs.content.assessments.desc',
   },
 ]
 
 /* ─────────────── Analytics Preview ─────────────── */
 
 const ANALYTICS_METRICS = [
-  { label: 'Year 11 Avg Score', value: '72%', trend: '+4% this month', color: 'text-primary' },
   {
-    label: 'At-Risk Students',
+    labelKey: 'mkt.schools.fs.analytics.metric.y11_avg.label',
+    value: '72%',
+    trendKey: 'mkt.schools.fs.analytics.metric.y11_avg.trend',
+    color: 'text-primary',
+  },
+  {
+    labelKey: 'mkt.schools.fs.analytics.metric.at_risk.label',
     value: '3',
-    trend: 'Flagged for intervention',
+    trendKey: 'mkt.schools.fs.analytics.metric.at_risk.trend',
     color: 'text-amber-600',
   },
   {
-    label: 'Completion Rate',
+    labelKey: 'mkt.schools.fs.analytics.metric.completion.label',
     value: '89%',
-    trend: 'Across all year groups',
+    trendKey: 'mkt.schools.fs.analytics.metric.completion.trend',
     color: 'text-teal-700',
   },
-  { label: 'Top Performing Class', value: '11B', trend: '84% average', color: 'text-blue-600' },
+  {
+    labelKey: 'mkt.schools.fs.analytics.metric.top_class.label',
+    value: '11B',
+    trendKey: 'mkt.schools.fs.analytics.metric.top_class.trend',
+    color: 'text-blue-600',
+  },
 ]
 
 /* ─────────────── How It Works ─────────────── */
@@ -196,39 +208,39 @@ const HOW_IT_WORKS = [
     step: '1',
     icon: Phone,
     color: 'text-primary bg-primary/10 border-primary/20',
-    title: 'Book a 20-Minute Call',
-    desc: 'Speak with our schools team. We will walk you through the platform, discuss your department needs, and agree a tailored package. No obligation.',
+    titleKey: 'mkt.schools.fs.how.1.title',
+    descKey: 'mkt.schools.fs.how.1.desc',
   },
   {
     step: '2',
     icon: Upload,
     color: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
-    title: 'We Set Up Your School',
-    desc: 'We handle onboarding for you. Your exam board is configured, accounts are created in bulk, and your admin dashboard is ready to go.',
+    titleKey: 'mkt.schools.fs.how.2.title',
+    descKey: 'mkt.schools.fs.how.2.desc',
   },
   {
     step: '3',
     icon: Zap,
     color: 'text-teal-700 bg-emerald-500/10 border-emerald-500/20',
-    title: 'Everyone Has Instant Access',
-    desc: 'Students and teachers receive login details and can start using the full platform immediately. Your admin dashboard is live from day one.',
+    titleKey: 'mkt.schools.fs.how.3.title',
+    descKey: 'mkt.schools.fs.how.3.desc',
   },
 ]
 
 /* ─────────────── Pricing Comparison ─────────────── */
 
 const COMPARISON_ROWS = [
-  { feature: 'Unlimited students', school: true, individual: false },
-  { feature: 'Unlimited teachers', school: true, individual: false },
-  { feature: 'Department analytics', school: true, individual: false },
-  { feature: 'Bulk Excel upload', school: true, individual: false },
-  { feature: 'Admin controls', school: true, individual: false },
-  { feature: 'Homework management', school: true, individual: false },
-  { feature: 'Progress reports', school: true, individual: false },
-  { feature: 'Ofsted-aligned department reporting', school: true, individual: false },
-  { feature: 'AI essay feedback', school: true, individual: true },
-  { feature: 'Resource library mapped to your exam board', school: true, individual: true },
-  { feature: 'Content tailored to your exam board', school: true, individual: true },
+  { featureKey: 'mkt.schools.fs.compare.unlimited_students', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.unlimited_teachers', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.dept_analytics', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.bulk_excel', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.admin_controls', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.homework', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.progress_reports', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.ofsted', school: true, individual: false },
+  { featureKey: 'mkt.schools.fs.compare.ai_feedback', school: true, individual: true },
+  { featureKey: 'mkt.schools.fs.compare.resource_library', school: true, individual: true },
+  { featureKey: 'mkt.schools.fs.compare.tailored_content', school: true, individual: true },
 ]
 
 /* ─────────────── Testimonials ─────────────── */
@@ -249,47 +261,17 @@ const TESTIMONIALS: Array<{
 
 /* ─────────────── FAQs ─────────────── */
 
-const FAQS = [
-  {
-    question: 'What is the Founding Schools Programme?',
-    answer:
-      'The Founding Schools Programme is a strategic partnership for the 2026 academic year. The first 10 schools to sign are designated as founding partners and receive early features, direct product input, priority onboarding, founding partner recognition, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates once the founding cohort closes. This is not a free trial -- it is a discounted, long-term partnership tailored to your department size.',
-  },
-  {
-    question: 'How much does it cost?',
-    answer:
-      'Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.',
-  },
-  {
-    question: 'How do students and teachers get access?',
-    answer:
-      'Once your school is onboarded, we set up your admin account and bulk-create all student and teacher accounts for you. Students and teachers can also join by entering your unique school code when they register themselves.',
-  },
-  {
-    question: 'How does the Excel bulk upload work?',
-    answer:
-      'Download our simple Excel template from your admin dashboard. Add your students and teachers (name, email, year group), save the file, and upload it. The platform creates all accounts instantly and sends login details by email. No IT support or technical setup required.',
-  },
-  {
-    question: 'What admin controls does the school have?',
-    answer:
-      'Your school admin account lets you manage all student and teacher accounts, view department-wide analytics, set and track assignments, generate progress reports, and control which features are visible to students. You can also create sub-admin accounts for heads of year or class teachers.',
-  },
-  {
-    question: 'Which exam boards do you cover?',
-    answer:
-      "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification.",
-  },
-  {
-    question: 'Is the platform GDPR compliant?',
-    answer:
-      "Yes. We are GDPR compliant. We do not sell student data and we do not use behavioural advertising networks. We use a defined set of named sub-processors to operate the service (hosting, payment processing, error monitoring, analytics), each listed with purpose and location in our Data Processing page and Privacy Policy. You can manage non-essential cookies via 'Manage Cookies'. We can sign a Data Processing Agreement with your school.",
-  },
-  {
-    question: 'What happens after the Founding Schools Programme?',
-    answer:
-      'Founding schools lock in preferential pricing for 2-3 years. Post-programme standard pricing will be significantly higher. The exact terms are agreed during your onboarding call.',
-  },
+// i18n keys; resolved at render via tMany so display + FAQ JSON-LD share
+// the same locale-aware strings.
+const FAQ_KEYS = [
+  { q: 'mkt.schools.fs.faq.programme.q', a: 'mkt.schools.fs.faq.programme.a' },
+  { q: 'mkt.schools.fs.faq.cost.q', a: 'mkt.schools.fs.faq.cost.a' },
+  { q: 'mkt.schools.fs.faq.access.q', a: 'mkt.schools.fs.faq.access.a' },
+  { q: 'mkt.schools.fs.faq.excel.q', a: 'mkt.schools.fs.faq.excel.a' },
+  { q: 'mkt.schools.fs.faq.admin.q', a: 'mkt.schools.fs.faq.admin.a' },
+  { q: 'mkt.schools.fs.faq.boards.q', a: 'mkt.schools.fs.faq.boards.a' },
+  { q: 'mkt.schools.fs.faq.gdpr.q', a: 'mkt.schools.fs.faq.gdpr.a' },
+  { q: 'mkt.schools.fs.faq.after.q', a: 'mkt.schools.fs.faq.after.a' },
 ]
 
 /* FAQItem moved to src/components/for-schools/FAQItem.tsx as a client
@@ -341,6 +323,47 @@ export default async function ForSchoolsPage() {
     'audience.schools.demo.sub',
     'pricing.cta.view_demo',
   ])
+  // Resolve FAQ copy once; shared by the visible accordion and the
+  // FAQPage JSON-LD so both stay locale-consistent.
+  const resolvedFaqs = await Promise.all(
+    FAQ_KEYS.map(async (f) => ({ question: await t(f.q), answer: await t(f.a) })),
+  )
+  // Module-scope copy arrays are rendered inside synchronous .map()s, so
+  // resolve them up-front into display-ready arrays (icons/colors carried
+  // through unchanged).
+  const platformFeatures = await Promise.all(
+    PLATFORM_FEATURES.map(async (f) => ({
+      ...f,
+      title: await t(f.titleKey),
+      desc: await t(f.descKey),
+    })),
+  )
+  const contentCreationItems = await Promise.all(
+    CONTENT_CREATION_ITEMS.map(async (i) => ({
+      ...i,
+      label: await t(i.labelKey),
+      desc: await t(i.descKey),
+    })),
+  )
+  const analyticsMetrics = await Promise.all(
+    ANALYTICS_METRICS.map(async (m) => ({
+      ...m,
+      label: await t(m.labelKey),
+      trend: await t(m.trendKey),
+    })),
+  )
+  const comparisonRows = await Promise.all(
+    COMPARISON_ROWS.map(async (r) => ({ ...r, feature: await t(r.featureKey) })),
+  )
+  const howItWorks = await Promise.all(
+    HOW_IT_WORKS.map(async (s) => ({
+      ...s,
+      title: await t(s.titleKey),
+      desc: await t(s.descKey),
+    })),
+  )
+  const demoExplore = await t('mkt.schools.fs.demo.explore')
+  const gettingStartedStep = await t('mkt.schools.fs.getting_started.step')
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -407,9 +430,9 @@ export default async function ForSchoolsPage() {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             {[
-              'Only 10 founding schools',
-              'Significant time saved on planning and marking',
-              'Ofsted-aligned department reporting',
+              await t('mkt.schools.fs.hero.pill.1'),
+              await t('mkt.schools.fs.hero.pill.2'),
+              await t('mkt.schools.fs.hero.pill.3'),
             ].map((item) => (
               <span key={item} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -446,12 +469,17 @@ export default async function ForSchoolsPage() {
                   {bannerWhatReceive}
                 </p>
                 <ul className="space-y-3">
-                  {FOUNDING_BENEFITS.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3 text-sm text-foreground/90">
-                      <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      {benefit}
-                    </li>
-                  ))}
+                  {await Promise.all(
+                    FOUNDING_BENEFIT_KEYS.map(async (benefitKey) => (
+                      <li
+                        key={benefitKey}
+                        className="flex items-start gap-3 text-sm text-foreground/90"
+                      >
+                        <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                        {await t(benefitKey)}
+                      </li>
+                    )),
+                  )}
                 </ul>
                 <Button
                   className="w-full font-semibold gap-2 mt-6"
@@ -475,14 +503,13 @@ export default async function ForSchoolsPage() {
               className="border-primary/30 bg-primary/[0.06] text-primary mb-5 text-xs font-semibold uppercase tracking-wide gap-1.5"
             >
               <Layers className="w-3.5 h-3.5" />
-              Interactive Demo
+              {await t('mkt.schools.fs.demo.badge')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Explore the Full Platform -- No Signup Required
+              {await t('mkt.schools.fs.demo.title')}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-              Navigate a complete school dashboard with sample data. Click through students,
-              classes, analytics, and reports. See exactly what your school gets.
+              {await t('mkt.schools.fs.demo.body')}
             </p>
           </div>
 
@@ -491,29 +518,29 @@ export default async function ForSchoolsPage() {
               {
                 icon: BarChart3,
                 color: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
-                title: 'School Dashboard',
-                desc: 'Overview of all year groups',
+                title: await t('mkt.schools.fs.demo.card.dashboard.title'),
+                desc: await t('mkt.schools.fs.demo.card.dashboard.desc'),
                 href: '/demo/school',
               },
               {
                 icon: Users,
                 color: 'text-primary bg-primary/10 border-primary/20',
-                title: 'Student Analytics',
-                desc: 'Drill down to individual student level',
+                title: await t('mkt.schools.fs.demo.card.analytics.title'),
+                desc: await t('mkt.schools.fs.demo.card.analytics.desc'),
                 href: '/demo/school/analytics',
               },
               {
                 icon: FileText,
                 color: 'text-teal-700 bg-emerald-500/10 border-emerald-500/20',
-                title: 'Class Reports',
-                desc: 'Personalised reports per class',
+                title: await t('mkt.schools.fs.demo.card.reports.title'),
+                desc: await t('mkt.schools.fs.demo.card.reports.desc'),
                 href: '/demo/school/reports',
               },
               {
                 icon: GraduationCap,
                 color: 'text-purple-600 bg-purple-500/10 border-purple-500/20',
-                title: 'Teacher Insights',
-                desc: 'See teacher-level performance data',
+                title: await t('mkt.schools.fs.demo.card.teachers.title'),
+                desc: await t('mkt.schools.fs.demo.card.teachers.desc'),
                 href: '/demo/school/teachers',
               },
             ].map((card) => (
@@ -532,7 +559,7 @@ export default async function ForSchoolsPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground">{card.desc}</p>
                   <div className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    Explore
+                    {demoExplore}
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </Card>
@@ -547,10 +574,10 @@ export default async function ForSchoolsPage() {
               render={<Link href="/demo/school" />}
             >
               <Layers className="w-5 h-5" />
-              Launch Interactive Demo
+              {await t('mkt.schools.fs.demo.launch')}
             </Button>
             <p className="text-sm text-muted-foreground mt-4">
-              No signup, no email, completely free to explore
+              {await t('mkt.schools.fs.demo.no_signup')}
             </p>
           </div>
         </div>
@@ -561,11 +588,10 @@ export default async function ForSchoolsPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Why Schools Join the Founding Programme
+              {await t('mkt.schools.fs.value.title')}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              Founding schools get more than a platform -- they get a partnership that shapes the
-              future of English teaching.
+              {await t('mkt.schools.fs.value.body')}
             </p>
           </div>
 
@@ -574,7 +600,7 @@ export default async function ForSchoolsPage() {
             <div className="relative rounded-2xl border-2 border-primary/40 bg-primary/[0.04] p-8 flex flex-col">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge className="bg-primary text-primary-foreground font-bold text-xs px-3 py-1">
-                  FOUNDING PARTNER
+                  {await t('mkt.schools.fs.value.founding_partner')}
                 </Badge>
               </div>
               <div className="flex items-center gap-3 mb-5">
@@ -582,48 +608,53 @@ export default async function ForSchoolsPage() {
                   <Building2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-bold text-foreground">Founding Schools Programme</p>
+                  <p className="font-bold text-foreground">
+                    {await t('mkt.schools.fs.value.programme_name')}
+                  </p>
                   <p className="text-xs text-muted-foreground">
-                    First 10 schools -- 2026 founding rate
+                    {await t('mkt.schools.fs.value.programme_sub')}
                   </p>
                 </div>
               </div>
               <div className="mb-6 space-y-3">
                 <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 px-4 py-3">
                   <span className="inline-block rounded-full bg-amber-500/20 border border-amber-500/40 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-700 mb-2">
-                    Founding Pricing · 10 only
+                    {await t('mkt.schools.fs.value.founding_tag')}
                   </span>
                   <p className="text-2xl font-extrabold text-foreground">
                     £{PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}{' '}
-                    <span className="text-sm font-normal text-muted-foreground">/ year</span>
+                    <span className="text-sm font-normal text-muted-foreground">
+                      {await t('mkt.schools.fs.value.year')}
+                    </span>
                   </p>
                 </div>
                 <div className="rounded-lg border border-border/60 bg-muted/20 px-4 py-3">
                   <span className="inline-block rounded-full bg-muted/40 border border-border px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-2">
-                    Standard Pricing (estimated)
+                    {await t('mkt.schools.fs.value.standard_tag')}
                   </span>
                   <p className="text-2xl font-extrabold text-muted-foreground">
                     £{PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}{' '}
-                    <span className="text-sm font-normal">/ year</span>
+                    <span className="text-sm font-normal">
+                      {await t('mkt.schools.fs.value.year')}
+                    </span>
                   </p>
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-amber-700 mt-2">
                     ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
                   </p>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Founding rate locked for 2&ndash;3 years. Tailored to your department size and
-                  discussed during your onboarding call.
+                  {await t('mkt.schools.fs.value.locked_note')}
                 </p>
               </div>
               <ul className="space-y-3 flex-1">
                 {[
-                  'Full platform access -- all features, all students, all teachers',
-                  'Choose your exam board (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE)',
-                  'Early access to new features',
-                  'Direct product input and feedback loop',
-                  'Priority onboarding and dedicated support',
-                  'Locked preferential pricing for 2-3 years',
-                  'Founding partner recognition',
+                  await t('mkt.schools.fs.value.feat.1'),
+                  await t('mkt.schools.fs.value.feat.2'),
+                  await t('mkt.schools.fs.value.feat.3'),
+                  await t('mkt.schools.fs.value.feat.4'),
+                  await t('mkt.schools.fs.value.feat.5'),
+                  await t('mkt.schools.fs.value.feat.6'),
+                  await t('mkt.schools.fs.value.feat.7'),
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-foreground/90">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -633,7 +664,7 @@ export default async function ForSchoolsPage() {
               </ul>
               <Button className="w-full font-semibold gap-2 mt-7" render={<Link href="/contact" />}>
                 <Phone className="w-4 h-4" />
-                Book a Call to Discuss
+                {await t('mkt.schools.fs.value.cta_book')}
               </Button>
             </div>
 
@@ -644,31 +675,41 @@ export default async function ForSchoolsPage() {
                   <Lock className="w-5 h-5 text-muted-foreground" />
                 </div>
                 <div>
-                  <p className="font-bold text-foreground">Post-Programme Pricing</p>
-                  <p className="text-xs text-muted-foreground">After the founding cohort closes</p>
+                  <p className="font-bold text-foreground">
+                    {await t('mkt.schools.fs.value.post.title')}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {await t('mkt.schools.fs.value.post.sub')}
+                  </p>
                 </div>
               </div>
               <div className="mb-6">
-                <p className="text-lg font-bold text-foreground">Significantly higher</p>
+                <p className="text-lg font-bold text-foreground">
+                  {await t('mkt.schools.fs.value.post.higher')}
+                </p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Standard pricing will reflect the full value of the platform.
+                  {await t('mkt.schools.fs.value.post.higher_sub')}
                 </p>
               </div>
               <div className="rounded-xl bg-amber-500/5 border border-amber-500/20 p-4 mb-6">
-                <p className="text-sm font-semibold text-amber-600 mb-1">Why join now?</p>
+                <p className="text-sm font-semibold text-amber-600 mb-1">
+                  {await t('mkt.schools.fs.value.post.why_join')}
+                </p>
                 <p className="text-sm text-muted-foreground">
-                  The first 10 schools to sign lock in founding-partner rates for 2-3 years. Schools
-                  joining after the founding cohort closes pay standard (higher) rates.
+                  {await t('mkt.schools.fs.value.post.why_body')}
                 </p>
               </div>
               <ul className="space-y-3 flex-1">
                 {[
-                  { label: 'No early features access', available: false },
-                  { label: 'No direct product input', available: false },
-                  { label: 'No locked preferential pricing', available: false },
-                  { label: 'No founding partner recognition', available: false },
-                  { label: 'Standard onboarding', available: true },
-                  { label: 'Full platform access', available: true },
+                  { label: await t('mkt.schools.fs.value.post.no_early'), available: false },
+                  { label: await t('mkt.schools.fs.value.post.no_input'), available: false },
+                  { label: await t('mkt.schools.fs.value.post.no_locked'), available: false },
+                  { label: await t('mkt.schools.fs.value.post.no_recognition'), available: false },
+                  {
+                    label: await t('mkt.schools.fs.value.post.standard_onboarding'),
+                    available: true,
+                  },
+                  { label: await t('mkt.schools.fs.value.post.full_access'), available: true },
                 ].map((row) => (
                   <li
                     key={row.label}
@@ -687,8 +728,7 @@ export default async function ForSchoolsPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
-            Founding partner pricing is reserved for the first 10 schools to sign. Book a call to
-            secure your founding place -- later schools are welcome at standard rates.
+            {await t('mkt.schools.fs.value.reserved_note')}
           </p>
           <p className="text-center text-xs text-muted-foreground/80 mt-4 max-w-2xl mx-auto">
             {VAT_LABEL}
@@ -710,13 +750,12 @@ export default async function ForSchoolsPage() {
               {sectionFeaturesSub}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              Built to raise attainment, reduce workload, and give leadership full visibility across
-              every class and year group.
+              {await t('mkt.schools.fs.showcase.body')}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {PLATFORM_FEATURES.map((item) => (
+            {platformFeatures.map((item) => (
               <Card
                 key={item.title}
                 className={cn(
@@ -750,22 +789,20 @@ export default async function ForSchoolsPage() {
                 variant="outline"
                 className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
               >
-                For Teachers
+                {await t('mkt.schools.fs.content.eyebrow')}
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-5">
-                Generate Lessons, Worksheets &amp; Presentations Instantly
+                {await t('mkt.schools.fs.content.title')}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-                Stop spending evenings making resources. Teachers on The English Hub can instantly
-                generate fully-formed lesson plans, printable worksheets, and classroom
-                presentations from the platform -- all mapped to your exam board specification.
+                {await t('mkt.schools.fs.content.body')}
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                  'Lesson plans with teacher notes and differentiation built in',
-                  'Printable worksheets editable before download',
-                  'Slide decks with learning objectives and discussion prompts',
-                  'Practice assessments with auto-marking',
+                  await t('mkt.schools.fs.content.point.1'),
+                  await t('mkt.schools.fs.content.point.2'),
+                  await t('mkt.schools.fs.content.point.3'),
+                  await t('mkt.schools.fs.content.point.4'),
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-foreground/90">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -778,13 +815,13 @@ export default async function ForSchoolsPage() {
                 className="border-border/60 gap-2"
                 render={<Link href="/demo" />}
               >
-                See It in a Demo
+                {await t('mkt.schools.fs.content.cta')}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {CONTENT_CREATION_ITEMS.map((item) => (
+              {contentCreationItems.map((item) => (
                 <Card
                   key={item.label}
                   className="p-5 border-border/40 hover:border-border/60 transition-colors duration-300"
@@ -807,20 +844,24 @@ export default async function ForSchoolsPage() {
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                       <Sparkles className="w-4 h-4 text-primary" />
                     </div>
-                    <p className="text-sm font-semibold text-foreground">AI Lesson Generator</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {await t('mkt.schools.fs.content.gen.title')}
+                    </p>
                   </div>
                   <div className="bg-background/60 rounded-lg border border-border/40 p-4">
                     <p className="text-xs text-muted-foreground mb-2">
-                      Generate a lesson plan for...
+                      {await t('mkt.schools.fs.content.gen.prompt')}
                     </p>
                     <p className="text-sm font-medium text-foreground">
-                      &quot;AQA Language Paper 2 -- Viewpoints &amp; Perspectives, Year 11&quot;
+                      {await t('mkt.schools.fs.content.gen.example')}
                     </p>
                     <div className="mt-3 flex items-center gap-2">
                       <div className="h-1.5 flex-1 rounded-full bg-primary/20">
                         <div className="h-1.5 w-3/4 rounded-full bg-primary animate-pulse" />
                       </div>
-                      <span className="text-xs text-primary font-medium">Generating...</span>
+                      <span className="text-xs text-primary font-medium">
+                        {await t('mkt.schools.fs.content.gen.generating')}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -839,18 +880,22 @@ export default async function ForSchoolsPage() {
               <div className="rounded-2xl border border-border/40 bg-card/80 p-6 shadow-xl shadow-black/10">
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <p className="font-bold text-foreground">Department Overview</p>
-                    <p className="text-xs text-muted-foreground">All Year Groups -- Live Data</p>
+                    <p className="font-bold text-foreground">
+                      {await t('mkt.schools.fs.analytics.dept_overview')}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {await t('mkt.schools.fs.analytics.all_groups')}
+                    </p>
                   </div>
                   <Badge
                     variant="outline"
                     className="border-emerald-500/30 text-teal-700 bg-emerald-500/10 text-xs"
                   >
-                    Live
+                    {await t('mkt.schools.fs.analytics.live')}
                   </Badge>
                 </div>
                 <div className="grid grid-cols-2 gap-3 mb-5">
-                  {ANALYTICS_METRICS.map((metric) => (
+                  {analyticsMetrics.map((metric) => (
                     <div
                       key={metric.label}
                       className="rounded-xl bg-background/60 border border-border/40 p-4"
@@ -863,7 +908,7 @@ export default async function ForSchoolsPage() {
                 </div>
                 <div className="rounded-xl bg-background/60 border border-border/40 p-4">
                   <p className="text-xs font-semibold text-foreground mb-3">
-                    Year Group Comparison
+                    {await t('mkt.schools.fs.analytics.year_comparison')}
                   </p>
                   <div className="space-y-2.5">
                     {[
@@ -896,25 +941,22 @@ export default async function ForSchoolsPage() {
                 variant="outline"
                 className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
               >
-                For School Leaders
+                {await t('mkt.schools.fs.analytics.eyebrow')}
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-5">
-                Real-Time Progress Across Every Year Group
+                {await t('mkt.schools.fs.analytics.title')}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-                School admins and heads of department get a live overview of progress across all
-                classes and year groups. Identify at-risk students before results day. Compare class
-                performance. Generate department reports aligned to common Ofsted English subject
-                deep-dive criteria.
+                {await t('mkt.schools.fs.analytics.body')}
               </p>
               <ul className="space-y-4">
                 {[
-                  'Live dashboard across all year groups and classes',
-                  'At-risk student alerts with suggested interventions',
-                  'Class-by-class and student-by-student drill down',
-                  'Department reports aligned to Ofsted English subject deep-dive criteria',
-                  'Comparison against previous cohorts and national averages',
-                  'An internal progress estimate from practice and mock activity to help target teaching support',
+                  await t('mkt.schools.fs.analytics.point.1'),
+                  await t('mkt.schools.fs.analytics.point.2'),
+                  await t('mkt.schools.fs.analytics.point.3'),
+                  await t('mkt.schools.fs.analytics.point.4'),
+                  await t('mkt.schools.fs.analytics.point.5'),
+                  await t('mkt.schools.fs.analytics.point.6'),
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-foreground/90">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -924,12 +966,7 @@ export default async function ForSchoolsPage() {
               </ul>
               <div className="mt-6 rounded-xl bg-primary/[0.06] border border-primary/20 p-4">
                 <p className="text-sm text-foreground/90 leading-relaxed">
-                  The platform produces an internal progress estimate from a student&rsquo;s
-                  practice and mock activity to help teachers see where to focus support. This is a
-                  teaching aid only &mdash; not a predicted grade for any awarding body, not a
-                  substitute for any exam-board or centre-assessment process, and not used to
-                  determine results when a student misses an exam (those are decided solely by the
-                  awarding body).
+                  {await t('mkt.schools.fs.analytics.disclaimer')}
                 </p>
               </div>
               <div className="mt-8">
@@ -939,7 +976,7 @@ export default async function ForSchoolsPage() {
                   render={<Link href="/demo/school/analytics" />}
                 >
                   <BarChart3 className="w-4 h-4" />
-                  See Full Demo
+                  {await t('mkt.schools.fs.analytics.cta')}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
@@ -956,13 +993,13 @@ export default async function ForSchoolsPage() {
               variant="outline"
               className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
             >
-              Admin Controls
+              {await t('mkt.schools.fs.users.badge')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Bulk Upload. Instant Access. Zero Friction.
+              {await t('mkt.schools.fs.users.title')}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              No IT department needed. Get your entire school live in one afternoon.
+              {await t('mkt.schools.fs.users.body')}
             </p>
           </div>
 
@@ -971,34 +1008,34 @@ export default async function ForSchoolsPage() {
               {
                 icon: Settings,
                 color: 'text-primary bg-primary/10 border-primary/20',
-                title: 'School Admin Account',
+                title: await t('mkt.schools.fs.users.admin.title'),
                 points: [
-                  'Manage all student and teacher accounts',
-                  'Create sub-admin accounts for teachers',
-                  'Set school-wide and class-level permissions',
-                  'View department-wide analytics',
+                  await t('mkt.schools.fs.users.admin.point.1'),
+                  await t('mkt.schools.fs.users.admin.point.2'),
+                  await t('mkt.schools.fs.users.admin.point.3'),
+                  await t('mkt.schools.fs.users.admin.point.4'),
                 ],
               },
               {
                 icon: Upload,
                 color: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
-                title: 'Excel Bulk Upload',
+                title: await t('mkt.schools.fs.users.excel.title'),
                 points: [
-                  'Download our simple Excel template',
-                  'Add names, emails, year groups',
-                  'Upload once -- all accounts created instantly',
-                  'Login details sent to each student and teacher',
+                  await t('mkt.schools.fs.users.excel.point.1'),
+                  await t('mkt.schools.fs.users.excel.point.2'),
+                  await t('mkt.schools.fs.users.excel.point.3'),
+                  await t('mkt.schools.fs.users.excel.point.4'),
                 ],
               },
               {
                 icon: UserPlus,
                 color: 'text-teal-700 bg-emerald-500/10 border-emerald-500/20',
-                title: 'Self-Registration Option',
+                title: await t('mkt.schools.fs.users.self.title'),
                 points: [
-                  'Share your unique school code',
-                  'Students register themselves using the code',
-                  'Auto-linked to your school account',
-                  'Admin approval toggle available',
+                  await t('mkt.schools.fs.users.self.point.1'),
+                  await t('mkt.schools.fs.users.self.point.2'),
+                  await t('mkt.schools.fs.users.self.point.3'),
+                  await t('mkt.schools.fs.users.self.point.4'),
                 ],
               },
             ].map((card) => (
@@ -1034,12 +1071,19 @@ export default async function ForSchoolsPage() {
                 <p className="text-sm font-semibold text-foreground">
                   student-upload-template.xlsx
                 </p>
-                <p className="text-xs text-muted-foreground">Download from your admin dashboard</p>
+                <p className="text-xs text-muted-foreground">
+                  {await t('mkt.schools.fs.users.template.sub')}
+                </p>
               </div>
             </div>
             <div className="rounded-lg border border-border/40 overflow-hidden text-xs">
               <div className="grid grid-cols-4 bg-muted/40 text-muted-foreground font-semibold">
-                {['First Name', 'Last Name', 'Email', 'Year Group'].map((h) => (
+                {[
+                  await t('mkt.schools.fs.users.template.col.first'),
+                  await t('mkt.schools.fs.users.template.col.last'),
+                  await t('mkt.schools.fs.users.template.col.email'),
+                  await t('mkt.schools.fs.users.template.col.year'),
+                ].map((h) => (
                   <div key={h} className="px-3 py-2 border-r border-border/30 last:border-r-0">
                     {h}
                   </div>
@@ -1070,7 +1114,7 @@ export default async function ForSchoolsPage() {
               </div>
             </div>
             <p className="text-xs text-muted-foreground mt-3 text-center">
-              Upload this file and all accounts are created instantly. No IT support needed.
+              {await t('mkt.schools.fs.users.template.note')}
             </p>
           </div>
         </div>
@@ -1084,18 +1128,18 @@ export default async function ForSchoolsPage() {
               variant="outline"
               className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
             >
-              Getting Started
+              {await t('mkt.schools.fs.getting_started.badge')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Up and Running in 3 Steps
+              {await t('mkt.schools.fs.getting_started.title')}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              Most schools are fully live within a single afternoon. No IT department required.
+              {await t('mkt.schools.fs.getting_started.body')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {HOW_IT_WORKS.map((step, i) => (
+            {howItWorks.map((step, i) => (
               <div key={step.title} className="relative flex flex-col items-start">
                 {i < HOW_IT_WORKS.length - 1 && (
                   <div className="hidden md:block absolute top-5 left-[calc(100%-1rem)] w-8 h-px bg-border/60" />
@@ -1112,7 +1156,7 @@ export default async function ForSchoolsPage() {
                   {step.step}
                 </div>
                 <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-                  Step {step.step}
+                  {gettingStartedStep} {step.step}
                 </p>
                 <h3 className="font-bold text-foreground text-lg mb-3">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
@@ -1127,7 +1171,7 @@ export default async function ForSchoolsPage() {
               render={<Link href="/contact" />}
             >
               <Phone className="w-4 h-4" />
-              Book a 20-Minute Call
+              {await t('mkt.schools.fs.getting_started.cta')}
             </Button>
           </div>
         </div>
@@ -1141,14 +1185,13 @@ export default async function ForSchoolsPage() {
               variant="outline"
               className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
             >
-              From Schools Using the Platform
+              {await t('mkt.schools.fs.testi.badge')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Founding teachers' words, coming soon.
+              {await t('mkt.schools.fs.testi.title')}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              We are launching now. Real testimonials will appear here as the first Founding Schools
-              join the programme. Be one of them.
+              {await t('mkt.schools.fs.testi.body')}
             </p>
           </div>
 
@@ -1187,9 +1230,7 @@ export default async function ForSchoolsPage() {
               <Card className="p-8 border-dashed border-border/60 bg-card/40">
                 <Quote className="w-8 h-8 text-primary/20 mx-auto mb-4" />
                 <p className="text-sm text-muted-foreground italic">
-                  We are at launch and we say so plainly. As Founding Schools come on board, their
-                  teachers' words will sit here - verified, attributable, and used only with
-                  explicit consent.
+                  {await t('mkt.schools.fs.testi.empty')}
                 </p>
               </Card>
             </div>
@@ -1205,36 +1246,39 @@ export default async function ForSchoolsPage() {
               variant="outline"
               className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
             >
-              Value Comparison
+              {await t('mkt.schools.fs.compare.badge')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              School Partnership vs Individual Subscriptions
+              {await t('mkt.schools.fs.compare.title')}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              The school partnership is not just better value -- it unlocks features that individual
-              subscriptions simply do not include.
+              {await t('mkt.schools.fs.compare.body')}
             </p>
           </div>
 
           <div className="rounded-2xl border border-border/40 overflow-hidden">
             <div className="grid grid-cols-3 bg-card text-sm font-semibold">
-              <div className="px-5 py-4 text-foreground border-r border-border/40">Feature</div>
+              <div className="px-5 py-4 text-foreground border-r border-border/40">
+                {await t('mkt.schools.fs.compare.col.feature')}
+              </div>
               <div className="px-5 py-4 text-primary text-center border-r border-border/40">
-                School Partnership
+                {await t('mkt.schools.fs.compare.col.school')}
                 <div className="text-xs font-normal text-muted-foreground">
-                  Founding: £4,000/year{' '}
+                  {await t('mkt.schools.fs.compare.col.school_founding')}{' '}
                   <span className="text-muted-foreground/60 line-through">£8,000</span>
                 </div>
                 <div className="text-[10px] font-medium uppercase tracking-wide text-amber-600 mt-0.5">
-                  First 10 schools only
+                  {await t('mkt.schools.fs.compare.col.school_first10')}
                 </div>
               </div>
               <div className="px-5 py-4 text-muted-foreground text-center">
-                Individual Subs
-                <div className="text-xs font-normal">Per student</div>
+                {await t('mkt.schools.fs.compare.col.individual')}
+                <div className="text-xs font-normal">
+                  {await t('mkt.schools.fs.compare.col.per_student')}
+                </div>
               </div>
             </div>
-            {COMPARISON_ROWS.map((row, i) => (
+            {comparisonRows.map((row, i) => (
               <div
                 key={row.feature}
                 className={cn(
@@ -1275,47 +1319,47 @@ export default async function ForSchoolsPage() {
           {/* Compliance documents will be published here once finalised. Currently available on request. */}
           <div className="border border-border rounded-xl p-6 bg-card">
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Compliance pack - available on request
+              {await t('mkt.schools.fs.compliance.title')}
             </h3>
             <p className="text-muted-foreground mb-4">
-              For DPOs and bursars. Email{' '}
+              {await t('mkt.schools.fs.compliance.body_pre')}{' '}
               <a
                 href="mailto:legal@theenglishhub.app"
                 className="text-primary underline underline-offset-4"
               >
                 legal@theenglishhub.app
               </a>{' '}
-              and we will send the latest versions within one working day.
+              {await t('mkt.schools.fs.compliance.body_post')}
             </p>
             <ul className="space-y-2 mb-4 text-muted-foreground">
               <li>
-                Data Processing Agreement (Word){' '}
+                {await t('mkt.schools.fs.compliance.dpa')}{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  - available to schools on request during procurement
+                  {await t('mkt.schools.fs.compliance.dpa_note')}
                 </span>
               </li>
               <li>
-                Data Protection Impact Assessment (PDF){' '}
+                {await t('mkt.schools.fs.compliance.dpia')}{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  - in preparation; not yet available for inspection
+                  {await t('mkt.schools.fs.compliance.dpia_note')}
                 </span>
               </li>
               <li>
-                Safeguarding Policy (PDF){' '}
+                {await t('mkt.schools.fs.compliance.safeguard')}{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  - available to schools on request during procurement
+                  {await t('mkt.schools.fs.compliance.safeguard_note')}
                 </span>
               </li>
               <li>
-                Cyber Essentials certificate{' '}
+                {await t('mkt.schools.fs.compliance.cyber')}{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  - not currently held
+                  {await t('mkt.schools.fs.compliance.cyber_note')}
                 </span>
               </li>
               <li>
-                VPAT / accessibility conformance{' '}
+                {await t('mkt.schools.fs.compliance.vpat')}{' '}
                 <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                  - not currently held
+                  {await t('mkt.schools.fs.compliance.vpat_note')}
                 </span>
               </li>
             </ul>
@@ -1335,39 +1379,39 @@ export default async function ForSchoolsPage() {
               variant="outline"
               className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
             >
-              FAQs
+              {await t('mkt.schools.fs.faq.badge')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Frequently Asked Questions
+              {await t('mkt.schools.fs.faq.title')}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              Everything you need to know about The English Hub for schools.
+              {await t('mkt.schools.fs.faq.sub')}
             </p>
           </div>
 
           <div className="space-y-3">
-            {FAQS.map((faq) => (
+            {resolvedFaqs.map((faq) => (
               <FAQItem key={faq.question} q={faq.question} a={faq.answer} />
             ))}
           </div>
-          <FAQPageJsonLd faqs={FAQS} />
+          <FAQPageJsonLd faqs={resolvedFaqs} />
 
           <p className="text-center text-sm text-muted-foreground mt-10">
-            Got a question not answered here?{' '}
+            {await t('mkt.schools.fs.faq.contact_pre')}{' '}
             <Link
               href="/contact"
               className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
             >
-              Book a call
+              {await t('mkt.schools.fs.faq.contact_book')}
             </Link>{' '}
-            or email{' '}
+            {await t('mkt.schools.fs.faq.contact_or_email')}{' '}
             <a
               href="mailto:info@Upskillenergy.com"
               className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
             >
               info@Upskillenergy.com
             </a>{' '}
-            and we will get back to you within one working day.
+            {await t('mkt.schools.fs.faq.contact_post')}
           </p>
         </div>
       </section>
@@ -1383,11 +1427,10 @@ export default async function ForSchoolsPage() {
               <CalendarCheck className="w-7 h-7 text-primary" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Book a 20-Minute Call
+              {await t('mkt.schools.fs.book.title')}
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto text-lg">
-              Speak with our schools team. We will walk you through the platform, discuss pricing
-              tailored to your department, and answer every question you have.
+              {await t('mkt.schools.fs.book.body')}
             </p>
           </div>
 
@@ -1455,16 +1498,16 @@ export default async function ForSchoolsPage() {
                 The English Hub
               </Link>
               <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-                Expert English courses for KS3, GCSE, IGCSE, and all major exam boards.
+                {await t('mkt.schools.fs.footer.tagline')}
               </p>
             </div>
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
               {[
-                { label: 'For Schools', href: '/for-schools' },
-                { label: 'Courses', href: '/courses' },
-                { label: 'Practice', href: '/practice' },
-                { label: 'Revision', href: '/revision' },
-                { label: 'Log in', href: '/auth/login' },
+                { label: await t('mkt.schools.fs.footer.link.schools'), href: '/for-schools' },
+                { label: await t('mkt.schools.fs.footer.link.courses'), href: '/courses' },
+                { label: await t('mkt.schools.fs.footer.link.practice'), href: '/practice' },
+                { label: await t('mkt.schools.fs.footer.link.revision'), href: '/revision' },
+                { label: await t('mkt.schools.fs.footer.link.login'), href: '/auth/login' },
               ].map((link) => (
                 <Link
                   key={link.label}
@@ -1477,7 +1520,10 @@ export default async function ForSchoolsPage() {
             </div>
           </div>
           <div className="mt-10 pt-6 border-t border-border/40 text-center text-xs text-muted-foreground/70 space-y-1">
-            <p>&copy; {new Date().getFullYear()} The English Hub. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} The English Hub.{' '}
+              {await t('mkt.schools.fs.footer.rights')}
+            </p>
             <p>
               <a
                 href="mailto:info@Upskillenergy.com"

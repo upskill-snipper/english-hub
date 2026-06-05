@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { COMPANY } from '@/config/company'
 import { PRICING } from '@/constants/pricing'
+import { t } from '@/lib/i18n/t'
 import {
   CalendarCheck,
   ClipboardList,
@@ -40,113 +41,132 @@ export const metadata: Metadata = {
   },
 }
 
+// i18n keys; resolved at render via t(). Icons stay inline.
 const AUDIENCE = [
-  { icon: GraduationCap, label: 'Heads of English and English teaching teams' },
-  { icon: Building2, label: 'Senior Leadership Teams (SLT) reviewing English provision' },
-  { icon: School, label: 'British curriculum schools - UK and international' },
-  { icon: Target, label: 'GCSE and IGCSE cohorts preparing for terminal exams' },
-  { icon: Brain, label: 'KS3 intervention groups closing skills gaps' },
-  { icon: Globe2, label: 'EAL learners where the school needs structured English support' },
-  {
-    icon: Sparkles,
-    label: 'Gulf and international British curriculum schools using IGCSE pathways',
-  },
+  { icon: GraduationCap, labelKey: 'mkt.schools.pilot.who.1' },
+  { icon: Building2, labelKey: 'mkt.schools.pilot.who.2' },
+  { icon: School, labelKey: 'mkt.schools.pilot.who.3' },
+  { icon: Target, labelKey: 'mkt.schools.pilot.who.4' },
+  { icon: Brain, labelKey: 'mkt.schools.pilot.who.5' },
+  { icon: Globe2, labelKey: 'mkt.schools.pilot.who.6' },
+  { icon: Sparkles, labelKey: 'mkt.schools.pilot.who.7' },
 ]
 
 const PHASE_1 = {
   number: 1,
-  title: 'Setup and baseline',
-  duration: 'Weeks 1-3',
-  points: [
-    'Confirm the year group(s) and cohort the pilot will cover',
-    'Onboard nominated teachers and create student accounts in bulk',
-    'Select the exam board or pathway content should align to',
-    'Run baseline reading, writing and practice tasks across the cohort',
-    'Identify priority skill gaps - language analysis, structure, AO coverage, vocabulary, reading inference',
+  titleKey: 'mkt.schools.pilot.phase1.title',
+  durationKey: 'mkt.schools.pilot.phase1.duration',
+  pointKeys: [
+    'mkt.schools.pilot.phase1.point.1',
+    'mkt.schools.pilot.phase1.point.2',
+    'mkt.schools.pilot.phase1.point.3',
+    'mkt.schools.pilot.phase1.point.4',
+    'mkt.schools.pilot.phase1.point.5',
   ],
 }
 
 const PHASE_2 = {
   number: 2,
-  title: 'Targeted practice',
-  duration: 'Weeks 4-11',
-  points: [
-    'Assign practice tasks aligned to the gaps identified in Phase 1',
-    'Use AI-assisted feedback to give students faster formative responses',
-    'Support mock exam preparation with exam-style practice and walkthroughs',
-    'Track student engagement and submission patterns',
-    'Review class-level weaknesses with teachers in fortnightly check-ins',
+  titleKey: 'mkt.schools.pilot.phase2.title',
+  durationKey: 'mkt.schools.pilot.phase2.duration',
+  pointKeys: [
+    'mkt.schools.pilot.phase2.point.1',
+    'mkt.schools.pilot.phase2.point.2',
+    'mkt.schools.pilot.phase2.point.3',
+    'mkt.schools.pilot.phase2.point.4',
+    'mkt.schools.pilot.phase2.point.5',
   ],
 }
 
 const PHASE_3 = {
   number: 3,
-  title: 'Review and impact report',
-  duration: 'Weeks 12-13',
-  points: [
-    'Usage summary across teachers and student cohort',
-    'Skill-gap trends from baseline to end of pilot',
-    'Student progress indicators against the gaps identified',
-    'Teacher feedback on workload, content quality and student response',
-    'Recommendations for the next term and beyond',
-    'Annual school licence proposal if the pilot warrants it',
+  titleKey: 'mkt.schools.pilot.phase3.title',
+  durationKey: 'mkt.schools.pilot.phase3.duration',
+  pointKeys: [
+    'mkt.schools.pilot.phase3.point.1',
+    'mkt.schools.pilot.phase3.point.2',
+    'mkt.schools.pilot.phase3.point.3',
+    'mkt.schools.pilot.phase3.point.4',
+    'mkt.schools.pilot.phase3.point.5',
+    'mkt.schools.pilot.phase3.point.6',
   ],
 }
 
-const WHAT_YOU_RECEIVE = [
-  'Teacher access for every nominated member of the English department',
-  'Student access for every learner in the agreed cohort',
-  'Onboarding support - guided setup walkthrough and an admin checklist',
-  'Reporting dashboard for the cohort and per-class breakdowns',
-  'A written pilot review report at the end of the 90 days',
-  'A recommended intervention plan for the next academic block',
-  'Optional staff walkthrough with the schools team',
+const WHAT_YOU_RECEIVE_KEYS = [
+  'mkt.schools.pilot.receive.1',
+  'mkt.schools.pilot.receive.2',
+  'mkt.schools.pilot.receive.3',
+  'mkt.schools.pilot.receive.4',
+  'mkt.schools.pilot.receive.5',
+  'mkt.schools.pilot.receive.6',
+  'mkt.schools.pilot.receive.7',
 ]
 
 const SUCCESS_METRICS = [
   {
     icon: Users,
-    label: 'Student activation',
-    desc: 'Percentage of the cohort that signs in and starts using the platform.',
+    labelKey: 'mkt.schools.pilot.metric.activation.label',
+    descKey: 'mkt.schools.pilot.metric.activation.desc',
   },
   {
     icon: CalendarCheck,
-    label: 'Weekly usage',
-    desc: 'Active sessions per student per week, by class and overall.',
+    labelKey: 'mkt.schools.pilot.metric.weekly.label',
+    descKey: 'mkt.schools.pilot.metric.weekly.desc',
   },
   {
     icon: ClipboardList,
-    label: 'Tasks completed',
-    desc: 'Number of practice tasks, reading exercises and writing submissions.',
+    labelKey: 'mkt.schools.pilot.metric.tasks.label',
+    descKey: 'mkt.schools.pilot.metric.tasks.desc',
   },
   {
     icon: FileText,
-    label: 'Writing submissions',
-    desc: 'Volume and length of student writing submitted for feedback.',
+    labelKey: 'mkt.schools.pilot.metric.writing.label',
+    descKey: 'mkt.schools.pilot.metric.writing.desc',
   },
   {
     icon: PieChart,
-    label: 'Skill gaps identified',
-    desc: 'Specific weaknesses surfaced by the analytics - by class and student.',
+    labelKey: 'mkt.schools.pilot.metric.gaps.label',
+    descKey: 'mkt.schools.pilot.metric.gaps.desc',
   },
   {
     icon: Brain,
-    label: 'Teacher feedback',
-    desc: 'Qualitative feedback collected from each pilot teacher.',
+    labelKey: 'mkt.schools.pilot.metric.teacher.label',
+    descKey: 'mkt.schools.pilot.metric.teacher.desc',
   },
   {
     icon: BarChart3,
-    label: 'Reports generated',
-    desc: 'Class, student and parent reports produced through the platform.',
+    labelKey: 'mkt.schools.pilot.metric.reports.label',
+    descKey: 'mkt.schools.pilot.metric.reports.desc',
   },
   {
     icon: Target,
-    label: 'Intervention groups created',
-    desc: 'Targeted groups set up off the back of skill-gap data.',
+    labelKey: 'mkt.schools.pilot.metric.groups.label',
+    descKey: 'mkt.schools.pilot.metric.groups.desc',
   },
 ]
 
-export default function SchoolPilotPackPage() {
+export default async function SchoolPilotPackPage() {
+  // Resolve keyed copy arrays up-front (rendered inside sync .map()s).
+  const audience = await Promise.all(
+    AUDIENCE.map(async (a) => ({ icon: a.icon, label: await t(a.labelKey) })),
+  )
+  const phases = await Promise.all(
+    [PHASE_1, PHASE_2, PHASE_3].map(async (p) => ({
+      number: p.number,
+      title: await t(p.titleKey),
+      duration: await t(p.durationKey),
+      points: await Promise.all(p.pointKeys.map((k) => t(k))),
+    })),
+  )
+  const whatYouReceive = await Promise.all(WHAT_YOU_RECEIVE_KEYS.map((k) => t(k)))
+  const successMetrics = await Promise.all(
+    SUCCESS_METRICS.map(async (m) => ({
+      icon: m.icon,
+      label: await t(m.labelKey),
+      desc: await t(m.descKey),
+    })),
+  )
+  const phaseWord = await t('mkt.schools.pilot.phase_word')
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -166,15 +186,13 @@ export default function SchoolPilotPackPage() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-8 gap-2 px-4 py-1.5"
           >
             <School className="w-4 h-4" />
-            School Pilot Pack
+            {await t('mkt.schools.pilot.hero.badge')}
           </Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-            A 90-day English improvement pilot for schools.
+            {await t('mkt.schools.pilot.hero.title')}
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A structured pilot to help schools baseline English needs, support targeted practice and
-            review progress with clear usage and reporting data. Designed for British curriculum
-            schools in the UK and overseas.
+            {await t('mkt.schools.pilot.hero.body')}
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -184,7 +202,7 @@ export default function SchoolPilotPackPage() {
               render={<Link href="/contact" />}
             >
               <Mail className="w-4 h-4" />
-              Request a school pilot
+              {await t('mkt.schools.pilot.hero.cta_request')}
             </Button>
             <Button
               variant="outline"
@@ -193,7 +211,7 @@ export default function SchoolPilotPackPage() {
               render={<Link href="/for-schools" />}
             >
               <Printer className="w-4 h-4" />
-              Back to For Schools
+              {await t('mkt.schools.pilot.hero.cta_back')}
             </Button>
           </div>
           {/* TODO(founder): commission a designed PDF version of the
@@ -201,8 +219,7 @@ export default function SchoolPilotPackPage() {
               Pages are print-friendly so Cmd/Ctrl+P → Save as PDF works
               in the meantime. */}
           <p className="mt-4 text-xs text-muted-foreground/80">
-            A designed downloadable PDF is on the way. The page is print-friendly: use your
-            browser&apos;s print menu to save a copy for your team.
+            {await t('mkt.schools.pilot.hero.pdf_note')}
           </p>
         </div>
       </section>
@@ -211,13 +228,13 @@ export default function SchoolPilotPackPage() {
       <section className="py-14 sm:py-20 border-b border-border/40">
         <div className="max-w-5xl mx-auto px-6">
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
-            A. Who it is for
+            {await t('mkt.schools.pilot.who.eyebrow')}
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-8">
-            Built for English departments - UK and international British curriculum
+            {await t('mkt.schools.pilot.who.title')}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            {AUDIENCE.map((row) => (
+            {audience.map((row) => (
               <div
                 key={row.label}
                 className="flex items-start gap-3 rounded-xl border border-border/40 bg-card/40 p-4"
@@ -236,18 +253,17 @@ export default function SchoolPilotPackPage() {
       <section className="py-14 sm:py-20 border-b border-border/40">
         <div className="max-w-5xl mx-auto px-6">
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
-            B. Pilot structure
+            {await t('mkt.schools.pilot.structure.eyebrow')}
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
-            Three phases over 90 days
+            {await t('mkt.schools.pilot.structure.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-10">
-            A structured cycle: get the cohort live, run targeted practice, and finish with a
-            written review that a head of English can put in front of SLT.
+            {await t('mkt.schools.pilot.structure.body')}
           </p>
 
           <div className="space-y-6">
-            {[PHASE_1, PHASE_2, PHASE_3].map((phase) => (
+            {phases.map((phase) => (
               <Card key={phase.number} className="p-7 border-border/40">
                 <div className="flex items-start gap-5 mb-5">
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center font-bold text-primary text-lg shrink-0">
@@ -255,7 +271,7 @@ export default function SchoolPilotPackPage() {
                   </div>
                   <div>
                     <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-1">
-                      Phase {phase.number} · {phase.duration}
+                      {phaseWord} {phase.number} · {phase.duration}
                     </p>
                     <h3 className="text-xl font-bold text-foreground">{phase.title}</h3>
                   </div>
@@ -278,14 +294,14 @@ export default function SchoolPilotPackPage() {
       <section className="py-14 sm:py-20 border-b border-border/40">
         <div className="max-w-4xl mx-auto px-6">
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
-            C. What schools receive
+            {await t('mkt.schools.pilot.receive.eyebrow')}
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-6">
-            What is included with every pilot
+            {await t('mkt.schools.pilot.receive.title')}
           </h2>
           <Card className="p-7 border-border/40">
             <ul className="space-y-3">
-              {WHAT_YOU_RECEIVE.map((item) => (
+              {whatYouReceive.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <span className="text-sm text-foreground/90 leading-relaxed">{item}</span>
@@ -300,19 +316,17 @@ export default function SchoolPilotPackPage() {
       <section className="py-14 sm:py-20 border-b border-border/40">
         <div className="max-w-5xl mx-auto px-6">
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
-            D. Success measures
+            {await t('mkt.schools.pilot.measure.eyebrow')}
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
-            What we measure during the pilot
+            {await t('mkt.schools.pilot.measure.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-8">
-            We measure usage, engagement and identifiable skill gaps - not grade improvement. A
-            12-week pilot is too short to claim a causal grade lift, and we will not present it as
-            one.
+            {await t('mkt.schools.pilot.measure.body')}
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {SUCCESS_METRICS.map((m) => (
+            {successMetrics.map((m) => (
               <Card key={m.label} className="p-5 border-border/40">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
                   <m.icon className="w-4 h-4 text-primary" />
@@ -328,13 +342,10 @@ export default function SchoolPilotPackPage() {
               <Award className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-foreground mb-1">
-                  We do not promise grade improvement
+                  {await t('mkt.schools.pilot.measure.no_promise.title')}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Grade outcomes depend on too many factors outside the platform - cohort, teaching
-                  time, teacher experience, prior attainment, exam day performance. We measure
-                  engagement, gap-identification and teacher-reported impact, and let the school
-                  decide whether that adds up to grade change.
+                  {await t('mkt.schools.pilot.measure.no_promise.body')}
                 </p>
               </div>
             </div>
@@ -346,24 +357,27 @@ export default function SchoolPilotPackPage() {
       <section className="py-14 sm:py-20 border-b border-border/40">
         <div className="max-w-4xl mx-auto px-6">
           <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-3">
-            E. Pricing
+            {await t('mkt.schools.pilot.pricing.eyebrow')}
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-6">
-            Recurring school pricing
+            {await t('mkt.schools.pilot.pricing.title')}
           </h2>
 
           <div className="grid md:grid-cols-2 gap-5">
             <Card className="p-7 border-primary/30 bg-primary/[0.04]">
               <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-xs px-3 py-1 mb-4">
-                Founding School Pilot
+                {await t('mkt.schools.pilot.pricing.founding.badge')}
               </Badge>
               <p className="text-3xl font-extrabold text-foreground">
-                from £{PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}
-                <span className="text-base font-normal text-muted-foreground"> / year</span>
+                {await t('mkt.schools.pilot.pricing.from')} £
+                {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}
+                <span className="text-base font-normal text-muted-foreground">
+                  {' '}
+                  {await t('mkt.schools.pilot.pricing.year')}
+                </span>
               </p>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                Recurring annual licence, sized to cohort and scope. The first 10 founding schools
-                lock in this preferential rate for 2-3 years.
+                {await t('mkt.schools.pilot.pricing.founding.body')}
               </p>
             </Card>
 
@@ -372,29 +386,34 @@ export default function SchoolPilotPackPage() {
                 variant="outline"
                 className="border-border/60 text-foreground font-bold text-xs px-3 py-1 mb-4"
               >
-                School Licence
+                {await t('mkt.schools.pilot.pricing.licence.badge')}
               </Badge>
               <p className="text-3xl font-extrabold text-foreground">
-                from £{PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}
-                <span className="text-base font-normal text-muted-foreground"> / year</span>
+                {await t('mkt.schools.pilot.pricing.from')} £
+                {PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}
+                <span className="text-base font-normal text-muted-foreground">
+                  {' '}
+                  {await t('mkt.schools.pilot.pricing.year')}
+                </span>
               </p>
               <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                Standard annual licence for schools joining after the founding cohort closes. Full
-                platform access for all teachers and students in the agreed cohort.
+                {await t('mkt.schools.pilot.pricing.licence.body')}
               </p>
             </Card>
           </div>
 
           <div className="mt-8 rounded-xl border border-border/40 bg-card/30 p-6">
-            <h3 className="font-bold text-foreground mb-3">School pricing is based on</h3>
+            <h3 className="font-bold text-foreground mb-3">
+              {await t('mkt.schools.pilot.pricing.based_on.title')}
+            </h3>
             <ul className="grid sm:grid-cols-2 gap-y-2 gap-x-6 text-sm text-muted-foreground">
               {[
-                'Number of students in the cohort',
-                'Number of teachers requiring access',
-                'Year groups covered (KS3 / GCSE / IGCSE)',
-                'Reporting and analytics needs',
-                'Onboarding and training scope',
-                'Pilot or full annual licence structure',
+                await t('mkt.schools.pilot.pricing.based_on.1'),
+                await t('mkt.schools.pilot.pricing.based_on.2'),
+                await t('mkt.schools.pilot.pricing.based_on.3'),
+                await t('mkt.schools.pilot.pricing.based_on.4'),
+                await t('mkt.schools.pilot.pricing.based_on.5'),
+                await t('mkt.schools.pilot.pricing.based_on.6'),
               ].map((row) => (
                 <li key={row} className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -403,9 +422,7 @@ export default function SchoolPilotPackPage() {
               ))}
             </ul>
             <p className="mt-5 text-xs text-muted-foreground/80">
-              Larger schools, multi-academy trusts (MATs) and international school groups are priced
-              on a custom annual licence. Optional onboarding, training or implementation support
-              may be included depending on package.
+              {await t('mkt.schools.pilot.pricing.note')}
             </p>
           </div>
 
@@ -415,7 +432,7 @@ export default function SchoolPilotPackPage() {
               className="text-base px-8 h-12 gap-2"
               render={<Link href="/contact" />}
             >
-              Request school pricing
+              {await t('mkt.schools.pilot.pricing.cta')}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
@@ -429,16 +446,15 @@ export default function SchoolPilotPackPage() {
             <CalendarCheck className="w-6 h-6 text-primary" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-4">
-            Bring clearer English insight into your school.
+            {await t('mkt.schools.pilot.cta.title')}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
-            Tell us your year group, cohort size and exam board. We will come back within one
-            working day with a tailored pilot proposal - no obligation.
+            {await t('mkt.schools.pilot.cta.body')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button size="lg" className="text-base px-8 h-12" render={<Link href="/contact" />}>
               <Mail className="w-4 h-4 mr-2" />
-              Request a school pilot
+              {await t('mkt.schools.pilot.cta.request')}
             </Button>
             <Button
               variant="outline"
@@ -446,7 +462,7 @@ export default function SchoolPilotPackPage() {
               className="text-base px-8 h-12"
               render={<a href={`mailto:${COMPANY.contactEmail}`} />}
             >
-              Email {COMPANY.contactEmail}
+              {await t('mkt.schools.pilot.cta.email')} {COMPANY.contactEmail}
             </Button>
           </div>
 

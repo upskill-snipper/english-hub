@@ -94,7 +94,7 @@ export default async function Home() {
       <TrackEvent event="home_viewed" />
 
       {/* 1. Institutional hero */}
-      <HomeHero />
+      {await HomeHero()}
 
       {/* ───── Students: choose your exam board (existing funnel preserved) ───── */}
       <section
@@ -104,17 +104,16 @@ export default async function Home() {
         <div className="mx-auto max-w-[1400px] px-4 pt-14 sm:px-6 sm:pt-20">
           <div className="text-center">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              For students &amp; parents
+              {await t('home.students.eyebrow')}
             </p>
             <h2
               id="students-board-heading"
               className="mt-3 font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
             >
-              Studying for an English exam? Choose your board
+              {await t('home.students.heading')}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Individual learners and families can start straight away - pick your exam board and
-              land in a personalised revision hub.
+              {await t('home.students.body')}
             </p>
           </div>
         </div>
@@ -156,28 +155,28 @@ export default async function Home() {
       </div>
 
       {/* 2. Built for students, teachers and schools */}
-      <AudienceSection />
+      {await AudienceSection()}
 
       {/* 3. School platform section */}
-      <SchoolPlatformSection />
+      {await SchoolPlatformSection()}
 
       {/* 4. Key benefits */}
-      <KeyBenefitsSection />
+      {await KeyBenefitsSection()}
 
       {/* 5 + 6. AI-assisted marking + analytics/intervention */}
-      <CapabilitiesSection />
+      {await CapabilitiesSection()}
 
       {/* 7. EAL support */}
-      <EalSection />
+      {await EalSection()}
 
       {/* 7.5 Demo showcase */}
       <DemoShowcase />
 
       {/* 8. Founder school pilot CTA */}
-      <PilotCtaSection />
+      {await PilotCtaSection()}
 
       {/* 9. Pricing preview */}
-      <PricingPreviewSection />
+      {await PricingPreviewSection()}
 
       {/* 10. FAQ */}
       <section aria-labelledby="home-faq-heading" className="border-t border-border/60">
@@ -186,7 +185,7 @@ export default async function Home() {
             id="home-faq-heading"
             className="mb-8 text-center font-serif text-3xl font-semibold tracking-tight text-foreground"
           >
-            Questions from school leaders
+            {await t('home.faq.school_leaders')}
           </h2>
           {/* emitJsonLd=false: the homepage's single FAQPage block is the
               consumer GeoFaq above (GCSE_BOARD_FAQS). Two FAQPage entities on
@@ -198,14 +197,14 @@ export default async function Home() {
       </section>
 
       {/* 11. Final CTA */}
-      <FinalCtaSection />
+      {await FinalCtaSection()}
     </main>
   )
 }
 
 /* ───────────────────── Institutional sections ───────────────────── */
 
-function HomeHero() {
+async function HomeHero() {
   return (
     <section className="relative overflow-hidden border-b border-border/60">
       <div
@@ -214,19 +213,17 @@ function HomeHero() {
       />
       <div className="relative mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 sm:py-28">
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-          GCSE, IGCSE &amp; KS3 English revision
+          {await t('home.hero.eyebrow')}
         </p>
         <h1 className="mx-auto mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          Revise GCSE and IGCSE English, marked by AI against the real mark scheme
+          {await t('home.hero.title')}
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Practice papers, model answers and instant feedback on your essays, aligned to your exam
-          board: AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE. Free to start, built for students
-          and parents, and trusted by schools.
+          {await t('home.hero.body')}
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button size="lg" className="h-12 px-7 text-base" render={<Link href="#gcse-boards" />}>
-            Choose your exam board
+            {await t('home.hero.cta_board')}
           </Button>
           <Button
             variant="outline"
@@ -234,39 +231,39 @@ function HomeHero() {
             className="h-12 px-7 text-base"
             render={<Link href="/schools" />}
           >
-            For schools and teachers
+            {await t('home.hero.cta_schools')}
           </Button>
         </div>
         <p className="mx-auto mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
-          English Language, Literature and EAL. KS3 to A-Level, aligned to your specification.
+          {await t('home.hero.footnote')}
         </p>
       </div>
     </section>
   )
 }
 
-function AudienceSection() {
+async function AudienceSection() {
   const cards = [
     {
       icon: GraduationCap,
-      title: 'Students',
-      body: 'Structured practice, essay feedback and revision aligned to the specification their school teaches.',
+      title: await t('home.audience.students.title'),
+      body: await t('home.audience.students.body'),
       href: '/students',
-      cta: 'For students',
+      cta: await t('home.audience.students.cta'),
     },
     {
       icon: Users2,
-      title: 'Teachers',
-      body: 'AI-assisted feedback, homework setting and clearer insight into class weaknesses - without adding workload.',
+      title: await t('home.audience.teachers.title'),
+      body: await t('home.audience.teachers.body'),
       href: '/teachers',
-      cta: 'For teachers',
+      cta: await t('home.audience.teachers.cta'),
     },
     {
       icon: Building2,
-      title: 'Schools',
-      body: 'Department-wide assessment, intervention insight and reporting that leaders can act on.',
+      title: await t('home.audience.schools.title'),
+      body: await t('home.audience.schools.body'),
       href: '/schools',
-      cta: 'For schools',
+      cta: await t('home.audience.schools.cta'),
     },
   ]
   return (
@@ -279,11 +276,10 @@ function AudienceSection() {
           id="audience-heading"
           className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
         >
-          Built for students, teachers and schools
+          {await t('home.audience.heading')}
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-          One platform that supports the whole English department - from individual practice to
-          department-wide intelligence.
+          {await t('home.audience.body')}
         </p>
       </div>
       <div className="mt-10 grid gap-5 sm:grid-cols-3">
@@ -307,30 +303,28 @@ function AudienceSection() {
   )
 }
 
-function SchoolPlatformSection() {
+async function SchoolPlatformSection() {
   return (
     <section aria-labelledby="platform-heading" className="border-y border-border/60 bg-muted/30">
       <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary">
-          School infrastructure for English departments
+          {await t('home.platform.eyebrow')}
         </p>
         <h2
           id="platform-heading"
           className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
         >
-          From revision support to department-wide English intelligence
+          {await t('home.platform.heading')}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          The English Hub is designed to become embedded in how an English department works -
-          assessment, feedback, intervention and reporting in one place, supporting teacher
-          judgement rather than replacing it.
+          {await t('home.platform.body')}
         </p>
       </div>
     </section>
   )
 }
 
-function KeyBenefitsSection() {
+async function KeyBenefitsSection() {
   return (
     <section
       aria-labelledby="benefits-heading"
@@ -340,40 +334,40 @@ function KeyBenefitsSection() {
         id="benefits-heading"
         className="text-center font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
       >
-        What it helps schools do
+        {await t('home.benefits.heading')}
       </h2>
       <div className="mt-10">
         <BenefitGrid
           items={[
             {
               icon: Clock,
-              title: 'Reduce teacher workload',
-              body: 'Reduce repetitive marking workload so teachers can focus more time on teaching.',
+              title: await t('home.benefits.workload.title'),
+              body: await t('home.benefits.workload.body'),
             },
             {
               icon: Eye,
-              title: 'Improve intervention visibility',
-              body: 'Identify students who may need support earlier, before gaps widen.',
+              title: await t('home.benefits.intervention.title'),
+              body: await t('home.benefits.intervention.body'),
             },
             {
               icon: Languages,
-              title: 'Support EAL learners',
-              body: 'Structured practice designed to build EAL learners’ confidence in English.',
+              title: await t('home.benefits.eal.title'),
+              body: await t('home.benefits.eal.body'),
             },
             {
               icon: Target,
-              title: 'Strengthen exam readiness',
-              body: 'Specification-aligned practice across English Language and Literature.',
+              title: await t('home.benefits.readiness.title'),
+              body: await t('home.benefits.readiness.body'),
             },
             {
               icon: FileText,
-              title: 'Generate clearer student reports',
-              body: 'Turn student activity into clearer, shareable progress summaries.',
+              title: await t('home.benefits.reports.title'),
+              body: await t('home.benefits.reports.body'),
             },
             {
               icon: LineChart,
-              title: 'Track progress across cohorts',
-              body: 'Give leaders clearer visibility across classes and year groups.',
+              title: await t('home.benefits.cohorts.title'),
+              body: await t('home.benefits.cohorts.body'),
             },
           ]}
         />
@@ -382,7 +376,7 @@ function KeyBenefitsSection() {
   )
 }
 
-function CapabilitiesSection() {
+async function CapabilitiesSection() {
   return (
     <section
       aria-labelledby="capabilities-heading"
@@ -394,11 +388,10 @@ function CapabilitiesSection() {
             id="capabilities-heading"
             className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
           >
-            AI-assisted marking, analytics and intervention
+            {await t('home.capabilities.heading')}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            Designed to support teacher judgement and surface where attention is needed - not to
-            replace professional assessment.
+            {await t('home.capabilities.body')}
           </p>
         </div>
         <div className="mt-10">
@@ -406,33 +399,33 @@ function CapabilitiesSection() {
             items={[
               {
                 icon: Brain,
-                title: 'AI-assisted marking & feedback',
-                body: 'Students receive structured, criteria-referenced feedback teachers can review and build on.',
+                title: await t('home.capabilities.feedback.title'),
+                body: await t('home.capabilities.feedback.body'),
               },
               {
                 icon: LineChart,
-                title: 'Class & year-group analytics',
-                body: 'See patterns across cohorts and where the department should focus next.',
+                title: await t('home.capabilities.analytics.title'),
+                body: await t('home.capabilities.analytics.body'),
               },
               {
                 icon: Eye,
-                title: 'Intervention insights',
-                body: 'Surface students who may need support earlier in the term.',
+                title: await t('home.capabilities.insights.title'),
+                body: await t('home.capabilities.insights.body'),
               },
               {
                 icon: ClipboardCheck,
-                title: 'Homework & worksheet support',
-                body: 'Set practice and generate resources aligned to the specification.',
+                title: await t('home.capabilities.homework.title'),
+                body: await t('home.capabilities.homework.body'),
               },
               {
                 icon: FileText,
-                title: 'Student reports',
-                body: 'Clearer progress summaries for parents, reviews and leadership.',
+                title: await t('home.capabilities.reports.title'),
+                body: await t('home.capabilities.reports.body'),
               },
               {
                 icon: Layers,
-                title: 'Reading & comprehension support',
-                body: 'Structured comprehension and reading practice across key stages.',
+                title: await t('home.capabilities.reading.title'),
+                body: await t('home.capabilities.reading.body'),
               },
             ]}
           />
@@ -442,7 +435,7 @@ function CapabilitiesSection() {
   )
 }
 
-function EalSection() {
+async function EalSection() {
   return (
     <section
       aria-labelledby="eal-heading"
@@ -456,34 +449,31 @@ function EalSection() {
           id="eal-heading"
           className="mt-5 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
         >
-          Structured English support for EAL learners
+          {await t('home.eal.heading')}
         </h2>
         <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-          A growing priority for international and GCC schools. The English Hub is built to help EAL
-          learners develop vocabulary, reading fluency, comprehension and writing confidence, with
-          teacher visibility over progress and differentiated support.
+          {await t('home.eal.body')}
         </p>
         <Button variant="outline" size="lg" className="mt-6 h-11" render={<Link href="/eal" />}>
-          Explore EAL support
+          {await t('home.eal.cta')}
         </Button>
       </div>
     </section>
   )
 }
 
-function PilotCtaSection() {
+async function PilotCtaSection() {
   return (
     <section className="border-y border-border/60 bg-primary text-primary-foreground">
       <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-primary-foreground/70">
-          Founder School Programme
+          {await t('home.pilot.eyebrow')}
         </p>
         <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-          Start a 90-day Founder School Pilot
+          {await t('home.pilot.heading')}
         </h2>
         <p className="mx-auto mt-4 max-w-xl leading-relaxed text-primary-foreground/80">
-          Most schools begin with a structured one-term pilot focused on one year group or the
-          English department. The pilot is designed to prove value before wider rollout.
+          {await t('home.pilot.body')}
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
@@ -492,7 +482,7 @@ function PilotCtaSection() {
             className="h-12 px-7 text-base"
             render={<Link href="/school-pilot" />}
           >
-            Book a School Pilot
+            {await t('home.pilot.cta_book')}
           </Button>
           <Button
             size="lg"
@@ -500,7 +490,7 @@ function PilotCtaSection() {
             className="h-12 border-primary-foreground/30 px-7 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
             render={<Link href="/schools" />}
           >
-            Explore School Deployment
+            {await t('home.pilot.cta_deploy')}
           </Button>
         </div>
       </div>
@@ -508,7 +498,7 @@ function PilotCtaSection() {
   )
 }
 
-function PricingPreviewSection() {
+async function PricingPreviewSection() {
   return (
     <section
       aria-labelledby="pricing-preview-heading"
@@ -519,47 +509,50 @@ function PricingPreviewSection() {
           id="pricing-preview-heading"
           className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
         >
-          Pricing
+          {await t('home.pricing.heading')}
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-          Individual access for learners and teachers, and structured pilots and annual deployment
-          for schools.
+          {await t('home.pricing.body')}
         </p>
       </div>
       <div className="mt-10 grid gap-5 sm:grid-cols-3">
         <Card className="p-6 border-border/50">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Student
+            {await t('home.pricing.student.label')}
           </p>
           <p className="mt-2 font-serif text-2xl font-semibold text-foreground">
             {PRICING_DISPLAY.studentMonthly}
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">Individual learner access.</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {await t('home.pricing.student.body')}
+          </p>
         </Card>
         <Card className="p-6 border-border/50">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Teacher
+            {await t('home.pricing.teacher.label')}
           </p>
           <p className="mt-2 font-serif text-2xl font-semibold text-foreground">
             {PRICING_DISPLAY.teacherMonthly}
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">Teacher tools and classroom support.</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {await t('home.pricing.teacher.body')}
+          </p>
         </Card>
         <Card className="p-6 border-primary/40 ring-1 ring-primary/15">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Schools
+            {await t('home.pricing.schools.label')}
           </p>
           <p className="mt-2 font-serif text-2xl font-semibold text-foreground">
-            Pilots {PRICING_DISPLAY.pilotFrom}
+            {await t('home.pricing.schools.pilots_prefix')} {PRICING_DISPLAY.pilotFrom}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Annual deployment {PRICING_DISPLAY.annualSmallFrom}.
+            {await t('home.pricing.schools.annual_prefix')} {PRICING_DISPLAY.annualSmallFrom}.
           </p>
         </Card>
       </div>
       <div className="mt-8 text-center">
         <Button size="lg" className="h-12" render={<Link href="/pricing" />}>
-          Request School Pricing
+          {await t('home.pricing.cta')}
         </Button>
         <p className="mx-auto mt-4 max-w-xl text-xs text-muted-foreground">
           {PRICING_DISPLAY.schoolPricingCaveat}
@@ -569,19 +562,16 @@ function PricingPreviewSection() {
   )
 }
 
-function FinalCtaSection() {
+async function FinalCtaSection() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
       <h2 className="font-serif text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-        Discuss your English department&rsquo;s needs
+        {await t('home.final.heading')}
       </h2>
-      <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-        Talk to us about a pilot, an annual deployment, or how The English Hub could support your
-        department.
-      </p>
+      <p className="mx-auto mt-3 max-w-xl text-muted-foreground">{await t('home.final.body')}</p>
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button size="lg" className="h-12 px-7 text-base" render={<Link href="/school-pilot" />}>
-          Book a School Pilot
+          {await t('home.final.cta_book')}
         </Button>
         <Button
           variant="outline"
@@ -589,7 +579,7 @@ function FinalCtaSection() {
           className="h-12 px-7 text-base"
           render={<Link href="/contact" />}
         >
-          Discuss a School Rollout
+          {await t('home.final.cta_rollout')}
         </Button>
       </div>
     </section>
