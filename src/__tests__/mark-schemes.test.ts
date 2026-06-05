@@ -4,9 +4,9 @@ import { MARK_SCHEMES, getMarkScheme, listMarkSchemeIds } from '@/lib/marking/ma
 describe('Mark Scheme Registry', () => {
   // ── Registry contents ───────────────────────────────────────────────
 
-  it('contains 20 mark schemes', () => {
+  it('contains 21 mark schemes', () => {
     const ids = listMarkSchemeIds()
-    expect(ids).toHaveLength(20)
+    expect(ids).toHaveLength(21)
   })
 
   it('has unique ids for every scheme', () => {

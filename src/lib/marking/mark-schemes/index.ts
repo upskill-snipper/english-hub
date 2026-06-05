@@ -14,6 +14,7 @@ import { ocrLangComponent01, ocrLangComponent02 } from './ocr-lang'
 import { edexcelLitPaper1, edexcelLitPaper2 } from './edexcel-lit'
 import { edexcelLangPaper1, edexcelLangPaper2 } from './edexcel-lang'
 import { edexcelIgcseLit, edexcelIgcseLitMarkSchemes } from './edexcel-igcse-lit'
+import { edexcelIgcseLangPaper1, edexcelIgcseLangMarkSchemes } from './edexcel-igcse-lang'
 import {
   cambridge0500Paper1,
   cambridge0500Paper2,
@@ -53,6 +54,7 @@ export const MARK_SCHEMES: Readonly<Record<string, MarkScheme>> = {
   [edexcelLitPaper1.id]: edexcelLitPaper1,
   [edexcelLitPaper2.id]: edexcelLitPaper2,
   [edexcelIgcseLit.id]: edexcelIgcseLit,
+  [edexcelIgcseLangPaper1.id]: edexcelIgcseLangPaper1,
   [edexcelLangPaper1.id]: edexcelLangPaper1,
   [edexcelLangPaper2.id]: edexcelLangPaper2,
   [cambridge0500Paper1.id]: cambridge0500Paper1,
@@ -69,6 +71,8 @@ export const MARK_SCHEMES: Readonly<Record<string, MarkScheme>> = {
 export const MARK_SCHEMES_BY_BOARD: Readonly<Record<string, readonly MarkScheme[]>> = {
   'cambridge-0500': cambridge0500MarkSchemes,
   'cambridge-0990': cambridge0990MarkSchemes,
+  'edexcel-igcse': edexcelIgcseLitMarkSchemes,
+  'edexcel-igcse-lang': edexcelIgcseLangMarkSchemes,
 }
 
 /**
@@ -92,6 +96,7 @@ export { ocrLitComponent01, ocrLitComponent02 } from './ocr-lit'
 export { ocrLangComponent01, ocrLangComponent02 } from './ocr-lang'
 export { edexcelLitPaper1, edexcelLitPaper2 } from './edexcel-lit'
 export { edexcelIgcseLit, edexcelIgcseLitMarkSchemes } from './edexcel-igcse-lit'
+export { edexcelIgcseLangPaper1, edexcelIgcseLangMarkSchemes } from './edexcel-igcse-lang'
 export { edexcelLangPaper1, edexcelLangPaper2 } from './edexcel-lang'
 export {
   cambridge0500Paper1,
