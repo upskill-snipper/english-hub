@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { HumanReviewButton } from '@/components/HumanReviewButton'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Mock data (replace with real data fetching) ────────────── */
 
@@ -58,6 +59,7 @@ You could also explore the significance of Eric's character, whose forced respon
 /* ─── Score gauge component ──────────────────────────────────── */
 
 function ScoreGauge({ score }: { score: number }) {
+  const t = useT()
   const circumference = 2 * Math.PI * 54
   const offset = circumference - (score / 100) * circumference
 
@@ -92,7 +94,7 @@ function ScoreGauge({ score }: { score: number }) {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className={`text-2xl font-bold ${gcseGradeColor(percentageToGCSEGrade(score))}`}>
-          Grade {percentageToGCSEGrade(score)}
+          {t('dash.essay_view.grade_prefix')} {percentageToGCSEGrade(score)}
         </span>
         <span className="text-xs text-muted-foreground">{score}%</span>
       </div>
@@ -135,6 +137,7 @@ function CategoryBar({ name, score, maxScore }: { name: string; score: number; m
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function EssayFeedbackPage() {
+  const t = useT()
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
   const essay = MOCK_ESSAY
@@ -152,13 +155,13 @@ export default function EssayFeedbackPage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/dashboard" className="hover:text-accent">
-              Dashboard
+              {t('dash.essay_view.bc_dashboard')}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/dashboard/essays" className="hover:text-accent">
-              Essays
+              {t('dash.essay_view.bc_essays')}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -180,14 +183,14 @@ export default function EssayFeedbackPage() {
           </p>
           {essay.topic && (
             <p className="mt-2 text-sm italic text-muted-foreground">
-              Prompt: &ldquo;{essay.topic}&rdquo;
+              {t('dash.essay_view.prompt')} &ldquo;{essay.topic}&rdquo;
             </p>
           )}
         </div>
 
         <div className="flex gap-2 self-start">
           <Link href={`/dashboard/essay/new`} className="btn-outline text-xs px-3 py-1.5">
-            Edit
+            {t('dash.essay_view.edit')}
           </Link>
           {showDeleteConfirm ? (
             <div className="flex items-center gap-2">
@@ -196,14 +199,14 @@ export default function EssayFeedbackPage() {
                 onClick={handleDelete}
                 className="rounded-lg bg-warn px-3 py-1.5 text-xs font-medium text-white hover:bg-warn-600 transition-colors"
               >
-                Confirm Delete
+                {t('dash.essay_view.confirm_delete')}
               </button>
               <button
                 type="button"
                 onClick={() => setShowDeleteConfirm(false)}
                 className="text-xs text-muted-foreground hover:text-foreground"
               >
-                Cancel
+                {t('dash.essay_view.cancel')}
               </button>
             </div>
           ) : (
@@ -212,7 +215,7 @@ export default function EssayFeedbackPage() {
               onClick={() => setShowDeleteConfirm(true)}
               className="rounded-lg border-2 border-warn px-3 py-1.5 text-xs font-medium text-warn hover:bg-warn hover:text-white transition-colors"
             >
-              Delete
+              {t('dash.essay_view.delete')}
             </button>
           )}
         </div>
@@ -221,7 +224,7 @@ export default function EssayFeedbackPage() {
       {/* ── Content warnings ────────────────────────────────── */}
       {essay.contentWarnings.length > 0 && (
         <div className="mt-4 rounded-lg border border-warn-200 bg-warn-50 px-4 py-3" role="alert">
-          <p className="text-sm font-medium text-warn-700">Content Notice</p>
+          <p className="text-sm font-medium text-warn-700">{t('dash.essay_view.content_notice')}</p>
           <ul className="mt-1 list-inside list-disc text-sm text-warn-600">
             {essay.contentWarnings.map((warning) => (
               <li key={warning}>{warning}</li>
@@ -236,7 +239,7 @@ export default function EssayFeedbackPage() {
         <div className="lg:col-span-3">
           <div className="card">
             <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Your Essay
+              {t('dash.essay_view.your_essay')}
             </h2>
             <div className="prose prose-sm max-w-none text-foreground leading-relaxed">
               {essay.content.split('\n\n').map((paragraph, i) => (
@@ -244,7 +247,7 @@ export default function EssayFeedbackPage() {
               ))}
             </div>
             <p className="mt-4 text-xs text-muted-foreground">
-              {essay.content.trim().split(/\s+/).length} words
+              {essay.content.trim().split(/\s+/).length} {t('dash.essay_view.words')}
             </p>
           </div>
         </div>
@@ -254,7 +257,7 @@ export default function EssayFeedbackPage() {
           {/* Overall score */}
           <div className="card text-center">
             <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Overall Score
+              {t('dash.essay_view.overall_score')}
             </h2>
             <ScoreGauge score={feedback.overallScore} />
           </div>
@@ -262,7 +265,7 @@ export default function EssayFeedbackPage() {
           {/* Category scores */}
           <div className="card">
             <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Category Scores
+              {t('dash.essay_view.category_scores')}
             </h2>
             <div className="space-y-4">
               {feedback.categories.map((cat) => (
@@ -279,7 +282,7 @@ export default function EssayFeedbackPage() {
           {/* Detailed feedback */}
           <div className="card">
             <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Detailed Feedback
+              {t('dash.essay_view.detailed_feedback')}
             </h2>
             <div className="prose prose-sm max-w-none text-foreground leading-relaxed">
               {feedback.detailedFeedback.split('\n\n').map((paragraph, i) => {
@@ -303,7 +306,7 @@ export default function EssayFeedbackPage() {
           {/* Improvement suggestions */}
           <div className="card">
             <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Improvement Suggestions
+              {t('dash.essay_view.improvement_suggestions')}
             </h2>
             <ul className="space-y-3" role="list">
               {feedback.suggestions.map((suggestion, i) => (

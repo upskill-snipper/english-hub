@@ -3,14 +3,16 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
+// value paired with its translation key; label resolved at render via t().
 const REASON_OPTIONS = [
-  { value: '', label: 'Select a reason...' },
-  { value: 'inaccurate', label: 'Feedback seems inaccurate' },
-  { value: 'unclear', label: "I don't understand the feedback" },
-  { value: 'unfair-score', label: 'Score seems unfair' },
-  { value: 'missed-points', label: 'AI missed important points' },
-  { value: 'other', label: 'Other' },
+  { value: '', key: 'dash.review_req.reason.default' },
+  { value: 'inaccurate', key: 'dash.review_req.reason.inaccurate' },
+  { value: 'unclear', key: 'dash.review_req.reason.unclear' },
+  { value: 'unfair-score', key: 'dash.review_req.reason.unfair_score' },
+  { value: 'missed-points', key: 'dash.review_req.reason.missed_points' },
+  { value: 'other', key: 'dash.review_req.reason.other' },
 ] as const
 
 const DETAIL_MAX = 2000
@@ -27,6 +29,7 @@ interface SubmissionResult {
 }
 
 export default function ReviewRequestPage() {
+  const t = useT()
   const searchParams = useSearchParams()
   const preselectedEssayId = searchParams.get('essayId') ?? ''
 
@@ -60,15 +63,15 @@ export default function ReviewRequestPage() {
     setError(null)
 
     if (!essayId) {
-      setError('Please select an essay to review.')
+      setError(t('dash.review_req.err.essay'))
       return
     }
     if (!reason) {
-      setError('Please select a reason for your review request.')
+      setError(t('dash.review_req.err.reason'))
       return
     }
     if (!detail.trim()) {
-      setError('Please provide some detail about your request.')
+      setError(t('dash.review_req.err.detail'))
       return
     }
 
@@ -88,7 +91,7 @@ export default function ReviewRequestPage() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => null)
-        throw new Error(body?.error ?? 'Something went wrong. Please try again.')
+        throw new Error(body?.error ?? t('dash.review_req.err.try_again'))
       }
 
       const data = await res.json()
@@ -97,7 +100,7 @@ export default function ReviewRequestPage() {
         estimatedResponse: data.estimatedResponse,
       })
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong.')
+      setError(err instanceof Error ? err.message : t('dash.review_req.err.generic'))
     } finally {
       setSubmitting(false)
     }
@@ -123,14 +126,11 @@ export default function ReviewRequestPage() {
             </svg>
           </div>
 
-          <h1 className="text-2xl font-semibold text-primary">Review Request Submitted</h1>
-          <p className="mt-2 text-muted-foreground">
-            Your request has been received. A qualified reviewer will look at your essay and the AI
-            feedback.
-          </p>
+          <h1 className="text-2xl font-semibold text-primary">{t('dash.review_req.done_title')}</h1>
+          <p className="mt-2 text-muted-foreground">{t('dash.review_req.done_body')}</p>
 
           <div className="mt-6 rounded-lg bg-background p-4 text-sm">
-            <p className="text-muted-foreground">Your reference number</p>
+            <p className="text-muted-foreground">{t('dash.review_req.ref_label')}</p>
             <p className="mt-1 text-lg font-mono font-semibold text-primary">
               {result.referenceNumber}
             </p>
@@ -138,22 +138,22 @@ export default function ReviewRequestPage() {
 
           <div className="mt-4 rounded-lg bg-accent/5 border border-accent/20 p-4 text-sm text-foreground">
             <p>
-              <strong>Estimated response time:</strong> {result.estimatedResponse}
+              <strong>{t('dash.review_req.est_response')}</strong> {result.estimatedResponse}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              We&apos;ll notify you by email when the review is complete.
+              {t('dash.review_req.email_notify')}
             </p>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/dashboard" className="btn-primary text-sm">
-              Back to Dashboard
+              {t('dash.review_req.back_dash')}
             </Link>
             <Link
               href={`/dashboard/review/${result.referenceNumber}`}
               className="btn-outline text-sm"
             >
-              Track This Request
+              {t('dash.review_req.track')}
             </Link>
           </div>
         </div>
@@ -169,32 +169,24 @@ export default function ReviewRequestPage() {
           href="/dashboard"
           className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
-          &larr; Back to Dashboard
+          {t('dash.review_req.back')}
         </Link>
       </div>
 
-      <h1 className="text-2xl font-semibold text-primary">Request a Human Review</h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        If you&apos;re unsure about the AI&apos;s feedback on your essay, you can ask a real person
-        to take a look. This is completely normal and it&apos;s your right - not a complaint.
-      </p>
+      <h1 className="text-2xl font-semibold text-primary">{t('dash.review_req.title')}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">{t('dash.review_req.intro')}</p>
 
       {/* Rights notice */}
       <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
-        <p className="font-medium text-primary">Your rights</p>
-        <p className="mt-1">
-          Under UK data protection law (UK GDPR &amp; the Data Use and Access Act 2025), you have
-          the right to request human intervention when decisions are made by automated systems. This
-          is that right in action - it&apos;s not a complaint, and there&apos;s no wrong reason to
-          use it.
-        </p>
+        <p className="font-medium text-primary">{t('dash.review_req.rights_title')}</p>
+        <p className="mt-1">{t('dash.review_req.rights_body')}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         {/* Essay selector */}
         <div>
           <label htmlFor="essayId" className="block text-sm font-medium text-foreground">
-            Which essay? <span className="text-red-500">*</span>
+            {t('dash.review_req.which_essay')} <span className="text-red-500">*</span>
           </label>
           <select
             id="essayId"
@@ -203,7 +195,7 @@ export default function ReviewRequestPage() {
             className="input-field mt-1"
             required
           >
-            <option value="">Select an essay...</option>
+            <option value="">{t('dash.review_req.select_essay')}</option>
             {essays.map((essay) => (
               <option key={essay.id} value={essay.id}>
                 {essay.title}
@@ -211,7 +203,9 @@ export default function ReviewRequestPage() {
             ))}
             {/* If preselected ID isn't in the list, still show it */}
             {preselectedEssayId && !essays.find((e) => e.id === preselectedEssayId) && (
-              <option value={preselectedEssayId}>Essay {preselectedEssayId}</option>
+              <option value={preselectedEssayId}>
+                {t('dash.review_req.essay_fallback').replace('{id}', preselectedEssayId)}
+              </option>
             )}
           </select>
         </div>
@@ -219,7 +213,7 @@ export default function ReviewRequestPage() {
         {/* Reason */}
         <div>
           <label htmlFor="reason" className="block text-sm font-medium text-foreground">
-            Why are you requesting a review? <span className="text-red-500">*</span>
+            {t('dash.review_req.why')} <span className="text-red-500">*</span>
           </label>
           <select
             id="reason"
@@ -230,7 +224,7 @@ export default function ReviewRequestPage() {
           >
             {REASON_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
-                {opt.label}
+                {t(opt.key)}
               </option>
             ))}
           </select>
@@ -239,10 +233,10 @@ export default function ReviewRequestPage() {
         {/* Detail */}
         <div>
           <label htmlFor="detail" className="block text-sm font-medium text-foreground">
-            Tell us more <span className="text-red-500">*</span>
+            {t('dash.review_req.tell_more')} <span className="text-red-500">*</span>
           </label>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            What specifically would you like a human to look at?
+            {t('dash.review_req.tell_more_hint')}
           </p>
           <textarea
             id="detail"
@@ -250,7 +244,7 @@ export default function ReviewRequestPage() {
             onChange={(e) => setDetail(e.target.value.slice(0, DETAIL_MAX))}
             rows={5}
             className="input-field mt-1 resize-y"
-            placeholder="e.g. The AI said my conclusion was weak, but I think I addressed the question clearly..."
+            placeholder={t('dash.review_req.detail_ph')}
             required
           />
           <p
@@ -265,20 +259,19 @@ export default function ReviewRequestPage() {
         {/* Self-assessment (optional) */}
         <div>
           <label htmlFor="selfAssessment" className="block text-sm font-medium text-foreground">
-            Your own thoughts on your essay{' '}
-            <span className="text-muted-foreground font-normal">(optional)</span>
+            {t('dash.review_req.self_label')}{' '}
+            <span className="text-muted-foreground font-normal">
+              {t('dash.review_req.optional')}
+            </span>
           </label>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            If you&apos;d like, share what you think you did well or what you were trying to
-            achieve. This helps the reviewer understand your perspective.
-          </p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{t('dash.review_req.self_hint')}</p>
           <textarea
             id="selfAssessment"
             value={selfAssessment}
             onChange={(e) => setSelfAssessment(e.target.value.slice(0, SELF_ASSESSMENT_MAX))}
             rows={4}
             className="input-field mt-1 resize-y"
-            placeholder="e.g. I was trying to argue that Lady Macbeth is more ambitious than Macbeth..."
+            placeholder={t('dash.review_req.self_ph')}
           />
           <p
             className={`mt-1 text-right text-xs ${
@@ -303,7 +296,7 @@ export default function ReviewRequestPage() {
 
         {/* Submit */}
         <button type="submit" disabled={submitting} className="btn-primary w-full">
-          {submitting ? 'Submitting...' : 'Submit Review Request'}
+          {submitting ? t('dash.review_req.submitting') : t('dash.review_req.submit')}
         </button>
       </form>
     </div>

@@ -82,6 +82,8 @@ import { MKT_EAL_DICTIONARY } from './dictionary-mkt-eal'
 // 2026-06-05: Arabic sweep tranche 1 - homepage + marketing chrome
 // (home.*, mkt.teachers.*, mkt.schools.*, about.cv.*). Curated EN + Khaleeji.
 import { MKT_HOME_DICTIONARY } from './dictionary-mkt-home'
+// 2026-06-05: Arabic sweep tranche 2 - logged-in dashboard chrome (dash.*).
+import { DASHBOARD_CHROME_DICTIONARY } from './dictionary-dashboard'
 // 2026-05-25: IELTS Academic learning-loop section.
 import { IELTS_DICTIONARY } from './dictionary-ielts'
 // 2026-05-25: IELTS bilingual (EN + Khaleeji AR) per-section shards (Wave 1).
@@ -14910,6 +14912,7 @@ export function lookup(key: string, locale: Locale): string {
     MKT_STUDENTS_DICTIONARY[key] ??
     MKT_EAL_DICTIONARY[key] ??
     MKT_HOME_DICTIONARY[key] ??
+    DASHBOARD_CHROME_DICTIONARY[key] ??
     IELTS_DICTIONARY[key] ??
     IELTS_READING_DICTIONARY[key] ??
     IELTS_LISTENING_DICTIONARY[key] ??

@@ -29,6 +29,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Input } from '@/components/ui/input'
 import { ProgressBar } from '@/components/analytics/ProgressBar'
 import type { CourseData } from '@/lib/types'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -69,6 +70,7 @@ type SortDir = 'asc' | 'desc'
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function ClassAnalyticsPage() {
+  const t = useT()
   const { user, profile, isLoading: authLoading } = useAuthStore()
   const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [students, setStudents] = useState<StudentSummary[]>([])
@@ -176,7 +178,7 @@ export default function ClassAnalyticsPage() {
         setStudents(summaries)
       } catch (err) {
         console.error('Class analytics fetch error:', err)
-        setError('Failed to load class data. You may not have permission to view this page.')
+        setError(t('dash.class_analytics.err.load'))
       } finally {
         setLoading(false)
       }
@@ -326,14 +328,14 @@ export default function ClassAnalyticsPage() {
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" render={<Link href="/dashboard/analytics" />}>
               <ArrowLeft className="h-4 w-4" />
-              Analytics
+              {t('dash.class_analytics.back')}
             </Button>
             <Separator orientation="vertical" className="h-6" />
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-foreground">Class Overview</h1>
-              <p className="text-sm text-muted-foreground">
-                Student progress summaries and class performance
-              </p>
+              <h1 className="text-2xl font-bold tracking-tight text-foreground">
+                {t('dash.class_analytics.title')}
+              </h1>
+              <p className="text-sm text-muted-foreground">{t('dash.class_analytics.subtitle')}</p>
             </div>
           </div>
           <Button
@@ -343,7 +345,7 @@ export default function ClassAnalyticsPage() {
             disabled={loading || filteredStudents.length === 0}
           >
             <Download className="h-4 w-4" />
-            Export CSV
+            {t('dash.class_analytics.export_csv')}
           </Button>
         </div>
 
@@ -378,7 +380,7 @@ export default function ClassAnalyticsPage() {
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                        Students
+                        {t('dash.class_analytics.stat.students')}
                       </p>
                       <p className="text-xl font-bold tabular-nums text-foreground">
                         {classStats.totalStudents}
@@ -396,12 +398,14 @@ export default function ClassAnalyticsPage() {
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                        Avg Modules
+                        {t('dash.class_analytics.stat.avg_modules')}
                       </p>
                       <p className="text-xl font-bold tabular-nums text-foreground">
                         {classStats.avgModulesCompleted}
                       </p>
-                      <p className="text-[11px] text-muted-foreground">completed per student</p>
+                      <p className="text-[11px] text-muted-foreground">
+                        {t('dash.class_analytics.stat.completed_per')}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -415,7 +419,7 @@ export default function ClassAnalyticsPage() {
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                        Class Avg Score
+                        {t('dash.class_analytics.stat.class_avg_score')}
                       </p>
                       <p className="text-xl font-bold tabular-nums text-foreground">
                         {classStats.avgScore}%
@@ -433,12 +437,14 @@ export default function ClassAnalyticsPage() {
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                        Avg Study Time
+                        {t('dash.class_analytics.stat.avg_study')}
                       </p>
                       <p className="text-xl font-bold tabular-nums text-foreground">
                         {formatStudyTime(classStats.avgStudyTimeSeconds)}
                       </p>
-                      <p className="text-[11px] text-muted-foreground">per student</p>
+                      <p className="text-[11px] text-muted-foreground">
+                        {t('dash.class_analytics.stat.per_student')}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -454,16 +460,19 @@ export default function ClassAnalyticsPage() {
           <CardHeader>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <CardTitle>Student Progress</CardTitle>
+                <CardTitle>{t('dash.class_analytics.list_title')}</CardTitle>
                 <CardDescription>
-                  {filteredStudents.length} student{filteredStudents.length === 1 ? '' : 's'}
-                  {searchQuery && ` matching "${searchQuery}"`}
+                  {filteredStudents.length}{' '}
+                  {filteredStudents.length === 1
+                    ? t('dash.class_analytics.student_one')
+                    : t('dash.class_analytics.student_many')}
+                  {searchQuery && ` ${t('dash.class_analytics.matching')} "${searchQuery}"`}
                 </CardDescription>
               </div>
               <div className="relative w-full max-w-xs">
                 <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
-                  placeholder="Search students..."
+                  placeholder={t('dash.class_analytics.search_ph')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-9"
@@ -489,7 +498,9 @@ export default function ClassAnalyticsPage() {
               <div className="py-12 text-center text-muted-foreground">
                 <Users className="mx-auto mb-2 h-8 w-8 opacity-50" />
                 <p className="text-sm">
-                  {searchQuery ? 'No students match your search.' : 'No student data available.'}
+                  {searchQuery
+                    ? t('dash.class_analytics.no_match')
+                    : t('dash.class_analytics.no_data')}
                 </p>
               </div>
             ) : (
@@ -500,31 +511,31 @@ export default function ClassAnalyticsPage() {
                     className="flex w-44 items-center gap-1 hover:text-foreground transition-colors"
                     onClick={() => toggleSort('name')}
                   >
-                    Student <SortIcon field="name" />
+                    {t('dash.class_analytics.col.student')} <SortIcon field="name" />
                   </button>
                   <button
                     className="flex flex-1 items-center gap-1 hover:text-foreground transition-colors"
                     onClick={() => toggleSort('progress')}
                   >
-                    Progress <SortIcon field="progress" />
+                    {t('dash.class_analytics.col.progress')} <SortIcon field="progress" />
                   </button>
                   <button
                     className="flex w-20 items-center gap-1 justify-end hover:text-foreground transition-colors"
                     onClick={() => toggleSort('score')}
                   >
-                    Avg Score <SortIcon field="score" />
+                    {t('dash.class_analytics.col.avg_score')} <SortIcon field="score" />
                   </button>
                   <button
                     className="flex w-24 items-center gap-1 justify-end hover:text-foreground transition-colors"
                     onClick={() => toggleSort('studyTime')}
                   >
-                    Study Time <SortIcon field="studyTime" />
+                    {t('dash.class_analytics.col.study_time')} <SortIcon field="studyTime" />
                   </button>
                   <button
                     className="flex w-24 items-center gap-1 justify-end hover:text-foreground transition-colors"
                     onClick={() => toggleSort('lastActive')}
                   >
-                    Last Active <SortIcon field="lastActive" />
+                    {t('dash.class_analytics.col.last_active')} <SortIcon field="lastActive" />
                   </button>
                 </div>
 
@@ -562,8 +573,8 @@ export default function ClassAnalyticsPage() {
                               size="sm"
                             />
                             <p className="mt-0.5 text-[11px] text-muted-foreground">
-                              {student.modulesCompleted}/{student.totalModules} modules (
-                              {completionPct}%)
+                              {student.modulesCompleted}/{student.totalModules}{' '}
+                              {t('dash.class_analytics.modules_suffix')} ({completionPct}%)
                             </p>
                           </div>
 
@@ -593,7 +604,9 @@ export default function ClassAnalyticsPage() {
 
                           {/* Last Active */}
                           <div className="w-24 text-right text-xs text-muted-foreground">
-                            {student.lastActive ? formatDate(student.lastActive) : 'Never'}
+                            {student.lastActive
+                              ? formatDate(student.lastActive)
+                              : t('dash.class_analytics.never')}
                           </div>
                         </div>
                       )
@@ -605,9 +618,11 @@ export default function ClassAnalyticsPage() {
                 <Separator className="my-3" />
                 <div className="flex flex-col gap-2 rounded-lg bg-muted/50 p-3 sm:flex-row sm:items-center sm:gap-4">
                   <div className="w-44 min-w-0">
-                    <p className="text-sm font-semibold text-foreground">Class Average</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {t('dash.class_analytics.class_average')}
+                    </p>
                     <p className="text-xs text-muted-foreground">
-                      {classStats.totalStudents} students
+                      {classStats.totalStudents} {t('dash.class_analytics.students_count_suffix')}
                     </p>
                   </div>
                   <div className="flex-1">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 
 export const metadata = { title: 'Printable Worksheets - Teacher Resources' }
 
@@ -61,7 +62,10 @@ const QUOTES = [
   },
 ]
 
-export default function WorksheetsPage() {
+export default async function WorksheetsPage() {
+  const actPrefix = await t('dash.worksheets.act_prefix')
+  const techniqueCol = await t('dash.worksheets.technique_col')
+  const effectCol = await t('dash.worksheets.effect_col')
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <div>
@@ -69,36 +73,33 @@ export default function WorksheetsPage() {
           href="/dashboard/teacher/resources"
           className="text-sm text-accent hover:text-primary mb-2 inline-block"
         >
-          &larr; Back to Resources
+          {await t('dash.worksheets.back')}
         </Link>
-        <h1 className="text-2xl font-bold text-primary">
-          Quote Analysis Worksheet: An Inspector Calls
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Pre-filled example worksheet with key quotes, techniques, and analysis. Use as a model
-          answer or teacher reference. Print-friendly layout.
-        </p>
+        <h1 className="text-2xl font-bold text-primary">{await t('dash.worksheets.title')}</h1>
+        <p className="mt-2 text-sm text-muted-foreground">{await t('dash.worksheets.intro')}</p>
       </div>
 
       {/* Instructions Box */}
       <div className="rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-4">
-        <h2 className="font-semibold text-primary text-sm mb-2">How to Use This Worksheet</h2>
+        <h2 className="font-semibold text-primary text-sm mb-2">
+          {await t('dash.worksheets.how_title')}
+        </h2>
         <ul className="text-xs text-muted-foreground space-y-1">
           <li>
-            • <strong>As a model:</strong> Show students what detailed quote analysis looks like at
-            Level 5-6.
+            • <strong>{await t('dash.worksheets.how_model_label')}</strong>{' '}
+            {await t('dash.worksheets.how_model_body')}
           </li>
           <li>
-            • <strong>As a scaffold:</strong> Give students the quotes and techniques columns, ask
-            them to complete the effect and theme columns.
+            • <strong>{await t('dash.worksheets.how_scaffold_label')}</strong>{' '}
+            {await t('dash.worksheets.how_scaffold_body')}
           </li>
           <li>
-            • <strong>As revision:</strong> Students can use this as a reference when planning exam
-            responses.
+            • <strong>{await t('dash.worksheets.how_revision_label')}</strong>{' '}
+            {await t('dash.worksheets.how_revision_body')}
           </li>
           <li>
-            • <strong>Differentiated:</strong> Lower-ability students complete character + quote
-            only; higher-ability attempt all columns independently before comparing.
+            • <strong>{await t('dash.worksheets.how_diff_label')}</strong>{' '}
+            {await t('dash.worksheets.how_diff_body')}
           </li>
         </ul>
       </div>
@@ -113,7 +114,9 @@ export default function WorksheetsPage() {
               </span>
               <div>
                 <p className="font-semibold text-foreground text-sm">{q.character}</p>
-                <p className="text-xs text-muted-foreground">Act {q.act.replace('Act ', '')}</p>
+                <p className="text-xs text-muted-foreground">
+                  {actPrefix} {q.act.replace('Act ', '')}
+                </p>
               </div>
               <span className="ml-auto inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                 {q.theme}
@@ -127,13 +130,13 @@ export default function WorksheetsPage() {
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded bg-blue-500/10 p-3">
                 <p className="text-xs font-bold text-blue-700 dark:text-blue-300 mb-1">
-                  Technique(s)
+                  {techniqueCol}
                 </p>
                 <p className="text-xs text-blue-700 dark:text-blue-300">{q.technique}</p>
               </div>
               <div className="rounded bg-emerald-500/10 p-3">
                 <p className="text-xs font-bold text-emerald-700 dark:text-emerald-300 mb-1">
-                  Effect & Analysis
+                  {effectCol}
                 </p>
                 <p className="text-xs text-emerald-700 dark:text-emerald-300">{q.effect}</p>
               </div>
@@ -144,10 +147,10 @@ export default function WorksheetsPage() {
 
       {/* Student Task */}
       <div className="card border-2 border-accent/30">
-        <h2 className="font-semibold text-foreground mb-2">Student Extension Task</h2>
-        <p className="text-sm text-muted-foreground mb-3">
-          Using the model analyses above, complete the same process for these additional quotes:
-        </p>
+        <h2 className="font-semibold text-foreground mb-2">
+          {await t('dash.worksheets.ext_title')}
+        </h2>
+        <p className="text-sm text-muted-foreground mb-3">{await t('dash.worksheets.ext_intro')}</p>
         <ol className="space-y-2 text-sm text-muted-foreground">
           <li className="flex gap-2">
             <span className="font-bold text-primary">1.</span>
@@ -167,9 +170,7 @@ export default function WorksheetsPage() {
         </ol>
       </div>
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under
-        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
-        criticism and review.
+        {await t('dash.worksheets.copyright')}
       </p>
     </div>
   )

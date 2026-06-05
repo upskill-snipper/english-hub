@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -88,6 +89,7 @@ function scoreBadgeBg(score: number): string {
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function AllEssaysPage() {
+  const t = useT()
   const [sortField, setSortField] = useState<SortField>('date')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
   const [deletingId, setDeletingId] = useState<string | null>(null)
@@ -135,20 +137,21 @@ export default function AllEssaysPage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/dashboard" className="hover:text-accent">
-              Dashboard
+              {t('dash.essays.bc_dashboard')}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-foreground">All Essays</li>
+          <li className="font-medium text-foreground">{t('dash.essays.bc_current')}</li>
         </ol>
       </nav>
 
       {/* ── Header ──────────────────────────────────────────── */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-primary sm:text-3xl">Your Essays</h1>
+          <h1 className="text-2xl font-bold text-primary sm:text-3xl">{t('dash.essays.title')}</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            {sorted.length} {sorted.length === 1 ? 'essay' : 'essays'} submitted
+            {sorted.length}{' '}
+            {sorted.length === 1 ? t('dash.essays.count_one') : t('dash.essays.count_many')}
           </p>
         </div>
         <Link href="/dashboard/essay/new" className="btn-primary gap-2 self-start">
@@ -163,13 +166,13 @@ export default function AllEssaysPage() {
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
           </svg>
-          New Essay
+          {t('dash.essays.new')}
         </Link>
       </div>
 
       {/* ── Sort controls ───────────────────────────────────── */}
       <div className="mt-6 flex items-center gap-2 text-sm">
-        <span className="text-muted-foreground">Sort by:</span>
+        <span className="text-muted-foreground">{t('dash.essays.sort_by')}</span>
         <button
           type="button"
           onClick={() => toggleSort('date')}
@@ -179,7 +182,7 @@ export default function AllEssaysPage() {
               : 'bg-muted text-muted-foreground hover:bg-muted'
           }`}
         >
-          Date
+          {t('dash.essays.sort_date')}
           <SortIndicator field="date" />
         </button>
         <button
@@ -191,7 +194,7 @@ export default function AllEssaysPage() {
               : 'bg-muted text-muted-foreground hover:bg-muted'
           }`}
         >
-          Score
+          {t('dash.essays.sort_score')}
           <SortIndicator field="score" />
         </button>
       </div>
@@ -199,9 +202,9 @@ export default function AllEssaysPage() {
       {/* ── Essays list ─────────────────────────────────────── */}
       {sorted.length === 0 ? (
         <div className="mt-8 card text-center">
-          <p className="text-muted-foreground">You haven&apos;t submitted any essays yet.</p>
+          <p className="text-muted-foreground">{t('dash.essays.empty')}</p>
           <Link href="/dashboard/essay/new" className="btn-primary mt-4 inline-flex">
-            Write Your First Essay
+            {t('dash.essays.empty_cta')}
           </Link>
         </div>
       ) : (
@@ -212,27 +215,31 @@ export default function AllEssaysPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border bg-muted">
-                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">Title</th>
                     <th className="px-4 py-3 text-left font-medium text-muted-foreground">
-                      Subject
+                      {t('dash.essays.col_title')}
                     </th>
-                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">Board</th>
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      {t('dash.essays.col_subject')}
+                    </th>
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                      {t('dash.essays.col_board')}
+                    </th>
                     <th
                       className="cursor-pointer px-4 py-3 text-left font-medium text-muted-foreground hover:text-foreground"
                       onClick={() => toggleSort('score')}
                     >
-                      Score
+                      {t('dash.essays.col_score')}
                       <SortIndicator field="score" />
                     </th>
                     <th
                       className="cursor-pointer px-4 py-3 text-left font-medium text-muted-foreground hover:text-foreground"
                       onClick={() => toggleSort('date')}
                     >
-                      Date
+                      {t('dash.essays.col_date')}
                       <SortIndicator field="date" />
                     </th>
                     <th className="px-4 py-3 text-right font-medium text-muted-foreground">
-                      Actions
+                      {t('dash.essays.col_actions')}
                     </th>
                   </tr>
                 </thead>
@@ -273,14 +280,14 @@ export default function AllEssaysPage() {
                               onClick={() => handleDelete(essay.id)}
                               className="text-xs font-medium text-red-500 hover:text-red-600"
                             >
-                              Confirm
+                              {t('dash.essays.confirm')}
                             </button>
                             <button
                               type="button"
                               onClick={() => setDeletingId(null)}
                               className="text-xs text-muted-foreground hover:text-muted-foreground"
                             >
-                              Cancel
+                              {t('dash.essays.cancel')}
                             </button>
                           </div>
                         ) : (
@@ -289,14 +296,14 @@ export default function AllEssaysPage() {
                               href={`/dashboard/essay/${essay.id}`}
                               className="text-xs font-medium text-accent hover:text-primary"
                             >
-                              View
+                              {t('dash.essays.view')}
                             </Link>
                             <button
                               type="button"
                               onClick={() => setDeletingId(essay.id)}
                               className="text-xs text-muted-foreground hover:text-red-500"
                             >
-                              Delete
+                              {t('dash.essays.delete')}
                             </button>
                           </div>
                         )}
@@ -338,7 +345,7 @@ export default function AllEssaysPage() {
                     href={`/dashboard/essay/${essay.id}`}
                     className="text-xs font-medium text-accent hover:text-primary"
                   >
-                    View Feedback
+                    {t('dash.essays.view_feedback')}
                   </Link>
                   {deletingId === essay.id ? (
                     <>
@@ -347,14 +354,14 @@ export default function AllEssaysPage() {
                         onClick={() => handleDelete(essay.id)}
                         className="text-xs font-medium text-red-500 hover:text-red-600"
                       >
-                        Confirm Delete
+                        {t('dash.essays.confirm_delete')}
                       </button>
                       <button
                         type="button"
                         onClick={() => setDeletingId(null)}
                         className="text-xs text-muted-foreground hover:text-muted-foreground"
                       >
-                        Cancel
+                        {t('dash.essays.cancel')}
                       </button>
                     </>
                   ) : (
@@ -363,7 +370,7 @@ export default function AllEssaysPage() {
                       onClick={() => setDeletingId(essay.id)}
                       className="text-xs text-muted-foreground hover:text-red-500"
                     >
-                      Delete
+                      {t('dash.essays.delete')}
                     </button>
                   )}
                 </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 type ReviewStage = 'submitted' | 'under-review' | 'completed'
 
@@ -72,6 +73,7 @@ function StageIcon({ stage, currentStage }: { stage: ReviewStage; currentStage: 
 }
 
 export default function ReviewStatusPage() {
+  const t = useT()
   const params = useParams()
   const id = params.id as string
 
@@ -85,22 +87,22 @@ export default function ReviewStatusPage() {
         const res = await fetch(`/api/review/${encodeURIComponent(id)}`)
         if (!res.ok) {
           if (res.status === 404) {
-            setError('Review request not found. Please check your reference number.')
+            setError(t('dash.review_status.err.not_found'))
           } else {
-            setError('Unable to load review details. Please try again later.')
+            setError(t('dash.review_status.err.load'))
           }
           return
         }
         const data = await res.json()
         setReview(data)
       } catch {
-        setError('Unable to connect. Please check your internet and try again.')
+        setError(t('dash.review_status.err.connect'))
       } finally {
         setLoading(false)
       }
     }
     fetchReview()
-  }, [id])
+  }, [id, t])
 
   if (loading) {
     return (
@@ -118,9 +120,9 @@ export default function ReviewStatusPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-12">
         <div className="card text-center">
-          <p className="text-muted-foreground">{error ?? 'Review not found.'}</p>
+          <p className="text-muted-foreground">{error ?? t('dash.review_status.not_found')}</p>
           <Link href="/dashboard" className="btn-primary mt-6 inline-block text-sm">
-            Back to Dashboard
+            {t('dash.review_status.back_dash')}
           </Link>
         </div>
       </div>
@@ -128,9 +130,9 @@ export default function ReviewStatusPage() {
   }
 
   const stageLabels: Record<ReviewStage, string> = {
-    submitted: 'Submitted',
-    'under-review': 'Under Review',
-    completed: 'Completed',
+    submitted: t('dash.review_status.stage.submitted'),
+    'under-review': t('dash.review_status.stage.under_review'),
+    completed: t('dash.review_status.stage.completed'),
   }
 
   return (
@@ -140,20 +142,20 @@ export default function ReviewStatusPage() {
           href="/dashboard"
           className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
-          &larr; Back to Dashboard
+          {t('dash.review_status.back_dash_arrow')}
         </Link>
       </div>
 
-      <h1 className="text-2xl font-semibold text-primary">Review Status</h1>
+      <h1 className="text-2xl font-semibold text-primary">{t('dash.review_status.title')}</h1>
       <p className="mt-1 text-sm text-muted-foreground">
-        Reference:{' '}
+        {t('dash.review_status.reference')}{' '}
         <span className="font-mono font-medium text-foreground">{review.referenceNumber}</span>
       </p>
 
       {/* ---------- Progress tracker ---------- */}
       <div className="card mt-6">
         <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-6">
-          Progress
+          {t('dash.review_status.progress')}
         </h2>
 
         <div className="relative">
@@ -209,7 +211,7 @@ export default function ReviewStatusPage() {
       {review.status === 'completed' && review.reviewerResponse && (
         <div className="card mt-6">
           <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
-            Reviewer Response
+            {t('dash.review_status.reviewer_response')}
           </h2>
           <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 text-sm text-foreground leading-relaxed whitespace-pre-wrap">
             {review.reviewerResponse}
@@ -220,31 +222,31 @@ export default function ReviewStatusPage() {
       {/* ---------- Your request details ---------- */}
       <div className="card mt-6">
         <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
-          Your Request
+          {t('dash.review_status.your_request')}
         </h2>
         <dl className="space-y-3 text-sm">
           <div>
-            <dt className="text-muted-foreground">Essay</dt>
+            <dt className="text-muted-foreground">{t('dash.review_status.essay')}</dt>
             <dd className="mt-0.5 text-foreground">{review.essayTitle}</dd>
           </div>
           <div>
-            <dt className="text-muted-foreground">Reason</dt>
+            <dt className="text-muted-foreground">{t('dash.review_status.reason')}</dt>
             <dd className="mt-0.5 text-foreground">{review.reason}</dd>
           </div>
           <div>
-            <dt className="text-muted-foreground">Details</dt>
+            <dt className="text-muted-foreground">{t('dash.review_status.details')}</dt>
             <dd className="mt-0.5 text-foreground whitespace-pre-wrap">{review.detail}</dd>
           </div>
           {review.selfAssessment && (
             <div>
-              <dt className="text-muted-foreground">Your self-assessment</dt>
+              <dt className="text-muted-foreground">{t('dash.review_status.self_assessment')}</dt>
               <dd className="mt-0.5 text-foreground whitespace-pre-wrap">
                 {review.selfAssessment}
               </dd>
             </div>
           )}
           <div>
-            <dt className="text-muted-foreground">Submitted</dt>
+            <dt className="text-muted-foreground">{t('dash.review_status.submitted_label')}</dt>
             <dd className="mt-0.5 text-foreground">
               {new Date(review.createdAt).toLocaleDateString('en-GB', {
                 day: 'numeric',
@@ -261,7 +263,7 @@ export default function ReviewStatusPage() {
       {/* ---------- Timeline ---------- */}
       <div className="card mt-6">
         <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
-          Timeline
+          {t('dash.review_status.timeline')}
         </h2>
         <ul className="space-y-3">
           {review.timeline

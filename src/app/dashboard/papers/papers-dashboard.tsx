@@ -3,10 +3,16 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { ExamBoard } from '@/lib/board/board-config'
-import { getPapersForBoard, type Paper, type PaperSection, type LinkType } from '@/data/paper-structures'
+import {
+  getPapersForBoard,
+  type Paper,
+  type PaperSection,
+  type LinkType,
+} from '@/data/paper-structures'
 import {
   ArrowLeft,
   ArrowRight,
@@ -102,18 +108,18 @@ function linkIcon(type: LinkType) {
   }
 }
 
-function linkTypeLabel(type: LinkType) {
+function linkTypeLabel(type: LinkType, t: (key: string) => string) {
   switch (type) {
     case 'text':
-      return 'Study Guide'
+      return t('dash.papers.type.text')
     case 'poetry':
-      return 'Poetry'
+      return t('dash.papers.type.poetry')
     case 'technique':
-      return 'Technique'
+      return t('dash.papers.type.technique')
     case 'practice':
-      return 'Practice'
+      return t('dash.papers.type.practice')
     case 'mock':
-      return 'Mock Exam'
+      return t('dash.papers.type.mock')
   }
 }
 
@@ -129,18 +135,29 @@ function PaperSectionCard({
   defaultOpen: boolean
 }) {
   const [open, setOpen] = useState(defaultOpen)
+  const t = useT()
   const c = COLOUR_MAP[colour]
 
   return (
-    <div className={cn('rounded-xl border transition-colors duration-200', c.sectionBorder, c.sectionBg)}>
+    <div
+      className={cn(
+        'rounded-xl border transition-colors duration-200',
+        c.sectionBorder,
+        c.sectionBg,
+      )}
+    >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center gap-3 px-5 py-4 text-left group"
       >
         <span className={cn('w-2.5 h-2.5 rounded-full shrink-0', c.dotBg)} />
         <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-foreground text-[15px] leading-snug">{section.title}</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">{section.description}</p>
+          <h4 className="font-semibold text-foreground text-[15px] leading-snug">
+            {section.title}
+          </h4>
+          <p className="text-sm text-muted-foreground leading-relaxed mt-0.5">
+            {section.description}
+          </p>
         </div>
         <ChevronDown
           className={cn(
@@ -164,14 +181,21 @@ function PaperSectionCard({
                     'hover:border-primary/30 hover:-translate-y-px hover:shadow-sm transition-all duration-200',
                   )}
                 >
-                  <span className={cn('w-8 h-8 rounded-lg flex items-center justify-center shrink-0', c.iconBg)}>
+                  <span
+                    className={cn(
+                      'w-8 h-8 rounded-lg flex items-center justify-center shrink-0',
+                      c.iconBg,
+                    )}
+                  >
                     <Icon className="w-4 h-4" />
                   </span>
                   <div className="flex-1 min-w-0">
                     <span className="text-sm font-medium text-foreground group-hover/link:text-primary transition-colors duration-200 line-clamp-1">
                       {link.label}
                     </span>
-                    <span className="text-xs text-muted-foreground font-mono">{linkTypeLabel(link.type)}</span>
+                    <span className="text-xs text-muted-foreground font-mono">
+                      {linkTypeLabel(link.type, t)}
+                    </span>
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-muted-foreground opacity-0 group-hover/link:opacity-100 transition-opacity duration-200 shrink-0" />
                 </Link>
@@ -188,6 +212,7 @@ function PaperSectionCard({
 
 function PaperCard({ paper, defaultExpanded }: { paper: Paper; defaultExpanded: boolean }) {
   const [expanded, setExpanded] = useState(defaultExpanded)
+  const t = useT()
   const c = COLOUR_MAP[paper.colour]
   const totalLinks = paper.sections.reduce((sum, s) => sum + s.links.length, 0)
 
@@ -213,39 +238,38 @@ function PaperCard({ paper, defaultExpanded }: { paper: Paper; defaultExpanded: 
 
         <div className="relative">
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <Badge
-              variant="outline"
-              className={cn('text-xs font-mono border', c.badge)}
-            >
+            <Badge variant="outline" className={cn('text-xs font-mono border', c.badge)}>
               {paper.examCode}
             </Badge>
-            <Badge
-              variant="outline"
-              className={cn('text-xs font-mono border', c.badge)}
-            >
+            <Badge variant="outline" className={cn('text-xs font-mono border', c.badge)}>
               <Clock className="w-3 h-3 mr-1" />
               {paper.duration}
             </Badge>
-            <Badge
-              variant="outline"
-              className={cn('text-xs font-mono border', c.badge)}
-            >
-              {paper.totalMarks} marks
+            <Badge variant="outline" className={cn('text-xs font-mono border', c.badge)}>
+              {paper.totalMarks} {t('dash.papers.marks_suffix')}
             </Badge>
           </div>
 
-          <h3 className={cn('font-serif text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-1.5', c.headerText)}>
+          <h3
+            className={cn(
+              'font-serif text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-1.5',
+              c.headerText,
+            )}
+          >
             {paper.name}
           </h3>
-          <p className={cn('text-sm sm:text-base opacity-80', c.headerText)}>
-            {paper.subtitle}
-          </p>
+          <p className={cn('text-sm sm:text-base opacity-80', c.headerText)}>{paper.subtitle}</p>
 
           <div className="flex items-center gap-4 mt-4">
             <div className="flex items-center gap-2 text-sm opacity-70">
               <Layers className="w-4 h-4" />
               <span className={c.headerText}>
-                {paper.sections.length} section{paper.sections.length !== 1 ? 's' : ''} &middot; {totalLinks} resource{totalLinks !== 1 ? 's' : ''}
+                {paper.sections.length}{' '}
+                {paper.sections.length !== 1
+                  ? t('dash.papers.section_many')
+                  : t('dash.papers.section_one')}{' '}
+                &middot; {totalLinks}{' '}
+                {totalLinks !== 1 ? t('dash.papers.resource_many') : t('dash.papers.resource_one')}
               </span>
             </div>
           </div>
@@ -257,12 +281,9 @@ function PaperCard({ paper, defaultExpanded }: { paper: Paper; defaultExpanded: 
         onClick={() => setExpanded(!expanded)}
         className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 border-b border-border/40"
       >
-        {expanded ? 'Collapse sections' : 'Expand all sections'}
+        {expanded ? t('dash.papers.collapse') : t('dash.papers.expand')}
         <ChevronDown
-          className={cn(
-            'w-4 h-4 transition-transform duration-200',
-            expanded && 'rotate-180',
-          )}
+          className={cn('w-4 h-4 transition-transform duration-200', expanded && 'rotate-180')}
         />
       </button>
 
@@ -292,6 +313,7 @@ type Props = {
 }
 
 export default function PapersDashboard({ board, boardName, boardFullName }: Props) {
+  const t = useT()
   const papers = getPapersForBoard(board)
 
   if (papers.length === 0) {
@@ -301,14 +323,14 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
           <FileText className="w-8 h-8 text-muted-foreground" />
         </div>
         <h2 className="font-serif text-2xl font-bold text-foreground mb-3">
-          Paper structure coming soon
+          {t('dash.papers.empty_title')}
         </h2>
         <p className="text-muted-foreground max-w-md mx-auto mb-8">
-          We are building out the paper-by-paper navigation for {boardName}. In the meantime, explore the revision toolkit.
+          {t('dash.papers.empty_body').replace('{board}', boardName)}
         </p>
         <Button variant="default" render={<Link href="/revision" />}>
           <BookOpen className="w-4 h-4" />
-          Go to Revision Hub
+          {t('dash.papers.go_revision')}
         </Button>
       </section>
     )
@@ -327,7 +349,7 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Dashboard
+          {t('dash.papers.back')}
         </Link>
 
         {/* Header */}
@@ -342,10 +364,10 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight mb-4">
-            Your exam papers
+            {t('dash.papers.title')}
           </h1>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl leading-relaxed">
-            Everything you need for {boardFullName} is organised by paper. Open a paper to find study guides, exam technique, poetry, and practice questions.
+            {t('dash.papers.intro').replace('{board}', boardFullName)}
           </p>
         </div>
 
@@ -365,7 +387,7 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
             render={<Link href="/mock-exams" />}
           >
             <FileText className="w-4 h-4" />
-            All mock exams
+            {t('dash.papers.all_mocks')}
           </Button>
           <Button
             variant="secondary"
@@ -374,7 +396,7 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
             render={<Link href="/revision" />}
           >
             <BookOpen className="w-4 h-4" />
-            Full revision hub
+            {t('dash.papers.full_revision')}
           </Button>
           <Button
             variant="outline"
@@ -383,7 +405,7 @@ export default function PapersDashboard({ board, boardName, boardFullName }: Pro
             render={<Link href="/revision/flashcards" />}
           >
             <Layers className="w-4 h-4" />
-            Flashcards
+            {t('dash.papers.flashcards')}
           </Button>
         </div>
       </div>
