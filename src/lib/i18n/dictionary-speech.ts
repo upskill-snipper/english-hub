@@ -5,8 +5,8 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 export const SPEECH_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
-  'speech.dictate': { en: 'Dictate', ar: 'تحدّث للكتابة' },
-  'speech.listening': { en: 'Listening…', ar: 'نسمعك…' },
-  'speech.read_aloud': { en: 'Read aloud', ar: 'اسمعها بصوت' },
-  'speech.stop': { en: 'Stop', ar: 'وقّف' },
+  'speech.dictate': { en: 'Dictate', ar: 'تحدّث للكتابة', es: 'Dictar' },
+  'speech.listening': { en: 'Listening…', ar: 'نسمعك…', es: 'Escuchando…' },
+  'speech.read_aloud': { en: 'Read aloud', ar: 'اسمعها بصوت', es: 'Leer en voz alta' },
+  'speech.stop': { en: 'Stop', ar: 'وقّف', es: 'Detener' },
 }
